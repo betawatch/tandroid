@@ -22,7 +22,7 @@ import java.util.Iterator;
 import java.util.concurrent.Executor;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class z0 {
     public boolean a;
@@ -49,7 +49,7 @@ public final class z0 {
             return;
         }
         z0Var.h = gVar;
-        l3.k0 k0Var = (l3.k0) ((gg.f) z0Var.c).b;
+        l3.k0 k0Var = (l3.k0) ((hg.f) z0Var.c).b;
         h5.a.i(k0Var.f0 == Looper.myLooper());
         if (gVar.equals(k0Var.f())) {
             return;
@@ -57,25 +57,25 @@ public final class z0 {
         k0Var.w = gVar;
         l3.t tVar = k0Var.r;
         if (tVar != null) {
-            tVar.q();
+            tVar.i();
         }
     }
 
     public FileInputStream b(AssetManager assetManager, String str) {
         try {
             return assetManager.openFd(str).createInputStream();
-        } catch (FileNotFoundException e) {
-            String message = e.getMessage();
+        } catch (FileNotFoundException e6) {
+            String message = e6.getMessage();
             if (message == null || !message.contains("compressed")) {
                 return null;
             }
-            ((e2.d) this.c).l();
+            ((e2.d) this.c).p();
             return null;
         }
     }
 
     public void c(int i10, Serializable serializable) {
-        ((Executor) this.b).execute(new ah.a(this, i10, serializable, 3));
+        ((Executor) this.b).execute(new bh.a(this, i10, serializable, 2));
     }
 
     public void d() {
@@ -189,7 +189,7 @@ public final class z0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public z0(Context context, gg.f fVar) {
+    public z0(Context context, hg.f fVar) {
         Uri uri;
         Context applicationContext = context.getApplicationContext();
         this.b = applicationContext;

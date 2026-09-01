@@ -2,7 +2,7 @@ package ke;
 
 import ne.r;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class n extends pe.a {
     public final ne.o a = new ne.o();
@@ -37,8 +37,8 @@ public final class n extends pe.a {
             if (((ne.p) this.a.c) == null) {
                 return null;
             }
-            ne.a e = eVar.h().e();
-            this.c = (e instanceof r) || (e instanceof ne.o);
+            ne.a e6 = eVar.h().e();
+            this.c = (e6 instanceof r) || (e6 instanceof ne.o);
             return j4.h.a(eVar.e);
         }
         int i10 = eVar.g;

@@ -1,28 +1,41 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes3.dex */
-public final class jp0 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ pp0 a;
+import android.view.KeyEvent;
 
-    public jp0(pp0 pp0Var) {
-        this.a = pp0Var;
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class jp0 implements org.telegram.ui.Components.y4, org.telegram.ui.ActionBar.n1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ rp0 b;
+
+    public /* synthetic */ jp0(rp0 rp0Var, int i10) {
+        this.a = i10;
+        this.b = rp0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        pp0 pp0Var = this.a;
-        if (i10 == -1) {
-            pp0Var.finishFragment();
-            return;
+    @Override // org.telegram.ui.Components.y4
+    public void I(int i10, int i11, boolean z4) {
+        switch (this.a) {
+            case 0:
+                rp0 rp0Var = this.b;
+                rp0Var.V(rp0Var.b, rp0Var.c, z4, i10);
+                rp0Var.finishFragment();
+                break;
+            default:
+                rp0 rp0Var2 = this.b;
+                rp0Var2.V(rp0Var2.b, rp0Var2.c, z4, i10);
+                rp0Var2.finishFragment();
+                break;
         }
-        if (i10 != 1) {
-            if (i10 == 2) {
-                pp0.U(pp0Var, null);
-            }
-        } else if (pp0Var.S != null) {
-            pp0Var.finishFragment(false);
-            pp0Var.S.b();
+    }
+
+    @Override // org.telegram.ui.ActionBar.n1
+    public void n(KeyEvent keyEvent) {
+        org.telegram.ui.ActionBar.p1 p1Var;
+        rp0 rp0Var = this.b;
+        rp0Var.getClass();
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (p1Var = rp0Var.F) != null && p1Var.isShowing()) {
+            rp0Var.F.d(true);
         }
     }
 }

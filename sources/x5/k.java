@@ -11,19 +11,19 @@ import android.util.Log;
 import android.widget.ImageView;
 import com.google.android.gms.tasks.Task;
 import i9.u;
-import j7.r7;
+import j7.s7;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import l7.w0;
-import m.f3;
-import m.m1;
+import m.e3;
+import m.l1;
 import m.q;
 import r0.j0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class k {
     public static k e;
@@ -58,37 +58,37 @@ public final class k {
         ImageView imageView = (ImageView) this.b;
         Drawable drawable = imageView.getDrawable();
         if (drawable != null) {
-            m1.a(drawable);
+            l1.a(drawable);
         }
         if (drawable != null) {
             int i10 = Build.VERSION.SDK_INT;
             if (i10 <= 21 && i10 == 21) {
-                if (((f3) this.d) == null) {
-                    this.d = new f3();
+                if (((e3) this.d) == null) {
+                    this.d = new e3();
                 }
-                f3 f3Var = (f3) this.d;
-                f3Var.c = null;
-                f3Var.b = false;
-                f3Var.d = null;
-                f3Var.a = false;
+                e3 e3Var = (e3) this.d;
+                e3Var.c = null;
+                e3Var.b = false;
+                e3Var.d = null;
+                e3Var.a = false;
                 ColorStateList imageTintList = imageView.getImageTintList();
                 if (imageTintList != null) {
-                    f3Var.b = true;
-                    f3Var.c = imageTintList;
+                    e3Var.b = true;
+                    e3Var.c = imageTintList;
                 }
                 PorterDuff.Mode imageTintMode = imageView.getImageTintMode();
                 if (imageTintMode != null) {
-                    f3Var.a = true;
-                    f3Var.d = imageTintMode;
+                    e3Var.a = true;
+                    e3Var.d = imageTintMode;
                 }
-                if (f3Var.b || f3Var.a) {
-                    q.d(drawable, f3Var, imageView.getDrawableState());
+                if (e3Var.b || e3Var.a) {
+                    q.d(drawable, e3Var, imageView.getDrawableState());
                     return;
                 }
             }
-            f3 f3Var2 = (f3) this.c;
-            if (f3Var2 != null) {
-                q.d(drawable, f3Var2, imageView.getDrawableState());
+            e3 e3Var2 = (e3) this.c;
+            if (e3Var2 != null) {
+                q.d(drawable, e3Var2, imageView.getDrawableState());
             }
         }
     }
@@ -131,11 +131,11 @@ public final class k {
         j0.j(imageView, imageView.getContext(), iArr, attributeSet, (TypedArray) y10.c, i10);
         try {
             Drawable drawable3 = imageView.getDrawable();
-            if (drawable3 == null && (resourceId = typedArray.getResourceId(1, -1)) != -1 && (drawable3 = r7.b(imageView.getContext(), resourceId)) != null) {
+            if (drawable3 == null && (resourceId = typedArray.getResourceId(1, -1)) != -1 && (drawable3 = s7.b(imageView.getContext(), resourceId)) != null) {
                 imageView.setImageDrawable(drawable3);
             }
             if (drawable3 != null) {
-                m1.a(drawable3);
+                l1.a(drawable3);
             }
             if (typedArray.hasValue(2)) {
                 ColorStateList r10 = y10.r(2);
@@ -149,7 +149,7 @@ public final class k {
                 }
             }
             if (typedArray.hasValue(3)) {
-                PorterDuff.Mode b10 = m1.b(typedArray.getInt(3, -1), null);
+                PorterDuff.Mode b10 = l1.b(typedArray.getInt(3, -1), null);
                 int i12 = Build.VERSION.SDK_INT;
                 imageView.setImageTintMode(b10);
                 if (i12 == 21 && (drawable = imageView.getDrawable()) != null && imageView.getImageTintList() != null) {

@@ -2,10 +2,10 @@ package r5;
 
 import android.os.Parcel;
 import android.os.RemoteException;
-import com.google.android.gms.internal.cast.o4;
-import com.google.android.gms.internal.cast.v6;
+import com.google.android.gms.internal.cast.n4;
+import com.google.android.gms.internal.cast.u6;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class i {
     public final /* synthetic */ c a;
@@ -27,15 +27,15 @@ public final class i {
             }
             o oVar = (o) qVar;
             Parcel M0 = oVar.M0();
-            int i10 = com.google.android.gms.internal.cast.t.a;
+            int i10 = com.google.android.gms.internal.cast.s.a;
             M0.writeInt(0);
             oVar.Q0(M0, 1);
-        } catch (RemoteException e) {
-            c.m.a(e, "Unable to call %s on %s.", "onConnected", q.class.getSimpleName());
+        } catch (RemoteException e6) {
+            c.m.a(e6, "Unable to call %s on %s.", "onConnected", q.class.getSimpleName());
         }
-        o4 o4Var = cVar.l;
-        if (o4Var != null) {
-            c5.j.D(o4Var.a, new v6(new b4.e0(3, 3)));
+        n4 n4Var = cVar.l;
+        if (n4Var != null) {
+            c5.j.D(n4Var.a, new u6(new b4.e0(3, 2)));
         }
     }
 }

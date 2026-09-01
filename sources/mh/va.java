@@ -1,0 +1,20 @@
+package mh;
+
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes4.dex */
+public final class va {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public long f;
+    public long g;
+    public float h;
+    public float i;
+    public final /* synthetic */ wa j;
+
+    public va(wa waVar) {
+        this.j = waVar;
+    }
+}

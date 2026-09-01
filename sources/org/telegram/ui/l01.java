@@ -1,259 +1,143 @@
 package org.telegram.ui;
 
-import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.os.Bundle;
-import android.os.Vibrator;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Typeface;
+import android.text.TextPaint;
 import android.view.View;
-import java.io.File;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l01 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class l01 extends View {
+    public final RectF a;
+    public final TextPaint b;
+    public final Paint c;
+    public final ValueAnimator d;
+    public final float[] e;
+    public final m2.a f;
+    public boolean h;
+    public final /* synthetic */ ProfileActivity n;
 
-    public /* synthetic */ l01(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l01(ProfileActivity profileActivity, Context context) {
+        super(context);
+        this.n = profileActivity;
+        this.a = new RectF();
+        this.e = new float[]{0.0f, 1.0f};
+        m2.a adapter = profileActivity.k0.getAdapter();
+        this.f = adapter;
+        setVisibility(8);
+        TextPaint textPaint = new TextPaint(1);
+        this.b = textPaint;
+        textPaint.setColor(-1);
+        textPaint.setTypeface(Typeface.SANS_SERIF);
+        textPaint.setTextAlign(Paint.Align.CENTER);
+        textPaint.setTextSize(AndroidUtilities.dpf2(15.0f));
+        Paint paint = new Paint(1);
+        this.c = paint;
+        paint.setColor(637534208);
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.d = ofFloat;
+        ofFloat.setInterpolator(org.telegram.ui.Components.pr.j);
+        ofFloat.addUpdateListener(new e3(this, 29));
+        ofFloat.addListener(new org.telegram.ui.Components.x20(25, this, profileActivity.k1));
+        profileActivity.k0.b(new k01(this));
+        adapter.a.registerObserver(new h1.a(this, 3));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.Components.el0 el0Var;
-        int i10 = this.a;
-        Object obj = this.c;
-        Object obj2 = this.b;
-        switch (i10) {
-            case 0:
-                r01 r01Var = (r01) obj2;
-                ArrayList<MessagesController.FaqSearchResult> arrayList = (ArrayList) obj;
-                r01Var.d.addAll(arrayList);
-                int i11 = r01Var.f;
-                MessagesController.getInstance(i11).faqSearchArray = arrayList;
-                MessagesController.getInstance(i11).faqWebPage = r01Var.B;
-                if (!r01Var.w) {
-                    r01Var.l();
-                    break;
-                }
-                break;
-            case 1:
-                v01 v01Var = (v01) obj2;
-                v01Var.f.add((x01) obj);
-                v01Var.a();
-                break;
-            case 2:
-                ((m21) obj2).e0(34, (Bitmap) obj, true);
-                break;
-            case 3:
-                h21 h21Var = (h21) obj2;
-                TLRPC.TL_exportedContactToken tL_exportedContactToken = (TLRPC.TL_exportedContactToken) obj;
-                if (tL_exportedContactToken != null) {
-                    int i12 = h21Var.G;
-                    if (i12 != 0 && i12 < tL_exportedContactToken.expires) {
-                        try {
-                            try {
-                                Vibrator vibrator = (Vibrator) h21Var.getContext().getSystemService("vibrator");
-                                if (vibrator != null) {
-                                    vibrator.vibrate(100L);
-                                }
-                            } catch (Exception unused) {
-                                h21Var.performHapticFeedback(0, 2);
-                            }
-                        } catch (Exception unused2) {
-                        }
-                    }
-                    h21Var.G = tL_exportedContactToken.expires;
-                    h21Var.c(tL_exportedContactToken.url, null, false, true);
-                    break;
-                } else {
-                    h21Var.getClass();
-                    break;
-                }
-            case 4:
-                j31 j31Var = (j31) ((View[]) obj2)[0];
-                j31Var.b = (TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) obj;
-                j31Var.c = null;
-                j31Var.d = null;
-                j31Var.f.V2.N(false);
-                break;
-            case 5:
-                ((j31) ((View[]) obj2)[0]).b((TLRPC.TL_reportResultAddComment) obj);
-                break;
-            case 6:
-                j31 j31Var2 = (j31) ((View[]) obj2)[0];
-                j31Var2.b = null;
-                j31Var2.c = (TLRPC.TL_reportResultChooseOption) obj;
-                j31Var2.d = null;
-                j31Var2.f.V2.N(false);
-                break;
-            case 7:
-                ((org.telegram.messenger.video.a) obj2).run();
-                ((org.telegram.ui.Components.qc) obj).c(LocaleController.getString(R.string.AdHidden)).j();
-                break;
-            case 8:
-                org.telegram.ui.Components.qc.a0((org.telegram.ui.ActionBar.p2) obj2).c(LocaleController.getString(R.string.AdHidden)).j();
-                AndroidUtilities.runOnUIThread((org.telegram.ui.Components.i80) obj);
-                break;
-            case 9:
-                ((SecretMediaViewer) obj2).J = false;
-                ((ju0) obj).a.setVisible(false, true);
-                break;
-            case 10:
-                ((SecretMediaViewer) ((n7.qa) obj2).c).h((File) obj);
-                break;
-            case 11:
-                q61 q61Var = (q61) obj2;
-                q61Var.v(null, false, false);
-                ((org.telegram.ui.ActionBar.p2) obj).presentFragment(new StickersActivity(5, q61Var.I0));
-                Runnable runnable = q61Var.Q1;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            case 12:
-                AndroidUtilities.addToClipboard((String) obj);
-                org.telegram.ui.Components.qc.a0((o81) obj2).k(false).j();
-                break;
-            case 13:
-                o81.W((o81) obj2, (TLRPC.TL_attachMenuBot) obj);
-                break;
-            case 14:
-                h81 h81Var = (h81) obj2;
-                a0.h hVar = (a0.h) obj;
-                o81 o81Var = h81Var.Y0;
-                org.telegram.ui.Components.qc.x(o81Var.getParentActivity(), o81Var.b, hVar.m(), hVar.m() == 1 ? ((TLRPC.Dialog) hVar.n(0)).id : 0L, h81Var.getThemedColor(org.telegram.ui.ActionBar.j6.Fi), h81Var.getThemedColor(org.telegram.ui.ActionBar.j6.Hi)).j();
-                break;
-            case 15:
-                org.telegram.ui.ActionBar.p2 p2Var = (org.telegram.ui.ActionBar.p2) obj2;
-                new y81(p2Var.getContext(), p2Var.getCurrentAccount(), p2Var.getResourceProvider(), (kh.a1) obj).show();
-                break;
-            case 16:
-                ((StickersActivity) obj2).n0((org.telegram.ui.Cells.k8) obj);
-                break;
-            case 17:
-                ThemeActivity themeActivity = (ThemeActivity) obj2;
-                View view = (View) obj;
-                themeActivity.getMessagesController().setContentSettings(true);
-                if (view instanceof org.telegram.ui.Cells.s8) {
-                    ((org.telegram.ui.Cells.s8) view).setChecked(themeActivity.getMessagesController().showSensitiveContent());
-                    break;
-                }
-                break;
-            case 18:
-                ThemeActivity themeActivity2 = (ThemeActivity) obj2;
-                String str = (String) obj;
-                themeActivity2.getClass();
-                org.telegram.ui.ActionBar.j6.w = str;
-                if (str == null) {
-                    org.telegram.ui.ActionBar.j6.w = String.format("(%.06f, %.06f)", Double.valueOf(org.telegram.ui.ActionBar.j6.x), Double.valueOf(org.telegram.ui.ActionBar.j6.y));
-                }
-                org.telegram.ui.ActionBar.j6.q1();
-                org.telegram.ui.Components.sl0 sl0Var = themeActivity2.b;
-                if (sl0Var != null && (el0Var = (org.telegram.ui.Components.el0) sl0Var.K(themeActivity2.V)) != null) {
-                    View view2 = el0Var.a;
-                    if (view2 instanceof org.telegram.ui.Cells.aa) {
-                        ((org.telegram.ui.Cells.aa) view2).c(LocaleController.getString("AutoNightUpdateLocation", R.string.AutoNightUpdateLocation), org.telegram.ui.ActionBar.j6.w, false, false);
-                        break;
-                    }
-                }
-                break;
-            case 19:
-                cd1 cd1Var = (cd1) obj2;
-                SharedPreferences sharedPreferences = (SharedPreferences) obj;
-                if (cd1Var.n == 3) {
-                    sharedPreferences.edit().putBoolean("bganimationhint", true).commit();
-                    cd1Var.x0.f(cd1Var.H0[0], true);
-                    break;
-                }
-                break;
-            case 20:
-                hd1.X((hd1) obj2, (String) obj);
-                break;
-            case 21:
-                hd1.V((hd1) obj2, (TLRPC.TL_theme) obj);
-                break;
-            case 22:
-                rd1 rd1Var = (rd1) obj2;
-                rd1Var.getClass();
-                AndroidUtilities.addToClipboard((String) obj);
-                rd1Var.c(true);
-                break;
-            case 23:
-                rd1 rd1Var2 = (rd1) obj2;
-                rd1Var2.getClass();
-                AndroidUtilities.addToClipboard(MessageObject.formatTextWithEntities(((TLRPC.TodoItem) obj).title, false));
-                rd1Var2.c(true);
-                break;
-            case 24:
-                pe1 pe1Var = (pe1) obj2;
-                pe1Var.getClass();
-                Bundle bundle = new Bundle();
-                kf1 kf1Var = pe1Var.b;
-                bundle.putLong("dialog_id", -kf1Var.a);
-                bundle.putLong("topic_id", ((TLRPC.TL_forumTopic) obj).id);
-                kf1Var.presentFragment(new e11(bundle, null));
-                break;
-            case 25:
-                gf1 gf1Var = (gf1) obj2;
-                String str2 = (String) obj;
-                ArrayList arrayList2 = gf1Var.W;
-                kf1 kf1Var2 = gf1Var.q0;
-                String lowerCase = str2.trim().toLowerCase();
-                ArrayList arrayList3 = new ArrayList();
-                int i13 = 0;
-                while (true) {
-                    ArrayList arrayList4 = kf1Var2.b;
-                    if (i13 >= arrayList4.size()) {
-                        arrayList2.clear();
-                        arrayList2.addAll(arrayList3);
-                        gf1Var.L();
-                        if (!arrayList2.isEmpty()) {
-                            gf1Var.i0 = false;
-                            gf1Var.l0.b(0);
-                        }
-                        gf1Var.J(str2);
-                        break;
-                    } else {
-                        if (((bf1) arrayList4.get(i13)).c != null && ((bf1) arrayList4.get(i13)).c.title.toLowerCase().contains(lowerCase)) {
-                            arrayList3.add(((bf1) arrayList4.get(i13)).c);
-                            ((bf1) arrayList4.get(i13)).c.searchQuery = lowerCase;
-                        }
-                        i13++;
-                    }
-                }
-                break;
-            case 26:
-                nf1 nf1Var = ((mf1) obj2).b;
-                nf1Var.a.e.remove(Integer.valueOf(((TLRPC.TL_forumTopic) obj).id));
-                nf1Var.a.V();
-                break;
-            case 27:
-                TwoStepVerificationActivity.Y((TwoStepVerificationActivity) obj2, (byte[]) obj);
-                break;
-            case 28:
-                TwoStepVerificationActivity.d0((TwoStepVerificationActivity) obj2, (TL_account.updatePasswordSettings) obj);
-                break;
-            default:
-                TwoStepVerificationActivity.W((TwoStepVerificationActivity) obj2, (TLRPC.TL_error) obj);
-                break;
+    public final void a(boolean z4) {
+        org.telegram.ui.ActionBar.k kVar;
+        int i10;
+        org.telegram.ui.ActionBar.k kVar2;
+        ProfileActivity profileActivity = this.n;
+        if (z4) {
+            j01 j01Var = profileActivity.K;
+            j01Var.G = j01Var.I;
+            j01Var.H = j01Var.J;
+            j01Var.K = 0.0f;
+            j01Var.L = 1;
+        }
+        profileActivity.K.invalidate();
+        float measureText = this.b.measureText(((String) this.f.d(profileActivity.k0.getCurrentItem())).toString());
+        float measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(54.0f);
+        RectF rectF = this.a;
+        rectF.right = measuredWidth;
+        rectF.left = measuredWidth - (AndroidUtilities.dpf2(16.0f) + measureText);
+        kVar = ((org.telegram.ui.ActionBar.p2) profileActivity).actionBar;
+        if (kVar != null) {
+            kVar2 = ((org.telegram.ui.ActionBar.p2) profileActivity).actionBar;
+            if (kVar2.getOccupyStatusBar()) {
+                i10 = AndroidUtilities.statusBarHeight;
+                float dp = AndroidUtilities.dp(15.0f) + i10;
+                rectF.top = dp;
+                rectF.bottom = dp + AndroidUtilities.dp(26.0f);
+                setPivotX(rectF.centerX());
+                setPivotY(rectF.centerY());
+                invalidate();
+            }
+        }
+        i10 = 0;
+        float dp2 = AndroidUtilities.dp(15.0f) + i10;
+        rectF.top = dp2;
+        rectF.bottom = dp2 + AndroidUtilities.dp(26.0f);
+        setPivotX(rectF.centerX());
+        setPivotY(rectF.centerY());
+        invalidate();
+    }
+
+    public final void b(float f10) {
+        ProfileActivity profileActivity = this.n;
+        boolean z4 = profileActivity.m2 && profileActivity.k0.getRealCount() > 20;
+        if (z4 != this.h) {
+            this.h = z4;
+            ValueAnimator valueAnimator = this.d;
+            valueAnimator.cancel();
+            float animatedFraction = valueAnimator.getAnimatedFraction();
+            float[] fArr = this.e;
+            float lerp = AndroidUtilities.lerp(fArr, animatedFraction);
+            if (f10 <= 0.0f) {
+                valueAnimator.setDuration(0L);
+            } else if (z4) {
+                valueAnimator.setDuration((long) (((1.0f - lerp) * 250.0f) / f10));
+            } else {
+                valueAnimator.setDuration((long) ((250.0f * lerp) / f10));
+            }
+            fArr[0] = lerp;
+            fArr[1] = z4 ? 1.0f : 0.0f;
+            valueAnimator.start();
         }
     }
 
-    public /* synthetic */ l01(h81 h81Var, a0.h hVar, int i10) {
-        this.a = 14;
-        this.b = h81Var;
-        this.c = hVar;
+    public final void c() {
+        zy0 zy0Var;
+        ProfileActivity profileActivity = this.n;
+        if (profileActivity.Q0 == null || (zy0Var = profileActivity.k0) == null || !profileActivity.m2) {
+            return;
+        }
+        if (zy0Var.getRealPosition() == 0) {
+            profileActivity.Q0.r(33);
+            profileActivity.Q0.K(36);
+        } else {
+            profileActivity.Q0.K(33);
+            profileActivity.Q0.r(36);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float dpf2 = AndroidUtilities.dpf2(12.0f);
+        Paint paint = this.c;
+        RectF rectF = this.a;
+        canvas.drawRoundRect(rectF, dpf2, dpf2, paint);
+        canvas.drawText(((String) this.f.d(this.n.k0.getCurrentItem())).toString(), rectF.centerX(), AndroidUtilities.dpf2(18.5f) + rectF.top, this.b);
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        a(false);
     }
 }

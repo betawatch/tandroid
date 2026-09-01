@@ -1,36 +1,68 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.widget.FrameLayout;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ln0 implements RequestDelegate {
+public final /* synthetic */ class ln0 implements OnCompleteListener, org.telegram.ui.ActionBar.c2, yt {
     public final /* synthetic */ int a;
-    public final /* synthetic */ jo0 b;
+    public final /* synthetic */ lo0 b;
 
-    public /* synthetic */ ln0(jo0 jo0Var, int i10) {
+    public /* synthetic */ ln0(lo0 lo0Var, int i10) {
         this.a = i10;
-        this.b = jo0Var;
+        this.b = lo0Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // org.telegram.ui.yt
+    public void V0(tt ttVar) {
         switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new fe0(25, this.b, tL_error));
-                break;
-            case 1:
-                AndroidUtilities.runOnUIThread(new kn0(this.b, tL_error, tLObject, 0));
-                break;
             case 2:
-                AndroidUtilities.runOnUIThread(new en0(this.b, tLObject, 2));
+                lo0 lo0Var = this.b;
+                lo0Var.x0 = ttVar;
+                lo0Var.f[4].setText(ttVar.a);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new en0(this.b, tLObject, 0));
+                lo0 lo0Var2 = this.b;
+                lo0Var2.x0 = ttVar;
+                lo0Var2.f[4].setText(ttVar.a);
+                lo0Var2.y0 = ttVar.d;
                 break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.c2
+    public void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        switch (this.a) {
+            case 1:
+                lo0 lo0Var = this.b;
+                lo0Var.I0(lo0Var.O0[0]);
+                break;
+            case 2:
+            default:
+                lo0 lo0Var2 = this.b;
+                lo0Var2.D0(true);
+                lo0Var2.z0();
+                break;
+            case 3:
+                this.b.A0(true);
+                break;
+        }
+    }
+
+    @Override // com.google.android.gms.tasks.OnCompleteListener
+    public void onComplete(Task task) {
+        lo0 lo0Var = this.b;
+        lo0Var.getClass();
+        if (!task.isSuccessful()) {
+            FileLog.e("isReadyToPay failed", task.getException());
+            return;
+        }
+        FrameLayout frameLayout = lo0Var.L;
+        if (frameLayout != null) {
+            frameLayout.setVisibility(0);
         }
     }
 }

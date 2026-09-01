@@ -2,9 +2,8 @@ package g5;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import kh.a2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class t0 {
     public static final e5.f h = new e5.f(11);
@@ -88,6 +87,6 @@ public final class t0 {
         if (arrayList.isEmpty()) {
             return Float.NaN;
         }
-        return ((s0) a2.i(1, arrayList)).c;
+        return ((s0) l.d.i(1, arrayList)).c;
     }
 }

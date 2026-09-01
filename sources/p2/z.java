@@ -1,91 +1,13 @@
 package p2;
 
-import com.google.android.gms.internal.play_billing.f3;
-import com.google.android.gms.internal.play_billing.g3;
-import com.google.android.gms.internal.play_billing.h3;
-import com.google.android.gms.internal.play_billing.i3;
-import com.google.android.gms.internal.play_billing.j3;
-import com.google.android.gms.internal.play_billing.k3;
 import com.google.android.gms.internal.play_billing.m3;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class z {
-    public static final /* synthetic */ int a = 0;
+public interface z {
+    public static final /* synthetic */ int q = 0;
 
     static {
-        int i10 = a0.q;
-    }
-
-    public static String a(Exception exc) {
-        if (exc == null) {
-            return null;
-        }
-        try {
-            String simpleName = exc.getClass().getSimpleName();
-            String message = exc.getMessage();
-            if (message == null) {
-                message = "";
-            }
-            String str = simpleName + ":" + message;
-            int i10 = com.google.android.gms.internal.play_billing.u.a;
-            return str.length() > 40 ? str.substring(0, 40) : str;
-        } catch (Throwable th2) {
-            com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to get truncated exception info", th2);
-            return null;
-        }
-    }
-
-    public static g3 b(int i10, int i11, h hVar, String str, m3 m3Var) {
-        try {
-            j3 s6 = k3.s();
-            int i12 = hVar.a;
-            s6.c();
-            k3.r((k3) s6.b, i12);
-            String str2 = hVar.c;
-            s6.c();
-            k3.o((k3) s6.b, str2);
-            int i13 = hVar.b;
-            if (i13 != 0) {
-                s6.c();
-                k3.p((k3) s6.b, i13);
-            }
-            if (i10 != 0) {
-                s6.c();
-                k3.q((k3) s6.b, i10);
-            }
-            if (str != null) {
-                s6.c();
-                k3.n((k3) s6.b, str);
-            }
-            f3 u10 = g3.u();
-            u10.d(s6);
-            u10.c();
-            g3.t((g3) u10.b, i11);
-            if (!m3Var.equals(m3.b)) {
-                u10.c();
-                g3.p((g3) u10.b, m3Var);
-            }
-            return (g3) u10.a();
-        } catch (Throwable th2) {
-            com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to create logging payload", th2);
-            return null;
-        }
-    }
-
-    public static i3 c(int i10, m3 m3Var) {
-        try {
-            h3 s6 = i3.s();
-            s6.c();
-            i3.r((i3) s6.b, i10);
-            if (!m3Var.equals(m3.b)) {
-                s6.c();
-                i3.o((i3) s6.b, m3Var);
-            }
-            return (i3) s6.a();
-        } catch (Exception e) {
-            com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to create logging payload", e);
-            return null;
-        }
+        com.google.android.gms.internal.play_billing.a0.b(3, new Object[]{"com.android.vending.billing.PURCHASES_UPDATED", m3.c, "com.android.vending.billing.LOCAL_BROADCAST_PURCHASES_UPDATED", m3.d, "com.android.vending.billing.ALTERNATIVE_BILLING", m3.e}, null);
     }
 }

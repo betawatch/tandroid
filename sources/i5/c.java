@@ -1,10 +1,9 @@
 package i5;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class c {
-    public final /* synthetic */ int a;
-    public String b;
+    public String a;
 
     public static c a(h5.w wVar) {
         String str;
@@ -28,20 +27,9 @@ public final class c {
         sb.append(i10);
         sb.append(u11 >= 10 ? "." : ".0");
         sb.append(u11);
-        return new c(sb.toString(), 0);
-    }
-
-    public String toString() {
-        switch (this.a) {
-            case 3:
-                return "<" + this.b + '>';
-            default:
-                return super.toString();
-        }
-    }
-
-    public /* synthetic */ c(String str, int i10) {
-        this.a = i10;
-        this.b = str;
+        String sb2 = sb.toString();
+        c cVar = new c();
+        cVar.a = sb2;
+        return cVar;
     }
 }

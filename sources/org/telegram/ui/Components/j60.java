@@ -1,27 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class j60 extends x80 {
-    public final /* synthetic */ n60 I;
+public final class j60 extends ClickableSpan {
+    public final /* synthetic */ org.telegram.ui.ActionBar.h3[] a;
+    public final /* synthetic */ TLRPC.TL_chatInviteImporter b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j60(n60 n60Var, Context context, org.telegram.ui.ActionBar.p2 p2Var, org.telegram.ui.ActionBar.g3 g3Var, boolean z4) {
-        super(context, p2Var, g3Var, false, z4);
-        this.I = n60Var;
+    public j60(org.telegram.ui.ActionBar.h3[] h3VarArr, TLRPC.TL_chatInviteImporter tL_chatInviteImporter) {
+        this.a = h3VarArr;
+        this.b = tL_chatInviteImporter;
     }
 
-    @Override // org.telegram.ui.Components.x80
-    public final void e(int i10, SpannableStringBuilder spannableStringBuilder) {
-        org.telegram.ui.ActionBar.f6 f6Var;
-        s60 s60Var = this.I.c;
-        org.telegram.ui.ActionBar.e3 e3Var = s60Var.container;
-        f6Var = ((org.telegram.ui.ActionBar.g3) s60Var).resourcesProvider;
-        ic Q = new qc(e3Var, f6Var).Q(i10, 36, spannableStringBuilder);
-        Q.r = false;
-        Q.k(true);
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        this.a[0].dismiss();
+        org.telegram.ui.ActionBar.p2 U = LaunchActivity.U();
+        if (U != null) {
+            U.presentFragment(ProfileActivity.m4(this.b.user_id));
+        }
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(false);
     }
 }

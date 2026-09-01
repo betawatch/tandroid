@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class z0 extends h1 {
     public final o a;
@@ -89,16 +89,16 @@ public final class z0 extends h1 {
         Iterator it = arrayList.iterator();
         try {
             if (it.hasNext()) {
-                sb.append(h7.u.H2(it.next()));
+                sb.append(h7.u.M2(it.next()));
                 while (it.hasNext()) {
                     sb.append((CharSequence) ",\n  ");
-                    sb.append(h7.u.H2(it.next()));
+                    sb.append(h7.u.M2(it.next()));
                 }
             }
             sb.append("\n]");
             return sb.toString();
-        } catch (IOException e) {
-            throw new AssertionError(e);
+        } catch (IOException e6) {
+            throw new AssertionError(e6);
         }
     }
 

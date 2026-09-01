@@ -1,6 +1,6 @@
 package u7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class k {
     public static final y5.c[] a = {new y5.c("name_ulr_private", 1), new y5.c("name_sleep_segment_request", 1), new y5.c("get_last_activity_feature_id", 1), new y5.c("support_context_feature_id", 1), new y5.c("get_current_location", 2), new y5.c("get_last_location_with_request", 1), new y5.c("set_mock_mode_with_callback", 1), new y5.c("set_mock_location_with_callback", 1), new y5.c("inject_location_with_callback", 1), new y5.c("location_updates_with_callback", 1), new y5.c("use_safe_parcelable_in_intents", 1)};

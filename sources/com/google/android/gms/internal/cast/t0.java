@@ -2,43 +2,34 @@ package com.google.android.gms.internal.cast;
 
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final class t0 extends j0 {
-    public final transient Object d;
+public abstract class t0 implements Iterator {
+    public final /* synthetic */ int a;
 
-    public t0(Object obj) {
-        this.d = obj;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        return this.d.equals(obj);
-    }
-
-    @Override // com.google.android.gms.internal.cast.j0, java.util.Collection, java.util.Set
-    public final int hashCode() {
-        return this.d.hashCode();
-    }
-
-    @Override // com.google.android.gms.internal.cast.d0
-    public final int i(Object[] objArr) {
-        objArr[0] = this.d;
-        return 1;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final /* synthetic */ Iterator iterator() {
-        return new k0(this.d);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return 1;
-    }
-
-    @Override // java.util.AbstractCollection
-    public final String toString() {
-        return android.support.v4.media.a.o("[", this.d.toString(), "]");
+    @Override // java.util.Iterator
+    public final void remove() {
+        switch (this.a) {
+            case 0:
+                throw new UnsupportedOperationException();
+            case 1:
+                throw new UnsupportedOperationException();
+            case 2:
+                throw new UnsupportedOperationException();
+            case 3:
+                throw new UnsupportedOperationException();
+            case 4:
+                throw new UnsupportedOperationException();
+            case 5:
+                throw new UnsupportedOperationException();
+            case 6:
+                throw new UnsupportedOperationException();
+            case 7:
+                throw new UnsupportedOperationException();
+            case 8:
+                throw new UnsupportedOperationException();
+            default:
+                throw new UnsupportedOperationException();
+        }
     }
 }

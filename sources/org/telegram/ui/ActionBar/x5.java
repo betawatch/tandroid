@@ -2,44 +2,52 @@ package org.telegram.ui.ActionBar;
 
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
+import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
+import android.view.View;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class x5 extends Drawable {
     public final RectF a = new RectF();
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ View c;
     public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ float f;
+    public final /* synthetic */ Paint e;
 
-    public x5(int i10, int i11, int i12, int i13, float f10) {
-        this.b = i10;
-        this.c = i11;
-        this.d = i12;
-        this.e = i13;
-        this.f = f10;
+    public x5(View view, View view2, int i10, Paint paint) {
+        this.b = view;
+        this.c = view2;
+        this.d = i10;
+        this.e = paint;
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
         Rect bounds = getBounds();
+        float f10 = bounds.left;
+        float f11 = bounds.top;
+        float f12 = bounds.right;
+        float f13 = bounds.bottom;
         RectF rectF = this.a;
-        rectF.set(bounds);
-        rectF.left += this.b;
-        rectF.top += this.c;
-        rectF.right -= this.d;
-        rectF.bottom -= this.e;
-        float f10 = this.f;
-        canvas.drawRoundRect(rectF, f10, f10, j6.z);
+        rectF.set(f10, f11, f12, f13);
+        k6.s(this.b, this.c, null);
+        float f14 = this.d;
+        Paint paint = this.e;
+        if (paint == null) {
+            paint = k6.S0("paintChatActionBackground");
+        }
+        canvas.drawRoundRect(rectF, f14, f14, paint);
+        if (k6.a1()) {
+            canvas.drawRoundRect(rectF, f14, f14, k6.S0("paintChatActionBackgroundDarken"));
+        }
     }
 
     @Override // android.graphics.drawable.Drawable
     public final int getOpacity() {
-        return 0;
+        return -2;
     }
 
     @Override // android.graphics.drawable.Drawable

@@ -5,15 +5,14 @@ import java.io.Closeable;
 import java.io.EOFException;
 import java.io.IOException;
 import java.util.ArrayDeque;
-import kh.a2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class j1 implements Closeable {
     public final ByteArrayInputStream a;
     public i1 b;
     public final byte[] c = new byte[8];
-    public final o5.i d = new o5.i(6);
+    public final y5.h d = new y5.h(6);
 
     public j1(ByteArrayInputStream byteArrayInputStream) {
         this.a = byteArrayInputStream;
@@ -40,7 +39,7 @@ public final class j1 implements Closeable {
             z4 = true;
         } else {
             if (b10 != 32) {
-                throw new IllegalStateException(a2.j((this.b.a >> 5) & 7, "expected major type 0 or 1 but found "));
+                throw new IllegalStateException(l.d.j((this.b.a >> 5) & 7, "expected major type 0 or 1 but found "));
             }
             z4 = false;
         }
@@ -67,7 +66,7 @@ public final class j1 implements Closeable {
     @Override // java.io.Closeable, java.lang.AutoCloseable
     public final void close() {
         this.a.close();
-        this.d.E();
+        this.d.v();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:52:0x0098, code lost:
@@ -80,9 +79,9 @@ public final class j1 implements Closeable {
     public final i1 d() {
         if (this.b == null) {
             int read = this.a.read();
-            o5.i iVar = this.d;
+            y5.h hVar = this.d;
             if (read == -1) {
-                iVar.E();
+                hVar.v();
                 return null;
             }
             i1 i1Var = new i1(read);
@@ -93,42 +92,42 @@ public final class j1 implements Closeable {
                 if (b10 != -32) {
                     if (b10 != 0 && b10 != 32) {
                         if (b10 == 64) {
-                            iVar.L(-1L);
+                            hVar.x(-1L);
                         } else {
                             if (b10 != 96) {
-                                throw new IllegalStateException(a2.j((this.b.a >> 5) & 7, "invalid major type: "));
+                                throw new IllegalStateException(l.d.j((this.b.a >> 5) & 7, "invalid major type: "));
                             }
-                            iVar.L(-2L);
+                            hVar.x(-2L);
                         }
-                        long M = iVar.M();
-                        ArrayDeque arrayDeque = (ArrayDeque) iVar.b;
-                        if (M == 1) {
+                        long z4 = hVar.z();
+                        ArrayDeque arrayDeque = (ArrayDeque) hVar.b;
+                        if (z4 == 1) {
                             arrayDeque.pop();
-                        } else if (M > 1) {
+                        } else if (z4 > 1) {
                             arrayDeque.pop();
-                            arrayDeque.push(Long.valueOf(M - 1));
-                        } else if (M == -4) {
+                            arrayDeque.push(Long.valueOf(z4 - 1));
+                        } else if (z4 == -4) {
                             arrayDeque.pop();
                             arrayDeque.push(-5L);
-                        } else if (M == -5) {
+                        } else if (z4 == -5) {
                             arrayDeque.pop();
                             arrayDeque.push(-4L);
                         }
                     }
                 } else if (i1Var.b == 31) {
-                    long M2 = iVar.M();
-                    if (M2 >= 0) {
-                        throw new IOException(android.support.v4.media.a.n(M2, "expected indefinite length scope but found "));
+                    long z10 = hVar.z();
+                    if (z10 >= 0) {
+                        throw new IOException(android.support.v4.media.a.n(z10, "expected indefinite length scope but found "));
                     }
-                    if (M2 == -5) {
+                    if (z10 == -5) {
                         throw new IOException("expected a value for dangling key in indefinite-length map");
                     }
-                    ((ArrayDeque) iVar.b).pop();
+                    ((ArrayDeque) hVar.b).pop();
                 }
             }
-            long M3 = iVar.M();
-            if (M3 == -1) {
-                j10 = M3;
+            long z11 = hVar.z();
+            if (z11 == -1) {
+                j10 = z11;
             }
             throw new IOException(android.support.v4.media.a.n(j10, "expected non-string scope but found "));
         }
@@ -185,7 +184,7 @@ public final class j1 implements Closeable {
     public final void g() {
         d();
         if (this.b.b == 31) {
-            throw new IllegalStateException(a2.j(this.b.b, "expected definite length but found "));
+            throw new IllegalStateException(l.d.j(this.b.b, "expected definite length but found "));
         }
     }
 

@@ -8,10 +8,10 @@ import android.os.RemoteException;
 import android.util.Log;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-import org.telegram.ui.yy;
+import org.telegram.ui.zy;
 import q5.g0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a;
@@ -56,7 +56,7 @@ public final /* synthetic */ class g implements Runnable {
                     }
                     j jVar = (j) iVar.d.poll();
                     iVar.e.put(jVar.a, jVar);
-                    ((ScheduledExecutorService) iVar.f.c).schedule(new yy(iVar, jVar, false, 13), 30L, TimeUnit.SECONDS);
+                    ((ScheduledExecutorService) iVar.f.c).schedule(new zy(iVar, jVar, false, 12), 30L, TimeUnit.SECONDS);
                     if (Log.isLoggable("MessengerIpcClient", 3)) {
                         Log.d("MessengerIpcClient", "Sending ".concat(String.valueOf(jVar)));
                     }
@@ -87,8 +87,8 @@ public final /* synthetic */ class g implements Runnable {
                             messenger3.getClass();
                             messenger3.send(obtain);
                         }
-                    } catch (RemoteException e) {
-                        iVar.a(e.getMessage());
+                    } catch (RemoteException e6) {
+                        iVar.a(e6.getMessage());
                     }
                 } finally {
                 }

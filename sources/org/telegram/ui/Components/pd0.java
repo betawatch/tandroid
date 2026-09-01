@@ -1,193 +1,235 @@
 package org.telegram.ui.Components;
 
 import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
-import android.graphics.Point;
-import android.util.Property;
 import android.view.View;
-import android.view.ViewTreeObserver;
-import android.view.animation.DecelerateInterpolator;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
+import android.view.ViewGroup;
+import android.widget.HorizontalScrollView;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class pd0 implements ViewTreeObserver.OnGlobalLayoutListener {
+public final class pd0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Runnable c;
-    public final /* synthetic */ vd0 d;
+    public final /* synthetic */ Object b;
 
-    public pd0(vd0 vd0Var, int i10, int i11, Runnable runnable) {
-        this.d = vd0Var;
+    public /* synthetic */ pd0(Object obj, int i10) {
         this.a = i10;
-        this.b = i11;
-        this.c = runnable;
+        this.b = obj;
     }
 
-    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
-    public final void onGlobalLayout() {
-        float f10;
-        int dp;
-        int[] iArr;
-        sd0 sd0Var;
-        int i10;
-        AnimatorSet animatorSet;
-        vd0 vd0Var = this.d;
-        int[] iArr2 = vd0Var.T;
-        vd0Var.setAlpha(1.0f);
-        vd0Var.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-        jj0 jj0Var = vd0Var.F;
-        jj0Var.getAnimatedDrawable().L(0, false, false);
-        jj0Var.getAnimatedDrawable().N(37);
-        jj0Var.d();
-        vd0Var.m(true);
-        AndroidUtilities.runOnUIThread(new cc0(this, 4), 350L);
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        ArrayList arrayList = new ArrayList();
-        Point point = AndroidUtilities.displaySize;
-        int i11 = point.x;
-        int i12 = point.y + AndroidUtilities.statusBarHeight;
-        int i13 = this.a;
-        int i14 = i11 - i13;
-        int i15 = i14 * i14;
-        int i16 = this.b;
-        int i17 = i12 - i16;
-        int i18 = i17 * i17;
-        double sqrt = Math.sqrt(i18 + i15);
-        int i19 = i13 * i13;
-        double sqrt2 = Math.sqrt(i18 + i19);
-        int i20 = i16 * i16;
-        char c3 = 0;
-        final double max = Math.max(Math.max(Math.max(sqrt, sqrt2), Math.sqrt(i19 + i20)), Math.sqrt(i20 + i15));
-        ArrayList arrayList2 = vd0Var.L;
-        arrayList2.clear();
-        dh.d dVar = vd0Var.e;
-        int childCount = dVar.getChildCount();
-        int i21 = 0;
-        while (i21 < childCount) {
-            View childAt = dVar.getChildAt(i21);
-            childAt.setScaleX(0.7f);
-            childAt.setScaleY(0.7f);
-            childAt.setAlpha(0.0f);
-            sd0 sd0Var2 = new sd0();
-            childAt.getLocationInWindow(iArr2);
-            int measuredWidth = i13 - ((childAt.getMeasuredWidth() / 2) + iArr2[c3]);
-            int measuredHeight = i16 - ((childAt.getMeasuredHeight() / 2) + iArr2[1]);
-            int i22 = (measuredHeight * measuredHeight) + (measuredWidth * measuredWidth);
-            int i23 = i11;
-            sd0Var2.b = ((float) Math.sqrt(i22)) - AndroidUtilities.dp(40.0f);
-            if (i21 != -1) {
-                animatorSet = new AnimatorSet();
-                Property property = View.SCALE_X;
-                iArr = iArr2;
-                float[] fArr = new float[1];
-                fArr[c3] = 1.0f;
-                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(childAt, (Property<View, Float>) property, fArr);
-                Property property2 = View.SCALE_Y;
-                float[] fArr2 = new float[1];
-                fArr2[c3] = 1.0f;
-                ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(childAt, (Property<View, Float>) property2, fArr2);
-                Animator[] animatorArr = new Animator[2];
-                animatorArr[c3] = ofFloat;
-                animatorArr[1] = ofFloat2;
-                sd0Var = sd0Var2;
-                animatorSet.playTogether(animatorArr);
-                i10 = i16;
-                animatorSet.setDuration(140L);
-                animatorSet.setInterpolator(new DecelerateInterpolator());
-            } else {
-                iArr = iArr2;
-                sd0Var = sd0Var2;
-                i10 = i16;
-                animatorSet = null;
-            }
-            AnimatorSet animatorSet3 = new AnimatorSet();
-            sd0Var.a = animatorSet3;
-            Property property3 = View.SCALE_X;
-            float f11 = i21 == -1 ? 0.9f : 0.6f;
-            float f12 = i21 == -1 ? 1.0f : 1.04f;
-            dh.d dVar2 = dVar;
-            float[] fArr3 = new float[2];
-            fArr3[c3] = f11;
-            fArr3[1] = f12;
-            ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(childAt, (Property<View, Float>) property3, fArr3);
-            Property property4 = View.SCALE_Y;
-            float f13 = i21 != -1 ? 0.6f : 0.9f;
-            float f14 = i21 == -1 ? 1.0f : 1.04f;
-            float[] fArr4 = new float[2];
-            fArr4[c3] = f13;
-            fArr4[1] = f14;
-            ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(childAt, (Property<View, Float>) property4, fArr4);
-            ObjectAnimator ofFloat5 = ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f);
-            Animator[] animatorArr2 = new Animator[3];
-            animatorArr2[c3] = ofFloat3;
-            animatorArr2[1] = ofFloat4;
-            animatorArr2[2] = ofFloat5;
-            animatorSet3.playTogether(animatorArr2);
-            sd0Var.a.addListener(new nd0(animatorSet, 0));
-            sd0Var.a.setDuration(i21 == -1 ? 232L : 200L);
-            sd0Var.a.setInterpolator(new DecelerateInterpolator());
-            arrayList2.add(sd0Var);
-            i21++;
-            i16 = i10;
-            iArr2 = iArr;
-            i11 = i23;
-            dVar = dVar2;
-            c3 = 0;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 2:
+                ((xg0) this.b).h = null;
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
         }
-        int i24 = i11;
-        int i25 = i16;
-        arrayList.add(ObjectAnimator.ofFloat(vd0Var.v, (Property<ah.d, Float>) View.ALPHA, 0.0f, 1.0f));
-        ValueAnimator ofFloat6 = ValueAnimator.ofFloat(0.0f, 1.0f);
-        arrayList.add(ofFloat6);
-        ofFloat6.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.md0
-            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                vd0 vd0Var2 = pd0.this.d;
-                double animatedFraction = max * valueAnimator.getAnimatedFraction();
-                int i26 = 0;
-                while (true) {
-                    ArrayList arrayList3 = vd0Var2.L;
-                    if (i26 >= arrayList3.size()) {
-                        return;
-                    }
-                    sd0 sd0Var3 = (sd0) arrayList3.get(i26);
-                    if (sd0Var3.b <= animatedFraction) {
-                        sd0Var3.a.start();
-                        arrayList3.remove(i26);
-                        i26--;
-                    }
-                    i26++;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                AnimatorSet animatorSet = (AnimatorSet) this.b;
+                if (animatorSet != null) {
+                    animatorSet.start();
+                    break;
                 }
-            }
-        });
-        nr nrVar = nr.h;
-        animatorSet2.setInterpolator(nrVar);
-        animatorSet2.setDuration(500L);
-        ValueAnimator ofFloat7 = ValueAnimator.ofFloat(vd0Var.M, 1.0f);
-        ofFloat7.addUpdateListener(new i70(this, 2));
-        ofFloat7.addListener(new od0(this, 0));
-        ofFloat7.setDuration(420L);
-        ofFloat7.setInterpolator(nrVar);
-        arrayList.add(ofFloat7);
-        animatorSet2.playTogether(arrayList);
-        animatorSet2.addListener(new od0(this, 1));
-        animatorSet2.start();
-        AnimatorSet animatorSet4 = new AnimatorSet();
-        animatorSet4.setDuration(332L);
-        if (AndroidUtilities.isTablet() || vd0Var.getContext().getResources().getConfiguration().orientation != 2) {
-            f10 = i24 / 2.0f;
-            dp = AndroidUtilities.dp(29.0f);
-        } else {
-            f10 = (SharedConfig.passcodeType == 0 ? i24 / 2.0f : i24) / 2.0f;
-            dp = AndroidUtilities.dp(30.0f);
+                break;
+            case 1:
+                ye yeVar = (ye) this.b;
+                AnimatorSet animatorSet2 = (AnimatorSet) ((td0) yeVar.c).e;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    ((td0) yeVar.c).e = null;
+                    break;
+                }
+                break;
+            case 2:
+                break;
+            case 3:
+                ch0 ch0Var = (ch0) this.b;
+                ch0Var.f = false;
+                ch0Var.C = null;
+                break;
+            case 4:
+                ((ri0) this.b).b();
+                break;
+            case 5:
+                ((ak0) this.b).h.setVisibility(8);
+                break;
+            case 6:
+                tl0 tl0Var = (tl0) this.b;
+                View view = tl0Var.Z0;
+                if (view != null) {
+                    view.setVisibility(8);
+                }
+                if (tl0Var.b1()) {
+                    tl0Var.invalidate();
+                    break;
+                }
+                break;
+            case 7:
+                qm0 qm0Var = (qm0) this.b;
+                if (qm0Var.s != null) {
+                    qm0Var.j();
+                    qm0Var.s.invalidate();
+                    qm0Var.e.invalidate();
+                    qm0Var.invalidate();
+                    qm0Var.s = null;
+                    break;
+                }
+                break;
+            case 8:
+                ((vm0) this.b).d = false;
+                break;
+            case 9:
+                ((eo0) this.b).J0.setVisibility(8);
+                break;
+            case 10:
+                bp0 bp0Var = (bp0) this.b;
+                if (animator == bp0Var.h) {
+                    bp0Var.h = null;
+                    break;
+                }
+                break;
+            case 11:
+                ((lq0) this.b).e = null;
+                break;
+            case 12:
+                tq0 tq0Var = (tq0) this.b;
+                if (tq0Var.getParent() != null) {
+                    ((ViewGroup) tq0Var.getParent()).removeView(tq0Var);
+                    break;
+                }
+                break;
+            case 13:
+                ts0 ts0Var = (ts0) this.b;
+                View view2 = ts0Var.c;
+                view2.setAlpha(1.0f);
+                f2.w0.x0(view2);
+                ts0Var.a.removeView(view2);
+                break;
+            case 14:
+                gv0 gv0Var = (gv0) this.b;
+                if (gv0Var.f == animator) {
+                    gv0Var.f = null;
+                    break;
+                }
+                break;
+            case 15:
+                yw0 yw0Var = (yw0) this.b;
+                yw0Var.setCategoriesShownT(((Float) yw0Var.m3.getAnimatedValue()).floatValue());
+                yw0Var.m3 = null;
+                break;
+            case 16:
+                yx0 yx0Var = (yx0) this.b;
+                yx0Var.x.setVisibility(8);
+                yx0Var.C.setImageDrawable(null);
+                break;
+            case 17:
+                int i10 = 0;
+                while (true) {
+                    fy0[] fy0VarArr = (fy0[]) this.b;
+                    if (i10 >= fy0VarArr.length) {
+                        break;
+                    } else {
+                        fy0 fy0Var = fy0VarArr[i10];
+                        if (fy0Var != null) {
+                            fy0Var.d = false;
+                        }
+                        i10++;
+                    }
+                }
+            case 18:
+                super.onAnimationEnd(animator);
+                ((gy0) this.b).E = null;
+                break;
+            case 19:
+                ((jy0) this.b).e = false;
+                break;
+            case 20:
+                ((s01) this.b).setVisibility(4);
+                break;
+            case 21:
+                ((b21) this.b).setVisibility(8);
+                break;
+            case 22:
+                oh.b3 b3Var = ((s21) this.b).f;
+                b3Var.setScaleX(1.0f);
+                b3Var.setScaleY(1.0f);
+                b3Var.invalidate();
+                break;
+            case 23:
+                w21 w21Var = (w21) this.b;
+                w21Var.H = 1.0f;
+                w21Var.h.invalidate();
+                break;
+            case 24:
+                ((f51) this.b).I = null;
+                break;
+            case 25:
+                UndoView undoView = (UndoView) this.b;
+                undoView.setVisibility(4);
+                undoView.setScaleX(1.0f);
+                undoView.setScaleY(1.0f);
+                undoView.setAlpha(1.0f);
+                break;
+            case 26:
+                p61 p61Var = (p61) this.b;
+                if (p61Var.a.getTag() == null) {
+                    p61Var.a.setVisibility(4);
+                    break;
+                }
+                break;
+            case 27:
+                super.onAnimationEnd(animator);
+                q61 q61Var = (q61) this.b;
+                q61Var.b = 0.0f;
+                q61Var.setTranslationY(0.0f);
+                q61Var.a = null;
+                break;
+            case 28:
+                l81 l81Var = (l81) this.b;
+                l81Var.G = false;
+                l81Var.setEnabled(true);
+                k81 k81Var = l81Var.y;
+                if (k81Var != null) {
+                    ((oh.h4) k81Var).f0(1.0f);
+                }
+                l81Var.invalidate();
+                break;
+            default:
+                ((f91) this.b).b0 = null;
+                break;
         }
-        animatorSet4.playTogether(ObjectAnimator.ofFloat(jj0Var, (Property<jj0, Float>) View.TRANSLATION_X, i13 - AndroidUtilities.dp(29.0f), f10 - dp), ObjectAnimator.ofFloat(jj0Var, (Property<jj0, Float>) View.TRANSLATION_Y, i25 - AndroidUtilities.dp(29.0f), vd0Var.E), ObjectAnimator.ofFloat(jj0Var, (Property<jj0, Float>) View.SCALE_X, 0.5f, 1.0f), ObjectAnimator.ofFloat(jj0Var, (Property<jj0, Float>) View.SCALE_Y, 0.5f, 1.0f));
-        animatorSet4.setInterpolator(nr.g);
-        animatorSet4.start();
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 8:
+                vm0 vm0Var = (vm0) this.b;
+                vm0Var.d = true;
+                if (vm0Var.getParent() instanceof HorizontalScrollView) {
+                    ((HorizontalScrollView) vm0Var.getParent()).requestDisallowInterceptTouchEvent(false);
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
+        }
+    }
+
+    public pd0(ts0 ts0Var, f2.w0 w0Var) {
+        this.a = 13;
+        this.b = ts0Var;
+    }
+
+    private final void a(Animator animator) {
     }
 }

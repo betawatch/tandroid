@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ed implements Runnable {
     public final /* synthetic */ int a;
@@ -30,11 +30,11 @@ public final /* synthetic */ class ed implements Runnable {
                 xn.c1((xn) this.e, this.b, this.c, this.d);
                 break;
             case 2:
-                sh.n nVar = (sh.n) this.e;
-                org.telegram.ui.Components.z4.v0(nVar, LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity), LocaleController.getString(this.c ? R.string.CommunityMenuRemoveBotFromCommunityConfirm : this.d ? R.string.CommunityMenuRemoveChannelFromCommunityConfirm : R.string.CommunityMenuRemoveGroupFromCommunityConfirm), LocaleController.getString(R.string.Remove), true, new sh.h(nVar, this.b, 0));
+                th.n nVar = (th.n) this.e;
+                org.telegram.ui.Components.z4.v0(nVar, LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity), LocaleController.getString(this.c ? R.string.CommunityMenuRemoveBotFromCommunityConfirm : this.d ? R.string.CommunityMenuRemoveChannelFromCommunityConfirm : R.string.CommunityMenuRemoveGroupFromCommunityConfirm), LocaleController.getString(R.string.Remove), true, new th.h(nVar, this.b, 0));
                 break;
             default:
-                sh.i0.q((sh.i0) this.e, this.c, this.d, this.b);
+                th.i0.q((th.i0) this.e, this.c, this.d, this.b);
                 break;
         }
     }

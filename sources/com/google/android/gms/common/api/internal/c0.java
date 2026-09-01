@@ -4,7 +4,7 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.util.Log;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class c0 extends l0 {
     public final /* synthetic */ int b = 0;
@@ -26,7 +26,7 @@ public final class c0 extends l0 {
         Object obj2 = this.c;
         switch (i10) {
             case 0:
-                ((d0) obj).c.e((y5.a) obj2);
+                ((d0) obj).c.g((y5.a) obj2);
                 break;
             default:
                 g0 g0Var = (g0) obj2;
@@ -39,7 +39,7 @@ public final class c0 extends l0 {
                             g0Var.i();
                             break;
                         } else {
-                            g0Var.e(aVar);
+                            g0Var.g(aVar);
                             break;
                         }
                     } else {
@@ -48,7 +48,7 @@ public final class c0 extends l0 {
                         y5.a aVar2 = wVar.c;
                         if (!aVar2.f()) {
                             Log.wtf("GACConnecting", "Sign-in succeeded with resolve account failure: ".concat(String.valueOf(aVar2)), new Exception());
-                            g0Var.e(aVar2);
+                            g0Var.g(aVar2);
                             break;
                         } else {
                             g0Var.y = true;

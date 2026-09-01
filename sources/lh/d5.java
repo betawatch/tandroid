@@ -1,86 +1,104 @@
 package lh;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.pq;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.q70;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes4.dex */
-public final class d5 extends pq {
-    public final View b;
-    public final Paint c;
-    public final Path d;
-    public final long e;
-    public float f;
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class d5 implements Utilities.Callback5 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ p5 b;
+    public final /* synthetic */ q70 c;
 
-    public d5(ph.d dVar, int i10) {
-        super(dVar);
-        Paint paint = new Paint(1);
-        this.c = paint;
-        Path path = new Path();
-        this.d = path;
-        this.e = System.currentTimeMillis();
-        this.f = 1.0f;
-        this.b = dVar;
-        this.a.setColor(-1);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeJoin(Paint.Join.ROUND);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setColor(i10);
-        path.rewind();
-        path.moveTo(-AndroidUtilities.dpf2(2.91f), AndroidUtilities.dpf2(1.08f));
-        path.lineTo(0.0f, -AndroidUtilities.dpf2(1.08f));
-        path.lineTo(AndroidUtilities.dpf2(2.91f), AndroidUtilities.dpf2(1.08f));
+    public /* synthetic */ d5(p5 p5Var, q70 q70Var, int i10) {
+        this.a = i10;
+        this.b = p5Var;
+        this.c = q70Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int i10 = (int) (this.f * 255.0f);
-        Paint paint = this.a;
-        paint.setAlpha(i10);
-        canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), getBounds().width() / 2.0f, paint);
-        float currentTimeMillis = ((System.currentTimeMillis() - this.e) % 400) / 400.0f;
-        Paint paint2 = this.c;
-        int alpha = paint2.getAlpha();
-        paint2.setAlpha((int) (alpha * this.f));
-        paint2.setStrokeWidth(AndroidUtilities.dpf2(1.33f));
-        canvas.save();
-        canvas.translate(getBounds().centerX(), getBounds().centerY() - (((AndroidUtilities.dpf2(1.166f) * 2.0f) + (AndroidUtilities.dpf2(2.16f) * 3.0f)) / 2.0f));
-        int i11 = 0;
-        while (i11 < 4) {
-            float f10 = i11 == 0 ? 1.0f - currentTimeMillis : i11 == 3 ? currentTimeMillis : 1.0f;
-            paint2.setAlpha((int) (f10 * 255.0f * this.f));
-            canvas.save();
-            float lerp = AndroidUtilities.lerp(0.5f, 1.0f, f10);
-            canvas.scale(lerp, lerp);
-            canvas.drawPath(this.d, paint2);
-            canvas.restore();
-            canvas.translate(0.0f, AndroidUtilities.dpf2(3.3260002f) * f10);
-            i11++;
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        j51 j51Var = (j51) obj;
+        switch (this.a) {
+            case 0:
+                long j10 = ((TL_stars.starGiftAttributeModel) j51Var.G).document.id;
+                b5 b5Var = this.b.c;
+                HashSet hashSet = b5Var.j;
+                HashSet hashSet2 = b5Var.j;
+                if (hashSet.contains(Long.valueOf(j10))) {
+                    hashSet2.remove(Long.valueOf(j10));
+                } else if (hashSet2.isEmpty()) {
+                    ArrayList arrayList = b5Var.f;
+                    int size = arrayList.size();
+                    int i10 = 0;
+                    while (i10 < size) {
+                        Object obj6 = arrayList.get(i10);
+                        i10++;
+                        long j11 = ((TL_stars.starGiftAttributeModel) obj6).document.id;
+                        if (j11 != j10) {
+                            hashSet2.add(Long.valueOf(j11));
+                        }
+                    }
+                } else {
+                    hashSet2.add(Long.valueOf(j10));
+                }
+                b5Var.h();
+                this.c.u();
+                break;
+            case 1:
+                int i11 = ((TL_stars.starGiftAttributeBackdrop) j51Var.G).backdrop_id;
+                b5 b5Var2 = this.b.c;
+                HashSet hashSet3 = b5Var2.k;
+                HashSet hashSet4 = b5Var2.k;
+                if (hashSet3.contains(Integer.valueOf(i11))) {
+                    hashSet4.remove(Integer.valueOf(i11));
+                } else if (hashSet4.isEmpty()) {
+                    ArrayList arrayList2 = b5Var2.g;
+                    int size2 = arrayList2.size();
+                    int i12 = 0;
+                    while (i12 < size2) {
+                        Object obj7 = arrayList2.get(i12);
+                        i12++;
+                        int i13 = ((TL_stars.starGiftAttributeBackdrop) obj7).backdrop_id;
+                        if (i13 != i11) {
+                            hashSet4.add(Integer.valueOf(i13));
+                        }
+                    }
+                } else {
+                    hashSet4.add(Integer.valueOf(i11));
+                }
+                b5Var2.h();
+                this.c.u();
+                break;
+            default:
+                long j12 = ((TL_stars.starGiftAttributePattern) j51Var.G).document.id;
+                b5 b5Var3 = this.b.c;
+                HashSet hashSet5 = b5Var3.l;
+                HashSet hashSet6 = b5Var3.l;
+                if (hashSet5.contains(Long.valueOf(j12))) {
+                    hashSet6.remove(Long.valueOf(j12));
+                } else if (hashSet6.isEmpty()) {
+                    ArrayList arrayList3 = b5Var3.h;
+                    int size3 = arrayList3.size();
+                    int i14 = 0;
+                    while (i14 < size3) {
+                        Object obj8 = arrayList3.get(i14);
+                        i14++;
+                        long j13 = ((TL_stars.starGiftAttributePattern) obj8).document.id;
+                        if (j13 != j12) {
+                            hashSet6.add(Long.valueOf(j13));
+                        }
+                    }
+                } else {
+                    hashSet6.add(Long.valueOf(j12));
+                }
+                b5Var3.h();
+                this.c.u();
+                break;
         }
-        canvas.restore();
-        paint2.setAlpha(alpha);
-        View view = this.b;
-        if (view != null) {
-            view.invalidate();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(18.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(18.0f);
-    }
-
-    @Override // org.telegram.ui.Components.pq, android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.f = i10 / 255.0f;
     }
 }

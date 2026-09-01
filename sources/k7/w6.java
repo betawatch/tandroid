@@ -1,71 +1,70 @@
 package k7;
 
-import android.util.Base64;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.EOFException;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class w6 {
-    public static e4.c a(List list) {
-        ArrayList arrayList = new ArrayList();
-        for (int i10 = 0; i10 < list.size(); i10++) {
-            String str = (String) list.get(i10);
-            int i11 = h5.d0.a;
-            String[] split = str.split("=", 2);
-            if (split.length != 2) {
-                h5.a.K("VorbisUtil", "Failed to parse Vorbis comment: ".concat(str));
-            } else if (split[0].equals("METADATA_BLOCK_PICTURE")) {
-                try {
-                    arrayList.add(h4.a.a(new h5.w(Base64.decode(split[1], 0))));
-                } catch (RuntimeException e) {
-                    h5.a.L("VorbisUtil", "Failed to parse vorbis picture", e);
+    public static e4.c a(r3.l lVar, boolean z4) {
+        j3.q0 q0Var = z4 ? null : j4.i.b;
+        h5.w wVar = new h5.w(10);
+        e4.c cVar = null;
+        int i10 = 0;
+        while (true) {
+            try {
+                lVar.b(0, 10, wVar.a);
+                wVar.F(0);
+                if (wVar.w() != 4801587) {
+                    break;
                 }
-            } else {
-                arrayList.add(new m4.a(split[0], split[1]));
+                wVar.G(3);
+                int t6 = wVar.t();
+                int i11 = t6 + 10;
+                if (cVar == null) {
+                    byte[] bArr = new byte[i11];
+                    System.arraycopy(wVar.a, 0, bArr, 0, 10);
+                    lVar.b(10, t6, bArr);
+                    cVar = new j4.i(q0Var).c(i11, bArr);
+                } else {
+                    lVar.i(t6);
+                }
+                i10 += i11;
+            } catch (EOFException unused) {
             }
         }
-        if (arrayList.isEmpty()) {
+        lVar.r();
+        lVar.i(i10);
+        if (cVar == null || cVar.a.length == 0) {
             return null;
         }
-        return new e4.c(arrayList);
+        return cVar;
     }
 
-    public static o2.o b(h5.w wVar, boolean z4, boolean z10) {
-        if (z4) {
-            c(3, wVar, false);
-        }
-        wVar.s((int) wVar.l(), r8.d.c);
-        long l10 = wVar.l();
-        String[] strArr = new String[(int) l10];
-        for (int i10 = 0; i10 < l10; i10++) {
-            strArr[i10] = wVar.s((int) wVar.l(), r8.d.c);
-        }
-        if (z10 && (wVar.u() & 1) == 0) {
-            throw j3.r1.a("framing bit expected to be set", null);
-        }
-        return new o2.o(strArr, 15);
-    }
-
-    public static boolean c(int i10, h5.w wVar, boolean z4) {
-        if (wVar.a() < 7) {
-            if (z4) {
-                return false;
+    public static q5.g0 b(h5.w wVar) {
+        wVar.G(1);
+        int w10 = wVar.w();
+        long j10 = wVar.b + w10;
+        int i10 = w10 / 18;
+        long[] jArr = new long[i10];
+        long[] jArr2 = new long[i10];
+        int i11 = 0;
+        while (true) {
+            if (i11 >= i10) {
+                break;
             }
-            throw j3.r1.a("too short header: " + wVar.a(), null);
-        }
-        if (wVar.u() != i10) {
-            if (z4) {
-                return false;
+            long o10 = wVar.o();
+            if (o10 == -1) {
+                jArr = Arrays.copyOf(jArr, i11);
+                jArr2 = Arrays.copyOf(jArr2, i11);
+                break;
             }
-            throw j3.r1.a("expected header type " + Integer.toHexString(i10), null);
+            jArr[i11] = o10;
+            jArr2[i11] = wVar.o();
+            wVar.G(2);
+            i11++;
         }
-        if (wVar.u() == 118 && wVar.u() == 111 && wVar.u() == 114 && wVar.u() == 98 && wVar.u() == 105 && wVar.u() == 115) {
-            return true;
-        }
-        if (z4) {
-            return false;
-        }
-        throw j3.r1.a("expected characters 'vorbis'", null);
+        wVar.G((int) (j10 - wVar.b));
+        return new q5.g0(5, jArr, jArr2);
     }
 }

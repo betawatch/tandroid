@@ -1,8 +1,8 @@
 package qd;
 
-import k7.p7;
+import k7.q7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class u {
     public static final /* synthetic */ int a = 0;
@@ -17,7 +17,7 @@ public abstract class u {
         try {
             a2 = wc.a.class.getCanonicalName();
         } catch (Throwable th2) {
-            a2 = p7.a(th2);
+            a2 = q7.a(th2);
         }
         if (sc.f.a(a2) != null) {
             a2 = "kotlin.coroutines.jvm.internal.BaseContinuationImpl";
@@ -25,7 +25,7 @@ public abstract class u {
         try {
             a10 = u.class.getCanonicalName();
         } catch (Throwable th3) {
-            a10 = p7.a(th3);
+            a10 = q7.a(th3);
         }
         if (sc.f.a(a10) != null) {
             a10 = "kotlinx.coroutines.internal.StackTraceRecoveryKt";

@@ -1,81 +1,105 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.view.View;
+import android.widget.TextView;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ql0 implements org.telegram.ui.ActionBar.c2, xt, rm0 {
+public final /* synthetic */ class ql0 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ dn0 b;
+    public final /* synthetic */ fn0 b;
 
-    public /* synthetic */ ql0(dn0 dn0Var, int i10) {
+    public /* synthetic */ ql0(fn0 fn0Var, int i10) {
         this.a = i10;
-        this.b = dn0Var;
+        this.b = fn0Var;
     }
 
-    @Override // org.telegram.ui.rm0
-    public void D(String str, String str2) {
-        this.b.x1();
-    }
-
-    @Override // org.telegram.ui.xt
-    public void b1(st stVar) {
-        switch (this.a) {
-            case 2:
-                dn0 dn0Var = this.b;
-                dn0Var.V[5].setText(stVar.a);
-                dn0Var.s = stVar.d;
-                break;
-            default:
-                dn0 dn0Var2 = this.b;
-                dn0Var2.V[0].setText(stVar.a);
-                if (dn0Var2.R0.indexOf(stVar.a) != -1) {
-                    dn0Var2.W0 = true;
-                    String str = (String) dn0Var2.S0.get(stVar.a);
-                    dn0Var2.V[1].setText(str);
-                    String str2 = (String) dn0Var2.U0.get(str);
-                    dn0Var2.V[2].setHintText(str2 != null ? str2.replace('X', (char) 8211) : null);
-                    dn0Var2.W0 = false;
-                }
-                AndroidUtilities.runOnUIThread(new nl0(dn0Var2, 3), 300L);
-                dn0Var2.V[2].requestFocus();
-                EditTextBoldCursor editTextBoldCursor = dn0Var2.V[2];
-                editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.c2
-    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                dn0 dn0Var = this.b;
-                dn0Var.getClass();
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-                    dn0Var.getParentActivity().startActivity(intent);
-                    break;
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    return;
-                }
+                fn0 fn0Var = this.b;
+                fn0Var.P0 = 2;
+                fn0Var.D1();
+                break;
             case 1:
-                this.b.finishFragment();
+                this.b.d1();
                 break;
             case 2:
+                fn0 fn0Var2 = this.b;
+                fn0Var2.P0 = 3;
+                fn0Var2.D1();
+                break;
             case 3:
-            default:
-                dn0.a0(this.b);
+                fn0 fn0Var3 = this.b;
+                fn0Var3.P0 = 1;
+                fn0Var3.D1();
                 break;
             case 4:
-                af.g.s(r3.getParentActivity(), "https://telegram.org/deactivate?phone=" + UserConfig.getInstance(this.b.currentAccount).getClientPhone());
+                fn0 fn0Var4 = this.b;
+                fn0Var4.P0 = 4;
+                fn0Var4.D1();
+                break;
+            case 5:
+                fn0.e0(this.b);
+                break;
+            case 6:
+                fn0 fn0Var5 = this.b;
+                fn0Var5.f = true;
+                fn0Var5.I.callOnClick();
+                fn0Var5.f = false;
+                break;
+            case 7:
+                fn0 fn0Var6 = this.b;
+                fn0Var6.P0 = 0;
+                fn0Var6.D1();
+                break;
+            case 8:
+                fn0 fn0Var7 = this.b;
+                fn0Var7.P0 = 4;
+                fn0Var7.D1();
+                break;
+            case 9:
+                this.b.d1();
+                break;
+            case 10:
+                fn0.b0(this.b);
+                break;
+            case 11:
+                fn0.c0(this.b);
+                break;
+            case 12:
+                this.b.C1();
+                break;
+            case 13:
+                fn0 fn0Var8 = this.b;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(fn0Var8.getParentActivity());
+                alertDialog$Builder.a.O = LocaleController.getString(R.string.TelegramPassportDeleteTitle);
+                alertDialog$Builder.a.Q = LocaleController.getString(R.string.TelegramPassportDeleteAlert);
+                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new sl0(fn0Var8, 5));
+                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+                org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
+                fn0Var8.showDialog(d2Var);
+                TextView textView = (TextView) d2Var.d(-1);
+                if (textView != null) {
+                    textView.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.q7, false));
+                    break;
+                }
+                break;
+            case 14:
+                this.b.C1();
+                break;
+            case 15:
+                fn0.V(this.b);
+                break;
+            default:
+                fn0 fn0Var9 = this.b;
+                fn0Var9.f = true;
+                fn0Var9.I.callOnClick();
+                fn0Var9.f = false;
                 break;
         }
     }

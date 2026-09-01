@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.sharetarget.ShortcutInfoCompatSaverImpl;
 import com.google.android.gms.common.data.DataHolder;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import f2.l1;
-import f2.t0;
+import f2.m1;
+import f2.u0;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -29,14 +29,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.r8;
-import org.telegram.ui.jr;
-import org.telegram.ui.lr;
+import org.telegram.ui.kr;
+import org.telegram.ui.mr;
 import org.telegram.ui.nm;
-import org.telegram.ui.pr;
+import org.telegram.ui.qr;
 import org.telegram.ui.xn;
 import org.xmlpull.v1.XmlSerializer;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class k implements Runnable {
     public final /* synthetic */ int a;
@@ -132,7 +132,7 @@ public final class k implements Runnable {
                 if (a0Var.e == null) {
                     a0Var.e = new x();
                 }
-                a0Var.e.c((v) this.b);
+                a0Var.e.d((v) this.b);
                 return;
             case 1:
                 ReferenceQueue referenceQueue = (ReferenceQueue) this.b;
@@ -153,11 +153,11 @@ public final class k implements Runnable {
                 try {
                     taskCompletionSource.setResult(callable.call());
                     return;
-                } catch (ya.a e) {
-                    taskCompletionSource.setException(e);
+                } catch (ya.a e6) {
+                    taskCompletionSource.setException(e6);
                     return;
-                } catch (Exception e6) {
-                    taskCompletionSource.setException(new ya.a("Internal error has occurred when executing ML Kit tasks", e6));
+                } catch (Exception e10) {
+                    taskCompletionSource.setException(new ya.a("Internal error has occurred when executing ML Kit tasks", e10));
                     return;
                 }
             case 3:
@@ -184,16 +184,16 @@ public final class k implements Runnable {
                 } finally {
                 }
             case 5:
-                ((com.google.android.gms.internal.cast.p) this.b).L0((c2.v) this.c);
+                ((com.google.android.gms.internal.cast.o) this.b).L0((c2.v) this.c);
                 return;
             case 6:
                 try {
                     a();
                     return;
-                } catch (Error e10) {
+                } catch (Error e11) {
                     synchronized (((d9.k) this.c).b) {
                         ((d9.k) this.c).c = 1;
-                        throw e10;
+                        throw e11;
                     }
                 }
             case 7:
@@ -213,9 +213,9 @@ public final class k implements Runnable {
                         e0.g.e.invoke(obj2, obj, Boolean.FALSE);
                     }
                     return;
-                } catch (RuntimeException e11) {
-                    if (e11.getClass() == RuntimeException.class && e11.getMessage() != null && e11.getMessage().startsWith("Unable to stop")) {
-                        throw e11;
+                } catch (RuntimeException e12) {
+                    if (e12.getClass() == RuntimeException.class && e12.getMessage() != null && e12.getMessage().startsWith("Unable to stop")) {
+                        throw e12;
                     }
                     return;
                 } catch (Throwable th2) {
@@ -224,24 +224,24 @@ public final class k implements Runnable {
                 }
             case 10:
                 f2.z zVar = (f2.z) this.b;
-                l1 l1Var = zVar.e;
-                f2.e0 e0Var = (f2.e0) this.c;
-                RecyclerView recyclerView = e0Var.E;
-                if (recyclerView == null || !recyclerView.D || zVar.v || l1Var.b() == -1) {
+                m1 m1Var = zVar.e;
+                f2.f0 f0Var = (f2.f0) this.c;
+                RecyclerView recyclerView = f0Var.E;
+                if (recyclerView == null || !recyclerView.D || zVar.v || m1Var.b() == -1) {
                     return;
                 }
-                t0 itemAnimator = e0Var.E.getItemAnimator();
+                u0 itemAnimator = f0Var.E.getItemAnimator();
                 if (itemAnimator == null || !itemAnimator.k()) {
-                    ArrayList arrayList = e0Var.C;
+                    ArrayList arrayList = f0Var.C;
                     int size = arrayList.size();
                     for (int i11 = 0; i11 < size; i11++) {
                         if (((f2.z) arrayList.get(i11)).w) {
                         }
                     }
-                    e0Var.x.q(l1Var);
+                    f0Var.x.q(m1Var);
                     return;
                 }
-                e0Var.E.post(this);
+                f0Var.E.post(this);
                 return;
             case 11:
                 ShortcutInfoCompatSaverImpl shortcutInfoCompatSaverImpl = (ShortcutInfoCompatSaverImpl) this.c;
@@ -279,13 +279,13 @@ public final class k implements Runnable {
                         }
                         try {
                             fileOutputStream.close();
-                        } catch (IOException e12) {
-                            Log.e("AtomicFile", "Failed to close file output stream", e12);
+                        } catch (IOException e13) {
+                            Log.e("AtomicFile", "Failed to close file output stream", e13);
                         }
                         w0.B(file2, file);
                         return;
-                    } catch (Exception e13) {
-                        e = e13;
+                    } catch (Exception e14) {
+                        e = e14;
                         Exception exc = e;
                         Log.e("ShortcutInfoCompatSaver", "Failed to write to file " + file, exc);
                         if (fileOutputStream != null) {
@@ -296,8 +296,8 @@ public final class k implements Runnable {
                             }
                             try {
                                 fileOutputStream.close();
-                            } catch (IOException e14) {
-                                Log.e("AtomicFile", "Failed to close file output stream", e14);
+                            } catch (IOException e15) {
+                                Log.e("AtomicFile", "Failed to close file output stream", e15);
                             }
                             if (!file2.delete()) {
                                 Log.e("AtomicFile", "Failed to delete new file " + file2);
@@ -305,8 +305,8 @@ public final class k implements Runnable {
                         }
                         throw new RuntimeException("Failed to write to file " + file, exc);
                     }
-                } catch (Exception e15) {
-                    e = e15;
+                } catch (Exception e16) {
+                    e = e16;
                     fileOutputStream = null;
                 }
             case 12:
@@ -315,8 +315,8 @@ public final class k implements Runnable {
                     ((c0.l) this.b).get();
                     lVar.k(null);
                     return;
-                } catch (Exception e16) {
-                    lVar.l(e16);
+                } catch (Exception e17) {
+                    lVar.l(e17);
                     return;
                 }
             case 13:
@@ -328,8 +328,8 @@ public final class k implements Runnable {
                     fVar.putAll(h2.d.c(shortcutInfoCompatSaverImpl2.f, shortcutInfoCompatSaverImpl2.a));
                     shortcutInfoCompatSaverImpl2.e(new ArrayList(fVar.values()));
                     return;
-                } catch (Exception e17) {
-                    Log.w("ShortcutInfoCompatSaver", "ShortcutInfoCompatSaver started with an exceptions ", e17);
+                } catch (Exception e18) {
+                    Log.w("ShortcutInfoCompatSaver", "ShortcutInfoCompatSaver started with an exceptions ", e18);
                     return;
                 }
             case 14:
@@ -351,8 +351,8 @@ public final class k implements Runnable {
                     ((Runnable) this.c).run();
                     ((c0.l) this.b).k(null);
                     return;
-                } catch (Exception e18) {
-                    ((c0.l) this.b).l(e18);
+                } catch (Exception e19) {
+                    ((c0.l) this.b).l(e19);
                     return;
                 }
             case 16:
@@ -404,9 +404,9 @@ public final class k implements Runnable {
                 ((ld.m) this.b).D((md.d) this.c);
                 return;
             case 26:
-                o5.i iVar = (o5.i) this.b;
+                y5.h hVar = (y5.h) this.b;
                 Typeface typeface = (Typeface) this.c;
-                h5.b0 b0Var = (h5.b0) iVar.b;
+                h5.b0 b0Var = (h5.b0) hVar.b;
                 if (b0Var != null) {
                     b0Var.e(typeface);
                     return;
@@ -427,8 +427,8 @@ public final class k implements Runnable {
                 r8 r8Var = (r8) this.b;
                 boolean z10 = r8Var.d.h;
                 r8Var.setChecked(!z10);
-                pr prVar = ((lr) this.c).d;
-                TLRPC.TL_chatBannedRights tL_chatBannedRights = prVar.B;
+                qr qrVar = ((mr) this.c).d;
+                TLRPC.TL_chatBannedRights tL_chatBannedRights = qrVar.B;
                 tL_chatBannedRights.send_media = z10;
                 tL_chatBannedRights.send_gifs = z10;
                 tL_chatBannedRights.send_inline = z10;
@@ -443,10 +443,10 @@ public final class k implements Runnable {
                 tL_chatBannedRights.embed_links = z10;
                 tL_chatBannedRights.send_polls = z10;
                 tL_chatBannedRights.send_reactions = z10;
-                AndroidUtilities.updateVisibleRows(prVar.c);
-                jr w02 = prVar.w0();
-                prVar.B0();
-                prVar.A0(w02);
+                AndroidUtilities.updateVisibleRows(qrVar.c);
+                kr w02 = qrVar.w0();
+                qrVar.B0();
+                qrVar.A0(w02);
                 return;
         }
     }
@@ -479,9 +479,9 @@ public final class k implements Runnable {
         this.c = kVar;
     }
 
-    public k(f2.e0 e0Var, f2.z zVar, int i10) {
+    public k(f2.f0 f0Var, f2.z zVar, int i10) {
         this.a = 10;
-        this.c = e0Var;
+        this.c = f0Var;
         this.b = zVar;
     }
 }

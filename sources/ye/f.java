@@ -2,9 +2,9 @@ package ye;
 
 import j3.u1;
 import java.io.EOFException;
-import ph.j5;
+import org.telegram.ui.Components.ai;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class f {
     public final /* synthetic */ int a = 1;
@@ -21,17 +21,17 @@ public final class f {
         byte b11;
         ze.a aVar = (ze.a) mVar.b;
         long j10 = aVar.b;
-        j5 j5Var = (j5) mVar.d;
+        ai aiVar = (ai) mVar.d;
         h hVar = (h) mVar.c;
         int i10 = hVar.a;
         int i11 = hVar.a;
         byte b12 = 2;
         if (i10 == 2) {
-            j5Var.getClass();
+            aiVar.getClass();
             byte[] bArr = new byte[3];
             int i12 = 0;
             while (i12 < 3) {
-                int read = ((com.google.firebase.messaging.d) j5Var.b).read(bArr, i12, 3 - i12);
+                int read = ((com.google.firebase.messaging.d) aiVar.b).read(bArr, i12, 3 - i12);
                 if (read <= 0) {
                     throw new EOFException();
                 }
@@ -39,11 +39,11 @@ public final class f {
             }
             this.h = new String(bArr, "ISO-8859-1");
         } else {
-            j5Var.getClass();
+            aiVar.getClass();
             byte[] bArr2 = new byte[4];
             int i13 = 0;
             while (i13 < 4) {
-                int read2 = ((com.google.firebase.messaging.d) j5Var.b).read(bArr2, i13, 4 - i13);
+                int read2 = ((com.google.firebase.messaging.d) aiVar.b).read(bArr2, i13, 4 - i13);
                 if (read2 <= 0) {
                     throw new EOFException();
                 }
@@ -53,15 +53,15 @@ public final class f {
         }
         byte b13 = 8;
         if (i11 == 2) {
-            this.e = ((j5Var.h0() & 255) << 16) | ((j5Var.h0() & 255) << 8) | (j5Var.h0() & 255);
+            this.e = ((aiVar.S() & 255) << 16) | ((aiVar.S() & 255) << 8) | (aiVar.S() & 255);
         } else if (i11 == 3) {
-            this.e = j5Var.i0();
+            this.e = aiVar.Y();
         } else {
-            this.e = j5Var.j0();
+            this.e = aiVar.Z();
         }
         if (i11 > 2) {
-            j5Var.h0();
-            byte h02 = j5Var.h0();
+            aiVar.S();
+            byte S = aiVar.S();
             byte b14 = 64;
             if (i11 == 3) {
                 b13 = 128;
@@ -73,35 +73,35 @@ public final class f {
                 b10 = 64;
                 b11 = 1;
             }
-            boolean z4 = (b13 & h02) != 0;
+            boolean z4 = (b13 & S) != 0;
             this.d = z4;
-            this.b = (b12 & h02) != 0;
-            boolean z10 = (h02 & b14) != 0;
+            this.b = (b12 & S) != 0;
+            boolean z10 = (S & b14) != 0;
             this.f = z10;
             if (i11 == 3) {
                 if (z4) {
-                    this.g = j5Var.i0();
+                    this.g = aiVar.Y();
                     this.e -= 4;
                 }
                 if (z10) {
-                    j5Var.h0();
+                    aiVar.S();
                     this.e--;
                 }
-                if ((h02 & b10) != 0) {
-                    j5Var.h0();
+                if ((S & b10) != 0) {
+                    aiVar.S();
                     this.e--;
                 }
             } else {
-                if ((h02 & b10) != 0) {
-                    j5Var.h0();
+                if ((S & b10) != 0) {
+                    aiVar.S();
                     this.e--;
                 }
                 if (z10) {
-                    j5Var.h0();
+                    aiVar.S();
                     this.e--;
                 }
-                if ((h02 & b11) != 0) {
-                    this.g = j5Var.j0();
+                if ((S & b11) != 0) {
+                    this.g = aiVar.Z();
                     this.e -= 4;
                 }
             }

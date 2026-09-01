@@ -3,7 +3,7 @@ package j3;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class c1 implements g {
     public static final c1 h;
@@ -13,7 +13,7 @@ public final class c1 implements g {
     public static final String v;
     public static final String w;
     public static final String x;
-    public static final f0.d y;
+    public static final f5.u y;
     public final String a;
     public final y0 b;
     public final x0 c;
@@ -35,7 +35,7 @@ public final class c1 implements g {
         v = Integer.toString(3, 36);
         w = Integer.toString(4, 36);
         x = Integer.toString(5, 36);
-        y = new f0.d(29);
+        y = new f5.u(29);
     }
 
     public c1(String str, u0 u0Var, y0 y0Var, x0 x0Var, e1 e1Var, z0 z0Var) {

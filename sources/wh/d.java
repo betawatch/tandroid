@@ -1,39 +1,30 @@
 package wh;
 
-import android.animation.ValueAnimator;
-import o4.h0;
-import org.telegram.ui.Cells.u0;
-import org.telegram.ui.Cells.v0;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
 
-    public /* synthetic */ d(int i10, Object obj, Object obj2) {
+    public /* synthetic */ d(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, long j10, int i10) {
         this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+        this.c = notificationCenterDelegate;
+        this.b = j10;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                u0 u0Var = (u0) this.b;
-                v0 v0Var = (v0) this.c;
-                u0Var.c = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                v0Var.invalidate();
+                q qVar = (q) this.c;
+                org.telegram.ui.Components.z4.M(qVar.b.c0.getParentActivity(), this.b, new oh.h4(qVar, 25), qVar.a);
                 break;
             default:
-                h0 h0Var = (h0) this.b;
-                rh.e eVar = (rh.e) this.c;
-                h0Var.getClass();
-                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                h0Var.b = intValue;
-                eVar.c(intValue);
+                z1 z1Var = (z1) this.c;
+                org.telegram.ui.Components.z4.M(z1Var.getParentActivity(), this.b, new org.telegram.ui.web.e0(z1Var, 20), z1Var.getResourceProvider());
                 break;
         }
     }

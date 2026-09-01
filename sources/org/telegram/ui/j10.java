@@ -4,14 +4,14 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class j10 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ vq b;
+    public final /* synthetic */ wq b;
 
-    public j10(vq vqVar) {
-        this.b = vqVar;
+    public j10(wq wqVar) {
+        this.b = wqVar;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -21,16 +21,16 @@ public final class j10 extends AnimatorListenerAdapter {
                 ((t10) this.b.d).i0.unlock();
                 break;
             default:
-                vq vqVar = this.b;
-                View view = vqVar.b;
+                wq wqVar = this.b;
+                View view = wqVar.b;
                 view.setAlpha(1.0f);
-                f2.v0.x0(view);
-                ((t10) vqVar.d).b.removeView(view);
+                f2.w0.x0(view);
+                ((t10) wqVar.d).b.removeView(view);
                 break;
         }
     }
 
-    public j10(vq vqVar, f2.v0 v0Var) {
-        this.b = vqVar;
+    public j10(wq wqVar, f2.w0 w0Var) {
+        this.b = wqVar;
     }
 }

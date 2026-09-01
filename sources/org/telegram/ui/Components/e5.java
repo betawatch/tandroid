@@ -16,7 +16,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e5 implements Runnable {
     public final /* synthetic */ int a;
@@ -59,8 +59,8 @@ public final /* synthetic */ class e5 implements Runnable {
                                     arrayList2.add(TLdeserialize);
                                     hashSet.remove(Long.valueOf(TLdeserialize.id));
                                 }
-                            } catch (Exception e) {
-                                FileLog.e(e);
+                            } catch (Exception e6) {
+                                FileLog.e(e6);
                             }
                             if (byteBufferValue != null) {
                                 byteBufferValue.reuse();
@@ -79,8 +79,8 @@ public final /* synthetic */ class e5 implements Runnable {
                         }
                         queryFinalized.dispose();
                         break;
-                    } catch (SQLiteException e6) {
-                        messagesStorage.checkSQLException(e6);
+                    } catch (SQLiteException e10) {
+                        messagesStorage.checkSQLException(e10);
                         return;
                     }
                 }
@@ -95,8 +95,8 @@ public final /* synthetic */ class e5 implements Runnable {
                             NativeByteBuffer nativeByteBuffer2 = null;
                             try {
                                 nativeByteBuffer = new NativeByteBuffer(document.getObjectSize());
-                            } catch (Exception e10) {
-                                e = e10;
+                            } catch (Exception e11) {
+                                e = e11;
                             }
                             try {
                                 document.serializeToStream(nativeByteBuffer);
@@ -104,8 +104,8 @@ public final /* synthetic */ class e5 implements Runnable {
                                 executeFast.bindLong(1, document.id);
                                 executeFast.bindByteBuffer(2, nativeByteBuffer);
                                 executeFast.step();
-                            } catch (Exception e11) {
-                                e = e11;
+                            } catch (Exception e12) {
+                                e = e12;
                                 nativeByteBuffer2 = nativeByteBuffer;
                                 e.printStackTrace();
                                 nativeByteBuffer = nativeByteBuffer2;
@@ -119,8 +119,8 @@ public final /* synthetic */ class e5 implements Runnable {
                     }
                     executeFast.dispose();
                     break;
-                } catch (SQLiteException e12) {
-                    FileLog.e(e12);
+                } catch (SQLiteException e13) {
+                    FileLog.e(e13);
                 }
         }
     }

@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class h2 implements Utilities.Callback {
                 ChannelBoostsController.lambda$userCanBoostChannel$2((ChannelBoostsController.CanApplyBoost) this.b, (TL_stories.TL_premium_boostsStatus) this.c, (h5.d) this.d, (TL_stories.TL_premium_myBoosts) obj);
                 break;
             case 2:
-                ((FileRefController) this.b).lambda$requestReferenceFromServer$1((String) this.c, (String) this.d, (nh.c6) obj);
+                ((FileRefController) this.b).lambda$requestReferenceFromServer$1((String) this.c, (String) this.d, (oh.c6) obj);
                 break;
             case 3:
                 MediaDataController.lambda$setPlaceholderImage$31((String) this.b, (org.telegram.ui.Components.p9) this.c, (String) this.d, (TLRPC.TL_messages_stickerSet) obj);

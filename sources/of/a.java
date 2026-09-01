@@ -4,7 +4,7 @@ import cb.b;
 import java.nio.ShortBuffer;
 import z9.d;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public interface a {
     public static final d l = new d(14);
@@ -19,7 +19,7 @@ public interface a {
         p = new b(i10);
     }
 
-    int N1(int i10, int i11, int i12);
+    int S1(int i10, int i11, int i12);
 
-    void U0(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11);
+    void X0(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11);
 }

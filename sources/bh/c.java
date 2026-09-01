@@ -1,41 +1,52 @@
 package bh;
 
 import android.content.Context;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import k7.b6;
+import android.os.Build;
+import lf.q0;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public abstract class c extends FrameLayout {
-    public final LinearLayout a;
-    public float b;
-    public final Rect c;
-    public final Rect d;
-    public final Paint e;
+public final class c extends qh.d implements xd.b {
+    public final xd.a e0;
+    public final g6 f0;
 
-    public c(Context context) {
-        super(context);
-        this.c = new Rect();
-        this.d = new Rect();
-        this.e = new Paint(1);
-        setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.a = linearLayout;
-        linearLayout.setOrientation(0);
-        addView(linearLayout, b6.c(-1.0f, -1));
+    public c(Context context, g6 g6Var) {
+        super(context, g6Var, true);
+        this.e0 = new xd.a(0, this, pr.h, 320L, true);
+        this.f0 = g6Var;
+        e();
+        setOutlineProvider(q0.b);
     }
 
-    public void setLensVisibility(float f10) {
-        this.b = f10;
-        int dp = AndroidUtilities.dp(f10 * 7.0f);
-        Rect rect = this.c;
-        Rect rect2 = this.d;
-        rect2.set(rect);
-        int i10 = -dp;
-        rect2.inset(i10, i10);
+    @Override // xd.b
+    public final void L(int i10, float f10, float f11, xd.c cVar) {
+        g6 g6Var = this.f0;
+        boolean a2 = g6Var != null ? g6Var.a() : k6.I.q();
+        float f12 = this.e0.e;
+        setElevation((1.0f - f12) * AndroidUtilities.dp(1.0f));
+        setColor(i0.a.d(f12, m(k6.d6), m(k6.Oh)));
+        setTextColor(i0.a.d(f12, m(k6.q7), m(k6.Sh)));
+        if (Build.VERSION.SDK_INT >= 28) {
+            if (a2) {
+                setOutlineAmbientShadowColor(553648127);
+                setOutlineSpotShadowColor(553648127);
+            } else {
+                setOutlineAmbientShadowColor(1610612736);
+                setOutlineSpotShadowColor(1610612736);
+            }
+        }
+    }
+
+    public final int m(int i10) {
+        g6 g6Var = this.f0;
+        return g6Var != null ? g6Var.B0(i10) : k6.w0(null, i10, false);
+    }
+
+    @Override // xd.b
+    public final /* synthetic */ void z(float f10, int i10) {
     }
 }

@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import j7.f5;
+import j7.g5;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -17,7 +17,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class l extends c6.a {
     public static final w0 e;
@@ -28,7 +28,7 @@ public final class l extends c6.a {
     public static final Parcelable.Creator<l> CREATOR = new v(11);
 
     static {
-        w0 w0Var = new w0(28);
+        w0 w0Var = new w0(27);
         w0Var.D(4, "com.google.android.gms.cast.metadata.CREATION_DATE", "creationDateTime");
         w0Var.D(4, "com.google.android.gms.cast.metadata.RELEASE_DATE", "releaseDate");
         w0Var.D(4, "com.google.android.gms.cast.metadata.BROADCAST_DATE", "originalAirdate");
@@ -310,13 +310,13 @@ public final class l extends c6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
-        f5.p(parcel, 2, this.a);
-        f5.b(parcel, 3, this.b);
+        int q10 = g5.q(parcel, 20293);
+        g5.p(parcel, 2, this.a);
+        g5.b(parcel, 3, this.b);
         int i11 = this.c;
-        f5.s(parcel, 4, 4);
+        g5.s(parcel, 4, 4);
         parcel.writeInt(i11);
-        f5.r(parcel, q10);
+        g5.r(parcel, q10);
     }
 
     public l(int i10) {

@@ -1,32 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.ProfileActivity;
+import com.google.android.gms.common.api.internal.BasePendingResult;
+import java.util.ArrayDeque;
+import java.util.TimerTask;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class i50 extends Paint {
+public final class i50 extends TimerTask {
     public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i50(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
-        super(1);
+    public /* synthetic */ i50(Object obj, int i10) {
         this.a = i10;
-        this.b = notificationCenterDelegate;
+        this.b = obj;
     }
 
-    @Override // android.graphics.Paint
-    public final void setAlpha(int i10) {
+    @Override // java.util.TimerTask, java.lang.Runnable
+    public final void run() {
+        BasePendingResult basePendingResult;
         switch (this.a) {
             case 0:
-                super.setAlpha(i10);
-                ((x50) this.b).invalidate();
+                AndroidUtilities.runOnUIThread(new xp(this, 24));
+                break;
+            case 1:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.c10(this, 23));
+                break;
+            case 2:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.gl0(this, 5));
+                break;
+            case 3:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.s0(this, 17));
                 break;
             default:
-                super.setAlpha(i10);
-                ((ProfileActivity) this.b).fragmentView.invalidate();
+                s5.c cVar = (s5.c) this.b;
+                ArrayDeque arrayDeque = cVar.h;
+                if (!arrayDeque.isEmpty() && cVar.k == null && cVar.b != 0) {
+                    s5.h hVar = cVar.c;
+                    int[] e6 = u5.a.e(arrayDeque);
+                    hVar.getClass();
+                    b6.m.e("Must be called from the main thread.");
+                    if (hVar.w()) {
+                        s5.j jVar = new s5.j(hVar, e6);
+                        s5.h.x(jVar);
+                        basePendingResult = jVar;
+                    } else {
+                        basePendingResult = s5.h.t();
+                    }
+                    cVar.k = basePendingResult;
+                    basePendingResult.i(new s5.q(cVar, 1));
+                    arrayDeque.clear();
+                    break;
+                }
                 break;
         }
     }

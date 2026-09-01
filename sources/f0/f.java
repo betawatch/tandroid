@@ -1,98 +1,44 @@
 package f0;
 
-import android.app.AppOpsManager;
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.os.Binder;
-import android.os.Build;
-import android.os.Handler;
-import android.os.Process;
-import android.text.TextUtils;
-import com.google.firebase.messaging.p;
-import e0.m0;
-import j$.util.Objects;
-import java.util.concurrent.Executor;
+import android.net.Uri;
+import androidx.core.content.FileProvider;
+import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public abstract class f {
-    public static final Object a = null;
+public final class f {
+    public final String a;
+    public final HashMap b = new HashMap();
 
-    /* JADX WARN: Removed duplicated region for block: B:29:0x007e A[RETURN] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static int a(Context context, String str, int i10, int i11, String str2) {
-        int i12;
-        if (context.checkPermission(str, i10, i11) != -1) {
-            int i13 = Build.VERSION.SDK_INT;
-            String p10 = i13 >= 23 ? e0.b.p(str) : null;
-            if (p10 != null) {
-                if (str2 == null) {
-                    String[] packagesForUid = context.getPackageManager().getPackagesForUid(i11);
-                    if (packagesForUid != null && packagesForUid.length > 0) {
-                        str2 = packagesForUid[0];
-                    }
-                }
-                int myUid = Process.myUid();
-                String packageName = context.getPackageName();
-                int i14 = 1;
-                if (myUid == i11 && Objects.equals(packageName, str2)) {
-                    if (i13 >= 29) {
-                        AppOpsManager c3 = p.c(context);
-                        i12 = c3 == null ? 1 : c3.checkOpNoThrow(p10, Binder.getCallingUid(), str2);
-                        if (i12 == 0) {
-                            String b10 = p.b(context);
-                            if (c3 != null) {
-                                i14 = c3.checkOpNoThrow(p10, i11, b10);
-                            }
-                        }
-                        if (i12 == 0) {
-                            return -2;
-                        }
-                    } else if (i13 >= 23) {
-                        i14 = e0.b.o((AppOpsManager) e0.b.i(context), p10, str2);
-                    }
-                } else if (i13 >= 23) {
-                    i14 = e0.b.o((AppOpsManager) e0.b.i(context), p10, str2);
-                }
-                i12 = i14;
-                if (i12 == 0) {
-                }
+    public f(String str) {
+        this.a = str;
+    }
+
+    public final File a(Uri uri) {
+        String encodedPath = uri.getEncodedPath();
+        int indexOf = encodedPath.indexOf(47, 1);
+        if (indexOf == -1) {
+            throw new IllegalArgumentException("Unable to find path from root: " + uri);
+        }
+        String decode = Uri.decode(encodedPath.substring(1, indexOf));
+        String decode2 = Uri.decode(encodedPath.substring(indexOf + 1));
+        File file = (File) this.b.get(decode);
+        if (file == null) {
+            throw new IllegalArgumentException("Unable to find configured root for " + uri);
+        }
+        File file2 = new File(file, decode2);
+        try {
+            File canonicalFile = file2.getCanonicalFile();
+            String path = canonicalFile.getPath();
+            String path2 = file.getPath();
+            if (FileProvider.a(path).startsWith(FileProvider.a(path2) + '/')) {
+                return canonicalFile;
             }
-            return 0;
+            throw new SecurityException("Resolved path jumped beyond configured root");
+        } catch (IOException unused) {
+            throw new IllegalArgumentException("Failed to resolve canonical path for " + file2);
         }
-        return -1;
-    }
-
-    public static int b(Context context, String str) {
-        if (str != null) {
-            return (Build.VERSION.SDK_INT >= 33 || !TextUtils.equals("android.permission.POST_NOTIFICATIONS", str)) ? context.checkPermission(str, Process.myPid(), Process.myUid()) : new m0(context).a() ? 0 : -1;
-        }
-        throw new NullPointerException("permission must be non-null");
-    }
-
-    public static int c(Context context, int i10) {
-        return Build.VERSION.SDK_INT >= 23 ? a.a(context, i10) : context.getResources().getColor(i10);
-    }
-
-    public static Drawable d(Context context, int i10) {
-        return context.getDrawable(i10);
-    }
-
-    public static Executor e(Context context) {
-        return Build.VERSION.SDK_INT >= 28 ? c.a(context) : new androidx.biometric.p(new Handler(context.getMainLooper()), 3);
-    }
-
-    public static Object f(Context context, Class cls) {
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 23) {
-            return a.b(context, cls);
-        }
-        String c3 = i10 >= 23 ? a.c(context, cls) : (String) e.a.get(cls);
-        if (c3 != null) {
-            return context.getSystemService(c3);
-        }
-        return null;
     }
 }

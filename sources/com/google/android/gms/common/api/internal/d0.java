@@ -8,9 +8,9 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.locks.Lock;
-import m.s3;
+import m.r3;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class d0 implements Runnable {
     public final /* synthetic */ g0 a;
@@ -87,12 +87,12 @@ public final class d0 implements Runnable {
                 g0 g0Var2 = this.c;
                 m0 m0Var2 = g0Var2.a;
                 j0 j0Var = m0Var2.o;
-                s3 s3Var = g0Var2.E;
-                if (s3Var == null) {
+                r3 r3Var = g0Var2.E;
+                if (r3Var == null) {
                     set = Collections.EMPTY_SET;
                 } else {
-                    HashSet hashSet = new HashSet((Set) s3Var.a);
-                    Map map = (Map) s3Var.c;
+                    HashSet hashSet = new HashSet((Set) r3Var.a);
+                    Map map = (Map) r3Var.c;
                     for (com.google.android.gms.common.api.e eVar : map.keySet()) {
                         if (!m0Var2.i.containsKey(eVar.b)) {
                             map.get(eVar).getClass();
@@ -121,9 +121,9 @@ public final class d0 implements Runnable {
                 if (!Thread.interrupted()) {
                     a();
                 }
-            } catch (RuntimeException e) {
+            } catch (RuntimeException e6) {
                 h0 h0Var = g0Var.a.e;
-                h0Var.sendMessage(h0Var.obtainMessage(2, e));
+                h0Var.sendMessage(h0Var.obtainMessage(2, e6));
             }
         } finally {
             lock.unlock();

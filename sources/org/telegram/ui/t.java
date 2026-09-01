@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class t implements Utilities.Callback {
         switch (this.a) {
             case 0:
                 l4 l4Var = this.b;
-                dh.d dVar = l4Var.n0;
+                eh.d dVar = l4Var.n0;
                 float f10 = -((Integer) obj).intValue();
                 l4Var.m0 = f10;
                 dVar.setTranslationY(((1.0f - l4Var.V0) * AndroidUtilities.dp(51.0f)) + f10);
@@ -31,8 +31,8 @@ public final /* synthetic */ class t implements Utilities.Callback {
                 if (!TextUtils.isEmpty(str)) {
                     l4 l4Var2 = this.b;
                     l4Var2.e0.V.setText(str);
-                    lh.n nVar = l4Var2.e0.V;
-                    nVar.setSelection(nVar.getText().length());
+                    mh.m mVar = l4Var2.e0.V;
+                    mVar.setSelection(mVar.getText().length());
                     AndroidUtilities.showKeyboard(l4Var2.e0.V);
                     break;
                 }

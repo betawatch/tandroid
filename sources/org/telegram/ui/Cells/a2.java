@@ -11,31 +11,31 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class a2 extends FrameLayout {
     public final org.telegram.ui.Components.k6 a;
     public final View b;
-    public final org.telegram.ui.ActionBar.f6 c;
+    public final org.telegram.ui.ActionBar.g6 c;
 
-    public a2(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public a2(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
-        this.c = f6Var;
+        this.c = g6Var;
         org.telegram.ui.Components.k6 k6Var = new org.telegram.ui.Components.k6(context, false, false, false);
         this.a = k6Var;
-        int i10 = org.telegram.ui.ActionBar.j6.G6;
-        k6Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
+        int i10 = org.telegram.ui.ActionBar.k6.G6;
+        k6Var.setTextColor(org.telegram.ui.ActionBar.k6.v0(i10, g6Var));
         k6Var.setTextSize(AndroidUtilities.dp(14.0f));
         k6Var.setGravity(LocaleController.isRTL ? 5 : 3);
         k6Var.setImportantForAccessibility(2);
         k6Var.setOnWidthUpdatedListener(new g(this, 2));
-        addView(k6Var, k7.b6.i(-2.0f, -2.0f, 8388627, 21.0f, 0.0f, 38.0f, 3.0f));
+        addView(k6Var, k7.c6.i(-2.0f, -2.0f, 8388627, 21.0f, 0.0f, 38.0f, 3.0f));
         View view = new View(context);
         this.b = view;
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.arrow_more).mutate();
-        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(i10, f6Var), PorterDuff.Mode.MULTIPLY));
+        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.v0(i10, g6Var), PorterDuff.Mode.MULTIPLY));
         view.setBackground(mutate);
-        addView(view, k7.b6.i(14.0f, 14.0f, 8388627, 21.0f, 1.0f, 0.0f, 3.0f));
+        addView(view, k7.c6.i(14.0f, 14.0f, 8388627, 21.0f, 1.0f, 0.0f, 3.0f));
     }
 
     public final void a() {
@@ -56,7 +56,7 @@ public final class a2 extends FrameLayout {
     }
 
     public void setColor(int i10) {
-        int v02 = org.telegram.ui.ActionBar.j6.v0(i10, this.c);
+        int v02 = org.telegram.ui.ActionBar.k6.v0(i10, this.c);
         this.a.setTextColor(v02);
         this.b.getBackground().setColorFilter(new PorterDuffColorFilter(v02, PorterDuff.Mode.MULTIPLY));
     }

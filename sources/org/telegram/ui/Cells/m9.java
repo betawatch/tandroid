@@ -19,10 +19,10 @@ import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public class m9 extends z9 {
-    public f2.i0 E0;
+    public f2.j0 E0;
     public boolean J0;
     public int w0;
     public int z0;
@@ -117,8 +117,8 @@ public class m9 extends z9 {
             this.J0 = false;
             int i10 = this.x0;
             if (i10 >= 0) {
-                f2.i0 i0Var = this.E0;
-                l9 l9Var = i0Var != null ? (l9) i0Var.m(i10) : i10 < this.F.getChildCount() ? (l9) this.F.getChildAt(this.x0) : null;
+                f2.j0 j0Var = this.E0;
+                l9 l9Var = j0Var != null ? (l9) j0Var.m(i10) : i10 < this.F.getChildCount() ? (l9) this.F.getChildAt(this.x0) : null;
                 if (l9Var == null) {
                     this.W = null;
                     return;
@@ -155,8 +155,8 @@ public class m9 extends z9 {
             this.J0 = true;
             int i10 = this.u0;
             if (i10 >= 0) {
-                f2.i0 i0Var = this.E0;
-                l9 l9Var = i0Var != null ? (l9) i0Var.m(i10) : this.x0 < this.F.getChildCount() ? (l9) this.F.getChildAt(this.u0) : null;
+                f2.j0 j0Var = this.E0;
+                l9 l9Var = j0Var != null ? (l9) j0Var.m(i10) : this.x0 < this.F.getChildCount() ? (l9) this.F.getChildAt(this.u0) : null;
                 if (l9Var == null) {
                     this.W = null;
                     return;
@@ -240,9 +240,9 @@ public class m9 extends z9 {
 
     public final void a0(Canvas canvas, l9 l9Var, int i10) {
         x9 x9Var;
-        int i11 = org.telegram.ui.ActionBar.j6.uf;
-        this.o.setColor(org.telegram.ui.ActionBar.j6.v0(i11, this.h0));
-        this.p.setColor(org.telegram.ui.ActionBar.j6.v0(i11, this.h0));
+        int i11 = org.telegram.ui.ActionBar.k6.uf;
+        this.o.setColor(org.telegram.ui.ActionBar.k6.v0(i11, this.h0));
+        this.p.setColor(org.telegram.ui.ActionBar.k6.v0(i11, this.h0));
         int e02 = e0(l9Var);
         if (e02 < 0) {
             return;
@@ -376,11 +376,11 @@ public class m9 extends z9 {
 
     @Override // org.telegram.ui.Cells.z9
     public final boolean d() {
-        f2.i0 i0Var = this.E0;
-        if (i0Var == null) {
+        f2.j0 j0Var = this.E0;
+        if (j0Var == null) {
             return true;
         }
-        int L0 = i0Var.L0();
+        int L0 = j0Var.L0();
         int N0 = this.E0.N0();
         int i10 = this.u0;
         if ((L0 < i10 || L0 > this.x0) && (N0 < i10 || N0 > this.x0)) {
@@ -700,9 +700,9 @@ public class m9 extends z9 {
         g gVar = this.r0;
         AndroidUtilities.cancelRunOnUIThread(gVar);
         AndroidUtilities.runOnUIThread(gVar);
-        k7.x5 x5Var = this.D;
-        if (x5Var != null) {
-            x5Var.a(true);
+        k7.y5 y5Var = this.D;
+        if (y5Var != null) {
+            y5Var.a(true);
         }
     }
 
@@ -744,9 +744,9 @@ public class m9 extends z9 {
         g gVar = this.r0;
         AndroidUtilities.cancelRunOnUIThread(gVar);
         AndroidUtilities.runOnUIThread(gVar);
-        k7.x5 x5Var = this.D;
-        if (x5Var != null) {
-            x5Var.a(true);
+        k7.y5 y5Var = this.D;
+        if (y5Var != null) {
+            y5Var.a(true);
         }
         l9Var.invalidate();
         return true;

@@ -2,15 +2,15 @@ package g6;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import j7.l0;
+import j7.f5;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class c implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public final Object createFromParcel(Parcel parcel) {
-        int z4 = l0.z(parcel);
+        int z4 = f5.z(parcel);
         ArrayList arrayList = null;
         String str = null;
         String str2 = null;
@@ -19,18 +19,18 @@ public final class c implements Parcelable.Creator {
             int readInt = parcel.readInt();
             char c3 = (char) readInt;
             if (c3 == 1) {
-                arrayList = l0.l(parcel, readInt, y5.c.CREATOR);
+                arrayList = f5.l(parcel, readInt, y5.c.CREATOR);
             } else if (c3 == 2) {
-                z10 = l0.n(parcel, readInt);
+                z10 = f5.n(parcel, readInt);
             } else if (c3 == 3) {
-                str = l0.h(parcel, readInt);
+                str = f5.h(parcel, readInt);
             } else if (c3 != 4) {
-                l0.y(parcel, readInt);
+                f5.y(parcel, readInt);
             } else {
-                str2 = l0.h(parcel, readInt);
+                str2 = f5.h(parcel, readInt);
             }
         }
-        l0.m(parcel, z4);
+        f5.m(parcel, z4);
         return new a(arrayList, z10, str, str2);
     }
 

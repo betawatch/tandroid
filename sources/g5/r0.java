@@ -9,9 +9,8 @@ import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
-import vh.v2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class r0 extends g {
     public final Resources a;
@@ -48,8 +47,8 @@ public final class r0 extends g {
                         if (assetFileDescriptor != null) {
                             assetFileDescriptor.close();
                         }
-                    } catch (IOException e) {
-                        throw new q0(null, e, 2000);
+                    } catch (IOException e6) {
+                        throw new q0(null, e6, 2000);
                     }
                 } finally {
                     this.d = null;
@@ -58,8 +57,8 @@ public final class r0 extends g {
                         transferEnded();
                     }
                 }
-            } catch (IOException e6) {
-                throw new q0(null, e6, 2000);
+            } catch (IOException e10) {
+                throw new q0(null, e10, 2000);
             }
         } catch (Throwable th2) {
             this.e = null;
@@ -75,8 +74,8 @@ public final class r0 extends g {
                         transferEnded();
                     }
                     throw th2;
-                } catch (IOException e10) {
-                    throw new q0(null, e10, 2000);
+                } catch (IOException e11) {
+                    throw new q0(null, e11, 2000);
                 }
             } finally {
                 this.d = null;
@@ -129,7 +128,7 @@ public final class r0 extends g {
                         path = path.substring(1);
                     }
                     String host = normalizeScheme.getHost();
-                    parseInt = resources.getIdentifier(android.support.v4.media.a.r(new StringBuilder(), TextUtils.isEmpty(host) ? "" : v2.k(host, ":"), path), "raw", this.b);
+                    parseInt = resources.getIdentifier(android.support.v4.media.a.r(new StringBuilder(), TextUtils.isEmpty(host) ? "" : w.c.e(host, ":"), path), "raw", this.b);
                     if (parseInt == 0) {
                         throw new q0("Resource not found.", null, 2005);
                     }
@@ -176,18 +175,18 @@ public final class r0 extends g {
                         this.h = true;
                         transferStarted(pVar);
                         return j10 != -1 ? j10 : this.f;
-                    } catch (q0 e) {
-                        throw e;
-                    } catch (IOException e6) {
-                        throw new q0(null, e6, 2000);
+                    } catch (q0 e6) {
+                        throw e6;
+                    } catch (IOException e10) {
+                        throw new q0(null, e10, 2000);
                     }
                 }
                 openRawResourceFd = resources.openRawResourceFd(parseInt);
                 this.d = openRawResourceFd;
                 if (openRawResourceFd != null) {
                 }
-            } catch (Resources.NotFoundException e10) {
-                throw new q0(null, e10, 2005);
+            } catch (Resources.NotFoundException e11) {
+                throw new q0(null, e11, 2005);
             }
             String lastPathSegment2 = normalizeScheme.getLastPathSegment();
             lastPathSegment2.getClass();
@@ -208,8 +207,8 @@ public final class r0 extends g {
             if (j10 != -1) {
                 try {
                     i11 = (int) Math.min(j10, i11);
-                } catch (IOException e) {
-                    throw new q0(null, e, 2000);
+                } catch (IOException e6) {
+                    throw new q0(null, e6, 2000);
                 }
             }
             FileInputStream fileInputStream = this.e;

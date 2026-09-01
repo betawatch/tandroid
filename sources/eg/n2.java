@@ -1,21 +1,40 @@
 package eg;
 
-import android.graphics.Paint;
-import android.graphics.RectF;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.ViewGroup;
+import org.telegram.messenger.LocaleController;
+import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.sl0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class n2 {
-    public int i;
-    public final RectF a = new RectF();
-    public final RectF b = new RectF();
-    public final Paint c = new Paint();
-    public final ArrayList e = new ArrayList();
-    public float f = 1.0f;
-    public final long h = 2000;
-    public final float j = 1000.0f / AndroidUtilities.screenRefreshRate;
-    public final int g = 200;
-    public final float[] d = new float[800];
+public final class n2 extends sl0 {
+    @Override // org.telegram.ui.Components.sl0
+    public final boolean D(f2.m1 m1Var) {
+        return true;
+    }
+
+    @Override // f2.p0
+    public final int h() {
+        return dg.s0.c().size();
+    }
+
+    @Override // f2.p0
+    public final void v(f2.m1 m1Var, int i10) {
+        h2 h2Var = (h2) m1Var.a;
+        dg.s0 s0Var = (dg.s0) dg.s0.c().get(i10);
+        h2Var.getClass();
+        h2Var.setTypeface(s0Var.d());
+        String str = s0Var.c;
+        if (str == null) {
+            str = LocaleController.getString(s0Var.b);
+        }
+        h2Var.setText(str);
+    }
+
+    @Override // f2.p0
+    public final f2.m1 x(ViewGroup viewGroup, int i10) {
+        h2 h2Var = new h2(viewGroup.getContext());
+        h2Var.setLayoutParams(new f2.x0(-1, -2));
+        return new fl0(h2Var);
+    }
 }

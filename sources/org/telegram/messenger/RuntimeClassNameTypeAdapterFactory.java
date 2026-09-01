@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class RuntimeClassNameTypeAdapterFactory<T> implements pa.v {
     private final Class<?> baseType;
@@ -74,8 +74,8 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements pa.v {
                         z4 = false;
                         try {
                             iVar = (pa.i) sa.h1.z.read(aVar3);
-                        } catch (EOFException e) {
-                            e = e;
+                        } catch (EOFException e6) {
+                            e = e6;
                             if (!z4) {
                                 throw new pa.j(e);
                             }
@@ -84,8 +84,8 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements pa.v {
                             if (iVar instanceof pa.l) {
                             }
                         }
-                    } catch (EOFException e6) {
-                        e = e6;
+                    } catch (EOFException e10) {
+                        e = e10;
                         z4 = true;
                     }
                     iVar.getClass();
@@ -104,17 +104,17 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements pa.v {
                     if (uVar == null) {
                         try {
                             uVar = gVar.c(RuntimeClassNameTypeAdapterFactory.this, new wa.a(Class.forName(n10)));
-                        } catch (ClassNotFoundException e10) {
-                            throw new a7.b(vh.v2.e("Cannot find class ", n10), e10);
+                        } catch (ClassNotFoundException e11) {
+                            throw new a7.b(org.telegram.ui.yh.k("Cannot find class ", n10), e11);
                         }
                     }
                     return uVar.fromJsonTree(iVar);
-                } catch (NumberFormatException e11) {
-                    throw new pa.j(e11);
-                } catch (xa.c e12) {
+                } catch (NumberFormatException e12) {
                     throw new pa.j(e12);
-                } catch (IOException e13) {
+                } catch (xa.c e13) {
                     throw new pa.j(e13);
+                } catch (IOException e14) {
+                    throw new pa.j(e14);
                 }
             }
 

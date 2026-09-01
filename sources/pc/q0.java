@@ -1,6 +1,6 @@
 package pc;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public enum q0 extends a2 {
     public q0() {
@@ -11,14 +11,14 @@ public enum q0 extends a2 {
     public final void d(k kVar, a aVar) {
         String g10 = aVar.g(a2.B0);
         if (g10.length() > 0) {
-            kVar.i.l(g10);
+            kVar.i.k(g10);
         } else {
             kVar.i.n = true;
         }
         char d = aVar.d();
         if (d == 0) {
             kVar.m(this);
-            kVar.i.k((char) 65533);
+            kVar.i.j((char) 65533);
             return;
         }
         if (d == 65535) {
@@ -28,7 +28,7 @@ public enum q0 extends a2 {
         }
         if (d != '&') {
             if (d != '\'') {
-                kVar.i.k(d);
+                kVar.i.j(d);
                 return;
             } else {
                 kVar.c = a2.a0;
@@ -37,9 +37,9 @@ public enum q0 extends a2 {
         }
         int[] c3 = kVar.c('\'', true);
         if (c3 != null) {
-            kVar.i.n(c3);
+            kVar.i.m(c3);
         } else {
-            kVar.i.k('&');
+            kVar.i.j('&');
         }
     }
 }

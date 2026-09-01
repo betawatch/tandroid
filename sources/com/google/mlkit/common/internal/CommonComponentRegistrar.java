@@ -1,5 +1,6 @@
 package com.google.mlkit.common.internal;
 
+import bb.c;
 import c9.a;
 import c9.b;
 import c9.l;
@@ -9,10 +10,10 @@ import cb.i;
 import com.google.firebase.components.ComponentRegistrar;
 import h7.g;
 import h7.u;
-import j7.s7;
+import j7.t7;
 import java.util.List;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class CommonComponentRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
@@ -24,8 +25,8 @@ public class CommonComponentRegistrar implements ComponentRegistrar {
         a b12 = b.b(i.class);
         b12.g = new db.a(26);
         b b13 = b12.b();
-        a b14 = b.b(bb.b.class);
-        b14.a(new l(2, 0, bb.a.class));
+        a b14 = b.b(c.class);
+        b14.a(new l(2, 0, bb.b.class));
         b14.g = new u(26);
         b b15 = b14.b();
         a b16 = b.b(d.class);
@@ -43,14 +44,14 @@ public class CommonComponentRegistrar implements ComponentRegistrar {
         b22.a(l.b(h.class));
         b22.g = new db.a(27);
         b b23 = b22.b();
-        a b24 = b.b(bb.a.class);
+        a b24 = b.b(bb.b.class);
         b24.c = 1;
         b24.a(new l(1, 1, ab.a.class));
         b24.g = new u(27);
         b b25 = b24.b();
         h7.b bVar = h7.d.b;
         Object[] objArr = {cb.l.b, b11, b13, b15, b17, b19, b21, b23, b25};
-        s7.a(9, objArr);
+        t7.a(9, objArr);
         return new g(9, objArr);
     }
 }

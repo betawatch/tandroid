@@ -4,9 +4,9 @@ import android.os.Bundle;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.vg0;
+import org.telegram.ui.wg0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x implements h5.j, p.a, GenericProvider {
     public final /* synthetic */ int a;
@@ -37,8 +37,8 @@ public final /* synthetic */ class x implements h5.j, p.a, GenericProvider {
     @Override // org.telegram.messenger.GenericProvider
     public Object provide(Object obj) {
         Bundle i10 = android.support.v4.media.a.i("afterSignup", this.b);
-        vg0 vg0Var = new vg0();
-        vg0Var.l0(i10);
-        return vg0Var;
+        wg0 wg0Var = new wg0();
+        wg0Var.l0(i10);
+        return wg0Var;
     }
 }

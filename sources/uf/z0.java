@@ -1,94 +1,57 @@
 package uf;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import k7.b6;
-import kh.a2;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.p2;
-import org.telegram.ui.Components.g61;
-import ph.d4;
-import ph.ga;
+import android.view.ViewGroup;
+import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.sl0;
+import org.telegram.ui.iw0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class z0 extends p2 {
-    public final CharSequence a;
-    public final ArrayList b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public ga f;
-    public v0 h;
-    public g61 n;
-    public boolean r;
+public final class z0 extends sl0 {
+    public u0 c;
+    public Integer d;
+    public iw0 e;
+    public boolean f;
+    public int h;
 
-    public z0(CharSequence charSequence, ArrayList arrayList, int i10, int i11, int i12) {
-        super(null);
-        this.a = charSequence;
-        this.b = arrayList;
-        this.c = i10;
-        this.d = i11;
-        this.e = i12;
-        this.r = !arrayList.isEmpty();
-    }
-
-    public final boolean U() {
-        ArrayList arrayList = this.b;
-        return arrayList.size() == 1 && ((w0) arrayList.get(0)).a == 0 && ((w0) arrayList.get(0)).b == 1439;
-    }
-
-    public final boolean V() {
-        ArrayList arrayList = this.b;
-        if (arrayList.size() >= this.e) {
+    @Override // org.telegram.ui.Components.sl0
+    public final boolean D(f2.m1 m1Var) {
+        if (m1Var.b() == 0) {
             return false;
         }
-        return arrayList.isEmpty() || U() || ((w0) a2.i(1, arrayList)).b < Math.min(1438, this.d + (-2));
+        return this.c.D(m1Var);
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
-    public final View createView(Context context) {
-        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(this.a);
-        this.actionBar.setActionBarMenuOnItemClick(new sh.e(this, 12));
-        FrameLayout frameLayout = new FrameLayout(context);
-        frameLayout.setBackgroundColor(j6.w0(null, j6.a7, false));
-        g61 g61Var = new g61(this, new d4(this, 23), new rh.e(this, 5), null);
-        this.n = g61Var;
-        g61Var.p1();
-        this.actionBar.setAdaptiveBackground(this.n);
-        frameLayout.addView(this.n, b6.c(-1.0f, -1));
-        this.fragmentView = frameLayout;
-        return frameLayout;
+    @Override // f2.p0
+    public final int h() {
+        u0 u0Var = this.c;
+        int K = u0Var.K();
+        u0Var.I0 = K;
+        return K + 1;
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
-    public final void onBecomeFullyHidden() {
-        v0 v0Var = this.h;
-        if (v0Var != null) {
-            v0Var.run();
+    @Override // f2.p0
+    public final int j(int i10) {
+        if (i10 == 0) {
+            return -983904;
         }
-        super.onBecomeFullyHidden();
+        return this.c.j(i10 - 1);
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
-    public final void onFragmentDestroy() {
-        super.onFragmentDestroy();
-        if (this.r) {
-            return;
+    @Override // f2.p0
+    public final void v(f2.m1 m1Var, int i10) {
+        if (i10 > 0) {
+            this.c.v(m1Var, i10 - 1);
         }
-        ArrayList arrayList = this.b;
-        if (arrayList.isEmpty()) {
-            return;
+    }
+
+    @Override // f2.p0
+    public final f2.m1 x(ViewGroup viewGroup, int i10) {
+        if (i10 != -983904) {
+            return this.c.x(viewGroup, i10);
         }
-        arrayList.clear();
-        ga gaVar = this.f;
-        if (gaVar != null) {
-            gaVar.run();
-        }
+        iw0 iw0Var = new iw0(this, viewGroup.getContext(), 10);
+        this.e = iw0Var;
+        return new fl0(iw0Var);
     }
 }

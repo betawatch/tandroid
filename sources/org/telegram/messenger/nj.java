@@ -8,13 +8,13 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.ag1;
-import org.telegram.ui.n31;
+import org.telegram.ui.cg1;
+import org.telegram.ui.p31;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class nj implements ag1, org.telegram.ui.Components.y4, LanguageDetector.StringCallback {
+public final /* synthetic */ class nj implements cg1, org.telegram.ui.Components.y4, LanguageDetector.StringCallback {
     public final /* synthetic */ boolean a;
     public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
     public final /* synthetic */ Object c;
@@ -32,7 +32,7 @@ public final /* synthetic */ class nj implements ag1, org.telegram.ui.Components
     }
 
     @Override // org.telegram.ui.Components.y4
-    public void J(int i10, int i11, boolean z4) {
+    public void I(int i10, int i11, boolean z4) {
         ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.b;
         TLRPC.Document document = (TLRPC.Document) this.c;
         String str = (String) this.d;
@@ -41,8 +41,8 @@ public final /* synthetic */ class nj implements ag1, org.telegram.ui.Components
         chatActivityEnterView.d(document, str, this.e, sendAnimationData, this.a, z4, i10, i11);
     }
 
-    @Override // org.telegram.ui.ag1
-    public void j(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
+    @Override // org.telegram.ui.cg1
+    public void i(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
         ((SendMessagesHelper) this.b).lambda$sendCallback$40(this.a, (MessageObject) this.c, (TL_keyboard.KeyboardButtonProto) this.d, (TwoStepVerificationActivity) this.e, (xn) this.f, tL_inputCheckPasswordSRP);
     }
 
@@ -53,10 +53,10 @@ public final /* synthetic */ class nj implements ag1, org.telegram.ui.Components
         String[] strArr = (String[]) this.c;
         boolean[] zArr = (boolean[]) this.d;
         String str2 = (String) this.e;
-        kh.m2 m2Var = (kh.m2) this.f;
+        lh.l2 l2Var = (lh.l2) this.f;
         strArr[0] = str;
-        zArr[0] = str != null && (!str.equals(str2) || str.equals(TranslateController.UNKNOWN_LANGUAGE)) && ((this.a && !n31.Y().contains(str)) || ((chat = profileActivity.B2) != null && ((chat.has_link || ChatObject.isPublic(chat)) && ("uk".equals(str) || "ru".equals(str)))));
-        m2Var.run();
+        zArr[0] = str != null && (!str.equals(str2) || str.equals(TranslateController.UNKNOWN_LANGUAGE)) && ((this.a && !p31.Y().contains(str)) || ((chat = profileActivity.B2) != null && ((chat.has_link || ChatObject.isPublic(chat)) && ("uk".equals(str) || "ru".equals(str)))));
+        l2Var.run();
     }
 
     public /* synthetic */ nj(ChatActivityEnterView chatActivityEnterView, TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z4) {
@@ -68,12 +68,12 @@ public final /* synthetic */ class nj implements ag1, org.telegram.ui.Components
         this.a = z4;
     }
 
-    public /* synthetic */ nj(ProfileActivity profileActivity, String[] strArr, boolean[] zArr, String str, boolean z4, kh.m2 m2Var) {
+    public /* synthetic */ nj(ProfileActivity profileActivity, String[] strArr, boolean[] zArr, String str, boolean z4, lh.l2 l2Var) {
         this.b = profileActivity;
         this.c = strArr;
         this.d = zArr;
         this.e = str;
         this.a = z4;
-        this.f = m2Var;
+        this.f = l2Var;
     }
 }

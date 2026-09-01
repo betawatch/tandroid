@@ -8,9 +8,8 @@ import com.google.android.gms.common.api.n;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import java.util.Arrays;
-import o5.i;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class g extends j {
     public static final com.google.android.gms.common.api.e k = new com.google.android.gms.common.api.e("ModuleInstall.API", new a8.j(7), new com.google.android.gms.common.api.d());
@@ -20,15 +19,15 @@ public final class g extends j {
         for (n nVar : nVarArr) {
             m.i(nVar, "Requested API must not be null.");
         }
-        a e = a.e(Arrays.asList(nVarArr), false);
-        if (e.a.isEmpty()) {
+        a e6 = a.e(Arrays.asList(nVarArr), false);
+        if (e6.a.isEmpty()) {
             return Tasks.forResult(new f6.a(0, true));
         }
-        v e6 = w.e();
-        e6.d = new y5.c[]{y6.b.c};
-        e6.a = 27301;
-        e6.b = false;
-        e6.c = new i(this, e);
-        return e(0, e6.e());
+        v e10 = w.e();
+        e10.d = new y5.c[]{y6.b.c};
+        e10.a = 27301;
+        e10.b = false;
+        e10.c = new y5.h(this, e6);
+        return e(0, e10.e());
     }
 }

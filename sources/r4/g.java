@@ -7,7 +7,7 @@ import android.os.SystemClock;
 import android.util.SparseArray;
 import b4.e0;
 import b7.y0;
-import com.google.firebase.messaging.r;
+import com.google.firebase.messaging.s;
 import g5.m0;
 import g5.n0;
 import g5.o0;
@@ -26,10 +26,11 @@ import java.util.List;
 import java.util.Map;
 import o4.t;
 import o4.v;
+import oh.h4;
 import org.telegram.ui.Cells.f1;
-import ph.j5;
+import org.telegram.ui.Components.ai;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class g extends o4.a {
     public g5.m A;
@@ -55,12 +56,12 @@ public final class g extends o4.a {
     public final z9.d l;
     public final o3.o m;
     public final ab.a n;
-    public final r o;
+    public final s o;
     public final long p;
     public final long q;
     public final e0 r;
     public final o0 s;
-    public final j5 t;
+    public final ai t;
     public final Object u;
     public final SparseArray v;
     public final c w;
@@ -91,16 +92,16 @@ public final class g extends o4.a {
         this.p = j10;
         this.q = j11;
         this.l = dVar;
-        this.o = new r(25);
+        this.o = new s(13);
         this.i = false;
         this.r = a(null);
         this.u = new Object();
         this.v = new SparseArray();
-        this.y = new f1(this, 14);
+        this.y = new f1(this, 13);
         this.O = -9223372036854775807L;
         this.M = -9223372036854775807L;
-        this.t = new j5(this, 3);
-        this.z = new o2.o(this, 16);
+        this.t = new ai(this, 10);
+        this.z = new h4(this, 13);
         final int i10 = 0;
         this.w = new Runnable(this) { // from class: r4.c
             public final /* synthetic */ g b;
@@ -206,7 +207,7 @@ public final class g extends o4.a {
         oVar.r = true;
         oVar.d.removeCallbacksAndMessages(null);
         for (q4.h hVar : bVar.E) {
-            hVar.q(bVar);
+            hVar.B(bVar);
         }
         bVar.D = null;
         this.v.remove(bVar.a);
@@ -235,10 +236,10 @@ public final class g extends o4.a {
         this.N = 0;
         this.O = -9223372036854775807L;
         this.v.clear();
-        r rVar = this.o;
-        ((HashMap) rVar.b).clear();
-        ((HashMap) rVar.c).clear();
-        ((HashMap) rVar.d).clear();
+        s sVar = this.o;
+        ((HashMap) sVar.a).clear();
+        ((HashMap) sVar.b).clear();
+        ((HashMap) sVar.c).clear();
         this.m.release();
     }
 
@@ -256,7 +257,7 @@ public final class g extends o4.a {
         if (m0Var == null) {
             m0Var = new m0("SntpClient");
         }
-        m0Var.f(new ab.a(8), new a3.c(dVar, 17), 1);
+        m0Var.f(new ab.a(8), new ja.c(dVar), 1);
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -342,16 +343,16 @@ public final class g extends o4.a {
                             for (int i12 = 0; i12 < iVarArr.length; i12++) {
                                 try {
                                     iVarArr[i12] = iVarArr[i12].a(d, (s4.m) a2.get(kVar.i.f(i12)));
-                                } catch (o4.b e) {
-                                    e = e;
+                                } catch (o4.b e6) {
+                                    e = e6;
                                     kVar.l = e;
                                 }
                             }
-                        } catch (o4.b e6) {
-                            e = e6;
+                        } catch (o4.b e10) {
+                            e = e10;
                         }
                     }
-                    bVar.D.Z(bVar);
+                    bVar.D.s(bVar);
                 }
                 bVar.J = cVar2.b(i11).d;
                 for (l lVar : bVar.F) {
@@ -395,8 +396,8 @@ public final class g extends o4.a {
             boolean z13 = (i14 == 1 || i14 == 2) ? false : true;
             if ((!s6 || !z13) && !list2.isEmpty()) {
                 h c11 = ((s4.m) list2.get(0)).c();
-                if (c11 != null && c11.W(d11, G) != 0) {
-                    j19 = Math.max(j19, c11.a(c11.j(d11, G)) + j20);
+                if (c11 != null && c11.I(d11, G) != 0) {
+                    j19 = Math.max(j19, c11.a(c11.m(d11, G)) + j20);
                 }
             }
             i13++;
@@ -426,13 +427,13 @@ public final class g extends o4.a {
                         j12 = j23 + d10;
                         break;
                     }
-                    long W = c10.W(d10, G);
-                    if (W == j10) {
+                    long I = c10.I(d10, G);
+                    if (I == j10) {
                         j12 = j23;
                         break;
                     } else {
-                        long j24 = (c10.j(d10, G) + W) - 1;
-                        j22 = Math.min(j22, c10.e(j24, d10) + c10.a(j24) + j23);
+                        long m9 = (c10.m(d10, G) + I) - 1;
+                        j22 = Math.min(j22, c10.h(m9, d10) + c10.a(m9) + j23);
                     }
                 }
                 i15++;
@@ -449,17 +450,17 @@ public final class g extends o4.a {
         if (this.I.d) {
             for (int i17 = 0; i17 < list3.size(); i17++) {
                 h c12 = ((s4.m) ((s4.a) list3.get(i17)).c.get(0)).c();
-                if (c12 != null && !c12.w()) {
+                if (c12 != null && !c12.A()) {
                 }
             }
             z10 = true;
             if (z10) {
-                long j25 = this.I.f;
-                if (j25 != -9223372036854775807L) {
-                    j11 = Math.max(j11, j12 - d0.G(j25));
+                long j24 = this.I.f;
+                if (j24 != -9223372036854775807L) {
+                    j11 = Math.max(j11, j12 - d0.G(j24));
                 }
             }
-            long j26 = j12 - j11;
+            long j25 = j12 - j11;
             cVar = this.I;
             if (cVar.d) {
                 j13 = -9223372036854775807L;
@@ -470,66 +471,66 @@ public final class g extends o4.a {
                 long G4 = (G - d0.G(this.I.a)) - j11;
                 long S = d0.S(G4);
                 x0 x0Var = this.h.c;
-                long j27 = x0Var.c;
-                if (j27 != -9223372036854775807L) {
-                    j16 = Math.min(S, j27);
+                long j26 = x0Var.c;
+                if (j26 != -9223372036854775807L) {
+                    j16 = Math.min(S, j26);
                 } else {
                     s4.t tVar = this.I.j;
                     if (tVar != null) {
-                        long j28 = tVar.c;
-                        if (j28 != -9223372036854775807L) {
-                            j16 = Math.min(S, j28);
+                        long j27 = tVar.c;
+                        if (j27 != -9223372036854775807L) {
+                            j16 = Math.min(S, j27);
                         }
                     }
                     j16 = S;
                 }
-                long S2 = d0.S(G4 - j26);
+                long S2 = d0.S(G4 - j25);
                 if (S2 < j10 && j16 > j10) {
                     S2 = j10;
                 }
                 j13 = -9223372036854775807L;
-                long j29 = this.I.c;
-                if (j29 != -9223372036854775807L) {
-                    S2 = Math.min(S2 + j29, S);
+                long j28 = this.I.c;
+                if (j28 != -9223372036854775807L) {
+                    S2 = Math.min(S2 + j28, S);
                 }
-                long j30 = S2;
-                long j31 = x0Var.b;
-                if (j31 != -9223372036854775807L) {
-                    j30 = d0.i(j31, j30, S);
+                long j29 = S2;
+                long j30 = x0Var.b;
+                if (j30 != -9223372036854775807L) {
+                    j29 = d0.i(j30, j29, S);
                 } else {
                     s4.t tVar2 = this.I.j;
                     if (tVar2 != null) {
-                        long j32 = tVar2.b;
-                        if (j32 != -9223372036854775807L) {
-                            j30 = d0.i(j32, j30, S);
+                        long j31 = tVar2.b;
+                        if (j31 != -9223372036854775807L) {
+                            j29 = d0.i(j31, j29, S);
                         }
                     }
                 }
-                long j33 = j30;
-                long j34 = j33 > j16 ? j33 : j16;
-                long j35 = this.F.a;
-                if (j35 == -9223372036854775807L) {
+                long j32 = j29;
+                long j33 = j32 > j16 ? j32 : j16;
+                long j34 = this.F.a;
+                if (j34 == -9223372036854775807L) {
                     s4.c cVar3 = this.I;
                     s4.t tVar3 = cVar3.j;
                     if (tVar3 != null) {
-                        long j36 = tVar3.a;
-                        if (j36 != -9223372036854775807L) {
-                            j35 = j36;
+                        long j35 = tVar3.a;
+                        if (j35 != -9223372036854775807L) {
+                            j34 = j35;
                         }
                     }
-                    j35 = cVar3.g;
-                    if (j35 == -9223372036854775807L) {
-                        j35 = this.p;
+                    j34 = cVar3.g;
+                    if (j34 == -9223372036854775807L) {
+                        j34 = this.p;
                     }
                 }
-                if (j35 < j33) {
-                    j35 = j33;
+                if (j34 < j32) {
+                    j34 = j32;
                 }
-                long j37 = this.q;
-                if (j35 > j34) {
-                    j35 = d0.i(d0.S(G4 - Math.min(j37, j26 / 2)), j33, j34);
+                long j36 = this.q;
+                if (j34 > j33) {
+                    j34 = d0.i(d0.S(G4 - Math.min(j36, j25 / 2)), j32, j33);
                 }
-                long j38 = j35;
+                long j37 = j34;
                 float f12 = x0Var.d;
                 if (f12 == -3.4028235E38f) {
                     s4.t tVar4 = this.I.j;
@@ -546,10 +547,10 @@ public final class g extends o4.a {
                     if (tVar6 == null || tVar6.a == -9223372036854775807L) {
                         f11 = 1.0f;
                         f10 = 1.0f;
-                        this.F = new x0(j38, j33, j34, f11, f10);
+                        this.F = new x0(j37, j32, j33, f11, f10);
                         long S3 = d0.S(j11) + this.I.a;
                         long G5 = G4 - d0.G(this.F.a);
-                        long min = Math.min(j37, j26 / j17);
+                        long min = Math.min(j36, j25 / j17);
                         j15 = G5 >= min ? min : G5;
                         j14 = S3;
                     }
@@ -558,17 +559,17 @@ public final class g extends o4.a {
                 }
                 f11 = f12;
                 f10 = f13;
-                this.F = new x0(j38, j33, j34, f11, f10);
+                this.F = new x0(j37, j32, j33, f11, f10);
                 long S32 = d0.S(j11) + this.I.a;
                 long G52 = G4 - d0.G(this.F.a);
-                long min2 = Math.min(j37, j26 / j17);
+                long min2 = Math.min(j36, j25 / j17);
                 if (G52 >= min2) {
                 }
                 j14 = S32;
             }
             long G6 = j11 - d0.G(b10.b);
             s4.c cVar4 = this.I;
-            m(new e(cVar4.a, j14, this.M, this.P, G6, j26, j15, cVar4, this.h, !cVar4.d ? this.F : null));
+            m(new e(cVar4.a, j14, this.M, this.P, G6, j25, j15, cVar4, this.h, !cVar4.d ? this.F : null));
             if (this.i) {
                 Handler handler = this.E;
                 c cVar5 = this.x;
@@ -579,9 +580,9 @@ public final class g extends o4.a {
                     long u10 = d0.u(this.M);
                     int size2 = cVar6.m.size() - 1;
                     s4.h b12 = cVar6.b(size2);
-                    long j39 = b12.b;
+                    long j38 = b12.b;
                     List list5 = b12.c;
-                    long G7 = d0.G(j39);
+                    long G7 = d0.G(j38);
                     long d12 = cVar6.d(size2);
                     long G8 = d0.G(u10);
                     long G9 = d0.G(cVar6.a);
@@ -589,21 +590,21 @@ public final class g extends o4.a {
                     for (int i18 = 0; i18 < list5.size(); i18++) {
                         List list6 = ((s4.a) list5.get(i18)).c;
                         if (!list6.isEmpty() && (c3 = ((s4.m) list6.get(0)).c()) != null) {
-                            long k10 = (c3.k(d12, G8) + (G9 + G7)) - G8;
-                            if (k10 < G10 - 100000 || (k10 > G10 && k10 < G10 + 100000)) {
-                                G10 = k10;
+                            long n10 = (c3.n(d12, G8) + (G9 + G7)) - G8;
+                            if (n10 < G10 - 100000 || (n10 > G10 && n10 < G10 + 100000)) {
+                                G10 = n10;
                             }
                         }
                     }
                     RoundingMode roundingMode = RoundingMode.CEILING;
                     roundingMode.getClass();
-                    long j40 = G10 / 1000;
-                    long j41 = G10 - (1000 * j40);
-                    if (j41 != j10) {
+                    long j39 = G10 / 1000;
+                    long j40 = G10 - (1000 * j39);
+                    if (j40 != j10) {
                         int i19 = ((int) ((G10 ^ 1000) >> 63)) | 1;
                         switch (t8.c.a[roundingMode.ordinal()]) {
                             case 1:
-                                if (j41 != j10) {
+                                if (j40 != j10) {
                                     throw new ArithmeticException("mode was UNNECESSARY, but rounding was necessary");
                                 }
                                 break;
@@ -612,14 +613,14 @@ public final class g extends o4.a {
                             case 3:
                                 break;
                             case 4:
-                                j40 += i19;
+                                j39 += i19;
                                 break;
                             case 5:
                                 break;
                             case 6:
                             case 7:
                             case 8:
-                                long abs = Math.abs(j41);
+                                long abs = Math.abs(j40);
                                 long abs2 = abs - (Math.abs(1000L) - abs);
                                 if (abs2 == j10) {
                                     RoundingMode roundingMode2 = RoundingMode.HALF_UP;
@@ -631,7 +632,7 @@ public final class g extends o4.a {
                                 throw new AssertionError();
                         }
                     }
-                    handler2.postDelayed(cVar5, j40);
+                    handler2.postDelayed(cVar5, j39);
                 }
                 if (this.J) {
                     v();
@@ -640,9 +641,9 @@ public final class g extends o4.a {
                 if (z4) {
                     s4.c cVar7 = this.I;
                     if (cVar7.d) {
-                        long j42 = cVar7.e;
-                        if (j42 != j13) {
-                            this.E.postDelayed(this.w, Math.max(j10, (this.K + (j42 == j10 ? 5000L : j42)) - SystemClock.elapsedRealtime()));
+                        long j41 = cVar7.e;
+                        if (j41 != j13) {
+                            this.E.postDelayed(this.w, Math.max(j10, (this.K + (j41 == j10 ? 5000L : j41)) - SystemClock.elapsedRealtime()));
                             return;
                         }
                         return;
@@ -656,13 +657,13 @@ public final class g extends o4.a {
         z10 = false;
         if (z10) {
         }
-        long j262 = j12 - j11;
+        long j252 = j12 - j11;
         cVar = this.I;
         if (cVar.d) {
         }
         long G62 = j11 - d0.G(b10.b);
         s4.c cVar42 = this.I;
-        m(new e(cVar42.a, j14, this.M, this.P, G62, j262, j15, cVar42, this.h, !cVar42.d ? this.F : null));
+        m(new e(cVar42.a, j14, this.M, this.P, G62, j252, j15, cVar42, this.h, !cVar42.d ? this.F : null));
         if (this.i) {
         }
     }
@@ -682,9 +683,9 @@ public final class g extends o4.a {
         }
         this.J = false;
         p0 p0Var = new p0(this.A, uri, 4, this.s);
-        j5 j5Var = this.t;
+        ai aiVar = this.t;
         this.n.getClass();
-        this.B.f(p0Var, j5Var, 3);
-        this.r.t(new o4.j(p0Var.b), p0Var.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        this.B.f(p0Var, aiVar, 3);
+        this.r.u(new o4.j(p0Var.b), p0Var.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 }

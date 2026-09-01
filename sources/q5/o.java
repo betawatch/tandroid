@@ -3,13 +3,13 @@ package q5;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.cast.MediaInfo;
-import j7.f5;
+import j7.g5;
 import java.util.Arrays;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class o extends c6.a {
     public static final Parcelable.Creator<o> CREATOR = new v(14);
@@ -174,26 +174,26 @@ public final class o extends c6.a {
     public final void writeToParcel(Parcel parcel, int i10) {
         JSONObject jSONObject = this.r;
         this.n = jSONObject == null ? null : jSONObject.toString();
-        int q10 = f5.q(parcel, 20293);
-        f5.k(parcel, 2, this.a, i10);
+        int q10 = g5.q(parcel, 20293);
+        g5.k(parcel, 2, this.a, i10);
         int i11 = this.b;
-        f5.s(parcel, 3, 4);
+        g5.s(parcel, 3, 4);
         parcel.writeInt(i11);
         boolean z4 = this.c;
-        f5.s(parcel, 4, 4);
+        g5.s(parcel, 4, 4);
         parcel.writeInt(z4 ? 1 : 0);
         double d = this.d;
-        f5.s(parcel, 5, 8);
+        g5.s(parcel, 5, 8);
         parcel.writeDouble(d);
         double d10 = this.e;
-        f5.s(parcel, 6, 8);
+        g5.s(parcel, 6, 8);
         parcel.writeDouble(d10);
         double d11 = this.f;
-        f5.s(parcel, 7, 8);
+        g5.s(parcel, 7, 8);
         parcel.writeDouble(d11);
-        f5.j(parcel, 8, this.h);
-        f5.l(parcel, 9, this.n);
-        f5.r(parcel, q10);
+        g5.j(parcel, 8, this.h);
+        g5.l(parcel, 9, this.n);
+        g5.r(parcel, q10);
     }
 
     public o(JSONObject jSONObject) {

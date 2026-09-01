@@ -1,537 +1,507 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Point;
-import android.media.MediaMetadataRetriever;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.net.Uri;
+import android.os.Bundle;
+import android.text.SpannableStringBuilder;
+import android.util.Pair;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
+import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.tgnet.tl.TL_phone;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class gm {
-    public final ArrayList a = new ArrayList();
-    public final HashMap b = new HashMap();
-    public int c;
-    public int d;
-    public int e;
-    public float f;
-    public final ArrayList g;
-    public final /* synthetic */ om h;
+public final /* synthetic */ class gm implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public gm(om omVar, ArrayList arrayList) {
-        this.h = omVar;
-        this.g = arrayList;
-        a();
+    public /* synthetic */ gm(int i10, Object obj, Object obj2) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    public static float b(float[] fArr, int i10, int i11) {
-        float f10 = 0.0f;
-        while (i10 < i11) {
-            f10 += fArr[i10];
-            i10++;
-        }
-        return 1000.0f / f10;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:319:0x06c8, code lost:
-    
-        if (r12[2] > r12[3]) goto L191;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:55:0x00b0, code lost:
-    
-        if (r6 != 8) goto L43;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:308:0x06db  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x00ae  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a() {
-        float f10;
-        float f11;
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // java.lang.Runnable
+    public final void run() {
+        ns nsVar;
         int i10;
-        boolean z4;
-        int e;
-        boolean z10;
-        ArrayList arrayList = this.g;
-        int size = arrayList.size();
-        ArrayList arrayList2 = this.a;
-        arrayList2.clear();
-        HashMap hashMap = this.b;
-        hashMap.clear();
-        if (size == 0) {
-            this.c = 0;
-            this.f = 0.0f;
-            this.d = 0;
-            this.e = 0;
-            return;
-        }
-        arrayList2.ensureCapacity(size);
-        char[] cArr = new char[size];
-        int i11 = 0;
-        float f12 = 1.0f;
-        boolean z11 = false;
-        while (i11 < size) {
-            MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) arrayList.get(i11);
-            MessageObject.GroupedMessagePosition groupedMessagePosition = new MessageObject.GroupedMessagePosition();
-            groupedMessagePosition.last = i11 == size + (-1);
-            MediaController.CropState cropState = photoEntry.cropState;
-            int i12 = cropState != null ? cropState.width : photoEntry.width;
-            int i13 = cropState != null ? cropState.height : photoEntry.height;
-            HashMap hashMap2 = om.R;
-            if (hashMap2.containsKey(photoEntry)) {
-                z4 = ((Boolean) hashMap2.get(photoEntry)).booleanValue();
-            } else {
-                try {
-                    if (photoEntry.isVideo) {
-                        MediaMetadataRetriever mediaMetadataRetriever = new MediaMetadataRetriever();
-                        mediaMetadataRetriever.setDataSource(photoEntry.path);
-                        String extractMetadata = mediaMetadataRetriever.extractMetadata(24);
-                        if (extractMetadata != null) {
-                            if (!extractMetadata.equals("90")) {
-                                if (extractMetadata.equals("270")) {
-                                }
-                            }
-                            z10 = true;
-                        }
-                        z10 = false;
-                    } else {
-                        r1.g gVar = new r1.g(photoEntry.path);
-                        r1.c c3 = gVar.c("Orientation");
-                        if (c3 != null) {
-                            try {
-                                e = c3.e(gVar.g);
-                            } catch (NumberFormatException unused) {
-                            }
-                            if (e != 6) {
-                            }
-                            z10 = true;
-                        }
-                        e = 1;
-                        if (e != 6) {
-                        }
-                        z10 = true;
-                    }
-                    z4 = z10;
-                } catch (Exception unused2) {
-                    z4 = false;
+        u60 u60Var;
+        org.telegram.ui.eb ebVar;
+        int i11;
+        int i12 = this.a;
+        int i13 = 3;
+        Object[] objArr = 0;
+        final int i14 = 1;
+        Object obj = this.c;
+        Object obj2 = this.b;
+        switch (i12) {
+            case 0:
+                ei eiVar = (ei) obj;
+                int currentItemTop = eiVar.getCurrentItemTop();
+                int listTopPadding = eiVar.getListTopPadding();
+                mh.d1 d1Var = ((qm) obj2).r;
+                if (currentItemTop > AndroidUtilities.dp(7.0f)) {
+                    listTopPadding -= currentItemTop;
                 }
-                om.R.put(photoEntry, Boolean.valueOf(z4));
-            }
-            if (z4) {
-                int i14 = i12;
-                i12 = i13;
-                i13 = i14;
-            }
-            float f13 = i12 / i13;
-            groupedMessagePosition.aspectRatio = f13;
-            cArr[i11] = f13 > 1.2f ? 'w' : f13 < 0.8f ? 'n' : 'q';
-            f12 += f13;
-            if (f13 > 2.0f) {
-                z11 = true;
-            }
-            hashMap.put(photoEntry, groupedMessagePosition);
-            arrayList2.add(groupedMessagePosition);
-            i11++;
-        }
-        String str = new String(cArr);
-        int dp = AndroidUtilities.dp(120.0f);
-        float dp2 = AndroidUtilities.dp(120.0f);
-        Point point = AndroidUtilities.displaySize;
-        int min = (int) (dp2 / (Math.min(point.x, point.y) / 1000.0f));
-        float dp3 = AndroidUtilities.dp(40.0f);
-        Point point2 = AndroidUtilities.displaySize;
-        int min2 = (int) (dp3 / (Math.min(point2.x, point2.y) / 1000.0f));
-        float f14 = f12 / size;
-        float dp4 = AndroidUtilities.dp(100.0f) / 814.0f;
-        if (size == 1) {
-            MessageObject.GroupedMessagePosition groupedMessagePosition2 = (MessageObject.GroupedMessagePosition) arrayList2.get(0);
-            int backgroundPaddingLeft = AndroidUtilities.displaySize.x - (this.h.b.getBackgroundPaddingLeft() * 2);
-            Point point3 = AndroidUtilities.displaySize;
-            groupedMessagePosition2.set(0, 0, 0, 0, 800, ((backgroundPaddingLeft * 0.8f) / groupedMessagePosition2.aspectRatio) / (Math.max(point3.x, point3.y) * 0.5f), 15);
-        } else if (z11 || !(size == 2 || size == 3 || size == 4)) {
-            int size2 = arrayList2.size();
-            float[] fArr = new float[size2];
-            for (int i15 = 0; i15 < size; i15++) {
-                if (f14 > 1.1f) {
-                    fArr[i15] = Math.max(1.0f, ((MessageObject.GroupedMessagePosition) arrayList2.get(i15)).aspectRatio);
+                d1Var.scrollBy(0, listTopPadding);
+                break;
+            case 1:
+                ho.a(((fo) obj2).c);
+                ((vf.g) obj).run();
+                break;
+            case 2:
+                ((gp) obj2).b.x((List) obj);
+                break;
+            case 3:
+                ((hp) obj2).b.x((List) obj);
+                break;
+            case 4:
+                ((org.telegram.ui.ActionBar.h3) obj2).dismiss();
+                af.g.s((Context) obj, "https://t.me/BotFather?start=deletebot");
+                break;
+            case 5:
+                lr lrVar = (lr) obj2;
+                lrVar.getClass();
+                ((qh.d) obj).setLoading(false);
+                lrVar.dismiss();
+                break;
+            case 6:
+                lr lrVar2 = (lr) obj2;
+                TLObject tLObject = (TLObject) obj;
+                if (tLObject != null && (tLObject instanceof TL_phone.groupCallStreamRtmpUrl)) {
+                    TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl = (TL_phone.groupCallStreamRtmpUrl) tLObject;
+                    lrVar2.Y = groupcallstreamrtmpurl.url;
+                    lrVar2.Z = groupcallstreamrtmpurl.key;
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(lrVar2.Z);
+                    lrVar2.a0 = spannableStringBuilder;
+                    t01 t01Var = new t01();
+                    t01Var.a |= 256;
+                    t01Var.b = 0;
+                    t01Var.c = spannableStringBuilder.length();
+                    lrVar2.a0.setSpan(new u01(t01Var, 0), 0, lrVar2.a0.length(), 0);
+                    lrVar2.b0.N(false);
+                    break;
+                }
+                break;
+            case 7:
+                qs qsVar = (qs) obj2;
+                TLObject tLObject2 = (TLObject) obj;
+                ns nsVar2 = qsVar.b;
+                ArrayList arrayList = qsVar.h;
+                int i15 = qsVar.a;
+                if (!(tLObject2 instanceof TL_bots.popularAppBots)) {
+                    qsVar.g = null;
+                    qsVar.e = true;
+                    qsVar.c = false;
+                    nsVar2.run();
+                    break;
                 } else {
-                    fArr[i15] = Math.min(1.0f, ((MessageObject.GroupedMessagePosition) arrayList2.get(i15)).aspectRatio);
-                }
-                fArr[i15] = Math.max(0.66667f, Math.min(1.7f, fArr[i15]));
-            }
-            ArrayList arrayList3 = new ArrayList();
-            for (int i16 = 1; i16 < size2; i16++) {
-                int i17 = size2 - i16;
-                if (i16 <= 3 && i17 <= 3) {
-                    float b10 = b(fArr, 0, i16);
-                    float b11 = b(fArr, i16, size2);
-                    fm fmVar = new fm();
-                    fmVar.a = new int[]{i16, i17};
-                    fmVar.b = new float[]{b10, b11};
-                    arrayList3.add(fmVar);
-                }
-            }
-            for (int i18 = 1; i18 < size2 - 1; i18++) {
-                int i19 = 1;
-                while (true) {
-                    int i20 = size2 - i18;
-                    if (i19 < i20) {
-                        int i21 = i20 - i19;
-                        if (i18 <= 3) {
-                            if (i19 <= (f14 < 0.85f ? 4 : 3) && i21 <= 3) {
-                                float b12 = b(fArr, 0, i18);
-                                int i22 = i18 + i19;
-                                float b13 = b(fArr, i18, i22);
-                                float b14 = b(fArr, i22, size2);
-                                fm fmVar2 = new fm();
-                                fmVar2.a = new int[]{i18, i19, i21};
-                                fmVar2.b = new float[]{b12, b13, b14};
-                                arrayList3.add(fmVar2);
-                            }
+                    TL_bots.popularAppBots popularappbots = (TL_bots.popularAppBots) tLObject2;
+                    MessagesController.getInstance(i15).putUsers(popularappbots.users, false);
+                    MessagesStorage.getInstance(i15).putUsersAndChats(popularappbots.users, null, false, true);
+                    arrayList.addAll(popularappbots.users);
+                    String str = popularappbots.next_offset;
+                    qsVar.g = str;
+                    qsVar.e = str == null;
+                    long currentTimeMillis = System.currentTimeMillis();
+                    qsVar.f = currentTimeMillis;
+                    if (qsVar.i) {
+                        nsVar = nsVar2;
+                    } else {
+                        qsVar.i = true;
+                        String str2 = qsVar.g;
+                        if (str2 == null) {
+                            str2 = "";
                         }
-                        i19++;
+                        String str3 = str2;
+                        ArrayList arrayList2 = new ArrayList();
+                        int i16 = 0;
+                        while (i16 < arrayList.size()) {
+                            i16 = android.support.v4.media.a.g(((TLRPC.User) arrayList.get(i16)).id, arrayList2, i16, 1);
+                            nsVar2 = nsVar2;
+                        }
+                        nsVar = nsVar2;
+                        MessagesStorage messagesStorage = MessagesStorage.getInstance(i15);
+                        messagesStorage.getStorageQueue().postRunnable(new lh.g1(qsVar, messagesStorage, arrayList2, currentTimeMillis, str3, 11));
                     }
+                    qsVar.c = false;
+                    nsVar.run();
+                    break;
                 }
-            }
-            for (int i23 = 1; i23 < size2 - 2; i23++) {
-                int i24 = 1;
-                while (true) {
-                    int i25 = size2 - i23;
-                    if (i24 < i25) {
-                        int i26 = 1;
-                        while (true) {
-                            int i27 = i25 - i24;
-                            if (i26 < i27) {
-                                int i28 = i27 - i26;
-                                if (i23 > 3 || i24 > 3 || i26 > 3 || i28 > 3) {
-                                    i10 = size2;
-                                } else {
-                                    float b15 = b(fArr, 0, i23);
-                                    int i29 = i23 + i24;
-                                    float b16 = b(fArr, i23, i29);
-                                    int i30 = i29 + i26;
-                                    float b17 = b(fArr, i29, i30);
-                                    float b18 = b(fArr, i30, size2);
-                                    fm fmVar3 = new fm();
-                                    fmVar3.a = new int[]{i23, i24, i26, i28};
-                                    i10 = size2;
-                                    fmVar3.b = new float[]{b15, b16, b17, b18};
-                                    arrayList3.add(fmVar3);
+            case 8:
+                Bitmap decodeFile = BitmapFactory.decodeFile((String) obj);
+                Canvas canvas = new Canvas(Bitmap.createBitmap(AndroidUtilities.dp(26.0f), AndroidUtilities.dp(26.0f), Bitmap.Config.ARGB_8888));
+                Paint paint = new Paint(3);
+                canvas.translate(r3.getWidth() / 2.0f, r3.getHeight() / 2.0f);
+                float max = Math.max(r3.getWidth() / decodeFile.getWidth(), r3.getHeight() / decodeFile.getHeight());
+                canvas.scale(max, max);
+                canvas.drawBitmap(decodeFile, (-decodeFile.getWidth()) / 2.0f, (-decodeFile.getHeight()) / 2.0f, paint);
+                AndroidUtilities.runOnUIThread(new gm(9, (nt) obj2, decodeFile));
+                break;
+            case 9:
+                ((nt) obj2).setImage((Bitmap) obj);
+                break;
+            case 10:
+                ((EditTextBoldCursor) obj2).hintLayout.draw((Canvas) obj);
+                break;
+            case 11:
+                i10 = ((org.telegram.ui.ActionBar.h3) ((xu) obj2).a).currentAccount;
+                MessagesController.getInstance(i10).updateEmojiStatus((TLRPC.EmojiStatus) obj);
+                break;
+            case 12:
+                MessagesController.getInstance(((cx) obj2).a.Z0).updateEmojiStatus((TLRPC.EmojiStatus) obj);
+                break;
+            case 13:
+                TLObject tLObject3 = (TLObject) obj;
+                mz mzVar = ((cx) obj2).a;
+                if (tLObject3 instanceof TLRPC.TL_messages_stickerSet) {
+                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject3;
+                    MediaDataController.getInstance(mzVar.Z0).putStickerSet(tL_messages_stickerSet);
+                    MediaDataController.getInstance(mzVar.Z0).replaceStickerSet(tL_messages_stickerSet);
+                    break;
+                }
+                break;
+            case 14:
+                cy cyVar = (cy) obj2;
+                TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = (TLRPC.TL_messages_stickerSet) obj;
+                cyVar.s.f = true;
+                mz mzVar2 = cyVar.B;
+                if (!mzVar2.m1.contains(Long.valueOf(tL_messages_stickerSet2.set.id))) {
+                    mzVar2.m1.add(Long.valueOf(tL_messages_stickerSet2.set.id));
+                }
+                cyVar.a(true);
+                break;
+            case 15:
+                final ky kyVar = (ky) obj2;
+                final String str4 = (String) obj;
+                String[] currentKeyboardLanguage = AndroidUtilities.getCurrentKeyboardLanguage();
+                mz mzVar3 = kyVar.a.C;
+                if (!Arrays.equals(mzVar3.T0, currentKeyboardLanguage)) {
+                    MediaDataController.getInstance(mzVar3.Z0).fetchNewEmojiKeywords(currentKeyboardLanguage);
+                }
+                mzVar3.T0 = currentKeyboardLanguage;
+                ArrayList arrayList3 = new ArrayList();
+                final ArrayList arrayList4 = new ArrayList();
+                final ArrayList arrayList5 = new ArrayList();
+                final Object[] objArr2 = objArr == true ? 1 : 0;
+                Utilities.doCallbacks(new Utilities.Callback() { // from class: org.telegram.ui.Components.jy
+                    @Override // org.telegram.messenger.Utilities.Callback
+                    public final void run(Object obj3) {
+                        TLRPC.StickerSet stickerSet;
+                        ArrayList<TLRPC.Document> arrayList6;
+                        TLRPC.StickerSet stickerSet2;
+                        ArrayList<TLRPC.Document> arrayList7;
+                        Runnable runnable = (Runnable) obj3;
+                        switch (objArr2) {
+                            case 0:
+                                ky kyVar2 = kyVar;
+                                MediaDataController.getInstance(kyVar2.a.C.Z0).searchStickerSets(true, str4, new lh.h(kyVar2, arrayList5, runnable, 9));
+                                break;
+                            default:
+                                mz mzVar4 = kyVar.a.C;
+                                if (SharedConfig.suggestAnimatedEmoji || UserConfig.getInstance(mzVar4.Z0).isPremium()) {
+                                    String translitSafe = AndroidUtilities.translitSafe((str4 + "").toLowerCase());
+                                    int i17 = mzVar4.Z0;
+                                    ArrayList<TLRPC.TL_messages_stickerSet> stickerSets = MediaDataController.getInstance(i17).getStickerSets(5);
+                                    HashSet hashSet = new HashSet();
+                                    ArrayList arrayList8 = arrayList5;
+                                    if (stickerSets != null) {
+                                        for (int i18 = 0; i18 < stickerSets.size(); i18++) {
+                                            TLRPC.TL_messages_stickerSet tL_messages_stickerSet3 = stickerSets.get(i18);
+                                            if (tL_messages_stickerSet3 != null && (stickerSet2 = tL_messages_stickerSet3.set) != null && stickerSet2.title != null && (arrayList7 = tL_messages_stickerSet3.documents) != null && !arrayList7.isEmpty() && !hashSet.contains(Long.valueOf(tL_messages_stickerSet3.set.id))) {
+                                                String translitSafe2 = AndroidUtilities.translitSafe(tL_messages_stickerSet3.set.title.toLowerCase());
+                                                if (translitSafe2.startsWith(translitSafe) || org.telegram.messenger.y3.w(" ", translitSafe, translitSafe2)) {
+                                                    arrayList8.add(new dy(tL_messages_stickerSet3, tL_messages_stickerSet3.documents));
+                                                    hashSet.add(Long.valueOf(tL_messages_stickerSet3.set.id));
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ArrayList<TLRPC.StickerSetCovered> featuredEmojiSets = MediaDataController.getInstance(i17).getFeaturedEmojiSets();
+                                    if (featuredEmojiSets != null) {
+                                        for (int i19 = 0; i19 < featuredEmojiSets.size(); i19++) {
+                                            TLRPC.StickerSetCovered stickerSetCovered = featuredEmojiSets.get(i19);
+                                            if (stickerSetCovered != null && (stickerSet = stickerSetCovered.set) != null && stickerSet.title != null && !hashSet.contains(Long.valueOf(stickerSet.id))) {
+                                                String translitSafe3 = AndroidUtilities.translitSafe(stickerSetCovered.set.title.toLowerCase());
+                                                if (translitSafe3.startsWith(translitSafe) || org.telegram.messenger.y3.w(" ", translitSafe, translitSafe3)) {
+                                                    if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
+                                                        arrayList6 = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
+                                                    } else if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
+                                                        TLRPC.TL_messages_stickerSet stickerSet3 = MediaDataController.getInstance(i17).getStickerSet(MediaDataController.getInputStickerSet(stickerSetCovered.set), Integer.valueOf(stickerSetCovered.set.hash), true);
+                                                        arrayList6 = stickerSet3 != null ? stickerSet3.documents : null;
+                                                    } else {
+                                                        arrayList6 = stickerSetCovered.covers;
+                                                    }
+                                                    if (arrayList6 != null && !arrayList6.isEmpty()) {
+                                                        arrayList8.add(new dy(stickerSetCovered, arrayList6));
+                                                        hashSet.add(Long.valueOf(stickerSetCovered.set.id));
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
-                                i26++;
-                                size2 = i10;
-                            }
+                                runnable.run();
+                                break;
                         }
-                        i24++;
                     }
-                }
-            }
-            float f15 = 0.0f;
-            fm fmVar4 = null;
-            for (int i31 = 0; i31 < arrayList3.size(); i31++) {
-                fm fmVar5 = (fm) arrayList3.get(i31);
-                float f16 = Float.MAX_VALUE;
-                float f17 = 0.0f;
-                int i32 = 0;
-                while (true) {
-                    float[] fArr2 = fmVar5.b;
-                    if (i32 >= fArr2.length) {
+                }, new xk(i13, kyVar, str4), new Utilities.Callback() { // from class: org.telegram.ui.Components.jy
+                    @Override // org.telegram.messenger.Utilities.Callback
+                    public final void run(Object obj3) {
+                        TLRPC.StickerSet stickerSet;
+                        ArrayList<TLRPC.Document> arrayList6;
+                        TLRPC.StickerSet stickerSet2;
+                        ArrayList<TLRPC.Document> arrayList7;
+                        Runnable runnable = (Runnable) obj3;
+                        switch (i14) {
+                            case 0:
+                                ky kyVar2 = kyVar;
+                                MediaDataController.getInstance(kyVar2.a.C.Z0).searchStickerSets(true, str4, new lh.h(kyVar2, arrayList4, runnable, 9));
+                                break;
+                            default:
+                                mz mzVar4 = kyVar.a.C;
+                                if (SharedConfig.suggestAnimatedEmoji || UserConfig.getInstance(mzVar4.Z0).isPremium()) {
+                                    String translitSafe = AndroidUtilities.translitSafe((str4 + "").toLowerCase());
+                                    int i17 = mzVar4.Z0;
+                                    ArrayList<TLRPC.TL_messages_stickerSet> stickerSets = MediaDataController.getInstance(i17).getStickerSets(5);
+                                    HashSet hashSet = new HashSet();
+                                    ArrayList arrayList8 = arrayList4;
+                                    if (stickerSets != null) {
+                                        for (int i18 = 0; i18 < stickerSets.size(); i18++) {
+                                            TLRPC.TL_messages_stickerSet tL_messages_stickerSet3 = stickerSets.get(i18);
+                                            if (tL_messages_stickerSet3 != null && (stickerSet2 = tL_messages_stickerSet3.set) != null && stickerSet2.title != null && (arrayList7 = tL_messages_stickerSet3.documents) != null && !arrayList7.isEmpty() && !hashSet.contains(Long.valueOf(tL_messages_stickerSet3.set.id))) {
+                                                String translitSafe2 = AndroidUtilities.translitSafe(tL_messages_stickerSet3.set.title.toLowerCase());
+                                                if (translitSafe2.startsWith(translitSafe) || org.telegram.messenger.y3.w(" ", translitSafe, translitSafe2)) {
+                                                    arrayList8.add(new dy(tL_messages_stickerSet3, tL_messages_stickerSet3.documents));
+                                                    hashSet.add(Long.valueOf(tL_messages_stickerSet3.set.id));
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ArrayList<TLRPC.StickerSetCovered> featuredEmojiSets = MediaDataController.getInstance(i17).getFeaturedEmojiSets();
+                                    if (featuredEmojiSets != null) {
+                                        for (int i19 = 0; i19 < featuredEmojiSets.size(); i19++) {
+                                            TLRPC.StickerSetCovered stickerSetCovered = featuredEmojiSets.get(i19);
+                                            if (stickerSetCovered != null && (stickerSet = stickerSetCovered.set) != null && stickerSet.title != null && !hashSet.contains(Long.valueOf(stickerSet.id))) {
+                                                String translitSafe3 = AndroidUtilities.translitSafe(stickerSetCovered.set.title.toLowerCase());
+                                                if (translitSafe3.startsWith(translitSafe) || org.telegram.messenger.y3.w(" ", translitSafe, translitSafe3)) {
+                                                    if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
+                                                        arrayList6 = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
+                                                    } else if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
+                                                        TLRPC.TL_messages_stickerSet stickerSet3 = MediaDataController.getInstance(i17).getStickerSet(MediaDataController.getInputStickerSet(stickerSetCovered.set), Integer.valueOf(stickerSetCovered.set.hash), true);
+                                                        arrayList6 = stickerSet3 != null ? stickerSet3.documents : null;
+                                                    } else {
+                                                        arrayList6 = stickerSetCovered.covers;
+                                                    }
+                                                    if (arrayList6 != null && !arrayList6.isEmpty()) {
+                                                        arrayList8.add(new dy(stickerSetCovered, arrayList6));
+                                                        hashSet.add(Long.valueOf(stickerSetCovered.set.id));
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                runnable.run();
+                                break;
+                        }
+                    }
+                }, new xk(4, kyVar, arrayList3), new mh.f2(kyVar, str4, arrayList3, arrayList4, arrayList5, 4));
+                break;
+            case 16:
+                ArrayList arrayList6 = (ArrayList) obj;
+                ly lyVar = ((ky) obj2).a;
+                lyVar.C.S.e(false);
+                ArrayList arrayList7 = lyVar.r;
+                lyVar.B = arrayList7.size() >= arrayList6.size();
+                arrayList7.clear();
+                arrayList7.addAll(arrayList6);
+                lyVar.l();
+                break;
+            case 17:
+                ((qy) obj2).F((String) obj, "", true, false, false);
+                break;
+            case 18:
+                qy qyVar = (qy) obj2;
+                TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) ((TLObject) obj);
+                mz mzVar4 = qyVar.I;
+                MessagesController.getInstance(mzVar4.Z0).putUsers(tL_contacts_resolvedPeer.users, false);
+                int i17 = mzVar4.Z0;
+                MessagesController.getInstance(i17).putChats(tL_contacts_resolvedPeer.chats, false);
+                MessagesStorage.getInstance(i17).putUsersAndChats(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, true, true);
+                String str5 = qyVar.w;
+                qyVar.w = null;
+                qyVar.F(str5, "", false, false, false);
+                break;
+            case 19:
+                xz xzVar = (xz) obj2;
+                qh.r6 r6Var = (qh.r6) obj;
+                xzVar.c();
+                xzVar.h(r6Var);
+                b00 b00Var = xzVar.G;
+                b00Var.h1 = r6Var;
+                b00Var.j();
+                break;
+            case 20:
+                ((xz) obj2).G.f1 = (a00) obj;
+                break;
+            case 21:
+                ((d10) obj2).w0 = -1;
+                ((Runnable) ((Pair) obj).first).run();
+                break;
+            case 22:
+                ((xk) obj2).run((org.telegram.ui.ActionBar.p2) obj);
+                break;
+            case 23:
+                y40 y40Var = (y40) obj2;
+                Uri uri = (Uri) obj;
+                y40Var.getClass();
+                try {
+                    LaunchActivity launchActivity = (LaunchActivity) y40Var.a.getParentActivity();
+                    if (launchActivity != null) {
+                        Bundle bundle = new Bundle();
+                        if (uri != null) {
+                            bundle.putParcelable("photoUri", uri);
+                        }
+                        org.telegram.ui.up0 up0Var = new org.telegram.ui.up0(bundle);
+                        up0Var.e = false;
+                        up0Var.f = false;
+                        up0Var.c = y40Var;
+                        launchActivity.p0(up0Var);
+                        break;
+                    } else {
                         break;
                     }
-                    float f18 = fArr2[i32];
-                    f17 += f18;
-                    if (f18 < f16) {
-                        f16 = f18;
-                    }
-                    i32++;
+                } catch (Exception e6) {
+                    FileLog.e(e6);
+                    y40Var.s(false, ImageLoader.loadBitmap(null, uri, 800.0f, 800.0f, true), null);
+                    return;
                 }
-                float abs = Math.abs(f17 - 1332.0f);
-                int[] iArr = fmVar5.a;
-                if (iArr.length > 1) {
-                    int i33 = iArr[0];
-                    int i34 = iArr[1];
-                    if (i33 <= i34) {
-                        f10 = abs;
-                        if (iArr.length <= 2 || i34 <= iArr[2]) {
-                            if (iArr.length > 3) {
-                            }
+            case 24:
+                y50 y50Var = (y50) obj2;
+                u50 u50Var = (u50) obj;
+                z50 z50Var = y50Var.E0;
+                VideoEditedInfo videoEditedInfo = new VideoEditedInfo();
+                z50Var.K = videoEditedInfo;
+                videoEditedInfo.startTime = -1L;
+                videoEditedInfo.endTime = -1L;
+                videoEditedInfo.estimatedSize = Math.max(1L, z50Var.I);
+                VideoEditedInfo videoEditedInfo2 = z50Var.K;
+                videoEditedInfo2.roundVideo = true;
+                videoEditedInfo2.file = z50Var.E;
+                videoEditedInfo2.encryptedFile = z50Var.F;
+                videoEditedInfo2.key = z50Var.G;
+                videoEditedInfo2.iv = z50Var.H;
+                videoEditedInfo2.framerate = 25;
+                videoEditedInfo2.originalWidth = 360;
+                videoEditedInfo2.resultWidth = 360;
+                videoEditedInfo2.originalHeight = 360;
+                videoEditedInfo2.resultHeight = 360;
+                videoEditedInfo2.originalPath = y50Var.a.getAbsolutePath();
+                VideoEditedInfo videoEditedInfo3 = z50Var.K;
+                videoEditedInfo3.notReadyYet = true;
+                videoEditedInfo3.thumb = z50Var.W0;
+                videoEditedInfo3.estimatedDuration = z50Var.c0;
+                z50Var.W0 = null;
+                MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, 0, 0L, y50Var.a.getAbsolutePath(), 0, true, 0, 0, 0L);
+                if (u50Var != null) {
+                    photoEntry.ttl = u50Var.c;
+                    photoEntry.effectId = u50Var.d;
+                }
+                z50Var.c.r(photoEntry, z50Var.K, u50Var == null || u50Var.a, u50Var != null ? u50Var.b : 0, 0, false, u50Var != null ? u50Var.e : 0L);
+                break;
+            case 25:
+                Bitmap bitmap = (Bitmap) obj;
+                y50 y50Var2 = (y50) ((m2.b) obj2).b;
+                if ((bitmap != null && bitmap.getPixel(0, 0) != 0) || y50Var2.x0.size() <= 1) {
+                    y50Var2.x0.add(bitmap);
+                    break;
+                } else {
+                    ArrayList arrayList8 = y50Var2.x0;
+                    arrayList8.add((Bitmap) l.d.i(1, arrayList8));
+                    break;
+                }
+                break;
+            case 26:
+                u60 u60Var2 = (u60) obj2;
+                TLObject tLObject4 = (TLObject) obj;
+                u60Var2.getClass();
+                if (tLObject4 instanceof Vector) {
+                    Vector vector = (Vector) tLObject4;
+                    if (!vector.objects.isEmpty()) {
+                        u60Var2.c.put(Long.valueOf(u60Var2.b.admin_id), (TLRPC.User) vector.objects.get(0));
+                        u60Var2.Q.l();
+                        break;
+                    }
+                }
+                break;
+            case 27:
+                o60 o60Var = (o60) obj2;
+                if (((TLRPC.TL_error) obj) == null && (ebVar = (u60Var = o60Var.a.c).g0) != null) {
+                    TLRPC.TL_chatInviteExported tL_chatInviteExported = u60Var.b;
+                    org.telegram.ui.sb sbVar = ebVar.a;
+                    ArrayList arrayList9 = sbVar.p0;
+                    int size = arrayList9.size();
+                    int i18 = sbVar.F.h;
+                    TLRPC.TL_channelAdminLogEvent tL_channelAdminLogEvent = new TLRPC.TL_channelAdminLogEvent();
+                    TLRPC.TL_channelAdminLogEventActionExportedInviteDelete tL_channelAdminLogEventActionExportedInviteDelete = new TLRPC.TL_channelAdminLogEventActionExportedInviteDelete();
+                    tL_channelAdminLogEventActionExportedInviteDelete.invite = tL_chatInviteExported;
+                    tL_channelAdminLogEvent.action = tL_channelAdminLogEventActionExportedInviteDelete;
+                    tL_channelAdminLogEvent.date = (int) (System.currentTimeMillis() / 1000);
+                    tL_channelAdminLogEvent.user_id = sbVar.getAccountInstance().getUserConfig().clientUserId;
+                    i11 = ((org.telegram.ui.ActionBar.p2) sbVar).currentAccount;
+                    if (new MessageObject(i11, tL_channelAdminLogEvent, (ArrayList<MessageObject>) sbVar.o0, (HashMap<String, ArrayList<MessageObject>>) sbVar.n0, sbVar.s, sbVar.U, true).contentType >= 0) {
+                        sbVar.R0();
+                        int size2 = arrayList9.size() - size;
+                        if (size2 > 0) {
+                            sbVar.D0.N = true;
+                            org.telegram.ui.ob obVar = sbVar.F;
+                            obVar.s(obVar.h, size2);
+                            org.telegram.ui.sb.K0(sbVar);
                         }
-                    } else {
-                        f10 = abs;
+                        sbVar.z0.remove(tL_chatInviteExported.link);
+                        break;
                     }
-                    f11 = f10 * 1.2f;
-                    if (f16 < min) {
-                        f11 *= 1.5f;
-                    }
-                    if (fmVar4 != null || f11 < f15) {
-                        f15 = f11;
-                        fmVar4 = fmVar5;
-                    }
-                } else {
-                    f10 = abs;
                 }
-                f11 = f10;
-                if (f16 < min) {
-                }
-                if (fmVar4 != null) {
-                }
-                f15 = f11;
-                fmVar4 = fmVar5;
-            }
-            if (fmVar4 == null) {
-                return;
-            }
-            int[] iArr2 = fmVar4.a;
-            int i35 = 0;
-            int i36 = 0;
-            while (i35 < iArr2.length) {
-                int i37 = iArr2[i35];
-                float f19 = fmVar4.b[i35];
-                int i38 = 0;
-                MessageObject.GroupedMessagePosition groupedMessagePosition3 = null;
-                int i39 = MediaDataController.MAX_STYLE_RUNS_COUNT;
-                while (i38 < i37) {
-                    int i40 = (int) (fArr[i36] * f19);
-                    i39 -= i40;
-                    MessageObject.GroupedMessagePosition groupedMessagePosition4 = (MessageObject.GroupedMessagePosition) arrayList2.get(i36);
-                    int i41 = i35 == 0 ? 4 : 0;
-                    float[] fArr3 = fArr;
-                    if (i35 == iArr2.length - 1) {
-                        i41 |= 8;
-                    }
-                    if (i38 == 0) {
-                        i41 |= 1;
-                        groupedMessagePosition3 = groupedMessagePosition4;
-                    }
-                    if (i38 == i37 - 1) {
-                        i41 |= 2;
-                        groupedMessagePosition3 = groupedMessagePosition4;
-                    }
-                    int i42 = i38;
-                    groupedMessagePosition4.set(i42, i38, i35, i35, i40, Math.max(dp4, f19 / 814.0f), i41);
-                    i36++;
-                    i38 = i42 + 1;
-                    fArr = fArr3;
-                }
-                int i43 = i35;
-                float[] fArr4 = fArr;
-                if (groupedMessagePosition3 != null) {
-                    groupedMessagePosition3.pw += i39;
-                    groupedMessagePosition3.spanSize += i39;
-                }
-                i35 = i43 + 1;
-                fArr = fArr4;
-            }
-        } else if (size == 2) {
-            MessageObject.GroupedMessagePosition groupedMessagePosition5 = (MessageObject.GroupedMessagePosition) arrayList2.get(0);
-            MessageObject.GroupedMessagePosition groupedMessagePosition6 = (MessageObject.GroupedMessagePosition) arrayList2.get(1);
-            if (str.equals("ww") && f14 > 1.2285012f * 1.4d) {
-                float f20 = groupedMessagePosition5.aspectRatio;
-                float f21 = groupedMessagePosition6.aspectRatio;
-                if (f20 - f21 < 0.2d) {
-                    float round = Math.round(Math.min(1000.0f / f20, Math.min(1000.0f / f21, 407.0f))) / 814.0f;
-                    groupedMessagePosition5.set(0, 0, 0, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, round, 7);
-                    groupedMessagePosition6.set(0, 0, 1, 1, MediaDataController.MAX_STYLE_RUNS_COUNT, round, 11);
-                }
-            }
-            if (str.equals("ww") || str.equals("qq")) {
-                float f22 = 500;
-                float round2 = Math.round(Math.min(f22 / groupedMessagePosition5.aspectRatio, Math.min(f22 / groupedMessagePosition6.aspectRatio, 814.0f))) / 814.0f;
-                groupedMessagePosition5.set(0, 0, 0, 0, 500, round2, 13);
-                groupedMessagePosition6.set(1, 1, 0, 0, 500, round2, 14);
-            } else {
-                float f23 = groupedMessagePosition5.aspectRatio;
-                int max = (int) Math.max(400.0f, Math.round((1000.0f / f23) / ((1.0f / groupedMessagePosition6.aspectRatio) + (1.0f / f23))));
-                int i44 = 1000 - max;
-                if (i44 < min) {
-                    max -= min - i44;
-                } else {
-                    min = i44;
-                }
-                float min3 = Math.min(814.0f, Math.round(Math.min(min / groupedMessagePosition5.aspectRatio, max / groupedMessagePosition6.aspectRatio))) / 814.0f;
-                groupedMessagePosition5.set(0, 0, 0, 0, min, min3, 13);
-                groupedMessagePosition6.set(1, 1, 0, 0, max, min3, 14);
-            }
-        } else if (size == 3) {
-            MessageObject.GroupedMessagePosition groupedMessagePosition7 = (MessageObject.GroupedMessagePosition) arrayList2.get(0);
-            MessageObject.GroupedMessagePosition groupedMessagePosition8 = (MessageObject.GroupedMessagePosition) arrayList2.get(1);
-            MessageObject.GroupedMessagePosition groupedMessagePosition9 = (MessageObject.GroupedMessagePosition) arrayList2.get(2);
-            if (str.charAt(0) == 'n') {
-                float f24 = groupedMessagePosition8.aspectRatio;
-                float min4 = Math.min(407.0f, Math.round((f24 * 1000.0f) / (groupedMessagePosition9.aspectRatio + f24)));
-                int max2 = (int) Math.max(min, Math.min(500.0f, Math.round(Math.min(groupedMessagePosition9.aspectRatio * min4, groupedMessagePosition8.aspectRatio * r9))));
-                float f25 = (groupedMessagePosition7.aspectRatio * 814.0f) + min2;
-                int i45 = 1000 - max2;
-                groupedMessagePosition7.set(0, 0, 0, 1, Math.round(Math.min(f25, i45)), 1.0f, 13);
-                float f26 = (814.0f - min4) / 814.0f;
-                groupedMessagePosition8.set(1, 1, 0, 0, max2, f26, 6);
-                float f27 = min4 / 814.0f;
-                groupedMessagePosition9.set(1, 1, 1, 1, max2, f27, 10);
-                groupedMessagePosition9.spanSize = MediaDataController.MAX_STYLE_RUNS_COUNT;
-                groupedMessagePosition7.siblingHeights = new float[]{f27, f26};
-                groupedMessagePosition7.spanSize = i45;
-            } else {
-                float round3 = Math.round(Math.min(1000.0f / groupedMessagePosition7.aspectRatio, 537.24005f)) / 814.0f;
-                groupedMessagePosition7.set(0, 1, 0, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, round3, 7);
-                float f28 = 500;
-                float min5 = Math.min(814.0f - round3, Math.round(Math.min(f28 / groupedMessagePosition8.aspectRatio, f28 / groupedMessagePosition9.aspectRatio))) / 814.0f;
-                float f29 = min5 < dp4 ? dp4 : min5;
-                groupedMessagePosition8.set(0, 0, 1, 1, 500, f29, 9);
-                groupedMessagePosition9.set(1, 1, 1, 1, 500, f29, 10);
-            }
-        } else {
-            MessageObject.GroupedMessagePosition groupedMessagePosition10 = (MessageObject.GroupedMessagePosition) arrayList2.get(0);
-            MessageObject.GroupedMessagePosition groupedMessagePosition11 = (MessageObject.GroupedMessagePosition) arrayList2.get(1);
-            MessageObject.GroupedMessagePosition groupedMessagePosition12 = (MessageObject.GroupedMessagePosition) arrayList2.get(2);
-            MessageObject.GroupedMessagePosition groupedMessagePosition13 = (MessageObject.GroupedMessagePosition) arrayList2.get(3);
-            if (str.charAt(0) == 'w') {
-                float round4 = Math.round(Math.min(1000.0f / groupedMessagePosition10.aspectRatio, 537.24005f)) / 814.0f;
-                groupedMessagePosition10.set(0, 2, 0, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, round4, 7);
-                float round5 = Math.round(1000.0f / ((groupedMessagePosition11.aspectRatio + groupedMessagePosition12.aspectRatio) + groupedMessagePosition13.aspectRatio));
-                float f30 = min;
-                int max3 = (int) Math.max(f30, Math.min(400.0f, groupedMessagePosition11.aspectRatio * round5));
-                int max4 = (int) Math.max(Math.max(f30, 330.0f), groupedMessagePosition13.aspectRatio * round5);
-                int i46 = (1000 - max3) - max4;
-                if (i46 < AndroidUtilities.dp(58.0f)) {
-                    int dp5 = AndroidUtilities.dp(58.0f) - i46;
-                    i46 = AndroidUtilities.dp(58.0f);
-                    int i47 = dp5 / 2;
-                    max3 -= i47;
-                    max4 -= dp5 - i47;
-                }
-                int i48 = max3;
-                float min6 = Math.min(814.0f - round4, round5) / 814.0f;
-                float f31 = min6 < dp4 ? dp4 : min6;
-                groupedMessagePosition11.set(0, 0, 1, 1, i48, f31, 9);
-                groupedMessagePosition12.set(1, 1, 1, 1, i46, f31, 8);
-                groupedMessagePosition13.set(2, 2, 1, 1, max4, f31, 10);
-            } else {
-                int max5 = Math.max(min, Math.round(814.0f / ((1.0f / groupedMessagePosition13.aspectRatio) + ((1.0f / groupedMessagePosition12.aspectRatio) + (1.0f / groupedMessagePosition11.aspectRatio)))));
-                float f32 = dp;
-                float f33 = max5;
-                float min7 = Math.min(0.33f, Math.max(f32, f33 / groupedMessagePosition11.aspectRatio) / 814.0f);
-                float min8 = Math.min(0.33f, Math.max(f32, f33 / groupedMessagePosition12.aspectRatio) / 814.0f);
-                float f34 = (1.0f - min7) - min8;
-                float f35 = (groupedMessagePosition10.aspectRatio * 814.0f) + min2;
-                int i49 = 1000 - max5;
-                groupedMessagePosition10.set(0, 0, 0, 2, Math.round(Math.min(f35, i49)), min7 + min8 + f34, 13);
-                groupedMessagePosition11.set(1, 1, 0, 0, max5, min7, 6);
-                groupedMessagePosition12.set(1, 1, 1, 1, max5, min8, 2);
-                groupedMessagePosition12.spanSize = MediaDataController.MAX_STYLE_RUNS_COUNT;
-                groupedMessagePosition13.set(1, 1, 2, 2, max5, f34, 10);
-                groupedMessagePosition13.spanSize = MediaDataController.MAX_STYLE_RUNS_COUNT;
-                groupedMessagePosition10.spanSize = i49;
-                groupedMessagePosition10.siblingHeights = new float[]{min7, min8, f34};
-            }
+                break;
+            case 28:
+                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) obj;
+                ((e70) obj2).setFocusable(true);
+                editTextBoldCursor.requestFocus();
+                AndroidUtilities.runOnUIThread(new q1(i13, editTextBoldCursor));
+                break;
+            default:
+                Bundle bundle2 = new Bundle();
+                bundle2.putLong("user_id", ((TLRPC.ChatFull) obj2).guard_bot_id);
+                ((org.telegram.ui.ep) obj).presentFragment(new ProfileActivity(bundle2, null));
+                break;
         }
-        int i50 = 0;
-        while (i50 < size) {
-            MessageObject.GroupedMessagePosition groupedMessagePosition14 = (MessageObject.GroupedMessagePosition) arrayList2.get(i50);
-            if (groupedMessagePosition14.minX == 0) {
-                groupedMessagePosition14.spanSize += 200;
-            }
-            if ((groupedMessagePosition14.flags & 2) != 0) {
-                groupedMessagePosition14.edge = true;
-            }
-            this.d = Math.max(this.d, (int) groupedMessagePosition14.maxX);
-            this.e = Math.max(this.e, (int) groupedMessagePosition14.maxY);
-            byte b19 = groupedMessagePosition14.minY;
-            byte b20 = groupedMessagePosition14.maxY;
-            byte b21 = groupedMessagePosition14.minX;
-            int i51 = (b20 - b19) + 1;
-            float[] fArr5 = new float[i51];
-            Arrays.fill(fArr5, 0.0f);
-            int size3 = arrayList2.size();
-            int i52 = 0;
-            while (i52 < size3) {
-                MessageObject.GroupedMessagePosition groupedMessagePosition15 = (MessageObject.GroupedMessagePosition) arrayList2.get(i52);
-                if (groupedMessagePosition15 != groupedMessagePosition14 && groupedMessagePosition15.maxX < b21) {
-                    int min9 = Math.min((int) groupedMessagePosition15.maxY, (int) b20) - b19;
-                    int max6 = Math.max(groupedMessagePosition15.minY - b19, 0);
-                    while (max6 <= min9) {
-                        fArr5[max6] = fArr5[max6] + groupedMessagePosition15.pw;
-                        max6++;
-                        i50 = i50;
-                    }
-                }
-                i52++;
-                i50 = i50;
-            }
-            int i53 = i50;
-            float f36 = 0.0f;
-            for (int i54 = 0; i54 < i51; i54++) {
-                float f37 = fArr5[i54];
-                if (f36 < f37) {
-                    f36 = f37;
-                }
-            }
-            groupedMessagePosition14.left = f36;
-            i50 = i53 + 1;
-        }
-        for (int i55 = 0; i55 < size; i55++) {
-            MessageObject.GroupedMessagePosition groupedMessagePosition16 = (MessageObject.GroupedMessagePosition) arrayList2.get(i55);
-            byte b22 = groupedMessagePosition16.minY;
-            int i56 = this.d + 1;
-            float[] fArr6 = new float[i56];
-            Arrays.fill(fArr6, 0.0f);
-            int size4 = arrayList2.size();
-            for (int i57 = 0; i57 < size4; i57++) {
-                MessageObject.GroupedMessagePosition groupedMessagePosition17 = (MessageObject.GroupedMessagePosition) arrayList2.get(i57);
-                if (groupedMessagePosition17 != groupedMessagePosition16 && groupedMessagePosition17.maxY < b22) {
-                    for (int i58 = groupedMessagePosition17.minX; i58 <= groupedMessagePosition17.maxX; i58++) {
-                        fArr6[i58] = fArr6[i58] + groupedMessagePosition17.ph;
-                    }
-                }
-            }
-            float f38 = 0.0f;
-            for (int i59 = 0; i59 < i56; i59++) {
-                float f39 = fArr6[i59];
-                if (f38 < f39) {
-                    f38 = f39;
-                }
-            }
-            groupedMessagePosition16.top = f38;
-        }
-        int[] iArr3 = new int[10];
-        Arrays.fill(iArr3, 0);
-        int size5 = arrayList2.size();
-        for (int i60 = 0; i60 < size5; i60++) {
-            MessageObject.GroupedMessagePosition groupedMessagePosition18 = (MessageObject.GroupedMessagePosition) arrayList2.get(i60);
-            int i61 = groupedMessagePosition18.pw;
-            for (int i62 = groupedMessagePosition18.minY; i62 <= groupedMessagePosition18.maxY; i62++) {
-                iArr3[i62] = iArr3[i62] + i61;
-            }
-        }
-        int i63 = iArr3[0];
-        for (int i64 = 1; i64 < 10; i64++) {
-            int i65 = iArr3[i64];
-            if (i63 < i65) {
-                i63 = i65;
-            }
-        }
-        this.c = i63;
-        float[] fArr7 = new float[10];
-        Arrays.fill(fArr7, 0.0f);
-        int size6 = arrayList2.size();
-        for (int i66 = 0; i66 < size6; i66++) {
-            MessageObject.GroupedMessagePosition groupedMessagePosition19 = (MessageObject.GroupedMessagePosition) arrayList2.get(i66);
-            float f40 = groupedMessagePosition19.ph;
-            for (int i67 = groupedMessagePosition19.minX; i67 <= groupedMessagePosition19.maxX; i67++) {
-                fArr7[i67] = fArr7[i67] + f40;
-            }
-        }
-        float f41 = fArr7[0];
-        for (int i68 = 1; i68 < 10; i68++) {
-            float f42 = fArr7[i68];
-            if (f41 < f42) {
-                f41 = f42;
-            }
-        }
-        this.f = f41;
     }
 }

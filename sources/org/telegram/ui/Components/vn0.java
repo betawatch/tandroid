@@ -1,27 +1,26 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class vn0 extends f2.z0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.xx b;
+public final class vn0 extends i40 {
+    public final /* synthetic */ org.telegram.ui.yx Z;
 
-    public /* synthetic */ vn0(org.telegram.ui.xx xxVar, int i10) {
-        this.a = i10;
-        this.b = xxVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vn0(org.telegram.ui.yx yxVar, tl0 tl0Var, Context context, int i10) {
+        super(tl0Var, context, i10);
+        this.Z = yxVar;
     }
 
-    @Override // f2.z0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                this.b.S(i10, i11);
-                break;
-            default:
-                this.b.S(i10, i11);
-                break;
-        }
+    @Override // org.telegram.ui.Components.x51
+    public final void N(boolean z4) {
+        super.N(z4);
+        rn0 rn0Var = this.Z.p0;
+        rn0Var.e(false, z4);
+        rn0Var.d.setText(LocaleController.getString(R.string.NoResult));
+        rn0Var.e.setVisibility(8);
     }
 }

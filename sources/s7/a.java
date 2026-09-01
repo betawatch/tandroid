@@ -7,9 +7,9 @@ import android.os.Parcel;
 import b6.m;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import j7.r5;
+import j7.p5;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a extends Binder implements j, IInterface {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final class a extends Binder implements j, IInterface {
     public void A(int i10, boolean z4) {
         switch (this.a) {
             case 1:
-                r5.a(new Status(i10, null, null, null), Boolean.valueOf(z4), this.b);
+                p5.a(new Status(i10, null, null, null), Boolean.valueOf(z4), this.b);
                 break;
         }
     }
@@ -34,7 +34,7 @@ public final class a extends Binder implements j, IInterface {
     public void h0(Status status, boolean z4) {
         switch (this.a) {
             case 1:
-                r5.a(status, Boolean.valueOf(z4), this.b);
+                p5.a(status, Boolean.valueOf(z4), this.b);
                 break;
         }
     }
@@ -44,9 +44,9 @@ public final class a extends Binder implements j, IInterface {
         switch (this.a) {
             case 0:
                 int i10 = j8.a.c;
-                boolean e = status.e();
+                boolean e6 = status.e();
                 TaskCompletionSource taskCompletionSource = this.b;
-                if (!e) {
+                if (!e6) {
                     taskCompletionSource.setException(m.m(status));
                     break;
                 } else {

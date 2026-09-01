@@ -1,153 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.content.SharedPreferences;
-import android.graphics.drawable.Drawable;
-import java.util.regex.Pattern;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.CallReceiver;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SavedMessagesController;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mc implements Runnable {
-    public final /* synthetic */ int a;
+public final /* synthetic */ class mc implements Utilities.Callback {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ mc(int i10) {
-        this.a = i10;
+    public /* synthetic */ mc(int i10, ic icVar, long j10) {
+        this.c = i10;
+        this.d = icVar;
+        this.b = j10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        TLRPC.StickerSet stickerSet;
+        int i10 = this.a;
+        int i11 = this.c;
+        long j10 = this.b;
+        Object obj2 = this.d;
+        switch (i10) {
             case 0:
-                SavedMessagesController.openSavedMessagesReminders();
-                break;
-            case 1:
-                MediaController.getInstance().stopRecording(0, false, 0, false, 0L);
-                break;
-            case 2:
-                MediaController.getInstance().stopRecording(0, false, 0, false, 0L);
-                break;
-            case 3:
-                break;
-            case 4:
-                int i10 = qn.j1;
-                break;
-            case 5:
-                PhotoViewer.t1().G0(false, false);
-                break;
-            case 6:
-                PhotoViewer.t1().G0(false, false);
-                break;
-            case 7:
-                int i11 = vt.b;
-                break;
-            case 8:
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
-                break;
-            case 9:
-                if (VoIPService.getSharedInstance() != null && VoIPService.getSharedInstance().isMicMute()) {
-                    VoIPService.getSharedInstance().setMicMute(false, true, false);
-                    break;
-                }
-                break;
-            case 10:
-                org.telegram.ui.ActionBar.p2 R = LaunchActivity.R();
-                if (R != null) {
-                    org.telegram.ui.ActionBar.n2 n2Var = new org.telegram.ui.ActionBar.n2();
-                    n2Var.a = true;
-                    R.showAsSheet(new PremiumPreviewFragment(0, "noncontacts"), n2Var);
-                    break;
-                }
-                break;
-            case 11:
-                int i12 = l01.f;
-                break;
-            case 12:
-                SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
-                a11.f = Boolean.TRUE;
-                edit.putBoolean("nothanos", true).apply();
-                break;
-            case 13:
-                SharedPreferences.Editor edit2 = MessagesController.getGlobalMainSettings().edit();
-                a11.f = Boolean.TRUE;
-                edit2.putBoolean("nothanos", true).apply();
-                break;
-            case 14:
-                int i13 = w21.c0;
-                break;
-            case 15:
-                SavedMessagesController.openSavedMessages();
-                break;
-            case 16:
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
-                break;
-            case 17:
-                org.telegram.ui.Components.voip.m2.i();
-                break;
-            case 18:
-                nh.r5.p();
-                break;
-            case 19:
-                org.telegram.ui.c60 c60Var = org.telegram.ui.c60.A3;
-                if (c60Var != null) {
-                    c60Var.show();
-                    break;
-                }
-                break;
-            case 20:
-                if (VoIPService.getSharedInstance() != null) {
-                    VoIPService.getSharedInstance().setMicMute(false, true, false);
-                    break;
-                }
-                break;
-            case 21:
-                Pattern pattern = LaunchActivity.y1;
-                break;
-            case 22:
-                Pattern pattern2 = LaunchActivity.y1;
-                break;
-            case 23:
-                Pattern pattern3 = LaunchActivity.y1;
-                ApplicationLoader.mainInterfacePausedStageQueue = false;
-                ApplicationLoader.mainInterfacePausedStageQueueTime = System.currentTimeMillis();
-                break;
-            case 24:
-                break;
-            case 25:
-                CallReceiver.checkLastReceivedCall();
-                break;
-            case 26:
-                CallReceiver.checkLastReceivedCall();
-                break;
-            case 27:
-                qc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
-                break;
-            case 28:
-                qc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
+                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj;
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.mp(10, (ic) obj2, (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null) ? LocaleController.getString(R.string.AddEmojiNotFound) : i11 == 1 ? AndroidUtilities.replaceTags(LocaleController.formatString("TopicContainsEmojiPackSingle", R.string.TopicContainsEmojiPackSingle, stickerSet.title)) : i11 == 2 ? AndroidUtilities.replaceTags(LocaleController.formatString("StoryContainsEmojiPackSingle", R.string.StoryContainsEmojiPackSingle, stickerSet.title)) : AndroidUtilities.replaceTags(LocaleController.formatString("MessageContainsEmojiPackSingle", R.string.MessageContainsEmojiPackSingle, stickerSet.title))), Math.max(1L, 750 - (System.currentTimeMillis() - j10)));
                 break;
             default:
-                Drawable[] drawableArr = PhotoViewer.Q8;
+                ((zu0) obj2).getStoriesController().b(i11, j10, (ArrayList) obj);
                 break;
         }
     }
 
-    public /* synthetic */ mc(Object obj, int i10) {
-        this.a = i10;
-    }
-
-    private final void a() {
-    }
-
-    private final void b() {
+    public /* synthetic */ mc(zu0 zu0Var, long j10, int i10) {
+        this.d = zu0Var;
+        this.b = j10;
+        this.c = i10;
     }
 }

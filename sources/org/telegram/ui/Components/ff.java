@@ -16,7 +16,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class ff extends dg {
     public boolean e;
@@ -26,13 +26,13 @@ public final class ff extends dg {
     public final /* synthetic */ ChatActivityEnterView r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ff(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(chatActivityEnterView, context, f6Var);
+    public ff(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(chatActivityEnterView, context, g6Var);
         this.r = chatActivityEnterView;
         this.e = true;
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.xt, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.zt, android.widget.TextView, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         ChatActivityEnterView chatActivityEnterView = this.r;
@@ -49,7 +49,7 @@ public final class ff extends dg {
         }
     }
 
-    @Override // org.telegram.ui.Components.vt, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.xt, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.xt, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.zt, android.widget.TextView, android.view.View
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (getLayout() == null || !this.e) {
@@ -59,7 +59,7 @@ public final class ff extends dg {
         this.r.J(true);
     }
 
-    @Override // org.telegram.ui.Components.dg, org.telegram.ui.Components.vt, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.dg, org.telegram.ui.Components.xt, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, i11);
         ChatActivityEnterView chatActivityEnterView = this.r;
@@ -73,7 +73,7 @@ public final class ff extends dg {
         }
     }
 
-    @Override // org.telegram.ui.Components.dg, org.telegram.ui.Components.vt, android.widget.EditText, android.widget.TextView
+    @Override // org.telegram.ui.Components.dg, org.telegram.ui.Components.xt, android.widget.EditText, android.widget.TextView
     public final boolean onTextContextMenuItem(int i10) {
         if (i10 == 16908322) {
             ChatActivityEnterView chatActivityEnterView = this.r;
@@ -85,10 +85,10 @@ public final class ff extends dg {
                         String htmlText = primaryClip.getItemAt(0).getHtmlText();
                         if (!TextUtils.isEmpty(htmlText)) {
                             HashMap hashMap = new HashMap();
-                            ArrayList z4 = vh.x3.z(htmlText, hashMap);
+                            ArrayList z4 = wh.x3.z(htmlText, hashMap);
                             if (!z4.isEmpty()) {
-                                if (!vh.w4.f(z4, hashMap)) {
-                                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(vh.w4.j(z4, false));
+                                if (!wh.w4.f(z4, hashMap)) {
+                                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(wh.w4.j(z4, false));
                                     Emoji.replaceEmoji((CharSequence) spannableStringBuilder, chatActivityEnterView.B0.getPaint().getFontMetricsInt(), false, (int[]) null);
                                     u5[] u5VarArr = (u5[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), u5.class);
                                     if (u5VarArr != null) {
@@ -98,14 +98,14 @@ public final class ff extends dg {
                                     }
                                     int max = Math.max(0, chatActivityEnterView.B0.getSelectionStart());
                                     int min = Math.min(chatActivityEnterView.B0.getText().length(), chatActivityEnterView.B0.getSelectionEnd());
-                                    yi0[] yi0VarArr = (yi0[]) chatActivityEnterView.B0.getText().getSpans(max, min, yi0.class);
-                                    if (yi0VarArr == null || yi0VarArr.length <= 0) {
-                                        zi0.a(spannableStringBuilder);
+                                    aj0[] aj0VarArr = (aj0[]) chatActivityEnterView.B0.getText().getSpans(max, min, aj0.class);
+                                    if (aj0VarArr == null || aj0VarArr.length <= 0) {
+                                        bj0.a(spannableStringBuilder);
                                     } else {
-                                        yi0[] yi0VarArr2 = (yi0[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), yi0.class);
-                                        for (int i11 = 0; i11 < yi0VarArr2.length; i11++) {
-                                            spannableStringBuilder.removeSpan(yi0VarArr2[i11]);
-                                            spannableStringBuilder.removeSpan(yi0VarArr2[i11].a);
+                                        aj0[] aj0VarArr2 = (aj0[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), aj0.class);
+                                        for (int i11 = 0; i11 < aj0VarArr2.length; i11++) {
+                                            spannableStringBuilder.removeSpan(aj0VarArr2[i11]);
+                                            spannableStringBuilder.removeSpan(aj0VarArr2[i11].a);
                                         }
                                     }
                                     ff ffVar = chatActivityEnterView.B0;
@@ -122,8 +122,8 @@ public final class ff extends dg {
                             }
                         }
                     }
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e6) {
+                    FileLog.e(e6);
                 }
             }
         }
@@ -135,10 +135,10 @@ public final class ff extends dg {
         ChatActivityEnterView chatActivityEnterView = this.r;
         if (!chatActivityEnterView.v()) {
             if (motionEvent.getAction() == 0 && chatActivityEnterView.V2 != null) {
-                int i10 = org.telegram.ui.ActionBar.j6.vf;
+                int i10 = org.telegram.ui.ActionBar.k6.vf;
                 int i11 = ChatActivityEnterView.j5;
                 setHandlesColor(chatActivityEnterView.i0(i10));
-                chatActivityEnterView.V2.t1();
+                chatActivityEnterView.V2.x1();
             }
             return super.onTouchEvent(motionEvent);
         }
@@ -152,10 +152,10 @@ public final class ff extends dg {
             }
         } else if (this.n) {
             if (chatActivityEnterView.V2 != null) {
-                int i12 = org.telegram.ui.ActionBar.j6.vf;
+                int i12 = org.telegram.ui.ActionBar.k6.vf;
                 int i13 = ChatActivityEnterView.j5;
                 setHandlesColor(chatActivityEnterView.i0(i12));
-                chatActivityEnterView.V2.t1();
+                chatActivityEnterView.V2.x1();
             }
             ff ffVar = chatActivityEnterView.B0;
             if (ffVar != null && !AndroidUtilities.showKeyboard(ffVar)) {
@@ -166,7 +166,7 @@ public final class ff extends dg {
         return this.n;
     }
 
-    @Override // org.telegram.ui.Components.dg, org.telegram.ui.Components.xt
+    @Override // org.telegram.ui.Components.dg, org.telegram.ui.Components.zt
     public final void setOffsetY(float f10) {
         super.setOffsetY(f10);
         this.r.u1.invalidate();

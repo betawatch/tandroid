@@ -1,36 +1,26 @@
 package lh;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.content.Context;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.qc;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class r1 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g5 b;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique c;
-    public final /* synthetic */ mf.a d;
-    public final /* synthetic */ Runnable e;
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes.dex */
+public final class r1 extends mh.g5 {
+    public final /* synthetic */ g2 o1;
 
-    public /* synthetic */ r1(g5 g5Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, mf.a aVar, Runnable runnable, int i10) {
-        this.a = i10;
-        this.b = g5Var;
-        this.c = tL_starGiftUnique;
-        this.d = aVar;
-        this.e = runnable;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r1(g2 g2Var, Context context, int i10, long j10, g6 g6Var) {
+        super(context, i10, j10, g6Var, null);
+        this.o1 = g2Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                g5.M0(this.b, this.c, this.d, this.e, tLObject, tL_error);
-                break;
-            default:
-                g5.s0(this.b, this.c, this.d, this.e, tLObject, tL_error);
-                break;
-        }
+    @Override // mh.g5, org.telegram.ui.ActionBar.h3, org.telegram.ui.ActionBar.l2
+    public final qc getBulletinFactory() {
+        g6 g6Var;
+        g2 g2Var = this.o1;
+        org.telegram.ui.ActionBar.f3 f3Var = g2Var.container;
+        g6Var = g2Var.resourcesProvider;
+        return new qc(f3Var, g6Var);
     }
 }

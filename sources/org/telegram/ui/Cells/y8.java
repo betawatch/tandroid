@@ -15,22 +15,22 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.d90;
+import org.telegram.ui.Components.f90;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public class y8 extends FrameLayout {
-    public final ih.s a;
+    public final jh.s a;
     public final x8 b;
     public final x8 c;
     public final ImageView d;
     public boolean e;
     public boolean f;
     public final boolean h;
-    public final org.telegram.ui.ActionBar.f6 n;
+    public final org.telegram.ui.ActionBar.g6 n;
 
-    public y8(Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z4) {
-        this(23, context, f6Var, z4, false);
+    public y8(Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z4) {
+        this(23, context, g6Var, z4, false);
     }
 
     public final void b(Drawable drawable, String str) {
@@ -43,12 +43,12 @@ public class y8 extends FrameLayout {
             imageView.setBackground(null);
             imageView.setImportantForAccessibility(2);
         } else {
-            imageView.setBackground(org.telegram.ui.ActionBar.j6.h0(AndroidUtilities.dp(48.0f), 0, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.i6, this.n)));
+            imageView.setBackground(org.telegram.ui.ActionBar.k6.h0(AndroidUtilities.dp(48.0f), 0, org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.i6, this.n)));
             imageView.setImportantForAccessibility(1);
         }
         int dp = AndroidUtilities.dp(23.0f) + (drawable != null ? AndroidUtilities.dp(48.0f) : 0);
         boolean z4 = LocaleController.isRTL;
-        ih.s sVar = this.a;
+        jh.s sVar = this.a;
         if (z4) {
             ((ViewGroup.MarginLayoutParams) sVar.getLayoutParams()).leftMargin = dp;
         } else {
@@ -76,19 +76,19 @@ public class y8 extends FrameLayout {
     }
 
     public final void e() {
-        int i10 = org.telegram.ui.ActionBar.j6.gc;
-        org.telegram.ui.ActionBar.f6 f6Var = this.n;
-        int a2 = a(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
-        ih.s sVar = this.a;
+        int i10 = org.telegram.ui.ActionBar.k6.gc;
+        org.telegram.ui.ActionBar.g6 g6Var = this.n;
+        int a2 = a(org.telegram.ui.ActionBar.k6.v0(i10, g6Var));
+        jh.s sVar = this.a;
         sVar.setLinkTextColor(a2);
-        sVar.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, f6Var));
+        sVar.setTextColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.G6, g6Var));
         sVar.invalidate();
-        int a10 = a(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
+        int a10 = a(org.telegram.ui.ActionBar.k6.v0(i10, g6Var));
         x8 x8Var = this.b;
         x8Var.setLinkTextColor(a10);
-        int i11 = org.telegram.ui.ActionBar.j6.z6;
-        x8Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
-        this.c.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
+        int i11 = org.telegram.ui.ActionBar.k6.z6;
+        x8Var.setTextColor(org.telegram.ui.ActionBar.k6.v0(i11, g6Var));
+        this.c.setTextColor(org.telegram.ui.ActionBar.k6.v0(i11, g6Var));
         x8Var.invalidate();
     }
 
@@ -105,12 +105,12 @@ public class y8 extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.e) {
-            org.telegram.ui.ActionBar.f6 f6Var = this.n;
-            Paint G = f6Var != null ? f6Var.G("paintDivider") : org.telegram.ui.ActionBar.j6.k0;
-            if (G == null) {
-                G = org.telegram.ui.ActionBar.j6.k0;
+            org.telegram.ui.ActionBar.g6 g6Var = this.n;
+            Paint F = g6Var != null ? g6Var.F("paintDivider") : org.telegram.ui.ActionBar.k6.k0;
+            if (F == null) {
+                F = org.telegram.ui.ActionBar.k6.k0;
             }
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, G);
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, F);
         }
     }
 
@@ -148,7 +148,7 @@ public class y8 extends FrameLayout {
         boolean z4 = x8Var.b(x10 - x8Var.getLeft(), ((int) motionEvent.getY()) - x8Var.getTop()) != null;
         if (!z4) {
             int x11 = (int) motionEvent.getX();
-            ih.s sVar = this.a;
+            jh.s sVar = this.a;
             z4 = sVar.a(x11 - sVar.getLeft(), ((int) motionEvent.getY()) - sVar.getTop()) != null;
         }
         if (z4) {
@@ -173,22 +173,22 @@ public class y8 extends FrameLayout {
         }
     }
 
-    public y8(int i10, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z4, boolean z10) {
+    public y8(int i10, Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z4, boolean z10) {
         super(context);
-        this.n = f6Var;
+        this.n = g6Var;
         boolean z11 = z4 || z10;
         this.h = z11;
-        ih.s sVar = new ih.s(context, f6Var, true);
+        jh.s sVar = new jh.s(context, g6Var, true);
         this.a = sVar;
         final int i11 = 0;
-        sVar.setOnLinkLongPressListener(new d90(this) { // from class: org.telegram.ui.Cells.w8
+        sVar.setOnLinkLongPressListener(new f90(this) { // from class: org.telegram.ui.Cells.w8
             public final /* synthetic */ y8 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.Components.d90
+            @Override // org.telegram.ui.Components.f90
             public final void a(ClickableSpan clickableSpan) {
                 switch (i11) {
                     case 0:
@@ -242,18 +242,18 @@ public class y8 extends FrameLayout {
         sVar.setImportantForAccessibility(2);
         sVar.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(5.0f));
         float f10 = i10 - 6;
-        addView(sVar, k7.b6.d(-2, -2.0f, LocaleController.isRTL ? 5 : 3, f10, 6.0f, f10, z4 ? 27.0f : 0.0f));
-        x8 x8Var = new x8(this, context, f6Var, 0);
+        addView(sVar, k7.c6.d(-2, -2.0f, LocaleController.isRTL ? 5 : 3, f10, 6.0f, f10, z4 ? 27.0f : 0.0f));
+        x8 x8Var = new x8(this, context, g6Var, 0);
         this.b = x8Var;
         final int i12 = 1;
-        x8Var.setOnLinkLongPressListener(new d90(this) { // from class: org.telegram.ui.Cells.w8
+        x8Var.setOnLinkLongPressListener(new f90(this) { // from class: org.telegram.ui.Cells.w8
             public final /* synthetic */ y8 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.Components.d90
+            @Override // org.telegram.ui.Components.f90
             public final void a(ClickableSpan clickableSpan) {
                 switch (i12) {
                     case 0:
@@ -306,22 +306,22 @@ public class y8 extends FrameLayout {
         x8Var.setPadding(0, AndroidUtilities.dp(1.0f), 0, AndroidUtilities.dp(6.0f));
         if (z4) {
             float f11 = i10;
-            addView(x8Var, k7.b6.d(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 80, f11, 32.0f, f11, 4.0f));
+            addView(x8Var, k7.c6.d(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 80, f11, 32.0f, f11, 4.0f));
         } else {
             float f12 = i10;
-            addView(x8Var, k7.b6.d(-1, -2.0f, LocaleController.isRTL ? 5 : 3, f12, 32.0f, f12, 4.0f));
+            addView(x8Var, k7.c6.d(-1, -2.0f, LocaleController.isRTL ? 5 : 3, f12, 32.0f, f12, 4.0f));
         }
-        x8 x8Var2 = new x8(this, context, f6Var, 1);
+        x8 x8Var2 = new x8(this, context, g6Var, 1);
         this.c = x8Var2;
         final int i13 = 2;
-        x8Var2.setOnLinkLongPressListener(new d90(this) { // from class: org.telegram.ui.Cells.w8
+        x8Var2.setOnLinkLongPressListener(new f90(this) { // from class: org.telegram.ui.Cells.w8
             public final /* synthetic */ y8 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.Components.d90
+            @Override // org.telegram.ui.Components.f90
             public final void a(ClickableSpan clickableSpan) {
                 switch (i13) {
                     case 0:
@@ -375,17 +375,17 @@ public class y8 extends FrameLayout {
         x8Var2.setPadding(0, AndroidUtilities.dp(1.0f), 0, AndroidUtilities.dp(6.0f));
         if (z4) {
             float f13 = i10;
-            addView(x8Var2, k7.b6.d(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 80, f13, 32.0f, f13, 4.0f));
+            addView(x8Var2, k7.c6.d(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 80, f13, 32.0f, f13, 4.0f));
         } else {
             float f14 = i10;
-            addView(x8Var2, k7.b6.d(-1, -2.0f, LocaleController.isRTL ? 5 : 3, f14, 32.0f, f14, 4.0f));
+            addView(x8Var2, k7.c6.d(-1, -2.0f, LocaleController.isRTL ? 5 : 3, f14, 32.0f, f14, 4.0f));
         }
         e();
         ImageView imageView = new ImageView(context);
         this.d = imageView;
         imageView.setImportantForAccessibility(2);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, k7.b6.i(48.0f, 48.0f, 8388629, 0.0f, 0.0f, 12.0f, 0.0f));
+        addView(imageView, k7.c6.i(48.0f, 48.0f, 8388629, 0.0f, 0.0f, 12.0f, 0.0f));
     }
 
     public int a(int i10) {

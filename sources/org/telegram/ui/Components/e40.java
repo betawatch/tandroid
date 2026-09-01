@@ -1,58 +1,52 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.HashtagSearchController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e40 implements Utilities.Callback5, Utilities.Callback5Return {
-    public final /* synthetic */ f40 a;
+public final class e40 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ f40 c;
 
-    public /* synthetic */ e40(f40 f40Var) {
-        this.a = f40Var;
+    public /* synthetic */ e40(f40 f40Var, boolean z4, int i10) {
+        this.a = i10;
+        this.c = f40Var;
+        this.b = z4;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        int i10 = ((i51) obj).d;
-        f40 f40Var = this.a;
-        if (i10 == 0) {
-            HashtagSearchController.getInstance(f40Var.a).clearHistory();
-            f40Var.f.N(true);
-        } else {
-            Utilities.Callback callback = f40Var.h;
-            if (callback != null) {
-                callback.run((String) f40Var.c.get(i10 - 1));
-            }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        org.telegram.ui.yn ynVar;
+        mh.d1 d1Var;
+        switch (this.a) {
+            case 0:
+                float f10 = this.b ? 1.0f : 0.0f;
+                f40 f40Var = this.c;
+                f40Var.w = f10;
+                f40Var.e.setTranslationY(f10 * AndroidUtilities.dp(48.0f));
+                f40Var.e.setPadding(0, 0, 0, (int) (f40Var.w * AndroidUtilities.dp(48.0f)));
+                break;
+            default:
+                boolean z4 = this.b;
+                float f11 = z4 ? 1.0f : 0.0f;
+                f40 f40Var2 = this.c;
+                f40Var2.B = f11;
+                f40Var2.n.setScaleX(AndroidUtilities.lerp(0.95f, 1.0f, f11));
+                f40Var2.n.setScaleY(AndroidUtilities.lerp(0.95f, 1.0f, f40Var2.B));
+                org.telegram.ui.fk fkVar = f40Var2.f;
+                if (fkVar != null && (ynVar = fkVar.a) != null && (d1Var = ynVar.I3) != null) {
+                    d1Var.setScaleX(AndroidUtilities.lerp(1.0f, 0.95f, f40Var2.B));
+                    f40Var2.f.a.I3.setScaleY(AndroidUtilities.lerp(1.0f, 0.95f, f40Var2.B));
+                }
+                f40Var2.h.setAlpha(f40Var2.B);
+                if (!z4) {
+                    f40Var2.h.setVisibility(8);
+                    break;
+                }
+                break;
         }
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        int i10 = ((i51) obj).d;
-        boolean z4 = false;
-        if (i10 != 0) {
-            f40 f40Var = this.a;
-            String str = (String) f40Var.c.get(i10 - 1);
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(f40Var.getContext(), 0, f40Var.b);
-            String string = LocaleController.getString(R.string.ClearSearchSingleAlertTitle);
-            org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
-            d2Var.O = string;
-            d2Var.Q = LocaleController.formatString(R.string.ClearSearchSingleHashtagAlertText, str);
-            alertDialog$Builder.k(LocaleController.getString(R.string.ClearSearchRemove), new o1(20, f40Var, str));
-            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-            d2Var.show();
-            z4 = true;
-        }
-        return Boolean.valueOf(z4);
     }
 }

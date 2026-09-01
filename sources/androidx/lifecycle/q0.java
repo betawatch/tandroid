@@ -1,6 +1,6 @@
 package androidx.lifecycle;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class q0 implements s0 {
     public static final q0 a = new q0();
@@ -8,22 +8,22 @@ public class q0 implements s0 {
     public static q0 c;
 
     @Override // androidx.lifecycle.s0
-    public p0 f(Class cls) {
+    public p0 C(Class cls, v1.b bVar) {
+        return h(cls);
+    }
+
+    @Override // androidx.lifecycle.s0
+    public p0 h(Class cls) {
         try {
             Object newInstance = cls.getDeclaredConstructor(null).newInstance(null);
             kotlin.jvm.internal.j.d(newInstance, "{\n                modelC…wInstance()\n            }");
             return (p0) newInstance;
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException("Cannot create an instance of " + cls, e);
-        } catch (InstantiationException e6) {
+        } catch (IllegalAccessException e6) {
             throw new RuntimeException("Cannot create an instance of " + cls, e6);
-        } catch (NoSuchMethodException e10) {
+        } catch (InstantiationException e10) {
             throw new RuntimeException("Cannot create an instance of " + cls, e10);
+        } catch (NoSuchMethodException e11) {
+            throw new RuntimeException("Cannot create an instance of " + cls, e11);
         }
-    }
-
-    @Override // androidx.lifecycle.s0
-    public p0 x(Class cls, v1.b bVar) {
-        return f(cls);
     }
 }

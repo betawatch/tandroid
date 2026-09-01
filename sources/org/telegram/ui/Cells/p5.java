@@ -11,10 +11,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.em;
-import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.fm;
+import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class p5 extends org.telegram.ui.Components.p9 {
     public final Paint D;
@@ -61,7 +61,7 @@ public final class p5 extends org.telegram.ui.Components.p9 {
                 this.b.draw(canvas);
                 if (t5Var.J == null) {
                     if (t5Var.I == null) {
-                        ih.k kVar = new ih.k();
+                        jh.k kVar = new jh.k();
                         t5Var.I = kVar;
                         kVar.h(i0.a.k(-1, (int) (Color.alpha(-1) * 0.325f)));
                     }
@@ -73,7 +73,7 @@ public final class p5 extends org.telegram.ui.Components.p9 {
         }
         float f10 = t5Var.Q;
         if (f10 != 1.0f && t5Var.O != null) {
-            int interpolation = (int) (nr.f.getInterpolation(1.0f - f10) * 255.0f);
+            int interpolation = (int) (pr.f.getInterpolation(1.0f - f10) * 255.0f);
             Paint paint = this.D;
             paint.setAlpha(interpolation);
             canvas.drawBitmap(t5Var.O, 0.0f, 0.0f, paint);
@@ -93,7 +93,7 @@ public final class p5 extends org.telegram.ui.Components.p9 {
         }
         if (t5Var.s) {
             r5 r5Var = t5Var.R;
-            if ((r5Var == null || !((em) ((org.telegram.ui.Components.t) r5Var).b).s) && (photoEntry = t5Var.D) != null && photoEntry.isLivePhoto()) {
+            if ((r5Var == null || !((fm) ((org.telegram.ui.Components.t) r5Var).b).s) && (photoEntry = t5Var.D) != null && photoEntry.isLivePhoto()) {
                 if (t5Var.D.isUnalivePhoto()) {
                     if (this.G == null) {
                         this.G = getContext().getResources().getDrawable(R.drawable.media_live_off).mutate();

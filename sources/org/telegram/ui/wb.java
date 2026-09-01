@@ -3,15 +3,15 @@ package org.telegram.ui;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wb implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bc b;
+    public final /* synthetic */ ac b;
 
-    public /* synthetic */ wb(bc bcVar, int i10) {
+    public /* synthetic */ wb(ac acVar, int i10) {
         this.a = i10;
-        this.b = bcVar;
+        this.b = acVar;
     }
 
     @Override // java.lang.Runnable
@@ -19,29 +19,29 @@ public final /* synthetic */ class wb implements Runnable {
         switch (this.a) {
             case 0:
                 CountDownLatch countDownLatch = new CountDownLatch(2);
-                bc bcVar = this.b;
-                bcVar.a(countDownLatch, null);
-                bcVar.b(countDownLatch, null);
+                ac acVar = this.b;
+                acVar.a(countDownLatch, null);
+                acVar.b(countDownLatch, null);
                 try {
                     countDownLatch.await();
                 } catch (InterruptedException unused) {
                 }
-                AndroidUtilities.runOnUIThread(new wb(bcVar, 3));
+                AndroidUtilities.runOnUIThread(new wb(acVar, 3));
                 break;
             case 1:
-                bc bcVar2 = this.b;
-                bcVar2.E = false;
-                bcVar2.d(true);
+                ac acVar2 = this.b;
+                acVar2.E = false;
+                acVar2.d(true);
                 break;
             case 2:
-                bc bcVar3 = this.b;
-                bcVar3.E = false;
-                bcVar3.d(true);
+                ac acVar3 = this.b;
+                acVar3.E = false;
+                acVar3.d(true);
                 break;
             default:
-                bc bcVar4 = this.b;
-                bcVar4.E = false;
-                bcVar4.d(true);
+                ac acVar4 = this.b;
+                acVar4.E = false;
+                acVar4.d(true);
                 break;
         }
     }

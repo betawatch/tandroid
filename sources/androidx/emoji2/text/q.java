@@ -9,10 +9,9 @@ import java.util.ArrayList;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import k7.j6;
-import kh.a2;
+import k7.k6;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class q implements k {
     public final Context a;
@@ -22,19 +21,19 @@ public final class q implements k {
     public Handler e;
     public ThreadPoolExecutor f;
     public ThreadPoolExecutor g;
-    public j7.s h;
+    public j7.t h;
 
     public q(Context context, o0.d dVar) {
-        j6.a(context, "Context cannot be null");
+        k6.a(context, "Context cannot be null");
         this.a = context.getApplicationContext();
         this.b = dVar;
         this.c = r.d;
     }
 
     @Override // androidx.emoji2.text.k
-    public final void a(j7.s sVar) {
+    public final void a(j7.t tVar) {
         synchronized (this.d) {
-            this.h = sVar;
+            this.h = tVar;
         }
         c();
     }
@@ -72,7 +71,7 @@ public final class q implements k {
                     this.g = threadPoolExecutor;
                     this.f = threadPoolExecutor;
                 }
-                this.f.execute(new ag.d(this, 4));
+                this.f.execute(new ag.e(this, 4));
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -93,15 +92,15 @@ public final class q implements k {
             b4.f a2 = o0.c.a(context, DesugarCollections.unmodifiableList(arrayList));
             int i10 = a2.a;
             if (i10 != 0) {
-                throw new RuntimeException(a2.k(i10, "fetchFonts failed (", ")"));
+                throw new RuntimeException(l.d.k(i10, "fetchFonts failed (", ")"));
             }
             o0.i[] iVarArr = (o0.i[]) a2.b.get(0);
             if (iVarArr == null || iVarArr.length == 0) {
                 throw new RuntimeException("fetchFonts failed (empty result)");
             }
             return iVarArr[0];
-        } catch (PackageManager.NameNotFoundException e) {
-            throw new RuntimeException("provider not found", e);
+        } catch (PackageManager.NameNotFoundException e6) {
+            throw new RuntimeException("provider not found", e6);
         }
     }
 }

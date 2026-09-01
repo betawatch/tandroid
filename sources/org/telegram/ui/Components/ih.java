@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class ih extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -22,16 +22,16 @@ public final class ih extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 rh rhVar = this.c;
-                li liVar = rhVar.e;
+                mi miVar = rhVar.e;
                 boolean z4 = this.b;
                 if (z4) {
-                    liVar.u1.setVisibility(8);
+                    miVar.u1.setVisibility(8);
                 } else {
-                    liVar.B1.setVisibility(8);
+                    miVar.B1.setVisibility(8);
                 }
                 int dp = z4 ? AndroidUtilities.dp(36.0f) : 0;
-                for (int i10 = 0; i10 < liVar.u0.size(); i10++) {
-                    ((rh.o3) liVar.u0.valueAt(i10)).setMeasureOffsetY(dp);
+                for (int i10 = 0; i10 < miVar.u0.size(); i10++) {
+                    ((sh.n3) miVar.u0.valueAt(i10)).setMeasureOffsetY(dp);
                 }
                 if (rhVar.a == animator) {
                     rhVar.a = null;
@@ -39,11 +39,11 @@ public final class ih extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                li liVar2 = this.c.e;
+                mi miVar2 = this.c.e;
                 boolean z10 = this.b;
-                liVar2.y1 = z10;
+                miVar2.y1 = z10;
                 if (!z10) {
-                    liVar2.z1.setVisibility(8);
+                    miVar2.z1.setVisibility(8);
                     break;
                 }
                 break;
@@ -54,18 +54,18 @@ public final class ih extends AnimatorListenerAdapter {
     public void onAnimationStart(Animator animator) {
         switch (this.a) {
             case 0:
-                li liVar = this.c.e;
+                mi miVar = this.c.e;
                 if (this.b) {
-                    liVar.B1.setAlpha(0.0f);
-                    liVar.B1.setVisibility(0);
+                    miVar.B1.setAlpha(0.0f);
+                    miVar.B1.setVisibility(0);
                     int dp = AndroidUtilities.dp(36.0f);
-                    for (int i10 = 0; i10 < liVar.u0.size(); i10++) {
-                        ((rh.o3) liVar.u0.valueAt(i10)).setMeasureOffsetY(dp);
+                    for (int i10 = 0; i10 < miVar.u0.size(); i10++) {
+                        ((sh.n3) miVar.u0.valueAt(i10)).setMeasureOffsetY(dp);
                     }
                     break;
                 } else {
-                    liVar.u1.setAlpha(0.0f);
-                    liVar.u1.setVisibility(0);
+                    miVar.u1.setAlpha(0.0f);
+                    miVar.u1.setVisibility(0);
                     break;
                 }
             default:

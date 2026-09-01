@@ -1,44 +1,34 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g3 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class g3 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ j3 b;
+    public final /* synthetic */ l3 b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ g3(j3 j3Var, int i10) {
-        this.a = i10;
-        this.b = j3Var;
+    public /* synthetic */ g3(l3 l3Var, int i10, int i11) {
+        this.a = i11;
+        this.b = l3Var;
+        this.c = i10;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                j3 j3Var = this.b;
-                j3Var.getClass();
-                j3Var.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                j3Var.invalidate();
+                AndroidUtilities.runOnUIThread(new g3(this.b, this.c, 2));
                 break;
             case 1:
-                j3 j3Var2 = this.b;
-                j3Var2.getClass();
-                j3Var2.w = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                j3Var2.invalidate();
+                AndroidUtilities.runOnUIThread(new g3(this.b, this.c, 3));
                 break;
             case 2:
-                j3 j3Var3 = this.b;
-                j3Var3.getClass();
-                j3Var3.s = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                j3Var3.invalidate();
+                this.b.c(this.c);
                 break;
             default:
-                j3 j3Var4 = this.b;
-                j3Var4.getClass();
-                j3Var4.r = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                j3Var4.invalidate();
+                this.b.a(this.c);
                 break;
         }
     }

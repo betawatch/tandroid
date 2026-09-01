@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class t implements m {
     public final Context a;
@@ -29,7 +29,7 @@ public final class t implements m {
         this.b = new ArrayList();
     }
 
-    public static void b(m mVar, v0 v0Var) {
+    public static void d(m mVar, v0 v0Var) {
         if (mVar != null) {
             mVar.addTransferListener(v0Var);
         }
@@ -52,13 +52,13 @@ public final class t implements m {
         v0Var.getClass();
         this.c.addTransferListener(v0Var);
         this.b.add(v0Var);
-        b(this.d, v0Var);
-        b(this.e, v0Var);
-        b(this.f, v0Var);
-        b(this.h, v0Var);
-        b(this.n, v0Var);
-        b(this.r, v0Var);
-        b(this.s, v0Var);
+        d(this.d, v0Var);
+        d(this.e, v0Var);
+        d(this.f, v0Var);
+        d(this.h, v0Var);
+        d(this.n, v0Var);
+        d(this.r, v0Var);
+        d(this.s, v0Var);
     }
 
     @Override // g5.m
@@ -139,8 +139,8 @@ public final class t implements m {
                         a(mVar2);
                     } catch (ClassNotFoundException unused) {
                         h5.a.K("DefaultDataSource", "Attempting to play RTMP stream without depending on the RTMP extension");
-                    } catch (Exception e) {
-                        throw new RuntimeException("Error instantiating RTMP extension", e);
+                    } catch (Exception e6) {
+                        throw new RuntimeException("Error instantiating RTMP extension", e6);
                     }
                     if (this.h == null) {
                         this.h = mVar;

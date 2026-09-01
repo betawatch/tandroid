@@ -1,35 +1,41 @@
 package org.telegram.ui.Components.voip;
 
-import android.content.DialogInterface;
+import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c2 implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class c2 implements org.telegram.ui.ActionBar.c2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ Activity b;
 
-    public /* synthetic */ c2(int i10, Runnable runnable) {
+    public /* synthetic */ c2(Activity activity, int i10) {
         this.a = i10;
-        this.b = runnable;
+        this.b = activity;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // org.telegram.ui.ActionBar.c2
+    public final void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         switch (this.a) {
             case 0:
-                Runnable runnable = this.b;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
+                Activity activity = this.b;
+                Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                intent.setData(Uri.fromParts("package", activity.getPackageName(), null));
+                activity.startActivity(intent);
                 break;
             default:
-                Runnable runnable2 = this.b;
-                if (runnable2 != null) {
-                    runnable2.run();
+                Activity activity2 = this.b;
+                try {
+                    Intent intent2 = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent2.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
+                    activity2.startActivity(intent2);
                     break;
+                } catch (Exception e6) {
+                    FileLog.e(e6);
                 }
-                break;
         }
     }
 }

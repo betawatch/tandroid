@@ -1,37 +1,66 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
+import android.graphics.Canvas;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.RectShape;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rt implements DialogInterface.OnShowListener {
-    public final /* synthetic */ int a;
+public final class rt extends ShapeDrawable {
+    public final /* synthetic */ int a = 0;
     public final /* synthetic */ EditTextBoldCursor b;
 
-    public /* synthetic */ rt(int i10, EditTextBoldCursor editTextBoldCursor) {
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rt(EditTextBoldCursor editTextBoldCursor, RectShape rectShape) {
+        super(rectShape);
         this.b = editTextBoldCursor;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
+    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
         switch (this.a) {
             case 0:
-                lh.n nVar = (lh.n) this.b;
-                nVar.requestFocus();
-                AndroidUtilities.showKeyboard(nVar);
-                break;
-            case 1:
-                lh.n nVar2 = (lh.n) this.b;
-                nVar2.requestFocus();
-                AndroidUtilities.showKeyboard(nVar2);
-                break;
+                EditTextBoldCursor editTextBoldCursor = this.b;
+                if (!editTextBoldCursor.drawInMaim) {
+                    super.draw(canvas);
+                    break;
+                } else {
+                    editTextBoldCursor.cursorDrawn = true;
+                    break;
+                }
             default:
-                a4 a4Var = (a4) this.b;
-                a4Var.requestFocus();
-                AndroidUtilities.showKeyboard(a4Var);
+                super.draw(canvas);
+                this.b.cursorDrawn = true;
                 break;
         }
+    }
+
+    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
+    public int getIntrinsicHeight() {
+        int i10;
+        switch (this.a) {
+            case 0:
+                i10 = this.b.cursorSize;
+                return AndroidUtilities.dp(i10 + 20);
+            default:
+                return super.getIntrinsicHeight();
+        }
+    }
+
+    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
+    public int getIntrinsicWidth() {
+        float f10;
+        switch (this.a) {
+            case 0:
+                f10 = this.b.cursorWidth;
+                return AndroidUtilities.dp(f10);
+            default:
+                return super.getIntrinsicWidth();
+        }
+    }
+
+    public rt(EditTextBoldCursor editTextBoldCursor) {
+        this.b = editTextBoldCursor;
     }
 }

@@ -3,7 +3,7 @@ package d4;
 import java.nio.ByteBuffer;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class g extends n3.i {
     public long s;
@@ -11,12 +11,12 @@ public final class g extends n3.i {
     public int w;
 
     @Override // n3.i, n3.a
-    public final void c() {
-        super.c();
+    public final void b() {
+        super.b();
         this.v = 0;
     }
 
-    public final boolean n(n3.i iVar) {
+    public final boolean m(n3.i iVar) {
         ByteBuffer byteBuffer;
         h5.a.f(!iVar.e(TLObject.FLAG_30));
         h5.a.f(!iVar.e(TLObject.FLAG_28));
@@ -46,7 +46,7 @@ public final class g extends n3.i {
         }
         ByteBuffer byteBuffer3 = iVar.d;
         if (byteBuffer3 != null) {
-            k(byteBuffer3.remaining());
+            j(byteBuffer3.remaining());
             this.d.put(byteBuffer3);
         }
         this.s = iVar.f;

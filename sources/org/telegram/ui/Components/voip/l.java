@@ -6,15 +6,15 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.c60;
-import org.telegram.ui.i60;
+import org.telegram.ui.d60;
+import org.telegram.ui.j60;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class l extends FrameLayout {
     public int a;
-    public i60 b;
-    public t c;
+    public j60 b;
+    public u c;
     public ChatObject.VideoParticipant d;
     public boolean e;
     public final boolean f;
@@ -32,7 +32,7 @@ public abstract class l extends FrameLayout {
         return this.d;
     }
 
-    public t getRenderer() {
+    public u getRenderer() {
         return this.c;
     }
 
@@ -54,13 +54,13 @@ public abstract class l extends FrameLayout {
             ((View) getParent()).getMeasuredWidth();
             super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(this.b.F(), TLObject.FLAG_30));
         } else {
-            float f10 = c60.C3 ? 3.0f : 2.0f;
-            float z4 = org.telegram.ui.b.z(14.0f, 2, AndroidUtilities.displaySize.x) + (c60.C3 ? -AndroidUtilities.dp(90.0f) : 0);
-            super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((int) ((c60.D3 ? z4 / 2.0f : z4 / f10) + AndroidUtilities.dp(4.0f)), TLObject.FLAG_30));
+            float f10 = d60.C3 ? 3.0f : 2.0f;
+            float z4 = org.telegram.ui.b.z(14.0f, 2, AndroidUtilities.displaySize.x) + (d60.C3 ? -AndroidUtilities.dp(90.0f) : 0);
+            super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((int) ((d60.D3 ? z4 / 2.0f : z4 / f10) + AndroidUtilities.dp(4.0f)), TLObject.FLAG_30));
         }
     }
 
-    public void setRenderer(t tVar) {
-        this.c = tVar;
+    public void setRenderer(u uVar) {
+        this.c = uVar;
     }
 }

@@ -1,6 +1,5 @@
 package org.telegram.messenger;
 
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import java.io.File;
@@ -15,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class yg implements Runnable {
     public final /* synthetic */ int a;
@@ -32,58 +31,52 @@ public final /* synthetic */ class yg implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                NotificationBadge.NewHtcHomeBadger.lambda$executeBadge$0((Intent) this.b, (Intent) this.c);
-                break;
-            case 1:
                 ((NotificationBadge.ZukHomeBadger) this.b).lambda$executeBadge$0((Bundle) this.c);
                 break;
-            case 2:
+            case 1:
                 NotificationsController.lambda$showExtraNotifications$45((Uri) this.b, (File) this.c);
                 break;
-            case 3:
+            case 2:
                 NotificationsController.lambda$loadTopicsNotificationsExceptions$53((Consumer) this.b, (HashSet) this.c);
                 break;
-            case 4:
+            case 3:
                 ((NotificationsController) this.b).lambda$didReceivedNotification$38((String) this.c);
                 break;
-            case 5:
+            case 4:
                 ((NotificationsController) this.b).lambda$processEditedMessages$22((a0.h) this.c);
                 break;
-            case 6:
+            case 5:
                 PasskeysController.lambda$create$2((Utilities.Callback2) this.b, (Throwable) this.c);
                 break;
-            case 7:
+            case 6:
                 ((SavedMessagesController) this.b).lambda$deleteCache$13((MessagesStorage) this.c);
                 break;
-            case 8:
+            case 7:
                 ((SecretChatHelper) this.b).lambda$performSendEncryptedRequest$6((TLRPC.Message) this.c);
                 break;
-            case 9:
+            case 8:
                 ((SendMessagesHelper) this.b).lambda$performSendMessageRequest$90((TLRPC.TL_updateShortSentMessage) this.c);
                 break;
-            case 10:
+            case 9:
                 ((SendMessagesHelper) this.b).lambda$sendMessage$16((ArrayList) this.c);
                 break;
-            case 11:
+            case 10:
                 ((SendMessagesHelper.ImportingStickers) this.b).lambda$onMediaImport$0((String) this.c);
                 break;
-            case 12:
+            case 11:
                 ((TopicsController) this.b).lambda$processUpdate$22((List) this.c);
                 break;
-            case 13:
+            case 12:
                 ((TopicsController) this.b).lambda$pinTopic$19((org.telegram.ui.ActionBar.p2) this.c);
                 break;
-            case 14:
+            case 13:
                 ((TopicsController) this.b).lambda$onTopicsDeletedServerSide$23((ArrayList) this.c);
                 break;
-            case 15:
+            case 14:
                 ((TopicsController) this.b).lambda$updateReadOutbox$26((HashMap) this.c);
                 break;
-            case 16:
-                ((UserConfig) this.b).lambda$loadGlobalTTl$3((TLObject) this.c);
-                break;
             default:
-                ((WebProxyTransport) this.b).lambda$onWebMessage$3((byte[]) this.c);
+                ((UserConfig) this.b).lambda$loadGlobalTTl$3((TLObject) this.c);
                 break;
         }
     }

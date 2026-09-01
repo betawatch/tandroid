@@ -1,38 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
+import android.content.Context;
+import android.graphics.Canvas;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class kw extends f2.u0 {
-    public final /* synthetic */ kz a;
+public final class kw extends FrameLayout {
+    public final /* synthetic */ mz a;
 
-    public kw(kz kzVar) {
-        this.a = kzVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kw(mz mzVar, Context context) {
+        super(context);
+        this.a = mzVar;
     }
 
-    @Override // f2.u0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, f2.i1 i1Var) {
-        recyclerView.getClass();
-        int R = RecyclerView.R(view);
-        kz kzVar = this.a;
-        f2.o0 adapter = kzVar.e0.getAdapter();
-        oy oyVar = kzVar.k0;
-        if (adapter == oyVar && R == oyVar.F) {
-            rect.set(0, 0, 0, 0);
-            return;
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        mz mzVar = this.a;
+        ow owVar = mzVar.l0;
+        if (view != mzVar.e0) {
+            return super.drawChild(canvas, view, j10);
         }
-        if (R == 0) {
-            oyVar.getClass();
-        }
-        rect.left = 0;
-        rect.bottom = 0;
-        rect.top = AndroidUtilities.dp(2.0f);
-        py pyVar = kzVar.f0;
-        oyVar.getClass();
-        rect.right = pyVar.E1(R) ? 0 : AndroidUtilities.dp(2.0f);
+        canvas.save();
+        canvas.clipRect(0.0f, owVar.getY() + owVar.getMeasuredHeight(), getMeasuredWidth(), getMeasuredHeight());
+        boolean drawChild = super.drawChild(canvas, view, j10);
+        canvas.restore();
+        return drawChild;
     }
 }

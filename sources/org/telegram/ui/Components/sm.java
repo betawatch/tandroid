@@ -1,30 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sm implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class sm implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qn b;
+    public final /* synthetic */ sn b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ sm(qn qnVar, int i10) {
-        this.a = i10;
-        this.b = qnVar;
+    public /* synthetic */ sm(sn snVar, int i10, int i11) {
+        this.a = i11;
+        this.b = snVar;
+        this.c = i10;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                qn qnVar = this.b;
-                qnVar.getClass();
-                qnVar.B.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                this.b.e0(this.c, null);
+                break;
+            case 1:
+                this.b.b0(this.c);
                 break;
             default:
-                qn qnVar2 = this.b;
-                qnVar2.getClass();
-                qnVar2.B.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                this.b.e0(this.c, null);
                 break;
         }
     }

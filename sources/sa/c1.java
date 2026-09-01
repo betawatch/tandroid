@@ -1,8 +1,6 @@
 package sa;
 
-import kh.a2;
-
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class c1 extends pa.u {
     @Override // pa.u
@@ -16,11 +14,11 @@ public class c1 extends pa.u {
             if (p10 <= 65535 && p10 >= -32768) {
                 return Short.valueOf((short) p10);
             }
-            StringBuilder m9 = a2.m(p10, "Lossy conversion from ", " to short; at path ");
+            StringBuilder m9 = l.d.m(p10, "Lossy conversion from ", " to short; at path ");
             m9.append(aVar.j());
             throw new pa.j(m9.toString());
-        } catch (NumberFormatException e) {
-            throw new pa.j(e);
+        } catch (NumberFormatException e6) {
+            throw new pa.j(e6);
         }
     }
 

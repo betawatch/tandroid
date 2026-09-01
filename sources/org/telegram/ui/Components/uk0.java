@@ -1,17 +1,8 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class uk0 {
-    public final /* synthetic */ c2.y a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
+import android.graphics.drawable.Drawable;
 
-    public /* synthetic */ uk0(c2.y yVar, int i10, int i11, boolean z4) {
-        this.a = yVar;
-        this.b = i10;
-        this.c = i11;
-        this.d = z4;
-    }
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes3.dex */
+public abstract class uk0 extends Drawable {
 }

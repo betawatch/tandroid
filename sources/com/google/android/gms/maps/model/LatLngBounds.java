@@ -6,11 +6,11 @@ import b6.m;
 import bf.b;
 import c6.a;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import j7.f5;
+import j7.g5;
 import java.util.Arrays;
 import u6.p;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class LatLngBounds extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<LatLngBounds> CREATOR = new p(15);
@@ -44,16 +44,16 @@ public final class LatLngBounds extends a implements ReflectedParcelable {
 
     public final String toString() {
         b bVar = new b(this);
-        bVar.s(this.a, "southwest");
-        bVar.s(this.b, "northeast");
+        bVar.r(this.a, "southwest");
+        bVar.r(this.b, "northeast");
         return bVar.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
-        f5.k(parcel, 2, this.a, i10);
-        f5.k(parcel, 3, this.b, i10);
-        f5.r(parcel, q10);
+        int q10 = g5.q(parcel, 20293);
+        g5.k(parcel, 2, this.a, i10);
+        g5.k(parcel, 3, this.b, i10);
+        g5.r(parcel, q10);
     }
 }

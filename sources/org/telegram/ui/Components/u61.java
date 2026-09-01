@@ -1,150 +1,262 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.RectF;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.HashSet;
+import java.util.Iterator;
+import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class u61 extends View {
-    public final j6 a;
-    public final j6 b;
-    public final Paint c;
-    public final Paint d;
-    public final Paint e;
-    public boolean f;
-    public final z5 h;
-    public final int[] n;
+public final class u61 extends Drawable implements r5, s6, NotificationCenter.NotificationCenterDelegate {
+    public final q20 a;
+    public final int b;
+    public float c;
+    public final boolean d;
+    public ImageReceiver e;
+    public final HashSet f;
+    public final l5 h;
+    public final t61 n;
+    public final ImageReceiver r;
+    public final int s;
+    public boolean v;
+    public final TLRPC.TL_videoSizeStickerMarkup w;
 
-    public u61(Context context) {
-        super(context);
-        Paint paint = new Paint(1);
-        this.c = paint;
-        Paint paint2 = new Paint(1);
-        this.d = paint2;
-        Paint paint3 = new Paint(1);
-        this.e = paint3;
-        nr nrVar = nr.h;
-        this.h = new z5(this, 0L, 300L, nrVar);
-        this.n = new int[]{144, 240, 360, 480, 720, 1080, 1440, 2160};
-        j6 j6Var = new j6(true, false, false, false);
-        this.a = j6Var;
-        j6Var.k(0.4f, 360L, nrVar);
-        j6Var.u(AndroidUtilities.getTypeface("fonts/num.otf"));
-        j6Var.r(-1);
-        j6Var.t(AndroidUtilities.dpf2(10.6f));
-        j6Var.setCallback(this);
-        j6Var.b = 17;
-        j6 j6Var2 = new j6(true, false, false, false);
-        this.b = j6Var2;
-        j6Var2.k(0.2f, 360L, nrVar);
-        j6Var2.u(AndroidUtilities.getTypeface("fonts/num.otf"));
-        j6Var2.r(-1);
-        j6Var2.t(AndroidUtilities.dpf2(8.6f));
-        j6Var2.setCallback(this);
-        j6Var2.b = 5;
-        PorterDuff.Mode mode = PorterDuff.Mode.CLEAR;
-        j6Var2.a.setXfermode(new PorterDuffXfermode(mode));
-        j6Var2.G = AndroidUtilities.displaySize.x;
-        paint.setColor(-1);
-        paint.setStyle(Paint.Style.STROKE);
-        paint2.setColor(-1);
-        paint3.setXfermode(new PorterDuffXfermode(mode));
+    public u61(TLRPC.VideoSize videoSize, boolean z4, int i10) {
+        q20 q20Var = new q20();
+        this.a = q20Var;
+        this.f = new HashSet();
+        this.r = new ImageReceiver();
+        this.s = UserConfig.selectedAccount;
+        this.b = i10;
+        this.d = z4;
+        q20Var.d(i0.a.k(videoSize.background_colors.get(0).intValue(), 255), videoSize.background_colors.size() > 1 ? i0.a.k(videoSize.background_colors.get(1).intValue(), 255) : 0, videoSize.background_colors.size() > 2 ? i0.a.k(videoSize.background_colors.get(2).intValue(), 255) : 0, videoSize.background_colors.size() > 3 ? i0.a.k(videoSize.background_colors.get(3).intValue(), 255) : 0);
+        if (videoSize instanceof TLRPC.TL_videoSizeEmojiMarkup) {
+            l5 l5Var = new l5((i10 == 1 && z4) ? 7 : i10 == 2 ? 15 : 8, UserConfig.selectedAccount, ((TLRPC.TL_videoSizeEmojiMarkup) videoSize).emoji_id);
+            this.h = l5Var;
+            l5Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+            return;
+        }
+        if (videoSize instanceof TLRPC.TL_videoSizeStickerMarkup) {
+            this.w = (TLRPC.TL_videoSizeStickerMarkup) videoSize;
+            t61 t61Var = new t61(this);
+            this.n = t61Var;
+            t61Var.setInvalidateAll(true);
+            if (i10 == 1) {
+                t61Var.setAutoRepeatCount(2);
+            }
+            d();
+        }
     }
 
-    public final void a(int i10, boolean z4, boolean z10) {
-        this.f = !z4 || z10;
-        j6 j6Var = this.a;
-        j6 j6Var2 = this.b;
-        if (z10) {
-            j6Var.q("GIF", true, true);
-            j6Var2.q("", true, true);
-        } else {
-            j6Var.q(i10 >= 720 ? "HD" : "SD", true, true);
-            int[] iArr = this.n;
-            int length = iArr.length - 1;
-            while (true) {
-                if (length < 0) {
-                    length = -1;
-                    break;
-                } else if (i10 >= iArr[length]) {
-                    break;
-                } else {
-                    length--;
-                }
+    @Override // org.telegram.ui.Components.s6
+    public final void b(ImageReceiver imageReceiver) {
+        HashSet hashSet = this.f;
+        hashSet.remove(imageReceiver);
+        if (hashSet.isEmpty()) {
+            l5 l5Var = this.h;
+            if (l5Var != null) {
+                l5Var.p(this);
             }
-            if (length < 0) {
-                j6Var2.q("", true, true);
-            } else if (length == 6) {
-                j6Var2.q("2K", TextUtils.isEmpty(j6Var2.g), true);
-            } else if (length == 7) {
-                j6Var2.q("4K", TextUtils.isEmpty(j6Var2.g), true);
-            } else {
-                j6Var2.q("" + iArr[length], TextUtils.isEmpty(j6Var2.g), true);
+            t61 t61Var = this.n;
+            if (t61Var != null) {
+                t61Var.onDetachedFromWindow();
+            }
+            ImageReceiver imageReceiver2 = this.r;
+            if (imageReceiver2 != null) {
+                imageReceiver2.onDetachedFromWindow();
             }
         }
-        setClickable(!this.f);
-        invalidate();
+        if (this.w != null) {
+            NotificationCenter.getInstance(this.s).removeObserver(this, NotificationCenter.groupStickersDidLoad);
+        }
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-        float e = (1.0f - (this.h.e(this.f) * 0.35f)) * 255.0f;
-        int i10 = (int) e;
-        Paint paint = this.c;
-        paint.setAlpha(i10);
-        paint.setStrokeWidth(AndroidUtilities.dpf2(1.33f));
-        float dpf2 = AndroidUtilities.dpf2(21.33f);
-        float dpf22 = AndroidUtilities.dpf2(6.0f);
-        j6 j6Var = this.a;
-        float max = Math.max(dpf2, j6Var.d() + dpf22);
-        float dpf23 = AndroidUtilities.dpf2(17.33f);
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set((getWidth() - max) / 2.0f, (getHeight() - dpf23) / 2.0f, (getWidth() + max) / 2.0f, (getHeight() + dpf23) / 2.0f);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(4.0f), AndroidUtilities.dpf2(4.0f), paint);
-        Rect rect = AndroidUtilities.rectTmp2;
-        rect.set(0, (int) ((getHeight() - dpf23) / 2.0f), getWidth(), (int) ((getHeight() + dpf23) / 2.0f));
-        j6Var.setBounds(rect);
-        j6Var.w = i10;
-        j6Var.draw(canvas);
-        j6 j6Var2 = this.b;
-        rect.set((int) ((AndroidUtilities.dpf2(16.0f) + (getWidth() / 2.0f)) - (j6Var2.d() + (AndroidUtilities.dpf2(2.0f) * j6Var2.g()))), (int) ((getHeight() / 2.0f) - AndroidUtilities.dpf2(14.0f)), (int) (AndroidUtilities.dpf2(16.0f) + (getWidth() / 2.0f)), (int) (((getHeight() / 2.0f) - AndroidUtilities.dpf2(14.0f)) + AndroidUtilities.dpf2(8.33f)));
-        rectF.set(rect);
-        rectF.inset(-AndroidUtilities.dpf2(1.33f), -AndroidUtilities.dpf2(1.33f));
-        canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(1.66f), AndroidUtilities.dpf2(1.66f), this.e);
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-        rectF.set(rect);
-        int g10 = (int) (j6Var2.g() * e);
-        Paint paint2 = this.d;
-        paint2.setAlpha(g10);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(1.66f), AndroidUtilities.dpf2(1.66f), paint2);
-        rect.offset((int) (-AndroidUtilities.dpf2(1.33f)), 0);
-        canvas.save();
-        j6Var2.setBounds(rect);
-        j6Var2.draw(canvas);
-        canvas.restore();
-        canvas.restore();
-        canvas.restore();
+    @Override // org.telegram.ui.Components.s6
+    public final void c(ImageReceiver imageReceiver) {
+        if (imageReceiver == null) {
+            return;
+        }
+        this.c = imageReceiver.getRoundRadius()[0];
+        HashSet hashSet = this.f;
+        if (hashSet.isEmpty()) {
+            l5 l5Var = this.h;
+            if (l5Var != null) {
+                l5Var.b(this);
+            }
+            t61 t61Var = this.n;
+            if (t61Var != null) {
+                t61Var.onAttachedToWindow();
+            }
+            ImageReceiver imageReceiver2 = this.r;
+            if (imageReceiver2 != null) {
+                imageReceiver2.onAttachedToWindow();
+            }
+        }
+        hashSet.add(imageReceiver);
+        if (this.w != null) {
+            NotificationCenter.getInstance(this.s).addObserver(this, NotificationCenter.groupStickersDidLoad);
+        }
     }
 
-    public void setPhotoState(boolean z4) {
-        this.f = false;
-        this.a.q(z4 ? "HD" : "SD", true, true);
-        this.b.q("", false, true);
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0071  */
+    /* JADX WARN: Removed duplicated region for block: B:20:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void d() {
+        TLRPC.Document document;
+        String str;
+        String str2;
+        String str3;
+        MediaDataController mediaDataController = MediaDataController.getInstance(this.s);
+        TLRPC.TL_videoSizeStickerMarkup tL_videoSizeStickerMarkup = this.w;
+        TLRPC.TL_messages_stickerSet stickerSet = mediaDataController.getStickerSet(tL_videoSizeStickerMarkup.stickerset, false);
+        if (stickerSet != null) {
+            this.v = true;
+            for (int i10 = 0; i10 < stickerSet.documents.size(); i10++) {
+                if (stickerSet.documents.get(i10).id == tL_videoSizeStickerMarkup.sticker_id) {
+                    TLRPC.Document document2 = stickerSet.documents.get(i10);
+                    boolean z4 = this.d;
+                    int i11 = this.b;
+                    if (z4 && i11 == 1) {
+                        str3 = "50_50";
+                    } else {
+                        if (i11 != 2) {
+                            document = null;
+                            str = null;
+                            str2 = "50_50_firstframe";
+                            this.n.setImage(ImageLocation.getForDocument(document2), str2, ImageLocation.getForDocument(document), str, null, null, DocumentObject.getSvgThumb(document2, org.telegram.ui.ActionBar.k6.m6, 0.2f), 0L, "tgs", document2, 0);
+                            if (i11 != 3) {
+                                this.r.setImage(ImageLocation.getForDocument(document2), "100_100", null, null, null, 0L, "tgs", document2, 0);
+                                return;
+                            }
+                            return;
+                        }
+                        str3 = "100_100";
+                    }
+                    str2 = str3;
+                    str = "50_50_firstframe";
+                    document = document2;
+                    this.n.setImage(ImageLocation.getForDocument(document2), str2, ImageLocation.getForDocument(document), str, null, null, DocumentObject.getSvgThumb(document2, org.telegram.ui.ActionBar.k6.m6, 0.2f), 0L, "tgs", document2, 0);
+                    if (i11 != 3) {
+                    }
+                }
+            }
+        }
     }
 
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return this.a == drawable || this.b == drawable || super.verifyDrawable(drawable);
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 != NotificationCenter.groupStickersDidLoad || this.v) {
+            return;
+        }
+        d();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        float f10 = getBounds().left;
+        float f11 = getBounds().top;
+        float f12 = getBounds().right;
+        float f13 = getBounds().bottom;
+        q20 q20Var = this.a;
+        q20Var.b(f10, f11, f12, f13);
+        Paint paint = q20Var.c;
+        if (this.e != null) {
+            this.c = r1.getRoundRadius()[0];
+        }
+        float f14 = this.c;
+        if (f14 == 0.0f) {
+            canvas.drawRect(getBounds(), paint);
+        } else {
+            canvas.drawRoundRect(q20Var.h, f14, f14, paint);
+        }
+        int centerX = getBounds().centerX();
+        int centerY = getBounds().centerY();
+        int width = ((int) (getBounds().width() * 0.7f)) >> 1;
+        l5 l5Var = this.h;
+        if (l5Var != null) {
+            oh.z2 z2Var = l5Var.k;
+            if (z2Var != null) {
+                z2Var.setRoundRadius((int) (width * 2 * 0.13f));
+            }
+            l5Var.setBounds(centerX - width, centerY - width, centerX + width, centerY + width);
+            l5Var.draw(canvas);
+        }
+        t61 t61Var = this.n;
+        if (t61Var != null) {
+            float f15 = width * 2;
+            t61Var.setRoundRadius((int) (0.13f * f15));
+            t61Var.setImageCoords(centerX - width, centerY - width, f15, f15);
+            t61Var.draw(canvas);
+        }
+    }
+
+    public final boolean equals(Object obj) {
+        TLRPC.TL_videoSizeStickerMarkup tL_videoSizeStickerMarkup;
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && u61.class == obj.getClass()) {
+            u61 u61Var = (u61) obj;
+            l5 l5Var = u61Var.h;
+            if (this.b == u61Var.b) {
+                q20 q20Var = this.a;
+                int i10 = q20Var.d;
+                q20 q20Var2 = u61Var.a;
+                if (i10 == q20Var2.d && q20Var.e == q20Var2.e && q20Var.f == q20Var2.f && q20Var.g == q20Var2.g) {
+                    l5 l5Var2 = this.h;
+                    if (l5Var2 != null && l5Var != null) {
+                        return l5Var2.i() == l5Var.i();
+                    }
+                    TLRPC.TL_videoSizeStickerMarkup tL_videoSizeStickerMarkup2 = this.w;
+                    if (tL_videoSizeStickerMarkup2 != null && (tL_videoSizeStickerMarkup = u61Var.w) != null && tL_videoSizeStickerMarkup2.stickerset.id == tL_videoSizeStickerMarkup.stickerset.id && tL_videoSizeStickerMarkup2.sticker_id == tL_videoSizeStickerMarkup.sticker_id) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Components.r5
+    public final void invalidate() {
+        Iterator it = this.f.iterator();
+        while (it.hasNext()) {
+            ((ImageReceiver) it.next()).invalidate();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.a.c.setAlpha(i10);
+        l5 l5Var = this.h;
+        if (l5Var != null) {
+            l5Var.setAlpha(i10);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.s6
+    public final /* synthetic */ void a(lj0 lj0Var) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

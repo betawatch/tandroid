@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.p2;
-import wh.n;
+import xh.n;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class k implements Runnable {
     public final /* synthetic */ int a;
@@ -39,12 +39,12 @@ public final class k implements Runnable {
                             InputStream inputStream = accept.getInputStream();
                             l lVar = (l) this.d;
                             lVar.c.B(new a(lVar, inputStream, accept));
-                        } catch (IOException e) {
-                            l.d.log(Level.FINE, "Communication with the client broken", (Throwable) e);
+                        } catch (IOException e6) {
+                            l.d.log(Level.FINE, "Communication with the client broken", (Throwable) e6);
                         }
                     } while (!((l) this.d).a.isClosed());
-                } catch (IOException e6) {
-                    this.c = e6;
+                } catch (IOException e10) {
+                    this.c = e10;
                     return;
                 }
             case 1:

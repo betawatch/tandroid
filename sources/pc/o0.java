@@ -1,6 +1,6 @@
 package pc;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public enum o0 extends a2 {
     public o0() {
@@ -13,7 +13,7 @@ public enum o0 extends a2 {
         s0 s0Var = a2.Z;
         if (d == 0) {
             kVar.m(this);
-            kVar.i.k((char) 65533);
+            kVar.i.j((char) 65533);
             kVar.c = s0Var;
             return;
         }
@@ -59,7 +59,7 @@ public enum o0 extends a2 {
                 return;
             }
             kVar.m(this);
-            kVar.i.k(d);
+            kVar.i.j(d);
             kVar.c = s0Var;
         }
     }

@@ -15,10 +15,9 @@ import androidx.lifecycle.n;
 import androidx.lifecycle.o;
 import androidx.lifecycle.v;
 import b4.e0;
-import cg.n0;
-import dg.n3;
-import dg.o3;
-import dg.q3;
+import eg.l3;
+import eg.m3;
+import eg.o3;
 import j3.n1;
 import java.io.File;
 import java.util.ArrayList;
@@ -26,27 +25,28 @@ import java.util.Calendar;
 import java.util.Locale;
 import java.util.concurrent.CountDownLatch;
 import java.util.logging.Logger;
-import k7.b6;
-import kh.a2;
-import kh.w3;
-import kh.x1;
-import lh.f4;
-import lh.g2;
-import lh.g5;
-import lh.n2;
-import lh.t1;
-import nh.a4;
-import nh.c4;
-import nh.d4;
-import nh.d6;
-import nh.h6;
-import nh.h9;
-import nh.i9;
-import nh.l6;
-import nh.m6;
-import nh.s3;
-import nh.t6;
+import k7.c6;
+import lh.n3;
+import lh.w3;
+import lh.x1;
+import mh.f2;
+import mh.f4;
+import mh.g5;
+import mh.m2;
+import mh.s1;
 import o4.r;
+import oh.c4;
+import oh.d6;
+import oh.e4;
+import oh.h6;
+import oh.h9;
+import oh.i9;
+import oh.l6;
+import oh.m6;
+import oh.r3;
+import oh.t6;
+import oh.u3;
+import oh.y3;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.messenger.AndroidUtilities;
@@ -74,35 +74,34 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.d2;
-import org.telegram.ui.ActionBar.e5;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f5;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.p2;
-import org.telegram.ui.Components.jj0;
 import org.telegram.ui.Components.k6;
-import org.telegram.ui.Components.mr;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.o70;
-import org.telegram.ui.Components.or0;
+import org.telegram.ui.Components.lj0;
+import org.telegram.ui.Components.or;
+import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.pr0;
+import org.telegram.ui.Components.q70;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.s90;
 import org.telegram.ui.Components.sc;
+import org.telegram.ui.Components.u90;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.e3;
 import org.telegram.ui.j8;
 import org.telegram.ui.pa;
 import org.telegram.ui.r6;
-import org.telegram.ui.s6;
-import org.telegram.ui.sq0;
+import org.telegram.ui.uq0;
 import org.telegram.ui.xn;
 import org.telegram.ui.yh;
-import ph.da;
-import ph.t0;
-import ph.u6;
-import ph.y9;
+import qh.ca;
+import qh.s6;
+import qh.t0;
+import qh.x9;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
@@ -119,41 +118,41 @@ public final /* synthetic */ class c implements Runnable {
         this.e = obj4;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:123:0x03c7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:120:0x03b3, code lost:
     
-        if (r6 != null) goto L116;
+        if (r6 != null) goto L114;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:124:0x03c9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:121:0x03b5, code lost:
     
         r6.dispose();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:125:0x03df, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:122:0x03cb, code lost:
     
-        org.telegram.messenger.AndroidUtilities.runOnUIThread(new nh.i6(r4, 2));
+        org.telegram.messenger.AndroidUtilities.runOnUIThread(new oh.i6(r4, 2));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:126:0x03e8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:123:0x03d4, code lost:
     
         return;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:134:0x03dc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:131:0x03c8, code lost:
     
-        if (r6 != null) goto L116;
+        if (r6 != null) goto L114;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:195:0x050e  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x04fa  */
     /* JADX WARN: Removed duplicated region for block: B:79:0x025f  */
     /* JADX WARN: Removed duplicated region for block: B:81:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r0v126, types: [java.lang.Throwable] */
     /* JADX WARN: Type inference failed for: r0v86, types: [org.telegram.messenger.FileLoader] */
     /* JADX WARN: Type inference failed for: r2v124, types: [org.telegram.ui.ActionBar.p2] */
-    /* JADX WARN: Type inference failed for: r2v96, types: [java.lang.Object, o4.z] */
+    /* JADX WARN: Type inference failed for: r2v80, types: [java.lang.Object, o4.z] */
     /* JADX WARN: Type inference failed for: r5v26, types: [android.view.View, org.telegram.ui.Components.p9] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        u6 u6Var;
+        s6 s6Var;
         File file;
         ArrayList arrayList;
         TL_stories.StoryItem storyItem;
@@ -193,45 +192,45 @@ public final /* synthetic */ class c implements Runnable {
                 aVar.getClass();
                 Logger logger = d3.a.f;
                 try {
-                    z2.e a2 = aVar.c.a(str2);
+                    z2.f a2 = aVar.c.a(str2);
                     if (a2 == null) {
                         String str3 = "Transport backend '" + str2 + "' is not registered";
                         logger.warning(str3);
-                        gVar.d(new IllegalArgumentException(str3));
+                        gVar.e(new IllegalArgumentException(str3));
                     } else {
                         ((f3.h) aVar.e).f(new a(aVar, iVar, ((w2.b) a2).a(hVar), 3));
-                        gVar.d(null);
+                        gVar.e(null);
                     }
                     return;
-                } catch (Exception e) {
-                    logger.warning("Error scheduling event " + e.getMessage());
-                    gVar.d(e);
+                } catch (Exception e6) {
+                    logger.warning("Error scheduling event " + e6.getMessage());
+                    gVar.e(e6);
                     return;
                 }
             case 2:
-                q3 q3Var = (q3) this.b;
+                o3 o3Var = (o3) this.b;
                 ArrayList arrayList2 = (ArrayList) this.c;
-                sq0 sq0Var = (sq0) this.d;
-                n3 n3Var = (n3) this.e;
-                q3Var.D = true;
-                q3Var.E = (n3[]) arrayList2.toArray(new n3[0]);
-                sq0Var.run(n3Var);
+                uq0 uq0Var = (uq0) this.d;
+                l3 l3Var = (l3) this.e;
+                o3Var.D = true;
+                o3Var.E = (l3[]) arrayList2.toArray(new l3[0]);
+                uq0Var.run(l3Var);
                 return;
             case 3:
-                q3 q3Var2 = (q3) this.b;
+                o3 o3Var2 = (o3) this.b;
                 TLObject tLObject = (TLObject) this.c;
-                o3 o3Var = (o3) this.d;
+                m3 m3Var = (m3) this.d;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.e;
                 if (!(tLObject instanceof TLRPC.TL_messageMediaDocument)) {
-                    q3Var2.h();
-                    q3Var2.n(tL_error);
+                    o3Var2.h();
+                    o3Var2.n(tL_error);
                     return;
                 }
-                q3Var2.getClass();
+                o3Var2.getClass();
                 TLRPC.TL_messageMediaDocument tL_messageMediaDocument = (TLRPC.TL_messageMediaDocument) tLObject;
-                o3Var.e = MediaDataController.getInputStickerSetItem(tL_messageMediaDocument.document, o3Var.c);
-                o3Var.f = tL_messageMediaDocument;
-                q3Var2.a();
+                m3Var.e = MediaDataController.getInputStickerSetItem(tL_messageMediaDocument.document, m3Var.c);
+                m3Var.f = tL_messageMediaDocument;
+                o3Var2.a();
                 return;
             case 4:
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.b;
@@ -249,40 +248,40 @@ public final /* synthetic */ class c implements Runnable {
                     return;
                 }
             case 5:
-                final kh.n3 n3Var2 = (kh.n3) this.b;
+                final n3 n3Var = (n3) this.b;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) this.c;
                 x1 x1Var = (x1) this.d;
                 final View view = (View) this.e;
-                or0 or0Var = n3Var2.a;
+                pr0 pr0Var = n3Var.a;
                 if (savedStarGift.unsaved) {
                     savedStarGift.unsaved = false;
                     x1Var.h(savedStarGift, true, false);
                     TL_stars.saveStarGift savestargift = new TL_stars.saveStarGift();
-                    savestargift.stargift = n3Var2.e.g(savedStarGift);
+                    savestargift.stargift = n3Var.e.g(savedStarGift);
                     savestargift.unsave = savedStarGift.unsaved;
-                    ConnectionsManager.getInstance(n3Var2.b).sendRequest(savestargift, null, 64);
+                    ConnectionsManager.getInstance(n3Var.b).sendRequest(savestargift, null, 64);
                 }
                 boolean z11 = savedStarGift.pinned_to_top;
                 final boolean z12 = !z11;
-                if (n3Var2.e.m(savedStarGift, z12, false)) {
-                    new w3(n3Var2.getContext(), or0Var.c, savedStarGift, n3Var2.c, new Utilities.Callback0Return() { // from class: kh.e3
+                if (n3Var.e.m(savedStarGift, z12, false)) {
+                    new w3(n3Var.getContext(), pr0Var.c, savedStarGift, n3Var.c, new Utilities.Callback0Return() { // from class: lh.e3
                         @Override // org.telegram.messenger.Utilities.Callback0Return
                         public final Object run() {
                             ((x1) view).c(z12, true);
-                            n3 n3Var3 = n3.this;
-                            n3Var3.f.u0(0);
-                            return qc.a0(n3Var3.a.a);
+                            n3 n3Var2 = n3.this;
+                            n3Var2.f.u0(0);
+                            return qc.a0(n3Var2.a.a);
                         }
                     }).show();
                     return;
                 }
                 if (z11) {
-                    a2.v(R.string.Gift2Unpinned, qc.a0(or0Var.a), R.raw.ic_unpin, 36);
+                    l.d.v(R.string.Gift2Unpinned, qc.a0(pr0Var.a), R.raw.ic_unpin, 36);
                 } else {
-                    qc.a0(or0Var.a).M(LocaleController.getString(R.string.Gift2PinnedTitle), LocaleController.getString(R.string.Gift2PinnedSubtitle), R.raw.ic_pin).j();
+                    qc.a0(pr0Var.a).M(LocaleController.getString(R.string.Gift2PinnedTitle), LocaleController.getString(R.string.Gift2PinnedSubtitle), R.raw.ic_pin).j();
                 }
                 ((x1) view).c(z12, true);
-                n3Var2.f.u0(0);
+                n3Var.f.u0(0);
                 return;
             case 6:
                 p2 p2Var = (p2) this.b;
@@ -318,8 +317,8 @@ public final /* synthetic */ class c implements Runnable {
                 }
                 g5Var.n0 = true;
                 g5Var.i1 = null;
-                g5Var.r1(inputSavedStarGift, (TLRPC.Updates) tLObject3, new t1(g5Var, 5));
-                Utilities.stageQueue.postRunnable(new n2(2, g5Var, tLObject3));
+                g5Var.r1(inputSavedStarGift, (TLRPC.Updates) tLObject3, new s1(g5Var, 5));
+                Utilities.stageQueue.postRunnable(new m2(2, g5Var, tLObject3));
                 return;
             case 11:
                 f4 f4Var = (f4) this.b;
@@ -332,10 +331,10 @@ public final /* synthetic */ class c implements Runnable {
                     AndroidUtilities.runOnUIThread(runnable);
                     return;
                 }
-                jj0 jj0Var = f4Var.i0;
-                if (jj0Var != null) {
-                    jj0Var.d();
-                    AndroidUtilities.runOnUIThread(new n0(9), 750L);
+                lj0 lj0Var = f4Var.i0;
+                if (lj0Var != null) {
+                    lj0Var.d();
+                    AndroidUtilities.runOnUIThread(new ag.f(11), 750L);
                 }
                 f4Var.N.animate().alpha(0.0f).start();
                 f4Var.P.animate().alpha(1.0f).start();
@@ -367,27 +366,30 @@ public final /* synthetic */ class c implements Runnable {
                     x1Var2.x.setVisibility(8);
                     x1Var2.setRibbonColor(-3065286);
                     ?? r52 = x1Var2.y;
-                    FrameLayout.LayoutParams e6 = b6.e(42, 42, 17);
-                    x1Var2.B = e6;
-                    r52.setLayoutParams(e6);
+                    FrameLayout.LayoutParams e10 = c6.e(42, 42, 17);
+                    x1Var2.B = e10;
+                    r52.setLayoutParams(e10);
                     int i14 = i13 + 1;
                     boolean z13 = i14 >= arrayList3.size();
                     LinearLayout linearLayout = f4Var.K;
                     f4Var.L[i13] = x1Var2;
-                    linearLayout.addView(x1Var2, b6.p(74, 74, 0.0f, 51, 0, 0, z13 ? 0 : 6, 0));
+                    linearLayout.addView(x1Var2, c6.p(74, 74, 0.0f, 51, 0, 0, z13 ? 0 : 6, 0));
                     i13 = i14;
                 }
                 return;
             case 12:
-                nh.w3 w3Var = (nh.w3) this.b;
+                this.c.i(((e0) this.b).b, (o4.v) this.d, (r) this.e);
+                return;
+            case 13:
+                y3 y3Var = (y3) this.b;
                 TLObject tLObject4 = (TLObject) this.c;
                 TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) this.d;
                 Utilities.Callback callback3 = (Utilities.Callback) this.e;
-                d4 d4Var = w3Var.l;
+                oh.f4 f4Var2 = y3Var.l;
                 if (tLObject4 instanceof TL_stories.TL_stories_stories) {
                     TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject4;
-                    MessagesController.getInstance(d4Var.z2).putUsers(tL_stories_stories.users, false);
-                    MessagesController.getInstance(d4Var.z2).putChats(tL_stories_stories.chats, false);
+                    MessagesController.getInstance(f4Var2.z2).putUsers(tL_stories_stories.users, false);
+                    MessagesController.getInstance(f4Var2.z2).putChats(tL_stories_stories.chats, false);
                     for (int i15 = 0; i15 < tL_stories_stories.stories.size(); i15++) {
                         if (tL_stories_stories.stories.get(i15).id == storyItem2.id) {
                             callback3.run(tL_stories_stories.stories.get(i15).media.document);
@@ -397,18 +399,18 @@ public final /* synthetic */ class c implements Runnable {
                 }
                 callback3.run(null);
                 return;
-            case 13:
-                nh.w3 w3Var2 = (nh.w3) this.b;
+            case 14:
+                y3 y3Var2 = (y3) this.b;
                 Activity activity = (Activity) this.c;
                 i9 i9Var = (i9) this.d;
-                a4 a4Var = (a4) this.e;
-                da E = da.E(activity, w3Var2.l.z2);
-                c4 c4Var = w3Var2.l.J2;
-                if (c4Var != null && (h9Var = c4Var.b) != null) {
+                c4 c4Var = (c4) this.e;
+                ca E = ca.E(activity, y3Var2.l.z2);
+                e4 e4Var = y3Var2.l.J2;
+                if (e4Var != null && (h9Var = e4Var.b) != null) {
                     j10 = h9Var.currentPosition;
                 }
-                t0 t0Var = MessagesController.getInstance(w3Var2.l.z2).getStoriesController().w;
-                TL_stories.StoryItem storyItem3 = w3Var2.l.L1.a;
+                t0 t0Var = MessagesController.getInstance(y3Var2.l.z2).getStoriesController().w;
+                TL_stories.StoryItem storyItem3 = y3Var2.l.L1.a;
                 long j11 = storyItem3.dialogId;
                 ArrayList arrayList4 = t0Var.b;
                 int size = arrayList4.size();
@@ -416,32 +418,32 @@ public final /* synthetic */ class c implements Runnable {
                 while (i16 < size) {
                     Object obj = arrayList4.get(i16);
                     i16++;
-                    u6 u6Var2 = (u6) obj;
-                    if (u6Var2.g && storyItem3.id == u6Var2.f && j11 == u6Var2.e) {
+                    s6 s6Var2 = (s6) obj;
+                    if (s6Var2.g && storyItem3.id == s6Var2.f && j11 == s6Var2.e) {
                         TLRPC.MessageMedia messageMedia = storyItem3.media;
                         TLRPC.Document document = messageMedia.document;
                         arrayList = arrayList4;
                         storyItem = storyItem3;
-                        if ((document == null || document.id == u6Var2.H) && ((photo = messageMedia.photo) == null || photo.id == u6Var2.I)) {
-                            u6Var2.h = true;
-                            u6Var = u6Var2;
-                            if (u6Var != null || u6Var.u || (file = u6Var.L) == null || !file.exists()) {
-                                u6Var = u6.n(w3Var2.l.L1.h(), w3Var2.l.L1.a);
-                                u6Var.e = w3Var2.l.y1;
+                        if ((document == null || document.id == s6Var2.H) && ((photo = messageMedia.photo) == null || photo.id == s6Var2.I)) {
+                            s6Var2.h = true;
+                            s6Var = s6Var2;
+                            if (s6Var != null || s6Var.u || (file = s6Var.L) == null || !file.exists()) {
+                                s6Var = s6.n(y3Var2.l.L1.h(), y3Var2.l.L1.a);
+                                s6Var.e = y3Var2.l.y1;
                             }
-                            u6 g10 = u6Var.g();
-                            if (w3Var2.l.I0()) {
-                                d4 d4Var2 = w3Var2.l;
-                                g10.J0 = d4Var2.y1;
-                                g10.L0 = MessagesController.toInputMedia(d4Var2.L1.a.media);
+                            s6 g10 = s6Var.g();
+                            if (y3Var2.l.I0()) {
+                                oh.f4 f4Var3 = y3Var2.l;
+                                g10.J0 = f4Var3.y1;
+                                g10.L0 = MessagesController.toInputMedia(f4Var3.L1.a.media);
                                 l6 l6Var = i9Var.L0;
                                 if (l6Var instanceof d6) {
                                     g10.K0 = ((d6) l6Var).E;
                                 }
                             }
-                            E.S(y9.d(i9Var), g10, j10);
-                            E.N = new nh.q3(w3Var2, 3);
-                            E.O = new s3(w3Var2, a4Var, 1);
+                            E.S(x9.d(i9Var), g10, j10);
+                            E.N = new r3(y3Var2, 3);
+                            E.O = new u3(y3Var2, c4Var, 1);
                             return;
                         }
                     } else {
@@ -451,19 +453,19 @@ public final /* synthetic */ class c implements Runnable {
                     storyItem3 = storyItem;
                     arrayList4 = arrayList;
                 }
-                u6Var = null;
-                if (u6Var != null) {
+                s6Var = null;
+                if (s6Var != null) {
                 }
-                u6Var = u6.n(w3Var2.l.L1.h(), w3Var2.l.L1.a);
-                u6Var.e = w3Var2.l.y1;
-                u6 g102 = u6Var.g();
-                if (w3Var2.l.I0()) {
+                s6Var = s6.n(y3Var2.l.L1.h(), y3Var2.l.L1.a);
+                s6Var.e = y3Var2.l.y1;
+                s6 g102 = s6Var.g();
+                if (y3Var2.l.I0()) {
                 }
-                E.S(y9.d(i9Var), g102, j10);
-                E.N = new nh.q3(w3Var2, 3);
-                E.O = new s3(w3Var2, a4Var, 1);
+                E.S(x9.d(i9Var), g102, j10);
+                E.N = new r3(y3Var2, 3);
+                E.O = new u3(y3Var2, c4Var, 1);
                 return;
-            case 14:
+            case 15:
                 h6 h6Var = (h6) this.b;
                 TLObject tLObject5 = (TLObject) this.c;
                 Utilities.Callback callback4 = (Utilities.Callback) this.d;
@@ -492,7 +494,7 @@ public final /* synthetic */ class c implements Runnable {
                 objArr[1] = h6Var;
                 notificationCenter.lambda$postNotificationNameOnUIThread$1(i17, objArr);
                 return;
-            case 15:
+            case 16:
                 l6 l6Var2 = (l6) this.b;
                 ArrayList arrayList5 = (ArrayList) this.c;
                 MessagesStorage messagesStorage = (MessagesStorage) this.d;
@@ -506,7 +508,7 @@ public final /* synthetic */ class c implements Runnable {
                 sb.append(j12);
                 sb.append("} saveCache {");
                 sb.append(t6.a(arrayList5));
-                yh.w("}", sb);
+                yh.v("}", sb);
                 try {
                     SQLiteDatabase database = messagesStorage.getDatabase();
                     SQLitePreparedStatement executeFast = database.executeFast("REPLACE INTO profile_stories VALUES(?, ?, ?, ?, ?, ?)");
@@ -574,9 +576,6 @@ public final /* synthetic */ class c implements Runnable {
                     sQLitePreparedStatement2 = null;
                 }
                 break;
-            case 16:
-                this.c.i(((e0) this.b).b, (o4.v) this.d, (r) this.e);
-                return;
             case 17:
                 CameraController.lambda$openRound$9((CameraSession) this.b, (Runnable) this.c, (SurfaceTexture) this.d, (Runnable) this.e);
                 return;
@@ -584,87 +583,87 @@ public final /* synthetic */ class c implements Runnable {
                 CameraController.lambda$close$5((Runnable) this.b, (CameraSession) this.c, (CountDownLatch) this.d, (Runnable) this.e);
                 return;
             case 19:
-                ((VideoAds) this.b).lambda$show$14((Context) this.c, (TLRPC.TL_sponsoredMessage) this.d, (o70) this.e);
+                ((VideoAds) this.b).lambda$show$14((Context) this.c, (TLRPC.TL_sponsoredMessage) this.d, (q70) this.e);
                 return;
             case 20:
-                ((Utilities.Callback) this.b).run(j6.Q0((File) this.c, (String) this.d, (String[]) this.e));
+                ((Utilities.Callback) this.b).run(org.telegram.ui.ActionBar.k6.Q0((File) this.c, (String) this.d, (String[]) this.e));
                 return;
             case 21:
                 TLObject tLObject6 = (TLObject) this.b;
-                org.telegram.ui.ActionBar.h6 h6Var2 = (org.telegram.ui.ActionBar.h6) this.c;
-                i6 i6Var = (i6) this.d;
+                i6 i6Var = (i6) this.c;
+                j6 j6Var = (j6) this.d;
                 TLRPC.TL_theme tL_theme = (TLRPC.TL_theme) this.e;
-                j6.A--;
+                org.telegram.ui.ActionBar.k6.A--;
                 if (tLObject6 instanceof TLRPC.TL_theme) {
                     TLRPC.TL_theme tL_theme2 = (TLRPC.TL_theme) tLObject6;
                     TLRPC.ThemeSettings themeSettings = tL_theme2.settings.size() > 0 ? tL_theme2.settings.get(0) : null;
-                    if (h6Var2 == null || themeSettings == null) {
+                    if (i6Var == null || themeSettings == null) {
                         TLRPC.Document document2 = tL_theme2.document;
                         if (document2 != null && document2.id != tL_theme.document.id) {
-                            if (h6Var2 != null) {
-                                h6Var2.r = tL_theme2;
+                            if (i6Var != null) {
+                                i6Var.r = tL_theme2;
                             } else {
-                                i6Var.C = tL_theme2;
-                                i6Var.D = false;
-                                i6Var.d0 = null;
-                                i6Var.e0 = null;
-                                NotificationCenter.getInstance(i6Var.B).addObserver(i6Var, NotificationCenter.fileLoaded);
-                                NotificationCenter.getInstance(i6Var.B).addObserver(i6Var, NotificationCenter.fileLoadFailed);
-                                ?? fileLoader = FileLoader.getInstance(i6Var.B);
-                                TLRPC.TL_theme tL_theme3 = i6Var.C;
+                                j6Var.C = tL_theme2;
+                                j6Var.D = false;
+                                j6Var.d0 = null;
+                                j6Var.e0 = null;
+                                NotificationCenter.getInstance(j6Var.B).addObserver(j6Var, NotificationCenter.fileLoaded);
+                                NotificationCenter.getInstance(j6Var.B).addObserver(j6Var, NotificationCenter.fileLoadFailed);
+                                ?? fileLoader = FileLoader.getInstance(j6Var.B);
+                                TLRPC.TL_theme tL_theme3 = j6Var.C;
                                 fileLoader.loadFile(tL_theme3.document, tL_theme3, 1, 1);
                             }
                         }
                     } else {
-                        if (i6.a(h6Var2, themeSettings)) {
+                        if (j6.a(i6Var, themeSettings)) {
                             z4 = false;
                         } else {
-                            File d = h6Var2.d();
+                            File d = i6Var.d();
                             if (d != null) {
                                 d.delete();
                             }
-                            i6.i(h6Var2, themeSettings);
-                            i6 i6Var2 = j6.I;
-                            if (i6Var2 == i6Var && i6Var2.V == h6Var2.a) {
-                                j6.n1(false, false);
-                                j6.J(ApplicationLoader.applicationContext, false);
+                            j6.i(i6Var, themeSettings);
+                            j6 j6Var2 = org.telegram.ui.ActionBar.k6.I;
+                            if (j6Var2 == j6Var && j6Var2.V == i6Var.a) {
+                                org.telegram.ui.ActionBar.k6.n1(false, false);
+                                org.telegram.ui.ActionBar.k6.J(ApplicationLoader.applicationContext, false);
                                 NotificationCenter globalInstance = NotificationCenter.getGlobalInstance();
                                 int i21 = NotificationCenter.needSetDayNightTheme;
-                                i6 i6Var3 = j6.I;
-                                globalInstance.lambda$postNotificationNameOnUIThread$1(i21, i6Var3, Boolean.valueOf(j6.J == i6Var3), null, -1);
+                                j6 j6Var3 = org.telegram.ui.ActionBar.k6.I;
+                                globalInstance.lambda$postNotificationNameOnUIThread$1(i21, j6Var3, Boolean.valueOf(org.telegram.ui.ActionBar.k6.J == j6Var3), null, -1);
                             }
-                            e6.a(true);
+                            f6.a(true);
                             z4 = true;
                         }
                         TLRPC.WallPaper wallPaper = themeSettings.wallpaper;
-                        h6Var2.q = (wallPaper == null || (wallPaperSettings = wallPaper.settings) == null || !wallPaperSettings.motion) ? false : true;
+                        i6Var.q = (wallPaper == null || (wallPaperSettings = wallPaper.settings) == null || !wallPaperSettings.motion) ? false : true;
                         z10 = z4;
                     }
-                    if (j6.A != 0) {
-                        j6.B = (int) (System.currentTimeMillis() / 1000);
-                        j6.s1(z10, false);
+                    if (org.telegram.ui.ActionBar.k6.A != 0) {
+                        org.telegram.ui.ActionBar.k6.B = (int) (System.currentTimeMillis() / 1000);
+                        org.telegram.ui.ActionBar.k6.s1(z10, false);
                         return;
                     }
                     return;
                 }
                 z10 = false;
-                if (j6.A != 0) {
+                if (org.telegram.ui.ActionBar.k6.A != 0) {
                 }
                 break;
             case 22:
-                s6 s6Var = (s6) this.b;
+                org.telegram.ui.s6 s6Var3 = (org.telegram.ui.s6) this.b;
                 org.telegram.ui.t6 t6Var = (org.telegram.ui.t6) this.c;
                 float[] fArr = (float[]) this.d;
                 boolean[] zArr = (boolean[]) this.e;
-                s6Var.getClass();
+                s6Var3.getClass();
                 t6Var.a(fArr[0]);
                 if (zArr[0]) {
-                    s6Var.d.w0(true);
+                    s6Var3.d.w0(true);
                     return;
                 }
                 return;
             case 23:
-                s6 s6Var2 = (s6) this.b;
+                org.telegram.ui.s6 s6Var4 = (org.telegram.ui.s6) this.b;
                 boolean[] zArr2 = (boolean[]) this.c;
                 long[] jArr = (long[]) this.d;
                 r6 r6Var = (r6) this.e;
@@ -672,7 +671,7 @@ public final /* synthetic */ class c implements Runnable {
                     return;
                 }
                 jArr[0] = System.currentTimeMillis();
-                s6Var2.d.showDialog(r6Var);
+                s6Var4.d.showDialog(r6Var);
                 return;
             case 24:
                 j8.U((j8) this.b, (TLRPC.TL_error) this.c, (TLObject) this.d, (Calendar) this.e);
@@ -684,21 +683,21 @@ public final /* synthetic */ class c implements Runnable {
                 xn xnVar = (xn) this.b;
                 ?? r22 = (p2) this.c;
                 MessageObject messageObject = (MessageObject) this.d;
-                e5 e5Var = (e5) this.e;
+                f5 f5Var = (f5) this.e;
                 if (r22 instanceof NotificationCenter.NotificationCenterDelegate) {
                     xnVar.getNotificationCenter().removeObserver((NotificationCenter.NotificationCenterDelegate) r22, NotificationCenter.closeChats);
                 }
                 xnVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
                 Bundle bundle = new Bundle();
                 bundle.putLong("chat_id", messageObject.messageOwner.action.channel_id);
-                ((ActionBarLayout) e5Var).c(e5Var.getFragmentStack().size() - 1, new xn(bundle));
+                ((ActionBarLayout) f5Var).c(f5Var.getFragmentStack().size() - 1, new xn(bundle));
                 r22.finishFragment();
                 return;
             case 27:
                 xn xnVar2 = (xn) this.b;
                 af.f fVar2 = (af.f) this.c;
                 TLObject tLObject7 = (TLObject) this.d;
-                g2 g2Var = (g2) this.e;
+                f2 f2Var = (f2) this.e;
                 fVar2.b();
                 if (tLObject7 instanceof TLRPC.TL_contacts_resolvedPeer) {
                     TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject7;
@@ -709,7 +708,7 @@ public final /* synthetic */ class c implements Runnable {
                         user = xnVar2.getMessagesController().getUser(Long.valueOf(peerDialogId));
                     }
                 }
-                g2Var.run(user);
+                f2Var.run(user);
                 return;
             case 28:
                 long[] jArr2 = (long[]) this.b;
@@ -720,11 +719,11 @@ public final /* synthetic */ class c implements Runnable {
                 if (!zArr3[0]) {
                     imageView = imageView2;
                 }
-                mr mrVar = (mr) imageView.getDrawable();
+                or orVar = (or) imageView.getDrawable();
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                ofFloat.addUpdateListener(new e3(mrVar, i10));
+                ofFloat.addUpdateListener(new e3(orVar, i10));
                 ofFloat.setDuration(150L);
-                ofFloat.setInterpolator(nr.f);
+                ofFloat.setInterpolator(pr.f);
                 ofFloat.start();
                 return;
             default:
@@ -733,7 +732,7 @@ public final /* synthetic */ class c implements Runnable {
                 d2 d2Var2 = (d2) this.d;
                 boolean[] zArr4 = (boolean[]) this.e;
                 try {
-                    tL_webPage = s90.f(messageObject2);
+                    tL_webPage = u90.f(messageObject2);
                 } catch (Throwable th6) {
                     FileLog.e((Throwable) th6);
                     tL_webPage = null;

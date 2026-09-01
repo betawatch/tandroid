@@ -24,29 +24,29 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.c2;
 import org.telegram.ui.ActionBar.d2;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.i51;
-import org.telegram.ui.Components.jl0;
-import org.telegram.ui.Components.voip.f2;
+import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.kl0;
+import org.telegram.ui.Components.voip.g2;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ap;
+import org.telegram.ui.at;
 import org.telegram.ui.b10;
-import org.telegram.ui.cp;
-import org.telegram.ui.dn0;
+import org.telegram.ui.dp;
 import org.telegram.ui.ea;
+import org.telegram.ui.fn0;
 import org.telegram.ui.l9;
-import org.telegram.ui.nl0;
-import org.telegram.ui.ql0;
-import org.telegram.ui.rb0;
+import org.telegram.ui.pl0;
 import org.telegram.ui.s00;
-import org.telegram.ui.zs;
+import org.telegram.ui.sb0;
+import org.telegram.ui.sl0;
 import s8.i0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class i implements Continuation, f5.m, c2, jl0, zs, androidx.car.app.utils.d {
+public final /* synthetic */ class i implements Continuation, f5.m, c2, kl0, at, androidx.car.app.utils.d {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -59,6 +59,11 @@ public final /* synthetic */ class i implements Continuation, f5.m, c2, jl0, zs,
         this.b = z4;
     }
 
+    @Override // org.telegram.ui.Components.kl0
+    public /* synthetic */ boolean Y0(View view) {
+        return false;
+    }
+
     @Override // androidx.car.app.utils.d
     public Object a() {
         Object lambda$onCarHardwareResult$0;
@@ -66,18 +71,18 @@ public final /* synthetic */ class i implements Continuation, f5.m, c2, jl0, zs,
         return lambda$onCarHardwareResult$0;
     }
 
-    @Override // org.telegram.ui.zs
+    @Override // org.telegram.ui.at
     public void b(TLRPC.User user) {
         LaunchActivity launchActivity = (LaunchActivity) this.c;
         int[] iArr = (int[]) this.d;
         Pattern pattern = LaunchActivity.y1;
         TLRPC.UserFull userFull = MessagesController.getInstance(launchActivity.L).getUserFull(user.id);
-        f2.n(user, this.b, userFull != null && userFull.video_calls_available, launchActivity, userFull, AccountInstance.getInstance(iArr[0]));
+        g2.n(user, this.b, userFull != null && userFull.video_calls_available, launchActivity, userFull, AccountInstance.getInstance(iArr[0]));
     }
 
-    @Override // org.telegram.ui.Components.jl0
+    @Override // org.telegram.ui.Components.kl0
     public void c(float f10, float f11, int i10, View view) {
-        ChatAttachAlertPhotoLayout.J((ChatAttachAlertPhotoLayout) this.c, this.b, (f6) this.d, view, i10);
+        ChatAttachAlertPhotoLayout.J((ChatAttachAlertPhotoLayout) this.c, this.b, (g6) this.d, view, i10);
     }
 
     @Override // f5.m
@@ -120,13 +125,8 @@ public final /* synthetic */ class i implements Continuation, f5.m, c2, jl0, zs,
         return s8.v.s(i12, objArr2);
     }
 
-    @Override // org.telegram.ui.Components.jl0
-    public /* synthetic */ boolean e1(View view) {
-        return false;
-    }
-
     @Override // org.telegram.ui.ActionBar.c2
-    public void i(d2 d2Var, int i10) {
+    public void j(d2 d2Var, int i10) {
         switch (this.a) {
             case 2:
                 l9 l9Var = (l9) this.c;
@@ -154,22 +154,22 @@ public final /* synthetic */ class i implements Continuation, f5.m, c2, jl0, zs,
                 ap apVar = (ap) this.c;
                 TLRPC.TL_username tL_username = (TLRPC.TL_username) this.d;
                 boolean z11 = this.b;
-                cp cpVar = apVar.a;
-                cpVar.w1(tL_username, z11, true);
-                cpVar.X2.V();
+                dp dpVar = apVar.a;
+                dpVar.w1(tL_username, z11, true);
+                dpVar.X2.V();
                 break;
             case 5:
                 p2 p2Var = (p2) this.c;
                 TLRPC.User user = (TLRPC.User) this.d;
                 boolean z12 = this.b;
                 TLRPC.UserFull userFull = p2Var.getMessagesController().getUserFull(user.id);
-                f2.n(user, z12, userFull != null && userFull.video_calls_available, p2Var.getParentActivity(), userFull, p2Var.getAccountInstance());
+                g2.n(user, z12, userFull != null && userFull.video_calls_available, p2Var.getParentActivity(), userFull, p2Var.getAccountInstance());
                 break;
             case 6:
             case 8:
             default:
-                uf.v vVar = (uf.v) this.c;
-                (!this.b ? vVar.k : vVar.j).remove(Long.valueOf(((i51) this.d).x));
+                vf.v vVar = (vf.v) this.c;
+                (!this.b ? vVar.k : vVar.j).remove(Long.valueOf(((j51) this.d).x));
                 vVar.e.run();
                 break;
             case 7:
@@ -219,18 +219,18 @@ public final /* synthetic */ class i implements Continuation, f5.m, c2, jl0, zs,
                     return;
                 }
             case 10:
-                dn0 dn0Var = (dn0) this.c;
+                fn0 fn0Var = (fn0) this.c;
                 TLRPC.TL_secureRequiredType tL_secureRequiredType = (TLRPC.TL_secureRequiredType) this.d;
                 boolean z15 = this.b;
-                dn0Var.y1();
-                dn0Var.j1(tL_secureRequiredType, null, null, true, new nl0(dn0Var, 4), new ql0(dn0Var, 6), z15);
+                fn0Var.y1();
+                fn0Var.j1(tL_secureRequiredType, null, null, true, new pl0(fn0Var, 4), new sl0(fn0Var, 6), z15);
                 break;
         }
     }
 
     @Override // com.google.android.gms.tasks.Continuation
     public Object then(Task task) {
-        return (i6.b.d() && ((Integer) task.getResult()).intValue() == 402) ? j.a((Context) this.c, (Intent) this.d, this.b).continueWith(new rb0(1), new androidx.emoji2.text.w(16)) : task;
+        return (i6.b.d() && ((Integer) task.getResult()).intValue() == 402) ? j.a((Context) this.c, (Intent) this.d, this.b).continueWith(new sb0(1), new androidx.emoji2.text.w(10)) : task;
     }
 
     public /* synthetic */ i(Object obj, boolean z4, Object obj2, int i10) {
@@ -247,7 +247,7 @@ public final /* synthetic */ class i implements Continuation, f5.m, c2, jl0, zs,
         this.d = p2Var;
     }
 
-    @Override // org.telegram.ui.Components.jl0
-    public /* synthetic */ void o0(View view, float f10, float f11) {
+    @Override // org.telegram.ui.Components.kl0
+    public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

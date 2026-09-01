@@ -1,67 +1,75 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.util.SparseArray;
-import android.view.View;
-import org.telegram.messenger.SharedConfig;
+import android.os.Bundle;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class sg0 implements ng.g {
-    public final /* synthetic */ vg0 a;
+public final /* synthetic */ class sg0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wg0 b;
 
-    public /* synthetic */ sg0(vg0 vg0Var) {
-        this.a = vg0Var;
+    public /* synthetic */ sg0(wg0 wg0Var, int i10) {
+        this.a = i10;
+        this.b = wg0Var;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // ng.g
-    public void Y(g.x xVar) {
-        vg0 vg0Var = this.a;
-        RectF rectF = vg0Var.R;
-        xVar.a(vg0Var.getThemedColor(org.telegram.ui.ActionBar.j6.d6));
-        xVar.b(SharedConfig.chatBlurEnabled());
-        SparseArray sparseArray = vg0Var.a;
-        int size = sparseArray.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            org.telegram.ui.ActionBar.p2 p2Var = ((fh1) sparseArray.valueAt(i10)).a;
-            View view = p2Var.fragmentView;
-            if (view != null && ug.i.c(view, vg0Var.b, rectF) && rectF.right > 0.0f && rectF.left < vg0Var.fragmentView.getMeasuredWidth() && (p2Var instanceof ug0) && ((ug0) p2Var).y() != null) {
-                xVar.c(rectF.left);
-                xVar.c(rectF.top);
-                xVar.a(p2Var.getClassGuid());
-            }
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // ng.g
-    public void k(Canvas canvas) {
-        sg.d y10;
-        Canvas canvas2;
-        vg0 vg0Var = this.a;
-        RectF rectF = vg0Var.R;
-        int measuredWidth = vg0Var.fragmentView.getMeasuredWidth();
-        int measuredHeight = vg0Var.fragmentView.getMeasuredHeight();
-        canvas.drawColor(vg0Var.getThemedColor(org.telegram.ui.ActionBar.j6.d6));
-        SparseArray sparseArray = vg0Var.a;
-        int size = sparseArray.size();
-        int i10 = 0;
-        while (i10 < size) {
-            org.telegram.ui.ActionBar.p2 p2Var = ((fh1) sparseArray.valueAt(i10)).a;
-            View view = p2Var.fragmentView;
-            if (view != null && ug.i.c(view, vg0Var.b, rectF) && rectF.right > 0.0f && rectF.left < vg0Var.fragmentView.getMeasuredWidth() && (p2Var instanceof ug0) && (y10 = ((ug0) p2Var).y()) != null) {
-                canvas.save();
-                canvas.translate(rectF.left, rectF.top);
-                canvas2 = canvas;
-                y10.X(canvas2, 0.0f, 0.0f, measuredWidth, measuredHeight);
-                canvas2.restore();
-            } else {
-                canvas2 = canvas;
-            }
-            i10++;
-            canvas = canvas2;
+    @Override // java.lang.Runnable
+    public final void run() {
+        ch.b[] bVarArr;
+        switch (this.a) {
+            case 0:
+                wg0.b0(this.b);
+                break;
+            case 1:
+                wg0 wg0Var = this.b;
+                wg0Var.getClass();
+                l9.m0(wg0Var);
+                break;
+            case 2:
+                wg0.c0(this.b);
+                break;
+            case 3:
+                wg0.a0(this.b);
+                break;
+            case 4:
+                AndroidUtilities.removeFromParent(this.b.N);
+                break;
+            case 5:
+                wg0 wg0Var2 = this.b;
+                wg0Var2.getClass();
+                new uj0(wg0Var2.getParentActivity(), wg0Var2).show();
+                break;
+            case 6:
+                wg0 wg0Var3 = this.b;
+                wg0Var3.getClass();
+                Bundle bundle = new Bundle();
+                bundle.putBoolean("needFinishFragment", false);
+                wg0Var3.presentFragment(new l9(bundle));
+                break;
+            default:
+                wg0 wg0Var4 = this.b;
+                if (wg0Var4.getParentActivity() != null && (bVarArr = wg0Var4.H) != null) {
+                    float width = ((r1.getWidth() / 2.0f) + (wg0Var4.b.getWidth() - ((bVarArr[4].getX() + wg0Var4.C.getX()) + r1.getWidth()))) / AndroidUtilities.density;
+                    qh.f3 f3Var = new qh.f3(wg0Var4.getParentActivity(), 3);
+                    wg0Var4.N = f3Var;
+                    f3Var.setTranslationY(AndroidUtilities.dp(4.0f) + (-wg0Var4.I));
+                    wg0Var4.N.setPadding(AndroidUtilities.dp(7.33f), 0, AndroidUtilities.dp(7.33f), 0);
+                    wg0Var4.N.q(false);
+                    wg0Var4.N.i();
+                    wg0Var4.N.t(LocaleController.getString(R.string.SwitchAccountHint));
+                    wg0Var4.N.m(1.0f, (-width) + 7.33f);
+                    wg0Var4.b.addView(wg0Var4.N, k7.c6.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, 72.0f));
+                    qh.f3 f3Var2 = wg0Var4.N;
+                    f3Var2.i0 = new sg0(wg0Var4, 4);
+                    f3Var2.d = 8000L;
+                    f3Var2.v();
+                    org.telegram.ui.Components.n40.r.b();
+                    break;
+                }
+                break;
         }
     }
 }

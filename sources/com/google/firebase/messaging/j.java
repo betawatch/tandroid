@@ -8,9 +8,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import java.util.concurrent.ExecutorService;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.rb0;
+import org.telegram.ui.sb0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class j {
     public static final Object c = new Object();
@@ -39,9 +39,9 @@ public final class j {
             }
         }
         if (!z4) {
-            return e0Var.b(intent).continueWith(new rb0(1), new androidx.emoji2.text.w(17));
+            return e0Var.b(intent).continueWith(new sb0(1), new androidx.emoji2.text.w(11));
         }
-        if (r.A().C(context)) {
+        if (s.f().h(context)) {
             b0.c(context, e0Var, intent);
         } else {
             e0Var.b(intent);
@@ -56,15 +56,15 @@ public final class j {
             intent.removeExtra("gcm.rawData64");
         }
         Context context = (Context) this.a;
-        rb0 rb0Var = (rb0) this.b;
+        sb0 sb0Var = (sb0) this.b;
         boolean z4 = i6.b.d() && context.getApplicationInfo().targetSdkVersion >= 26;
         boolean z10 = (intent.getFlags() & TLObject.FLAG_28) != 0;
-        return (!z4 || z10) ? Tasks.call(rb0Var, new h(0, context, intent)).continueWithTask(rb0Var, new i(context, intent, z10, 0)) : a(context, intent, z10);
+        return (!z4 || z10) ? Tasks.call(sb0Var, new h(0, context, intent)).continueWithTask(sb0Var, new i(context, intent, z10, 0)) : a(context, intent, z10);
     }
 
     public j(Context context) {
         this.a = context;
-        this.b = new rb0(1);
+        this.b = new sb0(1);
     }
 
     public j(e0.t tVar, String str) {

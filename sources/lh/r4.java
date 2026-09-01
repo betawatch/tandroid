@@ -1,83 +1,45 @@
 package lh;
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.p9;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes4.dex */
-public final class r4 {
-    public final c5 a;
-    public w4 b;
-    public w4 c;
-    public w4 d;
-    public n4 h;
-    public n4 i;
-    public n4 j;
-    public n4 k;
-    public TL_stars.TL_starGiftUnique l;
-    public long m;
-    public t1 r;
-    public t1 s;
-    public float t;
-    public boolean u;
-    public boolean v;
-    public final ArrayList e = new ArrayList();
-    public final ArrayList f = new ArrayList();
-    public final ArrayList g = new ArrayList();
-    public float n = 0.0f;
-    public boolean o = false;
-    public boolean p = false;
-    public boolean q = false;
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes.dex */
+public final class r4 extends LinearLayout {
+    public final TextView a;
 
-    public r4(c5 c5Var) {
-        this.a = c5Var;
-        c5Var.c.addOnAttachStateChangeListener(new ff.b(this, 6));
+    public r4(Context context, g6 g6Var) {
+        super(context);
+        setOrientation(1);
+        p9 p9Var = new p9(context);
+        p9Var.setImageDrawable(new ij0(R.raw.utyan_empty, AndroidUtilities.dp(130.0f), "utyan_empty", AndroidUtilities.dp(130.0f)));
+        addView(p9Var, k7.c6.t(64, 64, 17, 0, 32, 0, 0));
+        TextView textView = new TextView(context);
+        this.a = textView;
+        org.telegram.ui.b.l(k6.A6, g6Var, textView, 1, 14.0f);
+        textView.setGravity(17);
+        addView(textView, k7.c6.t(-1, -2, 7, 12, 12, 12, 24));
     }
 
-    public final void a() {
-        this.o = false;
-        this.a.c.c();
-        n4 n4Var = this.h;
-        if (n4Var != null) {
-            n4Var.a();
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        if (View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE) {
+            size = AndroidUtilities.dp(250.0f);
         }
-        n4 n4Var2 = this.i;
-        if (n4Var2 != null) {
-            n4Var2.a();
-        }
-        n4 n4Var3 = this.j;
-        if (n4Var3 != null) {
-            n4Var3.a();
-        }
-        n4 n4Var4 = this.k;
-        if (n4Var4 != null) {
-            n4Var4.a();
-        }
-        c();
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i11);
     }
 
-    public final void b() {
-        if (this.o && !this.v) {
-            this.v = true;
-            AndroidUtilities.runOnUIThread(new l4(this, 1));
-        }
-    }
-
-    public final void c() {
-        if (this.o) {
-            return;
-        }
-        ArrayList arrayList = this.e;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ((p4) obj).a();
-        }
-        arrayList.clear();
-        this.f.clear();
-        this.g.clear();
+    public void set(CharSequence charSequence) {
+        this.a.setText(charSequence);
     }
 }

@@ -1,47 +1,25 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final class r extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ t b;
+public final class r extends TextView {
+    public final /* synthetic */ u a;
 
-    public /* synthetic */ r(t tVar, int i10) {
-        this.a = i10;
-        this.b = tVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r(u uVar, Context context) {
+        super(context);
+        this.a = uVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                t tVar = this.b;
-                tVar.B = false;
-                tVar.invalidate();
-                break;
-            case 1:
-                t tVar2 = this.b;
-                s sVar = tVar2.V;
-                float f10 = tVar2.T ? 0.0f : 1.0f;
-                tVar2.U = f10;
-                sVar.setAlpha(f10);
-                sVar.setVisibility(tVar2.T ? 8 : 0);
-                tVar2.a.invalidate();
-                break;
-            default:
-                super.onAnimationEnd(animator);
-                t tVar3 = this.b;
-                tVar3.G0 = null;
-                o oVar = tVar3.a;
-                oVar.setRotationY(0.0f);
-                if (!tVar3.H0) {
-                    oVar.d.clearImage();
-                    break;
-                }
-                break;
+    @Override // android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (Math.abs(this.a.K.getAlpha() - 1.0f) > 0.001f) {
+            return false;
         }
+        return super.onTouchEvent(motionEvent);
     }
 }

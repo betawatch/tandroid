@@ -28,6 +28,7 @@ import androidx.mediarouter.app.h;
 import c2.b0;
 import c2.m;
 import c2.n;
+import f5.u;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -36,7 +37,7 @@ import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class f {
     public static volatile e a;
@@ -121,7 +122,7 @@ public abstract class f {
                 return new ArrayList();
             }
         }
-        List<ShortcutInfo> dynamicShortcuts = f0.d.b(context.getSystemService(f0.d.j())).getDynamicShortcuts();
+        List<ShortcutInfo> dynamicShortcuts = u.b(context.getSystemService(u.h())).getDynamicShortcuts();
         ArrayList arrayList = new ArrayList(dynamicShortcuts.size());
         Iterator<ShortcutInfo> it = dynamicShortcuts.iterator();
         while (it.hasNext()) {
@@ -137,7 +138,7 @@ public abstract class f {
     public static int g(Context context) {
         context.getClass();
         if (Build.VERSION.SDK_INT >= 25) {
-            return f0.d.b(context.getSystemService(f0.d.j())).getMaxShortcutCountPerActivity();
+            return u.b(context.getSystemService(u.h())).getMaxShortcutCountPerActivity();
         }
         return 5;
     }
@@ -300,7 +301,7 @@ public abstract class f {
 
     public static void n(Context context) {
         if (Build.VERSION.SDK_INT >= 25) {
-            f0.d.b(context.getSystemService(f0.d.j())).removeAllDynamicShortcuts();
+            u.b(context.getSystemService(u.h())).removeAllDynamicShortcuts();
         }
         j(context).c();
         Iterator it = ((ArrayList) i(context)).iterator();
@@ -341,7 +342,7 @@ public abstract class f {
         context.getClass();
         str.getClass();
         if (Build.VERSION.SDK_INT >= 25) {
-            f0.d.b(context.getSystemService(f0.d.j())).reportShortcutUsed(str);
+            u.b(context.getSystemService(u.h())).reportShortcutUsed(str);
         }
         Iterator it = ((ArrayList) i(context)).iterator();
         if (it.hasNext()) {
@@ -366,7 +367,7 @@ public abstract class f {
         if (i10 >= 26) {
             z4 = ((ShortcutManager) context.getSystemService(ShortcutManager.class)).isRequestPinShortcutSupported();
         } else {
-            if (f0.f.b(context, "com.android.launcher.permission.INSTALL_SHORTCUT") == 0) {
+            if (f0.e.b(context, "com.android.launcher.permission.INSTALL_SHORTCUT") == 0) {
                 Iterator<ResolveInfo> it = context.getPackageManager().queryBroadcastReceivers(new Intent("com.android.launcher.action.INSTALL_SHORTCUT"), 0).iterator();
                 while (it.hasNext()) {
                     String str = it.next().activityInfo.permission;
@@ -405,8 +406,8 @@ public abstract class f {
                                     if (applicationInfo != null) {
                                         resources = packageManager.getResourcesForApplication(applicationInfo);
                                     }
-                                } catch (PackageManager.NameNotFoundException e) {
-                                    Log.e("IconCompat", "Unable to find pkg=" + h + " for icon", e);
+                                } catch (PackageManager.NameNotFoundException e6) {
+                                    Log.e("IconCompat", "Unable to find pkg=" + h + " for icon", e6);
                                 }
                                 resources = null;
                             }
@@ -424,8 +425,8 @@ public abstract class f {
                 } else if (i11 == 2) {
                     try {
                         intent.putExtra("android.intent.extra.shortcut.ICON_RESOURCE", Intent.ShortcutIconResource.fromContext(context2.createPackageContext(iconCompat.h(), 0), iconCompat.e));
-                    } catch (PackageManager.NameNotFoundException e6) {
-                        throw new IllegalArgumentException("Can't find package " + iconCompat.b, e6);
+                    } catch (PackageManager.NameNotFoundException e10) {
+                        throw new IllegalArgumentException("Can't find package " + iconCompat.b, e10);
                     }
                 } else {
                     if (i11 != 5) {

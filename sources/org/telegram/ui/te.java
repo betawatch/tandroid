@@ -15,9 +15,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class te implements org.telegram.ui.ActionBar.c2, org.telegram.ui.Components.eo, MessagesStorage.BooleanCallback, org.telegram.ui.Components.vj0, ResultCallback, jh.d, wg.a, wg.b, t60, ms, org.telegram.ui.Components.kl0, wg.d, org.telegram.ui.Components.yk0, FlagSecureReason.FlagSecureCondition, su0 {
+public final /* synthetic */ class te implements org.telegram.ui.ActionBar.c2, org.telegram.ui.Components.go, MessagesStorage.BooleanCallback, org.telegram.ui.Components.xj0, ResultCallback, kh.d, xg.a, xg.b, u60, ns, org.telegram.ui.Components.ll0, xg.d, org.telegram.ui.Components.zk0, FlagSecureReason.FlagSecureCondition, uu0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ xn b;
 
@@ -26,7 +26,7 @@ public final /* synthetic */ class te implements org.telegram.ui.ActionBar.c2, o
         this.b = xnVar;
     }
 
-    @Override // org.telegram.ui.ms
+    @Override // org.telegram.ui.ns
     public void a() {
         xn xnVar = this.b;
         if (xnVar.v3 != null || xnVar.getParentActivity() == null) {
@@ -36,7 +36,7 @@ public final /* synthetic */ class te implements org.telegram.ui.ActionBar.c2, o
         xnVar.v3.m(xnVar.Q5, xnVar.f, 8);
     }
 
-    @Override // org.telegram.ui.Components.eo
+    @Override // org.telegram.ui.Components.go
     public void b(TLRPC.Document document) {
         switch (this.a) {
             case 2:
@@ -48,21 +48,21 @@ public final /* synthetic */ class te implements org.telegram.ui.ActionBar.c2, o
         }
     }
 
-    @Override // org.telegram.ui.su0
+    @Override // org.telegram.ui.uu0
     public void c(float[] fArr) {
         xn xnVar = this.b;
         fArr[1] = xnVar.u0.getBottom() - xnVar.xa;
         fArr[0] = (xnVar.u0.getTop() + xnVar.p9) - AndroidUtilities.dp(4.0f);
     }
 
-    @Override // org.telegram.ui.Components.yk0
+    @Override // org.telegram.ui.Components.zk0
     public void d() {
         xn xnVar = this.b;
         xnVar.q9(1);
         xnVar.r9();
     }
 
-    @Override // org.telegram.ui.Components.vj0
+    @Override // org.telegram.ui.Components.xj0
     public void e(ArrayList arrayList) {
         switch (this.a) {
             case 9:
@@ -90,21 +90,21 @@ public final /* synthetic */ class te implements org.telegram.ui.ActionBar.c2, o
         }
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public boolean f(int i10, View view) {
         xn xnVar = this.b;
         boolean z4 = false;
         if (xnVar.getParentActivity() != null) {
-            tf.u0 adapter = xnVar.F1.getAdapter();
+            uf.u0 adapter = xnVar.F1.getAdapter();
             if ((adapter.F != null || adapter.G != null) && i10 != 0) {
-                tf.u0 adapter2 = xnVar.F1.getAdapter();
+                uf.u0 adapter2 = xnVar.F1.getAdapter();
                 if (adapter2.t0 != null && !adapter2.e0) {
                     return false;
                 }
                 Object J = xnVar.F1.getAdapter().J(i10 - 1);
-                if (J instanceof tf.r0) {
-                    tf.r0 r0Var = (tf.r0) J;
-                    if (xnVar.F1.getAdapter().G != null && org.telegram.ui.Components.j51.h) {
+                if (J instanceof uf.r0) {
+                    uf.r0 r0Var = (uf.r0) J;
+                    if (xnVar.F1.getAdapter().G != null && org.telegram.ui.Components.k51.h) {
                         xnVar.V.setFieldText("");
                         jk jkVar = xnVar.V;
                         String str = r0Var.a;
@@ -125,7 +125,7 @@ public final /* synthetic */ class te implements org.telegram.ui.ActionBar.c2, o
                         xnVar.showDialog(alertDialog$Builder.a);
                         return true;
                     }
-                    if (org.telegram.ui.Components.j51.h) {
+                    if (org.telegram.ui.Components.k51.h) {
                         xnVar.V.setFieldText("");
                         jk jkVar2 = xnVar.V;
                         String str2 = (String) J;
@@ -142,14 +142,23 @@ public final /* synthetic */ class te implements org.telegram.ui.ActionBar.c2, o
         return false;
     }
 
-    @Override // jh.d
+    @Override // kh.d
     public void g(boolean z4, boolean z10) {
         xn xnVar = this.b;
         xnVar.J0.i(xnVar.ca.c(), z4, z10);
     }
 
+    @Override // org.telegram.ui.u60
+    public void i(int i10, ArrayList arrayList) {
+        xn xnVar = this.b;
+        xnVar.getMessagesController().addUsersToChat(xnVar.e, xnVar, arrayList, i10, null, null, null);
+        xnVar.getMessagesController().hidePeerSettingsBar(xnVar.Q5, xnVar.f, xnVar.e);
+        xnVar.Qc(true);
+        xnVar.oc(true);
+    }
+
     @Override // org.telegram.ui.ActionBar.c2
-    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    public void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         switch (this.a) {
             case 0:
                 qk qkVar = this.b.y0;
@@ -194,13 +203,13 @@ public final /* synthetic */ class te implements org.telegram.ui.ActionBar.c2, o
                 this.b.finishFragment();
                 break;
             case 10:
-                tf.u0 adapter = this.b.F1.getAdapter();
+                uf.u0 adapter = this.b.F1.getAdapter();
                 adapter.w.c();
                 adapter.F.clear();
                 adapter.l();
-                org.telegram.ui.Components.ka0 ka0Var = adapter.S;
-                if (ka0Var != null) {
-                    ka0Var.a(false);
+                org.telegram.ui.Components.ma0 ma0Var = adapter.S;
+                if (ma0Var != null) {
+                    ma0Var.a(false);
                     break;
                 }
                 break;
@@ -231,16 +240,7 @@ public final /* synthetic */ class te implements org.telegram.ui.ActionBar.c2, o
         }
     }
 
-    @Override // org.telegram.ui.t60
-    public void j(int i10, ArrayList arrayList) {
-        xn xnVar = this.b;
-        xnVar.getMessagesController().addUsersToChat(xnVar.e, xnVar, arrayList, i10, null, null, null);
-        xnVar.getMessagesController().hidePeerSettingsBar(xnVar.Q5, xnVar.f, xnVar.e);
-        xnVar.Qc(true);
-        xnVar.oc(true);
-    }
-
-    @Override // wg.a
+    @Override // xg.a
     public void k(int i10) {
         xn xnVar = this.b;
         if (i10 == 1) {
@@ -268,9 +268,9 @@ public final /* synthetic */ class te implements org.telegram.ui.ActionBar.c2, o
         if (i10 == 5) {
             xnVar.Y8(false);
         } else if (i10 == 0) {
-            nh.t2 t2Var = xnVar.G1;
-            if (t2Var != null) {
-                t2Var.I1(null, 0);
+            oh.u2 u2Var = xnVar.G1;
+            if (u2Var != null) {
+                u2Var.I1(null, 0);
             }
             xnVar.X9();
         }
@@ -278,10 +278,10 @@ public final /* synthetic */ class te implements org.telegram.ui.ActionBar.c2, o
 
     @Override // org.telegram.tgnet.ResultCallback
     public void onComplete(Object obj) {
-        org.telegram.ui.ActionBar.e4 e4Var = (org.telegram.ui.ActionBar.e4) obj;
+        org.telegram.ui.ActionBar.f4 f4Var = (org.telegram.ui.ActionBar.f4) obj;
         xn xnVar = this.b;
         vn vnVar = xnVar.ba;
-        vnVar.i(e4Var, vnVar.h, xnVar.M5 != 0, null, false);
+        vnVar.i(f4Var, vnVar.h, xnVar.M5 != 0, null, false);
     }
 
     @Override // org.telegram.tgnet.ResultCallback
@@ -311,7 +311,7 @@ public final /* synthetic */ class te implements org.telegram.ui.ActionBar.c2, o
         return xnVar.h != null || xnVar.y9();
     }
 
-    @Override // org.telegram.ui.t60
+    @Override // org.telegram.ui.u60
     public /* synthetic */ void h(TLRPC.User user) {
     }
 }

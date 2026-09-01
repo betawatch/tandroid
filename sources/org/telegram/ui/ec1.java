@@ -1,86 +1,35 @@
 package org.telegram.ui;
 
-import android.view.MotionEvent;
-import android.widget.Scroller;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class ec1 implements org.telegram.ui.Components.jo0, org.telegram.ui.Components.j20 {
-    public final /* synthetic */ cd1 a;
+public final class ec1 extends FrameLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Rect b;
+    public final /* synthetic */ ed1 c;
 
-    public /* synthetic */ ec1(cd1 cd1Var) {
-        this.a = cd1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ec1(ed1 ed1Var, Context context, int i10, Rect rect) {
+        super(context);
+        this.c = ed1Var;
+        this.a = i10;
+        this.b = rect;
     }
 
-    @Override // org.telegram.ui.Components.jo0
-    public void Y(float f10, boolean z4) {
-        cd1 cd1Var = this.a;
-        cd1Var.i1 = f10;
-        cd1Var.k1();
-    }
-
-    @Override // org.telegram.ui.Components.jo0
-    public /* synthetic */ CharSequence getContentDescription() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.jo0
-    public /* synthetic */ int j0() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.j20
-    public boolean onDown(MotionEvent motionEvent) {
-        Scroller scroller = this.a.c;
-        if (scroller == null) {
-            return true;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i10 = this.a;
+        Rect rect = this.b;
+        ed1 ed1Var = this.c;
+        if (i10 == 0) {
+            ed1Var.r.setBounds(ed1Var.S.getLeft() - rect.left, 0, ed1Var.S.getRight() + rect.right, getMeasuredHeight());
+        } else {
+            ed1Var.r.setBounds(-rect.left, 0, getMeasuredWidth() + rect.right, getMeasuredHeight());
         }
-        scroller.abortAnimation();
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.j20
-    public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
-        cd1 cd1Var = this.a;
-        Scroller scroller = cd1Var.c;
-        if (scroller == null) {
-            return true;
-        }
-        scroller.abortAnimation();
-        cd1Var.c.fling((int) cd1Var.U1, 0, Math.round(-f10), Math.round(f11), 0, (int) cd1Var.T1, 0, ConnectionsManager.DEFAULT_DATACENTER_ID);
-        cd1Var.u0.postInvalidate();
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.j20
-    public boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
-        cd1 cd1Var = this.a;
-        Scroller scroller = cd1Var.c;
-        if (scroller != null) {
-            scroller.abortAnimation();
-        }
-        cd1Var.U1 = Utilities.clamp(cd1Var.U1 + f10, cd1Var.T1, 0.0f);
-        cd1Var.V0();
-        cd1Var.u0.invalidate();
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.j20
-    public boolean onSingleTapUp(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.jo0
-    public void B() {
-    }
-
-    @Override // org.telegram.ui.Components.j20
-    public void c1() {
-    }
-
-    @Override // org.telegram.ui.Components.j20
-    public void onLongPress(MotionEvent motionEvent) {
+        ed1Var.r.draw(canvas);
     }
 }

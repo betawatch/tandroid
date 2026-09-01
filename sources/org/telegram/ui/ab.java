@@ -4,9 +4,9 @@ import android.content.Context;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class ab extends org.telegram.ui.Components.oo {
+public final class ab extends org.telegram.ui.Components.qo {
     public final /* synthetic */ int s;
     public final /* synthetic */ org.telegram.ui.ActionBar.p2 v;
 

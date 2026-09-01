@@ -27,14 +27,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import kc.i;
 import kc.l;
-import kh.a2;
 import m1.j;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.secretmedia.ExtendedDefaultDataSourceFactory;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class e extends l {
     public static final g l;
@@ -83,8 +82,8 @@ public final class e extends l {
                         }
                     }
                 }
-            } catch (SocketException e) {
-                FileLog.e(e);
+            } catch (SocketException e6) {
+                FileLog.e(e6);
             }
         }
         StringBuilder sb = new StringBuilder();
@@ -101,7 +100,7 @@ public final class e extends l {
     public final i e(kc.e eVar) {
         String str;
         int incrementAndGet = this.k.incrementAndGet();
-        StringBuilder m9 = a2.m(incrementAndGet, "Request ", " ");
+        StringBuilder m9 = l.d.m(incrementAndGet, "Request ", " ");
         switch (eVar.g) {
             case 1:
                 str = "GET";
@@ -190,8 +189,8 @@ public final class e extends l {
                 f();
                 this.j = true;
                 return;
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+            } catch (IOException e6) {
+                throw new RuntimeException(e6);
             }
         }
         if (this.j) {
@@ -213,8 +212,8 @@ public final class e extends l {
                 if (thread != null) {
                     thread.join();
                 }
-            } catch (Exception e6) {
-                l.d.log(Level.SEVERE, "Could not stop all connections", (Throwable) e6);
+            } catch (Exception e10) {
+                l.d.log(Level.SEVERE, "Could not stop all connections", (Throwable) e10);
             }
             this.j = false;
         }
@@ -238,9 +237,9 @@ public final class e extends l {
         long parseLong2;
         String str = (String) eVar.i.get("host");
         String path = Uri.parse("http://" + str + eVar.f).getPath();
-        boolean a2 = j.a(6, eVar.g);
+        boolean b10 = j.b(6, eVar.g);
         kc.h hVar = kc.h.c;
-        if (a2) {
+        if (b10) {
             return l.c(hVar, "text/plain", "");
         }
         boolean equals = TextUtils.equals(path, "/");

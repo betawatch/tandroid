@@ -11,7 +11,7 @@ import java.nio.ByteOrder;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class EmojiPack {
     private static final String ASSET_NAME = "emoji.pack";
@@ -27,7 +27,7 @@ public final class EmojiPack {
     private final SparseArray<ImageEntry> masks = new SparseArray<>();
     private byte[] decodeBuffer = new byte[1024];
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static final class EmojiEntry extends ImageEntry {
         final int maskId;
 
@@ -37,7 +37,7 @@ public final class EmojiPack {
         }
     }
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class ImageEntry {
         final int length;
         final int offset;
@@ -79,8 +79,8 @@ public final class EmojiPack {
         if (instance == null) {
             try {
                 instance = new EmojiPack();
-            } catch (IOException e) {
-                throw new RuntimeException("Unable to open emoji pack", e);
+            } catch (IOException e6) {
+                throw new RuntimeException("Unable to open emoji pack", e6);
             }
         }
         return instance;
@@ -90,7 +90,7 @@ public final class EmojiPack {
         ByteBuffer order = this.buffer.duplicate().order(ByteOrder.LITTLE_ENDIAN);
         int i10 = order.getInt();
         if (i10 < 0 || i10 % 12 != 0) {
-            throw new IOException(kh.a2.j(i10, "Invalid emoji metadata length: "));
+            throw new IOException(l.d.j(i10, "Invalid emoji metadata length: "));
         }
         int i11 = i10 / 12;
         for (int i12 = 0; i12 < i11; i12++) {
@@ -98,19 +98,19 @@ public final class EmojiPack {
             int i14 = NO_MASK & order.getShort();
             int i15 = order.getInt();
             int i16 = order.getInt();
-            validateRange(i15, i16, kh.a2.j(i13, "emoji "));
+            validateRange(i15, i16, l.d.j(i13, "emoji "));
             this.emojis.put(i13, new EmojiEntry(i15, i16, i14));
         }
         int i17 = order.getInt();
         if (i17 < 0 || i17 % 10 != 0) {
-            throw new IOException(kh.a2.j(i17, "Invalid mask metadata length: "));
+            throw new IOException(l.d.j(i17, "Invalid mask metadata length: "));
         }
         int i18 = i17 / 10;
         for (int i19 = 0; i19 < i18; i19++) {
             int i20 = order.getShort() & NO_MASK;
             int i21 = order.getInt();
             int i22 = order.getInt();
-            validateRange(i21, i22, kh.a2.j(i20, "mask "));
+            validateRange(i21, i22, l.d.j(i20, "mask "));
             this.masks.put(i20, new ImageEntry(i21, i22));
         }
     }

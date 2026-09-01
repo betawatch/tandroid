@@ -1,16 +1,16 @@
 package h7;
 
 import b4.e0;
-import com.google.android.gms.internal.cast.i0;
+import com.google.android.gms.internal.cast.h0;
 import j$.util.Objects;
-import j7.t7;
-import j7.v7;
+import j7.u7;
+import j7.w7;
 import java.util.Arrays;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final class l extends i0 {
+public final class l extends h0 {
     public static final l n = new l(null, new Object[0], 0);
     public final transient Object e;
     public final transient Object[] f;
@@ -49,7 +49,7 @@ public final class l extends i0 {
             Objects.requireNonNull(objArr2[1]);
             return new l(null, objArr2, 1);
         }
-        t7.b(i12, objArr2.length >> 1);
+        u7.b(i12, objArr2.length >> 1);
         int max = Math.max(i12, 2);
         if (max < 751619276) {
             i11 = Integer.highestOneBit(max - 1);
@@ -82,7 +82,7 @@ public final class l extends i0 {
                     Objects.requireNonNull(obj2);
                     Object obj3 = objArr2[i18 ^ i13];
                     Objects.requireNonNull(obj3);
-                    int a2 = v7.a(obj2.hashCode());
+                    int a2 = w7.a(obj2.hashCode());
                     while (true) {
                         int i19 = a2 & i14;
                         int i20 = bArr[i19] & 255;
@@ -131,7 +131,7 @@ public final class l extends i0 {
                         Objects.requireNonNull(obj5);
                         Object obj6 = objArr2[i25 ^ 1];
                         Objects.requireNonNull(obj6);
-                        int a10 = v7.a(obj5.hashCode());
+                        int a10 = w7.a(obj5.hashCode());
                         while (true) {
                             int i26 = a10 & i14;
                             int i27 = iArr[i26];
@@ -185,7 +185,7 @@ public final class l extends i0 {
                     Objects.requireNonNull(obj10);
                     Object obj11 = objArr2[i32 ^ 1];
                     Objects.requireNonNull(obj11);
-                    int a11 = v7.a(obj10.hashCode());
+                    int a11 = w7.a(obj10.hashCode());
                     while (true) {
                         int i33 = a11 & i14;
                         char c12 = (char) sArr[i33];
@@ -226,7 +226,7 @@ public final class l extends i0 {
 
     /* JADX WARN: Removed duplicated region for block: B:5:0x009e A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:7:0x009f A[RETURN] */
-    @Override // com.google.android.gms.internal.cast.i0, java.util.Map
+    @Override // com.google.android.gms.internal.cast.h0, java.util.Map
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -248,7 +248,7 @@ public final class l extends i0 {
                     if (obj4 instanceof byte[]) {
                         byte[] bArr = (byte[]) obj4;
                         int length = bArr.length - 1;
-                        int a2 = v7.a(obj.hashCode());
+                        int a2 = w7.a(obj.hashCode());
                         while (true) {
                             int i11 = a2 & length;
                             int i12 = bArr[i11] & 255;
@@ -264,7 +264,7 @@ public final class l extends i0 {
                     } else if (obj4 instanceof short[]) {
                         short[] sArr = (short[]) obj4;
                         int length2 = sArr.length - 1;
-                        int a10 = v7.a(obj.hashCode());
+                        int a10 = w7.a(obj.hashCode());
                         while (true) {
                             int i13 = a10 & length2;
                             char c3 = (char) sArr[i13];
@@ -280,7 +280,7 @@ public final class l extends i0 {
                     } else {
                         int[] iArr = (int[]) obj4;
                         int length3 = iArr.length - 1;
-                        int a11 = v7.a(obj.hashCode());
+                        int a11 = w7.a(obj.hashCode());
                         while (true) {
                             int i14 = a11 & length3;
                             int i15 = iArr[i14];

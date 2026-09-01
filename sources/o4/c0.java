@@ -2,7 +2,7 @@ package o4;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class c0 implements l0 {
     public final int a;
@@ -37,39 +37,39 @@ public final class c0 implements l0 {
     }
 
     @Override // o4.l0
-    public final boolean d() {
+    public final boolean h() {
         e0 e0Var = this.b;
-        return !e0Var.q() && e0Var.F[this.a].u(e0Var.X);
+        return !e0Var.B() && e0Var.F[this.a].u(e0Var.X);
     }
 
     @Override // o4.l0
-    public final int e(long j10) {
+    public final int l(long j10) {
         e0 e0Var = this.b;
-        if (e0Var.q()) {
+        if (e0Var.B()) {
             return 0;
         }
         int i10 = this.a;
-        e0Var.j(i10);
+        e0Var.w(i10);
         k0 k0Var = e0Var.F[i10];
         int s6 = k0Var.s(j10, e0Var.X);
         k0Var.E(s6);
         if (s6 == 0) {
-            e0Var.k(i10);
+            e0Var.y(i10);
         }
         return s6;
     }
 
     @Override // o4.l0
-    public final int f(f7.b bVar, n3.i iVar, int i10) {
+    public final int p(f7.b bVar, n3.i iVar, int i10) {
         e0 e0Var = this.b;
-        if (e0Var.q()) {
+        if (e0Var.B()) {
             return -3;
         }
         int i11 = this.a;
-        e0Var.j(i11);
+        e0Var.w(i11);
         int z4 = e0Var.F[i11].z(bVar, iVar, i10, e0Var.X);
         if (z4 == -3) {
-            e0Var.k(i11);
+            e0Var.y(i11);
         }
         return z4;
     }

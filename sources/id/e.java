@@ -1,10 +1,10 @@
 package id;
 
 import java.util.Iterator;
-import k7.g8;
+import k7.h8;
 import ld.q1;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class e implements b {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final class e implements b {
             case 0:
                 q1 q1Var = (q1) this.b;
                 c cVar = new c();
-                cVar.c = g8.a(q1Var, cVar, cVar);
+                cVar.c = h8.a(q1Var, cVar, cVar);
                 return cVar;
             case 1:
                 return (Iterator) this.b;

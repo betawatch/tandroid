@@ -1,76 +1,21 @@
 package com.google.firebase.messaging;
 
-import android.app.AppOpsManager;
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.RemoteInput;
-import android.content.Context;
-import android.content.LocusId;
-import android.content.SharedPreferences;
-import android.graphics.Insets;
-import android.os.Binder;
-import android.util.Log;
-import com.google.android.gms.tasks.TaskCompletionSource;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class p {
-    public static void a(Context context, boolean z4, TaskCompletionSource taskCompletionSource) {
-        try {
-            if (Binder.getCallingUid() != context.getApplicationInfo().uid) {
-                Log.e("FirebaseMessaging", "error configuring notification delegate for package " + context.getPackageName());
-                taskCompletionSource.trySetResult(null);
-                return;
-            }
-            Context applicationContext = context.getApplicationContext();
-            if (applicationContext == null) {
-                applicationContext = context;
-            }
-            SharedPreferences.Editor edit = applicationContext.getSharedPreferences("com.google.firebase.messaging", 0).edit();
-            edit.putBoolean("proxy_notification_initialized", true);
-            edit.apply();
-            NotificationManager notificationManager = (NotificationManager) context.getSystemService(NotificationManager.class);
-            if (z4) {
-                notificationManager.setNotificationDelegate("com.google.android.gms");
-            } else if ("com.google.android.gms".equals(notificationManager.getNotificationDelegate())) {
-                notificationManager.setNotificationDelegate(null);
-            }
-            taskCompletionSource.trySetResult(null);
-        } catch (Throwable th2) {
-            taskCompletionSource.trySetResult(null);
-            throw th2;
-        }
-    }
+    public static final s5.m a;
 
-    public static String b(Context context) {
-        return context.getOpPackageName();
-    }
-
-    public static AppOpsManager c(Context context) {
-        return (AppOpsManager) context.getSystemService(AppOpsManager.class);
-    }
-
-    public static Insets d(int i10, int i11, int i12, int i13) {
-        return Insets.of(i10, i11, i12, i13);
-    }
-
-    public static void e(Notification.Builder builder, boolean z4) {
-        builder.setAllowSystemGeneratedContextualActions(z4);
-    }
-
-    public static void f(Notification.Builder builder, Notification.BubbleMetadata bubbleMetadata) {
-        builder.setBubbleMetadata(bubbleMetadata);
-    }
-
-    public static void g(Notification.Action.Builder builder) {
-        builder.setContextual(false);
-    }
-
-    public static void h(RemoteInput.Builder builder) {
-        builder.setEditChoicesBeforeSending(0);
-    }
-
-    public static void i(Notification.Builder builder, Object obj) {
-        builder.setLocusId((LocusId) obj);
+    static {
+        HashMap hashMap = new HashMap();
+        HashMap hashMap2 = new HashMap();
+        hashMap.put(p.class, c.a);
+        hashMap2.remove(p.class);
+        hashMap.put(ia.e.class, b.a);
+        hashMap2.remove(ia.e.class);
+        hashMap.put(ia.d.class, a.a);
+        hashMap2.remove(ia.d.class);
+        a = new s5.m(new HashMap(hashMap), new HashMap(hashMap2), x9.f.a, 8);
     }
 }

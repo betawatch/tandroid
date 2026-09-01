@@ -10,22 +10,27 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class mj implements org.telegram.ui.ActionBar.t0, org.telegram.ui.ActionBar.f6, ru0, km {
+public final class mj implements org.telegram.ui.ActionBar.t0, org.telegram.ui.ActionBar.g6, tu0, km {
     public final /* synthetic */ xn a;
 
     public /* synthetic */ mj(xn xnVar) {
         this.a = xnVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
-    public Paint G(String str) {
-        return org.telegram.ui.ActionBar.j6.S0(str);
+    @Override // org.telegram.ui.ActionBar.g6
+    public int B0(int i10) {
+        return this.a.getThemedColor(i10);
     }
 
-    @Override // org.telegram.ui.ru0
-    public void H(MessageObject messageObject) {
+    @Override // org.telegram.ui.ActionBar.g6
+    public Paint F(String str) {
+        return org.telegram.ui.ActionBar.k6.S0(str);
+    }
+
+    @Override // org.telegram.ui.tu0
+    public void G(MessageObject messageObject) {
         if (messageObject == null) {
             return;
         }
@@ -44,8 +49,8 @@ public final class mj implements org.telegram.ui.ActionBar.t0, org.telegram.ui.A
                                 sk skVar = this.a.ta;
                                 int width = m9.getWidth();
                                 int height = m9.getHeight();
-                                uu0 uu0Var = skVar.d;
-                                Bitmap bitmap = uu0Var == null ? null : uu0Var.b.getBitmap(width, height);
+                                wu0 wu0Var = skVar.d;
+                                Bitmap bitmap = wu0Var == null ? null : wu0Var.b.getBitmap(width, height);
                                 new Canvas(m9).drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
                                 bitmap.recycle();
                             } catch (Throwable th2) {
@@ -64,57 +69,62 @@ public final class mj implements org.telegram.ui.ActionBar.t0, org.telegram.ui.A
     }
 
     @Override // org.telegram.ui.km
-    public void Q0(int i10) {
+    public void O0(int i10) {
         this.a.j(i10, 0, true, 0, true, 0);
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
-    public boolean a() {
-        return org.telegram.ui.ActionBar.j6.I.q();
+    @Override // org.telegram.ui.ActionBar.g6
+    public int Z0(int i10) {
+        return B0(i10);
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
-    public int c0(int i10) {
-        return x0(i10);
+    @Override // org.telegram.ui.ActionBar.g6
+    public boolean a() {
+        return org.telegram.ui.ActionBar.k6.I.q();
     }
 
     @Override // org.telegram.ui.ActionBar.t0
     public void e() {
-        org.telegram.ui.Components.im0.d(new we(this.a, 2));
+        org.telegram.ui.Components.jm0.d(new we(this.a, 2));
     }
 
-    @Override // org.telegram.ui.ru0
-    public TextureView f0() {
-        return this.a.t8;
+    @Override // org.telegram.ui.ActionBar.g6
+    public int e0(int i10) {
+        return B0(i10);
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
-    public int g1(int i10) {
-        return x0(i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.f6
+    @Override // org.telegram.ui.ActionBar.g6
     public /* synthetic */ Drawable getDrawable(String str) {
         return null;
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
-    public void l(float f10, float f11, int i10, int i11) {
-        org.telegram.ui.ActionBar.j6.q(f10, f11, i10, i11);
+    @Override // org.telegram.ui.tu0
+    public TextureView h0() {
+        return this.a.t8;
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
-    public /* synthetic */ boolean m0() {
+    @Override // org.telegram.ui.ActionBar.g6
+    public void l(float f10, float f11, int i10, int i11) {
+        org.telegram.ui.ActionBar.k6.q(f10, f11, i10, i11);
+    }
+
+    @Override // org.telegram.ui.ActionBar.g6
+    public /* synthetic */ boolean o0() {
         return false;
     }
 
     @Override // org.telegram.ui.km
-    public void r0(String str) {
+    public void t0(String str) {
         this.a.da(str, false);
     }
 
-    @Override // org.telegram.ui.ru0
-    public void w0(MessageObject messageObject) {
+    @Override // org.telegram.ui.ActionBar.g6
+    public ColorFilter w() {
+        return org.telegram.ui.ActionBar.k6.v3;
+    }
+
+    @Override // org.telegram.ui.tu0
+    public void y0(MessageObject messageObject) {
         xn xnVar = this.a;
         xnVar.u0.I0(true);
         xnVar.u0.B0();
@@ -134,25 +144,15 @@ public final class mj implements org.telegram.ui.ActionBar.t0, org.telegram.ui.A
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
-    public ColorFilter x() {
-        return org.telegram.ui.ActionBar.j6.v3;
-    }
-
-    @Override // org.telegram.ui.ActionBar.f6
-    public int x0(int i10) {
-        return this.a.getThemedColor(i10);
-    }
-
     @Override // org.telegram.ui.ActionBar.t0
     public void c() {
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
-    public /* synthetic */ void K0(int i10, int i11) {
+    @Override // org.telegram.ui.ActionBar.g6
+    public /* synthetic */ void J0(int i10, int i11) {
     }
 
     @Override // org.telegram.ui.km
-    public /* synthetic */ void X(boolean z4, boolean z10) {
+    public /* synthetic */ void W(boolean z4, boolean z10) {
     }
 }

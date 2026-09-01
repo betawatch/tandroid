@@ -1,51 +1,26 @@
 package eg;
 
 import android.animation.ValueAnimator;
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Shader;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import kh.r5;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.TextView;
+import mh.bb;
+import mh.f4;
+import mh.g5;
+import mh.l5;
+import mh.x9;
+import mh.y9;
+import oh.b4;
+import oh.u4;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.c8;
-import org.telegram.ui.Components.d40;
-import org.telegram.ui.Components.gt;
-import org.telegram.ui.Components.li;
-import org.telegram.ui.Components.lq0;
-import org.telegram.ui.Components.mr;
-import org.telegram.ui.Components.of0;
-import org.telegram.ui.Components.sa;
-import org.telegram.ui.Components.vg0;
-import org.telegram.ui.aa;
-import org.telegram.ui.b7;
-import org.telegram.ui.bd;
-import org.telegram.ui.d6;
-import org.telegram.ui.dp;
-import org.telegram.ui.ec;
-import org.telegram.ui.j8;
-import org.telegram.ui.jq;
-import org.telegram.ui.kc;
-import org.telegram.ui.l9;
-import org.telegram.ui.lc;
-import org.telegram.ui.pa;
-import org.telegram.ui.po;
-import org.telegram.ui.pr;
-import org.telegram.ui.qp;
-import org.telegram.ui.s4;
-import org.telegram.ui.s5;
-import org.telegram.ui.sb;
-import org.telegram.ui.v9;
-import org.telegram.ui.xp;
-import org.telegram.ui.y6;
+import org.telegram.ui.Components.Premium.LimitPreviewView;
+import org.telegram.ui.Stories.ProfileStoriesView;
+import org.telegram.ui.gt0;
+import org.telegram.ui.vz0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class m1 extends org.telegram.ui.ActionBar.j {
+public final /* synthetic */ class m1 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -54,330 +29,206 @@ public final class m1 extends org.telegram.ui.ActionBar.j {
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        Runnable runnable;
-        int i11 = this.a;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        mh.x3 x3Var;
+        boolean z4;
+        int i10 = this.a;
         Object obj = this.b;
-        switch (i11) {
+        switch (i10) {
             case 0:
-                if (i10 == -1) {
-                    ((o1) obj).dismiss();
-                    break;
-                }
+                ((gt0) ((o1) obj)).H.b0.invalidate();
                 break;
             case 1:
-                if (i10 == -1) {
-                    ((r5) obj).finishFragment();
-                    break;
-                }
+                m2 m2Var = (m2) obj;
+                m2Var.getClass();
+                m2Var.n = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m2Var.invalidate();
                 break;
             case 2:
-                if (i10 == -1) {
-                    ((lh.q) obj).finishFragment();
-                    break;
-                }
+                v2 v2Var = (v2) obj;
+                v2Var.getClass();
+                v2Var.x = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                v2Var.invalidate();
                 break;
             case 3:
-                mg.s sVar = (mg.s) obj;
-                if (i10 == -1 && !sVar.X(true)) {
-                    sVar.finishFragment();
-                    break;
-                }
+                dg.p pVar = (dg.p) obj;
+                pVar.x = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                pVar.invalidate();
                 break;
             case 4:
-                if (i10 == -1) {
-                    ((org.telegram.ui.i) obj).finishFragment();
-                    break;
-                }
+                o3 o3Var = (o3) obj;
+                o3Var.getClass();
+                o3Var.O = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 break;
             case 5:
-                if (i10 == -1) {
-                    ((org.telegram.ui.n) obj).finishFragment();
-                    break;
-                }
+                w3 w3Var = (w3) obj;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                w3Var.y = floatValue;
+                s3 s3Var = w3Var.c;
+                s3Var.setAlpha(floatValue);
+                s3Var.setScaleX(AndroidUtilities.lerp(0.9f, 1.0f, w3Var.y));
+                s3Var.setScaleY(AndroidUtilities.lerp(0.9f, 1.0f, w3Var.y));
+                w3Var.b.invalidate();
                 break;
             case 6:
-                if (i10 == -1) {
-                    ((org.telegram.ui.r) obj).finishFragment();
-                    break;
-                }
+                LimitPreviewView limitPreviewView = (LimitPreviewView) obj;
+                int i11 = LimitPreviewView.i0;
+                limitPreviewView.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                limitPreviewView.V = floatValue2 < 0.5f ? (floatValue2 / 0.5f) * (-7.0f) : (1.0f - ((floatValue2 - 0.5f) / 0.5f)) * (-7.0f);
                 break;
             case 7:
-                if (i10 == -1) {
-                    ((s4) obj).finishFragment();
+                fg.b1 b1Var = (fg.b1) obj;
+                b1Var.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                b1Var.d.invalidate();
+                fg.a1 a1Var = b1Var.e;
+                if (a1Var != null) {
+                    a1Var.invalidate();
                     break;
                 }
                 break;
             case 8:
-                if (i10 == -1) {
-                    ((d6) obj).finishFragment();
-                    break;
-                }
+                ((fg.p2) obj).a.o = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 break;
             case 9:
-                b7 b7Var = (b7) obj;
-                if (i10 != -1) {
-                    if (i10 != 1) {
-                        if (i10 != 3) {
-                            if (i10 == 4) {
-                                b7.f0(b7Var, true);
-                                break;
-                            }
-                        } else {
-                            b7.f0(b7Var, false);
-                            break;
-                        }
-                    } else {
-                        b7Var.m0();
-                        break;
-                    }
-                } else {
-                    kVar = ((org.telegram.ui.ActionBar.p2) b7Var).actionBar;
-                    if (!kVar.s()) {
-                        b7Var.finishFragment();
-                        break;
-                    } else {
-                        mh.b bVar = b7Var.V;
-                        if (bVar != null) {
-                            bVar.d();
-                        }
-                        y6 y6Var = b7Var.K;
-                        if (y6Var != null) {
-                            y6Var.e(false);
-                            b7Var.K.d();
-                            break;
-                        }
-                    }
-                }
+                hg.b bVar = (hg.b) obj;
+                bVar.getClass();
+                bVar.b = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                bVar.invalidate();
                 break;
             case 10:
-                j8 j8Var = (j8) obj;
-                if (i10 == -1) {
-                    if (j8Var.M != 0 || j8Var.N != 0 || j8Var.D) {
-                        j8Var.D = false;
-                        j8Var.M = 0;
-                        j8Var.N = 0;
-                        j8Var.t0();
-                        j8Var.o0();
-                        break;
-                    } else {
-                        j8Var.finishFragment();
-                        break;
-                    }
-                }
+                lg.k kVar = (lg.k) obj;
+                kVar.getClass();
+                kVar.setContainerHeight(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 11:
-                l9 l9Var = (l9) obj;
-                if (i10 != -1) {
-                    if (i10 == 2) {
-                        l9Var.p0(false);
-                        break;
-                    }
-                } else {
-                    kVar2 = ((org.telegram.ui.ActionBar.p2) l9Var).actionBar;
-                    if (!kVar2.s()) {
-                        l9Var.finishFragment();
-                        break;
-                    } else {
-                        l9Var.k0(true);
-                        break;
-                    }
-                }
+                g5 g5Var = (g5) obj;
+                g5Var.V0.c = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                g5Var.T1();
                 break;
             case 12:
-                if (i10 == -1) {
-                    ((v9) obj).finishFragment();
-                    break;
-                }
+                ((f4) obj).h.invalidate();
                 break;
             case 13:
-                aa aaVar = (aa) obj;
-                if (i10 != -1) {
-                    if (i10 == 1 && aaVar.a.getText().length() != 0) {
-                        aa.U(aaVar);
-                        aaVar.finishFragment();
-                        break;
-                    }
-                } else {
-                    aaVar.finishFragment();
-                    break;
+                mh.y3 y3Var = (mh.y3) obj;
+                y3Var.getClass();
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                y3Var.B = floatValue3;
+                if (floatValue3 >= 0.8f && (x3Var = y3Var.E) != null && (z4 = x3Var.l) && z4) {
+                    x3Var.l = false;
+                    x3Var.b();
                 }
+                y3Var.invalidate();
                 break;
             case 14:
-                pa paVar = (pa) obj;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        pa.Y(paVar);
-                        pa.Z(paVar);
-                        break;
-                    }
-                } else {
-                    paVar.finishFragment();
-                    break;
-                }
+                View view = (View) obj;
+                float sin = (((float) Math.sin(((Float) valueAnimator.getAnimatedValue()).floatValue() * 3.141592653589793d)) * 0.03f) + 1.0f;
+                view.setScaleX(sin);
+                view.setScaleY(sin);
                 break;
             case 15:
-                if (i10 == -1) {
-                    ((sb) obj).finishFragment();
-                    break;
-                }
+                l5 l5Var = (l5) obj;
+                l5Var.getClass();
+                l5Var.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                l5Var.invalidate();
                 break;
             case 16:
-                bd bdVar = (bd) obj;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        FrameLayout frameLayout = (FrameLayout) bdVar.getParentActivity().getWindow().getDecorView();
-                        Bitmap createBitmap = Bitmap.createBitmap(frameLayout.getWidth(), frameLayout.getHeight(), Bitmap.Config.ARGB_8888);
-                        Canvas canvas = new Canvas(createBitmap);
-                        bdVar.I.setAlpha(0.0f);
-                        frameLayout.draw(canvas);
-                        bdVar.I.setAlpha(1.0f);
-                        Paint paint = new Paint(1);
-                        paint.setColor(-16777216);
-                        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-                        Paint paint2 = new Paint(1);
-                        paint2.setFilterBitmap(true);
-                        int[] iArr = new int[2];
-                        bdVar.I.getLocationInWindow(iArr);
-                        float f10 = iArr[0];
-                        float f11 = iArr[1];
-                        float max = Math.max(createBitmap.getHeight(), createBitmap.getWidth()) + AndroidUtilities.navigationBarHeight;
-                        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-                        paint2.setShader(new BitmapShader(createBitmap, tileMode, tileMode));
-                        kc kcVar = new kc(bdVar, bdVar.getParentActivity(), canvas, (bdVar.I.getMeasuredWidth() / 2.0f) + f10, (bdVar.I.getMeasuredHeight() / 2.0f) + f11, max, paint, createBitmap, paint2, f10, f11, 0);
-                        bdVar.j0 = kcVar;
-                        kcVar.setOnTouchListener(new oh.d(2));
-                        bdVar.k0 = 0.0f;
-                        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                        bdVar.l0 = ofFloat;
-                        ofFloat.addUpdateListener(new lc(bdVar, 0));
-                        bdVar.l0.addListener(new s5(bdVar, 16));
-                        bdVar.l0.setDuration(400L);
-                        bdVar.l0.setInterpolator(gt.e);
-                        bdVar.l0.start();
-                        frameLayout.addView(bdVar.j0, new ViewGroup.LayoutParams(-1, -1));
-                        AndroidUtilities.runOnUIThread(new ec(bdVar, 0));
-                        break;
-                    }
-                } else if (bdVar.b >= bdVar.S0() && bdVar.Q0()) {
-                    bdVar.V0();
-                    break;
-                } else {
-                    bdVar.finishFragment();
-                    break;
-                }
+                float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                x9 x9Var = ((y9) obj).c;
+                x9Var.setScaleX(floatValue4);
+                x9Var.setScaleY(floatValue4);
                 break;
             case 17:
-                po poVar = (po) obj;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        poVar.j0();
-                        break;
-                    }
-                } else if (poVar.e0(true)) {
-                    poVar.finishFragment();
-                    break;
-                }
+                bb bbVar = (bb) obj;
+                bbVar.getClass();
+                bbVar.W = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                bbVar.invalidate();
                 break;
             case 18:
-                dp dpVar = (dp) obj;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        mr mrVar = dpVar.r;
-                        if (mrVar == null || mrVar.c <= 0.0f) {
-                            dpVar.Y();
-                            break;
-                        }
-                    }
-                } else {
-                    dpVar.finishFragment();
+                float floatValue5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ng.u uVar = ((ng.v) obj).b;
+                if (uVar != null) {
+                    uVar.setAlpha(floatValue5);
                     break;
                 }
                 break;
             case 19:
-                if (i10 == -1) {
-                    ((qp) obj).finishFragment();
-                    break;
-                }
+                oh.a aVar = (oh.a) obj;
+                aVar.getClass();
+                aVar.h = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                aVar.invalidate();
                 break;
             case 20:
-                if (i10 == -1) {
-                    ((xp) obj).finishFragment();
-                    break;
-                }
+                oh.o oVar = (oh.o) obj;
+                oVar.L.e = AndroidUtilities.lerp(0.0f, 1.0f - oVar.V.a0, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                oVar.invalidate();
                 break;
             case 21:
-                jq jqVar = (jq) obj;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        jqVar.r0(true);
-                        break;
-                    }
-                } else if (jqVar.m0(true)) {
-                    jqVar.finishFragment();
-                    break;
-                }
+                ((oh.v0) obj).invalidate();
                 break;
             case 22:
-                pr prVar = (pr) obj;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        prVar.u0();
-                        break;
-                    }
-                } else if (prVar.g0(true)) {
-                    prVar.finishFragment();
+                oh.h2 h2Var = (oh.h2) obj;
+                float floatValue6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                h2Var.c.setAlpha(floatValue6);
+                h2Var.a.setAlpha(AndroidUtilities.lerp(0.0f, 0.5f, floatValue6));
+                h2Var.invalidate();
+                break;
+            case 23:
+                oh.o0 o0Var = (oh.o0) obj;
+                float floatValue7 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                Drawable drawable = o0Var.e;
+                if (drawable != null) {
+                    drawable.setAlpha((int) (AndroidUtilities.lerp(o0Var.f, 1.0f, floatValue7) * 255.0f));
+                    o0Var.h.invalidate();
                     break;
                 }
                 break;
-            case 23:
-                c8 c8Var = (c8) obj;
-                if (i10 != -1) {
-                    c8Var.t0(i10);
-                    break;
-                } else {
-                    c8Var.dismiss();
-                    break;
-                }
             case 24:
-                if (i10 == -1) {
-                    ((sa) obj).dismiss();
+                float floatValue8 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                oh.o0 o0Var2 = (oh.o0) ((dg.l0) obj).b;
+                Drawable drawable2 = o0Var2.e;
+                if (drawable2 != null) {
+                    drawable2.setAlpha((int) (AndroidUtilities.lerp(1.0f, o0Var2.f, floatValue8) * 255.0f));
+                    o0Var2.h.invalidate();
                     break;
                 }
                 break;
             case 25:
-                li liVar = (li) obj;
-                if (i10 != -1) {
-                    liVar.v0.t(i10);
-                    break;
-                } else if (!liVar.v0.i()) {
-                    liVar.dismiss();
-                    break;
-                }
+                oh.j1 j1Var = (oh.j1) obj;
+                j1Var.getClass();
+                j1Var.h.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 26:
-                if (i10 == -1) {
-                    ((d40) obj).finishFragment();
-                    break;
-                }
+                oh.r1 r1Var = (oh.r1) obj;
+                r1Var.getClass();
+                r1Var.n = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                r1Var.invalidate();
                 break;
             case 27:
-                if (i10 == -1 && (runnable = ((of0) obj).r) != null) {
-                    AndroidUtilities.runOnUIThread(runnable);
-                    break;
-                }
+                b4 b4Var = (b4) obj;
+                b4Var.getClass();
+                float floatValue9 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                TextView[] textViewArr = b4Var.c;
+                textViewArr[0].setAlpha(floatValue9);
+                float f10 = 1.0f - floatValue9;
+                textViewArr[0].setTranslationY((-AndroidUtilities.dp(4.0f)) * f10);
+                textViewArr[1].setAlpha(f10);
+                textViewArr[1].setTranslationY(floatValue9 * AndroidUtilities.dp(4.0f));
                 break;
             case 28:
-                if (i10 == -1) {
-                    ((vg0) obj).dismiss();
-                    break;
-                }
+                ProfileStoriesView profileStoriesView = (ProfileStoriesView) obj;
+                vz0 vz0Var = profileStoriesView.h;
+                float floatValue10 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                profileStoriesView.D = floatValue10;
+                vz0Var.O = floatValue10;
+                vz0Var.invalidate();
+                profileStoriesView.invalidate();
                 break;
             default:
-                ((lq0) obj).onBackPressed();
+                u4 u4Var = (u4) obj;
+                u4Var.r = ((Float) u4Var.w.getAnimatedValue()).floatValue();
+                u4Var.invalidate();
                 break;
         }
     }

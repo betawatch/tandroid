@@ -2,17 +2,17 @@ package org.telegram.ui.Cells;
 
 import android.content.Context;
 import android.view.ViewGroup;
-import org.telegram.ui.Components.lp;
+import org.telegram.ui.Components.np;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class k2 extends lp {
+public final class k2 extends np {
     public final /* synthetic */ int d;
     public final /* synthetic */ ViewGroup e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ k2(ViewGroup viewGroup, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
-        super(context, 21, f6Var);
+    public /* synthetic */ k2(ViewGroup viewGroup, Context context, org.telegram.ui.ActionBar.g6 g6Var, int i10) {
+        super(context, 21, g6Var);
         this.d = i10;
         this.e = viewGroup;
     }
@@ -30,14 +30,14 @@ public final class k2 extends lp {
                 break;
             default:
                 super.invalidate();
-                ((ph.x2) this.e).invalidate();
+                ((qh.x2) this.e).invalidate();
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k2(ph.x2 x2Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, 24, f6Var);
+    public k2(qh.x2 x2Var, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, 24, g6Var);
         this.d = 2;
         this.e = x2Var;
     }

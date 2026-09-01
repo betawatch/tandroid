@@ -1,165 +1,71 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Color;
-import android.graphics.ComposeShader;
-import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
-import android.graphics.RectF;
-import android.os.Build;
-import org.telegram.messenger.Utilities;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Shader;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class ic0 {
-    public static final float[] k = new float[4];
-    public static final Matrix l = new Matrix();
-    public final gc0 d;
-    public int e;
-    public int f;
-    public int g;
+    public final Paint a;
+    public final jc0 b;
+    public final jc0 c;
+    public final jc0 d;
+    public final hc0 e;
+    public final hc0 f;
+    public final float[] g;
     public int h;
-    public final s5.m a = new s5.m(new k2(17));
-    public final b4.e0 b = new b4.e0(17, (byte) 0);
-    public final i10 c = new i10();
-    public final Matrix i = new Matrix();
-    public final RectF j = new RectF();
+    public float i;
 
     public ic0() {
-        if (Build.VERSION.SDK_INT >= 33) {
-            this.d = new gc0();
-        } else {
-            this.d = null;
-        }
+        Paint paint = new Paint();
+        this.a = paint;
+        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+        this.b = new jc0(tileMode);
+        this.c = new jc0(tileMode);
+        this.d = new jc0(Shader.TileMode.REPEAT);
+        this.e = new hc0(R.raw.wallpaper_pos_intensity);
+        this.f = new hc0(R.raw.wallpaper_neg_intensity);
+        this.g = new float[4];
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC));
     }
 
-    public static void a(Matrix matrix, float[] fArr) {
-        Matrix matrix2 = l;
-        matrix.invert(matrix2);
-        float[] fArr2 = k;
-        fArr2[0] = 0.0f;
-        fArr2[1] = 0.0f;
-        fArr2[2] = 1.0f;
-        fArr2[3] = 1.0f;
-        matrix2.mapPoints(fArr2);
-        fArr[0] = fArr2[2] - fArr2[0];
-        fArr[1] = fArr2[3] - fArr2[1];
-        fArr[2] = fArr2[0];
-        fArr[3] = fArr2[1];
-    }
-
-    public static boolean b(float f10) {
-        return Math.abs(f10 - 1.0f) <= 1.0E-4f;
-    }
-
-    public final void c(RectF rectF) {
-        float f10 = this.e;
-        float f11 = this.f;
-        RectF rectF2 = this.j;
-        rectF2.set(0.0f, 0.0f, f10, f11);
-        Matrix.ScaleToFit scaleToFit = Matrix.ScaleToFit.FILL;
-        Matrix matrix = this.i;
-        matrix.setRectToRect(rectF2, rectF, scaleToFit);
-        i10 i10Var = this.c;
-        hc0 hc0Var = (hc0) i10Var.c;
-        hc0Var.b.set(matrix);
-        BitmapShader bitmapShader = hc0Var.d;
-        if (bitmapShader != null) {
-            bitmapShader.setLocalMatrix(matrix);
-        }
-        hc0 hc0Var2 = (hc0) i10Var.d;
-        hc0Var2.b.set(matrix);
-        BitmapShader bitmapShader2 = hc0Var2.d;
-        if (bitmapShader2 != null) {
-            bitmapShader2.setLocalMatrix(matrix);
-        }
-        gc0 gc0Var = this.d;
-        if (gc0Var == null || Build.VERSION.SDK_INT < 33) {
-            return;
-        }
-        float[] fArr = gc0Var.g;
-        a(matrix, fArr);
-        gc0Var.e.a(fArr);
-        gc0Var.f.a(fArr);
-    }
-
-    public final void d(Matrix matrix) {
-        i10 i10Var = this.c;
-        float[] fArr = (float[]) i10Var.h;
-        a(matrix, fArr);
-        hc0 hc0Var = (hc0) i10Var.e;
-        hc0Var.b.set(matrix);
-        BitmapShader bitmapShader = hc0Var.d;
-        if (bitmapShader != null) {
-            bitmapShader.setLocalMatrix(matrix);
-        }
-        boolean z4 = false;
-        hc0Var.a(b(fArr[0]) && b(fArr[1]));
-        gc0 gc0Var = this.d;
-        if (gc0Var == null || Build.VERSION.SDK_INT < 33) {
-            return;
-        }
-        float[] fArr2 = gc0Var.g;
-        a(matrix, fArr2);
-        hc0 hc0Var2 = gc0Var.d;
-        if (b(fArr2[0]) && b(fArr2[1])) {
-            z4 = true;
-        }
-        hc0Var2.a(z4);
-        gc0Var.e.b(fArr2);
-        gc0Var.f.b(fArr2);
-    }
-
-    public final Paint e(Bitmap bitmap, Bitmap bitmap2, int i10, int i11, int i12, boolean z4) {
-        Bitmap bitmap3;
-        Bitmap bitmap4 = (Bitmap) this.a.i(bitmap2);
-        if (i12 >= 0) {
-            int k10 = i0.a.k(i10, ((Color.alpha(i10) * i11) * i12) / 25500);
-            b4.e0 e0Var = this.b;
-            tg.a aVar = (tg.a) e0Var.c;
-            if (aVar.a(bitmap) || k10 != e0Var.b || ((Bitmap) e0Var.d) == null) {
-                Bitmap bitmap5 = (Bitmap) e0Var.d;
-                if (bitmap5 == null || bitmap5.getWidth() != bitmap.getWidth() || ((Bitmap) e0Var.d).getHeight() != bitmap.getHeight()) {
-                    e0Var.d = Bitmap.createBitmap(bitmap);
-                }
-                Utilities.applySoftLight(bitmap, (Bitmap) e0Var.d, k10);
-                aVar.b(bitmap);
-                e0Var.b = k10;
-            }
-            bitmap3 = (Bitmap) e0Var.d;
-        } else {
-            bitmap3 = null;
-        }
-        Bitmap bitmap6 = bitmap3;
-        this.e = bitmap.getWidth();
-        this.f = bitmap.getHeight();
-        this.g = bitmap4.getWidth();
-        this.h = bitmap4.getHeight();
-        gc0 gc0Var = this.d;
-        if (gc0Var != null && z4 && Build.VERSION.SDK_INT >= 33) {
-            return gc0Var.a(bitmap, bitmap4, bitmap6, i11, i12);
-        }
-        i10 i10Var = this.c;
-        dt dtVar = (dt) i10Var.f;
-        dt dtVar2 = (dt) i10Var.g;
-        hc0 hc0Var = (hc0) i10Var.d;
-        Paint paint = (Paint) i10Var.b;
-        hc0 hc0Var2 = (hc0) i10Var.c;
-        boolean b10 = hc0Var2.b(bitmap);
-        hc0 hc0Var3 = (hc0) i10Var.e;
-        boolean b11 = b10 | hc0Var3.b(bitmap4);
-        if (i12 >= 0) {
-            if ((hc0Var.b(bitmap6) | b11) || i10Var.a != 1) {
-                i10Var.a = 1;
-                paint.setShader(new ComposeShader(hc0Var2.d, new ComposeShader(hc0Var.d, hc0Var3.d, PorterDuff.Mode.DST_IN), PorterDuff.Mode.SRC_OVER));
+    public final Paint a(Bitmap bitmap, Bitmap bitmap2, Bitmap bitmap3, int i10, int i11) {
+        jc0 jc0Var = this.b;
+        boolean b10 = jc0Var.b(bitmap);
+        jc0 jc0Var2 = this.d;
+        boolean b11 = b10 | jc0Var2.b(bitmap2);
+        Paint paint = this.a;
+        if (i11 >= 0) {
+            jc0 jc0Var3 = this.c;
+            if ((b11 | jc0Var3.b(bitmap3)) || this.h != 1) {
+                this.h = 1;
+                hc0 hc0Var = this.e;
+                hc0Var.a.setInputBuffer("shaderPattern", jc0Var2.d);
+                hc0Var.a.setInputBuffer("shaderGradient", jc0Var.d);
+                hc0Var.a.setInputBuffer("shaderGradientSoftLight", jc0Var3.d);
+                hc0Var.a.setFloatUniform("transformGradient", hc0Var.b);
+                hc0Var.a.setFloatUniform("transformPattern", hc0Var.c);
+                paint.setShader(hc0Var.a);
                 return paint;
             }
-        } else if ((dtVar2.a(i0.a.k(-1, ((-i12) * i11) / 100)) | b11 | dtVar.a(-16777216)) || i10Var.a != 2) {
-            i10Var.a = 2;
-            paint.setShader(new ComposeShader((lf.k) dtVar.b, new ComposeShader(new ComposeShader(hc0Var2.d, hc0Var3.d, PorterDuff.Mode.DST_IN), (lf.k) dtVar2.b, PorterDuff.Mode.MULTIPLY), PorterDuff.Mode.SRC_OVER));
-            return paint;
+        } else {
+            float a2 = k7.o.a((i10 * (-i11)) / 25500.0f, 0.0f, 1.0f);
+            if (b11 || this.i != a2 || this.h != 2) {
+                this.h = 2;
+                this.i = a2;
+                hc0 hc0Var2 = this.f;
+                hc0Var2.a.setInputBuffer("shaderPattern", jc0Var2.d);
+                hc0Var2.a.setInputBuffer("shaderGradient", jc0Var.d);
+                hc0Var2.a.setFloatUniform("intensity", a2);
+                hc0Var2.a.setFloatUniform("transformGradient", hc0Var2.b);
+                hc0Var2.a.setFloatUniform("transformPattern", hc0Var2.c);
+                paint.setShader(hc0Var2.a);
+                return paint;
+            }
         }
         return paint;
     }

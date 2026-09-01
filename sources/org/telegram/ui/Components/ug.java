@@ -2,15 +2,15 @@ package org.telegram.ui.Components;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ug implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ li b;
+    public final /* synthetic */ mi b;
 
-    public /* synthetic */ ug(li liVar, int i10) {
+    public /* synthetic */ ug(mi miVar, int i10) {
         this.a = i10;
-        this.b = liVar;
+        this.b = miVar;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -23,12 +23,12 @@ public final /* synthetic */ class ug implements ValueAnimator.AnimatorUpdateLis
                 this.b.A0.invalidate();
                 break;
             case 2:
-                li.m(this.b, valueAnimator);
+                mi.m(this.b, valueAnimator);
                 break;
             case 3:
-                li liVar = this.b;
-                liVar.getClass();
-                liVar.K1(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                mi miVar = this.b;
+                miVar.getClass();
+                miVar.K1(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             default:
                 this.b.b2();

@@ -10,22 +10,22 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Trace;
-import j7.i8;
+import androidx.biometric.f0;
+import j7.j8;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import nh.e4;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final a0.j a = new a0.j(2);
-    public static final e4 b = new e4(2);
+    public static final e5.f b = new e5.f(25);
 
     public static b4.f a(Context context, List list) {
-        i8.a("FontProvider.getFontFamilyResult");
+        j8.a("FontProvider.getFontFamilyResult");
         try {
             ArrayList arrayList = new ArrayList();
             for (int i10 = 0; i10 < list.size(); i10++) {
@@ -43,9 +43,9 @@ public abstract class c {
     }
 
     public static ProviderInfo b(PackageManager packageManager, d dVar, Resources resources) {
-        e4 e4Var = b;
+        e5.f fVar = b;
         a0.j jVar = a;
-        i8.a("FontProvider.getProvider");
+        j8.a("FontProvider.getProvider");
         try {
             List list = dVar.d;
             String str = dVar.a;
@@ -73,10 +73,10 @@ public abstract class c {
             for (Signature signature : signatureArr) {
                 arrayList.add(signature.toByteArray());
             }
-            Collections.sort(arrayList, e4Var);
+            Collections.sort(arrayList, fVar);
             for (int i10 = 0; i10 < list.size(); i10++) {
                 ArrayList arrayList2 = new ArrayList((Collection) list.get(i10));
-                Collections.sort(arrayList2, e4Var);
+                Collections.sort(arrayList2, fVar);
                 if (arrayList.size() == arrayList2.size()) {
                     for (int i11 = 0; i11 < arrayList.size(); i11++) {
                         if (!Arrays.equals((byte[]) arrayList.get(i11), (byte[]) arrayList2.get(i11))) {
@@ -95,18 +95,18 @@ public abstract class c {
     }
 
     public static i[] c(Context context, d dVar, String str) {
-        i8.a("FontProvider.query");
+        j8.a("FontProvider.query");
         try {
             ArrayList arrayList = new ArrayList();
             Uri build = new Uri.Builder().scheme("content").authority(str).build();
             Uri build2 = new Uri.Builder().scheme("content").authority(str).appendPath("file").build();
-            a cVar = Build.VERSION.SDK_INT < 24 ? new ja.c(context, build) : new o5.i(context, build);
+            a hVar = Build.VERSION.SDK_INT < 24 ? new y5.h(context, build) : new f0(context, build);
             Cursor cursor = null;
             try {
                 String[] strArr = {"_id", "file_id", "font_ttc_index", "font_variation_settings", "font_weight", "font_italic", "result_code"};
-                i8.a("ContentQueryWrapper.query");
+                j8.a("ContentQueryWrapper.query");
                 try {
-                    cursor = cVar.J(build, strArr, new String[]{dVar.c});
+                    cursor = hVar.r(build, strArr, new String[]{dVar.c});
                     Trace.endSection();
                     if (cursor != null && cursor.getCount() > 0) {
                         int columnIndex = cursor.getColumnIndex("result_code");
@@ -125,7 +125,7 @@ public abstract class c {
                     if (cursor != null) {
                         cursor.close();
                     }
-                    cVar.close();
+                    hVar.close();
                     return (i[]) arrayList.toArray(new i[0]);
                 } finally {
                 }
@@ -133,7 +133,7 @@ public abstract class c {
                 if (cursor != null) {
                     cursor.close();
                 }
-                cVar.close();
+                hVar.close();
                 throw th2;
             }
         } finally {

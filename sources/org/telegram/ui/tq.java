@@ -1,124 +1,69 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.content.SharedPreferences;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
+import java.util.Comparator;
+import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tq implements Utilities.Callback {
-    public final /* synthetic */ int a = 1;
+public final /* synthetic */ class tq implements Comparator {
+    public final /* synthetic */ int a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
-    public final /* synthetic */ Serializable h;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ tq(int i10, long j10, Activity activity, ArrayList arrayList, HashMap hashMap, Utilities.Callback callback, org.telegram.ui.ActionBar.f6 f6Var) {
+    public /* synthetic */ tq(Object obj, int i10, int i11) {
+        this.a = i11;
+        this.c = obj;
         this.b = i10;
-        this.d = arrayList;
-        this.c = j10;
-        this.e = activity;
-        this.f = f6Var;
-        this.g = callback;
-        this.h = hashMap;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00a7 A[RETURN, SYNTHETIC] */
+    @Override // java.util.Comparator
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final int compare(Object obj, Object obj2) {
+        int i10;
+        TLRPC.UserStatus userStatus;
+        TLRPC.UserStatus userStatus2;
         switch (this.a) {
             case 0:
-                pr prVar = (pr) this.d;
-                TLObject tLObject = (TLObject) this.e;
-                TLRPC.TL_chatAdminRights tL_chatAdminRights = (TLRPC.TL_chatAdminRights) this.f;
-                TLRPC.TL_chatBannedRights tL_chatBannedRights = (TLRPC.TL_chatBannedRights) this.g;
-                String str = (String) this.h;
-                int intValue = ((Integer) obj).intValue();
-                boolean[] zArr = new boolean[1];
-                boolean z4 = (tLObject instanceof TLRPC.TL_channelParticipantAdmin) || (tLObject instanceof TLRPC.TL_chatParticipantAdmin);
-                long j10 = prVar.K;
-                TLRPC.TL_chatBannedRights tL_chatBannedRights2 = prVar.B;
-                long j11 = this.c;
-                wq wqVar = new wq(prVar, j11, j10, tL_chatAdminRights, tL_chatBannedRights2, tL_chatBannedRights, str, intValue, zArr, j11);
-                wqVar.U0 = new xq(prVar, intValue, j11, this.b, z4, zArr);
-                prVar.presentFragment(wqVar);
-                break;
-            default:
-                final ArrayList arrayList = (ArrayList) this.d;
-                final Activity activity = (Activity) this.e;
-                final org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) this.f;
-                final Utilities.Callback callback = (Utilities.Callback) this.g;
-                final HashMap hashMap = (HashMap) this.h;
-                boolean booleanValue = ((Boolean) obj).booleanValue();
-                final int i10 = this.b;
-                if (booleanValue) {
-                    SharedPreferences.Editor edit = MessagesController.getInstance(i10).getMainSettings().edit();
-                    int i11 = 0;
-                    for (int size = arrayList.size(); i11 < size; size = size) {
-                        Object obj2 = arrayList.get(i11);
-                        i11++;
-                        Long l10 = (Long) obj2;
-                        long longValue = l10.longValue();
-                        long sendPaidMessagesStars = MessagesController.getInstance(i10).getSendPaidMessagesStars(longValue);
-                        if (sendPaidMessagesStars <= 0 && longValue > 0) {
-                            sendPaidMessagesStars = DialogObject.getMessagesStarsPrice(MessagesController.getInstance(i10).isUserContactBlocked(longValue));
-                        }
-                        edit.putLong(e2.c.i(longValue, "ask_paid_message_", "_price"), sendPaidMessagesStars);
-                        lh.t7.y(i10, false).O.put(l10, Long.valueOf(System.currentTimeMillis()));
-                    }
-                    edit.apply();
-                }
-                final long j12 = this.c;
-                Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.k1
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        int i12 = i10;
-                        long j13 = lh.t7.y(i12, false).p().amount;
-                        long j14 = j12;
-                        Utilities.Callback callback2 = callback;
-                        HashMap hashMap2 = hashMap;
-                        if (j13 >= j14) {
-                            callback2.run(hashMap2);
-                            return;
-                        }
-                        Activity activity2 = activity;
-                        if (activity2 == null) {
-                            return;
-                        }
-                        long longValue2 = ((Long) arrayList.get(0)).longValue();
-                        new lh.z9(activity2, f6Var, j14, 13, DialogObject.getShortName(i12, longValue2), new gg.b0(callback2, hashMap2, 1), longValue2).show();
-                    }
-                };
-                if (lh.t7.y(i10, false).e) {
-                    runnable.run();
-                    break;
+                qr qrVar = (qr) this.c;
+                qrVar.getClass();
+                TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) ((TLObject) obj);
+                TLRPC.ChannelParticipant channelParticipant2 = (TLRPC.ChannelParticipant) ((TLObject) obj2);
+                long peerId = MessageObject.getPeerId(channelParticipant.peer);
+                long peerId2 = MessageObject.getPeerId(channelParticipant2.peer);
+                int i11 = this.b;
+                int i12 = -100;
+                if (peerId > 0) {
+                    TLRPC.User user = qrVar.getMessagesController().getUser(Long.valueOf(MessageObject.getPeerId(channelParticipant.peer)));
+                    i10 = (user == null || (userStatus2 = user.status) == null) ? 0 : user.self ? i11 + 50000 : userStatus2.expires;
                 } else {
-                    lh.t7 y10 = lh.t7.y(i10, false);
-                    y10.e = false;
-                    y10.q(false, true, runnable);
-                    y10.e = true;
-                    break;
+                    i10 = -100;
                 }
-                break;
+                if (peerId2 > 0) {
+                    TLRPC.User user2 = qrVar.getMessagesController().getUser(Long.valueOf(MessageObject.getPeerId(channelParticipant2.peer)));
+                    i12 = (user2 == null || (userStatus = user2.status) == null) ? 0 : user2.self ? i11 + 50000 : userStatus.expires;
+                }
+                if (i10 > 0 && i12 > 0) {
+                    if (i10 <= i12) {
+                        if (i10 >= i12) {
+                            return 0;
+                        }
+                    }
+                }
+                if (i10 < 0 && i12 < 0) {
+                    if (i10 <= i12) {
+                        return i10 < i12 ? -1 : 0;
+                    }
+                }
+                if ((i10 >= 0 || i12 <= 0) && (i10 != 0 || i12 == 0)) {
+                    return ((i12 >= 0 || i10 <= 0) && (i12 != 0 || i10 == 0)) ? 0 : 1;
+                }
+            default:
+                return org.telegram.ui.Components.v30.M((org.telegram.ui.Components.v30) this.c, this.b, (TLObject) obj, (TLObject) obj2);
         }
-    }
-
-    public /* synthetic */ tq(pr prVar, long j10, int i10, TLObject tLObject, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str, boolean z4) {
-        this.d = prVar;
-        this.c = j10;
-        this.b = i10;
-        this.e = tLObject;
-        this.f = tL_chatAdminRights;
-        this.g = tL_chatBannedRights;
-        this.h = str;
     }
 }

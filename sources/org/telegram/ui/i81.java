@@ -1,34 +1,24 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
+import android.app.Activity;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class i81 extends org.telegram.ui.Components.h51 {
-    public static final /* synthetic */ int a = 0;
+public final class i81 extends org.telegram.ui.Components.mq0 {
+    public final /* synthetic */ p81 Y0;
 
-    static {
-        org.telegram.ui.Components.h51.setup(new i81());
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i81(p81 p81Var, Activity activity, String str) {
+        super(activity, null, str, false, null, false, null);
+        this.Y0 = p81Var;
     }
 
-    @Override // org.telegram.ui.Components.h51
-    public final void bindView(View view, org.telegram.ui.Components.i51 i51Var, boolean z4, org.telegram.ui.Components.w51 w51Var, org.telegram.ui.Components.g61 g61Var) {
-        ((j81) view).set(i51Var.z);
-    }
-
-    @Override // org.telegram.ui.Components.h51
-    public final boolean contentsEquals(org.telegram.ui.Components.i51 i51Var, org.telegram.ui.Components.i51 i51Var2) {
-        return i51Var.z == i51Var2.z;
-    }
-
-    @Override // org.telegram.ui.Components.h51
-    public final View createView(Context context, org.telegram.ui.Components.sl0 sl0Var, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
-        return new j81(context, f6Var);
-    }
-
-    @Override // org.telegram.ui.Components.h51
-    public final boolean equals(org.telegram.ui.Components.i51 i51Var, org.telegram.ui.Components.i51 i51Var2) {
-        return i51Var.d == i51Var2.d;
+    @Override // org.telegram.ui.Components.mq0
+    public final void R0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z4) {
+        if (z4) {
+            AndroidUtilities.runOnUIThread(new w01(this, hVar, i10), 250L);
+        }
     }
 }

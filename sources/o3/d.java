@@ -2,9 +2,9 @@ package o3;
 
 import android.os.Handler;
 import h5.d0;
-import nh.n5;
+import lh.c3;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class d implements n {
     public final l a;
@@ -21,6 +21,6 @@ public final class d implements n {
     public final void release() {
         Handler handler = this.d.G;
         handler.getClass();
-        d0.K(handler, new n5(this, 14));
+        d0.K(handler, new c3(this, 22));
     }
 }

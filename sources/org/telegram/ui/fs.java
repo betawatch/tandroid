@@ -1,35 +1,54 @@
 package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fs implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ns b;
+    public final /* synthetic */ os b;
+    public final /* synthetic */ TLRPC.User c;
 
-    public /* synthetic */ fs(ns nsVar, int i10) {
+    public /* synthetic */ fs(os osVar, TLRPC.User user, int i10) {
         this.a = i10;
-        this.b = nsVar;
+        this.b = osVar;
+        this.c = user;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
+        String str;
         switch (this.a) {
             case 0:
-                ns nsVar = this.b;
-                if (nsVar.G) {
-                    nsVar.d.b.requestFocus();
-                    AndroidUtilities.showKeyboard(nsVar.d.b);
+                os osVar = this.b;
+                TLRPC.User user = this.c;
+                if (user != null && osVar.J == null && osVar.K == null) {
+                    if (user.phone == null && (str = osVar.I) != null) {
+                        user.phone = se.b.d(str, false);
+                    }
+                    osVar.b.setText(user.first_name);
+                    org.telegram.ui.Cells.g3 g3Var = osVar.b.b;
+                    g3Var.setSelection(g3Var.length());
+                    osVar.c.setText(user.last_name);
+                }
+                TLRPC.UserFull userFull = osVar.getMessagesController().getUserFull(osVar.E);
+                if (userFull != null) {
+                    TLRPC.TL_textWithEntities tL_textWithEntities = userFull.note;
+                    if (tL_textWithEntities != null) {
+                        osVar.d.setText(tL_textWithEntities);
+                    } else {
+                        osVar.d.setText("");
+                    }
+                }
+                if (osVar.G) {
+                    osVar.d.b.requestFocus();
+                    AndroidUtilities.showKeyboard(osVar.d.b);
                     break;
                 }
                 break;
-            case 1:
-                ns.Z(this.b);
-                break;
             default:
-                ns nsVar2 = this.b;
-                nsVar2.presentFragment(xn.R9(nsVar2.E), true);
+                os.V(this.b, this.c);
                 break;
         }
     }

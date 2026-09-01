@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class j {
     public final m a;
@@ -64,14 +64,14 @@ public abstract class j {
                         } else {
                             taskCompletionSource2.setResult(call);
                         }
-                    } catch (RuntimeException e) {
-                        throw new ya.a("Internal error has occurred when executing ML Kit tasks", e);
+                    } catch (RuntimeException e6) {
+                        throw new ya.a("Internal error has occurred when executing ML Kit tasks", e6);
                     }
-                } catch (Exception e6) {
+                } catch (Exception e10) {
                     if (cancellationToken2.isCancellationRequested()) {
                         cancellationTokenSource2.cancel();
                     } else {
-                        taskCompletionSource2.setException(e6);
+                        taskCompletionSource2.setException(e10);
                     }
                 }
             }
@@ -80,13 +80,13 @@ public abstract class j {
             public final void execute(Runnable runnable) {
                 try {
                     executor.execute(runnable);
-                } catch (RuntimeException e) {
+                } catch (RuntimeException e6) {
                     if (cancellationToken.isCancellationRequested()) {
                         cancellationTokenSource.cancel();
                     } else {
-                        taskCompletionSource.setException(e);
+                        taskCompletionSource.setException(e6);
                     }
-                    throw e;
+                    throw e6;
                 }
             }
         });

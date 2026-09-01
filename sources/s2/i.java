@@ -1,15 +1,16 @@
 package s2;
 
+import androidx.biometric.f0;
 import java.nio.ByteBuffer;
 import java.util.Iterator;
 import java.util.LinkedList;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class i extends com.googlecode.mp4parser.a {
-    public static final /* synthetic */ a3.c d;
-    public static final /* synthetic */ a3.c e;
+    public static final /* synthetic */ f0 d;
+    public static final /* synthetic */ f0 e;
     public String a;
     public long b;
     public LinkedList c;
@@ -52,10 +53,10 @@ public final class i extends com.googlecode.mp4parser.a {
 
     public final String toString() {
         StringBuilder sb = new StringBuilder("FileTypeBox[majorBrand=");
-        yh.v(de.a.b(d, this, this));
+        yh.x(de.a.b(d, this, this));
         sb.append(this.a);
         sb.append(";minorVersion=");
-        yh.v(de.a.b(e, this, this));
+        yh.x(de.a.b(e, this, this));
         sb.append(this.b);
         for (String str : this.c) {
             sb.append(";compatibleBrand=");

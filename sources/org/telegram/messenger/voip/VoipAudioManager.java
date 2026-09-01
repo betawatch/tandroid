@@ -6,12 +6,12 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.Utilities;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class VoipAudioManager {
     private Boolean isSpeakerphoneOn;
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static final class InstanceHolder {
         static final VoipAudioManager instance = new VoipAudioManager();
 
@@ -39,7 +39,7 @@ public class VoipAudioManager {
     }
 
     public void isBluetoothAndSpeakerOnAsync(Utilities.Callback2<Boolean, Boolean> callback2) {
-        Utilities.globalQueue.postRunnable(new b(7, this, callback2));
+        Utilities.globalQueue.postRunnable(new h(6, this, callback2));
     }
 
     public boolean isSpeakerphoneOn() {
@@ -49,7 +49,7 @@ public class VoipAudioManager {
 
     public void setSpeakerphoneOn(boolean z4) {
         this.isSpeakerphoneOn = Boolean.valueOf(z4);
-        Utilities.globalQueue.postRunnable(new jh.f(15, getAudioManager(), z4));
+        Utilities.globalQueue.postRunnable(new kh.f(14, getAudioManager(), z4));
     }
 
     private VoipAudioManager() {

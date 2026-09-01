@@ -2,7 +2,7 @@ package b4;
 
 import org.telegram.ui.Components.jb;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class x {
     public final r3.a a;
@@ -47,22 +47,22 @@ public final class x {
             r3.e eVar = this.b;
             if (j13 <= j14) {
                 this.c = null;
-                eVar.o();
+                eVar.n();
                 return c(lVar, j10, jbVar);
             }
             long position = j12 - lVar.getPosition();
             if (position < 0 || position > 262144) {
                 break;
             }
-            lVar.u((int) position);
-            lVar.t();
-            r3.d d = eVar.d(lVar, bVar.b);
-            int i10 = d.a;
-            long j15 = d.b;
-            long j16 = d.c;
+            lVar.s((int) position);
+            lVar.r();
+            r3.d b10 = eVar.b(lVar, bVar.b);
+            int i10 = b10.a;
+            long j15 = b10.b;
+            long j16 = b10.c;
             if (i10 == -3) {
                 this.c = null;
-                eVar.o();
+                eVar.n();
                 return c(lVar, j12, jbVar);
             }
             if (i10 == -2) {
@@ -76,10 +76,10 @@ public final class x {
                     }
                     long position2 = j16 - lVar.getPosition();
                     if (position2 >= 0 && position2 <= 262144) {
-                        lVar.u((int) position2);
+                        lVar.s((int) position2);
                     }
                     this.c = null;
-                    eVar.o();
+                    eVar.n();
                     return c(lVar, j16, jbVar);
                 }
                 bVar.e = j15;

@@ -3,13 +3,13 @@ package com.google.android.recaptcha.internal;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import k7.s7;
+import k7.t7;
 import org.telegram.ui.yh;
 import tc.f;
 import tc.i;
 import tc.o;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class zzju implements zzjt {
     public static final zzju zza = new zzju();
@@ -28,7 +28,7 @@ public final class zzju implements zzjt {
                 return oVar;
             }
             if (length == 1) {
-                return s7.a(Byte.valueOf(bArr[0]));
+                return t7.a(Byte.valueOf(bArr[0]));
             }
             ArrayList arrayList = new ArrayList(bArr.length);
             int length2 = bArr.length;
@@ -45,7 +45,7 @@ public final class zzju implements zzjt {
                 return oVar;
             }
             if (length3 == 1) {
-                return s7.a(Short.valueOf(sArr[0]));
+                return t7.a(Short.valueOf(sArr[0]));
             }
             ArrayList arrayList2 = new ArrayList(sArr.length);
             int length4 = sArr.length;
@@ -62,12 +62,12 @@ public final class zzju implements zzjt {
                 return oVar;
             }
             if (length5 == 1) {
-                return s7.a(Integer.valueOf(iArr[0]));
+                return t7.a(Integer.valueOf(iArr[0]));
             }
             ArrayList arrayList3 = new ArrayList(iArr.length);
             int length6 = iArr.length;
             while (i10 < length6) {
-                i10 = yh.e(iArr[i10], i10, 1, arrayList3);
+                i10 = yh.d(iArr[i10], i10, 1, arrayList3);
             }
             return arrayList3;
         }
@@ -81,7 +81,7 @@ public final class zzju implements zzjt {
                 return oVar;
             }
             if (length7 == 1) {
-                return s7.a(Float.valueOf(fArr[0]));
+                return t7.a(Float.valueOf(fArr[0]));
             }
             ArrayList arrayList4 = new ArrayList(fArr.length);
             int length8 = fArr.length;
@@ -100,7 +100,7 @@ public final class zzju implements zzjt {
             return oVar;
         }
         if (length9 == 1) {
-            return s7.a(Double.valueOf(dArr[0]));
+            return t7.a(Double.valueOf(dArr[0]));
         }
         ArrayList arrayList5 = new ArrayList(dArr.length);
         int length10 = dArr.length;

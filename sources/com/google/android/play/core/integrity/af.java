@@ -9,7 +9,7 @@ import o8.a0;
 import o8.f0;
 import o8.g0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 final class af extends g0 {
     final /* synthetic */ byte[] a;
@@ -56,12 +56,12 @@ final class af extends g0 {
             a2.writeToParcel(obtain, 0);
             obtain.writeStrongBinder(aiVar);
             yVar.F0(obtain, 2);
-        } catch (RemoteException e) {
+        } catch (RemoteException e6) {
             aj ajVar2 = this.f;
             IntegrityTokenRequest integrityTokenRequest = this.e;
             f0Var = ajVar2.b;
-            f0Var.a(e, "requestIntegrityToken(%s)", integrityTokenRequest);
-            this.d.trySetException(new IntegrityServiceException(-100, e));
+            f0Var.a(e6, "requestIntegrityToken(%s)", integrityTokenRequest);
+            this.d.trySetException(new IntegrityServiceException(-100, e6));
         }
     }
 }

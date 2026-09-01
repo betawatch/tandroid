@@ -10,15 +10,15 @@ import java.security.MessageDigest;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.bz;
+import org.telegram.ui.Components.dz;
 import org.telegram.ui.Components.eg;
 import org.telegram.ui.Components.ff;
-import org.telegram.ui.Components.ox;
 import org.telegram.ui.Components.qv0;
+import org.telegram.ui.Components.qx;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final class l0 implements r0.n0, ox {
+public final class l0 implements r0.n0, qx {
     public boolean a;
     public int b;
     public Object c;
@@ -49,11 +49,11 @@ public final class l0 implements r0.n0, ox {
     }
 
     public boolean d() {
-        bz bzVar;
+        dz dzVar;
         ff ffVar;
         ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
         if (chatActivityEnterView.t3) {
-            return (chatActivityEnterView.v3 || (ffVar = chatActivityEnterView.B0) == null || ffVar.length() <= 0) && (bzVar = chatActivityEnterView.R0.v0) != null && bzVar.h() > 0 && !chatActivityEnterView.g3;
+            return (chatActivityEnterView.v3 || (ffVar = chatActivityEnterView.B0) == null || ffVar.length() <= 0) && (dzVar = chatActivityEnterView.R0.v0) != null && dzVar.h() > 0 && !chatActivityEnterView.g3;
         }
         return false;
     }
@@ -83,12 +83,12 @@ public final class l0 implements r0.n0, ox {
             chatActivityEnterView.R0.setLayerType(2, null);
             qv0Var.requestLayout();
             if (chatActivityEnterView.u4) {
-                qv0Var.setForeground(new ef.g(chatActivityEnterView));
+                qv0Var.setForeground(new ef.f(chatActivityEnterView));
             }
             this.b = (int) chatActivityEnterView.getTranslationY();
             eg egVar = chatActivityEnterView.V2;
             if (egVar != null) {
-                egVar.u1();
+                egVar.y1();
             }
         }
     }

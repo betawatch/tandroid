@@ -1,6 +1,6 @@
 package j3;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class e implements b2 {
     public final int b;
@@ -15,7 +15,7 @@ public abstract class e implements b2 {
     public boolean x;
     public f5.p y;
     public final Object a = new Object();
-    public final f7.b c = new f7.b((char) 0, 17);
+    public final f7.b c = new f7.b((char) 0, 16);
     public long v = Long.MIN_VALUE;
 
     public e(int i10) {
@@ -66,8 +66,8 @@ public abstract class e implements b2 {
     public final int s(f7.b bVar, n3.i iVar, int i10) {
         o4.l0 l0Var = this.n;
         l0Var.getClass();
-        int f10 = l0Var.f(bVar, iVar, i10);
-        if (f10 == -4) {
+        int p10 = l0Var.p(bVar, iVar, i10);
+        if (p10 == -4) {
             if (iVar.e(4)) {
                 this.v = Long.MIN_VALUE;
                 return this.w ? -4 : -3;
@@ -75,9 +75,9 @@ public abstract class e implements b2 {
             long j10 = iVar.f + this.s;
             iVar.f = j10;
             this.v = Math.max(this.v, j10);
-            return f10;
+            return p10;
         }
-        if (f10 == -5) {
+        if (p10 == -5) {
             n0 n0Var = (n0) bVar.c;
             n0Var.getClass();
             long j11 = n0Var.G;
@@ -87,7 +87,7 @@ public abstract class e implements b2 {
                 bVar.c = new n0(a2);
             }
         }
-        return f10;
+        return p10;
     }
 
     public abstract void t(long j10, long j11);

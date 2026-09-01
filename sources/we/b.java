@@ -5,9 +5,9 @@ import android.graphics.BitmapFactory;
 import android.media.MediaMetadataRetriever;
 import java.io.File;
 import org.telegram.messenger.FileLog;
-import vh.v2;
+import w.c;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class b extends a {
     public final MediaMetadataRetriever r;
@@ -48,17 +48,17 @@ public final class b extends a {
                     this.p = this.o;
                 }
             }
-        } catch (Exception e) {
+        } catch (Exception e6) {
             this.s = true;
-            FileLog.e(e);
+            FileLog.e(e6);
         }
         try {
             MediaMetadataRetriever mediaMetadataRetriever2 = this.r;
             if (mediaMetadataRetriever2 != null) {
-                v2.j(mediaMetadataRetriever2);
+                c.j(mediaMetadataRetriever2);
             }
-        } catch (Exception e6) {
-            FileLog.e(e6);
+        } catch (Exception e10) {
+            FileLog.e(e10);
         }
     }
 

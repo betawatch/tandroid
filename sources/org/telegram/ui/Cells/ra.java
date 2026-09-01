@@ -5,19 +5,19 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.rp;
+import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.tp;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class ra extends TextView {
     public boolean a;
     public final org.telegram.ui.Components.z5 b;
-    public rp c;
+    public tp c;
 
     public ra(Context context) {
         super(context);
-        this.b = new org.telegram.ui.Components.z5(this, 0L, 350L, nr.h);
+        this.b = new org.telegram.ui.Components.z5(this, 0L, 350L, pr.h);
     }
 
     public final void a(boolean z4, boolean z10) {
@@ -36,31 +36,31 @@ public final class ra extends TextView {
     @Override // android.widget.TextView, android.view.View
     public final void onDraw(Canvas canvas) {
         Canvas canvas2;
-        float e = this.b.e(this.a);
-        if (e <= 0.0f) {
+        float e6 = this.b.e(this.a);
+        if (e6 <= 0.0f) {
             super.onDraw(canvas);
             return;
         }
-        if (e < 1.0f) {
+        if (e6 < 1.0f) {
             canvas2 = canvas;
-            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - e) * 255.0f), 31);
-            float f10 = 1.0f - (0.2f * e);
+            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - e6) * 255.0f), 31);
+            float f10 = 1.0f - (0.2f * e6);
             canvas2.scale(f10, f10, getWidth() / 2.0f, getHeight() / 2.0f);
-            canvas2.translate(0.0f, AndroidUtilities.dp(-12.0f) * e);
+            canvas2.translate(0.0f, AndroidUtilities.dp(-12.0f) * e6);
             super.onDraw(canvas2);
             canvas2.restore();
         } else {
             canvas2 = canvas;
         }
         if (this.c == null) {
-            rp rpVar = new rp(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(2.0f), getCurrentTextColor());
-            this.c = rpVar;
-            rpVar.setCallback(this);
+            tp tpVar = new tp(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(2.0f), getCurrentTextColor());
+            this.c = tpVar;
+            tpVar.setCallback(this);
         }
         this.c.b(getCurrentTextColor());
-        float f11 = 1.0f - e;
+        float f11 = 1.0f - e6;
         this.c.setBounds(getWidth() / 2, (getHeight() / 2) + ((int) (AndroidUtilities.dp(12.0f) * f11)), getWidth() / 2, (getHeight() / 2) + ((int) (f11 * AndroidUtilities.dp(12.0f))));
-        this.c.setAlpha((int) (e * 255.0f));
+        this.c.setAlpha((int) (e6 * 255.0f));
         this.c.draw(canvas2);
         invalidate();
     }

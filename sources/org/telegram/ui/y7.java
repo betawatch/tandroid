@@ -21,9 +21,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class y7 extends f2.o0 {
+public final class y7 extends f2.p0 {
     public final /* synthetic */ int c;
     public final /* synthetic */ Object d;
 
@@ -32,7 +32,7 @@ public final class y7 extends f2.o0 {
         this.d = obj;
     }
 
-    @Override // f2.o0
+    @Override // f2.p0
     public final int h() {
         switch (this.c) {
             case 0:
@@ -48,7 +48,7 @@ public final class y7 extends f2.o0 {
         }
     }
 
-    @Override // f2.o0
+    @Override // f2.p0
     public long i(int i10) {
         switch (this.c) {
             case 0:
@@ -65,7 +65,7 @@ public final class y7 extends f2.o0 {
         }
     }
 
-    @Override // f2.o0
+    @Override // f2.p0
     public int j(int i10) {
         switch (this.c) {
             case 2:
@@ -78,11 +78,11 @@ public final class y7 extends f2.o0 {
     /* JADX WARN: Removed duplicated region for block: B:14:0x0040  */
     /* JADX WARN: Removed duplicated region for block: B:17:0x0053  */
     /* JADX WARN: Removed duplicated region for block: B:20:0x0058  */
-    @Override // f2.o0
+    @Override // f2.p0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void v(f2.l1 l1Var, int i10) {
+    public final void v(f2.m1 m1Var, int i10) {
         String str;
         int i11;
         int i12;
@@ -91,7 +91,7 @@ public final class y7 extends f2.o0 {
         int i13;
         switch (this.c) {
             case 0:
-                g8 g8Var = (g8) l1Var.a;
+                g8 g8Var = (g8) m1Var.a;
                 j8 j8Var = (j8) this.d;
                 int i14 = j8Var.F - (i10 / 12);
                 int i15 = j8Var.G - (i10 % 12);
@@ -203,37 +203,37 @@ public final class y7 extends f2.o0 {
                 j8Var.s0(g8Var, false);
                 break;
             case 1:
-                org.telegram.ui.Cells.s sVar = (org.telegram.ui.Cells.s) l1Var.a;
-                ab0 ab0Var = (ab0) ((org.telegram.ui.Cells.t) this.d).U2.get(i10);
+                org.telegram.ui.Cells.s sVar = (org.telegram.ui.Cells.s) m1Var.a;
+                bb0 bb0Var = (bb0) ((org.telegram.ui.Cells.t) this.d).U2.get(i10);
                 org.telegram.ui.Cells.q qVar = sVar.c;
-                int i21 = ab0Var.b;
-                int i22 = ab0Var.d;
+                int i21 = bb0Var.b;
+                int i22 = bb0Var.d;
                 qVar.setImageResource(i21);
                 TextView textView = sVar.d;
                 ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) textView.getLayoutParams();
-                if (!ab0Var.e || UserConfig.hasPremiumOnAccounts()) {
+                if (!bb0Var.e || UserConfig.hasPremiumOnAccounts()) {
                     marginLayoutParams.rightMargin = 0;
                     textView.setText(LocaleController.getString(i22));
                 } else {
                     SpannableString spannableString = new SpannableString(org.telegram.messenger.y3.h(i22, new StringBuilder("d ")));
-                    org.telegram.ui.Components.mq mqVar = new org.telegram.ui.Components.mq(R.drawable.msg_mini_premiumlock, 0);
-                    mqVar.setTopOffset(1);
-                    mqVar.setSize(AndroidUtilities.dp(13.0f));
-                    spannableString.setSpan(mqVar, 0, 1, 33);
+                    org.telegram.ui.Components.oq oqVar = new org.telegram.ui.Components.oq(R.drawable.msg_mini_premiumlock, 0);
+                    oqVar.setTopOffset(1);
+                    oqVar.setSize(AndroidUtilities.dp(13.0f));
+                    spannableString.setSpan(oqVar, 0, 1, 33);
                     marginLayoutParams.rightMargin = AndroidUtilities.dp(4.0f);
                     textView.setText(spannableString);
                 }
-                sVar.b(k7.i6.a(ab0Var), false);
+                sVar.b(k7.j6.a(bb0Var), false);
                 int dp = AndroidUtilities.dp(18.0f);
-                qVar.setBackground(org.telegram.ui.ActionBar.j6.i0(dp, dp, dp, dp, 0, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.i6, false), -16777216));
-                qVar.setForeground(ab0Var.c);
+                qVar.setBackground(org.telegram.ui.ActionBar.k6.i0(dp, dp, dp, dp, 0, org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.i6, false), -16777216));
+                qVar.setForeground(bb0Var.c);
                 break;
             case 2:
                 org.telegram.ui.Components.t8 t8Var = (org.telegram.ui.Components.t8) this.d;
                 org.telegram.ui.Components.w8 w8Var = t8Var.Z2;
                 ArrayList arrayList = t8Var.U2;
-                org.telegram.ui.Components.u8 u8Var = (org.telegram.ui.Components.u8) l1Var.a;
-                if (l1Var.f != 0) {
+                org.telegram.ui.Components.u8 u8Var = (org.telegram.ui.Components.u8) m1Var.a;
+                if (m1Var.f != 0) {
                     u8Var.d = true;
                     i12 = ((org.telegram.ui.ActionBar.p2) w8Var).currentAccount;
                     boolean z13 = !UserConfig.getInstance(i12).isPremium();
@@ -281,11 +281,11 @@ public final class y7 extends f2.o0 {
         }
     }
 
-    @Override // f2.o0
-    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+    @Override // f2.p0
+    public final f2.m1 x(ViewGroup viewGroup, int i10) {
         switch (this.c) {
             case 0:
-                return new org.telegram.ui.Components.el0(new g8((j8) this.d, viewGroup.getContext()));
+                return new org.telegram.ui.Components.fl0(new g8((j8) this.d, viewGroup.getContext()));
             case 1:
                 Context context = viewGroup.getContext();
                 org.telegram.ui.Cells.s sVar = new org.telegram.ui.Cells.s(context);
@@ -298,30 +298,30 @@ public final class y7 extends f2.o0 {
                 org.telegram.ui.Cells.q qVar = new org.telegram.ui.Cells.q(context);
                 sVar.c = qVar;
                 qVar.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-                sVar.addView(qVar, k7.b6.q(58, 58, 1));
+                sVar.addView(qVar, k7.c6.q(58, 58, 1));
                 TextView textView = new TextView(context);
                 sVar.d = textView;
                 textView.setSingleLine();
                 textView.setTextSize(1, 13.0f);
-                textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
-                sVar.addView(textView, k7.b6.t(-2, -2, 1, 0, 4, 0, 0));
+                textView.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.G6, false));
+                sVar.addView(textView, k7.c6.t(-2, -2, 1, 0, 4, 0, 0));
                 paint.setStyle(Paint.Style.STROKE);
                 paint.setStrokeWidth(Math.max(2, AndroidUtilities.dp(0.5f)));
                 paint2.setColor(-1);
-                return new org.telegram.ui.Components.el0(sVar);
+                return new org.telegram.ui.Components.fl0(sVar);
             case 2:
                 org.telegram.ui.Components.t8 t8Var = (org.telegram.ui.Components.t8) this.d;
-                return new org.telegram.ui.Components.el0(new org.telegram.ui.Components.u8(t8Var.Z2, t8Var.getContext()));
+                return new org.telegram.ui.Components.fl0(new org.telegram.ui.Components.u8(t8Var.Z2, t8Var.getContext()));
             case 3:
-                return new org.telegram.ui.Components.el0(((org.telegram.ui.Components.om) this.d).v);
+                return new org.telegram.ui.Components.fl0(((org.telegram.ui.Components.qm) this.d).v);
             default:
-                return new org.telegram.ui.Components.el0(new eg.h0(this, ((org.telegram.ui.Components.rn) this.d).getContext(), 10));
+                return new org.telegram.ui.Components.fl0(new fg.h0(this, ((org.telegram.ui.Components.tn) this.d).getContext(), 10));
         }
     }
 
-    private final void D(f2.l1 l1Var, int i10) {
+    private final void D(f2.m1 m1Var, int i10) {
     }
 
-    private final void E(f2.l1 l1Var, int i10) {
+    private final void E(f2.m1 m1Var, int i10) {
     }
 }

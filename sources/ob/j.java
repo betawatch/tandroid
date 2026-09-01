@@ -1,8 +1,8 @@
 package ob;
 
-import k7.n6;
+import k7.o6;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class j {
     public final float a;
@@ -14,7 +14,7 @@ public abstract class j {
     }
 
     public static float a(j jVar, j jVar2) {
-        return n6.a(jVar.a, jVar.b, jVar2.a, jVar2.b);
+        return o6.a(jVar.a, jVar.b, jVar2.a, jVar2.b);
     }
 
     public final boolean equals(Object obj) {

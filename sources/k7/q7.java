@@ -1,16 +1,16 @@
 package k7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class q7 {
-    public static void a(int i10, int i11, int i12) {
-        if (i10 < 0 || i11 > i12) {
-            StringBuilder m9 = e2.c.m("fromIndex: ", i10, ", toIndex: ", i11, ", size: ");
-            m9.append(i12);
-            throw new IndexOutOfBoundsException(m9.toString());
-        }
-        if (i10 > i11) {
-            throw new IllegalArgumentException(android.support.v4.media.a.k(i10, i11, "fromIndex: ", " > toIndex: "));
+    public static final sc.e a(Throwable exception) {
+        kotlin.jvm.internal.j.e(exception, "exception");
+        return new sc.e(exception);
+    }
+
+    public static final void b(Object obj) {
+        if (obj instanceof sc.e) {
+            throw ((sc.e) obj).a;
         }
     }
 }

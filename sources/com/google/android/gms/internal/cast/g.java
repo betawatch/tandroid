@@ -13,7 +13,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class g extends a7.c {
     public final /* synthetic */ int b;
@@ -43,17 +43,17 @@ public abstract class g extends a7.c {
                 Bundle bundle = null;
                 switch (i10) {
                     case 1:
-                        Bundle bundle2 = (Bundle) t.a(parcel, Bundle.CREATOR);
+                        Bundle bundle2 = (Bundle) s.a(parcel, Bundle.CREATOR);
                         IBinder readStrongBinder = parcel.readStrongBinder();
                         if (readStrongBinder != null) {
                             IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.cast.framework.internal.IMediaRouterCallback");
                             hVar = queryLocalInterface instanceof h ? (h) queryLocalInterface : new h(readStrongBinder, "com.google.android.gms.cast.framework.internal.IMediaRouterCallback", 1);
                         }
-                        t.b(parcel);
-                        p pVar = (p) this;
+                        s.b(parcel);
+                        o oVar = (o) this;
                         c2.v b10 = c2.v.b(bundle2);
                         if (b10 != null) {
-                            HashMap hashMap = pVar.e;
+                            HashMap hashMap = oVar.e;
                             if (!hashMap.containsKey(b10)) {
                                 hashMap.put(b10, new HashSet());
                             }
@@ -62,42 +62,42 @@ public abstract class g extends a7.c {
                         parcel2.writeNoException();
                         return true;
                     case 2:
-                        Bundle bundle3 = (Bundle) t.a(parcel, Bundle.CREATOR);
+                        Bundle bundle3 = (Bundle) s.a(parcel, Bundle.CREATOR);
                         int readInt = parcel.readInt();
-                        t.b(parcel);
-                        p pVar2 = (p) this;
+                        s.b(parcel);
+                        o oVar2 = (o) this;
                         c2.v b11 = c2.v.b(bundle3);
                         if (b11 != null) {
                             if (Looper.myLooper() == Looper.getMainLooper()) {
-                                pVar2.K0(b11, readInt);
+                                oVar2.K0(b11, readInt);
                             } else {
-                                new a7.e(Looper.getMainLooper(), 2).post(new androidx.activity.g(pVar2, b11, readInt, i13));
+                                new a7.e(Looper.getMainLooper(), 2).post(new androidx.activity.g(oVar2, b11, readInt, i13));
                             }
                         }
                         parcel2.writeNoException();
                         return true;
                     case 3:
-                        Bundle bundle4 = (Bundle) t.a(parcel, Bundle.CREATOR);
-                        t.b(parcel);
-                        p pVar3 = (p) this;
+                        Bundle bundle4 = (Bundle) s.a(parcel, Bundle.CREATOR);
+                        s.b(parcel);
+                        o oVar3 = (o) this;
                         c2.v b12 = c2.v.b(bundle4);
                         if (b12 != null) {
                             if (Looper.myLooper() == Looper.getMainLooper()) {
-                                pVar3.L0(b12);
+                                oVar3.L0(b12);
                             } else {
-                                new a7.e(Looper.getMainLooper(), 2).post(new androidx.biometric.k(pVar3, b12, i11, 5));
+                                new a7.e(Looper.getMainLooper(), 2).post(new androidx.biometric.k(oVar3, b12, i11, 5));
                             }
                         }
                         parcel2.writeNoException();
                         return true;
                     case 4:
-                        Bundle bundle5 = (Bundle) t.a(parcel, Bundle.CREATOR);
+                        Bundle bundle5 = (Bundle) s.a(parcel, Bundle.CREATOR);
                         int readInt2 = parcel.readInt();
-                        t.b(parcel);
-                        p pVar4 = (p) this;
+                        s.b(parcel);
+                        o oVar4 = (o) this;
                         c2.v b13 = c2.v.b(bundle5);
                         if (b13 != null) {
-                            pVar4.c.getClass();
+                            oVar4.c.getClass();
                             c2.c0.b();
                             c2.e c3 = c2.c0.c();
                             ArrayList arrayList = c3.j;
@@ -120,10 +120,10 @@ public abstract class g extends a7.c {
                         return true;
                     case 5:
                         String readString = parcel.readString();
-                        t.b(parcel);
-                        u5.b bVar = p.j;
+                        s.b(parcel);
+                        u5.b bVar = o.j;
                         bVar.b("select route with routeId = %s", readString);
-                        ((p) this).c.getClass();
+                        ((o) this).c.getClass();
                         c2.c0.b();
                         ArrayList arrayList2 = c2.c0.c().j;
                         int size2 = arrayList2.size();
@@ -143,7 +143,7 @@ public abstract class g extends a7.c {
                         parcel2.writeNoException();
                         return true;
                     case 6:
-                        ((p) this).c.getClass();
+                        ((o) this).c.getClass();
                         c2.c0.b();
                         c2.a0 a0Var3 = c2.c0.c().v;
                         if (a0Var3 == null) {
@@ -154,7 +154,7 @@ public abstract class g extends a7.c {
                         parcel2.writeNoException();
                         return true;
                     case 7:
-                        ((p) this).c.getClass();
+                        ((o) this).c.getClass();
                         c2.c0.b();
                         c2.a0 a0Var4 = c2.c0.c().v;
                         if (a0Var4 == null) {
@@ -162,13 +162,13 @@ public abstract class g extends a7.c {
                         }
                         boolean equals = c2.c0.f().c.equals(a0Var4.c);
                         parcel2.writeNoException();
-                        int i16 = t.a;
+                        int i16 = s.a;
                         parcel2.writeInt(equals ? 1 : 0);
                         return true;
                     case 8:
                         String readString2 = parcel.readString();
-                        t.b(parcel);
-                        ((p) this).c.getClass();
+                        s.b(parcel);
+                        ((o) this).c.getClass();
                         c2.c0.b();
                         ArrayList arrayList3 = c2.c0.c().j;
                         int size3 = arrayList3.size();
@@ -192,7 +192,7 @@ public abstract class g extends a7.c {
                         bundle.writeToParcel(parcel2, 1);
                         return true;
                     case 9:
-                        ((p) this).c.getClass();
+                        ((o) this).c.getClass();
                         String str = c2.c0.f().c;
                         parcel2.writeNoException();
                         parcel2.writeString(str);
@@ -202,33 +202,33 @@ public abstract class g extends a7.c {
                         parcel2.writeInt(12451000);
                         return true;
                     case 11:
-                        p pVar5 = (p) this;
-                        HashMap hashMap2 = pVar5.e;
+                        o oVar5 = (o) this;
+                        HashMap hashMap2 = oVar5.e;
                         Iterator it = hashMap2.values().iterator();
                         while (it.hasNext()) {
                             Iterator it2 = ((Set) it.next()).iterator();
                             while (it2.hasNext()) {
-                                pVar5.c.h((c2.w) it2.next());
+                                oVar5.c.h((c2.w) it2.next());
                             }
                         }
                         hashMap2.clear();
                         parcel2.writeNoException();
                         return true;
                     case 12:
-                        ((p) this).c.getClass();
+                        ((o) this).c.getClass();
                         c2.c0.b();
                         c2.a0 a0Var6 = c2.c0.c().w;
                         if (a0Var6 != null && c2.c0.f().c.equals(a0Var6.c)) {
                             i12 = 1;
                         }
                         parcel2.writeNoException();
-                        int i18 = t.a;
+                        int i18 = s.a;
                         parcel2.writeInt(i12);
                         return true;
                     case 13:
                         int readInt3 = parcel.readInt();
-                        t.b(parcel);
-                        ((p) this).c.getClass();
+                        s.b(parcel);
+                        ((o) this).c.getClass();
                         c2.c0.j(readInt3);
                         parcel2.writeNoException();
                         return true;
@@ -239,7 +239,7 @@ public abstract class g extends a7.c {
                 if (i10 == 1) {
                     l6.b bVar2 = new l6.b((c) this);
                     parcel2.writeNoException();
-                    t.d(parcel2, bVar2);
+                    s.d(parcel2, bVar2);
                     return true;
                 }
                 if (i10 == 2) {

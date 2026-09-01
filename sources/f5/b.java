@@ -2,14 +2,13 @@ package f5;
 
 import android.os.SystemClock;
 import h5.d0;
-import h5.y;
 import j3.n0;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import o4.s0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class b extends c {
     public final g5.f g;
@@ -21,7 +20,7 @@ public final class b extends c {
     public final float m;
     public final float n;
     public final s8.v o;
-    public final y p;
+    public final h5.y p;
     public float q;
     public int r;
     public int s;
@@ -43,7 +42,7 @@ public final class b extends c {
         this.m = 0.7f;
         this.n = 0.75f;
         this.o = s8.v.t(vVar);
-        this.p = y.a;
+        this.p = h5.y.a;
         this.q = 1.0f;
         this.s = 0;
         this.t = -9223372036854775807L;
@@ -155,14 +154,14 @@ public final class b extends c {
                 }
                 q4.l lVar = lVarArr[i11];
                 if (lVar.next()) {
-                    y10 = lVar.B() - lVar.p();
+                    y10 = lVar.l() - lVar.k();
                     break;
                 }
                 i11++;
             }
         } else {
             q4.l lVar2 = lVarArr[this.r];
-            y10 = lVar2.B() - lVar2.p();
+            y10 = lVar2.l() - lVar2.k();
         }
         int i12 = this.s;
         if (i12 == 0) {

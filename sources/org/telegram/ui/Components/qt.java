@@ -1,28 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qt implements Utilities.Callback {
-    public final /* synthetic */ vt a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
+public final class qt extends j6 {
+    public final /* synthetic */ int W;
+    public final /* synthetic */ EditTextBoldCursor X;
 
-    public /* synthetic */ qt(vt vtVar, int i10, int i11) {
-        this.a = vtVar;
-        this.b = i10;
-        this.c = i11;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ qt(int i10, EditTextBoldCursor editTextBoldCursor) {
+        super(false, false, false, false);
+        this.W = i10;
+        this.X = editTextBoldCursor;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        CharSequence charSequence = (CharSequence) obj;
-        vt vtVar = this.a;
-        Editable text = vtVar.getText();
-        int i10 = this.b;
-        text.replace(i10, this.c, charSequence);
-        vtVar.setSelection(i10, charSequence.length() + i10);
+    @Override // android.graphics.drawable.Drawable
+    public final void invalidateSelf() {
+        switch (this.W) {
+            case 0:
+                this.X.invalidate();
+                break;
+            default:
+                this.X.invalidate();
+                break;
+        }
     }
 }

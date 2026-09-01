@@ -31,8 +31,7 @@ import java.util.Locale;
 import java.util.MissingResourceException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import k7.z6;
-import kh.a2;
+import k7.a7;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessagesStorage;
@@ -42,7 +41,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class d0 {
     public static final int a;
@@ -112,7 +111,7 @@ public abstract class d0 {
             case 6:
                 return "camera motion";
             default:
-                return i10 >= 10000 ? a2.k(i10, "custom (", ")") : "?";
+                return i10 >= 10000 ? l.d.k(i10, "custom (", ")") : "?";
         }
     }
 
@@ -131,12 +130,12 @@ public abstract class d0 {
         int i10;
         if (str == null) {
             String scheme = uri.getScheme();
-            if (scheme == null || !z6.a("rtsp", scheme)) {
+            if (scheme == null || !a7.a("rtsp", scheme)) {
                 String lastPathSegment = uri.getLastPathSegment();
                 if (lastPathSegment != null) {
                     int lastIndexOf = lastPathSegment.lastIndexOf(46);
                     if (lastIndexOf >= 0) {
-                        String b10 = z6.b(lastPathSegment.substring(lastIndexOf + 1));
+                        String b10 = a7.b(lastPathSegment.substring(lastIndexOf + 1));
                         b10.getClass();
                         switch (b10) {
                             case "ism":
@@ -253,7 +252,7 @@ public abstract class d0 {
         if (!replace.isEmpty() && !replace.equals(TranslateController.UNKNOWN_LANGUAGE)) {
             str = replace;
         }
-        String b10 = z6.b(str);
+        String b10 = a7.b(str);
         int i10 = 0;
         String str2 = b10.split("-", 2)[0];
         if (j == null) {

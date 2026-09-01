@@ -7,7 +7,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class k extends MediaRouter2.TransferCallback {
     public final /* synthetic */ l a;
@@ -23,7 +23,7 @@ public final class k extends MediaRouter2.TransferCallback {
             Log.w("MR2Provider", "onStop: No matching routeController found. routingController=" + routingController);
             return;
         }
-        e eVar = (e) this.a.s.b;
+        e eVar = (e) this.a.s.a;
         if (sVar != eVar.e) {
             int i10 = e.F;
             return;
@@ -39,7 +39,7 @@ public final class k extends MediaRouter2.TransferCallback {
         a0 a0Var;
         this.a.v.remove(routingController);
         if (routingController2 == this.a.r.getSystemController()) {
-            e eVar = (e) this.a.s.b;
+            e eVar = (e) this.a.s.a;
             a0 c3 = eVar.c();
             if (eVar.e() != c3) {
                 eVar.j(c3, 3);
@@ -55,7 +55,7 @@ public final class k extends MediaRouter2.TransferCallback {
         int i10 = 0;
         String id2 = androidx.emoji2.text.w.d(selectedRoutes.get(0)).getId();
         this.a.v.put(routingController2, new h(this.a, routingController2, id2));
-        e eVar2 = (e) this.a.s.b;
+        e eVar2 = (e) this.a.s.a;
         ArrayList arrayList = eVar2.j;
         int size = arrayList.size();
         while (true) {

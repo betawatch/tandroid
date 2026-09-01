@@ -7,29 +7,29 @@ import android.text.style.ImageSpan;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class sh implements TextWatcher {
     public boolean a;
     public boolean b;
-    public final /* synthetic */ li c;
+    public final /* synthetic */ mi c;
 
-    public sh(li liVar) {
-        this.c = liVar;
+    public sh(mi miVar) {
+        this.c = miVar;
     }
 
     @Override // android.text.TextWatcher
     public final void afterTextChanged(Editable editable) {
         boolean z4;
         int i10;
-        li liVar = this.c;
-        k6 k6Var = liVar.v;
-        qh qhVar = liVar.B0;
-        k6 k6Var2 = liVar.s;
+        mi miVar = this.c;
+        k6 k6Var = miVar.v;
+        qh qhVar = miVar.B0;
+        k6 k6Var2 = miVar.s;
         if (this.b != TextUtils.isEmpty(editable)) {
-            di diVar = liVar.v0;
-            if (diVar != null) {
-                diVar.B(diVar.getSelectedItemsCount());
+            ei eiVar = miVar.v0;
+            if (eiVar != null) {
+                eiVar.B(eiVar.getSelectedItemsCount());
             }
             this.b = !this.b;
         }
@@ -42,10 +42,10 @@ public final class sh implements TextWatcher {
             this.a = false;
         }
         int codePointCount = Character.codePointCount(editable, 0, editable.length());
-        liVar.I = codePointCount;
-        liVar.e.a(codePointCount > 0, true);
-        int i11 = liVar.H;
-        if (i11 <= 0 || (i10 = i11 - liVar.I) > 100) {
+        miVar.I = codePointCount;
+        miVar.e.a(codePointCount > 0, true);
+        int i11 = miVar.H;
+        if (i11 <= 0 || (i10 = i11 - miVar.I) > 100) {
             k6Var2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new a9(this, 3));
             k6Var.setAlpha(0.0f);
             z4 = true;
@@ -64,26 +64,26 @@ public final class sh implements TextWatcher {
             k6Var2.animate().setListener(null).cancel();
             k6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
             if (i10 < 0) {
-                k6Var2.setTextColor(liVar.getThemedColor(org.telegram.ui.ActionBar.j6.p7));
+                k6Var2.setTextColor(miVar.getThemedColor(org.telegram.ui.ActionBar.k6.p7));
                 z4 = false;
             } else {
-                k6Var2.setTextColor(liVar.getThemedColor(org.telegram.ui.ActionBar.j6.y6));
+                k6Var2.setTextColor(miVar.getThemedColor(org.telegram.ui.ActionBar.k6.y6));
                 z4 = true;
             }
             k6Var.c(LocaleController.formatNumber(j10, ','), false, true);
             k6Var.setAlpha(1.0f);
         }
-        if (liVar.R0 != z4) {
-            liVar.R0 = z4;
-            liVar.F0.invalidate();
+        if (miVar.R0 != z4) {
+            miVar.R0 = z4;
+            miVar.F0.invalidate();
         }
-        if (!liVar.Z) {
+        if (!miVar.Z) {
             if (qhVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(qhVar.getText().toString().trim())) {
                 z10 = true;
             }
-            liVar.M1(z10);
+            miVar.M1(z10);
         }
-        liVar.d1(true);
+        miVar.d1(true);
     }
 
     @Override // android.text.TextWatcher
@@ -91,14 +91,14 @@ public final class sh implements TextWatcher {
         if (i12 - i11 >= 1) {
             this.a = true;
         }
-        li liVar = this.c;
-        if (liVar.y2 == null) {
-            li.Q(liVar);
+        mi miVar = this.c;
+        if (miVar.y2 == null) {
+            mi.Q(miVar);
         }
-        if (liVar.y2.getAdapter() != null) {
-            liVar.y2.setReversed(false);
-            liVar.y2.getAdapter().U(charSequence, liVar.B0.getEditText().getSelectionStart(), null, false, false);
-            liVar.U1();
+        if (miVar.y2.getAdapter() != null) {
+            miVar.y2.setReversed(false);
+            miVar.y2.getAdapter().U(charSequence, miVar.B0.getEditText().getSelectionStart(), null, false, false);
+            miVar.U1();
         }
     }
 

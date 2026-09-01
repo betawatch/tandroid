@@ -6,15 +6,15 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class vo extends org.telegram.ui.Components.eo0 {
-    public final /* synthetic */ dp r;
+public final class vo extends org.telegram.ui.Components.fo0 {
+    public final /* synthetic */ ep r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vo(dp dpVar, Context context, dg.u3 u3Var, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, u3Var, f6Var, false);
-        this.r = dpVar;
+    public vo(ep epVar, Context context, eg.s3 s3Var, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, s3Var, g6Var, false);
+        this.r = epVar;
     }
 
     @Override // android.widget.ScrollView, android.view.ViewGroup

@@ -15,7 +15,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class g {
     public final SharedPreferences a;
@@ -130,16 +130,16 @@ public final class g {
 
     public final synchronized void h(String str) {
         try {
-            String e = e(str);
-            if (e == null) {
+            String e6 = e(str);
+            if (e6 == null) {
                 return;
             }
-            HashSet hashSet = new HashSet(this.a.getStringSet(e, new HashSet()));
+            HashSet hashSet = new HashSet(this.a.getStringSet(e6, new HashSet()));
             hashSet.remove(str);
             if (hashSet.isEmpty()) {
-                this.a.edit().remove(e).commit();
+                this.a.edit().remove(e6).commit();
             } else {
-                this.a.edit().putStringSet(e, hashSet).commit();
+                this.a.edit().putStringSet(e6, hashSet).commit();
             }
         } catch (Throwable th2) {
             throw th2;
@@ -165,11 +165,11 @@ public final class g {
     public final synchronized void k(long j10, String str) {
         String d = d(j10);
         if (this.a.getString("last-used-date", "").equals(d)) {
-            String e = e(d);
-            if (e == null) {
+            String e6 = e(d);
+            if (e6 == null) {
                 return;
             }
-            if (e.equals(str)) {
+            if (e6.equals(str)) {
                 return;
             }
             m(str, d);

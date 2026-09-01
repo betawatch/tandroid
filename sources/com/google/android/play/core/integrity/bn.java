@@ -9,11 +9,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.play.core.integrity.StandardIntegrityManager;
 import java.util.ArrayList;
-import k7.w5;
+import k7.x5;
 import o8.f0;
 import o8.j0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 final class bn {
     final o8.c a;
@@ -58,7 +58,7 @@ final class bn {
         bundle.putIntegerArrayList("request.verdict.opt.out", new ArrayList<>(standardIntegrityTokenRequest.verdictOptOut()));
         ArrayList arrayList = new ArrayList();
         arrayList.add(new o8.s(5, System.currentTimeMillis()));
-        bundle.putParcelableArrayList("event_timestamps", new ArrayList<>(w5.a(arrayList)));
+        bundle.putParcelableArrayList("event_timestamps", new ArrayList<>(x5.a(arrayList)));
         return bundle;
     }
 
@@ -72,7 +72,7 @@ final class bn {
         bundle.putInt("webview.request.mode", 0);
         ArrayList arrayList = new ArrayList();
         arrayList.add(new o8.s(4, System.currentTimeMillis()));
-        bundle.putParcelableArrayList("event_timestamps", new ArrayList<>(w5.a(arrayList)));
+        bundle.putParcelableArrayList("event_timestamps", new ArrayList<>(x5.a(arrayList)));
         return bundle;
     }
 

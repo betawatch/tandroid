@@ -1,23 +1,20 @@
 package j7;
 
-import android.util.Log;
+import java.nio.ByteBuffer;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class d7 {
-    public static void a(Exception exc, String str, Object... objArr) {
-        if (Log.isLoggable("Vision", 6)) {
-            if (Log.isLoggable("Vision", 3)) {
-                Log.e("Vision", String.format(str, objArr), exc);
-                return;
-            }
-            String format = String.format(str, objArr);
-            String valueOf = String.valueOf(exc);
-            StringBuilder sb = new StringBuilder(valueOf.length() + format.length() + 2);
-            sb.append(format);
-            sb.append(": ");
-            sb.append(valueOf);
-            Log.e("Vision", sb.toString());
+    public e4.c a(e4.e eVar) {
+        ByteBuffer byteBuffer = eVar.d;
+        byteBuffer.getClass();
+        h5.a.f(byteBuffer.position() == 0 && byteBuffer.hasArray() && byteBuffer.arrayOffset() == 0);
+        if (eVar.e(TLObject.FLAG_31)) {
+            return null;
         }
+        return b(eVar, byteBuffer);
     }
+
+    public abstract e4.c b(e4.e eVar, ByteBuffer byteBuffer);
 }

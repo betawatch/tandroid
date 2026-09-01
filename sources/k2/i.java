@@ -4,7 +4,7 @@ import android.content.res.ColorStateList;
 import android.graphics.Paint;
 import b4.e0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class i extends l {
     public e0 d;
@@ -21,7 +21,7 @@ public final class i extends l {
 
     @Override // k2.k
     public final boolean a() {
-        return this.f.k() || this.d.k();
+        return this.f.l() || this.d.l();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:8:0x0027  */
@@ -34,14 +34,14 @@ public final class i extends l {
         e0 e0Var;
         e0 e0Var2 = this.f;
         boolean z10 = true;
-        if (e0Var2.k()) {
+        if (e0Var2.l()) {
             ColorStateList colorStateList = (ColorStateList) e0Var2.d;
             int colorForState = colorStateList.getColorForState(iArr, colorStateList.getDefaultColor());
             if (colorForState != e0Var2.b) {
                 e0Var2.b = colorForState;
                 z4 = true;
                 e0Var = this.d;
-                if (e0Var.k()) {
+                if (e0Var.l()) {
                     ColorStateList colorStateList2 = (ColorStateList) e0Var.d;
                     int colorForState2 = colorStateList2.getColorForState(iArr, colorStateList2.getDefaultColor());
                     if (colorForState2 != e0Var.b) {
@@ -55,7 +55,7 @@ public final class i extends l {
         }
         z4 = false;
         e0Var = this.d;
-        if (e0Var.k()) {
+        if (e0Var.l()) {
         }
         z10 = false;
         return z4 | z10;

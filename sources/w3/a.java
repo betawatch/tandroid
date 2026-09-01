@@ -15,7 +15,7 @@ import r3.v;
 import s8.i0;
 import z3.j;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a implements k {
     public m b;
@@ -33,19 +33,19 @@ public final class a implements k {
         b(new e4.b[0]);
         m mVar = this.b;
         mVar.getClass();
-        mVar.f1();
-        this.b.g2(new n(-9223372036854775807L));
+        mVar.i1();
+        this.b.m2(new n(-9223372036854775807L));
         this.c = 6;
     }
 
     public final void b(e4.b... bVarArr) {
         m mVar = this.b;
         mVar.getClass();
-        v c22 = mVar.c2(1024, 4);
+        v i22 = mVar.i2(1024, 4);
         m0 m0Var = new m0();
         m0Var.n = "image/jpeg";
         m0Var.i = new e4.c(bVarArr);
-        c22.b(new n0(m0Var));
+        i22.b(new n0(m0Var));
     }
 
     @Override // r3.k
@@ -81,7 +81,7 @@ public final class a implements k {
         w wVar = this.a;
         if (i11 == 0) {
             wVar.C(2);
-            ((h) lVar).d(wVar.a, 0, 2, false);
+            ((h) lVar).c(wVar.a, 0, 2, false);
             int z4 = wVar.z();
             this.d = z4;
             if (z4 == 65498) {
@@ -99,7 +99,7 @@ public final class a implements k {
         }
         if (i11 == 1) {
             wVar.C(2);
-            ((h) lVar).d(wVar.a, 0, 2, false);
+            ((h) lVar).c(wVar.a, 0, 2, false);
             this.e = wVar.z() - 2;
             this.c = 2;
             return 0;
@@ -131,7 +131,7 @@ public final class a implements k {
                 return 1;
             }
             h hVar = (h) lVar;
-            if (!hVar.h(wVar.a, 0, 1, true)) {
+            if (!hVar.f(wVar.a, 0, 1, true)) {
                 a();
                 return 0;
             }
@@ -159,14 +159,14 @@ public final class a implements k {
         }
         if (this.d == 65505) {
             w wVar2 = new w(this.e);
-            ((h) lVar).d(wVar2.a, 0, this.e, false);
+            ((h) lVar).c(wVar2.a, 0, this.e, false);
             if (this.g == null && "http://ns.adobe.com/xap/1.0/".equals(wVar2.p()) && (p10 = wVar2.p()) != null) {
                 long j14 = ((h) lVar).c;
                 if (j14 != -1) {
                     try {
                         cVar = d.a(p10);
-                    } catch (r1 | NumberFormatException | XmlPullParserException e) {
-                        h5.a.L("MotionPhotoXmpParser", "Ignoring unexpected XMP metadata", e);
+                    } catch (r1 | NumberFormatException | XmlPullParserException e6) {
+                        h5.a.L("MotionPhotoXmpParser", "Ignoring unexpected XMP metadata", e6);
                         cVar = null;
                     }
                     if (cVar != null && (i10 = (i0Var = (i0) cVar.c).d) >= 2) {
@@ -215,7 +215,7 @@ public final class a implements k {
                 }
             }
         } else {
-            ((h) lVar).u(this.e);
+            ((h) lVar).s(this.e);
         }
         this.c = 0;
         return 0;
@@ -226,24 +226,24 @@ public final class a implements k {
         h hVar = (h) lVar;
         w wVar = this.a;
         wVar.C(2);
-        hVar.h(wVar.a, 0, 2, false);
+        hVar.f(wVar.a, 0, 2, false);
         if (wVar.z() == 65496) {
             wVar.C(2);
-            hVar.h(wVar.a, 0, 2, false);
+            hVar.f(wVar.a, 0, 2, false);
             int z4 = wVar.z();
             this.d = z4;
             if (z4 == 65504) {
                 wVar.C(2);
-                hVar.h(wVar.a, 0, 2, false);
+                hVar.f(wVar.a, 0, 2, false);
                 hVar.a(wVar.z() - 2, false);
                 wVar.C(2);
-                hVar.h(wVar.a, 0, 2, false);
+                hVar.f(wVar.a, 0, 2, false);
                 this.d = wVar.z();
             }
             if (this.d == 65505) {
                 hVar.a(2, false);
                 wVar.C(6);
-                hVar.h(wVar.a, 0, 6, false);
+                hVar.f(wVar.a, 0, 6, false);
                 if (wVar.v() == 1165519206 && wVar.z() == 0) {
                     return true;
                 }

@@ -1,50 +1,314 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
+import android.util.LongSparseArray;
+import android.widget.FrameLayout;
+import j$.util.Comparator$-CC;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ak0 implements h5.d {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ pk0 b;
+public final class ak0 extends FrameLayout {
+    public zj0 B;
+    public zj0 C;
+    public xj0 D;
+    public final ArrayList E;
+    public final ArrayList F;
+    public xa0 G;
+    public final org.telegram.ui.ActionBar.g6 H;
+    public int a;
+    public final int b;
+    public final MessageObject c;
+    public final TLRPC.Reaction d;
+    public final sj0 e;
+    public final tj0 f;
+    public final vj0 h;
+    public final ArrayList n;
+    public final LongSparseArray r;
+    public String s;
+    public boolean v;
+    public boolean w;
+    public boolean x;
+    public yj0 y;
 
-    public /* synthetic */ ak0(pk0 pk0Var, int i10) {
-        this.a = i10;
-        this.b = pk0Var;
+    public ak0(Context context, org.telegram.ui.ActionBar.g6 g6Var, int i10, MessageObject messageObject, TLRPC.ReactionCount reactionCount, boolean z4) {
+        super(context);
+        this.n = new ArrayList();
+        this.r = new LongSparseArray();
+        this.x = true;
+        ArrayList arrayList = new ArrayList();
+        this.E = arrayList;
+        this.F = new ArrayList();
+        this.b = i10;
+        this.c = messageObject;
+        TLRPC.Reaction reaction = reactionCount == null ? null : reactionCount.reaction;
+        this.d = reaction;
+        this.H = g6Var;
+        this.a = reactionCount == null ? 6 : reactionCount.count;
+        sj0 sj0Var = new sj0(this, context, g6Var);
+        this.e = sj0Var;
+        f2.j0 j0Var = new f2.j0();
+        sj0Var.setLayoutManager(j0Var);
+        if (Build.VERSION.SDK_INT >= 29) {
+            sj0Var.setVerticalScrollbarThumbDrawable(new ColorDrawable(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.i6, false)));
+        }
+        tj0 tj0Var = new tj0(this, i10, context, g6Var, z4);
+        this.f = tj0Var;
+        sj0Var.setAdapter(tj0Var);
+        sj0Var.setOnItemClickListener(new k(this, 10));
+        sj0Var.setOnItemLongClickListener(new hv(this, 14));
+        sj0Var.j(new uj0(this, j0Var));
+        sj0Var.setVerticalScrollBarEnabled(true);
+        sj0Var.setAlpha(0.0f);
+        addView(sj0Var, k7.c6.c(-1.0f, -1));
+        vj0 vj0Var = new vj0(this, context, g6Var);
+        this.h = vj0Var;
+        vj0Var.f(org.telegram.ui.ActionBar.k6.G8, org.telegram.ui.ActionBar.k6.i6, -1);
+        vj0Var.setIsSingleCell(true);
+        vj0Var.setItemsCount(this.a);
+        addView(vj0Var, k7.c6.c(-1.0f, -1));
+        if (reaction != null && (reaction instanceof TLRPC.TL_reactionCustomEmoji) && !MessagesController.getInstance(i10).premiumFeaturesBlocked()) {
+            arrayList.clear();
+            arrayList.add(ng.q0.d(reaction));
+            i();
+        }
+        vj0Var.setViewType(arrayList.isEmpty() ? 16 : 23);
     }
 
-    @Override // h5.d
-    public final void accept(Object obj) {
-        View view = (View) obj;
-        switch (this.a) {
-            case 0:
-                pk0 pk0Var = this.b;
-                ArrayList arrayList = pk0Var.d;
-                pk0Var.b.getClass();
-                int R = RecyclerView.R(view);
-                if (R >= 0 && R < arrayList.size() && (view instanceof nk0)) {
-                    ((nk0) view).f(((gk0) arrayList.get(R)).c, true);
-                    break;
+    public static /* synthetic */ void a(ak0 ak0Var, TLObject tLObject) {
+        ArrayList arrayList = ak0Var.E;
+        LongSparseArray longSparseArray = ak0Var.r;
+        ArrayList arrayList2 = ak0Var.n;
+        int i10 = ak0Var.b;
+        if (!(tLObject instanceof TLRPC.TL_messages_messageReactionsList)) {
+            ak0Var.v = false;
+            return;
+        }
+        TLRPC.TL_messages_messageReactionsList tL_messages_messageReactionsList = (TLRPC.TL_messages_messageReactionsList) tLObject;
+        MessagesController.getInstance(i10).putUsers(tL_messages_messageReactionsList.users, false);
+        MessagesController.getInstance(i10).putChats(tL_messages_messageReactionsList.chats, false);
+        HashSet hashSet = new HashSet();
+        for (int i11 = 0; i11 < tL_messages_messageReactionsList.reactions.size(); i11++) {
+            arrayList2.add(tL_messages_messageReactionsList.reactions.get(i11));
+            long peerId = MessageObject.getPeerId(tL_messages_messageReactionsList.reactions.get(i11).peer_id);
+            ArrayList arrayList3 = (ArrayList) longSparseArray.get(peerId);
+            if (arrayList3 == null) {
+                arrayList3 = new ArrayList();
+            }
+            int i12 = 0;
+            while (i12 < arrayList3.size()) {
+                if (((TLRPC.MessagePeerReaction) arrayList3.get(i12)).reaction == null) {
+                    arrayList3.remove(i12);
+                    i12--;
                 }
-                break;
-            default:
-                if (view instanceof nk0) {
-                    nk0 nk0Var = (nk0) view;
-                    mk0 mk0Var = nk0Var.b;
-                    nk0Var.K = false;
-                    mk0Var.setAlpha(1.0f);
-                    if (!this.b.K0) {
-                        nk0Var.d();
-                        break;
-                    } else {
-                        mk0Var.setScaleX(nk0Var.F * (nk0Var.w ? 0.76f : 1.0f));
-                        mk0Var.setScaleY(nk0Var.F * (nk0Var.w ? 0.76f : 1.0f));
-                        break;
+                i12++;
+            }
+            ng.q0 d = ng.q0.d(tL_messages_messageReactionsList.reactions.get(i11).reaction);
+            if (d.g != 0) {
+                hashSet.add(d);
+            }
+            arrayList3.add(tL_messages_messageReactionsList.reactions.get(i11));
+            longSparseArray.put(peerId, arrayList3);
+        }
+        if (ak0Var.d == null) {
+            arrayList.clear();
+            arrayList.addAll(hashSet);
+            ak0Var.i();
+        }
+        Collections.sort(arrayList2, Comparator$-CC.comparingInt(new lf.d(18)));
+        ak0Var.f.l();
+        if (!ak0Var.w) {
+            ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
+            duration.setInterpolator(pr.f);
+            duration.addUpdateListener(new k70(ak0Var, 5));
+            duration.addListener(new pd0(ak0Var, 5));
+            duration.start();
+            ak0Var.j();
+            ak0Var.w = true;
+        }
+        String str = tL_messages_messageReactionsList.next_offset;
+        ak0Var.s = str;
+        if (str == null) {
+            ak0Var.x = false;
+        }
+        ak0Var.v = false;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public int getLoadCount() {
+        return this.d == null ? 100 : 50;
+    }
+
+    public final void c() {
+        this.v = true;
+        int i10 = this.b;
+        MessagesController messagesController = MessagesController.getInstance(i10);
+        TLRPC.TL_messages_getMessageReactionsList tL_messages_getMessageReactionsList = new TLRPC.TL_messages_getMessageReactionsList();
+        MessageObject messageObject = this.c;
+        tL_messages_getMessageReactionsList.peer = messagesController.getInputPeer(messageObject.getDialogId());
+        tL_messages_getMessageReactionsList.id = messageObject.getId();
+        tL_messages_getMessageReactionsList.limit = getLoadCount();
+        TLRPC.Reaction reaction = this.d;
+        tL_messages_getMessageReactionsList.reaction = reaction;
+        String str = this.s;
+        tL_messages_getMessageReactionsList.offset = str;
+        if (reaction != null) {
+            tL_messages_getMessageReactionsList.flags = 1 | tL_messages_getMessageReactionsList.flags;
+        }
+        if (str != null) {
+            tL_messages_getMessageReactionsList.flags |= 2;
+        }
+        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getMessageReactionsList, new y1(this, 11), 64);
+    }
+
+    public final void d(org.telegram.ui.te teVar) {
+        this.D = teVar;
+    }
+
+    public final void e(org.telegram.ui.d7 d7Var) {
+        this.y = d7Var;
+    }
+
+    public final void f(org.telegram.ui.vf vfVar) {
+        this.C = vfVar;
+    }
+
+    public final void g(org.telegram.ui.uf ufVar) {
+        this.B = ufVar;
+    }
+
+    public final void h(List list) {
+        ArrayList arrayList = this.n;
+        if (arrayList != null && !arrayList.isEmpty()) {
+            Iterator it = list.iterator();
+            while (it.hasNext()) {
+                pj0 pj0Var = (pj0) it.next();
+                TLObject tLObject = pj0Var.a;
+                if (pj0Var.c > 0) {
+                    int i10 = 0;
+                    while (true) {
+                        if (i10 < arrayList.size()) {
+                            TLRPC.MessagePeerReaction messagePeerReaction = (TLRPC.MessagePeerReaction) arrayList.get(i10);
+                            if (messagePeerReaction != null && messagePeerReaction.date <= 0 && MessageObject.getPeerId(messagePeerReaction.peer_id) == pj0Var.b) {
+                                messagePeerReaction.date = pj0Var.c;
+                                messagePeerReaction.dateIsSeen = true;
+                                break;
+                            }
+                            i10++;
+                        } else {
+                            break;
+                        }
                     }
                 }
-                break;
+            }
         }
+        ArrayList arrayList2 = new ArrayList(list.size());
+        Iterator it2 = list.iterator();
+        while (it2.hasNext()) {
+            pj0 pj0Var2 = (pj0) it2.next();
+            long j10 = pj0Var2.b;
+            TLObject tLObject2 = pj0Var2.a;
+            LongSparseArray longSparseArray = this.r;
+            if (((ArrayList) longSparseArray.get(j10)) == null) {
+                TLRPC.TL_messagePeerReaction tL_messagePeerReaction = new TLRPC.TL_messagePeerReaction();
+                tL_messagePeerReaction.reaction = null;
+                if (tLObject2 instanceof TLRPC.User) {
+                    TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
+                    tL_messagePeerReaction.peer_id = tL_peerUser;
+                    tL_peerUser.user_id = ((TLRPC.User) tLObject2).id;
+                } else if (tLObject2 instanceof TLRPC.Chat) {
+                    TLRPC.TL_peerChat tL_peerChat = new TLRPC.TL_peerChat();
+                    tL_messagePeerReaction.peer_id = tL_peerChat;
+                    tL_peerChat.chat_id = ((TLRPC.Chat) tLObject2).id;
+                }
+                tL_messagePeerReaction.date = pj0Var2.c;
+                tL_messagePeerReaction.dateIsSeen = true;
+                ArrayList arrayList3 = new ArrayList();
+                arrayList3.add(tL_messagePeerReaction);
+                longSparseArray.put(MessageObject.getPeerId(tL_messagePeerReaction.peer_id), arrayList3);
+                arrayList2.add(tL_messagePeerReaction);
+            }
+        }
+        arrayList.isEmpty();
+        arrayList.addAll(arrayList2);
+        Collections.sort(arrayList, Comparator$-CC.comparingInt(new lf.d(17)));
+        this.f.l();
+        j();
+    }
+
+    public final void i() {
+        int i10;
+        ArrayList arrayList = this.F;
+        arrayList.clear();
+        ArrayList arrayList2 = new ArrayList();
+        HashSet hashSet = new HashSet();
+        int i11 = 0;
+        while (true) {
+            ArrayList arrayList3 = this.E;
+            int size = arrayList3.size();
+            i10 = this.b;
+            if (i11 >= size) {
+                break;
+            }
+            TLRPC.InputStickerSet inputStickerSet = MessageObject.getInputStickerSet(l5.f(i10, ((ng.q0) arrayList3.get(i11)).g));
+            if (inputStickerSet != null && !hashSet.contains(Long.valueOf(inputStickerSet.id))) {
+                arrayList2.add(inputStickerSet);
+                hashSet.add(Long.valueOf(inputStickerSet.id));
+            }
+            i11++;
+        }
+        if (MessagesController.getInstance(i10).premiumFeaturesBlocked()) {
+            return;
+        }
+        arrayList.addAll(arrayList2);
+        xa0 xa0Var = new xa0(this.b, getContext(), this.H, arrayList2, 1);
+        this.G = xa0Var;
+        xa0Var.H = false;
+    }
+
+    public final void j() {
+        if (this.y != null) {
+            int size = this.n.size();
+            if (size == 0) {
+                size = this.a;
+            }
+            int dp = AndroidUtilities.dp(size * 50);
+            xa0 xa0Var = this.G;
+            if (xa0Var != null) {
+                dp = org.telegram.messenger.y3.C(8.0f, xa0Var.getMeasuredHeight(), dp);
+            }
+            sj0 sj0Var = this.e;
+            if (sj0Var.getMeasuredHeight() != 0) {
+                dp = Math.min(sj0Var.getMeasuredHeight(), dp);
+            }
+            this.y.a(this, dp);
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        if (this.w || this.v) {
+            return;
+        }
+        c();
+    }
+
+    public void setPredictiveCount(int i10) {
+        this.a = i10;
+        this.h.setItemsCount(i10);
     }
 }

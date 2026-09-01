@@ -1,34 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class x40 extends FrameLayout {
-    public View a;
-    public TextView b;
-    public jj0 c;
-    public LinearLayout d;
+public interface x40 {
+    void D(float f10);
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
-    }
+    void K(boolean z4, boolean z10);
 
-    public void setGravity(int i10) {
-        this.b.setGravity(i10);
-    }
+    void P();
 
-    public void setText(CharSequence charSequence) {
-        this.b.setText(charSequence);
-    }
+    void Q(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, boolean z4, TLRPC.VideoSize videoSize);
 
-    public void setTextColor(int i10) {
-        this.b.setTextColor(i10);
-    }
+    boolean e();
+
+    org.telegram.ui.lu0 getCloseIntoObject();
+
+    String getInitialSearchString();
+
+    boolean u();
 }

@@ -17,9 +17,9 @@ import b4.f0;
 import b4.g0;
 import b4.h0;
 import b4.i0;
-import com.google.firebase.messaging.p;
+import com.google.firebase.messaging.q;
 import e0.o0;
-import e0.q;
+import e0.p;
 import e0.q0;
 import e0.r;
 import e0.t;
@@ -33,14 +33,13 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import l7.w0;
-import lh.m5;
-import o2.o;
+import mh.m5;
 import org.telegram.messenger.NotificationsController;
-import org.telegram.ui.Components.bz0;
-import org.telegram.ui.Components.dz0;
+import org.telegram.ui.Components.cz0;
+import org.telegram.ui.Components.ez0;
 import r3.m;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class k implements b0 {
     public int a;
@@ -295,7 +294,7 @@ public final class k implements b0 {
             if (f0Var.m) {
                 return;
             }
-            f0Var.k.f1();
+            f0Var.k.i1();
             f0Var.l = 0;
             f0Var.m = true;
             return;
@@ -304,7 +303,7 @@ public final class k implements b0 {
         int i24 = i13 == 1 ? 0 : f0Var.l - 1;
         f0Var.l = i24;
         if (i24 == 0) {
-            f0Var.k.f1();
+            f0Var.k.i1();
             f0Var.m = true;
         }
     }
@@ -324,12 +323,12 @@ public final class k implements b0 {
             return;
         }
         iArr[i10] = 1;
-        for (bz0 bz0Var : ((bz0[][]) this.c)[i10]) {
-            f(bz0Var.a.b);
-            bz0[] bz0VarArr = (bz0[]) this.b;
+        for (cz0 cz0Var : ((cz0[][]) this.c)[i10]) {
+            f(cz0Var.a.b);
+            cz0[] cz0VarArr = (cz0[]) this.b;
             int i11 = this.a;
             this.a = i11 - 1;
-            bz0VarArr[i11] = bz0Var;
+            cz0VarArr[i11] = cz0Var;
         }
         iArr[i10] = 2;
     }
@@ -347,7 +346,7 @@ public final class k implements b0 {
         Notification.BubbleMetadata bubbleMetadata;
         int i11;
         Notification.BubbleMetadata a2;
-        f0.i iVar;
+        f0.h hVar;
         Bundle bundle;
         ArrayList arrayList;
         int i12;
@@ -423,7 +422,7 @@ public final class k implements b0 {
                 d1.f.y(builder, i17);
             }
             if (i19 >= 29) {
-                p.g(builder);
+                q.g(builder);
             }
             if (i19 >= 31) {
                 e0.h0.a(builder);
@@ -598,27 +597,27 @@ public final class k implements b0 {
                 if (i11 >= 29) {
                     return;
                 }
-                p.e((Notification.Builder) this.c, tVar.C);
+                q.e((Notification.Builder) this.c, tVar.C);
                 Notification.Builder builder5 = (Notification.Builder) this.c;
                 r rVar = tVar.D;
                 if (rVar != null) {
                     if (i11 >= 30) {
-                        a2 = q.a(rVar);
+                        a2 = e0.q.a(rVar);
                     } else if (i11 == 29) {
-                        a2 = e0.p.a(rVar);
+                        a2 = p.a(rVar);
                     }
-                    p.f(builder5, a2);
-                    iVar = tVar.A;
-                    if (iVar == null) {
-                        p.i((Notification.Builder) this.c, iVar.b);
+                    q.f(builder5, a2);
+                    hVar = tVar.A;
+                    if (hVar == null) {
+                        q.i((Notification.Builder) this.c, hVar.b);
                         return;
                     }
                     return;
                 }
                 a2 = bubbleMetadata;
-                p.f(builder5, a2);
-                iVar = tVar.A;
-                if (iVar == null) {
+                q.f(builder5, a2);
+                hVar = tVar.A;
+                if (hVar == null) {
                 }
             }
         }
@@ -636,7 +635,7 @@ public final class k implements b0 {
     }
 
     public k(g5.l lVar, r3.i iVar) {
-        m5 m5Var = new m5(iVar, 14);
+        m5 m5Var = new m5(iVar, 5);
         w0 w0Var = new w0(14);
         ab.a aVar = new ab.a(7);
         this.b = lVar;
@@ -646,9 +645,9 @@ public final class k implements b0 {
         this.a = 1048576;
     }
 
-    public k(l3.o0 o0Var, o oVar, byte[] bArr, h5.c[] cVarArr, int i10) {
+    public k(l3.o0 o0Var, r3.x xVar, byte[] bArr, h5.c[] cVarArr, int i10) {
         this.b = o0Var;
-        this.c = oVar;
+        this.c = xVar;
         this.d = bArr;
         this.e = cVarArr;
         this.a = i10;
@@ -662,30 +661,30 @@ public final class k implements b0 {
         this.a = i10;
     }
 
-    public k(dz0 dz0Var, bz0[] bz0VarArr) {
-        this.e = dz0Var;
-        int length = bz0VarArr.length;
-        this.b = new bz0[length];
+    public k(ez0 ez0Var, cz0[] cz0VarArr) {
+        this.e = ez0Var;
+        int length = cz0VarArr.length;
+        this.b = new cz0[length];
         this.a = length - 1;
-        int e = dz0Var.e() + 1;
-        bz0[][] bz0VarArr2 = new bz0[e][];
-        int[] iArr = new int[e];
-        for (bz0 bz0Var : bz0VarArr) {
-            int i10 = bz0Var.a.a;
+        int e6 = ez0Var.e() + 1;
+        cz0[][] cz0VarArr2 = new cz0[e6][];
+        int[] iArr = new int[e6];
+        for (cz0 cz0Var : cz0VarArr) {
+            int i10 = cz0Var.a.a;
             iArr[i10] = iArr[i10] + 1;
         }
-        for (int i11 = 0; i11 < e; i11++) {
-            bz0VarArr2[i11] = new bz0[iArr[i11]];
+        for (int i11 = 0; i11 < e6; i11++) {
+            cz0VarArr2[i11] = new cz0[iArr[i11]];
         }
         Arrays.fill(iArr, 0);
-        for (bz0 bz0Var2 : bz0VarArr) {
-            int i12 = bz0Var2.a.a;
-            bz0[] bz0VarArr3 = bz0VarArr2[i12];
+        for (cz0 cz0Var2 : cz0VarArr) {
+            int i12 = cz0Var2.a.a;
+            cz0[] cz0VarArr3 = cz0VarArr2[i12];
             int i13 = iArr[i12];
             iArr[i12] = i13 + 1;
-            bz0VarArr3[i13] = bz0Var2;
+            cz0VarArr3[i13] = cz0Var2;
         }
-        this.c = bz0VarArr2;
-        this.d = new int[((dz0) this.e).e() + 1];
+        this.c = cz0VarArr2;
+        this.d = new int[((ez0) this.e).e() + 1];
     }
 }

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class g1 extends f2.x {
     public final /* synthetic */ l1 S;
@@ -43,7 +43,7 @@ public final class g1 extends f2.x {
         return false;
     }
 
-    @Override // f2.w, f2.i0, f2.v0
+    @Override // f2.w, f2.j0, f2.w0
     public final boolean y0() {
         return false;
     }

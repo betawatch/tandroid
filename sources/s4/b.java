@@ -1,9 +1,9 @@
 package s4;
 
 import java.util.Arrays;
-import k7.a7;
+import k7.b7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class b {
     public final String a;
@@ -26,7 +26,7 @@ public final class b {
             return false;
         }
         b bVar = (b) obj;
-        return this.c == bVar.c && this.d == bVar.d && a7.a(this.a, bVar.a) && a7.a(this.b, bVar.b);
+        return this.c == bVar.c && this.d == bVar.d && b7.a(this.a, bVar.a) && b7.a(this.b, bVar.b);
     }
 
     public final int hashCode() {

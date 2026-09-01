@@ -7,7 +7,7 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.telephony.TelephonyManager;
 import android.util.SparseArray;
-import j7.i0;
+import j7.j0;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Calendar;
@@ -15,11 +15,11 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.TimeZone;
 import org.telegram.messenger.MediaDataController;
-import vh.p1;
-import vh.v2;
+import org.telegram.ui.Components.ai;
+import org.telegram.ui.yh;
 import w9.d;
 import x2.c;
-import x2.f;
+import x2.e;
 import x2.g;
 import x2.h;
 import x2.i;
@@ -34,12 +34,12 @@ import x2.s;
 import x2.t;
 import x2.u;
 import x2.v;
-import z2.e;
+import z2.f;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final class b implements e {
-    public final p1 a;
+public final class b implements f {
+    public final ai a;
     public final ConnectivityManager b;
     public final Context c;
     public final URL d;
@@ -50,25 +50,25 @@ public final class b implements e {
     public b(Context context, h3.a aVar, h3.a aVar2) {
         d dVar = new d();
         c cVar = c.a;
-        dVar.d(o.class, cVar);
-        dVar.d(i.class, cVar);
-        f fVar = f.a;
-        dVar.d(s.class, fVar);
-        dVar.d(l.class, fVar);
+        dVar.b(o.class, cVar);
+        dVar.b(i.class, cVar);
+        x2.f fVar = x2.f.a;
+        dVar.b(s.class, fVar);
+        dVar.b(l.class, fVar);
         x2.d dVar2 = x2.d.a;
-        dVar.d(q.class, dVar2);
-        dVar.d(j.class, dVar2);
+        dVar.b(q.class, dVar2);
+        dVar.b(j.class, dVar2);
         x2.b bVar = x2.b.a;
-        dVar.d(x2.a.class, bVar);
-        dVar.d(h.class, bVar);
-        x2.e eVar = x2.e.a;
-        dVar.d(r.class, eVar);
-        dVar.d(k.class, eVar);
+        dVar.b(x2.a.class, bVar);
+        dVar.b(h.class, bVar);
+        e eVar = e.a;
+        dVar.b(r.class, eVar);
+        dVar.b(k.class, eVar);
         g gVar = g.a;
-        dVar.d(v.class, gVar);
-        dVar.d(n.class, gVar);
+        dVar.b(v.class, gVar);
+        dVar.b(n.class, gVar);
         dVar.d = true;
-        this.a = new p1(dVar);
+        this.a = new ai(dVar, 19);
         this.c = context;
         this.b = (ConnectivityManager) context.getSystemService("connectivity");
         this.d = b(a.c);
@@ -80,8 +80,8 @@ public final class b implements e {
     public static URL b(String str) {
         try {
             return new URL(str);
-        } catch (MalformedURLException e) {
-            throw new IllegalArgumentException(v2.e("Invalid url: ", str), e);
+        } catch (MalformedURLException e6) {
+            throw new IllegalArgumentException(yh.k("Invalid url: ", str), e6);
         }
     }
 
@@ -149,8 +149,8 @@ public final class b implements e {
             c3.c("mcc_mnc", ((TelephonyManager) context.getSystemService("phone")).getSimOperator());
             try {
                 i11 = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
-            } catch (PackageManager.NameNotFoundException e) {
-                i0.b("CctTransportBackend", "Unable to find version code for package", e);
+            } catch (PackageManager.NameNotFoundException e6) {
+                j0.b("CctTransportBackend", "Unable to find version code for package", e6);
             }
             c3.c("application_build", Integer.toString(i11));
             return c3.j();

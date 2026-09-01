@@ -1,35 +1,14 @@
 package j7;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
+import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class o8 {
-    public static HashMap a(gc.a aVar) {
-        HashMap hashMap = new HashMap();
-        HashMap hashMap2 = new HashMap();
-        hashMap2.put("number", p8.e(aVar.a));
-        hashMap2.put("cvc", p8.e(aVar.b));
-        hashMap2.put("exp_month", aVar.c);
-        hashMap2.put("exp_year", aVar.d);
-        hashMap2.put("name", p8.e(aVar.e));
-        hashMap2.put("currency", p8.e(aVar.n));
-        hashMap2.put("address_line1", p8.e(aVar.f));
-        hashMap2.put("address_line2", p8.e(aVar.g));
-        hashMap2.put("address_city", p8.e(aVar.h));
-        hashMap2.put("address_zip", p8.e(aVar.j));
-        hashMap2.put("address_state", p8.e(aVar.i));
-        hashMap2.put("address_country", p8.e(aVar.k));
-        Iterator it = new HashSet(hashMap2.keySet()).iterator();
-        while (it.hasNext()) {
-            String str = (String) it.next();
-            if (hashMap2.get(str) == null) {
-                hashMap2.remove(str);
-            }
+    public static String a(String str) {
+        if (BuildConfig.BETA_URL.equals(str) || "".equals(str)) {
+            return null;
         }
-        hashMap.put("card", hashMap2);
-        return hashMap;
+        return str;
     }
 }

@@ -8,7 +8,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class s7 extends i7 {
     public final /* synthetic */ u7 n;
@@ -19,11 +19,11 @@ public final class s7 extends i7 {
         this.n = u7Var;
     }
 
-    @Override // f2.o0
-    public final void v(f2.l1 l1Var, int i10) {
-        m7 m7Var = (m7) l1Var.a;
+    @Override // f2.p0
+    public final void v(f2.m1 m1Var, int i10) {
+        m7 m7Var = (m7) m1Var.a;
         org.telegram.ui.Cells.h7 h7Var = (org.telegram.ui.Cells.h7) m7Var.b.getChildAt(0);
-        mh.a aVar = ((o7) this.e.get(i10)).d;
+        nh.a aVar = ((o7) this.e.get(i10)).d;
         boolean z4 = aVar == m7Var.getTag();
         boolean z10 = i10 != this.e.size() - 1;
         m7Var.setTag(aVar);
@@ -92,13 +92,13 @@ public final class s7 extends i7 {
         m7Var.a.a(this.n.f.j.contains(aVar), z4);
     }
 
-    @Override // f2.o0
-    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+    @Override // f2.p0
+    public final f2.m1 x(ViewGroup viewGroup, int i10) {
         m7 m7Var = new m7(this, viewGroup.getContext(), 1);
         m7Var.e = 3;
         r7 r7Var = new r7(this, viewGroup.getContext(), m7Var);
         r7Var.setCheckForButtonPress(true);
         m7Var.b.addView(r7Var);
-        return new org.telegram.ui.Components.el0(m7Var);
+        return new org.telegram.ui.Components.fl0(m7Var);
     }
 }

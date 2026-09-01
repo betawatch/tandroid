@@ -6,7 +6,7 @@ import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Semaphore;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class d {
     public w1.a a;
@@ -66,11 +66,11 @@ public final class d {
             executor.execute(aVar.a);
             return;
         }
-        int b10 = m1.j.b(aVar.b);
-        if (b10 == 1) {
+        int c3 = m1.j.c(aVar.b);
+        if (c3 == 1) {
             throw new IllegalStateException("Cannot execute task: the task is already running.");
         }
-        if (b10 == 2) {
+        if (c3 == 2) {
             throw new IllegalStateException("Cannot execute task: the task has already been executed (a task can be executed only once)");
         }
         throw new IllegalStateException("We should never reach this state");

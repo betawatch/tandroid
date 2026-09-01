@@ -2,11 +2,11 @@ package org.telegram.ui.Cells;
 
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.oy;
+import org.telegram.ui.py;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class j2 extends nh.i7 {
+public final class j2 extends oh.i7 {
     public final /* synthetic */ r2 S;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -15,17 +15,17 @@ public final class j2 extends nh.i7 {
         this.S = r2Var;
     }
 
-    @Override // nh.i7
+    @Override // oh.i7
     public final boolean c(TLRPC.Chat chat, TLRPC.User user) {
         return (((chat == null || chat.linked_community_id == 0) && (user == null || user.linked_community_id == 0)) || this.S.L0) ? false : true;
     }
 
-    @Override // nh.i7
+    @Override // oh.i7
     public final boolean d(long j10) {
         r2 r2Var = this.S;
         int i10 = r2Var.C0;
-        oy oyVar = r2Var.w4;
-        if (oyVar == null || r2Var.L0) {
+        py pyVar = r2Var.w4;
+        if (pyVar == null || r2Var.L0) {
             return false;
         }
         if (j10 > 0) {
@@ -33,18 +33,18 @@ public final class j2 extends nh.i7 {
             if (user == null || user.linked_community_id == 0) {
                 return false;
             }
-            oyVar.showDialog(new sh.i0(oyVar, user.linked_community_id));
+            pyVar.showDialog(new th.i0(pyVar, user.linked_community_id));
             return true;
         }
         TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-j10));
         if (chat == null || chat.linked_community_id == 0) {
             return false;
         }
-        oyVar.showDialog(new sh.i0(oyVar, chat.linked_community_id));
+        pyVar.showDialog(new th.i0(pyVar, chat.linked_community_id));
         return true;
     }
 
-    @Override // nh.i7
+    @Override // oh.i7
     public final void e() {
         r2 r2Var = this.S;
         n2 n2Var = r2Var.a0;
@@ -54,7 +54,7 @@ public final class j2 extends nh.i7 {
         n2Var.f(r2Var);
     }
 
-    @Override // nh.i7
+    @Override // oh.i7
     public final void f(long j10) {
         r2 r2Var = this.S;
         n2 n2Var = r2Var.a0;

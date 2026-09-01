@@ -11,7 +11,6 @@ import android.os.Build;
 import android.text.TextUtils;
 import android.util.Log;
 import androidx.biometric.f0;
-import cg.r0;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -23,7 +22,8 @@ import com.google.firebase.crashlytics.CrashlyticsRegistrar;
 import com.google.firebase.installations.FirebaseInstallationsRegistrar;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.FirebaseMessagingRegistrar;
-import dg.q3;
+import dg.q0;
+import eg.o3;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
@@ -35,20 +35,18 @@ import java.util.Locale;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.atomic.AtomicReference;
-import m.s3;
+import m.r3;
+import oh.h4;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.ui.ActionBar.c2;
-import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.Cells.f1;
-import org.telegram.ui.Components.qk0;
+import org.telegram.ui.web.e0;
 import org.telegram.ui.yh;
 import q5.g0;
-import vh.v2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class w implements g5.l, c9.f, ba.a, c9.e, r0, Continuation, v2.e, OnFailureListener, c2 {
+public final /* synthetic */ class w implements g5.l, c9.f, ba.a, c9.e, Continuation, v2.e, q0, OnFailureListener {
     public final /* synthetic */ int a;
 
     public /* synthetic */ w(int i10) {
@@ -59,18 +57,18 @@ public final /* synthetic */ class w implements g5.l, c9.f, ba.a, c9.e, r0, Cont
         return (MediaRoute2Info) obj;
     }
 
-    @Override // cg.r0
+    @Override // dg.q0
     public Typeface a() {
         switch (this.a) {
-            case 9:
+            case 19:
                 return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM);
-            case 10:
+            case 20:
                 return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC);
-            case 11:
+            case 21:
                 return Typeface.create("serif", 1);
-            case 12:
+            case 22:
                 return AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf");
-            case 13:
+            case 23:
                 return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO);
             default:
                 return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD);
@@ -81,7 +79,7 @@ public final /* synthetic */ class w implements g5.l, c9.f, ba.a, c9.e, r0, Cont
     public Object apply(Object obj) {
         ia.e eVar = (ia.e) obj;
         eVar.getClass();
-        s5.m mVar = com.google.firebase.messaging.o.a;
+        s5.m mVar = com.google.firebase.messaging.p.a;
         mVar.getClass();
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         try {
@@ -99,20 +97,6 @@ public final /* synthetic */ class w implements g5.l, c9.f, ba.a, c9.e, r0, Cont
     @Override // g5.l
     public g5.m createDataSource() {
         return new g5.c(ApplicationLoader.applicationContext);
-    }
-
-    @Override // ba.a
-    public void f(ba.b bVar) {
-        switch (this.a) {
-            case 7:
-                return;
-            default:
-                if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                    Log.d("FirebaseCrashlytics", "AnalyticsConnector now available.", null);
-                }
-                bVar.get().getClass();
-                throw new ClassCastException();
-        }
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(47:39|40|41|(1:43)|44|(1:46)|(1:48)(1:163)|49|(4:52|(2:54|55)(1:57)|56|50)|58|59|(1:61)|62|63|(1:65)(1:162)|(1:67)(1:161)|68|(5:148|(1:150)|151|3a9|156)(1:72)|73|(25:77|(1:79)(2:144|(1:146))|80|81|(2:83|(1:85))(2:140|(2:142|143))|86|87|88|89|90|91|92|93|94|95|96|97|98|99|100|101|102|103|104|(4:121|(1:123)|117|118)(6:112|(1:114)|115|116|117|118))|147|81|(0)(0)|86|87|88|89|90|91|92|93|94|95|96|97|98|99|100|101|102|103|104|(2:106|108)|121|(0)|117|118) */
@@ -160,7 +144,7 @@ public final /* synthetic */ class w implements g5.l, c9.f, ba.a, c9.e, r0, Cont
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public Object f0(c5.j jVar) {
+    public Object e0(c5.j jVar) {
         ca.d lambda$getComponents$0;
         FirebaseMessaging lambda$getComponents$02;
         String str;
@@ -182,25 +166,18 @@ public final /* synthetic */ class w implements g5.l, c9.f, ba.a, c9.e, r0, Cont
             case 8:
                 lambda$getComponents$0 = FirebaseInstallationsRegistrar.lambda$getComponents$0(jVar);
                 return lambda$getComponents$0;
-            case 19:
-                lambda$getComponents$02 = FirebaseMessagingRegistrar.lambda$getComponents$0(jVar);
-                return lambda$getComponents$02;
-            case 21:
-                return (ScheduledExecutorService) ExecutorsRegistrar.a.get();
-            case 22:
-                return (ScheduledExecutorService) ExecutorsRegistrar.c.get();
-            case 23:
-                return (ScheduledExecutorService) ExecutorsRegistrar.b.get();
-            case 24:
-                c9.p pVar = ExecutorsRegistrar.a;
-                return d9.l.a;
+            case 9:
+            case 10:
+            case 11:
+            case 12:
+            case 14:
             default:
                 int i11 = CrashlyticsRegistrar.a;
                 w8.g gVar2 = (w8.g) jVar.a(w8.g.class);
-                c9.r u10 = jVar.u(f9.a.class);
-                c9.r u11 = jVar.u(x8.a.class);
+                c9.r s6 = jVar.s(f9.a.class);
+                c9.r s9 = jVar.s(x8.a.class);
                 ca.d dVar = (ca.d) jVar.a(ca.d.class);
-                c9.r u12 = jVar.u(ka.a.class);
+                c9.r s10 = jVar.s(ka.a.class);
                 gVar2.a();
                 Context context = gVar2.a;
                 String packageName = context.getPackageName();
@@ -208,8 +185,8 @@ public final /* synthetic */ class w implements g5.l, c9.f, ba.a, c9.e, r0, Cont
                 n9.b bVar = new n9.b(context);
                 i9.s sVar = new i9.s(gVar2);
                 i9.w wVar2 = new i9.w(context, packageName, dVar, sVar);
-                f9.a aVar2 = new f9.a(u10);
-                f fVar = new f(u11);
+                f9.a aVar2 = new f9.a(s6);
+                f fVar = new f(s9);
                 ExecutorService a2 = i9.h.a("Crashlytics Exception Handler");
                 i9.k kVar = new i9.k(sVar, bVar);
                 ma.c cVar = ma.c.a;
@@ -227,22 +204,22 @@ public final /* synthetic */ class w implements g5.l, c9.f, ba.a, c9.e, r0, Cont
                 }
                 String str3 = str;
                 i9.w wVar3 = wVar2;
-                i9.p pVar2 = new i9.p(gVar2, wVar3, aVar2, sVar, new e9.a(fVar), new e9.a(fVar), bVar, a2, kVar, new f0(u12, 13));
+                i9.p pVar = new i9.p(gVar2, wVar3, aVar2, sVar, new e9.a(fVar), new e9.a(fVar), bVar, a2, kVar, new f0(s10, 13));
                 gVar2.a();
                 String str4 = gVar2.c.b;
-                int e = i9.h.e(context, "com.google.firebase.crashlytics.mapping_file_id", "string");
-                if (e == 0) {
-                    e = i9.h.e(context, "com.crashlytics.android.build_id", "string");
+                int e6 = i9.h.e(context, "com.google.firebase.crashlytics.mapping_file_id", "string");
+                if (e6 == 0) {
+                    e6 = i9.h.e(context, "com.crashlytics.android.build_id", "string");
                 }
-                String string = e != 0 ? context.getResources().getString(e) : str3;
+                String string = e6 != 0 ? context.getResources().getString(e6) : str3;
                 ArrayList arrayList = new ArrayList();
-                int e6 = i9.h.e(context, "com.google.firebase.crashlytics.build_ids_lib", "array");
-                int e10 = i9.h.e(context, "com.google.firebase.crashlytics.build_ids_arch", "array");
-                int e11 = i9.h.e(context, "com.google.firebase.crashlytics.build_ids_build_id", "array");
-                if (e6 == 0 || e10 == 0 || e11 == 0) {
+                int e10 = i9.h.e(context, "com.google.firebase.crashlytics.build_ids_lib", "array");
+                int e11 = i9.h.e(context, "com.google.firebase.crashlytics.build_ids_arch", "array");
+                int e12 = i9.h.e(context, "com.google.firebase.crashlytics.build_ids_build_id", "array");
+                if (e10 == 0 || e11 == 0 || e12 == 0) {
                     wVar = wVar3;
                     i10 = 3;
-                    String format = String.format("Could not find resources: %d %d %d", Integer.valueOf(e6), Integer.valueOf(e10), Integer.valueOf(e11));
+                    String format = String.format("Could not find resources: %d %d %d", Integer.valueOf(e10), Integer.valueOf(e11), Integer.valueOf(e12));
                     if (Log.isLoggable("FirebaseCrashlytics", 3)) {
                         th2 = null;
                         Log.d("FirebaseCrashlytics", format, null);
@@ -250,9 +227,9 @@ public final /* synthetic */ class w implements g5.l, c9.f, ba.a, c9.e, r0, Cont
                         th2 = null;
                     }
                 } else {
-                    String[] stringArray = context.getResources().getStringArray(e6);
-                    String[] stringArray2 = context.getResources().getStringArray(e10);
-                    String[] stringArray3 = context.getResources().getStringArray(e11);
+                    String[] stringArray = context.getResources().getStringArray(e10);
+                    String[] stringArray2 = context.getResources().getStringArray(e11);
+                    String[] stringArray3 = context.getResources().getStringArray(e12);
                     if (stringArray.length == stringArray3.length && stringArray2.length == stringArray3.length) {
                         int i12 = 0;
                         while (i12 < stringArray3.length) {
@@ -272,9 +249,9 @@ public final /* synthetic */ class w implements g5.l, c9.f, ba.a, c9.e, r0, Cont
                     th2 = null;
                     i10 = 3;
                 }
-                String e12 = v2.e("Mapping file ID is: ", string);
+                String k10 = yh.k("Mapping file ID is: ", string);
                 if (Log.isLoggable("FirebaseCrashlytics", i10)) {
-                    Log.d("FirebaseCrashlytics", e12, th2);
+                    Log.d("FirebaseCrashlytics", k10, th2);
                 }
                 int size = arrayList.size();
                 int i14 = 0;
@@ -307,10 +284,10 @@ public final /* synthetic */ class w implements g5.l, c9.f, ba.a, c9.e, r0, Cont
                     String str10 = a11.g;
                     String c10 = wVar4.c();
                     db.a aVar4 = new db.a(9);
-                    qk0 qk0Var = new qk0(aVar4, 5);
+                    e0 e0Var = new e0(aVar4, 3);
                     f1 f1Var = new f1(bVar);
                     Locale locale = Locale.US;
-                    com.google.android.gms.internal.clearcut.e eVar2 = new com.google.android.gms.internal.clearcut.e(android.support.v4.media.a.o("https://firebase-settings.crashlytics.com/spi/v2/platforms/android/gmp/", str4, "/settings"), aVar3);
+                    hc.a aVar5 = new hc.a(android.support.v4.media.a.o("https://firebase-settings.crashlytics.com/spi/v2/platforms/android/gmp/", str4, "/settings"), aVar3);
                     String str11 = Build.MANUFACTURER;
                     String str12 = i9.w.h;
                     String z11 = android.support.v4.media.a.z(str11.replaceAll(str12, ""), "/", Build.MODEL.replaceAll(str12, ""));
@@ -351,11 +328,11 @@ public final /* synthetic */ class w implements g5.l, c9.f, ba.a, c9.e, r0, Cont
                     gVar3.a = context;
                     gVar3.b = cVar3;
                     gVar3.d = aVar4;
-                    gVar3.c = qk0Var;
+                    gVar3.c = e0Var;
                     gVar3.e = f1Var;
-                    gVar3.f = eVar2;
+                    gVar3.f = aVar5;
                     gVar3.g = sVar;
-                    atomicReference.set(z9.d.G(aVar4));
+                    atomicReference.set(z9.d.X(aVar4));
                     AtomicReference atomicReference2 = (AtomicReference) gVar3.i;
                     AtomicReference atomicReference3 = (AtomicReference) gVar3.h;
                     if (!((Context) gVar3.a).getSharedPreferences("com.google.firebase.crashlytics", 0).getString("existing_instance_identifier", "").equals(((p9.c) gVar3.b).f) || (c3 = gVar3.c(1)) == null) {
@@ -374,16 +351,16 @@ public final /* synthetic */ class w implements g5.l, c9.f, ba.a, c9.e, r0, Cont
                         i9.x xVar = new i9.x(0, taskCompletionSource);
                         task2.continueWith(a12, xVar);
                         task.continueWith(a12, xVar);
-                        onSuccessTask = taskCompletionSource.getTask().onSuccessTask(a12, new o2.o(gVar3, 11));
+                        onSuccessTask = taskCompletionSource.getTask().onSuccessTask(a12, new h4(gVar3, 9));
                     } else {
                         atomicReference3.set(c3);
                         ((TaskCompletionSource) atomicReference2.get()).trySetResult(c3);
                         onSuccessTask = Tasks.forResult(null);
                     }
                     onSuccessTask.continueWith(a12, new ab.a(6));
-                    com.google.firebase.messaging.r rVar = pVar2.l;
-                    n9.b bVar2 = pVar2.h;
-                    Context context2 = pVar2.a;
+                    sf.e eVar2 = pVar.l;
+                    n9.b bVar2 = pVar.h;
+                    Context context2 = pVar.a;
                     if (context2 != null && (resources = context2.getResources()) != null) {
                         int e14 = i9.h.e(context2, "com.crashlytics.RequireBuildId", "bool");
                         if (e14 > 0) {
@@ -426,112 +403,133 @@ public final /* synthetic */ class w implements g5.l, c9.f, ba.a, c9.e, r0, Cont
                                 throw new IllegalStateException("The Crashlytics build ID is missing. This occurs when the Crashlytics Gradle plugin is missing from your app's build configuration. Please review the Firebase Crashlytics onboarding instructions at https://firebase.google.com/docs/crashlytics/get-started?platform=android#add-plugin");
                             }
                         }
-                        new i9.f(pVar2.g);
+                        new i9.f(pVar.g);
                         String str15 = i9.f.b;
                         int i18 = 14;
-                        pVar2.e = new f7.b(i18, "crash_marker", bVar2);
-                        pVar2.d = new f7.b(i18, "initialization_marker", bVar2);
-                        s3 s3Var = new s3(str15, bVar2, rVar);
+                        pVar.e = new f7.b(i18, "crash_marker", bVar2);
+                        pVar.d = new f7.b(i18, "initialization_marker", bVar2);
+                        r3 r3Var = new r3(str15, bVar2, eVar2);
                         j9.e eVar3 = new j9.e(bVar2);
                         q9.a[] aVarArr = new q9.a[1];
                         aVarArr[0] = new z9.d(20);
                         g0 g0Var = new g0(aVarArr);
-                        ((c9.r) pVar2.o.b).a(new f0.d(3));
-                        i9.a aVar5 = aVar;
-                        a9.a k10 = a9.a.k(pVar2.a, pVar2.g, pVar2.h, aVar5, eVar3, s3Var, g0Var, gVar3, pVar2.c, pVar2.m);
+                        ((c9.r) pVar.o.b).a(new f5.u(1));
+                        i9.a aVar6 = aVar;
+                        a9.a k11 = a9.a.k(pVar.a, pVar.g, pVar.h, aVar6, eVar3, r3Var, g0Var, gVar3, pVar.c, pVar.m);
                         gVar = gVar3;
-                        pVar2.f = new i9.n(pVar2.a, pVar2.l, pVar2.g, pVar2.b, pVar2.h, pVar2.e, aVar5, s3Var, eVar3, k10, pVar2.n, pVar2.j, pVar2.m);
-                        f7.b bVar3 = pVar2.d;
+                        pVar.f = new i9.n(pVar.a, pVar.l, pVar.g, pVar.b, pVar.h, pVar.e, aVar6, r3Var, eVar3, k11, pVar.n, pVar.j, pVar.m);
+                        f7.b bVar3 = pVar.d;
                         n9.b bVar4 = (n9.b) bVar3.c;
                         String str16 = (String) bVar3.b;
                         bVar4.getClass();
                         exists = new File(bVar4.b, str16).exists();
                         z10 = true;
                         z10 = true;
-                        Boolean.TRUE.equals((Boolean) i9.y.a(rVar.V(new i9.o(pVar2, z10 ? 1 : 0))));
-                        i9.n nVar = pVar2.f;
+                        Boolean.TRUE.equals((Boolean) i9.y.a(eVar2.H(new i9.o(pVar, z10 ? 1 : 0))));
+                        i9.n nVar = pVar.f;
                         Thread.UncaughtExceptionHandler defaultUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
-                        nVar.e.V(new h2.g(2, nVar, str15));
-                        i9.r rVar2 = new i9.r(new o5.i(nVar, 21), gVar, defaultUncaughtExceptionHandler, nVar.j);
-                        nVar.n = rVar2;
-                        Thread.setDefaultUncaughtExceptionHandler(rVar2);
+                        nVar.e.H(new h2.g(2, nVar, str15));
+                        i9.r rVar = new i9.r(new y5.h(nVar, 20), gVar, defaultUncaughtExceptionHandler, nVar.j);
+                        nVar.n = rVar;
+                        Thread.setDefaultUncaughtExceptionHandler(rVar);
                         if (exists || (context2.checkCallingOrSelfPermission("android.permission.ACCESS_NETWORK_STATE") == 0 && ((activeNetworkInfo = ((ConnectivityManager) context2.getSystemService("connectivity")).getActiveNetworkInfo()) == null || !activeNetworkInfo.isConnectedOrConnecting()))) {
                             if (Log.isLoggable(str2, 3)) {
                                 Log.d(str2, "Successfully configured exception handler.", null);
                             }
-                            Tasks.call(a12, new e9.b(z10, pVar2, gVar));
-                            return new e9.c(pVar2);
+                            Tasks.call(a12, new e9.b(z10, pVar, gVar));
+                            return new e9.c(pVar);
                         }
                         if (Log.isLoggable(str2, 3)) {
                             Log.d(str2, "Crashlytics did not finish previous background initialization. Initializing synchronously.", null);
                         }
-                        pVar2.b(gVar);
+                        pVar.b(gVar);
                         z10 = false;
-                        Tasks.call(a12, new e9.b(z10, pVar2, gVar));
-                        return new e9.c(pVar2);
+                        Tasks.call(a12, new e9.b(z10, pVar, gVar));
+                        return new e9.c(pVar);
                     }
                     aVar = a11;
                     z4 = true;
                     String str142 = aVar.b;
                     if (z4) {
                     }
-                    new i9.f(pVar2.g);
+                    new i9.f(pVar.g);
                     String str152 = i9.f.b;
                     int i182 = 14;
-                    pVar2.e = new f7.b(i182, "crash_marker", bVar2);
-                    pVar2.d = new f7.b(i182, "initialization_marker", bVar2);
-                    s3 s3Var2 = new s3(str152, bVar2, rVar);
+                    pVar.e = new f7.b(i182, "crash_marker", bVar2);
+                    pVar.d = new f7.b(i182, "initialization_marker", bVar2);
+                    r3 r3Var2 = new r3(str152, bVar2, eVar2);
                     j9.e eVar32 = new j9.e(bVar2);
                     q9.a[] aVarArr2 = new q9.a[1];
                     aVarArr2[0] = new z9.d(20);
                     g0 g0Var2 = new g0(aVarArr2);
-                    ((c9.r) pVar2.o.b).a(new f0.d(3));
-                    i9.a aVar52 = aVar;
-                    a9.a k102 = a9.a.k(pVar2.a, pVar2.g, pVar2.h, aVar52, eVar32, s3Var2, g0Var2, gVar3, pVar2.c, pVar2.m);
+                    ((c9.r) pVar.o.b).a(new f5.u(1));
+                    i9.a aVar62 = aVar;
+                    a9.a k112 = a9.a.k(pVar.a, pVar.g, pVar.h, aVar62, eVar32, r3Var2, g0Var2, gVar3, pVar.c, pVar.m);
                     gVar = gVar3;
-                    pVar2.f = new i9.n(pVar2.a, pVar2.l, pVar2.g, pVar2.b, pVar2.h, pVar2.e, aVar52, s3Var2, eVar32, k102, pVar2.n, pVar2.j, pVar2.m);
-                    f7.b bVar32 = pVar2.d;
+                    pVar.f = new i9.n(pVar.a, pVar.l, pVar.g, pVar.b, pVar.h, pVar.e, aVar62, r3Var2, eVar32, k112, pVar.n, pVar.j, pVar.m);
+                    f7.b bVar32 = pVar.d;
                     n9.b bVar42 = (n9.b) bVar32.c;
                     String str162 = (String) bVar32.b;
                     bVar42.getClass();
                     exists = new File(bVar42.b, str162).exists();
                     z10 = true;
                     z10 = true;
-                    Boolean.TRUE.equals((Boolean) i9.y.a(rVar.V(new i9.o(pVar2, z10 ? 1 : 0))));
-                    i9.n nVar2 = pVar2.f;
+                    Boolean.TRUE.equals((Boolean) i9.y.a(eVar2.H(new i9.o(pVar, z10 ? 1 : 0))));
+                    i9.n nVar2 = pVar.f;
                     Thread.UncaughtExceptionHandler defaultUncaughtExceptionHandler2 = Thread.getDefaultUncaughtExceptionHandler();
-                    nVar2.e.V(new h2.g(2, nVar2, str152));
-                    i9.r rVar22 = new i9.r(new o5.i(nVar2, 21), gVar, defaultUncaughtExceptionHandler2, nVar2.j);
-                    nVar2.n = rVar22;
-                    Thread.setDefaultUncaughtExceptionHandler(rVar22);
+                    nVar2.e.H(new h2.g(2, nVar2, str152));
+                    i9.r rVar2 = new i9.r(new y5.h(nVar2, 20), gVar, defaultUncaughtExceptionHandler2, nVar2.j);
+                    nVar2.n = rVar2;
+                    Thread.setDefaultUncaughtExceptionHandler(rVar2);
                     if (exists) {
                     }
                     if (Log.isLoggable(str2, 3)) {
                     }
-                    Tasks.call(a12, new e9.b(z10, pVar2, gVar));
-                    return new e9.c(pVar2);
+                    Tasks.call(a12, new e9.b(z10, pVar, gVar));
+                    return new e9.c(pVar);
                 } catch (PackageManager.NameNotFoundException e16) {
                     Log.e("FirebaseCrashlytics", "Error retrieving app package info.", e16);
                     return null;
                 }
+            case 13:
+                lambda$getComponents$02 = FirebaseMessagingRegistrar.lambda$getComponents$0(jVar);
+                return lambda$getComponents$02;
+            case 15:
+                return (ScheduledExecutorService) ExecutorsRegistrar.a.get();
+            case 16:
+                return (ScheduledExecutorService) ExecutorsRegistrar.c.get();
+            case 17:
+                return (ScheduledExecutorService) ExecutorsRegistrar.b.get();
+            case 18:
+                c9.p pVar2 = ExecutorsRegistrar.a;
+                return d9.l.a;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c2
-    public void i(d2 d2Var, int i10) {
-        d2Var.dismiss();
+    @Override // ba.a
+    public void f(ba.b bVar) {
+        switch (this.a) {
+            case 7:
+                return;
+            default:
+                if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                    Log.d("FirebaseCrashlytics", "AnalyticsConnector now available.", null);
+                }
+                bVar.get().getClass();
+                throw new ClassCastException();
+        }
     }
 
     @Override // com.google.android.gms.tasks.OnFailureListener
     public void onFailure(Exception exc) {
-        int i10 = q3.o0;
+        int i10 = o3.o0;
     }
 
     @Override // com.google.android.gms.tasks.Continuation
     public Object then(Task task) {
         int i10;
         switch (this.a) {
-            case 16:
+            case 10:
                 i10 = 403;
                 break;
             default:

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import s8.v;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class k extends m implements r4.h {
     public final n n;
@@ -16,17 +16,22 @@ public final class k extends m implements r4.h {
     }
 
     @Override // r4.h
-    public final long S() {
+    public final boolean A() {
+        return this.n.i();
+    }
+
+    @Override // r4.h
+    public final long C() {
         return this.n.d;
     }
 
     @Override // r4.h
-    public final long U(long j10) {
+    public final long F(long j10) {
         return this.n.d(j10);
     }
 
     @Override // r4.h
-    public final long W(long j10, long j11) {
+    public final long I(long j10, long j11) {
         return this.n.b(j10, j11);
     }
 
@@ -46,17 +51,17 @@ public final class k extends m implements r4.h {
     }
 
     @Override // r4.h
-    public final long e(long j10, long j11) {
+    public final long h(long j10, long j11) {
         return this.n.e(j10, j11);
     }
 
     @Override // r4.h
-    public final long j(long j10, long j11) {
+    public final long m(long j10, long j11) {
         return this.n.c(j10, j11);
     }
 
     @Override // r4.h
-    public final long k(long j10, long j11) {
+    public final long n(long j10, long j11) {
         n nVar = this.n;
         if (nVar.f != null) {
             return -9223372036854775807L;
@@ -66,18 +71,13 @@ public final class k extends m implements r4.h {
     }
 
     @Override // r4.h
-    public final j l(long j10) {
+    public final j p(long j10) {
         return this.n.h(this, j10);
     }
 
     @Override // r4.h
-    public final long q(long j10, long j11) {
+    public final long t(long j10, long j11) {
         return this.n.f(j10, j11);
-    }
-
-    @Override // r4.h
-    public final boolean w() {
-        return this.n.i();
     }
 
     @Override // s4.m

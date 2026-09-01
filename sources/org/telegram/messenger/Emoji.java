@@ -26,9 +26,9 @@ import java.util.Map;
 import org.telegram.messenger.CompoundEmoji;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.mq;
+import org.telegram.ui.Components.oq;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class Emoji {
     private static final String[] DEFAULT_RECENT;
@@ -50,7 +50,7 @@ public class Emoji {
     private static final HashMap<CharSequence, DrawableInfo> rects = new HashMap<>();
     private static boolean inited = false;
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class DrawableInfo {
         public int emojiIndex;
         public byte page;
@@ -63,7 +63,7 @@ public class Emoji {
         }
     }
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class EmojiSpanRange {
         public CharSequence code;
         public int end;
@@ -123,7 +123,7 @@ public class Emoji {
         }
         if (num.intValue() == 0 && hashMap.size() >= 48) {
             ArrayList<String> arrayList = recentEmoji;
-            hashMap.remove((String) kh.a2.i(1, arrayList));
+            hashMap.remove((String) l.d.i(1, arrayList));
             arrayList.set(arrayList.size() - 1, str);
         }
         hashMap.put(str, Integer.valueOf(num.intValue() + 1));
@@ -294,8 +294,8 @@ public class Emoji {
                     try {
                         createBitmap.setPixels(iArr, 0, width, 0, 0, width, height);
                         bitmap = createBitmap;
-                    } catch (Exception e) {
-                        e = e;
+                    } catch (Exception e6) {
+                        e = e6;
                         bitmap2 = createBitmap;
                         FileLog.e(e);
                         bitmap = bitmap2;
@@ -304,12 +304,12 @@ public class Emoji {
                         loadingEmoji[b10][s6] = false;
                     }
                 }
-            } catch (Exception e6) {
-                e = e6;
+            } catch (Exception e10) {
+                e = e10;
                 bitmap2 = bitmap;
             }
-        } catch (Exception e10) {
-            e = e10;
+        } catch (Exception e11) {
+            e = e11;
         }
         if (bitmap != null) {
             emojiBmp[b10][s6] = bitmap;
@@ -418,8 +418,8 @@ public class Emoji {
                     }
                     globalEmojiSettings.edit().remove("emojis").commit();
                     saveRecentEmoji();
-                } catch (Exception e) {
-                    e = e;
+                } catch (Exception e6) {
+                    e = e6;
                     FileLog.e(e);
                     string = globalEmojiSettings.getString("color", "");
                     if (string != null) {
@@ -451,8 +451,8 @@ public class Emoji {
                 saveRecentEmoji();
             }
             sortEmoji();
-        } catch (Exception e6) {
-            e = e6;
+        } catch (Exception e10) {
+            e = e10;
         }
         try {
             string = globalEmojiSettings.getString("color", "");
@@ -463,8 +463,8 @@ public class Emoji {
                 String[] split3 = str3.split("=");
                 emojiColor.put(split3[0], split3[1]);
             }
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e11) {
+            FileLog.e(e11);
         }
     }
 
@@ -531,7 +531,7 @@ public class Emoji {
         while (it.hasNext()) {
             recentEmoji.add(it.next().getKey());
         }
-        Collections.sort(recentEmoji, new s(4));
+        Collections.sort(recentEmoji, new d(4));
         while (true) {
             ArrayList<String> arrayList = recentEmoji;
             if (arrayList.size() <= 48) {
@@ -542,7 +542,7 @@ public class Emoji {
         }
     }
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class EmojiSpan extends ImageSpan {
         public boolean drawn;
         public String emoji;
@@ -997,8 +997,8 @@ public class Emoji {
                     i20 = i11 + 1;
                     i19 = i252222;
                     i18 = -1;
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e6) {
+                    FileLog.e(e6);
                 }
             }
             if (iArr2 != null && sb.length() != 0) {
@@ -1074,14 +1074,14 @@ public class Emoji {
                     u5Var = new org.telegram.ui.Components.u5(0L, fontMetricsInt);
                 }
                 u5Var.emoji = emojiSpanRange.code.toString();
-            } catch (Exception e) {
-                e = e;
+            } catch (Exception e6) {
+                e = e6;
             }
             try {
                 u5Var.cacheType = i10;
                 newSpannable.setSpan(u5Var, emojiSpanRange.start, emojiSpanRange.end, 33);
-            } catch (Exception e6) {
-                e = e6;
+            } catch (Exception e10) {
+                e = e10;
                 FileLog.e(e);
                 i11 = Build.VERSION.SDK_INT;
                 if (i11 >= 23) {
@@ -1118,7 +1118,7 @@ public class Emoji {
             return charSequence;
         }
         org.telegram.ui.Components.u5[] u5VarArr = (org.telegram.ui.Components.u5[]) newSpannable.getSpans(0, newSpannable.length(), org.telegram.ui.Components.u5.class);
-        mq[] mqVarArr = (mq[]) newSpannable.getSpans(0, newSpannable.length(), mq.class);
+        oq[] oqVarArr = (oq[]) newSpannable.getSpans(0, newSpannable.length(), oq.class);
         int i14 = (SharedConfig.getDevicePerformanceClass() >= 2 ? 100 : 50) - i11;
         for (int i15 = 0; i15 < parseEmojis.size(); i15++) {
             try {
@@ -1129,10 +1129,10 @@ public class Emoji {
                         i13 = (u5Var != null && newSpannable.getSpanStart(u5Var) == emojiSpanRange.start && newSpannable.getSpanEnd(u5Var) == emojiSpanRange.end) ? 0 : i13 + 1;
                     }
                 }
-                if (mqVarArr != null && mqVarArr.length > 0) {
-                    while (i12 < mqVarArr.length) {
-                        mq mqVar = mqVarArr[i12];
-                        i12 = (mqVar != null && newSpannable.getSpanStart(mqVar) == emojiSpanRange.start && newSpannable.getSpanEnd(mqVar) == emojiSpanRange.end) ? 0 : i12 + 1;
+                if (oqVarArr != null && oqVarArr.length > 0) {
+                    while (i12 < oqVarArr.length) {
+                        oq oqVar = oqVarArr[i12];
+                        i12 = (oqVar != null && newSpannable.getSpanStart(oqVar) == emojiSpanRange.start && newSpannable.getSpanEnd(oqVar) == emojiSpanRange.end) ? 0 : i12 + 1;
                     }
                 }
                 EmojiDrawable emojiDrawable = getEmojiDrawable(emojiSpanRange.code);
@@ -1143,8 +1143,8 @@ public class Emoji {
                     emojiSpan.scale = f10;
                     newSpannable.setSpan(emojiSpan, emojiSpanRange.start, emojiSpanRange.end, 33);
                 }
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e6) {
+                FileLog.e(e6);
             }
             int i16 = Build.VERSION.SDK_INT;
             if ((i16 < 23 || i16 >= 29) && i15 + 1 >= i14) {
@@ -1154,7 +1154,7 @@ public class Emoji {
         return newSpannable;
     }
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static abstract class EmojiDrawable extends Drawable {
         public boolean fullSize = false;
         int placeholderColor = TLObject.FLAG_28;
@@ -1167,7 +1167,7 @@ public class Emoji {
         }
     }
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class SimpleEmojiDrawable extends EmojiDrawable {
         private static Paint paint = new Paint(2);
         private static Rect rect = new Rect();

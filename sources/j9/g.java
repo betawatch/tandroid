@@ -17,9 +17,9 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import vh.v2;
+import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class g {
     public static final Charset b = Charset.forName("UTF-8");
@@ -51,8 +51,8 @@ public final class g {
             String string = jSONArray.getString(i10);
             try {
                 arrayList.add(n.a(string));
-            } catch (Exception e) {
-                Log.w("FirebaseCrashlytics", "Failed de-serializing rollouts state. " + string, e);
+            } catch (Exception e6) {
+                Log.w("FirebaseCrashlytics", "Failed de-serializing rollouts state. " + string, e6);
             }
         }
         return arrayList;
@@ -63,9 +63,9 @@ public final class g {
         JSONArray jSONArray = new JSONArray();
         for (int i10 = 0; i10 < list.size(); i10++) {
             try {
-                jSONArray.put(new JSONObject(n.a.e(list.get(i10))));
-            } catch (JSONException e) {
-                Log.w("FirebaseCrashlytics", "Exception parsing rollout assignment!", e);
+                jSONArray.put(new JSONObject(n.a.d(list.get(i10))));
+            } catch (JSONException e6) {
+                Log.w("FirebaseCrashlytics", "Exception parsing rollout assignment!", e6);
             }
         }
         hashMap.put("rolloutsState", jSONArray);
@@ -81,7 +81,7 @@ public final class g {
     /* JADX WARN: Type inference failed for: r1v1, types: [long] */
     public final Map c(String str, boolean z4) {
         FileInputStream fileInputStream;
-        Exception e;
+        Exception e6;
         n9.b bVar = this.a;
         File b10 = z4 ? bVar.b(str, "internal-keys") : bVar.b(str, "keys");
         if (b10.exists()) {
@@ -95,9 +95,9 @@ public final class g {
                             HashMap a2 = a(i9.h.j(fileInputStream));
                             i9.h.c(fileInputStream, "Failed to close user metadata file.");
                             return a2;
-                        } catch (Exception e6) {
-                            e = e6;
-                            Log.w("FirebaseCrashlytics", "Error deserializing user metadata.", e);
+                        } catch (Exception e10) {
+                            e6 = e10;
+                            Log.w("FirebaseCrashlytics", "Error deserializing user metadata.", e6);
                             f(b10);
                             i9.h.c(fileInputStream, "Failed to close user metadata file.");
                             return Collections.EMPTY_MAP;
@@ -108,9 +108,9 @@ public final class g {
                         i9.h.c(closeable, "Failed to close user metadata file.");
                         throw th;
                     }
-                } catch (Exception e10) {
+                } catch (Exception e11) {
                     fileInputStream = null;
-                    e = e10;
+                    e6 = e11;
                 } catch (Throwable th3) {
                     th = th3;
                     i9.h.c(closeable, "Failed to close user metadata file.");
@@ -142,15 +142,15 @@ public final class g {
                             }
                             i9.h.c(fileInputStream, "Failed to close user metadata file.");
                             return optString;
-                        } catch (Exception e) {
-                            e = e;
+                        } catch (Exception e6) {
+                            e = e6;
                             Log.w("FirebaseCrashlytics", "Error deserializing user metadata.", e);
                             f(b10);
                             i9.h.c(fileInputStream, "Failed to close user metadata file.");
                             return null;
                         }
-                    } catch (Exception e6) {
-                        e = e6;
+                    } catch (Exception e10) {
+                        e = e10;
                         fileInputStream = null;
                     } catch (Throwable th2) {
                         th = th2;
@@ -163,9 +163,9 @@ public final class g {
                 closeable = r32;
             }
         }
-        String e10 = v2.e("No userId set for session ", str);
+        String k10 = yh.k("No userId set for session ", str);
         if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-            Log.d("FirebaseCrashlytics", e10, null);
+            Log.d("FirebaseCrashlytics", k10, null);
         }
         f(b10);
         return null;
@@ -181,8 +181,8 @@ public final class g {
             try {
                 jSONObject = new JSONObject(map).toString();
                 bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(b10), b));
-            } catch (Exception e) {
-                e = e;
+            } catch (Exception e6) {
+                e = e6;
             }
         } catch (Throwable th2) {
             th = th2;
@@ -191,8 +191,8 @@ public final class g {
             bufferedWriter.write(jSONObject);
             bufferedWriter.flush();
             i9.h.c(bufferedWriter, "Failed to close key/value metadata file.");
-        } catch (Exception e6) {
-            e = e6;
+        } catch (Exception e10) {
+            e = e10;
             bufferedWriter2 = bufferedWriter;
             Log.w("FirebaseCrashlytics", "Error serializing key/value metadata.", e);
             f(b10);
@@ -206,7 +206,7 @@ public final class g {
     }
 
     public final void h(String str, List list) {
-        String e;
+        String e6;
         BufferedWriter bufferedWriter;
         File b10 = this.a.b(str, "rollouts-state");
         if (list.isEmpty()) {
@@ -216,20 +216,20 @@ public final class g {
         BufferedWriter bufferedWriter2 = null;
         try {
             try {
-                e = e(list);
+                e6 = e(list);
                 bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(b10), b));
-            } catch (Exception e6) {
-                e = e6;
+            } catch (Exception e10) {
+                e = e10;
             }
         } catch (Throwable th2) {
             th = th2;
         }
         try {
-            bufferedWriter.write(e);
+            bufferedWriter.write(e6);
             bufferedWriter.flush();
             i9.h.c(bufferedWriter, "Failed to close rollouts state file.");
-        } catch (Exception e10) {
-            e = e10;
+        } catch (Exception e11) {
+            e = e11;
             bufferedWriter2 = bufferedWriter;
             Log.w("FirebaseCrashlytics", "Error serializing rollouts state.", e);
             f(b10);
@@ -253,8 +253,8 @@ public final class g {
                 fVar.put("userId", str2);
                 obj = fVar.toString();
                 bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(b10), b));
-            } catch (Exception e) {
-                e = e;
+            } catch (Exception e6) {
+                e = e6;
             }
         } catch (Throwable th2) {
             th = th2;
@@ -263,8 +263,8 @@ public final class g {
             bufferedWriter.write(obj);
             bufferedWriter.flush();
             i9.h.c(bufferedWriter, "Failed to close user metadata file.");
-        } catch (Exception e6) {
-            e = e6;
+        } catch (Exception e10) {
+            e = e10;
             bufferedWriter2 = bufferedWriter;
             Log.w("FirebaseCrashlytics", "Error serializing user metadata.", e);
             i9.h.c(bufferedWriter2, "Failed to close user metadata file.");

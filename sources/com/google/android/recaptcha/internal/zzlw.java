@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
 import dd.p;
-import k7.p7;
+import k7.q7;
 import ld.c0;
 import uc.c;
 import vc.a;
 import wc.i;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 final class zzlw extends i implements p {
     Object zza;
@@ -53,26 +53,26 @@ final class zzlw extends i implements p {
         int i10 = this.zzb;
         try {
             if (i10 == 0) {
-                p7.b(obj);
+                q7.b(obj);
                 zzly zzlyVar = this.zzc;
                 this.zzb = 1;
             } else {
                 if (i10 != 1) {
                     if (i10 == 2) {
-                        p7.b(obj);
+                        q7.b(obj);
                         return sc.i.a;
                     }
                     zzcg zzcgVar = (zzcg) this.zza;
-                    p7.b(obj);
+                    q7.b(obj);
                     throw zzcgVar;
                 }
-                p7.b(obj);
+                q7.b(obj);
             }
             zzlv zzlvVar = new zzlv(this.zzc, this.zzd, null);
             this.zzb = 2;
-        } catch (Exception e) {
-            e.getMessage();
-            zzcg zza = zzh.zza(e, new zzcg(zzce.zzb, zzcd.zzV, e.getMessage(), null, 8, null));
+        } catch (Exception e6) {
+            e6.getMessage();
+            zzcg zza = zzh.zza(e6, new zzcg(zzce.zzb, zzcd.zzV, e6.getMessage(), null, 8, null));
             zzdj zzn = this.zzc.zzn();
             zzmc zzmcVar = zzmc.zza;
             this.zza = zza;

@@ -12,7 +12,7 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hd implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -66,7 +66,7 @@ public final /* synthetic */ class hd implements Runnable {
                     chatActivityEnterView.n1(false, true, false, true);
                 }
                 eg egVar = chatActivityEnterView.V2;
-                TL_stories.StoryItem e12 = egVar != null ? egVar.e1() : null;
+                TL_stories.StoryItem h12 = egVar != null ? egVar.h1() : null;
                 Object obj = this.b;
                 boolean z12 = obj instanceof TLRPC.Document;
                 boolean z13 = this.c;
@@ -133,7 +133,7 @@ public final /* synthetic */ class hd implements Runnable {
                         SendMessagesHelper sendMessagesHelper = SendMessagesHelper.getInstance(chatActivityEnterView.N);
                         long j11 = chatActivityEnterView.M2;
                         CharSequence charSequence2 = photoEntry != null ? photoEntry.caption : null;
-                        TL_stories.StoryItem storyItem = e12;
+                        TL_stories.StoryItem storyItem = h12;
                         MessageObject messageObject2 = chatActivityEnterView.P2;
                         threadMessage3 = chatActivityEnterView.getThreadMessage();
                         sendMessagesHelper.sendSticker(document, str2, j11, charSequence2, videoEditedInfo, messageObject2, threadMessage3, storyItem, chatActivityEnterView.R2, null, z13, i12, i11, false, obj2, xnVar != null ? xnVar.C8() : null, l10.longValue(), chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams(), z14);
@@ -146,7 +146,7 @@ public final /* synthetic */ class hd implements Runnable {
                     }
                 } else {
                     z4 = z13;
-                    TL_stories.StoryItem storyItem2 = e12;
+                    TL_stories.StoryItem storyItem2 = h12;
                     if (obj instanceof TLRPC.BotInlineResult) {
                         TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) obj;
                         if (botInlineResult.document != null) {
@@ -185,7 +185,7 @@ public final /* synthetic */ class hd implements Runnable {
                 }
                 eg egVar2 = chatActivityEnterView.V2;
                 if (egVar2 != null) {
-                    egVar2.D(null, z4, i12, 0, 0L);
+                    egVar2.C(null, z4, i12, 0, 0L);
                     break;
                 }
                 break;

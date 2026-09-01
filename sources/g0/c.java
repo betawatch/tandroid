@@ -10,13 +10,13 @@ import android.os.PersistableBundle;
 import android.text.TextUtils;
 import androidx.core.graphics.drawable.IconCompat;
 import e0.o0;
-import f0.i;
+import f0.h;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class c {
     public Context a;
@@ -29,7 +29,7 @@ public final class c {
     public IconCompat h;
     public o0[] i;
     public Set j;
-    public i k;
+    public h k;
     public boolean l;
     public int m;
     public PersistableBundle n;
@@ -90,9 +90,9 @@ public final class c {
                 }
                 intents.setPersons(personArr);
             }
-            i iVar = this.k;
-            if (iVar != null) {
-                intents.setLocusId(iVar.b);
+            h hVar = this.k;
+            if (hVar != null) {
+                intents.setLocusId(hVar.b);
             }
             intents.setLongLived(this.l);
         } else {
@@ -121,9 +121,9 @@ public final class c {
                     i10 = i11;
                 }
             }
-            i iVar2 = this.k;
-            if (iVar2 != null) {
-                this.n.putString("extraLocusId", iVar2.a);
+            h hVar2 = this.k;
+            if (hVar2 != null) {
+                this.n.putString("extraLocusId", hVar2.a);
             }
             this.n.putBoolean("extraLongLived", this.l);
             intents.setExtras(this.n);

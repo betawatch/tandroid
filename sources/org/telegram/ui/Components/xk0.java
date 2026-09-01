@@ -1,89 +1,199 @@
 package org.telegram.ui.Components;
 
+import android.animation.ValueAnimator;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public abstract class xk0 extends rl0 {
-    public boolean c;
-    public boolean d;
-    public ArrayList e;
-    public ArrayList f;
+public final class xk0 implements View.OnLayoutChangeListener {
+    public final /* synthetic */ f2.p0 a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ yk0 d;
+    public final /* synthetic */ c2.y e;
 
-    public final void E() {
-        this.c = false;
-        if (!this.d && this.e.isEmpty() && this.f.isEmpty()) {
-            return;
-        }
-        ((org.telegram.ui.jm) this).O(false);
+    public xk0(c2.y yVar, f2.p0 p0Var, ArrayList arrayList, boolean z4, yk0 yk0Var) {
+        this.e = yVar;
+        this.a = p0Var;
+        this.b = arrayList;
+        this.c = z4;
+        this.d = yk0Var;
     }
 
-    @Override // f2.o0
-    public void l() {
-        if (this.c) {
-            this.d = true;
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+        final ArrayList arrayList;
+        int height;
+        long min;
+        View view2;
+        c2.y yVar = this.e;
+        HashMap hashMap = (HashMap) yVar.k;
+        tl0 tl0Var = (tl0) yVar.e;
+        tl0Var.removeOnLayoutChangeListener(this);
+        final ArrayList arrayList2 = new ArrayList();
+        tl0Var.B0();
+        int childCount = tl0Var.getChildCount();
+        int i18 = 0;
+        int i19 = 0;
+        int i20 = 0;
+        int i21 = 0;
+        boolean z4 = false;
+        while (true) {
+            arrayList = this.b;
+            if (i18 >= childCount) {
+                break;
+            }
+            View childAt = tl0Var.getChildAt(i18);
+            arrayList2.add(childAt);
+            if (childAt.getTop() < i19) {
+                i19 = childAt.getTop();
+            }
+            if (childAt.getBottom() > i20) {
+                i20 = childAt.getBottom();
+            }
+            if (childAt instanceof org.telegram.ui.Cells.o4) {
+                ((org.telegram.ui.Cells.o4) childAt).c(true, false);
+            }
+            f2.p0 p0Var = this.a;
+            if (p0Var != null && (p0Var.b || yVar.c)) {
+                tl0Var.getClass();
+                long i22 = p0Var.i(RecyclerView.R(childAt));
+                if (hashMap.containsKey(Long.valueOf(i22)) && (view2 = (View) hashMap.get(Long.valueOf(i22))) != 0) {
+                    if (view2 instanceof org.telegram.ui.Cells.o4) {
+                        ((org.telegram.ui.Cells.o4) view2).c(false, false);
+                    }
+                    arrayList.remove(view2);
+                    k7.d6 d6Var = (k7.d6) yVar.i;
+                    if (d6Var != null) {
+                        d6Var.d(view2);
+                    }
+                    int top = childAt.getTop() - view2.getTop();
+                    if (top != 0) {
+                        i21 = top;
+                    }
+                    z4 = true;
+                }
+            }
+            i18++;
+        }
+        hashMap.clear();
+        int size = arrayList.size();
+        int i23 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        int i24 = 0;
+        int i25 = 0;
+        while (i25 < size) {
+            Object obj = arrayList.get(i25);
+            i25++;
+            View view3 = (View) obj;
+            int bottom = view3.getBottom();
+            int top2 = view3.getTop();
+            if (bottom > i24) {
+                i24 = bottom;
+            }
+            if (top2 < i23) {
+                i23 = top2;
+            }
+            if (view3.getParent() == null) {
+                tl0Var.addView(view3);
+                ((f2.j0) yVar.f).M(view3);
+            }
+            if (view3 instanceof org.telegram.ui.Cells.o4) {
+                ((org.telegram.ui.Cells.o4) view3).c(true, true);
+            }
+        }
+        int i26 = i23 == Integer.MAX_VALUE ? 0 : i23;
+        k7.d6 d6Var2 = (k7.d6) yVar.i;
+        if (d6Var2 != null) {
+            d6Var2.b();
+        }
+        if (arrayList.isEmpty()) {
+            height = Math.abs(i21);
         } else {
-            super.l();
+            boolean z10 = this.c;
+            if (!z10) {
+                i24 = tl0Var.getHeight() - i26;
+            }
+            height = (z10 ? -i19 : i20 - tl0Var.getHeight()) + i24;
         }
-    }
-
-    @Override // f2.o0
-    public void m(int i10) {
-        if (this.c) {
-            return;
+        final int paddingBottom = tl0Var.getPaddingBottom();
+        ValueAnimator valueAnimator = (ValueAnimator) yVar.g;
+        if (valueAnimator != null) {
+            valueAnimator.removeAllListeners();
+            ((ValueAnimator) yVar.g).cancel();
         }
-        super.m(i10);
-    }
-
-    @Override // f2.o0
-    public void o(int i10) {
-        ArrayList arrayList = this.e;
-        if (!this.c) {
-            super.o(i10);
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        yVar.g = ofFloat;
+        final boolean z11 = this.c;
+        final int i27 = height;
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.wk0
+            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+            public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                boolean z12;
+                int i28;
+                c2.y yVar2 = xk0.this.e;
+                tl0 tl0Var2 = (tl0) yVar2.e;
+                float floatValue = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
+                ArrayList arrayList3 = arrayList;
+                int size2 = arrayList3.size();
+                int i29 = 0;
+                while (true) {
+                    z12 = z11;
+                    i28 = i27;
+                    if (i29 >= size2) {
+                        break;
+                    }
+                    View view4 = (View) arrayList3.get(i29);
+                    float y10 = view4.getY();
+                    if (view4.getY() + view4.getMeasuredHeight() >= 0.0f && y10 <= tl0Var2.getMeasuredHeight()) {
+                        if (z12) {
+                            view4.setTranslationY((-i28) * floatValue);
+                        } else {
+                            view4.setTranslationY(i28 * floatValue);
+                        }
+                    }
+                    i29++;
+                }
+                int paddingBottom2 = paddingBottom - tl0Var2.getPaddingBottom();
+                ArrayList arrayList4 = arrayList2;
+                int size3 = arrayList4.size();
+                for (int i30 = 0; i30 < size3; i30++) {
+                    View view5 = (View) arrayList4.get(i30);
+                    if (z12) {
+                        view5.setTranslationY(((1.0f - floatValue) * i28) + paddingBottom2);
+                    } else {
+                        view5.setTranslationY((1.0f - floatValue) * (-i28));
+                    }
+                }
+                tl0Var2.invalidate();
+                zk0 zk0Var = (zk0) yVar2.h;
+                if (zk0Var != null) {
+                    zk0Var.d();
+                }
+            }
+        });
+        ((ValueAnimator) yVar.g).addListener(new eg.w2(25, this, arrayList2));
+        if (!yVar.d) {
+            if (z4) {
+                min = 600;
+            } else {
+                long measuredHeight = (long) (((i27 / tl0Var.getMeasuredHeight()) + 1.0f) * 200.0f);
+                min = Math.min(measuredHeight >= 300 ? measuredHeight : 300L, 1300L);
+            }
+            ((ValueAnimator) yVar.g).setDuration(min);
+            ((ValueAnimator) yVar.g).setInterpolator(pr.h);
+        } else if (z4) {
+            ((ValueAnimator) yVar.g).setDuration(150L);
+            ((ValueAnimator) yVar.g).setInterpolator(pr.g);
         } else {
-            arrayList.add(Integer.valueOf(i10));
-            arrayList.add(1);
+            long measuredHeight2 = (long) (((i27 / tl0Var.getMeasuredHeight()) + 1.0f) * 200.0f);
+            ((ValueAnimator) yVar.g).setDuration(Math.min(measuredHeight2 >= 300 ? measuredHeight2 : 300L, 1300L));
+            ((ValueAnimator) yVar.g).setInterpolator(pr.h);
         }
-    }
-
-    @Override // f2.o0
-    public void q(int i10, int i11) {
-        if (this.c) {
-            return;
-        }
-        super.q(i10, i11);
-    }
-
-    @Override // f2.o0
-    public void s(int i10, int i11) {
-        ArrayList arrayList = this.e;
-        if (!this.c) {
-            super.s(i10, i11);
-        } else {
-            arrayList.add(Integer.valueOf(i10));
-            arrayList.add(Integer.valueOf(i11));
-        }
-    }
-
-    @Override // f2.o0
-    public void t(int i10, int i11) {
-        ArrayList arrayList = this.f;
-        if (!this.c) {
-            super.t(i10, i11);
-        } else {
-            arrayList.add(Integer.valueOf(i10));
-            arrayList.add(Integer.valueOf(i11));
-        }
-    }
-
-    @Override // f2.o0
-    public void u(int i10) {
-        ArrayList arrayList = this.f;
-        if (!this.c) {
-            super.u(i10);
-        } else {
-            arrayList.add(Integer.valueOf(i10));
-            arrayList.add(1);
-        }
+        ((ValueAnimator) yVar.g).start();
     }
 }

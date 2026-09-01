@@ -14,7 +14,7 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class y {
     public static final long i = TimeUnit.HOURS.toSeconds(8);
@@ -40,15 +40,15 @@ public final class y {
     public static void a(Task task) {
         try {
             Tasks.await(task, 30L, TimeUnit.SECONDS);
-        } catch (InterruptedException | TimeoutException e) {
-            throw new IOException("SERVICE_NOT_AVAILABLE", e);
-        } catch (ExecutionException e6) {
-            Throwable cause = e6.getCause();
+        } catch (InterruptedException | TimeoutException e6) {
+            throw new IOException("SERVICE_NOT_AVAILABLE", e6);
+        } catch (ExecutionException e10) {
+            Throwable cause = e10.getCause();
             if (cause instanceof IOException) {
                 throw ((IOException) cause);
             }
             if (!(cause instanceof RuntimeException)) {
-                throw new IOException(e6);
+                throw new IOException(e10);
             }
             throw ((RuntimeException) cause);
         }
@@ -153,15 +153,15 @@ public final class y {
                     this.h.c(a2);
                     e(a2);
                 }
-            } catch (IOException e) {
-                if (!"SERVICE_NOT_AVAILABLE".equals(e.getMessage()) && !"INTERNAL_SERVER_ERROR".equals(e.getMessage())) {
-                    if (e.getMessage() != null) {
-                        throw e;
+            } catch (IOException e6) {
+                if (!"SERVICE_NOT_AVAILABLE".equals(e6.getMessage()) && !"INTERNAL_SERVER_ERROR".equals(e6.getMessage())) {
+                    if (e6.getMessage() != null) {
+                        throw e6;
                     }
                     Log.e("FirebaseMessaging", "Topic operation failed without exception message. Will retry Topic operation.");
                     return false;
                 }
-                Log.e("FirebaseMessaging", "Topic operation failed: " + e.getMessage() + ". Will retry Topic operation.");
+                Log.e("FirebaseMessaging", "Topic operation failed: " + e6.getMessage() + ". Will retry Topic operation.");
                 return false;
             }
         }

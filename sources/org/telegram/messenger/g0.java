@@ -15,7 +15,6 @@ import org.telegram.messenger.FileLoadOperation;
 import org.telegram.messenger.FilePathDatabase;
 import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.LocationController;
-import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.TranslateController;
 import org.telegram.messenger.Utilities;
@@ -25,7 +24,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -33,11 +32,11 @@ public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ g0(Object obj, Object obj2, Object obj3, int i10) {
+    public /* synthetic */ g0(int i10, Object obj, Object obj2, ArrayList arrayList) {
         this.a = i10;
+        this.d = arrayList;
         this.b = obj;
         this.c = obj2;
-        this.d = obj3;
     }
 
     @Override // java.lang.Runnable
@@ -62,85 +61,85 @@ public final /* synthetic */ class g0 implements Runnable {
                 ((TranslateController) this.b).lambda$detectStoryLanguage$33((TL_stories.StoryItem) this.c, (TranslateController.StoryKey) this.d);
                 break;
             case 6:
-                ((BetaUpdaterController) this.b).lambda$checkForUpdate$1((String) this.c, (Runnable) this.d);
+                AndroidUtilities.lambda$showProxyAlert$19((boolean[]) this.b, (org.telegram.ui.Components.sc[]) this.c, (sf.a) this.d);
                 break;
             case 7:
-                BillingController.lambda$launchBillingFlow$3((ArrayList) this.d, (AtomicInteger) this.b, (c0) this.c);
+                ((BetaUpdaterController) this.b).lambda$checkForUpdate$1((String) this.c, (Runnable) this.d);
                 break;
             case 8:
-                BillingController.lambda$onPurchasesUpdatedInternal$7((AccountInstance) this.b, (TLRPC.TL_payments_assignPlayMarketTransaction) this.c, (TL_update.TL_updateSentPhoneCode) this.d);
+                BillingController.lambda$launchBillingFlow$3((ArrayList) this.d, (AtomicInteger) this.b, (b0) this.c);
                 break;
             case 9:
-                ((CacheFetcher) this.b).lambda$saveCallback$2((Pair) this.c, (Utilities.Callback) this.d);
+                BillingController.lambda$onPurchasesUpdatedInternal$7((AccountInstance) this.b, (TLRPC.TL_payments_assignPlayMarketTransaction) this.c, (TL_update.TL_updateSentPhoneCode) this.d);
                 break;
             case 10:
-                ChannelBoostsController.lambda$getBoostsStats$0((TLObject) this.b, (h5.d) this.c, (TLRPC.TL_error) this.d);
+                ((CacheFetcher) this.b).lambda$saveCallback$2((Pair) this.c, (Utilities.Callback) this.d);
                 break;
             case 11:
-                ChatThemeController.lambda$saveWallpaperPatternBitmap$12((File) this.b, (List) this.c, (Bitmap) this.d);
+                ChannelBoostsController.lambda$getBoostsStats$0((TLObject) this.b, (h5.d) this.c, (TLRPC.TL_error) this.d);
                 break;
             case 12:
-                CodeHighlighting.lambda$highlightEditable$0((ArrayList) this.d, (SpannableString) this.b, (Utilities.Callback) this.c);
+                ChatThemeController.lambda$saveWallpaperPatternBitmap$12((File) this.b, (List) this.c, (Bitmap) this.d);
                 break;
             case 13:
-                ((ContactsController) this.b).lambda$addContact$51((TLRPC.Updates) this.c, (TLRPC.User) this.d);
+                CodeHighlighting.lambda$highlightEditable$0((ArrayList) this.d, (SpannableString) this.b, (Utilities.Callback) this.c);
                 break;
             case 14:
-                ((ContactsController) this.b).lambda$reloadContactsStatuses$58((SharedPreferences.Editor) this.c, (Vector) this.d);
+                ((ContactsController) this.b).lambda$addContact$51((TLRPC.Updates) this.c, (TLRPC.User) this.d);
                 break;
             case 15:
-                ((ContactsController) this.b).lambda$applyContactsUpdates$48((ArrayList) this.d, (ArrayList) this.c);
+                ((ContactsController) this.b).lambda$reloadContactsStatuses$58((SharedPreferences.Editor) this.c, (Vector) this.d);
                 break;
             case 16:
-                ((DispatchQueuePoolBackground) this.b).lambda$execute$1((Runnable) this.c, (DispatchQueue) this.d);
+                ((ContactsController) this.b).lambda$applyContactsUpdates$48((ArrayList) this.d, (ArrayList) this.c);
                 break;
             case 17:
-                ((DownloadController) this.b).lambda$loadDownloadingFiles$10((ArrayList) this.d, (ArrayList) this.c);
+                ((DispatchQueuePoolBackground) this.b).lambda$execute$1((Runnable) this.c, (DispatchQueue) this.d);
                 break;
             case 18:
-                FactCheckController.lambda$getFromDatabase$5((MessagesStorage) this.b, (ArrayList) this.d, (Utilities.Callback) this.c);
+                ((DownloadController) this.b).lambda$loadDownloadingFiles$10((ArrayList) this.d, (ArrayList) this.c);
                 break;
             case 19:
-                ((FileLoadOperation) this.b).lambda$getCurrentFile$3((File[]) this.c, (CountDownLatch) this.d);
+                FactCheckController.lambda$getFromDatabase$5((MessagesStorage) this.b, (ArrayList) this.d, (Utilities.Callback) this.c);
                 break;
             case 20:
-                FileLoadOperation.lambda$cancelRequests$15((FileLoadOperation.RequestInfo) this.b, (int[]) this.c, (Runnable) this.d);
+                ((FileLoadOperation) this.b).lambda$getCurrentFile$3((File[]) this.c, (CountDownLatch) this.d);
                 break;
             case 21:
-                ((FileLoader) this.b).lambda$setForceStreamLoadingFile$6((TLRPC.FileLocation) this.c, (String) this.d);
+                FileLoadOperation.lambda$cancelRequests$15((FileLoadOperation.RequestInfo) this.b, (int[]) this.c, (Runnable) this.d);
                 break;
             case 22:
-                ((FileLoader) this.b).lambda$checkDownloadQueue$15((FileLoaderPriorityQueue) this.c, (FileLoadOperation) this.d);
+                ((FileLoader) this.b).lambda$setForceStreamLoadingFile$6((TLRPC.FileLocation) this.c, (String) this.d);
                 break;
             case 23:
-                ((FilePathDatabase) this.b).lambda$saveFileDialogId$5((File) this.c, (FilePathDatabase.FileMeta) this.d);
+                ((FileLoader) this.b).lambda$checkDownloadQueue$15((FileLoaderPriorityQueue) this.c, (FileLoadOperation) this.d);
                 break;
             case 24:
-                LocaleController.lambda$applyRemoteLanguage$13((int[]) this.b, (int[]) this.c, (Runnable) this.d);
+                ((FilePathDatabase) this.b).lambda$saveFileDialogId$5((File) this.c, (FilePathDatabase.FileMeta) this.d);
                 break;
             case 25:
-                ((LocationController) this.b).lambda$addSharingLocation$11((LocationController.SharingLocationInfo) this.c, (LocationController.SharingLocationInfo) this.d);
+                LocaleController.lambda$applyRemoteLanguage$13((int[]) this.b, (int[]) this.c, (Runnable) this.d);
                 break;
             case 26:
-                ((MediaDataController) this.b).lambda$processLoadedDiceStickers$88((String) this.c, (TLRPC.TL_messages_stickerSet) this.d);
+                ((LocationController) this.b).lambda$addSharingLocation$11((LocationController.SharingLocationInfo) this.c, (LocationController.SharingLocationInfo) this.d);
                 break;
             case 27:
-                ((MediaDataController) this.b).lambda$putEmojiKeywords$215((TLRPC.TL_emojiKeywordsDifference) this.c, (String) this.d);
+                ((MediaDataController) this.b).lambda$processLoadedDiceStickers$88((String) this.c, (TLRPC.TL_messages_stickerSet) this.d);
                 break;
             case 28:
-                ((MediaDataController) this.b).lambda$verifyAnimatedStickerMessage$68((TLRPC.Message) this.c, (String) this.d);
+                ((MediaDataController) this.b).lambda$putEmojiKeywords$215((TLRPC.TL_emojiKeywordsDifference) this.c, (String) this.d);
                 break;
             default:
-                ((MediaDataController) this.b).lambda$clearBotKeyboard$193((ArrayList) this.d, (MessagesStorage.TopicKey) this.c);
+                ((MediaDataController) this.b).lambda$verifyAnimatedStickerMessage$68((TLRPC.Message) this.c, (String) this.d);
                 break;
         }
     }
 
-    public /* synthetic */ g0(ArrayList arrayList, Object obj, Object obj2, int i10) {
+    public /* synthetic */ g0(Object obj, Object obj2, Object obj3, int i10) {
         this.a = i10;
-        this.d = arrayList;
         this.b = obj;
         this.c = obj2;
+        this.d = obj3;
     }
 
     public /* synthetic */ g0(BaseController baseController, ArrayList arrayList, Object obj, int i10) {

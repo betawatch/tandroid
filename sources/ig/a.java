@@ -1,83 +1,110 @@
 package ig;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
-import android.widget.FrameLayout;
-import k7.b6;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class a extends FrameLayout {
-    public final ph.d a;
-    public final View b;
-    public final f6 c;
-    public final Paint d;
-    public boolean e;
+public final class a extends cg.b {
+    public CharSequence c;
+    public TLRPC.InputPeer d;
+    public TLRPC.Chat e;
+    public Object f;
+    public boolean g;
+    public long h;
+    public int i;
+    public int j;
+    public List k;
+    public int l;
+    public TLObject m;
 
-    public a(Context context, f6 f6Var) {
-        super(context);
-        this.d = new Paint(1);
-        this.c = f6Var;
-        View view = new View(context);
-        this.b = view;
-        addView(view, b6.n(-1, -1));
-        ph.d dVar = new ph.d(context, f6Var, true);
-        this.a = dVar;
-        addView(dVar, b6.d(-1, 48.0f, 17, 14.0f, 0.0f, 14.0f, 0.0f));
+    public static a b(TLRPC.Chat chat, int i10, boolean z4) {
+        a aVar = new a(9, false);
+        aVar.e = chat;
+        aVar.d = null;
+        aVar.g = z4;
+        aVar.i = i10;
+        return aVar;
     }
 
-    public final void a(int i10, boolean z4) {
-        this.e = true;
-        ph.d dVar = this.a;
-        dVar.k();
-        dVar.setShowZero(true);
-        dVar.setEnabled(true);
-        dVar.c(i10, z4);
-        dVar.g(LocaleController.getString(R.string.BoostingStartGiveaway), z4, true);
-        this.b.setBackgroundColor(j6.v0(j6.h5, this.c));
+    public static a c(CharSequence charSequence, boolean z4) {
+        a aVar = new a(7, false);
+        aVar.c = charSequence;
+        aVar.g = z4;
+        return aVar;
     }
 
-    public final void b(boolean z4) {
-        this.a.setLoading(z4);
+    public static a d(TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption, int i10, long j10, boolean z4, boolean z10) {
+        a aVar = new a(17, z4);
+        aVar.i = i10;
+        aVar.h = j10;
+        aVar.m = tL_starsGiveawayOption;
+        aVar.g = z10;
+        return aVar;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        if (this.e) {
-            int v02 = j6.v0(j6.a7, this.c);
-            Paint paint = this.d;
-            paint.setColor(v02);
-            paint.setAlpha(255);
-            canvas.drawRect(0.0f, 0.0f, getWidth(), 1.0f, paint);
+    public static a e(int i10, int i11, boolean z4, ArrayList arrayList) {
+        a aVar = new a(11, i11 == i10);
+        aVar.l = i10;
+        aVar.g = z4;
+        aVar.f = arrayList;
+        return aVar;
+    }
+
+    public static a f(String str) {
+        a aVar = new a(6, false);
+        aVar.c = str;
+        return aVar;
+    }
+
+    public static boolean g(List list, List list2) {
+        if (list == null && list2 == null) {
+            return true;
         }
+        if (list == null || list2 == null || list.size() != list2.size()) {
+            return false;
+        }
+        for (int i10 = 0; i10 < list.size(); i10++) {
+            if (((Integer) list.get(i10)).intValue() != ((Integer) list2.get(i10)).intValue()) {
+                return false;
+            }
+        }
+        return true;
     }
 
-    public void setCloseStyle(boolean z4) {
-        this.e = false;
-        ph.d dVar = this.a;
-        dVar.setShowZero(false);
-        dVar.setEnabled(true);
-        dVar.g(LocaleController.formatString("Close", R.string.Close, new Object[0]), false, true);
-        this.e = z4;
+    @Override // cg.b
+    public final boolean a(cg.b bVar) {
+        a aVar;
+        int i10;
+        int i11;
+        if (this == bVar) {
+            return true;
+        }
+        if (a.class == bVar.getClass() && (i10 = (aVar = (a) bVar).a) == (i11 = this.a)) {
+            return i11 == 0 ? this.g == aVar.g : i10 == 17 ? this.i == aVar.i && this.h == aVar.h && this.m == aVar.m && this.g == aVar.g && this.b == aVar.b : i11 == 5 ? this.i == aVar.i && g(this.k, aVar.k) : i11 == 13 && this.i == aVar.i && TextUtils.equals(this.c, aVar.c);
+        }
+        return false;
     }
 
-    public void setOkStyle(boolean z4) {
-        this.e = false;
-        ph.d dVar = this.a;
-        dVar.setShowZero(false);
-        dVar.setEnabled(true);
-        dVar.g(z4 ? LocaleController.formatString("BoostingUseLink", R.string.BoostingUseLink, new Object[0]) : LocaleController.formatString("OK", R.string.OK, new Object[0]), false, true);
-    }
-
-    @Override // android.view.View
-    public void setOnClickListener(View.OnClickListener onClickListener) {
-        this.a.setOnClickListener(onClickListener);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || a.class != obj.getClass()) {
+            return false;
+        }
+        a aVar = (a) obj;
+        int i10 = this.a;
+        if (i10 != aVar.a) {
+            return false;
+        }
+        if (i10 == 0) {
+            return true;
+        }
+        return i10 == 17 ? this.i == aVar.i && this.m == aVar.m : i10 == 5 ? g(this.k, aVar.k) : i10 == 13 ? TextUtils.equals(this.c, aVar.c) : this.e == aVar.e && this.f == aVar.f && this.d == aVar.d && this.m == aVar.m && this.g == aVar.g && this.i == aVar.i && this.j == aVar.j && this.h == aVar.h && this.l == aVar.l && TextUtils.equals(this.c, aVar.c);
     }
 }

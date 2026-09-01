@@ -4,14 +4,14 @@ import android.graphics.Canvas;
 import android.text.Layout;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public class w9 extends z9 {
     public final v9 u0;
 
-    public w9(nh.z7 z7Var, org.telegram.ui.ActionBar.f6 f6Var) {
+    public w9(oh.z7 z7Var, org.telegram.ui.ActionBar.g6 g6Var) {
         this.u0 = z7Var;
-        this.h0 = f6Var;
+        this.h0 = g6Var;
     }
 
     @Override // org.telegram.ui.Cells.z9
@@ -20,7 +20,7 @@ public class w9 extends z9 {
 
     public final void X(Canvas canvas) {
         Layout staticTextLayout = this.u0.getStaticTextLayout();
-        int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Md, this.h0);
+        int v02 = org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Md, this.h0);
         this.o.setColor(v02);
         this.p.setColor(v02);
         i(canvas, staticTextLayout, this.u, this.v, true, true, 0.0f);
@@ -62,8 +62,8 @@ public class w9 extends z9 {
             if (i15 >= 0) {
                 try {
                     return p9Var.a + layout.getOffsetForHorizontal(i15, i14);
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e6) {
+                    FileLog.e(e6);
                 }
             }
         }

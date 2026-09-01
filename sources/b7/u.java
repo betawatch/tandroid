@@ -14,9 +14,8 @@ import java.util.NavigableSet;
 import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
-import kh.a2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class u extends p implements NavigableMap, Map {
     public static final u f;
@@ -66,14 +65,14 @@ public final class u extends p implements NavigableMap, Map {
             Object[] objArr = {key};
             for (int i12 = 0; i12 < 1; i12++) {
                 if (objArr[i12] == null) {
-                    throw new NullPointerException(a2.j(i12, "at index "));
+                    throw new NullPointerException(l.d.j(i12, "at index "));
                 }
             }
             c0 c0Var = new c0(o.t(1, objArr), yVar);
             Object[] objArr2 = {value};
             while (i11 < 1) {
                 if (objArr2[i11] == null) {
-                    throw new NullPointerException(a2.j(i11, "at index "));
+                    throw new NullPointerException(l.d.j(i11, "at index "));
                 }
                 i11++;
             }

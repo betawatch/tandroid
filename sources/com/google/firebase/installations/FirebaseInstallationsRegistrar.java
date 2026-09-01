@@ -7,7 +7,7 @@ import c9.t;
 import ca.d;
 import com.google.firebase.components.ComponentRegistrar;
 import d9.k;
-import j7.l8;
+import j7.m8;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.Executor;
@@ -17,14 +17,14 @@ import y8.a;
 import y8.b;
 import z9.e;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class FirebaseInstallationsRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-installations";
 
     /* JADX INFO: Access modifiers changed from: private */
     public static d lambda$getComponents$0(c cVar) {
-        return new ca.c((g) cVar.a(g.class), cVar.d(e.class), (ExecutorService) cVar.f(new t(a.class, ExecutorService.class)), new k((Executor) cVar.f(new t(b.class, Executor.class))));
+        return new ca.c((g) cVar.a(g.class), cVar.c(e.class), (ExecutorService) cVar.f(new t(a.class, ExecutorService.class)), new k((Executor) cVar.f(new t(b.class, Executor.class))));
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
@@ -41,6 +41,6 @@ public class FirebaseInstallationsRegistrar implements ComponentRegistrar {
         c9.a b12 = c9.b.b(z9.d.class);
         b12.c = 1;
         b12.g = new a1.c(dVar, 3);
-        return Arrays.asList(b11, b12.b(), l8.a(LIBRARY_NAME, "17.2.0"));
+        return Arrays.asList(b11, b12.b(), m8.a(LIBRARY_NAME, "17.2.0"));
     }
 }

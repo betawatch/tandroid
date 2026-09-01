@@ -21,15 +21,15 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class ao extends Drawable {
     public final boolean a;
     public View b;
     public int c = 255;
     public final float d;
-    public final nh.y2 e;
-    public final org.telegram.ui.Components.dc0 f;
+    public final oh.z2 e;
+    public final org.telegram.ui.Components.fc0 f;
     public final TLRPC.WallPaper g;
     public boolean h;
     public boolean i;
@@ -39,10 +39,10 @@ public final class ao extends Drawable {
         TLRPC.WallPaperSettings wallPaperSettings;
         String m9;
         TLRPC.WallPaperSettings wallPaperSettings2;
-        nh.y2 y2Var = new nh.y2(this, 2);
-        this.e = y2Var;
+        oh.z2 z2Var = new oh.z2(this, 2);
+        this.e = z2Var;
         this.j = new ArrayList();
-        y2Var.setInvalidateAll(true);
+        z2Var.setInvalidateAll(true);
         boolean z11 = wallPaper.pattern;
         this.g = wallPaper;
         this.a = z4;
@@ -50,16 +50,16 @@ public final class ao extends Drawable {
             this.d = wallPaperSettings2.intensity / 100.0f;
         }
         if ((z11 || wallPaper.document == null) && (wallPaperSettings = wallPaper.settings) != null && wallPaperSettings.second_background_color != 0 && wallPaperSettings.third_background_color != 0) {
-            org.telegram.ui.Components.dc0 dc0Var = new org.telegram.ui.Components.dc0();
-            this.f = dc0Var;
+            org.telegram.ui.Components.fc0 fc0Var = new org.telegram.ui.Components.fc0();
+            this.f = fc0Var;
             TLRPC.WallPaperSettings wallPaperSettings3 = wallPaper.settings;
-            dc0Var.n(wallPaperSettings3.background_color, wallPaperSettings3.second_background_color, wallPaperSettings3.third_background_color, wallPaperSettings3.fourth_background_color);
+            fc0Var.n(wallPaperSettings3.background_color, wallPaperSettings3.second_background_color, wallPaperSettings3.third_background_color, wallPaperSettings3.fourth_background_color);
             int i10 = UserConfig.selectedAccount;
             long j10 = wallPaper.id;
-            kh.a1 a1Var = new kh.a1(26, this, wallPaper);
-            int[] iArr = org.telegram.ui.ActionBar.e4.h;
+            lh.a1 a1Var = new lh.a1(26, this, wallPaper);
+            int[] iArr = org.telegram.ui.ActionBar.f4.h;
             boolean z12 = wallPaper.pattern;
-            ChatThemeController.getInstance(i10).loadWallpaperBitmap(j10, z12 ? 1 : 0, new org.telegram.ui.ActionBar.b4(a1Var, wallPaper, z12 ? 1 : 0, i10, j10));
+            ChatThemeController.getInstance(i10).loadWallpaperBitmap(j10, z12 ? 1 : 0, new org.telegram.ui.ActionBar.c4(a1Var, wallPaper, z12 ? 1 : 0, i10, j10));
             return;
         }
         Point point = AndroidUtilities.displaySize;
@@ -82,14 +82,14 @@ public final class ao extends Drawable {
         Drawable b10 = b(wallPaper);
         String str = wallPaper.uploadingImage;
         if (str != null) {
-            y2Var.setImage(ImageLocation.getForPath(str), sb2, b10, null, wallPaper, 1);
+            z2Var.setImage(ImageLocation.getForPath(str), sb2, b10, null, wallPaper, 1);
             return;
         }
         TLRPC.Document document = wallPaper.document;
         if (document != null) {
-            y2Var.setImage(ImageLocation.getForDocument(document), sb2, b10, null, wallPaper, 1);
+            z2Var.setImage(ImageLocation.getForDocument(document), sb2, b10, null, wallPaper, 1);
         } else {
-            y2Var.setImageBitmap(b10);
+            z2Var.setImageBitmap(b10);
         }
     }
 
@@ -135,9 +135,9 @@ public final class ao extends Drawable {
                 int k12 = i0.a.k(wallPaper.settings.third_background_color, 255);
                 int i10 = wallPaper.settings.fourth_background_color;
                 r2 = i10 != 0 ? i0.a.k(i10, 255) : 0;
-                org.telegram.ui.Components.dc0 dc0Var = new org.telegram.ui.Components.dc0();
-                dc0Var.n(k10, k11, k12, r2);
-                a2 = new BitmapDrawable(dc0Var.k);
+                org.telegram.ui.Components.fc0 fc0Var = new org.telegram.ui.Components.fc0();
+                fc0Var.n(k10, k11, k12, r2);
+                a2 = new BitmapDrawable(fc0Var.k);
             }
         }
         wallPaper.thumbDrawable = a2;
@@ -164,37 +164,37 @@ public final class ao extends Drawable {
     }
 
     public final Drawable c(boolean z4) {
-        org.telegram.ui.Components.dc0 dc0Var = this.f;
-        if (dc0Var != null) {
-            return dc0Var;
+        org.telegram.ui.Components.fc0 fc0Var = this.f;
+        if (fc0Var != null) {
+            return fc0Var;
         }
-        nh.y2 y2Var = this.e;
-        return (!z4 || y2Var.getStaticThumb() == null) ? y2Var.getThumb() != null ? y2Var.getThumb() : y2Var.getDrawable() != null ? y2Var.getDrawable() : y2Var.getStaticThumb() : y2Var.getStaticThumb();
+        oh.z2 z2Var = this.e;
+        return (!z4 || z2Var.getStaticThumb() == null) ? z2Var.getThumb() != null ? z2Var.getThumb() : z2Var.getDrawable() != null ? z2Var.getDrawable() : z2Var.getStaticThumb() : z2Var.getStaticThumb();
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        org.telegram.ui.Components.dc0 dc0Var = this.f;
-        if (dc0Var != null) {
-            dc0Var.setBounds(getBounds());
-            dc0Var.setAlpha(this.c);
-            dc0Var.draw(canvas);
+        org.telegram.ui.Components.fc0 fc0Var = this.f;
+        if (fc0Var != null) {
+            fc0Var.setBounds(getBounds());
+            fc0Var.setAlpha(this.c);
+            fc0Var.draw(canvas);
             return;
         }
-        nh.y2 y2Var = this.e;
-        boolean hasImageLoaded = y2Var.hasImageLoaded();
+        oh.z2 z2Var = this.e;
+        boolean hasImageLoaded = z2Var.hasImageLoaded();
         float f10 = this.d;
         boolean z4 = true;
-        if (hasImageLoaded && y2Var.getCurrentAlpha() == 1.0f) {
+        if (hasImageLoaded && z2Var.getCurrentAlpha() == 1.0f) {
             if (!this.h) {
                 this.h = true;
-                y2Var.setColorFilter(new PorterDuffColorFilter(i0.a.k(-16777216, (int) (f10 * 255.0f)), PorterDuff.Mode.DARKEN));
+                z2Var.setColorFilter(new PorterDuffColorFilter(i0.a.k(-16777216, (int) (f10 * 255.0f)), PorterDuff.Mode.DARKEN));
             }
             z4 = false;
         }
-        y2Var.setImageCoords(getBounds());
-        y2Var.setAlpha(this.c / 255.0f);
-        y2Var.draw(canvas);
+        z2Var.setImageCoords(getBounds());
+        z2Var.setAlpha(this.c / 255.0f);
+        z2Var.draw(canvas);
         if (!z4 || f10 == 0.0f) {
             return;
         }
@@ -207,17 +207,17 @@ public final class ao extends Drawable {
             arrayList.add(view);
         }
         int size = arrayList.size();
-        nh.y2 y2Var = this.e;
+        oh.z2 z2Var = this.e;
         if (size > 0 && !this.i) {
             this.i = true;
-            y2Var.onAttachedToWindow();
+            z2Var.onAttachedToWindow();
         } else if (arrayList.size() <= 0 && this.i) {
             this.i = false;
-            y2Var.onDetachedFromWindow();
+            z2Var.onDetachedFromWindow();
         }
-        org.telegram.ui.Components.dc0 dc0Var = this.f;
-        if (dc0Var != null) {
-            dc0Var.k();
+        org.telegram.ui.Components.fc0 fc0Var = this.f;
+        if (fc0Var != null) {
+            fc0Var.k();
         }
     }
 
@@ -227,17 +227,17 @@ public final class ao extends Drawable {
             arrayList.remove(view);
         }
         int size = arrayList.size();
-        nh.y2 y2Var = this.e;
+        oh.z2 z2Var = this.e;
         if (size > 0 && !this.i) {
             this.i = true;
-            y2Var.onAttachedToWindow();
+            z2Var.onAttachedToWindow();
         } else if (arrayList.size() <= 0 && this.i) {
             this.i = false;
-            y2Var.onDetachedFromWindow();
+            z2Var.onDetachedFromWindow();
         }
-        org.telegram.ui.Components.dc0 dc0Var = this.f;
-        if (dc0Var != null) {
-            dc0Var.l();
+        org.telegram.ui.Components.fc0 fc0Var = this.f;
+        if (fc0Var != null) {
+            fc0Var.l();
         }
     }
 

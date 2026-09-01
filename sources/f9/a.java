@@ -5,9 +5,9 @@ import c9.r;
 import e3.f;
 import java.util.concurrent.atomic.AtomicReference;
 import k9.b1;
-import vh.v2;
+import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a {
     public static final b c = new b();
@@ -35,9 +35,9 @@ public final class a {
     }
 
     public final void d(String str, long j10, b1 b1Var) {
-        String e = v2.e("Deferring native open session: ", str);
+        String k10 = yh.k("Deferring native open session: ", str);
         if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-            Log.v("FirebaseCrashlytics", e, null);
+            Log.v("FirebaseCrashlytics", k10, null);
         }
         this.a.a(new f(str, j10, b1Var, 2));
     }

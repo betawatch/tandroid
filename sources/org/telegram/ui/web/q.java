@@ -1,6 +1,6 @@
 package org.telegram.ui.web;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q implements Runnable {
     public final /* synthetic */ int a;
@@ -17,9 +17,9 @@ public final /* synthetic */ class q implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                w0 w0Var = this.b.a;
-                if (w0Var != null) {
-                    w0Var.d(this.c);
+                x0 x0Var = this.b.a;
+                if (x0Var != null) {
+                    x0Var.d(this.c);
                     break;
                 }
                 break;
@@ -31,9 +31,9 @@ public final /* synthetic */ class q implements Runnable {
                 String str = this.c;
                 a1Var.b = str;
                 a1Var.c();
-                w0 w0Var2 = a1Var.a;
-                if (w0Var2 != null) {
-                    w0Var2.onResume();
+                x0 x0Var2 = a1Var.a;
+                if (x0Var2 != null) {
+                    x0Var2.onResume();
                     a1Var.a.loadUrl(str);
                     break;
                 }

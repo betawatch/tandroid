@@ -12,7 +12,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class y0 extends t implements ServiceConnection {
     public static final /* synthetic */ int D = 0;
@@ -30,7 +30,7 @@ public final class y0 extends t implements ServiceConnection {
     }
 
     public y0(Context context, ComponentName componentName) {
-        super(context, new o5.i(componentName, 7));
+        super(context, new y5.h(componentName, 7));
         this.v = new ArrayList();
         this.r = componentName;
         this.s = new a7.e();
@@ -184,8 +184,8 @@ public final class y0 extends t implements ServiceConnection {
             p();
             try {
                 this.a.unbindService(this);
-            } catch (IllegalArgumentException e) {
-                Log.e("MediaRouteProviderProxy", this + ": unbindService failed", e);
+            } catch (IllegalArgumentException e6) {
+                Log.e("MediaRouteProviderProxy", this + ": unbindService failed", e6);
             }
         }
     }

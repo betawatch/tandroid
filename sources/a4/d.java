@@ -3,12 +3,12 @@ package a4;
 import h5.w;
 import j3.n0;
 import java.util.Arrays;
-import k7.u6;
 import k7.v6;
+import k7.w6;
 import q5.g0;
 import r3.o;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class d extends j {
     public o n;
@@ -25,7 +25,7 @@ public final class d extends j {
             wVar.G(4);
             wVar.A();
         }
-        int b10 = u6.b(i10, wVar);
+        int b10 = v6.b(i10, wVar);
         wVar.F(0);
         return b10;
     }
@@ -53,7 +53,7 @@ public final class d extends j {
             ((n0) bVar.b).getClass();
             return false;
         }
-        g0 b11 = v6.b(wVar);
+        g0 b11 = w6.b(wVar);
         o oVar3 = new o(oVar.a, oVar.b, oVar.c, oVar.d, oVar.e, oVar.g, oVar.h, oVar.j, b11, oVar.l);
         this.n = oVar3;
         c cVar2 = new c();

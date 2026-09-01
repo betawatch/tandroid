@@ -1,48 +1,15 @@
 package uf;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.z8;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class t0 extends View {
-    public final Drawable a;
-    public final ImageReceiver b;
+public final class t0 {
+    public final TLRPC.Document a;
+    public final Object b;
 
-    public t0(u0 u0Var, Context context) {
-        super(context);
-        this.a = getContext().getResources().getDrawable(R.drawable.map_pin_photo).mutate();
-        z8 z8Var = new z8((f6) null);
-        ImageReceiver imageReceiver = new ImageReceiver(this);
-        this.b = imageReceiver;
-        z8Var.r(u0Var.getUserConfig().getCurrentUser());
-        imageReceiver.setForUserOrChat(u0Var.getUserConfig().getCurrentUser(), z8Var);
-    }
-
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int dp = AndroidUtilities.dp(62.0f);
-        int dp2 = AndroidUtilities.dp(85.0f);
-        Drawable drawable = this.a;
-        drawable.setBounds(0, 0, dp, dp2);
-        drawable.draw(canvas);
-        int dp3 = AndroidUtilities.dp(62.0f);
-        ImageReceiver imageReceiver = this.b;
-        imageReceiver.setRoundRadius(dp3);
-        imageReceiver.setImageCoords(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f));
-        imageReceiver.draw(canvas);
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(85.0f), TLObject.FLAG_30));
+    public t0(TLRPC.Document document, Object obj) {
+        this.a = document;
+        this.b = obj;
     }
 }

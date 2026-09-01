@@ -1,31 +1,42 @@
 package j7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+import java.io.Serializable;
+
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class g8 {
-    public final String a;
-    public final String b;
-    public final String c;
-    public final String d;
-    public final n9 e;
-    public final String f;
-    public final Boolean g;
-    public final Boolean h;
-    public final Boolean i;
-    public final Integer j;
-    public final Integer k;
+    public String a;
+    public String b;
+    public String c;
+    public String d;
+    public String e;
+    public Object f;
+    public Object g;
+    public Object h;
+    public Integer i;
+    public Object j;
+    public Serializable k;
 
-    public /* synthetic */ g8(f8 f8Var) {
-        this.a = f8Var.a;
-        this.b = f8Var.b;
-        this.c = f8Var.c;
-        this.d = f8Var.d;
-        this.e = (n9) f8Var.k;
-        this.f = f8Var.e;
-        this.g = (Boolean) f8Var.f;
-        this.h = (Boolean) f8Var.g;
-        this.i = (Boolean) f8Var.h;
-        this.j = f8Var.i;
-        this.k = (Integer) f8Var.j;
+    public k9.a0 a() {
+        String str = this.a == null ? " sdkVersion" : "";
+        if (this.b == null) {
+            str = str.concat(" gmpAppId");
+        }
+        if (this.i == null) {
+            str = w.c.e(str, " platform");
+        }
+        if (this.c == null) {
+            str = w.c.e(str, " installationUuid");
+        }
+        if (((String) this.k) == null) {
+            str = w.c.e(str, " buildVersion");
+        }
+        if (((String) this.f) == null) {
+            str = w.c.e(str, " displayVersion");
+        }
+        if (str.isEmpty()) {
+            return new k9.a0(this.a, this.b, this.i.intValue(), this.c, this.d, this.e, (String) this.k, (String) this.f, (k9.d2) this.g, (k9.j1) this.h, (k9.g1) this.j);
+        }
+        throw new IllegalStateException("Missing required properties:".concat(str));
     }
 }

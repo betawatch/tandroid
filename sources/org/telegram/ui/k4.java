@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class k4 extends AnimatorListenerAdapter {
     public final /* synthetic */ boolean a;
@@ -50,7 +50,7 @@ public final class k4 extends AnimatorListenerAdapter {
                 ((b3) obj).a();
             }
             if (obj instanceof TLRPC.WebPage) {
-                org.telegram.ui.web.g2.o((TLRPC.WebPage) obj);
+                org.telegram.ui.web.h2.o((TLRPC.WebPage) obj);
             }
         } else if (!z10) {
             y3 y3Var2 = l4Var.H;

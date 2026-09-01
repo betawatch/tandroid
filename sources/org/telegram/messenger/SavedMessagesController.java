@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class SavedMessagesController {
     private final int currentAccount;
@@ -38,7 +38,7 @@ public class SavedMessagesController {
     private final Runnable saveCacheRunnable = new bi(this, 1);
     private final a0.h checkMessagesCallbacks = new a0.h();
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class SavedDialog {
         public long dialogId;
         private int lastDate;
@@ -120,7 +120,7 @@ public class SavedMessagesController {
         }
         this.saving = true;
         MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
-        messagesStorage.getStorageQueue().postRunnable(new yg(7, this, messagesStorage));
+        messagesStorage.getStorageQueue().postRunnable(new yg(6, this, messagesStorage));
     }
 
     private ArrayList<Long> getCurrentPinnedOrder(ArrayList<SavedDialog> arrayList) {
@@ -180,8 +180,8 @@ public class SavedMessagesController {
             executeFast.bindLong(1, 0L);
             executeFast.step();
             executeFast.dispose();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
         }
         AndroidUtilities.runOnUIThread(new bi(this, 2));
     }
@@ -221,7 +221,7 @@ public class SavedMessagesController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$hasSavedMessages$15(long j10, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new d4(this, tLObject, j10, 25));
+        AndroidUtilities.runOnUIThread(new d4(this, tLObject, j10, 26));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -247,7 +247,7 @@ public class SavedMessagesController {
      */
     /* JADX WARN: Code restructure failed: missing block: B:42:0x01b3, code lost:
     
-        org.telegram.messenger.AndroidUtilities.runOnUIThread(new org.telegram.messenger.c0(r14, r5, r6, r8, r7, r39, 5));
+        org.telegram.messenger.AndroidUtilities.runOnUIThread(new org.telegram.messenger.b0(r14, r5, r6, r8, r7, r39, 5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:43:0x01c2, code lost:
     
@@ -301,8 +301,8 @@ public class SavedMessagesController {
                     if (j11 < 0) {
                         try {
                             arrayList3.add(Long.valueOf(-j11));
-                        } catch (Exception e) {
-                            e = e;
+                        } catch (Exception e6) {
+                            e = e6;
                             savedMessagesController = this;
                             sQLiteCursor = sQLiteCursor3;
                             sQLiteCursor3 = queryFinalized;
@@ -346,8 +346,8 @@ public class SavedMessagesController {
                                 savedMessagesController = this;
                                 try {
                                     savedDialog.message = new MessageObject(savedMessagesController.currentAccount, TLdeserialize, null, null, null, null, null, false, false, 0L, false, false, true);
-                                } catch (Exception e6) {
-                                    e = e6;
+                                } catch (Exception e10) {
+                                    e = e10;
                                     sQLiteCursor = sQLiteCursor3;
                                     sQLiteCursor3 = sQLiteCursor2;
                                     FileLog.e(e);
@@ -372,20 +372,20 @@ public class SavedMessagesController {
                             arrayList.add(savedDialog);
                             queryFinalized = sQLiteCursor2;
                             i10 = 0;
-                        } catch (Exception e10) {
-                            e = e10;
+                        } catch (Exception e11) {
+                            e = e11;
                             savedMessagesController = this;
                         } catch (Throwable th5) {
                             th = th5;
                         }
-                    } catch (Exception e11) {
-                        e = e11;
+                    } catch (Exception e12) {
+                        e = e12;
                         savedMessagesController = this;
                     } catch (Throwable th6) {
                         th = th6;
                     }
-                } catch (Exception e12) {
-                    e = e12;
+                } catch (Exception e13) {
+                    e = e13;
                     savedMessagesController = this;
                     sQLiteCursor = sQLiteCursor3;
                     sQLiteCursor2 = queryFinalized;
@@ -409,8 +409,8 @@ public class SavedMessagesController {
                     messagesStorage.getAnimatedEmoji(TextUtils.join(",", arrayList4), arrayList7);
                 }
                 sQLiteCursor2.dispose();
-            } catch (Exception e13) {
-                e = e13;
+            } catch (Exception e14) {
+                e = e14;
                 sQLiteCursor3 = sQLiteCursor2;
                 FileLog.e(e);
                 if (sQLiteCursor3 != null) {
@@ -424,8 +424,8 @@ public class SavedMessagesController {
                 }
                 throw th;
             }
-        } catch (Exception e14) {
-            e = e14;
+        } catch (Exception e15) {
+            e = e15;
             savedMessagesController = this;
             sQLiteCursor = null;
         } catch (Throwable th9) {
@@ -553,7 +553,7 @@ public class SavedMessagesController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$loadDialogs$3(ArrayList arrayList, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new sk(this, tLObject, arrayList, tL_error, 29));
+        AndroidUtilities.runOnUIThread(new ci(this, tLObject, arrayList, tL_error, 0));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -599,8 +599,8 @@ public class SavedMessagesController {
                     sQLitePreparedStatement.step();
                 }
                 sQLitePreparedStatement.dispose();
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e6) {
+                FileLog.e(e6);
             }
             sQLitePreparedStatement.dispose();
             AndroidUtilities.runOnUIThread(new bi(this, 3));
@@ -691,15 +691,15 @@ public class SavedMessagesController {
                             queryFinalized.dispose();
                             i10 = i11 + 1;
                             sQLiteCursor2 = queryFinalized;
-                        } catch (Exception e) {
-                            e = e;
+                        } catch (Exception e6) {
+                            e = e6;
                             sQLiteCursor2 = queryFinalized;
                             try {
                                 FileLog.e(e);
                                 if (sQLiteCursor2 != null) {
                                     sQLiteCursor2.dispose();
                                 }
-                                AndroidUtilities.runOnUIThread(new c0(this, arrayList6, arrayList7, arrayList8, arrayList2, hVar, 6));
+                                AndroidUtilities.runOnUIThread(new b0(this, arrayList6, arrayList7, arrayList8, arrayList2, hVar, 6));
                             } catch (Throwable th2) {
                                 th = th2;
                                 if (sQLiteCursor2 != null) {
@@ -714,13 +714,13 @@ public class SavedMessagesController {
                             }
                             throw th;
                         }
-                    } catch (Exception e6) {
-                        e = e6;
+                    } catch (Exception e10) {
+                        e = e10;
                         sQLiteCursor2 = sQLiteCursor;
                         FileLog.e(e);
                         if (sQLiteCursor2 != null) {
                         }
-                        AndroidUtilities.runOnUIThread(new c0(this, arrayList6, arrayList7, arrayList8, arrayList2, hVar, 6));
+                        AndroidUtilities.runOnUIThread(new b0(this, arrayList6, arrayList7, arrayList8, arrayList2, hVar, 6));
                     } catch (Throwable th4) {
                         th = th4;
                         sQLiteCursor2 = sQLiteCursor;
@@ -728,14 +728,14 @@ public class SavedMessagesController {
                         }
                         throw th;
                     }
-                } catch (Exception e10) {
-                    e = e10;
+                } catch (Exception e11) {
+                    e = e11;
                     sQLiteCursor = sQLiteCursor2;
                     sQLiteCursor2 = sQLiteCursor;
                     FileLog.e(e);
                     if (sQLiteCursor2 != null) {
                     }
-                    AndroidUtilities.runOnUIThread(new c0(this, arrayList6, arrayList7, arrayList8, arrayList2, hVar, 6));
+                    AndroidUtilities.runOnUIThread(new b0(this, arrayList6, arrayList7, arrayList8, arrayList2, hVar, 6));
                 } catch (Throwable th5) {
                     th = th5;
                     sQLiteCursor = sQLiteCursor2;
@@ -744,8 +744,8 @@ public class SavedMessagesController {
                     }
                     throw th;
                 }
-            } catch (Exception e11) {
-                e = e11;
+            } catch (Exception e12) {
+                e = e12;
             } catch (Throwable th6) {
                 th = th6;
             }
@@ -763,7 +763,7 @@ public class SavedMessagesController {
         if (sQLiteCursor != null) {
             sQLiteCursor.dispose();
         }
-        AndroidUtilities.runOnUIThread(new c0(this, arrayList6, arrayList7, arrayList8, arrayList2, hVar, 6));
+        AndroidUtilities.runOnUIThread(new b0(this, arrayList6, arrayList7, arrayList8, arrayList2, hVar, 6));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -783,7 +783,7 @@ public class SavedMessagesController {
         this.loadingCache = true;
         long clientUserId = UserConfig.getInstance(this.currentAccount).getClientUserId();
         MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
-        messagesStorage.getStorageQueue().postRunnable(new ci(this, messagesStorage, clientUserId, runnable, 1));
+        messagesStorage.getStorageQueue().postRunnable(new di(this, messagesStorage, clientUserId, runnable, 1));
     }
 
     public static void openSavedMessages() {
@@ -885,7 +885,7 @@ public class SavedMessagesController {
         this.saving = true;
         ArrayList arrayList = new ArrayList(this.allDialogs);
         MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
-        messagesStorage.getStorageQueue().postRunnable(new d9(this, messagesStorage, arrayList, 20));
+        messagesStorage.getStorageQueue().postRunnable(new d9(21, this, messagesStorage, arrayList));
     }
 
     private void saveCacheSchedule() {
@@ -927,7 +927,7 @@ public class SavedMessagesController {
                 }
             }
         }
-        Collections.sort(arrayList, new di(0));
+        Collections.sort(arrayList, new ei(0));
         this.allDialogs.addAll(arrayList);
         if (z4) {
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.savedMessagesDialogsUpdate, new Object[0]);
@@ -941,7 +941,7 @@ public class SavedMessagesController {
     private void updateDialogsLastMessage(ArrayList<SavedDialog> arrayList) {
         long clientUserId = UserConfig.getInstance(this.currentAccount).getClientUserId();
         MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
-        messagesStorage.getStorageQueue().postRunnable(new ci(this, messagesStorage, arrayList, clientUserId, 0));
+        messagesStorage.getStorageQueue().postRunnable(new di(this, messagesStorage, arrayList, clientUserId, 0));
     }
 
     private void updatePinnedOrderToServer(ArrayList<Long> arrayList) {
@@ -1082,7 +1082,7 @@ public class SavedMessagesController {
         tL_messages_getSavedHistory.offset_id = ConnectionsManager.DEFAULT_DATACENTER_ID;
         tL_messages_getSavedHistory.offset_date = ConnectionsManager.DEFAULT_DATACENTER_ID;
         tL_messages_getSavedHistory.add_offset = -1;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getSavedHistory, new nh.t5(this, j10, 3));
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getSavedHistory, new oh.t5(this, j10, 3));
     }
 
     public boolean isLoading() {
@@ -1103,7 +1103,7 @@ public class SavedMessagesController {
         }
         this.dialogsLoading = true;
         TLRPC.TL_messages_getSavedDialogs tL_messages_getSavedDialogs = new TLRPC.TL_messages_getSavedDialogs();
-        SavedDialog savedDialog = this.loadedDialogs.isEmpty() ? null : (SavedDialog) kh.a2.i(1, this.loadedDialogs);
+        SavedDialog savedDialog = this.loadedDialogs.isEmpty() ? null : (SavedDialog) l.d.i(1, this.loadedDialogs);
         if (savedDialog != null) {
             tL_messages_getSavedDialogs.offset_id = savedDialog.top_message_id;
             tL_messages_getSavedDialogs.offset_date = savedDialog.getDate();
@@ -1490,8 +1490,8 @@ public class SavedMessagesController {
             }
             i11++;
         }
-        Collections.sort(arrayList, new s(28));
-        Collections.sort(arrayList4, new s(29));
+        Collections.sort(arrayList, new d(28));
+        Collections.sort(arrayList4, new d(29));
         arrayList.addAll(0, arrayList4);
         return true;
     }

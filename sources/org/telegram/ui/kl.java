@@ -8,7 +8,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class kl implements km {
     public final /* synthetic */ xn a;
@@ -20,12 +20,12 @@ public final class kl implements km {
     }
 
     @Override // org.telegram.ui.km
-    public final void Q0(int i10) {
+    public final void O0(int i10) {
         this.b.j(i10, 0, true, 0, true, 0);
     }
 
     @Override // org.telegram.ui.km
-    public final void X(boolean z4, boolean z10) {
+    public final void W(boolean z4, boolean z10) {
         org.telegram.ui.Components.eb ebVar;
         int i10;
         xn xnVar = this.b;
@@ -91,7 +91,7 @@ public final class kl implements km {
     }
 
     @Override // org.telegram.ui.km
-    public final void r0(String str) {
+    public final void t0(String str) {
         this.b.da(str, false);
     }
 }

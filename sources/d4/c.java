@@ -11,7 +11,7 @@ import c2.a1;
 import h5.d0;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class c implements k {
     public final MediaCodec a;
@@ -180,15 +180,15 @@ public final class c implements k {
                     if (z10) {
                         return -1;
                     }
-                    int e = a1Var.e();
-                    if (e >= 0) {
+                    int e6 = a1Var.e();
+                    if (e6 >= 0) {
                         h5.a.j(fVar.h);
                         MediaCodec.BufferInfo bufferInfo2 = (MediaCodec.BufferInfo) fVar.f.remove();
                         bufferInfo.set(bufferInfo2.offset, bufferInfo2.size, bufferInfo2.presentationTimeUs, bufferInfo2.flags);
-                    } else if (e == -2) {
+                    } else if (e6 == -2) {
                         fVar.h = (MediaFormat) fVar.g.remove();
                     }
-                    return e;
+                    return e6;
                 }
                 z4 = true;
                 if (!z4) {
@@ -207,7 +207,7 @@ public final class c implements k {
             fVar.k++;
             Handler handler = fVar.c;
             int i10 = d0.a;
-            handler.post(new ag.d(fVar, 20));
+            handler.post(new ag.e(fVar, 16));
         }
         this.a.start();
     }

@@ -1,13 +1,13 @@
 package sa;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a0 extends y {
     public final pa.o a;
     public final pa.g b;
     public final wa.a c;
     public final pa.v d;
-    public final org.telegram.ui.Cells.f1 e = new org.telegram.ui.Cells.f1(this, 19);
+    public final org.telegram.ui.Cells.f1 e = new org.telegram.ui.Cells.f1(this, 18);
     public final boolean f;
     public volatile pa.u g;
 

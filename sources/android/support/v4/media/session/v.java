@@ -7,7 +7,7 @@ import android.os.RemoteCallbackList;
 import android.support.v4.media.MediaMetadataCompat;
 import java.util.List;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class v implements t {
     public final MediaSession a;
@@ -24,10 +24,10 @@ public class v implements t {
     public y1.a l;
 
     public v(Context context, String str) {
-        MediaSession e = e(context, str);
-        this.a = e;
-        this.b = new MediaSessionCompat$Token(e.getSessionToken(), new u(this));
-        e.setFlags(3);
+        MediaSession e6 = e(context, str);
+        this.a = e6;
+        this.b = new MediaSessionCompat$Token(e6.getSessionToken(), new u(this));
+        e6.setFlags(3);
     }
 
     @Override // android.support.v4.media.session.t

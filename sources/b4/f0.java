@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.List;
 import org.telegram.ui.Components.jb;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class f0 implements r3.k {
     public final int a;
@@ -140,7 +140,7 @@ public final class f0 implements r3.k {
                     }
                     wVar.C(min);
                     hVar.f = 0;
-                    hVar.h(wVar.a, 0, min, false);
+                    hVar.f(wVar.a, 0, min, false);
                     int i15 = wVar.b;
                     int i16 = wVar.c;
                     int i17 = i16 - 188;
@@ -161,7 +161,7 @@ public final class f0 implements r3.k {
                             } else {
                                 i19++;
                                 if (i19 == 5) {
-                                    long a2 = j7.c0.a(wVar, i17, i14);
+                                    long a2 = j7.d0.a(wVar, i17, i14);
                                     if (a2 != -9223372036854775807L) {
                                         j12 = a2;
                                         break;
@@ -204,7 +204,7 @@ public final class f0 implements r3.k {
                 }
                 wVar.C(min2);
                 hVar2.f = 0;
-                hVar2.h(wVar.a, 0, min2, false);
+                hVar2.f(wVar.a, 0, min2, false);
                 int i21 = wVar.b;
                 int i22 = wVar.c;
                 while (true) {
@@ -212,7 +212,7 @@ public final class f0 implements r3.k {
                         break;
                     }
                     if (wVar.a[i21] == 71) {
-                        long a10 = j7.c0.a(wVar, i21, i14);
+                        long a10 = j7.d0.a(wVar, i21, i14);
                         if (a10 != -9223372036854775807L) {
                             j12 = a10;
                             break;
@@ -240,13 +240,13 @@ public final class f0 implements r3.k {
                     i12 = 1;
                     x xVar = new x(new cb.b(21), new e0(this.r, c0Var2), j17, j17 + 1, 0L, j11, 188L, 940);
                     this.j = xVar;
-                    this.k.g2(xVar.a);
+                    this.k.m2(xVar.a);
                 } else {
                     i10 = i13;
                     j10 = 0;
                     z4 = false;
                     i12 = 1;
-                    this.k.g2(new r3.n(j17));
+                    this.k.m2(new r3.n(j17));
                 }
             }
             if (this.o) {
@@ -364,7 +364,7 @@ public final class f0 implements r3.k {
     public final boolean i(r3.l lVar) {
         byte[] bArr = this.c.a;
         r3.h hVar = (r3.h) lVar;
-        hVar.h(bArr, 0, 940, false);
+        hVar.f(bArr, 0, 940, false);
         int i10 = 0;
         while (i10 < 188) {
             for (int i11 = 0; i11 < 5; i11++) {
@@ -372,7 +372,7 @@ public final class f0 implements r3.k {
                     break;
                 }
             }
-            hVar.u(i10);
+            hVar.s(i10);
             return true;
         }
         return false;

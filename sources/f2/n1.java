@@ -3,105 +3,119 @@ package f2;
 import android.os.Bundle;
 import android.view.View;
 import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class n1 extends r0.b {
-    public final RecyclerView d;
-    public final m1 e = new m1(this);
+    public final /* synthetic */ int d = 0;
+    public final Object e;
 
-    public n1(RecyclerView recyclerView) {
-        this.d = recyclerView;
+    public n1(o1 o1Var) {
+        this.e = o1Var;
     }
 
-    @Override // r0.b
-    public final void b(View view, AccessibilityEvent accessibilityEvent) {
-        super.b(view, accessibilityEvent);
-        if (!(view instanceof RecyclerView) || this.d.Z()) {
-            return;
-        }
-        RecyclerView recyclerView = (RecyclerView) view;
-        if (recyclerView.getLayoutManager() != null) {
-            i0 i0Var = (i0) recyclerView.getLayoutManager();
-            RecyclerView recyclerView2 = i0Var.b;
-            bf.f fVar = recyclerView2.b;
-            if (accessibilityEvent != null) {
-                boolean z4 = true;
-                if (!recyclerView2.canScrollVertically(1) && !i0Var.b.canScrollVertically(-1) && !i0Var.b.canScrollHorizontally(-1) && !i0Var.b.canScrollHorizontally(1)) {
-                    z4 = false;
-                }
-                accessibilityEvent.setScrollable(z4);
-                o0 o0Var = i0Var.b.w;
-                if (o0Var != null) {
-                    accessibilityEvent.setItemCount(o0Var.h());
-                }
-            }
-            if (i0Var.r() > 0) {
-                accessibilityEvent.setFromIndex(i0Var.L0());
-                accessibilityEvent.setToIndex(i0Var.N0());
-            }
-        }
-    }
-
-    @Override // r0.b
-    public final void c(View view, s0.e eVar) {
-        this.a.onInitializeAccessibilityNodeInfo(view, eVar.a);
-        RecyclerView recyclerView = this.d;
-        if (recyclerView.Z() || recyclerView.getLayoutManager() == null) {
-            return;
-        }
-        v0 layoutManager = recyclerView.getLayoutManager();
-        RecyclerView recyclerView2 = layoutManager.b;
-        layoutManager.S(recyclerView2.b, recyclerView2.q0, eVar);
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0083 A[ADDED_TO_REGION] */
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0022, code lost:
+    
+        if (r3.b() > 1) goto L12;
+     */
     @Override // r0.b
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
+    public void b(View view, AccessibilityEvent accessibilityEvent) {
+        boolean z4;
+        m2.a aVar;
+        switch (this.d) {
+            case 1:
+                m2.h hVar = (m2.h) this.e;
+                super.b(view, accessibilityEvent);
+                accessibilityEvent.setClassName(m2.h.class.getName());
+                m2.a aVar2 = hVar.e;
+                if (aVar2 != null) {
+                    z4 = true;
+                    break;
+                }
+                z4 = false;
+                accessibilityEvent.setScrollable(z4);
+                if (accessibilityEvent.getEventType() == 4096 && (aVar = hVar.e) != null) {
+                    accessibilityEvent.setItemCount(aVar.b());
+                    accessibilityEvent.setFromIndex(hVar.f);
+                    accessibilityEvent.setToIndex(hVar.f);
+                    break;
+                }
+                break;
+            default:
+                super.b(view, accessibilityEvent);
+                break;
+        }
+    }
+
+    @Override // r0.b
+    public final void c(View view, s0.d dVar) {
+        switch (this.d) {
+            case 0:
+                this.a.onInitializeAccessibilityNodeInfo(view, dVar.a);
+                o1 o1Var = (o1) this.e;
+                RecyclerView recyclerView = o1Var.d;
+                RecyclerView recyclerView2 = o1Var.d;
+                if (!recyclerView.Z() && recyclerView2.getLayoutManager() != null) {
+                    recyclerView2.getLayoutManager().T(view, dVar);
+                    break;
+                }
+                break;
+            default:
+                AccessibilityNodeInfo accessibilityNodeInfo = dVar.a;
+                this.a.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
+                dVar.i(m2.h.class.getName());
+                m2.h hVar = (m2.h) this.e;
+                m2.a aVar = hVar.e;
+                accessibilityNodeInfo.setScrollable(aVar != null && aVar.b() > 1);
+                if (hVar.canScrollHorizontally(1)) {
+                    dVar.a(4096);
+                }
+                if (hVar.canScrollHorizontally(-1)) {
+                    dVar.a(8192);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // r0.b
     public final boolean d(View view, int i10, Bundle bundle) {
-        int F;
-        int D;
-        if (super.d(view, i10, bundle)) {
-            return true;
-        }
-        RecyclerView recyclerView = this.d;
-        if (!recyclerView.Z() && recyclerView.getLayoutManager() != null) {
-            v0 layoutManager = recyclerView.getLayoutManager();
-            RecyclerView recyclerView2 = layoutManager.b;
-            bf.f fVar = recyclerView2.b;
-            if (i10 == 4096) {
-                F = recyclerView2.canScrollVertically(1) ? (layoutManager.n - layoutManager.F()) - layoutManager.C() : 0;
-                if (layoutManager.b.canScrollHorizontally(1)) {
-                    D = (layoutManager.m - layoutManager.D()) - layoutManager.E();
-                    if (F == 0) {
+        switch (this.d) {
+            case 0:
+                o1 o1Var = (o1) this.e;
+                if (!super.d(view, i10, bundle)) {
+                    RecyclerView recyclerView = o1Var.d;
+                    RecyclerView recyclerView2 = o1Var.d;
+                    if (!recyclerView.Z() && recyclerView2.getLayoutManager() != null) {
+                        bf.f fVar = recyclerView2.getLayoutManager().b.b;
+                        break;
                     }
-                    layoutManager.b.v0(D, F, null);
-                    return true;
                 }
-                D = 0;
-                if (F == 0) {
+                break;
+            default:
+                m2.h hVar = (m2.h) this.e;
+                if (!super.d(view, i10, bundle)) {
+                    if (i10 == 4096) {
+                        if (hVar.canScrollHorizontally(1)) {
+                            hVar.setCurrentItem(hVar.f + 1);
+                            break;
+                        }
+                    } else if (i10 == 8192 && hVar.canScrollHorizontally(-1)) {
+                        hVar.setCurrentItem(hVar.f - 1);
+                        break;
+                    }
                 }
-                layoutManager.b.v0(D, F, null);
-                return true;
-            }
-            if (i10 != 8192) {
-                D = 0;
-                F = 0;
-            } else {
-                F = recyclerView2.canScrollVertically(-1) ? -((layoutManager.n - layoutManager.F()) - layoutManager.C()) : 0;
-                if (layoutManager.b.canScrollHorizontally(-1)) {
-                    D = -((layoutManager.m - layoutManager.D()) - layoutManager.E());
-                }
-                D = 0;
-            }
-            if (F == 0 || D != 0) {
-                layoutManager.b.v0(D, F, null);
-                return true;
-            }
+                break;
         }
-        return false;
+        return true;
+    }
+
+    public n1(m2.h hVar) {
+        this.e = hVar;
     }
 }

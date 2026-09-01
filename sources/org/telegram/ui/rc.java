@@ -9,7 +9,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class rc extends View {
     public final Paint a;
@@ -37,23 +37,23 @@ public final class rc extends View {
         this.e = new Path();
         this.f = new Path();
         this.r = new org.telegram.ui.Components.rc(this);
-        this.v = new org.telegram.ui.Components.z5(this, 0L, 320L, org.telegram.ui.Components.nr.h);
+        this.v = new org.telegram.ui.Components.z5(this, 0L, 320L, org.telegram.ui.Components.pr.h);
         paint.setStyle(Paint.Style.STROKE);
     }
 
     public final void a(MessagesController.PeerColor peerColor) {
-        org.telegram.ui.ActionBar.f6 f6Var = this.w.a;
-        boolean a2 = f6Var != null ? f6Var.a() : org.telegram.ui.ActionBar.j6.I.q();
+        org.telegram.ui.ActionBar.g6 g6Var = this.w.a;
+        boolean a2 = g6Var != null ? g6Var.a() : org.telegram.ui.ActionBar.k6.I.q();
         Paint paint = this.c;
         Paint paint2 = this.b;
         if (a2 && peerColor.hasColor2() && !peerColor.hasColor3()) {
-            paint2.setColor(peerColor.getColor(1, f6Var));
-            paint.setColor(peerColor.getColor(0, f6Var));
+            paint2.setColor(peerColor.getColor(1, g6Var));
+            paint.setColor(peerColor.getColor(0, g6Var));
         } else {
-            paint2.setColor(peerColor.getColor(0, f6Var));
-            paint.setColor(peerColor.getColor(1, f6Var));
+            paint2.setColor(peerColor.getColor(0, g6Var));
+            paint.setColor(peerColor.getColor(1, g6Var));
         }
-        this.d.setColor(peerColor.getColor(2, f6Var));
+        this.d.setColor(peerColor.getColor(2, g6Var));
         this.h = peerColor.hasColor2();
         this.n = peerColor.hasColor3();
     }
@@ -78,12 +78,12 @@ public final class rc extends View {
             canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.33f), AndroidUtilities.dp(2.33f), this.d);
             canvas.restore();
         }
-        float e = this.v.e(this.s);
-        if (e > 0.0f) {
+        float e6 = this.v.e(this.s);
+        if (e6 > 0.0f) {
             float dpf2 = AndroidUtilities.dpf2(2.0f);
             Paint paint = this.a;
             paint.setStrokeWidth(dpf2);
-            canvas.drawCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, AndroidUtilities.lerp((paint.getStrokeWidth() * 0.5f) + AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f) - (paint.getStrokeWidth() * 2.0f), e), paint);
+            canvas.drawCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, AndroidUtilities.lerp((paint.getStrokeWidth() * 0.5f) + AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f) - (paint.getStrokeWidth() * 2.0f), e6), paint);
         }
         canvas.restore();
     }

@@ -11,7 +11,7 @@ import java.util.ArrayDeque;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class e0 implements ServiceConnection {
     public final Context a;
@@ -63,7 +63,7 @@ public final class e0 implements ServiceConnection {
             }
             d0Var = new d0(intent);
             ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = this.c;
-            d0Var.b.getTask().addOnCompleteListener(scheduledThreadPoolExecutor, new a1.c(scheduledThreadPoolExecutor.schedule(new ag.d(d0Var, 19), 20L, TimeUnit.SECONDS), 9));
+            d0Var.b.getTask().addOnCompleteListener(scheduledThreadPoolExecutor, new a1.c(scheduledThreadPoolExecutor.schedule(new ag.e(d0Var, 15), 20L, TimeUnit.SECONDS), 8));
             this.d.add(d0Var);
             a();
         } catch (Throwable th2) {
@@ -96,8 +96,8 @@ public final class e0 implements ServiceConnection {
             context = this.a;
             e0Var = this;
             try {
-            } catch (SecurityException e) {
-                e = e;
+            } catch (SecurityException e6) {
+                e = e6;
                 Log.e("FirebaseMessaging", "Exception while binding the service", e);
                 e0Var.f = false;
                 while (true) {
@@ -107,8 +107,8 @@ public final class e0 implements ServiceConnection {
                     ((d0) arrayDeque.poll()).b.trySetResult(null);
                 }
             }
-        } catch (SecurityException e6) {
-            e = e6;
+        } catch (SecurityException e10) {
+            e = e10;
             e0Var = this;
         }
         if (a2.c(context, context.getClass().getName(), this.b, e0Var, 65, null)) {

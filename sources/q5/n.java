@@ -4,17 +4,17 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 import j$.util.DesugarCollections;
-import j7.f5;
+import j7.g5;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Pattern;
-import k7.e8;
+import k7.f8;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class n extends c6.a {
     public static final Parcelable.Creator<n> CREATOR = new v(13);
@@ -74,7 +74,7 @@ public final class n extends c6.a {
             if (mVar != null) {
                 jSONObject.put("containerMetadata", mVar.e());
             }
-            String b10 = e8.b(Integer.valueOf(this.f));
+            String b10 = f8.b(Integer.valueOf(this.f));
             if (b10 != null) {
                 jSONObject.put("repeatMode", b10);
             }
@@ -116,28 +116,28 @@ public final class n extends c6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
-        f5.l(parcel, 2, this.a);
-        f5.l(parcel, 3, this.b);
+        int q10 = g5.q(parcel, 20293);
+        g5.l(parcel, 2, this.a);
+        g5.l(parcel, 3, this.b);
         int i11 = this.c;
-        f5.s(parcel, 4, 4);
+        g5.s(parcel, 4, 4);
         parcel.writeInt(i11);
-        f5.l(parcel, 5, this.d);
-        f5.k(parcel, 6, this.e, i10);
+        g5.l(parcel, 5, this.d);
+        g5.k(parcel, 6, this.e, i10);
         int i12 = this.f;
-        f5.s(parcel, 7, 4);
+        g5.s(parcel, 7, 4);
         parcel.writeInt(i12);
         List list = this.h;
-        f5.p(parcel, 8, list == null ? null : DesugarCollections.unmodifiableList(list));
+        g5.p(parcel, 8, list == null ? null : DesugarCollections.unmodifiableList(list));
         int i13 = this.n;
-        f5.s(parcel, 9, 4);
+        g5.s(parcel, 9, 4);
         parcel.writeInt(i13);
         long j10 = this.r;
-        f5.s(parcel, 10, 8);
+        g5.s(parcel, 10, 8);
         parcel.writeLong(j10);
         boolean z4 = this.s;
-        f5.s(parcel, 11, 4);
+        g5.s(parcel, 11, 4);
         parcel.writeInt(z4 ? 1 : 0);
-        f5.r(parcel, q10);
+        g5.r(parcel, q10);
     }
 }

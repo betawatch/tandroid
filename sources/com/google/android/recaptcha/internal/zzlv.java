@@ -2,14 +2,14 @@ package com.google.android.recaptcha.internal;
 
 import android.webkit.WebView;
 import dd.p;
-import k7.p7;
+import k7.q7;
 import ld.c0;
 import ld.s;
 import uc.c;
 import vc.a;
 import wc.i;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 final class zzlv extends i implements p {
     Object zza;
@@ -85,7 +85,7 @@ final class zzlv extends i implements p {
         a aVar = a.a;
         int i10 = this.zze;
         if (i10 == 0) {
-            p7.b(obj);
+            q7.b(obj);
             zzlyVar = this.zzf;
             zzxnVar = zzlyVar.zze;
             if (zzxnVar == null) {
@@ -114,9 +114,9 @@ final class zzlv extends i implements p {
             zzxnVar3 = (zzxn) this.zzc;
             zzlyVar = (zzly) this.zzb;
             zzlyVar2 = (zzly) this.zza;
-            p7.b(obj);
+            q7.b(obj);
         } else if (i10 != 2) {
-            p7.b(obj);
+            q7.b(obj);
             if (i10 != 3) {
             }
             zzly zzlyVar3 = this.zzf;
@@ -125,7 +125,7 @@ final class zzlv extends i implements p {
             this.zze = 4;
         } else {
             zzgrVar = (zzgr) this.zza;
-            p7.b(obj);
+            q7.b(obj);
             this.zza = null;
             this.zze = 3;
         }

@@ -13,7 +13,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class b8 extends FrameLayout {
     public org.telegram.ui.Components.p9 a;
@@ -23,10 +23,10 @@ public final class b8 extends FrameLayout {
     public boolean e;
     public float f;
     public boolean h;
-    public eg.s1 n;
+    public fg.r1 n;
     public boolean r;
     public boolean s;
-    public org.telegram.ui.ActionBar.f6 v;
+    public org.telegram.ui.ActionBar.g6 v;
 
     static {
         new AccelerateInterpolator(0.5f);
@@ -106,7 +106,7 @@ public final class b8 extends FrameLayout {
             }
         }
         if (str != null) {
-            StringBuilder f10 = vh.v2.f(str, " ");
+            StringBuilder f10 = w.c.f(str, " ");
             f10.append(LocaleController.getString(R.string.AttachSticker));
             accessibilityNodeInfo.setText(f10.toString());
         } else {

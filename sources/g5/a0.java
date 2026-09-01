@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a0 extends g {
     public RandomAccessFile a;
@@ -24,8 +24,8 @@ public final class a0 extends g {
                 if (randomAccessFile != null) {
                     randomAccessFile.close();
                 }
-            } catch (IOException e) {
-                throw new z(e, 2000);
+            } catch (IOException e6) {
+                throw new z(e6, 2000);
             }
         } finally {
             this.a = null;
@@ -74,27 +74,27 @@ public final class a0 extends g {
                 this.d = true;
                 transferStarted(pVar);
                 return this.c;
-            } catch (IOException e) {
-                throw new z(e, 2000);
+            } catch (IOException e6) {
+                throw new z(e6, 2000);
             }
-        } catch (FileNotFoundException e6) {
+        } catch (FileNotFoundException e10) {
             if (TextUtils.isEmpty(uri.getQuery()) && TextUtils.isEmpty(uri.getFragment())) {
                 if (h5.d0.a >= 21) {
-                    b10 = y.b(e6.getCause());
+                    b10 = y.b(e10.getCause());
                 }
                 i10 = 2005;
-                throw new z(e6, i10);
+                throw new z(e10, i10);
             }
             String path2 = uri.getPath();
             String query = uri.getQuery();
             String fragment = uri.getFragment();
             StringBuilder m9 = yh.m("uri has query and/or fragment, which are not supported. Did you call Uri.parse() on a string containing '?' or '#'? Use Uri.fromFile(new File(path)) to avoid this. path=", path2, ",query=", query, ",fragment=");
             m9.append(fragment);
-            throw new z(m9.toString(), e6, 1004);
-        } catch (SecurityException e10) {
-            throw new z(e10, 2006);
-        } catch (RuntimeException e11) {
-            throw new z(e11, 2000);
+            throw new z(m9.toString(), e10, 1004);
+        } catch (SecurityException e11) {
+            throw new z(e11, 2006);
+        } catch (RuntimeException e12) {
+            throw new z(e12, 2000);
         }
     }
 
@@ -116,8 +116,8 @@ public final class a0 extends g {
                 bytesTransferred(read);
             }
             return read;
-        } catch (IOException e) {
-            throw new z(e, 2000);
+        } catch (IOException e6) {
+            throw new z(e6, 2000);
         }
     }
 }

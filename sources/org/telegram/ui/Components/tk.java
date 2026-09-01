@@ -1,34 +1,28 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.view.View;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class tk extends tf.i0 {
-    public final /* synthetic */ al K;
+public final class tk extends f2.k0 {
+    public final /* synthetic */ gj r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tk(al alVar, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z4) {
-        super(context, f6Var, z4, false);
-        this.K = alVar;
+    public tk(gj gjVar, Context context) {
+        super(context);
+        this.r = gjVar;
     }
 
-    @Override // f2.o0
-    public final void l() {
-        al alVar = this.K;
-        tk tkVar = alVar.O;
-        org.telegram.ui.ActionBar.w0 w0Var = alVar.B;
-        if (w0Var != null) {
-            w0Var.setShowSearchProgress(tkVar.G);
-        }
-        TextView textView = alVar.y;
-        if (textView != null) {
-            textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("NoPlacesFoundInfo", R.string.NoPlacesFoundInfo, tkVar.x)));
-        }
-        super.l();
+    @Override // f2.k0
+    public final int k(int i10, View view) {
+        int k10 = super.k(i10, view);
+        cl clVar = (cl) this.r.V;
+        return k10 - (clVar.M.getPaddingTop() - (clVar.x0 - clVar.w0));
+    }
+
+    @Override // f2.k0
+    public final int m(int i10) {
+        return super.m(i10) * 4;
     }
 }

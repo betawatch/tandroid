@@ -4,7 +4,7 @@ import j3.r1;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class f {
     public final List a;
@@ -85,8 +85,8 @@ public final class f {
                 i12 = 0;
             }
             return new f(i13 == 0 ? Collections.EMPTY_LIST : Collections.singletonList(bArr), u10 + 1, i18, i19, i20, f10, str);
-        } catch (ArrayIndexOutOfBoundsException e) {
-            throw r1.a("Error parsing HEVC config", e);
+        } catch (ArrayIndexOutOfBoundsException e6) {
+            throw r1.a("Error parsing HEVC config", e6);
         }
     }
 }

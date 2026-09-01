@@ -50,9 +50,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.XiaomiUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public class EditTextBoldCursor extends xt {
+public class EditTextBoldCursor extends zt {
     private static final String BLINK_CLASS = "android.widget.Editor$Blink";
     public static final /* synthetic */ int a = 0;
     private static Class editorClass;
@@ -68,7 +68,7 @@ public class EditTextBoldCursor extends xt {
     private float activeLineWidth;
     private boolean allowDrawCursor;
     private View attachedToWindow;
-    ng.a blurredBackgroundDrawableViewFactory;
+    og.a blurredBackgroundDrawableViewFactory;
     private boolean currentDrawHintAsHeader;
     ShapeDrawable cursorDrawable;
     private boolean cursorDrawn;
@@ -87,8 +87,8 @@ public class EditTextBoldCursor extends xt {
     private TextPaint errorPaint;
     private CharSequence errorText;
     private boolean fixed;
-    public org.telegram.ui.ActionBar.j4 floatingActionMode;
-    private org.telegram.ui.ActionBar.y4 floatingToolbar;
+    public org.telegram.ui.ActionBar.k4 floatingActionMode;
+    private org.telegram.ui.ActionBar.z4 floatingToolbar;
     private ViewTreeObserver.OnPreDrawListener floatingToolbarPreDrawListener;
     private boolean forceCursorEnd;
     private GradientDrawable gradientDrawable;
@@ -99,7 +99,7 @@ public class EditTextBoldCursor extends xt {
     private float hintAlpha;
     private j6 hintAnimatedDrawable;
     private j6 hintAnimatedDrawable2;
-    private iy0 hintAnimator;
+    private jy0 hintAnimator;
     private int hintColor;
     private long hintLastUpdateTime;
     private StaticLayout hintLayout;
@@ -180,9 +180,9 @@ public class EditTextBoldCursor extends xt {
             setImportantForAutofill(2);
         }
         if (i10 >= 29) {
-            pt ptVar = new pt(this);
-            this.cursorDrawable = ptVar;
-            ptVar.setShape(new RectShape());
+            rt rtVar = new rt(this);
+            this.cursorDrawable = rtVar;
+            rtVar.setShape(new RectShape());
             this.gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{-11230757, -11230757});
             setTextCursorDrawable(this.cursorDrawable);
         }
@@ -278,7 +278,7 @@ public class EditTextBoldCursor extends xt {
                 this.headerTransformAnimation = animatorSet2;
                 animatorSet2.playTogether(ObjectAnimator.ofFloat(this, "headerAnimationProgress", z10 ? 1.0f : 0.0f));
                 this.headerTransformAnimation.setDuration(200L);
-                this.headerTransformAnimation.setInterpolator(nr.h);
+                this.headerTransformAnimation.setInterpolator(pr.h);
                 this.headerTransformAnimation.start();
             } else {
                 this.headerAnimationProgress = z10 ? 1.0f : 0.0f;
@@ -288,16 +288,16 @@ public class EditTextBoldCursor extends xt {
     }
 
     public final void f() {
-        org.telegram.ui.ActionBar.y4 y4Var = this.floatingToolbar;
-        if (y4Var != null) {
-            y4Var.a.removeOnLayoutChangeListener(y4Var.l);
-            org.telegram.ui.ActionBar.w4 w4Var = y4Var.b;
-            if (!w4Var.F) {
-                w4Var.G = false;
-                w4Var.F = true;
-                w4Var.x.cancel();
-                w4Var.w.start();
-                w4Var.D.setEmpty();
+        org.telegram.ui.ActionBar.z4 z4Var = this.floatingToolbar;
+        if (z4Var != null) {
+            z4Var.a.removeOnLayoutChangeListener(z4Var.l);
+            org.telegram.ui.ActionBar.x4 x4Var = z4Var.b;
+            if (!x4Var.F) {
+                x4Var.G = false;
+                x4Var.F = true;
+                x4Var.x.cancel();
+                x4Var.w.start();
+                x4Var.D.setEmpty();
             }
             this.floatingToolbar = null;
         }
@@ -330,7 +330,7 @@ public class EditTextBoldCursor extends xt {
             }
             ViewTreeObserver.OnPreDrawListener onPreDrawListener = this.listenerFixer;
             Objects.requireNonNull(onPreDrawListener);
-            AndroidUtilities.runOnUIThread(new vp(onPreDrawListener, 8), 500L);
+            AndroidUtilities.runOnUIThread(new xp(onPreDrawListener, 8), 500L);
         } catch (Throwable unused) {
         }
         this.fixed = true;
@@ -430,7 +430,7 @@ public class EditTextBoldCursor extends xt {
         return this.onPremiumMenuLockClickListener;
     }
 
-    public org.telegram.ui.ActionBar.f6 getResourcesProvider() {
+    public org.telegram.ui.ActionBar.g6 getResourcesProvider() {
         return null;
     }
 
@@ -439,9 +439,9 @@ public class EditTextBoldCursor extends xt {
         if (this.cursorDrawable != null) {
             return super.getTextCursorDrawable();
         }
-        pt ptVar = new pt(this, new RectShape());
-        ptVar.getPaint().setColor(0);
-        return ptVar;
+        rt rtVar = new rt(this, new RectShape());
+        rtVar.getPaint().setColor(0);
+        return rtVar;
     }
 
     @Override // android.widget.TextView
@@ -511,12 +511,12 @@ public class EditTextBoldCursor extends xt {
         return this.isTextWatchersSuppressed;
     }
 
-    @Override // org.telegram.ui.Components.xt, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.zt, android.widget.TextView, android.view.View
     public void onAttachedToWindow() {
         try {
             super.onAttachedToWindow();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
         }
         this.attachedToWindow = getRootView();
         if (Build.VERSION.SDK_INT < 29) {
@@ -524,7 +524,7 @@ public class EditTextBoldCursor extends xt {
         }
     }
 
-    @Override // org.telegram.ui.Components.xt, android.view.View
+    @Override // org.telegram.ui.Components.zt, android.view.View
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.attachedToWindow = null;
@@ -577,7 +577,7 @@ public class EditTextBoldCursor extends xt {
     /* JADX WARN: Removed duplicated region for block: B:8:0x030d  */
     /* JADX WARN: Removed duplicated region for block: B:91:0x0627  */
     /* JADX WARN: Removed duplicated region for block: B:94:0x0645  */
-    @Override // org.telegram.ui.Components.xt, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.zt, android.widget.TextView, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -688,58 +688,58 @@ public class EditTextBoldCursor extends xt {
                     getPaint().setColor(this.hintColor);
                     getPaint().setAlpha((int) ((Color.alpha(this.hintColor) / 255.0f) * this.hintAlpha * 255.0f));
                 }
-                iy0 iy0Var = this.hintAnimator;
-                if (iy0Var == null || !iy0Var.e) {
+                jy0 jy0Var = this.hintAnimator;
+                if (jy0Var == null || !jy0Var.e) {
                     f10 = 2.0f;
                     f11 = 150.0f;
                     Utilities.Callback2<Canvas, Runnable> callback2 = this.drawHint;
                     if (callback2 != null) {
-                        callback2.run(canvas2, new il(11, this, canvas2));
+                        callback2.run(canvas2, new gm(10, this, canvas2));
                     } else {
                         this.hintLayout.draw(canvas2);
                     }
                 } else {
                     canvas2.save();
                     canvas2.clipRect(0, 0, getMeasuredWidth(), getMeasuredHeight());
-                    iy0 iy0Var2 = this.hintAnimator;
+                    jy0 jy0Var2 = this.hintAnimator;
                     TextPaint paint = getPaint();
-                    EditTextBoldCursor editTextBoldCursor = iy0Var2.a;
-                    if (iy0Var2.e) {
-                        float f19 = iy0Var2.h * (iy0Var2.f ? iy0Var2.i : 1.0f - iy0Var2.i);
+                    EditTextBoldCursor editTextBoldCursor = jy0Var2.a;
+                    if (jy0Var2.e) {
+                        float f19 = jy0Var2.h * (jy0Var2.f ? jy0Var2.i : 1.0f - jy0Var2.i);
                         int alpha = paint.getAlpha();
-                        if (iy0Var2.d != null) {
+                        if (jy0Var2.d != null) {
                             canvas2.save();
                             canvas2.translate(f19, 0.0f);
-                            iy0Var2.d.draw(canvas2);
+                            jy0Var2.d.draw(canvas2);
                             canvas2.restore();
                         }
-                        if (iy0Var2.b != null) {
-                            float f20 = iy0Var2.f ? 1.0f - iy0Var2.i : iy0Var2.i;
+                        if (jy0Var2.b != null) {
+                            float f20 = jy0Var2.f ? 1.0f - jy0Var2.i : jy0Var2.i;
                             canvas2.save();
                             f10 = 2.0f;
                             paint.setAlpha((int) (alpha * f20));
                             canvas2.translate(f19, 0.0f);
-                            if (iy0Var2.g) {
+                            if (jy0Var2.g) {
                                 float f21 = (f20 * 0.1f) + 0.9f;
                                 canvas2.scale(f21, f21, f19, editTextBoldCursor.getMeasuredHeight() / 2.0f);
                             }
-                            iy0Var2.b.draw(canvas2);
+                            jy0Var2.b.draw(canvas2);
                             canvas2.restore();
                             paint.setAlpha(alpha);
                         } else {
                             f10 = 2.0f;
                         }
-                        if (iy0Var2.c != null) {
-                            float f22 = iy0Var2.f ? iy0Var2.i : 1.0f - iy0Var2.i;
+                        if (jy0Var2.c != null) {
+                            float f22 = jy0Var2.f ? jy0Var2.i : 1.0f - jy0Var2.i;
                             canvas2.save();
                             f11 = 150.0f;
-                            paint.setAlpha((int) (alpha * (iy0Var2.f ? iy0Var2.i : 1.0f - iy0Var2.i)));
+                            paint.setAlpha((int) (alpha * (jy0Var2.f ? jy0Var2.i : 1.0f - jy0Var2.i)));
                             canvas2.translate(f19, 0.0f);
-                            if (iy0Var2.g) {
+                            if (jy0Var2.g) {
                                 float f23 = (f22 * 0.1f) + 0.9f;
                                 canvas2.scale(f23, f23, f19, editTextBoldCursor.getMeasuredHeight() / f10);
                             }
-                            iy0Var2.c.draw(canvas2);
+                            jy0Var2.c.draw(canvas2);
                             canvas2.restore();
                             paint.setAlpha(alpha);
                             canvas2.restore();
@@ -775,9 +775,9 @@ public class EditTextBoldCursor extends xt {
                 if (field != null && (i13 = this.scrollY) != Integer.MAX_VALUE) {
                     try {
                         field.set(this, Integer.valueOf(i13));
-                    } catch (Exception e) {
+                    } catch (Exception e6) {
                         if (BuildVars.DEBUG_PRIVATE_VERSION) {
-                            throw new RuntimeException(e);
+                            throw new RuntimeException(e6);
                         }
                     }
                 }
@@ -1066,7 +1066,7 @@ public class EditTextBoldCursor extends xt {
                     }
                     f13 = this.lineActiveness;
                     if (f13 <= 0.0f) {
-                        float interpolation = nr.j.getInterpolation(f13);
+                        float interpolation = pr.j.getInterpolation(f13);
                         boolean z13 = this.lineActive;
                         if (z13) {
                             this.activeLineWidth = max * interpolation;
@@ -1156,8 +1156,8 @@ public class EditTextBoldCursor extends xt {
     public void onFocusChanged(boolean z4, int i10, Rect rect) {
         try {
             super.onFocusChanged(z4, i10, rect);
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
         }
         e(true);
     }
@@ -1170,7 +1170,7 @@ public class EditTextBoldCursor extends xt {
             if (getText().length() <= 0) {
                 accessibilityNodeInfo.setText(this.hintLayout.getText());
             } else {
-                new s0.e(accessibilityNodeInfo).l(this.hintLayout.getText());
+                new s0.d(accessibilityNodeInfo).l(this.hintLayout.getText());
             }
         }
     }
@@ -1211,7 +1211,7 @@ public class EditTextBoldCursor extends xt {
         }
     }
 
-    @Override // org.telegram.ui.Components.xt, android.widget.TextView
+    @Override // org.telegram.ui.Components.zt, android.widget.TextView
     public void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
         super.onTextChanged(charSequence, i10, i11, i12);
         if (!this.transformHintToHeader || this.transformHintToHeaderOnFocus) {
@@ -1238,11 +1238,11 @@ public class EditTextBoldCursor extends xt {
         lf.j.c();
         int max = Math.max(1, Math.min(2, 60));
         d.h(runnable);
-        lf.h e = d.e(max);
-        if (e.f == null) {
-            e.f = new be.b(true);
+        lf.h e6 = d.e(max);
+        if (e6.f == null) {
+            e6.f = new be.b(true);
         }
-        e.f.add(runnable);
+        e6.f.add(runnable);
         return true;
     }
 
@@ -1268,7 +1268,7 @@ public class EditTextBoldCursor extends xt {
         invalidate();
     }
 
-    public void setBlurredBackgroundDrawableViewFactory(ng.a aVar) {
+    public void setBlurredBackgroundDrawableViewFactory(og.a aVar) {
         this.blurredBackgroundDrawableViewFactory = aVar;
     }
 
@@ -1420,8 +1420,8 @@ public class EditTextBoldCursor extends xt {
     public void setSelection(int i10, int i11) {
         try {
             super.setSelection(i10, i11);
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
         }
     }
 
@@ -1429,7 +1429,7 @@ public class EditTextBoldCursor extends xt {
         this.supportRtlHint = z4;
     }
 
-    @Override // org.telegram.ui.Components.xt, android.widget.EditText, android.widget.TextView
+    @Override // org.telegram.ui.Components.zt, android.widget.EditText, android.widget.TextView
     public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
         super.setText(charSequence, bufferType);
         e(this.nextSetTextAnimated);
@@ -1521,9 +1521,9 @@ public class EditTextBoldCursor extends xt {
         if (Build.VERSION.SDK_INT < 23 || (this.windowView == null && this.attachedToWindow == null)) {
             return super.startActionMode(callback);
         }
-        org.telegram.ui.ActionBar.j4 j4Var = this.floatingActionMode;
-        if (j4Var != null) {
-            j4Var.finish();
+        org.telegram.ui.ActionBar.k4 k4Var = this.floatingActionMode;
+        if (k4Var != null) {
+            k4Var.finish();
         }
         f();
         Context context = getContext();
@@ -1531,16 +1531,16 @@ public class EditTextBoldCursor extends xt {
         if (view == null) {
             view = this.attachedToWindow;
         }
-        org.telegram.ui.ActionBar.y4 y4Var = new org.telegram.ui.ActionBar.y4(context, view, getActionModeStyle(), getResourcesProvider(), this.blurredBackgroundDrawableViewFactory);
-        this.floatingToolbar = y4Var;
-        y4Var.j = this.onPremiumMenuLockClickListener;
-        y4Var.k = new mt(this, 0);
-        org.telegram.ui.ActionBar.j4 j4Var2 = new org.telegram.ui.ActionBar.j4(getContext(), new org.telegram.ui.Cells.k9(this, callback), this, this.floatingToolbar);
-        this.floatingActionMode = j4Var2;
-        this.floatingToolbarPreDrawListener = new nt(0, this);
-        callback.onCreateActionMode(j4Var2, j4Var2.c);
-        org.telegram.ui.ActionBar.j4 j4Var3 = this.floatingActionMode;
-        extendActionMode(j4Var3, j4Var3.c);
+        org.telegram.ui.ActionBar.z4 z4Var = new org.telegram.ui.ActionBar.z4(context, view, getActionModeStyle(), getResourcesProvider(), this.blurredBackgroundDrawableViewFactory);
+        this.floatingToolbar = z4Var;
+        z4Var.j = this.onPremiumMenuLockClickListener;
+        z4Var.k = new ot(this, 0);
+        org.telegram.ui.ActionBar.k4 k4Var2 = new org.telegram.ui.ActionBar.k4(getContext(), new org.telegram.ui.Cells.k9(this, callback), this, this.floatingToolbar);
+        this.floatingActionMode = k4Var2;
+        this.floatingToolbarPreDrawListener = new pt(0, this);
+        callback.onCreateActionMode(k4Var2, k4Var2.c);
+        org.telegram.ui.ActionBar.k4 k4Var3 = this.floatingActionMode;
+        extendActionMode(k4Var3, k4Var3.c);
         this.floatingActionMode.invalidate();
         getViewTreeObserver().addOnPreDrawListener(this.floatingToolbarPreDrawListener);
         invalidate();
@@ -1548,15 +1548,15 @@ public class EditTextBoldCursor extends xt {
     }
 
     public void useAnimatedTextDrawable() {
-        ot otVar = new ot(0, this);
-        this.hintAnimatedDrawable = otVar;
-        otVar.n(true);
+        qt qtVar = new qt(0, this);
+        this.hintAnimatedDrawable = qtVar;
+        qtVar.n(true);
         this.hintAnimatedDrawable.r(this.hintColor);
         this.hintAnimatedDrawable.t(getPaint().getTextSize());
-        ot otVar2 = new ot(1, this);
-        this.hintAnimatedDrawable2 = otVar2;
-        otVar2.b = 5;
-        otVar2.r(this.hintColor);
+        qt qtVar2 = new qt(1, this);
+        this.hintAnimatedDrawable2 = qtVar2;
+        qtVar2.b = 5;
+        qtVar2.r(this.hintColor);
         this.hintAnimatedDrawable2.t(getPaint().getTextSize());
     }
 
@@ -1582,14 +1582,14 @@ public class EditTextBoldCursor extends xt {
         boolean z11 = false;
         if (getMeasuredWidth() == 0 ? false : z4) {
             if (this.hintAnimator == null) {
-                this.hintAnimator = new iy0(this);
+                this.hintAnimator = new jy0(this);
             }
-            iy0 iy0Var = this.hintAnimator;
+            jy0 jy0Var = this.hintAnimator;
             StaticLayout staticLayout = this.hintLayout;
             CharSequence charSequence6 = this.hint;
-            iy0Var.getClass();
+            jy0Var.getClass();
             if (staticLayout != null && !charSequence6.equals(charSequence5)) {
-                ValueAnimator valueAnimator = iy0Var.j;
+                ValueAnimator valueAnimator = jy0Var.j;
                 if (valueAnimator != null) {
                     valueAnimator.cancel();
                 }
@@ -1607,49 +1607,49 @@ public class EditTextBoldCursor extends xt {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence2);
                     SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(charSequence2);
                     if (indexOf != 0) {
-                        spannableStringBuilder2.setSpan(new lz(z11), 0, indexOf, 0);
+                        spannableStringBuilder2.setSpan(new nz(z11), 0, indexOf, 0);
                     }
                     if (charSequence3.length() + indexOf != charSequence2.length()) {
-                        spannableStringBuilder2.setSpan(new lz(z11), charSequence3.length() + indexOf, charSequence2.length(), 0);
+                        spannableStringBuilder2.setSpan(new nz(z11), charSequence3.length() + indexOf, charSequence2.length(), 0);
                     }
-                    spannableStringBuilder.setSpan(new lz(z11), indexOf, charSequence3.length() + indexOf, 0);
+                    spannableStringBuilder.setSpan(new nz(z11), indexOf, charSequence3.length() + indexOf, 0);
                     int dp = AndroidUtilities.dp(400.0f);
                     Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
-                    iy0Var.b = new StaticLayout(spannableStringBuilder, textPaint, dp, alignment, 1.0f, 0.0f, false);
+                    jy0Var.b = new StaticLayout(spannableStringBuilder, textPaint, dp, alignment, 1.0f, 0.0f, false);
                     StaticLayout staticLayout2 = new StaticLayout(spannableStringBuilder2, textPaint, AndroidUtilities.dp(400.0f), alignment, 1.0f, 0.0f, false);
-                    iy0Var.d = staticLayout2;
-                    iy0Var.e = true;
-                    iy0Var.f = z10;
-                    iy0Var.h = indexOf == 0 ? 0.0f : -staticLayout2.getPrimaryHorizontal(indexOf);
-                    iy0Var.c = null;
-                    iy0Var.g = false;
+                    jy0Var.d = staticLayout2;
+                    jy0Var.e = true;
+                    jy0Var.f = z10;
+                    jy0Var.h = indexOf == 0 ? 0.0f : -staticLayout2.getPrimaryHorizontal(indexOf);
+                    jy0Var.c = null;
+                    jy0Var.g = false;
                 } else {
                     int dp2 = AndroidUtilities.dp(400.0f);
                     Layout.Alignment alignment2 = Layout.Alignment.ALIGN_NORMAL;
-                    iy0Var.b = new StaticLayout(charSequence5, textPaint, dp2, alignment2, 1.0f, 0.0f, false);
-                    iy0Var.c = new StaticLayout(charSequence6, textPaint, AndroidUtilities.dp(400.0f), alignment2, 1.0f, 0.0f, false);
-                    iy0Var.d = null;
-                    iy0Var.e = true;
-                    iy0Var.g = true;
-                    iy0Var.h = 0.0f;
+                    jy0Var.b = new StaticLayout(charSequence5, textPaint, dp2, alignment2, 1.0f, 0.0f, false);
+                    jy0Var.c = new StaticLayout(charSequence6, textPaint, AndroidUtilities.dp(400.0f), alignment2, 1.0f, 0.0f, false);
+                    jy0Var.d = null;
+                    jy0Var.e = true;
+                    jy0Var.g = true;
+                    jy0Var.h = 0.0f;
                 }
-                iy0Var.i = 0.0f;
+                jy0Var.i = 0.0f;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                iy0Var.j = ofFloat;
-                ofFloat.addUpdateListener(new i70(iy0Var, 26));
-                iy0Var.j.addListener(new nd0(iy0Var, 19));
-                iy0Var.j.setDuration(150L);
-                iy0Var.j.setInterpolator(nr.f);
-                iy0Var.j.start();
+                jy0Var.j = ofFloat;
+                ofFloat.addUpdateListener(new k70(jy0Var, 26));
+                jy0Var.j.addListener(new pd0(jy0Var, 19));
+                jy0Var.j.setDuration(150L);
+                jy0Var.j.setInterpolator(pr.f);
+                jy0Var.j.start();
             }
         } else {
-            iy0 iy0Var2 = this.hintAnimator;
-            if (iy0Var2 != null) {
-                ValueAnimator valueAnimator2 = iy0Var2.j;
+            jy0 jy0Var2 = this.hintAnimator;
+            if (jy0Var2 != null) {
+                ValueAnimator valueAnimator2 = jy0Var2.j;
                 if (valueAnimator2 != null) {
                     valueAnimator2.cancel();
                 }
-                iy0Var2.e = false;
+                jy0Var2.e = false;
             }
         }
         this.hint = charSequence5;
@@ -1671,8 +1671,8 @@ public class EditTextBoldCursor extends xt {
     public void setSelection(int i10) {
         try {
             super.setSelection(i10);
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
         }
     }
 

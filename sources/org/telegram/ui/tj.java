@@ -14,7 +14,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class tj extends f2.x {
     public boolean S;
@@ -62,7 +62,7 @@ public final class tj extends f2.x {
         return false;
     }
 
-    @Override // f2.v0
+    @Override // f2.w0
     public final int G() {
         if (this.S) {
             return (int) this.T.p9;
@@ -70,36 +70,36 @@ public final class tj extends f2.x {
         return 0;
     }
 
-    @Override // f2.v0
+    @Override // f2.w0
     public final int J() {
         return this.S ? (int) this.T.p9 : F();
     }
 
-    @Override // f2.v0
+    @Override // f2.w0
     public final int K() {
         return this.S ? (int) ((this.n - this.T.p9) - C()) : super.K();
     }
 
-    @Override // f2.i0
+    @Override // f2.j0
     public final int X0() {
         return (int) this.T.p9;
     }
 
-    @Override // f2.w, f2.i0, f2.v0
-    public final void b0(bf.f fVar, f2.i1 i1Var) {
+    @Override // f2.w, f2.j0, f2.w0
+    public final void b0(bf.f fVar, f2.j1 j1Var) {
         if (BuildVars.DEBUG_PRIVATE_VERSION) {
-            super.b0(fVar, i1Var);
+            super.b0(fVar, j1Var);
             return;
         }
         try {
-            super.b0(fVar, i1Var);
-        } catch (Exception e) {
-            FileLog.e(e);
+            super.b0(fVar, j1Var);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             AndroidUtilities.runOnUIThread(new zi(this, 2));
         }
     }
 
-    @Override // f2.i0
+    @Override // f2.j0
     public final void i1(int i10, int i11, boolean z4) {
         if (!z4) {
             i11 = (int) ((i11 - F()) + this.T.p9);
@@ -107,36 +107,36 @@ public final class tj extends f2.x {
         super.i1(i10, i11, z4);
     }
 
-    @Override // f2.i0, f2.v0
-    public final int j(f2.i1 i1Var) {
+    @Override // f2.j0, f2.w0
+    public final int j(f2.j1 j1Var) {
         this.S = true;
-        int B0 = B0(i1Var);
+        int B0 = B0(j1Var);
         this.S = false;
         return B0;
     }
 
-    @Override // f2.w, f2.i0, f2.v0
-    public final int k(f2.i1 i1Var) {
+    @Override // f2.w, f2.j0, f2.w0
+    public final int k(f2.j1 j1Var) {
         this.S = true;
-        int C0 = C0(i1Var);
+        int C0 = C0(j1Var);
         this.S = false;
         return C0;
     }
 
-    @Override // f2.w, f2.i0, f2.v0
-    public final int l(f2.i1 i1Var) {
+    @Override // f2.w, f2.j0, f2.w0
+    public final int l(f2.j1 j1Var) {
         this.S = true;
-        int D0 = D0(i1Var);
+        int D0 = D0(j1Var);
         this.S = false;
         return D0;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:71:0x015e  */
-    @Override // f2.w, f2.i0, f2.v0
+    @Override // f2.w, f2.j0, f2.w0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int o0(int i10, bf.f fVar, f2.i1 i1Var) {
+    public final int o0(int i10, bf.f fVar, f2.j1 j1Var) {
         int i11;
         boolean z4;
         int i12;
@@ -144,8 +144,8 @@ public final class tj extends f2.x {
         float f11;
         float f12;
         float f13;
-        mg.m0 m0Var;
-        ng.e eVar;
+        ng.m0 m0Var;
+        og.e eVar;
         boolean z10 = false;
         xn xnVar = this.T;
         if (i10 < 0) {
@@ -174,14 +174,14 @@ public final class tj extends f2.x {
             float f16 = xnVar.p9;
             xnVar.u0.getClass();
             if (RecyclerView.R(childAt) == (xnVar.Ma ? 0 : xnVar.x0.h() - 1)) {
-                i11 = super.o0(((float) (childAt.getTop() - i10)) > f16 ? (int) (childAt.getTop() - f16) : i10, fVar, i1Var);
+                i11 = super.o0(((float) (childAt.getTop() - i10)) > f16 ? (int) (childAt.getTop() - f16) : i10, fVar, j1Var);
                 z4 = true;
             } else {
                 i13++;
             }
         }
         if (!z4) {
-            i11 = super.o0(i10, fVar, i1Var);
+            i11 = super.o0(i10, fVar, j1Var);
         }
         if (!xnVar.tc.f) {
             SparseArray[] sparseArrayArr = xnVar.T5;
@@ -216,7 +216,7 @@ public final class tj extends f2.x {
                         f13 = i10 * f10;
                         xnVar.K9 += f13;
                         int i14 = (int) f13;
-                        m0Var = mg.m0.B;
+                        m0Var = ng.m0.B;
                         if (m0Var != null) {
                             m0Var.r -= i14;
                             if (i14 != 0) {
@@ -232,7 +232,7 @@ public final class tj extends f2.x {
                     f13 = i10 * f10;
                     xnVar.K9 += f13;
                     int i142 = (int) f13;
-                    m0Var = mg.m0.B;
+                    m0Var = ng.m0.B;
                     if (m0Var != null) {
                     }
                     if (Build.VERSION.SDK_INT >= 31) {
@@ -257,15 +257,15 @@ public final class tj extends f2.x {
         return i11;
     }
 
-    @Override // f2.i0, f2.v0
-    public final void v0(RecyclerView recyclerView, f2.i1 i1Var, int i10) {
+    @Override // f2.j0, f2.w0
+    public final void v0(RecyclerView recyclerView, f2.j1 j1Var, int i10) {
         this.T.pa = false;
-        wh.o oVar = new wh.o(recyclerView.getContext(), 0);
+        xh.o oVar = new xh.o(recyclerView.getContext(), 0);
         oVar.a = i10;
         w0(oVar);
     }
 
-    @Override // f2.w, f2.i0, f2.v0
+    @Override // f2.w, f2.j0, f2.w0
     public final boolean y0() {
         return true;
     }

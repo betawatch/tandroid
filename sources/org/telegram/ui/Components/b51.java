@@ -1,41 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.view.MotionEvent;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public abstract class b51 {
-    public String[] a = new String[0];
+public final class b51 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
 
-    public boolean a() {
-        return false;
+    public b51(org.telegram.ui.cv cvVar, int i10, int i11) {
+        this.a = 1;
+        this.d = cvVar;
+        this.b = i10;
+        this.c = i11;
     }
 
-    public String[] b() {
-        return this.a;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                int floatValue = (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * this.c);
+                f51 f51Var = (f51) this.d;
+                f51Var.K = true;
+                f51Var.n.scrollBy(0, floatValue - this.b);
+                f51Var.K = false;
+                this.b = floatValue;
+                break;
+            default:
+                ((org.telegram.ui.cv) this.d).c.d.setColorFilter(new PorterDuffColorFilter(i0.a.d(((Float) valueAnimator.getAnimatedValue()).floatValue(), this.b, this.c), PorterDuff.Mode.SRC_IN));
+                break;
+        }
     }
 
-    public boolean c() {
-        return false;
-    }
-
-    public boolean d(u41 u41Var, MotionEvent motionEvent) {
-        return false;
-    }
-
-    public boolean e(u41 u41Var, k kVar, MotionEvent motionEvent) {
-        return false;
-    }
-
-    public abstract void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z4);
-
-    public abstract void h(TLRPC.StickerSetCovered stickerSetCovered);
-
-    public void i(String[] strArr) {
-        this.a = strArr;
-    }
-
-    public void f(TLRPC.Document document, Object obj, boolean z4, int i10) {
+    public b51(f51 f51Var, int i10) {
+        this.a = 0;
+        this.d = f51Var;
+        this.c = i10;
+        this.b = 0;
     }
 }

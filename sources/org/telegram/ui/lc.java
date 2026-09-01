@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.animation.ValueAnimator;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class lc implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -28,31 +28,31 @@ public final class lc implements ValueAnimator.AnimatorUpdateListener {
                 }
                 break;
             case 1:
-                gp0 gp0Var = (gp0) this.c;
-                gp0Var.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                gp0Var.L.invalidate();
-                if (!this.b && gp0Var.M > 0.5f) {
+                ip0 ip0Var = (ip0) this.c;
+                ip0Var.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ip0Var.L.invalidate();
+                if (!this.b && ip0Var.M > 0.5f) {
                     this.b = true;
                     break;
                 }
                 break;
             case 2:
-                cd1 cd1Var = (cd1) this.c;
-                cd1Var.f2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                cd1Var.e2.invalidate();
-                if (!this.b && cd1Var.f2 > 0.5f) {
+                ed1 ed1Var = (ed1) this.c;
+                ed1Var.f2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ed1Var.e2.invalidate();
+                if (!this.b && ed1Var.f2 > 0.5f) {
                     this.b = true;
                     break;
                 }
                 break;
             default:
-                ph.da daVar = (ph.da) this.c;
-                daVar.A2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                org.telegram.ui.Components.uo uoVar = daVar.z2;
-                if (uoVar != null) {
-                    uoVar.invalidate();
+                qh.ca caVar = (qh.ca) this.c;
+                caVar.A2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                org.telegram.ui.Components.wo woVar = caVar.z2;
+                if (woVar != null) {
+                    woVar.invalidate();
                 }
-                if (!this.b && daVar.A2 > 0.5f) {
+                if (!this.b && caVar.A2 > 0.5f) {
                     this.b = true;
                     break;
                 }

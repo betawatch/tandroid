@@ -1,19 +1,19 @@
 package j9;
 
 import org.json.JSONObject;
-import vh.p1;
+import org.telegram.ui.Components.ai;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class n {
-    public static final p1 a;
+    public static final ai a;
 
     static {
         w9.d dVar = new w9.d();
         a aVar = a.a;
-        dVar.d(n.class, aVar);
-        dVar.d(b.class, aVar);
-        a = new p1(dVar);
+        dVar.b(n.class, aVar);
+        dVar.b(b.class, aVar);
+        a = new ai(dVar, 19);
     }
 
     public static b a(String str) {

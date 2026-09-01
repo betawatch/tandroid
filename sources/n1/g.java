@@ -16,7 +16,7 @@ import m1.h;
 import m1.i;
 import m1.k;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class g {
     public static final g a = new g();
@@ -42,7 +42,7 @@ public final class g {
                 j.d(name, "name");
                 j.d(value, "value");
                 int x10 = value.x();
-                switch (x10 == 0 ? -1 : f.a[m1.j.b(x10)]) {
+                switch (x10 == 0 ? -1 : f.a[m1.j.c(x10)]) {
                     case -1:
                         throw new k1.a("Value case is null.", null);
                     case 0:
@@ -82,8 +82,8 @@ public final class g {
             Map unmodifiableMap = DesugarCollections.unmodifiableMap(bVar.a);
             j.d(unmodifiableMap, "unmodifiableMap(preferencesMap)");
             return new b(new LinkedHashMap(unmodifiableMap), true);
-        } catch (c0 e) {
-            throw new k1.a("Unable to parse preferences proto.", e);
+        } catch (c0 e6) {
+            throw new k1.a("Unable to parse preferences proto.", e6);
         }
     }
 

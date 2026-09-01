@@ -3,9 +3,9 @@ package g6;
 import android.os.Parcel;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import j7.r5;
+import j7.p5;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class f extends a7.c implements d {
     public final /* synthetic */ int b;
@@ -49,7 +49,7 @@ public final class f extends a7.c implements d {
     public void Q(Status status, f6.a aVar) {
         switch (this.b) {
             case 0:
-                r5.b(status, aVar, this.c);
+                p5.b(status, aVar, this.c);
                 return;
             default:
                 throw new UnsupportedOperationException();
@@ -60,7 +60,7 @@ public final class f extends a7.c implements d {
     public void S(Status status, f6.c cVar) {
         switch (this.b) {
             case 1:
-                r5.b(status, cVar, this.c);
+                p5.b(status, cVar, this.c);
                 return;
             default:
                 throw new UnsupportedOperationException();

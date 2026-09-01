@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import dd.l;
 import dd.p;
 import java.util.List;
-import k7.p7;
+import k7.q7;
 import kotlin.jvm.internal.j;
 import ld.b0;
 import ld.c0;
@@ -13,7 +13,7 @@ import uc.c;
 import vc.a;
 import wc.i;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 final class zzim extends i implements p {
     public static final /* synthetic */ int zze = 0;
@@ -49,7 +49,7 @@ final class zzim extends i implements p {
         a aVar = a.a;
         int i10 = this.zza;
         sc.i iVar = sc.i.a;
-        p7.b(obj);
+        q7.b(obj);
         if (i10 != 0) {
             return iVar;
         }
@@ -68,7 +68,7 @@ final class zzim extends i implements p {
                 zzzu zzzuVar = (zzzu) list.get(zzizVar.zza());
                 try {
                     zzip.zzf(this.zzd, zzzuVar, zzizVar);
-                } catch (Exception e) {
+                } catch (Exception e6) {
                     zzzuVar.zzk();
                     new Integer(zzzuVar.zzg());
                     List zzj = zzzuVar.zzj();
@@ -82,7 +82,7 @@ final class zzim extends i implements p {
                     }, 31);
                     zziz zzizVar2 = this.zzb;
                     this.zza = 1;
-                    zzh = zzipVar.zzh(e, zzizVar2, this);
+                    zzh = zzipVar.zzh(e6, zzizVar2, this);
                     if (zzh == aVar) {
                         return aVar;
                     }

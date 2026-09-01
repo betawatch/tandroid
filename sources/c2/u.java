@@ -11,9 +11,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final class u implements j9.j, f2.k0, androidx.lifecycle.a0 {
+public final class u implements j9.j, f2.l0, androidx.lifecycle.a0 {
     public final /* synthetic */ int a;
     public boolean b;
     public Object c;
@@ -37,16 +37,26 @@ public final class u implements j9.j, f2.k0, androidx.lifecycle.a0 {
         return new u(arrayList, bundle.getBoolean("supportsDynamicGroupRoute", false));
     }
 
-    @Override // f2.k0
-    public void D(int i10, int i11) {
+    @Override // f2.l0
+    public void C(int i10, int i11) {
         this.b = true;
-        ((f2.o0) this.c).p(i10, i11);
+        ((f2.p0) this.c).p(i10, i11);
     }
 
-    @Override // f2.k0
-    public void M0(int i10, int i11) {
+    @Override // f2.l0
+    public void L0(int i10, int i11) {
         this.b = true;
-        ((f2.o0) this.c).t(i10, i11);
+        ((f2.p0) this.c).t(i10, i11);
+    }
+
+    @Override // androidx.lifecycle.a0
+    public void W(Object obj) {
+        this.b = true;
+        androidx.biometric.f0 f0Var = (androidx.biometric.f0) this.c;
+        f0Var.getClass();
+        SignInHubActivity signInHubActivity = (SignInHubActivity) f0Var.b;
+        signInHubActivity.setResult(signInHubActivity.O, signInHubActivity.P);
+        signInHubActivity.finish();
     }
 
     @Override // j9.j
@@ -102,12 +112,6 @@ public final class u implements j9.j, f2.k0, androidx.lifecycle.a0 {
         return this.b;
     }
 
-    @Override // f2.k0
-    public void e0(int i10, int i11) {
-        this.b = true;
-        ((f2.o0) this.c).s(i10, i11);
-    }
-
     public boolean g(int i10, CharSequence charSequence) {
         if (charSequence == null || i10 < 0 || charSequence.length() - i10 < 0) {
             throw new IllegalArgumentException();
@@ -154,25 +158,21 @@ public final class u implements j9.j, f2.k0, androidx.lifecycle.a0 {
             return;
         }
         try {
-            ((y2.p) this.c).a(new v2.a(null, x3Var, v2.d.a, null), new s0.b(28));
+            ((y2.p) this.c).a(new v2.a(null, x3Var, v2.d.a, null), new sg.a(28));
         } catch (Throwable unused) {
             com.google.android.gms.internal.play_billing.u.h("BillingLogger", "logging failed.");
         }
     }
 
-    @Override // f2.k0
-    public void k1(int i10, int i11) {
-        ((f2.o0) this.c).r(i10, i11, null);
+    @Override // f2.l0
+    public void i1(int i10, int i11) {
+        ((f2.p0) this.c).r(i10, i11, null);
     }
 
-    @Override // androidx.lifecycle.a0
-    public void m0(Object obj) {
+    @Override // f2.l0
+    public void j0(int i10, int i11) {
         this.b = true;
-        o2.o oVar = (o2.o) this.c;
-        oVar.getClass();
-        SignInHubActivity signInHubActivity = (SignInHubActivity) oVar.b;
-        signInHubActivity.setResult(signInHubActivity.O, signInHubActivity.P);
-        signInHubActivity.finish();
+        ((f2.p0) this.c).s(i10, i11);
     }
 
     public String toString() {
@@ -197,7 +197,7 @@ public final class u implements j9.j, f2.k0, androidx.lifecycle.a0 {
                 sb.append(" }");
                 return sb.toString();
             case 8:
-                return ((o2.o) this.c).toString();
+                return ((androidx.biometric.f0) this.c).toString();
             default:
                 return super.toString();
         }
@@ -230,10 +230,10 @@ public final class u implements j9.j, f2.k0, androidx.lifecycle.a0 {
         this.b = z4;
     }
 
-    public u(o5.d dVar, o2.o oVar) {
+    public u(o5.d dVar, androidx.biometric.f0 f0Var) {
         this.a = 8;
         this.b = false;
-        this.c = oVar;
+        this.c = f0Var;
     }
 
     public u(StringBuilder sb) {

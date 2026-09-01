@@ -5,17 +5,17 @@ import android.app.Activity;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class al extends org.telegram.ui.Components.pk0 {
+public final class al extends org.telegram.ui.Components.rk0 {
     public final int[] i1;
     public ValueAnimator j1;
     public boolean k1;
     public final /* synthetic */ xn l1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public al(xn xnVar, xn xnVar2, Activity activity, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(3, i10, activity, xnVar2, f6Var);
+    public al(xn xnVar, xn xnVar2, Activity activity, int i10, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(3, i10, activity, xnVar2, g6Var);
         this.l1 = xnVar;
         this.i1 = new int[2];
         this.k1 = true;
@@ -59,7 +59,7 @@ public final class al extends org.telegram.ui.Components.pk0 {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.R0, f10);
         this.j1 = ofFloat;
         ofFloat.addUpdateListener(new e3(this, 6));
-        this.j1.setInterpolator(org.telegram.ui.Components.nr.h);
+        this.j1.setInterpolator(org.telegram.ui.Components.pr.h);
         this.j1.setDuration(420L);
         this.j1.start();
     }

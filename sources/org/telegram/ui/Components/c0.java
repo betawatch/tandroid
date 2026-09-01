@@ -8,21 +8,21 @@ import android.view.View;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class c0 extends LinearLayout {
     public final RectF a;
     public final RectF b;
     public final RectF c;
     public final Paint d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 e;
     public final /* synthetic */ e0 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c0(e0 e0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public c0(e0 e0Var, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         this.f = e0Var;
-        this.e = f6Var;
+        this.e = g6Var;
         this.a = new RectF();
         this.b = new RectF();
         this.c = new RectF();
@@ -49,7 +49,7 @@ public final class c0 extends LinearLayout {
         }
         RectF rectF3 = this.c;
         AndroidUtilities.lerp(rectF, rectF2, f10, rectF3);
-        int l1 = org.telegram.ui.ActionBar.j6.l1(0.1f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Oh, this.e));
+        int l1 = org.telegram.ui.ActionBar.k6.l1(0.1f, org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Oh, this.e));
         Paint paint = this.d;
         paint.setColor(l1);
         canvas.drawRoundRect(rectF3, AndroidUtilities.dp(r0.d), AndroidUtilities.dp(r0.d), paint);

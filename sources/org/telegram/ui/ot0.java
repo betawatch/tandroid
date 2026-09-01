@@ -1,81 +1,60 @@
 package org.telegram.ui;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.util.Property;
+import android.view.View;
+import android.view.ViewPropertyAnimator;
+import android.view.ViewTreeObserver;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.camera.Size;
-import org.telegram.ui.Components.AnimatedFileNative;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class ot0 implements Runnable {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ PhotoViewer d;
+public final class ot0 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ ju0 a;
+    public final /* synthetic */ Integer b;
+    public final /* synthetic */ PhotoViewer c;
 
-    public ot0(PhotoViewer photoViewer, String str, long j10, int i10) {
-        this.d = photoViewer;
-        this.a = str;
-        this.b = j10;
-        this.c = i10;
+    public ot0(PhotoViewer photoViewer, ju0 ju0Var, Integer num) {
+        this.c = photoViewer;
+        this.a = ju0Var;
+        this.b = num;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        if (this.d.t8 != this) {
-            return;
-        }
-        int videoBitrate = MediaController.getVideoBitrate(this.a);
-        int[] iArr = new int[11];
-        AnimatedFileNative.d(this.a, iArr, this.b);
-        boolean z4 = iArr[10] != 0;
-        this.d.g8 = (iArr[0] == 0 || (z4 && iArr[9] == 0)) ? false : true;
-        PhotoViewer photoViewer = this.d;
-        if (videoBitrate == -1) {
-            videoBitrate = iArr[3];
-        }
-        photoViewer.c8 = videoBitrate;
-        photoViewer.d8 = videoBitrate;
-        if (this.d.g8) {
-            PhotoViewer photoViewer2 = this.d;
-            int i10 = iArr[1];
-            photoViewer2.Y7 = i10;
-            photoViewer2.a8 = i10;
-            PhotoViewer photoViewer3 = this.d;
-            int i11 = iArr[2];
-            photoViewer3.Z7 = i11;
-            photoViewer3.b8 = i11;
-            PhotoViewer photoViewer4 = this.d;
-            int max = Math.max(photoViewer4.Y7, this.d.Z7);
-            if (max > 1280) {
-                photoViewer4.V7 = 4;
-            } else if (max > 854) {
-                photoViewer4.V7 = 3;
-            } else if (max > 640) {
-                photoViewer4.V7 = 2;
-            } else {
-                photoViewer4.V7 = 1;
-            }
-            PhotoViewer photoViewer5 = this.d;
-            int i12 = this.c;
-            if (i12 == -1) {
-                i12 = photoViewer5.v2();
-            }
-            photoViewer5.U7 = i12;
-            PhotoViewer photoViewer6 = this.d;
-            if (photoViewer6.c8 != 0 && photoViewer6.Z1 != 1) {
-                Size p02 = photoViewer6.p0();
-                if (p02.getWidth() == photoViewer6.Y7 && p02.getHeight() == photoViewer6.Z7) {
-                    MediaController.extractRealEncoderBitrate(p02.getWidth(), p02.getHeight(), photoViewer6.d8, false);
-                } else {
-                    MediaController.extractRealEncoderBitrate(p02.getWidth(), p02.getHeight(), MediaController.makeVideoBitrate(photoViewer6.Z7, photoViewer6.Y7, photoViewer6.d8, p02.getHeight(), p02.getWidth()), false);
-                }
-            }
-            this.d.h8 = MediaController.isH264Video(this.a);
-        }
-        if (this.d.t8 != this) {
-            return;
-        }
-        AndroidUtilities.runOnUIThread(new hf0(this, this, iArr, 20));
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        PhotoViewer photoViewer = this.c;
+        photoViewer.d0.getViewTreeObserver().removeOnPreDrawListener(this);
+        photoViewer.C.setTranslationY(-AndroidUtilities.dp(32.0f));
+        ViewPropertyAnimator duration = photoViewer.C.animate().alpha(1.0f).translationY(0.0f).setDuration(150L);
+        org.telegram.ui.Components.pr prVar = org.telegram.ui.Components.pr.f;
+        duration.setInterpolator(prVar).start();
+        photoViewer.K0.setTranslationY(-AndroidUtilities.dp(32.0f));
+        photoViewer.K0.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setInterpolator(prVar).start();
+        photoViewer.L0.setTranslationY(-AndroidUtilities.dp(32.0f));
+        photoViewer.L0.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setInterpolator(prVar).start();
+        photoViewer.M0.setTranslationY(AndroidUtilities.dp(32.0f));
+        photoViewer.M0.animate().alpha(1.0f).setDuration(150L).setInterpolator(prVar).start();
+        photoViewer.P0.setTranslationY(AndroidUtilities.dp(32.0f));
+        photoViewer.P0.setAlpha(0.0f);
+        photoViewer.P0.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setInterpolator(prVar).start();
+        photoViewer.p3.setTranslationY(AndroidUtilities.dp(32.0f));
+        photoViewer.p3.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setInterpolator(prVar).start();
+        photoViewer.b0.setAlpha(0.0f);
+        photoViewer.I0.setAlpha(0);
+        photoViewer.k4 = 4;
+        photoViewer.b0.invalidate();
+        AnimatorSet animatorSet = new AnimatorSet();
+        eg.q1 q1Var = photoViewer.M0;
+        ObjectAnimator duration2 = ObjectAnimator.ofFloat(q1Var, (Property<eg.q1, Float>) View.TRANSLATION_Y, q1Var.getTranslationY(), 0.0f).setDuration(220L);
+        duration2.setInterpolator(prVar);
+        eg.q1 q1Var2 = photoViewer.M0;
+        Property property = View.ALPHA;
+        ObjectAnimator duration3 = ObjectAnimator.ofFloat(q1Var2, (Property<eg.q1, Float>) property, 1.0f).setDuration(220L);
+        duration3.setInterpolator(prVar);
+        animatorSet.playTogether(ObjectAnimator.ofFloat(photoViewer.b0, (Property<du0, Float>) property, 0.0f, 1.0f).setDuration(220L), ObjectAnimator.ofFloat(photoViewer.g0, (Property<View, Float>) property, 0.0f, 1.0f).setDuration(220L), duration2, duration3);
+        animatorSet.addListener(new nt0(this));
+        animatorSet.start();
+        return true;
     }
 }

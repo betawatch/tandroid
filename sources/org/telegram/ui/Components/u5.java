@@ -24,7 +24,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public class u5 extends ReplacementSpan {
     private static boolean lockPositionChanging;
@@ -92,10 +92,10 @@ public class u5 extends ReplacementSpan {
 
     public static boolean c(Layout layout, int i10, int i11) {
         if (layout.getText() instanceof Spanned) {
-            t01[] t01VarArr = (t01[]) ((Spanned) layout.getText()).getSpans(Math.max(0, i10), Math.min(layout.getText().length() - 1, i11), t01.class);
-            for (int i12 = 0; t01VarArr != null && i12 < t01VarArr.length; i12++) {
-                t01 t01Var = t01VarArr[i12];
-                if (t01Var != null && t01Var.c()) {
+            u01[] u01VarArr = (u01[]) ((Spanned) layout.getText()).getSpans(Math.max(0, i10), Math.min(layout.getText().length() - 1, i11), u01.class);
+            for (int i12 = 0; u01VarArr != null && i12 < u01VarArr.length; i12++) {
+                u01 u01Var = u01VarArr[i12];
+                if (u01Var != null && u01Var.c()) {
                     return true;
                 }
             }
@@ -124,7 +124,7 @@ public class u5 extends ReplacementSpan {
         return cloneSpans(charSequence, -1, null);
     }
 
-    public static void drawAnimatedEmojis(Canvas canvas, Layout layout, q5 q5Var, float f10, List<ih.k> list, float f11, float f12, float f13, float f14) {
+    public static void drawAnimatedEmojis(Canvas canvas, Layout layout, q5 q5Var, float f10, List<jh.k> list, float f11, float f12, float f13, float f14) {
         drawAnimatedEmojis(canvas, layout, q5Var, f10, list, f11, f12, f13, f14, null);
     }
 
@@ -207,7 +207,7 @@ public class u5 extends ReplacementSpan {
             ofFloat.addUpdateListener(new n5(this, f13, f12, f15, f11, 0));
             this.moveAnimator.addListener(new o5(this, 2));
             this.moveAnimator.setDuration(140L);
-            this.moveAnimator.setInterpolator(nr.f);
+            this.moveAnimator.setInterpolator(pr.f);
             this.moveAnimator.start();
             return;
         }
@@ -255,7 +255,7 @@ public class u5 extends ReplacementSpan {
             });
             this.scaleAnimator.addListener(new o5(this, i11));
             this.scaleAnimator.setDuration(130L);
-            this.scaleAnimator.setInterpolator(nr.f);
+            this.scaleAnimator.setInterpolator(pr.f);
             this.scaleAnimator.start();
         } else if (this.isRemoved) {
             this.isRemoved = false;
@@ -287,7 +287,7 @@ public class u5 extends ReplacementSpan {
                 }
             });
             this.scaleAnimator.addListener(new o5(this, i10));
-            this.scaleAnimator.setInterpolator(nr.f);
+            this.scaleAnimator.setInterpolator(pr.f);
             this.scaleAnimator.setDuration(130L);
             this.scaleAnimator.start();
         }
@@ -414,7 +414,7 @@ public class u5 extends ReplacementSpan {
         return cloneSpans(charSequence, i10, null);
     }
 
-    public static void drawAnimatedEmojis(Canvas canvas, Layout layout, q5 q5Var, float f10, List<ih.k> list, float f11, float f12, float f13, float f14, ColorFilter colorFilter) {
+    public static void drawAnimatedEmojis(Canvas canvas, Layout layout, q5 q5Var, float f10, List<jh.k> list, float f11, float f12, float f13, float f14, ColorFilter colorFilter) {
         boolean z4;
         if (canvas == null || layout == null || q5Var == null) {
             return;
@@ -480,7 +480,7 @@ public class u5 extends ReplacementSpan {
                                     }
                                 }
                             } else if (l5Var2.k != null) {
-                                l5Var2.setColorFilter(colorFilter == null ? org.telegram.ui.ActionBar.j6.v3 : colorFilter);
+                                l5Var2.setColorFilter(colorFilter == null ? org.telegram.ui.ActionBar.k6.v3 : colorFilter);
                                 p5Var.f.q(currentTimeMillis);
                                 float extraScale2 = p5Var.d.getExtraScale();
                                 if (extraScale2 != 1.0f || p5Var.d.invert) {
@@ -489,9 +489,9 @@ public class u5 extends ReplacementSpan {
                                     l5 l5Var3 = p5Var.f;
                                     Rect rect2 = p5Var.e;
                                     float f18 = p5Var.s * f14;
-                                    nh.y2 y2Var = l5Var3.k;
-                                    if (y2Var != null) {
-                                        y2Var.setImageCoords(rect2);
+                                    oh.z2 z2Var = l5Var3.k;
+                                    if (z2Var != null) {
+                                        z2Var.setImageCoords(rect2);
                                         l5Var3.k.setAlpha(f18);
                                         l5Var3.k.draw(canvas);
                                     }
@@ -500,9 +500,9 @@ public class u5 extends ReplacementSpan {
                                     l5 l5Var4 = p5Var.f;
                                     Rect rect3 = p5Var.e;
                                     float f19 = p5Var.s * f14;
-                                    nh.y2 y2Var2 = l5Var4.k;
-                                    if (y2Var2 != null) {
-                                        y2Var2.setImageCoords(rect3);
+                                    oh.z2 z2Var2 = l5Var4.k;
+                                    if (z2Var2 != null) {
+                                        z2Var2.setImageCoords(rect3);
                                         l5Var4.k.setAlpha(f19);
                                         l5Var4.k.draw(canvas);
                                     }

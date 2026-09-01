@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.Map;
 import n7.mg;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class m extends AbstractCollection {
     public final /* synthetic */ int a;
@@ -114,7 +114,7 @@ public final class m extends AbstractCollection {
                     return super.remove(obj);
                 } catch (UnsupportedOperationException unused) {
                     for (Map.Entry entry : xaVar.entrySet()) {
-                        if (k7.i.a(obj, entry.getValue())) {
+                        if (k7.j.a(obj, entry.getValue())) {
                             xaVar.remove(entry.getKey());
                             return true;
                         }
@@ -131,7 +131,7 @@ public final class m extends AbstractCollection {
                     return super.remove(obj);
                 } catch (UnsupportedOperationException unused2) {
                     for (Map.Entry entry2 : xaVar2.entrySet()) {
-                        if (k7.d0.a(obj, entry2.getValue())) {
+                        if (k7.e0.a(obj, entry2.getValue())) {
                             xaVar2.remove(entry2.getKey());
                             return true;
                         }
@@ -144,7 +144,7 @@ public final class m extends AbstractCollection {
                     return super.remove(obj);
                 } catch (UnsupportedOperationException unused3) {
                     for (Map.Entry entry3 : xaVar3.entrySet()) {
-                        if (k7.a7.a(obj, entry3.getValue())) {
+                        if (k7.b7.a(obj, entry3.getValue())) {
                             xaVar3.remove(entry3.getKey());
                             return true;
                         }

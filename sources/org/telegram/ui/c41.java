@@ -1,26 +1,52 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.WindowInsets;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c41 implements View.OnApplyWindowInsetsListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class c41 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
+    public final Path a;
+    public qg.b b;
 
-    public /* synthetic */ c41(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public c41(Activity activity) {
+        super(activity);
+        this.a = new Path();
     }
 
-    @Override // android.view.View.OnApplyWindowInsetsListener
-    public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-        switch (this.a) {
-            case 0:
-                return SecretMediaViewer.a((SecretMediaViewer) this.b, windowInsets);
-            default:
-                return m61.b((e51) this.b, view, windowInsets);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.clipPath(this.a);
+        super.dispatchDraw(canvas);
+        canvas.restore();
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void e() {
+        qg.b bVar = this.b;
+        if (bVar != null) {
+            bVar.u();
         }
+    }
+
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        Path path = this.a;
+        path.rewind();
+        path.addRoundRect(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), i10 - AndroidUtilities.dp(9.0f), i11 - AndroidUtilities.dp(9.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), Path.Direction.CW);
+    }
+
+    public void setBlurredBackground(qg.b bVar) {
+        this.b = bVar;
+        setBackground(bVar);
     }
 }

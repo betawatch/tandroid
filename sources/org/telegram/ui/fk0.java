@@ -1,39 +1,63 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fk0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ gk0 b;
-    public final /* synthetic */ String c;
+public final class fk0 extends cg.b {
+    public int c;
+    public int d;
+    public CharSequence e;
+    public CharSequence f;
+    public lk0 g;
+    public int h;
+    public boolean i;
 
-    public /* synthetic */ fk0(gk0 gk0Var, String str, int i10) {
-        this.a = i10;
-        this.b = gk0Var;
-        this.c = str;
+    public static fk0 b(int i10, String str, boolean z4) {
+        fk0 fk0Var = new fk0(1, true);
+        fk0Var.c = i10;
+        fk0Var.e = str;
+        fk0Var.i = z4;
+        return fk0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                gk0 gk0Var = this.b;
-                String str = this.c;
-                gk0Var.getClass();
-                AndroidUtilities.runOnUIThread(new fk0(gk0Var, str, 1));
-                break;
-            default:
-                gk0 gk0Var2 = this.b;
-                String str2 = this.c;
-                tf.k1 k1Var = gk0Var2.h;
-                int i10 = gk0Var2.n.s;
-                k1Var.g(str2, true, (i10 == 1 || i10 == 3) ? false : true, true, false, 0L, false, 0, 0);
-                Utilities.searchQueue.postRunnable(new hf0(gk0Var2, str2, new ArrayList(gk0Var2.n.w), 8));
-                break;
+    public static fk0 c(int i10, String str, String str2) {
+        fk0 fk0Var = new fk0(5, true);
+        fk0Var.c = i10;
+        fk0Var.e = str;
+        fk0Var.f = str2;
+        return fk0Var;
+    }
+
+    public static fk0 d(int i10, String str) {
+        fk0 fk0Var = new fk0(4, true);
+        fk0Var.c = i10;
+        fk0Var.e = str;
+        return fk0Var;
+    }
+
+    @Override // cg.b
+    public final boolean a(cg.b bVar) {
+        if (this == bVar) {
+            return true;
         }
+        if (fk0.class != bVar.getClass()) {
+            return false;
+        }
+        fk0 fk0Var = (fk0) bVar;
+        return this.c == fk0Var.c && this.d == fk0Var.d && this.h == fk0Var.h && this.i == fk0Var.i && Objects.equals(this.e, fk0Var.e) && Objects.equals(this.f, fk0Var.f) && this.g == fk0Var.g;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && fk0.class == obj.getClass()) {
+            fk0 fk0Var = (fk0) obj;
+            if (this.c == fk0Var.c && this.h == fk0Var.h && ((this.a == 8 || (this.d == fk0Var.d && Objects.equals(this.e, fk0Var.e) && (this.a == 6 || Objects.equals(this.f, fk0Var.f)))) && this.g == fk0Var.g)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

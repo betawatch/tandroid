@@ -7,7 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Shader;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lv0 implements Runnable {
     public final /* synthetic */ int a;
@@ -51,8 +51,8 @@ public final /* synthetic */ class lv0 implements Runnable {
                     qv0Var.c0 = 0.0f;
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                     qv0Var.d0 = ofFloat;
-                    ofFloat.addUpdateListener(new i70(gVar, 22));
-                    qv0Var.d0.addListener(new dg.y2(29, gVar, mv0Var2));
+                    ofFloat.addUpdateListener(new k70(gVar, 22));
+                    qv0Var.d0.addListener(new eg.w2(29, gVar, mv0Var2));
                     qv0Var.d0.setDuration(50L);
                     qv0Var.d0.start();
                     qv0Var.N();

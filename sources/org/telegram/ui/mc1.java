@@ -1,31 +1,39 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+import android.graphics.Point;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
+
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class mc1 implements tc1 {
-    public boolean a;
-    public final /* synthetic */ xn b;
+public final class mc1 extends k7.z5 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
 
-    public mc1(xn xnVar, boolean z4) {
-        this.b = xnVar;
-        this.a = z4;
+    public /* synthetic */ mc1(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
+        this.a = i10;
+        this.b = notificationCenterDelegate;
     }
 
-    @Override // org.telegram.ui.tc1
-    public final boolean V0() {
-        return true;
+    @Override // k7.z5
+    public void a() {
+        switch (this.a) {
+            case 1:
+                ((ci1) this.b).v.invalidate();
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.tc1
-    public final boolean a() {
-        return this.a;
-    }
-
-    @Override // org.telegram.ui.tc1
-    public final void n1(boolean z4) {
-        boolean z10 = !this.a;
-        this.a = z10;
-        vn vnVar = this.b.ba;
-        vnVar.i(vnVar.f, vnVar.h, z4, Boolean.valueOf(z10), false);
+    @Override // k7.z5
+    public void b(int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                Point point = AndroidUtilities.displaySize;
+                if ((point.x <= point.y) == (i10 <= i11)) {
+                    ((ed1) this.b).u0.invalidate();
+                    break;
+                }
+                break;
+        }
     }
 }

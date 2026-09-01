@@ -1,50 +1,29 @@
 package ug;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.MessageObject;
-import org.telegram.ui.qj;
+import android.graphics.Bitmap;
+import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class a {
-    public RecyclerView a;
-    public int b;
-    public long c;
-    public int d;
-    public boolean e;
+    public WeakReference a;
+    public long b;
+    public boolean c = true;
 
-    public final boolean a(MessageObject messageObject) {
-        if (messageObject == null) {
-            return false;
-        }
-        if (messageObject.getId() != this.b) {
-            return this.c != 0 && messageObject.getGroupId() == this.c;
-        }
-        return true;
-    }
-
-    public final boolean b() {
-        return this.e;
-    }
-
-    public final boolean c(int i10, long j10) {
-        if (this.b == i10 && this.c == j10) {
-            return false;
-        }
-        this.b = i10;
-        this.c = j10;
-        if (i10 != 0) {
+    public final boolean a(Bitmap bitmap) {
+        if (this.c) {
             return true;
         }
-        this.e = false;
-        return true;
+        WeakReference weakReference = this.a;
+        if ((weakReference != null ? (Bitmap) weakReference.get() : null) != bitmap) {
+            return true;
+        }
+        return ((bitmap == null || bitmap.isRecycled()) ? 0L : (long) bitmap.getGenerationId()) != this.b;
     }
 
-    public final void d(int i10) {
-        this.d = i10;
-    }
-
-    public final void e(qj qjVar) {
-        this.a = qjVar;
+    public final void b(Bitmap bitmap) {
+        this.a = bitmap != null ? new WeakReference(bitmap) : null;
+        this.b = (bitmap == null || bitmap.isRecycled()) ? 0L : bitmap.getGenerationId();
+        this.c = false;
     }
 }

@@ -1,332 +1,319 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.TextureView;
-import android.view.View;
-import android.view.ViewGroup;
-import j$.util.Objects;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.Crop.CropAreaView;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class ls0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class ls0 implements ot {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ VideoEditedInfo b;
+    public final /* synthetic */ MediaController.PhotoEntry c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ boolean g;
+    public final /* synthetic */ PhotoViewer h;
 
-    public /* synthetic */ ls0(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public ls0(PhotoViewer photoViewer, String str, VideoEditedInfo videoEditedInfo, MediaController.PhotoEntry photoEntry, boolean z4, int i10, int i11, boolean z10) {
+        this.h = photoViewer;
+        this.a = str;
+        this.b = videoEditedInfo;
+        this.c = photoEntry;
+        this.d = z4;
+        this.e = i10;
+        this.f = i11;
+        this.g = z10;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 0:
-                ((PhotoViewer) ((org.telegram.ui.Components.ex0) this.b).c).x2 = null;
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
+    @Override // org.telegram.ui.ot
+    public final boolean A() {
+        return this.h.u7 != null;
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ boolean C() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ boolean D(TLRPC.Document document) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ String F(boolean z4) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ boolean H() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ org.telegram.ui.Components.q70 I(ag.l lVar) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.ot
+    public final boolean J() {
+        return this.h.q7 != null;
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ boolean N(TLRPC.Document document) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ot
+    public final void O(String str) {
+        PhotoViewer photoViewer = this.h;
+        photoViewer.t7 = true;
+        R();
+        photoViewer.m5.p(this.a, this.b, str, null, true, 0L, null, null, photoViewer.v1(), this.c.thumbPath, null, null);
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ Boolean P(TLRPC.Document document) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ boolean Q() {
+        return true;
+    }
+
+    public final void R() {
+        qt q10 = qt.q();
+        ImageReceiver imageReceiver = q10.A;
+        MediaController.PhotoEntry photoEntry = this.c;
+        if (photoEntry.thumbPath != null) {
+            try {
+                new File(photoEntry.thumbPath).delete();
+            } catch (Exception e6) {
+                FileLog.e(e6);
+            }
+            photoEntry.thumbPath = null;
         }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i10 = this.a;
-        Object obj = this.b;
-        switch (i10) {
-            case 0:
-                PhotoViewer photoViewer = (PhotoViewer) ((org.telegram.ui.Components.ex0) obj).c;
-                if (photoViewer.x2 != null) {
-                    el0 el0Var = new el0(this, 18);
-                    photoViewer.F2 = el0Var;
-                    AndroidUtilities.runOnUIThread(el0Var, 860L);
-                    break;
-                }
-                break;
-            case 1:
-                bt0 bt0Var = (bt0) obj;
-                PhotoViewer photoViewer2 = bt0Var.b;
-                yf.n nVar = photoViewer2.z1.b;
-                nVar.q();
-                CropAreaView cropAreaView = nVar.a;
-                cropAreaView.setDimVisibility(true);
-                cropAreaView.f(true, true);
-                cropAreaView.invalidate();
-                photoViewer2.z1.b.G = true;
-                photoViewer2.m6 = null;
-                photoViewer2.r4 = bt0Var.a;
-                photoViewer2.f1().I.b(photoViewer2.r4 != 0);
-                ph.i3 i3Var = photoViewer2.H1;
-                if (i3Var != null) {
-                    i3Var.b(photoViewer2.r4 != 3);
-                }
-                if (photoViewer2.r4 != 3) {
-                    photoViewer2.W5 = 0.0f;
-                }
-                photoViewer2.l6 = -1;
-                photoViewer2.b6 = 1.0f;
-                photoViewer2.X5 = 1.0f;
-                photoViewer2.Z5 = 0.0f;
-                photoViewer2.a6 = 0.0f;
-                photoViewer2.w3(1.0f);
-                photoViewer2.q2 = true;
-                photoViewer2.b0.invalidate();
-                break;
-            case 2:
-                ct0 ct0Var = (ct0) obj;
-                PhotoViewer photoViewer3 = ct0Var.b;
-                photoViewer3.F1.f0.setVisibility(0);
-                photoViewer3.m6 = null;
-                photoViewer3.r4 = ct0Var.a;
-                photoViewer3.f1().I.b(photoViewer3.r4 != 0);
-                ph.i3 i3Var2 = photoViewer3.H1;
-                if (i3Var2 != null) {
-                    i3Var2.b(photoViewer3.r4 != 3);
-                }
-                if (photoViewer3.r4 != 3) {
-                    photoViewer3.W5 = 0.0f;
-                }
-                photoViewer3.l6 = -1;
-                photoViewer3.b6 = 1.0f;
-                photoViewer3.X5 = 1.0f;
-                photoViewer3.Z5 = 0.0f;
-                photoViewer3.a6 = 0.0f;
-                photoViewer3.w3(1.0f);
-                photoViewer3.q2 = true;
-                photoViewer3.b0.invalidate();
-                break;
-            case 3:
-                ((PhotoViewer) ((gt0) obj).n0).v3[0].setTag(null);
-                break;
-            case 4:
-                ((ht0) obj).d.Q1.h0 = 1.0f;
-                break;
-            case 5:
-                PhotoViewer photoViewer4 = ((ht0) obj).d;
-                photoViewer4.Q1.setVisibility(4);
-                photoViewer4.Q1.h0 = 1.0f;
-                break;
-            case 6:
-                AndroidUtilities.runOnUIThread(new el0(this, 20));
-                break;
-            case 7:
-                ys0 ys0Var = (ys0) obj;
-                if (animator.equals(ys0Var.c.Q7)) {
-                    ys0Var.c.Q7 = null;
-                    break;
-                }
-                break;
-            case 8:
-                gu0 gu0Var = (gu0) obj;
-                if (gu0Var.e == animator) {
-                    gu0Var.c[1].setVisibility(8);
-                    gu0Var.e = null;
-                    break;
-                }
-                break;
-            case 9:
-                vu0 vu0Var = (vu0) obj;
-                if (vu0Var.C != null) {
-                    vu0Var.C = null;
-                    vu0Var.b();
-                    break;
-                }
-                break;
-            case 10:
-                PopupNotificationActivity popupNotificationActivity = (PopupNotificationActivity) obj;
-                Runnable runnable = popupNotificationActivity.V;
-                if (runnable != null) {
-                    runnable.run();
-                    popupNotificationActivity.V = null;
-                    break;
-                }
-                break;
-            case 11:
-                PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) obj;
-                premiumPreviewFragment.a0.removeView(premiumPreviewFragment.o0);
-                premiumPreviewFragment.o0 = null;
-                super.onAnimationEnd(animator);
-                break;
-            case 12:
-                ((ProfileActivity) ((org.telegram.ui.Components.ex0) obj).c).A5 = null;
-                break;
-            case 13:
-                h01 h01Var = (h01) obj;
-                if (!h01Var.B) {
-                    h01Var.setVisibility(8);
-                    break;
-                }
-                break;
-            case 14:
-                e11 e11Var = (e11) obj;
-                if (animator.equals(e11Var.c)) {
-                    e11Var.c = null;
-                    break;
-                }
-                break;
-            case 15:
-                l21 l21Var = (l21) obj;
-                org.telegram.ui.Components.uo uoVar = l21Var.L;
-                if (uoVar != null) {
-                    if (uoVar.getParent() != null) {
-                        ((ViewGroup) l21Var.L.getParent()).removeView(l21Var.L);
-                    }
-                    l21Var.L = null;
-                }
-                l21Var.K = null;
-                super.onAnimationEnd(animator);
-                break;
-            case 16:
-                ((e41) obj).d.X.h0 = 1.0f;
-                break;
-            case 17:
-                SecretMediaViewer secretMediaViewer = ((e41) obj).d;
-                secretMediaViewer.X.setVisibility(4);
-                secretMediaViewer.X.h0 = 1.0f;
-                break;
-            case 18:
-                q61 q61Var = ((f51) obj).e;
-                q61Var.P0.D = 0.0f;
-                q61Var.P0 = null;
-                q61Var.e0.invalidate();
-                break;
-            case 19:
-                mg.g0.a();
-                q61 q61Var2 = (q61) obj;
-                m51 m51Var = q61Var2.e0;
-                m51 m51Var2 = q61Var2.e0;
-                m51Var.setLayerType(0, null);
-                g51 g51Var = q61Var2.c0;
-                g51Var.setLayerType(0, null);
-                q61Var2.b0.setLayerType(0, null);
-                q61Var2.V.setLayerType(0, null);
-                org.telegram.ui.Components.hn hnVar = q61Var2.k0;
-                if (hnVar != null) {
-                    hnVar.setLayerType(0, null);
-                }
-                View view = q61Var2.j0;
-                if (view != null) {
-                    view.setLayerType(0, null);
-                }
-                g51Var.b();
-                q61Var2.a0.m(false);
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
-                q61Var2.T1.unlock();
-                NotificationCenter globalInstance = NotificationCenter.getGlobalInstance();
-                Objects.requireNonNull(globalInstance);
-                AndroidUtilities.runOnUIThread(new vy0(globalInstance, 15));
-                q61Var2.h();
-                q61Var2.E(1.0f);
-                for (int i11 = 0; i11 < m51Var2.getChildCount(); i11++) {
-                    View childAt = m51Var2.getChildAt(i11);
-                    childAt.setScaleX(1.0f);
-                    childAt.setScaleY(1.0f);
-                }
-                for (int i12 = 0; i12 < q61Var2.a0.b.getChildCount(); i12++) {
-                    View childAt2 = q61Var2.a0.b.getChildAt(i12);
-                    childAt2.setScaleX(1.0f);
-                    childAt2.setScaleY(1.0f);
-                }
-                q61Var2.a0.b.invalidate();
-                q61Var2.h0.invalidate();
-                m51Var2.invalidate();
-                break;
-            case 20:
-                ((ga1) obj).Y.setVisibility(8);
-                break;
-            case 21:
-                cd1 cd1Var = ((qc1) obj).a;
-                if (!cd1Var.m1.a()) {
-                    cd1Var.O1.setVisibility(8);
-                    break;
-                }
-                break;
-            case 22:
-                super.onAnimationEnd(animator);
-                ((de1) obj).a = null;
-                break;
-            case 23:
-                super.onAnimationEnd(animator);
-                ((if1) obj).setScrollEnabled(true);
-                break;
-            case 24:
-                ng1 ng1Var = (ng1) obj;
-                if (animator.equals(ng1Var.e.H)) {
-                    ng1Var.e.H = null;
-                    break;
-                }
-                break;
-            case 25:
-                eh1 eh1Var = (eh1) obj;
-                eh1Var.d = null;
-                eh1Var.a = null;
-                eh1Var.b = false;
-                eh1Var.f.c.setAllowDrawCursor(true);
-                break;
-            case 26:
-                org.telegram.ui.Components.rf0 rf0Var = (org.telegram.ui.Components.rf0) obj;
-                ((vi1) rf0Var.b).getClass();
-                ((vi1) rf0Var.b).c.setVisibility(4);
-                break;
-            case 27:
-                ((org.telegram.ui.web.a1) obj).s.setVisibility(8);
-                break;
-            case 28:
-                ph.k kVar = ((ph.f) obj).W;
-                if (kVar.d0 == animator) {
-                    kVar.d0 = null;
-                    kVar.f.getEditText().setScrollY(kVar.V);
-                    break;
-                }
-                break;
-            default:
-                ph.x xVar = (ph.x) obj;
-                xVar.l = 1.0f;
-                ph.y yVar = xVar.p;
-                if (yVar.n.contains(xVar)) {
-                    xVar.c.onDetachedFromWindow();
-                    eg.t2 t2Var = xVar.d;
-                    if (t2Var != null) {
-                        t2Var.pause();
-                        xVar.d.release(null);
-                        xVar.d = null;
-                    }
-                    TextureView textureView = xVar.e;
-                    if (textureView != null) {
-                        AndroidUtilities.removeFromParent(textureView);
-                        xVar.e = null;
-                    }
-                    xVar.f = false;
-                    yVar.n.remove(xVar);
-                }
-                yVar.invalidate();
-                break;
+        Bitmap createBitmap = Bitmap.createBitmap(512, 512, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(createBitmap);
+        if (imageReceiver != null) {
+            imageReceiver.setAlpha(1.0f);
+            imageReceiver.setImageCoords(0.0f, 0.0f, createBitmap.getWidth(), createBitmap.getHeight());
+            imageReceiver.draw(canvas);
         }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 1:
-                bt0 bt0Var = (bt0) this.b;
-                bt0Var.b.R0.setVisibility(0);
-                bt0Var.b.z1.setVisibility(0);
-                break;
-            case 2:
-                break;
-            case 13:
-                ((h01) this.b).setVisibility(0);
-                break;
-            default:
-                super.onAnimationStart(animator);
-                break;
+        if (q10.C != null) {
+            canvas.save();
+            canvas.scale(createBitmap.getWidth() / q10.C.getWidth(), createBitmap.getHeight() / q10.C.getHeight());
+            q10.C.setAlpha(1.0f);
+            Path path = new Path();
+            path.rewind();
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(0.0f, 0.0f, q10.C.getWidth(), q10.C.getHeight());
+            path.addRoundRect(rectF, q10.C.getWidth() / 8.0f, q10.C.getHeight() / 8.0f, Path.Direction.CW);
+            canvas.clipPath(path);
+            q10.C.draw(canvas);
+            canvas.restore();
         }
+        Drawable[] drawableArr = PhotoViewer.Q8;
+        PhotoViewer photoViewer = this.h;
+        photoEntry.thumbPath = FileLoader.getInstance(photoViewer.Q).getPathToAttach(ImageLoader.scaleAndSaveImage(createBitmap, photoViewer.g1(), 512.0f, 512.0f, 83, false, 101, 101), true).toString();
     }
 
-    private final void a(Animator animator) {
+    @Override // org.telegram.ui.ot
+    public final long a() {
+        return this.h.B5;
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ boolean b() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ boolean c() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ TLRPC.TL_messageMediaPoll d() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ boolean e(TLRPC.Document document) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ boolean f() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ TLRPC.PollAnswer g() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ boolean h() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ boolean j() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ boolean k(int i10) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ot
+    public final void m(String str) {
+        PhotoViewer photoViewer = this.h;
+        photoViewer.t7 = true;
+        R();
+        photoViewer.m5.p(this.a, this.b, str, null, false, 0L, null, null, photoViewer.v1(), this.c.thumbPath, null, photoViewer.u7);
+    }
+
+    @Override // org.telegram.ui.ot
+    public final boolean o() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ot
+    public final void u(TLRPC.StickerSet stickerSet, String str) {
+        PhotoViewer photoViewer = this.h;
+        photoViewer.t7 = true;
+        R();
+        photoViewer.m5.p(this.a, this.b, str, null, false, 0L, stickerSet, photoViewer.q7, photoViewer.v1(), this.c.thumbPath, null, null);
+    }
+
+    @Override // org.telegram.ui.ot
+    public final boolean w() {
+        PhotoViewer photoViewer = this.h;
+        ju0 ju0Var = photoViewer.d;
+        if (ju0Var != null) {
+            return (ju0Var.P() && photoViewer.i4 == null) ? false : true;
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.ot
+    public final void x(String str) {
+        PhotoViewer photoViewer = this.h;
+        ju0 ju0Var = photoViewer.d;
+        if (ju0Var == null) {
+            return;
+        }
+        boolean P = ju0Var.P();
+        MediaController.PhotoEntry photoEntry = this.c;
+        if (P) {
+            if (photoViewer.i4 == null) {
+                return;
+            }
+            photoViewer.t7 = true;
+            R();
+            photoViewer.m5.p(this.a, this.b, str, null, false, photoViewer.i4.a(), null, null, photoViewer.v1(), photoEntry.thumbPath, null, null);
+            return;
+        }
+        photoViewer.t7 = true;
+        R();
+        photoEntry.imagePath = this.a;
+        photoViewer.d.o(photoViewer.M4, this.b, this.d, this.e, this.f, this.g);
+        NotificationCenter.getInstance(UserConfig.selectedAccount).postNotificationNameOnUIThread(NotificationCenter.customStickerCreated, Boolean.TRUE);
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ MessageObject y() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.ot
+    public final void z(CharSequence charSequence, String str, org.telegram.ui.Components.xk xkVar) {
+        PhotoViewer photoViewer = this.h;
+        photoViewer.t7 = true;
+        R();
+        photoViewer.m5.p(this.a, this.b, str, charSequence, false, 0L, null, null, photoViewer.v1(), this.c.thumbPath, xkVar, null);
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ void B(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ void E(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ void G(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ void K() {
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ void L() {
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ void i(SendMessagesHelper.ImportingSticker importingSticker) {
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ void n(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ void p(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ void q() {
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ void s() {
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ void t(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ void M(TLRPC.InputStickerSet inputStickerSet, boolean z4) {
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ void v(TLObject tLObject, Object obj) {
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ void r(int i10, int i11, Object obj, TLObject tLObject, boolean z4) {
+    }
+
+    @Override // org.telegram.ui.ot
+    public final /* synthetic */ void l(TLRPC.Document document, String str, Object obj, boolean z4, int i10, int i11) {
     }
 }

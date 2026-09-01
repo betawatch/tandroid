@@ -45,8 +45,8 @@ public final class r implements Temporal, j$.time.temporal.m, Comparable, Serial
                     temporal = LocalDate.I(temporal);
                 }
                 G = G(temporal.j(j$.time.temporal.a.YEAR));
-            } catch (b e) {
-                throw new b("Unable to obtain Year from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName(), e);
+            } catch (b e6) {
+                throw new b("Unable to obtain Year from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName(), e6);
             }
         }
         if (qVar instanceof ChronoUnit) {

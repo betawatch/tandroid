@@ -1,13 +1,13 @@
 package c9;
 
 import j$.util.DesugarCollections;
-import j7.j5;
+import j7.k5;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class b {
     public final String a;
@@ -40,7 +40,7 @@ public final class b {
         aVar.f = new HashSet();
         hashSet.add(tVar);
         for (t tVar2 : tVarArr) {
-            j5.a(tVar2, "Null interface");
+            k5.a(tVar2, "Null interface");
         }
         Collections.addAll((HashSet) aVar.d, tVarArr);
         return aVar;
@@ -56,7 +56,7 @@ public final class b {
         HashSet hashSet3 = new HashSet();
         hashSet.add(t.a(cls));
         for (Class cls2 : clsArr) {
-            j5.a(cls2, "Null interface");
+            k5.a(cls2, "Null interface");
             hashSet.add(t.a(cls2));
         }
         return new b(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new a1.c(obj, 3), hashSet3);

@@ -1,40 +1,39 @@
 package lh;
 
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.l81;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class j2 implements Runnable {
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class j2 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ g5 b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ Runnable d;
+    public final /* synthetic */ x3 b;
 
-    public /* synthetic */ j2(g5 g5Var, TLRPC.TL_error tL_error, Runnable runnable, int i10) {
+    public /* synthetic */ j2(x3 x3Var, int i10) {
         this.a = i10;
-        this.b = g5Var;
-        this.c = tL_error;
-        this.d = runnable;
+        this.b = x3Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                this.b.getBulletinFactory().d0(this.c, false);
-                Runnable runnable = this.d;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
+                x3 x3Var = this.b;
+                x3Var.e.b((String) obj, new j2(x3Var, 1));
                 break;
             default:
-                this.b.getBulletinFactory().d0(this.c, false);
-                Runnable runnable2 = this.d;
-                if (runnable2 != null) {
-                    runnable2.run();
-                    break;
+                x3 x3Var2 = this.b;
+                x3Var2.f(true);
+                l81 l81Var = x3Var2.n;
+                int i10 = ((TL_stars.TL_starGiftCollection) obj).collection_id;
+                l81Var.d(i10, x3Var2.e.f(i10) + 1);
+                org.telegram.ui.ActionBar.p2 p2Var = x3Var2.a;
+                if (p2Var instanceof ProfileActivity) {
+                    ((ProfileActivity) p2Var).G4(true);
                 }
+                x3Var2.n();
                 break;
         }
     }

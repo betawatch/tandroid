@@ -2,7 +2,7 @@ package h0;
 
 import android.graphics.Color;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a {
     public final float a;
@@ -23,16 +23,16 @@ public final class a {
 
     public static a a(int i10) {
         l lVar = l.k;
-        float e = b.e(Color.red(i10));
-        float e6 = b.e(Color.green(i10));
-        float e10 = b.e(Color.blue(i10));
+        float e6 = b.e(Color.red(i10));
+        float e10 = b.e(Color.green(i10));
+        float e11 = b.e(Color.blue(i10));
         float[][] fArr = b.d;
         float[] fArr2 = fArr[0];
-        float f10 = (fArr2[2] * e10) + (fArr2[1] * e6) + (fArr2[0] * e);
+        float f10 = (fArr2[2] * e11) + (fArr2[1] * e10) + (fArr2[0] * e6);
         float[] fArr3 = fArr[1];
-        float f11 = (fArr3[2] * e10) + (fArr3[1] * e6) + (fArr3[0] * e);
+        float f11 = (fArr3[2] * e11) + (fArr3[1] * e10) + (fArr3[0] * e6);
         float[] fArr4 = fArr[2];
-        float f12 = (e10 * fArr4[2]) + (e6 * fArr4[1]) + (e * fArr4[0]);
+        float f12 = (e11 * fArr4[2]) + (e10 * fArr4[1]) + (e6 * fArr4[0]);
         float[][] fArr5 = b.a;
         float[] fArr6 = fArr5[0];
         float f13 = (fArr6[2] * f12) + (fArr6[1] * f11) + (fArr6[0] * f10);

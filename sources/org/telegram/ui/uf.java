@@ -5,9 +5,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uf implements org.telegram.ui.Components.xj0, org.telegram.ui.ActionBar.c2 {
+public final /* synthetic */ class uf implements org.telegram.ui.Components.zj0, org.telegram.ui.ActionBar.c2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ xn b;
     public final /* synthetic */ MessageObject c;
@@ -18,7 +18,7 @@ public final /* synthetic */ class uf implements org.telegram.ui.Components.xj0,
         this.c = messageObject;
     }
 
-    @Override // org.telegram.ui.Components.xj0
+    @Override // org.telegram.ui.Components.zj0
     public void a(long j10, TLRPC.MessagePeerReaction messagePeerReaction) {
         switch (this.a) {
             case 0:
@@ -56,7 +56,7 @@ public final /* synthetic */ class uf implements org.telegram.ui.Components.xj0,
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    public void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         xn xnVar = this.b;
         org.telegram.ui.ActionBar.d2[] d2VarArr = {new org.telegram.ui.ActionBar.d2(xnVar.getParentActivity(), 3, xnVar.ba)};
         TLRPC.TL_messages_editMessage tL_messages_editMessage = new TLRPC.TL_messages_editMessage();

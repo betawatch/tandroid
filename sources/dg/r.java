@@ -1,140 +1,127 @@
 package dg;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.view.MotionEvent;
 import android.view.View;
-import java.util.concurrent.atomic.AtomicBoolean;
-import nh.d4;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.jc0;
-import org.telegram.ui.Components.nr;
-import ph.c5;
-import ph.pa;
+import org.telegram.ui.Components.z5;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class r extends View {
+    public final /* synthetic */ int a = 1;
+    public Paint b;
+    public Paint c;
+    public float d;
+    public Object e;
 
-    public /* synthetic */ r(Object obj, Object obj2, Object obj3, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
+    public /* synthetic */ r(Context context) {
+        super(context);
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    public void a() {
+        this.b.setShader(new LinearGradient(0.0f, 0.0f, getWidth(), 0.0f, new int[]{0, ((e0) this.e).f}, (float[]) null, Shader.TileMode.CLAMP));
+    }
+
+    public void b(float f10) {
+        float dp = AndroidUtilities.dp(6.0f);
+        float a2 = k7.o.a(((f10 - dp) + (AndroidUtilities.dp(13.0f) - (this.c.getStrokeWidth() / 2.0f))) / (getWidth() - (dp * 2.0f)), 0.0f, 1.0f);
+        this.d = a2;
+        e0 e0Var = (e0) this.e;
+        e0Var.m(i0.a.k(e0Var.f, (int) (a2 * 255.0f)), 1);
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
         switch (this.a) {
             case 0:
-                e1 e1Var = (e1) this.b;
-                View view = (View) this.c;
-                View view2 = (View) this.d;
-                e1Var.f1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                e1Var.c1.invalidate();
-                e1Var.Z0.invalidate();
-                e1Var.a1.invalidate();
-                int i10 = 0;
-                while (i10 < e1Var.c1.getChildCount()) {
-                    e1Var.c1.getChildAt(i10).setAlpha(((i10 == e1Var.e1 ? e1Var.f1 : i10 == e1Var.d1 ? 1.0f - e1Var.f1 : 0.0f) * 0.4f) + 0.6f);
-                    i10++;
-                }
-                float interpolation = nr.f.getInterpolation(e1Var.f1);
-                if (view != null && view2 != null) {
-                    float f10 = 1.0f - interpolation;
-                    float f11 = (f10 * 0.4f) + 0.6f;
-                    view.setScaleX(f11);
-                    view.setScaleY(f11);
-                    view.setTranslationY((Math.min(interpolation, 0.25f) * AndroidUtilities.dp(16.0f)) / 0.25f);
-                    view.setAlpha(1.0f - (Math.min(interpolation, 0.25f) / 0.25f));
-                    float f12 = (interpolation * 0.4f) + 0.6f;
-                    view2.setScaleX(f12);
-                    view2.setScaleY(f12);
-                    view2.setTranslationY((Math.min(f10, 0.25f) * (-AndroidUtilities.dp(16.0f))) / 0.25f);
-                    view2.setAlpha(1.0f - (Math.min(f10, 0.25f) / 0.25f));
-                    break;
-                }
-                break;
-            case 1:
-                nh.h3 h3Var = (nh.h3) this.b;
-                ValueAnimator valueAnimator2 = (ValueAnimator) this.c;
-                boolean[] zArr = (boolean[]) this.d;
-                d4 d4Var = h3Var.a;
-                d4Var.s3 = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
-                d4Var.invalidate();
-                if (d4Var.s3 > 0.8f && !zArr[0]) {
-                    zArr[0] = true;
-                    d4Var.n3 = true;
-                    try {
-                        d4Var.performHapticFeedback(3);
-                        break;
-                    } catch (Exception unused) {
-                        return;
-                    }
-                }
-                break;
-            case 2:
-                c5 c5Var = (c5) this.b;
-                View view3 = (View) this.c;
-                View view4 = (View) this.d;
-                c5Var.X0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                c5Var.T0.invalidate();
-                c5Var.Q0.invalidate();
-                c5Var.R0.invalidate();
-                int i11 = 0;
-                while (i11 < c5Var.T0.getChildCount()) {
-                    c5Var.T0.getChildAt(i11).setAlpha(((i11 == c5Var.W0 ? c5Var.X0 : i11 == c5Var.V0 ? 1.0f - c5Var.X0 : 0.0f) * 0.4f) + 0.6f);
-                    i11++;
-                }
-                float interpolation2 = nr.f.getInterpolation(c5Var.X0);
-                if (view3 != null && view4 != null) {
-                    float f13 = 1.0f - interpolation2;
-                    float f14 = (f13 * 0.4f) + 0.6f;
-                    view3.setScaleX(f14);
-                    view3.setScaleY(f14);
-                    view3.setTranslationY((Math.min(interpolation2, 0.25f) * AndroidUtilities.dp(16.0f)) / 0.25f);
-                    view3.setAlpha(1.0f - (Math.min(interpolation2, 0.25f) / 0.25f));
-                    float f15 = (interpolation2 * 0.4f) + 0.6f;
-                    view4.setScaleX(f15);
-                    view4.setScaleY(f15);
-                    view4.setTranslationY((Math.min(f13, 0.25f) * (-AndroidUtilities.dp(16.0f))) / 0.25f);
-                    view4.setAlpha(1.0f - (Math.min(f13, 0.25f) / 0.25f));
-                    break;
-                }
-                break;
-            case 3:
-                pa paVar = (pa) this.b;
-                AtomicBoolean atomicBoolean = (AtomicBoolean) this.c;
-                jc0 jc0Var = (jc0) this.d;
-                paVar.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                Math.abs(floatValue - 0.5f);
-                if (floatValue >= 0.5f && !atomicBoolean.get()) {
-                    atomicBoolean.set(true);
-                    paVar.setDrawable(jc0Var);
-                    break;
-                }
+                super.onDraw(canvas);
+                float height = getHeight() / 2.0f;
+                float dp = AndroidUtilities.dp(6.0f);
+                RectF rectF = AndroidUtilities.rectTmp;
+                float f10 = height - dp;
+                float f11 = height + dp;
+                rectF.set(dp, f10, getWidth() - dp, f11);
+                canvas.save();
+                e0 e0Var = (e0) this.e;
+                e0Var.e.rewind();
+                e0Var.e.addRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), Path.Direction.CW);
+                canvas.clipPath(e0Var.e);
+                eg.c2.w1(canvas, rectF, AndroidUtilities.dp(6.0f));
+                canvas.restore();
+                rectF.set(dp, f10, getWidth() - dp, f11);
+                canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), this.b);
+                float dp2 = AndroidUtilities.dp(13.0f);
+                Paint paint = this.c;
+                float strokeWidth = dp2 - (paint.getStrokeWidth() / 2.0f);
+                float max = Math.max(dp + strokeWidth, (((getWidth() - (2.0f * dp)) * this.d) + dp) - strokeWidth);
+                canvas.drawCircle(max, height, dp2, paint);
+                eg.c2.x1(max, height, strokeWidth, i0.a.k(e0Var.f, (int) (this.d * 255.0f)), canvas);
                 break;
             default:
-                wh.m mVar = (wh.m) this.b;
-                org.telegram.ui.Cells.s1 s1Var = (org.telegram.ui.Cells.s1) this.c;
-                org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) this.d;
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                if (mVar.l) {
-                    s1Var.g0 = (-mVar.s) * floatValue2;
-                    s1Var.h0 = (-mVar.t) * floatValue2;
-                    s1Var.j0 = (-mVar.u) * floatValue2;
-                    s1Var.i0 = (-mVar.v) * floatValue2;
-                } else {
-                    s1Var.g0 = ((-mVar.s) * floatValue2) - t1Var.getAnimationOffsetX();
-                    s1Var.h0 = ((-mVar.t) * floatValue2) - t1Var.getAnimationOffsetX();
-                    s1Var.j0 = ((-mVar.u) * floatValue2) - t1Var.getTranslationY();
-                    s1Var.i0 = ((-mVar.v) * floatValue2) - t1Var.getTranslationY();
-                }
-                t1Var.invalidate();
+                super.onDraw(canvas);
+                RectF rectF2 = AndroidUtilities.rectTmp;
+                rectF2.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+                canvas.drawRoundRect(rectF2, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), this.c);
+                rectF2.set(0.0f, 0.0f, ((z5) this.e).d(this.d, false) * getMeasuredWidth(), getMeasuredHeight());
+                canvas.drawRoundRect(rectF2, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), this.b);
                 break;
         }
+    }
+
+    @Override // android.view.View
+    public void onSizeChanged(int i10, int i11, int i12, int i13) {
+        switch (this.a) {
+            case 0:
+                super.onSizeChanged(i10, i11, i12, i13);
+                a();
+                break;
+            default:
+                super.onSizeChanged(i10, i11, i12, i13);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 0:
+                int actionMasked = motionEvent.getActionMasked();
+                if (actionMasked != 0) {
+                    if (actionMasked == 1) {
+                        b(motionEvent.getX());
+                        getParent().requestDisallowInterceptTouchEvent(false);
+                    } else if (actionMasked != 2) {
+                        if (actionMasked == 3) {
+                            getParent().requestDisallowInterceptTouchEvent(false);
+                        }
+                    }
+                    return true;
+                }
+                getParent().requestDisallowInterceptTouchEvent(true);
+                b(motionEvent.getX());
+                return true;
+            default:
+                return super.onTouchEvent(motionEvent);
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r(e0 e0Var, Context context) {
+        super(context);
+        this.e = e0Var;
+        this.b = new Paint(1);
+        Paint paint = new Paint(1);
+        this.c = paint;
+        paint.setColor(-1);
+        paint.setStyle(Paint.Style.FILL_AND_STROKE);
+        paint.setStrokeWidth(AndroidUtilities.dp(3.0f));
     }
 }

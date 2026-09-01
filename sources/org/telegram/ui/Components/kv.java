@@ -1,50 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.text.Selection;
-import android.text.Spannable;
-import android.text.method.LinkMovementMethod;
-import android.view.MotionEvent;
-import android.widget.TextView;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class kv extends LinkMovementMethod {
+public final /* synthetic */ class kv implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ lv b;
 
-    @Override // android.text.method.LinkMovementMethod, android.text.method.ScrollingMovementMethod, android.text.method.BaseMovementMethod, android.text.method.MovementMethod
-    public final boolean onTouchEvent(TextView textView, Spannable spannable, MotionEvent motionEvent) {
+    public /* synthetic */ kv(lv lvVar, int i10) {
+        this.a = i10;
+        this.b = lvVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                try {
-                    boolean onTouchEvent = super.onTouchEvent(textView, spannable, motionEvent);
-                    if (motionEvent.getAction() != 1 && motionEvent.getAction() != 3) {
-                    }
-                    Selection.removeSelection(spannable);
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    return false;
-                }
+                this.b.f.dismiss();
                 break;
-            case 1:
-                try {
-                    break;
-                } catch (Exception e6) {
-                    FileLog.e(e6);
-                    return false;
-                }
             default:
-                try {
-                    boolean onTouchEvent2 = super.onTouchEvent(textView, spannable, motionEvent);
-                    if (motionEvent.getAction() != 1 && motionEvent.getAction() != 3) {
-                    }
-                    Selection.removeSelection(spannable);
-                } catch (Exception e10) {
-                    FileLog.e(e10);
-                    return false;
+                ov ovVar = this.b.f;
+                ovVar.dismiss();
+                org.telegram.ui.ActionBar.p2 p2Var = ovVar.c;
+                if (p2Var != null && p2Var.getParentActivity() != null) {
+                    org.telegram.messenger.y3.s(R.string.AddEmojiNotFound, qc.a0(p2Var), null);
+                    break;
                 }
                 break;
         }
-        return false;
     }
 }

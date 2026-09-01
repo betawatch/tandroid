@@ -10,29 +10,34 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class bl implements org.telegram.ui.Components.ok0 {
+public final class bl implements org.telegram.ui.Components.qk0 {
     public final /* synthetic */ xn a;
 
     public bl(xn xnVar) {
         this.a = xnVar;
     }
 
-    @Override // org.telegram.ui.Components.ok0
-    public final /* synthetic */ boolean h() {
+    @Override // org.telegram.ui.Components.qk0
+    public final /* synthetic */ boolean g() {
         return true;
+    }
+
+    @Override // org.telegram.ui.Components.qk0
+    public final /* synthetic */ boolean h() {
+        return false;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:23:0x008b, code lost:
     
         if (r5 == null) goto L26;
      */
-    @Override // org.telegram.ui.Components.ok0
+    @Override // org.telegram.ui.Components.qk0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void i(View view, mg.q0 q0Var, boolean z4, boolean z10) {
+    public final void o(View view, ng.q0 q0Var, boolean z4, boolean z10) {
         TLRPC.Document f10;
         boolean z11;
         HashSet hashSet;
@@ -46,7 +51,7 @@ public final class bl implements org.telegram.ui.Components.ok0 {
             return;
         }
         if (xnVar.a() == xnVar.getUserConfig().getClientUserId() && !xnVar.getUserConfig().isPremium()) {
-            new eg.o1((org.telegram.ui.ActionBar.p2) xnVar, 24, true).show();
+            new fg.n1((org.telegram.ui.ActionBar.p2) xnVar, 24, true).show();
             xnVar.z7(false);
             return;
         }
@@ -115,7 +120,7 @@ public final class bl implements org.telegram.ui.Components.ok0 {
                     } else {
                         xnVar.getMediaDataController().removeMessageFromResults(messageObject.getId());
                     }
-                    tf.y0 y0Var = xnVar.J3;
+                    uf.y0 y0Var = xnVar.J3;
                     if (y0Var != null) {
                         y0Var.l();
                     }
@@ -155,21 +160,16 @@ public final class bl implements org.telegram.ui.Components.ok0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ok0
-    public final /* synthetic */ boolean j() {
+    @Override // org.telegram.ui.Components.qk0
+    public final /* synthetic */ boolean t() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ok0
-    public final /* synthetic */ boolean s() {
-        return false;
+    @Override // org.telegram.ui.Components.qk0
+    public final /* synthetic */ void m() {
     }
 
-    @Override // org.telegram.ui.Components.ok0
-    public final /* synthetic */ void o() {
-    }
-
-    @Override // org.telegram.ui.Components.ok0
-    public final /* synthetic */ void n(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i10, boolean z4) {
+    @Override // org.telegram.ui.Components.qk0
+    public final /* synthetic */ void j(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i10, boolean z4) {
     }
 }

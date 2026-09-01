@@ -18,10 +18,10 @@ import k7.j7;
 import k7.ka;
 import k7.ma;
 import k7.y6;
-import m.s3;
+import m.r3;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a {
     public volatile Bitmap a;
@@ -83,15 +83,15 @@ public final class a {
             }
         }
         hashMap.put(j7Var, Long.valueOf(elapsedRealtime3));
-        s3 s3Var = new s3();
-        s3Var.c = y6.b;
-        s3Var.b = d7.b;
-        s3Var.d = Integer.valueOf(allocationByteCount & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        s3Var.f = Integer.valueOf(height & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        s3Var.e = Integer.valueOf(width & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        s3Var.a = Long.valueOf(Long.MAX_VALUE & elapsedRealtime2);
-        s3Var.h = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        e7 e7Var = new e7(s3Var);
+        r3 r3Var = new r3();
+        r3Var.c = y6.b;
+        r3Var.b = d7.b;
+        r3Var.d = Integer.valueOf(allocationByteCount & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        r3Var.f = Integer.valueOf(height & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        r3Var.e = Integer.valueOf(width & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        r3Var.a = Long.valueOf(Long.MAX_VALUE & elapsedRealtime2);
+        r3Var.h = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        e7 e7Var = new e7(r3Var);
         e eVar = new e(27, false);
         eVar.d = e7Var;
         o.a.execute(new s1(a2, new b(eVar), task.isSuccessful() ? (String) task.getResult() : j.c.a(a2.g)));

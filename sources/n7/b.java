@@ -4,7 +4,7 @@ import java.util.AbstractSet;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class b extends AbstractSet {
     public final /* synthetic */ int a;
@@ -38,11 +38,11 @@ public final class b extends AbstractSet {
                 }
                 if (obj instanceof Map.Entry) {
                     Map.Entry entry = (Map.Entry) obj;
-                    int e = dVar.e(entry.getKey());
-                    if (e != -1) {
+                    int e6 = dVar.e(entry.getKey());
+                    if (e6 != -1) {
                         Object[] objArr = dVar.d;
                         objArr.getClass();
-                        if (k7.d0.a(objArr[e], entry.getValue())) {
+                        if (k7.e0.a(objArr[e6], entry.getValue())) {
                             return true;
                         }
                     }
@@ -90,7 +90,7 @@ public final class b extends AbstractSet {
                         objArr.getClass();
                         Object[] objArr2 = dVar.d;
                         objArr2.getClass();
-                        int a10 = k7.z.a(key, value, d, obj2, iArr, objArr, objArr2);
+                        int a10 = k7.a0.a(key, value, d, obj2, iArr, objArr, objArr2);
                         if (a10 != -1) {
                             dVar.b(a10, d);
                             dVar.f--;

@@ -5,7 +5,7 @@ import android.os.Handler;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class l {
     public final Context a;
@@ -17,11 +17,14 @@ public class l {
     }
 
     public l3.k0 a(Context context) {
-        com.google.firebase.messaging.r rVar = new com.google.firebase.messaging.r(context);
-        if (((androidx.biometric.e) rVar.d) == null) {
-            rVar.d = new androidx.biometric.e(new l3.n[0]);
+        com.google.firebase.messaging.s sVar = new com.google.firebase.messaging.s();
+        sVar.a = context;
+        sVar.b = l3.g.c;
+        sVar.d = l3.l0.a;
+        if (((androidx.biometric.e) sVar.c) == null) {
+            sVar.c = new androidx.biometric.e(new l3.n[0]);
         }
-        return new l3.k0(rVar);
+        return new l3.k0(sVar);
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(12:(2:12|13)|15|16|17|18|19|21|22|23|24|25|(2:27|28)) */
@@ -127,11 +130,11 @@ public class l {
                     arrayList.add(i10, (e) constructor2.newInstance(objArr2));
                     h5.a.v("DefaultRenderersFactory", "Loaded Libgav1VideoRenderer.");
                 } catch (ClassNotFoundException unused4) {
-                } catch (Exception e) {
-                    throw new RuntimeException("Error instantiating AV1 extension", e);
+                } catch (Exception e6) {
+                    throw new RuntimeException("Error instantiating AV1 extension", e6);
                 }
-            } catch (Exception e6) {
-                throw new RuntimeException("Error instantiating VP9 extension", e6);
+            } catch (Exception e10) {
+                throw new RuntimeException("Error instantiating VP9 extension", e10);
             }
         }
         l3.k0 a22 = a(context);
@@ -145,8 +148,8 @@ public class l {
             try {
                 try {
                     i12 = size2 + 1;
-                } catch (Exception e10) {
-                    throw new RuntimeException("Error instantiating MIDI extension", e10);
+                } catch (Exception e11) {
+                    throw new RuntimeException("Error instantiating MIDI extension", e11);
                 }
             } catch (ClassNotFoundException unused5) {
             }
@@ -226,11 +229,11 @@ public class l {
                         arrayList.add(i162, (e) constructor52.newInstance(objArr52));
                         h5.a.v("DefaultRenderersFactory", "Loaded FfmpegAudioRenderer.");
                     } catch (ClassNotFoundException unused7) {
-                    } catch (Exception e11) {
-                        throw new RuntimeException("Error instantiating FFmpeg extension", e11);
+                    } catch (Exception e12) {
+                        throw new RuntimeException("Error instantiating FFmpeg extension", e12);
                     }
-                } catch (Exception e12) {
-                    throw new RuntimeException("Error instantiating FLAC extension", e12);
+                } catch (Exception e13) {
+                    throw new RuntimeException("Error instantiating FLAC extension", e13);
                 }
                 Class<?> cls42 = Class.forName("com.google.android.exoplayer2.ext.opus.LibopusAudioRenderer");
                 Class<?>[] clsArr32 = new Class[3];
@@ -245,8 +248,8 @@ public class l {
                 int i152 = i12 + 1;
                 arrayList.add(i12, (e) constructor32.newInstance(objArr32));
                 h5.a.v("DefaultRenderersFactory", "Loaded LibopusAudioRenderer.");
-            } catch (Exception e13) {
-                throw new RuntimeException("Error instantiating Opus extension", e13);
+            } catch (Exception e14) {
+                throw new RuntimeException("Error instantiating Opus extension", e14);
             }
         }
         arrayList.add(new v4.l(c0Var3, handler.getLooper()));

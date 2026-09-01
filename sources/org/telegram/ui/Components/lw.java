@@ -1,28 +1,58 @@
 package org.telegram.ui.Components;
 
-import android.os.Build;
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class lw extends jz {
-    public final /* synthetic */ kz d;
+public final class lw extends tl0 {
+    public boolean U2;
+    public boolean V2;
+    public final /* synthetic */ mz W2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lw(kz kzVar) {
-        super(kzVar, 2);
-        this.d = kzVar;
+    public lw(mz mzVar, Context context) {
+        super(context, null);
+        this.W2 = mzVar;
     }
 
-    @Override // org.telegram.ui.Components.jz, f2.z0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        kz kzVar;
-        ng.e eVar;
-        super.b(recyclerView, i10, i11);
-        if (Build.VERSION.SDK_INT < 31 || (eVar = (kzVar = this.d).g2) == null) {
+    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        org.telegram.ui.qt q10 = org.telegram.ui.qt.q();
+        mz mzVar = this.W2;
+        return super.onInterceptTouchEvent(motionEvent) || q10.r(motionEvent, mzVar.e0, mzVar.d2, this.m2);
+    }
+
+    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+        mz mzVar = this.W2;
+        if (mzVar.n0 && mzVar.k0.D > 1) {
+            this.U2 = true;
+            mzVar.f0.h1(0, 0);
+            mzVar.l0.setVisibility(0);
+            mzVar.m0.k(0, 0);
+            mzVar.n0 = false;
+            this.U2 = false;
+        }
+        super.onLayout(z4, i10, i11, i12, i13);
+        mz.f(mzVar, true);
+    }
+
+    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        if (this.V2) {
             return;
         }
-        eVar.f(i10, i11);
-        kzVar.C();
+        this.W2.k0.l();
+        this.V2 = true;
+    }
+
+    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.U2) {
+            return;
+        }
+        super.requestLayout();
     }
 }

@@ -1,14 +1,14 @@
 package l7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class u4 implements u9.d {
     public static final u4 a = new u4();
-    public static final u9.c b = new u9.c("detectorOptions", vh.v2.h(kh.a2.o(h0.class, new e0(1))));
-    public static final u9.c c = new u9.c("errorCodes", vh.v2.h(kh.a2.o(h0.class, new e0(2))));
-    public static final u9.c d = new u9.c("totalInitializationMs", vh.v2.h(kh.a2.o(h0.class, new e0(3))));
-    public static final u9.c e = new u9.c("loggingInitializationMs", vh.v2.h(kh.a2.o(h0.class, new e0(4))));
-    public static final u9.c f = new u9.c("otherErrors", vh.v2.h(kh.a2.o(h0.class, new e0(5))));
+    public static final u9.c b = new u9.c("detectorOptions", w.c.h(l.d.o(h0.class, new e0(1))));
+    public static final u9.c c = new u9.c("errorCodes", w.c.h(l.d.o(h0.class, new e0(2))));
+    public static final u9.c d = new u9.c("totalInitializationMs", w.c.h(l.d.o(h0.class, new e0(3))));
+    public static final u9.c e = new u9.c("loggingInitializationMs", w.c.h(l.d.o(h0.class, new e0(4))));
+    public static final u9.c f = new u9.c("otherErrors", w.c.h(l.d.o(h0.class, new e0(5))));
 
     @Override // u9.a
     public final void a(Object obj, Object obj2) {

@@ -2,9 +2,9 @@ package u5;
 
 import android.os.Looper;
 import java.util.Locale;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.ul0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class p {
     public static final Object i = new Object();
@@ -12,7 +12,7 @@ public final class p {
     public final long b;
     public final String c;
     public o g;
-    public tl0 h;
+    public ul0 h;
     public long e = -1;
     public long f = 0;
     public final a7.e d = new a7.e(Looper.getMainLooper(), 2);
@@ -38,17 +38,17 @@ public final class p {
             this.f = currentTimeMillis;
         }
         if (oVar2 != null) {
-            oVar2.c(this.c, j11, j12, currentTimeMillis);
+            oVar2.m(this.c, j11, j12, currentTimeMillis);
         }
         synchronized (obj) {
             try {
-                tl0 tl0Var = this.h;
-                if (tl0Var != null) {
-                    this.d.removeCallbacks(tl0Var);
+                ul0 ul0Var = this.h;
+                if (ul0Var != null) {
+                    this.d.removeCallbacks(ul0Var);
                 }
-                tl0 tl0Var2 = new tl0(this, 10);
-                this.h = tl0Var2;
-                this.d.postDelayed(tl0Var2, this.b);
+                ul0 ul0Var2 = new ul0(this, 10);
+                this.h = ul0Var2;
+                this.d.postDelayed(ul0Var2, this.b);
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -97,14 +97,14 @@ public final class p {
                     long currentTimeMillis = System.currentTimeMillis();
                     o oVar = this.g;
                     b6.m.h(oVar);
-                    oVar.g(this.c, this.e, i10, obj, this.f, currentTimeMillis);
+                    oVar.n(this.c, this.e, i10, obj, this.f, currentTimeMillis);
                 }
                 this.e = -1L;
                 this.g = null;
                 synchronized (obj2) {
-                    tl0 tl0Var = this.h;
-                    if (tl0Var != null) {
-                        this.d.removeCallbacks(tl0Var);
+                    ul0 ul0Var = this.h;
+                    if (ul0Var != null) {
+                        this.d.removeCallbacks(ul0Var);
                         this.h = null;
                     }
                 }

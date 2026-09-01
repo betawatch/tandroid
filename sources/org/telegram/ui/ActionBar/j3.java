@@ -1,111 +1,31 @@
 package org.telegram.ui.ActionBar;
 
-import android.app.Dialog;
-import android.graphics.Paint;
-import android.os.Build;
-import android.os.Bundle;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowInsets;
-import android.view.WindowManager;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.R;
-import org.telegram.ui.LaunchActivity;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class j3 extends Dialog {
-    public final t3 a;
-    public final i3 b;
-    public final eg.h0 c;
-    public final Paint d;
-    public boolean e;
+public final class j3 extends FrameLayout implements v3 {
+    public final v3 a;
 
-    public j3(t3 t3Var) {
-        super(t3Var.getWindowView().getContext(), R.style.TransparentDialog);
-        Paint paint = new Paint(1);
-        this.d = paint;
-        this.a = t3Var;
-        u3 windowView = t3Var.getWindowView();
-        eg.h0 h0Var = new eg.h0(this, getContext(), 3);
-        this.c = h0Var;
-        paint.setColor(j6.w0(null, j6.a7, false));
-        i3 i3Var = new i3(windowView);
-        this.b = i3Var;
-        setContentView(i3Var, new ViewGroup.LayoutParams(-1, -1));
-        i3Var.addView(h0Var, k7.b6.e(-1, -2, 80));
-        i3Var.setClipToPadding(false);
+    public j3(v3 v3Var) {
+        super(v3Var.getContext());
+        this.a = v3Var;
     }
 
-    public static /* synthetic */ WindowInsets a(View view, WindowInsets windowInsets) {
-        view.setPadding(0, 0, 0, windowInsets.getSystemWindowInsetBottom());
-        return Build.VERSION.SDK_INT >= 30 ? WindowInsets.CONSUMED : windowInsets.consumeSystemWindowInsets();
+    @Override // org.telegram.ui.ActionBar.v3
+    public RectF getRect() {
+        return this.a.getRect();
     }
 
-    public static void b(t3 t3Var) {
-        p2 U = LaunchActivity.U();
-        if (U == null) {
-            return;
-        }
-        if (AndroidUtilities.isTablet() || t3Var.b() || AndroidUtilities.hasDialogOnTop(U)) {
-            j3 j3Var = new j3(t3Var);
-            if (t3Var.c(j3Var)) {
-                i3 i3Var = j3Var.b;
-                View view = (View) i3Var.a;
-                AndroidUtilities.removeFromParent(view);
-                i3Var.addView(view, k7.b6.e(-1, -1, 119));
-            }
-        }
+    @Override // org.telegram.ui.ActionBar.v3
+    public void setDrawingFromOverlay(boolean z4) {
+        this.a.setDrawingFromOverlay(z4);
     }
 
-    public final void c() {
-        this.a.c(null);
-        if (this.e) {
-            this.e = false;
-            try {
-                super.dismiss();
-            } catch (Exception e) {
-                FileLog.e(e);
-            }
-        }
-    }
-
-    @Override // android.app.Dialog, android.content.DialogInterface
-    public final void dismiss() {
-        this.a.dismiss(false);
-    }
-
-    @Override // android.app.Dialog
-    public final void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        Window window = getWindow();
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 30) {
-            window.addFlags(-2147483392);
-        } else {
-            window.addFlags(-2147417856);
-        }
-        window.setWindowAnimations(R.style.DialogNoAnimation);
-        WindowManager.LayoutParams attributes = window.getAttributes();
-        attributes.width = -1;
-        attributes.gravity = 51;
-        attributes.dimAmount = 0.0f;
-        attributes.flags &= -3;
-        attributes.softInputMode = 16;
-        attributes.height = -1;
-        if (i10 >= 28) {
-            attributes.layoutInDisplayCutoutMode = 1;
-        }
-        window.setAttributes(attributes);
-        if (i10 >= 23) {
-            window.setStatusBarColor(0);
-        }
-        i3 i3Var = this.b;
-        i3Var.setFitsSystemWindows(true);
-        i3Var.setSystemUiVisibility(1792);
-        i3Var.setPadding(0, 0, 0, 0);
-        i3Var.setOnApplyWindowInsetsListener(new h3(0));
+    @Override // org.telegram.ui.ActionBar.v3
+    public final float z(Canvas canvas, RectF rectF, float f10, RectF rectF2, float f11) {
+        return this.a.z(canvas, rectF, f10, rectF2, f11);
     }
 }

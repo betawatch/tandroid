@@ -7,7 +7,7 @@ import java.lang.Thread;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class BuildVars {
     public static String APP_HASH = null;
@@ -65,24 +65,24 @@ public class BuildVars {
     }
 
     private static boolean hasDirectCurrency() {
-        p2.n nVar;
-        if (BillingController.getInstance().isReady() && (nVar = BillingController.PREMIUM_PRODUCT_DETAILS) != null) {
-            ArrayList arrayList = nVar.h;
+        p2.m mVar;
+        if (BillingController.getInstance().isReady() && (mVar = BillingController.PREMIUM_PRODUCT_DETAILS) != null) {
+            ArrayList arrayList = mVar.h;
             int size = arrayList.size();
             int i10 = 0;
             while (i10 < size) {
                 Object obj = arrayList.get(i10);
                 i10++;
-                ArrayList arrayList2 = ((p2.m) obj).b.a;
+                ArrayList arrayList2 = ((p2.l) obj).b.a;
                 int size2 = arrayList2.size();
                 int i11 = 0;
                 while (i11 < size2) {
                     Object obj2 = arrayList2.get(i11);
                     i11++;
-                    p2.l lVar = (p2.l) obj2;
+                    p2.k kVar = (p2.k) obj2;
                     Iterator<String> it = MessagesController.getInstance(UserConfig.selectedAccount).directPaymentsCurrency.iterator();
                     while (it.hasNext()) {
-                        if (Objects.equals(lVar.c, it.next())) {
+                        if (Objects.equals(kVar.c, it.next())) {
                             return true;
                         }
                     }

@@ -10,11 +10,11 @@ import android.util.TypedValue;
 import j$.util.Objects;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public class AnimatedPhoneNumberEditText extends h40 {
+public class AnimatedPhoneNumberEditText extends j40 {
     public String B;
-    public lh.r5 C;
+    public mh.r5 C;
     public final ArrayList e;
     public final ArrayList f;
     public final TextPaint h;
@@ -53,7 +53,7 @@ public class AnimatedPhoneNumberEditText extends h40 {
         super.setHintText(str);
     }
 
-    @Override // org.telegram.ui.Components.h40
+    @Override // org.telegram.ui.Components.j40
     public String getHintText() {
         return this.B;
     }
@@ -62,7 +62,7 @@ public class AnimatedPhoneNumberEditText extends h40 {
         return this.r;
     }
 
-    @Override // org.telegram.ui.Components.h40
+    @Override // org.telegram.ui.Components.j40
     public final void i(int i10) {
         ArrayList arrayList = this.w;
         if (i10 < arrayList.size()) {
@@ -70,7 +70,7 @@ public class AnimatedPhoneNumberEditText extends h40 {
         }
     }
 
-    @Override // org.telegram.ui.Components.h40
+    @Override // org.telegram.ui.Components.j40
     public void setHintText(String str) {
         boolean isEmpty;
         boolean isEmpty2 = TextUtils.isEmpty(str);
@@ -103,7 +103,7 @@ public class AnimatedPhoneNumberEditText extends h40 {
         }
         if (isEmpty) {
             int length = str2.length();
-            lh.r5 r5Var = new lh.r5(this, z4, str, 12);
+            mh.r5 r5Var = new mh.r5(this, z4, str, 12);
             Runnable runnable = this.C;
             if (runnable != null) {
                 removeCallbacks(runnable);
@@ -188,13 +188,13 @@ public class AnimatedPhoneNumberEditText extends h40 {
         invalidate();
     }
 
-    @Override // org.telegram.ui.Components.xt, android.widget.TextView
+    @Override // org.telegram.ui.Components.zt, android.widget.TextView
     public void setTextColor(int i10) {
         super.setTextColor(i10);
         this.h.setColor(i10);
     }
 
-    @Override // org.telegram.ui.Components.h40, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView
+    @Override // org.telegram.ui.Components.j40, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView
     public final void setTextSize(int i10, float f10) {
         super.setTextSize(i10, f10);
         this.h.setTextSize(TypedValue.applyDimension(i10, f10, getResources().getDisplayMetrics()));

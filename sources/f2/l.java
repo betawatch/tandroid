@@ -10,9 +10,9 @@ import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.BuildVars;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public class l extends o1 {
+public class l extends p1 {
     public static TimeInterpolator E;
     public Interpolator o;
     public final ArrayList p = new ArrayList();
@@ -42,10 +42,10 @@ public class l extends o1 {
     public void B(final j jVar) {
         l lVar;
         final j jVar2;
-        l1 l1Var = jVar.a;
-        View view = l1Var == null ? null : l1Var.a;
-        l1 l1Var2 = jVar.b;
-        View view2 = l1Var2 != null ? l1Var2.a : null;
+        m1 m1Var = jVar.a;
+        View view = m1Var == null ? null : m1Var.a;
+        m1 m1Var2 = jVar.b;
+        View view2 = m1Var2 != null ? m1Var2.a : null;
         ArrayList arrayList = this.B;
         if (view != null) {
             ViewPropertyAnimator startDelay = view.animate().setDuration(this.g).setStartDelay(0L);
@@ -68,11 +68,11 @@ public class l extends o1 {
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                     switch (i10) {
                         case 0:
-                            l1 l1Var3 = jVar.a;
+                            m1 m1Var3 = jVar.a;
                             this.b.O();
                             break;
                         default:
-                            l1 l1Var4 = jVar.b;
+                            m1 m1Var4 = jVar.b;
                             this.b.O();
                             break;
                     }
@@ -104,11 +104,11 @@ public class l extends o1 {
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                     switch (i11) {
                         case 0:
-                            l1 l1Var3 = jVar2.a;
+                            m1 m1Var3 = jVar2.a;
                             this.b.O();
                             break;
                         default:
-                            l1 l1Var4 = jVar2.b;
+                            m1 m1Var4 = jVar2.b;
                             this.b.O();
                             break;
                     }
@@ -118,12 +118,12 @@ public class l extends o1 {
         }
     }
 
-    public void C(l1 l1Var, k kVar) {
+    public void C(m1 m1Var, k kVar) {
         int i10 = kVar.b;
         int i11 = kVar.c;
         int i12 = kVar.d;
         int i13 = kVar.e;
-        View view = l1Var.a;
+        View view = m1Var.a;
         int i14 = i12 - i10;
         int i15 = i13 - i11;
         if (i14 != 0) {
@@ -133,32 +133,32 @@ public class l extends o1 {
             view.animate().translationY(0.0f);
         }
         ViewPropertyAnimator animate = view.animate();
-        this.z.add(l1Var);
-        animate.setUpdateListener(new ag.a(3, this, l1Var));
+        this.z.add(m1Var);
+        animate.setUpdateListener(new bg.a(2, this, m1Var));
         Interpolator interpolator = this.o;
         if (interpolator != null) {
             animate.setInterpolator(interpolator);
         } else {
             animate.setInterpolator(this.i);
         }
-        animate.setDuration(j()).setStartDelay(0L).setListener(new h(this, l1Var, i14, view, i15, animate, 0)).start();
+        animate.setDuration(j()).setStartDelay(0L).setListener(new h(this, m1Var, i14, view, i15, animate, 0)).start();
     }
 
-    public void D(l1 l1Var) {
-        View view = l1Var.a;
+    public void D(m1 m1Var) {
+        View view = m1Var.a;
         ViewPropertyAnimator animate = view.animate();
-        this.A.add(l1Var);
+        this.A.add(m1Var);
         if (this.l > 0) {
             view.bringToFront();
         }
         animate.setDuration(this.d).setStartDelay(this.l).setInterpolator(this.j).alpha(0.0f).scaleX(1.0f - A(view)).scaleY(1.0f - A(view));
-        animate.setUpdateListener(new d(this, l1Var, 0));
-        animate.setListener(new g(this, l1Var, animate, view)).start();
+        animate.setUpdateListener(new d(this, m1Var, 0));
+        animate.setListener(new g(this, m1Var, animate, view)).start();
     }
 
     public final void E(ArrayList arrayList) {
         for (int size = arrayList.size() - 1; size >= 0; size--) {
-            ((l1) arrayList.get(size)).a.animate().cancel();
+            ((m1) arrayList.get(size)).a.animate().cancel();
         }
     }
 
@@ -172,36 +172,36 @@ public class l extends o1 {
         this.x.clear();
     }
 
-    public final void H(ArrayList arrayList, l1 l1Var) {
+    public final void H(ArrayList arrayList, m1 m1Var) {
         for (int size = arrayList.size() - 1; size >= 0; size--) {
             j jVar = (j) arrayList.get(size);
-            if (J(jVar, l1Var) && jVar.a == null && jVar.b == null) {
+            if (J(jVar, m1Var) && jVar.a == null && jVar.b == null) {
                 arrayList.remove(jVar);
             }
         }
     }
 
     public final void I(j jVar) {
-        l1 l1Var = jVar.a;
-        if (l1Var != null) {
-            J(jVar, l1Var);
+        m1 m1Var = jVar.a;
+        if (m1Var != null) {
+            J(jVar, m1Var);
         }
-        l1 l1Var2 = jVar.b;
-        if (l1Var2 != null) {
-            J(jVar, l1Var2);
+        m1 m1Var2 = jVar.b;
+        if (m1Var2 != null) {
+            J(jVar, m1Var2);
         }
     }
 
-    public boolean J(j jVar, l1 l1Var) {
-        if (jVar.b == l1Var) {
+    public boolean J(j jVar, m1 m1Var) {
+        if (jVar.b == m1Var) {
             jVar.b = null;
         } else {
-            if (jVar.a != l1Var) {
+            if (jVar.a != m1Var) {
                 return false;
             }
             jVar.a = null;
         }
-        View view = l1Var.a;
+        View view = m1Var.a;
         view.setAlpha(1.0f);
         if (A(view) > 0.0f) {
             view.setScaleX(1.0f);
@@ -209,7 +209,7 @@ public class l extends o1 {
         }
         view.setTranslationX(0.0f);
         view.setTranslationY(0.0f);
-        d(l1Var);
+        d(m1Var);
         return true;
     }
 
@@ -221,26 +221,26 @@ public class l extends o1 {
         return this.d;
     }
 
-    public final void R(l1 l1Var) {
+    public final void R(m1 m1Var) {
         if (E == null) {
             E = new ValueAnimator().getInterpolator();
         }
-        l1Var.a.animate().setInterpolator(E);
-        f(l1Var);
+        m1Var.a.animate().setInterpolator(E);
+        f(m1Var);
     }
 
     public final void S() {
         this.C = false;
     }
 
-    @Override // f2.t0
-    public final boolean c(l1 l1Var, List list) {
-        return !list.isEmpty() || t(l1Var);
+    @Override // f2.u0
+    public final boolean c(m1 m1Var, List list) {
+        return !list.isEmpty() || t(m1Var);
     }
 
-    @Override // f2.t0
-    public void f(l1 l1Var) {
-        View view = l1Var.a;
+    @Override // f2.u0
+    public void f(m1 m1Var) {
+        View view = m1Var.a;
         view.animate().cancel();
         ArrayList arrayList = this.r;
         int size = arrayList.size();
@@ -249,30 +249,30 @@ public class l extends o1 {
             if (size < 0) {
                 break;
             }
-            if (((k) arrayList.get(size)).a == l1Var) {
+            if (((k) arrayList.get(size)).a == m1Var) {
                 view.setTranslationY(0.0f);
                 view.setTranslationX(0.0f);
-                v(l1Var);
+                v(m1Var);
                 arrayList.remove(size);
             }
         }
-        H(this.s, l1Var);
-        if (this.p.remove(l1Var)) {
+        H(this.s, m1Var);
+        if (this.p.remove(m1Var)) {
             view.setAlpha(1.0f);
             view.setScaleX(1.0f);
             view.setScaleY(1.0f);
-            d(l1Var);
+            d(m1Var);
         }
-        if (this.q.remove(l1Var)) {
+        if (this.q.remove(m1Var)) {
             view.setAlpha(1.0f);
             view.setScaleX(1.0f);
             view.setScaleY(1.0f);
-            u(l1Var);
+            u(m1Var);
         }
         ArrayList arrayList2 = this.v;
         for (int size2 = arrayList2.size() - 1; size2 >= 0; size2--) {
             ArrayList arrayList3 = (ArrayList) arrayList2.get(size2);
-            H(arrayList3, l1Var);
+            H(arrayList3, m1Var);
             if (arrayList3.isEmpty()) {
                 arrayList2.remove(size2);
             }
@@ -285,10 +285,10 @@ public class l extends o1 {
                 if (size4 < 0) {
                     break;
                 }
-                if (((k) arrayList5.get(size4)).a == l1Var) {
+                if (((k) arrayList5.get(size4)).a == m1Var) {
                     view.setTranslationY(0.0f);
                     view.setTranslationX(0.0f);
-                    v(l1Var);
+                    v(m1Var);
                     arrayList5.remove(size4);
                     if (arrayList5.isEmpty()) {
                         arrayList4.remove(size3);
@@ -301,34 +301,34 @@ public class l extends o1 {
         ArrayList arrayList6 = this.t;
         for (int size5 = arrayList6.size() - 1; size5 >= 0; size5--) {
             ArrayList arrayList7 = (ArrayList) arrayList6.get(size5);
-            if (arrayList7.remove(l1Var)) {
+            if (arrayList7.remove(m1Var)) {
                 view.setAlpha(1.0f);
                 if (A(view) > 0.0f) {
                     view.setScaleX(1.0f);
                     view.setScaleY(1.0f);
                 }
-                u(l1Var);
+                u(m1Var);
                 if (arrayList7.isEmpty()) {
                     arrayList6.remove(size5);
                 }
             }
         }
-        if (this.A.remove(l1Var) && BuildVars.DEBUG_VERSION) {
+        if (this.A.remove(m1Var) && BuildVars.DEBUG_VERSION) {
             throw new IllegalStateException("after animation is cancelled, item should not be in mRemoveAnimations list");
         }
-        if (this.y.remove(l1Var) && BuildVars.DEBUG_VERSION) {
+        if (this.y.remove(m1Var) && BuildVars.DEBUG_VERSION) {
             throw new IllegalStateException("after animation is cancelled, item should not be in mAddAnimations list");
         }
-        if (this.B.remove(l1Var) && BuildVars.DEBUG_VERSION) {
+        if (this.B.remove(m1Var) && BuildVars.DEBUG_VERSION) {
             throw new IllegalStateException("after animation is cancelled, item should not be in mChangeAnimations list");
         }
-        if (this.z.remove(l1Var) && BuildVars.DEBUG_VERSION) {
+        if (this.z.remove(m1Var) && BuildVars.DEBUG_VERSION) {
             throw new IllegalStateException("after animation is cancelled, item should not be in mMoveAnimations list");
         }
         G();
     }
 
-    @Override // f2.t0
+    @Override // f2.u0
     public void g() {
         ArrayList arrayList = this.r;
         int size = arrayList.size();
@@ -346,7 +346,7 @@ public class l extends o1 {
         }
         ArrayList arrayList2 = this.p;
         for (int size2 = arrayList2.size() - 1; size2 >= 0; size2--) {
-            d((l1) arrayList2.get(size2));
+            d((m1) arrayList2.get(size2));
             arrayList2.remove(size2);
         }
         ArrayList arrayList3 = this.q;
@@ -356,14 +356,14 @@ public class l extends o1 {
             if (size3 < 0) {
                 break;
             }
-            l1 l1Var = (l1) arrayList3.get(size3);
-            View view2 = l1Var.a;
+            m1 m1Var = (m1) arrayList3.get(size3);
+            View view2 = m1Var.a;
             view2.setAlpha(1.0f);
             if (A(view2) > 0.0f) {
                 view2.setScaleX(1.0f);
                 view2.setScaleY(1.0f);
             }
-            u(l1Var);
+            u(m1Var);
             arrayList3.remove(size3);
         }
         ArrayList arrayList4 = this.s;
@@ -391,14 +391,14 @@ public class l extends o1 {
             for (int size7 = arrayList7.size() - 1; size7 >= 0; size7--) {
                 ArrayList arrayList8 = (ArrayList) arrayList7.get(size7);
                 for (int size8 = arrayList8.size() - 1; size8 >= 0; size8--) {
-                    l1 l1Var2 = (l1) arrayList8.get(size8);
-                    View view4 = l1Var2.a;
+                    m1 m1Var2 = (m1) arrayList8.get(size8);
+                    View view4 = m1Var2.a;
                     view4.setAlpha(1.0f);
                     if (A(view4) > 0.0f) {
                         view4.setScaleX(1.0f);
                         view4.setScaleY(1.0f);
                     }
-                    u(l1Var2);
+                    u(m1Var2);
                     arrayList8.remove(size8);
                     if (arrayList8.isEmpty()) {
                         arrayList7.remove(arrayList8);
@@ -423,12 +423,12 @@ public class l extends o1 {
         }
     }
 
-    @Override // f2.t0
+    @Override // f2.u0
     public final boolean k() {
         return (this.q.isEmpty() && this.s.isEmpty() && this.r.isEmpty() && this.p.isEmpty() && this.z.isEmpty() && this.A.isEmpty() && this.y.isEmpty() && this.B.isEmpty() && this.u.isEmpty() && this.t.isEmpty() && this.v.isEmpty()) ? false : true;
     }
 
-    @Override // f2.t0
+    @Override // f2.u0
     public void m() {
         ArrayList arrayList = this.p;
         boolean isEmpty = arrayList.isEmpty();
@@ -447,7 +447,7 @@ public class l extends o1 {
         while (i11 < size) {
             Object obj = arrayList.get(i11);
             i11++;
-            D((l1) obj);
+            D((m1) obj);
         }
         arrayList.clear();
         if (!isEmpty2) {
@@ -493,39 +493,39 @@ public class l extends o1 {
             return;
         }
         long K = K(!isEmpty ? this.d : 0L, !isEmpty2 ? j() : 0L, isEmpty3 ? 0L : i());
-        View view3 = ((l1) arrayList7.get(0)).a;
+        View view3 = ((m1) arrayList7.get(0)).a;
         WeakHashMap weakHashMap3 = r0.j0.a;
         view3.postOnAnimationDelayed(fVar3, K);
     }
 
-    @Override // f2.o1
-    public void p(l1 l1Var) {
-        R(l1Var);
-        View view = l1Var.a;
+    @Override // f2.p1
+    public void p(m1 m1Var) {
+        R(m1Var);
+        View view = m1Var.a;
         view.setAlpha(0.0f);
         if (A(view) > 0.0f) {
             view.setScaleX(1.0f - A(view));
             view.setScaleY(1.0f - A(view));
         }
-        this.q.add(l1Var);
+        this.q.add(m1Var);
         F();
     }
 
-    @Override // f2.o1
-    public boolean q(l1 l1Var, l1 l1Var2, c5.e eVar, int i10, int i11, int i12, int i13) {
-        if (l1Var == l1Var2) {
-            return r(l1Var, eVar, i10, i11, i12, i13);
+    @Override // f2.p1
+    public boolean q(m1 m1Var, m1 m1Var2, c5.e eVar, int i10, int i11, int i12, int i13) {
+        if (m1Var == m1Var2) {
+            return r(m1Var, eVar, i10, i11, i12, i13);
         }
-        View view = l1Var.a;
+        View view = m1Var.a;
         float translationX = view.getTranslationX();
         float translationY = view.getTranslationY();
         float alpha = view.getAlpha();
-        R(l1Var);
+        R(m1Var);
         view.setTranslationX(translationX);
         view.setTranslationY(translationY);
         view.setAlpha(alpha);
-        View view2 = l1Var2.a;
-        R(l1Var2);
+        View view2 = m1Var2.a;
+        R(m1Var2);
         view2.setTranslationX(-((int) ((i12 - i10) - translationX)));
         view2.setTranslationY(-((int) ((i13 - i11) - translationY)));
         view2.setAlpha(0.0f);
@@ -533,21 +533,21 @@ public class l extends o1 {
             view2.setScaleX(1.0f - A(view2));
             view2.setScaleY(1.0f - A(view2));
         }
-        this.s.add(new j(l1Var, l1Var2, i10, i11, i12, i13));
+        this.s.add(new j(m1Var, m1Var2, i10, i11, i12, i13));
         F();
         return true;
     }
 
-    @Override // f2.o1
-    public boolean r(l1 l1Var, c5.e eVar, int i10, int i11, int i12, int i13) {
-        View view = l1Var.a;
+    @Override // f2.p1
+    public boolean r(m1 m1Var, c5.e eVar, int i10, int i11, int i12, int i13) {
+        View view = m1Var.a;
         int translationX = i10 + ((int) view.getTranslationX());
-        int translationY = i11 + ((int) l1Var.a.getTranslationY());
-        R(l1Var);
+        int translationY = i11 + ((int) m1Var.a.getTranslationY());
+        R(m1Var);
         int i14 = i12 - translationX;
         int i15 = i13 - translationY;
         if (i14 == 0 && i15 == 0) {
-            v(l1Var);
+            v(m1Var);
             return false;
         }
         if (i14 != 0) {
@@ -556,15 +556,15 @@ public class l extends o1 {
         if (i15 != 0) {
             view.setTranslationY(-i15);
         }
-        this.r.add(new k(l1Var, translationX, translationY, i12, i13));
+        this.r.add(new k(m1Var, translationX, translationY, i12, i13));
         F();
         return true;
     }
 
-    @Override // f2.o1
-    public void s(l1 l1Var, c5.e eVar) {
-        R(l1Var);
-        this.p.add(l1Var);
+    @Override // f2.p1
+    public void s(m1 m1Var, c5.e eVar) {
+        R(m1Var);
+        this.p.add(m1Var);
         F();
     }
 
@@ -583,9 +583,9 @@ public class l extends o1 {
     public void Q() {
     }
 
-    public void P(l1 l1Var) {
+    public void P(m1 m1Var) {
     }
 
-    public void z(l1 l1Var) {
+    public void z(m1 m1Var) {
     }
 }

@@ -5,7 +5,7 @@ import s5.m;
 import v7.j;
 import w7.g;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class d implements e {
     public final /* synthetic */ int a;
@@ -36,8 +36,8 @@ public final class d implements e {
                     g gVar = (g) mVar.c;
                     gVar.Q0(gVar.M0(), 12);
                     return;
-                } catch (RemoteException e) {
-                    throw new a7.b(e);
+                } catch (RemoteException e6) {
+                    throw new a7.b(e6);
                 }
             default:
                 m mVar2 = this.b.a;
@@ -46,8 +46,8 @@ public final class d implements e {
                     g gVar2 = (g) mVar2.c;
                     gVar2.Q0(gVar2.M0(), 3);
                     return;
-                } catch (RemoteException e6) {
-                    throw new a7.b(e6);
+                } catch (RemoteException e10) {
+                    throw new a7.b(e10);
                 }
         }
     }

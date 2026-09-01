@@ -1,100 +1,14 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Shader;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.animation.PathInterpolator;
-import android.widget.ListView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.view.animation.Interpolator;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class v4 extends ListView {
-    public final w4 a;
-    public final LinearGradient b;
-    public final Paint c;
-    public final Paint d;
-    public final Matrix e;
+public final class v4 implements Interpolator {
+    public final float a = 1.0f / ((float) (1.0d - Math.pow(100, -1.0f)));
 
-    public v4(w4 w4Var) {
-        super(w4Var.a);
-        float dp = AndroidUtilities.dp(16.0f);
-        int[] iArr = new int[8];
-        PathInterpolator pathInterpolator = lf.b0.i;
-        lf.b0.a(pathInterpolator, -16777216, iArr);
-        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-        LinearGradient linearGradient = new LinearGradient(0.0f, dp, 0.0f, 0.0f, iArr, (float[]) null, tileMode);
-        float dp2 = AndroidUtilities.dp(16.0f);
-        int[] iArr2 = new int[8];
-        lf.b0.a(pathInterpolator, -16777216, iArr2);
-        LinearGradient linearGradient2 = new LinearGradient(0.0f, 0.0f, 0.0f, dp2, iArr2, (float[]) null, tileMode);
-        this.b = linearGradient2;
-        Paint paint = new Paint(1);
-        this.c = paint;
-        Paint paint2 = new Paint(1);
-        this.d = paint2;
-        this.e = new Matrix();
-        paint.setShader(linearGradient);
-        PorterDuff.Mode mode = PorterDuff.Mode.DST_IN;
-        paint.setXfermode(new PorterDuffXfermode(mode));
-        paint2.setShader(linearGradient2);
-        paint2.setXfermode(new PorterDuffXfermode(mode));
-        this.a = w4Var;
-        setVerticalScrollBarEnabled(false);
-    }
-
-    @Override // android.view.View
-    public final boolean awakenScrollBars() {
-        return super.awakenScrollBars();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (w4.b(this.a)) {
-            return true;
-        }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // android.widget.ListView, android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        float y10 = view.getY();
-        float height = y10 + view.getHeight();
-        boolean z4 = y10 < ((float) AndroidUtilities.dp(16.0f));
-        boolean z10 = height > ((float) (getHeight() - AndroidUtilities.dp(16.0f)));
-        if (!z4 && !z10) {
-            return super.drawChild(canvas, view, j10);
-        }
-        canvas.saveLayer(0.0f, y10, getWidth(), height, null);
-        boolean drawChild = super.drawChild(canvas, view, j10);
-        if (z4) {
-            canvas.drawRect(0.0f, 0.0f, getWidth(), AndroidUtilities.dp(16.0f), this.c);
-        }
-        if (z10) {
-            canvas.drawRect(0.0f, getHeight() - AndroidUtilities.dp(16.0f), getWidth(), getHeight(), this.d);
-        }
-        canvas.restore();
-        return drawChild;
-    }
-
-    @Override // android.widget.ListView, android.widget.AbsListView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        w4 w4Var = this.a;
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(w4Var.I.getHeight() - w4Var.H.getHeight(), TLObject.FLAG_30));
-    }
-
-    @Override // android.widget.ListView, android.widget.AbsListView, android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        Matrix matrix = this.e;
-        matrix.reset();
-        matrix.postTranslate(0.0f, i11 - AndroidUtilities.dp(16.0f));
-        this.b.setLocalMatrix(matrix);
+    @Override // android.animation.TimeInterpolator
+    public final float getInterpolation(float f10) {
+        return 1.0f - (((float) (1.0d - Math.pow(100, -(1.0f - f10)))) * this.a);
     }
 }

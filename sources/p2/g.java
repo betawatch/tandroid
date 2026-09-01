@@ -8,7 +8,7 @@ import android.content.pm.ResolveInfo;
 import android.util.Log;
 import java.util.List;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class g implements z3.d {
     public int a;
@@ -89,8 +89,8 @@ public final class g implements z3.d {
         if (this.a == 0) {
             try {
                 packageInfo = k6.c.a((Context) this.c).b(0, "com.google.android.gms");
-            } catch (PackageManager.NameNotFoundException e) {
-                Log.w("Metadata", "Failed to find package ".concat(e.toString()));
+            } catch (PackageManager.NameNotFoundException e6) {
+                Log.w("Metadata", "Failed to find package ".concat(e6.toString()));
                 packageInfo = null;
             }
             if (packageInfo != null) {

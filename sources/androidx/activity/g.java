@@ -6,9 +6,9 @@ import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.widget.TextView;
-import com.google.android.gms.internal.cast.o0;
+import com.google.android.gms.internal.cast.n0;
+import com.google.android.gms.internal.cast.q1;
 import com.google.android.gms.internal.cast.r1;
-import com.google.android.gms.internal.cast.s1;
 import com.google.android.gms.internal.vision.f0;
 import com.google.android.gms.vision.clearcut.DynamiteClearcutLogger;
 import com.google.android.gms.vision.clearcut.VisionClearcutLogger;
@@ -22,7 +22,7 @@ import org.telegram.ui.Components.lv0;
 import org.telegram.ui.Components.mv0;
 import org.telegram.ui.Components.qv0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class g implements Runnable {
     public final /* synthetic */ int a;
@@ -53,7 +53,7 @@ public final class g implements Runnable {
             case 0:
                 h hVar = (h) this.c;
                 int i11 = this.b;
-                Object obj = ((b7.c) this.d).a;
+                Object obj = ((e.a) this.d).a;
                 String str = (String) hVar.a.get(Integer.valueOf(i11));
                 if (str == null) {
                     return;
@@ -66,7 +66,7 @@ public final class g implements Runnable {
                 } else {
                     androidx.activity.result.b bVar = dVar.a;
                     if (hVar.d.remove(str)) {
-                        bVar.f(obj);
+                        bVar.k(obj);
                         return;
                     }
                     return;
@@ -75,31 +75,31 @@ public final class g implements Runnable {
                 ((h) this.c).a(this.b, 0, new Intent().setAction("androidx.activity.result.contract.action.INTENT_SENDER_REQUEST").putExtra("androidx.activity.result.contract.extra.SEND_INTENT_EXCEPTION", (IntentSender.SendIntentException) this.d));
                 return;
             case 2:
-                com.google.android.gms.internal.cast.p pVar2 = (com.google.android.gms.internal.cast.p) this.d;
+                com.google.android.gms.internal.cast.o oVar = (com.google.android.gms.internal.cast.o) this.d;
                 c2.v vVar = (c2.v) this.c;
                 int i12 = this.b;
-                synchronized (pVar2.e) {
-                    pVar2.K0(vVar, i12);
+                synchronized (oVar.e) {
+                    oVar.K0(vVar, i12);
                 }
                 return;
             case 3:
-                o0 o0Var = (o0) this.d;
-                s1 s1Var = (s1) this.c;
+                n0 n0Var = (n0) this.d;
+                r1 r1Var = (r1) this.c;
                 int i13 = this.b;
-                r1 n10 = s1.n(s1Var);
-                String str2 = o0Var.d;
+                q1 n10 = r1.n(r1Var);
+                String str2 = n0Var.d;
                 n10.c();
-                s1.v((s1) n10.b, str2);
+                r1.v((r1) n10.b, str2);
                 n10.c();
-                s1.w((s1) n10.b, str2);
-                Long l10 = o0Var.e;
+                r1.w((r1) n10.b, str2);
+                Long l10 = n0Var.e;
                 if (l10 != null) {
                     int longValue = (int) l10.longValue();
                     n10.c();
-                    s1.x((s1) n10.b, longValue);
+                    r1.x((r1) n10.b, longValue);
                 }
-                s1 s1Var2 = (s1) n10.a();
-                int i14 = o0Var.h;
+                r1 r1Var2 = (r1) n10.a();
+                int i14 = n0Var.h;
                 int i15 = i14 - 1;
                 v2.a aVar2 = null;
                 if (i14 == 0) {
@@ -107,22 +107,22 @@ public final class g implements Runnable {
                 }
                 if (i15 != 0) {
                     if (i15 == 1) {
-                        aVar = new v2.a(Integer.valueOf(i13 - 1), s1Var2, v2.d.a, null);
+                        aVar = new v2.a(Integer.valueOf(i13 - 1), r1Var2, v2.d.a, null);
                     }
-                    o0.i.b("analytics event: %s", aVar2);
+                    n0.i.b("analytics event: %s", aVar2);
                     b6.m.h(aVar2);
-                    pVar = o0Var.g;
+                    pVar = n0Var.g;
                     if (pVar == null) {
-                        pVar.a(aVar2, new s0.b(28));
+                        pVar.a(aVar2, new sg.a(28));
                         return;
                     }
                     return;
                 }
-                aVar = new v2.a(Integer.valueOf(i13 - 1), s1Var2, v2.d.b, null);
+                aVar = new v2.a(Integer.valueOf(i13 - 1), r1Var2, v2.d.b, null);
                 aVar2 = aVar;
-                o0.i.b("analytics event: %s", aVar2);
+                n0.i.b("analytics event: %s", aVar2);
                 b6.m.h(aVar2);
-                pVar = o0Var.g;
+                pVar = n0Var.g;
                 if (pVar == null) {
                 }
             case 4:

@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.p2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes4.dex */
 public final class n extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ p a;
@@ -35,7 +35,7 @@ public final class n extends org.telegram.ui.ActionBar.j {
             kVar2 = ((p2) pVar).actionBar;
             kVar2.r();
             hashSet.clear();
-            AndroidUtilities.forEachViews((RecyclerView) pVar.a, (h5.d) new nh.e(15));
+            AndroidUtilities.forEachViews((RecyclerView) pVar.a, (h5.d) new ag.d(16));
             return;
         }
         if (i10 != R.id.menu_delete) {

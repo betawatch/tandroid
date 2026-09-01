@@ -1,70 +1,43 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.ViewGroup;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class f00 extends rl0 {
-    public final Context c;
-    public final /* synthetic */ j00 d;
+public final class f00 extends f2.k0 {
+    public final /* synthetic */ org.telegram.ui.cr r;
 
-    public f00(j00 j00Var, Context context) {
-        this.d = j00Var;
-        this.c = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f00(org.telegram.ui.cr crVar, Context context) {
+        super(context);
+        this.r = crVar;
     }
 
-    @Override // org.telegram.ui.Components.rl0
-    public final boolean D(f2.l1 l1Var) {
-        return true;
-    }
-
-    @Override // f2.o0
-    public final int h() {
-        return this.d.h.size();
-    }
-
-    @Override // f2.o0
-    public final long i(int i10) {
-        return this.d.h0.get(i10);
-    }
-
-    @Override // f2.o0
-    public final int j(int i10) {
-        return 0;
-    }
-
-    @Override // f2.o0
-    public final void v(f2.l1 l1Var, int i10) {
-        h00 h00Var = (h00) l1Var.a;
-        int id2 = h00Var.b != null ? h00Var.getId() : -1;
-        g00 g00Var = (g00) this.d.h.get(i10);
-        h00Var.b = g00Var;
-        h00Var.e = i10;
-        h00Var.setContentDescription(g00Var.b);
-        h00Var.requestLayout();
-        boolean z4 = h00Var.n;
-        g00 g00Var2 = h00Var.b;
-        if (z4 != (g00Var2 != null && g00Var2.g)) {
-            u5.release(h00Var, h00Var.r);
-            u5.release(h00Var, h00Var.L);
-            u5.release(h00Var, h00Var.N);
-            u5.release(h00Var, h00Var.P);
-            if (h00Var.i0) {
-                h00Var.r = u5.update(h00Var.b.g ? 26 : 0, h00Var, h00Var.r, h00Var.s);
-                h00Var.L = u5.update(h00Var.b.g ? 26 : 0, h00Var, h00Var.L, h00Var.M);
-                h00Var.N = u5.update(h00Var.b.g ? 26 : 0, h00Var, h00Var.N, h00Var.O);
-                h00Var.P = u5.update(h00Var.b.g ? 26 : 0, h00Var, h00Var.P, h00Var.Q);
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0033, code lost:
+    
+        if ((org.telegram.messenger.AndroidUtilities.dp(21.0f) + r6.getRight()) > ((org.telegram.ui.Components.l00) r5.r.J).getMeasuredWidth()) goto L13;
+     */
+    @Override // f2.k0, f2.i1
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void g(View view, f2.h1 h1Var) {
+        int j10 = j(o(), view);
+        if (j10 > 0 || (j10 == 0 && view.getLeft() - AndroidUtilities.dp(21.0f) < 0)) {
+            j10 += AndroidUtilities.dp(60.0f);
+        } else {
+            if (j10 >= 0) {
+                if (j10 == 0) {
+                }
             }
-            h00Var.n = h00Var.b.g;
+            j10 -= AndroidUtilities.dp(60.0f);
         }
-        if (id2 != h00Var.getId()) {
-            h00Var.h0 = h00Var.b.f ? 1.0f : 0.0f;
+        int k10 = k(p(), view);
+        int max = Math.max(180, m((int) Math.sqrt((k10 * k10) + (j10 * j10))));
+        if (max > 0) {
+            h1Var.b(-j10, -k10, max, this.j);
         }
-    }
-
-    @Override // f2.o0
-    public final f2.l1 x(ViewGroup viewGroup, int i10) {
-        return new el0(new h00(this.d, this.c));
     }
 }

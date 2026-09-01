@@ -2,9 +2,8 @@ package org.telegram.messenger.voip;
 
 import android.media.AudioTrack;
 import java.nio.ByteBuffer;
-import kh.a2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class AudioTrackJNI {
     private AudioTrack audioTrack;
@@ -42,8 +41,8 @@ public class AudioTrackJNI {
                         nativeCallback(this.buffer);
                         this.audioTrack.write(this.buffer, 0, 1920);
                     }
-                } catch (Exception e) {
-                    VLog.e(e);
+                } catch (Exception e6) {
+                    VLog.e(e6);
                 }
                 if (!this.running) {
                     this.audioTrack.stop();
@@ -52,8 +51,8 @@ public class AudioTrackJNI {
                 continue;
             }
             VLog.i("audiotrack thread exits");
-        } catch (Exception e6) {
-            VLog.e("error starting AudioTrack", e6);
+        } catch (Exception e10) {
+            VLog.e("error starting AudioTrack", e10);
         }
     }
 
@@ -82,7 +81,7 @@ public class AudioTrackJNI {
             } catch (Throwable unused) {
             }
             int bufferSize = getBufferSize(i13 * 6, 44100);
-            VLog.d(a2.j(bufferSize, "buffer size: "));
+            VLog.d(l.d.j(bufferSize, "buffer size: "));
             this.audioTrack = new AudioTrack(0, 44100, i12 == 1 ? 4 : 12, 2, bufferSize, 1);
             this.needResampling = true;
         }
@@ -94,8 +93,8 @@ public class AudioTrackJNI {
         if (thread != null) {
             try {
                 thread.join();
-            } catch (InterruptedException e) {
-                VLog.e(e);
+            } catch (InterruptedException e6) {
+                VLog.e(e6);
             }
             this.thread = null;
         }

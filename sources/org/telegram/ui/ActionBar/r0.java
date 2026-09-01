@@ -13,15 +13,15 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.jj0;
+import org.telegram.ui.Components.lj0;
 import org.telegram.ui.Components.p9;
-import org.telegram.ui.cd1;
-import org.telegram.ui.h21;
-import org.telegram.ui.m21;
-import org.telegram.ui.wb1;
+import org.telegram.ui.ed1;
+import org.telegram.ui.j21;
+import org.telegram.ui.o21;
+import org.telegram.ui.xb1;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class r0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -48,23 +48,23 @@ public final class r0 extends FrameLayout {
 
     @Override // android.view.ViewGroup
     public boolean drawChild(Canvas canvas, View view, long j10) {
-        e5 e5Var;
-        e5 e5Var2;
+        f5 f5Var;
+        f5 f5Var2;
         int i10;
         switch (this.a) {
             case 3:
                 boolean drawChild = super.drawChild(canvas, view, j10);
-                cd1 cd1Var = (cd1) this.c;
-                if (view == cd1Var.p0) {
-                    e5Var = cd1Var.parentLayout;
-                    if (e5Var != null) {
-                        e5Var2 = cd1Var.parentLayout;
-                        if (cd1Var.p0.getVisibility() == 0) {
-                            i10 = (int) (cd1Var.p0.getTranslationY() + cd1Var.p0.getMeasuredHeight());
+                ed1 ed1Var = (ed1) this.c;
+                if (view == ed1Var.p0) {
+                    f5Var = ed1Var.parentLayout;
+                    if (f5Var != null) {
+                        f5Var2 = ed1Var.parentLayout;
+                        if (ed1Var.p0.getVisibility() == 0) {
+                            i10 = (int) (ed1Var.p0.getTranslationY() + ed1Var.p0.getMeasuredHeight());
                         } else {
                             i10 = 0;
                         }
-                        ((ActionBarLayout) e5Var2).q(canvas, i10);
+                        ((ActionBarLayout) f5Var2).q(canvas, i10);
                     }
                 }
                 return drawChild;
@@ -87,7 +87,7 @@ public final class r0 extends FrameLayout {
                 if (w0Var.f.getVisibility() == 0) {
                     i14 += w0Var.f.getMeasuredWidth();
                 }
-                kg.f fVar = w0Var.e;
+                lg.f fVar = w0Var.e;
                 fVar.layout(i14, fVar.getTop(), w0Var.e.getMeasuredWidth() + i14, w0Var.e.getBottom());
                 break;
             case 1:
@@ -95,53 +95,53 @@ public final class r0 extends FrameLayout {
                 super.onLayout(z4, i10, i11, i12, i13);
                 break;
             case 2:
-                m21 m21Var = (m21) this.c;
+                o21 o21Var = (o21) this.c;
                 int measuredWidth = getMeasuredWidth();
                 int measuredHeight2 = getMeasuredHeight();
                 boolean z10 = measuredWidth < measuredHeight2;
-                if (m21Var.x.getVisibility() == 0) {
+                if (o21Var.x.getVisibility() == 0) {
                     if (z10) {
-                        AndroidUtilities.rectTmp2.set(0, 0, measuredWidth, AndroidUtilities.dp(25.0f) + (measuredHeight2 - m21Var.x.getMeasuredHeight()));
+                        AndroidUtilities.rectTmp2.set(0, 0, measuredWidth, AndroidUtilities.dp(25.0f) + (measuredHeight2 - o21Var.x.getMeasuredHeight()));
                     } else {
-                        AndroidUtilities.rectTmp2.set(0, 0, AndroidUtilities.dp(25.0f) + (measuredWidth - m21Var.x.getWidth()), measuredHeight2);
+                        AndroidUtilities.rectTmp2.set(0, 0, AndroidUtilities.dp(25.0f) + (measuredWidth - o21Var.x.getWidth()), measuredHeight2);
                     }
-                    m21Var.w.setClipBounds(AndroidUtilities.rectTmp2);
+                    o21Var.w.setClipBounds(AndroidUtilities.rectTmp2);
                 } else {
-                    m21Var.w.setClipBounds(null);
+                    o21Var.w.setClipBounds(null);
                 }
-                m21Var.w.layout(0, 0, measuredWidth, measuredHeight2);
-                int measuredHeight3 = m21Var.x.getVisibility() == 0 ? m21Var.x.getMeasuredHeight() : 0;
-                int measuredWidth2 = z10 ? (measuredWidth - m21Var.B.getMeasuredWidth()) / 2 : m21Var.N.a + ((((measuredWidth - m21Var.x.getMeasuredWidth()) - m21Var.N.a) - m21Var.B.getMeasuredWidth()) / 2);
+                o21Var.w.layout(0, 0, measuredWidth, measuredHeight2);
+                int measuredHeight3 = o21Var.x.getVisibility() == 0 ? o21Var.x.getMeasuredHeight() : 0;
+                int measuredWidth2 = z10 ? (measuredWidth - o21Var.B.getMeasuredWidth()) / 2 : o21Var.N.a + ((((measuredWidth - o21Var.x.getMeasuredWidth()) - o21Var.N.a) - o21Var.B.getMeasuredWidth()) / 2);
                 if (z10) {
-                    int i15 = m21Var.N.b;
-                    measuredHeight = AndroidUtilities.dp(52.0f) + (((((measuredHeight2 - measuredHeight3) - i15) - m21Var.B.getMeasuredHeight()) - AndroidUtilities.dp(48.0f)) / 2) + i15;
+                    int i15 = o21Var.N.b;
+                    measuredHeight = AndroidUtilities.dp(52.0f) + (((((measuredHeight2 - measuredHeight3) - i15) - o21Var.B.getMeasuredHeight()) - AndroidUtilities.dp(48.0f)) / 2) + i15;
                 } else {
-                    measuredHeight = (measuredHeight2 - m21Var.B.getMeasuredHeight()) / 2;
+                    measuredHeight = (measuredHeight2 - o21Var.B.getMeasuredHeight()) / 2;
                 }
-                h21 h21Var = m21Var.B;
-                h21Var.layout(measuredWidth2, measuredHeight, h21Var.getMeasuredWidth() + measuredWidth2, m21Var.B.getMeasuredHeight() + measuredHeight);
+                j21 j21Var = o21Var.B;
+                j21Var.layout(measuredWidth2, measuredHeight, j21Var.getMeasuredWidth() + measuredWidth2, o21Var.B.getMeasuredHeight() + measuredHeight);
                 if (z10) {
-                    int measuredWidth3 = (measuredWidth - m21Var.y.getMeasuredWidth()) / 2;
+                    int measuredWidth3 = (measuredWidth - o21Var.y.getMeasuredWidth()) / 2;
                     int dp = measuredHeight - AndroidUtilities.dp(48.0f);
-                    p9 p9Var = m21Var.y;
-                    p9Var.layout(measuredWidth3, dp, p9Var.getMeasuredWidth() + measuredWidth3, m21Var.y.getMeasuredHeight() + dp);
+                    p9 p9Var = o21Var.y;
+                    p9Var.layout(measuredWidth3, dp, p9Var.getMeasuredWidth() + measuredWidth3, o21Var.y.getMeasuredHeight() + dp);
                 }
-                if (m21Var.x.getVisibility() == 0) {
+                if (o21Var.x.getVisibility() == 0) {
                     if (z10) {
-                        int measuredWidth4 = (measuredWidth - m21Var.x.getMeasuredWidth()) / 2;
-                        m21Var.x.layout(measuredWidth4, getMeasuredHeight() - measuredHeight3, m21Var.x.getMeasuredWidth() + measuredWidth4, getMeasuredHeight());
+                        int measuredWidth4 = (measuredWidth - o21Var.x.getMeasuredWidth()) / 2;
+                        o21Var.x.layout(measuredWidth4, getMeasuredHeight() - measuredHeight3, o21Var.x.getMeasuredWidth() + measuredWidth4, getMeasuredHeight());
                     } else {
-                        int measuredHeight4 = (measuredHeight2 - m21Var.x.getMeasuredHeight()) / 2;
-                        m21Var.x.layout(getMeasuredWidth() - m21Var.x.getMeasuredWidth(), measuredHeight4, getMeasuredWidth(), m21Var.x.getMeasuredHeight() + measuredHeight4);
+                        int measuredHeight4 = (measuredHeight2 - o21Var.x.getMeasuredHeight()) / 2;
+                        o21Var.x.layout(getMeasuredWidth() - o21Var.x.getMeasuredWidth(), measuredHeight4, getMeasuredWidth(), o21Var.x.getMeasuredHeight() + measuredHeight4);
                     }
                 }
-                jj0 jj0Var = m21Var.C;
-                Rect rect = m21Var.c;
-                jj0Var.layout(rect.left + measuredWidth2, rect.top + measuredHeight, measuredWidth2 + rect.right, measuredHeight + rect.bottom);
-                int dp2 = AndroidUtilities.dp(11.0f) + m21Var.N.a;
-                int dp3 = AndroidUtilities.dp(11.0f) + m21Var.N.b;
-                ImageView imageView = m21Var.D;
-                imageView.layout(dp2, dp3, imageView.getMeasuredWidth() + dp2, m21Var.D.getMeasuredHeight() + dp3);
+                lj0 lj0Var = o21Var.C;
+                Rect rect = o21Var.c;
+                lj0Var.layout(rect.left + measuredWidth2, rect.top + measuredHeight, measuredWidth2 + rect.right, measuredHeight + rect.bottom);
+                int dp2 = AndroidUtilities.dp(11.0f) + o21Var.N.a;
+                int dp3 = AndroidUtilities.dp(11.0f) + o21Var.N.b;
+                ImageView imageView = o21Var.D;
+                imageView.layout(dp2, dp3, imageView.getMeasuredWidth() + dp2, o21Var.D.getMeasuredHeight() + dp3);
                 break;
         }
     }
@@ -175,7 +175,7 @@ public final class r0 extends FrameLayout {
                     r0Var.b = true;
                     r0Var.measureChildWithMargins(w0Var.f, i10, i13, i11, 0);
                     int measuredWidth = w0Var.f.getVisibility() == 0 ? w0Var.f.getMeasuredWidth() : 0;
-                    kg.f fVar = w0Var.e;
+                    lg.f fVar = w0Var.e;
                     int i15 = i13 + measuredWidth;
                     View view2 = w0Var.w;
                     measureChildWithMargins(fVar, i10, i15 + (view2 != null ? view2.getMeasuredWidth() : 0), i11, 0);
@@ -242,89 +242,89 @@ public final class r0 extends FrameLayout {
                 super.onMeasure(i10, i11);
                 break;
             case 2:
-                m21 m21Var = (m21) this.c;
+                o21 o21Var = (o21) this.c;
                 int size4 = View.MeasureSpec.getSize(i10);
                 int size5 = View.MeasureSpec.getSize(i11);
                 boolean z4 = size4 < size5;
-                m21Var.M = z4;
-                m21Var.y.setVisibility(z4 ? 0 : 8);
+                o21Var.M = z4;
+                o21Var.y.setVisibility(z4 ? 0 : 8);
                 super.onMeasure(i10, i11);
                 if (!z4) {
                     this.b = true;
-                    ah.d dVar = m21Var.x;
-                    i0.b bVar = m21Var.N;
-                    dVar.setPadding(0, (bVar.b * 2) / 3, bVar.c, bVar.d);
+                    ag.l lVar = o21Var.x;
+                    i0.b bVar = o21Var.N;
+                    lVar.setPadding(0, (bVar.b * 2) / 3, bVar.c, bVar.d);
                     this.b = false;
-                    m21Var.x.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(273.0f) + m21Var.N.c, TLObject.FLAG_30), i11);
-                    m21Var.B.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(260.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(310.0f), TLObject.FLAG_30));
+                    o21Var.x.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(273.0f) + o21Var.N.c, TLObject.FLAG_30), i11);
+                    o21Var.B.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(260.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(310.0f), TLObject.FLAG_30));
                     break;
                 } else {
                     this.b = true;
-                    ah.d dVar2 = m21Var.x;
-                    int i16 = m21Var.N.a;
+                    ag.l lVar2 = o21Var.x;
+                    int i16 = o21Var.N.a;
                     int dp = AndroidUtilities.dp(8.0f);
-                    i0.b bVar2 = m21Var.N;
-                    dVar2.setPadding(i16, dp, bVar2.c, bVar2.d);
+                    i0.b bVar2 = o21Var.N;
+                    lVar2.setPadding(i16, dp, bVar2.c, bVar2.d);
                     this.b = false;
-                    m21Var.x.measure(View.MeasureSpec.makeMeasureSpec(size4, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(size5 + m21Var.N.d, TLObject.FLAG_31));
-                    m21Var.B.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(260.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(330.0f), TLObject.FLAG_30));
+                    o21Var.x.measure(View.MeasureSpec.makeMeasureSpec(size4, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(size5 + o21Var.N.d, TLObject.FLAG_31));
+                    o21Var.B.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(260.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(330.0f), TLObject.FLAG_30));
                     break;
                 }
             default:
                 int size6 = View.MeasureSpec.getSize(i10);
                 int size7 = View.MeasureSpec.getSize(i11);
                 setMeasuredDimension(size6, size7);
-                if (((cd1) this.c).e != null) {
+                if (((ed1) this.c).e != null) {
                     this.b = true;
                     if (!AndroidUtilities.isTablet()) {
-                        FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) ((cd1) this.c).e.getLayoutParams();
+                        FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) ((ed1) this.c).e.getLayoutParams();
                         layoutParams3.topMargin = AndroidUtilities.statusBarHeight;
-                        ((cd1) this.c).e.setLayoutParams(layoutParams3);
+                        ((ed1) this.c).e.setLayoutParams(layoutParams3);
                     }
                     if (AndroidUtilities.isTablet() || ApplicationLoader.applicationContext.getResources().getConfiguration().orientation != 2) {
-                        ((cd1) this.c).h.setTextSize(1, 20.0f);
+                        ((ed1) this.c).h.setTextSize(1, 20.0f);
                     } else {
-                        ((cd1) this.c).h.setTextSize(1, 18.0f);
+                        ((ed1) this.c).h.setTextSize(1, 18.0f);
                     }
                     this.b = false;
                 }
-                measureChildWithMargins(((cd1) this.c).p0, i10, 0, i11, 0);
-                int measuredHeight = ((cd1) this.c).p0.getMeasuredHeight();
-                if (((cd1) this.c).p0.getVisibility() == 0) {
+                measureChildWithMargins(((ed1) this.c).p0, i10, 0, i11, 0);
+                int measuredHeight = ((ed1) this.c).p0.getMeasuredHeight();
+                if (((ed1) this.c).p0.getVisibility() == 0) {
                     size7 -= measuredHeight;
                 }
-                FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) ((cd1) this.c).r0.getLayoutParams();
+                FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) ((ed1) this.c).r0.getLayoutParams();
                 layoutParams4.topMargin = measuredHeight;
-                cd1 cd1Var = (cd1) this.c;
-                if (cd1Var.b == 2) {
-                    wb1 wb1Var = cd1Var.r0;
+                ed1 ed1Var = (ed1) this.c;
+                if (ed1Var.b == 2) {
+                    xb1 xb1Var = ed1Var.r0;
                     int dp2 = AndroidUtilities.dp(4.0f);
-                    cd1 cd1Var2 = (cd1) this.c;
-                    wb1Var.setPadding(0, dp2, 0, (AndroidUtilities.dp(((cd1Var2.H1 || cd1Var2.G1 <= 0) ? 0 : 58) + 72) - 12) + (((cd1) this.c).U0() ? AndroidUtilities.navigationBarHeight : 0));
+                    ed1 ed1Var2 = (ed1) this.c;
+                    xb1Var.setPadding(0, dp2, 0, (AndroidUtilities.dp(((ed1Var2.H1 || ed1Var2.G1 <= 0) ? 0 : 58) + 72) - 12) + (((ed1) this.c).U0() ? AndroidUtilities.navigationBarHeight : 0));
                 }
-                ((cd1) this.c).r0.measure(View.MeasureSpec.makeMeasureSpec(size6, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size7 - layoutParams4.bottomMargin, TLObject.FLAG_30));
-                ((FrameLayout.LayoutParams) ((cd1) this.c).u0.getLayoutParams()).topMargin = measuredHeight;
-                ((cd1) this.c).u0.measure(View.MeasureSpec.makeMeasureSpec(size6, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size7, TLObject.FLAG_30));
-                dg.s1 s1Var = ((cd1) this.c).N1;
-                if (s1Var != null) {
-                    ((FrameLayout.LayoutParams) s1Var.getLayoutParams()).topMargin = measuredHeight;
-                    ((cd1) this.c).N1.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(222.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(76.0f), TLObject.FLAG_30));
+                ((ed1) this.c).r0.measure(View.MeasureSpec.makeMeasureSpec(size6, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size7 - layoutParams4.bottomMargin, TLObject.FLAG_30));
+                ((FrameLayout.LayoutParams) ((ed1) this.c).u0.getLayoutParams()).topMargin = measuredHeight;
+                ((ed1) this.c).u0.measure(View.MeasureSpec.makeMeasureSpec(size6, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size7, TLObject.FLAG_30));
+                eg.q1 q1Var = ((ed1) this.c).N1;
+                if (q1Var != null) {
+                    ((FrameLayout.LayoutParams) q1Var.getLayoutParams()).topMargin = measuredHeight;
+                    ((ed1) this.c).N1.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(222.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(76.0f), TLObject.FLAG_30));
                 }
-                org.telegram.ui.w4 w4Var = ((cd1) this.c).z0;
+                org.telegram.ui.w4 w4Var = ((ed1) this.c).z0;
                 if (w4Var != null) {
-                    w4Var.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f) + (((cd1) this.c).U0() ? AndroidUtilities.navigationBarHeight : 0));
-                    FrameLayout.LayoutParams layoutParams5 = (FrameLayout.LayoutParams) ((cd1) this.c).z0.getLayoutParams();
-                    cd1 cd1Var3 = (cd1) this.c;
-                    layoutParams5.height = AndroidUtilities.dp(72 + ((cd1Var3.H1 || cd1Var3.G1 <= 0) ? 0 : 58)) + (((cd1) this.c).U0() ? AndroidUtilities.navigationBarHeight : 0);
-                    measureChildWithMargins(((cd1) this.c).z0, i10, 0, i11, 0);
+                    w4Var.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f) + (((ed1) this.c).U0() ? AndroidUtilities.navigationBarHeight : 0));
+                    FrameLayout.LayoutParams layoutParams5 = (FrameLayout.LayoutParams) ((ed1) this.c).z0.getLayoutParams();
+                    ed1 ed1Var3 = (ed1) this.c;
+                    layoutParams5.height = AndroidUtilities.dp(72 + ((ed1Var3.H1 || ed1Var3.G1 <= 0) ? 0 : 58)) + (((ed1) this.c).U0() ? AndroidUtilities.navigationBarHeight : 0);
+                    measureChildWithMargins(((ed1) this.c).z0, i10, 0, i11, 0);
                 }
-                Drawable drawable = ((cd1) this.c).r;
+                Drawable drawable = ((ed1) this.c).r;
                 if (drawable != null) {
                     drawable.getPadding(AndroidUtilities.rectTmp2);
                 }
                 int i17 = 0;
                 while (true) {
-                    FrameLayout[] frameLayoutArr = ((cd1) this.c).I0;
+                    FrameLayout[] frameLayoutArr = ((ed1) this.c).I0;
                     if (i17 >= frameLayoutArr.length) {
                         break;
                     } else {
@@ -332,19 +332,19 @@ public final class r0 extends FrameLayout {
                         if (frameLayout != null) {
                             FrameLayout.LayoutParams layoutParams6 = (FrameLayout.LayoutParams) frameLayout.getLayoutParams();
                             if (i17 == 0) {
-                                f10 = ((cd1) this.c).b == 2 ? 321 : 273;
+                                f10 = ((ed1) this.c).b == 2 ? 321 : 273;
                             } else {
                                 f10 = 316.0f;
                             }
                             layoutParams6.height = AndroidUtilities.dp(f10);
-                            if (((cd1) this.c).U0()) {
+                            if (((ed1) this.c).U0()) {
                                 layoutParams6.height += AndroidUtilities.navigationBarHeight;
                             }
                             if (i17 == 0) {
                                 layoutParams6.height = AndroidUtilities.dp(12.0f) + AndroidUtilities.rectTmp2.top + layoutParams6.height;
                             }
-                            ((cd1) this.c).I0[i17].setPadding(0, i17 == 0 ? AndroidUtilities.dp(12.0f) + AndroidUtilities.rectTmp2.top : 0, 0, ((cd1) this.c).U0() ? AndroidUtilities.navigationBarHeight : 0);
-                            measureChildWithMargins(((cd1) this.c).I0[i17], i10, 0, i11, 0);
+                            ((ed1) this.c).I0[i17].setPadding(0, i17 == 0 ? AndroidUtilities.dp(12.0f) + AndroidUtilities.rectTmp2.top : 0, 0, ((ed1) this.c).U0() ? AndroidUtilities.navigationBarHeight : 0);
+                            measureChildWithMargins(((ed1) this.c).I0[i17], i10, 0, i11, 0);
                         }
                         i17++;
                     }

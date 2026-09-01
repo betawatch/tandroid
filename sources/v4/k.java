@@ -2,33 +2,26 @@ package v4;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class k extends n3.j implements f {
     public f e;
     public long f;
 
-    @Override // v4.f
-    public final int b(long j10) {
-        f fVar = this.e;
-        fVar.getClass();
-        return fVar.b(j10 - this.f);
-    }
-
     @Override // n3.a
-    public final void c() {
+    public final void b() {
         this.b = 0;
         this.e = null;
     }
 
     @Override // v4.f
-    public final long g(int i10) {
+    public final int d(long j10) {
         f fVar = this.e;
         fVar.getClass();
-        return fVar.g(i10) + this.f;
+        return fVar.d(j10 - this.f);
     }
 
-    public final void k(long j10, f fVar, long j11) {
+    public final void j(long j10, f fVar, long j11) {
         this.c = j10;
         this.e = fVar;
         if (j11 != Long.MAX_VALUE) {
@@ -38,16 +31,23 @@ public abstract class k extends n3.j implements f {
     }
 
     @Override // v4.f
-    public final List m(long j10) {
+    public final long l(int i10) {
         f fVar = this.e;
         fVar.getClass();
-        return fVar.m(j10 - this.f);
+        return fVar.l(i10) + this.f;
     }
 
     @Override // v4.f
-    public final int p() {
+    public final List q(long j10) {
         f fVar = this.e;
         fVar.getClass();
-        return fVar.p();
+        return fVar.q(j10 - this.f);
+    }
+
+    @Override // v4.f
+    public final int x() {
+        f fVar = this.e;
+        fVar.getClass();
+        return fVar.x();
     }
 }

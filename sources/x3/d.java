@@ -4,6 +4,7 @@ import android.util.Pair;
 import android.util.SparseArray;
 import h5.d0;
 import h5.o;
+import h5.w;
 import i5.f;
 import j$.util.DesugarCollections;
 import j3.m0;
@@ -27,8 +28,8 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.jb;
-import org.telegram.ui.Components.qk0;
-import p2.w;
+import org.telegram.ui.web.e0;
+import p2.v;
 import r3.h;
 import r3.k;
 import r3.l;
@@ -36,11 +37,9 @@ import r3.m;
 import r3.n;
 import r3.s;
 import r3.u;
-import r3.v;
 import s8.t;
-import vh.v2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class d implements k {
     public static final byte[] c0 = {49, 10, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 32, 45, 45, 62, 32, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 10};
@@ -51,8 +50,8 @@ public final class d implements k {
     public static final Map h0;
     public long A;
     public long B;
-    public w C;
-    public w D;
+    public v C;
+    public v D;
     public boolean E;
     public boolean F;
     public int G;
@@ -81,16 +80,16 @@ public final class d implements k {
     public m b0;
     public final SparseArray c;
     public final boolean d;
-    public final h5.w e;
-    public final h5.w f;
-    public final h5.w g;
-    public final h5.w h;
-    public final h5.w i;
-    public final h5.w j;
-    public final h5.w k;
-    public final h5.w l;
-    public final h5.w m;
-    public final h5.w n;
+    public final w e;
+    public final w f;
+    public final w g;
+    public final w h;
+    public final w i;
+    public final w j;
+    public final w k;
+    public final w l;
+    public final w m;
+    public final w n;
     public ByteBuffer o;
     public long p;
     public long q;
@@ -111,8 +110,8 @@ public final class d implements k {
         f0 = new byte[]{87, 69, 66, 86, 84, 84, 10, 10, 48, 48, 58, 48, 48, 58, 48, 48, 46, 48, 48, 48, 32, 45, 45, 62, 32, 48, 48, 58, 48, 48, 58, 48, 48, 46, 48, 48, 48, 10};
         g0 = new UUID(72057594037932032L, -9223371306706625679L);
         HashMap hashMap = new HashMap();
-        v2.i(0, hashMap, "htc_video_rotA-000", 90, "htc_video_rotA-090");
-        v2.i(180, hashMap, "htc_video_rotA-180", 270, "htc_video_rotA-270");
+        w.c.i(0, hashMap, "htc_video_rotA-000", 90, "htc_video_rotA-090");
+        w.c.i(180, hashMap, "htc_video_rotA-180", 270, "htc_video_rotA-270");
         h0 = DesugarCollections.unmodifiableMap(hashMap);
     }
 
@@ -126,20 +125,20 @@ public final class d implements k {
         this.A = -1L;
         this.B = -9223372036854775807L;
         this.a = bVar;
-        bVar.d = new qk0(this, 20);
+        bVar.d = new e0(this, 22);
         this.d = (i10 & 1) == 0;
         this.b = new e();
         this.c = new SparseArray();
-        this.g = new h5.w(4);
-        this.h = new h5.w(ByteBuffer.allocate(4).putInt(-1).array());
-        this.i = new h5.w(4);
-        this.e = new h5.w(h5.a.d);
-        this.f = new h5.w(4);
-        this.j = new h5.w();
-        this.k = new h5.w();
-        this.l = new h5.w(8);
-        this.m = new h5.w();
-        this.n = new h5.w();
+        this.g = new w(4);
+        this.h = new w(ByteBuffer.allocate(4).putInt(-1).array());
+        this.i = new w(4);
+        this.e = new w(h5.a.d);
+        this.f = new w(4);
+        this.j = new w();
+        this.k = new w();
+        this.l = new w(8);
+        this.m = new w();
+        this.n = new w();
         this.L = new int[1];
     }
 
@@ -189,7 +188,7 @@ public final class d implements k {
                         h5.a.K("MatroskaExtractor", "Skipping subtitle sample with no duration.");
                     } else {
                         String str = cVar.b;
-                        h5.w wVar2 = this.k;
+                        w wVar2 = this.k;
                         byte[] bArr = wVar2.a;
                         str.getClass();
                         switch (str) {
@@ -223,7 +222,7 @@ public final class d implements k {
                         i14 = i11 + wVar2.c;
                         if ((i10 & TLObject.FLAG_28) != 0) {
                             int i16 = this.K;
-                            h5.w wVar3 = this.n;
+                            w wVar3 = this.n;
                             if (i16 > 1) {
                                 wVar3.C(0);
                             } else {
@@ -279,7 +278,7 @@ public final class d implements k {
     }
 
     public final void g(l lVar, int i10) {
-        h5.w wVar = this.g;
+        w wVar = this.g;
         if (wVar.c >= i10) {
             return;
         }
@@ -437,7 +436,7 @@ public final class d implements k {
                             ((h) lVar2).f = 0;
                             while (true) {
                                 r52 = (h) lVar2;
-                                r52.h(bArr2, r13, i19, r13);
+                                r52.f(bArr2, r13, i19, r13);
                                 byte b11 = bArr2[r13];
                                 int i20 = 0;
                                 while (true) {
@@ -455,11 +454,11 @@ public final class d implements k {
                                     if (a2 == 357149030 || a2 == 524531317 || a2 == 475249515 || a2 == 374648427) {
                                     }
                                 }
-                                r52.u(1);
+                                r52.s(1);
                                 i19 = 4;
                                 r13 = 0;
                             }
-                            r52.u(i11);
+                            r52.s(i11);
                             b10 = a2;
                         }
                         z4 = true;
@@ -478,9 +477,9 @@ public final class d implements k {
                         bVar2.g = eVar.b(lVar2, false, z4, 8);
                         bVar2.e = 2;
                     }
-                    qk0 qk0Var = bVar2.d;
+                    e0 e0Var = bVar2.d;
                     int i21 = bVar2.f;
-                    Object obj2 = qk0Var.b;
+                    Object obj2 = e0Var.b;
                     switch (i21) {
                         case 131:
                         case 136:
@@ -589,16 +588,16 @@ public final class d implements k {
                             break;
                     }
                     if (i10 == 0) {
-                        ((h) lVar2).u((int) bVar2.g);
+                        ((h) lVar2).s((int) bVar2.g);
                         bVar2.e = 0;
                         i18 = 1;
                     } else if (i10 == 1) {
                         long j10 = ((h) lVar2).d;
                         arrayDeque.push(new a(i21, bVar2.g + j10));
-                        qk0 qk0Var2 = bVar2.d;
+                        e0 e0Var2 = bVar2.d;
                         int i22 = bVar2.f;
                         long j11 = bVar2.g;
-                        d dVar2 = (d) qk0Var2.b;
+                        d dVar2 = (d) e0Var2.b;
                         h5.a.j(dVar2.b0);
                         if (i22 != 160) {
                             if (i22 == 174) {
@@ -658,11 +657,11 @@ public final class d implements k {
                                 dVar2.q = j10;
                                 dVar2.p = j11;
                             } else if (i22 == 475249515) {
-                                dVar2.C = new w(5, (byte) 0);
-                                dVar2.D = new w(5, (byte) 0);
+                                dVar2.C = new v(5, (byte) 0);
+                                dVar2.D = new v(5, (byte) 0);
                             } else if (i22 == 524531317 && !dVar2.v) {
                                 if (!dVar2.d || dVar2.z == -1) {
-                                    dVar2.b0.g2(new n(dVar2.t));
+                                    dVar2.b0.m2(new n(dVar2.t));
                                     dVar2.v = true;
                                 } else {
                                     dVar2.y = true;
@@ -680,7 +679,7 @@ public final class d implements k {
                         if (j13 > 8) {
                             throw r1.a("Invalid integer size: " + bVar2.g, null);
                         }
-                        qk0Var.e(i21, bVar2.a(lVar2, (int) j13));
+                        e0Var.h(i21, bVar2.a(lVar2, (int) j13));
                         z10 = false;
                         bVar2.e = 0;
                     } else if (i10 == 3) {
@@ -693,13 +692,13 @@ public final class d implements k {
                             str = "";
                         } else {
                             byte[] bArr3 = new byte[i23];
-                            ((h) lVar2).d(bArr3, 0, i23, false);
+                            ((h) lVar2).c(bArr3, 0, i23, false);
                             while (i23 > 0 && bArr3[i23 - 1] == 0) {
                                 i23--;
                             }
                             str = new String(bArr3, 0, i23);
                         }
-                        d dVar3 = (d) qk0Var.b;
+                        d dVar3 = (d) e0Var.b;
                         if (i21 == 134) {
                             dVar3.b(i21);
                             dVar3.u.b = str;
@@ -717,7 +716,7 @@ public final class d implements k {
                         z10 = false;
                         bVar2.e = 0;
                     } else if (i10 == 4) {
-                        qk0Var.a(i21, (int) bVar2.g, lVar2);
+                        e0Var.g(i21, (int) bVar2.g, lVar2);
                         z10 = false;
                         bVar2.e = 0;
                     } else {
@@ -730,7 +729,7 @@ public final class d implements k {
                         }
                         int i24 = (int) j15;
                         double intBitsToFloat = i24 == 4 ? Float.intBitsToFloat((int) r5) : Double.longBitsToDouble(bVar2.a(lVar2, i24));
-                        d dVar4 = (d) qk0Var.b;
+                        d dVar4 = (d) e0Var.b;
                         if (i21 == 181) {
                             dVar4.b(i21);
                             dVar4.u.Q = (int) intBitsToFloat;
@@ -799,9 +798,9 @@ public final class d implements k {
                         bVar2.e = 0;
                     }
                 } else {
-                    qk0 qk0Var3 = bVar2.d;
+                    e0 e0Var3 = bVar2.d;
                     int i25 = ((a) arrayDeque.pop()).a;
-                    d dVar5 = (d) qk0Var3.b;
+                    d dVar5 = (d) e0Var3.b;
                     SparseArray sparseArray = dVar5.c;
                     h5.a.j(dVar5.b0);
                     if (i25 != 160) {
@@ -1097,8 +1096,8 @@ public final class d implements k {
                                             i12 = -1;
                                             v = -1;
                                             str2 = null;
-                                            if (cVar2.N != null && (a10 = i5.c.a(new h5.w(cVar2.N))) != null) {
-                                                str2 = a10.b;
+                                            if (cVar2.N != null && (a10 = i5.c.a(new w(cVar2.N))) != null) {
+                                                str2 = a10.a;
                                                 str6 = "video/dolby-vision";
                                             }
                                             int i27 = (cVar2.V ? 1 : 0) | (!cVar2.U ? 2 : 0);
@@ -1200,15 +1199,15 @@ public final class d implements k {
                                             m0Var.h = str2;
                                             m0Var.r = cVar2.l;
                                             n0 n0Var = new n0(m0Var);
-                                            v c22 = mVar.c2(cVar2.c, i13);
-                                            cVar2.X = c22;
-                                            c22.b(n0Var);
+                                            r3.v i210 = mVar.i2(cVar2.c, i13);
+                                            cVar2.X = i210;
+                                            i210.b(n0Var);
                                             sparseArray.put(cVar2.c, cVar2);
                                             dVar5 = dVar5;
                                             break;
                                         case 2:
                                             mVar = mVar2;
-                                            h5.w wVar = new h5.w(cVar2.a(cVar2.b));
+                                            w wVar = new w(cVar2.a(cVar2.b));
                                             try {
                                                 int n10 = wVar.n();
                                                 if (n10 != 1) {
@@ -1227,7 +1226,7 @@ public final class d implements k {
                                                     list = null;
                                                     str2 = null;
                                                     if (cVar2.N != null) {
-                                                        str2 = a10.b;
+                                                        str2 = a10.a;
                                                         str6 = "video/dolby-vision";
                                                         break;
                                                     }
@@ -1251,9 +1250,9 @@ public final class d implements k {
                                                     m0Var.h = str2;
                                                     m0Var.r = cVar2.l;
                                                     n0 n0Var2 = new n0(m0Var);
-                                                    v c222 = mVar.c2(cVar2.c, i13);
-                                                    cVar2.X = c222;
-                                                    c222.b(n0Var2);
+                                                    r3.v i2102 = mVar.i2(cVar2.c, i13);
+                                                    cVar2.X = i2102;
+                                                    i2102.b(n0Var2);
                                                     sparseArray.put(cVar2.c, cVar2);
                                                     dVar5 = dVar5;
                                                 }
@@ -1285,9 +1284,9 @@ public final class d implements k {
                                                     m0Var.h = str2;
                                                     m0Var.r = cVar2.l;
                                                     n0 n0Var22 = new n0(m0Var);
-                                                    v c2222 = mVar.c2(cVar2.c, i13);
-                                                    cVar2.X = c2222;
-                                                    c2222.b(n0Var22);
+                                                    r3.v i21022 = mVar.i2(cVar2.c, i13);
+                                                    cVar2.X = i21022;
+                                                    i21022.b(n0Var22);
                                                     sparseArray.put(cVar2.c, cVar2);
                                                     dVar5 = dVar5;
                                                 }
@@ -1315,9 +1314,9 @@ public final class d implements k {
                                                 m0Var.h = str2;
                                                 m0Var.r = cVar2.l;
                                                 n0 n0Var222 = new n0(m0Var);
-                                                v c22222 = mVar.c2(cVar2.c, i13);
-                                                cVar2.X = c22222;
-                                                c22222.b(n0Var222);
+                                                r3.v i210222 = mVar.i2(cVar2.c, i13);
+                                                cVar2.X = i210222;
+                                                i210222.b(n0Var222);
                                                 sparseArray.put(cVar2.c, cVar2);
                                                 dVar5 = dVar5;
                                             } catch (ArrayIndexOutOfBoundsException unused) {
@@ -1352,9 +1351,9 @@ public final class d implements k {
                                             m0Var.h = str2;
                                             m0Var.r = cVar2.l;
                                             n0 n0Var2222 = new n0(m0Var);
-                                            v c222222 = mVar.c2(cVar2.c, i13);
-                                            cVar2.X = c222222;
-                                            c222222.b(n0Var2222);
+                                            r3.v i2102222 = mVar.i2(cVar2.c, i13);
+                                            cVar2.X = i2102222;
+                                            i2102222.b(n0Var2222);
                                             sparseArray.put(cVar2.c, cVar2);
                                             dVar5 = dVar5;
                                             break;
@@ -1432,9 +1431,9 @@ public final class d implements k {
                                                                 m0Var.h = str2;
                                                                 m0Var.r = cVar2.l;
                                                                 n0 n0Var22222 = new n0(m0Var);
-                                                                v c2222222 = mVar.c2(cVar2.c, i13);
-                                                                cVar2.X = c2222222;
-                                                                c2222222.b(n0Var22222);
+                                                                r3.v i21022222 = mVar.i2(cVar2.c, i13);
+                                                                cVar2.X = i21022222;
+                                                                i21022222.b(n0Var22222);
                                                                 sparseArray.put(cVar2.c, cVar2);
                                                                 dVar5 = dVar5;
                                                             }
@@ -1472,9 +1471,9 @@ public final class d implements k {
                                             m0Var.h = str2;
                                             m0Var.r = cVar2.l;
                                             n0 n0Var222222 = new n0(m0Var);
-                                            v c22222222 = mVar.c2(cVar2.c, i13);
-                                            cVar2.X = c22222222;
-                                            c22222222.b(n0Var222222);
+                                            r3.v i210222222 = mVar.i2(cVar2.c, i13);
+                                            cVar2.X = i210222222;
+                                            i210222222.b(n0Var222222);
                                             sparseArray.put(cVar2.c, cVar2);
                                             dVar5 = dVar5;
                                             break;
@@ -1505,15 +1504,15 @@ public final class d implements k {
                                             m0Var.h = str2;
                                             m0Var.r = cVar2.l;
                                             n0 n0Var2222222 = new n0(m0Var);
-                                            v c222222222 = mVar.c2(cVar2.c, i13);
-                                            cVar2.X = c222222222;
-                                            c222222222.b(n0Var2222222);
+                                            r3.v i2102222222 = mVar.i2(cVar2.c, i13);
+                                            cVar2.X = i2102222222;
+                                            i2102222222.b(n0Var2222222);
                                             sparseArray.put(cVar2.c, cVar2);
                                             dVar5 = dVar5;
                                             break;
                                         case 7:
                                             mVar = mVar2;
-                                            h5.w wVar2 = new h5.w(cVar2.a(cVar2.b));
+                                            w wVar2 = new w(cVar2.a(cVar2.b));
                                             try {
                                                 wVar2.G(16);
                                                 long l10 = wVar2.l();
@@ -1571,9 +1570,9 @@ public final class d implements k {
                                                 m0Var.h = str2;
                                                 m0Var.r = cVar2.l;
                                                 n0 n0Var22222222 = new n0(m0Var);
-                                                v c2222222222 = mVar.c2(cVar2.c, i13);
-                                                cVar2.X = c2222222222;
-                                                c2222222222.b(n0Var22222222);
+                                                r3.v i21022222222 = mVar.i2(cVar2.c, i13);
+                                                cVar2.X = i21022222222;
+                                                i21022222222.b(n0Var22222222);
                                                 sparseArray.put(cVar2.c, cVar2);
                                                 dVar5 = dVar5;
                                             } catch (ArrayIndexOutOfBoundsException unused5) {
@@ -1609,15 +1608,15 @@ public final class d implements k {
                                             m0Var.h = str2;
                                             m0Var.r = cVar2.l;
                                             n0 n0Var222222222 = new n0(m0Var);
-                                            v c22222222222 = mVar.c2(cVar2.c, i13);
-                                            cVar2.X = c22222222222;
-                                            c22222222222.b(n0Var222222222);
+                                            r3.v i210222222222 = mVar.i2(cVar2.c, i13);
+                                            cVar2.X = i210222222222;
+                                            i210222222222.b(n0Var222222222);
                                             sparseArray.put(cVar2.c, cVar2);
                                             dVar5 = dVar5;
                                             break;
                                         case '\n':
                                             mVar = mVar2;
-                                            i5.a a12 = i5.a.a(new h5.w(cVar2.a(cVar2.b)));
+                                            i5.a a12 = i5.a.a(new w(cVar2.a(cVar2.b)));
                                             list2 = a12.a;
                                             cVar2.Y = a12.b;
                                             str3 = a12.i;
@@ -1646,9 +1645,9 @@ public final class d implements k {
                                             m0Var.h = str2;
                                             m0Var.r = cVar2.l;
                                             n0 n0Var2222222222 = new n0(m0Var);
-                                            v c222222222222 = mVar.c2(cVar2.c, i13);
-                                            cVar2.X = c222222222222;
-                                            c222222222222.b(n0Var2222222222);
+                                            r3.v i2102222222222 = mVar.i2(cVar2.c, i13);
+                                            cVar2.X = i2102222222222;
+                                            i2102222222222.b(n0Var2222222222);
                                             sparseArray.put(cVar2.c, cVar2);
                                             dVar5 = dVar5;
                                             break;
@@ -1679,9 +1678,9 @@ public final class d implements k {
                                             m0Var.h = str2;
                                             m0Var.r = cVar2.l;
                                             n0 n0Var22222222222 = new n0(m0Var);
-                                            v c2222222222222 = mVar.c2(cVar2.c, i13);
-                                            cVar2.X = c2222222222222;
-                                            c2222222222222.b(n0Var22222222222);
+                                            r3.v i21022222222222 = mVar.i2(cVar2.c, i13);
+                                            cVar2.X = i21022222222222;
+                                            i21022222222222.b(n0Var22222222222);
                                             sparseArray.put(cVar2.c, cVar2);
                                             dVar5 = dVar5;
                                             break;
@@ -1712,9 +1711,9 @@ public final class d implements k {
                                             m0Var.h = str2;
                                             m0Var.r = cVar2.l;
                                             n0 n0Var222222222222 = new n0(m0Var);
-                                            v c22222222222222 = mVar.c2(cVar2.c, i13);
-                                            cVar2.X = c22222222222222;
-                                            c22222222222222.b(n0Var222222222222);
+                                            r3.v i210222222222222 = mVar.i2(cVar2.c, i13);
+                                            cVar2.X = i210222222222222;
+                                            i210222222222222.b(n0Var222222222222);
                                             sparseArray.put(cVar2.c, cVar2);
                                             dVar5 = dVar5;
                                             break;
@@ -1751,9 +1750,9 @@ public final class d implements k {
                                             m0Var.h = str2;
                                             m0Var.r = cVar2.l;
                                             n0 n0Var2222222222222 = new n0(m0Var);
-                                            v c222222222222222 = mVar.c2(cVar2.c, i13);
-                                            cVar2.X = c222222222222222;
-                                            c222222222222222.b(n0Var2222222222222);
+                                            r3.v i2102222222222222 = mVar.i2(cVar2.c, i13);
+                                            cVar2.X = i2102222222222222;
+                                            i2102222222222222.b(n0Var2222222222222);
                                             sparseArray.put(cVar2.c, cVar2);
                                             dVar5 = dVar5;
                                             break;
@@ -1784,9 +1783,9 @@ public final class d implements k {
                                             m0Var.h = str2;
                                             m0Var.r = cVar2.l;
                                             n0 n0Var22222222222222 = new n0(m0Var);
-                                            v c2222222222222222 = mVar.c2(cVar2.c, i13);
-                                            cVar2.X = c2222222222222222;
-                                            c2222222222222222.b(n0Var22222222222222);
+                                            r3.v i21022222222222222 = mVar.i2(cVar2.c, i13);
+                                            cVar2.X = i21022222222222222;
+                                            i21022222222222222.b(n0Var22222222222222);
                                             sparseArray.put(cVar2.c, cVar2);
                                             dVar5 = dVar5;
                                             break;
@@ -1818,9 +1817,9 @@ public final class d implements k {
                                             m0Var.h = str2;
                                             m0Var.r = cVar2.l;
                                             n0 n0Var222222222222222 = new n0(m0Var);
-                                            v c22222222222222222 = mVar.c2(cVar2.c, i13);
-                                            cVar2.X = c22222222222222222;
-                                            c22222222222222222.b(n0Var222222222222222);
+                                            r3.v i210222222222222222 = mVar.i2(cVar2.c, i13);
+                                            cVar2.X = i210222222222222222;
+                                            i210222222222222222.b(n0Var222222222222222);
                                             sparseArray.put(cVar2.c, cVar2);
                                             dVar5 = dVar5;
                                             break;
@@ -1851,9 +1850,9 @@ public final class d implements k {
                                             m0Var.h = str2;
                                             m0Var.r = cVar2.l;
                                             n0 n0Var2222222222222222 = new n0(m0Var);
-                                            v c222222222222222222 = mVar.c2(cVar2.c, i13);
-                                            cVar2.X = c222222222222222222;
-                                            c222222222222222222.b(n0Var2222222222222222);
+                                            r3.v i2102222222222222222 = mVar.i2(cVar2.c, i13);
+                                            cVar2.X = i2102222222222222222;
+                                            i2102222222222222222.b(n0Var2222222222222222);
                                             sparseArray.put(cVar2.c, cVar2);
                                             dVar5 = dVar5;
                                             break;
@@ -1884,9 +1883,9 @@ public final class d implements k {
                                             m0Var.h = str2;
                                             m0Var.r = cVar2.l;
                                             n0 n0Var22222222222222222 = new n0(m0Var);
-                                            v c2222222222222222222 = mVar.c2(cVar2.c, i13);
-                                            cVar2.X = c2222222222222222222;
-                                            c2222222222222222222.b(n0Var22222222222222222);
+                                            r3.v i21022222222222222222 = mVar.i2(cVar2.c, i13);
+                                            cVar2.X = i21022222222222222222;
+                                            i21022222222222222222.b(n0Var22222222222222222);
                                             sparseArray.put(cVar2.c, cVar2);
                                             dVar5 = dVar5;
                                             break;
@@ -1917,9 +1916,9 @@ public final class d implements k {
                                             m0Var.h = str2;
                                             m0Var.r = cVar2.l;
                                             n0 n0Var222222222222222222 = new n0(m0Var);
-                                            v c22222222222222222222 = mVar.c2(cVar2.c, i13);
-                                            cVar2.X = c22222222222222222222;
-                                            c22222222222222222222.b(n0Var222222222222222222);
+                                            r3.v i210222222222222222222 = mVar.i2(cVar2.c, i13);
+                                            cVar2.X = i210222222222222222222;
+                                            i210222222222222222222.b(n0Var222222222222222222);
                                             sparseArray.put(cVar2.c, cVar2);
                                             dVar5 = dVar5;
                                             break;
@@ -1950,9 +1949,9 @@ public final class d implements k {
                                             m0Var.h = str2;
                                             m0Var.r = cVar2.l;
                                             n0 n0Var2222222222222222222 = new n0(m0Var);
-                                            v c222222222222222222222 = mVar.c2(cVar2.c, i13);
-                                            cVar2.X = c222222222222222222222;
-                                            c222222222222222222222.b(n0Var2222222222222222222);
+                                            r3.v i2102222222222222222222 = mVar.i2(cVar2.c, i13);
+                                            cVar2.X = i2102222222222222222222;
+                                            i2102222222222222222222.b(n0Var2222222222222222222);
                                             sparseArray.put(cVar2.c, cVar2);
                                             dVar5 = dVar5;
                                             break;
@@ -1982,9 +1981,9 @@ public final class d implements k {
                                             m0Var.h = str2;
                                             m0Var.r = cVar2.l;
                                             n0 n0Var22222222222222222222 = new n0(m0Var);
-                                            v c2222222222222222222222 = mVar.c2(cVar2.c, i13);
-                                            cVar2.X = c2222222222222222222222;
-                                            c2222222222222222222222.b(n0Var22222222222222222222);
+                                            r3.v i21022222222222222222222 = mVar.i2(cVar2.c, i13);
+                                            cVar2.X = i21022222222222222222222;
+                                            i21022222222222222222222.b(n0Var22222222222222222222);
                                             sparseArray.put(cVar2.c, cVar2);
                                             dVar5 = dVar5;
                                             break;
@@ -2016,9 +2015,9 @@ public final class d implements k {
                                                 m0Var.h = str2;
                                                 m0Var.r = cVar2.l;
                                                 n0 n0Var222222222222222222222 = new n0(m0Var);
-                                                v c22222222222222222222222 = mVar.c2(cVar2.c, i13);
-                                                cVar2.X = c22222222222222222222222;
-                                                c22222222222222222222222.b(n0Var222222222222222222222);
+                                                r3.v i210222222222222222222222 = mVar.i2(cVar2.c, i13);
+                                                cVar2.X = i210222222222222222222222;
+                                                i210222222222222222222222.b(n0Var222222222222222222222);
                                                 sparseArray.put(cVar2.c, cVar2);
                                                 dVar5 = dVar5;
                                             } else {
@@ -2048,9 +2047,9 @@ public final class d implements k {
                                                 m0Var.h = str2;
                                                 m0Var.r = cVar2.l;
                                                 n0 n0Var2222222222222222222222 = new n0(m0Var);
-                                                v c222222222222222222222222 = mVar.c2(cVar2.c, i13);
-                                                cVar2.X = c222222222222222222222222;
-                                                c222222222222222222222222.b(n0Var2222222222222222222222);
+                                                r3.v i2102222222222222222222222 = mVar.i2(cVar2.c, i13);
+                                                cVar2.X = i2102222222222222222222222;
+                                                i2102222222222222222222222.b(n0Var2222222222222222222222);
                                                 sparseArray.put(cVar2.c, cVar2);
                                                 dVar5 = dVar5;
                                             }
@@ -2094,9 +2093,9 @@ public final class d implements k {
                                             m0Var.h = str2;
                                             m0Var.r = cVar2.l;
                                             n0 n0Var22222222222222222222222 = new n0(m0Var);
-                                            v c2222222222222222222222222 = mVar.c2(cVar2.c, i13);
-                                            cVar2.X = c2222222222222222222222222;
-                                            c2222222222222222222222222.b(n0Var22222222222222222222222);
+                                            r3.v i21022222222222222222222222 = mVar.i2(cVar2.c, i13);
+                                            cVar2.X = i21022222222222222222222222;
+                                            i21022222222222222222222222.b(n0Var22222222222222222222222);
                                             sparseArray.put(cVar2.c, cVar2);
                                             dVar5 = dVar5;
                                             break;
@@ -2130,9 +2129,9 @@ public final class d implements k {
                                                 m0Var.h = str2;
                                                 m0Var.r = cVar2.l;
                                                 n0 n0Var222222222222222222222222 = new n0(m0Var);
-                                                v c22222222222222222222222222 = mVar.c2(cVar2.c, i13);
-                                                cVar2.X = c22222222222222222222222222;
-                                                c22222222222222222222222222.b(n0Var222222222222222222222222);
+                                                r3.v i210222222222222222222222222 = mVar.i2(cVar2.c, i13);
+                                                cVar2.X = i210222222222222222222222222;
+                                                i210222222222222222222222222.b(n0Var222222222222222222222222);
                                                 sparseArray.put(cVar2.c, cVar2);
                                                 dVar5 = dVar5;
                                             }
@@ -2160,9 +2159,9 @@ public final class d implements k {
                                             m0Var.h = str2;
                                             m0Var.r = cVar2.l;
                                             n0 n0Var2222222222222222222222222 = new n0(m0Var);
-                                            v c222222222222222222222222222 = mVar.c2(cVar2.c, i13);
-                                            cVar2.X = c222222222222222222222222222;
-                                            c222222222222222222222222222.b(n0Var2222222222222222222222222);
+                                            r3.v i2102222222222222222222222222 = mVar.i2(cVar2.c, i13);
+                                            cVar2.X = i2102222222222222222222222222;
+                                            i2102222222222222222222222222.b(n0Var2222222222222222222222222);
                                             sparseArray.put(cVar2.c, cVar2);
                                             dVar5 = dVar5;
                                             break;
@@ -2197,15 +2196,15 @@ public final class d implements k {
                                             m0Var.h = str2;
                                             m0Var.r = cVar2.l;
                                             n0 n0Var22222222222222222222222222 = new n0(m0Var);
-                                            v c2222222222222222222222222222 = mVar.c2(cVar2.c, i13);
-                                            cVar2.X = c2222222222222222222222222222;
-                                            c2222222222222222222222222222.b(n0Var22222222222222222222222222);
+                                            r3.v i21022222222222222222222222222 = mVar.i2(cVar2.c, i13);
+                                            cVar2.X = i21022222222222222222222222222;
+                                            i21022222222222222222222222222.b(n0Var22222222222222222222222222);
                                             sparseArray.put(cVar2.c, cVar2);
                                             dVar5 = dVar5;
                                             break;
                                         case 26:
                                             mVar = mVar2;
-                                            f a14 = f.a(new h5.w(cVar2.a(cVar2.b)));
+                                            f a14 = f.a(new w(cVar2.a(cVar2.b)));
                                             list2 = a14.a;
                                             cVar2.Y = a14.b;
                                             str3 = a14.g;
@@ -2234,9 +2233,9 @@ public final class d implements k {
                                             m0Var.h = str2;
                                             m0Var.r = cVar2.l;
                                             n0 n0Var222222222222222222222222222 = new n0(m0Var);
-                                            v c22222222222222222222222222222 = mVar.c2(cVar2.c, i13);
-                                            cVar2.X = c22222222222222222222222222222;
-                                            c22222222222222222222222222222.b(n0Var222222222222222222222222222);
+                                            r3.v i210222222222222222222222222222 = mVar.i2(cVar2.c, i13);
+                                            cVar2.X = i210222222222222222222222222222;
+                                            i210222222222222222222222222222.b(n0Var222222222222222222222222222);
                                             sparseArray.put(cVar2.c, cVar2);
                                             dVar5 = dVar5;
                                             break;
@@ -2267,9 +2266,9 @@ public final class d implements k {
                                             m0Var.h = str2;
                                             m0Var.r = cVar2.l;
                                             n0 n0Var2222222222222222222222222222 = new n0(m0Var);
-                                            v c222222222222222222222222222222 = mVar.c2(cVar2.c, i13);
-                                            cVar2.X = c222222222222222222222222222222;
-                                            c222222222222222222222222222222.b(n0Var2222222222222222222222222222);
+                                            r3.v i2102222222222222222222222222222 = mVar.i2(cVar2.c, i13);
+                                            cVar2.X = i2102222222222222222222222222222;
+                                            i2102222222222222222222222222222.b(n0Var2222222222222222222222222222);
                                             sparseArray.put(cVar2.c, cVar2);
                                             dVar5 = dVar5;
                                             break;
@@ -2300,9 +2299,9 @@ public final class d implements k {
                                             m0Var.h = str2;
                                             m0Var.r = cVar2.l;
                                             n0 n0Var22222222222222222222222222222 = new n0(m0Var);
-                                            v c2222222222222222222222222222222 = mVar.c2(cVar2.c, i13);
-                                            cVar2.X = c2222222222222222222222222222222;
-                                            c2222222222222222222222222222222.b(n0Var22222222222222222222222222222);
+                                            r3.v i21022222222222222222222222222222 = mVar.i2(cVar2.c, i13);
+                                            cVar2.X = i21022222222222222222222222222222;
+                                            i21022222222222222222222222222222.b(n0Var22222222222222222222222222222);
                                             sparseArray.put(cVar2.c, cVar2);
                                             dVar5 = dVar5;
                                             break;
@@ -2333,9 +2332,9 @@ public final class d implements k {
                                             m0Var.h = str2;
                                             m0Var.r = cVar2.l;
                                             n0 n0Var222222222222222222222222222222 = new n0(m0Var);
-                                            v c22222222222222222222222222222222 = mVar.c2(cVar2.c, i13);
-                                            cVar2.X = c22222222222222222222222222222222;
-                                            c22222222222222222222222222222222.b(n0Var222222222222222222222222222222);
+                                            r3.v i210222222222222222222222222222222 = mVar.i2(cVar2.c, i13);
+                                            cVar2.X = i210222222222222222222222222222222;
+                                            i210222222222222222222222222222222.b(n0Var222222222222222222222222222222);
                                             sparseArray.put(cVar2.c, cVar2);
                                             dVar5 = dVar5;
                                             break;
@@ -2366,9 +2365,9 @@ public final class d implements k {
                                             m0Var.h = str2;
                                             m0Var.r = cVar2.l;
                                             n0 n0Var2222222222222222222222222222222 = new n0(m0Var);
-                                            v c222222222222222222222222222222222 = mVar.c2(cVar2.c, i13);
-                                            cVar2.X = c222222222222222222222222222222222;
-                                            c222222222222222222222222222222222.b(n0Var2222222222222222222222222222222);
+                                            r3.v i2102222222222222222222222222222222 = mVar.i2(cVar2.c, i13);
+                                            cVar2.X = i2102222222222222222222222222222222;
+                                            i2102222222222222222222222222222222.b(n0Var2222222222222222222222222222222);
                                             sparseArray.put(cVar2.c, cVar2);
                                             dVar5 = dVar5;
                                             break;
@@ -2400,9 +2399,9 @@ public final class d implements k {
                                             m0Var.h = str2;
                                             m0Var.r = cVar2.l;
                                             n0 n0Var22222222222222222222222222222222 = new n0(m0Var);
-                                            v c2222222222222222222222222222222222 = mVar.c2(cVar2.c, i13);
-                                            cVar2.X = c2222222222222222222222222222222222;
-                                            c2222222222222222222222222222222222.b(n0Var22222222222222222222222222222222);
+                                            r3.v i21022222222222222222222222222222222 = mVar.i2(cVar2.c, i13);
+                                            cVar2.X = i21022222222222222222222222222222222;
+                                            i21022222222222222222222222222222222.b(n0Var22222222222222222222222222222222);
                                             sparseArray.put(cVar2.c, cVar2);
                                             dVar5 = dVar5;
                                             break;
@@ -2439,9 +2438,9 @@ public final class d implements k {
                                             m0Var.h = str2;
                                             m0Var.r = cVar2.l;
                                             n0 n0Var222222222222222222222222222222222 = new n0(m0Var);
-                                            v c22222222222222222222222222222222222 = mVar.c2(cVar2.c, i13);
-                                            cVar2.X = c22222222222222222222222222222222222;
-                                            c22222222222222222222222222222222222.b(n0Var222222222222222222222222222222222);
+                                            r3.v i210222222222222222222222222222222222 = mVar.i2(cVar2.c, i13);
+                                            cVar2.X = i210222222222222222222222222222222222;
+                                            i210222222222222222222222222222222222.b(n0Var222222222222222222222222222222222);
                                             sparseArray.put(cVar2.c, cVar2);
                                             dVar5 = dVar5;
                                             break;
@@ -2496,13 +2495,13 @@ public final class d implements k {
                                 if (sparseArray.size() == 0) {
                                     throw r1.a("No valid tracks were found", null);
                                 }
-                                dVar5.b0.f1();
+                                dVar5.b0.i1();
                             } else if (i25 == 475249515) {
                                 if (!dVar5.v) {
                                     m mVar3 = dVar5.b0;
-                                    w wVar3 = dVar5.C;
-                                    w wVar4 = dVar5.D;
-                                    if (dVar5.q == -1 || dVar5.t == -9223372036854775807L || wVar3 == null || (i17 = wVar3.b) == 0 || wVar4 == null || wVar4.b != i17) {
+                                    v vVar = dVar5.C;
+                                    v vVar2 = dVar5.D;
+                                    if (dVar5.q == -1 || dVar5.t == -9223372036854775807L || vVar == null || (i17 = vVar.b) == 0 || vVar2 == null || vVar2.b != i17) {
                                         nVar = new n(dVar5.t);
                                     } else {
                                         int[] iArr = new int[i17];
@@ -2511,9 +2510,9 @@ public final class d implements k {
                                         long[] jArr4 = new long[i17];
                                         int i44 = 0;
                                         while (i44 < i17) {
-                                            jArr4[i44] = wVar3.e(i44);
+                                            jArr4[i44] = vVar.e(i44);
                                             long[] jArr5 = jArr2;
-                                            jArr5[i44] = wVar4.e(i44) + dVar5.q;
+                                            jArr5[i44] = vVar2.e(i44) + dVar5.q;
                                             i44++;
                                             jArr2 = jArr5;
                                         }
@@ -2543,7 +2542,7 @@ public final class d implements k {
                                             }
                                         }
                                     }
-                                    mVar3.g2(nVar);
+                                    mVar3.m2(nVar);
                                     dVar5.v = i18;
                                 }
                                 dVar5.C = null;
@@ -2554,10 +2553,10 @@ public final class d implements k {
                         c cVar5 = (c) sparseArray.get(dVar5.M);
                         cVar5.X.getClass();
                         if (dVar5.R > 0 && "A_OPUS".equals(cVar5.b)) {
-                            h5.w wVar5 = dVar5.n;
+                            w wVar3 = dVar5.n;
                             byte[] array = ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN).putLong(dVar5.R).array();
-                            wVar5.getClass();
-                            wVar5.D(array.length, array);
+                            wVar3.getClass();
+                            wVar3.D(array.length, array);
                         }
                         int i48 = 0;
                         for (int i49 = 0; i49 < dVar5.K; i49++) {
@@ -2597,9 +2596,9 @@ public final class d implements k {
             }
             c cVar6 = (c) sparseArray2.valueAt(i54);
             cVar6.X.getClass();
-            r3.w wVar6 = cVar6.T;
-            if (wVar6 != null) {
-                wVar6.a(cVar6.X, cVar6.j);
+            r3.w wVar4 = cVar6.T;
+            if (wVar4 != null) {
+                wVar4.a(cVar6.X, cVar6.j);
             }
             i54++;
         }
@@ -2607,8 +2606,8 @@ public final class d implements k {
 
     @Override // r3.k
     public final boolean i(l lVar) {
-        w wVar = new w(11, (byte) 0);
-        h5.w wVar2 = (h5.w) wVar.c;
+        v vVar = new v(11, (byte) 0);
+        w wVar = (w) vVar.c;
         h hVar = (h) lVar;
         long j10 = hVar.c;
         long j11 = 1024;
@@ -2616,35 +2615,35 @@ public final class d implements k {
             j11 = j10;
         }
         int i10 = (int) j11;
-        hVar.h(wVar2.a, 0, 4, false);
-        long v = wVar2.v();
-        wVar.b = 4;
+        hVar.f(wVar.a, 0, 4, false);
+        long v = wVar.v();
+        vVar.b = 4;
         while (true) {
             if (v != 440786851) {
-                int i11 = wVar.b + 1;
-                wVar.b = i11;
+                int i11 = vVar.b + 1;
+                vVar.b = i11;
                 if (i11 == i10) {
                     break;
                 }
-                hVar.h(wVar2.a, 0, 1, false);
-                v = ((v << 8) & (-256)) | (wVar2.a[0] & 255);
+                hVar.f(wVar.a, 0, 1, false);
+                v = ((v << 8) & (-256)) | (wVar.a[0] & 255);
             } else {
-                long g10 = wVar.g(hVar);
-                long j12 = wVar.b;
+                long g10 = vVar.g(hVar);
+                long j12 = vVar.b;
                 if (g10 != Long.MIN_VALUE && (j10 == -1 || j12 + g10 < j10)) {
                     while (true) {
-                        long j13 = wVar.b;
+                        long j13 = vVar.b;
                         long j14 = j12 + g10;
                         if (j13 < j14) {
-                            if (wVar.g(hVar) != Long.MIN_VALUE) {
-                                long g11 = wVar.g(hVar);
+                            if (vVar.g(hVar) != Long.MIN_VALUE) {
+                                long g11 = vVar.g(hVar);
                                 if (g11 < 0 || g11 > 2147483647L) {
                                     break;
                                 }
                                 if (g11 != 0) {
                                     int i12 = (int) g11;
                                     hVar.a(i12, false);
-                                    wVar.b += i12;
+                                    vVar.b += i12;
                                 }
                             } else {
                                 break;
@@ -2681,8 +2680,8 @@ public final class d implements k {
     }
 
     public final int l(l lVar, c cVar, int i10, boolean z4) {
-        int e;
         int e6;
+        int e10;
         int i11;
         if ("S_TEXT/UTF8".equals(cVar.b)) {
             m(lVar, c0, i10);
@@ -2702,12 +2701,12 @@ public final class d implements k {
             j();
             return i14;
         }
-        v vVar = cVar.X;
+        r3.v vVar = cVar.X;
         boolean z10 = this.V;
-        h5.w wVar = this.j;
+        w wVar = this.j;
         if (!z10) {
             boolean z11 = cVar.h;
-            h5.w wVar2 = this.g;
+            w wVar2 = this.g;
             if (z11) {
                 this.O &= -1073741825;
                 if (!this.W) {
@@ -2725,7 +2724,7 @@ public final class d implements k {
                     boolean z12 = (b11 & 2) == 2;
                     this.O |= TLObject.FLAG_30;
                     if (!this.a0) {
-                        h5.w wVar3 = this.l;
+                        w wVar3 = this.l;
                         lVar.readFully(wVar3.a, 0, 8);
                         this.S += 8;
                         this.a0 = true;
@@ -2781,7 +2780,7 @@ public final class d implements k {
                             this.o.putInt(0);
                         }
                         byte[] array = this.o.array();
-                        h5.w wVar4 = this.m;
+                        w wVar4 = this.m;
                         wVar4.D(i16, array);
                         vVar.a(i16, wVar4);
                         this.T += i16;
@@ -2822,16 +2821,16 @@ public final class d implements k {
                 int i23 = i21 - i22;
                 int a2 = wVar.a();
                 if (a2 > 0) {
-                    e6 = Math.min(i23, a2);
-                    vVar.d(e6, wVar);
+                    e10 = Math.min(i23, a2);
+                    vVar.d(e10, wVar);
                 } else {
-                    e6 = vVar.e(lVar, i23, false);
+                    e10 = vVar.e(lVar, i23, false);
                 }
-                this.S += e6;
-                this.T += e6;
+                this.S += e10;
+                this.T += e10;
             }
         } else {
-            h5.w wVar5 = this.f;
+            w wVar5 = this.f;
             byte[] bArr3 = wVar5.a;
             bArr3[0] = 0;
             bArr3[1] = 0;
@@ -2849,26 +2848,26 @@ public final class d implements k {
                     this.S += i24;
                     wVar5.F(0);
                     this.U = wVar5.x();
-                    h5.w wVar6 = this.e;
+                    w wVar6 = this.e;
                     wVar6.F(0);
                     vVar.d(4, wVar6);
                     this.T += 4;
                 } else {
                     int a10 = wVar.a();
                     if (a10 > 0) {
-                        e = Math.min(i26, a10);
-                        vVar.d(e, wVar);
+                        e6 = Math.min(i26, a10);
+                        vVar.d(e6, wVar);
                     } else {
-                        e = vVar.e(lVar, i26, false);
+                        e6 = vVar.e(lVar, i26, false);
                     }
-                    this.S += e;
-                    this.T += e;
-                    this.U -= e;
+                    this.S += e6;
+                    this.T += e6;
+                    this.U -= e6;
                 }
             }
         }
         if ("A_VORBIS".equals(cVar.b)) {
-            h5.w wVar7 = this.h;
+            w wVar7 = this.h;
             wVar7.F(0);
             vVar.d(4, wVar7);
             this.T += 4;
@@ -2880,7 +2879,7 @@ public final class d implements k {
 
     public final void m(l lVar, byte[] bArr, int i10) {
         int length = bArr.length + i10;
-        h5.w wVar = this.k;
+        w wVar = this.k;
         byte[] bArr2 = wVar.a;
         if (bArr2.length < length) {
             byte[] copyOf = Arrays.copyOf(bArr, length + i10);

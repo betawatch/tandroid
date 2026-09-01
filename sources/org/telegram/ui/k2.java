@@ -19,10 +19,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class k2 extends View implements org.telegram.ui.Cells.l9 {
-    public final n70 a;
+    public final o70 a;
     public final j4 b;
     public d3 c;
     public d3 d;
@@ -35,11 +35,11 @@ public final class k2 extends View implements org.telegram.ui.Cells.l9 {
     public final int v;
     public int w;
 
-    public k2(Context context, n70 n70Var, j4 j4Var) {
+    public k2(Context context, o70 o70Var, j4 j4Var) {
         super(context);
         this.s = AndroidUtilities.dp(18.0f);
         this.v = AndroidUtilities.dp(10.0f);
-        this.a = n70Var;
+        this.a = o70Var;
         this.b = j4Var;
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.h = imageReceiver;
@@ -96,10 +96,10 @@ public final class k2 extends View implements org.telegram.ui.Cells.l9 {
         canvas.save();
         canvas.translate(this.s, AndroidUtilities.dp(10.0f));
         d3 d3Var = this.c;
-        n70 n70Var = this.a;
+        o70 o70Var = this.a;
         int i11 = 0;
         if (d3Var != null) {
-            l4.v(n70Var, canvas, this, 0);
+            l4.v(o70Var, canvas, this, 0);
             this.c.draw(canvas, this);
             i10 = 1;
         } else {
@@ -107,7 +107,7 @@ public final class k2 extends View implements org.telegram.ui.Cells.l9 {
         }
         if (this.d != null) {
             canvas.translate(0.0f, this.w);
-            l4.v(n70Var, canvas, this, i10);
+            l4.v(o70Var, canvas, this, i10);
             this.d.draw(canvas, this);
         }
         canvas.restore();
@@ -133,12 +133,12 @@ public final class k2 extends View implements org.telegram.ui.Cells.l9 {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         d3 d3Var = this.c;
         j4 j4Var = this.b;
-        n70 n70Var = this.a;
-        if (d3Var != null && (j11 = l4.j(n70Var, j4Var, d3Var)) != null) {
+        o70 o70Var = this.a;
+        if (d3Var != null && (j11 = l4.j(o70Var, j4Var, d3Var)) != null) {
             spannableStringBuilder.append(j11);
         }
         d3 d3Var2 = this.d;
-        if (d3Var2 != null && (j10 = l4.j(n70Var, j4Var, d3Var2)) != null) {
+        if (d3Var2 != null && (j10 = l4.j(o70Var, j4Var, d3Var2)) != null) {
             if (spannableStringBuilder.length() > 0) {
                 spannableStringBuilder.append((CharSequence) ", ");
             }
@@ -168,13 +168,13 @@ public final class k2 extends View implements org.telegram.ui.Cells.l9 {
         int dp = AndroidUtilities.dp(SharedConfig.ivFontSize - 16);
         long j10 = pagerelatedarticle.photo_id;
         j4 j4Var = this.b;
-        TLRPC.Photo e = j10 != 0 ? j4Var != null ? i4.e(j4Var.B, j10) : i4.d(j10, this.r) : null;
+        TLRPC.Photo e6 = j10 != 0 ? j4Var != null ? i4.e(j4Var.B, j10) : i4.d(j10, this.r) : null;
         ImageReceiver imageReceiver2 = this.h;
-        if (e != null) {
+        if (e6 != null) {
             this.f = true;
-            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(e.sizes, AndroidUtilities.getPhotoSize());
-            TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(e.sizes, 80, true);
-            imageReceiver2.setImage(ImageLocation.getForPhoto(closestPhotoSizeWithSize, e), "64_64", ImageLocation.getForPhoto(closestPhotoSizeWithSize != closestPhotoSizeWithSize2 ? closestPhotoSizeWithSize2 : null, e), "64_64_b", closestPhotoSizeWithSize.size, null, this.r, 1);
+            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(e6.sizes, AndroidUtilities.getPhotoSize());
+            TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(e6.sizes, 80, true);
+            imageReceiver2.setImage(ImageLocation.getForPhoto(closestPhotoSizeWithSize, e6), "64_64", ImageLocation.getForPhoto(closestPhotoSizeWithSize != closestPhotoSizeWithSize2 ? closestPhotoSizeWithSize2 : null, e6), "64_64_b", closestPhotoSizeWithSize.size, null, this.r, 1);
             imageReceiver = imageReceiver2;
         } else {
             imageReceiver = imageReceiver2;
@@ -241,7 +241,7 @@ public final class k2 extends View implements org.telegram.ui.Cells.l9 {
             objArr[c3] = str2;
             formatString = LocaleController.formatString(i19, objArr);
         }
-        d3 p10 = l4.p(this.a, this, formatString, null, i14, this.w + i16, this.n, ((j4Var == null || !j4Var.D) && !z4) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.kw0.a(), i13, this.b);
+        d3 p10 = l4.p(this.a, this, formatString, null, i14, this.w + i16, this.n, ((j4Var == null || !j4Var.D) && !z4) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.lw0.a(), i13, this.b);
         this.d = p10;
         if (p10 != null) {
             int height = p10.d.getHeight() + dp5;

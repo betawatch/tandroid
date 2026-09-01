@@ -9,7 +9,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -67,8 +67,8 @@ public final /* synthetic */ class c implements Runnable {
                         fVar.b = i12;
                         c0VarArr[i10].b();
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
+                } catch (IOException e6) {
+                    e6.printStackTrace();
                     try {
                         randomAccessFile.close();
                     } catch (Exception unused) {

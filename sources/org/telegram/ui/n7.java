@@ -10,7 +10,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class n7 extends i7 {
     public final ArrayList n;
@@ -39,18 +39,18 @@ public final class n7 extends i7 {
         }
     }
 
-    @Override // f2.o0
-    public final void v(f2.l1 l1Var, int i10) {
-        View view = l1Var.a;
+    @Override // f2.p0
+    public final void v(f2.m1 m1Var, int i10) {
+        View view = m1Var.a;
         m7 m7Var = (m7) view;
         org.telegram.ui.Cells.i7 i7Var = (org.telegram.ui.Cells.i7) m7Var.b.getChildAt(0);
         ArrayList arrayList = this.e;
-        mh.a aVar = ((o7) arrayList.get(i10)).d;
+        nh.a aVar = ((o7) arrayList.get(i10)).d;
         boolean z4 = aVar == view.getTag();
         boolean z10 = i10 != arrayList.size() - 1;
         view.setTag(aVar);
         File file = aVar.a;
-        i7Var.d(z10, aVar.h == 5 ? LocaleController.getString(R.string.AttachRound) : file.getName(), 0, LocaleController.formatDateAudio(file.lastModified() / 1000, true), Utilities.getExtension(file.getName()), null);
+        i7Var.d(aVar.h == 5 ? LocaleController.getString(R.string.AttachRound) : file.getName(), LocaleController.formatDateAudio(file.lastModified() / 1000, true), Utilities.getExtension(file.getName()), null, 0, z10);
         if (!z4) {
             i7Var.setPhoto(file.getPath());
         }
@@ -60,11 +60,11 @@ public final class n7 extends i7 {
         m7Var.a.a(this.r.f.j.contains(aVar), z4);
     }
 
-    @Override // f2.o0
-    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+    @Override // f2.p0
+    public final f2.m1 x(ViewGroup viewGroup, int i10) {
         m7 m7Var = new m7(this, viewGroup.getContext(), 0);
         m7Var.e = 2;
         m7Var.b.addView(new org.telegram.ui.Cells.i7(viewGroup.getContext(), 3, null));
-        return new org.telegram.ui.Components.el0(m7Var);
+        return new org.telegram.ui.Components.fl0(m7Var);
     }
 }

@@ -4,7 +4,7 @@ import android.R;
 import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a1 implements Runnable {
     public final /* synthetic */ int a;
@@ -34,9 +34,9 @@ public final /* synthetic */ class a1 implements Runnable {
                 break;
             case 3:
                 t1 t1Var2 = this.b;
-                o2.o oVar = t1Var2.w;
-                oVar.l(t1Var2.Nd);
-                oVar.l(t1Var2.Od);
+                oh.h4 h4Var = t1Var2.w;
+                h4Var.Y(t1Var2.Nd);
+                h4Var.Y(t1Var2.Od);
                 t1Var2.H3();
                 MessageObject messageObject = t1Var2.v7;
                 if (messageObject != null) {
@@ -48,7 +48,7 @@ public final /* synthetic */ class a1 implements Runnable {
                     }
                     k1 k1Var2 = t1Var2.Gc;
                     if (k1Var2 != null) {
-                        k1Var2.U(t1Var2);
+                        k1Var2.T(t1Var2);
                         break;
                     }
                 }

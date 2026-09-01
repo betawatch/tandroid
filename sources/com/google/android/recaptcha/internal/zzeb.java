@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
 import dd.p;
-import k7.p7;
+import k7.q7;
 import kotlin.jvm.internal.j;
 import uc.c;
 import vc.a;
 import wc.i;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 final class zzeb extends i implements p {
     int zza;
@@ -68,7 +68,7 @@ final class zzeb extends i implements p {
         a aVar = a.a;
         int i10 = this.zza;
         if (i10 == 0) {
-            p7.b(obj);
+            q7.b(obj);
             zzgrVar = (zzgr) this.zzh;
             zzeh zzehVar = this.zzb;
             zzeqVar = zzehVar.zzc;
@@ -97,21 +97,21 @@ final class zzeb extends i implements p {
         }
         if (i10 == 1) {
             zzgrVar = (zzgr) this.zzh;
-            p7.b(obj);
+            q7.b(obj);
             this.zzh = null;
             this.zza = 2;
             obj = ((zzhf) obj).zza(zzgrVar.zza(), this);
         } else {
             if (i10 == 2) {
-                p7.b(obj);
+                q7.b(obj);
                 return (zzeq) obj;
             }
             if (i10 != 3) {
-                p7.b(obj);
+                q7.b(obj);
                 return (zzeq) obj;
             }
             zzgrVar = (zzgr) this.zzh;
-            p7.b(obj);
+            q7.b(obj);
             this.zzh = null;
             this.zza = 4;
             obj = ((zzhg) obj).zza(zzgrVar.zza(), this);

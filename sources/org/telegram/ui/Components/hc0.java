@@ -1,49 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Matrix;
-import android.graphics.Shader;
-import android.os.Build;
-import java.lang.ref.WeakReference;
+import android.graphics.RuntimeShader;
+import java.util.Arrays;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class hc0 {
-    public final Shader.TileMode a;
-    public final Matrix b = new Matrix();
-    public boolean c;
-    public BitmapShader d;
-    public WeakReference e;
+    public final RuntimeShader a;
+    public final float[] b = {1.0f, 1.0f, 0.0f, 0.0f};
+    public final float[] c = {1.0f, 1.0f, 0.0f, 0.0f};
 
-    public hc0(Shader.TileMode tileMode) {
-        this.a = tileMode;
+    public hc0(int i10) {
+        gc0.b();
+        this.a = gc0.a(AndroidUtilities.readRes(i10));
     }
 
-    public final void a(boolean z4) {
-        BitmapShader bitmapShader;
-        if (this.c != z4) {
-            this.c = z4;
-            if (Build.VERSION.SDK_INT < 33 || (bitmapShader = this.d) == null) {
-                return;
-            }
-            bitmapShader.setFilterMode(z4 ? 1 : 2);
+    public final void a(float[] fArr) {
+        float[] fArr2 = this.b;
+        if (Arrays.equals(fArr, fArr2)) {
+            return;
         }
+        System.arraycopy(fArr, 0, fArr2, 0, 4);
+        this.a.setFloatUniform("transformGradient", fArr2);
     }
 
-    public final boolean b(Bitmap bitmap) {
-        WeakReference weakReference = this.e;
-        if (weakReference != null && weakReference.get() == bitmap) {
-            return false;
+    public final void b(float[] fArr) {
+        float[] fArr2 = this.c;
+        if (Arrays.equals(fArr, fArr2)) {
+            return;
         }
-        this.e = new WeakReference(bitmap);
-        Shader.TileMode tileMode = this.a;
-        BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
-        this.d = bitmapShader;
-        bitmapShader.setLocalMatrix(this.b);
-        if (Build.VERSION.SDK_INT >= 33) {
-            this.d.setFilterMode(this.c ? 1 : 2);
-        }
-        return true;
+        System.arraycopy(fArr, 0, fArr2, 0, 4);
+        this.a.setFloatUniform("transformPattern", fArr2);
     }
 }

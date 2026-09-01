@@ -9,14 +9,14 @@ import java.io.Serializable;
 import java.net.URLConnection;
 import java.util.Map;
 import javax.net.ssl.HttpsURLConnection;
-import k7.p7;
+import k7.q7;
 import kotlin.jvm.internal.q;
 import l7.w0;
 import ld.c0;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class b extends wc.i implements p {
     public final /* synthetic */ int a = 1;
@@ -93,7 +93,7 @@ public final class b extends wc.i implements p {
                 sc.i iVar2 = sc.i.a;
                 switch (i10) {
                     case 0:
-                        p7.b(obj);
+                        q7.b(obj);
                         JSONObject jSONObject = (JSONObject) this.c;
                         Log.d("SessionConfigFetcher", "Fetched settings: " + jSONObject);
                         q qVar6 = new q();
@@ -105,8 +105,8 @@ public final class b extends wc.i implements p {
                             JSONObject jSONObject2 = (JSONObject) obj5;
                             try {
                                 bool = jSONObject2.has("sessions_enabled") ? (Boolean) jSONObject2.get("sessions_enabled") : null;
-                            } catch (JSONException e) {
-                                e = e;
+                            } catch (JSONException e6) {
+                                e = e6;
                                 bool = null;
                             }
                             try {
@@ -119,8 +119,8 @@ public final class b extends wc.i implements p {
                                 if (jSONObject2.has("cache_duration")) {
                                     qVar7.a = (Integer) jSONObject2.get("cache_duration");
                                 }
-                            } catch (JSONException e6) {
-                                e = e6;
+                            } catch (JSONException e10) {
+                                e = e10;
                                 Log.e("SessionConfigFetcher", "Error parsing the configs remotely fetched: ", e);
                                 if (bool == null) {
                                 }
@@ -245,7 +245,7 @@ public final class b extends wc.i implements p {
                         qVar3 = (q) this.e;
                         qVar5 = (q) this.d;
                         qVar4 = (q) this.c;
-                        p7.b(obj);
+                        q7.b(obj);
                         qVar = qVar5;
                         qVar2 = qVar4;
                         obj2 = qVar.a;
@@ -261,7 +261,7 @@ public final class b extends wc.i implements p {
                     case 2:
                         qVar3 = (q) this.d;
                         qVar2 = (q) this.c;
-                        p7.b(obj);
+                        q7.b(obj);
                         obj3 = qVar2.a;
                         if (((Double) obj3) != null) {
                         }
@@ -271,13 +271,13 @@ public final class b extends wc.i implements p {
                         break;
                     case 3:
                         qVar3 = (q) this.c;
-                        p7.b(obj);
+                        q7.b(obj);
                         obj4 = qVar3.a;
                         if (((Integer) obj4) == null) {
                         }
                         break;
                     case 4:
-                        p7.b(obj);
+                        q7.b(obj);
                         iVar = iVar2;
                         if (iVar == null) {
                         }
@@ -293,7 +293,7 @@ public final class b extends wc.i implements p {
                         }
                         return iVar2;
                     case 5:
-                        p7.b(obj);
+                        q7.b(obj);
                         Long l10222 = new Long(System.currentTimeMillis());
                         this.c = null;
                         this.d = null;
@@ -306,7 +306,7 @@ public final class b extends wc.i implements p {
                         }
                         return iVar2;
                     case 6:
-                        p7.b(obj);
+                        q7.b(obj);
                         return iVar2;
                     default:
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -318,8 +318,8 @@ public final class b extends wc.i implements p {
                 sc.i iVar3 = sc.i.a;
                 try {
                     if (i11 == 0) {
-                        p7.b(obj);
-                        URLConnection openConnection = w0.g((w0) this.d).openConnection();
+                        q7.b(obj);
+                        URLConnection openConnection = w0.i((w0) this.d).openConnection();
                         kotlin.jvm.internal.j.c(openConnection, "null cannot be cast to non-null type javax.net.ssl.HttpsURLConnection");
                         HttpsURLConnection httpsURLConnection = (HttpsURLConnection) openConnection;
                         httpsURLConnection.setRequestMethod("GET");
@@ -355,17 +355,17 @@ public final class b extends wc.i implements p {
                             }
                         }
                     } else if (i11 == 1 || i11 == 2) {
-                        p7.b(obj);
+                        q7.b(obj);
                     } else {
                         if (i11 != 3) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        p7.b(obj);
+                        q7.b(obj);
                     }
-                } catch (Exception e10) {
-                    String message = e10.getMessage();
+                } catch (Exception e11) {
+                    String message = e11.getMessage();
                     if (message == null) {
-                        message = e10.toString();
+                        message = e11.toString();
                     }
                     this.b = 3;
                     cVar.invoke(message, this);

@@ -1,18 +1,30 @@
 package j7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+import android.os.CancellationSignal;
+import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
+
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class c0 {
-    public static long a(h5.w wVar, int i10, int i11) {
-        wVar.F(i10);
-        if (wVar.a() < 5) {
-            return -9223372036854775807L;
+    public static void a(CancellationSignal cancellationSignal, dd.a onResultOrException) {
+        kotlin.jvm.internal.j.e(onResultOrException, "onResultOrException");
+        CredentialProviderPlayServicesImpl.Companion.getClass();
+        if (a1.g.a(cancellationSignal)) {
+            return;
         }
-        int g10 = wVar.g();
-        if ((8388608 & g10) != 0 || ((2096896 & g10) >> 8) != i11 || (g10 & 32) == 0 || wVar.u() < 7 || wVar.a() < 7 || (wVar.u() & 16) != 16) {
-            return -9223372036854775807L;
+        onResultOrException.invoke();
+    }
+
+    public static boolean b(int i10, dd.p pVar, dd.l lVar, CancellationSignal cancellationSignal) {
+        if (i10 == -1) {
+            return false;
         }
-        wVar.e(0, 6, new byte[6]);
-        return ((r0[0] & 255) << 25) | ((r0[1] & 255) << 17) | ((r0[2] & 255) << 9) | ((r0[3] & 255) << 1) | ((255 & r0[4]) >> 7);
+        kotlin.jvm.internal.q qVar = new kotlin.jvm.internal.q();
+        qVar.a = new w0.h(l.d.k(i10, "activity with result code: ", " indicating not RESULT_OK"), 2);
+        if (i10 == 0) {
+            qVar.a = new w0.g("activity is cancelled by the user.");
+        }
+        pVar.invoke(cancellationSignal, new b1.c(lVar, qVar, 1));
+        return true;
     }
 }

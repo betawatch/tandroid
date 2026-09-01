@@ -4,7 +4,7 @@ import android.util.SparseArray;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.ui.Components.jb;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a0 implements r3.k {
     public boolean e;
@@ -84,7 +84,7 @@ public final class a0 implements r3.k {
                 }
                 wVar.C(min);
                 hVar.f = 0;
-                hVar.h(wVar.a, 0, min, false);
+                hVar.f(wVar.a, 0, min, false);
                 int i10 = wVar.b;
                 int i11 = wVar.c - 4;
                 while (true) {
@@ -134,7 +134,7 @@ public final class a0 implements r3.k {
             }
             wVar.C(min2);
             hVar2.f = 0;
-            hVar2.h(wVar.a, 0, min2, false);
+            hVar2.f(wVar.a, 0, min2, false);
             int i12 = wVar.b;
             int i13 = wVar.c;
             while (true) {
@@ -165,10 +165,10 @@ public final class a0 implements r3.k {
                 r32 = 0;
                 x xVar = new x(new cb.b(21), new bf.b(yVar.b), j17, j17 + 1, 0L, j12, 188L, MediaDataController.MAX_STYLE_RUNS_COUNT);
                 this.i = xVar;
-                this.j.g2(xVar.a);
+                this.j.m2(xVar.a);
             } else {
                 r32 = 0;
-                this.j.g2(new r3.n(j17));
+                this.j.m2(new r3.n(j17));
             }
         }
         x xVar2 = this.i;
@@ -177,59 +177,59 @@ public final class a0 implements r3.k {
         }
         r3.h hVar3 = (r3.h) lVar;
         hVar3.f = r32;
-        long i14 = j12 != -1 ? j12 - hVar3.i() : -1L;
-        if (i14 != -1 && i14 < 4) {
+        long g10 = j12 != -1 ? j12 - hVar3.g() : -1L;
+        if (g10 != -1 && g10 < 4) {
             return -1;
         }
         h5.w wVar2 = this.c;
-        if (!hVar3.h(wVar2.a, r32, 4, true)) {
+        if (!hVar3.f(wVar2.a, r32, 4, true)) {
             return -1;
         }
         wVar2.F(r32);
-        int g10 = wVar2.g();
-        if (g10 == 441) {
+        int g11 = wVar2.g();
+        if (g11 == 441) {
             return -1;
         }
-        if (g10 == 442) {
-            hVar3.h(wVar2.a, r32, 10, r32);
+        if (g11 == 442) {
+            hVar3.f(wVar2.a, r32, 10, r32);
             wVar2.F(9);
-            hVar3.u((wVar2.u() & 7) + 14);
+            hVar3.s((wVar2.u() & 7) + 14);
             return r32;
         }
-        if (g10 == 443) {
-            hVar3.h(wVar2.a, r32, 2, r32);
+        if (g11 == 443) {
+            hVar3.f(wVar2.a, r32, 2, r32);
             wVar2.F(r32);
-            hVar3.u(wVar2.z() + 6);
+            hVar3.s(wVar2.z() + 6);
             return r32;
         }
-        if (((g10 & (-256)) >> 8) != 1) {
-            hVar3.u(1);
+        if (((g11 & (-256)) >> 8) != 1) {
+            hVar3.s(1);
             return r32;
         }
-        int i15 = g10 & 255;
+        int i14 = g11 & 255;
         SparseArray sparseArray = this.b;
-        z zVar = (z) sparseArray.get(i15);
+        z zVar = (z) sparseArray.get(i14);
         if (!this.e) {
             if (zVar == null) {
                 i iVar = null;
-                if (i15 == 189) {
+                if (i14 == 189) {
                     kVar = new b(null, 0);
                     this.f = true;
                     this.h = hVar3.d;
-                } else if ((g10 & 224) == 192) {
+                } else if ((g11 & 224) == 192) {
                     kVar = new u(null);
                     this.f = true;
                     this.h = hVar3.d;
                 } else {
-                    if ((g10 & 240) == 224) {
+                    if ((g11 & 240) == 224) {
                         kVar = new k(null);
                         this.g = true;
                         this.h = hVar3.d;
                     }
                     if (iVar != null) {
-                        iVar.c(this.j, new h0(i15, 256));
+                        iVar.c(this.j, new h0(i14, 256));
                         zVar = new z(iVar, this.a);
-                        sparseArray.put(i15, zVar);
+                        sparseArray.put(i14, zVar);
                     }
                 }
                 iVar = kVar;
@@ -238,18 +238,18 @@ public final class a0 implements r3.k {
             }
             if (hVar3.d > ((this.f && this.g) ? this.h + 8192 : 1048576L)) {
                 this.e = true;
-                this.j.f1();
+                this.j.i1();
             }
         }
-        hVar3.h(wVar2.a, r32, 2, r32);
+        hVar3.f(wVar2.a, r32, 2, r32);
         wVar2.F(r32);
         int z4 = wVar2.z() + 6;
         if (zVar == null) {
-            hVar3.u(z4);
+            hVar3.s(z4);
             return r32;
         }
         wVar2.C(z4);
-        hVar3.d(wVar2.a, r32, z4, r32);
+        hVar3.c(wVar2.a, r32, z4, r32);
         wVar2.F(6);
         i iVar2 = zVar.a;
         h5.v vVar = zVar.c;
@@ -267,7 +267,7 @@ public final class a0 implements r3.k {
             vVar.s(4);
             vVar.s(1);
             vVar.s(1);
-            long i16 = (vVar.i(3) << 30) | (vVar.i(15) << 15) | vVar.i(15);
+            long i15 = (vVar.i(3) << 30) | (vVar.i(15) << 15) | vVar.i(15);
             vVar.s(1);
             if (!zVar.f && zVar.e) {
                 vVar.s(4);
@@ -277,7 +277,7 @@ public final class a0 implements r3.k {
                 c0Var2.b(vVar.i(15) | (vVar.i(3) << 30) | (vVar.i(15) << 15));
                 zVar.f = true;
             }
-            zVar.g = c0Var2.b(i16);
+            zVar.g = c0Var2.b(i15);
         }
         iVar2.e(4, zVar.g);
         iVar2.a(wVar2);
@@ -290,10 +290,10 @@ public final class a0 implements r3.k {
     public final boolean i(r3.l lVar) {
         byte[] bArr = new byte[14];
         r3.h hVar = (r3.h) lVar;
-        hVar.h(bArr, 0, 14, false);
+        hVar.f(bArr, 0, 14, false);
         if (442 == (((bArr[0] & 255) << 24) | ((bArr[1] & 255) << 16) | ((bArr[2] & 255) << 8) | (bArr[3] & 255)) && (bArr[4] & 196) == 68 && (bArr[6] & 4) == 4 && (bArr[8] & 4) == 4 && (bArr[9] & 1) == 1 && (bArr[12] & 3) == 3) {
             hVar.a(bArr[13] & 7, false);
-            hVar.h(bArr, 0, 3, false);
+            hVar.f(bArr, 0, 3, false);
             if (1 == (((bArr[0] & 255) << 16) | ((bArr[1] & 255) << 8) | (bArr[2] & 255))) {
                 return true;
             }

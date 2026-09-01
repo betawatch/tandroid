@@ -24,27 +24,28 @@ import android.widget.EdgeEffect;
 import android.widget.Scroller;
 import b7.r;
 import f2.a0;
-import f2.m1;
+import f2.n1;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.WeakHashMap;
-import kh.a2;
-import lh.m5;
-import nh.d4;
-import nh.n5;
-import nh.q7;
-import nh.y8;
+import mh.m5;
+import oh.f4;
+import oh.q7;
+import oh.t3;
+import oh.y8;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLObject;
 import r0.b0;
 import r0.j0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class h extends ViewGroup {
-    public static final r q0;
-    public static final a0 r0;
+    public static final int[] p0 = {R.attr.layout_gravity};
+    public static final r q0 = new r(4);
+    public static final a0 r0 = new a0(3);
+    public static final r s0 = new r(5);
     public int B;
     public float C;
     public float D;
@@ -96,14 +97,6 @@ public class h extends ViewGroup {
     public int w;
     public Drawable x;
     public int y;
-    public static final int[] p0 = {R.attr.layout_gravity};
-    public static final r s0 = new r(5);
-
-    static {
-        int i10 = 4;
-        q0 = new r(i10);
-        r0 = new a0(i10);
-    }
 
     public h(Context context) {
         super(context);
@@ -134,7 +127,7 @@ public class h extends ViewGroup {
         this.W = (int) (25.0f * f10);
         this.a0 = (int) (2.0f * f10);
         this.L = (int) (f10 * 16.0f);
-        j0.k(this, new m1(this));
+        j0.k(this, new n1(this));
         if (getImportantForAccessibility() == 0) {
             setImportantForAccessibility(1);
         }
@@ -573,7 +566,7 @@ public class h extends ViewGroup {
         }
         ArrayList arrayList = this.b;
         if (arrayList.size() > 0) {
-            return Math.max(((d) arrayList.get(0)).b, Math.min(i10, ((d) a2.i(1, arrayList)).b));
+            return Math.max(((d) arrayList.get(0)).b, Math.min(i10, ((d) l.d.i(1, arrayList)).b));
         }
         return i10;
     }
@@ -837,17 +830,17 @@ public class h extends ViewGroup {
                     q7 q7Var = (q7) childAt2;
                     if (Math.abs(left2) >= 1.0f) {
                         q7Var.a(false);
-                        AndroidUtilities.runOnUIThread(new n5(q7Var, 6), 16L);
+                        AndroidUtilities.runOnUIThread(new t3(q7Var, 9), 16L);
                     } else {
                         if (!q7Var.d) {
                             q7Var.a(true);
                             if (y8Var.u0 != null) {
-                                d4 d4Var = q7Var.a;
+                                f4 f4Var = q7Var.a;
                                 long j10 = q7Var.b;
                                 ArrayList arrayList2 = q7Var.c;
-                                d4Var.y1 = j10;
-                                d4Var.w1 = arrayList2;
-                                d4Var.o0(-1);
+                                f4Var.y1 = j10;
+                                f4Var.w1 = arrayList2;
+                                f4Var.o0(-1);
                             } else {
                                 q7Var.a.U0(-1, q7Var.b);
                             }
@@ -1448,7 +1441,7 @@ public class h extends ViewGroup {
         ArrayList arrayList = this.b;
         boolean z11 = false;
         d dVar = (d) arrayList.get(0);
-        d dVar2 = (d) a2.i(1, arrayList);
+        d dVar2 = (d) l.d.i(1, arrayList);
         if (dVar.b != 0) {
             f12 = dVar.e * clientWidth;
             z4 = false;
@@ -1667,7 +1660,7 @@ public class h extends ViewGroup {
                 hexString = Integer.toHexString(getId());
             }
             StringBuilder sb = new StringBuilder("The application's PagerAdapter changed the adapter's contents without calling PagerAdapter#notifyDataSetChanged! Expected adapter item count: ");
-            a2.w(sb, this.a, ", found: ", b10, " Pager id: ");
+            l.d.w(sb, this.a, ", found: ", b10, " Pager id: ");
             sb.append(hexString);
             sb.append(" Pager class: ");
             sb.append(getClass());

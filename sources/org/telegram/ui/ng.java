@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ng implements Runnable {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final /* synthetic */ class ng implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        ph.f3 f3Var;
+        qh.f3 f3Var;
         int i10 = this.a;
         xn xnVar = this.b;
         switch (i10) {
@@ -144,7 +144,7 @@ public final /* synthetic */ class ng implements Runnable {
                 break;
             case 17:
                 xnVar.A7(true);
-                kh.a2.v(R.string.TranscriptionReportSent, org.telegram.ui.Components.qc.a0(xnVar), R.raw.chats_infotip, 36);
+                l.d.v(R.string.TranscriptionReportSent, org.telegram.ui.Components.qc.a0(xnVar), R.raw.chats_infotip, 36);
                 break;
             case 18:
                 xnVar.x0.J.clear();
@@ -187,9 +187,9 @@ public final /* synthetic */ class ng implements Runnable {
                 xnVar.a7(false);
                 break;
             case 27:
-                FrameLayout.LayoutParams e = k7.b6.e(-1, -2, 87);
-                e.bottomMargin = xnVar.V.getMeasuredHeight();
-                xnVar.U0.addView(xnVar.v1, e);
+                FrameLayout.LayoutParams e6 = k7.c6.e(-1, -2, 87);
+                e6.bottomMargin = xnVar.V.getMeasuredHeight();
+                xnVar.U0.addView(xnVar.v1, e6);
                 xnVar.v1.setTranslationY(-AndroidUtilities.navigationBarHeight);
                 xnVar.v1.n(0.0f, xnVar.V.getEmojiButton().getX() + AndroidUtilities.dp(22.0f));
                 xnVar.v1.v();

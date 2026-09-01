@@ -6,7 +6,7 @@ import j3.n0;
 import java.util.Arrays;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class k implements i {
     public static final double[] q = {23.976023976023978d, 24.0d, 25.0d, 29.97002997002997d, 30.0d, 50.0d, 59.94005994005994d, 60.0d};
@@ -284,7 +284,7 @@ public final class k implements i {
         h0Var.b();
         this.a = h0Var.e;
         h0Var.b();
-        this.b = mVar.c2(h0Var.d, 2);
+        this.b = mVar.i2(h0Var.d, 2);
         d0 d0Var = this.c;
         if (d0Var != null) {
             d0Var.b(mVar, h0Var);

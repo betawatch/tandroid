@@ -1,51 +1,145 @@
 package ph;
 
-import android.animation.ValueAnimator;
+import android.graphics.RectF;
+import android.view.WindowManager;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
+import org.telegram.ui.Components.ki;
+import org.telegram.ui.Components.mi;
+import org.telegram.ui.Components.wg;
+import org.telegram.ui.web.s0;
+import qh.ba;
+import qh.ca;
+import qh.g8;
+import qh.n9;
+import qh.s6;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d b;
+public final class b implements ki {
+    public final /* synthetic */ mi a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ p c;
 
-    public /* synthetic */ b(d dVar, int i10) {
-        this.a = i10;
-        this.b = dVar;
+    public b(p pVar, mi miVar, String str) {
+        this.c = pVar;
+        this.a = miVar;
+        this.b = str;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                d dVar = this.b;
-                dVar.getClass();
-                dVar.M = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-                dVar.invalidate();
-                break;
-            case 1:
-                d dVar2 = this.b;
-                dVar2.getClass();
-                dVar2.S = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                dVar2.invalidate();
-                break;
-            case 2:
-                d dVar3 = this.b;
-                dVar3.getClass();
-                dVar3.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                dVar3.invalidate();
-                break;
-            case 3:
-                d dVar4 = this.b;
-                dVar4.getClass();
-                dVar4.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                dVar4.invalidate();
-                break;
-            default:
-                d dVar5 = this.b;
-                dVar5.getClass();
-                dVar5.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                dVar5.invalidate();
-                break;
+    @Override // org.telegram.ui.Components.ki
+    public final void B0(wg wgVar) {
+        wgVar.run();
+    }
+
+    @Override // org.telegram.ui.Components.ki
+    public final void I1(int i10, boolean z4, boolean z10, int i11, int i12, long j10, boolean z11, boolean z12, long j11) {
+        ba baVar;
+        p pVar = this.c;
+        long j12 = pVar.d;
+        mi miVar = this.a;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = miVar.g0;
+        if (chatAttachAlertPhotoLayout.getSelectedPhotos().isEmpty()) {
+            return;
         }
+        HashMap<Object, Object> selectedPhotos = chatAttachAlertPhotoLayout.getSelectedPhotos();
+        chatAttachAlertPhotoLayout.getSelectedPhotosOrder();
+        if (selectedPhotos.size() != 1) {
+            return;
+        }
+        Object next = selectedPhotos.values().iterator().next();
+        if (next instanceof MediaController.PhotoEntry) {
+            s6 l10 = s6.l((MediaController.PhotoEntry) next);
+            l10.J0 = j12;
+            String str = this.b;
+            l10.K0 = str;
+            l10.A();
+            ca E = ca.E(pVar.a.getParentActivity(), pVar.b);
+            RectF rectF = E.E;
+            WindowManager.LayoutParams layoutParams = E.h;
+            int i13 = E.c;
+            WindowManager windowManager = E.f;
+            if (!E.d) {
+                if (MessagesController.getInstance(i13).isFrozen()) {
+                    org.telegram.ui.c.b(i13);
+                } else {
+                    E.s0 = j12;
+                    E.t0 = str;
+                    E.r0 = false;
+                    E.e = false;
+                    E.y2 = false;
+                    if (windowManager != null && (baVar = E.n) != null && baVar.getParent() == null) {
+                        AndroidUtilities.setPreferredMaxRefreshRate(windowManager, E.n, layoutParams);
+                        windowManager.addView(E.n, layoutParams);
+                        E.g0();
+                    }
+                    E.H1 = l10;
+                    l10.J0 = j12;
+                    l10.K0 = str;
+                    E.L1 = l10.K ? 1 : 0;
+                    E.p0.g = false;
+                    E.G = 0;
+                    rectF.set(0.0f, AndroidUtilities.dp(100.0f), AndroidUtilities.displaySize.x, AndroidUtilities.dp(100.0f) + AndroidUtilities.displaySize.y);
+                    E.D = AndroidUtilities.dp(8.0f);
+                    E.r.c();
+                    n9 n9Var = E.e0;
+                    int i14 = E.G;
+                    n9Var.setBackgroundColor((i14 == 1 || i14 == 0) ? 0 : -14737633);
+                    E.r.setTranslationX(0.0f);
+                    E.r.setTranslationY(0.0f);
+                    E.r.b(0.0f);
+                    E.r.setScaleX(1.0f);
+                    E.r.setScaleY(1.0f);
+                    E.H = 0.0f;
+                    AndroidUtilities.lockOrientation(E.b, 1);
+                    s6 s6Var = E.H1;
+                    if (s6Var != null) {
+                        E.Z0.setText(s6Var.C0);
+                    }
+                    E.K(1, false);
+                    E.l0(-1, false, false);
+                    E.Y0.b(false, false);
+                    E.Y0.b(true, true);
+                    E.g(1.0f, true, new g8(E, 6));
+                    E.e();
+                }
+            }
+            AndroidUtilities.runOnUIThread(new s0(miVar, 6), 400L);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ki
+    public final boolean b2() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ki
+    public final /* synthetic */ boolean h0() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ki
+    public final /* synthetic */ void Q0() {
+    }
+
+    @Override // org.telegram.ui.Components.ki
+    public final /* synthetic */ void y0() {
+    }
+
+    @Override // org.telegram.ui.Components.ki
+    public final /* synthetic */ void Z0(Object obj) {
+    }
+
+    @Override // org.telegram.ui.Components.ki
+    public final /* synthetic */ void o1(TLRPC.User user) {
+    }
+
+    @Override // org.telegram.ui.Components.ki
+    public final /* synthetic */ void f2(ArrayList arrayList, CharSequence charSequence, boolean z4, int i10, int i11, long j10, boolean z10, long j11) {
     }
 }

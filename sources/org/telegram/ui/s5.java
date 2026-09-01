@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class s5 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -34,9 +34,9 @@ public final class s5 extends AnimatorListenerAdapter {
                 }
                 break;
             case 23:
-                jq jqVar = (jq) this.b;
-                jqVar.h.b(jqVar.E ? 1.0f : 0.0f);
-                jqVar.h.invalidateSelf();
+                kq kqVar = (kq) this.b;
+                kqVar.h.b(kqVar.E ? 1.0f : 0.0f);
+                kqVar.h.invalidateSelf();
                 break;
             default:
                 super.onAnimationCancel(animator);
@@ -60,7 +60,7 @@ public final class s5 extends AnimatorListenerAdapter {
                 break;
             case 3:
                 org.telegram.ui.Cells.j jVar = (org.telegram.ui.Cells.j) this.b;
-                ((b01) jVar).W.e.c.r = false;
+                ((d01) jVar).W.e.c.r = false;
                 FrameLayout frameLayout = jVar.G;
                 if (frameLayout.getBackground() == null) {
                     frameLayout.setBackground(jVar.H);
@@ -70,9 +70,9 @@ public final class s5 extends AnimatorListenerAdapter {
             case 4:
                 org.telegram.ui.Cells.w wVar = (org.telegram.ui.Cells.w) this.b;
                 Button button = wVar.n;
-                org.telegram.ui.Components.ei0 ei0Var = wVar.f;
-                if (button != ei0Var) {
-                    ei0Var.setVisibility(4);
+                org.telegram.ui.Components.gi0 gi0Var = wVar.f;
+                if (button != gi0Var) {
+                    gi0Var.setVisibility(4);
                     break;
                 } else {
                     wVar.e.setVisibility(4);
@@ -137,7 +137,7 @@ public final class s5 extends AnimatorListenerAdapter {
                 }
                 break;
             case 15:
-                ((bc) this.b).F.setVisibility(8);
+                ((ac) this.b).F.setVisibility(8);
                 break;
             case 16:
                 bd bdVar = (bd) this.b;
@@ -161,9 +161,9 @@ public final class s5 extends AnimatorListenerAdapter {
                 jkVar.n5.m9 = null;
                 break;
             case 18:
-                org.telegram.ui.Components.k40 k40Var = ((ti) this.b).b.b2;
-                if (k40Var != null) {
-                    k40Var.setVisibility(8);
+                org.telegram.ui.Components.m40 m40Var = ((ti) this.b).b.b2;
+                if (m40Var != null) {
+                    m40Var.setVisibility(8);
                     break;
                 }
                 break;
@@ -185,7 +185,7 @@ public final class s5 extends AnimatorListenerAdapter {
                 xlVar.n.E2[1] = null;
                 break;
             case 20:
-                hh.f fVar = (hh.f) ((dg.y2) this.b).c;
+                ih.f fVar = (ih.f) ((eg.w2) this.b).c;
                 dl dlVar = ((jm) fVar.c).N.Y2;
                 if (dlVar != null) {
                     dlVar.setIsMessageTransition(false);
@@ -209,27 +209,27 @@ public final class s5 extends AnimatorListenerAdapter {
                 t1Var.getTransitionParams().x0 = false;
                 break;
             case 22:
-                tp tpVar = (tp) this.b;
-                tpVar.I = 0.0f;
-                tpVar.H = 1.0f;
-                View view3 = tpVar.X;
+                up upVar = (up) this.b;
+                upVar.I = 0.0f;
+                upVar.H = 1.0f;
+                View view3 = upVar.X;
                 if (view3 != null) {
                     view3.invalidate();
                 }
-                tpVar.Q.invalidate();
-                zi ziVar = tpVar.V;
+                upVar.Q.invalidate();
+                zi ziVar = upVar.V;
                 if (ziVar != null) {
                     ziVar.run();
-                    tpVar.V = null;
+                    upVar.V = null;
                     break;
                 }
                 break;
             case 24:
-                vq vqVar = (vq) this.b;
-                View view4 = vqVar.b;
+                wq wqVar = (wq) this.b;
+                View view4 = wqVar.b;
                 view4.setAlpha(1.0f);
-                f2.v0.x0(view4);
-                ((pr) vqVar.d).c.removeView(view4);
+                f2.w0.x0(view4);
+                ((qr) wqVar.d).c.removeView(view4);
                 break;
             case 25:
                 org.telegram.ui.Components.c6 c6Var = (org.telegram.ui.Components.c6) this.b;
@@ -296,13 +296,13 @@ public final class s5 extends AnimatorListenerAdapter {
                 super.onAnimationStart(animator);
                 break;
             case 3:
-                ((b01) ((org.telegram.ui.Cells.j) this.b)).W.e.c.r = true;
+                ((d01) ((org.telegram.ui.Cells.j) this.b)).W.e.c.r = true;
                 break;
         }
     }
 
-    public s5(vq vqVar, f2.v0 v0Var) {
+    public s5(wq wqVar, f2.w0 w0Var) {
         this.a = 24;
-        this.b = vqVar;
+        this.b = wqVar;
     }
 }

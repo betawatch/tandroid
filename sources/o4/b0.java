@@ -1,14 +1,14 @@
 package o4;
 
 import android.net.Uri;
-import j7.p7;
+import j7.q7;
 import java.io.InterruptedIOException;
 import java.util.Collections;
 import java.util.Map;
 import l7.w0;
 import org.telegram.ui.Components.jb;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class b0 implements g5.j0 {
     public final Uri a;
@@ -60,9 +60,9 @@ public final class b0 implements g5.j0 {
                     mVar = u0Var;
                 } else {
                     mVar = new i(u0Var, i10, this);
-                    k0 n10 = this.x.n(new d0(0, true));
-                    this.v = n10;
-                    n10.b(e0.a0);
+                    k0 z4 = this.x.z(new d0(0, true));
+                    this.v = z4;
+                    z4.b(e0.a0);
                 }
                 this.c.x(mVar, this.a, this.b.a.getResponseHeaders(), j10, j11, this.d);
                 if (this.x.E != null) {
@@ -114,7 +114,7 @@ public final class b0 implements g5.j0 {
                         this.f.a = hVar3 != null ? hVar3.d : -1L;
                     }
                 }
-                p7.a(this.b);
+                q7.a(this.b);
             } catch (Throwable th2) {
                 if (i11 != 1) {
                     r3.h hVar4 = (r3.h) this.c.d;
@@ -122,7 +122,7 @@ public final class b0 implements g5.j0 {
                         this.f.a = hVar4 != null ? hVar4.d : -1L;
                     }
                 }
-                p7.a(this.b);
+                q7.a(this.b);
                 throw th2;
             }
         }
@@ -138,7 +138,7 @@ public final class b0 implements g5.j0 {
     }
 
     @Override // g5.j0
-    public final void r() {
+    public final void l() {
         this.h = true;
     }
 }

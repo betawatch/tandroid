@@ -8,7 +8,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wd implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -32,19 +32,19 @@ public final /* synthetic */ class wd implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new j3.n1((ke) this.c, tL_error, (TwoStepVerificationActivity) this.d, (Activity) this.e, this.b, tLObject, 7));
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new gg.j(this.c, this.d, (Object) tLObject, this.e, this.b, 11));
+                AndroidUtilities.runOnUIThread(new hg.j(this.c, this.d, (Object) tLObject, this.e, this.b, 11));
                 break;
             case 2:
                 AndroidUtilities.runOnUIThread(new j3.n1((ap) this.c, (TLRPC.TL_channels_toggleUsername) this.d, tLObject, (TLRPC.TL_username) this.e, this.b, tL_error, 9));
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new gg.j((org.telegram.ui.Components.ry) this.c, (String) this.d, this.b, (String) this.e, tLObject, 14));
+                AndroidUtilities.runOnUIThread(new hg.j((org.telegram.ui.Components.ty) this.c, (String) this.d, this.b, (String) this.e, tLObject, 14));
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new j3.n1((au) this.c, tLObject, (ph.d) this.d, this.b, (HashSet) this.e, tL_error, 11));
+                AndroidUtilities.runOnUIThread(new j3.n1((bu) this.c, tLObject, (qh.d) this.d, this.b, (HashSet) this.e, tL_error, 11));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new gg.j(this.c, tLObject, this.b, (TLObject) this.d, (String) this.e, 20));
+                AndroidUtilities.runOnUIThread(new hg.j(this.c, tLObject, this.b, (TLObject) this.d, (String) this.e, 20));
                 break;
         }
     }
@@ -57,7 +57,7 @@ public final /* synthetic */ class wd implements RequestDelegate {
         this.e = serializable;
     }
 
-    public /* synthetic */ wd(ph.g1 g1Var, boolean z4, TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults, String str) {
+    public /* synthetic */ wd(qh.g1 g1Var, boolean z4, TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults, String str) {
         this.a = 5;
         this.c = g1Var;
         this.b = z4;

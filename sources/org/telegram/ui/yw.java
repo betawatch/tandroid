@@ -1,40 +1,50 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.ui.Components.FragmentContextView;
+import android.view.View;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class yw extends FragmentContextView {
-    public final /* synthetic */ int K0;
-    public final /* synthetic */ oy L0;
+public final class yw extends org.telegram.ui.Components.m6 {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ py c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yw(oy oyVar, Context context, oy oyVar2, int i10) {
-        super(context, oyVar2, true);
-        this.K0 = i10;
+    public yw(py pyVar, int i10) {
+        super("animationValue", 0);
+        this.b = i10;
         switch (i10) {
             case 1:
-                this.L0 = oyVar;
-                super(context, oyVar2, false);
+                this.c = pyVar;
+                super("viewPagerTranslation", 0);
                 break;
             default:
-                this.L0 = oyVar;
+                this.c = pyVar;
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-    public final void setVisibility(int i10) {
-        switch (this.K0) {
+    @Override // org.telegram.ui.Components.m6
+    public final void b(Object obj, float f10) {
+        switch (this.b) {
             case 0:
-                oy oyVar = this.L0;
-                oyVar.G1.i(oyVar.D1, i10 == 0, true);
+                ((py) obj).C4(f10);
                 break;
             default:
-                oy oyVar2 = this.L0;
-                oyVar2.G1.i(oyVar2.F1, i10 == 0, true);
+                py pyVar = this.c;
+                pyVar.F0 = f10;
+                ((View) obj).setTranslationY(pyVar.G0 + f10);
+                pyVar.F3();
                 break;
+        }
+    }
+
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        switch (this.b) {
+            case 0:
+                return Float.valueOf(this.c.K);
+            default:
+                return Float.valueOf(this.c.F0);
         }
     }
 }

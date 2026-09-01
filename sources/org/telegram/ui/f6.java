@@ -12,7 +12,7 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f6 implements Runnable {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class f6 implements Runnable {
             case 1:
                 b7 b7Var2 = this.b;
                 b7Var2.getFileLoader().getFileDatabase().ensureDatabaseCreated();
-                mh.b bVar = new mh.b(false);
+                nh.b bVar = new nh.b(false);
                 LongSparseArray longSparseArray = new LongSparseArray();
                 b7Var2.o0(FileLoader.checkDirectory(4), 6, longSparseArray, bVar);
                 b7Var2.o0(FileLoader.checkDirectory(0), 0, longSparseArray, bVar);
@@ -62,11 +62,11 @@ public final /* synthetic */ class f6 implements Runnable {
                         }
                     }
                 }
-                Collections.sort(bVar.d, new e5.f(22));
-                Collections.sort(bVar.e, new e5.f(22));
-                Collections.sort(bVar.f, new e5.f(22));
-                Collections.sort(bVar.g, new e5.f(22));
-                Collections.sort(bVar.h, new e5.f(22));
+                Collections.sort(bVar.d, new e5.f(24));
+                Collections.sort(bVar.e, new e5.f(24));
+                Collections.sort(bVar.f, new e5.f(24));
+                Collections.sort(bVar.g, new e5.f(24));
+                Collections.sort(bVar.h, new e5.f(24));
                 b7Var2.getMessagesStorage().getStorageQueue().postRunnable(new g6(b7Var2, arrayList2, arrayList3, arrayList, bVar, 0));
                 break;
             default:
@@ -127,8 +127,8 @@ public final /* synthetic */ class f6 implements Runnable {
                                                             long availableBlocksLong = statFs.getAvailableBlocksLong();
                                                             b7Var3.F = statFs.getBlockCountLong() * blockSizeLong;
                                                             b7Var3.G = availableBlocksLong * blockSizeLong;
-                                                        } catch (Exception e) {
-                                                            FileLog.e(e);
+                                                        } catch (Exception e6) {
+                                                            FileLog.e(e6);
                                                         }
                                                         AndroidUtilities.runOnUIThread(new f6(b7Var3, 0));
                                                         b7Var3.getFileLoader().getFileDatabase().getQueue().postRunnable(new f6(b7Var3, 1));

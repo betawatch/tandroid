@@ -13,7 +13,6 @@ import com.google.android.gms.internal.play_billing.i3;
 import com.google.android.gms.internal.play_billing.m3;
 import com.google.android.gms.internal.play_billing.p3;
 import com.google.android.gms.internal.play_billing.u;
-import com.google.firebase.messaging.r;
 import f7.b;
 import hf.d;
 import hf.e;
@@ -26,12 +25,12 @@ import n7.qa;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
+import p2.x;
 import p2.y;
-import p2.z;
 import uc.c;
 import uc.h;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a implements ServiceConnection {
     public final /* synthetic */ int a;
@@ -62,7 +61,7 @@ public final class a implements ServiceConnection {
                         cVar = (e) queryLocalInterface;
                     }
                 }
-                b bVar2 = new b(8, cVar, componentName);
+                b bVar2 = new b(7, cVar, componentName);
                 if (((af.e) ((WeakReference) this.b).get()) != null) {
                     af.g.b = bVar2;
                     if (MessagesController.getInstance(UserConfig.selectedAccount).isWebBrowserUseCustomTabs() && (bVar = af.g.b) != null) {
@@ -71,8 +70,8 @@ public final class a implements ServiceConnection {
                             break;
                         } catch (RemoteException unused) {
                             return;
-                        } catch (Exception e) {
-                            FileLog.e(e);
+                        } catch (Exception e6) {
+                            FileLog.e(e6);
                             return;
                         }
                     }
@@ -80,14 +79,14 @@ public final class a implements ServiceConnection {
                 break;
             case 1:
                 StringBuilder sb = new StringBuilder("Connected to SessionLifecycleService. Queue size ");
-                r rVar = (r) this.b;
-                LinkedBlockingDeque linkedBlockingDeque = (LinkedBlockingDeque) rVar.d;
+                sf.e eVar = (sf.e) this.b;
+                LinkedBlockingDeque linkedBlockingDeque = (LinkedBlockingDeque) eVar.d;
                 sb.append(linkedBlockingDeque.size());
                 Log.d("SessionLifecycleClient", sb.toString());
-                rVar.c = new Messenger(iBinder);
+                eVar.c = new Messenger(iBinder);
                 ArrayList arrayList = new ArrayList();
                 linkedBlockingDeque.drainTo(arrayList);
-                e0.q(e0.b((h) rVar.b), new k1.c(rVar, arrayList, cVar, 5));
+                e0.q(e0.b((h) eVar.b), new k1.c(eVar, arrayList, cVar, 5));
                 break;
             case 2:
                 o8.c cVar3 = (o8.c) this.b;
@@ -96,18 +95,18 @@ public final class a implements ServiceConnection {
                 break;
             default:
                 u.g("BillingClientTesting", "Billing Override Service connected.");
-                y yVar = (y) this.b;
+                x xVar = (x) this.b;
                 int i11 = f.b;
                 if (iBinder != null) {
                     IInterface queryLocalInterface2 = iBinder.queryLocalInterface("com.google.android.apps.play.billingtestcompanion.aidl.IBillingOverrideService");
                     gVar = queryLocalInterface2 instanceof g ? (g) queryLocalInterface2 : new com.google.android.gms.internal.play_billing.e(iBinder, "com.google.android.apps.play.billingtestcompanion.aidl.IBillingOverrideService", 2);
                 }
-                yVar.E = gVar;
-                yVar.D = 2;
-                int i12 = z.a;
-                i3 c3 = z.c(26, m3.b);
+                xVar.E = gVar;
+                xVar.D = 2;
+                int i12 = y.a;
+                i3 c3 = y.c(26, m3.b);
                 Objects.requireNonNull(c3, "ApiSuccess should not be null");
-                qa qaVar = yVar.h;
+                qa qaVar = xVar.h;
                 qaVar.getClass();
                 try {
                     qaVar.w1(c3, (p3) qaVar.b);
@@ -130,9 +129,9 @@ public final class a implements ServiceConnection {
                 break;
             case 1:
                 Log.d("SessionLifecycleClient", "Disconnected from SessionLifecycleService");
-                r rVar = (r) this.b;
-                rVar.c = null;
-                rVar.getClass();
+                sf.e eVar = (sf.e) this.b;
+                eVar.c = null;
+                eVar.getClass();
                 break;
             case 2:
                 o8.c cVar = (o8.c) this.b;
@@ -141,9 +140,9 @@ public final class a implements ServiceConnection {
                 break;
             default:
                 u.h("BillingClientTesting", "Billing Override Service disconnected.");
-                y yVar = (y) this.b;
-                yVar.E = null;
-                yVar.D = 0;
+                x xVar = (x) this.b;
+                xVar.E = null;
+                xVar.D = 0;
                 break;
         }
     }

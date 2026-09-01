@@ -1,26 +1,9 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class hi extends c20 {
-    public final li G;
-
-    public hi(Context context, org.telegram.ui.ActionBar.f6 f6Var, li liVar) {
-        super(context, f6Var);
-        this.G = liVar;
-    }
-
-    @Override // org.telegram.ui.Components.c20
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        this.G.t1(this.r, true);
-        return super.onInterceptTouchEvent(motionEvent);
-    }
+public abstract class hi extends FrameLayout {
+    public ch.b a;
 }

@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.graphics.Canvas;
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ah implements og.a {
+public final /* synthetic */ class ah implements pg.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -14,25 +14,25 @@ public final /* synthetic */ class ah implements og.a {
         this.b = obj;
     }
 
-    @Override // og.a
+    @Override // pg.a
     public final void e(Canvas canvas, RectF rectF) {
         Canvas canvas2;
         RectF rectF2;
-        di diVar;
-        kh.o2 o2Var;
+        ei eiVar;
+        lh.n2 n2Var;
         switch (this.a) {
             case 0:
-                li liVar = (li) this.b;
+                mi miVar = (mi) this.b;
                 int i10 = 0;
                 while (i10 < 2) {
-                    di diVar2 = i10 == 0 ? liVar.v0 : liVar.w0;
-                    if (diVar2 == null || diVar2.c == null || diVar2.getVisibility() != 0) {
+                    ei eiVar2 = i10 == 0 ? miVar.v0 : miVar.w0;
+                    if (eiVar2 == null || eiVar2.c == null || eiVar2.getVisibility() != 0) {
                         canvas2 = canvas;
                         rectF2 = rectF;
                     } else {
                         canvas2 = canvas;
                         rectF2 = rectF;
-                        tg.c.a(diVar2.c, canvas2, rectF2, diVar2.d, liVar.getContainerView(), (int) (((i10 == 0 && (diVar = liVar.w0) != null && diVar.getVisibility() == 0) ? (1.0f - liVar.w0.getAlpha()) * diVar2.getAlpha() : diVar2.getAlpha()) * 255.0f));
+                        ug.c.a(eiVar2.c, canvas2, rectF2, eiVar2.d, miVar.getContainerView(), (int) (((i10 == 0 && (eiVar = miVar.w0) != null && eiVar.getVisibility() == 0) ? (1.0f - miVar.w0.getAlpha()) * eiVar2.getAlpha() : eiVar2.getAlpha()) * 255.0f));
                     }
                     i10++;
                     canvas = canvas2;
@@ -40,25 +40,25 @@ public final /* synthetic */ class ah implements og.a {
                 }
                 break;
             case 1:
-                og.a[] aVarArr = (og.a[]) this.b;
+                pg.a[] aVarArr = (pg.a[]) this.b;
                 for (int i11 = 0; i11 < 3; i11++) {
-                    og.a aVar = aVarArr[i11];
+                    pg.a aVar = aVarArr[i11];
                     if (aVar != null) {
                         aVar.e(canvas, rectF);
                     }
                 }
                 break;
             default:
-                yu0 yu0Var = (yu0) this.b;
-                for (qt0 qt0Var : yu0Var.h0) {
-                    ng.k kVar = qt0Var.n;
+                zu0 zu0Var = (zu0) this.b;
+                for (rt0 rt0Var : zu0Var.h0) {
+                    og.k kVar = rt0Var.n;
                     if (kVar != null) {
                         kVar.e(canvas, rectF);
                     }
                 }
-                or0 or0Var = yu0Var.S;
-                if (or0Var != null && (o2Var = or0Var.O) != null) {
-                    o2Var.e(canvas, rectF);
+                pr0 pr0Var = zu0Var.S;
+                if (pr0Var != null && (n2Var = pr0Var.O) != null) {
+                    n2Var.e(canvas, rectF);
                     break;
                 }
                 break;
@@ -66,7 +66,7 @@ public final /* synthetic */ class ah implements og.a {
     }
 
     /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // og.a
+    @Override // pg.a
     public final void g(g.x xVar, RectF rectF) {
         switch (this.a) {
         }

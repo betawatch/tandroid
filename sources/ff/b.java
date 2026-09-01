@@ -2,27 +2,27 @@ package ff;
 
 import android.view.View;
 import android.view.ViewTreeObserver;
-import com.google.firebase.messaging.r;
+import com.google.firebase.messaging.s;
 import java.util.ArrayList;
-import kh.l3;
-import kh.u1;
-import kh.u4;
-import kh.w4;
-import kh.x4;
-import kh.z4;
-import l.c0;
-import l.e;
-import lh.p4;
-import lh.r4;
-import nh.q1;
-import org.telegram.ui.Components.am0;
+import l.d0;
+import l.f;
+import lh.l3;
+import lh.u1;
+import lh.u4;
+import lh.w4;
+import lh.x4;
+import lh.z4;
+import mh.p4;
+import mh.r4;
+import oh.q1;
 import org.telegram.ui.Components.ba;
-import org.telegram.ui.Components.ho0;
+import org.telegram.ui.Components.bm0;
 import org.telegram.ui.Components.ic;
+import org.telegram.ui.Components.io0;
 import org.telegram.ui.Components.j5;
-import org.telegram.ui.Components.pq;
+import org.telegram.ui.Components.rq;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class b implements View.OnAttachStateChangeListener {
     public final /* synthetic */ int a;
@@ -37,16 +37,19 @@ public final class b implements View.OnAttachStateChangeListener {
     public final void onViewAttachedToWindow(View view) {
         switch (this.a) {
             case 0:
-                r rVar = (r) this.b;
-                if (view == ((View) rVar.c)) {
-                    rVar.U(view.getViewTreeObserver());
+                s sVar = (s) this.b;
+                if (view == ((View) sVar.b)) {
+                    sVar.p(view.getViewTreeObserver());
                     break;
                 }
                 break;
             case 1:
+            case 2:
+                break;
+            case 3:
                 ((u1) this.b).l.a();
                 break;
-            case 2:
+            case 4:
                 w4 w4Var = (w4) this.b;
                 u4 u4Var = w4Var.K;
                 if (u4Var != null) {
@@ -54,16 +57,13 @@ public final class b implements View.OnAttachStateChangeListener {
                     break;
                 }
                 break;
-            case 3:
+            case 5:
                 z4 z4Var = (z4) this.b;
                 x4 x4Var = z4Var.K;
                 if (x4Var != null) {
                     x4Var.a(z4Var.c);
                     break;
                 }
-                break;
-            case 4:
-            case 5:
                 break;
             case 6:
                 ArrayList arrayList = ((r4) this.b).e;
@@ -98,15 +98,15 @@ public final class b implements View.OnAttachStateChangeListener {
             case 10:
                 break;
             case 11:
-                ((pq) this.b).a();
+                ((rq) this.b).a();
                 break;
             case 12:
-                am0 am0Var = (am0) this.b;
-                j5 j5Var = am0Var.t;
+                bm0 bm0Var = (bm0) this.b;
+                j5 j5Var = bm0Var.t;
                 if (j5Var != null) {
                     j5Var.a();
                 }
-                j5 j5Var2 = am0Var.u;
+                j5 j5Var2 = bm0Var.u;
                 if (j5Var2 != null) {
                     j5Var2.a();
                     break;
@@ -124,16 +124,38 @@ public final class b implements View.OnAttachStateChangeListener {
     public final void onViewDetachedFromWindow(View view) {
         switch (this.a) {
             case 0:
-                r rVar = (r) this.b;
-                if (view == ((View) rVar.c)) {
-                    rVar.U(null);
+                s sVar = (s) this.b;
+                if (view == ((View) sVar.b)) {
+                    sVar.p(null);
                     break;
                 }
                 break;
             case 1:
-                ((u1) this.b).l.b();
+                f fVar = (f) this.b;
+                ViewTreeObserver viewTreeObserver = fVar.K;
+                if (viewTreeObserver != null) {
+                    if (!viewTreeObserver.isAlive()) {
+                        fVar.K = view.getViewTreeObserver();
+                    }
+                    fVar.K.removeGlobalOnLayoutListener(fVar.r);
+                }
+                view.removeOnAttachStateChangeListener(this);
                 break;
             case 2:
+                d0 d0Var = (d0) this.b;
+                ViewTreeObserver viewTreeObserver2 = d0Var.B;
+                if (viewTreeObserver2 != null) {
+                    if (!viewTreeObserver2.isAlive()) {
+                        d0Var.B = view.getViewTreeObserver();
+                    }
+                    d0Var.B.removeGlobalOnLayoutListener(d0Var.r);
+                }
+                view.removeOnAttachStateChangeListener(this);
+                break;
+            case 3:
+                ((u1) this.b).l.b();
+                break;
+            case 4:
                 w4 w4Var = (w4) this.b;
                 u4 u4Var = w4Var.K;
                 if (u4Var != null) {
@@ -141,35 +163,13 @@ public final class b implements View.OnAttachStateChangeListener {
                     break;
                 }
                 break;
-            case 3:
+            case 5:
                 z4 z4Var = (z4) this.b;
                 x4 x4Var = z4Var.K;
                 if (x4Var != null) {
                     x4Var.o(z4Var.c);
                     break;
                 }
-                break;
-            case 4:
-                e eVar = (e) this.b;
-                ViewTreeObserver viewTreeObserver = eVar.K;
-                if (viewTreeObserver != null) {
-                    if (!viewTreeObserver.isAlive()) {
-                        eVar.K = view.getViewTreeObserver();
-                    }
-                    eVar.K.removeGlobalOnLayoutListener(eVar.r);
-                }
-                view.removeOnAttachStateChangeListener(this);
-                break;
-            case 5:
-                c0 c0Var = (c0) this.b;
-                ViewTreeObserver viewTreeObserver2 = c0Var.B;
-                if (viewTreeObserver2 != null) {
-                    if (!viewTreeObserver2.isAlive()) {
-                        c0Var.B = view.getViewTreeObserver();
-                    }
-                    c0Var.B.removeGlobalOnLayoutListener(c0Var.r);
-                }
-                view.removeOnAttachStateChangeListener(this);
                 break;
             case 6:
                 ArrayList arrayList = ((r4) this.b).e;
@@ -196,22 +196,22 @@ public final class b implements View.OnAttachStateChangeListener {
                 icVar.c(0L, false);
                 break;
             case 11:
-                ((pq) this.b).b();
+                ((rq) this.b).b();
                 break;
             case 12:
-                am0 am0Var = (am0) this.b;
-                j5 j5Var = am0Var.t;
+                bm0 bm0Var = (bm0) this.b;
+                j5 j5Var = bm0Var.t;
                 if (j5Var != null) {
                     j5Var.b();
                 }
-                j5 j5Var2 = am0Var.u;
+                j5 j5Var2 = bm0Var.u;
                 if (j5Var2 != null) {
                     j5Var2.a();
                     break;
                 }
                 break;
             case 13:
-                view.removeCallbacks((Runnable) ((ho0) this.b).a.remove(view));
+                view.removeCallbacks((Runnable) ((io0) this.b).a.remove(view));
                 view.removeOnAttachStateChangeListener(this);
                 break;
             default:

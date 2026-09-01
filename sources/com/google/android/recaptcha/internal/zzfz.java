@@ -1,7 +1,7 @@
 package com.google.android.recaptcha.internal;
 
 import dd.p;
-import k7.p7;
+import k7.q7;
 import ld.c0;
 import ld.s;
 import ld.t;
@@ -9,7 +9,7 @@ import uc.c;
 import vc.a;
 import wc.i;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 final class zzfz extends i implements p {
     int zza;
@@ -42,17 +42,17 @@ final class zzfz extends i implements p {
         zzcg zzcgVar;
         zzfz zzfzVar;
         zzdr zzdrVar;
-        zzcg e;
+        zzcg e6;
         zzcx zzcxVar;
         zzfw zzfwVar;
         zzfy zzfyVar;
         a aVar = a.a;
         if (this.zza != 0) {
             try {
-                p7.b(obj);
+                q7.b(obj);
                 zzfzVar = this;
-            } catch (zzcg e6) {
-                zzcgVar = e6;
+            } catch (zzcg e10) {
+                zzcgVar = e10;
                 zzfzVar = this;
                 zzgb zzgbVar = zzfzVar.zzb;
                 zzdrVar = zzdv.zzd;
@@ -61,7 +61,7 @@ final class zzfz extends i implements p {
                 return sc.i.a;
             }
         } else {
-            p7.b(obj);
+            q7.b(obj);
             try {
                 zzcxVar = zzcx.zza;
                 zzgb zzgbVar2 = this.zzb;
@@ -69,10 +69,10 @@ final class zzfz extends i implements p {
                 zzfyVar = new zzfy(this.zzd, zzgbVar2, this.zze, this.zzc, null);
                 this.zza = 1;
                 zzfzVar = this;
-            } catch (zzcg e10) {
-                e = e10;
+            } catch (zzcg e11) {
+                e6 = e11;
                 zzfzVar = this;
-                zzcgVar = e;
+                zzcgVar = e6;
                 zzgb zzgbVar3 = zzfzVar.zzb;
                 zzdrVar = zzdv.zzd;
                 zzgbVar3.zzf = zzdrVar;
@@ -84,9 +84,9 @@ final class zzfz extends i implements p {
                 if (obj == aVar) {
                     return aVar;
                 }
-            } catch (zzcg e11) {
-                e = e11;
-                zzcgVar = e;
+            } catch (zzcg e12) {
+                e6 = e12;
+                zzcgVar = e6;
                 zzgb zzgbVar32 = zzfzVar.zzb;
                 zzdrVar = zzdv.zzd;
                 zzgbVar32.zzf = zzdrVar;

@@ -2,10 +2,10 @@ package vb;
 
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
-import p2.w;
+import p2.v;
 import pb.h;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final int[] a = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 36, -1, -1, -1, 37, 38, -1, -1, -1, -1, 39, 40, -1, 41, 42, 43, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 44, -1, -1, -1, -1, -1, -1, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, -1, -1, -1, -1, -1};
@@ -124,10 +124,10 @@ public abstract class c {
 
     public static boolean c(int i10, tb.e eVar, tb.b bVar) {
         int i11 = eVar.d;
-        w wVar = eVar.c[bVar.ordinal()];
-        int i12 = wVar.b;
+        v vVar = eVar.c[bVar.ordinal()];
+        int i12 = vVar.b;
         int i13 = 0;
-        for (c5.e eVar2 : (c5.e[]) wVar.c) {
+        for (c5.e eVar2 : (c5.e[]) vVar.c) {
             i13 += eVar2.a;
         }
         return i11 - (i13 * i12) >= (i10 + 7) / 8;

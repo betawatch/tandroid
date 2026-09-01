@@ -1,40 +1,18 @@
 package lh;
 
 import android.view.View;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes4.dex */
-public final class p4 extends m4 {
-    public final boolean c;
-    public final ImageReceiver d;
-
-    public p4(View view, TL_stars.starGiftAttributeModel stargiftattributemodel) {
-        this.a = stargiftattributemodel.name;
-        this.b = stargiftattributemodel.getRarityPermille();
-        this.c = true;
-        ImageReceiver imageReceiver = new ImageReceiver(view);
-        this.d = imageReceiver;
-        ja.Z0(imageReceiver, stargiftattributemodel.document, 160);
-    }
-
-    @Override // lh.m4
-    public final void a() {
-        if (this.c) {
-            this.d.onDetachedFromWindow();
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes.dex */
+public final class p4 extends org.telegram.ui.ActionBar.g1 {
+    @Override // org.telegram.ui.ActionBar.g1, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        if (View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE) {
+            size = AndroidUtilities.dp(250.0f);
         }
-    }
-
-    @Override // lh.m4
-    public final boolean b() {
-        return this.d.getLottieAnimation() != null;
-    }
-
-    public p4(org.telegram.ui.Components.p9 p9Var, TL_stars.starGiftAttributeModel stargiftattributemodel) {
-        this.a = stargiftattributemodel.name;
-        this.b = stargiftattributemodel.getRarityPermille();
-        this.c = false;
-        this.d = p9Var.getImageReceiver();
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i11);
     }
 }

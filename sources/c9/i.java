@@ -3,8 +3,8 @@ package c9;
 import android.util.Log;
 import com.google.firebase.components.ComponentRegistrar;
 import j$.util.concurrent.ConcurrentHashMap;
-import j7.i5;
 import j7.j5;
+import j7.k5;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -17,7 +17,7 @@ import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class i implements c {
     public static final g n = new g(0);
@@ -65,9 +65,9 @@ public final class i implements c {
                         arrayList3.addAll(this.h.b(componentRegistrar));
                         it.remove();
                     }
-                } catch (o e) {
+                } catch (o e6) {
                     it.remove();
-                    Log.w("ComponentDiscovery", "Invalid component registrar.", e);
+                    Log.w("ComponentDiscovery", "Invalid component registrar.", e6);
                 }
             }
             Iterator it2 = arrayList3.iterator();
@@ -90,11 +90,11 @@ public final class i implements c {
                 }
             }
             if (this.a.isEmpty()) {
-                i5.a(arrayList3);
+                j5.a(arrayList3);
             } else {
                 ArrayList arrayList6 = new ArrayList(this.a.keySet());
                 arrayList6.addAll(arrayList3);
-                i5.a(arrayList6);
+                j5.a(arrayList6);
             }
             int size3 = arrayList3.size();
             int i14 = 0;
@@ -104,8 +104,8 @@ public final class i implements c {
                 b bVar2 = (b) obj4;
                 this.a.put(bVar2, new p(new h(i10, this, bVar2)));
             }
-            arrayList5.addAll(i(arrayList3));
-            arrayList5.addAll(j());
+            arrayList5.addAll(j(arrayList3));
+            arrayList5.addAll(k());
             h();
         }
         int size4 = arrayList5.size();
@@ -116,7 +116,7 @@ public final class i implements c {
         }
         Boolean bool = (Boolean) this.f.get();
         if (bool != null) {
-            b(this.a, bool.booleanValue());
+            d(this.a, bool.booleanValue());
         }
     }
 
@@ -125,7 +125,18 @@ public final class i implements c {
         return f(t.a(cls));
     }
 
-    public final void b(HashMap hashMap, boolean z4) {
+    @Override // c9.c
+    public final synchronized ba.b b(t tVar) {
+        k5.a(tVar, "Null interface requested.");
+        return (ba.b) this.b.get(tVar);
+    }
+
+    @Override // c9.c
+    public final ba.b c(Class cls) {
+        return b(t.a(cls));
+    }
+
+    public final void d(HashMap hashMap, boolean z4) {
         ArrayDeque arrayDeque;
         for (Map.Entry entry : hashMap.entrySet()) {
             b bVar = (b) entry.getKey();
@@ -158,29 +169,18 @@ public final class i implements c {
     }
 
     @Override // c9.c
-    public final synchronized ba.b c(t tVar) {
-        j5.a(tVar, "Null interface requested.");
-        return (ba.b) this.b.get(tVar);
-    }
-
-    @Override // c9.c
-    public final ba.b d(Class cls) {
-        return c(t.a(cls));
-    }
-
-    @Override // c9.c
     public final r e(t tVar) {
-        ba.b c3 = c(tVar);
-        return c3 == null ? new r(r.c, r.d) : c3 instanceof r ? (r) c3 : new r(null, c3);
+        ba.b b10 = b(tVar);
+        return b10 == null ? new r(r.c, r.d) : b10 instanceof r ? (r) b10 : new r(null, b10);
     }
 
     @Override // c9.c
     public final Object f(t tVar) {
-        ba.b c3 = c(tVar);
-        if (c3 == null) {
+        ba.b b10 = b(tVar);
+        if (b10 == null) {
             return null;
         }
-        return c3.get();
+        return b10.get();
     }
 
     public final void g(boolean z4) {
@@ -195,7 +195,7 @@ public final class i implements c {
         synchronized (this) {
             hashMap = new HashMap(this.a);
         }
-        b(hashMap, z4);
+        d(hashMap, z4);
     }
 
     public final void h() {
@@ -227,7 +227,19 @@ public final class i implements c {
         }
     }
 
-    public final ArrayList i(ArrayList arrayList) {
+    @Override // c9.c
+    public final Set i(t tVar) {
+        ba.b bVar;
+        synchronized (this) {
+            bVar = (q) this.c.get(tVar);
+            if (bVar == null) {
+                bVar = n;
+            }
+        }
+        return (Set) bVar.get();
+    }
+
+    public final ArrayList j(ArrayList arrayList) {
         ArrayList arrayList2 = new ArrayList();
         int size = arrayList.size();
         int i10 = 0;
@@ -250,7 +262,7 @@ public final class i implements c {
         return arrayList2;
     }
 
-    public final ArrayList j() {
+    public final ArrayList k() {
         HashMap hashMap = this.c;
         ArrayList arrayList = new ArrayList();
         HashMap hashMap2 = new HashMap();
@@ -284,17 +296,5 @@ public final class i implements c {
             }
         }
         return arrayList;
-    }
-
-    @Override // c9.c
-    public final Set k(t tVar) {
-        ba.b bVar;
-        synchronized (this) {
-            bVar = (q) this.c.get(tVar);
-            if (bVar == null) {
-                bVar = n;
-            }
-        }
-        return (Set) bVar.get();
     }
 }

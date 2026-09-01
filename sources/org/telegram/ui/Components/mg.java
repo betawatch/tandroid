@@ -12,10 +12,10 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class mg extends FrameLayout {
-    public final org.telegram.ui.ActionBar.k5 a;
+    public final org.telegram.ui.ActionBar.l5 a;
     public final RectF b;
     public final Paint c;
     public final Drawable d;
@@ -26,31 +26,31 @@ public final class mg extends FrameLayout {
         this.b = new RectF();
         this.c = new Paint(1);
         this.e = false;
-        org.telegram.ui.ActionBar.k5 k5Var = new org.telegram.ui.ActionBar.k5(activity);
-        this.a = k5Var;
-        addView(k5Var, k7.b6.c(-1.0f, -1));
+        org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(activity);
+        this.a = l5Var;
+        addView(l5Var, k7.c6.c(-1.0f, -1));
         setWillNotDraw(false);
         Drawable drawable = activity.getDrawable(R.drawable.msg_mini_close_tooltip);
         this.d = drawable;
         drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
         setClipToPadding(false);
         setClipChildren(false);
-        k7.d6.a(this);
+        k7.e6.a(this);
     }
 
     @Override // android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j10) {
-        if (!(view instanceof org.telegram.ui.ActionBar.k5) || !this.e) {
+        if (!(view instanceof org.telegram.ui.ActionBar.l5) || !this.e) {
             return super.drawChild(canvas, view, j10);
         }
-        org.telegram.ui.ActionBar.k5 k5Var = (org.telegram.ui.ActionBar.k5) view;
+        org.telegram.ui.ActionBar.l5 l5Var = (org.telegram.ui.ActionBar.l5) view;
         canvas.save();
         canvas.scale(0.8f, 0.8f);
         canvas.translate(-AndroidUtilities.dp(12.0f), AndroidUtilities.dp(6.0f));
-        int color = k5Var.getTextPaint().getColor();
-        k5Var.getTextPaint().setColor(-1);
+        int color = l5Var.getTextPaint().getColor();
+        l5Var.getTextPaint().setColor(-1);
         boolean drawChild = super.drawChild(canvas, view, j10);
-        k5Var.getTextPaint().setColor(color);
+        l5Var.getTextPaint().setColor(color);
         canvas.restore();
         return drawChild;
     }

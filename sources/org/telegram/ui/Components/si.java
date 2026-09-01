@@ -1,35 +1,56 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class si extends g61 {
-    public final /* synthetic */ wi c3;
+public final class si implements TextWatcher {
+    public final /* synthetic */ xi a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public si(wi wiVar, Context context, int i10, d dVar, pi piVar, pi piVar2, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, i10, 0, false, dVar, piVar, piVar2, f6Var);
-        this.c3 = wiVar;
+    public si(xi xiVar) {
+        this.a = xiVar;
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final void C1() {
-        wi wiVar = this.c3;
-        wiVar.b.X1(wiVar, 0);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        xi xiVar = this.a;
+        ni niVar = xiVar.d0;
+        TextUtils.isEmpty(xiVar.B);
+        xiVar.B = editable.toString().trim();
+        ni niVar2 = xiVar.V;
+        AndroidUtilities.cancelRunOnUIThread(niVar2);
+        if (!TextUtils.isEmpty(xiVar.B)) {
+            String str = xiVar.B;
+            xiVar.U = str != null && str.length() >= 0;
+            if (!TextUtils.equals(xiVar.T, xiVar.B)) {
+                xiVar.J.clear();
+                xiVar.W = 0;
+                xiVar.a0 = false;
+            }
+            AndroidUtilities.runOnUIThread(niVar2, 1500L);
+        }
+        AndroidUtilities.cancelRunOnUIThread(niVar);
+        if (!TextUtils.isEmpty(xiVar.B)) {
+            String str2 = xiVar.B;
+            xiVar.k0 = (str2 == null || str2.length() < 3 || TextUtils.isEmpty(MessagesController.getInstance(xiVar.b.G1).config.musicSearchUsername.get())) ? false : true;
+            if (!TextUtils.equals(xiVar.c0, xiVar.B)) {
+                xiVar.K.clear();
+                xiVar.e0 = false;
+            }
+            AndroidUtilities.runOnUIThread(niVar, 1500L);
+        }
+        xiVar.P();
     }
 
-    @Override // org.telegram.ui.Components.sl0
-    public final boolean E0(float f10) {
-        li liVar = this.c3.b;
-        return f10 >= ((float) ((AndroidUtilities.dp(30.0f) + liVar.Y1[0]) + (!liVar.d0 ? AndroidUtilities.statusBarHeight : 0)));
+    @Override // android.text.TextWatcher
+    public final /* synthetic */ void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 
-    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
-        super.onLayout(z4, i10, i11, i12, i13);
-        wi wiVar = this.c3;
-        wiVar.b.X1(wiVar, 0);
+    @Override // android.text.TextWatcher
+    public final /* synthetic */ void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

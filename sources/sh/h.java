@@ -1,32 +1,41 @@
 package sh;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.ui.xn;
+import android.content.Context;
+import android.view.View;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.i51;
+import org.telegram.ui.Components.i61;
+import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.x51;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n b;
-    public final /* synthetic */ long c;
-
-    public /* synthetic */ h(n nVar, long j10, int i10) {
-        this.a = i10;
-        this.b = nVar;
-        this.c = j10;
+public final class h extends i51 {
+    static {
+        i51.setup(new h());
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                MessagesController.getInstance(r0.currentAccount).unlinkCommunity(this.c, r0.b, new j(this.b, 0));
-                break;
-            default:
-                n nVar = this.b;
-                nVar.getClass();
-                nVar.presentFragment(xn.R9(this.c));
-                break;
-        }
+    public static j51 a(int i10, String str, String str2) {
+        j51 J = j51.J(h.class);
+        J.k = i10;
+        J.l = str;
+        J.m = str2;
+        return J;
+    }
+
+    @Override // org.telegram.ui.Components.i51
+    public final void bindView(View view, j51 j51Var, boolean z4, x51 x51Var, i61 i61Var) {
+        ((i) view).a(j51Var.l, j51Var.m, j51Var.k);
+    }
+
+    @Override // org.telegram.ui.Components.i51
+    public final View createView(Context context, tl0 tl0Var, int i10, int i11, g6 g6Var) {
+        return new i(context, g6Var, false);
+    }
+
+    @Override // org.telegram.ui.Components.i51
+    public final boolean isClickable() {
+        return false;
     }
 }

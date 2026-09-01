@@ -8,7 +8,7 @@ import android.util.Log;
 import com.google.android.gms.cast.CastDevice;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class i extends c2.w {
     public static final u5.b b = new u5.b("MediaRouterCallback", null);
@@ -27,10 +27,10 @@ public final class i extends c2.w {
             Bundle bundle = a0Var.s;
             Parcel M0 = hVar.M0();
             M0.writeString(str);
-            t.c(M0, bundle);
+            s.c(M0, bundle);
             hVar.Q0(M0, 1);
-        } catch (RemoteException e) {
-            b.a(e, "Unable to call %s on %s.", "onRouteAdded", h.class.getSimpleName());
+        } catch (RemoteException e6) {
+            b.a(e6, "Unable to call %s on %s.", "onRouteAdded", h.class.getSimpleName());
         }
     }
 
@@ -42,10 +42,10 @@ public final class i extends c2.w {
             Bundle bundle = a0Var.s;
             Parcel M0 = hVar.M0();
             M0.writeString(str);
-            t.c(M0, bundle);
+            s.c(M0, bundle);
             hVar.Q0(M0, 2);
-        } catch (RemoteException e) {
-            b.a(e, "Unable to call %s on %s.", "onRouteChanged", h.class.getSimpleName());
+        } catch (RemoteException e6) {
+            b.a(e6, "Unable to call %s on %s.", "onRouteChanged", h.class.getSimpleName());
         }
     }
 
@@ -57,19 +57,19 @@ public final class i extends c2.w {
             Bundle bundle = a0Var.s;
             Parcel M0 = hVar.M0();
             M0.writeString(str);
-            t.c(M0, bundle);
+            s.c(M0, bundle);
             hVar.Q0(M0, 3);
-        } catch (RemoteException e) {
-            b.a(e, "Unable to call %s on %s.", "onRouteRemoved", h.class.getSimpleName());
+        } catch (RemoteException e6) {
+            b.a(e6, "Unable to call %s on %s.", "onRouteRemoved", h.class.getSimpleName());
         }
     }
 
     @Override // c2.w
     public final void h(c2.c0 c0Var, c2.a0 a0Var, int i10) {
         char c3;
-        CastDevice e;
-        String str;
         CastDevice e6;
+        String str;
+        CastDevice e10;
         h hVar = this.a;
         Integer valueOf = Integer.valueOf(i10);
         String str2 = a0Var.c;
@@ -80,8 +80,8 @@ public final class i extends c2.w {
         }
         if (str2 != null) {
             try {
-                if (str2.endsWith("-groupRoute") && (e = CastDevice.e(a0Var.s)) != null) {
-                    String str3 = e.a;
+                if (str2.endsWith("-groupRoute") && (e6 = CastDevice.e(a0Var.s)) != null) {
+                    String str3 = e6.a;
                     if (str3.startsWith("__cast_nearby__")) {
                         str3 = str3.substring(16);
                     }
@@ -96,8 +96,8 @@ public final class i extends c2.w {
                         c3 = 1;
                         try {
                             str = a0Var2.c;
-                            if (str != null && !str.endsWith("-groupRoute") && (e6 = CastDevice.e(a0Var2.s)) != null) {
-                                String str4 = e6.a;
+                            if (str != null && !str.endsWith("-groupRoute") && (e10 = CastDevice.e(a0Var2.s)) != null) {
+                                String str4 = e10.a;
                                 if (str4.startsWith("__cast_nearby__")) {
                                     str4 = str4.substring(16);
                                 }
@@ -106,8 +106,8 @@ public final class i extends c2.w {
                                     break;
                                 }
                             }
-                        } catch (RemoteException e10) {
-                            e = e10;
+                        } catch (RemoteException e11) {
+                            e = e11;
                             String simpleName = h.class.getSimpleName();
                             Object[] objArr = new Object[2];
                             objArr[0] = "onRouteSelected";
@@ -117,8 +117,8 @@ public final class i extends c2.w {
                         }
                     }
                 }
-            } catch (RemoteException e11) {
-                e = e11;
+            } catch (RemoteException e12) {
+                e = e12;
                 c3 = 1;
             }
         }
@@ -130,7 +130,7 @@ public final class i extends c2.w {
             Bundle bundle = a0Var.s;
             Parcel M0 = hVar.M0();
             M0.writeString(str);
-            t.c(M0, bundle);
+            s.c(M0, bundle);
             hVar.Q0(M0, 4);
             return;
         }
@@ -138,7 +138,7 @@ public final class i extends c2.w {
         Parcel M02 = hVar.M0();
         M02.writeString(str);
         M02.writeString(str2);
-        t.c(M02, bundle2);
+        s.c(M02, bundle2);
         hVar.Q0(M02, 8);
     }
 
@@ -157,11 +157,11 @@ public final class i extends c2.w {
             Bundle bundle = a0Var.s;
             Parcel M0 = hVar.M0();
             M0.writeString(str);
-            t.c(M0, bundle);
+            s.c(M0, bundle);
             M0.writeInt(i10);
             hVar.Q0(M0, 6);
-        } catch (RemoteException e) {
-            bVar.a(e, "Unable to call %s on %s.", "onRouteUnselected", h.class.getSimpleName());
+        } catch (RemoteException e6) {
+            bVar.a(e6, "Unable to call %s on %s.", "onRouteUnselected", h.class.getSimpleName());
         }
     }
 }

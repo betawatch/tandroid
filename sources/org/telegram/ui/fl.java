@@ -7,18 +7,18 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagePreviewParams;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class fl extends org.telegram.ui.Components.wb0 {
+public final class fl extends org.telegram.ui.Components.yb0 {
     public final /* synthetic */ xn E;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fl(xn xnVar, Context context, xn xnVar2, ng.a aVar, MessagePreviewParams messagePreviewParams, TLRPC.User user, TLRPC.Chat chat, int i10, org.telegram.ui.Components.sb0 sb0Var, int i11, boolean z4) {
-        super(context, xnVar2, aVar, messagePreviewParams, user, chat, i10, sb0Var, i11, z4);
+    public fl(xn xnVar, Context context, xn xnVar2, og.a aVar, MessagePreviewParams messagePreviewParams, TLRPC.User user, TLRPC.Chat chat, int i10, org.telegram.ui.Components.ub0 ub0Var, int i11, boolean z4) {
+        super(context, xnVar2, aVar, messagePreviewParams, user, chat, i10, ub0Var, i11, z4);
         this.E = xnVar;
     }
 
-    @Override // org.telegram.ui.Components.wb0
+    @Override // org.telegram.ui.Components.yb0
     public final void b() {
         MessageObject messageObject;
         nn nnVar;
@@ -29,7 +29,7 @@ public final class fl extends org.telegram.ui.Components.wb0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.wb0
+    @Override // org.telegram.ui.Components.yb0
     public final void c(boolean z4) {
         int i10;
         boolean z10;
@@ -63,24 +63,24 @@ public final class fl extends org.telegram.ui.Components.wb0 {
                 i10 = 0;
                 z10 = false;
             }
-            Bundle e = org.telegram.messenger.y3.e(3, "onlySelect", "dialogsType", true);
-            e.putBoolean("quote", !z4);
+            Bundle e6 = org.telegram.messenger.y3.e(3, "onlySelect", "dialogsType", true);
+            e6.putBoolean("quote", !z4);
             boolean z11 = (z4 || (messages = xnVar.c5.replyMessage) == null || messages.messages.isEmpty() || xnVar.c5.quote != null) ? false : true;
-            e.putBoolean("reply_to", z11);
+            e6.putBoolean("reply_to", z11);
             if (z11) {
                 long peerDialogId = DialogObject.getPeerDialogId(xnVar.c5.replyMessage.messages.get(0).getFromPeer());
                 if (peerDialogId != 0 && peerDialogId != xnVar.a() && peerDialogId != xnVar.getUserConfig().getClientUserId() && peerDialogId > 0) {
-                    e.putLong("reply_to_author", peerDialogId);
+                    e6.putLong("reply_to_author", peerDialogId);
                 }
             }
-            e.putInt("hasPoll", i10);
-            e.putBoolean("hasInvoice", z10);
+            e6.putInt("hasPoll", i10);
+            e6.putBoolean("hasInvoice", z10);
             MessagePreviewParams.Messages messages3 = xnVar.c5.forwardMessages;
-            e.putInt("messagesCount", messages3 != null ? messages3.messages.size() : 0);
-            e.putBoolean("canSelectTopics", true);
-            oy oyVar = new oy(e);
-            oyVar.z2 = xnVar;
-            xnVar.presentFragment(oyVar);
+            e6.putInt("messagesCount", messages3 != null ? messages3.messages.size() : 0);
+            e6.putBoolean("canSelectTopics", true);
+            py pyVar = new py(e6);
+            pyVar.z2 = xnVar;
+            xnVar.presentFragment(pyVar);
         }
     }
 }

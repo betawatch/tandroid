@@ -1,213 +1,283 @@
 package jh;
 
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import java.io.File;
+import android.graphics.Bitmap;
+import android.graphics.SurfaceTexture;
+import android.os.Handler;
+import android.view.Choreographer;
+import android.view.TextureView;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.p2;
-import org.telegram.ui.ActionBar.z;
-import org.telegram.ui.Components.f51;
-import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.mx0;
-import org.telegram.ui.Components.p9;
-import org.telegram.ui.Components.ub;
-import org.telegram.ui.Components.z4;
-import org.telegram.ui.Components.z8;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.og1;
-import org.telegram.ui.pt;
-import org.telegram.ui.xn;
-import uf.k0;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.EmuDetector;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.camera.Camera2Session;
+import org.telegram.messenger.camera.CameraController;
+import org.telegram.ui.Cells.ba;
+import org.telegram.ui.Components.a11;
+import org.telegram.ui.Components.b11;
+import org.telegram.ui.Components.f91;
+import org.telegram.ui.Components.ng0;
+import org.telegram.ui.Components.r50;
+import org.telegram.ui.Components.z01;
+import org.telegram.ui.Components.z50;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class h implements Runnable {
-    public final /* synthetic */ int a = 2;
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes3.dex */
+public final class h implements TextureView.SurfaceTextureListener {
+    public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
 
-    public /* synthetic */ h(File file, ArrayList arrayList, p2 p2Var, xn xnVar, TLRPC.Document document, boolean z4, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
-        this.e = file;
-        this.b = arrayList;
-        this.c = p2Var;
-        this.f = xnVar;
-        this.h = document;
-        this.d = z4;
-        this.n = tL_messages_stickerSet;
+    public /* synthetic */ h(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ArrayList arrayList;
-        TLRPC.User user;
-        int i10 = this.a;
-        boolean z4 = this.d;
-        Object obj = this.h;
-        Object obj2 = this.n;
-        Object obj3 = this.f;
-        Object obj4 = this.c;
-        Object obj5 = this.b;
-        Object obj6 = this.e;
-        switch (i10) {
+    /* JADX WARN: Type inference failed for: r5v1, types: [org.telegram.ui.Components.w01] */
+    /* JADX WARN: Type inference failed for: r6v0, types: [org.telegram.ui.Components.w01] */
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
+        switch (this.a) {
             case 0:
-                v vVar = (v) obj6;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj5;
-                TLObject tLObject = (TLObject) obj4;
-                TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) obj3;
-                TLRPC.User user2 = (TLRPC.User) obj;
-                TLRPC.TL_messages_hideChatJoinRequest tL_messages_hideChatJoinRequest = (TLRPC.TL_messages_hideChatJoinRequest) obj2;
-                int i11 = vVar.k;
-                ArrayList arrayList2 = vVar.e;
-                p2 p2Var = vVar.g;
-                if (p2Var != null && p2Var.getParentActivity() != null) {
-                    if (tL_error != null) {
-                        z4.f0(i11, tL_error, p2Var, tL_messages_hideChatJoinRequest, new Object[0]);
-                        break;
-                    } else {
-                        TLRPC.TL_updates tL_updates = (TLRPC.TL_updates) tLObject;
-                        if (!tL_updates.chats.isEmpty()) {
-                            MessagesController.getInstance(i11).loadFullChat(tL_updates.chats.get(0).id, 0, true);
-                        }
-                        int i12 = 0;
-                        while (true) {
-                            if (i12 < arrayList2.size()) {
-                                if (((TLRPC.TL_chatInviteImporter) arrayList2.get(i12)).user_id == tL_chatInviteImporter.user_id) {
-                                    arrayList2.remove(i12);
-                                } else {
-                                    i12++;
-                                }
-                            }
-                        }
-                        n nVar = vVar.f;
-                        v vVar2 = nVar.c;
-                        int i13 = 0;
-                        while (true) {
-                            arrayList = vVar2.c;
-                            if (i13 < arrayList.size()) {
-                                user = user2;
-                                if (((TLRPC.TL_chatInviteImporter) arrayList.get(i13)).user_id != tL_chatInviteImporter.user_id) {
-                                    i13++;
-                                    user2 = user;
-                                }
-                            } else {
-                                user = user2;
-                                i13 = -1;
-                            }
-                        }
-                        if (i13 >= 0) {
-                            arrayList.remove(i13);
-                            nVar.u((!nVar.c.B ? 1 : 0) + i13);
-                            if (arrayList.isEmpty()) {
-                                nVar.u(1);
-                            }
-                        }
-                        vVar.f(vVar.t, false, true);
-                        if (z4) {
-                            ub ubVar = new ub(p2Var.getParentActivity(), p2Var.getResourceProvider());
-                            int dp = AndroidUtilities.dp(15.0f);
-                            p9 p9Var = ubVar.a;
-                            p9Var.setRoundRadius(dp);
-                            TLRPC.User user3 = user;
-                            p9Var.e(user3, new z8(0, user3));
-                            String firstName = UserObject.getFirstName(user3);
-                            String formatString = vVar.a ? LocaleController.formatString("HasBeenAddedToChannel", R.string.HasBeenAddedToChannel, firstName) : LocaleController.formatString("HasBeenAddedToGroup", R.string.HasBeenAddedToGroup, firstName);
-                            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(formatString);
-                            int indexOf = formatString.indexOf(firstName);
-                            spannableStringBuilder.setSpan(new f51(AndroidUtilities.bold()), indexOf, firstName.length() + indexOf, 18);
-                            ubVar.b.setText(spannableStringBuilder);
-                            if (arrayList2.isEmpty()) {
-                                ic.g(p2Var, ubVar, 2750).j();
-                            } else {
-                                ic.f(vVar.h, ubVar, 2750).j();
-                            }
-                        }
-                        z n10 = p2Var.getActionBar().n();
-                        if (TextUtils.isEmpty(vVar.t) && vVar.l) {
-                            n10.k(0).setVisibility(arrayList2.isEmpty() ? 8 : 0);
-                            break;
-                        }
-                    }
+                j jVar = (j) this.b;
+                if (jVar.f == null) {
+                    i iVar = new i(jVar, surfaceTexture, i10, i11, new f(jVar, 1));
+                    jVar.f = iVar;
+                    iVar.start();
+                    break;
                 }
                 break;
             case 1:
-                ((SendMessagesHelper) obj6).lambda$performSendMessageRequestMulti$73((TLRPC.TL_error) obj5, (TLObject) obj4, this.d, (ArrayList) obj3, (ArrayList) obj, (TLObject) obj2);
-                break;
-            case 2:
-                ArrayList arrayList3 = (ArrayList) obj5;
-                p2 p2Var2 = (p2) obj4;
-                TLRPC.Document document = (TLRPC.Document) obj;
-                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj2;
-                arrayList3.add(new MediaController.PhotoEntry(0, 0, 0L, ((File) obj6).getAbsolutePath(), 0, false, 0, 0, 0L));
-                PhotoViewer.t1().K2(p2Var2.getParentActivity(), null, p2Var2.getResourceProvider());
-                PhotoViewer.t1().f2(arrayList3, 0, 11, false, new mx0(), (xn) obj3);
-                PhotoViewer.t1().X0(document, z4 ? document : null, false, null);
-                pt q10 = pt.q();
-                if (!z4) {
-                    tL_messages_stickerSet = null;
+                z50 z50Var = (z50) this.b;
+                if (BuildVars.LOGS_ENABLED) {
+                    FileLog.d("InstantCamera camera surface available");
                 }
-                q10.T = tL_messages_stickerSet;
+                if (z50Var.e0 == null && surfaceTexture != null && !z50Var.d0) {
+                    if (BuildVars.LOGS_ENABLED) {
+                        FileLog.d("InstantCamera start create thread");
+                    }
+                    z50Var.e0 = new r50(z50Var, surfaceTexture, i10, i11);
+                    break;
+                }
                 break;
             case 3:
-                og1.d0((og1) obj6, (TLRPC.TL_error) obj5, this.d, (TLObject) obj4, (byte[]) obj3, (String) obj, (TL_account.passwordInputSettings) obj2);
-                break;
-            default:
-                k0.U((k0) obj6, (TLRPC.TL_error) obj5, (TLObject) obj4, (int[]) obj3, (ArrayList) obj2, this.d, (TLRPC.User) obj);
+                final b11 b11Var = (b11) this.b;
+                ArrayList arrayList = b11Var.c;
+                z01 z01Var = b11Var.a;
+                if (z01Var != null) {
+                    z01Var.i();
+                    b11Var.a = null;
+                }
+                final int i12 = 0;
+                ?? r52 = new Runnable() { // from class: org.telegram.ui.Components.w01
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i12) {
+                            case 0:
+                                b11Var.invalidate();
+                                break;
+                            default:
+                                b11 b11Var2 = b11Var;
+                                Runnable runnable = b11Var2.d;
+                                if (runnable != null) {
+                                    b11Var2.e = true;
+                                    b11Var2.d = null;
+                                    b11.b(runnable);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                };
+                final int i13 = 1;
+                z01 z01Var2 = new z01(surfaceTexture, r52, new Runnable() { // from class: org.telegram.ui.Components.w01
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i13) {
+                            case 0:
+                                b11Var.invalidate();
+                                break;
+                            default:
+                                b11 b11Var2 = b11Var;
+                                Runnable runnable = b11Var2.d;
+                                if (runnable != null) {
+                                    b11Var2.e = true;
+                                    b11Var2.d = null;
+                                    b11.b(runnable);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                }, i10, i11);
+                b11Var.a = z01Var2;
+                z01Var2.a = EmuDetector.with(b11Var.getContext()).detect();
+                if (!arrayList.isEmpty()) {
+                    for (int i14 = 0; i14 < arrayList.size(); i14++) {
+                        a11 a11Var = (a11) arrayList.get(i14);
+                        Bitmap bitmap = a11Var.e;
+                        if (bitmap != null) {
+                            b11Var.a.c(a11Var.f, bitmap, a11Var.c, a11Var.d);
+                        } else {
+                            ArrayList arrayList2 = a11Var.b;
+                            if (arrayList2 != null) {
+                                b11Var.a.f(arrayList2, a11Var.d);
+                            } else {
+                                b11Var.a.e(a11Var.a, a11Var.g, a11Var.d);
+                            }
+                        }
+                    }
+                    arrayList.clear();
+                    Choreographer.getInstance().postFrameCallback(b11Var.b);
+                    break;
+                }
                 break;
         }
     }
 
-    public /* synthetic */ h(v vVar, TLRPC.TL_error tL_error, TLObject tLObject, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, boolean z4, TLRPC.User user, TLRPC.TL_messages_hideChatJoinRequest tL_messages_hideChatJoinRequest) {
-        this.e = vVar;
-        this.b = tL_error;
-        this.c = tLObject;
-        this.f = tL_chatInviteImporter;
-        this.d = z4;
-        this.h = user;
-        this.n = tL_messages_hideChatJoinRequest;
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        switch (this.a) {
+            case 0:
+                i iVar = ((j) this.b).f;
+                if (iVar != null) {
+                    iVar.a = false;
+                    ((j) this.b).f = null;
+                    break;
+                }
+                break;
+            case 1:
+                z50 z50Var = (z50) this.b;
+                Camera2Session[] camera2SessionArr = z50Var.n0;
+                r50 r50Var = z50Var.e0;
+                if (r50Var != null) {
+                    r50Var.b(0L, 0, true, 0, 0);
+                    z50Var.e0 = null;
+                }
+                if (z50Var.k0) {
+                    for (int i10 = 0; i10 < camera2SessionArr.length; i10++) {
+                        Camera2Session camera2Session = camera2SessionArr[i10];
+                        if (camera2Session != null) {
+                            camera2Session.destroy(false);
+                            camera2SessionArr[i10] = null;
+                        }
+                    }
+                    break;
+                } else if (z50Var.l0 != null) {
+                    CameraController.getInstance().close(z50Var.l0, null, null);
+                    break;
+                }
+                break;
+            case 2:
+                ((ng0) this.b).S.t3.setSurfaceTexture(surfaceTexture);
+                break;
+            case 3:
+                b11 b11Var = (b11) this.b;
+                z01 z01Var = b11Var.a;
+                if (z01Var != null) {
+                    z01Var.i();
+                    b11Var.a = null;
+                }
+                Runnable runnable = b11Var.d;
+                if (runnable != null) {
+                    b11Var.d = null;
+                    b11.b(runnable);
+                    break;
+                }
+                break;
+            default:
+                f91 f91Var = (f91) this.b;
+                TextureView textureView = f91Var.d;
+                if (f91Var.P) {
+                    if (f91Var.T) {
+                        f91Var.r = 2;
+                    }
+                    textureView.setSurfaceTexture(surfaceTexture);
+                    textureView.setVisibility(0);
+                    f91Var.P = false;
+                    break;
+                }
+                break;
+        }
+        return false;
     }
 
-    public /* synthetic */ h(SendMessagesHelper sendMessagesHelper, TLRPC.TL_error tL_error, TLObject tLObject, boolean z4, ArrayList arrayList, ArrayList arrayList2, TLObject tLObject2) {
-        this.e = sendMessagesHelper;
-        this.b = tL_error;
-        this.c = tLObject;
-        this.d = z4;
-        this.f = arrayList;
-        this.h = arrayList2;
-        this.n = tLObject2;
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
+        Handler handler;
+        switch (this.a) {
+            case 0:
+                i iVar = ((j) this.b).f;
+                if (iVar != null) {
+                    synchronized (iVar.e) {
+                        iVar.f = true;
+                        iVar.h = i10;
+                        iVar.n = i11;
+                    }
+                    return;
+                }
+                return;
+            case 1:
+                r50 r50Var = ((z50) this.b).e0;
+                if (r50Var != null) {
+                    r50Var.C = i10;
+                    r50Var.D = i11;
+                    r50Var.c();
+                    return;
+                }
+                return;
+            case 2:
+                return;
+            case 3:
+                z01 z01Var = ((b11) this.b).a;
+                if (z01Var == null || (handler = z01Var.getHandler()) == null || !z01Var.b.get()) {
+                    return;
+                }
+                handler.sendMessage(handler.obtainMessage(1, i10, i11));
+                return;
+            default:
+                return;
+        }
     }
 
-    public /* synthetic */ h(og1 og1Var, TLRPC.TL_error tL_error, boolean z4, TLObject tLObject, byte[] bArr, String str, TL_account.passwordInputSettings passwordinputsettings) {
-        this.e = og1Var;
-        this.b = tL_error;
-        this.d = z4;
-        this.c = tLObject;
-        this.f = bArr;
-        this.h = str;
-        this.n = passwordinputsettings;
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+        switch (this.a) {
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+                break;
+            default:
+                f91 f91Var = (f91) this.b;
+                if (f91Var.r == 1) {
+                    f91Var.n.getViewTreeObserver().addOnPreDrawListener(new ba(this, 4));
+                    f91Var.n.invalidate();
+                    break;
+                }
+                break;
+        }
     }
 
-    public /* synthetic */ h(k0 k0Var, TLRPC.TL_error tL_error, TLObject tLObject, int[] iArr, ArrayList arrayList, boolean z4, TLRPC.User user) {
-        this.e = k0Var;
-        this.b = tL_error;
-        this.c = tLObject;
-        this.f = iArr;
-        this.n = arrayList;
-        this.d = z4;
-        this.h = user;
+    private final void e(SurfaceTexture surfaceTexture) {
+    }
+
+    private final void f(SurfaceTexture surfaceTexture) {
+    }
+
+    private final void g(SurfaceTexture surfaceTexture) {
+    }
+
+    private final void h(SurfaceTexture surfaceTexture) {
+    }
+
+    private final void a(SurfaceTexture surfaceTexture, int i10, int i11) {
+    }
+
+    private final void b(SurfaceTexture surfaceTexture, int i10, int i11) {
+    }
+
+    private final void c(SurfaceTexture surfaceTexture, int i10, int i11) {
+    }
+
+    private final void d(SurfaceTexture surfaceTexture, int i10, int i11) {
     }
 }

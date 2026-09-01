@@ -6,10 +6,9 @@ import j3.n0;
 import java.util.ArrayList;
 import java.util.Iterator;
 import k7.y7;
-import kh.a2;
 import o4.l0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class n implements l0 {
     public final int a;
@@ -26,13 +25,13 @@ public final class n implements l0 {
         int i10 = this.c;
         r rVar = this.b;
         if (i10 == -2) {
-            rVar.d();
+            rVar.h();
             throw new y0(android.support.v4.media.a.o("Unable to bind a sample queue to TrackGroup with MIME type ", rVar.V.a(this.a).d[0].C, "."));
         }
         if (i10 == -1) {
-            rVar.q();
+            rVar.B();
         } else if (i10 != -3) {
-            rVar.q();
+            rVar.B();
             rVar.I[i10].w();
         }
     }
@@ -40,7 +39,7 @@ public final class n implements l0 {
     public final void b() {
         h5.a.f(this.c == -1);
         r rVar = this.b;
-        rVar.d();
+        rVar.h();
         rVar.X.getClass();
         int[] iArr = rVar.X;
         int i10 = this.a;
@@ -66,7 +65,7 @@ public final class n implements l0 {
     }
 
     @Override // o4.l0
-    public final boolean d() {
+    public final boolean h() {
         if (this.c == -3) {
             return true;
         }
@@ -75,11 +74,11 @@ public final class n implements l0 {
         }
         int i10 = this.c;
         r rVar = this.b;
-        return !rVar.n() && rVar.I[i10].u(rVar.g0);
+        return !rVar.z() && rVar.I[i10].u(rVar.g0);
     }
 
     @Override // o4.l0
-    public final int e(long j10) {
+    public final int l(long j10) {
         Object next;
         Object obj;
         if (!c()) {
@@ -87,7 +86,7 @@ public final class n implements l0 {
         }
         int i10 = this.c;
         r rVar = this.b;
-        if (rVar.n()) {
+        if (rVar.z()) {
             return 0;
         }
         q qVar = rVar.I[i10];
@@ -95,7 +94,7 @@ public final class n implements l0 {
         ArrayList arrayList = rVar.y;
         if (arrayList != null) {
             if (!arrayList.isEmpty()) {
-                obj = a2.i(1, arrayList);
+                obj = l.d.i(1, arrayList);
             }
             obj = null;
         } else {
@@ -117,7 +116,7 @@ public final class n implements l0 {
     }
 
     @Override // o4.l0
-    public final int f(f7.b bVar, n3.i iVar, int i10) {
+    public final int p(f7.b bVar, n3.i iVar, int i10) {
         n0 n0Var;
         if (this.c == -3) {
             iVar.a(4);
@@ -127,7 +126,7 @@ public final class n implements l0 {
             int i11 = this.c;
             r rVar = this.b;
             ArrayList arrayList = rVar.y;
-            if (!rVar.n()) {
+            if (!rVar.z()) {
                 int i12 = 0;
                 if (!arrayList.isEmpty()) {
                     int i13 = 0;
@@ -145,7 +144,7 @@ public final class n implements l0 {
                     k kVar = (k) arrayList.get(0);
                     n0 n0Var2 = kVar.d;
                     if (!n0Var2.equals(rVar.T)) {
-                        rVar.v.g(rVar.b, n0Var2, kVar.e, kVar.f, kVar.h);
+                        rVar.v.h(rVar.b, n0Var2, kVar.e, kVar.f, kVar.h);
                     }
                     rVar.T = n0Var2;
                 }

@@ -5,9 +5,9 @@ import android.content.Intent;
 import android.os.Parcelable;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.j;
-import j7.g5;
+import j7.h5;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class b extends j {
     public static final com.google.android.gms.common.api.e l = new com.google.android.gms.common.api.e("Auth.Api.Identity.SignIn.API", new a8.j(19), new com.google.android.gms.common.api.d());
@@ -25,7 +25,7 @@ public final class b extends j {
         }
         Parcelable.Creator<Status> creator = Status.CREATOR;
         byte[] byteArrayExtra = intent.getByteArrayExtra("status");
-        Status status2 = (Status) (byteArrayExtra == null ? null : g5.a(byteArrayExtra, creator));
+        Status status2 = (Status) (byteArrayExtra == null ? null : h5.a(byteArrayExtra, creator));
         if (status2 == null) {
             throw new com.google.android.gms.common.api.f(Status.r);
         }
@@ -34,7 +34,7 @@ public final class b extends j {
         }
         Parcelable.Creator<l5.g> creator2 = l5.g.CREATOR;
         byte[] byteArrayExtra2 = intent.getByteArrayExtra("sign_in_credential");
-        l5.g gVar = (l5.g) (byteArrayExtra2 != null ? g5.a(byteArrayExtra2, creator2) : null);
+        l5.g gVar = (l5.g) (byteArrayExtra2 != null ? h5.a(byteArrayExtra2, creator2) : null);
         if (gVar != null) {
             return gVar;
         }

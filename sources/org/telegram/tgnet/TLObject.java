@@ -1,9 +1,9 @@
 package org.telegram.tgnet;
 
-import k7.w8;
+import k7.x8;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public class TLObject {
     public static final int FLAG_0 = 1;
@@ -67,11 +67,11 @@ public class TLObject {
     }
 
     public static boolean hasFlag(int i10, int i11) {
-        return w8.a(i10, i11);
+        return x8.a(i10, i11);
     }
 
     public static int setFlag(int i10, int i11, boolean z4) {
-        return w8.b(i10, i11, z4);
+        return x8.b(i10, i11, z4);
     }
 
     public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i10, boolean z4) {

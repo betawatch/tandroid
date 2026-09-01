@@ -2,15 +2,15 @@ package e4;
 
 import j3.n0;
 import j4.i;
-import j7.c7;
-import vh.v2;
+import j7.d7;
+import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class d {
     public static final d a = new d();
 
-    public final c7 a(n0 n0Var) {
+    public final d7 a(n0 n0Var) {
         String str = n0Var.C;
         if (str != null) {
             switch (str) {
@@ -26,7 +26,7 @@ public final class d {
                     return new l4.c();
             }
         }
-        throw new IllegalArgumentException(v2.e("Attempted to create decoder for unsupported MIME type: ", str));
+        throw new IllegalArgumentException(yh.k("Attempted to create decoder for unsupported MIME type: ", str));
     }
 
     public final boolean b(n0 n0Var) {

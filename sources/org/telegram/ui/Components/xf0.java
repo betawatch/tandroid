@@ -1,58 +1,232 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.app.Activity;
+import android.os.Build;
+import android.provider.Settings;
+import android.view.MotionEvent;
+import android.view.View;
+import android.webkit.WebView;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class xf0 extends FrameLayout {
-    public final TextView a;
-    public final TextView b;
-    public final TextView c;
-    public final boolean d;
+public abstract class xf0 extends FrameLayout {
+    public float B;
+    public boolean C;
+    public boolean D;
+    public int E;
+    public int F;
+    public float G;
+    public boolean H;
+    public ec0 I;
+    public int a;
+    public PhotoViewer b;
+    public LinearLayout c;
+    public TextView d;
+    public TextView e;
+    public lu f;
+    public fg.h0 h;
+    public RadialProgressView n;
+    public View r;
+    public String s;
+    public ArrayList v;
+    public String w;
+    public boolean x;
+    public TLRPC.WebPage y;
 
-    public xf0(Context context) {
-        super(context);
-        this.d = true;
-        setBackgroundColor(-15066598);
-        TextView textView = new TextView(context);
-        this.a = textView;
-        textView.setTextSize(1, 14.0f);
-        textView.setTextColor(-1);
-        textView.setGravity(17);
-        textView.setBackground(org.telegram.ui.ActionBar.j6.f0(-12763843, 0, -1));
-        textView.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
-        textView.setText(LocaleController.getString(R.string.Cancel).toUpperCase());
-        textView.setTypeface(AndroidUtilities.bold());
-        addView(textView, k7.b6.e(-2, -1, 51));
-        TextView textView2 = new TextView(context);
-        this.b = textView2;
-        textView2.setTextSize(1, 14.0f);
-        textView2.setTextColor(-1);
-        textView2.setGravity(17);
-        textView2.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.f0(-12763843, 0, -1));
-        textView2.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
-        textView2.setText(LocaleController.getString(R.string.Send).toUpperCase());
-        textView2.setTypeface(AndroidUtilities.bold());
-        addView(textView2, k7.b6.e(-2, -1, 53));
-        TextView textView3 = new TextView(context);
-        this.c = textView3;
-        textView3.setTypeface(AndroidUtilities.bold());
-        textView3.setTextSize(1, 13.0f);
-        textView3.setTextColor(-1);
-        textView3.setGravity(17);
-        textView3.setBackgroundResource(R.drawable.photobadge);
-        textView3.setMinWidth(AndroidUtilities.dp(23.0f));
-        textView3.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(1.0f));
-        addView(textView3, k7.b6.d(-2, 23.0f, 53, 0.0f, 0.0f, 7.0f, 0.0f));
+    public static void a(org.telegram.ui.pt0 pt0Var, String str) {
+        int videoDuration = pt0Var.getVideoDuration() / MediaDataController.MAX_STYLE_RUNS_COUNT;
+        ArrayList arrayList = pt0Var.v;
+        arrayList.clear();
+        if (videoDuration <= 15) {
+            return;
+        }
+        String[] split = str.split("\\|");
+        String r10 = android.support.v4.media.a.r(new StringBuilder(), split[0].split("\\$")[0], "2/");
+        String str2 = split[0].split("\\$N")[1];
+        String str3 = split.length == 3 ? split[2].split("M#")[1] : split.length == 2 ? split[1].split("t#")[1] : split[3].split("M#")[1];
+        int ceil = (int) (videoDuration <= 100 ? Math.ceil(videoDuration / 25.0f) : videoDuration <= 250 ? Math.ceil((videoDuration / 2.0f) / 25.0f) : videoDuration <= 500 ? Math.ceil((videoDuration / 4.0f) / 25.0f) : videoDuration <= 1000 ? Math.ceil((videoDuration / 5.0f) / 25.0f) : Math.ceil((videoDuration / 10.0f) / 25.0f));
+        for (int i10 = 0; i10 < ceil; i10++) {
+            Locale locale = Locale.ROOT;
+            arrayList.add(r10 + "M" + i10 + str2 + "&sigh=" + str3);
+        }
     }
 
-    public final void a() {
-        this.c.setVisibility(8);
-        this.b.setTextColor(this.d ? -1 : -15095832);
+    public final void b(boolean z4) {
+        ec0 ec0Var = this.I;
+        if (!z4 && this.D) {
+            AndroidUtilities.runOnUIThread(ec0Var, 500L);
+        } else {
+            if (!z4 || this.D) {
+                return;
+            }
+            AndroidUtilities.cancelRunOnUIThread(ec0Var);
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0047 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x0040  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final String c(int i10) {
+        float f10;
+        int i11;
+        ArrayList arrayList = this.v;
+        int videoDuration = getVideoDuration() / MediaDataController.MAX_STYLE_RUNS_COUNT;
+        if (videoDuration > 100) {
+            if (videoDuration <= 250) {
+                i11 = ((int) (i10 / 2.0f)) / 25;
+            } else if (videoDuration <= 500) {
+                i11 = ((int) (i10 / 4.0f)) / 25;
+            } else if (videoDuration <= 1000) {
+                i11 = ((int) (i10 / 5.0f)) / 25;
+            } else {
+                f10 = i10 / 10.0f;
+            }
+            if (i11 >= arrayList.size()) {
+                return (String) arrayList.get(i11);
+            }
+            return null;
+        }
+        f10 = i10;
+        i11 = (int) (f10 / 25.0f);
+        if (i11 >= arrayList.size()) {
+        }
+    }
+
+    public final boolean d() {
+        return this.x;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (this.H) {
+            return false;
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    public final boolean e() {
+        boolean z4 = this.x && "inapp".equals(MessagesController.getInstance(this.a).youtubePipType);
+        if (!z4 && Build.VERSION.SDK_INT >= 23 && !Settings.canDrawOverlays(getContext())) {
+            z4.B((Activity) getContext(), null, false);
+            return false;
+        }
+        if (this.n.getVisibility() == 0) {
+            return false;
+        }
+        if (ng0.m0.M) {
+            ng0.j(false);
+            AndroidUtilities.runOnUIThread(new sf0(this, 0), 300L);
+            return true;
+        }
+        this.h.setVisibility(0);
+        Activity activity = (Activity) getContext();
+        lu luVar = this.f;
+        TLRPC.WebPage webPage = this.y;
+        if (ng0.x(z4, activity, this, luVar, webPage.embed_width, webPage.embed_height, false)) {
+            ng0.w(PhotoViewer.t1());
+        }
+        return true;
+    }
+
+    public final void f() {
+        if (this.D && this.x) {
+            h("pauseVideo();");
+            this.D = false;
+            b(true);
+        }
+    }
+
+    public final void g() {
+        if (this.D || !this.x) {
+            return;
+        }
+        h("playVideo();");
+        this.D = true;
+        b(false);
+    }
+
+    public float getBufferedPosition() {
+        return this.G;
+    }
+
+    public int getCurrentPosition() {
+        return this.F;
+    }
+
+    public int getVideoDuration() {
+        return this.E;
+    }
+
+    public WebView getWebView() {
+        return this.f;
+    }
+
+    public final void h(String str) {
+        this.f.evaluateJavascript(str, null);
+    }
+
+    public final void i(long j10) {
+        boolean z4 = this.D;
+        this.F = (int) j10;
+        if (z4) {
+            f();
+        }
+        if (z4) {
+            AndroidUtilities.runOnUIThread(new hg.y1(this, j10, 17), 100L);
+            return;
+        }
+        h("seekTo(" + Math.round(j10 / 1000.0f) + ", true);");
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        lu luVar = this.f;
+        if (luVar.getParent() == this) {
+            TLRPC.WebPage webPage = this.y;
+            int i12 = webPage.embed_width;
+            if (i12 == 0) {
+                i12 = 100;
+            }
+            int i13 = webPage.embed_height;
+            int i14 = i13 != 0 ? i13 : 100;
+            int size = View.MeasureSpec.getSize(i10);
+            int size2 = View.MeasureSpec.getSize(i11);
+            float f10 = i12;
+            float f11 = i14;
+            float min = Math.min(size / f10, size2 / f11);
+            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) luVar.getLayoutParams();
+            int i15 = (int) (f10 * min);
+            layoutParams.width = i15;
+            int i16 = (int) (f11 * min);
+            layoutParams.height = i16;
+            layoutParams.topMargin = (size2 - i16) / 2;
+            layoutParams.leftMargin = (size - i15) / 2;
+        }
+        super.onMeasure(i10, i11);
+    }
+
+    public void setPlaybackSpeed(float f10) {
+        this.B = f10;
+        if (this.n.getVisibility() == 0) {
+            this.C = true;
+        } else if (this.x) {
+            h("setPlaybackSpeed(" + f10 + ");");
+        }
+    }
+
+    public void setTouchDisabled(boolean z4) {
+        this.H = z4;
     }
 }

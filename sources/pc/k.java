@@ -3,7 +3,7 @@ package pc;
 import java.util.Arrays;
 import java.util.Map;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class k {
     public static final char[] r;
@@ -222,17 +222,17 @@ public final class k {
         j jVar;
         if (z4) {
             jVar = this.j;
-            jVar.h();
+            jVar.g();
         } else {
             jVar = this.k;
-            jVar.h();
+            jVar.g();
         }
         this.i = jVar;
         return jVar;
     }
 
     public final void e() {
-        n3.a.i(this.h);
+        n3.a.h(this.h);
     }
 
     public final void f(char c3) {
@@ -287,7 +287,7 @@ public final class k {
     public final void k() {
         j jVar = this.i;
         if (jVar.e != null) {
-            jVar.r();
+            jVar.p();
         }
         h(this.i);
     }
@@ -309,6 +309,6 @@ public final class k {
     }
 
     public final boolean n() {
-        return this.o != null && this.i.q().equalsIgnoreCase(this.o);
+        return this.o != null && this.i.o().equalsIgnoreCase(this.o);
     }
 }

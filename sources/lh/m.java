@@ -1,57 +1,35 @@
 package lh;
 
 import android.content.Context;
-import android.view.MotionEvent;
-import org.telegram.ui.Components.ad0;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.ke;
+import android.view.View;
+import mh.aa;
+import org.telegram.ui.ActionBar.g6;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes4.dex */
-public final class m extends ad0 {
-    public final /* synthetic */ int I;
-    public final /* synthetic */ Object J;
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class m implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ g6 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ m(Object obj, Context context, int i10) {
-        super(context, null);
-        this.I = i10;
-        this.J = obj;
+    public /* synthetic */ m(Context context, int i10, g6 g6Var) {
+        this.a = i10;
+        this.b = context;
+        this.c = g6Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.I) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
             case 0:
-                q qVar = (q) this.J;
-                n nVar = qVar.N;
-                if (nVar != null && !nVar.isFocusable()) {
-                    qVar.N.setFocusable(true);
-                    qVar.N.setFocusableInTouchMode(true);
-                    int x12 = qVar.e.x1(1);
-                    if (x12 >= 0 && x12 < qVar.e.V2.x.size()) {
-                        qVar.e.B0();
-                        qVar.e.x0(x12);
-                    }
-                    qVar.N.requestFocus();
-                }
+                new aa(this.b, this.c).show();
+                break;
+            case 1:
+                new aa(this.b, this.c).show();
                 break;
             default:
-                ke keVar = (ke) this.J;
-                g61 g61Var = keVar.X0;
-                n nVar2 = keVar.V0;
-                if (nVar2 != null && !nVar2.isFocusable()) {
-                    nVar2.setFocusable(true);
-                    nVar2.setFocusableInTouchMode(true);
-                    int x13 = g61Var.x1(3);
-                    if (x13 >= 0 && x13 < g61Var.V2.x.size()) {
-                        g61Var.B0();
-                        g61Var.x0(x13);
-                    }
-                    nVar2.requestFocus();
-                }
+                new aa(this.b, this.c).show();
                 break;
         }
-        return super.dispatchTouchEvent(motionEvent);
     }
 }

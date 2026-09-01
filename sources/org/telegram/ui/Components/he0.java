@@ -1,25 +1,34 @@
 package org.telegram.ui.Components;
 
-import androidx.core.widget.NestedScrollView;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class he0 implements u0.g, y4 {
-    public final /* synthetic */ se0 a;
+public final class he0 implements NotificationCenter.NotificationCenterDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Utilities.Callback b;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate[] c;
 
-    public /* synthetic */ he0(se0 se0Var) {
-        this.a = se0Var;
+    public he0(int i10, Utilities.Callback callback, NotificationCenter.NotificationCenterDelegate[] notificationCenterDelegateArr) {
+        this.a = i10;
+        this.b = callback;
+        this.c = notificationCenterDelegateArr;
     }
 
-    @Override // org.telegram.ui.Components.y4
-    public void J(int i10, int i11, boolean z4) {
-        se0 se0Var = this.a;
-        se0Var.H.a(se0Var.K, z4, i10, 0L);
-        se0Var.dismiss();
-    }
-
-    @Override // u0.g
-    public void a(NestedScrollView nestedScrollView) {
-        this.a.G(!r2.s);
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        int i12 = NotificationCenter.activityPermissionsGranted;
+        if (i10 == i12) {
+            int intValue = ((Integer) objArr[0]).intValue();
+            int[] iArr = (int[]) objArr[2];
+            if (intValue == this.a) {
+                Utilities.Callback callback = this.b;
+                if (callback != null) {
+                    callback.run(iArr);
+                }
+                NotificationCenter.getGlobalInstance().removeObserver(this.c[0], i12);
+            }
+        }
     }
 }

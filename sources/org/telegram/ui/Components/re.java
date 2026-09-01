@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.AnimatorSet;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class re implements Runnable {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final class re implements Runnable {
                 if ((!chatActivityEnterView.j0() || !chatActivityEnterView.v()) && !org.telegram.ui.ActionBar.p2.hasSheets(chatActivityEnterView.L2) && !chatActivityEnterView.U1 && chatActivityEnterView.B0 != null && chatActivityEnterView.g3 && !chatActivityEnterView.v2 && !AndroidUtilities.usingHardwareInput && !AndroidUtilities.isInMultiwindow) {
                     eg egVar = chatActivityEnterView.V2;
                     if (egVar != null) {
-                        egVar.t1();
+                        egVar.x1();
                     }
                     chatActivityEnterView.B0.requestFocus();
                     AndroidUtilities.showKeyboard(chatActivityEnterView.B0);
@@ -35,7 +35,7 @@ public final class re implements Runnable {
             case 1:
                 eg egVar2 = this.b.V2;
                 if (egVar2 != null) {
-                    egVar2.o2(0, 0, 0, 0L, 0L, true);
+                    egVar2.u2(0, 0, 0, 0L, 0L, true);
                     break;
                 }
                 break;

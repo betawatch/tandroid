@@ -10,24 +10,25 @@ import android.os.Handler;
 import android.os.Looper;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
-import com.google.android.gms.internal.cast.a1;
-import com.google.android.gms.internal.cast.o0;
-import com.google.android.gms.internal.cast.o4;
-import com.google.android.gms.internal.cast.t5;
-import com.google.android.gms.internal.cast.y0;
+import com.google.android.gms.internal.cast.n0;
+import com.google.android.gms.internal.cast.n4;
+import com.google.android.gms.internal.cast.s5;
+import com.google.android.gms.internal.cast.x0;
+import com.google.android.gms.internal.cast.z0;
+import com.google.android.gms.internal.play_billing.s1;
 import com.google.android.gms.tasks.OnSuccessListener;
 import java.lang.ref.WeakReference;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeoutException;
-import k7.w8;
+import k7.x8;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Cells.p2;
 import org.telegram.ui.Components.j6;
 import org.telegram.ui.ng;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class u implements OnSuccessListener, xd.i {
     public static u e;
@@ -93,7 +94,7 @@ public final class u implements OnSuccessListener, xd.i {
         if (TextUtils.isEmpty((String) this.b)) {
             throw new IllegalArgumentException("Title must be set and non-empty.");
         }
-        if (!com.google.android.gms.internal.cast.n.b(this.a)) {
+        if (!s1.b(this.a)) {
             StringBuilder sb = new StringBuilder("Authenticator combination is unsupported on API ");
             sb.append(Build.VERSION.SDK_INT);
             sb.append(": ");
@@ -102,7 +103,7 @@ public final class u implements OnSuccessListener, xd.i {
             throw new IllegalArgumentException(sb.toString());
         }
         int i11 = this.a;
-        boolean a2 = i11 != 0 ? com.google.android.gms.internal.cast.n.a(i11) : false;
+        boolean a2 = i11 != 0 ? s1.a(i11) : false;
         if (TextUtils.isEmpty((String) this.d) && !a2) {
             throw new IllegalArgumentException("Negative text must be set and non-empty.");
         }
@@ -138,7 +139,7 @@ public final class u implements OnSuccessListener, xd.i {
 
     public void h(int i10, boolean z4, boolean z10) {
         int numberOfLeadingZeros = 31 - Integer.numberOfLeadingZeros(this.a);
-        int b10 = w8.b(this.a, 1 << i10, z4);
+        int b10 = x8.b(this.a, 1 << i10, z4);
         this.a = b10;
         int numberOfLeadingZeros2 = 31 - Integer.numberOfLeadingZeros(b10);
         if (numberOfLeadingZeros != numberOfLeadingZeros2) {
@@ -147,12 +148,12 @@ public final class u implements OnSuccessListener, xd.i {
     }
 
     public void i(Throwable th2) {
-        p2.y yVar = (p2.y) this.d;
+        p2.x xVar = (p2.x) this.d;
         if (th2 instanceof TimeoutException) {
-            yVar.F(102, 28, p2.b0.p);
+            xVar.F(102, 28, p2.a0.p);
             com.google.android.gms.internal.play_billing.u.i("BillingClientTesting", "Asynchronous call to Billing Override Service timed out.", th2);
         } else {
-            yVar.F(95, 28, p2.b0.p);
+            xVar.F(95, 28, p2.a0.p);
             com.google.android.gms.internal.play_billing.u.i("BillingClientTesting", "An error occurred while retrieving billing override.", th2);
         }
         ((Runnable) this.c).run();
@@ -165,50 +166,50 @@ public final class u implements OnSuccessListener, xd.i {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void onSuccess(Object obj) {
-        o0 o0Var = (o0) this.b;
+        n0 n0Var = (n0) this.b;
         String str = (String) this.c;
         int i10 = this.a;
         SharedPreferences sharedPreferences = (SharedPreferences) this.d;
         Bundle bundle = (Bundle) obj;
-        r5.g gVar = o0Var.a;
+        r5.g gVar = n0Var.a;
         b6.m.h(gVar);
-        com.google.android.gms.internal.cast.s sVar = o0Var.b;
+        com.google.android.gms.internal.cast.r rVar = n0Var.b;
         if (i10 != 3) {
             if (i10 == 2) {
                 i10 = 2;
             }
             if (i10 != 1 || i10 == 2) {
-                a1 a1Var = new a1(sharedPreferences, o0Var, o0Var.c, bundle, str);
-                gVar.a(new t5(a1Var));
-                if (sVar == null) {
-                    y0 y0Var = new y0(a1Var, 0);
-                    com.google.android.gms.internal.cast.s.i.b("register callback = %s", y0Var);
+                z0 z0Var = new z0(sharedPreferences, n0Var, n0Var.c, bundle, str);
+                gVar.a(new s5(z0Var));
+                if (rVar == null) {
+                    x0 x0Var = new x0(z0Var, 0);
+                    com.google.android.gms.internal.cast.r.i.b("register callback = %s", x0Var);
                     b6.m.e("Must be called from the main thread.");
-                    sVar.b.add(y0Var);
+                    rVar.b.add(x0Var);
                     return;
                 }
                 return;
             }
             return;
         }
-        com.google.android.gms.internal.cast.c cVar = o0Var.c;
+        com.google.android.gms.internal.cast.c cVar = n0Var.c;
         c5.j jVar = new c5.j();
-        jVar.a = o0Var;
+        jVar.a = n0Var;
         jVar.b = cVar;
         jVar.c = str;
-        jVar.e = new o4(jVar);
-        gVar.a(new o4(jVar));
-        if (sVar != null) {
-            y0 y0Var2 = new y0(jVar, 1);
-            com.google.android.gms.internal.cast.s.i.b("register callback = %s", y0Var2);
+        jVar.e = new n4(jVar);
+        gVar.a(new n4(jVar));
+        if (rVar != null) {
+            x0 x0Var2 = new x0(jVar, 1);
+            com.google.android.gms.internal.cast.r.i.b("register callback = %s", x0Var2);
             b6.m.e("Must be called from the main thread.");
-            sVar.b.add(y0Var2);
+            rVar.b.add(x0Var2);
         }
         if (i10 != 1) {
         }
-        a1 a1Var2 = new a1(sharedPreferences, o0Var, o0Var.c, bundle, str);
-        gVar.a(new t5(a1Var2));
-        if (sVar == null) {
+        z0 z0Var2 = new z0(sharedPreferences, n0Var, n0Var.c, bundle, str);
+        gVar.a(new s5(z0Var2));
+        if (rVar == null) {
         }
     }
 

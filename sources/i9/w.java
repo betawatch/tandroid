@@ -7,7 +7,7 @@ import java.util.Locale;
 import java.util.UUID;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class w {
     public static final Pattern g = Pattern.compile("[^\\p{Alnum}]");
@@ -30,7 +30,7 @@ public final class w {
         this.c = str;
         this.d = dVar;
         this.e = sVar;
-        this.a = new i5.c(1);
+        this.a = new i5.c();
     }
 
     public final synchronized String a(String str, SharedPreferences sharedPreferences) {
@@ -59,8 +59,8 @@ public final class w {
         if (this.e.a()) {
             try {
                 str = (String) y.a(((ca.c) this.d).d());
-            } catch (Exception e) {
-                Log.w("FirebaseCrashlytics", "Failed to retrieve Firebase Installation ID.", e);
+            } catch (Exception e6) {
+                Log.w("FirebaseCrashlytics", "Failed to retrieve Firebase Installation ID.", e6);
                 str = null;
             }
             bVar.c("Fetched Firebase Installation ID: " + str);
@@ -91,14 +91,14 @@ public final class w {
         Context context = this.b;
         synchronized (cVar) {
             try {
-                if (cVar.b == null) {
+                if (cVar.a == null) {
                     String installerPackageName = context.getPackageManager().getInstallerPackageName(context.getPackageName());
                     if (installerPackageName == null) {
                         installerPackageName = "";
                     }
-                    cVar.b = installerPackageName;
+                    cVar.a = installerPackageName;
                 }
-                str = "".equals(cVar.b) ? null : cVar.b;
+                str = "".equals(cVar.a) ? null : cVar.a;
             } finally {
             }
         }

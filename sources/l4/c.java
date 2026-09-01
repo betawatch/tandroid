@@ -3,20 +3,20 @@ package l4;
 import h5.c0;
 import h5.v;
 import h5.w;
-import j7.c7;
+import j7.d7;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final class c extends c7 {
+public final class c extends d7 {
     public final w a = new w();
     public final v b = new v();
     public c0 c;
 
-    @Override // j7.c7
+    @Override // j7.d7
     public final e4.c b(e4.e eVar, ByteBuffer byteBuffer) {
         int i10;
         e4.b fVar;

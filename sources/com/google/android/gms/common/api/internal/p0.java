@@ -17,9 +17,9 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Set;
-import m.s3;
+import m.r3;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class p0 implements com.google.android.gms.common.api.k, com.google.android.gms.common.api.l {
     public final com.google.android.gms.common.api.c b;
@@ -44,10 +44,10 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
         String str = (String) a2.c;
         String str2 = (String) a2.d;
         b8.a aVar = b8.a.a;
-        s3 s3Var = new s3(gVar, null, str, str2, aVar);
+        r3 r3Var = new r3(gVar, null, str, str2, aVar);
         a8.j jVar2 = jVar.c.a;
         b6.m.h(jVar2);
-        com.google.android.gms.common.api.c a10 = jVar2.a(jVar.a, looper, s3Var, jVar.d, this, this);
+        com.google.android.gms.common.api.c a10 = jVar2.a(jVar.a, looper, r3Var, jVar.d, this, this);
         String str3 = jVar.b;
         if (str3 != null && (a10 instanceof b6.g)) {
             ((b6.g) a10).K = str3;
@@ -67,7 +67,7 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
         Context context = hVar.e;
         a7.e eVar = hVar.x;
         androidx.biometric.e a11 = jVar.a();
-        this.j = new e1(context, eVar, new s3((a0.g) a11.b, null, (String) a11.c, (String) a11.d, aVar));
+        this.j = new e1(context, eVar, new r3((a0.g) a11.b, null, (String) a11.c, (String) a11.d, aVar));
     }
 
     public final y5.c a(y5.c[] cVarArr) {
@@ -300,28 +300,28 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
                 e1 e1Var = this.j;
                 b6.m.h(e1Var);
                 Handler handler = e1Var.c;
-                s3 s3Var = e1Var.f;
+                r3 r3Var = e1Var.f;
                 c8.a aVar2 = e1Var.i;
                 if (aVar2 != null) {
                     aVar2.disconnect();
                 }
-                s3Var.h = Integer.valueOf(System.identityHashCode(e1Var));
-                e1Var.i = (c8.a) e1Var.d.a(e1Var.b, handler.getLooper(), s3Var, (b8.a) s3Var.f, e1Var, e1Var);
+                r3Var.h = Integer.valueOf(System.identityHashCode(e1Var));
+                e1Var.i = (c8.a) e1Var.d.a(e1Var.b, handler.getLooper(), r3Var, (b8.a) r3Var.f, e1Var, e1Var);
                 e1Var.j = s0Var;
                 Set set = e1Var.e;
                 if (set == null || set.isEmpty()) {
-                    handler.post(new androidx.activity.i(e1Var, 13));
+                    handler.post(new androidx.activity.i(e1Var, 12));
                 } else {
                     e1Var.i.G();
                 }
             }
             try {
                 cVar.n(s0Var);
-            } catch (SecurityException e) {
-                m(new y5.a(10), e);
+            } catch (SecurityException e6) {
+                m(new y5.a(10), e6);
             }
-        } catch (IllegalStateException e6) {
-            m(new y5.a(10), e6);
+        } catch (IllegalStateException e10) {
+            m(new y5.a(10), e10);
         }
     }
 
@@ -416,7 +416,7 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
         b(new y5.a(4));
         com.google.android.gms.common.api.c cVar = this.b;
         if (cVar.h()) {
-            cVar.d(new o5.i(this, 9));
+            cVar.d(new o5.i(this, 6));
         }
     }
 
@@ -427,7 +427,7 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
         if (myLooper == eVar.getLooper()) {
             f();
         } else {
-            eVar.post(new androidx.activity.i(this, 11));
+            eVar.post(new androidx.activity.i(this, 10));
         }
     }
 

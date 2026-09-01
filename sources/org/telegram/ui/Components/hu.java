@@ -1,27 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hu implements Runnable {
+public final class hu extends CharacterStyle {
     public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+    public int b;
 
-    public /* synthetic */ hu(int i10, View view) {
-        this.a = i10;
-        this.b = view;
+    public /* synthetic */ hu(int i10, int i11) {
+        this.a = i11;
+        this.b = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
         switch (this.a) {
             case 0:
-                this.b.callOnClick();
+                textPaint.setAlpha((int) ((this.b / 255.0f) * textPaint.getAlpha()));
                 break;
             default:
-                this.b.invalidate();
+                textPaint.setColor(org.telegram.ui.ActionBar.k6.l1(textPaint.getAlpha() / 255.0f, this.b));
                 break;
         }
+    }
+
+    public hu() {
+        this.a = 0;
+        this.b = 0;
     }
 }

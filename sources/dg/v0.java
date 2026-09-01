@@ -1,23 +1,83 @@
 package dg;
 
-import org.telegram.ui.ft0;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class v0 implements c {
-    public final /* synthetic */ ft0 a;
+public final /* synthetic */ class v0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c1 b;
 
-    public v0(ft0 ft0Var) {
-        this.a = ft0Var;
+    public /* synthetic */ v0(c1 c1Var, int i10) {
+        this.a = i10;
+        this.b = c1Var;
     }
 
-    @Override // dg.c
-    public final void a() {
-        this.a.r0(null, true);
-    }
-
-    @Override // dg.c
-    public final j b() {
-        return this.a.P0;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(final ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                final c1 c1Var = this.b;
+                final int i10 = 1;
+                c1Var.f.f(new Runnable() { // from class: dg.u0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                c1 c1Var2 = c1Var;
+                                c1Var2.getClass();
+                                c1Var2.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                                o5.i iVar = c1Var2.a;
+                                if (iVar != null) {
+                                    iVar.c();
+                                    break;
+                                }
+                                break;
+                            default:
+                                c1 c1Var3 = c1Var;
+                                c1Var3.getClass();
+                                c1Var3.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                                o5.i iVar2 = c1Var3.a;
+                                if (iVar2 != null) {
+                                    iVar2.c();
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+            default:
+                final c1 c1Var2 = this.b;
+                final int i11 = 0;
+                c1Var2.f.f(new Runnable() { // from class: dg.u0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                c1 c1Var22 = c1Var2;
+                                c1Var22.getClass();
+                                c1Var22.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                                o5.i iVar = c1Var22.a;
+                                if (iVar != null) {
+                                    iVar.c();
+                                    break;
+                                }
+                                break;
+                            default:
+                                c1 c1Var3 = c1Var2;
+                                c1Var3.getClass();
+                                c1Var3.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                                o5.i iVar2 = c1Var3.a;
+                                if (iVar2 != null) {
+                                    iVar2.c();
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+        }
     }
 }

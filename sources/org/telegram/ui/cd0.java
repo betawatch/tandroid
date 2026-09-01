@@ -1,41 +1,44 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cd0 implements Runnable {
+public final /* synthetic */ class cd0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ng0 b;
+    public final /* synthetic */ og0 b;
 
-    public /* synthetic */ cd0(ng0 ng0Var, int i10) {
+    public /* synthetic */ cd0(og0 og0Var, int i10) {
         this.a = i10;
-        this.b = ng0Var;
+        this.b = og0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                ng0 ng0Var = this.b;
-                ng0Var.o0 = false;
-                ng0Var.x1(true, true);
+                og0 og0Var = this.b;
+                og0Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                og0Var.c.setAlpha(floatValue);
+                og0Var.c.setTranslationY((1.0f - floatValue) * AndroidUtilities.dp(230.0f));
                 break;
             case 1:
-                this.b.Z = false;
+                og0 og0Var2 = this.b;
+                og0Var2.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                og0Var2.c.setAlpha(floatValue2);
+                og0Var2.c.setTranslationY((1.0f - floatValue2) * AndroidUtilities.dp(230.0f));
                 break;
             default:
-                ng0 ng0Var2 = this.b;
-                if (ng0Var2.getParentActivity() != null && !ng0Var2.getParentActivity().isFinishing() && ng0Var2.getParentActivity() != null) {
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ng0Var2.getParentActivity());
-                    alertDialog$Builder.a.O = LocaleController.getString(R.string.RestorePasswordNoEmailTitle);
-                    alertDialog$Builder.a.Q = LocaleController.getString(R.string.SafetyNetErrorOccurred);
-                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), new hd0(ng0Var2, 1));
-                    alertDialog$Builder.o();
-                    break;
-                }
+                og0 og0Var3 = this.b;
+                og0Var3.getClass();
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                float f10 = (0.9f * floatValue3) + 0.1f;
+                og0Var3.S.setScaleX(f10);
+                og0Var3.S.setScaleY(f10);
+                og0Var3.S.setAlpha(floatValue3);
                 break;
         }
     }

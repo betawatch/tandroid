@@ -6,42 +6,42 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class fe extends org.telegram.ui.Components.c81 {
+public final class fe extends org.telegram.ui.Components.e81 {
     public final Context a;
     public final int b;
     public final int c;
-    public final org.telegram.ui.ActionBar.f6 d;
+    public final org.telegram.ui.ActionBar.g6 d;
     public final ArrayList e = new ArrayList();
     public final /* synthetic */ ge f;
 
-    public fe(ge geVar, Context context, int i10, long j10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
+    public fe(ge geVar, Context context, int i10, long j10, int i11, org.telegram.ui.ActionBar.g6 g6Var) {
         this.f = geVar;
         this.a = context;
         this.b = i10;
         this.c = i11;
-        this.d = f6Var;
+        this.d = g6Var;
         i();
     }
 
-    @Override // org.telegram.ui.Components.c81
+    @Override // org.telegram.ui.Components.e81
     public final View d(int i10) {
         return new ee(this.f, this.a, i10, this.b, this.c, new af.b(this, i10, 16), this.d);
     }
 
-    @Override // org.telegram.ui.Components.c81
+    @Override // org.telegram.ui.Components.e81
     public final int e() {
         return this.e.size();
     }
 
-    @Override // org.telegram.ui.Components.c81
+    @Override // org.telegram.ui.Components.e81
     public final CharSequence g(int i10) {
         int h = h(i10);
         return h != 0 ? h != 1 ? "" : LocaleController.getString(R.string.MonetizationTransactionsTON) : LocaleController.getString(R.string.MonetizationTransactionsStars);
     }
 
-    @Override // org.telegram.ui.Components.c81
+    @Override // org.telegram.ui.Components.e81
     public final int h(int i10) {
         if (i10 < 0) {
             return 1;
@@ -50,7 +50,7 @@ public final class fe extends org.telegram.ui.Components.c81 {
         if (i10 >= arrayList.size()) {
             return 1;
         }
-        return ((org.telegram.ui.Components.i51) arrayList.get(i10)).z;
+        return ((org.telegram.ui.Components.j51) arrayList.get(i10)).z;
     }
 
     public final void i() {
@@ -58,15 +58,15 @@ public final class fe extends org.telegram.ui.Components.c81 {
         arrayList.clear();
         ge geVar = this.f;
         if (!geVar.h.isEmpty()) {
-            arrayList.add(org.telegram.ui.Components.i51.C(1));
+            arrayList.add(org.telegram.ui.Components.j51.C(1));
         }
         if (geVar.n.isEmpty()) {
             return;
         }
-        arrayList.add(org.telegram.ui.Components.i51.C(0));
+        arrayList.add(org.telegram.ui.Components.j51.C(0));
     }
 
-    @Override // org.telegram.ui.Components.c81
+    @Override // org.telegram.ui.Components.e81
     public final void b(View view, int i10, int i11) {
     }
 }

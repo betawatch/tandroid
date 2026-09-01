@@ -4,18 +4,18 @@ import android.os.Handler;
 import java.nio.ByteBuffer;
 import org.telegram.messenger.FourierTransform;
 import org.telegram.ui.Components.b71;
-import org.telegram.ui.Components.h71;
-import org.telegram.ui.Components.i71;
-import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.z61;
+import org.telegram.ui.Components.d71;
+import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.l41;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class t0 extends a0 {
-    public final h71 i;
+    public final j71 i;
 
-    public t0(h71 h71Var) {
-        this.i = h71Var;
+    public t0(j71 j71Var) {
+        this.i = j71Var;
     }
 
     @Override // l3.n
@@ -25,33 +25,33 @@ public final class t0 extends a0 {
             return;
         }
         ByteBuffer asReadOnlyBuffer = byteBuffer.asReadOnlyBuffer();
-        h71 h71Var = this.i;
-        float[] fArr = h71Var.b;
-        ByteBuffer byteBuffer2 = h71Var.c;
-        FourierTransform.FFT fft = h71Var.a;
-        i71 i71Var = h71Var.f;
-        b71 b71Var = i71Var.H;
-        Handler handler = i71Var.X;
-        if (b71Var != null) {
-            if (asReadOnlyBuffer == n.a || !i71Var.F) {
-                handler.postDelayed(new z61(h71Var, 1), 80L);
-            } else if (b71Var.needUpdate()) {
+        j71 j71Var = this.i;
+        float[] fArr = j71Var.b;
+        ByteBuffer byteBuffer2 = j71Var.c;
+        FourierTransform.FFT fft = j71Var.a;
+        k71 k71Var = j71Var.f;
+        d71 d71Var = k71Var.H;
+        Handler handler = k71Var.X;
+        if (d71Var != null) {
+            if (asReadOnlyBuffer == n.a || !k71Var.F) {
+                handler.postDelayed(new b71(j71Var, 1), 80L);
+            } else if (d71Var.needUpdate()) {
                 int limit = asReadOnlyBuffer.limit();
                 int i10 = 0;
                 if (limit > 8192) {
                     handler.removeCallbacksAndMessages(null);
-                    i71Var.H.onVisualizerUpdate(false, true, null);
+                    k71Var.H.onVisualizerUpdate(false, true, null);
                 } else {
                     byteBuffer2.put(asReadOnlyBuffer);
-                    int i11 = h71Var.d + limit;
-                    h71Var.d = i11;
+                    int i11 = j71Var.d + limit;
+                    j71Var.d = i11;
                     if (i11 >= 1024) {
                         byteBuffer2.position(0);
                         for (int i12 = 0; i12 < 1024; i12++) {
                             fArr[i12] = byteBuffer2.getShort() / 32768.0f;
                         }
                         byteBuffer2.rewind();
-                        h71Var.d = 0;
+                        j71Var.d = 0;
                         fft.forward(fArr);
                         int i13 = 0;
                         float f10 = 0.0f;
@@ -92,9 +92,9 @@ public final class t0 extends a0 {
                                 i10++;
                             }
                         }
-                        if (System.currentTimeMillis() - h71Var.e >= 64) {
-                            h71Var.e = System.currentTimeMillis();
-                            handler.postDelayed(new k41(5, h71Var, fArr2), 130L);
+                        if (System.currentTimeMillis() - j71Var.e >= 64) {
+                            j71Var.e = System.currentTimeMillis();
+                            handler.postDelayed(new l41(4, j71Var, fArr2), 130L);
                         }
                     }
                 }

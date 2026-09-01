@@ -5,7 +5,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jh implements h5.d {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class jh implements h5.d {
                 xn.p0((xn) obj4, (TLRPC.User) obj3, (TLRPC.TL_attachMenuBot) obj2);
                 break;
             case 1:
-                oy.B0((oy) obj4, (TLRPC.TL_attachMenuBot) obj2, (LaunchActivity) obj3);
+                py.B0((py) obj4, (TLRPC.TL_attachMenuBot) obj2, (LaunchActivity) obj3);
                 break;
             case 2:
                 LaunchActivity launchActivity = (LaunchActivity) obj4;
@@ -44,7 +44,7 @@ public final /* synthetic */ class jh implements h5.d {
                     fVar.b();
                 }
                 if (MessagesController.getInstance(launchActivity.L).getUserOrChat(l10.longValue()) != null) {
-                    new kh.h2(launchActivity, iArr[0], l10.longValue(), null, null).show();
+                    new lh.g2(launchActivity, iArr[0], l10.longValue(), null, null).show();
                     break;
                 } else {
                     org.telegram.ui.ActionBar.p2 R = LaunchActivity.R();
@@ -55,26 +55,26 @@ public final /* synthetic */ class jh implements h5.d {
                 }
                 break;
             default:
-                wb0 wb0Var = (wb0) obj4;
+                xb0 xb0Var = (xb0) obj4;
                 TLRPC.User[] userArr = (TLRPC.User[]) obj3;
-                a30 a30Var = (a30) obj2;
+                b30 b30Var = (b30) obj2;
                 Long l11 = (Long) obj;
-                TLRPC.User user = l11 == null ? null : MessagesController.getInstance(wb0Var.b).getUser(l11);
+                TLRPC.User user = l11 == null ? null : MessagesController.getInstance(xb0Var.b).getUser(l11);
                 userArr[0] = user;
                 if (user != null) {
-                    a30Var.run();
+                    b30Var.run();
                     break;
                 } else {
-                    wb0Var.a();
-                    org.telegram.messenger.y3.s(R.string.NoUsernameFound, wb0.b(), null);
+                    xb0Var.a();
+                    org.telegram.messenger.y3.s(R.string.NoUsernameFound, xb0.b(), null);
                     break;
                 }
         }
     }
 
-    public /* synthetic */ jh(oy oyVar, TLRPC.TL_attachMenuBot tL_attachMenuBot, LaunchActivity launchActivity) {
+    public /* synthetic */ jh(py pyVar, TLRPC.TL_attachMenuBot tL_attachMenuBot, LaunchActivity launchActivity) {
         this.a = 1;
-        this.c = oyVar;
+        this.c = pyVar;
         this.b = tL_attachMenuBot;
         this.d = launchActivity;
     }

@@ -31,7 +31,7 @@ import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class p0 extends g.s {
     public static final /* synthetic */ int g0 = 0;
@@ -85,9 +85,9 @@ public final class p0 extends g.s {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public p0(Context context) {
-        super(r2, r0 == 0 ? j7.z.e(r2) : r0);
-        ContextThemeWrapper a2 = j7.z.a(context, false);
-        int g10 = j7.z.g(a2, R.attr.mediaRouteTheme);
+        super(r2, r0 == 0 ? j7.a0.e(r2) : r0);
+        ContextThemeWrapper a2 = j7.a0.a(context, false);
+        int g10 = j7.a0.g(a2, R.attr.mediaRouteTheme);
         this.n = c2.v.c;
         this.s = new ArrayList();
         this.v = new ArrayList();
@@ -180,7 +180,7 @@ public final class p0 extends g.s {
 
     public final void j() {
         Context context = this.y;
-        getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : j7.y.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
+        getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : j7.z.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
         this.a0 = null;
         this.b0 = null;
         f();
@@ -291,9 +291,9 @@ public final class p0 extends g.s {
         zVar.getClass();
         c2.c0.b();
         for (c2.a0 a0Var : DesugarCollections.unmodifiableList(zVar.b)) {
-            a3.c b10 = this.r.b(a0Var);
+            ja.c b10 = this.r.b(a0Var);
             if (b10 != null) {
-                c2.q qVar = (c2.q) b10.b;
+                c2.q qVar = (c2.q) b10.a;
                 if (qVar != null && qVar.d) {
                     arrayList2.add(a0Var);
                 }
@@ -356,7 +356,7 @@ public final class p0 extends g.s {
         setContentView(R.layout.mr_cast_dialog);
         View decorView = getWindow().getDecorView();
         Context context = this.y;
-        decorView.setBackgroundColor(f0.f.c(context, j7.z.h(context) ? R.color.mr_dynamic_dialog_background_light : R.color.mr_dynamic_dialog_background_dark));
+        decorView.setBackgroundColor(f0.e.c(context, j7.a0.h(context) ? R.color.mr_dynamic_dialog_background_light : R.color.mr_dynamic_dialog_background_dark));
         ImageButton imageButton = (ImageButton) findViewById(R.id.mr_cast_close_button);
         this.O = imageButton;
         imageButton.setColorFilter(-1);
@@ -369,7 +369,7 @@ public final class p0 extends g.s {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.mr_cast_list);
         this.F = recyclerView;
         recyclerView.setAdapter(this.G);
-        this.F.setLayoutManager(new f2.i0());
+        this.F.setLayoutManager(new f2.j0());
         this.H = new o0(this);
         this.I = new HashMap();
         this.K = new HashMap();

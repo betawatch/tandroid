@@ -1,36 +1,28 @@
 package j7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class c8 {
-    public static void a(int i10, int i11) {
-        String a2;
-        if (i10 < 0 || i10 >= i11) {
-            if (i10 < 0) {
-                a2 = d8.a("%s (%s) must not be negative", "index", Integer.valueOf(i10));
-            } else {
-                if (i11 < 0) {
-                    throw new IllegalArgumentException(kh.a2.j(i11, "negative size: "));
-                }
-                a2 = d8.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
-            }
-            throw new IndexOutOfBoundsException(a2);
-        }
-    }
+    public static Constructor a;
+    public static Method b;
+    public static Method c;
+    public static Constructor d;
+    public static Method e;
 
-    public static void b(int i10, int i11, int i12) {
-        if (i10 < 0 || i11 < i10 || i11 > i12) {
-            throw new IndexOutOfBoundsException((i10 < 0 || i10 > i12) ? c(i10, i12, "start index") : (i11 < 0 || i11 > i12) ? c(i11, i12, "end index") : d8.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i11), Integer.valueOf(i10)));
+    public static void a() {
+        if (a == null || b == null || c == null) {
+            Class<?> cls = Class.forName("com.google.android.exoplayer2.effect.ScaleAndRotateTransformation$Builder");
+            a = cls.getConstructor(null);
+            b = cls.getMethod("setRotationDegrees", Float.TYPE);
+            c = cls.getMethod("build", null);
         }
-    }
-
-    public static String c(int i10, int i11, String str) {
-        if (i10 < 0) {
-            return d8.a("%s (%s) must not be negative", str, Integer.valueOf(i10));
+        if (d == null || e == null) {
+            Class<?> cls2 = Class.forName("com.google.android.exoplayer2.effect.DefaultVideoFrameProcessor$Factory$Builder");
+            d = cls2.getConstructor(null);
+            e = cls2.getMethod("build", null);
         }
-        if (i11 >= 0) {
-            return d8.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
-        }
-        throw new IllegalArgumentException(kh.a2.j(i11, "negative size: "));
     }
 }

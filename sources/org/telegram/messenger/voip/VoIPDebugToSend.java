@@ -3,7 +3,7 @@ package org.telegram.messenger.voip;
 import android.text.TextUtils;
 import java.io.File;
 import java.util.HashMap;
-import kh.a1;
+import lh.a1;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLoader;
@@ -14,15 +14,15 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.Components.voip.f2;
+import org.telegram.ui.Components.voip.g2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class VoIPDebugToSend {
     private final int currentAccount;
     private final HashMap<Long, Data> pending = new HashMap<>();
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public final class Data {
         long access_hash;
         long callId;
@@ -90,9 +90,9 @@ public class VoIPDebugToSend {
     public void push(long j10, long j11, Instance.FinalState finalState, String str) {
         if (TextUtils.isEmpty(finalState.debugLog)) {
             try {
-                finalState.debugLog = VoIPService.getStringFromFile(f2.e("" + j10, true));
-            } catch (Exception e) {
-                e.printStackTrace();
+                finalState.debugLog = VoIPService.getStringFromFile(g2.e("" + j10, true));
+            } catch (Exception e6) {
+                e6.printStackTrace();
             }
         }
         Data data = new Data();

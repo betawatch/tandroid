@@ -3,12 +3,12 @@ package y7;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Base64;
-import j7.f5;
+import j7.g5;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import k7.s8;
+import k7.t8;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.ui.yh;
 import u6.p;
@@ -44,7 +44,7 @@ public final class a extends c6.a {
         int length = iArr.length;
         int i10 = 0;
         while (i10 < length) {
-            i10 = yh.e(iArr[i10], i10, 1, arrayList);
+            i10 = yh.d(iArr[i10], i10, 1, arrayList);
         }
         Collections.sort(arrayList);
         return arrayList;
@@ -92,7 +92,7 @@ public final class a extends c6.a {
     public final boolean equals(Object obj) {
         if (obj instanceof a) {
             a aVar = (a) obj;
-            if (s8.a(this.a, aVar.a) && Arrays.equals(this.b, aVar.b) && s8.a(f(this.c), f(aVar.c)) && s8.a(f(this.d), f(aVar.d)) && s8.a(f(this.e), f(aVar.e)) && s8.a(f(this.f), f(aVar.f)) && s8.a(e(this.h), e(aVar.h)) && s8.a(f(this.n), f(aVar.n))) {
+            if (t8.a(this.a, aVar.a) && Arrays.equals(this.b, aVar.b) && t8.a(f(this.c), f(aVar.c)) && t8.a(f(this.d), f(aVar.d)) && t8.a(f(this.e), f(aVar.e)) && t8.a(f(this.f), f(aVar.f)) && t8.a(e(this.h), e(aVar.h)) && t8.a(f(this.n), f(aVar.n))) {
                 return true;
             }
         }
@@ -161,15 +161,15 @@ public final class a extends c6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
-        f5.l(parcel, 2, this.a);
-        f5.c(parcel, 3, this.b);
-        f5.d(parcel, 4, this.c);
-        f5.d(parcel, 5, this.d);
-        f5.d(parcel, 6, this.e);
-        f5.d(parcel, 7, this.f);
-        f5.g(parcel, 8, this.h);
-        f5.d(parcel, 9, this.n);
-        f5.r(parcel, q10);
+        int q10 = g5.q(parcel, 20293);
+        g5.l(parcel, 2, this.a);
+        g5.c(parcel, 3, this.b);
+        g5.d(parcel, 4, this.c);
+        g5.d(parcel, 5, this.d);
+        g5.d(parcel, 6, this.e);
+        g5.d(parcel, 7, this.f);
+        g5.g(parcel, 8, this.h);
+        g5.d(parcel, 9, this.n);
+        g5.r(parcel, q10);
     }
 }

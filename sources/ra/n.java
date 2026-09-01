@@ -3,7 +3,7 @@ package ra;
 import java.lang.reflect.Method;
 import q5.g0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class n extends r {
     public final /* synthetic */ Method b;
@@ -16,10 +16,10 @@ public final class n extends r {
 
     @Override // ra.r
     public final Object a(Class cls) {
-        String t6 = g0.t(cls);
-        if (t6 == null) {
+        String f10 = g0.f(cls);
+        if (f10 == null) {
             return this.b.invoke(this.c, cls);
         }
-        throw new AssertionError("UnsafeAllocator is used for non-instantiable type: ".concat(t6));
+        throw new AssertionError("UnsafeAllocator is used for non-instantiable type: ".concat(f10));
     }
 }

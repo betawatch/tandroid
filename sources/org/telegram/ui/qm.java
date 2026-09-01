@@ -9,7 +9,7 @@ import org.telegram.messenger.MessagePreviewParams;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class qm extends org.telegram.ui.Cells.n9 {
     public xn B0;
@@ -55,14 +55,14 @@ public final class qm extends org.telegram.ui.Cells.n9 {
             xnVar2.c5 = new MessagePreviewParams(xnVar2.h != null, xnVar2.y9(), ChatObject.isMonoForum(this.B0.e));
             xn xnVar3 = this.B0;
             xnVar3.c5.updateReply(xnVar3.k5, xnVar3.y8(messageObject.getGroupId()), this.B0.a(), this.B0.i5);
-            Bundle e = org.telegram.messenger.y3.e(3, "onlySelect", "dialogsType", true);
-            e.putBoolean("quote", true);
-            e.putInt("messagesCount", 1);
-            e.putBoolean("canSelectTopics", true);
-            oy oyVar = new oy(e);
+            Bundle e6 = org.telegram.messenger.y3.e(3, "onlySelect", "dialogsType", true);
+            e6.putBoolean("quote", true);
+            e6.putInt("messagesCount", 1);
+            e6.putBoolean("canSelectTopics", true);
+            py pyVar = new py(e6);
             xn xnVar4 = this.B0;
-            oyVar.z2 = xnVar4;
-            xnVar4.presentFragment(oyVar);
+            pyVar.z2 = xnVar4;
+            xnVar4.presentFragment(pyVar);
         }
     }
 
@@ -132,7 +132,7 @@ public final class qm extends org.telegram.ui.Cells.n9 {
     }
 
     @Override // org.telegram.ui.Cells.z9
-    public final org.telegram.ui.ActionBar.f6 r() {
+    public final org.telegram.ui.ActionBar.g6 r() {
         xn xnVar = this.B0;
         if (xnVar != null) {
             return xnVar.ba;
@@ -142,6 +142,6 @@ public final class qm extends org.telegram.ui.Cells.n9 {
 
     @Override // org.telegram.ui.Cells.z9
     public final int u(int i10) {
-        return org.telegram.ui.ActionBar.j6.v0(i10, this.B0.ba);
+        return org.telegram.ui.ActionBar.k6.v0(i10, this.B0.ba);
     }
 }

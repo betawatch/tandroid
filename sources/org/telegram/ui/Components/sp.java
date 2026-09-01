@@ -1,42 +1,91 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import java.util.Random;
+
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class sp implements m2.f {
-    public int a;
-    public final /* synthetic */ vh0 b;
+public final class sp {
+    public float g;
+    public float k;
+    public final Path a = new Path();
+    public final float[] b = new float[4];
+    public final float[] c = new float[4];
+    public final Matrix d = new Matrix();
+    public final float h = 1.0f;
+    public final Random i = new Random();
+    public final int f = 6;
+    public final float e = (float) (Math.tan(3.141592653589793d / 12) * 1.3333333333333333d);
+    public final float[] j = new float[6];
 
-    public sp(vh0 vh0Var) {
-        this.b = vh0Var;
-    }
-
-    @Override // m2.f
-    public final void b(float f10, int i10, int i11) {
-        if (i10 == this.b.getCurrentItem() && f10 == 0.0f && this.a == 1) {
-            d();
+    public sp() {
+        for (int i10 = 0; i10 < this.f; i10++) {
+            this.j[i10] = (this.i.nextInt() % 100) / 100.0f;
         }
     }
 
-    @Override // m2.f
-    public final void c(int i10) {
-        if (i10 == 0) {
-            d();
-        }
-        this.a = i10;
-    }
-
-    public final void d() {
-        vh0 vh0Var = this.b;
-        if (vh0Var.t0 != null) {
-            int currentItem = vh0Var.getCurrentItem();
-            int k10 = vh0Var.t0.k(currentItem) + vh0Var.t0.j();
-            if (currentItem != k10) {
-                vh0Var.x(k10, false);
+    public final void a(float f10, float f11, Canvas canvas, Paint paint) {
+        sp spVar = this;
+        float f12 = spVar.g;
+        float f13 = (f12 - 0.0f) - 0.0f;
+        float f14 = f12 + 0.0f + 0.0f;
+        float max = Math.max(f13, f14);
+        float f15 = spVar.e;
+        float f16 = max * f15 * spVar.h;
+        Path path = spVar.a;
+        path.reset();
+        int i10 = 0;
+        while (true) {
+            int i11 = spVar.f;
+            if (i10 >= i11) {
+                canvas.save();
+                canvas.rotate(0.0f, f10, f11);
+                canvas.drawPath(path, paint);
+                canvas.restore();
+                return;
             }
+            Matrix matrix = spVar.d;
+            matrix.reset();
+            float f17 = 360.0f / i11;
+            matrix.setRotate(i10 * f17, f10, f11);
+            float f18 = i10 % 2 == 0 ? f13 : f14;
+            float f19 = spVar.k;
+            float[] fArr = spVar.j;
+            float f20 = (fArr[i10] * f19) + f18;
+            float[] fArr2 = spVar.b;
+            fArr2[0] = f10;
+            float f21 = f11 - f20;
+            fArr2[1] = f21;
+            float f22 = f14;
+            fArr2[2] = e2.c.u(f19, fArr[i10], f15, f10 + f16);
+            fArr2[3] = f21;
+            matrix.mapPoints(fArr2);
+            int i12 = i10 + 1;
+            int i13 = i12 >= i11 ? 0 : i12;
+            float f23 = i13 % 2 == 0 ? f13 : f22;
+            float f24 = spVar.k;
+            float f25 = (fArr[i13] * f24) + f23;
+            float[] fArr3 = spVar.c;
+            fArr3[0] = f10;
+            float f26 = f11 - f25;
+            fArr3[1] = f26;
+            float f27 = f13;
+            fArr3[2] = e2.c.u(f24, fArr[i13], f15, f10 - f16);
+            fArr3[3] = f26;
+            matrix.reset();
+            matrix.setRotate(f17 * i13, f10, f11);
+            matrix.mapPoints(fArr3);
+            if (i10 == 0) {
+                path.moveTo(fArr2[0], fArr2[1]);
+            }
+            path.cubicTo(fArr2[2], fArr2[3], fArr3[2], fArr3[3], fArr3[0], fArr3[1]);
+            i10 = i12;
+            f14 = f22;
+            f13 = f27;
+            spVar = this;
         }
-    }
-
-    @Override // m2.f
-    public final void a(int i10) {
     }
 }

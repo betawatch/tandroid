@@ -14,7 +14,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.d8;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class p implements Runnable {
         switch (i10) {
             case 0:
                 Drawable drawable = ActionBarLayout.m1;
-                AndroidUtilities.runOnUIThread((cg.v1) obj);
+                AndroidUtilities.runOnUIThread((dg.u1) obj);
                 break;
             case 1:
                 w0 w0Var = (w0) obj;
@@ -57,11 +57,11 @@ public final /* synthetic */ class p implements Runnable {
                 break;
             case 5:
                 View view = (View) obj;
-                if (view instanceof l5) {
-                    l5 l5Var = (l5) view;
-                    if (!l5Var.a) {
-                        l5Var.a = true;
-                        l5Var.invalidate();
+                if (view instanceof m5) {
+                    m5 m5Var = (m5) view;
+                    if (!m5Var.a) {
+                        m5Var.a = true;
+                        m5Var.invalidate();
                         break;
                     }
                 }
@@ -93,59 +93,59 @@ public final /* synthetic */ class p implements Runnable {
                 h2Var.e1.animate().setDuration(300L).alpha(1.0f).setListener(new e2(h2Var, 0)).start();
                 break;
             case 8:
-                g3 g3Var = (g3) ((y2) obj).c;
-                onDismissListener = g3Var.onHideListener;
+                h3 h3Var = (h3) ((z2) obj).c;
+                onDismissListener = h3Var.onHideListener;
                 if (onDismissListener != null) {
-                    onDismissListener2 = g3Var.onHideListener;
-                    onDismissListener2.onDismiss(g3Var);
+                    onDismissListener2 = h3Var.onHideListener;
+                    onDismissListener2.onDismiss(h3Var);
                 }
                 try {
-                    g3Var.dismissInternal();
-                    break;
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    return;
-                }
-            case 9:
-                x2 x2Var = (x2) obj;
-                x2Var.getClass();
-                try {
-                    x2Var.b.dismissInternal();
+                    h3Var.dismissInternal();
                     break;
                 } catch (Exception e6) {
                     FileLog.e(e6);
                     return;
                 }
+            case 9:
+                y2 y2Var = (y2) obj;
+                y2Var.getClass();
+                try {
+                    y2Var.b.dismissInternal();
+                    break;
+                } catch (Exception e10) {
+                    FileLog.e(e10);
+                    return;
+                }
             case 10:
-                t3 t3Var = (t3) obj;
-                if (t3Var.getWindowView() != null) {
-                    t3Var.getWindowView().setDrawingFromOverlay(true);
+                u3 u3Var = (u3) obj;
+                if (u3Var.getWindowView() != null) {
+                    u3Var.getWindowView().setDrawingFromOverlay(true);
                     break;
                 }
                 break;
             case 11:
-                ((w3) obj).f();
+                ((x3) obj).f();
                 break;
             case 12:
-                w4 w4Var = (w4) ((f2) obj).b;
-                w4Var.k();
-                w4Var.j();
+                x4 x4Var = (x4) ((f2) obj).b;
+                x4Var.k();
+                x4Var.j();
                 break;
             case 13:
-                w4 w4Var2 = ((t4) obj).b;
-                w4Var2.c.dismiss();
-                w4Var2.f.removeAllViews();
+                x4 x4Var2 = ((u4) obj).b;
+                x4Var2.c.dismiss();
+                x4Var2.f.removeAllViews();
                 break;
             case 14:
-                ((t4) obj).b.c.dismiss();
+                ((u4) obj).b.c.dismiss();
                 break;
             case 15:
                 Drawable drawable2 = (Drawable) obj;
-                j6.d = null;
-                j6.N();
-                if (!j6.b) {
-                    j6.i(drawable2);
-                    j6.h(drawable2);
+                k6.d = null;
+                k6.N();
+                if (!k6.b) {
+                    k6.i(drawable2);
+                    k6.h(drawable2);
                 }
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetNewWallpapper, new Object[0]);
                 break;
@@ -156,14 +156,14 @@ public final /* synthetic */ class p implements Runnable {
                 org.telegram.ui.b.k(1, (p2) obj);
                 break;
             case 18:
-                d8 d8Var = (d8) j6.e5.remove((MessageObject) obj);
+                d8 d8Var = (d8) k6.e5.remove((MessageObject) obj);
                 if (d8Var != null) {
                     d8Var.i = null;
                     break;
                 }
                 break;
             default:
-                ((i6) obj).s();
+                ((j6) obj).s();
                 break;
         }
     }

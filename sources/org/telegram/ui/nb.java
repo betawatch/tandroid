@@ -4,17 +4,17 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class nb implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ View a;
-    public final /* synthetic */ f2.l1 b;
+    public final /* synthetic */ f2.m1 b;
     public final /* synthetic */ ob c;
 
-    public nb(ob obVar, View view, f2.l1 l1Var) {
+    public nb(ob obVar, View view, f2.m1 m1Var) {
         this.c = obVar;
         this.a = view;
-        this.b = l1Var;
+        this.b = m1Var;
     }
 
     @Override // android.view.ViewTreeObserver.OnPreDrawListener

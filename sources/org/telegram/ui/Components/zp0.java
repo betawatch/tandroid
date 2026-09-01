@@ -1,13 +1,57 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class zp0 {
-    public final TLRPC.TL_dialog a = new TLRPC.TL_dialog();
-    public TLObject b;
-    public int c;
-    public CharSequence d;
+public final class zp0 implements TextWatcher {
+    public final /* synthetic */ mq0 a;
+
+    public zp0(mq0 mq0Var) {
+        this.a = mq0Var;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        mq0 mq0Var = this.a;
+        eq0 eq0Var = mq0Var.H;
+        ax0 ax0Var = mq0Var.N;
+        d20 d20Var = mq0Var.v0;
+        if (!TextUtils.isEmpty(d20Var.r.getText())) {
+            mq0Var.K0(false);
+        }
+        if (mq0Var.x0) {
+            String obj = d20Var.r.getText().toString();
+            if (obj.length() != 0) {
+                if (ax0Var != null) {
+                    ax0Var.d.setText(LocaleController.getString(R.string.NoResult));
+                }
+            } else if (mq0Var.C.getAdapter() != eq0Var) {
+                int F0 = mq0.F0(mq0Var);
+                ax0Var.d.setText(LocaleController.getString(R.string.NoResult));
+                ax0Var.e(false, true);
+                mq0Var.K0(false);
+                eq0Var.l();
+                if (F0 > 0) {
+                    mq0Var.E.h1(0, -F0);
+                }
+            }
+            iq0 iq0Var = mq0Var.J;
+            if (iq0Var != null) {
+                iq0Var.E(obj);
+            }
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
 }

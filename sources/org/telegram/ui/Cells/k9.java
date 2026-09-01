@@ -7,9 +7,9 @@ import android.view.MenuItem;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.st;
+import org.telegram.ui.Components.ut;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class k9 extends ActionMode.Callback2 {
     public final /* synthetic */ int a = 0;
@@ -30,7 +30,7 @@ public final class k9 extends ActionMode.Callback2 {
             case 1:
                 return this.b.onActionItemClicked(actionMode, menuItem);
             default:
-                return ((st) this.b).onActionItemClicked(actionMode, menuItem);
+                return ((ut) this.b).onActionItemClicked(actionMode, menuItem);
         }
     }
 
@@ -43,7 +43,7 @@ public final class k9 extends ActionMode.Callback2 {
             case 1:
                 return this.b.onCreateActionMode(actionMode, menu);
             default:
-                return ((st) this.b).onCreateActionMode(actionMode, menu);
+                return ((ut) this.b).onCreateActionMode(actionMode, menu);
         }
     }
 
@@ -59,7 +59,7 @@ public final class k9 extends ActionMode.Callback2 {
                 ((EditTextBoldCursor) this.c).floatingActionMode = null;
                 break;
             default:
-                ((st) this.b).onDestroyActionMode(actionMode);
+                ((ut) this.b).onDestroyActionMode(actionMode);
                 break;
         }
     }
@@ -104,7 +104,7 @@ public final class k9 extends ActionMode.Callback2 {
                     super.onGetContentRect(actionMode, view, rect);
                     break;
                 } else {
-                    m.j0.f(callback).onGetContentRect(actionMode, view, rect);
+                    mh.c3.f(callback).onGetContentRect(actionMode, view, rect);
                     break;
                 }
             default:
@@ -113,7 +113,7 @@ public final class k9 extends ActionMode.Callback2 {
                     super.onGetContentRect(actionMode, view, rect);
                     break;
                 } else {
-                    m.j0.f(callback2).onGetContentRect(actionMode, view, rect);
+                    mh.c3.f(callback2).onGetContentRect(actionMode, view, rect);
                     break;
                 }
         }
@@ -128,12 +128,12 @@ public final class k9 extends ActionMode.Callback2 {
             case 1:
                 return this.b.onPrepareActionMode(actionMode, menu);
             default:
-                return ((st) this.b).a.onPrepareActionMode(actionMode, menu);
+                return ((ut) this.b).a.onPrepareActionMode(actionMode, menu);
         }
     }
 
-    public k9(st stVar, ActionMode.Callback callback) {
-        this.b = stVar;
+    public k9(ut utVar, ActionMode.Callback callback) {
+        this.b = utVar;
         this.c = callback;
     }
 

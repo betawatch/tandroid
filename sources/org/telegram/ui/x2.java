@@ -11,19 +11,19 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class x2 extends View implements org.telegram.ui.Cells.l9, g3 {
     public d3 a;
     public TL_iv.pageBlockTitle b;
     public int c;
     public int d;
-    public final n70 e;
+    public final o70 e;
     public final j4 f;
 
-    public x2(Context context, n70 n70Var, j4 j4Var) {
+    public x2(Context context, o70 o70Var, j4 j4Var) {
         super(context);
-        this.e = n70Var;
+        this.e = o70Var;
         this.f = j4Var;
     }
 
@@ -120,31 +120,31 @@ public final class x2 extends View implements org.telegram.ui.Cells.l9, g3 {
     public final void onMeasure(int i10, int i11) {
         int i12;
         int size = View.MeasureSpec.getSize(i10);
-        n70 n70Var = this.e;
-        n70Var.getClass();
+        o70 o70Var = this.e;
+        o70Var.getClass();
         this.c = AndroidUtilities.dp(18);
         TL_iv.pageBlockTitle pageblocktitle = this.b;
         if (pageblocktitle != null) {
             if (pageblocktitle.first) {
-                n70Var.getClass();
+                o70Var.getClass();
                 i12 = AndroidUtilities.dp(8);
-                n70Var.getClass();
+                o70Var.getClass();
                 this.d = AndroidUtilities.dp(16);
             } else {
-                n70Var.getClass();
+                o70Var.getClass();
                 this.d = AndroidUtilities.dp(8);
                 i12 = 0;
             }
             TL_iv.RichText richText = this.b.text;
-            n70 n70Var2 = this.e;
-            n70Var2.getClass();
+            o70 o70Var2 = this.e;
+            o70Var2.getClass();
             int dp = size - AndroidUtilities.dp(36);
             TL_iv.pageBlockTitle pageblocktitle2 = this.b;
             j4 j4Var = this.f;
-            d3 p10 = l4.p(n70Var2, this, null, richText, dp, 0, pageblocktitle2, (j4Var == null || !j4Var.D) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.kw0.a(), 0, this.f);
+            d3 p10 = l4.p(o70Var2, this, null, richText, dp, 0, pageblocktitle2, (j4Var == null || !j4Var.D) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.lw0.a(), 0, this.f);
             this.a = p10;
             if (p10 != null) {
-                n70Var.getClass();
+                o70Var.getClass();
                 i12 += this.a.d.getHeight() + AndroidUtilities.dp(16);
                 d3 d3Var = this.a;
                 d3Var.s = this.c;

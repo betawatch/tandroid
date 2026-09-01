@@ -1,17 +1,39 @@
 package k7;
 
-import android.content.SharedPreferences;
-import org.telegram.messenger.MessagesController;
-import org.telegram.ui.Components.l40;
+import android.graphics.Path;
+import android.graphics.RectF;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class a6 {
-    public static void a() {
-        SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
-        for (l40 l40Var : l40.values()) {
-            edit.remove(l40Var.a);
+    public static RectF a;
+
+    public static void a(Path path, RectF rectF, float f10) {
+        if (path == null) {
+            return;
         }
-        edit.apply();
+        if (a == null) {
+            a = new RectF();
+        }
+        float f11 = 2.0f * f10;
+        path.rewind();
+        a.set(0.0f, -rectF.height(), f11, (-rectF.height()) + f11);
+        path.arcTo(a, 180.0f, 90.0f);
+        a.set(rectF.width() - f11, -rectF.height(), rectF.width(), (-rectF.height()) + f11);
+        path.arcTo(a, 270.0f, 90.0f);
+        a.set(rectF.width() - f11, -f11, rectF.width(), 0.0f);
+        path.arcTo(a, 0.0f, 90.0f);
+        path.quadTo(f10, 0.0f, f10, 0.0f);
+        path.cubicTo(AndroidUtilities.dp(7.62f), AndroidUtilities.dp(-0.5f), AndroidUtilities.dp(5.807f), AndroidUtilities.dp(-1.502f), AndroidUtilities.dp(6.02f), AndroidUtilities.dp(-1.386f));
+        path.cubicTo(AndroidUtilities.dp(4.814f), AndroidUtilities.dp(-0.81f), AndroidUtilities.dp(2.706f), AndroidUtilities.dp(-0.133f), AndroidUtilities.dp(3.6f), AndroidUtilities.dp(-0.44f));
+        path.cubicTo(AndroidUtilities.dp(1.004f), AndroidUtilities.dp(-0.206f), AndroidUtilities.dp(-0.047f), AndroidUtilities.dp(-0.32f), AndroidUtilities.dp(0.247f), AndroidUtilities.dp(-0.29f));
+        path.cubicTo(AndroidUtilities.dp(-0.334f), AndroidUtilities.dp(-1.571f), 0.0f, AndroidUtilities.dp(-1.155f), AndroidUtilities.dp(-0.06f), AndroidUtilities.dp(-1.154f));
+        path.cubicTo(AndroidUtilities.dp(1.083f), AndroidUtilities.dp(-2.123f), AndroidUtilities.dp(1.667f), AndroidUtilities.dp(-3.667f), AndroidUtilities.dp(1.453f), AndroidUtilities.dp(-3.12f));
+        path.cubicTo(AndroidUtilities.dp(2.1f), AndroidUtilities.dp(-4.793f), AndroidUtilities.dp(1.24f), AndroidUtilities.dp(-6.267f), AndroidUtilities.dp(1.67f), AndroidUtilities.dp(-5.53f));
+        float f12 = -f10;
+        path.quadTo(0.0f, AndroidUtilities.dp(2.187f) + f12, 0.0f, f12);
+        path.close();
+        path.offset(rectF.left, rectF.bottom);
     }
 }

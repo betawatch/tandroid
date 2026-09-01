@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class i {
     public int a;
@@ -32,14 +32,14 @@ public final class i {
         if (hVar.a >= 100) {
             throw new c0("Protocol message had too many levels of nesting.  May be malicious.  Use CodedInputStream.setRecursionLimit() to increase the depth limit.");
         }
-        int e = hVar.e(A);
+        int e6 = hVar.e(A);
         Object a2 = c1Var.a();
         hVar.a++;
         c1Var.i(a2, this, nVar);
         c1Var.c(a2);
         hVar.a(0);
         hVar.a--;
-        hVar.d(e);
+        hVar.d(e6);
         return a2;
     }
 
@@ -389,27 +389,27 @@ public final class i {
         if (iArr != null) {
             Arrays.fill(iArr, -1);
         }
-        f2.v0 v0Var = recyclerView.x;
-        if (recyclerView.w == null || v0Var == null || !v0Var.h) {
+        f2.w0 w0Var = recyclerView.x;
+        if (recyclerView.w == null || w0Var == null || !w0Var.h) {
             return;
         }
         if (z4) {
             if (!recyclerView.d.h()) {
                 int h = recyclerView.w.h();
-                f2.i0 i0Var = (f2.i0) v0Var;
-                f2.h0 h0Var = i0Var.B;
-                if (h0Var == null || (i10 = h0Var.a) < 0) {
-                    i0Var.f1();
-                    z10 = i0Var.v;
-                    i10 = i0Var.y;
+                f2.j0 j0Var = (f2.j0) w0Var;
+                f2.i0 i0Var = j0Var.B;
+                if (i0Var == null || (i10 = i0Var.a) < 0) {
+                    j0Var.f1();
+                    z10 = j0Var.v;
+                    i10 = j0Var.y;
                     if (i10 == -1) {
                         i10 = z10 ? h - 1 : 0;
                     }
                 } else {
-                    z10 = h0Var.c;
+                    z10 = i0Var.c;
                 }
                 int i11 = z10 ? -1 : 1;
-                for (int i12 = 0; i12 < i0Var.E && i10 >= 0 && i10 < h; i12++) {
+                for (int i12 = 0; i12 < j0Var.E && i10 >= 0 && i10 < h; i12++) {
                     a(i10, 0);
                     i10 += i11;
                 }
@@ -417,21 +417,21 @@ public final class i {
         } else if (!recyclerView.Z()) {
             int i13 = this.a;
             int i14 = this.b;
-            f2.i1 i1Var = recyclerView.q0;
-            f2.i0 i0Var2 = (f2.i0) v0Var;
-            if (i0Var2.o != 0) {
+            f2.j1 j1Var = recyclerView.q0;
+            f2.j0 j0Var2 = (f2.j0) w0Var;
+            if (j0Var2.o != 0) {
                 i13 = i14;
             }
-            if (i0Var2.r() != 0 && i13 != 0) {
-                i0Var2.G0();
-                i0Var2.m1(i13 > 0 ? 1 : -1, Math.abs(i13), true, i1Var);
-                i0Var2.A0(i1Var, i0Var2.p, this);
+            if (j0Var2.r() != 0 && i13 != 0) {
+                j0Var2.G0();
+                j0Var2.m1(i13 > 0 ? 1 : -1, Math.abs(i13), true, j1Var);
+                j0Var2.A0(j1Var, j0Var2.p, this);
             }
         }
         int i15 = this.c;
-        if (i15 > v0Var.i) {
-            v0Var.i = i15;
-            v0Var.j = z4;
+        if (i15 > w0Var.i) {
+            w0Var.i = i15;
+            w0Var.j = z4;
             recyclerView.b.l();
         }
     }

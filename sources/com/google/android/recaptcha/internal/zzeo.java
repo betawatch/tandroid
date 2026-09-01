@@ -2,12 +2,12 @@ package com.google.android.recaptcha.internal;
 
 import com.google.android.recaptcha.RecaptchaAction;
 import dd.p;
-import k7.p7;
+import k7.q7;
 import uc.c;
 import vc.a;
 import wc.i;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 final class zzeo extends i implements p {
     int zza;
@@ -50,8 +50,8 @@ final class zzeo extends i implements p {
         Exception exc;
         zzgr zzgrVar;
         zzeo zzeoVar;
-        Exception e;
-        zzcg e6;
+        Exception e6;
+        zzcg e10;
         String str;
         long j10;
         RecaptchaAction recaptchaAction;
@@ -62,7 +62,7 @@ final class zzeo extends i implements p {
         if (i10 != 0) {
             try {
                 if (i10 != 1) {
-                    p7.b(obj);
+                    q7.b(obj);
                     str = (String) obj;
                     if (str.length() == 0) {
                         return str;
@@ -70,16 +70,16 @@ final class zzeo extends i implements p {
                     throw new zzcg(zzce.zzb, zzcd.zzaW, null, null, 12, null);
                 }
                 zzgrVar = (zzgr) this.zze;
-                p7.b(obj);
+                q7.b(obj);
                 zzeoVar = this;
-            } catch (zzcg e10) {
-                throw e10;
-            } catch (Exception e11) {
-                exc = e11;
+            } catch (zzcg e11) {
+                throw e11;
+            } catch (Exception e12) {
+                exc = e12;
                 throw new zzcg(zzce.zzb, zzcd.zzX, exc.getMessage(), null, 8, null);
             }
         } else {
-            p7.b(obj);
+            q7.b(obj);
             zzgrVar = (zzgr) this.zze;
             try {
                 zzeq zzeqVar = this.zzb;
@@ -91,22 +91,22 @@ final class zzeo extends i implements p {
                 this.zze = zzgrVar;
                 this.zza = 1;
                 zzeoVar = this;
-            } catch (zzcg e12) {
-                e6 = e12;
-                throw e6;
-            } catch (Exception e13) {
-                e = e13;
-                exc = e;
+            } catch (zzcg e13) {
+                e10 = e13;
+                throw e10;
+            } catch (Exception e14) {
+                e6 = e14;
+                exc = e6;
                 throw new zzcg(zzce.zzb, zzcd.zzX, exc.getMessage(), null, 8, null);
             }
             try {
                 obj = zzdwVar.zza(zzb, recaptchaAction, j10, zzeoVar);
-            } catch (zzcg e14) {
-                e6 = e14;
-                throw e6;
-            } catch (Exception e15) {
-                e = e15;
-                exc = e;
+            } catch (zzcg e15) {
+                e10 = e15;
+                throw e10;
+            } catch (Exception e16) {
+                e6 = e16;
+                exc = e6;
                 throw new zzcg(zzce.zzb, zzcd.zzX, exc.getMessage(), null, 8, null);
             }
         }

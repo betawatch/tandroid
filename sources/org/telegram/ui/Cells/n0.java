@@ -17,11 +17,11 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.k01;
-import org.telegram.ui.Components.kw0;
+import org.telegram.ui.Components.l01;
+import org.telegram.ui.Components.lw0;
 import org.telegram.ui.Components.rc;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class n0 {
     public final t1 a;
@@ -34,7 +34,7 @@ public final class n0 {
     public final Drawable h;
     public final Paint i;
     public final Paint j;
-    public final k01 k;
+    public final l01 k;
     public boolean l;
     public boolean m;
     public final rc n;
@@ -55,10 +55,10 @@ public final class n0 {
             this.c[i12] = new ImageReceiver(t1Var);
             this.c[i12].setParentView(t1Var);
             this.c[i12].setRoundRadius(AndroidUtilities.dp(54.0f));
-            this.b[i12] = new org.telegram.ui.Components.z8((org.telegram.ui.ActionBar.f6) null);
+            this.b[i12] = new org.telegram.ui.Components.z8((org.telegram.ui.ActionBar.g6) null);
             if (i12 >= tLObjectArr.length || (tLObject = tLObjectArr[i12]) == null) {
                 Paint paint = new Paint(1);
-                int v = org.telegram.ui.ActionBar.j6.v(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.ra, t1Var.Fd), org.telegram.ui.ActionBar.j6.l1(0.5f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.y6, t1Var.Fd)));
+                int v = org.telegram.ui.ActionBar.k6.v(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.ra, t1Var.Fd), org.telegram.ui.ActionBar.k6.l1(0.5f, org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.y6, t1Var.Fd)));
                 paint.setColor(v);
                 this.c[i12].setImageBitmap(new m0(paint, v));
             } else {
@@ -78,7 +78,7 @@ public final class n0 {
         if (c(this.o) == null) {
             this.k = null;
         } else {
-            this.k = new k01(kh.a2.j(i11, "+"), 9.33f, AndroidUtilities.bold());
+            this.k = new l01(l.d.j(i11, "+"), 9.33f, AndroidUtilities.bold());
         }
     }
 
@@ -119,7 +119,7 @@ public final class n0 {
                 CharSequence charSequence = this.e;
                 this.f = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, i10).setMaxLines(2).setEllipsize(TextUtils.TruncateAt.END).setBreakStrategy(0).setAlignment(Layout.Alignment.ALIGN_CENTER).build();
             } else {
-                this.f = kw0.c(this.e, textPaint, i10, Layout.Alignment.ALIGN_CENTER, 0.0f, false, TextUtils.TruncateAt.END, i10 - AndroidUtilities.dp(16.0f), 2, false);
+                this.f = lw0.c(this.e, textPaint, i10, Layout.Alignment.ALIGN_CENTER, 0.0f, false, TextUtils.TruncateAt.END, i10 - AndroidUtilities.dp(16.0f), 2, false);
             }
         }
         if (this.f != null) {
@@ -128,23 +128,23 @@ public final class n0 {
             int length = this.c.length;
             t1 t1Var = this.a;
             if (length <= 1) {
-                textPaint.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.ec, t1Var.Fd));
+                textPaint.setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.ec, t1Var.Fd));
             } else {
-                textPaint.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.y6, t1Var.Fd));
+                textPaint.setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.y6, t1Var.Fd));
             }
             textPaint.setAlpha((int) (textPaint.getAlpha() * f10));
             this.f.draw(canvas);
             canvas.restore();
         }
-        k01 k01Var = this.k;
-        if (k01Var != null) {
-            k01Var.p = i10 - AndroidUtilities.dp(32.0f);
+        l01 l01Var = this.k;
+        if (l01Var != null) {
+            l01Var.p = i10 - AndroidUtilities.dp(32.0f);
             Drawable drawable = this.h;
-            float l10 = (f11 - (k01Var.l() + AndroidUtilities.dp(drawable != null ? 17.0f : 8.0f))) / 2.0f;
+            float l10 = (f11 - (l01Var.l() + AndroidUtilities.dp(drawable != null ? 17.0f : 8.0f))) / 2.0f;
             float dp = AndroidUtilities.dp(54.0f) + AndroidUtilities.dp(4.165f);
             boolean z4 = this.g;
             if (drawable != null) {
-                drawable.setBounds((int) ((z4 ? k01Var.l() + AndroidUtilities.dp(1.33f) : 0.0f) + l10 + AndroidUtilities.dp(3.0f)), (int) org.telegram.messenger.y3.A(drawable.getIntrinsicHeight(), 2.0f, 0.625f, dp), (int) ((drawable.getIntrinsicWidth() * 0.625f) + (z4 ? AndroidUtilities.dp(1.33f) + k01Var.l() : 0.0f) + l10 + AndroidUtilities.dp(3.0f)), (int) vh.v2.c(drawable.getIntrinsicHeight(), 2.0f, 0.625f, dp));
+                drawable.setBounds((int) ((z4 ? l01Var.l() + AndroidUtilities.dp(1.33f) : 0.0f) + l10 + AndroidUtilities.dp(3.0f)), (int) org.telegram.messenger.y3.A(drawable.getIntrinsicHeight(), 2.0f, 0.625f, dp), (int) ((drawable.getIntrinsicWidth() * 0.625f) + (z4 ? AndroidUtilities.dp(1.33f) + l01Var.l() : 0.0f) + l10 + AndroidUtilities.dp(3.0f)), (int) w.c.c(drawable.getIntrinsicHeight(), 2.0f, 0.625f, dp));
                 drawable.draw(canvas);
             }
             this.k.c(l10 + AndroidUtilities.dp(!z4 ? 12.66f : 4.0f), dp, f10, -1, canvas);
@@ -172,7 +172,7 @@ public final class n0 {
         }
         org.telegram.ui.Components.z8[] z8VarArr = {r3};
         this.b = z8VarArr;
-        org.telegram.ui.Components.z8 z8Var = new org.telegram.ui.Components.z8((org.telegram.ui.ActionBar.f6) null);
+        org.telegram.ui.Components.z8 z8Var = new org.telegram.ui.Components.z8((org.telegram.ui.ActionBar.g6) null);
         z8Var.j(i10, tLObject);
         imageReceiverArr[0].setForUserOrChat(tLObject, z8VarArr[0]);
         textPaint.setTextSize(AndroidUtilities.dp(11.0f));
@@ -194,7 +194,7 @@ public final class n0 {
         if (c(tLObject) == null) {
             this.k = null;
         } else {
-            this.k = new k01(c(tLObject), 9.33f, AndroidUtilities.bold());
+            this.k = new l01(c(tLObject), 9.33f, AndroidUtilities.bold());
         }
     }
 }

@@ -11,19 +11,19 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Cells.r2;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.ey;
+import org.telegram.ui.Components.gy;
 import org.telegram.ui.bm;
 import org.telegram.ui.jm;
 import org.telegram.ui.jn;
-import org.telegram.ui.my;
 import org.telegram.ui.ny;
 import org.telegram.ui.oy;
+import org.telegram.ui.py;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
@@ -80,63 +80,63 @@ public final /* synthetic */ class b0 implements Runnable {
                 }
                 break;
             default:
-                final my myVar = (my) this.d;
+                final ny nyVar = (ny) this.d;
                 TLRPC.Dialog dialog = (TLRPC.Dialog) this.e;
-                ny nyVar = myVar.g;
-                oy oyVar = myVar.h;
-                ArrayList arrayList = oyVar.O1;
+                oy oyVar = nyVar.g;
+                py pyVar = nyVar.h;
+                ArrayList arrayList = pyVar.O1;
                 if (arrayList != null) {
                     arrayList.remove(dialog);
                     int i11 = dialog.pinnedNum;
-                    oyVar.T0 = null;
-                    nyVar.a.invalidate();
-                    int N0 = nyVar.c.N0();
+                    pyVar.T0 = null;
+                    oyVar.a.invalidate();
+                    int N0 = oyVar.c.N0();
                     if (N0 == this.b - 1) {
-                        nyVar.c.m(N0).requestLayout();
+                        oyVar.c.m(N0).requestLayout();
                     }
-                    if (!oyVar.getMessagesController().isPromoDialog(dialog.id, false)) {
-                        int addDialogToFolder = oyVar.getMessagesController().addDialogToFolder(dialog.id, oyVar.S2 == 0 ? 1 : 0, -1, 0L);
+                    if (!pyVar.getMessagesController().isPromoDialog(dialog.id, false)) {
+                        int addDialogToFolder = pyVar.getMessagesController().addDialogToFolder(dialog.id, pyVar.S2 == 0 ? 1 : 0, -1, 0L);
                         int i12 = this.c;
                         if (addDialogToFolder != 2 || i12 != 0) {
-                            nyVar.x.D();
-                            nyVar.q(true);
+                            oyVar.x.D();
+                            oyVar.q(true);
                         }
-                        if (oyVar.S2 == 0) {
+                        if (pyVar.S2 == 0) {
                             if (addDialogToFolder == 2) {
                                 if (SharedConfig.archiveHidden) {
                                     SharedConfig.toggleArchiveHidden();
                                 }
-                                nyVar.x.D();
+                                oyVar.x.D();
                                 if (i12 == 0) {
-                                    oyVar.A4(true, true);
-                                    nyVar.q(true);
-                                    oyVar.o3();
+                                    pyVar.A4(true, true);
+                                    oyVar.q(true);
+                                    pyVar.o3();
                                 } else {
-                                    nyVar.q(true);
-                                    if (!SharedConfig.archiveHidden && nyVar.c.L0() == 0) {
-                                        oyVar.b2 = true;
-                                        nyVar.a.v0(0, -AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 76.0f : 70.0f), null);
+                                    oyVar.q(true);
+                                    if (!SharedConfig.archiveHidden && oyVar.c.L0() == 0) {
+                                        pyVar.b2 = true;
+                                        oyVar.a.v0(0, -AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 76.0f : 70.0f), null);
                                     }
                                 }
-                                i10 = ((org.telegram.ui.ActionBar.p2) oyVar).currentAccount;
-                                oyVar.O1.add(0, (TLRPC.Dialog) oyVar.R3(i10, nyVar.s, oyVar.S2, false).get(0));
-                                nyVar.q(true);
+                                i10 = ((org.telegram.ui.ActionBar.p2) pyVar).currentAccount;
+                                pyVar.O1.add(0, (TLRPC.Dialog) pyVar.R3(i10, oyVar.s, pyVar.S2, false).get(0));
+                                oyVar.q(true);
                                 final int i13 = 0;
-                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ly
+                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.my
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i13) {
                                             case 0:
-                                                myVar.h.A4(false, true);
+                                                nyVar.h.A4(false, true);
                                                 break;
                                             default:
-                                                myVar.h.A4(false, true);
+                                                nyVar.h.A4(false, true);
                                                 break;
                                         }
                                     }
                                 }, 300L);
                             } else if (addDialogToFolder == 1) {
-                                f2.l1 K = nyVar.a.K(0);
+                                f2.m1 K = oyVar.a.K(0);
                                 if (K != null) {
                                     View view = K.a;
                                     if (view instanceof r2) {
@@ -144,22 +144,22 @@ public final /* synthetic */ class b0 implements Runnable {
                                         if (r2Var.X1.n == 2) {
                                             r2Var.Y1 = true;
                                             r2Var.Z1 = 0.0f;
-                                            j6.u1.Q(0.0f, true);
-                                            j6.u1.start();
+                                            k6.u1.Q(0.0f, true);
+                                            k6.u1.start();
                                             r2Var.invalidate();
                                         }
                                     }
                                 }
                                 final int i14 = 1;
-                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ly
+                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.my
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i14) {
                                             case 0:
-                                                myVar.h.A4(false, true);
+                                                nyVar.h.A4(false, true);
                                                 break;
                                             default:
-                                                myVar.h.A4(false, true);
+                                                nyVar.h.A4(false, true);
                                                 break;
                                         }
                                     }
@@ -170,20 +170,20 @@ public final /* synthetic */ class b0 implements Runnable {
                             if (!z4) {
                                 globalMainSettings.edit().putBoolean("archivehint_l", true).commit();
                             }
-                            UndoView Y3 = oyVar.Y3();
+                            UndoView Y3 = pyVar.Y3();
                             if (Y3 != null) {
-                                Y3.l(dialog.id, z4 ? 2 : 3, null, new ey(myVar, dialog, i11, 24));
+                                Y3.l(dialog.id, z4 ? 2 : 3, null, new gy(nyVar, dialog, i11, 24));
                             }
                         }
-                        if (oyVar.S2 != 0 && oyVar.O1.isEmpty()) {
-                            nyVar.a.setEmptyView(null);
-                            nyVar.w.setVisibility(4);
+                        if (pyVar.S2 != 0 && pyVar.O1.isEmpty()) {
+                            oyVar.a.setEmptyView(null);
+                            oyVar.w.setVisibility(4);
                             break;
                         }
                     } else {
-                        oyVar.getMessagesController().hidePromoDialog();
-                        nyVar.x.D();
-                        nyVar.q(true);
+                        pyVar.getMessagesController().hidePromoDialog();
+                        oyVar.x.D();
+                        oyVar.q(true);
                         break;
                     }
                 }

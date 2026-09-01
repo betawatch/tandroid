@@ -3,9 +3,9 @@ package g;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import androidx.appcompat.widget.ContentFrameLayout;
-import j7.r7;
+import j7.s7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class o extends ContentFrameLayout {
     public final /* synthetic */ q r;
@@ -18,7 +18,7 @@ public final class o extends ContentFrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        return this.r.j(keyEvent) || super.dispatchKeyEvent(keyEvent);
+        return this.r.i(keyEvent) || super.dispatchKeyEvent(keyEvent);
     }
 
     @Override // android.view.ViewGroup
@@ -28,7 +28,7 @@ public final class o extends ContentFrameLayout {
             int y10 = (int) motionEvent.getY();
             if (x10 < -5 || y10 < -5 || x10 > getWidth() + 5 || y10 > getHeight() + 5) {
                 q qVar = this.r;
-                qVar.h(qVar.q(0), true);
+                qVar.h(qVar.p(0), true);
                 return true;
             }
         }
@@ -37,6 +37,6 @@ public final class o extends ContentFrameLayout {
 
     @Override // android.view.View
     public final void setBackgroundResource(int i10) {
-        setBackgroundDrawable(r7.b(getContext(), i10));
+        setBackgroundDrawable(s7.b(getContext(), i10));
     }
 }

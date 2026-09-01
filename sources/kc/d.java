@@ -6,7 +6,7 @@ import java.util.logging.Level;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class d {
     public final ArrayList a;
@@ -17,7 +17,7 @@ public final class d {
             for (int i10 = 0; i10 < jSONArray.length(); i10++) {
                 JSONObject optJSONObject = jSONArray.optJSONObject(i10);
                 if (optJSONObject != null) {
-                    arrayList.add(new p2.l(optJSONObject));
+                    arrayList.add(new p2.k(optJSONObject));
                 }
             }
         }
@@ -36,8 +36,8 @@ public final class d {
             }
             try {
                 throw null;
-            } catch (Exception e) {
-                l.d.log(Level.WARNING, "could not delete file ", (Throwable) e);
+            } catch (Exception e6) {
+                l.d.log(Level.WARNING, "could not delete file ", (Throwable) e6);
             }
         }
         arrayList.clear();

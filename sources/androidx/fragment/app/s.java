@@ -21,9 +21,8 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
-import vh.v2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuListener, androidx.lifecycle.t, androidx.lifecycle.u0, androidx.lifecycle.i, g2.f {
     public static final Object g0 = new Object();
@@ -238,7 +237,7 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
         return (g2.e) this.d0.c;
     }
 
-    public j7.w h() {
+    public j7.x h() {
         return new o(this);
     }
 
@@ -319,7 +318,7 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
         s sVar = this.h;
         if (sVar == null) {
             j0 j0Var = this.G;
-            sVar = (j0Var == null || (str2 = this.n) == null) ? null : j0Var.c.u(str2);
+            sVar = (j0Var == null || (str2 = this.n) == null) ? null : j0Var.c.q(str2);
         }
         if (sVar != null) {
             printWriter.print(str);
@@ -366,11 +365,11 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
             printWriter.println(this.S);
         }
         if (n() != null) {
-            new q5.g0(this, f()).y(str, printWriter);
+            new q5.g0(this, f()).g(str, printWriter);
         }
         printWriter.print(str);
         printWriter.println("Child " + this.I + ":");
-        this.I.w(v2.k(str, "  "), fileDescriptor, printWriter, strArr);
+        this.I.w(w.c.e(str, "  "), fileDescriptor, printWriter, strArr);
     }
 
     public final r j() {

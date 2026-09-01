@@ -1,61 +1,38 @@
 package cg;
 
-import org.telegram.messenger.R;
+import android.graphics.Canvas;
+import org.telegram.ui.Cells.d8;
+import org.telegram.ui.Components.tl0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class e extends m {
-    @Override // cg.m
-    public final float a() {
-        return 0.7f;
-    }
+public abstract class e extends tl0 {
+    public boolean U2;
 
-    @Override // cg.m
-    public final int c() {
-        return -13318311;
-    }
-
-    @Override // cg.m
-    public final float d() {
-        return 0.5f;
-    }
-
-    @Override // cg.m
-    public final int e() {
-        return R.raw.photo_neon;
-    }
-
-    @Override // cg.m
-    public final float g() {
-        return 0.2f;
-    }
-
-    @Override // cg.m
-    public final float h() {
-        return 1.45f;
-    }
-
-    @Override // cg.m
-    public final String i(int i10) {
-        if (i10 == 0) {
-            return "blitWithMaskLight";
+    @Override // org.telegram.ui.Components.tl0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        this.U2 = false;
+        for (int i10 = 0; i10 < getChildCount(); i10++) {
+            if (getChildAt(i10) instanceof d) {
+                d dVar = (d) getChildAt(i10);
+                canvas.save();
+                canvas.translate(dVar.getX(), dVar.getY());
+                d8 d8Var = (d8) dVar;
+                if (d8Var.I) {
+                    d8Var.b(canvas, this);
+                }
+                canvas.restore();
+            }
         }
-        if (i10 == 1) {
-            return "compositeWithMaskLight";
-        }
-        if (i10 != 2) {
-            return null;
-        }
-        return "brushLight";
+        super.dispatchDraw(canvas);
     }
 
-    @Override // cg.m
-    public final float k() {
-        return 0.07f;
-    }
-
-    @Override // cg.m
-    public final int l() {
-        return R.drawable.paint_neon_brush;
+    @Override // android.view.View
+    public final void invalidate() {
+        if (this.U2) {
+            return;
+        }
+        super.invalidate();
+        this.U2 = true;
     }
 }

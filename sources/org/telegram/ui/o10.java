@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class o10 extends org.telegram.ui.Components.ol0 {
+public final class o10 extends org.telegram.ui.Components.pl0 {
     public final Context r;
     public final int s;
     public final /* synthetic */ t10 v;
@@ -21,18 +21,18 @@ public final class o10 extends org.telegram.ui.Components.ol0 {
         this.s = i10;
     }
 
-    @Override // org.telegram.ui.Components.cl0
+    @Override // org.telegram.ui.Components.dl0
     public final String F(int i10) {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.cl0
-    public final void G(org.telegram.ui.Components.sl0 sl0Var, float f10, int[] iArr) {
+    @Override // org.telegram.ui.Components.dl0
+    public final void G(org.telegram.ui.Components.tl0 tl0Var, float f10, int[] iArr) {
         iArr[0] = 0;
         iArr[1] = 0;
     }
 
-    @Override // org.telegram.ui.Components.ol0
+    @Override // org.telegram.ui.Components.pl0
     public final int M(int i10) {
         t10 t10Var = this.v;
         if (i10 < t10Var.n.size()) {
@@ -41,12 +41,12 @@ public final class o10 extends org.telegram.ui.Components.ol0 {
         return 1;
     }
 
-    @Override // org.telegram.ui.Components.ol0
+    @Override // org.telegram.ui.Components.pl0
     public final Object O(int i10, int i11) {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.ol0
+    @Override // org.telegram.ui.Components.pl0
     public final int P(int i10, int i11) {
         if (i10 >= this.v.n.size()) {
             return 2;
@@ -58,7 +58,7 @@ public final class o10 extends org.telegram.ui.Components.ol0 {
         return (i12 == 2 || i12 == 4) ? 3 : 1;
     }
 
-    @Override // org.telegram.ui.Components.ol0
+    @Override // org.telegram.ui.Components.pl0
     public final int R() {
         t10 t10Var = this.v;
         int i10 = 0;
@@ -72,11 +72,11 @@ public final class o10 extends org.telegram.ui.Components.ol0 {
         return size + i10;
     }
 
-    @Override // org.telegram.ui.Components.ol0
+    @Override // org.telegram.ui.Components.pl0
     public final View T(int i10, View view) {
         if (view == null) {
             view = new org.telegram.ui.Cells.u3(this.r, null);
-            view.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.e7, false) & (-218103809));
+            view.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.e7, false) & (-218103809));
         }
         if (i10 == 0) {
             view.setAlpha(0.0f);
@@ -89,20 +89,20 @@ public final class o10 extends org.telegram.ui.Components.ol0 {
         return view;
     }
 
-    @Override // org.telegram.ui.Components.ol0
-    public final boolean V(int i10, int i11, f2.l1 l1Var) {
+    @Override // org.telegram.ui.Components.pl0
+    public final boolean V(int i10, int i11, f2.m1 m1Var) {
         return i10 == 0 || i11 != 0;
     }
 
-    @Override // org.telegram.ui.Components.ol0
-    public final void W(int i10, int i11, f2.l1 l1Var) {
+    @Override // org.telegram.ui.Components.pl0
+    public final void W(int i10, int i11, f2.m1 m1Var) {
         t10 t10Var = this.v;
         ArrayList arrayList = t10Var.n;
-        int i12 = l1Var.f;
-        View view = l1Var.a;
+        int i12 = m1Var.f;
+        View view = m1Var.a;
         if (i12 != 2) {
             ArrayList arrayList2 = (ArrayList) t10Var.r.get((String) arrayList.get(i10));
-            int i13 = l1Var.f;
+            int i13 = m1Var.f;
             boolean z4 = false;
             if (i13 == 0) {
                 ((org.telegram.ui.Cells.u3) view).setText(LocaleController.formatSectionDate(((MessageObject) arrayList2.get(0)).messageOwner.date));
@@ -123,7 +123,7 @@ public final class o10 extends org.telegram.ui.Components.ol0 {
                     z4 = true;
                 }
                 h7Var.f(messageObject, z4);
-                h7Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Components.fk(this, h7Var, messageObject, z11, 3));
+                h7Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Components.hk(this, h7Var, messageObject, z11, 3));
                 return;
             }
             if (i10 != 0) {
@@ -138,13 +138,13 @@ public final class o10 extends org.telegram.ui.Components.ol0 {
                 z10 = false;
             }
             i7Var.c(messageObject2, z10);
-            i7Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Components.fk(this, i7Var, messageObject2, z4, 2));
+            i7Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Components.hk(this, i7Var, messageObject2, z4, 2));
         }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // f2.o0
-    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+    @Override // f2.p0
+    public final f2.m1 x(ViewGroup viewGroup, int i10) {
         FrameLayout frameLayout;
         FrameLayout frameLayout2;
         Context context = this.r;
@@ -157,15 +157,15 @@ public final class o10 extends org.telegram.ui.Components.ol0 {
                 frameLayout2 = new n10(this, context);
                 return yh.o(frameLayout2, frameLayout2, -1, -2);
             }
-            org.telegram.ui.Components.t00 t00Var = new org.telegram.ui.Components.t00(context, null);
+            org.telegram.ui.Components.u00 u00Var = new org.telegram.ui.Components.u00(context, null);
             int i11 = this.s;
             if (i11 == 2 || i11 == 4) {
-                t00Var.setViewType(4);
+                u00Var.setViewType(4);
             } else {
-                t00Var.setViewType(3);
+                u00Var.setViewType(3);
             }
-            t00Var.setIsSingleCell(true);
-            frameLayout = t00Var;
+            u00Var.setIsSingleCell(true);
+            frameLayout = u00Var;
         }
         frameLayout2 = frameLayout;
         return yh.o(frameLayout2, frameLayout2, -1, -2);

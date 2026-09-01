@@ -4,13 +4,13 @@ import android.graphics.Bitmap;
 import android.view.View;
 import android.view.animation.Interpolator;
 import b4.e0;
-import com.google.firebase.messaging.r;
+import com.google.firebase.messaging.s;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import k7.b0;
+import k7.c0;
 import l7.w0;
-import m.s3;
+import m.r3;
 import n7.fe;
 import n7.gb;
 import n7.hb;
@@ -26,7 +26,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import r0.m0;
 import r0.n0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class j implements wf {
     public long a;
@@ -102,7 +102,6 @@ public final class j implements wf {
         jg jgVar = (jg) this.f;
         c5.j jVar = new c5.j();
         Object[] objArr = 0;
-        Object[] objArr2 = 0;
         w0 w0Var = new w0(10, false);
         w0Var.b = Long.valueOf(j10 & Long.MAX_VALUE);
         w0Var.c = hbVar;
@@ -111,7 +110,6 @@ public final class j implements wf {
         int i11 = aVar.e;
         nb.e.l.getClass();
         int i12 = aVar.e;
-        int i13 = 17;
         if (i12 == -1) {
             Bitmap bitmap = aVar.a;
             b6.m.h(bitmap);
@@ -127,7 +125,7 @@ public final class j implements wf {
             }
             i10 = 0;
         }
-        qa qaVar = new qa((int) (objArr2 == true ? 1 : 0));
+        qa qaVar = new qa((int) (objArr == true ? 1 : 0));
         qaVar.b = i11 != -1 ? i11 != 35 ? i11 != 842094169 ? i11 != 16 ? i11 != 17 ? ra.b : ra.d : ra.c : ra.e : ra.f : ra.h;
         qaVar.c = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
         jVar.b = new sa(qaVar);
@@ -137,42 +135,42 @@ public final class j implements wf {
             n7.g gVar = n7.i.b;
             Object[] array = list.toArray();
             int length = array.length;
-            b0.a(length, array);
+            c0.a(length, array);
             jVar.e = n7.i.r(length, array);
             List<ig> list2 = jgVar.a;
             if (!list2.isEmpty()) {
-                Object[] objArr3 = new Object[4];
-                int i14 = 0;
+                Object[] objArr2 = new Object[4];
+                int i13 = 0;
                 for (ig igVar : list2) {
-                    r rVar = new r(i13, (boolean) (objArr == true ? 1 : 0));
-                    rVar.b = Integer.valueOf(igVar.c & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                    rVar.c = Integer.valueOf(igVar.d & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                    rVar.d = Integer.valueOf(igVar.e & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                    rVar.e = Integer.valueOf(igVar.f & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                    ue ueVar = new ue(rVar);
-                    int i15 = i14 + 1;
-                    int length2 = objArr3.length;
-                    if (length2 < i15) {
-                        int i16 = length2 + (length2 >> 1) + 1;
-                        if (i16 < i15) {
-                            int highestOneBit = Integer.highestOneBit(i14);
-                            i16 = highestOneBit + highestOneBit;
+                    s sVar = new s();
+                    sVar.a = Integer.valueOf(igVar.c & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                    sVar.b = Integer.valueOf(igVar.d & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                    sVar.c = Integer.valueOf(igVar.e & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                    sVar.d = Integer.valueOf(igVar.f & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                    ue ueVar = new ue(sVar);
+                    int i14 = i13 + 1;
+                    int length2 = objArr2.length;
+                    if (length2 < i14) {
+                        int i15 = length2 + (length2 >> 1) + 1;
+                        if (i15 < i14) {
+                            int highestOneBit = Integer.highestOneBit(i13);
+                            i15 = highestOneBit + highestOneBit;
                         }
-                        if (i16 < 0) {
-                            i16 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                        if (i15 < 0) {
+                            i15 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                         }
-                        objArr3 = Arrays.copyOf(objArr3, i16);
+                        objArr2 = Arrays.copyOf(objArr2, i15);
                     }
-                    objArr3[i14] = ueVar;
-                    i14 = i15;
+                    objArr2[i13] = ueVar;
+                    i13 = i14;
                 }
-                jVar.d = n7.i.r(i14, objArr3);
+                jVar.d = n7.i.r(i13, objArr2);
             }
         }
-        s3 s3Var = new s3();
-        s3Var.c = gb.b;
-        s3Var.f = new fe(jVar);
-        return new e0(s3Var, 0);
+        r3 r3Var = new r3();
+        r3Var.c = gb.b;
+        r3Var.f = new fe(jVar);
+        return new e0(r3Var, 0);
     }
 
     public j() {

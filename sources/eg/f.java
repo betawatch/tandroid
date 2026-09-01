@@ -1,45 +1,66 @@
 package eg;
 
-import android.content.Context;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import k7.b6;
+import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.yh;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class f extends LinearLayout {
-    public final TextView a;
-    public final TextView b;
-    public final LimitPreviewView c;
+public final /* synthetic */ class f implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ j b;
 
-    public f(Context context, f6 f6Var) {
-        super(context);
-        setOrientation(1);
-        setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), 0);
-        TextView textView = new TextView(context);
-        this.a = textView;
-        yh.p(15.0f, 1, textView);
-        textView.setTextColor(j6.v0(j6.G6, f6Var));
-        addView(textView, b6.p(-1, -2, 0.0f, 0, 16, 0, 16, 0));
-        TextView textView2 = new TextView(context);
-        this.b = textView2;
-        org.telegram.ui.b.l(j6.y6, f6Var, textView2, 1, 14.0f);
-        addView(textView2, b6.p(-1, -2, 0.0f, 0, 16, 1, 16, 0));
-        LimitPreviewView limitPreviewView = new LimitPreviewView(context, 0, 10, f6Var, 20);
-        this.c = limitPreviewView;
-        addView(limitPreviewView, b6.p(-1, -2, 0.0f, 0, 0, 8, 0, 21));
+    public /* synthetic */ f(j jVar, int i10) {
+        this.a = i10;
+        this.b = jVar;
     }
 
-    public final void a(e eVar) {
-        this.a.setText(eVar.a);
-        this.b.setText(eVar.b);
-        LimitPreviewView limitPreviewView = this.c;
-        limitPreviewView.v.setText(String.format("%d", Integer.valueOf(eVar.d)));
-        limitPreviewView.w.setText(String.format("%d", Integer.valueOf(eVar.c)));
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                j jVar = this.b;
+                jVar.g(AndroidUtilities.lerpAngle(jVar.I, jVar.f0, jVar.N.getAnimatedFraction()));
+                break;
+            case 1:
+                j jVar2 = this.b;
+                jVar2.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                jVar2.k0 = floatValue;
+                jVar2.setAlpha(floatValue);
+                i iVar = jVar2.E;
+                if (iVar != null) {
+                    iVar.setScaleX(Utilities.clamp(jVar2.k0 * 1.25f, 1.0f, 0.0f) * AndroidUtilities.lerp(0.9f, 1.0f, jVar2.g0));
+                    jVar2.E.setScaleY(Utilities.clamp(jVar2.k0 * 1.25f, 1.0f, 0.0f) * AndroidUtilities.lerp(0.9f, 1.0f, jVar2.g0));
+                    jVar2.E.setAlpha(Math.max(0.0f, jVar2.k0 - 0.8f) * jVar2.g0 * 5.0f);
+                }
+                jVar2.invalidate();
+                break;
+            case 2:
+                j jVar3 = this.b;
+                jVar3.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                jVar3.g0 = floatValue2;
+                i iVar2 = jVar3.E;
+                if (iVar2 != null) {
+                    iVar2.setScaleX(Utilities.clamp(jVar3.k0 * 1.25f, 1.0f, 0.0f) * AndroidUtilities.lerp(0.9f, 1.0f, floatValue2));
+                    jVar3.E.setScaleY(Utilities.clamp(jVar3.k0 * 1.25f, 1.0f, 0.0f) * AndroidUtilities.lerp(0.9f, 1.0f, jVar3.g0));
+                    jVar3.E.setAlpha(Math.max(0.0f, jVar3.k0 - 0.8f) * jVar3.g0 * 5.0f);
+                    break;
+                }
+                break;
+            case 3:
+                this.b.k();
+                break;
+            case 4:
+                this.b.k();
+                break;
+            default:
+                j jVar4 = this.b;
+                float lerpAngle = AndroidUtilities.lerpAngle(jVar4.f0, jVar4.I, valueAnimator.getAnimatedFraction());
+                jVar4.L = lerpAngle;
+                jVar4.g(lerpAngle);
+                break;
+        }
     }
 }

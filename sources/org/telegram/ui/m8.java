@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m8 implements r0.o, Utilities.Callback5, Utilities.Callback5Return, org.telegram.ui.Components.yk0 {
+public final /* synthetic */ class m8 implements r0.o, Utilities.Callback5, Utilities.Callback5Return, org.telegram.ui.Components.zk0 {
     public final /* synthetic */ l9 a;
 
     public /* synthetic */ m8(l9 l9Var) {
@@ -13,11 +13,11 @@ public final /* synthetic */ class m8 implements r0.o, Utilities.Callback5, Util
     }
 
     @Override // r0.o
-    public r0.m1 N0(View view, r0.m1 m1Var) {
+    public r0.m1 M0(View view, r0.m1 m1Var) {
         return this.a.onInsetsInternal(view, m1Var);
     }
 
-    @Override // org.telegram.ui.Components.yk0
+    @Override // org.telegram.ui.Components.zk0
     public void d() {
         this.a.f0();
     }
@@ -27,7 +27,7 @@ public final /* synthetic */ class m8 implements r0.o, Utilities.Callback5, Util
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        l9.X(this.a, (org.telegram.ui.Components.i51) obj, (View) obj2);
+        l9.X(this.a, (org.telegram.ui.Components.j51) obj, (View) obj2);
     }
 
     @Override // org.telegram.messenger.Utilities.Callback5Return
@@ -37,7 +37,7 @@ public final /* synthetic */ class m8 implements r0.o, Utilities.Callback5, Util
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        Object obj6 = ((org.telegram.ui.Components.i51) obj).G;
+        Object obj6 = ((org.telegram.ui.Components.j51) obj).G;
         if (obj6 instanceof h9) {
             this.a.e0(((h9) obj6).c, (g9) view);
             z4 = true;

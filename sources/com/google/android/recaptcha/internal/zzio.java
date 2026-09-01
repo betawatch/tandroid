@@ -3,13 +3,13 @@ package com.google.android.recaptcha.internal;
 import dd.p;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import k7.p7;
+import k7.q7;
 import ld.c0;
 import uc.c;
 import vc.a;
 import wc.i;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 final class zzio extends i implements p {
     Object zza;
@@ -54,16 +54,16 @@ final class zzio extends i implements p {
         a aVar = a.a;
         int i10 = this.zzc;
         try {
-        } catch (Exception e) {
+        } catch (Exception e6) {
             zzip zzipVar = this.zze;
             zziz zzizVar = this.zzd;
             this.zza = null;
             this.zzb = null;
             this.zzc = 2;
-            zzh = zzipVar.zzh(e, zzizVar, this);
+            zzh = zzipVar.zzh(e6, zzizVar, this);
         }
         if (i10 == 0) {
-            p7.b(obj);
+            q7.b(obj);
             zziz zzizVar2 = this.zzd;
             zzizVar2.zza = new zzcs();
             zzzq zzi = zzzq.zzi(zzpp.zzh().zzj(this.zzf));
@@ -84,12 +84,12 @@ final class zzio extends i implements p {
             return aVar;
         }
         if (i10 != 1) {
-            p7.b(obj);
+            q7.b(obj);
             return sc.i.a;
         }
         zzmfVar = (zzmf) this.zzb;
         zzzqVar = (zzzq) this.zza;
-        p7.b(obj);
+        q7.b(obj);
         zzmfVar.zzf();
         new Long(zzmfVar.zza(TimeUnit.MICROSECONDS));
         zzzqVar.zzf();

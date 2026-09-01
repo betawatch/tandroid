@@ -19,8 +19,8 @@ import com.google.android.gms.common.api.internal.s1;
 import j$.util.DesugarCollections;
 import j$.util.Objects;
 import j3.n1;
-import j7.f8;
 import j7.g8;
+import j7.h8;
 import j7.h9;
 import j7.n6;
 import java.io.ByteArrayOutputStream;
@@ -39,16 +39,16 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.zip.Deflater;
-import k7.b7;
-import k7.u6;
+import k7.c7;
+import k7.v6;
 import l7.j0;
 import l7.o9;
 import l7.oa;
 import l7.v7;
 import l7.w0;
-import lh.k3;
-import lh.p6;
-import m.s3;
+import m.r3;
+import mh.k3;
+import mh.p6;
 import n7.ag;
 import n7.jb;
 import n7.xe;
@@ -57,13 +57,12 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.qk0;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.tl0;
 import org.xmlpull.v1.XmlPullParserException;
 import s8.n0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class e0 implements r3.e {
     public final /* synthetic */ int a;
@@ -188,7 +187,7 @@ public final class e0 implements r3.e {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static e0 e(Resources resources, int i10, Resources.Theme theme) {
+    public static e0 f(Resources resources, int i10, Resources.Theme theme) {
         int next;
         float f10;
         int i11;
@@ -281,17 +280,29 @@ public final class e0 implements r3.e {
         throw new XmlPullParserException(xml.getPositionDescription() + ": <item> tag requires a 'color' attribute and a 'offset' attribute!");
     }
 
-    public void A(o4.r rVar) {
+    public List A(CharSequence charSequence) {
+        charSequence.getClass();
+        org.telegram.ui.web.e0 e0Var = (org.telegram.ui.web.e0) this.d;
+        e0Var.getClass();
+        r8.h hVar = new r8.h(e0Var, this, charSequence);
+        ArrayList arrayList = new ArrayList();
+        while (hVar.hasNext()) {
+            arrayList.add((String) hVar.next());
+        }
+        return DesugarCollections.unmodifiableList(arrayList);
+    }
+
+    public void B(o4.r rVar) {
         o4.v vVar = (o4.v) this.c;
         vVar.getClass();
         Iterator it = ((CopyOnWriteArrayList) this.d).iterator();
         while (it.hasNext()) {
             o4.y yVar = (o4.y) it.next();
-            h5.d0.K(yVar.a, new androidx.car.app.utils.c(this, yVar.b, vVar, rVar, 16));
+            h5.d0.K(yVar.a, new androidx.car.app.utils.c(this, yVar.b, vVar, rVar, 12));
         }
     }
 
-    public void B(String str, y5.c cVar) {
+    public void C(String str, y5.c cVar) {
         int i10 = this.b + 1;
         Object[] objArr = (Object[]) this.c;
         int length = objArr.length;
@@ -318,7 +329,7 @@ public final class e0 implements r3.e {
         this.b = i13 + 1;
     }
 
-    public void C(String str, com.google.android.gms.common.api.internal.l lVar) {
+    public void D(String str, com.google.android.gms.common.api.internal.l lVar) {
         Map map = (Map) this.c;
         if (map.containsKey(str)) {
             throw new IllegalArgumentException(android.support.v4.media.a.o("LifecycleCallback with tag ", str, " already added to this fragment."));
@@ -329,7 +340,7 @@ public final class e0 implements r3.e {
         }
     }
 
-    public byte[] D() {
+    public byte[] E() {
         j7.k kVar;
         u9.d dVar;
         j0 j0Var;
@@ -339,14 +350,14 @@ public final class e0 implements r3.e {
         switch (this.a) {
             case 10:
                 h9 h9Var = h9.c;
-                com.google.firebase.messaging.r rVar = (com.google.firebase.messaging.r) this.c;
-                ((f8) this.d).h = false;
-                f8 f8Var = (f8) this.d;
-                f8Var.f = Boolean.FALSE;
-                rVar.b = new g8(f8Var);
+                com.google.firebase.messaging.s sVar = (com.google.firebase.messaging.s) this.c;
+                ((g8) this.d).h = false;
+                g8 g8Var = (g8) this.d;
+                g8Var.f = Boolean.FALSE;
+                sVar.a = new h8(g8Var);
                 try {
                     h9.b();
-                    n6 n6Var = new n6(rVar);
+                    n6 n6Var = new n6(sVar);
                     androidx.biometric.e eVar = new androidx.biometric.e(20);
                     h9Var.a(eVar);
                     HashMap hashMap = new HashMap((HashMap) eVar.b);
@@ -363,20 +374,20 @@ public final class e0 implements r3.e {
                     }
                     dVar.a(n6Var, kVar);
                     return byteArrayOutputStream.toByteArray();
-                } catch (UnsupportedEncodingException e) {
-                    throw new UnsupportedOperationException("Failed to covert logging to UTF-8 byte array", e);
+                } catch (UnsupportedEncodingException e6) {
+                    throw new UnsupportedOperationException("Failed to covert logging to UTF-8 byte array", e6);
                 }
             case 11:
             default:
                 ag agVar = ag.c;
-                s3 s3Var = (s3) this.c;
-                ((f8) this.d).h = false;
-                f8 f8Var2 = (f8) this.d;
-                f8Var2.f = Boolean.FALSE;
-                s3Var.a = new xe(f8Var2);
+                r3 r3Var = (r3) this.c;
+                ((g8) this.d).h = false;
+                g8 g8Var2 = (g8) this.d;
+                g8Var2.f = Boolean.FALSE;
+                r3Var.a = new xe(g8Var2);
                 try {
                     ag.b();
-                    jb jbVar = new jb(s3Var);
+                    jb jbVar = new jb(r3Var);
                     w0 w0Var = new w0(7);
                     agVar.a(w0Var);
                     HashMap hashMap3 = new HashMap((HashMap) w0Var.b);
@@ -393,16 +404,16 @@ public final class e0 implements r3.e {
                     }
                     dVar3.a(jbVar, yVar);
                     return byteArrayOutputStream2.toByteArray();
-                } catch (UnsupportedEncodingException e6) {
-                    throw new UnsupportedOperationException("Failed to covert logging to UTF-8 byte array", e6);
+                } catch (UnsupportedEncodingException e10) {
+                    throw new UnsupportedOperationException("Failed to covert logging to UTF-8 byte array", e10);
                 }
             case 12:
                 oa oaVar = oa.c;
                 a9.a aVar = (a9.a) this.c;
-                ((f8) this.d).h = false;
-                f8 f8Var3 = (f8) this.d;
-                f8Var3.f = Boolean.FALSE;
-                aVar.a = new o9(f8Var3);
+                ((g8) this.d).h = false;
+                g8 g8Var3 = (g8) this.d;
+                g8Var3.f = Boolean.FALSE;
+                aVar.a = new o9(g8Var3);
                 try {
                     oa.b();
                     v7 v7Var = new v7(aVar);
@@ -422,13 +433,13 @@ public final class e0 implements r3.e {
                     }
                     dVar2.a(v7Var, j0Var);
                     return byteArrayOutputStream3.toByteArray();
-                } catch (UnsupportedEncodingException e10) {
-                    throw new UnsupportedOperationException("Failed to covert logging to UTF-8 byte array", e10);
+                } catch (UnsupportedEncodingException e11) {
+                    throw new UnsupportedOperationException("Failed to covert logging to UTF-8 byte array", e11);
                 }
         }
     }
 
-    public void E(Bundle bundle) {
+    public void F(Bundle bundle) {
         this.b = 1;
         this.d = bundle;
         for (Map.Entry entry : ((Map) this.c).entrySet()) {
@@ -436,7 +447,7 @@ public final class e0 implements r3.e {
         }
     }
 
-    public void F(Bundle bundle) {
+    public void G(Bundle bundle) {
         if (bundle == null) {
             return;
         }
@@ -455,7 +466,7 @@ public final class e0 implements r3.e {
             if (z4 || ((Bitmap[]) this.d)[i13] == null) {
                 Bitmap bitmap = ((Bitmap[]) this.d)[i13];
                 if (bitmap != null) {
-                    Utilities.globalQueue.postRunnable(new ef.e(bitmap, 28));
+                    Utilities.globalQueue.postRunnable(new eh.m(bitmap, 22));
                 }
                 ((Bitmap[]) this.d)[i13] = Bitmap.createBitmap(i11, i10, Bitmap.Config.ARGB_8888);
             }
@@ -466,7 +477,94 @@ public final class e0 implements r3.e {
         }
     }
 
-    public ea.b b() {
+    /* JADX WARN: Code restructure failed: missing block: B:46:?, code lost:
+    
+        return r11;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:50:0x00fa, code lost:
+    
+        if (r13 == r16) goto L44;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x00fc, code lost:
+    
+        r11 = new r3.d(-2, r13, r5 + r3);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x0107, code lost:
+    
+        return r3.d.d;
+     */
+    @Override // r3.e
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public r3.d b(r3.l lVar, long j10) {
+        long j11;
+        switch (this.a) {
+            case 0:
+                long position = lVar.getPosition();
+                int min = (int) Math.min(112800, lVar.getLength() - position);
+                h5.w wVar = (h5.w) this.d;
+                wVar.C(min);
+                lVar.b(0, min, wVar.a);
+                int i10 = wVar.c;
+                long j12 = -1;
+                long j13 = -1;
+                long j14 = -9223372036854775807L;
+                while (true) {
+                    if (wVar.a() < 188) {
+                        j11 = -9223372036854775807L;
+                        break;
+                    } else {
+                        byte[] bArr = wVar.a;
+                        int i11 = wVar.b;
+                        while (true) {
+                            if (i11 < i10) {
+                                j11 = -9223372036854775807L;
+                                if (bArr[i11] != 71) {
+                                    i11++;
+                                }
+                            } else {
+                                j11 = -9223372036854775807L;
+                            }
+                        }
+                        int i12 = i11 + 188;
+                        if (i12 > i10) {
+                            break;
+                        } else {
+                            long a2 = j7.d0.a(wVar, i11, this.b);
+                            if (a2 != j11) {
+                                long b10 = ((h5.c0) this.c).b(a2);
+                                if (b10 > j10) {
+                                    if (j14 != j11) {
+                                        r3.d dVar = new r3.d(0, -9223372036854775807L, position + j13);
+                                        break;
+                                    } else {
+                                        return new r3.d(-1, b10, position);
+                                    }
+                                } else {
+                                    if (100000 + b10 > j10) {
+                                        return new r3.d(0, -9223372036854775807L, position + i11);
+                                    }
+                                    j14 = b10;
+                                    j13 = i11;
+                                }
+                            }
+                            wVar.F(i12);
+                            j12 = i12;
+                        }
+                    }
+                }
+            default:
+                long position2 = lVar.getPosition();
+                long j15 = j(lVar);
+                long g10 = lVar.g();
+                lVar.i(Math.max(6, ((r3.o) this.c).c));
+                long j16 = j(lVar);
+                return (j15 > j10 || j16 <= j10) ? j16 <= j10 ? new r3.d(-2, j16, lVar.g()) : new r3.d(-1, j15, position2) : new r3.d(0, -9223372036854775807L, g10);
+        }
+    }
+
+    public ea.b c() {
         if ("".isEmpty()) {
             return new ea.b((String) this.c, ((Long) this.d).longValue(), this.b);
         }
@@ -480,7 +578,7 @@ public final class e0 implements r3.e {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public n0 c() {
+    public n0 d() {
         char c3;
         char c10;
         char c11;
@@ -503,7 +601,7 @@ public final class e0 implements r3.e {
                 Objects.requireNonNull(objArr[1]);
                 n0Var = new n0(null, objArr, 1);
             } else {
-                b7.d(i10, objArr.length >> 1);
+                c7.d(i10, objArr.length >> 1);
                 int s6 = s8.z.s(i10);
                 if (i10 == 1) {
                     Objects.requireNonNull(objArr[0]);
@@ -667,94 +765,19 @@ public final class e0 implements r3.e {
         throw wVar2.a();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:46:?, code lost:
-    
-        return r11;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:50:0x00fa, code lost:
-    
-        if (r13 == r16) goto L44;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:51:0x00fc, code lost:
-    
-        r11 = new r3.d(-2, r13, r5 + r3);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x0107, code lost:
-    
-        return r3.d.d;
-     */
-    @Override // r3.e
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public r3.d d(r3.l lVar, long j10) {
-        long j11;
-        switch (this.a) {
-            case 0:
-                long position = lVar.getPosition();
-                int min = (int) Math.min(112800, lVar.getLength() - position);
-                h5.w wVar = (h5.w) this.d;
-                wVar.C(min);
-                lVar.c(0, min, wVar.a);
-                int i10 = wVar.c;
-                long j12 = -1;
-                long j13 = -1;
-                long j14 = -9223372036854775807L;
-                while (true) {
-                    if (wVar.a() < 188) {
-                        j11 = -9223372036854775807L;
-                        break;
-                    } else {
-                        byte[] bArr = wVar.a;
-                        int i11 = wVar.b;
-                        while (true) {
-                            if (i11 < i10) {
-                                j11 = -9223372036854775807L;
-                                if (bArr[i11] != 71) {
-                                    i11++;
-                                }
-                            } else {
-                                j11 = -9223372036854775807L;
-                            }
-                        }
-                        int i12 = i11 + 188;
-                        if (i12 > i10) {
-                            break;
-                        } else {
-                            long a2 = j7.c0.a(wVar, i11, this.b);
-                            if (a2 != j11) {
-                                long b10 = ((h5.c0) this.c).b(a2);
-                                if (b10 > j10) {
-                                    if (j14 != j11) {
-                                        r3.d dVar = new r3.d(0, -9223372036854775807L, position + j13);
-                                        break;
-                                    } else {
-                                        return new r3.d(-1, b10, position);
-                                    }
-                                } else {
-                                    if (100000 + b10 > j10) {
-                                        return new r3.d(0, -9223372036854775807L, position + i11);
-                                    }
-                                    j14 = b10;
-                                    j13 = i11;
-                                }
-                            }
-                            wVar.F(i12);
-                            j12 = i12;
-                        }
-                    }
-                }
-            default:
-                long position2 = lVar.getPosition();
-                long i13 = i(lVar);
-                long i14 = lVar.i();
-                lVar.n(Math.max(6, ((r3.o) this.c).c));
-                long i15 = i(lVar);
-                return (i13 > j10 || i15 <= j10) ? i15 <= j10 ? new r3.d(-2, i15, lVar.i()) : new r3.d(-1, i13, position2) : new r3.d(0, -9223372036854775807L, i14);
+    public void e(int i10) {
+        int i11 = this.b;
+        if (i10 == i11) {
+            return;
         }
+        StringBuilder sb = new StringBuilder("Wrong data accessor type detected. ");
+        sb.append(i11 != 0 ? i11 != 1 ? "Unknown" : "ArrayBuffer" : "String");
+        sb.append(" expected, but got ");
+        sb.append(i10 != 0 ? i10 != 1 ? "Unknown" : "ArrayBuffer" : "String");
+        throw new IllegalStateException(sb.toString());
     }
 
-    public void f(String str, Object... objArr) {
+    public void g(String str, Object... objArr) {
         if (this.b <= 3) {
             String str2 = (String) this.c;
             if (objArr.length > 0) {
@@ -764,57 +787,57 @@ public final class e0 implements r3.e {
         }
     }
 
-    public void g(int i10, j3.n0 n0Var, int i11, Object obj, long j10) {
-        h(new o4.r(1, i10, n0Var, i11, obj, h5.d0.S(j10), -9223372036854775807L));
+    public void h(int i10, j3.n0 n0Var, int i11, Object obj, long j10) {
+        i(new o4.r(1, i10, n0Var, i11, obj, h5.d0.S(j10), -9223372036854775807L));
     }
 
-    public void h(o4.r rVar) {
+    public void i(o4.r rVar) {
         Iterator it = ((CopyOnWriteArrayList) this.d).iterator();
         while (it.hasNext()) {
             o4.y yVar = (o4.y) it.next();
-            h5.d0.K(yVar.a, new p6(this, yVar.b, rVar, 11));
+            h5.d0.K(yVar.a, new p6(this, yVar.b, rVar, 3));
         }
     }
 
-    public long i(r3.l lVar) {
-        int f10;
+    public long j(r3.l lVar) {
+        int e6;
         org.telegram.ui.Components.jb jbVar = (org.telegram.ui.Components.jb) this.d;
         r3.o oVar = (r3.o) this.c;
-        while (lVar.i() < lVar.getLength() - 6) {
+        while (lVar.g() < lVar.getLength() - 6) {
             int i10 = this.b;
-            long i11 = lVar.i();
+            long g10 = lVar.g();
             byte[] bArr = new byte[2];
-            int i12 = 0;
+            int i11 = 0;
             boolean a2 = false;
-            lVar.c(0, 2, bArr);
+            lVar.b(0, 2, bArr);
             if ((((bArr[0] & 255) << 8) | (bArr[1] & 255)) != i10) {
-                lVar.t();
-                lVar.n((int) (i11 - lVar.getPosition()));
+                lVar.r();
+                lVar.i((int) (g10 - lVar.getPosition()));
             } else {
                 h5.w wVar = new h5.w(16);
                 System.arraycopy(bArr, 0, wVar.a, 0, 2);
                 byte[] bArr2 = wVar.a;
-                while (i12 < 14 && (f10 = lVar.f(2 + i12, 14 - i12, bArr2)) != -1) {
-                    i12 += f10;
+                while (i11 < 14 && (e6 = lVar.e(2 + i11, 14 - i11, bArr2)) != -1) {
+                    i11 += e6;
                 }
-                wVar.E(i12);
-                lVar.t();
-                lVar.n((int) (i11 - lVar.getPosition()));
-                a2 = u6.a(wVar, oVar, i10, jbVar);
+                wVar.E(i11);
+                lVar.r();
+                lVar.i((int) (g10 - lVar.getPosition()));
+                a2 = v6.a(wVar, oVar, i10, jbVar);
             }
             if (a2) {
                 break;
             }
-            lVar.n(1);
+            lVar.i(1);
         }
-        if (lVar.i() < lVar.getLength() - 6) {
+        if (lVar.g() < lVar.getLength() - 6) {
             return jbVar.a;
         }
-        lVar.n((int) (lVar.getLength() - lVar.i()));
+        lVar.i((int) (lVar.getLength() - lVar.g()));
         return oVar.j;
     }
 
-    public Object j(int i10) {
+    public Object k(int i10) {
         SparseArray sparseArray = (SparseArray) this.c;
         if (this.b == -1) {
             this.b = 0;
@@ -832,30 +855,17 @@ public final class e0 implements r3.e {
         return sparseArray.valueAt(this.b);
     }
 
-    public boolean k() {
+    public boolean l() {
         ColorStateList colorStateList;
         return ((Shader) this.c) == null && (colorStateList = (ColorStateList) this.d) != null && colorStateList.isStateful();
     }
 
-    public void l(o4.j jVar, int i10, int i11, j3.n0 n0Var, int i12, Object obj, long j10, long j11) {
-        m(jVar, new o4.r(i10, i11, n0Var, i12, obj, h5.d0.S(j10), h5.d0.S(j11)));
-    }
-
-    /* JADX WARN: Type inference failed for: r4v0, types: [java.lang.Object, o4.z] */
-    public void m(o4.j jVar, o4.r rVar) {
-        Iterator it = ((CopyOnWriteArrayList) this.d).iterator();
-        while (it.hasNext()) {
-            o4.y yVar = (o4.y) it.next();
-            h5.d0.K(yVar.a, new o4.x(this, yVar.b, jVar, rVar, 1));
-        }
-    }
-
-    public void n(o4.j jVar, int i10, int i11, j3.n0 n0Var, int i12, Object obj, long j10, long j11) {
-        p(jVar, new o4.r(i10, i11, n0Var, i12, obj, h5.d0.S(j10), h5.d0.S(j11)));
+    public void m(o4.j jVar, int i10, int i11, j3.n0 n0Var, int i12, Object obj, long j10, long j11) {
+        o(jVar, new o4.r(i10, i11, n0Var, i12, obj, h5.d0.S(j10), h5.d0.S(j11)));
     }
 
     @Override // r3.e
-    public void o() {
+    public void n() {
         switch (this.a) {
             case 0:
                 h5.w wVar = (h5.w) this.d;
@@ -867,7 +877,20 @@ public final class e0 implements r3.e {
     }
 
     /* JADX WARN: Type inference failed for: r4v0, types: [java.lang.Object, o4.z] */
-    public void p(o4.j jVar, o4.r rVar) {
+    public void o(o4.j jVar, o4.r rVar) {
+        Iterator it = ((CopyOnWriteArrayList) this.d).iterator();
+        while (it.hasNext()) {
+            o4.y yVar = (o4.y) it.next();
+            h5.d0.K(yVar.a, new o4.x(this, yVar.b, jVar, rVar, 1));
+        }
+    }
+
+    public void p(o4.j jVar, int i10, int i11, j3.n0 n0Var, int i12, Object obj, long j10, long j11) {
+        q(jVar, new o4.r(i10, i11, n0Var, i12, obj, h5.d0.S(j10), h5.d0.S(j11)));
+    }
+
+    /* JADX WARN: Type inference failed for: r4v0, types: [java.lang.Object, o4.z] */
+    public void q(o4.j jVar, o4.r rVar) {
         Iterator it = ((CopyOnWriteArrayList) this.d).iterator();
         while (it.hasNext()) {
             o4.y yVar = (o4.y) it.next();
@@ -875,15 +898,15 @@ public final class e0 implements r3.e {
         }
     }
 
-    public void q(o4.j jVar, int i10, int i11, j3.n0 n0Var, int i12, Object obj, long j10, long j11, IOException iOException, boolean z4) {
-        s(jVar, new o4.r(i10, i11, n0Var, i12, obj, h5.d0.S(j10), h5.d0.S(j11)), iOException, z4);
+    public void r(o4.j jVar, int i10, int i11, j3.n0 n0Var, int i12, Object obj, long j10, long j11, IOException iOException, boolean z4) {
+        t(jVar, new o4.r(i10, i11, n0Var, i12, obj, h5.d0.S(j10), h5.d0.S(j11)), iOException, z4);
     }
 
-    public void r(o4.j jVar, int i10, IOException iOException, boolean z4) {
-        q(jVar, i10, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, iOException, z4);
+    public void s(o4.j jVar, int i10, IOException iOException, boolean z4) {
+        r(jVar, i10, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, iOException, z4);
     }
 
-    public void s(o4.j jVar, o4.r rVar, IOException iOException, boolean z4) {
+    public void t(o4.j jVar, o4.r rVar, IOException iOException, boolean z4) {
         Iterator it = ((CopyOnWriteArrayList) this.d).iterator();
         while (it.hasNext()) {
             o4.y yVar = (o4.y) it.next();
@@ -891,12 +914,12 @@ public final class e0 implements r3.e {
         }
     }
 
-    public void t(o4.j jVar, int i10, int i11, j3.n0 n0Var, int i12, Object obj, long j10, long j11) {
-        u(jVar, new o4.r(i10, i11, n0Var, i12, obj, h5.d0.S(j10), h5.d0.S(j11)));
+    public void u(o4.j jVar, int i10, int i11, j3.n0 n0Var, int i12, Object obj, long j10, long j11) {
+        v(jVar, new o4.r(i10, i11, n0Var, i12, obj, h5.d0.S(j10), h5.d0.S(j11)));
     }
 
     /* JADX WARN: Type inference failed for: r4v0, types: [java.lang.Object, o4.z] */
-    public void u(o4.j jVar, o4.r rVar) {
+    public void v(o4.j jVar, o4.r rVar) {
         Iterator it = ((CopyOnWriteArrayList) this.d).iterator();
         while (it.hasNext()) {
             o4.y yVar = (o4.y) it.next();
@@ -904,7 +927,7 @@ public final class e0 implements r3.e {
         }
     }
 
-    public void w(Object obj, Object obj2) {
+    public void x(Object obj, Object obj2) {
         int i10 = (this.b + 1) * 2;
         Object[] objArr = (Object[]) this.c;
         if (i10 > objArr.length) {
@@ -933,11 +956,11 @@ public final class e0 implements r3.e {
         this.b = i11 + 1;
     }
 
-    public void x(int i10) {
-        y(i10, 200L, nr.f);
+    public void y(int i10) {
+        z(i10, 200L, pr.f);
     }
 
-    public void y(int i10, long j10, Interpolator interpolator) {
+    public void z(int i10, long j10, Interpolator interpolator) {
         ValueAnimator valueAnimator = (ValueAnimator) this.c;
         if (valueAnimator != null) {
             valueAnimator.removeAllListeners();
@@ -947,23 +970,11 @@ public final class e0 implements r3.e {
         this.b = 0;
         ValueAnimator ofInt = ValueAnimator.ofInt(0, i10);
         this.c = ofInt;
-        ofInt.addUpdateListener(new ag.a(23, this, iArr));
+        ofInt.addUpdateListener(new bg.a(23, this, iArr));
         ((ValueAnimator) this.c).addListener(new k3(this, i10, iArr, 2));
         ((ValueAnimator) this.c).setDuration(j10);
         ((ValueAnimator) this.c).setInterpolator(interpolator);
         ((ValueAnimator) this.c).start();
-    }
-
-    public List z(CharSequence charSequence) {
-        charSequence.getClass();
-        qk0 qk0Var = (qk0) this.d;
-        qk0Var.getClass();
-        r8.h hVar = new r8.h(qk0Var, this, charSequence);
-        ArrayList arrayList = new ArrayList();
-        while (hVar.hasNext()) {
-            arrayList.add((String) hVar.next());
-        }
-        return DesugarCollections.unmodifiableList(arrayList);
     }
 
     public e0(int i10, int i11) {
@@ -998,8 +1009,8 @@ public final class e0 implements r3.e {
                 this.c = new lf.c0[i11];
                 this.d = new Bitmap[i11];
                 break;
-            case 17:
-                this.c = new tg.a();
+            case 18:
+                this.c = new ug.a();
                 break;
             default:
                 this.c = DesugarCollections.synchronizedMap(new a0.f(0));
@@ -1010,16 +1021,16 @@ public final class e0 implements r3.e {
 
     public e0(a9.a aVar, int i10) {
         this.a = 12;
-        this.d = new f8();
+        this.d = new g8();
         this.c = aVar;
         oa.b();
         this.b = i10;
     }
 
-    public e0(com.google.firebase.messaging.r rVar, int i10) {
+    public e0(com.google.firebase.messaging.s sVar, int i10) {
         this.a = 10;
-        this.d = new f8();
-        this.c = rVar;
+        this.d = new g8();
+        this.c = sVar;
         h9.b();
         this.b = i10;
     }
@@ -1051,30 +1062,30 @@ public final class e0 implements r3.e {
         this.b = i10;
     }
 
-    private final /* synthetic */ void v() {
+    private final /* synthetic */ void w() {
     }
 
-    public e0(s3 s3Var, int i10) {
-        this.a = 14;
-        this.d = new f8();
-        this.c = s3Var;
+    public e0(r3 r3Var, int i10) {
+        this.a = 15;
+        this.d = new g8();
+        this.c = r3Var;
         ag.b();
         this.b = i10;
     }
 
-    public e0(sl0 sl0Var) {
-        this.a = 19;
-        this.d = sl0Var;
+    public e0(tl0 tl0Var) {
+        this.a = 20;
+        this.d = tl0Var;
     }
 
     public e0(ByteBuffer byteBuffer, int i10, RectF rectF) {
-        this.a = 1;
+        this.a = 4;
         this.c = rectF;
         this.b = i10;
         try {
             this.d = File.createTempFile("paint", ".bin", ApplicationLoader.applicationContext.getCacheDir());
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
         }
         if (((File) this.d) == null) {
             return;
@@ -1091,15 +1102,15 @@ public final class e0 implements r3.e {
             }
             deflater.end();
             fileOutputStream.close();
-        } catch (Exception e6) {
-            FileLog.e(e6);
+        } catch (Exception e10) {
+            FileLog.e(e10);
         }
     }
 
-    public e0(nh.e eVar) {
-        this.a = 16;
+    public e0(ag.d dVar) {
+        this.a = 17;
         this.c = new SparseArray();
-        this.d = eVar;
+        this.d = dVar;
         this.b = -1;
     }
 
@@ -1110,8 +1121,15 @@ public final class e0 implements r3.e {
         this.b = i10;
     }
 
+    public e0(String str) {
+        this.a = 14;
+        this.c = str;
+        this.d = null;
+        this.b = 0;
+    }
+
     public e0(r3.o oVar, int i10) {
-        this.a = 23;
+        this.a = 24;
         this.c = oVar;
         this.b = i10;
         this.d = new org.telegram.ui.Components.jb();
@@ -1124,15 +1142,23 @@ public final class e0 implements r3.e {
         this.d = new h5.w();
     }
 
-    public e0(qk0 qk0Var) {
-        this.a = 20;
-        this.d = qk0Var;
+    public e0(byte[] bArr) {
+        this.a = 14;
+        Objects.requireNonNull(bArr);
+        this.d = bArr;
+        this.c = null;
+        this.b = 1;
+    }
+
+    public e0(org.telegram.ui.web.e0 e0Var) {
+        this.a = 21;
+        this.d = e0Var;
         this.c = r8.c.a;
         this.b = ConnectionsManager.DEFAULT_DATACENTER_ID;
     }
 
     public e0(CopyOnWriteArrayList copyOnWriteArrayList, int i10, o4.v vVar) {
-        this.a = 15;
+        this.a = 16;
         this.d = copyOnWriteArrayList;
         this.b = i10;
         this.c = vVar;

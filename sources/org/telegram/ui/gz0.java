@@ -1,24 +1,29 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class gz0 extends org.telegram.ui.Components.lq0 {
-    public final /* synthetic */ ProfileActivity Y0;
+public final class gz0 extends kq {
+    public final /* synthetic */ boolean[] a1;
+    public final /* synthetic */ TLRPC.User b1;
+    public final /* synthetic */ ProfileActivity c1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gz0(ProfileActivity profileActivity, Activity activity, String str, String str2) {
-        super(activity, null, str, false, str2, false, null);
-        this.Y0 = profileActivity;
+    public gz0(ProfileActivity profileActivity, long j10, long j11, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, TLRPC.TL_chatBannedRights tL_chatBannedRights2, String str, int i10, boolean[] zArr, TLRPC.User user) {
+        super(j10, j11, tL_chatAdminRights, tL_chatBannedRights, tL_chatBannedRights2, str, i10, true, false, null);
+        this.c1 = profileActivity;
+        this.a1 = zArr;
+        this.b1 = user;
     }
 
-    @Override // org.telegram.ui.Components.lq0
-    public final void R0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z4) {
-        if (z4) {
-            AndroidUtilities.runOnUIThread(new zq0(this, hVar, i10, 26), 250L);
+    @Override // org.telegram.ui.ActionBar.p2
+    public final void onTransitionAnimationEnd(boolean z4, boolean z10) {
+        if (!z4 && z10 && this.a1[0]) {
+            ProfileActivity profileActivity = this.c1;
+            if (org.telegram.ui.Components.qc.a(profileActivity)) {
+                org.telegram.ui.Components.qc.C(profileActivity, this.b1.first_name).j();
+            }
         }
     }
 }

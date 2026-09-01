@@ -1,43 +1,43 @@
 package lh;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.os.Bundle;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.ic;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.s00;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes4.dex */
-public final class i4 {
-    public final mf.b a;
-    public final TLRPC.TL_payments_paymentFormStarGift b;
-    public final mf.a c;
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes.dex */
+public final class i4 extends xn {
+    public boolean Nc;
+    public final /* synthetic */ TL_stars.TL_starGiftUnique Oc;
+    public final /* synthetic */ long Pc;
 
-    public i4(mf.b bVar, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift) {
-        long j10;
-        this.a = bVar;
-        this.b = tL_payments_paymentFormStarGift;
-        t7[][] t7VarArr = t7.S;
-        if (tL_payments_paymentFormStarGift != null) {
-            ArrayList<TLRPC.TL_labeledPrice> arrayList = tL_payments_paymentFormStarGift.invoice.prices;
-            int size = arrayList.size();
-            int i10 = 0;
-            j10 = 0;
-            while (i10 < size) {
-                TLRPC.TL_labeledPrice tL_labeledPrice = arrayList.get(i10);
-                i10++;
-                j10 += tL_labeledPrice.amount;
-            }
-        } else {
-            j10 = 0;
-        }
-        mf.b bVar2 = mf.b.a;
-        if (bVar == bVar2) {
-            this.c = mf.a.g(j10, bVar2);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i4(Bundle bundle, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10) {
+        super(bundle);
+        this.Oc = tL_starGiftUnique;
+        this.Pc = j10;
+        this.Nc = false;
+    }
+
+    @Override // org.telegram.ui.xn, org.telegram.ui.ActionBar.p2
+    public final void onBecomeFullyVisible() {
+        super.onBecomeFullyVisible();
+        if (this.Nc) {
             return;
         }
-        mf.b bVar3 = mf.b.b;
-        if (bVar == bVar3) {
-            this.c = mf.a.i(j10, bVar3);
-        } else {
-            this.c = mf.a.i(0L, bVar2);
+        this.Nc = true;
+        ic O = qc.a0(this).O(this.Oc.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(this.currentAccount, this.Pc)));
+        O.r = false;
+        O.j();
+        s00 s00Var = this.j9;
+        if (s00Var != null) {
+            s00Var.c(true);
         }
     }
 }

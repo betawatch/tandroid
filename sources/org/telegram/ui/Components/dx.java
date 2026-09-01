@@ -1,56 +1,38 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class dx extends wh.o {
-    public final /* synthetic */ int q;
-    public final /* synthetic */ Object r;
+public final class dx extends ov {
+    public final /* synthetic */ TLRPC.StickerSet T;
+    public final /* synthetic */ mz U;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ dx(Object obj, Context context, int i10) {
-        super(context, 2);
-        this.q = i10;
-        this.r = obj;
+    public dx(mz mzVar, org.telegram.ui.ActionBar.p2 p2Var, Context context, org.telegram.ui.ActionBar.g6 g6Var, ArrayList arrayList, TLRPC.StickerSet stickerSet) {
+        super(p2Var, context, g6Var, arrayList);
+        this.U = mzVar;
+        this.T = stickerSet;
     }
 
-    @Override // wh.o, f2.h1
-    public void e() {
-        switch (this.q) {
-            case 0:
-                ((kz) this.r).c0 = true;
-                break;
-            case 3:
-                ((org.telegram.ui.q61) this.r).t1 = true;
-                break;
-            case 5:
-                ((ph.d1) this.r).Y2 = true;
-                break;
+    @Override // org.telegram.ui.Components.ov
+    public final void X(boolean z4) {
+        mz mzVar = this.U;
+        ArrayList arrayList = mzVar.m1;
+        TLRPC.StickerSet stickerSet = this.T;
+        if (!z4) {
+            arrayList.remove(Long.valueOf(stickerSet.id));
+        } else if (!arrayList.contains(Long.valueOf(stickerSet.id))) {
+            arrayList.add(Long.valueOf(stickerSet.id));
         }
+        mzVar.V();
     }
 
-    @Override // wh.o
-    public final void i() {
-        switch (this.q) {
-            case 0:
-                ((kz) this.r).c0 = false;
-                break;
-            case 1:
-                ((jx) this.r).Q.c0 = false;
-                break;
-            case 2:
-                ((org.telegram.ui.c51) this.r).R.t1 = false;
-                break;
-            case 3:
-                ((org.telegram.ui.q61) this.r).t1 = false;
-                break;
-            case 4:
-                ((org.telegram.ui.c51) this.r).R.t1 = false;
-                break;
-            default:
-                ((ph.d1) this.r).Y2 = false;
-                break;
-        }
+    @Override // org.telegram.ui.Components.ov, org.telegram.ui.ActionBar.h3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.l2
+    public final void dismiss() {
+        this.U.t2 = false;
+        super.dismiss();
     }
 }

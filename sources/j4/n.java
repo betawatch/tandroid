@@ -5,11 +5,10 @@ import android.os.Parcelable;
 import h5.d0;
 import j3.d1;
 import java.util.ArrayList;
-import kh.a2;
 import s8.i0;
 import s8.v;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class n extends j {
     public static final Parcelable.Creator<n> CREATOR = new f8.o(21);
@@ -310,9 +309,9 @@ public final class n extends j {
     }
 
     public final int hashCode() {
-        int e = a2.e(527, 31, this.a);
+        int e6 = l.d.e(527, 31, this.a);
         String str = this.b;
-        return this.c.hashCode() + ((e + (str != null ? str.hashCode() : 0)) * 31);
+        return this.c.hashCode() + ((e6 + (str != null ? str.hashCode() : 0)) * 31);
     }
 
     @Override // j4.j

@@ -4,9 +4,8 @@ import android.util.SparseIntArray;
 import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Comparator;
-import kh.a2;
-import lh.y3;
-import nh.t6;
+import mh.y3;
+import oh.t6;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessagesController;
@@ -15,9 +14,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
-import vh.z5;
+import wh.z5;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t implements Comparator {
     public final /* synthetic */ int a;
@@ -45,7 +44,7 @@ public final /* synthetic */ class t implements Comparator {
                 return xVar.b(obj2) - xVar.b(obj);
             case 1:
                 SparseIntArray sparseIntArray = (SparseIntArray) this.b;
-                return sparseIntArray.get(((eg.k) obj).e, ConnectionsManager.DEFAULT_DATACENTER_ID) - sparseIntArray.get(((eg.k) obj2).e, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                return sparseIntArray.get(((fg.k) obj).e, ConnectionsManager.DEFAULT_DATACENTER_ID) - sparseIntArray.get(((fg.k) obj2).e, ConnectionsManager.DEFAULT_DATACENTER_ID);
             case 2:
                 return ((Collator) this.b).compare((String) obj, (String) obj2);
             case 3:
@@ -83,7 +82,7 @@ public final /* synthetic */ class t implements Comparator {
                 TLRPC.User user2 = MessagesController.getInstance(i10).getUser(Long.valueOf(peerDialogId2));
                 ?? r12 = user2 == null ? 0 : user2.premium;
                 if (r02 == r12) {
-                    return (peerStories2.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) a2.i(1, peerStories2.stories)).date) - (peerStories.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) a2.i(1, peerStories.stories)).date);
+                    return (peerStories2.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) l.d.i(1, peerStories2.stories)).date) - (peerStories.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) l.d.i(1, peerStories.stories)).date);
                 }
                 return r12 - r02;
             case 5:

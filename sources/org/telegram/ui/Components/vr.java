@@ -1,54 +1,83 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.PopupWindow;
+import android.graphics.Rect;
+import android.view.MotionEvent;
+import android.view.View;
+import java.lang.ref.WeakReference;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public abstract class vr {
-    public final org.telegram.ui.ActionBar.p1 a;
-    public boolean b;
+public final /* synthetic */ class vr implements View.OnTouchListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public vr(Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z4) {
-        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert2, z4 ? 1 : 0, context, f6Var);
-        actionBarPopupWindow$ActionBarPopupWindowLayout.setAnimationEnabled(false);
-        actionBarPopupWindow$ActionBarPopupWindowLayout.setOnTouchListener(new tr(this, 0));
-        actionBarPopupWindow$ActionBarPopupWindowLayout.setDispatchKeyEventListener(new t(this, 27));
-        actionBarPopupWindow$ActionBarPopupWindowLayout.setShownFromBottom(false);
-        b(actionBarPopupWindow$ActionBarPopupWindowLayout);
-        org.telegram.ui.ActionBar.p1 p1Var = new org.telegram.ui.ActionBar.p1(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-        this.a = p1Var;
-        p1Var.b = false;
-        p1Var.setAnimationStyle(R.style.PopupContextAnimation2);
-        p1Var.setOutsideTouchable(true);
-        p1Var.setClippingEnabled(true);
-        p1Var.setInputMethodMode(2);
-        p1Var.setSoftInputMode(0);
-        p1Var.getContentView().setFocusableInTouchMode(true);
-        if (AndroidUtilities.isAccessibilityTouchExplorationEnabled()) {
-            p1Var.setFocusable(true);
-        }
-        p1Var.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.Components.ur
-            @Override // android.widget.PopupWindow.OnDismissListener
-            public final void onDismiss() {
-                vr vrVar = vr.this;
-                vrVar.c();
-                vrVar.b = false;
-            }
-        });
+    public /* synthetic */ vr(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public final void a() {
-        org.telegram.ui.ActionBar.p1 p1Var = this.a;
-        if (p1Var != null) {
-            p1Var.dismiss();
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        l70 l70Var;
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.ActionBar.p1 p1Var = ((xr) this.b).a;
+                if (motionEvent.getActionMasked() != 1 || p1Var == null || !p1Var.isShowing()) {
+                    return false;
+                }
+                Rect rect = AndroidUtilities.rectTmp2;
+                view.getHitRect(rect);
+                if (rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                    return false;
+                }
+                p1Var.d(true);
+                return false;
+            case 1:
+                q70 q70Var = (q70) ((WeakReference) this.b).get();
+                if (q70Var == null || (l70Var = q70Var.m) == null || !l70Var.isShowing()) {
+                    view.setOnTouchListener(null);
+                    return false;
+                }
+                if (view.getParent() != null) {
+                    view.getParent().requestDisallowInterceptTouchEvent(true);
+                }
+                int actionMasked = motionEvent.getActionMasked();
+                if (actionMasked == 2) {
+                    q70Var.b0((int) motionEvent.getRawX(), (int) motionEvent.getRawY());
+                } else if (actionMasked == 1) {
+                    q70Var.b0((int) motionEvent.getRawX(), (int) motionEvent.getRawY());
+                    View view2 = q70Var.p0;
+                    if (view2 != null) {
+                        q70Var.p0 = null;
+                        view2.setPressed(false);
+                        view2.performClick();
+                    }
+                    view.setOnTouchListener(null);
+                    q70Var.o0 = null;
+                } else if (actionMasked == 3) {
+                    View view3 = q70Var.p0;
+                    if (view3 != null) {
+                        view3.setPressed(false);
+                        q70Var.p0 = null;
+                    }
+                    view.setOnTouchListener(null);
+                    q70Var.o0 = null;
+                }
+                return true;
+            case 2:
+                ra0 ra0Var = (ra0) this.b;
+                ra0Var.getClass();
+                return org.telegram.ui.qt.q().s(motionEvent, ra0Var.getListView(), ra0Var.w, null, ra0Var.a);
+            case 3:
+                sb0 sb0Var = (sb0) this.b;
+                sb0Var.getClass();
+                if (motionEvent.getAction() == 1) {
+                    sb0Var.W.a(true);
+                }
+                return true;
+            default:
+                return yx0.v((yx0) this.b, motionEvent);
         }
     }
-
-    public abstract void b(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout);
-
-    public abstract void c();
 }

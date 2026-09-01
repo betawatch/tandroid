@@ -2,7 +2,7 @@ package pc;
 
 import java.util.Locale;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class j extends n3.a {
     public String c;
@@ -23,7 +23,7 @@ public abstract class j extends n3.a {
         this.s = false;
     }
 
-    public final void j(char c3) {
+    public final void i(char c3) {
         String valueOf = String.valueOf(c3);
         String str = this.e;
         if (str != null) {
@@ -32,7 +32,7 @@ public abstract class j extends n3.a {
         this.e = valueOf;
     }
 
-    public final void k(char c3) {
+    public final void j(char c3) {
         this.r = true;
         String str = this.h;
         StringBuilder sb = this.f;
@@ -43,7 +43,7 @@ public abstract class j extends n3.a {
         sb.append(c3);
     }
 
-    public final void l(String str) {
+    public final void k(String str) {
         this.r = true;
         String str2 = this.h;
         StringBuilder sb = this.f;
@@ -58,7 +58,7 @@ public abstract class j extends n3.a {
         }
     }
 
-    public final void n(int[] iArr) {
+    public final void m(int[] iArr) {
         this.r = true;
         String str = this.h;
         StringBuilder sb = this.f;
@@ -71,7 +71,7 @@ public abstract class j extends n3.a {
         }
     }
 
-    public final void o(String str) {
+    public final void n(String str) {
         String str2 = this.c;
         if (str2 != null) {
             str = str2.concat(str);
@@ -80,7 +80,7 @@ public abstract class j extends n3.a {
         this.d = str != null ? str.toLowerCase(Locale.ENGLISH) : "";
     }
 
-    public final String q() {
+    public final String o() {
         String str = this.c;
         if (str == null || str.length() == 0) {
             throw new IllegalArgumentException("Must be false");
@@ -88,7 +88,7 @@ public abstract class j extends n3.a {
         return this.c;
     }
 
-    public final void r() {
+    public final void p() {
         if (this.v == null) {
             this.v = new oc.b();
         }
@@ -136,17 +136,17 @@ public abstract class j extends n3.a {
         this.e = null;
         this.n = false;
         this.r = false;
-        n3.a.i(sb);
+        n3.a.h(sb);
         this.h = null;
     }
 
     @Override // n3.a
-    /* renamed from: s, reason: merged with bridge method [inline-methods] */
-    public j h() {
+    /* renamed from: r, reason: merged with bridge method [inline-methods] */
+    public j g() {
         this.c = null;
         this.d = null;
         this.e = null;
-        n3.a.i(this.f);
+        n3.a.h(this.f);
         this.h = null;
         this.n = false;
         this.r = false;

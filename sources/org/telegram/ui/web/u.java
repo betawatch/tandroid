@@ -4,7 +4,7 @@ import org.json.JSONObject;
 import org.telegram.messenger.FileLog;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u implements Runnable {
     public final /* synthetic */ int a;
@@ -19,27 +19,27 @@ public final /* synthetic */ class u implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                e0 e0Var = this.b.c;
-                if (e0Var != null) {
-                    e0Var.b();
+                f0 f0Var = this.b.c;
+                if (f0Var != null) {
+                    f0Var.b();
                 }
                 LaunchActivity.L();
                 break;
             case 1:
                 a1 a1Var = this.b;
-                rh.r0 r0Var = a1Var.h0;
-                r0Var.getClass();
+                sh.q0 q0Var = a1Var.h0;
+                q0Var.getClass();
                 JSONObject jSONObject = new JSONObject();
                 try {
-                    jSONObject.put("available", r0Var.d());
-                    if (r0Var.d()) {
-                        jSONObject.put("access_requested", r0Var.d);
-                        if (r0Var.d) {
-                            jSONObject.put("access_granted", r0Var.e && r0Var.a());
+                    jSONObject.put("available", q0Var.d());
+                    if (q0Var.d()) {
+                        jSONObject.put("access_requested", q0Var.d);
+                        if (q0Var.d) {
+                            jSONObject.put("access_granted", q0Var.e && q0Var.a());
                         }
                     }
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e6) {
+                    FileLog.e(e6);
                 }
                 a1Var.v("location_checked", jSONObject);
                 break;
@@ -47,27 +47,27 @@ public final /* synthetic */ class u implements Runnable {
                 a1 a1Var2 = this.b;
                 if (a1Var2.P) {
                     a1Var2.P = false;
-                    e0 e0Var2 = a1Var2.c;
-                    if (e0Var2 != null) {
-                        e0Var2.t(false);
+                    f0 f0Var2 = a1Var2.c;
+                    if (f0Var2 != null) {
+                        f0Var2.t(false);
                     }
                 }
                 a1Var2.c();
                 a1Var2.K = false;
                 a1Var2.M = 0L;
                 a1Var2.Q = false;
-                w0 w0Var = a1Var2.a;
-                if (w0Var != null) {
-                    w0Var.onResume();
+                x0 x0Var = a1Var2.a;
+                if (x0Var != null) {
+                    x0Var.onResume();
                     a1Var2.a.reload();
                     break;
                 }
                 break;
             default:
                 a1 a1Var3 = this.b;
-                rh.q qVar = a1Var3.g0;
-                qVar.f = true;
-                qVar.k();
+                sh.p pVar = a1Var3.g0;
+                pVar.f = true;
+                pVar.k();
                 a1Var3.t();
                 break;
         }

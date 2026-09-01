@@ -7,21 +7,21 @@ import android.os.Looper;
 import android.view.View;
 import com.google.android.gms.cast.CastDevice;
 import com.google.android.gms.cast.MediaInfo;
-import com.google.android.gms.internal.cast.d1;
-import com.google.android.gms.internal.cast.d2;
+import com.google.android.gms.internal.cast.c1;
+import com.google.android.gms.internal.cast.c2;
+import com.google.android.gms.internal.cast.l1;
 import com.google.android.gms.internal.cast.m1;
-import com.google.android.gms.internal.cast.n1;
+import com.google.android.gms.internal.cast.q1;
 import com.google.android.gms.internal.cast.r1;
-import com.google.android.gms.internal.cast.s1;
+import com.google.android.gms.internal.cast.t6;
 import com.google.android.gms.internal.cast.u6;
-import com.google.android.gms.internal.cast.v6;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
 import j7.c9;
-import j7.f8;
 import j7.g7;
 import j7.g8;
+import j7.h8;
 import j7.j9;
 import j7.l9;
 import j7.m6;
@@ -38,14 +38,14 @@ import l7.la;
 import l7.o9;
 import l7.u7;
 import l7.va;
-import m.s3;
+import m.r3;
 import n7.ib;
 import n7.l4;
 import n7.xe;
 import n7.xf;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class p implements Runnable {
     public final /* synthetic */ int a;
@@ -86,13 +86,13 @@ public final class p implements Runnable {
             }
         }
         str = "NA";
-        f8 f8Var = new f8();
-        f8Var.a = laVar.a;
-        f8Var.b = laVar.b;
+        g8 g8Var = new g8();
+        g8Var.a = laVar.a;
+        g8Var.b = laVar.b;
         synchronized (la.class) {
             wVar = la.k;
             if (wVar == null) {
-                n0.c a2 = k7.w.a(Resources.getSystem().getConfiguration());
+                n0.c a2 = k7.x.a(Resources.getSystem().getConfiguration());
                 Object[] objArr = new Object[4];
                 int i11 = 0;
                 int i12 = 0;
@@ -123,14 +123,14 @@ public final class p implements Runnable {
                 la.k = wVar;
             }
         }
-        f8Var.k = wVar;
-        f8Var.g = Boolean.TRUE;
-        f8Var.d = str;
-        f8Var.c = str2;
-        f8Var.e = laVar.f.isSuccessful() ? (String) laVar.f.getResult() : laVar.d.a();
-        f8Var.i = 10;
-        f8Var.j = Integer.valueOf(laVar.h);
-        e0Var.d = f8Var;
+        g8Var.k = wVar;
+        g8Var.g = Boolean.TRUE;
+        g8Var.d = str;
+        g8Var.c = str2;
+        g8Var.e = laVar.f.isSuccessful() ? (String) laVar.f.getResult() : laVar.d.a();
+        g8Var.i = 10;
+        g8Var.j = Integer.valueOf(laVar.h);
+        e0Var.d = g8Var;
         laVar.c.a(e0Var);
     }
 
@@ -148,9 +148,9 @@ public final class p implements Runnable {
         b4.e0 e0Var = (b4.e0) this.c;
         ib ibVar = (ib) this.e;
         String str2 = (String) this.d;
-        s3 s3Var = (s3) e0Var.c;
-        s3Var.b = ibVar;
-        xe xeVar = (xe) s3Var.a;
+        r3 r3Var = (r3) e0Var.c;
+        r3Var.b = ibVar;
+        xe xeVar = (xe) r3Var.a;
         if (xeVar != null) {
             str = xeVar.d;
             int i10 = l4.a;
@@ -158,13 +158,13 @@ public final class p implements Runnable {
             }
         }
         str = "NA";
-        f8 f8Var = new f8();
-        f8Var.a = xfVar.a;
-        f8Var.b = xfVar.b;
+        g8 g8Var = new g8();
+        g8Var.a = xfVar.a;
+        g8Var.b = xfVar.b;
         synchronized (xf.class) {
             mVar = xf.k;
             if (mVar == null) {
-                n0.c a2 = k7.w.a(Resources.getSystem().getConfiguration());
+                n0.c a2 = k7.x.a(Resources.getSystem().getConfiguration());
                 Object[] objArr = new Object[4];
                 int i11 = 0;
                 int i12 = 0;
@@ -194,48 +194,48 @@ public final class p implements Runnable {
                 xf.k = mVar;
             }
         }
-        f8Var.k = mVar;
-        f8Var.g = Boolean.TRUE;
-        f8Var.d = str;
-        f8Var.c = str2;
-        f8Var.e = xfVar.f.isSuccessful() ? (String) xfVar.f.getResult() : xfVar.d.a();
-        f8Var.i = 10;
-        f8Var.j = Integer.valueOf(xfVar.h);
-        e0Var.d = f8Var;
+        g8Var.k = mVar;
+        g8Var.g = Boolean.TRUE;
+        g8Var.d = str;
+        g8Var.c = str2;
+        g8Var.e = xfVar.f.isSuccessful() ? (String) xfVar.f.getResult() : xfVar.d.a();
+        g8Var.i = 10;
+        g8Var.j = Integer.valueOf(xfVar.h);
+        e0Var.d = g8Var;
         xfVar.c.a(e0Var);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x0081, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x0082, code lost:
     
-        if (r7.isEmpty() == false) goto L26;
+        if (r4.isEmpty() == false) goto L26;
      */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        int i10;
         Task task;
         String str;
         n9 n9Var;
+        int i10 = 3;
         q5.r rVar = null;
         int i11 = 0;
         switch (this.a) {
             case 0:
-                ((androidx.biometric.f0) this.b).r((r) this.d, (n) this.c, (Collection) this.e);
+                ((androidx.biometric.f0) this.b).P((r) this.d, (n) this.c, (Collection) this.e);
                 return;
             case 1:
-                ((androidx.biometric.f0) this.b).r((r) this.d, (n) this.c, (ArrayList) this.e);
+                ((androidx.biometric.f0) this.b).P((r) this.d, (n) this.c, (ArrayList) this.e);
                 return;
             case 2:
-                com.google.android.gms.internal.cast.o oVar = (com.google.android.gms.internal.cast.o) this.b;
+                com.google.android.gms.internal.cast.n nVar = (com.google.android.gms.internal.cast.n) this.b;
                 a0 a0Var = (a0) this.c;
                 a0 a0Var2 = (a0) this.e;
                 c0.i iVar = (c0.i) this.d;
-                com.google.android.gms.internal.cast.s sVar = oVar.a;
-                sVar.getClass();
-                u5.b bVar = com.google.android.gms.internal.cast.s.i;
-                Set set = sVar.b;
+                com.google.android.gms.internal.cast.r rVar2 = nVar.a;
+                rVar2.getClass();
+                u5.b bVar = com.google.android.gms.internal.cast.r.i;
+                Set set = rVar2.b;
                 if (new HashSet(set).isEmpty()) {
                     bVar.b("No need to prepare transfer without any callback", new Object[0]);
                     iVar.a();
@@ -246,7 +246,7 @@ public final class p implements Runnable {
                     iVar.a();
                     return;
                 }
-                s5.h a2 = sVar.a();
+                s5.h a2 = rVar2.a();
                 if (a2 == null || !a2.h()) {
                     bVar.b("No need to prepare transfer when there is no media session", new Object[0]);
                     iVar.a();
@@ -254,59 +254,59 @@ public final class p implements Runnable {
                 }
                 bVar.b("Prepare route transfer for changing endpoint", new Object[0]);
                 if (a0Var2.l == 0) {
-                    d2.a(d1.d0);
+                    c2.a(c1.d0);
                     i10 = 1;
-                } else {
-                    i10 = CastDevice.e(a0Var2.s) == null ? 3 : 2;
+                } else if (CastDevice.e(a0Var2.s) != null) {
+                    i10 = 2;
                 }
-                sVar.e = i10;
-                sVar.g = iVar;
+                rVar2.e = i10;
+                rVar2.g = iVar;
                 bVar.b("notify transferring with type = %d", Integer.valueOf(i10));
                 Iterator it = new HashSet(set).iterator();
                 while (it.hasNext()) {
-                    com.google.android.gms.internal.cast.y0 y0Var = (com.google.android.gms.internal.cast.y0) it.next();
-                    int i12 = sVar.e;
-                    switch (y0Var.a) {
+                    com.google.android.gms.internal.cast.x0 x0Var = (com.google.android.gms.internal.cast.x0) it.next();
+                    int i12 = rVar2.e;
+                    switch (x0Var.a) {
                         case 0:
-                            com.google.android.gms.internal.cast.a1.j.b("onTransferring with type = %d", Integer.valueOf(i12));
-                            com.google.android.gms.internal.cast.a1 a1Var = (com.google.android.gms.internal.cast.a1) y0Var.b;
-                            a1Var.i = true;
-                            a1Var.c();
-                            r1 b10 = a1Var.c.b(a1Var.g);
-                            m1 m9 = n1.m(b10.d());
+                            com.google.android.gms.internal.cast.z0.j.b("onTransferring with type = %d", Integer.valueOf(i12));
+                            com.google.android.gms.internal.cast.z0 z0Var = (com.google.android.gms.internal.cast.z0) x0Var.b;
+                            z0Var.i = true;
+                            z0Var.c();
+                            q1 b10 = z0Var.c.b(z0Var.g);
+                            l1 m9 = m1.m(b10.d());
                             m9.c();
-                            n1.v((n1) m9.b, i12);
-                            b10.e((n1) m9.a());
-                            a1Var.a.a((s1) b10.a(), 230);
+                            m1.v((m1) m9.b, i12);
+                            b10.e((m1) m9.a());
+                            z0Var.a.a((r1) b10.a(), 230);
                             break;
                         default:
-                            b4.e0 e0Var = new b4.e0(10, 3);
-                            c5.j jVar = (c5.j) y0Var.b;
+                            b4.e0 e0Var = new b4.e0(10, 2);
+                            c5.j jVar = (c5.j) x0Var.b;
                             e0Var.d = Boolean.valueOf(((com.google.android.gms.internal.cast.c) jVar.b).d == 2);
-                            c5.j.D(jVar, new v6(e0Var));
-                            u6 E = jVar.E();
+                            c5.j.D(jVar, new u6(e0Var));
+                            t6 E = jVar.E();
                             com.google.android.gms.internal.cast.a aVar = new com.google.android.gms.internal.cast.a(new c5.c(i12));
                             aVar.c = E.h;
                             E.c.add(aVar);
                             break;
                     }
                 }
-                sVar.h = null;
+                rVar2.h = null;
                 b6.m.e("Must be called from the main thread.");
                 if (a2.w()) {
                     a2.g = new TaskCompletionSource();
                     s5.h.k.b("create SessionState with cached mediaInfo and mediaStatus", new Object[0]);
                     MediaInfo d = a2.d();
-                    q5.q e = a2.e();
-                    if (d != null && e != null) {
+                    q5.q e6 = a2.e();
+                    if (d != null && e6 != null) {
                         Boolean bool = Boolean.TRUE;
                         long a10 = a2.a();
-                        q5.n nVar = e.I;
-                        double d10 = e.d;
+                        q5.n nVar2 = e6.I;
+                        double d10 = e6.d;
                         if (Double.compare(d10, 2.0d) > 0 || Double.compare(d10, 0.5d) < 0) {
                             throw new IllegalArgumentException("playbackRate must be between PLAYBACK_RATE_MIN and PLAYBACK_RATE_MAX");
                         }
-                        rVar = new q5.r(new q5.k(d, nVar, bool, a10, d10, e.v, e.B, null, null, null, null, 0L), null);
+                        rVar = new q5.r(new q5.k(d, nVar2, bool, a10, d10, e6.v, e6.B, null, null, null, null, 0L), null);
                     }
                     if (rVar != null) {
                         a2.g.setResult(rVar);
@@ -317,12 +317,12 @@ public final class p implements Runnable {
                 } else {
                     task = Tasks.forException(new u5.l());
                 }
-                task.addOnSuccessListener(new com.google.android.gms.internal.cast.q(sVar)).addOnFailureListener(new com.google.android.gms.internal.cast.q(sVar));
-                a7.e eVar = sVar.c;
+                task.addOnSuccessListener(new com.google.android.gms.internal.cast.p(rVar2)).addOnFailureListener(new com.google.android.gms.internal.cast.p(rVar2));
+                a7.e eVar = rVar2.c;
                 b6.m.h(eVar);
-                com.google.android.gms.internal.cast.r rVar2 = sVar.d;
-                b6.m.h(rVar2);
-                eVar.postDelayed(rVar2, 10000L);
+                com.google.android.gms.internal.cast.q qVar = rVar2.d;
+                b6.m.h(qVar);
+                eVar.postDelayed(qVar, 10000L);
                 return;
             case 3:
                 Handler handler = (Handler) this.b;
@@ -332,7 +332,7 @@ public final class p implements Runnable {
                         ((ef.b) this.c).a(false);
                         return;
                     } else {
-                        handler.post(new ef.e(this, 8));
+                        handler.post(new eh.m(this, i10));
                         return;
                     }
                 }
@@ -342,24 +342,24 @@ public final class p implements Runnable {
                 b4.e0 e0Var2 = (b4.e0) this.c;
                 m6 m6Var = (m6) this.e;
                 String str2 = (String) this.d;
-                com.google.firebase.messaging.r rVar3 = (com.google.firebase.messaging.r) e0Var2.c;
-                rVar3.c = m6Var;
-                g8 g8Var = (g8) rVar3.b;
-                if (g8Var != null) {
-                    str = g8Var.d;
+                com.google.firebase.messaging.s sVar = (com.google.firebase.messaging.s) e0Var2.c;
+                sVar.b = m6Var;
+                h8 h8Var = (h8) sVar.a;
+                if (h8Var != null) {
+                    str = h8Var.d;
                     int i13 = g7.a;
                     if (str != null) {
                         break;
                     }
                 }
                 str = "NA";
-                f8 f8Var = new f8();
-                f8Var.a = c9Var.a;
-                f8Var.b = c9Var.b;
+                g8 g8Var = new g8();
+                g8Var.a = c9Var.a;
+                g8Var.b = c9Var.b;
                 synchronized (c9.class) {
                     n9Var = c9.j;
                     if (n9Var == null) {
-                        n0.c a11 = k7.w.a(Resources.getSystem().getConfiguration());
+                        n0.c a11 = k7.x.a(Resources.getSystem().getConfiguration());
                         Object[] objArr = new Object[4];
                         int i14 = 0;
                         while (i11 < a11.a.size()) {
@@ -389,27 +389,27 @@ public final class p implements Runnable {
                         c9.j = n9Var;
                     }
                 }
-                f8Var.k = n9Var;
-                f8Var.g = Boolean.TRUE;
-                f8Var.d = str;
-                f8Var.c = str2;
-                f8Var.e = c9Var.f.isSuccessful() ? (String) c9Var.f.getResult() : c9Var.d.a();
-                f8Var.i = 10;
-                f8Var.j = Integer.valueOf(c9Var.h);
-                e0Var2.d = f8Var;
+                g8Var.k = n9Var;
+                g8Var.g = Boolean.TRUE;
+                g8Var.d = str;
+                g8Var.c = str2;
+                g8Var.e = c9Var.f.isSuccessful() ? (String) c9Var.f.getResult() : c9Var.d.a();
+                g8Var.i = 10;
+                g8Var.j = Integer.valueOf(c9Var.h);
+                e0Var2.d = g8Var;
                 c9Var.c.a(e0Var2);
                 return;
             case 5:
-                l.e eVar2 = (l.e) ((androidx.biometric.f0) this.d).b;
-                l.m mVar = (l.m) this.c;
-                l.d dVar = (l.d) this.b;
-                if (dVar != null) {
-                    eVar2.M = true;
-                    dVar.b.c(false);
-                    eVar2.M = false;
+                l.f fVar = (l.f) ((androidx.biometric.f0) this.d).b;
+                l.n nVar3 = (l.n) this.c;
+                l.e eVar2 = (l.e) this.b;
+                if (eVar2 != null) {
+                    fVar.M = true;
+                    eVar2.b.c(false);
+                    fVar.M = false;
                 }
-                if (mVar.isEnabled() && mVar.hasSubMenu()) {
-                    ((l.k) this.e).q(mVar, null, 4);
+                if (nVar3.isEnabled() && nVar3.hasSubMenu()) {
+                    ((l.l) this.e).q(nVar3, null, 4);
                     return;
                 }
                 return;
@@ -439,7 +439,7 @@ public final class p implements Runnable {
         this.d = new AtomicBoolean(false);
         this.b = handler;
         this.c = bVar;
-        a1.e eVar = new a1.e(28, this, bVar);
+        a1.e eVar = new a1.e(24, this, bVar);
         this.e = eVar;
         if (j10 > 0) {
             handler.postDelayed(eVar, j10);

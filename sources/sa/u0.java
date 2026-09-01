@@ -4,24 +4,23 @@ import java.io.Serializable;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Iterator;
-import vh.v2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class u0 extends pa.u {
     public static pa.i a(xa.a aVar, int i10) {
-        int b10 = m1.j.b(i10);
-        if (b10 == 5) {
+        int c3 = m1.j.c(i10);
+        if (c3 == 5) {
             return new pa.m(aVar.v());
         }
-        if (b10 == 6) {
+        if (c3 == 6) {
             return new pa.m(new ra.h(aVar.v()));
         }
-        if (b10 == 7) {
+        if (c3 == 7) {
             return new pa.m(Boolean.valueOf(aVar.n()));
         }
-        if (b10 != 8) {
-            throw new IllegalStateException("Unexpected token: ".concat(v2.m(i10)));
+        if (c3 != 8) {
+            throw new IllegalStateException("Unexpected token: ".concat(w.c.m(i10)));
         }
         aVar.t();
         return pa.k.a;
@@ -92,14 +91,14 @@ public class u0 extends pa.u {
                 lVar.C();
                 return iVar;
             }
-            throw new IllegalStateException("Unexpected " + v2.m(x10) + " when reading a JsonElement.");
+            throw new IllegalStateException("Unexpected " + w.c.m(x10) + " when reading a JsonElement.");
         }
         int x11 = aVar.x();
-        int b10 = m1.j.b(x11);
-        if (b10 == 0) {
+        int c3 = m1.j.c(x11);
+        if (c3 == 0) {
             aVar.a();
             hVar = new pa.h();
-        } else if (b10 != 2) {
+        } else if (c3 != 2) {
             hVar = null;
         } else {
             aVar.b();
@@ -113,11 +112,11 @@ public class u0 extends pa.u {
             if (aVar.k()) {
                 String r10 = hVar instanceof pa.l ? aVar.r() : null;
                 int x12 = aVar.x();
-                int b11 = m1.j.b(x12);
-                if (b11 == 0) {
+                int c10 = m1.j.c(x12);
+                if (c10 == 0) {
                     aVar.a();
                     hVar2 = new pa.h();
-                } else if (b11 != 2) {
+                } else if (c10 != 2) {
                     hVar2 = null;
                 } else {
                     aVar.b();

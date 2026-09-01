@@ -1,26 +1,52 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.NotificationCenter;
+import android.os.Build;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class oe1 implements View.OnClickListener {
-    public final /* synthetic */ kf1 a;
+public final class oe1 extends f2.a1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ mf1 b;
 
-    public oe1(kf1 kf1Var) {
-        this.a = kf1Var;
+    public /* synthetic */ oe1(mf1 mf1Var, int i10) {
+        this.a = i10;
+        this.b = mf1Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        kf1 kf1Var = this.a;
-        if (kf1Var.J == 1) {
-            org.telegram.ui.Components.z4.j0(kf1Var, -kf1Var.a, null, kf1Var.g(), null, false, kf1Var.G, new ta(this, 5), kf1Var.getResourceProvider());
-            return;
+    @Override // f2.a1
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        boolean z4;
+        mf1 mf1Var;
+        og.e eVar;
+        switch (this.a) {
+            case 0:
+                mf1 mf1Var2 = this.b;
+                int L0 = mf1Var2.C.L0();
+                if (L0 != -1) {
+                    f2.m1 K = recyclerView.K(L0);
+                    int top = K != null ? K.a.getTop() : 0;
+                    if (L0 == 0) {
+                        int i12 = 0 - top;
+                        z4 = top < 0;
+                        Math.abs(i12);
+                    } else {
+                        z4 = L0 > 0;
+                    }
+                    mf1Var2.G0(z4 || !mf1Var2.H, true);
+                    break;
+                }
+                break;
+            case 1:
+                this.b.y0();
+                break;
+            default:
+                if (Build.VERSION.SDK_INT >= 31 && (eVar = (mf1Var = this.b).c1) != null) {
+                    eVar.f(i10, i11);
+                    mf1Var.x0();
+                    break;
+                }
+                break;
         }
-        kf1Var.getMessagesController().addUserToChat(kf1Var.a, kf1Var.getUserConfig().getCurrentUser(), 0, null, kf1Var, false, new he1(kf1Var, 2), new ie1(kf1Var));
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeSearchByActiveAction, new Object[0]);
-        kf1Var.O0(false);
     }
 }

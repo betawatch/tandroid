@@ -2,19 +2,20 @@ package na;
 
 import android.content.Context;
 import android.os.Bundle;
-import k7.o;
-import k7.p7;
+import com.google.firebase.messaging.o;
+import k7.p;
+import k7.q7;
 import l7.w0;
 import la.c0;
 import la.r;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class h {
     public static final f c = new f();
-    public static final m1.c d = o.a(r.b);
-    public final android.support.v4.media.d a;
+    public static final m1.c d = p.a(r.b);
+    public final o a;
     public final d b;
 
     public h(w8.g gVar, uc.h hVar, uc.h hVar2, ca.d dVar) {
@@ -23,12 +24,12 @@ public final class h {
         kotlin.jvm.internal.j.d(context, "firebaseApp.applicationContext");
         c0 c0Var = c0.a;
         la.b a2 = c0.a(gVar);
-        android.support.v4.media.d dVar2 = new android.support.v4.media.d(context);
+        o oVar = new o(context);
         w0 w0Var = new w0(a2, hVar);
         c.getClass();
-        d dVar3 = new d(hVar2, dVar, a2, w0Var, d.a(context, f.a[0]));
-        this.a = dVar2;
-        this.b = dVar3;
+        d dVar2 = new d(hVar2, dVar, a2, w0Var, d.a(context, f.a[0]));
+        this.a = oVar;
+        this.b = dVar2;
     }
 
     public final double a() {
@@ -76,7 +77,7 @@ public final class h {
                 i10 = gVar.d;
                 sc.i iVar = sc.i.a;
                 if (i10 != 0) {
-                    p7.b(obj);
+                    q7.b(obj);
                     gVar.a = this;
                     gVar.d = 1;
                     this.a.getClass();
@@ -86,12 +87,12 @@ public final class h {
                 }
                 if (i10 != 1) {
                     if (i10 == 2) {
-                        p7.b(obj);
+                        q7.b(obj);
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 }
                 hVar = gVar.a;
-                p7.b(obj);
+                q7.b(obj);
                 d dVar = hVar.b;
                 gVar.a = null;
                 gVar.d = 2;

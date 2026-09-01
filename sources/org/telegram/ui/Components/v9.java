@@ -15,14 +15,14 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class v9 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public TextView a;
     public TextView b;
-    public dg.u2 c;
-    public dg.u2 d;
-    public kj0 e;
+    public eg.s2 c;
+    public eg.s2 d;
+    public mj0 e;
     public ScrollView f;
     public AnimatorSet h;
     public TLRPC.TL_help_appUpdate n;
@@ -33,9 +33,9 @@ public final class v9 extends FrameLayout implements NotificationCenter.Notifica
     public GradientDrawable x;
 
     public final void a(boolean z4) {
-        dg.u2 u2Var = this.d;
+        eg.s2 s2Var = this.d;
         TextView textView = this.b;
-        dg.u2 u2Var2 = this.c;
+        eg.s2 s2Var2 = this.c;
         AnimatorSet animatorSet = this.h;
         if (animatorSet != null) {
             animatorSet.cancel();
@@ -45,15 +45,15 @@ public final class v9 extends FrameLayout implements NotificationCenter.Notifica
         Property property2 = View.SCALE_Y;
         Property property3 = View.SCALE_X;
         if (z4) {
-            u2Var2.setVisibility(0);
-            u2Var.setEnabled(false);
-            this.h.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, 0.1f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, 0.1f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(u2Var2, (Property<dg.u2, Float>) property3, 1.0f), ObjectAnimator.ofFloat(u2Var2, (Property<dg.u2, Float>) property2, 1.0f), ObjectAnimator.ofFloat(u2Var2, (Property<dg.u2, Float>) property, 1.0f));
+            s2Var2.setVisibility(0);
+            s2Var.setEnabled(false);
+            this.h.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, 0.1f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, 0.1f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(s2Var2, (Property<eg.s2, Float>) property3, 1.0f), ObjectAnimator.ofFloat(s2Var2, (Property<eg.s2, Float>) property2, 1.0f), ObjectAnimator.ofFloat(s2Var2, (Property<eg.s2, Float>) property, 1.0f));
         } else {
             textView.setVisibility(0);
-            u2Var.setEnabled(true);
-            this.h.playTogether(ObjectAnimator.ofFloat(u2Var2, (Property<dg.u2, Float>) property3, 0.1f), ObjectAnimator.ofFloat(u2Var2, (Property<dg.u2, Float>) property2, 0.1f), ObjectAnimator.ofFloat(u2Var2, (Property<dg.u2, Float>) property, 0.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, 1.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, 1.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 1.0f));
+            s2Var.setEnabled(true);
+            this.h.playTogether(ObjectAnimator.ofFloat(s2Var2, (Property<eg.s2, Float>) property3, 0.1f), ObjectAnimator.ofFloat(s2Var2, (Property<eg.s2, Float>) property2, 0.1f), ObjectAnimator.ofFloat(s2Var2, (Property<eg.s2, Float>) property, 0.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, 1.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, 1.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 1.0f));
         }
-        this.h.addListener(new dg.w2(22, this, z4));
+        this.h.addListener(new eg.u2(20, this, z4));
         this.h.setDuration(150L);
         this.h.start();
     }

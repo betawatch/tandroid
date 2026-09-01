@@ -1,214 +1,72 @@
 package ph;
 
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.graphics.Rect;
-import android.graphics.RectF;
-import android.os.Build;
-import android.view.MotionEvent;
-import android.view.RoundedCorner;
 import android.view.View;
-import android.view.WindowInsets;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.bd;
-import org.telegram.ui.Components.du;
-import org.telegram.ui.Components.kz;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.qv0;
-import org.telegram.ui.Components.vt;
-import org.telegram.ui.Components.zt;
-import org.telegram.ui.ls0;
+import androidx.recyclerview.widget.RecyclerView;
+import f2.j1;
+import f2.v0;
+import org.telegram.ui.Cells.r7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes4.dex */
-public final class f extends du {
-    public org.telegram.ui.Components.fa S;
-    public pg.b T;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 U;
-    public final /* synthetic */ org.telegram.ui.Components.ba V;
-    public final /* synthetic */ k W;
+public final class f extends v0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ l b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f(k kVar, Context context, qv0 qv0Var, int i10, nh.b bVar, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.Components.ba baVar) {
-        super(context, qv0Var, null, i10, true, bVar);
-        this.W = kVar;
-        this.U = f6Var;
-        this.V = baVar;
+    public /* synthetic */ f(l lVar, int i10) {
+        this.a = i10;
+        this.b = lVar;
     }
 
-    @Override // org.telegram.ui.Components.du
-    public final boolean b() {
-        return true;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        k kVar = this.W;
-        if ((kVar instanceof p) && ((p) kVar).L1) {
-            return false;
-        }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.du
-    public final void f() {
-        super.f();
-        kz emojiView = getEmojiView();
-        if (emojiView != null) {
-            k kVar = this.W;
-            if (kVar.getEditTextStyle() == 2 || kVar.getEditTextStyle() == 3) {
-                emojiView.t0 = false;
-                emojiView.u2 = false;
-                emojiView.setShouldDrawBackground(false);
-                if (kVar instanceof bd) {
-                    emojiView.setPadding(0, 0, 0, AndroidUtilities.navigationBarHeight);
-                    emojiView.c = 3;
-                }
-                emojiView.U();
-            }
-        }
-        if (emojiView != null) {
-            emojiView.F2 = true;
-            emojiView.setClipToOutline(true);
-            emojiView.setOutlineProvider(new gg.j1(17));
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r14v15 */
-    /* JADX WARN: Type inference failed for: r14v16 */
-    /* JADX WARN: Type inference failed for: r14v17, types: [android.view.View] */
-    @Override // org.telegram.ui.Components.du
-    public final void g(Canvas canvas, zt ztVar) {
-        Bitmap bitmap;
-        int i10;
-        int i11;
-        WindowInsets rootWindowInsets;
-        k kVar = this.W;
-        ng.i iVar = kVar.d;
-        RectF rectF = kVar.w0;
-        rectF.set(0.0f, 0.0f, ztVar.getWidth(), AndroidUtilities.dp(29.0f) + ztVar.getHeight());
-        int i12 = 0;
-        if (kVar.e0 != null) {
-            if (this.T == null) {
-                if (Build.VERSION.SDK_INT < 31 || (rootWindowInsets = getRootWindowInsets()) == null) {
-                    i10 = 0;
-                    i11 = 0;
+    @Override // f2.v0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, j1 j1Var) {
+        switch (this.a) {
+            case 0:
+                if (!(view instanceof r7)) {
+                    rect.left = 0;
+                    rect.top = 0;
+                    rect.bottom = 0;
+                    rect.right = 0;
+                    break;
                 } else {
-                    RoundedCorner roundedCorner = rootWindowInsets.getRoundedCorner(3);
-                    RoundedCorner roundedCorner2 = rootWindowInsets.getRoundedCorner(2);
-                    i11 = roundedCorner == null ? 0 : roundedCorner.getRadius();
-                    i10 = roundedCorner2 == null ? 0 : roundedCorner2.getRadius();
+                    r7 r7Var = (r7) view;
+                    l lVar = this.b;
+                    lVar.f.getClass();
+                    int R = RecyclerView.R(r7Var);
+                    int i10 = lVar.h.J;
+                    r7Var.U = R < i10;
+                    int i11 = R % i10;
+                    r7Var.S = i11 == 0;
+                    r7Var.T = i11 == i10 - 1;
+                    rect.left = 0;
+                    rect.top = 0;
+                    rect.bottom = 0;
+                    rect.right = 0;
+                    break;
                 }
-                pg.b c3 = kVar.e0.c(ztVar, null, false);
-                c3.n(rg.b.i(this.U));
-                this.T = c3;
-                c3.r(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(29.0f), i10, i11);
-                pg.b bVar = this.T;
-                bVar.k = true;
-                bVar.t(AndroidUtilities.dp(32.0f));
-                pg.b bVar2 = this.T;
-                bVar2.h.g = 0.4f;
-                bVar2.j();
-            }
-            Rect rect = AndroidUtilities.rectTmp2;
-            rectF.round(rect);
-            this.T.setBounds(rect);
-            this.T.draw(canvas);
-            return;
+            default:
+                if (!(view instanceof r7)) {
+                    rect.left = 0;
+                    rect.top = 0;
+                    rect.bottom = 0;
+                    rect.right = 0;
+                    break;
+                } else {
+                    r7 r7Var2 = (r7) view;
+                    l lVar2 = this.b;
+                    lVar2.r.getClass();
+                    int R2 = RecyclerView.R(r7Var2);
+                    int i12 = lVar2.s.J;
+                    r7Var2.U = R2 < i12;
+                    int i13 = R2 % i12;
+                    r7Var2.S = i13 == 0;
+                    r7Var2.T = i13 == i12 - 1;
+                    rect.left = 0;
+                    rect.top = 0;
+                    rect.bottom = 0;
+                    rect.right = 0;
+                    break;
+                }
         }
-        if (kVar.g()) {
-            if (this.S == null) {
-                this.S = new org.telegram.ui.Components.fa(this.V, ztVar, 7, false);
-            }
-            kVar.h(this.S, canvas, kVar.w0, AndroidUtilities.dp(29.0f), false, 0.0f, -ztVar.getY(), false);
-            iVar.k = AndroidUtilities.dp(29.0f);
-            iVar.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, AndroidUtilities.dp(29.0f) + ((int) rectF.bottom));
-            iVar.draw(canvas);
-            return;
-        }
-        Paint paint = kVar.e;
-        FrameLayout frameLayout = kVar.G;
-        if (kVar.l0 > 0.0f && kVar.r0 != null && kVar.p0 != null && (bitmap = kVar.o0) != null && !bitmap.isRecycled()) {
-            kVar.q0.reset();
-            kVar.q0.postScale(frameLayout.getWidth() / kVar.o0.getWidth(), frameLayout.getHeight() / kVar.o0.getHeight());
-            float f10 = 0.0f;
-            float f11 = 0.0f;
-            zt ztVar2 = ztVar;
-            while (i12 < 8 && ztVar2 != null) {
-                f10 += ztVar2.getX();
-                f11 += ztVar2.getY();
-                Object parent = ztVar2.getParent();
-                i12++;
-                ztVar2 = parent instanceof View ? (View) parent : 0;
-            }
-            kVar.q0.postTranslate(-f10, -f11);
-            kVar.p0.setLocalMatrix(kVar.q0);
-            kVar.r0.setAlpha((int) (kVar.l0 * 255.0f * 0.95f));
-            canvas.drawRoundRect(rectF, 0.0f, 0.0f, kVar.r0);
-        }
-        paint.setAlpha((int) (kVar.r0 == null ? 128.0f : AndroidUtilities.lerp(128, 153, kVar.l0) * 0.95f));
-        canvas.drawRoundRect(rectF, 0.0f, 0.0f, paint);
-    }
-
-    @Override // org.telegram.ui.Components.du
-    public final void p() {
-        this.W.I.a();
-    }
-
-    @Override // org.telegram.ui.Components.du
-    public final void q(int i10, int i11) {
-        this.W.s(i10, i11);
-    }
-
-    @Override // org.telegram.ui.Components.du
-    public final boolean t(int i10) {
-        k kVar = this.W;
-        f fVar = kVar.f;
-        ObjectAnimator objectAnimator = kVar.d0;
-        if (objectAnimator != null && objectAnimator.isRunning() && i10 == kVar.V) {
-            return false;
-        }
-        kVar.invalidate();
-        if (!kVar.T) {
-            return true;
-        }
-        kVar.T = false;
-        if (kVar.U == i10) {
-            return true;
-        }
-        ObjectAnimator objectAnimator2 = kVar.d0;
-        if (objectAnimator2 != null && objectAnimator2.isRunning() && i10 == kVar.V) {
-            return true;
-        }
-        ObjectAnimator objectAnimator3 = kVar.d0;
-        if (objectAnimator3 != null) {
-            objectAnimator3.cancel();
-        }
-        fVar.getEditText().setScrollY(kVar.U);
-        vt editText = fVar.getEditText();
-        int i11 = kVar.U;
-        kVar.V = i10;
-        ObjectAnimator ofInt = ObjectAnimator.ofInt(editText, "scrollY", i11, i10);
-        kVar.d0 = ofInt;
-        ofInt.setDuration(240L);
-        kVar.d0.setInterpolator(nr.h);
-        kVar.d0.addListener(new ls0(this, 28));
-        kVar.d0.start();
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.du
-    public final void u() {
-        this.W.I.e = true;
-    }
-
-    @Override // org.telegram.ui.Components.du
-    public final void y() {
-        this.W.I.a();
     }
 }

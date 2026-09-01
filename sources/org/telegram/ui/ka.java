@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class ka extends f2.b0 {
     public final /* synthetic */ pa d;
@@ -16,30 +16,30 @@ public final class ka extends f2.b0 {
     }
 
     @Override // f2.b0
-    public final void a(RecyclerView recyclerView, f2.l1 l1Var) {
-        super.a(recyclerView, l1Var);
-        View view = l1Var.a;
+    public final void a(RecyclerView recyclerView, f2.m1 m1Var) {
+        super.a(recyclerView, m1Var);
+        View view = m1Var.a;
         view.setPressed(false);
         view.setTag(R.id.dragging, null);
     }
 
     @Override // f2.b0
-    public final int e(RecyclerView recyclerView, f2.l1 l1Var) {
-        return (l1Var.f == 4 && ((ma) l1Var.a).D) ? f2.b0.l(3, 0) : f2.b0.l(0, 0);
+    public final int e(RecyclerView recyclerView, f2.m1 m1Var) {
+        return (m1Var.f == 4 && ((ma) m1Var.a).D) ? f2.b0.l(3, 0) : f2.b0.l(0, 0);
     }
 
     @Override // f2.b0
-    public final boolean n(RecyclerView recyclerView, f2.l1 l1Var, f2.l1 l1Var2) {
-        if (l1Var.f != l1Var2.f) {
+    public final boolean n(RecyclerView recyclerView, f2.m1 m1Var, f2.m1 m1Var2) {
+        if (m1Var.f != m1Var2.f) {
             return false;
         }
-        View view = l1Var2.a;
+        View view = m1Var2.a;
         if ((view instanceof ma) && !((ma) view).D) {
             return false;
         }
         ga gaVar = this.d.c;
-        int b10 = l1Var.b();
-        int b11 = l1Var2.b();
+        int b10 = m1Var.b();
+        int b11 = m1Var2.b();
         int i10 = b10 - 4;
         int i11 = b11 - 4;
         pa paVar = gaVar.c;
@@ -62,20 +62,20 @@ public final class ka extends f2.b0 {
     }
 
     @Override // f2.b0
-    public final void p(f2.l1 l1Var, int i10) {
+    public final void p(f2.m1 m1Var, int i10) {
         pa paVar = this.d;
         if (i10 == 0) {
             pa.Y(paVar);
         } else {
             paVar.b.I0(false);
-            l1Var.a.setPressed(true);
+            m1Var.a.setPressed(true);
         }
-        if (l1Var != null) {
-            l1Var.a.setTag(R.id.dragging, i10 == 2 ? Boolean.TRUE : null);
+        if (m1Var != null) {
+            m1Var.a.setTag(R.id.dragging, i10 == 2 ? Boolean.TRUE : null);
         }
     }
 
     @Override // f2.b0
-    public final void q(f2.l1 l1Var) {
+    public final void q(f2.m1 m1Var) {
     }
 }

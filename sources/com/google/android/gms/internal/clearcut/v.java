@@ -22,7 +22,7 @@ public abstract /* synthetic */ class v {
             iArr2[6] = 3;
         } catch (NoSuchFieldError unused3) {
         }
-        int[] iArr3 = new int[m1.j.c(4).length];
+        int[] iArr3 = new int[m1.j.d(4).length];
         a = iArr3;
         try {
             iArr3[3] = 1;

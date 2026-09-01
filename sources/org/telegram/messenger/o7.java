@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.zx;
+import org.telegram.ui.ay;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o7 implements Runnable {
     public final /* synthetic */ int a;
@@ -54,11 +54,11 @@ public final /* synthetic */ class o7 implements Runnable {
                 ((MediaDataController) obj3).lambda$processLoadStickersResponse$73(this.d, this.e, this.b, (a0.h) obj2, (TLRPC.StickerSet) obj, (TLRPC.TL_messages_allStickers) tLObject2, this.c);
                 break;
             case 1:
-                tf.z zVar = (tf.z) obj3;
+                uf.z zVar = (uf.z) obj3;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 String str = (String) obj;
                 TLRPC.TL_messages_search tL_messages_search = (TLRPC.TL_messages_search) tLObject2;
-                tf.s sVar = zVar.g0;
+                uf.s sVar = zVar.g0;
                 ArrayList arrayList2 = zVar.E;
                 int i16 = zVar.p0;
                 if (i15 == zVar.Q && (i14 <= 0 || i14 == zVar.a0)) {
@@ -92,9 +92,9 @@ public final /* synthetic */ class o7 implements Runnable {
                             }
                         }
                         sVar.f(zVar.s, zVar.s0);
-                        zx zxVar = zVar.R;
-                        if (zxVar != null) {
-                            zxVar.d(zVar.A0 > 0, true);
+                        ay ayVar = zVar.R;
+                        if (ayVar != null) {
+                            ayVar.d(zVar.A0 > 0, true);
                             zVar.R.c();
                         }
                         zVar.l();
@@ -103,11 +103,11 @@ public final /* synthetic */ class o7 implements Runnable {
                 zVar.N = 0;
                 break;
             default:
-                tf.z zVar2 = (tf.z) obj3;
+                uf.z zVar2 = (uf.z) obj3;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 String str2 = (String) obj;
                 TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = (TLRPC.TL_messages_searchGlobal) tLObject2;
-                tf.s sVar2 = zVar2.g0;
+                uf.s sVar2 = zVar2.g0;
                 ArrayList arrayList3 = zVar2.F;
                 ArrayList arrayList4 = zVar2.E;
                 int i19 = zVar2.p0;
@@ -153,10 +153,10 @@ public final /* synthetic */ class o7 implements Runnable {
                             }
                         }
                         sVar2.f(zVar2.s, zVar2.s0);
-                        zx zxVar2 = zVar2.R;
-                        if (zxVar2 != null) {
+                        ay ayVar2 = zVar2.R;
+                        if (ayVar2 != null) {
                             i11 = 1;
-                            zxVar2.d(zVar2.A0 > 0, true);
+                            ayVar2.d(zVar2.A0 > 0, true);
                             zVar2.R.c();
                         } else {
                             i11 = 1;
@@ -165,7 +165,7 @@ public final /* synthetic */ class o7 implements Runnable {
                         zVar2.E0 = i11;
                         i10 = 0;
                         zVar2.d = false;
-                        tf.v vVar = zVar2.B0;
+                        uf.v vVar = zVar2.B0;
                         if (vVar != null) {
                             String str3 = zVar2.W;
                             TextView textView = vVar.a;
@@ -185,7 +185,7 @@ public final /* synthetic */ class o7 implements Runnable {
         }
     }
 
-    public /* synthetic */ o7(tf.z zVar, int i10, int i11, TLRPC.TL_error tL_error, String str, TLObject tLObject, TLMethod tLMethod, ArrayList arrayList, int i12) {
+    public /* synthetic */ o7(uf.z zVar, int i10, int i11, TLRPC.TL_error tL_error, String str, TLObject tLObject, TLMethod tLMethod, ArrayList arrayList, int i12) {
         this.a = i12;
         this.f = zVar;
         this.b = i10;

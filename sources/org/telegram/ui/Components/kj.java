@@ -1,44 +1,35 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kj implements Runnable {
+public final /* synthetic */ class kj implements qj {
     public final /* synthetic */ int a;
-    public final /* synthetic */ mj b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ TLRPC.User b;
 
-    public /* synthetic */ kj(mj mjVar, String str, int i10, int i11) {
-        this.a = i11;
-        this.b = mjVar;
-        this.c = str;
-        this.d = i10;
+    public /* synthetic */ kj(int i10, TLRPC.User user) {
+        this.a = i10;
+        this.b = user;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.ui.Components.qj
+    public final String run() {
+        se.b c3;
+        StringBuilder sb;
+        String str;
         switch (this.a) {
             case 0:
-                mj mjVar = this.b;
-                String str = this.c;
-                int i10 = this.d;
-                mjVar.getClass();
-                AndroidUtilities.runOnUIThread(new kj(mjVar, str, i10, 1));
+                c3 = se.b.c();
+                sb = new StringBuilder("+");
+                str = this.b.phone;
                 break;
             default:
-                mj mjVar2 = this.b;
-                String str2 = this.c;
-                int i11 = this.d;
-                mjVar2.getClass();
-                int i12 = UserConfig.selectedAccount;
-                Utilities.searchQueue.postRunnable(new lj(mjVar2, str2, new ArrayList(ContactsController.getInstance(i12).contactsBook.values()), new ArrayList(ContactsController.getInstance(i12).contacts), i12, i11));
+                c3 = se.b.c();
+                sb = new StringBuilder("+");
+                str = this.b.phone;
                 break;
         }
+        return org.telegram.messenger.y3.j(sb, str, c3);
     }
 }

@@ -13,16 +13,16 @@ import android.text.style.UnderlineSpan;
 import android.util.Pair;
 import h5.d0;
 import h7.u;
-import j7.k0;
+import j7.l0;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.TreeSet;
-import k7.v8;
+import k7.w8;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class g {
     public final String a;
@@ -168,7 +168,7 @@ public final class g {
                     h hVar = (h) hashMap.get(str3);
                     hVar.getClass();
                     int i13 = hVar.j;
-                    i a2 = k0.a(this.f, this.g, map2);
+                    i a2 = l0.a(this.f, this.g, map2);
                     SpannableStringBuilder spannableStringBuilder = (SpannableStringBuilder) aVar.a;
                     if (spannableStringBuilder == null) {
                         spannableStringBuilder = new SpannableStringBuilder();
@@ -207,22 +207,22 @@ public final class g {
                             if (!a2.c) {
                                 throw new IllegalStateException("Font color has not been defined.");
                             }
-                            v8.a(new ForegroundColorSpan(a2.b), spannableStringBuilder, intValue, intValue2);
+                            w8.a(new ForegroundColorSpan(a2.b), spannableStringBuilder, intValue, intValue2);
                         }
                         if (a2.e) {
                             if (!a2.e) {
                                 throw new IllegalStateException("Background color has not been defined.");
                             }
-                            v8.a(new BackgroundColorSpan(a2.d), spannableStringBuilder, intValue, intValue2);
+                            w8.a(new BackgroundColorSpan(a2.d), spannableStringBuilder, intValue, intValue2);
                         }
                         if (a2.a != null) {
-                            v8.a(new TypefaceSpan(a2.a), spannableStringBuilder, intValue, intValue2);
+                            w8.a(new TypefaceSpan(a2.a), spannableStringBuilder, intValue, intValue2);
                         }
                         b bVar = a2.r;
                         if (bVar != null) {
                             if (bVar.a == -1 && i13 != 2) {
                             }
-                            v8.a(new ab.a(26), spannableStringBuilder, intValue, intValue2);
+                            w8.a(new ab.a(26), spannableStringBuilder, intValue, intValue2);
                         }
                         int i17 = a2.m;
                         if (i17 == 2) {
@@ -232,7 +232,7 @@ public final class g {
                                     gVar2 = null;
                                     break;
                                 }
-                                i a10 = k0.a(gVar2.f, gVar2.g, map2);
+                                i a10 = l0.a(gVar2.f, gVar2.g, map2);
                                 if (a10 != null && a10.m == 1) {
                                     break;
                                 } else {
@@ -248,7 +248,7 @@ public final class g {
                                         break;
                                     }
                                     gVar = (g) arrayDeque.pop();
-                                    i a11 = k0.a(gVar.f, gVar.g, map2);
+                                    i a11 = l0.a(gVar.f, gVar.g, map2);
                                     if (a11 != null && a11.m == 3) {
                                         break;
                                     }
@@ -260,21 +260,21 @@ public final class g {
                                     if (gVar.c() == 1 && gVar.b(0).b != null) {
                                         String str5 = gVar.b(0).b;
                                         int i18 = d0.a;
-                                        i a12 = k0.a(gVar.f, gVar.g, map2);
+                                        i a12 = l0.a(gVar.f, gVar.g, map2);
                                         if ((a12 != null ? a12.n : -1) == -1) {
-                                            k0.a(gVar2.f, gVar2.g, map2);
+                                            l0.a(gVar2.f, gVar2.g, map2);
                                         }
                                         spannableStringBuilder.setSpan(new z9.d(25), intValue, intValue2, 33);
                                         if (a2.q == 1) {
-                                            v8.a(new u(25), spannableStringBuilder, intValue, intValue2);
+                                            w8.a(new u(25), spannableStringBuilder, intValue, intValue2);
                                         }
                                         i11 = a2.j;
                                         if (i11 == 1) {
-                                            v8.a(new AbsoluteSizeSpan((int) a2.k, true), spannableStringBuilder, intValue, intValue2);
+                                            w8.a(new AbsoluteSizeSpan((int) a2.k, true), spannableStringBuilder, intValue, intValue2);
                                         } else if (i11 == 2) {
-                                            v8.a(new RelativeSizeSpan(a2.k), spannableStringBuilder, intValue, intValue2);
+                                            w8.a(new RelativeSizeSpan(a2.k), spannableStringBuilder, intValue, intValue2);
                                         } else if (i11 == 3) {
-                                            v8.a(new RelativeSizeSpan(a2.k / 100.0f), spannableStringBuilder, intValue, intValue2);
+                                            w8.a(new RelativeSizeSpan(a2.k / 100.0f), spannableStringBuilder, intValue, intValue2);
                                         }
                                         if ("p".equals(this.a)) {
                                             float f10 = a2.s;
@@ -337,10 +337,10 @@ public final class g {
         String str3 = this.h;
         String str4 = "".equals(str3) ? str : str3;
         if (this.c && z4) {
-            SpannableStringBuilder e = e(str4, treeMap);
+            SpannableStringBuilder e6 = e(str4, treeMap);
             String str5 = this.b;
             str5.getClass();
-            e.append((CharSequence) str5);
+            e6.append((CharSequence) str5);
             return;
         }
         if ("br".equals(str2) && z4) {
@@ -359,13 +359,13 @@ public final class g {
                 b(i10).i(j10, z4 || equals, str4, treeMap);
             }
             if (equals) {
-                SpannableStringBuilder e6 = e(str4, treeMap);
-                int length = e6.length() - 1;
-                while (length >= 0 && e6.charAt(length) == ' ') {
+                SpannableStringBuilder e10 = e(str4, treeMap);
+                int length = e10.length() - 1;
+                while (length >= 0 && e10.charAt(length) == ' ') {
                     length--;
                 }
-                if (length >= 0 && e6.charAt(length) != '\n') {
-                    e6.append('\n');
+                if (length >= 0 && e10.charAt(length) != '\n') {
+                    e10.append('\n');
                 }
             }
             for (Map.Entry entry2 : treeMap.entrySet()) {

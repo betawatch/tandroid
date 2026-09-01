@@ -1,70 +1,103 @@
 package k7;
 
-import java.io.EOFException;
-import java.util.Arrays;
+import org.telegram.ui.Components.jb;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class v6 {
-    public static e4.c a(r3.l lVar, boolean z4) {
-        j3.q0 q0Var = z4 ? null : j4.i.b;
-        h5.w wVar = new h5.w(10);
-        e4.c cVar = null;
-        int i10 = 0;
-        while (true) {
-            try {
-                lVar.c(0, 10, wVar.a);
-                wVar.F(0);
-                if (wVar.w() != 4801587) {
-                    break;
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x008a, code lost:
+    
+        if (r8 == r20.f) goto L53;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x0095, code lost:
+    
+        if ((r19.u() * org.telegram.messenger.MediaDataController.MAX_STYLE_RUNS_COUNT) == r3) goto L53;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x00a4, code lost:
+    
+        if (r4 == r3) goto L53;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static boolean a(h5.w wVar, r3.o oVar, int i10, jb jbVar) {
+        long v = wVar.v();
+        long j10 = v >>> 16;
+        if (j10 == i10) {
+            boolean z4 = (j10 & 1) == 1;
+            int i11 = (int) ((v >> 12) & 15);
+            int i12 = (int) ((v >> 8) & 15);
+            int i13 = (int) (15 & (v >> 4));
+            int i14 = (int) ((v >> 1) & 7);
+            boolean z10 = (v & 1) == 1;
+            if (i13 > 7 ? !(i13 > 10 || oVar.g != 2) : i13 == oVar.g - 1) {
+                if ((i14 == 0 || i14 == oVar.i) && !z10) {
+                    try {
+                        long A = wVar.A();
+                        if (!z4) {
+                            A *= oVar.b;
+                        }
+                        jbVar.a = A;
+                        int b10 = b(i11, wVar);
+                        if (b10 != -1 && b10 <= oVar.b) {
+                            int i15 = oVar.e;
+                            if (i12 != 0) {
+                                if (i12 > 11) {
+                                    if (i12 != 12) {
+                                        if (i12 <= 14) {
+                                            int z11 = wVar.z();
+                                            if (i12 == 14) {
+                                                z11 *= 10;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            int u10 = wVar.u();
+                            int i16 = wVar.b;
+                            byte[] bArr = wVar.a;
+                            int i17 = i16 - 1;
+                            int i18 = 0;
+                            for (int i19 = wVar.b; i19 < i17; i19++) {
+                                i18 = h5.d0.n[i18 ^ (bArr[i19] & 255)];
+                            }
+                            int i20 = h5.d0.a;
+                            if (u10 == i18) {
+                                return true;
+                            }
+                        }
+                    } catch (NumberFormatException unused) {
+                    }
                 }
-                wVar.G(3);
-                int t6 = wVar.t();
-                int i11 = t6 + 10;
-                if (cVar == null) {
-                    byte[] bArr = new byte[i11];
-                    System.arraycopy(wVar.a, 0, bArr, 0, 10);
-                    lVar.c(10, t6, bArr);
-                    cVar = new j4.i(q0Var).c(i11, bArr);
-                } else {
-                    lVar.n(t6);
-                }
-                i10 += i11;
-            } catch (EOFException unused) {
             }
         }
-        lVar.t();
-        lVar.n(i10);
-        if (cVar == null || cVar.a.length == 0) {
-            return null;
-        }
-        return cVar;
+        return false;
     }
 
-    public static q5.g0 b(h5.w wVar) {
-        wVar.G(1);
-        int w10 = wVar.w();
-        long j10 = wVar.b + w10;
-        int i10 = w10 / 18;
-        long[] jArr = new long[i10];
-        long[] jArr2 = new long[i10];
-        int i11 = 0;
-        while (true) {
-            if (i11 >= i10) {
-                break;
-            }
-            long o10 = wVar.o();
-            if (o10 == -1) {
-                jArr = Arrays.copyOf(jArr, i11);
-                jArr2 = Arrays.copyOf(jArr2, i11);
-                break;
-            }
-            jArr[i11] = o10;
-            jArr2[i11] = wVar.o();
-            wVar.G(2);
-            i11++;
+    public static int b(int i10, h5.w wVar) {
+        switch (i10) {
+            case 1:
+                return 192;
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                return 576 << (i10 - 2);
+            case 6:
+                return wVar.u() + 1;
+            case 7:
+                return wVar.z() + 1;
+            case 8:
+            case 9:
+            case 10:
+            case 11:
+            case 12:
+            case 13:
+            case 14:
+            case 15:
+                return 256 << (i10 - 8);
+            default:
+                return -1;
         }
-        wVar.G((int) (j10 - wVar.b));
-        return new q5.g0(5, jArr, jArr2);
     }
 }

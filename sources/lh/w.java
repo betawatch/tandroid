@@ -1,65 +1,40 @@
 package lh;
 
-import android.content.DialogInterface;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.fy;
-import org.telegram.ui.LanguageSelectActivity;
-import org.telegram.ui.ad0;
-import org.telegram.ui.c60;
-import org.telegram.ui.hd1;
-import org.telegram.ui.jn;
-import org.telegram.ui.po;
+import android.text.style.ClickableSpan;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.h90;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class w implements DialogInterface.OnCancelListener {
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class w implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ qh.f3 b;
 
-    public /* synthetic */ w(Object obj, int i10, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
+    public /* synthetic */ w(qh.f3 f3Var, int i10) {
+        this.a = i10;
+        this.b = f3Var;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ConnectionsManager.getInstance(((b0) this.c).a).cancelRequest(this.b, true);
+                AndroidUtilities.removeFromParent(this.b);
                 break;
             case 1:
-                ConnectionsManager.getInstance(((org.telegram.ui.pa) this.c).currentAccount).cancelRequest(this.b, true);
+                AndroidUtilities.removeFromParent(this.b);
                 break;
             case 2:
-                ((jn) this.c).a.getConnectionsManager().cancelRequest(this.b, true);
-                break;
-            case 3:
-                po poVar = (po) this.c;
-                poVar.K0 = false;
-                poVar.b = null;
-                poVar.getConnectionsManager().cancelRequest(this.b, true);
-                break;
-            case 4:
-                ((ChatActivityEnterView) this.c).L2.getConnectionsManager().cancelRequest(this.b, true);
-                break;
-            case 5:
-                ConnectionsManager.getInstance(((fy) this.c).c.a.C.Z0).cancelRequest(this.b, true);
-                break;
-            case 6:
-                ((c60) this.c).d.getConnectionsManager().cancelRequest(this.b, true);
-                break;
-            case 7:
-                ConnectionsManager.getInstance(((LanguageSelectActivity) this.c).currentAccount).cancelRequest(this.b, true);
-                break;
-            case 8:
-                ((ad0) this.c).getConnectionsManager().cancelRequest(this.b, true);
+                AndroidUtilities.removeFromParent(this.b);
                 break;
             default:
-                ConnectionsManager.getInstance(((hd1) this.c).currentAccount).cancelRequest(this.b, true);
+                this.b.getClass();
                 break;
         }
+    }
+
+    public /* synthetic */ w(qh.f3 f3Var, h90 h90Var, ClickableSpan clickableSpan) {
+        this.a = 3;
+        this.b = f3Var;
     }
 }

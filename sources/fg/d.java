@@ -1,93 +1,129 @@
 package fg;
 
-import android.animation.AnimatorSet;
-import android.animation.ValueAnimator;
-import android.view.View;
-import cg.l0;
-import f2.y;
+import android.content.Context;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import k7.c6;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.nr;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.y3;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Cells.s3;
+import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.sl0;
+import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ Object d;
+public final class d extends sl0 {
+    public final g6 c;
+    public final int d;
+    public final int e;
+    public final ArrayList f;
+    public final p1 h;
+    public int n;
+    public c r;
+    public final boolean s;
 
-    public /* synthetic */ d(Object obj, float f10, float f11, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.b = f10;
-        this.c = f11;
+    public d(int i10, g6 g6Var) {
+        ArrayList arrayList = new ArrayList();
+        this.f = arrayList;
+        this.s = true;
+        this.c = g6Var;
+        p1 p1Var = new p1(k6.Lj, k6.Mj, k6.Nj, k6.Oj, g6Var);
+        this.h = p1Var;
+        p1Var.o = 0.0f;
+        p1Var.p = 0.0f;
+        p1Var.q = 1.0f;
+        MessagesController messagesController = MessagesController.getInstance(i10);
+        arrayList.add(new e(messagesController.channelsLimitDefault, messagesController.channelsLimitPremium, LocaleController.getString(R.string.GroupsAndChannelsLimitTitle), LocaleController.formatString(R.string.GroupsAndChannelsLimitSubtitle, Integer.valueOf(messagesController.channelsLimitPremium))));
+        arrayList.add(new e(messagesController.dialogFiltersPinnedLimitDefault, messagesController.dialogFiltersPinnedLimitPremium, LocaleController.getString(R.string.PinChatsLimitTitle), LocaleController.formatString(R.string.PinChatsLimitSubtitle, Integer.valueOf(messagesController.dialogFiltersPinnedLimitPremium))));
+        arrayList.add(new e(messagesController.publicLinksLimitDefault, messagesController.publicLinksLimitPremium, LocaleController.getString(R.string.PublicLinksLimitTitle), LocaleController.formatString(R.string.PublicLinksLimitSubtitle, Integer.valueOf(messagesController.publicLinksLimitPremium))));
+        arrayList.add(new e(messagesController.savedGifsLimitDefault, messagesController.savedGifsLimitPremium, LocaleController.getString(R.string.SavedGifsLimitTitle), LocaleController.formatString(R.string.SavedGifsLimitSubtitle, Integer.valueOf(messagesController.savedGifsLimitPremium))));
+        arrayList.add(new e(messagesController.stickersFavedLimitDefault, messagesController.stickersFavedLimitPremium, LocaleController.getString(R.string.FavoriteStickersLimitTitle), LocaleController.formatString(R.string.FavoriteStickersLimitSubtitle, Integer.valueOf(messagesController.stickersFavedLimitPremium))));
+        arrayList.add(new e(messagesController.aboutLengthLimitDefault, messagesController.aboutLengthLimitPremium, LocaleController.getString(R.string.BioLimitTitle), LocaleController.formatString(R.string.BioLimitSubtitle, Integer.valueOf(messagesController.stickersFavedLimitPremium))));
+        arrayList.add(new e(messagesController.captionLengthLimitDefault, messagesController.captionLengthLimitPremium, LocaleController.getString(R.string.CaptionsLimitTitle), LocaleController.formatString(R.string.CaptionsLimitSubtitle, Integer.valueOf(messagesController.stickersFavedLimitPremium))));
+        arrayList.add(new e(messagesController.dialogFiltersLimitDefault, messagesController.dialogFiltersLimitPremium, LocaleController.getString(R.string.FoldersLimitTitle), LocaleController.formatString(R.string.FoldersLimitSubtitle, Integer.valueOf(messagesController.dialogFiltersLimitPremium))));
+        arrayList.add(new e(messagesController.dialogFiltersChatsLimitDefault, messagesController.dialogFiltersChatsLimitPremium, LocaleController.getString(R.string.ChatPerFolderLimitTitle), LocaleController.formatString(R.string.ChatPerFolderLimitSubtitle, Integer.valueOf(messagesController.dialogFiltersChatsLimitPremium))));
+        arrayList.add(new e(3, 4, LocaleController.getString(R.string.ConnectedAccountsLimitTitle), LocaleController.formatString(R.string.ConnectedAccountsLimitSubtitle, 4)));
+        arrayList.add(new e(messagesController.recommendedChannelsLimitDefault, messagesController.recommendedChannelsLimitPremium, LocaleController.getString(R.string.SimilarChannelsLimitTitle), LocaleController.formatString(R.string.SimilarChannelsLimitSubtitle, Integer.valueOf(messagesController.recommendedChannelsLimitPremium))));
+        this.d = 1;
+        this.e = 1;
+        this.d = arrayList.size() + 1;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        View view;
-        int i10 = this.a;
-        float f10 = this.c;
-        float f11 = this.b;
-        Object obj = this.d;
-        switch (i10) {
-            case 0:
-                e eVar = (e) obj;
-                i iVar = (i) eVar.b;
-                ValueAnimator valueAnimator = iVar.P;
-                b bVar = iVar.U;
-                b bVar2 = iVar.T;
-                if (valueAnimator != null) {
-                    valueAnimator.removeAllListeners();
-                    iVar.P.cancel();
-                    iVar.P = null;
-                }
-                AnimatorSet animatorSet = iVar.Q;
-                if (animatorSet != null) {
-                    animatorSet.removeAllListeners();
-                    iVar.Q.cancel();
-                    iVar.Q = null;
-                }
-                if (Math.abs(iVar.b.d) <= 10.0f) {
-                    AndroidUtilities.cancelRunOnUIThread(iVar.R);
-                    iVar.Q = new AnimatorSet();
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(iVar.b.d, f11);
-                    ofFloat.addUpdateListener(bVar2);
-                    long j10 = 220;
-                    ofFloat.setDuration(j10);
-                    nr nrVar = nr.h;
-                    ofFloat.setInterpolator(nrVar);
-                    ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f11, 0.0f);
-                    ofFloat2.addUpdateListener(bVar2);
-                    ofFloat2.setStartDelay(j10);
-                    ofFloat2.setDuration(600L);
-                    ofFloat2.setInterpolator(AndroidUtilities.overshootInterpolator);
-                    ValueAnimator ofFloat3 = ValueAnimator.ofFloat(iVar.b.g, f10);
-                    ofFloat3.addUpdateListener(bVar);
-                    ofFloat3.setDuration(j10);
-                    ofFloat3.setInterpolator(nrVar);
-                    ValueAnimator ofFloat4 = ValueAnimator.ofFloat(f10, 0.0f);
-                    ofFloat4.addUpdateListener(bVar);
-                    ofFloat4.setStartDelay(j10);
-                    ofFloat4.setDuration(600L);
-                    ofFloat4.setInterpolator(AndroidUtilities.overshootInterpolator);
-                    iVar.Q.playTogether(ofFloat, ofFloat2, ofFloat3, ofFloat4);
-                    iVar.Q.addListener(new l0(eVar, 5));
-                    iVar.Q.start();
-                    break;
-                } else {
-                    iVar.i();
-                    break;
-                }
-            default:
-                sl0 sl0Var = (sl0) ((y) obj).b;
-                if (sl0Var.b1 != null && (view = sl0Var.K1) != null) {
-                    sl0Var.h1(view, f11, f10, true);
-                    sl0Var.b1 = null;
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.sl0
+    public final boolean D(f2.m1 m1Var) {
+        return false;
+    }
+
+    @Override // f2.p0
+    public final int h() {
+        return this.d;
+    }
+
+    @Override // f2.p0
+    public final int j(int i10) {
+        if (i10 == 0) {
+            return 1;
         }
+        return i10 == 0 ? 2 : 0;
+    }
+
+    @Override // f2.p0
+    public final void v(f2.m1 m1Var, int i10) {
+        if (m1Var.f == 0) {
+            f fVar = (f) m1Var.a;
+            int i11 = i10 - this.e;
+            ArrayList arrayList = this.f;
+            fVar.a((e) arrayList.get(i11));
+            LimitPreviewView limitPreviewView = fVar.c;
+            limitPreviewView.C = ((e) arrayList.get(i11)).e;
+            limitPreviewView.c = this.n;
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, eh.d] */
+    /* JADX WARN: Type inference failed for: r1v7, types: [fg.f] */
+    @Override // f2.p0
+    public final f2.m1 x(ViewGroup viewGroup, int i10) {
+        s3 s3Var;
+        Context context = viewGroup.getContext();
+        g6 g6Var = this.c;
+        if (i10 != 1) {
+            if (i10 != 2) {
+                ?? fVar = new f(context, g6Var);
+                fVar.c.setParentViewForGradien(this.r);
+                fVar.c.setStaticGradinet(this.h);
+                s3Var = fVar;
+            } else {
+                s3Var = new s3(context, 16);
+            }
+        } else if (this.s) {
+            ?? dVar = new eh.d(context, 2);
+            LinearLayout f10 = y3.f(context, 0);
+            ImageView imageView = new ImageView(context);
+            imageView.setImageDrawable(q1.c(context.getDrawable(R.drawable.other_2x_large), q1.d().a));
+            f10.addView(imageView, c6.d(40, 28.0f, 16, 0.0f, 0.0f, 8.0f, 0.0f));
+            TextView textView = new TextView(context);
+            textView.setText(LocaleController.getString(R.string.DoubledLimits));
+            textView.setGravity(17);
+            textView.setTextSize(1, 20.0f);
+            textView.setTextColor(k6.v0(k6.G6, g6Var));
+            textView.setTypeface(AndroidUtilities.bold());
+            f10.addView(textView, c6.e(-2, -2, 16));
+            dVar.addView(f10, c6.e(-2, -2, 17));
+            s3Var = dVar;
+        } else {
+            s3Var = new s3(context, 64);
+        }
+        return yh.o(s3Var, s3Var, -1, -2);
     }
 }

@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.os.Build;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j8 implements org.telegram.ui.ActionBar.c2, jq {
+public final /* synthetic */ class j8 implements org.telegram.ui.ActionBar.c2, lq {
     public final /* synthetic */ int a;
     public final /* synthetic */ w8 b;
 
@@ -14,13 +14,13 @@ public final /* synthetic */ class j8 implements org.telegram.ui.ActionBar.c2, j
         this.b = w8Var;
     }
 
-    @Override // org.telegram.ui.Components.jq
-    public /* synthetic */ int I0(int i10) {
+    @Override // org.telegram.ui.Components.lq
+    public /* synthetic */ int H0(int i10) {
         return 0;
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    public void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         switch (this.a) {
             case 0:
                 this.b.finishFragment();
@@ -31,8 +31,8 @@ public final /* synthetic */ class j8 implements org.telegram.ui.ActionBar.c2, j
         }
     }
 
-    @Override // org.telegram.ui.Components.jq
-    public void u0(int i10, int i11, boolean z4) {
+    @Override // org.telegram.ui.Components.lq
+    public void v0(int i10, int i11, boolean z4) {
         w8 w8Var = this.b;
         if (i11 == 0) {
             s8 s8Var = w8Var.V;
@@ -81,11 +81,11 @@ public final /* synthetic */ class j8 implements org.telegram.ui.ActionBar.c2, j
         w8Var.a.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.jq
+    @Override // org.telegram.ui.Components.lq
     public /* synthetic */ void k(boolean z4) {
     }
 
-    @Override // org.telegram.ui.Components.jq
-    public /* synthetic */ void z() {
+    @Override // org.telegram.ui.Components.lq
+    public /* synthetic */ void x() {
     }
 }

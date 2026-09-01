@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class e2 extends FrameLayout implements DownloadController.FileDownloadProgressListener, org.telegram.ui.Cells.l9 {
     public boolean B;
@@ -46,7 +46,7 @@ public final class e2 extends FrameLayout implements DownloadController.FileDown
     public MessageObject.GroupedMessagePosition O;
     public Drawable P;
     public boolean Q;
-    public final n70 a;
+    public final o70 a;
     public final j4 b;
     public d3 c;
     public d3 d;
@@ -61,20 +61,20 @@ public final class e2 extends FrameLayout implements DownloadController.FileDown
     public int x;
     public int y;
 
-    public e2(Context context, n70 n70Var, j4 j4Var, int i10) {
+    public e2(Context context, o70 o70Var, j4 j4Var, int i10) {
         super(context);
-        this.a = n70Var;
+        this.a = o70Var;
         this.b = j4Var;
         setWillNotDraw(false);
         this.e = new ImageReceiver(this);
-        e1 e1Var = new e1(context, n70Var, j4Var, 1);
+        e1 e1Var = new e1(context, o70Var, j4Var, 1);
         this.h = e1Var;
         RadialProgress2 radialProgress2 = new RadialProgress2(this, null);
         this.f = radialProgress2;
         radialProgress2.d = -1;
         radialProgress2.setColors(1711276032, 2130706432, -1, -2500135);
-        this.J = DownloadController.getInstance(((l4) n70Var).U).generateObserverTag();
-        addView(e1Var, k7.b6.c(-2.0f, -1));
+        this.J = DownloadController.getInstance(((l4) o70Var).U).generateObserverTag();
+        addView(e1Var, k7.c6.c(-2.0f, -1));
         this.n = i10;
     }
 
@@ -225,19 +225,19 @@ public final class e2 extends FrameLayout implements DownloadController.FileDown
         if (imageReceiver.getVisible()) {
             this.f.draw(canvas2);
         }
-        if (!TextUtils.isEmpty(this.K.url) && !(this.I instanceof org.telegram.ui.web.f2)) {
+        if (!TextUtils.isEmpty(this.K.url) && !(this.I instanceof org.telegram.ui.web.g2)) {
             int measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(35.0f);
             int imageY = (int) (imageReceiver.getImageY() + AndroidUtilities.dp(11.0f));
             this.P.setBounds(measuredWidth, imageY, AndroidUtilities.dp(24.0f) + measuredWidth, AndroidUtilities.dp(24.0f) + imageY);
             this.P.draw(canvas2);
         }
         d3 d3Var = this.c;
-        n70 n70Var = this.a;
+        o70 o70Var = this.a;
         int i10 = 0;
         if (d3Var != null) {
             canvas2.save();
             canvas2.translate(this.s, this.v);
-            l4.v(n70Var, canvas2, this, 0);
+            l4.v(o70Var, canvas2, this, 0);
             this.c.draw(canvas2, this);
             canvas2.restore();
             i10 = 1;
@@ -245,11 +245,11 @@ public final class e2 extends FrameLayout implements DownloadController.FileDown
         if (this.d != null) {
             canvas2.save();
             canvas2.translate(this.s, this.v + this.w);
-            l4.v(n70Var, canvas2, this, i10);
+            l4.v(o70Var, canvas2, this, i10);
             this.d.draw(canvas2, this);
             canvas2.restore();
         }
-        l4.u(canvas2, n70Var, this.K, getMeasuredHeight());
+        l4.u(canvas2, o70Var, this.K, getMeasuredHeight());
     }
 
     @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
@@ -323,7 +323,7 @@ public final class e2 extends FrameLayout implements DownloadController.FileDown
                     }
                     TLRPC.Photo photo = this.I;
                     j4 j4Var2 = this.b;
-                    if (photo == null || (this.E == null && !(photo instanceof org.telegram.ui.web.f2))) {
+                    if (photo == null || (this.E == null && !(photo instanceof org.telegram.ui.web.g2))) {
                         i16 = i13;
                     } else {
                         TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, 40, true);
@@ -333,10 +333,10 @@ public final class e2 extends FrameLayout implements DownloadController.FileDown
                             this.G = null;
                         }
                         TLRPC.Photo photo2 = this.I;
-                        if (photo2 instanceof org.telegram.ui.web.f2) {
-                            org.telegram.ui.web.f2 f2Var = (org.telegram.ui.web.f2) photo2;
-                            i17 = f2Var.d;
-                            i18 = f2Var.e;
+                        if (photo2 instanceof org.telegram.ui.web.g2) {
+                            org.telegram.ui.web.g2 g2Var = (org.telegram.ui.web.g2) photo2;
+                            i17 = g2Var.d;
+                            i18 = g2Var.e;
                         } else {
                             int i25 = photoSize.w;
                             int i26 = photoSize.h;
@@ -384,10 +384,10 @@ public final class e2 extends FrameLayout implements DownloadController.FileDown
                             l4 l4Var = (l4) this.a;
                             this.Q = (DownloadController.getInstance(l4Var.U).getCurrentDownloadMask() & 1) == 0;
                             if (!this.N) {
-                                if (this.I instanceof org.telegram.ui.web.f2) {
+                                if (this.I instanceof org.telegram.ui.web.g2) {
                                     this.Q = true;
                                     imageReceiver.setStrippedLocation(null);
-                                    org.telegram.ui.web.g2.g((org.telegram.ui.web.f2) this.I, imageReceiver, new rt0(this, 9));
+                                    org.telegram.ui.web.h2.g((org.telegram.ui.web.g2) this.I, imageReceiver, new tt0(this, 9));
                                 } else {
                                     File pathToAttach = FileLoader.getInstance(l4Var.U).getPathToAttach(this.E, true);
                                     if (this.Q || pathToAttach.exists()) {
@@ -440,7 +440,7 @@ public final class e2 extends FrameLayout implements DownloadController.FileDown
                         int i29 = i16;
                         TL_iv.pageBlockPhoto pageblockphoto3 = this.K;
                         j4Var = j4Var2;
-                        d3 p10 = l4.p(this.a, this, null, pageblockphoto3.caption.credit, dp, this.v + this.w, pageblockphoto3, (j4Var2 == null || !j4Var2.D) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.kw0.a(), 0, this.b);
+                        d3 p10 = l4.p(this.a, this, null, pageblockphoto3.caption.credit, dp, this.v + this.w, pageblockphoto3, (j4Var2 == null || !j4Var2.D) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.lw0.a(), 0, this.b);
                         this.d = p10;
                         i16 = p10 != null ? this.d.d.getHeight() + AndroidUtilities.dp(4.0f) + i29 : i29;
                     } else {

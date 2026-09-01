@@ -1,13 +1,13 @@
 package re;
 
-import com.google.android.gms.internal.cast.i4;
+import com.google.android.gms.internal.cast.h4;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.PriorityBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a extends ThreadPoolExecutor implements AutoCloseable {
     public final /* synthetic */ c a;
@@ -28,14 +28,14 @@ public final class a extends ThreadPoolExecutor implements AutoCloseable {
         if (countDownLatch != null) {
             try {
                 countDownLatch.await();
-            } catch (InterruptedException e) {
-                FileLog.e(e);
+            } catch (InterruptedException e6) {
+                FileLog.e(e6);
             }
         }
     }
 
     @Override // java.lang.AutoCloseable
     public final /* synthetic */ void close() {
-        i4.h(this);
+        h4.h(this);
     }
 }

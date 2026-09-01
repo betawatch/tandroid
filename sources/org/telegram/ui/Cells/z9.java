@@ -27,18 +27,18 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.sq;
+import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.uq;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public abstract class z9 {
     public final ActionMode.Callback A;
     public final Rect B;
     public y9 C;
-    public k7.x5 D;
-    public sl0 E;
+    public k7.y5 D;
+    public tl0 E;
     public ViewGroup F;
     public Magnifier G;
     public float H;
@@ -75,7 +75,7 @@ public abstract class z9 {
     public float g;
     public final g9 g0;
     public final int[] h = new int[2];
-    public org.telegram.ui.ActionBar.f6 h0;
+    public org.telegram.ui.ActionBar.g6 h0;
     public boolean i;
     public boolean i0;
     public boolean j;
@@ -92,7 +92,7 @@ public abstract class z9 {
     public ActionBarPopupWindow$ActionBarPopupWindowLayout o0;
     public final Paint p;
     public TextView p0;
-    public final sq q;
+    public final uq q;
     public Rect q0;
     public final Path r;
     public final g r0;
@@ -114,10 +114,10 @@ public abstract class z9 {
         Paint paint = new Paint(1);
         this.o = paint;
         this.p = new Paint(1);
-        sq sqVar = new sq();
-        this.q = sqVar;
+        uq uqVar = new uq();
+        this.q = uqVar;
         this.r = new Path();
-        new q9().a = sqVar;
+        new q9().a = uqVar;
         this.u = -1;
         this.v = -1;
         j9 j9Var = new j9(this);
@@ -144,7 +144,7 @@ public abstract class z9 {
         float dp = AndroidUtilities.dp(6.0f);
         this.n = dp;
         paint.setPathEffect(new CornerPathEffect(dp));
-        sqVar.d = 1.0f;
+        uqVar.d = 1.0f;
     }
 
     public static void a(z9 z9Var, int i10) {
@@ -372,8 +372,8 @@ public abstract class z9 {
         return false;
     }
 
-    public final void R(nh.h2 h2Var) {
-        this.D = h2Var;
+    public final void R(oh.i2 i2Var) {
+        this.D = i2Var;
     }
 
     public final void S() {
@@ -381,8 +381,8 @@ public abstract class z9 {
     }
 
     public final void T(ViewGroup viewGroup) {
-        if (viewGroup instanceof sl0) {
-            this.E = (sl0) viewGroup;
+        if (viewGroup instanceof tl0) {
+            this.E = (tl0) viewGroup;
         }
         this.F = viewGroup;
     }
@@ -405,9 +405,9 @@ public abstract class z9 {
             if (!this.i && y() && d()) {
                 if (!this.P) {
                     if (this.Y == null) {
-                        org.telegram.ui.ActionBar.j4 j4Var = new org.telegram.ui.ActionBar.j4(this.C.getContext(), m.j0.f(callback), this.C, new org.telegram.ui.ActionBar.y4(this.C.getContext(), this.C, 1, r(), null));
-                        this.Y = j4Var;
-                        callback.onCreateActionMode(j4Var, j4Var.c);
+                        org.telegram.ui.ActionBar.k4 k4Var = new org.telegram.ui.ActionBar.k4(this.C.getContext(), mh.c3.f(callback), this.C, new org.telegram.ui.ActionBar.z4(this.C.getContext(), this.C, 1, r(), null));
+                        this.Y = k4Var;
+                        callback.onCreateActionMode(k4Var, k4Var.c);
                     }
                     ActionMode actionMode = this.Y;
                     callback.onPrepareActionMode(actionMode, actionMode.getMenu());
@@ -450,15 +450,15 @@ public abstract class z9 {
                 this.o0.setShownFromBottom(false);
                 TextView textView = new TextView(this.C.getContext());
                 this.p0 = textView;
-                int i12 = org.telegram.ui.ActionBar.j6.i6;
-                textView.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.f0(u(i12), 2, -1));
+                int i12 = org.telegram.ui.ActionBar.k6.i6;
+                textView.setBackgroundDrawable(org.telegram.ui.ActionBar.k6.f0(u(i12), 2, -1));
                 this.p0.setGravity(16);
                 this.p0.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
                 this.p0.setTextSize(1, 15.0f);
                 this.p0.setTypeface(AndroidUtilities.bold());
                 this.p0.setText(this.C.getContext().getString(android.R.string.copy));
                 TextView textView2 = this.p0;
-                int i13 = org.telegram.ui.ActionBar.j6.E8;
+                int i13 = org.telegram.ui.ActionBar.k6.E8;
                 textView2.setTextColor(u(i13));
                 final int i14 = 0;
                 this.p0.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Cells.f9
@@ -487,16 +487,16 @@ public abstract class z9 {
                         }
                     }
                 });
-                this.o0.addView(this.p0, k7.b6.c(48.0f, -2));
-                boolean z4 = this instanceof vh.f3;
+                this.o0.addView(this.p0, k7.c6.c(48.0f, -2));
+                boolean z4 = this instanceof wh.f3;
                 if (z4) {
                     TextView textView3 = new TextView(this.C.getContext());
-                    textView3.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.v0(i12, this.h0), 2, -1));
+                    textView3.setBackgroundDrawable(org.telegram.ui.ActionBar.k6.f0(org.telegram.ui.ActionBar.k6.v0(i12, this.h0), 2, -1));
                     textView3.setGravity(16);
                     textView3.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
                     yh.p(15.0f, 1, textView3);
                     textView3.setText(this.C.getContext().getString(android.R.string.cut));
-                    textView3.setTextColor(org.telegram.ui.ActionBar.j6.v0(i13, this.h0));
+                    textView3.setTextColor(org.telegram.ui.ActionBar.k6.v0(i13, this.h0));
                     final int i15 = 1;
                     textView3.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Cells.f9
                         public final /* synthetic */ z9 b;
@@ -524,16 +524,16 @@ public abstract class z9 {
                             }
                         }
                     });
-                    this.o0.addView(textView3, k7.b6.c(48.0f, -2));
+                    this.o0.addView(textView3, k7.c6.c(48.0f, -2));
                 }
                 if (z4) {
                     TextView textView4 = new TextView(this.C.getContext());
-                    textView4.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.v0(i12, this.h0), 2, -1));
+                    textView4.setBackgroundDrawable(org.telegram.ui.ActionBar.k6.f0(org.telegram.ui.ActionBar.k6.v0(i12, this.h0), 2, -1));
                     textView4.setGravity(16);
                     textView4.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
                     yh.p(15.0f, 1, textView4);
                     textView4.setText(this.C.getContext().getString(android.R.string.paste));
-                    textView4.setTextColor(org.telegram.ui.ActionBar.j6.v0(i13, this.h0));
+                    textView4.setTextColor(org.telegram.ui.ActionBar.k6.v0(i13, this.h0));
                     final int i16 = 2;
                     textView4.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Cells.f9
                         public final /* synthetic */ z9 b;
@@ -561,7 +561,7 @@ public abstract class z9 {
                             }
                         }
                     });
-                    this.o0.addView(textView4, k7.b6.c(48.0f, -2));
+                    this.o0.addView(textView4, k7.c6.c(48.0f, -2));
                 }
                 org.telegram.ui.ActionBar.p1 p1Var = new org.telegram.ui.ActionBar.p1(this.o0, -2, -2);
                 this.n0 = p1Var;
@@ -570,7 +570,7 @@ public abstract class z9 {
                 this.n0.setOutsideTouchable(true);
                 ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = this.o0;
                 if (actionBarPopupWindow$ActionBarPopupWindowLayout2 != null) {
-                    actionBarPopupWindow$ActionBarPopupWindowLayout2.setBackgroundColor(u(org.telegram.ui.ActionBar.j6.G8));
+                    actionBarPopupWindow$ActionBarPopupWindowLayout2.setBackgroundColor(u(org.telegram.ui.ActionBar.k6.G8));
                 }
             }
             if (this.W != null) {
@@ -640,9 +640,9 @@ public abstract class z9 {
             this.C.c();
         }
         this.V = 0.0f;
-        k7.x5 x5Var = this.D;
-        if (x5Var != null) {
-            x5Var.a(false);
+        k7.y5 y5Var = this.D;
+        if (y5Var != null) {
+            y5Var.a(false);
         }
         this.s = -1;
         this.t = -1;
@@ -665,9 +665,9 @@ public abstract class z9 {
             }
             v();
             f(true);
-            k7.x5 x5Var = this.D;
-            if (x5Var != null) {
-                x5Var.b();
+            k7.y5 y5Var = this.D;
+            if (y5Var != null) {
+                y5Var.b();
             }
         }
     }
@@ -676,7 +676,7 @@ public abstract class z9 {
         float f11;
         float f12;
         int i13;
-        sq sqVar;
+        uq uqVar;
         float f13;
         t9 t9Var = this.t0;
         t9Var.reset();
@@ -693,23 +693,23 @@ public abstract class z9 {
         int i14 = 0;
         while (true) {
             i13 = t9Var.c;
-            sqVar = this.q;
+            uqVar = this.q;
             f13 = this.n;
             if (i14 >= i13) {
                 break;
             }
             RectF rectF = (RectF) t9Var.b.get(i14);
             rectF.set((int) (Math.max(f10, rectF.left) - (z4 ? f13 / 2.0f : 0.0f)), (int) e2.c.w(rectF.top, f12, f11, f12), (int) (Math.max(f10, rectF.right) + (z10 ? f13 / 2.0f : 0.0f)), (int) e2.c.w(rectF.bottom, f12, f11, f12));
-            sqVar.addRect(rectF, Path.Direction.CW);
+            uqVar.addRect(rectF, Path.Direction.CW);
             i14++;
         }
         if (i13 != 0 || z10) {
             return;
         }
         try {
-            sqVar.addRect(((int) layout.getPrimaryHorizontal(i11)) - (f13 / 2.0f), layout.getLineTop(i10), (f13 / 4.0f) + ((int) layout.getPrimaryHorizontal(i12)), layout.getLineBottom(i10), Path.Direction.CW);
-        } catch (Exception e) {
-            FileLog.e(e);
+            uqVar.addRect(((int) layout.getPrimaryHorizontal(i11)) - (f13 / 2.0f), layout.getLineTop(i10), (f13 / 4.0f) + ((int) layout.getPrimaryHorizontal(i12)), layout.getLineBottom(i10), Path.Direction.CW);
+        } catch (Exception e6) {
+            FileLog.e(e6);
         }
     }
 
@@ -730,14 +730,14 @@ public abstract class z9 {
         z9 z9Var;
         int i17;
         float lineRight;
-        sq sqVar;
+        uq uqVar;
         if (layout == null || layout.getText() == null) {
             return;
         }
         int clamp = Utilities.clamp(i10, layout.getText().length(), 0);
         int clamp2 = Utilities.clamp(i11, layout.getText().length(), 0);
-        sq sqVar2 = this.q;
-        sqVar2.reset();
+        uq uqVar2 = this.q;
+        uqVar2.reset();
         Path path2 = this.r;
         path2.reset();
         float f12 = this.n;
@@ -781,7 +781,7 @@ public abstract class z9 {
                     if (rect != null) {
                         RectF rectF = AndroidUtilities.rectTmp;
                         rectF.set(rect);
-                        sqVar2.addRect(rectF, Path.Direction.CW);
+                        uqVar2.addRect(rectF, Path.Direction.CW);
                     }
                     i13 = lineForOffset + 1;
                     while (i13 < lineForOffset2) {
@@ -791,7 +791,7 @@ public abstract class z9 {
                         int max2 = Math.max(lineLeft, lineRight2);
                         float max3 = Math.max(f10, min2);
                         float f14 = i18;
-                        sqVar2.addRect(max3 - f14, layout.getLineTop(i13), Math.max(f10, max2) + f14, layout.getLineBottom(i13) + 1, Path.Direction.CW);
+                        uqVar2.addRect(max3 - f14, layout.getLineTop(i13), Math.max(f10, max2) + f14, layout.getLineBottom(i13) + 1, Path.Direction.CW);
                         i13++;
                         lineForOffset2 = lineForOffset2;
                         i18 = i18;
@@ -847,13 +847,13 @@ public abstract class z9 {
             if (i22 >= 26) {
                 canvas.clipOutRect(rect2);
             }
-            sqVar = sqVar2;
+            uqVar = uqVar2;
         } else {
             if (!z4 || layout.isRtlCharAt(i16)) {
-                sqVar = sqVar2;
+                uqVar = uqVar2;
             } else {
                 Rect rect3 = AndroidUtilities.rectTmp2;
-                sqVar = sqVar2;
+                uqVar = uqVar2;
                 rect3.set((int) primaryHorizontal2, (int) (lineBottom - f11), (int) Math.min(primaryHorizontal2 + f11, layout.getLineRight(i15)), (int) lineBottom);
                 RectF rectF3 = AndroidUtilities.rectTmp;
                 rectF3.set(rect3);
@@ -874,8 +874,8 @@ public abstract class z9 {
                 }
             }
         }
-        sqVar.a();
-        canvas.drawPath(sqVar, z9Var.o);
+        uqVar.a();
+        canvas.drawPath(uqVar, z9Var.o);
         if (z11) {
             canvas.restore();
             canvas.drawPath(path, z9Var.p);
@@ -934,7 +934,7 @@ public abstract class z9 {
         return 0;
     }
 
-    public org.telegram.ui.ActionBar.f6 r() {
+    public org.telegram.ui.ActionBar.g6 r() {
         return this.h0;
     }
 
@@ -949,7 +949,7 @@ public abstract class z9 {
     public abstract CharSequence t(u9 u9Var, boolean z4);
 
     public int u(int i10) {
-        return org.telegram.ui.ActionBar.j6.v0(i10, this.h0);
+        return org.telegram.ui.ActionBar.k6.v0(i10, this.h0);
     }
 
     public final void v() {

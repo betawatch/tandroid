@@ -10,7 +10,7 @@ import android.util.Log;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class c0 {
     public static e c;
@@ -107,7 +107,7 @@ public final class c0 {
         c3.u = f0Var;
         if (c3.f()) {
             if (c3.r == null) {
-                l lVar = new l(c3.h, new a3.c(c3, 4));
+                l lVar = new l(c3.h, new ja.c(c3));
                 c3.r = lVar;
                 c3.a(lVar, true);
                 c3.k();

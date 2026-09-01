@@ -2,7 +2,7 @@ package ca;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -35,15 +35,15 @@ public final /* synthetic */ class b implements Runnable {
                     try {
                         w8.g gVar = cVar.a;
                         gVar.a();
-                        bf.b r10 = bf.b.r(gVar.a);
+                        bf.b p10 = bf.b.p(gVar.a);
                         try {
                             X = cVar.c.X();
-                            if (r10 != null) {
-                                r10.Z();
+                            if (p10 != null) {
+                                p10.Z();
                             }
                         } catch (Throwable th2) {
-                            if (r10 != null) {
-                                r10.Z();
+                            if (p10 != null) {
+                                p10.Z();
                             }
                             throw th2;
                         }
@@ -84,8 +84,8 @@ public final /* synthetic */ class b implements Runnable {
                     i11 = i10.b;
                     if (i11 != 5) {
                     }
-                } catch (e e) {
-                    cVar.j(e);
+                } catch (e e6) {
+                    cVar.j(e6);
                     return;
                 }
             default:

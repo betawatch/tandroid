@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class y9 extends View {
     public final Paint a;
@@ -58,7 +58,7 @@ public final class y9 extends View {
                 this.b = motionEvent.getX();
                 this.c = motionEvent.getY();
                 this.d = System.currentTimeMillis();
-            } else if (action == 1 && System.currentTimeMillis() - this.d < 200 && k7.n6.b((int) this.b, (int) this.c, (int) motionEvent.getX(), (int) motionEvent.getY()) < z9Var.m) {
+            } else if (action == 1 && System.currentTimeMillis() - this.d < 200 && k7.o6.b((int) this.b, (int) this.c, (int) motionEvent.getX(), (int) motionEvent.getY()) < z9Var.m) {
                 z9Var.L(motionEvent.getRawX(), motionEvent.getRawY());
                 z9Var.v();
                 z9Var.f(false);
@@ -126,9 +126,9 @@ public final class y9 extends View {
                 u9 u9Var2 = z9Var.W;
                 MessageObject messageObject = u9Var2 instanceof t1 ? ((t1) u9Var2).getMessageObject() : null;
                 if (messageObject == null || !messageObject.isOutOwner()) {
-                    paint.setColor(z9Var.u(org.telegram.ui.ActionBar.j6.vf));
+                    paint.setColor(z9Var.u(org.telegram.ui.ActionBar.k6.vf));
                 } else {
-                    paint.setColor(z9Var.u(org.telegram.ui.ActionBar.j6.Wb));
+                    paint.setColor(z9Var.u(org.telegram.ui.ActionBar.k6.Wb));
                 }
                 int length = z9Var.t(z9Var.W, false).length();
                 int i14 = z9Var.v;
@@ -309,7 +309,7 @@ public final class y9 extends View {
                 actionMode.invalidateContentRect();
                 ActionMode actionMode2 = z9Var.Y;
                 if (actionMode2 != null) {
-                    ((org.telegram.ui.ActionBar.j4) actionMode2).e();
+                    ((org.telegram.ui.ActionBar.k4) actionMode2).e();
                 }
             }
             if (z9Var.k) {

@@ -4,9 +4,9 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
-import m.t1;
+import m.s1;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class FitWindowsFrameLayout extends FrameLayout {
     public FitWindowsFrameLayout(Context context) {
@@ -22,6 +22,6 @@ public class FitWindowsFrameLayout extends FrameLayout {
         super(context, attributeSet);
     }
 
-    public void setOnFitSystemWindowsListener(t1 t1Var) {
+    public void setOnFitSystemWindowsListener(s1 s1Var) {
     }
 }

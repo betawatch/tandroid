@@ -6,11 +6,12 @@ import android.os.IInterface;
 import android.os.Parcel;
 import org.telegram.messenger.GoogleMapsProvider;
 import org.telegram.messenger.IMapsProvider;
+import org.telegram.messenger.d0;
 import org.telegram.messenger.i4;
 import org.telegram.messenger.j4;
 import org.telegram.messenger.k4;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class i extends a7.c {
     public final /* synthetic */ int b = 0;
@@ -90,7 +91,7 @@ public final class i extends a7.c {
                 if (i10 == 1) {
                     int readInt = parcel.readInt();
                     g7.b.a(parcel);
-                    GoogleMapsProvider.GoogleMapImpl.lambda$setOnCameraMoveStartedListener$0((IMapsProvider.OnCameraMoveStartedListener) ((org.telegram.messenger.d) this.c).b, readInt);
+                    GoogleMapsProvider.GoogleMapImpl.lambda$setOnCameraMoveStartedListener$0((IMapsProvider.OnCameraMoveStartedListener) ((d0) this.c).b, readInt);
                     parcel2.writeNoException();
                     break;
                 }
@@ -114,9 +115,9 @@ public final class i extends a7.c {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i(org.telegram.messenger.d dVar) {
+    public i(d0 d0Var) {
         super("com.google.android.gms.maps.internal.IOnCameraMoveStartedListener", 6);
-        this.c = dVar;
+        this.c = d0Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

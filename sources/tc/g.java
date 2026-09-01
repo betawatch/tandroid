@@ -1,6 +1,6 @@
 package tc;
 
-import j7.q8;
+import j7.r8;
 import java.util.AbstractCollection;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -10,8 +10,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
-import k7.s7;
-import kh.a2;
+import k7.t7;
 
 /* loaded from: classes.dex */
 public abstract class g extends m {
@@ -34,7 +33,7 @@ public abstract class g extends m {
             if (i10 > 1) {
                 sb.append(charSequence);
             }
-            q8.a(sb, obj, lVar);
+            r8.a(sb, obj, lVar);
         }
         sb.append(charSequence3);
     }
@@ -59,7 +58,7 @@ public abstract class g extends m {
         Object next;
         kotlin.jvm.internal.j.e(iterable, "<this>");
         if (i10 < 0) {
-            throw new IllegalArgumentException(a2.k(i10, "Requested element count ", " is less than zero.").toString());
+            throw new IllegalArgumentException(l.d.k(i10, "Requested element count ", " is less than zero.").toString());
         }
         o oVar = o.a;
         if (i10 == 0) {
@@ -83,7 +82,7 @@ public abstract class g extends m {
                     }
                     next = it.next();
                 }
-                return s7.a(next);
+                return t7.a(next);
             }
         }
         ArrayList arrayList = new ArrayList(i10);
@@ -97,7 +96,7 @@ public abstract class g extends m {
             }
         }
         int size = arrayList.size();
-        return size != 0 ? size != 1 ? arrayList : s7.a(arrayList.get(0)) : oVar;
+        return size != 0 ? size != 1 ? arrayList : t7.a(arrayList.get(0)) : oVar;
     }
 
     public static byte[] j(ArrayList arrayList) {
@@ -150,7 +149,7 @@ public abstract class g extends m {
             if (size != 1) {
                 return o(collection);
             }
-            return s7.a(iterable instanceof List ? ((List) iterable).get(0) : collection.iterator().next());
+            return t7.a(iterable instanceof List ? ((List) iterable).get(0) : collection.iterator().next());
         }
         if (z4) {
             arrayList = o((Collection) iterable);
@@ -160,7 +159,7 @@ public abstract class g extends m {
             arrayList = arrayList2;
         }
         int size2 = arrayList.size();
-        return size2 != 0 ? size2 != 1 ? arrayList : s7.a(arrayList.get(0)) : oVar;
+        return size2 != 0 ? size2 != 1 ? arrayList : t7.a(arrayList.get(0)) : oVar;
     }
 
     public static long[] n(Collection collection) {

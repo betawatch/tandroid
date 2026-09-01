@@ -2,7 +2,7 @@ package com.google.android.gms.internal.vision;
 
 import java.io.PrintStream;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final e1 a;
@@ -13,9 +13,9 @@ public abstract class c {
         try {
             try {
                 num = (Integer) Class.forName("android.os.Build$VERSION").getField("SDK_INT").get(null);
-            } catch (Exception e) {
+            } catch (Exception e6) {
                 System.err.println("Failed to retrieve value from android.os.Build$VERSION.SDK_INT due to the following exception.");
-                e.printStackTrace(System.err);
+                e6.printStackTrace(System.err);
             }
             bVar = (num == null || num.intValue() < 19) ? !Boolean.getBoolean("com.google.devtools.build.android.desugar.runtime.twr_disable_mimic") ? new e() : new b(0) : new b(1);
         } catch (Throwable th2) {

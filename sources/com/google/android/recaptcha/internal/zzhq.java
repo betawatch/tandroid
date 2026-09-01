@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
 import dd.p;
-import k7.p7;
+import k7.q7;
 import ld.c0;
 import uc.c;
 import vc.a;
 import wc.i;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 final class zzhq extends i implements p {
     final /* synthetic */ zzht zza;
@@ -35,7 +35,7 @@ final class zzhq extends i implements p {
     @Override // wc.a
     public final Object invokeSuspend(Object obj) {
         a aVar = a.a;
-        p7.b(obj);
+        q7.b(obj);
         try {
             zzht zzhtVar = this.zza;
             zzig zzb = zzht.zzb(zzhtVar);
@@ -44,10 +44,10 @@ final class zzhq extends i implements p {
                 return zzht.zza(zzhtVar).zza(str, this.zzc);
             }
             throw new zzcg(zzce.zzc, zzcd.zzQ, null, null, 12, null);
-        } catch (zzcg e) {
-            throw e;
-        } catch (Exception e6) {
-            throw new zzcg(zzce.zzb, zzcd.zzaz, e6.getMessage(), null, 8, null);
+        } catch (zzcg e6) {
+            throw e6;
+        } catch (Exception e10) {
+            throw new zzcg(zzce.zzb, zzcd.zzaz, e10.getMessage(), null, 8, null);
         }
     }
 }

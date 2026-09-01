@@ -1,14 +1,14 @@
 package f7;
 
-import j7.k7;
 import j7.l7;
+import j7.m7;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class u extends r implements List, RandomAccess {
     public static final s b = new s(v.e, 0);
@@ -39,7 +39,7 @@ public abstract class u extends r implements List, RandomAccess {
             if (size == list.size()) {
                 if (list instanceof RandomAccess) {
                     for (int i10 = 0; i10 < size; i10++) {
-                        if (k7.a(get(i10), list.get(i10))) {
+                        if (l7.a(get(i10), list.get(i10))) {
                         }
                     }
                     return true;
@@ -48,7 +48,7 @@ public abstract class u extends r implements List, RandomAccess {
                 Iterator it = list.iterator();
                 while (true) {
                     if (listIterator.hasNext()) {
-                        if (!it.hasNext() || !k7.a(listIterator.next(), it.next())) {
+                        if (!it.hasNext() || !l7.a(listIterator.next(), it.next())) {
                             break;
                         }
                     } else if (!it.hasNext()) {
@@ -119,7 +119,7 @@ public abstract class u extends r implements List, RandomAccess {
     @Override // java.util.List
     /* renamed from: r */
     public u subList(int i10, int i11) {
-        l7.b(i10, i11, size());
+        m7.b(i10, i11, size());
         int i12 = i11 - i10;
         return i12 == size() ? this : i12 == 0 ? v.e : new t(this, i10, i12);
     }
@@ -134,7 +134,7 @@ public abstract class u extends r implements List, RandomAccess {
     public final s listIterator(int i10) {
         int size = size();
         if (i10 < 0 || i10 > size) {
-            throw new IndexOutOfBoundsException(l7.c(i10, size, "index"));
+            throw new IndexOutOfBoundsException(m7.c(i10, size, "index"));
         }
         return isEmpty() ? b : new s(this, i10);
     }

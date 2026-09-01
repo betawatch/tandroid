@@ -5,11 +5,11 @@ import androidx.car.app.hardware.common.CarZone;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import k7.z6;
+import k7.a7;
 import org.telegram.messenger.MediaController;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class o {
     public static final ArrayList a = new ArrayList();
@@ -35,7 +35,7 @@ public abstract class o {
     }
 
     public static int b(String str, String str2) {
-        c5.e e;
+        c5.e e6;
         str.getClass();
         switch (str) {
             case "audio/eac3-joc":
@@ -45,10 +45,10 @@ public abstract class o {
             case "audio/vnd.dts":
                 return 7;
             case "audio/mp4a-latm":
-                if (str2 == null || (e = e(str2)) == null) {
+                if (str2 == null || (e6 = e(str2)) == null) {
                     return 0;
                 }
-                return e.a();
+                return e6.a();
             case "audio/ac3":
                 return 5;
             case "audio/ac4":
@@ -71,10 +71,10 @@ public abstract class o {
     }
 
     public static String c(String str) {
-        c5.e e;
+        c5.e e6;
         String str2 = null;
         if (str != null) {
-            String b10 = z6.b(str.trim());
+            String b10 = a7.b(str.trim());
             if (b10.startsWith("avc1") || b10.startsWith("avc3")) {
                 return MediaController.VIDEO_MIME_TYPE;
             }
@@ -94,8 +94,8 @@ public abstract class o {
                 return "video/x-vnd.on2.vp8";
             }
             if (b10.startsWith("mp4a")) {
-                if (b10.startsWith("mp4a.") && (e = e(b10)) != null) {
-                    str2 = d(e.a);
+                if (b10.startsWith("mp4a.") && (e6 = e(b10)) != null) {
+                    str2 = d(e6.a);
                 }
                 return str2 == null ? MediaController.AUDIO_MIME_TYPE : str2;
             }

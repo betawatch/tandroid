@@ -1,43 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class d00 extends f2.j0 {
-    public final /* synthetic */ org.telegram.ui.br r;
+public final /* synthetic */ class d00 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ j00 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d00(org.telegram.ui.br brVar, Context context) {
-        super(context);
-        this.r = brVar;
+    public /* synthetic */ d00(j00 j00Var, int i10) {
+        this.a = i10;
+        this.b = j00Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0033, code lost:
-    
-        if ((org.telegram.messenger.AndroidUtilities.dp(21.0f) + r6.getRight()) > ((org.telegram.ui.Components.j00) r5.r.J).getMeasuredWidth()) goto L13;
-     */
-    @Override // f2.j0, f2.h1
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void g(View view, f2.g1 g1Var) {
-        int j10 = j(o(), view);
-        if (j10 > 0 || (j10 == 0 && view.getLeft() - AndroidUtilities.dp(21.0f) < 0)) {
-            j10 += AndroidUtilities.dp(60.0f);
-        } else {
-            if (j10 >= 0) {
-                if (j10 == 0) {
-                }
-            }
-            j10 -= AndroidUtilities.dp(60.0f);
-        }
-        int k10 = k(p(), view);
-        int max = Math.max(180, m((int) Math.sqrt((k10 * k10) + (j10 * j10))));
-        if (max > 0) {
-            g1Var.b(-j10, -k10, max, this.j);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                j00 j00Var = this.b;
+                j00Var.x = floatValue;
+                j00Var.invalidate();
+                break;
+            default:
+                j00 j00Var2 = this.b;
+                j00Var2.getClass();
+                j00Var2.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                j00Var2.invalidate();
+                break;
         }
     }
 }

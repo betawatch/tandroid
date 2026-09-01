@@ -1,11 +1,11 @@
 package kd;
 
-import kh.a2;
 import kotlin.jvm.internal.j;
+import l.d;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a implements Comparable {
     public static final long b;
@@ -27,7 +27,7 @@ public final class a implements Comparable {
             String valueOf = String.valueOf(i11);
             j.e(valueOf, "<this>");
             if (i12 < 0) {
-                throw new IllegalArgumentException(a2.k(i12, "Desired length ", " is less than zero."));
+                throw new IllegalArgumentException(d.k(i12, "Desired length ", " is less than zero."));
             }
             if (i12 <= valueOf.length()) {
                 charSequence = valueOf.subSequence(0, valueOf.length());

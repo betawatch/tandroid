@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class k5 implements org.telegram.ui.Components.jo0 {
+public final class k5 implements org.telegram.ui.Components.ko0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ TextView b;
     public final /* synthetic */ l5 c;
@@ -15,13 +15,13 @@ public final class k5 implements org.telegram.ui.Components.jo0 {
         this.b = textView;
     }
 
-    @Override // org.telegram.ui.Components.jo0
-    public final void B() {
+    @Override // org.telegram.ui.Components.ko0
+    public final void A() {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.jo0
-    public final void Y(float f10, boolean z4) {
+    @Override // org.telegram.ui.Components.ko0
+    public final void X(float f10, boolean z4) {
         switch (this.a) {
             case 0:
                 l5.c = f10;
@@ -38,15 +38,15 @@ public final class k5 implements org.telegram.ui.Components.jo0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.jo0
+    @Override // org.telegram.ui.Components.ko0
     public final /* synthetic */ CharSequence getContentDescription() {
         switch (this.a) {
         }
         return null;
     }
 
-    @Override // org.telegram.ui.Components.jo0
-    public final /* synthetic */ int j0() {
+    @Override // org.telegram.ui.Components.ko0
+    public final /* synthetic */ int m0() {
         switch (this.a) {
         }
         return 0;

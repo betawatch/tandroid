@@ -1,52 +1,150 @@
 package lh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
+import android.text.TextUtils;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.nr;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.j51;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes4.dex */
-public final class a4 extends View {
-    public final Paint a;
-    public final org.telegram.ui.Components.z5 b;
-    public final org.telegram.ui.Components.z5 c;
-    public float d;
-    public float e;
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class a4 implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ r5 b;
+    public final /* synthetic */ String[] c;
+    public final /* synthetic */ ArrayList d;
 
-    public a4(Context context) {
-        super(context);
-        Paint paint = new Paint(1);
-        this.a = paint;
-        int i10 = 9;
-        b bVar = new b(this, i10);
-        nr nrVar = nr.h;
-        this.b = new org.telegram.ui.Components.z5(bVar, 420L, nrVar, 0);
-        this.c = new org.telegram.ui.Components.z5(new b(this, i10), 420L, nrVar, 0);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeJoin(Paint.Join.ROUND);
+    public /* synthetic */ a4(r5 r5Var, String[] strArr, ArrayList arrayList, int i10) {
+        this.a = i10;
+        this.b = r5Var;
+        this.c = strArr;
+        this.d = arrayList;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float d = this.b.d(this.d, false);
-        float e = this.c.e(this.d > 0.0f);
-        float width = getWidth() / 2.0f;
-        float height = getHeight() / 2.0f;
-        float f10 = this.e;
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(width - f10, height - f10, width + f10, height + f10);
-        int l1 = org.telegram.ui.ActionBar.j6.l1(0.25f, -1);
-        Paint paint = this.a;
-        paint.setColor(l1);
-        canvas.drawArc(rectF, 135.0f, 270.0f, false, paint);
-        if (e > 0.0f) {
-            paint.setColor(org.telegram.ui.ActionBar.j6.l1(e, -1));
-            canvas.drawArc(rectF, 135.0f, d * 270.0f, false, paint);
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        String str;
+        String str2;
+        String str3;
+        int i10 = this.a;
+        String str4 = " ";
+        ArrayList arrayList = this.d;
+        String[] strArr = this.c;
+        r5 r5Var = this.b;
+        switch (i10) {
+            case 0:
+                ArrayList arrayList2 = (ArrayList) obj;
+                String lowerCase = strArr[0].toLowerCase();
+                String translitSafe = AndroidUtilities.translitSafe(lowerCase);
+                b5 b5Var = r5Var.d;
+                boolean isEmpty = b5Var.l.isEmpty();
+                int size = arrayList.size();
+                int i11 = 0;
+                while (i11 < size) {
+                    Object obj3 = arrayList.get(i11);
+                    i11++;
+                    TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) obj3;
+                    boolean contains = b5Var.l.contains(Long.valueOf(stargiftattributepattern.document.id));
+                    boolean z4 = !contains;
+                    if (TextUtils.isEmpty(lowerCase) || stargiftattributepattern.name.toLowerCase().startsWith(lowerCase) || stargiftattributepattern.name.toLowerCase().startsWith(translitSafe) || org.telegram.messenger.y3.w(" ", lowerCase, stargiftattributepattern.name.toLowerCase()) || org.telegram.messenger.y3.w(" ", translitSafe, stargiftattributepattern.name.toLowerCase())) {
+                        Integer num = (Integer) b5Var.o.get(Long.valueOf(stargiftattributepattern.document.id));
+                        int intValue = num == null ? 0 : num.intValue();
+                        int i12 = y4.a;
+                        j51 J = j51.J(y4.class);
+                        J.G = stargiftattributepattern;
+                        J.l = lowerCase;
+                        J.z = intValue;
+                        if (!TextUtils.isEmpty(lowerCase)) {
+                            z4 = (isEmpty || contains) ? false : true;
+                        }
+                        J.K(z4);
+                        arrayList2.add(J);
+                    }
+                }
+                if (arrayList2.isEmpty()) {
+                    arrayList2.add(q4.a(LocaleController.getString(R.string.Gift2ResaleFiltersSymbolEmpty)));
+                    break;
+                }
+                break;
+            case 1:
+                ArrayList arrayList3 = (ArrayList) obj;
+                String lowerCase2 = strArr[0].toLowerCase();
+                String translitSafe2 = AndroidUtilities.translitSafe(lowerCase2);
+                b5 b5Var2 = r5Var.d;
+                boolean isEmpty2 = b5Var2.k.isEmpty();
+                int size2 = arrayList.size();
+                int i13 = 0;
+                while (i13 < size2) {
+                    Object obj4 = arrayList.get(i13);
+                    i13++;
+                    TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) obj4;
+                    boolean contains2 = b5Var2.k.contains(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
+                    boolean z10 = !contains2;
+                    if (TextUtils.isEmpty(lowerCase2) || stargiftattributebackdrop.name.toLowerCase().startsWith(lowerCase2) || stargiftattributebackdrop.name.toLowerCase().startsWith(translitSafe2)) {
+                        str2 = str;
+                    } else {
+                        str2 = str;
+                        str = (org.telegram.messenger.y3.w(str2, lowerCase2, stargiftattributebackdrop.name.toLowerCase()) || org.telegram.messenger.y3.w(str2, translitSafe2, stargiftattributebackdrop.name.toLowerCase())) ? " " : str2;
+                    }
+                    Integer num2 = (Integer) b5Var2.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
+                    int intValue2 = num2 == null ? 0 : num2.intValue();
+                    int i14 = o4.a;
+                    j51 J2 = j51.J(o4.class);
+                    J2.G = stargiftattributebackdrop;
+                    J2.l = lowerCase2;
+                    J2.z = intValue2;
+                    if (!TextUtils.isEmpty(lowerCase2)) {
+                        z10 = (isEmpty2 || contains2) ? false : true;
+                    }
+                    J2.K(z10);
+                    arrayList3.add(J2);
+                }
+                if (arrayList3.isEmpty()) {
+                    arrayList3.add(q4.a(LocaleController.getString(R.string.Gift2ResaleFiltersBackdropEmpty)));
+                    break;
+                }
+                break;
+            default:
+                ArrayList arrayList4 = (ArrayList) obj;
+                String lowerCase3 = strArr[0].toLowerCase();
+                String translitSafe3 = AndroidUtilities.translitSafe(lowerCase3);
+                b5 b5Var3 = r5Var.d;
+                boolean isEmpty3 = b5Var3.j.isEmpty();
+                int size3 = arrayList.size();
+                int i15 = 0;
+                while (i15 < size3) {
+                    Object obj5 = arrayList.get(i15);
+                    i15++;
+                    TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) obj5;
+                    boolean contains3 = b5Var3.j.contains(Long.valueOf(stargiftattributemodel.document.id));
+                    boolean z11 = !contains3;
+                    if (TextUtils.isEmpty(lowerCase3) || stargiftattributemodel.name.toLowerCase().startsWith(lowerCase3) || stargiftattributemodel.name.toLowerCase().startsWith(translitSafe3) || org.telegram.messenger.y3.w(str4, lowerCase3, stargiftattributemodel.name.toLowerCase()) || org.telegram.messenger.y3.w(str4, translitSafe3, stargiftattributemodel.name.toLowerCase())) {
+                        str3 = str4;
+                        Integer num3 = (Integer) b5Var3.m.get(Long.valueOf(stargiftattributemodel.document.id));
+                        int intValue3 = num3 == null ? 0 : num3.intValue();
+                        int i16 = v4.a;
+                        j51 J3 = j51.J(v4.class);
+                        J3.G = stargiftattributemodel;
+                        J3.l = lowerCase3;
+                        J3.z = intValue3;
+                        if (!TextUtils.isEmpty(lowerCase3)) {
+                            z11 = (isEmpty3 || contains3) ? false : true;
+                        }
+                        J3.K(z11);
+                        arrayList4.add(J3);
+                    } else {
+                        str3 = str4;
+                    }
+                    str4 = str3;
+                }
+                if (arrayList4.isEmpty()) {
+                    arrayList4.add(q4.a(LocaleController.getString(R.string.Gift2ResaleFiltersModelEmpty)));
+                    break;
+                }
+                break;
         }
     }
 }

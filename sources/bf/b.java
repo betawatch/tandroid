@@ -44,19 +44,17 @@ import b4.h0;
 import b4.x;
 import b4.y;
 import c2.e0;
-import ch.i;
 import com.google.android.gms.cast.CastDevice;
-import com.google.android.gms.internal.cast.d1;
-import com.google.android.gms.internal.cast.d2;
-import com.google.android.gms.internal.cast.p;
-import com.google.android.gms.internal.cast.t;
+import com.google.android.gms.internal.cast.c1;
+import com.google.android.gms.internal.cast.c2;
+import com.google.android.gms.internal.cast.r;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.messaging.r;
 import d4.j;
-import f2.l1;
-import f2.p1;
+import dh.i;
+import f2.m1;
 import f2.q1;
+import f2.r1;
 import h5.d0;
 import h5.w;
 import h7.u;
@@ -88,9 +86,9 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final class b implements r5.h, v4.f, r3.e, b0, xd.b, OnCompleteListener, com.google.android.gms.internal.clearcut.h, j, a3.b {
+public final class b implements r5.h, v4.f, r3.e, b0, OnCompleteListener, com.google.android.gms.internal.clearcut.h, j, xd.b, a3.b {
     public static volatile b d;
     public final /* synthetic */ int a;
     public Object b;
@@ -125,26 +123,26 @@ public final class b implements r5.h, v4.f, r3.e, b0, xd.b, OnCompleteListener, 
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static b r(Context context) {
+    public static b p(Context context) {
         FileChannel fileChannel;
         FileLock fileLock;
         try {
             fileChannel = new RandomAccessFile(new File(context.getFilesDir(), "generatefid.lock"), "rw").getChannel();
             try {
                 fileLock = fileChannel.lock();
-            } catch (IOException | Error | OverlappingFileLockException e) {
-                e = e;
+            } catch (IOException | Error | OverlappingFileLockException e6) {
+                e = e6;
                 fileLock = null;
             }
-        } catch (IOException | Error | OverlappingFileLockException e6) {
-            e = e6;
+        } catch (IOException | Error | OverlappingFileLockException e10) {
+            e = e10;
             fileChannel = null;
             fileLock = null;
         }
         try {
             return new b(17, fileChannel, fileLock);
-        } catch (IOException e10) {
-            e = e10;
+        } catch (IOException e11) {
+            e = e11;
             Log.e("CrossProcessLock", "encountered error while creating and acquiring the lock, ignoring", e);
             if (fileLock != null) {
                 try {
@@ -159,16 +157,16 @@ public final class b implements r5.h, v4.f, r3.e, b0, xd.b, OnCompleteListener, 
                 }
             }
             return null;
-        } catch (Error e11) {
-            e = e11;
+        } catch (Error e12) {
+            e = e12;
             Log.e("CrossProcessLock", "encountered error while creating and acquiring the lock, ignoring", e);
             if (fileLock != null) {
             }
             if (fileChannel != null) {
             }
             return null;
-        } catch (OverlappingFileLockException e12) {
-            e = e12;
+        } catch (OverlappingFileLockException e13) {
+            e = e13;
             Log.e("CrossProcessLock", "encountered error while creating and acquiring the lock, ignoring", e);
             if (fileLock != null) {
             }
@@ -178,7 +176,7 @@ public final class b implements r5.h, v4.f, r3.e, b0, xd.b, OnCompleteListener, 
         }
     }
 
-    public static boolean v(Editable editable, KeyEvent keyEvent, boolean z4) {
+    public static boolean u(Editable editable, KeyEvent keyEvent, boolean z4) {
         v[] vVarArr;
         if (KeyEvent.metaStateHasNoModifiers(keyEvent.getMetaState())) {
             int selectionStart = Selection.getSelectionStart(editable);
@@ -408,29 +406,29 @@ public final class b implements r5.h, v4.f, r3.e, b0, xd.b, OnCompleteListener, 
 
     public View M(int i10, int i11, int i12, int i13) {
         a5.b bVar = (a5.b) this.c;
-        p1 p1Var = (p1) this.b;
-        int l10 = p1Var.l();
-        int t6 = p1Var.t();
+        q1 q1Var = (q1) this.b;
+        int n10 = q1Var.n();
+        int v = q1Var.v();
         int i14 = i11 > i10 ? 1 : -1;
         View view = null;
         while (i10 != i11) {
-            View C = p1Var.C(i10);
-            int d10 = p1Var.d(C);
-            int E = p1Var.E(C);
-            bVar.b = l10;
-            bVar.c = t6;
+            View I = q1Var.I(i10);
+            int d10 = q1Var.d(I);
+            int J = q1Var.J(I);
+            bVar.b = n10;
+            bVar.c = v;
             bVar.d = d10;
-            bVar.e = E;
+            bVar.e = J;
             if (i12 != 0) {
                 bVar.a = i12;
                 if (bVar.a()) {
-                    return C;
+                    return I;
                 }
             }
             if (i13 != 0) {
                 bVar.a = i13;
                 if (bVar.a()) {
-                    view = C;
+                    view = I;
                 }
             }
             i10 += i14;
@@ -460,8 +458,8 @@ public final class b implements r5.h, v4.f, r3.e, b0, xd.b, OnCompleteListener, 
         if (mediaSessionCompat$Token.a() != null) {
             try {
                 return mediaSessionCompat$Token.a().b();
-            } catch (RemoteException e) {
-                Log.e("MediaControllerCompat", "Dead object in getPlaybackState.", e);
+            } catch (RemoteException e6) {
+                Log.e("MediaControllerCompat", "Dead object in getPlaybackState.", e6);
             }
         }
         PlaybackState playbackState = hVar.a.getPlaybackState();
@@ -572,7 +570,7 @@ public final class b implements r5.h, v4.f, r3.e, b0, xd.b, OnCompleteListener, 
         try {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("Fid", bVar.a);
-            jSONObject.put("Status", m1.j.b(bVar.b));
+            jSONObject.put("Status", m1.j.c(bVar.b));
             jSONObject.put("AuthToken", bVar.c);
             jSONObject.put("RefreshToken", bVar.d);
             jSONObject.put("TokenCreationEpochInSecs", bVar.f);
@@ -598,43 +596,43 @@ public final class b implements r5.h, v4.f, r3.e, b0, xd.b, OnCompleteListener, 
 
     public boolean V(View view) {
         a5.b bVar = (a5.b) this.c;
-        p1 p1Var = (p1) this.b;
-        int l10 = p1Var.l();
-        int t6 = p1Var.t();
-        int d10 = p1Var.d(view);
-        int E = p1Var.E(view);
-        bVar.b = l10;
-        bVar.c = t6;
+        q1 q1Var = (q1) this.b;
+        int n10 = q1Var.n();
+        int v = q1Var.v();
+        int d10 = q1Var.d(view);
+        int J = q1Var.J(view);
+        bVar.b = n10;
+        bVar.c = v;
         bVar.d = d10;
-        bVar.e = E;
+        bVar.e = J;
         bVar.a = 24579;
         return bVar.a();
     }
 
-    public c5.e W(l1 l1Var, int i10) {
-        q1 q1Var;
+    public c5.e W(m1 m1Var, int i10) {
+        r1 r1Var;
         c5.e eVar;
         a0.f fVar = (a0.f) this.b;
-        int c3 = fVar.c(l1Var);
-        if (c3 >= 0 && (q1Var = (q1) fVar.h(c3)) != null) {
-            int i11 = q1Var.a;
+        int c3 = fVar.c(m1Var);
+        if (c3 >= 0 && (r1Var = (r1) fVar.h(c3)) != null) {
+            int i11 = r1Var.a;
             if ((i11 & i10) != 0) {
                 int i12 = i11 & (~i10);
-                q1Var.a = i12;
+                r1Var.a = i12;
                 if (i10 == 4) {
-                    eVar = q1Var.b;
+                    eVar = r1Var.b;
                 } else {
                     if (i10 != 8) {
                         throw new IllegalArgumentException("Must provide flag PRE or POST");
                     }
-                    eVar = q1Var.c;
+                    eVar = r1Var.c;
                 }
                 if ((i12 & 12) == 0) {
                     fVar.f(c3);
-                    q1Var.a = 0;
-                    q1Var.b = null;
-                    q1Var.c = null;
-                    q1.d.h(q1Var);
+                    r1Var.a = 0;
+                    r1Var.b = null;
+                    r1Var.c = null;
+                    r1.d.h(r1Var);
                 }
                 return eVar;
             }
@@ -670,7 +668,7 @@ public final class b implements r5.h, v4.f, r3.e, b0, xd.b, OnCompleteListener, 
         long optLong = jSONObject.optLong("TokenCreationEpochInSecs", 0L);
         long optLong2 = jSONObject.optLong("ExpiresInSecs", 0L);
         String optString4 = jSONObject.optString("FisError", null);
-        int i10 = m1.j.c(5)[optInt];
+        int i10 = m1.j.d(5)[optInt];
         if (i10 == 0) {
             throw new NullPointerException("Null registrationStatus");
         }
@@ -701,8 +699,8 @@ public final class b implements r5.h, v4.f, r3.e, b0, xd.b, OnCompleteListener, 
                 try {
                     hVar.e.a().j(gVar);
                     sVar.e(13, null, null);
-                } catch (RemoteException e) {
-                    Log.e("MediaControllerCompat", "Dead object in registerCallback.", e);
+                } catch (RemoteException e6) {
+                    Log.e("MediaControllerCompat", "Dead object in registerCallback.", e6);
                 }
             } else {
                 sVar.c = null;
@@ -715,8 +713,8 @@ public final class b implements r5.h, v4.f, r3.e, b0, xd.b, OnCompleteListener, 
         try {
             ((FileLock) this.c).release();
             ((FileChannel) this.b).close();
-        } catch (IOException e) {
-            Log.e("CrossProcessLock", "encountered error while releasing, ignoring", e);
+        } catch (IOException e6) {
+            Log.e("CrossProcessLock", "encountered error while releasing, ignoring", e6);
         }
     }
 
@@ -749,128 +747,21 @@ public final class b implements r5.h, v4.f, r3.e, b0, xd.b, OnCompleteListener, 
         }
     }
 
-    public void a0(l1 l1Var) {
-        q1 q1Var = (q1) ((a0.f) this.b).get(l1Var);
-        if (q1Var == null) {
+    public void a0(m1 m1Var) {
+        r1 r1Var = (r1) ((a0.f) this.b).get(m1Var);
+        if (r1Var == null) {
             return;
         }
-        q1Var.a &= -2;
-    }
-
-    @Override // v4.f
-    public int b(long j10) {
-        int i10;
-        switch (this.a) {
-            case 2:
-                ArrayList arrayList = (ArrayList) this.c;
-                Long valueOf = Long.valueOf(j10);
-                int i11 = d0.a;
-                int binarySearch = Collections.binarySearch(arrayList, valueOf);
-                if (binarySearch < 0) {
-                    i10 = ~binarySearch;
-                } else {
-                    int size = arrayList.size();
-                    do {
-                        binarySearch++;
-                        if (binarySearch < size) {
-                        }
-                        i10 = binarySearch;
-                    } while (((Comparable) arrayList.get(binarySearch)).compareTo(valueOf) == 0);
-                    i10 = binarySearch;
-                }
-                if (i10 < arrayList.size()) {
-                    return i10;
-                }
-                return -1;
-            default:
-                long[] jArr = (long[]) this.c;
-                int b10 = d0.b(jArr, j10, false);
-                if (b10 < jArr.length) {
-                    return b10;
-                }
-                return -1;
-        }
-    }
-
-    public void b0(l1 l1Var) {
-        a0.f fVar = (a0.f) this.b;
-        a0.h hVar = (a0.h) this.c;
-        int m9 = hVar.m() - 1;
-        while (true) {
-            if (m9 < 0) {
-                break;
-            }
-            if (l1Var == hVar.n(m9)) {
-                Object[] objArr = hVar.c;
-                Object obj = objArr[m9];
-                Object obj2 = a0.i.a;
-                if (obj != obj2) {
-                    objArr[m9] = obj2;
-                    hVar.a = true;
-                }
-            } else {
-                m9--;
-            }
-        }
-        q1 q1Var = (q1) fVar.get(l1Var);
-        if (q1Var != null) {
-            fVar.remove(l1Var);
-            q1Var.a = 0;
-            q1Var.b = null;
-            q1Var.c = null;
-            q1.d.h(q1Var);
-        }
-    }
-
-    public void c0(h hVar) {
-        e eVar;
-        h hVar2;
-        int i10;
-        Log.d("CAST_CONTROLLER", "set current media");
-        androidx.biometric.e eVar2 = (androidx.biometric.e) this.b;
-        h hVar3 = (h) eVar2.c;
-        if (d1.f.u()) {
-            if (hVar3 == null && hVar == null) {
-                return;
-            }
-            if (hVar3 != null) {
-                ArrayList arrayList = hVar3.a;
-                if (hVar != null && arrayList.size() == hVar.a.size()) {
-                    while (i10 < arrayList.size()) {
-                        g a2 = hVar3.a(i10);
-                        g a10 = hVar.a(i10);
-                        i10 = ((a2 == null && a10 == null) || (a2 != null && a10 != null && Objects.equals(a2.a, a10.a) && Objects.equals(a2.b, a10.b) && Objects.equals(a2.c, a10.c) && Objects.equals(a2.d, a10.d) && a2.e == a10.e && a2.f == a10.f)) ? i10 + 1 : 0;
-                    }
-                    return;
-                }
-            }
-        }
-        if (((a) eVar2.d) != null && hVar != null) {
-            eVar2.e(hVar);
-        }
-        if (((a) eVar2.d) != null && (hVar2 = (h) eVar2.c) != null) {
-            eVar2.z(hVar2);
-        }
-        if (hVar != null && hVar.a.size() > 0 && !hVar.a(0).a.startsWith("audio/") && (eVar = (e) eVar2.b) != null) {
-            eVar.l(null, null);
-        }
-        a aVar = (a) eVar2.d;
-        if (aVar != null && hVar != null) {
-            aVar.d = hVar;
-            aVar.g = 0;
-            aVar.h = 0;
-            aVar.p();
-        }
-        eVar2.c = hVar;
+        r1Var.a &= -2;
     }
 
     @Override // r3.e
-    public r3.d d(r3.l lVar, long j10) {
+    public r3.d b(r3.l lVar, long j10) {
         long position = lVar.getPosition();
         int min = (int) Math.min(20000L, lVar.getLength() - position);
         w wVar = (w) this.c;
         wVar.C(min);
-        lVar.c(0, min, wVar.a);
+        lVar.b(0, min, wVar.a);
         int i10 = -1;
         long j11 = -9223372036854775807L;
         int i11 = -1;
@@ -937,6 +828,113 @@ public final class b implements r5.h, v4.f, r3.e, b0, xd.b, OnCompleteListener, 
         return j11 != -9223372036854775807L ? new r3.d(-2, j11, position + i10) : r3.d.d;
     }
 
+    public void b0(m1 m1Var) {
+        a0.f fVar = (a0.f) this.b;
+        a0.h hVar = (a0.h) this.c;
+        int m9 = hVar.m() - 1;
+        while (true) {
+            if (m9 < 0) {
+                break;
+            }
+            if (m1Var == hVar.n(m9)) {
+                Object[] objArr = hVar.c;
+                Object obj = objArr[m9];
+                Object obj2 = a0.i.a;
+                if (obj != obj2) {
+                    objArr[m9] = obj2;
+                    hVar.a = true;
+                }
+            } else {
+                m9--;
+            }
+        }
+        r1 r1Var = (r1) fVar.get(m1Var);
+        if (r1Var != null) {
+            fVar.remove(m1Var);
+            r1Var.a = 0;
+            r1Var.b = null;
+            r1Var.c = null;
+            r1.d.h(r1Var);
+        }
+    }
+
+    public void c0(h hVar) {
+        e eVar;
+        h hVar2;
+        int i10;
+        Log.d("CAST_CONTROLLER", "set current media");
+        androidx.biometric.e eVar2 = (androidx.biometric.e) this.b;
+        h hVar3 = (h) eVar2.c;
+        if (d1.f.u()) {
+            if (hVar3 == null && hVar == null) {
+                return;
+            }
+            if (hVar3 != null) {
+                ArrayList arrayList = hVar3.a;
+                if (hVar != null && arrayList.size() == hVar.a.size()) {
+                    while (i10 < arrayList.size()) {
+                        g a2 = hVar3.a(i10);
+                        g a10 = hVar.a(i10);
+                        i10 = ((a2 == null && a10 == null) || (a2 != null && a10 != null && Objects.equals(a2.a, a10.a) && Objects.equals(a2.b, a10.b) && Objects.equals(a2.c, a10.c) && Objects.equals(a2.d, a10.d) && a2.e == a10.e && a2.f == a10.f)) ? i10 + 1 : 0;
+                    }
+                    return;
+                }
+            }
+        }
+        if (((a) eVar2.d) != null && hVar != null) {
+            eVar2.e(hVar);
+        }
+        if (((a) eVar2.d) != null && (hVar2 = (h) eVar2.c) != null) {
+            eVar2.z(hVar2);
+        }
+        if (hVar != null && hVar.a.size() > 0 && !hVar.a(0).a.startsWith("audio/") && (eVar = (e) eVar2.b) != null) {
+            eVar.l(null, null);
+        }
+        a aVar = (a) eVar2.d;
+        if (aVar != null && hVar != null) {
+            aVar.d = hVar;
+            aVar.g = 0;
+            aVar.h = 0;
+            aVar.p();
+        }
+        eVar2.c = hVar;
+    }
+
+    @Override // v4.f
+    public int d(long j10) {
+        int i10;
+        switch (this.a) {
+            case 2:
+                ArrayList arrayList = (ArrayList) this.c;
+                Long valueOf = Long.valueOf(j10);
+                int i11 = d0.a;
+                int binarySearch = Collections.binarySearch(arrayList, valueOf);
+                if (binarySearch < 0) {
+                    i10 = ~binarySearch;
+                } else {
+                    int size = arrayList.size();
+                    do {
+                        binarySearch++;
+                        if (binarySearch < size) {
+                        }
+                        i10 = binarySearch;
+                    } while (((Comparable) arrayList.get(binarySearch)).compareTo(valueOf) == 0);
+                    i10 = binarySearch;
+                }
+                if (i10 < arrayList.size()) {
+                    return i10;
+                }
+                return -1;
+            default:
+                long[] jArr = (long[]) this.c;
+                int b10 = d0.b(jArr, j10, false);
+                if (b10 < jArr.length) {
+                    return b10;
+                }
+                return -1;
+        }
+    }
+
     public void d0(r5.c cVar) {
         androidx.biometric.e eVar = (androidx.biometric.e) this.b;
         if (cVar == null) {
@@ -959,7 +957,7 @@ public final class b implements r5.h, v4.f, r3.e, b0, xd.b, OnCompleteListener, 
             if (t12.B == null || t12.b0 == null || !t12.Q1()) {
                 return;
             }
-            new qc(t12.b0, new nh.b()).Q(R.raw.forward, 36, !TextUtils.isEmpty(str) ? LocaleController.formatString(R.string.ChromecastStartedTo, str) : LocaleController.getString(R.string.ChromecastStarted)).j();
+            new qc(t12.b0, new oh.b()).Q(R.raw.forward, 36, !TextUtils.isEmpty(str) ? LocaleController.formatString(R.string.ChromecastStartedTo, str) : LocaleController.getString(R.string.ChromecastStarted)).j();
         }
     }
 
@@ -1022,8 +1020,45 @@ public final class b implements r5.h, v4.f, r3.e, b0, xd.b, OnCompleteListener, 
         return i10;
     }
 
+    @Override // r5.h
+    public void g(r5.f fVar, boolean z4) {
+        Log.d("CAST_SESSION", "onSessionResumed " + ((r5.c) fVar).a() + " " + z4);
+    }
+
+    @Override // rc.a
+    public Object get() {
+        int i10 = 7;
+        z9.d dVar = new z9.d(i10);
+        u uVar = new u(i10);
+        Object obj = ((rc.a) this.b).get();
+        rc.a aVar = (rc.a) this.c;
+        return new f3.h(dVar, uVar, f3.a.f, (f3.j) obj, aVar);
+    }
+
+    @Override // r5.h
+    public void h(r5.f fVar, int i10) {
+        Log.d("CAST_SESSION", "onSessionStartSuspended " + ((r5.c) fVar).a() + " " + i10);
+    }
+
+    @Override // r5.h
+    public void i(r5.f fVar, int i10) {
+        Log.d("CAST_SESSION", "onSessionStartFailed " + ((r5.c) fVar).a() + " " + i10);
+    }
+
+    @Override // r5.h
+    public void j(r5.f fVar) {
+        r5.c cVar = (r5.c) fVar;
+        Log.d("CAST_SESSION", "onSessionStarting " + cVar.a());
+        d0(cVar);
+    }
+
+    @Override // r5.h
+    public void k(r5.f fVar, String str) {
+        Log.d("CAST_SESSION", "onSessionResuming " + ((r5.c) fVar).a() + " " + str);
+    }
+
     @Override // v4.f
-    public long g(int i10) {
+    public long l(int i10) {
         switch (this.a) {
             case 2:
                 ArrayList arrayList = (ArrayList) this.c;
@@ -1038,77 +1073,33 @@ public final class b implements r5.h, v4.f, r3.e, b0, xd.b, OnCompleteListener, 
         }
     }
 
-    @Override // rc.a
-    public Object get() {
-        int i10 = 7;
-        z9.d dVar = new z9.d(i10);
-        u uVar = new u(i10);
-        Object obj = ((rc.a) this.b).get();
-        rc.a aVar = (rc.a) this.c;
-        return new f3.h(dVar, uVar, f3.a.f, (f3.j) obj, aVar);
-    }
-
     @Override // r5.h
-    public void h(r5.f fVar, boolean z4) {
-        Log.d("CAST_SESSION", "onSessionResumed " + ((r5.c) fVar).a() + " " + z4);
-    }
-
-    @Override // r5.h
-    public void i(r5.f fVar, int i10) {
-        Log.d("CAST_SESSION", "onSessionStartSuspended " + ((r5.c) fVar).a() + " " + i10);
-    }
-
-    @Override // r5.h
-    public void j(r5.f fVar, int i10) {
-        Log.d("CAST_SESSION", "onSessionStartFailed " + ((r5.c) fVar).a() + " " + i10);
-    }
-
-    @Override // r5.h
-    public void k(r5.f fVar) {
-        r5.c cVar = (r5.c) fVar;
-        Log.d("CAST_SESSION", "onSessionStarting " + cVar.a());
-        d0(cVar);
-    }
-
-    @Override // r5.h
-    public void l(r5.f fVar, String str) {
-        Log.d("CAST_SESSION", "onSessionResuming " + ((r5.c) fVar).a() + " " + str);
-    }
-
-    @Override // v4.f
-    public List m(long j10) {
-        v4.b bVar;
-        switch (this.a) {
-            case 2:
-                int c3 = d0.c((ArrayList) this.c, Long.valueOf(j10), false);
-                return c3 == -1 ? Collections.EMPTY_LIST : (List) ((ArrayList) this.b).get(c3);
-            default:
-                int e = d0.e((long[]) this.c, j10, false);
-                return (e == -1 || (bVar = ((v4.b[]) this.b)[e]) == v4.b.E) ? Collections.EMPTY_LIST : Collections.singletonList(bVar);
-        }
-    }
-
-    @Override // r5.h
-    public void n(r5.f fVar) {
+    public void m(r5.f fVar) {
         Log.d("CAST_SESSION", "onSessionEnding " + ((r5.c) fVar).a());
     }
 
     @Override // r3.e
-    public void o() {
+    public void n() {
         w wVar = (w) this.c;
         byte[] bArr = d0.f;
         wVar.getClass();
         wVar.D(bArr.length, bArr);
     }
 
+    @Override // r5.h
+    public void o(r5.f fVar, int i10) {
+        Log.d("CAST_SESSION", "onSessionEnded " + ((r5.c) fVar).a() + " " + i10);
+        ((androidx.biometric.e) this.b).B(null);
+    }
+
     @Override // com.google.android.gms.tasks.OnCompleteListener
     public void onComplete(Task task) {
         boolean z4;
         r5.b bVar;
-        p pVar = (p) this.b;
+        com.google.android.gms.internal.cast.o oVar = (com.google.android.gms.internal.cast.o) this.b;
         r5.b bVar2 = (r5.b) this.c;
-        c2.c0 c0Var = pVar.c;
-        u5.b bVar3 = p.j;
+        c2.c0 c0Var = oVar.c;
+        u5.b bVar3 = com.google.android.gms.internal.cast.o.j;
         if (task.isSuccessful()) {
             Bundle bundle = (Bundle) task.getResult();
             boolean z10 = bundle != null && bundle.containsKey("com.google.android.gms.cast.FLAG_OUTPUT_SWITCHER_ENABLED");
@@ -1117,7 +1108,7 @@ public final class b implements r5.h, v4.f, r3.e, b0, xd.b, OnCompleteListener, 
                 z4 = bundle.getBoolean("com.google.android.gms.cast.FLAG_OUTPUT_SWITCHER_ENABLED");
                 Log.i(bVar3.a, bVar3.d("Set up output switcher flags: %b (from module), %b (from CastOptions)", Boolean.valueOf(z4), Boolean.valueOf(bVar2.x)));
                 boolean z11 = !z4 && bVar2.x;
-                if (c0Var != null || (bVar = pVar.d) == null) {
+                if (c0Var != null || (bVar = oVar.d) == null) {
                 }
                 boolean z12 = bVar.v;
                 boolean z13 = bVar.s;
@@ -1133,14 +1124,14 @@ public final class b implements r5.h, v4.f, r3.e, b0, xd.b, OnCompleteListener, 
                     e0Var.c = z13;
                 }
                 c2.c0.i(new c2.f0(e0Var));
-                Log.i(bVar3.a, bVar3.d("media transfer = %b, session transfer = %b, transfer to local = %b, in-app output switcher = %b", Boolean.valueOf(pVar.i), Boolean.valueOf(z11), Boolean.valueOf(z12), Boolean.valueOf(z13)));
+                Log.i(bVar3.a, bVar3.d("media transfer = %b, session transfer = %b, transfer to local = %b, in-app output switcher = %b", Boolean.valueOf(oVar.i), Boolean.valueOf(z11), Boolean.valueOf(z12), Boolean.valueOf(z13)));
                 if (z12) {
-                    com.google.android.gms.internal.cast.s sVar = pVar.f;
-                    b6.m.h(sVar);
-                    com.google.android.gms.internal.cast.o oVar = new com.google.android.gms.internal.cast.o(sVar);
+                    r rVar = oVar.f;
+                    b6.m.h(rVar);
+                    com.google.android.gms.internal.cast.n nVar = new com.google.android.gms.internal.cast.n(rVar);
                     c2.c0.b();
-                    c2.c0.c().f = oVar;
-                    d2.a(d1.Y);
+                    c2.c0.c().f = nVar;
+                    c2.a(c1.Y);
                     return;
                 }
                 return;
@@ -1155,34 +1146,65 @@ public final class b implements r5.h, v4.f, r3.e, b0, xd.b, OnCompleteListener, 
     }
 
     @Override // v4.f
-    public int p() {
+    public List q(long j10) {
+        v4.b bVar;
         switch (this.a) {
             case 2:
-                return ((ArrayList) this.c).size();
+                int c3 = d0.c((ArrayList) this.c, Long.valueOf(j10), false);
+                return c3 == -1 ? Collections.EMPTY_LIST : (List) ((ArrayList) this.b).get(c3);
             default:
-                return ((long[]) this.c).length;
+                int e6 = d0.e((long[]) this.c, j10, false);
+                return (e6 == -1 || (bVar = ((v4.b[]) this.b)[e6]) == v4.b.E) ? Collections.EMPTY_LIST : Collections.singletonList(bVar);
         }
     }
 
-    @Override // r5.h
-    public void q(r5.f fVar, int i10) {
-        Log.d("CAST_SESSION", "onSessionEnded " + ((r5.c) fVar).a() + " " + i10);
-        ((androidx.biometric.e) this.b).B(null);
-    }
-
-    public void s(Object obj, String str) {
+    public void r(Object obj, String str) {
         ((ArrayList) this.b).add(android.support.v4.media.a.z(str, "=", String.valueOf(obj)));
     }
 
-    public void t(l1 l1Var, c5.e eVar) {
+    public void s(m1 m1Var, c5.e eVar) {
         a0.f fVar = (a0.f) this.b;
-        q1 q1Var = (q1) fVar.get(l1Var);
-        if (q1Var == null) {
-            q1Var = q1.a();
-            fVar.put(l1Var, q1Var);
+        r1 r1Var = (r1) fVar.get(m1Var);
+        if (r1Var == null) {
+            r1Var = r1.a();
+            fVar.put(m1Var, r1Var);
         }
-        q1Var.c = eVar;
-        q1Var.a |= 8;
+        r1Var.c = eVar;
+        r1Var.a |= 8;
+    }
+
+    @Override // d4.j
+    /* renamed from: t, reason: merged with bridge method [inline-methods] */
+    public d4.c A1(d4.i iVar) {
+        MediaCodec mediaCodec;
+        String str = iVar.a.a;
+        d4.c cVar = null;
+        try {
+            h5.a.c("createCodec:" + str);
+            mediaCodec = MediaCodec.createByCodecName(str);
+            try {
+                d4.c cVar2 = new d4.c(mediaCodec, (HandlerThread) ((d4.b) this.b).get(), (HandlerThread) ((d4.b) this.c).get());
+                try {
+                    h5.a.q();
+                    d4.c.i(cVar2, iVar.b, iVar.d, iVar.e);
+                    return cVar2;
+                } catch (Exception e6) {
+                    e = e6;
+                    cVar = cVar2;
+                    if (cVar != null) {
+                        cVar.release();
+                    } else if (mediaCodec != null) {
+                        mediaCodec.release();
+                    }
+                    throw e;
+                }
+            } catch (Exception e10) {
+                e = e10;
+            }
+        } catch (Exception e11) {
+            e = e11;
+            mediaCodec = null;
+        }
     }
 
     public String toString() {
@@ -1206,50 +1228,16 @@ public final class b implements r5.h, v4.f, r3.e, b0, xd.b, OnCompleteListener, 
         }
     }
 
-    @Override // d4.j
-    /* renamed from: u, reason: merged with bridge method [inline-methods] */
-    public d4.c w1(d4.i iVar) {
-        MediaCodec mediaCodec;
-        String str = iVar.a.a;
-        d4.c cVar = null;
-        try {
-            h5.a.c("createCodec:" + str);
-            mediaCodec = MediaCodec.createByCodecName(str);
-            try {
-                d4.c cVar2 = new d4.c(mediaCodec, (HandlerThread) ((d4.b) this.b).get(), (HandlerThread) ((d4.b) this.c).get());
-                try {
-                    h5.a.q();
-                    d4.c.i(cVar2, iVar.b, iVar.d, iVar.e);
-                    return cVar2;
-                } catch (Exception e) {
-                    e = e;
-                    cVar = cVar2;
-                    if (cVar != null) {
-                        cVar.release();
-                    } else if (mediaCodec != null) {
-                        mediaCodec.release();
-                    }
-                    throw e;
-                }
-            } catch (Exception e6) {
-                e = e6;
-            }
-        } catch (Exception e10) {
-            e = e10;
-            mediaCodec = null;
-        }
-    }
-
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r1v5, types: [java.util.ArrayList] */
     /* JADX WARN: Type inference failed for: r1v6, types: [java.util.List] */
     /* JADX WARN: Type inference failed for: r1v9, types: [java.util.List] */
-    public ArrayList w() {
+    public ArrayList v() {
         ?? arrayList;
         ArrayList arrayList2 = new ArrayList();
-        ja.c cVar = (ja.c) this.c;
+        o5.i iVar = (o5.i) this.c;
         Context context = (Context) this.b;
-        Class cls = (Class) cVar.b;
+        Class cls = (Class) iVar.b;
         Bundle bundle = null;
         try {
             PackageManager packageManager = context.getPackageManager();
@@ -1284,11 +1272,11 @@ public final class b implements r5.h, v4.f, r3.e, b0, xd.b, OnCompleteListener, 
         return arrayList2;
     }
 
-    public void x(s f10, boolean z4) {
+    public void w(s f10, boolean z4) {
         kotlin.jvm.internal.j.e(f10, "f");
         s sVar = ((j0) this.b).y;
         if (sVar != null) {
-            sVar.p().o.x(f10, true);
+            sVar.p().o.w(f10, true);
         }
         Iterator it = ((CopyOnWriteArrayList) this.c).iterator();
         if (it.hasNext()) {
@@ -1299,6 +1287,16 @@ public final class b implements r5.h, v4.f, r3.e, b0, xd.b, OnCompleteListener, 
                 throw null;
             }
             throw null;
+        }
+    }
+
+    @Override // v4.f
+    public int x() {
+        switch (this.a) {
+            case 2:
+                return ((ArrayList) this.c).size();
+            default:
+                return ((long[]) this.c).length;
         }
     }
 
@@ -1359,7 +1357,7 @@ public final class b implements r5.h, v4.f, r3.e, b0, xd.b, OnCompleteListener, 
         com.google.android.gms.internal.clearcut.d dVar = (com.google.android.gms.internal.clearcut.d) this.b;
         com.google.android.gms.internal.clearcut.b bVar = (com.google.android.gms.internal.clearcut.b) this.c;
         bVar.getClass();
-        Map b10 = com.google.android.gms.internal.clearcut.d.e() ? ((Boolean) com.google.android.gms.internal.clearcut.d.c(new com.google.android.gms.internal.clearcut.e("gms:phenotype:phenotype_flag:debug_disable_caching"))).booleanValue() : false ? bVar.b() : bVar.e;
+        Map b10 = com.google.android.gms.internal.clearcut.d.e() ? ((Boolean) com.google.android.gms.internal.clearcut.d.c(new com.google.android.gms.internal.clearcut.e("gms:phenotype:phenotype_flag:debug_disable_caching", 0))).booleanValue() : false ? bVar.b() : bVar.e;
         if (b10 == null) {
             synchronized (bVar.d) {
                 try {
@@ -1428,7 +1426,7 @@ public final class b implements r5.h, v4.f, r3.e, b0, xd.b, OnCompleteListener, 
         this.a = i10;
         boolean z4 = false;
         switch (i10) {
-            case 24:
+            case 21:
                 this.b = new ConcurrentHashMap(16, 0.75f, 10);
                 this.c = new ReferenceQueue();
                 break;
@@ -1447,10 +1445,10 @@ public final class b implements r5.h, v4.f, r3.e, b0, xd.b, OnCompleteListener, 
                     r5.y yVar = gVar.a;
                     r5.j jVar = new r5.j(wVar);
                     Parcel M0 = yVar.M0();
-                    t.d(M0, jVar);
+                    com.google.android.gms.internal.cast.s.d(M0, jVar);
                     yVar.Q0(M0, 4);
-                } catch (RemoteException e) {
-                    r5.g.c.a(e, "Unable to call %s on %s.", "addCastStateListener", r5.y.class.getSimpleName());
+                } catch (RemoteException e6) {
+                    r5.g.c.a(e6, "Unable to call %s on %s.", "addCastStateListener", r5.y.class.getSimpleName());
                 }
                 this.b = new androidx.biometric.e(8, z4);
                 r5.g b11 = c3.b();
@@ -1468,7 +1466,7 @@ public final class b implements r5.h, v4.f, r3.e, b0, xd.b, OnCompleteListener, 
     }
 
     public b(int i10) {
-        this.a = 25;
+        this.a = 22;
         d4.b bVar = new d4.b(i10, 0);
         d4.b bVar2 = new d4.b(i10, 1);
         this.b = bVar;
@@ -1476,19 +1474,19 @@ public final class b implements r5.h, v4.f, r3.e, b0, xd.b, OnCompleteListener, 
     }
 
     public b(w8.g gVar) {
-        this.a = 26;
+        this.a = 23;
         this.c = gVar;
     }
 
-    public b(r rVar, ab.a aVar, androidx.emoji2.text.d dVar) {
+    public b(com.google.firebase.messaging.s sVar, ab.a aVar, androidx.emoji2.text.d dVar) {
         this.a = 5;
-        this.b = rVar;
+        this.b = sVar;
         this.c = dVar;
     }
 
-    public b(p1 p1Var) {
+    public b(q1 q1Var) {
         this.a = 27;
-        this.b = p1Var;
+        this.b = q1Var;
         a5.b bVar = new a5.b();
         bVar.a = 0;
         this.c = bVar;

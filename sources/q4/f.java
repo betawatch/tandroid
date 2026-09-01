@@ -4,7 +4,7 @@ import b4.e0;
 import o4.k0;
 import o4.l0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class f implements l0 {
     public final h a;
@@ -28,20 +28,20 @@ public final class f implements l0 {
         e0 e0Var = hVar.h;
         int[] iArr = hVar.b;
         int i10 = this.c;
-        e0Var.g(iArr[i10], hVar.c[i10], 0, null, hVar.G);
+        e0Var.h(iArr[i10], hVar.c[i10], 0, null, hVar.G);
         this.d = true;
     }
 
     @Override // o4.l0
-    public final boolean d() {
+    public final boolean h() {
         h hVar = this.e;
-        return !hVar.k() && this.b.u(hVar.J);
+        return !hVar.y() && this.b.u(hVar.J);
     }
 
     @Override // o4.l0
-    public final int e(long j10) {
+    public final int l(long j10) {
         h hVar = this.e;
-        if (hVar.k()) {
+        if (hVar.y()) {
             return 0;
         }
         boolean z4 = hVar.J;
@@ -59,9 +59,9 @@ public final class f implements l0 {
     }
 
     @Override // o4.l0
-    public final int f(f7.b bVar, n3.i iVar, int i10) {
+    public final int p(f7.b bVar, n3.i iVar, int i10) {
         h hVar = this.e;
-        if (hVar.k()) {
+        if (hVar.y()) {
             return -3;
         }
         a aVar = hVar.I;

@@ -8,7 +8,7 @@ import java.net.SocketTimeoutException;
 import java.util.List;
 import java.util.logging.Level;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a implements Runnable {
     public final InputStream a;
@@ -31,8 +31,8 @@ public final class a implements Runnable {
         try {
             try {
                 outputStream = socket.getOutputStream();
-            } catch (Exception e) {
-                e = e;
+            } catch (Exception e6) {
+                e = e6;
             }
         } catch (Throwable th2) {
             th = th2;
@@ -43,8 +43,8 @@ public final class a implements Runnable {
                 eVar.c();
             }
             l.d(outputStream);
-        } catch (Exception e6) {
-            e = e6;
+        } catch (Exception e10) {
+            e = e10;
             outputStream2 = outputStream;
             if ((!(e instanceof SocketException) || !"NanoHttpd Shutdown".equals(e.getMessage())) && !(e instanceof SocketTimeoutException)) {
                 l.d.log(Level.SEVERE, "Communication with the client broken, or an bug in the handler code", (Throwable) e);

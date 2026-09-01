@@ -3,19 +3,19 @@ package org.telegram.ui.Components;
 import android.text.TextUtils;
 import android.view.View;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class ef implements il0 {
+public final class ef implements jl0 {
     public final /* synthetic */ ChatActivityEnterView a;
 
     public ef(ChatActivityEnterView chatActivityEnterView) {
         this.a = chatActivityEnterView;
     }
 
-    @Override // org.telegram.ui.Components.il0
+    @Override // org.telegram.ui.Components.jl0
     public final void f(int i10, View view) {
-        if (view instanceof rh.y) {
-            String command = ((rh.y) view).getCommand();
+        if (view instanceof sh.x) {
+            String command = ((sh.x) view).getCommand();
             if (TextUtils.isEmpty(command)) {
                 return;
             }
@@ -26,7 +26,7 @@ public final class ef implements il0 {
             }
             org.telegram.ui.xn xnVar = chatActivityEnterView.L2;
             if (xnVar == null || !xnVar.e7(view)) {
-                z4.a0(chatActivityEnterView.N, 1, chatActivityEnterView.M2, new kh.a1(27, this, command));
+                z4.a0(chatActivityEnterView.N, 1, chatActivityEnterView.M2, new lh.a1(27, this, command));
             }
         }
     }

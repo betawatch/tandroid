@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class k0 implements r3.v {
     public j3.n0 A;
@@ -36,7 +36,7 @@ public class k0 implements r3.v {
     public int[] m = new int[MediaDataController.MAX_STYLE_RUNS_COUNT];
     public int[] l = new int[MediaDataController.MAX_STYLE_RUNS_COUNT];
     public r3.u[] o = new r3.u[MediaDataController.MAX_STYLE_RUNS_COUNT];
-    public final b4.e0 c = new b4.e0(new nh.e(4));
+    public final b4.e0 c = new b4.e0(new ag.d(2));
     public long t = Long.MIN_VALUE;
     public long u = Long.MIN_VALUE;
     public long v = Long.MIN_VALUE;
@@ -74,7 +74,7 @@ public class k0 implements r3.v {
         b4.e0 e0Var = this.c;
         SparseArray sparseArray = (SparseArray) e0Var.c;
         for (int i11 = 0; i11 < sparseArray.size(); i11++) {
-            ((nh.e) e0Var.d).accept(sparseArray.valueAt(i11));
+            ((ag.d) e0Var.d).accept(sparseArray.valueAt(i11));
         }
         e0Var.b = -1;
         sparseArray.clear();
@@ -227,11 +227,11 @@ public class k0 implements r3.v {
                                         break;
                                     case "audio/mp4a-latm":
                                         if (str2 != null) {
-                                            c5.e e = h5.o.e(str2);
-                                            if (e == null) {
+                                            c5.e e6 = h5.o.e(str2);
+                                            if (e6 == null) {
                                                 break;
                                             } else {
-                                                int a2 = e.a();
+                                                int a2 = e6.a();
                                                 if (a2 != 0) {
                                                     break;
                                                 }
@@ -393,7 +393,7 @@ public class k0 implements r3.v {
                 int keyAt = sparseArray2.keyAt(sparseArray2.size() - 1);
                 h5.a.f(i13 >= keyAt);
                 if (keyAt == i13) {
-                    ((nh.e) e0Var.d).accept(sparseArray2.valueAt(sparseArray2.size() - 1));
+                    ((ag.d) e0Var.d).accept(sparseArray2.valueAt(sparseArray2.size() - 1));
                 }
             }
             sparseArray2.append(i13, i0Var);
@@ -461,7 +461,7 @@ public class k0 implements r3.v {
             if (i11 < sparseArray.keyAt(i16)) {
                 break;
             }
-            ((nh.e) e0Var.d).accept(sparseArray.valueAt(i15));
+            ((ag.d) e0Var.d).accept(sparseArray.valueAt(i15));
             sparseArray.removeAt(i15);
             int i17 = e0Var.b;
             if (i17 > 0) {
@@ -549,7 +549,7 @@ public class k0 implements r3.v {
         b4.e0 e0Var = this.c;
         SparseArray sparseArray = (SparseArray) e0Var.c;
         for (int size = sparseArray.size() - 1; size >= 0 && i10 < sparseArray.keyAt(size); size--) {
-            ((nh.e) e0Var.d).accept(sparseArray.valueAt(size));
+            ((ag.d) e0Var.d).accept(sparseArray.valueAt(size));
             sparseArray.removeAt(size);
         }
         e0Var.b = sparseArray.size() > 0 ? Math.min(e0Var.b, sparseArray.size() - 1) : -1;
@@ -697,7 +697,7 @@ public class k0 implements r3.v {
         j3.n0 n0Var;
         boolean z10 = false;
         if (this.s != this.p) {
-            if (((i0) this.c.j(q())).a != this.g) {
+            if (((i0) this.c.k(q())).a != this.g) {
                 return true;
             }
             return v(r(this.s));
@@ -750,9 +750,9 @@ public class k0 implements r3.v {
         if (z4 || !h5.d0.a(gVar, gVar2)) {
             o3.i iVar = this.h;
             o3.l lVar = this.e;
-            o3.i J = oVar.J(lVar, n0Var);
-            this.h = J;
-            bVar.b = J;
+            o3.i x10 = oVar.x(lVar, n0Var);
+            this.h = x10;
+            bVar.b = x10;
             if (iVar != null) {
                 iVar.c(lVar);
             }
@@ -776,7 +776,7 @@ public class k0 implements r3.v {
                 iVar.e = false;
                 i11 = -3;
                 if (this.s != this.p) {
-                    j3.n0 n0Var = ((i0) this.c.j(q())).a;
+                    j3.n0 n0Var = ((i0) this.c.k(q())).a;
                     if (!z10 && n0Var == this.g) {
                         int r10 = r(this.s);
                         if (v(r10)) {
@@ -789,8 +789,8 @@ public class k0 implements r3.v {
                             if (j10 < this.t) {
                                 iVar.a(TLObject.FLAG_31);
                             }
-                            h0Var.b = this.l[r10];
-                            h0Var.a = this.k[r10];
+                            h0Var.a = this.l[r10];
+                            h0Var.b = this.k[r10];
                             h0Var.c = this.o[r10];
                             i11 = -4;
                         } else {

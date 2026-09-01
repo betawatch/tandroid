@@ -1,37 +1,62 @@
 package dg;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import k7.o6;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class b2 extends View {
-    public final Paint a;
-    public float b;
+public final class b2 extends c2 {
+    public final r1 f;
+    public final float g;
+    public final float h;
+    public final /* synthetic */ d2 i;
 
-    public b2(Context context) {
-        super(context);
-        Paint paint = new Paint(1);
-        this.a = paint;
-        paint.setColor(-1);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
+    public b2(d2 d2Var, r1 r1Var, boolean z4, boolean z10) {
+        this.i = d2Var;
+        this.b = false;
+        this.f = r1Var;
+        this.g = z4 ? -1.0f : 1.0f;
+        this.h = z10 ? -1.0f : 1.0f;
+        a();
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        Paint paint = this.a;
-        canvas.drawLine((getWidth() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(-5.33f, -4.0f, this.b)), (getHeight() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(5.33f, 0.0f, this.b)), (getWidth() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(5.33f, 3.0f, this.b)), (getHeight() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(-5.33f, -7.0f, this.b)), paint);
-        canvas.drawLine((getWidth() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(5.33f, 3.0f, this.b)), (getHeight() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(5.33f, 7.0f, this.b)), (getWidth() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(-5.33f, -4.0f, this.b)), (getHeight() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(-5.33f, 0.0f, this.b)), paint);
+    @Override // dg.c2
+    public final void a() {
+        r1 r1Var = this.f;
+        if (r1Var != null) {
+            float f10 = (this.g * r1Var.d) + r1Var.b;
+            float f11 = (this.h * r1Var.e) + r1Var.c;
+            d2 d2Var = this.i;
+            d2Var.c(f10, f11, true);
+            float[] fArr = d2Var.p;
+            float f12 = fArr[0];
+            float f13 = fArr[1];
+            this.d = f12;
+            this.e = f13;
+        }
     }
 
-    public void setProgress(float f10) {
-        this.b = f10;
-        invalidate();
+    @Override // dg.c2
+    public final void b(float f10, float f11) {
+        this.d = f10;
+        this.e = f11;
+        r1 r1Var = this.f;
+        float f12 = ((-this.g) * r1Var.d) + r1Var.b;
+        float f13 = ((-this.h) * r1Var.e) + r1Var.c;
+        d2 d2Var = this.i;
+        d2Var.c(f10, f11, false);
+        d2Var.c(f12, f13, true);
+        float[] fArr = d2Var.p;
+        float f14 = fArr[0];
+        float f15 = fArr[1];
+        double atan2 = (3.141592653589793d - Math.atan2(f11 - f15, f10 - f14)) - r1Var.h;
+        double cos = Math.cos(atan2) * o6.a(f10, f11, f14, f15);
+        double sin = Math.sin(atan2) * o6.a(f10, f11, f14, f15);
+        r1Var.d = ((float) Math.abs(cos)) / 2.0f;
+        r1Var.e = ((float) Math.abs(sin)) / 2.0f;
+        r1Var.b = (f10 + f14) / 2.0f;
+        r1Var.c = (f11 + f15) / 2.0f;
+        for (int i10 = 0; i10 < d2Var.m.size(); i10++) {
+            ((c2) d2Var.m.get(i10)).a();
+        }
     }
 }

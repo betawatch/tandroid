@@ -1,15 +1,15 @@
 package r4;
 
-import com.google.firebase.messaging.r;
+import com.google.firebase.messaging.s;
 import g5.n0;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class k {
     public final n0 a;
-    public final r b;
+    public final s b;
     public final int[] c;
     public final int d;
     public final g5.m e;
@@ -23,14 +23,14 @@ public final class k {
     public boolean m;
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Object, r4.k] */
-    public k(n0 n0Var, s4.c cVar, r rVar, int i10, int[] iArr, f5.c cVar2, int i11, g5.m mVar, long j10, boolean z4, ArrayList arrayList, n nVar) {
+    public k(n0 n0Var, s4.c cVar, s sVar, int i10, int[] iArr, f5.c cVar2, int i11, g5.m mVar, long j10, boolean z4, ArrayList arrayList, n nVar) {
         r3.k iVar;
         int i12;
         q4.d dVar;
         ?? obj = new Object();
         obj.a = n0Var;
         obj.j = cVar;
-        obj.b = rVar;
+        obj.b = sVar;
         obj.c = iArr;
         obj.i = cVar2;
         obj.d = i11;
@@ -46,10 +46,10 @@ public final class k {
         k kVar = obj;
         while (i14 < kVar.h.length) {
             s4.m mVar2 = (s4.m) a2.get(cVar2.f(i14));
-            s4.b Q = rVar.Q(mVar2.b);
+            s4.b n10 = sVar.n(mVar2.b);
             i[] iVarArr = kVar.h;
             int i15 = i14;
-            Q = Q == null ? (s4.b) mVar2.b.get(i13) : Q;
+            n10 = n10 == null ? (s4.b) mVar2.b.get(i13) : n10;
             j3.n0 n0Var2 = mVar2.a;
             String str = n0Var2.B;
             if (h5.o.i(str)) {
@@ -67,7 +67,7 @@ public final class k {
             }
             q4.d dVar2 = dVar;
             int i16 = i12;
-            iVarArr[i16] = new i(d, mVar2, Q, dVar2, 0L, mVar2.c());
+            iVarArr[i16] = new i(d, mVar2, n10, dVar2, 0L, mVar2.c());
             i14 = i16 + 1;
             kVar = this;
             i13 = 0;
@@ -86,11 +86,11 @@ public final class k {
     public final i b(int i10) {
         i[] iVarArr = this.h;
         i iVar = iVarArr[i10];
-        s4.b Q = this.b.Q(iVar.b.b);
-        if (Q == null || Q.equals(iVar.c)) {
+        s4.b n10 = this.b.n(iVar.b.b);
+        if (n10 == null || n10.equals(iVar.c)) {
             return iVar;
         }
-        i iVar2 = new i(iVar.e, iVar.b, Q, iVar.a, iVar.f, iVar.d);
+        i iVar2 = new i(iVar.e, iVar.b, n10, iVar.a, iVar.f, iVar.d);
         iVarArr[i10] = iVar2;
         return iVar2;
     }

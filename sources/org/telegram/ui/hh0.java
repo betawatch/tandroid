@@ -1,63 +1,84 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DocumentObject;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.UserConfig;
+import android.util.SparseIntArray;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class hh0 extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
-    public final org.telegram.ui.Components.p9 a;
-    public final int b;
+public final class hh0 extends f2.q {
+    public int b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public final SparseIntArray i = new SparseIntArray();
+    public final SparseIntArray j = new SparseIntArray();
+    public final ArrayList k = new ArrayList();
+    public final ArrayList l = new ArrayList();
+    public final /* synthetic */ qh0 m;
 
-    public hh0(Context context) {
-        super(context);
-        this.b = UserConfig.selectedAccount;
-        setPadding(0, AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f));
-        setOrientation(1);
-        org.telegram.ui.Components.p9 p9Var = new org.telegram.ui.Components.p9(context);
-        this.a = p9Var;
-        addView(p9Var, k7.b6.t(104, 104, 49, 0, 2, 0, 0));
+    public hh0(qh0 qh0Var) {
+        this.m = qh0Var;
     }
 
-    public final void a() {
-        int i10 = this.b;
-        TLRPC.TL_messages_stickerSet stickerSetByName = MediaDataController.getInstance(i10).getStickerSetByName(AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME);
-        if (stickerSetByName == null) {
-            stickerSetByName = MediaDataController.getInstance(i10).getStickerSetByEmojiOrName(AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME);
-        }
-        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = stickerSetByName;
-        if (tL_messages_stickerSet == null || tL_messages_stickerSet.documents.size() < 4) {
-            MediaDataController.getInstance(i10).loadStickersByEmojiOrName(AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME, false, tL_messages_stickerSet == null);
-        } else {
-            TLRPC.Document document = tL_messages_stickerSet.documents.get(3);
-            this.a.i(ImageLocation.getForDocument(document), "104_104", "tgs", DocumentObject.getSvgThumb(document, org.telegram.ui.ActionBar.j6.a7, 1.0f), tL_messages_stickerSet);
+    public static void g(int i10, int i11, SparseIntArray sparseIntArray) {
+        if (i11 >= 0) {
+            sparseIntArray.put(i11, i10);
         }
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.diceStickersDidLoad && AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME.equals((String) objArr[0])) {
-            a();
+    @Override // f2.q
+    public final boolean a(int i10, int i11) {
+        return b(i10, i11);
+    }
+
+    @Override // f2.q
+    public final boolean b(int i10, int i11) {
+        int i12;
+        int i13;
+        int i14 = this.c;
+        qh0 qh0Var = this.m;
+        if (((i10 >= i14 && i10 < this.d) || (i10 >= this.e && i10 < this.f)) && ((i11 >= (i13 = qh0Var.y) && i11 < qh0Var.B) || (i11 >= qh0Var.E && i11 < qh0Var.F))) {
+            TLRPC.TL_chatInviteExported tL_chatInviteExported = (i11 < i13 || i11 >= qh0Var.B) ? (TLRPC.TL_chatInviteExported) qh0Var.g0.get(i11 - qh0Var.E) : (TLRPC.TL_chatInviteExported) qh0Var.f0.get(i11 - i13);
+            int i15 = this.c;
+            return ((i10 < i15 || i10 >= this.d) ? (TLRPC.TL_chatInviteExported) this.l.get(i10 - this.e) : (TLRPC.TL_chatInviteExported) this.k.get(i10 - i15)).link.equals(tL_chatInviteExported.link);
         }
+        int i16 = this.g;
+        if (i10 >= i16 && i10 < this.h && i11 >= (i12 = qh0Var.R) && i11 < qh0Var.S) {
+            return i10 - i16 == i11 - i12;
+        }
+        int i17 = this.i.get(i10, -1);
+        return i17 >= 0 && i17 == this.j.get(i11, -1);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        a();
-        NotificationCenter.getInstance(this.b).addObserver(this, NotificationCenter.diceStickersDidLoad);
+    @Override // f2.q
+    public final int d() {
+        return this.m.U;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        NotificationCenter.getInstance(this.b).removeObserver(this, NotificationCenter.diceStickersDidLoad);
+    @Override // f2.q
+    public final int e() {
+        return this.b;
+    }
+
+    public final void f(SparseIntArray sparseIntArray) {
+        sparseIntArray.clear();
+        qh0 qh0Var = this.m;
+        g(1, qh0Var.r, sparseIntArray);
+        g(2, qh0Var.s, sparseIntArray);
+        g(3, qh0Var.v, sparseIntArray);
+        g(4, qh0Var.w, sparseIntArray);
+        g(5, qh0Var.x, sparseIntArray);
+        g(6, qh0Var.I, sparseIntArray);
+        g(7, qh0Var.K, sparseIntArray);
+        g(8, qh0Var.L, sparseIntArray);
+        g(9, qh0Var.N, sparseIntArray);
+        g(10, qh0Var.O, sparseIntArray);
+        g(11, qh0Var.P, sparseIntArray);
+        g(12, qh0Var.M, sparseIntArray);
+        g(13, qh0Var.C, sparseIntArray);
     }
 }

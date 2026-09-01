@@ -11,9 +11,8 @@ import java.util.zip.Inflater;
 import org.telegram.tgnet.TLObject;
 import v4.e;
 import v4.f;
-import x4.i;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class b extends e {
     public final w n;
@@ -45,6 +44,7 @@ public final class b extends e {
     */
     public final f k(int i10, boolean z4, byte[] bArr) {
         int[] iArr;
+        v4.b bVar;
         int i11;
         int i12;
         int w10;
@@ -109,10 +109,10 @@ public final class b extends e {
             int u10 = wVar.u();
             int z10 = wVar.z();
             int i18 = wVar.b + z10;
-            v4.b bVar = null;
             if (i18 > i17) {
                 wVar.F(i17);
                 iArr = iArr2;
+                bVar = null;
             } else {
                 if (u10 != 128) {
                     switch (u10) {
@@ -127,9 +127,8 @@ public final class b extends e {
                                     double u12 = wVar.u();
                                     double u13 = wVar.u() - 128;
                                     int[] iArr3 = iArr2;
-                                    int i21 = (int) ((1.402d * u13) + u12);
                                     double u14 = wVar.u() - 128;
-                                    iArr3[u11] = (d0.h((int) ((u12 - (0.34414d * u14)) - (u13 * 0.71414d)), 0, 255) << 8) | (d0.h(i21, 0, 255) << 16) | (wVar.u() << 24) | d0.h((int) ((1.772d * u14) + u12), 0, 255);
+                                    iArr3[u11] = (d0.h((int) ((u12 - (0.34414d * u14)) - (u13 * 0.71414d)), 0, 255) << 8) | (d0.h((int) ((1.402d * u13) + u12), 0, 255) << 16) | (wVar.u() << 24) | d0.h((int) ((u14 * 1.772d) + u12), 0, 255);
                                     i20++;
                                     iArr2 = iArr3;
                                 }
@@ -142,21 +141,21 @@ public final class b extends e {
                         case 21:
                             if (z10 >= 4) {
                                 wVar.G(3);
-                                int i22 = z10 - 4;
+                                int i21 = z10 - 4;
                                 if ((128 & wVar.u()) != 0) {
-                                    if (i22 >= 7 && (w10 = wVar.w()) >= 4) {
+                                    if (i21 >= 7 && (w10 = wVar.w()) >= 4) {
                                         aVar.h = wVar.z();
                                         aVar.i = wVar.z();
                                         wVar3.C(w10 - 4);
-                                        i22 = z10 - 11;
+                                        i21 = z10 - 11;
                                     }
                                 }
-                                int i23 = wVar3.b;
-                                int i24 = wVar3.c;
-                                if (i23 < i24 && i22 > 0) {
-                                    int min = Math.min(i22, i24 - i23);
-                                    wVar.e(i23, min, wVar3.a);
-                                    wVar3.F(i23 + min);
+                                int i22 = wVar3.b;
+                                int i23 = wVar3.c;
+                                if (i22 < i23 && i21 > 0) {
+                                    int min = Math.min(i21, i23 - i22);
+                                    wVar.e(i22, min, wVar3.a);
+                                    wVar3.F(i22 + min);
                                 }
                             }
                             iArr = iArr2;
@@ -175,26 +174,29 @@ public final class b extends e {
                             iArr = iArr2;
                             break;
                     }
+                    bVar = null;
                 } else {
                     iArr = iArr2;
-                    if (aVar.d != 0 && aVar.e != 0 && aVar.h != 0 && aVar.i != 0 && (i11 = wVar3.c) != 0 && wVar3.b == i11 && aVar.c) {
+                    if (aVar.d == 0 || aVar.e == 0 || aVar.h == 0 || aVar.i == 0 || (i11 = wVar3.c) == 0 || wVar3.b != i11 || !aVar.c) {
+                        bVar = null;
+                    } else {
                         wVar3.F(0);
-                        int i25 = aVar.h * aVar.i;
-                        int[] iArr4 = new int[i25];
-                        int i26 = 0;
-                        while (i26 < i25) {
+                        int i24 = aVar.h * aVar.i;
+                        int[] iArr4 = new int[i24];
+                        int i25 = 0;
+                        while (i25 < i24) {
                             int u15 = wVar3.u();
                             if (u15 != 0) {
-                                i12 = i26 + 1;
-                                iArr4[i26] = iArr[u15];
+                                i12 = i25 + 1;
+                                iArr4[i25] = iArr[u15];
                             } else {
                                 int u16 = wVar3.u();
                                 if (u16 != 0) {
-                                    i12 = ((u16 & 64) == 0 ? u16 & 63 : ((u16 & 63) << 8) | wVar3.u()) + i26;
-                                    Arrays.fill(iArr4, i26, i12, (u16 & 128) == 0 ? 0 : iArr[wVar3.u()]);
+                                    i12 = ((u16 & 64) == 0 ? u16 & 63 : ((u16 & 63) << 8) | wVar3.u()) + i25;
+                                    Arrays.fill(iArr4, i25, i12, (u16 & 128) == 0 ? 0 : iArr[wVar3.u()]);
                                 }
                             }
-                            i26 = i12;
+                            i25 = i12;
                         }
                         Bitmap createBitmap = Bitmap.createBitmap(iArr4, aVar.h, aVar.i, Bitmap.Config.ARGB_8888);
                         float f10 = aVar.f;
@@ -222,7 +224,7 @@ public final class b extends e {
             i13 = 0;
             i14 = 2;
         }
-        return new i(1, DesugarCollections.unmodifiableList(arrayList));
+        return new e5.b(2, DesugarCollections.unmodifiableList(arrayList));
         inflater.reset();
         a aVar2 = this.p;
         aVar2.d = 0;
@@ -238,6 +240,6 @@ public final class b extends e {
         ArrayList arrayList2 = new ArrayList();
         while (wVar.a() >= 3) {
         }
-        return new i(1, DesugarCollections.unmodifiableList(arrayList2));
+        return new e5.b(2, DesugarCollections.unmodifiableList(arrayList2));
     }
 }

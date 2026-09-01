@@ -7,15 +7,15 @@ import android.view.ViewGroup;
 import android.view.WindowInsets;
 import j$.util.Objects;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.ex0;
+import org.telegram.ui.Components.fx0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class q0 implements View.OnApplyWindowInsetsListener {
-    public final ch.e a;
+    public final dh.e a;
     public m1 b;
 
-    public q0(ViewGroup viewGroup, ch.e eVar) {
+    public q0(ViewGroup viewGroup, dh.e eVar) {
         m1 m1Var;
         this.a = eVar;
         m1 f10 = j0.f(viewGroup);
@@ -108,7 +108,7 @@ public final class q0 implements View.OnApplyWindowInsetsListener {
                     q5.g0 g0Var = new q5.g0(3, i0.b.b(min, min2, min3, Math.min(i27, i28)), i0.b.b(Math.max(f12.a, f13.a), Math.max(i23, i24), Math.max(i25, i26), Math.max(i27, i28)));
                     r0.f(view, h, false);
                     duration.addUpdateListener(new p0(w0Var, h, m1Var2, i22, view));
-                    duration.addListener(new ex0(w0Var, view, 19));
+                    duration.addListener(new fx0(w0Var, view, 19));
                     q.a(view, new c2.p(view, w0Var, g0Var, duration, false, 8));
                     this.b = h;
                     if (view.getTag(R.id.tag_on_apply_window_listener) == null) {

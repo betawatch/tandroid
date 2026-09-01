@@ -1,64 +1,29 @@
 package org.telegram.ui.ActionBar;
 
-import android.app.Activity;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.widget.FrameLayout;
-import java.util.List;
+import org.telegram.ui.qn;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public interface e5 {
-    p2 getBackgroundFragment();
+public final class e5 {
+    public final j6 a;
+    public final int b;
+    public final boolean c;
+    public final boolean d;
+    public boolean e;
+    public Runnable h;
+    public qn i;
+    public qn j;
+    public sn k;
+    public g6 m;
+    public boolean f = true;
+    public boolean g = true;
+    public long l = 200;
 
-    g3 getBottomSheet();
-
-    List getFragmentStack();
-
-    p2 getLastFragment();
-
-    g5 getMessageDrawableOutMediaStart();
-
-    g5 getMessageDrawableOutStart();
-
-    FrameLayout getOverlayContainerView();
-
-    Activity getParentActivity();
-
-    List getPulledDialogs();
-
-    p2 getSafeLastFragment();
-
-    float getThemeAnimationValue();
-
-    ViewGroup getView();
-
-    Window getWindow();
-
-    void setBackgroundView(View view);
-
-    void setDelegate(b5 b5Var);
-
-    void setDrawerLayoutContainer(y3 y3Var);
-
-    void setFragmentPanTranslationOffset(int i10);
-
-    void setFragmentStack(List list);
-
-    void setHighlightActionButtons(boolean z4);
-
-    void setInBubbleMode(boolean z4);
-
-    void setIsSheet(boolean z4);
-
-    void setNavigationBarColor(int i10);
-
-    void setPulledDialogs(List list);
-
-    void setRemoveActionBarExtraHeight(boolean z4);
-
-    void setUseAlphaAnimations(boolean z4);
-
-    void setWindow(Window window);
+    public e5(j6 j6Var, int i10, boolean z4, boolean z10) {
+        this.a = j6Var;
+        this.b = i10;
+        this.c = z4;
+        this.d = z10;
+    }
 }

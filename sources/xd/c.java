@@ -6,10 +6,10 @@ import android.os.Looper;
 import android.util.Log;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
-import org.telegram.ui.Components.nv;
-import org.telegram.ui.Components.voip.p1;
+import org.telegram.ui.Components.pv;
+import org.telegram.ui.Components.voip.q1;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class c {
     public final int a;
@@ -62,8 +62,8 @@ public final class c {
         this.h = ofFloat;
         ofFloat.setDuration(j10);
         this.h.setInterpolator(this.c);
-        this.h.addUpdateListener(new nv(this, f11, f12, 4));
-        this.h.addListener(new p1(this, f11, f12, i11));
+        this.h.addUpdateListener(new pv(this, f11, f12, 4));
+        this.h.addListener(new q1(this, f11, f12, i11));
         try {
             this.h.start();
         } catch (Throwable th2) {

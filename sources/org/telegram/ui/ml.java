@@ -11,34 +11,23 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class ml implements org.telegram.ui.Components.ji {
+public final class ml implements org.telegram.ui.Components.ki {
     public final /* synthetic */ xn a;
 
     public ml(xn xnVar) {
         this.a = xnVar;
     }
 
-    @Override // org.telegram.ui.Components.ji
-    public final void C() {
-        this.a.V.P();
+    @Override // org.telegram.ui.Components.ki
+    public final void B0(org.telegram.ui.Components.wg wgVar) {
+        this.a.h8(wgVar);
     }
 
-    @Override // org.telegram.ui.Components.ji
-    public final void G(TLRPC.User user) {
-        String publicUsername = UserObject.getPublicUsername(user);
-        xn xnVar = this.a;
-        if (xnVar.V == null || user == null || TextUtils.isEmpty(publicUsername)) {
-            return;
-        }
-        xnVar.V.setFieldText("@" + publicUsername + " ");
-        xnVar.V.H0();
-    }
-
-    @Override // org.telegram.ui.Components.ji
-    public final void H(int i10, boolean z4, boolean z10, int i11, int i12, long j10, boolean z11, boolean z12, long j11) {
-        nh.t2 t2Var;
+    @Override // org.telegram.ui.Components.ki
+    public final void I1(int i10, boolean z4, boolean z10, int i11, int i12, long j10, boolean z11, boolean z12, long j11) {
+        oh.u2 u2Var;
         HashMap<Object, Object> hashMap;
         boolean z13;
         int i13;
@@ -50,26 +39,26 @@ public final class ml implements org.telegram.ui.Components.ji {
         String str;
         TLRPC.Message message;
         xn xnVar = this.a;
-        if (xnVar.getParentActivity() == null || (t2Var = xnVar.G1) == null) {
+        if (xnVar.getParentActivity() == null || (u2Var = xnVar.G1) == null) {
             return;
         }
-        boolean z16 = t2Var.D;
-        MessageObject messageObject = t2Var.E1;
+        boolean z16 = u2Var.D;
+        MessageObject messageObject = u2Var.E1;
         xnVar.m5 = messageObject;
         if (messageObject != null && (message = messageObject.messageOwner) != null) {
             message.invert_media = z11;
         }
-        if (i10 != 8 && i10 != 7 && (i10 != 4 || t2Var.g0.getSelectedPhotos().isEmpty())) {
-            nh.t2 t2Var2 = xnVar.G1;
-            if (t2Var2 != null) {
-                t2Var2.dismissWithButtonClick(i10);
+        if (i10 != 8 && i10 != 7 && (i10 != 4 || u2Var.g0.getSelectedPhotos().isEmpty())) {
+            oh.u2 u2Var2 = xnVar.G1;
+            if (u2Var2 != null) {
+                u2Var2.dismissWithButtonClick(i10);
             }
             xnVar.Aa(i10);
             return;
         }
-        nh.t2 t2Var3 = xnVar.G1;
-        if (t2Var3 != null && i10 != 8) {
-            t2Var3.dismiss(true);
+        oh.u2 u2Var3 = xnVar.G1;
+        if (u2Var3 != null && i10 != 8) {
+            u2Var3.dismiss(true);
         }
         HashMap<Object, Object> selectedPhotos = xnVar.G1.g0.getSelectedPhotos();
         ArrayList<Object> selectedPhotosOrder = xnVar.G1.g0.getSelectedPhotosOrder();
@@ -192,30 +181,41 @@ public final class ml implements org.telegram.ui.Components.ji {
         }
     }
 
-    @Override // org.telegram.ui.Components.ji
-    public final /* synthetic */ boolean V() {
+    @Override // org.telegram.ui.Components.ki
+    public final void Q0() {
+        this.a.V.P();
+    }
+
+    @Override // org.telegram.ui.Components.ki
+    public final /* synthetic */ boolean b2() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ji
-    public final boolean k() {
+    @Override // org.telegram.ui.Components.ki
+    public final boolean h0() {
         return this.a.P9();
     }
 
-    @Override // org.telegram.ui.Components.ji
-    public final void x(org.telegram.ui.Components.wg wgVar) {
-        this.a.h8(wgVar);
+    @Override // org.telegram.ui.Components.ki
+    public final void o1(TLRPC.User user) {
+        String publicUsername = UserObject.getPublicUsername(user);
+        xn xnVar = this.a;
+        if (xnVar.V == null || user == null || TextUtils.isEmpty(publicUsername)) {
+            return;
+        }
+        xnVar.V.setFieldText("@" + publicUsername + " ");
+        xnVar.V.H0();
     }
 
-    @Override // org.telegram.ui.Components.ji
-    public final /* synthetic */ void D(Object obj) {
+    @Override // org.telegram.ui.Components.ki
+    public final /* synthetic */ void Z0(Object obj) {
     }
 
-    @Override // org.telegram.ui.Components.ji
-    public final /* synthetic */ void r() {
+    @Override // org.telegram.ui.Components.ki
+    public final /* synthetic */ void y0() {
     }
 
-    @Override // org.telegram.ui.Components.ji
-    public final /* synthetic */ void X(ArrayList arrayList, CharSequence charSequence, boolean z4, int i10, int i11, long j10, boolean z10, long j11) {
+    @Override // org.telegram.ui.Components.ki
+    public final /* synthetic */ void f2(ArrayList arrayList, CharSequence charSequence, boolean z4, int i10, int i11, long j10, boolean z10, long j11) {
     }
 }

@@ -13,10 +13,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.regex.Pattern;
-import kh.a2;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class n0 extends d4.r implements h5.n {
     public final Context R0;
@@ -37,18 +36,18 @@ public final class n0 extends d4.r implements h5.n {
         this.R0 = context.getApplicationContext();
         this.T0 = vVar;
         this.S0 = new f7.b(handler, c0Var);
-        ((k0) vVar).r = new a3.c(this, 22);
+        ((k0) vVar).r = new ja.c(this);
     }
 
     public static s8.i0 r0(d4.s sVar, j3.n0 n0Var, boolean z4, v vVar) {
-        Iterable e;
+        Iterable e6;
         if (n0Var.C == null) {
             s8.t tVar = s8.v.b;
             return s8.i0.e;
         }
         if (((k0) vVar).i(n0Var) != 0) {
-            List e6 = d4.y.e("audio/raw", false, false);
-            d4.n nVar = e6.isEmpty() ? null : (d4.n) e6.get(0);
+            List e10 = d4.y.e("audio/raw", false, false);
+            d4.n nVar = e10.isEmpty() ? null : (d4.n) e10.get(0);
             if (nVar != null) {
                 return s8.v.x(nVar);
             }
@@ -56,18 +55,18 @@ public final class n0 extends d4.r implements h5.n {
         Pattern pattern = d4.y.a;
         String str = n0Var.C;
         sVar.getClass();
-        List e10 = d4.y.e(str, z4, false);
+        List e11 = d4.y.e(str, z4, false);
         String b10 = d4.y.b(n0Var);
         if (b10 == null) {
             s8.t tVar2 = s8.v.b;
-            e = s8.i0.e;
+            e6 = s8.i0.e;
         } else {
-            e = d4.y.e(b10, z4, false);
+            e6 = d4.y.e(b10, z4, false);
         }
         s8.t tVar3 = s8.v.b;
         s8.s sVar2 = new s8.s();
-        sVar2.d(e10);
-        sVar2.d(e);
+        sVar2.d(e11);
+        sVar2.d(e6);
         return sVar2.i();
     }
 
@@ -105,7 +104,7 @@ public final class n0 extends d4.r implements h5.n {
         s8.i0 r02 = r0(sVar, n0Var, z4, this.T0);
         Pattern pattern = d4.y.a;
         ArrayList arrayList = new ArrayList(r02);
-        Collections.sort(arrayList, new d4.t(new a1.c(n0Var, 11), 0));
+        Collections.sort(arrayList, new d4.t(new a1.c(n0Var, 10), 0));
         return arrayList;
     }
 
@@ -228,7 +227,7 @@ public final class n0 extends d4.r implements h5.n {
         f7.b bVar = this.S0;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new gf.c(25, bVar, str));
+            handler.post(new gf.c(20, bVar, str));
         }
     }
 
@@ -242,7 +241,7 @@ public final class n0 extends d4.r implements h5.n {
         f7.b bVar2 = this.S0;
         Handler handler = (Handler) bVar2.b;
         if (handler != null) {
-            handler.post(new androidx.car.app.utils.b(bVar2, n0Var2, U, 18));
+            handler.post(new androidx.car.app.utils.b(bVar2, n0Var2, U, 14));
         }
         return U;
     }
@@ -274,8 +273,8 @@ public final class n0 extends d4.r implements h5.n {
         }
         try {
             ((k0) this.T0).b(n0Var, iArr);
-        } catch (r e) {
-            throw a(e, e.a, false, 5001);
+        } catch (r e6) {
+            throw a(e6, e6.a, false, 5001);
         }
     }
 
@@ -404,10 +403,10 @@ public final class n0 extends d4.r implements h5.n {
             }
             this.M0.e += i12;
             return true;
-        } catch (s e) {
-            throw a(e, this.W0, e.b, 5001);
-        } catch (u e6) {
-            throw a(e6, n0Var, e6.b, 5002);
+        } catch (s e6) {
+            throw a(e6, this.W0, e6.b, 5001);
+        } catch (u e10) {
+            throw a(e10, n0Var, e10.b, 5002);
         }
     }
 
@@ -428,8 +427,8 @@ public final class n0 extends d4.r implements h5.n {
     public final void f0() {
         try {
             ((k0) this.T0).t();
-        } catch (u e) {
-            throw a(e, e.c, e.b, 5002);
+        } catch (u e6) {
+            throw a(e6, e6.c, e6.b, 5002);
         }
     }
 
@@ -539,7 +538,7 @@ public final class n0 extends d4.r implements h5.n {
         v vVar = this.T0;
         if (z12 && ((k0) vVar).i(n0Var) != 0) {
             if (z11) {
-                List e = d4.y.e("audio/raw", false, false);
+                List e6 = d4.y.e("audio/raw", false, false);
             }
             return e2.c.b(4, 8, i10);
         }
@@ -607,7 +606,7 @@ public final class n0 extends d4.r implements h5.n {
                 C();
                 e0();
             } finally {
-                a2.D(this.P, null);
+                l.d.D(this.P, null);
                 this.P = null;
             }
         } finally {

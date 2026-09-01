@@ -7,11 +7,11 @@ import org.telegram.messenger.TranslateController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class pl implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ BaseController b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
@@ -19,49 +19,46 @@ public final /* synthetic */ class pl implements Runnable {
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object n;
 
-    public /* synthetic */ pl(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6, Object obj7, int i10) {
+    public /* synthetic */ pl(BaseController baseController, Object obj, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6, int i10) {
         this.a = i10;
+        this.b = baseController;
         this.c = obj;
         this.d = obj2;
-        this.b = obj3;
-        this.e = obj4;
-        this.f = obj5;
-        this.h = obj6;
-        this.n = obj7;
+        this.e = obj3;
+        this.f = obj4;
+        this.h = obj5;
+        this.n = obj6;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((TranslateController) this.c).lambda$translateStory$36((TL_stories.StoryItem) this.d, (String) this.b, (TLRPC.TL_textWithEntities) this.e, (TLRPC.TL_textWithEntities) this.f, (TranslateController.StoryKey) this.h, (Runnable) this.n);
+                ((TranslateController) this.b).lambda$translateStory$36((TL_stories.StoryItem) this.c, (String) this.d, (TLRPC.TL_textWithEntities) this.e, (TLRPC.TL_textWithEntities) this.f, (TranslateController.StoryKey) this.h, (Runnable) this.n);
                 break;
             case 1:
-                AndroidUtilities.lambda$showProxyAlert$19((boolean[]) this.c, (org.telegram.ui.Components.sc[]) this.d, (String) this.b, (String) this.e, (String) this.f, (String) this.h, (String) this.n);
+                ((MediaDataController) this.b).lambda$loadHints$144((ArrayList) this.c, (ArrayList) this.d, (ArrayList) this.e, (ArrayList) this.f, (ArrayList) this.h, (ArrayList) this.n);
                 break;
             case 2:
-                ((MediaDataController) this.c).lambda$loadHints$144((ArrayList) this.d, (ArrayList) this.b, (ArrayList) this.e, (ArrayList) this.f, (ArrayList) this.h, (ArrayList) this.n);
+                ((MessagesController) this.b).lambda$convertToGigaGroup$269((MessagesStorage.BooleanCallback) this.c, (Context) this.d, (org.telegram.ui.ActionBar.d2) this.e, (TLRPC.TL_error) this.f, (org.telegram.ui.ActionBar.p2) this.h, (TLRPC.TL_channels_convertToGigagroup) this.n);
                 break;
             case 3:
-                ((MessagesController) this.c).lambda$convertToGigaGroup$269((MessagesStorage.BooleanCallback) this.d, (Context) this.b, (org.telegram.ui.ActionBar.d2) this.e, (TLRPC.TL_error) this.f, (org.telegram.ui.ActionBar.p2) this.h, (TLRPC.TL_channels_convertToGigagroup) this.n);
-                break;
-            case 4:
-                ((MessagesController) this.c).lambda$convertToMegaGroup$264((MessagesStorage.LongCallback) this.d, (Context) this.b, (org.telegram.ui.ActionBar.d2) this.e, (TLRPC.TL_error) this.f, (org.telegram.ui.ActionBar.p2) this.h, (TLRPC.TL_messages_migrateChat) this.n);
+                ((MessagesController) this.b).lambda$convertToMegaGroup$264((MessagesStorage.LongCallback) this.c, (Context) this.d, (org.telegram.ui.ActionBar.d2) this.e, (TLRPC.TL_error) this.f, (org.telegram.ui.ActionBar.p2) this.h, (TLRPC.TL_messages_migrateChat) this.n);
                 break;
             default:
-                ((SecretChatHelper) this.c).lambda$performSendEncryptedRequest$8((TLRPC.EncryptedChat) this.d, (TLRPC.DecryptedMessage) this.e, (TLRPC.Message) this.f, (TLRPC.InputEncryptedFile) this.h, (MessageObject) this.n, (String) this.b);
+                ((SecretChatHelper) this.b).lambda$performSendEncryptedRequest$8((TLRPC.EncryptedChat) this.c, (TLRPC.DecryptedMessage) this.e, (TLRPC.Message) this.f, (TLRPC.InputEncryptedFile) this.h, (MessageObject) this.n, (String) this.d);
                 break;
         }
     }
 
     public /* synthetic */ pl(SecretChatHelper secretChatHelper, TLRPC.EncryptedChat encryptedChat, TLRPC.DecryptedMessage decryptedMessage, TLRPC.Message message, TLRPC.InputEncryptedFile inputEncryptedFile, MessageObject messageObject, String str) {
-        this.a = 5;
-        this.c = secretChatHelper;
-        this.d = encryptedChat;
+        this.a = 4;
+        this.b = secretChatHelper;
+        this.c = encryptedChat;
         this.e = decryptedMessage;
         this.f = message;
         this.h = inputEncryptedFile;
         this.n = messageObject;
-        this.b = str;
+        this.d = str;
     }
 }

@@ -3,9 +3,8 @@ package tc;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.RandomAccess;
-import kh.a2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class t extends c implements RandomAccess {
     public final Object[] a;
@@ -16,13 +15,13 @@ public final class t extends c implements RandomAccess {
     public t(int i10, Object[] objArr) {
         this.a = objArr;
         if (i10 < 0) {
-            throw new IllegalArgumentException(a2.j(i10, "ring buffer filled size should not be negative but it is ").toString());
+            throw new IllegalArgumentException(l.d.j(i10, "ring buffer filled size should not be negative but it is ").toString());
         }
         if (i10 <= objArr.length) {
             this.b = objArr.length;
             this.d = i10;
         } else {
-            StringBuilder m9 = a2.m(i10, "ring buffer filled size: ", " cannot be larger than the buffer size: ");
+            StringBuilder m9 = l.d.m(i10, "ring buffer filled size: ", " cannot be larger than the buffer size: ");
             m9.append(objArr.length);
             throw new IllegalArgumentException(m9.toString().toString());
         }

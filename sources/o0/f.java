@@ -2,9 +2,10 @@ package o0;
 
 import java.util.ArrayList;
 import n7.qa;
-import p2.r;
+import org.telegram.messenger.d0;
+import p2.q;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class f implements q0.a {
     public final /* synthetic */ int a;
@@ -23,7 +24,7 @@ public final class f implements q0.a {
                 if (gVar == null) {
                     gVar = new g(-3);
                 }
-                ((qa) this.b).c1(gVar);
+                ((qa) this.b).Y0(gVar);
                 return;
             case 1:
                 g gVar2 = (g) obj;
@@ -43,8 +44,8 @@ public final class f implements q0.a {
                     }
                 }
             default:
-                r rVar = new r(new ArrayList(), new ArrayList());
-                ((org.telegram.messenger.d) this.b).a((p2.h) obj, rVar);
+                q qVar = new q(new ArrayList(), new ArrayList());
+                ((d0) this.b).a((p2.h) obj, qVar);
                 return;
         }
     }

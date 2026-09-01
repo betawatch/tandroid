@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class g2 extends HorizontalScrollView {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final class g2 extends HorizontalScrollView {
                 if (mode != 1073741824) {
                     super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), 0), i11);
                     int measuredWidth = getMeasuredWidth();
-                    int i12 = ((vh.v3) this.b).H;
+                    int i12 = ((wh.v3) this.b).H;
                     if (mode == Integer.MIN_VALUE) {
                         i12 = Math.min(i12, View.MeasureSpec.getSize(i10));
                     }
@@ -48,10 +48,10 @@ public final class g2 extends HorizontalScrollView {
         switch (this.a) {
             case 0:
                 super.onScrollChanged(i10, i11, i12, i13);
-                n70 n70Var = (n70) this.b;
-                if (n70Var.d != null) {
-                    n70Var.d = null;
-                    n70Var.f = null;
+                o70 o70Var = (o70) this.b;
+                if (o70Var.d != null) {
+                    o70Var.d = null;
+                    o70Var.f = null;
                     break;
                 }
                 break;
@@ -61,7 +61,7 @@ public final class g2 extends HorizontalScrollView {
                 break;
             case 2:
                 super.onScrollChanged(i10, i11, i12, i13);
-                vh.y2 y2Var = ((vh.i5) this.b).B;
+                wh.y2 y2Var = ((wh.i5) this.b).B;
                 if (y2Var != null && (textSelectionHelper = y2Var.a.getTextSelectionHelper()) != null && textSelectionHelper.y()) {
                     textSelectionHelper.x();
                 }
@@ -71,9 +71,9 @@ public final class g2 extends HorizontalScrollView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g2(Context context, n70 n70Var) {
+    public g2(Context context, o70 o70Var) {
         super(context);
         this.a = 0;
-        this.b = n70Var;
+        this.b = o70Var;
     }
 }

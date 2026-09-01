@@ -5,7 +5,7 @@ import android.view.View;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -52,7 +52,7 @@ public final /* synthetic */ class x0 implements ValueAnimator.AnimatorUpdateLis
                         floatValue3 = 1.0f - floatValue3;
                     }
                     float w10 = (int) e2.c.w(1.0f, floatValue3, r1Var.q, r1Var.p * floatValue3);
-                    if (!(r1Var instanceof mg.o)) {
+                    if (!(r1Var instanceof ng.o)) {
                         r1Var.a.setTranslationY(w10);
                     }
                     r1Var.e(-w10, floatValue3, r1Var.s);
@@ -60,21 +60,21 @@ public final /* synthetic */ class x0 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 4:
-                n3 n3Var = (n3) this.b;
-                n3Var.getClass();
-                n3Var.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                Iterator it = n3Var.F.iterator();
+                o3 o3Var = (o3) this.b;
+                o3Var.getClass();
+                o3Var.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                Iterator it = o3Var.F.iterator();
                 while (it.hasNext()) {
                     ((Runnable) it.next()).run();
                 }
-                n3Var.invalidate();
+                o3Var.invalidate();
                 break;
             default:
-                v3 v3Var = (v3) this.b;
-                v3Var.i = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                w3 w3Var = v3Var.b;
-                if (w3Var != null) {
-                    w3Var.invalidate();
+                w3 w3Var = (w3) this.b;
+                w3Var.i = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                x3 x3Var = w3Var.b;
+                if (x3Var != null) {
+                    x3Var.invalidate();
                     break;
                 }
                 break;

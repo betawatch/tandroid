@@ -3,9 +3,9 @@ package lf;
 import android.view.View;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
-import lh.o2;
-import nh.i7;
-import nh.l7;
+import mh.n2;
+import oh.i7;
+import oh.l7;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.voip.ConferenceCall;
@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f0 implements RequestDelegate {
     public final /* synthetic */ int a = 1;
@@ -40,7 +40,7 @@ public final /* synthetic */ class f0 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new g0(tL_error, (xn) this.c, tLObject, (TLRPC.FileLocation[]) this.d, (String) this.f, (TLRPC.FileLocation[]) this.e, this.b));
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new o2((l7) this.c, tLObject, this.b, (View) this.d, (i7) this.e, (MessagesController) this.f, 3));
+                AndroidUtilities.runOnUIThread(new n2((l7) this.c, tLObject, this.b, (View) this.d, (i7) this.e, (MessagesController) this.f, 3));
                 break;
             default:
                 ((ConferenceCall) this.c).lambda$poll$8((TL_phone.getGroupCallChainBlocks) this.d, this.b, (AtomicBoolean) this.e, (AtomicInteger) this.f, tLObject, tL_error);

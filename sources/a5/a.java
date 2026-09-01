@@ -19,11 +19,11 @@ import java.util.List;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import k7.z6;
+import k7.a7;
 import org.telegram.tgnet.TLObject;
 import v4.f;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a extends v4.e {
     public static final Pattern s = Pattern.compile("(?:(\\d+):)?(\\d+):(\\d+)[:.](\\d+)");
@@ -402,7 +402,7 @@ public final class a extends v4.e {
                     if (h9 != null && (wVar.a() == 0 || wVar.c(charset) != '[')) {
                         String[] split = h9.split(":");
                         if (split.length == 2) {
-                            String b10 = z6.b(split[0].trim());
+                            String b10 = a7.b(split[0].trim());
                             b10.getClass();
                             if (b10.equals("playresx")) {
                                 this.q = Float.parseFloat(split[1].trim());
@@ -436,7 +436,7 @@ public final class a extends v4.e {
                                 int i20 = -1;
                                 int i21 = -1;
                                 for (int i22 = 0; i22 < split2.length; i22++) {
-                                    String b11 = z6.b(split2[i22].trim());
+                                    String b11 = a7.b(split2[i22].trim());
                                     b11.getClass();
                                     switch (b11.hashCode()) {
                                         case -1178781136:
@@ -581,8 +581,8 @@ public final class a extends v4.e {
                                                     String trim2 = split3[i28].trim();
                                                     try {
                                                         f11 = Float.parseFloat(trim2);
-                                                    } catch (NumberFormatException e) {
-                                                        h5.a.L("SsaStyle", "Failed to parse font size: '" + trim2 + "'", e);
+                                                    } catch (NumberFormatException e6) {
+                                                        h5.a.L("SsaStyle", "Failed to parse font size: '" + trim2 + "'", e6);
                                                     }
                                                     f10 = f11;
                                                 } else {
@@ -613,8 +613,8 @@ public final class a extends v4.e {
                                                     i10 = -1;
                                                 }
                                                 eVar = new e(trim, a2, c11, c12, f10, z4, z10, z11, z12, i10);
-                                            } catch (RuntimeException e6) {
-                                                h5.a.L("SsaStyle", "Skipping malformed 'Style:' line: '" + h10 + "'", e6);
+                                            } catch (RuntimeException e10) {
+                                                h5.a.L("SsaStyle", "Skipping malformed 'Style:' line: '" + h10 + "'", e10);
                                             }
                                             if (eVar != null) {
                                                 linkedHashMap.put(eVar.a, eVar);

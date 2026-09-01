@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.Components.qc;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ja implements Runnable {
     public final /* synthetic */ int a;
@@ -57,10 +57,10 @@ public final /* synthetic */ class ja implements Runnable {
                         TLObject tLObject2 = n0Var3.o;
                         t1 t1Var2 = o0Var.a;
                         if (t1Var2.getDelegate() != null) {
-                            t1Var2.getDelegate().E0(t1Var2, tLObject2, true);
+                            t1Var2.getDelegate().F0(t1Var2, tLObject2, true);
                         }
                     } else if (t1Var.getDelegate() != null) {
-                        t1Var.getDelegate().A2();
+                        t1Var.getDelegate().G2();
                     }
                 }
                 o0Var.F = null;
@@ -101,7 +101,7 @@ public final /* synthetic */ class ja implements Runnable {
                 break;
             case 4:
                 v0 v0Var2 = (v0) this.b;
-                v0Var2.U0.l2(v0Var2, ((TLRPC.TL_messageActionGiftCode) this.c).slug);
+                v0Var2.U0.r2(v0Var2, ((TLRPC.TL_messageActionGiftCode) this.c).slug);
                 break;
             case 5:
                 t1 t1Var3 = (t1) this.b;
@@ -123,7 +123,7 @@ public final /* synthetic */ class ja implements Runnable {
                 }
                 break;
             default:
-                ((la) this.b).w1((org.telegram.ui.ActionBar.i6) this.c);
+                ((la) this.b).w1((org.telegram.ui.ActionBar.j6) this.c);
                 break;
         }
     }

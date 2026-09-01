@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.animation.ValueAnimator;
 import android.view.View;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class yi implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -23,16 +23,16 @@ public final class yi implements ValueAnimator.AnimatorUpdateListener {
                 xnVar.U0.invalidate();
                 break;
             case 1:
-                oy oyVar = (oy) this.b;
-                oyVar.E0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                View view = oyVar.fragmentView;
+                py pyVar = (py) this.b;
+                pyVar.E0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View view = pyVar.fragmentView;
                 if (view != null) {
                     view.invalidate();
                     break;
                 }
                 break;
             default:
-                ((cd1) this.b).u0.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                ((ed1) this.b).u0.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
         }
     }

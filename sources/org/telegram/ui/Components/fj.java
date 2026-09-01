@@ -1,44 +1,27 @@
 package org.telegram.ui.Components;
 
-import j$.util.Objects;
-import org.telegram.messenger.ContactsController;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class fj {
-    public final int a;
-    public final long b;
+public final class fj extends f2.k0 {
+    public final /* synthetic */ gj r;
 
-    public fj(int i10, long j10) {
-        this.a = i10;
-        this.b = j10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fj(gj gjVar, Context context) {
+        super(context);
+        this.r = gjVar;
     }
 
-    public static fj a(Object obj) {
-        if (obj instanceof ContactsController.Contact) {
-            return new fj(2, ((ContactsController.Contact) obj).contact_id);
-        }
-        if (obj instanceof TLRPC.User) {
-            return new fj(1, ((TLRPC.User) obj).id);
-        }
-        return null;
+    @Override // f2.k0
+    public final int k(int i10, View view) {
+        return org.telegram.messenger.y3.z(8.0f, ((sj) this.r.V).s.getPaddingTop() - AndroidUtilities.statusBarHeight, super.k(i10, view));
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || fj.class != obj.getClass()) {
-            return false;
-        }
-        fj fjVar = (fj) obj;
-        return this.b == fjVar.b && this.a == fjVar.a;
-    }
-
-    public final int hashCode() {
-        Long valueOf = Long.valueOf(this.b);
-        int i10 = this.a;
-        return Objects.hash(i10 == 0 ? null : Integer.valueOf(i10 - 1), valueOf);
+    @Override // f2.k0
+    public final int m(int i10) {
+        return super.m(i10) * 2;
     }
 }

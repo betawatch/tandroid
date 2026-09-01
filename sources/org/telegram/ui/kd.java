@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class kd extends org.telegram.ui.Components.jj0 {
+public final class kd extends org.telegram.ui.Components.lj0 {
     public final /* synthetic */ int r;
     public final /* synthetic */ Object s;
 
@@ -28,11 +28,11 @@ public final class kd extends org.telegram.ui.Components.jj0 {
                 break;
             case 2:
                 super.invalidate(i10, i11, i12, i13);
-                ((e70) this.s).e.invalidate();
+                ((f70) this.s).e.invalidate();
                 break;
             case 3:
                 super.invalidate(i10, i11, i12, i13);
-                ((ze0) this.s).h.invalidate();
+                ((af0) this.s).h.invalidate();
                 break;
         }
     }
@@ -46,15 +46,15 @@ public final class kd extends org.telegram.ui.Components.jj0 {
                 break;
             case 1:
                 super.invalidate();
-                ((org.telegram.ui.Components.s20) this.s).invalidate();
+                ((org.telegram.ui.Components.t20) this.s).invalidate();
                 break;
             case 2:
                 super.invalidate();
-                ((e70) this.s).e.invalidate();
+                ((f70) this.s).e.invalidate();
                 break;
             default:
                 super.invalidate();
-                ((ze0) this.s).h.invalidate();
+                ((af0) this.s).h.invalidate();
                 break;
         }
     }

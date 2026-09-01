@@ -1,18 +1,33 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class ln0 {
-    public mg.q0 a;
-    public int b;
-    public String c;
-    public int d;
+public final class ln0 extends f2.q {
+    public final /* synthetic */ pn0 b;
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof ln0)) {
-            return false;
-        }
-        ln0 ln0Var = (ln0) obj;
-        return this.b == ln0Var.b && this.a.h == ln0Var.a.h && this.d == ln0Var.d;
+    public ln0(pn0 pn0Var) {
+        this.b = pn0Var;
+    }
+
+    @Override // f2.q
+    public final boolean a(int i10, int i11) {
+        pn0 pn0Var = this.b;
+        return ((mn0) pn0Var.n.get(i10)).equals(pn0Var.r.get(i11));
+    }
+
+    @Override // f2.q
+    public final boolean b(int i10, int i11) {
+        pn0 pn0Var = this.b;
+        return ((mn0) pn0Var.n.get(i10)).a.h == ((mn0) pn0Var.r.get(i11)).a.h;
+    }
+
+    @Override // f2.q
+    public final int d() {
+        return this.b.r.size();
+    }
+
+    @Override // f2.q
+    public final int e() {
+        return this.b.n.size();
     }
 }

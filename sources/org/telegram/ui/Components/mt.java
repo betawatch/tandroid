@@ -1,32 +1,19 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import org.telegram.messenger.Utilities;
+import android.widget.EdgeEffect;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mt implements Utilities.Callback0Return {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class mt extends f2.t0 {
+    public final lt[] a = new lt[4];
+    public final ArrayList b = new ArrayList();
 
-    public /* synthetic */ mt(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback0Return
-    public final Object run() {
-        Editable text;
-        yi0[] yi0VarArr;
-        int i10 = this.a;
-        Object obj = this.b;
-        switch (i10) {
-            case 0:
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) obj;
-                int i11 = EditTextBoldCursor.a;
-                return Boolean.valueOf(editTextBoldCursor.hasSelection() && editTextBoldCursor.getSelectionStart() >= 0 && editTextBoldCursor.getSelectionEnd() >= 0 && editTextBoldCursor.getSelectionStart() != editTextBoldCursor.getSelectionEnd() && (text = editTextBoldCursor.getText()) != null && ((yi0VarArr = (yi0[]) text.getSpans(editTextBoldCursor.getSelectionStart(), editTextBoldCursor.getSelectionEnd(), yi0.class)) == null || yi0VarArr.length == 0));
-            default:
-                return ((v40) obj).getCloseIntoObject();
-        }
+    @Override // f2.t0
+    public final EdgeEffect a(RecyclerView recyclerView, int i10) {
+        lt ltVar = new lt(recyclerView, i10, new kt(this, 0));
+        this.a[i10] = ltVar;
+        return ltVar;
     }
 }

@@ -15,11 +15,11 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.dc0;
-import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.fc0;
+import org.telegram.ui.Components.pr;
 import org.telegram.ui.ao;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public class ea extends LinearLayout {
     public org.telegram.ui.Components.n9 a;
@@ -28,7 +28,7 @@ public class ea extends LinearLayout {
     public Drawable d;
     public final t1[] e;
     public final Drawable f;
-    public final org.telegram.ui.ActionBar.e5 h;
+    public final org.telegram.ui.ActionBar.f5 h;
     public final int n;
     public org.telegram.ui.ActionBar.p2 r;
     public int s;
@@ -37,8 +37,8 @@ public class ea extends LinearLayout {
     public boolean x;
     public final org.telegram.ui.Components.z5 y;
 
-    public ea(Context context, org.telegram.ui.ActionBar.e5 e5Var, int i10) {
-        this(context, e5Var, i10, 0L, null);
+    public ea(Context context, org.telegram.ui.ActionBar.f5 f5Var, int i10) {
+        this(context, f5Var, i10, 0L, null);
     }
 
     public final boolean a() {
@@ -104,15 +104,15 @@ public class ea extends LinearLayout {
     public final void onDraw(Canvas canvas) {
         Drawable drawable = this.w;
         if (drawable == null) {
-            drawable = org.telegram.ui.ActionBar.j6.s0();
+            drawable = org.telegram.ui.ActionBar.k6.s0();
         }
-        if (org.telegram.ui.ActionBar.j6.d != null) {
+        if (org.telegram.ui.ActionBar.k6.d != null) {
             invalidate();
         }
         Drawable drawable2 = this.c;
         org.telegram.ui.Components.z5 z5Var = this.y;
         if (drawable != drawable2 && drawable != null) {
-            if (org.telegram.ui.ActionBar.j6.sl == null && !this.x) {
+            if (org.telegram.ui.ActionBar.k6.sl == null && !this.x) {
                 org.telegram.ui.Components.n9 n9Var = this.a;
                 if (n9Var != null) {
                     n9Var.dispose();
@@ -126,16 +126,16 @@ public class ea extends LinearLayout {
             z5Var.d(0.0f, true);
         }
         boolean z4 = this.x;
-        org.telegram.ui.ActionBar.e5 e5Var = this.h;
-        float d = z4 ? z5Var.d(1.0f, false) : e5Var.getThemeAnimationValue();
+        org.telegram.ui.ActionBar.f5 f5Var = this.h;
+        float d = z4 ? z5Var.d(1.0f, false) : f5Var.getThemeAnimationValue();
         int i10 = 0;
         while (i10 < 2) {
             Drawable drawable3 = i10 == 0 ? this.d : this.c;
             if (drawable3 != null) {
-                int i11 = (i10 != 1 || this.d == null || (e5Var == null && !this.x)) ? 255 : (int) (255.0f * d);
+                int i11 = (i10 != 1 || this.d == null || (f5Var == null && !this.x)) ? 255 : (int) (255.0f * d);
                 if (i11 > 0) {
                     drawable3.setAlpha(i11);
-                    if ((drawable3 instanceof ColorDrawable) || (drawable3 instanceof GradientDrawable) || (drawable3 instanceof dc0)) {
+                    if ((drawable3 instanceof ColorDrawable) || (drawable3 instanceof GradientDrawable) || (drawable3 instanceof fc0)) {
                         drawable3.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
                         if (drawable3 instanceof org.telegram.ui.Components.o9) {
                             this.a = ((org.telegram.ui.Components.o9) drawable3).c(canvas, this);
@@ -164,7 +164,7 @@ public class ea extends LinearLayout {
                         drawable3.draw(canvas);
                         canvas.restore();
                     } else {
-                        ph.u6.j(canvas, drawable3, getWidth(), getHeight());
+                        qh.s6.j(canvas, drawable3, getWidth(), getHeight());
                     }
                     if (i10 == 0 && this.d != null && d >= 1.0f) {
                         org.telegram.ui.Components.n9 n9Var2 = this.b;
@@ -224,7 +224,7 @@ public class ea extends LinearLayout {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public ea(Context context, org.telegram.ui.ActionBar.e5 e5Var, int i10, long j10, org.telegram.ui.ActionBar.f6 f6Var) {
+    public ea(Context context, org.telegram.ui.ActionBar.f5 f5Var, int i10, long j10, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         MessageObject messageObject;
         MessageObject messageObject2;
@@ -235,15 +235,15 @@ public class ea extends LinearLayout {
         this.e = new t1[2];
         this.s = -1;
         this.v = new g(this, 9);
-        this.y = new org.telegram.ui.Components.z5(this, 0L, 350L, nr.h);
+        this.y = new org.telegram.ui.Components.z5(this, 0L, 350L, pr.h);
         this.n = i12;
         int i13 = UserConfig.selectedAccount;
-        this.h = e5Var;
+        this.h = f5Var;
         setWillNotDraw(false);
         setOrientation(1);
         setPadding(0, AndroidUtilities.dp(11.0f), 0, AndroidUtilities.dp(11.0f));
-        org.telegram.ui.ActionBar.f6 f6Var2 = f6Var;
-        this.f = org.telegram.ui.ActionBar.j6.U0(context2, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.b7, f6Var2));
+        org.telegram.ui.ActionBar.g6 g6Var2 = g6Var;
+        this.f = org.telegram.ui.ActionBar.k6.U0(context2, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.b7, g6Var2));
         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
         if (i12 == 3) {
             boolean z4 = j10 < 0;
@@ -457,19 +457,19 @@ public class ea extends LinearLayout {
                     return;
                 }
                 int i15 = i12;
-                t1VarArr[i11] = new da(this, context2, i13, f6Var2, context, i15);
-                this.e[i11].setDelegate(new ja.c(this, 23));
+                t1VarArr[i11] = new da(this, context2, i13, g6Var2, context, i15);
+                this.e[i11].setDelegate(new o5.i(this, 29));
                 t1 t1Var = this.e[i11];
                 t1Var.K7 = i15 == 2 || i15 == 4;
                 t1Var.setFullyDraw(true);
                 MessageObject messageObject8 = i11 == 0 ? messageObject2 : messageObject;
                 if (messageObject8 != null) {
                     this.e[i11].X3(messageObject8, null, false, false, false, false);
-                    addView(this.e[i11], k7.b6.n(-1, -2));
+                    addView(this.e[i11], k7.c6.n(-1, -2));
                 }
                 i11++;
                 context2 = context;
-                f6Var2 = f6Var;
+                g6Var2 = g6Var;
                 i12 = i15;
             }
         }
@@ -481,7 +481,7 @@ public class ea extends LinearLayout {
             }
             i11++;
             context2 = context;
-            f6Var2 = f6Var;
+            g6Var2 = g6Var;
             i12 = i15;
         }
     }

@@ -1,16 +1,16 @@
 package o4;
 
 import java.util.Arrays;
-import kh.a2;
+import mh.c3;
 import org.telegram.messenger.TranslateController;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class s0 implements j3.g {
     public static final String f;
     public static final String h;
-    public static final m.j0 n;
+    public static final c3 n;
     public final int a;
     public final String b;
     public final int c;
@@ -21,7 +21,7 @@ public final class s0 implements j3.g {
         int i10 = h5.d0.a;
         f = Integer.toString(0, 36);
         h = Integer.toString(1, 36);
-        n = new m.j0(11);
+        n = new c3(4);
     }
 
     public s0(String str, j3.n0... n0VarArr) {
@@ -86,7 +86,7 @@ public final class s0 implements j3.g {
 
     public final int hashCode() {
         if (this.e == 0) {
-            this.e = a2.e(527, 31, this.b) + Arrays.hashCode(this.d);
+            this.e = l.d.e(527, 31, this.b) + Arrays.hashCode(this.d);
         }
         return this.e;
     }

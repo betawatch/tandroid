@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public abstract class e5 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int C = 0;
@@ -31,8 +31,8 @@ public abstract class e5 extends FrameLayout implements NotificationCenter.Notif
     public final w4 c;
     public final ActionBarPopupWindow$ActionBarPopupWindowLayout d;
     public final x4 e;
-    public final org.telegram.ui.ActionBar.f6 f;
-    public final sg.b h;
+    public final org.telegram.ui.ActionBar.g6 f;
+    public final tg.b h;
     public AnimatorSet n;
     public boolean r;
     public f5[] s;
@@ -41,46 +41,46 @@ public abstract class e5 extends FrameLayout implements NotificationCenter.Notif
     public String x;
     public b5 y;
 
-    public e5(Context context, org.telegram.ui.ActionBar.f6 f6Var, x4 x4Var) {
+    public e5(Context context, org.telegram.ui.ActionBar.g6 g6Var, x4 x4Var) {
         super(context);
         this.a = new OvershootInterpolator(1.02f);
-        sg.b bVar = new sg.b();
+        tg.b bVar = new tg.b();
         this.h = bVar;
         new Matrix();
         this.e = x4Var;
-        this.f = f6Var;
-        ug.i iVar = new ug.i(this);
+        this.f = g6Var;
+        vg.i iVar = new vg.i(this);
         View view = new View(context);
         this.v = view;
         view.setOnClickListener(new a(this, 4));
-        addView(view, k7.b6.c(-1.0f, -1));
-        l0 l0Var = new l0(this, context, 2);
+        addView(view, k7.c6.c(-1.0f, -1));
+        int i10 = 2;
+        l0 l0Var = new l0(this, context, i10);
         this.b = l0Var;
-        addView(l0Var, k7.b6.c(-1.0f, -1));
-        w4 w4Var = new w4(context, f6Var);
+        addView(l0Var, k7.c6.c(-1.0f, -1));
+        w4 w4Var = new w4(context, g6Var);
         this.c = w4Var;
         float dp = AndroidUtilities.dp(12.0f);
-        gg.j1 j1Var = lf.q0.a;
+        hg.j1 j1Var = lf.q0.a;
         w4Var.setOutlineProvider(new lf.p0(0, dp));
         w4Var.setElevation(AndroidUtilities.dp(4.0f));
-        int i10 = 1;
         w4Var.setClipToOutline(true);
-        l0Var.addView(w4Var, k7.b6.e(0, 0, 1));
+        l0Var.addView(w4Var, k7.c6.e(0, 0, 1));
         if (Build.VERSION.SDK_INT >= 28) {
             w4Var.setOutlineSpotShadowColor(TLObject.FLAG_31);
             w4Var.setOutlineAmbientShadowColor(TLObject.FLAG_31);
         }
-        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert, 0, context, f6Var);
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert, 0, context, g6Var);
         this.d = actionBarPopupWindow$ActionBarPopupWindowLayout;
-        pg.b k10 = bVar.k();
+        qg.b k10 = bVar.k();
         k10.n(null);
-        iVar.d(actionBarPopupWindow$ActionBarPopupWindowLayout, this, new mg.w(i10, k10, actionBarPopupWindow$ActionBarPopupWindowLayout), false);
-        k10.n(rg.b.j(f6Var));
+        iVar.d(actionBarPopupWindow$ActionBarPopupWindowLayout, this, new ng.w(i10, k10, actionBarPopupWindow$ActionBarPopupWindowLayout), false);
+        k10.n(sg.b.j(g6Var));
         k10.o(AndroidUtilities.dp(8.0f));
         k10.h.e = true;
         k10.p(AndroidUtilities.dp(12.0f));
         actionBarPopupWindow$ActionBarPopupWindowLayout.setBackground(k10);
-        l0Var.addView(actionBarPopupWindow$ActionBarPopupWindowLayout, k7.b6.h(-2.0f, -2.0f, 8388611));
+        l0Var.addView(actionBarPopupWindow$ActionBarPopupWindowLayout, k7.c6.h(-2.0f, -2.0f, 8388611));
     }
 
     public final void a(z4 z4Var) {
@@ -101,7 +101,7 @@ public abstract class e5 extends FrameLayout implements NotificationCenter.Notif
         b5 b5Var2 = z4Var.j;
         if (b5Var2 != null) {
             this.y = b5Var2;
-            gg.m0 m0Var = new gg.m0(4, this, z4Var);
+            hg.m0 m0Var = new hg.m0(4, this, z4Var);
             if (!b5Var2.g) {
                 b5Var2.g = true;
                 b5Var2.f = m0Var;
@@ -146,7 +146,7 @@ public abstract class e5 extends FrameLayout implements NotificationCenter.Notif
         }
         this.r = z4;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        ofFloat.setInterpolator(z4 ? this.a : org.telegram.ui.Components.nr.h);
+        ofFloat.setInterpolator(z4 ? this.a : org.telegram.ui.Components.pr.h);
         final int i10 = 0;
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.c5
             public final /* synthetic */ e5 b;
@@ -166,7 +166,7 @@ public abstract class e5 extends FrameLayout implements NotificationCenter.Notif
                         if (!z4) {
                             floatValue = 1.0f - floatValue;
                         }
-                        float a2 = k7.n.a(floatValue, 0.0f, 1.0f);
+                        float a2 = k7.o.a(floatValue, 0.0f, 1.0f);
                         float f10 = (0.3f * floatValue) + 0.7f;
                         l0Var.setScaleX(f10);
                         l0Var.setScaleY(f10);
@@ -210,7 +210,7 @@ public abstract class e5 extends FrameLayout implements NotificationCenter.Notif
                         if (!z4) {
                             floatValue = 1.0f - floatValue;
                         }
-                        float a2 = k7.n.a(floatValue, 0.0f, 1.0f);
+                        float a2 = k7.o.a(floatValue, 0.0f, 1.0f);
                         float f10 = (0.3f * floatValue) + 0.7f;
                         l0Var.setScaleX(f10);
                         l0Var.setScaleY(f10);
@@ -242,7 +242,7 @@ public abstract class e5 extends FrameLayout implements NotificationCenter.Notif
         this.n = animatorSet2;
         animatorSet2.setDuration(z4 ? 190L : 150L);
         this.n.playTogether(ofFloat, ofFloat2);
-        this.n.addListener(new dg.w2(12, this, z4));
+        this.n.addListener(new eg.u2(10, this, z4));
         this.n.start();
     }
 
@@ -304,9 +304,9 @@ public abstract class e5 extends FrameLayout implements NotificationCenter.Notif
     public final void onSizeChanged(int i10, int i11, int i12, int i13) {
         if (i10 != 0 && i11 != 0 && this.r) {
             this.v.setBackground(null);
-            AndroidUtilities.runOnUIThread(new rt0(this, 12));
+            AndroidUtilities.runOnUIThread(new tt0(this, 12));
         }
-        tg.c.c(this.h, this);
+        ug.c.c(this.h, this);
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = this.d;
         if (actionBarPopupWindow$ActionBarPopupWindowLayout != null) {
             actionBarPopupWindow$ActionBarPopupWindowLayout.invalidate();

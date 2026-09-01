@@ -27,26 +27,26 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.k01;
-import org.telegram.ui.Components.lp;
-import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.l01;
+import org.telegram.ui.Components.np;
+import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public class e7 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public final org.telegram.ui.Components.z5 B;
     public boolean C;
     public final org.telegram.ui.Components.z5 D;
     public long E;
-    public eg.q1 F;
+    public fg.p1 F;
     public Drawable G;
     public final Paint H;
     public long I;
-    public k01 J;
+    public l01 J;
     public final org.telegram.ui.Components.p9 a;
-    public final gg.q b;
-    public final org.telegram.ui.ActionBar.k5 c;
-    public final lp d;
+    public final hg.q b;
+    public final org.telegram.ui.ActionBar.l5 c;
+    public final np d;
     public final c7 e;
     public d7 f;
     public TLRPC.User h;
@@ -56,53 +56,53 @@ public class e7 extends FrameLayout implements NotificationCenter.NotificationCe
     public long v;
     public boolean w;
     public final int x;
-    public final org.telegram.ui.ActionBar.f6 y;
+    public final org.telegram.ui.ActionBar.g6 y;
 
-    public e7(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+    public e7(Context context, int i10, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         this.x = UserConfig.selectedAccount;
-        nr nrVar = nr.h;
-        this.B = new org.telegram.ui.Components.z5(this, 0L, 350L, nrVar);
-        this.D = new org.telegram.ui.Components.z5(this, 0L, 350L, nrVar);
+        pr prVar = pr.h;
+        this.B = new org.telegram.ui.Components.z5(this, 0L, 350L, prVar);
+        this.D = new org.telegram.ui.Components.z5(this, 0L, 350L, prVar);
         this.H = new Paint();
-        this.y = f6Var;
-        this.e = new c7(this, f6Var, 0);
+        this.y = g6Var;
+        this.e = new c7(this, g6Var, 0);
         setWillNotDraw(false);
         this.n = i10;
         org.telegram.ui.Components.p9 p9Var = new org.telegram.ui.Components.p9(context);
         this.a = p9Var;
         p9Var.setRoundRadius(AndroidUtilities.dp(28.0f));
         if (i10 == 2) {
-            addView(p9Var, k7.b6.d(48, 48.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
+            addView(p9Var, k7.c6.d(48, 48.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
         } else {
-            addView(p9Var, k7.b6.d(56, 56.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
+            addView(p9Var, k7.c6.d(56, 56.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
         }
-        gg.q qVar = new gg.q(context, 6);
+        hg.q qVar = new hg.q(context, 6);
         this.b = qVar;
         NotificationCenter.listenEmojiLoading(qVar);
-        qVar.setTextColor(org.telegram.ui.ActionBar.j6.v0(this.C ? org.telegram.ui.ActionBar.j6.C6 : org.telegram.ui.ActionBar.j6.j5, f6Var));
+        qVar.setTextColor(org.telegram.ui.ActionBar.k6.v0(this.C ? org.telegram.ui.ActionBar.k6.C6 : org.telegram.ui.ActionBar.k6.j5, g6Var));
         qVar.setTextSize(1, 12.0f);
         qVar.setMaxLines(2);
         qVar.setGravity(49);
         qVar.setLines(2);
         qVar.setEllipsize(TextUtils.TruncateAt.END);
-        addView(qVar, k7.b6.d(-1, -2.0f, 51, 6.0f, i10 == 2 ? 58.0f : 66.0f, 6.0f, 0.0f));
-        org.telegram.ui.ActionBar.k5 k5Var = new org.telegram.ui.ActionBar.k5(context);
-        this.c = k5Var;
-        k5Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.j5, f6Var));
-        k5Var.setTextSize(12);
-        k5Var.setMaxLines(2);
-        k5Var.setGravity(49);
-        k5Var.setAlignment(Layout.Alignment.ALIGN_CENTER);
-        addView(k5Var, k7.b6.d(-1, -2.0f, 51, 6.0f, i10 == 2 ? 58.0f : 66.0f, 6.0f, 0.0f));
-        lp lpVar = new lp(context, 21, f6Var);
-        this.d = lpVar;
-        lpVar.b(org.telegram.ui.ActionBar.j6.B5, org.telegram.ui.ActionBar.j6.h5, org.telegram.ui.ActionBar.j6.C5);
-        lpVar.setDrawUnchecked(false);
-        lpVar.setDrawBackgroundAsArc(4);
-        lpVar.setProgressDelegate(new ha(this, 5));
-        addView(lpVar, k7.b6.d(24, 24.0f, 49, 19.0f, i10 == 2 ? -40.0f : 42.0f, 0.0f, 0.0f));
-        setBackground(org.telegram.ui.ActionBar.j6.Y(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.i6, f6Var), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f)));
+        addView(qVar, k7.c6.d(-1, -2.0f, 51, 6.0f, i10 == 2 ? 58.0f : 66.0f, 6.0f, 0.0f));
+        org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(context);
+        this.c = l5Var;
+        l5Var.setTextColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.j5, g6Var));
+        l5Var.setTextSize(12);
+        l5Var.setMaxLines(2);
+        l5Var.setGravity(49);
+        l5Var.setAlignment(Layout.Alignment.ALIGN_CENTER);
+        addView(l5Var, k7.c6.d(-1, -2.0f, 51, 6.0f, i10 == 2 ? 58.0f : 66.0f, 6.0f, 0.0f));
+        np npVar = new np(context, 21, g6Var);
+        this.d = npVar;
+        npVar.b(org.telegram.ui.ActionBar.k6.B5, org.telegram.ui.ActionBar.k6.h5, org.telegram.ui.ActionBar.k6.C5);
+        npVar.setDrawUnchecked(false);
+        npVar.setDrawBackgroundAsArc(4);
+        npVar.setProgressDelegate(new ha(this, 5));
+        addView(npVar, k7.c6.d(24, 24.0f, 49, 19.0f, i10 == 2 ? -40.0f : 42.0f, 0.0f, 0.0f));
+        setBackground(org.telegram.ui.ActionBar.k6.Y(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.i6, g6Var), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f)));
     }
 
     public String a() {
@@ -120,13 +120,13 @@ public class e7 extends FrameLayout implements NotificationCenter.NotificationCe
     public final void c(long j10, boolean z4, CharSequence charSequence) {
         c7 c7Var = this.e;
         c7Var.p = 1.0f;
-        org.telegram.ui.ActionBar.f6 f6Var = this.y;
+        org.telegram.ui.ActionBar.g6 g6Var = this.y;
         org.telegram.ui.Components.p9 p9Var = this.a;
-        gg.q qVar = this.b;
+        hg.q qVar = this.b;
         if (j10 == Long.MAX_VALUE) {
             qVar.setText(a());
             if (this.f == null) {
-                this.f = new d7(getContext(), p9Var, true, f6Var);
+                this.f = new d7(getContext(), p9Var, true, g6Var);
             }
             p9Var.h(null, null, this.f, null);
         } else {
@@ -139,7 +139,7 @@ public class e7 extends FrameLayout implements NotificationCenter.NotificationCe
                 TL_account.RequirementToContact isUserContactBlocked = MessagesController.getInstance(i10).isUserContactBlocked(j10);
                 this.C = DialogObject.isPremiumBlocked(isUserContactBlocked);
                 this.E = DialogObject.getMessagesStarsPrice(isUserContactBlocked);
-                qVar.setTextColor(org.telegram.ui.ActionBar.j6.v0(this.C ? org.telegram.ui.ActionBar.j6.C6 : org.telegram.ui.ActionBar.j6.j5, f6Var));
+                qVar.setTextColor(org.telegram.ui.ActionBar.k6.v0(this.C ? org.telegram.ui.ActionBar.k6.C6 : org.telegram.ui.ActionBar.k6.j5, g6Var));
                 z5Var2.a(this.C);
                 z5Var.a(this.E > 0);
                 invalidate();
@@ -180,12 +180,12 @@ public class e7 extends FrameLayout implements NotificationCenter.NotificationCe
                 } else if (chat == null) {
                     qVar.setText("");
                 } else if (chat.monoforum) {
-                    qVar.setText(ag.f.i(chat, i10, false));
+                    qVar.setText(bg.e.i(chat, i10, false));
                 } else {
                     qVar.setText(chat.title);
                 }
                 if (ChatObject.isMonoForum(chat)) {
-                    ag.f.o(i10, chat, c7Var, p9Var);
+                    bg.e.o(i10, chat, c7Var, p9Var);
                 } else {
                     c7Var.k(i10, chat);
                     p9Var.e(chat, c7Var);
@@ -204,18 +204,18 @@ public class e7 extends FrameLayout implements NotificationCenter.NotificationCe
             return;
         }
         int i10 = R.id.spring_tag;
-        org.telegram.ui.ActionBar.k5 k5Var = this.c;
-        o1.j jVar = (o1.j) k5Var.getTag(i10);
+        org.telegram.ui.ActionBar.l5 l5Var = this.c;
+        o1.j jVar = (o1.j) l5Var.getTag(i10);
         if (jVar != null) {
             jVar.c();
         }
         if (z12) {
             if (z4) {
-                k5Var.l(MessagesController.getInstance(this.x).getPeerName(DialogObject.getPeerDialogId(tL_forumTopic.from_id)), false);
+                l5Var.l(MessagesController.getInstance(this.x).getPeerName(DialogObject.getPeerDialogId(tL_forumTopic.from_id)), false);
             } else {
-                k5Var.l(ag.f.j(tL_forumTopic, k5Var.getTextPaint(), null), false);
+                l5Var.l(bg.e.j(tL_forumTopic, l5Var.getTextPaint(), null), false);
             }
-            k5Var.requestLayout();
+            l5Var.requestLayout();
         }
         if (z10) {
             o1.j jVar2 = new o1.j(new kb.a(z12 ? 0.0f : 1000.0f));
@@ -228,12 +228,12 @@ public class e7 extends FrameLayout implements NotificationCenter.NotificationCe
                 public final void a(o1.h hVar, float f10, float f11) {
                     float f12 = f10 / 1000.0f;
                     e7 e7Var = e7.this;
-                    org.telegram.ui.ActionBar.k5 k5Var2 = e7Var.c;
-                    k5Var2.setAlpha(f12);
-                    gg.q qVar = e7Var.b;
+                    org.telegram.ui.ActionBar.l5 l5Var2 = e7Var.c;
+                    l5Var2.setAlpha(f12);
+                    hg.q qVar = e7Var.b;
                     float f13 = 1.0f - f12;
                     qVar.setAlpha(f13);
-                    k5Var2.setTranslationX(f13 * (-AndroidUtilities.dp(10.0f)));
+                    l5Var2.setTranslationX(f13 * (-AndroidUtilities.dp(10.0f)));
                     qVar.setTranslationX(f12 * AndroidUtilities.dp(10.0f));
                 }
             });
@@ -243,19 +243,19 @@ public class e7 extends FrameLayout implements NotificationCenter.NotificationCe
                     e7.this.c.setTag(R.id.spring_tag, null);
                 }
             });
-            k5Var.setTag(R.id.spring_tag, jVar2);
+            l5Var.setTag(R.id.spring_tag, jVar2);
             jVar2.f();
         } else {
-            gg.q qVar = this.b;
+            hg.q qVar = this.b;
             if (z12) {
-                k5Var.setAlpha(1.0f);
+                l5Var.setAlpha(1.0f);
                 qVar.setAlpha(0.0f);
-                k5Var.setTranslationX(0.0f);
+                l5Var.setTranslationX(0.0f);
                 qVar.setTranslationX(AndroidUtilities.dp(10.0f));
             } else {
-                k5Var.setAlpha(0.0f);
+                l5Var.setAlpha(0.0f);
                 qVar.setAlpha(1.0f);
-                k5Var.setTranslationX(-AndroidUtilities.dp(10.0f));
+                l5Var.setTranslationX(-AndroidUtilities.dp(10.0f));
                 qVar.setTranslationX(0.0f);
             }
         }
@@ -275,7 +275,7 @@ public class e7 extends FrameLayout implements NotificationCenter.NotificationCe
             boolean isPremiumBlocked = DialogObject.isPremiumBlocked(isUserContactBlocked);
             this.C = isPremiumBlocked;
             this.E = sendPaidMessagesStars;
-            this.b.setTextColor(org.telegram.ui.ActionBar.j6.v0(isPremiumBlocked ? org.telegram.ui.ActionBar.j6.C6 : org.telegram.ui.ActionBar.j6.j5, this.y));
+            this.b.setTextColor(org.telegram.ui.ActionBar.k6.v0(isPremiumBlocked ? org.telegram.ui.ActionBar.k6.C6 : org.telegram.ui.ActionBar.k6.j5, this.y));
             invalidate();
         }
     }
@@ -296,11 +296,11 @@ public class e7 extends FrameLayout implements NotificationCenter.NotificationCe
     */
     public final boolean drawChild(Canvas canvas, View view, long j10) {
         TLRPC.User user;
-        org.telegram.ui.ActionBar.f6 f6Var;
+        org.telegram.ui.ActionBar.g6 g6Var;
         float f10;
         float f11;
         boolean z4;
-        k01 k01Var;
+        l01 l01Var;
         boolean drawChild = super.drawChild(canvas, view, j10);
         org.telegram.ui.Components.p9 p9Var = this.a;
         if (view == p9Var && this.n != 2 && (user = this.h) != null && !MessagesController.isSupportUser(user)) {
@@ -308,9 +308,9 @@ public class e7 extends FrameLayout implements NotificationCenter.NotificationCe
             long j11 = elapsedRealtime - this.s;
             long j12 = j11 <= 17 ? j11 : 17L;
             this.s = elapsedRealtime;
-            float e = this.D.e(this.E > 0);
-            org.telegram.ui.ActionBar.f6 f6Var2 = this.y;
-            if (e > 0.0f) {
+            float e6 = this.D.e(this.E > 0);
+            org.telegram.ui.ActionBar.g6 g6Var2 = this.y;
+            if (e6 > 0.0f) {
                 float measuredWidth = (p9Var.getMeasuredWidth() / 2.0f) + p9Var.getLeft() + AndroidUtilities.dp(18.0f);
                 float measuredHeight = ((p9Var.getMeasuredHeight() / 2.0f) + p9Var.getTop()) - AndroidUtilities.dp(20.83f);
                 if (this.J != null) {
@@ -319,8 +319,8 @@ public class e7 extends FrameLayout implements NotificationCenter.NotificationCe
                     long j14 = this.E;
                     if (j13 != j14) {
                     }
-                    k01 k01Var2 = this.J;
-                    float dp = (k01Var2 != null ? 0.0f : k01Var2.c) + AndroidUtilities.dp(10.0f);
+                    l01 l01Var2 = this.J;
+                    float dp = (l01Var2 != null ? 0.0f : l01Var2.c) + AndroidUtilities.dp(10.0f);
                     float dp2 = AndroidUtilities.dp(14.33f);
                     RectF rectF = AndroidUtilities.rectTmp;
                     float f12 = dp / 2.0f;
@@ -328,20 +328,20 @@ public class e7 extends FrameLayout implements NotificationCenter.NotificationCe
                     float f14 = dp2 / 2.0f;
                     rectF.set(f13, measuredHeight - f14, measuredWidth + f12, f14 + measuredHeight);
                     rectF.inset(-AndroidUtilities.dp(1.33f), AndroidUtilities.dp(-1.33f));
-                    int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.h5, f6Var2);
+                    int v02 = org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.h5, g6Var2);
                     Paint paint = this.H;
                     paint.setColor(v02);
                     canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, paint);
                     rectF.inset(AndroidUtilities.dp(1.33f), AndroidUtilities.dp(1.33f));
-                    paint.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.B5, f6Var2));
+                    paint.setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.B5, g6Var2));
                     canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, paint);
-                    k01Var = this.J;
-                    if (k01Var == null) {
-                        f6Var = f6Var2;
+                    l01Var = this.J;
+                    if (l01Var == null) {
+                        g6Var = g6Var2;
                         f10 = 0.0f;
-                        k01Var.c(f13 + AndroidUtilities.dp(f11), measuredHeight, 1.0f, -1, canvas);
+                        l01Var.c(f13 + AndroidUtilities.dp(f11), measuredHeight, 1.0f, -1, canvas);
                     } else {
-                        f6Var = f6Var2;
+                        g6Var = g6Var2;
                         f10 = 0.0f;
                     }
                 } else {
@@ -351,9 +351,9 @@ public class e7 extends FrameLayout implements NotificationCenter.NotificationCe
                 long j15 = this.E;
                 this.I = j15;
                 sb.append(AndroidUtilities.formatWholeNumber((int) j15, 0));
-                this.J = new k01(lh.ja.R0(sb.toString(), 0.65f, null), 9.33f, AndroidUtilities.bold());
-                k01 k01Var22 = this.J;
-                float dp3 = (k01Var22 != null ? 0.0f : k01Var22.c) + AndroidUtilities.dp(10.0f);
+                this.J = new l01(mh.ja.R0(sb.toString(), 0.65f, null), 9.33f, AndroidUtilities.bold());
+                l01 l01Var22 = this.J;
+                float dp3 = (l01Var22 != null ? 0.0f : l01Var22.c) + AndroidUtilities.dp(10.0f);
                 float dp22 = AndroidUtilities.dp(14.33f);
                 RectF rectF2 = AndroidUtilities.rectTmp;
                 float f122 = dp3 / 2.0f;
@@ -361,42 +361,42 @@ public class e7 extends FrameLayout implements NotificationCenter.NotificationCe
                 float f142 = dp22 / 2.0f;
                 rectF2.set(f132, measuredHeight - f142, measuredWidth + f122, f142 + measuredHeight);
                 rectF2.inset(-AndroidUtilities.dp(1.33f), AndroidUtilities.dp(-1.33f));
-                int v022 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.h5, f6Var2);
+                int v022 = org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.h5, g6Var2);
                 Paint paint2 = this.H;
                 paint2.setColor(v022);
                 canvas.drawRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, paint2);
                 rectF2.inset(AndroidUtilities.dp(1.33f), AndroidUtilities.dp(1.33f));
-                paint2.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.B5, f6Var2));
+                paint2.setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.B5, g6Var2));
                 canvas.drawRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, paint2);
-                k01Var = this.J;
-                if (k01Var == null) {
+                l01Var = this.J;
+                if (l01Var == null) {
                 }
             } else {
-                f6Var = f6Var2;
+                g6Var = g6Var2;
                 f10 = 0.0f;
                 f11 = 5.0f;
             }
-            float e6 = this.B.e(this.C);
-            if (e6 > f10) {
+            float e10 = this.B.e(this.C);
+            if (e10 > f10) {
                 int bottom = p9Var.getBottom() - AndroidUtilities.dp(9.0f);
                 int right = p9Var.getRight() - AndroidUtilities.dp(9.33f);
                 canvas.save();
-                org.telegram.ui.ActionBar.j6.t0.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, f6Var));
+                org.telegram.ui.ActionBar.k6.t0.setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.d6, g6Var));
                 float f15 = right;
                 float f16 = bottom;
-                canvas.drawCircle(f15, f16, AndroidUtilities.dp(12.0f) * e6, org.telegram.ui.ActionBar.j6.t0);
+                canvas.drawCircle(f15, f16, AndroidUtilities.dp(12.0f) * e10, org.telegram.ui.ActionBar.k6.t0);
                 if (this.F == null) {
-                    this.F = new eg.q1(org.telegram.ui.ActionBar.j6.Lj, org.telegram.ui.ActionBar.j6.Mj, -1, -1, this.y);
+                    this.F = new fg.p1(org.telegram.ui.ActionBar.k6.Lj, org.telegram.ui.ActionBar.k6.Mj, -1, -1, this.y);
                 }
                 this.F.d(right - AndroidUtilities.dp(10.0f), 0.0f, bottom - AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f) + right, 0.0f, AndroidUtilities.dp(10.0f) + bottom);
-                canvas.drawCircle(f15, f16, AndroidUtilities.dp(10.0f) * e6, this.F.f);
+                canvas.drawCircle(f15, f16, AndroidUtilities.dp(10.0f) * e10, this.F.f);
                 if (this.G == null) {
                     Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_mini_lock2).mutate();
                     this.G = mutate;
                     mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
                 }
-                this.G.setBounds((int) (f15 - (((r2.getIntrinsicWidth() / 2.0f) * 0.875f) * e6)), (int) (f16 - (((this.G.getIntrinsicHeight() / 2.0f) * 0.875f) * e6)), (int) (((this.G.getIntrinsicWidth() / 2.0f) * 0.875f * e6) + f15), (int) (((this.G.getIntrinsicHeight() / 2.0f) * 0.875f * e6) + f16));
-                this.G.setAlpha((int) (255.0f * e6));
+                this.G.setBounds((int) (f15 - (((r2.getIntrinsicWidth() / 2.0f) * 0.875f) * e10)), (int) (f16 - (((this.G.getIntrinsicHeight() / 2.0f) * 0.875f) * e10)), (int) (((this.G.getIntrinsicWidth() / 2.0f) * 0.875f * e10) + f15), (int) (((this.G.getIntrinsicHeight() / 2.0f) * 0.875f * e10) + f16));
+                this.G.setAlpha((int) (255.0f * e10));
                 this.G.draw(canvas);
                 canvas.restore();
             }
@@ -410,14 +410,14 @@ public class e7 extends FrameLayout implements NotificationCenter.NotificationCe
                         if (!z4 || this.r != f10) {
                             int bottom2 = p9Var.getBottom() - AndroidUtilities.dp(6.0f);
                             int right2 = p9Var.getRight() - AndroidUtilities.dp(10.0f);
-                            org.telegram.ui.ActionBar.j6.t0.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, f6Var));
+                            org.telegram.ui.ActionBar.k6.t0.setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.d6, g6Var));
                             float f17 = right2;
                             float f18 = bottom2;
-                            float f19 = 1.0f - e6;
-                            float f20 = 1.0f - e;
-                            canvas.drawCircle(f17, f18, AndroidUtilities.dp(7.0f) * this.r * f19 * f20, org.telegram.ui.ActionBar.j6.t0);
-                            org.telegram.ui.ActionBar.j6.t0.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.T8, f6Var));
-                            canvas.drawCircle(f17, f18, e2.c.z(AndroidUtilities.dp(f11), this.r, f19, f20), org.telegram.ui.ActionBar.j6.t0);
+                            float f19 = 1.0f - e10;
+                            float f20 = 1.0f - e6;
+                            canvas.drawCircle(f17, f18, AndroidUtilities.dp(7.0f) * this.r * f19 * f20, org.telegram.ui.ActionBar.k6.t0);
+                            org.telegram.ui.ActionBar.k6.t0.setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.T8, g6Var));
+                            canvas.drawCircle(f17, f18, e2.c.z(AndroidUtilities.dp(f11), this.r, f19, f20), org.telegram.ui.ActionBar.k6.t0);
                             if (z4) {
                                 float f21 = this.r;
                                 if (f21 > f10) {
@@ -451,14 +451,14 @@ public class e7 extends FrameLayout implements NotificationCenter.NotificationCe
             }
             int bottom22 = p9Var.getBottom() - AndroidUtilities.dp(6.0f);
             int right22 = p9Var.getRight() - AndroidUtilities.dp(10.0f);
-            org.telegram.ui.ActionBar.j6.t0.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, f6Var));
+            org.telegram.ui.ActionBar.k6.t0.setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.d6, g6Var));
             float f172 = right22;
             float f182 = bottom22;
-            float f192 = 1.0f - e6;
-            float f202 = 1.0f - e;
-            canvas.drawCircle(f172, f182, AndroidUtilities.dp(7.0f) * this.r * f192 * f202, org.telegram.ui.ActionBar.j6.t0);
-            org.telegram.ui.ActionBar.j6.t0.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.T8, f6Var));
-            canvas.drawCircle(f172, f182, e2.c.z(AndroidUtilities.dp(f11), this.r, f192, f202), org.telegram.ui.ActionBar.j6.t0);
+            float f192 = 1.0f - e10;
+            float f202 = 1.0f - e6;
+            canvas.drawCircle(f172, f182, AndroidUtilities.dp(7.0f) * this.r * f192 * f202, org.telegram.ui.ActionBar.k6.t0);
+            org.telegram.ui.ActionBar.k6.t0.setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.T8, g6Var));
+            canvas.drawCircle(f172, f182, e2.c.z(AndroidUtilities.dp(f11), this.r, f192, f202), org.telegram.ui.ActionBar.k6.t0);
             if (z4) {
             }
         }
@@ -494,12 +494,12 @@ public class e7 extends FrameLayout implements NotificationCenter.NotificationCe
         org.telegram.ui.Components.p9 p9Var = this.a;
         int measuredWidth = (p9Var.getMeasuredWidth() / 2) + p9Var.getLeft();
         int measuredHeight = (p9Var.getMeasuredHeight() / 2) + p9Var.getTop();
-        org.telegram.ui.ActionBar.j6.o0.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.B5, this.y));
-        org.telegram.ui.ActionBar.j6.o0.setAlpha((int) (this.d.getProgress() * 255.0f));
+        org.telegram.ui.ActionBar.k6.o0.setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.B5, this.y));
+        org.telegram.ui.ActionBar.k6.o0.setAlpha((int) (this.d.getProgress() * 255.0f));
         int dp = AndroidUtilities.dp(this.n == 2 ? 24.0f : 28.0f);
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set(measuredWidth - dp, measuredHeight - dp, measuredWidth + dp, measuredHeight + dp);
-        canvas.drawRoundRect(rectF, p9Var.getRoundRadius()[0], p9Var.getRoundRadius()[0], org.telegram.ui.ActionBar.j6.o0);
+        canvas.drawRoundRect(rectF, p9Var.getRoundRadius()[0], p9Var.getRoundRadius()[0], org.telegram.ui.ActionBar.k6.o0);
         super.onDraw(canvas);
     }
 

@@ -7,32 +7,32 @@ import android.graphics.RectF;
 import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class g extends ViewGroup {
-    public final ef.f a;
+    public final ef.e a;
 
-    public g(LaunchActivity launchActivity, ef.f fVar) {
+    public g(LaunchActivity launchActivity, ef.e eVar) {
         super(launchActivity);
-        this.a = fVar;
+        this.a = eVar;
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        ef.f fVar = this.a;
-        Path path = fVar.m;
-        float f10 = (1.0f - fVar.o) * fVar.j.e;
+        ef.e eVar = this.a;
+        Path path = eVar.m;
+        float f10 = (1.0f - eVar.o) * eVar.j.e;
         boolean z4 = f10 > 1.0f;
-        canvas.drawColor(i0.a.k(j6.w0(null, j6.d6, false), (int) Math.min(fVar.o * 420.0f, 255.0f)));
-        fVar.d.a(canvas, 1.0f);
+        canvas.drawColor(i0.a.k(k6.w0(null, k6.d6, false), (int) Math.min(eVar.o * 420.0f, 255.0f)));
+        eVar.d.a(canvas, 1.0f);
         if (z4) {
-            RectF rectF = fVar.l;
-            if (fVar.k != f10) {
-                fVar.k = f10;
-                rectF.set(fVar.c);
+            RectF rectF = eVar.l;
+            if (eVar.k != f10) {
+                eVar.k = f10;
+                rectF.set(eVar.c);
                 path.reset();
                 path.addRoundRect(rectF, f10, f10, Path.Direction.CW);
                 path.close();
@@ -41,7 +41,7 @@ public final class g extends ViewGroup {
             canvas.clipPath(path);
         }
         super.dispatchDraw(canvas);
-        fVar.e.a(canvas, 1.0f - fVar.o);
+        eVar.e.a(canvas, 1.0f - eVar.o);
         if (z4) {
             canvas.restore();
         }
@@ -62,15 +62,15 @@ public final class g extends ViewGroup {
         int size2 = View.MeasureSpec.getSize(i11);
         setMeasuredDimension(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
         boolean z4 = ((a) getParent()).d;
-        ef.f fVar = this.a;
-        Rect rect = fVar.c;
+        ef.e eVar = this.a;
+        Rect rect = eVar.c;
         if (z4) {
             rect.set(0, 0, size, size2);
         } else {
-            rect.set(fVar.b);
+            rect.set(eVar.b);
         }
         for (int i12 = 0; i12 < getChildCount(); i12++) {
-            getChildAt(i12).measure(View.MeasureSpec.makeMeasureSpec(fVar.c.width(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(fVar.c.height(), TLObject.FLAG_30));
+            getChildAt(i12).measure(View.MeasureSpec.makeMeasureSpec(eVar.c.width(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(eVar.c.height(), TLObject.FLAG_30));
         }
     }
 }

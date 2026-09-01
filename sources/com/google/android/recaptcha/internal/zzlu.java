@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
 import dd.p;
-import k7.p7;
+import k7.q7;
 import ld.e0;
 import uc.c;
 import vc.a;
 import wc.i;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 final class zzlu extends i implements p {
     int zza;
@@ -41,7 +41,7 @@ final class zzlu extends i implements p {
         int i10 = this.zza;
         sc.i iVar = sc.i.a;
         if (i10 == 0) {
-            p7.b(obj);
+            q7.b(obj);
             zzhk zzhkVar3 = (zzhk) this.zzc;
             zzdj zzn = this.zzb.zzn();
             zzmc[] zzmcVarArr = {zzmc.zzd, zzmc.zzc, zzmc.zzb};
@@ -56,7 +56,7 @@ final class zzlu extends i implements p {
         }
         if (i10 != 1) {
             zzhkVar2 = (zzhk) this.zzc;
-            p7.b(obj);
+            q7.b(obj);
             zzly zzlyVar = this.zzb;
             zzlyVar.zza = e0.a();
             zzD = zzlyVar.zzD();
@@ -64,7 +64,7 @@ final class zzlu extends i implements p {
             return iVar;
         }
         zzhkVar = (zzhk) this.zzc;
-        p7.b(obj);
+        q7.b(obj);
         if (((Boolean) obj).booleanValue()) {
             return iVar;
         }

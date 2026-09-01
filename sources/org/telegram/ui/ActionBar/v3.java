@@ -1,73 +1,17 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.ValueAnimator;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RadialGradient;
+import android.content.Context;
+import android.graphics.Canvas;
 import android.graphics.RectF;
-import android.graphics.Shader;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.rc;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class v3 {
-    public final RectF a = new RectF();
-    public final w3 b;
-    public final m3 c;
-    public final k3 d;
-    public final Paint e;
-    public final Matrix f;
-    public final float[] g;
-    public final float[] h;
-    public float i;
-    public ValueAnimator j;
-    public final rc k;
-    public final Paint l;
-    public final RectF m;
-    public final Path n;
-    public final Paint o;
-    public final RadialGradient p;
-    public final Matrix q;
-    public final Paint r;
+public interface v3 {
+    Context getContext();
 
-    public v3(w3 w3Var, m3 m3Var, k3 k3Var) {
-        Paint paint = new Paint(1);
-        this.e = paint;
-        this.f = new Matrix();
-        this.g = new float[8];
-        this.h = new float[8];
-        this.i = 0.0f;
-        this.l = new Paint(1);
-        this.m = new RectF();
-        this.n = new Path();
-        this.o = new Paint(3);
-        this.p = new RadialGradient(0.0f, 0.0f, 255.0f, new int[]{0, 805306368}, new float[]{0.5f, 1.0f}, Shader.TileMode.CLAMP);
-        this.q = new Matrix();
-        this.r = new Paint(1);
-        this.b = w3Var;
-        this.c = m3Var;
-        this.d = k3Var;
-        this.k = new rc(w3Var);
-        paint.setColor(m3Var.p);
-    }
+    RectF getRect();
 
-    public final void a(float f10) {
-        ValueAnimator valueAnimator = this.j;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.i, f10);
-        this.j = ofFloat;
-        ofFloat.addUpdateListener(new x0(this, 5));
-        this.j.addListener(new a1(this, f10, 1));
-        if (Math.abs(f10) < 0.1f) {
-            AndroidUtilities.applySpring(this.j, 285.0d, 20.0d);
-        } else {
-            this.j.setInterpolator(nr.h);
-        }
-        this.j.start();
-    }
+    void setDrawingFromOverlay(boolean z4);
+
+    float z(Canvas canvas, RectF rectF, float f10, RectF rectF2, float f11);
 }

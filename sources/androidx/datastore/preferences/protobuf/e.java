@@ -1,10 +1,10 @@
 package androidx.datastore.preferences.protobuf;
 
-import com.google.android.gms.internal.cast.x4;
+import com.google.android.gms.internal.cast.w4;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class e implements Iterator {
     public final /* synthetic */ int a = 0;
@@ -71,15 +71,15 @@ public final class e implements Iterator {
                     throw new NoSuchElementException();
                 }
                 this.b = i12 + 1;
-                return Byte.valueOf(((x4) this.d).n(i12));
+                return Byte.valueOf(((w4) this.d).n(i12));
             case 3:
                 try {
                     com.google.android.gms.internal.clearcut.o oVar = (com.google.android.gms.internal.clearcut.o) this.d;
                     int i13 = this.b;
                     this.b = i13 + 1;
                     return Byte.valueOf(oVar.o(i13));
-                } catch (IndexOutOfBoundsException e) {
-                    throw new NoSuchElementException(e.getMessage());
+                } catch (IndexOutOfBoundsException e6) {
+                    throw new NoSuchElementException(e6.getMessage());
                 }
             case 4:
                 int i14 = this.b;
@@ -116,9 +116,9 @@ public final class e implements Iterator {
         }
     }
 
-    public e(x4 x4Var) {
-        this.d = x4Var;
-        this.c = x4Var.o();
+    public e(w4 w4Var) {
+        this.d = w4Var;
+        this.c = w4Var.o();
     }
 
     public e(com.google.android.gms.internal.clearcut.o oVar) {

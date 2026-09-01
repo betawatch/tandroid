@@ -1,74 +1,38 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Bitmap;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bt implements r0.o, org.telegram.ui.Components.ok0 {
-    public final /* synthetic */ pt a;
+public final /* synthetic */ class bt implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qt b;
 
-    public /* synthetic */ bt(pt ptVar) {
-        this.a = ptVar;
+    public /* synthetic */ bt(qt qtVar, int i10) {
+        this.a = i10;
+        this.b = qtVar;
     }
 
-    @Override // r0.o
-    public r0.m1 N0(View view, r0.m1 m1Var) {
-        this.a.q = AndroidUtilities.getDefaultWindowInsets(m1Var, false);
-        return m1Var;
-    }
-
-    @Override // org.telegram.ui.Components.ok0
-    public /* synthetic */ boolean h() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.ok0
-    public void i(View view, mg.q0 q0Var, boolean z4, boolean z10) {
-        if (q0Var == null) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.c0 = null;
+                break;
+            case 1:
+                qt qtVar = this.b;
+                qtVar.A.setImageBitmap((Bitmap) null);
+                org.telegram.ui.Components.jd0 jd0Var = qtVar.C;
+                if (jd0Var != null) {
+                    jd0Var.a();
+                    qtVar.z.removeView(qtVar.C);
+                    qtVar.C = null;
+                    break;
+                }
+                break;
+            default:
+                this.b.Q.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(420L).setInterpolator(org.telegram.ui.Components.pr.h).start();
+                break;
         }
-        pt ptVar = this.a;
-        mg.d0 reactionsWindow = ptVar.P.getReactionsWindow();
-        if (!ptVar.o.contains(q0Var.f)) {
-            ptVar.o.add(q0Var.f);
-            if (ptVar.o.size() > 7) {
-                ptVar.o.remove(0);
-            }
-        } else if (ptVar.o.size() <= 1) {
-            return;
-        } else {
-            ptVar.o.remove(q0Var.f);
-        }
-        ptVar.P.setSelectedEmojis(ptVar.o);
-        if (reactionsWindow != null) {
-            mg.z zVar = reactionsWindow.m;
-            ptVar.P.p(null, null, false);
-            if (zVar != null) {
-                zVar.setSelectedReactions(ptVar.o);
-                zVar.setRecentReactions(ptVar.P.S);
-            }
-            reactionsWindow.d();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ok0
-    public /* synthetic */ boolean j() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ok0
-    public /* synthetic */ boolean s() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ok0
-    public /* synthetic */ void o() {
-    }
-
-    @Override // org.telegram.ui.Components.ok0
-    public /* synthetic */ void n(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i10, boolean z4) {
     }
 }

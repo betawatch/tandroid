@@ -11,19 +11,19 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class t2 extends View implements org.telegram.ui.Cells.l9, g3 {
-    public final n70 a;
+    public final o70 a;
     public final j4 b;
     public d3 c;
     public int d;
     public int e;
     public TL_iv.pageBlockSubheader f;
 
-    public t2(Context context, n70 n70Var, j4 j4Var) {
+    public t2(Context context, o70 o70Var, j4 j4Var) {
         super(context);
-        this.a = n70Var;
+        this.a = o70Var;
         this.b = j4Var;
     }
 
@@ -117,20 +117,20 @@ public final class t2 extends View implements org.telegram.ui.Cells.l9, g3 {
     public final void onMeasure(int i10, int i11) {
         int i12;
         int size = View.MeasureSpec.getSize(i10);
-        n70 n70Var = this.a;
-        n70Var.getClass();
+        o70 o70Var = this.a;
+        o70Var.getClass();
         this.d = AndroidUtilities.dp(18);
-        n70Var.getClass();
+        o70Var.getClass();
         this.e = AndroidUtilities.dp(8);
         TL_iv.pageBlockSubheader pageblocksubheader = this.f;
         if (pageblocksubheader != null) {
             TL_iv.RichText richText = pageblocksubheader.text;
-            n70 n70Var2 = this.a;
-            n70Var2.getClass();
+            o70 o70Var2 = this.a;
+            o70Var2.getClass();
             int dp = size - AndroidUtilities.dp(36);
             TL_iv.pageBlockSubheader pageblocksubheader2 = this.f;
             j4 j4Var = this.b;
-            d3 p10 = l4.p(n70Var2, this, null, richText, dp, 0, pageblocksubheader2, (j4Var == null || !j4Var.D) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.kw0.a(), 0, this.b);
+            d3 p10 = l4.p(o70Var2, this, null, richText, dp, 0, pageblocksubheader2, (j4Var == null || !j4Var.D) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.lw0.a(), 0, this.b);
             this.c = p10;
             if (p10 != null) {
                 int height = p10.d.getHeight() + this.e;

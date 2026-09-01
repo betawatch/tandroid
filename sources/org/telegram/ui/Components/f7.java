@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f7 implements o1.g {
     public final /* synthetic */ int a;
@@ -32,17 +32,17 @@ public final /* synthetic */ class f7 implements o1.g {
                 }
                 break;
             case 3:
-                li liVar = (li) ((lh.k3) this.b).d;
-                di diVar = liVar.w0;
-                if (diVar == liVar.j0 || diVar == liVar.k0 || (liVar.C && liVar.q1 != null)) {
-                    liVar.a2(1);
+                mi miVar = (mi) ((mh.k3) this.b).d;
+                ei eiVar = miVar.w0;
+                if (eiVar == miVar.j0 || eiVar == miVar.k0 || (miVar.C && miVar.q1 != null)) {
+                    miVar.a2(1);
                 }
-                liVar.w0.k(liVar.i2);
-                viewGroup = ((org.telegram.ui.ActionBar.g3) liVar).containerView;
+                miVar.w0.k(miVar.i2);
+                viewGroup = ((org.telegram.ui.ActionBar.h3) miVar).containerView;
                 viewGroup.invalidate();
                 break;
             default:
-                ((dc0) this.b).z();
+                ((fc0) this.b).z();
                 break;
         }
     }

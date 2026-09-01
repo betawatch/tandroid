@@ -3,15 +3,15 @@ package org.telegram.ui.Cells;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.op;
-import org.telegram.ui.Components.ph0;
-import org.telegram.ui.Components.ss0;
-import org.telegram.ui.Components.zk0;
-import org.telegram.ui.Components.zx;
-import org.telegram.ui.vq;
+import org.telegram.ui.Components.al0;
+import org.telegram.ui.Components.cy;
+import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.qp;
+import org.telegram.ui.Components.rh0;
+import org.telegram.ui.Components.ts0;
+import org.telegram.ui.wq;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class b4 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -41,66 +41,66 @@ public final class b4 extends AnimatorListenerAdapter {
                 ((org.telegram.ui.Components.w7) this.c).a[this.b].setVisibility(8);
                 break;
             case 3:
-                ((op) this.c).a[this.b].animate().scaleX(1.0f).scaleY(1.0f).setInterpolator(nr.g).setStartDelay(0L).setDuration(100L).start();
+                ((qp) this.c).a[this.b].animate().scaleX(1.0f).scaleY(1.0f).setInterpolator(pr.g).setStartDelay(0L).setDuration(100L).start();
                 break;
             case 4:
-                zx zxVar = (zx) this.c;
-                eg.c1 c1Var = zxVar.h;
+                cy cyVar = (cy) this.c;
+                fg.b1 b1Var = cyVar.h;
                 int i10 = this.b;
-                c1Var.setVisibility(i10 == 1 ? 0 : 8);
-                zxVar.e.setVisibility(i10 == 2 ? 0 : 8);
-                zxVar.f.setVisibility(i10 == 3 ? 0 : 8);
+                b1Var.setVisibility(i10 == 1 ? 0 : 8);
+                cyVar.e.setVisibility(i10 == 2 ? 0 : 8);
+                cyVar.f.setVisibility(i10 == 3 ? 0 : 8);
                 break;
             case 5:
-                ph0 ph0Var = (ph0) this.c;
-                ph0Var.E = null;
-                ph0Var.M.a1.delete(this.b);
+                rh0 rh0Var = (rh0) this.c;
+                rh0Var.E = null;
+                rh0Var.M.a1.delete(this.b);
                 break;
             case 6:
-                vq vqVar = (vq) this.c;
-                ((zk0) vqVar.d).b.remove(this.b);
-                zk0 zk0Var = (zk0) vqVar.d;
-                zk0Var.d = true;
-                zk0Var.a.invalidate();
+                wq wqVar = (wq) this.c;
+                ((al0) wqVar.d).b.remove(this.b);
+                al0 al0Var = (al0) wqVar.d;
+                al0Var.d = true;
+                al0Var.a.invalidate();
                 break;
             case 7:
-                ss0 ss0Var = (ss0) this.c;
-                ss0Var.e.L1.remove(this.b);
-                ss0Var.a.invalidate();
+                ts0 ts0Var = (ts0) this.c;
+                ts0Var.e.L1.remove(this.b);
+                ts0Var.a.invalidate();
                 break;
             case 8:
-                org.telegram.ui.Components.voip.a1 a1Var = (org.telegram.ui.Components.voip.a1) this.c;
-                a1Var.x = -1;
-                a1Var.v = this.b;
-                a1Var.s = 0.0f;
-                a1Var.R = null;
-                a1Var.e();
+                org.telegram.ui.Components.voip.b1 b1Var2 = (org.telegram.ui.Components.voip.b1) this.c;
+                b1Var2.x = -1;
+                b1Var2.v = this.b;
+                b1Var2.s = 0.0f;
+                b1Var2.R = null;
+                b1Var2.e();
                 break;
             case 9:
-                rh.q2 q2Var = (rh.q2) this.c;
-                q2Var.M.setColor(this.b);
-                q2Var.A();
-                q2Var.e.invalidate();
-                org.telegram.ui.f3 f3Var = q2Var.R0;
+                sh.p2 p2Var = (sh.p2) this.c;
+                p2Var.M.setColor(this.b);
+                p2Var.A();
+                p2Var.e.invalidate();
+                org.telegram.ui.f3 f3Var = p2Var.R0;
                 if (f3Var != null) {
-                    f3Var.b(AndroidUtilities.computePerceivedBrightness(q2Var.M.getColor()) <= 0.721f, false);
-                    q2Var.R0.setBackgroundColor(q2Var.M.getColor());
+                    f3Var.b(AndroidUtilities.computePerceivedBrightness(p2Var.M.getColor()) <= 0.721f, false);
+                    p2Var.R0.setBackgroundColor(p2Var.M.getColor());
                 }
-                q2Var.F();
+                p2Var.F();
                 break;
             case 10:
-                rh.o3 o3Var = (rh.o3) this.c;
-                rh.j3 j3Var = o3Var.n;
-                if (j3Var.getWebView() != null) {
-                    j3Var.getWebView().setScrollY(this.b);
+                sh.n3 n3Var = (sh.n3) this.c;
+                sh.i3 i3Var = n3Var.n;
+                if (i3Var.getWebView() != null) {
+                    i3Var.getWebView().setScrollY(this.b);
                 }
-                if (animator == o3Var.r) {
-                    o3Var.r = null;
+                if (animator == n3Var.r) {
+                    n3Var.r = null;
                     break;
                 }
                 break;
             default:
-                vh.o4 o4Var = (vh.o4) this.c;
+                wh.o4 o4Var = (wh.o4) this.c;
                 o4Var.T = this.b;
                 o4Var.U = 0.0f;
                 o4Var.requestLayout();
@@ -113,10 +113,10 @@ public final class b4 extends AnimatorListenerAdapter {
     public void onAnimationStart(Animator animator) {
         switch (this.a) {
             case 4:
-                zx zxVar = (zx) this.c;
-                zxVar.h.setVisibility(0);
-                zxVar.e.setVisibility(0);
-                zxVar.f.setVisibility(0);
+                cy cyVar = (cy) this.c;
+                cyVar.h.setVisibility(0);
+                cyVar.e.setVisibility(0);
+                cyVar.f.setVisibility(0);
                 break;
             default:
                 super.onAnimationStart(animator);

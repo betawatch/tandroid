@@ -1,28 +1,43 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.messenger.Utilities;
+import java.util.ArrayList;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bw implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Activity b;
+public final /* synthetic */ class bw implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ py b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ HashSet f;
 
-    public /* synthetic */ bw(Activity activity, int i10) {
-        this.a = i10;
-        this.b = activity;
+    public /* synthetic */ bw(py pyVar, int i10, ArrayList arrayList, boolean z4, HashSet hashSet) {
+        this.b = pyVar;
+        this.d = i10;
+        this.c = arrayList;
+        this.e = z4;
+        this.f = hashSet;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                oy.A0(this.b, (Boolean) obj);
+                py.o0(this.b, this.d, this.c, this.e, this.f);
                 break;
             default:
-                oy.r0(this.b, (Boolean) obj);
+                this.b.r4(this.c, this.d, false, this.e, this.f);
                 break;
         }
+    }
+
+    public /* synthetic */ bw(py pyVar, ArrayList arrayList, int i10, boolean z4, HashSet hashSet) {
+        this.b = pyVar;
+        this.c = arrayList;
+        this.d = i10;
+        this.e = z4;
+        this.f = hashSet;
     }
 }

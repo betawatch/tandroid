@@ -1,36 +1,52 @@
 package org.telegram.ui;
 
-import android.graphics.Outline;
-import android.graphics.Rect;
-import android.view.View;
-import android.view.ViewOutlineProvider;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class k51 extends ViewOutlineProvider {
-    public final Rect a = new Rect();
-    public final /* synthetic */ Integer b;
-    public final /* synthetic */ q61 c;
+public final class k51 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ r61 c;
 
-    public k51(q61 q61Var, Integer num) {
-        this.c = q61Var;
-        this.b = num;
+    public /* synthetic */ k51(r61 r61Var, boolean z4, int i10) {
+        this.a = i10;
+        this.c = r61Var;
+        this.b = z4;
     }
 
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        float width = (this.b == null ? view.getWidth() / 2.0f : r0.intValue()) + AndroidUtilities.dp(20.0f);
-        float width2 = (view.getWidth() - view.getPaddingLeft()) - view.getPaddingRight();
-        float height = (view.getHeight() - view.getPaddingBottom()) - view.getPaddingTop();
-        q61 q61Var = this.c;
-        boolean n10 = q61Var.n();
-        Rect rect = this.a;
-        if (n10) {
-            rect.set((int) ((width - (q61Var.X0 * width)) + view.getPaddingLeft()), (int) e2.c.w(1.0f, q61Var.Y0, AndroidUtilities.dp(q61Var.a1), e2.c.w(1.0f, q61Var.Y0, height, view.getPaddingTop())), (int) (((width2 - width) * q61Var.X0) + view.getPaddingLeft() + width), (int) e2.c.w(1.0f, q61Var.Y0, AndroidUtilities.dp(q61Var.a1), view.getPaddingTop() + height));
-        } else {
-            rect.set((int) ((width - (q61Var.X0 * width)) + view.getPaddingLeft()), view.getPaddingTop(), (int) (((width2 - width) * q61Var.X0) + view.getPaddingLeft() + width), (int) ((height * q61Var.Y0) + view.getPaddingTop()));
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        switch (this.a) {
+            case 0:
+                r61 r61Var = this.c;
+                d51 d51Var = r61Var.f0;
+                boolean z4 = this.b;
+                d51Var.setVisibility(z4 ? 0 : 8);
+                r61Var.e0.setVisibility(z4 ? 8 : 0);
+                r61Var.B1 = null;
+                if (!z4 && (arrayList2 = r61Var.x1) != null) {
+                    arrayList2.clear();
+                    ArrayList arrayList3 = r61Var.A1;
+                    if (arrayList3 != null) {
+                        arrayList3.clear();
+                    }
+                    r61Var.n0.E(false);
+                }
+                if (!z4 && (arrayList = r61Var.y1) != null) {
+                    arrayList.clear();
+                    break;
+                }
+                break;
+            default:
+                r61 r61Var2 = this.c;
+                r61Var2.g0.setVisibility((this.b && r61Var2.f0.getVisibility() == 0) ? 0 : 8);
+                r61Var2.E1 = null;
+                break;
         }
-        outline.setRoundRect(rect, AndroidUtilities.dp(12.0f));
     }
 }

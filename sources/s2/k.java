@@ -1,23 +1,24 @@
 package s2;
 
-import j7.l5;
+import androidx.biometric.f0;
+import j7.m5;
 import java.nio.ByteBuffer;
 import java.util.Date;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class k extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ a3.c B;
-    public static final /* synthetic */ a3.c C;
-    public static final /* synthetic */ a3.c D;
-    public static final /* synthetic */ a3.c E;
-    public static final /* synthetic */ a3.c F;
-    public static final /* synthetic */ a3.c s;
-    public static final /* synthetic */ a3.c v;
-    public static final /* synthetic */ a3.c w;
-    public static final /* synthetic */ a3.c x;
-    public static final /* synthetic */ a3.c y;
+    public static final /* synthetic */ f0 B;
+    public static final /* synthetic */ f0 C;
+    public static final /* synthetic */ f0 D;
+    public static final /* synthetic */ f0 E;
+    public static final /* synthetic */ f0 F;
+    public static final /* synthetic */ f0 s;
+    public static final /* synthetic */ f0 v;
+    public static final /* synthetic */ f0 w;
+    public static final /* synthetic */ f0 x;
+    public static final /* synthetic */ f0 y;
     public Date e;
     public Date f;
     public long h;
@@ -43,13 +44,13 @@ public final class k extends com.googlecode.mp4parser.c {
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
         if (e() == 1) {
-            this.e = l5.b(r2.b.j(byteBuffer));
-            this.f = l5.b(r2.b.j(byteBuffer));
+            this.e = m5.b(r2.b.j(byteBuffer));
+            this.f = m5.b(r2.b.j(byteBuffer));
             this.h = r2.b.i(byteBuffer);
             this.n = r2.b.j(byteBuffer);
         } else {
-            this.e = l5.b(r2.b.i(byteBuffer));
-            this.f = l5.b(r2.b.i(byteBuffer));
+            this.e = m5.b(r2.b.i(byteBuffer));
+            this.f = m5.b(r2.b.i(byteBuffer));
             this.h = r2.b.i(byteBuffer);
             this.n = r2.b.i(byteBuffer);
         }
@@ -66,13 +67,13 @@ public final class k extends com.googlecode.mp4parser.c {
     public final void getContent(ByteBuffer byteBuffer) {
         i(byteBuffer);
         if (e() == 1) {
-            byteBuffer.putLong(l5.a(this.e));
-            byteBuffer.putLong(l5.a(this.f));
+            byteBuffer.putLong(m5.a(this.e));
+            byteBuffer.putLong(m5.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putLong(this.n);
         } else {
-            byteBuffer.putInt((int) l5.a(this.e));
-            byteBuffer.putInt((int) l5.a(this.f));
+            byteBuffer.putInt((int) m5.a(this.e));
+            byteBuffer.putInt((int) m5.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putInt((int) this.n);
         }
@@ -94,23 +95,23 @@ public final class k extends com.googlecode.mp4parser.c {
     }
 
     public final String toString() {
-        com.google.firebase.messaging.r b10 = de.a.b(F, this, this);
+        sf.e b10 = de.a.b(F, this, this);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb = new StringBuilder("MediaHeaderBox[creationTime=");
-        yh.v(de.a.b(s, this, this));
+        yh.x(de.a.b(s, this, this));
         sb.append(this.e);
         sb.append(";modificationTime=");
-        yh.v(de.a.b(v, this, this));
+        yh.x(de.a.b(v, this, this));
         sb.append(this.f);
         sb.append(";timescale=");
-        yh.v(de.a.b(w, this, this));
+        yh.x(de.a.b(w, this, this));
         sb.append(this.h);
         sb.append(";duration=");
-        yh.v(de.a.b(x, this, this));
+        yh.x(de.a.b(x, this, this));
         sb.append(this.n);
         sb.append(";language=");
-        yh.v(de.a.b(y, this, this));
+        yh.x(de.a.b(y, this, this));
         return android.support.v4.media.a.r(sb, this.r, "]");
     }
 }

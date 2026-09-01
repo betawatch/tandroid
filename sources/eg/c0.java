@@ -1,51 +1,55 @@
 package eg;
 
-import android.view.View;
-import gg.v2;
-import org.telegram.ui.Components.kl0;
-import org.telegram.ui.PremiumPreviewFragment;
+import android.content.DialogInterface;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.ui.Components.c11;
+import org.telegram.ui.d60;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c0 implements org.telegram.ui.ActionBar.c2, kl0 {
+public final /* synthetic */ class c0 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ v0 b;
 
-    public /* synthetic */ c0(v0 v0Var, int i10) {
+    public /* synthetic */ c0(int i10) {
         this.a = i10;
-        this.b = v0Var;
     }
 
-    @Override // org.telegram.ui.Components.kl0
-    public boolean f(int i10, View view) {
-        v0 v0Var = this.b;
-        v0Var.d.getOnItemClickListener().f(i10, view);
-        if (v0Var.e0 != 19) {
-            try {
-                view.performHapticFeedback(0);
-            } catch (Exception unused) {
-            }
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.c2
-    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                v0 v0Var = this.b;
-                v0Var.H0.presentFragment(new PremiumPreviewFragment(0, null));
-                v0Var.dismiss();
-                d2Var.dismiss();
+                MediaController.forceBroadcastNewPhotos = false;
                 break;
             case 1:
-                d2Var.dismiss();
-                this.b.n1();
+                org.telegram.ui.c.a = false;
+                break;
+            case 2:
+                break;
+            case 3:
+                SharedConfig.BackgroundActivityPrefs.increaseDismissedCount();
+                break;
+            case 4:
+                int i10 = c11.e;
+                break;
+            case 5:
+                d60 d60Var = d60.A3;
+                break;
+            case 6:
                 break;
             default:
-                this.b.dismiss();
-                v2.e0(0, null);
+                int i11 = qh.y1.D;
                 break;
         }
+    }
+
+    public /* synthetic */ c0(boolean[] zArr) {
+        this.a = 2;
+    }
+
+    private final void a(DialogInterface dialogInterface) {
+    }
+
+    private final void b(DialogInterface dialogInterface) {
     }
 }

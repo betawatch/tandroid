@@ -9,37 +9,37 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.l61;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class u1 extends View implements org.telegram.ui.ActionBar.a6 {
-    public final j61 a;
-    public final org.telegram.ui.ActionBar.f6 b;
+public final class u1 extends View implements org.telegram.ui.ActionBar.b6 {
+    public final l61 a;
+    public final org.telegram.ui.ActionBar.g6 b;
     public int c;
     public int d;
     public k1 e;
     public float f;
     public int h;
 
-    public u1(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public u1(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
-        this.b = f6Var;
-        j61 j61Var = new j61();
-        this.a = j61Var;
-        j61Var.setCallback(this);
-        j61Var.n = LocaleController.getString(R.string.UnsupportedMessageTitle);
-        j61Var.o = LocaleController.getString(R.string.UnsupportedMessageMessage);
-        j61Var.p = LocaleController.getString(R.string.UnsupportedUpdate);
-        j61Var.j = new g(this, 1);
+        this.b = g6Var;
+        l61 l61Var = new l61();
+        this.a = l61Var;
+        l61Var.setCallback(this);
+        l61Var.n = LocaleController.getString(R.string.UnsupportedMessageTitle);
+        l61Var.o = LocaleController.getString(R.string.UnsupportedMessageMessage);
+        l61Var.p = LocaleController.getString(R.string.UnsupportedUpdate);
+        l61Var.j = new g(this, 1);
     }
 
     public final void a(Canvas canvas) {
-        org.telegram.ui.ActionBar.f6 f6Var = this.b;
-        if (f6Var != null) {
-            f6Var.l(0.0f, this.f, getMeasuredWidth(), this.h);
+        org.telegram.ui.ActionBar.g6 g6Var = this.b;
+        if (g6Var != null) {
+            g6Var.l(0.0f, this.f, getMeasuredWidth(), this.h);
         } else {
-            org.telegram.ui.ActionBar.j6.q(0.0f, this.f, getMeasuredWidth(), this.h);
+            org.telegram.ui.ActionBar.k6.q(0.0f, this.f, getMeasuredWidth(), this.h);
         }
         float dp = AndroidUtilities.dp(18.0f);
         float dp2 = AndroidUtilities.dp(6.0f);
@@ -47,13 +47,13 @@ public final class u1 extends View implements org.telegram.ui.ActionBar.a6 {
         float dp4 = AndroidUtilities.dp(6.0f) + this.d;
         float dp5 = AndroidUtilities.dp(18.0f);
         float dp6 = AndroidUtilities.dp(18.0f);
-        Paint G = f6Var != null ? f6Var.G("paintChatActionBackground") : null;
-        if (G == null) {
-            G = org.telegram.ui.ActionBar.j6.S0("paintChatActionBackground");
+        Paint F = g6Var != null ? g6Var.F("paintChatActionBackground") : null;
+        if (F == null) {
+            F = org.telegram.ui.ActionBar.k6.S0("paintChatActionBackground");
         }
-        canvas.drawRoundRect(dp, dp2, dp3, dp4, dp5, dp6, G);
-        if (f6Var != null ? f6Var.m0() : org.telegram.ui.ActionBar.j6.a1()) {
-            canvas.drawRoundRect(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(18.0f) + this.c, AndroidUtilities.dp(6.0f) + this.d, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f), org.telegram.ui.ActionBar.j6.h2);
+        canvas.drawRoundRect(dp, dp2, dp3, dp4, dp5, dp6, F);
+        if (g6Var != null ? g6Var.o0() : org.telegram.ui.ActionBar.k6.a1()) {
+            canvas.drawRoundRect(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(18.0f) + this.c, AndroidUtilities.dp(6.0f) + this.d, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f), org.telegram.ui.ActionBar.k6.h2);
         }
     }
 
@@ -62,7 +62,7 @@ public final class u1 extends View implements org.telegram.ui.ActionBar.a6 {
         this.h = i10;
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void e() {
         this.a.b();
     }
@@ -77,9 +77,9 @@ public final class u1 extends View implements org.telegram.ui.ActionBar.a6 {
         int dp2 = AndroidUtilities.dp(6.0f);
         int dp3 = AndroidUtilities.dp(18.0f) + this.c;
         int dp4 = AndroidUtilities.dp(6.0f) + this.d;
-        j61 j61Var = this.a;
-        j61Var.setBounds(dp, dp2, dp3, dp4);
-        j61Var.draw(canvas);
+        l61 l61Var = this.a;
+        l61Var.setBounds(dp, dp2, dp3, dp4);
+        l61Var.draw(canvas);
     }
 
     @Override // android.view.View

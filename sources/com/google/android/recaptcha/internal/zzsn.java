@@ -8,11 +8,11 @@ import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
-import kh.a2;
+import l.d;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, BuilderType extends zzsh<MessageType, BuilderType>> extends zzpw<MessageType, BuilderType> {
     private static final Map zzb = new ConcurrentHashMap();
@@ -35,10 +35,10 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
     public static Object zzE(Method method, Object obj, Object... objArr) {
         try {
             return method.invoke(obj, objArr);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e);
-        } catch (InvocationTargetException e6) {
-            Throwable cause = e6.getCause();
+        } catch (IllegalAccessException e6) {
+            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e6);
+        } catch (InvocationTargetException e10) {
+            Throwable cause = e10.getCause();
             if (cause instanceof RuntimeException) {
                 throw ((RuntimeException) cause);
             }
@@ -80,18 +80,18 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
             zzb2.zzi(zzv, bArr, 0, i11, new zzqb(zzryVar));
             zzb2.zzf(zzv);
             return zzv;
-        } catch (zzsx e) {
-            if (e.zzb()) {
-                throw new zzsx(e);
+        } catch (zzsx e6) {
+            if (e6.zzb()) {
+                throw new zzsx(e6);
             }
-            throw e;
-        } catch (zzuu e6) {
-            throw e6.zza();
-        } catch (IOException e10) {
-            if (e10.getCause() instanceof zzsx) {
-                throw ((zzsx) e10.getCause());
+            throw e6;
+        } catch (zzuu e10) {
+            throw e10.zza();
+        } catch (IOException e11) {
+            if (e11.getCause() instanceof zzsx) {
+                throw ((zzsx) e11.getCause());
             }
-            throw new zzsx(e10);
+            throw new zzsx(e11);
         } catch (IndexOutOfBoundsException unused) {
             throw new zzsx("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
         }
@@ -124,8 +124,8 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
             try {
                 Class.forName(cls.getName(), true, cls.getClassLoader());
                 zzsnVar = (zzsn) map.get(cls);
-            } catch (ClassNotFoundException e) {
-                throw new IllegalStateException("Class initialization cannot fail.", e);
+            } catch (ClassNotFoundException e6) {
+                throw new IllegalStateException("Class initialization cannot fail.", e6);
             }
         }
         if (zzsnVar != null) {
@@ -158,23 +158,23 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
             zzb2.zzf(zzv);
             zzg(zzv);
             return zzv;
-        } catch (zzsx e) {
-            if (e.zzb()) {
-                throw new zzsx(e);
+        } catch (zzsx e6) {
+            if (e6.zzb()) {
+                throw new zzsx(e6);
             }
-            throw e;
-        } catch (zzuu e6) {
-            throw e6.zza();
-        } catch (IOException e10) {
-            if (e10.getCause() instanceof zzsx) {
-                throw ((zzsx) e10.getCause());
-            }
-            throw new zzsx(e10);
-        } catch (RuntimeException e11) {
+            throw e6;
+        } catch (zzuu e10) {
+            throw e10.zza();
+        } catch (IOException e11) {
             if (e11.getCause() instanceof zzsx) {
                 throw ((zzsx) e11.getCause());
             }
-            throw e11;
+            throw new zzsx(e11);
+        } catch (RuntimeException e12) {
+            if (e12.getCause() instanceof zzsx) {
+                throw ((zzsx) e12.getCause());
+            }
+            throw e12;
         }
     }
 
@@ -251,7 +251,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
             if (zza >= 0) {
                 return zza;
             }
-            throw new IllegalStateException(a2.j(zza, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(d.j(zza, "serialized size must be non-negative, was "));
         }
         int i10 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
         if (i10 != Integer.MAX_VALUE) {
@@ -259,7 +259,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
         }
         int zza2 = zzugVar.zza(this);
         if (zza2 < 0) {
-            throw new IllegalStateException(a2.j(zza2, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(d.j(zza2, "serialized size must be non-negative, was "));
         }
         this.zzd = (this.zzd & TLObject.FLAG_31) | zza2;
         return zza2;
@@ -300,7 +300,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
             if (zzf >= 0) {
                 return zzf;
             }
-            throw new IllegalStateException(a2.j(zzf, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(d.j(zzf, "serialized size must be non-negative, was "));
         }
         int i10 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
         if (i10 != Integer.MAX_VALUE) {
@@ -308,7 +308,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
         }
         int zzf2 = zzf(null);
         if (zzf2 < 0) {
-            throw new IllegalStateException(a2.j(zzf2, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(d.j(zzf2, "serialized size must be non-negative, was "));
         }
         this.zzd = (this.zzd & TLObject.FLAG_31) | zzf2;
         return zzf2;

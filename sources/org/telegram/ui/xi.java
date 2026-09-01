@@ -9,16 +9,49 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class xi implements org.telegram.ui.Components.jl0 {
+public final class xi implements org.telegram.ui.Components.kl0 {
     public final /* synthetic */ xn a;
 
     public xi(xn xnVar) {
         this.a = xnVar;
     }
 
-    @Override // org.telegram.ui.Components.jl0
+    @Override // org.telegram.ui.Components.kl0
+    public final boolean Y0(View view) {
+        String doubleTapReaction;
+        TLRPC.TL_availableReaction tL_availableReaction;
+        MessageObject messageObject;
+        org.telegram.ui.ActionBar.k kVar;
+        TLRPC.ChatFull chatFull;
+        xn xnVar = this.a;
+        if (!xnVar.z9() && ((tL_availableReaction = xnVar.getMediaDataController().getReactionsMap().get((doubleTapReaction = xnVar.getMediaDataController().getDoubleTapReaction()))) != null || (doubleTapReaction != null && doubleTapReaction.startsWith("animated_")))) {
+            boolean z4 = xnVar.Q5 >= 0;
+            if (!z4 && (chatFull = xnVar.W7) != null) {
+                if (tL_availableReaction != null) {
+                    doubleTapReaction = tL_availableReaction.reaction;
+                }
+                z4 = ChatObject.reactionIsAvailable(chatFull, doubleTapReaction);
+            }
+            if (z4) {
+                if (view instanceof org.telegram.ui.Cells.t1) {
+                    messageObject = ((org.telegram.ui.Cells.t1) view).getPrimaryMessageObject();
+                } else if (view instanceof org.telegram.ui.Cells.v0) {
+                    messageObject = ((org.telegram.ui.Cells.v0) view).getMessageObject();
+                }
+                if (messageObject != null && !messageObject.isDateObject && !messageObject.isSending() && messageObject.canSetReaction() && !messageObject.isEditing()) {
+                    kVar = ((org.telegram.ui.ActionBar.p2) xnVar).actionBar;
+                    if (!kVar.s() && !xnVar.w() && !xnVar.c() && !messageObject.isSponsored()) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.kl0
     public final void c(float f10, float f11, int i10, View view) {
         boolean z4;
         org.telegram.ui.ActionBar.k kVar;
@@ -89,47 +122,14 @@ public final class xi implements org.telegram.ui.Components.jl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.jl0
-    public final boolean e1(View view) {
-        String doubleTapReaction;
-        TLRPC.TL_availableReaction tL_availableReaction;
-        MessageObject messageObject;
-        org.telegram.ui.ActionBar.k kVar;
-        TLRPC.ChatFull chatFull;
-        xn xnVar = this.a;
-        if (!xnVar.z9() && ((tL_availableReaction = xnVar.getMediaDataController().getReactionsMap().get((doubleTapReaction = xnVar.getMediaDataController().getDoubleTapReaction()))) != null || (doubleTapReaction != null && doubleTapReaction.startsWith("animated_")))) {
-            boolean z4 = xnVar.Q5 >= 0;
-            if (!z4 && (chatFull = xnVar.W7) != null) {
-                if (tL_availableReaction != null) {
-                    doubleTapReaction = tL_availableReaction.reaction;
-                }
-                z4 = ChatObject.reactionIsAvailable(chatFull, doubleTapReaction);
-            }
-            if (z4) {
-                if (view instanceof org.telegram.ui.Cells.t1) {
-                    messageObject = ((org.telegram.ui.Cells.t1) view).getPrimaryMessageObject();
-                } else if (view instanceof org.telegram.ui.Cells.v0) {
-                    messageObject = ((org.telegram.ui.Cells.v0) view).getMessageObject();
-                }
-                if (messageObject != null && !messageObject.isDateObject && !messageObject.isSending() && messageObject.canSetReaction() && !messageObject.isEditing()) {
-                    kVar = ((org.telegram.ui.ActionBar.p2) xnVar).actionBar;
-                    if (!kVar.s() && !xnVar.v() && !xnVar.c() && !messageObject.isSponsored()) {
-                        return true;
-                    }
-                }
-            }
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.jl0
-    public final void o0(View view, float f10, float f11) {
+    @Override // org.telegram.ui.Components.kl0
+    public final void r0(View view, float f10, float f11) {
         MessageObject messageObject;
         boolean z4;
         TLRPC.ChatFull chatFull;
         TLRPC.ChatFull chatFull2;
         xn xnVar = this.a;
-        if (xnVar.getParentActivity() == null || xnVar.v() || xnVar.c() || xnVar.isInPreviewMode() || xnVar.z9()) {
+        if (xnVar.getParentActivity() == null || xnVar.w() || xnVar.c() || xnVar.isInPreviewMode() || xnVar.z9()) {
             return;
         }
         if (view instanceof org.telegram.ui.Cells.t1) {
@@ -149,7 +149,7 @@ public final class xi implements org.telegram.ui.Components.jl0 {
         }
         TLRPC.Chat chat = xnVar.e;
         if (chat == null || ChatObject.isChannelAndNotMegaGroup(chat) || ChatObject.canUserDoAction(xnVar.e, 26)) {
-            mg.m0.b(false);
+            ng.m0.b(false);
             String doubleTapReaction = xnVar.getMediaDataController().getDoubleTapReaction();
             if (doubleTapReaction.startsWith("animated_")) {
                 z4 = xnVar.Q5 >= 0;
@@ -157,7 +157,7 @@ public final class xi implements org.telegram.ui.Components.jl0 {
                     z4 = ChatObject.reactionIsAvailable(chatFull2, doubleTapReaction);
                 }
                 if (z4) {
-                    xnVar.ab(view, messageObject2, null, null, f10, f11, mg.q0.b(doubleTapReaction), true, false, false, false);
+                    xnVar.ab(view, messageObject2, null, null, f10, f11, ng.q0.b(doubleTapReaction), true, false, false, false);
                     return;
                 }
                 return;
@@ -171,7 +171,7 @@ public final class xi implements org.telegram.ui.Components.jl0 {
                 z4 = ChatObject.reactionIsAvailable(chatFull, tL_availableReaction.reaction);
             }
             if (z4) {
-                xnVar.ab(view, messageObject2, null, null, f10, f11, mg.q0.c(tL_availableReaction), true, false, false, false);
+                xnVar.ab(view, messageObject2, null, null, f10, f11, ng.q0.c(tL_availableReaction), true, false, false, false);
             }
         }
     }

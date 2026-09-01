@@ -3,14 +3,14 @@ package com.google.android.recaptcha.internal;
 import dd.p;
 import java.util.Iterator;
 import java.util.List;
-import k7.p7;
+import k7.q7;
 import ld.c0;
 import sc.f;
 import uc.c;
 import vc.a;
 import wc.i;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 final class zzah extends i implements p {
     Object zza;
@@ -55,14 +55,14 @@ final class zzah extends i implements p {
         a aVar = a.a;
         int i10 = this.zzd;
         if (i10 == 0) {
-            p7.b(obj);
+            q7.b(obj);
             zzxn zzxnVar = this.zze;
             if (!zzxnVar.zzU()) {
-                return new f(p7.a(new zzcg(zzce.zzb, zzcd.zzab, null, null, 12, null)));
+                return new f(q7.a(new zzcg(zzce.zzb, zzcd.zzab, null, null, 12, null)));
             }
             zzk = zzxnVar.zzk();
             if (zzk.zzi().zzn()) {
-                return new f(p7.a(new zzcg(zzce.zzb, zzcd.zzab, null, null, 12, null)));
+                return new f(q7.a(new zzcg(zzce.zzb, zzcd.zzab, null, null, 12, null)));
             }
             zzaj zzajVar = this.zzf;
             zzajVar.zzb = zzk.zzi();
@@ -73,7 +73,7 @@ final class zzah extends i implements p {
                 zzhkVar = (zzhk) this.zzc;
                 it2 = (Iterator) this.zzb;
                 zzxpVar = (zzxp) this.zza;
-                p7.b(obj);
+                q7.b(obj);
                 this.zza = zzxpVar;
                 this.zzb = it2;
                 this.zzc = null;
@@ -86,7 +86,7 @@ final class zzah extends i implements p {
             }
             it = (Iterator) this.zzb;
             zzk = (zzxp) this.zza;
-            p7.b(obj);
+            q7.b(obj);
         }
         if (!it.hasNext()) {
             return new f(sc.i.a);

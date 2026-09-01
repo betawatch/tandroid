@@ -11,9 +11,9 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import k7.z6;
+import k7.a7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class l extends v4.e {
     public final w n;
@@ -222,7 +222,7 @@ public final class l extends v4.e {
                                                                         dVar.k = 1;
                                                                     }
                                                                 } else if ("font-family".equals(a2)) {
-                                                                    dVar.e = z6.b(sb);
+                                                                    dVar.e = a7.b(sb);
                                                                 } else if ("font-weight".equals(a2)) {
                                                                     if ("bold".equals(sb)) {
                                                                         dVar.l = 1;
@@ -232,7 +232,7 @@ public final class l extends v4.e {
                                                                         dVar.m = 1;
                                                                     }
                                                                 } else if ("font-size".equals(a2)) {
-                                                                    Matcher matcher2 = c.d.matcher(z6.b(sb));
+                                                                    Matcher matcher2 = c.d.matcher(a7.b(sb));
                                                                     if (matcher2.matches()) {
                                                                         String group2 = matcher2.group(2);
                                                                         group2.getClass();
@@ -331,8 +331,8 @@ public final class l extends v4.e {
                     }
                 }
             }
-        } catch (r1 e) {
-            throw new v4.h(e);
+        } catch (r1 e6) {
+            throw new v4.h(e6);
         }
     }
 }

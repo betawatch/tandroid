@@ -4,7 +4,6 @@ import android.media.MediaCrypto;
 import android.media.MediaCryptoException;
 import android.media.MediaDrm;
 import android.text.TextUtils;
-import androidx.biometric.f0;
 import b4.e0;
 import h5.d0;
 import java.nio.ByteBuffer;
@@ -14,15 +13,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-import m.j0;
+import mh.c3;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class z implements v {
-    public static final j0 d = new j0(10);
+    public static final c3 d = new c3(3);
     public final UUID a;
     public final MediaDrm b;
     public int c;
@@ -41,22 +40,24 @@ public final class z implements v {
     }
 
     @Override // o3.v
-    public final void B(final f0 f0Var) {
-        this.b.setOnEventListener(new MediaDrm.OnEventListener() { // from class: o3.x
-            @Override // android.media.MediaDrm.OnEventListener
-            public final void onEvent(MediaDrm mediaDrm, byte[] bArr, int i10, int i11, byte[] bArr2) {
-                z zVar = z.this;
-                f0 f0Var2 = f0Var;
-                zVar.getClass();
-                androidx.mediarouter.app.d dVar = ((e) f0Var2.b).J;
-                dVar.getClass();
-                dVar.obtainMessage(i10, bArr).sendToTarget();
+    public final boolean C2(String str, byte[] bArr) {
+        if (d0.a >= 31) {
+            return y.a(this.b, str);
+        }
+        try {
+            MediaCrypto mediaCrypto = new MediaCrypto(this.a, bArr);
+            try {
+                return mediaCrypto.requiresSecureDecoderComponent(str);
+            } finally {
+                mediaCrypto.release();
             }
-        });
+        } catch (MediaCryptoException unused) {
+            return true;
+        }
     }
 
     @Override // o3.v
-    public final n3.b D0(byte[] bArr) {
+    public final n3.b E0(byte[] bArr) {
         int i10 = d0.a;
         UUID uuid = this.a;
         boolean z4 = i10 < 21 && j3.h.d.equals(uuid) && "L3".equals(this.b.getPropertyString("securityLevel"));
@@ -67,7 +68,13 @@ public final class z implements v {
     }
 
     @Override // o3.v
-    public final byte[] F1(byte[] bArr, byte[] bArr2) {
+    public final u J() {
+        MediaDrm.ProvisionRequest provisionRequest = this.b.getProvisionRequest();
+        return new u(provisionRequest.getDefaultUrl(), provisionRequest.getData());
+    }
+
+    @Override // o3.v
+    public final byte[] K1(byte[] bArr, byte[] bArr2) {
         if (j3.h.c.equals(this.a) && d0.a < 27) {
             try {
                 JSONObject jSONObject = new JSONObject(d0.m(bArr2));
@@ -88,26 +95,46 @@ public final class z implements v {
                 }
                 sb.append("]}");
                 bArr2 = sb.toString().getBytes(r8.d.c);
-            } catch (JSONException e) {
-                h5.a.p("ClearKeyUtil", "Failed to adjust response data: ".concat(d0.m(bArr2)), e);
+            } catch (JSONException e6) {
+                h5.a.p("ClearKeyUtil", "Failed to adjust response data: ".concat(d0.m(bArr2)), e6);
             }
         }
         return this.b.provideKeyResponse(bArr, bArr2);
     }
 
     @Override // o3.v
-    public final u K() {
-        MediaDrm.ProvisionRequest provisionRequest = this.b.getProvisionRequest();
-        return new u(provisionRequest.getDefaultUrl(), provisionRequest.getData());
+    public final void M0(final ja.c cVar) {
+        this.b.setOnEventListener(new MediaDrm.OnEventListener() { // from class: o3.x
+            @Override // android.media.MediaDrm.OnEventListener
+            public final void onEvent(MediaDrm mediaDrm, byte[] bArr, int i10, int i11, byte[] bArr2) {
+                z zVar = z.this;
+                ja.c cVar2 = cVar;
+                zVar.getClass();
+                androidx.mediarouter.app.d dVar = ((e) cVar2.a).J;
+                dVar.getClass();
+                dVar.obtainMessage(i10, bArr).sendToTarget();
+            }
+        });
     }
 
     @Override // o3.v
-    public final byte[] M0() {
+    public final byte[] O0() {
         return this.b.openSession();
     }
 
     @Override // o3.v
-    public final void Q1(byte[] bArr) {
+    public final void U(byte[] bArr, k3.k kVar) {
+        if (d0.a >= 31) {
+            try {
+                y.b(this.b, bArr, kVar);
+            } catch (UnsupportedOperationException unused) {
+                h5.a.K("FrameworkMediaDrm", "setLogSessionId failed.");
+            }
+        }
+    }
+
+    @Override // o3.v
+    public final void V1(byte[] bArr) {
         this.b.provideProvisionResponse(bArr);
     }
 
@@ -123,7 +150,7 @@ public final class z implements v {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final t U1(byte[] bArr, List list, int i10, HashMap hashMap) {
+    public final t Z1(byte[] bArr, List list, int i10, HashMap hashMap) {
         byte[] bArr2;
         String str;
         f fVar;
@@ -158,8 +185,8 @@ public final class z implements v {
                     f fVar5 = (f) list.get(i15);
                     byte[] bArr7 = fVar5.e;
                     bArr7.getClass();
-                    e0 e = z3.j.e(bArr7);
-                    int i16 = e == null ? -1 : e.b;
+                    e0 e6 = z3.j.e(bArr7);
+                    int i16 = e6 == null ? -1 : e6.b;
                     int i17 = d0.a;
                     if ((i17 < 23 && i16 == 0) || (i17 >= 23 && i16 == 1)) {
                         fVar = fVar5;
@@ -251,28 +278,17 @@ public final class z implements v {
     }
 
     @Override // o3.v
-    public final void V(byte[] bArr, k3.k kVar) {
-        if (d0.a >= 31) {
-            try {
-                y.b(this.b, bArr, kVar);
-            } catch (UnsupportedOperationException unused) {
-                h5.a.K("FrameworkMediaDrm", "setLogSessionId failed.");
-            }
-        }
-    }
-
-    @Override // o3.v
-    public final int b2() {
+    public final int h2() {
         return 2;
     }
 
     @Override // o3.v
-    public final void h1(byte[] bArr, byte[] bArr2) {
+    public final void k1(byte[] bArr, byte[] bArr2) {
         this.b.restoreKeys(bArr, bArr2);
     }
 
     @Override // o3.v
-    public final void m1(byte[] bArr) {
+    public final void q1(byte[] bArr) {
         this.b.closeSession(bArr);
     }
 
@@ -286,24 +302,7 @@ public final class z implements v {
     }
 
     @Override // o3.v
-    public final Map v(byte[] bArr) {
+    public final Map w(byte[] bArr) {
         return this.b.queryKeyStatus(bArr);
-    }
-
-    @Override // o3.v
-    public final boolean w2(String str, byte[] bArr) {
-        if (d0.a >= 31) {
-            return y.a(this.b, str);
-        }
-        try {
-            MediaCrypto mediaCrypto = new MediaCrypto(this.a, bArr);
-            try {
-                return mediaCrypto.requiresSecureDecoderComponent(str);
-            } finally {
-                mediaCrypto.release();
-            }
-        } catch (MediaCryptoException unused) {
-            return true;
-        }
     }
 }

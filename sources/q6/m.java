@@ -2,10 +2,10 @@ package q6;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import j7.f5;
+import j7.g5;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class m extends c6.a {
     public static final Parcelable.Creator<m> CREATOR = new r0(21);
@@ -22,8 +22,8 @@ public final class m extends c6.a {
         } else {
             try {
                 a2 = c.a(str);
-            } catch (b | d0 | t0 e) {
-                throw new IllegalArgumentException(e);
+            } catch (b | d0 | t0 e6) {
+                throw new IllegalArgumentException(e6);
             }
         }
         this.a = a2;
@@ -73,14 +73,14 @@ public final class m extends c6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
+        int q10 = g5.q(parcel, 20293);
         c cVar = this.a;
-        f5.l(parcel, 2, cVar == null ? null : cVar.a);
-        f5.a(parcel, 3, this.b);
+        g5.l(parcel, 2, cVar == null ? null : cVar.a);
+        g5.a(parcel, 3, this.b);
         j0 j0Var = this.c;
-        f5.l(parcel, 4, j0Var == null ? null : j0Var.a);
-        e0 e = e();
-        f5.l(parcel, 5, e != null ? e.a : null);
-        f5.r(parcel, q10);
+        g5.l(parcel, 4, j0Var == null ? null : j0Var.a);
+        e0 e6 = e();
+        g5.l(parcel, 5, e6 != null ? e6.a : null);
+        g5.r(parcel, q10);
     }
 }

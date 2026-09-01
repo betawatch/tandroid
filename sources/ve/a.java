@@ -2,36 +2,39 @@ package ve;
 
 import android.content.Context;
 import android.util.SparseArray;
+import android.util.SparseIntArray;
 import java.io.BufferedInputStream;
+import java.io.IOException;
+import oh.h4;
 import org.telegram.tgnet.SerializedData;
-import ph.j5;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a {
-    public static final a b = new a();
+    public static SparseIntArray b;
+    public static final a c = new a();
     public final SparseArray a;
 
     public a() {
         this.a = new SparseArray();
     }
 
-    public static SparseArray a(Context context, int i10, SparseArray sparseArray) {
-        BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getResources().openRawResource(i10));
+    public static SparseArray a(Context context, String str, SparseArray sparseArray) {
+        BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getAssets().open(str));
         try {
             SerializedData serializedData = new SerializedData(bufferedInputStream);
             int readInt32 = serializedData.readInt32(true);
-            int i11 = 0;
+            int i10 = 0;
             if (sparseArray == null) {
                 sparseArray = new SparseArray(readInt32);
-                while (i11 < readInt32) {
+                while (i10 < readInt32) {
                     sparseArray.append(serializedData.readInt32(true), serializedData.readString(true));
-                    i11++;
+                    i10++;
                 }
             } else {
-                while (i11 < readInt32) {
+                while (i10 < readInt32) {
                     sparseArray.put(serializedData.readInt32(true), serializedData.readString(true));
-                    i11++;
+                    i10++;
                 }
             }
             bufferedInputStream.close();
@@ -46,15 +49,42 @@ public final class a {
         }
     }
 
-    public final String b(String str) {
-        if (str == null) {
+    public final String b(Context context, int i10) {
+        if (context == null || i10 == 0) {
             return null;
         }
-        return (String) this.a.get(str.hashCode());
+        if (b == null) {
+            try {
+                BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getResources().getAssets().open("string_resource_ids.bin"));
+                try {
+                    SerializedData serializedData = new SerializedData(bufferedInputStream);
+                    int readInt32 = serializedData.readInt32(true);
+                    SparseIntArray sparseIntArray = new SparseIntArray(readInt32);
+                    for (int i11 = 0; i11 < readInt32; i11++) {
+                        sparseIntArray.append(serializedData.readInt32(true), serializedData.readInt32(true));
+                    }
+                    bufferedInputStream.close();
+                    b = sparseIntArray;
+                } finally {
+                }
+            } catch (IOException e6) {
+                throw new RuntimeException(e6);
+            }
+        }
+        int i12 = b.get(i10);
+        if (i12 == 0) {
+            return null;
+        }
+        return (String) this.a.get(i12);
     }
 
-    public a(j5 j5Var) {
-        SparseArray sparseArray = (SparseArray) j5Var.b;
+    public final String c(Context context, String str, int i10) {
+        String str2 = str != null ? (String) this.a.get(str.hashCode()) : null;
+        return str2 != null ? str2 : b(context, i10);
+    }
+
+    public a(h4 h4Var) {
+        SparseArray sparseArray = (SparseArray) h4Var.b;
         this.a = sparseArray == null ? new SparseArray() : sparseArray;
     }
 }

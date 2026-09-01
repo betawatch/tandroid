@@ -11,7 +11,6 @@ import g5.l0;
 import g5.m0;
 import g5.p0;
 import h5.d0;
-import j3.n0;
 import j3.r1;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -19,14 +18,15 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
+import oh.h4;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.Components.qk0;
+import s8.n0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class c implements h0 {
-    public static final s0.b B = new s0.b(11);
-    public final qk0 a;
+    public static final sg.a B = new sg.a(11);
+    public final h4 a;
     public final p b;
     public final ab.a c;
     public e0 f;
@@ -41,50 +41,10 @@ public final class c implements h0 {
     public final HashMap d = new HashMap();
     public long y = -9223372036854775807L;
 
-    public c(qk0 qk0Var, ab.a aVar, p pVar) {
-        this.a = qk0Var;
+    public c(h4 h4Var, ab.a aVar, p pVar) {
+        this.a = h4Var;
         this.b = pVar;
         this.c = aVar;
-    }
-
-    @Override // g5.h0
-    public final void A(j0 j0Var, long j10, long j11) {
-        l lVar;
-        p0 p0Var = (p0) j0Var;
-        m mVar = (m) p0Var.f;
-        boolean z4 = mVar instanceof i;
-        if (z4) {
-            String str = mVar.a;
-            l lVar2 = l.n;
-            Uri parse = Uri.parse(str);
-            j3.m0 m0Var = new j3.m0();
-            m0Var.a = "0";
-            m0Var.n = "application/x-mpegURL";
-            List singletonList = Collections.singletonList(new k(parse, new n0(m0Var), null, null, null, null));
-            List list = Collections.EMPTY_LIST;
-            lVar = new l("", list, singletonList, list, list, list, list, null, null, false, Collections.EMPTY_MAP, list);
-        } else {
-            lVar = (l) mVar;
-        }
-        this.s = lVar;
-        this.v = ((k) lVar.e.get(0)).a;
-        this.e.add(new a(this));
-        List list2 = lVar.d;
-        int size = list2.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            Uri uri = (Uri) list2.get(i10);
-            this.d.put(uri, new b(this, uri));
-        }
-        Uri uri2 = p0Var.d.c;
-        o4.j jVar = new o4.j();
-        b bVar = (b) this.d.get(this.v);
-        if (z4) {
-            bVar.d((i) mVar);
-        } else {
-            bVar.c(bVar.a);
-        }
-        this.c.getClass();
-        this.f.n(jVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 
     public final i a(Uri uri, boolean z4) {
@@ -122,7 +82,7 @@ public final class c implements h0 {
     public final Uri b(Uri uri) {
         e eVar;
         i iVar = this.w;
-        if (iVar == null || !iVar.v.e || (eVar = (e) ((s8.n0) iVar.t).get(uri)) == null) {
+        if (iVar == null || !iVar.v.e || (eVar = (e) ((n0) iVar.t).get(uri)) == null) {
             return uri;
         }
         Uri.Builder buildUpon = uri.buildUpon();
@@ -153,7 +113,7 @@ public final class c implements h0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final c4.e m(j0 j0Var, IOException iOException, int i10) {
+    public final c4.e q(j0 j0Var, IOException iOException, int i10) {
         long j10;
         p0 p0Var = (p0) j0Var;
         long j11 = p0Var.a;
@@ -169,24 +129,64 @@ public final class c implements h0 {
             }
             j10 = Math.min((i10 - 1) * MediaDataController.MAX_STYLE_RUNS_COUNT, 5000);
             boolean z4 = j10 == -9223372036854775807L;
-            this.f.r(jVar, i11, iOException, z4);
+            this.f.s(jVar, i11, iOException, z4);
             return !z4 ? m0.f : new c4.e(0, j10, false);
         }
         j10 = -9223372036854775807L;
         if (j10 == -9223372036854775807L) {
         }
-        this.f.r(jVar, i11, iOException, z4);
+        this.f.s(jVar, i11, iOException, z4);
         if (!z4) {
         }
     }
 
     @Override // g5.h0
-    public final void s(j0 j0Var, long j10, long j11, boolean z4) {
+    public final void u(j0 j0Var, long j10, long j11, boolean z4) {
         p0 p0Var = (p0) j0Var;
         long j12 = p0Var.a;
         Uri uri = p0Var.d.c;
         o4.j jVar = new o4.j();
         this.c.getClass();
-        this.f.l(jVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        this.f.m(jVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+    }
+
+    @Override // g5.h0
+    public final void x(j0 j0Var, long j10, long j11) {
+        l lVar;
+        p0 p0Var = (p0) j0Var;
+        m mVar = (m) p0Var.f;
+        boolean z4 = mVar instanceof i;
+        if (z4) {
+            String str = mVar.a;
+            l lVar2 = l.n;
+            Uri parse = Uri.parse(str);
+            j3.m0 m0Var = new j3.m0();
+            m0Var.a = "0";
+            m0Var.n = "application/x-mpegURL";
+            List singletonList = Collections.singletonList(new k(parse, new j3.n0(m0Var), null, null, null, null));
+            List list = Collections.EMPTY_LIST;
+            lVar = new l("", list, singletonList, list, list, list, list, null, null, false, Collections.EMPTY_MAP, list);
+        } else {
+            lVar = (l) mVar;
+        }
+        this.s = lVar;
+        this.v = ((k) lVar.e.get(0)).a;
+        this.e.add(new a(this));
+        List list2 = lVar.d;
+        int size = list2.size();
+        for (int i10 = 0; i10 < size; i10++) {
+            Uri uri = (Uri) list2.get(i10);
+            this.d.put(uri, new b(this, uri));
+        }
+        Uri uri2 = p0Var.d.c;
+        o4.j jVar = new o4.j();
+        b bVar = (b) this.d.get(this.v);
+        if (z4) {
+            bVar.d((i) mVar);
+        } else {
+            bVar.c(bVar.a);
+        }
+        this.c.getClass();
+        this.f.p(jVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 }

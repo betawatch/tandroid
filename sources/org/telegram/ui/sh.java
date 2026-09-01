@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sh implements r0.o, lf.d0, org.telegram.ui.ActionBar.c2 {
     public final /* synthetic */ xn a;
@@ -17,7 +17,7 @@ public final /* synthetic */ class sh implements r0.o, lf.d0, org.telegram.ui.Ac
     }
 
     @Override // r0.o
-    public r0.m1 N0(View view, r0.m1 m1Var) {
+    public r0.m1 M0(View view, r0.m1 m1Var) {
         i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(m1Var, false);
         int i10 = defaultWindowInsets.a;
         int i11 = defaultWindowInsets.c;
@@ -28,7 +28,7 @@ public final /* synthetic */ class sh implements r0.o, lf.d0, org.telegram.ui.Ac
             xnVar.U0.requestLayout();
         }
         xnVar.v.i(m1Var);
-        ug.e eVar = xnVar.H3;
+        vg.e eVar = xnVar.H3;
         if (eVar != null) {
             eVar.setPadding(i10, 0, i11, 0);
         }
@@ -53,15 +53,15 @@ public final /* synthetic */ class sh implements r0.o, lf.d0, org.telegram.ui.Ac
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    public void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         xn xnVar = this.a;
         xnVar.getClass();
         try {
             Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
             intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
             xnVar.getParentActivity().startActivity(intent);
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
         }
     }
 }

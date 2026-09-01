@@ -9,9 +9,9 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.lp;
+import org.telegram.ui.Components.np;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class s7 extends FrameLayout {
     public o7[] a;
@@ -35,11 +35,11 @@ public final class s7 extends FrameLayout {
     public final void b(int i10, boolean z4) {
         o7 o7Var = this.a[i10];
         FrameLayout frameLayout = o7Var.f;
-        lp lpVar = o7Var.e;
-        if (lpVar.getVisibility() != 0) {
-            lpVar.setVisibility(0);
+        np npVar = o7Var.e;
+        if (npVar.getVisibility() != 0) {
+            npVar.setVisibility(0);
         }
-        lpVar.a(z4, true);
+        npVar.a(z4, true);
         AnimatorSet animatorSet = o7Var.h;
         if (animatorSet != null) {
             animatorSet.cancel();

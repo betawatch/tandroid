@@ -6,7 +6,7 @@ import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class vf implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -56,14 +56,14 @@ public final /* synthetic */ class vf implements Runnable {
                     try {
                         try {
                             i10 = i12;
-                        } catch (Exception e) {
-                            e = e;
+                        } catch (Exception e6) {
+                            e = e6;
                             i10 = i12;
                         }
                         try {
                             queryFinalized = messagesStorage.getDatabase().queryFinalized("SELECT data, mid FROM messages_v2 WHERE uid = ? ORDER BY mid DESC LIMIT 10", Long.valueOf(-j12));
-                        } catch (Exception e6) {
-                            e = e6;
+                        } catch (Exception e10) {
+                            e = e10;
                             sQLiteCursor = null;
                             try {
                                 FileLog.e(e);
@@ -98,8 +98,8 @@ public final /* synthetic */ class vf implements Runnable {
                     i10 = i12;
                     try {
                         queryFinalized = messagesStorage.getDatabase().queryFinalized("SELECT data, mid FROM messages_v2 WHERE uid = ? AND mid <= ? ORDER BY mid DESC LIMIT 10", Long.valueOf(-j12), Integer.valueOf(i10));
-                    } catch (Exception e10) {
-                        e = e10;
+                    } catch (Exception e11) {
+                        e = e11;
                         sQLiteCursor = null;
                         FileLog.e(e);
                         if (sQLiteCursor != null) {
@@ -150,8 +150,8 @@ public final /* synthetic */ class vf implements Runnable {
                         }
                     }
                     queryFinalized.dispose();
-                } catch (Exception e11) {
-                    e = e11;
+                } catch (Exception e12) {
+                    e = e12;
                     sQLiteCursor = queryFinalized;
                     FileLog.e(e);
                     if (sQLiteCursor != null) {

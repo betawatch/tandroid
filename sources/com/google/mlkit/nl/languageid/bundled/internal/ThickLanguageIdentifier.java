@@ -12,7 +12,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import ya.a;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class ThickLanguageIdentifier {
     public static boolean c;
@@ -46,8 +46,8 @@ public class ThickLanguageIdentifier {
                 try {
                     System.loadLibrary("language_id_l2c_jni");
                     c = true;
-                } catch (UnsatisfiedLinkError e) {
-                    throw new a("Couldn't load language identification library.", e);
+                } catch (UnsatisfiedLinkError e6) {
+                    throw new a("Couldn't load language identification library.", e6);
                 }
             }
         }
@@ -67,8 +67,8 @@ public class ThickLanguageIdentifier {
                 }
             } finally {
             }
-        } catch (IOException e6) {
-            throw new a("Couldn't open language identification model file", e6);
+        } catch (IOException e10) {
+            throw new a("Couldn't open language identification model file", e10);
         }
     }
 

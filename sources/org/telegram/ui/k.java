@@ -3,28 +3,28 @@ package org.telegram.ui;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class k extends f2.i0 {
+public final class k extends f2.j0 {
     public final /* synthetic */ int I;
 
     public /* synthetic */ k(int i10) {
         this.I = i10;
     }
 
-    @Override // f2.i0
-    public int W0(f2.i1 i1Var) {
+    @Override // f2.j0
+    public int W0(f2.j1 j1Var) {
         switch (this.I) {
             case 3:
                 return 5000;
             case 7:
                 return AndroidUtilities.dp(4000.0f);
             default:
-                return super.W0(i1Var);
+                return super.W0(j1Var);
         }
     }
 
-    @Override // f2.i0, f2.v0
+    @Override // f2.j0, f2.w0
     public boolean e() {
         switch (this.I) {
             case 20:
@@ -34,26 +34,26 @@ public final class k extends f2.i0 {
         }
     }
 
-    @Override // f2.i0, f2.v0
-    public void v0(RecyclerView recyclerView, f2.i1 i1Var, int i10) {
+    @Override // f2.j0, f2.w0
+    public void v0(RecyclerView recyclerView, f2.j1 j1Var, int i10) {
         switch (this.I) {
             case 2:
-                wh.o oVar = new wh.o(recyclerView.getContext(), 0);
+                xh.o oVar = new xh.o(recyclerView.getContext(), 0);
                 oVar.a = i10;
                 w0(oVar);
                 break;
             case 13:
-                hs0 hs0Var = new hs0(recyclerView.getContext());
-                hs0Var.a = i10;
-                w0(hs0Var);
+                js0 js0Var = new js0(recyclerView.getContext());
+                js0Var.a = i10;
+                w0(js0Var);
                 break;
             default:
-                super.v0(recyclerView, i1Var, i10);
+                super.v0(recyclerView, j1Var, i10);
                 break;
         }
     }
 
-    @Override // f2.i0, f2.v0
+    @Override // f2.j0, f2.w0
     public boolean y0() {
         switch (this.I) {
             case 0:

@@ -2,10 +2,9 @@ package h5;
 
 import java.nio.charset.Charset;
 import java.util.Arrays;
-import k7.b7;
-import kh.a2;
+import k7.c7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class w {
     public static final char[] d = {'\r', '\n'};
@@ -129,7 +128,7 @@ public final class w {
         if ((charset.equals(r8.d.c) || charset.equals(r8.d.a)) && a() >= 1) {
             long j10 = this.a[this.b] & 255;
             char c3 = (char) j10;
-            b7.b(j10, "Out of range: %s", ((long) c3) == j10);
+            c7.b(j10, "Out of range: %s", ((long) c3) == j10);
             b10 = (byte) c3;
             i10 = 1;
         } else {
@@ -152,7 +151,7 @@ public final class w {
         }
         long j11 = b10;
         char c10 = (char) j11;
-        b7.b(j11, "Out of range: %s", ((long) c10) == j11);
+        c7.b(j11, "Out of range: %s", ((long) c10) == j11);
         return (c10 << 16) + i10;
     }
 
@@ -302,7 +301,7 @@ public final class w {
         if (i10 >= 0) {
             return i10;
         }
-        throw new IllegalStateException(a2.j(i10, "Top bit not zero: "));
+        throw new IllegalStateException(l.d.j(i10, "Top bit not zero: "));
     }
 
     public final int n() {
@@ -425,7 +424,7 @@ public final class w {
         if (g10 >= 0) {
             return g10;
         }
-        throw new IllegalStateException(a2.j(g10, "Top bit not zero: "));
+        throw new IllegalStateException(l.d.j(g10, "Top bit not zero: "));
     }
 
     public final long y() {

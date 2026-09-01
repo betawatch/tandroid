@@ -5,14 +5,14 @@ import android.view.View;
 import org.telegram.messenger.GiftAuctionController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.jj0;
-import org.telegram.ui.il0;
-import org.telegram.ui.np0;
+import org.telegram.ui.Components.lj0;
+import org.telegram.ui.kl0;
 import org.telegram.ui.pp0;
 import org.telegram.ui.r10;
+import org.telegram.ui.rp0;
 import org.telegram.ui.t10;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -34,20 +34,20 @@ public final /* synthetic */ class a implements View.OnClickListener {
             case 1:
                 m mVar = (m) obj;
                 if (mVar.e.size() != 1) {
-                    new kh.f(mVar.getContext()).show();
+                    new lh.f(mVar.getContext()).show();
                     break;
                 } else {
-                    new kh.s(mVar.getContext(), null, null, (GiftAuctionController.Auction) mVar.e.get(0)).show();
+                    new lh.s(mVar.getContext(), null, null, (GiftAuctionController.Auction) mVar.e.get(0)).show();
                     break;
                 }
             case 2:
                 ((w) obj).toggle();
                 break;
             case 3:
-                jj0 jj0Var = ((x2) obj).f;
-                if (!jj0Var.b()) {
-                    jj0Var.setProgress(0.0f);
-                    jj0Var.d();
+                lj0 lj0Var = ((x2) obj).f;
+                if (!lj0Var.b()) {
+                    lj0Var.setProgress(0.0f);
+                    lj0Var.d();
                     break;
                 }
                 break;
@@ -75,7 +75,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 y5 y5Var = (y5) obj;
                 x5 x5Var = y5Var.d;
                 if (x5Var != null) {
-                    pp0.U(((np0) ((il0) x5Var).b).d, y5Var.b[((Integer) view.getTag()).intValue()]);
+                    rp0.U(((pp0) ((kl0) x5Var).b).d, y5Var.b[((Integer) view.getTag()).intValue()]);
                     break;
                 }
                 break;

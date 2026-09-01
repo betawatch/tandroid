@@ -1,6 +1,6 @@
 package j7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class c extends l9 {
     public final transient Object[] c;
@@ -14,7 +14,7 @@ public final class c extends l9 {
 
     @Override // java.util.List
     public final Object get(int i10) {
-        j8.a(i10, this.e);
+        k8.a(i10, this.e);
         Object obj = this.c[i10 + i10 + this.d];
         obj.getClass();
         return obj;

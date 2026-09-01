@@ -17,10 +17,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class g8 extends FrameLayout {
-    public final org.telegram.ui.ActionBar.k5 a;
+    public final org.telegram.ui.ActionBar.l5 a;
     public int b;
     public int c;
     public int d;
@@ -43,18 +43,18 @@ public final class g8 extends FrameLayout {
         this.v = new SparseArray();
         this.w = new SparseArray();
         setWillNotDraw(false);
-        org.telegram.ui.ActionBar.k5 k5Var = new org.telegram.ui.ActionBar.k5(context);
-        this.a = k5Var;
+        org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(context);
+        this.a = l5Var;
         if (j8Var.b0 == 0 && j8Var.a0) {
-            k5Var.setOnLongClickListener(new w(this, 1));
-            k5Var.setOnClickListener(new a8(this, 0));
+            l5Var.setOnLongClickListener(new w(this, 1));
+            l5Var.setOnClickListener(new a8(this, 0));
         }
-        k5Var.setBackground(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.i6, false), 2, -1));
-        k5Var.setTextSize(15);
-        k5Var.setTypeface(AndroidUtilities.bold());
-        k5Var.setGravity(17);
-        k5Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
-        addView(k5Var, k7.b6.d(-1, 28.0f, 0, 0.0f, 12.0f, 0.0f, 4.0f));
+        l5Var.setBackground(org.telegram.ui.ActionBar.k6.f0(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.i6, false), 2, -1));
+        l5Var.setTextSize(15);
+        l5Var.setTypeface(AndroidUtilities.bold());
+        l5Var.setGravity(17);
+        l5Var.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.G6, false));
+        addView(l5Var, k7.c6.d(-1, 28.0f, 0, 0.0f, 12.0f, 0.0f, 4.0f));
         org.telegram.ui.Cells.f1 f1Var = new org.telegram.ui.Cells.f1(context, new e8(this, context));
         this.s = f1Var;
         ((GestureDetector) f1Var.b).setIsLongpressEnabled(j8Var.b0 == 0);
@@ -131,7 +131,7 @@ public final class g8 extends FrameLayout {
             return;
         }
         ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(300L);
-        duration.setInterpolator(org.telegram.ui.Components.gt.e);
+        duration.setInterpolator(org.telegram.ui.Components.jt.e);
         final float f17 = f11;
         final float f18 = f16;
         final float f19 = f10;
@@ -215,7 +215,7 @@ public final class g8 extends FrameLayout {
         Canvas canvas2 = canvas;
         j8 j8Var2 = g8Var.x;
         Paint paint7 = j8Var2.w;
-        ih.k kVar = j8Var2.h0;
+        jh.k kVar = j8Var2.h0;
         Path path = j8Var2.g0;
         Paint paint8 = j8Var2.r;
         TextPaint textPaint = j8Var2.e;
@@ -237,7 +237,7 @@ public final class g8 extends FrameLayout {
             float dp3 = (f10 / 2.0f) + (i16 * f10) + AndroidUtilities.dp(44.0f);
             i8 i8Var = (i8) g8Var.w.get(i16);
             if (i8Var != null) {
-                paint9.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.cf, false));
+                paint9.setColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.cf, false));
                 paint9.setAlpha((int) (i8Var.c * 40.8f));
                 RectF rectF = AndroidUtilities.rectTmp;
                 float f19 = dp2 / 2.0f;
@@ -287,12 +287,12 @@ public final class g8 extends FrameLayout {
                     paint3 = paint12;
                     canvas2.drawText(Integer.toString(i23), f20, AndroidUtilities.dp(5.0f) + dp5, textPaint2);
                 } else {
-                    paint11.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
+                    paint11.setColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.d6, false));
                     paint11.setAlpha((int) (h8Var.i * 255.0f));
                     canvas2.drawCircle(f20, dp5, AndroidUtilities.dp(44.0f) / 2.0f, paint11);
-                    int i24 = org.telegram.ui.ActionBar.j6.cf;
+                    int i24 = org.telegram.ui.ActionBar.k6.cf;
                     paint3 = paint12;
-                    paint3.setColor(org.telegram.ui.ActionBar.j6.w0(null, i24, false));
+                    paint3.setColor(org.telegram.ui.ActionBar.k6.w0(null, i24, false));
                     RectF rectF2 = AndroidUtilities.rectTmp;
                     rectF2.set(f20 - (AndroidUtilities.dp(44.0f) / 2.0f), dp5 - (AndroidUtilities.dp(44.0f) / 2.0f), (AndroidUtilities.dp(44.0f) / 2.0f) + f20, (AndroidUtilities.dp(44.0f) / 2.0f) + dp5);
                     paint2 = paint11;
@@ -300,7 +300,7 @@ public final class g8 extends FrameLayout {
                     canvas2 = canvas;
                     canvas2.drawArc(rectF2, -90.0f, h8Var.i * 360.0f, false, paint3);
                     int dp6 = (int) (AndroidUtilities.dp(7.0f) * h8Var.i);
-                    paint2.setColor(org.telegram.ui.ActionBar.j6.w0(null, i24, false));
+                    paint2.setColor(org.telegram.ui.ActionBar.k6.w0(null, i24, false));
                     paint2.setAlpha((int) (h8Var.i * 255.0f));
                     canvas2.drawCircle(f20, dp5, (AndroidUtilities.dp(44.0f) - dp6) / 2.0f, paint2);
                     float f21 = h8Var.i;
@@ -357,10 +357,10 @@ public final class g8 extends FrameLayout {
                             int dp7 = (int) (AndroidUtilities.dp(7.0f) * h8Var.l);
                             if (h8Var.i < 0.01f) {
                                 i12 = dp7;
-                                paint9.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
+                                paint9.setColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.d6, false));
                                 paint9.setAlpha((int) (h8Var.i * 255.0f));
                                 canvas2.drawCircle(f20, dp5, AndroidUtilities.dp(44.0f) / 2.0f, paint9);
-                                paint10.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.cf, false));
+                                paint10.setColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.cf, false));
                                 RectF rectF3 = AndroidUtilities.rectTmp;
                                 rectF3.set(f20 - (AndroidUtilities.dp(44.0f) / 2.0f), dp5 - (AndroidUtilities.dp(44.0f) / 2.0f), (AndroidUtilities.dp(44.0f) / 2.0f) + f20, (AndroidUtilities.dp(44.0f) / 2.0f) + dp5);
                                 canvas2 = canvas;

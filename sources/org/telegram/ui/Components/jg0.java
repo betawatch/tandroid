@@ -1,234 +1,215 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.view.MotionEvent;
-import android.view.View;
+import android.view.ScaleGestureDetector;
 import android.view.WindowManager;
+import android.widget.ImageView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class jg0 extends m20 {
-    public float a;
-    public float b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ lg0 d;
+public final class jg0 implements ScaleGestureDetector.OnScaleGestureListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public jg0(lg0 lg0Var, int i10) {
-        this.d = lg0Var;
-        this.c = i10;
+    public /* synthetic */ jg0(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.m20
-    public final boolean a() {
-        lg0 lg0Var = this.d;
-        PhotoViewer photoViewer = lg0Var.S;
-        if (photoViewer == null) {
-            return false;
-        }
-        if ((photoViewer.C2 == null && lg0Var.r == null) || lg0Var.Z || lg0Var.V || lg0Var.w || lg0Var.s.isInProgress() || !lg0Var.c0) {
-            return false;
-        }
-        return lg0Var.l() != -9223372036854775807L && lg0Var.m() >= 15000;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:34:0x008a  */
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onDoubleTap(MotionEvent motionEvent) {
-        boolean z4;
-        lg0 lg0Var = this.d;
-        PhotoViewer photoViewer = lg0Var.S;
-        y61 y61Var = lg0Var.N;
-        if (photoViewer != null && ((photoViewer.C2 != null || lg0Var.r != null) && !lg0Var.Z && !lg0Var.V && !lg0Var.w && !lg0Var.s.isInProgress() && lg0Var.c0)) {
-            lg0Var.S.getClass();
-            boolean z10 = motionEvent.getX() >= (((float) lg0Var.t()) * lg0Var.G) * 0.5f;
-            long l10 = lg0Var.l();
-            long m9 = lg0Var.m();
-            if (l10 != -9223372036854775807L && m9 >= 15000) {
-                long j10 = z10 ? l10 + 10000 : l10 - 10000;
-                if (l10 != j10) {
-                    if (j10 > m9) {
-                        j10 = m9;
-                    } else if (j10 < 0) {
-                        z4 = j10 >= -9000;
-                        j10 = 0;
-                        if (z4) {
-                            y61Var.e(true);
-                            y61Var.d(!z10);
-                            long j11 = y61Var.o + 10000;
-                            y61Var.o = j11;
-                            y61Var.p = LocaleController.formatPluralString("Seconds", (int) (j11 / 1000), new Object[0]);
-                            vf0 vf0Var = lg0Var.r;
-                            if (vf0Var != null) {
-                                vf0Var.i(j10);
-                            } else {
-                                i71 i71Var = lg0Var.S.C2;
-                                if (i71Var != null) {
-                                    i71Var.K(j10);
-                                }
-                            }
-                            y61Var.g(0L);
-                            lg0Var.W = j10 / m9;
-                            nh.a3 a3Var = lg0Var.Y;
-                            if (a3Var != null) {
-                                a3Var.invalidate();
-                            }
-                            kg0 kg0Var = lg0Var.h;
-                            if (kg0Var != null) {
-                                kg0Var.invalidate();
-                            }
-                            if (!lg0Var.B) {
-                                lg0Var.B = true;
-                                lg0Var.y(true);
-                                if (!lg0Var.f0) {
-                                    lg0Var.f0 = true;
-                                    AndroidUtilities.runOnUIThread(lg0Var.g0, 2500L);
-                                }
-                            }
-                        }
-                        return true;
-                    }
-                    z4 = true;
-                    if (z4) {
-                    }
-                    return true;
+    public void b() {
+        switch (this.a) {
+            case 0:
+                ng0 ng0Var = (ng0) this.b;
+                WindowManager.LayoutParams layoutParams = ng0Var.c;
+                int t6 = (int) (ng0Var.t() * ng0Var.G);
+                layoutParams.width = t6;
+                ng0Var.E = t6;
+                WindowManager.LayoutParams layoutParams2 = ng0Var.c;
+                int r10 = (int) (ng0Var.r() * ng0Var.G);
+                layoutParams2.height = r10;
+                ng0Var.F = r10;
+                try {
+                    AndroidUtilities.updateViewLayout(ng0Var.b, ng0Var.d, ng0Var.c);
+                    break;
+                } catch (IllegalArgumentException unused) {
+                    return;
                 }
-            }
+            default:
+                org.telegram.ui.Components.voip.h1 h1Var = (org.telegram.ui.Components.voip.h1) this.b;
+                WindowManager.LayoutParams layoutParams3 = h1Var.c;
+                int m9 = (int) (h1Var.m() * h1Var.M);
+                layoutParams3.width = m9;
+                h1Var.J = m9;
+                WindowManager.LayoutParams layoutParams4 = h1Var.c;
+                int l10 = (int) (h1Var.l() * h1Var.M);
+                layoutParams4.height = l10;
+                h1Var.K = l10;
+                AndroidUtilities.updateViewLayout(h1Var.b, h1Var.d, h1Var.c);
+                break;
         }
-        return false;
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onDown(MotionEvent motionEvent) {
-        lg0 lg0Var = this.d;
-        if (lg0Var.B) {
-            for (int i10 = 1; i10 < lg0Var.e.getChildCount(); i10++) {
-                View childAt = lg0Var.e.getChildAt(i10);
-                if (childAt.dispatchTouchEvent(motionEvent)) {
-                    lg0Var.y = childAt;
-                    return true;
-                }
-            }
-        }
-        this.a = lg0Var.H;
-        this.b = lg0Var.I;
-        return true;
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
-        lg0 lg0Var = this.d;
-        if (!lg0Var.w || lg0Var.x) {
-            return false;
-        }
-        o1.j jVar = lg0Var.J;
-        jVar.a = f10;
-        float f12 = lg0Var.H;
-        jVar.b = f12;
-        jVar.c = true;
-        jVar.u.i = (f10 / 7.0f) + ((lg0Var.E / 2.0f) + f12) >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? (r3 - r2) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
-        lg0Var.J.f();
-        o1.j jVar2 = lg0Var.K;
-        jVar2.a = f10;
-        jVar2.b = lg0Var.I;
-        jVar2.c = true;
-        jVar2.u.i = k7.n.a((f11 / 10.0f) + r9, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - lg0Var.F) - AndroidUtilities.dp(16.0f));
-        lg0Var.K.f();
-        return true;
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
-        lg0 lg0Var = this.d;
-        if (!lg0Var.w && lg0Var.C == null && !lg0Var.x) {
-            float abs = Math.abs(f10);
-            float f12 = this.c;
-            if (abs >= f12 || Math.abs(f11) >= f12) {
-                lg0Var.w = true;
-                lg0Var.J.c();
-                lg0Var.K.c();
-                lg0Var.c0 = false;
-                lg0Var.i();
-                AndroidUtilities.cancelRunOnUIThread(lg0Var.e0);
-            }
-        }
-        if (lg0Var.w) {
-            float f13 = lg0Var.H;
-            float rawX = (motionEvent2.getRawX() + this.a) - motionEvent.getRawX();
-            lg0Var.I = (motionEvent2.getRawY() + this.b) - motionEvent.getRawY();
-            int i10 = lg0Var.E;
-            if (rawX > (-i10) * 0.25f && rawX < AndroidUtilities.displaySize.x - (i10 * 0.75f)) {
-                boolean z4 = lg0Var.a0;
-                if (z4) {
-                    if (z4) {
-                        lg0Var.J.a(new ig0(this, rawX, 0));
-                        o1.j jVar = lg0Var.J;
-                        jVar.b = f13;
-                        jVar.c = true;
-                        jVar.u.i = rawX;
-                        jVar.f();
-                    }
-                    lg0Var.a0 = false;
-                    return true;
-                }
-                o1.j jVar2 = lg0Var.J;
-                if (jVar2.f) {
-                    jVar2.u.i = rawX;
+    @Override // android.view.ScaleGestureDetector.OnScaleGestureListener
+    public final boolean onScale(ScaleGestureDetector scaleGestureDetector) {
+        switch (this.a) {
+            case 0:
+                ng0 ng0Var = (ng0) this.b;
+                ng0Var.G = k7.o.a(scaleGestureDetector.getScaleFactor() * ng0Var.G, 0.75f, ng0Var.a);
+                ng0Var.E = (int) (ng0Var.t() * ng0Var.G);
+                ng0Var.F = (int) (ng0Var.r() * ng0Var.G);
+                AndroidUtilities.runOnUIThread(new ec0(this, 12));
+                float dp = scaleGestureDetector.getFocusX() >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? (r2 - ng0Var.E) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
+                o1.j jVar = ng0Var.J;
+                if (jVar.f) {
+                    jVar.u.i = dp;
                 } else {
-                    WindowManager.LayoutParams layoutParams = lg0Var.c;
-                    lg0Var.H = rawX;
-                    layoutParams.x = (int) rawX;
-                    lg0Var.n().a.edit().putFloat("x", rawX).apply();
+                    jVar.b = ng0Var.H;
+                    jVar.c = true;
+                    jVar.u.i = dp;
                 }
-                lg0Var.c.y = (int) lg0Var.I;
-                lg0Var.n().a.edit().putFloat("y", lg0Var.I).apply();
-                AndroidUtilities.updateViewLayout(lg0Var.b, lg0Var.d, lg0Var.c);
-                return true;
-            }
-            if (!lg0Var.a0) {
-                o1.j jVar3 = lg0Var.J;
-                jVar3.b = f13;
+                jVar.f();
+                float a2 = k7.o.a(scaleGestureDetector.getFocusY() - (ng0Var.F / 2.0f), AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - ng0Var.F) - AndroidUtilities.dp(16.0f));
+                o1.j jVar2 = ng0Var.K;
+                if (jVar2.f) {
+                    jVar2.u.i = a2;
+                } else {
+                    jVar2.b = ng0Var.I;
+                    jVar2.c = true;
+                    jVar2.u.i = a2;
+                }
+                jVar2.f();
+                break;
+            case 1:
+                org.telegram.ui.Components.voip.h1 h1Var = (org.telegram.ui.Components.voip.h1) this.b;
+                h1Var.M = k7.o.a(scaleGestureDetector.getScaleFactor() * h1Var.M, 0.6f, h1Var.a);
+                h1Var.J = (int) (h1Var.m() * h1Var.M);
+                h1Var.K = (int) (h1Var.l() * h1Var.M);
+                AndroidUtilities.runOnUIThread(new oh.t3(this, 20));
+                o1.j jVar3 = h1Var.P;
+                jVar3.b = h1Var.N;
                 jVar3.c = true;
-                jVar3.u.i = (i10 / 2.0f) + rawX >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? r9 - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f) - lg0Var.E;
-                lg0Var.J.f();
-            }
-            lg0Var.a0 = true;
+                jVar3.u.i = scaleGestureDetector.getFocusX() >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? (r4 - h1Var.J) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
+                o1.j jVar4 = h1Var.P;
+                if (!jVar4.f) {
+                    jVar4.f();
+                }
+                o1.j jVar5 = h1Var.Q;
+                jVar5.b = h1Var.O;
+                jVar5.c = true;
+                jVar5.u.i = k7.o.a(scaleGestureDetector.getFocusY() - (h1Var.K / 2.0f), AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - h1Var.K) - AndroidUtilities.dp(16.0f));
+                o1.j jVar6 = h1Var.Q;
+                if (!jVar6.f) {
+                    jVar6.f();
+                    break;
+                }
+                break;
+            default:
+                float scaleFactor = scaleGestureDetector.getScaleFactor();
+                if (!Float.isNaN(scaleFactor) && !Float.isInfinite(scaleFactor)) {
+                    zf.n nVar = ((zf.b) this.b).b;
+                    float focusX = scaleGestureDetector.getFocusX();
+                    float focusY = scaleGestureDetector.getFocusY();
+                    CropAreaView cropAreaView = nVar.a;
+                    ImageView imageView = nVar.b;
+                    if (!nVar.C) {
+                        float f10 = nVar.I.e;
+                        if (f10 * scaleFactor > 30.0f) {
+                            scaleFactor = 30.0f / f10;
+                        }
+                        zf.l.g(nVar.I, scaleFactor, zf.l.a(nVar.I) * ((focusX - (imageView.getWidth() / 2)) / cropAreaView.getCropWidth()), zf.l.b(nVar.I) * (org.telegram.messenger.y3.a((imageView.getHeight() - nVar.y) - (!nVar.r ? AndroidUtilities.statusBarHeight : 0), nVar.B, 2.0f, focusY) / cropAreaView.getCropHeight()));
+                        nVar.r(false);
+                        break;
+                    }
+                }
+                break;
         }
         return true;
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
-    public final boolean onSingleTapConfirmed(MotionEvent motionEvent) {
-        lg0 lg0Var = this.d;
-        ValueAnimator valueAnimator = lg0Var.C;
-        eg0 eg0Var = lg0Var.g0;
-        if (valueAnimator == null) {
-            if (lg0Var.f0) {
-                AndroidUtilities.cancelRunOnUIThread(eg0Var);
-                lg0Var.f0 = false;
-            }
-            boolean z4 = !lg0Var.B;
-            lg0Var.B = z4;
-            lg0Var.y(z4);
-            if (lg0Var.B && !lg0Var.f0) {
-                AndroidUtilities.runOnUIThread(eg0Var, 2500L);
-                lg0Var.f0 = true;
-            }
+    @Override // android.view.ScaleGestureDetector.OnScaleGestureListener
+    public final boolean onScaleBegin(ScaleGestureDetector scaleGestureDetector) {
+        switch (this.a) {
+            case 0:
+                ng0 ng0Var = (ng0) this.b;
+                if (ng0Var.w) {
+                    ng0Var.w = false;
+                    ng0Var.c0 = false;
+                    ng0Var.i();
+                    AndroidUtilities.cancelRunOnUIThread(ng0Var.e0);
+                }
+                ng0Var.x = true;
+                ng0Var.c.width = (int) (ng0Var.t() * ng0Var.a);
+                ng0Var.c.height = (int) (ng0Var.r() * ng0Var.a);
+                AndroidUtilities.updateViewLayout(ng0Var.b, ng0Var.d, ng0Var.c);
+                break;
+            case 1:
+                org.telegram.ui.Components.voip.h1 h1Var = (org.telegram.ui.Components.voip.h1) this.b;
+                if (h1Var.E) {
+                    h1Var.E = false;
+                }
+                h1Var.F = true;
+                h1Var.c.width = (int) (h1Var.m() * h1Var.a);
+                h1Var.c.height = (int) (h1Var.l() * h1Var.a);
+                AndroidUtilities.updateViewLayout(h1Var.b, h1Var.d, h1Var.c);
+                break;
         }
         return true;
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onSingleTapUp(MotionEvent motionEvent) {
-        if (a()) {
-            return super.onSingleTapUp(motionEvent);
+    @Override // android.view.ScaleGestureDetector.OnScaleGestureListener
+    public final void onScaleEnd(ScaleGestureDetector scaleGestureDetector) {
+        switch (this.a) {
+            case 0:
+                ng0 ng0Var = (ng0) this.b;
+                if (!ng0Var.J.f && !ng0Var.K.f) {
+                    b();
+                    break;
+                } else {
+                    ArrayList arrayList = new ArrayList();
+                    oh.f1 f1Var = new oh.f1(this, arrayList, 1);
+                    o1.j jVar = ng0Var.J;
+                    if (jVar.f) {
+                        jVar.a(f1Var);
+                    } else {
+                        arrayList.add(jVar);
+                    }
+                    o1.j jVar2 = ng0Var.K;
+                    if (!jVar2.f) {
+                        arrayList.add(jVar2);
+                        break;
+                    } else {
+                        jVar2.a(f1Var);
+                        break;
+                    }
+                }
+            case 1:
+                org.telegram.ui.Components.voip.h1 h1Var = (org.telegram.ui.Components.voip.h1) this.b;
+                if (!h1Var.P.f && !h1Var.Q.f) {
+                    b();
+                    break;
+                } else {
+                    ArrayList arrayList2 = new ArrayList();
+                    oh.f1 f1Var2 = new oh.f1(this, arrayList2, 2);
+                    o1.j jVar3 = h1Var.P;
+                    if (jVar3.f) {
+                        jVar3.a(f1Var2);
+                    } else {
+                        arrayList2.add(jVar3);
+                    }
+                    o1.j jVar4 = h1Var.Q;
+                    if (!jVar4.f) {
+                        arrayList2.add(jVar4);
+                        break;
+                    } else {
+                        jVar4.a(f1Var2);
+                        break;
+                    }
+                }
         }
-        onSingleTapConfirmed(motionEvent);
-        return true;
+    }
+
+    private final void a(ScaleGestureDetector scaleGestureDetector) {
     }
 }

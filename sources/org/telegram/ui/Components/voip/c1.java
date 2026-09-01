@@ -1,27 +1,46 @@
 package org.telegram.ui.Components.voip;
 
-import org.webrtc.RendererCommon;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final class c1 implements RendererCommon.RendererEvents {
-    public final /* synthetic */ g1 a;
+public final class c1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ h1 b;
 
-    public c1(g1 g1Var) {
-        this.a = g1Var;
+    public /* synthetic */ c1(h1 h1Var, int i10) {
+        this.a = i10;
+        this.b = h1Var;
     }
 
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFirstFrameRendered() {
-        g1 g1Var = this.a;
-        c2.p pVar = g1Var.V;
-        if (pVar != null) {
-            pVar.run();
-            g1Var.V = null;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 1:
+                this.b.I = null;
+                break;
+            default:
+                super.onAnimationEnd(animator);
+                break;
         }
     }
 
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
+    @Override // android.animation.Animator.AnimatorListener
+    public void onAnimationEnd(Animator animator, boolean z4) {
+        View view;
+        switch (this.a) {
+            case 0:
+                cf.f fVar = this.b.L;
+                if (fVar != null && (view = fVar.j) != null) {
+                    fVar.e(view);
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationEnd(animator, z4);
+                break;
+        }
     }
 }

@@ -1,27 +1,12 @@
 package k7;
 
-import android.content.Context;
-import android.content.pm.PackageManager;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.ui.ab0;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class i6 {
-    public static boolean a(ab0 ab0Var) {
-        Context context = ApplicationLoader.applicationContext;
-        int componentEnabledSetting = context.getPackageManager().getComponentEnabledSetting(ab0Var.a(context));
-        return componentEnabledSetting == 1 || (componentEnabledSetting == 0 && ab0Var == ab0.h);
-    }
-
-    public static void b(ab0 ab0Var) {
-        Context context = ApplicationLoader.applicationContext;
-        PackageManager packageManager = context.getPackageManager();
-        ab0[] values = ab0.values();
-        int length = values.length;
-        for (int i10 = 0; i10 < length; i10++) {
-            ab0 ab0Var2 = values[i10];
-            packageManager.setComponentEnabledSetting(ab0Var2.a(context), ab0Var2 == ab0Var ? 1 : 2, 1);
-        }
+    public static void a(View view, float f10, float f11, float f12, float f13) {
+        view.setPadding(AndroidUtilities.dp(f10), AndroidUtilities.dp(f11), AndroidUtilities.dp(f12), AndroidUtilities.dp(f13));
     }
 }

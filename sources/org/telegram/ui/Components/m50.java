@@ -1,22 +1,36 @@
 package org.telegram.ui.Components;
 
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class m50 {
-    public final ByteBuffer[] a = new ByteBuffer[10];
-    public final long[] b = new long[10];
-    public final int[] c = new int[10];
-    public int d;
-    public int e;
-    public boolean f;
+public final class m50 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ boolean[] a;
+    public final /* synthetic */ h50 b;
+    public final /* synthetic */ z50 c;
 
-    public m50() {
-        for (int i10 = 0; i10 < 10; i10++) {
-            this.a[i10] = ByteBuffer.allocateDirect(2048);
-            this.a[i10].order(ByteOrder.nativeOrder());
+    public m50(z50 z50Var, boolean[] zArr, h50 h50Var) {
+        this.c = z50Var;
+        this.a = zArr;
+        this.b = h50Var;
+    }
+
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        if (floatValue > 0.5f) {
+            boolean[] zArr = this.a;
+            if (!zArr[0]) {
+                zArr[0] = true;
+                this.b.run();
+            }
         }
+        if (floatValue >= 0.5f) {
+            floatValue -= 1.0f;
+        }
+        float f10 = floatValue * 180.0f;
+        z50 z50Var = this.c;
+        z50Var.b.setRotationY(f10);
+        z50Var.j0.setRotationY(f10);
     }
 }

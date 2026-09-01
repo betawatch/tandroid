@@ -1,18 +1,199 @@
 package org.telegram.ui;
 
-import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.content.Context;
+import android.util.LongSparseArray;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class t61 extends EditTextBoldCursor {
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0 && !AndroidUtilities.showKeyboard(this)) {
-            clearFocus();
-            requestFocus();
+public final /* synthetic */ class t61 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+
+    public /* synthetic */ t61(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, int i10) {
+        this.a = i10;
+        this.d = obj;
+        this.c = obj2;
+        this.b = obj3;
+        this.e = obj4;
+        this.f = obj5;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        org.telegram.ui.ActionBar.g6 g6Var;
+        int i10;
+        switch (this.a) {
+            case 0:
+                c71 c71Var = (c71) this.d;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.c;
+                TLObject tLObject = (TLObject) this.b;
+                TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.e;
+                TLRPC.User user = (TLRPC.User) this.f;
+                c71Var.getClass();
+                if (tL_error == null) {
+                    TL_account.Password password = (TL_account.Password) tLObject;
+                    twoStepVerificationActivity.F = password;
+                    TwoStepVerificationActivity.m0(password);
+                    c71Var.T(user, twoStepVerificationActivity.l0(), twoStepVerificationActivity);
+                    break;
+                }
+                break;
+            case 1:
+                qh.x7 x7Var = (qh.x7) this.d;
+                org.telegram.ui.ActionBar.d2 d2Var = (org.telegram.ui.ActionBar.d2) this.e;
+                TLObject tLObject2 = (TLObject) this.b;
+                TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl = (TL_phone.getGroupCallStreamRtmpUrl) this.f;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.c;
+                qh.d8 d8Var = x7Var.T;
+                d2Var.dismiss();
+                if (tLObject2 instanceof TL_phone.groupCallStreamRtmpUrl) {
+                    org.telegram.ui.Components.lr[] lrVarArr = new org.telegram.ui.Components.lr[1];
+                    Context context = x7Var.getContext();
+                    i10 = ((org.telegram.ui.ActionBar.h3) d8Var).currentAccount;
+                    org.telegram.ui.Components.lr lrVar = new org.telegram.ui.Components.lr(context, i10, getgroupcallstreamrtmpurl, (TL_phone.groupCallStreamRtmpUrl) tLObject2, d8Var.I ? null : new org.telegram.ui.web.v1(7, x7Var, lrVarArr), new oh.b());
+                    lrVarArr[0] = lrVar;
+                    lrVar.show();
+                    break;
+                } else if (tL_error2 != null) {
+                    org.telegram.ui.ActionBar.f3 f3Var = d8Var.container;
+                    g6Var = ((org.telegram.ui.ActionBar.h3) d8Var).resourcesProvider;
+                    new org.telegram.ui.Components.qc(f3Var, g6Var).d0(tL_error2, true);
+                    break;
+                }
+                break;
+            case 2:
+                qh.ma.a((qh.ma) this.d, (ViewGroup) this.c, (org.telegram.ui.ActionBar.g6) this.b, (org.telegram.ui.Components.ba) this.e, (View) this.f);
+                break;
+            case 3:
+                uf.l1 l1Var = (uf.l1) this.d;
+                TLRPC.TL_messages_getStickers tL_messages_getStickers = (TLRPC.TL_messages_getStickers) this.c;
+                TLObject tLObject3 = (TLObject) this.b;
+                ArrayList arrayList = (ArrayList) this.e;
+                LongSparseArray longSparseArray = (LongSparseArray) this.f;
+                l1Var.getClass();
+                String str = tL_messages_getStickers.emoticon;
+                uf.m1 m1Var = l1Var.a;
+                if (str.equals(m1Var.O)) {
+                    m1Var.L = 0;
+                    if (tLObject3 instanceof TLRPC.TL_messages_stickers) {
+                        TLRPC.TL_messages_stickers tL_messages_stickers = (TLRPC.TL_messages_stickers) tLObject3;
+                        int size = arrayList.size();
+                        int size2 = tL_messages_stickers.stickers.size();
+                        for (int i11 = 0; i11 < size2; i11++) {
+                            TLRPC.Document document = tL_messages_stickers.stickers.get(i11);
+                            if (longSparseArray.indexOfKey(document.id) < 0) {
+                                arrayList.add(document);
+                            }
+                        }
+                        if (size != arrayList.size()) {
+                            m1Var.F.put(arrayList, m1Var.O);
+                            if (size == 0) {
+                                m1Var.G.add(arrayList);
+                            }
+                            m1Var.l();
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 4:
+                vf.p1 p1Var = (vf.p1) this.d;
+                ArrayList<TLRPC.User> arrayList2 = (ArrayList) this.c;
+                ArrayList<TLRPC.Chat> arrayList3 = (ArrayList) this.b;
+                ArrayList arrayList4 = (ArrayList) this.e;
+                Runnable runnable = (Runnable) this.f;
+                p1Var.e = false;
+                int i12 = p1Var.a;
+                MessagesController.getInstance(i12).putUsers(arrayList2, true);
+                MessagesController.getInstance(i12).putChats(arrayList3, true);
+                ArrayList arrayList5 = p1Var.b;
+                arrayList5.clear();
+                arrayList5.addAll(arrayList4);
+                if (runnable != null) {
+                    runnable.run();
+                } else {
+                    p1Var.i(null, false);
+                }
+                NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.quickRepliesUpdated, new Object[0]);
+                break;
+            case 5:
+                vf.p1 p1Var2 = (vf.p1) this.d;
+                ArrayList<TLRPC.User> arrayList6 = (ArrayList) this.c;
+                ArrayList<TLRPC.Chat> arrayList7 = (ArrayList) this.b;
+                vf.o1 o1Var = (vf.o1) this.e;
+                MessageObject messageObject = (MessageObject) this.f;
+                int i13 = p1Var2.a;
+                MessagesController.getInstance(i13).putUsers(arrayList6, true);
+                MessagesController.getInstance(i13).putChats(arrayList7, true);
+                o1Var.e = messageObject;
+                if (messageObject != null) {
+                    messageObject.applyQuickReply(o1Var.b, o1Var.a);
+                }
+                p1Var2.l();
+                NotificationCenter.getInstance(i13).lambda$postNotificationNameOnUIThread$1(NotificationCenter.quickRepliesUpdated, new Object[0]);
+                break;
+            default:
+                vf.p1 p1Var3 = (vf.p1) this.d;
+                TLObject tLObject4 = (TLObject) this.b;
+                ArrayList<Integer> arrayList8 = (ArrayList) this.e;
+                TLRPC.TL_messages_sendQuickReplyMessages tL_messages_sendQuickReplyMessages = (TLRPC.TL_messages_sendQuickReplyMessages) this.f;
+                TLRPC.TL_error tL_error3 = (TLRPC.TL_error) this.c;
+                p1Var3.getClass();
+                if (tLObject4 instanceof TLRPC.TL_messages_messages) {
+                    ArrayList<TLRPC.Message> arrayList9 = ((TLRPC.TL_messages_messages) tLObject4).messages;
+                    arrayList8.clear();
+                    int size3 = arrayList9.size();
+                    int i14 = 0;
+                    while (i14 < size3) {
+                        TLRPC.Message message = arrayList9.get(i14);
+                        i14++;
+                        arrayList8.add(Integer.valueOf(message.id));
+                    }
+                    tL_messages_sendQuickReplyMessages.id = arrayList8;
+                    for (int i15 = 0; i15 < arrayList8.size(); i15++) {
+                        tL_messages_sendQuickReplyMessages.random_id.add(Long.valueOf(Utilities.random.nextLong()));
+                    }
+                    ConnectionsManager.getInstance(p1Var3.a).sendRequest(tL_messages_sendQuickReplyMessages, null);
+                    break;
+                } else {
+                    FileLog.e("received " + tLObject4 + " " + tL_error3 + " on getQuickReplyMessages when trying to send quick reply");
+                    break;
+                }
         }
-        return super.onTouchEvent(motionEvent);
+    }
+
+    public /* synthetic */ t61(qh.x7 x7Var, org.telegram.ui.ActionBar.d2 d2Var, TLObject tLObject, TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl, TLRPC.TL_error tL_error) {
+        this.a = 1;
+        this.d = x7Var;
+        this.e = d2Var;
+        this.b = tLObject;
+        this.f = getgroupcallstreamrtmpurl;
+        this.c = tL_error;
+    }
+
+    public /* synthetic */ t61(vf.p1 p1Var, TLObject tLObject, ArrayList arrayList, TLRPC.TL_messages_sendQuickReplyMessages tL_messages_sendQuickReplyMessages, TLRPC.TL_error tL_error) {
+        this.a = 6;
+        this.d = p1Var;
+        this.b = tLObject;
+        this.e = arrayList;
+        this.f = tL_messages_sendQuickReplyMessages;
+        this.c = tL_error;
     }
 }

@@ -1,45 +1,92 @@
 package org.telegram.ui.Components;
 
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class ka0 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.p2 a;
-    public final /* synthetic */ pa0 b;
+public final class ka0 extends pz {
+    public final kv0 X;
+    public final /* synthetic */ ra0 Y;
 
-    public ka0(pa0 pa0Var, org.telegram.ui.ActionBar.p2 p2Var) {
-        this.b = pa0Var;
-        this.a = p2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ka0(ra0 ra0Var) {
+        super(100, false);
+        this.Y = ra0Var;
+        this.X = new kv0();
     }
 
-    public final void a(boolean z4) {
-        pa0 pa0Var = this.b;
-        if (pa0Var.getNeededLayoutManager() != pa0Var.getCurrentLayoutManager() && pa0Var.a()) {
-            if (pa0Var.f.I0 > 0) {
-                pa0Var.K = true;
-                pa0Var.o(false);
-                return;
+    @Override // f2.w0
+    public final int A() {
+        ra0 ra0Var = this.Y;
+        return (ra0Var.f.I() == null && ra0Var.f.R == null) ? B() : B() - 1;
+    }
+
+    @Override // org.telegram.ui.Components.pz
+    public final kv0 D1(int i10) {
+        TLRPC.PhotoSize closestPhotoSizeWithSize;
+        kv0 kv0Var = this.X;
+        int i11 = 0;
+        kv0Var.c = false;
+        ra0 ra0Var = this.Y;
+        if (i10 == 0) {
+            kv0Var.a = this.m;
+            kv0Var.b = ra0Var.e.h;
+            kv0Var.c = true;
+            return kv0Var;
+        }
+        int i12 = i10 - 1;
+        if (ra0Var.f.I() == null && ra0Var.f.R == null) {
+            i10 = i12;
+        }
+        kv0Var.a = 0.0f;
+        kv0Var.b = 0.0f;
+        Object J = ra0Var.f.J(i10);
+        if (J instanceof TLRPC.BotInlineResult) {
+            TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) J;
+            TLRPC.Document document = botInlineResult.document;
+            if (document != null) {
+                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90);
+                kv0Var.a = closestPhotoSizeWithSize2 != null ? closestPhotoSizeWithSize2.w : 100.0f;
+                kv0Var.b = closestPhotoSizeWithSize2 != null ? closestPhotoSizeWithSize2.h : 100.0f;
+                while (i11 < botInlineResult.document.attributes.size()) {
+                    TLRPC.DocumentAttribute documentAttribute = botInlineResult.document.attributes.get(i11);
+                    if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
+                        kv0Var.a = documentAttribute.w;
+                        kv0Var.b = documentAttribute.h;
+                        break;
+                    }
+                    i11++;
+                }
+            } else if (botInlineResult.content != null) {
+                while (i11 < botInlineResult.content.attributes.size()) {
+                    TLRPC.DocumentAttribute documentAttribute2 = botInlineResult.content.attributes.get(i11);
+                    if ((documentAttribute2 instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute2 instanceof TLRPC.TL_documentAttributeVideo)) {
+                        kv0Var.a = documentAttribute2.w;
+                        kv0Var.b = documentAttribute2.h;
+                        break;
+                    }
+                    i11++;
+                }
+            } else if (botInlineResult.thumb != null) {
+                while (i11 < botInlineResult.thumb.attributes.size()) {
+                    TLRPC.DocumentAttribute documentAttribute3 = botInlineResult.thumb.attributes.get(i11);
+                    if ((documentAttribute3 instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute3 instanceof TLRPC.TL_documentAttributeVideo)) {
+                        kv0Var.a = documentAttribute3.w;
+                        kv0Var.b = documentAttribute3.h;
+                        break;
+                    }
+                    i11++;
+                }
+            } else {
+                TLRPC.Photo photo = botInlineResult.photo;
+                if (photo != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.getPhotoSize())) != null) {
+                    kv0Var.a = closestPhotoSizeWithSize.w;
+                    kv0Var.b = closestPhotoSizeWithSize.h;
+                }
             }
-            pa0Var.b.setLayoutManager(pa0Var.getNeededLayoutManager());
         }
-        if (z4 && !pa0Var.a()) {
-            z4 = false;
-        }
-        pa0Var.o((!z4 || pa0Var.f.K() > 0) ? z4 : false);
-    }
-
-    public final void b(boolean z4) {
-        this.b.l(z4);
-    }
-
-    public final void c() {
-        pa0 pa0Var = this.b;
-        vp vpVar = pa0Var.G;
-        if (pa0Var.b.getLayoutManager() == pa0Var.d || !pa0Var.F) {
-            return;
-        }
-        AndroidUtilities.cancelRunOnUIThread(vpVar);
-        AndroidUtilities.runOnUIThread(vpVar, this.a.getFragmentBeginToShow() ? 0L : 100L);
+        return kv0Var;
     }
 }

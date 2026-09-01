@@ -1,14 +1,14 @@
 package com.google.android.recaptcha.internal;
 
 import dd.p;
-import k7.p7;
+import k7.q7;
 import ld.s;
 import ld.t;
 import uc.c;
 import vc.a;
 import wc.i;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 final class zzfx extends i implements p {
     Object zza;
@@ -57,7 +57,7 @@ final class zzfx extends i implements p {
         int i10 = this.zzb;
         try {
             if (i10 == 0) {
-                p7.b(obj);
+                q7.b(obj);
                 zzgrVar = (zzgr) this.zzf;
                 zzfpVar = this.zzc.zza;
                 long j10 = this.zzd;
@@ -72,18 +72,18 @@ final class zzfx extends i implements p {
             } else if (i10 == 1) {
                 zzgrVar = (zzgr) this.zza;
                 zzgrVar2 = (zzgr) this.zzf;
-                p7.b(obj);
+                q7.b(obj);
             } else {
                 if (i10 != 2) {
                     if (i10 != 3) {
-                        p7.b(obj);
+                        q7.b(obj);
                         zzgb zzgbVar = this.zzc;
                         zzdsVar = zzdv.zzb;
                         zzgbVar.zzf = zzdsVar;
                         return Boolean.valueOf(((t) this.zze).A(sc.i.a));
                     }
                     zzgrVar3 = (zzgr) this.zzf;
-                    p7.b(obj);
+                    q7.b(obj);
                     this.zzf = null;
                     this.zzb = 4;
                     if (((zzhg) obj).zza(zzgrVar3.zza(), this) == aVar) {
@@ -95,7 +95,7 @@ final class zzfx extends i implements p {
                     return Boolean.valueOf(((t) this.zze).A(sc.i.a));
                 }
                 zzgrVar3 = (zzgr) this.zzf;
-                p7.b(obj);
+                q7.b(obj);
                 zzxn zzxnVar = (zzxn) obj;
                 zzgb zzgbVar3 = this.zzc;
                 zzgbVar3.zze = zzxnVar;
@@ -121,9 +121,9 @@ final class zzfx extends i implements p {
                 obj = zzfpVar2.zzn(zzxnVar2, j112, this);
             }
             return aVar;
-        } catch (zzcg e) {
-            this.zzc.zzd = e;
-            throw e;
+        } catch (zzcg e6) {
+            this.zzc.zzd = e6;
+            throw e6;
         }
     }
 }

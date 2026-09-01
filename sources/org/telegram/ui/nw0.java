@@ -1,41 +1,80 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.ViewGroup;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.MotionEvent;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class nw0 extends org.telegram.ui.Components.rl0 {
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ ow0 d;
+public final class nw0 extends org.telegram.ui.Components.tl0 {
+    public final Paint U2;
+    public final Path V2;
+    public final /* synthetic */ qw0 W2;
 
-    public nw0(ow0 ow0Var, Context context) {
-        this.d = ow0Var;
-        this.c = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nw0(qw0 qw0Var, Context context) {
+        super(context, null);
+        this.W2 = qw0Var;
+        Paint paint = new Paint(1);
+        this.U2 = paint;
+        paint.setColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.h5, false));
+        this.V2 = new Path();
     }
 
-    @Override // org.telegram.ui.Components.rl0
-    public final boolean D(f2.l1 l1Var) {
-        return !((qw0) this.d.n.d.get(l1Var.b())).a.current;
+    @Override // org.telegram.ui.Components.tl0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Path path = this.V2;
+        path.rewind();
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+        path.addRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), Path.Direction.CW);
+        canvas.drawPath(path, this.U2);
+        canvas.save();
+        canvas.clipPath(path);
+        super.dispatchDraw(canvas);
+        canvas.restore();
     }
 
-    @Override // f2.o0
-    public final int h() {
-        return this.d.n.d.size();
+    @Override // org.telegram.ui.Components.tl0, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (this.W2.n.n0 >= 1.0f) {
+            return false;
+        }
+        return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // f2.o0
-    public final void v(f2.l1 l1Var, int i10) {
-        eg.k2 k2Var = (eg.k2) l1Var.a;
-        PremiumPreviewFragment premiumPreviewFragment = this.d.n;
-        k2Var.a((qw0) premiumPreviewFragment.d.get(i10), i10 != h() - 1);
-        k2Var.c(premiumPreviewFragment.e == i10, false);
+    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (this.W2.n.n0 >= 1.0f) {
+            return false;
+        }
+        return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // f2.o0
-    public final f2.l1 x(ViewGroup viewGroup, int i10) {
-        mw0 mw0Var = new mw0(this, this.c);
-        mw0Var.setCirclePaintProvider(new tl0(10, this, mw0Var));
-        return new org.telegram.ui.Components.el0(mw0Var);
+    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        PremiumPreviewFragment premiumPreviewFragment = this.W2.n;
+        int i14 = 0;
+        int i15 = 0;
+        while (true) {
+            ArrayList arrayList = premiumPreviewFragment.d;
+            if (i14 >= arrayList.size()) {
+                premiumPreviewFragment.L = i15;
+                return;
+            }
+            premiumPreviewFragment.J.a((sw0) arrayList.get(i14), false);
+            premiumPreviewFragment.J.measure(View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_31));
+            ((sw0) arrayList.get(i14)).h = i15;
+            i15 += premiumPreviewFragment.J.getMeasuredHeight();
+            i14++;
+        }
     }
 }

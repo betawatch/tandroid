@@ -7,30 +7,30 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import l.j;
+import l.a0;
 import l.k;
-import l.m;
-import l.z;
+import l.l;
+import l.n;
 import l7.w0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final class ExpandedMenuView extends ListView implements j, z, AdapterView.OnItemClickListener {
+public final class ExpandedMenuView extends ListView implements k, a0, AdapterView.OnItemClickListener {
     public static final int[] b = {R.attr.background, R.attr.divider};
-    public k a;
+    public l a;
 
     public ExpandedMenuView(Context context, AttributeSet attributeSet) {
         this(context, attributeSet, R.attr.listViewStyle);
     }
 
-    @Override // l.j
-    public final boolean a(m mVar) {
-        return this.a.q(mVar, null, 0);
+    @Override // l.k
+    public final boolean a(n nVar) {
+        return this.a.q(nVar, null, 0);
     }
 
-    @Override // l.z
-    public final void b(k kVar) {
-        this.a = kVar;
+    @Override // l.a0
+    public final void b(l lVar) {
+        this.a = lVar;
     }
 
     public int getWindowAnimations() {
@@ -45,7 +45,7 @@ public final class ExpandedMenuView extends ListView implements j, z, AdapterVie
 
     @Override // android.widget.AdapterView.OnItemClickListener
     public final void onItemClick(AdapterView adapterView, View view, int i10, long j10) {
-        a((m) getAdapter().getItem(i10));
+        a((n) getAdapter().getItem(i10));
     }
 
     public ExpandedMenuView(Context context, AttributeSet attributeSet, int i10) {
@@ -54,10 +54,10 @@ public final class ExpandedMenuView extends ListView implements j, z, AdapterVie
         w0 y10 = w0.y(context, attributeSet, b, i10);
         TypedArray typedArray = (TypedArray) y10.c;
         if (typedArray.hasValue(0)) {
-            setBackgroundDrawable(y10.t(0));
+            setBackgroundDrawable(y10.s(0));
         }
         if (typedArray.hasValue(1)) {
-            setDivider(y10.t(1));
+            setDivider(y10.s(1));
         }
         y10.A();
     }

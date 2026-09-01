@@ -3,7 +3,7 @@ package com.google.android.gms.internal.play_billing;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class u2 {
     public static final t1 a;
@@ -409,13 +409,13 @@ public abstract class u2 {
                         m1Var.b[i12] = booleanValue;
                         m1Var.d = i13;
                         i11++;
-                    } catch (IndexOutOfBoundsException e) {
-                        e = e;
+                    } catch (IndexOutOfBoundsException e6) {
+                        e = e6;
                         i12 = i13;
                         throw new b7.y0(i12, m1Var.c, 1, e);
                     }
-                } catch (IndexOutOfBoundsException e6) {
-                    e = e6;
+                } catch (IndexOutOfBoundsException e10) {
+                    e = e10;
                 }
             }
             return;
@@ -436,13 +436,13 @@ public abstract class u2 {
                     m1Var.b[i16] = booleanValue2;
                     m1Var.d = i17;
                     i11++;
-                } catch (IndexOutOfBoundsException e10) {
-                    e = e10;
+                } catch (IndexOutOfBoundsException e11) {
+                    e = e11;
                     i16 = i17;
                     throw new b7.y0(i16, m1Var.c, 1, e);
                 }
-            } catch (IndexOutOfBoundsException e11) {
-                e = e11;
+            } catch (IndexOutOfBoundsException e12) {
+                e = e12;
             }
         }
     }

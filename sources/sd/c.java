@@ -9,17 +9,16 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 import java.util.concurrent.locks.LockSupport;
-import kh.a2;
 import ld.e0;
 import qd.r;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class c implements Executor, Closeable {
     public static final /* synthetic */ AtomicLongFieldUpdater n = AtomicLongFieldUpdater.newUpdater(c.class, "parkedWorkersStack$volatile");
     public static final /* synthetic */ AtomicLongFieldUpdater r = AtomicLongFieldUpdater.newUpdater(c.class, "controlState$volatile");
     public static final /* synthetic */ AtomicIntegerFieldUpdater s = AtomicIntegerFieldUpdater.newUpdater(c.class, "_isTerminated$volatile");
-    public static final i5.c v = new i5.c("NOT_IN_STACK", 3);
+    public static final com.google.android.gms.internal.clearcut.e v = new com.google.android.gms.internal.clearcut.e("NOT_IN_STACK", 2);
     private volatile /* synthetic */ int _isTerminated$volatile;
     public final int a;
     public final int b;
@@ -37,13 +36,13 @@ public final class c implements Executor, Closeable {
         this.c = j10;
         this.d = str;
         if (i10 < 1) {
-            throw new IllegalArgumentException(a2.k(i10, "Core pool size ", " should be at least 1").toString());
+            throw new IllegalArgumentException(l.d.k(i10, "Core pool size ", " should be at least 1").toString());
         }
         if (i11 < i10) {
             throw new IllegalArgumentException(android.support.v4.media.a.k(i11, i10, "Max pool size ", " should be greater than or equals to core pool size ").toString());
         }
         if (i11 > 2097150) {
-            throw new IllegalArgumentException(a2.k(i11, "Max pool size ", " should not exceed maximal supported number of threads 2097150").toString());
+            throw new IllegalArgumentException(l.d.k(i11, "Max pool size ", " should not exceed maximal supported number of threads 2097150").toString());
         }
         if (j10 <= 0) {
             throw new IllegalArgumentException(e2.c.i(j10, "Idle worker keep alive time ", " must be positive").toString());
@@ -289,7 +288,7 @@ public final class c implements Executor, Closeable {
     }
 
     public final boolean e() {
-        i5.c cVar;
+        com.google.android.gms.internal.clearcut.e eVar;
         int i10;
         while (true) {
             long j10 = n.get(this);
@@ -300,8 +299,8 @@ public final class c implements Executor, Closeable {
                 long j11 = (2097152 + j10) & (-2097152);
                 Object c3 = aVar.c();
                 while (true) {
-                    cVar = v;
-                    if (c3 == cVar) {
+                    eVar = v;
+                    if (c3 == eVar) {
                         i10 = -1;
                         break;
                     }
@@ -318,7 +317,7 @@ public final class c implements Executor, Closeable {
                 }
                 if (i10 >= 0) {
                     if (n.compareAndSet(this, j10, i10 | j11)) {
-                        aVar.h(cVar);
+                        aVar.h(eVar);
                     } else {
                         continue;
                     }
@@ -393,9 +392,9 @@ public final class c implements Executor, Closeable {
         int i17 = this.a;
         sb4.append(i17);
         sb4.append(", max = ");
-        a2.w(sb4, this.b, "}, Worker States {CPU = ", i10, ", blocking = ");
-        a2.w(sb4, i11, ", parked = ", i12, ", dormant = ");
-        a2.w(sb4, i13, ", terminated = ", i14, "}, running workers queues = ");
+        l.d.w(sb4, this.b, "}, Worker States {CPU = ", i10, ", blocking = ");
+        l.d.w(sb4, i11, ", parked = ", i12, ", dormant = ");
+        l.d.w(sb4, i13, ", terminated = ", i14, "}, running workers queues = ");
         sb4.append(arrayList);
         sb4.append(", global CPU queue size = ");
         sb4.append(this.e.c());

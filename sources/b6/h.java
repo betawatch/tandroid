@@ -4,9 +4,9 @@ import android.content.Context;
 import android.util.Log;
 import java.io.IOException;
 import java.io.InputStream;
-import vh.v2;
+import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class h {
     public final /* synthetic */ int a;
@@ -17,7 +17,7 @@ public final class h {
         this.a = 3;
     }
 
-    public p2.q a() {
+    public p2.p a() {
         if ("first_party".equals(this.c)) {
             throw new IllegalArgumentException("Serialized doc id must be provided for first party products.");
         }
@@ -25,7 +25,7 @@ public final class h {
             throw new IllegalArgumentException("Product id must be provided.");
         }
         if (this.c != null) {
-            return new p2.q(this);
+            return new p2.p(this);
         }
         throw new IllegalArgumentException("Product type must be provided.");
     }
@@ -55,14 +55,14 @@ public final class h {
     public h(f7.b bVar) {
         this.a = 1;
         Context context = (Context) bVar.b;
-        int e = i9.h.e(context, "com.google.firebase.crashlytics.unity_version", "string");
-        if (e != 0) {
+        int e6 = i9.h.e(context, "com.google.firebase.crashlytics.unity_version", "string");
+        if (e6 != 0) {
             this.b = "Unity";
-            String string = context.getResources().getString(e);
+            String string = context.getResources().getString(e6);
             this.c = string;
-            String e6 = v2.e("Unity Editor version is: ", string);
+            String k10 = yh.k("Unity Editor version is: ", string);
             if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-                Log.v("FirebaseCrashlytics", e6, null);
+                Log.v("FirebaseCrashlytics", k10, null);
                 return;
             }
             return;

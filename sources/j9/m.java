@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class m implements c {
     public static final Charset c = Charset.forName("UTF-8");
@@ -38,8 +38,8 @@ public final class m implements c {
             if (this.b == null) {
                 try {
                     this.b = new k(file);
-                } catch (IOException e) {
-                    Log.e("FirebaseCrashlytics", "Could not open log file: " + file, e);
+                } catch (IOException e6) {
+                    Log.e("FirebaseCrashlytics", "Could not open log file: " + file, e6);
                 }
             }
             k kVar = this.b;
@@ -56,8 +56,8 @@ public final class m implements c {
                 byte[] bArr2 = new byte[i10];
                 try {
                     kVar.a(new e(bArr2, iArr));
-                } catch (IOException e6) {
-                    Log.e("FirebaseCrashlytics", "A problem occurred while reading the Crashlytics log file.", e6);
+                } catch (IOException e10) {
+                    Log.e("FirebaseCrashlytics", "A problem occurred while reading the Crashlytics log file.", e10);
                 }
                 lVar = new l(bArr2, iArr[0]);
                 if (lVar != null) {

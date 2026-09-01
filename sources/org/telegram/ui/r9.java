@@ -5,57 +5,57 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class r9 extends org.telegram.ui.ActionBar.g3 {
+public final class r9 extends org.telegram.ui.ActionBar.h3 {
     public final q9 b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e5[] c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f5[] c;
     public final /* synthetic */ u9 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r9(Activity activity, org.telegram.ui.ActionBar.e5[] e5VarArr, int i10, u9 u9Var) {
+    public r9(Activity activity, org.telegram.ui.ActionBar.f5[] f5VarArr, int i10, u9 u9Var) {
         super(activity, false);
-        this.c = e5VarArr;
+        this.c = f5VarArr;
         this.d = u9Var;
-        e5VarArr[0].setFragmentStack(new ArrayList());
+        f5VarArr[0].setFragmentStack(new ArrayList());
         q9 q9Var = new q9(this, i10);
         this.b = q9Var;
         q9Var.w = true;
-        ((ActionBarLayout) e5VarArr[0]).c(-1, q9Var);
-        ((ActionBarLayout) e5VarArr[0]).c0();
-        ViewGroup view = e5VarArr[0].getView();
+        ((ActionBarLayout) f5VarArr[0]).c(-1, q9Var);
+        ((ActionBarLayout) f5VarArr[0]).c0();
+        ViewGroup view = f5VarArr[0].getView();
         int i11 = this.backgroundPaddingLeft;
         view.setPadding(i11, 0, i11, 0);
         q9Var.I = u9Var;
-        if (u9Var.G0() != null) {
-            q9Var.b.setText(u9Var.G0());
+        if (u9Var.E0() != null) {
+            q9Var.b.setText(u9Var.E0());
         }
-        this.containerView = e5VarArr[0].getView();
+        this.containerView = f5VarArr[0].getView();
         setApplyBottomPadding(false);
         setApplyBottomPadding(false);
         setOnDismissListener(new v5(this, 1));
     }
 
-    @Override // org.telegram.ui.ActionBar.g3
+    @Override // org.telegram.ui.ActionBar.h3
     public final boolean canDismissWithSwipe() {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.g3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.l2
+    @Override // org.telegram.ui.ActionBar.h3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.l2
     public final void dismiss() {
         super.dismiss();
         this.c[0] = null;
         this.d.onDismiss();
     }
 
-    @Override // org.telegram.ui.ActionBar.g3, android.app.Dialog
+    @Override // org.telegram.ui.ActionBar.h3, android.app.Dialog
     public final void onBackPressed() {
-        org.telegram.ui.ActionBar.e5[] e5VarArr = this.c;
-        org.telegram.ui.ActionBar.e5 e5Var = e5VarArr[0];
-        if (e5Var == null || e5Var.getFragmentStack().size() <= 1) {
+        org.telegram.ui.ActionBar.f5[] f5VarArr = this.c;
+        org.telegram.ui.ActionBar.f5 f5Var = f5VarArr[0];
+        if (f5Var == null || f5Var.getFragmentStack().size() <= 1) {
             super.onBackPressed();
         } else {
-            ((ActionBarLayout) e5VarArr[0]).G();
+            ((ActionBarLayout) f5VarArr[0]).G();
         }
     }
 }

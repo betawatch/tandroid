@@ -1,10 +1,10 @@
 package ld;
 
-import k7.f7;
-import k7.g8;
-import k7.p7;
+import k7.g7;
+import k7.h8;
+import k7.q7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class a extends u1 implements uc.c, c0 {
     public final uc.h c;
@@ -26,13 +26,13 @@ public abstract class a extends u1 implements uc.c, c0 {
         Object invoke;
         int ordinal = d0Var.ordinal();
         if (ordinal == 0) {
-            f7.a(pVar, aVar, this);
+            g7.a(pVar, aVar, this);
             return;
         }
         if (ordinal != 1) {
             if (ordinal == 2) {
                 kotlin.jvm.internal.j.e(pVar, "<this>");
-                g8.b(g8.a(pVar, aVar, this)).resumeWith(sc.i.a);
+                h8.b(h8.a(pVar, aVar, this)).resumeWith(sc.i.a);
                 return;
             }
             if (ordinal != 3) {
@@ -59,7 +59,7 @@ public abstract class a extends u1 implements uc.c, c0 {
                     qd.a.f(hVar, k10);
                 }
             } catch (Throwable th2) {
-                resumeWith(p7.a(th2));
+                resumeWith(q7.a(th2));
             }
         }
     }

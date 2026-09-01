@@ -4,9 +4,9 @@ import android.net.Uri;
 import h5.d0;
 import j3.g;
 import java.util.Arrays;
-import org.telegram.ui.al0;
+import org.telegram.ui.cl0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class b implements g {
     public static final b f = new b(new a[0], 0, -9223372036854775807L, 0);
@@ -15,7 +15,7 @@ public final class b implements g {
     public static final String r;
     public static final String s;
     public static final String v;
-    public static final al0 w;
+    public static final cl0 w;
     public final int a;
     public final long b;
     public final long c;
@@ -40,7 +40,7 @@ public final class b implements g {
         r = Integer.toString(2, 36);
         s = Integer.toString(3, 36);
         v = Integer.toString(4, 36);
-        w = new al0(13);
+        w = new cl0(13);
     }
 
     public b(a[] aVarArr, long j10, long j11, int i10) {

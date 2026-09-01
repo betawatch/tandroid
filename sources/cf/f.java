@@ -4,41 +4,44 @@ import android.app.PictureInPictureParams;
 import android.graphics.Rect;
 import android.os.Build;
 import android.view.View;
-import com.google.firebase.messaging.r;
+import com.google.firebase.messaging.s;
 import j3.f0;
 import java.util.HashMap;
-import k7.n;
-import m.s3;
+import k7.o;
+import m.r3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class f {
     public static int n;
     public static final Rect o = new Rect();
-    public final s3 a;
-    public final ef.f b;
+    public final r3 a;
+    public final ef.e b;
     public final String c;
     public final int d;
     public final int e;
     public final boolean f;
     public final ef.a g;
     public final ff.c h;
-    public final r i;
+    public final s i;
     public View j;
     public View k;
     public f0 l;
     public boolean m;
 
-    public f(s3 s3Var, e eVar) {
+    public f(r3 r3Var, e eVar) {
         int i10 = n;
         n = i10 + 1;
         ff.c cVar = new ff.c();
         this.h = cVar;
-        r rVar = new r(new d(this, 0));
-        this.i = rVar;
+        d dVar = new d(this, 0);
+        s sVar = new s();
+        sVar.d = new ff.b(sVar, 0);
+        sVar.a = dVar;
+        this.i = sVar;
         StringBuilder sb = new StringBuilder();
         String str = eVar.c;
         sb.append(str == null ? "pip-source" : str);
@@ -50,20 +53,20 @@ public final class f {
         this.d = eVar.e;
         this.e = eVar.d;
         this.f = eVar.f;
-        this.a = s3Var;
+        this.a = r3Var;
         cVar.c(eVar.h, eVar.i);
         this.l = eVar.g;
         this.k = eVar.k;
-        this.b = new ef.f(this);
+        this.b = new ef.e(this);
         View view = eVar.j;
-        rVar.T(view);
+        sVar.o(view);
         this.j = view;
         if (view != null) {
             e(view);
         }
         b(false);
-        ((HashMap) s3Var.a).put(sb2, this);
-        s3Var.g();
+        ((HashMap) r3Var.a).put(sb2, this);
+        r3Var.g();
     }
 
     public final PictureInPictureParams a() {
@@ -81,18 +84,18 @@ public final class f {
         if (this.m != z10) {
             this.m = z10;
             if (z4) {
-                s3 s3Var = this.a;
-                s3Var.g();
-                ((a) s3Var.c).invalidate();
+                r3 r3Var = this.a;
+                r3Var.g();
+                ((a) r3Var.c).invalidate();
             }
         }
     }
 
     public final void c() {
-        this.i.T(null);
-        s3 s3Var = this.a;
-        if (((HashMap) s3Var.a).remove(this.c) != null) {
-            s3Var.g();
+        this.i.o(null);
+        r3 r3Var = this.a;
+        if (((HashMap) r3Var.a).remove(this.c) != null) {
+            r3Var.g();
         }
     }
 
@@ -110,11 +113,11 @@ public final class f {
     */
     public final void e(View view) {
         boolean c3;
-        s3 s3Var = this.a;
-        if (AndroidUtilities.isInPictureInPictureMode((LaunchActivity) s3Var.d)) {
+        r3 r3Var = this.a;
+        if (AndroidUtilities.isInPictureInPictureMode((LaunchActivity) r3Var.d)) {
             return;
         }
-        LaunchActivity launchActivity = (LaunchActivity) s3Var.d;
+        LaunchActivity launchActivity = (LaunchActivity) r3Var.d;
         int[] iArr = ff.d.a;
         view.getLocationOnScreen(iArr);
         boolean z4 = false;
@@ -127,13 +130,13 @@ public final class f {
         int width = view.getWidth() + i12;
         int height = view.getHeight() + i13;
         int i14 = iArr[0];
-        int b10 = n.b(i12, i14, decorView.getWidth() + i14);
+        int b10 = o.b(i12, i14, decorView.getWidth() + i14);
         int i15 = iArr[1];
-        int b11 = n.b(i13, i15, decorView.getHeight() + i15);
+        int b11 = o.b(i13, i15, decorView.getHeight() + i15);
         int i16 = iArr[0];
-        int b12 = n.b(width, i16, decorView.getWidth() + i16);
+        int b12 = o.b(width, i16, decorView.getWidth() + i16);
         int i17 = iArr[1];
-        int b13 = n.b(height, i17, decorView.getHeight() + i17);
+        int b13 = o.b(height, i17, decorView.getHeight() + i17);
         Rect rect = o;
         rect.set(b10, b11, b12, b13);
         ff.c cVar = this.h;
@@ -150,7 +153,7 @@ public final class f {
                 return;
             }
             b(true);
-            s3Var.a(this);
+            r3Var.a(this);
             return;
         }
         TextureViewRenderer textureViewRenderer = (TextureViewRenderer) view;

@@ -7,7 +7,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class jk extends ChatActivityEnterView {
     public int k5;
@@ -16,8 +16,8 @@ public final class jk extends ChatActivityEnterView {
     public final /* synthetic */ xn n5;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jk(xn xnVar, Activity activity, org.telegram.ui.Components.qv0 qv0Var, xn xnVar2, boolean z4, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(activity, qv0Var, xnVar2, z4, f6Var);
+    public jk(xn xnVar, Activity activity, org.telegram.ui.Components.qv0 qv0Var, xn xnVar2, boolean z4, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(activity, qv0Var, xnVar2, z4, g6Var);
         this.n5 = xnVar;
     }
 
@@ -134,7 +134,7 @@ public final class jk extends ChatActivityEnterView {
             });
             xnVar.m9.addListener(new s5(this, 17));
             xnVar.m9.setDuration(250L);
-            xnVar.m9.setInterpolator(wh.n.V);
+            xnVar.m9.setInterpolator(xh.n.V);
             if (!xnVar.l9) {
                 xnVar.m9.start();
             }
@@ -186,7 +186,7 @@ public final class jk extends ChatActivityEnterView {
             }
             xnVar.n9 = ofFloat2;
             ofFloat2.setDuration(250L);
-            ofFloat2.setInterpolator(wh.n.V);
+            ofFloat2.setInterpolator(xh.n.V);
             ofFloat2.start();
             this.j3 = false;
         }

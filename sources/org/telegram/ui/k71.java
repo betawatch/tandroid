@@ -3,23 +3,20 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class k71 implements View.OnClickListener {
-    public final /* synthetic */ n71 a;
-    public final /* synthetic */ TLRPC.TL_authorization b;
-    public final /* synthetic */ o71 c;
+public final class k71 implements View.OnLongClickListener {
+    public final /* synthetic */ TLRPC.TL_authorization a;
+    public final /* synthetic */ p71 b;
 
-    public k71(o71 o71Var, n71 n71Var, TLRPC.TL_authorization tL_authorization) {
-        this.c = o71Var;
-        this.a = n71Var;
-        this.b = tL_authorization;
+    public k71(p71 p71Var, TLRPC.TL_authorization tL_authorization) {
+        this.b = p71Var;
+        this.a = tL_authorization;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        this.a.d.c(!r0.h, true);
-        this.b.encrypted_requests_disabled = !r4.d.h;
-        o71.n(this.c);
+    @Override // android.view.View.OnLongClickListener
+    public final boolean onLongClick(View view) {
+        p71.m(this.b, this.a.country);
+        return true;
     }
 }

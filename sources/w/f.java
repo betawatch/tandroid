@@ -1,27 +1,62 @@
 package w;
 
-import vh.v2;
+import android.util.Log;
+import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public class f extends Exception {
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public f(String str, e eVar) {
-        super(r2.toString());
-        StringBuilder f10 = v2.f(str, ", frames: ");
-        f10.append(eVar.a());
+public final class f implements AutoCloseable {
+    public final String[] a;
+    public final ArrayDeque b;
+
+    public f(Object obj, String str, ArrayDeque arrayDeque) {
+        this.b = arrayDeque;
+        if (obj != null) {
+            arrayDeque.addFirst(new e(obj, str));
+            if (Log.isLoggable("CarApp.Bun", 2)) {
+                StringBuilder sb = new StringBuilder();
+                int min = Math.min(arrayDeque.size(), 11);
+                if (this.a == null) {
+                    this.a = new String[12];
+                }
+                String str2 = this.a[min];
+                if (str2 == null) {
+                    char[] cArr = new char[min];
+                    Arrays.fill(cArr, ' ');
+                    String str3 = new String(cArr);
+                    str2 = min == 11 ? str3.concat("...") : str3;
+                    this.a[min] = str2;
+                }
+                sb.append(str2);
+                sb.append(h.i(obj.getClass()) + " " + str);
+                Log.v("CarApp.Bun", sb.toString());
+            }
+        }
     }
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public f(String str, e eVar, Exception exc) {
-        super(r2.toString(), exc);
-        StringBuilder f10 = v2.f(str, ", frames: ");
-        f10.append(eVar.a());
+    public final String a() {
+        StringBuilder sb = new StringBuilder();
+        ArrayDeque arrayDeque = this.b;
+        int min = Math.min(arrayDeque.size(), 8);
+        Iterator descendingIterator = arrayDeque.descendingIterator();
+        while (descendingIterator.hasNext()) {
+            int i10 = min - 1;
+            if (min <= 0) {
+                break;
+            }
+            sb.append(((e) descendingIterator.next()).a());
+            min = i10;
+        }
+        if (descendingIterator.hasNext()) {
+            sb.append("[...]");
+        }
+        return sb.toString();
+    }
+
+    @Override // java.lang.AutoCloseable
+    public final void close() {
+        this.b.removeFirst();
     }
 }

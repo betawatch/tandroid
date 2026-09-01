@@ -1,28 +1,29 @@
 package dc;
 
-import a3.c;
-import com.google.firebase.messaging.r;
+import androidx.biometric.f0;
 import com.googlecode.mp4parser.g;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import org.telegram.ui.yh;
+import sf.e;
+import yb.c;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a extends com.googlecode.mp4parser.a {
-    public static final /* synthetic */ c b;
-    public static final /* synthetic */ c c;
-    public static final /* synthetic */ c d;
-    public static final /* synthetic */ c e;
-    public static final /* synthetic */ c f;
-    public static final /* synthetic */ c h;
-    public static final /* synthetic */ c n;
-    public static final /* synthetic */ c r;
-    public static final /* synthetic */ c s;
-    public static final /* synthetic */ c v;
-    public static final /* synthetic */ c w;
-    public static final /* synthetic */ c x;
-    public static final /* synthetic */ c y;
+    public static final /* synthetic */ f0 b;
+    public static final /* synthetic */ f0 c;
+    public static final /* synthetic */ f0 d;
+    public static final /* synthetic */ f0 e;
+    public static final /* synthetic */ f0 f;
+    public static final /* synthetic */ f0 h;
+    public static final /* synthetic */ f0 n;
+    public static final /* synthetic */ f0 r;
+    public static final /* synthetic */ f0 s;
+    public static final /* synthetic */ f0 v;
+    public static final /* synthetic */ f0 w;
+    public static final /* synthetic */ f0 x;
+    public static final /* synthetic */ f0 y;
     public b a;
 
     static {
@@ -79,7 +80,7 @@ public final class a extends com.googlecode.mp4parser.a {
         bVar.b = r2.b.a(byteBuffer.get());
         bVar.c = r2.b.a(byteBuffer.get());
         bVar.d = r2.b.a(byteBuffer.get());
-        yb.c cVar = new yb.c(0, byteBuffer);
+        c cVar = new c(0, byteBuffer);
         bVar.m = cVar.a(6);
         bVar.e = cVar.a(2);
         bVar.n = cVar.a(3);
@@ -99,7 +100,7 @@ public final class a extends com.googlecode.mp4parser.a {
             bVar.h = false;
         }
         if (bVar.h && ((i10 = bVar.b) == 100 || i10 == 110 || i10 == 122 || i10 == 144)) {
-            yb.c cVar2 = new yb.c(0, byteBuffer);
+            c cVar2 = new c(0, byteBuffer);
             bVar.o = cVar2.a(6);
             bVar.i = cVar2.a(2);
             bVar.p = cVar2.a(5);
@@ -121,24 +122,24 @@ public final class a extends com.googlecode.mp4parser.a {
     }
 
     public final void d(int i10) {
-        yh.v(de.a.c(e, this, this, new Integer(i10)));
+        yh.x(de.a.c(e, this, this, new Integer(i10)));
         this.a.d = i10;
     }
 
     public final void e(int i10) {
-        yh.v(de.a.c(c, this, this, new Integer(i10)));
+        yh.x(de.a.c(c, this, this, new Integer(i10)));
         this.a.b = i10;
     }
 
     @Override // com.googlecode.mp4parser.a
     public final void getContent(ByteBuffer byteBuffer) {
-        yh.v(de.a.c(x, this, this, byteBuffer));
+        yh.x(de.a.c(x, this, this, byteBuffer));
         b bVar = this.a;
         r2.b.r(bVar.a, byteBuffer);
         byteBuffer.put((byte) (bVar.b & 255));
         byteBuffer.put((byte) (bVar.c & 255));
         byteBuffer.put((byte) (bVar.d & 255));
-        yb.c cVar = new yb.c(1, byteBuffer);
+        c cVar = new c(1, byteBuffer);
         cVar.c(bVar.m, 6);
         cVar.c(bVar.e, 2);
         cVar.c(bVar.n, 3);
@@ -168,7 +169,7 @@ public final class a extends com.googlecode.mp4parser.a {
         if (bVar.h) {
             int i13 = bVar.b;
             if (i13 == 100 || i13 == 110 || i13 == 122 || i13 == 144) {
-                yb.c cVar2 = new yb.c(1, byteBuffer);
+                c cVar2 = new c(1, byteBuffer);
                 cVar2.c(bVar.o, 6);
                 cVar2.c(bVar.i, 2);
                 cVar2.c(bVar.p, 5);
@@ -191,7 +192,7 @@ public final class a extends com.googlecode.mp4parser.a {
     @Override // com.googlecode.mp4parser.a
     public final long getContentSize() {
         int i10;
-        yh.v(de.a.b(w, this, this));
+        yh.x(de.a.b(w, this, this));
         b bVar = this.a;
         ArrayList arrayList = bVar.f;
         int size = arrayList.size();
@@ -227,7 +228,7 @@ public final class a extends com.googlecode.mp4parser.a {
     }
 
     public final String toString() {
-        r b10 = de.a.b(y, this, this);
+        e b10 = de.a.b(y, this, this);
         g.a().getClass();
         g.b(b10);
         return "AvcConfigurationBox{avcDecoderConfigurationRecord=" + this.a + '}';

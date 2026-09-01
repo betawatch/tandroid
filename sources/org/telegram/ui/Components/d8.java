@@ -6,7 +6,7 @@ import java.util.Random;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class d8 {
     public float f;
@@ -26,15 +26,15 @@ public final class d8 {
     public final float m = 120.0f;
     public final int n = 61;
     public final float[] o = new float[6];
-    public final qp[] a = new qp[2];
+    public final sp[] a = new sp[2];
 
     public d8() {
         for (int i10 = 0; i10 < 2; i10++) {
-            qp[] qpVarArr = this.a;
-            qp qpVar = new qp();
-            qpVarArr[i10] = qpVar;
-            qpVar.g = AndroidUtilities.dp(24.0f);
-            qpVar.k = 1.0f;
+            sp[] spVarArr = this.a;
+            sp spVar = new sp();
+            spVarArr[i10] = spVar;
+            spVar.g = AndroidUtilities.dp(24.0f);
+            spVar.k = 1.0f;
         }
         this.h = new Paint(1);
     }
@@ -104,19 +104,19 @@ public final class d8 {
                 iArr[i11] = (int) (fArr[i11] * f12);
                 i11++;
             }
-            qp[] qpVarArr = this.a;
-            qp qpVar = qpVarArr[0];
-            for (int i12 = 0; i12 < qpVar.f; i12 += 2) {
-                float[] fArr4 = qpVar.j;
+            sp[] spVarArr = this.a;
+            sp spVar = spVarArr[0];
+            for (int i12 = 0; i12 < spVar.f; i12 += 2) {
+                float[] fArr4 = spVar.j;
                 fArr4[i12] = iArr[i12 / 2];
                 fArr4[i12 + 1] = 0.0f;
             }
             for (int i13 = 0; i13 < 3; i13++) {
                 iArr[i13] = (int) (fArr[i13 + 3] * f12);
             }
-            qp qpVar2 = qpVarArr[1];
-            for (int i14 = 0; i14 < qpVar2.f; i14 += 2) {
-                float[] fArr5 = qpVar2.j;
+            sp spVar2 = spVarArr[1];
+            for (int i14 = 0; i14 < spVar2.f; i14 += 2) {
+                float[] fArr5 = spVar2.j;
                 fArr5[i14] = iArr[i14 / 2];
                 fArr5[i14 + 1] = 0.0f;
             }
@@ -124,9 +124,9 @@ public final class d8 {
             if (dp > AndroidUtilities.dp(26.0f)) {
                 dp = AndroidUtilities.dp(26.0f);
             }
-            qp qpVar3 = qpVarArr[0];
-            qpVarArr[1].g = dp;
-            qpVar3.g = dp;
+            sp spVar3 = spVarArr[0];
+            spVarArr[1].g = dp;
+            spVar3.g = dp;
             canvas.save();
             float f21 = (float) (this.r + 0.6d);
             this.r = f21;
@@ -134,27 +134,27 @@ public final class d8 {
             canvas.save();
             float f22 = (this.f * 0.04f) + 1.0f;
             canvas.scale(f22, f22, f10, f11);
-            qp qpVar4 = qpVarArr[0];
+            sp spVar4 = spVarArr[0];
             Paint paint = this.h;
-            qpVar4.a(f10, f11, canvas, paint);
+            spVar4.a(f10, f11, canvas, paint);
             canvas.restore();
             canvas.rotate(60.0f, f10, f11);
             float w10 = e2.c.w(1.0f, this.f, 0.04f, 1.0f);
             canvas.scale(w10, w10, f10, f11);
-            qpVarArr[1].a(f10, f11, canvas, paint);
+            spVarArr[1].a(f10, f11, canvas, paint);
             canvas.restore();
         }
     }
 
-    public final void c(Canvas canvas, float f10, float f11, boolean z4, float f12, org.telegram.ui.ActionBar.f6 f6Var) {
+    public final void c(Canvas canvas, float f10, float f11, boolean z4, float f12, org.telegram.ui.ActionBar.g6 g6Var) {
         if (LiteMode.isEnabled(32)) {
             int i10 = this.n;
             Paint paint = this.h;
             if (z4) {
-                paint.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Nb, f6Var));
+                paint.setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Nb, g6Var));
                 paint.setAlpha((int) (i10 * f12));
             } else {
-                paint.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.ie, f6Var));
+                paint.setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.ie, g6Var));
                 paint.setAlpha((int) (i10 * f12));
             }
             b(canvas, f10, f11);

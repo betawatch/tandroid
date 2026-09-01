@@ -10,9 +10,8 @@ import android.text.style.TextAppearanceSpan;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import kh.a2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a0 extends b0 {
     public final ArrayList e = new ArrayList();
@@ -129,7 +128,7 @@ public final class a0 extends b0 {
                     size4--;
                 }
             } else {
-                zVar = !arrayList.isEmpty() ? (z) a2.i(1, arrayList) : null;
+                zVar = !arrayList.isEmpty() ? (z) l.d.i(1, arrayList) : null;
             }
         }
         if (this.h != null && this.i.booleanValue()) {
@@ -154,11 +153,11 @@ public final class a0 extends b0 {
             z4 = false;
             for (size = arrayList.size() - 1; size >= 0; size--) {
                 z zVar2 = (z) arrayList.get(size);
-                CharSequence e = z4 ? e(zVar2) : zVar2.a;
+                CharSequence e6 = z4 ? e(zVar2) : zVar2.a;
                 if (size != arrayList.size() - 1) {
                     spannableStringBuilder.insert(0, (CharSequence) "\n");
                 }
-                spannableStringBuilder.insert(0, e);
+                spannableStringBuilder.insert(0, e6);
             }
             new Notification.BigTextStyle(builder).setBigContentTitle(null).bigText(spannableStringBuilder);
         }

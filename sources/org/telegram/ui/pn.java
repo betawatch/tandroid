@@ -16,9 +16,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class pn extends org.telegram.ui.ActionBar.h5 {
+public final class pn extends org.telegram.ui.ActionBar.i5 {
     public float f;
     public final /* synthetic */ xn h;
 
@@ -26,12 +26,12 @@ public final class pn extends org.telegram.ui.ActionBar.h5 {
         this.h = xnVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.h5
+    @Override // org.telegram.ui.ActionBar.i5
     public final boolean a() {
         return this.h.r3 == null;
     }
 
-    @Override // org.telegram.ui.ActionBar.h5
+    @Override // org.telegram.ui.ActionBar.i5
     public final boolean b() {
         xn xnVar = this.h;
         if (!xnVar.xc.f) {
@@ -56,12 +56,12 @@ public final class pn extends org.telegram.ui.ActionBar.h5 {
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.h5
+    @Override // org.telegram.ui.ActionBar.i5
     public final boolean f() {
         return this.h.k3;
     }
 
-    @Override // org.telegram.ui.ActionBar.h5
+    @Override // org.telegram.ui.ActionBar.i5
     public final void k() {
         xn xnVar = this.h;
         xnVar.L7();
@@ -88,7 +88,7 @@ public final class pn extends org.telegram.ui.ActionBar.h5 {
         xnVar.m3 = null;
     }
 
-    @Override // org.telegram.ui.ActionBar.h5
+    @Override // org.telegram.ui.ActionBar.i5
     public final void m() {
         TLRPC.Chat chat;
         int i10;
@@ -135,9 +135,9 @@ public final class pn extends org.telegram.ui.ActionBar.h5 {
             if (yVar3 != null) {
                 yVar3.f(8);
             }
-            cs csVar = xnVar.a0;
-            if (csVar != null) {
-                csVar.b(false);
+            ds dsVar = xnVar.a0;
+            if (dsVar != null) {
+                dsVar.b(false);
             }
             org.telegram.ui.ActionBar.w0 w0Var2 = xnVar.j0;
             if (w0Var2 != null && xnVar.H9) {
@@ -164,9 +164,9 @@ public final class pn extends org.telegram.ui.ActionBar.h5 {
             if (yVar6 != null) {
                 yVar6.f(0);
             }
-            cs csVar2 = xnVar.a0;
-            if (csVar2 != null) {
-                csVar2.b(true);
+            ds dsVar2 = xnVar.a0;
+            if (dsVar2 != null) {
+                dsVar2.b(true);
             }
             org.telegram.ui.ActionBar.w0 w0Var5 = xnVar.j0;
             if (w0Var5 != null && xnVar.H9) {
@@ -205,9 +205,9 @@ public final class pn extends org.telegram.ui.ActionBar.h5 {
             if (yVar10 != null) {
                 yVar10.f(8);
             }
-            cs csVar3 = xnVar.a0;
-            if (csVar3 != null) {
-                csVar3.b(false);
+            ds dsVar3 = xnVar.a0;
+            if (dsVar3 != null) {
+                dsVar3.b(false);
             }
         }
         if (xnVar.n1 != null) {
@@ -231,7 +231,7 @@ public final class pn extends org.telegram.ui.ActionBar.h5 {
             i10 = ((org.telegram.ui.ActionBar.p2) xnVar).currentAccount;
             HashtagSearchController.getInstance(i10).clearSearchResults();
         }
-        tf.y0 y0Var = xnVar.J3;
+        uf.y0 y0Var = xnVar.J3;
         if (y0Var != null) {
             y0Var.l();
         }
@@ -241,7 +241,7 @@ public final class pn extends org.telegram.ui.ActionBar.h5 {
         xnVar.Wc(false);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.f, 0.0f);
         ofFloat.addUpdateListener(new on(this, 1));
-        ofFloat.setInterpolator(org.telegram.ui.Components.nr.h);
+        ofFloat.setInterpolator(org.telegram.ui.Components.pr.h);
         ofFloat.setDuration(320L);
         ofFloat.start();
         xnVar.vc.a(false, true);
@@ -251,7 +251,7 @@ public final class pn extends org.telegram.ui.ActionBar.h5 {
         xnVar.vc();
         vk vkVar = xnVar.l1;
         if (vkVar != null) {
-            vkVar.d.M(new fr(2));
+            vkVar.d.M(new gr(2));
             vkVar.h = 0L;
             xnVar.l1.g(false);
         }
@@ -262,7 +262,7 @@ public final class pn extends org.telegram.ui.ActionBar.h5 {
         xnVar.kb(false);
     }
 
-    @Override // org.telegram.ui.ActionBar.h5
+    @Override // org.telegram.ui.ActionBar.i5
     public final void n() {
         hk hkVar;
         int i10;
@@ -285,14 +285,14 @@ public final class pn extends org.telegram.ui.ActionBar.h5 {
             if (ejVar != null) {
                 ejVar.b(true);
             }
-            org.telegram.ui.Components.k40 k40Var = xnVar.f2;
-            if (k40Var != null) {
-                k40Var.b(true);
+            org.telegram.ui.Components.m40 m40Var = xnVar.f2;
+            if (m40Var != null) {
+                m40Var.b(true);
             }
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.f, 1.0f);
         ofFloat.addUpdateListener(new on(this, 0));
-        ofFloat.setInterpolator(org.telegram.ui.Components.nr.h);
+        ofFloat.setInterpolator(org.telegram.ui.Components.pr.h);
         ofFloat.setDuration(320L);
         ofFloat.start();
         vk vkVar = xnVar.l1;
@@ -309,12 +309,12 @@ public final class pn extends org.telegram.ui.ActionBar.h5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.h5
-    public final void o(tf.e0 e0Var) {
+    @Override // org.telegram.ui.ActionBar.i5
+    public final void o(uf.e0 e0Var) {
         xn xnVar = this.h;
         vk vkVar = xnVar.l1;
         if (vkVar != null) {
-            vkVar.d.M(new fr(2));
+            vkVar.d.M(new gr(2));
             vkVar.h = 0L;
         }
         xnVar.n3 = null;
@@ -323,13 +323,13 @@ public final class pn extends org.telegram.ui.ActionBar.h5 {
         xnVar.kb(false);
     }
 
-    @Override // org.telegram.ui.ActionBar.h5
-    public final void p(kg.f fVar) {
+    @Override // org.telegram.ui.ActionBar.i5
+    public final void p(lg.f fVar) {
         int i10;
         int i11;
         int i12;
         int i13;
-        org.telegram.ui.ActionBar.f6 f6Var;
+        org.telegram.ui.ActionBar.g6 g6Var;
         xn xnVar = this.h;
         boolean z4 = false;
         xnVar.Fc(0, 0, -1);
@@ -350,15 +350,15 @@ public final class pn extends org.telegram.ui.ActionBar.h5 {
             xnVar.M7();
             if (xnVar.q3.contains("@")) {
                 String str = xnVar.q3;
-                f6Var = ((org.telegram.ui.ActionBar.p2) xnVar).resourceProvider;
-                xnVar.presentFragment(new org.telegram.ui.Components.d40(str, f6Var));
+                g6Var = ((org.telegram.ui.ActionBar.p2) xnVar).resourceProvider;
+                xnVar.presentFragment(new org.telegram.ui.Components.f40(str, g6Var));
                 return;
             }
             if (xnVar.r3 == null) {
                 xnVar.r3 = xnVar.q3;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(this.f, 1.0f);
                 ofFloat.addUpdateListener(new on(this, 2));
-                ofFloat.setInterpolator(org.telegram.ui.Components.nr.h);
+                ofFloat.setInterpolator(org.telegram.ui.Components.pr.h);
                 ofFloat.setDuration(320L);
                 ofFloat.start();
                 vk vkVar = xnVar.l1;
@@ -402,7 +402,7 @@ public final class pn extends org.telegram.ui.ActionBar.h5 {
         mediaDataController.searchMessagesInChat(str2, j10, j11, i10, 0, xnVar.a4, xnVar.l3, xnVar.m3, xnVar.n3);
     }
 
-    @Override // org.telegram.ui.ActionBar.h5
+    @Override // org.telegram.ui.ActionBar.i5
     public final void q(EditText editText) {
         xn xnVar = this.h;
         xd.a aVar = xnVar.xc;
@@ -434,7 +434,7 @@ public final class pn extends org.telegram.ui.ActionBar.h5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.h5
+    @Override // org.telegram.ui.ActionBar.i5
     public final boolean r() {
         return this.h.r3 == null;
     }

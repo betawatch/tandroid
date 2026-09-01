@@ -13,18 +13,18 @@ import java.util.HashMap;
 import java.util.Iterator;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class p0 {
     public final bf.b a;
-    public final com.google.firebase.messaging.r b;
+    public final sf.e b;
     public final s c;
     public boolean d = false;
     public int e = -1;
 
-    public p0(bf.b bVar, com.google.firebase.messaging.r rVar, s sVar) {
+    public p0(bf.b bVar, sf.e eVar, s sVar) {
         this.a = bVar;
-        this.b = rVar;
+        this.b = eVar;
         this.c = sVar;
     }
 
@@ -54,7 +54,7 @@ public final class p0 {
         k0Var.I = false;
         k0Var.O.i = false;
         k0Var.u(4);
-        this.a.x(sVar, false);
+        this.a.w(sVar, false);
     }
 
     public final void b() {
@@ -65,9 +65,9 @@ public final class p0 {
         }
         s sVar2 = sVar.h;
         p0 p0Var = null;
-        com.google.firebase.messaging.r rVar = this.b;
+        sf.e eVar = this.b;
         if (sVar2 != null) {
-            p0 p0Var2 = (p0) ((HashMap) rVar.c).get(sVar2.e);
+            p0 p0Var2 = (p0) ((HashMap) eVar.c).get(sVar2.e);
             if (p0Var2 == null) {
                 throw new IllegalStateException("Fragment " + sVar + " declared target fragment " + sVar.h + " that does not belong to this FragmentManager!");
             }
@@ -76,7 +76,7 @@ public final class p0 {
             p0Var = p0Var2;
         } else {
             String str = sVar.n;
-            if (str != null && (p0Var = (p0) ((HashMap) rVar.c).get(str)) == null) {
+            if (str != null && (p0Var = (p0) ((HashMap) eVar.c).get(str)) == null) {
                 StringBuilder sb = new StringBuilder("Fragment ");
                 sb.append(sVar);
                 sb.append(" declared target fragment ");
@@ -295,7 +295,7 @@ public final class p0 {
     }
 
     public final void f() {
-        s u10;
+        s q10;
         boolean K = j0.K(3);
         s sVar = this.c;
         if (K) {
@@ -304,16 +304,16 @@ public final class p0 {
         boolean z4 = true;
         int i10 = 0;
         boolean z10 = sVar.w && !sVar.v();
-        com.google.firebase.messaging.r rVar = this.b;
+        sf.e eVar = this.b;
         if (z10) {
-            rVar.S(sVar.e, null);
+            eVar.G(sVar.e, null);
         }
         if (!z10) {
-            m0 m0Var = (m0) rVar.e;
+            m0 m0Var = (m0) eVar.e;
             if (!((m0Var.d.containsKey(sVar.e) && m0Var.g) ? m0Var.h : true)) {
                 String str = sVar.n;
-                if (str != null && (u10 = rVar.u(str)) != null && u10.P) {
-                    sVar.h = u10;
+                if (str != null && (q10 = eVar.q(str)) != null && q10.P) {
+                    sVar.h = q10;
                 }
                 sVar.a = 0;
                 return;
@@ -321,7 +321,7 @@ public final class p0 {
         }
         u uVar = sVar.H;
         if (uVar != null) {
-            z4 = ((m0) rVar.e).h;
+            z4 = ((m0) eVar.e).h;
         } else {
             v vVar = uVar.b;
             if (e2.c.s(vVar)) {
@@ -329,7 +329,7 @@ public final class p0 {
             }
         }
         if (z10 || z4) {
-            ((m0) rVar.e).c(sVar, false);
+            ((m0) eVar.e).c(sVar, false);
         }
         sVar.I.l();
         sVar.a0.e(androidx.lifecycle.m.ON_DESTROY);
@@ -341,10 +341,10 @@ public final class p0 {
             throw new w0("Fragment " + sVar + " did not call through to super.onDestroy()");
         }
         this.a.B(sVar, false);
-        ArrayList x10 = rVar.x();
-        int size = x10.size();
+        ArrayList t6 = eVar.t();
+        int size = t6.size();
         while (i10 < size) {
-            Object obj = x10.get(i10);
+            Object obj = t6.get(i10);
             i10++;
             p0 p0Var = (p0) obj;
             if (p0Var != null) {
@@ -357,9 +357,9 @@ public final class p0 {
         }
         String str2 = sVar.n;
         if (str2 != null) {
-            sVar.h = rVar.u(str2);
+            sVar.h = eVar.q(str2);
         }
-        rVar.G(this);
+        eVar.x(this);
     }
 
     public final void g() {
@@ -376,7 +376,7 @@ public final class p0 {
         if (!sVar.R) {
             throw new w0("Fragment " + sVar + " did not call through to super.onDestroyView()");
         }
-        a0.l lVar = ((w1.b) new androidx.biometric.e(sVar.f(), w1.b.f).n(w1.b.class)).d;
+        a0.l lVar = ((w1.b) new androidx.biometric.e(sVar.f(), w1.b.f).m(w1.b.class)).d;
         int i10 = lVar.c;
         for (int i11 = 0; i11 < i10; i11++) {
             ((w1.a) lVar.b[i11]).k();
@@ -435,7 +435,7 @@ public final class p0 {
     }
 
     public final void j() {
-        com.google.firebase.messaging.r rVar = this.b;
+        sf.e eVar = this.b;
         boolean z4 = this.d;
         s sVar = this.c;
         if (z4) {
@@ -456,8 +456,8 @@ public final class p0 {
                         if (j0.K(3)) {
                             Log.d("FragmentManager", "Cleaning up state of never attached fragment: " + sVar);
                         }
-                        ((m0) rVar.e).c(sVar, true);
-                        rVar.G(this);
+                        ((m0) eVar.e).c(sVar, true);
+                        eVar.x(this);
                         if (j0.K(3)) {
                             Log.d("FragmentManager", "initState called for fragment: " + sVar);
                         }
@@ -584,8 +584,8 @@ public final class p0 {
                 return;
             }
             sVar.T = true;
-        } catch (BadParcelableException e) {
-            throw new IllegalStateException("Failed to restore view hierarchy state for fragment " + sVar, e);
+        } catch (BadParcelableException e6) {
+            throw new IllegalStateException("Failed to restore view hierarchy state for fragment " + sVar, e6);
         }
     }
 
@@ -617,7 +617,7 @@ public final class p0 {
         k0Var.O.i = false;
         k0Var.u(7);
         this.a.G(sVar, false);
-        this.b.S(sVar.e, null);
+        this.b.G(sVar.e, null);
         sVar.b = null;
         sVar.c = null;
         sVar.d = null;
@@ -667,9 +667,9 @@ public final class p0 {
         throw new w0("Fragment " + sVar + " did not call through to super.onStop()");
     }
 
-    public p0(bf.b bVar, com.google.firebase.messaging.r rVar, ClassLoader classLoader, c0 c0Var, Bundle bundle) {
+    public p0(bf.b bVar, sf.e eVar, ClassLoader classLoader, c0 c0Var, Bundle bundle) {
         this.a = bVar;
-        this.b = rVar;
+        this.b = eVar;
         o0 o0Var = (o0) bundle.getParcelable("state");
         s a2 = c0Var.a(o0Var.a);
         a2.e = o0Var.b;
@@ -699,9 +699,9 @@ public final class p0 {
         }
     }
 
-    public p0(bf.b bVar, com.google.firebase.messaging.r rVar, s sVar, Bundle bundle) {
+    public p0(bf.b bVar, sf.e eVar, s sVar, Bundle bundle) {
         this.a = bVar;
-        this.b = rVar;
+        this.b = eVar;
         this.c = sVar;
         sVar.c = null;
         sVar.d = null;

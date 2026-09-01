@@ -2,30 +2,51 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class az0 extends ez0 {
-    public int d;
+public final class az0 {
+    public final /* synthetic */ int a;
 
-    @Override // org.telegram.ui.Components.ez0
-    public final int a(nz0 nz0Var, gz0 gz0Var, zy0 zy0Var, int i10, boolean z4) {
-        return Math.max(0, this.a - zy0Var.a(gz0Var, i10));
+    public /* synthetic */ az0(int i10) {
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.Components.ez0
-    public final void b(int i10, int i11) {
-        super.b(i10, i11);
-        this.d = Math.max(this.d, i10 + i11);
+    public final int a(hz0 hz0Var, int i10) {
+        switch (this.a) {
+            case 0:
+                return TLObject.FLAG_31;
+            case 1:
+                return 0;
+            case 2:
+                return i10;
+            case 3:
+                return TLObject.FLAG_31;
+            default:
+                return TLObject.FLAG_31;
+        }
     }
 
-    @Override // org.telegram.ui.Components.ez0
-    public final void c() {
-        super.c();
-        this.d = TLObject.FLAG_31;
+    public final int b(hz0 hz0Var, int i10) {
+        switch (this.a) {
+            case 0:
+                return TLObject.FLAG_31;
+            case 1:
+                return 0;
+            case 2:
+                return i10;
+            case 3:
+                return 0;
+            default:
+                return 0;
+        }
     }
 
-    @Override // org.telegram.ui.Components.ez0
-    public final int d(boolean z4) {
-        return Math.max(super.d(z4), this.d);
+    public int c(int i10, int i11) {
+        switch (this.a) {
+            case 4:
+                return i11;
+            default:
+                return i10;
+        }
     }
 }

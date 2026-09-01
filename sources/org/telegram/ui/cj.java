@@ -3,18 +3,18 @@ package org.telegram.ui;
 import android.app.Activity;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class cj extends org.telegram.ui.Components.mv {
+public final class cj extends org.telegram.ui.Components.ov {
     public final /* synthetic */ xn T;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cj(xn xnVar, org.telegram.ui.ActionBar.p2 p2Var, Activity activity, org.telegram.ui.ActionBar.f6 f6Var, ArrayList arrayList) {
-        super(p2Var, activity, f6Var, arrayList);
+    public cj(xn xnVar, org.telegram.ui.ActionBar.p2 p2Var, Activity activity, org.telegram.ui.ActionBar.g6 g6Var, ArrayList arrayList) {
+        super(p2Var, activity, g6Var, arrayList);
         this.T = xnVar;
     }
 
-    @Override // org.telegram.ui.Components.mv, org.telegram.ui.ActionBar.g3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.l2
+    @Override // org.telegram.ui.Components.ov, org.telegram.ui.ActionBar.h3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.l2
     public final void dismiss() {
         super.dismiss();
         xn xnVar = this.T;

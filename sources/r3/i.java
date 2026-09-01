@@ -5,16 +5,16 @@ import b4.f0;
 import h5.c0;
 import java.util.ArrayList;
 import java.util.Collections;
-import org.telegram.ui.al0;
+import org.telegram.ui.cl0;
 import q5.g0;
 import s8.i0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class i {
     public static final int[] b = {5, 4, 12, 8, 3, 10, 9, 11, 6, 2, 0, 1, 7, 16, 15, 14};
-    public static final g0 c = new g0(new al0(24));
-    public static final g0 d = new g0(new al0(25));
+    public static final g0 c = new g0(new cl0(24));
+    public static final g0 d = new g0(new cl0(25));
     public i0 a;
 
     public final void a(int i10, ArrayList arrayList) {
@@ -32,12 +32,12 @@ public final class i {
                 arrayList.add(new s3.a(1));
                 break;
             case 4:
-                k K = c.K(0);
-                if (K == null) {
+                k I = c.I(0);
+                if (I == null) {
                     arrayList.add(new u3.a());
                     break;
                 } else {
-                    arrayList.add(K);
+                    arrayList.add(I);
                     break;
                 }
             case 5:
@@ -78,9 +78,9 @@ public final class i {
                 arrayList.add(new w3.a());
                 break;
             case 15:
-                k K2 = d.K(new Object[0]);
-                if (K2 != null) {
-                    arrayList.add(K2);
+                k I2 = d.I(new Object[0]);
+                if (I2 != null) {
+                    arrayList.add(I2);
                     break;
                 }
                 break;

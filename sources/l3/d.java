@@ -1,6 +1,6 @@
 package l3;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class d implements j3.g {
     public static final d h = new d(0, 0, 1, 1, 0);
@@ -9,7 +9,7 @@ public final class d implements j3.g {
     public final int c;
     public final int d;
     public final int e;
-    public ja.c f;
+    public o5.i f;
 
     static {
         int i10 = h5.d0.a;
@@ -28,9 +28,9 @@ public final class d implements j3.g {
         this.e = i14;
     }
 
-    public final ja.c a() {
+    public final o5.i a() {
         if (this.f == null) {
-            this.f = new ja.c(this);
+            this.f = new o5.i(this);
         }
         return this.f;
     }

@@ -1,55 +1,93 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.EditText;
+import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class or implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ sr b;
+public final class or extends Drawable {
+    public final Drawable a;
+    public final Drawable b;
+    public float c;
+    public float d = 255.0f;
+    public ValueAnimator e;
 
-    public /* synthetic */ or(sr srVar, int i10) {
-        this.a = i10;
-        this.b = srVar;
+    public or(Drawable drawable, Drawable drawable2) {
+        this.a = drawable;
+        this.b = drawable2;
+        if (drawable != null) {
+            drawable.setCallback(new nr(this, 0));
+        }
+        if (drawable2 != null) {
+            drawable2.setCallback(new nr(this, 1));
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        View view;
-        switch (this.a) {
-            case 0:
-                sr srVar = this.b;
-                if (srVar.b == null && (view = srVar.d) != null) {
-                    View findFocus = view.findFocus();
-                    if (findFocus instanceof EditText) {
-                        srVar.b = (EditText) findFocus;
-                    }
-                }
-                EditText editText = srVar.b;
-                if (editText != null) {
-                    if (editText.length() != 0 || srVar.e) {
-                        try {
-                            srVar.performHapticFeedback(3, 2);
-                            srVar.playSoundEffect(0);
-                        } catch (Exception unused) {
-                        }
-                        srVar.b.dispatchKeyEvent(new KeyEvent(0, 67));
-                        srVar.b.dispatchKeyEvent(new KeyEvent(1, 67));
-                        if (srVar.f) {
-                            srVar.postDelayed(srVar.h, 50L);
-                            break;
-                        }
-                    }
-                }
-                break;
-            default:
-                sr srVar2 = this.b;
-                srVar2.n = false;
-                srVar2.f = true;
-                srVar2.h.run();
-                break;
+    public final void a(float f10) {
+        ValueAnimator valueAnimator = this.e;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
         }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.c, f10);
+        this.e = ofFloat;
+        ofFloat.addUpdateListener(new f6(this, 15));
+        this.e.setDuration((long) (Math.abs(this.c - f10) * 200.0f));
+        this.e.setInterpolator(pr.f);
+        this.e.start();
+    }
+
+    public final void b(float f10) {
+        this.c = f10;
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int i10 = (int) ((1.0f - this.c) * this.d);
+        Drawable drawable = this.a;
+        drawable.setAlpha(i10);
+        int i11 = (int) (this.d * this.c);
+        Drawable drawable2 = this.b;
+        drawable2.setAlpha(i11);
+        if (i10 > 0) {
+            drawable.draw(canvas);
+        }
+        if (i11 > 0) {
+            drawable2.draw(canvas);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return this.a.getIntrinsicHeight();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return this.a.getIntrinsicWidth();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        this.a.setBounds(rect);
+        this.b.setBounds(rect);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.d = i10;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
     }
 }

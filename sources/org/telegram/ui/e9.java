@@ -9,9 +9,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class e9 extends y60 {
+public final class e9 extends z60 {
     public final /* synthetic */ int s0;
     public final /* synthetic */ org.telegram.ui.ActionBar.p2 t0;
 
@@ -22,7 +22,7 @@ public final class e9 extends y60 {
         this.t0 = p2Var;
     }
 
-    @Override // org.telegram.ui.y60
+    @Override // org.telegram.ui.z60
     public final void n0(HashSet hashSet) {
         int size = hashSet.size();
         int i10 = this.s0;
@@ -32,14 +32,14 @@ public final class e9 extends y60 {
             if (userFull == null) {
                 TLRPC.TL_users_getFullUser tL_users_getFullUser = new TLRPC.TL_users_getFullUser();
                 tL_users_getFullUser.id = MessagesController.getInstance(i10).getInputUser(user.id);
-                ConnectionsManager.getInstance(i10).sendRequest(tL_users_getFullUser, new gg.l0(this, i10, user, 3));
+                ConnectionsManager.getInstance(i10).sendRequest(tL_users_getFullUser, new hg.l0(this, i10, user, 3));
                 return;
             }
-            org.telegram.ui.Components.voip.f2.n(user, false, userFull.video_calls_available, getParentActivity(), userFull, AccountInstance.getInstance(i10));
+            org.telegram.ui.Components.voip.g2.n(user, false, userFull.video_calls_available, getParentActivity(), userFull, AccountInstance.getInstance(i10));
         } else {
             TL_phone.createConferenceCall createconferencecall = new TL_phone.createConferenceCall();
             createconferencecall.random_id = Utilities.random.nextInt();
-            ConnectionsManager.getInstance(i10).sendRequest(createconferencecall, new gg.l0(i10, hashSet, this.t0));
+            ConnectionsManager.getInstance(i10).sendRequest(createconferencecall, new hg.l0(i10, hashSet, this.t0));
         }
         finishFragment();
     }

@@ -4,9 +4,9 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import b6.m;
 import g7.i;
-import ph.j5;
+import org.telegram.ui.Components.ai;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class f {
     public final g7.a a;
@@ -16,16 +16,16 @@ public final class f {
         this.a = aVar;
     }
 
-    public final void a(j5 j5Var) {
+    public final void a(ai aiVar) {
         g7.a aVar = this.a;
         try {
-            l6.a aVar2 = (l6.a) j5Var.b;
+            l6.a aVar2 = (l6.a) aiVar.b;
             i iVar = (i) aVar;
             Parcel M0 = iVar.M0();
             g7.b.c(M0, aVar2);
             iVar.Q0(M0, 18);
-        } catch (RemoteException e) {
-            throw new a7.b(e);
+        } catch (RemoteException e6) {
+            throw new a7.b(e6);
         }
     }
 
@@ -43,8 +43,8 @@ public final class f {
             boolean z4 = L0.readInt() != 0;
             L0.recycle();
             return z4;
-        } catch (RemoteException e) {
-            throw new a7.b(e);
+        } catch (RemoteException e6) {
+            throw new a7.b(e6);
         }
     }
 
@@ -55,8 +55,8 @@ public final class f {
             int readInt = L0.readInt();
             L0.recycle();
             return readInt;
-        } catch (RemoteException e) {
-            throw new a7.b(e);
+        } catch (RemoteException e6) {
+            throw new a7.b(e6);
         }
     }
 }

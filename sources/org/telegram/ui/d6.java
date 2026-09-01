@@ -10,11 +10,11 @@ import org.telegram.messenger.CacheByChatsController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public class d6 extends org.telegram.ui.ActionBar.p2 {
     public b6 a;
-    public org.telegram.ui.Components.sl0 b;
+    public org.telegram.ui.Components.tl0 b;
     public final ArrayList c;
     public ArrayList d;
     public int e;
@@ -67,21 +67,21 @@ public class d6 extends org.telegram.ui.ActionBar.p2 {
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         yh.z(false, this.actionBar);
-        this.actionBar.setActionBarMenuOnItemClick(new eg.m1(this, 8));
+        this.actionBar.setActionBarMenuOnItemClick(new fg.l1(this, 8));
         this.actionBar.setTitle(LocaleController.getString(R.string.NotificationsExceptions));
-        this.b = new org.telegram.ui.Components.sl0(context, null);
+        this.b = new org.telegram.ui.Components.tl0(context, null);
         f2.l lVar = new f2.l();
         lVar.C = false;
         lVar.m = false;
         this.b.setItemAnimator(lVar);
-        this.b.setLayoutManager(new f2.i0());
-        org.telegram.ui.Components.sl0 sl0Var = this.b;
+        this.b.setLayoutManager(new f2.j0());
+        org.telegram.ui.Components.tl0 tl0Var = this.b;
         b6 b6Var = new b6(this);
         this.a = b6Var;
-        sl0Var.setAdapter(b6Var);
+        tl0Var.setAdapter(b6Var);
         this.b.setOnItemClickListener(new a1(this, 7));
         frameLayout.addView(this.b);
-        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
+        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.a7, false));
         U();
         return this.fragmentView;
     }

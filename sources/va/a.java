@@ -9,13 +9,13 @@ import pa.j;
 import pa.u;
 import pa.v;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a extends u {
     public static final a b = new a();
     public final SimpleDateFormat a;
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public class a implements v {
         @Override // pa.v
         public final u create(g gVar, wa.a aVar) {
@@ -43,8 +43,8 @@ public final class a extends u {
             try {
                 try {
                     date = new Date(this.a.parse(v).getTime());
-                } catch (ParseException e) {
-                    throw new j("Failed parsing '" + v + "' as SQL Date; at path " + aVar.j(), e);
+                } catch (ParseException e6) {
+                    throw new j("Failed parsing '" + v + "' as SQL Date; at path " + aVar.j(), e6);
                 }
             } finally {
                 this.a.setTimeZone(timeZone);

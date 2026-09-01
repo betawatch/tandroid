@@ -1,70 +1,47 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Timer;
-import org.telegram.messenger.Emoji;
+import java.util.TimerTask;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class wt extends org.telegram.ui.Components.rl0 {
-    public final Context c;
-    public Timer d;
-    public ArrayList e;
-    public final ArrayList f = new ArrayList();
-    public final /* synthetic */ yt h;
+public final class wt extends TimerTask {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ org.telegram.ui.Components.sl0 c;
 
-    public wt(yt ytVar, Context context, HashMap hashMap) {
-        this.h = ytVar;
-        this.c = context;
-        Iterator it = hashMap.values().iterator();
-        while (it.hasNext()) {
-            Iterator it2 = ((List) it.next()).iterator();
-            while (it2.hasNext()) {
-                this.f.add((st) it2.next());
-            }
+    public /* synthetic */ wt(org.telegram.ui.Components.sl0 sl0Var, String str, int i10) {
+        this.a = i10;
+        this.c = sl0Var;
+        this.b = str;
+    }
+
+    @Override // java.util.TimerTask, java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                try {
+                    ((xt) this.c).d.cancel();
+                    ((xt) this.c).d = null;
+                } catch (Exception e6) {
+                    FileLog.e(e6);
+                }
+                Utilities.searchQueue.postRunnable(new org.telegram.ui.Components.l41(11, (xt) this.c, this.b));
+                break;
+            default:
+                uf.c1 c1Var = (uf.c1) this.c;
+                try {
+                    c1Var.n.cancel();
+                    c1Var.n = null;
+                } catch (Exception e10) {
+                    FileLog.e(e10);
+                }
+                String str = this.b;
+                c1Var.getClass();
+                AndroidUtilities.runOnUIThread(new qh.d6(27, c1Var, str));
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.rl0
-    public final boolean D(f2.l1 l1Var) {
-        return true;
-    }
-
-    @Override // f2.o0
-    public final int h() {
-        ArrayList arrayList = this.e;
-        if (arrayList == null) {
-            return 0;
-        }
-        return arrayList.size();
-    }
-
-    @Override // f2.o0
-    public final int j(int i10) {
-        return 0;
-    }
-
-    @Override // f2.o0
-    public final void v(f2.l1 l1Var, int i10) {
-        String str;
-        st stVar = (st) this.e.get(i10);
-        org.telegram.ui.Cells.aa aaVar = (org.telegram.ui.Cells.aa) l1Var.a;
-        CharSequence replaceEmoji = Emoji.replaceEmoji(yt.V(stVar), aaVar.getTextView().getPaint().getFontMetricsInt(), false);
-        if (this.h.h) {
-            str = "+" + stVar.c;
-        } else {
-            str = null;
-        }
-        aaVar.c(replaceEmoji, str, false, false);
-    }
-
-    @Override // f2.o0
-    public final f2.l1 x(ViewGroup viewGroup, int i10) {
-        return new org.telegram.ui.Components.el0(yt.U(this.c));
     }
 }

@@ -4,15 +4,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.text.TextUtils;
-import cg.u0;
 import com.google.android.gms.tasks.TaskCompletionSource;
+import dg.t0;
 import i9.y;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
-import kh.h;
-import nh.n4;
+import lh.h;
+import mh.m2;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BotWebViewVibrationEffect;
@@ -27,13 +27,13 @@ import org.telegram.ui.ActionBar.c2;
 import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.by0;
+import org.telegram.ui.Components.cy0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.xn;
 import v2.g;
-import vh.o3;
+import wh.o3;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements g, c2, MessagesController.ErrorDelegate, MessagesStorage.LongCallback {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class b implements g, c2, MessagesController.ErrorD
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void d(Exception exc) {
+    public void e(Exception exc) {
         c cVar = (c) this.c;
         TaskCompletionSource taskCompletionSource = (TaskCompletionSource) this.d;
         i9.b bVar = (i9.b) this.e;
@@ -66,7 +66,7 @@ public final /* synthetic */ class b implements g, c2, MessagesController.ErrorD
         if (this.b) {
             boolean z4 = true;
             CountDownLatch countDownLatch = new CountDownLatch(1);
-            new Thread(new n4(23, cVar, countDownLatch)).start();
+            new Thread(new m2(24, cVar, countDownLatch)).start();
             TimeUnit timeUnit = TimeUnit.SECONDS;
             ExecutorService executorService = y.a;
             boolean z10 = false;
@@ -108,7 +108,7 @@ public final /* synthetic */ class b implements g, c2, MessagesController.ErrorD
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public void i(d2 d2Var, int i10) {
+    public void j(d2 d2Var, int i10) {
         switch (this.a) {
             case 1:
                 xn xnVar = (xn) this.c;
@@ -135,39 +135,39 @@ public final /* synthetic */ class b implements g, c2, MessagesController.ErrorD
                         intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
                         context.startActivity(intent);
                         break;
-                    } catch (Exception e) {
-                        FileLog.e(e);
+                    } catch (Exception e6) {
+                        FileLog.e(e6);
                         return;
                     }
                 }
             case 3:
-                by0 by0Var = (by0) this.c;
+                cy0 cy0Var = (cy0) this.c;
                 Utilities.Callback2 callback2 = (Utilities.Callback2) this.d;
                 Context context2 = (Context) this.e;
                 boolean z11 = this.b;
-                String trim = by0Var.getText().toString().trim();
+                String trim = cy0Var.getText().toString().trim();
                 if (!TextUtils.isEmpty(trim) && !TextUtils.isEmpty(AndroidUtilities.translitSafe(trim.toString()))) {
-                    AndroidUtilities.hideKeyboard(by0Var);
-                    d2 d2Var2 = new d2(context2, 3, z11 ? null : new nh.b());
+                    AndroidUtilities.hideKeyboard(cy0Var);
+                    d2 d2Var2 = new d2(context2, 3, z11 ? null : new oh.b());
                     d2Var2.q(250L);
-                    callback2.run(trim, new h(d2Var2, d2Var, by0Var, 10));
+                    callback2.run(trim, new h(d2Var2, d2Var, cy0Var, 10));
                     break;
                 } else {
-                    by0Var.setErrorText(".");
-                    AndroidUtilities.shakeViewSpring(by0Var, -6.0f);
+                    cy0Var.setErrorText(".");
+                    AndroidUtilities.shakeViewSpring(cy0Var, -6.0f);
                     BotWebViewVibrationEffect.APP_ERROR.vibrate();
-                    AndroidUtilities.showKeyboard(by0Var);
+                    AndroidUtilities.showKeyboard(cy0Var);
                     break;
                 }
                 break;
             default:
                 boolean z12 = this.b;
-                u0 u0Var = (u0) this.c;
+                t0 t0Var = (t0) this.c;
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.d;
                 o3 o3Var = (o3) this.e;
                 int i11 = o3Var.b;
                 if (!z12) {
-                    u0Var.run();
+                    t0Var.run();
                     break;
                 } else {
                     String trim2 = editTextBoldCursor.getText().toString().trim();
@@ -205,7 +205,7 @@ public final /* synthetic */ class b implements g, c2, MessagesController.ErrorD
 
     @Override // org.telegram.messenger.MessagesStorage.LongCallback
     public void run(long j10) {
-        sh.g gVar = (sh.g) this.c;
+        th.g gVar = (th.g) this.c;
         d2 d2Var = (d2) this.d;
         String str = (String) this.e;
         gVar.getClass();

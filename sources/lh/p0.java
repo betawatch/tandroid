@@ -1,265 +1,65 @@
 package lh;
 
 import android.content.Context;
-import android.os.Bundle;
-import android.text.TextUtils;
-import android.view.KeyEvent;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.view.View;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.json.JSONObject;
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessageSuggestionParams;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.iy;
-import org.telegram.ui.kf1;
-import org.telegram.ui.oy;
-import org.telegram.ui.wf0;
-import org.telegram.ui.xn;
+import org.telegram.ui.Components.fc0;
+import org.telegram.ui.Components.qv0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class p0 implements View.OnClickListener {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ KeyEvent.Callback d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes.dex */
+public final class p0 extends qv0 {
+    public final /* synthetic */ u0 t0;
 
-    public /* synthetic */ p0(s0 s0Var, xn xnVar, int i10, Context context, org.telegram.ui.ActionBar.f6 f6Var, long j10, Utilities.Callback callback) {
-        this.d = s0Var;
-        this.c = i10;
-        this.e = context;
-        this.f = f6Var;
-        this.b = j10;
-        this.h = callback;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p0(u0 u0Var, Context context) {
+        super(context, null);
+        this.t0 = u0Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage;
-        switch (this.a) {
-            case 0:
-                s0 s0Var = (s0) this.d;
-                Context context = (Context) this.e;
-                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) this.f;
-                Utilities.Callback callback = (Utilities.Callback) this.h;
-                if (s0Var.s.T) {
-                    int i10 = this.c;
-                    if (!MessagesController.getInstance(i10).isFrozen()) {
-                        t7 x10 = t7.x(i10, s0Var.E.a);
-                        mf.a l10 = x10.e ? mf.a.l(x10.p()) : null;
-                        if (!s0Var.c && (l10 == null || l10.b < s0Var.E.b)) {
-                            mf.a aVar = s0Var.E;
-                            mf.b bVar = aVar.a;
-                            if (bVar != mf.b.a) {
-                                if (bVar == mf.b.b) {
-                                    new qh.f(context, f6Var, aVar, true, null).show();
-                                    break;
-                                }
-                            } else {
-                                long a2 = aVar.a();
-                                long j10 = this.b;
-                                new z9(context, f6Var, a2, 13, ag.f.h(i10, j10), null, j10).show();
-                                break;
-                            }
-                        } else {
-                            callback.run(MessageSuggestionParams.of(s0Var.E, s0Var.F));
-                            s0Var.dismiss();
-                            break;
-                        }
-                    } else {
-                        org.telegram.ui.c.b(i10);
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                wf0 wf0Var = (wf0) this.d;
-                String str = (String) this.e;
-                String str2 = (String) this.f;
-                String str3 = (String) this.h;
-                ph.d dVar = wf0Var.b;
-                if (!dVar.K) {
-                    dVar.setLoading(true);
-                    TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode = new TLRPC.TL_inputStorePaymentAuthCode();
-                    tL_inputStorePaymentAuthCode.currency = str;
-                    tL_inputStorePaymentAuthCode.amount = this.b;
-                    if (TextUtils.isEmpty(str2)) {
-                        str2 = "";
-                    }
-                    tL_inputStorePaymentAuthCode.phone_code_hash = str2;
-                    tL_inputStorePaymentAuthCode.phone_number = str3;
-                    tL_inputStorePaymentAuthCode.premium_days = this.c;
-                    TLRPC.TL_inputInvoicePremiumAuthCode tL_inputInvoicePremiumAuthCode = new TLRPC.TL_inputInvoicePremiumAuthCode();
-                    tL_inputInvoicePremiumAuthCode.purpose = tL_inputStorePaymentAuthCode;
-                    TLRPC.TL_payments_getPaymentForm tL_payments_getPaymentForm = new TLRPC.TL_payments_getPaymentForm();
-                    tL_payments_getPaymentForm.invoice = tL_inputInvoicePremiumAuthCode;
-                    JSONObject p10 = rh.q2.p(null, false);
-                    if (p10 != null) {
-                        TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
-                        tL_payments_getPaymentForm.theme_params = tL_dataJSON;
-                        tL_dataJSON.data = p10.toString();
-                        tL_payments_getPaymentForm.flags |= 1;
-                    }
-                    wf0Var.v.getConnectionsManager().sendRequest(tL_payments_getPaymentForm, new org.telegram.ui.ba(wf0Var, tL_inputInvoicePremiumAuthCode, tL_inputStorePaymentAuthCode, 23), 74);
-                    break;
-                }
-                break;
-            default:
-                final rh.f1 f1Var = (rh.f1) this.d;
-                TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage2 = (TLRPC.TL_messages_preparedInlineMessage) this.e;
-                final dh.v vVar = (dh.v) this.f;
-                org.telegram.ui.web.u uVar = (org.telegram.ui.web.u) this.h;
-                final org.telegram.ui.ActionBar.p2 U = LaunchActivity.U();
-                if (U != null) {
-                    f1Var.Y = true;
-                    Bundle bundle = new Bundle();
-                    bundle.putBoolean("onlySelect", true);
-                    bundle.putBoolean("canSelectTopics", true);
-                    bundle.putInt("dialogsType", 1);
-                    if (!tL_messages_preparedInlineMessage2.peer_types.isEmpty()) {
-                        int i11 = 0;
-                        bundle.putBoolean("allowGroups", false);
-                        bundle.putBoolean("allowMegagroups", false);
-                        bundle.putBoolean("allowLegacyGroups", false);
-                        bundle.putBoolean("allowUsers", false);
-                        bundle.putBoolean("allowChannels", false);
-                        bundle.putBoolean("allowBots", false);
-                        ArrayList<TLRPC.InlineQueryPeerType> arrayList = tL_messages_preparedInlineMessage2.peer_types;
-                        int size = arrayList.size();
-                        while (i11 < size) {
-                            TLRPC.InlineQueryPeerType inlineQueryPeerType = arrayList.get(i11);
-                            i11++;
-                            TLRPC.InlineQueryPeerType inlineQueryPeerType2 = inlineQueryPeerType;
-                            org.telegram.ui.web.u uVar2 = uVar;
-                            if (inlineQueryPeerType2 instanceof TLRPC.TL_inlineQueryPeerTypePM) {
-                                bundle.putBoolean("allowUsers", true);
-                                tL_messages_preparedInlineMessage = tL_messages_preparedInlineMessage2;
-                            } else {
-                                tL_messages_preparedInlineMessage = tL_messages_preparedInlineMessage2;
-                                if (inlineQueryPeerType2 instanceof TLRPC.TL_inlineQueryPeerTypeBotPM) {
-                                    bundle.putBoolean("allowBots", true);
-                                } else if (inlineQueryPeerType2 instanceof TLRPC.TL_inlineQueryPeerTypeBroadcast) {
-                                    bundle.putBoolean("allowChannels", true);
-                                } else if (inlineQueryPeerType2 instanceof TLRPC.TL_inlineQueryPeerTypeChat) {
-                                    bundle.putBoolean("allowLegacyGroups", true);
-                                } else if (inlineQueryPeerType2 instanceof TLRPC.TL_inlineQueryPeerTypeMegagroup) {
-                                    bundle.putBoolean("allowMegagroups", true);
-                                }
-                            }
-                            tL_messages_preparedInlineMessage2 = tL_messages_preparedInlineMessage;
-                            uVar = uVar2;
-                        }
-                    }
-                    org.telegram.ui.web.u uVar3 = uVar;
-                    final TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage3 = tL_messages_preparedInlineMessage2;
-                    rh.d1 d1Var = new rh.d1(f1Var, bundle, vVar);
-                    final int i12 = this.c;
-                    final long j11 = this.b;
-                    d1Var.z2 = new iy() { // from class: rh.w0
-                        @Override // org.telegram.ui.iy
-                        public final /* synthetic */ boolean C() {
-                            return false;
-                        }
+    @Override // org.telegram.ui.Components.qv0
+    public final boolean P() {
+        return false;
+    }
 
-                        @Override // org.telegram.ui.iy
-                        public final /* synthetic */ boolean K(oy oyVar) {
-                            return false;
-                        }
+    @Override // org.telegram.ui.Components.qv0
+    public final boolean Q() {
+        return false;
+    }
 
-                        @Override // org.telegram.ui.iy
-                        public final boolean w(oy oyVar, ArrayList arrayList2, CharSequence charSequence, boolean z4, boolean z10, int i13, int i14, kf1 kf1Var) {
-                            MessageObject messageObject;
-                            TLRPC.TL_forumTopic findTopic;
-                            TLRPC.Message message;
-                            ArrayList arrayList3 = new ArrayList();
-                            int size2 = arrayList2.size();
-                            boolean z11 = false;
-                            int i15 = 0;
-                            while (i15 < size2) {
-                                Object obj = arrayList2.get(i15);
-                                i15++;
-                                MessagesStorage.TopicKey topicKey = (MessagesStorage.TopicKey) obj;
-                                long j12 = topicKey.dialogId;
-                                long j13 = topicKey.topicId;
-                                if (!DialogObject.isEncryptedDialog(j12)) {
-                                    int i16 = i12;
-                                    if (j13 == 0 || (findTopic = MessagesController.getInstance(i16).getTopicsController().findTopic(-j12, j13)) == null || (message = findTopic.topicStartMessage) == null) {
-                                        messageObject = null;
-                                    } else {
-                                        MessageObject messageObject2 = new MessageObject(i16, message, z11, z11);
-                                        messageObject2.isTopicMainMessage = true;
-                                        messageObject = messageObject2;
-                                    }
-                                    HashMap hashMap = new HashMap();
-                                    StringBuilder sb = new StringBuilder("");
-                                    TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage4 = tL_messages_preparedInlineMessage3;
-                                    sb.append(tL_messages_preparedInlineMessage4.query_id);
-                                    hashMap.put("query_id", sb.toString());
-                                    hashMap.put("id", "" + tL_messages_preparedInlineMessage4.result.id);
-                                    hashMap.put("bot", "" + j11);
-                                    long j14 = j12;
-                                    MessageObject messageObject3 = messageObject;
-                                    SendMessagesHelper.prepareSendingBotContextResult(U, AccountInstance.getInstance(i16), tL_messages_preparedInlineMessage4.result, hashMap, j14, messageObject3, messageObject, null, null, z10, i13, 0, null, 0L, 0L);
-                                    if (charSequence != null) {
-                                        SendMessagesHelper sendMessagesHelper = SendMessagesHelper.getInstance(i16);
-                                        SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of(charSequence.toString(), j14, messageObject3, messageObject3, null, true, null, null, null, true, 0, 0, null, false);
-                                        j14 = j14;
-                                        sendMessagesHelper.sendMessage(of2);
-                                    }
-                                    arrayList3.add(Long.valueOf(j14));
-                                    i15 = i15;
-                                    z11 = false;
-                                }
-                            }
-                            f1 f1Var2 = f1.this;
-                            if (!f1Var2.Z) {
-                                f1Var2.Z = true;
-                                vVar.run(arrayList3.size() > 0 ? null : "USER_DECLINED", arrayList3);
-                            }
-                            if (kf1Var == null) {
-                                oyVar.finishFragment();
-                                return true;
-                            }
-                            kf1Var.finishFragment();
-                            oyVar.removeSelfFromStack();
-                            return true;
-                        }
-                    };
-                    U.presentFragment(d1Var);
-                    f1Var.dismiss();
-                    uVar3.run();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.qv0
+    public final void U(Drawable drawable) {
+        if (drawable instanceof fc0) {
+            ((fc0) drawable).p();
         }
+        u0 u0Var = this.t0;
+        u0Var.d.a = u0Var.c.c(drawable);
     }
 
-    public /* synthetic */ p0(wf0 wf0Var, String str, long j10, String str2, String str3, int i10) {
-        this.d = wf0Var;
-        this.e = str;
-        this.b = j10;
-        this.f = str2;
-        this.h = str3;
-        this.c = i10;
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        if (view != this.I) {
+            return super.drawChild(canvas, view, j10);
+        }
+        u0 u0Var = this.t0;
+        tg.a aVar = u0Var.d.a;
+        if (aVar instanceof tg.b) {
+            ((tg.b) aVar).c(getWidth(), getHeight());
+        }
+        u0Var.d.I(canvas, 0.0f, 0.0f, getWidth(), getHeight());
+        return false;
     }
 
-    public /* synthetic */ p0(rh.f1 f1Var, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, dh.v vVar, int i10, long j10, org.telegram.ui.web.u uVar) {
-        this.d = f1Var;
-        this.e = tL_messages_preparedInlineMessage;
-        this.f = vVar;
-        this.c = i10;
-        this.b = j10;
-        this.h = uVar;
+    @Override // org.telegram.ui.Components.qv0
+    public final Drawable getNewDrawable() {
+        Drawable drawable = this.t0.y;
+        return drawable != null ? drawable : super.getNewDrawable();
+    }
+
+    @Override // org.telegram.ui.Components.qv0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+        super.onLayout(z4, i10, i11, i12, i13);
+        this.t0.o();
     }
 }

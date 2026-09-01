@@ -16,14 +16,14 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import o4.r0;
-import org.telegram.ui.Components.qk0;
+import oh.h4;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class m extends o4.a {
     public final j h;
     public final y0 i;
-    public final qk0 j;
+    public final h4 j;
     public final z9.d k;
     public final o3.o l;
     public final ab.a m;
@@ -39,13 +39,13 @@ public final class m extends o4.a {
         l0.a("goog.exo.hls");
     }
 
-    public m(c1 c1Var, qk0 qk0Var, c cVar, z9.d dVar, o3.o oVar, ab.a aVar, u4.c cVar2, long j10, boolean z4, int i10) {
+    public m(c1 c1Var, h4 h4Var, c cVar, z9.d dVar, o3.o oVar, ab.a aVar, u4.c cVar2, long j10, boolean z4, int i10) {
         y0 y0Var = c1Var.b;
         y0Var.getClass();
         this.i = y0Var;
         this.r = c1Var;
         this.s = c1Var.c;
-        this.j = qk0Var;
+        this.j = h4Var;
         this.h = cVar;
         this.k = dVar;
         this.l = oVar;
@@ -122,14 +122,14 @@ public final class m extends o4.a {
         cVar.n = d0.l(null);
         cVar.f = a2;
         cVar.r = this;
-        p0 p0Var = new p0(((g5.l) cVar.a.b).createDataSource(), uri, 4, cVar.b.J());
+        p0 p0Var = new p0(((g5.l) cVar.a.b).createDataSource(), uri, 4, cVar.b.G());
         h5.a.i(cVar.h == null);
         m0 m0Var = new m0("DefaultHlsPlaylistTracker:MultivariantPlaylist");
         cVar.h = m0Var;
         ab.a aVar = cVar.c;
         int i10 = p0Var.c;
         m0Var.f(p0Var, cVar, aVar.n3(i10));
-        a2.t(new o4.j(p0Var.b), i10, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        a2.u(new o4.j(p0Var.b), i10, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 
     @Override // o4.a

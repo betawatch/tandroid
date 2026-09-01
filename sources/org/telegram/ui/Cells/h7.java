@@ -30,12 +30,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.lp;
-import org.telegram.ui.Components.t00;
-import org.telegram.ui.Components.zs;
+import org.telegram.ui.Components.bt;
+import org.telegram.ui.Components.np;
+import org.telegram.ui.Components.u00;
 import org.telegram.ui.t10;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public class h7 extends FrameLayout implements DownloadController.FileDownloadProgressListener, NotificationCenter.NotificationCenterDelegate {
     public org.telegram.ui.Components.q5 B;
@@ -59,10 +59,10 @@ public class h7 extends FrameLayout implements DownloadController.FileDownloadPr
     public int T;
     public final TextPaint U;
     public final TextPaint V;
-    public final org.telegram.ui.ActionBar.f6 W;
+    public final org.telegram.ui.ActionBar.g6 W;
     public final SpannableStringBuilder a;
     public boolean a0;
-    public final lp b;
+    public final np b;
     public float b0;
     public boolean c;
     public boolean c0;
@@ -74,7 +74,7 @@ public class h7 extends FrameLayout implements DownloadController.FileDownloadPr
     public Utilities.CallbackReturn f0;
     public float g0;
     public int h;
-    public t00 h0;
+    public u00 h0;
     public int n;
     public final int r;
     public StaticLayout s;
@@ -156,9 +156,9 @@ public class h7 extends FrameLayout implements DownloadController.FileDownloadPr
 
     public final void b(Canvas canvas) {
         StaticLayout staticLayout;
-        org.telegram.ui.ActionBar.f6 f6Var = this.W;
+        org.telegram.ui.ActionBar.g6 g6Var = this.W;
         if (this.R == 1) {
-            this.U.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.A6, f6Var));
+            this.U.setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.A6, g6Var));
         }
         StaticLayout staticLayout2 = this.S;
         int i10 = this.r;
@@ -170,10 +170,10 @@ public class h7 extends FrameLayout implements DownloadController.FileDownloadPr
             canvas.restore();
         }
         if (this.s != null) {
-            int alpha = org.telegram.ui.ActionBar.j6.f3.getAlpha();
+            int alpha = org.telegram.ui.ActionBar.k6.f3.getAlpha();
             float f10 = this.d0;
             if (f10 != 1.0f) {
-                org.telegram.ui.ActionBar.j6.f3.setAlpha((int) (alpha * f10));
+                org.telegram.ui.ActionBar.k6.f3.setAlpha((int) (alpha * f10));
             }
             canvas.save();
             int dp = AndroidUtilities.dp(LocaleController.isRTL ? 24.0f : AndroidUtilities.leftBaseline);
@@ -185,22 +185,22 @@ public class h7 extends FrameLayout implements DownloadController.FileDownloadPr
             org.telegram.ui.Components.u5.drawAnimatedEmojis(canvas, this.s, this.x, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f);
             canvas.restore();
             if (this.d0 != 1.0f) {
-                org.telegram.ui.ActionBar.j6.f3.setAlpha(alpha);
+                org.telegram.ui.ActionBar.k6.f3.setAlpha(alpha);
             }
         }
         if (this.J != null) {
-            this.V.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, f6Var));
+            this.V.setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.G6, g6Var));
             canvas.save();
             canvas.translate((AndroidUtilities.dp(LocaleController.isRTL ? 24.0f : AndroidUtilities.leftBaseline) + (LocaleController.isRTL ? this.J.getWidth() - this.I : 0.0f)) - this.H, this.F);
             this.J.draw(canvas);
             canvas.restore();
         }
         if (this.E != null) {
-            org.telegram.ui.ActionBar.j6.g3.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.z6, f6Var));
-            int alpha2 = org.telegram.ui.ActionBar.j6.g3.getAlpha();
+            org.telegram.ui.ActionBar.k6.g3.setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.z6, g6Var));
+            int alpha2 = org.telegram.ui.ActionBar.k6.g3.getAlpha();
             float f11 = this.d0;
             if (f11 != 1.0f) {
-                org.telegram.ui.ActionBar.j6.g3.setAlpha((int) (alpha2 * f11));
+                org.telegram.ui.ActionBar.k6.g3.setAlpha((int) (alpha2 * f11));
             }
             canvas.save();
             canvas.translate((AndroidUtilities.dp(LocaleController.isRTL ? 24.0f : AndroidUtilities.leftBaseline) + (LocaleController.isRTL ? this.E.getWidth() - this.D : 0.0f)) - this.C, this.y);
@@ -208,19 +208,19 @@ public class h7 extends FrameLayout implements DownloadController.FileDownloadPr
             org.telegram.ui.Components.u5.drawAnimatedEmojis(canvas, this.E, this.B, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f);
             canvas.restore();
             if (this.d0 != 1.0f) {
-                org.telegram.ui.ActionBar.j6.g3.setAlpha(alpha2);
+                org.telegram.ui.ActionBar.k6.g3.setAlpha(alpha2);
             }
         }
-        int v02 = org.telegram.ui.ActionBar.j6.v0(this.d ? org.telegram.ui.ActionBar.j6.jd : org.telegram.ui.ActionBar.j6.id, f6Var);
+        int v02 = org.telegram.ui.ActionBar.k6.v0(this.d ? org.telegram.ui.ActionBar.k6.jd : org.telegram.ui.ActionBar.k6.id, g6Var);
         RadialProgress2 radialProgress2 = this.Q;
         radialProgress2.d = v02;
         radialProgress2.H = this.d0;
         radialProgress2.draw(canvas);
         if (this.c) {
             if (LocaleController.isRTL) {
-                canvas.drawLine(0.0f, getHeight() - 1, (getWidth() - AndroidUtilities.dp(72.0f)) - getPaddingRight(), getHeight() - 1, org.telegram.ui.ActionBar.j6.T0("paintDivider", f6Var));
+                canvas.drawLine(0.0f, getHeight() - 1, (getWidth() - AndroidUtilities.dp(72.0f)) - getPaddingRight(), getHeight() - 1, org.telegram.ui.ActionBar.k6.T0("paintDivider", g6Var));
             } else {
-                canvas.drawLine(AndroidUtilities.dp(72.0f), getHeight() - 1, getWidth() - getPaddingRight(), getHeight() - 1, org.telegram.ui.ActionBar.j6.T0("paintDivider", f6Var));
+                canvas.drawLine(AndroidUtilities.dp(72.0f), getHeight() - 1, getWidth() - getPaddingRight(), getHeight() - 1, org.telegram.ui.ActionBar.k6.T0("paintDivider", g6Var));
             }
         }
     }
@@ -234,14 +234,14 @@ public class h7 extends FrameLayout implements DownloadController.FileDownloadPr
                     this.b0 = f10 + 0.10666667f;
                     invalidate();
                     this.b0 = Utilities.clamp(this.b0, 1.0f, 0.0f);
-                    int measuredWidth = (getMeasuredWidth() - AndroidUtilities.dp(12.0f)) - org.telegram.ui.ActionBar.j6.Z0.getIntrinsicWidth();
-                    int measuredHeight = (getMeasuredHeight() - org.telegram.ui.ActionBar.j6.Z0.getIntrinsicHeight()) >> 1;
+                    int measuredWidth = (getMeasuredWidth() - AndroidUtilities.dp(12.0f)) - org.telegram.ui.ActionBar.k6.Z0.getIntrinsicWidth();
+                    int measuredHeight = (getMeasuredHeight() - org.telegram.ui.ActionBar.k6.Z0.getIntrinsicHeight()) >> 1;
                     canvas.save();
                     float f11 = this.b0;
-                    canvas.scale(f11, f11, (org.telegram.ui.ActionBar.j6.Z0.getIntrinsicWidth() / 2.0f) + measuredWidth, (org.telegram.ui.ActionBar.j6.Z0.getIntrinsicHeight() / 2.0f) + measuredHeight);
-                    Drawable drawable = org.telegram.ui.ActionBar.j6.Z0;
-                    drawable.setBounds(measuredWidth, measuredHeight, drawable.getIntrinsicWidth() + measuredWidth, org.telegram.ui.ActionBar.j6.Z0.getIntrinsicHeight() + measuredHeight);
-                    org.telegram.ui.ActionBar.j6.Z0.draw(canvas);
+                    canvas.scale(f11, f11, (org.telegram.ui.ActionBar.k6.Z0.getIntrinsicWidth() / 2.0f) + measuredWidth, (org.telegram.ui.ActionBar.k6.Z0.getIntrinsicHeight() / 2.0f) + measuredHeight);
+                    Drawable drawable = org.telegram.ui.ActionBar.k6.Z0;
+                    drawable.setBounds(measuredWidth, measuredHeight, drawable.getIntrinsicWidth() + measuredWidth, org.telegram.ui.ActionBar.k6.Z0.getIntrinsicHeight() + measuredHeight);
+                    org.telegram.ui.ActionBar.k6.Z0.draw(canvas);
                     canvas.restore();
                 }
             }
@@ -253,14 +253,14 @@ public class h7 extends FrameLayout implements DownloadController.FileDownloadPr
                 }
             }
             this.b0 = Utilities.clamp(this.b0, 1.0f, 0.0f);
-            int measuredWidth2 = (getMeasuredWidth() - AndroidUtilities.dp(12.0f)) - org.telegram.ui.ActionBar.j6.Z0.getIntrinsicWidth();
-            int measuredHeight2 = (getMeasuredHeight() - org.telegram.ui.ActionBar.j6.Z0.getIntrinsicHeight()) >> 1;
+            int measuredWidth2 = (getMeasuredWidth() - AndroidUtilities.dp(12.0f)) - org.telegram.ui.ActionBar.k6.Z0.getIntrinsicWidth();
+            int measuredHeight2 = (getMeasuredHeight() - org.telegram.ui.ActionBar.k6.Z0.getIntrinsicHeight()) >> 1;
             canvas.save();
             float f112 = this.b0;
-            canvas.scale(f112, f112, (org.telegram.ui.ActionBar.j6.Z0.getIntrinsicWidth() / 2.0f) + measuredWidth2, (org.telegram.ui.ActionBar.j6.Z0.getIntrinsicHeight() / 2.0f) + measuredHeight2);
-            Drawable drawable2 = org.telegram.ui.ActionBar.j6.Z0;
-            drawable2.setBounds(measuredWidth2, measuredHeight2, drawable2.getIntrinsicWidth() + measuredWidth2, org.telegram.ui.ActionBar.j6.Z0.getIntrinsicHeight() + measuredHeight2);
-            org.telegram.ui.ActionBar.j6.Z0.draw(canvas);
+            canvas.scale(f112, f112, (org.telegram.ui.ActionBar.k6.Z0.getIntrinsicWidth() / 2.0f) + measuredWidth2, (org.telegram.ui.ActionBar.k6.Z0.getIntrinsicHeight() / 2.0f) + measuredHeight2);
+            Drawable drawable2 = org.telegram.ui.ActionBar.k6.Z0;
+            drawable2.setBounds(measuredWidth2, measuredHeight2, drawable2.getIntrinsicWidth() + measuredWidth2, org.telegram.ui.ActionBar.k6.Z0.getIntrinsicHeight() + measuredHeight2);
+            org.telegram.ui.ActionBar.k6.Z0.draw(canvas);
             canvas.restore();
         }
     }
@@ -319,11 +319,11 @@ public class h7 extends FrameLayout implements DownloadController.FileDownloadPr
     }
 
     public final void e(boolean z4, boolean z10) {
-        lp lpVar = this.b;
-        if (lpVar.getVisibility() != 0) {
-            lpVar.setVisibility(0);
+        np npVar = this.b;
+        if (npVar.getVisibility() != 0) {
+            npVar.setVisibility(0);
         }
-        lpVar.a(z4, z10);
+        npVar.a(z4, z10);
     }
 
     public final void f(MessageObject messageObject, boolean z4) {
@@ -403,7 +403,7 @@ public class h7 extends FrameLayout implements DownloadController.FileDownloadPr
             invalidate();
             return;
         }
-        radialProgress2.e.setColor(org.telegram.ui.ActionBar.j6.v0(this.K.isOutOwner() ? org.telegram.ui.ActionBar.j6.Nb : org.telegram.ui.ActionBar.j6.ie, this.W));
+        radialProgress2.e.setColor(org.telegram.ui.ActionBar.k6.v0(this.K.isOutOwner() ? org.telegram.ui.ActionBar.k6.Nb : org.telegram.ui.ActionBar.k6.ie, this.W));
         boolean isPlayingMessage2 = MediaController.getInstance().isPlayingMessage(this.K);
         if (!isPlayingMessage2 || (isPlayingMessage2 && MediaController.getInstance().isMessagePaused())) {
             this.O = 0;
@@ -551,7 +551,7 @@ public class h7 extends FrameLayout implements DownloadController.FileDownloadPr
         } else {
             i12 = 0;
         }
-        org.telegram.ui.ActionBar.f6 f6Var = this.W;
+        org.telegram.ui.ActionBar.g6 g6Var = this.W;
         if (i13 == 1) {
             try {
                 if (!this.K.isVoice()) {
@@ -560,21 +560,21 @@ public class h7 extends FrameLayout implements DownloadController.FileDownloadPr
                 }
                 d = t10.d(this.K, true, 1, null);
                 f10 = 4.0f;
-                highlightText2 = AndroidUtilities.highlightText(d, this.K.highlightedWords, f6Var);
+                highlightText2 = AndroidUtilities.highlightText(d, this.K.highlightedWords, g6Var);
                 if (highlightText2 != null) {
                     d = highlightText2;
                 }
                 textPaint = this.e0;
                 if (textPaint != null) {
-                    textPaint = org.telegram.ui.ActionBar.j6.f3;
+                    textPaint = org.telegram.ui.ActionBar.k6.f3;
                 }
                 StaticLayout staticLayout = new StaticLayout(TextUtils.ellipsize(d, textPaint, size - i12, TextUtils.TruncateAt.END), textPaint, (AndroidUtilities.dp(4.0f) + size) - i12, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                 this.s = staticLayout;
                 this.v = staticLayout.getLineCount() <= 0 ? this.s.getLineLeft(0) : 0.0f;
                 this.w = this.s.getLineCount() <= 0 ? this.s.getLineWidth(0) : 0.0f;
                 this.x = org.telegram.ui.Components.u5.update(0, this, this.x, this.s);
-            } catch (Exception e) {
-                e = e;
+            } catch (Exception e6) {
+                e = e6;
                 f10 = 4.0f;
                 FileLog.e(e);
                 String str = "";
@@ -583,7 +583,7 @@ public class h7 extends FrameLayout implements DownloadController.FileDownloadPr
                 if (i13 == 1) {
                 }
                 CharSequence replace = this.K.getMusicAuthor().replace('\n', ' ');
-                highlightText = AndroidUtilities.highlightText(replace, this.K.highlightedWords, f6Var);
+                highlightText = AndroidUtilities.highlightText(replace, this.K.highlightedWords, g6Var);
                 if (highlightText != null) {
                 }
                 if (i13 == 1) {
@@ -610,7 +610,7 @@ public class h7 extends FrameLayout implements DownloadController.FileDownloadPr
             }
             String str2 = "";
             if (this.K.hasHighlightedWords()) {
-                CharSequence highlightText3 = AndroidUtilities.highlightText(TextUtils.isEmpty(this.K.messageOwner.message) ? "" : Emoji.replaceEmoji(this.K.messageOwner.message.replace("\n", " ").replaceAll(" +", " ").trim(), org.telegram.ui.ActionBar.j6.o2.getFontMetricsInt(), false), this.K.highlightedWords, f6Var);
+                CharSequence highlightText3 = AndroidUtilities.highlightText(TextUtils.isEmpty(this.K.messageOwner.message) ? "" : Emoji.replaceEmoji(this.K.messageOwner.message.replace("\n", " ").replaceAll(" +", " ").trim(), org.telegram.ui.ActionBar.k6.o2.getFontMetricsInt(), false), this.K.highlightedWords, g6Var);
                 if (highlightText3 != null) {
                     String str3 = this.K.highlightedWords.get(0);
                     TextPaint textPaint3 = this.V;
@@ -629,14 +629,14 @@ public class h7 extends FrameLayout implements DownloadController.FileDownloadPr
                     }
                     String formatDuration = AndroidUtilities.formatDuration((int) this.K.getDuration(), false);
                     if (i13 != 1) {
-                        textPaint2 = org.telegram.ui.ActionBar.j6.g3;
+                        textPaint2 = org.telegram.ui.ActionBar.k6.g3;
                     }
                     this.E = new StaticLayout(TextUtils.ellipsize(formatDuration, textPaint2, size, TextUtils.TruncateAt.END), textPaint2, size + AndroidUtilities.dp(f10), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                     this.C = this.E.getLineCount() > 0 ? this.E.getLineLeft(0) : 0.0f;
                     this.D = this.E.getLineCount() > 0 ? this.E.getLineWidth(0) : 0.0f;
                     this.B = org.telegram.ui.Components.u5.update(0, this, this.B, this.E);
-                } catch (Exception e6) {
-                    FileLog.e(e6);
+                } catch (Exception e10) {
+                    FileLog.e(e10);
                 }
                 setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(56.0f) + (this.J != null ? AndroidUtilities.dp(18.0f) : 0) + (this.c ? 1 : 0));
                 int B = LocaleController.isRTL ? org.telegram.messenger.y3.B(8.0f, View.MeasureSpec.getSize(i10), AndroidUtilities.dp(52.0f)) : AndroidUtilities.dp(8.0f);
@@ -656,7 +656,7 @@ public class h7 extends FrameLayout implements DownloadController.FileDownloadPr
                 }
             }
             CharSequence replace2 = this.K.getMusicAuthor().replace('\n', ' ');
-            highlightText = AndroidUtilities.highlightText(replace2, this.K.highlightedWords, f6Var);
+            highlightText = AndroidUtilities.highlightText(replace2, this.K.highlightedWords, g6Var);
             if (highlightText != null) {
                 replace2 = highlightText;
             }
@@ -664,7 +664,7 @@ public class h7 extends FrameLayout implements DownloadController.FileDownloadPr
                 replace2 = new SpannableStringBuilder(replace2).append(' ').append((CharSequence) this.a).append(' ').append(t10.d(this.K, true, 1, null));
             }
             if (i13 == 1) {
-                textPaint2 = org.telegram.ui.ActionBar.j6.g3;
+                textPaint2 = org.telegram.ui.ActionBar.k6.g3;
             }
             if (this.K.getDuration() > 0.0d) {
                 str2 = " • " + LocaleController.formatShortDuration((int) Math.ceil(this.K.getDuration()));
@@ -687,7 +687,7 @@ public class h7 extends FrameLayout implements DownloadController.FileDownloadPr
         }
         d = this.K.getMusicTitle().replace('\n', ' ');
         f10 = 4.0f;
-        highlightText2 = AndroidUtilities.highlightText(d, this.K.highlightedWords, f6Var);
+        highlightText2 = AndroidUtilities.highlightText(d, this.K.highlightedWords, g6Var);
         if (highlightText2 != null) {
         }
         textPaint = this.e0;
@@ -704,7 +704,7 @@ public class h7 extends FrameLayout implements DownloadController.FileDownloadPr
         if (i13 == 1) {
         }
         CharSequence replace22 = this.K.getMusicAuthor().replace('\n', ' ');
-        highlightText = AndroidUtilities.highlightText(replace22, this.K.highlightedWords, f6Var);
+        highlightText = AndroidUtilities.highlightText(replace22, this.K.highlightedWords, g6Var);
         if (highlightText != null) {
         }
         if (i13 == 1) {
@@ -857,15 +857,15 @@ public class h7 extends FrameLayout implements DownloadController.FileDownloadPr
         }
     }
 
-    public void setGlobalGradientView(t00 t00Var) {
-        this.h0 = t00Var;
+    public void setGlobalGradientView(u00 u00Var) {
+        this.h0 = u00Var;
     }
 
     public void setNeedPlayMessageListener(Utilities.CallbackReturn<MessageObject, Boolean> callbackReturn) {
         this.f0 = callbackReturn;
     }
 
-    public h7(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+    public h7(Context context, int i10, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         this.r = AndroidUtilities.dp(9.0f);
         this.y = AndroidUtilities.dp(29.0f);
@@ -875,40 +875,40 @@ public class h7 extends FrameLayout implements DownloadController.FileDownloadPr
         this.c0 = true;
         this.d0 = 0.0f;
         this.g0 = 1.0f;
-        this.W = f6Var;
+        this.W = g6Var;
         this.R = i10;
         setFocusable(true);
         setImportantForAccessibility(1);
-        RadialProgress2 radialProgress2 = new RadialProgress2(this, f6Var);
+        RadialProgress2 radialProgress2 = new RadialProgress2(this, g6Var);
         this.Q = radialProgress2;
-        radialProgress2.g(org.telegram.ui.ActionBar.j6.ie, org.telegram.ui.ActionBar.j6.je, org.telegram.ui.ActionBar.j6.uc, org.telegram.ui.ActionBar.j6.vc);
+        radialProgress2.g(org.telegram.ui.ActionBar.k6.ie, org.telegram.ui.ActionBar.k6.je, org.telegram.ui.ActionBar.k6.uc, org.telegram.ui.ActionBar.k6.vc);
         this.N = DownloadController.getInstance(i11).generateObserverTag();
         setWillNotDraw(false);
-        lp lpVar = new lp(context, 22, f6Var);
-        this.b = lpVar;
-        lpVar.setVisibility(4);
-        lpVar.b(-1, org.telegram.ui.ActionBar.j6.d6, org.telegram.ui.ActionBar.j6.k7);
-        lpVar.setDrawUnchecked(false);
-        lpVar.setDrawBackgroundAsArc(3);
+        np npVar = new np(context, 22, g6Var);
+        this.b = npVar;
+        npVar.setVisibility(4);
+        npVar.b(-1, org.telegram.ui.ActionBar.k6.d6, org.telegram.ui.ActionBar.k6.k7);
+        npVar.setDrawUnchecked(false);
+        npVar.setDrawBackgroundAsArc(3);
         boolean z4 = LocaleController.isRTL;
-        addView(lpVar, k7.b6.d(24, 24.0f, (z4 ? 5 : 3) | 48, z4 ? 0.0f : 38.1f, 32.1f, z4 ? 6.0f : 0.0f, 0.0f));
+        addView(npVar, k7.c6.d(24, 24.0f, (z4 ? 5 : 3) | 48, z4 ? 0.0f : 38.1f, 32.1f, z4 ? 6.0f : 0.0f, 0.0f));
         if (i10 == 1) {
             TextPaint textPaint = new TextPaint(1);
             this.U = textPaint;
             textPaint.setTextSize(AndroidUtilities.dp(13.0f));
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(".");
             this.a = spannableStringBuilder;
-            spannableStringBuilder.setSpan(new zs(), 0, 1, 0);
+            spannableStringBuilder.setSpan(new bt(), 0, 1, 0);
         }
         TextPaint textPaint2 = new TextPaint(1);
         this.V = textPaint2;
         textPaint2.setTextSize(AndroidUtilities.dp(13.0f));
-        if (f6Var != null) {
+        if (g6Var != null) {
             TextPaint textPaint3 = new TextPaint(1);
             this.e0 = textPaint3;
             textPaint3.setTypeface(AndroidUtilities.bold());
             textPaint3.setTextSize(AndroidUtilities.dp(15.0f));
-            textPaint3.setColor(f6Var.x0(org.telegram.ui.ActionBar.j6.G6));
+            textPaint3.setColor(g6Var.B0(org.telegram.ui.ActionBar.k6.G6));
         }
     }
 

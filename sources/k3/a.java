@@ -2,10 +2,10 @@ package k3;
 
 import j3.o2;
 import java.util.Arrays;
-import k7.a7;
+import k7.b7;
 import o4.v;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a {
     public final long a;
@@ -38,7 +38,7 @@ public final class a {
         }
         if (obj != null && a.class == obj.getClass()) {
             a aVar = (a) obj;
-            if (this.a == aVar.a && this.c == aVar.c && this.e == aVar.e && this.g == aVar.g && this.i == aVar.i && this.j == aVar.j && a7.a(this.b, aVar.b) && a7.a(this.d, aVar.d) && a7.a(this.f, aVar.f) && a7.a(this.h, aVar.h)) {
+            if (this.a == aVar.a && this.c == aVar.c && this.e == aVar.e && this.g == aVar.g && this.i == aVar.i && this.j == aVar.j && b7.a(this.b, aVar.b) && b7.a(this.d, aVar.d) && b7.a(this.f, aVar.f) && b7.a(this.h, aVar.h)) {
                 return true;
             }
         }

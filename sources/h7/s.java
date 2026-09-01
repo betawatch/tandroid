@@ -1,40 +1,79 @@
 package h7;
 
-import android.content.Context;
+import android.hardware.biometrics.BiometricPrompt;
+import android.os.Build;
+import android.security.identity.IdentityCredential;
+import android.security.keystore.KeyGenParameterSpec;
 import android.util.Log;
-import org.telegram.messenger.beta.R;
+import androidx.biometric.c0;
+import androidx.biometric.d0;
+import androidx.biometric.e0;
+import androidx.biometric.w;
+import java.io.IOException;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
+import java.security.Signature;
+import java.security.UnrecoverableKeyException;
+import java.security.cert.CertificateException;
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.Mac;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.SecretKey;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class s {
     public static r a;
 
-    public static String a(Context context, int i10) {
-        if (context == null) {
-            return "";
+    public static w a() {
+        try {
+            KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
+            keyStore.load(null);
+            KeyGenParameterSpec.Builder b10 = c0.b("androidxBiometric", 3);
+            c0.d(b10);
+            c0.e(b10);
+            KeyGenerator keyGenerator = KeyGenerator.getInstance("AES", "AndroidKeyStore");
+            c0.c(keyGenerator, c0.a(b10));
+            keyGenerator.generateKey();
+            SecretKey secretKey = (SecretKey) keyStore.getKey("androidxBiometric", null);
+            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS7Padding");
+            cipher.init(1, secretKey);
+            return new w(cipher);
+        } catch (IOException | InvalidAlgorithmParameterException | InvalidKeyException | KeyStoreException | NoSuchAlgorithmException | NoSuchProviderException | UnrecoverableKeyException | CertificateException | NoSuchPaddingException e6) {
+            Log.w("CryptoObjectUtils", "Failed to create fake crypto object.", e6);
+            return null;
         }
-        if (i10 == 1) {
-            return context.getString(R.string.fingerprint_error_hw_not_available);
-        }
-        if (i10 != 7) {
-            switch (i10) {
-                case 9:
-                    break;
-                case 10:
-                    return context.getString(R.string.fingerprint_error_user_canceled);
-                case 11:
-                    return context.getString(R.string.fingerprint_error_no_fingerprints);
-                case 12:
-                    return context.getString(R.string.fingerprint_error_hw_not_present);
-                default:
-                    Log.e("BiometricUtils", "Unknown error code: " + i10);
-                    return context.getString(R.string.default_error_msg);
-            }
-        }
-        return context.getString(R.string.fingerprint_error_lockout);
     }
 
-    public static synchronized q b(o oVar) {
+    public static BiometricPrompt.CryptoObject b(w wVar) {
+        IdentityCredential identityCredential;
+        if (wVar == null) {
+            return null;
+        }
+        Cipher cipher = wVar.b;
+        if (cipher != null) {
+            return d0.b(cipher);
+        }
+        Signature signature = wVar.a;
+        if (signature != null) {
+            return d0.a(signature);
+        }
+        Mac mac = wVar.c;
+        if (mac != null) {
+            return d0.c(mac);
+        }
+        if (Build.VERSION.SDK_INT < 30 || (identityCredential = wVar.d) == null) {
+            return null;
+        }
+        return e0.a(identityCredential);
+    }
+
+    public static synchronized q c(o oVar) {
         q qVar;
         synchronized (s.class) {
             try {

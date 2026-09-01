@@ -10,7 +10,7 @@ import com.google.android.gms.common.api.internal.t0;
 import com.google.android.gms.common.api.internal.u;
 import com.google.android.gms.tasks.Task;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class e extends com.google.android.gms.common.api.j {
     public static int k = 1;
@@ -28,7 +28,7 @@ public final class e extends com.google.android.gms.common.api.j {
         com.google.android.gms.common.api.b bVar = this.d;
         Context context = this.a;
         if (i10 == 2) {
-            o5.h.a.f("getFallbackSignInIntent()", new Object[0]);
+            o5.h.a.g("getFallbackSignInIntent()", new Object[0]);
             Intent a2 = o5.h.a(context, (GoogleSignInOptions) bVar);
             a2.setAction("com.google.android.gms.auth.APPAUTH_SIGN_IN");
             return a2;
@@ -36,7 +36,7 @@ public final class e extends com.google.android.gms.common.api.j {
         if (i10 == 3) {
             return o5.h.a(context, (GoogleSignInOptions) bVar);
         }
-        o5.h.a.f("getNoImplementationSignInIntent()", new Object[0]);
+        o5.h.a.g("getNoImplementationSignInIntent()", new Object[0]);
         Intent a10 = o5.h.a(context, (GoogleSignInOptions) bVar);
         a10.setAction("com.google.android.gms.auth.NO_IMPL");
         return a10;
@@ -45,7 +45,7 @@ public final class e extends com.google.android.gms.common.api.j {
     public Task g() {
         BasePendingResult basePendingResult;
         boolean z4 = h() == 3;
-        o5.h.a.f("Signing out", new Object[0]);
+        o5.h.a.g("Signing out", new Object[0]);
         o5.h.b(this.a);
         t0 t0Var = this.h;
         if (z4) {

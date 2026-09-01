@@ -5,14 +5,14 @@ import android.text.style.CharacterStyle;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class gl extends UndoView {
     public final /* synthetic */ xn c0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gl(xn xnVar, Activity activity, xn xnVar2, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(activity, xnVar2, true, f6Var);
+    public gl(xn xnVar, Activity activity, xn xnVar2, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(activity, xnVar2, true, g6Var);
         this.c0 = xnVar;
     }
 

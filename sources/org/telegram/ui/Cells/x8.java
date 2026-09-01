@@ -1,22 +1,22 @@
 package org.telegram.ui.Cells;
 
 import android.content.Context;
-import org.telegram.ui.Components.e90;
+import org.telegram.ui.Components.g90;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class x8 extends e90 {
+public final class x8 extends g90 {
     public final /* synthetic */ int I;
     public final /* synthetic */ y8 J;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ x8(y8 y8Var, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
-        super(context, f6Var);
+    public /* synthetic */ x8(y8 y8Var, Context context, org.telegram.ui.ActionBar.g6 g6Var, int i10) {
+        super(context, g6Var);
         this.I = i10;
         this.J = y8Var;
     }
 
-    @Override // org.telegram.ui.Components.e90
+    @Override // org.telegram.ui.Components.g90
     public final int c() {
         switch (this.I) {
             case 0:
@@ -26,7 +26,7 @@ public final class x8 extends e90 {
         }
     }
 
-    @Override // org.telegram.ui.Components.e90
+    @Override // org.telegram.ui.Components.g90
     public final int d(int i10) {
         switch (this.I) {
         }

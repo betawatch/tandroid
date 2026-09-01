@@ -4,7 +4,7 @@ import android.text.style.ClickableSpan;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class p1 extends ClickableSpan {
     public final TLRPC.User a;
@@ -20,7 +20,7 @@ public final class p1 extends ClickableSpan {
         t1 t1Var = this.b.d;
         k1 k1Var = t1Var.Gc;
         if (k1Var != null) {
-            k1Var.y0(t1Var, this.a, 0.0f, 0.0f);
+            k1Var.x0(t1Var, this.a, 0.0f, 0.0f);
         }
     }
 }

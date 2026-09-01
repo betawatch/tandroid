@@ -1,48 +1,44 @@
 package eg;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.DialogInterface;
+import mh.e9;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.ht0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ v0 b;
+public final /* synthetic */ class z implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
 
-    public /* synthetic */ z(v0 v0Var, int i10) {
-        this.a = i10;
-        this.b = v0Var;
+    public /* synthetic */ z(int i10, e9 e9Var) {
+        this.b = i10;
+        this.c = e9Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                v0 v0Var = this.b;
-                AndroidUtilities.addToClipboard(v0Var.p1());
-                v0Var.dismiss();
+                c1 c1Var = (c1) this.c;
+                PhotoViewer photoViewer = ((ht0) c1Var).l2;
+                if (photoViewer.C2 != null) {
+                    photoViewer.E2 = false;
+                    photoViewer.u0();
+                    photoViewer.C2.C();
+                }
+                c1Var.B0(this.b);
                 break;
-            case 1:
-                g0 g0Var = this.b.B0;
-                if (!g0Var.h) {
-                    g0Var.r.performClick();
-                    break;
-                } else {
-                    g0Var.e.performClick();
-                    break;
-                }
-            case 2:
-                g0 g0Var2 = this.b.B0;
-                if (!g0Var2.h) {
-                    g0Var2.r.performClick();
-                    break;
-                } else {
-                    g0Var2.e.performClick();
-                    break;
-                }
             default:
-                v0.S(this.b);
+                NotificationCenter.getInstance(this.b).removeObserver((e9) this.c, NotificationCenter.starSubscriptionsLoaded);
                 break;
         }
+    }
+
+    public /* synthetic */ z(c1 c1Var, int i10) {
+        this.c = c1Var;
+        this.b = i10;
     }
 }

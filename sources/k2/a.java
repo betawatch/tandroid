@@ -17,11 +17,11 @@ import android.util.TypedValue;
 import android.util.Xml;
 import android.view.InflateException;
 import android.view.animation.AnimationUtils;
-import j7.y7;
+import j7.z7;
 import java.util.ArrayList;
 import org.xmlpull.v1.XmlPullParser;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final int[] a = {R.attr.name, R.attr.tint, R.attr.height, R.attr.width, R.attr.alpha, R.attr.autoMirrored, R.attr.tintMode, R.attr.viewportWidth, R.attr.viewportHeight};
@@ -393,15 +393,15 @@ public abstract class a {
         if (i10 == 2) {
             String string = typedArray.getString(i11);
             String string2 = typedArray.getString(i12);
-            i0.d[] c3 = y7.c(string);
-            i0.d[] c10 = y7.c(string2);
+            i0.d[] c3 = z7.c(string);
+            i0.d[] c10 = z7.c(string2);
             if (c3 != null || c10 != null) {
                 if (c3 != null) {
                     e eVar = new e();
                     if (c10 == null) {
                         return PropertyValuesHolder.ofObject(str, eVar, c3);
                     }
-                    if (y7.a(c3, c10)) {
+                    if (z7.a(c3, c10)) {
                         return PropertyValuesHolder.ofObject(str, eVar, c3, c10);
                     }
                     throw new InflateException(e2.c.k(" Can't morph from ", string, " to ", string2));
@@ -510,7 +510,7 @@ public abstract class a {
             if (b12 == null && b13 == null) {
                 throw new InflateException(f11.getPositionDescription() + " propertyXName or propertyYName is needed for PathData");
             }
-            Path d10 = y7.d(b11);
+            Path d10 = z7.d(b11);
             PathMeasure pathMeasure = new PathMeasure(d10, false);
             ArrayList arrayList = new ArrayList();
             arrayList.add(Float.valueOf(0.0f));

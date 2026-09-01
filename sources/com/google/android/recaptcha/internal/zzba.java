@@ -3,13 +3,13 @@ package com.google.android.recaptcha.internal;
 import android.app.Application;
 import com.google.android.play.core.integrity.StandardIntegrityException;
 import java.nio.charset.StandardCharsets;
-import k7.o7;
+import k7.p7;
 import kotlin.jvm.internal.f;
 import sc.c;
 import sc.g;
 import y5.e;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class zzba implements zzar {
     private final zzbo zza;
@@ -155,7 +155,7 @@ public final class zzba implements zzar {
         this.zzc = true;
         this.zzd = "";
         int i10 = zzby.zza;
-        this.zze = o7.a(zzaz.zza);
+        this.zze = p7.a(zzaz.zza);
     }
 
     public zzba(zzbo zzboVar, zzda zzdaVar, int i10, f fVar) {

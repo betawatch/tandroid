@@ -8,26 +8,13 @@ import g5.m0;
 import g5.p0;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class d implements h0 {
     public final /* synthetic */ g a;
 
     public /* synthetic */ d(g gVar) {
         this.a = gVar;
-    }
-
-    @Override // g5.h0
-    public void A(j0 j0Var, long j10, long j11) {
-        p0 p0Var = (p0) j0Var;
-        g gVar = this.a;
-        long j12 = p0Var.a;
-        Uri uri = p0Var.d.c;
-        o4.j jVar = new o4.j();
-        gVar.n.getClass();
-        gVar.r.n(jVar, p0Var.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
-        gVar.M = ((Long) p0Var.f).longValue() - j10;
-        gVar.u(true);
     }
 
     public void a() {
@@ -45,13 +32,13 @@ public final class d implements h0 {
     }
 
     @Override // g5.h0
-    public c4.e m(j0 j0Var, IOException iOException, int i10) {
+    public c4.e q(j0 j0Var, IOException iOException, int i10) {
         p0 p0Var = (p0) j0Var;
         g gVar = this.a;
         e0 e0Var = gVar.r;
         long j10 = p0Var.a;
         Uri uri = p0Var.d.c;
-        e0Var.r(new o4.j(), p0Var.c, iOException, true);
+        e0Var.s(new o4.j(), p0Var.c, iOException, true);
         gVar.n.getClass();
         h5.a.p("DashMediaSource", "Failed to resolve time offset.", iOException);
         gVar.u(true);
@@ -59,13 +46,26 @@ public final class d implements h0 {
     }
 
     @Override // g5.h0
-    public void s(j0 j0Var, long j10, long j11, boolean z4) {
+    public void u(j0 j0Var, long j10, long j11, boolean z4) {
         p0 p0Var = (p0) j0Var;
         long j12 = p0Var.a;
         Uri uri = p0Var.d.c;
         o4.j jVar = new o4.j();
         g gVar = this.a;
         gVar.n.getClass();
-        gVar.r.l(jVar, p0Var.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        gVar.r.m(jVar, p0Var.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+    }
+
+    @Override // g5.h0
+    public void x(j0 j0Var, long j10, long j11) {
+        p0 p0Var = (p0) j0Var;
+        g gVar = this.a;
+        long j12 = p0Var.a;
+        Uri uri = p0Var.d.c;
+        o4.j jVar = new o4.j();
+        gVar.n.getClass();
+        gVar.r.p(jVar, p0Var.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        gVar.M = ((Long) p0Var.f).longValue() - j10;
+        gVar.u(true);
     }
 }

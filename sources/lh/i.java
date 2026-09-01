@@ -1,62 +1,102 @@
 package lh;
 
+import android.app.Activity;
+import android.content.DialogInterface;
+import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.h80;
-import org.telegram.ui.TwoStepVerificationActivity;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class i implements RequestDelegate {
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class i implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
 
-    public /* synthetic */ i(MessagesController messagesController, boolean z4, TLRPC.User user, long j10) {
-        this.a = 1;
-        this.d = messagesController;
-        this.b = z4;
-        this.e = user;
-        this.c = j10;
+    public /* synthetic */ i(Object obj, Object obj2, Object obj3, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.d = obj2;
+        this.b = obj3;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new j((q) this.d, tL_error, tLObject, (TwoStepVerificationActivity) this.e, this.b, this.c));
+                eh.b bVar = (eh.b) this.c;
+                org.telegram.ui.ActionBar.p2 p2Var = (org.telegram.ui.ActionBar.p2) this.d;
+                Activity activity = (Activity) this.b;
+                AndroidUtilities.hideKeyboard(bVar);
+                if (p2Var != null) {
+                    AndroidUtilities.requestAdjustResize(activity, p2Var.getClassGuid());
+                    break;
+                }
                 break;
             case 1:
-                ((MessagesController) this.d).lambda$deleteParticipantFromChat$316(this.b, (TLRPC.User) this.e, this.c, tLObject, tL_error);
+                x3 x3Var = (x3) this.c;
+                u2 u2Var = (u2) this.d;
+                Activity activity2 = (Activity) this.b;
+                AndroidUtilities.hideKeyboard(u2Var);
+                AndroidUtilities.requestAdjustResize(activity2, x3Var.a.getClassGuid());
                 break;
             case 2:
-                ((MessagesController) this.d).lambda$checkChatInviter$375((TLRPC.Chat) this.e, this.b, this.c, tLObject, tL_error);
+                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.c;
+                org.telegram.ui.ActionBar.p2 p2Var2 = (org.telegram.ui.ActionBar.p2) this.d;
+                Activity activity3 = (Activity) this.b;
+                AndroidUtilities.hideKeyboard(editTextBoldCursor);
+                if (p2Var2 != null) {
+                    AndroidUtilities.requestAdjustResize(activity3, p2Var2.getClassGuid());
+                    break;
+                }
+                break;
+            case 3:
+                Utilities.Callback callback = (Utilities.Callback) this.c;
+                org.telegram.ui.Components.m3 m3Var = (org.telegram.ui.Components.m3) this.d;
+                org.telegram.ui.Components.o3 o3Var = (org.telegram.ui.Components.o3) this.b;
+                callback.run(Integer.valueOf(o3Var.getValue() + (m3Var.getValue() * 60)));
+                break;
+            case 4:
+                org.telegram.ui.web.a1 a1Var = (org.telegram.ui.web.a1) this.c;
+                boolean[] zArr = (boolean[]) this.d;
+                String str = (String) this.b;
+                a1Var.getClass();
+                if (!zArr[0]) {
+                    zArr[0] = true;
+                    a1Var.v("requested_chat_failed", org.telegram.ui.web.a1.x(str, "req_id"));
+                    break;
+                }
+                break;
+            case 5:
+                sh.q0 q0Var = (sh.q0) this.c;
+                boolean[] zArr2 = (boolean[]) this.d;
+                org.telegram.ui.web.s sVar = (org.telegram.ui.web.s) this.b;
+                q0Var.getClass();
+                if (!zArr2[0]) {
+                    q0Var.d = true;
+                    q0Var.e = false;
+                    q0Var.l();
+                    Iterator it = q0Var.f.iterator();
+                    while (it.hasNext()) {
+                        ((Runnable) it.next()).run();
+                    }
+                    zArr2[0] = true;
+                    sVar.run(Boolean.TRUE, Boolean.FALSE);
+                    break;
+                }
                 break;
             default:
-                h80.s((h80) this.d, this.c, this.b, (TLRPC.TL_messages_importChatInvite) this.e, tLObject, tL_error);
+                boolean[] zArr3 = (boolean[]) this.c;
+                boolean[] zArr4 = (boolean[]) this.d;
+                Utilities.Callback callback2 = (Utilities.Callback) this.b;
+                if (!zArr3[0] && !zArr4[0]) {
+                    zArr4[0] = true;
+                    callback2.run("USER_DECLINED");
+                    break;
+                }
                 break;
         }
-    }
-
-    public /* synthetic */ i(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Object obj, boolean z4, long j10, int i10) {
-        this.a = i10;
-        this.d = notificationCenterDelegate;
-        this.e = obj;
-        this.b = z4;
-        this.c = j10;
-    }
-
-    public /* synthetic */ i(h80 h80Var, long j10, boolean z4, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
-        this.a = 3;
-        this.d = h80Var;
-        this.c = j10;
-        this.b = z4;
-        this.e = tL_messages_importChatInvite;
     }
 }

@@ -1,659 +1,632 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.LinearGradient;
 import android.graphics.Paint;
-import android.graphics.Shader;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.os.Build;
+import android.os.SystemClock;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.Pair;
-import java.io.File;
-import java.io.FileOutputStream;
+import android.view.View;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.concurrent.CountDownLatch;
-import org.json.JSONArray;
-import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.ui.kg1;
-import org.telegram.ui.web.BotWebViewContainer$BotWebViewProxy;
-import org.telegram.ui.web.BotWebViewContainer$WebViewProxy;
-import org.webrtc.EglBase;
-import org.webrtc.EglRenderer;
-import org.webrtc.VideoFileRenderer;
-import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m71 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class m71 {
+    public static Paint Q;
+    public static Paint R;
+    public static int S;
+    public static float[] T;
+    public static Path U;
+    public int A;
+    public final z5 D;
+    public float E;
+    public ArrayList F;
+    public CharSequence G;
+    public long H;
+    public StaticLayout[] K;
+    public TextPaint L;
+    public int N;
+    public long O;
+    public float a;
+    public int h;
+    public int i;
+    public l71 j;
+    public int k;
+    public int l;
+    public int m;
+    public int n;
+    public float p;
+    public boolean q;
+    public float s;
+    public float t;
+    public long u;
+    public final View v;
+    public float y;
+    public int z;
+    public int b = 0;
+    public float c = 0.0f;
+    public int d = 0;
+    public int e = 0;
+    public boolean f = false;
+    public boolean g = false;
+    public final RectF o = new RectF();
+    public float r = 1.0f;
+    public final int w = AndroidUtilities.dp(4.0f);
+    public final int x = AndroidUtilities.dp(2.0f);
+    public int B = 0;
+    public float C = 1.0f;
+    public float I = 0.0f;
+    public int J = -1;
+    public float M = 1.0f;
+    public float P = -1.0f;
 
-    public /* synthetic */ m71(Object obj, Object obj2, Object obj3, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
+    public m71(View view) {
+        if (Q == null) {
+            Q = new Paint(1);
+            Paint paint = new Paint(1);
+            R = paint;
+            paint.setStyle(Paint.Style.STROKE);
+            R.setColor(-16777216);
+            R.setStrokeWidth(1.0f);
+        }
+        this.v = view;
+        S = AndroidUtilities.dp(24.0f);
+        this.t = AndroidUtilities.dp(6.0f);
+        this.D = new z5(0.0f, view, 0L, 300L, pr.h);
     }
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:323:0x05bc, code lost:
+    public static void g(float f10, int i10) {
+        if (f10 < 1.0f) {
+            i10 = i0.a.k(i10, (int) (Color.alpha(i10) * f10));
+        }
+        Q.setColor(i10);
+    }
+
+    public final void a(Canvas canvas, View view) {
+        float f10;
+        View view2;
+        char c3;
+        float f11;
+        float f12;
+        float f13;
+        float f14;
+        int i10;
+        char c10;
+        float lerp = AndroidUtilities.lerp(S / 2.0f, 0.0f, this.y) + this.z;
+        RectF rectF = this.o;
+        rectF.left = lerp;
+        int i11 = this.i;
+        int i12 = this.w;
+        rectF.top = AndroidUtilities.lerp((i11 - i12) / 2.0f, (i11 - AndroidUtilities.dp(3.0f)) - this.x, this.y);
+        int i13 = this.i;
+        rectF.bottom = AndroidUtilities.lerp((i13 + i12) / 2.0f, i13 - AndroidUtilities.dp(3.0f), this.y);
+        float f15 = this.b;
+        float min = Math.min(this.c, f15);
+        this.c = min;
+        float lerp2 = AndroidUtilities.lerp(min, f15, 0.5f);
+        this.c = lerp2;
+        float abs = Math.abs(f15 - lerp2);
+        View view3 = this.v;
+        if (abs > 0.005f) {
+            view3.invalidate();
+        }
+        float f16 = this.c;
+        float f17 = this.C;
+        if (f17 != 1.0f) {
+            float f18 = f17 + 0.07272727f;
+            this.C = f18;
+            if (f18 >= 1.0f) {
+                this.C = 1.0f;
+            } else {
+                view.invalidate();
+                float interpolation = pr.f.getInterpolation(this.C);
+                f16 = (f16 * interpolation) + ((1.0f - interpolation) * this.B);
+            }
+        }
+        float d = this.D.d(0.0f, false);
+        if (this.f) {
+            d = 0.0f;
+        }
+        rectF.right = AndroidUtilities.lerp(this.h - (S / 2.0f), view3.getWidth() - (this.z * 2.0f), this.y) + this.z;
+        g(1.0f - this.y, this.k);
+        b(canvas, rectF, Q);
+        float f19 = this.r;
+        if (f19 != 1.0f) {
+            float f20 = f19 + 0.16f;
+            this.r = f20;
+            if (f20 > 1.0f) {
+                this.r = 1.0f;
+            } else {
+                view3.invalidate();
+            }
+        }
+        if (this.q) {
+            float f21 = this.p;
+            if (f21 > 0.0f) {
+                f10 = 2.0f;
+                rectF.right = AndroidUtilities.lerp((f21 * (this.h - r14)) + (S / 2.0f), view3.getWidth() - (this.z * 2.0f), this.y) + this.z;
+                g((1.0f - this.r) * (1.0f - this.y), this.l);
+                b(canvas, rectF, Q);
+            } else {
+                f10 = 2.0f;
+            }
+            float f22 = this.s;
+            if (f22 > 0.0f) {
+                rectF.right = AndroidUtilities.lerp((f22 * (this.h - r13)) + (S / f10), view3.getWidth() - (this.z * f10), this.y) + this.z;
+                g(1.0f - this.y, this.l);
+                b(canvas, rectF, Q);
+            }
+        } else {
+            f10 = 2.0f;
+            float f23 = this.p;
+            float f24 = this.r;
+            float f25 = (this.s * f24) + ((1.0f - f24) * f23);
+            if (f25 > 0.0f) {
+                rectF.right = AndroidUtilities.lerp((f25 * (this.h - r13)) + (S / 2.0f), view3.getWidth() - (this.z * 2.0f), this.y) + this.z;
+                g(1.0f - this.y, this.l);
+                b(canvas, rectF, Q);
+            }
+        }
+        float dp = AndroidUtilities.dp(this.f ? 8.0f : 6.0f);
+        if (this.t != dp) {
+            long elapsedRealtime = SystemClock.elapsedRealtime();
+            view2 = view3;
+            long j10 = elapsedRealtime - this.u;
+            this.u = elapsedRealtime;
+            if (j10 > 18) {
+                j10 = 16;
+            }
+            float f26 = this.t;
+            if (f26 < dp) {
+                c3 = 0;
+                float c11 = w.c.c(j10, 60.0f, AndroidUtilities.dp(1.0f), f26);
+                this.t = c11;
+                if (c11 > dp) {
+                    this.t = dp;
+                }
+            } else {
+                c3 = 0;
+                float A = org.telegram.messenger.y3.A(j10, 60.0f, AndroidUtilities.dp(1.0f), f26);
+                this.t = A;
+                if (A < dp) {
+                    this.t = dp;
+                }
+            }
+            view2.invalidate();
+        } else {
+            view2 = view3;
+            c3 = 0;
+        }
+        float lerp3 = AndroidUtilities.lerp(this.t, 0.0f, this.y);
+        if (d > 0.0f) {
+            float f27 = rectF.left;
+            f11 = 0.2f;
+            f12 = 8.0f;
+            float lerp4 = AndroidUtilities.lerp((S / f10) + (this.h - r14), view2.getWidth() - (this.z * f10), this.y) + this.z;
+            rectF.right = lerp4;
+            rectF.left = AndroidUtilities.lerp(f27, lerp4, 1.0f - d);
+            if (this.y > 0.0f && rectF.width() > 0.0f) {
+                R.setAlpha((int) (this.y * 255.0f * 0.2f));
+                b(canvas, rectF, R);
+            }
+            g(1.0f, i0.a.d(this.y, this.n, this.A));
+            b(canvas, rectF, Q);
+            rectF.left = f27;
+            g(1.0f - this.y, i0.a.d(this.y, this.m, c() == 0.0f ? 0 : this.A));
+            canvas.drawCircle(AndroidUtilities.lerp((S / f10) + this.E, (this.E / (this.h - S)) * (view2.getWidth() - (this.z * f10)), this.y) + this.z, rectF.centerY(), lerp3 * d, Q);
+        } else {
+            f11 = 0.2f;
+            f12 = 8.0f;
+        }
+        float f28 = this.z;
+        float f29 = S / f10;
+        if (this.f) {
+            f16 = this.d;
+        }
+        rectF.right = AndroidUtilities.lerp(f29 + f16, c() * (view2.getWidth() - (this.z * f10)), this.y) + f28;
+        if (this.y > 0.0f && rectF.width() > 0.0f) {
+            R.setAlpha((int) (this.y * 255.0f * f11));
+            b(canvas, rectF, R);
+        }
+        g(1.0f, i0.a.d(this.y, this.n, this.A));
+        b(canvas, rectF, Q);
+        g(1.0f - this.y, i0.a.d(this.y, this.m, c() == 0.0f ? 0 : this.A));
+        canvas.drawCircle(rectF.right, rectF.centerY(), (1.0f - d) * lerp3, Q);
+        ArrayList arrayList = this.F;
+        if (arrayList == null || arrayList.isEmpty()) {
+            return;
+        }
+        float f30 = ((this.f || this.g) ? this.d : this.c) / (this.h - S);
+        int size = this.F.size() - 1;
+        while (true) {
+            if (size < 0) {
+                size = -1;
+                break;
+            } else if (((Float) ((Pair) this.F.get(size)).first).floatValue() - 0.001f <= f30) {
+                break;
+            } else {
+                size--;
+            }
+        }
+        if (this.K == null) {
+            this.K = new StaticLayout[2];
+        }
+        float lerp5 = AndroidUtilities.lerp(S / f10, 0.0f, this.y) + this.z;
+        float lerp6 = AndroidUtilities.lerp(this.h - (S / f10), view2.getWidth() - (this.z * f10), this.y) + this.z;
+        float f31 = (this.h - (S / f10)) + this.z;
+        float abs2 = Math.abs(lerp5 - f31) - AndroidUtilities.dp(16.0f);
+        float f32 = this.P;
+        if (f32 <= 0.0f || Math.abs(f32 - abs2) <= 0.01f) {
+            f13 = 3.0f;
+            f14 = 16.0f;
+        } else {
+            StaticLayout[] staticLayoutArr = this.K;
+            StaticLayout staticLayout = staticLayoutArr[c3];
+            if (staticLayout != null) {
+                f14 = 16.0f;
+                CharSequence text = staticLayout.getText();
+                f13 = 3.0f;
+                staticLayoutArr[c3] = d((int) abs2, text);
+            } else {
+                f13 = 3.0f;
+                f14 = 16.0f;
+            }
+            StaticLayout[] staticLayoutArr2 = this.K;
+            StaticLayout staticLayout2 = staticLayoutArr2[1];
+            if (staticLayout2 != null) {
+                staticLayoutArr2[1] = d((int) abs2, staticLayout2.getText());
+            }
+        }
+        this.P = abs2;
+        if (size != this.J) {
+            StaticLayout[] staticLayoutArr3 = this.K;
+            staticLayoutArr3[1] = staticLayoutArr3[c3];
+            if (this.f) {
+                AndroidUtilities.vibrateCursor(view2);
+            }
+            if (size < 0 || size >= this.F.size()) {
+                this.K[c3] = null;
+            } else {
+                CharSequence charSequence = (CharSequence) ((Pair) this.F.get(size)).second;
+                if (charSequence == null) {
+                    this.K[c3] = null;
+                } else {
+                    this.K[c3] = d((int) abs2, charSequence);
+                }
+            }
+            this.M = 0.0f;
+            if (size == -1) {
+                this.N = -1;
+            } else {
+                int i14 = this.J;
+                if (i14 == -1) {
+                    this.N = 1;
+                } else if (size < i14) {
+                    this.N = -1;
+                } else if (size > i14) {
+                    this.N = 1;
+                }
+            }
+            this.J = size;
+        }
+        if (this.M < 1.0f) {
+            i10 = i12;
+            c10 = 1;
+            this.M = Math.min((Math.min(17L, Math.abs(SystemClock.elapsedRealtime() - this.O)) / (this.F.size() > 8 ? 160.0f : 220.0f)) + this.M, 1.0f);
+            view2.invalidate();
+            this.O = SystemClock.elapsedRealtime();
+        } else {
+            i10 = i12;
+            c10 = 1;
+        }
+        if (this.I < 1.0f) {
+            this.I = Math.min((Math.min(17L, Math.abs(SystemClock.elapsedRealtime() - this.O)) / 200.0f) + this.I, 1.0f);
+            view2.invalidate();
+            SystemClock.elapsedRealtime();
+        }
+        float interpolation2 = pr.f.getInterpolation(this.M);
+        canvas.save();
+        int i15 = this.i;
+        canvas.translate(((lerp6 - f31) * this.y) + lerp5, AndroidUtilities.lerp((i15 + i10) / f10, i15 - AndroidUtilities.dp(f13), this.y) + AndroidUtilities.dp(12.0f));
+        if (this.K[c10] != null) {
+            canvas.save();
+            if (this.N != 0) {
+                canvas.translate((AndroidUtilities.dp(f14) * (-this.N) * interpolation2) + AndroidUtilities.dp(f12), 0.0f);
+            }
+            canvas.translate(0.0f, (-this.K[c10].getHeight()) / f10);
+            this.L.setAlpha((int) ((1.0f - interpolation2) * (1.0f - this.y) * 255.0f * this.I));
+            this.K[c10].draw(canvas);
+            canvas.restore();
+        }
+        if (this.K[c3] != null) {
+            canvas.save();
+            if (this.N != 0) {
+                canvas.translate(e2.c.w(1.0f, interpolation2, AndroidUtilities.dp(f14) * this.N, AndroidUtilities.dp(f12)), 0.0f);
+            }
+            canvas.translate(0.0f, (-this.K[c3].getHeight()) / f10);
+            this.L.setAlpha((int) (org.telegram.messenger.y3.y(1.0f, this.y, 255.0f, interpolation2) * this.I));
+            this.K[c3].draw(canvas);
+            canvas.restore();
+        }
+        canvas.restore();
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x01a1, code lost:
     
-        if (r11.equals("allowScroll") == false) goto L243;
+        if (r12.left >= r27.left) goto L78;
      */
-    @Override // java.lang.Runnable
+    /* JADX WARN: Removed duplicated region for block: B:70:0x020a A[EDGE_INSN: B:70:0x020a->B:71:0x020a BREAK  A[LOOP:2: B:28:0x00d9->B:75:0x0200], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x0200 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void run() {
-        String absolutePath;
-        boolean z4;
-        org.telegram.ui.web.k2 k2Var;
-        Object obj;
-        int[] iArr;
-        File file;
+    public final void b(Canvas canvas, RectF rectF, Paint paint) {
         int i10;
-        int i11;
-        boolean contains;
-        ArrayList arrayList;
-        int i12 = this.a;
-        char c3 = 4;
-        int i13 = 2;
-        Pair pair = null;
-        Object obj2 = null;
-        r7 = null;
-        r7 = null;
-        r7 = null;
-        int[] iArr2 = null;
-        Bitmap decodeFile = null;
-        int i14 = 0;
-        boolean z10 = true;
-        z10 = true;
-        Object obj3 = this.d;
-        Object obj4 = this.c;
-        Object obj5 = this.b;
-        switch (i12) {
-            case 0:
-                p71 p71Var = (p71) obj5;
-                g71 g71Var = (g71) obj4;
-                MessageObject messageObject = (MessageObject) obj3;
-                p71Var.getClass();
-                if (g71Var.b()) {
-                    p71Var.b = new y5(new File(g71Var.d.getPath()), true, 0L, 0, null, null, null, 0L, 0, true, 0, 0, null, 0, true);
+        char c3;
+        float floatValue;
+        char c10;
+        m71 m71Var = this;
+        float dp = AndroidUtilities.dp(AndroidUtilities.lerp(2, 1, m71Var.y));
+        ArrayList arrayList = m71Var.F;
+        if (arrayList == null || arrayList.isEmpty()) {
+            canvas.drawRoundRect(rectF, dp, dp, paint);
+            return;
+        }
+        float f10 = rectF.bottom;
+        float lerp = AndroidUtilities.lerp(S / 2.0f, 0.0f, m71Var.y) + m71Var.z;
+        float lerp2 = AndroidUtilities.lerp(m71Var.h - (S / 2.0f), m71Var.v.getWidth() - (m71Var.z * 2.0f), m71Var.y) + m71Var.z;
+        AndroidUtilities.rectTmp.set(rectF);
+        float dp2 = AndroidUtilities.dp(m71Var.I * 1.0f) / 2.0f;
+        if (U == null) {
+            U = new Path();
+        }
+        U.reset();
+        float dp3 = AndroidUtilities.dp(4.0f) / (lerp2 - lerp);
+        int i11 = 0;
+        while (true) {
+            i10 = -1;
+            if (i11 >= m71Var.F.size()) {
+                i11 = -1;
+                break;
+            } else if (((Float) ((Pair) m71Var.F.get(i11)).first).floatValue() >= dp3) {
+                break;
+            } else {
+                i11++;
+            }
+        }
+        if (i11 < 0) {
+            i11 = 0;
+        }
+        int size = m71Var.F.size() - 1;
+        while (true) {
+            if (size < 0) {
+                break;
+            }
+            if (1.0f - ((Float) ((Pair) m71Var.F.get(size)).first).floatValue() >= dp3) {
+                i10 = size + 1;
+                break;
+            }
+            size--;
+        }
+        if (i10 < 0) {
+            i10 = m71Var.F.size();
+        }
+        int i12 = i10;
+        int i13 = i11;
+        while (i13 <= i12) {
+            if (i13 == i11) {
+                floatValue = 0.0f;
+                c3 = 1;
+            } else {
+                c3 = 1;
+                floatValue = ((Float) ((Pair) m71Var.F.get(i13 - 1)).first).floatValue();
+            }
+            float floatValue2 = i13 == i12 ? 1.0f : ((Float) ((Pair) m71Var.F.get(i13)).first).floatValue();
+            while (i13 != i12 && i13 != 0 && i13 < m71Var.F.size() - 1 && ((Float) ((Pair) m71Var.F.get(i13)).first).floatValue() - floatValue <= dp3) {
+                i13++;
+                floatValue2 = ((Float) ((Pair) m71Var.F.get(i13)).first).floatValue();
+            }
+            RectF rectF2 = AndroidUtilities.rectTmp;
+            rectF2.left = AndroidUtilities.lerp(lerp, lerp2, floatValue) + (i13 > 0 ? dp2 : 0.0f);
+            float lerp3 = AndroidUtilities.lerp(lerp, lerp2, floatValue2) - (i13 < i12 ? dp2 : 0.0f);
+            rectF2.right = lerp3;
+            float f11 = rectF.right;
+            boolean z4 = lerp3 > f11;
+            if (z4) {
+                rectF2.right = f11;
+            }
+            float f12 = rectF2.right;
+            float f13 = rectF.left;
+            if (f12 >= f13) {
+                if (rectF2.left < f13) {
+                    rectF2.left = f13;
+                }
+                if (T == null) {
+                    T = new float[8];
+                }
+                if (i13 != i11) {
+                    if (z4) {
+                        c10 = 4;
+                    } else {
+                        c10 = 4;
+                    }
+                    if (i13 >= i12) {
+                        float[] fArr = T;
+                        float f14 = 0.7f * dp * m71Var.I;
+                        fArr[7] = f14;
+                        fArr[6] = f14;
+                        fArr[c3] = f14;
+                        fArr[0] = f14;
+                        fArr[5] = dp;
+                        fArr[c10] = dp;
+                        fArr[3] = dp;
+                        fArr[2] = dp;
+                    } else {
+                        float[] fArr2 = T;
+                        float f15 = 0.7f * dp * m71Var.I;
+                        fArr2[5] = f15;
+                        fArr2[c10] = f15;
+                        fArr2[3] = f15;
+                        fArr2[2] = f15;
+                        fArr2[7] = f15;
+                        fArr2[6] = f15;
+                        fArr2[c3] = f15;
+                        fArr2[0] = f15;
+                    }
+                    U.addRoundRect(rectF2, T, Path.Direction.CW);
+                    if (!z4) {
+                        break;
+                    }
                 } else {
-                    int i15 = UserConfig.selectedAccount;
-                    try {
-                        i15 = Utilities.parseInt((CharSequence) g71Var.d.getQueryParameter("account")).intValue();
-                    } catch (Exception e) {
-                        FileLog.e(e);
-                    }
-                    int i16 = i15;
-                    try {
-                        obj2 = FileLoader.getInstance(i16).getParentObject(Utilities.parseInt((CharSequence) g71Var.d.getQueryParameter("rid")).intValue());
-                    } catch (Exception e6) {
-                        FileLog.e(e6);
-                    }
-                    Object obj6 = obj2;
-                    TLRPC.Document document = g71Var.g;
-                    if (FileLoader.getInstance(i16).isLoadingFile(FileLoader.getAttachFileName(document))) {
-                        File directory = FileLoader.getDirectory(4);
-                        StringBuilder sb = new StringBuilder();
-                        sb.append(document.dc_id);
-                        sb.append("_");
-                        absolutePath = new File(directory, android.support.v4.media.a.q(sb, document.id, ".temp")).getAbsolutePath();
-                    } else {
-                        absolutePath = FileLoader.getInstance(i16).getPathToAttach(document, false).getAbsolutePath();
-                    }
-                    p71Var.b = new y5(new File(absolutePath), true, document.size, 1, document, null, obj6, 0L, i16, true);
+                    c10 = 4;
                 }
-                p71Var.c = p71Var.b.d[4];
-                float f10 = p71Var.h;
-                if (f10 != 0.0f) {
-                    p71Var.e(messageObject, f10, p71Var.r);
-                    p71Var.h = 0.0f;
+                float[] fArr3 = T;
+                fArr3[7] = dp;
+                fArr3[6] = dp;
+                fArr3[c3] = dp;
+                fArr3[0] = dp;
+                float f16 = 0.7f * dp * m71Var.I;
+                fArr3[5] = f16;
+                fArr3[c10] = f16;
+                fArr3[3] = f16;
+                fArr3[2] = f16;
+                U.addRoundRect(rectF2, T, Path.Direction.CW);
+                if (!z4) {
                 }
-                AndroidUtilities.runOnUIThread(new l71(p71Var, i13));
-                break;
-            case 1:
-                org.telegram.ui.Components.voip.k0 k0Var = (org.telegram.ui.Components.voip.k0) obj5;
-                org.telegram.ui.Components.voip.t tVar = (org.telegram.ui.Components.voip.t) obj4;
-                org.telegram.ui.Components.voip.t tVar2 = (org.telegram.ui.Components.voip.t) obj3;
-                ValueAnimator valueAnimator = k0Var.K0;
-                if (valueAnimator != null) {
-                    valueAnimator.start();
-                }
-                tVar.animate().scaleX(0.5f).scaleY(0.5f).alpha(0.0f).setListener(new org.telegram.ui.Components.voip.j0(k0Var, tVar)).setDuration(100L).start();
-                if (tVar2 != null) {
-                    tVar2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).setListener(new org.telegram.ui.Components.voip.w(tVar2)).start();
-                    break;
-                }
-                break;
-            case 2:
-                ((org.telegram.ui.web.w0) obj5).d("window.Telegram.WebView.receiveEvent('" + ((String) obj4) + "', " + ((JSONObject) obj3) + ");");
-                break;
-            case 3:
-                ((q0.a) obj4).accept(Boolean.valueOf(((org.telegram.ui.web.a1) obj5).d((String[]) obj3)));
-                break;
-            case 4:
-                AnimatedFileNative.d(((File) obj5).getAbsolutePath(), (int[]) obj4, 0L);
-                AndroidUtilities.runOnUIThread((gg.g0) obj3);
-                break;
-            case 5:
-                BotWebViewContainer$BotWebViewProxy botWebViewContainer$BotWebViewProxy = (BotWebViewContainer$BotWebViewProxy) obj5;
-                String str = (String) obj4;
-                String str2 = (String) obj3;
-                botWebViewContainer$BotWebViewProxy.getClass();
-                try {
-                    org.telegram.ui.web.a1 a1Var = botWebViewContainer$BotWebViewProxy.a;
-                    if (a1Var == null) {
-                        break;
-                    } else {
-                        boolean z11 = org.telegram.ui.web.a1.J0;
-                        a1Var.B(botWebViewContainer$BotWebViewProxy, str, str2);
-                        break;
-                    }
-                } catch (Exception e10) {
-                    FileLog.e(e10);
-                    return;
-                }
-            case 6:
-                String str3 = (String) obj4;
-                String str4 = (String) obj3;
-                org.telegram.ui.web.a1 a1Var2 = ((BotWebViewContainer$WebViewProxy) obj5).a;
-                if (!a1Var2.l0 && a1Var2.c != null) {
-                    if (a1Var2.A0 != null && !TextUtils.equals(a1Var2.getOriginHost(), a1Var2.A0)) {
-                        a1Var2.g("onWebEventReceived ignore " + str3);
-                        break;
-                    } else {
-                        a1Var2.g("onWebEventReceived " + str3 + " " + str4);
-                        str3.getClass();
-                        switch (str3.hashCode()) {
-                            case -1695046810:
-                                if (str3.equals("actionBarColor")) {
-                                    c3 = 0;
-                                    break;
-                                }
-                                c3 = 65535;
-                                break;
-                            case -462720700:
-                                if (str3.equals("navigationBarColor")) {
-                                    c3 = 1;
-                                    break;
-                                }
-                                c3 = 65535;
-                                break;
-                            case 479731943:
-                                if (str3.equals("oauth_request")) {
-                                    c3 = 2;
-                                    break;
-                                }
-                                c3 = 65535;
-                                break;
-                            case 675009138:
-                                if (str3.equals("siteName")) {
-                                    c3 = 3;
-                                    break;
-                                }
-                                c3 = 65535;
-                                break;
-                            case 997530486:
-                                break;
-                            default:
-                                c3 = 65535;
-                                break;
-                        }
-                        switch (c3) {
-                            case 0:
-                            case 1:
-                                try {
-                                    JSONArray jSONArray = new JSONArray(str4);
-                                    boolean equals = TextUtils.equals(str3, "actionBarColor");
-                                    int argb = Color.argb((int) Math.round(jSONArray.optDouble(3, 1.0d) * 255.0d), (int) Math.round(jSONArray.optDouble(0)), (int) Math.round(jSONArray.optDouble(1)), (int) Math.round(jSONArray.optDouble(2)));
-                                    org.telegram.ui.web.w0 w0Var = a1Var2.a;
-                                    if (w0Var != null) {
-                                        if (equals) {
-                                            w0Var.s = true;
-                                            w0Var.w = argb;
-                                        } else {
-                                            w0Var.v = true;
-                                            w0Var.x = argb;
-                                        }
-                                        org.telegram.ui.web.w0.a(w0Var);
-                                    }
-                                    a1Var2.c.o(argb, equals);
-                                    break;
-                                } catch (Exception unused) {
-                                    return;
-                                }
-                            case 2:
-                                a1Var2.g("oauth_request " + str4);
-                                if (a1Var2.a != null) {
-                                    String originHost = a1Var2.getOriginHost();
-                                    if (!TextUtils.isEmpty(originHost)) {
-                                        try {
-                                            String optString = new JSONObject(str4).optString("url");
-                                            a1Var2.v("oauth_supported", org.telegram.ui.web.a1.x(1, "version"));
-                                            if (!TextUtils.isEmpty(optString)) {
-                                                TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth = new TLRPC.TL_messages_requestUrlAuth();
-                                                tL_messages_requestUrlAuth.url = optString;
-                                                int i17 = tL_messages_requestUrlAuth.flags;
-                                                tL_messages_requestUrlAuth.in_app_origin = originHost;
-                                                tL_messages_requestUrlAuth.flags = i17 | 12;
-                                                ConnectionsManager.getInstance(a1Var2.J).sendRequest(tL_messages_requestUrlAuth, new kh.b1(a1Var2, tL_messages_requestUrlAuth, optString, originHost, 16), 2);
-                                                break;
-                                            }
-                                        } catch (Exception e11) {
-                                            FileLog.e(e11);
-                                            return;
-                                        }
-                                    }
-                                }
-                                break;
-                            case 3:
-                                a1Var2.g("siteName " + str4);
-                                org.telegram.ui.web.w0 w0Var2 = a1Var2.a;
-                                if (w0Var2 != null) {
-                                    w0Var2.r = str4;
-                                    org.telegram.ui.web.w0.a(w0Var2);
-                                    break;
-                                }
-                                break;
-                            case 4:
-                                try {
-                                    JSONArray jSONArray2 = new JSONArray(str4);
-                                    z4 = jSONArray2.optBoolean(0, true);
-                                    try {
-                                        z10 = jSONArray2.optBoolean(1, true);
-                                    } catch (Exception unused2) {
-                                    }
-                                } catch (Exception unused3) {
-                                    z4 = true;
-                                }
-                                if (a1Var2.getParent() instanceof rh.n3) {
-                                    rh.n3 n3Var = (rh.n3) a1Var2.getParent();
-                                    n3Var.L = z4;
-                                    n3Var.M = z10;
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                }
-                break;
-            case 7:
-                org.telegram.ui.web.d1 d1Var = (org.telegram.ui.web.d1) obj5;
-                ArrayList arrayList2 = (ArrayList) obj4;
-                String str5 = (String) obj3;
-                ArrayList arrayList3 = new ArrayList();
-                for (int i18 = 0; i18 < arrayList2.size(); i18++) {
-                    org.telegram.ui.web.b1 b1Var = (org.telegram.ui.web.b1) arrayList2.get(i18);
-                    if (org.telegram.ui.web.d1.t(b1Var.c, str5) || ((k2Var = b1Var.d) != null && (org.telegram.ui.web.d1.t(k2Var.c, str5) || org.telegram.ui.web.d1.t(b1Var.d.d, str5)))) {
-                        arrayList3.add(b1Var);
-                    }
-                }
-                AndroidUtilities.runOnUIThread(new kg1(11, d1Var, arrayList3));
-                break;
-            case 8:
-                org.telegram.ui.web.g2 g2Var = (org.telegram.ui.web.g2) obj5;
-                org.telegram.ui.web.f2 f2Var = (org.telegram.ui.web.f2) obj4;
-                Bitmap bitmap = (Bitmap) obj3;
-                g2Var.getClass();
-                if (org.telegram.ui.web.g2.f != null) {
-                    char c10 = ((f2Var.d > 0 && f2Var.e > 0) || bitmap == null) ? (char) 0 : (char) 1;
-                    if (bitmap != null) {
-                        g2Var.d.put(f2Var.b, bitmap);
-                        if (c10 != 0) {
-                            int i19 = f2Var.d;
-                            if (i19 == 0 && f2Var.e == 0) {
-                                f2Var.d = bitmap.getWidth();
-                                f2Var.e = bitmap.getHeight();
-                            } else if (i19 == 0) {
-                                f2Var.d = (int) ((bitmap.getWidth() / bitmap.getHeight()) * f2Var.e);
-                            } else if (f2Var.e == 0) {
-                                f2Var.e = (int) ((bitmap.getHeight() / bitmap.getWidth()) * f2Var.d);
+            }
+            i13++;
+            m71Var = this;
+        }
+        canvas.drawPath(U, paint);
+    }
+
+    public final float c() {
+        return this.b / (this.h - S);
+    }
+
+    public final StaticLayout d(int i10, CharSequence charSequence) {
+        if (this.L == null) {
+            TextPaint textPaint = new TextPaint(1);
+            this.L = textPaint;
+            textPaint.setTextSize(AndroidUtilities.dp(12.0f));
+            this.L.setColor(-1);
+        }
+        CharSequence charSequence2 = charSequence == null ? "" : charSequence;
+        if (Build.VERSION.SDK_INT >= 23) {
+            return StaticLayout.Builder.obtain(charSequence2, 0, charSequence2.length(), this.L, i10).setMaxLines(1).setAlignment(Layout.Alignment.ALIGN_CENTER).setEllipsize(TextUtils.TruncateAt.END).setEllipsizedWidth(Math.min(AndroidUtilities.dp(400.0f), i10)).build();
+        }
+        CharSequence charSequence3 = charSequence2;
+        return new StaticLayout(charSequence3, 0, charSequence3.length(), this.L, i10, Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false, TextUtils.TruncateAt.END, Math.min(AndroidUtilities.dp(400.0f), i10));
+    }
+
+    public final boolean e(float f10, float f11, int i10) {
+        l71 l71Var;
+        if (i10 == 0) {
+            if (this.y <= 0.0f) {
+                int i11 = this.i;
+                int i12 = S;
+                int i13 = (i11 - i12) / 2;
+                if (f10 >= (-i13)) {
+                    int i14 = this.h;
+                    if (f10 <= i14 + i13 && f11 >= 0.0f && f11 <= i11) {
+                        int i15 = this.b;
+                        if (i15 - i13 > f10 || f10 > i15 + i12 + i13) {
+                            int i16 = ((int) f10) - (i12 / 2);
+                            this.b = i16;
+                            if (i16 < 0) {
+                                this.b = 0;
+                            } else if (i16 > i14 - i12) {
+                                this.b = i12 - i14;
                             }
+                            this.c = this.b;
                         }
-                    }
-                    ArrayList arrayList4 = (ArrayList) org.telegram.ui.web.g2.f.remove(f2Var.b);
-                    if (arrayList4 != null) {
-                        int size = arrayList4.size();
-                        while (i14 < size) {
-                            Object obj7 = arrayList4.get(i14);
-                            i14++;
-                            Pair pair2 = (Pair) obj7;
-                            ((ImageReceiver) pair2.first).setImageBitmap(bitmap);
-                            if (c10 != 0 && (obj = pair2.second) != null) {
-                                ((Runnable) obj).run();
-                            }
-                        }
-                        break;
+                        this.g = true;
+                        this.f = true;
+                        int i17 = this.b;
+                        this.d = i17;
+                        this.e = (int) (f10 - i17);
+                        return true;
                     }
                 }
-                break;
-            case 9:
-                ((EglRenderer) obj5).lambda$init$0((EglBase.Context) obj4, (int[]) obj3);
-                break;
-            case 10:
-                ((EglRenderer) obj5).lambda$removeFrameListener$4((CountDownLatch) obj4, (EglRenderer.FrameListener) obj3);
-                break;
-            case 11:
-                ((VideoFileRenderer) obj5).lambda$renderFrameOnRenderThread$1((VideoFrame.I420Buffer) obj4, (VideoFrame) obj3);
-                break;
-            case 12:
-                ph.n1 n1Var = (ph.n1) obj5;
-                TLObject tLObject = (TLObject) obj3;
-                ArrayList arrayList5 = n1Var.v;
-                ph.o1 o1Var = n1Var.K;
-                ArrayList arrayList6 = n1Var.s;
-                if (TextUtils.equals((String) obj4, n1Var.E)) {
-                    n1Var.x = 0;
-                    arrayList6.clear();
-                    arrayList5.clear();
-                    n1Var.y.clear();
-                    n1Var.n.clear();
-                    n1Var.x++;
-                    arrayList6.add(null);
-                    arrayList5.add(0L);
-                    if (tLObject instanceof TLRPC.TL_messages_stickers) {
-                        TLRPC.TL_messages_stickers tL_messages_stickers = (TLRPC.TL_messages_stickers) tLObject;
-                        arrayList6.addAll(tL_messages_stickers.stickers);
-                        n1Var.x = tL_messages_stickers.stickers.size() + n1Var.x;
-                    }
-                    n1Var.F = n1Var.E;
-                    n1Var.l();
-                    ph.d1.w1(o1Var.b, 0, 0);
-                    o1Var.f.c(false);
-                    o1Var.e.n(false);
-                    break;
+            }
+        } else if (i10 == 1 || i10 == 3) {
+            if (this.f) {
+                int i18 = this.d;
+                this.b = i18;
+                float f12 = i18;
+                this.c = f12;
+                if (i10 == 1 && (l71Var = this.j) != null) {
+                    l71Var.b(f12 / (this.h - S));
                 }
-                break;
-            case 13:
-                ph.x2 x2Var = (ph.x2) obj5;
-                String str6 = (String) obj3;
-                float f11 = x2Var.H;
-                if (obj4 != null) {
-                    int min = (int) Math.min(AndroidUtilities.displaySize.x / 3.0f, AndroidUtilities.dp(330.0f));
-                    if (obj4 instanceof MediaController.PhotoEntry) {
-                        MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) obj4;
-                        BitmapFactory.Options options = new BitmapFactory.Options();
-                        options.inJustDecodeBounds = true;
-                        x2Var.c(photoEntry, options);
-                        ph.u6.C(options, min);
-                        options.inPreferredConfig = Bitmap.Config.ARGB_8888;
-                        options.inDither = true;
-                        options.inJustDecodeBounds = false;
-                        Bitmap c11 = x2Var.c(photoEntry, options);
-                        if (c11 != null && c11.getHeight() / c11.getWidth() < f11) {
-                            if (photoEntry.gradientTopColor == 0 && photoEntry.gradientBottomColor == 0 && !c11.isRecycled()) {
-                                iArr2 = ph.g0.b(c11, true);
-                                photoEntry.gradientTopColor = iArr2[0];
-                                photoEntry.gradientBottomColor = iArr2[1];
-                            } else {
-                                int i20 = photoEntry.gradientTopColor;
-                                if (i20 != 0 && (i10 = photoEntry.gradientBottomColor) != 0) {
-                                    iArr2 = new int[]{i20, i10};
-                                }
-                            }
-                        }
-                        iArr = iArr2;
-                        decodeFile = c11;
-                    } else if (!(obj4 instanceof ph.u6) || (file = ((ph.u6) obj4).O0) == null) {
-                        iArr = null;
-                    } else {
-                        BitmapFactory.Options options2 = new BitmapFactory.Options();
-                        options2.inJustDecodeBounds = true;
-                        BitmapFactory.decodeFile(file.getPath(), options2);
-                        ph.u6.C(options2, min);
-                        options2.inPreferredConfig = Bitmap.Config.ARGB_8888;
-                        options2.inDither = true;
-                        options2.inJustDecodeBounds = false;
-                        decodeFile = BitmapFactory.decodeFile(file.getPath(), options2);
-                        iArr = null;
-                    }
-                    pair = new Pair(decodeFile, iArr);
+                this.f = false;
+                AndroidUtilities.runOnUIThread(new b71(this, 2), 50L);
+                return true;
+            }
+        } else if (i10 == 2 && this.f) {
+            int i19 = (int) (f10 - this.e);
+            this.d = i19;
+            if (i19 < 0) {
+                this.d = 0;
+            } else {
+                int i20 = this.h - S;
+                if (i19 > i20) {
+                    this.d = i20;
                 }
-                AndroidUtilities.runOnUIThread(new m71(x2Var, str6, pair, 14));
-                break;
-            case 14:
-                ph.x2 x2Var2 = (ph.x2) obj5;
-                String str7 = (String) obj4;
-                Pair pair3 = (Pair) obj3;
-                Bitmap bitmap2 = (Bitmap) pair3.first;
-                int[] iArr3 = (int[]) pair3.second;
-                Paint paint = x2Var2.d;
-                if (bitmap2 != null) {
-                    if (str7 != null) {
-                        ph.x2.c0.put(str7, bitmap2);
-                        HashMap hashMap = ph.x2.b0;
-                        Integer num = (Integer) hashMap.get(str7);
-                        if (num != null) {
-                            hashMap.put(str7, Integer.valueOf(num.intValue() + 1));
-                        } else {
-                            hashMap.put(str7, 1);
-                        }
-                    }
-                    if (TextUtils.equals(str7, x2Var2.O)) {
-                        x2Var2.a = bitmap2;
-                        if (iArr3 == null) {
-                            paint.setShader(null);
-                            x2Var2.e = null;
-                        } else {
-                            LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, iArr3, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-                            x2Var2.e = linearGradient;
-                            paint.setShader(linearGradient);
-                        }
-                        x2Var2.h();
-                        x2Var2.invalidate();
-                        break;
-                    } else {
-                        ph.x2.d(str7);
-                        break;
-                    }
-                }
-                break;
-            case 15:
-                ph.z2 z2Var = (ph.z2) obj5;
-                TLObject tLObject2 = (TLObject) obj4;
-                MessagesController messagesController = (MessagesController) obj3;
-                z2Var.r = true;
-                z2Var.d = false;
-                if (tLObject2 instanceof TLRPC.TL_contacts_resolvedPeer) {
-                    TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject2;
-                    messagesController.putUsers(tL_contacts_resolvedPeer.users, false);
-                    messagesController.putChats(tL_contacts_resolvedPeer.chats, false);
-                    MessagesStorage.getInstance(z2Var.w.a).putUsersAndChats(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, true, true);
-                    z2Var.E();
-                    break;
-                }
-                break;
-            case 16:
-                String[] strArr = (String[]) obj5;
-                int[][] iArr4 = (int[][]) obj4;
-                org.telegram.ui.wx0 wx0Var = (org.telegram.ui.wx0) obj3;
-                for (int i21 = 0; i21 < strArr.length; i21++) {
-                    String str8 = strArr[i21];
-                    if (str8 != null) {
-                        AnimatedFileNative.d(str8, iArr4[i21], 0L);
-                    }
-                }
-                AndroidUtilities.runOnUIThread(wx0Var);
-                break;
-            case 17:
-                AnimatedFileNative.d((String) obj5, ((int[][]) obj4)[0], 0L);
-                AndroidUtilities.runOnUIThread((org.telegram.ui.wx0) obj3);
-                break;
-            case 18:
-                ph.z7 z7Var = (ph.z7) obj5;
-                TLObject tLObject3 = (TLObject) obj4;
-                MessagesController messagesController2 = (MessagesController) obj3;
-                ph.f8 f8Var = z7Var.T;
-                z7Var.v.setLoading(false);
-                if (tLObject3 != null) {
-                    int i22 = ph.f8.a0;
-                    ArrayList h12 = f8Var.h1();
-                    for (int i23 = 0; i23 < h12.size(); i23++) {
-                        TLRPC.User user = (TLRPC.User) h12.get(i23);
-                        if (user != null && (contains = z7Var.c.contains(Long.valueOf(user.id))) != user.close_friend) {
-                            user.close_friend = contains;
-                            user.flags2 = contains ? user.flags2 | 4 : user.flags2 & (-5);
-                            messagesController2.putUser(user, false);
-                        }
-                    }
-                }
-                f8Var.f1();
-                if (f8Var.W) {
-                    i11 = ((org.telegram.ui.ActionBar.g3) f8Var).currentAccount;
-                    f8Var.g1(new ph.d8(1, i11, (ArrayList) null), new nh.t3(f8Var, true ? 1 : 0), false);
-                    break;
-                } else {
-                    f8Var.f1();
-                    f8Var.b.D(0);
-                    break;
-                }
-                break;
-            case 19:
-                ((ph.u6) obj4).O0 = (File) obj3;
-                ph.w8 w8Var = ((ph.da) obj5).a1;
-                if (w8Var != null) {
-                    w8Var.b.V2.N(false);
-                    break;
-                }
-                break;
-            case 20:
-                ph.da daVar = (ph.da) obj5;
-                Bitmap bitmap3 = (Bitmap) obj4;
-                Runnable runnable = (Runnable) obj3;
-                if (bitmap3 != null) {
-                    try {
-                        Bitmap createBitmap = Bitmap.createBitmap(bitmap3, 0, 0, bitmap3.getWidth(), bitmap3.getHeight(), daVar.y0.getMatrix(), true);
-                        bitmap3.recycle();
-                        Bitmap createScaledBitmap = Bitmap.createScaledBitmap(createBitmap, 80, (int) (createBitmap.getHeight() / (createBitmap.getWidth() / 80.0f)), true);
-                        if (createScaledBitmap != null) {
-                            if (createScaledBitmap != createBitmap) {
-                                createBitmap.recycle();
-                            }
-                            Utilities.blurBitmap(createScaledBitmap, 7);
-                            FileOutputStream fileOutputStream = new FileOutputStream(new File(ApplicationLoader.getFilesDirFixed(), "cthumb.jpg"));
-                            createScaledBitmap.compress(Bitmap.CompressFormat.JPEG, 87, fileOutputStream);
-                            createScaledBitmap.recycle();
-                            fileOutputStream.close();
-                        }
-                    } catch (Throwable unused4) {
-                    }
-                }
-                AndroidUtilities.runOnUIThread(runnable);
-                break;
-            case 21:
-                ArrayList arrayList7 = (ArrayList) obj5;
-                HashMap hashMap2 = (HashMap) obj4;
-                Utilities.Callback callback = (Utilities.Callback) obj3;
-                ArrayList arrayList8 = new ArrayList();
-                for (int i24 = 0; i24 < arrayList7.size(); i24++) {
-                    TLRPC.User user2 = (TLRPC.User) arrayList7.get(i24);
-                    Boolean bool = (Boolean) hashMap2.get(Long.valueOf(user2.id));
-                    boolean z12 = bool == null || !bool.booleanValue();
-                    rh.p pVar = new rh.p();
-                    pVar.a = user2;
-                    pVar.b = z12;
-                    arrayList8.add(pVar);
-                }
-                callback.run(arrayList8);
-                break;
-            case 22:
-                rh.k1 k1Var = (rh.k1) obj3;
-                ((boolean[]) obj5)[0] = false;
-                if (((TLObject) obj4) instanceof TLRPC.TL_boolTrue) {
-                    k1Var.run(Boolean.TRUE);
-                    break;
-                }
-                break;
-            case 23:
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj3;
-                rh.q2 q2Var = ((rh.l2) obj5).d;
-                if (((TLObject) obj4) instanceof TLRPC.TL_boolTrue) {
-                    rh.i2 i2Var = q2Var.x;
-                    i2Var.getClass();
-                    i2Var.v("emoji_status_access_requested", org.telegram.ui.web.a1.x("cancelled", "status"));
-                    break;
-                } else {
-                    new qc(q2Var.m0, q2Var.B).Y(tL_error).k(true);
-                    break;
-                }
-            case 24:
-                TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) obj4;
-                AndroidUtilities.addToClipboard(connectedbotstarref.url);
-                qc.a0((rh.e3) obj5).M(LocaleController.getString(R.string.AffiliateProgramLinkCopiedTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AffiliateProgramLinkCopiedText, rh.k.G0(connectedbotstarref.commission_permille), UserObject.getUserName((TLRPC.User) obj3))), R.raw.copy).j();
-                break;
-            case 25:
-                rh.e3.A0((rh.e3) obj5, (TLObject) obj4, (org.telegram.ui.ActionBar.d2) obj3);
-                break;
-            case 26:
-                org.telegram.messenger.o7 o7Var = (org.telegram.messenger.o7) obj3;
-                int i25 = ((tf.z) obj5).p0;
-                MessagesController messagesController3 = MessagesController.getInstance(i25);
-                Iterator it = ((HashSet) obj4).iterator();
-                while (it.hasNext()) {
-                    Pair pair4 = (Pair) it.next();
-                    boolean booleanValue = ((Boolean) pair4.first).booleanValue();
-                    Long l10 = (Long) pair4.second;
-                    (booleanValue ? messagesController3.dialogs_read_outbox_max : messagesController3.dialogs_read_inbox_max).put(l10, Integer.valueOf(MessagesStorage.getInstance(i25).getDialogReadMaxSync(booleanValue, l10.longValue())));
-                }
-                AndroidUtilities.runOnUIThread(o7Var);
-                break;
-            case 27:
-                ((tf.x) obj5).a((a0.h) obj3, (ArrayList) obj4);
-                break;
-            case 28:
-                tf.u0 u0Var = (tf.u0) obj5;
-                String str9 = (String) obj4;
-                TLObject tLObject4 = (TLObject) obj3;
-                u0Var.B0 = 0;
-                if (str9.equals(u0Var.A0) && (tLObject4 instanceof TLRPC.TL_messages_stickers)) {
-                    TLRPC.TL_messages_stickers tL_messages_stickers2 = (TLRPC.TL_messages_stickers) tLObject4;
-                    ArrayList arrayList9 = u0Var.x0;
-                    int size2 = arrayList9 != null ? arrayList9.size() : 0;
-                    u0Var.F("sticker_search_".concat(str9), tL_messages_stickers2.stickers);
-                    ArrayList arrayList10 = u0Var.x0;
-                    int size3 = arrayList10 != null ? arrayList10.size() : 0;
-                    if (!u0Var.l0 && (arrayList = u0Var.x0) != null && !arrayList.isEmpty()) {
-                        u0Var.H();
-                        u0Var.S.a(u0Var.K() > 0);
-                        u0Var.l0 = true;
-                    }
-                    if (size2 != size3) {
-                        u0Var.l();
-                        break;
-                    }
-                }
-                break;
-            default:
-                tf.u0 u0Var2 = (tf.u0) obj5;
-                u0Var2.m0 = null;
-                u0Var2.Y((a0.h) obj3, (ArrayList) obj4, true);
-                break;
+            }
+            l71 l71Var2 = this.j;
+            if (l71Var2 != null) {
+                l71Var2.d(this.d / (this.h - S));
+            }
+            return true;
+        }
+        return false;
+    }
+
+    public final void f(float f10) {
+        float f11 = this.s;
+        if (f10 != f11) {
+            this.p = f11;
+            this.q = f10 < f11;
+            this.s = f10;
+            this.r = 0.0f;
+        }
+    }
+
+    public final void h(float f10, boolean z4) {
+        if (Math.abs(this.a - 1.0f) < 0.04f && Math.abs(f10) < 0.04f) {
+            this.D.d(1.0f, true);
+            this.E = this.b;
+        }
+        this.a = f10;
+        int ceil = (int) Math.ceil((this.h - S) * f10);
+        if (z4) {
+            if (Math.abs(ceil - this.b) > AndroidUtilities.dp(10.0f)) {
+                float interpolation = pr.f.getInterpolation(this.C);
+                this.B = (int) e2.c.w(1.0f, interpolation, this.B, this.b * interpolation);
+                this.C = 0.0f;
+            } else if (this.C == 1.0f) {
+                this.C = 0.0f;
+                this.B = this.b;
+            }
+        }
+        this.b = ceil;
+        if (ceil < 0) {
+            this.b = 0;
+        } else {
+            int i10 = this.h - S;
+            if (ceil > i10) {
+                this.b = i10;
+            }
+        }
+        if (Math.abs(this.c - this.b) > AndroidUtilities.dp(8.0f)) {
+            this.c = this.b;
         }
     }
 }

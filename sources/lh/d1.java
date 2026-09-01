@@ -1,32 +1,52 @@
 package lh;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.w51;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.x51;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes4.dex */
-public final class d1 extends w51 {
-    public final /* synthetic */ j1 K;
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class d1 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ g2 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d1(j1 j1Var, sl0 sl0Var, Context context, int i10, dg.r1 r1Var, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(sl0Var, context, i10, 0, true, r1Var, f6Var);
-        this.K = j1Var;
+    public /* synthetic */ d1(g2 g2Var, int i10) {
+        this.a = i10;
+        this.b = g2Var;
     }
 
-    @Override // org.telegram.ui.Components.w51, f2.o0
-    public final void v(f2.l1 l1Var, int i10) {
-        super.v(l1Var, i10);
-        View view = l1Var.a;
-        if (view instanceof h1) {
-            h1 h1Var = (h1) view;
-            f1 f1Var = h1Var.v;
-            boolean R = this.K.R(f1Var);
-            h1Var.c.f(R, false);
-            h1Var.r.a(R, false);
-            h1Var.setOnClickListener(new cg.n(20, this, f1Var));
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                int intValue = ((Integer) obj).intValue();
+                g2 g2Var = this.b;
+                if (g2Var.p0 != intValue) {
+                    g2Var.p0 = intValue;
+                    g2Var.h0.g();
+                    g2Var.V.N(true);
+                    break;
+                }
+                break;
+            default:
+                List list = (List) obj;
+                g2 g2Var2 = this.b;
+                if (g2Var2.getContext() != null && g2Var2.isShown()) {
+                    ArrayList b10 = hg.p0.b(1, list);
+                    g2Var2.W = b10;
+                    List c3 = hg.p0.c(b10);
+                    g2Var2.W = c3;
+                    if (!((ArrayList) c3).isEmpty()) {
+                        g2Var2.W();
+                        x51 x51Var = g2Var2.V;
+                        if (x51Var != null) {
+                            x51Var.N(true);
+                            break;
+                        }
+                    }
+                }
+                break;
         }
     }
 }

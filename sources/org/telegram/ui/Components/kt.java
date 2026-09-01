@@ -1,19 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.widget.EdgeEffect;
-import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class kt extends f2.s0 {
-    public final jt[] a = new jt[4];
-    public final ArrayList b = new ArrayList();
+public final /* synthetic */ class kt {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    @Override // f2.s0
-    public final EdgeEffect a(RecyclerView recyclerView, int i10) {
-        jt jtVar = new jt(recyclerView, i10, new ht(this, 0));
-        this.a[i10] = jtVar;
-        return jtVar;
+    public /* synthetic */ kt(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
+    }
+
+    public final void a(int i10, boolean z4) {
+        switch (this.a) {
+            case 0:
+                ArrayList arrayList = ((mt) this.b).b;
+                int size = arrayList.size();
+                int i11 = 0;
+                while (i11 < size) {
+                    Object obj = arrayList.get(i11);
+                    i11++;
+                    ((kt) obj).a(i10, z4);
+                }
+                break;
+            default:
+                ((Runnable) this.b).run();
+                break;
+        }
     }
 }

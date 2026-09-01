@@ -2,9 +2,8 @@ package n3;
 
 import h5.d0;
 import java.util.Locale;
-import kh.a2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class f {
     public int a;
@@ -36,10 +35,10 @@ public final class f {
         int i21 = d0.a;
         Locale locale = Locale.US;
         StringBuilder m9 = e2.c.m("DecoderCounters {\n decoderInits=", i10, ",\n decoderReleases=", i11, "\n queuedInputBuffers=");
-        a2.w(m9, i12, "\n skippedInputBuffers=", i13, "\n renderedOutputBuffers=");
-        a2.w(m9, i14, "\n skippedOutputBuffers=", i15, "\n droppedBuffers=");
-        a2.w(m9, i16, "\n droppedInputBuffers=", i17, "\n maxConsecutiveDroppedBuffers=");
-        a2.w(m9, i18, "\n droppedToKeyframeEvents=", i19, "\n totalVideoFrameProcessingOffsetUs=");
+        l.d.w(m9, i12, "\n skippedInputBuffers=", i13, "\n renderedOutputBuffers=");
+        l.d.w(m9, i14, "\n skippedOutputBuffers=", i15, "\n droppedBuffers=");
+        l.d.w(m9, i16, "\n droppedInputBuffers=", i17, "\n maxConsecutiveDroppedBuffers=");
+        l.d.w(m9, i18, "\n droppedToKeyframeEvents=", i19, "\n totalVideoFrameProcessingOffsetUs=");
         m9.append(j10);
         m9.append("\n videoFrameProcessingOffsetCount=");
         m9.append(i20);

@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class b9 extends FrameLayout {
     public final TextView a;
@@ -28,7 +28,7 @@ public final class b9 extends FrameLayout {
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-        addView(textView, k7.b6.d(-2, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
+        addView(textView, k7.c6.d(-2, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.b = textView2;
         textView2.setTextSize(1, 16.0f);
@@ -38,7 +38,7 @@ public final class b9 extends FrameLayout {
         textView2.setSingleLine(true);
         textView2.setEllipsize(truncateAt);
         textView2.setGravity((LocaleController.isRTL ? 3 : 5) | 16);
-        addView(textView2, k7.b6.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
+        addView(textView2, k7.c6.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
     }
 
     public final void a(String str, String str2, boolean z4) {
@@ -52,17 +52,17 @@ public final class b9 extends FrameLayout {
             textView2.setVisibility(4);
         }
         if (z4) {
-            int i10 = org.telegram.ui.ActionBar.j6.G6;
+            int i10 = org.telegram.ui.ActionBar.k6.G6;
             setTag(Integer.valueOf(i10));
-            textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
-            textView2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
+            textView.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, i10, false));
+            textView2.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, i10, false));
             textView.setTypeface(AndroidUtilities.bold());
             textView2.setTypeface(AndroidUtilities.bold());
         } else {
-            int i11 = org.telegram.ui.ActionBar.j6.z6;
+            int i11 = org.telegram.ui.ActionBar.k6.z6;
             setTag(Integer.valueOf(i11));
-            textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
-            textView2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
+            textView.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, i11, false));
+            textView2.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, i11, false));
             Typeface typeface = Typeface.DEFAULT;
             textView.setTypeface(typeface);
             textView2.setTypeface(typeface);

@@ -2,7 +2,7 @@ package t4;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class f extends q4.b {
     public final List d;
@@ -15,15 +15,15 @@ public final class f extends q4.b {
     }
 
     @Override // q4.l
-    public final long B() {
+    public final long k() {
         a();
-        u4.g gVar = (u4.g) this.d.get((int) this.c);
-        return this.e + gVar.e + gVar.c;
+        return this.e + ((u4.g) this.d.get((int) this.c)).e;
     }
 
     @Override // q4.l
-    public final long p() {
+    public final long l() {
         a();
-        return this.e + ((u4.g) this.d.get((int) this.c)).e;
+        u4.g gVar = (u4.g) this.d.get((int) this.c);
+        return this.e + gVar.e + gVar.c;
     }
 }

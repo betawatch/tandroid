@@ -15,7 +15,7 @@ import j3.c0;
 import j3.g2;
 import j3.m0;
 import j3.n0;
-import j7.b8;
+import j7.c8;
 import java.nio.ByteBuffer;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -23,13 +23,12 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.regex.Pattern;
-import kh.a2;
 import o4.l0;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
 import s8.i0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class j extends d4.r {
     public static boolean A1;
@@ -1374,8 +1373,8 @@ public final class j extends d4.r {
     }
 
     public static List t0(Context context, d4.s sVar, n0 n0Var, boolean z4, boolean z10) {
-        Iterable e;
-        List e6;
+        Iterable e6;
+        List e10;
         String str = n0Var.C;
         if (str == null) {
             s8.t tVar = s8.v.b;
@@ -1385,30 +1384,30 @@ public final class j extends d4.r {
             String b10 = d4.y.b(n0Var);
             if (b10 == null) {
                 s8.t tVar2 = s8.v.b;
-                e6 = i0.e;
+                e10 = i0.e;
             } else {
                 sVar.getClass();
-                e6 = d4.y.e(b10, z4, z10);
+                e10 = d4.y.e(b10, z4, z10);
             }
-            if (!e6.isEmpty()) {
-                return e6;
+            if (!e10.isEmpty()) {
+                return e10;
             }
         }
         Pattern pattern = d4.y.a;
         String str2 = n0Var.C;
         sVar.getClass();
-        List e10 = d4.y.e(str2, z4, z10);
+        List e11 = d4.y.e(str2, z4, z10);
         String b11 = d4.y.b(n0Var);
         if (b11 == null) {
             s8.t tVar3 = s8.v.b;
-            e = i0.e;
+            e6 = i0.e;
         } else {
-            e = d4.y.e(b11, z4, z10);
+            e6 = d4.y.e(b11, z4, z10);
         }
         s8.t tVar4 = s8.v.b;
         s8.s sVar2 = new s8.s();
-        sVar2.d(e10);
-        sVar2.d(e);
+        sVar2.d(e11);
+        sVar2.d(e6);
         return sVar2.i();
     }
 
@@ -1516,7 +1515,7 @@ public final class j extends d4.r {
         List t02 = t0(this.R0, sVar, n0Var, z4, this.v1);
         Pattern pattern = d4.y.a;
         ArrayList arrayList = new ArrayList(t02);
-        Collections.sort(arrayList, new d4.t(new a1.c(n0Var, 11), 0));
+        Collections.sort(arrayList, new d4.t(new a1.c(n0Var, 10), 0));
         return arrayList;
     }
 
@@ -1755,7 +1754,7 @@ public final class j extends d4.r {
         f7.b bVar = this.T0;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new gf.c(15, bVar, exc));
+            handler.post(new gf.c(14, bVar, exc));
         }
     }
 
@@ -1811,7 +1810,7 @@ public final class j extends d4.r {
         f7.b bVar = this.T0;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new gf.c(14, bVar, str));
+            handler.post(new gf.c(13, bVar, str));
         }
     }
 
@@ -1936,14 +1935,14 @@ public final class j extends d4.r {
                         Pair.create(bVar, bVar);
                     }
                     if (!(d0.a < 21) || (i10 = n0Var.K) == 0) {
-                        b8.a();
-                        b8.e.invoke(b8.d.newInstance(null), null).getClass();
+                        c8.a();
+                        c8.e.invoke(c8.d.newInstance(null), null).getClass();
                         throw new ClassCastException();
                     }
-                    b8.a();
-                    Object newInstance = b8.a.newInstance(null);
-                    b8.b.invoke(newInstance, Float.valueOf(i10));
-                    b8.c.invoke(newInstance, null).getClass();
+                    c8.a();
+                    Object newInstance = c8.a.newInstance(null);
+                    c8.b.invoke(newInstance, Float.valueOf(i10));
+                    c8.c.invoke(newInstance, null).getClass();
                     throw new ClassCastException();
                 }
             } else {
@@ -1951,11 +1950,11 @@ public final class j extends d4.r {
             }
             if (d0.a < 21) {
             }
-            b8.a();
-            b8.e.invoke(b8.d.newInstance(null), null).getClass();
+            c8.a();
+            c8.e.invoke(c8.d.newInstance(null), null).getClass();
             throw new ClassCastException();
-        } catch (Exception e) {
-            throw jVar.a(e, n0Var, false, 7000);
+        } catch (Exception e6) {
+            throw jVar.a(e6, n0Var, false, 7000);
         }
         b bVar3 = b.f;
         Pair.create(bVar3, bVar3);
@@ -2053,7 +2052,7 @@ public final class j extends d4.r {
             }
             y yVar = this.u1;
             if (yVar != null) {
-                bVar.w(yVar);
+                bVar.v(yVar);
             }
             if (this.d1) {
                 Surface surface3 = this.b1;
@@ -2099,7 +2098,7 @@ public final class j extends d4.r {
         }
         y yVar2 = this.u1;
         if (yVar2 != null) {
-            bVar.w(yVar2);
+            bVar.v(yVar2);
         }
         q0();
         if (i11 == 2) {
@@ -2249,15 +2248,15 @@ public final class j extends d4.r {
                 if (j29 < -500000 && !z10) {
                     l0 l0Var = this.n;
                     l0Var.getClass();
-                    int e = l0Var.e(j10 - this.s);
-                    if (e != 0) {
+                    int l10 = l0Var.l(j10 - this.s);
+                    if (l10 != 0) {
                         if (z14) {
                             n3.f fVar = this.M0;
-                            fVar.d += e;
+                            fVar.d += l10;
                             fVar.f += this.n1;
                         } else {
                             this.M0.j++;
-                            C0(e, this.n1);
+                            C0(l10, this.n1);
                         }
                         if (H()) {
                             P();
@@ -2373,10 +2372,10 @@ public final class j extends d4.r {
             if (handler != null) {
                 handler.post(new w(bVar, fVar, 0));
             }
-            bVar.w(y.e);
+            bVar.v(y.e);
         } catch (Throwable th2) {
             bVar.o(this.M0);
-            bVar.w(y.e);
+            bVar.v(y.e);
             throw th2;
         }
     }
@@ -2473,7 +2472,7 @@ public final class j extends d4.r {
             if (!t03.isEmpty()) {
                 Pattern pattern = d4.y.a;
                 ArrayList arrayList = new ArrayList(t03);
-                Collections.sort(arrayList, new d4.t(new a1.c(n0Var, 11), i10));
+                Collections.sort(arrayList, new d4.t(new a1.c(n0Var, 10), i10));
                 d4.n nVar3 = (d4.n) arrayList.get(0);
                 if (nVar3.d(n0Var) && nVar3.e(n0Var)) {
                     i10 = 32;
@@ -2492,7 +2491,7 @@ public final class j extends d4.r {
                 C();
                 e0();
             } finally {
-                a2.D(this.P, null);
+                l.d.D(this.P, null);
                 this.P = null;
             }
         } finally {
@@ -2525,7 +2524,7 @@ public final class j extends d4.r {
             r rVar = sVar.c;
             rVar.getClass();
             rVar.b.sendEmptyMessage(1);
-            pVar.j(new gg.f(sVar, 4));
+            pVar.r(new hg.f(sVar, 3));
         }
         sVar.c(false);
     }
@@ -2549,7 +2548,7 @@ public final class j extends d4.r {
         sVar.d = false;
         p pVar = sVar.b;
         if (pVar != null) {
-            pVar.z();
+            pVar.s();
             r rVar = sVar.c;
             rVar.getClass();
             rVar.b.sendEmptyMessage(2);
@@ -2618,7 +2617,7 @@ public final class j extends d4.r {
             return;
         }
         this.u1 = yVar;
-        this.T0.w(yVar);
+        this.T0.v(yVar);
     }
 
     public final void y0(d4.k kVar, int i10) {

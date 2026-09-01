@@ -22,12 +22,12 @@ import androidx.appcompat.app.AlertController$RecycleListView;
 import androidx.core.widget.NestedScrollView;
 import com.google.android.gms.common.api.internal.s1;
 import java.util.WeakHashMap;
-import m.w1;
+import m.v1;
 import org.telegram.messenger.beta.R;
 import r0.c0;
 import r0.j0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class f extends s implements DialogInterface {
     public final e f;
@@ -76,7 +76,7 @@ public class f extends s implements DialogInterface {
                 frameLayout.setPadding(0, 0, 0, 0);
             }
             if (eVar.e != null) {
-                ((LinearLayout.LayoutParams) ((w1) viewGroup.getLayoutParams())).weight = 0.0f;
+                ((LinearLayout.LayoutParams) ((v1) viewGroup.getLayoutParams())).weight = 0.0f;
             }
         } else {
             viewGroup.setVisibility(8);
@@ -275,7 +275,7 @@ public class f extends s implements DialogInterface {
     @Override // android.app.Dialog, android.view.KeyEvent.Callback
     public boolean onKeyDown(int i10, KeyEvent keyEvent) {
         NestedScrollView nestedScrollView = this.f.m;
-        if (nestedScrollView == null || !nestedScrollView.j(keyEvent)) {
+        if (nestedScrollView == null || !nestedScrollView.i(keyEvent)) {
             return super.onKeyDown(i10, keyEvent);
         }
         return true;
@@ -284,7 +284,7 @@ public class f extends s implements DialogInterface {
     @Override // android.app.Dialog, android.view.KeyEvent.Callback
     public boolean onKeyUp(int i10, KeyEvent keyEvent) {
         NestedScrollView nestedScrollView = this.f.m;
-        if (nestedScrollView == null || !nestedScrollView.j(keyEvent)) {
+        if (nestedScrollView == null || !nestedScrollView.i(keyEvent)) {
             return super.onKeyUp(i10, keyEvent);
         }
         return true;

@@ -5,12 +5,12 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.model.IInputCallback;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class InputCallbackDelegateImpl implements o {
     private final IInputCallback mCallback;
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class OnInputCallbackStub extends IInputCallback.Stub {
         private final n mCallback;
 
@@ -52,8 +52,8 @@ public class InputCallbackDelegateImpl implements o {
             IInputCallback iInputCallback = this.mCallback;
             Objects.requireNonNull(iInputCallback);
             iInputCallback.onInputSubmitted(str, androidx.car.app.utils.j.a());
-        } catch (RemoteException e) {
-            throw new RuntimeException(e);
+        } catch (RemoteException e6) {
+            throw new RuntimeException(e6);
         }
     }
 
@@ -62,8 +62,8 @@ public class InputCallbackDelegateImpl implements o {
             IInputCallback iInputCallback = this.mCallback;
             Objects.requireNonNull(iInputCallback);
             iInputCallback.onInputTextChanged(str, androidx.car.app.utils.j.a());
-        } catch (RemoteException e) {
-            throw new RuntimeException(e);
+        } catch (RemoteException e6) {
+            throw new RuntimeException(e6);
         }
     }
 

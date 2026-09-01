@@ -1,114 +1,87 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import java.util.ArrayList;
+import android.content.SharedPreferences;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class re1 implements Utilities.Callback {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
+public final class re1 implements org.telegram.ui.Components.mo {
+    public final /* synthetic */ TLRPC.TL_forumTopic a;
+    public final /* synthetic */ mf1 b;
 
-    public /* synthetic */ re1(int i10, long j10, Context context, TL_payments.connectedBotStarRef connectedbotstarref, org.telegram.ui.ActionBar.g3 g3Var, org.telegram.ui.ActionBar.f6 f6Var) {
-        this.b = i10;
-        this.d = connectedbotstarref;
-        this.e = g3Var;
-        this.f = context;
-        this.c = j10;
-        this.g = f6Var;
+    public re1(mf1 mf1Var, TLRPC.TL_forumTopic tL_forumTopic) {
+        this.b = mf1Var;
+        this.a = tL_forumTopic;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        int i10;
-        SpannableStringBuilder replaceTags;
-        int i11 = this.a;
-        Object obj2 = this.g;
-        Object obj3 = this.f;
-        Object obj4 = this.e;
-        Object obj5 = this.d;
-        switch (i11) {
-            case 0:
-                TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers = (TLRPC.TL_messages_invitedUsers) obj4;
-                int[] iArr = (int[]) obj3;
-                ArrayList arrayList = (ArrayList) obj2;
-                TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers2 = (TLRPC.TL_messages_invitedUsers) obj;
-                kf1 kf1Var = ((ue1) obj5).b;
-                if (tL_messages_invitedUsers2 != null) {
-                    tL_messages_invitedUsers.missing_invitees.addAll(tL_messages_invitedUsers2.missing_invitees);
-                }
-                int i12 = iArr[0] + 1;
-                iArr[0] = i12;
-                if (i12 == this.b) {
-                    boolean isEmpty = tL_messages_invitedUsers.missing_invitees.isEmpty();
-                    long j10 = this.c;
-                    if (!isEmpty) {
-                        TLRPC.Chat chat = kf1Var.getMessagesController().getChat(Long.valueOf(j10));
-                        i10 = ((org.telegram.ui.ActionBar.p2) kf1Var).currentAccount;
-                        org.telegram.ui.Components.z4.f(i10, chat, tL_messages_invitedUsers);
-                        break;
-                    } else {
-                        org.telegram.ui.Components.qc a02 = org.telegram.ui.Components.qc.a0(kf1Var);
-                        TLRPC.Chat chat2 = kf1Var.getMessagesController().getChat(Long.valueOf(j10));
-                        a02.getClass();
-                        if (arrayList.size() == 0) {
-                            replaceTags = null;
-                        } else if (arrayList.size() != 1) {
-                            replaceTags = ChatObject.isChannelAndNotMegaGroup(chat2) ? AndroidUtilities.replaceTags(LocaleController.formatPluralString("AddedMembersToChannel", arrayList.size(), new Object[0])) : AndroidUtilities.replaceTags(LocaleController.formatPluralString("AddedSubscribersToChannel", arrayList.size(), new Object[0]));
-                        } else if (ChatObject.isChannelAndNotMegaGroup(chat2)) {
-                            replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString("HasBeenAddedToChannel", R.string.HasBeenAddedToChannel, "**" + UserObject.getFirstName((TLRPC.User) arrayList.get(0)) + "**"));
-                        } else {
-                            replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString("HasBeenAddedToGroup", R.string.HasBeenAddedToGroup, "**" + UserObject.getFirstName((TLRPC.User) arrayList.get(0)) + "**"));
-                        }
-                        a02.V(arrayList, replaceTags, null, null).j();
-                        break;
-                    }
-                }
-                break;
-            default:
-                TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) obj5;
-                org.telegram.ui.ActionBar.g3 g3Var = (org.telegram.ui.ActionBar.g3) obj4;
-                Context context = (Context) obj3;
-                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj2;
-                TL_payments.connectedBotStarRef connectedbotstarref2 = (TL_payments.connectedBotStarRef) obj;
-                int i13 = this.b;
-                long j11 = this.c;
-                if (connectedbotstarref2 != null) {
-                    g3Var.dismiss();
-                    rh.e3.H0(context, i13, connectedbotstarref2, j11, f6Var);
-                    break;
-                } else {
-                    TLRPC.User user = MessagesController.getInstance(i13).getUser(Long.valueOf(connectedbotstarref.bot_id));
-                    if (user != null) {
-                        MessagesController.getInstance(i13).loadFullUser(user, 0, true, new rh.t2(g3Var, context, i13, j11, f6Var, 1));
-                        break;
-                    }
-                }
-                break;
+    @Override // org.telegram.ui.Components.mo
+    public final void dismiss() {
+        this.b.finishPreviewFragment();
+    }
+
+    @Override // org.telegram.ui.Components.mo
+    public final void k() {
+        mf1 mf1Var = this.b;
+        mf1Var.finishPreviewFragment();
+        MessagesController messagesController = mf1Var.getMessagesController();
+        long j10 = mf1Var.a;
+        TLRPC.TL_forumTopic tL_forumTopic = this.a;
+        boolean isDialogMuted = messagesController.isDialogMuted(-j10, tL_forumTopic.id);
+        mf1Var.getNotificationsController().muteDialog(-j10, tL_forumTopic.id, !isDialogMuted);
+        if (org.telegram.ui.Components.qc.a(mf1Var)) {
+            org.telegram.ui.Components.qc.z(mf1Var, !isDialogMuted ? 3 : 4, !isDialogMuted ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, mf1Var.getResourceProvider()).j();
         }
     }
 
-    public /* synthetic */ re1(ue1 ue1Var, TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers, int[] iArr, int i10, ArrayList arrayList, long j10) {
-        this.d = ue1Var;
-        this.e = tL_messages_invitedUsers;
-        this.f = iArr;
-        this.b = i10;
-        this.g = arrayList;
-        this.c = j10;
+    @Override // org.telegram.ui.Components.mo
+    public final void o() {
+        this.b.finishPreviewFragment();
+        AndroidUtilities.runOnUIThread(new w01(23, this, this.a), 500L);
+    }
+
+    @Override // org.telegram.ui.Components.mo
+    public final void u() {
+        int i10;
+        mf1 mf1Var = this.b;
+        i10 = ((org.telegram.ui.ActionBar.p2) mf1Var).currentAccount;
+        SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i10);
+        StringBuilder sb = new StringBuilder("sound_enabled_");
+        long j10 = mf1Var.a;
+        TLRPC.TL_forumTopic tL_forumTopic = this.a;
+        boolean z4 = notificationsSettings.getBoolean(org.telegram.messenger.y3.i(-j10, tL_forumTopic.id, sb), true);
+        notificationsSettings.edit().putBoolean(org.telegram.messenger.y3.i(-j10, tL_forumTopic.id, new StringBuilder("sound_enabled_")), !z4).apply();
+        mf1Var.finishPreviewFragment();
+        if (org.telegram.ui.Components.qc.a(mf1Var)) {
+            org.telegram.ui.Components.qc.S(z4 ? 1 : 0, mf1Var, mf1Var.getResourceProvider()).j();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.mo
+    public final void v(int i10) {
+        mf1 mf1Var = this.b;
+        long j10 = mf1Var.a;
+        mf1Var.finishPreviewFragment();
+        TLRPC.TL_forumTopic tL_forumTopic = this.a;
+        if (i10 != 0) {
+            mf1Var.getNotificationsController().muteUntil(-j10, tL_forumTopic.id, i10);
+            if (org.telegram.ui.Components.qc.a(mf1Var)) {
+                org.telegram.ui.Components.qc.z(mf1Var, 5, i10, mf1Var.getResourceProvider()).j();
+                return;
+            }
+            return;
+        }
+        if (mf1Var.getMessagesController().isDialogMuted(-j10, tL_forumTopic.id)) {
+            mf1Var.getNotificationsController().muteDialog(-j10, tL_forumTopic.id, false);
+        }
+        if (org.telegram.ui.Components.qc.a(mf1Var)) {
+            org.telegram.ui.Components.qc.z(mf1Var, 4, i10, mf1Var.getResourceProvider()).j();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.mo
+    public final /* synthetic */ void j() {
     }
 }

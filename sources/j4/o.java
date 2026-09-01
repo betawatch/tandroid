@@ -3,9 +3,8 @@ package j4;
 import android.os.Parcel;
 import android.os.Parcelable;
 import h5.d0;
-import kh.a2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class o extends j {
     public static final Parcelable.Creator<o> CREATOR = new f8.o(22);
@@ -32,9 +31,9 @@ public final class o extends j {
     }
 
     public final int hashCode() {
-        int e = a2.e(527, 31, this.a);
+        int e6 = l.d.e(527, 31, this.a);
         String str = this.b;
-        int hashCode = (e + (str != null ? str.hashCode() : 0)) * 31;
+        int hashCode = (e6 + (str != null ? str.hashCode() : 0)) * 31;
         String str2 = this.c;
         return hashCode + (str2 != null ? str2.hashCode() : 0);
     }

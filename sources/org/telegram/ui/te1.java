@@ -1,50 +1,114 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.app.Activity;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class te1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ kf1 c;
+public final /* synthetic */ class te1 implements Utilities.Callback {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
 
-    public /* synthetic */ te1(kf1 kf1Var, boolean z4, int i10) {
-        this.a = i10;
-        this.c = kf1Var;
-        this.b = z4;
+    public /* synthetic */ te1(int i10, long j10, Context context, TL_payments.connectedBotStarRef connectedbotstarref, org.telegram.ui.ActionBar.h3 h3Var, org.telegram.ui.ActionBar.g6 g6Var) {
+        this.b = i10;
+        this.d = connectedbotstarref;
+        this.e = h3Var;
+        this.f = context;
+        this.c = j10;
+        this.g = g6Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         int i10;
-        switch (this.a) {
+        SpannableStringBuilder replaceTags;
+        int i11 = this.a;
+        Object obj2 = this.g;
+        Object obj3 = this.f;
+        Object obj4 = this.e;
+        Object obj5 = this.d;
+        switch (i11) {
             case 0:
-                super.onAnimationEnd(animator);
-                boolean z4 = this.b;
-                float f10 = z4 ? 1.0f : 0.0f;
-                kf1 kf1Var = this.c;
-                kf1Var.S0(f10);
-                if (!z4) {
-                    Activity parentActivity = kf1Var.getParentActivity();
-                    i10 = ((org.telegram.ui.ActionBar.p2) kf1Var).classGuid;
-                    AndroidUtilities.setAdjustResizeToNothing(parentActivity, i10);
-                    kf1Var.o0.setVisibility(8);
-                    kf1Var.Q0(true);
+                TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers = (TLRPC.TL_messages_invitedUsers) obj4;
+                int[] iArr = (int[]) obj3;
+                ArrayList arrayList = (ArrayList) obj2;
+                TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers2 = (TLRPC.TL_messages_invitedUsers) obj;
+                mf1 mf1Var = ((we1) obj5).b;
+                if (tL_messages_invitedUsers2 != null) {
+                    tL_messages_invitedUsers.missing_invitees.addAll(tL_messages_invitedUsers2.missing_invitees);
+                }
+                int i12 = iArr[0] + 1;
+                iArr[0] = i12;
+                if (i12 == this.b) {
+                    boolean isEmpty = tL_messages_invitedUsers.missing_invitees.isEmpty();
+                    long j10 = this.c;
+                    if (!isEmpty) {
+                        TLRPC.Chat chat = mf1Var.getMessagesController().getChat(Long.valueOf(j10));
+                        i10 = ((org.telegram.ui.ActionBar.p2) mf1Var).currentAccount;
+                        org.telegram.ui.Components.z4.f(i10, chat, tL_messages_invitedUsers);
+                        break;
+                    } else {
+                        org.telegram.ui.Components.qc a02 = org.telegram.ui.Components.qc.a0(mf1Var);
+                        TLRPC.Chat chat2 = mf1Var.getMessagesController().getChat(Long.valueOf(j10));
+                        a02.getClass();
+                        if (arrayList.size() == 0) {
+                            replaceTags = null;
+                        } else if (arrayList.size() != 1) {
+                            replaceTags = ChatObject.isChannelAndNotMegaGroup(chat2) ? AndroidUtilities.replaceTags(LocaleController.formatPluralString("AddedMembersToChannel", arrayList.size(), new Object[0])) : AndroidUtilities.replaceTags(LocaleController.formatPluralString("AddedSubscribersToChannel", arrayList.size(), new Object[0]));
+                        } else if (ChatObject.isChannelAndNotMegaGroup(chat2)) {
+                            replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString("HasBeenAddedToChannel", R.string.HasBeenAddedToChannel, "**" + UserObject.getFirstName((TLRPC.User) arrayList.get(0)) + "**"));
+                        } else {
+                            replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString("HasBeenAddedToGroup", R.string.HasBeenAddedToGroup, "**" + UserObject.getFirstName((TLRPC.User) arrayList.get(0)) + "**"));
+                        }
+                        a02.V(arrayList, replaceTags, null, null).j();
+                        break;
+                    }
+                }
+                break;
+            default:
+                TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) obj5;
+                org.telegram.ui.ActionBar.h3 h3Var = (org.telegram.ui.ActionBar.h3) obj4;
+                Context context = (Context) obj3;
+                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj2;
+                TL_payments.connectedBotStarRef connectedbotstarref2 = (TL_payments.connectedBotStarRef) obj;
+                int i13 = this.b;
+                long j11 = this.c;
+                if (connectedbotstarref2 != null) {
+                    h3Var.dismiss();
+                    sh.d3.H0(context, i13, connectedbotstarref2, j11, g6Var);
                     break;
                 } else {
-                    kf1Var.n0.setVisibility(8);
-                    break;
-                }
-            default:
-                if (!this.b) {
-                    this.c.l0.setVisibility(8);
-                    break;
+                    TLRPC.User user = MessagesController.getInstance(i13).getUser(Long.valueOf(connectedbotstarref.bot_id));
+                    if (user != null) {
+                        MessagesController.getInstance(i13).loadFullUser(user, 0, true, new sh.s2(h3Var, context, i13, j11, g6Var, 1));
+                        break;
+                    }
                 }
                 break;
         }
+    }
+
+    public /* synthetic */ te1(we1 we1Var, TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers, int[] iArr, int i10, ArrayList arrayList, long j10) {
+        this.d = we1Var;
+        this.e = tL_messages_invitedUsers;
+        this.f = iArr;
+        this.b = i10;
+        this.g = arrayList;
+        this.c = j10;
     }
 }

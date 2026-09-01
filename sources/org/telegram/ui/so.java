@@ -1,39 +1,39 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class so implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ dp b;
+    public final /* synthetic */ ep b;
 
-    public /* synthetic */ so(dp dpVar, int i10) {
+    public /* synthetic */ so(ep epVar, int i10) {
         this.a = i10;
-        this.b = dpVar;
+        this.b = epVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                dp dpVar = this.b;
-                dpVar.Z = true;
-                dpVar.b0();
+                ep epVar = this.b;
+                epVar.Z = true;
+                epVar.b0();
                 break;
             case 1:
-                dp dpVar2 = this.b;
-                dpVar2.U = dpVar2.getMessagesController().getChat(Long.valueOf(dpVar2.W));
-                dpVar2.Y();
+                ep epVar2 = this.b;
+                epVar2.U = epVar2.getMessagesController().getChat(Long.valueOf(epVar2.W));
+                epVar2.Y();
                 break;
             case 2:
                 this.b.a0(false);
                 break;
             case 3:
-                dp dpVar3 = this.b;
-                dpVar3.Z = true;
-                if (dpVar3.a.length() > 0) {
-                    dpVar3.W(dpVar3.a.getText().toString());
+                ep epVar3 = this.b;
+                epVar3.Z = true;
+                if (epVar3.a.length() > 0) {
+                    epVar3.W(epVar3.a.getText().toString());
                 }
-                dpVar3.b0();
+                epVar3.b0();
                 break;
             case 4:
                 this.b.Y();

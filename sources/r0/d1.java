@@ -8,9 +8,9 @@ import android.view.WindowInsets;
 import j$.util.Objects;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import k7.q6;
+import k7.r6;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class d1 extends j1 {
     public static boolean i = false;
@@ -69,8 +69,8 @@ public abstract class d1 extends j1 {
                 if (rect != null) {
                     return i0.b.b(rect.left, rect.top, rect.right, rect.bottom);
                 }
-            } catch (ReflectiveOperationException e) {
-                Log.e("WindowInsetsCompat", "Failed to get visible insets. (Reflection error). " + e.getMessage(), e);
+            } catch (ReflectiveOperationException e6) {
+                Log.e("WindowInsetsCompat", "Failed to get visible insets. (Reflection error). " + e6.getMessage(), e6);
             }
         }
         return null;
@@ -85,8 +85,8 @@ public abstract class d1 extends j1 {
             m = Class.forName("android.view.ViewRootImpl").getDeclaredField("mAttachInfo");
             l.setAccessible(true);
             m.setAccessible(true);
-        } catch (ReflectiveOperationException e) {
-            Log.e("WindowInsetsCompat", "Failed to get visible insets. (Reflection error). " + e.getMessage(), e);
+        } catch (ReflectiveOperationException e6) {
+            Log.e("WindowInsetsCompat", "Failed to get visible insets. (Reflection error). " + e6.getMessage(), e6);
         }
         i = true;
     }
@@ -180,7 +180,7 @@ public abstract class d1 extends j1 {
             if (i10 != 2) {
                 if (i10 == 8) {
                     i0.b[] bVarArr = this.d;
-                    i11 = bVarArr != null ? bVarArr[q6.a(8)] : null;
+                    i11 = bVarArr != null ? bVarArr[r6.a(8)] : null;
                     if (i11 != null) {
                         return i11;
                     }
@@ -206,10 +206,10 @@ public abstract class d1 extends j1 {
                     }
                     if (i10 == 128) {
                         m1 m1Var = this.f;
-                        j e = m1Var != null ? m1Var.a.e() : e();
-                        if (e != null) {
+                        j e6 = m1Var != null ? m1Var.a.e() : e();
+                        if (e6 != null) {
                             int i14 = Build.VERSION.SDK_INT;
-                            return i0.b.b(i14 >= 28 ? d1.f.l(e.a) : 0, i14 >= 28 ? d1.f.n(e.a) : 0, i14 >= 28 ? d1.f.m(e.a) : 0, i14 >= 28 ? d1.f.k(e.a) : 0);
+                            return i0.b.b(i14 >= 28 ? d1.f.l(e6.a) : 0, i14 >= 28 ? d1.f.n(e6.a) : 0, i14 >= 28 ? d1.f.m(e6.a) : 0, i14 >= 28 ? d1.f.k(e6.a) : 0);
                         }
                     }
                 }

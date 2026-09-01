@@ -1,32 +1,37 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
+import android.view.KeyEvent;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uz implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class uz implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ EditTextBoldCursor b;
+    public final /* synthetic */ AlertDialog$Builder b;
 
-    public /* synthetic */ uz(int i10, EditTextBoldCursor editTextBoldCursor) {
+    public /* synthetic */ uz(AlertDialog$Builder alertDialog$Builder, int i10) {
         this.a = i10;
-        this.b = editTextBoldCursor;
+        this.b = alertDialog$Builder;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.hideKeyboard(this.b);
+                AndroidUtilities.hideKeyboard(textView);
+                this.b.a.d(-1).callOnClick();
                 break;
             case 1:
-                AndroidUtilities.hideKeyboard(this.b);
+                AndroidUtilities.hideKeyboard(textView);
+                this.b.a.d(-1).callOnClick();
                 break;
             default:
-                AndroidUtilities.hideKeyboard(this.b);
+                AndroidUtilities.hideKeyboard(textView);
+                this.b.a.d(-1).callOnClick();
                 break;
         }
+        return false;
     }
 }

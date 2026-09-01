@@ -10,12 +10,12 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class j0 implements u9.e {
     public static final Charset f = Charset.forName("UTF-8");
-    public static final u9.c g = new u9.c("key", vh.v2.h(kh.a2.o(h0.class, new e0(1))));
-    public static final u9.c h = new u9.c("value", vh.v2.h(kh.a2.o(h0.class, new e0(2))));
+    public static final u9.c g = new u9.c("key", w.c.h(l.d.o(h0.class, new e0(1))));
+    public static final u9.c h = new u9.c("value", w.c.h(l.d.o(h0.class, new e0(2))));
     public static final i0 i = i0.b;
     public OutputStream a;
     public final HashMap b;

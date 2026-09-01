@@ -1,44 +1,21 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.FileLog;
-
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class qw extends f2.w {
-    public final /* synthetic */ kz Q;
+public final /* synthetic */ class qw implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ zy b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qw(kz kzVar) {
-        super(5);
-        this.Q = kzVar;
+    public /* synthetic */ qw(zy zyVar, int i10) {
+        this.a = i10;
+        this.b = zyVar;
     }
 
-    @Override // f2.w, f2.i0, f2.v0
-    public final int o0(int i10, bf.f fVar, f2.i1 i1Var) {
-        int o02 = super.o0(i10, fVar, i1Var);
-        kz kzVar = this.Q;
-        if (o02 != 0 && kzVar.A0.getScrollState() == 1) {
-            kzVar.U1 = false;
-            kzVar.a0();
+    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
         }
-        if (kzVar.Q0 == null) {
-            zw zwVar = new zw(kzVar, kzVar.Z0, kzVar.q1.a(), kzVar.q1.f(), 0);
-            kzVar.Q0 = zwVar;
-            zwVar.a();
-        }
-        kzVar.Q0.b();
-        return o02;
-    }
-
-    @Override // f2.i0, f2.v0
-    public final void v0(RecyclerView recyclerView, f2.i1 i1Var, int i10) {
-        try {
-            wh.o oVar = new wh.o(recyclerView.getContext(), 2);
-            oVar.a = i10;
-            w0(oVar);
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
+        this.b.d();
     }
 }

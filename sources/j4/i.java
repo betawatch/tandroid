@@ -4,19 +4,19 @@ import h5.d0;
 import h5.v;
 import h5.w;
 import j3.q0;
-import j7.c7;
+import j7.d7;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
-import k7.z6;
+import k7.a7;
 import s8.i0;
 import s8.t;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final class i extends c7 {
+public final class i extends d7 {
     public static final q0 b = new q0(16);
     public final g a;
 
@@ -33,14 +33,14 @@ public final class i extends c7 {
         byte[] bArr = new byte[i12];
         wVar.e(0, i12, bArr);
         if (i11 == 2) {
-            concat = "image/" + z6.b(new String(bArr, 0, 3, r8.d.b));
+            concat = "image/" + a7.b(new String(bArr, 0, 3, r8.d.b));
             if ("image/jpg".equals(concat)) {
                 concat = "image/jpeg";
             }
             q10 = 2;
         } else {
             q10 = q(0, bArr);
-            String b10 = z6.b(new String(bArr, 0, q10, r8.d.b));
+            String b10 = a7.b(new String(bArr, 0, q10, r8.d.b));
             concat = b10.indexOf(47) == -1 ? "image/".concat(b10) : b10;
         }
         int i13 = bArr[q10 + 1] & 255;
@@ -183,13 +183,13 @@ public final class i extends c7 {
             return null;
         }
         if (gVar != null) {
-            boolean b10 = gVar.b(i19, u10, u11, u12, u13);
+            boolean d = gVar.d(i19, u10, u11, u12, u13);
             i19 = i19;
             r12 = u11;
             i12 = u10;
             i13 = u12;
             i14 = u13;
-            if (!b10) {
+            if (!d) {
                 wVar.F(i21);
                 return null;
             }
@@ -597,7 +597,7 @@ public final class i extends c7 {
         }
     }
 
-    @Override // j7.c7
+    @Override // j7.d7
     public final e4.c b(e4.e eVar, ByteBuffer byteBuffer) {
         return c(byteBuffer.limit(), byteBuffer.array());
     }

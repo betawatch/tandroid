@@ -7,19 +7,15 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.UUID;
+import mh.c3;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q0 implements f, j4.g, c9.e, h5.j {
     public final /* synthetic */ int a;
 
     public /* synthetic */ q0(int i10) {
         this.a = i10;
-    }
-
-    @Override // j4.g
-    public boolean b(int i10, int i11, int i12, int i13, int i14) {
-        return false;
     }
 
     @Override // j3.f
@@ -29,15 +25,14 @@ public final /* synthetic */ class q0 implements f, j4.g, c9.e, h5.j {
         s8.i0 s9;
         Bundle bundle2;
         Bundle bundle3;
-        int i10 = 19;
-        int i11 = 5;
+        int i10 = 5;
         boolean z4 = false;
         switch (this.a) {
             case 0:
                 Uri uri = (Uri) bundle.getParcelable(r0.b);
                 uri.getClass();
-                a3.c cVar = new a3.c(i10);
-                cVar.b = uri;
+                ja.c cVar = new ja.c();
+                cVar.a = uri;
                 return new r0(cVar);
             case 1:
                 s0 s0Var = new s0();
@@ -48,9 +43,9 @@ public final /* synthetic */ class q0 implements f, j4.g, c9.e, h5.j {
                 s0Var.a = j10;
                 long j11 = bundle.getLong(t0.n, u0Var.b);
                 if (j11 != Long.MIN_VALUE && j11 < 0) {
-                    r14 = false;
+                    r13 = false;
                 }
-                h5.a.f(r14);
+                h5.a.f(r13);
                 s0Var.b = j11;
                 s0Var.c = bundle.getBoolean(t0.r, u0Var.c);
                 s0Var.d = bundle.getBoolean(t0.s, u0Var.d);
@@ -117,7 +112,7 @@ public final /* synthetic */ class q0 implements f, j4.g, c9.e, h5.j {
                     s8.t tVar = s8.v.b;
                     s6 = s8.i0.e;
                 } else {
-                    s6 = h5.a.s(new q0(i11), parcelableArrayList);
+                    s6 = h5.a.s(new q0(i10), parcelableArrayList);
                 }
                 s8.i0 i0Var = s6;
                 ArrayList parcelableArrayList2 = bundle.getParcelableArrayList(y0.B);
@@ -134,7 +129,7 @@ public final /* synthetic */ class q0 implements f, j4.g, c9.e, h5.j {
             case 5:
                 return new n4.b(bundle.getInt(n4.b.d, 0), bundle.getInt(n4.b.e, 0), bundle.getInt(n4.b.f, 0));
             case 6:
-                androidx.biometric.e eVar = new androidx.biometric.e(i10, z4);
+                androidx.biometric.e eVar = new androidx.biometric.e(19, z4);
                 eVar.b = (Uri) bundle.getParcelable(z0.d);
                 eVar.c = bundle.getString(z0.e);
                 eVar.d = bundle.getBundle(z0.f);
@@ -144,16 +139,16 @@ public final /* synthetic */ class q0 implements f, j4.g, c9.e, h5.j {
                 uri4.getClass();
                 String string3 = bundle.getString(b1.r);
                 String string4 = bundle.getString(b1.s);
-                int i12 = bundle.getInt(b1.v, 0);
-                int i13 = bundle.getInt(b1.w, 0);
+                int i11 = bundle.getInt(b1.v, 0);
+                int i12 = bundle.getInt(b1.w, 0);
                 String string5 = bundle.getString(b1.x);
                 String string6 = bundle.getString(b1.y);
                 c9.a aVar = new c9.a();
                 aVar.d = uri4;
                 aVar.a = string3;
                 aVar.e = string4;
-                aVar.b = i12;
-                aVar.c = i13;
+                aVar.b = i11;
+                aVar.c = i12;
                 aVar.f = string5;
                 aVar.g = string6;
                 return new b1(aVar);
@@ -249,37 +244,37 @@ public final /* synthetic */ class q0 implements f, j4.g, c9.e, h5.j {
                 float f10 = bundle.getFloat(s1.d, -1.0f);
                 return f10 == -1.0f ? new s1() : new s1(f10);
             case 10:
-                int i14 = bundle.getInt(f2.a, -1);
-                if (i14 == 0) {
+                int i13 = bundle.getInt(f2.a, -1);
+                if (i13 == 0) {
                     return (f2) o0.h.c(bundle);
                 }
-                if (i14 == 1) {
+                if (i13 == 1) {
                     return (f2) s1.e.c(bundle);
                 }
-                if (i14 == 2) {
+                if (i13 == 2) {
                     return (f2) j2.h.c(bundle);
                 }
-                if (i14 == 3) {
+                if (i13 == 3) {
                     return (f2) k2.h.c(bundle);
                 }
-                throw new IllegalArgumentException(kh.a2.j(i14, "Unknown RatingType: "));
+                throw new IllegalArgumentException(l.d.j(i13, "Unknown RatingType: "));
             case 11:
                 h5.a.f(bundle.getInt(f2.a, -1) == 2);
-                int i15 = bundle.getInt(j2.e, 5);
+                int i14 = bundle.getInt(j2.e, 5);
                 float f11 = bundle.getFloat(j2.f, -1.0f);
-                return f11 == -1.0f ? new j2(i15) : new j2(i15, f11);
+                return f11 == -1.0f ? new j2(i14) : new j2(i14, f11);
             case 12:
                 h5.a.f(bundle.getInt(f2.a, -1) == 3);
                 return bundle.getBoolean(k2.e, false) ? new k2(bundle.getBoolean(k2.f, false)) : new k2();
             case 13:
-                int i16 = bundle.getInt(m2.n, 0);
+                int i15 = bundle.getInt(m2.n, 0);
                 long j12 = bundle.getLong(m2.r, -9223372036854775807L);
                 long j13 = bundle.getLong(m2.s, 0L);
                 boolean z13 = bundle.getBoolean(m2.v, false);
                 Bundle bundle8 = bundle.getBundle(m2.w);
                 p4.b bVar = bundle8 != null ? (p4.b) p4.b.w.c(bundle8) : p4.b.f;
                 m2 m2Var = new m2();
-                m2Var.i(null, null, i16, j12, j13, bVar, z13);
+                m2Var.i(null, null, i15, j12, j13, bVar, z13);
                 return m2Var;
             case 14:
                 Bundle bundle9 = bundle.getBundle(n2.H);
@@ -294,26 +289,26 @@ public final /* synthetic */ class q0 implements f, j4.g, c9.e, h5.j {
                 boolean z16 = bundle.getBoolean(n2.O, false);
                 long j17 = bundle.getLong(n2.P, 0L);
                 long j18 = bundle.getLong(n2.Q, -9223372036854775807L);
-                int i17 = bundle.getInt(n2.R, 0);
-                int i18 = bundle.getInt(n2.S, 0);
+                int i16 = bundle.getInt(n2.R, 0);
+                int i17 = bundle.getInt(n2.S, 0);
                 long j19 = bundle.getLong(n2.T, 0L);
                 n2 n2Var = new n2();
-                n2Var.b(n2.F, c1Var, null, j14, j15, j16, z14, z15, x0Var, j17, j18, i17, i18, j19);
+                n2Var.b(n2.F, c1Var, null, j14, j15, j16, z14, z15, x0Var, j17, j18, i16, i17, j19);
                 n2Var.w = z16;
                 return n2Var;
             default:
-                m.j0 j0Var = o4.s0.n;
+                c3 c3Var = o4.s0.n;
                 Bundle bundle11 = bundle.getBundle(p2.f);
                 bundle11.getClass();
-                o4.s0 s0Var2 = (o4.s0) j0Var.c(bundle11);
+                o4.s0 s0Var2 = (o4.s0) c3Var.c(bundle11);
                 int[] intArray = bundle.getIntArray(p2.h);
-                int i19 = s0Var2.a;
-                int[] iArr = new int[i19];
+                int i18 = s0Var2.a;
+                int[] iArr = new int[i18];
                 if (intArray == null) {
                     intArray = iArr;
                 }
                 boolean[] booleanArray = bundle.getBooleanArray(p2.n);
-                boolean[] zArr = new boolean[i19];
+                boolean[] zArr = new boolean[i18];
                 if (booleanArray == null) {
                     booleanArray = zArr;
                 }
@@ -321,23 +316,28 @@ public final /* synthetic */ class q0 implements f, j4.g, c9.e, h5.j {
         }
     }
 
+    @Override // j4.g
+    public boolean d(int i10, int i11, int i12, int i13, int i14) {
+        return false;
+    }
+
     @Override // c9.e
-    public Object f0(c5.j jVar) {
-        Set x10 = jVar.x(ja.a.class);
-        ja.c cVar = ja.c.c;
+    public Object e0(c5.j jVar) {
+        Set w10 = jVar.w(ja.a.class);
+        ja.c cVar = ja.c.b;
         if (cVar == null) {
             synchronized (ja.c.class) {
                 try {
-                    cVar = ja.c.c;
+                    cVar = ja.c.b;
                     if (cVar == null) {
                         cVar = new ja.c(0);
-                        ja.c.c = cVar;
+                        ja.c.b = cVar;
                     }
                 } finally {
                 }
             }
         }
-        return new ja.b(x10, cVar);
+        return new ja.b(w10, cVar);
     }
 
     @Override // h5.j
@@ -383,7 +383,27 @@ public final /* synthetic */ class q0 implements f, j4.g, c9.e, h5.j {
         }
     }
 
+    public /* synthetic */ q0(k3.a aVar, int i10, int i11) {
+        this.a = 27;
+    }
+
+    public /* synthetic */ q0(k3.a aVar, g gVar, int i10) {
+        this.a = i10;
+    }
+
+    public /* synthetic */ q0(k3.a aVar, c1 c1Var, int i10) {
+        this.a = 28;
+    }
+
     public /* synthetic */ q0(k3.a aVar, Object obj, Object obj2, int i10) {
         this.a = i10;
+    }
+
+    public /* synthetic */ q0(k3.a aVar, boolean z4) {
+        this.a = 19;
+    }
+
+    public /* synthetic */ q0(k3.a aVar, boolean z4, int i10, int i11) {
+        this.a = i11;
     }
 }

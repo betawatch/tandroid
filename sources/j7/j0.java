@@ -1,38 +1,30 @@
 package j7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+import android.os.Build;
+import android.util.Log;
+
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class j0 {
-    public static boolean a(r3.l lVar) {
-        h5.w wVar = new h5.w(8);
-        int i10 = c4.e.b(lVar, wVar).a;
-        if (i10 != 1380533830 && i10 != 1380333108) {
-            return false;
+    public static void a(Object obj, String str, String str2) {
+        String c3 = c(str);
+        if (Log.isLoggable(c3, 3)) {
+            Log.d(c3, String.format(str2, obj));
         }
-        lVar.c(0, 4, wVar.a);
-        wVar.F(0);
-        int g10 = wVar.g();
-        if (g10 == 1463899717) {
-            return true;
-        }
-        h5.a.o("WavHeaderReader", "Unsupported form type: " + g10);
-        return false;
     }
 
-    public static c4.e b(int i10, r3.l lVar, h5.w wVar) {
-        c4.e b10 = c4.e.b(lVar, wVar);
-        while (true) {
-            int i11 = b10.a;
-            if (i11 == i10) {
-                return b10;
-            }
-            e2.c.q(i11, "Ignoring unknown WAV chunk: ", "WavHeaderReader");
-            long j10 = b10.b + 8;
-            if (j10 > 2147483647L) {
-                throw j3.r1.c("Chunk is too large (~2GB+) to skip; id: " + i11);
-            }
-            lVar.u((int) j10);
-            b10 = c4.e.b(lVar, wVar);
+    public static void b(String str, String str2, Exception exc) {
+        String c3 = c(str);
+        if (Log.isLoggable(c3, 6)) {
+            Log.e(c3, str2, exc);
         }
+    }
+
+    public static String c(String str) {
+        if (Build.VERSION.SDK_INT >= 26) {
+            return "TRuntime.".concat(str);
+        }
+        String concat = "TRuntime.".concat(str);
+        return concat.length() > 23 ? concat.substring(0, 23) : concat;
     }
 }

@@ -16,8 +16,8 @@ public abstract class o1 {
                 return;
             }
             throw new IllegalStateException("Did not write as much data as expected, " + byteBuffer.remaining() + " bytes remaining.");
-        } catch (IOException e) {
-            throw new RuntimeException("Serializing to a byte array threw an IOException (should never happen).", e);
+        } catch (IOException e6) {
+            throw new RuntimeException("Serializing to a byte array threw an IOException (should never happen).", e6);
         }
     }
 
@@ -33,7 +33,7 @@ public abstract class o1 {
         byte[] bArr = x1Var.e;
         long j10 = x1Var.a;
         int i10 = 0;
-        int O = j10 != 0 ? o5.i.O(j10) + o5.i.P(1) : 0;
+        int o02 = j10 != 0 ? o5.i.o0(j10) + o5.i.r0(1) : 0;
         y1[] y1VarArr = x1Var.d;
         if (y1VarArr != null && y1VarArr.length > 0) {
             int i11 = 0;
@@ -48,36 +48,36 @@ public abstract class o1 {
         }
         byte[] bArr2 = n1.d;
         if (!Arrays.equals(bArr, bArr2)) {
-            O += o5.i.Q(bArr.length) + bArr.length + o5.i.P(4);
+            o02 += o5.i.t0(bArr.length) + bArr.length + o5.i.r0(4);
         }
         if (!Arrays.equals(x1Var.f, bArr2)) {
             byte[] bArr3 = x1Var.f;
-            O += o5.i.Q(bArr3.length) + bArr3.length + o5.i.P(6);
+            o02 += o5.i.t0(bArr3.length) + bArr3.length + o5.i.r0(6);
         }
         if (str4 != null && !str4.equals("")) {
-            O += o5.i.D(8, str4);
+            o02 += o5.i.d0(8, str4);
         }
         int i12 = x1Var.c;
         if (i12 != 0) {
-            O += (i12 >= 0 ? o5.i.Q(i12) : 10) + o5.i.P(11);
+            o02 += (i12 >= 0 ? o5.i.t0(i12) : 10) + o5.i.r0(11);
         }
         if (str3 != null && !str3.equals("")) {
-            O += o5.i.D(13, str3);
+            o02 += o5.i.d0(13, str3);
         }
         if (str2 != null && !str2.equals("")) {
-            O += o5.i.D(14, str2);
+            o02 += o5.i.d0(14, str2);
         }
         long j11 = x1Var.s;
         if (j11 != 180000) {
-            O += o5.i.O((j11 >> 63) ^ (j11 << 1)) + o5.i.P(15);
+            o02 += o5.i.o0((j11 >> 63) ^ (j11 << 1)) + o5.i.r0(15);
         }
         long j12 = x1Var.b;
         if (j12 != 0) {
-            O += o5.i.O(j12) + o5.i.P(17);
+            o02 += o5.i.o0(j12) + o5.i.r0(17);
         }
         if (!Arrays.equals(x1Var.v, bArr2)) {
             byte[] bArr4 = x1Var.v;
-            O += o5.i.Q(bArr4.length) + bArr4.length + o5.i.P(18);
+            o02 += o5.i.t0(bArr4.length) + bArr4.length + o5.i.r0(18);
         }
         int[] iArr2 = x1Var.x;
         if (iArr2 != null && iArr2.length > 0) {
@@ -88,15 +88,15 @@ public abstract class o1 {
                     break;
                 }
                 int i14 = iArr[i10];
-                i13 += i14 >= 0 ? o5.i.Q(i14) : 10;
+                i13 += i14 >= 0 ? o5.i.t0(i14) : 10;
                 i10++;
             }
-            O = O + i13 + (iArr.length * 2);
+            o02 = o02 + i13 + (iArr.length * 2);
         }
         if (str != null && !str.equals("")) {
-            O += o5.i.D(24, str);
+            o02 += o5.i.d0(24, str);
         }
-        return x1Var.y ? o5.i.P(25) + 1 + O : O;
+        return x1Var.y ? o5.i.r0(25) + 1 + o02 : o02;
     }
 
     public final o1 d() {
@@ -112,15 +112,15 @@ public abstract class o1 {
         try {
             n1.j(null, this, new StringBuffer(), stringBuffer);
             return stringBuffer.toString();
-        } catch (IllegalAccessException e) {
-            valueOf = String.valueOf(e.getMessage());
+        } catch (IllegalAccessException e6) {
+            valueOf = String.valueOf(e6.getMessage());
             if (valueOf.length() == 0) {
                 str = new String("Error printing proto: ");
                 return str;
             }
             return "Error printing proto: ".concat(valueOf);
-        } catch (InvocationTargetException e6) {
-            valueOf = String.valueOf(e6.getMessage());
+        } catch (InvocationTargetException e10) {
+            valueOf = String.valueOf(e10.getMessage());
             if (valueOf.length() == 0) {
                 str = new String("Error printing proto: ");
                 return str;

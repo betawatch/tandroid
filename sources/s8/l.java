@@ -14,7 +14,7 @@ import k7.y7;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class l {
     public static int a(int i10) {
@@ -108,7 +108,7 @@ public abstract class l {
             if (list.isEmpty()) {
                 throw new NoSuchElementException();
             }
-            return yh.k(1, list);
+            return yh.j(1, list);
         }
         Iterator it = iterable.iterator();
         do {

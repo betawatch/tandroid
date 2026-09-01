@@ -1,0 +1,165 @@
+package oh;
+
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.cz;
+
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes4.dex */
+public final class p8 extends k8 {
+    public final ng.q0 F;
+    public final o8 G;
+    public final ng.h0 H;
+    public final ImageReceiver I;
+    public final org.telegram.ui.Components.z5 J;
+    public final org.telegram.ui.Components.j6 K;
+    public boolean L;
+
+    public p8(Context context, m8 m8Var, TL_stories.TL_mediaAreaSuggestedReaction tL_mediaAreaSuggestedReaction, cz czVar) {
+        super(context, m8Var, tL_mediaAreaSuggestedReaction);
+        TLRPC.TL_availableReaction tL_availableReaction;
+        ArrayList arrayList;
+        o8 o8Var = new o8(this);
+        this.G = o8Var;
+        ng.h0 h0Var = new ng.h0(this);
+        this.H = h0Var;
+        this.I = new ImageReceiver(this);
+        this.J = new org.telegram.ui.Components.z5(this);
+        this.K = new org.telegram.ui.Components.j6(false, false, false, false);
+        ng.q0 d = ng.q0.d(tL_mediaAreaSuggestedReaction.reaction);
+        this.F = d;
+        if (tL_mediaAreaSuggestedReaction.flipped) {
+            o8Var.b(true, false);
+        }
+        o8Var.c(getScaleX());
+        h0Var.e(d);
+        czVar.getClass();
+        String str = d.f;
+        str = str == null ? MessageObject.findAnimatedEmojiEmoticon(org.telegram.ui.Components.l5.f(czVar.b, d.g)) : str;
+        if (str != null && (arrayList = (ArrayList) czVar.e.get(str)) != null && !arrayList.isEmpty()) {
+            int min = Math.min(1, arrayList.size());
+            for (int i10 = 0; i10 < min; i10++) {
+                czVar.m((TLRPC.Document) arrayList.get(i10));
+            }
+        }
+        if (this.F.f != null && (tL_availableReaction = MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(this.F.f)) != null) {
+            this.I.setImage(ImageLocation.getForDocument(tL_availableReaction.center_icon), "40_40_lastreactframe", null, "webp", tL_availableReaction, 1);
+        }
+        org.telegram.ui.Components.j6 j6Var = this.K;
+        j6Var.b = 17;
+        j6Var.u(AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf"));
+        this.K.t(AndroidUtilities.dp(18.0f));
+        this.K.G = AndroidUtilities.displaySize.x;
+        if (tL_mediaAreaSuggestedReaction.dark) {
+            this.G.a();
+            this.K.r(-1);
+        }
+    }
+
+    @Override // oh.k8
+    public final void a(Canvas canvas) {
+        int measuredWidth = getMeasuredWidth();
+        int measuredHeight = getMeasuredHeight();
+        o8 o8Var = this.G;
+        o8Var.setBounds(0, 0, measuredWidth, measuredHeight);
+        o8Var.draw(canvas);
+        float measuredWidth2 = ((int) (getMeasuredWidth() * 0.61f)) / 2.0f;
+        float centerX = o8Var.getBounds().centerX() - measuredWidth2;
+        float centerY = o8Var.getBounds().centerY() - measuredWidth2;
+        float centerX2 = o8Var.getBounds().centerX() + measuredWidth2;
+        float centerY2 = o8Var.getBounds().centerY() + measuredWidth2;
+        float height = (o8Var.getBounds().height() * 0.427f) + o8Var.getBounds().top;
+        float f10 = height - measuredWidth2;
+        float f11 = height + measuredWidth2;
+        float d = this.J.d(this.L ? 1.0f : 0.0f, false);
+        Rect rect = AndroidUtilities.rectTmp2;
+        rect.set((int) centerX, (int) AndroidUtilities.lerp(centerY, f10, d), (int) centerX2, (int) AndroidUtilities.lerp(centerY2, f11, d));
+        int i10 = o8Var.a == 1 ? -1 : -16777216;
+        ng.h0 h0Var = this.H;
+        h0Var.d(i10);
+        h0Var.c(rect);
+        h0Var.a(canvas);
+        float height2 = (o8Var.getBounds().height() * 0.839f) + o8Var.getBounds().top;
+        org.telegram.ui.Components.j6 j6Var = this.K;
+        j6Var.setBounds(o8Var.getBounds().left, (int) (height2 - AndroidUtilities.dp(10.0f)), o8Var.getBounds().right, (int) (AndroidUtilities.dp(10.0f) + height2));
+        canvas.save();
+        canvas.scale(d, d, o8Var.getBounds().centerX(), height2);
+        j6Var.draw(canvas);
+        canvas.restore();
+    }
+
+    public final void c(TL_stories.StoryViews storyViews, boolean z4) {
+        org.telegram.ui.Components.z5 z5Var = this.J;
+        if (storyViews != null) {
+            for (int i10 = 0; i10 < storyViews.reactions.size(); i10++) {
+                if (ng.s0.c(storyViews.reactions.get(i10).reaction, this.F)) {
+                    boolean z10 = z4 && this.L;
+                    this.L = storyViews.reactions.get(i10).count > 0;
+                    this.K.q(AndroidUtilities.formatWholeNumber(storyViews.reactions.get(i10).count, 0), z10, true);
+                    if (z4) {
+                        return;
+                    }
+                    z5Var.d(this.L ? 1.0f : 0.0f, true);
+                    return;
+                }
+            }
+        }
+        this.L = false;
+        invalidate();
+        if (z4) {
+            return;
+        }
+        z5Var.d(this.L ? 1.0f : 0.0f, true);
+    }
+
+    public org.telegram.ui.Components.l5 getAnimatedEmojiDrawable() {
+        return this.H.b;
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        if (getParent() instanceof View) {
+            ((View) getParent()).invalidate();
+        }
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.H.b(true);
+        this.I.onAttachedToWindow();
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.H.b(false);
+        this.I.onDetachedFromWindow();
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        this.K.t(Math.min(AndroidUtilities.dp(18.0f), getMeasuredHeight() * 0.156f));
+    }
+
+    @Override // android.view.View
+    public void setScaleX(float f10) {
+        if (getScaleX() != f10) {
+            this.G.c(f10);
+            super.setScaleX(f10);
+        }
+    }
+}

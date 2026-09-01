@@ -1,79 +1,53 @@
 package org.telegram.ui;
 
-import android.R;
-import android.net.Uri;
-import org.telegram.messenger.Utilities;
+import android.app.Activity;
+import android.content.Context;
+import android.view.OrientationEventListener;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class us0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ vs0 b;
+public final class us0 extends OrientationEventListener {
+    public final /* synthetic */ PhotoViewer a;
 
-    public /* synthetic */ us0(vs0 vs0Var, int i10) {
-        this.a = i10;
-        this.b = vs0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public us0(Context context, PhotoViewer photoViewer) {
+        super(context);
+        this.a = photoViewer;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x0057, code lost:
-    
-        if (r2 != 7) goto L32;
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        i5.b bVar;
-        switch (this.a) {
-            case 0:
-                PhotoViewer photoViewer = this.b.b;
-                au0 au0Var = photoViewer.B2;
-                if (au0Var != null) {
-                    org.telegram.ui.Components.i71 i71Var = photoViewer.C2;
-                    if (au0Var.e != i71Var) {
-                        au0Var.c = false;
-                        au0Var.d = false;
-                        if (au0Var.b) {
-                            au0Var.a++;
-                            au0Var.b = false;
-                        }
-                        au0Var.setImageResource(R.color.transparent);
-                    }
-                    if (i71Var != null) {
-                        j3.f0 f0Var = i71Var.d;
-                        if (f0Var != null) {
-                            try {
-                                f0Var.j0();
-                                j3.n0 n0Var = f0Var.N;
-                                if (n0Var != null && (bVar = n0Var.O) != null) {
-                                    int i10 = bVar.c;
-                                    if (i10 != 6) {
-                                        break;
-                                    }
-                                }
-                            } catch (Exception unused) {
-                            }
-                        }
-                        long p10 = i71Var.p() - i71Var.n();
-                        if (!au0Var.c && !au0Var.d && !au0Var.b && p10 < 5250.0f) {
-                            Uri uri = i71Var.C;
-                            int i11 = au0Var.a + 1;
-                            au0Var.a = i11;
-                            Utilities.globalQueue.postRunnable(new zt0(au0Var, uri, i11, 0));
-                            au0Var.b = true;
-                        }
-                    }
-                    au0Var.e = i71Var;
-                    break;
-                }
-                break;
-            case 1:
-                au0.a(this.b.b.B2);
-                break;
-            default:
-                au0.a(this.b.b.B2);
-                break;
+    @Override // android.view.OrientationEventListener
+    public final void onOrientationChanged(int i10) {
+        zs0 zs0Var;
+        Activity activity;
+        int i11;
+        PhotoViewer photoViewer = this.a;
+        if (photoViewer.T3 == null || (zs0Var = photoViewer.v2) == null || zs0Var.getVisibility() != 0 || (activity = photoViewer.y) == null || (i11 = photoViewer.V3) == 0) {
+            return;
+        }
+        if (i11 != 1) {
+            if (i10 > 0 && (i10 >= 330 || i10 <= 30)) {
+                photoViewer.W3 = true;
+                return;
+            }
+            if (!photoViewer.W3 || i10 < 240 || i10 > 300) {
+                return;
+            }
+            activity.setRequestedOrientation(photoViewer.U3);
+            photoViewer.V3 = 0;
+            photoViewer.W3 = false;
+            return;
+        }
+        if (i10 >= 240 && i10 <= 300) {
+            photoViewer.W3 = true;
+            return;
+        }
+        if (!photoViewer.W3 || i10 <= 0) {
+            return;
+        }
+        if (i10 >= 330 || i10 <= 30) {
+            activity.setRequestedOrientation(photoViewer.U3);
+            photoViewer.V3 = 0;
+            photoViewer.W3 = false;
         }
     }
 }

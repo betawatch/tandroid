@@ -1,57 +1,124 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.concurrent.Delayed;
-import java.util.concurrent.Future;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final class n4 extends j7.x5 implements ScheduledFuture, v8.a, Future {
-    public final f4 b;
-    public final ScheduledFuture c;
+public final class n4 implements r5.h {
+    public final /* synthetic */ c5.j a;
 
-    public n4(f4 f4Var, ScheduledFuture scheduledFuture) {
-        this.b = f4Var;
-        this.c = scheduledFuture;
+    public /* synthetic */ n4(c5.j jVar) {
+        this.a = jVar;
     }
 
-    @Override // java.util.concurrent.Future
-    public final boolean cancel(boolean z4) {
-        boolean cancel = this.b.cancel(z4);
-        if (cancel) {
-            this.c.cancel(z4);
+    @Override // r5.h
+    public void e(r5.f fVar, int i10) {
+        b4.e0 e0Var = new b4.e0(8, 2);
+        e0Var.c = Integer.valueOf(i10);
+        u6 u6Var = new u6(e0Var);
+        c5.j jVar = this.a;
+        c5.j.D(jVar, u6Var);
+        jVar.F();
+    }
+
+    @Override // r5.h
+    public void f(r5.f fVar, String str) {
+        u6 u6Var = new u6(new b4.e0(4, 2));
+        c5.j jVar = this.a;
+        c5.j.D(jVar, u6Var);
+        t6 t6Var = (t6) jVar.d;
+        b6.m.h(t6Var);
+        t6Var.a((r5.c) fVar);
+        t6 t6Var2 = (t6) jVar.d;
+        b6.m.h(t6Var2);
+        String str2 = t6Var2.k;
+        if (str2 == null) {
+            t6Var2.k = str;
+        } else {
+            if (TextUtils.equals(str, str2)) {
+                return;
+            }
+            t6Var2.b(4);
         }
-        return cancel;
     }
 
-    @Override // java.lang.Comparable
-    public final /* bridge */ /* synthetic */ int compareTo(Delayed delayed) {
-        return this.c.compareTo(delayed);
+    @Override // r5.h
+    public /* bridge */ /* synthetic */ void g(r5.f fVar, boolean z4) {
+        u6 u6Var = new u6(new b4.e0(4, 2));
+        c5.j jVar = this.a;
+        c5.j.D(jVar, u6Var);
+        t6 t6Var = (t6) jVar.d;
+        b6.m.h(t6Var);
+        t6Var.a((r5.c) fVar);
     }
 
-    @Override // java.util.concurrent.Future
-    public final Object get() {
-        return this.b.get();
+    @Override // r5.h
+    public void h(r5.f fVar, int i10) {
+        b4.e0 e0Var = new b4.e0(6, 2);
+        e0Var.c = Integer.valueOf(i10);
+        u6 u6Var = new u6(e0Var);
+        c5.j jVar = this.a;
+        c5.j.D(jVar, u6Var);
+        t6 t6Var = (t6) jVar.d;
+        b6.m.h(t6Var);
+        t6Var.a((r5.c) fVar);
     }
 
-    @Override // java.util.concurrent.Delayed
-    public final long getDelay(TimeUnit timeUnit) {
-        return this.c.getDelay(timeUnit);
+    @Override // r5.h
+    public void i(r5.f fVar, int i10) {
+        b4.e0 e0Var = new b4.e0(5, 2);
+        e0Var.c = Integer.valueOf(i10);
+        u6 u6Var = new u6(e0Var);
+        c5.j jVar = this.a;
+        c5.j.D(jVar, u6Var);
+        jVar.F();
     }
 
-    @Override // java.util.concurrent.Future
-    public final boolean isCancelled() {
-        return this.b.a instanceof x3;
+    @Override // r5.h
+    public void j(r5.f fVar) {
+        r5.c cVar = (r5.c) fVar;
+        b4.e0 e0Var = new b4.e0(2, 2);
+        c5.j jVar = this.a;
+        e0Var.d = Boolean.valueOf(((c) jVar.b).d == 2);
+        c5.j.D(jVar, new u6(e0Var));
+        t6 t6Var = (t6) jVar.d;
+        b6.m.h(t6Var);
+        t6Var.a(cVar);
+        cVar.l = (n4) jVar.e;
     }
 
-    @Override // java.util.concurrent.Future
-    public final boolean isDone() {
-        return this.b.isDone();
+    @Override // r5.h
+    public void k(r5.f fVar, String str) {
+        u6 u6Var = new u6(new b4.e0(7, 2));
+        c5.j jVar = this.a;
+        c5.j.D(jVar, u6Var);
+        t6 t6Var = (t6) jVar.d;
+        b6.m.h(t6Var);
+        t6Var.a((r5.c) fVar);
+        t6 t6Var2 = (t6) jVar.d;
+        b6.m.h(t6Var2);
+        String str2 = t6Var2.k;
+        if (str2 == null) {
+            t6Var2.k = str;
+        } else {
+            if (TextUtils.equals(str, str2)) {
+                return;
+            }
+            t6Var2.b(4);
+        }
     }
 
-    @Override // java.util.concurrent.Future
-    public final Object get(long j10, TimeUnit timeUnit) {
-        return this.b.get(j10, timeUnit);
+    @Override // r5.h
+    public /* bridge */ /* synthetic */ void m(r5.f fVar) {
+    }
+
+    @Override // r5.h
+    public void o(r5.f fVar, int i10) {
+        b4.e0 e0Var = new b4.e0(9, 2);
+        e0Var.c = Integer.valueOf(i10);
+        c5.j jVar = this.a;
+        e0Var.d = Boolean.valueOf(((c) jVar.b).d == 2);
+        c5.j.D(jVar, new u6(e0Var));
+        jVar.F();
     }
 }

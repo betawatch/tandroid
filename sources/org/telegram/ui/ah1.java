@@ -1,58 +1,54 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.content.Context;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class ah1 implements TextWatcher {
-    public final /* synthetic */ UsersSelectActivity a;
+public final class ah1 extends LinearLayout {
+    public final org.telegram.ui.ActionBar.g6 a;
+    public final ImageView b;
+    public final LinearLayout c;
+    public final TextView d;
+    public final TextView e;
+    public final ImageView f;
+    public boolean h;
+    public boolean n;
 
-    public ah1(UsersSelectActivity usersSelectActivity) {
-        this.a = usersSelectActivity;
+    public ah1(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context);
+        setOrientation(0);
+        this.a = g6Var;
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        addView(imageView, k7.c6.t(40, 40, 19, 12, 0, 12, 0));
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.c = linearLayout;
+        linearLayout.setOrientation(1);
+        linearLayout.setPadding(0, AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f));
+        addView(linearLayout, k7.c6.p(0, -2, 1.0f, 23, 0, 0, 32, 0));
+        TextView textView = new TextView(context);
+        this.d = textView;
+        textView.setTextSize(1, 16.0f);
+        TextView i10 = yh.i(linearLayout, textView, k7.c6.t(-1, -2, 7, 0, 0, 0, 0), context);
+        this.e = i10;
+        i10.setTextSize(1, 13.0f);
+        linearLayout.addView(i10, k7.c6.r(-1, -2, 7, 0.0f, 4.33f, 0.0f, 0.0f));
+        ImageView imageView2 = new ImageView(context);
+        this.f = imageView2;
+        imageView2.setScaleType(scaleType);
+        addView(imageView2, k7.c6.t(40, 40, 21, 12, 0, 12, 0));
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        UsersSelectActivity usersSelectActivity = this.a;
-        if (usersSelectActivity.c.length() == 0) {
-            usersSelectActivity.J = false;
-            usersSelectActivity.I = false;
-            dh1 dh1Var = usersSelectActivity.h;
-            if (dh1Var.n) {
-                dh1Var.n = false;
-                dh1Var.l();
-            }
-            usersSelectActivity.h.L(null);
-            usersSelectActivity.d.setFastScrollVisible(true);
-            usersSelectActivity.d.setVerticalScrollBarEnabled(false);
-            usersSelectActivity.f.d.setText(LocaleController.getString(R.string.NoContacts));
-            return;
-        }
-        dh1 dh1Var2 = usersSelectActivity.h;
-        boolean z4 = dh1Var2.n;
-        if (!z4) {
-            usersSelectActivity.J = true;
-            usersSelectActivity.I = true;
-            if (!z4) {
-                dh1Var2.n = true;
-                dh1Var2.l();
-            }
-            usersSelectActivity.d.setFastScrollVisible(false);
-            usersSelectActivity.d.setVerticalScrollBarEnabled(true);
-            usersSelectActivity.f.d.setText(LocaleController.getString(R.string.NoResult));
-        }
-        usersSelectActivity.f.e(true, true);
-        usersSelectActivity.h.L(usersSelectActivity.c.getText().toString());
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
     }
 }

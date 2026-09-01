@@ -16,16 +16,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
+import lh.c3;
 import n7.qa;
-import nh.n5;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class b implements i {
     public final List a;
     public final v b;
     public final qa c;
-    public final a3.c d;
+    public final o5.i d;
     public final boolean e;
     public final boolean f;
     public final HashMap g;
@@ -47,10 +47,10 @@ public final class b implements i {
     public t w;
     public u x;
 
-    public b(UUID uuid, v vVar, qa qaVar, a3.c cVar, List list, boolean z4, boolean z10, byte[] bArr, HashMap hashMap, cb.m mVar, Looper looper, ab.a aVar, k3.k kVar) {
+    public b(UUID uuid, v vVar, qa qaVar, o5.i iVar, List list, boolean z4, boolean z10, byte[] bArr, HashMap hashMap, cb.m mVar, Looper looper, ab.a aVar, k3.k kVar) {
         this.l = uuid;
         this.c = qaVar;
-        this.d = cVar;
+        this.d = iVar;
         this.b = vVar;
         this.e = z4;
         this.f = z10;
@@ -112,7 +112,7 @@ public final class b implements i {
             this.x = null;
             byte[] bArr = this.u;
             if (bArr != null) {
-                this.b.m1(bArr);
+                this.b.q1(bArr);
                 this.u = null;
             }
         }
@@ -122,14 +122,14 @@ public final class b implements i {
                 lVar.e();
             }
         }
-        a3.c cVar = this.d;
+        o5.i iVar = this.d;
         int i13 = this.p;
-        e eVar = (e) cVar.b;
+        e eVar = (e) iVar.b;
         if (i13 == 1 && eVar.B > 0 && eVar.v != -9223372036854775807L) {
             eVar.y.add(this);
             Handler handler = eVar.G;
             handler.getClass();
-            handler.postAtTime(new n5(this, 15), this, SystemClock.uptimeMillis() + eVar.v);
+            handler.postAtTime(new c3(this, 23), this, SystemClock.uptimeMillis() + eVar.v);
         } else if (i13 == 0) {
             eVar.w.remove(this);
             if (eVar.D == this) {
@@ -146,13 +146,13 @@ public final class b implements i {
                 if (!hashSet.isEmpty()) {
                     b bVar = (b) hashSet.iterator().next();
                     qaVar.c = bVar;
-                    u K = bVar.b.K();
-                    bVar.x = K;
+                    u J = bVar.b.J();
+                    bVar.x = J;
                     android.support.v4.media.session.f fVar2 = bVar.r;
                     int i14 = d0.a;
-                    K.getClass();
+                    J.getClass();
                     fVar2.getClass();
-                    fVar2.obtainMessage(0, new a(o4.j.a.getAndIncrement(), true, SystemClock.elapsedRealtime(), K)).sendToTarget();
+                    fVar2.obtainMessage(0, new a(o4.j.a.getAndIncrement(), true, SystemClock.elapsedRealtime(), J)).sendToTarget();
                 }
             }
             if (eVar.v != -9223372036854775807L) {
@@ -224,7 +224,7 @@ public final class b implements i {
         o();
         byte[] bArr = this.u;
         h5.a.j(bArr);
-        return this.b.w2(str, bArr);
+        return this.b.C2(str, bArr);
     }
 
     @Override // o3.i
@@ -265,9 +265,9 @@ public final class b implements i {
         }
         if (this.o != 4) {
             try {
-                this.b.h1(bArr, bArr2);
-            } catch (Exception e) {
-                k(e, 1);
+                this.b.k1(bArr, bArr2);
+            } catch (Exception e6) {
+                k(e6, 1);
                 return;
             }
         }
@@ -275,17 +275,17 @@ public final class b implements i {
             o();
             byte[] bArr3 = this.u;
             Pair pair = null;
-            Map v = bArr3 == null ? null : this.b.v(bArr3);
-            if (v != null) {
+            Map w10 = bArr3 == null ? null : this.b.w(bArr3);
+            if (w10 != null) {
                 long j11 = -9223372036854775807L;
                 try {
-                    str2 = (String) v.get("LicenseDurationRemaining");
+                    str2 = (String) w10.get("LicenseDurationRemaining");
                 } catch (NumberFormatException unused) {
                 }
                 if (str2 != null) {
                     j10 = Long.parseLong(str2);
                     Long valueOf = Long.valueOf(j10);
-                    str = (String) v.get("PlaybackDurationRemaining");
+                    str = (String) w10.get("PlaybackDurationRemaining");
                     if (str != null) {
                         j11 = Long.parseLong(str);
                     }
@@ -293,7 +293,7 @@ public final class b implements i {
                 }
                 j10 = -9223372036854775807L;
                 Long valueOf2 = Long.valueOf(j10);
-                str = (String) v.get("PlaybackDurationRemaining");
+                str = (String) w10.get("PlaybackDurationRemaining");
                 if (str != null) {
                 }
                 pair = new Pair(valueOf2, Long.valueOf(j11));
@@ -383,13 +383,13 @@ public final class b implements i {
             return;
         }
         qaVar.c = this;
-        u K = this.b.K();
-        this.x = K;
+        u J = this.b.J();
+        this.x = J;
         android.support.v4.media.session.f fVar = this.r;
         int i10 = d0.a;
-        K.getClass();
+        J.getClass();
         fVar.getClass();
-        fVar.obtainMessage(0, new a(o4.j.a.getAndIncrement(), true, SystemClock.elapsedRealtime(), K)).sendToTarget();
+        fVar.obtainMessage(0, new a(o4.j.a.getAndIncrement(), true, SystemClock.elapsedRealtime(), J)).sendToTarget();
     }
 
     public final boolean m() {
@@ -398,10 +398,10 @@ public final class b implements i {
             return true;
         }
         try {
-            byte[] M0 = this.b.M0();
-            this.u = M0;
-            this.b.V(M0, this.j);
-            this.s = this.b.D0(this.u);
+            byte[] O0 = this.b.O0();
+            this.u = O0;
+            this.b.U(O0, this.j);
+            this.s = this.b.E0(this.u);
             this.o = 3;
             h5.e eVar = this.h;
             synchronized (eVar.a) {
@@ -418,32 +418,32 @@ public final class b implements i {
             ((HashSet) qaVar.b).add(this);
             if (((b) qaVar.c) == null) {
                 qaVar.c = this;
-                u K = this.b.K();
-                this.x = K;
+                u J = this.b.J();
+                this.x = J;
                 android.support.v4.media.session.f fVar = this.r;
                 int i10 = d0.a;
-                K.getClass();
+                J.getClass();
                 fVar.getClass();
-                fVar.obtainMessage(0, new a(o4.j.a.getAndIncrement(), true, SystemClock.elapsedRealtime(), K)).sendToTarget();
+                fVar.obtainMessage(0, new a(o4.j.a.getAndIncrement(), true, SystemClock.elapsedRealtime(), J)).sendToTarget();
             }
             return false;
-        } catch (Exception e) {
-            k(e, 1);
+        } catch (Exception e6) {
+            k(e6, 1);
             return false;
         }
     }
 
     public final void n(int i10, boolean z4, byte[] bArr) {
         try {
-            t U1 = this.b.U1(bArr, this.a, i10, this.g);
-            this.w = U1;
+            t Z1 = this.b.Z1(bArr, this.a, i10, this.g);
+            this.w = Z1;
             android.support.v4.media.session.f fVar = this.r;
             int i11 = d0.a;
-            U1.getClass();
+            Z1.getClass();
             fVar.getClass();
-            fVar.obtainMessage(1, new a(o4.j.a.getAndIncrement(), z4, SystemClock.elapsedRealtime(), U1)).sendToTarget();
-        } catch (Exception e) {
-            l(e, true);
+            fVar.obtainMessage(1, new a(o4.j.a.getAndIncrement(), z4, SystemClock.elapsedRealtime(), Z1)).sendToTarget();
+        } catch (Exception e6) {
+            l(e6, true);
         }
     }
 

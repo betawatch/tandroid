@@ -1,53 +1,42 @@
 package org.telegram.ui;
 
-import android.content.res.Configuration;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class vu extends View {
-    public Path a;
-    public Paint b;
-    public boolean c;
+public final class vu extends org.telegram.ui.Components.e81 {
+    public final /* synthetic */ yu a;
 
-    @Override // android.view.View
-    public final void onConfigurationChanged(Configuration configuration) {
-        super.onConfigurationChanged(configuration);
-        requestLayout();
+    public vu(yu yuVar) {
+        this.a = yuVar;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        canvas.drawPath(this.a, this.b);
+    @Override // org.telegram.ui.Components.e81
+    public final void b(View view, int i10, int i11) {
+        uu uuVar = (uu) view;
+        uuVar.V2 = i10;
+        uuVar.c3.clear();
+        uuVar.j3 = uuVar.w1(6) + uuVar.y1(6) <= 0;
+        uuVar.z1();
+        uuVar.A1(false);
+        uuVar.u0(0);
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(13.0f), TLObject.FLAG_30));
-        setTop(this.c);
+    @Override // org.telegram.ui.Components.e81
+    public final View d(int i10) {
+        yu yuVar = this.a;
+        return new uu(yuVar, yuVar.getParentActivity());
     }
 
-    public void setTop(boolean z4) {
-        Path path = this.a;
-        path.rewind();
-        this.c = z4;
-        if (!z4) {
-            float dp = AndroidUtilities.dp(8.0f);
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(0.0f, ((-getMeasuredHeight()) * 2) - AndroidUtilities.dp(4.0f), getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.dp(4.0f));
-            path.addRoundRect(rectF, dp, dp, Path.Direction.CW);
-            return;
-        }
-        float dp2 = AndroidUtilities.dp(14.0f);
-        RectF rectF2 = AndroidUtilities.rectTmp;
-        rectF2.set(0.0f, AndroidUtilities.dp(4.0f), getMeasuredWidth(), (getMeasuredHeight() * 2) + AndroidUtilities.dp(4.0f));
-        path.addRoundRect(rectF2, dp2, dp2, Path.Direction.CW);
+    @Override // org.telegram.ui.Components.e81
+    public final int e() {
+        return 4;
+    }
+
+    @Override // org.telegram.ui.Components.e81
+    public final CharSequence g(int i10) {
+        return i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? "" : LocaleController.getString(R.string.NetworkUsageRoamingTab) : LocaleController.getString(R.string.NetworkUsageWiFiTab) : LocaleController.getString(R.string.NetworkUsageMobileTab) : LocaleController.getString(R.string.NetworkUsageAllTab);
     }
 }

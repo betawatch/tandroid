@@ -1,109 +1,82 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v21 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ xn b;
-    public final /* synthetic */ Activity c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 d;
-    public final /* synthetic */ MessageObject e;
+public final class v21 extends FrameLayout {
+    public final org.telegram.ui.Components.j5 a;
+    public final /* synthetic */ w21 b;
 
-    public /* synthetic */ v21(xn xnVar, Activity activity, org.telegram.ui.ActionBar.f6 f6Var, MessageObject messageObject, int i10) {
-        this.a = i10;
-        this.b = xnVar;
-        this.c = activity;
-        this.d = f6Var;
-        this.e = messageObject;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v21(w21 w21Var, Context context) {
+        super(context);
+        this.b = w21Var;
+        TextView g10 = org.telegram.messenger.y3.g(context, 1, 16.0f);
+        g10.setTextColor(w21Var.getThemedColor(org.telegram.ui.ActionBar.k6.G6));
+        g10.setText(LocaleController.getString(R.string.DoubleTapSetting));
+        addView(g10, k7.c6.d(-1, -2.0f, 23, 20.0f, 0.0f, 48.0f, 0.0f));
+        this.a = new org.telegram.ui.Components.j5(AndroidUtilities.dp(24.0f), this);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                xn xnVar = this.b;
-                org.telegram.ui.Components.qc a02 = org.telegram.ui.Components.qc.a0(xnVar);
-                String string = LocaleController.getString(R.string.AdReported);
-                final int i10 = 1;
-                final Activity activity = this.c;
-                a02.c(AndroidUtilities.replaceSingleTag(string, -1, 2, new Runnable() { // from class: org.telegram.ui.w21
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                af.g.s(activity, "https://promote.telegram.org/guidelines");
-                                break;
-                            case 1:
-                                af.g.s(activity, "https://promote.telegram.org/guidelines");
-                                break;
-                            default:
-                                af.g.s(activity, "https://promote.telegram.org/guidelines");
-                                break;
-                        }
-                    }
-                }, this.d)).j();
-                MessageObject messageObject = this.e;
-                xnVar.Fa(messageObject);
-                xnVar.Ha(messageObject);
-                break;
-            case 1:
-                xn xnVar2 = this.b;
-                org.telegram.ui.Components.qc a03 = org.telegram.ui.Components.qc.a0(xnVar2);
-                String string2 = LocaleController.getString(R.string.AdReported);
-                final int i11 = 0;
-                final Activity activity2 = this.c;
-                a03.c(AndroidUtilities.replaceSingleTag(string2, -1, 2, new Runnable() { // from class: org.telegram.ui.w21
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                af.g.s(activity2, "https://promote.telegram.org/guidelines");
-                                break;
-                            case 1:
-                                af.g.s(activity2, "https://promote.telegram.org/guidelines");
-                                break;
-                            default:
-                                af.g.s(activity2, "https://promote.telegram.org/guidelines");
-                                break;
-                        }
-                    }
-                }, this.d)).j();
-                MessageObject messageObject2 = this.e;
-                xnVar2.Fa(messageObject2);
-                xnVar2.Ha(messageObject2);
-                break;
-            default:
-                xn xnVar3 = this.b;
-                org.telegram.ui.Components.qc a04 = org.telegram.ui.Components.qc.a0(xnVar3);
-                String string3 = LocaleController.getString(R.string.AdReported);
-                final int i12 = 2;
-                final Activity activity3 = this.c;
-                a04.c(AndroidUtilities.replaceSingleTag(string3, -1, 2, new Runnable() { // from class: org.telegram.ui.w21
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i12) {
-                            case 0:
-                                af.g.s(activity3, "https://promote.telegram.org/guidelines");
-                                break;
-                            case 1:
-                                af.g.s(activity3, "https://promote.telegram.org/guidelines");
-                                break;
-                            default:
-                                af.g.s(activity3, "https://promote.telegram.org/guidelines");
-                                break;
-                        }
-                    }
-                }, this.d)).j();
-                MessageObject messageObject3 = this.e;
-                xnVar3.Fa(messageObject3);
-                xnVar3.Ha(messageObject3);
-                break;
+    public final void a(boolean z4) {
+        int i10;
+        int i11;
+        w21 w21Var = this.b;
+        i10 = ((org.telegram.ui.ActionBar.p2) w21Var).currentAccount;
+        String doubleTapReaction = MediaDataController.getInstance(i10).getDoubleTapReaction();
+        org.telegram.ui.Components.j5 j5Var = this.a;
+        if (doubleTapReaction != null && doubleTapReaction.startsWith("animated_")) {
+            try {
+                j5Var.j(Long.parseLong(doubleTapReaction.substring(9)), z4);
+                return;
+            } catch (Exception unused) {
+            }
         }
+        i11 = ((org.telegram.ui.ActionBar.p2) w21Var).currentAccount;
+        TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(i11).getReactionsMap().get(doubleTapReaction);
+        if (tL_availableReaction != null) {
+            j5Var.i(tL_availableReaction.static_icon, z4);
+        }
+    }
+
+    public final void b() {
+        int width = getWidth();
+        org.telegram.ui.Components.j5 j5Var = this.a;
+        j5Var.setBounds((width - j5Var.s) - AndroidUtilities.dp(21.0f), (getHeight() - j5Var.s) / 2, getWidth() - AndroidUtilities.dp(21.0f), (getHeight() + j5Var.s) / 2);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        b();
+        this.a.draw(canvas);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.a();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.b();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
     }
 }

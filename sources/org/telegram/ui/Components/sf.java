@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class sf implements Runnable {
     public final /* synthetic */ MessageObject a;
@@ -47,12 +47,12 @@ public final class sf implements Runnable {
         String url = keyboardButtonProto.getUrl();
         boolean c3 = mf.c.c(keyboardButtonProto, TL_keyboard.TL_buttonTypeSimpleWebView.class);
         MessageObject messageObject = this.d;
-        rh.z3 b10 = rh.z3.b(i10, j10, this.b, text, url, c3 ? 1 : 0, messageObject != null ? messageObject.messageOwner.id : 0, xnVar == null ? 0L : xnVar.N8(), null, false, null, null, 0, false, false);
+        sh.y3 b10 = sh.y3.b(i10, j10, this.b, text, url, c3 ? 1 : 0, messageObject != null ? messageObject.messageOwner.id : 0, xnVar == null ? 0L : xnVar.N8(), null, false, null, null, 0, false, false);
         LaunchActivity launchActivity = LaunchActivity.D1;
         if (launchActivity != null && launchActivity.P() != null && LaunchActivity.D1.P().m(b10) != null) {
-            rh.a0 a0Var = chatActivityEnterView.i0;
-            if (a0Var != null) {
-                a0Var.setOpened(false);
+            sh.z zVar = chatActivityEnterView.i0;
+            if (zVar != null) {
+                zVar.setOpened(false);
                 return;
             }
             return;
@@ -63,10 +63,10 @@ public final class sf implements Runnable {
             MessagesController.getInstance(chatActivityEnterView.N);
             MessagesController.showCantOpenAlert(xnVar, restrictionReason);
         } else {
-            rh.q2 q2Var = new rh.q2(chatActivityEnterView.getContext(), chatActivityEnterView.S3);
-            q2Var.h0 = chatActivityEnterView.K2;
-            q2Var.s(xnVar, b10);
-            q2Var.show();
+            sh.p2 p2Var = new sh.p2(chatActivityEnterView.getContext(), chatActivityEnterView.S3);
+            p2Var.h0 = chatActivityEnterView.K2;
+            p2Var.s(xnVar, b10);
+            p2Var.show();
         }
     }
 }

@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.WindowInsets;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a0 implements View.OnApplyWindowInsetsListener {
     public m1 a = null;
@@ -25,16 +25,16 @@ public final class a0 implements View.OnApplyWindowInsetsListener {
         if (i10 < 30) {
             b0.a(windowInsets, this.b);
             if (h.equals(this.a)) {
-                return oVar.N0(view, h).g();
+                return oVar.M0(view, h).g();
             }
         }
         this.a = h;
-        m1 N0 = oVar.N0(view, h);
+        m1 M0 = oVar.M0(view, h);
         if (i10 >= 30) {
-            return N0.g();
+            return M0.g();
         }
         WeakHashMap weakHashMap = j0.a;
         z.c(view);
-        return N0.g();
+        return M0.g();
     }
 }

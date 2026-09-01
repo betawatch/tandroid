@@ -2,13 +2,13 @@ package lf;
 
 import android.content.Context;
 import android.view.KeyEvent;
-import dg.f3;
+import eg.d3;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Pattern;
-import kh.m2;
-import nh.d8;
+import lh.l2;
+import oh.d8;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.MessagesController;
@@ -16,18 +16,18 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d2;
-import org.telegram.ui.ActionBar.e5;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.g3;
-import org.telegram.ui.Components.vg0;
+import org.telegram.ui.ActionBar.f5;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h3;
+import org.telegram.ui.Components.xg0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.g00;
-import org.telegram.ui.ns;
-import org.telegram.ui.o60;
-import org.telegram.ui.rq;
+import org.telegram.ui.os;
+import org.telegram.ui.p60;
+import org.telegram.ui.sq;
+import org.telegram.ui.v10;
 import org.telegram.ui.zi;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -55,13 +55,13 @@ public final /* synthetic */ class i0 implements RequestDelegate {
         Object obj4 = this.c;
         switch (i10) {
             case 0:
-                AndroidUtilities.runOnUIThread(new j0(tLObject, this.b, (TLRPC.PhotoSize) obj4, (TLRPC.PhotoSize) obj2, (zi) obj, (e5) obj3, 0));
+                AndroidUtilities.runOnUIThread(new j0(tLObject, this.b, (TLRPC.PhotoSize) obj4, (TLRPC.PhotoSize) obj2, (zi) obj, (f5) obj3, 0));
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new f3((ph.d) obj4, (g3[]) obj2, this.b, (TLObject) obj, (String) obj3, 2));
+                AndroidUtilities.runOnUIThread(new d3((qh.d) obj4, (h3[]) obj2, this.b, (TLObject) obj, (String) obj3, 2));
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new j0((ph.d) obj4, tLObject, (g3[]) obj2, (f6) obj, this.b, (TLRPC.TL_messages_checkChatInvite) obj3));
+                AndroidUtilities.runOnUIThread(new j0((qh.d) obj4, tLObject, (h3[]) obj2, (g6) obj, this.b, (TLRPC.TL_messages_checkChatInvite) obj3));
                 break;
             case 3:
                 AndroidUtilities.runOnUIThread(new j0((d8) obj4, tLObject, this.d, (ArrayList) obj, (boolean[]) obj3, this.b));
@@ -70,33 +70,33 @@ public final /* synthetic */ class i0 implements RequestDelegate {
                 ((ChatObject.Call) obj4).lambda$loadUnknownParticipants$6(this.b, (ChatObject.Call.OnParticipantsLoad) obj2, (ArrayList) obj, (HashSet) obj3, tLObject, tL_error);
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new j0(tLObject, this.b, (d2) obj4, (Context) obj2, (f6) obj, (o60) obj3, 7));
+                AndroidUtilities.runOnUIThread(new j0(tLObject, this.b, (d2) obj4, (Context) obj2, (g6) obj, (p60) obj3, 7));
                 break;
             case 6:
-                AndroidUtilities.runOnUIThread(new m2(tL_error, tLObject, (ArrayList) obj4, this.b, (AtomicInteger) obj2, (ArrayList) obj, (rq) obj3, 6));
+                AndroidUtilities.runOnUIThread(new l2(tL_error, tLObject, (ArrayList) obj4, this.b, (AtomicInteger) obj2, (ArrayList) obj, (sq) obj3, 6));
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new j0((vg0) obj4, (Integer[]) obj2, this.b, tLObject, (ArrayList) obj, (TLRPC.PollAnswerVoters) obj3));
+                AndroidUtilities.runOnUIThread(new j0((xg0) obj4, (Integer[]) obj2, this.b, tLObject, (ArrayList) obj, (TLRPC.PollAnswerVoters) obj3));
                 break;
             case 8:
-                AndroidUtilities.runOnUIThread(new m2((d2) obj4, tLObject, this.b, (TLRPC.Document) obj2, tL_error, this.e, (TLRPC.TL_stickers_addStickerToSet) obj3));
+                AndroidUtilities.runOnUIThread(new l2((d2) obj4, tLObject, this.b, (TLRPC.Document) obj2, tL_error, this.e, (TLRPC.TL_stickers_addStickerToSet) obj3));
                 break;
             case 9:
-                AndroidUtilities.runOnUIThread(new j0((ns) obj4, (TLRPC.FileLocation) obj2, (TLRPC.InputFile) obj, tLObject, (TLRPC.FileLocation) obj3, this.b));
+                AndroidUtilities.runOnUIThread(new j0((os) obj4, (TLRPC.FileLocation) obj2, (TLRPC.InputFile) obj, tLObject, (TLRPC.FileLocation) obj3, this.b));
                 break;
             case 10:
-                AndroidUtilities.runOnUIThread(new m2((d2) obj4, (af.f) obj2, tLObject, this.b, (Context) obj, (TLRPC.TL_inputGroupCallSlug) obj3, tL_error, 8));
+                AndroidUtilities.runOnUIThread(new l2((d2) obj4, (af.f) obj2, tLObject, this.b, (Context) obj, (TLRPC.TL_inputGroupCallSlug) obj3, tL_error, 8));
                 break;
             case 11:
                 Pattern pattern = LaunchActivity.y1;
-                AndroidUtilities.runOnUIThread(new m2((LaunchActivity) obj4, tL_error, tLObject, (TLRPC.TL_inputInvoiceSlug) obj2, (g00) obj, this.b, (String) obj3, 10));
+                AndroidUtilities.runOnUIThread(new l2((LaunchActivity) obj4, tL_error, tLObject, (TLRPC.TL_inputInvoiceSlug) obj2, (v10) obj, this.b, (String) obj3, 10));
                 break;
             case 12:
                 Pattern pattern2 = LaunchActivity.y1;
-                AndroidUtilities.runOnUIThread(new m2((LaunchActivity) obj4, tL_error, tLObject, this.b, (d2) obj2, (g00) obj, (String) obj3));
+                AndroidUtilities.runOnUIThread(new l2((LaunchActivity) obj4, tL_error, tLObject, this.b, (d2) obj2, (v10) obj, (String) obj3));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new m2((tf.p0) obj4, this.b, (ArrayList) obj2, (a0.h) obj, tL_error, tLObject, (MessagesController) obj3, 14));
+                AndroidUtilities.runOnUIThread(new l2((uf.p0) obj4, this.b, (ArrayList) obj2, (a0.h) obj, tL_error, tLObject, (MessagesController) obj3, 14));
                 break;
         }
     }

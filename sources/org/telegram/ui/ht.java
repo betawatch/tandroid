@@ -1,38 +1,62 @@
 package org.telegram.ui;
 
 import android.view.View;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class ht extends org.telegram.ui.ActionBar.p1 {
-    public final /* synthetic */ lt o;
+public final class ht implements View.OnClickListener {
+    public final /* synthetic */ ArrayList a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ mt c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ht(lt ltVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
-        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-        this.o = ltVar;
+    public ht(mt mtVar, ArrayList arrayList, boolean z4) {
+        this.c = mtVar;
+        this.a = arrayList;
+        this.b = z4;
     }
 
-    @Override // org.telegram.ui.ActionBar.p1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        pt ptVar = this.o.a;
-        ptVar.k = null;
-        ptVar.K = false;
-        if (ptVar.R) {
-            ptVar.n();
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        qt qtVar = this.c.a;
+        if (qtVar.w == null) {
+            return;
         }
-        View view = ptVar.h;
-        if (view != null) {
-            if (view instanceof org.telegram.ui.Cells.d8) {
-                ((org.telegram.ui.Cells.d8) view).setScaled(false);
-            } else if (view instanceof org.telegram.ui.Cells.b8) {
-                ((org.telegram.ui.Cells.b8) view).setScaled(false);
-            } else if (view instanceof org.telegram.ui.Cells.e2) {
-                ((org.telegram.ui.Cells.e2) view).setScaled(false);
+        int intValue = ((Integer) view.getTag()).intValue();
+        ArrayList arrayList = this.a;
+        if (((Integer) arrayList.get(intValue)).intValue() == 0 || ((Integer) arrayList.get(intValue)).intValue() == 6) {
+            ot otVar = qtVar.l;
+            if (otVar != null) {
+                otVar.l(qtVar.W, qtVar.Y, qtVar.b0, ((Integer) arrayList.get(intValue)).intValue() == 0, 0, 0);
             }
-            ptVar.h = null;
+        } else if (((Integer) arrayList.get(intValue)).intValue() == 1) {
+            ot otVar2 = qtVar.l;
+            if (otVar2 != null) {
+                otVar2.M(qtVar.a0, qtVar.i);
+            }
+        } else if (((Integer) arrayList.get(intValue)).intValue() == 2) {
+            MediaDataController.getInstance(qtVar.r).addRecentSticker(2, qtVar.b0, qtVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
+        } else if (((Integer) arrayList.get(intValue)).intValue() == 3) {
+            TLRPC.Document document = qtVar.W;
+            Object obj = qtVar.b0;
+            String str = qtVar.Y;
+            ot otVar3 = qtVar.l;
+            if (otVar3 == null) {
+                return;
+            } else {
+                org.telegram.ui.Components.z4.L(qtVar.w, otVar3.a(), new a1.d(otVar3, document, str, obj, 11));
+            }
+        } else if (((Integer) arrayList.get(intValue)).intValue() == 4) {
+            MediaDataController.getInstance(qtVar.r).addRecentSticker(0, qtVar.b0, qtVar.W, (int) (System.currentTimeMillis() / 1000), true);
+        } else if (((Integer) arrayList.get(intValue)).intValue() == 5) {
+            qtVar.l.i(qtVar.X);
+        } else if (((Integer) arrayList.get(intValue)).intValue() == 7) {
+            qtVar.l.n(qtVar.W);
+        } else if (((Integer) arrayList.get(intValue)).intValue() == 8) {
+            qtVar.l.E(qtVar.W);
         }
+        qtVar.p();
     }
 }

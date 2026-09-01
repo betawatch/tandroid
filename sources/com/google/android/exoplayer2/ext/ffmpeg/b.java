@@ -12,9 +12,8 @@ import j3.g2;
 import j3.m0;
 import j3.n0;
 import j3.v1;
-import kh.a2;
+import l.d;
 import l3.c0;
-import l3.d;
 import l3.h0;
 import l3.k0;
 import l3.o;
@@ -33,8 +32,9 @@ import n3.l;
 import n3.m;
 import o4.l0;
 import org.telegram.tgnet.TLObject;
+import y5.h;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class b extends e implements n {
     public final f7.b B;
@@ -66,7 +66,7 @@ public final class b extends e implements n {
         super(1);
         this.B = new f7.b(handler, qVar);
         this.C = vVar;
-        ((k0) vVar).r = new o5.i(this, 24);
+        ((k0) vVar).r = new h(this, 23);
         this.D = new i(0, 0);
         this.O = 0;
         this.Q = true;
@@ -104,14 +104,14 @@ public final class b extends e implements n {
                 this.Q = true;
                 return false;
             }
-            this.L.j();
+            this.L.i();
             this.L = null;
             try {
                 this.V = true;
                 ((k0) this.C).t();
                 return false;
-            } catch (u e) {
-                throw a(e, e.c, e.b, 5002);
+            } catch (u e6) {
+                throw a(e6, e6.c, e6.b, 5002);
             }
         }
         if (this.Q) {
@@ -132,7 +132,7 @@ public final class b extends e implements n {
         m mVar2 = this.L;
         if (((k0) vVar).l(mVar2.f, mVar2.c, 1)) {
             this.E.e++;
-            this.L.j();
+            this.L.i();
             this.L = null;
             return true;
         }
@@ -179,7 +179,7 @@ public final class b extends e implements n {
                     this.I = true;
                     this.K.a(TLObject.FLAG_27);
                 }
-                this.K.l();
+                this.K.k();
                 this.K.getClass();
                 i iVar3 = this.K;
                 if (this.S && !iVar3.e(TLObject.FLAG_31)) {
@@ -207,7 +207,7 @@ public final class b extends e implements n {
             return;
         }
         o3.i iVar = this.N;
-        a2.D(this.M, iVar);
+        d.D(this.M, iVar);
         this.M = iVar;
         if (iVar != null && iVar.h() == null && this.M.g() == null) {
             return;
@@ -225,15 +225,15 @@ public final class b extends e implements n {
                 handler.post(new x(bVar, k10, elapsedRealtime2, j10, 1));
             }
             this.E.a++;
-        } catch (OutOfMemoryError e) {
-            throw a(e, this.F, false, 4001);
-        } catch (g e6) {
-            h5.a.p("DecoderAudioRenderer", "Audio codec error", e6);
+        } catch (OutOfMemoryError e6) {
+            throw a(e6, this.F, false, 4001);
+        } catch (g e10) {
+            h5.a.p("DecoderAudioRenderer", "Audio codec error", e10);
             Handler handler2 = (Handler) bVar.b;
             if (handler2 != null) {
-                handler2.post(new o(bVar, e6, 0));
+                handler2.post(new o(bVar, e10, 0));
             }
-            throw a(e6, this.F, false, 4001);
+            throw a(e10, this.F, false, 4001);
         }
     }
 
@@ -241,7 +241,7 @@ public final class b extends e implements n {
         n0 n0Var = (n0) bVar.c;
         n0Var.getClass();
         o3.i iVar = (o3.i) bVar.b;
-        a2.D(this.N, iVar);
+        d.D(this.N, iVar);
         this.N = iVar;
         n0 n0Var2 = this.F;
         this.F = n0Var;
@@ -254,7 +254,7 @@ public final class b extends e implements n {
             n0 n0Var3 = this.F;
             Handler handler = (Handler) bVar2.b;
             if (handler != null) {
-                handler.post(new androidx.car.app.utils.b(bVar2, n0Var3, null, 18));
+                handler.post(new androidx.car.app.utils.b(bVar2, n0Var3, null, 14));
                 return;
             }
             return;
@@ -272,7 +272,7 @@ public final class b extends e implements n {
         n0 n0Var4 = this.F;
         Handler handler2 = (Handler) bVar2.b;
         if (handler2 != null) {
-            handler2.post(new androidx.car.app.utils.b(bVar2, n0Var4, kVar, 18));
+            handler2.post(new androidx.car.app.utils.b(bVar2, n0Var4, kVar, 14));
         }
     }
 
@@ -289,11 +289,11 @@ public final class b extends e implements n {
             f7.b bVar = this.B;
             Handler handler = (Handler) bVar.b;
             if (handler != null) {
-                handler.post(new c(25, bVar, k10));
+                handler.post(new c(20, bVar, k10));
             }
             this.J = null;
         }
-        a2.D(this.M, null);
+        d.D(this.M, null);
         this.M = null;
     }
 
@@ -338,7 +338,7 @@ public final class b extends e implements n {
             return;
         }
         if (i10 == 3) {
-            d dVar = (d) obj;
+            l3.d dVar = (l3.d) obj;
             k0 k0Var2 = (k0) vVar;
             if (k0Var2.y.equals(dVar)) {
                 return;
@@ -422,7 +422,7 @@ public final class b extends e implements n {
 
     @Override // j3.e
     public final boolean j() {
-        boolean d;
+        boolean h;
         if (((k0) this.C).m()) {
             return true;
         }
@@ -430,13 +430,13 @@ public final class b extends e implements n {
             return false;
         }
         if (h()) {
-            d = this.w;
+            h = this.w;
         } else {
             l0 l0Var = this.n;
             l0Var.getClass();
-            d = l0Var.d();
+            h = l0Var.h();
         }
-        return d || this.L != null;
+        return h || this.L != null;
     }
 
     @Override // j3.e
@@ -446,7 +446,7 @@ public final class b extends e implements n {
         this.Q = true;
         F(-9223372036854775807L);
         try {
-            a2.D(this.N, null);
+            d.D(this.N, null);
             this.N = null;
             E();
             ((k0) this.C).v();
@@ -499,7 +499,7 @@ public final class b extends e implements n {
             this.K = null;
             m mVar = this.L;
             if (mVar != null) {
-                mVar.j();
+                mVar.i();
                 this.L = null;
             }
             ((l) this.J).flush();
@@ -541,14 +541,14 @@ public final class b extends e implements n {
             try {
                 ((k0) this.C).t();
                 return;
-            } catch (u e) {
-                throw a(e, e.c, e.b, 5002);
+            } catch (u e6) {
+                throw a(e6, e6.c, e6.b, 5002);
             }
         }
         if (this.F == null) {
             f7.b bVar = this.c;
             bVar.l();
-            this.D.c();
+            this.D.b();
             int s6 = s(bVar, this.D, 2);
             if (s6 != -5) {
                 if (s6 == -4) {
@@ -558,8 +558,8 @@ public final class b extends e implements n {
                         this.V = true;
                         ((k0) this.C).t();
                         return;
-                    } catch (u e6) {
-                        throw a(e6, null, false, 5002);
+                    } catch (u e10) {
+                        throw a(e10, null, false, 5002);
                     }
                 }
                 return;
@@ -577,20 +577,20 @@ public final class b extends e implements n {
                 h5.a.q();
                 synchronized (this.E) {
                 }
-            } catch (r e10) {
-                throw a(e10, e10.a, false, 5001);
-            } catch (s e11) {
-                throw a(e11, e11.c, e11.b, 5001);
-            } catch (u e12) {
-                throw a(e12, e12.c, e12.b, 5002);
-            } catch (g e13) {
-                h5.a.p("DecoderAudioRenderer", "Audio codec error", e13);
+            } catch (r e11) {
+                throw a(e11, e11.a, false, 5001);
+            } catch (s e12) {
+                throw a(e12, e12.c, e12.b, 5001);
+            } catch (u e13) {
+                throw a(e13, e13.c, e13.b, 5002);
+            } catch (g e14) {
+                h5.a.p("DecoderAudioRenderer", "Audio codec error", e14);
                 f7.b bVar2 = this.B;
                 Handler handler = (Handler) bVar2.b;
                 if (handler != null) {
-                    handler.post(new o(bVar2, e13, 0));
+                    handler.post(new o(bVar2, e14, 0));
                 }
-                throw a(e13, this.F, false, 4003);
+                throw a(e14, this.F, false, 4003);
             }
         }
     }

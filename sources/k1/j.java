@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import ld.i2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class j extends kotlin.jvm.internal.k implements dd.l {
     public final /* synthetic */ int b;
@@ -32,16 +32,16 @@ public final class j extends kotlin.jvm.internal.k implements dd.l {
             case 0:
                 Throwable th2 = (Throwable) obj;
                 ((o) this.c).invoke(th2);
-                nd.b bVar = (nd.b) ((com.google.firebase.messaging.r) this.d).d;
+                nd.b bVar = (nd.b) ((com.google.firebase.messaging.s) this.d).c;
                 bVar.getClass();
                 AtomicLongFieldUpdater atomicLongFieldUpdater = nd.b.b;
                 AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = nd.b.i;
-                i5.c cVar = nd.d.r;
+                com.google.android.gms.internal.clearcut.e eVar2 = nd.d.r;
                 while (true) {
                     z4 = true;
-                    if (atomicReferenceFieldUpdater.compareAndSet(bVar, cVar, th2)) {
+                    if (atomicReferenceFieldUpdater.compareAndSet(bVar, eVar2, th2)) {
                         z10 = true;
-                    } else if (atomicReferenceFieldUpdater.get(bVar) != cVar) {
+                    } else if (atomicReferenceFieldUpdater.get(bVar) != eVar2) {
                         z10 = false;
                     }
                 }
@@ -68,8 +68,8 @@ public final class j extends kotlin.jvm.internal.k implements dd.l {
                     AtomicReferenceFieldUpdater atomicReferenceFieldUpdater2 = nd.b.j;
                     while (true) {
                         Object obj2 = atomicReferenceFieldUpdater2.get(bVar);
-                        i5.c cVar2 = obj2 == null ? nd.d.p : nd.d.q;
-                        while (!atomicReferenceFieldUpdater2.compareAndSet(bVar, obj2, cVar2)) {
+                        com.google.android.gms.internal.clearcut.e eVar3 = obj2 == null ? nd.d.p : nd.d.q;
+                        while (!atomicReferenceFieldUpdater2.compareAndSet(bVar, obj2, eVar3)) {
                             if (atomicReferenceFieldUpdater2.get(bVar) != obj2) {
                                 break;
                             }
@@ -102,12 +102,12 @@ public final class j extends kotlin.jvm.internal.k implements dd.l {
                                     long j16 = andIncrement / j15;
                                     int i12 = (int) (andIncrement % j15);
                                     if (hVar.c != j16) {
-                                        nd.h e = bVar.e(j16, hVar);
-                                        if (e == null) {
+                                        nd.h e6 = bVar.e(j16, hVar);
+                                        if (e6 == null) {
                                             continue;
                                             z4 = true;
                                         } else {
-                                            hVar = e;
+                                            hVar = e6;
                                         }
                                     }
                                     Object o10 = bVar.o(hVar, i12, andIncrement, obj3);

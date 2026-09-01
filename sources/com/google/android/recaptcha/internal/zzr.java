@@ -1,12 +1,11 @@
 package com.google.android.recaptcha.internal;
 
 import android.app.Application;
-import androidx.biometric.f0;
 import com.google.android.gms.common.api.internal.v;
 import com.google.android.gms.common.api.internal.w;
 import com.google.android.gms.tasks.Task;
 import dd.p;
-import k7.p7;
+import k7.q7;
 import kotlin.jvm.internal.j;
 import ld.h0;
 import o7.e;
@@ -16,7 +15,7 @@ import vc.a;
 import wc.i;
 import z7.b;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 final class zzr extends i implements p {
     int zza;
@@ -40,8 +39,8 @@ final class zzr extends i implements p {
         return ((zzr) create((zzhk) obj, (c) obj2)).invokeSuspend(sc.i.a);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x00b3  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x008e  */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x00b1  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x008c  */
     @Override // wc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -55,7 +54,7 @@ final class zzr extends i implements p {
         try {
             try {
                 if (i10 == 0) {
-                    p7.b(obj);
+                    q7.b(obj);
                     h0Var = this.zzb.zzc;
                     if (h0Var == null) {
                         h0Var = null;
@@ -67,7 +66,7 @@ final class zzr extends i implements p {
                     }
                 } else {
                     if (i10 != 1) {
-                        p7.b(obj);
+                        q7.b(obj);
                         str2 = ((b) obj).a;
                         if (str2 != null) {
                             throw new IllegalStateException("Required value was null.");
@@ -80,7 +79,7 @@ final class zzr extends i implements p {
                         zzf.zzf((zzxj) zzf2.zzk());
                         return new f((zzxx) zzf.zzk());
                     }
-                    p7.b(obj);
+                    q7.b(obj);
                 }
                 z7.a aVar2 = new z7.a();
                 zzu zzuVar = this.zzb;
@@ -90,13 +89,13 @@ final class zzr extends i implements p {
                 Application context = zzu.zzl(zzuVar);
                 j.e(context, "context");
                 e eVar = new e(context, e.k, com.google.android.gms.common.api.b.i, com.google.android.gms.common.api.i.c);
-                v e = w.e();
-                e.d = new y5.c[]{z7.f.a};
-                e.c = new f0(aVar2, 25);
-                e.a = 34002;
-                Task e6 = eVar.e(0, e.e());
-                j.d(e6, "doRead(...)");
-                h0 zza = zzdf.zza(e6);
+                v e6 = w.e();
+                e6.d = new y5.c[]{z7.f.a};
+                e6.c = new ja.c(aVar2);
+                e6.a = 34002;
+                Task e10 = eVar.e(0, e6.e());
+                j.d(e10, "doRead(...)");
+                h0 zza = zzdf.zza(e10);
                 this.zza = 2;
                 obj = zza.await(this);
                 if (obj == aVar) {
@@ -106,10 +105,10 @@ final class zzr extends i implements p {
                 if (str2 != null) {
                 }
             } catch (Exception unused) {
-                return new f(p7.a(new zzcg(zzce.zzb, zzcd.zzau, null, null, 12, null)));
+                return new f(q7.a(new zzcg(zzce.zzb, zzcd.zzau, null, null, 12, null)));
             }
         } catch (Exception unused2) {
-            return new f(p7.a(new zzcg(zzce.zzb, zzcd.zzat, null, null, 12, null)));
+            return new f(q7.a(new zzcg(zzce.zzb, zzcd.zzat, null, null, 12, null)));
         }
     }
 }

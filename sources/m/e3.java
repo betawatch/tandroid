@@ -1,18 +1,22 @@
 package m;
 
-import android.content.Context;
-import android.content.ContextWrapper;
+import android.graphics.Path;
+import android.graphics.Rect;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public abstract class e3 extends ContextWrapper {
-    public static final Object a = null;
+public final class e3 {
+    public boolean a;
+    public boolean b;
+    public Object c = new Path();
+    public Object d = new Rect();
 
-    public static void a(Context context) {
-        if (context.getResources() instanceof g3) {
-            return;
-        }
-        context.getResources();
-        int i10 = t3.a;
+    public boolean a(Rect rect, boolean z4, boolean z10) {
+        Rect rect2 = (Rect) this.d;
+        boolean z11 = (!rect2.isEmpty() && rect2.top == rect.top && rect2.bottom == rect.bottom && rect2.right == rect.right && rect2.left == rect.left && this.a == z10 && this.b == z4 && z10 && z4) ? false : true;
+        this.a = z10;
+        this.b = z4;
+        rect2.set(rect);
+        return z11;
     }
 }

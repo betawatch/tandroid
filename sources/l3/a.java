@@ -4,11 +4,10 @@ import j3.r1;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.ArrayList;
-import kh.a2;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.OneUIUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final int[] a = {96000, 88200, 64000, 48000, 44100, 32000, 24000, 22050, androidx.car.app.media.b.AUDIO_CONTENT_SAMPLING_RATE, 12000, 11025, 8000, 7350};
@@ -198,7 +197,7 @@ public abstract class a {
         }
         int f10 = f(vVar);
         int i11 = vVar.i(4);
-        String j10 = a2.j(i10, "mp4a.40.");
+        String j10 = l.d.j(i10, "mp4a.40.");
         if (i10 == 5 || i10 == 29) {
             f10 = f(vVar);
             int i12 = vVar.i(5);

@@ -7,9 +7,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vf implements org.telegram.ui.Components.xj0 {
+public final /* synthetic */ class vf implements org.telegram.ui.Components.zj0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ xn b;
     public final /* synthetic */ boolean c;
@@ -22,7 +22,7 @@ public final /* synthetic */ class vf implements org.telegram.ui.Components.xj0 
         this.d = messageObject;
     }
 
-    @Override // org.telegram.ui.Components.xj0
+    @Override // org.telegram.ui.Components.zj0
     public final void a(long j10, TLRPC.MessagePeerReaction messagePeerReaction) {
         switch (this.a) {
             case 0:
@@ -54,7 +54,7 @@ public final /* synthetic */ class vf implements org.telegram.ui.Components.xj0 
                                         } else {
                                             xnVar2.getClass();
                                         }
-                                        new org.telegram.ui.Components.es(xnVar2, xnVar2.e, arrayList, arrayList2, channelParticipantArr2, xnVar2.I6, (int) xnVar2.b(), xnVar2.O3, true, new cg.n0(20)).show();
+                                        new org.telegram.ui.Components.gs(xnVar2, xnVar2.e, arrayList, arrayList2, channelParticipantArr2, xnVar2.I6, (int) xnVar2.b(), xnVar2.O3, true, new ag.f(22)).show();
                                         break;
                                     default:
                                         xn xnVar3 = xnVar;
@@ -66,7 +66,7 @@ public final /* synthetic */ class vf implements org.telegram.ui.Components.xj0 
                                         } else {
                                             xnVar3.getClass();
                                         }
-                                        new org.telegram.ui.Components.es(xnVar3, xnVar3.e, arrayList, arrayList2, channelParticipantArr3, xnVar3.I6, (int) xnVar3.b(), xnVar3.O3, true, new cg.n0(20)).show();
+                                        new org.telegram.ui.Components.gs(xnVar3, xnVar3.e, arrayList, arrayList2, channelParticipantArr3, xnVar3.I6, (int) xnVar3.b(), xnVar3.O3, true, new ag.f(22)).show();
                                         break;
                                 }
                             }
@@ -105,7 +105,7 @@ public final /* synthetic */ class vf implements org.telegram.ui.Components.xj0 
                                     } else {
                                         xnVar22.getClass();
                                     }
-                                    new org.telegram.ui.Components.es(xnVar22, xnVar22.e, arrayList3, arrayList4, channelParticipantArr22, xnVar22.I6, (int) xnVar22.b(), xnVar22.O3, true, new cg.n0(20)).show();
+                                    new org.telegram.ui.Components.gs(xnVar22, xnVar22.e, arrayList3, arrayList4, channelParticipantArr22, xnVar22.I6, (int) xnVar22.b(), xnVar22.O3, true, new ag.f(22)).show();
                                     break;
                                 default:
                                     xn xnVar3 = xnVar2;
@@ -117,7 +117,7 @@ public final /* synthetic */ class vf implements org.telegram.ui.Components.xj0 
                                     } else {
                                         xnVar3.getClass();
                                     }
-                                    new org.telegram.ui.Components.es(xnVar3, xnVar3.e, arrayList3, arrayList4, channelParticipantArr3, xnVar3.I6, (int) xnVar3.b(), xnVar3.O3, true, new cg.n0(20)).show();
+                                    new org.telegram.ui.Components.gs(xnVar3, xnVar3.e, arrayList3, arrayList4, channelParticipantArr3, xnVar3.I6, (int) xnVar3.b(), xnVar3.O3, true, new ag.f(22)).show();
                                     break;
                             }
                         }

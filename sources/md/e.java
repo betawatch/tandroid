@@ -4,10 +4,10 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.Choreographer;
-import k7.p7;
+import k7.q7;
 import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class e {
     private static volatile Choreographer choreographer;
@@ -17,7 +17,7 @@ public abstract class e {
         try {
             a2 = new d(a(Looper.getMainLooper()), false);
         } catch (Throwable th2) {
-            a2 = p7.a(th2);
+            a2 = q7.a(th2);
         }
         if (a2 instanceof sc.e) {
             a2 = null;

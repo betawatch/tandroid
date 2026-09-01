@@ -1,65 +1,23 @@
 package k7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+import android.net.Uri;
+import java.util.Collections;
+import java.util.Map;
+
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class z6 {
-    public static boolean a(String str, String str2) {
-        int i10;
-        char c3;
-        int length = str.length();
-        if (str == str2) {
-            return true;
+    public static g5.p a(s4.m mVar, String str, s4.j jVar, int i10) {
+        Map map = Collections.EMPTY_MAP;
+        Uri H = h5.a.H(str, jVar.c);
+        long j10 = jVar.a;
+        long j11 = jVar.b;
+        String b10 = mVar.b();
+        if (b10 == null) {
+            b10 = h5.a.H(((s4.b) mVar.b.get(0)).a, jVar.c).toString();
         }
-        if (length == str2.length()) {
-            while (i10 < length) {
-                char charAt = str.charAt(i10);
-                char charAt2 = str2.charAt(i10);
-                i10 = (charAt == charAt2 || ((c3 = (char) ((charAt | ' ') + (-97))) < 26 && c3 == ((char) ((charAt2 | ' ') + (-97))))) ? i10 + 1 : 0;
-            }
-            return true;
-        }
-        return false;
-    }
-
-    public static String b(String str) {
-        int length = str.length();
-        int i10 = 0;
-        while (i10 < length) {
-            char charAt = str.charAt(i10);
-            if (charAt >= 'A' && charAt <= 'Z') {
-                char[] charArray = str.toCharArray();
-                while (i10 < length) {
-                    char c3 = charArray[i10];
-                    if (c3 >= 'A' && c3 <= 'Z') {
-                        charArray[i10] = (char) (c3 ^ ' ');
-                    }
-                    i10++;
-                }
-                return String.valueOf(charArray);
-            }
-            i10++;
-        }
-        return str;
-    }
-
-    public static String c(String str) {
-        int length = str.length();
-        int i10 = 0;
-        while (i10 < length) {
-            char charAt = str.charAt(i10);
-            if (charAt >= 'a' && charAt <= 'z') {
-                char[] charArray = str.toCharArray();
-                while (i10 < length) {
-                    char c3 = charArray[i10];
-                    if (c3 >= 'a' && c3 <= 'z') {
-                        charArray[i10] = (char) (c3 ^ ' ');
-                    }
-                    i10++;
-                }
-                return String.valueOf(charArray);
-            }
-            i10++;
-        }
-        return str;
+        String str2 = b10;
+        h5.a.k(H, "The uri must be set.");
+        return new g5.p(H, 1, null, s8.n0.h, j10, j11, str2, i10);
     }
 }

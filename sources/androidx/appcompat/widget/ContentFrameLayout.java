@@ -8,15 +8,16 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.FrameLayout;
 import g.q;
-import l.k;
+import l.l;
 import m.h;
+import m.i1;
 import m.j1;
-import m.k1;
-import m.o3;
+import m.n3;
+import o5.i;
 import org.telegram.tgnet.TLObject;
 import r0.m0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class ContentFrameLayout extends FrameLayout {
     public TypedValue a;
@@ -26,7 +27,7 @@ public class ContentFrameLayout extends FrameLayout {
     public TypedValue e;
     public TypedValue f;
     public final Rect h;
-    public j1 n;
+    public i1 n;
 
     public ContentFrameLayout(Context context) {
         this(context, null);
@@ -77,9 +78,9 @@ public class ContentFrameLayout extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        j1 j1Var = this.n;
-        if (j1Var != null) {
-            j1Var.getClass();
+        i1 i1Var = this.n;
+        if (i1Var != null) {
+            i1Var.getClass();
         }
     }
 
@@ -87,14 +88,14 @@ public class ContentFrameLayout extends FrameLayout {
     public final void onDetachedFromWindow() {
         h hVar;
         super.onDetachedFromWindow();
-        j1 j1Var = this.n;
-        if (j1Var != null) {
-            q qVar = (q) ((ja.c) j1Var).b;
-            k1 k1Var = qVar.s;
-            if (k1Var != null) {
-                ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) k1Var;
+        i1 i1Var = this.n;
+        if (i1Var != null) {
+            q qVar = (q) ((i) i1Var).b;
+            j1 j1Var = qVar.s;
+            if (j1Var != null) {
+                ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) j1Var;
                 actionBarOverlayLayout.f();
-                ActionMenuView actionMenuView = ((o3) actionBarOverlayLayout.e).a.a;
+                ActionMenuView actionMenuView = ((n3) actionBarOverlayLayout.e).a.a;
                 if (actionMenuView != null && (hVar = actionMenuView.G) != null) {
                     hVar.f();
                     m.d dVar = hVar.G;
@@ -117,9 +118,9 @@ public class ContentFrameLayout extends FrameLayout {
             if (m0Var != null) {
                 m0Var.b();
             }
-            k kVar = qVar.q(0).h;
-            if (kVar != null) {
-                kVar.c(true);
+            l lVar = qVar.p(0).h;
+            if (lVar != null) {
+                lVar.c(true);
             }
         }
     }
@@ -270,8 +271,8 @@ public class ContentFrameLayout extends FrameLayout {
         }
     }
 
-    public void setAttachListener(j1 j1Var) {
-        this.n = j1Var;
+    public void setAttachListener(i1 i1Var) {
+        this.n = i1Var;
     }
 
     public ContentFrameLayout(Context context, AttributeSet attributeSet) {

@@ -1,9 +1,9 @@
 package ld;
 
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
-import k7.g8;
+import k7.h8;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class k0 extends qd.s {
     public static final /* synthetic */ AtomicIntegerFieldUpdater e = AtomicIntegerFieldUpdater.newUpdater(k0.class, "_decision$volatile");
@@ -24,7 +24,7 @@ public final class k0 extends qd.s {
                 if (i10 != 1) {
                     throw new IllegalStateException("Already resumed");
                 }
-                qd.a.g(e0.r(obj), g8.b(this.d));
+                qd.a.g(e0.r(obj), h8.b(this.d));
                 return;
             }
         } while (!atomicIntegerFieldUpdater.compareAndSet(this, 0, 2));

@@ -2,7 +2,7 @@ package com.google.android.gms.tasks;
 
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 final class zze implements Runnable {
     final /* synthetic */ Task zza;
@@ -31,17 +31,17 @@ final class zze implements Runnable {
             task.addOnSuccessListener(executor, zzfVar);
             task.addOnFailureListener(executor, this.zzb);
             task.addOnCanceledListener(executor, this.zzb);
-        } catch (RuntimeExecutionException e) {
-            if (e.getCause() instanceof Exception) {
+        } catch (RuntimeExecutionException e6) {
+            if (e6.getCause() instanceof Exception) {
                 zzwVar3 = this.zzb.zzc;
-                zzwVar3.zza((Exception) e.getCause());
+                zzwVar3.zza((Exception) e6.getCause());
             } else {
                 zzwVar2 = this.zzb.zzc;
-                zzwVar2.zza(e);
+                zzwVar2.zza(e6);
             }
-        } catch (Exception e6) {
+        } catch (Exception e10) {
             zzwVar = this.zzb.zzc;
-            zzwVar.zza(e6);
+            zzwVar.zza(e10);
         }
     }
 }

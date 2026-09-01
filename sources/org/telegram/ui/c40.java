@@ -1,46 +1,11 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.voip.GroupCallMessage;
-
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class c40 implements yg.a {
-    public final /* synthetic */ c60 a;
+public final class c40 implements zg.g {
+    public final /* synthetic */ d60 a;
 
-    public c40(c60 c60Var) {
-        this.a = c60Var;
-    }
-
-    public final void a(GroupCallMessage groupCallMessage) {
-        org.telegram.ui.ActionBar.p2 R = LaunchActivity.R();
-        if (R == null) {
-            return;
-        }
-        boolean z4 = R instanceof ProfileActivity;
-        c60 c60Var = this.a;
-        if (z4 && ((ProfileActivity) R).a() == groupCallMessage.fromId) {
-            c60Var.dismiss();
-            return;
-        }
-        int P0 = c60Var.P0();
-        Bundle bundle = new Bundle();
-        long j10 = groupCallMessage.fromId;
-        if (j10 > 0) {
-            bundle.putLong("user_id", j10);
-        } else {
-            bundle.putLong("chat_id", -j10);
-        }
-        long j11 = groupCallMessage.fromId;
-        boolean z10 = true;
-        if (j11 == c60Var.d.getUserConfig().getClientUserId()) {
-            bundle.putBoolean("my_profile", true);
-        }
-        ProfileActivity profileActivity = new ProfileActivity(bundle, null);
-        if (P0 > 0 && P0 != Integer.MAX_VALUE) {
-            z10 = false;
-        }
-        R.presentFragment(profileActivity, false, z10);
-        c60Var.dismiss();
+    public c40(d60 d60Var) {
+        this.a = d60Var;
     }
 }

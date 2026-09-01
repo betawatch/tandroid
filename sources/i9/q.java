@@ -18,9 +18,8 @@ import k9.o0;
 import k9.p0;
 import k9.u0;
 import q5.g0;
-import vh.v2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class q {
     public static final HashMap f;
@@ -34,8 +33,8 @@ public final class q {
     static {
         HashMap hashMap = new HashMap();
         f = hashMap;
-        v2.i(5, hashMap, "armeabi", 6, "armeabi-v7a");
-        v2.i(9, hashMap, "arm64-v8a", 0, "x86");
+        w.c.i(5, hashMap, "armeabi", 6, "armeabi-v7a");
+        w.c.i(9, hashMap, "arm64-v8a", 0, "x86");
         hashMap.put("x86_64", 1);
         Locale locale = Locale.US;
         g = "Crashlytics Android SDK/18.6.0";
@@ -49,20 +48,20 @@ public final class q {
         this.e = gVar;
     }
 
-    public static p0 c(com.google.firebase.messaging.r rVar, int i10) {
+    public static p0 c(sf.e eVar, int i10) {
         int i11;
-        String str = (String) rVar.c;
-        String str2 = (String) rVar.b;
-        StackTraceElement[] stackTraceElementArr = (StackTraceElement[]) rVar.d;
+        String str = (String) eVar.c;
+        String str2 = (String) eVar.b;
+        StackTraceElement[] stackTraceElementArr = (StackTraceElement[]) eVar.d;
         int i12 = 0;
         if (stackTraceElementArr == null) {
             stackTraceElementArr = new StackTraceElement[0];
         }
-        com.google.firebase.messaging.r rVar2 = (com.google.firebase.messaging.r) rVar.e;
+        sf.e eVar2 = (sf.e) eVar.e;
         if (i10 >= 8) {
-            com.google.firebase.messaging.r rVar3 = rVar2;
-            while (rVar3 != null) {
-                rVar3 = (com.google.firebase.messaging.r) rVar3.e;
+            sf.e eVar3 = eVar2;
+            while (eVar3 != null) {
+                eVar3 = (sf.e) eVar3.e;
                 i12++;
             }
             i11 = i12;
@@ -74,8 +73,8 @@ public final class q {
             throw new NullPointerException("Null frames");
         }
         p0 p0Var = null;
-        if (rVar2 != null && i11 == 0) {
-            p0Var = c(rVar2, i10 + 1);
+        if (eVar2 != null && i11 == 0) {
+            p0Var = c(eVar2, i10 + 1);
         }
         return new p0(str, str2, d, p0Var, i11);
     }
@@ -99,7 +98,7 @@ public final class q {
             jVar.b = str;
             jVar.c = fileName;
             jVar.d = Long.valueOf(j10);
-            arrayList.add(jVar.q());
+            arrayList.add(jVar.n());
         }
         return DesugarCollections.unmodifiableList(arrayList);
     }
@@ -127,8 +126,8 @@ public final class q {
         int i11 = 2;
         try {
             registerReceiver = context.registerReceiver(null, new IntentFilter("android.intent.action.BATTERY_CHANGED"));
-        } catch (IllegalStateException e) {
-            e = e;
+        } catch (IllegalStateException e6) {
+            e = e6;
             z4 = false;
         }
         if (registerReceiver != null) {
@@ -140,8 +139,8 @@ public final class q {
                 if (intExtra2 != -1 && intExtra3 != -1) {
                     f10 = Float.valueOf(intExtra2 / intExtra3);
                 }
-            } catch (IllegalStateException e6) {
-                e = e6;
+            } catch (IllegalStateException e10) {
+                e = e10;
                 Log.e("FirebaseCrashlytics", "An error occurred getting battery state.", e);
                 f10 = null;
                 if (f10 != null) {

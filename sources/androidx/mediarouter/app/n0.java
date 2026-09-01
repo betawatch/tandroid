@@ -12,7 +12,7 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import f2.l1;
+import f2.m1;
 import j$.util.DesugarCollections;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -21,9 +21,9 @@ import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final class n0 extends f2.o0 {
+public final class n0 extends f2.p0 {
     public final ArrayList c = new ArrayList();
     public final LayoutInflater d;
     public final Drawable e;
@@ -39,18 +39,18 @@ public final class n0 extends f2.o0 {
         this.w = p0Var;
         Context context = p0Var.y;
         this.d = LayoutInflater.from(context);
-        this.e = j7.z.d(context, R.attr.mediaRouteDefaultIconDrawable);
-        this.f = j7.z.d(context, R.attr.mediaRouteTvIconDrawable);
-        this.h = j7.z.d(context, R.attr.mediaRouteSpeakerIconDrawable);
-        this.n = j7.z.d(context, R.attr.mediaRouteSpeakerGroupIconDrawable);
+        this.e = j7.a0.d(context, R.attr.mediaRouteDefaultIconDrawable);
+        this.f = j7.a0.d(context, R.attr.mediaRouteTvIconDrawable);
+        this.h = j7.a0.d(context, R.attr.mediaRouteSpeakerIconDrawable);
+        this.n = j7.a0.d(context, R.attr.mediaRouteSpeakerGroupIconDrawable);
         this.s = context.getResources().getInteger(R.integer.mr_cast_volume_slider_layout_animation_duration_ms);
         this.v = new AccelerateDecelerateInterpolator();
         G();
     }
 
-    @Override // f2.o0
-    public final void A(l1 l1Var) {
-        this.w.I.values().remove(l1Var);
+    @Override // f2.p0
+    public final void A(m1 m1Var) {
+        this.w.I.values().remove(m1Var);
     }
 
     public final void D(int i10, View view) {
@@ -69,8 +69,8 @@ public final class n0 extends f2.o0 {
                 if (createFromStream != null) {
                     return createFromStream;
                 }
-            } catch (IOException e) {
-                Log.w("MediaRouteCtrlDialog", "Failed to load " + uri, e);
+            } catch (IOException e6) {
+                Log.w("MediaRouteCtrlDialog", "Failed to load " + uri, e6);
             }
         }
         int i10 = a0Var.n;
@@ -88,8 +88,8 @@ public final class n0 extends f2.o0 {
         zVar.getClass();
         c2.c0.b();
         for (c2.a0 a0Var : DesugarCollections.unmodifiableList(zVar.b)) {
-            a3.c b10 = p0Var.r.b(a0Var);
-            if (b10 != null && (qVar = (c2.q) b10.b) != null && qVar.d) {
+            ja.c b10 = p0Var.r.b(a0Var);
+            if (b10 != null && (qVar = (c2.q) b10.a) != null && qVar.d) {
                 arrayList3.add(a0Var);
             }
         }
@@ -169,12 +169,12 @@ public final class n0 extends f2.o0 {
         F();
     }
 
-    @Override // f2.o0
+    @Override // f2.p0
     public final int h() {
         return this.c.size() + 1;
     }
 
-    @Override // f2.o0
+    @Override // f2.p0
     public final int j(int i10) {
         l0 l0Var;
         if (i10 == 0) {
@@ -185,9 +185,9 @@ public final class n0 extends f2.o0 {
         return l0Var.b;
     }
 
-    @Override // f2.o0
-    public final void v(l1 l1Var, int i10) {
-        a3.c b10;
+    @Override // f2.p0
+    public final void v(m1 m1Var, int i10) {
+        ja.c b10;
         c2.q qVar;
         ArrayList arrayList = this.c;
         int i11 = (i10 == 0 ? this.r : (l0) arrayList.get(i10 - 1)).b;
@@ -195,8 +195,8 @@ public final class n0 extends f2.o0 {
         p0 p0Var = this.w;
         int i12 = 0;
         if (i11 == 1) {
-            p0Var.I.put(((c2.a0) l0Var.a).c, (h0) l1Var);
-            j0 j0Var = (j0) l1Var;
+            p0Var.I.put(((c2.a0) l0Var.a).c, (h0) m1Var);
+            j0 j0Var = (j0) m1Var;
             View view = j0Var.a;
             p0 p0Var2 = j0Var.B.w;
             if (p0Var2.f0 && DesugarCollections.unmodifiableList(p0Var2.r.v).size() > 1) {
@@ -211,14 +211,14 @@ public final class n0 extends f2.o0 {
             return;
         }
         if (i11 == 2) {
-            ((k0) l1Var).v.setText(l0Var.a.toString());
+            ((k0) m1Var).v.setText(l0Var.a.toString());
             return;
         }
         if (i11 != 3) {
             if (i11 != 4) {
                 throw new IllegalStateException();
             }
-            i0 i0Var = (i0) l1Var;
+            i0 i0Var = (i0) m1Var;
             View view2 = i0Var.v;
             c2.a0 a0Var2 = (c2.a0) l0Var.a;
             i0Var.A = a0Var2;
@@ -233,8 +233,8 @@ public final class n0 extends f2.o0 {
             i0Var.y.setText(a0Var2.d);
             return;
         }
-        p0Var.I.put(((c2.a0) l0Var.a).c, (h0) l1Var);
-        m0 m0Var = (m0) l1Var;
+        p0Var.I.put(((c2.a0) l0Var.a).c, (h0) m1Var);
+        m0 m0Var = (m0) m1Var;
         float f10 = m0Var.F;
         y yVar = m0Var.H;
         ImageView imageView2 = m0Var.A;
@@ -261,7 +261,7 @@ public final class n0 extends f2.o0 {
         m0Var.C.setText(a0Var3.d);
         checkBox.setVisibility(0);
         boolean v = m0Var.v(a0Var3);
-        boolean z4 = !p0Var3.x.contains(a0Var3) && (!m0Var.v(a0Var3) || DesugarCollections.unmodifiableList(p0Var3.r.v).size() >= 2) && (!m0Var.v(a0Var3) || ((b10 = p0Var3.r.b(a0Var3)) != null && ((qVar = (c2.q) b10.b) == null || qVar.c)));
+        boolean z4 = !p0Var3.x.contains(a0Var3) && (!m0Var.v(a0Var3) || DesugarCollections.unmodifiableList(p0Var3.r.v).size() >= 2) && (!m0Var.v(a0Var3) || ((b10 = p0Var3.r.b(a0Var3)) != null && ((qVar = (c2.q) b10.a) == null || qVar.c)));
         checkBox.setChecked(v);
         m0Var.B.setVisibility(4);
         imageView2.setVisibility(0);
@@ -282,8 +282,8 @@ public final class n0 extends f2.o0 {
         checkBox.setAlpha((z4 || !v) ? 1.0f : f10);
     }
 
-    @Override // f2.o0
-    public final l1 x(ViewGroup viewGroup, int i10) {
+    @Override // f2.p0
+    public final m1 x(ViewGroup viewGroup, int i10) {
         LayoutInflater layoutInflater = this.d;
         if (i10 == 1) {
             return new j0(this, layoutInflater.inflate(R.layout.mr_cast_group_volume_item, viewGroup, false));

@@ -24,10 +24,10 @@ import org.telegram.messenger.WebFile;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class a2 extends FrameLayout implements org.telegram.ui.Cells.l9 {
-    public final n70 a;
+    public final o70 a;
     public final j4 b;
     public Drawable c;
     public d3 d;
@@ -41,9 +41,9 @@ public final class a2 extends FrameLayout implements org.telegram.ui.Cells.l9 {
     public int w;
     public TL_iv.pageBlockMap x;
 
-    public a2(Context context, n70 n70Var, j4 j4Var) {
+    public a2(Context context, o70 o70Var, j4 j4Var) {
         super(context);
-        this.a = n70Var;
+        this.a = o70Var;
         this.b = j4Var;
         setWillNotDraw(false);
         this.f = new ImageReceiver(this);
@@ -92,16 +92,16 @@ public final class a2 extends FrameLayout implements org.telegram.ui.Cells.l9 {
         if (this.x == null) {
             return;
         }
-        Paint paint = org.telegram.ui.ActionBar.j6.S1;
-        int i10 = org.telegram.ui.ActionBar.j6.pe;
-        n70 n70Var = this.a;
-        ((l4) n70Var).getClass();
+        Paint paint = org.telegram.ui.ActionBar.k6.S1;
+        int i10 = org.telegram.ui.ActionBar.k6.pe;
+        o70 o70Var = this.a;
+        ((l4) o70Var).getClass();
         int i11 = 0;
-        paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
+        paint.setColor(org.telegram.ui.ActionBar.k6.w0(null, i10, false));
         ImageReceiver imageReceiver = this.f;
-        canvas.drawRect(imageReceiver.getImageX(), imageReceiver.getImageY(), imageReceiver.getImageX2(), imageReceiver.getImageY2(), org.telegram.ui.ActionBar.j6.S1);
+        canvas.drawRect(imageReceiver.getImageX(), imageReceiver.getImageY(), imageReceiver.getImageX2(), imageReceiver.getImageY2(), org.telegram.ui.ActionBar.k6.S1);
         float centerX = imageReceiver.getCenterX();
-        Drawable[] drawableArr = org.telegram.ui.ActionBar.j6.S4;
+        Drawable[] drawableArr = org.telegram.ui.ActionBar.k6.S4;
         int intrinsicWidth = (int) (centerX - (drawableArr[0].getIntrinsicWidth() / 2));
         int centerY = (int) (imageReceiver.getCenterY() - (drawableArr[0].getIntrinsicHeight() / 2));
         Drawable drawable = drawableArr[0];
@@ -123,7 +123,7 @@ public final class a2 extends FrameLayout implements org.telegram.ui.Cells.l9 {
         if (this.d != null) {
             canvas.save();
             canvas.translate(this.n, this.r);
-            l4.v(n70Var, canvas, this, 0);
+            l4.v(o70Var, canvas, this, 0);
             this.d.draw(canvas, this);
             canvas.restore();
             i11 = 1;
@@ -131,11 +131,11 @@ public final class a2 extends FrameLayout implements org.telegram.ui.Cells.l9 {
         if (this.e != null) {
             canvas.save();
             canvas.translate(this.n, this.r + this.s);
-            l4.v(n70Var, canvas, this, i11);
+            l4.v(o70Var, canvas, this, i11);
             this.e.draw(canvas, this);
             canvas.restore();
         }
-        l4.u(canvas, n70Var, this.x, getMeasuredHeight());
+        l4.u(canvas, o70Var, this.x, getMeasuredHeight());
     }
 
     @Override // android.view.View
@@ -223,7 +223,7 @@ public final class a2 extends FrameLayout implements org.telegram.ui.Cells.l9 {
             }
             int i19 = i15;
             TL_iv.pageBlockMap pageblockmap5 = this.x;
-            d3 p10 = l4.p(this.a, this, null, pageblockmap5.caption.credit, dp, 0, pageblockmap5, (j4Var == null || !j4Var.D) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.kw0.a(), 0, this.b);
+            d3 p10 = l4.p(this.a, this, null, pageblockmap5.caption.credit, dp, 0, pageblockmap5, (j4Var == null || !j4Var.D) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.lw0.a(), 0, this.b);
             this.e = p10;
             if (p10 != null) {
                 i19 += this.e.d.getHeight() + AndroidUtilities.dp(4.0f);
@@ -254,8 +254,8 @@ public final class a2 extends FrameLayout implements org.telegram.ui.Cells.l9 {
                 double d = geoPoint.lat;
                 double d10 = geoPoint._long;
                 getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("geo:" + d + "," + d10 + "?q=" + d + "," + d10)));
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e6) {
+                FileLog.e(e6);
             }
         } else if (motionEvent.getAction() == 3) {
             this.v = false;

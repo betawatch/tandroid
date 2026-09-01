@@ -6,13 +6,11 @@ import java.io.EOFException;
 import java.io.FilterInputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import kh.a2;
+import org.telegram.ui.Components.ai;
 import org.telegram.ui.Components.jb;
-import ph.j5;
 import q5.g0;
-import vh.v2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class l extends we.a {
     public static final Logger r = Logger.getLogger(l.class.getName());
@@ -55,7 +53,7 @@ public final class l extends we.a {
      */
     /* JADX WARN: Code restructure failed: missing block: B:120:0x0258, code lost:
     
-        r9.d.k0(r9.a.e());
+        r9.d.a0(r9.a.e());
      */
     /* JADX WARN: Code restructure failed: missing block: B:123:0x022c, code lost:
     
@@ -75,7 +73,7 @@ public final class l extends we.a {
      */
     /* JADX WARN: Code restructure failed: missing block: B:128:0x0266, code lost:
     
-        r9.d.k0(r9.a.e());
+        r9.d.a0(r9.a.e());
      */
     /* JADX WARN: Code restructure failed: missing block: B:129:0x0271, code lost:
     
@@ -136,7 +134,7 @@ public final class l extends we.a {
      */
     /* JADX WARN: Code restructure failed: missing block: B:93:0x0272, code lost:
     
-        r8.k0(r10.e);
+        r8.a0(r10.e);
      */
     /* JADX WARN: Code restructure failed: missing block: B:95:0x0261, code lost:
     
@@ -190,12 +188,12 @@ public final class l extends we.a {
                 hVar.b = 0;
                 hVar.c = 0;
                 long j11 = dVar.b;
-                j5 j5Var = new j5(dVar, 19);
+                ai aiVar = new ai(dVar, 24);
                 byte[] bArr = new byte[3];
                 int i10 = 0;
                 for (int i11 = 3; i10 < i11; i11 = 3) {
                     long j12 = j11;
-                    int read = ((com.google.firebase.messaging.d) j5Var.b).read(bArr, i10, 3 - i10);
+                    int read = ((com.google.firebase.messaging.d) aiVar.b).read(bArr, i10, 3 - i10);
                     if (read <= 0) {
                         throw new EOFException();
                     }
@@ -207,50 +205,50 @@ public final class l extends we.a {
                 if (!"ID3".equals(str5)) {
                     throw new c("Invalid ID3 identifier: ".concat(str5));
                 }
-                byte h02 = j5Var.h0();
-                hVar.a = h02;
-                if (h02 != 2 && h02 != 3 && h02 != 4) {
-                    throw new c(a2.j(h02, "Unsupported ID3v2 version: "));
+                byte S = aiVar.S();
+                hVar.a = S;
+                if (S != 2 && S != 3 && S != 4) {
+                    throw new c(l.d.j(S, "Unsupported ID3v2 version: "));
                 }
-                byte h03 = j5Var.h0();
-                byte h04 = j5Var.h0();
-                int j02 = j5Var.j0();
-                hVar.b = j02 + 10;
-                if (h02 == 2) {
-                    hVar.d = (h04 & 128) != 0;
-                    hVar.e = (h04 & 64) != 0;
-                    b11 = h03;
+                byte S2 = aiVar.S();
+                byte S3 = aiVar.S();
+                int Z = aiVar.Z();
+                hVar.b = Z + 10;
+                if (S == 2) {
+                    hVar.d = (S3 & 128) != 0;
+                    hVar.e = (S3 & 64) != 0;
+                    b11 = S2;
                 } else {
-                    hVar.d = (h04 & 128) != 0;
-                    if ((h04 & 64) == 0) {
-                        b11 = h03;
-                        b12 = h04;
-                    } else if (h02 == 3) {
-                        int i02 = j5Var.i0();
-                        j5Var.h0();
-                        j5Var.h0();
-                        j5Var.i0();
-                        b11 = h03;
-                        b12 = h04;
-                        j5Var.k0(i02 - 6);
+                    hVar.d = (S3 & 128) != 0;
+                    if ((S3 & 64) == 0) {
+                        b11 = S2;
+                        b12 = S3;
+                    } else if (S == 3) {
+                        int Y = aiVar.Y();
+                        aiVar.S();
+                        aiVar.S();
+                        aiVar.Y();
+                        b11 = S2;
+                        b12 = S3;
+                        aiVar.a0(Y - 6);
                     } else {
-                        b11 = h03;
-                        b12 = h04;
-                        j5Var.k0(j5Var.j0() - 4);
+                        b11 = S2;
+                        b12 = S3;
+                        aiVar.a0(aiVar.Z() - 4);
                     }
-                    if (h02 >= 4 && (b12 & 16) != 0) {
+                    if (S >= 4 && (b12 & 16) != 0) {
                         hVar.c = 10;
-                        hVar.b = j02 + 20;
+                        hVar.b = Z + 20;
                     }
                 }
                 int i12 = (int) (dVar.b - j13);
                 gVar2.a = "ID3";
-                String.format("2.%d.%d", Integer.valueOf(h02), Integer.valueOf(b11));
+                String.format("2.%d.%d", Integer.valueOf(S), Integer.valueOf(b11));
                 int i13 = hVar.b;
                 if (hVar.e) {
                     throw new c("Tag compression is not supported");
                 }
-                if (h02 >= 4 || !hVar.d) {
+                if (S >= 4 || !hVar.d) {
                     logger = logger2;
                     mVar = new s5.m(mVar2, i12, (i13 - i12) - hVar.c, hVar);
                 } else {
@@ -277,7 +275,7 @@ public final class l extends we.a {
                     mVar = new s5.m(new ByteArrayInputStream(bArr2, 0, i16), i12, i16, hVar);
                     logger = logger2;
                 }
-                j5 j5Var2 = (j5) mVar.d;
+                ai aiVar2 = (ai) mVar.d;
                 ze.a aVar2 = (ze.a) mVar.b;
                 while (aVar2.e() > 10) {
                     try {
@@ -295,15 +293,15 @@ public final class l extends we.a {
                                 i18++;
                             }
                         }
-                    } catch (c e) {
-                        e = e;
+                    } catch (c e6) {
+                        e = e6;
                         aVar = aVar2;
                         gVar = gVar2;
                     }
                 }
                 aVar = aVar2;
                 gVar = gVar2;
-                j5Var2.k0(aVar.e());
+                aiVar2.a0(aVar.e());
                 int i19 = hVar.c;
                 if (i19 > 0) {
                     mVar2.skip(i19);
@@ -333,10 +331,10 @@ public final class l extends we.a {
                 jb jbVar = new jb();
                 jbVar.a = j10 - 128;
                 this.b = b(mVar2, j10, jbVar);
-            } catch (i e6) {
+            } catch (i e10) {
                 Logger logger3 = r;
                 if (logger3.isLoggable(level)) {
-                    logger3.log(level, "Could not determine MP3 duration", (Throwable) e6);
+                    logger3.log(level, "Could not determine MP3 duration", (Throwable) e10);
                 }
             }
         }
@@ -379,8 +377,8 @@ public final class l extends we.a {
                 s6 = 0;
             }
             str = a.b(97, 30, bArr3);
-            int a2 = v2.a(bArr3[127]);
-            r3 = a2 != 0 ? v2.b(a2) : null;
+            int a2 = w.c.a(bArr3[127]);
+            r3 = a2 != 0 ? w.c.b(a2) : null;
             if (bArr3[125] == 0 && (b10 = bArr3[126]) != 0) {
                 s9 = (short) (b10 & 255);
                 str3 = b14;
@@ -613,11 +611,11 @@ public final class l extends we.a {
                     if (read11 != -1 && read12 != -1) {
                         try {
                             kVar = new k(read, read11, read12);
-                        } catch (i e) {
+                        } catch (i e6) {
                             int i22 = mVar.d + 1;
                             mVar.d = i22;
                             if (i22 > 5) {
-                                throw e;
+                                throw e6;
                             }
                             kVar = null;
                         }

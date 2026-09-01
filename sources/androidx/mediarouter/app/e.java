@@ -3,7 +3,7 @@ package androidx.mediarouter.app;
 import android.widget.SeekBar;
 import j$.util.DesugarCollections;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class e extends c2.w {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final class e extends c2.w {
 
     @Override // c2.w
     public final void e(c2.a0 a0Var) {
-        a3.c b10;
+        ja.c b10;
         c2.q qVar;
         switch (this.a) {
             case 0:
@@ -50,7 +50,7 @@ public final class e extends c2.w {
                     zVar.getClass();
                     c2.c0.b();
                     for (c2.a0 a0Var2 : DesugarCollections.unmodifiableList(zVar.b)) {
-                        if (!DesugarCollections.unmodifiableList(p0Var.r.v).contains(a0Var2) && (b10 = p0Var.r.b(a0Var2)) != null && (qVar = (c2.q) b10.b) != null && qVar.d && !p0Var.v.contains(a0Var2)) {
+                        if (!DesugarCollections.unmodifiableList(p0Var.r.v).contains(a0Var2) && (b10 = p0Var.r.b(a0Var2)) != null && (qVar = (c2.q) b10.a) != null && qVar.d && !p0Var.v.contains(a0Var2)) {
                             p0Var.o();
                             p0Var.l();
                             break;

@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static String a(Object... objArr) {
@@ -26,10 +26,10 @@ public abstract class a {
             } else {
                 try {
                     l10 = obj.toString();
-                } catch (Exception e) {
+                } catch (Exception e6) {
                     String z4 = android.support.v4.media.a.z(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(z4), (Throwable) e);
-                    l10 = yh.l("<", z4, " threw ", e.getClass().getName(), ">");
+                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(z4), (Throwable) e6);
+                    l10 = yh.l("<", z4, " threw ", e6.getClass().getName(), ">");
                 }
             }
             objArr[i11] = l10;

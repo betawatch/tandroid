@@ -4,28 +4,27 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import androidx.appcompat.widget.Toolbar;
-import f2.l1;
+import f2.m1;
 import j$.util.DesugarCollections;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import k7.b6;
-import m.j3;
+import k7.c6;
+import m.i3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.ap;
-import org.telegram.ui.Components.c70;
+import org.telegram.ui.Components.cp;
+import org.telegram.ui.Components.e70;
 import org.telegram.ui.Components.k6;
-import org.telegram.ui.Components.kp;
-import org.telegram.ui.Components.li;
-import org.telegram.ui.Components.n30;
-import org.telegram.ui.Components.ro;
-import org.telegram.ui.Components.x80;
+import org.telegram.ui.Components.mi;
+import org.telegram.ui.Components.mp;
+import org.telegram.ui.Components.p30;
+import org.telegram.ui.Components.to;
+import org.telegram.ui.Components.y80;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class y implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -80,8 +79,8 @@ public final class y implements View.OnClickListener {
                 if (!(c3.e instanceof c2.r)) {
                     throw new IllegalStateException("There is no currently selected dynamic group route.");
                 }
-                a3.c b10 = c3.d.b(a0Var);
-                if (b10 == null || (qVar = (c2.q) b10.b) == null || !qVar.e) {
+                ja.c b10 = c3.d.b(a0Var);
+                if (b10 == null || (qVar = (c2.q) b10.a) == null || !qVar.e) {
                     Log.w("GlobalMediaRouter", "Ignoring attempt to transfer to a non-transferable route.");
                 } else {
                     ((c2.r) c3.e).o(Collections.singletonList(a0Var.b));
@@ -94,7 +93,7 @@ public final class y implements View.OnClickListener {
                 n0 n0Var = m0Var.I;
                 boolean v = m0Var.v(m0Var.v);
                 boolean z10 = !v;
-                boolean e = m0Var.v.e();
+                boolean e6 = m0Var.v.e();
                 if (v) {
                     c2.c0 c0Var2 = n0Var.w.f;
                     c2.a0 a0Var2 = m0Var.v;
@@ -107,8 +106,8 @@ public final class y implements View.OnClickListener {
                     if (!(c10.e instanceof c2.r)) {
                         throw new IllegalStateException("There is no currently selected dynamic group route.");
                     }
-                    a3.c b11 = c10.d.b(a0Var2);
-                    if (!DesugarCollections.unmodifiableList(c10.d.v).contains(a0Var2) || b11 == null || ((qVar2 = (c2.q) b11.b) != null && !qVar2.c)) {
+                    ja.c b11 = c10.d.b(a0Var2);
+                    if (!DesugarCollections.unmodifiableList(c10.d.v).contains(a0Var2) || b11 == null || ((qVar2 = (c2.q) b11.a) != null && !qVar2.c)) {
                         Log.w("GlobalMediaRouter", "Ignoring attempt to remove a non-unselectable member route : " + a0Var2);
                     } else if (DesugarCollections.unmodifiableList(c10.d.v).size() <= 1) {
                         Log.w("GlobalMediaRouter", "Ignoring attempt to remove the last member route.");
@@ -127,15 +126,15 @@ public final class y implements View.OnClickListener {
                     if (!(c11.e instanceof c2.r)) {
                         throw new IllegalStateException("There is no currently selected dynamic group route.");
                     }
-                    a3.c b12 = c11.d.b(a0Var3);
-                    if (DesugarCollections.unmodifiableList(c11.d.v).contains(a0Var3) || b12 == null || (qVar3 = (c2.q) b12.b) == null || !qVar3.d) {
+                    ja.c b12 = c11.d.b(a0Var3);
+                    if (DesugarCollections.unmodifiableList(c11.d.v).contains(a0Var3) || b12 == null || (qVar3 = (c2.q) b12.a) == null || !qVar3.d) {
                         Log.w("GlobalMediaRouter", "Ignoring attempt to add a non-groupable route to dynamic group : " + a0Var3);
                     } else {
                         ((c2.r) c11.e).m(a0Var3.b);
                     }
                 }
-                m0Var.w(z10, !e);
-                if (e) {
+                m0Var.w(z10, !e6);
+                if (e6) {
                     List unmodifiableList = DesugarCollections.unmodifiableList(n0Var.w.r.v);
                     for (c2.a0 a0Var4 : DesugarCollections.unmodifiableList(m0Var.v.v)) {
                         if (unmodifiableList.contains(a0Var4) != z10) {
@@ -163,7 +162,7 @@ public final class y implements View.OnClickListener {
                 boolean z11 = p0Var2.f0 && DesugarCollections.unmodifiableList(p0Var2.r.v).size() > 1;
                 boolean z12 = p0Var2.f0 && max2 >= 2;
                 if (z11 != z12) {
-                    l1 K = p0Var2.F.K(0);
+                    m1 K = p0Var2.F.K(0);
                     if (K instanceof j0) {
                         j0 j0Var = (j0) K;
                         n0Var.D(z12 ? j0Var.A : 0, j0Var.a);
@@ -203,64 +202,64 @@ public final class y implements View.OnClickListener {
                 ((k.a) this.b).a();
                 return;
             case 7:
-                j3 j3Var = ((Toolbar) this.b).b0;
-                l.m mVar = j3Var == null ? null : j3Var.b;
-                if (mVar != null) {
-                    mVar.collapseActionView();
+                i3 i3Var = ((Toolbar) this.b).b0;
+                l.n nVar = i3Var == null ? null : i3Var.b;
+                if (nVar != null) {
+                    nVar.collapseActionView();
                     return;
                 }
                 return;
             case 8:
-                kp kpVar = (kp) this.b;
-                xn xnVar = kpVar.v;
-                li liVar = new li(xnVar.getParentActivity(), xnVar, false, false, false, xnVar.getResourceProvider());
-                kpVar.V = liVar;
-                liVar.drawNavigationBar = true;
-                liVar.L1(LocaleController.getString(R.string.ChooseBackground));
-                li liVar2 = kpVar.V;
-                liVar2.W1 = new ap(kpVar);
-                liVar2.J1(1, false);
-                kpVar.V.r1();
-                kpVar.V.g0.f0();
-                kpVar.V.show();
-                kpVar.W = new ah.d(kpVar, kpVar.getContext());
-                k6 k6Var = new k6(kpVar.getContext(), true, true, true);
-                kpVar.X = k6Var;
+                mp mpVar = (mp) this.b;
+                xn xnVar = mpVar.v;
+                mi miVar = new mi(xnVar.getParentActivity(), xnVar, false, false, false, xnVar.getResourceProvider());
+                mpVar.V = miVar;
+                miVar.drawNavigationBar = true;
+                miVar.L1(LocaleController.getString(R.string.ChooseBackground));
+                mi miVar2 = mpVar.V;
+                miVar2.W1 = new cp(mpVar);
+                miVar2.J1(1, false);
+                mpVar.V.r1();
+                mpVar.V.g0.f0();
+                mpVar.V.show();
+                mpVar.W = new ag.l(mpVar, mpVar.getContext());
+                k6 k6Var = new k6(mpVar.getContext(), true, true, true);
+                mpVar.X = k6Var;
                 k6Var.setTextSize(AndroidUtilities.dp(14.0f));
-                kpVar.X.setText(LocaleController.getString(R.string.SetColorAsBackground));
-                kpVar.X.setGravity(17);
-                k6 k6Var2 = kpVar.X;
-                int i10 = j6.Oh;
-                k6Var2.setTextColor(kpVar.getThemedColor(i10));
-                kpVar.W.addView(kpVar.X, b6.e(-1, -2, 17));
-                ah.d dVar = kpVar.W;
+                mpVar.X.setText(LocaleController.getString(R.string.SetColorAsBackground));
+                mpVar.X.setGravity(17);
+                k6 k6Var2 = mpVar.X;
+                int i10 = org.telegram.ui.ActionBar.k6.Oh;
+                k6Var2.setTextColor(mpVar.getThemedColor(i10));
+                mpVar.W.addView(mpVar.X, c6.e(-1, -2, 17));
+                ag.l lVar = mpVar.W;
                 int dp = AndroidUtilities.dp(0.0f);
-                int themedColor = kpVar.getThemedColor(j6.d6);
-                int k10 = i0.a.k(kpVar.getThemedColor(i10), 76);
-                dVar.setBackground(j6.i0(dp, dp, dp, dp, themedColor, k10, k10));
-                kpVar.W.setOnClickListener(new ro(kpVar, 0));
-                kpVar.V.o1.addView(kpVar.W, b6.e(-1, -2, 80));
+                int themedColor = mpVar.getThemedColor(org.telegram.ui.ActionBar.k6.d6);
+                int k10 = i0.a.k(mpVar.getThemedColor(i10), 76);
+                lVar.setBackground(org.telegram.ui.ActionBar.k6.i0(dp, dp, dp, dp, themedColor, k10, k10));
+                mpVar.W.setOnClickListener(new to(mpVar, 0));
+                mpVar.V.o1.addView(mpVar.W, c6.e(-1, -2, 80));
                 return;
             case 9:
-                c70 c70Var = (c70) this.b;
-                n30 n30Var = (n30) view;
-                if (n30Var.y) {
-                    c70Var.g0 = null;
-                    c70Var.c0.l(n30Var.getUid());
-                    c70Var.R.b(n30Var);
-                    c70Var.a0(true);
-                    AndroidUtilities.updateVisibleRows(c70Var.d);
+                e70 e70Var = (e70) this.b;
+                p30 p30Var = (p30) view;
+                if (p30Var.y) {
+                    e70Var.g0 = null;
+                    e70Var.c0.l(p30Var.getUid());
+                    e70Var.R.b(p30Var);
+                    e70Var.a0(true);
+                    AndroidUtilities.updateVisibleRows(e70Var.d);
                     return;
                 }
-                n30 n30Var2 = c70Var.g0;
-                if (n30Var2 != null) {
-                    n30Var2.a();
+                p30 p30Var2 = e70Var.g0;
+                if (p30Var2 != null) {
+                    p30Var2.a();
                 }
-                c70Var.g0 = n30Var;
-                n30Var.b();
+                e70Var.g0 = p30Var;
+                p30Var.b();
                 return;
             default:
-                ((x80) this.b).e.callOnClick();
+                ((y80) this.b).e.callOnClick();
                 return;
         }
     }

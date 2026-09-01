@@ -4,9 +4,9 @@ import android.content.Context;
 import android.os.Vibrator;
 import android.text.Spanned;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class o4 extends eq {
+public final class o4 extends gq {
     public final /* synthetic */ Context b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -15,7 +15,7 @@ public final class o4 extends eq {
         this.b = context;
     }
 
-    @Override // org.telegram.ui.Components.eq, android.text.InputFilter
+    @Override // org.telegram.ui.Components.gq, android.text.InputFilter
     public final CharSequence filter(CharSequence charSequence, int i10, int i11, Spanned spanned, int i12, int i13) {
         Vibrator vibrator;
         CharSequence filter = super.filter(charSequence, i10, i11, spanned, i12, i13);

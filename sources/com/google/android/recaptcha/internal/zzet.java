@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
 import dd.p;
-import k7.p7;
+import k7.q7;
 import ld.d2;
 import uc.c;
 import vc.a;
 import wc.i;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 final class zzet extends i implements p {
     int zza;
@@ -50,7 +50,7 @@ final class zzet extends i implements p {
         int i10 = this.zza;
         try {
             if (i10 == 0) {
-                p7.b(obj);
+                q7.b(obj);
                 zzgrVar = (zzgr) this.zze;
                 zzq zzb = zzfp.zzb(this.zzb);
                 String str = this.zzc;
@@ -60,11 +60,11 @@ final class zzet extends i implements p {
                 obj = zzb.zzb(str, j10, this);
             } else {
                 if (i10 != 1) {
-                    p7.b(obj);
+                    q7.b(obj);
                     return (zzxx) obj;
                 }
                 zzgrVar = (zzgr) this.zze;
-                p7.b(obj);
+                q7.b(obj);
             }
             this.zze = null;
             this.zza = 2;
@@ -73,12 +73,12 @@ final class zzet extends i implements p {
                 return aVar;
             }
             return (zzxx) obj;
-        } catch (zzcg e) {
-            throw e;
-        } catch (d2 e6) {
-            throw new zzcg(zzce.zzb, zzcd.zzb, e6.getMessage(), null, 8, null);
-        } catch (Exception e10) {
-            throw new zzcg(zzce.zzb, zzcd.zzaa, e10.getMessage(), null, 8, null);
+        } catch (zzcg e6) {
+            throw e6;
+        } catch (d2 e10) {
+            throw new zzcg(zzce.zzb, zzcd.zzb, e10.getMessage(), null, 8, null);
+        } catch (Exception e11) {
+            throw new zzcg(zzce.zzb, zzcd.zzaa, e11.getMessage(), null, 8, null);
         }
     }
 }

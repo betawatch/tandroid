@@ -4,7 +4,7 @@ import b4.e0;
 import m1.j;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class b {
     public final String a;
@@ -45,7 +45,7 @@ public final class b {
             return false;
         }
         int i11 = this.c;
-        return i11 == 0 ? i10 == 0 : j.a(i11, i10);
+        return i11 == 0 ? i10 == 0 : j.b(i11, i10);
     }
 
     public final int hashCode() {
@@ -54,7 +54,7 @@ public final class b {
         long j10 = this.b;
         int i10 = (((hashCode ^ 1000003) * 1000003) ^ ((int) (j10 ^ (j10 >>> 32)))) * 1000003;
         int i11 = this.c;
-        return (i11 != 0 ? j.b(i11) : 0) ^ i10;
+        return (i11 != 0 ? j.c(i11) : 0) ^ i10;
     }
 
     public final String toString() {

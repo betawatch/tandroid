@@ -1,471 +1,173 @@
 package org.telegram.ui;
 
 import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Rect;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.TextView;
-import j$.util.Objects;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public abstract class j11 extends org.telegram.ui.Components.y9 implements NotificationCenter.NotificationCenterDelegate {
-    public boolean B;
-    public final Rect C;
-    public final vy0 D;
-    public final oh.a h;
-    public final org.telegram.ui.Components.k81 n;
-    public final nh.h6 r;
-    public final i11 s;
-    public int v;
-    public boolean w;
-    public ValueAnimator x;
-    public float y;
+public final /* synthetic */ class j11 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public j11(Context context, org.telegram.ui.Components.qv0 qv0Var, nh.h6 h6Var, final org.telegram.ui.Components.rr0 rr0Var) {
-        super(context, qv0Var);
-        this.C = new Rect();
-        this.r = h6Var;
-        Objects.requireNonNull(h6Var);
-        this.D = new vy0(h6Var, 7);
-        final org.telegram.ui.Components.sr0 sr0Var = (org.telegram.ui.Components.sr0) this;
-        oh.a aVar = new oh.a(sr0Var, context, rr0Var);
-        this.h = aVar;
-        aVar.setAllowDisallowInterceptTouch(true);
-        i11 i11Var = new i11(sr0Var);
-        this.s = i11Var;
-        i11Var.a = h6Var.a();
-        aVar.setAdapter(i11Var);
-        aVar.setTranslationY(AndroidUtilities.dp(42.0f));
-        org.telegram.ui.Components.k81 n10 = aVar.n(10, true);
-        this.n = n10;
-        int i10 = org.telegram.ui.ActionBar.j6.Gh;
-        int i11 = org.telegram.ui.ActionBar.j6.G6;
-        int i12 = org.telegram.ui.ActionBar.j6.Eh;
-        int i13 = org.telegram.ui.ActionBar.j6.Hh;
-        int i14 = org.telegram.ui.ActionBar.j6.s8;
-        n10.M = i10;
-        n10.N = i11;
-        n10.O = i12;
-        n10.P = i13;
-        n10.Q = i14;
-        n10.L.setColor(org.telegram.ui.ActionBar.j6.v0(i10, n10.g0));
-        n10.r = 12;
-        final int i15 = 0;
-        n10.setPreTabClick(new Utilities.Callback2Return() { // from class: org.telegram.ui.g11
-            @Override // org.telegram.messenger.Utilities.Callback2Return
-            public final Object run(Object obj, Object obj2) {
-                nh.t6 storiesController;
-                Integer num = (Integer) obj;
-                switch (i15) {
-                    case 0:
-                        if (!sr0Var.w) {
-                            if (num.intValue() != -1) {
-                                break;
-                            } else {
-                                org.telegram.ui.Components.rr0 rr0Var2 = rr0Var;
-                                org.telegram.ui.Components.z4.S(rr0Var2.a, rr0Var2.b, rr0Var2.c, new org.telegram.ui.Components.fv(rr0Var2, 19));
-                                break;
-                            }
-                        } else {
-                            break;
-                        }
-                    default:
-                        View view = (View) obj2;
-                        if (num.intValue() != -1 && num.intValue() != 0 && !sr0Var.w) {
-                            final int intValue = num.intValue();
-                            final org.telegram.ui.Components.rr0 rr0Var3 = rr0Var;
-                            org.telegram.ui.Components.yu0 yu0Var = rr0Var3.d;
-                            org.telegram.ui.ActionBar.p2 p2Var = yu0Var.s1;
-                            storiesController = yu0Var.getStoriesController();
-                            if (storiesController.i(yu0Var.g1)) {
-                                org.telegram.ui.Components.o70 H = org.telegram.ui.Components.o70.H(p2Var, view);
-                                H.W(new kh.t2(rr0Var3));
-                                final int i16 = 0;
-                                H.c(R.drawable.menu_add_stories, LocaleController.getString(R.string.StoriesAlbumMenuAddStories), new Runnable() { // from class: org.telegram.ui.Components.pr0
-                                    @Override // java.lang.Runnable
-                                    public final void run() {
-                                        switch (i16) {
-                                            case 0:
-                                                yu0 yu0Var2 = rr0Var3.d;
-                                                yu0Var2.O0(yu0Var2.s1, yu0Var2.g1, intValue);
-                                                break;
-                                            case 1:
-                                                yu0 yu0Var3 = rr0Var3.d;
-                                                yu0Var3.Q0(yu0Var3.s1, yu0Var3.g1, intValue);
-                                                break;
-                                            case 2:
-                                                rr0Var3.d.d1(intValue);
-                                                break;
-                                            default:
-                                                yu0 yu0Var4 = rr0Var3.d;
-                                                yu0Var4.P0(yu0Var4.s1, yu0Var4.g1, intValue);
-                                                break;
-                                        }
-                                    }
-                                }, false);
-                                yu0Var.x(H, p2Var, yu0Var.g1, intValue);
-                                final int i17 = 1;
-                                H.c(R.drawable.msg_edit, LocaleController.getString(R.string.StoriesAlbumMenuEditName), new Runnable() { // from class: org.telegram.ui.Components.pr0
-                                    @Override // java.lang.Runnable
-                                    public final void run() {
-                                        switch (i17) {
-                                            case 0:
-                                                yu0 yu0Var2 = rr0Var3.d;
-                                                yu0Var2.O0(yu0Var2.s1, yu0Var2.g1, intValue);
-                                                break;
-                                            case 1:
-                                                yu0 yu0Var3 = rr0Var3.d;
-                                                yu0Var3.Q0(yu0Var3.s1, yu0Var3.g1, intValue);
-                                                break;
-                                            case 2:
-                                                rr0Var3.d.d1(intValue);
-                                                break;
-                                            default:
-                                                yu0 yu0Var4 = rr0Var3.d;
-                                                yu0Var4.P0(yu0Var4.s1, yu0Var4.g1, intValue);
-                                                break;
-                                        }
-                                    }
-                                }, false);
-                                final int i18 = 2;
-                                H.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.StoriesAlbumMenuReorder), new Runnable() { // from class: org.telegram.ui.Components.pr0
-                                    @Override // java.lang.Runnable
-                                    public final void run() {
-                                        switch (i18) {
-                                            case 0:
-                                                yu0 yu0Var2 = rr0Var3.d;
-                                                yu0Var2.O0(yu0Var2.s1, yu0Var2.g1, intValue);
-                                                break;
-                                            case 1:
-                                                yu0 yu0Var3 = rr0Var3.d;
-                                                yu0Var3.Q0(yu0Var3.s1, yu0Var3.g1, intValue);
-                                                break;
-                                            case 2:
-                                                rr0Var3.d.d1(intValue);
-                                                break;
-                                            default:
-                                                yu0 yu0Var4 = rr0Var3.d;
-                                                yu0Var4.P0(yu0Var4.s1, yu0Var4.g1, intValue);
-                                                break;
-                                        }
-                                    }
-                                }, false);
-                                final int i19 = 3;
-                                H.c(R.drawable.msg_delete, LocaleController.getString(R.string.StoriesAlbumMenuDeleteAlbum), new Runnable() { // from class: org.telegram.ui.Components.pr0
-                                    @Override // java.lang.Runnable
-                                    public final void run() {
-                                        switch (i19) {
-                                            case 0:
-                                                yu0 yu0Var2 = rr0Var3.d;
-                                                yu0Var2.O0(yu0Var2.s1, yu0Var2.g1, intValue);
-                                                break;
-                                            case 1:
-                                                yu0 yu0Var3 = rr0Var3.d;
-                                                yu0Var3.Q0(yu0Var3.s1, yu0Var3.g1, intValue);
-                                                break;
-                                            case 2:
-                                                rr0Var3.d.d1(intValue);
-                                                break;
-                                            default:
-                                                yu0 yu0Var4 = rr0Var3.d;
-                                                yu0Var4.P0(yu0Var4.s1, yu0Var4.g1, intValue);
-                                                break;
-                                        }
-                                    }
-                                }, true);
-                                H.Z();
-                            }
-                            break;
-                        } else {
-                            break;
-                        }
+    public /* synthetic */ j11(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
+    }
+
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                m11 m11Var = (m11) this.b;
+                m11Var.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m11Var.a();
+                break;
+            case 1:
+                z11 z11Var = (z11) this.b;
+                z11Var.y = AndroidUtilities.lerp(z11Var.B, valueAnimator.getAnimatedFraction());
+                z11Var.h.setTextColor(i0.a.d(z11Var.y, org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.z6, false), org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.q6, false)));
+                z11Var.r.setAlpha((z11Var.y / 2.0f) + 0.5f);
+                break;
+            case 2:
+                ((o21) this.b).h.s(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 3:
+                n21 n21Var = (n21) this.b;
+                n21Var.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                n21Var.L.invalidate();
+                break;
+            case 4:
+                SecretMediaViewer secretMediaViewer = ((g41) this.b).d;
+                secretMediaViewer.X.h0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                secretMediaViewer.X.invalidate();
+                break;
+            case 5:
+                SecretMediaViewer secretMediaViewer2 = ((g41) this.b).d;
+                secretMediaViewer2.X.h0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                secretMediaViewer2.X.invalidate();
+                break;
+            case 6:
+                ((SecretMediaViewer) ((org.telegram.ui.Components.nm0) this.b).b).X.scrollTo(0, ((Integer) valueAnimator.getAnimatedValue()).intValue());
+                break;
+            case 7:
+                r41 r41Var = (r41) this.b;
+                r41Var.v = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (r41Var.P) {
+                    r41Var.K.invalidate();
+                    break;
+                }
+                break;
+            case 8:
+                ((h51) this.b).e.R0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                break;
+            case 9:
+                g61 g61Var = (g61) this.b;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                g61Var.r = floatValue;
+                View view = g61Var.e;
+                if (view != null) {
+                    view.setAlpha(floatValue);
+                    break;
+                } else {
+                    fg.y yVar = g61Var.d;
+                    if (yVar != null) {
+                        yVar.invalidate();
                         break;
+                    }
                 }
-                return Boolean.FALSE;
-            }
-        });
-        final int i16 = 1;
-        n10.setOnTabLongClick(new Utilities.Callback2Return() { // from class: org.telegram.ui.g11
-            @Override // org.telegram.messenger.Utilities.Callback2Return
-            public final Object run(Object obj, Object obj2) {
-                nh.t6 storiesController;
-                Integer num = (Integer) obj;
-                switch (i16) {
-                    case 0:
-                        if (!sr0Var.w) {
-                            if (num.intValue() != -1) {
-                                break;
-                            } else {
-                                org.telegram.ui.Components.rr0 rr0Var2 = rr0Var;
-                                org.telegram.ui.Components.z4.S(rr0Var2.a, rr0Var2.b, rr0Var2.c, new org.telegram.ui.Components.fv(rr0Var2, 19));
-                                break;
-                            }
-                        } else {
-                            break;
-                        }
-                    default:
-                        View view = (View) obj2;
-                        if (num.intValue() != -1 && num.intValue() != 0 && !sr0Var.w) {
-                            final int intValue = num.intValue();
-                            final org.telegram.ui.Components.rr0 rr0Var3 = rr0Var;
-                            org.telegram.ui.Components.yu0 yu0Var = rr0Var3.d;
-                            org.telegram.ui.ActionBar.p2 p2Var = yu0Var.s1;
-                            storiesController = yu0Var.getStoriesController();
-                            if (storiesController.i(yu0Var.g1)) {
-                                org.telegram.ui.Components.o70 H = org.telegram.ui.Components.o70.H(p2Var, view);
-                                H.W(new kh.t2(rr0Var3));
-                                final int i162 = 0;
-                                H.c(R.drawable.menu_add_stories, LocaleController.getString(R.string.StoriesAlbumMenuAddStories), new Runnable() { // from class: org.telegram.ui.Components.pr0
-                                    @Override // java.lang.Runnable
-                                    public final void run() {
-                                        switch (i162) {
-                                            case 0:
-                                                yu0 yu0Var2 = rr0Var3.d;
-                                                yu0Var2.O0(yu0Var2.s1, yu0Var2.g1, intValue);
-                                                break;
-                                            case 1:
-                                                yu0 yu0Var3 = rr0Var3.d;
-                                                yu0Var3.Q0(yu0Var3.s1, yu0Var3.g1, intValue);
-                                                break;
-                                            case 2:
-                                                rr0Var3.d.d1(intValue);
-                                                break;
-                                            default:
-                                                yu0 yu0Var4 = rr0Var3.d;
-                                                yu0Var4.P0(yu0Var4.s1, yu0Var4.g1, intValue);
-                                                break;
-                                        }
-                                    }
-                                }, false);
-                                yu0Var.x(H, p2Var, yu0Var.g1, intValue);
-                                final int i17 = 1;
-                                H.c(R.drawable.msg_edit, LocaleController.getString(R.string.StoriesAlbumMenuEditName), new Runnable() { // from class: org.telegram.ui.Components.pr0
-                                    @Override // java.lang.Runnable
-                                    public final void run() {
-                                        switch (i17) {
-                                            case 0:
-                                                yu0 yu0Var2 = rr0Var3.d;
-                                                yu0Var2.O0(yu0Var2.s1, yu0Var2.g1, intValue);
-                                                break;
-                                            case 1:
-                                                yu0 yu0Var3 = rr0Var3.d;
-                                                yu0Var3.Q0(yu0Var3.s1, yu0Var3.g1, intValue);
-                                                break;
-                                            case 2:
-                                                rr0Var3.d.d1(intValue);
-                                                break;
-                                            default:
-                                                yu0 yu0Var4 = rr0Var3.d;
-                                                yu0Var4.P0(yu0Var4.s1, yu0Var4.g1, intValue);
-                                                break;
-                                        }
-                                    }
-                                }, false);
-                                final int i18 = 2;
-                                H.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.StoriesAlbumMenuReorder), new Runnable() { // from class: org.telegram.ui.Components.pr0
-                                    @Override // java.lang.Runnable
-                                    public final void run() {
-                                        switch (i18) {
-                                            case 0:
-                                                yu0 yu0Var2 = rr0Var3.d;
-                                                yu0Var2.O0(yu0Var2.s1, yu0Var2.g1, intValue);
-                                                break;
-                                            case 1:
-                                                yu0 yu0Var3 = rr0Var3.d;
-                                                yu0Var3.Q0(yu0Var3.s1, yu0Var3.g1, intValue);
-                                                break;
-                                            case 2:
-                                                rr0Var3.d.d1(intValue);
-                                                break;
-                                            default:
-                                                yu0 yu0Var4 = rr0Var3.d;
-                                                yu0Var4.P0(yu0Var4.s1, yu0Var4.g1, intValue);
-                                                break;
-                                        }
-                                    }
-                                }, false);
-                                final int i19 = 3;
-                                H.c(R.drawable.msg_delete, LocaleController.getString(R.string.StoriesAlbumMenuDeleteAlbum), new Runnable() { // from class: org.telegram.ui.Components.pr0
-                                    @Override // java.lang.Runnable
-                                    public final void run() {
-                                        switch (i19) {
-                                            case 0:
-                                                yu0 yu0Var2 = rr0Var3.d;
-                                                yu0Var2.O0(yu0Var2.s1, yu0Var2.g1, intValue);
-                                                break;
-                                            case 1:
-                                                yu0 yu0Var3 = rr0Var3.d;
-                                                yu0Var3.Q0(yu0Var3.s1, yu0Var3.g1, intValue);
-                                                break;
-                                            case 2:
-                                                rr0Var3.d.d1(intValue);
-                                                break;
-                                            default:
-                                                yu0 yu0Var4 = rr0Var3.d;
-                                                yu0Var4.P0(yu0Var4.s1, yu0Var4.g1, intValue);
-                                                break;
-                                        }
-                                    }
-                                }, true);
-                                H.Z();
-                            }
-                            break;
-                        } else {
-                            break;
-                        }
-                        break;
+                break;
+            case 10:
+                n61 n61Var = (n61) this.b;
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                n61Var.I = floatValue2;
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = n61Var.v;
+                actionBarPopupWindow$ActionBarPopupWindowLayout.setBackScaleY(floatValue2);
+                org.telegram.ui.ActionBar.l1 l1Var = actionBarPopupWindow$ActionBarPopupWindowLayout.I;
+                actionBarPopupWindow$ActionBarPopupWindowLayout.setAlpha(org.telegram.ui.Components.pr.g.getInterpolation(n61Var.I));
+                int itemsCount = actionBarPopupWindow$ActionBarPopupWindowLayout.getItemsCount();
+                for (int i10 = 0; i10 < itemsCount; i10++) {
+                    float cascade = AndroidUtilities.cascade(n61Var.I, i10, itemsCount, 4.0f);
+                    l1Var.getChildAt(i10).setTranslationY((1.0f - cascade) * AndroidUtilities.dp(-12.0f));
+                    l1Var.getChildAt(i10).setAlpha(cascade);
                 }
-                return Boolean.FALSE;
-            }
-        });
-        addView(n10, k7.b6.e(-1, 42, 48));
-        b(!h6Var.h.isEmpty(), false, true);
-    }
-
-    public abstract void a();
-
-    public final void b(boolean z4, boolean z10, boolean z11) {
-        if (this.B != z4 || z11) {
-            this.B = z4;
-            setEnabled(z4);
-            ValueAnimator valueAnimator = this.x;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-                this.x = null;
-            }
-            if (!z10) {
-                this.y = z4 ? 1.0f : 0.0f;
-                a();
-                return;
-            }
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.y, z4 ? 1.0f : 0.0f);
-            this.x = ofFloat;
-            ofFloat.setDuration(480L);
-            this.x.setInterpolator(org.telegram.ui.Components.nr.h);
-            this.x.addUpdateListener(new h11(this, 0));
-            this.x.start();
-        }
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.storyAlbumsCollectionsUpdate) {
-            long longValue = ((Long) objArr[0]).longValue();
-            nh.h6 h6Var = this.r;
-            if (longValue != h6Var.b) {
-                return;
-            }
-            org.telegram.ui.Components.k81 k81Var = this.n;
-            int currentTabId = k81Var != null ? k81Var.getCurrentTabId() : 0;
-            boolean a2 = h6Var.a();
-            i11 i11Var = this.s;
-            i11Var.a = a2;
-            this.h.o(true);
-            b(!h6Var.h.isEmpty(), true, false);
-            int i12 = this.v;
-            if (i12 > 0) {
-                if (i11Var.i(i12) != -1) {
-                    AndroidUtilities.runOnUIThread(new f11(this, this.v, 1), 500L);
-                    this.v = 0;
-                    return;
+                break;
+            case 11:
+                p81.Z((p81) this.b, valueAnimator);
+                break;
+            case 12:
+                r91 r91Var = (r91) this.b;
+                r91Var.getClass();
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                r91Var.e.setAlpha(1.0f - floatValue3);
+                wf.g gVar = r91Var.b;
+                gVar.w0.f = floatValue3;
+                r91Var.c.invalidate();
+                gVar.invalidate();
+                break;
+            case 13:
+                ed1 ed1Var = (ed1) this.b;
+                ed1Var.getClass();
+                ed1Var.l1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ed1Var.u0.invalidate();
+                ed1Var.z0.invalidate();
+                ed1Var.O1.setAlpha(ed1Var.l1);
+                ed1Var.N1.invalidate();
+                ed1Var.V0();
+                break;
+            case 14:
+                ed1 ed1Var2 = ((sc1) this.b).a;
+                ed1Var2.l1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ed1Var2.u0.invalidate();
+                ed1Var2.z0.invalidate();
+                ed1Var2.O1.setAlpha(ed1Var2.l1);
+                ed1Var2.N1.invalidate();
+                ed1Var2.V0();
+                break;
+            case 15:
+                be1 be1Var = (be1) this.b;
+                be1Var.B = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                int childCount = be1Var.a.getChildCount();
+                for (int i11 = 0; i11 < childCount; i11++) {
+                    int R = RecyclerView.R(be1Var.a.getChildAt(i11));
+                    int i12 = be1Var.d.e;
+                    if (R < i12 || i12 <= 0) {
+                        be1Var.a.getChildAt(i11).setAlpha(1.0f);
+                    } else {
+                        be1Var.a.getChildAt(i11).setAlpha(be1Var.B);
+                    }
                 }
-                return;
-            }
-            if (k81Var == null || currentTabId <= 0 || h6Var.b(currentTabId) != null) {
-                return;
-            }
-            k81Var.d(0, 0);
+                break;
+            case 16:
+                ge1 ge1Var = (ge1) this.b;
+                ge1Var.getClass();
+                ge1Var.c = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ge1Var.invalidate();
+                break;
+            case 17:
+                mf1 mf1Var = (mf1) this.b;
+                mf1Var.getClass();
+                mf1Var.S0(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 18:
+                jf1 jf1Var = (jf1) this.b;
+                jf1Var.getClass();
+                jf1Var.c5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                jf1Var.f0();
+                break;
+            case 19:
+                kf1 kf1Var = (kf1) this.b;
+                kf1Var.getClass();
+                kf1Var.setViewsOffset(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            default:
+                ci1 ci1Var = (ci1) this.b;
+                ci1Var.getClass();
+                ci1Var.v0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ci1Var.G();
+                break;
         }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        return this.B && super.dispatchTouchEvent(motionEvent);
-    }
-
-    public int getCurrentAlbumId() {
-        return this.s.f(this.n.getCurrentPosition());
-    }
-
-    public float getVisibilityFactor() {
-        return this.y;
-    }
-
-    public float getVisualHeight() {
-        return getMeasuredHeight() * this.y;
-    }
-
-    @Override // org.telegram.ui.Components.y9, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        NotificationCenter.getInstance(this.r.a).addObserver(this, NotificationCenter.storyAlbumsCollectionsUpdate);
-    }
-
-    @Override // org.telegram.ui.Components.y9, android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        NotificationCenter.getInstance(this.r.a).removeObserver(this, NotificationCenter.storyAlbumsCollectionsUpdate);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
-        super.onLayout(z4, i10, i11, i12, i13);
-        int measuredWidth = getMeasuredWidth();
-        int visualHeight = (int) getVisualHeight();
-        Rect rect = this.C;
-        rect.set(0, 0, measuredWidth, visualHeight);
-        setClipBounds(rect);
-    }
-
-    public void setInitialTabId(int i10) {
-        if (this.s.i(i10) != -1) {
-            AndroidUtilities.runOnUIThread(new f11(this, i10, 0), 500L);
-        } else {
-            this.v = i10;
-        }
-    }
-
-    public void setReorderingAlbums(boolean z4) {
-        if (this.w == z4) {
-            return;
-        }
-        this.w = z4;
-        org.telegram.ui.Components.k81 k81Var = this.n;
-        k81Var.setReordering(z4);
-        boolean z10 = this.w;
-        org.telegram.ui.Components.sr0 sr0Var = (org.telegram.ui.Components.sr0) this;
-        org.telegram.ui.Components.yu0 yu0Var = sr0Var.E;
-        TextView textView = yu0Var.n0;
-        textView.setVisibility(0);
-        textView.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.4f).scaleY(z10 ? 1.0f : 0.4f).withEndAction(new jh.f(29, sr0Var, z10)).start();
-        yu0Var.q1(true);
-        if (z4) {
-            org.telegram.ui.ActionBar.p2 U = LaunchActivity.U();
-            if (U instanceof ProfileActivity) {
-                ProfileActivity profileActivity = (ProfileActivity) U;
-                profileActivity.G4(false);
-                AndroidUtilities.runOnUIThread(new ob0(profileActivity, 27));
-            }
-        }
-        if (z4) {
-            return;
-        }
-        AndroidUtilities.cancelRunOnUIThread(this.D);
-        nh.h6 h6Var = this.r;
-        h6Var.e();
-        h6Var.f(false);
-        int currentPosition = k81Var.getCurrentPosition();
-        i11 i11Var = this.s;
-        int f10 = i11Var.f(currentPosition);
-        this.h.o(true);
-        int i10 = i11Var.i(f10);
-        k81Var.e(0.0f, i10, i10);
     }
 }

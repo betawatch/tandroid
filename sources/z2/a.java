@@ -3,7 +3,7 @@ package z2;
 import m1.j;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a {
     public final int a;
@@ -25,13 +25,13 @@ public final class a {
             return false;
         }
         a aVar = (a) obj;
-        return j.a(this.a, aVar.a) && this.b == aVar.b;
+        return j.b(this.a, aVar.a) && this.b == aVar.b;
     }
 
     public final int hashCode() {
-        int b10 = (j.b(this.a) ^ 1000003) * 1000003;
+        int c3 = (j.c(this.a) ^ 1000003) * 1000003;
         long j10 = this.b;
-        return b10 ^ ((int) (j10 ^ (j10 >>> 32)));
+        return c3 ^ ((int) (j10 ^ (j10 >>> 32)));
     }
 
     public final String toString() {

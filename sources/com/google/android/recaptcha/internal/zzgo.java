@@ -7,13 +7,13 @@ import android.database.sqlite.SQLiteOpenHelper;
 import dd.l;
 import java.util.ArrayList;
 import java.util.List;
-import k7.s7;
+import k7.t7;
 import kotlin.jvm.internal.f;
 import kotlin.jvm.internal.j;
 import tc.g;
 import tc.o;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class zzgo extends SQLiteOpenHelper {
     public static final zzgn zza = new zzgn(null);
@@ -102,6 +102,6 @@ public final class zzgo extends SQLiteOpenHelper {
     }
 
     public final boolean zzf(zzgp zzgpVar) {
-        return zza(s7.a(zzgpVar)) == 1;
+        return zza(t7.a(zzgpVar)) == 1;
     }
 }

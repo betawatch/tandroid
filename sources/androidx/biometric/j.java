@@ -3,9 +3,10 @@ package androidx.biometric;
 import android.content.Context;
 import android.os.Build;
 import android.os.Handler;
+import com.google.android.gms.internal.play_billing.s1;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class j implements androidx.lifecycle.a0 {
     public final /* synthetic */ int a;
@@ -17,7 +18,7 @@ public final class j implements androidx.lifecycle.a0 {
     }
 
     @Override // androidx.lifecycle.a0
-    public final void m0(Object obj) {
+    public final void W(Object obj) {
         int i10;
         int i11 = this.a;
         r rVar = this.b;
@@ -50,11 +51,11 @@ public final class j implements androidx.lifecycle.a0 {
                     }
                     Context n10 = rVar.n();
                     int i13 = Build.VERSION.SDK_INT;
-                    if (i13 < 29 && ((i12 == 7 || i12 == 9) && n10 != null && j7.m.b(n10) && com.google.android.gms.internal.cast.n.a(rVar.i0.c()))) {
+                    if (i13 < 29 && ((i12 == 7 || i12 == 9) && n10 != null && j7.n.b(n10) && s1.a(rVar.i0.c()))) {
                         rVar.S();
                     } else if (rVar.R()) {
                         if (charSequence == null) {
-                            charSequence = h7.s.a(rVar.n(), i12);
+                            charSequence = j7.m.a(rVar.n(), i12);
                         }
                         if (i12 == 5) {
                             int i14 = rVar.i0.l;

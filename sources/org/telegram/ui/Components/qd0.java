@@ -2,9 +2,10 @@ package org.telegram.ui.Components;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class qd0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -17,28 +18,22 @@ public final class qd0 extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
+        EditTextBoldCursor editTextBoldCursor;
         switch (this.a) {
             case 0:
-                rd0 rd0Var = this.b;
-                AnimatorSet animatorSet = (AnimatorSet) rd0Var.e;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    rd0Var.e = null;
-                    break;
-                }
-                break;
-            case 1:
-                rd0 rd0Var2 = this.b;
-                AnimatorSet animatorSet2 = (AnimatorSet) rd0Var2.e;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    rd0Var2.e = null;
-                    break;
-                }
+                xd0 xd0Var = this.b.d;
+                xd0Var.M = 1.0f;
+                xd0Var.f(1.0f);
                 break;
             default:
-                rd0 rd0Var3 = this.b;
-                AnimatorSet animatorSet3 = (AnimatorSet) rd0Var3.e;
-                if (animatorSet3 != null && animatorSet3.equals(animator)) {
-                    rd0Var3.e = null;
+                rd0 rd0Var = this.b;
+                Runnable runnable = rd0Var.c;
+                if (runnable != null) {
+                    runnable.run();
+                }
+                if (SharedConfig.passcodeType == 1 && rd0Var.d.x.getVisibility() != 0 && (editTextBoldCursor = rd0Var.d.r) != null) {
+                    editTextBoldCursor.requestFocus();
+                    AndroidUtilities.showKeyboard(rd0Var.d.r);
                     break;
                 }
                 break;

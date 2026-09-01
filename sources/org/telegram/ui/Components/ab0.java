@@ -1,30 +1,38 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ab0 implements h5.d {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ViewGroup b;
+public final class ab0 extends e81 {
+    public final /* synthetic */ Context a;
+    public final /* synthetic */ yb0 b;
 
-    public /* synthetic */ ab0(ViewGroup viewGroup, int i10) {
-        this.a = i10;
-        this.b = viewGroup;
+    public ab0(yb0 yb0Var, Context context) {
+        this.b = yb0Var;
+        this.a = context;
     }
 
-    @Override // h5.d
-    public final void accept(Object obj) {
-        switch (this.a) {
-            case 0:
-                qb0 qb0Var = (qb0) this.b;
-                qb0Var.n.y(qb0Var.f.T((View) obj));
-                break;
-            default:
-                g61 g61Var = (g61) this.b;
-                g61Var.V2.Q(g61Var.T((View) obj), g61Var.Z2);
-                break;
-        }
+    @Override // org.telegram.ui.Components.e81
+    public final void b(View view, int i10, int i11) {
+        sb0 sb0Var = (sb0) view;
+        sb0Var.h();
+        sb0Var.k(false);
+    }
+
+    @Override // org.telegram.ui.Components.e81
+    public final View d(int i10) {
+        return new sb0(this.b, this.a, i10);
+    }
+
+    @Override // org.telegram.ui.Components.e81
+    public final int e() {
+        return this.b.e.a.size();
+    }
+
+    @Override // org.telegram.ui.Components.e81
+    public final int h(int i10) {
+        return ((vb0) this.b.e.a.get(i10)).a;
     }
 }

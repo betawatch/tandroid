@@ -1,58 +1,31 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.graphics.Canvas;
-import android.view.animation.OvershootInterpolator;
-import android.widget.FrameLayout;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class de1 extends FrameLayout {
-    public ValueAnimator a;
-    public boolean b;
-    public float c;
+public final /* synthetic */ class de1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ie1 b;
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float f10 = ((1.0f - this.c) * 0.2f) + 0.8f;
-        canvas.save();
-        canvas.scale(f10, f10, getMeasuredHeight() / 2.0f, getMeasuredWidth() / 2.0f);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-        if (isPressed()) {
-            float f11 = this.c;
-            if (f11 != 1.0f) {
-                this.c = Utilities.clamp(f11 + 0.16f, 1.0f, 0.0f);
-                invalidate();
-            }
-        }
+    public /* synthetic */ de1(ie1 ie1Var, int i10) {
+        this.a = i10;
+        this.b = ie1Var;
     }
 
-    @Override // android.view.View
-    public final void setPressed(boolean z4) {
-        ValueAnimator valueAnimator;
-        super.setPressed(z4);
-        if (this.b != z4) {
-            this.b = z4;
-            invalidate();
-            if (z4 && (valueAnimator = this.a) != null) {
-                valueAnimator.removeAllListeners();
-                this.a.cancel();
-            }
-            if (z4) {
-                return;
-            }
-            float f10 = this.c;
-            if (f10 != 0.0f) {
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, 0.0f);
-                this.a = ofFloat;
-                ofFloat.addUpdateListener(new h11(this, 16));
-                this.a.addListener(new ls0(this, 22));
-                this.a.setInterpolator(new OvershootInterpolator(5.0f));
-                this.a.setDuration(350L);
-                this.a.start();
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ie1 ie1Var = this.b;
+                ie1Var.getClass();
+                new fg.n1((org.telegram.ui.ActionBar.p2) ie1Var, 11, false).show();
+                break;
+            default:
+                ie1 ie1Var2 = this.b;
+                ie1Var2.e.requestFocus();
+                AndroidUtilities.showKeyboard(ie1Var2.e);
+                break;
         }
     }
 }

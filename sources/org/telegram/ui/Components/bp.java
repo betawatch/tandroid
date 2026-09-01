@@ -1,43 +1,32 @@
 package org.telegram.ui.Components;
 
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.tc1;
+import org.telegram.ui.dd1;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class bp implements tc1 {
-    public final /* synthetic */ kp a;
+public final /* synthetic */ class bp implements dd1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ cp b;
 
-    public bp(kp kpVar) {
-        this.a = kpVar;
+    public /* synthetic */ bp(cp cpVar, int i10) {
+        this.a = i10;
+        this.b = cpVar;
     }
 
-    @Override // org.telegram.ui.tc1
-    public final boolean V0() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.tc1
-    public final boolean a() {
-        return this.a.K;
-    }
-
-    @Override // org.telegram.ui.tc1
-    public final void n1(boolean z4) {
-        kp kpVar = this.a;
-        org.telegram.ui.xn xnVar = kpVar.v;
-        kpVar.K = !kpVar.K;
-        if (kpVar.J != null) {
-            kpVar.M = true;
-            xnVar.b7 = true;
-            TLRPC.WallPaper wallPaper = kpVar.v() ? null : kpVar.n.h;
-            org.telegram.ui.ActionBar.e4 e4Var = kpVar.J.a;
-            if (e4Var.a) {
-                kpVar.n.i(null, wallPaper, z4, Boolean.valueOf(kpVar.K), false);
-            } else {
-                kpVar.n.i(e4Var, wallPaper, z4, Boolean.valueOf(kpVar.K), false);
-            }
-            xnVar.b7 = false;
+    @Override // org.telegram.ui.dd1
+    public final void a(TLRPC.TL_wallPaper tL_wallPaper) {
+        switch (this.a) {
+            case 0:
+                mp mpVar = this.b.a;
+                mpVar.V.dismissInternal();
+                mpVar.dismiss();
+                break;
+            default:
+                mp mpVar2 = this.b.a;
+                mpVar2.V.dismissInternal();
+                mpVar2.dismiss();
+                break;
         }
     }
 }

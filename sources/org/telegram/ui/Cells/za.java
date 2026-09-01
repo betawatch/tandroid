@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBox;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public abstract class za extends FrameLayout {
     public int a;
@@ -43,14 +43,14 @@ public abstract class za extends FrameLayout {
                 this.v = context.getResources().getDrawable(R.drawable.background_selected).mutate();
                 Paint paint2 = new Paint();
                 this.s = paint2;
-                paint2.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Lh, false));
+                paint2.setColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.Lh, false));
                 return;
             }
             ya yaVar = new ya(this, context);
             yaVarArr[i11] = yaVar;
             addView(yaVar);
-            yaVar.setOnClickListener(new dg.m2(this, yaVar, i11, 5));
-            yaVar.setOnLongClickListener(new kh.j2(this, yaVar, i11));
+            yaVar.setOnClickListener(new eg.k2(this, yaVar, i11, 5));
+            yaVar.setOnLongClickListener(new lh.i2(this, yaVar, i11));
             i11++;
         }
     }
@@ -63,7 +63,7 @@ public abstract class za extends FrameLayout {
 
     public final void c(int i10, boolean z4, boolean z10) {
         ya yaVar = this.c[i10];
-        nh.y3 y3Var = yaVar.a;
+        oh.a4 a4Var = yaVar.a;
         CheckBox checkBox = yaVar.c;
         if (checkBox.getVisibility() != 0) {
             checkBox.setVisibility(0);
@@ -77,13 +77,13 @@ public abstract class za extends FrameLayout {
         if (z10) {
             AnimatorSet animatorSet2 = new AnimatorSet();
             yaVar.f = animatorSet2;
-            animatorSet2.playTogether(ObjectAnimator.ofFloat(y3Var, "scaleX", z4 ? 0.8875f : 1.0f), ObjectAnimator.ofFloat(y3Var, "scaleY", z4 ? 0.8875f : 1.0f));
+            animatorSet2.playTogether(ObjectAnimator.ofFloat(a4Var, "scaleX", z4 ? 0.8875f : 1.0f), ObjectAnimator.ofFloat(a4Var, "scaleY", z4 ? 0.8875f : 1.0f));
             yaVar.f.setDuration(200L);
-            yaVar.f.addListener(new dg.w2(17, yaVar, z4));
+            yaVar.f.addListener(new eg.u2(15, yaVar, z4));
             yaVar.f.start();
         } else {
-            y3Var.setScaleX(z4 ? 0.8875f : 1.0f);
-            y3Var.setScaleY(z4 ? 0.8875f : 1.0f);
+            a4Var.setScaleX(z4 ? 0.8875f : 1.0f);
+            a4Var.setScaleY(z4 ? 0.8875f : 1.0f);
         }
         yaVar.invalidate();
     }

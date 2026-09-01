@@ -1,84 +1,62 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.text.TextUtils;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.view.View;
-import android.view.animation.Interpolator;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.Button;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.ThemeActivity;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class eb1 implements org.telegram.ui.Components.il0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class eb1 extends View {
+    public static final /* synthetic */ int c = 0;
+    public final Paint a;
+    public int[] b;
 
-    public /* synthetic */ eb1(Object obj, Object obj2, Object obj3, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
+    public eb1(Context context) {
+        super(context);
+        this.a = new Paint(1);
+        this.b = new int[7];
     }
 
-    @Override // org.telegram.ui.Components.il0
-    public final void f(int i10, View view) {
-        Interpolator interpolator;
-        int i11 = this.a;
-        Object obj = this.d;
-        Object obj2 = this.c;
-        Object obj3 = this.b;
-        switch (i11) {
-            case 0:
-                nb1 nb1Var = (nb1) obj2;
-                jb1 jb1Var = (jb1) obj;
-                ThemeActivity themeActivity = ((lb1) obj3).e;
-                int i12 = themeActivity.f;
-                org.telegram.ui.ActionBar.i6 A0 = i12 == 1 ? org.telegram.ui.ActionBar.j6.J : org.telegram.ui.ActionBar.j6.A0();
-                if (i10 == nb1Var.h() - 1) {
-                    interpolator = null;
-                    themeActivity.presentFragment(new cd1(A0, false, 1, false, i12 == 1));
-                } else {
-                    interpolator = null;
-                    org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) nb1Var.e.get(i10);
-                    if (!TextUtils.isEmpty(h6Var.o) && h6Var.a != org.telegram.ui.ActionBar.j6.n) {
-                        org.telegram.ui.ActionBar.e6.a(false);
-                    }
-                    int i13 = A0.V;
-                    int i14 = h6Var.a;
-                    if (i13 != i14) {
-                        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, A0, Boolean.valueOf(i12 == 1), null, Integer.valueOf(h6Var.a));
-                        org.telegram.ui.ActionBar.e4.q(A0, h6Var.a);
-                        org.telegram.ui.ActionBar.j6.F1(themeActivity);
-                    } else {
-                        themeActivity.presentFragment(new cd1(A0, false, 1, i14 >= 100, i12 == 1));
-                    }
-                }
-                int left = view.getLeft();
-                int right = view.getRight();
-                int dp = AndroidUtilities.dp(52.0f);
-                int i15 = left - dp;
-                if (i15 < 0) {
-                    jb1Var.v0(i15, 0, interpolator);
-                } else {
-                    int i16 = right + dp;
-                    if (i16 > jb1Var.getMeasuredWidth()) {
-                        jb1Var.v0(i16 - jb1Var.getMeasuredWidth(), 0, interpolator);
-                    }
-                }
-                int childCount = jb1Var.getChildCount();
-                for (int i17 = 0; i17 < childCount; i17++) {
-                    View childAt = jb1Var.getChildAt(i17);
-                    if (childAt instanceof ThemeActivity.InnerAccentView) {
-                        ((ThemeActivity.InnerAccentView) childAt).a(true);
-                    }
-                }
-                break;
-            default:
-                e11.V((e11) obj3, (Context) obj2, (String) obj, view, i10);
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float measuredWidth = getMeasuredWidth() * 0.5f;
+        float measuredHeight = getMeasuredHeight() * 0.5f;
+        float dp = AndroidUtilities.dp(5.0f);
+        float dp2 = AndroidUtilities.dp(20.0f) - dp;
+        Paint.Style style = Paint.Style.FILL;
+        Paint paint = this.a;
+        paint.setStyle(style);
+        int i10 = 0;
+        paint.setColor(this.b[0]);
+        canvas.drawCircle(measuredWidth, measuredHeight, dp, paint);
+        double d = 0.0d;
+        while (i10 < 6) {
+            float sin = (((float) Math.sin(d)) * dp2) + measuredWidth;
+            float cos = measuredHeight - (((float) Math.cos(d)) * dp2);
+            i10++;
+            paint.setColor(this.b[i10]);
+            canvas.drawCircle(sin, cos, dp, paint);
+            d += 1.0471975511965976d;
         }
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setText(LocaleController.getString("ColorPickerMainColor", R.string.ColorPickerMainColor));
+        accessibilityNodeInfo.setClassName(Button.class.getName());
+        accessibilityNodeInfo.setEnabled(true);
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), TLObject.FLAG_30));
     }
 }

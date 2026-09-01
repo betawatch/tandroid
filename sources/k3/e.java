@@ -5,13 +5,13 @@ import android.media.AudioDeviceInfo;
 import android.media.MediaDrmResetException;
 import android.util.Base64;
 import com.google.firebase.sessions.FirebaseSessionsRegistrar;
-import kh.q5;
 import la.d0;
 import la.j0;
 import la.l;
 import la.n0;
 import la.s;
-import lh.g5;
+import lh.q5;
+import mh.g5;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.TLObject;
@@ -19,11 +19,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.ui.ActionBar.c2;
 import org.telegram.ui.ActionBar.d2;
-import org.telegram.ui.og1;
+import org.telegram.ui.qg1;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements h5.j, r8.i, c2, GenericProvider, c9.e, Vector.TLDeserializer {
+public final /* synthetic */ class e implements h5.j, r8.i, c9.e, Vector.TLDeserializer, c2, GenericProvider {
     public final /* synthetic */ int a;
 
     public /* synthetic */ e(int i10) {
@@ -48,7 +48,7 @@ public final /* synthetic */ class e implements h5.j, r8.i, c2, GenericProvider,
     }
 
     @Override // c9.e
-    public Object f0(c5.j jVar) {
+    public Object e0(c5.j jVar) {
         l lVar;
         j0 j0Var;
         d0 d0Var;
@@ -56,19 +56,19 @@ public final /* synthetic */ class e implements h5.j, r8.i, c2, GenericProvider,
         s sVar;
         n0 n0Var;
         switch (this.a) {
-            case 20:
+            case 17:
                 lVar = FirebaseSessionsRegistrar.getComponents$lambda-0(jVar);
                 return lVar;
-            case 21:
+            case 18:
                 j0Var = FirebaseSessionsRegistrar.getComponents$lambda-1(jVar);
                 return j0Var;
-            case 22:
+            case 19:
                 d0Var = FirebaseSessionsRegistrar.getComponents$lambda-2(jVar);
                 return d0Var;
-            case 23:
+            case 20:
                 hVar = FirebaseSessionsRegistrar.getComponents$lambda-3(jVar);
                 return hVar;
-            case 24:
+            case 21:
                 sVar = FirebaseSessionsRegistrar.getComponents$lambda-4(jVar);
                 return sVar;
             default:
@@ -82,24 +82,6 @@ public final /* synthetic */ class e implements h5.j, r8.i, c2, GenericProvider,
         byte[] bArr = new byte[12];
         h.i.nextBytes(bArr);
         return Base64.encodeToString(bArr, 10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.c2
-    public void i(d2 d2Var, int i10) {
-        switch (this.a) {
-            case 9:
-                d2Var.dismiss();
-                break;
-            case 10:
-                d2Var.dismiss();
-                break;
-            case 27:
-                g5.d2(new og1(6, null));
-                break;
-            default:
-                int i11 = g5.n1;
-                break;
-        }
     }
 
     @Override // h5.j
@@ -123,6 +105,21 @@ public final /* synthetic */ class e implements h5.j, r8.i, c2, GenericProvider,
                 break;
             default:
                 bVar.getClass();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.c2
+    public void j(d2 d2Var, int i10) {
+        switch (this.a) {
+            case 24:
+                d2Var.dismiss();
+                break;
+            case 25:
+                d2Var.dismiss();
+                break;
+            default:
+                g5.d2(new qg1(6, null));
                 break;
         }
     }

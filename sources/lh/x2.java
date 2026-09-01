@@ -1,51 +1,97 @@
 package lh;
 
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import mh.j7;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagePreviewParams;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.oy;
+import org.telegram.ui.Components.db0;
+import org.telegram.ui.Components.pr0;
+import org.telegram.ui.Components.q70;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.sb0;
+import org.telegram.ui.Components.xb0;
+import org.telegram.ui.Components.yb0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class x2 implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d2 b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class x2 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ FrameLayout c;
+    public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
-    public final /* synthetic */ TLObject f;
-    public final /* synthetic */ Object g;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ x2(g5 g5Var, af.f fVar, org.telegram.ui.ActionBar.d2 d2Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, CharSequence charSequence) {
-        this.d = g5Var;
-        this.e = fVar;
-        this.b = d2Var;
-        this.f = tL_starGiftUnique;
-        this.c = j10;
-        this.g = charSequence;
+    public /* synthetic */ x2(FrameLayout frameLayout, boolean z4, Object obj, Object obj2, Object obj3, int i10) {
+        this.a = i10;
+        this.c = frameLayout;
+        this.b = z4;
+        this.d = obj;
+        this.e = obj2;
+        this.f = obj3;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i10 = this.a;
+        Object obj = this.f;
+        Object obj2 = this.e;
+        Object obj3 = this.d;
+        boolean z4 = this.b;
+        FrameLayout frameLayout = this.c;
+        int i11 = 0;
+        switch (i10) {
             case 0:
-                AndroidUtilities.runOnUIThread(new a3((g5) this.d, (af.f) this.e, this.b, tLObject, (TL_stars.TL_starGiftUnique) this.f, tL_error, this.c, (CharSequence) this.g));
+                TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj3;
+                TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj2;
+                q70 q70Var = (q70) obj;
+                pr0 pr0Var = ((n3) frameLayout).a;
+                if (z4) {
+                    pr0Var.e.k(tL_starGiftCollection.collection_id, savedStarGift);
+                    qc.a0(pr0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, mh.g5.D1(savedStarGift.gift), tL_starGiftCollection.title))).j();
+                } else {
+                    j7 j7Var = pr0Var.e;
+                    int i12 = tL_starGiftCollection.collection_id;
+                    j7Var.getClass();
+                    ArrayList arrayList = new ArrayList();
+                    arrayList.add(savedStarGift);
+                    j7Var.a(i12, arrayList);
+                    qc.a0(pr0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, mh.g5.D1(savedStarGift.gift), tL_starGiftCollection.title))).j();
+                }
+                q70Var.u();
+                pr0Var.n();
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new a3((oy) this.d, this.b, tLObject, (TLRPC.User) this.e, (TLRPC.Chat) this.f, this.c, tL_error, (TLRPC.TL_messages_checkHistoryImportPeer) this.g));
-                break;
+                sb0 sb0Var = (sb0) frameLayout;
+                Context context = (Context) obj3;
+                xb0 xb0Var = (xb0) obj2;
+                xb0 xb0Var2 = (xb0) obj;
+                yb0 yb0Var = sb0Var.W;
+                MessagePreviewParams messagePreviewParams = yb0Var.d;
+                if (!z4) {
+                    new qc(yb0Var, yb0Var.C).Q(R.raw.star_premium_2, 36, AndroidUtilities.replaceSingleTag("Subscribe to **Telegram Premium** to forward formatted messages without the sender’s name.", new db0(sb0Var, context, i11))).j();
+                    break;
+                } else {
+                    boolean z10 = messagePreviewParams.hideForwardSendersName;
+                    messagePreviewParams.hideForwardSendersName = !z10;
+                    yb0Var.x = false;
+                    if (z10) {
+                        messagePreviewParams.hideCaption = false;
+                        if (xb0Var != null) {
+                            xb0Var.a(false, true);
+                        }
+                    }
+                    xb0Var2.a(messagePreviewParams.hideForwardSendersName, true);
+                    sb0Var.h();
+                    sb0Var.k(true);
+                    break;
+                }
         }
-    }
-
-    public /* synthetic */ x2(oy oyVar, org.telegram.ui.ActionBar.d2 d2Var, TLRPC.User user, TLRPC.Chat chat, long j10, TLRPC.TL_messages_checkHistoryImportPeer tL_messages_checkHistoryImportPeer) {
-        this.d = oyVar;
-        this.b = d2Var;
-        this.e = user;
-        this.f = chat;
-        this.c = j10;
-        this.g = tL_messages_checkHistoryImportPeer;
     }
 }

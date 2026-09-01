@@ -1,307 +1,313 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.drawable.BitmapDrawable;
-import android.os.Build;
-import android.text.SpannableString;
-import android.view.MotionEvent;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.view.View;
 import android.widget.FrameLayout;
-import java.util.ArrayList;
-import java.util.HashMap;
+import android.widget.HorizontalScrollView;
+import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class hd0 extends FrameLayout {
-    public Bitmap a;
-    public HashMap b;
-    public boolean c;
-    public BitmapDrawable d;
-    public boolean e;
+public final class hd0 extends HorizontalScrollView {
+    public int B;
+    public int C;
+    public int D;
+    public final org.telegram.ui.ActionBar.g6 E;
+    public int F;
+    public final z5 G;
+    public final z5 H;
+    public final LinearLayout.LayoutParams a;
+    public final oh.i5 b;
+    public m2.f c;
+    public final LinearLayout d;
+    public m2.h e;
+    public int f;
+    public int h;
+    public float n;
+    public final Paint r;
+    public int s;
+    public int v;
+    public boolean w;
+    public int x;
+    public int y;
 
-    public hd0(Context context) {
+    public hd0(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
-        this.e = true;
+        this.b = new oh.i5(1, this);
+        this.h = 0;
+        this.n = 0.0f;
+        this.s = -10066330;
+        this.v = 436207616;
+        this.w = false;
+        this.x = AndroidUtilities.dp(52.0f);
+        this.y = AndroidUtilities.dp(8.0f);
+        this.B = AndroidUtilities.dp(2.0f);
+        this.C = AndroidUtilities.dp(12.0f);
+        this.D = AndroidUtilities.dp(24.0f);
+        this.F = 0;
+        pr prVar = pr.h;
+        this.G = new z5(this, 350L, prVar);
+        this.H = new z5(this, 350L, prVar);
+        this.E = g6Var;
+        setFillViewport(true);
+        setWillNotDraw(false);
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.d = linearLayout;
+        linearLayout.setOrientation(0);
+        linearLayout.setLayoutParams(new FrameLayout.LayoutParams(-1, -1));
+        addView(linearLayout);
+        Paint paint = new Paint();
+        this.r = paint;
+        paint.setAntiAlias(true);
+        paint.setStyle(Paint.Style.FILL);
+        this.a = new LinearLayout.LayoutParams(-2, -1);
     }
 
-    public final void a() {
-        this.a = null;
-        this.d = null;
-        setBackground(null);
-        HashMap hashMap = this.b;
-        if (hashMap != null) {
-            hashMap.clear();
-        }
-        removeAllViews();
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r6v2, types: [android.view.View, android.widget.EditText, android.widget.TextView, dg.b, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.xt] */
-    public final void b(ArrayList arrayList, boolean z4, boolean z10, boolean z11) {
-        p9 p9Var;
-        int i10;
-        int i11;
-        setClipChildren(z11);
-        a();
-        this.b = new HashMap();
-        if (arrayList == null || arrayList.isEmpty()) {
+    public static void a(hd0 hd0Var, int i10, int i11) {
+        View childAt;
+        if (hd0Var.f == 0 || (childAt = hd0Var.d.getChildAt(i10)) == null) {
             return;
         }
-        int size = arrayList.size();
-        for (int i12 = 0; i12 < size; i12++) {
-            VideoEditedInfo.MediaEntity mediaEntity = (VideoEditedInfo.MediaEntity) arrayList.get(i12);
-            byte b10 = mediaEntity.type;
-            if (b10 == 0) {
-                p9 p9Var2 = new p9(getContext());
-                p9Var2.setLayerNum(12);
-                p9Var2.setAspectFit(true);
-                ImageReceiver imageReceiver = p9Var2.getImageReceiver();
-                if (z4) {
-                    imageReceiver.setAllowDecodeSingleFrame(true);
-                    imageReceiver.setAllowStartLottieAnimation(false);
-                    if (z10) {
-                        imageReceiver.setDelegate(new k2(24));
-                    }
-                }
-                imageReceiver.setImage(ImageLocation.getForDocument(mediaEntity.document), null, null, null, ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(mediaEntity.document.thumbs, 90), mediaEntity.document), null, null, 0L, "webp", mediaEntity.parentObject, 1);
-                if ((2 & mediaEntity.subType) != 0) {
-                    p9Var2.setScaleX(-1.0f);
-                }
-                mediaEntity.view = p9Var2;
-                p9Var = p9Var2;
-            } else if (b10 == 1) {
-                ?? gd0Var = new gd0(getContext());
-                gd0Var.setBackgroundColor(0);
-                gd0Var.setPadding(AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f));
-                gd0Var.setTextSize(0, mediaEntity.fontSize);
-                gd0Var.setTypeface(mediaEntity.textTypeface.d());
-                SpannableString spannableString = new SpannableString(Emoji.replaceEmoji(mediaEntity.text, gd0Var.getPaint().getFontMetricsInt(), false));
-                ArrayList<VideoEditedInfo.EmojiEntity> arrayList2 = mediaEntity.entities;
-                int size2 = arrayList2.size();
-                int i13 = 0;
-                while (i13 < size2) {
-                    VideoEditedInfo.EmojiEntity emojiEntity = arrayList2.get(i13);
-                    i13++;
-                    VideoEditedInfo.EmojiEntity emojiEntity2 = emojiEntity;
-                    u5 u5Var = new u5(emojiEntity2.document_id, gd0Var.getPaint().getFontMetricsInt());
-                    int i14 = emojiEntity2.offset;
-                    spannableString.setSpan(u5Var, i14, emojiEntity2.length + i14, 33);
-                }
-                Emoji.EmojiSpan[] emojiSpanArr = (Emoji.EmojiSpan[]) spannableString.getSpans(0, spannableString.length(), Emoji.EmojiSpan.class);
-                if (emojiSpanArr != null) {
-                    for (Emoji.EmojiSpan emojiSpan : emojiSpanArr) {
-                        emojiSpan.scale = 0.85f;
-                    }
-                }
-                gd0Var.setText(spannableString);
-                int i15 = 17;
-                gd0Var.setGravity(17);
-                int i16 = mediaEntity.textAlign;
-                if (i16 != 1) {
-                    i10 = 2;
-                    i15 = i16 != 2 ? 19 : 21;
-                } else {
-                    i10 = 2;
-                }
-                gd0Var.setGravity(i15);
-                int i17 = Build.VERSION.SDK_INT;
-                int i18 = mediaEntity.textAlign;
-                if (i18 != 1) {
-                    int i19 = 3;
-                    if (i18 == i10 ? LocaleController.isRTL : !LocaleController.isRTL) {
-                        i19 = 2;
-                    }
-                    i11 = i19;
-                } else {
-                    i11 = 4;
-                }
-                gd0Var.setTextAlignment(i11);
-                gd0Var.setHorizontallyScrolling(false);
-                gd0Var.setImeOptions(TLObject.FLAG_28);
-                gd0Var.setFocusableInTouchMode(true);
-                gd0Var.setEnabled(false);
-                gd0Var.setInputType(gd0Var.getInputType() | 16384);
-                if (i17 >= 23) {
-                    gd0Var.setBreakStrategy(0);
-                }
-                gd0Var.setShadowLayer(0.0f, 0.0f, 0.0f, 0);
-                int i20 = mediaEntity.color;
-                byte b11 = mediaEntity.subType;
-                if (b11 == 0) {
-                    gd0Var.setFrameColor(i20);
-                    i20 = AndroidUtilities.computePerceivedBrightness(mediaEntity.color) >= 0.721f ? -16777216 : -1;
-                } else if (b11 == 1) {
-                    gd0Var.setFrameColor(AndroidUtilities.computePerceivedBrightness(i20) >= 0.25f ? -1728053248 : -1711276033);
-                } else if (b11 == 2) {
-                    gd0Var.setFrameColor(AndroidUtilities.computePerceivedBrightness(i20) >= 0.25f ? -16777216 : -1);
-                } else {
-                    gd0Var.setFrameColor(0);
-                }
-                gd0Var.setTextColor(i20);
-                gd0Var.setCursorColor(i20);
-                gd0Var.setHandlesColor(i20);
-                gd0Var.setHighlightColor(org.telegram.ui.ActionBar.j6.l1(0.4f, i20));
-                mediaEntity.view = gd0Var;
-                p9Var = gd0Var;
+        int left = childAt.getLeft() + i11;
+        if (i10 > 0 || i11 > 0) {
+            left -= hd0Var.x;
+        }
+        if (left != hd0Var.F) {
+            hd0Var.F = left;
+            hd0Var.scrollTo(left, 0);
+        }
+    }
+
+    public final void b(int i10, CharSequence charSequence) {
+        gd0 gd0Var = new gd0(this, getContext(), i10);
+        gd0Var.setTextSize(1, 14.0f);
+        gd0Var.setTypeface(AndroidUtilities.bold());
+        gd0Var.setTextColor(c(0.6f));
+        gd0Var.setFocusable(true);
+        gd0Var.setGravity(17);
+        gd0Var.setText(charSequence);
+        k7.e6.b(gd0Var, 0.025f, 1.2f);
+        gd0Var.setOnClickListener(new mh.x0(this, i10, 8));
+        gd0Var.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
+        this.d.addView(gd0Var, k7.c6.k(10.0f, 0.0f, 10.0f, 0.0f, -2, -2));
+        gd0Var.setSelected(i10 == this.h);
+    }
+
+    public final int c(float f10) {
+        return i0.a.k(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Wk, this.E), (int) (f10 * 255.0f));
+    }
+
+    public final void d() {
+        this.d.removeAllViews();
+        this.f = this.e.getAdapter().b();
+        for (int i10 = 0; i10 < this.f; i10++) {
+            if (this.e.getAdapter() instanceof fd0) {
+                ((fd0) this.e.getAdapter()).getClass();
+                b(i10, this.e.getAdapter().d(i10));
             } else {
-                p9Var = null;
-            }
-            if (p9Var != null) {
-                addView(p9Var);
-                p9Var.setRotation((float) (((-mediaEntity.rotation) / 3.141592653589793d) * 180.0d));
-                this.b.put(p9Var, mediaEntity);
+                b(i10, this.e.getAdapter().d(i10));
             }
         }
+        e();
+        getViewTreeObserver().addOnGlobalLayoutListener(new androidx.mediarouter.app.k(this, 5));
     }
 
-    public final void c() {
-        int childCount = getChildCount();
-        for (int i10 = 0; i10 < childCount; i10++) {
-            getChildAt(i10).setVisibility(0);
-        }
-        setBackground(this.d);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        if (this.e) {
-            return super.drawChild(canvas, view, j10);
-        }
-        return false;
-    }
-
-    public Bitmap getBitmap() {
-        return this.a;
-    }
-
-    public Bitmap getThumb() {
-        float measuredWidth = getMeasuredWidth();
-        float measuredHeight = getMeasuredHeight();
-        float max = Math.max(measuredWidth / AndroidUtilities.dp(120.0f), measuredHeight / AndroidUtilities.dp(120.0f));
-        Bitmap createBitmap = Bitmap.createBitmap((int) (measuredWidth / max), (int) (measuredHeight / max), Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(createBitmap);
-        float f10 = 1.0f / max;
-        canvas.scale(f10, f10);
-        draw(canvas);
-        return createBitmap;
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
-        int i14;
-        int i15;
-        int i16;
-        int measuredHeight;
-        if (this.b != null) {
-            int measuredWidth = getMeasuredWidth();
-            int measuredHeight2 = getMeasuredHeight();
-            int childCount = getChildCount();
-            for (int i17 = 0; i17 < childCount; i17++) {
-                View childAt = getChildAt(i17);
-                VideoEditedInfo.MediaEntity mediaEntity = (VideoEditedInfo.MediaEntity) this.b.get(childAt);
-                if (mediaEntity != null) {
-                    int measuredWidth2 = childAt.getMeasuredWidth();
-                    int measuredHeight3 = childAt.getMeasuredHeight();
-                    if (childAt instanceof dg.b) {
-                        if (mediaEntity.customTextView) {
-                            i14 = ((int) (((mediaEntity.width / 2.0f) + mediaEntity.x) * measuredWidth)) - (childAt.getMeasuredWidth() / 2);
-                            i16 = (int) (((mediaEntity.height / 2.0f) + mediaEntity.y) * measuredHeight2);
-                            measuredHeight = childAt.getMeasuredHeight() / 2;
-                        } else {
-                            i14 = ((int) (measuredWidth * mediaEntity.textViewX)) - (childAt.getMeasuredWidth() / 2);
-                            i16 = (int) (measuredHeight2 * mediaEntity.textViewY);
-                            measuredHeight = childAt.getMeasuredHeight() / 2;
-                        }
-                        i15 = i16 - measuredHeight;
-                    } else {
-                        i14 = (int) (measuredWidth * mediaEntity.x);
-                        i15 = (int) (measuredHeight2 * mediaEntity.y);
-                    }
-                    childAt.layout(i14, i15, measuredWidth2 + i14, measuredHeight3 + i15);
-                }
+    public final void e() {
+        int i10 = 0;
+        while (i10 < this.f) {
+            View childAt = this.d.getChildAt(i10);
+            childAt.setLayoutParams(this.a);
+            if (this.w) {
+                childAt.setPadding(0, 0, 0, 0);
+                childAt.setLayoutParams(new LinearLayout.LayoutParams(-1, -1, 1.0f));
+            } else if (this.e.getAdapter() instanceof fd0) {
+                ((ey) ((fd0) this.e.getAdapter())).getClass();
+                int dp = AndroidUtilities.dp(i10 == 1 ? 12.0f : 18.0f);
+                childAt.setPadding(dp, 0, dp, 0);
+            } else {
+                int i11 = this.D;
+                childAt.setPadding(i11, 0, i11, 0);
             }
+            i10++;
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        this.c = true;
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
-        if (this.b != null) {
-            int measuredWidth = getMeasuredWidth();
-            int measuredHeight = getMeasuredHeight();
-            int childCount = getChildCount();
-            for (int i12 = 0; i12 < childCount; i12++) {
-                View childAt = getChildAt(i12);
-                VideoEditedInfo.MediaEntity mediaEntity = (VideoEditedInfo.MediaEntity) this.b.get(childAt);
-                if (mediaEntity != null) {
-                    if (childAt instanceof dg.b) {
-                        childAt.measure(View.MeasureSpec.makeMeasureSpec(mediaEntity.viewWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
-                        float measuredWidth2 = mediaEntity.customTextView ? (mediaEntity.width * getMeasuredWidth()) / mediaEntity.viewWidth : mediaEntity.scale * ((mediaEntity.textViewWidth * measuredWidth) / mediaEntity.viewWidth);
-                        childAt.setScaleX(measuredWidth2);
-                        childAt.setScaleY(measuredWidth2);
-                    } else {
-                        childAt.measure(View.MeasureSpec.makeMeasureSpec((int) (measuredWidth * mediaEntity.width), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (measuredHeight * mediaEntity.height), TLObject.FLAG_30));
-                    }
-                }
-            }
-        }
-        this.c = false;
+    public int getDividerPadding() {
+        return this.C;
+    }
+
+    public int getIndicatorColor() {
+        return this.s;
+    }
+
+    public int getIndicatorHeight() {
+        return this.y;
+    }
+
+    public int getScrollOffset() {
+        return this.x;
+    }
+
+    public boolean getShouldExpand() {
+        return this.w;
+    }
+
+    public int getTabPaddingLeftRight() {
+        return this.D;
+    }
+
+    public int getUnderlineColor() {
+        return this.v;
+    }
+
+    public int getUnderlineHeight() {
+        return this.B;
     }
 
     @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.c) {
+    public final void onDraw(Canvas canvas) {
+        float d;
+        float d10;
+        int i10;
+        if (isInEditMode() || this.f == 0) {
+            super.onDraw(canvas);
             return;
         }
-        super.requestLayout();
-    }
-
-    @Override // android.view.View
-    public void setAlpha(float f10) {
-        super.setAlpha(f10);
-        BitmapDrawable bitmapDrawable = this.d;
-        if (bitmapDrawable != null) {
-            bitmapDrawable.setAlpha((int) (255.0f * f10));
+        int height = getHeight();
+        int i11 = this.B;
+        LinearLayout linearLayout = this.d;
+        Paint paint = this.r;
+        if (i11 != 0) {
+            paint.setColor(this.v);
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(0.0f, height - this.B, linearLayout.getWidth(), height);
+            float f10 = this.B / 2.0f;
+            canvas.drawRoundRect(rectF, f10, f10, paint);
         }
-        int childCount = getChildCount();
-        for (int i10 = 0; i10 < childCount; i10++) {
-            View childAt = getChildAt(i10);
-            if (childAt != null && childAt.getParent() == this) {
-                childAt.setAlpha(f10);
+        View childAt = linearLayout.getChildAt(this.h);
+        if (childAt != null) {
+            float paddingLeft = childAt.getPaddingLeft() + childAt.getLeft();
+            float right = childAt.getRight() - childAt.getPaddingRight();
+            float f11 = this.n;
+            z5 z5Var = this.H;
+            z5 z5Var2 = this.G;
+            if (f11 <= 0.0f || (i10 = this.h) >= this.f - 1) {
+                d = z5Var2.d(paddingLeft, false);
+                d10 = z5Var.d(right, false);
+            } else {
+                View childAt2 = linearLayout.getChildAt(i10 + 1);
+                float paddingLeft2 = childAt2.getPaddingLeft() + childAt2.getLeft();
+                float right2 = childAt2.getRight() - childAt2.getPaddingRight();
+                float f12 = this.n;
+                float f13 = 1.0f - f12;
+                d = (paddingLeft * f13) + (paddingLeft2 * f12);
+                d10 = (f13 * right) + (f12 * right2);
+                z5Var2.d(d, true);
+                z5Var.d(d10, true);
+                if (childAt instanceof gd0) {
+                    gd0 gd0Var = (gd0) childAt;
+                    gd0Var.setTextColor(gd0Var.a.c(AndroidUtilities.lerp(0.6f, 0.8f, 1.0f - this.n)));
+                }
+                if (childAt2 instanceof gd0) {
+                    gd0 gd0Var2 = (gd0) childAt2;
+                    gd0Var2.setTextColor(gd0Var2.a.c(AndroidUtilities.lerp(0.6f, 0.8f, this.n)));
+                }
+            }
+            if (this.y != 0) {
+                paint.setColor(this.s);
+                RectF rectF2 = AndroidUtilities.rectTmp;
+                rectF2.set(d - AndroidUtilities.dp(11.0f), getPaddingTop(), d10 + AndroidUtilities.dp(11.0f), height - getPaddingBottom());
+                rectF2.offset(getPaddingLeft(), 0.0f);
+                canvas.drawRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, paint);
             }
         }
+        super.onDraw(canvas);
     }
 
-    public void setBitmap(Bitmap bitmap) {
-        this.a = bitmap;
-        BitmapDrawable bitmapDrawable = new BitmapDrawable(bitmap);
-        this.d = bitmapDrawable;
-        setBackground(bitmapDrawable);
+    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        if (!this.w || View.MeasureSpec.getMode(i10) == 0) {
+            return;
+        }
+        this.d.measure(getMeasuredWidth() | TLObject.FLAG_30, i11);
+    }
+
+    @Override // android.widget.HorizontalScrollView, android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        if (this.w) {
+            return;
+        }
+        post(new ec0(this, 3));
+    }
+
+    public void setDividerPadding(int i10) {
+        this.C = i10;
+        invalidate();
+    }
+
+    public void setIndicatorColor(int i10) {
+        this.s = i10;
+        invalidate();
+    }
+
+    public void setIndicatorColorResource(int i10) {
+        this.s = getResources().getColor(i10);
+        invalidate();
+    }
+
+    public void setIndicatorHeight(int i10) {
+        this.y = i10;
+        invalidate();
+    }
+
+    public void setOnPageChangeListener(m2.f fVar) {
+        this.c = fVar;
+    }
+
+    public void setScrollOffset(int i10) {
+        this.x = i10;
+        invalidate();
+    }
+
+    public void setShouldExpand(boolean z4) {
+        this.w = z4;
+        this.d.setLayoutParams(new FrameLayout.LayoutParams(-1, -1));
+        e();
+        requestLayout();
+    }
+
+    public void setTabPaddingLeftRight(int i10) {
+        this.D = i10;
+        e();
+    }
+
+    public void setUnderlineColor(int i10) {
+        this.v = i10;
+        invalidate();
+    }
+
+    public void setUnderlineColorResource(int i10) {
+        this.v = getResources().getColor(i10);
+        invalidate();
+    }
+
+    public void setUnderlineHeight(int i10) {
+        this.B = i10;
+        invalidate();
+    }
+
+    public void setViewPager(m2.h hVar) {
+        this.e = hVar;
+        if (hVar.getAdapter() == null) {
+            throw new IllegalStateException("ViewPager does not have adapter instance.");
+        }
+        hVar.setOnPageChangeListener(this.b);
+        d();
     }
 }

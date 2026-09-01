@@ -11,7 +11,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.ui.Components.jb;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class v implements r3.k {
     public static final Pattern g = Pattern.compile("LOCAL:([^,]+)");
@@ -29,14 +29,14 @@ public final class v implements r3.k {
     }
 
     public final r3.v a(long j10) {
-        r3.v c22 = this.d.c2(0, 3);
+        r3.v i22 = this.d.i2(0, 3);
         m0 m0Var = new m0();
         m0Var.o = "text/vtt";
         m0Var.c = this.a;
         m0Var.s = j10;
-        c22.b(new n0(m0Var));
-        this.d.f1();
-        return c22;
+        i22.b(new n0(m0Var));
+        this.d.i1();
+        return i22;
     }
 
     @Override // r3.k
@@ -47,7 +47,7 @@ public final class v implements r3.k {
     @Override // r3.k
     public final void e(r3.m mVar) {
         this.d = mVar;
-        mVar.g2(new r3.n(-9223372036854775807L));
+        mVar.m2(new r3.n(-9223372036854775807L));
     }
 
     @Override // r3.k
@@ -137,14 +137,14 @@ public final class v implements r3.k {
     @Override // r3.k
     public final boolean i(r3.l lVar) {
         r3.h hVar = (r3.h) lVar;
-        hVar.h(this.e, 0, 6, false);
+        hVar.f(this.e, 0, 6, false);
         byte[] bArr = this.e;
         w wVar = this.c;
         wVar.D(6, bArr);
         if (e5.m.a(wVar)) {
             return true;
         }
-        hVar.h(this.e, 6, 3, false);
+        hVar.f(this.e, 6, 3, false);
         wVar.D(9, this.e);
         return e5.m.a(wVar);
     }

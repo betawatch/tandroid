@@ -3,7 +3,7 @@ package org.telegram.ui.Cells;
 import android.view.View;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e8 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -24,8 +24,8 @@ public final /* synthetic */ class e8 implements View.OnClickListener {
                 k8 k8Var = this.b;
                 TextView textView = k8Var.B;
                 TextView textView2 = k8Var.y;
-                eg.c1 c1Var = k8Var.C;
-                if (c1Var.getVisibility() != 0 || !c1Var.r.isEnabled()) {
+                fg.b1 b1Var = k8Var.C;
+                if (b1Var.getVisibility() != 0 || !b1Var.r.isEnabled()) {
                     if (textView2.getVisibility() != 0 || !textView2.isEnabled()) {
                         if (textView.getVisibility() == 0 && textView.isEnabled()) {
                             textView.performClick();
@@ -36,7 +36,7 @@ public final /* synthetic */ class e8 implements View.OnClickListener {
                         break;
                     }
                 } else {
-                    c1Var.performClick();
+                    b1Var.performClick();
                     break;
                 }
                 break;

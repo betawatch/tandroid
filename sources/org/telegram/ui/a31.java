@@ -1,37 +1,42 @@
 package org.telegram.ui;
 
+import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class a31 implements f31 {
-    public final /* synthetic */ boolean[] a;
-    public final /* synthetic */ Utilities.Callback b;
+public final /* synthetic */ class a31 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.messenger.video.a b;
     public final /* synthetic */ org.telegram.ui.Components.qc c;
+    public final /* synthetic */ Context d;
+    public final /* synthetic */ oh.h0 e;
 
-    public a31(boolean[] zArr, Utilities.Callback callback, org.telegram.ui.Components.qc qcVar) {
-        this.a = zArr;
-        this.b = callback;
+    public /* synthetic */ a31(org.telegram.messenger.video.a aVar, org.telegram.ui.Components.qc qcVar, Context context, oh.h0 h0Var, int i10) {
+        this.a = i10;
+        this.b = aVar;
         this.c = qcVar;
+        this.d = context;
+        this.e = h0Var;
     }
 
-    @Override // org.telegram.ui.f31
-    public final void a() {
-        Utilities.Callback callback;
-        boolean[] zArr = this.a;
-        if (!zArr[0] && (callback = this.b) != null) {
-            zArr[0] = true;
-            callback.run(Boolean.TRUE);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.run();
+                this.c.c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new mv(this.d, 2), this.e)).j();
+                break;
+            case 1:
+                this.b.run();
+                this.c.c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new mv(this.d, 5), this.e)).j();
+                break;
+            default:
+                this.b.run();
+                this.c.c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new mv(this.d, 6), this.e)).j();
+                break;
         }
-        AndroidUtilities.runOnUIThread(new vy0(this.c, 9), 200L);
-    }
-
-    @Override // org.telegram.ui.f31
-    public final /* synthetic */ void b() {
-    }
-
-    @Override // org.telegram.ui.f31
-    public final /* synthetic */ void c() {
     }
 }

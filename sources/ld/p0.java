@@ -1,8 +1,8 @@
 package ld;
 
-import k7.p7;
+import k7.q7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class p0 extends k1 {
     public final /* synthetic */ int e;
@@ -29,7 +29,7 @@ public final class p0 extends k1 {
                 l1 l1Var = (l1) this.f;
                 Object u10 = i().u();
                 if (u10 instanceof v) {
-                    l1Var.resumeWith(p7.a(((v) u10).a));
+                    l1Var.resumeWith(q7.a(((v) u10).a));
                     return;
                 } else {
                     l1Var.resumeWith(e0.u(u10));

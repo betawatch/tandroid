@@ -1,16 +1,16 @@
 package k7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class b3 implements u9.d {
     public static final b3 a = new b3();
-    public static final u9.c b = new u9.c("durationMs", vh.v2.h(e2.c.o(d.class, new a(1))));
-    public static final u9.c c = new u9.c("imageSource", vh.v2.h(e2.c.o(d.class, new a(2))));
-    public static final u9.c d = new u9.c("imageFormat", vh.v2.h(e2.c.o(d.class, new a(3))));
-    public static final u9.c e = new u9.c("imageByteSize", vh.v2.h(e2.c.o(d.class, new a(4))));
-    public static final u9.c f = new u9.c("imageWidth", vh.v2.h(e2.c.o(d.class, new a(5))));
-    public static final u9.c g = new u9.c("imageHeight", vh.v2.h(e2.c.o(d.class, new a(6))));
-    public static final u9.c h = new u9.c("rotationDegrees", vh.v2.h(e2.c.o(d.class, new a(7))));
+    public static final u9.c b = new u9.c("durationMs", w.c.h(e2.c.o(d.class, new a(1))));
+    public static final u9.c c = new u9.c("imageSource", w.c.h(e2.c.o(d.class, new a(2))));
+    public static final u9.c d = new u9.c("imageFormat", w.c.h(e2.c.o(d.class, new a(3))));
+    public static final u9.c e = new u9.c("imageByteSize", w.c.h(e2.c.o(d.class, new a(4))));
+    public static final u9.c f = new u9.c("imageWidth", w.c.h(e2.c.o(d.class, new a(5))));
+    public static final u9.c g = new u9.c("imageHeight", w.c.h(e2.c.o(d.class, new a(6))));
+    public static final u9.c h = new u9.c("rotationDegrees", w.c.h(e2.c.o(d.class, new a(7))));
 
     @Override // u9.a
     public final void a(Object obj, Object obj2) {

@@ -14,19 +14,19 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.b8;
 import org.telegram.ui.Components.c8;
-import org.telegram.ui.Components.mv;
-import org.telegram.ui.Components.qy0;
-import org.telegram.ui.Components.tm;
+import org.telegram.ui.Components.ov;
+import org.telegram.ui.Components.ry0;
+import org.telegram.ui.Components.vm;
 import org.telegram.ui.FiltersSetupActivity;
-import org.telegram.ui.dn0;
-import org.telegram.ui.pt;
-import org.telegram.ui.tl0;
-import org.telegram.ui.uy;
-import org.telegram.ui.v10;
-import org.telegram.ui.xy;
-import org.telegram.ui.z10;
+import org.telegram.ui.a20;
+import org.telegram.ui.fn0;
+import org.telegram.ui.qt;
+import org.telegram.ui.vl0;
+import org.telegram.ui.vy;
+import org.telegram.ui.w10;
+import org.telegram.ui.yy;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i1 implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final /* synthetic */ class i1 implements View.OnTouchListener {
         int i12;
         int i13;
         int i14;
-        f6 f6Var;
+        g6 g6Var;
         switch (this.a) {
             case 0:
                 p1 p1Var = (p1) this.b;
@@ -75,35 +75,35 @@ public final /* synthetic */ class i1 implements View.OnTouchListener {
                 c8Var.E.r(c8Var.n.T(xVar));
                 return false;
             case 2:
-                s6 = pt.q().s(motionEvent, r0.h, (tm) this.c, r0.K, ((mv) this.b).resourcesProvider);
+                s6 = qt.q().s(motionEvent, r0.h, (vm) this.c, r0.K, ((ov) this.b).resourcesProvider);
                 return s6;
             case 3:
-                s9 = pt.q().s(motionEvent, r0.e, (org.telegram.ui.Components.k) this.c, r0.getPreviewDelegate(), ((qy0) this.b).b);
+                s9 = qt.q().s(motionEvent, r0.e, (org.telegram.ui.Components.k) this.c, r0.getPreviewDelegate(), ((ry0) this.b).b);
                 return s9;
             case 4:
-                uy uyVar = (uy) this.b;
+                vy vyVar = (vy) this.b;
                 org.telegram.ui.Cells.g4 g4Var = (org.telegram.ui.Cells.g4) this.c;
-                uyVar.getClass();
+                vyVar.getClass();
                 if (motionEvent.getAction() != 0) {
                     return false;
                 }
-                xy xyVar = uyVar.d;
-                xyVar.c.r(xyVar.b.T(g4Var));
+                yy yyVar = vyVar.d;
+                yyVar.c.r(yyVar.b.T(g4Var));
                 return false;
             case 5:
-                z10 z10Var = (z10) this.b;
-                v10 v10Var = (v10) this.c;
+                a20 a20Var = (a20) this.b;
+                w10 w10Var = (w10) this.c;
                 if (motionEvent.getAction() != 0) {
                     return false;
                 }
-                FiltersSetupActivity filtersSetupActivity = z10Var.e;
-                filtersSetupActivity.c.r(filtersSetupActivity.a.T(v10Var));
+                FiltersSetupActivity filtersSetupActivity = a20Var.e;
+                filtersSetupActivity.c.r(filtersSetupActivity.a.T(w10Var));
                 return false;
             case 6:
-                dn0 dn0Var = (dn0) this.b;
+                fn0 fn0Var = (fn0) this.b;
                 Context context = (Context) this.c;
                 int i15 = 0;
-                if (dn0Var.getParentActivity() == null) {
+                if (fn0Var.getParentActivity() == null) {
                     return false;
                 }
                 if (motionEvent.getAction() == 1) {
@@ -134,24 +134,24 @@ public final /* synthetic */ class i1 implements View.OnTouchListener {
                             i13 = -1;
                             i14 = -1;
                         }
-                        AlertDialog$Builder x10 = org.telegram.ui.Components.z4.x(context, i10, i15, i11, i12, i14, i13, string, intValue == 8, new e3.d(dn0Var, intValue, editTextBoldCursor, 12));
+                        AlertDialog$Builder x10 = org.telegram.ui.Components.z4.x(context, i10, i15, i11, i12, i14, i13, string, intValue == 8, new e3.d(fn0Var, intValue, editTextBoldCursor, 12));
                         if (intValue == 8) {
-                            x10.h(LocaleController.getString(R.string.PassportSelectNotExpire), new tl0(0, dn0Var, editTextBoldCursor));
+                            x10.h(LocaleController.getString(R.string.PassportSelectNotExpire), new vl0(0, fn0Var, editTextBoldCursor));
                         }
-                        dn0Var.showDialog(x10.a);
-                    } catch (Exception e) {
-                        FileLog.e(e);
+                        fn0Var.showDialog(x10.a);
+                    } catch (Exception e6) {
+                        FileLog.e(e6);
                     }
                 }
                 return true;
             default:
-                ph.i1 i1Var = (ph.i1) this.b;
-                dg.n nVar = (dg.n) this.c;
-                pt q10 = pt.q();
-                ph.e1 e1Var = i1Var.b;
-                ph.f1 f1Var = i1Var.f;
-                f6Var = i1Var.r.resourcesProvider;
-                return q10.s(motionEvent, e1Var, nVar, f1Var, f6Var);
+                qh.i1 i1Var = (qh.i1) this.b;
+                ag.h hVar = (ag.h) this.c;
+                qt q10 = qt.q();
+                qh.e1 e1Var = i1Var.b;
+                qh.f1 f1Var = i1Var.f;
+                g6Var = i1Var.r.resourcesProvider;
+                return q10.s(motionEvent, e1Var, hVar, f1Var, g6Var);
         }
     }
 }

@@ -1,5 +1,6 @@
 package xb;
 
+import androidx.biometric.f0;
 import com.googlecode.mp4parser.c;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -7,11 +8,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import yb.k;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class a extends c {
     public static final Logger f;
-    public static final /* synthetic */ a3.c h;
+    public static final /* synthetic */ f0 h;
     public ByteBuffer e;
 
     static {
@@ -33,10 +34,10 @@ public abstract class a extends c {
         try {
             this.e.rewind();
             k.a(-1, this.e);
-        } catch (IOException e) {
-            logger.log(Level.WARNING, "Error parsing ObjectDescriptor", (Throwable) e);
-        } catch (IndexOutOfBoundsException e6) {
+        } catch (IOException e6) {
             logger.log(Level.WARNING, "Error parsing ObjectDescriptor", (Throwable) e6);
+        } catch (IndexOutOfBoundsException e10) {
+            logger.log(Level.WARNING, "Error parsing ObjectDescriptor", (Throwable) e10);
         }
     }
 

@@ -1,43 +1,24 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import android.text.style.CharacterStyle;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class ua0 extends CharacterStyle {
-    public final /* synthetic */ int a;
-    public final Object b;
+public final class ua0 extends u5 {
+    public final /* synthetic */ xa0 a;
 
-    public /* synthetic */ ua0(int i10, FrameLayout frameLayout) {
-        this.a = i10;
-        this.b = frameLayout;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ua0(xa0 xa0Var, TLRPC.Document document, Paint.FontMetricsInt fontMetricsInt) {
+        super(document, fontMetricsInt);
+        this.a = xa0Var;
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        switch (this.a) {
-            case 0:
-                textPaint.setTypeface(AndroidUtilities.bold());
-                int alpha = textPaint.getAlpha();
-                int i10 = org.telegram.ui.ActionBar.j6.n6;
-                ((va0) this.b).getClass();
-                textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
-                textPaint.setAlpha(alpha);
-                break;
-            case 1:
-                textPaint.setColor(org.telegram.ui.ActionBar.j6.v(org.telegram.ui.ActionBar.j6.l1(0.55f, textPaint.getColor()), org.telegram.ui.ActionBar.j6.l1(0.4f, ((zi0) this.b).F)));
-                break;
-            default:
-                textPaint.setColor(org.telegram.ui.ActionBar.j6.v(org.telegram.ui.ActionBar.j6.l1(0.55f, textPaint.getColor()), org.telegram.ui.ActionBar.j6.l1(0.4f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Oh, ((vh.v5) this.b).a))));
-                break;
-        }
-    }
-
-    public ua0(zi0 zi0Var) {
-        this.a = 1;
-        this.b = zi0Var;
+    @Override // org.telegram.ui.Components.u5, android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f10, int i12, int i13, int i14, Paint paint) {
+        int i15 = i14 + i12;
+        int i16 = this.measuredSize;
+        this.a.c.set((int) f10, (i15 - i16) / 2, (int) (f10 + i16), (i15 + i16) / 2);
     }
 }

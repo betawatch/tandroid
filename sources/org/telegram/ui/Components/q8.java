@@ -6,9 +6,9 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class q8 extends org.telegram.ui.q61 {
+public final class q8 extends org.telegram.ui.r61 {
     public boolean a2;
     public final /* synthetic */ w8 b2;
 
@@ -19,7 +19,7 @@ public final class q8 extends org.telegram.ui.q61 {
         this.a2 = true;
     }
 
-    @Override // org.telegram.ui.q61, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.r61, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
         super.onLayout(z4, i10, i11, i12, i13);
         if (this.a2) {
@@ -28,7 +28,7 @@ public final class q8 extends org.telegram.ui.q61 {
         }
     }
 
-    @Override // org.telegram.ui.q61
+    @Override // org.telegram.ui.r61
     public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
         int i10;
         TLRPC.TL_emojiList tL_emojiList;

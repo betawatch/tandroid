@@ -10,7 +10,7 @@ jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'EF0' uses e
 	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
  */
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class x0 {
     public static final x0 b;
@@ -93,7 +93,7 @@ public final class x0 {
 
     public x0(String str, int i10, int i11, int i12, p1 p1Var) {
         this.a = i11;
-        int i13 = y0.a[m1.j.b(i12)];
+        int i13 = y0.a[m1.j.c(i12)];
         if (i13 == 1) {
             p1Var.getClass();
         } else if (i13 == 2) {

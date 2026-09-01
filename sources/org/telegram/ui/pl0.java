@@ -1,74 +1,76 @@
 package org.telegram.ui;
 
-import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pl0 implements View.OnTouchListener {
+public final /* synthetic */ class pl0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ dn0 b;
+    public final /* synthetic */ fn0 b;
 
-    public /* synthetic */ pl0(dn0 dn0Var, int i10) {
+    public /* synthetic */ pl0(fn0 fn0Var, int i10) {
         this.a = i10;
-        this.b = dn0Var;
+        this.b = fn0Var;
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        int i10 = this.a;
-        int i11 = 2;
-        dn0 dn0Var = this.b;
-        int i12 = 1;
-        switch (i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        ViewGroup viewGroup;
+        switch (this.a) {
             case 0:
-                if (dn0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        yt ytVar = new yt(null, false);
-                        ytVar.r = new tl0(i12, dn0Var, view);
-                        dn0Var.presentFragment(ytVar);
-                        break;
-                    }
+                fn0 fn0Var = this.b;
+                ViewGroup[] viewGroupArr = fn0Var.W;
+                if (viewGroupArr != null && (viewGroup = viewGroupArr[0]) != null && viewGroup.getVisibility() == 0) {
+                    fn0Var.V[0].requestFocus();
+                    AndroidUtilities.showKeyboard(fn0Var.V[0]);
+                    break;
                 }
                 break;
             case 1:
-                if (dn0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(dn0Var.getParentActivity());
-                        String string = LocaleController.getString(R.string.PassportSelectGender);
-                        org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
-                        d2Var.O = string;
-                        alertDialog$Builder.f(new CharSequence[]{LocaleController.getString(R.string.PassportMale), LocaleController.getString(R.string.PassportFemale)}, new qv(dn0Var, i11));
-                        alertDialog$Builder.k(LocaleController.getString(R.string.Cancel), null);
-                        dn0Var.showDialog(d2Var);
-                        break;
-                    }
-                }
+                fn0 fn0Var2 = this.b;
+                fn0Var2.presentFragment(fn0Var2.e1, true);
+                fn0Var2.e1 = null;
                 break;
             case 2:
-                if (dn0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        yt ytVar2 = new yt(null, false);
-                        ytVar2.r = new ql0(dn0Var, i11);
-                        dn0Var.presentFragment(ytVar2);
-                        break;
-                    }
+                fn0 fn0Var3 = this.b;
+                EditTextBoldCursor[] editTextBoldCursorArr = fn0Var3.X;
+                if (editTextBoldCursorArr != null) {
+                    fn0Var3.I1(editTextBoldCursorArr[0]);
+                    break;
                 }
                 break;
-            default:
-                if (dn0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        yt ytVar3 = new yt(null, false);
-                        ytVar3.r = new ql0(dn0Var, 3);
-                        dn0Var.presentFragment(ytVar3);
+            case 3:
+                AndroidUtilities.showKeyboard(this.b.V[2]);
+                break;
+            case 4:
+                this.b.x1();
+                break;
+            case 5:
+                int i10 = 0;
+                while (true) {
+                    fn0 fn0Var4 = this.b;
+                    if (i10 >= fn0Var4.Z.getChildCount()) {
+                        fn0Var4.x1();
+                        fn0Var4.n1.clear();
+                        fn0Var4.m1.clear();
+                        fn0Var4.y.values.clear();
+                        fn0Var4.Q1();
                         break;
+                    } else {
+                        View childAt = fn0Var4.Z.getChildAt(i10);
+                        if (childAt instanceof en0) {
+                            fn0Var4.Z.removeView(childAt);
+                            i10--;
+                        }
+                        i10++;
                     }
                 }
+            default:
+                this.b.finishFragment();
                 break;
         }
-        return false;
     }
 }

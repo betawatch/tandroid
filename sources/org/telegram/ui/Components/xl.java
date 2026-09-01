@@ -1,40 +1,31 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class xl implements ul0 {
-    public final /* synthetic */ ChatAttachAlertPhotoLayout a;
+public final class xl extends f2.k0 {
+    public final /* synthetic */ zi r;
 
-    public xl(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout) {
-        this.a = chatAttachAlertPhotoLayout;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xl(zi ziVar, Context context) {
+        super(context);
+        this.r = ziVar;
     }
 
-    @Override // org.telegram.ui.Components.ul0
-    public final void a(boolean z4) {
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.a;
-        chatAttachAlertPhotoLayout.I = z4 ? 1 : 0;
-        chatAttachAlertPhotoLayout.B.d1(true);
+    @Override // f2.k0
+    public final int k(int i10, View view) {
+        int topScrollOffset;
+        int k10 = super.k(i10, view);
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) this.r.R;
+        int paddingTop = chatAttachAlertPhotoLayout.B.getPaddingTop();
+        topScrollOffset = chatAttachAlertPhotoLayout.getTopScrollOffset();
+        return k10 - (paddingTop - topScrollOffset);
     }
 
-    @Override // org.telegram.ui.Components.ul0
-    public final boolean b(int i10) {
-        return this.a.D.j(i10) == 0;
-    }
-
-    @Override // org.telegram.ui.Components.ul0
-    public final void c(View view, boolean z4) {
-        if (z4 == this.a.H && (view instanceof org.telegram.ui.Cells.t5)) {
-            org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) view;
-            t5Var.w.b(t5Var);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ul0
-    public final boolean d(int i10) {
-        MediaController.PhotoEntry M = this.a.D.M(i10);
-        return M != null && ChatAttachAlertPhotoLayout.p1.containsKey(Integer.valueOf(M.imageId));
+    @Override // f2.k0
+    public final int m(int i10) {
+        return super.m(i10) * 2;
     }
 }

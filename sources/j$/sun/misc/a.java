@@ -16,8 +16,8 @@ public final class a {
         g10.setAccessible(true);
         try {
             b = new a((Unsafe) g10.get(null));
-        } catch (IllegalAccessException e) {
-            throw new AssertionError("Couldn't get the Unsafe", e);
+        } catch (IllegalAccessException e6) {
+            throw new AssertionError("Couldn't get the Unsafe", e6);
         }
     }
 
@@ -28,13 +28,13 @@ public final class a {
     public static Field g() {
         try {
             return Unsafe.class.getDeclaredField("theUnsafe");
-        } catch (NoSuchFieldException e) {
+        } catch (NoSuchFieldException e6) {
             for (Field field : Unsafe.class.getDeclaredFields()) {
                 if (Modifier.isStatic(field.getModifiers()) && Unsafe.class.isAssignableFrom(field.getType())) {
                     return field;
                 }
             }
-            throw new AssertionError("Couldn't find the Unsafe", e);
+            throw new AssertionError("Couldn't find the Unsafe", e6);
         }
     }
 
@@ -58,8 +58,8 @@ public final class a {
     public final long h(Class cls, String str) {
         try {
             return i(cls.getDeclaredField(str));
-        } catch (NoSuchFieldException e) {
-            throw new AssertionError("Cannot find field:", e);
+        } catch (NoSuchFieldException e6) {
+            throw new AssertionError("Cannot find field:", e6);
         }
     }
 

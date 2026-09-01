@@ -4,7 +4,7 @@ import android.graphics.Paint;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class da implements View.OnAttachStateChangeListener {
     public final /* synthetic */ int a;
@@ -31,8 +31,8 @@ public final class da implements View.OnAttachStateChangeListener {
                 }
                 break;
             default:
-                k01 k01Var = (k01) obj2;
-                k01Var.k = u5.update(k01Var.l, (View) obj, k01Var.k, k01Var.b);
+                l01 l01Var = (l01) obj2;
+                l01Var.k = u5.update(l01Var.l, (View) obj, l01Var.k, l01Var.b);
                 break;
         }
     }
@@ -56,7 +56,7 @@ public final class da implements View.OnAttachStateChangeListener {
                 paint.setShader(null);
                 break;
             default:
-                u5.release((View) this.b, ((k01) this.c).k);
+                u5.release((View) this.b, ((l01) this.c).k);
                 break;
         }
     }

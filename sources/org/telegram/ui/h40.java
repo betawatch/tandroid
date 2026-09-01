@@ -1,32 +1,20 @@
 package org.telegram.ui;
 
-import java.util.concurrent.CountDownLatch;
-import org.telegram.messenger.voip.VoIPService;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class h40 implements org.telegram.ui.ActionBar.a3 {
-    public final /* synthetic */ c60 a;
-
-    public h40(c60 c60Var) {
-        this.a = c60Var;
+public final class h40 extends FrameLayout {
+    public h40(LaunchActivity launchActivity) {
+        super(launchActivity);
     }
 
-    @Override // org.telegram.ui.ActionBar.a3
-    public final boolean g() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.a3
-    public final void onOpenAnimationEnd() {
-        CountDownLatch groupCallBottomSheetLatch;
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance != null && (groupCallBottomSheetLatch = sharedInstance.getGroupCallBottomSheetLatch()) != null) {
-            groupCallBottomSheetLatch.countDown();
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (getAlpha() <= 0.95f) {
+            return false;
         }
-        c60 c60Var = this.a;
-        if (c60Var.C1 == 6) {
-            c60.B0(c60Var);
-        }
+        return super.dispatchTouchEvent(motionEvent);
     }
 }

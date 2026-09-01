@@ -9,7 +9,7 @@ import android.util.Log;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class s {
     public final SharedPreferences a;
@@ -52,8 +52,8 @@ public final class s {
         if (bool == null) {
             try {
                 packageManager = context.getPackageManager();
-            } catch (PackageManager.NameNotFoundException e) {
-                Log.e("FirebaseCrashlytics", "Could not read data collection permission from manifest", e);
+            } catch (PackageManager.NameNotFoundException e6) {
+                Log.e("FirebaseCrashlytics", "Could not read data collection permission from manifest", e6);
             }
             if (packageManager != null && (applicationInfo = packageManager.getApplicationInfo(context.getPackageName(), 128)) != null && (bundle = applicationInfo.metaData) != null && bundle.containsKey("firebase_crashlytics_collection_enabled")) {
                 bool2 = Boolean.valueOf(applicationInfo.metaData.getBoolean("firebase_crashlytics_collection_enabled"));

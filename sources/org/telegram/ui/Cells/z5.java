@@ -13,23 +13,23 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.lp;
+import org.telegram.ui.Components.np;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class z5 extends FrameLayout {
     public org.telegram.ui.Components.p9 a;
     public FrameLayout b;
-    public lp c;
+    public np c;
     public TextView d;
-    public dg.s1 e;
+    public eg.q1 e;
     public int f;
     public int h;
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.c.b(org.telegram.ui.ActionBar.j6.W9, org.telegram.ui.ActionBar.j6.X9, org.telegram.ui.ActionBar.j6.V9);
+        this.c.b(org.telegram.ui.ActionBar.k6.W9, org.telegram.ui.ActionBar.k6.X9, org.telegram.ui.ActionBar.k6.V9);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -38,7 +38,7 @@ public final class z5 extends FrameLayout {
     }
 
     public void setImage(MediaController.PhotoEntry photoEntry) {
-        dg.s1 s1Var = this.e;
+        eg.q1 q1Var = this.e;
         org.telegram.ui.Components.p9 p9Var = this.a;
         Drawable drawable = getResources().getDrawable(R.drawable.nophotos);
         String str = photoEntry.thumbPath;
@@ -52,18 +52,18 @@ public final class z5 extends FrameLayout {
         }
         p9Var.p(photoEntry.orientation, photoEntry.invert, true);
         if (photoEntry.isLivePhoto()) {
-            s1Var.setVisibility(4);
+            q1Var.setVisibility(4);
             setContentDescription(LocaleController.getString(R.string.AttachLivePhoto));
             p9Var.f("thumb://" + photoEntry.imageId + ":" + photoEntry.path, null, drawable);
             return;
         }
         if (!photoEntry.isVideo) {
-            s1Var.setVisibility(4);
+            q1Var.setVisibility(4);
             setContentDescription(LocaleController.getString(R.string.AttachPhoto));
             p9Var.f("thumb://" + photoEntry.imageId + ":" + photoEntry.path, null, drawable);
             return;
         }
-        s1Var.setVisibility(0);
+        q1Var.setVisibility(0);
         this.d.setText(AndroidUtilities.formatShortDuration(photoEntry.duration));
         StringBuilder sb = new StringBuilder();
         org.telegram.ui.b.i(R.string.AttachVideo, ", ", sb);

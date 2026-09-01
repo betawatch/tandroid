@@ -10,13 +10,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class x9 {
     public DispatchQueue a;
     public final int b;
     public final View c;
-    public final eg.i0 d;
+    public final fg.i0 d;
     public Bitmap[] e;
     public Bitmap[] f;
     public Bitmap[] g;
@@ -33,19 +33,19 @@ public final class x9 {
     public boolean t;
     public float u;
     public final Paint x;
-    public final org.telegram.ui.ActionBar.f6 y;
+    public final org.telegram.ui.ActionBar.g6 y;
     public boolean l = true;
     public boolean p = true;
     public w9 v = new w9(this);
     public final Paint w = new Paint(2);
 
-    public x9(View view, eg.i0 i0Var, org.telegram.ui.ActionBar.f6 f6Var) {
+    public x9(View view, fg.i0 i0Var, org.telegram.ui.ActionBar.g6 g6Var) {
         Paint paint = new Paint();
         this.x = paint;
         this.b = 1;
         this.c = view;
         this.d = i0Var;
-        this.y = f6Var;
+        this.y = g6Var;
         paint.setColor(-16777216);
     }
 
@@ -63,7 +63,7 @@ public final class x9 {
         this.v.a = true;
         this.v = new w9(this);
         for (int i10 = 0; i10 < 2; i10++) {
-            eg.i0 i0Var = this.d;
+            fg.i0 i0Var = this.d;
             int measuredHeight = i0Var.getMeasuredHeight();
             int measuredWidth = i0Var.getMeasuredWidth();
             int dp = AndroidUtilities.dp(200.0f) + AndroidUtilities.statusBarHeight;
@@ -81,9 +81,9 @@ public final class x9 {
                 int i11 = (int) (measuredWidth / 15.0f);
                 Bitmap.Config config = Bitmap.Config.ARGB_8888;
                 bitmapArr2[i10] = Bitmap.createBitmap(i11, (int) (dp / 15.0f), config);
-                org.telegram.ui.ActionBar.f6 f6Var = this.y;
+                org.telegram.ui.ActionBar.g6 g6Var = this.y;
                 if (i10 == 1) {
-                    this.e[i10].eraseColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, f6Var));
+                    this.e[i10].eraseColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.d6, g6Var));
                 }
                 this.j[i10] = new Canvas(this.e[i10]);
                 if (i10 == 0) {
@@ -97,7 +97,7 @@ public final class x9 {
                 View view = this.c;
                 Drawable background = view.getBackground();
                 if (background == null) {
-                    background = f6Var instanceof org.telegram.ui.vn ? ((org.telegram.ui.vn) f6Var).d() : org.telegram.ui.ActionBar.j6.s0();
+                    background = g6Var instanceof org.telegram.ui.vn ? ((org.telegram.ui.vn) g6Var).d() : org.telegram.ui.ActionBar.k6.s0();
                 }
                 view.setTag(67108867, Integer.valueOf(i10));
                 if (i10 == 0) {
@@ -117,7 +117,7 @@ public final class x9 {
                 Paint paint = this.w;
                 paint.setAlpha(255);
                 if (i10 == 1) {
-                    this.g[i10].eraseColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, f6Var));
+                    this.g[i10].eraseColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.d6, g6Var));
                 }
                 this.h[i10].drawBitmap(this.e[i10], 0.0f, 0.0f, paint);
             }

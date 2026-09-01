@@ -1,63 +1,49 @@
 package org.telegram.ui;
 
 import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nr implements org.telegram.ui.Cells.a5, tf.j1 {
-    public final /* synthetic */ or a;
+public final /* synthetic */ class nr implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ pr b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ nr(or orVar) {
-        this.a = orVar;
+    public /* synthetic */ nr(pr prVar, String str, int i10) {
+        this.a = i10;
+        this.b = prVar;
+        this.c = str;
     }
 
-    @Override // tf.j1
-    public /* synthetic */ a0.h I() {
-        return null;
-    }
-
-    @Override // tf.j1
-    public /* synthetic */ boolean Q(int i10) {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Cells.a5
-    public boolean c(org.telegram.ui.Cells.b5 b5Var, boolean z4) {
-        int intValue = ((Integer) b5Var.getTag()).intValue();
-        or orVar = this.a;
-        TLObject E = orVar.E(intValue);
-        if (!(E instanceof TLRPC.ChannelParticipant)) {
-            return false;
+    @Override // java.lang.Runnable
+    public final void run() {
+        ih ihVar;
+        switch (this.a) {
+            case 0:
+                pr prVar = this.b;
+                prVar.getClass();
+                AndroidUtilities.runOnUIThread(new nr(prVar, this.c, 1));
+                break;
+            default:
+                pr prVar2 = this.b;
+                prVar2.n = null;
+                qr qrVar = prVar2.y;
+                TLRPC.Chat chat = qrVar.r;
+                int i10 = qrVar.b1;
+                ArrayList arrayList = (ChatObject.isChannel(chat) || qrVar.s == null) ? null : new ArrayList(qrVar.s.participants.participants);
+                ArrayList arrayList2 = i10 == 1 ? new ArrayList(qrVar.getContactsController().contacts) : null;
+                String str = this.c;
+                if (arrayList == null && arrayList2 == null) {
+                    prVar2.s = false;
+                    ihVar = null;
+                } else {
+                    ihVar = new ih(prVar2, str, arrayList, arrayList2, 5);
+                }
+                prVar2.h.h(str, i10 != 0, false, true, false, false, ChatObject.isChannel(qrVar.r) ? qrVar.K : 0L, false, qrVar.L, 1, 0L, ihVar);
+                break;
         }
-        return orVar.y.h0((TLRPC.ChannelParticipant) E, !z4, b5Var);
-    }
-
-    @Override // tf.j1
-    public void g(int i10) {
-        or orVar = this.a;
-        pr prVar = orVar.y;
-        if (orVar.h.e()) {
-            return;
-        }
-        int i11 = orVar.r;
-        orVar.l();
-        if (orVar.r > i11) {
-            prVar.y0(i11);
-        }
-        if (orVar.s || orVar.r != 0 || i10 == 0) {
-            return;
-        }
-        prVar.b.e(false, true);
-    }
-
-    @Override // tf.j1
-    public /* synthetic */ a0.h t() {
-        return null;
-    }
-
-    @Override // tf.j1
-    public /* synthetic */ void T(ArrayList arrayList) {
     }
 }

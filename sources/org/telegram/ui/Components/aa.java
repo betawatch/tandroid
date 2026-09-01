@@ -7,9 +7,9 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public abstract class aa extends sl0 {
+public abstract class aa extends tl0 {
     public int U2;
     public int V2;
     public int W2;
@@ -17,7 +17,7 @@ public abstract class aa extends sl0 {
     public int Y2;
     public boolean Z2;
 
-    @Override // org.telegram.ui.Components.sl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.tl0, android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         if (this.U2 == 0 || Z0()) {
             super.dispatchDraw(canvas);
@@ -27,7 +27,7 @@ public abstract class aa extends sl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public boolean drawChild(Canvas canvas, View view, long j10) {
         if (view.getY() + view.getMeasuredHeight() >= this.U2 || this.Z2 || Z0()) {
             return super.drawChild(canvas, view, j10);
@@ -35,20 +35,20 @@ public abstract class aa extends sl0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.sl0, og.a
+    @Override // org.telegram.ui.Components.tl0, pg.a
     public final void e(Canvas canvas, RectF rectF) {
         this.Z2 = true;
         super.e(canvas, rectF);
         this.Z2 = false;
     }
 
-    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         x1();
     }
 
-    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public void onMeasure(int i10, int i11) {
         this.X2 = true;
         x1();
@@ -57,7 +57,7 @@ public abstract class aa extends sl0 {
         super.onMeasure(i10, i11);
     }
 
-    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
     public void requestLayout() {
         if (this.X2) {
             return;

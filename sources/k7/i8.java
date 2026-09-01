@@ -1,33 +1,28 @@
 package k7;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.am0;
+import com.google.android.gms.tasks.Task;
+import java.util.concurrent.CancellationException;
+import org.telegram.ui.Components.ai;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class i8 {
-    public static void a(am0 am0Var, org.telegram.ui.ActionBar.f6 f6Var) {
-        am0Var.q(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Oh, f6Var), f6Var != null ? f6Var.a() : org.telegram.ui.ActionBar.j6.I.q());
-    }
-
-    public static int b(vh.a aVar) {
-        if (aVar == null) {
-            return 0;
+    public static final Object a(Task task, wc.c cVar) {
+        if (!task.isComplete()) {
+            ld.m mVar = new ld.m(1, h8.b(cVar));
+            mVar.s();
+            task.addOnCompleteListener(vd.a.a, new ai(mVar, 18));
+            Object r10 = mVar.r();
+            vc.a aVar = vc.a.a;
+            return r10;
         }
-        return c(aVar) + (Math.max(0, aVar.c) > 0 ? AndroidUtilities.dp(e2.c.e(r4, 1, 24, 28)) : 0);
-    }
-
-    public static int c(vh.a aVar) {
-        if ((aVar == null ? 0 : aVar.k.size()) <= 0) {
-            return 0;
+        Exception exception = task.getException();
+        if (exception != null) {
+            throw exception;
         }
-        return AndroidUtilities.dp(e2.c.e(r3, 1, 16, 12));
-    }
-
-    public static int d(vh.a aVar) {
-        if ((aVar == null ? 0 : aVar.k.size()) <= 0) {
-            return 0;
+        if (!task.isCanceled()) {
+            return task.getResult();
         }
-        return AndroidUtilities.dp(e2.c.e(r3, 1, 16, 8));
+        throw new CancellationException("Task " + task + " was cancelled normally.");
     }
 }

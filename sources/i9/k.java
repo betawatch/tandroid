@@ -6,7 +6,7 @@ import java.io.File;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class k {
     public final s a;
@@ -28,12 +28,12 @@ public final class k {
             i iVar = j.d;
             File file = new File(bVar.c, str);
             file.mkdirs();
-            List e = n9.b.e(file.listFiles(iVar));
-            if (e.isEmpty()) {
+            List e6 = n9.b.e(file.listFiles(iVar));
+            if (e6.isEmpty()) {
                 substring = null;
                 Log.w("FirebaseCrashlytics", "Unable to read App Quality Sessions session id.", null);
             } else {
-                substring = ((File) Collections.min(e, j.e)).getName().substring(4);
+                substring = ((File) Collections.min(e6, j.e)).getName().substring(4);
             }
             return substring;
         }

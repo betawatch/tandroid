@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class j {
     public static final h b = new h("LibraryVersion", "");
@@ -19,7 +19,7 @@ public final class j {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final String a(String str) {
-        IOException e;
+        IOException e6;
         String str2;
         InputStream inputStream;
         h hVar = b;
@@ -36,8 +36,8 @@ public final class j {
         try {
             try {
                 inputStream = j.class.getResourceAsStream("/" + str + ".properties");
-            } catch (IOException e6) {
-                e = e6;
+            } catch (IOException e10) {
+                e6 = e10;
                 str2 = null;
             }
         } catch (Throwable th2) {
@@ -65,8 +65,8 @@ public final class j {
                     Log.w("LibraryVersion", str6);
                 }
             }
-        } catch (IOException e10) {
-            e = e10;
+        } catch (IOException e11) {
+            e6 = e11;
             inputStream2 = inputStream;
             str2 = null;
             String str8 = "Failed to get app version for libraryName: " + str;
@@ -75,7 +75,7 @@ public final class j {
                 if (str9 != null) {
                     str8 = str9.concat(str8);
                 }
-                Log.e("LibraryVersion", str8, e);
+                Log.e("LibraryVersion", str8, e6);
             }
             InputStream inputStream3 = inputStream2;
             str3 = str2;

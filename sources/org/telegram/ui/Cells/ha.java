@@ -9,15 +9,15 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.Components.gj0;
-import org.telegram.ui.Components.kl0;
-import org.telegram.ui.Components.mp;
+import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.op;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.wh;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ha implements kl0, lf.o, ImageReceiver.ImageReceiverDelegate, FlagSecureReason.FlagSecureCondition, mp, Utilities.Callback2Return {
+public final /* synthetic */ class ha implements ll0, lf.o, ImageReceiver.ImageReceiverDelegate, FlagSecureReason.FlagSecureCondition, op, Utilities.Callback2Return {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -26,7 +26,7 @@ public final /* synthetic */ class ha implements kl0, lf.o, ImageReceiver.ImageR
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.mp
+    @Override // org.telegram.ui.Components.op
     public void a() {
         switch (this.a) {
             case 4:
@@ -55,7 +55,7 @@ public final /* synthetic */ class ha implements kl0, lf.o, ImageReceiver.ImageR
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z4, boolean z10, boolean z11) {
-        gj0 lottieAnimation;
+        ij0 lottieAnimation;
         t0 t0Var;
         int v;
         MessageObject messageObject;
@@ -80,7 +80,7 @@ public final /* synthetic */ class ha implements kl0, lf.o, ImageReceiver.ImageR
                             }
                             TLRPC.VideoSize videoSize = v0Var.x1;
                             if (videoSize != null && (t0Var = v0Var.U0) != null) {
-                                t0Var.i1(v0Var, v0Var.w1, videoSize);
+                                t0Var.l1(v0Var, v0Var.w1, videoSize);
                                 break;
                             }
                         }
@@ -105,7 +105,7 @@ public final /* synthetic */ class ha implements kl0, lf.o, ImageReceiver.ImageR
                     int dominantColor = AndroidUtilities.getDominantColor(imageReceiver3.getBitmap());
                     r7Var.a = dominantColor;
                     CheckBoxBase checkBoxBase = r7Var.M;
-                    if (checkBoxBase != null && checkBoxBase.x != (v = org.telegram.ui.ActionBar.j6.v(dominantColor, org.telegram.ui.ActionBar.j6.l1(0.25f, -1)))) {
+                    if (checkBoxBase != null && checkBoxBase.x != (v = org.telegram.ui.ActionBar.k6.v(dominantColor, org.telegram.ui.ActionBar.k6.l1(0.25f, -1)))) {
                         checkBoxBase.x = v;
                         checkBoxBase.b();
                         break;
@@ -121,7 +121,7 @@ public final /* synthetic */ class ha implements kl0, lf.o, ImageReceiver.ImageR
         org.telegram.messenger.j5.a(this, i10, str, drawable);
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public boolean f(int i10, View view) {
         la laVar = (la) this.b;
         laVar.getClass();

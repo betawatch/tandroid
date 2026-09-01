@@ -1,33 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f70 implements View.OnLayoutChangeListener {
+public final /* synthetic */ class f70 implements org.telegram.ui.ActionBar.n1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ q70 b;
 
-    public /* synthetic */ f70(Object obj, int i10) {
+    public /* synthetic */ f70(q70 q70Var, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = q70Var;
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+    @Override // org.telegram.ui.ActionBar.n1
+    public final void n(KeyEvent keyEvent) {
+        q70 q70Var;
+        l70 l70Var;
+        q70 q70Var2;
+        l70 l70Var2;
         switch (this.a) {
             case 0:
-                o70 o70Var = (o70) this.b;
-                if (o70Var.D()) {
-                    o70Var.O();
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (l70Var = (q70Var = this.b).m) != null && l70Var.isShowing()) {
+                    q70Var.u();
                     break;
                 }
                 break;
             default:
-                fx0 fx0Var = (fx0) this.b;
-                gg.q qVar = fx0Var.h;
-                if (qVar != null && qVar.getLayout() != null) {
-                    fx0Var.C = qVar.getLayout().getLineWidth(0);
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (l70Var2 = (q70Var2 = this.b).m) != null && l70Var2.isShowing()) {
+                    q70Var2.u();
                     break;
                 }
                 break;

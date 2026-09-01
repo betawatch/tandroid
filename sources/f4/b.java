@@ -4,16 +4,16 @@ import e4.c;
 import e4.e;
 import h5.v;
 import h5.w;
-import j7.c7;
+import j7.d7;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import r8.d;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final class b extends c7 {
+public final class b extends d7 {
     public final /* synthetic */ int a;
 
     public static g4.a c(w wVar) {
@@ -24,7 +24,7 @@ public final class b extends c7 {
         return new g4.a(p10, p11, wVar.o(), wVar.o(), Arrays.copyOfRange(wVar.a, wVar.b, wVar.c));
     }
 
-    @Override // j7.c7
+    @Override // j7.d7
     public final c b(e eVar, ByteBuffer byteBuffer) {
         switch (this.a) {
             case 0:

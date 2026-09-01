@@ -41,7 +41,7 @@ import java.util.HashSet;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class v extends g.f {
     public static final int C0;
@@ -117,10 +117,10 @@ public final class v extends g.f {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public v(Context context) {
-        super(r5, r1 == 0 ? j7.z.e(r5) : r1);
+        super(r5, r1 == 0 ? j7.a0.e(r5) : r1);
         int i10 = 1;
-        ContextThemeWrapper a2 = j7.z.a(context, true);
-        int g10 = j7.z.g(a2, R.attr.mediaRouteTheme);
+        ContextThemeWrapper a2 = j7.a0.a(context, true);
+        int g10 = j7.a0.g(a2, R.attr.mediaRouteTheme);
         this.L = true;
         this.B0 = new androidx.activity.i(this, 6);
         Context context2 = getContext();
@@ -252,9 +252,9 @@ public final class v extends g.f {
         this.F = linearLayout;
         linearLayout.setOnClickListener(new m());
         Context context = this.s;
-        int f10 = j7.z.f(context, 0, R.attr.colorPrimary);
-        if (i0.a.e(f10, j7.z.f(context, 0, android.R.attr.colorBackground)) < 3.0d) {
-            f10 = j7.z.f(context, 0, R.attr.colorAccent);
+        int f10 = j7.a0.f(context, 0, R.attr.colorPrimary);
+        if (i0.a.e(f10, j7.a0.f(context, 0, android.R.attr.colorBackground)) < 3.0d) {
+            f10 = j7.a0.f(context, 0, R.attr.colorAccent);
         }
         Button button = (Button) findViewById(android.R.id.button2);
         this.y = button;
@@ -301,9 +301,9 @@ public final class v extends g.f {
         LinearLayout linearLayout3 = this.N;
         OverlayListView overlayListView = this.R;
         boolean n10 = n();
-        int f11 = j7.z.f(context, 0, R.attr.colorPrimary);
-        int f12 = j7.z.f(context, 0, R.attr.colorPrimaryDark);
-        if (n10 && j7.z.b(context, 0) == -570425344) {
+        int f11 = j7.a0.f(context, 0, R.attr.colorPrimary);
+        int f12 = j7.a0.f(context, 0, R.attr.colorPrimaryDark);
+        if (n10 && j7.a0.b(context, 0) == -570425344) {
             f12 = f11;
             f11 = -1;
         }
@@ -313,7 +313,7 @@ public final class v extends g.f {
         overlayListView.setTag(Integer.valueOf(f12));
         MediaRouteVolumeSlider mediaRouteVolumeSlider = (MediaRouteVolumeSlider) this.X;
         LinearLayout linearLayout4 = this.N;
-        int b10 = j7.z.b(context, 0);
+        int b10 = j7.a0.b(context, 0);
         if (Color.alpha(b10) != 255) {
             b10 = i0.a.h(b10, ((Integer) linearLayout4.getTag()).intValue());
         }
@@ -502,7 +502,7 @@ public final class v extends g.f {
                                         i11 = R.string.mr_controller_pause;
                                         this.C.setVisibility(z13 ? 0 : 8);
                                         if (z13) {
-                                            this.C.setImageResource(j7.z.g(context, i10));
+                                            this.C.setImageResource(j7.a0.g(context, i10));
                                             this.C.setContentDescription(context.getResources().getText(i11));
                                         }
                                     }
@@ -584,7 +584,7 @@ public final class v extends g.f {
 
     public final void s() {
         Context context = this.s;
-        int a2 = j7.y.a(context);
+        int a2 = j7.z.a(context);
         getWindow().setLayout(a2, -2);
         View decorView = getWindow().getDecorView();
         this.x = (a2 - decorView.getPaddingLeft()) - decorView.getPaddingRight();

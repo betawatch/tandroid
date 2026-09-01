@@ -13,10 +13,10 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class i2 extends FrameLayout implements org.telegram.ui.Cells.l9, g3 {
-    public final n70 a;
+    public final o70 a;
     public final j4 b;
     public d3 c;
     public final g2 d;
@@ -24,15 +24,15 @@ public final class i2 extends FrameLayout implements org.telegram.ui.Cells.l9, g
     public TL_iv.pageBlockPreformatted f;
     public CharSequence h;
 
-    public i2(Context context, final n70 n70Var, j4 j4Var) {
+    public i2(Context context, final o70 o70Var, j4 j4Var) {
         super(context);
-        this.a = n70Var;
+        this.a = o70Var;
         this.b = j4Var;
-        g2 g2Var = new g2(context, n70Var);
+        g2 g2Var = new g2(context, o70Var);
         this.d = g2Var;
         g2Var.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
-        addView(g2Var, k7.b6.c(-2.0f, -1));
-        h2 h2Var = new h2(this, context, n70Var, j4Var);
+        addView(g2Var, k7.c6.c(-2.0f, -1));
+        h2 h2Var = new h2(this, context, o70Var, j4Var);
         this.e = h2Var;
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-2, -1);
         int dp = AndroidUtilities.dp(16.0f);
@@ -47,7 +47,7 @@ public final class i2 extends FrameLayout implements org.telegram.ui.Cells.l9, g
             g2Var.setOnScrollChangeListener(new View.OnScrollChangeListener() { // from class: org.telegram.ui.f2
                 @Override // android.view.View.OnScrollChangeListener
                 public final void onScrollChange(View view, int i10, int i11, int i12, int i13) {
-                    org.telegram.ui.Cells.m9 m9Var = ((l4) n70.this).L0;
+                    org.telegram.ui.Cells.m9 m9Var = ((l4) o70.this).L0;
                     if (m9Var == null || !m9Var.y()) {
                         return;
                     }

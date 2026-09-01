@@ -6,19 +6,19 @@ import android.text.TextUtils;
 import android.widget.FrameLayout;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public abstract class m extends FrameLayout implements xd.i {
-    public final f6 a;
+    public final g6 a;
     public final cb.m b;
     public final xd.j c;
 
-    public m(Context context, f6 f6Var, cb.m mVar) {
+    public m(Context context, g6 g6Var, cb.m mVar) {
         super(context);
-        this.c = new xd.j(this, nr.h, 350L);
-        this.a = f6Var;
+        this.c = new xd.j(this, pr.h, 350L);
+        this.a = g6Var;
         this.b = mVar;
     }
 
@@ -43,17 +43,17 @@ public abstract class m extends FrameLayout implements xd.i {
             charSequence2 = charSequence;
         }
         l lVar = new l(this, getContext());
-        int i10 = j6.gl;
-        f6 f6Var = this.a;
-        lVar.setTextColor(j6.v0(i10, f6Var));
-        lVar.setLinkTextColor(j6.v0(i10, f6Var));
+        int i10 = k6.gl;
+        g6 g6Var = this.a;
+        lVar.setTextColor(k6.v0(i10, g6Var));
+        lVar.setLinkTextColor(k6.v0(i10, g6Var));
         lVar.setTextSize(1, 14.0f);
         lVar.setAlpha(0.0f);
         lVar.setText(charSequence2);
         if (z4) {
             mVar.c(lVar);
         }
-        addView(lVar, k7.b6.c(-2.0f, -2));
+        addView(lVar, k7.c6.c(-2.0f, -2));
         jVar.i(lVar, true);
     }
 
@@ -62,10 +62,10 @@ public abstract class m extends FrameLayout implements xd.i {
         while (it.hasNext()) {
             xd.e eVar = (xd.e) it.next();
             l lVar = (l) eVar.a;
-            int i10 = j6.gl;
-            f6 f6Var = this.a;
-            lVar.setTextColor(j6.v0(i10, f6Var));
-            ((l) eVar.a).setLinkTextColor(j6.v0(i10, f6Var));
+            int i10 = k6.gl;
+            g6 g6Var = this.a;
+            lVar.setTextColor(k6.v0(i10, g6Var));
+            ((l) eVar.a).setLinkTextColor(k6.v0(i10, g6Var));
         }
     }
 

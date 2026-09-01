@@ -22,12 +22,11 @@ import java.util.ListIterator;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
-import kh.a2;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.beta.R;
-import vh.v2;
+import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class j0 {
     public final c0 A;
@@ -59,11 +58,11 @@ public abstract class j0 {
     public final b0 u;
     public int v;
     public u w;
-    public j7.w x;
+    public j7.x x;
     public s y;
     public s z;
     public final ArrayList a = new ArrayList();
-    public final com.google.firebase.messaging.r c = new com.google.firebase.messaging.r(2);
+    public final sf.e c = new sf.e(1);
     public ArrayList d = new ArrayList();
     public final y f = new y(this);
     public a h = null;
@@ -299,12 +298,12 @@ public abstract class j0 {
 
     public static boolean L(s sVar) {
         sVar.getClass();
-        ArrayList y10 = sVar.I.c.y();
-        int size = y10.size();
+        ArrayList u10 = sVar.I.c.u();
+        int size = u10.size();
         boolean z4 = false;
         int i10 = 0;
         while (i10 < size) {
-            Object obj = y10.get(i10);
+            Object obj = u10.get(i10);
             i10++;
             s sVar2 = (s) obj;
             if (sVar2 != null) {
@@ -413,7 +412,7 @@ public abstract class j0 {
         boolean z11;
         int i14;
         int i15;
-        com.google.firebase.messaging.r rVar = this.c;
+        sf.e eVar = this.c;
         ArrayList arrayList3 = this.n;
         boolean z12 = ((a) arrayList.get(i10)).o;
         ArrayList arrayList4 = this.N;
@@ -422,7 +421,7 @@ public abstract class j0 {
         } else {
             arrayList4.clear();
         }
-        this.N.addAll(rVar.z());
+        this.N.addAll(eVar.v());
         s sVar = this.z;
         int i16 = i10;
         boolean z13 = false;
@@ -580,7 +579,7 @@ public abstract class j0 {
                     i25++;
                     s sVar5 = ((q0) obj).b;
                     if (sVar5 != null && sVar5.G != null) {
-                        rVar.F(g(sVar5));
+                        eVar.w(g(sVar5));
                     }
                 }
             }
@@ -849,15 +848,15 @@ public abstract class j0 {
     }
 
     public final s C(int i10) {
-        com.google.firebase.messaging.r rVar = this.c;
-        ArrayList arrayList = (ArrayList) rVar.b;
+        sf.e eVar = this.c;
+        ArrayList arrayList = (ArrayList) eVar.b;
         for (int size = arrayList.size() - 1; size >= 0; size--) {
             s sVar = (s) arrayList.get(size);
             if (sVar != null && sVar.K == i10) {
                 return sVar;
             }
         }
-        for (p0 p0Var : ((HashMap) rVar.c).values()) {
+        for (p0 p0Var : ((HashMap) eVar.c).values()) {
             if (p0Var != null) {
                 s sVar2 = p0Var.c;
                 if (sVar2.K == i10) {
@@ -869,15 +868,15 @@ public abstract class j0 {
     }
 
     public final s D(String str) {
-        com.google.firebase.messaging.r rVar = this.c;
-        ArrayList arrayList = (ArrayList) rVar.b;
+        sf.e eVar = this.c;
+        ArrayList arrayList = (ArrayList) eVar.b;
         for (int size = arrayList.size() - 1; size >= 0; size--) {
             s sVar = (s) arrayList.get(size);
             if (sVar != null && str.equals(sVar.M)) {
                 return sVar;
             }
         }
-        for (p0 p0Var : ((HashMap) rVar.c).values()) {
+        for (p0 p0Var : ((HashMap) eVar.c).values()) {
             if (p0Var != null) {
                 s sVar2 = p0Var.c;
                 if (str.equals(sVar2.M)) {
@@ -958,9 +957,9 @@ public abstract class j0 {
         }
         if (z4 || i10 != this.v) {
             this.v = i10;
-            com.google.firebase.messaging.r rVar = this.c;
-            HashMap hashMap = (HashMap) rVar.c;
-            ArrayList arrayList = (ArrayList) rVar.b;
+            sf.e eVar = this.c;
+            HashMap hashMap = (HashMap) eVar.c;
+            ArrayList arrayList = (ArrayList) eVar.b;
             int size = arrayList.size();
             int i11 = 0;
             while (i11 < size) {
@@ -976,7 +975,7 @@ public abstract class j0 {
                     p0Var2.j();
                     s sVar = p0Var2.c;
                     if (sVar.w && !sVar.v()) {
-                        rVar.G(p0Var2);
+                        eVar.x(p0Var2);
                     }
                 }
             }
@@ -995,7 +994,7 @@ public abstract class j0 {
         this.H = false;
         this.I = false;
         this.O.i = false;
-        for (s sVar : this.c.z()) {
+        for (s sVar : this.c.v()) {
             if (sVar != null) {
                 sVar.I.R();
             }
@@ -1077,9 +1076,9 @@ public abstract class j0 {
         if (sVar.O && v) {
             return;
         }
-        com.google.firebase.messaging.r rVar = this.c;
-        synchronized (((ArrayList) rVar.b)) {
-            ((ArrayList) rVar.b).remove(sVar);
+        sf.e eVar = this.c;
+        synchronized (((ArrayList) eVar.b)) {
+            ((ArrayList) eVar.b).remove(sVar);
         }
         sVar.v = false;
         if (L(sVar)) {
@@ -1140,9 +1139,9 @@ public abstract class j0 {
                 hashMap.put(str2.substring(9), bundle3);
             }
         }
-        com.google.firebase.messaging.r rVar = this.c;
-        HashMap hashMap2 = (HashMap) rVar.d;
-        HashMap hashMap3 = (HashMap) rVar.c;
+        sf.e eVar = this.c;
+        HashMap hashMap2 = (HashMap) eVar.d;
+        HashMap hashMap3 = (HashMap) eVar.c;
         hashMap2.clear();
         hashMap2.putAll(hashMap);
         l0 l0Var = (l0) bundle.getParcelable("state");
@@ -1160,9 +1159,9 @@ public abstract class j0 {
             }
             Object obj = arrayList.get(i11);
             i11++;
-            Bundle S = rVar.S((String) obj, null);
-            if (S != null) {
-                s sVar = (s) this.O.d.get(((o0) S.getParcelable("state")).b);
+            Bundle G = eVar.G((String) obj, null);
+            if (G != null) {
+                s sVar = (s) this.O.d.get(((o0) G.getParcelable("state")).b);
                 if (sVar != null) {
                     if (K(2)) {
                         i10 = 2;
@@ -1170,12 +1169,12 @@ public abstract class j0 {
                     } else {
                         i10 = 2;
                     }
-                    p0Var = new p0(bVar, rVar, sVar, S);
-                    bundle2 = S;
+                    p0Var = new p0(bVar, eVar, sVar, G);
+                    bundle2 = G;
                 } else {
                     i10 = 2;
-                    bundle2 = S;
-                    p0Var = new p0(this.o, this.c, this.w.b.getClassLoader(), H(), S);
+                    bundle2 = G;
+                    p0Var = new p0(this.o, this.c, this.w.b.getClassLoader(), H(), G);
                 }
                 s sVar2 = p0Var.c;
                 sVar2.b = bundle2;
@@ -1184,7 +1183,7 @@ public abstract class j0 {
                     Log.v("FragmentManager", "restoreSaveState: active (" + sVar2.e + "): " + sVar2);
                 }
                 p0Var.l(this.w.b.getClassLoader());
-                rVar.F(p0Var);
+                eVar.w(p0Var);
                 p0Var.e = this.v;
             }
         }
@@ -1203,7 +1202,7 @@ public abstract class j0 {
                 }
                 this.O.f(sVar3);
                 sVar3.G = this;
-                p0 p0Var2 = new p0(bVar, rVar, sVar3);
+                p0 p0Var2 = new p0(bVar, eVar, sVar3);
                 p0Var2.e = 1;
                 p0Var2.j();
                 sVar3.w = true;
@@ -1211,7 +1210,7 @@ public abstract class j0 {
             }
         }
         ArrayList arrayList3 = l0Var.b;
-        ((ArrayList) rVar.b).clear();
+        ((ArrayList) eVar.b).clear();
         if (arrayList3 != null) {
             int size3 = arrayList3.size();
             int i13 = 0;
@@ -1219,14 +1218,14 @@ public abstract class j0 {
                 Object obj3 = arrayList3.get(i13);
                 i13++;
                 String str3 = (String) obj3;
-                s u10 = rVar.u(str3);
-                if (u10 == null) {
+                s q10 = eVar.q(str3);
+                if (q10 == null) {
                     throw new IllegalStateException(android.support.v4.media.a.o("No instantiated fragment for (", str3, ")"));
                 }
                 if (K(2)) {
-                    Log.v("FragmentManager", "restoreSaveState: added (" + str3 + "): " + u10);
+                    Log.v("FragmentManager", "restoreSaveState: added (" + str3 + "): " + q10);
                 }
-                rVar.m(u10);
+                eVar.m(q10);
             }
         }
         if (l0Var.c != null) {
@@ -1287,12 +1286,12 @@ public abstract class j0 {
                 for (int i24 = 0; i24 < arrayList4.size(); i24++) {
                     String str4 = (String) arrayList4.get(i24);
                     if (str4 != null) {
-                        ((q0) aVar.a.get(i24)).b = rVar.u(str4);
+                        ((q0) aVar.a.get(i24)).b = eVar.q(str4);
                     }
                 }
                 aVar.c(1);
                 if (K(2)) {
-                    StringBuilder m9 = a2.m(i14, "restoreAllState: back stack #", " (index ");
+                    StringBuilder m9 = l.d.m(i14, "restoreAllState: back stack #", " (index ");
                     m9.append(aVar.s);
                     m9.append("): ");
                     m9.append(aVar);
@@ -1310,9 +1309,9 @@ public abstract class j0 {
         this.k.set(l0Var.d);
         String str5 = l0Var.e;
         if (str5 != null) {
-            s u11 = rVar.u(str5);
-            this.z = u11;
-            r(u11);
+            s q11 = eVar.q(str5);
+            this.z = q11;
+            r(q11);
         }
         ArrayList arrayList5 = l0Var.f;
         if (arrayList5 != null) {
@@ -1334,9 +1333,9 @@ public abstract class j0 {
         A(true);
         this.H = true;
         this.O.i = true;
-        com.google.firebase.messaging.r rVar = this.c;
-        rVar.getClass();
-        HashMap hashMap = (HashMap) rVar.c;
+        sf.e eVar = this.c;
+        eVar.getClass();
+        HashMap hashMap = (HashMap) eVar.c;
         ArrayList arrayList2 = new ArrayList(hashMap.size());
         Iterator it = hashMap.values().iterator();
         while (true) {
@@ -1382,7 +1381,7 @@ public abstract class j0 {
                 if (bundle7 != null) {
                     bundle3.putBundle("arguments", bundle7);
                 }
-                rVar.S(str, bundle3);
+                eVar.G(str, bundle3);
                 arrayList2.add(sVar.e);
                 if (K(2)) {
                     Log.v("FragmentManager", "Saved state of " + sVar + ": " + sVar.b);
@@ -1391,14 +1390,14 @@ public abstract class j0 {
         }
         HashMap hashMap2 = (HashMap) this.c.d;
         if (!hashMap2.isEmpty()) {
-            com.google.firebase.messaging.r rVar2 = this.c;
-            synchronized (((ArrayList) rVar2.b)) {
+            sf.e eVar2 = this.c;
+            synchronized (((ArrayList) eVar2.b)) {
                 try {
-                    if (((ArrayList) rVar2.b).isEmpty()) {
+                    if (((ArrayList) eVar2.b).isEmpty()) {
                         arrayList = null;
                     } else {
-                        arrayList = new ArrayList(((ArrayList) rVar2.b).size());
-                        ArrayList arrayList3 = (ArrayList) rVar2.b;
+                        arrayList = new ArrayList(((ArrayList) eVar2.b).size());
+                        ArrayList arrayList3 = (ArrayList) eVar2.b;
                         int size = arrayList3.size();
                         int i11 = 0;
                         while (i11 < size) {
@@ -1420,7 +1419,7 @@ public abstract class j0 {
                 for (i10 = 0; i10 < size2; i10++) {
                     bVarArr[i10] = new b((a) this.d.get(i10));
                     if (K(2)) {
-                        StringBuilder m9 = a2.m(i10, "saveAllState: adding back stack #", ": ");
+                        StringBuilder m9 = l.d.m(i10, "saveAllState: adding back stack #", ": ");
                         m9.append(this.d.get(i10));
                         Log.v("FragmentManager", m9.toString());
                     }
@@ -1447,10 +1446,10 @@ public abstract class j0 {
             l0Var.n = new ArrayList(this.F);
             bundle2.putParcelable("state", l0Var);
             for (String str2 : this.m.keySet()) {
-                bundle2.putBundle(v2.e("result_", str2), (Bundle) this.m.get(str2));
+                bundle2.putBundle(yh.k("result_", str2), (Bundle) this.m.get(str2));
             }
             for (String str3 : hashMap2.keySet()) {
-                bundle2.putBundle(v2.e("fragment_", str3), (Bundle) hashMap2.get(str3));
+                bundle2.putBundle(yh.k("fragment_", str3), (Bundle) hashMap2.get(str3));
             }
         } else if (K(2)) {
             Log.v("FragmentManager", "saveAllState: no fragments!");
@@ -1483,10 +1482,10 @@ public abstract class j0 {
         }
         p0 g10 = g(sVar);
         sVar.G = this;
-        com.google.firebase.messaging.r rVar = this.c;
-        rVar.F(g10);
+        sf.e eVar = this.c;
+        eVar.w(g10);
         if (!sVar.O) {
-            rVar.m(sVar);
+            eVar.m(sVar);
             sVar.w = false;
             sVar.W = false;
             if (L(sVar)) {
@@ -1505,12 +1504,12 @@ public abstract class j0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public final void b(u uVar, j7.w wVar, s sVar) {
+    public final void b(u uVar, j7.x xVar, s sVar) {
         if (this.w != null) {
             throw new IllegalStateException("Already attached");
         }
         this.w = uVar;
-        this.x = wVar;
+        this.x = xVar;
         this.y = sVar;
         CopyOnWriteArrayList copyOnWriteArrayList = this.p;
         if (sVar != 0) {
@@ -1536,7 +1535,7 @@ public abstract class j0 {
             }
             this.O = m0Var2;
         } else if (uVar != null) {
-            this.O = (m0) new androidx.biometric.e(uVar.e.f(), m0.j).n(m0.class);
+            this.O = (m0) new androidx.biometric.e(uVar.e.f(), m0.j).m(m0.class);
         } else {
             this.O = new m0(false);
         }
@@ -1554,10 +1553,10 @@ public abstract class j0 {
         u uVar3 = this.w;
         if (uVar3 != null) {
             androidx.activity.h hVar = uVar3.e.w;
-            String e = v2.e("FragmentManager:", sVar != 0 ? android.support.v4.media.a.r(new StringBuilder(), sVar.e, ":") : "");
-            this.C = hVar.d(v2.k(e, "StartActivityForResult"), new e0(2), new ja.c(this, 2));
-            this.D = hVar.d(v2.k(e, "StartIntentSenderForResult"), new e0(0), new o5.i(this, 5));
-            this.E = hVar.d(v2.k(e, "RequestPermissions"), new e0(1), new a3.c(this, 2));
+            String k10 = yh.k("FragmentManager:", sVar != 0 ? android.support.v4.media.a.r(new StringBuilder(), sVar.e, ":") : "");
+            this.C = hVar.d(w.c.e(k10, "StartActivityForResult"), new e0(2), new o5.i(this, 3));
+            this.D = hVar.d(w.c.e(k10, "StartIntentSenderForResult"), new e0(0), new y5.h(this, 5));
+            this.E = hVar.d(w.c.e(k10, "RequestPermissions"), new e0(1), new ja.c(this));
         }
         u uVar4 = this.w;
         if (uVar4 != null) {
@@ -1585,7 +1584,7 @@ public abstract class j0 {
     }
 
     public final void b0(s sVar, androidx.lifecycle.n nVar) {
-        if (sVar.equals(this.c.u(sVar.e)) && (sVar.H == null || sVar.G == this)) {
+        if (sVar.equals(this.c.q(sVar.e)) && (sVar.H == null || sVar.G == this)) {
             sVar.Z = nVar;
             return;
         }
@@ -1613,7 +1612,7 @@ public abstract class j0 {
 
     public final void c0(s sVar) {
         if (sVar != null) {
-            if (!sVar.equals(this.c.u(sVar.e)) || (sVar.H != null && sVar.G != this)) {
+            if (!sVar.equals(this.c.q(sVar.e)) || (sVar.H != null && sVar.G != this)) {
                 throw new IllegalArgumentException("Fragment " + sVar + " is not an active fragment of FragmentManager " + this);
             }
         }
@@ -1651,11 +1650,11 @@ public abstract class j0 {
     public final HashSet e() {
         l lVar;
         HashSet hashSet = new HashSet();
-        ArrayList x10 = this.c.x();
-        int size = x10.size();
+        ArrayList t6 = this.c.t();
+        int size = t6.size();
         int i10 = 0;
         while (i10 < size) {
-            Object obj = x10.get(i10);
+            Object obj = t6.get(i10);
             i10++;
             ViewGroup viewGroup = ((p0) obj).c.S;
             if (viewGroup != null) {
@@ -1704,11 +1703,11 @@ public abstract class j0 {
     }
 
     public final void f0() {
-        ArrayList x10 = this.c.x();
-        int size = x10.size();
+        ArrayList t6 = this.c.t();
+        int size = t6.size();
         int i10 = 0;
         while (i10 < size) {
-            Object obj = x10.get(i10);
+            Object obj = t6.get(i10);
             i10++;
             p0 p0Var = (p0) obj;
             s sVar = p0Var.c;
@@ -1725,12 +1724,12 @@ public abstract class j0 {
 
     public final p0 g(s sVar) {
         String str = sVar.e;
-        com.google.firebase.messaging.r rVar = this.c;
-        p0 p0Var = (p0) ((HashMap) rVar.c).get(str);
+        sf.e eVar = this.c;
+        p0 p0Var = (p0) ((HashMap) eVar.c).get(str);
         if (p0Var != null) {
             return p0Var;
         }
-        p0 p0Var2 = new p0(this.o, rVar, sVar);
+        p0 p0Var2 = new p0(this.o, eVar, sVar);
         p0Var2.l(this.w.b.getClassLoader());
         p0Var2.e = this.v;
         return p0Var2;
@@ -1745,16 +1744,16 @@ public abstract class j0 {
             try {
                 w("  ", null, printWriter, new String[0]);
                 throw illegalStateException;
-            } catch (Exception e) {
-                Log.e("FragmentManager", "Failed dumping state", e);
+            } catch (Exception e6) {
+                Log.e("FragmentManager", "Failed dumping state", e6);
                 throw illegalStateException;
             }
         }
         try {
             uVar.e.dump("  ", null, printWriter, new String[0]);
             throw illegalStateException;
-        } catch (Exception e6) {
-            Log.e("FragmentManager", "Failed dumping state", e6);
+        } catch (Exception e10) {
+            Log.e("FragmentManager", "Failed dumping state", e10);
             throw illegalStateException;
         }
     }
@@ -1771,9 +1770,9 @@ public abstract class j0 {
             if (K(2)) {
                 Log.v("FragmentManager", "remove from detach: " + sVar);
             }
-            com.google.firebase.messaging.r rVar = this.c;
-            synchronized (((ArrayList) rVar.b)) {
-                ((ArrayList) rVar.b).remove(sVar);
+            sf.e eVar = this.c;
+            synchronized (((ArrayList) eVar.b)) {
+                ((ArrayList) eVar.b).remove(sVar);
             }
             sVar.v = false;
             if (L(sVar)) {
@@ -1821,7 +1820,7 @@ public abstract class j0 {
             g0(new IllegalStateException("Do not call dispatchConfigurationChanged() on host. Host implements OnConfigurationChangedProvider and automatically dispatches configuration changes to fragments."));
             throw null;
         }
-        for (s sVar : this.c.z()) {
+        for (s sVar : this.c.v()) {
             if (sVar != null) {
                 sVar.onConfigurationChanged(configuration);
                 if (z4) {
@@ -1835,7 +1834,7 @@ public abstract class j0 {
         if (this.v < 1) {
             return false;
         }
-        for (s sVar : this.c.z()) {
+        for (s sVar : this.c.v()) {
             if (sVar != null) {
                 if (!sVar.N ? sVar.I.j() : false) {
                     return true;
@@ -1851,7 +1850,7 @@ public abstract class j0 {
         }
         ArrayList arrayList = null;
         boolean z4 = false;
-        for (s sVar : this.c.z()) {
+        for (s sVar : this.c.v()) {
             if (sVar != null && N(sVar)) {
                 if (!sVar.N ? sVar.I.k() : false) {
                     if (arrayList == null) {
@@ -1880,9 +1879,9 @@ public abstract class j0 {
         A(true);
         x();
         u uVar = this.w;
-        com.google.firebase.messaging.r rVar = this.c;
+        sf.e eVar = this.c;
         if (uVar != null) {
-            z4 = ((m0) rVar.e).h;
+            z4 = ((m0) eVar.e).h;
         } else {
             z4 = e2.c.s(uVar.b) ? !r1.isChangingConfigurations() : true;
         }
@@ -1895,7 +1894,7 @@ public abstract class j0 {
                 while (i10 < size) {
                     Object obj = arrayList.get(i10);
                     i10++;
-                    ((m0) rVar.e).d((String) obj, false);
+                    ((m0) eVar.e).d((String) obj, false);
                 }
             }
         }
@@ -1952,7 +1951,7 @@ public abstract class j0 {
             g0(new IllegalStateException("Do not call dispatchLowMemory() on host. Host implements OnTrimMemoryProvider and automatically dispatches low memory callbacks to fragments."));
             throw null;
         }
-        for (s sVar : this.c.z()) {
+        for (s sVar : this.c.v()) {
             if (sVar != null) {
                 sVar.R = true;
                 if (z4) {
@@ -1967,7 +1966,7 @@ public abstract class j0 {
             g0(new IllegalStateException("Do not call dispatchMultiWindowModeChanged() on host. Host implements OnMultiWindowModeChangedProvider and automatically dispatches multi-window mode changes to fragments."));
             throw null;
         }
-        for (s sVar : this.c.z()) {
+        for (s sVar : this.c.v()) {
             if (sVar != null && z4) {
                 sVar.I.n(true);
             }
@@ -1975,11 +1974,11 @@ public abstract class j0 {
     }
 
     public final void o() {
-        ArrayList y10 = this.c.y();
-        int size = y10.size();
+        ArrayList u10 = this.c.u();
+        int size = u10.size();
         int i10 = 0;
         while (i10 < size) {
-            Object obj = y10.get(i10);
+            Object obj = u10.get(i10);
             i10++;
             s sVar = (s) obj;
             if (sVar != null) {
@@ -1991,7 +1990,7 @@ public abstract class j0 {
 
     public final boolean p() {
         if (this.v >= 1) {
-            for (s sVar : this.c.z()) {
+            for (s sVar : this.c.v()) {
                 if (sVar != null) {
                     if (!sVar.N ? sVar.I.p() : false) {
                         return true;
@@ -2006,7 +2005,7 @@ public abstract class j0 {
         if (this.v < 1) {
             return;
         }
-        for (s sVar : this.c.z()) {
+        for (s sVar : this.c.v()) {
             if (sVar != null && !sVar.N) {
                 sVar.I.q();
             }
@@ -2015,7 +2014,7 @@ public abstract class j0 {
 
     public final void r(s sVar) {
         if (sVar != null) {
-            if (sVar.equals(this.c.u(sVar.e))) {
+            if (sVar.equals(this.c.q(sVar.e))) {
                 sVar.G.getClass();
                 boolean O = O(sVar);
                 Boolean bool = sVar.s;
@@ -2034,7 +2033,7 @@ public abstract class j0 {
             g0(new IllegalStateException("Do not call dispatchPictureInPictureModeChanged() on host. Host implements OnPictureInPictureModeChangedProvider and automatically dispatches picture-in-picture mode changes to fragments."));
             throw null;
         }
-        for (s sVar : this.c.z()) {
+        for (s sVar : this.c.v()) {
             if (sVar != null && z4) {
                 sVar.I.s(true);
             }
@@ -2046,7 +2045,7 @@ public abstract class j0 {
             return false;
         }
         boolean z4 = false;
-        for (s sVar : this.c.z()) {
+        for (s sVar : this.c.v()) {
             if (sVar != null && N(sVar)) {
                 if (!sVar.N ? sVar.I.t() : false) {
                     z4 = true;
@@ -2112,11 +2111,11 @@ public abstract class j0 {
 
     public final void w(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
         int size;
-        String k10 = v2.k(str, "    ");
-        com.google.firebase.messaging.r rVar = this.c;
-        ArrayList arrayList = (ArrayList) rVar.b;
-        String k11 = v2.k(str, "    ");
-        HashMap hashMap = (HashMap) rVar.c;
+        String e6 = w.c.e(str, "    ");
+        sf.e eVar = this.c;
+        ArrayList arrayList = (ArrayList) eVar.b;
+        String e10 = w.c.e(str, "    ");
+        HashMap hashMap = (HashMap) eVar.c;
         if (!hashMap.isEmpty()) {
             printWriter.print(str);
             printWriter.println("Active Fragments:");
@@ -2125,7 +2124,7 @@ public abstract class j0 {
                 if (p0Var != null) {
                     s sVar = p0Var.c;
                     printWriter.println(sVar);
-                    sVar.i(k11, fileDescriptor, printWriter, strArr);
+                    sVar.i(e10, fileDescriptor, printWriter, strArr);
                 } else {
                     printWriter.println(BuildConfig.BETA_URL);
                 }
@@ -2168,7 +2167,7 @@ public abstract class j0 {
                 printWriter.print(i12);
                 printWriter.print(": ");
                 printWriter.println(aVar.toString());
-                aVar.g(k10, printWriter, true);
+                aVar.g(e6, printWriter, true);
             }
         }
         printWriter.print(str);

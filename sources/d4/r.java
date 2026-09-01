@@ -17,16 +17,16 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
-import k7.b7;
-import kh.a2;
+import k7.c7;
 import l3.p0;
 import o4.l0;
+import oh.h4;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class r extends j3.e {
     public static final byte[] Q0 = {0, 0, 1, 103, 66, -64, 11, -38, 37, -112, 0, 0, 1, 104, -50, 15, 19, 32, 0, 0, 1, 101, -120, -124, 13, -50, 113, 24, -96, 0, 47, -65, 28, 49, -61, 39, 93, 120};
@@ -116,7 +116,7 @@ public abstract class r extends j3.e {
         this.S = -9223372036854775807L;
         this.K = new ArrayDeque();
         j0(q.d);
-        gVar.k(0);
+        gVar.j(0);
         gVar.d.order(ByteOrder.nativeOrder());
         p0 p0Var = new p0();
         p0Var.c = l3.n.a;
@@ -144,8 +144,8 @@ public abstract class r extends j3.e {
 
     public final void C() {
         this.x0 = false;
-        this.H.c();
-        this.G.c();
+        this.H.b();
+        this.G.b();
         this.w0 = false;
         this.v0 = false;
         p0 p0Var = this.L;
@@ -309,7 +309,7 @@ public abstract class r extends j3.e {
                 return false;
             }
             iVar.d = this.V.getInputBuffer(d);
-            iVar.c();
+            iVar.b();
         }
         if (this.A0 == 1) {
             if (!this.n0) {
@@ -351,7 +351,7 @@ public abstract class r extends j3.e {
             }
             if (s6 == -5) {
                 if (this.z0 == 2) {
-                    iVar.c();
+                    iVar.b();
                     this.z0 = 1;
                 }
                 U(bVar);
@@ -359,7 +359,7 @@ public abstract class r extends j3.e {
             }
             if (iVar.e(4)) {
                 if (this.z0 == 2) {
-                    iVar.c();
+                    iVar.b();
                     this.z0 = 1;
                 }
                 this.H0 = true;
@@ -376,13 +376,13 @@ public abstract class r extends j3.e {
                     this.q0 = -1;
                     iVar.d = null;
                     return false;
-                } catch (MediaCodec.CryptoException e) {
-                    throw a(e, this.M, false, d0.r(e.getErrorCode()));
+                } catch (MediaCodec.CryptoException e6) {
+                    throw a(e6, this.M, false, d0.r(e6.getErrorCode()));
                 }
             }
             if (this.C0 || iVar.e(1)) {
-                boolean e6 = iVar.e(TLObject.FLAG_30);
-                if (e6) {
+                boolean e10 = iVar.e(TLObject.FLAG_30);
+                if (e10) {
                     if (position == 0) {
                         dVar.getClass();
                     } else {
@@ -395,7 +395,7 @@ public abstract class r extends j3.e {
                         iArr2[0] = iArr2[0] + position;
                     }
                 }
-                if (this.e0 && !e6) {
+                if (this.e0 && !e10) {
                     ByteBuffer byteBuffer2 = iVar.d;
                     int position2 = byteBuffer2.position();
                     int i12 = 0;
@@ -459,10 +459,10 @@ public abstract class r extends j3.e {
                     n0 n0Var2 = this.M;
                     hVar2.getClass();
                     long j12 = n0Var2.Q;
-                    z4 = e6;
+                    z4 = e10;
                     this.F0 = Math.max(j11, Math.max(0L, ((hVar2.b - 529) * 1000000) / j12) + hVar2.a);
                 } else {
-                    z4 = e6;
+                    z4 = e10;
                 }
                 if (iVar.e(TLObject.FLAG_31)) {
                     this.I.add(Long.valueOf(j10));
@@ -477,7 +477,7 @@ public abstract class r extends j3.e {
                     this.J0 = false;
                 }
                 this.F0 = Math.max(this.F0, j10);
-                iVar.l();
+                iVar.k();
                 if (iVar.e(TLObject.FLAG_28)) {
                     N(iVar);
                 }
@@ -494,18 +494,18 @@ public abstract class r extends j3.e {
                     this.z0 = 0;
                     this.M0.c++;
                     return true;
-                } catch (MediaCodec.CryptoException e10) {
-                    throw a(e10, this.M, false, d0.r(e10.getErrorCode()));
+                } catch (MediaCodec.CryptoException e11) {
+                    throw a(e11, this.M, false, d0.r(e11.getErrorCode()));
                 }
             }
-            iVar.c();
+            iVar.b();
             if (this.z0 == 2) {
                 this.z0 = 1;
                 return true;
             }
             return true;
-        } catch (n3.h e11) {
-            R(e11);
+        } catch (n3.h e12) {
+            R(e12);
             d0(0);
             G();
             return true;
@@ -535,8 +535,8 @@ public abstract class r extends j3.e {
             if (i11 >= 23) {
                 try {
                     o0();
-                } catch (j3.n e) {
-                    h5.a.L("MediaCodecRenderer", "Failed to update the DRM session, releasing the codec instead.", e);
+                } catch (j3.n e6) {
+                    h5.a.L("MediaCodecRenderer", "Failed to update the DRM session, releasing the codec instead.", e6);
                     e0();
                     return true;
                 }
@@ -629,7 +629,7 @@ public abstract class r extends j3.e {
         }
         try {
             h5.a.c("createCodec:" + str4);
-            this.V = this.B.w1(M);
+            this.V = this.B.A1(M);
             h5.a.q();
             long elapsedRealtime2 = SystemClock.elapsedRealtime();
             if (nVar.d(this.M)) {
@@ -702,7 +702,7 @@ public abstract class r extends j3.e {
                             gVar2 = gVar;
                         }
                         l10.append(", drm=[");
-                        new o2.o(String.valueOf(',')).h(l10, linkedHashSet);
+                        new h4(String.valueOf(',')).E(l10, linkedHashSet);
                         l10.append(']');
                         i19 = -1;
                     } else {
@@ -765,7 +765,7 @@ public abstract class r extends j3.e {
                             arrayList.add("forced");
                         }
                         l10.append(", selectionFlags=[");
-                        new o2.o(String.valueOf(c3)).h(l10, arrayList);
+                        new h4(String.valueOf(c3)).E(l10, arrayList);
                         l10.append("]");
                     }
                     if (i18 != 0) {
@@ -816,7 +816,7 @@ public abstract class r extends j3.e {
                             arrayList2.add("trick-play");
                         }
                         l10.append(", roleFlags=[");
-                        new o2.o(String.valueOf(c3)).h(l10, arrayList2);
+                        new h4(String.valueOf(c3)).E(l10, arrayList2);
                         l10.append("]");
                     }
                     sb = l10.toString();
@@ -1008,27 +1008,27 @@ public abstract class r extends j3.e {
                         MediaCrypto mediaCrypto = new MediaCrypto(wVar.a, wVar.b);
                         this.Q = mediaCrypto;
                         this.R = !wVar.c && mediaCrypto.requiresSecureDecoderComponent(str2);
-                    } catch (MediaCryptoException e) {
-                        throw a(e, this.M, false, 6006);
+                    } catch (MediaCryptoException e6) {
+                        throw a(e6, this.M, false, 6006);
                     }
                 }
             }
             if (o3.w.d && (h instanceof o3.w)) {
-                int e6 = this.O.e();
-                if (e6 == 1) {
+                int e10 = this.O.e();
+                if (e10 == 1) {
                     o3.h g10 = this.O.g();
                     g10.getClass();
                     throw a(g10, this.M, false, g10.a);
                 }
-                if (e6 != 4) {
+                if (e10 != 4) {
                     return;
                 }
             }
         }
         try {
             Q(this.Q, this.R);
-        } catch (p e10) {
-            throw a(e10, this.M, false, 4001);
+        } catch (p e11) {
+            throw a(e11, this.M, false, 4001);
         }
     }
 
@@ -1053,8 +1053,8 @@ public abstract class r extends j3.e {
                     this.a0.add((n) arrayList.get(0));
                 }
                 this.b0 = null;
-            } catch (v e) {
-                throw new p(this.M, e, z4, -49998);
+            } catch (v e6) {
+                throw new p(this.M, e6, z4, -49998);
             }
         }
         if (this.a0.isEmpty()) {
@@ -1068,26 +1068,26 @@ public abstract class r extends j3.e {
             }
             try {
                 O(nVar2, mediaCrypto);
-            } catch (Exception e6) {
+            } catch (Exception e10) {
                 if (nVar2 != nVar) {
-                    throw e6;
+                    throw e10;
                 }
                 try {
                     h5.a.K("MediaCodecRenderer", "Preferred decoder instantiation failed. Sleeping for 50ms then retrying.");
                     Thread.sleep(50L);
                     O(nVar2, mediaCrypto);
-                } catch (Exception e10) {
-                    h5.a.L("MediaCodecRenderer", "Failed to initialize decoder: " + nVar2, e10);
+                } catch (Exception e11) {
+                    h5.a.L("MediaCodecRenderer", "Failed to initialize decoder: " + nVar2, e11);
                     this.a0.removeFirst();
                     n0 n0Var = this.M;
                     String str2 = "Decoder init failed: " + nVar2.a + ", " + n0Var;
                     String str3 = n0Var.C;
                     if (d0.a < 21) {
-                        str = e10 instanceof MediaCodec.CodecException ? ((MediaCodec.CodecException) e10).getDiagnosticInfo() : null;
+                        str = e11 instanceof MediaCodec.CodecException ? ((MediaCodec.CodecException) e11).getDiagnosticInfo() : null;
                     } else {
                         str = null;
                     }
-                    p pVar2 = new p(str2, e10, str3, z4, nVar2, str);
+                    p pVar2 = new p(str2, e11, str3, z4, nVar2, str);
                     R(pVar2);
                     pVar = this.b0;
                     if (pVar != null) {
@@ -1099,14 +1099,14 @@ public abstract class r extends j3.e {
                         throw this.b0;
                     }
                 }
-                h5.a.L("MediaCodecRenderer", "Failed to initialize decoder: " + nVar2, e10);
+                h5.a.L("MediaCodecRenderer", "Failed to initialize decoder: " + nVar2, e11);
                 this.a0.removeFirst();
                 n0 n0Var2 = this.M;
                 String str22 = "Decoder init failed: " + nVar2.a + ", " + n0Var2;
                 String str32 = n0Var2.C;
                 if (d0.a < 21) {
                 }
-                p pVar22 = new p(str22, e10, str32, z4, nVar2, str);
+                p pVar22 = new p(str22, e11, str32, z4, nVar2, str);
                 R(pVar22);
                 pVar = this.b0;
                 if (pVar != null) {
@@ -1156,7 +1156,7 @@ public abstract class r extends j3.e {
             throw a(new IllegalArgumentException(), n0Var, false, 4005);
         }
         o3.i iVar = (o3.i) bVar.b;
-        a2.D(this.P, iVar);
+        l.d.D(this.P, iVar);
         this.P = iVar;
         this.M = n0Var;
         if (this.v0) {
@@ -1293,7 +1293,7 @@ public abstract class r extends j3.e {
         f7.b bVar = this.c;
         bVar.l();
         n3.i iVar = this.E;
-        iVar.c();
+        iVar.b();
         int s6 = s(bVar, iVar, i10 | 4);
         if (s6 == -5) {
             U(bVar);
@@ -1390,22 +1390,22 @@ public abstract class r extends j3.e {
     }
 
     public final void i0(o3.i iVar) {
-        a2.D(this.O, iVar);
+        l.d.D(this.O, iVar);
         this.O = iVar;
     }
 
     @Override // j3.e
     public boolean j() {
-        boolean d;
+        boolean h;
         if (this.M != null) {
             if (h()) {
-                d = this.w;
+                h = this.w;
             } else {
                 l0 l0Var = this.n;
                 l0Var.getClass();
-                d = l0Var.d();
+                h = l0Var.h();
             }
-            if (!d) {
+            if (!h) {
                 if ((this.r0 >= 0) || (this.p0 != -9223372036854775807L && SystemClock.elapsedRealtime() < this.p0)) {
                 }
             }
@@ -1445,8 +1445,8 @@ public abstract class r extends j3.e {
         this.I0 = false;
         this.K0 = false;
         if (this.v0) {
-            this.H.c();
-            this.G.c();
+            this.H.b();
+            this.G.b();
             this.w0 = false;
             p0 p0Var = this.L;
             p0Var.getClass();
@@ -1503,8 +1503,8 @@ public abstract class r extends j3.e {
         if (h instanceof o3.w) {
             try {
                 this.Q.setMediaDrmSession(((o3.w) h).b);
-            } catch (MediaCryptoException e) {
-                throw a(e, this.M, false, 6006);
+            } catch (MediaCryptoException e6) {
+                throw a(e6, this.M, false, 6006);
             }
         }
         i0(this.P);
@@ -1632,30 +1632,30 @@ public abstract class r extends j3.e {
                     int i10 = fVar.d;
                     l0 l0Var = this.n;
                     l0Var.getClass();
-                    fVar.d = i10 + l0Var.e(j10 - this.s);
+                    fVar.d = i10 + l0Var.l(j10 - this.s);
                     d0(1);
                 }
                 synchronized (this.M0) {
                 }
             }
-        } catch (IllegalStateException e) {
+        } catch (IllegalStateException e6) {
             int i11 = d0.a;
-            if (i11 < 21 || !(e instanceof MediaCodec.CodecException)) {
-                StackTraceElement[] stackTrace = e.getStackTrace();
+            if (i11 < 21 || !(e6 instanceof MediaCodec.CodecException)) {
+                StackTraceElement[] stackTrace = e6.getStackTrace();
                 if (stackTrace.length <= 0 || !stackTrace[0].getClassName().equals("android.media.MediaCodec")) {
-                    throw e;
+                    throw e6;
                 }
             }
-            R(e);
+            R(e6);
             if (i11 >= 21) {
-                if (e instanceof MediaCodec.CodecException ? ((MediaCodec.CodecException) e).isRecoverable() : false) {
+                if (e6 instanceof MediaCodec.CodecException ? ((MediaCodec.CodecException) e6).isRecoverable() : false) {
                     z11 = true;
                 }
             }
             if (z11) {
                 e0();
             }
-            throw a(B(e, this.c0), this.M, z11, 4003);
+            throw a(B(e6, this.c0), this.M, z11, 4003);
         }
     }
 
@@ -1670,8 +1670,8 @@ public abstract class r extends j3.e {
     public final int x(n0 n0Var) {
         try {
             return m0(this.C, n0Var);
-        } catch (v e) {
-            throw a(e, n0Var, false, 4002);
+        } catch (v e6) {
+            throw a(e6, n0Var, false, 4002);
         }
     }
 
@@ -1699,7 +1699,7 @@ public abstract class r extends j3.e {
                 return false;
             }
             X(gVar.s);
-            gVar.c();
+            gVar.b();
         } else {
             gVar = gVar3;
         }
@@ -1711,7 +1711,7 @@ public abstract class r extends j3.e {
         boolean z4 = this.w0;
         n3.i iVar = this.G;
         if (z4) {
-            h5.a.i(gVar.n(iVar));
+            h5.a.i(gVar.m(iVar));
             this.w0 = false;
         }
         if (this.x0) {
@@ -1728,9 +1728,9 @@ public abstract class r extends j3.e {
         h5.a.i(!this.H0);
         f7.b bVar = this.c;
         bVar.l();
-        iVar.c();
+        iVar.b();
         while (true) {
-            iVar.c();
+            iVar.b();
             int s6 = s(bVar, iVar, r12);
             if (s6 == -5) {
                 U(bVar);
@@ -1753,7 +1753,7 @@ public abstract class r extends j3.e {
                     V(n0Var, null);
                     this.J0 = r12;
                 }
-                iVar.l();
+                iVar.k();
                 n0 n0Var2 = this.M;
                 if (n0Var2 != null && (str = n0Var2.C) != null && str.equals("audio/opus")) {
                     List list = this.M.E;
@@ -1790,7 +1790,7 @@ public abstract class r extends j3.e {
                                 byteBuffer = byteBuffer3;
                                 gVar2 = gVar;
                                 long length = bArr.length;
-                                b7.b(length, "out of range: %s", (length >> 8) == 0);
+                                c7.b(length, "out of range: %s", (length >> 8) == 0);
                                 byteBuffer.put((byte) length);
                                 byteBuffer.put(bArr);
                                 byteBuffer.putInt(22, d0.k(byteBuffer.arrayOffset(), bArr.length + 28, 0, byteBuffer.array()));
@@ -1805,9 +1805,9 @@ public abstract class r extends j3.e {
                             gVar2 = gVar;
                             byteBuffer = byteBuffer3;
                         }
-                        int e = p0Var.b + ((int) ((l3.a.e(byteBuffer2.get(0), byteBuffer2.limit() > 1 ? byteBuffer2.get(1) : (byte) 0) * 48000) / 1000000));
-                        p0Var.b = e;
-                        p0.a(byteBuffer, e, p0Var.a, i13, false);
+                        int e6 = p0Var.b + ((int) ((l3.a.e(byteBuffer2.get(0), byteBuffer2.limit() > 1 ? byteBuffer2.get(1) : (byte) 0) * 48000) / 1000000));
+                        p0Var.b = e6;
+                        p0.a(byteBuffer, e6, p0Var.a, i13, false);
                         for (int i15 = 0; i15 < i13; i15++) {
                             if (i12 >= 255) {
                                 byteBuffer.put((byte) -1);
@@ -1830,14 +1830,14 @@ public abstract class r extends j3.e {
                         }
                         p0Var.a++;
                         p0Var.c = byteBuffer;
-                        iVar.c();
-                        iVar.k(((ByteBuffer) p0Var.c).remaining());
+                        iVar.b();
+                        iVar.j(((ByteBuffer) p0Var.c).remaining());
                         iVar.d.put((ByteBuffer) p0Var.c);
-                        iVar.l();
+                        iVar.k();
                     }
                     gVar = gVar2;
                 }
-                if (!gVar.n(iVar)) {
+                if (!gVar.m(iVar)) {
                     this.w0 = true;
                     break;
                 }
@@ -1845,7 +1845,7 @@ public abstract class r extends j3.e {
             }
         }
         if (gVar.v > 0) {
-            gVar.l();
+            gVar.k();
         }
         return gVar.v > 0 || this.H0 || this.x0;
     }

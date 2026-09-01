@@ -17,7 +17,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public class p9 extends View {
     public Path B;
@@ -35,7 +35,7 @@ public class p9 extends View {
     public boolean v;
     public boolean w;
     public ValueAnimator x;
-    public k01 y;
+    public l01 y;
 
     public p9(Context context) {
         super(context);
@@ -91,7 +91,7 @@ public class p9 extends View {
 
     public z8 getAvatarDrawable() {
         if (this.h == null) {
-            this.h = new z8((org.telegram.ui.ActionBar.f6) null);
+            this.h = new z8((org.telegram.ui.ActionBar.g6) null);
         }
         return this.h;
     }
@@ -135,9 +135,9 @@ public class p9 extends View {
         m(imageLocation, str, null, null, drawable, null, 0, obj);
     }
 
-    public final void o(s61 s61Var, ImageLocation imageLocation, String str, ImageLocation imageLocation2, ImageLocation imageLocation3, String str2, int i10, String str3) {
-        if (s61Var != null) {
-            this.a.setImageBitmap(s61Var);
+    public final void o(u61 u61Var, ImageLocation imageLocation, String str, ImageLocation imageLocation2, ImageLocation imageLocation3, String str2, int i10, String str3) {
+        if (u61Var != null) {
+            this.a.setImageBitmap(u61Var);
         } else {
             this.a.setImage(imageLocation, str, imageLocation2, null, imageLocation3, str2, null, i10, null, str3, 1);
         }
@@ -272,7 +272,7 @@ public class p9 extends View {
             this.y = null;
             return;
         }
-        this.y = new k01(charSequence, 16.5f, AndroidUtilities.bold());
+        this.y = new l01(charSequence, 16.5f, AndroidUtilities.bold());
         if (this.C == null) {
             ColorMatrix colorMatrix = new ColorMatrix();
             colorMatrix.setSaturation(1.2f);

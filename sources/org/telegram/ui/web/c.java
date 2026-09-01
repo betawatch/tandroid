@@ -2,16 +2,16 @@ package org.telegram.ui.web;
 
 import android.content.Context;
 import n7.qa;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.i61;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes4.dex */
-public final class c extends g61 {
+public final class c extends i61 {
     public final /* synthetic */ k c3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c(k kVar, Context context, int i10, dg.r1 r1Var, a aVar, qa qaVar) {
-        super(context, i10, 0, false, r1Var, aVar, null, qaVar);
+    public c(k kVar, Context context, int i10, eg.p1 p1Var, a aVar, qa qaVar) {
+        super(context, i10, 0, false, p1Var, aVar, null, qaVar);
         this.c3 = kVar;
     }
 

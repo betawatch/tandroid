@@ -4,7 +4,7 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class e9 implements xd.f, ae.a {
     public final ImageReceiver a;
@@ -18,7 +18,7 @@ public final class e9 implements xd.f, ae.a {
         ImageReceiver imageReceiver = new ImageReceiver(viewGroup);
         this.a = imageReceiver;
         imageReceiver.setRoundRadius(f9Var.e / 2);
-        z8 z8Var = new z8((org.telegram.ui.ActionBar.f6) null);
+        z8 z8Var = new z8((org.telegram.ui.ActionBar.g6) null);
         this.b = z8Var;
         z8Var.u(AndroidUtilities.dp(22.0f));
     }

@@ -1,8 +1,8 @@
 package k1;
 
-import k7.p7;
+import k7.q7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class p extends wc.i implements dd.p {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final class p extends wc.i implements dd.p {
                 int i10 = this.b;
                 sc.i iVar = sc.i.a;
                 if (i10 == 0) {
-                    p7.b(obj);
+                    q7.b(obj);
                     m mVar = (m) this.c;
                     boolean z4 = mVar instanceof k;
                     d0 d0Var = this.d;
@@ -72,11 +72,11 @@ public final class p extends wc.i implements dd.p {
                         if (!(e0Var instanceof b)) {
                             if (e0Var instanceof i) {
                                 if (e0Var == kVar.a) {
-                                    obj2 = d0Var.e(this);
+                                    obj2 = d0Var.f(this);
                                     break;
                                 }
                             } else if (kotlin.jvm.internal.j.a(e0Var, f0.a)) {
-                                obj2 = d0Var.e(this);
+                                obj2 = d0Var.f(this);
                                 break;
                             } else if (e0Var instanceof h) {
                                 throw new IllegalStateException("Can't read in final state.");
@@ -96,7 +96,7 @@ public final class p extends wc.i implements dd.p {
                     if (i10 != 1 && i10 != 2) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    p7.b(obj);
+                    q7.b(obj);
                 }
                 return iVar;
             default:
@@ -108,18 +108,18 @@ public final class p extends wc.i implements dd.p {
                     if (i11 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    p7.b(obj);
+                    q7.b(obj);
                     return sc.i.a;
                 }
-                p7.b(obj);
+                q7.b(obj);
                 od.c cVar = (od.c) this.c;
                 e0 e0Var2 = (e0) mVar2.b();
                 if (!(e0Var2 instanceof b)) {
-                    d0Var2.n.J(new k(e0Var2));
+                    d0Var2.n.k(new k(e0Var2));
                 }
                 q qVar = new q(e0Var2, null, 0);
                 this.b = 1;
-                mVar2.z(new od.i(new kotlin.jvm.internal.o(), new s(cVar), qVar), this);
+                mVar2.x(new od.i(new kotlin.jvm.internal.o(), new s(cVar), qVar), this);
                 return aVar2;
         }
     }

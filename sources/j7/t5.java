@@ -1,24 +1,42 @@
 package j7;
 
-import android.os.Bundle;
-import j$.util.DesugarCollections;
-import java.util.HashMap;
-import java.util.Map;
-
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class t5 {
-    public static Map a(String str, Bundle bundle) {
-        Map map = (Map) bundle.getSerializable(str);
-        if (map == null) {
-            return com.google.android.gms.internal.cast.r0.n;
-        }
-        HashMap hashMap = new HashMap();
-        for (Map.Entry entry : map.entrySet()) {
-            if (entry != null && entry.getKey() != null && entry.getValue() != null) {
-                hashMap.put((Integer) entry.getKey(), (Integer) entry.getValue());
+    public static void a(int i10, int i11) {
+        String a2;
+        if (i10 < 0 || i10 >= i11) {
+            if (i10 < 0) {
+                a2 = u5.a("%s (%s) must not be negative", "index", Integer.valueOf(i10));
+            } else {
+                if (i11 < 0) {
+                    throw new IllegalArgumentException(l.d.j(i11, "negative size: "));
+                }
+                a2 = u5.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
             }
+            throw new IndexOutOfBoundsException(a2);
         }
-        return DesugarCollections.unmodifiableMap(hashMap);
+    }
+
+    public static void b(int i10, int i11) {
+        if (i10 < 0 || i10 > i11) {
+            throw new IndexOutOfBoundsException(d(i10, i11, "index"));
+        }
+    }
+
+    public static void c(int i10, int i11, int i12) {
+        if (i10 < 0 || i11 < i10 || i11 > i12) {
+            throw new IndexOutOfBoundsException((i10 < 0 || i10 > i12) ? d(i10, i12, "start index") : (i11 < 0 || i11 > i12) ? d(i11, i12, "end index") : u5.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i11), Integer.valueOf(i10)));
+        }
+    }
+
+    public static String d(int i10, int i11, String str) {
+        if (i10 < 0) {
+            return u5.a("%s (%s) must not be negative", str, Integer.valueOf(i10));
+        }
+        if (i11 >= 0) {
+            return u5.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
+        }
+        throw new IllegalArgumentException(l.d.j(i11, "negative size: "));
     }
 }

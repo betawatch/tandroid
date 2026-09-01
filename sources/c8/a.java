@@ -14,22 +14,22 @@ import b6.v;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.common.api.k;
 import com.google.android.gms.common.api.l;
-import m.s3;
+import m.r3;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a extends b6.g implements com.google.android.gms.common.api.c {
     public final boolean R;
-    public final s3 S;
+    public final r3 S;
     public final Bundle T;
     public final Integer U;
 
-    public a(Context context, Looper looper, s3 s3Var, Bundle bundle, k kVar, l lVar) {
-        super(context, looper, 44, s3Var, kVar, lVar, 0);
+    public a(Context context, Looper looper, r3 r3Var, Bundle bundle, k kVar, l lVar) {
+        super(context, looper, 44, r3Var, kVar, lVar, 0);
         this.R = true;
-        this.S = s3Var;
+        this.S = r3Var;
         this.T = bundle;
-        this.U = (Integer) s3Var.h;
+        this.U = (Integer) r3Var.h;
     }
 
     public final void G() {
@@ -50,12 +50,12 @@ public final class a extends b6.g implements com.google.android.gms.common.api.c
             y6.a.c(G0, gVar);
             y6.a.d(G0, cVar);
             eVar.H0(G0, 12);
-        } catch (RemoteException e) {
+        } catch (RemoteException e6) {
             Log.w("SignInClientImpl", "Remote service probably died when signIn is called");
             try {
                 cVar.h(new h(1, new y5.a(8, null), null));
             } catch (RemoteException unused) {
-                Log.wtf("SignInClientImpl", "ISignInCallbacks#onSignInComplete should be executed from the same process, unexpected RemoteException.", e);
+                Log.wtf("SignInClientImpl", "ISignInCallbacks#onSignInComplete should be executed from the same process, unexpected RemoteException.", e6);
             }
         }
     }
@@ -81,11 +81,11 @@ public final class a extends b6.g implements com.google.android.gms.common.api.c
 
     @Override // b6.g
     public final Bundle t() {
-        s3 s3Var = this.S;
-        boolean equals = this.n.getPackageName().equals((String) s3Var.d);
+        r3 r3Var = this.S;
+        boolean equals = this.n.getPackageName().equals((String) r3Var.d);
         Bundle bundle = this.T;
         if (!equals) {
-            bundle.putString("com.google.android.gms.signin.internal.realClientPackageName", (String) s3Var.d);
+            bundle.putString("com.google.android.gms.signin.internal.realClientPackageName", (String) r3Var.d);
         }
         return bundle;
     }

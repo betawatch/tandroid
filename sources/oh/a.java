@@ -1,116 +1,130 @@
 package oh;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.text.TextUtils;
-import android.view.MotionEvent;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
-import org.telegram.ui.Components.l81;
-import org.telegram.ui.Components.nr0;
-import org.telegram.ui.Components.rr0;
-import org.telegram.ui.Components.sr0;
-import org.telegram.ui.Components.yu0;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes4.dex */
-public final class a extends l81 {
-    public final /* synthetic */ int Q = 0;
-    public Object R;
-    public final /* synthetic */ FrameLayout S;
+public final class a extends FrameLayout {
+    public final ImageView a;
+    public final org.telegram.ui.Components.j6 b;
+    public final Paint c;
+    public final Paint d;
+    public boolean e;
+    public int f;
+    public float h;
+    public ValueAnimator n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a(sr0 sr0Var, Context context, rr0 rr0Var) {
-        super(context, null);
-        this.S = sr0Var;
-        this.R = rr0Var;
+    public a(Context context, rg.b bVar) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.c = paint;
+        Paint paint2 = new Paint(1);
+        this.d = paint2;
+        this.h = 1.0f;
+        k7.e6.a(this);
+        org.telegram.ui.Components.j6 j6Var = new org.telegram.ui.Components.j6(false, true, true, false);
+        this.b = j6Var;
+        j6Var.r(-9866632);
+        j6Var.t(AndroidUtilities.dp(9.0f));
+        j6Var.setCallback(this);
+        j6Var.u(AndroidUtilities.getTypeface("fonts/num.otf"));
+        j6Var.D = true;
+        paint.setColor(-14670806);
+        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        FrameLayout frameLayout = new FrameLayout(context);
+        og.i iVar = new og.i();
+        iVar.a(bVar);
+        iVar.g.setColor(-14670806);
+        iVar.invalidateSelf();
+        iVar.f = AndroidUtilities.dp(1.0f);
+        frameLayout.setBackground(iVar);
+        addView(frameLayout, k7.c6.e(40, 40, 17));
+        ImageView imageView = new ImageView(context);
+        imageView.setImageResource(R.drawable.menu_comments);
+        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+        imageView.setColorFilter(new PorterDuffColorFilter(-2960428, mode));
+        frameLayout.addView(imageView, k7.c6.e(20, 20, 17));
+        ImageView imageView2 = new ImageView(context);
+        this.a = imageView2;
+        imageView2.setImageResource(R.drawable.menu_comments_arrow);
+        imageView2.setColorFilter(new PorterDuffColorFilter(-2960428, mode));
+        frameLayout.addView(imageView2, k7.c6.e(20, 20, 17));
+        imageView2.setPivotX(AndroidUtilities.dp(10.27f));
+        imageView2.setPivotY(AndroidUtilities.dp(9.58f));
     }
 
-    @Override // org.telegram.ui.Components.l81
-    public boolean i(MotionEvent motionEvent) {
-        switch (this.Q) {
-            case 0:
-                return !((nr0) this.S).D.z1;
-            default:
-                return super.i(motionEvent);
+    public final void a(boolean z4, boolean z10) {
+        if (z10 && this.e == z4) {
+            return;
+        }
+        this.e = z4;
+        ImageView imageView = this.a;
+        if (z10) {
+            org.telegram.ui.b.p(imageView.animate().rotation(z4 ? 0.0f : 180.0f), pr.h, 420L);
+        } else {
+            imageView.setRotation(z4 ? 0.0f : 180.0f);
         }
     }
 
-    @Override // org.telegram.ui.Components.l81
-    public final void w(boolean z4) {
-        switch (this.Q) {
-            case 0:
-                nr0 nr0Var = (nr0) this.S;
-                String currentLang = nr0Var.getCurrentLang();
-                if (!TextUtils.equals((String) this.R, currentLang)) {
-                    this.R = currentLang;
-                    nr0Var.D.L0();
-                    break;
-                }
-                break;
-            default:
-                rr0 rr0Var = (rr0) this.R;
-                rr0Var.d.J0(((sr0) this.S).n.getAnimatingIndicatorProgress());
-                break;
-        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
+        super.dispatchDraw(canvas);
+        float f10 = this.h;
+        org.telegram.ui.Components.j6 j6Var = this.b;
+        float g10 = j6Var.g() * f10;
+        float max = Math.max(AndroidUtilities.dp(12.0f), j6Var.d() + AndroidUtilities.dp(6.0f));
+        canvas.save();
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(getWidth() - max, 0.0f, getWidth(), AndroidUtilities.dp(13.0f));
+        canvas.scale(g10, g10, rectF.centerX(), rectF.centerY());
+        rectF.inset(-AndroidUtilities.dp(2.0f), -AndroidUtilities.dp(2.0f));
+        canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, this.d);
+        rectF.set(getWidth() - max, 0.0f, getWidth(), AndroidUtilities.dp(13.0f));
+        canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, this.c);
+        canvas.translate(((max - j6Var.d()) / 2.0f) + rectF.left, AndroidUtilities.dp(7.0f));
+        j6Var.draw(canvas);
+        canvas.restore();
+        canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.l81
-    public void x(int i10) {
-        switch (this.Q) {
-            case 0:
-                nr0 nr0Var = (nr0) this.S;
-                String currentLang = nr0Var.getCurrentLang();
-                if (!TextUtils.equals((String) this.R, currentLang)) {
-                    this.R = currentLang;
-                    nr0Var.D.L0();
-                    break;
-                }
-                break;
+    public void setCount(int i10) {
+        this.b.q(i10 <= 0 ? "" : LocaleController.formatNumber(i10, ','), true, true);
+        if (this.f != i10) {
+            ValueAnimator valueAnimator = this.n;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+                this.n = null;
+            }
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            this.n = ofFloat;
+            ofFloat.addUpdateListener(new eg.m1(this, 19));
+            this.n.addListener(new dg.l0(this, 15));
+            this.n.setInterpolator(new OvershootInterpolator(2.5f));
+            this.n.setDuration(200L);
+            this.n.start();
+            this.f = i10;
         }
+        invalidate();
     }
 
-    @Override // org.telegram.ui.Components.l81
-    public void y(int i10, boolean z4) {
-        switch (this.Q) {
-            case 1:
-                rr0 rr0Var = (rr0) this.R;
-                int i11 = ((sr0) this.S).n.V.get(i10, -1);
-                yu0 yu0Var = rr0Var.d;
-                if (i11 > 0) {
-                    yu0.t(yu0Var, yu0Var.i1(i11).a, z4);
-                    break;
-                } else {
-                    yu0.t(yu0Var, 8, z4);
-                    break;
-                }
-            default:
-                super.y(i10, z4);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.l81
-    public final void z(int i10) {
-        switch (this.Q) {
-            case 0:
-                nr0 nr0Var = (nr0) this.S;
-                String currentLang = nr0Var.getCurrentLang();
-                if (!TextUtils.equals((String) this.R, currentLang)) {
-                    this.R = currentLang;
-                    nr0Var.D.L0();
-                    break;
-                }
-                break;
-            default:
-                rr0 rr0Var = (rr0) this.R;
-                ((sr0) this.S).n.V.get(i10, -1);
-                rr0Var.d.J0(1.0f);
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a(nr0 nr0Var, Context context) {
-        super(context, null);
-        this.S = nr0Var;
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.b || super.verifyDrawable(drawable);
     }
 }

@@ -1,9 +1,19 @@
 package j7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class o6 {
-    public static int a(int i10) {
-        return (int) (Integer.rotateLeft((int) (i10 * (-862048943)), 15) * 461845907);
-    }
+    public abstract com.google.android.gms.internal.play_billing.f0 a(com.google.android.gms.internal.play_billing.w0 w0Var);
+
+    public abstract com.google.android.gms.internal.play_billing.k0 b(com.google.android.gms.internal.play_billing.w0 w0Var);
+
+    public abstract void c(com.google.android.gms.internal.play_billing.k0 k0Var, com.google.android.gms.internal.play_billing.k0 k0Var2);
+
+    public abstract void d(com.google.android.gms.internal.play_billing.k0 k0Var, Thread thread);
+
+    public abstract boolean e(com.google.android.gms.internal.play_billing.w0 w0Var, com.google.android.gms.internal.play_billing.f0 f0Var, com.google.android.gms.internal.play_billing.f0 f0Var2);
+
+    public abstract boolean f(com.google.android.gms.internal.play_billing.l0 l0Var, Object obj, Object obj2);
+
+    public abstract boolean g(com.google.android.gms.internal.play_billing.l0 l0Var, com.google.android.gms.internal.play_billing.k0 k0Var, com.google.android.gms.internal.play_billing.k0 k0Var2);
 }

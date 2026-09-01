@@ -1,96 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class ki extends View {
-    public final /* synthetic */ int a = 0;
-    public final int b;
-    public final Object c;
-    public final Object d;
-    public final Object e;
+public interface ki {
+    void B0(wg wgVar);
 
-    public ki(ViewGroup viewGroup, int i10) {
-        super(viewGroup.getContext());
-        this.c = new ArrayList();
-        this.e = new org.telegram.ui.c10(this, 27);
-        this.d = viewGroup;
-        this.b = i10;
-    }
+    void I1(int i10, boolean z4, boolean z10, int i11, int i12, long j10, boolean z11, boolean z12, long j11);
 
-    public void a() {
-        org.telegram.ui.c10 c10Var = (org.telegram.ui.c10) this.e;
-        ArrayList arrayList = (ArrayList) this.c;
-        boolean isEmpty = arrayList.isEmpty();
-        int i10 = this.b;
-        if (isEmpty && getVisibility() != 8) {
-            NotificationCenter.getInstance(i10).removeDelayed(c10Var);
-            NotificationCenter.getInstance(i10).doOnIdle(c10Var);
-        } else {
-            if (arrayList.isEmpty() || getVisibility() == 0) {
-                return;
-            }
-            NotificationCenter.getInstance(i10).removeDelayed(c10Var);
-            setVisibility(0);
-        }
-    }
+    void Q0();
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                lf.b0 b0Var = (lf.b0) this.d;
-                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) this.c;
-                int i10 = this.b;
-                b0Var.b(org.telegram.ui.ActionBar.j6.l1(0.5f, org.telegram.ui.ActionBar.j6.v0(i10, f6Var)));
-                b0Var.draw(canvas);
-                lf.b0 b0Var2 = (lf.b0) this.e;
-                b0Var2.b(org.telegram.ui.ActionBar.j6.l1(0.95f, org.telegram.ui.ActionBar.j6.v0(i10, f6Var)));
-                b0Var2.draw(canvas);
-                break;
-            default:
-                ArrayList arrayList = (ArrayList) this.c;
-                if (!arrayList.isEmpty()) {
-                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                        ((org.telegram.ui.sh0) arrayList.get(i11)).a(canvas);
-                    }
-                    break;
-                }
-                break;
-        }
-    }
+    void Z0(Object obj);
 
-    @Override // android.view.View
-    public void onSizeChanged(int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 0:
-                super.onSizeChanged(i10, i11, i12, i13);
-                int i14 = AndroidUtilities.statusBarHeight;
-                lf.b0 b0Var = (lf.b0) this.d;
-                b0Var.c(AndroidUtilities.dp(12.0f) + i14, 0);
-                b0Var.setBounds(0, 0, i10, AndroidUtilities.dp(52.0f) + i14);
-                lf.b0 b0Var2 = (lf.b0) this.e;
-                b0Var2.c(i14 / 3, 0);
-                b0Var2.setBounds(0, 0, i10, i14);
-                break;
-            default:
-                super.onSizeChanged(i10, i11, i12, i13);
-                break;
-        }
-    }
+    boolean b2();
 
-    public ki(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context);
-        this.d = new lf.b0(2);
-        this.e = new lf.b0(2);
-        this.c = f6Var;
-        this.b = i10;
-    }
+    void f2(ArrayList arrayList, CharSequence charSequence, boolean z4, int i10, int i11, long j10, boolean z10, long j11);
+
+    boolean h0();
+
+    void o1(TLRPC.User user);
+
+    void y0();
 }

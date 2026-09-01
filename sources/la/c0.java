@@ -3,24 +3,24 @@ package la;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.os.Build;
-import vh.p1;
+import org.telegram.ui.Components.ai;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class c0 {
     public static final c0 a = new c0();
-    public static final p1 b;
+    public static final ai b;
 
     static {
         w9.d dVar = new w9.d();
-        dVar.d(b0.class, g.a);
-        dVar.d(k0.class, h.a);
-        dVar.d(j.class, e.a);
-        dVar.d(b.class, d.a);
-        dVar.d(a.class, c.a);
-        dVar.d(p.class, f.a);
+        dVar.b(b0.class, g.a);
+        dVar.b(k0.class, h.a);
+        dVar.b(j.class, e.a);
+        dVar.b(b.class, d.a);
+        dVar.b(a.class, c.a);
+        dVar.b(p.class, f.a);
         dVar.d = true;
-        b = new p1(dVar);
+        b = new ai(dVar, 19);
     }
 
     public static b a(w8.g gVar) {

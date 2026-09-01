@@ -5,24 +5,24 @@ import java.util.Iterator;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-import k7.f7;
 import k7.g7;
-import k7.g8;
-import k7.n7;
-import k7.p7;
+import k7.h7;
+import k7.h8;
+import k7.o7;
+import k7.q7;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class e0 {
-    public static final i5.c a = new i5.c("RESUME_TOKEN", 3);
-    public static final i5.c b = new i5.c("REMOVED_TASK", 3);
-    public static final i5.c c = new i5.c("CLOSED_EMPTY", 3);
-    public static final i5.c d = new i5.c("COMPLETING_ALREADY", 3);
-    public static final i5.c e = new i5.c("COMPLETING_WAITING_CHILDREN", 3);
-    public static final i5.c f = new i5.c("COMPLETING_RETRY", 3);
-    public static final i5.c g = new i5.c("TOO_LATE_TO_CANCEL", 3);
-    public static final i5.c h = new i5.c("SEALED", 3);
+    public static final com.google.android.gms.internal.clearcut.e a = new com.google.android.gms.internal.clearcut.e("RESUME_TOKEN", 2);
+    public static final com.google.android.gms.internal.clearcut.e b = new com.google.android.gms.internal.clearcut.e("REMOVED_TASK", 2);
+    public static final com.google.android.gms.internal.clearcut.e c = new com.google.android.gms.internal.clearcut.e("CLOSED_EMPTY", 2);
+    public static final com.google.android.gms.internal.clearcut.e d = new com.google.android.gms.internal.clearcut.e("COMPLETING_ALREADY", 2);
+    public static final com.google.android.gms.internal.clearcut.e e = new com.google.android.gms.internal.clearcut.e("COMPLETING_WAITING_CHILDREN", 2);
+    public static final com.google.android.gms.internal.clearcut.e f = new com.google.android.gms.internal.clearcut.e("COMPLETING_RETRY", 2);
+    public static final com.google.android.gms.internal.clearcut.e g = new com.google.android.gms.internal.clearcut.e("TOO_LATE_TO_CANCEL", 2);
+    public static final com.google.android.gms.internal.clearcut.e h = new com.google.android.gms.internal.clearcut.e("SEALED", 2);
     public static final q0 i = new q0(false);
     public static final q0 j = new q0(true);
 
@@ -57,7 +57,7 @@ public abstract class e0 {
             return tc.o.a;
         }
         e eVar = new e(h0VarArr);
-        m mVar = new m(1, g8.b(iVar));
+        m mVar = new m(1, h8.b(iVar));
         mVar.s();
         int length = h0VarArr.length;
         c[] cVarArr = new c[length];
@@ -93,14 +93,14 @@ public abstract class e0 {
 
     public static final Object f(dd.p pVar, uc.c cVar) {
         qd.s sVar = new qd.s(cVar, cVar.getContext());
-        Object a2 = g7.a(sVar, sVar, pVar);
+        Object a2 = h7.a(sVar, sVar, pVar);
         vc.a aVar = vc.a.a;
         return a2;
     }
 
     public static final Object g(long j10, wc.c cVar) {
         if (j10 > 0) {
-            m mVar = new m(1, g8.b(cVar));
+            m mVar = new m(1, h8.b(cVar));
             mVar.s();
             if (j10 < Long.MAX_VALUE) {
                 j(mVar.e).b(j10, mVar);
@@ -155,18 +155,18 @@ public abstract class e0 {
             return new m(1, cVar);
         }
         qd.h hVar = (qd.h) cVar;
-        i5.c cVar2 = qd.a.d;
+        com.google.android.gms.internal.clearcut.e eVar = qd.a.d;
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = qd.h.n;
         loop0: while (true) {
             Object obj = atomicReferenceFieldUpdater.get(hVar);
             mVar = null;
             if (obj == null) {
-                atomicReferenceFieldUpdater.set(hVar, cVar2);
+                atomicReferenceFieldUpdater.set(hVar, eVar);
                 mVar2 = null;
                 break;
             }
             if (obj instanceof m) {
-                while (!atomicReferenceFieldUpdater.compareAndSet(hVar, obj, cVar2)) {
+                while (!atomicReferenceFieldUpdater.compareAndSet(hVar, obj, eVar)) {
                     if (atomicReferenceFieldUpdater.get(hVar) != obj) {
                         break;
                     }
@@ -174,7 +174,7 @@ public abstract class e0 {
                 mVar2 = (m) obj;
                 break loop0;
             }
-            if (obj != cVar2 && !(obj instanceof Throwable)) {
+            if (obj != eVar && !(obj instanceof Throwable)) {
                 throw new IllegalStateException(("Inconsistent state " + obj).toString());
             }
         }
@@ -206,7 +206,7 @@ public abstract class e0 {
         } catch (Throwable th3) {
             if (th2 != th3) {
                 RuntimeException runtimeException = new RuntimeException("Exception while trying to handle coroutine exception", th3);
-                n7.a(runtimeException, th2);
+                o7.a(runtimeException, th2);
                 th2 = runtimeException;
             }
             qd.a.c(th2, hVar);
@@ -240,14 +240,14 @@ public abstract class e0 {
                 vc.a aVar = vc.a.a;
                 i10 = gVar.c;
                 if (i10 != 0) {
-                    p7.b(obj);
+                    q7.b(obj);
                     it = collection.iterator();
                 } else {
                     if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     it = gVar.a;
-                    p7.b(obj);
+                    q7.b(obj);
                 }
                 while (it.hasNext()) {
                     f1 f1Var = (f1) it.next();
@@ -294,7 +294,7 @@ public abstract class e0 {
                 vc.a aVar = vc.a.a;
                 i10 = fVar.e;
                 if (i10 != 0) {
-                    p7.b(obj);
+                    q7.b(obj);
                     i11 = 0;
                     f1VarArr2 = f1VarArr;
                     length = f1VarArr.length;
@@ -307,7 +307,7 @@ public abstract class e0 {
                     length = fVar.c;
                     i11 = fVar.b;
                     f1[] f1VarArr3 = (f1[]) fVar.a;
-                    p7.b(obj);
+                    q7.b(obj);
                     f1VarArr2 = f1VarArr3;
                     i11++;
                     if (i11 < length) {
@@ -349,13 +349,13 @@ public abstract class e0 {
     }
 
     public static final Object r(Object obj) {
-        return obj instanceof v ? p7.a(((v) obj).a) : obj;
+        return obj instanceof v ? q7.a(((v) obj).a) : obj;
     }
 
     public static final void s(m mVar, uc.c cVar, boolean z4) {
         Object obj = m.h.get(mVar);
         Throwable g10 = mVar.g(obj);
-        Object a2 = g10 != null ? p7.a(g10) : mVar.h(obj);
+        Object a2 = g10 != null ? q7.a(g10) : mVar.h(obj);
         if (!z4) {
             cVar.resumeWith(a2);
             return;
@@ -388,7 +388,7 @@ public abstract class e0 {
         try {
             a2 = cVar + '@' + k(cVar);
         } catch (Throwable th2) {
-            a2 = p7.a(th2);
+            a2 = q7.a(th2);
         }
         if (sc.f.a(a2) != null) {
             a2 = cVar.getClass().getName() + '@' + k(cVar);
@@ -429,7 +429,7 @@ public abstract class e0 {
         h(plus);
         if (plus == context) {
             qd.s sVar = new qd.s(cVar, plus);
-            u10 = g7.a(sVar, sVar, pVar);
+            u10 = h7.a(sVar, sVar, pVar);
         } else {
             uc.d dVar = uc.d.a;
             if (kotlin.jvm.internal.j.a(plus.get(dVar), context.get(dVar))) {
@@ -437,7 +437,7 @@ public abstract class e0 {
                 uc.h hVar2 = g2Var.c;
                 Object k10 = qd.a.k(hVar2, null);
                 try {
-                    Object a2 = g7.a(g2Var, g2Var, pVar);
+                    Object a2 = h7.a(g2Var, g2Var, pVar);
                     qd.a.f(hVar2, k10);
                     u10 = a2;
                 } catch (Throwable th2) {
@@ -446,7 +446,7 @@ public abstract class e0 {
                 }
             } else {
                 k0 k0Var = new k0(cVar, plus);
-                f7.a(pVar, k0Var, k0Var);
+                g7.a(pVar, k0Var, k0Var);
                 AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = k0.e;
                 while (true) {
                     int i10 = atomicIntegerFieldUpdater.get(k0Var);

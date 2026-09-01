@@ -1,8 +1,11 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_chatlists;
+
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c00 implements Runnable {
+public final /* synthetic */ class c00 implements Utilities.Callback {
     public final /* synthetic */ int a;
     public final /* synthetic */ b10 b;
 
@@ -11,14 +14,17 @@ public final /* synthetic */ class c00 implements Runnable {
         this.b = b10Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                b10.V(this.b);
+                this.b.finishFragment();
+                break;
+            case 1:
+                this.b.m0((TL_chatlists.TL_exportedChatlistInvite) obj);
                 break;
             default:
-                b10.W(this.b);
+                this.b.l0((TL_chatlists.TL_exportedChatlistInvite) obj);
                 break;
         }
     }

@@ -1,11 +1,11 @@
 package de;
 
-import a3.c;
-import com.google.firebase.messaging.r;
+import androidx.biometric.f0;
 import java.util.Hashtable;
 import java.util.StringTokenizer;
+import sf.e;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a {
     public static final Hashtable b;
@@ -48,20 +48,20 @@ public final class a {
                 try {
                     cls2 = Class.forName("java.lang.ClassNotFoundException");
                     d = cls2;
-                } catch (ClassNotFoundException e) {
-                    throw new NoClassDefFoundError(e.getMessage());
+                } catch (ClassNotFoundException e6) {
+                    throw new NoClassDefFoundError(e6.getMessage());
                 }
             }
             return cls2;
         }
     }
 
-    public static r b(c cVar, Object obj, Object obj2) {
-        return new r(cVar, obj, obj2, c);
+    public static e b(f0 f0Var, Object obj, Object obj2) {
+        return new e(f0Var, obj, obj2, c);
     }
 
-    public static r c(c cVar, Object obj, Object obj2, Object obj3) {
-        return new r(cVar, obj, obj2, new Object[]{obj3});
+    public static e c(f0 f0Var, Object obj, Object obj2, Object obj3) {
+        return new e(f0Var, obj, obj2, new Object[]{obj3});
     }
 
     public final da.a d(String str, String str2, String str3, String str4, String str5) {
@@ -96,9 +96,9 @@ public final class a {
         return aVar;
     }
 
-    public final c e(da.a aVar) {
-        c cVar = new c(9);
-        cVar.b = aVar;
-        return cVar;
+    public final f0 e(da.a aVar) {
+        f0 f0Var = new f0(7);
+        f0Var.b = aVar;
+        return f0Var;
     }
 }

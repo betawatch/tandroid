@@ -6,12 +6,13 @@ import android.view.View;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.tgnet.QuickAckDelegate;
+import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.jj0;
+import org.telegram.ui.kj0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements org.telegram.ui.ActionBar.c2, MessagesController.ErrorDelegate, jj0, QuickAckDelegate {
+public final /* synthetic */ class c implements RequestTimeDelegate, org.telegram.ui.ActionBar.c2, MessagesController.ErrorDelegate, kj0, QuickAckDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -22,16 +23,16 @@ public final /* synthetic */ class c implements org.telegram.ui.ActionBar.c2, Me
         this.c = obj2;
     }
 
-    @Override // org.telegram.ui.jj0
+    @Override // org.telegram.ui.kj0
     public void a(Canvas canvas) {
         ((RichMessageLayout.RichThinkingBlock) this.b).lambda$onDrawFaded$0((View) this.c, canvas);
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    public void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         switch (this.a) {
-            case 0:
-                AndroidUtilities.lambda$showProxyAlert$20((SharedPreferences) this.b, (pl) this.c, d2Var, i10);
+            case 1:
+                AndroidUtilities.lambda$showProxyAlert$20((SharedPreferences) this.b, (g0) this.c, d2Var, i10);
                 break;
             default:
                 AndroidUtilities.lambda$isMapsInstalled$11((String) this.b, (org.telegram.ui.ActionBar.p2) this.c, d2Var, i10);
@@ -42,6 +43,11 @@ public final /* synthetic */ class c implements org.telegram.ui.ActionBar.c2, Me
     @Override // org.telegram.tgnet.QuickAckDelegate
     public void run() {
         ((SendMessagesHelper) this.b).lambda$performSendMessageRequest$103((TLRPC.Message) this.c);
+    }
+
+    @Override // org.telegram.tgnet.RequestTimeDelegate
+    public void run(long j10) {
+        AndroidUtilities.lambda$showProxyAlert$18((boolean[]) this.b, (org.telegram.ui.Components.sc[]) this.c, j10);
     }
 
     @Override // org.telegram.messenger.MessagesController.ErrorDelegate

@@ -1,25 +1,17 @@
 package com.google.android.gms.internal.cast;
 
-import android.os.Build;
+import android.os.Looper;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class n {
-    public static boolean a(int i10) {
-        return (i10 & 32768) != 0;
-    }
+public final class n {
+    public static final u5.b c = new u5.b("MediaRouterOPTListener", null);
+    public final r a;
+    public final a7.e b;
 
-    public static boolean b(int i10) {
-        if (i10 == 15 || i10 == 255) {
-            return true;
-        }
-        if (i10 == 32768) {
-            return Build.VERSION.SDK_INT >= 30;
-        }
-        if (i10 != 32783) {
-            return i10 == 33023 || i10 == 0;
-        }
-        int i11 = Build.VERSION.SDK_INT;
-        return i11 < 28 || i11 > 29;
+    public n(r rVar) {
+        b6.m.h(rVar);
+        this.a = rVar;
+        this.b = new a7.e(Looper.getMainLooper(), 2);
     }
 }

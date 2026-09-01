@@ -108,7 +108,7 @@ public final class u {
 
     public u(String str, int i10, int i11, int i12, e0 e0Var) {
         this.a = i11;
-        int i13 = v.a[m1.j.b(i12)];
+        int i13 = v.a[m1.j.c(i12)];
         if (i13 == 1 || i13 == 2) {
             e0Var.getClass();
         }

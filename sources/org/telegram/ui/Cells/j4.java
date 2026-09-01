@@ -13,9 +13,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.k01;
+import org.telegram.ui.Components.l01;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class j4 implements DownloadController.FileDownloadProgressListener {
     public TLRPC.MessageExtendedMedia B;
@@ -25,7 +25,7 @@ public final class j4 implements DownloadController.FileDownloadProgressListener
     public final int F;
     public final int G;
     public int H;
-    public k01 I;
+    public l01 I;
     public boolean J;
     public int a;
     public int b;
@@ -63,7 +63,7 @@ public final class j4 implements DownloadController.FileDownloadProgressListener
         if (this.x) {
             int i12 = this.G;
             this.H = i12;
-            this.I = new k01(AndroidUtilities.formatLongDuration(i12), 12.0f, null);
+            this.I = new l01(AndroidUtilities.formatLongDuration(i12), 12.0f, null);
         }
         ImageReceiver imageReceiver = new ImageReceiver(t1Var);
         this.f = imageReceiver;
@@ -105,7 +105,7 @@ public final class j4 implements DownloadController.FileDownloadProgressListener
         if (z4) {
             this.h = true;
             this.v = null;
-            this.f.setImage(ImageLocation.getForObject(((TLRPC.TL_messageExtendedMediaPreview) messageExtendedMedia).thumb, messageObject.messageOwner), vh.v2.k(h, "_b2"), null, null, messageObject, 0);
+            this.f.setImage(ImageLocation.getForObject(((TLRPC.TL_messageExtendedMediaPreview) messageExtendedMedia).thumb, messageObject.messageOwner), w.c.e(h, "_b2"), null, null, messageObject, 0);
             ColorMatrix colorMatrix = new ColorMatrix();
             colorMatrix.setSaturation(1.4f);
             AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, -0.1f);
@@ -116,7 +116,7 @@ public final class j4 implements DownloadController.FileDownloadProgressListener
             boolean z10 = messageObject.isRepostPreview;
             this.h = z10;
             if (z10) {
-                h = vh.v2.k(h, "_b3");
+                h = w.c.e(h, "_b3");
             }
             imageReceiver.setColorFilter(null);
             TLRPC.MessageMedia messageMedia = ((TLRPC.TL_messageExtendedMedia) messageExtendedMedia).media;

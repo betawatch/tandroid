@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.icu.text.RelativeDateTimeFormatter;
 import android.os.Build;
 import android.telephony.TelephonyManager;
@@ -40,13 +39,14 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
-import org.telegram.ui.Components.f51;
-import org.telegram.ui.n31;
+import org.telegram.ui.Components.g51;
+import org.telegram.ui.p31;
 import org.xmlpull.v1.XmlPullParser;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class LocaleController {
+    private static volatile LocaleController Instance = null;
     static final int QUANTITY_FEW = 8;
     static final int QUANTITY_MANY = 16;
     static final int QUANTITY_ONE = 2;
@@ -97,8 +97,6 @@ public class LocaleController {
     private HashMap<String, String> ruTranslitChars;
     private Locale systemDefaultLocale;
     private HashMap<String, String> translitChars;
-    private static HashMap<Integer, String> resourcesCacheMap = new HashMap<>();
-    private static volatile LocaleController Instance = null;
     private static char[] defaultNumbers = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
     private static char[][] otherNumbers = {new char[]{1632, 1633, 1634, 1635, 1636, 1637, 1638, 1639, 1640, 1641}, new char[]{1776, 1777, 1778, 1779, 1780, 1781, 1782, 1783, 1784, 1785}, new char[]{2406, 2407, 2408, 2409, 2410, 2411, 2412, 2413, 2414, 2415}, new char[]{2790, 2791, 2792, 2793, 2794, 2795, 2796, 2797, 2798, 2799}, new char[]{2662, 2663, 2664, 2665, 2666, 2667, 2668, 2669, 2670, 2671}, new char[]{2534, 2535, 2536, 2537, 2538, 2539, 2540, 2541, 2542, 2543}, new char[]{3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311}, new char[]{2918, 2919, 2920, 2921, 2922, 2923, 2924, 2925, 2926, 2927}, new char[]{3430, 3431, 3432, 3433, 3434, 3435, 3436, 3437, 3438, 3439}, new char[]{3046, 3047, 3048, 3049, 3050, 3051, 3052, 3053, 3054, 3055}, new char[]{3174, 3175, 3176, 3177, 3178, 3179, 3180, 3181, 3182, 3183}, new char[]{4160, 4161, 4162, 4163, 4164, 4165, 4166, 4167, 4168, 4169}, new char[]{3872, 3873, 3874, 3875, 3876, 3877, 3878, 3879, 3880, 3881}, new char[]{6160, 6161, 6162, 6163, 6164, 6165, 6166, 6167, 6168, 6169}, new char[]{6112, 6113, 6114, 6115, 6116, 6117, 6118, 6119, 6120, 6121}, new char[]{3664, 3665, 3666, 3667, 3668, 3669, 3670, 3671, 3672, 3673}, new char[]{3792, 3793, 3794, 3795, 3796, 3797, 3798, 3799, 3800, 3801}, new char[]{43472, 43473, 43474, 43475, 43476, 43477, 43478, 43479, 43480, 43481}};
     private final FastDateFormat[] formatterScheduleSend = new FastDateFormat[18];
@@ -112,7 +110,7 @@ public class LocaleController {
     private ArrayList<LocaleInfo> otherLanguages = new ArrayList<>();
     private boolean patching = false;
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class LocaleInfo {
         public String baseLangCode;
         public int baseVersion;
@@ -229,12 +227,12 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static abstract class PluralRules {
         public abstract int quantityForNumber(int i10);
     }
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class PluralRules_Arabic extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -255,7 +253,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class PluralRules_Balkan extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -277,7 +275,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class PluralRules_Breton extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -297,7 +295,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class PluralRules_Czech extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -308,7 +306,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class PluralRules_French extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -316,7 +314,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class PluralRules_Langi extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -327,7 +325,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class PluralRules_Latvian extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -338,7 +336,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class PluralRules_Lithuanian extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -354,7 +352,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class PluralRules_Macedonian extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -362,7 +360,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class PluralRules_Maltese extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -380,7 +378,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class PluralRules_None extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -388,7 +386,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class PluralRules_One extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -396,7 +394,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class PluralRules_Polish extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -418,7 +416,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class PluralRules_Romanian extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -433,7 +431,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class PluralRules_Serbian extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -449,7 +447,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class PluralRules_Slovenian extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -464,7 +462,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class PluralRules_Tachelhit extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -475,7 +473,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class PluralRules_Two extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -486,7 +484,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class PluralRules_Welsh extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -506,7 +504,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class PluralRules_Zero extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -514,7 +512,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static final class RelativeIcu {
         private RelativeIcu() {
         }
@@ -546,7 +544,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public class TimeZoneChangedReceiver extends BroadcastReceiver {
         private TimeZoneChangedReceiver() {
         }
@@ -568,7 +566,7 @@ public class LocaleController {
     public LocaleController() {
         LocaleInfo localeInfo;
         boolean z4 = false;
-        ve.a aVar = ve.a.b;
+        ve.a aVar = ve.a.c;
         this.localizationInternal = aVar;
         this.localizationExternal = aVar;
         addRules(new String[]{"bem", "brx", "da", "de", "el", "en", "eo", "es", "et", "fi", "fo", ImageLoader.AUTOPLAY_FILTER_NONLOOP, "he", "iw", "it", "nb", "nl", "nn", "no", "sv", "af", "bg", "bn", "ca", "eu", "fur", "fy", "gu", "ha", "is", "ku", "lb", "ml", "mr", "nah", "ne", "om", "or", "pa", "pap", "ps", "so", "sq", "sw", "ta", "te", "tk", "ur", "zu", "mn", "gsw", "chr", "rm", "pt", "an", "ast"}, new PluralRules_One());
@@ -755,8 +753,8 @@ public class LocaleController {
                 localeInfo = getLanguageFromDict("en");
             }
             applyLanguage(localeInfo, z4, true, UserConfig.selectedAccount);
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
         }
         try {
             IntentFilter intentFilter = new IntentFilter("android.intent.action.TIMEZONE_CHANGED");
@@ -765,8 +763,8 @@ public class LocaleController {
             } else {
                 ApplicationLoader.applicationContext.registerReceiver(new TimeZoneChangedReceiver(), intentFilter);
             }
-        } catch (Exception e6) {
-            FileLog.e(e6);
+        } catch (Exception e10) {
+            FileLog.e(e10);
         }
         final int i14 = 1;
         AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.p5
@@ -808,9 +806,9 @@ public class LocaleController {
             sb.append(" force=");
             sb.append(z4);
             sb.append(" currentAccount=");
-            kh.a2.t(i10, sb);
+            l.d.t(i10, sb);
             int[] iArr = {0};
-            final g0 g0Var = new g0(new int[]{0}, iArr, runnable, 24);
+            final g0 g0Var = new g0(new int[]{0}, iArr, runnable, 25);
             if (z4) {
                 patched(localeInfo2.shortName);
             }
@@ -960,50 +958,264 @@ public class LocaleController {
 
     public static CharSequence bold(CharSequence charSequence) {
         if (charSequence instanceof Spannable) {
-            ((Spannable) charSequence).setSpan(new f51(AndroidUtilities.bold()), 0, charSequence.length(), 33);
+            ((Spannable) charSequence).setSpan(new g51(AndroidUtilities.bold()), 0, charSequence.length(), 33);
             return charSequence;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
-        spannableStringBuilder.setSpan(new f51(AndroidUtilities.bold()), 0, charSequence.length(), 33);
+        spannableStringBuilder.setSpan(new g51(AndroidUtilities.bold()), 0, charSequence.length(), 33);
         return spannableStringBuilder;
     }
 
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x01a3 A[Catch: all -> 0x002a, TryCatch #1 {all -> 0x002a, blocks: (B:12:0x001a, B:14:0x0025, B:17:0x01e3, B:21:0x002d, B:23:0x0033, B:25:0x003c, B:26:0x0046, B:33:0x018d, B:36:0x0196, B:38:0x01a3, B:39:0x01c9, B:41:0x01cb, B:42:0x01d5, B:43:0x01e1, B:46:0x01ac, B:48:0x01b5, B:50:0x01dd, B:51:0x0065, B:56:0x00fd), top: B:11:0x001a }] */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x01ac A[Catch: all -> 0x002a, TryCatch #1 {all -> 0x002a, blocks: (B:12:0x001a, B:14:0x0025, B:17:0x01e3, B:21:0x002d, B:23:0x0033, B:25:0x003c, B:26:0x0046, B:33:0x018d, B:36:0x0196, B:38:0x01a3, B:39:0x01c9, B:41:0x01cb, B:42:0x01d5, B:43:0x01e1, B:46:0x01ac, B:48:0x01b5, B:50:0x01dd, B:51:0x0065, B:56:0x00fd), top: B:11:0x001a }] */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x0179  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x017b  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x017d  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x017f  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x0181  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x0183  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x0185  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x0187  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     private void checkLocalizationInternal() {
+        char c3;
+        char c10;
+        oh.h4 h4Var;
         if (!Objects.equals(this.localizationInternalLastLocale, this.currentLocale) || this.localizationInternal == null || this.localizationInternalPending) {
             this.localizationInternalPending = true;
             synchronized (this) {
                 try {
                     Locale locale = this.currentLocale;
+                    boolean z4 = false;
                     if (Objects.equals(this.localizationInternalLastLocale, locale)) {
                         if (this.localizationInternal == null) {
                         }
                     }
+                    int i10 = 23;
                     if (this.localizationInternalDefault == null) {
-                        ph.j5 j5Var = new ph.j5(13);
+                        oh.h4 h4Var2 = new oh.h4(i10, z4);
                         try {
-                            j5Var.b = ve.a.a(ApplicationLoader.applicationContext, R.raw.localization_en, (SparseArray) j5Var.b);
+                            h4Var2.b = ve.a.a(ApplicationLoader.applicationContext, "localization_en.bin", (SparseArray) h4Var2.b);
                         } catch (Exception unused) {
                         }
-                        this.localizationInternalDefault = new ve.a(j5Var);
+                        this.localizationInternalDefault = new ve.a(h4Var2);
                     }
-                    int a2 = ue.a.a(locale);
-                    if (a2 != 0 && a2 != R.raw.localization_en) {
-                        ph.j5 j5Var2 = new ph.j5(13);
-                        ve.a aVar = this.localizationInternalDefault;
-                        if (((SparseArray) j5Var2.b) == null) {
-                            j5Var2.b = aVar.a.clone();
-                        } else {
-                            SparseArray sparseArray = aVar.a;
-                            int size = sparseArray.size();
-                            for (int i10 = 0; i10 < size; i10++) {
-                                ((SparseArray) j5Var2.b).put(sparseArray.keyAt(i10), (String) sparseArray.valueAt(i10));
+                    String str = "localization_ar.bin";
+                    if (locale != null) {
+                        String languageTag = locale.toLanguageTag();
+                        languageTag.getClass();
+                        switch (languageTag.hashCode()) {
+                            case 3121:
+                                if (languageTag.equals("ar")) {
+                                    c3 = 0;
+                                    break;
+                                }
+                                c3 = 65535;
+                                break;
+                            case 3201:
+                                if (languageTag.equals("de")) {
+                                    c3 = 1;
+                                    break;
+                                }
+                                c3 = 65535;
+                                break;
+                            case 3241:
+                                if (languageTag.equals("en")) {
+                                    c3 = 2;
+                                    break;
+                                }
+                                c3 = 65535;
+                                break;
+                            case 3246:
+                                if (languageTag.equals("es")) {
+                                    c3 = 3;
+                                    break;
+                                }
+                                c3 = 65535;
+                                break;
+                            case 3371:
+                                if (languageTag.equals("it")) {
+                                    c3 = 4;
+                                    break;
+                                }
+                                c3 = 65535;
+                                break;
+                            case 3428:
+                                if (languageTag.equals("ko")) {
+                                    c3 = 5;
+                                    break;
+                                }
+                                c3 = 65535;
+                                break;
+                            case 3518:
+                                if (languageTag.equals("nl")) {
+                                    c3 = 6;
+                                    break;
+                                }
+                                c3 = 65535;
+                                break;
+                            case 3651:
+                                if (languageTag.equals("ru")) {
+                                    c3 = 7;
+                                    break;
+                                }
+                                c3 = 65535;
+                                break;
+                            case 3734:
+                                if (languageTag.equals("uk")) {
+                                    c3 = '\b';
+                                    break;
+                                }
+                                c3 = 65535;
+                                break;
+                            case 106935481:
+                                if (languageTag.equals("pt-BR")) {
+                                    c3 = '\t';
+                                    break;
+                                }
+                                c3 = 65535;
+                                break;
+                            default:
+                                c3 = 65535;
+                                break;
+                        }
+                        switch (c3) {
+                            case 0:
+                                break;
+                            case 1:
+                                str = "localization_de.bin";
+                                break;
+                            case 2:
+                                str = "localization_en.bin";
+                                break;
+                            case 3:
+                                str = "localization_es.bin";
+                                break;
+                            case 4:
+                                str = "localization_it.bin";
+                                break;
+                            case 5:
+                                str = "localization_ko.bin";
+                                break;
+                            case 6:
+                                str = "localization_nl.bin";
+                                break;
+                            case 7:
+                                str = "localization_ru.bin";
+                                break;
+                            case '\b':
+                                str = "localization_uk.bin";
+                                break;
+                            case '\t':
+                                str = "localization_pt_br.bin";
+                                break;
+                            default:
+                                String language = locale.getLanguage();
+                                language.getClass();
+                                switch (language.hashCode()) {
+                                    case 3121:
+                                        if (language.equals("ar")) {
+                                            c10 = 0;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 3201:
+                                        if (language.equals("de")) {
+                                            c10 = 1;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 3241:
+                                        if (language.equals("en")) {
+                                            c10 = 2;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 3246:
+                                        if (language.equals("es")) {
+                                            c10 = 3;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 3371:
+                                        if (language.equals("it")) {
+                                            c10 = 4;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 3428:
+                                        if (language.equals("ko")) {
+                                            c10 = 5;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 3518:
+                                        if (language.equals("nl")) {
+                                            c10 = 6;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 3651:
+                                        if (language.equals("ru")) {
+                                            c10 = 7;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 3734:
+                                        if (language.equals("uk")) {
+                                            c10 = '\b';
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    default:
+                                        c10 = 65535;
+                                        break;
+                                }
+                                switch (c10) {
+                                }
+                        }
+                        if (str != null && !TextUtils.equals(str, "localization_en.bin")) {
+                            h4Var = new oh.h4(i10, z4);
+                            ve.a aVar = this.localizationInternalDefault;
+                            if (((SparseArray) h4Var.b) != null) {
+                                h4Var.b = aVar.a.clone();
+                            } else {
+                                SparseArray sparseArray = aVar.a;
+                                int size = sparseArray.size();
+                                for (int i11 = 0; i11 < size; i11++) {
+                                    ((SparseArray) h4Var.b).put(sparseArray.keyAt(i11), (String) sparseArray.valueAt(i11));
+                                }
                             }
+                            try {
+                                h4Var.b = ve.a.a(ApplicationLoader.applicationContext, str, (SparseArray) h4Var.b);
+                            } catch (Exception unused2) {
+                            }
+                            this.localizationInternal = new ve.a(h4Var);
+                            this.localizationInternalLastLocale = locale;
                         }
-                        try {
-                            j5Var2.b = ve.a.a(ApplicationLoader.applicationContext, a2, (SparseArray) j5Var2.b);
-                        } catch (Exception unused2) {
+                        this.localizationInternal = this.localizationInternalDefault;
+                        this.localizationInternalLastLocale = locale;
+                    }
+                    str = null;
+                    if (str != null) {
+                        h4Var = new oh.h4(i10, z4);
+                        ve.a aVar2 = this.localizationInternalDefault;
+                        if (((SparseArray) h4Var.b) != null) {
                         }
-                        this.localizationInternal = new ve.a(j5Var2);
+                        h4Var.b = ve.a.a(ApplicationLoader.applicationContext, str, (SparseArray) h4Var.b);
+                        this.localizationInternal = new ve.a(h4Var);
                         this.localizationInternalLastLocale = locale;
                     }
                     this.localizationInternal = this.localizationInternalDefault;
@@ -1045,9 +1257,9 @@ public class LocaleController {
                 }
                 useImperialSystemType = Boolean.valueOf(r1);
             }
-        } catch (Exception e) {
+        } catch (Exception e6) {
             useImperialSystemType = Boolean.FALSE;
-            FileLog.e(e);
+            FileLog.e(e6);
         }
     }
 
@@ -1092,7 +1304,7 @@ public class LocaleController {
         if (i11 <= 0) {
             return formatPluralString;
         }
-        StringBuilder f10 = vh.v2.f(formatPluralString, ", ");
+        StringBuilder f10 = w.c.f(formatPluralString, ", ");
         f10.append(formatPluralString("Minutes", i11, new Object[0]));
         return f10.toString();
     }
@@ -1111,8 +1323,8 @@ public class LocaleController {
             int i12 = calendar.get(6);
             int i13 = calendar.get(1);
             return (i12 == i10 && i11 == i13) ? z4 ? formatString(R.string.TodayAtFormatted, getInstance().getFormatterDay().format(new Date(j11))) : formatString(R.string.TodayAtFormattedWithToday, getInstance().getFormatterDay().format(new Date(j11))) : (i12 + 1 == i10 && i11 == i13) ? formatString(R.string.YesterdayAtFormatted, getInstance().getFormatterDay().format(new Date(j11))) : Math.abs(System.currentTimeMillis() - j11) < 31536000000L ? formatString(R.string.formatDateAtTime, getInstance().getFormatterDayMonth().format(new Date(j11)), getInstance().getFormatterDay().format(new Date(j11))) : formatString(R.string.formatDateAtTime, getInstance().getFormatterYear().format(new Date(j11)), getInstance().getFormatterDay().format(new Date(j11)));
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return "LOC_ERR";
         }
     }
@@ -1127,8 +1339,8 @@ public class LocaleController {
             int i12 = calendar.get(6);
             int i13 = calendar.get(1);
             return (i12 == i10 && i11 == i13) ? getInstance().getFormatterDay().format(new Date(j11)) : (i12 + 1 == i10 && i11 == i13) ? formatString(R.string.YesterdayAtFormatted, getInstance().getFormatterDay().format(new Date(j11))) : Math.abs(System.currentTimeMillis() - j11) < 31536000000L ? formatString(R.string.formatDateAtTime, getInstance().getChatDateShort().format(new Date(j11)), getInstance().getFormatterDay().format(new Date(j11))) : formatString(R.string.formatDateAtTime, getInstance().getChatFullDate().format(new Date(j11)), getInstance().getFormatterDay().format(new Date(j11)));
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return "LOC_ERR";
         }
     }
@@ -1144,8 +1356,8 @@ public class LocaleController {
             int i10 = calendar.get(1);
             calendar.setTimeInMillis(j11);
             return i10 == calendar.get(1) ? getInstance().getFormatterBannedUntilThisYear().format(new Date(j11)) : getInstance().getFormatterBannedUntil().format(new Date(j11));
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return "LOC_ERR";
         }
     }
@@ -1175,8 +1387,8 @@ public class LocaleController {
             }
             zArr[0] = true;
             return (i12 > 6 || i15 <= 18 || !is24HourFormat) ? formatString(R.string.YesterdayAtFormatted, getInstance().getFormatterDay().format(new Date(j11))) : formatString(R.string.LastSeenFormatted, getInstance().getFormatterDay().format(new Date(j11)));
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return "LOC_ERR";
         }
     }
@@ -1191,8 +1403,8 @@ public class LocaleController {
             int i12 = calendar.get(6);
             int i13 = calendar.get(1);
             return (i12 == i10 && i11 == i13 && z4) ? formatString(R.string.TodayAtFormattedWithToday, getInstance().getFormatterDay().format(new Date(j11))) : (i12 + 1 == i10 && i11 == i13 && z4) ? formatString(R.string.YesterdayAtFormatted, getInstance().getFormatterDay().format(new Date(j11))) : Math.abs(System.currentTimeMillis() - j11) < 31536000000L ? formatString(R.string.formatDateAtTime, getInstance().getChatDate().format(new Date(j11)), getInstance().getFormatterDay().format(new Date(j11))) : formatString(R.string.formatDateAtTime, getInstance().getChatFullDate().format(new Date(j11)), getInstance().getFormatterDay().format(new Date(j11)));
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return "LOC_ERR";
         }
     }
@@ -1239,8 +1451,8 @@ public class LocaleController {
         try {
             Date date = new Date(j10 * 1000);
             return String.format("%1$s, %2$s", getInstance().getFormatterYear().format(date), getInstance().getFormatterDay().format(date));
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return "LOC_ERR";
         }
     }
@@ -1249,8 +1461,8 @@ public class LocaleController {
         long j11 = j10 * 1000;
         try {
             return formatString(R.string.ChannelOtherSubscriberJoined, Math.abs(System.currentTimeMillis() - j11) < 31536000000L ? formatString(R.string.formatDateAtTime, getInstance().getFormatterDayMonth().format(new Date(j11)), getInstance().getFormatterDay().format(new Date(j11))) : formatString(R.string.formatDateAtTime, getInstance().getFormatterYear().format(new Date(j11)), getInstance().getFormatterDay().format(new Date(j11))));
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return "LOC_ERR";
         }
     }
@@ -1289,15 +1501,15 @@ public class LocaleController {
                 return formatString(R.string.LocationUpdatedFormatted, formatString(R.string.formatDateAtTime, getInstance().getFormatterDayMonth().format(new Date(j11)), getInstance().getFormatterDay().format(new Date(j11))));
             }
             return formatString(R.string.LocationUpdatedFormatted, formatString(R.string.formatDateAtTime, getInstance().getFormatterYear().format(new Date(j11)), getInstance().getFormatterDay().format(new Date(j11))));
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return "LOC_ERR";
         }
     }
 
     public static String formatNumber(long j10, char c3) {
         if (j10 < 0) {
-            return kh.a2.l(-j10, c3, new StringBuilder("-"));
+            return l.d.l(-j10, c3, new StringBuilder("-"));
         }
         StringBuilder sb = new StringBuilder(String.format("%d", Long.valueOf(j10)));
         for (int length = sb.length() - 3; length > 0; length -= 3) {
@@ -1312,7 +1524,7 @@ public class LocaleController {
 
     public static CharSequence formatPluralSpannable(String str, int i10, CharSequence... charSequenceArr) {
         if (str == null || str.length() == 0 || getInstance().currentPluralRules == null) {
-            return vh.v2.e("LOC_ERR:", str);
+            return org.telegram.ui.yh.k("LOC_ERR:", str);
         }
         String z4 = android.support.v4.media.a.z(str, "_", getInstance().stringForQuantity(getInstance().currentPluralRules.quantityForNumber(i10)));
         int localizedStringByName = getLocalizedStringByName(z4);
@@ -1325,7 +1537,7 @@ public class LocaleController {
 
     public static String formatPluralString(String str, int i10, Object... objArr) {
         if (str == null || str.length() == 0 || getInstance().currentPluralRules == null) {
-            return vh.v2.e("LOC_ERR:", str);
+            return org.telegram.ui.yh.k("LOC_ERR:", str);
         }
         String z4 = android.support.v4.media.a.z(str, "_", getInstance().stringForQuantity(getInstance().currentPluralRules.quantityForNumber(i10)));
         int localizedStringByName = getLocalizedStringByName(z4);
@@ -1354,8 +1566,8 @@ public class LocaleController {
             int i12 = calendar.get(6);
             int i13 = calendar.get(1);
             return (i12 == i10 && i11 == i13) ? formatString(R.string.PmEditedTodayAt, getInstance().getFormatterDay().format(new Date(j11))) : (i12 + 1 == i10 && i11 == i13) ? formatString(R.string.PmEditedYesterdayAt, getInstance().getFormatterDay().format(new Date(j11))) : Math.abs(System.currentTimeMillis() - j11) < 31536000000L ? formatString(R.string.PmEditedDateTimeAt, getInstance().getFormatterDayMonth().format(new Date(j11)), getInstance().getFormatterDay().format(new Date(j11))) : formatString(R.string.PmEditedDateTimeAt, getInstance().getFormatterYear().format(new Date(j11)), getInstance().getFormatterDay().format(new Date(j11)));
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return "LOC_ERR";
         }
     }
@@ -1370,8 +1582,8 @@ public class LocaleController {
             int i12 = calendar.get(6);
             int i13 = calendar.get(1);
             return (i12 == i10 && i11 == i13) ? formatString(R.string.PmFwdOriginalTodayAt, getInstance().getFormatterDay().format(new Date(j11))) : (i12 + 1 == i10 && i11 == i13) ? formatString(R.string.PmFwdOriginalYesterdayAt, getInstance().getFormatterDay().format(new Date(j11))) : Math.abs(System.currentTimeMillis() - j11) < 31536000000L ? formatString(R.string.PmFwdOriginalDateTimeAt, getInstance().getFormatterDayMonth().format(new Date(j11)), getInstance().getFormatterDay().format(new Date(j11))) : formatString(R.string.PmFwdOriginalDateTimeAt, getInstance().getFormatterYear().format(new Date(j11)), getInstance().getFormatterDay().format(new Date(j11)));
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return "LOC_ERR";
         }
     }
@@ -1386,8 +1598,8 @@ public class LocaleController {
             int i12 = calendar.get(6);
             int i13 = calendar.get(1);
             return (i12 == i10 && i11 == i13) ? formatString(R.string.PmReadTodayAt, getInstance().getFormatterDay().format(new Date(j11))) : (i12 + 1 == i10 && i11 == i13) ? formatString(R.string.PmReadYesterdayAt, getInstance().getFormatterDay().format(new Date(j11))) : Math.abs(System.currentTimeMillis() - j11) < 31536000000L ? formatString(R.string.PmReadDateTimeAt, getInstance().getFormatterDayMonth().format(new Date(j11)), getInstance().getFormatterDay().format(new Date(j11))) : formatString(R.string.PmReadDateTimeAt, getInstance().getFormatterYear().format(new Date(j11)), getInstance().getFormatterDay().format(new Date(j11)));
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return "LOC_ERR";
         }
     }
@@ -1402,8 +1614,8 @@ public class LocaleController {
             int i12 = calendar.get(6);
             int i13 = calendar.get(1);
             return (i12 == i10 && i11 == i13) ? formatString(R.string.PmSentTodayAt, getInstance().getFormatterDay().format(new Date(j11))) : (i12 + 1 == i10 && i11 == i13) ? formatString(R.string.PmSentYesterdayAt, getInstance().getFormatterDay().format(new Date(j11))) : Math.abs(System.currentTimeMillis() - j11) < 31536000000L ? formatString(R.string.PmSentDateTimeAt, getInstance().getFormatterDayMonth().format(new Date(j11)), getInstance().getFormatterDay().format(new Date(j11))) : formatString(R.string.PmSentDateTimeAt, getInstance().getFormatterYear().format(new Date(j11)), getInstance().getFormatterDay().format(new Date(j11)));
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return "LOC_ERR";
         }
     }
@@ -1420,8 +1632,8 @@ public class LocaleController {
             long j14 = j13 / 30;
             long j15 = j13 / 365;
             return j15 >= 1 ? j15 == 1 ? getString(R.string.YearAgo) : formatPluralStringComma("YearsAgo", (int) j15) : j14 >= 1 ? j14 == 1 ? getString(R.string.MonthAgo) : formatPluralStringComma("MonthsAgo", (int) j14) : j13 >= 1 ? j13 == 1 ? getString(R.string.DayAgo) : formatPluralStringComma("DaysAgo", (int) j13) : j12 >= 1 ? j12 == 1 ? getString(R.string.HourAgo) : formatPluralStringComma("HoursAgo", (int) j12) : j11 >= 1 ? j11 == 1 ? getString(R.string.MinuteAgo) : formatPluralStringComma("MinutesAgo", (int) j11) : getString(R.string.LessMinuteAgo);
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return "LOC_ERR";
         }
     }
@@ -1440,8 +1652,8 @@ public class LocaleController {
             int i12 = calendar.get(6);
             int i13 = calendar.get(1);
             return (i12 == i10 && i11 == i13) ? formatString(R.string.TodayAtFormattedWithToday, getInstance().getFormatterDay().format(new Date(j11))) : (i12 + 1 == i10 && i11 == i13) ? formatString(R.string.YesterdayAtFormatted, getInstance().getFormatterDay().format(new Date(j11))) : Math.abs(System.currentTimeMillis() - j11) < 31536000000L ? formatString(R.string.formatDateAtTime, getInstance().getFormatterDayMonth().format(new Date(j11)), getInstance().getFormatterDay().format(new Date(j11))) : formatString(R.string.formatDateAtTime, getInstance().getFormatterYear().format(new Date(j11)), getInstance().getFormatterDay().format(new Date(j11)));
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return "LOC_ERR";
         }
     }
@@ -1458,8 +1670,8 @@ public class LocaleController {
             int i13 = calendar.get(1);
             long j12 = timeInMillis - j11;
             return j12 < 60000 ? getString(R.string.ShortNow) : j12 < 3600000 ? formatPluralString("ShortMinutesAgo", (int) (j12 / 60000), new Object[0]) : (i12 == i10 && i11 == i13) ? j12 < 43200000 ? formatPluralString("ShortHoursAgo", (int) (j12 / 3600000), new Object[0]) : getString(R.string.ShortToday) : (i12 + 1 == i10 && i11 == i13) ? getString(R.string.ShortYesterday) : Math.abs(System.currentTimeMillis() - j11) < 31536000000L ? getInstance().getFormatterDayMonth().format(new Date(j11)) : formatString(R.string.formatDateAtTime, getInstance().getFormatterYear().format(new Date(j11)), getInstance().getFormatterDay().format(new Date(j11)));
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return "LOC_ERR";
         }
     }
@@ -1471,8 +1683,8 @@ public class LocaleController {
                 return getInstance().getFormatterScheduleDay().format(new Date(j11)) + ", " + getInstance().getFormatterDay().format(new Date(j11));
             }
             return getInstance().getFormatterScheduleYear().format(new Date(j11)) + ", " + getInstance().getFormatterDay().format(new Date(j11));
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return "LOC_ERR";
         }
     }
@@ -1551,15 +1763,7 @@ public class LocaleController {
     }
 
     public static CharSequence formatSpannable(int i10, Object... objArr) {
-        String str = resourcesCacheMap.get(Integer.valueOf(i10));
-        if (str == null) {
-            HashMap<Integer, String> hashMap = resourcesCacheMap;
-            Integer valueOf = Integer.valueOf(i10);
-            String resourceEntryName = ApplicationLoader.applicationContext.getResources().getResourceEntryName(i10);
-            hashMap.put(valueOf, resourceEntryName);
-            str = resourceEntryName;
-        }
-        return formatSpannable(str, i10, objArr);
+        return formatSpannable(null, i10, objArr);
     }
 
     public static String formatStartsTime(long j10, int i10) {
@@ -1574,8 +1778,8 @@ public class LocaleController {
             int i11 = calendar.get(1);
             calendar.setTimeInMillis(j11);
             return (calendar.get(6) == i10 && i11 == calendar.get(1)) ? formatString(R.string.TodayAtFormatted, getInstance().getFormatterDay().format(new Date(j11))) : Math.abs(System.currentTimeMillis() - j11) < 31536000000L ? getInstance().getFormatterScheduleDay().format(new Date(j11)) : getInstance().getChatFullDate().format(new Date(j11));
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return "LOC_ERR";
         }
     }
@@ -1599,29 +1803,21 @@ public class LocaleController {
             }
             int i14 = (int) (j12 / 60000);
             return formatPluralString("MinutesAgo", i14, Integer.valueOf(i14));
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return "LOC_ERR";
         }
     }
 
     public static String formatString(int i10, Object... objArr) {
-        String str = resourcesCacheMap.get(Integer.valueOf(i10));
-        if (str == null) {
-            HashMap<Integer, String> hashMap = resourcesCacheMap;
-            Integer valueOf = Integer.valueOf(i10);
-            String resourceEntryName = ApplicationLoader.applicationContext.getResources().getResourceEntryName(i10);
-            hashMap.put(valueOf, resourceEntryName);
-            str = resourceEntryName;
-        }
-        return formatString(str, i10, objArr);
+        return formatString(null, i10, objArr);
     }
 
     public static String formatStringSimple(String str, Object... objArr) {
         try {
             return getInstance().currentLocale != null ? String.format(getInstance().currentLocale, str, objArr) : String.format(str, objArr);
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return "LOC_ERR: " + str;
         }
     }
@@ -1656,8 +1852,8 @@ public class LocaleController {
             int i12 = calendar.get(6);
             int i13 = calendar.get(1);
             return (i12 == i10 && i11 == i13) ? formatString(R.string.TodoCompletedTodayAt, getInstance().getFormatterDay().format(new Date(j11))) : (i12 + 1 == i10 && i11 == i13) ? formatString(R.string.TodoCompletedYesterdayAt, getInstance().getFormatterDay().format(new Date(j11))) : Math.abs(System.currentTimeMillis() - j11) < 31536000000L ? formatString(R.string.TodoCompletedDateTimeAt, getInstance().getFormatterDayMonth().format(new Date(j11)), getInstance().getFormatterDay().format(new Date(j11))) : formatString(R.string.TodoCompletedDateTimeAt, getInstance().getFormatterYear().format(new Date(j11)), getInstance().getFormatterDay().format(new Date(j11)));
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return "LOC_ERR";
         }
     }
@@ -1679,8 +1875,8 @@ public class LocaleController {
                 return strArr[i12];
             }
             return strArr[i12] + " " + i11;
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return "LOC_ERR";
         }
     }
@@ -1699,8 +1895,8 @@ public class LocaleController {
                 return strArr[i12] + " " + i13;
             }
             return strArr[i12] + " " + i13 + ", " + i11;
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return "LOC_ERR";
         }
     }
@@ -1862,17 +2058,7 @@ public class LocaleController {
 
     private String getLocalizedString(int i10) {
         checkLocalizationInternal();
-        ve.a aVar = this.localizationInternal;
-        Context context = ApplicationLoader.applicationContext;
-        aVar.getClass();
-        if (context == null || i10 == 0) {
-            return null;
-        }
-        try {
-            return aVar.b(context.getResources().getResourceEntryName(i10));
-        } catch (Resources.NotFoundException unused) {
-            return null;
-        }
+        return this.localizationInternal.b(ApplicationLoader.applicationContext, i10);
     }
 
     private static int getLocalizedStringByName(String str) {
@@ -1881,7 +2067,7 @@ public class LocaleController {
 
     public static String getPluralString(String str, int i10) {
         if (str == null || str.length() == 0 || getInstance().currentPluralRules == null) {
-            return vh.v2.e("LOC_ERR:", str);
+            return org.telegram.ui.yh.k("LOC_ERR:", str);
         }
         String z4 = android.support.v4.media.a.z(str, "_", getInstance().stringForQuantity(getInstance().currentPluralRules.quantityForNumber(i10)));
         int localizedStringByName = getLocalizedStringByName(z4);
@@ -1890,20 +2076,14 @@ public class LocaleController {
 
     public static String getServerString(String str) {
         int localizedStringByName;
-        String b10 = getInstance().localizationExternal.b(str);
-        return (b10 != null || (localizedStringByName = getLocalizedStringByName(str)) == 0) ? b10 : getInstance().getLocalizedString(localizedStringByName);
+        ve.a aVar = getInstance().localizationExternal;
+        aVar.getClass();
+        String str2 = str != null ? (String) aVar.a.get(str.hashCode()) : null;
+        return (str2 != null || (localizedStringByName = getLocalizedStringByName(str)) == 0) ? str2 : getInstance().getLocalizedString(localizedStringByName);
     }
 
     public static String getString(int i10) {
-        String str = resourcesCacheMap.get(Integer.valueOf(i10));
-        if (str == null) {
-            HashMap<Integer, String> hashMap = resourcesCacheMap;
-            Integer valueOf = Integer.valueOf(i10);
-            String resourceEntryName = ApplicationLoader.applicationContext.getResources().getResourceEntryName(i10);
-            hashMap.put(valueOf, resourceEntryName);
-            str = resourceEntryName;
-        }
-        return getString(str, i10);
+        return getString(null, i10);
     }
 
     private String getStringInternal(String str, int i10) {
@@ -2062,7 +2242,7 @@ public class LocaleController {
         for (int i12 = 0; i12 < size2; i12++) {
             TLRPC.TL_langPackLanguage tL_langPackLanguage = (TLRPC.TL_langPackLanguage) vector.objects.get(i12);
             if (BuildVars.LOGS_ENABLED) {
-                org.telegram.ui.yh.w(tL_langPackLanguage.name, new StringBuilder("loaded lang "));
+                org.telegram.ui.yh.v(tL_langPackLanguage.name, new StringBuilder("loaded lang "));
             }
             LocaleInfo localeInfo = new LocaleInfo();
             localeInfo.nameEnglish = tL_langPackLanguage.name;
@@ -2151,9 +2331,9 @@ public class LocaleController {
                 SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
                 edit.putString("language", localeInfo.getKey());
                 edit.commit();
-                ph.j5 j5Var = new ph.j5(13);
-                j5Var.p(hashMap);
-                this.localizationExternal = new ve.a(j5Var);
+                oh.h4 h4Var = new oh.h4(23, false);
+                h4Var.p(hashMap);
+                this.localizationExternal = new ve.a(h4Var);
                 this.localizationExternalSize = calculateTranslatedCount(hashMap);
                 this.currentLocale = locale;
                 this.currentLocaleInfo = localeInfo;
@@ -2173,12 +2353,12 @@ public class LocaleController {
                 configuration.locale = this.currentLocale;
                 ApplicationLoader.applicationContext.getResources().updateConfiguration(configuration, ApplicationLoader.applicationContext.getResources().getDisplayMetrics());
                 this.changingConfiguration = false;
-                n31.s = false;
+                p31.s = false;
             } else {
                 FileLog.d("saveRemoteLocaleStrings: currentLocaleInfo != localeInfo, do nothing");
             }
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             this.changingConfiguration = false;
         }
         recreateFormatters();
@@ -2307,8 +2487,8 @@ public class LocaleController {
                 return (i11 <= -7 || i11 > -1) ? getInstance().getFormatterDayMonth().format(new Date(j11)) : getInstance().getFormatterWeek().format(new Date(j11));
             }
             return getInstance().getFormatterDay().format(new Date(j11));
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return "LOC_ERR";
         }
     }
@@ -2345,17 +2525,17 @@ public class LocaleController {
                         saveOtherLanguages();
                     }
                     LocaleInfo localeInfo = languageFromDict;
-                    ph.j5 j5Var = new ph.j5(13);
-                    j5Var.p(localeFileStrings);
-                    this.localizationExternal = new ve.a(j5Var);
+                    oh.h4 h4Var = new oh.h4(23, false);
+                    h4Var.p(localeFileStrings);
+                    this.localizationExternal = new ve.a(h4Var);
                     this.localizationExternalSize = calculateTranslatedCount(localeFileStrings);
                     applyLanguage(localeInfo, true, false, true, false, i10, null);
                     return true;
                 }
             }
             return false;
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return false;
         }
     }
@@ -3473,8 +3653,8 @@ public class LocaleController {
             }
             FileLog.d("saved locale file to " + pathToFile);
             AndroidUtilities.runOnUIThread(new lf.j0(this, i11, localeInfo, tL_langPackDifference, localeFileStrings2, runnable, 4));
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
         }
     }
 
@@ -3498,8 +3678,8 @@ public class LocaleController {
             int i12 = calendar.get(6);
             int i13 = calendar.get(1);
             return (i12 == i10 && i11 == i13) ? z4 ? getString(R.string.ShortToday) : getInstance().getFormatterDay().format(new Date(j11)) : (i12 + 1 == i10 && i11 == i13) ? getString("Yesterday", R.string.Yesterday) : Math.abs(System.currentTimeMillis() - j11) < 31536000000L ? getInstance().getFormatterDayMonth().format(new Date(j11)) : getInstance().getFormatterYear().format(new Date(j11));
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return "LOC_ERR: formatDate";
         }
     }
@@ -3512,8 +3692,8 @@ public class LocaleController {
             long j11 = j10 * 1000;
             calendar.setTimeInMillis(j11);
             return (!(z4 && i10 == calendar.get(1)) && (z4 || Math.abs(System.currentTimeMillis() - j11) >= 31536000000L)) ? getInstance().getChatFullDate().format(j11) : getInstance().getChatDate().format(j11);
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return "LOC_ERR: formatDateChat";
         }
     }
@@ -3558,10 +3738,14 @@ public class LocaleController {
                 return getInstance().getFormatterDayMonth().format(j11);
             }
             return getInstance().getFormatterDayMonth().format(j11) + ", " + calendar.get(1);
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return "LOC_ERR: formatDateChat";
         }
+    }
+
+    public static CharSequence formatSpannable(String str, int i10, Object... objArr) {
+        return formatSpannable(str, null, i10, 0, objArr);
     }
 
     public static String formatStartsTime(long j10, int i10, boolean z4) {
@@ -3583,6 +3767,11 @@ public class LocaleController {
         return getInstance().getFormatterScheduleSend(i13).format(calendar.getTimeInMillis());
     }
 
+    @Deprecated
+    public static String formatString(String str, int i10, Object... objArr) {
+        return formatString(str, null, i10, 0, objArr);
+    }
+
     public static String formatUserStatus(int i10, TLRPC.User user, boolean[] zArr) {
         return formatUserStatus(i10, user, zArr, null);
     }
@@ -3593,8 +3782,8 @@ public class LocaleController {
         }
         try {
             return new Locale("", str).getDisplayCountry(getInstance().getCurrentLocale());
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return null;
         }
     }
@@ -3668,12 +3857,12 @@ public class LocaleController {
                     try {
                         fileInputStream2.close();
                         return hashMap;
-                    } catch (Exception e) {
-                        FileLog.e(e);
+                    } catch (Exception e6) {
+                        FileLog.e(e6);
                         return hashMap;
                     }
-                } catch (Exception e6) {
-                    e = e6;
+                } catch (Exception e10) {
+                    e = e10;
                     fileInputStream = fileInputStream2;
                     try {
                         File file2 = new File(ApplicationLoader.getFilesDirFixed(), "malformed_locales/");
@@ -3687,8 +3876,8 @@ public class LocaleController {
                     if (fileInputStream != null) {
                         try {
                             fileInputStream.close();
-                        } catch (Exception e10) {
-                            FileLog.e(e10);
+                        } catch (Exception e11) {
+                            FileLog.e(e11);
                         }
                     }
                     return new HashMap<>();
@@ -3698,8 +3887,8 @@ public class LocaleController {
                     if (fileInputStream != null) {
                         try {
                             fileInputStream.close();
-                        } catch (Exception e11) {
-                            FileLog.e(e11);
+                        } catch (Exception e12) {
+                            FileLog.e(e12);
                         }
                     }
                     throw th;
@@ -3707,50 +3896,61 @@ public class LocaleController {
             } catch (Throwable th3) {
                 th = th3;
             }
-        } catch (Exception e12) {
-            e = e12;
+        } catch (Exception e13) {
+            e = e13;
         }
+    }
+
+    @Deprecated
+    public static String getString(String str, int i10) {
+        return getInstance().getStringInternal(str, i10);
     }
 
     private String getStringInternal(String str, String str2, int i10, int i11) {
-        String b10 = BuildVars.USE_CLOUD_STRINGS ? this.localizationExternal.b(str) : null;
-        if (b10 == null) {
+        String c3 = BuildVars.USE_CLOUD_STRINGS ? this.localizationExternal.c(ApplicationLoader.applicationContext, str, i11) : null;
+        if (c3 == null) {
             if (BuildVars.USE_CLOUD_STRINGS && str2 != null) {
-                b10 = this.localizationExternal.b(str2);
+                c3 = this.localizationExternal.c(ApplicationLoader.applicationContext, str2, i10);
             }
-            if (b10 == null) {
+            if (c3 == null) {
                 try {
-                    b10 = getLocalizedString(i11);
-                } catch (Exception e) {
+                    c3 = getLocalizedString(i11);
+                } catch (Exception e6) {
                     if (i10 != 0) {
                         try {
-                            b10 = getLocalizedString(i10);
+                            c3 = getLocalizedString(i10);
                         } catch (Exception unused) {
                         }
                     }
-                    FileLog.e(e);
+                    FileLog.e(e6);
                 }
             }
         }
-        return b10 == null ? vh.v2.e("LOC_ERR:", str) : b10;
+        return c3 == null ? org.telegram.ui.yh.k("LOC_ERR:", str) : c3;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:64:0x02ad  */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x028a  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x02b8  */
+    /* JADX WARN: Type inference failed for: r5v13 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public int applyLanguage(LocaleInfo localeInfo, boolean z4, boolean z10, boolean z11, boolean z12, int i10, Runnable runnable) {
         char c3;
-        int i11;
         String str;
         int applyRemoteLanguage;
         boolean z13;
+        int i11;
         int i12;
         boolean z14;
+        int i13;
         Locale locale;
         String[] strArr;
         boolean z15;
         boolean z16;
+        int i14;
+        boolean z17;
         LocaleController localeController = this;
         LocaleInfo localeInfo2 = localeInfo;
         if (localeInfo2 == null) {
@@ -3784,7 +3984,6 @@ public class LocaleController {
                 AndroidUtilities.runOnUIThread(new i0(localeController, localeInfo2, i10, runnable, 5));
                 localeController = this;
                 localeInfo2 = localeInfo;
-                i11 = i10;
                 str = " ";
                 z13 = true;
                 applyRemoteLanguage = 0;
@@ -3792,13 +3991,11 @@ public class LocaleController {
                 c3 = 0;
                 localeController = this;
                 localeInfo2 = localeInfo;
-                i11 = i10;
                 str = " ";
-                applyRemoteLanguage = localeController.applyRemoteLanguage(localeInfo2, null, true, i11, runnable);
+                applyRemoteLanguage = localeController.applyRemoteLanguage(localeInfo2, null, true, i10, runnable);
                 z13 = true;
             }
         } else {
-            i11 = i10;
             str = " ";
             z13 = false;
             applyRemoteLanguage = 0;
@@ -3825,16 +4022,16 @@ public class LocaleController {
                     z15 = hasBaseLang;
                 }
                 if (pathToFile == null) {
-                    localeController.localizationExternal = ve.a.b;
+                    localeController.localizationExternal = ve.a.c;
                     localeController.localizationExternalSize = 0;
                 } else if (!z11) {
                     HashMap<String, String> localeFileStrings = localeController.getLocaleFileStrings(z15 ? localeInfo2.getPathToBaseFile() : localeInfo2.getPathToFile());
                     if (z15) {
                         localeFileStrings.putAll(localeController.getLocaleFileStrings(localeInfo2.getPathToFile()));
                     }
-                    ph.j5 j5Var = new ph.j5(13);
-                    j5Var.p(localeFileStrings);
-                    localeController.localizationExternal = new ve.a(j5Var);
+                    oh.h4 h4Var = new oh.h4(23, false);
+                    h4Var.p(localeFileStrings);
+                    localeController.localizationExternal = new ve.a(h4Var);
                     localeController.localizationExternalSize = localeController.calculateTranslatedCount(localeFileStrings);
                 }
                 localeController.currentLocale = locale;
@@ -3858,50 +4055,80 @@ public class LocaleController {
                 configuration.locale = localeController.currentLocale;
                 ApplicationLoader.applicationContext.getResources().updateConfiguration(configuration, ApplicationLoader.applicationContext.getResources().getDisplayMetrics());
                 localeController.changingConfiguration = false;
-                FileLog.d("applyLanguage: reloadLastFile=" + localeController.reloadLastFile + " force=" + z12 + " isLoadingRemote=" + z13);
-                if (localeController.reloadLastFile || (!z13 && !z12 && localeController.shouldReinstallLangpack(localeInfo2.shortName))) {
-                    if (BuildVars.LOGS_ENABLED) {
-                        FileLog.d("reload locale because one of file is corrupted " + pathToFile + str + pathToBaseFile + " reloadLastFile=" + localeController.reloadLastFile + " isLoadingRemote=" + z13 + " force=" + z12);
-                    }
-                    if (z10) {
-                        AndroidUtilities.runOnUIThread(new l5(localeController, i11, 0));
-                    } else {
-                        localeController.reloadCurrentRemoteLocale(i11, null, true, null);
-                    }
-                    localeController.reloadLastFile = false;
-                    FileLog.d("reloadLastFile=false");
-                }
-                if (!z13) {
-                    if (z10) {
-                        AndroidUtilities.runOnUIThread(new x1(11));
-                        z16 = false;
-                    } else {
-                        z16 = false;
-                        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.reloadInterface, new Object[0]);
-                    }
-                    n31.s = z16;
-                    if (runnable != null) {
-                        runnable.run();
-                    }
-                }
-                z14 = false;
-            } catch (Exception e) {
-                e = e;
+                StringBuilder sb = new StringBuilder("applyLanguage: reloadLastFile=");
+                z16 = localeController.reloadLastFile;
+                sb.append(z16);
+                sb.append(" force=");
+                sb.append(z12);
+                sb.append(" isLoadingRemote=");
+                sb.append(z13);
+                FileLog.d(sb.toString());
+            } catch (Exception e6) {
+                e = e6;
+                i11 = i10;
+            }
+            try {
+            } catch (Exception e10) {
+                e = e10;
+                i11 = z16;
                 FileLog.e(e);
                 z14 = false;
                 localeController.changingConfiguration = false;
+                i13 = i11;
                 localeController.recreateFormatters();
                 if (z12) {
                 }
                 return i12;
             }
-        } catch (Exception e6) {
-            e = e6;
+        } catch (Exception e11) {
+            e = e11;
+            i11 = i10;
             i12 = applyRemoteLanguage;
         }
+        if (!localeController.reloadLastFile && (z13 || z12 || !localeController.shouldReinstallLangpack(localeInfo2.shortName))) {
+            z16 = i10;
+            if (!z13) {
+                if (z10) {
+                    AndroidUtilities.runOnUIThread(new x1(11));
+                    z17 = false;
+                } else {
+                    z17 = false;
+                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.reloadInterface, new Object[0]);
+                }
+                p31.s = z17;
+                if (runnable != null) {
+                    runnable.run();
+                }
+            }
+            z14 = false;
+            i13 = z16;
+            localeController.recreateFormatters();
+            if (z12) {
+                MediaDataController.getInstance(i13).loadAttachMenuBots(z14, true);
+            }
+            return i12;
+        }
+        if (BuildVars.LOGS_ENABLED) {
+            FileLog.d("reload locale because one of file is corrupted " + pathToFile + str + pathToBaseFile + " reloadLastFile=" + localeController.reloadLastFile + " isLoadingRemote=" + z13 + " force=" + z12);
+        }
+        if (z10) {
+            int i15 = i10;
+            AndroidUtilities.runOnUIThread(new l5(localeController, i15 == true ? 1 : 0, 0));
+            i14 = i15;
+        } else {
+            int i16 = i10;
+            localeController.reloadCurrentRemoteLocale(i16 == true ? 1 : 0, null, true, null);
+            i14 = i16;
+        }
+        localeController.reloadLastFile = false;
+        FileLog.d("reloadLastFile=false");
+        z16 = i14;
+        if (!z13) {
+        }
+        z14 = false;
+        i13 = z16;
         localeController.recreateFormatters();
         if (z12) {
-            MediaDataController.getInstance(i11).loadAttachMenuBots(z14, true);
         }
         return i12;
     }
@@ -4256,6 +4483,107 @@ public class LocaleController {
         return formatPluralStringComma(str, i10, c3, new Object[0]);
     }
 
+    private static CharSequence formatSpannable(String str, String str2, int i10, int i11, Object... objArr) {
+        String str3;
+        try {
+            String c3 = BuildVars.USE_CLOUD_STRINGS ? getInstance().localizationExternal.c(ApplicationLoader.applicationContext, str, i10) : null;
+            if (c3 == null) {
+                if (BuildVars.USE_CLOUD_STRINGS && str2 != null) {
+                    c3 = getInstance().localizationExternal.c(ApplicationLoader.applicationContext, str2, i11);
+                }
+                if (c3 == null) {
+                    try {
+                        if (i10 != 0) {
+                            try {
+                                c3 = getInstance().getLocalizedString(i10);
+                            } catch (Exception unused) {
+                                if (i11 != 0) {
+                                    c3 = getInstance().getLocalizedString(i11);
+                                }
+                            }
+                        } else if (i11 != 0) {
+                            c3 = getInstance().getLocalizedString(i11);
+                        }
+                    } catch (Exception unused2) {
+                    }
+                }
+            }
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(c3);
+            int i12 = 0;
+            while (i12 < objArr.length) {
+                String str4 = "s";
+                Object obj = objArr[i12];
+                if (obj instanceof CharSequence) {
+                    str3 = (CharSequence) obj;
+                } else {
+                    if (obj instanceof Integer) {
+                        str3 = "" + ((Integer) objArr[i12]);
+                    } else if (obj instanceof Long) {
+                        str3 = "" + ((Long) objArr[i12]);
+                    } else {
+                        str3 = obj == null ? BuildConfig.BETA_URL : "";
+                    }
+                    str4 = "d";
+                }
+                StringBuilder sb = new StringBuilder();
+                sb.append("%");
+                i12++;
+                sb.append(i12);
+                sb.append("$");
+                sb.append(str4);
+                String sb2 = sb.toString();
+                int indexOf = spannableStringBuilder.toString().indexOf(sb2);
+                if (indexOf != -1) {
+                    spannableStringBuilder.replace(indexOf, sb2.length() + indexOf, str3);
+                } else {
+                    String str5 = "%" + str4;
+                    int indexOf2 = spannableStringBuilder.toString().indexOf(str5);
+                    if (indexOf2 != -1) {
+                        spannableStringBuilder.replace(indexOf2, str5.length() + indexOf2, str3);
+                    }
+                }
+            }
+            return spannableStringBuilder;
+        } catch (Exception e6) {
+            FileLog.e(e6);
+            return "LOC_ERR: " + str;
+        }
+    }
+
+    private static String formatString(String str, String str2, int i10, int i11, Object... objArr) {
+        try {
+            String c3 = BuildVars.USE_CLOUD_STRINGS ? getInstance().localizationExternal.c(ApplicationLoader.applicationContext, str, i10) : null;
+            if (c3 == null) {
+                if (BuildVars.USE_CLOUD_STRINGS && str2 != null) {
+                    c3 = getInstance().localizationExternal.c(ApplicationLoader.applicationContext, str2, i11);
+                }
+                if (c3 == null) {
+                    try {
+                        if (i10 != 0) {
+                            try {
+                                c3 = getInstance().getLocalizedString(i10);
+                            } catch (Exception unused) {
+                                if (i11 != 0) {
+                                    c3 = getInstance().getLocalizedString(i11);
+                                }
+                            }
+                        } else if (i11 != 0) {
+                            c3 = getInstance().getLocalizedString(i11);
+                        }
+                    } catch (Exception unused2) {
+                    }
+                }
+            }
+            if (getInstance().currentLocale != null) {
+                return String.format(getInstance().currentLocale, c3, objArr);
+            }
+            return String.format(c3, objArr);
+        } catch (Exception e6) {
+            FileLog.e(e6);
+            return "LOC_ERR: " + str;
+        }
+    }
+
     public static String formatUserStatus(int i10, TLRPC.User user, boolean[] zArr, boolean[] zArr2) {
         TLRPC.UserStatus userStatus;
         TLRPC.UserStatus userStatus2;
@@ -4299,6 +4627,18 @@ public class LocaleController {
             return getString("WithinAMonth", R.string.WithinAMonth);
         }
         return getString("ALongTimeAgo", R.string.ALongTimeAgo);
+    }
+
+    @Deprecated
+    public static String getString(String str) {
+        if (TextUtils.isEmpty(str)) {
+            return org.telegram.ui.yh.k("LOC_ERR:", str);
+        }
+        int stringResId = getStringResId(str);
+        if (stringResId != 0) {
+            return getString(str, stringResId);
+        }
+        return getServerString(str);
     }
 
     public String getTranslitString(String str, boolean z4, boolean z10) {
@@ -4914,173 +5254,88 @@ public class LocaleController {
         return sb.toString();
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0084 A[Catch: Exception -> 0x005f, TRY_ENTER, TryCatch #1 {Exception -> 0x005f, blocks: (B:7:0x0008, B:9:0x000e, B:12:0x0018, B:14:0x0059, B:16:0x0062, B:18:0x0067, B:20:0x0072, B:23:0x0084, B:25:0x0088, B:27:0x00a2, B:31:0x00c2, B:32:0x00dd, B:35:0x00ec, B:40:0x00f9, B:41:0x00f5, B:44:0x00fe, B:46:0x0106, B:48:0x0111, B:50:0x00eb, B:3:0x0116), top: B:6:0x0008 }] */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x00c2 A[Catch: Exception -> 0x005f, TRY_ENTER, TryCatch #1 {Exception -> 0x005f, blocks: (B:7:0x0008, B:9:0x000e, B:12:0x0018, B:14:0x0059, B:16:0x0062, B:18:0x0067, B:20:0x0072, B:23:0x0084, B:25:0x0088, B:27:0x00a2, B:31:0x00c2, B:32:0x00dd, B:35:0x00ec, B:40:0x00f9, B:41:0x00f5, B:44:0x00fe, B:46:0x0106, B:48:0x0111, B:50:0x00eb, B:3:0x0116), top: B:6:0x0008 }] */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00e9  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00f1  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0106 A[Catch: Exception -> 0x005f, TryCatch #1 {Exception -> 0x005f, blocks: (B:7:0x0008, B:9:0x000e, B:12:0x0018, B:14:0x0059, B:16:0x0062, B:18:0x0067, B:20:0x0072, B:23:0x0084, B:25:0x0088, B:27:0x00a2, B:31:0x00c2, B:32:0x00dd, B:35:0x00ec, B:40:0x00f9, B:41:0x00f5, B:44:0x00fe, B:46:0x0106, B:48:0x0111, B:50:0x00eb, B:3:0x0116), top: B:6:0x0008 }] */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0111 A[Catch: Exception -> 0x005f, TryCatch #1 {Exception -> 0x005f, blocks: (B:7:0x0008, B:9:0x000e, B:12:0x0018, B:14:0x0059, B:16:0x0062, B:18:0x0067, B:20:0x0072, B:23:0x0084, B:25:0x0088, B:27:0x00a2, B:31:0x00c2, B:32:0x00dd, B:35:0x00ec, B:40:0x00f9, B:41:0x00f5, B:44:0x00fe, B:46:0x0106, B:48:0x0111, B:50:0x00eb, B:3:0x0116), top: B:6:0x0008 }] */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x00eb A[Catch: Exception -> 0x005f, TryCatch #1 {Exception -> 0x005f, blocks: (B:7:0x0008, B:9:0x000e, B:12:0x0018, B:14:0x0059, B:16:0x0062, B:18:0x0067, B:20:0x0072, B:23:0x0084, B:25:0x0088, B:27:0x00a2, B:31:0x00c2, B:32:0x00dd, B:35:0x00ec, B:40:0x00f9, B:41:0x00f5, B:44:0x00fe, B:46:0x0106, B:48:0x0111, B:50:0x00eb, B:3:0x0116), top: B:6:0x0008 }] */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x00b2 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public static String formatPluralStringComma(String str, int i10, char c3, Object... objArr) {
+        String str2;
+        int length;
         if (str != null) {
             try {
                 if (str.length() != 0 && getInstance().currentPluralRules != null) {
-                    String str2 = str + "_" + getInstance().stringForQuantity(getInstance().currentPluralRules.quantityForNumber(i10));
+                    String str3 = str + "_" + getInstance().stringForQuantity(getInstance().currentPluralRules.quantityForNumber(i10));
                     int i11 = 0;
                     StringBuilder sb = new StringBuilder(String.format("%d", Integer.valueOf(i10)));
-                    for (int length = sb.length() - 3; length > 0; length -= 3) {
-                        sb.insert(length, c3);
+                    for (int length2 = sb.length() - 3; length2 > 0; length2 -= 3) {
+                        sb.insert(length2, c3);
                     }
-                    String b10 = BuildVars.USE_CLOUD_STRINGS ? getInstance().localizationExternal.b(str2) : null;
-                    if (b10 == null) {
-                        b10 = BuildVars.USE_CLOUD_STRINGS ? getInstance().localizationExternal.b(str + "_other") : null;
-                    }
-                    if (b10 == null) {
-                        try {
-                            b10 = getInstance().getLocalizedString(getLocalizedStringByName(str2));
-                        } catch (Exception unused) {
+                    String str4 = null;
+                    if (BuildVars.USE_CLOUD_STRINGS) {
+                        ve.a aVar = getInstance().localizationExternal;
+                        aVar.getClass();
+                        if (str3 != null) {
+                            str2 = (String) aVar.a.get(str3.hashCode());
+                            if (str2 == null) {
+                                if (BuildVars.USE_CLOUD_STRINGS) {
+                                    ve.a aVar2 = getInstance().localizationExternal;
+                                    String str5 = str + "_other";
+                                    aVar2.getClass();
+                                    if (str5 != null) {
+                                        str4 = (String) aVar2.a.get(str5.hashCode());
+                                    }
+                                }
+                                str2 = str4;
+                            }
+                            if (str2 == null) {
+                                try {
+                                    str2 = getInstance().getLocalizedString(getLocalizedStringByName(str3));
+                                } catch (Exception unused) {
+                                }
+                            }
+                            if (str2 == null) {
+                                str2 = getInstance().getLocalizedString(getLocalizedStringByName(str + "_other"));
+                            }
+                            String replace = str2.replace("%d", "%1$s").replace("%1$d", "%1$s");
+                            length = (objArr != null ? 0 : objArr.length) + 1;
+                            Object[] objArr2 = new Object[length];
+                            while (i11 < length) {
+                                objArr2[i11] = i11 == 0 ? sb : objArr[i11 - 1];
+                                i11++;
+                            }
+                            if (getInstance().currentLocale == null) {
+                                return String.format(getInstance().currentLocale, replace, objArr2);
+                            }
+                            return String.format(replace, objArr2);
                         }
                     }
-                    if (b10 == null) {
-                        b10 = getInstance().getLocalizedString(getLocalizedStringByName(str + "_other"));
+                    str2 = null;
+                    if (str2 == null) {
                     }
-                    String replace = b10.replace("%d", "%1$s").replace("%1$d", "%1$s");
-                    int length2 = (objArr == null ? 0 : objArr.length) + 1;
-                    Object[] objArr2 = new Object[length2];
-                    while (i11 < length2) {
-                        objArr2[i11] = i11 == 0 ? sb : objArr[i11 - 1];
-                        i11++;
+                    if (str2 == null) {
                     }
-                    if (getInstance().currentLocale != null) {
-                        return String.format(getInstance().currentLocale, replace, objArr2);
+                    if (str2 == null) {
                     }
-                    return String.format(replace, objArr2);
+                    String replace2 = str2.replace("%d", "%1$s").replace("%1$d", "%1$s");
+                    length = (objArr != null ? 0 : objArr.length) + 1;
+                    Object[] objArr22 = new Object[length];
+                    while (i11 < length) {
+                    }
+                    if (getInstance().currentLocale == null) {
+                    }
                 }
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e6) {
+                FileLog.e(e6);
                 return "LOC_ERR: " + str;
             }
         }
         return "LOC_ERR:" + str;
-    }
-
-    public static CharSequence formatSpannable(String str, int i10, Object... objArr) {
-        return formatSpannable(str, null, i10, 0, objArr);
-    }
-
-    @Deprecated
-    public static String formatString(String str, int i10, Object... objArr) {
-        return formatString(str, null, i10, 0, objArr);
-    }
-
-    @Deprecated
-    public static String getString(String str, int i10) {
-        return getInstance().getStringInternal(str, i10);
-    }
-
-    private static CharSequence formatSpannable(String str, String str2, int i10, int i11, Object... objArr) {
-        String str3;
-        try {
-            String b10 = BuildVars.USE_CLOUD_STRINGS ? getInstance().localizationExternal.b(str) : null;
-            if (b10 == null) {
-                if (BuildVars.USE_CLOUD_STRINGS && str2 != null) {
-                    b10 = getInstance().localizationExternal.b(str2);
-                }
-                if (b10 == null) {
-                    try {
-                        if (i10 != 0) {
-                            try {
-                                b10 = getInstance().getLocalizedString(i10);
-                            } catch (Exception unused) {
-                                if (i11 != 0) {
-                                    b10 = getInstance().getLocalizedString(i11);
-                                }
-                            }
-                        } else if (i11 != 0) {
-                            b10 = getInstance().getLocalizedString(i11);
-                        }
-                    } catch (Exception unused2) {
-                    }
-                }
-            }
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(b10);
-            int i12 = 0;
-            while (i12 < objArr.length) {
-                String str4 = "s";
-                Object obj = objArr[i12];
-                if (obj instanceof CharSequence) {
-                    str3 = (CharSequence) obj;
-                } else {
-                    if (obj instanceof Integer) {
-                        str3 = "" + ((Integer) objArr[i12]);
-                    } else if (obj instanceof Long) {
-                        str3 = "" + ((Long) objArr[i12]);
-                    } else {
-                        str3 = obj == null ? BuildConfig.BETA_URL : "";
-                    }
-                    str4 = "d";
-                }
-                StringBuilder sb = new StringBuilder();
-                sb.append("%");
-                i12++;
-                sb.append(i12);
-                sb.append("$");
-                sb.append(str4);
-                String sb2 = sb.toString();
-                int indexOf = spannableStringBuilder.toString().indexOf(sb2);
-                if (indexOf != -1) {
-                    spannableStringBuilder.replace(indexOf, sb2.length() + indexOf, str3);
-                } else {
-                    String str5 = "%" + str4;
-                    int indexOf2 = spannableStringBuilder.toString().indexOf(str5);
-                    if (indexOf2 != -1) {
-                        spannableStringBuilder.replace(indexOf2, str5.length() + indexOf2, str3);
-                    }
-                }
-            }
-            return spannableStringBuilder;
-        } catch (Exception e) {
-            FileLog.e(e);
-            return "LOC_ERR: " + str;
-        }
-    }
-
-    private static String formatString(String str, String str2, int i10, int i11, Object... objArr) {
-        try {
-            String b10 = BuildVars.USE_CLOUD_STRINGS ? getInstance().localizationExternal.b(str) : null;
-            if (b10 == null) {
-                if (BuildVars.USE_CLOUD_STRINGS && str2 != null) {
-                    b10 = getInstance().localizationExternal.b(str2);
-                }
-                if (b10 == null) {
-                    try {
-                        if (i10 != 0) {
-                            try {
-                                b10 = getInstance().getLocalizedString(i10);
-                            } catch (Exception unused) {
-                                if (i11 != 0) {
-                                    b10 = getInstance().getLocalizedString(i11);
-                                }
-                            }
-                        } else if (i11 != 0) {
-                            b10 = getInstance().getLocalizedString(i11);
-                        }
-                    } catch (Exception unused2) {
-                    }
-                }
-            }
-            if (getInstance().currentLocale != null) {
-                return String.format(getInstance().currentLocale, b10, objArr);
-            }
-            return String.format(b10, objArr);
-        } catch (Exception e) {
-            FileLog.e(e);
-            return "LOC_ERR: " + str;
-        }
-    }
-
-    @Deprecated
-    public static String getString(String str) {
-        if (TextUtils.isEmpty(str)) {
-            return vh.v2.e("LOC_ERR:", str);
-        }
-        int stringResId = getStringResId(str);
-        if (stringResId != 0) {
-            return getString(str, stringResId);
-        }
-        return getServerString(str);
     }
 }

@@ -1,72 +1,43 @@
 package lh;
 
-import java.util.ArrayList;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.yh;
+import android.view.View;
+import mh.l7;
+import org.telegram.ui.Cells.ya;
+import org.telegram.ui.Cells.za;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class i2 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g5 b;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique c;
-    public final /* synthetic */ mf.a d;
-    public final /* synthetic */ Runnable e;
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class i2 implements View.OnLongClickListener {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ i2(g5 g5Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, mf.a aVar, Runnable runnable, int i10) {
-        this.a = i10;
-        this.b = g5Var;
-        this.c = tL_starGiftUnique;
-        this.d = aVar;
-        this.e = runnable;
+    public /* synthetic */ i2(l7 l7Var, int i10, Runnable runnable) {
+        this.c = l7Var;
+        this.b = i10;
+        this.d = runnable;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        mf.b bVar = mf.b.a;
-        mf.b bVar2 = mf.b.b;
-        Runnable runnable = this.e;
-        mf.a aVar = this.d;
-        TL_stars.TL_starGiftUnique tL_starGiftUnique = this.c;
-        g5 g5Var = this.b;
-        switch (i10) {
+    @Override // android.view.View.OnLongClickListener
+    public final boolean onLongClick(View view) {
+        switch (this.a) {
             case 0:
-                g5Var.getClass();
-                tL_starGiftUnique.flags |= 16;
-                tL_starGiftUnique.resale_ton_only = aVar.a == bVar2;
-                ArrayList<TL_stars.StarsAmount> arrayList = new ArrayList<>();
-                tL_starGiftUnique.resell_amount = arrayList;
-                arrayList.add(aVar.e(bVar).o());
-                tL_starGiftUnique.resell_amount.add(aVar.e(bVar2).o());
-                g5Var.b0.setResellPrice(aVar);
-                kh.a3 a3Var = g5Var.a1;
-                if (a3Var != null) {
-                    a3Var.run();
-                }
-                if (runnable != null) {
-                    runnable.run();
-                }
-                yh.s(R.string.Gift2ResaleEnable, new Object[]{g5Var.C1()}, g5Var.getBulletinFactory(), R.raw.contact_check, 36);
-                break;
+                l7 l7Var = (l7) this.c;
+                Runnable runnable = (Runnable) this.d;
+                l7Var.f(this.b, true);
+                runnable.run();
+                return true;
             default:
-                tL_starGiftUnique.flags |= 16;
-                tL_starGiftUnique.resale_ton_only = aVar.a == bVar2;
-                ArrayList<TL_stars.StarsAmount> arrayList2 = new ArrayList<>();
-                tL_starGiftUnique.resell_amount = arrayList2;
-                arrayList2.add(aVar.e(bVar).o());
-                tL_starGiftUnique.resell_amount.add(aVar.e(bVar2).o());
-                g5Var.b0.setResellPrice(aVar);
-                kh.a3 a3Var2 = g5Var.a1;
-                if (a3Var2 != null) {
-                    a3Var2.run();
-                }
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
+                za zaVar = (za) this.c;
+                ya yaVar = (ya) this.d;
+                return zaVar.b(yaVar.h, this.b);
         }
+    }
+
+    public /* synthetic */ i2(za zaVar, ya yaVar, int i10) {
+        this.c = zaVar;
+        this.d = yaVar;
+        this.b = i10;
     }
 }

@@ -1,8 +1,8 @@
 package com.google.android.gms.internal.play_billing;
 
-import j7.g6;
+import j7.d6;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class q extends r {
     public final transient int c;
@@ -17,7 +17,7 @@ public final class q extends r {
 
     @Override // java.util.List
     public final Object get(int i10) {
-        g6.a(i10, this.d);
+        d6.a(i10, this.d);
         return this.e.get(i10 + this.c);
     }
 
@@ -44,7 +44,7 @@ public final class q extends r {
     @Override // com.google.android.gms.internal.play_billing.r, java.util.List
     /* renamed from: s, reason: merged with bridge method [inline-methods] */
     public final r subList(int i10, int i11) {
-        g6.c(i10, i11, this.d);
+        d6.c(i10, i11, this.d);
         int i12 = this.c;
         return this.e.subList(i10 + i12, i11 + i12);
     }

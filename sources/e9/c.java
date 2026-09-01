@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.util.Log;
 import cb.m;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import com.google.firebase.messaging.r;
 import com.google.firebase.messaging.u;
 import h2.f;
 import i9.n;
@@ -13,9 +12,10 @@ import i9.p;
 import i9.s;
 import j9.o;
 import java.util.concurrent.atomic.AtomicMarkableReference;
-import m.s3;
+import m.r3;
+import sf.e;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class c {
     public final p a;
@@ -33,10 +33,10 @@ public final class c {
         Thread currentThread = Thread.currentThread();
         nVar.getClass();
         long currentTimeMillis = System.currentTimeMillis();
-        r rVar = nVar.e;
+        e eVar = nVar.e;
         u uVar = new u(nVar, currentTimeMillis, th2, currentThread);
-        rVar.getClass();
-        rVar.V(new f(uVar, 3));
+        eVar.getClass();
+        eVar.H(new f(uVar, 3));
     }
 
     public final void b() {
@@ -71,27 +71,27 @@ public final class c {
         nVar.getClass();
         try {
             ((m) nVar.d.d).u(str, str2);
-        } catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException e6) {
             Context context = nVar.a;
             if (context != null && (context.getApplicationInfo().flags & 2) != 0) {
-                throw e;
+                throw e6;
             }
             Log.e("FirebaseCrashlytics", "Attempting to set custom attribute with null key, ignoring.", null);
         }
     }
 
     public final void d(String str) {
-        s3 s3Var = this.a.f.d;
-        s3Var.getClass();
+        r3 r3Var = this.a.f.d;
+        r3Var.getClass();
         String b10 = j9.d.b(1024, str);
-        synchronized (((AtomicMarkableReference) s3Var.h)) {
+        synchronized (((AtomicMarkableReference) r3Var.h)) {
             try {
-                String str2 = (String) ((AtomicMarkableReference) s3Var.h).getReference();
+                String str2 = (String) ((AtomicMarkableReference) r3Var.h).getReference();
                 if (b10 == null ? str2 == null : b10.equals(str2)) {
                     return;
                 }
-                ((AtomicMarkableReference) s3Var.h).set(b10, true);
-                ((r) s3Var.b).V(new o(s3Var, 0));
+                ((AtomicMarkableReference) r3Var.h).set(b10, true);
+                ((e) r3Var.b).H(new o(r3Var, 0));
             } finally {
             }
         }

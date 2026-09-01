@@ -13,7 +13,7 @@ import java.util.Collections;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class b {
     public static final View.AccessibilityDelegate c = new View.AccessibilityDelegate();
@@ -27,7 +27,7 @@ public class b {
     public org.telegram.ui.Cells.f1 a(View view) {
         AccessibilityNodeProvider accessibilityNodeProvider = this.a.getAccessibilityNodeProvider(view);
         if (accessibilityNodeProvider != null) {
-            return new org.telegram.ui.Cells.f1(accessibilityNodeProvider, 18);
+            return new org.telegram.ui.Cells.f1(accessibilityNodeProvider, 17);
         }
         return null;
     }
@@ -36,8 +36,8 @@ public class b {
         this.a.onInitializeAccessibilityEvent(view, accessibilityEvent);
     }
 
-    public void c(View view, s0.e eVar) {
-        this.a.onInitializeAccessibilityNodeInfo(view, eVar.a);
+    public void c(View view, s0.d dVar) {
+        this.a.onInitializeAccessibilityNodeInfo(view, dVar.a);
     }
 
     public boolean d(View view, int i10, Bundle bundle) {

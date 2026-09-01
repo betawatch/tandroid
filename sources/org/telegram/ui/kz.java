@@ -1,24 +1,37 @@
 package org.telegram.ui;
 
-import android.view.ViewTreeObserver;
-import org.telegram.ui.ActionBar.ActionBarLayout;
+import android.content.DialogInterface;
+import java.util.ArrayList;
+import java.util.regex.Pattern;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class kz implements ViewTreeObserver.OnGlobalLayoutListener {
-    public final /* synthetic */ ExternalActionActivity a;
+public final /* synthetic */ class kz implements DialogInterface.OnCancelListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int[] c;
 
-    public kz(ExternalActionActivity externalActionActivity) {
-        this.a = externalActionActivity;
+    public /* synthetic */ kz(int i10, int i11, int[] iArr) {
+        this.a = i11;
+        this.b = i10;
+        this.c = iArr;
     }
 
-    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
-    public final void onGlobalLayout() {
-        ExternalActionActivity externalActionActivity = this.a;
-        externalActionActivity.f();
-        ActionBarLayout actionBarLayout = externalActionActivity.c;
-        if (actionBarLayout != null) {
-            actionBarLayout.getView().getViewTreeObserver().removeOnGlobalLayoutListener(this);
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
+        int i10 = this.a;
+        int[] iArr = this.c;
+        int i11 = this.b;
+        switch (i10) {
+            case 0:
+                ArrayList arrayList = ExternalActionActivity.x;
+                ConnectionsManager.getInstance(i11).cancelRequest(iArr[0], true);
+                break;
+            default:
+                Pattern pattern = LaunchActivity.y1;
+                ConnectionsManager.getInstance(i11).cancelRequest(iArr[0], true);
+                break;
         }
     }
 }

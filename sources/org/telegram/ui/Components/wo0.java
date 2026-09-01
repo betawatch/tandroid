@@ -1,43 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class wo0 extends FrameLayout {
+public final class wo0 extends f2.a1 {
     public final /* synthetic */ ve a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wo0(ve veVar, Context context) {
-        super(context);
+    public wo0(ve veVar) {
         this.a = veVar;
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
+    @Override // f2.a1
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
         ve veVar = this.a;
-        View contentView = veVar.getContentView();
-        int[] iArr = new int[2];
-        contentView.getLocationInWindow(iArr);
-        iArr[0] = iArr[0] + veVar.E;
-        iArr[1] = iArr[1] + veVar.F;
-        getLocationInWindow(new int[2]);
-        if (motionEvent.getAction() != 0 || motionEvent.getX() > iArr[0]) {
-            if (motionEvent.getX() < contentView.getWidth() + iArr[0] && motionEvent.getY() > iArr[1]) {
-                if (motionEvent.getY() < contentView.getHeight() + iArr[1]) {
-                    motionEvent.offsetLocation(r2[0] - iArr[0], (AndroidUtilities.statusBarHeight + r2[1]) - iArr[1]);
-                    return contentView.dispatchTouchEvent(motionEvent);
-                }
-            }
+        View view = veVar.u;
+        boolean z4 = veVar.w.I0() != 0;
+        Boolean bool = veVar.x;
+        if (bool == null || z4 != bool.booleanValue()) {
+            view.animate().cancel();
+            view.animate().alpha(z4 ? 1.0f : 0.0f).setDuration(150L).start();
+            veVar.x = Boolean.valueOf(z4);
         }
-        if (!veVar.A && !veVar.D) {
-            veVar.D = true;
-            veVar.l(new o1.j[0]);
-        }
-        return true;
     }
 }

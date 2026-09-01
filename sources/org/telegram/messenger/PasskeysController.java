@@ -15,11 +15,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class PasskeysController {
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public class 1 implements v0.i {
         final /* synthetic */ Context val$context;
         final /* synthetic */ int val$currentAccount;
@@ -102,9 +102,9 @@ public class PasskeysController {
                         PasskeysController.1.lambda$onResult$1(i10, sendRequestTyped, callback3, parseLong, dialogInterface);
                     }
                 });
-            } catch (Exception e) {
-                FileLog.e(e);
-                this.val$done.run(0L, null, e.getMessage());
+            } catch (Exception e6) {
+                FileLog.e(e6);
+                this.val$done.run(0L, null, e6.getMessage());
             }
         }
     }
@@ -120,10 +120,10 @@ public class PasskeysController {
     public static void create(Context context, int i10, Utilities.Callback2<TL_account.Passkey, String> callback2) {
         if (BuildVars.SUPPORTS_PASSKEYS) {
             kotlin.jvm.internal.j.e(context, "context");
-            y5.h hVar = new y5.h(context, 2);
+            k6.b bVar = new k6.b(context, 1);
             org.telegram.ui.ActionBar.d2 d2Var = new org.telegram.ui.ActionBar.d2(context, 3, null);
             d2Var.q(500L);
-            ConnectionsManager.getInstance(i10).sendRequestTyped(new TL_account.initPasskeyRegistration(), new a(), new mh(d2Var, callback2, hVar, context, i10));
+            ConnectionsManager.getInstance(i10).sendRequestTyped(new TL_account.initPasskeyRegistration(), new a(), new mh(d2Var, callback2, bVar, context, i10));
         }
     }
 
@@ -208,7 +208,7 @@ public class PasskeysController {
         }
         if (th2 != null) {
             FileLog.e(th2);
-            AndroidUtilities.runOnUIThread(new yg(6, callback2, th2));
+            AndroidUtilities.runOnUIThread(new yg(5, callback2, th2));
             return;
         }
         TL_account.registerPasskey registerpasskey = new TL_account.registerPasskey();
@@ -227,9 +227,9 @@ public class PasskeysController {
             FileLog.d("AAGUID: " + bytesToHex(Arrays.copyOfRange(inputpasskeyresponseregister.attestation_object, 67, 83)));
             registerpasskey.credential.response = inputpasskeyresponseregister;
             AndroidUtilities.runOnUIThread(new i0(context, i10, registerpasskey, callback2, 17));
-        } catch (Exception e) {
-            FileLog.e(e);
-            AndroidUtilities.runOnUIThread(new ph(callback2, e, 0));
+        } catch (Exception e6) {
+            FileLog.e(e6);
+            AndroidUtilities.runOnUIThread(new ph(callback2, e6, 0));
         }
     }
 
@@ -247,14 +247,14 @@ public class PasskeysController {
         }
         try {
             try {
-                ((y5.h) hVar).c(context, new v0.e(new JSONObject(passkeyregistrationoptions.options.data).getJSONObject("publicKey").toString()), ktxCallback(new qh(context, i10, callback2)));
-            } catch (Exception e) {
-                FileLog.e(e);
-                AndroidUtilities.runOnUIThread(new ph(callback2, e, 1));
+                ((k6.b) hVar).a(context, new v0.e(new JSONObject(passkeyregistrationoptions.options.data).getJSONObject("publicKey").toString()), ktxCallback(new qh(context, i10, callback2)));
+            } catch (Exception e6) {
+                FileLog.e(e6);
+                AndroidUtilities.runOnUIThread(new ph(callback2, e6, 1));
             }
-        } catch (Exception e6) {
-            FileLog.e(e6);
-            callback2.run(null, e6.getMessage());
+        } catch (Exception e10) {
+            FileLog.e(e10);
+            callback2.run(null, e10.getMessage());
         }
     }
 
@@ -276,21 +276,21 @@ public class PasskeysController {
                 CancellationSignal cancellationSignal = new CancellationSignal();
                 Executor executor = context.getMainExecutor();
                 1 r82 = new 1(callback3, context, i10);
-                ((y5.h) hVar).getClass();
+                ((k6.b) hVar).getClass();
                 kotlin.jvm.internal.j.e(executor, "executor");
-                v0.j a2 = k6.b.a(new k6.b(context, 1), nVar);
-                if (a2 == null) {
+                v0.j b10 = androidx.biometric.u.b(new androidx.biometric.u(context, 2), nVar);
+                if (b10 == null) {
                     r82.onError((Object) new w0.h("getCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added", 1));
                 } else {
-                    a2.onGetCredential(context, nVar, cancellationSignal, executor, r82);
+                    b10.onGetCredential(context, nVar, cancellationSignal, executor, r82);
                 }
                 runnableArr[0] = new xg(cancellationSignal, 3);
-            } catch (Exception e) {
-                callback3.run(0L, null, e.getMessage());
+            } catch (Exception e6) {
+                callback3.run(0L, null, e6.getMessage());
             }
-        } catch (Exception e6) {
-            FileLog.e(e6);
-            callback3.run(0L, null, e6.getMessage());
+        } catch (Exception e10) {
+            FileLog.e(e10);
+            callback3.run(0L, null, e10.getMessage());
         }
     }
 
@@ -313,7 +313,7 @@ public class PasskeysController {
             return null;
         }
         kotlin.jvm.internal.j.e(context, "context");
-        final y5.h hVar = new y5.h(context, 2);
+        final k6.b bVar = new k6.b(context, 1);
         final boolean[] zArr = new boolean[1];
         final Runnable[] runnableArr = new Runnable[1];
         TL_account.initPasskeyLogin initpasskeylogin = new TL_account.initPasskeyLogin();
@@ -322,7 +322,7 @@ public class PasskeysController {
         runnableArr[0] = new nh(i10, ConnectionsManager.getInstance(i10).sendRequestTyped(initpasskeylogin, new a(), new Utilities.Callback2() { // from class: org.telegram.messenger.kh
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                PasskeysController.lambda$login$10(zArr, callback3, z4, hVar, context, i10, runnableArr, (TL_account.passkeyLoginOptions) obj, (TLRPC.TL_error) obj2);
+                PasskeysController.lambda$login$10(zArr, callback3, z4, bVar, context, i10, runnableArr, (TL_account.passkeyLoginOptions) obj, (TLRPC.TL_error) obj2);
             }
         }, 8), 0);
         return new sc(zArr, runnableArr, 1);

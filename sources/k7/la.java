@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class la implements ia {
     public final c9.p a;
@@ -33,10 +33,10 @@ public final class la implements ia {
         haVar.getClass();
         oa oaVar = oa.c;
         androidx.biometric.e eVar = (androidx.biometric.e) bVar.b;
-        ((j7.f8) bVar.c).h = false;
-        j7.f8 f8Var = (j7.f8) bVar.c;
-        f8Var.f = Boolean.FALSE;
-        eVar.b = new k9(f8Var);
+        ((j7.g8) bVar.c).h = false;
+        j7.g8 g8Var = (j7.g8) bVar.c;
+        g8Var.f = Boolean.FALSE;
+        eVar.b = new k9(g8Var);
         try {
             oa.b();
             k7 k7Var = new k7(eVar);
@@ -55,9 +55,9 @@ public final class la implements ia {
                 throw new u9.b("No encoder for ".concat(String.valueOf(k7.class)));
             }
             dVar.a(k7Var, fVar);
-            pVar.a(new v2.a(null, byteArrayOutputStream.toByteArray(), v2.d.b, null), new s0.b(28));
-        } catch (UnsupportedEncodingException e) {
-            throw new UnsupportedOperationException("Failed to covert logging to UTF-8 byte array", e);
+            pVar.a(new v2.a(null, byteArrayOutputStream.toByteArray(), v2.d.b, null), new sg.a(28));
+        } catch (UnsupportedEncodingException e6) {
+            throw new UnsupportedOperationException("Failed to covert logging to UTF-8 byte array", e6);
         }
     }
 }

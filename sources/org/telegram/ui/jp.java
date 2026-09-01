@@ -7,11 +7,11 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class jp extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
     public org.telegram.ui.Components.p9 a;
-    public org.telegram.ui.Components.k90 b;
+    public org.telegram.ui.Components.m90 b;
     public int c;
 
     public final void a() {

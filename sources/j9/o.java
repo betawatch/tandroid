@@ -4,10 +4,10 @@ import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import java.util.concurrent.atomic.AtomicReference;
-import m.s3;
+import m.r3;
 import org.chromium.support_lib_boundary.JsReplyProxyBoundaryInterface;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o implements Callable {
     public final /* synthetic */ int a;
@@ -36,8 +36,8 @@ public final /* synthetic */ class o implements Callable {
             }
         }
         if (map != null) {
-            s3 s3Var = (s3) mVar.c;
-            ((g) s3Var.a).g((String) s3Var.c, map, mVar.a);
+            r3 r3Var = (r3) mVar.c;
+            ((g) r3Var.a).g((String) r3Var.c, map, mVar.a);
         }
         return null;
     }
@@ -48,13 +48,13 @@ public final /* synthetic */ class o implements Callable {
         String str;
         switch (this.a) {
             case 0:
-                s3 s3Var = (s3) this.b;
-                synchronized (((AtomicMarkableReference) s3Var.h)) {
+                r3 r3Var = (r3) this.b;
+                synchronized (((AtomicMarkableReference) r3Var.h)) {
                     try {
                         z4 = false;
-                        if (((AtomicMarkableReference) s3Var.h).isMarked()) {
-                            str = (String) ((AtomicMarkableReference) s3Var.h).getReference();
-                            ((AtomicMarkableReference) s3Var.h).set(str, false);
+                        if (((AtomicMarkableReference) r3Var.h).isMarked()) {
+                            str = (String) ((AtomicMarkableReference) r3Var.h).getReference();
+                            ((AtomicMarkableReference) r3Var.h).set(str, false);
                             z4 = true;
                         } else {
                             str = null;
@@ -64,7 +64,7 @@ public final /* synthetic */ class o implements Callable {
                     }
                 }
                 if (z4) {
-                    ((g) s3Var.a).i((String) s3Var.c, str);
+                    ((g) r3Var.a).i((String) r3Var.c, str);
                 }
                 return null;
             case 1:

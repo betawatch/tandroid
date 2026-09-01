@@ -21,12 +21,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.y3;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.gj0;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.ij0;
 import org.telegram.ui.Components.rc;
-import org.telegram.ui.yh1;
+import org.telegram.ui.ai1;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class e extends View {
     public boolean B;
@@ -45,9 +45,9 @@ public final class e extends View {
     public boolean O;
     public org.telegram.ui.Cells.z P;
     public final Paint Q;
-    public final gj0 R;
+    public final ij0 R;
     public final Drawable S;
-    public final p0 T;
+    public final q0 T;
     public final Paint U;
     public ValueAnimator V;
     public final FabBackgroundDrawable a;
@@ -77,12 +77,12 @@ public final class e extends View {
         this.Q = new Paint(1);
         Paint paint2 = new Paint(1);
         this.U = paint2;
-        p0 p0Var = new p0(AndroidUtilities.dp(45.0f), AndroidUtilities.dp(50.0f), AndroidUtilities.dp(8.0f), 4);
-        this.T = p0Var;
-        p0Var.h = true;
-        p0Var.i = 0.0f;
-        p0Var.d = 0.0f;
-        p0Var.b(0.0d);
+        q0 q0Var = new q0(AndroidUtilities.dp(45.0f), AndroidUtilities.dp(50.0f), AndroidUtilities.dp(8.0f), 4);
+        this.T = q0Var;
+        q0Var.h = true;
+        q0Var.i = 0.0f;
+        q0Var.d = 0.0f;
+        q0Var.b(0.0d);
         paint2.setColor(-16777216);
         paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
         this.F = ViewConfiguration.get(activity).getScaledTouchSlop();
@@ -111,15 +111,15 @@ public final class e extends View {
         Drawable mutate = activity.getDrawable(R.drawable.ic_close_white).mutate();
         this.d = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
-        gj0 gj0Var = new gj0(R.raw.call_accept, "" + R.raw.call_accept, AndroidUtilities.dp(48.0f), AndroidUtilities.dp(48.0f), true, null);
-        this.R = gj0Var;
-        gj0Var.I(1);
-        gj0Var.N(90);
-        gj0Var.s0 = this;
+        ij0 ij0Var = new ij0(R.raw.call_accept, "" + R.raw.call_accept, AndroidUtilities.dp(48.0f), AndroidUtilities.dp(48.0f), true, null);
+        this.R = ij0Var;
+        ij0Var.I(1);
+        ij0Var.N(90);
+        ij0Var.s0 = this;
         this.S = activity.getDrawable(R.drawable.calls_video).mutate();
         paint.setColor(-1);
         paint.setAlpha(20);
-        org.telegram.ui.Cells.z h02 = j6.h0(AndroidUtilities.dp(52.0f), 0, i0.a.k(-1, 76));
+        org.telegram.ui.Cells.z h02 = k6.h0(AndroidUtilities.dp(52.0f), 0, i0.a.k(-1, 76));
         this.P = h02;
         h02.setCallback(this);
     }
@@ -249,10 +249,10 @@ public final class e extends View {
         canvas.scale(a10, a10, r6.centerX(), r6.top + f12);
         canvas.translate(this.G + AndroidUtilities.dp(46.0f), 0.0f);
         if (!this.O) {
-            p0 p0Var = this.T;
-            p0Var.c();
+            q0 q0Var = this.T;
+            q0Var.c();
             float f13 = (int) f12;
-            p0Var.a(canvas, f13, f13, this);
+            q0Var.a(canvas, f13, f13, this);
         }
         this.a.draw(canvas);
         if (this.O) {
@@ -361,7 +361,7 @@ public final class e extends View {
                         ofFloat.start();
                         this.L = ofFloat;
                         if (this.N != null && (Math.abs(y10) < f10 || this.G > this.I * 0.8f)) {
-                            ((yh1) this.N).b();
+                            ((ai1) this.N).b();
                         }
                     } else {
                         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.H, 0.0f);
@@ -369,7 +369,7 @@ public final class e extends View {
                         ofFloat2.start();
                         this.M = ofFloat2;
                         if (this.N != null && (Math.abs(y10) < f10 || (-this.H) > this.I * 0.8f)) {
-                            ((yh1) this.N).a();
+                            ((ai1) this.N).a();
                         }
                     }
                 }
@@ -383,7 +383,7 @@ public final class e extends View {
             motionEvent.getX();
             this.E = motionEvent.getY();
             if (this.L == null && this.K.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                this.P = j6.h0(AndroidUtilities.dp(52.0f), 0, this.O ? j6.w0(null, j6.i6, false) : -51130);
+                this.P = k6.h0(AndroidUtilities.dp(52.0f), 0, this.O ? k6.w0(null, k6.i6, false) : -51130);
                 this.C = true;
                 this.D = true;
                 rcVar2.c(true);
@@ -393,7 +393,7 @@ public final class e extends View {
                 return true;
             }
             if (this.M == null && this.J.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                this.P = j6.h0(AndroidUtilities.dp(52.0f), 0, -11677354);
+                this.P = k6.h0(AndroidUtilities.dp(52.0f), 0, -11677354);
                 this.C = true;
                 this.D = false;
                 rcVar2.c(false);
@@ -422,11 +422,11 @@ public final class e extends View {
             return;
         }
         this.R.start();
-        p0 p0Var = this.T;
-        if (!p0Var.e) {
+        q0 q0Var = this.T;
+        if (!q0Var.e) {
             invalidate();
         }
-        p0Var.e = true;
+        q0Var.e = true;
         fabBackgroundDrawable.setColor(-1041108);
         ValueAnimator ofInt = ValueAnimator.ofInt(0, 60, 0, 0, 60, 0, 0, 0, 0);
         this.V = ofInt;

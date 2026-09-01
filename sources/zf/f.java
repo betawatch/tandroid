@@ -1,79 +1,81 @@
 package zf;
 
-import android.util.DisplayMetrics;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import o1.k;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class f extends GestureDetector.SimpleOnGestureListener {
-    public float a;
+public final class f {
+    public boolean a;
     public float b;
-    public final /* synthetic */ i c;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
+    public boolean h;
+    public int i;
+    public float j;
+    public float k;
+    public float l;
+    public float m;
 
-    public f(i iVar) {
-        this.c = iVar;
+    /* renamed from: a, reason: merged with bridge method [inline-methods] */
+    public final f clone() {
+        f fVar = new f();
+        fVar.a = this.a;
+        fVar.b = this.b;
+        fVar.c = this.c;
+        fVar.d = this.d;
+        fVar.e = this.e;
+        fVar.f = this.f;
+        fVar.g = this.g;
+        fVar.h = this.h;
+        fVar.i = this.i;
+        fVar.j = this.j;
+        fVar.k = this.k;
+        fVar.l = this.l;
+        fVar.m = this.m;
+        return fVar;
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onDown(MotionEvent motionEvent) {
-        return true;
+    public final int b() {
+        return this.i;
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
-        DisplayMetrics displayMetrics;
-        float f12;
-        i iVar = this.c;
-        if (!iVar.f || iVar.n) {
-            return false;
-        }
-        k kVar = iVar.c.u;
-        if ((f10 / 7.0f) + ((float) kVar.i) >= iVar.getWidth() / 2.0f) {
-            displayMetrics = iVar.getResources().getDisplayMetrics();
-            f12 = 2.14748365E9f;
-        } else {
-            displayMetrics = iVar.getResources().getDisplayMetrics();
-            f12 = -2.14748365E9f;
-        }
-        kVar.i = i.a(displayMetrics, f12);
-        iVar.d.u.i = i.b(iVar.getResources().getDisplayMetrics(), (f11 / 10.0f) + ((float) iVar.d.u.i));
-        iVar.c.f();
-        iVar.d.f();
-        iVar.h = true;
-        return true;
+    public final boolean c() {
+        return this.a;
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
-        i iVar = this.c;
-        int i10 = iVar.C;
-        if (!iVar.n) {
-            AndroidUtilities.cancelRunOnUIThread(iVar.r);
-        }
-        if (!iVar.f && (Math.abs(f10) >= i10 || Math.abs(f11) >= i10)) {
-            this.a = (float) iVar.c.u.i;
-            this.b = (float) iVar.d.u.i;
-            iVar.f = true;
-        }
-        if (iVar.f && !iVar.n) {
-            iVar.c.u.i = (motionEvent2.getRawX() + this.a) - motionEvent.getRawX();
-            iVar.d.u.i = (motionEvent2.getRawY() + this.b) - motionEvent.getRawY();
-            iVar.c.f();
-            iVar.d.f();
-        }
-        return iVar.f;
+    public final boolean d() {
+        return this.h;
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onSingleTapUp(MotionEvent motionEvent) {
-        i iVar = this.c;
-        if (iVar.n || iVar.s) {
-            return false;
+    public final void e(boolean z4, float f10, float f11, float f12, int i10, float f13, float f14, float f15, float f16, float f17, float f18, float f19, boolean z10) {
+        this.a = z4;
+        this.b = f10;
+        this.c = f11;
+        this.f = f13;
+        this.g = f12;
+        this.i = i10;
+        while (true) {
+            int i11 = this.i;
+            if (i11 >= 0) {
+                break;
+            } else {
+                this.i = i11 + 360;
+            }
         }
-        iVar.c(true);
-        return true;
+        while (true) {
+            int i12 = this.i;
+            if (i12 < 360) {
+                this.j = f16;
+                this.k = f17;
+                this.d = f18;
+                this.e = f19;
+                this.l = f14;
+                this.m = f15;
+                this.h = z10;
+                return;
+            }
+            this.i = i12 - 360;
+        }
     }
 }

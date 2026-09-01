@@ -29,9 +29,9 @@ public final class w implements p0 {
                 }
                 try {
                     return (x0) z.d(cls.asSubclass(z.class)).a(3);
-                } catch (Exception e) {
+                } catch (Exception e6) {
                     String name2 = cls.getName();
-                    throw new RuntimeException(name2.length() != 0 ? "Unable to get message info for ".concat(name2) : new String("Unable to get message info for "), e);
+                    throw new RuntimeException(name2.length() != 0 ? "Unable to get message info for ".concat(name2) : new String("Unable to get message info for "), e6);
                 }
             default:
                 throw new IllegalStateException("This should never be called.");

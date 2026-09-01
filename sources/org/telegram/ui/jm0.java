@@ -1,55 +1,73 @@
 package org.telegram.ui;
 
-import java.util.Comparator;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class jm0 implements Comparator {
-    public final /* synthetic */ dn0 a;
+public final class jm0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ fn0 c;
 
-    public jm0(dn0 dn0Var) {
-        this.a = dn0Var;
+    public /* synthetic */ jm0(fn0 fn0Var, boolean z4, int i10) {
+        this.a = i10;
+        this.c = fn0Var;
+        this.b = z4;
     }
 
-    public final int a(TLRPC.SecureValueError secureValueError) {
-        if (secureValueError instanceof TLRPC.TL_secureValueError) {
-            return 0;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 0:
+                fn0 fn0Var = this.c;
+                AnimatorSet animatorSet = fn0Var.J;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    fn0Var.J = null;
+                    break;
+                }
+                break;
+            default:
+                fn0 fn0Var2 = this.c;
+                AnimatorSet animatorSet2 = fn0Var2.J;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    fn0Var2.J = null;
+                    break;
+                }
+                break;
         }
-        if (secureValueError instanceof TLRPC.TL_secureValueErrorFrontSide) {
-            return 1;
-        }
-        if (secureValueError instanceof TLRPC.TL_secureValueErrorReverseSide) {
-            return 2;
-        }
-        if (secureValueError instanceof TLRPC.TL_secureValueErrorSelfie) {
-            return 3;
-        }
-        if (secureValueError instanceof TLRPC.TL_secureValueErrorTranslationFile) {
-            return 4;
-        }
-        if (secureValueError instanceof TLRPC.TL_secureValueErrorTranslationFiles) {
-            return 5;
-        }
-        if (secureValueError instanceof TLRPC.TL_secureValueErrorFile) {
-            return 6;
-        }
-        if (secureValueError instanceof TLRPC.TL_secureValueErrorFiles) {
-            return 7;
-        }
-        if (secureValueError instanceof TLRPC.TL_secureValueErrorData) {
-            return dn0.C0(this.a, ((TLRPC.TL_secureValueErrorData) secureValueError).field);
-        }
-        return 100;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int a2 = a((TLRPC.SecureValueError) obj);
-        int a10 = a((TLRPC.SecureValueError) obj2);
-        if (a2 < a10) {
-            return -1;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                fn0 fn0Var = this.c;
+                AnimatorSet animatorSet = fn0Var.J;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    if (!this.b) {
+                        fn0Var.K.setVisibility(4);
+                        break;
+                    } else {
+                        fn0Var.I.getContentView().setVisibility(4);
+                        break;
+                    }
+                }
+                break;
+            default:
+                fn0 fn0Var2 = this.c;
+                AnimatorSet animatorSet2 = fn0Var2.J;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    if (!this.b) {
+                        fn0Var2.M.setVisibility(4);
+                        break;
+                    } else {
+                        fn0Var2.L.setVisibility(4);
+                        break;
+                    }
+                }
+                break;
         }
-        return a2 > a10 ? 1 : 0;
     }
 }

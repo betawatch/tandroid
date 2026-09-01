@@ -8,9 +8,9 @@ import android.text.Spanned;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
-import k7.j6;
+import k7.k6;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class l {
     public static final Object i = new Object();
@@ -195,7 +195,7 @@ public final class l {
                             }
                         }
                         if (i10 != i11 && i10 < charSequence.length()) {
-                            s sVar = (s) ((com.google.firebase.messaging.r) bVar.b).d;
+                            s sVar = (s) ((com.google.firebase.messaging.s) bVar.b).c;
                             pVar = new p();
                             pVar.a = 1;
                             pVar.d = sVar;
@@ -257,7 +257,7 @@ public final class l {
                 }
             }
             if (i10 != i11) {
-                s sVar2 = (s) ((com.google.firebase.messaging.r) bVar.b).d;
+                s sVar2 = (s) ((com.google.firebase.messaging.s) bVar.b).c;
                 pVar = new p();
                 pVar.a = 1;
                 pVar.d = sVar2;
@@ -286,7 +286,7 @@ public final class l {
     }
 
     public final void f(i iVar) {
-        j6.a(iVar, "initCallback cannot be null");
+        k6.a(iVar, "initCallback cannot be null");
         this.a.writeLock().lock();
         try {
             if (this.c != 1 && this.c != 2) {

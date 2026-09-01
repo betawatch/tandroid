@@ -8,7 +8,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class pk implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -37,12 +37,12 @@ public final /* synthetic */ class pk implements RequestDelegate {
                 ((SendMessagesHelper) this.c).lambda$performSendMessageRequestMulti$74((ArrayList) this.d, (TLObject) this.g, (ArrayList) this.e, (ArrayList) this.f, (SendMessagesHelper.DelayedMessage) this.h, this.b, tLObject, tL_error);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new t1((tf.u0) this.c, (String) this.d, this.b, tLObject, (TLRPC.User) this.e, (String) this.f, (MessagesStorage) this.g, (String) this.h));
+                AndroidUtilities.runOnUIThread(new t1((uf.u0) this.c, (String) this.d, this.b, tLObject, (TLRPC.User) this.e, (String) this.f, (MessagesStorage) this.g, (String) this.h));
                 break;
         }
     }
 
-    public /* synthetic */ pk(tf.u0 u0Var, String str, boolean z4, TLRPC.User user, String str2, MessagesStorage messagesStorage, String str3) {
+    public /* synthetic */ pk(uf.u0 u0Var, String str, boolean z4, TLRPC.User user, String str2, MessagesStorage messagesStorage, String str3) {
         this.c = u0Var;
         this.d = str;
         this.b = z4;

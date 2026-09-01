@@ -12,10 +12,10 @@ import org.telegram.messenger.LanguageDetector;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.v31;
-import org.telegram.ui.n31;
+import org.telegram.ui.Components.w31;
+import org.telegram.ui.p31;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class j9 implements ActionMode.Callback {
     public String a = null;
@@ -31,7 +31,7 @@ public final class j9 implements ActionMode.Callback {
         if (findItem == null) {
             return;
         }
-        findItem.setVisible((this.b.l0 == null || ((this.a == null || n31.Y().contains(this.a)) && LanguageDetector.hasSupport())) ? false : true);
+        findItem.setVisible((this.b.l0 == null || ((this.a == null || p31.Y().contains(this.a)) && LanguageDetector.hasSupport())) ? false : true);
     }
 
     @Override // android.view.ActionMode.Callback
@@ -54,7 +54,7 @@ public final class j9 implements ActionMode.Callback {
                         String str = this.a;
                         g gVar2 = new g(this, 8);
                         org.telegram.ui.l4 l4Var = vVar.a;
-                        v31.J(l4Var.I, l4Var.J, str, language, s6, null, gVar2);
+                        w31.J(l4Var.I, l4Var.J, str, language, s6, null, gVar2);
                     }
                     z9Var.v();
                     return true;
@@ -147,12 +147,12 @@ public final class j9 implements ActionMode.Callback {
         }
         MenuItem findItem4 = menu.findItem(android.R.id.cut);
         if (findItem4 != null) {
-            findItem4.setVisible(this.b instanceof vh.f3);
+            findItem4.setVisible(this.b instanceof wh.f3);
         }
         MenuItem findItem5 = menu.findItem(android.R.id.paste);
         if (findItem5 != null) {
             z9 z9Var3 = this.b;
-            if (z9Var3 instanceof vh.f3) {
+            if (z9Var3 instanceof wh.f3) {
                 try {
                     y9 y9Var = z9Var3.C;
                     Context context = y9Var != null ? y9Var.getContext() : ApplicationLoader.applicationContext;

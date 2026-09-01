@@ -14,11 +14,11 @@ import android.view.ViewConfiguration;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class xc {
     public static final int[] p = {R.attr.state_enabled, R.attr.state_pressed};
-    public sq a;
+    public uq a;
     public final ArrayList b = new ArrayList();
     public int c;
     public boolean d;
@@ -51,7 +51,7 @@ public final class xc {
         Paint paint3 = new Paint(1);
         paint3.setFilterBitmap(true);
         paint3.setColor(-1);
-        org.telegram.ui.Cells.z zVar = new org.telegram.ui.Cells.z(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.i6, false) & 436207615}), null, new ef.g(this, paint3));
+        org.telegram.ui.Cells.z zVar = new org.telegram.ui.Cells.z(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.i6, false) & 436207615}), null, new ef.f(this, paint3));
         this.e = zVar;
         zVar.setCallback(view);
     }
@@ -136,11 +136,11 @@ public final class xc {
             return;
         }
         if (!this.i) {
-            sq sqVar = this.a;
-            if (sqVar == null) {
-                this.a = new sq(0);
+            uq uqVar = this.a;
+            if (uqVar == null) {
+                this.a = new uq(0);
             } else {
-                sqVar.rewind();
+                uqVar.rewind();
             }
             int i12 = 0;
             int i13 = 0;
@@ -185,9 +185,9 @@ public final class xc {
             this.i = true;
         }
         paint.setPathEffect(cornerPathEffect);
-        sq sqVar2 = this.a;
-        if (sqVar2 != null) {
-            canvas.drawPath(sqVar2, paint);
+        uq uqVar2 = this.a;
+        if (uqVar2 != null) {
+            canvas.drawPath(uqVar2, paint);
         }
     }
 
@@ -195,7 +195,7 @@ public final class xc {
         this.g.setColor(i10);
         org.telegram.ui.Cells.z zVar = this.e;
         if (zVar != null) {
-            org.telegram.ui.ActionBar.j6.B1(zVar, i10, true);
+            org.telegram.ui.ActionBar.k6.B1(zVar, i10, true);
         }
     }
 

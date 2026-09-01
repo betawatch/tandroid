@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class u extends ArrayAdapter {
     public final float a;
@@ -24,7 +24,7 @@ public final class u extends ArrayAdapter {
     public u(v vVar, Context context, ArrayList arrayList) {
         super(context, 0, arrayList);
         this.b = vVar;
-        this.a = j7.z.c(context);
+        this.a = j7.a0.c(context);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:21:0x00ac  */
@@ -56,7 +56,7 @@ public final class u extends ArrayAdapter {
             MediaRouteVolumeSlider mediaRouteVolumeSlider = (MediaRouteVolumeSlider) view.findViewById(R.id.mr_volume_slider);
             Context context = viewGroup.getContext();
             OverlayListView overlayListView = vVar.R;
-            int b10 = j7.z.b(context, 0);
+            int b10 = j7.a0.b(context, 0);
             if (Color.alpha(b10) != 255) {
                 b10 = i0.a.h(b10, ((Integer) overlayListView.getTag()).intValue());
             }

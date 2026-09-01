@@ -26,10 +26,10 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import k7.v8;
+import k7.w8;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class k {
     public static final Pattern a = Pattern.compile("^(\\S+)\\s+-->\\s+(\\S+)(.*)?$");
@@ -186,7 +186,7 @@ public abstract class k {
             int i17 = dVar.l;
             if (((i17 == -1 && dVar.m == -1) ? -1 : (i17 == 1 ? (char) 1 : (char) 0) | (dVar.m == 1 ? (char) 2 : (char) 0)) != -1) {
                 int i18 = dVar.l;
-                v8.a(new StyleSpan((i18 == -1 && dVar.m == -1) ? -1 : (i18 == 1 ? 1 : 0) | (dVar.m == 1 ? 2 : 0)), spannableStringBuilder, i10, length);
+                w8.a(new StyleSpan((i18 == -1 && dVar.m == -1) ? -1 : (i18 == 1 ? 1 : 0) | (dVar.m == 1 ? 2 : 0)), spannableStringBuilder, i10, length);
             }
             if (dVar.j == 1) {
                 spannableStringBuilder.setSpan(new StrikethroughSpan(), i10, length, 33);
@@ -198,24 +198,24 @@ public abstract class k {
                 if (!dVar.g) {
                     throw new IllegalStateException("Font color not defined");
                 }
-                v8.a(new ForegroundColorSpan(dVar.f), spannableStringBuilder, i10, length);
+                w8.a(new ForegroundColorSpan(dVar.f), spannableStringBuilder, i10, length);
             }
             if (dVar.i) {
                 if (!dVar.i) {
                     throw new IllegalStateException("Background color not defined.");
                 }
-                v8.a(new BackgroundColorSpan(dVar.h), spannableStringBuilder, i10, length);
+                w8.a(new BackgroundColorSpan(dVar.h), spannableStringBuilder, i10, length);
             }
             if (dVar.e != null) {
-                v8.a(new TypefaceSpan(dVar.e), spannableStringBuilder, i10, length);
+                w8.a(new TypefaceSpan(dVar.e), spannableStringBuilder, i10, length);
             }
             int i19 = dVar.n;
             if (i19 == 1) {
-                v8.a(new AbsoluteSizeSpan((int) dVar.o, true), spannableStringBuilder, i10, length);
+                w8.a(new AbsoluteSizeSpan((int) dVar.o, true), spannableStringBuilder, i10, length);
             } else if (i19 == 2) {
-                v8.a(new RelativeSizeSpan(dVar.o), spannableStringBuilder, i10, length);
+                w8.a(new RelativeSizeSpan(dVar.o), spannableStringBuilder, i10, length);
             } else if (i19 == 3) {
-                v8.a(new RelativeSizeSpan(dVar.o / 100.0f), spannableStringBuilder, i10, length);
+                w8.a(new RelativeSizeSpan(dVar.o / 100.0f), spannableStringBuilder, i10, length);
             }
             if (dVar.q) {
                 spannableStringBuilder.setSpan(new u(25), i10, length, 33);

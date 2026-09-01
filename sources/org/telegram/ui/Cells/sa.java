@@ -13,7 +13,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UnconfirmedAuthController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class sa extends FrameLayout {
     public static final /* synthetic */ int f = 0;
@@ -35,35 +35,35 @@ public final class sa extends FrameLayout {
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setText(LocaleController.getString(R.string.UnconfirmedAuthTitle));
-        linearLayout.addView(textView, k7.b6.p(-1, -2, 0.0f, 55, 28, 8, 28, 0));
+        linearLayout.addView(textView, k7.c6.p(-1, -2, 0.0f, 55, 28, 8, 28, 0));
         TextView textView2 = new TextView(activity);
         this.c = textView2;
         textView2.setGravity(17);
         textView2.setTextSize(1, 13.0f);
         textView2.setLineSpacing(AndroidUtilities.dpf2(2.0f), 1.0f);
-        linearLayout.addView(textView2, k7.b6.p(-1, -2, 0.0f, 55, 28, 2, 28, 0));
+        linearLayout.addView(textView2, k7.c6.p(-1, -2, 0.0f, 55, 28, 2, 28, 0));
         LinearLayout linearLayout2 = new LinearLayout(activity);
         linearLayout2.setOrientation(0);
         linearLayout2.setGravity(17);
-        linearLayout2.addView(new Space(activity), k7.b6.o(-2, 1, 17.0f, 1));
+        linearLayout2.addView(new Space(activity), k7.c6.o(-2, 1, 17.0f, 1));
         ra raVar = new ra(activity);
         this.d = raVar;
         raVar.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(7.0f));
         raVar.setTypeface(AndroidUtilities.bold());
         raVar.setTextSize(1, 14.22f);
         raVar.setText(LocaleController.getString(R.string.UnconfirmedAuthConfirm));
-        linearLayout2.addView(raVar, k7.b6.n(-2, 30));
-        linearLayout2.addView(new Space(activity), k7.b6.o(-2, 1, 17.0f, 1));
+        linearLayout2.addView(raVar, k7.c6.n(-2, 30));
+        linearLayout2.addView(new Space(activity), k7.c6.o(-2, 1, 17.0f, 1));
         ra raVar2 = new ra(activity);
         this.e = raVar2;
         raVar2.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(7.0f));
         raVar2.setTypeface(AndroidUtilities.bold());
         raVar2.setTextSize(1, 14.22f);
         raVar2.setText(LocaleController.getString(R.string.UnconfirmedAuthDeny));
-        linearLayout2.addView(raVar2, k7.b6.n(-2, 30));
-        linearLayout2.addView(new Space(activity), k7.b6.o(-2, 1, 17.0f, 1));
-        linearLayout.addView(linearLayout2, k7.b6.k(28.0f, 4.0f, 28.0f, 8.0f, -1, -2));
-        addView(linearLayout, k7.b6.e(-1, -1, 119));
+        linearLayout2.addView(raVar2, k7.c6.n(-2, 30));
+        linearLayout2.addView(new Space(activity), k7.c6.o(-2, 1, 17.0f, 1));
+        linearLayout.addView(linearLayout2, k7.c6.k(28.0f, 4.0f, 28.0f, 8.0f, -1, -2));
+        addView(linearLayout, k7.c6.e(-1, -1, 119));
         b();
     }
 
@@ -81,18 +81,18 @@ public final class sa extends FrameLayout {
     }
 
     public final void b() {
-        this.b.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
-        this.c.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.y6, false));
-        int i10 = org.telegram.ui.ActionBar.j6.I6;
-        int w02 = org.telegram.ui.ActionBar.j6.w0(null, i10, false);
+        this.b.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.G6, false));
+        this.c.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.y6, false));
+        int i10 = org.telegram.ui.ActionBar.k6.I6;
+        int w02 = org.telegram.ui.ActionBar.k6.w0(null, i10, false);
         ra raVar = this.d;
         raVar.setTextColor(w02);
-        raVar.setBackground(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.l1(org.telegram.ui.ActionBar.j6.I.q() ? 0.3f : 0.15f, org.telegram.ui.ActionBar.j6.w0(null, i10, false)), 7, AndroidUtilities.dp(8.0f)));
-        int i11 = org.telegram.ui.ActionBar.j6.q7;
-        int w03 = org.telegram.ui.ActionBar.j6.w0(null, i11, false);
+        raVar.setBackground(org.telegram.ui.ActionBar.k6.f0(org.telegram.ui.ActionBar.k6.l1(org.telegram.ui.ActionBar.k6.I.q() ? 0.3f : 0.15f, org.telegram.ui.ActionBar.k6.w0(null, i10, false)), 7, AndroidUtilities.dp(8.0f)));
+        int i11 = org.telegram.ui.ActionBar.k6.q7;
+        int w03 = org.telegram.ui.ActionBar.k6.w0(null, i11, false);
         ra raVar2 = this.e;
         raVar2.setTextColor(w03);
-        raVar2.setBackground(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.l1(org.telegram.ui.ActionBar.j6.I.q() ? 0.3f : 0.15f, org.telegram.ui.ActionBar.j6.w0(null, i11, false)), 7, AndroidUtilities.dp(8.0f)));
+        raVar2.setBackground(org.telegram.ui.ActionBar.k6.f0(org.telegram.ui.ActionBar.k6.l1(org.telegram.ui.ActionBar.k6.I.q() ? 0.3f : 0.15f, org.telegram.ui.ActionBar.k6.w0(null, i11, false)), 7, AndroidUtilities.dp(8.0f)));
     }
 
     @Override // android.widget.FrameLayout, android.view.View

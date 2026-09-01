@@ -1,31 +1,30 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessageObject;
+import com.google.android.gms.tasks.OnFailureListener;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class ti1 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ vi1 a;
+public final /* synthetic */ class ti1 implements OnFailureListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qh.d b;
 
-    public ti1(vi1 vi1Var) {
-        this.a = vi1Var;
+    public /* synthetic */ ti1(qh.d dVar, int i10) {
+        this.a = i10;
+        this.b = dVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        vi1 vi1Var = this.a;
-        MessageObject messageObject = vi1Var.n;
-        if (i10 == -1) {
-            vi1Var.finishFragment();
-            return;
-        }
-        if (i10 != 1) {
-            if (i10 == 2) {
-                vi1.V(vi1Var.d, messageObject, vi1Var.getParentActivity(), vi1Var.r, vi1Var.e);
-            }
-        } else if (messageObject != null) {
-            messageObject.messageOwner.with_my_score = false;
-            vi1Var.showDialog(org.telegram.ui.Components.lq0.N0(vi1Var.getParentActivity(), messageObject, null, false, vi1Var.h));
+    @Override // com.google.android.gms.tasks.OnFailureListener
+    public final void onFailure(Exception exc) {
+        switch (this.a) {
+            case 0:
+                FileLog.e("wear-auth: /answer send failed: " + exc.getMessage());
+                this.b.setLoading(false);
+                break;
+            default:
+                FileLog.e("wear-auth: /token send failed: " + exc.getMessage());
+                this.b.setLoading(false);
+                break;
         }
     }
 }

@@ -1,8 +1,9 @@
 package androidx.biometric;
 
+import com.google.android.gms.internal.play_billing.s1;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class y extends d {
     public final WeakReference a;
@@ -30,7 +31,7 @@ public final class y extends d {
         if (vVar.b == -1) {
             w wVar = vVar.a;
             int c3 = ((a0) weakReference.get()).c();
-            if ((c3 & 32767) != 0 && !com.google.android.gms.internal.cast.n.a(c3)) {
+            if ((c3 & 32767) != 0 && !s1.a(c3)) {
                 i10 = 2;
             }
             vVar = new v(wVar, i10);

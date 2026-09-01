@@ -14,39 +14,39 @@ import java.io.File;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
-import m.s3;
+import m.r3;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class z0 extends b6.g {
     public final ExecutorService R;
-    public final bb.b S;
-    public final bb.b T;
-    public final bb.b U;
-    public final bb.b V;
-    public final bb.b W;
-    public final bb.b X;
-    public final bb.b Y;
-    public final bb.b Z;
-    public final bb.b a0;
-    public final bb.b b0;
+    public final bb.c S;
+    public final bb.c T;
+    public final bb.c U;
+    public final bb.c V;
+    public final bb.c W;
+    public final bb.c X;
+    public final bb.c Y;
+    public final bb.c Z;
+    public final bb.c a0;
+    public final bb.c b0;
     public final a1 c0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z0(Context context, Looper looper, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar, s3 s3Var) {
-        super(context, looper, 14, s3Var, kVar, lVar, 0);
+    public z0(Context context, Looper looper, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar, r3 r3Var) {
+        super(context, looper, 14, r3Var, kVar, lVar, 0);
         ExecutorService unconfigurableExecutorService = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool());
         a1 a2 = a1.a(context);
-        this.S = new bb.b();
-        this.T = new bb.b();
-        this.U = new bb.b();
-        this.V = new bb.b();
-        this.W = new bb.b();
-        this.X = new bb.b();
-        this.Y = new bb.b();
-        this.Z = new bb.b();
-        this.a0 = new bb.b();
-        this.b0 = new bb.b();
+        this.S = new bb.c();
+        this.T = new bb.c();
+        this.U = new bb.c();
+        this.V = new bb.c();
+        this.W = new bb.c();
+        this.X = new bb.c();
+        this.Y = new bb.c();
+        this.Z = new bb.c();
+        this.a0 = new bb.c();
+        this.b0 = new bb.c();
         b6.m.h(unconfigurableExecutorService);
         this.R = unconfigurableExecutorService;
         this.c0 = a2;

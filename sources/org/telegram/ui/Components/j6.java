@@ -25,7 +25,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public class j6 extends Drawable {
     public boolean A;
@@ -124,7 +124,7 @@ public class j6 extends Drawable {
         TextPaint textPaint = this.a;
         textPaint.setAlpha((int) (this.w * f10));
         if (this.O) {
-            textPaint.setShadowLayer(this.P, 0.0f, this.Q, org.telegram.ui.ActionBar.j6.l1(f10, this.R));
+            textPaint.setShadowLayer(this.P, 0.0f, this.Q, org.telegram.ui.ActionBar.k6.l1(f10, this.R));
         }
     }
 
@@ -540,7 +540,7 @@ public class j6 extends Drawable {
         this.i = 0.0f;
         this.h = 0.0f;
         this.c = AndroidUtilities.isRTL(this.g);
-        gg.a0 a0Var = new gg.a0(this, i13, arrayList2, arrayList);
+        hg.a0 a0Var = new hg.a0(this, i13, arrayList2, arrayList);
         h6 h6Var = new h6(this) { // from class: org.telegram.ui.Components.e6
             public final /* synthetic */ j6 b;
 
@@ -785,10 +785,10 @@ public class j6 extends Drawable {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.S = ofFloat;
-        ofFloat.addUpdateListener(new dg.g0(this, this.a.getColor(), i10, 2));
+        ofFloat.addUpdateListener(new eg.e0(this, this.a.getColor(), i10, 2));
         this.S.addListener(new org.telegram.ui.Cells.b4(this, i10, 1));
         this.S.setDuration(240L);
-        this.S.setInterpolator(nr.h);
+        this.S.setInterpolator(pr.h);
         this.S.start();
     }
 
@@ -869,7 +869,7 @@ public class j6 extends Drawable {
         this.m = 0.0f;
         this.n = true;
         this.r = 320L;
-        this.s = nr.h;
+        this.s = pr.h;
         this.t = -1.0f;
         this.u = 0.3f;
         this.v = 0.0f;

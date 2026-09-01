@@ -2,13 +2,13 @@ package cf;
 
 import android.graphics.Rect;
 import android.view.Choreographer;
-import ih.l;
-import ih.m;
 import java.util.ArrayList;
-import k7.n;
+import jh.l;
+import jh.m;
+import k7.o;
 import lf.a0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Choreographer.FrameCallback {
     public final /* synthetic */ int a;
@@ -33,15 +33,15 @@ public final /* synthetic */ class b implements Choreographer.FrameCallback {
                     while (i10 < size) {
                         Object obj = arrayList.get(i10);
                         i10++;
-                        g gVar = ((ef.f) ((df.b) obj)).f;
+                        g gVar = ((ef.e) ((df.b) obj)).f;
                         if (gVar != null) {
                             gVar.invalidate();
                         }
                     }
                     if (aVar2.c != 0) {
-                        cVar.d(n.a(aVar2.b() / 0.95f, 0.0f, 1.0f));
+                        cVar.d(o.a(aVar2.b() / 0.95f, 0.0f, 1.0f));
                     } else if (aVar.c != 0) {
-                        cVar.d(n.a(1.0f - (aVar.b() / 0.95f), 0.0f, 1.0f));
+                        cVar.d(o.a(1.0f - (aVar.b() / 0.95f), 0.0f, 1.0f));
                     }
                     cVar.l.postFrameCallback(cVar.m);
                     break;

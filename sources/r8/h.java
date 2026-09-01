@@ -1,27 +1,26 @@
 package r8;
 
-import b4.e0;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import k7.b7;
+import k7.c7;
 import m1.j;
-import org.telegram.ui.Components.qk0;
+import org.telegram.ui.web.e0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class h implements Iterator {
     public String b;
     public final CharSequence c;
     public final a d;
     public int f;
-    public final /* synthetic */ qk0 h;
+    public final /* synthetic */ e0 h;
     public int a = 2;
     public int e = 0;
 
-    public h(qk0 qk0Var, e0 e0Var, CharSequence charSequence) {
-        this.h = qk0Var;
-        this.d = (a) e0Var.c;
-        this.f = e0Var.b;
+    public h(e0 e0Var, b4.e0 e0Var2, CharSequence charSequence) {
+        this.h = e0Var;
+        this.d = (a) e0Var2.c;
+        this.f = e0Var2.b;
         this.c = charSequence;
     }
 
@@ -33,11 +32,11 @@ public final class h implements Iterator {
         if (i10 == 4) {
             throw new IllegalStateException();
         }
-        int b10 = j.b(i10);
-        if (b10 == 0) {
+        int c3 = j.c(i10);
+        if (c3 == 0) {
             return true;
         }
-        if (b10 == 2) {
+        if (c3 == 2) {
             return false;
         }
         this.a = 4;
@@ -52,7 +51,7 @@ public final class h implements Iterator {
             b bVar = (b) this.h.b;
             CharSequence charSequence = this.c;
             int length = charSequence.length();
-            b7.d(i12, length);
+            c7.d(i12, length);
             while (true) {
                 if (i12 >= length) {
                     i12 = -1;

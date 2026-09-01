@@ -1,100 +1,35 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import org.telegram.messenger.ContactsController;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class ws extends tf.d {
-    public final /* synthetic */ ContactsActivity I;
+public final class ws extends uf.c1 {
+    public final /* synthetic */ ContactsActivity H;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ws(ContactsActivity contactsActivity, Context context, int i10, boolean z4, a0.h hVar, int i11) {
-        super(context, i10, z4, hVar, i11);
-        this.I = contactsActivity;
+    public ws(ContactsActivity contactsActivity, Context context, a0.h hVar, boolean z4, boolean z10, boolean z11) {
+        this.H = contactsActivity;
+        this.d = new ArrayList();
+        this.e = new ArrayList();
+        this.E = new ArrayList();
+        this.c = context;
+        this.h = hVar;
+        this.r = z4;
+        this.s = z10;
+        this.x = 0;
+        this.v = z11;
+        this.w = true;
+        uf.k1 k1Var = new uf.k1(true);
+        this.f = k1Var;
+        k1Var.a = new uf.a1(this);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0058  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x005c  */
-    /* JADX WARN: Removed duplicated region for block: B:6:0x0031  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0037  */
-    @Override // org.telegram.ui.Components.ol0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int R() {
-        int size;
-        boolean z4;
-        boolean z10 = false;
-        this.F = false;
-        int i10 = this.C;
-        int i11 = this.r;
-        int i12 = this.v;
-        int i13 = 1;
-        if (i10 != 2) {
-            size = (i12 == 2 ? ContactsController.getInstance(i11).sortedUsersMutualSectionsArray : ContactsController.getInstance(i11).sortedUsersSectionsArray).size();
-            if (size == 0) {
-                this.F = true;
-            }
-            if (i12 == 0) {
-                size++;
-            }
-            z4 = this.B;
-            if (z4) {
-                size++;
-            }
-            boolean isEmpty = ContactsController.getInstance(i11).phoneBookContacts.isEmpty();
-            this.G = !isEmpty;
-            if (this.F && this.w && !z4 && i12 == 0) {
-                z10 = true;
-            }
-            this.H = z10;
-            if (z10) {
-                i13 = size;
-            } else if (!isEmpty) {
-                i13 = 2;
-            }
-            ContactsActivity contactsActivity = this.I;
-            ContactsActivity.e0(contactsActivity);
-            contactsActivity.m0();
-            contactsActivity.l0();
-            return i13;
-        }
-        this.F = this.y.isEmpty();
-        size = 1;
-        if (i12 == 0) {
-        }
-        z4 = this.B;
-        if (z4) {
-        }
-        boolean isEmpty2 = ContactsController.getInstance(i11).phoneBookContacts.isEmpty();
-        this.G = !isEmpty2;
-        if (this.F) {
-            z10 = true;
-        }
-        this.H = z10;
-        if (z10) {
-        }
-        ContactsActivity contactsActivity2 = this.I;
-        ContactsActivity.e0(contactsActivity2);
-        contactsActivity2.m0();
-        contactsActivity2.l0();
-        return i13;
-    }
-
-    @Override // org.telegram.ui.Components.ol0, f2.o0
-    public final void l() {
-        X(false);
-        ContactsActivity contactsActivity = this.I;
-        org.telegram.ui.Components.sl0 sl0Var = contactsActivity.f;
-        if (sl0Var == null || sl0Var.getAdapter() != this) {
+    @Override // uf.c1
+    public final void F() {
+        if (this.y || this.f.e() || h() != 0) {
             return;
         }
-        int h = h();
-        if (contactsActivity.E) {
-            contactsActivity.f.setFastScrollVisible(h != 2);
-        } else {
-            contactsActivity.f.setFastScrollVisible(h != 0);
-        }
+        this.H.e.e(false, true);
     }
 }

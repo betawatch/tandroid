@@ -1,15 +1,34 @@
 package lh;
 
-import org.telegram.tgnet.tl.TL_stars;
+import android.content.Context;
+import android.view.View;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.i51;
+import org.telegram.ui.Components.i61;
+import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.x51;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes4.dex */
-public final class q4 extends m4 {
-    public final TL_stars.starGiftAttributePattern c;
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes.dex */
+public final class q4 extends i51 {
+    static {
+        i51.setup(new q4());
+    }
 
-    public q4(TL_stars.starGiftAttributePattern stargiftattributepattern) {
-        this.a = stargiftattributepattern.name;
-        this.b = stargiftattributepattern.getRarityPermille();
-        this.c = stargiftattributepattern;
+    public static j51 a(String str) {
+        j51 J = j51.J(q4.class);
+        J.l = str;
+        return J;
+    }
+
+    @Override // org.telegram.ui.Components.i51
+    public final void bindView(View view, j51 j51Var, boolean z4, x51 x51Var, i61 i61Var) {
+        ((r4) view).set(j51Var.l);
+    }
+
+    @Override // org.telegram.ui.Components.i51
+    public final View createView(Context context, tl0 tl0Var, int i10, int i11, g6 g6Var) {
+        return new r4(context, g6Var);
     }
 }

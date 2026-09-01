@@ -31,9 +31,8 @@ import java.util.zip.DataFormatException;
 import java.util.zip.Deflater;
 import java.util.zip.DeflaterOutputStream;
 import java.util.zip.Inflater;
-import kh.a2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class e {
     public static final cb.b a = new cb.b(5);
@@ -176,7 +175,7 @@ public abstract class e {
         while (i11 < i10) {
             int read = inputStream.read(bArr, i11, i10 - i11);
             if (read < 0) {
-                throw new IllegalStateException(a2.j(i10, "Not enough bytes to read: "));
+                throw new IllegalStateException(l.d.j(i10, "Not enough bytes to read: "));
             }
             i11 += read;
         }
@@ -781,7 +780,7 @@ public abstract class e {
                             dataInputStream.close();
                             z12 = readLong == packageInfo.lastUpdateTime;
                             if (z12) {
-                                dVar.v(2, null);
+                                dVar.u(2, null);
                             }
                         } finally {
                         }
@@ -819,7 +818,7 @@ public abstract class e {
                     try {
                         fileInputStream = z0Var2.b(assets, "dexopt/baseline.prof");
                     } catch (FileNotFoundException e6) {
-                        dVar.v(6, e6);
+                        dVar.u(6, e6);
                         fileInputStream = null;
                         bArr = b;
                         if (fileInputStream != null) {
@@ -840,7 +839,7 @@ public abstract class e {
                         z11 = z10;
                         k.c(context, !z11 && z4);
                     } catch (IOException e10) {
-                        dVar.v(7, e10);
+                        dVar.u(7, e10);
                         fileInputStream = null;
                         bArr = b;
                         if (fileInputStream != null) {
@@ -865,11 +864,11 @@ public abstract class e {
                         try {
                             try {
                             } catch (IllegalStateException e11) {
-                                dVar.v(8, e11);
+                                dVar.u(8, e11);
                                 try {
                                     fileInputStream.close();
                                 } catch (IOException e12) {
-                                    dVar.v(7, e12);
+                                    dVar.u(7, e12);
                                 }
                                 bVarArr = null;
                                 z0Var2.g = bVarArr;
@@ -884,12 +883,12 @@ public abstract class e {
                                         if (b10 == null) {
                                         }
                                     } catch (FileNotFoundException e13) {
-                                        dVar.v(9, e13);
+                                        dVar.u(9, e13);
                                     } catch (IOException e14) {
-                                        dVar.v(7, e14);
+                                        dVar.u(7, e14);
                                     } catch (IllegalStateException e15) {
                                         z0Var2.g = null;
-                                        dVar.v(8, e15);
+                                        dVar.u(8, e15);
                                     }
                                 }
                                 d dVar222 = (d) z0Var2.c;
@@ -908,7 +907,7 @@ public abstract class e {
                                 k.c(context, !z11 && z4);
                             }
                         } catch (IOException e16) {
-                            dVar.v(7, e16);
+                            dVar.u(7, e16);
                             fileInputStream.close();
                             bVarArr = null;
                             z0Var2.g = bVarArr;
@@ -935,7 +934,7 @@ public abstract class e {
                         try {
                             fileInputStream.close();
                         } catch (IOException e17) {
-                            dVar.v(7, e17);
+                            dVar.u(7, e17);
                         }
                         z0Var2.g = bVarArr;
                     }
@@ -983,16 +982,16 @@ public abstract class e {
                             } finally {
                             }
                         } catch (IOException e18) {
-                            dVar22222.v(7, e18);
+                            dVar22222.u(7, e18);
                         } catch (IllegalStateException e19) {
-                            dVar22222.v(8, e19);
+                            dVar22222.u(8, e19);
                         }
                         if (o(byteArrayOutputStream, bArr42222, bVarArr3)) {
                             z0Var2.h = byteArrayOutputStream.toByteArray();
                             byteArrayOutputStream.close();
                             z0Var2.g = null;
                         } else {
-                            dVar22222.v(5, null);
+                            dVar22222.u(5, null);
                             z0Var2.g = null;
                             byteArrayOutputStream.close();
                         }
@@ -1106,7 +1105,7 @@ public abstract class e {
             z11 = false;
             k.c(context, !z11 && z4);
         } catch (PackageManager.NameNotFoundException e24) {
-            dVar.v(7, e24);
+            dVar.u(7, e24);
             k.c(context, false);
         }
     }

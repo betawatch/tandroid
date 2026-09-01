@@ -1,37 +1,18 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rw0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PrivacyControlActivity b;
+public final class rw0 {
+    public final int a;
+    public final int b;
+    public final CharSequence c;
+    public final String d;
+    public int e;
 
-    public /* synthetic */ rw0(PrivacyControlActivity privacyControlActivity, int i10) {
+    public rw0(int i10, int i11, String str, String str2) {
         this.a = i10;
-        this.b = privacyControlActivity;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                PrivacyControlActivity privacyControlActivity = this.b;
-                privacyControlActivity.getClass();
-                privacyControlActivity.presentFragment(new PremiumPreviewFragment(0, "noncontacts"));
-                break;
-            case 1:
-                PrivacyControlActivity.U(this.b);
-                break;
-            case 2:
-                PrivacyControlActivity privacyControlActivity2 = this.b;
-                privacyControlActivity2.getClass();
-                privacyControlActivity2.presentFragment(new PremiumPreviewFragment(0, "noncontacts"));
-                break;
-            default:
-                PrivacyControlActivity privacyControlActivity3 = this.b;
-                privacyControlActivity3.getClass();
-                privacyControlActivity3.presentFragment(new PremiumPreviewFragment(0, "settings"));
-                break;
-        }
+        this.b = i11;
+        this.c = str;
+        this.d = str2;
     }
 }

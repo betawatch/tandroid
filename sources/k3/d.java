@@ -2,7 +2,7 @@ package k3;
 
 import android.content.SharedPreferences;
 import android.widget.EditText;
-import nh.p5;
+import oh.p5;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
@@ -16,9 +16,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.c2;
 import org.telegram.ui.ActionBar.d2;
-import org.telegram.ui.Components.yu0;
+import org.telegram.ui.Components.zu0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements h5.j, RequestDelegateTimestamp, c2, MessagesStorage.StringCallback {
     public final /* synthetic */ int a;
@@ -33,8 +33,13 @@ public final /* synthetic */ class d implements h5.j, RequestDelegateTimestamp, 
         this.d = obj;
     }
 
+    @Override // h5.j
+    public void invoke(Object obj) {
+        ((b) obj).e((a) this.d, this.b, this.c);
+    }
+
     @Override // org.telegram.ui.ActionBar.c2
-    public void i(d2 d2Var, int i10) {
+    public void j(d2 d2Var, int i10) {
         int i11 = this.a;
         Object obj = this.d;
         int i12 = this.b;
@@ -109,14 +114,9 @@ public final /* synthetic */ class d implements h5.j, RequestDelegateTimestamp, 
         }
     }
 
-    @Override // h5.j
-    public void invoke(Object obj) {
-        ((b) obj).e((a) this.d, this.b, this.c);
-    }
-
     @Override // org.telegram.messenger.MessagesStorage.StringCallback
     public void run(String str) {
-        yu0.i((yu0) this.d, this.c, this.b, str);
+        zu0.i((zu0) this.d, this.c, this.b, str);
     }
 
     public /* synthetic */ d(a aVar, int i10, long j10, long j11) {
@@ -138,9 +138,9 @@ public final /* synthetic */ class d implements h5.j, RequestDelegateTimestamp, 
         this.c = j10;
     }
 
-    public /* synthetic */ d(yu0 yu0Var, long j10, int i10) {
+    public /* synthetic */ d(zu0 zu0Var, long j10, int i10) {
         this.a = 4;
-        this.d = yu0Var;
+        this.d = zu0Var;
         this.c = j10;
         this.b = i10;
     }

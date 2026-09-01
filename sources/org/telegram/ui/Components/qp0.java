@@ -1,112 +1,91 @@
 package org.telegram.ui.Components;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.PhotoViewer;
+import android.graphics.Canvas;
+import android.text.TextUtils;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class qp0 extends lg {
-    public final /* synthetic */ int i0;
-    public final /* synthetic */ Object j0;
+public final class qp0 extends fu {
+    public boolean S;
+    public int T;
+    public int U;
+    public ValueAnimator V;
+    public final /* synthetic */ mq0 W;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ qp0(Object obj, Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var, int i11) {
-        super(i10, context, f6Var, true);
-        this.i0 = i11;
-        this.j0 = obj;
+    public qp0(mq0 mq0Var, Context context, xp0 xp0Var, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, xp0Var, null, 1, true, g6Var);
+        this.W = mq0Var;
     }
 
-    @Override // org.telegram.ui.Components.lg
-    public boolean d() {
-        switch (this.i0) {
-            case 1:
-                return false;
-            case 2:
-                return false;
-            case 3:
-                return ((vh.y1) this.j0).l0();
-            default:
-                return super.d();
+    @Override // org.telegram.ui.Components.fu
+    public final void c(float f10) {
+        this.W.Y0();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.S) {
+            xt editText = this.W.d.getEditText();
+            editText.setOffsetY(editText.getOffsetY() - ((this.U - editText.getScrollY()) + (this.T - editText.getMeasuredHeight())));
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(editText.getOffsetY(), 0.0f);
+            ofFloat.addUpdateListener(new k70(editText, 18));
+            ValueAnimator valueAnimator = this.V;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
+            this.V = ofFloat;
+            ofFloat.setDuration(200L);
+            ofFloat.setInterpolator(pr.f);
+            ofFloat.start();
+            this.S = false;
+        }
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // org.telegram.ui.Components.fu
+    public final void f() {
+        super.f();
+        mz emojiView = getEmojiView();
+        mq0 mq0Var = this.W;
+        if (emojiView != null) {
+            emojiView.t0 = false;
+            emojiView.u2 = false;
+            emojiView.setShouldDrawBackground(false);
+            emojiView.setBottomInset(mq0Var.D0.d);
+        }
+        FrameLayout frameLayout = mq0Var.Z;
+        if (frameLayout != null) {
+            frameLayout.bringToFront();
+        }
+        pp0 pp0Var = mq0Var.c;
+        if (pp0Var != null) {
+            pp0Var.bringToFront();
+        }
+        pp0 pp0Var2 = mq0Var.f;
+        if (pp0Var2 != null) {
+            pp0Var2.bringToFront();
         }
     }
 
-    @Override // org.telegram.ui.Components.lg
-    public final boolean f() {
-        switch (this.i0) {
-            case 0:
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                if (((vh.y1) this.j0).I0 || this.r > 0) {
-                }
-                break;
-            default:
-                if (((vh.v3) this.j0).T || this.r > 0) {
-                }
-                break;
+    @Override // org.telegram.ui.Components.fu
+    public final void q(int i10, int i11) {
+        mq0 mq0Var = this.W;
+        pp0 pp0Var = mq0Var.c;
+        if (TextUtils.isEmpty(getEditText().getText())) {
+            getEditText().animate().cancel();
+            getEditText().setOffsetY(0.0f);
+            this.S = false;
+        } else {
+            this.S = true;
+            this.T = getEditText().getMeasuredHeight();
+            this.U = getEditText().getScrollY();
+            invalidate();
         }
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.lg
-    public int getFillColor() {
-        int i10 = this.i0;
-        Object obj = this.j0;
-        switch (i10) {
-            case 0:
-                return ((lq0) obj).getThemedColor(org.telegram.ui.ActionBar.j6.S5);
-            case 1:
-            default:
-                return super.getFillColor();
-            case 2:
-                int i11 = org.telegram.ui.ActionBar.j6.zf;
-                Drawable[] drawableArr = PhotoViewer.Q8;
-                return ((PhotoViewer) obj).z1(i11);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.lg
-    public boolean j() {
-        switch (this.i0) {
-            case 0:
-                return true;
-            case 1:
-                return true;
-            case 2:
-                return true;
-            default:
-                return super.j();
-        }
-    }
-
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.i0) {
-            case 1:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrShareInChats", ((org.telegram.ui.oy) this.j0).F2.size(), new Object[0]));
-                accessibilityNodeInfo.setClassName(Button.class.getName());
-                accessibilityNodeInfo.setLongClickable(true);
-                accessibilityNodeInfo.setClickable(true);
-                break;
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ qp0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var, int i11) {
-        super(i10, context, f6Var, false);
-        this.i0 = i11;
-        this.j0 = notificationCenterDelegate;
+        mq0Var.s0 = pp0Var.getTop() + mq0Var.r0;
+        pp0Var.invalidate();
     }
 }

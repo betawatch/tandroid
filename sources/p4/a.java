@@ -4,14 +4,14 @@ import android.net.Uri;
 import h5.d0;
 import j3.g;
 import java.util.Arrays;
-import org.telegram.ui.al0;
+import org.telegram.ui.cl0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a implements g {
     public static final String B;
     public static final String C;
-    public static final al0 D;
+    public static final cl0 D;
     public static final String r;
     public static final String s;
     public static final String v;
@@ -37,7 +37,7 @@ public final class a implements g {
         y = Integer.toString(5, 36);
         B = Integer.toString(6, 36);
         C = Integer.toString(7, 36);
-        D = new al0(14);
+        D = new cl0(14);
     }
 
     public a(long j10, int i10, int i11, int[] iArr, Uri[] uriArr, long[] jArr, long j11, boolean z4) {

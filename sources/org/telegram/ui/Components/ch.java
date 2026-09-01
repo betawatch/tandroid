@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ch implements Utilities.Callback4 {
     public final /* synthetic */ int a;
@@ -19,28 +19,28 @@ public final /* synthetic */ class ch implements Utilities.Callback4 {
     public final void run(Object obj, Object obj2, Object obj3, Object obj4) {
         switch (this.a) {
             case 0:
-                li liVar = (li) this.b;
+                mi miVar = (mi) this.b;
                 CharSequence charSequence = (CharSequence) obj;
-                qh qhVar = liVar.B0;
+                qh qhVar = miVar.B0;
                 qhVar.setText(charSequence);
                 qhVar.w(charSequence.length(), charSequence.length());
-                liVar.z1();
+                miVar.z1();
                 break;
             case 1:
-                li liVar2 = (li) this.b;
+                mi miVar2 = (mi) this.b;
                 CharSequence charSequence2 = (CharSequence) obj;
-                th thVar = liVar2.M0;
+                th thVar = miVar2.M0;
                 thVar.setText(charSequence2);
                 thVar.w(charSequence2.length(), charSequence2.length());
-                liVar2.z1();
+                miVar2.z1();
                 break;
             default:
                 bd bdVar = (bd) this.b;
-                ph.f fVar = bdVar.f;
+                qh.f fVar = bdVar.f;
                 fVar.setText((CharSequence) obj);
                 fVar.d();
                 fVar.k(true);
-                ph.e eVar = bdVar.W;
+                qh.e eVar = bdVar.W;
                 AndroidUtilities.cancelRunOnUIThread(eVar);
                 eVar.run();
                 break;

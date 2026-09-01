@@ -7,9 +7,9 @@ import java.util.Map;
 import o4.t0;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final class h extends w {
+public final class h extends x {
     public static final /* synthetic */ int d0 = 0;
     public final boolean N;
     public final boolean O;
@@ -71,7 +71,7 @@ public final class h extends w {
         this.c0 = gVar.P;
     }
 
-    @Override // f5.w
+    @Override // f5.x
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -119,7 +119,7 @@ public final class h extends w {
         return false;
     }
 
-    @Override // f5.w
+    @Override // f5.x
     public final int hashCode() {
         return ((((((((((((((((((((((((((((super.hashCode() + 31) * 31) + (this.N ? 1 : 0)) * 31) + (this.O ? 1 : 0)) * 31) + (this.P ? 1 : 0)) * 31) + (this.Q ? 1 : 0)) * 31) + (this.R ? 1 : 0)) * 31) + (this.S ? 1 : 0)) * 31) + (this.T ? 1 : 0)) * 31) + (this.U ? 1 : 0)) * 31) + (this.V ? 1 : 0)) * 31) + (this.W ? 1 : 0)) * 31) + (this.X ? 1 : 0)) * 31) + (this.Y ? 1 : 0)) * 31) + (this.Z ? 1 : 0)) * 31) + (this.a0 ? 1 : 0);
     }

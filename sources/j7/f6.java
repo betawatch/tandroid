@@ -1,55 +1,61 @@
 package j7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.telegram.messenger.BuildConfig;
+import org.telegram.ui.yh;
+
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class f6 {
-    public static String a(com.google.android.gms.internal.cast.x4 x4Var) {
-        StringBuilder sb = new StringBuilder(x4Var.o());
-        for (int i10 = 0; i10 < x4Var.o(); i10++) {
-            byte i11 = x4Var.i(i10);
-            if (i11 == 34) {
-                sb.append("\\\"");
-            } else if (i11 == 39) {
-                sb.append("\\'");
-            } else if (i11 != 92) {
-                switch (i11) {
-                    case 7:
-                        sb.append("\\a");
-                        break;
-                    case 8:
-                        sb.append("\\b");
-                        break;
-                    case 9:
-                        sb.append("\\t");
-                        break;
-                    case 10:
-                        sb.append("\\n");
-                        break;
-                    case 11:
-                        sb.append("\\v");
-                        break;
-                    case 12:
-                        sb.append("\\f");
-                        break;
-                    case 13:
-                        sb.append("\\r");
-                        break;
-                    default:
-                        if (i11 < 32 || i11 > 126) {
-                            sb.append('\\');
-                            sb.append((char) (((i11 >>> 6) & 3) + 48));
-                            sb.append((char) (((i11 >>> 3) & 7) + 48));
-                            sb.append((char) ((i11 & 7) + 48));
-                            break;
-                        } else {
-                            sb.append((char) i11);
-                            break;
-                        }
-                        break;
-                }
-            } else {
-                sb.append("\\\\");
+    public static String a(String str, Object... objArr) {
+        int length;
+        int length2;
+        int indexOf;
+        String l10;
+        int i10 = 0;
+        int i11 = 0;
+        while (true) {
+            length = objArr.length;
+            if (i11 >= length) {
+                break;
             }
+            Object obj = objArr[i11];
+            if (obj == null) {
+                l10 = BuildConfig.BETA_URL;
+            } else {
+                try {
+                    l10 = obj.toString();
+                } catch (Exception e6) {
+                    String z4 = android.support.v4.media.a.z(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
+                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(z4), (Throwable) e6);
+                    l10 = yh.l("<", z4, " threw ", e6.getClass().getName(), ">");
+                }
+            }
+            objArr[i11] = l10;
+            i11++;
+        }
+        StringBuilder sb = new StringBuilder(str.length() + (length * 16));
+        int i12 = 0;
+        while (true) {
+            length2 = objArr.length;
+            if (i10 >= length2 || (indexOf = str.indexOf("%s", i12)) == -1) {
+                break;
+            }
+            sb.append((CharSequence) str, i12, indexOf);
+            sb.append(objArr[i10]);
+            i10++;
+            i12 = indexOf + 2;
+        }
+        sb.append((CharSequence) str, i12, str.length());
+        if (i10 < length2) {
+            sb.append(" [");
+            sb.append(objArr[i10]);
+            for (int i13 = i10 + 1; i13 < objArr.length; i13++) {
+                sb.append(", ");
+                sb.append(objArr[i13]);
+            }
+            sb.append(']');
         }
         return sb.toString();
     }

@@ -1,67 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class rj0 extends f2.o0 {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Context d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ yj0 h;
+public final /* synthetic */ class rj0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ak0 b;
+    public final /* synthetic */ TLObject c;
 
-    public rj0(yj0 yj0Var, int i10, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z4) {
-        this.h = yj0Var;
-        this.c = i10;
-        this.d = context;
-        this.e = f6Var;
-        this.f = z4;
+    public /* synthetic */ rj0(ak0 ak0Var, TLObject tLObject, int i10) {
+        this.a = i10;
+        this.b = ak0Var;
+        this.c = tLObject;
     }
 
-    @Override // f2.o0
-    public final int h() {
-        yj0 yj0Var = this.h;
-        return yj0Var.n.size() + ((yj0Var.E.isEmpty() || MessagesController.getInstance(this.c).premiumFeaturesBlocked()) ? 0 : 1);
-    }
-
-    @Override // f2.o0
-    public final int j(int i10) {
-        return i10 < this.h.n.size() ? 0 : 1;
-    }
-
-    @Override // f2.o0
-    public final void v(f2.l1 l1Var, int i10) {
-        if (l1Var.f == 0) {
-            ((org.telegram.ui.Cells.n6) l1Var.a).setUserReaction((TLRPC.MessagePeerReaction) this.h.n.get(i10));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ak0 ak0Var = this.b;
+                NotificationCenter.getInstance(ak0Var.b).doOnIdle(new rj0(ak0Var, this.c, 1));
+                break;
+            default:
+                ak0.a(this.b, this.c);
+                break;
         }
-    }
-
-    @Override // f2.o0
-    public final f2.l1 x(ViewGroup viewGroup, int i10) {
-        FrameLayout n6Var;
-        if (i10 != 0) {
-            yj0 yj0Var = this.h;
-            va0 va0Var = yj0Var.G;
-            if (va0Var == null) {
-                yj0Var.i();
-            } else if (va0Var.getParent() != null) {
-                ((ViewGroup) yj0Var.G.getParent()).removeView(yj0Var.G);
-            }
-            Context context = this.d;
-            n6Var = new FrameLayout(context);
-            View view = new View(context);
-            view.setBackgroundColor(org.telegram.ui.ActionBar.j6.l1(0.06f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.E8, this.e)));
-            n6Var.addView(view, k7.b6.c(8.0f, -1));
-            n6Var.addView(yj0Var.G, k7.b6.d(-1, -1.0f, 0, 0.0f, 8.0f, 0.0f, 0.0f));
-        } else {
-            n6Var = new org.telegram.ui.Cells.n6(0, this.c, this.d, this.e, true, this.f);
-        }
-        return new el0(n6Var);
     }
 }

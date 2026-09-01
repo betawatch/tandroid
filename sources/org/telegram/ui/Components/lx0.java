@@ -1,249 +1,83 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.TextView;
+import java.io.Serializable;
+import java.util.HashMap;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class lx0 implements org.telegram.ui.nt {
-    public final /* synthetic */ xx0 a;
+public final class lx0 implements TextWatcher {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ EditTextBoldCursor b;
+    public final /* synthetic */ Serializable c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate e;
 
-    public lx0(xx0 xx0Var) {
-        this.a = xx0Var;
+    /* JADX WARN: Multi-variable type inference failed */
+    public lx0(yx0 yx0Var, int[] iArr, TextView textView, EditTextBoldCursor editTextBoldCursor) {
+        this.e = yx0Var;
+        this.c = iArr;
+        this.d = textView;
+        this.b = editTextBoldCursor;
     }
 
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ boolean B() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.nt
-    public final boolean D() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ boolean E(TLRPC.Document document) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.nt
-    public final void F(TLRPC.Document document) {
-        org.telegram.ui.ActionBar.f6 f6Var;
-        int i10;
-        xx0 xx0Var = this.a;
-        xx0Var.P.documents.remove(document);
-        boolean isEmpty = xx0Var.P.documents.isEmpty();
-        if (isEmpty) {
-            xx0Var.dismiss();
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                org.telegram.ui.fn0 fn0Var = (org.telegram.ui.fn0) this.e;
+                String str = (String) this.c;
+                boolean z4 = ((HashMap) this.d) == fn0Var.q1;
+                EditTextBoldCursor editTextBoldCursor = this.b;
+                org.telegram.ui.fn0.J0(fn0Var, editTextBoldCursor, str, editable, z4);
+                int intValue = ((Integer) editTextBoldCursor.getTag()).intValue();
+                EditTextBoldCursor editTextBoldCursor2 = fn0Var.V[intValue];
+                if (intValue == 6) {
+                    fn0Var.Y0(true);
+                    break;
+                }
+                break;
         }
-        xx0Var.d.l();
-        Context context = xx0Var.getContext();
-        f6Var = ((org.telegram.ui.ActionBar.g3) xx0Var).resourcesProvider;
-        org.telegram.ui.ActionBar.d2 d2Var = new org.telegram.ui.ActionBar.d2(context, 3, f6Var);
-        d2Var.q(350L);
-        TLRPC.TL_stickers_removeStickerFromSet tL_stickers_removeStickerFromSet = new TLRPC.TL_stickers_removeStickerFromSet();
-        tL_stickers_removeStickerFromSet.sticker = MediaDataController.getInputStickerSetItem(document, "").document;
-        i10 = ((org.telegram.ui.ActionBar.g3) xx0Var).currentAccount;
-        ConnectionsManager.getInstance(i10).sendRequest(tL_stickers_removeStickerFromSet, new lh.k7(this, isEmpty, d2Var, 2));
     }
 
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ String G(boolean z4) {
-        return null;
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
     }
 
-    @Override // org.telegram.ui.nt
-    public final boolean I() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ boolean J() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ boolean N(TLRPC.Document document) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ Boolean P(TLRPC.Document document) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.nt
-    public final boolean Q() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.nt
-    public final long a() {
-        org.telegram.ui.ActionBar.p2 p2Var = this.a.I;
-        if (p2Var instanceof org.telegram.ui.xn) {
-            return ((org.telegram.ui.xn) p2Var).a();
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        switch (this.a) {
+            case 0:
+                if (((int[]) this.c)[0] == 2) {
+                    ((yx0) this.e).m0((TextView) this.d, this.b.getText().toString(), false);
+                    break;
+                }
+                break;
         }
-        return 0L;
     }
 
-    @Override // org.telegram.ui.nt
-    public final boolean b() {
-        ux0 ux0Var = this.a.Y;
-        return ux0Var != null && ux0Var.b();
+    public lx0(org.telegram.ui.fn0 fn0Var, EditTextBoldCursor editTextBoldCursor, String str, HashMap hashMap) {
+        this.e = fn0Var;
+        this.b = editTextBoldCursor;
+        this.c = str;
+        this.d = hashMap;
     }
 
-    @Override // org.telegram.ui.nt
-    public final boolean c() {
-        ux0 ux0Var = this.a.Y;
-        return ux0Var != null && ux0Var.c();
+    private final void a(Editable editable) {
     }
 
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ o70 d(ah.d dVar) {
-        return null;
+    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
     }
 
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ TLRPC.TL_messageMediaPoll e() {
-        return null;
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
     }
 
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ boolean f(TLRPC.Document document) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.nt
-    public final boolean g() {
-        return this.a.U != null;
-    }
-
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ TLRPC.PollAnswer h() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.nt
-    public final boolean i() {
-        TLRPC.StickerSet stickerSet;
-        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = this.a.P;
-        return tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null || !stickerSet.emojis;
-    }
-
-    @Override // org.telegram.ui.nt
-    public final void j(SendMessagesHelper.ImportingSticker importingSticker) {
-        this.a.u0(importingSticker);
-    }
-
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ boolean k() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.nt
-    public final boolean l(int i10) {
-        return this.a.Y != null;
-    }
-
-    @Override // org.telegram.ui.nt
-    public final void m(TLRPC.Document document, String str, Object obj, boolean z4, int i10, int i11) {
-        xx0 xx0Var = this.a;
-        ux0 ux0Var = xx0Var.Y;
-        if (ux0Var == null) {
-            return;
-        }
-        ux0Var.d(document, str, obj, null, xx0Var.f0, z4, i10, 0);
-        xx0Var.dismiss();
-    }
-
-    @Override // org.telegram.ui.nt
-    public final void o(TLRPC.Document document) {
-        xx0 xx0Var = this.a;
-        xx0.o0(xx0Var.I, xx0Var.P, document);
-    }
-
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ boolean p() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ boolean x() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ MessageObject z() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ void C(TLRPC.Document document) {
-    }
-
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ void H(TLRPC.Document document) {
-    }
-
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ void K() {
-    }
-
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ void L() {
-    }
-
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ void O(String str) {
-    }
-
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ void n(String str) {
-    }
-
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ void q(TLRPC.Document document) {
-    }
-
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ void r() {
-    }
-
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ void t() {
-    }
-
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ void u(TLRPC.Document document) {
-    }
-
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ void y(String str) {
-    }
-
-    @Override // org.telegram.ui.nt
-    public final void M(TLRPC.InputStickerSet inputStickerSet, boolean z4) {
-    }
-
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ void v(TLRPC.StickerSet stickerSet, String str) {
-    }
-
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ void w(TLObject tLObject, Object obj) {
-    }
-
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ void A(CharSequence charSequence, String str, vk vkVar) {
-    }
-
-    @Override // org.telegram.ui.nt
-    public final /* synthetic */ void s(int i10, int i11, Object obj, TLObject tLObject, boolean z4) {
+    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

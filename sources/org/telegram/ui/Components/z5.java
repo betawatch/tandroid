@@ -5,7 +5,7 @@ import android.os.SystemClock;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class z5 {
     public View a;
@@ -23,7 +23,7 @@ public final class z5 {
     public z5(long j10, TimeInterpolator timeInterpolator) {
         this.f = 0L;
         this.g = 200L;
-        nr nrVar = nr.f;
+        pr prVar = pr.f;
         this.a = null;
         this.g = j10;
         this.h = timeInterpolator;
@@ -36,7 +36,7 @@ public final class z5 {
 
     public final float b() {
         if (this.i) {
-            return k7.n.a(((SystemClock.elapsedRealtime() - this.j) - this.f) / this.g, 0.0f, 1.0f);
+            return k7.o.a(((SystemClock.elapsedRealtime() - this.j) - this.f) / this.g, 0.0f, 1.0f);
         }
         return 0.0f;
     }
@@ -44,7 +44,7 @@ public final class z5 {
     public final float c() {
         if (this.i) {
             long elapsedRealtime = SystemClock.elapsedRealtime();
-            float a2 = k7.n.a(((elapsedRealtime - this.j) - this.f) / this.g, 0.0f, 1.0f);
+            float a2 = k7.o.a(((elapsedRealtime - this.j) - this.f) / this.g, 0.0f, 1.0f);
             if (elapsedRealtime - this.j >= this.f) {
                 TimeInterpolator timeInterpolator = this.h;
                 if (timeInterpolator == null) {
@@ -95,7 +95,7 @@ public final class z5 {
     public z5(long j10, long j11, TimeInterpolator timeInterpolator) {
         this.f = 0L;
         this.g = 200L;
-        nr nrVar = nr.f;
+        pr prVar = pr.f;
         this.a = null;
         this.f = j10;
         this.g = j11;
@@ -106,7 +106,7 @@ public final class z5 {
     public z5(View view) {
         this.f = 0L;
         this.g = 200L;
-        this.h = nr.f;
+        this.h = pr.f;
         this.a = view;
         this.e = true;
     }
@@ -114,7 +114,7 @@ public final class z5 {
     public z5(View view, long j10, TimeInterpolator timeInterpolator) {
         this.f = 0L;
         this.g = 200L;
-        nr nrVar = nr.f;
+        pr prVar = pr.f;
         this.a = view;
         this.g = j10;
         this.h = timeInterpolator;
@@ -124,7 +124,7 @@ public final class z5 {
     public z5(View view, long j10, long j11, TimeInterpolator timeInterpolator) {
         this.f = 0L;
         this.g = 200L;
-        nr nrVar = nr.f;
+        pr prVar = pr.f;
         this.a = view;
         this.f = j10;
         this.g = j11;
@@ -135,7 +135,7 @@ public final class z5 {
     public z5(Runnable runnable) {
         this.f = 0L;
         this.g = 200L;
-        this.h = nr.f;
+        this.h = pr.f;
         this.b = runnable;
         this.e = true;
     }
@@ -143,7 +143,7 @@ public final class z5 {
     public z5(Runnable runnable, long j10, TimeInterpolator timeInterpolator) {
         this.f = 0L;
         this.g = 200L;
-        nr nrVar = nr.f;
+        pr prVar = pr.f;
         this.b = runnable;
         this.g = j10;
         this.h = timeInterpolator;
@@ -153,7 +153,7 @@ public final class z5 {
     public z5(Runnable runnable, long j10, TimeInterpolator timeInterpolator, int i10) {
         this.f = 0L;
         this.g = 200L;
-        nr nrVar = nr.f;
+        pr prVar = pr.f;
         this.b = runnable;
         this.f = 0L;
         this.g = j10;
@@ -164,7 +164,7 @@ public final class z5 {
     public z5(float f10, View view, long j10, long j11, TimeInterpolator timeInterpolator) {
         this.f = 0L;
         this.g = 200L;
-        nr nrVar = nr.f;
+        pr prVar = pr.f;
         this.a = view;
         this.d = f10;
         this.c = f10;
@@ -177,7 +177,7 @@ public final class z5 {
     public z5(float f10, Runnable runnable, long j10, long j11, TimeInterpolator timeInterpolator) {
         this.f = 0L;
         this.g = 200L;
-        nr nrVar = nr.f;
+        pr prVar = pr.f;
         this.b = runnable;
         this.d = f10;
         this.c = f10;

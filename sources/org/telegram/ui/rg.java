@@ -12,9 +12,9 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rg implements ev0, iy {
+public final /* synthetic */ class rg implements gv0, jy {
     public final /* synthetic */ boolean a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -27,17 +27,17 @@ public final /* synthetic */ class rg implements ev0, iy {
         this.b = i10;
     }
 
-    @Override // org.telegram.ui.iy
+    @Override // org.telegram.ui.jy
     public /* synthetic */ boolean C() {
         return false;
     }
 
-    @Override // org.telegram.ui.iy
-    public /* synthetic */ boolean K(oy oyVar) {
+    @Override // org.telegram.ui.jy
+    public /* synthetic */ boolean J(py pyVar) {
         return false;
     }
 
-    @Override // org.telegram.ui.ev0
+    @Override // org.telegram.ui.gv0
     public void a(TLRPC.MessageMedia messageMedia) {
         int i10;
         xn xnVar = (xn) this.c;
@@ -86,8 +86,8 @@ public final /* synthetic */ class rg implements ev0, iy {
         xnVar.getConnectionsManager().sendRequest(tL_messages_appendTodoList, null);
     }
 
-    @Override // org.telegram.ui.iy
-    public boolean w(oy oyVar, ArrayList arrayList, CharSequence charSequence, boolean z4, boolean z10, int i10, int i11, kf1 kf1Var) {
+    @Override // org.telegram.ui.jy
+    public boolean v(py pyVar, ArrayList arrayList, CharSequence charSequence, boolean z4, boolean z10, int i10, int i11, mf1 mf1Var) {
         LaunchActivity launchActivity = (LaunchActivity) this.c;
         String str = (String) this.d;
         Pattern pattern = LaunchActivity.y1;
@@ -103,7 +103,7 @@ public final /* synthetic */ class rg implements ev0, iy {
             bundle.putLong("chat_id", -j10);
         }
         int i12 = this.b;
-        if (MessagesController.getInstance(i12).checkCanOpenChat(bundle, oyVar)) {
+        if (MessagesController.getInstance(i12).checkCanOpenChat(bundle, pyVar)) {
             NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
             MediaDataController.getInstance(i12).saveDraft(j10, 0, str, null, null, false, 0L);
             ((ActionBarLayout) launchActivity.O()).S(new xn(bundle), true, false);

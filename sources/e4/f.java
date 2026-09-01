@@ -10,17 +10,17 @@ import j3.d1;
 import j3.e1;
 import j3.f0;
 import j3.n0;
-import j7.c7;
+import j7.d7;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class f extends j3.e implements Handler.Callback {
     public final d B;
     public final c0 C;
     public final Handler D;
     public final e E;
-    public c7 F;
+    public d7 F;
     public boolean G;
     public boolean H;
     public long I;
@@ -68,9 +68,9 @@ public final class f extends j3.e implements Handler.Callback {
         e1 L = f0Var.L();
         if (!L.equals(f0Var.M)) {
             f0Var.M = L;
-            mVar.c(14, new gg.f(c0Var, 12));
+            mVar.c(14, new hg.f(c0Var, 12));
         }
-        mVar.c(28, new gg.f(cVar, 13));
+        mVar.c(28, new hg.f(cVar, 13));
         mVar.b();
     }
 
@@ -133,7 +133,7 @@ public final class f extends j3.e implements Handler.Callback {
         while (z4) {
             if (!this.G && this.J == null) {
                 e eVar = this.E;
-                eVar.c();
+                eVar.b();
                 f7.b bVar = this.c;
                 bVar.l();
                 int s6 = s(bVar, eVar, 0);
@@ -142,10 +142,10 @@ public final class f extends j3.e implements Handler.Callback {
                         this.G = true;
                     } else {
                         eVar.s = this.I;
-                        eVar.l();
-                        c7 c7Var = this.F;
+                        eVar.k();
+                        d7 d7Var = this.F;
                         int i10 = d0.a;
-                        c a2 = c7Var.a(eVar);
+                        c a2 = d7Var.a(eVar);
                         if (a2 != null) {
                             ArrayList arrayList = new ArrayList(a2.a.length);
                             z(a2, arrayList);
@@ -199,14 +199,14 @@ public final class f extends j3.e implements Handler.Callback {
             if (b10 != null) {
                 d dVar = this.B;
                 if (dVar.b(b10)) {
-                    c7 a2 = dVar.a(b10);
+                    d7 a2 = dVar.a(b10);
                     byte[] d = bVarArr[i10].d();
                     d.getClass();
                     e eVar = this.E;
-                    eVar.c();
-                    eVar.k(d.length);
+                    eVar.b();
+                    eVar.j(d.length);
                     eVar.d.put(d);
-                    eVar.l();
+                    eVar.k();
                     c a10 = a2.a(eVar);
                     if (a10 != null) {
                         z(a10, arrayList);

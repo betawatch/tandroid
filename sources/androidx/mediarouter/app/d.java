@@ -18,14 +18,14 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
 import n7.qa;
-import org.telegram.ui.Components.i20;
 import org.telegram.ui.Components.j20;
 import org.telegram.ui.Components.k20;
 import org.telegram.ui.Components.l20;
 import org.telegram.ui.Components.m20;
+import org.telegram.ui.Components.n20;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class d extends Handler {
     public final /* synthetic */ int a;
@@ -49,11 +49,11 @@ public final class d extends Handler {
                 if (bVar.o == 2 || bVar.j()) {
                     bVar.x = null;
                     if (obj2 instanceof Exception) {
-                        qaVar.X0((Exception) obj2, false);
+                        qaVar.V0((Exception) obj2, false);
                         return;
                     }
                     try {
-                        bVar.b.Q1((byte[]) obj2);
+                        bVar.b.V1((byte[]) obj2);
                         qaVar.c = null;
                         HashSet hashSet = (HashSet) qaVar.b;
                         s8.v t6 = s8.v.t(hashSet);
@@ -66,8 +66,8 @@ public final class d extends Handler {
                             }
                         }
                         return;
-                    } catch (Exception e) {
-                        qaVar.X0(e, true);
+                    } catch (Exception e6) {
+                        qaVar.V0(e6, true);
                         return;
                     }
                 }
@@ -86,12 +86,12 @@ public final class d extends Handler {
                 return;
             }
             try {
-                byte[] F1 = bVar3.b.F1(bVar3.u, (byte[]) obj2);
-                if (bVar3.v != null && F1 != null && F1.length != 0) {
-                    bVar3.v = F1;
+                byte[] K1 = bVar3.b.K1(bVar3.u, (byte[]) obj2);
+                if (bVar3.v != null && K1 != null && K1.length != 0) {
+                    bVar3.v = K1;
                 }
                 bVar3.o = 4;
-                new nh.e(3);
+                new ag.d(1);
                 h5.e eVar = bVar3.h;
                 synchronized (eVar.a) {
                     set = eVar.c;
@@ -100,8 +100,8 @@ public final class d extends Handler {
                 while (it.hasNext()) {
                     ((o3.l) it.next()).a();
                 }
-            } catch (Exception e6) {
-                bVar3.l(e6, true);
+            } catch (Exception e10) {
+                bVar3.l(e10, true);
             }
         }
     }
@@ -203,10 +203,10 @@ public final class d extends Handler {
                     return;
                 }
                 tVar.c = false;
-                ja.c cVar = (ja.c) tVar.f;
-                if (cVar != null) {
+                o5.i iVar2 = (o5.i) tVar.f;
+                if (iVar2 != null) {
                     c2.u uVar = (c2.u) tVar.n;
-                    c2.e eVar = (c2.e) cVar.b;
+                    c2.e eVar = (c2.e) iVar2.b;
                     c2.z d = eVar.d(tVar);
                     if (d != null) {
                         eVar.m(d, uVar);
@@ -223,9 +223,9 @@ public final class d extends Handler {
                     d4.d dVar3 = (d4.d) msg.obj;
                     try {
                         eVar2.a.queueInputBuffer(dVar3.a, 0, dVar3.b, dVar3.d, dVar3.e);
-                    } catch (RuntimeException e) {
+                    } catch (RuntimeException e6) {
                         AtomicReference atomicReference = eVar2.d;
-                        while (!atomicReference.compareAndSet(null, e) && atomicReference.get() == null) {
+                        while (!atomicReference.compareAndSet(null, e6) && atomicReference.get() == null) {
                         }
                     }
                     dVar = dVar3;
@@ -239,9 +239,9 @@ public final class d extends Handler {
                         synchronized (d4.e.h) {
                             eVar2.a.queueSecureInputBuffer(i17, 0, cryptoInfo, j10, i18);
                         }
-                    } catch (RuntimeException e6) {
+                    } catch (RuntimeException e10) {
                         AtomicReference atomicReference2 = eVar2.d;
-                        while (!atomicReference2.compareAndSet(null, e6) && atomicReference2.get() == null) {
+                        while (!atomicReference2.compareAndSet(null, e10) && atomicReference2.get() == null) {
                         }
                     }
                     dVar = dVar4;
@@ -299,59 +299,59 @@ public final class d extends Handler {
                 }
                 return;
             case 9:
-                k20 k20Var = (k20) this.b;
-                j20 j20Var = k20Var.g;
+                l20 l20Var = (l20) this.b;
+                k20 k20Var = l20Var.g;
                 int i21 = msg.what;
                 if (i21 == 1) {
-                    j20Var.getClass();
+                    k20Var.getClass();
                     return;
                 }
                 if (i21 == 2) {
-                    k20Var.f.removeMessages(3);
-                    k20Var.j = false;
-                    k20Var.k = true;
-                    j20Var.onLongPress(k20Var.n);
+                    l20Var.f.removeMessages(3);
+                    l20Var.j = false;
+                    l20Var.k = true;
+                    k20Var.onLongPress(l20Var.n);
                     return;
                 }
                 if (i21 != 3) {
                     throw new RuntimeException("Unknown message " + msg);
                 }
-                i20 i20Var = k20Var.h;
-                if (i20Var != null) {
-                    if (k20Var.i) {
-                        k20Var.j = true;
+                j20 j20Var = l20Var.h;
+                if (j20Var != null) {
+                    if (l20Var.i) {
+                        l20Var.j = true;
                         return;
                     } else {
-                        ((PhotoViewer) i20Var).Z1(k20Var.n);
+                        ((PhotoViewer) j20Var).Z1(l20Var.n);
                         return;
                     }
                 }
                 return;
             default:
-                l20 l20Var = (l20) this.b;
-                m20 m20Var = l20Var.f;
+                m20 m20Var = (m20) this.b;
+                n20 n20Var = m20Var.f;
                 int i22 = msg.what;
                 if (i22 == 1) {
-                    m20Var.onShowPress(l20Var.m);
+                    n20Var.onShowPress(m20Var.m);
                     return;
                 }
                 if (i22 == 2) {
-                    l20Var.e.removeMessages(3);
-                    l20Var.i = false;
-                    l20Var.j = true;
-                    m20Var.onLongPress(l20Var.m);
+                    m20Var.e.removeMessages(3);
+                    m20Var.i = false;
+                    m20Var.j = true;
+                    n20Var.onLongPress(m20Var.m);
                     return;
                 }
                 if (i22 != 3) {
                     throw new RuntimeException("Unknown message " + msg);
                 }
-                m20 m20Var2 = l20Var.g;
-                if (m20Var2 != null) {
-                    if (l20Var.h) {
-                        l20Var.i = true;
+                n20 n20Var2 = m20Var.g;
+                if (n20Var2 != null) {
+                    if (m20Var.h) {
+                        m20Var.i = true;
                         return;
                     } else {
-                        m20Var2.onSingleTapConfirmed(l20Var.m);
+                        n20Var2.onSingleTapConfirmed(m20Var.m);
                         return;
                     }
                 }

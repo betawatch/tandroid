@@ -7,18 +7,18 @@ import j3.n0;
 import j3.r1;
 import java.util.ArrayList;
 import java.util.Arrays;
-import k7.w6;
+import k7.x6;
 import l3.o0;
-import o2.o;
+import r3.x;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class l extends j {
     public k n;
     public int o;
     public boolean p;
     public o0 q;
-    public o r;
+    public x r;
 
     @Override // a4.j
     public final void a(long j10) {
@@ -71,7 +71,7 @@ public final class l extends j {
         o0 o0Var = this.q;
         int i10 = 4;
         if (o0Var == null) {
-            w6.c(1, wVar, false);
+            x6.c(1, wVar, false);
             wVar.m();
             int u10 = wVar.u();
             int m9 = wVar.m();
@@ -97,16 +97,16 @@ public final class l extends j {
             o0Var2.g = copyOf;
             this.q = o0Var2;
         } else {
-            o oVar = this.r;
-            if (oVar == null) {
-                this.r = w6.b(wVar, true, true);
+            x xVar = this.r;
+            if (xVar == null) {
+                this.r = x6.b(wVar, true, true);
             } else {
                 int i14 = wVar.c;
                 byte[] bArr = new byte[i14];
                 System.arraycopy(wVar.a, 0, bArr, 0, i14);
                 int i15 = o0Var.a;
                 int i16 = 5;
-                w6.c(5, wVar, false);
+                x6.c(5, wVar, false);
                 int u12 = wVar.u() + 1;
                 v vVar = new v(wVar.a);
                 vVar.s(wVar.b * 8);
@@ -287,7 +287,7 @@ public final class l extends j {
                                     i66++;
                                     i63 >>>= 1;
                                 }
-                                kVar = new k(o0Var, oVar, bArr, cVarArr, i66);
+                                kVar = new k(o0Var, xVar, bArr, cVarArr, i66);
                             }
                         }
                     } else {
@@ -342,7 +342,7 @@ public final class l extends j {
         ArrayList arrayList = new ArrayList();
         arrayList.add((byte[]) o0Var3.g);
         arrayList.add((byte[]) kVar.d);
-        e4.c a2 = w6.a(s8.v.u((String[]) ((o) kVar.c).b));
+        e4.c a2 = x6.a(s8.v.u(((x) kVar.c).a));
         m0 m0Var = new m0();
         m0Var.o = "audio/vorbis";
         m0Var.f = o0Var3.d;

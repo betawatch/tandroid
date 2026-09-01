@@ -1,55 +1,65 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.SurfaceView;
+import android.view.TextureView;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class zs0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ at0 b;
+public final class zs0 extends o4 {
+    public final /* synthetic */ PhotoViewer h;
 
-    public zs0(at0 at0Var, int i10) {
-        this.b = at0Var;
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zs0(Context context, PhotoViewer photoViewer) {
+        super(context);
+        this.h = photoViewer;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        if (this.b.b.g8) {
-            PhotoViewer photoViewer = this.b.b;
-            if (photoViewer.o1) {
-                photoViewer.B3();
-            }
-        }
-        if (this.a == 3) {
-            PhotoViewer photoViewer2 = this.b.b;
-            photoViewer2.G2(photoViewer2.M4, false, true, true);
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        PhotoViewer photoViewer = this.b.b;
-        photoViewer.M0.setVisibility(0);
-        if (photoViewer.E3()) {
-            photoViewer.k0.setVisibility(0);
-        } else {
-            photoViewer.P0.setVisibility(0);
-        }
-        photoViewer.C.setVisibility(0);
-        if (photoViewer.f2) {
-            wt0 wt0Var = photoViewer.N1;
-            wt0Var.setVisibility(wt0Var.getTag() != null ? 0 : 4);
-        }
-        if (photoViewer.a2 || photoViewer.b2) {
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        if (this.h.P8) {
             return;
         }
-        int i10 = photoViewer.Z1;
-        if ((i10 == 0 || i10 == 4 || ((i10 == 2 || i10 == 5) && photoViewer.d7.size() > 1)) && !photoViewer.c4) {
-            photoViewer.K0.setVisibility(0);
-            photoViewer.L0.setVisibility(0);
-            photoViewer.s3();
+        super.draw(canvas);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        PhotoViewer photoViewer = this.h;
+        if (view == photoViewer.B3 && photoViewer.d4) {
+            return true;
         }
+        return super.drawChild(canvas, view, j10);
+    }
+
+    @Override // org.telegram.ui.o4, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        PhotoViewer photoViewer = this.h;
+        ImageView imageView = photoViewer.u3;
+        if (imageView != null) {
+            ViewGroup.LayoutParams layoutParams = imageView.getLayoutParams();
+            layoutParams.width = getMeasuredWidth();
+            layoutParams.height = getMeasuredHeight();
+        }
+        TextureView textureView = photoViewer.y2;
+        if (textureView instanceof org.telegram.ui.Components.y61) {
+            textureView.setPivotX(textureView.getMeasuredWidth() / 2);
+            photoViewer.B2.setPivotX(photoViewer.y2.getMeasuredWidth() / 2);
+        } else {
+            if (textureView != null) {
+                textureView.setPivotX(0.0f);
+            }
+            SurfaceView surfaceView = photoViewer.z2;
+            if (surfaceView != null) {
+                surfaceView.setPivotX(0.0f);
+            }
+            photoViewer.B2.setPivotX(0.0f);
+        }
+        photoViewer.z0();
     }
 }

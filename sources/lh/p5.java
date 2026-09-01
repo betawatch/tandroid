@@ -1,54 +1,57 @@
 package lh;
 
-import android.content.DialogInterface;
-import org.telegram.messenger.Utilities;
+import mh.l7;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class p5 implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback b;
-    public final /* synthetic */ boolean[] c;
-    public final /* synthetic */ boolean[] d;
-    public final /* synthetic */ Object e;
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes.dex */
+public final class p5 implements NotificationCenter.NotificationCenterDelegate {
+    public final int a;
+    public final l7 b;
+    public final b5 c;
+    public f5 d;
+    public boolean e;
 
-    public /* synthetic */ p5(t7 t7Var, Utilities.Callback callback, boolean[] zArr, boolean[] zArr2, Object obj, int i10) {
+    public p5(int i10, long j10) {
         this.a = i10;
-        this.b = callback;
-        this.c = zArr;
-        this.d = zArr2;
-        this.e = obj;
+        l7 l7Var = new l7(i10, 0L, false);
+        this.b = l7Var;
+        l7Var.p = j10;
+        b5 b5Var = new b5(j10, i10, new dg.h0(this, 16));
+        b5Var.s = true;
+        this.c = b5Var;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                Utilities.Callback2 callback2 = (Utilities.Callback2) this.e;
-                Utilities.Callback callback = this.b;
-                if (callback != null && !this.c[0]) {
-                    callback.run(Boolean.FALSE);
-                    boolean[] zArr = this.d;
-                    if (!zArr[0]) {
-                        callback2.run("cancelled", 0L);
-                        zArr[0] = true;
-                        break;
-                    }
-                }
-                break;
-            default:
-                Utilities.Callback callback3 = (Utilities.Callback) this.e;
-                Utilities.Callback callback4 = this.b;
-                if (callback4 != null && !this.c[0]) {
-                    callback4.run(Boolean.FALSE);
-                    boolean[] zArr2 = this.d;
-                    if (!zArr2[0] && callback3 != null) {
-                        callback3.run("cancelled");
-                        zArr2[0] = true;
-                        break;
-                    }
-                }
-                break;
+    public final void a() {
+        if (this.e) {
+            return;
+        }
+        NotificationCenter.getInstance(this.a).addObserver(this, NotificationCenter.starUserGiftsLoaded);
+        this.b.a();
+        this.c.g(false);
+        this.e = true;
+    }
+
+    public final void b() {
+        if (this.e) {
+            NotificationCenter.getInstance(this.a).removeObserver(this, NotificationCenter.starUserGiftsLoaded);
+            l7 l7Var = this.b;
+            if (l7Var.m != -1) {
+                ConnectionsManager.getInstance(l7Var.a).cancelRequest(l7Var.m, true);
+                l7Var.m = -1;
+            }
+            l7Var.i = false;
+            this.c.f();
+            this.e = false;
+        }
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        f5 f5Var;
+        if (i10 == NotificationCenter.starUserGiftsLoaded && objArr[1] == this.b && (f5Var = this.d) != null) {
+            f5Var.run();
         }
     }
 }

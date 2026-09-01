@@ -2,7 +2,7 @@ package j3;
 
 import android.net.Uri;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class r0 implements g {
     public static final String b;
@@ -15,8 +15,8 @@ public final class r0 implements g {
         c = new q0(0);
     }
 
-    public r0(a3.c cVar) {
-        this.a = (Uri) cVar.b;
+    public r0(ja.c cVar) {
+        this.a = (Uri) cVar.a;
     }
 
     public final boolean equals(Object obj) {

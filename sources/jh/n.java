@@ -1,157 +1,67 @@
 package jh;
 
-import android.util.LongSparseArray;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import f2.l1;
-import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.k5;
-import org.telegram.ui.ActionBar.p2;
-import org.telegram.ui.Cells.g5;
-import org.telegram.ui.Components.el0;
-import org.telegram.ui.Components.hn;
-import org.telegram.ui.Components.rl0;
-import org.telegram.ui.Components.z8;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes.dex */
-public final class n extends rl0 {
-    public final /* synthetic */ v c;
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes3.dex */
+public final class n extends GestureDetector.SimpleOnGestureListener {
+    public final /* synthetic */ View a;
+    public final /* synthetic */ List b;
+    public final /* synthetic */ o c;
+    public final /* synthetic */ p d;
 
-    public n(v vVar) {
-        this.c = vVar;
+    public n(p pVar, View view, List list, o oVar) {
+        this.d = pVar;
+        this.a = view;
+        this.b = list;
+        this.c = oVar;
     }
 
-    @Override // org.telegram.ui.Components.rl0
-    public final boolean D(l1 l1Var) {
-        return l1Var.f == 0;
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        int x10 = (int) motionEvent.getX();
+        int y10 = (int) motionEvent.getY();
+        View view = this.a;
+        int scrollY = view.getScrollY() + y10;
+        int paddingLeft = x10 - view.getPaddingLeft();
+        int paddingTop = scrollY - view.getPaddingTop();
+        p pVar = this.d;
+        int i10 = paddingLeft - pVar.c;
+        int i11 = paddingTop - pVar.d;
+        Iterator it = this.b.iterator();
+        while (it.hasNext()) {
+            if (((k) it.next()).getBounds().contains(i10, i11)) {
+                pVar.b = true;
+                return true;
+            }
+        }
+        return false;
     }
 
-    public final void E(List list) {
-        v vVar = this.c;
-        ArrayList arrayList = vVar.c;
-        boolean isEmpty = arrayList.isEmpty();
-        int i10 = 0;
-        while (i10 < list.size()) {
-            long j10 = ((TLRPC.TL_chatInviteImporter) list.get(i10)).user_id;
-            int i11 = i10 + 1;
-            while (true) {
-                if (i11 >= list.size()) {
-                    break;
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onSingleTapUp(MotionEvent motionEvent) {
+        p pVar = this.d;
+        if (pVar.b) {
+            View view = this.a;
+            view.playSoundEffect(0);
+            pVar.b = false;
+            int x10 = (int) motionEvent.getX();
+            int scrollY = view.getScrollY() + ((int) motionEvent.getY());
+            int paddingLeft = x10 - view.getPaddingLeft();
+            int paddingTop = scrollY - view.getPaddingTop();
+            int i10 = paddingLeft - pVar.c;
+            int i11 = paddingTop - pVar.d;
+            for (k kVar : this.b) {
+                if (kVar.getBounds().contains(i10, i11)) {
+                    this.c.o(kVar, i10, i11);
+                    return true;
                 }
-                if (((TLRPC.TL_chatInviteImporter) list.get(i11)).user_id == j10) {
-                    list.remove(i10);
-                    i10--;
-                    break;
-                }
-                i11++;
             }
-            i10++;
         }
-        arrayList.clear();
-        arrayList.addAll(list);
-        if (isEmpty) {
-            s(!vVar.B ? 1 : 0, arrayList.size());
-        } else {
-            l();
-        }
-    }
-
-    @Override // f2.o0
-    public final int h() {
-        v vVar = this.c;
-        return ((vVar.c.isEmpty() || !vVar.x) ? 0 : 1) + vVar.c.size() + (!vVar.B ? 1 : 0);
-    }
-
-    @Override // f2.o0
-    public final int j(int i10) {
-        v vVar = this.c;
-        if (i10 != 0 || vVar.B) {
-            return (i10 == h() + (-1) && !vVar.c.isEmpty() && vVar.x) ? 4 : 0;
-        }
-        return 2;
-    }
-
-    @Override // f2.o0
-    public final void v(l1 l1Var, int i10) {
-        v vVar = this.c;
-        ArrayList arrayList = vVar.c;
-        int i11 = l1Var.f;
-        View view = l1Var.a;
-        if (i11 != 0) {
-            if (i11 == 2) {
-                view.requestLayout();
-                return;
-            }
-            return;
-        }
-        g5 g5Var = (g5) view;
-        int i12 = i10 - (!vVar.B ? 1 : 0);
-        LongSparseArray longSparseArray = vVar.d;
-        TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) arrayList.get(i12);
-        boolean z4 = i12 != arrayList.size() - 1 || vVar.x;
-        k5 k5Var = g5Var.d;
-        g5Var.e = tL_chatInviteImporter;
-        g5Var.f = z4;
-        g5Var.setWillNotDraw(!z4);
-        TLRPC.User user = (TLRPC.User) longSparseArray.get(tL_chatInviteImporter.user_id);
-        z8 z8Var = g5Var.a;
-        z8Var.r(user);
-        g5Var.b.e(user, z8Var);
-        g5Var.c.l(UserObject.getUserName(user), false);
-        String formatDateAudio = LocaleController.formatDateAudio(tL_chatInviteImporter.date, false);
-        if (tL_chatInviteImporter.via_chatlist) {
-            k5Var.l(LocaleController.getString(R.string.JoinedViaFolder), false);
-            return;
-        }
-        long j10 = tL_chatInviteImporter.approved_by;
-        if (j10 == 0) {
-            k5Var.l(LocaleController.formatString("RequestedToJoinAt", R.string.RequestedToJoinAt, formatDateAudio), false);
-            return;
-        }
-        TLRPC.User user2 = (TLRPC.User) longSparseArray.get(j10);
-        if (user2 != null) {
-            k5Var.l(LocaleController.formatString("AddedBy", R.string.AddedBy, UserObject.getFirstName(user2), formatDateAudio), false);
-        } else {
-            k5Var.l("", false);
-        }
-    }
-
-    @Override // f2.o0
-    public final l1 x(ViewGroup viewGroup, int i10) {
-        View view;
-        v vVar = this.c;
-        boolean z4 = vVar.a;
-        if (i10 == 1) {
-            view = new View(viewGroup.getContext());
-        } else if (i10 == 2) {
-            hn hnVar = new hn(viewGroup.getContext(), 3);
-            hnVar.setTag(-33024);
-            view = hnVar;
-        } else if (i10 == 3) {
-            view = new View(viewGroup.getContext());
-        } else if (i10 != 4) {
-            view = new g5(viewGroup.getContext(), vVar, z4);
-        } else {
-            p2 p2Var = vVar.g;
-            m mVar = new m(p2Var.getParentActivity(), 0, p2Var.getResourceProvider());
-            if (vVar.B) {
-                mVar.setBackgroundColor(j6.v0(j6.d6, p2Var.getResourceProvider()));
-            }
-            mVar.f(j6.d6, j6.a7, -1);
-            mVar.setViewType(15);
-            mVar.setMemberRequestButton(z4);
-            mVar.setIsSingleCell(true);
-            mVar.setItemsCount(1);
-            mVar.setTag(-33024);
-            view = mVar;
-        }
-        return new el0(view);
+        return false;
     }
 }

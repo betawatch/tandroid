@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class h extends pa.u {
     public static final e c = new e();
@@ -50,10 +50,10 @@ public final class h extends pa.u {
                         try {
                             b10 = ta.a.b(v, new ParsePosition(0));
                             break;
-                        } catch (ParseException e) {
+                        } catch (ParseException e6) {
                             StringBuilder t6 = android.support.v4.media.a.t("Failed parsing '", v, "' as Date; at path ");
                             t6.append(aVar.j());
-                            throw new pa.j(t6.toString(), e);
+                            throw new pa.j(t6.toString(), e6);
                         }
                     }
                     Object obj = arrayList.get(i10);

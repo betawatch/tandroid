@@ -1,35 +1,12 @@
 package org.telegram.ui.Components;
 
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ij implements oj {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TLRPC.User b;
+public interface ij {
+    void a(TLRPC.User user, boolean z4, int i10, long j10);
 
-    public /* synthetic */ ij(int i10, TLRPC.User user) {
-        this.a = i10;
-        this.b = user;
-    }
-
-    @Override // org.telegram.ui.Components.oj
-    public final String run() {
-        se.b c3;
-        StringBuilder sb;
-        String str;
-        switch (this.a) {
-            case 0:
-                c3 = se.b.c();
-                sb = new StringBuilder("+");
-                str = this.b.phone;
-                break;
-            default:
-                c3 = se.b.c();
-                sb = new StringBuilder("+");
-                str = this.b.phone;
-                break;
-        }
-        return org.telegram.messenger.y3.j(sb, str, c3);
-    }
+    void b(ArrayList arrayList, String str, boolean z4, int i10, long j10, boolean z10);
 }

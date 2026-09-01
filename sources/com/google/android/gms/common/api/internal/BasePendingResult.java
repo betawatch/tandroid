@@ -6,16 +6,16 @@ import android.util.Pair;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.q;
 import com.google.android.gms.common.data.DataHolder;
-import j7.q5;
+import j7.o5;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public abstract class BasePendingResult<R extends com.google.android.gms.common.api.q> extends q5 {
+public abstract class BasePendingResult<R extends com.google.android.gms.common.api.q> extends o5 {
     public static final o1 n = new o1(0);
     public final g b;
     public final WeakReference c;
@@ -44,13 +44,13 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
                 if (dataHolder != null) {
                     dataHolder.close();
                 }
-            } catch (RuntimeException e) {
-                Log.w("BasePendingResult", "Unable to release ".concat(String.valueOf(qVar)), e);
+            } catch (RuntimeException e6) {
+                Log.w("BasePendingResult", "Unable to release ".concat(String.valueOf(qVar)), e6);
             }
         }
     }
 
-    @Override // j7.q5
+    @Override // j7.o5
     public final void b(com.google.android.gms.common.api.o oVar) {
         synchronized (this.a) {
             try {

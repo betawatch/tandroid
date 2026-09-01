@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.List;
 import k7.y7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class g {
     public static final g c = new g(10, new int[]{2});
@@ -24,15 +24,15 @@ public final class g {
         s8.l.b(3, objArr);
         d = s8.v.s(3, objArr);
         b4.e0 e0Var = new b4.e0(4, 22);
-        e0Var.w(5, 6);
-        e0Var.w(17, 6);
-        e0Var.w(7, 6);
-        e0Var.w(30, 10);
-        e0Var.w(18, 6);
-        e0Var.w(6, 8);
-        e0Var.w(8, 8);
-        e0Var.w(14, 8);
-        e = e0Var.c();
+        e0Var.x(5, 6);
+        e0Var.x(17, 6);
+        e0Var.x(7, 6);
+        e0Var.x(30, 10);
+        e0Var.x(18, 6);
+        e0Var.x(6, 8);
+        e0Var.x(8, 8);
+        e0Var.x(14, 8);
+        e = e0Var.d();
     }
 
     public g(int i10, int[] iArr) {

@@ -2,7 +2,7 @@ package sa;
 
 import j$.util.concurrent.ConcurrentHashMap;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class j implements pa.v {
     public static final i c;
@@ -22,12 +22,12 @@ public final class j implements pa.v {
 
     public final pa.u a(q5.g0 g0Var, pa.g gVar, wa.a aVar, qa.a aVar2, boolean z4) {
         pa.u uVar;
-        Object s22 = g0Var.I(new wa.a(aVar2.value())).s2();
+        Object y22 = g0Var.z(new wa.a(aVar2.value())).y2();
         boolean nullSafe = aVar2.nullSafe();
-        if (s22 instanceof pa.u) {
-            uVar = (pa.u) s22;
-        } else if (s22 instanceof pa.v) {
-            pa.v vVar = (pa.v) s22;
+        if (y22 instanceof pa.u) {
+            uVar = (pa.u) y22;
+        } else if (y22 instanceof pa.v) {
+            pa.v vVar = (pa.v) y22;
             if (z4) {
                 pa.v vVar2 = (pa.v) this.b.putIfAbsent(aVar.a, vVar);
                 if (vVar2 != null) {
@@ -36,11 +36,11 @@ public final class j implements pa.v {
             }
             uVar = vVar.create(gVar, aVar);
         } else {
-            boolean z10 = s22 instanceof pa.o;
+            boolean z10 = y22 instanceof pa.o;
             if (!z10) {
-                throw new IllegalArgumentException("Invalid attempt to bind an instance of " + s22.getClass().getName() + " as a @JsonAdapter for " + ra.d.k(aVar.b) + ". @JsonAdapter value must be a TypeAdapter, TypeAdapterFactory, JsonSerializer or JsonDeserializer.");
+                throw new IllegalArgumentException("Invalid attempt to bind an instance of " + y22.getClass().getName() + " as a @JsonAdapter for " + ra.d.k(aVar.b) + ". @JsonAdapter value must be a TypeAdapter, TypeAdapterFactory, JsonSerializer or JsonDeserializer.");
             }
-            a0 a0Var = new a0(z10 ? (pa.o) s22 : null, gVar, aVar, z4 ? c : d, nullSafe);
+            a0 a0Var = new a0(z10 ? (pa.o) y22 : null, gVar, aVar, z4 ? c : d, nullSafe);
             nullSafe = false;
             uVar = a0Var;
         }

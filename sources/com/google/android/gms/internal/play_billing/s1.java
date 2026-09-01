@@ -1,5 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
+import android.os.Build;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,10 +10,28 @@ import java.util.ServiceConfigurationError;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class s1 {
-    public static o1 d() {
+    public static boolean a(int i10) {
+        return (i10 & 32768) != 0;
+    }
+
+    public static boolean b(int i10) {
+        if (i10 == 15 || i10 == 255) {
+            return true;
+        }
+        if (i10 == 32768) {
+            return Build.VERSION.SDK_INT >= 30;
+        }
+        if (i10 != 32783) {
+            return i10 == 33023 || i10 == 0;
+        }
+        int i11 = Build.VERSION.SDK_INT;
+        return i11 < 28 || i11 > 29;
+    }
+
+    public static o1 c() {
         String str;
         ClassLoader classLoader = s1.class.getClassLoader();
         if (o1.class.equals(o1.class)) {
@@ -28,15 +47,15 @@ public abstract class s1 {
                 try {
                     android.support.v4.media.a.v(Class.forName(str, true, classLoader).getConstructor(null).newInstance(null));
                     throw null;
-                } catch (IllegalAccessException e) {
-                    throw new IllegalStateException(e);
-                } catch (InvocationTargetException e6) {
+                } catch (IllegalAccessException e6) {
                     throw new IllegalStateException(e6);
+                } catch (InvocationTargetException e10) {
+                    throw new IllegalStateException(e10);
                 }
-            } catch (InstantiationException e10) {
-                throw new IllegalStateException(e10);
-            } catch (NoSuchMethodException e11) {
+            } catch (InstantiationException e11) {
                 throw new IllegalStateException(e11);
+            } catch (NoSuchMethodException e12) {
+                throw new IllegalStateException(e12);
             }
         } catch (ClassNotFoundException unused) {
             try {
@@ -48,8 +67,8 @@ public abstract class s1 {
                             throw null;
                         }
                         throw new ClassCastException();
-                    } catch (ServiceConfigurationError e12) {
-                        Logger.getLogger(m1.class.getName()).logp(Level.SEVERE, "com.google.protobuf.GeneratedExtensionRegistryLoader", "load", "Unable to load ".concat(o1.class.getSimpleName()), (Throwable) e12);
+                    } catch (ServiceConfigurationError e13) {
+                        Logger.getLogger(m1.class.getName()).logp(Level.SEVERE, "com.google.protobuf.GeneratedExtensionRegistryLoader", "load", "Unable to load ".concat(o1.class.getSimpleName()), (Throwable) e13);
                     }
                 }
                 if (arrayList.size() == 1) {
@@ -60,25 +79,16 @@ public abstract class s1 {
                 }
                 try {
                     return (o1) o1.class.getMethod("combine", Collection.class).invoke(null, arrayList);
-                } catch (IllegalAccessException e13) {
-                    throw new IllegalStateException(e13);
-                } catch (NoSuchMethodException e14) {
+                } catch (IllegalAccessException e14) {
                     throw new IllegalStateException(e14);
-                } catch (InvocationTargetException e15) {
+                } catch (NoSuchMethodException e15) {
                     throw new IllegalStateException(e15);
+                } catch (InvocationTargetException e16) {
+                    throw new IllegalStateException(e16);
                 }
             } catch (Throwable th2) {
                 throw new ServiceConfigurationError(th2.getMessage(), th2);
             }
         }
-    }
-
-    public void b() {
-    }
-
-    public void c(androidx.biometric.v vVar) {
-    }
-
-    public void a(int i10, CharSequence charSequence) {
     }
 }

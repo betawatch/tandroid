@@ -1,39 +1,30 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class hx extends FrameLayout {
-    public final /* synthetic */ kz a;
+public final class hx extends f2.k0 {
+    public final /* synthetic */ int r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hx(kz kzVar, Context context) {
+    public hx(Context context, int i10) {
         super(context);
-        this.a = kzVar;
+        this.r = i10;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        kz kzVar = this.a;
-        fw fwVar = kzVar.F;
-        gw gwVar = kzVar.S;
-        ix ixVar = kzVar.M;
-        if (view != ixVar && view != gwVar) {
-            return super.drawChild(canvas, view, j10);
-        }
-        canvas.save();
-        float y10 = fwVar.getY() + fwVar.getMeasuredHeight() + 1.0f;
-        if (view == ixVar && gwVar != null) {
-            y10 = Math.max(y10, gwVar.getY() + gwVar.getMeasuredHeight() + 1.0f);
-        }
-        canvas.clipRect(0.0f, y10 - (AndroidUtilities.dp(16.0f) * kzVar.b.e), getMeasuredWidth(), getMeasuredHeight());
-        boolean drawChild = super.drawChild(canvas, view, j10);
-        canvas.restore();
-        return drawChild;
+    @Override // f2.k0
+    public final int i(int i10, int i11, int i12, int i13, int i14) {
+        return super.i(i10, i11, i12, i13, i14) + this.r;
+    }
+
+    @Override // f2.k0
+    public final int m(int i10) {
+        return super.m(i10) * 16;
+    }
+
+    @Override // f2.k0
+    public final int p() {
+        return -1;
     }
 }

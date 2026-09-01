@@ -2,7 +2,7 @@ package com.google.android.gms.common.api.internal;
 
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class q1 implements com.google.android.gms.common.api.k, com.google.android.gms.common.api.l {
     public final com.google.android.gms.common.api.e a;
@@ -28,7 +28,7 @@ public final class q1 implements com.google.android.gms.common.api.k, com.google
         m0 m0Var = this.c;
         m0Var.a.lock();
         try {
-            m0Var.m.h(aVar, eVar, z4);
+            m0Var.m.f(aVar, eVar, z4);
         } finally {
             m0Var.a.unlock();
         }

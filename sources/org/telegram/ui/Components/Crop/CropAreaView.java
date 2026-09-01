@@ -19,13 +19,13 @@ import android.view.animation.Interpolator;
 import e2.c;
 import m1.j;
 import org.telegram.messenger.AndroidUtilities;
-import ph.j2;
-import yf.a;
-import yf.l;
-import yf.m;
-import yf.n;
+import qh.j2;
+import zf.a;
+import zf.l;
+import zf.m;
+import zf.n;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public class CropAreaView extends ViewGroup {
     public int B;
@@ -659,7 +659,7 @@ public class CropAreaView extends ViewGroup {
                 this.B = x10;
                 this.C = y10;
                 boolean z4 = Math.abs(f12) > Math.abs(f13);
-                switch (j.b(this.o0)) {
+                switch (j.c(this.o0)) {
                     case 1:
                         rectF.left += f12;
                         rectF.top += f13;
@@ -865,7 +865,7 @@ public class CropAreaView extends ViewGroup {
             nVar3.n = 0.0f;
             m mVar = nVar3.J;
             if (mVar != null) {
-                mVar.b0(false);
+                mVar.N(false);
                 return true;
             }
         }

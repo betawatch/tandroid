@@ -19,18 +19,18 @@ import org.telegram.messenger.voip.VoIPGroupNotification;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.go;
-import org.telegram.ui.Components.ib0;
-import org.telegram.ui.Components.ko;
-import org.telegram.ui.Components.m71;
-import org.telegram.ui.Components.qb0;
-import org.telegram.ui.cu;
+import org.telegram.ui.Components.io;
+import org.telegram.ui.Components.kb0;
+import org.telegram.ui.Components.mo;
+import org.telegram.ui.Components.o71;
+import org.telegram.ui.Components.sb0;
+import org.telegram.ui.du;
 import org.telegram.ui.xn;
 import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -69,9 +69,9 @@ public final /* synthetic */ class v implements Runnable {
                 ((ConnectionsManager) this.d).lambda$discardConnection$0(this.b, this.c);
                 break;
             case 5:
-                org.telegram.ui.web.w0 w0Var = (org.telegram.ui.web.w0) this.d;
+                org.telegram.ui.web.x0 x0Var = (org.telegram.ui.web.x0) this.d;
                 for (int i12 = 0; i12 < this.b - this.c; i12++) {
-                    w0Var.goBack();
+                    x0Var.goBack();
                 }
                 break;
             case 6:
@@ -82,51 +82,51 @@ public final /* synthetic */ class v implements Runnable {
                 p2Var.presentFragment(new xn(bundle));
                 break;
             case 7:
-                ko koVar = (ko) this.d;
+                mo moVar = (mo) this.d;
                 int i13 = this.b;
                 if (i13 != 0) {
                     SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(this.c);
                     notificationsSettings.edit().putInt("last_selected_mute_until_time", i13).putInt("last_selected_mute_until_time2", notificationsSettings.getInt("last_selected_mute_until_time", 0)).apply();
                 }
-                koVar.x(i13);
+                moVar.v(i13);
                 break;
             case 8:
-                go goVar = (go) this.d;
+                io ioVar = (io) this.d;
                 int i14 = this.b;
                 if (i14 != 0) {
                     SharedPreferences notificationsSettings2 = MessagesController.getNotificationsSettings(this.c);
                     notificationsSettings2.edit().putInt("last_selected_mute_until_time", i14).putInt("last_selected_mute_until_time2", notificationsSettings2.getInt("last_selected_mute_until_time", 0)).apply();
                 }
-                goVar.run(Integer.valueOf(i14));
+                ioVar.run(Integer.valueOf(i14));
                 break;
             case 9:
-                qb0 qb0Var = ((ib0) this.d).U2;
-                View d = qb0Var.d();
-                ib0 ib0Var = qb0Var.f;
+                sb0 sb0Var = ((kb0) this.d).U2;
+                View d = sb0Var.d();
+                kb0 kb0Var = sb0Var.f;
                 if (d != null) {
                     int top = d.getTop() + this.b;
                     int top2 = d.getTop() + this.c;
                     int i15 = top2 - top;
-                    int paddingTop = ib0Var.getPaddingTop();
-                    int height = ib0Var.getHeight() - ib0Var.getPaddingBottom();
+                    int paddingTop = kb0Var.getPaddingTop();
+                    int height = kb0Var.getHeight() - kb0Var.getPaddingBottom();
                     if (i15 <= height - paddingTop) {
                         top = (top + top2) / 2;
                         paddingTop = (paddingTop + height) / 2;
                     }
                     int i16 = top - paddingTop;
                     if (i16 < 0) {
-                        ib0Var.scrollBy(0, i16);
+                        kb0Var.scrollBy(0, i16);
                         break;
                     }
                 }
                 break;
             case 10:
-                org.telegram.ui.Components.voip.g1 g1Var = ((org.telegram.ui.Components.voip.f1) this.d).a;
-                cf.f fVar = g1Var.L;
+                org.telegram.ui.Components.voip.h1 h1Var = ((org.telegram.ui.Components.voip.g1) this.d).a;
+                cf.f fVar = h1Var.L;
                 if (fVar != null) {
                     fVar.d(this.b, this.c);
                 }
-                g1Var.i(false);
+                h1Var.i(false);
                 break;
             case 11:
                 ((SurfaceTextureHelper) this.d).lambda$setTextureSize$2(this.b, this.c);
@@ -139,7 +139,7 @@ public final /* synthetic */ class v implements Runnable {
                 break;
             default:
                 int i17 = this.b;
-                tf.x xVar = (tf.x) this.d;
+                uf.x xVar = (uf.x) this.d;
                 try {
                     SQLiteCursor queryFinalized = MessagesStorage.getInstance(i17).getDatabase().queryFinalized("SELECT did, date FROM search_recent WHERE 1", new Object[0]);
                     ArrayList<Long> arrayList = new ArrayList<>();
@@ -157,7 +157,7 @@ public final /* synthetic */ class v implements Runnable {
                                 int encryptedChatId = DialogObject.getEncryptedChatId(longValue);
                                 if (!arrayList3.contains(Integer.valueOf(encryptedChatId))) {
                                     arrayList3.add(Integer.valueOf(encryptedChatId));
-                                    tf.y yVar = new tf.y();
+                                    uf.y yVar = new uf.y();
                                     yVar.c = longValue;
                                     yVar.b = queryFinalized.intValue(1);
                                     arrayList4.add(yVar);
@@ -168,7 +168,7 @@ public final /* synthetic */ class v implements Runnable {
                             long j10 = -longValue;
                             if (!arrayList2.contains(Long.valueOf(j10))) {
                                 arrayList2.add(Long.valueOf(j10));
-                                tf.y yVar2 = new tf.y();
+                                uf.y yVar2 = new uf.y();
                                 yVar2.c = longValue;
                                 yVar2.b = queryFinalized.intValue(1);
                                 arrayList4.add(yVar2);
@@ -176,7 +176,7 @@ public final /* synthetic */ class v implements Runnable {
                             }
                         } else if (i18 != 2 && !arrayList.contains(Long.valueOf(longValue))) {
                             arrayList.add(Long.valueOf(longValue));
-                            tf.y yVar22 = new tf.y();
+                            uf.y yVar22 = new uf.y();
                             yVar22.c = longValue;
                             yVar22.b = queryFinalized.intValue(1);
                             arrayList4.add(yVar22);
@@ -189,7 +189,7 @@ public final /* synthetic */ class v implements Runnable {
                         ArrayList<TLRPC.EncryptedChat> arrayList6 = new ArrayList<>();
                         MessagesStorage.getInstance(i17).getEncryptedChatsInternal(TextUtils.join(",", arrayList3), arrayList6, arrayList);
                         for (int i19 = 0; i19 < arrayList6.size(); i19++) {
-                            tf.y yVar3 = (tf.y) hVar.f(DialogObject.makeEncryptedDialogId(arrayList6.get(i19).id));
+                            uf.y yVar3 = (uf.y) hVar.f(DialogObject.makeEncryptedDialogId(arrayList6.get(i19).id));
                             if (yVar3 != null) {
                                 yVar3.a = arrayList6.get(i19);
                             }
@@ -202,13 +202,13 @@ public final /* synthetic */ class v implements Runnable {
                             TLRPC.Chat chat = arrayList7.get(i20);
                             long j11 = -chat.id;
                             if (chat.migrated_to != null) {
-                                tf.y yVar4 = (tf.y) hVar.f(j11);
+                                uf.y yVar4 = (uf.y) hVar.f(j11);
                                 hVar.l(j11);
                                 if (yVar4 != null) {
                                     arrayList4.remove(yVar4);
                                 }
                             } else {
-                                tf.y yVar5 = (tf.y) hVar.f(j11);
+                                uf.y yVar5 = (uf.y) hVar.f(j11);
                                 if (yVar5 != null) {
                                     yVar5.a = chat;
                                 }
@@ -219,17 +219,17 @@ public final /* synthetic */ class v implements Runnable {
                         MessagesStorage.getInstance(i17).getUsersInternal(arrayList, arrayList5);
                         for (int i21 = 0; i21 < arrayList5.size(); i21++) {
                             TLRPC.User user = arrayList5.get(i21);
-                            tf.y yVar6 = (tf.y) hVar.f(user.id);
+                            uf.y yVar6 = (uf.y) hVar.f(user.id);
                             if (yVar6 != null) {
                                 yVar6.a = user;
                             }
                         }
                     }
-                    Collections.sort(arrayList4, new cu(19));
-                    AndroidUtilities.runOnUIThread(new m71(xVar, arrayList4, hVar, 27));
+                    Collections.sort(arrayList4, new du(19));
+                    AndroidUtilities.runOnUIThread(new o71(xVar, arrayList4, hVar, 27));
                     break;
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e6) {
+                    FileLog.e(e6);
                 }
                 break;
         }

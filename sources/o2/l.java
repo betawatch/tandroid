@@ -1,10 +1,11 @@
 package o2;
 
+import androidx.biometric.f0;
 import java.lang.reflect.InvocationTargetException;
-import k7.h0;
+import k7.i0;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class l {
     public static final n a;
@@ -12,11 +13,11 @@ public abstract class l {
     static {
         n eVar;
         try {
-            eVar = new o((WebViewProviderFactoryBoundaryInterface) ee.b.a(WebViewProviderFactoryBoundaryInterface.class, h0.a()), 0);
+            eVar = new f0((WebViewProviderFactoryBoundaryInterface) ee.b.a(WebViewProviderFactoryBoundaryInterface.class, i0.a()), 21);
         } catch (ClassNotFoundException unused) {
             eVar = new e();
-        } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
-            throw new RuntimeException(e);
+        } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException e6) {
+            throw new RuntimeException(e6);
         }
         a = eVar;
     }

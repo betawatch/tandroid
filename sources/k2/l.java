@@ -1,8 +1,8 @@
 package k2;
 
-import j7.y7;
+import j7.z7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class l extends k {
     public i0.d[] a;
@@ -23,8 +23,8 @@ public abstract class l extends k {
     }
 
     public void setPathData(i0.d[] dVarArr) {
-        if (!y7.a(this.a, dVarArr)) {
-            this.a = y7.e(dVarArr);
+        if (!z7.a(this.a, dVarArr)) {
+            this.a = z7.e(dVarArr);
             return;
         }
         i0.d[] dVarArr2 = this.a;
@@ -45,6 +45,6 @@ public abstract class l extends k {
         this.a = null;
         this.c = 0;
         this.b = lVar.b;
-        this.a = y7.e(lVar.a);
+        this.a = z7.e(lVar.a);
     }
 }

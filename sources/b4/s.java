@@ -3,9 +3,9 @@ package b4;
 import j3.m0;
 import j3.n0;
 import java.util.Collections;
-import k7.s6;
+import k7.t6;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class s implements i {
     public final d0 a;
@@ -44,7 +44,7 @@ public final class s implements i {
         int i12;
         long j10;
         int i13;
-        boolean e;
+        boolean e6;
         v vVar;
         int i14;
         v vVar2;
@@ -130,18 +130,18 @@ public final class s implements i {
                         vVar6.b(new n0(m0Var));
                         this.e = true;
                         v vVar7 = this.j;
-                        e = vVar7.e(i22);
+                        e6 = vVar7.e(i22);
                         h5.w wVar3 = this.n;
-                        if (e) {
+                        if (e6) {
                             wVar3.D(h5.a.J(vVar7.c, (byte[]) vVar7.f), (byte[]) vVar7.f);
                             wVar3.G(5);
-                            s6.a(j12, wVar3, vVarArr);
+                            t6.a(j12, wVar3, vVarArr);
                         }
                         vVar = this.k;
                         if (vVar.e(i22)) {
                             wVar3.D(h5.a.J(vVar.c, (byte[]) vVar.f), (byte[]) vVar.f);
                             wVar3.G(5);
-                            s6.a(j12, wVar3, vVarArr);
+                            t6.a(j12, wVar3, vVarArr);
                         }
                         long j15 = this.m;
                         r rVar2 = this.d;
@@ -218,9 +218,9 @@ public final class s implements i {
                 j10 = j11;
                 i13 = i21;
                 v vVar72 = this.j;
-                e = vVar72.e(i22);
+                e6 = vVar72.e(i22);
                 h5.w wVar32 = this.n;
-                if (e) {
+                if (e6) {
                 }
                 vVar = this.k;
                 if (vVar.e(i22)) {
@@ -284,9 +284,9 @@ public final class s implements i {
         h0Var.b();
         this.b = h0Var.e;
         h0Var.b();
-        r3.v c22 = mVar.c2(h0Var.d, 2);
-        this.c = c22;
-        this.d = new r(c22);
+        r3.v i22 = mVar.i2(h0Var.d, 2);
+        this.c = i22;
+        this.d = new r(i22);
         this.a.b(mVar, h0Var);
     }
 

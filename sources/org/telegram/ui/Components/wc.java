@@ -25,7 +25,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public abstract class wc extends View {
     public static final int[] T;
@@ -45,7 +45,7 @@ public abstract class wc extends View {
     public final j6 K;
     public final j6 L;
     public final j6 M;
-    public eg.p2 N;
+    public fg.o2 N;
     public boolean O;
     public boolean P;
     public int Q;
@@ -67,15 +67,15 @@ public abstract class wc extends View {
     public final Paint y;
 
     static {
-        int i10 = org.telegram.ui.ActionBar.j6.lj;
-        int i11 = org.telegram.ui.ActionBar.j6.hj;
-        int i12 = org.telegram.ui.ActionBar.j6.ij;
-        int i13 = org.telegram.ui.ActionBar.j6.pj;
-        int i14 = org.telegram.ui.ActionBar.j6.mj;
-        int i15 = org.telegram.ui.ActionBar.j6.jj;
-        int i16 = org.telegram.ui.ActionBar.j6.nj;
-        int i17 = org.telegram.ui.ActionBar.j6.qj;
-        int i18 = org.telegram.ui.ActionBar.j6.kj;
+        int i10 = org.telegram.ui.ActionBar.k6.lj;
+        int i11 = org.telegram.ui.ActionBar.k6.hj;
+        int i12 = org.telegram.ui.ActionBar.k6.ij;
+        int i13 = org.telegram.ui.ActionBar.k6.pj;
+        int i14 = org.telegram.ui.ActionBar.k6.mj;
+        int i15 = org.telegram.ui.ActionBar.k6.jj;
+        int i16 = org.telegram.ui.ActionBar.k6.nj;
+        int i17 = org.telegram.ui.ActionBar.k6.qj;
+        int i18 = org.telegram.ui.ActionBar.k6.kj;
         T = new int[]{i10, i11, i12, i13, i14, i15, i16, i17, i13, i18, i18};
         int i19 = R.raw.cache_photos;
         int i20 = R.raw.cache_videos;
@@ -94,10 +94,10 @@ public abstract class wc extends View {
         this.b = new RectF();
         this.c = new RectF();
         this.h = true;
-        nr nrVar = nr.h;
-        this.n = new z5(this, 750L, nrVar);
+        pr prVar = pr.h;
+        this.n = new z5(this, 750L, prVar);
         this.r = false;
-        this.s = new z5(this, 650L, nrVar);
+        this.s = new z5(this, 650L, prVar);
         this.w = new float[2];
         this.x = new RectF();
         Paint paint = new Paint(1);
@@ -124,7 +124,7 @@ public abstract class wc extends View {
         this.v = new uc[i10];
         Paint.Style style = Paint.Style.STROKE;
         paint.setStyle(style);
-        paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.i6, false));
+        paint.setColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.i6, false));
         paint3.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(200.0f), new int[]{7263574, -9513642, -12469647, 4307569}, new float[]{0.0f, 0.07f, 0.93f, 1.0f}, tileMode);
@@ -138,24 +138,24 @@ public abstract class wc extends View {
         paint2.setStyle(style);
         paint2.setStrokeCap(Paint.Cap.ROUND);
         paint2.setStrokeJoin(Paint.Join.ROUND);
-        j6Var.k(0.2f, 450L, nrVar);
+        j6Var.k(0.2f, 450L, prVar);
         j6Var.v = 0.6f;
-        j6Var.r(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
+        j6Var.r(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.G6, false));
         j6Var.u(AndroidUtilities.bold());
         j6Var.t(AndroidUtilities.dp(32.0f));
         j6Var.b = 17;
-        j6Var2.k(0.6f, 450L, nrVar);
+        j6Var2.k(0.6f, 450L, prVar);
         j6Var2.v = 0.6f;
-        j6Var2.r(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.y6, false));
+        j6Var2.r(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.y6, false));
         j6Var2.t(AndroidUtilities.dp(12.0f));
         j6Var2.b = 17;
-        j6Var3.k(0.2f, 450L, nrVar);
+        j6Var3.k(0.2f, 450L, prVar);
         j6Var3.v = 0.6f;
         j6Var3.a.setShader(linearGradient2);
         j6Var3.u(AndroidUtilities.bold());
         j6Var3.t(AndroidUtilities.dp(32.0f));
         j6Var3.b = 17;
-        j6Var4.k(0.6f, 450L, nrVar);
+        j6Var4.k(0.6f, 450L, prVar);
         j6Var4.v = 0.6f;
         j6Var4.a.setShader(linearGradient2);
         j6Var4.u(AndroidUtilities.bold());
@@ -169,8 +169,8 @@ public abstract class wc extends View {
             }
             uc ucVar = new uc(this);
             ucVarArr[i12] = ucVar;
-            int v = org.telegram.ui.ActionBar.j6.v(org.telegram.ui.ActionBar.j6.w0(null, iArr[i12], false), ConnectionsManager.FileTypeAudio);
-            int v10 = org.telegram.ui.ActionBar.j6.v(org.telegram.ui.ActionBar.j6.w0(null, iArr[i12], false), 822083583);
+            int v = org.telegram.ui.ActionBar.k6.v(org.telegram.ui.ActionBar.k6.w0(null, iArr[i12], false), ConnectionsManager.FileTypeAudio);
+            int v10 = org.telegram.ui.ActionBar.k6.v(org.telegram.ui.ActionBar.k6.w0(null, iArr[i12], false), 822083583);
             AndroidUtilities.dp(50.0f);
             RadialGradient radialGradient = new RadialGradient(0.0f, 0.0f, AndroidUtilities.dp(86.0f), new int[]{v10, v}, new float[]{0.3f, 1.0f}, Shader.TileMode.CLAMP);
             ucVar.v = radialGradient;
@@ -271,7 +271,7 @@ public abstract class wc extends View {
         }
         float currentTimeMillis = ((a0 == null ? System.currentTimeMillis() : r9.longValue()) - W.longValue()) * 0.6f;
         float[] fArr2 = this.w;
-        rp.a(fArr2, currentTimeMillis % 5400.0f);
+        tp.a(fArr2, currentTimeMillis % 5400.0f);
         float f27 = fArr2[0];
         float f28 = fArr2[1];
         if (d > 0.0f) {
@@ -301,7 +301,7 @@ public abstract class wc extends View {
                 break;
             }
             uc ucVar2 = ucVarArr[i11];
-            rp.a(fArr2, (currentTimeMillis + (i11 * 80)) % 5400.0f);
+            tp.a(fArr2, (currentTimeMillis + (i11 * 80)) % 5400.0f);
             float min = Math.min(Math.max(fArr2[c10], f27), f28);
             float min2 = Math.min(Math.max(fArr2[c3], f27), f28);
             if (d < f11 || min < min2) {
@@ -399,7 +399,7 @@ public abstract class wc extends View {
                                 f20 = f33;
                                 double d15 = width6;
                                 float f36 = f32 + width4;
-                                double a2 = kh.a2.a(a(f36), d15, rectF12.centerX());
+                                double a2 = l.d.a(a(f36), d15, rectF12.centerX());
                                 z10 = z15;
                                 i10 = i11;
                                 f21 = abs;
@@ -417,12 +417,12 @@ public abstract class wc extends View {
                             path.arcTo(rectF12, f32 + width4, f35 - (width4 * 2.0f));
                             if (z10) {
                                 double d16 = width6;
-                                float a10 = (float) kh.a2.a(a(r4), d16, rectF12.centerX());
+                                float a10 = (float) l.d.a(a(r4), d16, rectF12.centerX());
                                 float sin2 = (float) ((Math.sin(a(r4)) * d16) + rectF12.centerY());
                                 rectF11.set(a10 - min3, sin2 - min3, a10 + min3, sin2 + min3);
                                 path.arcTo(rectF11, f20 - width4, 90.0f);
                                 double d17 = width7;
-                                float a11 = (float) kh.a2.a(a(r4), d17, rectF2.centerX());
+                                float a11 = (float) l.d.a(a(r4), d17, rectF2.centerX());
                                 float sin3 = (float) ((Math.sin(a(r4)) * d17) + rectF2.centerY());
                                 rectF11.set(a11 - min3, sin3 - min3, a11 + min3, sin3 + min3);
                                 path.arcTo(rectF11, (f20 - width5) + 90.0f, 90.0f);
@@ -432,7 +432,7 @@ public abstract class wc extends View {
                             if (z10) {
                                 double d18 = width7;
                                 float f39 = f32 + width5;
-                                double a12 = kh.a2.a(a(f39), d18, rectF5.centerX());
+                                double a12 = l.d.a(a(f39), d18, rectF5.centerX());
                                 double sin4 = (Math.sin(a(f39)) * d18) + rectF5.centerY();
                                 float f40 = (float) a12;
                                 float f41 = (float) sin4;
@@ -567,21 +567,21 @@ public abstract class wc extends View {
         }
         if (f44 > 0.0f) {
             if (this.N == null) {
-                eg.p2 p2Var = new eg.p2(25);
-                this.N = p2Var;
-                p2Var.N = 100;
-                p2Var.M = z4;
-                p2Var.G = z4;
-                p2Var.K = false;
-                p2Var.H = z4;
-                p2Var.r = 18;
-                p2Var.B = false;
-                p2Var.j = AndroidUtilities.dp(80.0f);
-                eg.p2 p2Var2 = this.N;
-                p2Var2.w = 0.85f;
-                p2Var2.v = 0.85f;
-                p2Var2.u = 0.85f;
-                p2Var2.c();
+                fg.o2 o2Var = new fg.o2(25);
+                this.N = o2Var;
+                o2Var.N = 100;
+                o2Var.M = z4;
+                o2Var.G = z4;
+                o2Var.K = false;
+                o2Var.H = z4;
+                o2Var.r = 18;
+                o2Var.B = false;
+                o2Var.j = AndroidUtilities.dp(80.0f);
+                fg.o2 o2Var2 = this.N;
+                o2Var2.w = 0.85f;
+                o2Var2.v = 0.85f;
+                o2Var2.u = 0.85f;
+                o2Var2.c();
                 rectF = rectF14;
             } else {
                 RectF rectF15 = this.B;
@@ -660,7 +660,7 @@ public abstract class wc extends View {
         float x10 = motionEvent.getX();
         float y10 = motionEvent.getY();
         RectF rectF = this.b;
-        float a2 = k7.n6.a(rectF.centerX(), rectF.centerY(), x10, y10);
+        float a2 = k7.o6.a(rectF.centerX(), rectF.centerY(), x10, y10);
         float atan2 = (float) ((Math.atan2(y10 - rectF.centerY(), x10 - rectF.centerX()) / 3.141592653589793d) * 180.0d);
         if (atan2 < 0.0f) {
             atan2 += 360.0f;
@@ -902,7 +902,7 @@ public abstract class wc extends View {
         uc[] ucVarArr4 = ucVarArr3;
         AndroidUtilities.roundPercents(this.S, this.R);
         if (this.d == 0) {
-            Arrays.sort(vcVarArr2, new nh.e4(19));
+            Arrays.sort(vcVarArr2, new oh.k0(19));
             int i17 = 0;
             while (true) {
                 if (i17 > vcVarArr2.length) {
@@ -1113,9 +1113,9 @@ public abstract class wc extends View {
         matrix2.reset();
         matrix2.setTranslate(rectF.left, -rectF.centerY());
         this.G.setLocalMatrix(matrix2);
-        eg.p2 p2Var = this.N;
-        if (p2Var != null) {
-            p2Var.a.set(0.0f, 0.0f, AndroidUtilities.dp(140.0f), AndroidUtilities.dp(140.0f));
+        fg.o2 o2Var = this.N;
+        if (o2Var != null) {
+            o2Var.a.set(0.0f, 0.0f, AndroidUtilities.dp(140.0f), AndroidUtilities.dp(140.0f));
             this.N.a.offset((getMeasuredWidth() - this.N.a.width()) / 2.0f, (getMeasuredHeight() - this.N.a.height()) / 2.0f);
             this.N.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
             this.N.f();

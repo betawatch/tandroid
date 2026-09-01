@@ -1,357 +1,167 @@
 package hg;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import cg.h0;
-import cg.n;
-import f2.l1;
-import ig.e0;
-import ig.f0;
-import ig.s;
-import ig.v;
-import java.util.Date;
+import eg.d3;
+import java.util.ArrayList;
+import java.util.Calendar;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.p2;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.c3;
+import org.telegram.ui.ActionBar.h3;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.b4;
+import org.telegram.ui.Components.c4;
 import org.telegram.ui.Components.p9;
-import org.telegram.ui.Components.rl0;
+import org.telegram.ui.Components.q70;
+import org.telegram.ui.Components.t3;
+import org.telegram.ui.Components.v3;
+import org.telegram.ui.Components.y4;
+import org.telegram.ui.Components.yc0;
+import org.telegram.ui.Components.yx0;
+import org.telegram.ui.Components.z4;
 import org.telegram.ui.Components.z8;
-import org.telegram.ui.yh;
+import org.telegram.ui.g51;
+import org.telegram.ui.vl0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public abstract class e extends rl0 {
-    public final f6 c;
-    public boolean d;
-    public p2 e;
-    public TLRPC.TL_payments_checkedGiftCode f;
-    public String h;
-    public FrameLayout n;
+public final /* synthetic */ class e implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
 
-    public e(f6 f6Var) {
-        this.c = f6Var;
+    public /* synthetic */ e(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.b = obj2;
+        this.e = obj3;
+        this.f = obj4;
+        this.h = obj5;
+        this.d = obj6;
     }
 
-    @Override // org.telegram.ui.Components.rl0
-    public final boolean D(l1 l1Var) {
-        return false;
-    }
-
-    public abstract void E();
-
-    public abstract void F(TLObject tLObject);
-
-    @Override // f2.o0
-    public final int h() {
-        return 5;
-    }
-
-    @Override // f2.o0
-    public final int j(int i10) {
-        if (i10 == 0) {
-            return 0;
-        }
-        int i11 = 1;
-        if (i10 != 1) {
-            i11 = 2;
-            if (i10 != 2) {
-                i11 = 3;
-                if (i10 != 3) {
-                    i11 = 4;
-                    if (i10 != 4) {
-                        return 5;
-                    }
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                Calendar calendar = (Calendar) this.c;
+                yc0 yc0Var = (yc0) this.b;
+                n nVar = (n) this.e;
+                o oVar = (o) this.f;
+                r0 r0Var = (r0) this.h;
+                c3 c3Var = (c3) this.d;
+                calendar.setTimeInMillis((yc0Var.getValue() * 86400000) + System.currentTimeMillis());
+                calendar.set(11, nVar.getValue());
+                calendar.set(12, oVar.getValue() * 5);
+                r0Var.I((int) (calendar.getTimeInMillis() / 1000), 0, true);
+                c3Var.a.dismissRunnable.run();
+                break;
+            case 1:
+                yc0 yc0Var2 = (yc0) this.b;
+                yc0 yc0Var3 = (yc0) this.e;
+                yc0 yc0Var4 = (yc0) this.f;
+                Calendar calendar2 = (Calendar) this.c;
+                MessagesStorage.IntCallback intCallback = (MessagesStorage.IntCallback) this.h;
+                c3 c3Var2 = (c3) this.d;
+                z4.b(yc0Var2, yc0Var3, yc0Var4);
+                calendar2.set(1, yc0Var4.getValue());
+                calendar2.set(2, yc0Var3.getValue());
+                calendar2.set(5, yc0Var2.getValue());
+                calendar2.set(12, 0);
+                calendar2.set(11, 0);
+                calendar2.set(13, 0);
+                intCallback.run((int) (calendar2.getTimeInMillis() / 1000));
+                c3Var2.a.dismissRunnable.run();
+                break;
+            case 2:
+                yc0 yc0Var5 = (yc0) this.b;
+                b4 b4Var = (b4) this.e;
+                c4 c4Var = (c4) this.f;
+                Calendar calendar3 = (Calendar) this.c;
+                vl0 vl0Var = (vl0) this.h;
+                c3 c3Var3 = (c3) this.d;
+                boolean g10 = z4.g(null, null, 0L, 0L, 0, yc0Var5, b4Var, c4Var);
+                calendar3.setTimeInMillis(System.currentTimeMillis());
+                calendar3.add(6, yc0Var5.getValue());
+                calendar3.set(11, b4Var.getValue());
+                calendar3.set(12, c4Var.getValue());
+                if (g10) {
+                    calendar3.set(13, 0);
+                    calendar3.set(14, 0);
                 }
-            }
-        }
-        return i11;
-    }
-
-    @Override // f2.o0
-    public final void v(l1 l1Var, int i10) {
-        int i11;
-        char c3;
-        String formatPluralString;
-        int i12 = l1Var.f;
-        View view = l1Var.a;
-        if (i12 == 0) {
-            s sVar = (s) view;
-            if (this.d) {
-                sVar.c.setText(LocaleController.formatString("BoostingGiftLink", R.string.BoostingGiftLink, new Object[0]));
-                sVar.d.setText(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingLinkAllows", R.string.BoostingLinkAllows, new Object[0])));
-            } else {
-                sVar.c.setText(LocaleController.formatString("BoostingUsedGiftLink", R.string.BoostingUsedGiftLink, new Object[0]));
-                sVar.d.setText(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingLinkUsed", R.string.BoostingLinkUsed, new Object[0])));
-            }
-            TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode = this.f;
-            if (tL_payments_checkedGiftCode.boost != null) {
-                long j10 = tL_payments_checkedGiftCode.to_id;
-                final h0 h0Var = new h0(this, 11);
-                sVar.c.setText(LocaleController.formatString("BoostingGiftLink", R.string.BoostingGiftLink, new Object[0]));
-                SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.getString(R.string.BoostingLinkAllowsToUser));
-                final TLRPC.User user = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(j10));
-                final int i13 = 0;
-                sVar.d.setText(AndroidUtilities.replaceCharSequence("%1$s", replaceTags, AndroidUtilities.replaceSingleTag("**" + UserObject.getUserName(user) + "**", j6.gc, 2, new Runnable() { // from class: ig.o
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i13) {
-                            case 0:
-                                h0Var.run(user);
-                                break;
-                            default:
-                                h0Var.run(user);
-                                break;
-                        }
-                    }
-                }, sVar.e)));
-            }
-            if (this.f.to_id == -1) {
-                sVar.c.setText(LocaleController.formatString("BoostingGiftLink", R.string.BoostingGiftLink, new Object[0]));
-                sVar.d.setText(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingLinkAllowsAnyone", R.string.BoostingLinkAllowsAnyone, new Object[0])));
-                return;
-            }
-            return;
-        }
-        int i14 = 1;
-        if (i12 == 1) {
-            v vVar = (v) view;
-            vVar.setSlug(this.h);
-            if (this.f.boost != null && this.h == null) {
-                vVar.a(new c(this, 0));
-            }
-            String str = this.h;
-            if ((str == null || str.isEmpty()) && this.f.to_id == -1) {
-                vVar.a(new c(this, 0));
-                return;
-            }
-            return;
-        }
-        if (i12 != 2) {
-            if (i12 != 3) {
-                if (i12 != 4) {
-                    return;
+                int timeInMillis = (int) (calendar3.getTimeInMillis() / 1000);
+                g51 g51Var = (g51) vl0Var.b;
+                ((boolean[]) vl0Var.c)[0] = true;
+                g51Var.e(Integer.valueOf(timeInMillis));
+                c3Var3.a.dismissRunnable.run();
+                break;
+            case 3:
+                yc0 yc0Var6 = (yc0) this.b;
+                t3 t3Var = (t3) this.e;
+                v3 v3Var = (v3) this.f;
+                Calendar calendar4 = (Calendar) this.c;
+                y4 y4Var = (y4) this.h;
+                c3 c3Var4 = (c3) this.d;
+                boolean g11 = z4.g(null, null, 0L, 0L, 0, yc0Var6, t3Var, v3Var);
+                calendar4.setTimeInMillis(System.currentTimeMillis());
+                calendar4.add(6, yc0Var6.getValue());
+                calendar4.set(11, t3Var.getValue());
+                calendar4.set(12, v3Var.getValue());
+                if (g11) {
+                    calendar4.set(13, 0);
+                    calendar4.set(14, 0);
                 }
-                ig.a aVar = (ig.a) view;
-                aVar.setOkStyle(this.d);
-                aVar.setOnClickListener(new n(7, this, aVar));
-                TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode2 = this.f;
-                if (tL_payments_checkedGiftCode2.boost != null || tL_payments_checkedGiftCode2.flags == -1) {
-                    aVar.e = false;
-                    ph.d dVar = aVar.a;
-                    dVar.setShowZero(false);
-                    dVar.setEnabled(true);
-                    dVar.g(LocaleController.formatString("Close", R.string.Close, new Object[0]), false, true);
-                    aVar.setOnClickListener(new androidx.mediarouter.app.c(this, 9));
-                    return;
-                }
-                return;
-            }
-            f0 f0Var = (f0) view;
-            f0Var.setTextGravity(17);
-            f0Var.setTextColor(j6.w0(null, j6.G6, false));
-            f0Var.setTopPadding(14);
-            f0Var.setBottomPadding(15);
-            TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode3 = this.f;
-            if (tL_payments_checkedGiftCode3.boost == null) {
-                if (this.d) {
-                    f0Var.setText(AndroidUtilities.replaceSingleTag(tL_payments_checkedGiftCode3.to_id == -1 ? LocaleController.getString(R.string.BoostingSendLinkToAnyone) : LocaleController.getString(R.string.BoostingSendLinkToFriends), j6.gc, 0, new c(this, i14), this.c));
-                    return;
-                } else {
-                    Date date = new Date(this.f.used_date * 1000);
-                    f0Var.setText(LocaleController.formatString("BoostingUsedLinkDate", R.string.BoostingUsedLinkDate, LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, LocaleController.getInstance().getFormatterYear().format(date), LocaleController.getInstance().getFormatterDay().format(date))));
-                    return;
-                }
-            }
-            String str2 = this.h;
-            if (str2 == null || str2.isEmpty()) {
-                f0Var.setText(LocaleController.getString(R.string.BoostingLinkNotActivated));
-                return;
-            } else {
-                f0Var.setFixedSize(14);
-                f0Var.setText(null);
-                return;
-            }
-        }
-        e0 e0Var = (e0) view;
-        final TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode4 = this.f;
-        final h0 h0Var2 = new h0(this, 11);
-        p9 p9Var = e0Var.h;
-        FrameLayout frameLayout = e0Var.w;
-        p9 p9Var2 = e0Var.f;
-        TextView textView = e0Var.a;
-        TextView textView2 = e0Var.b;
-        f6 f6Var = e0Var.n;
-        Date date2 = new Date(tL_payments_checkedGiftCode4.date * 1000);
-        e0Var.e.setText(LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, LocaleController.getInstance().getFormatterYear().format(date2), LocaleController.getInstance().getFormatterDay().format(date2)));
-        TextView textView3 = e0Var.d;
-        textView3.setTextColor(j6.v0(tL_payments_checkedGiftCode4.via_giveaway ? j6.m5 : j6.j5, f6Var));
-        TLRPC.Chat chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(-DialogObject.getPeerDialogId(tL_payments_checkedGiftCode4.from_id)));
-        boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat);
-        if (tL_payments_checkedGiftCode4.via_giveaway) {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-            spannableStringBuilder.append((CharSequence) "**");
-            spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.BoostingGiveaway));
-            spannableStringBuilder.append((CharSequence) "**");
-            final int i15 = 0;
-            textView3.setText(AndroidUtilities.replaceSingleTag(spannableStringBuilder.toString(), j6.gc, 0, new Runnable() { // from class: ig.b0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    switch (i15) {
-                        case 0:
-                            h0Var2.run(tL_payments_checkedGiftCode4);
-                            break;
-                        default:
-                            h0Var2.run(tL_payments_checkedGiftCode4);
-                            break;
+                y4Var.I((int) (calendar4.getTimeInMillis() / 1000), 0, true);
+                c3Var4.a.dismissRunnable.run();
+                break;
+            case 4:
+                yx0.x((yx0) this.c, (int[]) this.b, (EditTextBoldCursor) this.e, (TextView) this.f, (TextView) this.h, (AlertDialog$Builder) this.d);
+                break;
+            default:
+                h3 h3Var = (h3) this.c;
+                FrameLayout frameLayout = (FrameLayout) this.b;
+                ArrayList arrayList = (ArrayList) this.e;
+                int[] iArr = (int[]) this.f;
+                z8 z8Var = (z8) this.h;
+                p9 p9Var = (p9) this.d;
+                q70 F = q70.F(h3Var.container, h3Var.getResourcesProvider(), frameLayout);
+                int size = arrayList.size();
+                int i10 = 0;
+                while (i10 < size) {
+                    int i11 = i10 + 1;
+                    int intValue = ((Integer) arrayList.get(i10)).intValue();
+                    TLRPC.User currentUser = UserConfig.getInstance(intValue).getCurrentUser();
+                    if (currentUser != null) {
+                        F.e(intValue, iArr[0] == intValue, new d3(iArr, intValue, z8Var, currentUser, p9Var, 24));
                     }
+                    i10 = i11;
                 }
-            }, f6Var));
-            textView3.setOnClickListener(new n(9, h0Var2, tL_payments_checkedGiftCode4));
-        } else {
-            textView3.setText(LocaleController.getString(isChannelAndNotMegaGroup ? R.string.BoostingYouWereSelected : R.string.BoostingYouWereSelectedGroup));
-            textView3.setOnClickListener(null);
-        }
-        int i16 = tL_payments_checkedGiftCode4.months;
-        if (i16 == 12) {
-            i11 = 1;
-            formatPluralString = LocaleController.formatPluralString("Years", 1, new Object[0]);
-            c3 = 0;
-        } else {
-            i11 = 1;
-            c3 = 0;
-            formatPluralString = LocaleController.formatPluralString("Months", i16, new Object[0]);
-        }
-        TextView textView4 = e0Var.c;
-        int i17 = R.string.BoostingTelegramPremiumFor;
-        String str3 = formatPluralString;
-        Object[] objArr = new Object[i11];
-        objArr[c3] = str3;
-        textView4.setText(LocaleController.formatString("BoostingTelegramPremiumFor", i17, objArr));
-        if (chat != null) {
-            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-            spannableStringBuilder2.append((CharSequence) "**");
-            spannableStringBuilder2.append((CharSequence) chat.title);
-            spannableStringBuilder2.append((CharSequence) "**");
-            textView.setText(Emoji.replaceEmoji(AndroidUtilities.replaceSingleTag(spannableStringBuilder2.toString(), j6.gc, 0, new gf.c(16, h0Var2, chat), f6Var), textView.getPaint().getFontMetricsInt(), false));
-            p9Var2.e(chat, new z8(chat));
-            frameLayout.setOnClickListener(new n(10, h0Var2, chat));
-        } else {
-            final TLRPC.User user2 = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(tL_payments_checkedGiftCode4.from_id.user_id));
-            final int i18 = 0;
-            textView.setText(Emoji.replaceEmoji(UserObject.getFirstName(user2), textView.getPaint().getFontMetricsInt(), false));
-            p9Var2.e(user2, new z8(0, user2));
-            frameLayout.setOnClickListener(new View.OnClickListener() { // from class: ig.c0
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view2) {
-                    switch (i18) {
-                        case 0:
-                            h0Var2.run(user2);
-                            break;
-                        default:
-                            h0Var2.run(user2);
-                            break;
-                    }
-                }
-            });
-        }
-        if (tL_payments_checkedGiftCode4.to_id == -1 && tL_payments_checkedGiftCode4.via_giveaway) {
-            SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder();
-            spannableStringBuilder3.append((CharSequence) "**");
-            spannableStringBuilder3.append((CharSequence) LocaleController.getString(R.string.BoostingIncompleteGiveaway));
-            spannableStringBuilder3.append((CharSequence) "**");
-            final int i19 = 1;
-            textView3.setText(AndroidUtilities.replaceSingleTag(spannableStringBuilder3.toString(), j6.gc, 0, new Runnable() { // from class: ig.b0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    switch (i19) {
-                        case 0:
-                            h0Var2.run(tL_payments_checkedGiftCode4);
-                            break;
-                        default:
-                            h0Var2.run(tL_payments_checkedGiftCode4);
-                            break;
-                    }
-                }
-            }, f6Var));
-            textView2.setText(LocaleController.getString(R.string.BoostingNoRecipient));
-            textView2.setTextColor(j6.v0(j6.j5, f6Var));
-            ((ViewGroup.MarginLayoutParams) textView2.getLayoutParams()).leftMargin = 0;
-            ((ViewGroup.MarginLayoutParams) textView2.getLayoutParams()).rightMargin = 0;
-            p9Var.setVisibility(8);
-        } else {
-            final TLRPC.User user3 = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(tL_payments_checkedGiftCode4.to_id));
-            if (user3 != null) {
-                SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder();
-                spannableStringBuilder4.append((CharSequence) "**");
-                spannableStringBuilder4.append((CharSequence) UserObject.getFirstName(user3));
-                spannableStringBuilder4.append((CharSequence) "**");
-                final int i20 = 1;
-                textView2.setText(Emoji.replaceEmoji(AndroidUtilities.replaceSingleTag(spannableStringBuilder4.toString(), j6.gc, 0, new Runnable() { // from class: ig.o
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i20) {
-                            case 0:
-                                h0Var2.run(user3);
-                                break;
-                            default:
-                                h0Var2.run(user3);
-                                break;
-                        }
-                    }
-                }, f6Var), textView2.getPaint().getFontMetricsInt(), false));
-                p9Var.e(user3, new z8(0, user3));
-                e0Var.x.setOnClickListener(new View.OnClickListener() { // from class: ig.c0
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view2) {
-                        switch (i20) {
-                            case 0:
-                                h0Var2.run(user3);
-                                break;
-                            default:
-                                h0Var2.run(user3);
-                                break;
-                        }
-                    }
-                });
-            }
-        }
-        if (tL_payments_checkedGiftCode4.boost != null) {
-            e0Var.y.setVisibility(8);
+                F.t = false;
+                F.Y = true;
+                F.s = 0;
+                F.i = 3;
+                F.a0(-AndroidUtilities.dp(8.0f), -AndroidUtilities.dp(8.0f));
+                F.Z();
+                break;
         }
     }
 
-    @Override // f2.o0
-    public final l1 x(ViewGroup viewGroup, int i10) {
-        View vVar;
-        Context context = viewGroup.getContext();
-        f6 f6Var = this.c;
-        if (i10 == 1) {
-            vVar = new v(context, f6Var);
-        } else if (i10 == 2) {
-            vVar = new e0(context, f6Var);
-        } else if (i10 == 3) {
-            vVar = new f0(context, f6Var);
-        } else if (i10 != 4) {
-            vVar = i10 != 5 ? new s(context, f6Var) : new View(context);
-        } else {
-            vVar = new ig.a(context, f6Var);
-            vVar.setPadding(0, 0, 0, AndroidUtilities.dp(14.0f));
-        }
-        return yh.o(vVar, vVar, -1, -2);
+    public /* synthetic */ e(yc0 yc0Var, yc0 yc0Var2, yc0 yc0Var3, Calendar calendar, Object obj, c3 c3Var, int i10) {
+        this.a = i10;
+        this.b = yc0Var;
+        this.e = yc0Var2;
+        this.f = yc0Var3;
+        this.c = calendar;
+        this.h = obj;
+        this.d = c3Var;
     }
 }

@@ -2,9 +2,8 @@ package j3;
 
 import android.os.SystemClock;
 import android.text.TextUtils;
-import vh.v2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class n extends t1 {
     public final int c;
@@ -53,7 +52,7 @@ public final class n extends t1 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public n(int i10, Throwable th2, int i11, String str, int i12, n0 n0Var, int i13, boolean z4) {
-        this(TextUtils.isEmpty(null) ? r0 : v2.k(r0, ": null"), th2, i11, i10, r5, r6, r7, i13, null, SystemClock.elapsedRealtime(), z4);
+        this(TextUtils.isEmpty(null) ? r0 : w.c.e(r0, ": null"), th2, i11, i10, r5, r6, r7, i13, null, SystemClock.elapsedRealtime(), z4);
         String str2;
         int i14;
         n0 n0Var2;

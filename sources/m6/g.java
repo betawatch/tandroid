@@ -3,7 +3,7 @@ package m6;
 import android.os.Looper;
 import android.util.Log;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class g {
     public static ClassLoader a;
@@ -18,7 +18,7 @@ public abstract class g {
     */
     public static synchronized ClassLoader a() {
         ClassLoader classLoader;
-        SecurityException e;
+        SecurityException e6;
         Thread thread;
         ThreadGroup threadGroup;
         f fVar;
@@ -70,23 +70,23 @@ public abstract class g {
                                     if (thread == null) {
                                         try {
                                             fVar = new f(threadGroup, "GmsDynamite");
-                                        } catch (SecurityException e6) {
-                                            e = e6;
+                                        } catch (SecurityException e10) {
+                                            e6 = e10;
                                         }
                                         try {
                                             fVar.setContextClassLoader(null);
                                             fVar.start();
                                             thread = fVar;
-                                        } catch (SecurityException e10) {
-                                            e = e10;
+                                        } catch (SecurityException e11) {
+                                            e6 = e11;
                                             thread = fVar;
-                                            Log.w("DynamiteLoaderV2CL", "Failed to enumerate thread/threadgroup " + e.getMessage());
+                                            Log.w("DynamiteLoaderV2CL", "Failed to enumerate thread/threadgroup " + e6.getMessage());
                                             thread2 = thread;
                                             b = thread2;
                                         }
                                     }
-                                } catch (SecurityException e11) {
-                                    e = e11;
+                                } catch (SecurityException e12) {
+                                    e6 = e12;
                                     thread = null;
                                 }
                             } finally {
@@ -99,8 +99,8 @@ public abstract class g {
                 synchronized (thread2) {
                     try {
                         classLoader2 = b.getContextClassLoader();
-                    } catch (SecurityException e12) {
-                        Log.w("DynamiteLoaderV2CL", "Failed to get thread context classloader " + e12.getMessage());
+                    } catch (SecurityException e13) {
+                        Log.w("DynamiteLoaderV2CL", "Failed to get thread context classloader " + e13.getMessage());
                     }
                 }
                 a = classLoader2;

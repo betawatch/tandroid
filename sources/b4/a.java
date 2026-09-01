@@ -2,7 +2,7 @@ package b4;
 
 import org.telegram.ui.Components.jb;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a implements r3.k {
     public final b a = new b(null, 0);
@@ -18,8 +18,8 @@ public final class a implements r3.k {
     @Override // r3.k
     public final void e(r3.m mVar) {
         this.a.c(mVar, new h0(0, 1));
-        mVar.f1();
-        mVar.g2(new r3.n(-9223372036854775807L));
+        mVar.i1();
+        mVar.m2(new r3.n(-9223372036854775807L));
     }
 
     @Override // r3.k
@@ -61,7 +61,7 @@ public final class a implements r3.k {
         int i10 = 0;
         while (true) {
             hVar = (r3.h) lVar;
-            hVar.h(wVar.a, 0, 10, false);
+            hVar.f(wVar.a, 0, 10, false);
             wVar.F(0);
             if (wVar.w() != 4801587) {
                 break;
@@ -77,7 +77,7 @@ public final class a implements r3.k {
         loop1: while (true) {
             int i12 = 0;
             while (true) {
-                hVar.h(wVar.a, 0, 6, false);
+                hVar.f(wVar.a, 0, 6, false);
                 wVar.F(0);
                 if (wVar.z() != 2935) {
                     break;

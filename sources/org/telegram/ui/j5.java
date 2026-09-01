@@ -10,7 +10,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public abstract class j5 extends androidx.fragment.app.v {
     public int L = -1;
@@ -28,9 +28,9 @@ public abstract class j5 extends androidx.fragment.app.v {
                 x(R.raw.permission_request_camera, LocaleController.getString(R.string.VoipNeedCameraPermission));
                 return true;
             }
-            c60 c60Var = c60.A3;
-            if (c60Var != null) {
-                c60Var.n.callOnClick();
+            d60 d60Var = d60.A3;
+            if (d60Var != null) {
+                d60Var.n.callOnClick();
                 return true;
             }
         } else {
@@ -94,9 +94,9 @@ public abstract class j5 extends androidx.fragment.app.v {
         return true;
     }
 
-    public final org.telegram.ui.ActionBar.d2 v(int i10, String str) {
+    public final org.telegram.ui.ActionBar.d2 w(int i10, String str) {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this);
-        alertDialog$Builder.m(i10, 72, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.L5, false), null);
+        alertDialog$Builder.m(i10, 72, org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.L5, false), null);
         alertDialog$Builder.a.Q = AndroidUtilities.replaceTags(str);
         alertDialog$Builder.k(LocaleController.getString(R.string.PermissionOpenSettings), new a1(this, 4));
         alertDialog$Builder.h(LocaleController.getString(R.string.ContactsPermissionAlertNotNow), null);
@@ -104,6 +104,6 @@ public abstract class j5 extends androidx.fragment.app.v {
     }
 
     public final void x(int i10, String str) {
-        v(i10, str).show();
+        w(i10, str).show();
     }
 }

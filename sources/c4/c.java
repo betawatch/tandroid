@@ -12,7 +12,7 @@ import r3.l;
 import r3.m;
 import r3.v;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class c implements b {
     public int a;
@@ -63,12 +63,12 @@ public final class c implements b {
         int i11;
         long j11 = j10;
         while (j11 > 0 && (i10 = this.d) < (i11 = this.a)) {
-            int e = ((v) this.f).e(lVar, (int) Math.min(i11 - i10, j11), true);
-            if (e == -1) {
+            int e6 = ((v) this.f).e(lVar, (int) Math.min(i11 - i10, j11), true);
+            if (e6 == -1) {
                 j11 = 0;
             } else {
-                this.d += e;
-                j11 -= e;
+                this.d += e6;
+                j11 -= e6;
             }
         }
         int i12 = ((a1) this.g).c;
@@ -86,7 +86,7 @@ public final class c implements b {
 
     @Override // c4.b
     public void c(int i10, long j10) {
-        ((m) this.e).g2(new f((a1) this.g, 1, i10, j10));
+        ((m) this.e).m2(new f((a1) this.g, 1, i10, j10));
         ((v) this.f).b((n0) this.h);
     }
 

@@ -4,11 +4,11 @@ import android.content.Context;
 import b6.m;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.MediaController;
-import org.telegram.ui.Components.i71;
+import org.telegram.ui.Components.k71;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.x9;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class c implements m6.c, r5.h {
     public int a;
@@ -18,7 +18,7 @@ public final class c implements m6.c, r5.h {
     }
 
     @Override // m6.c
-    public int C(Context context, String str) {
+    public int G(Context context, String str) {
         return this.a;
     }
 
@@ -51,9 +51,9 @@ public final class c implements m6.c, r5.h {
         int i10 = this.a;
         long j10 = -1;
         if (i10 == 0) {
-            i71 i71Var = PhotoViewer.t1().C2;
-            if (i71Var != null) {
-                j10 = i71Var.n();
+            k71 k71Var = PhotoViewer.t1().C2;
+            if (k71Var != null) {
+                j10 = k71Var.n();
             }
         } else if (i10 == 1) {
             j10 = MediaController.getInstance().getCurrentPosition();
@@ -65,7 +65,11 @@ public final class c implements m6.c, r5.h {
     }
 
     @Override // r5.h
-    public /* bridge */ /* synthetic */ void h(r5.f fVar, boolean z4) {
+    public /* bridge */ /* synthetic */ void g(r5.f fVar, boolean z4) {
+    }
+
+    @Override // r5.h
+    public /* bridge */ /* synthetic */ void h(r5.f fVar, int i10) {
     }
 
     @Override // r5.h
@@ -73,32 +77,28 @@ public final class c implements m6.c, r5.h {
     }
 
     @Override // r5.h
-    public /* bridge */ /* synthetic */ void j(r5.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void j(r5.f fVar) {
     }
 
     @Override // r5.h
-    public /* bridge */ /* synthetic */ void k(r5.f fVar) {
+    public /* bridge */ /* synthetic */ void k(r5.f fVar, String str) {
     }
 
     @Override // r5.h
-    public /* bridge */ /* synthetic */ void l(r5.f fVar, String str) {
+    public void m(r5.f fVar) {
+        d1.f.d(false);
+        d1.f.C();
     }
 
     @Override // r5.h
-    public void n(r5.f fVar) {
+    public void o(r5.f fVar, int i10) {
         d1.f.d(false);
         d1.f.C();
     }
 
     @Override // m6.c
-    public int p(Context context, String str, boolean z4) {
+    public int u(Context context, String str, boolean z4) {
         return 0;
-    }
-
-    @Override // r5.h
-    public void q(r5.f fVar, int i10) {
-        d1.f.d(false);
-        d1.f.C();
     }
 
     public /* synthetic */ c(int i10) {

@@ -4,7 +4,7 @@ import h5.d0;
 import r3.r;
 import r3.t;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class g implements f {
     public final long[] a;
@@ -37,14 +37,14 @@ public final class g implements f {
     @Override // r3.s
     public final r f(long j10) {
         long[] jArr = this.a;
-        int e = d0.e(jArr, j10, true);
-        long j11 = jArr[e];
+        int e6 = d0.e(jArr, j10, true);
+        long j11 = jArr[e6];
         long[] jArr2 = this.b;
-        t tVar = new t(j11, jArr2[e]);
-        if (j11 >= j10 || e == jArr.length - 1) {
+        t tVar = new t(j11, jArr2[e6]);
+        if (j11 >= j10 || e6 == jArr.length - 1) {
             return new r(tVar, tVar);
         }
-        int i10 = e + 1;
+        int i10 = e6 + 1;
         return new r(tVar, new t(jArr[i10], jArr2[i10]));
     }
 

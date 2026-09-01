@@ -5,9 +5,9 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class io implements org.telegram.ui.ActionBar.c2, MessagesStorage.LongCallback, vc0, MessagesStorage.BooleanCallback {
+public final /* synthetic */ class io implements org.telegram.ui.ActionBar.c2, MessagesStorage.LongCallback, wc0, MessagesStorage.BooleanCallback {
     public final /* synthetic */ int a;
     public final /* synthetic */ po b;
 
@@ -16,7 +16,7 @@ public final /* synthetic */ class io implements org.telegram.ui.ActionBar.c2, M
         this.b = poVar;
     }
 
-    @Override // org.telegram.ui.vc0
+    @Override // org.telegram.ui.wc0
     public void d(TLRPC.MessageMedia messageMedia, int i10, boolean z4, int i11, long j10) {
         TLRPC.TL_channelLocation tL_channelLocation = new TLRPC.TL_channelLocation();
         tL_channelLocation.address = messageMedia.address;
@@ -30,7 +30,7 @@ public final /* synthetic */ class io implements org.telegram.ui.ActionBar.c2, M
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    public void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         switch (this.a) {
             case 0:
                 this.b.j0();

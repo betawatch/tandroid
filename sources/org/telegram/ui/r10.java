@@ -12,9 +12,9 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.ui.r10;
 import org.telegram.ui.t10;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class r10 extends org.telegram.ui.Components.rl0 {
+public final class r10 extends org.telegram.ui.Components.sl0 {
     public final Context c;
     public final /* synthetic */ t10 d;
 
@@ -23,12 +23,12 @@ public final class r10 extends org.telegram.ui.Components.rl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.rl0
-    public final boolean D(f2.l1 l1Var) {
+    @Override // org.telegram.ui.Components.sl0
+    public final boolean D(f2.m1 m1Var) {
         return false;
     }
 
-    @Override // f2.o0
+    @Override // f2.p0
     public final int h() {
         t10 t10Var = this.d;
         if (t10Var.f.isEmpty()) {
@@ -37,25 +37,25 @@ public final class r10 extends org.telegram.ui.Components.rl0 {
         return ((int) Math.ceil(r1.size() / t10Var.s)) + (!t10Var.K ? 1 : 0);
     }
 
-    @Override // f2.o0
+    @Override // f2.p0
     public final int j(int i10) {
         t10 t10Var = this.d;
         return i10 < ((int) Math.ceil((double) (((float) t10Var.f.size()) / ((float) t10Var.s)))) ? 0 : 1;
     }
 
-    @Override // f2.o0
-    public final void v(f2.l1 l1Var, int i10) {
+    @Override // f2.p0
+    public final void v(f2.m1 m1Var, int i10) {
         t10 t10Var = this.d;
         l10 l10Var = t10Var.P;
         ArrayList arrayList = t10Var.f;
-        int i11 = l1Var.f;
-        View view = l1Var.a;
+        int i11 = m1Var.f;
+        View view = m1Var.a;
         if (i11 != 0) {
             if (i11 != 3) {
                 if (i11 == 1) {
                     int ceil = (int) Math.ceil(arrayList.size() / t10Var.s);
                     int i12 = t10Var.s;
-                    ((org.telegram.ui.Components.t00) view).v = i12 - ((ceil * i12) - arrayList.size());
+                    ((org.telegram.ui.Components.u00) view).v = i12 - ((ceil * i12) - arrayList.size());
                     return;
                 }
                 return;
@@ -106,11 +106,11 @@ public final class r10 extends org.telegram.ui.Components.rl0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r6v10, types: [org.telegram.ui.Components.t00, org.telegram.ui.h10] */
+    /* JADX WARN: Type inference failed for: r6v10, types: [org.telegram.ui.Components.u00, org.telegram.ui.h10] */
     /* JADX WARN: Type inference failed for: r6v5 */
     /* JADX WARN: Type inference failed for: r6v6, types: [android.view.View] */
-    @Override // f2.o0
-    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+    @Override // f2.p0
+    public final f2.m1 x(ViewGroup viewGroup, int i10) {
         FrameLayout frameLayout;
         ?? r62;
         Context context = this.c;
@@ -120,7 +120,7 @@ public final class r10 extends org.telegram.ui.Components.rl0 {
             s7Var.n = paint;
             s7Var.s = UserConfig.selectedAccount;
             s7Var.r = 1;
-            paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Lh, false));
+            paint.setColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.Lh, false));
             s7Var.b = new MessageObject[6];
             s7Var.a = new org.telegram.ui.Cells.o7[6];
             s7Var.c = new int[6];
@@ -164,7 +164,7 @@ public final class r10 extends org.telegram.ui.Components.rl0 {
                 return yh.o(r62, r62, -1, -2);
             }
             FrameLayout u3Var = new org.telegram.ui.Cells.u3(context, null);
-            u3Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.e7, false) & (-218103809));
+            u3Var.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.e7, false) & (-218103809));
             frameLayout = u3Var;
         }
         r62 = frameLayout;

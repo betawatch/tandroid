@@ -1,31 +1,44 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.FileLog;
+import android.animation.ValueAnimator;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class ld0 extends com.google.android.gms.internal.play_billing.s1 {
-    public final /* synthetic */ vd0 a;
+public final /* synthetic */ class ld0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xd0 b;
 
-    public ld0(vd0 vd0Var) {
-        this.a = vd0Var;
+    public /* synthetic */ ld0(xd0 xd0Var, int i10) {
+        this.a = i10;
+        this.b = xd0Var;
     }
 
-    @Override // com.google.android.gms.internal.play_billing.s1
-    public final void a(int i10, CharSequence charSequence) {
-        FileLog.d("PasscodeView onAuthenticationError " + i10 + " \"" + ((Object) charSequence) + "\"");
-        this.a.m(true);
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.s1
-    public final void b() {
-        FileLog.d("PasscodeView onAuthenticationFailed");
-        this.a.m(true);
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.s1
-    public final void c(androidx.biometric.v vVar) {
-        FileLog.d("PasscodeView onAuthenticationSucceeded");
-        this.a.k(true);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                xd0 xd0Var = this.b;
+                xd0Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                xd0Var.M = floatValue;
+                xd0Var.f(floatValue);
+                xd0Var.setAlpha(xd0Var.M);
+                break;
+            default:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                xd0 xd0Var2 = this.b;
+                eh.d dVar = xd0Var2.e;
+                dVar.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, floatValue2));
+                dVar.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, floatValue2));
+                dVar.setAlpha(AndroidUtilities.lerp(0.0f, 1.0f, floatValue2));
+                TextView textView = xd0Var2.w;
+                textView.setScaleX(AndroidUtilities.lerp(1.0f, 0.9f, floatValue2));
+                textView.setScaleY(AndroidUtilities.lerp(1.0f, 0.9f, floatValue2));
+                textView.setAlpha(AndroidUtilities.lerp(1.0f, 0.0f, floatValue2));
+                xd0Var2.s.setAlpha(AndroidUtilities.lerp(0.0f, 1.0f, floatValue2));
+                break;
+        }
     }
 }

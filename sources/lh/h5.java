@@ -1,22 +1,46 @@
 package lh;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.k01;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.xk;
+import org.telegram.ui.ip0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes4.dex */
-public final class h5 {
-    public final float a;
-    public final k01 b;
-    public final k01 c;
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class h5 implements Utilities.Callback {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ mf.b b;
+    public final /* synthetic */ TL_stars.TL_starGiftUnique c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public h5(float f10, String str, CharSequence charSequence) {
-        this.b = new k01(str, 12.0f, null);
-        this.c = new k01(charSequence, 12.0f, AndroidUtilities.bold());
-        this.a = (a() / 2.0f) + f10;
+    public /* synthetic */ h5(q5 q5Var, org.telegram.ui.ActionBar.d2 d2Var, mf.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10) {
+        this.e = q5Var;
+        this.f = d2Var;
+        this.b = bVar;
+        this.c = tL_starGiftUnique;
+        this.d = j10;
     }
 
-    public final float a() {
-        return Math.max(this.b.j(), this.c.j());
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                q5.U((q5) this.e, (org.telegram.ui.ActionBar.d2) this.f, this.b, this.c, this.d, (TLRPC.TL_payments_paymentFormStarGift) obj);
+                break;
+            default:
+                ip0.U((ip0) this.e, this.b, this.c, this.d, (xk) this.f, (TLRPC.TL_payments_paymentFormStarGift) obj);
+                break;
+        }
+    }
+
+    public /* synthetic */ h5(ip0 ip0Var, mf.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, xk xkVar) {
+        this.e = ip0Var;
+        this.b = bVar;
+        this.c = tL_starGiftUnique;
+        this.d = j10;
+        this.f = xkVar;
     }
 }

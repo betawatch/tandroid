@@ -1,75 +1,58 @@
 package org.telegram.ui.Components;
 
-import android.view.animation.DecelerateInterpolator;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.VideoEditedInfo;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.widget.FrameLayout;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t50 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w50 b;
+public abstract class t50 extends FrameLayout {
+    public ImageReceiver a;
+    public float b;
+    public final /* synthetic */ z50 c;
 
-    public /* synthetic */ t50(w50 w50Var, int i10) {
-        this.a = i10;
-        this.b = w50Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t50(z50 z50Var, Context context) {
+        super(context);
+        this.c = z50Var;
+        z50Var.setWillNotDraw(false);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        VideoEditedInfo videoEditedInfo;
-        int i10 = this.a;
-        w50 w50Var = this.b;
-        switch (i10) {
-            case 0:
-                w50Var.E0.m(false, false);
-                break;
-            case 1:
-                NotificationCenter.getInstance(w50Var.E0.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
-                break;
-            case 2:
-                x50 x50Var = w50Var.E0;
-                VideoEditedInfo videoEditedInfo2 = new VideoEditedInfo();
-                x50Var.K = videoEditedInfo2;
-                videoEditedInfo2.roundVideo = true;
-                videoEditedInfo2.startTime = -1L;
-                videoEditedInfo2.endTime = -1L;
-                videoEditedInfo2.file = x50Var.E;
-                videoEditedInfo2.encryptedFile = x50Var.F;
-                videoEditedInfo2.key = x50Var.G;
-                videoEditedInfo2.iv = x50Var.H;
-                videoEditedInfo2.estimatedSize = Math.max(1L, x50Var.I);
-                VideoEditedInfo videoEditedInfo3 = x50Var.K;
-                videoEditedInfo3.framerate = 25;
-                videoEditedInfo3.originalWidth = 360;
-                videoEditedInfo3.resultWidth = 360;
-                videoEditedInfo3.originalHeight = 360;
-                videoEditedInfo3.resultHeight = 360;
-                videoEditedInfo3.originalPath = x50Var.V.getAbsolutePath();
-                w50Var.h(x50Var.V);
-                x50Var.K.estimatedDuration = x50Var.c0;
-                NotificationCenter.getInstance(x50Var.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.audioDidSent, Integer.valueOf(x50Var.N), x50Var.K, x50Var.V.getAbsolutePath(), w50Var.x0);
-                break;
-            case 3:
-                if (w50Var.D0 && (videoEditedInfo = w50Var.E0.K) != null) {
-                    videoEditedInfo.notReadyYet = false;
-                }
-                w50Var.c(w50Var.a, 0L, true);
-                MediaController.getInstance().requestRecordAudioFocus(false);
-                break;
-            case 4:
-                w50Var.E0.V0 = null;
-                break;
-            case 5:
-                NotificationCenter.getInstance(w50Var.E0.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
-                break;
-            case 6:
-                w50Var.E0.j0.animate().setDuration(120L).alpha(0.0f).setInterpolator(new DecelerateInterpolator()).start();
-                break;
-            default:
-                w50Var.E0.j0.animate().setDuration(120L).alpha(0.0f).setInterpolator(new DecelerateInterpolator()).start();
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        float f10 = this.b;
+        if (f10 != 1.0f) {
+            float f11 = f10 + 0.064f;
+            this.b = f11;
+            if (f11 > 1.0f) {
+                this.b = 1.0f;
+            }
+            invalidate();
         }
+        if (this.a != null) {
+            canvas.save();
+            float imageWidth = this.a.getImageWidth();
+            int i10 = this.c.K0;
+            if (imageWidth != i10) {
+                float imageWidth2 = i10 / this.a.getImageWidth();
+                canvas.scale(imageWidth2, imageWidth2);
+            }
+            canvas.translate(-this.a.getImageX(), -this.a.getImageY());
+            float alpha = this.a.getAlpha();
+            this.a.setAlpha(this.b);
+            this.a.draw(canvas);
+            this.a.setAlpha(alpha);
+            canvas.restore();
+        }
+    }
+
+    public void setImageReceiver(ImageReceiver imageReceiver) {
+        if (this.a == null) {
+            this.b = 0.0f;
+        }
+        this.a = imageReceiver;
+        invalidate();
     }
 }

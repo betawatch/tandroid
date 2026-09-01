@@ -1,274 +1,161 @@
 package vf;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import java.util.ArrayList;
-import org.telegram.messenger.y3;
+import android.os.Bundle;
+import android.view.View;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.c2;
+import org.telegram.ui.ActionBar.d2;
+import org.telegram.ui.Cells.o8;
+import org.telegram.ui.Cells.s8;
+import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.y4;
+import org.telegram.ui.Components.z4;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class a extends g {
-    @Override // vf.g
-    public float getMinDistance() {
-        return 0.1f;
+public final /* synthetic */ class a implements Utilities.Callback5, c2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c b;
+
+    public /* synthetic */ a(c cVar, int i10) {
+        this.a = i10;
+        this.b = cVar;
     }
 
-    @Override // vf.g
-    public final xf.f h(wf.a aVar) {
-        return new xf.a(aVar, this.T0);
+    @Override // org.telegram.ui.ActionBar.c2
+    public void j(d2 d2Var, int i10) {
+        switch (this.a) {
+            case 1:
+                this.b.X();
+                break;
+            default:
+                this.b.finishFragment();
+                break;
+        }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0093  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x01b3 A[SYNTHETIC] */
-    @Override // vf.g
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void k(Canvas canvas) {
-        float f10;
-        float f11;
-        int i10;
-        ArrayList arrayList;
-        int i11;
-        float f12;
-        float f13;
-        Canvas canvas2 = canvas;
-        wf.b bVar = this.e0;
-        if (bVar == null) {
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        j51 j51Var = (j51) obj;
+        final View view = (View) obj2;
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        final c cVar = this.b;
+        if (cVar.d.h(j51Var)) {
             return;
         }
-        float f14 = this.C0;
-        j jVar = this.d0;
-        float f15 = jVar.l;
-        float f16 = jVar.k;
-        float f17 = f14 / (f15 - f16);
-        float f18 = (f16 * f17) - g.h1;
-        int i12 = this.C - 1;
-        int i13 = i12 < 0 ? 0 : i12;
-        int i14 = this.D + 1;
-        if (i14 > ((wf.a) bVar.d.get(0)).a.length - 1) {
-            i14 = ((wf.a) this.e0.d.get(0)).a.length - 1;
+        int i10 = j51Var.d;
+        if (i10 == 2 || j51Var.a == 17) {
+            Bundle bundle = new Bundle();
+            bundle.putLong("user_id", cVar.getUserConfig().getClientUserId());
+            bundle.putInt("chatMode", 5);
+            bundle.putString("quick_reply", "away");
+            cVar.presentFragment(new xn(bundle));
+            return;
         }
-        int i15 = i14;
-        canvas2.save();
-        float f19 = 0.0f;
-        canvas2.clipRect(this.A0, 0.0f, this.B0, getMeasuredHeight() - this.s);
-        canvas2.save();
-        int i16 = this.v0;
-        int i17 = 2;
-        if (i16 == 2) {
-            this.c0 = true;
-            this.s0 = 0.0f;
-            xf.j jVar2 = this.w0;
-            float f20 = jVar2.f;
-            f11 = 1.0f - f20;
-            canvas2.scale((f20 * 2.0f) + 1.0f, 1.0f, jVar2.d, jVar2.e);
-        } else if (i16 == 1) {
-            xf.j jVar3 = this.w0;
-            f11 = jVar3.f;
-            canvas2.scale(f11, 1.0f, jVar3.d, jVar3.e);
-        } else {
-            f10 = 1.0f;
-            i10 = 0;
-            while (true) {
-                arrayList = this.d;
-                if (i10 < arrayList.size()) {
-                    canvas.restore();
-                    canvas.restore();
-                    return;
+        if (i10 == 1) {
+            cVar.s = !cVar.s;
+            cVar.c.V2.N(true);
+            cVar.V(true);
+            return;
+        }
+        if (i10 == 6) {
+            v vVar = cVar.d;
+            cVar.v = true;
+            vVar.h = true;
+            cVar.c.V2.N(true);
+            cVar.V(true);
+            return;
+        }
+        if (i10 == 7) {
+            v vVar2 = cVar.d;
+            cVar.v = false;
+            vVar2.h = false;
+            cVar.c.V2.N(true);
+            cVar.V(true);
+            return;
+        }
+        if (i10 == 3) {
+            cVar.x = 0;
+            cVar.c.V2.N(true);
+            cVar.V(true);
+            return;
+        }
+        if (i10 == 4) {
+            cVar.x = 1;
+            cVar.c.V2.N(true);
+            cVar.V(true);
+            return;
+        }
+        if (i10 == 5) {
+            cVar.x = 2;
+            cVar.c.V2.N(true);
+            cVar.V(true);
+            return;
+        }
+        if (i10 == 8) {
+            final int i11 = 0;
+            z4.y(cVar.getParentActivity(), LocaleController.getString(R.string.BusinessAwayScheduleCustomStartTitle), LocaleController.getString(R.string.BusinessAwayScheduleCustomSetButton), cVar.C, new y4() { // from class: vf.b
+                @Override // org.telegram.ui.Components.y4
+                public final void I(int i12, int i13, boolean z4) {
+                    switch (i11) {
+                        case 0:
+                            c cVar2 = cVar;
+                            cVar2.getClass();
+                            o8 o8Var = (o8) view;
+                            cVar2.C = i12;
+                            o8Var.u(LocaleController.formatShortDateTime(i12), true);
+                            cVar2.V(true);
+                            break;
+                        default:
+                            c cVar3 = cVar;
+                            cVar3.getClass();
+                            o8 o8Var2 = (o8) view;
+                            cVar3.D = i12;
+                            o8Var2.u(LocaleController.formatShortDateTime(i12), true);
+                            cVar3.V(true);
+                            break;
+                    }
                 }
-                xf.a aVar = (xf.a) arrayList.get(i10);
-                boolean z4 = aVar.n;
-                float[] fArr = aVar.k;
-                Paint paint = aVar.r;
-                Paint paint2 = aVar.c;
-                if (z4 || aVar.o != f19) {
-                    float[] fArr2 = this.e0.b;
-                    float f21 = fArr2.length < i17 ? 1.0f : fArr2[1] * f17;
-                    long[] jArr = aVar.a.a;
-                    float f22 = aVar.o;
-                    i11 = i10;
-                    int i18 = i13;
-                    float f23 = 0.0f;
-                    int i19 = 0;
-                    boolean z10 = false;
-                    float f24 = 0.0f;
-                    while (i18 <= i15) {
-                        float f25 = f23;
-                        float f26 = ((this.e0.b[i18] * f17) + (f21 / 2.0f)) - f18;
-                        float f27 = f17;
-                        float f28 = f18;
-                        float measuredHeight = (getMeasuredHeight() - this.s) - (((jArr[i18] / this.v) * f22) * ((getMeasuredHeight() - this.s) - g.k1));
-                        if (i18 == this.p0 && this.r0) {
-                            f24 = measuredHeight;
-                            f23 = f26;
-                            z10 = true;
-                        } else {
-                            fArr[i19] = f26;
-                            fArr[i19 + 1] = measuredHeight;
-                            int i20 = i19 + 3;
-                            fArr[i19 + 2] = f26;
-                            i19 += 4;
-                            fArr[i20] = getMeasuredHeight() - this.s;
-                            f23 = f25;
-                        }
-                        i18++;
-                        f17 = f27;
-                        f18 = f28;
+            });
+            return;
+        }
+        if (i10 == 9) {
+            final int i12 = 1;
+            z4.y(cVar.getParentActivity(), LocaleController.getString(R.string.BusinessAwayScheduleCustomEndTitle), LocaleController.getString(R.string.BusinessAwayScheduleCustomSetButton), cVar.D, new y4() { // from class: vf.b
+                @Override // org.telegram.ui.Components.y4
+                public final void I(int i122, int i13, boolean z4) {
+                    switch (i12) {
+                        case 0:
+                            c cVar2 = cVar;
+                            cVar2.getClass();
+                            o8 o8Var = (o8) view;
+                            cVar2.C = i122;
+                            o8Var.u(LocaleController.formatShortDateTime(i122), true);
+                            cVar2.V(true);
+                            break;
+                        default:
+                            c cVar3 = cVar;
+                            cVar3.getClass();
+                            o8 o8Var2 = (o8) view;
+                            cVar3.D = i122;
+                            o8Var2.u(LocaleController.formatShortDateTime(i122), true);
+                            cVar3.V(true);
+                            break;
                     }
-                    float f29 = f23;
-                    f12 = f17;
-                    f13 = f18;
-                    Paint paint3 = (z10 || this.c0) ? paint : paint2;
-                    paint3.setStrokeWidth(f21);
-                    if (z10) {
-                        paint.setColor(i0.a.d(1.0f - this.s0, aVar.m, aVar.s));
-                    }
-                    if (this.c0) {
-                        paint.setColor(i0.a.d(0.0f, aVar.m, aVar.s));
-                    }
-                    int i21 = (int) (255.0f * f10);
-                    paint3.setAlpha(i21);
-                    canvas2.drawLines(fArr, 0, i19, paint3);
-                    if (z10) {
-                        paint2.setStrokeWidth(f21);
-                        paint2.setAlpha(i21);
-                        canvas2.drawLine(f29, f24, f29, getMeasuredHeight() - this.s, paint2);
-                        paint2.setAlpha(255);
-                    }
-                } else {
-                    i11 = i10;
-                    f12 = f17;
-                    f13 = f18;
                 }
-                i10 = i11 + 1;
-                canvas2 = canvas;
-                f17 = f12;
-                f18 = f13;
-                f19 = 0.0f;
-                i17 = 2;
-            }
+            });
+            return;
         }
-        f10 = f11;
-        i10 = 0;
-        while (true) {
-            arrayList = this.d;
-            if (i10 < arrayList.size()) {
-            }
-            i10 = i11 + 1;
-            canvas2 = canvas;
-            f17 = f12;
-            f18 = f13;
-            f19 = 0.0f;
-            i17 = 2;
+        if (i10 == 10) {
+            boolean z4 = !cVar.w;
+            cVar.w = z4;
+            ((s8) view).setChecked(z4);
+            cVar.V(true);
         }
-    }
-
-    @Override // vf.g
-    public final void n(Canvas canvas) {
-        int i10;
-        ArrayList arrayList;
-        int i11;
-        int i12;
-        float f10;
-        ArrayList arrayList2;
-        float f11;
-        int measuredHeight = getMeasuredHeight();
-        int i13 = g.n1;
-        int i14 = measuredHeight - i13;
-        int measuredHeight2 = (getMeasuredHeight() - this.y0) - i13;
-        ArrayList arrayList3 = this.d;
-        int size = arrayList3.size();
-        if (this.e0 != null) {
-            int i15 = 0;
-            while (i15 < size) {
-                xf.a aVar = (xf.a) arrayList3.get(i15);
-                boolean z4 = aVar.n;
-                Paint paint = aVar.c;
-                float[] fArr = aVar.k;
-                if (z4 || aVar.o != 0.0f) {
-                    aVar.e.reset();
-                    float[] fArr2 = this.e0.b;
-                    int length = fArr2.length;
-                    float f12 = fArr2.length < 2 ? 1.0f : fArr2[1] * this.z0;
-                    long[] jArr = aVar.a.a;
-                    float f13 = aVar.o;
-                    int i16 = 0;
-                    int i17 = 0;
-                    while (i16 < length) {
-                        int i18 = i15;
-                        long j10 = jArr[i16];
-                        if (j10 < 0) {
-                            i12 = i14;
-                            arrayList2 = arrayList3;
-                        } else {
-                            wf.b bVar = this.e0;
-                            i12 = i14;
-                            float f14 = this.z0 * bVar.b[i16];
-                            if (g.y1) {
-                                f11 = this.g0;
-                                f10 = f14;
-                                arrayList2 = arrayList3;
-                            } else {
-                                f10 = f14;
-                                arrayList2 = arrayList3;
-                                f11 = bVar.e;
-                            }
-                            float A = y3.A(j10, f11, f13, 1.0f) * (i12 - measuredHeight2);
-                            fArr[i17] = f10;
-                            fArr[i17 + 1] = A;
-                            int i19 = i17 + 3;
-                            fArr[i17 + 2] = f10;
-                            i17 += 4;
-                            fArr[i19] = getMeasuredHeight() - this.s;
-                        }
-                        i16++;
-                        i15 = i18;
-                        i14 = i12;
-                        arrayList3 = arrayList2;
-                    }
-                    i10 = i14;
-                    arrayList = arrayList3;
-                    i11 = i15;
-                    paint.setStrokeWidth(f12 + 2.0f);
-                    canvas.drawLines(fArr, 0, i17, paint);
-                } else {
-                    i10 = i14;
-                    arrayList = arrayList3;
-                    i11 = i15;
-                }
-                i15 = i11 + 1;
-                i14 = i10;
-                arrayList3 = arrayList;
-            }
-        }
-    }
-
-    @Override // vf.g, android.view.View
-    public final void onDraw(Canvas canvas) {
-        F();
-        k(canvas);
-        i(canvas);
-        ArrayList arrayList = this.b;
-        this.j0 = arrayList.size();
-        int i10 = 0;
-        while (true) {
-            this.k0 = i10;
-            int i11 = this.k0;
-            if (i11 >= this.j0) {
-                j(canvas);
-                m(canvas);
-                super.onDraw(canvas);
-                return;
-            } else {
-                l(canvas, (xf.d) arrayList.get(i11));
-                p(canvas, (xf.d) arrayList.get(this.k0));
-                i10 = this.k0 + 1;
-            }
-        }
-    }
-
-    @Override // vf.g
-    public final void o(Canvas canvas) {
     }
 }

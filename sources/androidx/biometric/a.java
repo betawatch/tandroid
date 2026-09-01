@@ -8,7 +8,7 @@ import java.security.Signature;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a extends BiometricPrompt.AuthenticationCallback {
     public final /* synthetic */ d a;
@@ -49,9 +49,9 @@ public final class a extends BiometricPrompt.AuthenticationCallback {
                 if (f10 != null) {
                     wVar = new w(f10);
                 } else {
-                    Mac e = d0.e(cryptoObject);
-                    if (e != null) {
-                        wVar = new w(e);
+                    Mac e6 = d0.e(cryptoObject);
+                    if (e6 != null) {
+                        wVar = new w(e6);
                     } else if (Build.VERSION.SDK_INT >= 30 && (b10 = e0.b(cryptoObject)) != null) {
                         wVar = new w(b10);
                     }

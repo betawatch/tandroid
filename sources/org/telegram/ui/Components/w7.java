@@ -19,7 +19,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public abstract class w7 extends FrameLayout {
     public final TextView[] a;
@@ -49,7 +49,7 @@ public abstract class w7 extends FrameLayout {
                 this.a[i10].setAlpha(0.0f);
                 this.a[i10].setVisibility(8);
             }
-            addView(this.a[i10], k7.b6.c(-1.0f, -2));
+            addView(this.a[i10], k7.c6.c(-1.0f, -2));
         }
         this.d = new Matrix();
         Paint paint = new Paint(1);
@@ -183,7 +183,7 @@ public abstract class w7 extends FrameLayout {
                     break;
                 }
                 TextView textView = textViewArr[i11];
-                if ((textView instanceof t90) && ((t90) textView).d) {
+                if ((textView instanceof v90) && ((v90) textView).d) {
                     this.s = -1;
                     break;
                 }
@@ -284,8 +284,8 @@ public abstract class w7 extends FrameLayout {
     public void setCustomPaddingRight(int i10) {
         this.w = i10;
         for (TextView textView : this.a) {
-            if (textView instanceof t90) {
-                ((t90) textView).setCustomPaddingRight(i10);
+            if (textView instanceof v90) {
+                ((v90) textView).setCustomPaddingRight(i10);
             }
         }
         invalidate();

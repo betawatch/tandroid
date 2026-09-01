@@ -1,20 +1,26 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
+import java.util.TimerTask;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class an0 extends View {
-    public Paint a;
-    public Paint b;
-    public float c;
+public final class an0 extends TimerTask {
+    public final /* synthetic */ bn0 a;
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float measuredWidth = (int) (getMeasuredWidth() * this.c);
-        canvas.drawRect(0.0f, 0.0f, measuredWidth, getMeasuredHeight(), this.b);
-        canvas.drawRect(measuredWidth, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.a);
+    public an0(bn0 bn0Var) {
+        this.a = bn0Var;
+    }
+
+    @Override // java.util.TimerTask, java.lang.Runnable
+    public final void run() {
+        bn0 bn0Var = this.a;
+        if (bn0Var.v == null) {
+            return;
+        }
+        double currentTimeMillis = System.currentTimeMillis();
+        bn0Var.y = (int) (bn0Var.y - (currentTimeMillis - bn0Var.C));
+        bn0Var.C = currentTimeMillis;
+        AndroidUtilities.runOnUIThread(new gl0(this, 6));
     }
 }

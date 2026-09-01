@@ -1,78 +1,30 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class m60 implements w80 {
-    public final /* synthetic */ n60 a;
+public final /* synthetic */ class m60 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ o60 b;
 
-    public m60(n60 n60Var) {
-        this.a = n60Var;
+    public /* synthetic */ m60(o60 o60Var, int i10) {
+        this.a = i10;
+        this.b = o60Var;
     }
 
-    @Override // org.telegram.ui.Components.w80
-    public final void a() {
-        s60 s60Var = this.a.c;
-        org.telegram.ui.ActionBar.p2 p2Var = s60Var.R;
-        if (p2Var instanceof org.telegram.ui.ph0) {
-            org.telegram.ui.ph0 ph0Var = (org.telegram.ui.ph0) p2Var;
-            TLRPC.TL_chatInviteExported tL_chatInviteExported = s60Var.b;
-            org.telegram.ui.nb0 nb0Var = new org.telegram.ui.nb0(1, ph0Var.n);
-            nb0Var.Q = ph0Var.p0;
-            nb0Var.Y(tL_chatInviteExported);
-            ph0Var.presentFragment(nb0Var);
-        } else {
-            org.telegram.ui.nb0 nb0Var2 = new org.telegram.ui.nb0(1, s60Var.d0);
-            nb0Var2.Y(s60Var.b);
-            nb0Var2.Q = new l60(this);
-            s60Var.R.presentFragment(nb0Var2);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new jp((Object) this.b, (Object) tL_error, tLObject, 6));
+                break;
+            default:
+                AndroidUtilities.runOnUIThread(new gm(27, this.b, tL_error));
+                break;
         }
-        s60Var.dismiss();
-    }
-
-    @Override // org.telegram.ui.Components.w80
-    public final void c() {
-        int i10;
-        int i11;
-        s60 s60Var = this.a.c;
-        org.telegram.ui.ActionBar.p2 p2Var = s60Var.R;
-        if (p2Var instanceof org.telegram.ui.ph0) {
-            ((org.telegram.ui.ph0) p2Var).e0(s60Var.b);
-        } else {
-            TLRPC.TL_messages_editExportedChatInvite tL_messages_editExportedChatInvite = new TLRPC.TL_messages_editExportedChatInvite();
-            tL_messages_editExportedChatInvite.link = s60Var.b.link;
-            tL_messages_editExportedChatInvite.revoked = true;
-            i10 = ((org.telegram.ui.ActionBar.g3) s60Var).currentAccount;
-            tL_messages_editExportedChatInvite.peer = MessagesController.getInstance(i10).getInputPeer(-s60Var.d0);
-            i11 = ((org.telegram.ui.ActionBar.g3) s60Var).currentAccount;
-            ConnectionsManager.getInstance(i11).sendRequest(tL_messages_editExportedChatInvite, new k60(this, 0));
-        }
-        s60Var.dismiss();
-    }
-
-    @Override // org.telegram.ui.Components.w80
-    public final void j() {
-        int i10;
-        int i11;
-        s60 s60Var = this.a.c;
-        org.telegram.ui.ActionBar.p2 p2Var = s60Var.R;
-        if (p2Var instanceof org.telegram.ui.ph0) {
-            ((org.telegram.ui.ph0) p2Var).b0(s60Var.b);
-        } else {
-            TLRPC.TL_messages_deleteExportedChatInvite tL_messages_deleteExportedChatInvite = new TLRPC.TL_messages_deleteExportedChatInvite();
-            tL_messages_deleteExportedChatInvite.link = s60Var.b.link;
-            i10 = ((org.telegram.ui.ActionBar.g3) s60Var).currentAccount;
-            tL_messages_deleteExportedChatInvite.peer = MessagesController.getInstance(i10).getInputPeer(-s60Var.d0);
-            i11 = ((org.telegram.ui.ActionBar.g3) s60Var).currentAccount;
-            ConnectionsManager.getInstance(i11).sendRequest(tL_messages_deleteExportedChatInvite, new k60(this, 1));
-        }
-        s60Var.dismiss();
-    }
-
-    @Override // org.telegram.ui.Components.w80
-    public final /* synthetic */ void e() {
     }
 }

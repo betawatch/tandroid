@@ -4,7 +4,7 @@ import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class ji implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -12,16 +12,16 @@ public final class ji implements View.OnTouchListener {
     public final /* synthetic */ Rect c;
     public final /* synthetic */ Object d;
 
-    public ji(c60 c60Var, Rect rect) {
+    public ji(d60 d60Var, Rect rect) {
         this.a = 1;
-        this.d = c60Var;
+        this.d = d60Var;
         this.c = rect;
         this.b = new int[2];
     }
 
     @Override // android.view.View.OnTouchListener
     public final boolean onTouch(View view, MotionEvent motionEvent) {
-        d50 d50Var;
+        e50 e50Var;
         switch (this.a) {
             case 0:
                 xn xnVar = (xn) this.d;
@@ -50,16 +50,16 @@ public final class ji implements View.OnTouchListener {
                 }
                 break;
             default:
-                c60 c60Var = (c60) this.d;
+                d60 d60Var = (d60) this.d;
                 if (motionEvent.getActionMasked() != 0) {
-                    if (motionEvent.getActionMasked() == 4 && (d50Var = c60Var.c3) != null && d50Var.isShowing()) {
-                        c60Var.c3.dismiss();
+                    if (motionEvent.getActionMasked() == 4 && (e50Var = d60Var.c3) != null && e50Var.isShowing()) {
+                        d60Var.c3.dismiss();
                         break;
                     }
                 } else {
-                    d50 d50Var2 = c60Var.c3;
-                    if (d50Var2 != null && d50Var2.isShowing()) {
-                        View contentView2 = c60Var.c3.getContentView();
+                    e50 e50Var2 = d60Var.c3;
+                    if (e50Var2 != null && e50Var2.isShowing()) {
+                        View contentView2 = d60Var.c3.getContentView();
                         int[] iArr2 = this.b;
                         contentView2.getLocationInWindow(iArr2);
                         int i12 = iArr2[0];
@@ -69,7 +69,7 @@ public final class ji implements View.OnTouchListener {
                         Rect rect2 = this.c;
                         rect2.set(i12, i13, measuredWidth2, measuredHeight2);
                         if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                            c60Var.c3.dismiss();
+                            d60Var.c3.dismiss();
                             break;
                         }
                     }

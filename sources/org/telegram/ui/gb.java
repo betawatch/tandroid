@@ -10,30 +10,30 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class gb extends pb {
-    public final ug.j u0;
+    public final vg.j u0;
     public final /* synthetic */ sb v0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public gb(sb sbVar, Context context) {
         super(sbVar, context);
         this.v0 = sbVar;
-        this.u0 = new ug.j();
+        this.u0 = new vg.j();
     }
 
     @Override // org.telegram.ui.Components.qv0
     public final void U(Drawable drawable) {
-        if (drawable instanceof org.telegram.ui.Components.dc0) {
-            ((org.telegram.ui.Components.dc0) drawable).p();
+        if (drawable instanceof org.telegram.ui.Components.fc0) {
+            ((org.telegram.ui.Components.fc0) drawable).p();
         }
-        ug.j jVar = this.u0;
-        sg.a c3 = jVar.c(drawable);
+        vg.j jVar = this.u0;
+        tg.a c3 = jVar.c(drawable);
         AndroidUtilities.computePerceivedBrightness(jVar.a(c3));
         sb sbVar = this.v0;
         sbVar.a.a = c3;
-        wg.f fVar = sbVar.X;
+        xg.f fVar = sbVar.X;
         if (fVar != null) {
             fVar.invalidate();
         }
@@ -186,9 +186,9 @@ public final class gb extends pb {
         sbVar.Q0.a();
         int size = View.MeasureSpec.getSize(i10);
         int size2 = View.MeasureSpec.getSize(i11);
-        sg.a aVar = sbVar.a.a;
-        if (aVar instanceof sg.b) {
-            ((sg.b) aVar).b(size, size2);
+        tg.a aVar = sbVar.a.a;
+        if (aVar instanceof tg.b) {
+            ((tg.b) aVar).c(size, size2);
         }
         setMeasuredDimension(size, size2);
         int paddingTop = size2 - getPaddingTop();

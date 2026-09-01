@@ -5,9 +5,9 @@ import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import java.util.HashMap;
 import java.util.Locale;
-import k7.z6;
+import k7.a7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class d1 {
     public final int a;
@@ -441,7 +441,7 @@ public final class d1 {
         if (context != null && (telephonyManager = (TelephonyManager) context.getSystemService("phone")) != null) {
             String networkCountryIso = telephonyManager.getNetworkCountryIso();
             if (!TextUtils.isEmpty(networkCountryIso)) {
-                c3 = z6.c(networkCountryIso);
+                c3 = a7.c(networkCountryIso);
                 s8.i0 i0Var = g5.s.n;
                 c3.getClass();
                 switch (c3) {
@@ -1035,7 +1035,7 @@ public final class d1 {
                 this.b = true;
             }
         }
-        c3 = z6.c(Locale.getDefault().getCountry());
+        c3 = a7.c(Locale.getDefault().getCountry());
         s8.i0 i0Var3 = g5.s.n;
         c3.getClass();
         switch (c3) {

@@ -1,36 +1,47 @@
 package hg;
 
-import gg.d1;
-import org.telegram.messenger.y3;
-import org.telegram.ui.oy;
+import java.util.Calendar;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.uc0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c implements Runnable {
+public final /* synthetic */ class c implements uc0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ e b;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Calendar c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ c(e eVar, int i10) {
-        this.a = i10;
-        this.b = eVar;
+    public /* synthetic */ c(long j10, Calendar calendar, int i10, int i11) {
+        this.a = i11;
+        this.b = j10;
+        this.c = calendar;
+        this.d = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.ui.Components.uc0
+    public final String e(int i10) {
         switch (this.a) {
             case 0:
-                this.b.E();
-                break;
+                if (i10 == 0) {
+                    return LocaleController.getString("MessageScheduleToday", R.string.MessageScheduleToday);
+                }
+                long j10 = (i10 * 86400000) + this.b;
+                Calendar calendar = this.c;
+                calendar.setTimeInMillis(j10);
+                return calendar.get(1) == this.d ? LocaleController.getInstance().getFormatterScheduleDay().format(j10) : LocaleController.getInstance().getFormatterScheduleYear().format(j10);
             default:
-                StringBuilder sb = new StringBuilder("https://t.me/giftcode/");
-                e eVar = this.b;
-                sb.append(eVar.h);
-                String sb2 = sb.toString();
-                oy oyVar = new oy(y3.e(3, "onlySelect", "dialogsType", true));
-                oyVar.z2 = new c1.b(17, eVar, sb2);
-                eVar.e.presentFragment(oyVar);
-                ((d1) eVar).r.dismiss();
-                break;
+                if (i10 == 0) {
+                    return LocaleController.getString(R.string.MessageScheduleToday);
+                }
+                long j11 = (i10 * 86400000) + this.b;
+                Calendar calendar2 = this.c;
+                calendar2.setTimeInMillis(j11);
+                if (calendar2.get(1) != this.d) {
+                    return LocaleController.getInstance().getFormatterScheduleYear().format(j11);
+                }
+                return LocaleController.getInstance().getFormatterWeek().format(j11) + " " + LocaleController.getInstance().getFormatterScheduleDay().format(j11);
         }
     }
 }

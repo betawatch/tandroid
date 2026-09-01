@@ -11,9 +11,9 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class m0 extends org.telegram.ui.web.s1 {
+public final class m0 extends org.telegram.ui.web.t1 {
     public final /* synthetic */ l4 y0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -22,67 +22,67 @@ public final class m0 extends org.telegram.ui.web.s1 {
         this.y0 = l4Var;
     }
 
-    @Override // org.telegram.ui.web.s1
-    public final org.telegram.ui.web.e2 getInstantViewLoader() {
+    @Override // org.telegram.ui.web.t1
+    public final org.telegram.ui.web.f2 getInstantViewLoader() {
         p3 p3Var = this.y0.r0[0];
         if (!p3Var.f()) {
-            org.telegram.ui.web.e2 e2Var = p3Var.y;
-            if (e2Var != null) {
-                e2Var.a();
-                org.telegram.ui.web.e2 e2Var2 = p3Var.y;
-                TLRPC.TL_webPage tL_webPage = e2Var2.j;
+            org.telegram.ui.web.f2 f2Var = p3Var.y;
+            if (f2Var != null) {
+                f2Var.a();
+                org.telegram.ui.web.f2 f2Var2 = p3Var.y;
+                TLRPC.TL_webPage tL_webPage = f2Var2.j;
                 if (tL_webPage != null) {
-                    org.telegram.ui.web.g2.o(tL_webPage);
-                    e2Var2.j = null;
+                    org.telegram.ui.web.h2.o(tL_webPage);
+                    f2Var2.j = null;
                 }
                 p3Var.y = null;
                 return null;
             }
         } else {
             if (p3Var.getWebView() != null) {
-                org.telegram.ui.web.e2 e2Var3 = p3Var.y;
-                if (e2Var3 != null && (e2Var3.f != p3Var.getWebView().b || p3Var.y.e != p3Var.getWebView().getProgress())) {
+                org.telegram.ui.web.f2 f2Var3 = p3Var.y;
+                if (f2Var3 != null && (f2Var3.f != p3Var.getWebView().b || p3Var.y.e != p3Var.getWebView().getProgress())) {
                     p3Var.y.d(p3Var.getWebView());
                     return p3Var.y;
                 }
                 if (p3Var.y != null && TextUtils.equals(p3Var.getWebView().getUrl(), p3Var.y.d)) {
                     return p3Var.y;
                 }
-                org.telegram.ui.web.e2 e2Var4 = p3Var.y;
-                if (e2Var4 != null) {
-                    e2Var4.a();
-                    org.telegram.ui.web.e2 e2Var5 = p3Var.y;
-                    TLRPC.TL_webPage tL_webPage2 = e2Var5.j;
+                org.telegram.ui.web.f2 f2Var4 = p3Var.y;
+                if (f2Var4 != null) {
+                    f2Var4.a();
+                    org.telegram.ui.web.f2 f2Var5 = p3Var.y;
+                    TLRPC.TL_webPage tL_webPage2 = f2Var5.j;
                     if (tL_webPage2 != null) {
-                        org.telegram.ui.web.g2.o(tL_webPage2);
-                        e2Var5.j = null;
+                        org.telegram.ui.web.h2.o(tL_webPage2);
+                        f2Var5.j = null;
                     }
                     p3Var.y = null;
                 }
-                org.telegram.ui.web.e2 e2Var6 = new org.telegram.ui.web.e2(p3Var.H.U);
-                p3Var.y = e2Var6;
-                org.telegram.ui.web.w0 webView = p3Var.getWebView();
-                if (!e2Var6.b) {
-                    e2Var6.b = true;
-                    e2Var6.d = webView.getUrl();
-                    e2Var6.e = webView.getProgress();
-                    e2Var6.f = webView.b;
-                    e2Var6.l = org.telegram.ui.web.g2.e(webView, new org.telegram.ui.web.d2(e2Var6, 0));
+                org.telegram.ui.web.f2 f2Var6 = new org.telegram.ui.web.f2(p3Var.H.U);
+                p3Var.y = f2Var6;
+                org.telegram.ui.web.x0 webView = p3Var.getWebView();
+                if (!f2Var6.b) {
+                    f2Var6.b = true;
+                    f2Var6.d = webView.getUrl();
+                    f2Var6.e = webView.getProgress();
+                    f2Var6.f = webView.b;
+                    f2Var6.l = org.telegram.ui.web.h2.e(webView, new org.telegram.ui.web.e2(f2Var6, 0));
                     TLRPC.TL_messages_getWebPage tL_messages_getWebPage = new TLRPC.TL_messages_getWebPage();
-                    tL_messages_getWebPage.url = e2Var6.d;
+                    tL_messages_getWebPage.url = f2Var6.d;
                     tL_messages_getWebPage.hash = 0;
-                    e2Var6.k = ConnectionsManager.getInstance(e2Var6.a).sendRequest(tL_messages_getWebPage, new gf.a(e2Var6, 14));
+                    f2Var6.k = ConnectionsManager.getInstance(f2Var6.a).sendRequest(tL_messages_getWebPage, new gf.a(f2Var6, 14));
                 }
                 return p3Var.y;
             }
-            org.telegram.ui.web.e2 e2Var7 = p3Var.y;
-            if (e2Var7 != null) {
-                e2Var7.a();
-                org.telegram.ui.web.e2 e2Var8 = p3Var.y;
-                TLRPC.TL_webPage tL_webPage3 = e2Var8.j;
+            org.telegram.ui.web.f2 f2Var7 = p3Var.y;
+            if (f2Var7 != null) {
+                f2Var7.a();
+                org.telegram.ui.web.f2 f2Var8 = p3Var.y;
+                TLRPC.TL_webPage tL_webPage3 = f2Var8.j;
                 if (tL_webPage3 != null) {
-                    org.telegram.ui.web.g2.o(tL_webPage3);
-                    e2Var8.j = null;
+                    org.telegram.ui.web.h2.o(tL_webPage3);
+                    f2Var8.j = null;
                 }
                 p3Var.y = null;
             }
@@ -115,26 +115,26 @@ public final class m0 extends org.telegram.ui.web.s1 {
             }
             this.T = z4;
             int i10 = 1;
-            lh.n nVar = this.V;
+            mh.m mVar = this.V;
             if (z4) {
                 int i11 = this.W;
                 int i12 = SharedConfig.searchEngineType;
                 if (i11 != i12) {
                     this.W = i12;
-                    nVar.setHint(LocaleController.formatString(R.string.AddressPlaceholder, org.telegram.ui.web.l1.a().a));
+                    mVar.setHint(LocaleController.formatString(R.string.AddressPlaceholder, org.telegram.ui.web.m1.a().a));
                 }
             }
-            nVar.setVisibility(0);
+            mVar.setVisibility(0);
             this.J.c((this.r0 || z4) ? 0.0f : 1.0f, true);
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.U, z4 ? 1.0f : 0.0f);
             this.t0 = ofFloat;
-            ofFloat.addUpdateListener(new nh.e5(this, 11));
-            this.t0.addListener(new l61(5, this, z4));
-            this.t0.setInterpolator(org.telegram.ui.Components.nr.h);
+            ofFloat.addUpdateListener(new oh.f5(this, 10));
+            this.t0.addListener(new qd1(3, this, z4));
+            this.t0.setInterpolator(org.telegram.ui.Components.pr.h);
             this.t0.setDuration(360L);
             this.t0.start();
-            AndroidUtilities.cancelRunOnUIThread(new org.telegram.ui.web.n1(this, i10));
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.n1(this, i10), this.T ? 100L : 0L);
+            AndroidUtilities.cancelRunOnUIThread(new org.telegram.ui.web.o1(this, i10));
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.o1(this, i10), this.T ? 100L : 0L);
         }
         org.telegram.ui.web.k kVar = this.y0.f0;
         if (kVar != null) {
@@ -142,7 +142,7 @@ public final class m0 extends org.telegram.ui.web.s1 {
         }
     }
 
-    @Override // org.telegram.ui.web.s1, android.widget.FrameLayout, android.view.View
+    @Override // org.telegram.ui.web.t1, android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, i11);
         ((ViewGroup.MarginLayoutParams) this.y0.f0.getLayoutParams()).topMargin = getMeasuredHeight();

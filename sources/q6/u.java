@@ -6,7 +6,7 @@ import b7.p1;
 import java.util.Arrays;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class u extends c6.a {
     public static final Parcelable.Creator<u> CREATOR = new l4.j(28);
@@ -57,8 +57,8 @@ public final class u extends c6.a {
         String valueOf3 = String.valueOf(this.f);
         String valueOf4 = String.valueOf(this.h);
         StringBuilder m9 = yh.m("PublicKeyCredential{\n id='", this.a, "', \n type='", this.b, "', \n rawId=");
-        yh.x(m9, c3, ", \n registerResponse=", valueOf, ", \n signResponse=");
-        yh.x(m9, valueOf2, ", \n errorResponse=", valueOf3, ", \n extensionsClientOutputs=");
+        yh.w(m9, c3, ", \n registerResponse=", valueOf, ", \n signResponse=");
+        yh.w(m9, valueOf2, ", \n errorResponse=", valueOf3, ", \n extensionsClientOutputs=");
         m9.append(valueOf4);
         m9.append(", \n authenticatorAttachment='");
         m9.append(this.n);
@@ -68,7 +68,7 @@ public final class u extends c6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        p1.a.b();
+        p1.a.a();
         throw null;
     }
 }

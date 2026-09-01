@@ -12,27 +12,27 @@ import androidx.appcompat.widget.ActionBarContainer;
 import androidx.appcompat.widget.ActionBarContextView;
 import androidx.appcompat.widget.ActionBarOverlayLayout;
 import androidx.appcompat.widget.Toolbar;
-import j7.n7;
+import j7.o7;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
-import m.l1;
-import m.o3;
-import nh.e5;
+import m.k1;
+import m.n3;
+import oh.f5;
 import org.telegram.messenger.BuildConfig;
 import r0.b0;
 import r0.j0;
 import r0.m0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final class a0 extends n7 implements m.b {
+public final class a0 extends o7 implements m.b {
     public static final AccelerateInterpolator x = new AccelerateInterpolator();
     public static final DecelerateInterpolator y = new DecelerateInterpolator();
     public Context a;
     public Context b;
     public ActionBarOverlayLayout c;
     public ActionBarContainer d;
-    public l1 e;
+    public k1 e;
     public ActionBarContextView f;
     public final View g;
     public boolean h;
@@ -50,7 +50,7 @@ public final class a0 extends n7 implements m.b {
     public boolean t;
     public final y u;
     public final y v;
-    public final a3.c w;
+    public final ja.c w;
 
     public a0(Activity activity, boolean z4) {
         new ArrayList();
@@ -60,7 +60,7 @@ public final class a0 extends n7 implements m.b {
         this.r = true;
         this.u = new y(this, 0);
         this.v = new y(this, 1);
-        this.w = new a3.c(this, 16);
+        this.w = new ja.c(this);
         View decorView = activity.getWindow().getDecorView();
         b(decorView);
         if (z4) {
@@ -93,28 +93,28 @@ public final class a0 extends n7 implements m.b {
         WeakHashMap weakHashMap = j0.a;
         if (!actionBarContainer.isLaidOut()) {
             if (z4) {
-                ((o3) this.e).a.setVisibility(4);
+                ((n3) this.e).a.setVisibility(4);
                 this.f.setVisibility(0);
                 return;
             } else {
-                ((o3) this.e).a.setVisibility(0);
+                ((n3) this.e).a.setVisibility(0);
                 this.f.setVisibility(8);
                 return;
             }
         }
         if (z4) {
-            o3 o3Var = (o3) this.e;
-            i10 = j0.a(o3Var.a);
+            n3 n3Var = (n3) this.e;
+            i10 = j0.a(n3Var.a);
             i10.a(0.0f);
             i10.c(100L);
-            i10.d(new k.i(o3Var, 4));
+            i10.d(new k.i(n3Var, 4));
             m0Var = this.f.i(0, 200L);
         } else {
-            o3 o3Var2 = (o3) this.e;
-            m0 a2 = j0.a(o3Var2.a);
+            n3 n3Var2 = (n3) this.e;
+            m0 a2 = j0.a(n3Var2.a);
             a2.a(1.0f);
             a2.c(200L);
-            a2.d(new k.i(o3Var2, 0));
+            a2.d(new k.i(n3Var2, 0));
             i10 = this.f.i(8, 100L);
             m0Var = a2;
         }
@@ -132,15 +132,15 @@ public final class a0 extends n7 implements m.b {
     }
 
     public final void b(View view) {
-        l1 wrapper;
+        k1 wrapper;
         ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) view.findViewById(org.telegram.messenger.beta.R.id.decor_content_parent);
         this.c = actionBarOverlayLayout;
         if (actionBarOverlayLayout != null) {
             actionBarOverlayLayout.setActionBarVisibilityCallback(this);
         }
         KeyEvent.Callback findViewById = view.findViewById(org.telegram.messenger.beta.R.id.action_bar);
-        if (findViewById instanceof l1) {
-            wrapper = (l1) findViewById;
+        if (findViewById instanceof k1) {
+            wrapper = (k1) findViewById;
         } else {
             if (!(findViewById instanceof Toolbar)) {
                 throw new IllegalStateException("Can't make a decor toolbar out of ".concat(findViewById != null ? findViewById.getClass().getSimpleName() : BuildConfig.BETA_URL));
@@ -151,26 +151,26 @@ public final class a0 extends n7 implements m.b {
         this.f = (ActionBarContextView) view.findViewById(org.telegram.messenger.beta.R.id.action_context_bar);
         ActionBarContainer actionBarContainer = (ActionBarContainer) view.findViewById(org.telegram.messenger.beta.R.id.action_bar_container);
         this.d = actionBarContainer;
-        l1 l1Var = this.e;
-        if (l1Var == null || this.f == null || actionBarContainer == null) {
+        k1 k1Var = this.e;
+        if (k1Var == null || this.f == null || actionBarContainer == null) {
             throw new IllegalStateException(a0.class.getSimpleName().concat(" can only be used with a compatible window decor layout"));
         }
-        Context context = ((o3) l1Var).a.getContext();
+        Context context = ((n3) k1Var).a.getContext();
         this.a = context;
-        if ((((o3) this.e).b & 4) != 0) {
+        if ((((n3) this.e).b & 4) != 0) {
             this.h = true;
         }
         int i10 = context.getApplicationInfo().targetSdkVersion;
         this.e.getClass();
         if (context.getResources().getBoolean(org.telegram.messenger.beta.R.bool.abc_action_bar_embed_tabs)) {
             this.d.setTabContainer(null);
-            ((o3) this.e).getClass();
+            ((n3) this.e).getClass();
         } else {
-            ((o3) this.e).getClass();
+            ((n3) this.e).getClass();
             this.d.setTabContainer(null);
         }
         this.e.getClass();
-        ((o3) this.e).a.setCollapsible(false);
+        ((n3) this.e).a.setCollapsible(false);
         this.c.setHasNonEmbeddedTabs(false);
         TypedArray obtainStyledAttributes = this.a.obtainStyledAttributes(null, f.a.a, org.telegram.messenger.beta.R.attr.actionBarStyle, 0);
         if (obtainStyledAttributes.getBoolean(14, false)) {
@@ -195,16 +195,16 @@ public final class a0 extends n7 implements m.b {
             return;
         }
         int i10 = z4 ? 4 : 0;
-        o3 o3Var = (o3) this.e;
-        int i11 = o3Var.b;
+        n3 n3Var = (n3) this.e;
+        int i11 = n3Var.b;
         this.h = true;
-        o3Var.a((i10 & 4) | (i11 & (-5)));
+        n3Var.a((i10 & 4) | (i11 & (-5)));
     }
 
     public final void d(boolean z4) {
         boolean z10 = this.p;
         boolean z11 = this.q;
-        a3.c cVar = this.w;
+        ja.c cVar = this.w;
         View view = this.g;
         if (!z11 && z10) {
             if (this.r) {
@@ -232,7 +232,7 @@ public final class a0 extends n7 implements m.b {
                 a2.e(f10);
                 View view2 = (View) a2.a.get();
                 if (view2 != null) {
-                    view2.animate().setUpdateListener(cVar != null ? new e5(cVar, view2) : null);
+                    view2.animate().setUpdateListener(cVar != null ? new f5(cVar, view2) : null);
                 }
                 if (!jVar2.b) {
                     arrayList.add(a2);
@@ -285,7 +285,7 @@ public final class a0 extends n7 implements m.b {
             a11.e(0.0f);
             View view3 = (View) a11.a.get();
             if (view3 != null) {
-                view3.animate().setUpdateListener(cVar != null ? new e5(cVar, view3) : null);
+                view3.animate().setUpdateListener(cVar != null ? new f5(cVar, view3) : null);
             }
             if (!jVar4.b) {
                 arrayList2.add(a11);
@@ -333,7 +333,7 @@ public final class a0 extends n7 implements m.b {
         this.r = true;
         this.u = new y(this, 0);
         this.v = new y(this, 1);
-        this.w = new a3.c(this, 16);
+        this.w = new ja.c(this);
         b(sVar.getWindow().getDecorView());
     }
 }

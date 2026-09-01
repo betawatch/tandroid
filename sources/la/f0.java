@@ -5,9 +5,9 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import k7.p7;
+import k7.q7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class f0 extends wc.i implements dd.p {
     public h0 a;
@@ -76,7 +76,7 @@ public final class f0 extends wc.i implements dd.p {
         vc.a aVar = vc.a.a;
         int i10 = this.r;
         if (i10 == 0) {
-            p7.b(obj);
+            q7.b(obj);
             this.r = 1;
             b10 = h0.b(h0Var2, this);
         } else {
@@ -93,7 +93,7 @@ public final class f0 extends wc.i implements dd.p {
                     w8.g gVar2 = this.c;
                     c0 c0Var2 = this.b;
                     h0 h0Var3 = this.a;
-                    p7.b(obj);
+                    q7.b(obj);
                     h0Var = h0Var3;
                     c0Var = c0Var2;
                     firebaseApp = gVar2;
@@ -127,10 +127,10 @@ public final class f0 extends wc.i implements dd.p {
                     int i12 = h0.g;
                     h0Var.getClass();
                     try {
-                        h0Var.d.t0(b0Var);
+                        h0Var.d.p(b0Var);
                         Log.d("SessionFirelogPublisher", "Successfully logged Session Start event: ".concat(str2));
-                    } catch (RuntimeException e) {
-                        Log.e("SessionFirelogPublisher", "Error logging Session Start event to DataTransport: ", e);
+                    } catch (RuntimeException e6) {
+                        Log.e("SessionFirelogPublisher", "Error logging Session Start event to DataTransport: ", e6);
                     }
                     return sc.i.a;
                 }
@@ -141,7 +141,7 @@ public final class f0 extends wc.i implements dd.p {
                 w8.g gVar3 = this.c;
                 c0 c0Var3 = this.b;
                 h0Var = this.a;
-                p7.b(obj);
+                q7.b(obj);
                 a2 = list;
                 gVar = gVar3;
                 c0Var = c0Var3;
@@ -190,13 +190,13 @@ public final class f0 extends wc.i implements dd.p {
                     b0 b0Var2 = new b0(new k0(str22, str32, i112, j102, new j(iVar4, iVar5, sessionsSettings.a()), str4), c0.a(firebaseApp));
                     int i122 = h0.g;
                     h0Var.getClass();
-                    h0Var.d.t0(b0Var2);
+                    h0Var.d.p(b0Var2);
                     Log.d("SessionFirelogPublisher", "Successfully logged Session Start event: ".concat(str22));
                     return sc.i.a;
                 }
                 return aVar;
             }
-            p7.b(obj);
+            q7.b(obj);
             b10 = obj;
         }
         if (((Boolean) b10).booleanValue()) {

@@ -9,7 +9,7 @@ import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.NotificationsSettingsFacade;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class ee implements View.OnClickListener {
     public final /* synthetic */ org.telegram.ui.xn a;
@@ -33,7 +33,7 @@ public final class ee implements View.OnClickListener {
         ChatActivityEnterView chatActivityEnterView = this.c;
         chatActivityEnterView.c2 = !chatActivityEnterView.c2;
         if (chatActivityEnterView.b0 == null) {
-            chatActivityEnterView.b0 = new kr(this.b, R.drawable.input_notify_on, org.telegram.ui.ActionBar.j6.Wk);
+            chatActivityEnterView.b0 = new mr(this.b, R.drawable.input_notify_on, org.telegram.ui.ActionBar.k6.Wk);
         }
         chatActivityEnterView.b0.a(chatActivityEnterView.c2, true);
         chatActivityEnterView.E1.setImageDrawable(chatActivityEnterView.b0);

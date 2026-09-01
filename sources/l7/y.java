@@ -3,15 +3,15 @@ package l7;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class y extends t {
-    public final transient com.google.android.gms.internal.cast.i0 c;
+    public final transient com.google.android.gms.internal.cast.h0 c;
     public final transient Object[] d;
     public final transient int e = 1;
 
-    public y(com.google.android.gms.internal.cast.i0 i0Var, Object[] objArr) {
-        this.c = i0Var;
+    public y(com.google.android.gms.internal.cast.h0 h0Var, Object[] objArr) {
+        this.c = h0Var;
         this.d = objArr;
     }
 

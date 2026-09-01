@@ -4,9 +4,9 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class kn extends k7.c6 {
+public final class kn extends k7.d6 {
     public MessageObject a;
     public int b = 0;
     public boolean c = true;
@@ -20,7 +20,7 @@ public final class kn extends k7.c6 {
         this.h = xnVar;
     }
 
-    @Override // k7.c6
+    @Override // k7.d6
     public final void a() {
         MessageObject messageObject = this.a;
         xn xnVar = this.h;
@@ -40,7 +40,7 @@ public final class kn extends k7.c6 {
         AndroidUtilities.runOnUIThread(new zi(this, 8));
     }
 
-    @Override // k7.c6
+    @Override // k7.d6
     public final void c() {
         xn xnVar = this.h;
         xnVar.F9 = xnVar.getNotificationCenter().setAnimationInProgress(xnVar.F9, xn.Kc);
@@ -50,7 +50,7 @@ public final class kn extends k7.c6 {
         }
     }
 
-    @Override // k7.c6
+    @Override // k7.d6
     public final void d(View view) {
         if (view instanceof org.telegram.ui.Cells.t1) {
             org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) view;

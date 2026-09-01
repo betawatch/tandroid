@@ -19,12 +19,12 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RLottieNative;
-import org.telegram.ui.Components.wv0;
 import org.telegram.ui.Components.xv0;
 import org.telegram.ui.Components.yv0;
-import org.telegram.ui.fq0;
+import org.telegram.ui.Components.zv0;
+import org.telegram.ui.hq0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s1 implements Runnable {
     public final /* synthetic */ int a = 3;
@@ -96,15 +96,15 @@ public final /* synthetic */ class s1 implements Runnable {
                 ((SendMessagesHelper) this.e).lambda$performSendMessageRequestMulti$65((TLObject) this.f, this.b, (SendMessagesHelper.DelayedMessage) this.h, (ArrayList) this.c, this.d);
                 return;
             case 2:
-                yv0 yv0Var = (yv0) this.e;
+                zv0 zv0Var = (zv0) this.e;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) this.c;
                 MessageObject messageObject = (MessageObject) this.f;
                 org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) this.h;
-                RLottieNative[] rLottieNativeArr = yv0Var.c1;
-                RLottieNative[] rLottieNativeArr2 = yv0Var.f1;
-                int[] iArr = yv0Var.e;
-                if (yv0Var.T0) {
-                    AndroidUtilities.runOnUIThread(new wv0(yv0Var, 0));
+                RLottieNative[] rLottieNativeArr = zv0Var.c1;
+                RLottieNative[] rLottieNativeArr2 = zv0Var.f1;
+                int[] iArr = zv0Var.e;
+                if (zv0Var.T0) {
+                    AndroidUtilities.runOnUIThread(new xv0(zv0Var, 0));
                     return;
                 }
                 boolean z10 = false;
@@ -114,23 +114,23 @@ public final /* synthetic */ class s1 implements Runnable {
                     int i23 = this.b;
                     if (i22 >= length) {
                         if (z10) {
-                            AndroidUtilities.runOnUIThread(new wv0(yv0Var, 1));
+                            AndroidUtilities.runOnUIThread(new xv0(zv0Var, 1));
                             return;
                         } else {
-                            AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.l0(yv0Var, this.d, i23, t1Var));
+                            AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.l0(zv0Var, this.d, i23, t1Var));
                             return;
                         }
                     }
                     if (i22 <= 2) {
                         if (rLottieNativeArr2[i22] == null) {
                             if (i22 == 0) {
-                                int i24 = yv0Var.Y0;
+                                int i24 = zv0Var.Y0;
                                 i10 = i24 == 1 ? 5 : i24 == 2 ? 6 : i24 == 3 ? 7 : i24 == 4 ? 4 : 3;
                             } else if (i22 == 1) {
-                                int i25 = yv0Var.Z0;
+                                int i25 = zv0Var.Z0;
                                 i10 = i25 == 1 ? 11 : i25 == 2 ? 12 : i25 == 3 ? 13 : i25 == 4 ? 10 : 9;
                             } else {
-                                int i26 = yv0Var.a1;
+                                int i26 = zv0Var.a1;
                                 i10 = i26 == 1 ? 17 : i26 == 2 ? 18 : i26 == 3 ? 19 : i26 == 4 ? 16 : 15;
                             }
                             TLRPC.Document document = tL_messages_stickerSet.documents.get(i10);
@@ -139,13 +139,13 @@ public final /* synthetic */ class s1 implements Runnable {
                                 RLottieNative b10 = RLottieNative.b(readRes, "dice", iArr, null, null);
                                 if (i22 <= 2) {
                                     rLottieNativeArr2[i22] = b10;
-                                    yv0Var.g1[i22] = iArr[0];
+                                    zv0Var.g1[i22] = iArr[0];
                                 } else {
                                     rLottieNativeArr[i22 == 3 ? (char) 0 : (char) 4] = b10;
-                                    yv0Var.d1[i22 == 3 ? (char) 0 : (char) 4] = iArr[0];
+                                    zv0Var.d1[i22 == 3 ? (char) 0 : (char) 4] = iArr[0];
                                 }
                             } else {
-                                AndroidUtilities.runOnUIThread(new xv0(document, i23, messageObject, t1Var, tL_messages_stickerSet, 0));
+                                AndroidUtilities.runOnUIThread(new yv0(document, i23, messageObject, t1Var, tL_messages_stickerSet, 0));
                                 z10 = true;
                             }
                         }
@@ -163,17 +163,17 @@ public final /* synthetic */ class s1 implements Runnable {
                 TLRPC.InputGroupCall inputGroupCall = (TLRPC.InputGroupCall) this.c;
                 TLRPC.GroupCall groupCall = (TLRPC.GroupCall) this.f;
                 HashSet hashSet = (HashSet) this.h;
-                org.telegram.ui.Components.voip.f2.a = 0L;
-                org.telegram.ui.Components.voip.f2.h(activity, this.b, inputGroupCall, this.d, groupCall, hashSet);
+                org.telegram.ui.Components.voip.g2.a = 0L;
+                org.telegram.ui.Components.voip.g2.h(activity, this.b, inputGroupCall, this.d, groupCall, hashSet);
                 return;
             case 4:
-                fq0 fq0Var = (fq0) this.e;
+                hq0 hq0Var = (hq0) this.e;
                 String str3 = (String) this.c;
                 TLObject tLObject = (TLObject) this.f;
                 TLRPC.User user = (TLRPC.User) this.h;
-                HashMap hashMap = fq0Var.h;
-                ArrayList arrayList = fq0Var.f;
-                ArrayList arrayList2 = fq0Var.n;
+                HashMap hashMap = hq0Var.h;
+                ArrayList arrayList = hq0Var.f;
+                ArrayList arrayList2 = hq0Var.n;
                 int size = arrayList2.size();
                 int i27 = 0;
                 while (true) {
@@ -189,14 +189,14 @@ public final /* synthetic */ class s1 implements Runnable {
                 while (arrayList2.size() > 20) {
                     android.support.v4.media.a.u(1, arrayList2);
                 }
-                fq0Var.c0();
-                if (this.b != fq0Var.y) {
+                hq0Var.c0();
+                if (this.b != hq0Var.y) {
                     return;
                 }
                 int size2 = arrayList.size();
                 if (tLObject != null) {
                     TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject;
-                    fq0Var.w = messages_botresults.next_offset;
+                    hq0Var.w = messages_botresults.next_offset;
                     int size3 = messages_botresults.results.size();
                     i11 = 0;
                     for (int i28 = 0; i28 < size3; i28++) {
@@ -213,7 +213,7 @@ public final /* synthetic */ class s1 implements Runnable {
                                         searchImage.document = botInlineResult.document;
                                         searchImage.size = 0;
                                         photo2 = botInlineResult.photo;
-                                        if (photo2 != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, fq0Var.O, true)) != null) {
+                                        if (photo2 != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, hq0Var.O, true)) != null) {
                                             botInlineResult.document.thumbs.add(closestPhotoSizeWithSize);
                                             botInlineResult.document.flags |= 1;
                                         }
@@ -273,18 +273,18 @@ public final /* synthetic */ class s1 implements Runnable {
                             i11++;
                         }
                     }
-                    fq0Var.s = size2 == arrayList.size() || fq0Var.w == null;
+                    hq0Var.s = size2 == arrayList.size() || hq0Var.w == null;
                 } else {
                     i11 = 0;
                 }
-                fq0Var.r = false;
+                hq0Var.r = false;
                 if (i11 != 0) {
-                    fq0Var.I.s(size2, i11);
-                } else if (fq0Var.s) {
+                    hq0Var.I.s(size2, i11);
+                } else if (hq0Var.s) {
                     z4 = true;
-                    fq0Var.I.u(arrayList.size() - 1);
+                    hq0Var.I.u(arrayList.size() - 1);
                     if (arrayList.size() > 0) {
-                        fq0Var.K.e(false, z4);
+                        hq0Var.K.e(false, z4);
                         return;
                     }
                     return;
@@ -294,17 +294,17 @@ public final /* synthetic */ class s1 implements Runnable {
                 }
                 break;
             default:
-                final vh.r3 r3Var = (vh.r3) this.e;
+                final wh.r3 r3Var = (wh.r3) this.e;
                 Uri uri = (Uri) this.c;
                 String str4 = (String) this.f;
-                final vh.a aVar = (vh.a) this.h;
+                final wh.a aVar = (wh.a) this.h;
                 InputStream inputStream2 = null;
                 r5 = null;
                 MediaMetadataRetriever mediaMetadataRetriever2 = null;
                 try {
                     str = AndroidUtilities.getPath(uri);
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e6) {
+                    FileLog.e(e6);
                     str = null;
                 }
                 final boolean z12 = this.d;
@@ -315,8 +315,8 @@ public final /* synthetic */ class s1 implements Runnable {
                         if (context != null) {
                             try {
                                 inputStream = context.getContentResolver().openInputStream(uri);
-                            } catch (Exception e6) {
-                                e = e6;
+                            } catch (Exception e10) {
+                                e = e10;
                                 inputStream = null;
                                 fileOutputStream = null;
                             } catch (Throwable th2) {
@@ -331,8 +331,8 @@ public final /* synthetic */ class s1 implements Runnable {
                                 if (str4 != null) {
                                     try {
                                         extensionFromMimeType = MimeTypeMap.getSingleton().getExtensionFromMimeType(str4);
-                                    } catch (Exception e10) {
-                                        e = e10;
+                                    } catch (Exception e11) {
+                                        e = e11;
                                         fileOutputStream = null;
                                         FileLog.e(e);
                                         if (inputStream != null) {
@@ -372,8 +372,8 @@ public final /* synthetic */ class s1 implements Runnable {
                                             fileOutputStream.close();
                                         } catch (Exception unused2) {
                                         }
-                                    } catch (Exception e11) {
-                                        e = e11;
+                                    } catch (Exception e12) {
+                                        e = e12;
                                         FileLog.e(e);
                                         if (inputStream != null) {
                                             try {
@@ -430,8 +430,8 @@ public final /* synthetic */ class s1 implements Runnable {
                         } catch (Throwable th5) {
                             th = th5;
                         }
-                    } catch (Exception e12) {
-                        e = e12;
+                    } catch (Exception e13) {
+                        e = e13;
                     }
                     try {
                         try {
@@ -443,8 +443,8 @@ public final /* synthetic */ class s1 implements Runnable {
                             if (extractMetadata2 != null) {
                                 try {
                                     i15 = Integer.parseInt(extractMetadata2);
-                                } catch (Exception e13) {
-                                    e = e13;
+                                } catch (Exception e14) {
+                                    e = e14;
                                     mediaMetadataRetriever2 = mediaMetadataRetriever;
                                     i12 = 0;
                                     FileLog.e(e);
@@ -455,7 +455,7 @@ public final /* synthetic */ class s1 implements Runnable {
                                     i16 = 0;
                                     if (z12) {
                                     }
-                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: vh.p2
+                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: wh.q2
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             r3 r3Var2 = r3.this;
@@ -479,8 +479,8 @@ public final /* synthetic */ class s1 implements Runnable {
                             if (extractMetadata3 != null) {
                                 try {
                                     ceil = (int) Math.ceil(Long.parseLong(extractMetadata3) / 1000.0d);
-                                } catch (Exception e14) {
-                                    e = e14;
+                                } catch (Exception e15) {
+                                    e = e15;
                                     i12 = i15;
                                     mediaMetadataRetriever2 = mediaMetadataRetriever;
                                     FileLog.e(e);
@@ -495,7 +495,7 @@ public final /* synthetic */ class s1 implements Runnable {
                                     i16 = 0;
                                     if (z12) {
                                     }
-                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: vh.p2
+                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: wh.q2
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             r3 r3Var2 = r3.this;
@@ -533,8 +533,8 @@ public final /* synthetic */ class s1 implements Runnable {
                             }
                             throw th;
                         }
-                    } catch (Exception e15) {
-                        e = e15;
+                    } catch (Exception e16) {
+                        e = e16;
                         mediaMetadataRetriever2 = mediaMetadataRetriever;
                         i12 = 0;
                         i13 = 0;
@@ -546,7 +546,7 @@ public final /* synthetic */ class s1 implements Runnable {
                         i16 = 0;
                         if (z12) {
                         }
-                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: vh.p2
+                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: wh.q2
                             @Override // java.lang.Runnable
                             public final void run() {
                                 r3 r3Var2 = r3.this;
@@ -577,27 +577,27 @@ public final /* synthetic */ class s1 implements Runnable {
                         BitmapFactory.decodeFile(str2, options);
                         i13 = options.outWidth;
                         i15 = options.outHeight;
-                    } catch (Exception e16) {
-                        FileLog.e(e16);
+                    } catch (Exception e17) {
+                        FileLog.e(e17);
                     }
                     try {
                         imageOrientation = AndroidUtilities.getImageOrientation(str2);
                         i17 = ((Integer) imageOrientation.first).intValue();
-                    } catch (Exception e17) {
-                        e = e17;
+                    } catch (Exception e18) {
+                        e = e18;
                         i17 = 0;
                     }
                     try {
                         i19 = ((Integer) imageOrientation.second).intValue();
                         i18 = i13;
-                    } catch (Exception e18) {
-                        e = e18;
+                    } catch (Exception e19) {
+                        e = e19;
                         FileLog.e(e);
                         i18 = i13;
                         i19 = 0;
                         i20 = i17;
                         i21 = i15;
-                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: vh.p2
+                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: wh.q2
                             @Override // java.lang.Runnable
                             public final void run() {
                                 r3 r3Var2 = r3.this;
@@ -623,7 +623,7 @@ public final /* synthetic */ class s1 implements Runnable {
                     i20 = 0;
                     i19 = 0;
                 }
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: vh.p2
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: wh.q2
                     @Override // java.lang.Runnable
                     public final void run() {
                         r3 r3Var2 = r3.this;
@@ -661,8 +661,8 @@ public final /* synthetic */ class s1 implements Runnable {
         this.d = z4;
     }
 
-    public /* synthetic */ s1(yv0 yv0Var, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i10, MessageObject messageObject, org.telegram.ui.Cells.t1 t1Var, boolean z4) {
-        this.e = yv0Var;
+    public /* synthetic */ s1(zv0 zv0Var, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i10, MessageObject messageObject, org.telegram.ui.Cells.t1 t1Var, boolean z4) {
+        this.e = zv0Var;
         this.c = tL_messages_stickerSet;
         this.b = i10;
         this.f = messageObject;
@@ -670,8 +670,8 @@ public final /* synthetic */ class s1 implements Runnable {
         this.d = z4;
     }
 
-    public /* synthetic */ s1(fq0 fq0Var, String str, int i10, TLObject tLObject, boolean z4, TLRPC.User user) {
-        this.e = fq0Var;
+    public /* synthetic */ s1(hq0 hq0Var, String str, int i10, TLObject tLObject, boolean z4, TLRPC.User user) {
+        this.e = hq0Var;
         this.c = str;
         this.b = i10;
         this.f = tLObject;
@@ -679,7 +679,7 @@ public final /* synthetic */ class s1 implements Runnable {
         this.h = user;
     }
 
-    public /* synthetic */ s1(vh.r3 r3Var, Uri uri, boolean z4, String str, int i10, vh.a aVar) {
+    public /* synthetic */ s1(wh.r3 r3Var, Uri uri, boolean z4, String str, int i10, wh.a aVar) {
         this.e = r3Var;
         this.c = uri;
         this.d = z4;

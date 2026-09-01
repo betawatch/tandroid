@@ -8,11 +8,12 @@ import android.credentials.GetCredentialResponse;
 import android.os.Bundle;
 import android.os.OutcomeReceiver;
 import android.util.Log;
-import k7.c8;
 import k7.d8;
-import k7.u8;
+import k7.e8;
+import k7.v8;
+import org.telegram.ui.web.e0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class k implements OutcomeReceiver {
     public final /* synthetic */ int a = 0;
@@ -29,10 +30,10 @@ public final class k implements OutcomeReceiver {
                 CreateCredentialException error = (CreateCredentialException) th2;
                 kotlin.jvm.internal.j.e(error, "error");
                 Log.i("CredManProvService", "CreateCredentialResponse error returned from framework");
-                o2.o oVar = (o2.o) this.b;
+                e0 e0Var = (e0) this.b;
                 String type = error.getType();
                 kotlin.jvm.internal.j.d(type, "getType(...)");
-                oVar.onError(u8.a(error.getMessage(), type));
+                e0Var.onError(v8.a(error.getMessage(), type));
                 break;
             default:
                 GetCredentialException error2 = (GetCredentialException) th2;
@@ -41,7 +42,7 @@ public final class k implements OutcomeReceiver {
                 i iVar = this.b;
                 String type2 = error2.getType();
                 kotlin.jvm.internal.j.d(type2, "getType(...)");
-                iVar.onError(u8.b(error2.getMessage(), type2));
+                iVar.onError(v8.b(error2.getMessage(), type2));
                 break;
         }
     }
@@ -53,10 +54,10 @@ public final class k implements OutcomeReceiver {
                 CreateCredentialResponse response = (CreateCredentialResponse) obj;
                 kotlin.jvm.internal.j.e(response, "response");
                 Log.i("CredManProvService", "Create Result returned from framework: ");
-                o2.o oVar = (o2.o) this.b;
+                e0 e0Var = (e0) this.b;
                 Bundle data = response.getData();
                 kotlin.jvm.internal.j.d(data, "getData(...)");
-                oVar.onResult(c8.a("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", data));
+                e0Var.onResult(d8.a("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", data));
                 break;
             default:
                 GetCredentialResponse response2 = (GetCredentialResponse) obj;
@@ -69,12 +70,12 @@ public final class k implements OutcomeReceiver {
                 kotlin.jvm.internal.j.d(type, "getType(...)");
                 Bundle data2 = credential.getData();
                 kotlin.jvm.internal.j.d(data2, "getData(...)");
-                iVar.onResult(new o(d8.a(type, data2)));
+                iVar.onResult(new o(e8.a(type, data2)));
                 break;
         }
     }
 
-    public k(o2.o oVar, e eVar, l lVar) {
-        this.b = oVar;
+    public k(e0 e0Var, e eVar, l lVar) {
+        this.b = e0Var;
     }
 }

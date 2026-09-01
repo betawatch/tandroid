@@ -1,35 +1,30 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class wx implements ValueAnimator.AnimatorUpdateListener {
-    public int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ oy d;
+public final class wx implements org.telegram.ui.Components.y4 {
+    public final /* synthetic */ py a;
 
-    public wx(oy oyVar, float f10, boolean z4, float f11) {
-        this.d = oyVar;
-        this.b = f10;
-        this.c = f11;
-        this.a = (int) f10;
+    public wx(py pyVar) {
+        this.a = pyVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        ((Float) valueAnimator.getAnimatedValue()).getClass();
-        int lerp = (int) AndroidUtilities.lerp(this.b, this.c, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-        int i10 = lerp - this.a;
-        this.a = lerp;
-        oy oyVar = this.d;
-        oyVar.b0[0].a.scrollBy(0, i10);
-        View view = oyVar.fragmentView;
-        if (view != null) {
-            view.invalidate();
+    @Override // org.telegram.ui.Components.y4
+    public final void I(int i10, int i11, boolean z4) {
+        py pyVar = this.a;
+        ArrayList arrayList = pyVar.F2;
+        pyVar.H2 = i10;
+        pyVar.I2 = i11;
+        if (pyVar.z2 == null || arrayList.isEmpty()) {
+            return;
         }
+        ArrayList arrayList2 = new ArrayList();
+        for (int i12 = 0; i12 < arrayList.size(); i12++) {
+            arrayList2.add(MessagesStorage.TopicKey.of(((Long) arrayList.get(i12)).longValue(), 0L));
+        }
+        pyVar.z2.v(pyVar, arrayList2, pyVar.y1.getFieldText(), false, z4, i10, i11, null);
     }
 }

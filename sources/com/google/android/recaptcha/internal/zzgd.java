@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
 import dd.p;
-import k7.p7;
+import k7.q7;
 import kotlin.jvm.internal.j;
 import uc.c;
 import vc.a;
 import wc.i;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 final class zzgd extends i implements p {
     Object zza;
@@ -64,7 +64,7 @@ final class zzgd extends i implements p {
         sc.i iVar = sc.i.a;
         try {
             if (i10 == 0) {
-                p7.b(obj);
+                q7.b(obj);
                 zzhkVar = (zzhk) this.zzf;
                 zzge zzgeVar = this.zzd;
                 zzdvVar = zzgeVar.zzb;
@@ -97,18 +97,18 @@ final class zzgd extends i implements p {
                 d = this.zzb;
                 zzhkVar = (zzhk) this.zza;
                 zzhkVar2 = (zzhk) this.zzf;
-                p7.b(obj);
+                q7.b(obj);
             } else {
                 if (i10 != 2) {
                     if (i10 != 3) {
-                        p7.b(obj);
+                        q7.b(obj);
                         zzge zzgeVar2 = this.zzd;
                         zzdsVar2 = zzdv.zzb;
                         zzgeVar2.zzb = zzdsVar2;
                         return iVar;
                     }
                     zzhkVar3 = (zzhk) this.zzf;
-                    p7.b(obj);
+                    q7.b(obj);
                     this.zzf = null;
                     this.zzc = 4;
                     if (((zzhg) obj).zza(zzhkVar3, this) == aVar) {
@@ -121,7 +121,7 @@ final class zzgd extends i implements p {
                 }
                 d10 = this.zzb;
                 zzhkVar3 = (zzhk) this.zzf;
-                p7.b(obj);
+                q7.b(obj);
                 zzxn zzxnVar = (zzxn) obj;
                 zzge zzgeVar3 = this.zzd;
                 zzgeVar3.zzc = zzxnVar;
@@ -147,11 +147,11 @@ final class zzgd extends i implements p {
                 obj = zzfpVar2.zzn(zzxnVar2, (long) d10, this);
             }
             return aVar;
-        } catch (zzcg e) {
+        } catch (zzcg e6) {
             zzge zzgeVar4 = this.zzd;
             zzdrVar = zzdv.zzd;
             zzgeVar4.zzb = zzdrVar;
-            throw e;
+            throw e6;
         }
     }
 }

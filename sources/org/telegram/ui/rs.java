@@ -1,76 +1,382 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
 import android.view.View;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import java.util.ArrayList;
+import java.util.regex.Pattern;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.CacheByChatsController;
+import org.telegram.messenger.ContactsLoadingObserver;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.LocationController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.R;
+import org.telegram.messenger.voip.ConferenceCall;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rs implements org.telegram.ui.ActionBar.c2, org.telegram.ui.Components.yk0, org.telegram.ui.Components.kl0, r0.o {
-    public final /* synthetic */ ContactsActivity a;
+public final /* synthetic */ class rs implements org.telegram.ui.ActionBar.c2, org.telegram.ui.Components.kl0, jy, ContactsLoadingObserver.Callback, org.telegram.ui.Components.cv0, org.telegram.ui.Components.ll0, ImageReceiver.ImageReceiverDelegate, OnCompleteListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ rs(ContactsActivity contactsActivity) {
-        this.a = contactsActivity;
+    public /* synthetic */ rs(int i10, Object obj, Object obj2) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // r0.o
-    public r0.m1 N0(View view, r0.m1 m1Var) {
-        int i10 = AndroidUtilities.getDefaultWindowInsets(m1Var, false).d;
-        ContactsActivity contactsActivity = this.a;
-        contactsActivity.n0 = i10;
-        contactsActivity.j0();
-        contactsActivity.i0();
-        contactsActivity.h0();
-        return r0.m1.b;
+    @Override // org.telegram.ui.jy
+    public /* synthetic */ boolean C() {
+        return false;
     }
 
-    @Override // org.telegram.ui.Components.yk0
-    public void d() {
-        this.a.g0();
+    @Override // org.telegram.ui.jy
+    public /* synthetic */ boolean J(py pyVar) {
+        return false;
     }
 
     @Override // org.telegram.ui.Components.kl0
+    public /* synthetic */ boolean Y0(View view) {
+        switch (this.a) {
+            case 2:
+                break;
+            case 5:
+                break;
+            case 8:
+                break;
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.cv0
+    public void b(LocationController.SharingLocationInfo sharingLocationInfo) {
+        LaunchActivity launchActivity = (LaunchActivity) this.b;
+        int[] iArr = (int[]) this.c;
+        Pattern pattern = LaunchActivity.y1;
+        int i10 = sharingLocationInfo.messageObject.currentAccount;
+        iArr[0] = i10;
+        launchActivity.K0(i10);
+        bd0 bd0Var = new bd0(2);
+        bd0Var.u0(sharingLocationInfo.messageObject);
+        bd0Var.C0 = new f3.e(iArr, sharingLocationInfo.messageObject.getDialogId(), 9);
+        launchActivity.p0(bd0Var);
+    }
+
+    @Override // org.telegram.ui.Components.kl0
+    public void c(float f10, float f11, int i10, View view) {
+        switch (this.a) {
+            case 2:
+                DataSettingsActivity.U((DataSettingsActivity) this.b, (Context) this.c, view, i10, f10);
+                break;
+            case 5:
+                py.e0((py) this.b, (oy) this.c, view, i10);
+                break;
+            case 8:
+                FiltersSetupActivity.U((FiltersSetupActivity) this.b, (Context) this.c, view, i10);
+                break;
+            default:
+                NotificationsCustomSettingsActivity.U((NotificationsCustomSettingsActivity) this.b, (Context) this.c, view, i10, f10, f11);
+                break;
+        }
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public void didSetImage(ImageReceiver imageReceiver, boolean z4, boolean z10, boolean z11) {
+        Bitmap g02;
+        bd0 bd0Var = (bd0) this.b;
+        vc0 vc0Var = (vc0) this.c;
+        bd0Var.getClass();
+        if (!z4 || z10 || vc0Var.e == null || (g02 = bd0Var.g0(vc0Var)) == null) {
+            return;
+        }
+        vc0Var.e.setIcon(g02);
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
+        org.telegram.messenger.j5.a(this, i10, str, drawable);
+    }
+
+    @Override // org.telegram.ui.Components.ll0
     public boolean f(int i10, View view) {
-        ContactsActivity contactsActivity = this.a;
-        f2.o0 adapter = contactsActivity.f.getAdapter();
-        ws wsVar = contactsActivity.d;
-        if (adapter == wsVar) {
-            int S = wsVar.S(i10);
-            int Q = contactsActivity.d.Q(i10);
-            org.telegram.ui.Components.ic icVar = org.telegram.ui.Components.ic.w;
-            if (icVar != null) {
-                icVar.b();
+        bd0 bd0Var = (bd0) this.b;
+        Context context = (Context) this.c;
+        if (bd0Var.D0 == 2) {
+            Object J = bd0Var.Q.J(i10);
+            if (J instanceof vc0) {
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(context, null);
+                org.telegram.ui.ActionBar.g1 g1Var = new org.telegram.ui.ActionBar.g1(0, bd0Var.getParentActivity(), bd0Var.getResourceProvider(), true, true);
+                g1Var.setMinimumWidth(AndroidUtilities.dp(200.0f));
+                g1Var.g(LocaleController.getString(R.string.GetDirections), R.drawable.filled_directions, null);
+                g1Var.setOnClickListener(new hb0(1, bd0Var, (vc0) J));
+                actionBarPopupWindow$ActionBarPopupWindowLayout.addView(g1Var);
+                tc0 tc0Var = new tc0(bd0Var, actionBarPopupWindow$ActionBarPopupWindowLayout);
+                bd0Var.F0 = tc0Var;
+                tc0Var.setOutsideTouchable(true);
+                bd0Var.F0.setClippingEnabled(true);
+                bd0Var.F0.setInputMethodMode(2);
+                bd0Var.F0.setSoftInputMode(0);
+                int[] iArr = new int[2];
+                view.getLocationInWindow(iArr);
+                bd0Var.F0.showAtLocation(view, 48, 0, iArr[1] - AndroidUtilities.dp(52.0f));
+                bd0Var.F0.b();
+                return true;
             }
-            if (Q < 0 || S < 0) {
-                return false;
-            }
         }
-        boolean z4 = contactsActivity.H;
-        if (!z4 && !contactsActivity.I && (view instanceof org.telegram.ui.Cells.va)) {
-            contactsActivity.r0((org.telegram.ui.Cells.va) view);
-            return true;
-        }
-        if (z4 || contactsActivity.I || !(view instanceof org.telegram.ui.Cells.h6)) {
-            return false;
-        }
-        org.telegram.ui.Cells.h6 h6Var = (org.telegram.ui.Cells.h6) view;
-        if (h6Var.getUser() != null && h6Var.getUser().contact) {
-            contactsActivity.r0(h6Var);
-        }
-        return true;
+        return false;
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
-        ContactsActivity contactsActivity = this.a;
-        contactsActivity.getClass();
-        a0.h hVar = contactsActivity.a0;
-        ArrayList<TLRPC.User> arrayList = new ArrayList<>(hVar.m());
-        for (int i11 = 0; i11 < hVar.m(); i11++) {
-            arrayList.add((TLRPC.User) hVar.f(hVar.j(i11)));
+    public void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        ConferenceCall conferenceCall;
+        int i11 = this.a;
+        org.telegram.ui.ActionBar.d2 d2Var2 = null;
+        int i12 = 0;
+        Object obj = this.c;
+        Object obj2 = this.b;
+        switch (i11) {
+            case 0:
+                ContactsActivity.X((ContactsActivity) obj2, (String) obj);
+                break;
+            case 1:
+                ContactsActivity contactsActivity = (ContactsActivity) obj2;
+                TLRPC.User user = (TLRPC.User) obj;
+                at atVar = contactsActivity.T;
+                if (atVar != null) {
+                    atVar.b(user);
+                    contactsActivity.T = null;
+                    break;
+                }
+                break;
+            case 2:
+            case 5:
+            case 6:
+            case 8:
+            case 13:
+            case 17:
+            case 18:
+            case 19:
+            case 20:
+            case 21:
+            case 22:
+            case 23:
+            case 26:
+            default:
+                fn0 fn0Var = (fn0) obj2;
+                boolean[] zArr = (boolean[]) obj;
+                if (!fn0Var.s0) {
+                    fn0Var.p1.clear();
+                }
+                fn0Var.q1.clear();
+                im0 im0Var = (im0) fn0Var.y1;
+                im0Var.d.j1(fn0Var.B, fn0Var.C, fn0Var.D, zArr[0], null, null, im0Var.b);
+                fn0Var.finishFragment();
+                break;
+            case 3:
+                lv.U((lv) obj2, (TLRPC.User) obj);
+                break;
+            case 4:
+                ((py) obj2).getMediaDataController().removeWebapp(((TLRPC.User) obj).id);
+                break;
+            case 7:
+                pw pwVar = (pw) obj2;
+                MessagesController.DialogFilter dialogFilter = (MessagesController.DialogFilter) obj;
+                pwVar.getClass();
+                TLRPC.TL_messages_updateDialogFilter tL_messages_updateDialogFilter = new TLRPC.TL_messages_updateDialogFilter();
+                tL_messages_updateDialogFilter.id = dialogFilter.id;
+                py pyVar = pwVar.b;
+                pyVar.getConnectionsManager().sendRequest(tL_messages_updateDialogFilter, null);
+                pyVar.getMessagesController().removeFilter(dialogFilter);
+                pyVar.getMessagesStorage().deleteDialogFilter(dialogFilter);
+                break;
+            case 9:
+                a20 a20Var = (a20) obj2;
+                MessagesController.DialogFilter dialogFilter2 = (MessagesController.DialogFilter) obj;
+                FiltersSetupActivity filtersSetupActivity = a20Var.e;
+                if (filtersSetupActivity.getParentActivity() != null) {
+                    org.telegram.ui.ActionBar.d2 d2Var3 = new org.telegram.ui.ActionBar.d2(filtersSetupActivity.getParentActivity(), 3, null);
+                    d2Var3.d0 = false;
+                    d2Var3.show();
+                    d2Var2 = d2Var3;
+                }
+                TLRPC.TL_messages_updateDialogFilter tL_messages_updateDialogFilter2 = new TLRPC.TL_messages_updateDialogFilter();
+                tL_messages_updateDialogFilter2.id = dialogFilter2.id;
+                filtersSetupActivity.getConnectionsManager().sendRequest(tL_messages_updateDialogFilter2, new ba(a20Var, d2Var2, dialogFilter2, 10));
+                break;
+            case 10:
+                d60 d60Var = (d60) obj2;
+                TLObject tLObject = (TLObject) obj;
+                AccountInstance accountInstance = d60Var.d;
+                if (!d60Var.o1()) {
+                    if (!(tLObject instanceof TLRPC.User)) {
+                        TLRPC.Chat chat = (TLRPC.Chat) tLObject;
+                        accountInstance.getMessagesController().deleteParticipantFromChat(d60Var.i1(), (TLRPC.User) null, chat, false, false);
+                        d60Var.k1().k(0L, 32, chat, null, null, null);
+                        break;
+                    } else {
+                        TLRPC.User user2 = (TLRPC.User) tLObject;
+                        accountInstance.getMessagesController().deleteParticipantFromChat(d60Var.i1(), user2);
+                        d60Var.k1().k(0L, 32, user2, null, null, null);
+                        break;
+                    }
+                } else {
+                    VoIPService sharedInstance = VoIPService.getSharedInstance();
+                    if (sharedInstance != null && (conferenceCall = sharedInstance.conference) != null && (tLObject instanceof TLRPC.User)) {
+                        TLRPC.User user3 = (TLRPC.User) tLObject;
+                        conferenceCall.kick(user3.id);
+                        d60Var.X0.addKickedUser(user3.id);
+                        d60Var.k1().k(0L, 102, user3, null, null, null);
+                        break;
+                    }
+                }
+                break;
+            case 11:
+                z60 z60Var = (z60) obj2;
+                z60Var.x.h((TLRPC.User) obj);
+                if (z60Var.f.r.length() > 0) {
+                    z60Var.f.r.setText((CharSequence) null);
+                    break;
+                }
+                break;
+            case 12:
+                z60 z60Var2 = (z60) obj2;
+                z60Var2.getClass();
+                org.telegram.ui.Cells.z1 z1Var = ((org.telegram.ui.Cells.z1[]) obj)[0];
+                if (z1Var != null && z1Var.b()) {
+                    i12 = 100;
+                }
+                z60Var2.m0(i12);
+                break;
+            case 14:
+                LanguageSelectActivity.X((LanguageSelectActivity) obj2, (LocaleController.LocaleInfo) obj);
+                break;
+            case 15:
+                Pattern pattern = LaunchActivity.y1;
+                ((LaunchActivity) obj2).p0((og0) obj);
+                break;
+            case 16:
+                LaunchActivity launchActivity = (LaunchActivity) obj2;
+                Pattern pattern2 = LaunchActivity.y1;
+                launchActivity.getClass();
+                LocaleController.getInstance().applyLanguage(((LocaleController.LocaleInfo[]) obj)[0], true, false, launchActivity.L);
+                launchActivity.u0(true);
+                break;
+            case 24:
+                ((ee0) obj2).B.o1((TLRPC.TL_auth_authorization) ((TLObject) obj), false);
+                break;
+            case 25:
+                ie0 ie0Var = (ie0) obj2;
+                ie0Var.getClass();
+                Bundle bundle = new Bundle();
+                bundle.putString("email_unconfirmed_pattern", ((TLRPC.TL_auth_passwordRecovery) obj).email_pattern);
+                bundle.putString("password", ie0Var.r);
+                bundle.putString("requestPhone", ie0Var.s);
+                bundle.putString("phoneHash", ie0Var.v);
+                bundle.putString("phoneCode", ie0Var.w);
+                ie0Var.y.u1(7, true, bundle, false);
+                break;
+            case 27:
+                sf0.o((sf0) obj2, (Context) obj);
+                break;
         }
-        contactsActivity.getContactsController().deleteContactsUndoable(contactsActivity.getParentActivity(), contactsActivity, arrayList);
-        contactsActivity.o0();
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
+        org.telegram.messenger.j5.b(this, imageReceiver);
+    }
+
+    @Override // com.google.android.gms.tasks.OnCompleteListener
+    public void onComplete(Task task) {
+        switch (this.a) {
+            case 23:
+                zd0 zd0Var = (zd0) this.b;
+                a8.e eVar = (a8.e) this.c;
+                og0 og0Var = zd0Var.T;
+                if (og0Var.getParentActivity() != null) {
+                    og0Var.getParentActivity().startActivityForResult(eVar.f(), 200);
+                    break;
+                }
+                break;
+            default:
+                ef0 ef0Var = (ef0) this.b;
+                a8.e eVar2 = (a8.e) this.c;
+                og0 og0Var2 = ef0Var.B;
+                if (og0Var2.getParentActivity() != null && !og0Var2.getParentActivity().isFinishing()) {
+                    og0Var2.getParentActivity().startActivityForResult(eVar2.f(), 200);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // org.telegram.messenger.ContactsLoadingObserver.Callback
+    public void onResult(boolean z4) {
+        LaunchActivity launchActivity = (LaunchActivity) this.b;
+        Intent intent = (Intent) this.c;
+        Pattern pattern = LaunchActivity.y1;
+        launchActivity.X(intent, true, false, false, null, true, false);
+    }
+
+    @Override // org.telegram.ui.Components.kl0
+    public /* synthetic */ void r0(View view, float f10, float f11) {
+        int i10 = this.a;
+    }
+
+    @Override // org.telegram.ui.jy
+    public boolean v(py pyVar, ArrayList arrayList, CharSequence charSequence, boolean z4, boolean z10, int i10, int i11, mf1 mf1Var) {
+        h80 h80Var = (h80) this.b;
+        py pyVar2 = (py) this.c;
+        CacheByChatsController.KeepMediaException keepMediaException = null;
+        int i12 = 0;
+        while (i12 < arrayList.size()) {
+            ArrayList arrayList2 = h80Var.c0;
+            CacheByChatsController.KeepMediaException keepMediaException2 = new CacheByChatsController.KeepMediaException(((MessagesStorage.TopicKey) arrayList.get(i12)).dialogId, CacheByChatsController.KEEP_MEDIA_ONE_DAY);
+            arrayList2.add(keepMediaException2);
+            i12++;
+            keepMediaException = keepMediaException2;
+        }
+        h80Var.a0.saveKeepMediaExceptions(h80Var.W, h80Var.c0);
+        Bundle bundle = new Bundle();
+        bundle.putInt(TeXSymbolParser.TYPE_ATTR, h80Var.W);
+        e80 e80Var = new e80(bundle, pyVar2);
+        e80Var.d = h80Var.c0;
+        e80Var.U();
+        h80Var.d0.presentFragment(e80Var);
+        AndroidUtilities.runOnUIThread(new v10(10, e80Var, keepMediaException), 150L);
+        return true;
+    }
+
+    public /* synthetic */ rs(ContactsActivity contactsActivity, TLRPC.User user, String str) {
+        this.a = 1;
+        this.b = contactsActivity;
+        this.c = user;
+    }
+
+    private final /* synthetic */ void a(View view, float f10, float f11) {
+    }
+
+    private final /* synthetic */ void d(View view, float f10, float f11) {
+    }
+
+    private final /* synthetic */ void e(View view, float f10, float f11) {
+    }
+
+    private final /* synthetic */ void g(View view, float f10, float f11) {
     }
 }

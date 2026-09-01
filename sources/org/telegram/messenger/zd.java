@@ -5,21 +5,21 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.Components.de0;
-import org.telegram.ui.Components.hp;
+import org.telegram.ui.Components.fe0;
+import org.telegram.ui.Components.jp;
 import org.telegram.ui.WallpapersListActivity;
-import org.telegram.ui.dp;
-import org.telegram.ui.fq0;
-import org.telegram.ui.g70;
+import org.telegram.ui.ep;
+import org.telegram.ui.h70;
+import org.telegram.ui.hq0;
 import org.telegram.ui.jn;
 import org.telegram.ui.jo;
-import org.telegram.ui.jo0;
-import org.telegram.ui.og1;
-import org.telegram.ui.pm0;
+import org.telegram.ui.lo0;
 import org.telegram.ui.po;
-import org.telegram.ui.vq0;
+import org.telegram.ui.qg1;
+import org.telegram.ui.rm0;
+import org.telegram.ui.xq0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class zd implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -65,7 +65,7 @@ public final /* synthetic */ class zd implements RequestDelegate {
                 }
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new lh.r5((jn) obj, tLObject, z4, i11));
+                AndroidUtilities.runOnUIThread(new mh.r5((jn) obj, tLObject, z4, i11));
                 break;
             case 4:
                 po poVar = (po) obj;
@@ -74,40 +74,40 @@ public final /* synthetic */ class zd implements RequestDelegate {
                     break;
                 } else {
                     poVar.getMessagesController().processUpdates((TLRPC.Updates) tLObject, false);
-                    AndroidUtilities.runOnUIThread(new jh.f(19, poVar, z4));
+                    AndroidUtilities.runOnUIThread(new kh.f(18, poVar, z4));
                     break;
                 }
             case 5:
-                AndroidUtilities.runOnUIThread(new cg.u0((dp) obj, tL_error, tLObject, this.b, 9));
+                AndroidUtilities.runOnUIThread(new dg.t0((ep) obj, tL_error, tLObject, this.b, 9));
                 break;
             case 6:
-                AndroidUtilities.runOnUIThread(new hp((de0) obj, tL_error, tLObject, z4));
+                AndroidUtilities.runOnUIThread(new jp((fe0) obj, tL_error, tLObject, z4));
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new cg.u0((g70) obj, tL_error, tLObject, this.b, 18));
+                AndroidUtilities.runOnUIThread(new dg.t0((h70) obj, tL_error, tLObject, this.b, 18));
                 break;
             case 8:
-                AndroidUtilities.runOnUIThread(new cg.u0((pm0) obj, tL_error, tLObject, this.b, 19));
+                AndroidUtilities.runOnUIThread(new dg.t0((rm0) obj, tL_error, tLObject, this.b, 19));
                 break;
             case 9:
-                AndroidUtilities.runOnUIThread(new cg.u0((jo0) obj, tL_error, tLObject, this.b, 22));
+                AndroidUtilities.runOnUIThread(new dg.t0((lo0) obj, tL_error, tLObject, this.b, 22));
                 break;
             case 10:
-                fq0 fq0Var = (fq0) obj;
+                hq0 hq0Var = (hq0) obj;
                 if (tLObject != null) {
-                    AndroidUtilities.runOnUIThread(new lh.r5(fq0Var, tLObject, z4, 28));
+                    AndroidUtilities.runOnUIThread(new mh.r5(hq0Var, tLObject, z4, 28));
                     break;
                 }
                 break;
             case 11:
-                AndroidUtilities.runOnUIThread(new cg.u0((og1) obj, tL_error, tLObject, this.b, 24));
+                AndroidUtilities.runOnUIThread(new dg.t0((qg1) obj, tL_error, tLObject, this.b, 24));
                 break;
             case 12:
                 int[][] iArr = WallpapersListActivity.h0;
-                AndroidUtilities.runOnUIThread(new vq0((WallpapersListActivity) obj, tLObject, z4, 5));
+                AndroidUtilities.runOnUIThread(new xq0((WallpapersListActivity) obj, tLObject, z4, 5));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new vq0((ph.z2) obj, tLObject, z4, i11));
+                AndroidUtilities.runOnUIThread(new xq0((qh.z2) obj, tLObject, z4, i11));
                 break;
         }
     }

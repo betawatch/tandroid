@@ -12,10 +12,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public class j5 extends Drawable implements r5 {
-    public lh.wa B;
+    public mh.wa B;
     public Integer C;
     public int D;
     public PorterDuffColorFilter E;
@@ -30,7 +30,7 @@ public class j5 extends Drawable implements r5 {
     public final z5 e;
     public final Drawable[] f;
     public View h;
-    public org.telegram.ui.q61 n;
+    public org.telegram.ui.r61 n;
     public final boolean r;
     public final int s;
     public int v;
@@ -88,16 +88,16 @@ public class j5 extends Drawable implements r5 {
         Rect rect = this.H;
         rect.set(bounds);
         rect.offset(this.F, this.G);
-        float e = this.e.e(this.y);
+        float e6 = this.e.e(this.y);
         fg fgVar = this.I;
-        if (e > 0.0f) {
-            lh.wa waVar = this.B;
+        if (e6 > 0.0f) {
+            mh.wa waVar = this.B;
             waVar.c.set(rect);
             waVar.e();
             this.B.d();
-            lh.wa waVar2 = this.B;
+            mh.wa waVar2 = this.B;
             Integer num = this.C;
-            waVar2.a(canvas, org.telegram.ui.ActionBar.j6.l1(e, num == null ? -1 : num.intValue()));
+            waVar2.a(canvas, org.telegram.ui.ActionBar.k6.l1(e6, num == null ? -1 : num.intValue()));
             lf.j.d().a(15, fgVar);
         } else {
             lf.j.d().f(fgVar);
@@ -134,9 +134,9 @@ public class j5 extends Drawable implements r5 {
             boolean z4 = drawable3 instanceof l5;
             OvershootInterpolator overshootInterpolator = this.c;
             if (z4) {
-                nh.y2 y2Var = ((l5) drawable3).k;
-                if (y2Var != null) {
-                    y2Var.setRoundRadius(AndroidUtilities.dp(4.0f));
+                oh.z2 z2Var = ((l5) drawable3).k;
+                if (z2Var != null) {
+                    z2Var.setRoundRadius(AndroidUtilities.dp(4.0f));
                 }
                 if (d < 1.0f) {
                     float interpolation = overshootInterpolator.getInterpolation(d);
@@ -176,13 +176,13 @@ public class j5 extends Drawable implements r5 {
 
     public final void f() {
         l5 l5Var;
-        nh.y2 y2Var;
+        oh.z2 z2Var;
         Drawable drawable = this.f[0];
-        if (!(drawable instanceof l5) || (y2Var = (l5Var = (l5) drawable).k) == null) {
+        if (!(drawable instanceof l5) || (z2Var = (l5Var = (l5) drawable).k) == null) {
             return;
         }
-        l5Var.w(y2Var);
-        y2Var.startAnimation();
+        l5Var.w(z2Var);
+        z2Var.startAnimation();
     }
 
     public final void g(Drawable drawable, boolean z4) {
@@ -298,9 +298,9 @@ public class j5 extends Drawable implements r5 {
                 this.h.invalidate();
             }
         }
-        org.telegram.ui.q61 q61Var = this.n;
-        if (q61Var != null) {
-            q61Var.invalidate();
+        org.telegram.ui.r61 r61Var = this.n;
+        if (r61Var != null) {
+            r61Var.invalidate();
         }
         invalidateSelf();
     }
@@ -382,7 +382,7 @@ public class j5 extends Drawable implements r5 {
         }
         if (z10) {
             if (this.B == null) {
-                this.B = new lh.wa(1, 8);
+                this.B = new mh.wa(1, 8);
             }
             this.y = z4;
             invalidate();
@@ -390,7 +390,7 @@ public class j5 extends Drawable implements r5 {
         }
         this.y = z4;
         if (z4 && this.B == null) {
-            this.B = new lh.wa(1, 8);
+            this.B = new mh.wa(1, 8);
         } else if (!z4 && this.B != null) {
             this.B = null;
         }
@@ -410,10 +410,10 @@ public class j5 extends Drawable implements r5 {
     public j5(int i10, int i11, View view, boolean z4) {
         this.a = false;
         this.c = new OvershootInterpolator(2.0f);
-        nr nrVar = nr.g;
-        z5 z5Var = new z5((View) null, 300L, nrVar);
+        pr prVar = pr.g;
+        z5 z5Var = new z5((View) null, 300L, prVar);
         this.d = z5Var;
-        z5 z5Var2 = new z5((View) null, 300L, nrVar);
+        z5 z5Var2 = new z5((View) null, 300L, prVar);
         this.e = z5Var2;
         this.f = new Drawable[2];
         this.v = 255;

@@ -1,25 +1,34 @@
 package org.telegram.ui.Components;
 
 import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class eb0 extends f2.v {
-    public final /* synthetic */ qb0 c;
+public final /* synthetic */ class eb0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sb0 b;
 
-    public eb0(qb0 qb0Var) {
-        this.c = qb0Var;
+    public /* synthetic */ eb0(sb0 sb0Var, int i10) {
+        this.a = i10;
+        this.b = sb0Var;
     }
 
-    @Override // f2.v
-    public final int i(int i10) {
-        MessageObject messageObject;
-        MessageObject.GroupedMessages a2;
-        if (i10 < 0) {
-            return MediaDataController.MAX_STYLE_RUNS_COUNT;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                sb0 sb0Var = this.b;
+                kb0 kb0Var = sb0Var.f;
+                if (!sb0Var.W.d.webpageTop) {
+                    kb0Var.w0(kb0Var.computeVerticalScrollRange() - (kb0Var.computeVerticalScrollExtent() + kb0Var.computeVerticalScrollOffset()), MediaDataController.MAX_LINKS_COUNT, xh.n.V);
+                    break;
+                } else {
+                    kb0Var.w0(-kb0Var.computeVerticalScrollOffset(), MediaDataController.MAX_LINKS_COUNT, xh.n.V);
+                    break;
+                }
+            default:
+                this.b.g(true, false);
+                break;
         }
-        qb0 qb0Var = this.c;
-        return (i10 >= qb0Var.r.previewMessages.size() || (a2 = qb0.a(qb0Var, (messageObject = qb0Var.r.previewMessages.get(i10)))) == null) ? MediaDataController.MAX_STYLE_RUNS_COUNT : a2.getPosition(messageObject).spanSize;
     }
 }

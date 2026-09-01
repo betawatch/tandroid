@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class n implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class n implements RequestDelegate {
                 ((VoIPDebugToSend) this.b).lambda$done$3((VoIPDebugToSend.Data) this.c, (TL_phone.saveCallDebug) this.d, tLObject, tL_error);
                 break;
             case 1:
-                ((GroupCallMessagesController) this.b).lambda$sendCallMessage$5((f) this.c, (GroupCallMessage) this.d, tLObject, tL_error);
+                ((GroupCallMessagesController) this.b).lambda$sendCallMessage$5((e) this.c, (GroupCallMessage) this.d, tLObject, tL_error);
                 break;
             case 2:
                 VoIPService.lambda$startConferenceGroupCall$49((ArrayList) this.b, (ArrayList) this.c, (y) this.d, tLObject, tL_error);

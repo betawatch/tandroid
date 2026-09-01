@@ -5,7 +5,7 @@ import id.b;
 import id.d;
 import java.util.Iterator;
 import java.util.List;
-import k7.p7;
+import k7.q7;
 import ld.b0;
 import ld.e0;
 import ld.f1;
@@ -14,7 +14,7 @@ import uc.h;
 import vc.a;
 import wc.i;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 final class zzfb extends i implements p {
     int zza;
@@ -67,7 +67,7 @@ final class zzfb extends i implements p {
         int i10 = this.zza;
         try {
             if (i10 == 0) {
-                p7.b(obj);
+                q7.b(obj);
                 zzhkVar = (zzhk) this.zze;
                 zzfp zzfpVar = this.zzb;
                 zzxn zzxnVar = this.zzc;
@@ -80,19 +80,19 @@ final class zzfb extends i implements p {
             } else {
                 if (i10 != 1) {
                     if (i10 == 2) {
-                        p7.b(obj);
+                        q7.b(obj);
                         return sc.i.a;
                     }
                     zzcg zzcgVar = (zzcg) this.zze;
-                    p7.b(obj);
+                    q7.b(obj);
                     throw zzcgVar;
                 }
                 zzhkVar = (zzhk) this.zze;
-                p7.b(obj);
+                q7.b(obj);
             }
             this.zze = null;
             this.zza = 2;
-        } catch (zzcg e) {
+        } catch (zzcg e6) {
             zzfp zzfpVar2 = this.zzb;
             f1 f1Var = (f1) zzfp.zzf(zzfpVar2).zzd().c().get(b0Var);
             if (f1Var != null && (children = f1Var.getChildren()) != null) {
@@ -107,10 +107,10 @@ final class zzfb extends i implements p {
                 throw new IllegalStateException(("Current context doesn't contain Job in it: " + c3).toString());
             }
             List a2 = d.a(f1Var2.getChildren());
-            this.zze = e;
+            this.zze = e6;
             this.zza = 3;
             if (e0.o(a2, this) != aVar) {
-                throw e;
+                throw e6;
             }
         }
     }

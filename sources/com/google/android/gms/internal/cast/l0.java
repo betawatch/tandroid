@@ -1,50 +1,31 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes.dex */
-public final class l0 extends g0 {
-    public static final l0 e = new l0(0, new Object[0]);
-    public final transient Object[] c;
-    public final transient int d;
+import java.util.AbstractMap;
 
-    public l0(int i10, Object[] objArr) {
-        this.c = objArr;
-        this.d = i10;
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes.dex */
+public final class l0 extends f0 {
+    public final /* synthetic */ m0 c;
+
+    public l0(m0 m0Var) {
+        this.c = m0Var;
     }
 
     @Override // java.util.List
-    public final Object get(int i10) {
-        j7.v5.a(i10, this.d);
-        Object obj = this.c[i10];
+    public final /* bridge */ /* synthetic */ Object get(int i10) {
+        m0 m0Var = this.c;
+        j7.t5.a(i10, m0Var.f);
+        Object[] objArr = m0Var.e;
+        int i11 = i10 + i10;
+        Object obj = objArr[i11];
         obj.getClass();
-        return obj;
-    }
-
-    @Override // com.google.android.gms.internal.cast.g0, com.google.android.gms.internal.cast.d0
-    public final int i(Object[] objArr) {
-        Object[] objArr2 = this.c;
-        int i10 = this.d;
-        System.arraycopy(objArr2, 0, objArr, 0, i10);
-        return i10;
-    }
-
-    @Override // com.google.android.gms.internal.cast.d0
-    public final int n() {
-        return this.d;
-    }
-
-    @Override // com.google.android.gms.internal.cast.d0
-    public final int o() {
-        return 0;
-    }
-
-    @Override // com.google.android.gms.internal.cast.d0
-    public final Object[] p() {
-        return this.c;
+        Object obj2 = objArr[i11 + 1];
+        obj2.getClass();
+        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final int size() {
-        return this.d;
+        return this.c.f;
     }
 }

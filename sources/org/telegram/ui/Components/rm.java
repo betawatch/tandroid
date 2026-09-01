@@ -1,27 +1,31 @@
 package org.telegram.ui.Components;
 
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rm implements uk, org.telegram.ui.ActionBar.c2 {
-    public final /* synthetic */ Utilities.Callback a;
+public final /* synthetic */ class rm implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sn b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ rm(Utilities.Callback callback) {
-        this.a = callback;
+    public /* synthetic */ rm(sn snVar, int i10, int i11) {
+        this.a = i11;
+        this.b = snVar;
+        this.c = i10;
     }
 
-    @Override // org.telegram.ui.Components.uk
-    public void d(TLRPC.MessageMedia messageMedia, int i10, boolean z4, int i11, long j10) {
-        this.a.run(new eh.g(messageMedia));
-    }
-
-    @Override // org.telegram.ui.ActionBar.c2
-    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
-        Utilities.Callback callback = this.a;
-        if (callback != null) {
-            callback.run(Boolean.FALSE);
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                this.b.e0(this.c, (eh.h) obj);
+                break;
+            default:
+                sn snVar = this.b;
+                snVar.getClass();
+                snVar.e0(this.c, new fh.e((String) obj));
+                break;
         }
     }
 }

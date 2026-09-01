@@ -1,9 +1,9 @@
 package i0;
 
 import android.graphics.Insets;
-import com.google.firebase.messaging.p;
+import com.google.firebase.messaging.q;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class b {
     public static final b e = new b(0, 0, 0, 0);
@@ -40,7 +40,7 @@ public final class b {
     }
 
     public final Insets d() {
-        return p.d(this.a, this.b, this.c, this.d);
+        return q.d(this.a, this.b, this.c, this.d);
     }
 
     public final boolean equals(Object obj) {

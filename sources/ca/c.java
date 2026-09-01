@@ -24,7 +24,7 @@ import java.util.regex.Pattern;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class c implements d {
     public static final Object m = new Object();
@@ -98,7 +98,7 @@ public final class c implements d {
             try {
                 w8.g gVar = this.a;
                 gVar.a();
-                bf.b r10 = bf.b.r(gVar.a);
+                bf.b p10 = bf.b.p(gVar.a);
                 try {
                     X = this.c.X();
                     int i10 = X.b;
@@ -106,12 +106,12 @@ public final class c implements d {
                     if (i10 != 2 && i10 != 1) {
                         z4 = false;
                     }
-                    if (r10 != null) {
-                        r10.Z();
+                    if (p10 != null) {
+                        p10.Z();
                     }
                 } catch (Throwable th2) {
-                    if (r10 != null) {
-                        r10.Z();
+                    if (p10 != null) {
+                        p10.Z();
                     }
                     throw th2;
                 }
@@ -163,7 +163,7 @@ public final class c implements d {
                 if (responseCode == 401 || responseCode == 404) {
                     e0 a10 = ea.b.a();
                     a10.b = 3;
-                    f10 = a10.b();
+                    f10 = a10.c();
                 } else {
                     if (responseCode == 429) {
                         throw new e("Firebase servers have received too many requests from this client in a short period of time. Please try again later.");
@@ -172,19 +172,19 @@ public final class c implements d {
                         Log.e("Firebase-Installations", "Firebase Installations can not communicate with Firebase server APIs due to invalid configuration. Please update your Firebase initialization process and set valid Firebase options (API key, Project ID, Application ID) when initializing Firebase.");
                         e0 a11 = ea.b.a();
                         a11.b = 2;
-                        f10 = a11.b();
+                        f10 = a11.c();
                     }
                 }
             }
-            int b10 = m1.j.b(f10.c);
-            if (b10 != 0) {
-                if (b10 == 1) {
+            int c10 = m1.j.c(f10.c);
+            if (c10 != 0) {
+                if (c10 == 1) {
                     da.a a12 = bVar.a();
                     a12.f = "BAD CONFIG";
                     a12.b = 5;
                     return a12.a();
                 }
-                if (b10 != 2) {
+                if (c10 != 2) {
                     throw new e("Firebase Installations Service is unavailable. Please try again later.");
                 }
                 l(null);
@@ -239,15 +239,15 @@ public final class c implements d {
             try {
                 w8.g gVar = this.a;
                 gVar.a();
-                bf.b r10 = bf.b.r(gVar.a);
+                bf.b p10 = bf.b.p(gVar.a);
                 try {
                     this.c.T(bVar);
-                    if (r10 != null) {
-                        r10.Z();
+                    if (p10 != null) {
+                        p10.Z();
                     }
                 } catch (Throwable th2) {
-                    if (r10 != null) {
-                        r10.Z();
+                    if (p10 != null) {
+                        p10.Z();
                     }
                     throw th2;
                 }
@@ -382,10 +382,10 @@ public final class c implements d {
                 } catch (IOException | AssertionError unused2) {
                 }
                 if (responseCode >= 200 && responseCode < 300) {
-                    ea.a e = ea.c.e(c3);
+                    ea.a e6 = ea.c.e(c3);
                     c3.disconnect();
                     TrafficStats.clearThreadStatsTag();
-                    aVar = e;
+                    aVar = e6;
                 } else {
                     try {
                         ea.c.b(c3, str7, str4, str6);
@@ -411,9 +411,9 @@ public final class c implements d {
                         aVar = aVar;
                     }
                 }
-                int b10 = m1.j.b(aVar.e);
-                if (b10 != 0) {
-                    if (b10 != 1) {
+                int c10 = m1.j.c(aVar.e);
+                if (c10 != 0) {
+                    if (c10 != 1) {
                         throw new e("Firebase Installations Service is unavailable. Please try again later.");
                     }
                     da.a a10 = bVar.a();

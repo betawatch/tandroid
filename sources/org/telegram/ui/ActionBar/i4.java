@@ -2,41 +2,42 @@ package org.telegram.ui.ActionBar;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class i4 {
-    public final y4 a;
-    public boolean b;
-    public boolean c;
-    public boolean d;
-    public boolean e = true;
-    public boolean f;
-    public long g;
+public final class i4 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k4 b;
 
-    public i4(y4 y4Var) {
-        this.a = y4Var;
+    public /* synthetic */ i4(k4 k4Var, int i10) {
+        this.a = i10;
+        this.b = k4Var;
     }
 
-    public final void a() {
-        if (this.f) {
-            boolean z4 = this.b;
-            y4 y4Var = this.a;
-            if (z4 || this.c || this.d || !this.e) {
-                w4 w4Var = y4Var.b;
-                if (w4Var.f()) {
-                    w4Var.G = true;
-                    w4Var.x.start();
-                    w4Var.D.setEmpty();
-                    return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                k4 k4Var = this.b;
+                View view = k4Var.m;
+                if (view.getWindowVisibility() == 0 && view.isShown()) {
+                    j4 j4Var = k4Var.s;
+                    j4Var.getClass();
+                    System.currentTimeMillis();
+                    j4Var.c = false;
+                    k4Var.s.a();
+                    break;
                 }
-                return;
-            }
-            View view = y4Var.a;
-            l4 l4Var = y4Var.l;
-            view.removeOnLayoutChangeListener(l4Var);
-            y4Var.a.addOnLayoutChangeListener(l4Var);
-            y4Var.c();
-            this.g = System.currentTimeMillis();
+                break;
+            default:
+                k4 k4Var2 = this.b;
+                View view2 = k4Var2.m;
+                if (view2.getWindowVisibility() == 0 && view2.isShown()) {
+                    j4 j4Var2 = k4Var2.s;
+                    j4Var2.b = false;
+                    j4Var2.a();
+                    break;
+                }
+                break;
         }
     }
 }

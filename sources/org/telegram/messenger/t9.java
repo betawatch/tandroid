@@ -4,7 +4,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t9 implements Runnable {
     public final /* synthetic */ int a;
@@ -45,11 +45,11 @@ public final /* synthetic */ class t9 implements Runnable {
                 long j11 = this.d;
                 if (messagesController.isDialogMuted(j10, j11)) {
                     g1Var.g(LocaleController.getString(R.string.UnmuteNotifications), R.drawable.msg_unmute, null);
-                    i10 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.x6, false);
+                    i10 = org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.x6, false);
                     g1Var2.setVisibility(8);
                 } else {
                     g1Var.g(LocaleController.getString(R.string.MuteNotifications), R.drawable.msg_mute, null);
-                    int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, false);
+                    int w02 = org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.q7, false);
                     g1Var2.setVisibility(0);
                     if (MessagesController.getInstance(i11).isDialogNotificationsSoundEnabled(j10, j11)) {
                         g1Var2.g(LocaleController.getString(R.string.SoundOff), R.drawable.msg_tone_off, null);
@@ -59,7 +59,7 @@ public final /* synthetic */ class t9 implements Runnable {
                     i10 = w02;
                 }
                 g1Var.c(i10, i10);
-                g1Var.setSelectorColor(org.telegram.ui.ActionBar.j6.l1(0.1f, i10));
+                g1Var.setSelectorColor(org.telegram.ui.ActionBar.k6.l1(0.1f, i10));
                 break;
         }
     }

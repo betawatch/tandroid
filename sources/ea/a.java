@@ -3,7 +3,7 @@ package ea;
 import m1.j;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a {
     public final String a;
@@ -66,7 +66,7 @@ public final class a {
             return false;
         }
         int i11 = this.e;
-        return i11 == 0 ? i10 == 0 : j.a(i11, i10);
+        return i11 == 0 ? i10 == 0 : j.b(i11, i10);
     }
 
     public final int hashCode() {
@@ -79,7 +79,7 @@ public final class a {
         b bVar = this.d;
         int hashCode4 = (hashCode3 ^ (bVar == null ? 0 : bVar.hashCode())) * 1000003;
         int i10 = this.e;
-        return (i10 != 0 ? j.b(i10) : 0) ^ hashCode4;
+        return (i10 != 0 ? j.c(i10) : 0) ^ hashCode4;
     }
 
     public final String toString() {

@@ -13,10 +13,10 @@ import androidx.mediarouter.app.b0;
 import b6.r;
 import java.util.ArrayList;
 import java.util.LinkedList;
-import k7.m8;
+import k7.k8;
 import s5.m;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class j {
     public m a;
@@ -24,8 +24,8 @@ public final class j {
     public LinkedList c;
     public final d e;
     public final Context f;
-    public ja.c g;
-    public final ja.c d = new ja.c(this, 16);
+    public o5.i g;
+    public final o5.i d = new o5.i(this, 20);
     public final ArrayList h = new ArrayList();
 
     public j(d dVar, Context context) {
@@ -89,11 +89,11 @@ public final class j {
                 synchronized (e.class) {
                     e.a(context);
                 }
-                w7.g V0 = m8.a(context).V0(new l6.b(context));
+                w7.g V0 = k8.a(context).V0(new l6.b(context));
                 if (V0 == null) {
                     return;
                 }
-                this.g.u0(new m(this.e, V0));
+                this.g.u(new m(this.e, V0));
                 int size = arrayList.size();
                 int i10 = 0;
                 while (i10 < size) {
@@ -102,8 +102,8 @@ public final class j {
                     this.a.j((f) obj);
                 }
                 arrayList.clear();
-            } catch (RemoteException e) {
-                throw new a7.b(e);
+            } catch (RemoteException e6) {
+                throw new a7.b(e6);
             } catch (y5.f unused) {
             }
         }

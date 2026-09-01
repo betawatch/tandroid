@@ -7,12 +7,12 @@ import android.widget.BaseAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
-import kh.a2;
+import l.d;
+import m.a3;
 import m.b3;
-import m.c3;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class b extends BaseAdapter implements Filterable {
     public boolean a;
@@ -82,8 +82,8 @@ public abstract class b extends BaseAdapter implements Filterable {
         }
         this.c.moveToPosition(i10);
         if (view == null) {
-            c3 c3Var = (c3) this;
-            view = c3Var.s.inflate(c3Var.r, viewGroup, false);
+            b3 b3Var = (b3) this;
+            view = b3Var.s.inflate(b3Var.r, viewGroup, false);
         }
         a(view, this.c);
         return view;
@@ -124,13 +124,13 @@ public abstract class b extends BaseAdapter implements Filterable {
             throw new IllegalStateException("this should only be called when the cursor is valid");
         }
         if (!this.c.moveToPosition(i10)) {
-            throw new IllegalStateException(a2.j(i10, "couldn't move cursor to position "));
+            throw new IllegalStateException(d.j(i10, "couldn't move cursor to position "));
         }
         if (view == null) {
-            c3 c3Var = (c3) this;
-            view = c3Var.s.inflate(c3Var.n, viewGroup, false);
-            view.setTag(new b3(view));
-            ((ImageView) view.findViewById(R.id.edit_query)).setImageResource(c3Var.B);
+            b3 b3Var = (b3) this;
+            view = b3Var.s.inflate(b3Var.n, viewGroup, false);
+            view.setTag(new a3(view));
+            ((ImageView) view.findViewById(R.id.edit_query)).setImageResource(b3Var.B);
         }
         a(view, this.c);
         return view;

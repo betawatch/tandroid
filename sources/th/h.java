@@ -1,31 +1,32 @@
 package th;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.i51;
-import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.w51;
+import org.telegram.messenger.MessagesController;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes4.dex */
-public final class h extends h51 {
-    public static final /* synthetic */ int a = 0;
+public final /* synthetic */ class h implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n b;
+    public final /* synthetic */ long c;
 
-    static {
-        h51.setup(new h());
+    public /* synthetic */ h(n nVar, long j10, int i10) {
+        this.a = i10;
+        this.b = nVar;
+        this.c = j10;
     }
 
-    @Override // org.telegram.ui.Components.h51
-    public final void bindView(View view, i51 i51Var, boolean z4, w51 w51Var, g61 g61Var) {
-        long j10 = i51Var.B;
-        ((i) view).a((int) j10, (int) (j10 >>> 32), i51Var.k, i51Var.l, i51Var.n, i51Var.q);
-    }
-
-    @Override // org.telegram.ui.Components.h51
-    public final View createView(Context context, sl0 sl0Var, int i10, int i11, f6 f6Var) {
-        return new i(context, f6Var, false);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                MessagesController.getInstance(r0.currentAccount).unlinkCommunity(this.c, r0.b, new j(this.b, 0));
+                break;
+            default:
+                n nVar = this.b;
+                nVar.getClass();
+                nVar.presentFragment(xn.R9(this.c));
+                break;
+        }
     }
 }

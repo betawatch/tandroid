@@ -8,9 +8,9 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class ob extends f2.o0 {
+public final class ob extends f2.p0 {
     public final Context c;
     public int d;
     public int e;
@@ -50,12 +50,12 @@ public final class ob extends f2.o0 {
         this.h = size;
     }
 
-    @Override // f2.o0
+    @Override // f2.p0
     public final int h() {
         return this.d;
     }
 
-    @Override // f2.o0
+    @Override // f2.p0
     public final long i(int i10) {
         if (i10 < this.f || i10 >= this.h) {
             return i10 == this.e ? 2L : 5L;
@@ -64,7 +64,7 @@ public final class ob extends f2.o0 {
         return ((MessageObject) arrayList.get((arrayList.size() - (i10 - this.f)) - 1)).stableId;
     }
 
-    @Override // f2.o0
+    @Override // f2.p0
     public final int j(int i10) {
         if (i10 < this.f || i10 >= this.h) {
             return 4;
@@ -72,63 +72,63 @@ public final class ob extends f2.o0 {
         return ((MessageObject) this.n.p0.get((r0.size() - (i10 - this.f)) - 1)).contentType;
     }
 
-    @Override // f2.o0
+    @Override // f2.p0
     public final void l() {
         D(true);
         try {
             super.l();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
         }
     }
 
-    @Override // f2.o0
+    @Override // f2.p0
     public final void m(int i10) {
         D(false);
         try {
             super.m(i10);
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
         }
     }
 
-    @Override // f2.o0
+    @Override // f2.p0
     public final void p(int i10, int i11) {
         D(false);
         try {
             super.p(i10, i11);
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
         }
     }
 
-    @Override // f2.o0
+    @Override // f2.p0
     public final void q(int i10, int i11) {
         D(false);
         try {
             super.q(i10, i11);
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
         }
     }
 
-    @Override // f2.o0
+    @Override // f2.p0
     public final void s(int i10, int i11) {
         D(false);
         try {
             super.s(i10, i11);
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
         }
     }
 
-    @Override // f2.o0
+    @Override // f2.p0
     public final void t(int i10, int i11) {
         D(false);
         try {
             super.t(i10, i11);
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
         }
     }
 
@@ -138,11 +138,11 @@ public final class ob extends f2.o0 {
      */
     /* JADX WARN: Removed duplicated region for block: B:34:0x00c8  */
     /* JADX WARN: Removed duplicated region for block: B:59:0x0135  */
-    @Override // f2.o0
+    @Override // f2.p0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void v(f2.l1 l1Var, int i10) {
+    public final void v(f2.m1 m1Var, int i10) {
         org.telegram.ui.Cells.t1 t1Var;
         boolean z4;
         boolean z10;
@@ -155,7 +155,7 @@ public final class ob extends f2.o0 {
         long j13;
         int i13;
         int i14;
-        View view = l1Var.a;
+        View view = m1Var.a;
         sb sbVar = this.n;
         ArrayList arrayList = sbVar.p0;
         if (i10 == this.e) {
@@ -180,7 +180,7 @@ public final class ob extends f2.o0 {
         int i15 = i10 + 1;
         int j14 = j(i15);
         int j15 = j(i10 - 1);
-        if (!(messageObject.messageOwner.reply_markup instanceof TLRPC.TL_replyInlineMarkup) && j14 == l1Var.f) {
+        if (!(messageObject.messageOwner.reply_markup instanceof TLRPC.TL_replyInlineMarkup) && j14 == m1Var.f) {
             MessageObject messageObject2 = (MessageObject) arrayList.get((arrayList.size() - (i15 - this.f)) - 1);
             z4 = messageObject2.isOutOwner() == messageObject.isOutOwner() && messageObject2.getFromChatId() == messageObject.getFromChatId() && Math.abs(messageObject2.messageOwner.date - messageObject.messageOwner.date) <= 300;
             if (z4) {
@@ -203,7 +203,7 @@ public final class ob extends f2.o0 {
             } else {
                 t1Var = t1Var2;
             }
-            if (j15 != l1Var.f) {
+            if (j15 != m1Var.f) {
                 MessageObject messageObject3 = (MessageObject) arrayList.get(arrayList.size() - (i10 - this.f));
                 boolean z12 = !(messageObject3.messageOwner.reply_markup instanceof TLRPC.TL_replyInlineMarkup) && messageObject3.isOutOwner() == messageObject.isOutOwner() && messageObject3.getFromChatId() == messageObject.getFromChatId() && Math.abs(messageObject3.messageOwner.date - messageObject.messageOwner.date) <= 300;
                 if (z12) {
@@ -238,7 +238,7 @@ public final class ob extends f2.o0 {
         }
         t1Var = t1Var2;
         z4 = false;
-        if (j15 != l1Var.f) {
+        if (j15 != m1Var.f) {
         }
         org.telegram.ui.Cells.t1 t1Var32 = t1Var;
         t1Var32.X3(messageObject, null, z4, z10, false, false);
@@ -250,9 +250,9 @@ public final class ob extends f2.o0 {
     /* JADX WARN: Type inference failed for: r5v10, types: [android.view.View] */
     /* JADX WARN: Type inference failed for: r5v2, types: [org.telegram.ui.Cells.u1] */
     /* JADX WARN: Type inference failed for: r5v4, types: [org.telegram.ui.Cells.v0] */
-    @Override // f2.o0
-    public final f2.l1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.ActionBar.f6 f6Var;
+    @Override // f2.p0
+    public final f2.m1 x(ViewGroup viewGroup, int i10) {
+        org.telegram.ui.ActionBar.g6 g6Var;
         ViewGroup viewGroup2;
         int i11;
         ViewGroup viewGroup3;
@@ -279,8 +279,8 @@ public final class ob extends f2.o0 {
         } else if (i10 == 2) {
             viewGroup2 = new org.telegram.ui.Cells.v1(context, null);
         } else if (i10 == 10) {
-            f6Var = ((org.telegram.ui.ActionBar.p2) sbVar).resourceProvider;
-            ?? u1Var = new org.telegram.ui.Cells.u1(context, f6Var);
+            g6Var = ((org.telegram.ui.ActionBar.p2) sbVar).resourceProvider;
+            ?? u1Var = new org.telegram.ui.Cells.u1(context, g6Var);
             u1Var.setDelegate(new h(this, 10));
             viewGroup2 = u1Var;
         } else {
@@ -289,11 +289,11 @@ public final class ob extends f2.o0 {
         return yh.o(viewGroup2, viewGroup2, -1, -2);
     }
 
-    @Override // f2.o0
-    public final void y(f2.l1 l1Var) {
-        View view = l1Var.a;
+    @Override // f2.p0
+    public final void y(f2.m1 m1Var) {
+        View view = m1Var.a;
         if ((view instanceof org.telegram.ui.Cells.t1) || (view instanceof org.telegram.ui.Cells.v0)) {
-            view.getViewTreeObserver().addOnPreDrawListener(new nb(this, view, l1Var));
+            view.getViewTreeObserver().addOnPreDrawListener(new nb(this, view, m1Var));
         }
         if (view instanceof org.telegram.ui.Cells.t1) {
             org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) view;

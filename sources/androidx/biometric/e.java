@@ -24,18 +24,18 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.core.graphics.drawable.IconCompat;
-import androidx.lifecycle.p0;
 import androidx.lifecycle.q0;
 import androidx.lifecycle.s0;
 import androidx.lifecycle.t0;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService;
+import com.google.android.gms.internal.play_billing.s1;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.messaging.FirebaseMessagingService;
-import f2.l1;
-import f2.o0;
+import f2.m1;
+import f2.p0;
 import j$.util.DesugarCollections;
 import j3.m0;
 import j3.n0;
@@ -64,7 +64,7 @@ import javax.crypto.Cipher;
 import javax.crypto.Mac;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class e implements b4.b0, a3.b, v4.f, v9.a {
     public static e e;
@@ -106,7 +106,7 @@ public class e implements b4.b0, a3.b, v4.f, v9.a {
                 int i11 = next.getExtras().getInt("attemptNumber");
                 if (next.getId() == value) {
                     if (i11 >= i10) {
-                        j7.i0.a(iVar, "JobInfoScheduler", "Upload for context %s is already scheduled. Returning...");
+                        j7.j0.a(iVar, "JobInfoScheduler", "Upload for context %s is already scheduled. Returning...");
                         return;
                     }
                 }
@@ -151,7 +151,7 @@ public class e implements b4.b0, a3.b, v4.f, v9.a {
             objArr[2] = valueOf3;
             objArr[3] = valueOf;
             objArr[4] = valueOf4;
-            String c10 = j7.i0.c("JobInfoScheduler");
+            String c10 = j7.j0.c("JobInfoScheduler");
             if (Log.isLoggable(c10, 3)) {
                 Log.d(c10, String.format("Scheduling upload for context %s with jobId=%d in %dms(Backend next call timestamp %d). Attempt %d", objArr));
             }
@@ -192,10 +192,10 @@ public class e implements b4.b0, a3.b, v4.f, v9.a {
 
     public void C(View view) {
         if (((ArrayList) this.d).remove(view)) {
-            a3.c cVar = (a3.c) this.b;
-            l1 U = RecyclerView.U(view);
+            ja.c cVar = (ja.c) this.b;
+            m1 U = RecyclerView.U(view);
             if (U != null) {
-                RecyclerView recyclerView = (RecyclerView) cVar.b;
+                RecyclerView recyclerView = (RecyclerView) cVar.a;
                 int i10 = U.r;
                 if (recyclerView.b0()) {
                     U.s = i10;
@@ -248,28 +248,8 @@ public class e implements b4.b0, a3.b, v4.f, v9.a {
         ((r3.v) this.d).c(c3, 1, a10, 0, null);
     }
 
-    @Override // v4.f
-    public int b(long j10) {
-        long[] jArr = (long[]) this.d;
-        int b10 = h5.d0.b(jArr, j10, false);
-        if (b10 < jArr.length) {
-            return b10;
-        }
-        return -1;
-    }
-
-    @Override // b4.b0
-    public void c(h5.c0 c0Var, r3.m mVar, b4.h0 h0Var) {
-        this.c = c0Var;
-        h0Var.a();
-        h0Var.b();
-        r3.v c22 = mVar.c2(h0Var.d, 5);
-        this.d = c22;
-        c22.b((n0) this.b);
-    }
-
     @Override // v9.a
-    public /* bridge */ /* synthetic */ v9.a d(Class cls, u9.d dVar) {
+    public /* bridge */ /* synthetic */ v9.a b(Class cls, u9.d dVar) {
         switch (this.a) {
             case 20:
                 ((HashMap) this.b).put(cls, dVar);
@@ -287,6 +267,26 @@ public class e implements b4.b0, a3.b, v4.f, v9.a {
         return this;
     }
 
+    @Override // b4.b0
+    public void c(h5.c0 c0Var, r3.m mVar, b4.h0 h0Var) {
+        this.c = c0Var;
+        h0Var.a();
+        h0Var.b();
+        r3.v i22 = mVar.i2(h0Var.d, 5);
+        this.d = i22;
+        i22.b((n0) this.b);
+    }
+
+    @Override // v4.f
+    public int d(long j10) {
+        long[] jArr = (long[]) this.d;
+        int b10 = h5.d0.b(jArr, j10, false);
+        if (b10 < jArr.length) {
+            return b10;
+        }
+        return -1;
+    }
+
     public void e(bf.h hVar) {
         if (((bf.e) this.b) == null) {
             this.b = new bf.e();
@@ -300,48 +300,35 @@ public class e implements b4.b0, a3.b, v4.f, v9.a {
     }
 
     public void f(View view, int i10, boolean z4) {
-        RecyclerView recyclerView = (RecyclerView) ((a3.c) this.b).b;
-        int childCount = i10 < 0 ? recyclerView.getChildCount() : t(i10);
-        ((f2.c) this.c).D(childCount, z4);
+        RecyclerView recyclerView = (RecyclerView) ((ja.c) this.b).a;
+        int childCount = i10 < 0 ? recyclerView.getChildCount() : s(i10);
+        ((f2.c) this.c).E(childCount, z4);
         if (z4) {
-            x(view);
+            w(view);
         }
         recyclerView.addView(view, childCount);
-        l1 U = RecyclerView.U(view);
+        m1 U = RecyclerView.U(view);
         recyclerView.f0(view);
-        o0 o0Var = recyclerView.w;
-        if (o0Var != null && U != null) {
-            o0Var.y(U);
+        p0 p0Var = recyclerView.w;
+        if (p0Var != null && U != null) {
+            p0Var.y(U);
         }
         ArrayList arrayList = recyclerView.M;
         if (arrayList != null) {
             for (int size = arrayList.size() - 1; size >= 0; size--) {
-                ((f2.e0) recyclerView.M.get(size)).getClass();
+                ((f2.f0) recyclerView.M.get(size)).getClass();
             }
         }
     }
 
-    @Override // v4.f
-    public long g(int i10) {
-        long[] jArr = (long[]) this.d;
-        h5.a.f(i10 >= 0);
-        h5.a.f(i10 < jArr.length);
-        return jArr[i10];
-    }
-
-    @Override // rc.a
-    public Object get() {
-        return new e((Context) ((rc.a) this.b).get(), (f3.d) ((rc.a) this.c).get(), (e3.a) ((db.a) this.d).get(), 13);
-    }
-
-    public void h(View view, int i10, ViewGroup.LayoutParams layoutParams, boolean z4) {
-        RecyclerView recyclerView = (RecyclerView) ((a3.c) this.b).b;
-        int childCount = i10 < 0 ? recyclerView.getChildCount() : t(i10);
-        ((f2.c) this.c).D(childCount, z4);
+    public void g(View view, int i10, ViewGroup.LayoutParams layoutParams, boolean z4) {
+        RecyclerView recyclerView = (RecyclerView) ((ja.c) this.b).a;
+        int childCount = i10 < 0 ? recyclerView.getChildCount() : s(i10);
+        ((f2.c) this.c).E(childCount, z4);
         if (z4) {
-            x(view);
+            w(view);
         }
-        l1 U = RecyclerView.U(view);
+        m1 U = RecyclerView.U(view);
         if (U != null) {
             if (!U.l() && !U.r()) {
                 throw new IllegalArgumentException("Called attach on a child which is not detached: " + U + recyclerView.C());
@@ -349,6 +336,11 @@ public class e implements b4.b0, a3.b, v4.f, v9.a {
             U.l &= -257;
         }
         recyclerView.attachViewToParent(view, childCount, layoutParams);
+    }
+
+    @Override // rc.a
+    public Object get() {
+        return new e((Context) ((rc.a) this.b).get(), (f3.d) ((rc.a) this.c).get(), (e3.a) ((db.a) this.d).get(), 13);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:52:0x009c  */
@@ -360,9 +352,9 @@ public class e implements b4.b0, a3.b, v4.f, v9.a {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public int i(int i10) {
+    public int h(int i10) {
         BiometricManager biometricManager;
-        BiometricPrompt.CryptoObject c3;
+        BiometricPrompt.CryptoObject b10;
         u uVar = (u) this.b;
         int i11 = Build.VERSION.SDK_INT;
         int i12 = 1;
@@ -374,24 +366,24 @@ public class e implements b4.b0, a3.b, v4.f, v9.a {
             Log.e("BiometricManager", "Failure in canAuthenticate(). BiometricManager was null.");
             return 1;
         }
-        if (!com.google.android.gms.internal.cast.n.b(i10)) {
+        if (!s1.b(i10)) {
             return -2;
         }
         if (i10 != 0) {
             Context context = uVar.a;
-            if (j7.m.a(context) != null) {
+            if (j7.n.a(context) != null) {
                 int i13 = 0;
-                if (com.google.android.gms.internal.cast.n.a(i10)) {
-                    return j7.m.b(context) ? 0 : 11;
+                if (s1.a(i10)) {
+                    return j7.n.b(context) ? 0 : 11;
                 }
                 if (i11 != 29) {
                     if (i11 != 28) {
-                        return j();
+                        return i();
                     }
                     if (i11 < 23 || context == null || context.getPackageManager() == null || !l0.a(context.getPackageManager())) {
                         return 12;
                     }
-                    return !j7.m.b(uVar.a) ? j() : j() == 0 ? 0 : -1;
+                    return !j7.n.b(uVar.a) ? i() : i() == 0 ? 0 : -1;
                 }
                 if ((i10 & 255) == 255) {
                     BiometricManager biometricManager3 = (BiometricManager) this.c;
@@ -401,10 +393,10 @@ public class e implements b4.b0, a3.b, v4.f, v9.a {
                     Log.e("BiometricManager", "Failure in canAuthenticate(). BiometricManager was null.");
                     return 1;
                 }
-                Method c10 = s.c();
-                if (c10 != null && (c3 = ee.b.c(ee.b.b())) != null) {
+                Method c3 = s.c();
+                if (c3 != null && (b10 = h7.s.b(h7.s.a())) != null) {
                     try {
-                        Object invoke = c10.invoke((BiometricManager) this.c, c3);
+                        Object invoke = c3.invoke((BiometricManager) this.c, b10);
                         if (invoke instanceof Integer) {
                             return ((Integer) invoke).intValue();
                         }
@@ -463,9 +455,9 @@ public class e implements b4.b0, a3.b, v4.f, v9.a {
                 if (i12 == 0) {
                     return i12;
                 }
-                if (!j7.m.b(uVar.a)) {
-                    i13 = j();
-                } else if (j() != 0) {
+                if (!j7.n.b(uVar.a)) {
+                    i13 = i();
+                } else if (i() != 0) {
                     i13 = -1;
                 }
                 return i13;
@@ -474,15 +466,15 @@ public class e implements b4.b0, a3.b, v4.f, v9.a {
         return 12;
     }
 
-    public int j() {
+    public int i() {
         FingerprintManager f10;
         FingerprintManager f11;
-        y5.h hVar = (y5.h) this.d;
-        if (hVar == null) {
+        k0.b bVar = (k0.b) this.d;
+        if (bVar == null) {
             Log.e("BiometricManager", "Failure in canAuthenticate(). FingerprintManager was null.");
             return 1;
         }
-        Context context = hVar.a;
+        Context context = bVar.a;
         int i10 = Build.VERSION.SDK_INT;
         if (i10 < 23 || (f10 = e0.b.f(context)) == null || !e0.b.n(f10)) {
             return 12;
@@ -490,7 +482,7 @@ public class e implements b4.b0, a3.b, v4.f, v9.a {
         return (i10 < 23 || (f11 = e0.b.f(context)) == null || !e0.b.k(f11)) ? 11 : 0;
     }
 
-    public void k() {
+    public void j() {
         android.support.v4.media.session.c0 c0Var = (android.support.v4.media.session.c0) this.b;
         if (c0Var != null) {
             int i10 = ((c2.e) this.d).n.d;
@@ -503,23 +495,84 @@ public class e implements b4.b0, a3.b, v4.f, v9.a {
         }
     }
 
-    public void l(int i10) {
-        l1 U;
-        int t6 = t(i10);
-        ((f2.c) this.c).E(t6);
-        RecyclerView recyclerView = (RecyclerView) ((a3.c) this.b).b;
-        View childAt = recyclerView.getChildAt(t6);
+    public void k(int i10) {
+        m1 U;
+        int s6 = s(i10);
+        ((f2.c) this.c).G(s6);
+        RecyclerView recyclerView = (RecyclerView) ((ja.c) this.b).a;
+        View childAt = recyclerView.getChildAt(s6);
         if (childAt != null && (U = RecyclerView.U(childAt)) != null) {
             if (U.l() && !U.r()) {
                 throw new IllegalArgumentException("called detach on an already detached child " + U + recyclerView.C());
             }
             U.a(256);
         }
-        recyclerView.detachViewFromParent(t6);
+        recyclerView.detachViewFromParent(s6);
     }
 
     @Override // v4.f
-    public List m(long j10) {
+    public long l(int i10) {
+        long[] jArr = (long[]) this.d;
+        h5.a.f(i10 >= 0);
+        h5.a.f(i10 < jArr.length);
+        return jArr[i10];
+    }
+
+    public androidx.lifecycle.p0 m(Class cls) {
+        String canonicalName = cls.getCanonicalName();
+        if (canonicalName != null) {
+            return n(cls, "androidx.lifecycle.ViewModelProvider.DefaultKey:".concat(canonicalName));
+        }
+        throw new IllegalArgumentException("Local and anonymous classes can not be ViewModels");
+    }
+
+    public androidx.lifecycle.p0 n(Class cls, String key) {
+        androidx.lifecycle.p0 viewModel;
+        s0 s0Var = (s0) this.c;
+        kotlin.jvm.internal.j.e(key, "key");
+        t0 t0Var = (t0) this.b;
+        t0Var.getClass();
+        LinkedHashMap linkedHashMap = t0Var.a;
+        androidx.lifecycle.p0 p0Var = (androidx.lifecycle.p0) linkedHashMap.get(key);
+        if (!cls.isInstance(p0Var)) {
+            v1.b bVar = new v1.b((cb.e) this.d);
+            ((LinkedHashMap) bVar.a).put(q0.b, key);
+            try {
+                viewModel = s0Var.C(cls, bVar);
+            } catch (AbstractMethodError unused) {
+                viewModel = s0Var.h(cls);
+            }
+            kotlin.jvm.internal.j.e(viewModel, "viewModel");
+            androidx.lifecycle.p0 p0Var2 = (androidx.lifecycle.p0) linkedHashMap.put(key, viewModel);
+            if (p0Var2 != null) {
+                p0Var2.b();
+            }
+            return viewModel;
+        }
+        androidx.lifecycle.n0 n0Var = s0Var instanceof androidx.lifecycle.n0 ? (androidx.lifecycle.n0) s0Var : null;
+        if (n0Var != null) {
+            kotlin.jvm.internal.j.b(p0Var);
+            androidx.lifecycle.o oVar = n0Var.d;
+            if (oVar != null) {
+                g2.e eVar = n0Var.e;
+                kotlin.jvm.internal.j.b(eVar);
+                androidx.lifecycle.j0.a(p0Var, eVar, oVar);
+            }
+        }
+        kotlin.jvm.internal.j.c(p0Var, "null cannot be cast to non-null type T of androidx.lifecycle.ViewModelProvider.get");
+        return p0Var;
+    }
+
+    public View o(int i10) {
+        return ((RecyclerView) ((ja.c) this.b).a).getChildAt(s(i10));
+    }
+
+    public int p() {
+        return ((RecyclerView) ((ja.c) this.b).a).getChildCount() - ((ArrayList) this.d).size();
+    }
+
+    @Override // v4.f
+    public List q(long j10) {
         List list = (List) this.b;
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
@@ -544,65 +597,7 @@ public class e implements b4.b0, a3.b, v4.f, v9.a {
         return arrayList;
     }
 
-    public p0 n(Class cls) {
-        String canonicalName = cls.getCanonicalName();
-        if (canonicalName != null) {
-            return o(cls, "androidx.lifecycle.ViewModelProvider.DefaultKey:".concat(canonicalName));
-        }
-        throw new IllegalArgumentException("Local and anonymous classes can not be ViewModels");
-    }
-
-    public p0 o(Class cls, String key) {
-        p0 viewModel;
-        s0 s0Var = (s0) this.c;
-        kotlin.jvm.internal.j.e(key, "key");
-        t0 t0Var = (t0) this.b;
-        t0Var.getClass();
-        LinkedHashMap linkedHashMap = t0Var.a;
-        p0 p0Var = (p0) linkedHashMap.get(key);
-        if (!cls.isInstance(p0Var)) {
-            v1.b bVar = new v1.b((cb.e) this.d);
-            ((LinkedHashMap) bVar.a).put(q0.b, key);
-            try {
-                viewModel = s0Var.x(cls, bVar);
-            } catch (AbstractMethodError unused) {
-                viewModel = s0Var.f(cls);
-            }
-            kotlin.jvm.internal.j.e(viewModel, "viewModel");
-            p0 p0Var2 = (p0) linkedHashMap.put(key, viewModel);
-            if (p0Var2 != null) {
-                p0Var2.b();
-            }
-            return viewModel;
-        }
-        androidx.lifecycle.n0 n0Var = s0Var instanceof androidx.lifecycle.n0 ? (androidx.lifecycle.n0) s0Var : null;
-        if (n0Var != null) {
-            kotlin.jvm.internal.j.b(p0Var);
-            androidx.lifecycle.o oVar = n0Var.d;
-            if (oVar != null) {
-                g2.e eVar = n0Var.e;
-                kotlin.jvm.internal.j.b(eVar);
-                androidx.lifecycle.j0.a(p0Var, eVar, oVar);
-            }
-        }
-        kotlin.jvm.internal.j.c(p0Var, "null cannot be cast to non-null type T of androidx.lifecycle.ViewModelProvider.get");
-        return p0Var;
-    }
-
-    @Override // v4.f
-    public int p() {
-        return ((long[]) this.d).length;
-    }
-
-    public View q(int i10) {
-        return ((RecyclerView) ((a3.c) this.b).b).getChildAt(t(i10));
-    }
-
-    public int r() {
-        return ((RecyclerView) ((a3.c) this.b).b).getChildCount() - ((ArrayList) this.d).size();
-    }
-
-    public ByteBuffer s() {
+    public ByteBuffer r() {
         Bitmap bitmap = (Bitmap) this.d;
         if (bitmap == null) {
             return (ByteBuffer) this.c;
@@ -621,24 +616,28 @@ public class e implements b4.b0, a3.b, v4.f, v9.a {
         return ByteBuffer.wrap(bArr);
     }
 
-    public int t(int i10) {
+    public int s(int i10) {
         f2.c cVar = (f2.c) this.c;
         if (i10 < 0) {
             return -1;
         }
-        int childCount = ((RecyclerView) ((a3.c) this.b).b).getChildCount();
+        int childCount = ((RecyclerView) ((ja.c) this.b).a).getChildCount();
         int i11 = i10;
         while (i11 < childCount) {
-            int z4 = i10 - (i11 - cVar.z(i11));
-            if (z4 == 0) {
-                while (cVar.C(i11)) {
+            int y10 = i10 - (i11 - cVar.y(i11));
+            if (y10 == 0) {
+                while (cVar.D(i11)) {
                     i11++;
                 }
                 return i11;
             }
-            i11 += z4;
+            i11 += y10;
         }
         return -1;
+    }
+
+    public View t(int i10) {
+        return ((RecyclerView) ((ja.c) this.b).a).getChildAt(i10);
     }
 
     public String toString() {
@@ -715,12 +714,8 @@ public class e implements b4.b0, a3.b, v4.f, v9.a {
         }
     }
 
-    public View u(int i10) {
-        return ((RecyclerView) ((a3.c) this.b).b).getChildAt(i10);
-    }
-
-    public int v() {
-        return ((RecyclerView) ((a3.c) this.b).b).getChildCount();
+    public int u() {
+        return ((RecyclerView) ((ja.c) this.b).a).getChildCount();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:24:0x0083  */
@@ -729,9 +724,9 @@ public class e implements b4.b0, a3.b, v4.f, v9.a {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public boolean w() {
+    public boolean v() {
         com.google.firebase.messaging.m mVar;
-        if (((a3.c) this.d).I("gcm.n.noui")) {
+        if (((com.google.firebase.messaging.o) this.d).a("gcm.n.noui")) {
             return true;
         }
         FirebaseMessagingService firebaseMessagingService = (FirebaseMessagingService) this.c;
@@ -753,20 +748,20 @@ public class e implements b4.b0, a3.b, v4.f, v9.a {
                 }
             }
         }
-        String M = ((a3.c) this.d).M("gcm.n.image");
-        if (!TextUtils.isEmpty(M)) {
+        String f10 = ((com.google.firebase.messaging.o) this.d).f("gcm.n.image");
+        if (!TextUtils.isEmpty(f10)) {
             try {
-                mVar = new com.google.firebase.messaging.m(new URL(M));
+                mVar = new com.google.firebase.messaging.m(new URL(f10));
             } catch (MalformedURLException unused) {
-                Log.w("FirebaseMessaging", "Not downloading image, bad URL: " + M);
+                Log.w("FirebaseMessaging", "Not downloading image, bad URL: " + f10);
             }
             if (mVar != null) {
                 ExecutorService executorService = (ExecutorService) this.b;
                 TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-                mVar.b = executorService.submit(new a1.e(13, mVar, taskCompletionSource));
+                mVar.b = executorService.submit(new a1.e(11, mVar, taskCompletionSource));
                 mVar.c = taskCompletionSource.getTask();
             }
-            com.google.firebase.messaging.j a2 = com.google.firebase.messaging.e.a((FirebaseMessagingService) this.c, (a3.c) this.d);
+            com.google.firebase.messaging.j a2 = com.google.firebase.messaging.e.a((FirebaseMessagingService) this.c, (com.google.firebase.messaging.o) this.d);
             e0.t tVar = (e0.t) a2.a;
             if (mVar != null) {
                 try {
@@ -799,7 +794,7 @@ public class e implements b4.b0, a3.b, v4.f, v9.a {
         mVar = null;
         if (mVar != null) {
         }
-        com.google.firebase.messaging.j a22 = com.google.firebase.messaging.e.a((FirebaseMessagingService) this.c, (a3.c) this.d);
+        com.google.firebase.messaging.j a22 = com.google.firebase.messaging.e.a((FirebaseMessagingService) this.c, (com.google.firebase.messaging.o) this.d);
         e0.t tVar2 = (e0.t) a22.a;
         if (mVar != null) {
         }
@@ -809,13 +804,13 @@ public class e implements b4.b0, a3.b, v4.f, v9.a {
         return true;
     }
 
-    public void x(View view) {
+    public void w(View view) {
         ((ArrayList) this.d).add(view);
-        a3.c cVar = (a3.c) this.b;
-        l1 U = RecyclerView.U(view);
+        ja.c cVar = (ja.c) this.b;
+        m1 U = RecyclerView.U(view);
         if (U != null) {
             View view2 = U.a;
-            RecyclerView recyclerView = (RecyclerView) cVar.b;
+            RecyclerView recyclerView = (RecyclerView) cVar.a;
             int i10 = U.s;
             if (i10 != -1) {
                 U.r = i10;
@@ -833,10 +828,15 @@ public class e implements b4.b0, a3.b, v4.f, v9.a {
         }
     }
 
+    @Override // v4.f
+    public int x() {
+        return ((long[]) this.d).length;
+    }
+
     public void y() {
         int i10;
-        RecyclerView recyclerView = (RecyclerView) ((a3.c) this.b).b;
-        ((f2.c) this.c).F();
+        RecyclerView recyclerView = (RecyclerView) ((ja.c) this.b).a;
+        ((f2.c) this.c).H();
         ArrayList arrayList = (ArrayList) this.d;
         int size = arrayList.size();
         while (true) {
@@ -844,7 +844,7 @@ public class e implements b4.b0, a3.b, v4.f, v9.a {
             if (size < 0) {
                 break;
             }
-            l1 U = RecyclerView.U((View) arrayList.get(size));
+            m1 U = RecyclerView.U((View) arrayList.get(size));
             if (U != null) {
                 int i11 = U.r;
                 if (recyclerView.b0()) {
@@ -946,7 +946,7 @@ public class e implements b4.b0, a3.b, v4.f, v9.a {
         Arrays.sort(copyOf);
     }
 
-    public e(a3.c cVar) {
+    public e(ja.c cVar) {
         this.a = 16;
         this.b = cVar;
         this.c = new f2.c(0);
@@ -989,11 +989,11 @@ public class e implements b4.b0, a3.b, v4.f, v9.a {
         kotlin.jvm.internal.j.e(store, "store");
     }
 
-    public e(FirebaseMessagingService firebaseMessagingService, a3.c cVar, ExecutorService executorService) {
+    public e(FirebaseMessagingService firebaseMessagingService, com.google.firebase.messaging.o oVar, ExecutorService executorService) {
         this.a = 11;
         this.b = executorService;
         this.c = firebaseMessagingService;
-        this.d = cVar;
+        this.d = oVar;
     }
 
     public e(Context context, LocationManager locationManager) {
@@ -1080,7 +1080,7 @@ public class e implements b4.b0, a3.b, v4.f, v9.a {
         this.b = uVar;
         int i10 = Build.VERSION.SDK_INT;
         this.c = i10 >= 29 ? s.b(context) : null;
-        this.d = i10 <= 29 ? new y5.h(context, 1) : null;
+        this.d = i10 <= 29 ? new k0.b(context) : null;
     }
 
     public e(c2.e eVar, android.support.v4.media.session.c0 c0Var) {

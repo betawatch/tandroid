@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.DialogInterface;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ig implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
@@ -33,13 +33,13 @@ public final /* synthetic */ class ig implements DialogInterface.OnCancelListene
                 poVar.K0 = false;
                 break;
             case 2:
-                ((qp) this.b).n = null;
+                ((rp) this.b).n = null;
                 break;
             default:
-                wb0 wb0Var = (wb0) this.b;
-                if (wb0Var.h >= 0) {
-                    ConnectionsManager.getInstance(wb0Var.b).cancelRequest(wb0Var.h, true);
-                    wb0Var.h = -1;
+                xb0 xb0Var = (xb0) this.b;
+                if (xb0Var.h >= 0) {
+                    ConnectionsManager.getInstance(xb0Var.b).cancelRequest(xb0Var.h, true);
+                    xb0Var.h = -1;
                     break;
                 }
                 break;

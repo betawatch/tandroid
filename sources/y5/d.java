@@ -20,9 +20,8 @@ import b6.r;
 import b6.s;
 import com.google.android.gms.common.api.GoogleApiActivity;
 import e0.t;
-import kh.a2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class d extends e {
     public static final Object c = new Object();
@@ -48,7 +47,7 @@ public final class d extends e {
         if (d10 != null) {
             builder.setTitle(d10);
         }
-        Log.w("GoogleApiAvailability", a2.j(i10, "Creating dialog for Google Play services availability issue. ConnectionResult="), new IllegalArgumentException());
+        Log.w("GoogleApiAvailability", l.d.j(i10, "Creating dialog for Google Play services availability issue. ConnectionResult="), new IllegalArgumentException());
         return builder.create();
     }
 
@@ -98,7 +97,7 @@ public final class d extends e {
 
     public final void h(Context context, int i10, PendingIntent pendingIntent) {
         int i11;
-        Log.w("GoogleApiAvailability", a2.k(i10, "GMS core API Availability. ConnectionResult=", ", tag=null"), new IllegalArgumentException());
+        Log.w("GoogleApiAvailability", l.d.k(i10, "GMS core API Availability. ConnectionResult=", ", tag=null"), new IllegalArgumentException());
         if (i10 == 18) {
             new j(this, context).sendEmptyMessageDelayed(1, 120000L);
             return;
@@ -114,7 +113,7 @@ public final class d extends e {
         if (f10 == null) {
             f10 = context.getResources().getString(org.telegram.messenger.beta.R.string.common_google_play_services_notification_ticker);
         }
-        String e = (i10 == 6 || i10 == 19) ? r.e(context, "common_google_play_services_resolution_required_text", r.a(context)) : r.c(context, i10);
+        String e6 = (i10 == 6 || i10 == 19) ? r.e(context, "common_google_play_services_resolution_required_text", r.a(context)) : r.c(context, i10);
         Resources resources = context.getResources();
         Object systemService = context.getSystemService("notification");
         b6.m.h(systemService);
@@ -124,7 +123,7 @@ public final class d extends e {
         tVar.h(16, true);
         tVar.e = t.d(f10);
         e0.o oVar = new e0.o(false);
-        oVar.f = t.d(e);
+        oVar.f = t.d(e6);
         tVar.n(oVar);
         PackageManager packageManager = context.getPackageManager();
         if (i6.b.b == null) {
@@ -143,7 +142,7 @@ public final class d extends e {
             tVar.p(resources.getString(org.telegram.messenger.beta.R.string.common_google_play_services_notification_ticker));
             tVar.E.when = System.currentTimeMillis();
             tVar.g = pendingIntent;
-            tVar.f(e);
+            tVar.f(e6);
         }
         if (i6.b.d()) {
             b6.m.k(i6.b.d());

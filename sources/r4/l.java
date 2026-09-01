@@ -4,7 +4,7 @@ import h5.d0;
 import j3.n0;
 import o4.l0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class l implements l0 {
     public final n0 a;
@@ -47,12 +47,12 @@ public final class l implements l0 {
     }
 
     @Override // o4.l0
-    public final boolean d() {
+    public final boolean h() {
         return true;
     }
 
     @Override // o4.l0
-    public final int e(long j10) {
+    public final int l(long j10) {
         int max = Math.max(this.h, d0.b(this.c, j10, true));
         int i10 = max - this.h;
         this.h = max;
@@ -60,7 +60,7 @@ public final class l implements l0 {
     }
 
     @Override // o4.l0
-    public final int f(f7.b bVar, n3.i iVar, int i10) {
+    public final int p(f7.b bVar, n3.i iVar, int i10) {
         int i11 = this.h;
         boolean z4 = i11 == this.c.length;
         if (z4 && !this.d) {
@@ -80,7 +80,7 @@ public final class l implements l0 {
         }
         if ((i10 & 4) == 0) {
             byte[] q10 = this.b.q(this.e.a[i11]);
-            iVar.k(q10.length);
+            iVar.j(q10.length);
             iVar.d.put(q10);
         }
         iVar.f = this.c[i11];

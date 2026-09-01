@@ -5,9 +5,9 @@ import android.widget.FrameLayout;
 import j$.util.Objects;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.ui.hh1;
+import org.telegram.ui.jh1;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class ab implements View.OnLayoutChangeListener {
     public final /* synthetic */ boolean a;
@@ -28,8 +28,8 @@ public final class ab implements View.OnLayoutChangeListener {
             nbVar.onShow();
             org.telegram.ui.ActionBar.p2 p2Var = icVar.g;
             boolean z4 = this.a;
-            if (z4 && (p2Var instanceof hh1)) {
-                p2Var = ((hh1) p2Var).X();
+            if (z4 && (p2Var instanceof jh1)) {
+                p2Var = ((jh1) p2Var).X();
             }
             FrameLayout frameLayout = icVar.h;
             if (p2Var == null || (fbVar = p2Var.getBulletinDelegate()) == null) {
@@ -43,7 +43,7 @@ public final class ab implements View.OnLayoutChangeListener {
             }
             icVar.p = fbVar;
             if (fbVar == null && p2Var != null) {
-                icVar.p = new kh.t0(p2Var, 6);
+                icVar.p = new lh.t0(p2Var, 6);
             }
             o1.j jVar = icVar.d;
             if (jVar == null || !jVar.f) {
@@ -63,7 +63,7 @@ public final class ab implements View.OnLayoutChangeListener {
                 nbVar.invalidate();
                 mb mbVar = icVar.q;
                 Objects.requireNonNull(nbVar);
-                mbVar.v(nbVar, new wa(nbVar, 1), new fg(this, 15), new gl(2, this, z4));
+                mbVar.A(nbVar, new wa(nbVar, 1), new fg(this, 15), new il(2, this, z4));
                 return;
             }
             fb fbVar4 = icVar.p;

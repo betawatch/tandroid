@@ -3,12 +3,12 @@ package q5;
 import android.graphics.Color;
 import android.os.Parcel;
 import android.os.Parcelable;
-import j7.f5;
+import j7.g5;
 import java.util.Arrays;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class s extends c6.a {
     public static final Parcelable.Creator<s> CREATOR = new v(19);
@@ -179,39 +179,39 @@ public final class s extends c6.a {
     public final void writeToParcel(Parcel parcel, int i10) {
         JSONObject jSONObject = this.x;
         this.w = jSONObject == null ? null : jSONObject.toString();
-        int q10 = f5.q(parcel, 20293);
+        int q10 = g5.q(parcel, 20293);
         float f10 = this.a;
-        f5.s(parcel, 2, 4);
+        g5.s(parcel, 2, 4);
         parcel.writeFloat(f10);
         int i11 = this.b;
-        f5.s(parcel, 3, 4);
+        g5.s(parcel, 3, 4);
         parcel.writeInt(i11);
         int i12 = this.c;
-        f5.s(parcel, 4, 4);
+        g5.s(parcel, 4, 4);
         parcel.writeInt(i12);
         int i13 = this.d;
-        f5.s(parcel, 5, 4);
+        g5.s(parcel, 5, 4);
         parcel.writeInt(i13);
         int i14 = this.e;
-        f5.s(parcel, 6, 4);
+        g5.s(parcel, 6, 4);
         parcel.writeInt(i14);
         int i15 = this.f;
-        f5.s(parcel, 7, 4);
+        g5.s(parcel, 7, 4);
         parcel.writeInt(i15);
         int i16 = this.h;
-        f5.s(parcel, 8, 4);
+        g5.s(parcel, 8, 4);
         parcel.writeInt(i16);
         int i17 = this.n;
-        f5.s(parcel, 9, 4);
+        g5.s(parcel, 9, 4);
         parcel.writeInt(i17);
-        f5.l(parcel, 10, this.r);
+        g5.l(parcel, 10, this.r);
         int i18 = this.s;
-        f5.s(parcel, 11, 4);
+        g5.s(parcel, 11, 4);
         parcel.writeInt(i18);
         int i19 = this.v;
-        f5.s(parcel, 12, 4);
+        g5.s(parcel, 12, 4);
         parcel.writeInt(i19);
-        f5.l(parcel, 13, this.w);
-        f5.r(parcel, q10);
+        g5.l(parcel, 13, this.w);
+        g5.r(parcel, q10);
     }
 }

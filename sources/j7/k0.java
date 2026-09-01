@@ -1,41 +1,38 @@
 package j7;
 
-import java.util.Map;
-
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class k0 {
-    public static c5.i a(c5.i iVar, String[] strArr, Map map) {
-        int i10 = 0;
-        if (iVar == null) {
-            if (strArr == null) {
-                return null;
-            }
-            if (strArr.length == 1) {
-                return (c5.i) map.get(strArr[0]);
-            }
-            if (strArr.length > 1) {
-                c5.i iVar2 = new c5.i();
-                int length = strArr.length;
-                while (i10 < length) {
-                    iVar2.a((c5.i) map.get(strArr[i10]));
-                    i10++;
-                }
-                return iVar2;
-            }
-        } else {
-            if (strArr != null && strArr.length == 1) {
-                iVar.a((c5.i) map.get(strArr[0]));
-                return iVar;
-            }
-            if (strArr != null && strArr.length > 1) {
-                int length2 = strArr.length;
-                while (i10 < length2) {
-                    iVar.a((c5.i) map.get(strArr[i10]));
-                    i10++;
-                }
-            }
+    public static boolean a(r3.l lVar) {
+        h5.w wVar = new h5.w(8);
+        int i10 = c4.e.b(lVar, wVar).a;
+        if (i10 != 1380533830 && i10 != 1380333108) {
+            return false;
         }
-        return iVar;
+        lVar.b(0, 4, wVar.a);
+        wVar.F(0);
+        int g10 = wVar.g();
+        if (g10 == 1463899717) {
+            return true;
+        }
+        h5.a.o("WavHeaderReader", "Unsupported form type: " + g10);
+        return false;
+    }
+
+    public static c4.e b(int i10, r3.l lVar, h5.w wVar) {
+        c4.e b10 = c4.e.b(lVar, wVar);
+        while (true) {
+            int i11 = b10.a;
+            if (i11 == i10) {
+                return b10;
+            }
+            e2.c.q(i11, "Ignoring unknown WAV chunk: ", "WavHeaderReader");
+            long j10 = b10.b + 8;
+            if (j10 > 2147483647L) {
+                throw j3.r1.c("Chunk is too large (~2GB+) to skip; id: " + i11);
+            }
+            lVar.s((int) j10);
+            b10 = c4.e.b(lVar, wVar);
+        }
     }
 }

@@ -1,81 +1,77 @@
 package yf;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+import android.animation.ValueAnimator;
+import android.graphics.Paint;
+import android.graphics.Path;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class f {
-    public boolean a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public boolean h;
-    public int i;
-    public float j;
-    public float k;
-    public float l;
-    public float m;
+public class f {
+    public final xf.a a;
+    public final Paint b;
+    public final Paint c;
+    public final Paint d;
+    public final Path e;
+    public final Path f;
+    public final Path g;
+    public ValueAnimator h;
+    public ValueAnimator i;
+    public int j;
+    public final float[] k;
+    public final float[] l;
+    public int m;
+    public boolean n;
+    public float o;
+    public final g6 p;
 
-    /* renamed from: a, reason: merged with bridge method [inline-methods] */
-    public final f clone() {
-        f fVar = new f();
-        fVar.a = this.a;
-        fVar.b = this.b;
-        fVar.c = this.c;
-        fVar.d = this.d;
-        fVar.e = this.e;
-        fVar.f = this.f;
-        fVar.g = this.g;
-        fVar.h = this.h;
-        fVar.i = this.i;
-        fVar.j = this.j;
-        fVar.k = this.k;
-        fVar.l = this.l;
-        fVar.m = this.m;
-        return fVar;
-    }
-
-    public final int b() {
-        return this.i;
-    }
-
-    public final boolean c() {
-        return this.a;
-    }
-
-    public final boolean d() {
-        return this.h;
-    }
-
-    public final void e(boolean z4, float f10, float f11, float f12, int i10, float f13, float f14, float f15, float f16, float f17, float f18, float f19, boolean z10) {
-        this.a = z4;
-        this.b = f10;
-        this.c = f11;
-        this.f = f13;
-        this.g = f12;
-        this.i = i10;
-        while (true) {
-            int i11 = this.i;
-            if (i11 >= 0) {
-                break;
-            } else {
-                this.i = i11 + 360;
-            }
+    public f(xf.a aVar, boolean z4, g6 g6Var) {
+        Paint paint = new Paint(1);
+        this.b = paint;
+        Paint paint2 = new Paint(1);
+        this.c = paint2;
+        Paint paint3 = new Paint(1);
+        this.d = paint3;
+        this.e = new Path();
+        this.f = new Path();
+        this.g = new Path();
+        this.n = true;
+        this.o = 1.0f;
+        this.p = g6Var;
+        this.a = aVar;
+        paint2.setStrokeWidth(AndroidUtilities.dpf2(2.0f));
+        Paint.Style style = Paint.Style.STROKE;
+        paint2.setStyle(style);
+        if (!wf.g.x1) {
+            paint2.setStrokeJoin(Paint.Join.ROUND);
         }
-        while (true) {
-            int i12 = this.i;
-            if (i12 < 360) {
-                this.j = f16;
-                this.k = f17;
-                this.d = f18;
-                this.e = f19;
-                this.l = f14;
-                this.m = f15;
-                this.h = z10;
-                return;
-            }
-            this.i = i12 - 360;
+        paint2.setColor(aVar.h);
+        paint.setStrokeWidth(AndroidUtilities.dpf2(1.0f));
+        paint.setStyle(style);
+        paint.setColor(aVar.h);
+        paint3.setStrokeWidth(AndroidUtilities.dpf2(10.0f));
+        paint3.setStyle(style);
+        paint3.setStrokeCap(Paint.Cap.ROUND);
+        paint3.setColor(aVar.h);
+        long[] jArr = aVar.a;
+        this.k = new float[z4 ? jArr.length * 8 : jArr.length << 2];
+        long[] jArr2 = aVar.a;
+        this.l = new float[z4 ? jArr2.length * 8 : jArr2.length << 2];
+    }
+
+    public void a() {
+        xf.a aVar = this.a;
+        int i10 = aVar.g;
+        g6 g6Var = this.p;
+        if (i10 < 0 || !k6.c1(i10)) {
+            this.m = i0.a.f(k6.v0(k6.d6, g6Var)) < 0.5d ? aVar.i : aVar.h;
+        } else {
+            this.m = k6.v0(aVar.g, g6Var);
         }
+        this.c.setColor(this.m);
+        this.b.setColor(this.m);
+        this.d.setColor(this.m);
     }
 }

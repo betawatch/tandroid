@@ -6,8 +6,8 @@ import j3.q0;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.regex.Pattern;
-import lh.g5;
-import nh.v0;
+import mh.g5;
+import oh.v0;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.FileUploadOperation;
 import org.telegram.messenger.MediaDataController;
@@ -19,13 +19,13 @@ import org.telegram.messenger.voip.GroupCallMessagesController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.lo;
+import org.telegram.ui.Components.no;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.kf1;
-import org.telegram.ui.oy;
+import org.telegram.ui.mf1;
+import org.telegram.ui.py;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x implements Runnable {
     public final /* synthetic */ int a;
@@ -97,20 +97,20 @@ public final /* synthetic */ class x implements Runnable {
                 ((GroupCallMessagesController) obj2).lambda$processUpdate$3(this.c, this.d, (byte[]) obj);
                 break;
             case 12:
-                ((lo) obj2).d(this.c, this.d, (HashSet) obj);
+                ((no) obj2).d(this.c, this.d, (HashSet) obj);
                 break;
             case 13:
-                oy oyVar = (oy) obj2;
-                kf1 kf1Var = (kf1) obj;
-                if (oyVar.z2 == null) {
-                    oyVar.finishFragment();
+                py pyVar = (py) obj2;
+                mf1 mf1Var = (mf1) obj;
+                if (pyVar.z2 == null) {
+                    pyVar.finishFragment();
                     break;
                 } else {
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(MessagesStorage.TopicKey.of(j11, j10));
-                    oyVar.z2.w(oyVar, arrayList, null, false, oyVar.G2, oyVar.H2, oyVar.I2, kf1Var);
-                    if (oyVar.f2) {
-                        oyVar.z2 = null;
+                    pyVar.z2.v(pyVar, arrayList, null, false, pyVar.G2, pyVar.H2, pyVar.I2, mf1Var);
+                    if (pyVar.f2) {
+                        pyVar.z2 = null;
                         break;
                     }
                 }
@@ -126,7 +126,7 @@ public final /* synthetic */ class x implements Runnable {
                 s6.append(findTopic);
                 FileLog.d(s6.toString());
                 if (launchActivity.n0 != null) {
-                    ag.f.a(xnVar, MessagesStorage.TopicKey.of(-j11, j10));
+                    bg.e.a(xnVar, MessagesStorage.TopicKey.of(-j11, j10));
                     ((ActionBarLayout) launchActivity.O()).P(xnVar);
                     break;
                 }

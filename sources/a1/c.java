@@ -15,8 +15,6 @@ import android.widget.TextView;
 import c2.y0;
 import c2.z0;
 import c5.j;
-import cg.h2;
-import cg.r0;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -24,20 +22,23 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.b0;
 import com.google.firebase.messaging.d0;
-import com.google.firebase.messaging.r;
+import com.google.firebase.messaging.s;
 import d4.n;
 import d4.x;
 import d4.y;
-import dg.j3;
-import dg.p3;
-import dg.q3;
-import dg.r3;
-import dg.v2;
+import dg.g2;
+import dg.q0;
+import eg.h3;
+import eg.n3;
+import eg.o3;
+import eg.p0;
+import eg.p3;
+import eg.t2;
 import f3.h;
-import gg.e1;
-import gg.x1;
+import hg.e1;
+import hg.x1;
 import j3.n0;
-import j7.o5;
+import j7.a7;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -52,17 +53,18 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.c2;
 import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.ActionBar.p2;
-import org.telegram.ui.Components.gj0;
+import org.telegram.ui.Components.ij0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ft0;
-import org.telegram.ui.mq0;
+import org.telegram.ui.ht0;
+import org.telegram.ui.oq0;
 import org.telegram.ui.yh;
-import ph.s6;
+import qh.q6;
 import y2.i;
+import z3.k;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements OnSuccessListener, c9.e, r0, Continuation, OnCompleteListener, x, h2, c2, s6, ImageReceiver.ImageReceiverDelegate, xd.b, g3.b, ba.a {
+public final /* synthetic */ class c implements OnSuccessListener, c9.e, Continuation, OnCompleteListener, x, q0, g3.b, g2, c2, q6, ImageReceiver.ImageReceiverDelegate, xd.b, ba.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -73,10 +75,10 @@ public final /* synthetic */ class c implements OnSuccessListener, c9.e, r0, Con
 
     @Override // xd.b
     public void L(int i10, float f10, float f11, xd.c cVar) {
-        dh.f.a((dh.f) this.b);
+        eh.f.a((eh.f) this.b);
     }
 
-    @Override // cg.r0
+    @Override // dg.q0
     public Typeface a() {
         Typeface createFromFile;
         createFromFile = Typeface.createFromFile(((Font) this.b).getFile());
@@ -91,19 +93,19 @@ public final /* synthetic */ class c implements OnSuccessListener, c9.e, r0, Con
         return ((str.equals(n0Var.C) || str.equals(y.b(n0Var))) && nVar.c(n0Var, false)) ? 1 : 0;
     }
 
-    @Override // ph.s6
+    @Override // qh.q6
     public Bitmap c(BitmapFactory.Options options) {
         return BitmapFactory.decodeFile((String) this.b, options);
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z4, boolean z10, boolean z11) {
-        gj0 lottieAnimation;
-        r3 r3Var = (r3) this.b;
+        ij0 lottieAnimation;
+        p3 p3Var = (p3) this.b;
         if (!z4 || z10 || (lottieAnimation = imageReceiver.getLottieAnimation()) == null) {
             return;
         }
-        r3Var.q(lottieAnimation);
+        p3Var.q(lottieAnimation);
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
@@ -111,18 +113,23 @@ public final /* synthetic */ class c implements OnSuccessListener, c9.e, r0, Con
         j5.a(this, i10, str, drawable);
     }
 
-    @Override // cg.h2
+    @Override // dg.g2
     public void e() {
-        ft0 ft0Var = (ft0) this.b;
-        TextView textView = ft0Var.v1;
-        boolean a2 = ft0Var.C0.a();
-        ImageView imageView = ft0Var.t1;
+        ht0 ht0Var = (ht0) this.b;
+        TextView textView = ht0Var.v1;
+        boolean a2 = ht0Var.C0.a();
+        ImageView imageView = ht0Var.t1;
         imageView.animate().cancel();
         imageView.animate().alpha(a2 ? 1.0f : 0.6f).translationY(0.0f).setDuration(150L).start();
         imageView.setClickable(a2);
         textView.animate().cancel();
         textView.animate().alpha(a2 ? 1.0f : 0.6f).translationY(0.0f).setDuration(150L).start();
         textView.setClickable(a2);
+    }
+
+    @Override // c9.e
+    public Object e0(j jVar) {
+        return this.b;
     }
 
     @Override // ba.a
@@ -134,44 +141,38 @@ public final /* synthetic */ class c implements OnSuccessListener, c9.e, r0, Con
         aVar.b.set((f9.a) bVar.get());
     }
 
-    @Override // c9.e
-    public Object f0(j jVar) {
-        return this.b;
-    }
-
     @Override // g3.b
     public Object g() {
         SQLiteDatabase a2;
         int i10 = this.a;
         int i11 = 1;
-        boolean z4 = false;
         Object obj = this.b;
         switch (i10) {
-            case 22:
+            case 13:
                 h hVar = (h) ((f3.c) obj);
                 hVar.getClass();
                 int i12 = b3.a.e;
-                r rVar = new r(3, z4);
-                rVar.c = null;
-                rVar.d = new ArrayList();
-                rVar.e = null;
-                rVar.b = "";
+                s sVar = new s();
+                sVar.b = null;
+                sVar.c = new ArrayList();
+                sVar.d = null;
+                sVar.a = "";
                 HashMap hashMap = new HashMap();
                 a2 = hVar.a();
                 a2.beginTransaction();
                 try {
-                    b3.a aVar = (b3.a) h.h(a2.rawQuery("SELECT log_source, reason, events_dropped_count FROM log_event_dropped", new String[0]), new androidx.car.app.utils.a(hVar, hashMap, rVar, 7));
+                    b3.a aVar = (b3.a) h.h(a2.rawQuery("SELECT log_source, reason, events_dropped_count FROM log_event_dropped", new String[0]), new androidx.car.app.utils.a(hVar, hashMap, sVar, 6));
                     a2.setTransactionSuccessful();
                     return aVar;
                 } finally {
                 }
-            case 23:
+            case 14:
                 h hVar2 = (h) ((f3.d) obj);
-                long X = hVar2.b.X() - hVar2.d.d;
+                long W = hVar2.b.W() - hVar2.d.d;
                 a2 = hVar2.a();
                 a2.beginTransaction();
                 try {
-                    String[] strArr = {String.valueOf(X)};
+                    String[] strArr = {String.valueOf(W)};
                     Cursor rawQuery = a2.rawQuery("SELECT COUNT(*), transport_name FROM events WHERE timestamp_ms < ? GROUP BY transport_name", strArr);
                     while (rawQuery.moveToNext()) {
                         try {
@@ -188,35 +189,35 @@ public final /* synthetic */ class c implements OnSuccessListener, c9.e, r0, Con
                     return Integer.valueOf(delete);
                 } finally {
                 }
-            case 24:
+            case 15:
                 h hVar3 = (h) ((f3.c) ((e3.g) obj).i);
                 a2 = hVar3.a();
                 a2.beginTransaction();
                 try {
                     a2.compileStatement("DELETE FROM log_event_dropped").execute();
-                    a2.compileStatement("UPDATE global_log_event_state SET last_metrics_upload_ms=" + hVar3.b.X()).execute();
+                    a2.compileStatement("UPDATE global_log_event_state SET last_metrics_upload_ms=" + hVar3.b.W()).execute();
                     a2.setTransactionSuccessful();
                     return null;
                 } finally {
                 }
             default:
-                r rVar2 = (r) obj;
-                Iterator it = ((Iterable) ((h) ((f3.d) rVar2.c)).c(new f0.d(i11))).iterator();
+                s sVar2 = (s) obj;
+                Iterator it = ((Iterable) ((h) ((f3.d) sVar2.b)).c(new k(i11))).iterator();
                 while (it.hasNext()) {
-                    ((androidx.biometric.e) rVar2.d).A((i) it.next(), 1, false);
+                    ((androidx.biometric.e) sVar2.c).A((i) it.next(), 1, false);
                 }
                 return null;
         }
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public void i(d2 d2Var, int i10) {
+    public void j(d2 d2Var, int i10) {
         switch (this.a) {
-            case 13:
-                ((mq0) this.b).run();
+            case 18:
+                ((oq0) this.b).run();
                 break;
-            case 14:
-                ((dg.r0) this.b).a.c2.r();
+            case 19:
+                ((p0) this.b).a.c2.r();
                 break;
             case 28:
                 ((x1) this.b).run();
@@ -240,10 +241,10 @@ public final /* synthetic */ class c implements OnSuccessListener, c9.e, r0, Con
     @Override // com.google.android.gms.tasks.OnCompleteListener
     public void onComplete(Task task) {
         switch (this.a) {
-            case 7:
+            case 6:
                 b0.b((Intent) this.b);
                 break;
-            case 8:
+            case 7:
                 ((d0) this.b).b.trySetResult(null);
                 break;
             default:
@@ -262,7 +263,7 @@ public final /* synthetic */ class c implements OnSuccessListener, c9.e, r0, Con
             case 1:
                 ((b1.f) this.b).invoke(obj);
                 return;
-            case 5:
+            case 4:
                 com.google.firebase.messaging.y yVar = (com.google.firebase.messaging.y) obj;
                 if (!((FirebaseMessaging) this.b).e.o() || yVar.h.a() == null) {
                     return;
@@ -275,60 +276,60 @@ public final /* synthetic */ class c implements OnSuccessListener, c9.e, r0, Con
                 }
                 yVar.h(0L);
                 return;
-            case 10:
+            case 9:
                 ((b1.f) this.b).invoke(obj);
                 return;
-            case 16:
-                v2 v2Var = (v2) this.b;
-                v2Var.z0 = true;
-                v2Var.y0 = false;
+            case 12:
+                ((e1.b) this.b).invoke(obj);
                 return;
-            case 17:
-                j3 j3Var = (j3) this.b;
+            case 21:
+                t2 t2Var = (t2) this.b;
+                t2Var.z0 = true;
+                t2Var.y0 = false;
+                return;
+            case 22:
+                h3 h3Var = (h3) this.b;
                 mb.b bVar = (mb.b) obj;
                 ArrayList arrayList = new ArrayList();
                 for (int i10 = 0; i10 < bVar.a.size(); i10++) {
                     mb.a aVar = (mb.a) bVar.a.get(i10);
-                    p3 p3Var = new p3();
-                    p3Var.a = aVar.a;
-                    p3Var.b = aVar.d;
-                    p3Var.c = aVar.e;
-                    p3Var.d = aVar.b;
-                    p3Var.e = aVar.c;
-                    arrayList.add(p3Var);
+                    n3 n3Var = new n3();
+                    n3Var.a = aVar.a;
+                    n3Var.b = aVar.d;
+                    n3Var.c = aVar.e;
+                    n3Var.d = aVar.b;
+                    n3Var.e = aVar.c;
+                    arrayList.add(n3Var);
                 }
-                j3Var.run(arrayList);
+                h3Var.run(arrayList);
                 return;
-            case 18:
-                q3 q3Var = (q3) this.b;
+            case 23:
+                o3 o3Var = (o3) this.b;
                 List list = (List) obj;
-                q3Var.getClass();
+                o3Var.getClass();
                 if (list.size() <= 0) {
                     FileLog.d("objimg: no objects");
                     return;
                 }
                 int i11 = ((jb.a) list.get(0)).c;
                 String str = null;
-                if (o5.a == null) {
-                    o5.a = new String[]{"👥", "🔥", "📚", "🏔", "🧊", "🍱", null, "🚰", "🧸", "🗿", "🍔", "🚜", "🛷", "🐠", "🎪", null, "🪑", "🧔", "🌉", "🩰", "🐦", "🚣", "🏞", null, "🏭", "🎓", "🍶", "🌿", "🌸", "🛋", "😎", "🏗", "🎡", "🐠", "🤿", "🐶", "⛵", "🎨", "🏆", "🧗", "🏸", "🦁", "🚲", "🏟", null, "⛵", "🙂", "🏄", "🍟", "🌇", "🌭", "🩳", "🚌", "🐂", "🌌", "🐹", "🪨", "👥", "👗", "👣", null, "🐻", "🍽", "🗼", "🧱", "🗑", "👤", "🏄", "👙", "🎢", "🏕", "🎠", "🚽", "😆", "🎈", "🎤", "👗", "🚧", "📦", "🐠", "🧺", "🌼", "🛒", "🥊", "💍", "💎", "🎰", "🚗", "🪜", "💻", "🍳", "📽️", "🪑", "🖼", "🍷", "🚢", "🛳", "👥", "🧗", "🕳", "👔", "🛠", "🌊", "🤡", "🎉", "🚴", "☄️", "🎓", "🏟", "🎄", "⛪", "🕰", "👨", "🐄", "🌴", "🖥", "🥌", "🍲", "🐱", "🧃", "🍚", null, "👥", "🏙", null, "🧸", "🍪", "🟩", "🕎", "🧶", "🛹", "✂️", "💅", "🥤", "🍴", "📜", null, "👘", "🧸", "📱", "🚦", "❄️", "🇵🇷", "⛓", "💃", "🏜", "🎅", "🦃", "🤵", "👄", "🏜", "🦕", "👳\u200d♂️", "🔥", "🛏", "🥽", "🐉", "🛋", "🛷", "🧢", "📋", "🎩", "🍨", "🐎", "🧶", "👕", "🧣", "🏖", "⚽", "🖤", "🎧", "🏛", "🚘", "🛹", "🦢", "🍖", "🥅", "🧁", "🐕", "🚤", "🌳", "☕", "⚽", "🧸", "🍲", "🧍", "📖", "🍉", "🍜", "✨", "💼", "🌳", "🐕", "🌲", "🚩", "⛵", "🦶", "🧥", null, "🛏", null, "🛁", "🗻", "🤸\u200d♀️", "👂", "🌸", "🐚", "👵", "🏛", "👁️", "🛏", "⚖️", "🎒", "🐎", "✨", "🛸", "💇", "🧸", "👥", "🪟", "🌟", "🐱", "🐄", "🐞", "❄️", "💍", "🚪", "💎", "🧶", "🏺", "🧥", "❤️", "💪", "🏍", "💰", "🕌", "🍽", "💃", "🛶", "🏖", "🧾", "🏞", "🚨", "🐴", "🧥", "📯", "⌚", "🧱", "🤿", "👖", "🏊", "🎸", "🎭", "🤘", "🌕", "🧥", "💍", "📱", "🪖", "🍽", "🎉", "🌌", "📰", "🗞", null, "🎹", "🪴", "🛂", "🐧", "🐕", "🏰", "🏵", "🏇", "📝", "🎶", "⛵", "🍕", "🐾", "🧵", "🐦", "🛹", "🏄", "🏉", "💄", "🏞", "🏁", "🚣", "🛣", "🏃", "🛋", "🏠", "⭐", "🏅", "👟", "🚤", "🪐", "😴", "🤲", "🏊", "🏫", "🍣", "🛋", "🦸", "😎", "⛷", "🚢", "🎵", "📚", "🏙", "🌋", "📺", "🐎", "💉", "🚆", "🚪", "🥤", "🚗", "👜", "💡", "🎫", "🍷", "🍗", "🎡", "🏄", "💻", null, null, "🏡", "🎣", "❤️", "🌱", "☕", "🍞", "🏖", null, "🏛", "🚁", "⛰", "🦆", "🌱", "🐢", "🐊", "🎶", "👟", "🧶", "💍", "🎤", "🎡", "🏂", "🚤", "🧱", "🚀", "🏠", "🏖", "🌈", "🌿", "👨", "🌷", "👗", "🏞", "🐶", "🦸", "🌸", "🍽", "🔊", "⛪", "🏢", "✈️", "🐾", "🐂", "🪑", "🛕", "🦋", "👠", "🏃", "🪡", "🍳", "🏰", "🌌", "🐛", "🏎", null, "✈️", "🚣", "🧵", "🤵", "🎢", "🍲", "🥦", "🚲", "👖", "🪴", "🗄", "🎂", "💺", "✈️", null, "🌫", "🎆", "🚜", "🦭", "📚", "💇", "⚡", "🚐", "🐱", "🚗", "👖", "🌾", "🤿", "☔", "🛣", "⛵", "🐶", "🔳", "🍽", "👰", "💧", null, "🍴", "🚙", "👶", "👓", "🚗", "✈️", "✋", "🐎", "🏞", "🍽", "⚾", "🍷", "👰", "🌿", "🥧", "🎒", "🃏", "🦹", "🪖", "🛶", "🤳", "🛺", "🏚", "🏹", "🚀", null, "⛈", "⛑"};
+                if (a7.a == null) {
+                    a7.a = new String[]{"👥", "🔥", "📚", "🏔", "🧊", "🍱", null, "🚰", "🧸", "🗿", "🍔", "🚜", "🛷", "🐠", "🎪", null, "🪑", "🧔", "🌉", "🩰", "🐦", "🚣", "🏞", null, "🏭", "🎓", "🍶", "🌿", "🌸", "🛋", "😎", "🏗", "🎡", "🐠", "🤿", "🐶", "⛵", "🎨", "🏆", "🧗", "🏸", "🦁", "🚲", "🏟", null, "⛵", "🙂", "🏄", "🍟", "🌇", "🌭", "🩳", "🚌", "🐂", "🌌", "🐹", "🪨", "👥", "👗", "👣", null, "🐻", "🍽", "🗼", "🧱", "🗑", "👤", "🏄", "👙", "🎢", "🏕", "🎠", "🚽", "😆", "🎈", "🎤", "👗", "🚧", "📦", "🐠", "🧺", "🌼", "🛒", "🥊", "💍", "💎", "🎰", "🚗", "🪜", "💻", "🍳", "📽️", "🪑", "🖼", "🍷", "🚢", "🛳", "👥", "🧗", "🕳", "👔", "🛠", "🌊", "🤡", "🎉", "🚴", "☄️", "🎓", "🏟", "🎄", "⛪", "🕰", "👨", "🐄", "🌴", "🖥", "🥌", "🍲", "🐱", "🧃", "🍚", null, "👥", "🏙", null, "🧸", "🍪", "🟩", "🕎", "🧶", "🛹", "✂️", "💅", "🥤", "🍴", "📜", null, "👘", "🧸", "📱", "🚦", "❄️", "🇵🇷", "⛓", "💃", "🏜", "🎅", "🦃", "🤵", "👄", "🏜", "🦕", "👳\u200d♂️", "🔥", "🛏", "🥽", "🐉", "🛋", "🛷", "🧢", "📋", "🎩", "🍨", "🐎", "🧶", "👕", "🧣", "🏖", "⚽", "🖤", "🎧", "🏛", "🚘", "🛹", "🦢", "🍖", "🥅", "🧁", "🐕", "🚤", "🌳", "☕", "⚽", "🧸", "🍲", "🧍", "📖", "🍉", "🍜", "✨", "💼", "🌳", "🐕", "🌲", "🚩", "⛵", "🦶", "🧥", null, "🛏", null, "🛁", "🗻", "🤸\u200d♀️", "👂", "🌸", "🐚", "👵", "🏛", "👁️", "🛏", "⚖️", "🎒", "🐎", "✨", "🛸", "💇", "🧸", "👥", "🪟", "🌟", "🐱", "🐄", "🐞", "❄️", "💍", "🚪", "💎", "🧶", "🏺", "🧥", "❤️", "💪", "🏍", "💰", "🕌", "🍽", "💃", "🛶", "🏖", "🧾", "🏞", "🚨", "🐴", "🧥", "📯", "⌚", "🧱", "🤿", "👖", "🏊", "🎸", "🎭", "🤘", "🌕", "🧥", "💍", "📱", "🪖", "🍽", "🎉", "🌌", "📰", "🗞", null, "🎹", "🪴", "🛂", "🐧", "🐕", "🏰", "🏵", "🏇", "📝", "🎶", "⛵", "🍕", "🐾", "🧵", "🐦", "🛹", "🏄", "🏉", "💄", "🏞", "🏁", "🚣", "🛣", "🏃", "🛋", "🏠", "⭐", "🏅", "👟", "🚤", "🪐", "😴", "🤲", "🏊", "🏫", "🍣", "🛋", "🦸", "😎", "⛷", "🚢", "🎵", "📚", "🏙", "🌋", "📺", "🐎", "💉", "🚆", "🚪", "🥤", "🚗", "👜", "💡", "🎫", "🍷", "🍗", "🎡", "🏄", "💻", null, null, "🏡", "🎣", "❤️", "🌱", "☕", "🍞", "🏖", null, "🏛", "🚁", "⛰", "🦆", "🌱", "🐢", "🐊", "🎶", "👟", "🧶", "💍", "🎤", "🎡", "🏂", "🚤", "🧱", "🚀", "🏠", "🏖", "🌈", "🌿", "👨", "🌷", "👗", "🏞", "🐶", "🦸", "🌸", "🍽", "🔊", "⛪", "🏢", "✈️", "🐾", "🐂", "🪑", "🛕", "🦋", "👠", "🏃", "🪡", "🍳", "🏰", "🌌", "🐛", "🏎", null, "✈️", "🚣", "🧵", "🤵", "🎢", "🍲", "🥦", "🚲", "👖", "🪴", "🗄", "🎂", "💺", "✈️", null, "🌫", "🎆", "🚜", "🦭", "📚", "💇", "⚡", "🚐", "🐱", "🚗", "👖", "🌾", "🤿", "☔", "🛣", "⛵", "🐶", "🔳", "🍽", "👰", "💧", null, "🍴", "🚙", "👶", "👓", "🚗", "✈️", "✋", "🐎", "🏞", "🍽", "⚾", "🍷", "👰", "🌿", "🥧", "🎒", "🃏", "🦹", "🪖", "🛶", "🤳", "🛺", "🏚", "🏹", "🚀", null, "⛈", "⛑"};
                 }
                 if (i11 >= 0) {
-                    String[] strArr = o5.a;
+                    String[] strArr = a7.a;
                     if (i11 < strArr.length) {
                         str = strArr[i11];
                     }
                 }
-                q3Var.W = str;
+                o3Var.W = str;
                 StringBuilder sb = new StringBuilder("objimg: detected #");
                 sb.append(((jb.a) list.get(0)).c);
                 sb.append(" ");
-                sb.append(q3Var.W);
+                sb.append(o3Var.W);
                 sb.append(" ");
-                yh.w(((jb.a) list.get(0)).a, sb);
-                Emoji.getEmojiDrawable(q3Var.W);
-                return;
-            case 21:
-                ((e1.b) this.b).invoke(obj);
+                yh.v(((jb.a) list.get(0)).a, sb);
+                Emoji.getEmojiDrawable(o3Var.W);
                 return;
             default:
                 ((e1.b) this.b).invoke(obj);

@@ -9,7 +9,7 @@ import java.util.IdentityHashMap;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class q1 {
     public final k3.k a;
@@ -121,7 +121,7 @@ public final class q1 {
                 q1.this.e.n.d(22);
             }
         };
-        f7.b bVar = new f7.b(this, p1Var, false, 18);
+        f7.b bVar = new f7.b(this, p1Var, false, 17);
         this.f.put(p1Var, new o1(qVar, r12, bVar));
         int i10 = h5.d0.a;
         Looper myLooper = Looper.myLooper();

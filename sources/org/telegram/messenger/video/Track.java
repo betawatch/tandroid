@@ -16,7 +16,7 @@ import org.telegram.ui.yh;
 import s2.s;
 import s2.z;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class Track {
     private static Map<Integer, Integer> samplingFrequencyIndexMap;
@@ -38,7 +38,7 @@ public class Track {
     private ArrayList<SamplePresentationTime> samplePresentationTimes = new ArrayList<>();
     private boolean first = true;
 
-    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
     public static class SamplePresentationTime {
         private long dt;
         private int index;
@@ -187,7 +187,7 @@ public class Track {
             allocate4.put((byte) (mVar2.d & 255));
             allocate.put(allocate2.array());
             allocate.put(allocate4.array());
-            yh.v(de.a.c(xb.a.h, bVar2, bVar2, allocate));
+            yh.x(de.a.c(xb.a.h, bVar2, bVar2, allocate));
             bVar2.e = allocate;
             bVar.a(bVar2);
             this.sampleDescriptionBox.a(bVar);
@@ -265,8 +265,8 @@ public class Track {
                 parseFromCsd.n = this.height;
                 this.sampleDescriptionBox.a(parseFromCsd);
                 return;
-            } catch (IOException e) {
-                e.printStackTrace();
+            } catch (IOException e6) {
+                e6.printStackTrace();
                 return;
             }
         }
@@ -306,9 +306,9 @@ public class Track {
             byte[] bArr5 = new byte[byteBuffer2.remaining()];
             byteBuffer2.get(bArr5);
             arrayList2.add(bArr5);
-            yh.v(de.a.c(dc.a.h, aVar5, aVar5, arrayList));
+            yh.x(de.a.c(dc.a.h, aVar5, aVar5, arrayList));
             aVar5.a.f = arrayList;
-            yh.v(de.a.c(dc.a.n, aVar5, aVar5, arrayList2));
+            yh.x(de.a.c(dc.a.n, aVar5, aVar5, arrayList2));
             aVar5.a.g = arrayList2;
         }
         if (mediaFormat.containsKey("level")) {
@@ -371,17 +371,17 @@ public class Track {
         } else {
             aVar5.e(100);
         }
-        yh.v(de.a.c(dc.a.s, aVar5, aVar5, new Integer(-1)));
+        yh.x(de.a.c(dc.a.s, aVar5, aVar5, new Integer(-1)));
         aVar5.a.j = -1;
-        yh.v(de.a.c(dc.a.v, aVar5, aVar5, new Integer(-1)));
+        yh.x(de.a.c(dc.a.v, aVar5, aVar5, new Integer(-1)));
         aVar5.a.k = -1;
-        yh.v(de.a.c(dc.a.r, aVar5, aVar5, new Integer(-1)));
+        yh.x(de.a.c(dc.a.r, aVar5, aVar5, new Integer(-1)));
         aVar5.a.i = -1;
-        yh.v(de.a.c(dc.a.b, aVar5, aVar5, new Integer(1)));
+        yh.x(de.a.c(dc.a.b, aVar5, aVar5, new Integer(1)));
         aVar5.a.a = 1;
-        yh.v(de.a.c(dc.a.f, aVar5, aVar5, new Integer(3)));
+        yh.x(de.a.c(dc.a.f, aVar5, aVar5, new Integer(3)));
         aVar5.a.e = 3;
-        yh.v(de.a.c(dc.a.d, aVar5, aVar5, new Integer(0)));
+        yh.x(de.a.c(dc.a.d, aVar5, aVar5, new Integer(0)));
         aVar5.a.c = 0;
         cVar3.a(aVar5);
         this.sampleDescriptionBox.a(cVar3);

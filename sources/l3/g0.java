@@ -3,7 +3,7 @@ package l3;
 import android.media.AudioAttributes;
 import android.media.AudioTrack;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class g0 {
     public final j3.n0 a;
@@ -47,8 +47,8 @@ public final class g0 {
             } catch (Exception unused) {
             }
             throw new s(state, this.e, this.f, this.h, this.a, i11 == 1, null);
-        } catch (IllegalArgumentException | UnsupportedOperationException e) {
-            throw new s(0, this.e, this.f, this.h, this.a, i11 == 1, e);
+        } catch (IllegalArgumentException | UnsupportedOperationException e6) {
+            throw new s(0, this.e, this.f, this.h, this.a, i11 == 1, e6);
         }
     }
 

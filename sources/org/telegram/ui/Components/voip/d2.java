@@ -1,40 +1,35 @@
 package org.telegram.ui.Components.voip;
 
-import android.app.Activity;
-import android.content.Context;
-import org.telegram.messenger.AccountInstance;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.b80;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final class d2 extends b80 {
-    public final /* synthetic */ TLRPC.User c;
-    public final /* synthetic */ TLRPC.Chat d;
-    public final /* synthetic */ String e;
-    public final /* synthetic */ TLRPC.InputPeer f;
-    public final /* synthetic */ boolean h;
-    public final /* synthetic */ boolean n;
-    public final /* synthetic */ Activity r;
-    public final /* synthetic */ org.telegram.ui.ActionBar.p2 s;
-    public final /* synthetic */ AccountInstance v;
+public final /* synthetic */ class d2 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Runnable b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d2(Context context, TLRPC.Chat chat, TLRPC.User user, TLRPC.Chat chat2, String str, TLRPC.InputPeer inputPeer, boolean z4, boolean z10, Activity activity, org.telegram.ui.ActionBar.p2 p2Var, AccountInstance accountInstance) {
-        super(context, chat);
-        this.c = user;
-        this.d = chat2;
-        this.e = str;
-        this.f = inputPeer;
-        this.h = z4;
-        this.n = z10;
-        this.r = activity;
-        this.s = p2Var;
-        this.v = accountInstance;
+    public /* synthetic */ d2(int i10, Runnable runnable) {
+        this.a = i10;
+        this.b = runnable;
     }
 
-    @Override // org.telegram.ui.Components.b80
-    public final void m() {
-        f2.b(this.c, this.d, this.e, this.f, true, this.h, this.n, false, this.r, this.s, this.v, false, false, false);
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        switch (this.a) {
+            case 0:
+                Runnable runnable = this.b;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
+            default:
+                Runnable runnable2 = this.b;
+                if (runnable2 != null) {
+                    runnable2.run();
+                    break;
+                }
+                break;
+        }
     }
 }

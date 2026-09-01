@@ -1,23 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class mw extends wy {
-    public final /* synthetic */ kz E;
+public final class mw extends f2.v0 {
+    public final /* synthetic */ mz a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mw(kz kzVar, Context context) {
-        super(kzVar, context, 2);
-        this.E = kzVar;
+    public mw(mz mzVar) {
+        this.a = mzVar;
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f10) {
-        if (getTranslationY() != f10) {
-            super.setTranslationY(f10);
-            this.E.d0.invalidate();
+    @Override // f2.v0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, f2.j1 j1Var) {
+        recyclerView.getClass();
+        int R = RecyclerView.R(view);
+        mz mzVar = this.a;
+        f2.p0 adapter = mzVar.e0.getAdapter();
+        qy qyVar = mzVar.k0;
+        if (adapter == qyVar && R == qyVar.F) {
+            rect.set(0, 0, 0, 0);
+            return;
         }
+        if (R == 0) {
+            qyVar.getClass();
+        }
+        rect.left = 0;
+        rect.bottom = 0;
+        rect.top = AndroidUtilities.dp(2.0f);
+        ry ryVar = mzVar.f0;
+        qyVar.getClass();
+        rect.right = ryVar.E1(R) ? 0 : AndroidUtilities.dp(2.0f);
     }
 }

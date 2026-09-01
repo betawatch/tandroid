@@ -5,14 +5,14 @@ import android.graphics.Bitmap;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.a30;
-import org.telegram.ui.Components.e30;
-import org.telegram.ui.Components.e91;
+import org.telegram.ui.Components.b71;
+import org.telegram.ui.Components.c30;
+import org.telegram.ui.Components.f91;
 import org.telegram.ui.Components.g30;
-import org.telegram.ui.Components.iu;
-import org.telegram.ui.Components.z61;
+import org.telegram.ui.Components.i30;
+import org.telegram.ui.Components.ku;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class ba implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -42,67 +42,67 @@ public final class ba implements ViewTreeObserver.OnPreDrawListener {
                 ofFloat.start();
                 break;
             case 1:
-                ((iu) obj).a.c.getViewTreeObserver().removeOnPreDrawListener(this);
+                ((ku) obj).a.c.getViewTreeObserver().removeOnPreDrawListener(this);
                 break;
             case 2:
-                a30 a30Var = (a30) obj;
-                e30 e30Var = a30Var.f;
-                org.telegram.ui.w7 w7Var = a30Var.e;
+                c30 c30Var = (c30) obj;
+                g30 g30Var = c30Var.f;
+                org.telegram.ui.w7 w7Var = c30Var.e;
                 w7Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                w7Var.getLocationOnScreen(a30Var.D);
-                float f10 = a30Var.r.x + a30Var.N;
-                g30 g30Var = a30Var.R;
-                float measuredWidth = ((g30Var.getMeasuredWidth() / 2.0f) + f10) - r8[0];
-                float measuredWidth2 = ((g30Var.getMeasuredWidth() / 2.0f) + (a30Var.r.y + a30Var.O)) - r8[1];
+                w7Var.getLocationOnScreen(c30Var.D);
+                float f10 = c30Var.r.x + c30Var.N;
+                i30 i30Var = c30Var.R;
+                float measuredWidth = ((i30Var.getMeasuredWidth() / 2.0f) + f10) - r8[0];
+                float measuredWidth2 = ((i30Var.getMeasuredWidth() / 2.0f) + (c30Var.r.y + c30Var.O)) - r8[1];
                 boolean z4 = measuredWidth2 - ((float) AndroidUtilities.dp(61.0f)) > 0.0f && ((float) AndroidUtilities.dp(61.0f)) + measuredWidth2 < ((float) w7Var.getMeasuredHeight());
-                if (AndroidUtilities.dp(61.0f) + measuredWidth + e30Var.getMeasuredWidth() < w7Var.getMeasuredWidth() - AndroidUtilities.dp(16.0f) && z4) {
-                    e30Var.setTranslationX(AndroidUtilities.dp(61.0f) + measuredWidth);
+                if (AndroidUtilities.dp(61.0f) + measuredWidth + g30Var.getMeasuredWidth() < w7Var.getMeasuredWidth() - AndroidUtilities.dp(16.0f) && z4) {
+                    g30Var.setTranslationX(AndroidUtilities.dp(61.0f) + measuredWidth);
                     float measuredHeight = measuredWidth2 / w7Var.getMeasuredHeight();
-                    float dp = AndroidUtilities.dp(40.0f) / e30Var.getMeasuredHeight();
-                    e30Var.setTranslationY((int) (measuredWidth2 - (e30Var.getMeasuredHeight() * Math.max(dp, Math.min(measuredHeight, 1.0f - dp)))));
-                    e30Var.c(measuredWidth, measuredWidth2, 0);
+                    float dp = AndroidUtilities.dp(40.0f) / g30Var.getMeasuredHeight();
+                    g30Var.setTranslationY((int) (measuredWidth2 - (g30Var.getMeasuredHeight() * Math.max(dp, Math.min(measuredHeight, 1.0f - dp)))));
+                    g30Var.c(measuredWidth, measuredWidth2, 0);
                     break;
-                } else if ((measuredWidth - AndroidUtilities.dp(61.0f)) - e30Var.getMeasuredWidth() > AndroidUtilities.dp(16.0f) && z4) {
-                    float dp2 = AndroidUtilities.dp(40.0f) / e30Var.getMeasuredHeight();
+                } else if ((measuredWidth - AndroidUtilities.dp(61.0f)) - g30Var.getMeasuredWidth() > AndroidUtilities.dp(16.0f) && z4) {
+                    float dp2 = AndroidUtilities.dp(40.0f) / g30Var.getMeasuredHeight();
                     float max = Math.max(dp2, Math.min(measuredWidth2 / w7Var.getMeasuredHeight(), 1.0f - dp2));
-                    e30Var.setTranslationX((int) ((measuredWidth - AndroidUtilities.dp(61.0f)) - e30Var.getMeasuredWidth()));
-                    e30Var.setTranslationY((int) (measuredWidth2 - (e30Var.getMeasuredHeight() * max)));
-                    e30Var.c(measuredWidth, measuredWidth2, 1);
+                    g30Var.setTranslationX((int) ((measuredWidth - AndroidUtilities.dp(61.0f)) - g30Var.getMeasuredWidth()));
+                    g30Var.setTranslationY((int) (measuredWidth2 - (g30Var.getMeasuredHeight() * max)));
+                    g30Var.c(measuredWidth, measuredWidth2, 1);
                     break;
                 } else if (measuredWidth2 <= w7Var.getMeasuredHeight() * 0.3f) {
                     float measuredWidth3 = measuredWidth / w7Var.getMeasuredWidth();
-                    float dp3 = AndroidUtilities.dp(40.0f) / e30Var.getMeasuredWidth();
-                    e30Var.setTranslationX((int) (measuredWidth - (e30Var.getMeasuredWidth() * Math.max(dp3, Math.min(measuredWidth3, 1.0f - dp3)))));
-                    e30Var.setTranslationY((int) (AndroidUtilities.dp(61.0f) + measuredWidth2));
-                    e30Var.c(measuredWidth, measuredWidth2, 2);
+                    float dp3 = AndroidUtilities.dp(40.0f) / g30Var.getMeasuredWidth();
+                    g30Var.setTranslationX((int) (measuredWidth - (g30Var.getMeasuredWidth() * Math.max(dp3, Math.min(measuredWidth3, 1.0f - dp3)))));
+                    g30Var.setTranslationY((int) (AndroidUtilities.dp(61.0f) + measuredWidth2));
+                    g30Var.c(measuredWidth, measuredWidth2, 2);
                     break;
                 } else {
                     float measuredWidth4 = measuredWidth / w7Var.getMeasuredWidth();
-                    float dp4 = AndroidUtilities.dp(40.0f) / e30Var.getMeasuredWidth();
-                    e30Var.setTranslationX((int) (measuredWidth - (e30Var.getMeasuredWidth() * Math.max(dp4, Math.min(measuredWidth4, 1.0f - dp4)))));
-                    e30Var.setTranslationY((int) ((measuredWidth2 - e30Var.getMeasuredHeight()) - AndroidUtilities.dp(61.0f)));
-                    e30Var.c(measuredWidth, measuredWidth2, 3);
+                    float dp4 = AndroidUtilities.dp(40.0f) / g30Var.getMeasuredWidth();
+                    g30Var.setTranslationX((int) (measuredWidth - (g30Var.getMeasuredWidth() * Math.max(dp4, Math.min(measuredWidth4, 1.0f - dp4)))));
+                    g30Var.setTranslationY((int) ((measuredWidth2 - g30Var.getMeasuredHeight()) - AndroidUtilities.dp(61.0f)));
+                    g30Var.c(measuredWidth, measuredWidth2, 3);
                     break;
                 }
                 break;
             case 3:
-                ((eg.i0) obj).invalidate();
+                ((fg.i0) obj).invalidate();
                 break;
             default:
-                e91 e91Var = (e91) ((ih.h) obj).b;
-                e91Var.n.getViewTreeObserver().removeOnPreDrawListener(this);
-                ImageView imageView = e91Var.e;
+                f91 f91Var = (f91) ((jh.h) obj).b;
+                f91Var.n.getViewTreeObserver().removeOnPreDrawListener(this);
+                ImageView imageView = f91Var.e;
                 if (imageView != null) {
                     imageView.setVisibility(4);
-                    e91Var.e.setImageDrawable(null);
-                    Bitmap bitmap = e91Var.h;
+                    f91Var.e.setImageDrawable(null);
+                    Bitmap bitmap = f91Var.h;
                     if (bitmap != null) {
                         bitmap.recycle();
-                        e91Var.h = null;
+                        f91Var.h = null;
                     }
                 }
-                AndroidUtilities.runOnUIThread(new z61(this, i11));
-                e91Var.r = 0;
+                AndroidUtilities.runOnUIThread(new b71(this, i11));
+                f91Var.r = 0;
                 break;
         }
         return true;

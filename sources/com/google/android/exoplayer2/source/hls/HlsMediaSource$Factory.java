@@ -3,19 +3,18 @@ package com.google.android.exoplayer2.source.hls;
 import ab.a;
 import g5.l;
 import l7.w0;
-import org.telegram.ui.Components.qk0;
-import s0.b;
+import oh.h4;
 import t4.j;
 import u4.c;
 import z9.d;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class HlsMediaSource$Factory {
-    public final qk0 a;
+    public final h4 a;
     public final w0 f = new w0(14);
     public final a c = new a(24);
-    public final b d = c.B;
+    public final sg.a d = c.B;
     public final t4.c b = j.a;
     public final a g = new a(7);
     public final d e = new d(13);
@@ -24,6 +23,6 @@ public final class HlsMediaSource$Factory {
     public final boolean h = true;
 
     public HlsMediaSource$Factory(l lVar) {
-        this.a = new qk0(lVar, 12);
+        this.a = new h4(lVar, 19);
     }
 }

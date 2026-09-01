@@ -2,9 +2,9 @@ package org.telegram.ui.Cells;
 
 import android.view.View;
 import org.telegram.ui.Components.rc;
-import org.telegram.ui.s01;
+import org.telegram.ui.t01;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class l0 extends rc {
     public final /* synthetic */ int j;
@@ -27,15 +27,15 @@ public final class l0 extends rc {
                 ((t1) this.k).a3();
                 break;
             default:
-                ((s01) this.k).invalidateSelf();
+                ((t01) this.k).invalidateSelf();
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l0(s01 s01Var) {
+    public l0(t01 t01Var) {
         super((View) null);
         this.j = 2;
-        this.k = s01Var;
+        this.k = t01Var;
     }
 }

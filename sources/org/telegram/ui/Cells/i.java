@@ -9,12 +9,12 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.il;
+import org.telegram.ui.Components.gm;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.hd1;
+import org.telegram.ui.jd1;
 import org.telegram.ui.xo;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class i extends ClickableSpan {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final class i extends ClickableSpan {
                     t1 t1Var = ((q1) this.c).d;
                     k1 k1Var = t1Var.Gc;
                     if (k1Var != null) {
-                        k1Var.W0(t1Var, characterStyle, false);
+                        k1Var.a1(t1Var, characterStyle, false);
                         break;
                     }
                 } else {
@@ -62,8 +62,8 @@ public final class i extends ClickableSpan {
                         qc.j((org.telegram.ui.pa) this.c).j();
                         break;
                     }
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e6) {
+                    FileLog.e(e6);
                     return;
                 }
                 break;
@@ -74,7 +74,7 @@ public final class i extends ClickableSpan {
                 af.g.s(((xo) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
                 break;
             case 6:
-                ((il) this.c).run();
+                ((gm) this.c).run();
                 break;
             case 7:
                 AndroidUtilities.addToClipboard((CharSequence) this.b);
@@ -83,12 +83,12 @@ public final class i extends ClickableSpan {
             default:
                 try {
                     ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.b));
-                    if (qc.a((hd1) this.c)) {
-                        qc.j((hd1) this.c).j();
+                    if (qc.a((jd1) this.c)) {
+                        qc.j((jd1) this.c).j();
                         break;
                     }
-                } catch (Exception e6) {
-                    FileLog.e(e6);
+                } catch (Exception e10) {
+                    FileLog.e(e10);
                     return;
                 }
                 break;
@@ -113,7 +113,7 @@ public final class i extends ClickableSpan {
             case 6:
                 super.updateDrawState(textPaint);
                 textPaint.setUnderlineText(false);
-                textPaint.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Gi, (org.telegram.ui.ActionBar.f6) this.b));
+                textPaint.setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Gi, (org.telegram.ui.ActionBar.g6) this.b));
                 break;
             case 7:
                 textPaint.setColor(textPaint.linkColor);

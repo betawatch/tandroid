@@ -9,7 +9,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rd implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -18,10 +18,10 @@ public final /* synthetic */ class rd implements View.OnClickListener {
     public final /* synthetic */ FrameLayout d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ rd(int i10, ph.d dVar, org.telegram.ui.ActionBar.g3 g3Var, long j10) {
+    public /* synthetic */ rd(int i10, qh.d dVar, org.telegram.ui.ActionBar.h3 h3Var, long j10) {
         this.b = i10;
         this.d = dVar;
-        this.e = g3Var;
+        this.e = h3Var;
         this.c = j10;
     }
 
@@ -32,24 +32,24 @@ public final /* synthetic */ class rd implements View.OnClickListener {
                 ke keVar = (ke) this.d;
                 Context context = (Context) this.e;
                 if (view.isEnabled()) {
-                    ph.d dVar = keVar.Q0;
+                    qh.d dVar = keVar.Q0;
                     if (!dVar.K) {
                         dVar.setLoading(true);
                         TLRPC.TL_payments_getStarsRevenueAdsAccountUrl tL_payments_getStarsRevenueAdsAccountUrl = new TLRPC.TL_payments_getStarsRevenueAdsAccountUrl();
                         int i10 = this.b;
                         tL_payments_getStarsRevenueAdsAccountUrl.peer = MessagesController.getInstance(i10).getInputPeer(this.c);
-                        ConnectionsManager.getInstance(i10).sendRequest(tL_payments_getStarsRevenueAdsAccountUrl, new dg.d3(24, keVar, context));
+                        ConnectionsManager.getInstance(i10).sendRequest(tL_payments_getStarsRevenueAdsAccountUrl, new eg.b3(24, keVar, context));
                         break;
                     }
                 }
                 break;
             default:
-                ph.d dVar2 = (ph.d) this.d;
-                org.telegram.ui.ActionBar.g3 g3Var = (org.telegram.ui.ActionBar.g3) this.e;
+                qh.d dVar2 = (qh.d) this.d;
+                org.telegram.ui.ActionBar.h3 h3Var = (org.telegram.ui.ActionBar.h3) this.e;
                 TL_phone.createConferenceCall createconferencecall = new TL_phone.createConferenceCall();
                 createconferencecall.random_id = Utilities.random.nextInt();
                 int i11 = this.b;
-                ConnectionsManager.getInstance(i11).sendRequest(createconferencecall, new lh.u(i11, dVar2, g3Var, this.c));
+                ConnectionsManager.getInstance(i11).sendRequest(createconferencecall, new mh.t(i11, dVar2, h3Var, this.c));
                 break;
         }
     }

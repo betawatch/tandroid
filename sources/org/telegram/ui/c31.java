@@ -1,37 +1,37 @@
 package org.telegram.ui;
 
-import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class c31 implements f31 {
-    public final /* synthetic */ org.telegram.messenger.video.a a;
-    public final /* synthetic */ org.telegram.ui.Components.qc b;
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ nh.i0 d;
-    public final /* synthetic */ org.telegram.messenger.video.d e;
+public final class c31 implements h31 {
+    public final /* synthetic */ boolean[] a;
+    public final /* synthetic */ Utilities.Callback b;
+    public final /* synthetic */ org.telegram.ui.Components.qc c;
 
-    public c31(org.telegram.messenger.video.a aVar, org.telegram.ui.Components.qc qcVar, Context context, nh.i0 i0Var, org.telegram.messenger.video.d dVar) {
-        this.a = aVar;
-        this.b = qcVar;
-        this.c = context;
-        this.d = i0Var;
-        this.e = dVar;
+    public c31(boolean[] zArr, Utilities.Callback callback, org.telegram.ui.Components.qc qcVar) {
+        this.a = zArr;
+        this.b = callback;
+        this.c = qcVar;
     }
 
-    @Override // org.telegram.ui.f31
+    @Override // org.telegram.ui.h31
     public final void a() {
-        AndroidUtilities.runOnUIThread(new y21(this.a, this.b, this.c, this.d, 2), 200L);
+        Utilities.Callback callback;
+        boolean[] zArr = this.a;
+        if (!zArr[0] && (callback = this.b) != null) {
+            zArr[0] = true;
+            callback.run(Boolean.TRUE);
+        }
+        AndroidUtilities.runOnUIThread(new xy0(this.c, 8), 200L);
     }
 
-    @Override // org.telegram.ui.f31
-    public final void b() {
-        AndroidUtilities.runOnUIThread(new l01(7, this.a, this.b), 200L);
+    @Override // org.telegram.ui.h31
+    public final /* synthetic */ void b() {
     }
 
-    @Override // org.telegram.ui.f31
-    public final void c() {
-        this.e.run();
+    @Override // org.telegram.ui.h31
+    public final /* synthetic */ void c() {
     }
 }

@@ -6,9 +6,9 @@ import android.os.SystemClock;
 import android.view.View;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yf implements og.a {
+public final /* synthetic */ class yf implements pg.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ pm b;
 
@@ -17,7 +17,7 @@ public final /* synthetic */ class yf implements og.a {
         this.b = pmVar;
     }
 
-    @Override // og.a
+    @Override // pg.a
     public final void e(Canvas canvas, RectF rectF) {
         switch (this.a) {
             case 0:
@@ -29,12 +29,12 @@ public final /* synthetic */ class yf implements og.a {
                 int i10 = (int) ((1.0f - f10) * 255.0f);
                 int i11 = (int) (255.0f * f10);
                 if (f10 > 0.0f) {
-                    canvas.drawColor(org.telegram.ui.ActionBar.j6.l1(f10 * 0.85f, xnVar.getThemedColor(org.telegram.ui.ActionBar.j6.d6)));
+                    canvas.drawColor(org.telegram.ui.ActionBar.k6.l1(f10 * 0.85f, xnVar.getThemedColor(org.telegram.ui.ActionBar.k6.d6)));
                 }
-                tg.c.a(new yf(pmVar, 1), canvas, rectF, xnVar.u0, pmVar2, i10);
-                lh.e1 e1Var = xnVar.I3;
-                if (e1Var != null) {
-                    tg.c.a(e1Var, canvas, rectF, e1Var, pmVar2, i11);
+                ug.c.a(new yf(pmVar, 1), canvas, rectF, xnVar.u0, pmVar2, i10);
+                mh.d1 d1Var = xnVar.I3;
+                if (d1Var != null) {
+                    ug.c.a(d1Var, canvas, rectF, d1Var, pmVar2, i11);
                 }
                 ek ekVar = xnVar.n1;
                 if (ekVar != null && ekVar.getVisibility() == 0) {
@@ -46,7 +46,7 @@ public final /* synthetic */ class yf implements og.a {
                             yn ynVar = znVar.a;
                             pm pmVar3 = ynVar.U0;
                             Objects.requireNonNull(pmVar3);
-                            tg.c.b(new yf(pmVar3, 0), canvas, rectF, ynVar.U0, znVar);
+                            ug.c.b(new yf(pmVar3, 0), canvas, rectF, ynVar.U0, znVar);
                         }
                     }
                     break;
@@ -99,7 +99,7 @@ public final /* synthetic */ class yf implements og.a {
     }
 
     /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // og.a
+    @Override // pg.a
     public final void g(g.x xVar, RectF rectF) {
         switch (this.a) {
         }

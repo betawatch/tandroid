@@ -11,9 +11,8 @@ import j7.j9;
 import j7.l9;
 import j7.n9;
 import java.util.List;
-import kh.a2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class LanguageIdRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
@@ -31,7 +30,7 @@ public class LanguageIdRegistrar implements ComponentRegistrar {
         for (int i10 = 0; i10 < 2; i10++) {
             j9 j9Var = l9.b;
             if (objArr[i10] == null) {
-                throw new NullPointerException(a2.j(i10, "at index "));
+                throw new NullPointerException(l.d.j(i10, "at index "));
             }
         }
         j9 j9Var2 = l9.b;

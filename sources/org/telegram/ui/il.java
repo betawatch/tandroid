@@ -5,9 +5,9 @@ import android.graphics.Canvas;
 import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class il extends org.telegram.ui.ActionBar.k5 {
+public final class il extends org.telegram.ui.ActionBar.l5 {
     public final /* synthetic */ int J0;
     public final Object K0;
 
@@ -18,14 +18,14 @@ public final class il extends org.telegram.ui.ActionBar.k5 {
         this.K0 = obj;
     }
 
-    @Override // org.telegram.ui.ActionBar.k5
+    @Override // org.telegram.ui.ActionBar.l5
     public boolean k(CharSequence charSequence) {
-        org.telegram.ui.ActionBar.k5 k5Var;
+        org.telegram.ui.ActionBar.l5 l5Var;
         switch (this.J0) {
             case 1:
                 AtomicReference atomicReference = (AtomicReference) this.K0;
-                if (atomicReference != null && (k5Var = (org.telegram.ui.ActionBar.k5) atomicReference.get()) != null) {
-                    k5Var.k(charSequence);
+                if (atomicReference != null && (l5Var = (org.telegram.ui.ActionBar.l5) atomicReference.get()) != null) {
+                    l5Var.k(charSequence);
                 }
                 return l(charSequence, false);
             default:
@@ -33,12 +33,12 @@ public final class il extends org.telegram.ui.ActionBar.k5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.k5, android.view.View
+    @Override // org.telegram.ui.ActionBar.l5, android.view.View
     public void onAttachedToWindow() {
         switch (this.J0) {
             case 2:
                 super.onAttachedToWindow();
-                ((fp0) this.K0).s.a();
+                ((hp0) this.K0).s.a();
                 break;
             default:
                 super.onAttachedToWindow();
@@ -46,12 +46,12 @@ public final class il extends org.telegram.ui.ActionBar.k5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.k5, android.view.View
+    @Override // org.telegram.ui.ActionBar.l5, android.view.View
     public void onDetachedFromWindow() {
         switch (this.J0) {
             case 2:
                 super.onDetachedFromWindow();
-                ((fp0) this.K0).s.b();
+                ((hp0) this.K0).s.b();
                 break;
             default:
                 super.onDetachedFromWindow();
@@ -59,7 +59,7 @@ public final class il extends org.telegram.ui.ActionBar.k5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.k5, android.view.View
+    @Override // org.telegram.ui.ActionBar.l5, android.view.View
     public void onDraw(Canvas canvas) {
         switch (this.J0) {
             case 3:
@@ -76,7 +76,7 @@ public final class il extends org.telegram.ui.ActionBar.k5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.k5, android.view.View
+    @Override // org.telegram.ui.ActionBar.l5, android.view.View
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         switch (this.J0) {
             case 3:
@@ -110,7 +110,7 @@ public final class il extends org.telegram.ui.ActionBar.k5 {
 
     @Override // android.view.View
     public void setTranslationY(float f10) {
-        org.telegram.ui.ActionBar.k5 k5Var;
+        org.telegram.ui.ActionBar.l5 l5Var;
         switch (this.J0) {
             case 0:
                 super.setTranslationY(f10);
@@ -127,8 +127,8 @@ public final class il extends org.telegram.ui.ActionBar.k5 {
                 break;
             case 1:
                 AtomicReference atomicReference = (AtomicReference) this.K0;
-                if (atomicReference != null && (k5Var = (org.telegram.ui.ActionBar.k5) atomicReference.get()) != null) {
-                    k5Var.setTranslationY(f10);
+                if (atomicReference != null && (l5Var = (org.telegram.ui.ActionBar.l5) atomicReference.get()) != null) {
+                    l5Var.setTranslationY(f10);
                 }
                 super.setTranslationY(f10);
                 break;

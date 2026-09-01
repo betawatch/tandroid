@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class ae implements TextWatcher {
     public final /* synthetic */ ke a;
@@ -18,7 +18,7 @@ public final class ae implements TextWatcher {
     public final void afterTextChanged(Editable editable) {
         ke keVar = this.a;
         od odVar = keVar.f1;
-        lh.n nVar = keVar.V0;
+        mh.m mVar = keVar.V0;
         if (keVar.S0) {
             return;
         }
@@ -28,8 +28,8 @@ public final class ae implements TextWatcher {
         if (parseLong > j10) {
             keVar.U0 = j10;
             keVar.S0 = true;
-            nVar.setText(Long.toString(j10));
-            nVar.setSelection(nVar.getText().length());
+            mVar.setText(Long.toString(j10));
+            mVar.setSelection(mVar.getText().length());
             keVar.S0 = false;
         }
         keVar.T0 = keVar.U0 == keVar.K0.amount;

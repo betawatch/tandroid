@@ -4,14 +4,14 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.ImageButton;
-import f2.l1;
-import j7.h8;
-import j7.r7;
+import f2.m1;
+import j7.i8;
+import j7.s7;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public abstract class h0 extends l1 {
+public abstract class h0 extends m1 {
     public c2.a0 v;
     public final ImageButton w;
     public final MediaRouteVolumeSlider x;
@@ -26,17 +26,17 @@ public abstract class h0 extends l1 {
         this.w = imageButton;
         this.x = mediaRouteVolumeSlider;
         Context context = p0Var.y;
-        Drawable d = h8.d(r7.b(context, R.drawable.mr_cast_mute_button));
-        if (j7.z.h(context)) {
-            d.setTint(f0.f.c(context, R.color.mr_dynamic_dialog_icon_light));
+        Drawable d = i8.d(s7.b(context, R.drawable.mr_cast_mute_button));
+        if (j7.a0.h(context)) {
+            d.setTint(f0.e.c(context, R.color.mr_dynamic_dialog_icon_light));
         }
         imageButton.setImageDrawable(d);
-        if (j7.z.h(context)) {
-            c3 = f0.f.c(context, R.color.mr_cast_progressbar_progress_and_thumb_light);
-            c10 = f0.f.c(context, R.color.mr_cast_progressbar_background_light);
+        if (j7.a0.h(context)) {
+            c3 = f0.e.c(context, R.color.mr_cast_progressbar_progress_and_thumb_light);
+            c10 = f0.e.c(context, R.color.mr_cast_progressbar_background_light);
         } else {
-            c3 = f0.f.c(context, R.color.mr_cast_progressbar_progress_and_thumb_dark);
-            c10 = f0.f.c(context, R.color.mr_cast_progressbar_background_dark);
+            c3 = f0.e.c(context, R.color.mr_cast_progressbar_progress_and_thumb_dark);
+            c10 = f0.e.c(context, R.color.mr_cast_progressbar_background_dark);
         }
         mediaRouteVolumeSlider.a(c3, c10);
     }

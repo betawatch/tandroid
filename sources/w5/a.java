@@ -33,8 +33,8 @@ public final class a {
         int i10 = 0;
         try {
             i10 = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
-        } catch (PackageManager.NameNotFoundException e) {
-            Log.wtf("ClearcutLogger", "This can't happen.", e);
+        } catch (PackageManager.NameNotFoundException e6) {
+            Log.wtf("ClearcutLogger", "This can't happen.", e6);
         }
         this.c = i10;
         this.e = -1;

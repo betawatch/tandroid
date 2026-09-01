@@ -1,0 +1,17 @@
+package hg;
+
+import org.telegram.ui.ActionBar.g6;
+
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes3.dex */
+public final class v {
+    public final /* synthetic */ b1 a;
+    public final /* synthetic */ g6 b;
+    public final /* synthetic */ x c;
+
+    public v(x xVar, b1 b1Var, g6 g6Var) {
+        this.c = xVar;
+        this.a = b1Var;
+        this.b = g6Var;
+    }
+}

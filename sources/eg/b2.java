@@ -1,75 +1,41 @@
 package eg;
 
 import android.content.Context;
-import android.view.MotionEvent;
+import android.graphics.Canvas;
 import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.Emoji;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.e90;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class b2 extends e90 {
-    public final /* synthetic */ int I;
+public final class b2 extends View {
+    public int a;
+    public float b;
+    public final /* synthetic */ c2 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ b2(Context context, int i10, f6 f6Var) {
-        super(context, f6Var);
-        this.I = i10;
-    }
-
-    @Override // org.telegram.ui.Components.e90
-    public int a() {
-        switch (this.I) {
-            case 0:
-                return 3;
-            default:
-                return super.a();
-        }
+    public b2(c2 c2Var, Context context) {
+        super(context);
+        this.c = c2Var;
+        setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
+        setLayoutParams(new f2.x0(-2, 0));
     }
 
     @Override // android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.I) {
-            case 5:
-                if (getAlpha() < 0.9f) {
-                    return false;
-                }
-                return super.dispatchTouchEvent(motionEvent);
-            default:
-                return super.dispatchTouchEvent(motionEvent);
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        c2 c2Var = this.c;
+        c2Var.U2.setColor(this.a);
+        float min = Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f;
+        if (this.b != 0.0f) {
+            min -= (c2Var.V2.getStrokeWidth() + AndroidUtilities.dp(3.0f)) * this.b;
         }
-    }
-
-    @Override // org.telegram.ui.Components.e90, android.widget.TextView, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.I) {
-            case 1:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.e90, android.widget.TextView
-    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-        switch (this.I) {
-            case 2:
-                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
-                break;
-            case 3:
-                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
-                break;
-            case 4:
-                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
-                break;
-            default:
-                super.setText(charSequence, bufferType);
-                break;
+        float width = ((getWidth() / 2.0f) + getPaddingLeft()) - getPaddingRight();
+        float height = ((getHeight() / 2.0f) + getPaddingTop()) - getPaddingBottom();
+        c2.x1(width, height, min, this.a, canvas);
+        if (this.b != 0.0f) {
+            c2Var.V2.setColor(this.a);
+            c2Var.V2.setAlpha(255);
+            canvas.drawCircle(width, height, (Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f) - AndroidUtilities.dp(2.0f), c2Var.V2);
         }
     }
 }

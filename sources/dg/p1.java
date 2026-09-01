@@ -1,50 +1,50 @@
 package dg;
 
-import android.graphics.drawable.Drawable;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.et0;
+import android.graphics.Color;
+import android.opengl.GLES20;
+import java.util.HashMap;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class p1 implements cg.o1 {
-    public final /* synthetic */ q1 a;
+public final class p1 {
+    public int a;
+    public HashMap b;
 
-    public p1(q1 q1Var) {
-        this.a = q1Var;
+    public static void a(int i10, int i11) {
+        GLES20.glUniform4f(i10, Color.red(i11) / 255.0f, Color.green(i11) / 255.0f, Color.blue(i11) / 255.0f, Color.alpha(i11) / 255.0f);
     }
 
-    @Override // cg.o1
-    public final void a() {
-        q1 q1Var = this.a;
-        q1Var.e.animate().alpha(1.0f).setDuration(320L).setUpdateListener(new o1(q1Var, 0)).setInterpolator(nr.h);
+    public static c5.e b(int i10, String str) {
+        int glCreateShader = GLES20.glCreateShader(i10);
+        GLES20.glShaderSource(glCreateShader, str);
+        GLES20.glCompileShader(glCreateShader);
+        int[] iArr = new int[1];
+        GLES20.glGetShaderiv(glCreateShader, 35713, iArr, 0);
+        if (iArr[0] == 0 && BuildVars.LOGS_ENABLED) {
+            FileLog.e(GLES20.glGetShaderInfoLog(glCreateShader));
+        }
+        int i11 = iArr[0];
+        c5.e eVar = new c5.e();
+        eVar.a = glCreateShader;
+        eVar.b = i11;
+        return eVar;
     }
 
-    @Override // cg.o1
-    public final boolean d() {
-        return true;
+    public static void c(int i10, int i11, int i12) {
+        if (i10 != 0) {
+            GLES20.glDeleteShader(i10);
+        }
+        if (i11 != 0) {
+            GLES20.glDeleteShader(i11);
+        }
+        if (i12 != 0) {
+            GLES20.glDeleteProgram(i10);
+        }
     }
 
-    @Override // cg.o1
-    public final void e() {
-        q1 q1Var = this.a;
-        q1Var.b.a.e();
-        q1Var.w.setViewHidden(false);
-        PhotoViewer photoViewer = ((et0) q1Var).H;
-        Drawable[] drawableArr = PhotoViewer.Q8;
-        photoViewer.X2(true, true);
-    }
-
-    @Override // cg.o1
-    public final void f() {
-        this.a.w.setViewHidden(true);
-    }
-
-    @Override // cg.o1
-    public final /* synthetic */ void b() {
-    }
-
-    @Override // cg.o1
-    public final void c() {
+    public final int d(String str) {
+        return ((Integer) this.b.get(str)).intValue();
     }
 }

@@ -1,5 +1,6 @@
 package org.telegram.messenger;
 
+import android.app.Activity;
 import android.content.SharedPreferences;
 import android.text.SpannableString;
 import android.util.LongSparseArray;
@@ -16,7 +17,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class sk implements Runnable {
     public final /* synthetic */ int a;
@@ -49,82 +50,82 @@ public final /* synthetic */ class sk implements Runnable {
                 ((TranslateController) this.d).lambda$detectStoryLanguage$31((TL_stories.StoryItem) this.c, (String) this.e, (TranslateController.StoryKey) this.b);
                 break;
             case 4:
-                CodeHighlighting.lambda$highlightEditable$1((String) this.d, (String) this.c, (SpannableString) this.e, (Utilities.Callback) this.b);
+                AndroidUtilities.lambda$showProxyAlert$21((boolean[]) this.d, (org.telegram.ui.Components.sc[]) this.c, (sf.a) this.e, (Activity) this.b);
                 break;
             case 5:
-                ((FilePathDatabase) this.d).lambda$lookupFiles$7((ArrayList) this.c, (LongSparseArray) this.e, (CountDownLatch) this.b);
+                CodeHighlighting.lambda$highlightEditable$1((String) this.d, (String) this.c, (SpannableString) this.e, (Utilities.Callback) this.b);
                 break;
             case 6:
-                ((FilePathDatabase) this.d).lambda$checkMediaExistance$2((ArrayList) this.c, (long[]) this.e, (CountDownLatch) this.b);
+                ((FilePathDatabase) this.d).lambda$lookupFiles$7((ArrayList) this.c, (LongSparseArray) this.e, (CountDownLatch) this.b);
                 break;
             case 7:
-                ((FileRefController) this.d).lambda$requestReferenceFromServer$0((String) this.c, (String) this.e, (nh.c6) this.b);
+                ((FilePathDatabase) this.d).lambda$checkMediaExistance$2((ArrayList) this.c, (long[]) this.e, (CountDownLatch) this.b);
                 break;
             case 8:
-                ((ImageLoader) this.d).lambda$replaceImageInCache$5((String) this.c, (String) this.e, (ImageLocation) this.b);
+                ((FileRefController) this.d).lambda$requestReferenceFromServer$0((String) this.c, (String) this.e, (oh.c6) this.b);
                 break;
             case 9:
-                ((LocationController) this.d).lambda$loadSharingLocations$16((ArrayList) this.c, (ArrayList) this.e, (ArrayList) this.b);
+                ((ImageLoader) this.d).lambda$replaceImageInCache$5((String) this.c, (String) this.e, (ImageLocation) this.b);
                 break;
             case 10:
-                ((MediaController) this.d).lambda$generateWaveform$39((String) this.c, (String) this.e, (MessageObject) this.b);
+                ((LocationController) this.d).lambda$loadSharingLocations$16((ArrayList) this.c, (ArrayList) this.e, (ArrayList) this.b);
                 break;
             case 11:
-                ((MediaController) this.d).lambda$prepareResumedRecording$24((File) this.c, (TLRPC.TL_document) this.e, (MediaDataController.DraftVoice) this.b);
+                ((MediaController) this.d).lambda$generateWaveform$39((String) this.c, (String) this.e, (MessageObject) this.b);
                 break;
             case 12:
-                ((MediaController) this.d).lambda$generateWaveform$38((String) this.c, (byte[]) this.e, (MessageObject) this.b);
+                ((MediaController) this.d).lambda$prepareResumedRecording$24((File) this.c, (TLRPC.TL_document) this.e, (MediaDataController.DraftVoice) this.b);
                 break;
             case 13:
-                ((MediaDataController) this.d).lambda$loadSavedReactions$239((TLRPC.TL_error) this.b, (TLObject) this.c, (SharedPreferences) this.e);
+                ((MediaController) this.d).lambda$generateWaveform$38((String) this.c, (byte[]) this.e, (MessageObject) this.b);
                 break;
             case 14:
-                ((MediaDataController) this.d).lambda$getEmojiSuggestions$219((String[]) this.c, (MediaDataController.KeywordResultCallback) this.e, (ArrayList) this.b);
+                ((MediaDataController) this.d).lambda$loadSavedReactions$239((TLRPC.TL_error) this.b, (TLObject) this.c, (SharedPreferences) this.e);
                 break;
             case 15:
-                MediaDataController.lambda$getEmojiSuggestions$222((CountDownLatch) this.d, (MediaDataController.KeywordResultCallback) this.c, (ArrayList) this.e, (String) this.b);
+                ((MediaDataController) this.d).lambda$getEmojiSuggestions$219((String[]) this.c, (MediaDataController.KeywordResultCallback) this.e, (ArrayList) this.b);
                 break;
             case 16:
-                MediaDataController.lambda$getAnimatedEmojiByKeywords$216((String) this.d, (ArrayList) this.c, (ArrayList) this.e, (Utilities.Callback) this.b);
+                MediaDataController.lambda$getEmojiSuggestions$222((CountDownLatch) this.d, (MediaDataController.KeywordResultCallback) this.c, (ArrayList) this.e, (String) this.b);
                 break;
             case 17:
-                ((MediaDataController) this.d).lambda$getEmojiNames$218((String[]) this.c, (String) this.e, (Utilities.Callback) this.b);
+                MediaDataController.lambda$getAnimatedEmojiByKeywords$216((String) this.d, (ArrayList) this.c, (ArrayList) this.e, (Utilities.Callback) this.b);
                 break;
             case 18:
-                ((MediaDataController) this.d).lambda$fillWithAnimatedEmoji$227((boolean[]) this.c, (ArrayList[]) this.e, (x6) this.b);
+                ((MediaDataController) this.d).lambda$getEmojiNames$218((String[]) this.c, (String) this.e, (Utilities.Callback) this.b);
                 break;
             case 19:
-                ((MessagesController) this.d).lambda$setUserAdminRole$106((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.p2) this.c, (TLRPC.TL_messages_editChatAdmin) this.e);
+                ((MediaDataController) this.d).lambda$fillWithAnimatedEmoji$227((boolean[]) this.c, (ArrayList[]) this.e, (x6) this.b);
                 break;
             case 20:
-                ((MessagesController) this.d).lambda$createChat$259((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.p2) this.c, (TLRPC.TL_channels_createChannel) this.e);
+                ((MessagesController) this.d).lambda$setUserAdminRole$106((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.p2) this.c, (TLRPC.TL_messages_editChatAdmin) this.e);
                 break;
             case 21:
-                ((MessagesController) this.d).lambda$addUsersToChannel$272((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.p2) this.c, (TLRPC.TL_channels_inviteToChannel) this.e);
+                ((MessagesController) this.d).lambda$createChat$259((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.p2) this.c, (TLRPC.TL_channels_createChannel) this.e);
                 break;
             case 22:
-                ((MessagesController) this.d).lambda$createChat$256((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.p2) this.c, (TLRPC.TL_messages_createChat) this.e);
+                ((MessagesController) this.d).lambda$addUsersToChannel$272((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.p2) this.c, (TLRPC.TL_channels_inviteToChannel) this.e);
                 break;
             case 23:
-                ((MessagesController) this.d).lambda$completeDialogsReset$211((TLRPC.messages_Dialogs) this.c, (a0.h) this.e, (a0.h) this.b);
+                ((MessagesController) this.d).lambda$createChat$256((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.p2) this.c, (TLRPC.TL_messages_createChat) this.e);
                 break;
             case 24:
-                ((MessagesController) this.d).lambda$getDifference$356((ArrayList) this.c, (TLRPC.updates_Difference) this.e, (a0.h) this.b);
+                ((MessagesController) this.d).lambda$completeDialogsReset$211((TLRPC.messages_Dialogs) this.c, (a0.h) this.e, (a0.h) this.b);
                 break;
             case 25:
-                ((MessagesController) this.d).lambda$getDifference$357((TLRPC.updates_Difference) this.c, (a0.h) this.e, (a0.h) this.b);
+                ((MessagesController) this.d).lambda$getDifference$356((ArrayList) this.c, (TLRPC.updates_Difference) this.e, (a0.h) this.b);
                 break;
             case 26:
-                ((MessagesStorage) this.d).lambda$putEncryptedChat$178((TLRPC.EncryptedChat) this.c, (TLRPC.User) this.e, (TLRPC.Dialog) this.b);
+                ((MessagesController) this.d).lambda$getDifference$357((TLRPC.updates_Difference) this.c, (a0.h) this.e, (a0.h) this.b);
                 break;
             case 27:
-                ((MessagesStorage) this.d).lambda$addRecentLocalFile$82((TLRPC.Document) this.c, (String) this.e, (String) this.b);
+                ((MessagesStorage) this.d).lambda$putEncryptedChat$178((TLRPC.EncryptedChat) this.c, (TLRPC.User) this.e, (TLRPC.Dialog) this.b);
                 break;
             case 28:
-                ((MessagesStorage) this.d).lambda$markMessagesAsRead$219((LongSparseIntArray) this.c, (LongSparseIntArray) this.e, (SparseIntArray) this.b);
+                ((MessagesStorage) this.d).lambda$addRecentLocalFile$82((TLRPC.Document) this.c, (String) this.e, (String) this.b);
                 break;
             default:
-                ((SavedMessagesController) this.d).lambda$loadDialogs$2((TLObject) this.c, (ArrayList) this.e, (TLRPC.TL_error) this.b);
+                ((MessagesStorage) this.d).lambda$markMessagesAsRead$219((LongSparseIntArray) this.c, (LongSparseIntArray) this.e, (SparseIntArray) this.b);
                 break;
         }
     }

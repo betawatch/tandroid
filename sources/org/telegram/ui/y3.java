@@ -13,9 +13,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class y3 implements org.telegram.ui.ActionBar.l2, org.telegram.ui.ActionBar.t3 {
+public final class y3 implements org.telegram.ui.ActionBar.l2, org.telegram.ui.ActionBar.u3 {
     public ValueAnimator B;
     public boolean C;
     public boolean D;
@@ -27,13 +27,13 @@ public final class y3 implements org.telegram.ui.ActionBar.l2, org.telegram.ui.A
     public org.telegram.ui.ActionBar.p2 b;
     public final x3 c;
     public View d;
-    public org.telegram.ui.ActionBar.j3 e;
+    public org.telegram.ui.ActionBar.k3 e;
     public boolean f;
     public boolean h;
     public boolean n;
     public boolean r;
     public boolean s;
-    public nh.k3 v;
+    public oh.l3 v;
     public float w;
     public float x;
     public ValueAnimator y;
@@ -44,36 +44,36 @@ public final class y3 implements org.telegram.ui.ActionBar.l2, org.telegram.ui.A
         p2Var.getResourceProvider();
         x3 x3Var = new x3(this, p2Var.getContext());
         this.c = x3Var;
-        new ph.i3(x3Var, true, new w3(this, 0));
+        new qh.i3(x3Var, true, new w3(this, 0));
     }
 
-    @Override // org.telegram.ui.ActionBar.t3
-    public final org.telegram.ui.ActionBar.m3 a() {
-        org.telegram.ui.ActionBar.m3 m3Var = new org.telegram.ui.ActionBar.m3();
+    @Override // org.telegram.ui.ActionBar.u3
+    public final org.telegram.ui.ActionBar.n3 a() {
+        org.telegram.ui.ActionBar.n3 n3Var = new org.telegram.ui.ActionBar.n3();
         l4 l4Var = this.H;
-        m3Var.C = l4Var.e0.getTitle();
-        m3Var.H = l4Var;
+        n3Var.C = l4Var.e0.getTitle();
+        n3Var.H = l4Var;
         p3 p3Var = l4Var.r0[0];
         Bitmap bitmap = null;
-        m3Var.o = (p3Var == null || !SharedConfig.adaptableColorInBrowser) ? org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Pk, false) : p3Var.getActionBarColor();
+        n3Var.o = (p3Var == null || !SharedConfig.adaptableColorInBrowser) ? org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.Pk, false) : p3Var.getActionBarColor();
         p3 p3Var2 = l4Var.r0[0];
-        m3Var.p = (p3Var2 == null || !SharedConfig.adaptableColorInBrowser) ? org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Pk, false) : p3Var2.getBackgroundColor();
-        m3Var.l = true;
-        m3Var.G = !this.C ? 0.0f : l4Var.r0[0].getProgress();
+        n3Var.p = (p3Var2 == null || !SharedConfig.adaptableColorInBrowser) ? org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.Pk, false) : p3Var2.getBackgroundColor();
+        n3Var.l = true;
+        n3Var.G = !this.C ? 0.0f : l4Var.r0[0].getProgress();
         p3 p3Var3 = l4Var.r0[0];
-        m3Var.c = p3Var3;
+        n3Var.c = p3Var3;
         if (p3Var3 != null && p3Var3.getWebView() != null) {
             bitmap = l4Var.r0[0].getWebView().getFavicon();
         }
-        m3Var.D = bitmap;
-        p3 p3Var4 = m3Var.c;
+        n3Var.D = bitmap;
+        p3 p3Var4 = n3Var.c;
         if (p3Var4 != null) {
-            m3Var.e = p3Var4.getWidth();
-            m3Var.f = m3Var.c.getHeight();
+            n3Var.e = p3Var4.getWidth();
+            n3Var.f = n3Var.c.getHeight();
         }
-        m3Var.g = l();
-        m3Var.B = org.telegram.ui.ActionBar.j6.I.q();
-        return m3Var;
+        n3Var.g = l();
+        n3Var.B = org.telegram.ui.ActionBar.k6.I.q();
+        return n3Var;
     }
 
     @Override // org.telegram.ui.ActionBar.l2
@@ -81,15 +81,15 @@ public final class y3 implements org.telegram.ui.ActionBar.l2, org.telegram.ui.A
         return this.c.isAttachedToWindow();
     }
 
-    @Override // org.telegram.ui.ActionBar.t3
+    @Override // org.telegram.ui.ActionBar.u3
     public final boolean b() {
         return this.f;
     }
 
-    @Override // org.telegram.ui.ActionBar.t3
-    public final boolean c(org.telegram.ui.ActionBar.j3 j3Var) {
-        this.e = j3Var;
-        if (j3Var != null) {
+    @Override // org.telegram.ui.ActionBar.u3
+    public final boolean c(org.telegram.ui.ActionBar.k3 k3Var) {
+        this.e = k3Var;
+        if (k3Var != null) {
             this.f = true;
         }
         return true;
@@ -106,7 +106,7 @@ public final class y3 implements org.telegram.ui.ActionBar.l2, org.telegram.ui.A
         dismiss(true);
     }
 
-    public final void e(boolean z4, rt0 rt0Var) {
+    public final void e(boolean z4, tt0 tt0Var) {
         ValueAnimator valueAnimator = this.B;
         if (valueAnimator != null) {
             valueAnimator.cancel();
@@ -114,8 +114,8 @@ public final class y3 implements org.telegram.ui.ActionBar.l2, org.telegram.ui.A
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.x, z4 ? 1.0f : 0.0f);
         this.B = ofFloat;
         ofFloat.addUpdateListener(new v3(this, 2));
-        this.B.addListener(new androidx.fragment.app.g(this, z4, rt0Var, 3));
-        this.B.setInterpolator(org.telegram.ui.Components.nr.h);
+        this.B.addListener(new androidx.fragment.app.g(this, z4, tt0Var, 3));
+        this.B.setInterpolator(org.telegram.ui.Components.pr.h);
         this.B.setDuration(250L);
         this.B.start();
     }
@@ -128,8 +128,8 @@ public final class y3 implements org.telegram.ui.ActionBar.l2, org.telegram.ui.A
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.w, 1.0f);
         this.y = ofFloat;
         ofFloat.addUpdateListener(new v3(this, 1));
-        this.y.addListener(new cg.l0(this, 27));
-        this.y.setInterpolator(org.telegram.ui.Components.nr.h);
+        this.y.addListener(new dg.l0(this, 27));
+        this.y.setInterpolator(org.telegram.ui.Components.pr.h);
         this.y.setDuration(320L);
         this.y.start();
     }
@@ -144,19 +144,19 @@ public final class y3 implements org.telegram.ui.ActionBar.l2, org.telegram.ui.A
             jkVar.P();
             xnVar.V.n0(true, false, true);
         }
-        org.telegram.ui.ActionBar.j3 j3Var = this.e;
-        if (j3Var == null) {
+        org.telegram.ui.ActionBar.k3 k3Var = this.e;
+        if (k3Var == null) {
             x3 x3Var = this.c;
             AndroidUtilities.removeFromParent(x3Var);
             if (p2Var.getLayoutContainer() != null) {
                 p2Var.getLayoutContainer().addView(x3Var);
             }
-        } else if (!j3Var.e) {
-            j3Var.e = true;
+        } else if (!k3Var.e) {
+            k3Var.e = true;
             try {
-                j3Var.show();
-            } catch (Exception e) {
-                FileLog.e(e);
+                k3Var.show();
+            } catch (Exception e6) {
+                FileLog.e(e6);
             }
         }
         l4 l4Var = this.H;
@@ -241,20 +241,20 @@ public final class y3 implements org.telegram.ui.ActionBar.l2, org.telegram.ui.A
     }
 
     public final void i() {
-        org.telegram.ui.ActionBar.j3 j3Var = this.e;
+        org.telegram.ui.ActionBar.k3 k3Var = this.e;
         x3 x3Var = this.c;
-        AndroidUtilities.setLightStatusBar(j3Var != null ? j3Var.b : x3Var, isAttachedLightStatusBar());
-        org.telegram.ui.ActionBar.j3 j3Var2 = this.e;
-        if (j3Var2 == null) {
+        AndroidUtilities.setLightStatusBar(k3Var != null ? k3Var.b : x3Var, isAttachedLightStatusBar());
+        org.telegram.ui.ActionBar.k3 k3Var2 = this.e;
+        if (k3Var2 == null) {
             LaunchActivity.D1.H(true, true, true);
-            AndroidUtilities.setLightNavigationBar(x3Var, AndroidUtilities.computePerceivedBrightness(getNavigationBarColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false))) >= 0.721f);
+            AndroidUtilities.setLightNavigationBar(x3Var, AndroidUtilities.computePerceivedBrightness(getNavigationBarColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.a7, false))) >= 0.721f);
             return;
         }
-        int navigationBarColor = j3Var2.a.getNavigationBarColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
-        j3Var2.d.setColor(navigationBarColor);
-        j3Var2.c.invalidate();
-        AndroidUtilities.setNavigationBarColor(j3Var2, navigationBarColor);
-        AndroidUtilities.setLightNavigationBar(j3Var2, AndroidUtilities.computePerceivedBrightness(navigationBarColor) >= 0.721f);
+        int navigationBarColor = k3Var2.a.getNavigationBarColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.a7, false));
+        k3Var2.d.setColor(navigationBarColor);
+        k3Var2.c.invalidate();
+        AndroidUtilities.setNavigationBarColor(k3Var2, navigationBarColor);
+        AndroidUtilities.setLightNavigationBar(k3Var2, AndroidUtilities.computePerceivedBrightness(navigationBarColor) >= 0.721f);
         LaunchActivity.D1.H(true, true, true);
     }
 
@@ -267,7 +267,7 @@ public final class y3 implements org.telegram.ui.ActionBar.l2, org.telegram.ui.A
                 l4 l4Var = this.H;
                 d = i0.a.d(1.0f - (l4Var.r0[0].getVisibility() == 0 ? 1.0f - (l4Var.r0[0].getTranslationX() / l4Var.r0[0].getWidth()) : 0.0f), l4Var.r0[0].getActionBarColor(), l4Var.r0[1].getActionBarColor());
             } else {
-                d = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Pk, false);
+                d = org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.Pk, false);
             }
             if (AndroidUtilities.computePerceivedBrightness(d) >= 0.721f) {
                 return true;
@@ -289,7 +289,7 @@ public final class y3 implements org.telegram.ui.ActionBar.l2, org.telegram.ui.A
 
     public final int j() {
         if (!SharedConfig.adaptableColorInBrowser) {
-            return org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Sk, false);
+            return org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.Sk, false);
         }
         l4 l4Var = this.H;
         return i0.a.d(1.0f - (l4Var.r0[0].getVisibility() != 0 ? 0.0f : 1.0f - (l4Var.r0[0].getTranslationX() / l4Var.r0[0].getWidth())), l4Var.r0[0].getBackgroundColor(), l4Var.r0[1].getBackgroundColor());
@@ -366,7 +366,7 @@ public final class y3 implements org.telegram.ui.ActionBar.l2, org.telegram.ui.A
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.t3
+    @Override // org.telegram.ui.ActionBar.u3
     public final void release() {
         this.r = true;
         l4 l4Var = this.H;
@@ -390,9 +390,9 @@ public final class y3 implements org.telegram.ui.ActionBar.l2, org.telegram.ui.A
             }
             p3Var3.B = true;
         }
-        org.telegram.ui.ActionBar.j3 j3Var = this.e;
-        if (j3Var != null) {
-            j3Var.c();
+        org.telegram.ui.ActionBar.k3 k3Var = this.e;
+        if (k3Var != null) {
+            k3Var.c();
         }
         org.telegram.ui.ActionBar.p2 p2Var = this.b;
         if (p2Var != null) {
@@ -401,9 +401,9 @@ public final class y3 implements org.telegram.ui.ActionBar.l2, org.telegram.ui.A
                 AndroidUtilities.removeFromParent(this.c);
             }
         }
-        nh.k3 k3Var = this.v;
-        if (k3Var != null) {
-            k3Var.run();
+        oh.l3 l3Var = this.v;
+        if (l3Var != null) {
+            l3Var.run();
             this.v = null;
         }
         l4.Y0.remove(l4Var);
@@ -419,7 +419,7 @@ public final class y3 implements org.telegram.ui.ActionBar.l2, org.telegram.ui.A
 
     @Override // org.telegram.ui.ActionBar.l2
     public final void setOnDismissListener(Runnable runnable) {
-        this.v = (nh.k3) runnable;
+        this.v = (oh.l3) runnable;
     }
 
     @Override // org.telegram.ui.ActionBar.l2
@@ -437,14 +437,14 @@ public final class y3 implements org.telegram.ui.ActionBar.l2, org.telegram.ui.A
         if (z4) {
             LaunchActivity.D1.v0.b(this);
         } else {
-            e(true, new rt0(this, 10));
+            e(true, new tt0(this, 10));
         }
         i();
         h();
     }
 
-    @Override // org.telegram.ui.ActionBar.t3
-    public final org.telegram.ui.ActionBar.u3 getWindowView() {
+    @Override // org.telegram.ui.ActionBar.u3
+    public final org.telegram.ui.ActionBar.v3 getWindowView() {
         return this.c;
     }
 

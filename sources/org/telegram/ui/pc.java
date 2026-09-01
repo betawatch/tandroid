@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pc implements h5.d {
     public final /* synthetic */ int a;
@@ -18,7 +18,7 @@ public final /* synthetic */ class pc implements h5.d {
 
     @Override // h5.d
     public final void accept(Object obj) {
-        org.telegram.ui.Components.j81 j81Var;
+        org.telegram.ui.Components.k81 k81Var;
         switch (this.a) {
             case 0:
                 sc scVar = (sc) this.c;
@@ -54,12 +54,12 @@ public final /* synthetic */ class pc implements h5.d {
                 }
                 break;
             default:
-                org.telegram.ui.Components.k81 k81Var = (org.telegram.ui.Components.k81) this.c;
+                org.telegram.ui.Components.l81 l81Var = (org.telegram.ui.Components.l81) this.c;
                 View view3 = (View) obj;
-                k81Var.v.getClass();
+                l81Var.v.getClass();
                 int R = RecyclerView.R(view3);
-                if (view3 instanceof org.telegram.ui.Components.i81) {
-                    ((org.telegram.ui.Components.i81) view3).setReordering(this.b && (j81Var = k81Var.y) != null && ((o2.o) j81Var).j(R));
+                if (view3 instanceof org.telegram.ui.Components.j81) {
+                    ((org.telegram.ui.Components.j81) view3).setReordering(this.b && (k81Var = l81Var.y) != null && ((oh.h4) k81Var).Q(R));
                     break;
                 }
                 break;

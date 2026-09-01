@@ -1,6 +1,6 @@
 package pc;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public enum l extends a2 {
     public l() {
@@ -30,10 +30,10 @@ public enum l extends a2 {
             }
         }
         String str = "";
-        kVar.i.o(str);
+        kVar.i.n(str);
         char d = aVar.d();
         if (d == 0) {
-            kVar.i.o(a2.F0);
+            kVar.i.n(a2.F0);
             return;
         }
         if (d != ' ') {
@@ -54,7 +54,7 @@ public enum l extends a2 {
             } else if (d != '\t' && d != '\n' && d != '\f' && d != '\r') {
                 j jVar = kVar.i;
                 jVar.getClass();
-                jVar.o(String.valueOf(d));
+                jVar.n(String.valueOf(d));
                 return;
             }
         }

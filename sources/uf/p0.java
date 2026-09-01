@@ -1,91 +1,53 @@
 package uf;
 
-import android.text.TextUtils;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
+import java.util.ArrayList;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.c2;
-import org.telegram.ui.ActionBar.d2;
-import org.telegram.ui.Components.i51;
-import org.telegram.ui.ad0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p0 implements Utilities.Callback5, c2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ u0 b;
+public final class p0 implements Runnable {
+    public final /* synthetic */ TLRPC.Chat a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ a0.h e;
+    public final /* synthetic */ MessagesController f;
+    public final /* synthetic */ u0 h;
 
-    public /* synthetic */ p0(u0 u0Var, int i10) {
-        this.a = i10;
-        this.b = u0Var;
+    public p0(u0 u0Var, TLRPC.Chat chat, String str, long j10, ArrayList arrayList, a0.h hVar, MessagesController messagesController) {
+        this.h = u0Var;
+        this.a = chat;
+        this.b = str;
+        this.c = j10;
+        this.d = arrayList;
+        this.e = hVar;
+        this.f = messagesController;
     }
 
-    @Override // org.telegram.ui.ActionBar.c2
-    public void i(d2 d2Var, int i10) {
-        switch (this.a) {
-            case 1:
-                this.b.W();
-                break;
-            case 2:
-                this.b.finishFragment();
-                break;
-            default:
-                u0 u0Var = this.b;
-                u0Var.b.a(1.0f);
-                TLRPC.UserFull userFull = u0Var.getMessagesController().getUserFull(u0Var.getUserConfig().getClientUserId());
-                TL_account.updateBusinessLocation updatebusinesslocation = new TL_account.updateBusinessLocation();
-                if (userFull != null) {
-                    userFull.business_location = null;
-                    userFull.flags2 &= -3;
-                }
-                u0Var.getConnectionsManager().sendRequest(updatebusinesslocation, new q0(u0Var, 1));
-                break;
-        }
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        u0 u0Var = this.b;
-        i51 i51Var = (i51) obj;
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        int i10 = i51Var.d;
-        if (i10 != 1 && i51Var.c != u0Var.h) {
-            if (i10 == 2) {
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(u0Var.getParentActivity());
-                alertDialog$Builder.a.O = LocaleController.getString(R.string.BusinessLocationClearTitle);
-                alertDialog$Builder.a.Q = LocaleController.getString(R.string.BusinessLocationClearMessage);
-                alertDialog$Builder.k(LocaleController.getString(R.string.Remove), new p0(u0Var, 3));
-                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                u0Var.showDialog(alertDialog$Builder.a);
-                return;
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        u0 u0Var = this.h;
+        if (u0Var.B != this) {
             return;
         }
-        if (u0Var.x != null && i51Var.c != u0Var.h) {
-            u0Var.x = null;
-            u0Var.a.V2.N(true);
-            return;
+        TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
+        tL_channels_getParticipants.channel = MessagesController.getInputChannel(this.a);
+        tL_channels_getParticipants.limit = 20;
+        tL_channels_getParticipants.offset = 0;
+        TLRPC.TL_channelParticipantsMentions tL_channelParticipantsMentions = new TLRPC.TL_channelParticipantsMentions();
+        int i10 = tL_channelParticipantsMentions.flags;
+        tL_channelParticipantsMentions.flags = i10 | 1;
+        tL_channelParticipantsMentions.q = this.b;
+        long j10 = this.c;
+        if (j10 != 0) {
+            tL_channelParticipantsMentions.flags = i10 | 3;
+            tL_channelParticipantsMentions.top_msg_id = (int) j10;
         }
-        ad0 ad0Var = new ad0(8);
-        if (u0Var.x != null) {
-            TLRPC.TL_channelLocation tL_channelLocation = new TLRPC.TL_channelLocation();
-            tL_channelLocation.address = u0Var.y;
-            tL_channelLocation.geo_point = u0Var.x;
-            ad0Var.x0 = tL_channelLocation;
-        }
-        ad0Var.C0 = new org.telegram.ui.web.m(9, u0Var, ad0Var);
-        if (u0Var.x != null || TextUtils.isEmpty(u0Var.y)) {
-            u0Var.presentFragment(ad0Var);
-            return;
-        }
-        d2 d2Var = new d2(u0Var.getParentActivity(), 3, null);
-        d2Var.d0 = false;
-        d2Var.q(200L);
-        Utilities.searchQueue.postRunnable(new n0(u0Var, ad0Var, d2Var));
+        tL_channels_getParticipants.filter = tL_channelParticipantsMentions;
+        int i11 = u0Var.f0 + 1;
+        u0Var.f0 = i11;
+        u0Var.g0 = ConnectionsManager.getInstance(u0Var.f).sendRequest(tL_channels_getParticipants, new lf.i0(this, i11, this.d, this.e, this.f, 13));
     }
 }

@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import k7.z6;
+import k7.a7;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.tgnet.TLObject;
 import org.webrtc.MediaStreamTrack;
@@ -31,7 +31,7 @@ import org.xmlpull.v1.XmlSerializer;
 import s8.i0;
 import s8.v;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class e extends DefaultHandler implements o0 {
     public static final Pattern b = Pattern.compile("(\\d+)(?:/(\\d+))?");
@@ -182,7 +182,7 @@ public final class e extends DefaultHandler implements o0 {
             case 6:
                 String attributeValue4 = xmlPullParser.getAttributeValue(null, "value");
                 if (attributeValue4 != null) {
-                    String b10 = z6.b(attributeValue4);
+                    String b10 = a7.b(attributeValue4);
                     b10.getClass();
                     switch (b10.hashCode()) {
                         case 1596796:
@@ -344,7 +344,7 @@ public final class e extends DefaultHandler implements o0 {
         String str4;
         String attributeValue = xmlPullParser.getAttributeValue(null, "schemeIdUri");
         if (attributeValue != null) {
-            String b10 = z6.b(attributeValue);
+            String b10 = a7.b(attributeValue);
             b10.getClass();
             switch (b10.hashCode()) {
                 case -1980789791:
@@ -1587,7 +1587,7 @@ public final class e extends DefaultHandler implements o0 {
                                                                                                                         int i37 = i35;
                                                                                                                         f fVar6 = (f) arrayList66.get(i35);
                                                                                                                         s sVar7 = sVar;
-                                                                                                                        if (z6.a("urn:mpeg:dash:role:2011", fVar6.a)) {
+                                                                                                                        if (a7.a("urn:mpeg:dash:role:2011", fVar6.a)) {
                                                                                                                             String str99 = fVar6.b;
                                                                                                                             i36 |= (str99 != null && (str99.equals("forced_subtitle") || str99.equals("forced-subtitle"))) ? 2 : 0;
                                                                                                                         }
@@ -1602,7 +1602,7 @@ public final class e extends DefaultHandler implements o0 {
                                                                                                                     while (i38 < arrayList67.size()) {
                                                                                                                         f fVar7 = (f) arrayList67.get(i38);
                                                                                                                         int i40 = i38;
-                                                                                                                        if (z6.a("urn:mpeg:dash:role:2011", fVar7.a)) {
+                                                                                                                        if (a7.a("urn:mpeg:dash:role:2011", fVar7.a)) {
                                                                                                                             i39 |= m(fVar7.b);
                                                                                                                         }
                                                                                                                         i38 = i40 + 1;
@@ -1618,9 +1618,9 @@ public final class e extends DefaultHandler implements o0 {
                                                                                                                         String str100 = fVar8.a;
                                                                                                                         ArrayList arrayList69 = arrayList26;
                                                                                                                         String str101 = fVar8.b;
-                                                                                                                        if (z6.a("urn:mpeg:dash:role:2011", str100)) {
+                                                                                                                        if (a7.a("urn:mpeg:dash:role:2011", str100)) {
                                                                                                                             i15 = m(str101);
-                                                                                                                        } else if (z6.a("urn:tva:metadata:cs:AudioPurposeCS:2007", fVar8.a)) {
+                                                                                                                        } else if (a7.a("urn:tva:metadata:cs:AudioPurposeCS:2007", fVar8.a)) {
                                                                                                                             if (str101 != null) {
                                                                                                                                 switch (str101.hashCode()) {
                                                                                                                                     case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
@@ -1701,7 +1701,7 @@ public final class e extends DefaultHandler implements o0 {
                                                                                                                         if (i45 < arrayList27.size()) {
                                                                                                                             f fVar9 = (f) arrayList27.get(i45);
                                                                                                                             arrayList31 = arrayList27;
-                                                                                                                            if ((z6.a("http://dashif.org/thumbnail_tile", fVar9.a) || z6.a("http://dashif.org/guidelines/thumbnail_tile", fVar9.a)) && (str41 = fVar9.b) != null) {
+                                                                                                                            if ((a7.a("http://dashif.org/thumbnail_tile", fVar9.a) || a7.a("http://dashif.org/guidelines/thumbnail_tile", fVar9.a)) && (str41 = fVar9.b) != null) {
                                                                                                                                 int i46 = d0.a;
                                                                                                                                 String[] split = str41.split("x", -1);
                                                                                                                                 if (split.length != 2) {
@@ -2428,7 +2428,7 @@ public final class e extends DefaultHandler implements o0 {
     public static int n(ArrayList arrayList) {
         int i10 = 0;
         for (int i11 = 0; i11 < arrayList.size(); i11++) {
-            if (z6.a("http://dashif.org/guidelines/trickmode", ((f) arrayList.get(i11)).a)) {
+            if (a7.a("http://dashif.org/guidelines/trickmode", ((f) arrayList.get(i11)).a)) {
                 i10 = 16384;
             }
         }
@@ -2509,7 +2509,7 @@ public final class e extends DefaultHandler implements o0 {
             if (h5.a.z(xmlPullParser, "Initialization")) {
                 jVar = l(xmlPullParser, "sourceURL", "range");
             } else if (h5.a.z(xmlPullParser, "SegmentTimeline")) {
-                list2 = s(xmlPullParser, j16, j11);
+                list2 = r(xmlPullParser, j16, j11);
             } else if (h5.a.z(xmlPullParser, "SegmentURL")) {
                 if (list == null) {
                     list = new ArrayList();
@@ -2567,7 +2567,7 @@ public final class e extends DefaultHandler implements o0 {
                 break;
             }
             f fVar = (f) list.get(i10);
-            if (z6.a("http://dashif.org/guidelines/last-segment-number", fVar.a)) {
+            if (a7.a("http://dashif.org/guidelines/last-segment-number", fVar.a)) {
                 j15 = Long.parseLong(fVar.b);
                 break;
             }
@@ -2576,15 +2576,15 @@ public final class e extends DefaultHandler implements o0 {
         long j24 = j15;
         long j25 = j13 == -9223372036854775807L ? j12 : j13;
         long j26 = j25 == Long.MAX_VALUE ? -9223372036854775807L : j25;
-        x5.k t6 = t(xmlPullParser, "media", pVar != null ? pVar.k : null);
-        x5.k t9 = t(xmlPullParser, "initialization", pVar != null ? pVar.j : null);
+        x5.k s6 = s(xmlPullParser, "media", pVar != null ? pVar.k : null);
+        x5.k s9 = s(xmlPullParser, "initialization", pVar != null ? pVar.j : null);
         List list2 = null;
         do {
             xmlPullParser.next();
             if (h5.a.z(xmlPullParser, "Initialization")) {
                 jVar = l(xmlPullParser, "sourceURL", "range");
             } else if (h5.a.z(xmlPullParser, "SegmentTimeline")) {
-                list2 = s(xmlPullParser, j17, j11);
+                list2 = r(xmlPullParser, j17, j11);
             } else {
                 b(xmlPullParser);
             }
@@ -2597,10 +2597,10 @@ public final class e extends DefaultHandler implements o0 {
                 list2 = pVar.f;
             }
         }
-        return new p(jVar, j17, j19, j23, j24, j21, list2, j26, t9, t6, d0.G(j14), d0.G(j10));
+        return new p(jVar, j17, j19, j23, j24, j21, list2, j26, s9, s6, d0.G(j14), d0.G(j10));
     }
 
-    public static ArrayList s(XmlPullParser xmlPullParser, long j10, long j11) {
+    public static ArrayList r(XmlPullParser xmlPullParser, long j10, long j11) {
         long j12;
         ArrayList arrayList = new ArrayList();
         long j13 = 0;
@@ -2643,7 +2643,7 @@ public final class e extends DefaultHandler implements o0 {
     /* JADX WARN: Type inference failed for: r0v1, types: [int[], java.io.Serializable] */
     /* JADX WARN: Type inference failed for: r14v2, types: [java.io.Serializable, java.lang.String[]] */
     /* JADX WARN: Type inference failed for: r1v0, types: [java.io.Serializable, java.lang.String[]] */
-    public static x5.k t(XmlPullParser xmlPullParser, String str, x5.k kVar) {
+    public static x5.k s(XmlPullParser xmlPullParser, String str, x5.k kVar) {
         String str2;
         String attributeValue = xmlPullParser.getAttributeValue(null, str);
         if (attributeValue == null) {
@@ -2708,7 +2708,7 @@ public final class e extends DefaultHandler implements o0 {
     }
 
     @Override // g5.o0
-    public final Object r(Uri uri, g5.o oVar) {
+    public final Object w(Uri uri, g5.o oVar) {
         try {
             XmlPullParser newPullParser = this.a.newPullParser();
             newPullParser.setInput(oVar, null);

@@ -1,33 +1,59 @@
 package lh;
 
+import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.TwoStepVerificationActivity;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.ic;
+import org.telegram.ui.Components.mq0;
+import org.telegram.ui.Components.pr0;
+import org.telegram.ui.Components.qc;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class t2 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g5 b;
-    public final /* synthetic */ TwoStepVerificationActivity c;
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes.dex */
+public final class t2 extends mq0 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.p2 Y0;
+    public final /* synthetic */ pr0 Z0;
 
-    public /* synthetic */ t2(g5 g5Var, TwoStepVerificationActivity twoStepVerificationActivity, int i10) {
-        this.a = i10;
-        this.b = g5Var;
-        this.c = twoStepVerificationActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t2(pr0 pr0Var, Context context, String str, String str2, g6 g6Var, org.telegram.ui.ActionBar.p2 p2Var) {
+        super(context, null, str, false, str2, false, g6Var);
+        this.Z0 = pr0Var;
+        this.Y0 = p2Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new k1(this.b, tL_error, this.c, tLObject));
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new k1(this.b, tL_error, tLObject, this.c));
-                break;
+    @Override // org.telegram.ui.Components.mq0
+    public final void R0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z4) {
+        qc a02;
+        if (z4 && (a02 = qc.a0(this.Y0)) != null) {
+            if (hVar.m() == 1) {
+                long j10 = hVar.j(0);
+                if (j10 == UserConfig.getInstance(this.currentAccount).clientUserId) {
+                    ic G = a02.G(R.raw.saved_messages, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftCollectionSharedToSavedMessages, new Object[0])));
+                    G.r = false;
+                    G.j();
+                } else if (j10 < 0) {
+                    ic G2 = a02.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftCollectionSharedTo, tL_forumTopic != null ? tL_forumTopic.title : MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j10)).title)));
+                    G2.r = false;
+                    G2.j();
+                } else {
+                    ic G3 = a02.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftCollectionSharedTo, MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j10)).first_name)));
+                    G3.r = false;
+                    G3.j();
+                }
+            } else {
+                ic Q = a02.Q(R.raw.forward, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("GiftCollectionSharedToManyChats", hVar.m(), Integer.valueOf(hVar.m()))));
+                Q.r = false;
+                Q.j();
+            }
+            try {
+                this.Z0.performHapticFeedback(3);
+            } catch (Exception unused) {
+            }
         }
     }
 }

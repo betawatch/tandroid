@@ -28,9 +28,8 @@ import java.util.zip.GZIPOutputStream;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.ui.yh;
-import vh.v2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class c {
     public static final Pattern d = Pattern.compile("[0-9]+s");
@@ -85,7 +84,7 @@ public final class c {
             return;
         }
         Log.w("Firebase-Installations", str4);
-        Log.w("Firebase-Installations", yh.l("Firebase options used while communicating with Firebase server APIs: ", str2, ", ", str3, TextUtils.isEmpty(str) ? "" : v2.e(", ", str)));
+        Log.w("Firebase-Installations", yh.l("Firebase options used while communicating with Firebase server APIs: ", str2, ", ", str3, TextUtils.isEmpty(str) ? "" : yh.k(", ", str)));
     }
 
     public static long d(String str) {
@@ -125,9 +124,9 @@ public final class c {
                         jsonReader.skipValue();
                     }
                 }
-                b b10 = a2.b();
+                b c3 = a2.c();
                 jsonReader.endObject();
-                bVar = b10;
+                bVar = c3;
             } else {
                 jsonReader.skipValue();
             }
@@ -157,7 +156,7 @@ public final class c {
         jsonReader.close();
         inputStream.close();
         a2.b = 1;
-        return a2.b();
+        return a2.c();
     }
 
     public static void g(HttpURLConnection httpURLConnection, String str, String str2) {

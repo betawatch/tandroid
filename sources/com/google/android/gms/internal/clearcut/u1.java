@@ -42,11 +42,11 @@ public final class u1 extends z {
                 return (u1) zVar;
             }
             throw new d0(new a7.b().getMessage());
-        } catch (IOException e) {
-            if (e.getCause() instanceof d0) {
-                throw ((d0) e.getCause());
+        } catch (IOException e6) {
+            if (e6.getCause() instanceof d0) {
+                throw ((d0) e6.getCause());
             }
-            throw new d0(e.getMessage());
+            throw new d0(e6.getMessage());
         } catch (IndexOutOfBoundsException unused) {
             throw d0.a();
         }

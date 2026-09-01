@@ -6,19 +6,19 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseArray;
 import com.google.android.gms.cast.MediaInfo;
-import j7.f5;
+import j7.g5;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Pattern;
-import k7.e8;
+import k7.f8;
+import oh.h4;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import ph.j5;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class q extends c6.a {
     public static final Parcelable.Creator<q> CREATOR;
@@ -432,9 +432,9 @@ public final class q extends c6.a {
                                 optLong *= 1000;
                             }
                             cVar = new c(j152, j162, a102, a112, optLong);
-                        } catch (JSONException e) {
+                        } catch (JSONException e6) {
                             u5.b bVar3 = c.f;
-                            Log.e(bVar3.a, bVar3.d("Error while creating an AdBreakClipInfo from JSON", new Object[0]), e);
+                            Log.e(bVar3.a, bVar3.d("Error while creating an AdBreakClipInfo from JSON", new Object[0]), e6);
                         }
                         cVar2 = this.F;
                         if ((cVar2 == null && cVar != null) || (cVar2 != null && !cVar2.equals(cVar))) {
@@ -475,8 +475,8 @@ public final class q extends c6.a {
                                         bVar22.b("Unknown HDR type: %s", string3);
                                         i15 = 0;
                                         uVar = new u(optJSONObject2.getInt("width"), optJSONObject2.getInt("height"), i15);
-                                    } catch (JSONException e6) {
-                                        e = e6;
+                                    } catch (JSONException e10) {
+                                        e = e10;
                                         bVar22.a(e, "Error while creating a VideoInfo instance from JSON", new Object[0]);
                                         uVar = null;
                                         uVar2 = this.G;
@@ -502,8 +502,8 @@ public final class q extends c6.a {
                                     i15 = 0;
                                     uVar = new u(optJSONObject2.getInt("width"), optJSONObject2.getInt("height"), i15);
                                 }
-                            } catch (JSONException e10) {
-                                e = e10;
+                            } catch (JSONException e11) {
+                                e = e11;
                             }
                         }
                         uVar2 = this.G;
@@ -680,7 +680,7 @@ public final class q extends c6.a {
                                     i19 = i18;
                                     mVar = null;
                                 }
-                                Integer a15 = e8.a(jSONObject5.optString("repeatMode"));
+                                Integer a15 = f8.a(jSONObject5.optString("repeatMode"));
                                 int intValue = a15 != null ? a15.intValue() : 0;
                                 JSONArray optJSONArray3 = jSONObject5.optJSONArray("items");
                                 if (optJSONArray3 != null) {
@@ -813,7 +813,7 @@ public final class q extends c6.a {
                 }
             }
             if (jSONObject2.has("repeatMode")) {
-                Integer a16 = e8.a(jSONObject2.getString("repeatMode"));
+                Integer a16 = f8.a(jSONObject2.getString("repeatMode"));
                 int intValue2 = a16 == null ? this.C : a16.intValue();
                 if (this.C != intValue2) {
                     this.C = intValue2;
@@ -838,9 +838,9 @@ public final class q extends c6.a {
                             } else if (num.intValue() != this.c || (mediaInfo = this.a) == null) {
                                 arrayList7.add(new o(jSONObject6));
                             } else {
-                                o X = new j5(mediaInfo).X();
-                                X.e(jSONObject6);
-                                arrayList7.add(X);
+                                o M = new h4(mediaInfo).M();
+                                M.e(jSONObject6);
+                                arrayList7.add(M);
                             }
                             z4 = true;
                         }
@@ -1040,54 +1040,54 @@ public final class q extends c6.a {
     public final void writeToParcel(Parcel parcel, int i10) {
         JSONObject jSONObject = this.B;
         this.y = jSONObject == null ? null : jSONObject.toString();
-        int q10 = f5.q(parcel, 20293);
-        f5.k(parcel, 2, this.a, i10);
+        int q10 = g5.q(parcel, 20293);
+        g5.k(parcel, 2, this.a, i10);
         long j10 = this.b;
-        f5.s(parcel, 3, 8);
+        g5.s(parcel, 3, 8);
         parcel.writeLong(j10);
         int i11 = this.c;
-        f5.s(parcel, 4, 4);
+        g5.s(parcel, 4, 4);
         parcel.writeInt(i11);
         double d = this.d;
-        f5.s(parcel, 5, 8);
+        g5.s(parcel, 5, 8);
         parcel.writeDouble(d);
         int i12 = this.e;
-        f5.s(parcel, 6, 4);
+        g5.s(parcel, 6, 4);
         parcel.writeInt(i12);
         int i13 = this.f;
-        f5.s(parcel, 7, 4);
+        g5.s(parcel, 7, 4);
         parcel.writeInt(i13);
         long j11 = this.h;
-        f5.s(parcel, 8, 8);
+        g5.s(parcel, 8, 8);
         parcel.writeLong(j11);
         long j12 = this.n;
-        f5.s(parcel, 9, 8);
+        g5.s(parcel, 9, 8);
         parcel.writeLong(j12);
         double d10 = this.r;
-        f5.s(parcel, 10, 8);
+        g5.s(parcel, 10, 8);
         parcel.writeDouble(d10);
         boolean z4 = this.s;
-        f5.s(parcel, 11, 4);
+        g5.s(parcel, 11, 4);
         parcel.writeInt(z4 ? 1 : 0);
-        f5.j(parcel, 12, this.v);
+        g5.j(parcel, 12, this.v);
         int i14 = this.w;
-        f5.s(parcel, 13, 4);
+        g5.s(parcel, 13, 4);
         parcel.writeInt(i14);
         int i15 = this.x;
-        f5.s(parcel, 14, 4);
+        g5.s(parcel, 14, 4);
         parcel.writeInt(i15);
-        f5.l(parcel, 15, this.y);
+        g5.l(parcel, 15, this.y);
         int i16 = this.C;
-        f5.s(parcel, 16, 4);
+        g5.s(parcel, 16, 4);
         parcel.writeInt(i16);
-        f5.p(parcel, 17, this.D);
+        g5.p(parcel, 17, this.D);
         boolean z10 = this.E;
-        f5.s(parcel, 18, 4);
+        g5.s(parcel, 18, 4);
         parcel.writeInt(z10 ? 1 : 0);
-        f5.k(parcel, 19, this.F, i10);
-        f5.k(parcel, 20, this.G, i10);
-        f5.k(parcel, 21, this.H, i10);
-        f5.k(parcel, 22, this.I, i10);
-        f5.r(parcel, q10);
+        g5.k(parcel, 19, this.F, i10);
+        g5.k(parcel, 20, this.G, i10);
+        g5.k(parcel, 21, this.H, i10);
+        g5.k(parcel, 22, this.I, i10);
+        g5.r(parcel, q10);
     }
 }

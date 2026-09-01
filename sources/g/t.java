@@ -6,7 +6,7 @@ import android.view.View;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class t implements View.OnClickListener {
     public final View a;
@@ -52,10 +52,10 @@ public final class t implements View.OnClickListener {
         }
         try {
             this.c.invoke(this.d, view);
-        } catch (IllegalAccessException e) {
-            throw new IllegalStateException("Could not execute non-public method for android:onClick", e);
-        } catch (InvocationTargetException e6) {
-            throw new IllegalStateException("Could not execute method for android:onClick", e6);
+        } catch (IllegalAccessException e6) {
+            throw new IllegalStateException("Could not execute non-public method for android:onClick", e6);
+        } catch (InvocationTargetException e10) {
+            throw new IllegalStateException("Could not execute method for android:onClick", e10);
         }
     }
 }

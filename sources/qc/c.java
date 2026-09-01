@@ -1,10 +1,10 @@
 package qc;
 
 import java.util.regex.Pattern;
-import k7.u;
+import k7.v;
 import ne.p;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class c extends h {
     public static final Pattern e = Pattern.compile("`+");
@@ -29,7 +29,7 @@ public final class c extends h {
         String replace = this.c.substring(i10, this.d - a10.length()).replace('\n', ' ');
         if (replace.length() >= 3 && replace.charAt(0) == ' ' && replace.charAt(replace.length() - 1) == ' ') {
             int length = replace.length();
-            if (u.b(' ', replace, 0, length) != length) {
+            if (v.b(' ', replace, 0, length) != length) {
                 replace = e2.c.j(replace, 1, 1);
             }
         }

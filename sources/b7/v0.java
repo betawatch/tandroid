@@ -1,8 +1,6 @@
 package b7;
 
-import kh.a2;
-
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class v0 extends w0 {
     public final int d;
@@ -22,7 +20,7 @@ public final class v0 extends w0 {
             return this.b[this.d + i10];
         }
         if (i10 < 0) {
-            throw new ArrayIndexOutOfBoundsException(a2.j(i10, "Index < 0: "));
+            throw new ArrayIndexOutOfBoundsException(l.d.j(i10, "Index < 0: "));
         }
         throw new ArrayIndexOutOfBoundsException(android.support.v4.media.a.k(i10, i11, "Index > length: ", ", "));
     }

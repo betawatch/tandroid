@@ -1,10 +1,8 @@
 package sa;
 
 import java.util.BitSet;
-import kh.a2;
-import vh.v2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class w0 extends pa.u {
     @Override // pa.u
@@ -15,22 +13,22 @@ public class w0 extends pa.u {
         int x10 = aVar.x();
         int i10 = 0;
         while (x10 != 2) {
-            int b10 = m1.j.b(x10);
-            if (b10 == 5 || b10 == 6) {
+            int c3 = m1.j.c(x10);
+            if (c3 == 5 || c3 == 6) {
                 int p10 = aVar.p();
                 if (p10 == 0) {
                     z4 = false;
                 } else {
                     if (p10 != 1) {
-                        StringBuilder m9 = a2.m(p10, "Invalid bitset value ", ", expected 0 or 1; at path ");
+                        StringBuilder m9 = l.d.m(p10, "Invalid bitset value ", ", expected 0 or 1; at path ");
                         m9.append(aVar.j());
                         throw new pa.j(m9.toString());
                     }
                     z4 = true;
                 }
             } else {
-                if (b10 != 7) {
-                    throw new pa.j("Invalid bitset value type: " + v2.m(x10) + "; at path " + aVar.h());
+                if (c3 != 7) {
+                    throw new pa.j("Invalid bitset value type: " + w.c.m(x10) + "; at path " + aVar.h());
                 }
                 z4 = aVar.n();
             }

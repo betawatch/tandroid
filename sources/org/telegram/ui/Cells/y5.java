@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class y5 extends FrameLayout {
     public w5[] a;
@@ -29,13 +29,13 @@ public final class y5 extends FrameLayout {
         p9Var.q(0, true);
         MediaController.PhotoEntry photoEntry = albumEntry.coverPhoto;
         if (photoEntry == null || photoEntry.path == null) {
-            p9Var2.setImageDrawable(org.telegram.ui.ActionBar.j6.R4);
+            p9Var2.setImageDrawable(org.telegram.ui.ActionBar.k6.R4);
         } else {
             p9Var2.p(photoEntry.orientation, photoEntry.invert, true);
             if (albumEntry.coverPhoto.isVideo) {
-                p9Var2.f("vthumb://" + albumEntry.coverPhoto.imageId + ":" + albumEntry.coverPhoto.path, null, org.telegram.ui.ActionBar.j6.R4);
+                p9Var2.f("vthumb://" + albumEntry.coverPhoto.imageId + ":" + albumEntry.coverPhoto.path, null, org.telegram.ui.ActionBar.k6.R4);
             } else {
-                p9Var2.f("thumb://" + albumEntry.coverPhoto.imageId + ":" + albumEntry.coverPhoto.path, null, org.telegram.ui.ActionBar.j6.R4);
+                p9Var2.f("thumb://" + albumEntry.coverPhoto.imageId + ":" + albumEntry.coverPhoto.path, null, org.telegram.ui.ActionBar.k6.R4);
             }
         }
         w5Var.b.setText(albumEntry.bucketName);

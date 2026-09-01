@@ -5,10 +5,10 @@ import j3.m0;
 import j3.n0;
 import java.util.ArrayList;
 import java.util.Arrays;
-import k7.w6;
+import k7.x6;
 import s8.v;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class i extends j {
     public static final byte[] o = {79, 112, 117, 115, 72, 101, 97, 100};
@@ -56,7 +56,7 @@ public final class i extends j {
             if (!this.n) {
                 this.n = true;
                 wVar.G(8);
-                e4.c a10 = w6.a(v.u((String[]) w6.b(wVar, false, false).b));
+                e4.c a10 = x6.a(v.u(x6.b(wVar, false, false).a));
                 if (a10 != null) {
                     m0 a11 = ((n0) bVar.b).a();
                     e4.c cVar = ((n0) bVar.b).s;

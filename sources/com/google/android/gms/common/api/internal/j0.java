@@ -15,17 +15,17 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.ReentrantLock;
-import m.s3;
+import m.r3;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class j0 extends com.google.android.gms.common.api.m implements v0 {
     public final a0.f B;
     public Set C;
-    public final s3 D;
+    public final r3 D;
     public final a0.f E;
     public final a8.j F;
-    public final androidx.biometric.f0 G;
+    public final y5.h G;
     public final ArrayList H;
     public Integer I;
     public final h1 J;
@@ -43,7 +43,7 @@ public final class j0 extends com.google.android.gms.common.api.m implements v0 
     public final y5.d x;
     public u0 y;
 
-    public j0(Context context, ReentrantLock reentrantLock, Looper looper, s3 s3Var, a0.f fVar, ArrayList arrayList, ArrayList arrayList2, a0.f fVar2, int i10, ArrayList arrayList3) {
+    public j0(Context context, ReentrantLock reentrantLock, Looper looper, r3 r3Var, a0.f fVar, ArrayList arrayList, ArrayList arrayList2, a0.f fVar2, int i10, ArrayList arrayList3) {
         y5.d dVar = y5.d.d;
         a8.j jVar = b8.b.a;
         this.d = null;
@@ -51,9 +51,9 @@ public final class j0 extends com.google.android.gms.common.api.m implements v0 
         this.s = 120000L;
         this.v = 5000L;
         this.C = new HashSet();
-        this.G = new androidx.biometric.f0(5);
+        this.G = new y5.h(8);
         this.I = null;
-        ja.c cVar = new ja.c(this, 5);
+        ja.c cVar = new ja.c(this);
         this.f = context;
         this.b = reentrantLock;
         this.c = new b6.t(looper, cVar);
@@ -86,7 +86,7 @@ public final class j0 extends com.google.android.gms.common.api.m implements v0 
                     throw th2;
                 }
             }
-            if (tVar.a.r0()) {
+            if (tVar.a.C()) {
                 a7.e eVar = tVar.n;
                 eVar.sendMessage(eVar.obtainMessage(1, kVar));
             }
@@ -97,7 +97,7 @@ public final class j0 extends com.google.android.gms.common.api.m implements v0 
             i11++;
             this.c.a((com.google.android.gms.common.api.l) obj2);
         }
-        this.D = s3Var;
+        this.D = r3Var;
         this.F = jVar;
     }
 
@@ -125,6 +125,48 @@ public final class j0 extends com.google.android.gms.common.api.m implements v0 
         } finally {
             j0Var.b.unlock();
         }
+    }
+
+    @Override // com.google.android.gms.common.api.internal.v0
+    public final void B(y5.a aVar) {
+        y5.d dVar = this.x;
+        Context context = this.f;
+        int i10 = aVar.b;
+        dVar.getClass();
+        AtomicBoolean atomicBoolean = y5.g.a;
+        if (!(i10 == 18 ? true : i10 == 1 ? y5.g.c(context) : false)) {
+            h();
+        }
+        if (this.r) {
+            return;
+        }
+        b6.t tVar = this.c;
+        if (Looper.myLooper() != tVar.n.getLooper()) {
+            throw new IllegalStateException("onConnectionFailure must only be called on the Handler thread");
+        }
+        tVar.n.removeMessages(1);
+        synchronized (tVar.r) {
+            try {
+                ArrayList arrayList = new ArrayList(tVar.d);
+                int i11 = tVar.f.get();
+                int size = arrayList.size();
+                int i12 = 0;
+                while (i12 < size) {
+                    Object obj = arrayList.get(i12);
+                    i12++;
+                    com.google.android.gms.common.api.l lVar = (com.google.android.gms.common.api.l) obj;
+                    if (tVar.e && tVar.f.get() == i11) {
+                        if (tVar.d.contains(lVar)) {
+                            lVar.onConnectionFailed(aVar);
+                        }
+                    }
+                }
+            } finally {
+            }
+        }
+        b6.t tVar2 = this.c;
+        tVar2.e = false;
+        tVar2.f.incrementAndGet();
     }
 
     @Override // com.google.android.gms.common.api.m
@@ -339,7 +381,7 @@ public final class j0 extends com.google.android.gms.common.api.m implements v0 
     }
 
     @Override // com.google.android.gms.common.api.internal.v0
-    public final void n(int i10) {
+    public final void o(int i10) {
         if (i10 == 1) {
             if (!this.r) {
                 this.r = true;
@@ -410,7 +452,7 @@ public final class j0 extends com.google.android.gms.common.api.m implements v0 
     }
 
     @Override // com.google.android.gms.common.api.internal.v0
-    public final void o(Bundle bundle) {
+    public final void q(Bundle bundle) {
         while (!this.n.isEmpty()) {
             e eVar = (e) this.n.remove();
             a0.f fVar = this.B;
@@ -458,7 +500,7 @@ public final class j0 extends com.google.android.gms.common.api.m implements v0 
                     Object obj = arrayList.get(i11);
                     i11++;
                     com.google.android.gms.common.api.k kVar = (com.google.android.gms.common.api.k) obj;
-                    if (!tVar.e || !tVar.a.r0() || tVar.f.get() != i10) {
+                    if (!tVar.e || !tVar.a.C() || tVar.f.get() != i10) {
                         break;
                     } else if (!tVar.c.contains(kVar)) {
                         kVar.onConnected(bundle);
@@ -469,47 +511,5 @@ public final class j0 extends com.google.android.gms.common.api.m implements v0 
             } finally {
             }
         }
-    }
-
-    @Override // com.google.android.gms.common.api.internal.v0
-    public final void v(y5.a aVar) {
-        y5.d dVar = this.x;
-        Context context = this.f;
-        int i10 = aVar.b;
-        dVar.getClass();
-        AtomicBoolean atomicBoolean = y5.g.a;
-        if (!(i10 == 18 ? true : i10 == 1 ? y5.g.c(context) : false)) {
-            h();
-        }
-        if (this.r) {
-            return;
-        }
-        b6.t tVar = this.c;
-        if (Looper.myLooper() != tVar.n.getLooper()) {
-            throw new IllegalStateException("onConnectionFailure must only be called on the Handler thread");
-        }
-        tVar.n.removeMessages(1);
-        synchronized (tVar.r) {
-            try {
-                ArrayList arrayList = new ArrayList(tVar.d);
-                int i11 = tVar.f.get();
-                int size = arrayList.size();
-                int i12 = 0;
-                while (i12 < size) {
-                    Object obj = arrayList.get(i12);
-                    i12++;
-                    com.google.android.gms.common.api.l lVar = (com.google.android.gms.common.api.l) obj;
-                    if (tVar.e && tVar.f.get() == i11) {
-                        if (tVar.d.contains(lVar)) {
-                            lVar.onConnectionFailed(aVar);
-                        }
-                    }
-                }
-            } finally {
-            }
-        }
-        b6.t tVar2 = this.c;
-        tVar2.e = false;
-        tVar2.f.incrementAndGet();
     }
 }

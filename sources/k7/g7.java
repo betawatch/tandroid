@@ -1,24 +1,14 @@
 package k7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class g7 {
-    public static final Object a(qd.s sVar, qd.s sVar2, dd.p pVar) {
-        Object vVar;
-        Object B;
+    public static void a(dd.p pVar, ld.a aVar, ld.a aVar2) {
         try {
-            kotlin.jvm.internal.t.a(2, pVar);
-            vVar = pVar.invoke(sVar2, sVar);
+            qd.a.g(sc.i.a, h8.b(h8.a(pVar, aVar, aVar2)));
         } catch (Throwable th2) {
-            vVar = new ld.v(th2, false);
+            aVar2.resumeWith(q7.a(th2));
+            throw th2;
         }
-        vc.a aVar = vc.a.a;
-        if (vVar == aVar || (B = sVar.B(vVar)) == ld.e0.e) {
-            return aVar;
-        }
-        if (B instanceof ld.v) {
-            throw ((ld.v) B).a;
-        }
-        return ld.e0.u(B);
     }
 }

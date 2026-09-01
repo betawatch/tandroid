@@ -2,7 +2,7 @@ package pc;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class a2 {
     public static final v1 A0;
@@ -253,7 +253,7 @@ public abstract class a2 {
         StringBuilder sb = kVar.h;
         if (aVar.o()) {
             String e6 = aVar.e();
-            kVar.i.o(e6);
+            kVar.i.n(e6);
             sb.append(e6);
             return;
         }

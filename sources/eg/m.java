@@ -1,88 +1,174 @@
 package eg;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Shader;
-import android.util.SparseIntArray;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
+import android.view.View;
 import java.util.ArrayList;
-import java.util.Collections;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
+import java.util.regex.Pattern;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.ui.Components.FragmentContextView;
+import org.telegram.ui.Components.mq;
+import org.telegram.ui.Components.ng0;
+import org.telegram.ui.Components.ru;
+import org.telegram.ui.Components.sc;
+import org.telegram.ui.Components.ur;
+import org.telegram.ui.ExternalActionActivity;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class m extends b {
-    public final ArrayList d;
-    public final Bitmap e;
-    public final int f;
+public final /* synthetic */ class m implements View.OnClickListener {
+    public final /* synthetic */ int a;
 
-    /* JADX WARN: Removed duplicated region for block: B:6:0x01ad  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public m(Context context, int i10, f6 f6Var) {
-        super(context, f6Var);
-        SparseIntArray sparseIntArray;
-        ArrayList arrayList = new ArrayList();
-        this.d = arrayList;
-        this.f = i10;
-        ArrayList arrayList2 = new ArrayList();
-        MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
-        if (i10 == 0) {
-            arrayList2.add(new k(R.drawable.msg_stories_order, 20, LocaleController.getString(R.string.PremiumStoriesPriority), LocaleController.getString(R.string.PremiumStoriesPriorityDescription)));
-            arrayList2.add(new k(R.drawable.msg_stories_stealth, 15, LocaleController.getString(R.string.PremiumStoriesStealth), LocaleController.getString(R.string.PremiumStoriesStealthDescription)));
-            arrayList2.add(new k(R.drawable.menu_quality_hd, 25, LocaleController.getString(R.string.PremiumStoriesQuality), LocaleController.getString(R.string.PremiumStoriesQualityDescription)));
-            arrayList2.add(new k(R.drawable.msg_stories_views, 16, LocaleController.getString(R.string.PremiumStoriesViews), LocaleController.getString(R.string.PremiumStoriesViewsDescription)));
-            arrayList2.add(new k(R.drawable.msg_stories_timer, 17, LocaleController.getString(R.string.PremiumStoriesExpiration), LocaleController.getString(R.string.PremiumStoriesExpirationDescription)));
-            arrayList2.add(new k(R.drawable.msg_stories_save, 18, LocaleController.getString(R.string.PremiumStoriesSaveToGallery), LocaleController.getString(R.string.PremiumStoriesSaveToGalleryDescription)));
-            arrayList2.add(new k(R.drawable.msg_stories_caption, 21, LocaleController.getString(R.string.PremiumStoriesCaption), LocaleController.getString(R.string.PremiumStoriesCaptionDescription)));
-            arrayList2.add(new k(R.drawable.msg_stories_link, 19, LocaleController.getString(R.string.PremiumStoriesFormatting), LocaleController.getString(R.string.PremiumStoriesFormattingDescription)));
-        } else if (i10 == 1) {
-            sparseIntArray = messagesController.businessFeaturesTypesToPosition;
-            arrayList2.add(new k(R.drawable.menu_premium_location, 29, LocaleController.getString(R.string.PremiumBusinessLocation), LocaleController.getString(R.string.PremiumBusinessLocationDescription)));
-            arrayList2.add(new k(R.drawable.menu_premium_clock, 30, LocaleController.getString(R.string.PremiumBusinessOpeningHours), LocaleController.getString(R.string.PremiumBusinessOpeningHoursDescription)));
-            arrayList2.add(new k(R.drawable.menu_quickreply, 31, LocaleController.getString(R.string.PremiumBusinessQuickReplies), LocaleController.getString(R.string.PremiumBusinessQuickRepliesDescription)));
-            arrayList2.add(new k(R.drawable.menu_feature_status, 32, LocaleController.getString(R.string.PremiumBusinessGreetingMessages), LocaleController.getString(R.string.PremiumBusinessGreetingMessagesDescription)));
-            arrayList2.add(new k(R.drawable.menu_premium_away, 33, LocaleController.getString(R.string.PremiumBusinessAwayMessages), LocaleController.getString(R.string.PremiumBusinessAwayMessagesDescription)));
-            arrayList2.add(new k(R.drawable.menu_premium_chatbot, 34, LocaleController.getString(R.string.PremiumBusinessChatbots2), LocaleController.getString(R.string.PremiumBusinessChatbotsDescription)));
-            arrayList2.add(new k(R.drawable.menu_feature_intro, 36, LocaleController.getString(R.string.PremiumBusinessIntro), LocaleController.getString(R.string.PremiumBusinessIntroDescription)));
-            arrayList2.add(new k(R.drawable.menu_premium_chatlink, 37, LocaleController.getString(R.string.PremiumBusinessChatLinks), LocaleController.getString(R.string.PremiumBusinessChatLinksDescription)));
-            if (sparseIntArray != null) {
-                Collections.sort(arrayList2, new d4.t(sparseIntArray, 1));
-            }
-            arrayList.add(new k(0));
-            arrayList.addAll(arrayList2);
-            arrayList.add(new k(2));
-            Bitmap createBitmap = Bitmap.createBitmap(arrayList.size(), 1, Bitmap.Config.ARGB_8888);
-            this.e = createBitmap;
-            Canvas canvas = new Canvas(createBitmap);
-            Paint paint = new Paint();
-            paint.setShader(new LinearGradient(0.0f, 0.0f, createBitmap.getWidth(), 0.0f, new int[]{j6.w0(null, j6.Lj, false), j6.w0(null, j6.Mj, false), j6.w0(null, j6.Nj, false), j6.w0(null, j6.Oj, false)}, (float[]) null, Shader.TileMode.CLAMP));
-            canvas.drawRect(0.0f, 0.0f, createBitmap.getWidth(), createBitmap.getHeight(), paint);
-        }
-        sparseIntArray = null;
-        if (sparseIntArray != null) {
-        }
-        arrayList.add(new k(0));
-        arrayList.addAll(arrayList2);
-        arrayList.add(new k(2));
-        Bitmap createBitmap2 = Bitmap.createBitmap(arrayList.size(), 1, Bitmap.Config.ARGB_8888);
-        this.e = createBitmap2;
-        Canvas canvas2 = new Canvas(createBitmap2);
-        Paint paint2 = new Paint();
-        paint2.setShader(new LinearGradient(0.0f, 0.0f, createBitmap2.getWidth(), 0.0f, new int[]{j6.w0(null, j6.Lj, false), j6.w0(null, j6.Mj, false), j6.w0(null, j6.Nj, false), j6.w0(null, j6.Oj, false)}, (float[]) null, Shader.TileMode.CLAMP));
-        canvas2.drawRect(0.0f, 0.0f, createBitmap2.getWidth(), createBitmap2.getHeight(), paint2);
+    public /* synthetic */ m(int i10) {
+        this.a = i10;
     }
 
-    @Override // eg.b
-    public final f2.o0 a() {
-        return new g(this, 0);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                PhotoViewer.t1().j0(1.0f, 0.0f, 0.0f, false);
+                break;
+            case 1:
+                try {
+                    view.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://play.google.com/store/apps/details?id=org.telegram.messenger")));
+                    break;
+                } catch (ActivityNotFoundException e6) {
+                    FileLog.e(e6);
+                    return;
+                }
+            case 2:
+                int i10 = lh.s.x0;
+                break;
+            case 3:
+                sc[] scVarArr = lh.f0.m0;
+                break;
+            case 4:
+                int i11 = lh.m0.c0;
+                break;
+            case 5:
+                int i12 = mh.i1.A0;
+                break;
+            case 6:
+                int i13 = ng.f.e;
+                break;
+            case 7:
+                oh.j1.j();
+                break;
+            case 8:
+                int i14 = org.telegram.ui.Cells.x.I;
+                break;
+            case 9:
+                org.telegram.ui.ActionBar.p2 R = LaunchActivity.R();
+                if (R != null) {
+                    R.presentFragment(new PremiumPreviewFragment(0, "contact"));
+                    break;
+                }
+                break;
+            case 10:
+                if (!MediaController.getInstance().isDownloadingCurrentMessage()) {
+                    if (!MediaController.getInstance().isMessagePaused()) {
+                        MediaController.getInstance().lambda$startAudioAgain$7(MediaController.getInstance().getPlayingMessageObject());
+                        break;
+                    } else {
+                        MediaController.getInstance().playMessage(MediaController.getInstance().getPlayingMessageObject());
+                        break;
+                    }
+                }
+                break;
+            case 11:
+                int i15 = mq.b0;
+                break;
+            case 12:
+                int i16 = ur.s;
+                break;
+            case 13:
+                float[] fArr = FragmentContextView.J0;
+                MediaController.getInstance().updateSilent(false);
+                break;
+            case 14:
+                ng0 ng0Var = ng0.m0;
+                ru ruVar = ng0Var.R;
+                if (ruVar != null) {
+                    ruVar.G();
+                } else {
+                    PhotoViewer photoViewer = ng0Var.S;
+                    if (photoViewer != null) {
+                        photoViewer.P0();
+                        MediaController.getInstance().tryResumePausedAudio();
+                    }
+                }
+                ng0.j(false);
+                break;
+            case 15:
+                org.telegram.ui.Components.voip.h1.j();
+                break;
+            case 16:
+                ((org.telegram.ui.Cells.z1) view).c(!r6.b(), true);
+                break;
+            case 17:
+                VoIPService sharedInstance = VoIPService.getSharedInstance();
+                if (sharedInstance == null) {
+                    org.telegram.ui.Components.voip.n2.i();
+                    break;
+                } else {
+                    sharedInstance.hangUp();
+                    break;
+                }
+            case 18:
+                hg.v2.e0(0, null);
+                break;
+            case 19:
+                ArrayList arrayList = ExternalActionActivity.x;
+                break;
+            case 20:
+                break;
+            case 21:
+                Pattern pattern = LaunchActivity.y1;
+                break;
+            case 22:
+                break;
+            case 23:
+                try {
+                    view.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://fragment.com")));
+                    break;
+                } catch (ActivityNotFoundException e10) {
+                    FileLog.e(e10);
+                    return;
+                }
+            case 24:
+                int i17 = qh.j3.d;
+                break;
+            case 25:
+                PhotoViewer.t1().j0(1.0f, 0.0f, 0.0f, false);
+                break;
+            case 26:
+                int i18 = sh.l.n;
+                break;
+            case 27:
+                break;
+            default:
+                int i19 = xg.c.e;
+                break;
+        }
+    }
+
+    public /* synthetic */ m(Object obj, int i10) {
+        this.a = i10;
+    }
+
+    private final void a(View view) {
+    }
+
+    private final void b(View view) {
+    }
+
+    private final void c(View view) {
     }
 }

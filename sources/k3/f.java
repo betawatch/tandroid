@@ -33,7 +33,7 @@ import s8.n0;
 import s8.t;
 import s8.v;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class f implements y1, z, m {
     public final y a;
@@ -103,7 +103,7 @@ public final class f implements y1, z, m {
     @Override // o4.z
     public final void g(int i10, o4.v vVar, o4.j jVar, r rVar, IOException iOException, boolean z4) {
         a o10 = o(i10, vVar);
-        q(o10, 1003, new gg.f(o10, jVar, rVar, iOException, z4));
+        q(o10, 1003, new hg.f(o10, jVar, rVar, iOException, z4));
     }
 
     @Override // o4.z
@@ -254,7 +254,7 @@ public final class f implements y1, z, m {
     public final void onPlayerError(t1 t1Var) {
         u uVar;
         a l10 = (!(t1Var instanceof n) || (uVar = ((n) t1Var).n) == null) ? l() : n(new o4.v(uVar));
-        q(l10, 10, new gg.f(l10, t1Var, 17));
+        q(l10, 10, new hg.f(l10, t1Var, 17));
     }
 
     @Override // j3.y1
@@ -355,7 +355,7 @@ public final class f implements y1, z, m {
         a9.a aVar = this.d;
         aVar.d = a9.a.o(a2Var, (v) aVar.b, (o4.v) aVar.e, (m2) aVar.a);
         a l10 = l();
-        q(l10, 11, new gg.m2(l10, i10, z1Var, z1Var2));
+        q(l10, 11, new hg.m2(l10, i10, z1Var, z1Var2));
     }
 
     @Override // j3.y1

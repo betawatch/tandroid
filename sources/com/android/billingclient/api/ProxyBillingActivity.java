@@ -10,9 +10,9 @@ import com.google.android.gms.internal.play_billing.m3;
 import com.google.android.gms.internal.play_billing.u;
 import p2.g;
 import p2.h;
-import p2.z;
+import p2.y;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class ProxyBillingActivity extends Activity {
     public ResultReceiver a;
@@ -29,9 +29,9 @@ public class ProxyBillingActivity extends Activity {
         g a2 = h.a();
         a2.a = 6;
         a2.c = "An internal error occurred.";
-        h e = a2.e();
-        int i11 = z.a;
-        b10.putExtra("FAILURE_LOGGING_PAYLOAD", z.b(i10, 2, e, null, m3.b).a());
+        h e6 = a2.e();
+        int i11 = y.a;
+        b10.putExtra("FAILURE_LOGGING_PAYLOAD", y.b(i10, 2, e6, null, m3.b).a());
         b10.putExtra("INTENT_SOURCE", "LAUNCH_BILLING_FLOW");
         b10.putExtra("billingClientTransactionId", j10);
         b10.putExtra("wasServiceAutoReconnected", this.f);
@@ -170,8 +170,8 @@ public class ProxyBillingActivity extends Activity {
         try {
             this.b = true;
             startIntentSenderForResult(pendingIntent.getIntentSender(), this.d, new Intent(), 0, 0, 0);
-        } catch (IntentSender.SendIntentException e) {
-            u.i("ProxyBillingActivity", "Got exception while trying to start a purchase flow.", e);
+        } catch (IntentSender.SendIntentException e6) {
+            u.i("ProxyBillingActivity", "Got exception while trying to start a purchase flow.", e6);
             ResultReceiver resultReceiver = this.a;
             if (resultReceiver != null) {
                 resultReceiver.send(0, null);

@@ -8,7 +8,7 @@ import h5.d0;
 import h5.w;
 import j3.m0;
 import j3.n0;
-import j7.p7;
+import j7.q7;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.InterruptedIOException;
@@ -19,11 +19,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
-import k7.z6;
+import k7.a7;
 import org.telegram.messenger.MediaController;
 import s8.i0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class k extends q4.k {
     public static final AtomicInteger Y = new AtomicInteger();
@@ -82,7 +82,7 @@ public final class k extends q4.k {
     }
 
     public static byte[] e(String str) {
-        if (z6.b(str).startsWith("0x")) {
+        if (a7.b(str).startsWith("0x")) {
             str = str.substring(2);
         }
         byte[] byteArray = new BigInteger(str, 16).toByteArray();
@@ -138,14 +138,14 @@ public final class k extends q4.k {
         try {
             r3.h g10 = g(mVar, b10);
             if (r0) {
-                g10.u(this.R);
+                g10.s(this.R);
             }
             while (!this.T && this.P.a.h(g10, b.d) == 0) {
                 try {
                     try {
-                    } catch (EOFException e) {
+                    } catch (EOFException e6) {
                         if ((this.d.e & 16384) == 0) {
-                            throw e;
+                            throw e6;
                         }
                         this.P.a.d(0L, 0L);
                         j10 = g10.d;
@@ -159,10 +159,10 @@ public final class k extends q4.k {
             this.R = (int) (j10 - pVar.e);
         } catch (Exception unused) {
         } catch (Throwable th3) {
-            p7.a(mVar);
+            q7.a(mVar);
             throw th3;
         }
-        p7.a(mVar);
+        q7.a(mVar);
     }
 
     public final int f(int i10) {
@@ -206,7 +206,7 @@ public final class k extends q4.k {
                 hVar.f = 0;
                 try {
                     wVar.C(10);
-                    hVar.h(wVar.a, 0, 10, false);
+                    hVar.f(wVar.a, 0, 10, false);
                 } catch (EOFException unused) {
                     j10 = -9223372036854775807L;
                 }
@@ -223,7 +223,7 @@ public final class k extends q4.k {
                         wVar.C(i13);
                         System.arraycopy(bArr, 0, wVar.a, 0, 10);
                     }
-                    hVar.h(wVar.a, 10, t6, false);
+                    hVar.f(wVar.a, 10, t6, false);
                     e4.c c3 = this.L.c(t6, wVar.a);
                     if (c3 != null) {
                         for (e4.b bVar3 : c3.a) {
@@ -437,13 +437,13 @@ public final class k extends q4.k {
             return hVar;
         } catch (InterruptedException unused3) {
             throw new InterruptedIOException();
-        } catch (TimeoutException e) {
-            throw new IOException(e);
+        } catch (TimeoutException e6) {
+            throw new IOException(e6);
         }
     }
 
     @Override // g5.j0
-    public final void r() {
+    public final void l() {
         this.T = true;
     }
 }

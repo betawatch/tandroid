@@ -8,9 +8,9 @@ import android.media.audiofx.NoiseSuppressor;
 import android.text.TextUtils;
 import java.nio.ByteBuffer;
 import java.util.regex.Pattern;
-import nh.n4;
+import oh.z1;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class AudioRecordJNI {
     private AcousticEchoCanceler aec;
@@ -74,8 +74,8 @@ public class AudioRecordJNI {
                 } else {
                     this.audioRecord.read(this.buffer, 1920);
                 }
-            } catch (Exception e) {
-                VLog.e(e);
+            } catch (Exception e6) {
+                VLog.e(e6);
             }
             if (!this.running) {
                 this.audioRecord.stop();
@@ -93,8 +93,8 @@ public class AudioRecordJNI {
         }
         try {
             return Pattern.compile(string);
-        } catch (Exception e) {
-            VLog.e(e);
+        } catch (Exception e6) {
+            VLog.e(e6);
             return null;
         }
     }
@@ -106,7 +106,7 @@ public class AudioRecordJNI {
             throw new IllegalStateException("thread already started");
         }
         this.running = true;
-        Thread thread = new Thread(new n4(29, this, this.needResampling ? ByteBuffer.allocateDirect(1764) : null));
+        Thread thread = new Thread(new z1(28, this, this.needResampling ? ByteBuffer.allocateDirect(1764) : null));
         this.thread = thread;
         thread.start();
     }
@@ -129,14 +129,14 @@ public class AudioRecordJNI {
         VLog.i(android.support.v4.media.a.k(i10, i11, "Trying to initialize AudioRecord with source=", " and sample rate="));
         try {
             i12 = i11;
-        } catch (Exception e) {
-            e = e;
+        } catch (Exception e6) {
+            e = e6;
             i12 = i11;
         }
         try {
             this.audioRecord = new AudioRecord(i10, i12, 16, 2, getBufferSize(this.bufferSize, 48000));
-        } catch (Exception e6) {
-            e = e6;
+        } catch (Exception e10) {
+            e = e10;
             VLog.e("AudioRecord init failed!", e);
             this.needResampling = i12 == 48000;
             audioRecord = this.audioRecord;
@@ -225,8 +225,8 @@ public class AudioRecordJNI {
         if (thread != null) {
             try {
                 thread.join();
-            } catch (InterruptedException e) {
-                VLog.e(e);
+            } catch (InterruptedException e6) {
+                VLog.e(e6);
             }
             this.thread = null;
         }
@@ -267,8 +267,8 @@ public class AudioRecordJNI {
                     this.audioRecord.startRecording();
                 }
                 return true;
-            } catch (Exception e) {
-                VLog.e("Error initializing AudioRecord", e);
+            } catch (Exception e6) {
+                VLog.e("Error initializing AudioRecord", e6);
             }
         }
         return false;

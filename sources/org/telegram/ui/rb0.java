@@ -1,25 +1,53 @@
 package org.telegram.ui;
 
-import java.util.concurrent.Executor;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rb0 implements Executor {
+public final /* synthetic */ class rb0 implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ xb0 b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ rb0(int i10) {
+    public /* synthetic */ rb0(xb0 xb0Var, String str, int i10) {
         this.a = i10;
+        this.b = xb0Var;
+        this.c = str;
     }
 
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(runnable);
+                xb0 xb0Var = this.b;
+                xb0Var.getClass();
+                String str = this.c;
+                if ("disable".equalsIgnoreCase(str)) {
+                    xb0Var.o("turnPasswordOffRow");
+                }
+                if ("change".equalsIgnoreCase(str)) {
+                    xb0Var.o("changePasswordRow");
+                }
+                if ("change-email".equalsIgnoreCase(str)) {
+                    xb0Var.o("emailRow");
+                    break;
+                }
                 break;
             default:
-                runnable.run();
+                xb0 xb0Var2 = this.b;
+                xb0Var2.getClass();
+                String str2 = this.c;
+                if ("disable".equalsIgnoreCase(str2)) {
+                    xb0Var2.o("disablePasscodeRow");
+                }
+                if ("change".equalsIgnoreCase(str2)) {
+                    xb0Var2.o("changePasscodeRow");
+                }
+                if ("auto-lock".equalsIgnoreCase(str2)) {
+                    xb0Var2.o("autoLockRow");
+                }
+                if ("fingerprint".equalsIgnoreCase(str2)) {
+                    xb0Var2.o("fingerprintRow");
+                    break;
+                }
                 break;
         }
     }

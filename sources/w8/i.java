@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import b6.m;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class i {
     public final String a;
@@ -51,12 +51,12 @@ public final class i {
 
     public final String toString() {
         bf.b bVar = new bf.b(this);
-        bVar.s(this.b, "applicationId");
-        bVar.s(this.a, "apiKey");
-        bVar.s(this.c, "databaseUrl");
-        bVar.s(this.e, "gcmSenderId");
-        bVar.s(this.f, "storageBucket");
-        bVar.s(this.g, "projectId");
+        bVar.r(this.b, "applicationId");
+        bVar.r(this.a, "apiKey");
+        bVar.r(this.c, "databaseUrl");
+        bVar.r(this.e, "gcmSenderId");
+        bVar.r(this.f, "storageBucket");
+        bVar.r(this.g, "projectId");
         return bVar.toString();
     }
 }

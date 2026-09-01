@@ -8,36 +8,21 @@ import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.f1;
 import r0.j0;
-import s0.e;
+import s0.d;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a extends f1 {
     public final /* synthetic */ b c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public a(b bVar) {
-        super(18);
+        super(17);
         this.c = bVar;
     }
 
     @Override // org.telegram.ui.Cells.f1
-    public final e D(int i10) {
-        return new e(AccessibilityNodeInfo.obtain(this.c.j(i10).a));
-    }
-
-    @Override // org.telegram.ui.Cells.f1
-    public final e F(int i10) {
-        b bVar = this.c;
-        int i11 = i10 == 2 ? bVar.k : bVar.l;
-        if (i11 == Integer.MIN_VALUE) {
-            return null;
-        }
-        return D(i11);
-    }
-
-    @Override // org.telegram.ui.Cells.f1
-    public final boolean S(int i10, int i11, Bundle bundle) {
+    public final boolean D(int i10, int i11, Bundle bundle) {
         int i12;
         int i13;
         b bVar = this.c;
@@ -89,5 +74,20 @@ public final class a extends f1 {
             return true;
         }
         return false;
+    }
+
+    @Override // org.telegram.ui.Cells.f1
+    public final d i(int i10) {
+        return new d(AccessibilityNodeInfo.obtain(this.c.j(i10).a));
+    }
+
+    @Override // org.telegram.ui.Cells.f1
+    public final d o(int i10) {
+        b bVar = this.c;
+        int i11 = i10 == 2 ? bVar.k : bVar.l;
+        if (i11 == Integer.MIN_VALUE) {
+            return null;
+        }
+        return i(i11);
     }
 }

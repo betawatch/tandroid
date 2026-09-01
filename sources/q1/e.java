@@ -6,7 +6,7 @@ import android.text.method.MetaKeyKeyListener;
 import android.view.KeyEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class e implements KeyListener {
     public final KeyListener a;
@@ -32,7 +32,7 @@ public final class e implements KeyListener {
     public final boolean onKeyDown(View view, Editable editable, int i10, KeyEvent keyEvent) {
         boolean z4;
         this.b.getClass();
-        if (i10 != 67 ? i10 != 112 ? false : bf.b.v(editable, keyEvent, true) : bf.b.v(editable, keyEvent, false)) {
+        if (i10 != 67 ? i10 != 112 ? false : bf.b.u(editable, keyEvent, true) : bf.b.u(editable, keyEvent, false)) {
             MetaKeyKeyListener.adjustMetaAfterKeypress(editable);
             z4 = true;
         } else {

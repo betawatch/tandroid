@@ -5,20 +5,19 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.util.StateSet;
-import cg.f1;
-import cg.f2;
 import d4.t;
-import dg.j;
-import dg.q3;
-import gg.v1;
+import dg.e1;
+import dg.e2;
+import eg.j;
+import eg.o3;
+import hg.v1;
 import j3.c0;
 import j3.f0;
 import java.util.ArrayList;
 import java.util.Collections;
-import kh.a2;
-import lh.q;
-import lh.t7;
-import nh.t6;
+import mh.p;
+import mh.t7;
+import oh.t6;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.FileLog;
@@ -32,7 +31,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d2;
-import org.telegram.ui.ActionBar.e5;
+import org.telegram.ui.ActionBar.f5;
 import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Cells.e0;
 import org.telegram.ui.Cells.k1;
@@ -40,19 +39,19 @@ import org.telegram.ui.Cells.t1;
 import org.telegram.ui.Cells.z;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.bd;
-import org.telegram.ui.Components.e90;
 import org.telegram.ui.Components.eg;
-import org.telegram.ui.Components.gj0;
+import org.telegram.ui.Components.g90;
 import org.telegram.ui.Components.h8;
+import org.telegram.ui.Components.ij0;
 import org.telegram.ui.Components.l1;
-import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.u1;
 import org.telegram.ui.Components.uf;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.fe;
-import org.telegram.ui.ft0;
-import org.telegram.ui.gs0;
 import org.telegram.ui.h;
+import org.telegram.ui.ht0;
+import org.telegram.ui.is0;
 import org.telegram.ui.jn;
 import org.telegram.ui.pm;
 import org.telegram.ui.s4;
@@ -60,9 +59,9 @@ import org.telegram.ui.vi;
 import org.telegram.ui.wi;
 import org.telegram.ui.xi;
 import org.telegram.ui.xn;
-import ph.f3;
+import qh.f3;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -105,7 +104,7 @@ public final /* synthetic */ class b implements Runnable {
                 }
                 break;
             case 1:
-                ((ah.b) obj).v0(i12, 0, null);
+                ((bh.b) obj).v0(i12, 0, null);
                 break;
             case 2:
                 j jVar = (j) obj;
@@ -125,32 +124,32 @@ public final /* synthetic */ class b implements Runnable {
                 }
                 ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
                 jVar.M = duration;
-                duration.setInterpolator(nr.f);
-                jVar.M.addUpdateListener(new dg.f(jVar, 5));
-                jVar.M.addListener(new dg.g(jVar, r5));
+                duration.setInterpolator(pr.f);
+                jVar.M.addUpdateListener(new eg.f(jVar, 5));
+                jVar.M.addListener(new eg.g(jVar, r5));
                 jVar.M.start();
                 break;
             case 3:
-                ft0 ft0Var = (ft0) obj;
-                f2 f2Var = ft0Var.H1;
-                ft0Var.s0(f2Var, null);
-                f1.e(i12).j(f2Var.c);
+                ht0 ht0Var = (ht0) obj;
+                e2 e2Var = ht0Var.H1;
+                ht0Var.s0(e2Var, null);
+                e1.e(i12).j(e2Var.c);
                 break;
             case 4:
-                q3 q3Var = (q3) obj;
-                q3Var.getClass();
+                o3 o3Var = (o3) obj;
+                o3Var.getClass();
                 NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.customStickerCreated, Boolean.FALSE);
-                q3Var.h();
+                o3Var.h();
                 break;
             case 5:
-                e90 e90Var = ((v1) obj).e;
+                g90 g90Var = ((v1) obj).e;
                 try {
-                    if (e90Var.getLayout().getLineForOffset(i12) == 0) {
-                        e90Var.getEditableText().insert(i12, "\n");
+                    if (g90Var.getLayout().getLineForOffset(i12) == 0) {
+                        g90Var.getEditableText().insert(i12, "\n");
                         break;
                     }
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e6) {
+                    FileLog.e(e6);
                     return;
                 }
                 break;
@@ -195,16 +194,16 @@ public final /* synthetic */ class b implements Runnable {
             case 7:
                 Bundle bundle = new Bundle();
                 bundle.putLong("user_id", UserConfig.getInstance(i12).clientUserId);
-                ((e5) obj).getLastFragment().presentFragment(new ProfileActivity(bundle, null));
+                ((f5) obj).getLastFragment().presentFragment(new ProfileActivity(bundle, null));
                 break;
             case 8:
-                g.s(((q) obj).getParentActivity(), LocaleController.getString(i12));
+                g.s(((p) obj).getParentActivity(), LocaleController.getString(i12));
                 break;
             case 9:
                 ConnectionsManager.getInstance(((t7) obj).a).cancelRequest(i12, true);
                 break;
             case 10:
-                mg.f fVar = (mg.f) obj;
+                ng.f fVar = (ng.f) obj;
                 if (fVar.b) {
                     Utilities.Callback callback = fVar.d;
                     if (callback != null) {
@@ -258,7 +257,7 @@ public final /* synthetic */ class b implements Runnable {
                                 t1Var.k();
                                 k1 k1Var = t1Var.Gc;
                                 if (k1Var != null) {
-                                    k1Var.J1(t1Var, e0Var.i);
+                                    k1Var.O1(t1Var, e0Var.i);
                                 }
                             }
                         }
@@ -322,7 +321,7 @@ public final /* synthetic */ class b implements Runnable {
                 AndroidUtilities.runOnUIThread(new u1((MessagesStorage.BooleanCallback) obj, r6), 250L);
                 break;
             case 26:
-                e90 e90Var2 = (e90) obj;
+                g90 g90Var2 = (g90) obj;
                 ArrayList<TLRPC.PrivacyRule> privacyRules = ContactsController.getInstance(i12).getPrivacyRules(11);
                 String string = LocaleController.getString(R.string.EditProfileBirthdayInfoContacts);
                 if (privacyRules != null && !privacyRules.isEmpty()) {
@@ -340,7 +339,7 @@ public final /* synthetic */ class b implements Runnable {
                         }
                     }
                 }
-                e90Var2.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(string, new l1(privacyRules, objArr == true ? 1 : 0)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(0.66f)));
+                g90Var2.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(string, new l1(privacyRules, objArr == true ? 1 : 0)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(0.66f)));
                 break;
             case 27:
                 ((h8) obj).b(i12);
@@ -377,12 +376,12 @@ public final /* synthetic */ class b implements Runnable {
                         f3Var.a0 = 0.0f;
                         charSequence = replaceTags;
                     }
-                    f3Var.setTranslationY(((-Math.min(AndroidUtilities.dp(34.0f), bdVar.getEditTextHeight())) - AndroidUtilities.dp(14.0f)) * (bdVar instanceof gs0 ? -1.0f : 1.0f));
+                    f3Var.setTranslationY(((-Math.min(AndroidUtilities.dp(34.0f), bdVar.getEditTextHeight())) - AndroidUtilities.dp(14.0f)) * (bdVar instanceof is0 ? -1.0f : 1.0f));
                     f3Var.t(charSequence);
                     int i15 = i12 > 0 ? R.raw.fire_on : R.raw.fire_off;
-                    gj0 gj0Var = new gj0(i15, AndroidUtilities.dp(34.0f), a2.j(i15, ""), AndroidUtilities.dp(34.0f));
-                    gj0Var.start();
-                    f3Var.k(gj0Var);
+                    ij0 ij0Var = new ij0(i15, AndroidUtilities.dp(34.0f), l.d.j(i15, ""), AndroidUtilities.dp(34.0f));
+                    ij0Var.start();
+                    f3Var.k(ij0Var);
                     f3Var.v();
                     bdVar.l1 = false;
                     AndroidUtilities.cancelRunOnUIThread(bdVar.m1);

@@ -2,9 +2,9 @@ package s5;
 
 import android.util.Log;
 import com.google.android.gms.common.api.Status;
-import org.telegram.ui.Components.g50;
+import org.telegram.ui.Components.i50;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q {
     public final /* synthetic */ int a;
@@ -29,9 +29,9 @@ public final /* synthetic */ class q {
                 cVar.l = null;
                 if (!cVar.h.isEmpty()) {
                     a7.e eVar = cVar.i;
-                    g50 g50Var = cVar.j;
-                    eVar.removeCallbacks(g50Var);
-                    eVar.postDelayed(g50Var, 500L);
+                    i50 i50Var = cVar.j;
+                    eVar.removeCallbacks(i50Var);
+                    eVar.postDelayed(i50Var, 500L);
                     break;
                 }
                 break;
@@ -46,9 +46,9 @@ public final /* synthetic */ class q {
                 cVar2.k = null;
                 if (!cVar2.h.isEmpty()) {
                     a7.e eVar2 = cVar2.i;
-                    g50 g50Var2 = cVar2.j;
-                    eVar2.removeCallbacks(g50Var2);
-                    eVar2.postDelayed(g50Var2, 500L);
+                    i50 i50Var2 = cVar2.j;
+                    eVar2.removeCallbacks(i50Var2);
+                    eVar2.postDelayed(i50Var2, 500L);
                     break;
                 }
                 break;

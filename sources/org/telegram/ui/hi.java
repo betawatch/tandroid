@@ -12,20 +12,20 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class hi implements View.OnClickListener {
-    public final /* synthetic */ wh0 a;
-    public final /* synthetic */ org.telegram.ui.Components.sl0 b;
+    public final /* synthetic */ xh0 a;
+    public final /* synthetic */ org.telegram.ui.Components.tl0 b;
     public final /* synthetic */ LinearLayout c;
     public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout d;
     public final /* synthetic */ int[] e;
     public final /* synthetic */ xn f;
 
-    public hi(xn xnVar, wh0 wh0Var, org.telegram.ui.Components.sl0 sl0Var, LinearLayout linearLayout, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
+    public hi(xn xnVar, xh0 xh0Var, org.telegram.ui.Components.tl0 tl0Var, LinearLayout linearLayout, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
         this.f = xnVar;
-        this.a = wh0Var;
-        this.b = sl0Var;
+        this.a = xh0Var;
+        this.b = tl0Var;
         this.c = linearLayout;
         this.d = actionBarPopupWindow$ActionBarPopupWindowLayout;
         this.e = iArr;
@@ -33,9 +33,9 @@ public final class hi implements View.OnClickListener {
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        wh0 wh0Var = this.a;
-        ArrayList arrayList = wh0Var.b;
-        ArrayList arrayList2 = wh0Var.c;
+        xh0 xh0Var = this.a;
+        ArrayList arrayList = xh0Var.b;
+        ArrayList arrayList2 = xh0Var.c;
         xn xnVar = this.f;
         if (xnVar.N8 == null || arrayList2.isEmpty()) {
             return;
@@ -62,10 +62,10 @@ public final class hi implements View.OnClickListener {
             t6.j();
             SharedConfig.updateMessageSeenHintCount(SharedConfig.messageSeenHintCount - 1);
         }
-        org.telegram.ui.Components.sl0 sl0Var = this.b;
-        sl0Var.requestLayout();
+        org.telegram.ui.Components.tl0 tl0Var = this.b;
+        tl0Var.requestLayout();
         this.c.requestLayout();
-        sl0Var.getAdapter().l();
+        tl0Var.getAdapter().l();
         this.d.getSwipeBack().e(this.e[0]);
     }
 }

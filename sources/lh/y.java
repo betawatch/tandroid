@@ -1,58 +1,35 @@
 package lh;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_payments;
+import android.content.Context;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.g6;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes4.dex */
-public final class y {
-    public final int a;
-    public final long b;
-    public int c;
-    public boolean d;
-    public final ArrayList e = new ArrayList();
-    public long f;
-    public boolean g;
-    public boolean h;
-    public int i;
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class y implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ g6 c;
+    public final /* synthetic */ TL_stars.StarGift d;
 
-    public y(int i10, long j10) {
-        this.g = false;
-        this.h = false;
+    public /* synthetic */ y(Context context, g6 g6Var, TL_stars.StarGift starGift, int i10) {
         this.a = i10;
-        this.b = j10;
-        if (System.currentTimeMillis() - this.f > 900000) {
-            this.c = 0;
-            this.h = false;
-            this.d = false;
-            if (this.i != 0) {
-                ConnectionsManager.getInstance(i10).cancelRequest(this.i, true);
-                this.i = 0;
-            }
-            this.g = false;
-            a();
-        }
+        this.b = context;
+        this.c = g6Var;
+        this.d = starGift;
     }
 
-    public final void a() {
-        if (this.g || this.h || this.d) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                g6 g6Var = this.c;
+                f0.U(this.b, this.d, g6Var);
+                break;
+            default:
+                g6 g6Var2 = this.c;
+                f0.U(this.b, this.d, g6Var2);
+                break;
         }
-        this.f = System.currentTimeMillis();
-        this.g = true;
-        TL_payments.getConnectedStarRefBots getconnectedstarrefbots = new TL_payments.getConnectedStarRefBots();
-        int i10 = this.a;
-        getconnectedstarrefbots.peer = MessagesController.getInstance(i10).getInputPeer(this.b);
-        getconnectedstarrefbots.limit = 20;
-        ArrayList arrayList = this.e;
-        if (!arrayList.isEmpty()) {
-            TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) kh.a2.i(1, arrayList);
-            getconnectedstarrefbots.flags |= 4;
-            getconnectedstarrefbots.offset_date = connectedbotstarref.date;
-            getconnectedstarrefbots.offset_link = connectedbotstarref.url;
-        }
-        this.i = ConnectionsManager.getInstance(i10).sendRequest(getconnectedstarrefbots, new gf.a(this, 6));
     }
 }

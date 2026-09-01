@@ -16,7 +16,7 @@ import r3.n;
 import r3.v;
 import s8.t;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class b implements k {
     public int c;
@@ -94,11 +94,11 @@ public final class b implements k {
                         if (!i(lVar)) {
                             throw r1.a("AVI Header List not found", null);
                         }
-                        ((r3.h) lVar).u(12);
+                        ((r3.h) lVar).s(12);
                         this.c = 1;
                         return 0;
                     case 1:
-                        ((r3.h) lVar).d(wVar.a, 0, 12, false);
+                        ((r3.h) lVar).c(wVar.a, 0, 12, false);
                         wVar.F(0);
                         aVar.getClass();
                         aVar.a = wVar.i();
@@ -118,7 +118,7 @@ public final class b implements k {
                     case 2:
                         int i13 = this.j - 4;
                         w wVar2 = new w(i13);
-                        ((r3.h) lVar).d(wVar2.a, 0, i13, false);
+                        ((r3.h) lVar).c(wVar2.a, 0, i13, false);
                         f b10 = f.b(1819436136, wVar2);
                         int i14 = b10.b;
                         if (i14 != 1819436136) {
@@ -159,9 +159,9 @@ public final class b implements k {
                                     }
                                     int g10 = o.g(n0Var.C);
                                     if (g10 == 1 || g10 == 2) {
-                                        v c22 = this.d.c2(i15, g10);
-                                        c22.b(new n0(a2));
-                                        eVar = new e(i15, g10, N, dVar.d, c22);
+                                        v i22 = this.d.i2(i15, g10);
+                                        i22.b(new n0(a2));
+                                        eVar = new e(i15, g10, N, dVar.d, i22);
                                         this.f = N;
                                         if (eVar != null) {
                                             arrayList.add(eVar);
@@ -176,7 +176,7 @@ public final class b implements k {
                             }
                         }
                         this.g = (e[]) arrayList.toArray(new e[0]);
-                        this.d.f1();
+                        this.d.i1();
                         this.c = 3;
                         return 0;
                     case 3:
@@ -185,7 +185,7 @@ public final class b implements k {
                             this.h = j12;
                             return 0;
                         }
-                        ((r3.h) lVar).h(wVar.a, 0, 12, false);
+                        ((r3.h) lVar).f(wVar.a, 0, 12, false);
                         r3.h hVar2 = (r3.h) lVar;
                         hVar2.f = 0;
                         wVar.F(0);
@@ -196,7 +196,7 @@ public final class b implements k {
                         int i18 = wVar.i();
                         int i19 = aVar.a;
                         if (i19 == 1179011410) {
-                            hVar2.u(12);
+                            hVar2.s(12);
                             return 0;
                         }
                         if (i19 != 1414744396 || i18 != 1769369453) {
@@ -214,14 +214,14 @@ public final class b implements k {
                                 this.h = this.l;
                                 return 0;
                             }
-                            this.d.g2(new n(this.f));
+                            this.d.m2(new n(this.f));
                             this.n = true;
                         }
                         this.h = hVar2.d + 12;
                         this.c = 6;
                         return 0;
                     case 4:
-                        ((r3.h) lVar).d(wVar.a, 0, 8, false);
+                        ((r3.h) lVar).c(wVar.a, 0, 8, false);
                         wVar.F(0);
                         int i20 = wVar.i();
                         int i21 = wVar.i();
@@ -234,32 +234,32 @@ public final class b implements k {
                         return 0;
                     case 5:
                         w wVar3 = new w(this.m);
-                        ((r3.h) lVar).d(wVar3.a, 0, this.m, false);
+                        ((r3.h) lVar).c(wVar3.a, 0, this.m, false);
                         if (wVar3.a() >= 16) {
-                            int i22 = wVar3.b;
+                            int i23 = wVar3.b;
                             wVar3.G(8);
-                            long i23 = wVar3.i();
+                            long i24 = wVar3.i();
                             long j14 = this.k;
-                            r7 = i23 <= j14 ? j14 + 8 : 0L;
-                            wVar3.F(i22);
+                            r7 = i24 <= j14 ? j14 + 8 : 0L;
+                            wVar3.F(i23);
                         }
                         while (wVar3.a() >= 16) {
-                            int i24 = wVar3.i();
                             int i25 = wVar3.i();
-                            long i26 = wVar3.i() + r7;
+                            int i26 = wVar3.i();
+                            long i27 = wVar3.i() + r7;
                             wVar3.i();
                             e[] eVarArr = this.g;
                             int length = eVarArr.length;
                             while (true) {
                                 if (i10 < length) {
                                     eVar2 = eVarArr[i10];
-                                    i10 = (eVar2.b == i24 || eVar2.c == i24) ? 0 : i10 + 1;
+                                    i10 = (eVar2.b == i25 || eVar2.c == i25) ? 0 : i10 + 1;
                                 } else {
                                     eVar2 = null;
                                 }
                             }
                             if (eVar2 != null) {
-                                if ((i25 & 16) == 16) {
+                                if ((i26 & 16) == 16) {
                                     if (eVar2.j == eVar2.l.length) {
                                         long[] jArr = eVar2.k;
                                         eVar2.k = Arrays.copyOf(jArr, (jArr.length * 3) / 2);
@@ -267,10 +267,10 @@ public final class b implements k {
                                         eVar2.l = Arrays.copyOf(iArr, (iArr.length * 3) / 2);
                                     }
                                     long[] jArr2 = eVar2.k;
-                                    int i27 = eVar2.j;
-                                    jArr2[i27] = i26;
-                                    eVar2.l[i27] = eVar2.i;
-                                    eVar2.j = i27 + 1;
+                                    int i28 = eVar2.j;
+                                    jArr2[i28] = i27;
+                                    eVar2.l[i28] = eVar2.i;
+                                    eVar2.j = i28 + 1;
                                 }
                                 eVar2.i++;
                             }
@@ -280,7 +280,7 @@ public final class b implements k {
                             eVar4.l = Arrays.copyOf(eVar4.l, eVar4.j);
                         }
                         this.n = true;
-                        this.d.g2(new n(this, this.f, 2));
+                        this.d.m2(new n(this, this.f, 2));
                         this.c = 6;
                         this.h = this.k;
                         return 0;
@@ -290,15 +290,15 @@ public final class b implements k {
                         }
                         e eVar5 = this.i;
                         if (eVar5 != null) {
-                            int i28 = eVar5.g;
-                            int e = i28 - eVar5.a.e(lVar, i28, false);
-                            eVar5.g = e;
-                            boolean z10 = e == 0;
+                            int i29 = eVar5.g;
+                            int e6 = i29 - eVar5.a.e(lVar, i29, false);
+                            eVar5.g = e6;
+                            boolean z10 = e6 == 0;
                             if (z10) {
                                 if (eVar5.f > 0) {
                                     v vVar = eVar5.a;
-                                    int i29 = eVar5.h;
-                                    vVar.c((eVar5.d * i29) / eVar5.e, Arrays.binarySearch(eVar5.l, i29) >= 0 ? 1 : 0, eVar5.f, 0, null);
+                                    int i30 = eVar5.h;
+                                    vVar.c((eVar5.d * i30) / eVar5.e, Arrays.binarySearch(eVar5.l, i30) >= 0 ? 1 : 0, eVar5.f, 0, null);
                                 }
                                 eVar5.h++;
                             }
@@ -309,33 +309,33 @@ public final class b implements k {
                         }
                         r3.h hVar3 = (r3.h) lVar;
                         if ((hVar3.d & 1) == 1) {
-                            hVar3.u(1);
+                            hVar3.s(1);
                         }
-                        hVar3.h(wVar.a, 0, 12, false);
+                        hVar3.f(wVar.a, 0, 12, false);
                         wVar.F(0);
-                        int i30 = wVar.i();
-                        if (i30 == 1414744396) {
+                        int i31 = wVar.i();
+                        if (i31 == 1414744396) {
                             wVar.F(8);
-                            hVar3.u(wVar.i() == 1769369453 ? 12 : 8);
+                            hVar3.s(wVar.i() == 1769369453 ? 12 : 8);
                             hVar3.f = 0;
                             return 0;
                         }
-                        int i31 = wVar.i();
-                        if (i30 == 1263424842) {
-                            this.h = hVar3.d + i31 + 8;
+                        int i32 = wVar.i();
+                        if (i31 == 1263424842) {
+                            this.h = hVar3.d + i32 + 8;
                             return 0;
                         }
-                        hVar3.u(8);
+                        hVar3.s(8);
                         hVar3.f = 0;
                         for (e eVar6 : this.g) {
-                            if (eVar6.b == i30 || eVar6.c == i30) {
+                            if (eVar6.b == i31 || eVar6.c == i31) {
                                 eVar3 = eVar6;
                                 if (eVar3 != null) {
-                                    this.h = hVar3.d + i31;
+                                    this.h = hVar3.d + i32;
                                     return 0;
                                 }
-                                eVar3.f = i31;
-                                eVar3.g = i31;
+                                eVar3.f = i32;
+                                eVar3.g = i32;
                                 this.i = eVar3;
                                 return 0;
                             }
@@ -347,7 +347,7 @@ public final class b implements k {
                         throw new AssertionError();
                 }
             } else {
-                ((r3.h) lVar).u((int) (j10 - j11));
+                ((r3.h) lVar).s((int) (j10 - j11));
             }
         }
         z4 = false;
@@ -359,7 +359,7 @@ public final class b implements k {
     @Override // r3.k
     public final boolean i(l lVar) {
         w wVar = this.a;
-        lVar.c(0, 12, wVar.a);
+        lVar.b(0, 12, wVar.a);
         wVar.F(0);
         if (wVar.i() == 1179011410) {
             wVar.G(4);

@@ -1,45 +1,43 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.graphics.Rect;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class tr0 extends qt0 {
-    public final /* synthetic */ yu0 J;
+public final class tr0 extends org.telegram.ui.m11 {
+    public final /* synthetic */ zu0 E;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tr0(yu0 yu0Var, Context context) {
-        super(context);
-        this.J = yu0Var;
+    public tr0(zu0 zu0Var, Context context, qv0 qv0Var, oh.h6 h6Var, sr0 sr0Var) {
+        super(context, qv0Var, h6Var, sr0Var);
+        this.E = zu0Var;
     }
 
-    @Override // android.view.View
-    public final void setTranslationX(float f10) {
-        qt0 qt0Var;
-        super.setTranslationX(f10);
-        yu0 yu0Var = this.J;
-        qt0[] qt0VarArr = yu0Var.h0;
-        if (yu0Var.d1 && (qt0Var = qt0VarArr[0]) == this) {
-            float abs = Math.abs(qt0Var.getTranslationX()) / qt0VarArr[0].getMeasuredWidth();
-            yu0Var.Z0(abs, qt0VarArr[1].C);
-            if (yu0Var.D()) {
-                int i10 = yu0Var.u0;
-                if (i10 == 2) {
-                    yu0Var.l0 = 1.0f - abs;
-                } else if (i10 == 1) {
-                    yu0Var.l0 = abs;
+    @Override // org.telegram.ui.m11
+    public final void a() {
+        xr0 xr0Var;
+        int measuredWidth = getMeasuredWidth();
+        int visualHeight = (int) getVisualHeight();
+        Rect rect = this.C;
+        rect.set(0, 0, measuredWidth, visualHeight);
+        setClipBounds(rect);
+        invalidate();
+        zu0 zu0Var = this.E;
+        rt0[] rt0VarArr = zu0Var.h0;
+        if (rt0VarArr != null) {
+            for (rt0 rt0Var : rt0VarArr) {
+                if (rt0Var != null && (xr0Var = rt0Var.h) != null) {
+                    int paddingLeft = xr0Var.getPaddingLeft();
+                    int Z = zu0Var.Z(rt0Var.C);
+                    int paddingRight = rt0Var.h.getPaddingRight();
+                    xr0 xr0Var2 = rt0Var.h;
+                    int Y = zu0Var.Y(zu0Var.v0());
+                    xr0Var2.b3 = Y;
+                    xr0Var.setPadding(paddingLeft, Z, paddingRight, Y);
                 }
-                yu0Var.s1(abs);
-                float a02 = yu0Var.a0(abs);
-                yu0Var.m0 = a02;
-                yu0Var.o0.setVisibility((a02 == 0.0f || !yu0Var.D() || yu0Var.q0()) ? 4 : 0);
-            } else {
-                yu0Var.l0 = 0.0f;
             }
-            yu0Var.q1(false);
         }
-        yu0Var.I();
-        yu0Var.K();
-        yu0Var.o0();
+        zu0Var.K();
     }
 }

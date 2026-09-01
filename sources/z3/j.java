@@ -4,11 +4,10 @@ import b4.e0;
 import h5.w;
 import java.nio.ByteBuffer;
 import java.util.UUID;
-import kh.a2;
 import org.telegram.messenger.TranslateController;
 import s8.v;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class j {
     public static final String[] a = {"Blues", "Classic Rock", "Country", "Dance", "Disco", "Funk", "Grunge", "Hip-Hop", "Jazz", "Metal", "New Age", "Oldies", "Other", "Pop", "R&B", "Rap", "Reggae", "Rock", "Techno", "Industrial", "Alternative", "Ska", "Death Metal", "Pranks", "Soundtrack", "Euro-Techno", "Ambient", "Trip-Hop", "Vocal", "Jazz+Funk", "Fusion", "Trance", "Classical", "Instrumental", "Acid", "House", "Game", "Sound Clip", "Gospel", "Noise", "AlternRock", "Bass", "Soul", "Punk", "Space", "Meditative", "Instrumental Pop", "Instrumental Rock", "Ethnic", "Gothic", "Darkwave", "Techno-Industrial", "Electronic", "Pop-Folk", "Eurodance", "Dream", "Southern Rock", "Comedy", "Cult", "Gangsta", "Top 40", "Christian Rap", "Pop/Funk", "Jungle", "Native American", "Cabaret", "New Wave", "Psychadelic", "Rave", "Showtunes", "Trailer", "Lo-Fi", "Tribal", "Acid Punk", "Acid Jazz", "Polka", "Retro", "Musical", "Rock & Roll", "Hard Rock", "Folk", "Folk-Rock", "National Folk", "Swing", "Fast Fusion", "Bebob", "Latin", "Revival", "Celtic", "Bluegrass", "Avantgarde", "Gothic Rock", "Progressive Rock", "Psychedelic Rock", "Symphonic Rock", "Slow Rock", "Big Band", "Chorus", "Easy Listening", "Acoustic", "Humour", "Speech", "Chanson", "Opera", "Chamber Music", "Sonata", "Symphony", "Booty Bass", "Primus", "Porn Groove", "Satire", "Slow Jam", "Club", "Tango", "Samba", "Folklore", "Ballad", "Power Ballad", "Rhythmic Soul", "Freestyle", "Duet", "Punk Rock", "Drum Solo", "A capella", "Euro-House", "Dance Hall", "Goa", "Drum & Bass", "Club-House", "Hardcore", "Terror", "Indie", "BritPop", "Afro-Punk", "Polsk Punk", "Beat", "Christian Gangsta Rap", "Heavy Metal", "Black Metal", "Crossover", "Contemporary Christian", "Christian Rock", "Merengue", "Salsa", "Thrash Metal", "Anime", "Jpop", "Synthpop", "Abstract", "Art Rock", "Baroque", "Bhangra", "Big beat", "Breakbeat", "Chillout", "Downtempo", "Dub", "EBM", "Eclectic", "Electro", "Electroclash", "Emo", "Experimental", "Garage", "Global", "IDM", "Illbient", "Industro-Goth", "Jam Band", "Krautrock", "Leftfield", "Lounge", "Math Rock", "New Romantic", "Nu-Breakz", "Post-Punk", "Post-Rock", "Psytrance", "Shoegaze", "Space Rock", "Trop Rock", "World Music", "Neoclassical", "Audiobook", "Audio theatre", "Neue Deutsche Welle", "Podcast", "Indie-Rock", "G-Funk", "Dubstep", "Garage Rock", "Psybient"};
@@ -46,7 +45,7 @@ public abstract class j {
             String q10 = wVar.q(g10 - 16);
             return new j4.e(TranslateController.UNKNOWN_LANGUAGE, q10, q10);
         }
-        h5.a.K("MetadataUtil", "Failed to parse comment attribute: " + n3.a.d(i10));
+        h5.a.K("MetadataUtil", "Failed to parse comment attribute: " + n3.a.c(i10));
         return null;
     }
 
@@ -75,7 +74,7 @@ public abstract class j {
             wVar.G(10);
             int z4 = wVar.z();
             if (z4 > 0) {
-                String j10 = a2.j(z4, "");
+                String j10 = l.d.j(z4, "");
                 int z10 = wVar.z();
                 if (z10 > 0) {
                     j10 = j10 + "/" + z10;
@@ -83,7 +82,7 @@ public abstract class j {
                 return new j4.n(str, null, v.x(j10));
             }
         }
-        h5.a.K("MetadataUtil", "Failed to parse index/count attribute: " + n3.a.d(i10));
+        h5.a.K("MetadataUtil", "Failed to parse index/count attribute: " + n3.a.c(i10));
         return null;
     }
 
@@ -107,7 +106,7 @@ public abstract class j {
                 if (x10 == wVar.a()) {
                     ?? r22 = new byte[x10];
                     wVar.e(0, x10, r22);
-                    return new e0(uuid, f10, r22, 24);
+                    return new e0(uuid, f10, r22, 25);
                 }
             }
         }
@@ -115,13 +114,13 @@ public abstract class j {
     }
 
     public static byte[] f(byte[] bArr, UUID uuid) {
-        e0 e = e(bArr);
-        if (e == null) {
+        e0 e6 = e(bArr);
+        if (e6 == null) {
             return null;
         }
-        UUID uuid2 = (UUID) e.c;
+        UUID uuid2 = (UUID) e6.c;
         if (uuid.equals(uuid2)) {
-            return (byte[]) e.d;
+            return (byte[]) e6.d;
         }
         h5.a.K("PsshAtomUtil", "UUID mismatch. Expected: " + uuid + ", got: " + uuid2 + ".");
         return null;
@@ -133,7 +132,7 @@ public abstract class j {
             wVar.G(8);
             return new j4.n(str, null, v.x(wVar.q(g10 - 16)));
         }
-        h5.a.K("MetadataUtil", "Failed to parse text attribute: " + n3.a.d(i10));
+        h5.a.K("MetadataUtil", "Failed to parse text attribute: " + n3.a.c(i10));
         return null;
     }
 
@@ -145,7 +144,7 @@ public abstract class j {
         if (i11 >= 0) {
             return z4 ? new j4.n(str, null, v.x(Integer.toString(i11))) : new j4.e(TranslateController.UNKNOWN_LANGUAGE, str, Integer.toString(i11));
         }
-        h5.a.K("MetadataUtil", "Failed to parse uint8 attribute: " + n3.a.d(i10));
+        h5.a.K("MetadataUtil", "Failed to parse uint8 attribute: " + n3.a.c(i10));
         return null;
     }
 
@@ -177,13 +176,13 @@ public abstract class j {
         boolean z12 = false;
         while (i15 < i13) {
             wVar.C(8);
-            if (!lVar.h(wVar.a, i14, 8, true)) {
+            if (!lVar.f(wVar.a, i14, 8, true)) {
                 break;
             }
             long v = wVar.v();
             int g10 = wVar.g();
             if (v == 1) {
-                lVar.c(8, 8, wVar.a);
+                lVar.b(8, 8, wVar.a);
                 wVar.E(16);
                 i10 = i15;
                 v = wVar.o();
@@ -192,7 +191,7 @@ public abstract class j {
                 if (v == 0) {
                     long length2 = lVar.getLength();
                     if (length2 != j11) {
-                        v = (length2 - lVar.i()) + 8;
+                        v = (length2 - lVar.g()) + 8;
                     }
                 }
                 i10 = i15;
@@ -225,7 +224,7 @@ public abstract class j {
                         return false;
                     }
                     wVar.C(i18);
-                    lVar.c(0, i18, wVar.a);
+                    lVar.b(0, i18, wVar.a);
                     int i19 = i18 / 4;
                     for (int i20 = 0; i20 < i19; i20++) {
                         if (i20 != 1) {
@@ -245,7 +244,7 @@ public abstract class j {
                         return false;
                     }
                 } else if (i18 != 0) {
-                    lVar.n(i18);
+                    lVar.i(i18);
                 }
                 i12 = i17;
             }

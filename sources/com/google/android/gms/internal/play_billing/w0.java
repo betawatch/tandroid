@@ -1,7 +1,7 @@
 package com.google.android.gms.internal.play_billing;
 
 import j$.util.Objects;
-import j7.q6;
+import j7.o6;
 import java.util.Locale;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
@@ -13,7 +13,7 @@ import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class w0 extends l0 implements g0 {
     public t0 n;
@@ -76,8 +76,8 @@ public final class w0 extends l0 implements g0 {
                     try {
                         obj = t0Var.get();
                         break;
-                    } catch (Error e) {
-                        e = e;
+                    } catch (Error e6) {
+                        e = e6;
                         return new e0(e);
                     }
                 } catch (InterruptedException unused) {
@@ -88,13 +88,13 @@ public final class w0 extends l0 implements g0 {
                     }
                     throw th3;
                 }
-            } catch (Error | Exception e6) {
-                e = e6;
+            } catch (Error | Exception e10) {
+                e = e10;
                 return new e0(e);
-            } catch (CancellationException e10) {
-                return !isCancelled ? new e0(new IllegalArgumentException("get() threw CancellationException, despite reporting isCancelled() == false: ".concat(String.valueOf(t0Var)), e10)) : new b0(e10, false);
-            } catch (ExecutionException e11) {
-                return isCancelled ? new b0(new IllegalArgumentException("get() did not throw CancellationException, despite reporting isCancelled() == true: ".concat(String.valueOf(t0Var)), e11), false) : new e0(e11.getCause());
+            } catch (CancellationException e11) {
+                return !isCancelled ? new e0(new IllegalArgumentException("get() threw CancellationException, despite reporting isCancelled() == false: ".concat(String.valueOf(t0Var)), e11)) : new b0(e11, false);
+            } catch (ExecutionException e12) {
+                return isCancelled ? new b0(new IllegalArgumentException("get() did not throw CancellationException, despite reporting isCancelled() == true: ".concat(String.valueOf(t0Var)), e12), false) : new e0(e12.getCause());
             }
         }
         if (z4) {
@@ -164,8 +164,8 @@ public final class w0 extends l0 implements g0 {
     public static void j(Runnable runnable, Executor executor) {
         try {
             executor.execute(runnable);
-        } catch (Exception e) {
-            l0.e.a().logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", e2.c.k("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e);
+        } catch (Exception e6) {
+            l0.e.a().logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", e2.c.k("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e6);
         }
     }
 
@@ -282,9 +282,9 @@ public final class w0 extends l0 implements g0 {
         if (k0Var2 != k0Var) {
             k0 k0Var3 = new k0();
             do {
-                q6 q6Var = l0.h;
-                q6Var.c(k0Var3, k0Var2);
-                if (q6Var.g(this, k0Var2, k0Var3)) {
+                o6 o6Var = l0.h;
+                o6Var.c(k0Var3, k0Var2);
+                if (o6Var.g(this, k0Var2, k0Var3)) {
                     do {
                         LockSupport.park(this);
                         if (Thread.interrupted()) {
@@ -322,14 +322,14 @@ public final class w0 extends l0 implements g0 {
             } catch (CancellationException unused2) {
                 sb.append("CANCELLED");
                 return;
-            } catch (ExecutionException e) {
+            } catch (ExecutionException e6) {
                 sb.append("FAILURE, cause=[");
-                sb.append(e.getCause());
+                sb.append(e6.getCause());
                 sb.append("]");
                 return;
-            } catch (Exception e6) {
+            } catch (Exception e10) {
                 sb.append("UNKNOWN, cause=[");
-                sb.append(e6.getClass());
+                sb.append(e10.getClass());
                 sb.append(" thrown from get()]");
                 return;
             }
@@ -455,9 +455,9 @@ public final class w0 extends l0 implements g0 {
                 if (k0Var2 != k0Var) {
                     k0 k0Var3 = new k0();
                     while (true) {
-                        q6 q6Var = l0.h;
-                        q6Var.c(k0Var3, k0Var2);
-                        if (q6Var.g(this, k0Var2, k0Var3)) {
+                        o6 o6Var = l0.h;
+                        o6Var.c(k0Var3, k0Var2);
+                        if (o6Var.g(this, k0Var2, k0Var3)) {
                             j11 = j12;
                             while (true) {
                                 LockSupport.parkNanos(this, Math.min(nanos, 2147483647999999999L));

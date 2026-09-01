@@ -7,7 +7,7 @@ import org.telegram.ui.Components.jb;
 import r3.s;
 import r3.v;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class d implements r3.m {
     public static final jb s = new jb();
@@ -55,11 +55,11 @@ public final class d implements r3.m {
                 cVar.e = cVar.c;
             } else {
                 cVar.f = j11;
-                v k12 = qaVar.k1(cVar.a);
-                cVar.e = k12;
+                v j12 = qaVar.j1(cVar.a);
+                cVar.e = j12;
                 n0 n0Var = cVar.d;
                 if (n0Var != null) {
-                    k12.b(n0Var);
+                    j12.b(n0Var);
                 }
             }
             i10++;
@@ -67,32 +67,7 @@ public final class d implements r3.m {
     }
 
     @Override // r3.m
-    public final v c2(int i10, int i11) {
-        SparseArray sparseArray = this.d;
-        c cVar = (c) sparseArray.get(i10);
-        if (cVar == null) {
-            h5.a.i(this.r == null);
-            cVar = new c(i10, i11, i11 == this.b ? this.c : null);
-            qa qaVar = this.f;
-            long j10 = this.h;
-            if (qaVar == null) {
-                cVar.e = cVar.c;
-            } else {
-                cVar.f = j10;
-                v k12 = qaVar.k1(i11);
-                cVar.e = k12;
-                n0 n0Var = cVar.d;
-                if (n0Var != null) {
-                    k12.b(n0Var);
-                }
-            }
-            sparseArray.put(i10, cVar);
-        }
-        return cVar;
-    }
-
-    @Override // r3.m
-    public final void f1() {
+    public final void i1() {
         SparseArray sparseArray = this.d;
         n0[] n0VarArr = new n0[sparseArray.size()];
         for (int i10 = 0; i10 < sparseArray.size(); i10++) {
@@ -104,7 +79,32 @@ public final class d implements r3.m {
     }
 
     @Override // r3.m
-    public final void g2(s sVar) {
+    public final v i2(int i10, int i11) {
+        SparseArray sparseArray = this.d;
+        c cVar = (c) sparseArray.get(i10);
+        if (cVar == null) {
+            h5.a.i(this.r == null);
+            cVar = new c(i10, i11, i11 == this.b ? this.c : null);
+            qa qaVar = this.f;
+            long j10 = this.h;
+            if (qaVar == null) {
+                cVar.e = cVar.c;
+            } else {
+                cVar.f = j10;
+                v j12 = qaVar.j1(i11);
+                cVar.e = j12;
+                n0 n0Var = cVar.d;
+                if (n0Var != null) {
+                    j12.b(n0Var);
+                }
+            }
+            sparseArray.put(i10, cVar);
+        }
+        return cVar;
+    }
+
+    @Override // r3.m
+    public final void m2(s sVar) {
         this.n = sVar;
     }
 }

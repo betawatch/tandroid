@@ -8,9 +8,9 @@ import android.text.TextUtils;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public class sc extends e90 {
+public class sc extends g90 {
     public tc I;
     public tc J;
 
@@ -28,7 +28,7 @@ public class sc extends e90 {
         this.J = null;
     }
 
-    @Override // org.telegram.ui.Components.e90, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.g90, android.widget.TextView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         Layout layout;
         tc tcVar;

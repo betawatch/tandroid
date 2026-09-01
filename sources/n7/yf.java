@@ -2,7 +2,7 @@ package n7;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class yf implements uf {
     public final c9.p a;
@@ -22,6 +22,6 @@ public final class yf implements uf {
     @Override // n7.uf
     public final void a(b4.e0 e0Var) {
         this.b.getClass();
-        ((y2.p) this.a.get()).a(e0Var.b != 0 ? new v2.a(null, e0Var.D(), v2.d.a, null) : new v2.a(null, e0Var.D(), v2.d.b, null), new s0.b(28));
+        ((y2.p) this.a.get()).a(e0Var.b != 0 ? new v2.a(null, e0Var.E(), v2.d.a, null) : new v2.a(null, e0Var.E(), v2.d.b, null), new sg.a(28));
     }
 }

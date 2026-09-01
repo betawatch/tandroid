@@ -34,16 +34,16 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import java.util.concurrent.atomic.AtomicReference;
-import m.s3;
-import nh.g3;
+import m.r3;
 import o3.b0;
+import oh.h3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.fu;
-import org.telegram.ui.Components.nr;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.hu;
+import org.telegram.ui.Components.pr;
 import org.telegram.ui.a1;
 import org.telegram.ui.e5;
 import org.telegram.ui.u4;
@@ -53,7 +53,7 @@ import org.telegram.ui.z4;
 import r0.j0;
 import s8.n0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class m {
     public static m e;
@@ -63,13 +63,13 @@ public final class m {
     public Object d;
 
     public m(View view) {
-        fu[] fuVarArr = {new fu(), new fu(), new fu()};
-        this.b = fuVarArr;
+        hu[] huVarArr = {new hu(), new hu(), new hu()};
+        this.b = huVarArr;
         this.d = new ArrayList();
         AnimatorSet animatorSet = new AnimatorSet();
         this.c = animatorSet;
-        animatorSet.playTogether(g(fuVarArr[0], 0, 255, 0, 300), g(fuVarArr[1], 0, 255, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 300), g(fuVarArr[2], 0, 255, 300, 300), g(fuVarArr[0], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), g(fuVarArr[1], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), g(fuVarArr[2], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400));
-        animatorSet.addListener(new g3(this, view));
+        animatorSet.playTogether(g(huVarArr[0], 0, 255, 0, 300), g(huVarArr[1], 0, 255, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 300), g(huVarArr[2], 0, 255, 300, 300), g(huVarArr[0], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), g(huVarArr[1], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), g(huVarArr[2], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400));
+        animatorSet.addListener(new h3(this, view));
     }
 
     public static void a(vb.e[][][] eVarArr, int i10, vb.e eVar) {
@@ -177,8 +177,8 @@ public final class m {
     }
 
     public static tb.e m(int i10) {
-        int b10 = m1.j.b(i10);
-        return b10 != 0 ? b10 != 1 ? tb.e.c(40) : tb.e.c(26) : tb.e.c(9);
+        int c3 = m1.j.c(i10);
+        return c3 != 0 ? c3 != 1 ? tb.e.c(40) : tb.e.c(26) : tb.e.c(9);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:18:0x006c  */
@@ -279,12 +279,12 @@ public final class m {
         return this.a ? bVar.b(i11, i10) : bVar.b(i10, i11) ? (i12 << 1) | 1 : i12 << 1;
     }
 
-    public ValueAnimator g(fu fuVar, int i10, int i11, int i12, int i13) {
+    public ValueAnimator g(hu huVar, int i10, int i11, int i12, int i13) {
         ValueAnimator ofInt = ValueAnimator.ofInt(i10, i11);
-        ofInt.addUpdateListener(new ag.a(14, this, fuVar));
+        ofInt.addUpdateListener(new bg.a(14, this, huVar));
         ofInt.setDuration(i13);
         ofInt.setStartDelay(i12);
-        ofInt.setInterpolator(nr.f);
+        ofInt.setInterpolator(pr.f);
         return ofInt;
     }
 
@@ -361,7 +361,7 @@ public final class m {
             Boolean p10 = p();
             this.c = p10;
             if (p10 == null) {
-                ((c9.n) ((y9.b) this.b)).a(new w(18));
+                ((c9.n) ((y9.b) this.b)).a(new w(12));
             }
             this.a = true;
         } catch (Throwable th2) {
@@ -474,7 +474,7 @@ public final class m {
         if (((tb.c) this.d) == null) {
             return;
         }
-        int i10 = m1.j.c(8)[((tb.c) this.d).b];
+        int i10 = m1.j.d(8)[((tb.c) this.d).b];
         pb.b bVar = (pb.b) this.b;
         int i11 = bVar.b;
         for (int i12 = 0; i12 < i11; i12++) {
@@ -509,7 +509,7 @@ public final class m {
                         return true;
                     }
                 }
-                ((com.google.firebase.messaging.r) ((s3) this.c).b).V(oVar);
+                ((sf.e) ((r3) this.c).b).H(oVar);
                 return true;
             } catch (Throwable th2) {
                 throw th2;
@@ -517,7 +517,7 @@ public final class m {
         }
     }
 
-    public void v(ViewGroup viewGroup, f6 f6Var, z4 z4Var, x4 x4Var) {
+    public void v(ViewGroup viewGroup, g6 g6Var, z4 z4Var, x4 x4Var) {
         Objects.requireNonNull(viewGroup);
         Context context = viewGroup.getContext();
         if (((ViewGroup) this.b) != viewGroup) {
@@ -527,8 +527,8 @@ public final class m {
                 u4Var.b(false);
             }
             this.b = viewGroup;
-            this.c = (WindowManager) f0.f.f(context, WindowManager.class);
-            u4 u4Var2 = new u4(this, context, f6Var, x4Var);
+            this.c = (WindowManager) f0.e.f(context, WindowManager.class);
+            u4 u4Var2 = new u4(this, context, g6Var, x4Var);
             this.d = u4Var2;
             a1 a1Var = new a1(this, 3);
             WeakHashMap weakHashMap = j0.a;
@@ -567,12 +567,12 @@ public final class m {
     }
 
     public void x(SpannableString spannableString, int i10) {
-        fu[] fuVarArr = (fu[]) this.b;
+        hu[] huVarArr = (hu[]) this.b;
         int i11 = i10 + 1;
-        spannableString.setSpan(fuVarArr[0], i10, i11, 0);
+        spannableString.setSpan(huVarArr[0], i10, i11, 0);
         int i12 = i10 + 2;
-        spannableString.setSpan(fuVarArr[1], i11, i12, 0);
-        spannableString.setSpan(fuVarArr[2], i12, i10 + 3, 0);
+        spannableString.setSpan(huVarArr[1], i11, i12, 0);
+        spannableString.setSpan(huVarArr[2], i12, i10 + 3, 0);
     }
 
     public void y() {
@@ -598,8 +598,8 @@ public final class m {
         }
     }
 
-    public m(s3 s3Var, boolean z4) {
-        this.c = s3Var;
+    public m(r3 r3Var, boolean z4) {
+        this.c = r3Var;
         this.d = new AtomicReference(null);
         this.a = z4;
         this.b = new AtomicMarkableReference(new j9.d(z4 ? 8192 : 1024), false);

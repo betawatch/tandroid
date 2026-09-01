@@ -1,30 +1,47 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class gr implements t60 {
-    public final /* synthetic */ y60 a;
-    public final /* synthetic */ pr b;
+public final /* synthetic */ class gr implements q0.a {
+    public final /* synthetic */ int a;
 
-    public gr(pr prVar, y60 y60Var) {
-        this.b = prVar;
-        this.a = y60Var;
+    public /* synthetic */ gr(int i10) {
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.t60
-    public final void h(TLRPC.User user) {
-        this.b.t0(user.id, null, null, null, "", true, 0, false);
-    }
-
-    @Override // org.telegram.ui.t60
-    public final void j(int i10, ArrayList arrayList) {
-        if (this.a.getParentActivity() == null) {
-            return;
+    @Override // q0.a
+    public final void accept(Object obj) {
+        switch (this.a) {
+            case 0:
+                break;
+            case 1:
+                View view = (View) obj;
+                boolean z4 = ChatAttachAlertPhotoLayout.n1;
+                if (view instanceof org.telegram.ui.Cells.t5) {
+                    org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) view;
+                    t5Var.c(t5Var.getPhotoEntry() != null && t5Var.getPhotoEntry().hasSpoiler, Float.valueOf(250.0f));
+                    t5Var.setHighQuality(t5Var.getPhotoEntry() != null && t5Var.getPhotoEntry().isHighQuality());
+                    t5Var.f(t5Var.getPhotoEntry() != null ? t5Var.getPhotoEntry().starsAmount : 0L, ChatAttachAlertPhotoLayout.p1.size() > 1);
+                    break;
+                }
+                break;
+            case 2:
+                View view2 = (View) obj;
+                if (view2 instanceof org.telegram.ui.Components.on0) {
+                    ((org.telegram.ui.Components.on0) view2).a(false, true);
+                    break;
+                }
+                break;
+            default:
+                View view3 = (View) obj;
+                if (view3 instanceof org.telegram.ui.Components.on0) {
+                    ((org.telegram.ui.Components.on0) view3).a(false, true);
+                    break;
+                }
+                break;
         }
-        pr prVar = this.b;
-        prVar.getMessagesController().addUsersToChat(prVar.r, prVar, arrayList, i10, new j3(this, 2), new fr(0), null);
     }
 }

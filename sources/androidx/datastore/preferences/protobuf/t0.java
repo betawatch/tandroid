@@ -12,7 +12,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class t0 implements c1 {
     public static final int[] o = new int[0];
@@ -721,10 +721,10 @@ public final class t0 implements c1 {
                     if ((i12 & i15) == 0) {
                         break;
                     } else {
-                        double e = s1.d.e(obj, j10);
+                        double e6 = s1.d.e(obj, j10);
                         k kVar = (k) l0Var.a;
                         kVar.getClass();
-                        kVar.K(i17, Double.doubleToRawLongBits(e));
+                        kVar.K(i17, Double.doubleToRawLongBits(e6));
                         continue;
                     }
                 case 1:
@@ -1550,9 +1550,9 @@ public final class t0 implements c1 {
             switch (G(H)) {
                 case 0:
                     if (q(i10, obj)) {
-                        double e = s1.d.e(obj, H & 1048575);
+                        double e6 = s1.d.e(obj, H & 1048575);
                         kVar.getClass();
-                        kVar.K(i11, Double.doubleToRawLongBits(e));
+                        kVar.K(i11, Double.doubleToRawLongBits(e6));
                         break;
                     } else {
                         break;
@@ -4023,9 +4023,9 @@ public final class t0 implements c1 {
                         break;
                     }
                 case 36:
-                    int e = d1.e((List) unsafe.getObject(obj, j10));
-                    if (e > 0) {
-                        i14 = android.support.v4.media.a.f(e, k.y(i16), e, i14);
+                    int e6 = d1.e((List) unsafe.getObject(obj, j10));
+                    if (e6 > 0) {
+                        i14 = android.support.v4.media.a.f(e6, k.y(i16), e6, i14);
                         break;
                     } else {
                         break;
@@ -4063,9 +4063,9 @@ public final class t0 implements c1 {
                         break;
                     }
                 case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
-                    int e6 = d1.e((List) unsafe.getObject(obj, j10));
-                    if (e6 > 0) {
-                        i14 = android.support.v4.media.a.f(e6, k.y(i16), e6, i14);
+                    int e10 = d1.e((List) unsafe.getObject(obj, j10));
+                    if (e10 > 0) {
+                        i14 = android.support.v4.media.a.f(e10, k.y(i16), e10, i14);
                         break;
                     } else {
                         break;
@@ -4097,9 +4097,9 @@ public final class t0 implements c1 {
                         break;
                     }
                 case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
-                    int e10 = d1.e((List) unsafe.getObject(obj, j10));
-                    if (e10 > 0) {
-                        i14 = android.support.v4.media.a.f(e10, k.y(i16), e10, i14);
+                    int e11 = d1.e((List) unsafe.getObject(obj, j10));
+                    if (e11 > 0) {
+                        i14 = android.support.v4.media.a.f(e11, k.y(i16), e11, i14);
                         break;
                     } else {
                         break;
@@ -4609,9 +4609,9 @@ public final class t0 implements c1 {
                         break;
                     }
                 case 36:
-                    int e = d1.e((List) unsafe.getObject(obj, j10));
-                    if (e > 0) {
-                        i12 = android.support.v4.media.a.f(e, k.y(i13), e, i12);
+                    int e6 = d1.e((List) unsafe.getObject(obj, j10));
+                    if (e6 > 0) {
+                        i12 = android.support.v4.media.a.f(e6, k.y(i13), e6, i12);
                         break;
                     } else {
                         break;
@@ -4649,9 +4649,9 @@ public final class t0 implements c1 {
                         break;
                     }
                 case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
-                    int e6 = d1.e((List) unsafe.getObject(obj, j10));
-                    if (e6 > 0) {
-                        i12 = android.support.v4.media.a.f(e6, k.y(i13), e6, i12);
+                    int e10 = d1.e((List) unsafe.getObject(obj, j10));
+                    if (e10 > 0) {
+                        i12 = android.support.v4.media.a.f(e10, k.y(i13), e10, i12);
                         break;
                     } else {
                         break;
@@ -4683,9 +4683,9 @@ public final class t0 implements c1 {
                         break;
                     }
                 case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
-                    int e10 = d1.e((List) unsafe.getObject(obj, j10));
-                    if (e10 > 0) {
-                        i12 = android.support.v4.media.a.f(e10, k.y(i13), e10, i12);
+                    int e11 = d1.e((List) unsafe.getObject(obj, j10));
+                    if (e11 > 0) {
+                        i12 = android.support.v4.media.a.f(e11, k.y(i13), e11, i12);
                         break;
                     } else {
                         break;
@@ -5059,7 +5059,7 @@ public final class t0 implements c1 {
         m0 m0Var = ((n0) obj2).a;
         iVar.S(2);
         h hVar = (h) iVar.d;
-        int e = hVar.e(hVar.A());
+        int e6 = hVar.e(hVar.A());
         Object obj3 = m0Var.c;
         Object obj4 = "";
         Object obj5 = obj3;
@@ -5085,7 +5085,7 @@ public final class t0 implements c1 {
                     obj5 = iVar.m(m0Var.b, obj3.getClass(), nVar);
                 }
             } catch (Throwable th2) {
-                hVar.d(e);
+                hVar.d(e6);
                 throw th2;
             }
         }

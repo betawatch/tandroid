@@ -1,41 +1,63 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class xn0 implements ho0 {
-    public final /* synthetic */ jo0 a;
+public final class xn0 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ lo0 a;
 
-    public xn0(jo0 jo0Var) {
-        this.a = jo0Var;
+    public xn0(lo0 lo0Var) {
+        this.a = lo0Var;
     }
 
-    @Override // org.telegram.ui.ho0
-    public final void a(TL_account.Password password) {
-        this.a.X = password;
-    }
-
-    @Override // org.telegram.ui.ho0
-    public final void b() {
-        this.a.c0 = null;
-    }
-
-    @Override // org.telegram.ui.ho0
-    public final boolean c(String str, String str2, boolean z4, TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay, TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard) {
-        jo0 jo0Var = this.a;
-        ho0 ho0Var = jo0Var.Q;
-        if (ho0Var != null) {
-            ho0Var.c(str, str2, z4, tL_inputPaymentCredentialsGooglePay, tL_paymentSavedCredentialsCard);
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        lo0 lo0Var = this.a;
+        if (i10 == -1) {
+            if (lo0Var.M0) {
+                return;
+            }
+            lo0Var.finishFragment();
+            return;
         }
-        if (jo0Var.P0) {
-            jo0Var.removeSelfFromStack();
+        if (i10 != 1 || lo0Var.M0) {
+            return;
         }
-        return jo0Var.Q != null;
-    }
-
-    @Override // org.telegram.ui.ho0
-    public final /* synthetic */ void d(TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo) {
+        if (lo0Var.r0 != 3) {
+            AndroidUtilities.hideKeyboard(lo0Var.getParentActivity().getCurrentFocus());
+        }
+        int i11 = lo0Var.r0;
+        if (i11 == 0) {
+            lo0Var.D0(true);
+            lo0.m0(lo0Var);
+            return;
+        }
+        int i12 = 0;
+        if (i11 == 1) {
+            while (true) {
+                org.telegram.ui.Cells.j6[] j6VarArr = lo0Var.h;
+                if (i12 >= j6VarArr.length) {
+                    break;
+                }
+                if (j6VarArr[i12].b.f) {
+                    lo0Var.D0 = lo0Var.B0.shipping_options.get(i12);
+                    break;
+                }
+                i12++;
+            }
+            lo0Var.t0();
+            return;
+        }
+        if (i11 == 2) {
+            lo0.j0(lo0Var);
+        } else if (i11 == 3) {
+            lo0.k0(lo0Var);
+        } else {
+            if (i11 != 6) {
+                return;
+            }
+            lo0Var.A0(false);
+        }
     }
 }

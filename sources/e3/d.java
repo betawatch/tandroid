@@ -2,15 +2,14 @@ package e3;
 
 import android.content.Context;
 import android.text.TextUtils;
-import gg.m2;
 import h5.j;
+import hg.m2;
 import j3.y1;
 import j3.z1;
 import java.util.ArrayList;
 import java.util.HashMap;
-import kh.a2;
 import lf.i0;
-import mg.q0;
+import ng.q0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.MediaDataController;
@@ -30,26 +29,26 @@ import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.in0;
+import org.telegram.ui.Components.jn0;
 import org.telegram.ui.Components.nb;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.wc0;
+import org.telegram.ui.Components.yc0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PasscodeActivity;
 import org.telegram.ui.SessionsActivity;
 import org.telegram.ui.StickersActivity;
-import org.telegram.ui.ad0;
+import org.telegram.ui.bd0;
 import org.telegram.ui.bh;
-import org.telegram.ui.c50;
-import org.telegram.ui.g50;
+import org.telegram.ui.d50;
+import org.telegram.ui.h50;
 import org.telegram.ui.xn;
-import tf.l1;
-import tf.m1;
-import uf.n;
-import uf.t;
+import uf.l1;
+import uf.m1;
+import vf.n;
+import vf.t;
 import y2.i;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements g3.b, j, NativeInstance.PayloadCallback, c2, Utilities.Callback3Return, MediaDataController.KeywordResultCallback {
     public final /* synthetic */ int a;
@@ -71,8 +70,18 @@ public final /* synthetic */ class d implements g3.b, j, NativeInstance.PayloadC
         return null;
     }
 
+    @Override // h5.j
+    public void invoke(Object obj) {
+        z1 z1Var = (z1) this.c;
+        z1 z1Var2 = (z1) this.d;
+        y1 y1Var = (y1) obj;
+        int i10 = this.b;
+        y1Var.onPositionDiscontinuity(i10);
+        y1Var.onPositionDiscontinuity(z1Var, z1Var2, i10);
+    }
+
     @Override // org.telegram.ui.ActionBar.c2
-    public void i(d2 d2Var, int i10) {
+    public void j(d2 d2Var, int i10) {
         switch (this.a) {
             case 3:
                 xn xnVar = (xn) this.c;
@@ -99,15 +108,15 @@ public final /* synthetic */ class d implements g3.b, j, NativeInstance.PayloadC
                 }
                 break;
             case 6:
-                in0 in0Var = (in0) this.c;
+                jn0 jn0Var = (jn0) this.c;
                 TLRPC.Reaction reaction = (TLRPC.Reaction) this.d;
-                String obj = in0Var.getText().toString();
+                String obj = jn0Var.getText().toString();
                 if (obj.length() <= 12) {
                     MessagesController.getInstance(this.b).renameSavedReactionTag(q0.d(reaction), obj);
                     d2Var.dismiss();
                     break;
                 } else {
-                    AndroidUtilities.shakeView(in0Var);
+                    AndroidUtilities.shakeView(jn0Var);
                     break;
                 }
             case 7:
@@ -133,15 +142,15 @@ public final /* synthetic */ class d implements g3.b, j, NativeInstance.PayloadC
                     break;
                 }
             case 8:
-                c50 c50Var = (c50) this.c;
+                d50 d50Var = (d50) this.c;
                 EditTextBoldCursor editTextBoldCursor2 = (EditTextBoldCursor) this.d;
-                g50 g50Var = c50Var.n;
-                ChatObject.Call call = g50Var.b.X0;
+                h50 h50Var = d50Var.n;
+                ChatObject.Call call = h50Var.b.X0;
                 String obj3 = editTextBoldCursor2.getText().toString();
                 int i11 = this.b;
                 call.toggleRecord(obj3, i11);
                 AndroidUtilities.hideKeyboard(editTextBoldCursor2);
-                g50Var.b.k1().j(i11 == 0 ? 39 : 100, 0L, null);
+                h50Var.b.k1().j(i11 == 0 ? 39 : 100, 0L, null);
                 if (VoIPService.getSharedInstance() != null) {
                     VoIPService.getSharedInstance().playStartRecordSound();
                     break;
@@ -151,18 +160,18 @@ public final /* synthetic */ class d implements g3.b, j, NativeInstance.PayloadC
                 LaunchActivity launchActivity = (LaunchActivity) this.c;
                 HashMap hashMap = (HashMap) this.d;
                 ArrayList arrayList = launchActivity.a0;
-                if (!arrayList.isEmpty() && AndroidUtilities.isMapsInstalled((p2) a2.i(1, arrayList))) {
-                    ad0 ad0Var = new ad0(0);
-                    ad0Var.C0 = new m2(hashMap, this.b, 11);
-                    launchActivity.p0(ad0Var);
+                if (!arrayList.isEmpty() && AndroidUtilities.isMapsInstalled((p2) l.d.i(1, arrayList))) {
+                    bd0 bd0Var = new bd0(0);
+                    bd0Var.C0 = new m2(hashMap, this.b, 11);
+                    launchActivity.p0(bd0Var);
                     break;
                 }
                 break;
             case 10:
-                ((ad0) this.c).w0(RichMessageLayout.PART_MAX_HEIGHT_DP, (TLRPC.User) this.d, this.b);
+                ((bd0) this.c).w0(RichMessageLayout.PART_MAX_HEIGHT_DP, (TLRPC.User) this.d, this.b);
                 break;
             case 11:
-                PasscodeActivity.U((PasscodeActivity) this.c, (wc0) this.d, this.b);
+                PasscodeActivity.U((PasscodeActivity) this.c, (yc0) this.d, this.b);
                 break;
             case 13:
                 SessionsActivity.X((SessionsActivity) this.c, this.b, (boolean[]) this.d);
@@ -171,16 +180,6 @@ public final /* synthetic */ class d implements g3.b, j, NativeInstance.PayloadC
                 StickersActivity.a0((StickersActivity) this.c, (ArrayList) this.d, this.b);
                 break;
         }
-    }
-
-    @Override // h5.j
-    public void invoke(Object obj) {
-        z1 z1Var = (z1) this.c;
-        z1 z1Var2 = (z1) this.d;
-        y1 y1Var = (y1) obj;
-        int i10 = this.b;
-        y1Var.onPositionDiscontinuity(i10);
-        y1Var.onPositionDiscontinuity(z1Var, z1Var2, i10);
     }
 
     @Override // org.telegram.messenger.voip.NativeInstance.PayloadCallback

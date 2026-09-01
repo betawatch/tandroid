@@ -6,21 +6,21 @@ import com.google.android.gms.cast.MediaError;
 import com.google.android.gms.cast.MediaInfo;
 import java.util.Iterator;
 import java.util.regex.Pattern;
-import k7.e8;
+import k7.f8;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.ui.Components.qk0;
+import org.telegram.ui.web.e0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class n extends q {
     public static final String v;
     public long e;
     public q5.q f;
     public Long g;
-    public qk0 h;
+    public e0 h;
     public int i;
     public final p j;
     public final p k;
@@ -126,7 +126,7 @@ public final class n extends q {
             if (i10 != 0) {
                 jSONObject.put("jump", i10);
             }
-            String b11 = e8.b(num);
+            String b11 = f8.b(num);
             if (b11 != null) {
                 jSONObject.put("repeatMode", b11);
             }
@@ -177,9 +177,9 @@ public final class n extends q {
     }
 
     public final void i() {
-        qk0 qk0Var = this.h;
-        if (qk0Var != null) {
-            s5.h hVar = (s5.h) qk0Var.b;
+        e0 e0Var = this.h;
+        if (e0Var != null) {
+            s5.h hVar = (s5.h) e0Var.b;
             Iterator it = hVar.h.iterator();
             if (it.hasNext()) {
                 it.next().getClass();
@@ -193,9 +193,9 @@ public final class n extends q {
     }
 
     public final void j() {
-        qk0 qk0Var = this.h;
-        if (qk0Var != null) {
-            s5.h hVar = (s5.h) qk0Var.b;
+        e0 e0Var = this.h;
+        if (e0Var != null) {
+            s5.h hVar = (s5.h) e0Var.b;
             Iterator it = hVar.h.iterator();
             if (it.hasNext()) {
                 it.next().getClass();
@@ -209,9 +209,9 @@ public final class n extends q {
     }
 
     public final void k() {
-        qk0 qk0Var = this.h;
-        if (qk0Var != null) {
-            s5.h hVar = (s5.h) qk0Var.b;
+        e0 e0Var = this.h;
+        if (e0Var != null) {
+            s5.h hVar = (s5.h) e0Var.b;
             Iterator it = hVar.h.iterator();
             if (it.hasNext()) {
                 it.next().getClass();
@@ -225,9 +225,9 @@ public final class n extends q {
     }
 
     public final void l() {
-        qk0 qk0Var = this.h;
-        if (qk0Var != null) {
-            s5.h hVar = (s5.h) qk0Var.b;
+        e0 e0Var = this.h;
+        if (e0Var != null) {
+            s5.h hVar = (s5.h) e0Var.b;
             Iterator it = hVar.j.values().iterator();
             if (it.hasNext()) {
                 if (it.next() != null) {

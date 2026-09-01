@@ -1,31 +1,22 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pj0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ yj0 b;
-    public final /* synthetic */ TLObject c;
+public final class pj0 {
+    public final TLObject a;
+    public final long b;
+    public int c;
 
-    public /* synthetic */ pj0(yj0 yj0Var, TLObject tLObject, int i10) {
-        this.a = i10;
-        this.b = yj0Var;
-        this.c = tLObject;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                yj0 yj0Var = this.b;
-                NotificationCenter.getInstance(yj0Var.b).doOnIdle(new pj0(yj0Var, this.c, 1));
-                break;
-            default:
-                yj0.a(this.b, this.c);
-                break;
+    public pj0(int i10, TLObject tLObject) {
+        this.a = tLObject;
+        this.c = i10;
+        if (tLObject instanceof TLRPC.User) {
+            this.b = ((TLRPC.User) tLObject).id;
+        } else if (tLObject instanceof TLRPC.Chat) {
+            this.b = -((TLRPC.Chat) tLObject).id;
         }
     }
 }

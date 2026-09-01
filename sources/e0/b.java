@@ -24,10 +24,10 @@ import java.io.InputStream;
 import java.security.Signature;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
-import m.a1;
+import m.z0;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static void A(LayerDrawable layerDrawable, LayerDrawable layerDrawable2, int i10) {
@@ -86,8 +86,8 @@ public abstract class b {
         return new Notification.Action.Builder(icon, charSequence, pendingIntent);
     }
 
-    public static int c(a1 a1Var) {
-        return a1Var.getBreakStrategy();
+    public static int c(z0 z0Var) {
+        return z0Var.getBreakStrategy();
     }
 
     public static Drawable d(CompoundButton compoundButton) {
@@ -109,8 +109,8 @@ public abstract class b {
         return (FingerprintManager) context.getSystemService(FingerprintManager.class);
     }
 
-    public static int g(a1 a1Var) {
-        return a1Var.getHyphenationFrequency();
+    public static int g(z0 z0Var) {
+        return z0Var.getHyphenationFrequency();
     }
 
     public static int h(Drawable drawable) {
@@ -128,8 +128,8 @@ public abstract class b {
                 return false;
             }
             return a2.hasEnrolledFingerprints();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return false;
         }
     }
@@ -149,8 +149,8 @@ public abstract class b {
                 return false;
             }
             return a2.isHardwareDetected();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             return false;
         }
     }
@@ -171,8 +171,8 @@ public abstract class b {
         activity.requestPermissions(strArr, i10);
     }
 
-    public static void r(a1 a1Var, int i10) {
-        a1Var.setBreakStrategy(i10);
+    public static void r(z0 z0Var, int i10) {
+        z0Var.setBreakStrategy(i10);
     }
 
     public static void s(TextView textView, ColorStateList colorStateList) {
@@ -183,8 +183,8 @@ public abstract class b {
         textView.setCompoundDrawableTintMode(mode);
     }
 
-    public static void u(a1 a1Var, int i10) {
-        a1Var.setHyphenationFrequency(i10);
+    public static void u(z0 z0Var, int i10) {
+        z0Var.setHyphenationFrequency(i10);
     }
 
     public static void v(Notification.Builder builder, Icon icon) {

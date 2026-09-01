@@ -9,7 +9,7 @@ import ld.l;
 import ld.m;
 import qd.t;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class h {
     public static final /* synthetic */ AtomicReferenceFieldUpdater b = AtomicReferenceFieldUpdater.newUpdater(h.class, Object.class, "head$volatile");
@@ -89,10 +89,10 @@ public class h {
                 int i10 = (int) (andIncrement % i.f);
                 while (!atomicReferenceArray.compareAndSet(i10, null, cVar)) {
                     if (atomicReferenceArray.get(i10) != null) {
-                        i5.c cVar2 = i.b;
-                        i5.c cVar3 = i.c;
-                        while (!atomicReferenceArray.compareAndSet(i10, cVar2, cVar3)) {
-                            if (atomicReferenceArray.get(i10) != cVar2) {
+                        com.google.android.gms.internal.clearcut.e eVar = i.b;
+                        com.google.android.gms.internal.clearcut.e eVar2 = i.c;
+                        while (!atomicReferenceArray.compareAndSet(i10, eVar, eVar2)) {
+                            if (atomicReferenceArray.get(i10) != eVar) {
                                 break;
                             }
                         }
@@ -172,13 +172,13 @@ public class h {
                     int i13 = 0;
                     while (true) {
                         if (i13 >= i12) {
-                            i5.c cVar = i.b;
-                            i5.c cVar2 = i.d;
+                            com.google.android.gms.internal.clearcut.e eVar = i.b;
+                            com.google.android.gms.internal.clearcut.e eVar2 = i.d;
                             while (true) {
-                                if (atomicReferenceArray.compareAndSet(i11, cVar, cVar2)) {
+                                if (atomicReferenceArray.compareAndSet(i11, eVar, eVar2)) {
                                     z10 = true;
                                     break;
-                                } else if (atomicReferenceArray.get(i11) != cVar) {
+                                } else if (atomicReferenceArray.get(i11) != eVar) {
                                     break;
                                 }
                             }
@@ -194,7 +194,7 @@ public class h {
                         throw new IllegalStateException(("unexpected: " + andSet).toString());
                     }
                     l lVar = (l) andSet;
-                    i5.c b11 = lVar.b(this.a, sc.i.a);
+                    com.google.android.gms.internal.clearcut.e b11 = lVar.b(this.a, sc.i.a);
                     if (b11 != null) {
                         lVar.e(b11);
                     }

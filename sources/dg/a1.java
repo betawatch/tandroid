@@ -1,136 +1,222 @@
 package dg;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.SweepGradient;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ft0;
-import org.telegram.ui.yh;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import mh.m9;
+import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.SvgHelper;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.rs;
+import org.telegram.ui.Components.ts;
+import org.telegram.ui.Components.x51;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class a1 extends FrameLayout {
-    public float a;
-    public float b;
-    public final /* synthetic */ ft0 c;
+public final /* synthetic */ class a1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a1(ft0 ft0Var, Context context) {
-        super(context);
-        this.c = ft0Var;
-        new Path();
-        setWillNotDraw(false);
-        Paint paint = ft0Var.E1;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
+    public /* synthetic */ a1(c1 c1Var, d1 d1Var, int i10, boolean z4, Runnable runnable) {
+        this.a = 0;
+        this.d = c1Var;
+        this.e = d1Var;
+        this.c = i10;
+        this.b = z4;
+        this.f = runnable;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        ViewGroup barView;
-        Canvas canvas2 = canvas;
-        super.onDraw(canvas);
-        ft0 ft0Var = this.c;
-        cg.f2 f2Var = ft0Var.H1;
-        Paint paint = ft0Var.F1;
-        Paint paint2 = ft0Var.E1;
-        Paint paint3 = ft0Var.G1;
-        barView = ft0Var.getBarView();
-        Rect rect = AndroidUtilities.rectTmp2;
-        int left = barView.getLeft();
-        z0 z0Var = ft0Var.D1;
-        rect.set(AndroidUtilities.lerp(left, z0Var.getLeft(), ft0Var.K1), AndroidUtilities.lerp(barView.getTop(), z0Var.getTop(), ft0Var.K1), AndroidUtilities.lerp(barView.getRight(), z0Var.getRight(), ft0Var.K1), AndroidUtilities.lerp(barView.getBottom(), z0Var.getBottom(), ft0Var.K1));
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(rect);
-        float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(32.0f), AndroidUtilities.dp(24.0f), ft0Var.K1);
-        if (ft0Var.Z1 != null) {
-            rect.inset(-AndroidUtilities.dp(4.0f), -AndroidUtilities.dp(4.0f));
-            ft0Var.Z1.p(lerp);
-            ft0Var.Z1.setBounds(rect);
-            ft0Var.Z1.draw(canvas2);
-        } else {
-            canvas2.drawRoundRect(rectF, lerp, lerp, ft0Var.L1);
-        }
-        if (barView.getChildCount() < 1 || ft0Var.K1 == 1.0f) {
-            return;
-        }
-        canvas2.save();
-        canvas2.translate(barView.getLeft(), barView.getTop());
-        View childAt = barView.getChildAt(0);
-        if (barView instanceof k2) {
-            childAt = ((k2) barView).getColorClickableView();
-        }
-        if (childAt.getAlpha() != 0.0f) {
-            canvas2.scale(childAt.getScaleX(), childAt.getScaleY(), childAt.getPivotX(), childAt.getPivotY());
-            paint2.setAlpha((int) (childAt.getAlpha() * (1.0f - ft0Var.K1) * 255.0f));
-            int width = (childAt.getWidth() - childAt.getPaddingLeft()) - childAt.getPaddingRight();
-            int height = (childAt.getHeight() - childAt.getPaddingTop()) - childAt.getPaddingBottom();
-            float x10 = (width / 2.0f) + childAt.getX() + childAt.getPaddingLeft();
-            float y10 = (height / 2.0f) + childAt.getY() + childAt.getPaddingTop();
-            int i10 = f2Var.a;
-            int i11 = ft0Var.e1;
-            View view = childAt;
-            if (i11 != -1) {
-                ViewGroup viewGroup = i11 == 0 ? ft0Var.q1 : i11 == 2 ? ft0Var.r1 : null;
-                View childAt2 = (viewGroup == null ? barView : viewGroup).getChildAt(0);
-                if (viewGroup instanceof k2) {
-                    childAt2 = ((k2) viewGroup).getColorClickableView();
+    @Override // java.lang.Runnable
+    public final void run() {
+        String str;
+        TLRPC.Document document;
+        switch (this.a) {
+            case 0:
+                c1 c1Var = (c1) this.d;
+                d1 d1Var = (d1) this.e;
+                Runnable runnable = (Runnable) this.f;
+                boolean z4 = this.b;
+                c1Var.d(d1Var, this.c, z4 ? c1Var.h : null);
+                if (z4) {
+                    c1Var.h = null;
                 }
-                x10 = AndroidUtilities.lerp(x10, (((childAt2.getWidth() - childAt2.getPaddingLeft()) - childAt2.getPaddingRight()) / 2.0f) + childAt2.getX() + childAt2.getPaddingLeft(), ft0Var.f1);
-                y10 = AndroidUtilities.lerp(y10, (((childAt2.getHeight() - childAt2.getPaddingTop()) - childAt2.getPaddingBottom()) / 2.0f) + childAt2.getY() + childAt2.getPaddingTop(), ft0Var.f1);
-            }
-            if (z0Var != null && z0Var.getChildCount() > 0) {
-                View childAt3 = z0Var.getChildAt(0);
-                x10 = AndroidUtilities.lerp(x10, (childAt3.getWidth() / 2.0f) + childAt3.getX() + (z0Var.getX() - barView.getLeft()), ft0Var.K1);
-                y10 = AndroidUtilities.lerp(y10, (childAt3.getHeight() / 2.0f) + childAt3.getY() + (z0Var.getY() - barView.getTop()), ft0Var.K1);
-                i10 = i0.a.d(ft0Var.K1, f2Var.a, ft0Var.S1.b(0));
-            }
-            float f10 = x10;
-            float f11 = y10;
-            if (f10 != this.a || f11 != this.b) {
-                this.a = f10;
-                this.b = f11;
-                paint2.setShader(new SweepGradient(f10, f11, new int[]{-1356981, -1146130, -10452764, -16711681, -7352832, -256, -23296, -1356981}, (float[]) null));
-            }
-            float min = (Math.min(width, height) / 2.0f) - AndroidUtilities.dp(0.5f);
-            if (z0Var != null && z0Var.getChildCount() > 0) {
-                View childAt4 = z0Var.getChildAt(0);
-                min = AndroidUtilities.lerp(min, (Math.min((childAt4.getWidth() - childAt4.getPaddingLeft()) - childAt4.getPaddingRight(), (childAt4.getHeight() - childAt4.getPaddingTop()) - childAt4.getPaddingBottom()) / 2.0f) - AndroidUtilities.dp(2.0f), ft0Var.K1);
-            }
-            float f12 = min;
-            rectF.set(f10 - f12, f11 - f12, f10 + f12, f11 + f12);
-            canvas2 = canvas;
-            canvas2.drawArc(rectF, 0.0f, 360.0f, false, paint2);
-            paint.setColor(i10);
-            paint.setAlpha((int) (view.getAlpha() * paint.getAlpha()));
-            paint3.setColor(i10);
-            paint3.setAlpha((int) (view.getAlpha() * 255.0f));
-            float dp = f12 - AndroidUtilities.dp(3.0f);
-            if (z0Var != null && z0Var.getSelectedColorIndex() != 0) {
-                dp = AndroidUtilities.lerp(f12 - AndroidUtilities.dp(3.0f), AndroidUtilities.dp(2.0f) + f12, ft0Var.K1);
-            }
-            e2.x1(f10, f11, dp, paint.getColor(), canvas2);
-            if (z0Var != null && z0Var.getSelectedColorIndex() == 0) {
-                paint3.setAlpha((int) (view.getAlpha() * paint3.getAlpha() * ft0Var.K1));
-                canvas2.drawCircle(f10, f11, yh.c(1.0f, ft0Var.K1, paint3.getStrokeWidth() + AndroidUtilities.dp(3.0f), f12), paint3);
-            }
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
+            case 1:
+                String str2 = (String) this.d;
+                ImageReceiver imageReceiver = (ImageReceiver) this.e;
+                boolean[] zArr = (boolean[]) this.f;
+                boolean z10 = this.b;
+                int i10 = this.c;
+                if (z10) {
+                    str = UserConfig.getInstance(i10).premiumTonStickerPack;
+                    if (str == null) {
+                        MediaDataController.getInstance(i10).checkTonGiftStickers();
+                        break;
+                    }
+                } else {
+                    str = UserConfig.getInstance(i10).premiumGiftsStickerPack;
+                    if (str == null) {
+                        MediaDataController.getInstance(i10).checkPremiumGiftStickers();
+                        break;
+                    }
+                }
+                TLRPC.TL_messages_stickerSet stickerSetByName = MediaDataController.getInstance(i10).getStickerSetByName(str);
+                if (stickerSetByName == null) {
+                    stickerSetByName = MediaDataController.getInstance(i10).getStickerSetByEmojiOrName(str);
+                }
+                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = stickerSetByName;
+                if (tL_messages_stickerSet != null) {
+                    int i11 = 0;
+                    while (true) {
+                        if (i11 < tL_messages_stickerSet.packs.size()) {
+                            TLRPC.TL_stickerPack tL_stickerPack = tL_messages_stickerSet.packs.get(i11);
+                            if (!TextUtils.equals(tL_stickerPack.emoticon, str2) || tL_stickerPack.documents.isEmpty()) {
+                                i11++;
+                            } else {
+                                long longValue = tL_stickerPack.documents.get(0).longValue();
+                                for (int i12 = 0; i12 < tL_messages_stickerSet.documents.size(); i12++) {
+                                    document = tL_messages_stickerSet.documents.get(i12);
+                                    if (document == null || document.id != longValue) {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    document = null;
+                    if (document == null && !tL_messages_stickerSet.documents.isEmpty()) {
+                        document = tL_messages_stickerSet.documents.get(0);
+                    }
+                } else {
+                    document = null;
+                }
+                if (document != null) {
+                    imageReceiver.setAllowStartLottieAnimation(true);
+                    imageReceiver.setDelegate(new m9(zArr));
+                    SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document, k6.a7, 0.3f);
+                    TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 160, true, null, true);
+                    imageReceiver.setAutoRepeat(0);
+                    imageReceiver.setImage(ImageLocation.getForDocument(document), "160_160_nr", ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "160_160", svgThumb, document.size, "tgs", tL_messages_stickerSet, 1);
+                    break;
+                } else {
+                    MediaDataController.getInstance(i10).loadStickersByEmojiOrName(str, false, tL_messages_stickerSet == null);
+                    break;
+                }
+                break;
+            case 2:
+                ((MessagesController) this.d).lambda$startShortPoll$333((TLRPC.Chat) this.e, this.b, this.c, (q0.a) this.f);
+                break;
+            case 3:
+                rs rsVar = (rs) this.d;
+                TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = (TLRPC.TL_messages_searchGlobal) this.e;
+                TLObject tLObject = (TLObject) this.f;
+                ArrayList arrayList = rsVar.Q;
+                int i13 = rsVar.K;
+                if (this.c == rsVar.a0 && TextUtils.equals(tL_messages_searchGlobal.q, rsVar.b0)) {
+                    rsVar.W = false;
+                    if (!this.b) {
+                        arrayList.clear();
+                    }
+                    if (tLObject instanceof TLRPC.messages_Messages) {
+                        TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
+                        MessagesStorage.getInstance(i13).putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
+                        MessagesController.getInstance(i13).putUsers(messages_messages.users, false);
+                        MessagesController.getInstance(i13).putChats(messages_messages.chats, false);
+                        ArrayList<TLRPC.Message> arrayList2 = messages_messages.messages;
+                        int size = arrayList2.size();
+                        int i14 = 0;
+                        while (i14 < size) {
+                            TLRPC.Message message = arrayList2.get(i14);
+                            i14++;
+                            MessageObject messageObject = new MessageObject(i13, message, false, true);
+                            messageObject.setQuery(rsVar.b0);
+                            arrayList.add(messageObject);
+                        }
+                        rsVar.Y = messages_messages instanceof TLRPC.TL_messages_messagesSlice;
+                        Math.max(arrayList.size(), messages_messages.count);
+                        rsVar.Z = messages_messages.next_rate;
+                    }
+                    rsVar.N(true);
+                    break;
+                }
+                break;
+            default:
+                ts tsVar = (ts) this.d;
+                TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal2 = (TLRPC.TL_messages_searchGlobal) this.e;
+                TLObject tLObject2 = (TLObject) this.f;
+                ArrayList arrayList3 = tsVar.M;
+                int i15 = tsVar.K;
+                if (this.c == tsVar.X && TextUtils.equals(tL_messages_searchGlobal2.q, tsVar.Y)) {
+                    tsVar.T = false;
+                    if (!this.b) {
+                        arrayList3.clear();
+                    }
+                    if (tLObject2 instanceof TLRPC.messages_Messages) {
+                        TLRPC.messages_Messages messages_messages2 = (TLRPC.messages_Messages) tLObject2;
+                        MessagesStorage.getInstance(i15).putUsersAndChats(messages_messages2.users, messages_messages2.chats, true, true);
+                        MessagesController.getInstance(i15).putUsers(messages_messages2.users, false);
+                        MessagesController.getInstance(i15).putChats(messages_messages2.chats, false);
+                        ArrayList<TLRPC.Message> arrayList4 = messages_messages2.messages;
+                        int size2 = arrayList4.size();
+                        int i16 = 0;
+                        while (i16 < size2) {
+                            TLRPC.Message message2 = arrayList4.get(i16);
+                            i16++;
+                            MessageObject messageObject2 = new MessageObject(i15, message2, false, true);
+                            messageObject2.setQuery(tsVar.Y);
+                            arrayList3.add(messageObject2);
+                        }
+                        tsVar.V = messages_messages2 instanceof TLRPC.TL_messages_messagesSlice;
+                        Math.max(arrayList3.size(), messages_messages2.count);
+                        tsVar.W = messages_messages2.next_rate;
+                    }
+                    tsVar.N(true);
+                    break;
+                }
+                break;
         }
-        canvas2.restore();
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f10) {
-        super.setTranslationY(f10);
-        y0 y0Var = this.c.a1;
-        if (y0Var != null) {
-            y0Var.invalidate();
-        }
+    public /* synthetic */ a1(MessagesController messagesController, TLRPC.Chat chat, boolean z4, int i10, q0.a aVar) {
+        this.a = 2;
+        this.d = messagesController;
+        this.e = chat;
+        this.b = z4;
+        this.c = i10;
+        this.f = aVar;
+    }
+
+    public /* synthetic */ a1(x51 x51Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z4, TLObject tLObject, int i11) {
+        this.a = i11;
+        this.d = x51Var;
+        this.c = i10;
+        this.e = tL_messages_searchGlobal;
+        this.b = z4;
+        this.f = tLObject;
+    }
+
+    public /* synthetic */ a1(boolean z4, int i10, String str, ImageReceiver imageReceiver, boolean[] zArr) {
+        this.a = 1;
+        this.b = z4;
+        this.c = i10;
+        this.d = str;
+        this.e = imageReceiver;
+        this.f = zArr;
     }
 }

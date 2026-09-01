@@ -2,19 +2,19 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a7 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ c8 b;
-    public final /* synthetic */ o70 c;
+    public final /* synthetic */ q70 c;
     public final /* synthetic */ MessageObject d;
 
-    public /* synthetic */ a7(c8 c8Var, MessageObject messageObject, o70 o70Var, int i10) {
+    public /* synthetic */ a7(c8 c8Var, MessageObject messageObject, q70 q70Var, int i10) {
         this.a = i10;
         this.b = c8Var;
         this.d = messageObject;
-        this.c = o70Var;
+        this.c = q70Var;
     }
 
     @Override // java.lang.Runnable
@@ -66,10 +66,10 @@ public final /* synthetic */ class a7 implements Runnable {
         }
     }
 
-    public /* synthetic */ a7(c8 c8Var, o70 o70Var, MessageObject messageObject, int i10) {
+    public /* synthetic */ a7(c8 c8Var, q70 q70Var, MessageObject messageObject, int i10) {
         this.a = i10;
         this.b = c8Var;
-        this.c = o70Var;
+        this.c = q70Var;
         this.d = messageObject;
     }
 }

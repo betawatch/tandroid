@@ -1,33 +1,34 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class cf0 implements NotificationCenter.NotificationCenterDelegate {
-    public final /* synthetic */ df0 a;
+public final /* synthetic */ class cf0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ef0 b;
 
-    public cf0(df0 df0Var) {
-        this.a = df0Var;
+    public /* synthetic */ cf0(ef0 ef0Var, int i10) {
+        this.a = i10;
+        this.b = ef0Var;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        df0 df0Var = this.a;
-        int intValue = ((Integer) objArr[0]).intValue();
-        ((Integer) objArr[1]).getClass();
-        Intent intent = (Intent) objArr[2];
-        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.onActivityResultReceived);
-        if (intValue == 200) {
-            try {
-                df0Var.y = (GoogleSignInAccount) k7.y.b(intent).getResult(com.google.android.gms.common.api.f.class);
-                df0Var.h(null);
-            } catch (com.google.android.gms.common.api.f e) {
-                FileLog.e(e);
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ef0 ef0Var = this.b;
+                org.telegram.ui.Components.lj0 lj0Var = ef0Var.h;
+                lj0Var.getAnimatedDrawable().L(0, false, false);
+                lj0Var.d();
+                EditTextBoldCursor editTextBoldCursor = ef0Var.b;
+                editTextBoldCursor.requestFocus();
+                AndroidUtilities.showKeyboard(editTextBoldCursor);
+                break;
+            default:
+                this.b.b.requestFocus();
+                break;
         }
     }
 }

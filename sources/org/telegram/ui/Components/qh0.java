@@ -1,13 +1,78 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessagesController;
+
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public interface qh0 {
-    void a();
+public final class qh0 implements m2.f {
+    public final /* synthetic */ org.telegram.ui.zy0 a;
 
-    void b(boolean z4);
+    public qh0(org.telegram.ui.zy0 zy0Var) {
+        this.a = zy0Var;
+    }
 
-    void c();
+    @Override // m2.f
+    public final void a(int i10) {
+        org.telegram.ui.zy0 zy0Var = this.a;
+        int i11 = zy0Var.l1;
+        boolean z4 = i10 >= i11;
+        if (i10 != i11) {
+            zy0Var.l1 = i10;
+        }
+        MessagesController.DialogPhotos dialogPhotos = zy0Var.P0;
+        if (dialogPhotos != null) {
+            wh0 wh0Var = zy0Var.A0;
+            dialogPhotos.loadAfter(i10 - (wh0Var != null ? wh0Var.j() : 0), z4);
+        }
+    }
 
-    void d();
+    @Override // m2.f
+    public final void b(float f10, int i10, int i11) {
+        ImageLocation imageLocation;
+        org.telegram.ui.zy0 zy0Var = this.a;
+        wh0 wh0Var = zy0Var.A0;
+        ArrayList arrayList = zy0Var.T0;
+        zy0Var.B(f10, i10);
+        if (i11 == 0) {
+            int k10 = wh0Var.k(i10);
+            zy0Var.getCurrentItemView();
+            int childCount = zy0Var.getChildCount();
+            for (int i12 = 0; i12 < childCount; i12++) {
+                View childAt = zy0Var.getChildAt(i12);
+                if (childAt instanceof p9) {
+                    int k11 = wh0Var.k(wh0Var.d.indexOf(childAt));
+                    ImageReceiver imageReceiver = ((p9) childAt).getImageReceiver();
+                    boolean allowStartAnimation = imageReceiver.getAllowStartAnimation();
+                    if (k11 >= 0 && k11 < arrayList.size()) {
+                        if (k11 == k10) {
+                            if (!allowStartAnimation) {
+                                imageReceiver.setAllowStartAnimation(true);
+                                imageReceiver.startAnimation();
+                            }
+                            ImageLocation imageLocation2 = (ImageLocation) arrayList.get(k11);
+                            if (imageLocation2 != null) {
+                                FileLoader.getInstance(zy0Var.I0).setForceStreamLoadingFile(imageLocation2.location, "mp4");
+                            }
+                        } else if (allowStartAnimation) {
+                            y5 animation = imageReceiver.getAnimation();
+                            if (animation != null && (imageLocation = (ImageLocation) arrayList.get(k11)) != null) {
+                                animation.y(imageLocation.videoSeekTo, false, true);
+                            }
+                            imageReceiver.setAllowStartAnimation(false);
+                            imageReceiver.stopAnimation();
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @Override // m2.f
+    public final void c(int i10) {
+    }
 }

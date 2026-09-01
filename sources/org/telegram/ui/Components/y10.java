@@ -1,69 +1,75 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
+import android.graphics.Paint;
+import android.graphics.Path;
+import java.util.ArrayList;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class y10 extends qg.b {
-    public final /* synthetic */ int n;
+public final class y10 {
+    public x10[] a;
+    public x10 b;
+    public x10 c;
+    public x10 d;
+    public float e;
+    public float f;
+    public float g;
+    public float h;
+    public float i;
+    public long j;
+    public float k;
+    public ArrayList l;
+    public Paint m;
+    public Path n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ y10(int i10, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(i10, f6Var);
-        this.n = 0;
+    public final void a(float f10) {
+        this.g = f10;
+        float f11 = this.e;
+        this.h = (f10 - f11) / 250.0f;
+        this.i = (f10 - f11) / 120.0f;
     }
 
-    @Override // qg.b, qg.a
-    public int W1() {
-        switch (this.n) {
-            case 0:
-                if (a()) {
-                    return 83886079;
-                }
-                return TLObject.FLAG_29;
-            default:
-                return super.W1();
+    public final void b(int i10, boolean z4) {
+        x10 x10Var = this.b;
+        if (x10Var == null || x10Var.i != i10) {
+            if (VoIPService.getSharedInstance() == null && this.b == null) {
+                this.b = this.d;
+                return;
+            }
+            x10 x10Var2 = z4 ? this.b : null;
+            this.c = x10Var2;
+            this.b = this.a[i10];
+            if (x10Var2 != null) {
+                this.k = 0.0f;
+            } else {
+                this.k = 1.0f;
+            }
         }
     }
 
-    @Override // qg.b, qg.a
-    public int X0() {
-        switch (this.n) {
-            case 0:
-                if (a()) {
-                    return 301989887;
-                }
-                return TLObject.FLAG_29;
-            default:
-                return super.X0();
+    public final void c(boolean z4) {
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        if (sharedInstance != null) {
+            int callState = sharedInstance.getCallState();
+            if (!sharedInstance.isSwitchingStream() && (callState == 1 || callState == 2 || callState == 6 || callState == 5)) {
+                b(2, z4);
+                return;
+            }
+            ChatObject.Call call = sharedInstance.groupCall;
+            if (call == null) {
+                b(sharedInstance.isMicMute() ? 1 : 0, z4);
+                return;
+            }
+            TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) call.participants.f(sharedInstance.getSelfId());
+            if ((groupCallParticipant == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted || ChatObject.canManageCalls(sharedInstance.getChat())) && !sharedInstance.groupCall.call.rtmp_stream) {
+                b(sharedInstance.isMicMute() ? 1 : 0, z4);
+            } else {
+                sharedInstance.setMicMute(true, false, false);
+                b(3, z4);
+            }
         }
-    }
-
-    @Override // qg.b
-    public boolean a() {
-        switch (this.n) {
-            case 1:
-                return true;
-            case 2:
-                return true;
-            default:
-                return super.a();
-        }
-    }
-
-    @Override // qg.b, qg.a
-    public int x0() {
-        switch (this.n) {
-            case 0:
-                return a() ? 117440511 : 285212672;
-            default:
-                return super.x0();
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ y10(org.telegram.ui.ActionBar.f6 f6Var, int i10, float f10, int i11) {
-        super(f6Var, i10, f10);
-        this.n = i11;
     }
 }

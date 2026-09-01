@@ -2,13 +2,13 @@ package com.google.android.recaptcha.internal;
 
 import android.webkit.WebView;
 import dd.p;
-import k7.p7;
+import k7.q7;
 import ld.t;
 import uc.c;
 import vc.a;
 import wc.i;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 final class zzli extends i implements p {
     Object zza;
@@ -40,10 +40,10 @@ final class zzli extends i implements p {
         try {
             if (this.zzb != 0) {
                 String str = (String) this.zza;
-                p7.b(obj);
+                q7.b(obj);
                 zza = str;
             } else {
-                p7.b(obj);
+                q7.b(obj);
                 zzly zzlyVar = this.zzc;
                 zza = zzly.zzm(zzlyVar).zza();
                 this.zza = zza;
@@ -55,8 +55,8 @@ final class zzli extends i implements p {
             }
             ((WebView) obj).loadDataWithBaseURL(zza, this.zzd, "text/html", "utf-8", null);
             return sc.i.a;
-        } catch (Exception e) {
-            zzcg zzcgVar = new zzcg(zzce.zzb, zzcd.zzU, e.getMessage(), null, 8, null);
+        } catch (Exception e6) {
+            zzcg zzcgVar = new zzcg(zzce.zzb, zzcd.zzU, e6.getMessage(), null, 8, null);
             ((t) this.zzc.zzz()).L(zzcgVar);
             throw zzcgVar;
         }

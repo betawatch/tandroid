@@ -3,10 +3,10 @@ package j8;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import j7.f5;
+import j7.g5;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class j extends c6.a {
     public static final Parcelable.Creator<j> CREATOR = new f8.o(24);
@@ -24,26 +24,26 @@ public final class j extends c6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
+        int q10 = g5.q(parcel, 20293);
         boolean z4 = this.a;
-        f5.s(parcel, 1, 4);
+        g5.s(parcel, 1, 4);
         parcel.writeInt(z4 ? 1 : 0);
         boolean z10 = this.b;
-        f5.s(parcel, 2, 4);
+        g5.s(parcel, 2, 4);
         parcel.writeInt(z10 ? 1 : 0);
-        f5.k(parcel, 3, this.c, i10);
+        g5.k(parcel, 3, this.c, i10);
         boolean z11 = this.d;
-        f5.s(parcel, 4, 4);
+        g5.s(parcel, 4, 4);
         parcel.writeInt(z11 ? 1 : 0);
-        f5.k(parcel, 5, this.e, i10);
-        f5.h(parcel, 6, this.f);
-        f5.k(parcel, 7, this.h, i10);
-        f5.k(parcel, 8, this.n, i10);
+        g5.k(parcel, 5, this.e, i10);
+        g5.h(parcel, 6, this.f);
+        g5.k(parcel, 7, this.h, i10);
+        g5.k(parcel, 8, this.n, i10);
         boolean z12 = this.r;
-        f5.s(parcel, 9, 4);
+        g5.s(parcel, 9, 4);
         parcel.writeInt(z12 ? 1 : 0);
-        f5.l(parcel, 10, this.s);
-        f5.b(parcel, 11, this.v);
-        f5.r(parcel, q10);
+        g5.l(parcel, 10, this.s);
+        g5.b(parcel, 11, this.v);
+        g5.r(parcel, q10);
     }
 }

@@ -1,61 +1,86 @@
 package dg;
 
-import android.text.TextUtils;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Bitmap;
+import android.graphics.PointF;
+import org.telegram.ui.Components.kv0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class f1 extends TLObject {
-    public static final /* synthetic */ int j = 0;
-    public int a;
-    public String b;
-    public String c;
-    public TLRPC.WebPage d;
-    public boolean e;
-    public boolean f = true;
-    public int i;
+public final class f1 {
+    public final float a;
+    public final float b;
+    public final PointF c;
+    public final PointF d;
+    public final float e;
+    public final PointF f;
+    public final PointF g;
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void readParams(InputSerializedData inputSerializedData, boolean z4) {
-        int readInt32 = inputSerializedData.readInt32(z4);
-        this.a = readInt32;
-        this.e = (readInt32 & 8) != 0;
-        this.f = (readInt32 & 16) != 0;
-        this.c = inputSerializedData.readString(z4);
-        if ((this.a & 1) != 0) {
-            this.d = TLRPC.WebPage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+    public f1(h8.a aVar, Bitmap bitmap, kv0 kv0Var, boolean z4) {
+        PointF pointF = null;
+        PointF pointF2 = null;
+        PointF pointF3 = null;
+        PointF pointF4 = null;
+        for (h8.d dVar : aVar.b) {
+            PointF pointF5 = dVar.a;
+            int i10 = dVar.b;
+            if (i10 == 4) {
+                pointF = b(pointF5, bitmap, kv0Var, z4);
+            } else if (i10 == 5) {
+                pointF3 = b(pointF5, bitmap, kv0Var, z4);
+            } else if (i10 == 10) {
+                pointF2 = b(pointF5, bitmap, kv0Var, z4);
+            } else if (i10 == 11) {
+                pointF4 = b(pointF5, bitmap, kv0Var, z4);
+            }
         }
-        if ((this.a & 2) != 0) {
-            this.b = inputSerializedData.readString(z4);
+        if (pointF != null && pointF2 != null) {
+            if (pointF.x < pointF2.x) {
+                PointF pointF6 = pointF2;
+                pointF2 = pointF;
+                pointF = pointF6;
+            }
+            PointF pointF7 = new PointF((pointF2.x * 0.5f) + (pointF.x * 0.5f), (pointF2.y * 0.5f) + (pointF.y * 0.5f));
+            this.d = pointF7;
+            float hypot = (float) Math.hypot(pointF2.x - pointF.x, pointF2.y - pointF.y);
+            this.e = hypot;
+            this.b = (float) Math.toDegrees(Math.atan2(pointF2.y - pointF.y, pointF2.x - pointF.x) + 3.141592653589793d);
+            this.a = 2.35f * hypot;
+            float f10 = hypot * 0.8f;
+            double radians = (float) Math.toRadians(r0 - 90.0f);
+            this.c = new PointF((((float) Math.cos(radians)) * f10) + pointF7.x, (f10 * ((float) Math.sin(radians))) + pointF7.y);
         }
-        if ((this.a & 4) != 0) {
-            this.i = inputSerializedData.readInt32(z4);
+        if (pointF3 == null || pointF4 == null) {
+            return;
         }
+        if (pointF3.x < pointF4.x) {
+            PointF pointF8 = pointF4;
+            pointF4 = pointF3;
+            pointF3 = pointF8;
+        }
+        PointF pointF9 = new PointF((pointF4.x * 0.5f) + (pointF3.x * 0.5f), (pointF4.y * 0.5f) + (pointF3.y * 0.5f));
+        this.f = pointF9;
+        float f11 = this.e * 0.7f;
+        double radians2 = (float) Math.toRadians(this.b + 90.0f);
+        this.g = new PointF((((float) Math.cos(radians2)) * f11) + pointF9.x, (f11 * ((float) Math.sin(radians2))) + pointF9.y);
     }
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void serializeToStream(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeInt32(-625858389);
-        this.a = this.d != null ? this.a | 1 : this.a & (-2);
-        int i10 = !TextUtils.isEmpty(this.b) ? this.a | 2 : this.a & (-3);
-        this.a = i10;
-        int i11 = this.e ? i10 | 8 : i10 & (-9);
-        this.a = i11;
-        int i12 = this.f ? i11 | 16 : i11 & (-17);
-        this.a = i12;
-        outputSerializedData.writeInt32(i12);
-        outputSerializedData.writeString(this.c);
-        if ((this.a & 1) != 0) {
-            this.d.serializeToStream(outputSerializedData);
+    public static PointF b(PointF pointF, Bitmap bitmap, kv0 kv0Var, boolean z4) {
+        return new PointF((kv0Var.a * pointF.x) / (z4 ? bitmap.getHeight() : bitmap.getWidth()), (kv0Var.b * pointF.y) / (z4 ? bitmap.getWidth() : bitmap.getHeight()));
+    }
+
+    public final PointF a(int i10) {
+        if (i10 == 0) {
+            return this.c;
         }
-        if ((this.a & 2) != 0) {
-            outputSerializedData.writeString(this.b);
+        if (i10 == 1) {
+            return this.d;
         }
-        if ((this.a & 4) != 0) {
-            outputSerializedData.writeInt32(this.i);
+        if (i10 == 2) {
+            return this.f;
         }
+        if (i10 != 3) {
+            return null;
+        }
+        return this.g;
     }
 }

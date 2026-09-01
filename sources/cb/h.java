@@ -6,7 +6,7 @@ import com.google.mlkit.common.internal.MlKitComponentDiscoveryService;
 import java.util.ArrayList;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class h {
     public static final Object b = new Object();
@@ -33,11 +33,11 @@ public final class h {
             if (applicationContext != null) {
                 context = applicationContext;
             }
-            ArrayList w10 = new bf.b(16, context, new ja.c(MlKitComponentDiscoveryService.class, 4)).w();
+            ArrayList v = new bf.b(16, context, new o5.i(MlKitComponentDiscoveryService.class, 5)).v();
             ArrayList arrayList = new ArrayList();
             ArrayList arrayList2 = new ArrayList();
             w wVar = c9.f.g;
-            arrayList.addAll(w10);
+            arrayList.addAll(v);
             arrayList2.add(c9.b.c(context, Context.class, new Class[0]));
             arrayList2.add(c9.b.c(hVar2, h.class, new Class[0]));
             c9.i iVar = new c9.i(executor, arrayList, arrayList2, wVar);

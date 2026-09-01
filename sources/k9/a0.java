@@ -1,8 +1,8 @@
 package k9;
 
-import j7.f8;
+import j7.g8;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a0 extends e2 {
     public final String b;
@@ -31,20 +31,20 @@ public final class a0 extends e2 {
         this.l = g1Var;
     }
 
-    public final f8 a() {
-        f8 f8Var = new f8();
-        f8Var.a = this.b;
-        f8Var.b = this.c;
-        f8Var.i = Integer.valueOf(this.d);
-        f8Var.c = this.e;
-        f8Var.d = this.f;
-        f8Var.e = this.g;
-        f8Var.k = this.h;
-        f8Var.f = this.i;
-        f8Var.g = this.j;
-        f8Var.h = this.k;
-        f8Var.j = this.l;
-        return f8Var;
+    public final g8 a() {
+        g8 g8Var = new g8();
+        g8Var.a = this.b;
+        g8Var.b = this.c;
+        g8Var.i = Integer.valueOf(this.d);
+        g8Var.c = this.e;
+        g8Var.d = this.f;
+        g8Var.e = this.g;
+        g8Var.k = this.h;
+        g8Var.f = this.i;
+        g8Var.g = this.j;
+        g8Var.h = this.k;
+        g8Var.j = this.l;
+        return g8Var;
     }
 
     public final boolean equals(Object obj) {

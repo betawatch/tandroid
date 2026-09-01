@@ -6,9 +6,9 @@ import android.view.SurfaceHolder;
 import android.view.TextureView;
 import java.util.ArrayList;
 import java.util.concurrent.Executor;
-import org.telegram.ui.Components.i71;
+import org.telegram.ui.Components.k71;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class c0 implements l3.q, SurfaceHolder.Callback, TextureView.SurfaceTextureListener {
     public final /* synthetic */ f0 a;
@@ -40,13 +40,13 @@ public final class c0 implements l3.q, SurfaceHolder.Callback, TextureView.Surfa
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            if (((i71) ((i5.t) obj)).G.onSurfaceDestroyed(surfaceTexture)) {
+            if (((k71) ((i5.t) obj)).G.onSurfaceDestroyed(surfaceTexture)) {
                 return false;
             }
         }
         Executor executor = f0Var.i0;
         if (executor != null) {
-            executor.execute(new ef.e(this, surfaceTexture));
+            executor.execute(new eh.m(this, surfaceTexture));
             return true;
         }
         f0Var.Z(null);
@@ -70,7 +70,7 @@ public final class c0 implements l3.q, SurfaceHolder.Callback, TextureView.Surfa
         f0 f0Var = this.a;
         Executor executor = f0Var.i0;
         if (executor != null) {
-            executor.execute(new gf.c(18, this, surfaceTexture));
+            executor.execute(new gf.c(17, this, surfaceTexture));
             return;
         }
         ArrayList arrayList = f0Var.j0;
@@ -79,7 +79,7 @@ public final class c0 implements l3.q, SurfaceHolder.Callback, TextureView.Surfa
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            ((i71) ((i5.t) obj)).G.onSurfaceTextureUpdated(surfaceTexture);
+            ((k71) ((i5.t) obj)).G.onSurfaceTextureUpdated(surfaceTexture);
         }
     }
 

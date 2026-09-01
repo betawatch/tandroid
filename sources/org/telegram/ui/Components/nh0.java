@@ -1,83 +1,130 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessagesController;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class nh0 implements m2.f {
-    public final /* synthetic */ vh0 a;
+public final /* synthetic */ class nh0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ oh0 b;
 
-    public nh0(vh0 vh0Var) {
-        this.a = vh0Var;
+    public /* synthetic */ nh0(oh0 oh0Var, int i10) {
+        this.a = i10;
+        this.b = oh0Var;
     }
 
-    @Override // m2.f
-    public final void a(int i10) {
-        vh0 vh0Var = this.a;
-        int i11 = vh0Var.l1;
-        boolean z4 = i10 >= i11;
-        if (i10 != i11) {
-            vh0Var.getClass();
-            vh0Var.l1 = i10;
-        }
-        MessagesController.DialogPhotos dialogPhotos = vh0Var.P0;
-        if (dialogPhotos != null) {
-            uh0 uh0Var = vh0Var.A0;
-            dialogPhotos.loadAfter(i10 - (uh0Var != null ? uh0Var.j() : 0), z4);
-        }
-    }
-
-    @Override // m2.f
-    public final void b(float f10, int i10, int i11) {
-        ImageLocation imageLocation;
-        vh0 vh0Var = this.a;
-        vh0Var.B(f10, i10);
-        if (i11 == 0) {
-            int k10 = vh0Var.A0.k(i10);
-            if (vh0Var.f1) {
-                k10--;
-            }
-            vh0Var.getCurrentItemView();
-            int childCount = vh0Var.getChildCount();
-            for (int i12 = 0; i12 < childCount; i12++) {
-                View childAt = vh0Var.getChildAt(i12);
-                if (childAt instanceof p9) {
-                    uh0 uh0Var = vh0Var.A0;
-                    int k11 = uh0Var.k(uh0Var.d.indexOf(childAt));
-                    if (vh0Var.f1) {
-                        k11--;
-                    }
-                    ImageReceiver imageReceiver = ((p9) childAt).getImageReceiver();
-                    boolean allowStartAnimation = imageReceiver.getAllowStartAnimation();
-                    if (k11 >= 0 && k11 < vh0Var.T0.size()) {
-                        if (k11 == k10) {
-                            if (!allowStartAnimation) {
-                                imageReceiver.setAllowStartAnimation(true);
-                                imageReceiver.startAnimation();
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x007a, code lost:
+    
+        if (r3.getHeight() != r5.b.getHeight()) goto L30;
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        int i10;
+        ci0[] ci0VarArr;
+        switch (this.a) {
+            case 0:
+                oh0 oh0Var = this.b;
+                synchronized (oh0Var.b) {
+                    ci0[] ci0VarArr2 = oh0Var.c;
+                    ci0 ci0Var = ci0VarArr2[0];
+                    ci0[] ci0VarArr3 = oh0Var.d;
+                    i10 = 2;
+                    ci0VarArr = new ci0[]{ci0Var, ci0VarArr3[0], ci0VarArr2[1], ci0VarArr3[1], ci0VarArr2[2], ci0VarArr3[2]};
+                }
+                boolean z4 = false;
+                for (int i11 = 0; i11 < 6; i11 += 2) {
+                    ci0 ci0Var2 = ci0VarArr[i11];
+                    ci0 ci0Var3 = ci0VarArr[i11 + 1];
+                    if (ci0Var2 != null && !ci0Var2.c && ci0Var2.f) {
+                        ci0Var2.e = true;
+                        if (ci0Var3 != null) {
+                            Bitmap bitmap = ci0Var3.b;
+                            if (!ci0Var3.d) {
+                                if (bitmap.getWidth() == ci0Var2.b.getWidth()) {
+                                    break;
+                                }
                             }
-                            ImageLocation imageLocation2 = (ImageLocation) vh0Var.T0.get(k11);
-                            if (imageLocation2 != null) {
-                                FileLoader.getInstance(vh0Var.I0).setForceStreamLoadingFile(imageLocation2.location, "mp4");
-                            }
-                        } else if (allowStartAnimation) {
-                            y5 animation = imageReceiver.getAnimation();
-                            if (animation != null && (imageLocation = (ImageLocation) vh0Var.T0.get(k11)) != null) {
-                                animation.y(imageLocation.videoSeekTo, false, true);
-                            }
-                            imageReceiver.setAllowStartAnimation(false);
-                            imageReceiver.stopAnimation();
                         }
+                        if (ci0Var3 != null) {
+                            ci0Var3.a();
+                        }
+                        ci0Var3 = new ci0();
+                        Bitmap createBitmap = Bitmap.createBitmap(ci0Var2.b.getWidth(), ci0Var2.b.getHeight(), Bitmap.Config.ARGB_8888);
+                        ci0Var3.b = createBitmap;
+                        ci0Var3.a = new Canvas(createBitmap);
+                        synchronized (oh0Var.b) {
+                            ci0[] ci0VarArr4 = oh0Var.d;
+                            int i12 = 0;
+                            while (true) {
+                                ci0[] ci0VarArr5 = oh0Var.c;
+                                if (i12 >= ci0VarArr5.length) {
+                                    i12 = 0;
+                                } else if (ci0VarArr5[i12] != ci0Var2) {
+                                    i12++;
+                                }
+                            }
+                            ci0VarArr4[i12] = ci0Var3;
+                        }
+                        Bitmap bitmap2 = ci0Var2.b;
+                        Utilities.stackBlurBitmap(bitmap2, Math.max(10, bitmap2.getWidth() / 180));
+                        synchronized (oh0Var.b) {
+                            if (!ci0Var3.d) {
+                                ci0Var3.f = false;
+                                ci0Var3.b.eraseColor(0);
+                            }
+                            ci0Var3.a.drawBitmap(bitmap2, 0.0f, 0.0f, (Paint) null);
+                            ci0Var3.f = true;
+                            Bitmap bitmap3 = ci0Var3.b;
+                            int i13 = 0;
+                            while (true) {
+                                ci0[] ci0VarArr6 = oh0Var.c;
+                                if (i13 >= ci0VarArr6.length) {
+                                    i13 = 0;
+                                } else if (ci0VarArr6[i13] != ci0Var2) {
+                                    i13++;
+                                }
+                            }
+                            oh0Var.b(bitmap3, i13);
+                        }
+                        if (!ci0Var2.d) {
+                            ci0Var2.f = false;
+                            ci0Var2.b.eraseColor(0);
+                        }
+                        ci0Var2.e = false;
+                        if (!ci0Var2.d && ci0Var2.c) {
+                            ci0Var2.d = true;
+                            ci0Var2.b.recycle();
+                        }
+                        z4 = true;
                     }
                 }
-            }
+                if (z4 && oh0Var.e && oh0Var.h != null) {
+                    oh0Var.postInvalidateOnAnimation();
+                }
+                if (oh0Var.e && (oh0Var.C || oh0Var.E)) {
+                    AndroidUtilities.runOnUIThread(new nh0(oh0Var, i10));
+                    return;
+                } else {
+                    oh0Var.e = false;
+                    return;
+                }
+            case 1:
+                oh0 oh0Var2 = this.b;
+                oh0Var2.E = true;
+                oh0Var2.postInvalidateOnAnimation();
+                return;
+            default:
+                oh0 oh0Var3 = this.b;
+                oh0Var3.d();
+                di0.a.postRunnable(oh0Var3.s);
+                return;
         }
-    }
-
-    @Override // m2.f
-    public final void c(int i10) {
     }
 }

@@ -1,133 +1,225 @@
 package hg;
 
-import android.text.TextUtils;
-import android.view.View;
-import cg.n;
-import gg.i2;
-import org.telegram.messenger.DialogObject;
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.webkit.JsPromptResult;
+import android.widget.EditText;
+import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicBoolean;
+import lh.s5;
+import org.json.JSONObject;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.nq;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.Components.cb;
+import org.telegram.ui.Components.ic;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.xk;
+import org.telegram.ui.Components.yc0;
+import org.telegram.ui.ExternalActionActivity;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ci1;
+import org.telegram.ui.g51;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class g extends bg.b {
-    public TLRPC.User c;
-    public TLRPC.InputPeer d;
-    public TLRPC.Chat e;
-    public TLRPC.TL_help_country f;
-    public CharSequence g;
-    public String h;
-    public int i;
-    public int j;
-    public boolean k;
-    public int l;
-    public n m;
-    public n n;
-    public i2 o;
-    public i2 p;
-    public View q;
-    public nq r;
+public final /* synthetic */ class g implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public g(int i10, boolean z4) {
-        super(i10, z4);
-        this.l = -1;
+    public /* synthetic */ g(int i10, Object obj, Object obj2) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    public static g b(CharSequence charSequence) {
-        g gVar = new g(8, false);
-        gVar.g = charSequence;
-        return gVar;
-    }
-
-    public static g c(TLRPC.User user, boolean z4) {
-        g gVar = new g(3, true);
-        gVar.c = user;
-        gVar.d = null;
-        gVar.e = null;
-        gVar.k = z4;
-        return gVar;
-    }
-
-    @Override // bg.b
-    public final boolean a(bg.b bVar) {
-        if (this != bVar) {
-            if (g.class == bVar.getClass()) {
-                g gVar = (g) bVar;
-                if (this.k == gVar.k) {
-                    if (this.a == 8) {
-                        if (TextUtils.equals(this.h, gVar.h)) {
-                            if ((this.m == null) == (gVar.m == null)) {
-                            }
-                        }
-                    }
-                }
-            }
-            return false;
-        }
-        return true;
-    }
-
-    public final boolean equals(Object obj) {
-        long peerDialogId;
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || g.class != obj.getClass()) {
-            return false;
-        }
-        g gVar = (g) obj;
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        Runnable runnable;
         int i10 = this.a;
-        if (i10 != gVar.a) {
-            return false;
-        }
-        if (i10 == -1 && this.l != gVar.l) {
-            return false;
-        }
-        if (i10 == 3) {
-            TLRPC.User user = this.c;
-            long j10 = 0;
-            if (user != null) {
-                peerDialogId = user.id;
-            } else {
-                TLRPC.Chat chat = this.e;
-                if (chat != null) {
-                    peerDialogId = -chat.id;
-                } else {
-                    TLRPC.InputPeer inputPeer = this.d;
-                    peerDialogId = inputPeer != null ? DialogObject.getPeerDialogId(inputPeer) : 0L;
+        Object obj = this.c;
+        Object obj2 = this.b;
+        switch (i10) {
+            case 0:
+                y1 y1Var = (y1) obj;
+                if (!((AtomicBoolean) obj2).get()) {
+                    y1Var.run();
+                    break;
                 }
-            }
-            TLRPC.User user2 = gVar.c;
-            if (user2 != null) {
-                j10 = user2.id;
-            } else {
-                TLRPC.Chat chat2 = gVar.e;
-                if (chat2 != null) {
-                    j10 = -chat2.id;
-                } else {
-                    TLRPC.InputPeer inputPeer2 = gVar.d;
-                    if (inputPeer2 != null) {
-                        j10 = DialogObject.getPeerDialogId(inputPeer2);
+                break;
+            case 1:
+                s5 s5Var = (s5) obj2;
+                if (!((boolean[]) obj)[0]) {
+                    s5Var.run(Boolean.FALSE, null);
+                    break;
+                }
+                break;
+            case 2:
+                org.telegram.ui.ActionBar.p2 p2Var = (org.telegram.ui.ActionBar.p2) obj2;
+                DialogInterface.OnDismissListener onDismissListener = (DialogInterface.OnDismissListener) obj;
+                p2Var.getClass();
+                if (onDismissListener != null) {
+                    onDismissListener.onDismiss(dialogInterface);
+                }
+                p2Var.onDialogDismiss((Dialog) dialogInterface);
+                if (dialogInterface == p2Var.visibleDialog) {
+                    p2Var.visibleDialog = null;
+                    break;
+                }
+                break;
+            case 3:
+                org.telegram.ui.ActionBar.p2 p2Var2 = (org.telegram.ui.ActionBar.p2) obj2;
+                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj;
+                p2Var2.onPause();
+                p2Var2.onFragmentDestroy();
+                if (n2Var != null && (runnable = n2Var.b) != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
+            case 4:
+                q0.a aVar = (q0.a) obj;
+                if (!((AtomicBoolean) obj2).get()) {
+                    aVar.accept(Boolean.FALSE);
+                    break;
+                }
+                break;
+            case 5:
+                AndroidUtilities.hideKeyboard((EditText) obj2);
+                AndroidUtilities.hideKeyboard((EditText) obj);
+                break;
+            case 6:
+                ((dg.h0) obj2).run(Integer.valueOf(((yc0) obj).getValue()));
+                break;
+            case 7:
+                ExternalActionActivity externalActionActivity = (ExternalActionActivity) obj2;
+                ArrayList arrayList = ExternalActionActivity.x;
+                externalActionActivity.getClass();
+                externalActionActivity.setResult(1, new Intent().putExtra("error", ((TLRPC.TL_error) obj).text));
+                externalActionActivity.finish();
+                break;
+            case 8:
+                LaunchActivity launchActivity = (LaunchActivity) obj2;
+                org.telegram.ui.ActionBar.d2 d2Var = (org.telegram.ui.ActionBar.d2) obj;
+                if (d2Var == launchActivity.E0) {
+                    ActionBarLayout actionBarLayout = launchActivity.n0;
+                    org.telegram.ui.ActionBar.p2 lastFragment = actionBarLayout == null ? null : actionBarLayout.getLastFragment();
+                    try {
+                        String str = LocaleController.getInstance().getCurrentLocaleInfo().shortName;
+                        if (lastFragment != null) {
+                            ic Q = qc.a0(lastFragment).Q(R.raw.msg_translate, 36, LaunchActivity.V(R.string.ChangeLanguageLater, "ChangeLanguageLater", str.equals("en") ? launchActivity.H0 : launchActivity.G0));
+                            Q.j = 5000;
+                            Q.j();
+                        } else {
+                            ic Q2 = new qc(cb.a(launchActivity), null).Q(R.raw.msg_translate, 36, LaunchActivity.V(R.string.ChangeLanguageLater, "ChangeLanguageLater", str.equals("en") ? launchActivity.H0 : launchActivity.G0));
+                            Q2.j = 5000;
+                            Q2.j();
+                        }
+                    } catch (Exception e6) {
+                        FileLog.e(e6);
                     }
+                    launchActivity.E0 = null;
+                } else if (d2Var == launchActivity.C0) {
+                    MessagesController.getGlobalMainSettings();
+                    SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
+                    edit.putBoolean("proxy_enabled", false);
+                    edit.putBoolean("proxy_enabled_calls", false);
+                    edit.commit();
+                    ConnectionsManager.setProxySettings(false, null);
+                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.proxySettingsChanged, new Object[0]);
+                    launchActivity.C0 = null;
                 }
-            }
-            if (peerDialogId != j10) {
-                return false;
-            }
+                launchActivity.B0.remove(d2Var);
+                break;
+            case 9:
+                xk xkVar = (xk) obj;
+                if (!((boolean[]) obj2)[0]) {
+                    xkVar.run(Boolean.FALSE);
+                    break;
+                }
+                break;
+            case 10:
+                g51 g51Var = (g51) obj2;
+                if (!((boolean[]) obj)[0]) {
+                    g51Var.c(true);
+                }
+                g51Var.w = null;
+                break;
+            case 11:
+                ci1 ci1Var = (ci1) obj2;
+                if (!((boolean[]) obj)[0]) {
+                    ci1Var.r0.b();
+                    break;
+                }
+                break;
+            case 12:
+                org.telegram.ui.web.a1 a1Var = (org.telegram.ui.web.a1) obj;
+                a1Var.getClass();
+                if (!((AtomicBoolean) obj2).get()) {
+                    a1Var.v("popup_closed", new JSONObject());
+                }
+                a1Var.W = null;
+                a1Var.b0 = System.currentTimeMillis();
+                break;
+            case 13:
+                org.telegram.ui.web.a1 a1Var2 = (org.telegram.ui.web.a1) obj2;
+                Runnable runnable2 = (Runnable) obj;
+                if (runnable2 != null) {
+                    a1Var2.getClass();
+                    runnable2.run();
+                }
+                a1Var2.W = null;
+                break;
+            case 14:
+                boolean[] zArr = (boolean[]) obj2;
+                JsPromptResult jsPromptResult = (JsPromptResult) obj;
+                if (!zArr[0]) {
+                    zArr[0] = true;
+                    jsPromptResult.cancel();
+                    break;
+                }
+                break;
+            case 15:
+                boolean[] zArr2 = (boolean[]) obj2;
+                lh.h hVar = (lh.h) obj;
+                if (!zArr2[0]) {
+                    hVar.run(Boolean.FALSE);
+                    zArr2[0] = true;
+                    break;
+                }
+                break;
+            case 16:
+                boolean[] zArr3 = (boolean[]) obj2;
+                c1 c1Var = (c1) obj;
+                if (!zArr3[0]) {
+                    zArr3[0] = true;
+                    c1Var.run(null);
+                    break;
+                }
+                break;
+            default:
+                uf.u0 u0Var = (uf.u0) obj2;
+                u0Var.getClass();
+                if (!((boolean[]) obj)[0]) {
+                    u0Var.Q();
+                    break;
+                }
+                break;
         }
-        int i11 = this.a;
-        if (i11 == 6 && this.f != gVar.f) {
-            return false;
-        }
-        if (i11 == 7 && !TextUtils.equals(this.g, gVar.g)) {
-            return false;
-        }
-        if (this.a == 8 && !TextUtils.equals(this.g, gVar.g)) {
-            return false;
-        }
-        if (this.a != 9 || (TextUtils.equals(this.g, gVar.g) && this.i == gVar.i && this.j == gVar.j)) {
-            return this.a != 10 || this.q == gVar.q;
-        }
-        return false;
+    }
+
+    public /* synthetic */ g(org.telegram.ui.web.a1 a1Var, AtomicBoolean atomicBoolean) {
+        this.a = 12;
+        this.c = a1Var;
+        this.b = atomicBoolean;
     }
 }

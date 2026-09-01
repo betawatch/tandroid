@@ -1,154 +1,74 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.KeyEvent;
+import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class od1 extends FrameLayout {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ rd1 b;
+public final class od1 implements View.OnClickListener {
+    public final /* synthetic */ xh0 a;
+    public final /* synthetic */ xn b;
+    public final /* synthetic */ org.telegram.ui.Components.tl0 c;
+    public final /* synthetic */ LinearLayout d;
+    public final /* synthetic */ org.telegram.ui.Components.q70 e;
+    public final /* synthetic */ org.telegram.ui.Components.q70 f;
+    public final /* synthetic */ ud1 h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ od1(rd1 rd1Var, Context context, int i10) {
-        super(context);
-        this.a = i10;
-        this.b = rd1Var;
+    public od1(ud1 ud1Var, xh0 xh0Var, xn xnVar, org.telegram.ui.Components.tl0 tl0Var, LinearLayout linearLayout, org.telegram.ui.Components.q70 q70Var, org.telegram.ui.Components.q70 q70Var2) {
+        this.h = ud1Var;
+        this.a = xh0Var;
+        this.b = xnVar;
+        this.c = tl0Var;
+        this.d = linearLayout;
+        this.e = q70Var;
+        this.f = q70Var2;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        org.telegram.ui.Cells.t1 t1Var;
-        switch (this.a) {
-            case 0:
-                rd1 rd1Var = this.b;
-                if (rd1Var.x <= 0.0f || rd1Var.v == null) {
-                    canvas2 = canvas;
-                } else {
-                    rd1Var.w.reset();
-                    float width = getWidth() / rd1Var.r.getWidth();
-                    rd1Var.w.postScale(width, width);
-                    rd1Var.s.setLocalMatrix(rd1Var.w);
-                    rd1Var.v.setAlpha((int) (rd1Var.x * 255.0f));
-                    canvas2 = canvas;
-                    canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), rd1Var.v);
-                }
-                if (rd1Var.K && (t1Var = rd1Var.H) != null) {
-                    t1Var.H7 = rd1Var.L;
-                    t1Var.invalidate();
-                    rd1Var.K = false;
-                }
-                super.dispatchDraw(canvas2);
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        xh0 xh0Var = this.a;
+        ArrayList arrayList = xh0Var.b;
+        ArrayList arrayList2 = xh0Var.c;
+        if (arrayList2.isEmpty()) {
+            return;
         }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public boolean dispatchKeyEventPreIme(KeyEvent keyEvent) {
-        switch (this.a) {
-            case 0:
-                if (keyEvent == null || keyEvent.getKeyCode() != 4 || keyEvent.getAction() != 1) {
-                    return super.dispatchKeyEventPreIme(keyEvent);
-                }
-                this.b.c(true);
-                return true;
-            default:
-                return super.dispatchKeyEventPreIme(keyEvent);
+        int size = arrayList2.size();
+        ud1 ud1Var = this.h;
+        xn xnVar = this.b;
+        if (size == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
+            TLObject tLObject = (TLObject) arrayList2.get(0);
+            if (tLObject == null) {
+                return;
+            }
+            Bundle bundle = new Bundle();
+            if (tLObject instanceof TLRPC.User) {
+                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
+            } else if (tLObject instanceof TLRPC.Chat) {
+                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
+            }
+            xnVar.presentFragment(new ProfileActivity(bundle, null));
+            ud1Var.c(false);
+            return;
         }
-    }
-
-    @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j10) {
-        switch (this.a) {
-            case 1:
-                rd1 rd1Var = this.b;
-                if (view != rd1Var.G && view != rd1Var.F) {
-                    return super.drawChild(canvas, view, j10);
-                }
-                canvas.save();
-                canvas.clipRect(0.0f, AndroidUtilities.lerp(rd1Var.I, 0.0f, rd1Var.x), getWidth(), AndroidUtilities.lerp(rd1Var.J, getHeight(), rd1Var.x));
-                boolean drawChild = super.drawChild(canvas, view, j10);
-                canvas.restore();
-                return drawChild;
-            default:
-                return super.drawChild(canvas, view, j10);
+        if (SharedConfig.messageSeenHintCount > 0 && xnVar.U0.getKeyboardHeight() < AndroidUtilities.dp(20.0f)) {
+            org.telegram.ui.Components.ic t6 = new org.telegram.ui.Components.qc(org.telegram.ui.Components.cb.a(ud1Var.getContext()), ud1Var.a).t(AndroidUtilities.replaceTags(LocaleController.getString(R.string.MessageSeenTooltipMessage)), null);
+            xnVar.k1 = t6;
+            t6.j = 4000;
+            t6.j();
+            SharedConfig.updateMessageSeenHintCount(SharedConfig.messageSeenHintCount - 1);
         }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 0:
-                super.onLayout(z4, i10, i11, i12, i13);
-                this.b.d();
-                break;
-            default:
-                super.onLayout(z4, i10, i11, i12, i13);
-                break;
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 2:
-                int size = View.MeasureSpec.getSize(i10);
-                int size2 = View.MeasureSpec.getSize(i11);
-                rd1 rd1Var = this.b;
-                rd1Var.e();
-                for (int i12 = 0; i12 < getChildCount(); i12++) {
-                    View childAt = getChildAt(i12);
-                    ViewGroup viewGroup = rd1Var.P;
-                    if (childAt == viewGroup) {
-                        float f10 = rd1Var.Q;
-                        if (f10 > 0.0f) {
-                            viewGroup.measure(View.MeasureSpec.makeMeasureSpec(Math.min(size, (int) f10), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
-                        }
-                    }
-                    ViewGroup viewGroup2 = rd1Var.N;
-                    if (childAt == viewGroup2) {
-                        float f11 = rd1Var.O;
-                        if (f11 > 0.0f) {
-                            viewGroup2.measure(View.MeasureSpec.makeMeasureSpec(Math.min(size, (int) f11), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
-                        }
-                    }
-                    org.telegram.ui.Components.pk0 pk0Var = rd1Var.M;
-                    if (childAt == pk0Var) {
-                        childAt.measure(View.MeasureSpec.makeMeasureSpec(pk0Var.getTotalWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
-                    } else {
-                        childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
-                    }
-                }
-                setMeasuredDimension(size, size2);
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void onSizeChanged(int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 0:
-                super.onSizeChanged(i10, i11, i12, i13);
-                rd1 rd1Var = this.b;
-                tg.c.c(rd1Var.B, rd1Var.b);
-                rd1Var.C.d();
-                break;
-            default:
-                super.onSizeChanged(i10, i11, i12, i13);
-                break;
-        }
+        org.telegram.ui.Components.tl0 tl0Var = this.c;
+        tl0Var.requestLayout();
+        this.d.requestLayout();
+        tl0Var.getAdapter().l();
+        this.e.K(this.f);
     }
 }

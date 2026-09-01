@@ -9,17 +9,17 @@ import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.StateSet;
-import j7.x7;
+import j7.y7;
 import k2.p;
-import m.n2;
+import m.m2;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class e extends g implements j0.b {
     public boolean B;
     public b C;
-    public x7 D;
+    public y7 D;
     public int E;
     public int F;
     public boolean G;
@@ -98,7 +98,7 @@ public final class e extends g implements j0.b {
                     TypedArray f11 = h0.b.f(resources2, theme, attributeSet, j.c.b);
                     int resourceId = f11.getResourceId(z4 ? 1 : 0, z4 ? 1 : 0);
                     int resourceId2 = f11.getResourceId(i10, -1);
-                    Drawable g10 = resourceId2 > 0 ? n2.d().g(context2, resourceId2) : null;
+                    Drawable g10 = resourceId2 > 0 ? m2.d().g(context2, resourceId2) : null;
                     f11.recycle();
                     int attributeCount = attributeSet.getAttributeCount();
                     int[] iArr = new int[attributeCount];
@@ -141,7 +141,7 @@ public final class e extends g implements j0.b {
                     int resourceId3 = f12.getResourceId(2, -1);
                     int resourceId4 = f12.getResourceId(1, -1);
                     int resourceId5 = f12.getResourceId(z4 ? 1 : 0, -1);
-                    Drawable g11 = resourceId5 > 0 ? n2.d().g(context2, resourceId5) : null;
+                    Drawable g11 = resourceId5 > 0 ? m2.d().g(context2, resourceId5) : null;
                     boolean z10 = f12.getBoolean(3, z4);
                     f12.recycle();
                     if (g11 == null) {
@@ -234,9 +234,9 @@ public final class e extends g implements j0.b {
     @Override // i.g, android.graphics.drawable.Drawable
     public final void jumpToCurrentState() {
         super.jumpToCurrentState();
-        x7 x7Var = this.D;
-        if (x7Var != null) {
-            x7Var.d();
+        y7 y7Var = this.D;
+        if (y7Var != null) {
+            y7Var.d();
             this.D = null;
             c(this.E);
             this.E = -1;
@@ -266,23 +266,23 @@ public final class e extends g implements j0.b {
     */
     public final boolean onStateChange(int[] iArr) {
         int i10;
-        x7 aVar;
+        y7 aVar;
         b bVar = this.C;
         int f10 = bVar.f(iArr);
         if (f10 < 0) {
             f10 = bVar.f(StateSet.WILD_CARD);
         }
         if (f10 != this.h) {
-            x7 x7Var = this.D;
-            if (x7Var != null) {
+            y7 y7Var = this.D;
+            if (y7Var != null) {
                 if (f10 != this.E) {
-                    if (f10 == this.F && x7Var.a()) {
-                        x7Var.b();
+                    if (f10 == this.F && y7Var.a()) {
+                        y7Var.b();
                         this.E = this.F;
                         this.F = f10;
                     } else {
                         i10 = this.E;
-                        x7Var.d();
+                        y7Var.d();
                     }
                 }
                 r2 = true;
@@ -293,10 +293,10 @@ public final class e extends g implements j0.b {
             this.F = -1;
             this.E = -1;
             b bVar2 = this.C;
-            int e = bVar2.e(i10);
-            int e6 = bVar2.e(f10);
-            if (e6 != 0 && e != 0) {
-                long j10 = e6 | (e << 32);
+            int e6 = bVar2.e(i10);
+            int e10 = bVar2.e(f10);
+            if (e10 != 0 && e6 != 0) {
+                long j10 = e10 | (e6 << 32);
                 int longValue = (int) ((Long) bVar2.I.g(-1L, j10)).longValue();
                 if (longValue >= 0) {
                     boolean z4 = (((Long) bVar2.I.g(-1L, j10)).longValue() & 8589934592L) != 0;
@@ -324,10 +324,10 @@ public final class e extends g implements j0.b {
     @Override // i.g, android.graphics.drawable.Drawable
     public final boolean setVisible(boolean z4, boolean z10) {
         boolean visible = super.setVisible(z4, z10);
-        x7 x7Var = this.D;
-        if (x7Var != null && (visible || z10)) {
+        y7 y7Var = this.D;
+        if (y7Var != null && (visible || z10)) {
             if (z4) {
-                x7Var.c();
+                y7Var.c();
                 return visible;
             }
             jumpToCurrentState();

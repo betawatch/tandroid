@@ -1,23 +1,43 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class gx extends nh.q {
-    public final /* synthetic */ oy L0;
+public final /* synthetic */ class gx {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ hx b;
+    public final /* synthetic */ View c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gx(oy oyVar, Context context, oy oyVar2, int i10, int i11) {
-        super(context, oyVar2, i10, i11);
-        this.L0 = oyVar;
+    public /* synthetic */ gx(hx hxVar, View view, int i10) {
+        this.a = i10;
+        this.b = hxVar;
+        this.c = view;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.k kVar;
-        kVar = ((org.telegram.ui.ActionBar.p2) this.L0).actionBar;
-        return !kVar.s() && super.dispatchTouchEvent(motionEvent);
+    public final void a(boolean z4) {
+        switch (this.a) {
+            case 0:
+                View view = this.c;
+                if (view instanceof oh.o) {
+                    this.b.L0.B0.i((oh.o) view, false);
+                    if (z4) {
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.jc(20), 500L);
+                        break;
+                    }
+                }
+                break;
+            default:
+                View view2 = this.c;
+                if (view2 instanceof oh.o) {
+                    this.b.L0.B0.i((oh.o) view2, false);
+                    if (z4) {
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.jc(20), 500L);
+                        break;
+                    }
+                }
+                break;
+        }
     }
 }

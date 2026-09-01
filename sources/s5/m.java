@@ -7,6 +7,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.s;
 import h7.u;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -20,10 +21,10 @@ import java.util.NoSuchElementException;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.zip.InflaterInputStream;
-import m.s3;
-import ph.j5;
+import m.r3;
+import org.telegram.ui.Components.ai;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class m implements t0.h, OnCompleteListener, a3.b {
     public final /* synthetic */ int a;
@@ -78,7 +79,7 @@ public final class m implements t0.h, OnCompleteListener, a3.b {
     @Override // rc.a
     public Object get() {
         int i10 = 7;
-        return new y2.q(new z9.d(i10), new u(i10), (d3.b) ((c5.j) this.b).get(), (e3.g) ((s3) this.c).get(), (com.google.firebase.messaging.r) ((com.google.firebase.messaging.r) this.d).get());
+        return new y2.q(new z9.d(i10), new u(i10), (d3.b) ((c5.j) this.b).get(), (e3.g) ((r3) this.c).get(), (s) ((sf.e) this.d).get());
     }
 
     @Override // t0.h
@@ -91,12 +92,12 @@ public final class m implements t0.h, OnCompleteListener, a3.b {
         int i10 = fVar.e;
         InputStream inputStream2 = (ze.a) this.b;
         if (fVar.b) {
-            j5 j5Var = (j5) this.d;
-            j5Var.getClass();
+            ai aiVar = (ai) this.d;
+            aiVar.getClass();
             byte[] bArr = new byte[i10];
             int i11 = 0;
             while (i11 < i10) {
-                int read = ((com.google.firebase.messaging.d) j5Var.b).read(bArr, i11, i10 - i11);
+                int read = ((com.google.firebase.messaging.d) aiVar.b).read(bArr, i11, i10 - i11);
                 if (read <= 0) {
                     throw new EOFException();
                 }
@@ -128,9 +129,9 @@ public final class m implements t0.h, OnCompleteListener, a3.b {
     }
 
     public Object i(Bitmap bitmap) {
-        tg.a aVar = (tg.a) this.b;
+        ug.a aVar = (ug.a) this.b;
         if (aVar.a(bitmap)) {
-            this.d = ((tg.b) this.c).a(bitmap);
+            this.d = ((ug.b) this.c).a(bitmap);
             aVar.b(bitmap);
         }
         return this.d;
@@ -143,8 +144,8 @@ public final class m implements t0.h, OnCompleteListener, a3.b {
             Parcel M0 = gVar.M0();
             g7.b.c(M0, iVar);
             gVar.Q0(M0, 9);
-        } catch (RemoteException e) {
-            throw new a7.b(e);
+        } catch (RemoteException e6) {
+            throw new a7.b(e6);
         }
     }
 
@@ -284,9 +285,9 @@ public final class m implements t0.h, OnCompleteListener, a3.b {
         this.b = dVar;
     }
 
-    public m(tg.b bVar) {
-        this.a = 2;
-        this.b = new tg.a();
+    public m(ug.b bVar) {
+        this.a = 3;
+        this.b = new ug.a();
         this.c = bVar;
     }
 
@@ -294,7 +295,7 @@ public final class m implements t0.h, OnCompleteListener, a3.b {
         this.a = 12;
         ze.a aVar = new ze.a(inputStream, j10, i10);
         this.b = aVar;
-        this.d = new j5(aVar, 19);
+        this.d = new ai(aVar, 24);
         this.c = hVar;
     }
 
@@ -345,10 +346,10 @@ public final class m implements t0.h, OnCompleteListener, a3.b {
         }
         int i18 = eVar.a;
         int i19 = 26;
-        int b10 = m1.j.b(i18 <= 9 ? 1 : i18 <= 26 ? 2 : 3);
-        if (b10 == 0) {
+        int c3 = m1.j.c(i18 <= 9 ? 1 : i18 <= 26 ? 2 : 3);
+        if (c3 == 0) {
             i19 = 9;
-        } else if (b10 != 1) {
+        } else if (c3 != 1) {
             i10 = 27;
             i19 = 40;
         } else {
@@ -373,7 +374,7 @@ public final class m implements t0.h, OnCompleteListener, a3.b {
     }
 
     public m(ArrayDeque arrayDeque, BufferedReader bufferedReader) {
-        this.a = 3;
+        this.a = 2;
         this.c = arrayDeque;
         this.b = bufferedReader;
     }

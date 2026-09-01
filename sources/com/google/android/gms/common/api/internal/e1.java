@@ -4,9 +4,9 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import java.util.Set;
-import m.s3;
+import m.r3;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class e1 extends c8.c implements com.google.android.gms.common.api.k, com.google.android.gms.common.api.l {
     public static final a8.j k = b8.b.a;
@@ -14,15 +14,15 @@ public final class e1 extends c8.c implements com.google.android.gms.common.api.
     public final Handler c;
     public final a8.j d = k;
     public final Set e;
-    public final s3 f;
+    public final r3 f;
     public c8.a i;
     public s0 j;
 
-    public e1(Context context, a7.e eVar, s3 s3Var) {
+    public e1(Context context, a7.e eVar, r3 r3Var) {
         this.b = context;
         this.c = eVar;
-        this.f = s3Var;
-        this.e = (Set) s3Var.a;
+        this.f = r3Var;
+        this.e = (Set) r3Var.a;
     }
 
     @Override // c8.d

@@ -4,9 +4,9 @@ import android.util.Log;
 import j$.util.Objects;
 import java.util.Collection;
 import java.util.Map;
-import k7.p7;
+import k7.q7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class u extends wc.i implements dd.p {
     public final /* synthetic */ int a;
@@ -46,26 +46,26 @@ public final class u extends wc.i implements dd.p {
                 vc.a aVar = vc.a.a;
                 int i10 = this.b;
                 if (i10 == 0) {
-                    p7.b(obj);
+                    q7.b(obj);
                     z zVar = (z) this.c;
                     f7.b bVar = zVar.d;
                     t tVar = new t(zVar, 0);
                     this.b = 1;
-                    if (bVar.z(tVar, this) == aVar) {
+                    if (bVar.x(tVar, this) == aVar) {
                         return aVar;
                     }
                 } else {
                     if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    p7.b(obj);
+                    q7.b(obj);
                 }
                 return sc.i.a;
             default:
                 vc.a aVar2 = vc.a.a;
                 int i11 = this.b;
                 if (i11 == 0) {
-                    p7.b(obj);
+                    q7.b(obj);
                     ma.c cVar = ma.c.a;
                     this.b = 1;
                     obj = cVar.b(this);
@@ -76,7 +76,7 @@ public final class u extends wc.i implements dd.p {
                     if (i11 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    p7.b(obj);
+                    q7.b(obj);
                 }
                 Collection<i9.k> values = ((Map) obj).values();
                 String str = (String) this.c;

@@ -3,9 +3,9 @@ package u5;
 import b6.b0;
 import com.google.android.gms.common.api.internal.s1;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.ui.yy;
+import org.telegram.ui.zy;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class v extends g {
     public final AtomicReference b;
@@ -49,7 +49,7 @@ public final class v extends g {
             return;
         }
         w.k0.b("onDeviceStatusChanged", new Object[0]);
-        this.c.post(new yy(wVar, dVar, false, 8));
+        this.c.post(new zy(wVar, dVar, false, 8));
     }
 
     @Override // u5.h
@@ -96,7 +96,7 @@ public final class v extends g {
             return;
         }
         w.k0.b("onApplicationStatusChanged", new Object[0]);
-        this.c.post(new yy(wVar, cVar, false, 9));
+        this.c.post(new zy(wVar, cVar, false, 9));
     }
 
     @Override // u5.h

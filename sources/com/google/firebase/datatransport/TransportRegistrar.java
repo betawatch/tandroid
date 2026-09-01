@@ -5,14 +5,14 @@ import c9.b;
 import c9.c;
 import c9.l;
 import com.google.firebase.components.ComponentRegistrar;
-import j7.l8;
+import j7.m8;
 import java.util.Arrays;
 import java.util.List;
 import v2.f;
 import w2.a;
 import y2.q;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class TransportRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-transport";
@@ -28,7 +28,7 @@ public class TransportRegistrar implements ComponentRegistrar {
         c9.a b10 = b.b(f.class);
         b10.a = LIBRARY_NAME;
         b10.a(l.b(Context.class));
-        b10.g = new s0.b(8);
-        return Arrays.asList(b10.b(), l8.a(LIBRARY_NAME, "18.1.8"));
+        b10.g = new s0.b(17);
+        return Arrays.asList(b10.b(), m8.a(LIBRARY_NAME, "18.1.8"));
     }
 }

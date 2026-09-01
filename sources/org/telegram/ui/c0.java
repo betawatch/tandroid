@@ -4,7 +4,7 @@ import android.view.WindowManager;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c0 implements Runnable {
     public final /* synthetic */ int a;
@@ -26,8 +26,8 @@ public final /* synthetic */ class c0 implements Runnable {
                         ((WindowManager) l4Var.I.getSystemService("window")).removeView(l4Var.c0);
                         break;
                     }
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e6) {
+                    FileLog.e(e6);
                     return;
                 }
                 break;
@@ -49,8 +49,8 @@ public final /* synthetic */ class c0 implements Runnable {
                 float currentProgress = 0.7f - l4Var3.e0.a0.getCurrentProgress();
                 if (currentProgress > 0.0f) {
                     float f10 = currentProgress < 0.25f ? 0.01f : 0.02f;
-                    org.telegram.ui.Components.o80 o80Var = l4Var3.e0.a0;
-                    o80Var.a(o80Var.getCurrentProgress() + f10, true);
+                    org.telegram.ui.Components.p80 p80Var = l4Var3.e0.a0;
+                    p80Var.a(p80Var.getCurrentProgress() + f10, true);
                     AndroidUtilities.runOnUIThread(l4Var3.g0, 100L);
                     break;
                 }
@@ -85,7 +85,7 @@ public final /* synthetic */ class c0 implements Runnable {
                 if (U != null) {
                     org.telegram.ui.ActionBar.n2 n2Var = new org.telegram.ui.ActionBar.n2();
                     n2Var.a = true;
-                    U.showAsSheet(new org.telegram.ui.web.x1(new t(this.b, 3)), n2Var);
+                    U.showAsSheet(new org.telegram.ui.web.y1(new t(this.b, 3)), n2Var);
                     break;
                 }
                 break;

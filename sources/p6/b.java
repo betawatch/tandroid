@@ -10,11 +10,11 @@ import android.os.Parcelable;
 import b7.l;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import j7.r5;
-import kh.a2;
+import j7.p5;
+import l.d;
 import x6.c;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class b extends Binder implements IInterface {
     public final /* synthetic */ int a;
@@ -73,9 +73,9 @@ public final class b extends Binder implements IInterface {
                 PendingIntent pendingIntent = (PendingIntent) (parcel.readInt() != 0 ? (Parcelable) PendingIntent.CREATOR.createFromParcel(parcel) : null);
                 int dataAvail = parcel.dataAvail();
                 if (dataAvail > 0) {
-                    throw new BadParcelableException(a2.j(dataAvail, "Parcel data not fully consumed, unread size: "));
+                    throw new BadParcelableException(d.j(dataAvail, "Parcel data not fully consumed, unread size: "));
                 }
-                r5.a(createFromParcel, pendingIntent, (TaskCompletionSource) this.b);
+                p5.a(createFromParcel, pendingIntent, (TaskCompletionSource) this.b);
                 return true;
             case 1:
                 if (i10 > 16777215) {
@@ -91,9 +91,9 @@ public final class b extends Binder implements IInterface {
                 Status createFromParcel2 = parcel.readInt() == 0 ? null : creator2.createFromParcel(parcel);
                 int dataAvail2 = parcel.dataAvail();
                 if (dataAvail2 > 0) {
-                    throw new BadParcelableException(a2.j(dataAvail2, "Parcel data not fully consumed, unread size: "));
+                    throw new BadParcelableException(d.j(dataAvail2, "Parcel data not fully consumed, unread size: "));
                 }
-                r5.a(createFromParcel2, null, (TaskCompletionSource) this.b);
+                p5.a(createFromParcel2, null, (TaskCompletionSource) this.b);
                 return true;
             default:
                 if (i10 > 16777215) {

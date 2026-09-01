@@ -1,27 +1,39 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.FileLog;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class jx extends f2.w {
-    public final /* synthetic */ kz Q;
+public final class jx extends FrameLayout {
+    public final /* synthetic */ mz a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jx(kz kzVar) {
-        super(8);
-        this.Q = kzVar;
+    public jx(mz mzVar, Context context) {
+        super(context);
+        this.a = mzVar;
     }
 
-    @Override // f2.i0, f2.v0
-    public final void v0(RecyclerView recyclerView, f2.i1 i1Var, int i10) {
-        try {
-            dx dxVar = new dx(this, recyclerView.getContext(), 1);
-            dxVar.a = i10;
-            w0(dxVar);
-        } catch (Exception e) {
-            FileLog.e(e);
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        mz mzVar = this.a;
+        hw hwVar = mzVar.F;
+        iw iwVar = mzVar.S;
+        kx kxVar = mzVar.M;
+        if (view != kxVar && view != iwVar) {
+            return super.drawChild(canvas, view, j10);
         }
+        canvas.save();
+        float y10 = hwVar.getY() + hwVar.getMeasuredHeight() + 1.0f;
+        if (view == kxVar && iwVar != null) {
+            y10 = Math.max(y10, iwVar.getY() + iwVar.getMeasuredHeight() + 1.0f);
+        }
+        canvas.clipRect(0.0f, y10 - (AndroidUtilities.dp(16.0f) * mzVar.b.e), getMeasuredWidth(), getMeasuredHeight());
+        boolean drawChild = super.drawChild(canvas, view, j10);
+        canvas.restore();
+        return drawChild;
     }
 }

@@ -7,7 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Shader;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class we implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -29,9 +29,9 @@ public final /* synthetic */ class we implements Utilities.Callback2 {
                 break;
             case 2:
                 xn xnVar = this.b;
-                sg.b bVar = xnVar.w8;
+                tg.b bVar = xnVar.w8;
                 bVar.a((Bitmap) obj2);
-                tg.c.c(bVar, xnVar.fragmentView);
+                ug.c.c(bVar, xnVar.fragmentView);
                 xnVar.x8.d();
                 break;
             default:
@@ -45,9 +45,9 @@ public final /* synthetic */ class we implements Utilities.Callback2 {
                 xnVar2.z8 = bitmapShader;
                 paint.setShader(bitmapShader);
                 xnVar2.B8 = new Matrix();
-                sg.b bVar2 = xnVar2.w8;
+                tg.b bVar2 = xnVar2.w8;
                 bVar2.a((Bitmap) obj2);
-                tg.c.c(bVar2, xnVar2.fragmentView);
+                ug.c.c(bVar2, xnVar2.fragmentView);
                 xnVar2.x8.d();
                 break;
         }

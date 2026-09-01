@@ -1,74 +1,21 @@
 package uf;
 
-import android.os.Bundle;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.c2;
-import org.telegram.ui.ActionBar.d2;
-import org.telegram.ui.Components.i51;
-import org.telegram.ui.xn;
+import org.telegram.messenger.SendMessagesHelper;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l0 implements c2, Utilities.Callback5 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m0 b;
+public final class l0 extends SendMessagesHelper.LocationProvider {
+    public final /* synthetic */ u0 a;
 
-    public /* synthetic */ l0(m0 m0Var, int i10) {
-        this.a = i10;
-        this.b = m0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l0(u0 u0Var, k0 k0Var) {
+        super(k0Var);
+        this.a = u0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.c2
-    public void i(d2 d2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                this.b.X();
-                break;
-            default:
-                this.b.finishFragment();
-                break;
-        }
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        i51 i51Var = (i51) obj;
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        m0 m0Var = this.b;
-        if (m0Var.d.h(i51Var)) {
-            return;
-        }
-        int i10 = i51Var.d;
-        if (i10 == 2 || i51Var.a == 17) {
-            Bundle bundle = new Bundle();
-            bundle.putLong("user_id", m0Var.getUserConfig().getClientUserId());
-            bundle.putInt("chatMode", 5);
-            bundle.putString("quick_reply", "hello");
-            m0Var.presentFragment(new xn(bundle));
-            return;
-        }
-        if (i10 == 1) {
-            m0Var.s = !m0Var.s;
-            m0Var.c.V2.N(true);
-            m0Var.V(true);
-        } else {
-            if (i10 == 3) {
-                v vVar = m0Var.d;
-                m0Var.v = true;
-                vVar.h = true;
-                m0Var.c.V2.N(true);
-                m0Var.V(true);
-                return;
-            }
-            if (i10 == 4) {
-                v vVar2 = m0Var.d;
-                m0Var.v = false;
-                vVar2.h = false;
-                m0Var.c.V2.N(true);
-                m0Var.V(true);
-            }
-        }
+    @Override // org.telegram.messenger.SendMessagesHelper.LocationProvider
+    public final void stop() {
+        super.stop();
+        this.a.w0 = null;
     }
 }

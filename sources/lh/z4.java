@@ -1,42 +1,40 @@
 package lh;
 
 import android.content.Context;
+import android.graphics.PorterDuff;
 import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes4.dex */
-public final class z4 extends org.telegram.ui.Components.p9 {
-    public final /* synthetic */ int D;
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes.dex */
+public final class z4 extends org.telegram.ui.ActionBar.g1 {
+    public final int I;
+    public long J;
+    public x4 K;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ z4(Context context, int i10) {
-        super(context);
-        this.D = i10;
+    public z4(Context context, int i10, g6 g6Var) {
+        super(0, context, g6Var, false, false);
+        this.I = i10;
+        setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
+        int v02 = k6.v0(k6.E8, g6Var);
+        int i11 = k6.F8;
+        c(v02, k6.v0(i11, g6Var));
+        e(k6.v0(i11, g6Var), PorterDuff.Mode.SRC_IN);
+        this.c.setTranslationX(AndroidUtilities.dp(2.0f));
+        a(2);
+        setBackground(null);
+        this.c.addOnAttachStateChangeListener(new ff.b(this, 5));
     }
 
-    @Override // android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.D) {
-            case 1:
-                int size = View.MeasureSpec.getSize(i10);
-                setMeasuredDimension(size, size);
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
+    @Override // org.telegram.ui.ActionBar.g1, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        if (View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE) {
+            size = AndroidUtilities.dp(250.0f);
         }
-    }
-
-    @Override // android.view.View
-    public void setAlpha(float f10) {
-        switch (this.D) {
-            case 0:
-                super.setAlpha(f10);
-                setVisibility(f10 > 0.0f ? 0 : 4);
-                break;
-            default:
-                super.setAlpha(f10);
-                break;
-        }
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i11);
     }
 }

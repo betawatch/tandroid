@@ -2,157 +2,286 @@ package dg;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
 import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.rv0;
-import org.telegram.ui.Components.sg;
-import org.telegram.ui.rt0;
-import org.telegram.ui.xn;
-import ph.c5;
+import android.view.animation.LinearInterpolator;
+import android.widget.ImageView;
+import androidx.appcompat.widget.ActionBarOverlayLayout;
+import eg.m2;
+import fg.s2;
+import fg.t2;
+import java.util.Iterator;
+import mh.x3;
+import mh.x9;
+import mh.y3;
+import mh.y9;
+import oh.b4;
+import oh.k4;
+import oh.p2;
+import oh.u4;
+import oh.w6;
+import oh.x6;
+import oh.z7;
+import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Stories.ProfileStoriesView;
+import org.telegram.ui.l4;
+import org.telegram.ui.t4;
+import org.telegram.ui.vz0;
+import org.telegram.ui.w4;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class l0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ l0(rv0 rv0Var, ViewGroup viewGroup, ViewGroup viewGroup2, int i10, int i11) {
-        this.a = i11;
-        this.e = rv0Var;
-        this.c = viewGroup;
-        this.d = viewGroup2;
-        this.b = i10;
+    public /* synthetic */ l0(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    public void onAnimationCancel(Animator animator) {
         switch (this.a) {
+            case 9:
+                ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) this.b;
+                actionBarOverlayLayout.J = null;
+                actionBarOverlayLayout.v = false;
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationEnd(Animator animator) {
+        boolean z4;
+        int i10 = this.a;
+        Object obj = this.b;
+        switch (i10) {
             case 0:
-                e1 e1Var = (e1) this.e;
-                e1Var.d1 = e1Var.e1;
-                e1Var.e1 = -1;
-                e1Var.c1.invalidate();
-                View view = (View) this.c;
-                if (view != null && ((View) this.d) != null) {
-                    view.setVisibility(8);
-                }
-                if (animator == e1Var.g1) {
-                    e1Var.g1 = null;
-                    break;
-                }
+                m0 m0Var = (m0) obj;
+                m0Var.a.getPainting().c(null, m0Var.a.getCurrentColor(), true, null);
+                m0Var.r = null;
                 break;
             case 1:
-                xn xnVar = (xn) this.e;
-                xnVar.L5 = true;
-                ((org.telegram.ui.ActionBar.p2) xnVar).fragmentBeginToShow = true;
-                xnVar.S9 = null;
-                AndroidUtilities.runOnUIThread(new rt0(this, 29), 32L);
                 super.onAnimationEnd(animator);
-                xnVar.U0.invalidate();
-                xnVar.U0.setSkipBackgroundDrawing(false);
-                xnVar.P9 = false;
-                xn xnVar2 = (xn) this.c;
-                xnVar2.R9 = 0.0f;
-                xnVar2.fragmentView.invalidate();
-                xnVar2.u0.invalidate();
-                xnVar2.Q9 = null;
-                xnVar.fragmentView.setAlpha(1.0f);
-                ((Runnable) this.d).run();
-                xnVar.X0.setTranslationY(0.0f);
-                xnVar2.X0.setTranslationY(0.0f);
-                xnVar2.X0.getAvatarImageView().setTranslationY(0.0f);
-                xnVar.X0.getAvatarImageView().setScaleX(1.0f);
-                xnVar.X0.getAvatarImageView().setScaleY(1.0f);
-                xnVar.X0.getAvatarImageView().setAlpha(1.0f);
-                xnVar2.X0.getAvatarImageView().setScaleX(1.0f);
-                xnVar2.X0.getAvatarImageView().setScaleY(1.0f);
-                xnVar2.X0.getAvatarImageView().setAlpha(1.0f);
-                sg sgVar = xnVar2.J0;
-                if (sgVar != null) {
-                    sgVar.setAlpha(1.0f);
+                eg.a1 a1Var = (eg.a1) obj;
+                ImageView imageView = a1Var.c;
+                a1Var.c = a1Var.d;
+                a1Var.d = imageView;
+                imageView.bringToFront();
+                a1Var.d.setVisibility(8);
+                a1Var.h = null;
+                break;
+            case 2:
+                m2 m2Var = (m2) obj;
+                if (animator == m2Var.r) {
+                    m2Var.f = m2Var.h;
+                    m2Var.h = -1;
+                    m2Var.r = null;
                     break;
                 }
                 break;
-            default:
-                c5 c5Var = (c5) this.e;
-                c5Var.V0 = c5Var.W0;
-                c5Var.W0 = -1;
-                c5Var.T0.invalidate();
-                View view2 = (View) this.c;
-                if (view2 != null && ((View) this.d) != null) {
-                    view2.setVisibility(8);
+            case 3:
+                fg.b1 b1Var = (fg.b1) obj;
+                b1Var.n = b1Var.h ? 1.0f : 0.0f;
+                b1Var.e();
+                break;
+            case 4:
+                t2 t2Var = (t2) ((s2) obj).b;
+                t2Var.C = true;
+                t2Var.invalidate();
+                break;
+            case 5:
+                super.onAnimationEnd(animator);
+                gg.i iVar = (gg.i) ((gg.e) obj).b;
+                iVar.b.d = 0.0f;
+                iVar.Q = null;
+                iVar.h(iVar.F);
+                break;
+            case 6:
+                hg.b bVar = (hg.b) obj;
+                bVar.b = 1.0f;
+                bVar.invalidate();
+                break;
+            case 7:
+                jh.k kVar = (jh.k) obj;
+                Iterator it = kVar.h.iterator();
+                while (it.hasNext()) {
+                    jh.e eVar = (jh.e) it.next();
+                    if (kVar.c.size() < kVar.d) {
+                        kVar.c.push(eVar);
+                    }
+                    it.remove();
                 }
-                if (animator == c5Var.Y0) {
-                    c5Var.Y0 = null;
+                Runnable runnable = kVar.q;
+                if (runnable != null) {
+                    runnable.run();
+                    kVar.q = null;
+                }
+                kVar.r = null;
+                kVar.invalidateSelf();
+                break;
+            case 8:
+                ((lh.r0) obj).b.w.setVisibility(8);
+                break;
+            case 9:
+                ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) obj;
+                actionBarOverlayLayout.J = null;
+                actionBarOverlayLayout.v = false;
+                break;
+            case 10:
+                y3 y3Var = (y3) obj;
+                y3Var.B = 1.0f;
+                y3Var.C = -1;
+                x3 x3Var = y3Var.E;
+                if (x3Var != null && (z4 = x3Var.l) && z4) {
+                    x3Var.l = false;
+                    x3Var.b();
+                }
+                y3Var.D = null;
+                break;
+            case 11:
+                x9 x9Var = ((y9) obj).c;
+                x9Var.setScaleX(1.0f);
+                x9Var.setScaleY(1.0f);
+                break;
+            case 12:
+                ((mh.m2) obj).run();
+                break;
+            case 13:
+                ng.v vVar = (ng.v) obj;
+                vVar.setVisibility(8);
+                ng.u uVar = vVar.b;
+                if (uVar != null) {
+                    vVar.removeView(uVar);
+                    vVar.b = null;
+                }
+                vVar.e = null;
+                break;
+            case 14:
+                ((ng.j0) obj).x.c();
+                break;
+            case 15:
+                oh.a aVar = (oh.a) obj;
+                aVar.h = 1.0f;
+                aVar.invalidate();
+                break;
+            case 16:
+                super.onAnimationEnd(animator);
+                ((oh.o) obj).L.p = false;
+                break;
+            case 17:
+                oh.o0 o0Var = (oh.o0) obj;
+                oh.t0 t0Var = o0Var.H;
+                if (t0Var != null && o0Var.F == t0Var.a) {
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                    o0Var.G = ofFloat;
+                    ofFloat.addUpdateListener(new eg.m1(this, 24));
+                    o0Var.G.setStartDelay(3000L);
+                    o0Var.G.setDuration(550L);
+                    o0Var.G.setInterpolator(new LinearInterpolator());
+                    o0Var.G.start();
                     break;
                 }
+                break;
+            case 18:
+                ((oh.j1) obj).F = null;
+                break;
+            case 19:
+                p2 p2Var = (p2) obj;
+                p2Var.o5.invalidate();
+                p2Var.setAnimatedTop(0);
+                p2Var.o5.S2 = true;
+                View view = p2Var.C1;
+                if (view != null && view.getVisibility() == 0) {
+                    p2Var.C1.setTranslationY(((1.0f - p2Var.getTopViewEnterProgress()) * p2Var.C1.getLayoutParams().height) + p2Var.P1);
+                }
+                p2Var.o5.b2 = null;
+                break;
+            case 20:
+                b4 b4Var = (b4) obj;
+                b4Var.c[1].setVisibility(8);
+                b4Var.c[0].setAlpha(1.0f);
+                b4Var.c[0].setTranslationY(0.0f);
+                break;
+            case 21:
+                ProfileStoriesView profileStoriesView = (ProfileStoriesView) obj;
+                vz0 vz0Var = profileStoriesView.h;
+                profileStoriesView.D = 1.0f;
+                vz0Var.O = 1.0f;
+                vz0Var.invalidate();
+                profileStoriesView.invalidate();
+                break;
+            case 22:
+                ((k4) obj).J = null;
+                break;
+            case 23:
+                u4 u4Var = (u4) obj;
+                u4Var.w = null;
+                u4Var.r = 1.0f;
+                u4Var.invalidate();
+                break;
+            case 24:
+            default:
+                super.onAnimationEnd(animator);
+                break;
+            case 25:
+                z7 z7Var = (z7) obj;
+                z7Var.E = false;
+                z7Var.D = 0.0f;
+                z7Var.invalidate();
+                z7Var.requestLayout();
+                z7Var.G.requestLayout();
+                break;
+            case 26:
+                l4 l4Var = (l4) obj;
+                Runnable runnable2 = l4Var.X;
+                if (runnable2 != null) {
+                    runnable2.run();
+                    l4Var.X = null;
+                    break;
+                }
+                break;
+            case 27:
+                org.telegram.ui.y3 y3Var2 = (org.telegram.ui.y3) obj;
+                y3Var2.w = 1.0f;
+                y3Var2.n();
+                y3Var2.i();
+                y3Var2.h();
+                y3Var2.a.unlock();
+                break;
+            case 28:
+                t4 t4Var = (t4) obj;
+                t4Var.getClass();
+                t4Var.setVisibility(8);
+                break;
+            case 29:
+                w4 w4Var = (w4) obj;
+                w4Var.c = false;
+                w4Var.invalidate();
                 break;
         }
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        View view;
-        int i10;
-        View view2;
+    public void onAnimationStart(Animator animator) {
         switch (this.a) {
-            case 0:
-                e1 e1Var = (e1) this.e;
-                t2 t2Var = e1Var.i1;
-                if (((View) this.c) != null && (view = (View) this.d) != null) {
-                    view.setVisibility(0);
-                }
-                if (this.b != 2) {
-                    cg.m currentBrush = e1Var.T0.getCurrentBrush();
-                    if (!(currentBrush instanceof cg.b) && !(currentBrush instanceof cg.d)) {
-                        t2Var.b(0.05f, 1.0f);
-                        break;
-                    } else {
-                        t2Var.b(0.4f, 1.75f);
-                        break;
-                    }
-                } else {
-                    t2Var.b(0.5f, 2.0f);
-                    break;
-                }
-                break;
-            case 1:
+            case 24:
                 super.onAnimationStart(animator);
-                i10 = ((org.telegram.ui.ActionBar.p2) ((xn) this.e)).currentAccount;
-                this.b = NotificationCenter.getInstance(i10).setAnimationInProgress(this.b, null);
+                x6 x6Var = (x6) this.b;
+                ij0 ij0Var = ((w6) x6Var.a.get(x6Var.d)).c;
+                ij0Var.J = 2;
+                ij0Var.start();
+                break;
+            case 28:
+                ((t4) this.b).setVisibility(0);
                 break;
             default:
-                c5 c5Var = (c5) this.e;
-                t2 t2Var2 = c5Var.a1;
-                if (((View) this.c) != null && (view2 = (View) this.d) != null) {
-                    view2.setVisibility(0);
-                }
-                if (this.b != 2) {
-                    cg.m currentBrush2 = c5Var.L0.getCurrentBrush();
-                    if (!(currentBrush2 instanceof cg.b) && !(currentBrush2 instanceof cg.d)) {
-                        t2Var2.b(0.05f, 1.0f);
-                        break;
-                    } else {
-                        t2Var2.b(0.4f, 1.75f);
-                        break;
-                    }
-                } else {
-                    t2Var2.b(0.5f, 2.0f);
-                    break;
-                }
+                super.onAnimationStart(animator);
                 break;
         }
-    }
-
-    public l0(xn xnVar, xn xnVar2, Runnable runnable) {
-        this.a = 1;
-        this.e = xnVar;
-        this.c = xnVar2;
-        this.d = runnable;
     }
 }

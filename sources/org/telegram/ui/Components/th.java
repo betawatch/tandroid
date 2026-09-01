@@ -6,21 +6,21 @@ import android.view.Menu;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class th extends du {
-    public final /* synthetic */ li S;
+public final class th extends fu {
+    public final /* synthetic */ mi S;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public th(li liVar, Context context, bi biVar, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, biVar, null, 1, true, f6Var);
-        this.S = liVar;
+    public th(mi miVar, Context context, ci ciVar, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, ciVar, null, 1, true, g6Var);
+        this.S = miVar;
     }
 
-    @Override // org.telegram.ui.Components.du
+    @Override // org.telegram.ui.Components.fu
     public final void f() {
         super.f();
-        kz emojiView = getEmojiView();
+        mz emojiView = getEmojiView();
         if (emojiView != null) {
             emojiView.t0 = false;
             emojiView.u2 = false;
@@ -29,7 +29,7 @@ public final class th extends du {
         }
     }
 
-    @Override // org.telegram.ui.Components.du
+    @Override // org.telegram.ui.Components.fu
     public final void i(Menu menu) {
         org.telegram.ui.ActionBar.p2 p2Var = this.S.c0;
         if (p2Var instanceof org.telegram.ui.xn) {
@@ -39,13 +39,13 @@ public final class th extends du {
 
     @Override // android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        li liVar = this.S;
-        th thVar = liVar.M0;
-        if (!liVar.r1) {
+        mi miVar = this.S;
+        th thVar = miVar.M0;
+        if (!miVar.r1) {
             if (motionEvent.getX() <= thVar.getEditText().getLeft() || motionEvent.getX() >= thVar.getEditText().getRight() || motionEvent.getY() <= thVar.getEditText().getTop() || motionEvent.getY() >= thVar.getEditText().getBottom()) {
-                liVar.t1(thVar.getEditText(), false);
+                miVar.t1(thVar.getEditText(), false);
             } else {
-                liVar.t1(thVar.getEditText(), true);
+                miVar.t1(thVar.getEditText(), true);
             }
         }
         return super.onInterceptTouchEvent(motionEvent);
@@ -57,12 +57,12 @@ public final class th extends du {
         this.S.b2();
     }
 
-    @Override // org.telegram.ui.Components.du
+    @Override // org.telegram.ui.Components.fu
     public final void q(int i10, int i11) {
-        li liVar = this.S;
-        liVar.b2();
-        if (liVar.Z) {
-            liVar.M1(i11 > 2 && !TextUtils.isEmpty(getEditText().getText().toString().trim()));
+        mi miVar = this.S;
+        miVar.b2();
+        if (miVar.Z) {
+            miVar.M1(i11 > 2 && !TextUtils.isEmpty(getEditText().getText().toString().trim()));
         }
     }
 }

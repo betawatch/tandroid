@@ -26,7 +26,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 class ArticleViewer$WindowView extends FrameLayout {
     public int B;
@@ -132,7 +132,7 @@ class ArticleViewer$WindowView extends FrameLayout {
                         animatorSet.playTogether(ObjectAnimator.ofFloat(l4Var.d0, (Property<l0, Float>) property, 0.0f), ObjectAnimator.ofFloat(this, l4.a1, 0.0f));
                     }
                     animatorSet.setDuration(Math.max((int) ((420.0f / view.getMeasuredWidth()) * x10), MediaDataController.MAX_LINKS_COUNT));
-                    animatorSet.setInterpolator(org.telegram.ui.Components.nr.h);
+                    animatorSet.setInterpolator(org.telegram.ui.Components.pr.h);
                     animatorSet.addListener(new k4(this, z10));
                     animatorSet.start();
                     l4Var.Q0 = true;

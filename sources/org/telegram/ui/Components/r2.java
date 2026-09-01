@@ -7,7 +7,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r2 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,8 +32,8 @@ public final /* synthetic */ class r2 implements Runnable {
             case 0:
                 int i10 = this.b;
                 r2 r2Var = new r2(i10, this.c, this.d, this.e, this.f, 1);
-                if (!lh.t7.y(i10, false).e) {
-                    lh.t7 y10 = lh.t7.y(i10, false);
+                if (!mh.t7.y(i10, false).e) {
+                    mh.t7 y10 = mh.t7.y(i10, false);
                     y10.e = false;
                     y10.q(false, true, r2Var);
                     y10.e = true;
@@ -44,7 +44,7 @@ public final /* synthetic */ class r2 implements Runnable {
                 }
             default:
                 int i11 = this.b;
-                long j10 = lh.t7.y(i11, false).p().amount;
+                long j10 = mh.t7.y(i11, false).p().amount;
                 long j11 = this.c;
                 Utilities.Callback callback = this.e;
                 long j12 = this.f;
@@ -54,10 +54,10 @@ public final /* synthetic */ class r2 implements Runnable {
                 } else {
                     Activity activity = AndroidUtilities.getActivity();
                     org.telegram.ui.ActionBar.p2 U = LaunchActivity.U();
-                    org.telegram.ui.ActionBar.f6 bVar = (PhotoViewer.t1().Q1() || (U != null && U.hasShownSheet())) ? new nh.b() : U != null ? U.getResourceProvider() : null;
+                    org.telegram.ui.ActionBar.g6 bVar = (PhotoViewer.t1().Q1() || (U != null && U.hasShownSheet())) ? new oh.b() : U != null ? U.getResourceProvider() : null;
                     if (activity != null) {
                         long j13 = this.d;
-                        new lh.z9(activity, bVar, j11, 13, DialogObject.getShortName(i11, j13), new org.telegram.ui.i6(j12, 1, callback), j13).show();
+                        new mh.z9(activity, bVar, j11, 13, DialogObject.getShortName(i11, j13), new org.telegram.ui.i6(j12, 1, callback), j13).show();
                         break;
                     }
                 }

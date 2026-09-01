@@ -11,7 +11,7 @@ import cb.k;
 import cb.o;
 import com.google.android.gms.tasks.CancellationTokenSource;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.messaging.r;
+import com.google.firebase.messaging.s;
 import com.google.mlkit.nl.languageid.internal.LanguageIdentifierImpl;
 import eb.b;
 import gb.e;
@@ -19,9 +19,9 @@ import j7.c9;
 import j7.d9;
 import j7.e6;
 import j7.f7;
+import j7.h6;
 import j7.h7;
 import j7.i6;
-import j7.j6;
 import j7.j7;
 import j7.k6;
 import j7.l6;
@@ -34,7 +34,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import y5.c;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class LanguageIdentifierImpl implements b {
     public final c9 a;
@@ -52,10 +52,10 @@ public class LanguageIdentifierImpl implements b {
         this.b = new d9(h.c().b(), 0);
     }
 
-    public static final j6 k() {
-        i6 i6Var = new i6();
-        i6Var.a = Float.valueOf(-1.0f);
-        return new j6(i6Var);
+    public static final i6 k() {
+        h6 h6Var = new h6();
+        h6Var.a = Float.valueOf(-1.0f);
+        return new i6(h6Var);
     }
 
     @Override // com.google.android.gms.common.api.n
@@ -72,12 +72,12 @@ public class LanguageIdentifierImpl implements b {
         }
         this.e.cancel();
         eVar.d(this.c);
-        r rVar = new r(9, false);
-        rVar.d = this.f;
+        s sVar = new s();
+        sVar.c = this.f;
         androidx.biometric.e eVar2 = new androidx.biometric.e(24, false);
         eVar2.c = k();
-        rVar.e = new j7(eVar2);
-        e0 e0Var = new e0(rVar, 1);
+        sVar.d = new j7(eVar2);
+        e0 e0Var = new e0(sVar, 1);
         c9 c9Var = this.a;
         Task task = c9Var.e;
         String a2 = task.isSuccessful() ? (String) task.getResult() : j.c.a(c9Var.g);
@@ -98,16 +98,16 @@ public class LanguageIdentifierImpl implements b {
                 boolean z10 = z4;
                 long elapsedRealtime = SystemClock.elapsedRealtime();
                 try {
-                    String e = eVar2.e(str2.substring(0, Math.min(str2.length(), 200)));
-                    a3.c cVar = new a3.c(20);
-                    i5.c cVar2 = new i5.c(2);
-                    cVar2.b = e;
-                    cVar.b = new f7(cVar2);
+                    String e6 = eVar2.e(str2.substring(0, Math.min(str2.length(), 200)));
+                    ja.c cVar = new ja.c();
+                    i5.c cVar2 = new i5.c();
+                    cVar2.a = e6;
+                    cVar.a = new f7(cVar2);
                     languageIdentifierImpl.j(elapsedRealtime, z10, new h7(cVar), l6.b);
-                    return e;
-                } catch (RuntimeException e6) {
+                    return e6;
+                } catch (RuntimeException e10) {
                     languageIdentifierImpl.j(elapsedRealtime, z10, null, l6.c);
-                    throw e6;
+                    throw e10;
                 }
             }
         }, this.e.getToken());
@@ -133,10 +133,10 @@ public class LanguageIdentifierImpl implements b {
             if (h7Var != null) {
                 eVar.d = h7Var;
             }
-            r rVar = new r(9, z10);
-            rVar.d = this.f;
-            rVar.e = new j7(eVar);
-            e0 e0Var = new e0(rVar, 0);
+            s sVar = new s();
+            sVar.c = this.f;
+            sVar.d = new j7(eVar);
+            e0 e0Var = new e0(sVar, 0);
             Task task = c9Var.e;
             o.a.execute(new p(c9Var, e0Var, m6Var, task.isSuccessful() ? (String) task.getResult() : j.c.a(c9Var.g), false, 4));
         }

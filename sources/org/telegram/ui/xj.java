@@ -9,9 +9,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class xj extends f2.z0 {
+public final class xj extends f2.a1 {
     public boolean b;
     public final /* synthetic */ xn d;
     public float a = 0.0f;
@@ -21,7 +21,7 @@ public final class xj extends f2.z0 {
         this.d = xnVar;
     }
 
-    @Override // f2.z0
+    @Override // f2.a1
     public final void a(RecyclerView recyclerView, int i10) {
         xn xnVar = this.d;
         if (i10 == 0) {
@@ -48,7 +48,7 @@ public final class xj extends f2.z0 {
             xnVar.pa = false;
             return;
         }
-        ph.f3 f3Var = xnVar.v1;
+        qh.f3 f3Var = xnVar.v1;
         if (f3Var != null && f3Var.S) {
             f3Var.e(true);
         }
@@ -72,16 +72,16 @@ public final class xj extends f2.z0 {
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
         }
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopSpoilers, new Object[0]);
-        mg.v vVar = xnVar.V9;
+        ng.v vVar = xnVar.V9;
         if (vVar == null || !vVar.d()) {
             return;
         }
         xnVar.V9.setHiddenByScroll(true);
     }
 
-    @Override // f2.z0
+    @Override // f2.a1
     public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ng.e eVar;
+        og.e eVar;
         boolean z4;
         xn xnVar = this.d;
         xn xnVar2 = xnVar.aa;
@@ -182,11 +182,11 @@ public final class xj extends f2.z0 {
         xnVar.Z8.H();
         ArrayList arrayList = xnVar.ua.C;
         for (int i13 = 0; i13 < arrayList.size(); i13++) {
-            if (!((az) arrayList.get(i13)).c) {
-                ((az) arrayList.get(i13)).b -= i11;
+            if (!((bz) arrayList.get(i13)).c) {
+                ((bz) arrayList.get(i13)).b -= i11;
             }
         }
-        mg.m0 m0Var = mg.m0.B;
+        ng.m0 m0Var = ng.m0.B;
         if (m0Var != null) {
             m0Var.r -= i11;
             if (i11 != 0) {
@@ -197,7 +197,7 @@ public final class xj extends f2.z0 {
             eVar.f(i10, i11);
         }
         xnVar.i7(false);
-        ph.f3 f3Var = xnVar.u1;
+        qh.f3 f3Var = xnVar.u1;
         if (f3Var != null) {
             if (f3Var.S) {
                 f3Var.e(true);
@@ -211,14 +211,14 @@ public final class xj extends f2.z0 {
         if (vlVar != null && vlVar.S) {
             vlVar.e(true);
         }
-        ph.f3 f3Var2 = xnVar.w1;
+        qh.f3 f3Var2 = xnVar.w1;
         if (f3Var2 == null || !f3Var2.S) {
             AndroidUtilities.cancelRunOnUIThread(new wj(xnVar, 0));
             AndroidUtilities.runOnUIThread(new wj(xnVar, 1), 2000L);
         } else {
             f3Var2.e(true);
         }
-        ph.f3 f3Var3 = xnVar.x1;
+        qh.f3 f3Var3 = xnVar.x1;
         if (f3Var3 != null) {
             f3Var3.e(true);
         }
@@ -226,11 +226,11 @@ public final class xj extends f2.z0 {
         if (jkVar != null) {
             jkVar.l0();
         }
-        lh.l5 l5Var = xnVar.nc;
+        mh.l5 l5Var = xnVar.nc;
         if (l5Var != null) {
             l5Var.invalidate();
         }
-        ug.a aVar = xnVar.Nb;
+        vg.a aVar = xnVar.Nb;
         if (aVar == null || aVar.b <= 0) {
             return;
         }

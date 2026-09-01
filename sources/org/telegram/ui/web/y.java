@@ -8,14 +8,14 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.gj0;
-import org.telegram.ui.iy;
-import org.telegram.ui.kf1;
-import org.telegram.ui.oy;
+import org.telegram.ui.hj0;
+import org.telegram.ui.jy;
+import org.telegram.ui.mf1;
+import org.telegram.ui.py;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class y implements gj0, iy {
+public final /* synthetic */ class y implements hj0, jy {
     public final /* synthetic */ a1 a;
     public final /* synthetic */ boolean[] b;
     public final /* synthetic */ String c;
@@ -28,17 +28,17 @@ public final /* synthetic */ class y implements gj0, iy {
         this.d = tL_buttonTypeRequestPeer;
     }
 
-    @Override // org.telegram.ui.iy
+    @Override // org.telegram.ui.jy
     public /* synthetic */ boolean C() {
         return false;
     }
 
-    @Override // org.telegram.ui.iy
-    public /* synthetic */ boolean K(oy oyVar) {
+    @Override // org.telegram.ui.jy
+    public /* synthetic */ boolean J(py pyVar) {
         return false;
     }
 
-    @Override // org.telegram.ui.gj0
+    @Override // org.telegram.ui.hj0
     public void a(ArrayList arrayList) {
         if (arrayList.isEmpty()) {
             return;
@@ -61,8 +61,8 @@ public final /* synthetic */ class y implements gj0, iy {
         ConnectionsManager.getInstance(a1Var.J).sendRequestTyped(tL_messages_sendBotRequestedPeer, new org.telegram.messenger.a(), new w(a1Var, str, 2));
     }
 
-    @Override // org.telegram.ui.iy
-    public boolean w(oy oyVar, ArrayList arrayList, CharSequence charSequence, boolean z4, boolean z10, int i10, int i11, kf1 kf1Var) {
+    @Override // org.telegram.ui.jy
+    public boolean v(py pyVar, ArrayList arrayList, CharSequence charSequence, boolean z4, boolean z10, int i10, int i11, mf1 mf1Var) {
         if (!arrayList.isEmpty()) {
             int i12 = 0;
             this.b[0] = true;
@@ -86,7 +86,7 @@ public final /* synthetic */ class y implements gj0, iy {
             }
             ConnectionsManager.getInstance(a1Var.J).sendRequestTyped(tL_messages_sendBotRequestedPeer, new org.telegram.messenger.a(), new w(a1Var, str, 1));
         }
-        oyVar.finishFragment();
+        pyVar.finishFragment();
         return true;
     }
 }

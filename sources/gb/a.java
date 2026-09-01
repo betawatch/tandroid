@@ -4,7 +4,7 @@ import j7.c9;
 import j7.g9;
 import j7.z8;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a {
     public final c9 a;
@@ -12,24 +12,24 @@ public final class a {
     public final cb.d c;
 
     public a(e eVar, cb.d dVar) {
-        c9 b10;
+        c9 a2;
         this.b = eVar;
         this.c = dVar;
         String str = true != eVar.g ? "play-services-mlkit-language-id" : "language-id";
         synchronized (g9.class) {
-            byte b11 = (byte) (((byte) 1) | 2);
-            if (b11 != 3) {
+            byte b10 = (byte) (((byte) 1) | 2);
+            if (b10 != 3) {
                 StringBuilder sb = new StringBuilder();
-                if ((b11 & 1) == 0) {
+                if ((b10 & 1) == 0) {
                     sb.append(" enableFirelog");
                 }
-                if ((b11 & 2) == 0) {
+                if ((b10 & 2) == 0) {
                     sb.append(" firelogEventType");
                 }
                 throw new IllegalStateException("Missing required properties:".concat(sb.toString()));
             }
-            b10 = g9.b(new z8(str));
+            a2 = g9.a(new z8(str));
         }
-        this.a = b10;
+        this.a = a2;
     }
 }

@@ -1,27 +1,7 @@
 package org.telegram.ui.Components;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class om0 {
-    public static final om0 a;
-    public static final om0 b;
-    public static final /* synthetic */ om0[] c;
-
-    static {
-        om0 om0Var = new om0("LINE", 0);
-        a = om0Var;
-        om0 om0Var2 = new om0("TAB", 1);
-        b = om0Var2;
-        c = new om0[]{om0Var, om0Var2};
-    }
-
-    public static om0 valueOf(String str) {
-        return (om0) Enum.valueOf(om0.class, str);
-    }
-
-    public static om0[] values() {
-        return (om0[]) c.clone();
-    }
+public interface om0 {
+    void a(int i10);
 }

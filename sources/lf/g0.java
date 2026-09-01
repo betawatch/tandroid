@@ -2,7 +2,7 @@ package lf;
 
 import android.app.Activity;
 import android.content.Context;
-import gg.y0;
+import hg.y0;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,14 +23,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.d2;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.s60;
-import org.telegram.ui.b31;
-import org.telegram.ui.k31;
+import org.telegram.ui.Components.u60;
+import org.telegram.ui.d31;
+import org.telegram.ui.m31;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -115,27 +115,27 @@ public final /* synthetic */ class g0 implements Runnable {
                 ((ConferenceCall) this.e).lambda$poll$7((TL_phone.getGroupCallChainBlocks) this.f, this.b, (TLObject) this.c, (TLRPC.TL_error) this.d, (AtomicBoolean) this.h, (AtomicInteger) this.n);
                 break;
             case 2:
-                s60.n((s60) this.d, (d2) this.e, (Context) this.c, this.b, (TLRPC.TL_chatInviteExported) this.f, (TLRPC.TL_chatInviteImporter) this.h, (TLRPC.ChannelParticipant) this.n);
+                u60.n((u60) this.d, (d2) this.e, (Context) this.c, this.b, (TLRPC.TL_chatInviteExported) this.f, (TLRPC.TL_chatInviteImporter) this.h, (TLRPC.ChannelParticipant) this.n);
                 break;
             default:
                 TLObject tLObject2 = (TLObject) this.c;
                 Activity activity = (Activity) this.d;
-                f6 f6Var = (f6) this.f;
+                g6 g6Var = (g6) this.f;
                 byte[] bArr = (byte[]) this.h;
                 xn xnVar2 = (xn) this.e;
                 MessageObject messageObject = (MessageObject) this.n;
-                k31 k31Var = new k31(activity, f6Var, this.b, bArr);
-                k31Var.O((TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) tLObject2);
-                k31Var.s = new b31(xnVar2, activity, f6Var, messageObject);
-                k31Var.show();
+                m31 m31Var = new m31(activity, g6Var, this.b, bArr);
+                m31Var.O((TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) tLObject2);
+                m31Var.s = new d31(xnVar2, activity, g6Var, messageObject);
+                m31Var.show();
                 break;
         }
     }
 
-    public /* synthetic */ g0(TLObject tLObject, Activity activity, f6 f6Var, long j10, byte[] bArr, xn xnVar, MessageObject messageObject) {
+    public /* synthetic */ g0(TLObject tLObject, Activity activity, g6 g6Var, long j10, byte[] bArr, xn xnVar, MessageObject messageObject) {
         this.c = tLObject;
         this.d = activity;
-        this.f = f6Var;
+        this.f = g6Var;
         this.b = j10;
         this.h = bArr;
         this.e = xnVar;
@@ -152,8 +152,8 @@ public final /* synthetic */ class g0 implements Runnable {
         this.b = j10;
     }
 
-    public /* synthetic */ g0(s60 s60Var, d2 d2Var, Context context, long j10, TLRPC.TL_chatInviteExported tL_chatInviteExported, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, TLRPC.ChannelParticipant channelParticipant) {
-        this.d = s60Var;
+    public /* synthetic */ g0(u60 u60Var, d2 d2Var, Context context, long j10, TLRPC.TL_chatInviteExported tL_chatInviteExported, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, TLRPC.ChannelParticipant channelParticipant) {
+        this.d = u60Var;
         this.e = d2Var;
         this.c = context;
         this.b = j10;

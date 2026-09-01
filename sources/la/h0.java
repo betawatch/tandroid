@@ -2,11 +2,11 @@ package la;
 
 import android.util.Log;
 import com.google.android.gms.tasks.Task;
-import k7.h8;
-import k7.p7;
+import k7.i8;
+import k7.q7;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class h0 implements d0 {
     public static final double f = Math.random();
@@ -14,14 +14,14 @@ public final class h0 implements d0 {
     public final w8.g a;
     public final ca.d b;
     public final na.h c;
-    public final ja.c d;
+    public final o5.i d;
     public final uc.h e;
 
-    public h0(w8.g gVar, ca.d dVar, na.h hVar, ja.c cVar, uc.h hVar2) {
+    public h0(w8.g gVar, ca.d dVar, na.h hVar, o5.i iVar, uc.h hVar2) {
         this.a = gVar;
         this.b = dVar;
         this.c = hVar;
-        this.d = cVar;
+        this.d = iVar;
         this.e = hVar2;
     }
 
@@ -43,11 +43,11 @@ public final class h0 implements d0 {
                     vc.a aVar = vc.a.a;
                     i10 = e0Var.c;
                     if (i10 != 0) {
-                        p7.b(obj);
+                        q7.b(obj);
                         Task d = ((ca.c) h0Var.b).d();
                         kotlin.jvm.internal.j.d(d, "firebaseInstallations.id");
                         e0Var.c = 1;
-                        obj = h8.a(d, e0Var);
+                        obj = i8.a(d, e0Var);
                         if (obj == aVar) {
                             return aVar;
                         }
@@ -55,7 +55,7 @@ public final class h0 implements d0 {
                         if (i10 != 1) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        p7.b(obj);
+                        q7.b(obj);
                     }
                     return (String) obj;
                 }
@@ -63,8 +63,8 @@ public final class h0 implements d0 {
             if (i10 != 0) {
             }
             return (String) obj;
-        } catch (Exception e) {
-            Log.e("SessionFirelogPublisher", "Error getting Firebase Installation ID. Using an empty ID", e);
+        } catch (Exception e6) {
+            Log.e("SessionFirelogPublisher", "Error getting Firebase Installation ID. Using an empty ID", e6);
             return "";
         }
         e0Var = new e0(h0Var, cVar);
@@ -86,7 +86,7 @@ public final class h0 implements d0 {
         g0 g0Var;
         int i10;
         boolean z4;
-        Boolean b10;
+        Boolean e6;
         if (cVar instanceof g0) {
             g0Var = (g0) cVar;
             int i11 = g0Var.d;
@@ -97,7 +97,7 @@ public final class h0 implements d0 {
                 i10 = g0Var.d;
                 z4 = true;
                 if (i10 != 0) {
-                    p7.b(obj);
+                    q7.b(obj);
                     Log.d("SessionFirelogPublisher", "Data Collection is enabled for at least one Subscriber");
                     na.h hVar = h0Var.c;
                     g0Var.a = h0Var;
@@ -110,12 +110,12 @@ public final class h0 implements d0 {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     h0Var = g0Var.a;
-                    p7.b(obj);
+                    q7.b(obj);
                 }
                 na.h hVar2 = h0Var.c;
-                b10 = hVar2.a.b();
-                if (b10 == null) {
-                    z4 = b10.booleanValue();
+                e6 = hVar2.a.e();
+                if (e6 == null) {
+                    z4 = e6.booleanValue();
                 } else {
                     Boolean a2 = hVar2.b.a();
                     if (a2 != null) {
@@ -141,8 +141,8 @@ public final class h0 implements d0 {
         if (i10 != 0) {
         }
         na.h hVar22 = h0Var.c;
-        b10 = hVar22.a.b();
-        if (b10 == null) {
+        e6 = hVar22.a.e();
+        if (e6 == null) {
         }
         if (z4) {
         }

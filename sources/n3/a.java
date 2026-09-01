@@ -1,12 +1,12 @@
 package n3;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class a {
     public final /* synthetic */ int a;
     public int b;
 
-    public static String d(int i10) {
+    public static String c(int i10) {
         return "" + ((char) ((i10 >> 24) & 255)) + ((char) ((i10 >> 16) & 255)) + ((char) ((i10 >> 8) & 255)) + ((char) (i10 & 255));
     }
 
@@ -14,7 +14,7 @@ public abstract class a {
         return (i10 >> 24) & 255;
     }
 
-    public static void i(StringBuilder sb) {
+    public static void h(StringBuilder sb) {
         if (sb != null) {
             sb.delete(0, sb.length());
         }
@@ -24,18 +24,18 @@ public abstract class a {
         this.b = i10 | this.b;
     }
 
-    public abstract void c();
+    public abstract void b();
 
     public boolean e(int i10) {
         return (this.b & i10) == i10;
     }
 
-    public abstract a h();
+    public abstract a g();
 
     public String toString() {
         switch (this.a) {
             case 2:
-                return d(this.b);
+                return c(this.b);
             default:
                 return super.toString();
         }

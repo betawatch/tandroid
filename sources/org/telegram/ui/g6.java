@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g6 implements Runnable {
     public final /* synthetic */ int a;
@@ -17,9 +17,9 @@ public final /* synthetic */ class g6 implements Runnable {
     public final /* synthetic */ ArrayList c;
     public final /* synthetic */ ArrayList d;
     public final /* synthetic */ ArrayList e;
-    public final /* synthetic */ mh.b f;
+    public final /* synthetic */ nh.b f;
 
-    public /* synthetic */ g6(b7 b7Var, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, mh.b bVar, int i10) {
+    public /* synthetic */ g6(b7 b7Var, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, nh.b bVar, int i10) {
         this.a = i10;
         this.b = b7Var;
         this.c = arrayList;
@@ -37,21 +37,21 @@ public final /* synthetic */ class g6 implements Runnable {
                 ArrayList<Long> arrayList = this.c;
                 ArrayList arrayList2 = this.d;
                 ArrayList arrayList3 = this.e;
-                mh.b bVar = this.f;
+                nh.b bVar = this.f;
                 ArrayList<TLRPC.User> arrayList4 = new ArrayList<>();
                 ArrayList<TLRPC.Chat> arrayList5 = new ArrayList<>();
                 if (!arrayList.isEmpty()) {
                     try {
                         b7Var.getMessagesStorage().getUsersInternal(arrayList, arrayList4);
-                    } catch (Exception e) {
-                        FileLog.e(e);
+                    } catch (Exception e6) {
+                        FileLog.e(e6);
                     }
                 }
                 if (!arrayList2.isEmpty()) {
                     try {
                         b7Var.getMessagesStorage().getChatsInternal(TextUtils.join(",", arrayList2), arrayList5);
-                    } catch (Exception e6) {
-                        FileLog.e(e6);
+                    } catch (Exception e10) {
+                        FileLog.e(e10);
                     }
                 }
                 int i10 = 0;
@@ -62,7 +62,7 @@ public final /* synthetic */ class g6 implements Runnable {
                     }
                     i10++;
                 }
-                Collections.sort(arrayList3, new nh.e4(8));
+                Collections.sort(arrayList3, new oh.k0(8));
                 AndroidUtilities.runOnUIThread(new g6(b7Var, arrayList4, arrayList5, arrayList3, bVar, 1));
                 break;
             default:
@@ -70,7 +70,7 @@ public final /* synthetic */ class g6 implements Runnable {
                 ArrayList<TLRPC.User> arrayList6 = this.c;
                 ArrayList<TLRPC.Chat> arrayList7 = this.d;
                 ArrayList arrayList8 = this.e;
-                mh.b bVar2 = this.f;
+                nh.b bVar2 = this.f;
                 b7Var2.getMessagesController().putUsers(arrayList6, true);
                 b7Var2.getMessagesController().putChats(arrayList7, true);
                 boolean z10 = false;
@@ -113,7 +113,7 @@ public final /* synthetic */ class g6 implements Runnable {
                             z4 = false;
                         }
                         if (z4) {
-                            Collections.sort(arrayList8, new nh.e4(8));
+                            Collections.sort(arrayList8, new oh.k0(8));
                         }
                     }
                     i11++;

@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class c0 {
     public static int d;
@@ -116,8 +116,8 @@ public final class c0 {
                 if (handler != null) {
                     handler.removeCallbacksAndMessages(null);
                 }
-            } catch (Exception e) {
-                Log.w("MediaSessionCompat", "Exception happened while accessing MediaSession.mCallback.", e);
+            } catch (Exception e6) {
+                Log.w("MediaSessionCompat", "Exception happened while accessing MediaSession.mCallback.", e6);
             }
         }
         mediaSession.setCallback(null);
@@ -200,9 +200,9 @@ public final class c0 {
                     PlaybackStateCompat.CustomAction customAction = (PlaybackStateCompat.CustomAction) obj;
                     PlaybackState.CustomAction customAction2 = customAction.e;
                     if (customAction2 == null) {
-                        PlaybackState.CustomAction.Builder e = d0.e(customAction.a, customAction.b, customAction.c);
-                        d0.w(e, customAction.d);
-                        customAction2 = d0.b(e);
+                        PlaybackState.CustomAction.Builder e6 = d0.e(customAction.a, customAction.b, customAction.c);
+                        d0.w(e6, customAction.d);
+                        customAction2 = d0.b(e6);
                     }
                     d0.a(d10, customAction2);
                 }

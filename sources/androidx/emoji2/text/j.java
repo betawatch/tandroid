@@ -5,11 +5,11 @@ import android.view.ViewGroup;
 import com.google.android.gms.common.api.internal.p0;
 import java.util.ArrayList;
 import java.util.List;
-import k7.j6;
+import k7.k6;
 import org.telegram.ui.Cells.a0;
 import org.telegram.ui.Cells.l7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class j implements Runnable {
     public final /* synthetic */ int a;
@@ -92,7 +92,7 @@ public final class j implements Runnable {
 
     public j(List list, int i10, Throwable th2) {
         this.a = 0;
-        j6.a(list, "initCallbacks cannot be null");
+        k6.a(list, "initCallbacks cannot be null");
         this.c = new ArrayList(list);
         this.b = i10;
     }

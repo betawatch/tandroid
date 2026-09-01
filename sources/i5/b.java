@@ -3,7 +3,7 @@ package i5;
 import h5.d0;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class b implements j3.g {
     public static final b f = new b(1, 2, 3, null);
@@ -11,7 +11,7 @@ public final class b implements j3.g {
     public static final String n;
     public static final String r;
     public static final String s;
-    public static final f0.d v;
+    public static final f5.u v;
     public final int a;
     public final int b;
     public final int c;
@@ -24,7 +24,7 @@ public final class b implements j3.g {
         n = Integer.toString(1, 36);
         r = Integer.toString(2, 36);
         s = Integer.toString(3, 36);
-        v = new f0.d(18);
+        v = new f5.u(18);
     }
 
     public b(int i10, int i11, int i12, byte[] bArr) {

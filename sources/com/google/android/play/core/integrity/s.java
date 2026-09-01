@@ -2,7 +2,7 @@ package com.google.android.play.core.integrity;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 final class s {
     private final o8.p a;
@@ -18,16 +18,16 @@ final class s {
         if (context == null) {
             throw new NullPointerException("instance cannot be null");
         }
-        b7.c cVar = new b7.c(context);
-        this.a = cVar;
+        e.a aVar = new e.a(context);
+        this.a = aVar;
         adVar = ac.a;
         o8.m b10 = o8.m.b(adVar);
         this.b = b10;
         mVar = l.a;
-        au auVar = new au(cVar, mVar);
+        au auVar = new au(aVar, mVar);
         this.c = auVar;
         mVar2 = l.a;
-        o8.m b11 = o8.m.b(new al(cVar, b10, auVar, mVar2));
+        o8.m b11 = o8.m.b(new al(aVar, b10, auVar, mVar2));
         this.d = b11;
         this.e = o8.m.b(new ab(b11));
     }

@@ -17,7 +17,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class q6 extends LinearLayout {
     public static final /* synthetic */ int c = 0;
@@ -131,13 +131,13 @@ public final class q6 extends LinearLayout {
             }
             m4 m4Var = new m4(getContext(), 20);
             m4Var.setText(LocaleController.getString(R.string.PeerRequirements));
-            int i13 = org.telegram.ui.ActionBar.j6.d6;
-            m4Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, i13, false));
-            addView(m4Var, k7.b6.n(-1, -2));
-            Drawable colorDrawable = new ColorDrawable(org.telegram.ui.ActionBar.j6.w0(null, i13, false));
+            int i13 = org.telegram.ui.ActionBar.k6.d6;
+            m4Var.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, i13, false));
+            addView(m4Var, k7.c6.n(-1, -2));
+            Drawable colorDrawable = new ColorDrawable(org.telegram.ui.ActionBar.k6.w0(null, i13, false));
             View s3Var = new s3(getContext(), 9, 1);
             s3Var.setBackground(colorDrawable);
-            addView(s3Var, k7.b6.n(-1, -2));
+            addView(s3Var, k7.c6.n(-1, -2));
             int size = arrayList.size();
             int i14 = 0;
             while (i14 < size) {
@@ -146,29 +146,29 @@ public final class q6 extends LinearLayout {
                 r6 r6Var = (r6) obj;
                 Context context = getContext();
                 p6 p6Var = new p6(context);
-                p6Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
+                p6Var.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.d6, false));
                 p6Var.setOrientation(0);
                 ImageView imageView = new ImageView(context);
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
                 imageView.setImageResource(r6Var.a <= 0 ? R.drawable.list_check : R.drawable.list_circle);
-                imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.L6, false), PorterDuff.Mode.MULTIPLY));
-                p6Var.addView(imageView, k7.b6.p(20, 20, 0.0f, 51, (r6Var.a * 16) + 17, -1, 0, 0));
+                imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.L6, false), PorterDuff.Mode.MULTIPLY));
+                p6Var.addView(imageView, k7.c6.p(20, 20, 0.0f, 51, (r6Var.a * 16) + 17, -1, 0, 0));
                 TextView textView = new TextView(context);
                 textView.setTextSize(1, 14.0f);
-                textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.z6, false));
+                textView.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.z6, false));
                 textView.setSingleLine(false);
                 textView.setText(r6Var.b);
-                p6Var.addView(textView, k7.b6.t(-1, -2, 1, 6, 4, 24, 4));
-                addView(p6Var, k7.b6.n(-1, -2));
+                p6Var.addView(textView, k7.c6.t(-1, -2, 1, 6, 4, 24, 4));
+                addView(p6Var, k7.c6.n(-1, -2));
             }
-            Drawable colorDrawable2 = new ColorDrawable(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
+            Drawable colorDrawable2 = new ColorDrawable(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.d6, false));
             View s3Var2 = new s3(getContext(), 12, 1);
             s3Var2.setBackground(colorDrawable2);
-            addView(s3Var2, k7.b6.n(-1, -2));
-            Drawable V0 = org.telegram.ui.ActionBar.j6.V0(getContext(), R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.j6.b7);
+            addView(s3Var2, k7.c6.n(-1, -2));
+            Drawable V0 = org.telegram.ui.ActionBar.k6.V0(getContext(), R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.k6.b7);
             View s3Var3 = new s3(getContext(), 12, 1);
             s3Var3.setBackground(V0);
-            addView(s3Var3, k7.b6.n(-1, -2));
+            addView(s3Var3, k7.c6.n(-1, -2));
         }
     }
 }

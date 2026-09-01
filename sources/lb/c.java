@@ -10,7 +10,7 @@ import android.os.RemoteException;
 import android.util.Log;
 import b6.m;
 import cb.k;
-import j7.f5;
+import j7.g5;
 import java.util.ArrayList;
 import java.util.Locale;
 import l7.c0;
@@ -21,7 +21,7 @@ import l7.r3;
 import l7.s4;
 import l7.t6;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class c implements b {
     public final Context a;
@@ -83,10 +83,10 @@ public final class c implements b {
             int i14 = c0.a;
             M0.writeStrongBinder(bVar);
             M0.writeInt(1);
-            int q10 = f5.q(M0, 20293);
-            f5.s(M0, 2, 4);
+            int q10 = g5.q(M0, 20293);
+            g5.s(M0, 2, 4);
             M0.writeInt(-1);
-            f5.r(M0, q10);
+            g5.r(M0, q10);
             Parcel O0 = r0Var.O0(M0, 1);
             s4[] s4VarArr = (s4[]) O0.createTypedArray(s4.CREATOR);
             O0.recycle();
@@ -95,8 +95,8 @@ public final class c implements b {
                 arrayList.add(new jb.a(s4Var.c, s4Var.d, s4Var.b, s4Var.a));
             }
             return arrayList;
-        } catch (RemoteException e) {
-            throw new ya.a("Failed to run legacy image labeler.", e);
+        } catch (RemoteException e6) {
+            throw new ya.a("Failed to run legacy image labeler.", e6);
         }
     }
 
@@ -126,11 +126,11 @@ public final class c implements b {
             Log.d("LegacyLabelDelegate", "Request ICA optional module download.");
             k.b(context);
             this.d = true;
-        } catch (RemoteException e) {
-            throw new ya.a("Failed to create legacy image labeler.", e);
-        } catch (m6.b e6) {
+        } catch (RemoteException e6) {
+            throw new ya.a("Failed to create legacy image labeler.", e6);
+        } catch (m6.b e10) {
             if (str.equals("com.google.android.gms.vision.dynamite")) {
-                throw new ya.a("Failed to load deprecated vision dynamite module.", e6);
+                throw new ya.a("Failed to load deprecated vision dynamite module.", e10);
             }
             if (this.d) {
                 return;
@@ -147,8 +147,8 @@ public final class c implements b {
         if (r0Var != null) {
             try {
                 r0Var.Q0(r0Var.M0(), 2);
-            } catch (RemoteException e) {
-                Log.e("LegacyLabelDelegate", "Failed to release legacy image labeler.", e);
+            } catch (RemoteException e6) {
+                Log.e("LegacyLabelDelegate", "Failed to release legacy image labeler.", e6);
             }
             this.e = null;
         }

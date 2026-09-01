@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class t9 extends View {
     public Bitmap a;
@@ -29,7 +29,7 @@ public final class t9 extends View {
         Paint paint = this.c;
         int i10 = 0;
         while (i10 < this.d) {
-            paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, i10 < this.e ? org.telegram.ui.ActionBar.j6.m5 : org.telegram.ui.ActionBar.j6.t5, false));
+            paint.setColor(org.telegram.ui.ActionBar.k6.w0(null, i10 < this.e ? org.telegram.ui.ActionBar.k6.m5 : org.telegram.ui.ActionBar.k6.t5, false));
             canvas.drawBitmap(i10 < this.e ? this.a : this.b, AndroidUtilities.dp(48.0f) * i10, 0.0f, paint);
             i10++;
         }
@@ -50,7 +50,7 @@ public final class t9 extends View {
                 this.e = i10;
                 s9 s9Var = this.f;
                 if (s9Var != null) {
-                    View view = ((org.telegram.ui.Components.voip.t1) s9Var).a;
+                    View view = ((org.telegram.ui.Components.voip.u1) s9Var).a;
                     view.setEnabled(i10 > 0);
                     ((TextView) view).setText(LocaleController.getString(i10 < 4 ? R.string.Next : R.string.Send).toUpperCase());
                 }

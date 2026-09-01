@@ -8,7 +8,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lf implements Runnable {
     public final /* synthetic */ int a;
@@ -35,10 +35,10 @@ public final /* synthetic */ class lf implements Runnable {
             case 2:
                 xn xnVar = this.b;
                 xnVar.A7(false);
-                eg.o1 o1Var = new eg.o1((org.telegram.ui.ActionBar.p2) xnVar, 24, true);
-                o1Var.setDimBehind(false);
-                o1Var.setOnHideListener(new dg(xnVar, 1));
-                o1Var.show();
+                fg.n1 n1Var = new fg.n1((org.telegram.ui.ActionBar.p2) xnVar, 24, true);
+                n1Var.setDimBehind(false);
+                n1Var.setOnHideListener(new dg(xnVar, 1));
+                n1Var.show();
                 break;
             case 3:
                 xn.P0(this.b);
@@ -55,7 +55,7 @@ public final /* synthetic */ class lf implements Runnable {
                     xnVar2.getMessagesController().disableAds(true);
                     break;
                 } else {
-                    xnVar2.showDialog(new eg.o1((org.telegram.ui.ActionBar.p2) xnVar2, 3, true));
+                    xnVar2.showDialog(new fg.n1((org.telegram.ui.ActionBar.p2) xnVar2, 3, true));
                     break;
                 }
             case 6:
@@ -204,7 +204,7 @@ public final /* synthetic */ class lf implements Runnable {
                         xnVar13.d2.setAlpha(0.0f);
                         xnVar13.d2.setVisibility(4);
                         xnVar13.d2.setText(LocaleController.getString(R.string.ScheduledOrNoSoundHint));
-                        xnVar13.U0.addView(xnVar13.d2, k7.b6.d(-2, -2.0f, 51, 10.0f, 0.0f, 10.0f, 0.0f));
+                        xnVar13.U0.addView(xnVar13.d2, k7.c6.d(-2, -2.0f, 51, 10.0f, 0.0f, 10.0f, 0.0f));
                     }
                     xnVar13.d2.f(sendButton, true);
                     xnVar13.e2 = true;
@@ -216,13 +216,13 @@ public final /* synthetic */ class lf implements Runnable {
                 if (xnVar14.getParentActivity() != null && xnVar14.fragmentView != null && xnVar14.V != null && xnVar14.Ba == null && xnVar14.getMessagesController().getSendPaidMessagesStars(xnVar14.a()) <= 0 && (sendButton2 = xnVar14.V.getSendButton()) != null && xnVar14.V.getEditField() != null && xnVar14.V.getEditField().getText().length() != 0) {
                     SharedConfig.increaseScheduledHintShowed();
                     if (xnVar14.f2 == null) {
-                        org.telegram.ui.Components.k40 k40Var = new org.telegram.ui.Components.k40(4, xnVar14.getParentActivity(), xnVar14.ba, false);
-                        xnVar14.f2 = k40Var;
-                        k40Var.a();
+                        org.telegram.ui.Components.m40 m40Var = new org.telegram.ui.Components.m40(4, xnVar14.getParentActivity(), xnVar14.ba, false);
+                        xnVar14.f2 = m40Var;
+                        m40Var.a();
                         xnVar14.f2.setAlpha(0.0f);
                         xnVar14.f2.setVisibility(4);
                         xnVar14.f2.setText(LocaleController.getString(R.string.ScheduledHint));
-                        xnVar14.U0.addView(xnVar14.f2, k7.b6.d(-2, -2.0f, 51, 10.0f, 0.0f, 10.0f, 0.0f));
+                        xnVar14.U0.addView(xnVar14.f2, k7.c6.d(-2, -2.0f, 51, 10.0f, 0.0f, 10.0f, 0.0f));
                     }
                     xnVar14.f2.f(sendButton2, true);
                     xnVar14.g2 = true;

@@ -1,91 +1,290 @@
 package eg;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewConfiguration;
-import java.lang.reflect.Field;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Outline;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import androidx.appcompat.widget.ActionBarContainer;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.Switch;
+import org.telegram.ui.Components.l01;
+import qh.j5;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class i1 extends m2.h {
-    public long t0;
-    public boolean u0;
-    public final h1 v0;
-    public final /* synthetic */ o1 w0;
+public final class i1 extends Drawable {
+    public final /* synthetic */ int a;
+    public final Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i1(o1 o1Var, Context context) {
-        super(context);
-        this.w0 = o1Var;
-        try {
-            Field declaredField = m2.h.class.getDeclaredField("r");
-            declaredField.setAccessible(true);
-            h1 h1Var = new h1(this, getContext());
-            this.v0 = h1Var;
-            declaredField.set(this, h1Var);
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
+    public /* synthetic */ i1(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public final boolean A(MotionEvent motionEvent) {
-        h1 h1Var;
-        if (motionEvent.getAction() == 0) {
-            this.t0 = System.currentTimeMillis();
-            return true;
-        }
-        if (motionEvent.getAction() == 1) {
-            if (System.currentTimeMillis() - this.t0 <= ViewConfiguration.getTapTimeout() && (h1Var = this.v0) != null && h1Var.isFinished()) {
-                this.u0 = true;
-                float x10 = motionEvent.getX();
-                float width = getWidth() * 0.45f;
-                o1 o1Var = this.w0;
-                if (x10 <= width) {
-                    int i10 = o1Var.D - 1;
-                    if (i10 >= 0) {
-                        x(i10, true);
-                    }
-                } else if (o1Var.D + 1 < o1Var.d.size()) {
-                    x(o1Var.D + 1, true);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                canvas.save();
+                Drawable drawable = (Drawable) this.b;
+                if (drawable.getBounds() != null) {
+                    canvas.scale(0.8333333f, 0.8333333f, drawable.getBounds().centerX(), drawable.getBounds().centerY());
                 }
-                this.u0 = false;
-                return false;
-            }
-        } else if (motionEvent.getAction() == 3) {
-            this.t0 = -1L;
+                drawable.draw(canvas);
+                canvas.restore();
+                break;
+            case 1:
+                canvas.save();
+                canvas.translate(getBounds().left, getBounds().top);
+                ((j5) this.b).draw(canvas);
+                canvas.restore();
+                break;
+            case 2:
+                ActionBarContainer actionBarContainer = (ActionBarContainer) this.b;
+                if (!actionBarContainer.h) {
+                    Drawable drawable2 = actionBarContainer.d;
+                    if (drawable2 != null) {
+                        drawable2.draw(canvas);
+                    }
+                    Drawable drawable3 = actionBarContainer.e;
+                    if (drawable3 != null && actionBarContainer.n) {
+                        drawable3.draw(canvas);
+                        break;
+                    }
+                } else {
+                    Drawable drawable4 = actionBarContainer.f;
+                    if (drawable4 != null) {
+                        drawable4.draw(canvas);
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                fg.p1 p1Var = (fg.p1) this.b;
+                Rect bounds = getBounds();
+                p1Var.getClass();
+                p1Var.d(bounds.left, 0.0f, bounds.top, bounds.right, 0.0f, bounds.bottom);
+                canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), Math.min(getBounds().width(), getBounds().height()) / 2.0f, p1Var.f);
+                break;
+            case 4:
+                ImageReceiver imageReceiver = (ImageReceiver) this.b;
+                imageReceiver.setImageCoords(getBounds());
+                imageReceiver.draw(canvas);
+                break;
+            case 5:
+                Rect bounds2 = getBounds();
+                canvas.drawCircle(bounds2.centerX(), bounds2.centerY(), AndroidUtilities.dp(18.0f), ((Switch) this.b).G);
+                break;
+            case 6:
+                ((l01) this.b).c(getBounds().centerX() - (((l01) this.b).c / 2.0f), getBounds().centerY(), 1.0f, k6.w0(null, k6.G6, false), canvas);
+                break;
+            case 7:
+                canvas.save();
+                qh.f3 f3Var = (qh.f3) this.b;
+                canvas.drawPath(f3Var.q0, f3Var.V);
+                canvas.restore();
+                break;
+            default:
+                canvas.save();
+                canvas.translate(0.0f, AndroidUtilities.dp(1.0f));
+                sh.p2 p2Var = (sh.p2) this.b;
+                p2Var.F0.setBounds(getBounds());
+                p2Var.F0.draw(canvas);
+                canvas.restore();
+                break;
         }
-        return false;
     }
 
-    @Override // m2.h, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        try {
-            A(motionEvent);
-            return super.onInterceptTouchEvent(motionEvent);
-        } catch (Exception unused) {
-            return false;
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicHeight() {
+        switch (this.a) {
+            case 1:
+                return ((j5) this.b).getHeight();
+            case 4:
+                return AndroidUtilities.dp(30.0f);
+            case 8:
+                return AndroidUtilities.dp(20.0f);
+            default:
+                return super.getIntrinsicHeight();
         }
     }
 
-    @Override // m2.h, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int dp = AndroidUtilities.dp(100.0f);
-        if (getChildCount() > 0) {
-            getChildAt(0).measure(i10, View.MeasureSpec.makeMeasureSpec(0, 0));
-            dp = getChildAt(0).getMeasuredHeight();
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicWidth() {
+        switch (this.a) {
+            case 1:
+                return ((j5) this.b).getWidth();
+            case 4:
+                return AndroidUtilities.dp(30.0f);
+            case 8:
+                return AndroidUtilities.dp(20.0f);
+            default:
+                return super.getIntrinsicWidth();
         }
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(dp + this.w0.I, TLObject.FLAG_30));
     }
 
-    @Override // m2.h, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.w0.w) {
-            return false;
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        switch (this.a) {
+            case 0:
+                return ((Drawable) this.b).getOpacity();
+            case 1:
+                return -2;
+            case 2:
+                return 0;
+            case 3:
+                return -2;
+            case 4:
+                return -2;
+            case 5:
+                return 0;
+            case 6:
+                return -2;
+            case 7:
+                return -2;
+            default:
+                return -2;
         }
-        return super.onTouchEvent(motionEvent) || A(motionEvent);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void getOutline(Outline outline) {
+        switch (this.a) {
+            case 2:
+                ActionBarContainer actionBarContainer = (ActionBarContainer) this.b;
+                if (!actionBarContainer.h) {
+                    Drawable drawable = actionBarContainer.d;
+                    if (drawable != null) {
+                        drawable.getOutline(outline);
+                        break;
+                    }
+                } else if (actionBarContainer.f != null) {
+                    actionBarContainer.d.getOutline(outline);
+                    break;
+                }
+                break;
+            default:
+                super.getOutline(outline);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        switch (this.a) {
+            case 0:
+                ((Drawable) this.b).setAlpha(i10);
+                break;
+            case 1:
+            case 2:
+            case 3:
+                break;
+            case 4:
+                ((ImageReceiver) this.b).setAlpha(i10 / 255.0f);
+                break;
+            case 5:
+            case 6:
+            case 7:
+                break;
+            default:
+                ((sh.p2) this.b).F0.setAlpha(i10);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setBounds(Rect rect) {
+        switch (this.a) {
+            case 0:
+                ((Drawable) this.b).setBounds(rect);
+                break;
+            default:
+                super.setBounds(rect);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        switch (this.a) {
+            case 0:
+                ((Drawable) this.b).setColorFilter(colorFilter);
+                break;
+            case 1:
+            case 2:
+            case 3:
+                break;
+            case 4:
+                ((ImageReceiver) this.b).setColorFilter(colorFilter);
+                break;
+            case 5:
+            case 6:
+            case 7:
+                break;
+            default:
+                ((sh.p2) this.b).F0.setColorFilter(colorFilter);
+                break;
+        }
+    }
+
+    public i1(ActionBarContainer actionBarContainer) {
+        this.a = 2;
+        this.b = actionBarContainer;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setBounds(int i10, int i11, int i12, int i13) {
+        switch (this.a) {
+            case 0:
+                ((Drawable) this.b).setBounds(i10, i11, i12, i13);
+                break;
+            default:
+                super.setBounds(i10, i11, i12, i13);
+                break;
+        }
+    }
+
+    public i1(String str) {
+        this.a = 6;
+        this.b = new l01(str.substring(0, !str.isEmpty() ? 1 : 0), 14.0f, AndroidUtilities.bold());
+    }
+
+    private final void a(int i10) {
+    }
+
+    private final void b(int i10) {
+    }
+
+    private final void c(int i10) {
+    }
+
+    private final void d(int i10) {
+    }
+
+    private final void e(int i10) {
+    }
+
+    private final void f(int i10) {
+    }
+
+    private final void g(ColorFilter colorFilter) {
+    }
+
+    private final void h(ColorFilter colorFilter) {
+    }
+
+    private final void i(ColorFilter colorFilter) {
+    }
+
+    private final void j(ColorFilter colorFilter) {
+    }
+
+    private final void k(ColorFilter colorFilter) {
+    }
+
+    private final void l(ColorFilter colorFilter) {
     }
 }

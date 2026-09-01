@@ -6,7 +6,7 @@ import android.os.ResultReceiver;
 import android.util.Base64;
 import android.util.Log;
 import com.google.android.gms.fido.common.Transport;
-import j7.f5;
+import j7.g5;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -17,7 +17,7 @@ import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class v extends c6.a {
     public static final Parcelable.Creator<v> CREATOR = new l4.j(27);
@@ -37,21 +37,21 @@ public final class v extends c6.a {
 
     public v(String str) {
         try {
-            v e = e(new JSONObject(str));
-            this.a = e.a;
-            this.b = e.b;
-            this.c = e.c;
-            this.d = e.d;
-            this.e = e.e;
-            this.f = e.f;
-            this.h = e.h;
-            this.n = e.n;
-            this.r = e.r;
-            this.s = e.s;
-            this.v = e.v;
+            v e6 = e(new JSONObject(str));
+            this.a = e6.a;
+            this.b = e6.b;
+            this.c = e6.c;
+            this.d = e6.d;
+            this.e = e6.e;
+            this.f = e6.f;
+            this.h = e6.h;
+            this.n = e6.n;
+            this.r = e6.r;
+            this.s = e6.s;
+            this.v = e6.v;
             this.w = str;
-        } catch (JSONException e6) {
-            throw new IllegalArgumentException(e6);
+        } catch (JSONException e10) {
+            throw new IllegalArgumentException(e10);
         }
     }
 
@@ -83,7 +83,7 @@ public final class v extends c6.a {
         e eVar;
         int i10;
         q0 q0Var;
-        q0 e;
+        q0 e6;
         x0 x0Var;
         y0 y0Var;
         JSONArray jSONArray;
@@ -175,7 +175,7 @@ public final class v extends c6.a {
             if (!jSONObject7.has("prf")) {
                 i10 = 0;
                 if (jSONObject7.has("prfAlreadyHashed")) {
-                    e = q0.e(jSONObject7.getJSONObject("prfAlreadyHashed"), true);
+                    e6 = q0.e(jSONObject7.getJSONObject("prfAlreadyHashed"), true);
                 } else {
                     q0Var = null;
                     if (jSONObject7.has("cableAuthenticationExtension")) {
@@ -207,9 +207,9 @@ public final class v extends c6.a {
                     throw new JSONException("both prf and prfAlreadyHashed extensions found");
                 }
                 i10 = 0;
-                e = q0.e(jSONObject7.getJSONObject("prf"), false);
+                e6 = q0.e(jSONObject7.getJSONObject("prf"), false);
             }
-            q0Var = e;
+            q0Var = e6;
             if (jSONObject7.has("cableAuthenticationExtension")) {
             }
             if (!jSONObject7.has("userVerificationMethodExtension")) {
@@ -229,8 +229,8 @@ public final class v extends c6.a {
         if (jSONObject.has("attestation")) {
             try {
                 eVar = e.a(jSONObject.getString("attestation"));
-            } catch (d e6) {
-                Log.w("PKCCreationOptions", "Invalid AttestationConveyancePreference", e6);
+            } catch (d e10) {
+                Log.w("PKCCreationOptions", "Invalid AttestationConveyancePreference", e10);
                 eVar = e.b;
             }
         } else {
@@ -271,7 +271,7 @@ public final class v extends c6.a {
         String valueOf7 = String.valueOf(this.s);
         String valueOf8 = String.valueOf(this.v);
         StringBuilder m9 = yh.m("PublicKeyCredentialCreationOptions{\n rp=", valueOf, ", \n user=", valueOf2, ", \n challenge=");
-        yh.x(m9, c3, ", \n parameters=", valueOf3, ", \n timeoutSeconds=");
+        yh.w(m9, c3, ", \n parameters=", valueOf3, ", \n timeoutSeconds=");
         m9.append(this.e);
         m9.append(", \n excludeList=");
         m9.append(valueOf4);
@@ -291,48 +291,48 @@ public final class v extends c6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
-        f5.k(parcel, 2, this.a, i10);
-        f5.k(parcel, 3, this.b, i10);
-        f5.c(parcel, 4, this.c);
-        f5.p(parcel, 5, this.d);
+        int q10 = g5.q(parcel, 20293);
+        g5.k(parcel, 2, this.a, i10);
+        g5.k(parcel, 3, this.b, i10);
+        g5.c(parcel, 4, this.c);
+        g5.p(parcel, 5, this.d);
         Double d = this.e;
         if (d != null) {
-            f5.s(parcel, 6, 8);
+            g5.s(parcel, 6, 8);
             parcel.writeDouble(d.doubleValue());
         }
-        f5.p(parcel, 7, this.f);
-        f5.k(parcel, 8, this.h, i10);
-        f5.i(parcel, 9, this.n);
-        f5.k(parcel, 10, this.r, i10);
+        g5.p(parcel, 7, this.f);
+        g5.k(parcel, 8, this.h, i10);
+        g5.i(parcel, 9, this.n);
+        g5.k(parcel, 10, this.r, i10);
         e eVar = this.s;
-        f5.l(parcel, 11, eVar == null ? null : eVar.a);
-        f5.k(parcel, 12, this.v, i10);
-        f5.l(parcel, 13, this.w);
-        f5.k(parcel, 14, this.x, i10);
-        f5.r(parcel, q10);
+        g5.l(parcel, 11, eVar == null ? null : eVar.a);
+        g5.k(parcel, 12, this.v, i10);
+        g5.l(parcel, 13, this.w);
+        g5.k(parcel, 14, this.x, i10);
+        g5.r(parcel, q10);
     }
 
     public v(y yVar, b0 b0Var, byte[] bArr, ArrayList arrayList, Double d, ArrayList arrayList2, m mVar, Integer num, h0 h0Var, String str, f fVar, String str2, ResultReceiver resultReceiver) {
         this.x = resultReceiver;
         if (str2 != null) {
             try {
-                v e = e(new JSONObject(str2));
-                this.a = e.a;
-                this.b = e.b;
-                this.c = e.c;
-                this.d = e.d;
-                this.e = e.e;
-                this.f = e.f;
-                this.h = e.h;
-                this.n = e.n;
-                this.r = e.r;
-                this.s = e.s;
-                this.v = e.v;
+                v e6 = e(new JSONObject(str2));
+                this.a = e6.a;
+                this.b = e6.b;
+                this.c = e6.c;
+                this.d = e6.d;
+                this.e = e6.e;
+                this.f = e6.f;
+                this.h = e6.h;
+                this.n = e6.n;
+                this.r = e6.r;
+                this.s = e6.s;
+                this.v = e6.v;
                 this.w = str2;
                 return;
-            } catch (JSONException e6) {
-                throw new IllegalArgumentException(e6);
+            } catch (JSONException e10) {
+                throw new IllegalArgumentException(e10);
             }
         }
         b6.m.h(yVar);
@@ -351,8 +351,8 @@ public final class v extends c6.a {
         if (str != null) {
             try {
                 this.s = e.a(str);
-            } catch (d e10) {
-                throw new IllegalArgumentException(e10);
+            } catch (d e11) {
+                throw new IllegalArgumentException(e11);
             }
         } else {
             this.s = null;

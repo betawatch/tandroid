@@ -3,12 +3,12 @@ package org.telegram.messenger;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import org.telegram.ui.Components.f10;
 import org.telegram.ui.Components.g10;
+import org.telegram.ui.Components.h10;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public class ANRDetector implements f10 {
+public class ANRDetector implements g10 {
     private static final int MSG_UI_PING = 1;
     private static final long TIMEOUT_MS = 5000;
     private final Runnable anrDetected;
@@ -33,9 +33,9 @@ public class ANRDetector implements f10 {
 
     public ANRDetector(Runnable runnable) {
         this.anrDetected = runnable;
-        g10 g10Var = g10.getInstance();
-        this.foreground = g10Var.isForeground();
-        g10Var.addListener(this);
+        h10 h10Var = h10.getInstance();
+        this.foreground = h10Var.isForeground();
+        h10Var.addListener(this);
         Thread thread = new Thread(new e1(this, 11), "ANRDetector");
         this.detectorThread = thread;
         thread.start();
@@ -87,7 +87,7 @@ public class ANRDetector implements f10 {
                 this.foreground = false;
                 this.generation++;
                 this.lock.notifyAll();
-                g10.getInstance().removeListener(this);
+                h10.getInstance().removeListener(this);
                 this.mainHandler.removeMessages(1);
                 this.detectorThread.interrupt();
             } catch (Throwable th2) {
@@ -96,7 +96,7 @@ public class ANRDetector implements f10 {
         }
     }
 
-    @Override // org.telegram.ui.Components.f10
+    @Override // org.telegram.ui.Components.g10
     public void onBecameBackground() {
         synchronized (this.lock) {
             try {
@@ -113,7 +113,7 @@ public class ANRDetector implements f10 {
         }
     }
 
-    @Override // org.telegram.ui.Components.f10
+    @Override // org.telegram.ui.Components.g10
     public void onBecameForeground() {
         synchronized (this.lock) {
             try {

@@ -5,13 +5,13 @@ import h5.w;
 import j3.n0;
 import j3.r1;
 import java.util.Arrays;
-import k7.w6;
+import k7.x6;
 import org.telegram.ui.Components.jb;
 import r3.m;
 import r3.s;
 import r3.v;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class e implements r3.k {
     public m a;
@@ -24,7 +24,7 @@ public final class e implements r3.k {
         if (gVar.a(lVar, true) && (gVar.a & 2) == 2) {
             int min = Math.min(gVar.e, 8);
             w wVar = new w(min);
-            lVar.c(0, min, wVar.a);
+            lVar.b(0, min, wVar.a);
             wVar.F(0);
             if (wVar.a() >= 5 && wVar.u() == 127 && wVar.v() == 1179402563) {
                 this.b = new d();
@@ -32,7 +32,7 @@ public final class e implements r3.k {
             }
             wVar.F(0);
             try {
-                z4 = w6.c(1, wVar, true);
+                z4 = x6.c(1, wVar, true);
             } catch (r1 unused) {
                 z4 = false;
             }
@@ -72,7 +72,7 @@ public final class e implements r3.k {
                 jVar.e = j12;
                 h hVar = jVar.d;
                 int i10 = d0.a;
-                hVar.v(j12);
+                hVar.u(j12);
                 jVar.h = 2;
             }
         }
@@ -101,11 +101,11 @@ public final class e implements r3.k {
             ((r3.h) lVar).f = 0;
         }
         if (!this.c) {
-            v c22 = this.a.c2(0, 1);
-            this.a.f1();
+            v i22 = this.a.i2(0, 1);
+            this.a.i1();
             j jVar = this.b;
             jVar.c = this.a;
-            jVar.b = c22;
+            jVar.b = i22;
             jVar.d(true);
             this.c = true;
         }
@@ -117,7 +117,7 @@ public final class e implements r3.k {
         long j10 = -1;
         if (i12 != 0) {
             if (i12 == 1) {
-                ((r3.h) lVar).u((int) jVar2.f);
+                ((r3.h) lVar).s((int) jVar2.f);
                 jVar2.h = 2;
                 return 0;
             }
@@ -136,9 +136,9 @@ public final class e implements r3.k {
                 jVar2.a(-(c3 + 2));
             }
             if (!jVar2.l) {
-                s k10 = jVar2.d.k();
-                h5.a.j(k10);
-                jVar2.c.g2(k10);
+                s h = jVar2.d.h();
+                h5.a.j(h);
+                jVar2.c.m2(h);
                 jVar2.l = true;
             }
             if (jVar2.k <= 0 && !fVar.b(lVar)) {

@@ -1,12 +1,12 @@
 package vc;
 
 import dd.p;
-import k7.p7;
+import k7.q7;
 import kotlin.jvm.internal.j;
 import kotlin.jvm.internal.t;
 import uc.h;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class c extends wc.c {
     public int a;
@@ -28,11 +28,11 @@ public final class c extends wc.c {
                 throw new IllegalStateException("This coroutine had already completed");
             }
             this.a = 2;
-            p7.b(obj);
+            q7.b(obj);
             return obj;
         }
         this.a = 1;
-        p7.b(obj);
+        q7.b(obj);
         p pVar = this.b;
         j.c(pVar, "null cannot be cast to non-null type kotlin.Function2<R of kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt.createCoroutineUnintercepted, kotlin.coroutines.Continuation<T of kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt.createCoroutineUnintercepted>, kotlin.Any?>");
         t.a(2, pVar);

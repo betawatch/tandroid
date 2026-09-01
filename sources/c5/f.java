@@ -10,8 +10,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import k7.z6;
+import k7.a7;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.yh;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -21,9 +22,8 @@ import s8.o0;
 import s8.q0;
 import s8.t0;
 import s8.z;
-import vh.v2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class f extends v4.e {
     public static final Pattern o = Pattern.compile("^([0-9][0-9]+):([0-9][0-9]):([0-9][0-9])(?:(\\.[0-9]+)|:([0-9][0-9])(?:\\.([0-9]+))?)?$");
@@ -43,8 +43,8 @@ public final class f extends v4.e {
             XmlPullParserFactory newInstance = XmlPullParserFactory.newInstance();
             this.n = newInstance;
             newInstance.setNamespaceAware(true);
-        } catch (XmlPullParserException e) {
-            throw new RuntimeException("Couldn't create XmlPullParserFactory instance", e);
+        } catch (XmlPullParserException e6) {
+            throw new RuntimeException("Couldn't create XmlPullParserFactory instance", e6);
         }
     }
 
@@ -265,7 +265,7 @@ public final class f extends v4.e {
                             float f13 = parseFloat3;
                             String t14 = h5.a.t(xmlPullParser, "displayAlign");
                             if (t14 != null) {
-                                String b10 = z6.b(t14);
+                                String b10 = a7.b(t14);
                                 b10.getClass();
                                 if (b10.equals("center")) {
                                     cVar2 = cVar;
@@ -281,7 +281,7 @@ public final class f extends v4.e {
                                 float f14 = 1.0f / cVar2.a;
                                 t9 = h5.a.t(xmlPullParser, "writingMode");
                                 if (t9 != null) {
-                                    String b11 = z6.b(t9);
+                                    String b11 = a7.b(t9);
                                     b11.getClass();
                                     switch (b11.hashCode()) {
                                         case 3694:
@@ -641,7 +641,7 @@ public final class f extends v4.e {
                     break;
                 case 2:
                     iVar2 = l(iVar2);
-                    String b10 = z6.b(attributeValue);
+                    String b10 = a7.b(attributeValue);
                     b10.getClass();
                     switch (b10.hashCode()) {
                         case -1364013995:
@@ -699,7 +699,7 @@ public final class f extends v4.e {
                     iVar2.o = alignment;
                     break;
                 case 3:
-                    String b11 = z6.b(attributeValue);
+                    String b11 = a7.b(attributeValue);
                     b11.getClass();
                     switch (b11.hashCode()) {
                         case -1461280213:
@@ -765,7 +765,7 @@ public final class f extends v4.e {
                         break;
                     }
                 case 6:
-                    String b12 = z6.b(attributeValue);
+                    String b12 = a7.b(attributeValue);
                     b12.getClass();
                     switch (b12.hashCode()) {
                         case -618561360:
@@ -853,8 +853,8 @@ public final class f extends v4.e {
                             String group = matcher.group(1);
                             group.getClass();
                             f10 = Math.min(100.0f, Math.max(-100.0f, Float.parseFloat(group)));
-                        } catch (NumberFormatException e) {
-                            h5.a.L("TtmlDecoder", "Failed to parse shear: " + attributeValue, e);
+                        } catch (NumberFormatException e6) {
+                            h5.a.L("TtmlDecoder", "Failed to parse shear: " + attributeValue, e6);
                         }
                     } else {
                         android.support.v4.media.a.w("Invalid value for shear: ", attributeValue, "TtmlDecoder");
@@ -863,7 +863,7 @@ public final class f extends v4.e {
                     iVar2 = l10;
                     break;
                 case '\t':
-                    String b13 = z6.b(attributeValue);
+                    String b13 = a7.b(attributeValue);
                     b13.getClass();
                     if (b13.equals("all")) {
                         iVar2 = l(iVar2);
@@ -889,7 +889,7 @@ public final class f extends v4.e {
                     iVar2 = l(iVar2);
                     Pattern pattern = b.b;
                     if (attributeValue != null) {
-                        String b14 = z6.b(attributeValue.trim());
+                        String b14 = a7.b(attributeValue.trim());
                         if (!b14.isEmpty()) {
                             String[] split = TextUtils.split(b14, b.b);
                             int length = split.length;
@@ -972,7 +972,7 @@ public final class f extends v4.e {
                     iVar2.r = bVar;
                     break;
                 case '\f':
-                    String b15 = z6.b(attributeValue);
+                    String b15 = a7.b(attributeValue);
                     b15.getClass();
                     if (b15.equals("before")) {
                         iVar2 = l(iVar2);
@@ -997,7 +997,7 @@ public final class f extends v4.e {
                     }
                 case 14:
                     iVar2 = l(iVar2);
-                    String b16 = z6.b(attributeValue);
+                    String b16 = a7.b(attributeValue);
                     b16.getClass();
                     switch (b16.hashCode()) {
                         case -1364013995:
@@ -1085,7 +1085,7 @@ public final class f extends v4.e {
         }
         Matcher matcher2 = p.matcher(str);
         if (!matcher2.matches()) {
-            throw new v4.h(v2.e("Malformed time expression: ", str));
+            throw new v4.h(yh.k("Malformed time expression: ", str));
         }
         String group3 = matcher2.group(1);
         group3.getClass();
@@ -1216,8 +1216,8 @@ public final class f extends v4.e {
                                         }
                                         gVar.m.add(r10);
                                     }
-                                } catch (v4.h e) {
-                                    h5.a.L("TtmlDecoder", "Suppressing parser error", e);
+                                } catch (v4.h e6) {
+                                    h5.a.L("TtmlDecoder", "Suppressing parser error", e6);
                                 }
                             }
                             cVar2 = cVar3;
@@ -1254,10 +1254,10 @@ public final class f extends v4.e {
                 return jVar;
             }
             throw new v4.h("No TTML subtitles found");
-        } catch (IOException e6) {
-            throw new IllegalStateException("Unexpected error when reading input.", e6);
-        } catch (XmlPullParserException e10) {
-            throw new v4.h("Unable to decode source", e10);
+        } catch (IOException e10) {
+            throw new IllegalStateException("Unexpected error when reading input.", e10);
+        } catch (XmlPullParserException e11) {
+            throw new v4.h("Unable to decode source", e11);
         }
     }
 }

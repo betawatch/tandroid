@@ -1,37 +1,6 @@
 package eg;
 
-import android.content.Context;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import k7.b6;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.y3;
-import org.telegram.ui.ActionBar.j6;
-
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class a extends LinearLayout {
-    public a(Context context) {
-        super(context);
-        setOrientation(1);
-        setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
-        TextView g10 = y3.g(context, 1, 14.0f);
-        int i10 = j6.G6;
-        g10.setTextColor(j6.w0(null, i10, false));
-        g10.setTypeface(AndroidUtilities.bold());
-        g10.setText(LocaleController.getString(R.string.AboutPremiumTitle));
-        addView(g10);
-        TextView textView = new TextView(context);
-        textView.setTextSize(1, 14.0f);
-        textView.setTextColor(j6.w0(null, i10, false));
-        y3.q(R.string.AboutPremiumDescription, textView);
-        addView(textView, b6.p(-1, -2, 0.0f, 0, 0, 0, 0, 0));
-        TextView textView2 = new TextView(context);
-        textView2.setTextSize(1, 14.0f);
-        textView2.setTextColor(j6.w0(null, i10, false));
-        y3.q(R.string.AboutPremiumDescription2, textView2);
-        addView(textView2, b6.p(-1, -2, 0.0f, 0, 0, 24, 0, 0));
-    }
+public interface a {
 }

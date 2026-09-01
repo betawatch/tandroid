@@ -1,104 +1,94 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+import java.util.Iterator;
+
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class r0 extends i0 {
-    public static final r0 n = new r0(null, new Object[0], 0);
-    public final transient Object e;
+    public static final Object[] r;
+    public static final r0 s;
+    public final transient Object[] d;
+    public final transient int e;
     public final transient Object[] f;
     public final transient int h;
+    public final transient int n;
 
-    public r0(Object obj, Object[] objArr, int i10) {
-        super(0);
-        this.e = obj;
-        this.f = objArr;
-        this.h = i10;
+    static {
+        Object[] objArr = new Object[0];
+        r = objArr;
+        s = new r0(0, 0, 0, objArr, objArr);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:5:0x009e A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x009f A[RETURN] */
-    @Override // com.google.android.gms.internal.cast.i0, java.util.Map
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object get(Object obj) {
-        Object obj2;
+    public r0(int i10, int i11, int i12, Object[] objArr, Object[] objArr2) {
+        this.d = objArr;
+        this.e = i10;
+        this.f = objArr2;
+        this.h = i11;
+        this.n = i12;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
         if (obj != null) {
-            int i10 = this.h;
             Object[] objArr = this.f;
-            if (i10 == 1) {
-                Object obj3 = objArr[0];
-                obj3.getClass();
-                if (obj3.equals(obj)) {
-                    obj2 = objArr[1];
-                    obj2.getClass();
-                }
-            } else {
-                Object obj4 = this.e;
-                if (obj4 != null) {
-                    if (obj4 instanceof byte[]) {
-                        byte[] bArr = (byte[]) obj4;
-                        int length = bArr.length - 1;
-                        int a2 = j7.y5.a(obj.hashCode());
-                        while (true) {
-                            int i11 = a2 & length;
-                            int i12 = bArr[i11] & 255;
-                            if (i12 == 255) {
-                                break;
-                            }
-                            if (obj.equals(objArr[i12])) {
-                                obj2 = objArr[i12 ^ 1];
-                                break;
-                            }
-                            a2 = i11 + 1;
-                        }
-                    } else if (obj4 instanceof short[]) {
-                        short[] sArr = (short[]) obj4;
-                        int length2 = sArr.length - 1;
-                        int a10 = j7.y5.a(obj.hashCode());
-                        while (true) {
-                            int i13 = a10 & length2;
-                            char c3 = (char) sArr[i13];
-                            if (c3 == 65535) {
-                                break;
-                            }
-                            if (obj.equals(objArr[c3])) {
-                                obj2 = objArr[c3 ^ 1];
-                                break;
-                            }
-                            a10 = i13 + 1;
-                        }
-                    } else {
-                        int[] iArr = (int[]) obj4;
-                        int length3 = iArr.length - 1;
-                        int a11 = j7.y5.a(obj.hashCode());
-                        while (true) {
-                            int i14 = a11 & length3;
-                            int i15 = iArr[i14];
-                            if (i15 == -1) {
-                                break;
-                            }
-                            if (obj.equals(objArr[i15])) {
-                                obj2 = objArr[i15 ^ 1];
-                                break;
-                            }
-                            a11 = i14 + 1;
-                        }
+            if (objArr.length != 0) {
+                int a2 = j7.w5.a(obj.hashCode());
+                while (true) {
+                    int i10 = a2 & this.h;
+                    Object obj2 = objArr[i10];
+                    if (obj2 == null) {
+                        return false;
                     }
+                    if (obj2.equals(obj)) {
+                        return true;
+                    }
+                    a2 = i10 + 1;
                 }
             }
-            if (obj2 != null) {
-                return null;
-            }
-            return obj2;
         }
-        obj2 = null;
-        if (obj2 != null) {
-        }
+        return false;
     }
 
-    @Override // java.util.Map
+    @Override // com.google.android.gms.internal.cast.i0, java.util.Collection, java.util.Set
+    public final int hashCode() {
+        return this.e;
+    }
+
+    @Override // com.google.android.gms.internal.cast.c0
+    public final int i(Object[] objArr) {
+        Object[] objArr2 = this.d;
+        int i10 = this.n;
+        System.arraycopy(objArr2, 0, objArr, 0, i10);
+        return i10;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        f0 f0Var = this.b;
+        if (f0Var == null) {
+            f0Var = f0.r(this.n, this.d);
+            this.b = f0Var;
+        }
+        return f0Var.listIterator(0);
+    }
+
+    @Override // com.google.android.gms.internal.cast.c0
+    public final int n() {
+        return this.n;
+    }
+
+    @Override // com.google.android.gms.internal.cast.c0
+    public final int o() {
+        return 0;
+    }
+
+    @Override // com.google.android.gms.internal.cast.c0
+    public final Object[] p() {
+        return this.d;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final int size() {
-        return this.h;
+        return this.n;
     }
 }

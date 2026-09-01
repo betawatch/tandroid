@@ -12,12 +12,12 @@ import e2.c;
 import f7.k;
 import f7.q;
 import i6.f;
-import j7.f5;
+import j7.g5;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import u6.p;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class LocationRequest extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<LocationRequest> CREATOR = new p(8);
@@ -192,8 +192,8 @@ public final class LocationRequest extends a implements ReflectedParcelable {
                 Object invoke = method.invoke(workSource, null);
                 m.h(invoke);
                 z4 = ((Boolean) invoke).booleanValue();
-            } catch (Exception e) {
-                Log.e("WorkSourceUtil", "Unable to check WorkSource emptiness", e);
+            } catch (Exception e6) {
+                Log.e("WorkSourceUtil", "Unable to check WorkSource emptiness", e6);
             }
             if (!z4) {
                 l10.append(", ");
@@ -213,8 +213,8 @@ public final class LocationRequest extends a implements ReflectedParcelable {
                 Object invoke2 = method2.invoke(workSource, null);
                 m.h(invoke2);
                 intValue = ((Integer) invoke2).intValue();
-            } catch (Exception e6) {
-                Log.wtf("WorkSourceUtil", "Unable to assign blame through WorkSource", e6);
+            } catch (Exception e10) {
+                Log.wtf("WorkSourceUtil", "Unable to assign blame through WorkSource", e10);
             }
             if (intValue != 0) {
                 z4 = false;
@@ -241,38 +241,38 @@ public final class LocationRequest extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
+        int q10 = g5.q(parcel, 20293);
         int i11 = this.a;
-        f5.s(parcel, 1, 4);
+        g5.s(parcel, 1, 4);
         parcel.writeInt(i11);
         long j10 = this.b;
-        f5.s(parcel, 2, 8);
+        g5.s(parcel, 2, 8);
         parcel.writeLong(j10);
         long j11 = this.c;
-        f5.s(parcel, 3, 8);
+        g5.s(parcel, 3, 8);
         parcel.writeLong(j11);
-        f5.s(parcel, 6, 4);
+        g5.s(parcel, 6, 4);
         parcel.writeInt(this.f);
-        f5.s(parcel, 7, 4);
+        g5.s(parcel, 7, 4);
         parcel.writeFloat(this.h);
-        f5.s(parcel, 8, 8);
+        g5.s(parcel, 8, 8);
         parcel.writeLong(this.d);
-        f5.s(parcel, 9, 4);
+        g5.s(parcel, 9, 4);
         parcel.writeInt(this.n ? 1 : 0);
-        f5.s(parcel, 10, 8);
+        g5.s(parcel, 10, 8);
         parcel.writeLong(this.e);
         long j12 = this.r;
-        f5.s(parcel, 11, 8);
+        g5.s(parcel, 11, 8);
         parcel.writeLong(j12);
-        f5.s(parcel, 12, 4);
+        g5.s(parcel, 12, 4);
         parcel.writeInt(this.s);
-        f5.s(parcel, 13, 4);
+        g5.s(parcel, 13, 4);
         parcel.writeInt(this.v);
-        f5.l(parcel, 14, this.w);
-        f5.s(parcel, 15, 4);
+        g5.l(parcel, 14, this.w);
+        g5.s(parcel, 15, 4);
         parcel.writeInt(this.x ? 1 : 0);
-        f5.k(parcel, 16, this.y, i10);
-        f5.k(parcel, 17, this.B, i10);
-        f5.r(parcel, q10);
+        g5.k(parcel, 16, this.y, i10);
+        g5.k(parcel, 17, this.B, i10);
+        g5.r(parcel, q10);
     }
 }

@@ -1,19 +1,33 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes3.dex */
-public final class yo0 extends g61 {
-    public final /* synthetic */ bp0 e;
+import androidx.recyclerview.widget.RecyclerView;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yo0(bp0 bp0Var, xo0 xo0Var) {
-        super(xo0Var);
-        this.e = bp0Var;
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes3.dex */
+public final class yo0 extends f2.a1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ dp0 b;
+
+    public yo0(dp0 dp0Var, int i10) {
+        this.b = dp0Var;
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.g61, android.widget.PopupWindow
-    public final void dismiss() {
-        super.dismiss();
-        this.e.f0 = null;
+    @Override // f2.a1
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        dp0 dp0Var = this.b;
+        ip0 ip0Var = dp0Var.g0;
+        if (dp0Var.C != null) {
+            if (dp0Var.B == null || !dp0Var.c()) {
+                return;
+            }
+            dp0Var.B.g(false);
+            return;
+        }
+        mh.l7 l7Var = this.a == 1 ? ip0Var.c : ip0Var.b;
+        if (l7Var == null || !dp0Var.c()) {
+            return;
+        }
+        l7Var.a();
     }
 }

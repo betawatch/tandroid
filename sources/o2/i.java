@@ -6,7 +6,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class i extends c {
     public final Pattern d;
@@ -29,12 +29,12 @@ public final class i extends c {
         if (!b10 || (i10 = Build.VERSION.SDK_INT) >= 29) {
             return b10;
         }
-        boolean z4 = n2.c.a;
+        boolean z4 = n2.a.a;
         if (i10 >= 26) {
             packageInfo = k6.a.c();
         } else {
             try {
-                packageInfo = n2.c.a();
+                packageInfo = n2.a.a();
             } catch (ClassNotFoundException | IllegalAccessException | NoSuchMethodException | InvocationTargetException unused) {
                 packageInfo = null;
             }

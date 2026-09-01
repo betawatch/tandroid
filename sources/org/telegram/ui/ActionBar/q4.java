@@ -1,37 +1,45 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.view.animation.Animation;
+import android.view.animation.Transformation;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class q4 extends ArrayAdapter {
-    public final /* synthetic */ w4 a;
+public final class q4 extends Animation {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ x4 e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q4(w4 w4Var, Context context) {
-        super(context, 0);
-        this.a = w4Var;
+    public /* synthetic */ q4(x4 x4Var, float f10, float f11, int i10, int i11) {
+        this.a = i11;
+        this.e = x4Var;
+        this.b = f10;
+        this.c = f11;
+        this.d = i10;
     }
 
-    @Override // android.widget.ArrayAdapter, android.widget.Adapter
-    public final View getView(int i10, View view, ViewGroup viewGroup) {
-        w4 w4Var = this.a;
-        com.google.firebase.messaging.n nVar = w4Var.q;
-        MenuItem menuItem = (MenuItem) getItem(i10);
-        int width = w4Var.I.getWidth();
-        if (view != null) {
-            int i11 = nVar.a;
-            y4.e(view, menuItem, ((w4) nVar.e).Q.j != null);
-        } else {
-            view = y4.b(((w4) nVar.e).Q, nVar.c, menuItem, true, false, false);
-            int i12 = nVar.b;
-            view.setPadding(i12, 0, i12, 0);
+    @Override // android.view.animation.Animation
+    public final void applyTransformation(float f10, Transformation transformation) {
+        switch (this.a) {
+            case 0:
+                float f11 = this.b;
+                float w10 = e2.c.w(this.c, f11, f10, f11);
+                x4 x4Var = this.e;
+                x4Var.i.setX(w10 + (x4Var.f.getWidth() - this.d));
+                float f12 = 1.0f - f10;
+                x4Var.l.setAlpha(f12);
+                x4Var.j.setAlpha(f12);
+                break;
+            default:
+                float f13 = this.b;
+                float w11 = e2.c.w(this.c, f13, f10, f13);
+                x4 x4Var2 = this.e;
+                x4Var2.i.setX(w11 + (x4Var2.f.getWidth() - this.d));
+                x4Var2.l.setAlpha(f10);
+                x4Var2.j.setAlpha(f10);
+                break;
         }
-        view.setMinimumWidth(width);
-        return view;
     }
 }

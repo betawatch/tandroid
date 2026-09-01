@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.yh;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 final class zztv<T> implements zzug<T> {
     private static final int[] zza = new int[0];
@@ -88,7 +88,7 @@ final class zztv<T> implements zzug<T> {
     private static Field zzC(Class cls, String str) {
         try {
             return cls.getDeclaredField(str);
-        } catch (NoSuchFieldException e) {
+        } catch (NoSuchFieldException e6) {
             Field[] declaredFields = cls.getDeclaredFields();
             for (Field field : declaredFields) {
                 if (str.equals(field.getName())) {
@@ -99,7 +99,7 @@ final class zztv<T> implements zzug<T> {
             String arrays = Arrays.toString(declaredFields);
             StringBuilder m9 = yh.m("Field ", str, " for ", name, " not found. Known fields are ");
             m9.append(arrays);
-            throw new RuntimeException(m9.toString(), e);
+            throw new RuntimeException(m9.toString(), e6);
         }
     }
 

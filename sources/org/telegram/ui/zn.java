@@ -6,19 +6,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public abstract class zn extends FrameLayout {
     public final yn a;
-    public final org.telegram.ui.ActionBar.e5 b;
+    public final org.telegram.ui.ActionBar.f5 b;
     public View c;
     public int d;
     public boolean e;
 
-    public zn(Context context, org.telegram.ui.ActionBar.e5 e5Var, Bundle bundle) {
+    public zn(Context context, org.telegram.ui.ActionBar.f5 f5Var, Bundle bundle) {
         super(context);
         this.e = true;
-        this.b = e5Var;
+        this.b = f5Var;
         yn ynVar = new yn(this, bundle);
         this.a = ynVar;
         ynVar.La = true;
@@ -45,7 +45,7 @@ public abstract class zn extends FrameLayout {
                 qjVar.setPadding(0, i10, 0, 0);
             }
             ynVar.pa();
-            addView(this.c, k7.b6.c(-1.0f, -1));
+            addView(this.c, k7.c6.c(-1.0f, -1));
             if (this.e) {
                 ynVar.onResume();
             }

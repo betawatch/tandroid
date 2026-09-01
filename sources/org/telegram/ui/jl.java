@@ -8,7 +8,7 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class jl extends org.telegram.ui.Components.p9 {
     public final /* synthetic */ int D = 0;
@@ -24,10 +24,10 @@ public final class jl extends org.telegram.ui.Components.p9 {
     public void draw(Canvas canvas) {
         switch (this.D) {
             case 1:
-                ih.k kVar = (ih.k) this.F;
+                jh.k kVar = (jh.k) this.F;
                 Path path = (Path) this.E;
                 super.draw(canvas);
-                if (((org.telegram.ui.Components.mo) this.G).h) {
+                if (((org.telegram.ui.Components.oo) this.G).h) {
                     path.rewind();
                     RectF rectF = AndroidUtilities.rectTmp;
                     rectF.set(this.a.getImageX(), this.a.getImageY(), this.a.getImageX2(), this.a.getImageY2());
@@ -53,7 +53,7 @@ public final class jl extends org.telegram.ui.Components.p9 {
         switch (this.D) {
             case 0:
                 float[] fArr = (float[]) this.G;
-                ih.k kVar = (ih.k) this.F;
+                jh.k kVar = (jh.k) this.F;
                 Path path = (Path) this.E;
                 super.onDraw(canvas);
                 if (this.r) {
@@ -91,9 +91,9 @@ public final class jl extends org.telegram.ui.Components.p9 {
             case 2:
                 org.telegram.ui.Components.voip.h hVar = (org.telegram.ui.Components.voip.h) this.F;
                 super.onDraw(canvas);
-                org.telegram.ui.Components.x50 x50Var = (org.telegram.ui.Components.x50) this.G;
-                if (x50Var.p0) {
-                    int i10 = x50Var.K0;
+                org.telegram.ui.Components.z50 z50Var = (org.telegram.ui.Components.z50) this.G;
+                if (z50Var.p0) {
+                    int i10 = z50Var.K0;
                     hVar.f = i10;
                     RectF rectF2 = AndroidUtilities.rectTmp;
                     float f14 = i10;
@@ -110,17 +110,17 @@ public final class jl extends org.telegram.ui.Components.p9 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jl(org.telegram.ui.Components.mo moVar, Context context, ih.k kVar) {
+    public jl(org.telegram.ui.Components.oo ooVar, Context context, jh.k kVar) {
         super(context);
-        this.G = moVar;
+        this.G = ooVar;
         this.F = kVar;
         this.E = new Path();
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jl(org.telegram.ui.Components.x50 x50Var, Context context, Paint paint) {
+    public jl(org.telegram.ui.Components.z50 z50Var, Context context, Paint paint) {
         super(context);
-        this.G = x50Var;
+        this.G = z50Var;
         this.E = paint;
         this.F = new org.telegram.ui.Components.voip.h();
     }

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class j {
     public static IOnDoneCallback a() {
@@ -40,8 +40,8 @@ public abstract class j {
     public static void d(String str, e eVar) {
         try {
             e(str, eVar);
-        } catch (RemoteException e) {
-            Log.e("CarApp.Dispatch", "Host unresponsive when dispatching call " + str, e);
+        } catch (RemoteException e6) {
+            Log.e("CarApp.Dispatch", "Host unresponsive when dispatching call " + str, e6);
         }
     }
 
@@ -51,10 +51,10 @@ public abstract class j {
                 Log.d("CarApp", "Dispatching call " + str + " to host");
             }
             eVar.call();
-        } catch (SecurityException e) {
-            throw e;
-        } catch (RuntimeException e6) {
-            throw new a7.b(android.support.v4.media.a.o("Remote ", str, " call failed"), e6);
+        } catch (SecurityException e6) {
+            throw e6;
+        } catch (RuntimeException e10) {
+            throw new a7.b(android.support.v4.media.a.o("Remote ", str, " call failed"), e10);
         }
     }
 

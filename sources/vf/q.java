@@ -1,1030 +1,437 @@
 package vf;
 
+import android.app.Activity;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
+import android.content.Intent;
+import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import java.util.ArrayList;
+import k7.c6;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.d2;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.p2;
+import org.telegram.ui.Components.b2;
+import org.telegram.ui.Components.b61;
+import org.telegram.ui.Components.c61;
+import org.telegram.ui.Components.h4;
+import org.telegram.ui.Components.ic;
+import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.q70;
+import org.telegram.ui.Components.qv0;
+import org.telegram.ui.Components.t01;
+import org.telegram.ui.Components.x51;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.web.v1;
+import org.telegram.ui.xn;
+import org.telegram.ui.yh;
+import qh.v9;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public class q extends g {
-    public final Matrix A1;
-    public final float[] B1;
-    public final Path C1;
-    public boolean[] D1;
-    public float[] E1;
+public final class q extends c61 implements NotificationCenter.NotificationCenterDelegate {
+    public static d2 d;
 
-    public q(Context context) {
-        super(context, null);
-        this.A1 = new Matrix();
-        this.B1 = new float[2];
-        this.C1 = new Path();
-        this.t0 = true;
-        this.u0 = true;
-        this.e = false;
+    public static void Y(q qVar, TL_account.TL_businessChatLink tL_businessChatLink) {
+        b0(qVar.getParentActivity(), qVar.currentAccount, tL_businessChatLink, qVar.resourceProvider);
     }
 
-    @Override // vf.g
-    /* renamed from: L, reason: merged with bridge method [inline-methods] */
-    public xf.i h(wf.a aVar) {
-        return new xf.i(aVar);
-    }
-
-    public final int M(float f10, float f11) {
-        RectF rectF = this.E0;
-        float centerX = rectF.centerX();
-        float centerY = rectF.centerY() + AndroidUtilities.dp(16.0f);
-        if (f10 >= centerX && f11 <= centerY) {
+    public static int a0(ArrayList arrayList) {
+        char c3 = 65535;
+        boolean z4 = false;
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            TLRPC.PrivacyRule privacyRule = (TLRPC.PrivacyRule) arrayList.get(i10);
+            if (!(privacyRule instanceof TLRPC.TL_privacyValueAllowChatParticipants)) {
+                if (!(privacyRule instanceof TLRPC.TL_privacyValueDisallowChatParticipants)) {
+                    if (!(privacyRule instanceof TLRPC.TL_privacyValueAllowUsers)) {
+                        if (!(privacyRule instanceof TLRPC.TL_privacyValueDisallowUsers)) {
+                            if (!(privacyRule instanceof TLRPC.TL_privacyValueAllowPremium) && c3 == 65535) {
+                                c3 = privacyRule instanceof TLRPC.TL_privacyValueAllowAll ? (char) 0 : privacyRule instanceof TLRPC.TL_privacyValueDisallowAll ? (char) 1 : (char) 2;
+                            }
+                        }
+                    }
+                }
+                z4 = true;
+            }
+        }
+        if (c3 == 0 || (c3 == 65535 && z4)) {
             return 0;
         }
-        if (f10 < centerX || f11 < centerY) {
-            return (f10 >= centerX || f11 < centerY) ? 3 : 2;
+        return c3 == 2 ? 2 : 1;
+    }
+
+    public static void b0(Activity activity, int i10, TL_account.TL_businessChatLink tL_businessChatLink, g6 g6Var) {
+        p2 R = LaunchActivity.R();
+        Activity findActivity = AndroidUtilities.findActivity(activity);
+        View currentFocus = findActivity != null ? findActivity.getCurrentFocus() : null;
+        boolean z4 = R != null && (R.getFragmentView() instanceof qv0) && ((qv0) R.getFragmentView()).R() > AndroidUtilities.dp(20.0f);
+        View view = currentFocus;
+        d2[] d2VarArr = new d2[1];
+        AlertDialog$Builder g2Var = z4 ? new g2(activity, 0, g6Var) : new AlertDialog$Builder(activity, 0, g6Var);
+        String string = LocaleController.getString(R.string.BusinessLinksRenameTitle);
+        d2 d2Var = g2Var.a;
+        d2Var.O = string;
+        n nVar = new n(activity, g6Var);
+        MediaDataController.getInstance(i10).fetchNewEmojiKeywords(AndroidUtilities.getCurrentKeyboardLanguage(), true);
+        nVar.setInputType(49153);
+        nVar.setTextSize(1, 18.0f);
+        nVar.setText(tL_businessChatLink.title);
+        int i11 = k6.j5;
+        nVar.setTextColor(k6.v0(i11, g6Var));
+        nVar.setHintColor(k6.v0(k6.Xh, g6Var));
+        nVar.setCursorColor(k6.w0(null, k6.Wd, false));
+        nVar.setHintText(LocaleController.getString(R.string.BusinessLinksNamePlaceholder));
+        nVar.setSingleLine(true);
+        nVar.setFocusable(true);
+        nVar.setLineColors(k6.v0(k6.k6, g6Var), k6.v0(k6.l6, g6Var), k6.v0(k6.p7, g6Var));
+        nVar.setImeOptions(6);
+        nVar.setBackgroundDrawable(null);
+        nVar.setPadding(0, 0, AndroidUtilities.dp(42.0f), 0);
+        LinearLayout h = l.d.h(activity, 1);
+        TextView textView = new TextView(activity);
+        org.telegram.ui.b.l(i11, g6Var, textView, 1, 16.0f);
+        textView.setText(LocaleController.getString(R.string.BusinessLinksRenameMessage));
+        h.addView(textView, c6.k(24.0f, 5.0f, 24.0f, 12.0f, -1, -2));
+        h.addView(nVar, c6.k(24.0f, 0.0f, 24.0f, 10.0f, -1, -2));
+        g2Var.n(h);
+        d2Var.a = AndroidUtilities.dp(292.0f);
+        nVar.setOnEditorActionListener(new b2(nVar, i10, tL_businessChatLink, d2VarArr, view, 1));
+        g2Var.k(LocaleController.getString(R.string.Done), new e3.d(nVar, i10, tL_businessChatLink, 16));
+        g2Var.h(LocaleController.getString(R.string.Cancel), new sg.a(18));
+        if (z4) {
+            d = d2Var;
+            d2VarArr[0] = d2Var;
+            d2Var.setOnDismissListener(new m(0, view));
+            d.setOnShowListener(new lh.j(2, nVar));
+            d.q(250L);
+        } else {
+            d2Var.L = new v1(17, view, nVar);
+            d2VarArr[0] = d2Var;
+            d2Var.setOnDismissListener(new fg.d0(nVar, 11));
+            d2VarArr[0].setOnShowListener(new org.telegram.messenger.voip.r0(view, nVar, 1));
+            d2VarArr[0].show();
         }
-        return 1;
+        d2VarArr[0].e0 = false;
+        nVar.setSelection(nVar.getText().length());
     }
 
-    @Override // vf.g
-    public float getMinDistance() {
-        return 0.1f;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:100:0x03e1 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x0442  */
-    /* JADX WARN: Removed duplicated region for block: B:167:0x0420  */
-    /* JADX WARN: Removed duplicated region for block: B:171:0x042f  */
-    /* JADX WARN: Removed duplicated region for block: B:173:0x0437  */
-    /* JADX WARN: Removed duplicated region for block: B:175:0x03dd  */
-    /* JADX WARN: Removed duplicated region for block: B:177:0x03d5  */
-    /* JADX WARN: Removed duplicated region for block: B:192:0x023a  */
-    /* JADX WARN: Removed duplicated region for block: B:195:0x01f4  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x01ee  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x0200 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x0235  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x0250 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x0389  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x03db  */
-    @Override // vf.g
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void k(Canvas canvas) {
-        ArrayList arrayList;
-        float f10;
-        float f11;
-        int i10;
-        float f12;
-        int i11;
-        float f13;
-        int i12;
-        float f14;
-        float f15;
-        float measuredHeight;
-        float f16;
-        int i13;
-        int i14;
-        ArrayList arrayList2;
-        float f17;
-        float f18;
-        float f19;
-        float f20;
-        float f21;
-        float f22;
-        int i15;
-        int i16;
-        float f23;
-        float f24;
-        char c3;
-        int i17;
-        int i18;
-        double degrees;
-        int M;
-        int M2;
-        boolean z4;
-        float f25;
-        float f26;
-        int i19;
-        float f27;
-        float f28;
-        float f29;
-        double degrees2;
-        int i20;
-        if (this.e0 != null) {
-            float f30 = this.C0;
-            j jVar = this.d0;
-            float f31 = jVar.l;
-            float f32 = jVar.k;
-            float f33 = f30 / (f31 - f32);
-            float f34 = g.h1;
-            float f35 = (f32 * f33) - f34;
-            RectF rectF = this.E0;
-            float centerX = rectF.centerX();
-            float centerY = rectF.centerY() + AndroidUtilities.dp(16.0f);
-            int i21 = 0;
-            while (true) {
-                arrayList = this.d;
-                if (i21 >= arrayList.size()) {
-                    break;
-                }
-                ((xf.i) arrayList.get(i21)).f.reset();
-                ((xf.i) arrayList.get(i21)).g.reset();
-                i21++;
-            }
-            canvas.save();
-            boolean[] zArr = this.D1;
-            if (zArr == null || zArr.length < ((wf.e) this.e0).d.size()) {
-                this.D1 = new boolean[((wf.e) this.e0).d.size()];
-                this.E1 = new float[((wf.e) this.e0).d.size()];
-            }
-            int i22 = this.v0;
-            if (i22 == 2) {
-                f12 = this.w0.f / 0.6f;
-                if (f12 > 1.0f) {
-                    f12 = 1.0f;
-                }
-                Path path = this.C1;
-                path.reset();
-                float width = rectF.width() > rectF.height() ? rectF.width() : rectF.height();
-                float height = (rectF.width() > rectF.height() ? rectF.height() : rectF.width()) * 0.45f;
-                f11 = 0.0f;
-                float w10 = e2.c.w(1.0f, this.w0.f, (width - height) / 2.0f, height);
-                RectF rectF2 = new RectF();
-                f10 = 1.0f;
-                rectF2.set(centerX - w10, centerY - w10, centerX + w10, centerY + w10);
-                path.addRoundRect(rectF2, w10, w10, Path.Direction.CW);
-                canvas.clipPath(path);
-                i10 = 255;
-            } else {
-                f10 = 1.0f;
-                f11 = 0.0f;
-                i10 = i22 == 3 ? (int) (this.w0.f * 255.0f) : 255;
-                f12 = 0.0f;
-            }
-            float[] fArr = ((wf.e) this.e0).b;
-            int i23 = ((int) (f34 / (fArr.length < 2 ? 1.0f : fArr[1] * f33))) + 1;
-            int max = Math.max(0, (this.C - i23) - 1);
-            int min = Math.min(((wf.e) this.e0).b.length - 1, this.D + i23 + 1);
-            int i24 = max;
-            float f36 = 0.0f;
-            boolean z10 = false;
-            float f37 = 0.0f;
-            while (true) {
-                i11 = g.k1;
-                if (i24 > min) {
-                    break;
-                }
-                float f38 = f33;
-                float f39 = f35;
-                float f40 = f12;
-                boolean z11 = z10;
-                int i25 = 0;
-                int i26 = 0;
-                int i27 = 0;
-                float f41 = 0.0f;
-                while (i27 < arrayList.size()) {
-                    xf.f fVar = (xf.f) arrayList.get(i27);
-                    int i28 = i27;
-                    if (fVar.n || fVar.o != f11) {
-                        i20 = i10;
-                        long j10 = fVar.a.a[i24];
-                        if (j10 > 0) {
-                            f41 = (j10 * fVar.o) + f41;
-                            i25++;
-                        }
-                        i26 = i28;
-                    } else {
-                        i20 = i10;
-                    }
-                    i27 = i28 + 1;
-                    i10 = i20;
-                }
-                int i29 = i10;
-                float f42 = 0.0f;
-                int i30 = 0;
-                while (i30 < arrayList.size()) {
-                    xf.f fVar2 = (xf.f) arrayList.get(i30);
-                    float f43 = f36;
-                    boolean z12 = fVar2.n;
-                    Path path2 = fVar2.f;
-                    if (z12) {
-                        f13 = f42;
-                    } else {
-                        f13 = f42;
-                        if (fVar2.o == f11) {
-                            i14 = i25;
-                            i18 = min;
-                            arrayList2 = arrayList;
-                            i15 = max;
-                            i16 = i11;
-                            f42 = f13;
-                            i17 = i26;
-                            f36 = f43;
-                            i30++;
-                            min = i18;
-                            i26 = i17;
-                            max = i15;
-                            i25 = i14;
-                            i11 = i16;
-                            arrayList = arrayList2;
-                            f11 = 0.0f;
-                        }
-                    }
-                    long[] jArr = fVar2.a.a;
-                    if (i25 == 1) {
-                        if (jArr[i24] != 0) {
-                            f14 = fVar2.o;
-                            i12 = i25;
-                            float[] fArr2 = ((wf.e) this.e0).b;
-                            f15 = (fArr2[i24] * f38) - f39;
-                            float measuredWidth = i24 != min ? getMeasuredWidth() : (fArr2[i24 + 1] * f38) - f39;
-                            if (f14 == f11 && i30 == i26) {
-                                z11 = true;
-                            }
-                            float measuredHeight2 = ((getMeasuredHeight() - this.s) - i11) * f14;
-                            measuredHeight = ((getMeasuredHeight() - this.s) - measuredHeight2) - f13;
-                            this.E1[i30] = measuredHeight;
-                            float measuredHeight3 = getMeasuredHeight() - this.s;
-                            if (i24 != min) {
-                                f16 = measuredHeight3;
-                                f43 = f15;
-                            } else {
-                                f16 = measuredHeight3;
-                                if (i24 == max) {
-                                    f37 = f15;
-                                }
-                            }
-                            i13 = this.v0;
-                            float f44 = measuredWidth;
-                            float[] fArr3 = this.B1;
-                            i14 = i12;
-                            Matrix matrix = this.A1;
-                            if (i13 == 2 || i30 == i26) {
-                                arrayList2 = arrayList;
-                                f17 = measuredHeight;
-                                f18 = f16;
-                                f19 = f15;
-                                f20 = 0.0f;
-                            } else {
-                                int i31 = (f15 > centerX ? 1 : (f15 == centerX ? 0 : -1));
-                                if (i31 < 0) {
-                                    xf.j jVar2 = this.w0;
-                                    i19 = i31;
-                                    f28 = jVar2.g[i30];
-                                    f27 = jVar2.h[i30];
-                                } else {
-                                    i19 = i31;
-                                    xf.j jVar3 = this.w0;
-                                    float f45 = jVar3.i[i30];
-                                    f27 = jVar3.j[i30];
-                                    f28 = f45;
-                                }
-                                float f46 = centerX - f28;
-                                float f47 = centerY - f27;
-                                float f48 = (((f15 - f28) * f47) / f46) + f27;
-                                float f49 = f10 - f40;
-                                float f50 = measuredHeight * f49;
-                                float f51 = f48 * f40;
-                                float f52 = f50 + f51;
-                                float f53 = (f16 * f49) + f51;
-                                float f54 = f47 / f46;
-                                if (f54 > f11) {
-                                    f29 = f49;
-                                    arrayList2 = arrayList;
-                                    degrees2 = Math.toDegrees(-Math.atan(f54));
-                                } else {
-                                    f29 = f49;
-                                    arrayList2 = arrayList;
-                                    degrees2 = Math.toDegrees(Math.atan(Math.abs(f54)));
-                                }
-                                float f55 = ((float) degrees2) - 90.0f;
-                                if (f15 >= centerX) {
-                                    fArr3[0] = f15;
-                                    fArr3[1] = f52;
-                                    matrix.reset();
-                                    matrix.postRotate(this.w0.f * f55, centerX, centerY);
-                                    matrix.mapPoints(fArr3);
-                                    float f56 = fArr3[0];
-                                    f17 = fArr3[1];
-                                    if (f56 < centerX) {
-                                        f56 = centerX;
-                                    }
-                                    fArr3[0] = f15;
-                                    fArr3[1] = f53;
-                                    matrix.reset();
-                                    f20 = f55;
-                                    matrix.postRotate(this.w0.f * f20, centerX, centerY);
-                                    matrix.mapPoints(fArr3);
-                                    f18 = fArr3[1];
-                                    f21 = f37;
-                                    f22 = f56;
-                                    f19 = i19 < 0 ? centerX : f15;
-                                } else {
-                                    f20 = f55;
-                                    if (f44 >= centerX) {
-                                        f19 = (f15 * f29) + (centerX * f40);
-                                        f18 = (centerY * f40) + (f52 * f29);
-                                        f17 = f18;
-                                    } else {
-                                        fArr3[0] = f15;
-                                        fArr3[1] = f52;
-                                        matrix.reset();
-                                        xf.j jVar4 = this.w0;
-                                        float f57 = jVar4.f;
-                                        matrix.postRotate((f57 * jVar4.k[i30]) + (f57 * f20), centerX, centerY);
-                                        matrix.mapPoints(fArr3);
-                                        float f58 = fArr3[0];
-                                        f17 = fArr3[1];
-                                        if (f44 >= centerX) {
-                                            float f59 = this.w0.f;
-                                            fArr3[0] = (f59 * centerX) + ((f10 - f59) * f15);
-                                        } else {
-                                            fArr3[0] = f15;
-                                        }
-                                        fArr3[1] = f53;
-                                        matrix.reset();
-                                        xf.j jVar5 = this.w0;
-                                        float f60 = jVar5.f;
-                                        matrix.postRotate((f60 * jVar5.k[i30]) + (f60 * f20), centerX, centerY);
-                                        matrix.mapPoints(fArr3);
-                                        f19 = fArr3[0];
-                                        f18 = fArr3[1];
-                                        f21 = f37;
-                                        f22 = f58;
-                                    }
-                                }
-                                i15 = max;
-                                if (i24 == max) {
-                                    float measuredHeight4 = getMeasuredHeight();
-                                    i16 = i11;
-                                    if (this.v0 != 2 || i30 == i26) {
-                                        z4 = false;
-                                        f25 = measuredHeight4;
-                                        f26 = 0.0f;
-                                    } else {
-                                        fArr3[0] = f11 - centerX;
-                                        fArr3[1] = measuredHeight4;
-                                        matrix.reset();
-                                        xf.j jVar6 = this.w0;
-                                        float f61 = jVar6.f;
-                                        matrix.postRotate((f61 * jVar6.k[i30]) + (f20 * f61), centerX, centerY);
-                                        matrix.mapPoints(fArr3);
-                                        z4 = false;
-                                        f26 = fArr3[0];
-                                        f25 = fArr3[1];
-                                    }
-                                    path2.moveTo(f26, f25);
-                                    this.D1[i30] = z4;
-                                } else {
-                                    i16 = i11;
-                                }
-                                xf.j jVar7 = this.w0;
-                                f23 = jVar7 == null ? 0.0f : jVar7.f;
-                                if (f14 == f11 || i24 <= 0 || jArr[i24 - 1] != 0 || i24 >= min || jArr[i24 + 1] != 0) {
-                                    f24 = f23;
-                                } else {
-                                    f24 = f23;
-                                    if (this.v0 != 2) {
-                                        if (!this.D1[i30]) {
-                                            if (i30 == i26) {
-                                                path2.lineTo(f19, (f10 - f24) * f18);
-                                            } else {
-                                                path2.lineTo(f19, f18);
-                                            }
-                                        }
-                                        this.D1[i30] = true;
-                                        c3 = 0;
-                                        if (i24 == min) {
-                                            float measuredWidth2 = getMeasuredWidth();
-                                            float measuredHeight5 = getMeasuredHeight();
-                                            if (this.v0 != 2 || i30 == i26) {
-                                                path2.lineTo(measuredWidth2, measuredHeight5);
-                                            } else {
-                                                fArr3[c3] = measuredWidth2 + centerX;
-                                                fArr3[1] = measuredHeight5;
-                                                matrix.reset();
-                                                xf.j jVar8 = this.w0;
-                                                matrix.postRotate(jVar8.f * jVar8.k[i30], centerX, centerY);
-                                                matrix.mapPoints(fArr3);
-                                                float f62 = fArr3[c3];
-                                                float f63 = fArr3[1];
-                                            }
-                                            if (this.v0 != 2) {
-                                                i17 = i26;
-                                                i18 = min;
-                                                f42 = f13 + measuredHeight2;
-                                                f37 = f21;
-                                            } else if (i30 != i26) {
-                                                xf.j jVar9 = this.w0;
-                                                float f64 = (centerY - jVar9.h[i30]) / (centerX - jVar9.g[i30]);
-                                                if (f64 > f11) {
-                                                    i17 = i26;
-                                                    i18 = min;
-                                                    degrees = Math.toDegrees(-Math.atan(f64));
-                                                } else {
-                                                    i17 = i26;
-                                                    i18 = min;
-                                                    degrees = Math.toDegrees(Math.atan(Math.abs(f64)));
-                                                }
-                                                xf.j jVar10 = this.w0;
-                                                float f65 = jVar10.g[i30];
-                                                float f66 = jVar10.h[i30];
-                                                fArr3[0] = f65;
-                                                fArr3[1] = f66;
-                                                matrix.reset();
-                                                xf.j jVar11 = this.w0;
-                                                float f67 = jVar11.f;
-                                                matrix.postRotate((f67 * jVar11.k[i30]) + ((((float) degrees) - 90.0f) * f67), centerX, centerY);
-                                                matrix.mapPoints(fArr3);
-                                                float f68 = fArr3[0];
-                                                float f69 = fArr3[1];
-                                                if (Math.abs(f22 - f68) >= 0.001d || ((f69 >= centerY || f17 >= centerY) && (f69 <= centerY || f17 <= centerY))) {
-                                                    M = M(f22, f17);
-                                                    M2 = M(f68, f69);
-                                                } else {
-                                                    M2 = this.w0.k[i30] == -180.0f ? 0 : 3;
-                                                    M = 0;
-                                                }
-                                                while (M <= M2) {
-                                                    if (M == 0) {
-                                                        path2.lineTo(getMeasuredWidth(), 0.0f);
-                                                    } else if (M == 1) {
-                                                        path2.lineTo(getMeasuredWidth(), getMeasuredHeight());
-                                                    } else {
-                                                        if (M == 2) {
-                                                            path2.lineTo(0.0f, getMeasuredHeight());
-                                                        } else {
-                                                            path2.lineTo(0.0f, 0.0f);
-                                                        }
-                                                        M++;
-                                                    }
-                                                    M++;
-                                                }
-                                                f42 = f13 + measuredHeight2;
-                                                f37 = f21;
-                                            }
-                                        }
-                                        i17 = i26;
-                                        i18 = min;
-                                        f42 = f13 + measuredHeight2;
-                                        f37 = f21;
-                                    }
-                                }
-                                if (this.D1[i30]) {
-                                    if (i30 == i26) {
-                                        path2.lineTo(f19, (f10 - f24) * f18);
-                                    } else {
-                                        path2.lineTo(f19, f18);
-                                    }
-                                }
-                                if (i30 == i26) {
-                                    path2.lineTo(f22, (f10 - f24) * f17);
-                                } else {
-                                    path2.lineTo(f22, f17);
-                                }
-                                c3 = 0;
-                                this.D1[i30] = false;
-                                if (i24 == min) {
-                                }
-                                i17 = i26;
-                                i18 = min;
-                                f42 = f13 + measuredHeight2;
-                                f37 = f21;
-                            }
-                            f21 = f37;
-                            f22 = f19;
-                            i15 = max;
-                            if (i24 == max) {
-                            }
-                            xf.j jVar72 = this.w0;
-                            if (jVar72 == null) {
-                            }
-                            if (f14 == f11) {
-                            }
-                            f24 = f23;
-                            if (this.D1[i30]) {
-                            }
-                            if (i30 == i26) {
-                            }
-                            c3 = 0;
-                            this.D1[i30] = false;
-                            if (i24 == min) {
-                            }
-                            i17 = i26;
-                            i18 = min;
-                            f42 = f13 + measuredHeight2;
-                            f37 = f21;
-                        }
-                        i12 = i25;
-                        f14 = 0.0f;
-                        float[] fArr22 = ((wf.e) this.e0).b;
-                        f15 = (fArr22[i24] * f38) - f39;
-                        if (i24 != min) {
-                        }
-                        if (f14 == f11) {
-                            z11 = true;
-                        }
-                        float measuredHeight22 = ((getMeasuredHeight() - this.s) - i11) * f14;
-                        measuredHeight = ((getMeasuredHeight() - this.s) - measuredHeight22) - f13;
-                        this.E1[i30] = measuredHeight;
-                        float measuredHeight32 = getMeasuredHeight() - this.s;
-                        if (i24 != min) {
-                        }
-                        i13 = this.v0;
-                        float f442 = measuredWidth;
-                        float[] fArr32 = this.B1;
-                        i14 = i12;
-                        Matrix matrix2 = this.A1;
-                        if (i13 == 2) {
-                        }
-                        arrayList2 = arrayList;
-                        f17 = measuredHeight;
-                        f18 = f16;
-                        f19 = f15;
-                        f20 = 0.0f;
-                        f21 = f37;
-                        f22 = f19;
-                        i15 = max;
-                        if (i24 == max) {
-                        }
-                        xf.j jVar722 = this.w0;
-                        if (jVar722 == null) {
-                        }
-                        if (f14 == f11) {
-                        }
-                        f24 = f23;
-                        if (this.D1[i30]) {
-                        }
-                        if (i30 == i26) {
-                        }
-                        c3 = 0;
-                        this.D1[i30] = false;
-                        if (i24 == min) {
-                        }
-                        i17 = i26;
-                        i18 = min;
-                        f42 = f13 + measuredHeight22;
-                        f37 = f21;
-                    } else {
-                        if (f41 != f11) {
-                            i12 = i25;
-                            f14 = (jArr[i24] * fVar2.o) / f41;
-                            float[] fArr222 = ((wf.e) this.e0).b;
-                            f15 = (fArr222[i24] * f38) - f39;
-                            if (i24 != min) {
-                            }
-                            if (f14 == f11) {
-                            }
-                            float measuredHeight222 = ((getMeasuredHeight() - this.s) - i11) * f14;
-                            measuredHeight = ((getMeasuredHeight() - this.s) - measuredHeight222) - f13;
-                            this.E1[i30] = measuredHeight;
-                            float measuredHeight322 = getMeasuredHeight() - this.s;
-                            if (i24 != min) {
-                            }
-                            i13 = this.v0;
-                            float f4422 = measuredWidth;
-                            float[] fArr322 = this.B1;
-                            i14 = i12;
-                            Matrix matrix22 = this.A1;
-                            if (i13 == 2) {
-                            }
-                            arrayList2 = arrayList;
-                            f17 = measuredHeight;
-                            f18 = f16;
-                            f19 = f15;
-                            f20 = 0.0f;
-                            f21 = f37;
-                            f22 = f19;
-                            i15 = max;
-                            if (i24 == max) {
-                            }
-                            xf.j jVar7222 = this.w0;
-                            if (jVar7222 == null) {
-                            }
-                            if (f14 == f11) {
-                            }
-                            f24 = f23;
-                            if (this.D1[i30]) {
-                            }
-                            if (i30 == i26) {
-                            }
-                            c3 = 0;
-                            this.D1[i30] = false;
-                            if (i24 == min) {
-                            }
-                            i17 = i26;
-                            i18 = min;
-                            f42 = f13 + measuredHeight222;
-                            f37 = f21;
-                        }
-                        i12 = i25;
-                        f14 = 0.0f;
-                        float[] fArr2222 = ((wf.e) this.e0).b;
-                        f15 = (fArr2222[i24] * f38) - f39;
-                        if (i24 != min) {
-                        }
-                        if (f14 == f11) {
-                        }
-                        float measuredHeight2222 = ((getMeasuredHeight() - this.s) - i11) * f14;
-                        measuredHeight = ((getMeasuredHeight() - this.s) - measuredHeight2222) - f13;
-                        this.E1[i30] = measuredHeight;
-                        float measuredHeight3222 = getMeasuredHeight() - this.s;
-                        if (i24 != min) {
-                        }
-                        i13 = this.v0;
-                        float f44222 = measuredWidth;
-                        float[] fArr3222 = this.B1;
-                        i14 = i12;
-                        Matrix matrix222 = this.A1;
-                        if (i13 == 2) {
-                        }
-                        arrayList2 = arrayList;
-                        f17 = measuredHeight;
-                        f18 = f16;
-                        f19 = f15;
-                        f20 = 0.0f;
-                        f21 = f37;
-                        f22 = f19;
-                        i15 = max;
-                        if (i24 == max) {
-                        }
-                        xf.j jVar72222 = this.w0;
-                        if (jVar72222 == null) {
-                        }
-                        if (f14 == f11) {
-                        }
-                        f24 = f23;
-                        if (this.D1[i30]) {
-                        }
-                        if (i30 == i26) {
-                        }
-                        c3 = 0;
-                        this.D1[i30] = false;
-                        if (i24 == min) {
-                        }
-                        i17 = i26;
-                        i18 = min;
-                        f42 = f13 + measuredHeight2222;
-                        f37 = f21;
-                    }
-                    f36 = f43;
-                    i30++;
-                    min = i18;
-                    i26 = i17;
-                    max = i15;
-                    i25 = i14;
-                    i11 = i16;
-                    arrayList = arrayList2;
-                    f11 = 0.0f;
-                }
-                i24++;
-                min = min;
-                f33 = f38;
-                f35 = f39;
-                f12 = f40;
-                z10 = z11;
-                i10 = i29;
-                f11 = 0.0f;
-            }
-            int i32 = i10;
-            ArrayList arrayList3 = arrayList;
-            boolean z13 = z10;
-            canvas.save();
-            canvas.clipRect(f37, i11, f36, getMeasuredHeight() - this.s);
-            if (z13) {
-                canvas.drawColor(j6.w0(null, j6.rj, false));
-            }
-            for (int size = arrayList3.size() - 1; size >= 0; size--) {
-                xf.f fVar3 = (xf.f) arrayList3.get(size);
-                Paint paint = fVar3.c;
-                paint.setAlpha(i32);
-                canvas.drawPath(fVar3.f, paint);
-                paint.setAlpha(255);
-            }
-            canvas.restore();
-            canvas.restore();
+    @Override // org.telegram.ui.Components.c61
+    public final void U(ArrayList arrayList, x51 x51Var) {
+        String string = LocaleController.getString(R.string.BusinessLinks);
+        String string2 = LocaleController.getString(R.string.BusinessLinksInfo);
+        int i10 = R.raw.biz_links;
+        j51 j51Var = new j51(2);
+        j51Var.l = string;
+        j51Var.o = string2;
+        j51Var.k = i10;
+        arrayList.add(j51Var);
+        x51Var.U();
+        t d10 = t.d(this.currentAccount);
+        if (d10.b.size() < MessagesController.getInstance(d10.a).businessChatLinksLimit) {
+            j51 c3 = j51.c(1, R.drawable.menu_link_create, LocaleController.getString(R.string.BusinessLinksAdd));
+            c3.q = true;
+            arrayList.add(c3);
         }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:45:0x00f1 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0103  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0121 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x0166  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x0159  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x010f  */
-    @Override // vf.g
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void n(Canvas canvas) {
-        int i10;
-        boolean z4;
-        float f10;
-        boolean z10;
-        wf.b bVar;
-        if (this.e0 != null) {
-            ArrayList arrayList = this.d;
-            int size = arrayList.size();
-            for (int i11 = 0; i11 < size; i11++) {
-                ((xf.i) arrayList.get(i11)).g.reset();
-            }
-            wf.b bVar2 = this.e0;
-            int i12 = ((wf.e) bVar2).n;
-            boolean[] zArr = this.D1;
-            if (zArr == null || zArr.length < ((wf.e) bVar2).d.size()) {
-                this.D1 = new boolean[((wf.e) this.e0).d.size()];
-            }
-            boolean z11 = false;
-            for (int i13 = 0; i13 < i12; i13++) {
-                float f11 = 0.0f;
-                int i14 = 0;
-                int i15 = 0;
-                for (int i16 = 0; i16 < arrayList.size(); i16++) {
-                    xf.f fVar = (xf.f) arrayList.get(i16);
-                    if (fVar.n || fVar.o != 0.0f) {
-                        if (((wf.e) this.e0).m[i16][i13] > 0) {
-                            f11 += ((wf.e) r12).m[i16][i13] * fVar.o;
-                            i14++;
-                        }
-                        i15 = i16;
-                    }
-                }
-                int i17 = i12 - 1;
-                float f12 = (i13 / i17) * this.z0;
-                int i18 = 0;
-                float f13 = 0.0f;
-                while (i18 < arrayList.size()) {
-                    xf.f fVar2 = (xf.f) arrayList.get(i18);
-                    boolean z12 = fVar2.n;
-                    Path path = fVar2.g;
-                    if (!z12 && fVar2.o == 0.0f) {
-                        i10 = i12;
-                    } else if (i14 == 1) {
-                        if (((wf.e) this.e0).m[i18][i13] != 0) {
-                            f10 = fVar2.o;
-                            i10 = i12;
-                            z4 = z11;
-                            boolean z13 = (f10 == 0.0f || i18 != i15) ? z4 : true;
-                            int i19 = this.y0;
-                            float f14 = f10 * i19;
-                            float f15 = (i19 - f14) - f13;
-                            if (i13 != 0) {
-                                z10 = z13;
-                                path.moveTo(0.0f, i19);
-                                this.D1[i18] = false;
-                            } else {
-                                z10 = z13;
-                            }
-                            bVar = this.e0;
-                            if (((wf.e) bVar).m[i18][i13] == 0 || i13 <= 0 || ((wf.e) bVar).m[i18][i13 - 1] != 0 || i13 >= i17 || ((wf.e) bVar).m[i18][i13 + 1] != 0) {
-                                if (this.D1[i18]) {
-                                    path.lineTo(f12, i19);
-                                }
-                                path.lineTo(f12, f15);
-                                this.D1[i18] = false;
-                            } else {
-                                if (!this.D1[i18]) {
-                                    path.lineTo(f12, i19);
-                                }
-                                this.D1[i18] = true;
-                            }
-                            if (i13 == i17) {
-                                path.lineTo(this.z0, i19);
-                            }
-                            f13 += f14;
-                            z11 = z10;
-                        }
-                        i10 = i12;
-                        z4 = z11;
-                        f10 = 0.0f;
-                        if (f10 == 0.0f) {
-                        }
-                        int i192 = this.y0;
-                        float f142 = f10 * i192;
-                        float f152 = (i192 - f142) - f13;
-                        if (i13 != 0) {
-                        }
-                        bVar = this.e0;
-                        if (((wf.e) bVar).m[i18][i13] == 0) {
-                        }
-                        if (this.D1[i18]) {
-                        }
-                        path.lineTo(f12, f152);
-                        this.D1[i18] = false;
-                        if (i13 == i17) {
-                        }
-                        f13 += f142;
-                        z11 = z10;
-                    } else {
-                        if (f11 != 0.0f) {
-                            i10 = i12;
-                            z4 = z11;
-                            f10 = (((wf.e) this.e0).m[i18][i13] * fVar2.o) / f11;
-                            if (f10 == 0.0f) {
-                            }
-                            int i1922 = this.y0;
-                            float f1422 = f10 * i1922;
-                            float f1522 = (i1922 - f1422) - f13;
-                            if (i13 != 0) {
-                            }
-                            bVar = this.e0;
-                            if (((wf.e) bVar).m[i18][i13] == 0) {
-                            }
-                            if (this.D1[i18]) {
-                            }
-                            path.lineTo(f12, f1522);
-                            this.D1[i18] = false;
-                            if (i13 == i17) {
-                            }
-                            f13 += f1422;
-                            z11 = z10;
-                        }
-                        i10 = i12;
-                        z4 = z11;
-                        f10 = 0.0f;
-                        if (f10 == 0.0f) {
-                        }
-                        int i19222 = this.y0;
-                        float f14222 = f10 * i19222;
-                        float f15222 = (i19222 - f14222) - f13;
-                        if (i13 != 0) {
-                        }
-                        bVar = this.e0;
-                        if (((wf.e) bVar).m[i18][i13] == 0) {
-                        }
-                        if (this.D1[i18]) {
-                        }
-                        path.lineTo(f12, f15222);
-                        this.D1[i18] = false;
-                        if (i13 == i17) {
-                        }
-                        f13 += f14222;
-                        z11 = z10;
-                    }
-                    i18++;
-                    i12 = i10;
-                }
-            }
-            if (z11) {
-                canvas.drawColor(j6.w0(null, j6.rj, false));
-            }
-            for (int size2 = arrayList.size() - 1; size2 >= 0; size2--) {
-                xf.f fVar3 = (xf.f) arrayList.get(size2);
-                canvas.drawPath(fVar3.g, fVar3.c);
-            }
+        ArrayList arrayList2 = t.d(this.currentAccount).b;
+        int size = arrayList2.size();
+        int i11 = 0;
+        int i12 = 0;
+        while (i12 < size) {
+            Object obj = arrayList2.get(i12);
+            i12++;
+            p pVar = new p();
+            pVar.a = (TL_account.TL_businessChatLink) obj;
+            j51 j51Var2 = new j51(29);
+            j51Var2.G = pVar;
+            arrayList.add(j51Var2);
         }
-    }
-
-    @Override // vf.g, android.view.View
-    public void onDraw(Canvas canvas) {
-        F();
-        k(canvas);
-        i(canvas);
-        ArrayList arrayList = this.b;
-        this.j0 = arrayList.size();
-        int i10 = 0;
-        while (true) {
-            this.k0 = i10;
-            int i11 = this.k0;
-            if (i11 >= this.j0) {
-                j(canvas);
-                m(canvas);
-                o(canvas);
-                super.onDraw(canvas);
-                return;
-            }
-            l(canvas, (xf.d) arrayList.get(i11));
-            p(canvas, (xf.d) arrayList.get(this.k0));
-            i10 = this.k0 + 1;
+        x51Var.T();
+        TLRPC.User currentUser = UserConfig.getInstance(this.currentAccount).getCurrentUser();
+        String r10 = android.support.v4.media.a.r(new StringBuilder(), MessagesController.getInstance(this.currentAccount).linkPrefix, "/");
+        ArrayList arrayList3 = new ArrayList(2);
+        String publicUsername = UserObject.getPublicUsername(currentUser);
+        if (publicUsername != null) {
+            arrayList3.add(r10 + publicUsername);
         }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:42:0x013d  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0148  */
-    @Override // vf.g
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void q(xf.j jVar) {
-        ArrayList arrayList;
-        int i10;
-        float f10;
-        wf.b bVar = this.e0;
-        if (bVar == null) {
+        ArrayList<TLRPC.PrivacyRule> privacyRules = ContactsController.getInstance(this.currentAccount).getPrivacyRules(6);
+        ArrayList<TLRPC.PrivacyRule> privacyRules2 = ContactsController.getInstance(this.currentAccount).getPrivacyRules(7);
+        if (!TextUtils.isEmpty(currentUser.phone) && privacyRules != null && privacyRules2 != null && (a0(privacyRules) != 1 || a0(privacyRules2) != 2)) {
+            StringBuilder f10 = w.c.f(r10, "+");
+            f10.append(currentUser.phone);
+            arrayList3.add(f10.toString());
+        }
+        if (arrayList3.isEmpty()) {
             return;
         }
-        float f11 = this.C0;
-        j jVar2 = this.d0;
-        float f12 = jVar2.l;
-        float f13 = jVar2.k;
-        float f14 = f11 / (f12 - f13);
-        float f15 = g.h1;
-        float f16 = (f13 * f14) - f15;
-        int i11 = 2;
-        int i12 = 1;
-        int i13 = ((int) (f15 / (((wf.e) bVar).b.length < 2 ? 1.0f : ((wf.e) bVar).b[1] * f14))) + 1;
-        int max = Math.max(0, (this.C - i13) - 1);
-        int min = Math.min(((wf.e) this.e0).b.length - 1, this.D + i13 + 1);
-        this.w0.g = new float[((wf.e) this.e0).d.size()];
-        this.w0.h = new float[((wf.e) this.e0).d.size()];
-        this.w0.i = new float[((wf.e) this.e0).d.size()];
-        this.w0.j = new float[((wf.e) this.e0).d.size()];
-        this.w0.k = new float[((wf.e) this.e0).d.size()];
-        int i14 = 0;
-        while (i14 < i11) {
-            int i15 = i14 == i12 ? min : max;
-            int i16 = 0;
-            float f17 = 0.0f;
-            int i17 = 0;
-            while (true) {
-                arrayList = this.d;
-                if (i16 >= arrayList.size()) {
-                    break;
-                }
-                xf.f fVar = (xf.f) arrayList.get(i16);
-                if (fVar.n || fVar.o != 0.0f) {
-                    long j10 = fVar.a.a[i15];
-                    if (j10 > 0) {
-                        f17 += j10 * fVar.o;
-                        i17++;
-                    }
-                }
-                i16++;
+        String formatString = arrayList3.size() == 2 ? LocaleController.formatString(R.string.BusinessLinksFooterTwoLinks, arrayList3.get(0), arrayList3.get(1)) : LocaleController.formatString(R.string.BusinessLinksFooterOneLink, arrayList3.get(0));
+        SpannableString spannableString = new SpannableString(formatString);
+        int size2 = arrayList3.size();
+        while (i11 < size2) {
+            Object obj2 = arrayList3.get(i11);
+            i11++;
+            String str = (String) obj2;
+            int indexOf = formatString.indexOf(str);
+            if (indexOf > -1) {
+                h4 h4Var = new h4(yh.k("https://", str), (t01) null);
+                h4Var.f = this;
+                spannableString.setSpan(h4Var, indexOf, str.length() + indexOf, 33);
             }
-            int i18 = 0;
-            int i19 = 0;
-            while (i18 < arrayList.size()) {
-                xf.f fVar2 = (xf.f) arrayList.get(i18);
-                if (fVar2.n || fVar2.o != 0.0f) {
-                    long[] jArr = fVar2.a.a;
-                    if (i17 == i12) {
-                        if (jArr[i15] != 0) {
-                            f10 = fVar2.o;
-                            i10 = i14;
-                            float f18 = (((wf.e) this.e0).b[i15] * f14) - f16;
-                            float measuredHeight = f10 * ((getMeasuredHeight() - this.s) - g.k1);
-                            float f19 = i19;
-                            float measuredHeight2 = ((getMeasuredHeight() - this.s) - measuredHeight) - f19;
-                            i19 = (int) (f19 + measuredHeight);
-                            if (i10 != 0) {
-                                xf.j jVar3 = this.w0;
-                                jVar3.g[i18] = f18;
-                                jVar3.h[i18] = measuredHeight2;
-                            } else {
-                                xf.j jVar4 = this.w0;
-                                jVar4.i[i18] = f18;
-                                jVar4.j[i18] = measuredHeight2;
-                            }
-                        }
-                        i10 = i14;
-                        f10 = 0.0f;
-                        float f182 = (((wf.e) this.e0).b[i15] * f14) - f16;
-                        float measuredHeight3 = f10 * ((getMeasuredHeight() - this.s) - g.k1);
-                        float f192 = i19;
-                        float measuredHeight22 = ((getMeasuredHeight() - this.s) - measuredHeight3) - f192;
-                        i19 = (int) (f192 + measuredHeight3);
-                        if (i10 != 0) {
-                        }
-                    } else {
-                        if (f17 != 0.0f) {
-                            i10 = i14;
-                            f10 = (jArr[i15] * fVar2.o) / f17;
-                            float f1822 = (((wf.e) this.e0).b[i15] * f14) - f16;
-                            float measuredHeight32 = f10 * ((getMeasuredHeight() - this.s) - g.k1);
-                            float f1922 = i19;
-                            float measuredHeight222 = ((getMeasuredHeight() - this.s) - measuredHeight32) - f1922;
-                            i19 = (int) (f1922 + measuredHeight32);
-                            if (i10 != 0) {
-                            }
-                        }
-                        i10 = i14;
-                        f10 = 0.0f;
-                        float f18222 = (((wf.e) this.e0).b[i15] * f14) - f16;
-                        float measuredHeight322 = f10 * ((getMeasuredHeight() - this.s) - g.k1);
-                        float f19222 = i19;
-                        float measuredHeight2222 = ((getMeasuredHeight() - this.s) - measuredHeight322) - f19222;
-                        i19 = (int) (f19222 + measuredHeight322);
-                        if (i10 != 0) {
-                        }
-                    }
-                } else {
-                    i10 = i14;
-                }
-                i18++;
-                i14 = i10;
-                i12 = 1;
+        }
+        arrayList.add(j51.B(spannableString));
+    }
+
+    @Override // org.telegram.ui.Components.c61
+    public final CharSequence V() {
+        return LocaleController.getString(R.string.BusinessLinks);
+    }
+
+    @Override // org.telegram.ui.Components.c61
+    public final void W(j51 j51Var, View view) {
+        if (j51Var.d == 1) {
+            t d10 = t.d(this.currentAccount);
+            TL_account.createBusinessChatLink createbusinesschatlink = new TL_account.createBusinessChatLink();
+            TL_account.TL_inputBusinessChatLink tL_inputBusinessChatLink = new TL_account.TL_inputBusinessChatLink();
+            createbusinesschatlink.link = tL_inputBusinessChatLink;
+            tL_inputBusinessChatLink.message = "";
+            ConnectionsManager.getInstance(d10.a).sendRequest(createbusinesschatlink, new s(d10, 1));
+            return;
+        }
+        if (j51Var.a == 29) {
+            Object obj = j51Var.G;
+            if (obj instanceof p) {
+                Bundle h = android.support.v4.media.a.h(6, "chatMode");
+                h.putString("business_link", ((p) obj).a.link);
+                presentFragment(new xn(h));
             }
-            i14++;
-            i11 = 2;
-            i12 = 1;
         }
     }
 
-    @Override // vf.g
-    public final long r(int i10, int i11) {
-        return 100L;
+    @Override // org.telegram.ui.Components.c61
+    public final boolean X(j51 j51Var, View view) {
+        if (j51Var.a == 29) {
+            Object obj = j51Var.G;
+            if (obj instanceof p) {
+                final TL_account.TL_businessChatLink tL_businessChatLink = ((p) obj).a;
+                q70 H = q70.H(this, view);
+                H.c(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new v9(tL_businessChatLink, 19), false);
+                final int i10 = 0;
+                H.c(R.drawable.msg_share, LocaleController.getString(R.string.LinkActionShare), new Runnable(this) { // from class: vf.l
+                    public final /* synthetic */ q b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                q qVar = this.b;
+                                qVar.getClass();
+                                Intent intent = new Intent(qVar.getParentActivity(), (Class<?>) LaunchActivity.class);
+                                intent.setAction("android.intent.action.SEND");
+                                intent.setType("text/plain");
+                                intent.putExtra("android.intent.extra.TEXT", tL_businessChatLink.link);
+                                qVar.startActivityForResult(intent, 500);
+                                break;
+                            case 1:
+                                q.Y(this.b, tL_businessChatLink);
+                                break;
+                            default:
+                                q qVar2 = this.b;
+                                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(qVar2.getParentActivity(), 0, qVar2.getResourceProvider());
+                                alertDialog$Builder.a.O = LocaleController.getString(R.string.BusinessLinksDeleteTitle);
+                                alertDialog$Builder.a.Q = LocaleController.getString(R.string.BusinessLinksDeleteMessage);
+                                alertDialog$Builder.k(LocaleController.getString(R.string.Remove), new org.telegram.ui.web.m(9, qVar2, tL_businessChatLink));
+                                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+                                d2 d2Var = alertDialog$Builder.a;
+                                qVar2.showDialog(d2Var);
+                                TextView textView = (TextView) d2Var.d(-1);
+                                if (textView != null) {
+                                    textView.setTextColor(qVar2.getThemedColor(k6.q7));
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                }, false);
+                final int i11 = 1;
+                H.c(R.drawable.msg_edit, LocaleController.getString(R.string.Rename), new Runnable(this) { // from class: vf.l
+                    public final /* synthetic */ q b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                q qVar = this.b;
+                                qVar.getClass();
+                                Intent intent = new Intent(qVar.getParentActivity(), (Class<?>) LaunchActivity.class);
+                                intent.setAction("android.intent.action.SEND");
+                                intent.setType("text/plain");
+                                intent.putExtra("android.intent.extra.TEXT", tL_businessChatLink.link);
+                                qVar.startActivityForResult(intent, 500);
+                                break;
+                            case 1:
+                                q.Y(this.b, tL_businessChatLink);
+                                break;
+                            default:
+                                q qVar2 = this.b;
+                                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(qVar2.getParentActivity(), 0, qVar2.getResourceProvider());
+                                alertDialog$Builder.a.O = LocaleController.getString(R.string.BusinessLinksDeleteTitle);
+                                alertDialog$Builder.a.Q = LocaleController.getString(R.string.BusinessLinksDeleteMessage);
+                                alertDialog$Builder.k(LocaleController.getString(R.string.Remove), new org.telegram.ui.web.m(9, qVar2, tL_businessChatLink));
+                                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+                                d2 d2Var = alertDialog$Builder.a;
+                                qVar2.showDialog(d2Var);
+                                TextView textView = (TextView) d2Var.d(-1);
+                                if (textView != null) {
+                                    textView.setTextColor(qVar2.getThemedColor(k6.q7));
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                }, false);
+                final int i12 = 2;
+                H.c(R.drawable.msg_delete, LocaleController.getString(R.string.Delete), new Runnable(this) { // from class: vf.l
+                    public final /* synthetic */ q b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i12) {
+                            case 0:
+                                q qVar = this.b;
+                                qVar.getClass();
+                                Intent intent = new Intent(qVar.getParentActivity(), (Class<?>) LaunchActivity.class);
+                                intent.setAction("android.intent.action.SEND");
+                                intent.setType("text/plain");
+                                intent.putExtra("android.intent.extra.TEXT", tL_businessChatLink.link);
+                                qVar.startActivityForResult(intent, 500);
+                                break;
+                            case 1:
+                                q.Y(this.b, tL_businessChatLink);
+                                break;
+                            default:
+                                q qVar2 = this.b;
+                                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(qVar2.getParentActivity(), 0, qVar2.getResourceProvider());
+                                alertDialog$Builder.a.O = LocaleController.getString(R.string.BusinessLinksDeleteTitle);
+                                alertDialog$Builder.a.Q = LocaleController.getString(R.string.BusinessLinksDeleteMessage);
+                                alertDialog$Builder.k(LocaleController.getString(R.string.Remove), new org.telegram.ui.web.m(9, qVar2, tL_businessChatLink));
+                                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+                                d2 d2Var = alertDialog$Builder.a;
+                                qVar2.showDialog(d2Var);
+                                TextView textView = (TextView) d2Var.d(-1);
+                                if (textView != null) {
+                                    textView.setTextColor(qVar2.getThemedColor(k6.q7));
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                }, true);
+                H.W(this.a.V0(view, false));
+                H.Z();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.c61, org.telegram.ui.ActionBar.p2
+    public final View createView(Context context) {
+        super.createView(context);
+        this.a.p1();
+        b61 b61Var = this.a;
+        b61Var.V2.r = false;
+        this.actionBar.A(b61Var, true);
+        return this.fragmentView;
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        x51 x51Var;
+        if (i10 == NotificationCenter.businessLinksUpdated || i10 == NotificationCenter.privacyRulesUpdated) {
+            b61 b61Var = this.a;
+            if (b61Var == null || (x51Var = b61Var.V2) == null) {
+                return;
+            }
+            x51Var.N(true);
+            return;
+        }
+        if (i10 != NotificationCenter.businessLinkCreated) {
+            if (i10 == NotificationCenter.needDeleteBusinessLink) {
+                t.d(this.currentAccount).a(this, ((TL_account.TL_businessChatLink) objArr[0]).link);
+            }
+        } else {
+            TL_account.TL_businessChatLink tL_businessChatLink = (TL_account.TL_businessChatLink) objArr[0];
+            Bundle h = android.support.v4.media.a.h(6, "chatMode");
+            h.putString("business_link", tL_businessChatLink.link);
+            presentFragment(new xn(h));
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.p2
+    public final boolean onBackPressed(boolean z4) {
+        d2 d2Var = d;
+        if (d2Var == null || !d2Var.isShowing()) {
+            return super.onBackPressed(z4);
+        }
+        if (!z4) {
+            return false;
+        }
+        d.dismiss();
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.p2
+    public final boolean onFragmentCreate() {
+        getNotificationCenter().addObserver(this, NotificationCenter.businessLinksUpdated);
+        getNotificationCenter().addObserver(this, NotificationCenter.businessLinkCreated);
+        getNotificationCenter().addObserver(this, NotificationCenter.needDeleteBusinessLink);
+        getNotificationCenter().addObserver(this, NotificationCenter.privacyRulesUpdated);
+        t d10 = t.d(this.currentAccount);
+        if (d10.d) {
+            d10.e(false, true);
+        } else {
+            d10.e(true, true);
+        }
+        ContactsController.getInstance(this.currentAccount).loadPrivacySettings();
+        return super.onFragmentCreate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.p2
+    public final void onFragmentDestroy() {
+        getNotificationCenter().removeObserver(this, NotificationCenter.businessLinksUpdated);
+        getNotificationCenter().removeObserver(this, NotificationCenter.businessLinkCreated);
+        getNotificationCenter().removeObserver(this, NotificationCenter.needDeleteBusinessLink);
+        getNotificationCenter().removeObserver(this, NotificationCenter.privacyRulesUpdated);
+        ic.e();
+        super.onFragmentDestroy();
     }
 }

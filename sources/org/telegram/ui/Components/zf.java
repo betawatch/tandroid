@@ -9,7 +9,7 @@ import org.telegram.messenger.camera.CameraController;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class zf implements Runnable {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -28,7 +28,7 @@ public final class zf implements Runnable {
         if (egVar == null || activity == null) {
             return;
         }
-        egVar.C();
+        egVar.B();
         chatActivityEnterView.F3 = true;
         chatActivityEnterView.E3 = false;
         ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.g1;
@@ -43,10 +43,10 @@ public final class zf implements Runnable {
                 activity.requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 3);
                 return;
             }
-            chatActivityEnterView.V2.b1(1);
+            chatActivityEnterView.V2.e1(1);
             chatActivityEnterView.z2 = -1.0f;
             eg egVar2 = chatActivityEnterView.V2;
-            TL_stories.StoryItem e12 = egVar2 != null ? egVar2.e1() : null;
+            TL_stories.StoryItem h12 = egVar2 != null ? egVar2.h1() : null;
             MediaController mediaController = MediaController.getInstance();
             int i10 = chatActivityEnterView.N;
             long j10 = chatActivityEnterView.M2;
@@ -54,7 +54,7 @@ public final class zf implements Runnable {
             threadMessage = chatActivityEnterView.getThreadMessage();
             int i11 = chatActivityEnterView.C2;
             org.telegram.ui.xn xnVar = chatActivityEnterView.L2;
-            mediaController.startRecording(i10, j10, messageObject, threadMessage, e12, i11, true, xnVar != null ? xnVar.C8() : null, chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
+            mediaController.startRecording(i10, j10, messageObject, threadMessage, h12, i11, true, xnVar != null ? xnVar.C8() : null, chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
             chatActivityEnterView.B2 = true;
             chatActivityEnterView.L1(0, true);
             ng ngVar = chatActivityEnterView.V0;

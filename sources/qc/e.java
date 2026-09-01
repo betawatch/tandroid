@@ -3,13 +3,13 @@ package qc;
 import java.util.Locale;
 import java.util.Map;
 import java.util.regex.Pattern;
-import k7.o6;
-import k7.t;
+import k7.p6;
+import k7.u;
 import ne.m;
 import ne.p;
 import ne.s;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class e extends h {
     public static final Pattern e = i.n;
@@ -44,7 +44,7 @@ public final class e extends h {
             i iVar2 = this.a;
             int i11 = this.d;
             iVar2.g = i11;
-            int a2 = t.a(i11, iVar2.f);
+            int a2 = u.a(i11, iVar2.f);
             if (a2 == -1) {
                 str = null;
             } else {
@@ -61,7 +61,7 @@ public final class e extends h {
                     i iVar3 = this.a;
                     int i13 = this.d;
                     iVar3.g = i13;
-                    int c3 = t.c(i13, iVar3.f);
+                    int c3 = u.c(i13, iVar3.f);
                     if (c3 == -1) {
                         str2 = null;
                     } else {
@@ -83,7 +83,7 @@ public final class e extends h {
                         iVar4.g = i14;
                         if (i14 < iVar4.f.length() && iVar4.f.charAt(iVar4.g) == '[') {
                             int i15 = iVar4.g + 1;
-                            int b10 = t.b(i15, iVar4.f);
+                            int b10 = u.b(i15, iVar4.f);
                             int i16 = b10 - i15;
                             if (b10 != -1 && i16 <= 999 && b10 < iVar4.f.length() && iVar4.f.charAt(b10) == ']') {
                                 iVar4.g = b10 + 1;
@@ -127,7 +127,7 @@ public final class e extends h {
                     p pVar3 = (p) kVar.c;
                     p pVar4 = (p) kVar.d;
                     if (pVar3 != pVar4) {
-                        o6.b(pVar3, pVar4);
+                        p6.b(pVar3, pVar4);
                     }
                     sVar.g();
                     i iVar8 = this.a;

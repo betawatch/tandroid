@@ -1,37 +1,27 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class x40 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c60 b;
+public final class x40 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ d60 a;
 
-    public /* synthetic */ x40(c60 c60Var, int i10) {
-        this.a = i10;
-        this.b = c60Var;
+    public x40(d60 d60Var) {
+        this.a = d60Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                c60 c60Var = this.b;
-                c60Var.S.setVisibility(4);
-                c60Var.T.setVisibility(4);
-                c60Var.R.setVisibility(4);
-                break;
-            case 1:
-                this.b.e0 = null;
-                break;
-            default:
-                c60 c60Var2 = this.b;
-                c60Var2.e1 = null;
-                c60Var2.d1.setColor(c60Var2.Q1 == 3 ? -1163700 : -12761513);
-                c60Var2.c1.invalidate();
-                break;
-        }
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        ViewGroup viewGroup;
+        d60 d60Var = this.a;
+        d60Var.N.getViewTreeObserver().removeOnPreDrawListener(this);
+        d60Var.X1.j(null);
+        AndroidUtilities.updateVisibleRows(d60Var.j2);
+        viewGroup = ((org.telegram.ui.ActionBar.h3) d60Var).containerView;
+        viewGroup.requestLayout();
+        return false;
     }
 }

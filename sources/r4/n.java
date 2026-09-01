@@ -12,11 +12,11 @@ import org.telegram.ui.yh;
 import r3.u;
 import r3.v;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class n implements v {
     public final k0 a;
-    public final f7.b b = new f7.b((char) 0, 17);
+    public final f7.b b = new f7.b((char) 0, 16);
     public final e4.e c = new e4.e();
     public long d = -9223372036854775807L;
     public final /* synthetic */ o e;
@@ -45,9 +45,9 @@ public final class n implements v {
         this.a.c(j10, i10, i11, i12, uVar);
         while (this.a.u(false)) {
             e4.e eVar = this.c;
-            eVar.c();
+            eVar.b();
             if (this.a.z(this.b, eVar, 0, false) == -4) {
-                eVar.l();
+                eVar.k();
             } else {
                 eVar = null;
             }

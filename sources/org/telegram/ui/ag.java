@@ -5,7 +5,7 @@ import android.view.View;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ag implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class ag implements View.OnLongClickListener {
                 xn xnVar = (xn) this.b;
                 TL_keyboard.KeyboardInlineButton keyboardInlineButton = (TL_keyboard.KeyboardInlineButton) this.c;
                 MessageObject messageObject = (MessageObject) this.d;
-                gg.q qVar = (gg.q) this.e;
+                hg.q qVar = (hg.q) this.e;
                 TL_keyboard.TL_inlineButtonTypeUrl tL_inlineButtonTypeUrl = (TL_keyboard.TL_inlineButtonTypeUrl) mf.c.a(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUrl.class);
                 if (xnVar.getParentActivity() == null) {
                     return false;
@@ -44,7 +44,7 @@ public final /* synthetic */ class ag implements View.OnLongClickListener {
                 }
                 return true;
             default:
-                return org.telegram.ui.Components.li.q((org.telegram.ui.Components.li) this.b, (Context) this.c, (org.telegram.ui.ActionBar.f6) this.d, (org.telegram.ui.ActionBar.p2) this.e, view);
+                return org.telegram.ui.Components.mi.q((org.telegram.ui.Components.mi) this.b, (Context) this.c, (org.telegram.ui.ActionBar.g6) this.d, (org.telegram.ui.ActionBar.p2) this.e, view);
         }
     }
 }

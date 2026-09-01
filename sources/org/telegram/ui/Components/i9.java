@@ -6,22 +6,22 @@ import android.graphics.drawable.GradientDrawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i9 implements Runnable {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ o9 b;
     public final /* synthetic */ Runnable[] c;
-    public final /* synthetic */ z50 d;
+    public final /* synthetic */ b60 d;
     public final /* synthetic */ int e;
-    public final /* synthetic */ k7.y5[] f;
+    public final /* synthetic */ k7.z5[] f;
 
-    public /* synthetic */ i9(o9 o9Var, z50 z50Var, Runnable[] runnableArr, int i10, k7.y5[] y5VarArr) {
+    public /* synthetic */ i9(o9 o9Var, b60 b60Var, Runnable[] runnableArr, int i10, k7.z5[] z5VarArr) {
         this.b = o9Var;
-        this.d = z50Var;
+        this.d = b60Var;
         this.c = runnableArr;
         this.e = i10;
-        this.f = y5VarArr;
+        this.f = z5VarArr;
     }
 
     @Override // java.lang.Runnable
@@ -29,22 +29,22 @@ public final /* synthetic */ class i9 implements Runnable {
         switch (this.a) {
             case 0:
                 o9 o9Var = this.b;
-                z50 z50Var = this.d;
+                b60 b60Var = this.d;
                 Runnable[] runnableArr = this.c;
                 int i10 = this.e;
-                k7.y5[] y5VarArr = this.f;
+                k7.z5[] z5VarArr = this.f;
                 try {
                     GradientDrawable.Orientation orientation = o9Var.getOrientation();
                     int[] iArr = o9Var.a;
-                    int i11 = z50Var.a;
-                    int i12 = z50Var.b;
-                    Rect e = o9.e(orientation, i11, i12);
+                    int i11 = b60Var.a;
+                    int i12 = b60Var.b;
+                    Rect e6 = o9.e(orientation, i11, i12);
                     Bitmap createBitmap = Bitmap.createBitmap(i11, i12, Bitmap.Config.ARGB_8888);
-                    Utilities.drawDitheredGradient(createBitmap, iArr, e.left, e.top, e.right, e.bottom);
-                    AndroidUtilities.runOnUIThread(new lf.j0(o9Var, runnableArr, createBitmap, z50Var, i10, y5VarArr));
+                    Utilities.drawDitheredGradient(createBitmap, iArr, e6.left, e6.top, e6.right, e6.bottom);
+                    AndroidUtilities.runOnUIThread(new lf.j0(o9Var, runnableArr, createBitmap, b60Var, i10, z5VarArr));
                     return;
                 } catch (Throwable th2) {
-                    AndroidUtilities.runOnUIThread(new i9(o9Var, runnableArr, z50Var, i10, y5VarArr));
+                    AndroidUtilities.runOnUIThread(new i9(o9Var, runnableArr, b60Var, i10, z5VarArr));
                     throw th2;
                 }
             default:
@@ -53,11 +53,11 @@ public final /* synthetic */ class i9 implements Runnable {
         }
     }
 
-    public /* synthetic */ i9(o9 o9Var, Runnable[] runnableArr, z50 z50Var, int i10, k7.y5[] y5VarArr) {
+    public /* synthetic */ i9(o9 o9Var, Runnable[] runnableArr, b60 b60Var, int i10, k7.z5[] z5VarArr) {
         this.b = o9Var;
         this.c = runnableArr;
-        this.d = z50Var;
+        this.d = b60Var;
         this.e = i10;
-        this.f = y5VarArr;
+        this.f = z5VarArr;
     }
 }

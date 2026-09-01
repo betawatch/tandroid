@@ -4,15 +4,15 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class sj extends wh.n {
+public final class sj extends xh.n {
     public Runnable W;
     public final /* synthetic */ xn X;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sj(xn xnVar, xn xnVar2, qj qjVar, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(xnVar2, qjVar, f6Var);
+    public sj(xn xnVar, xn xnVar2, qj qjVar, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(xnVar2, qjVar, g6Var);
         this.X = xnVar;
     }
 
@@ -24,7 +24,7 @@ public final class sj extends wh.n {
         }
     }
 
-    @Override // wh.n, f2.l
+    @Override // xh.n, f2.l
     public final void N() {
         super.N();
         Runnable runnable = this.W;
@@ -37,7 +37,7 @@ public final class sj extends wh.n {
         AndroidUtilities.runOnUIThread(rjVar);
     }
 
-    @Override // wh.n
+    @Override // xh.n
     public final void W() {
         xn xnVar = this.X;
         xnVar.E9 = xnVar.getNotificationCenter().setAnimationInProgress(xnVar.E9, xn.Kc, false);
@@ -49,15 +49,15 @@ public final class sj extends wh.n {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("chatItemAnimator disable notifications");
         }
-        org.telegram.ui.ActionBar.w2 w2Var = xnVar.V.getAdjustPanLayoutHelper().h;
-        AndroidUtilities.cancelRunOnUIThread(w2Var);
-        w2Var.run();
+        org.telegram.ui.ActionBar.x2 x2Var = xnVar.V.getAdjustPanLayoutHelper().h;
+        AndroidUtilities.cancelRunOnUIThread(x2Var);
+        x2Var.run();
         org.telegram.ui.Components.re reVar = xnVar.V.U3;
         AndroidUtilities.cancelRunOnUIThread(reVar);
         reVar.run();
     }
 
-    @Override // wh.n, f2.l, f2.t0
+    @Override // xh.n, f2.l, f2.u0
     public final void g() {
         super.g();
         Runnable runnable = this.W;

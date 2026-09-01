@@ -1,25 +1,23 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import java.io.File;
+import android.view.MotionEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class gi1 implements org.telegram.ui.Components.r81 {
-    public final /* synthetic */ WallpapersListActivity a;
+public final /* synthetic */ class gi1 implements View.OnTouchListener {
+    public final /* synthetic */ int a;
 
-    public gi1(WallpapersListActivity wallpapersListActivity) {
-        this.a = wallpapersListActivity;
-    }
-
-    @Override // org.telegram.ui.Components.r81
-    public final void b(File file, Bitmap bitmap, boolean z4) {
-        cd1 cd1Var = new cd1(new ni1(file, file, ""), bitmap, false);
-        cd1Var.c1(0L);
-        this.a.presentFragment(cd1Var, z4);
-    }
-
-    @Override // org.telegram.ui.Components.r81
-    public final void a() {
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        switch (this.a) {
+            case 0:
+                int[][] iArr = WallpapersListActivity.h0;
+                break;
+            default:
+                int i10 = ph.l.U;
+                break;
+        }
+        return true;
     }
 }

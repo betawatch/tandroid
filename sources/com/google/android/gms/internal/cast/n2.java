@@ -1,42 +1,44 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final class n2 extends e5 {
-    private static final n2 zzb;
-    private int zzd;
-    private boolean zze;
-    private int zzf;
-    private int zzg;
-    private int zzh;
-    private z2 zzi;
-    private int zzj;
-    private boolean zzk;
+public final class n2 extends d5 {
+    private static final g5 zzb = new d1();
+    private static final n2 zzd;
+    private int zze;
+    private boolean zzg;
+    private boolean zzh;
+    private t3 zzi;
+    private boolean zzj;
+    private long zzl;
+    private long zzm;
+    private String zzf = "";
+    private f5 zzk = e5.d;
 
     static {
         n2 n2Var = new n2();
-        zzb = n2Var;
-        e5.e(n2.class, n2Var);
+        zzd = n2Var;
+        d5.e(n2.class, n2Var);
     }
 
-    @Override // com.google.android.gms.internal.cast.e5
-    public final Object h(int i10, e5 e5Var) {
+    @Override // com.google.android.gms.internal.cast.d5
+    public final Object h(int i10, d5 d5Var) {
         int i11 = i10 - 1;
         if (i11 == 0) {
             return (byte) 1;
         }
         if (i11 == 2) {
-            return new f6(zzb, "\u0001\u0007\u0000\u0001\u0001\u0007\u0007\u0000\u0000\u0000\u0001ဇ\u0000\u0002᠌\u0001\u0003᠌\u0002\u0004᠌\u0003\u0005ဉ\u0004\u0006᠌\u0005\u0007ဇ\u0006", new Object[]{"zzd", "zze", "zzf", z.L, "zzg", z.N, "zzh", z.y, "zzi", "zzj", z.M, "zzk"});
+            return new e6(zzd, "\u0001\b\u0000\u0001\u0001\b\b\u0000\u0001\u0000\u0001ဈ\u0000\u0002ဇ\u0001\u0003ဉ\u0003\u0004ဇ\u0004\u0005ࠬ\u0006ဇ\u0002\u0007ဂ\u0005\bဂ\u0006", new Object[]{"zze", "zzf", "zzg", "zzi", "zzj", "zzk", y0.A, "zzh", "zzl", "zzm"});
         }
         if (i11 == 3) {
             return new n2();
         }
         if (i11 == 4) {
-            return new v0(zzb);
+            return new u0(zzd);
         }
         if (i11 != 5) {
             return null;
         }
-        return zzb;
+        return zzd;
     }
 }

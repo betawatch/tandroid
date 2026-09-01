@@ -1,35 +1,185 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class l21 extends f2.z0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w21 b;
+public final class l21 extends i61 {
+    public final org.telegram.ui.h20 c3;
+    public final z5 d3;
+    public final z5 e3;
+    public final RectF f3;
+    public final Paint g3;
+    public final z5 h3;
+    public Drawable i3;
+    public int j3;
+    public final Paint k3;
+    public final /* synthetic */ x21 l3;
 
-    public /* synthetic */ l21(w21 w21Var, int i10) {
-        this.a = i10;
-        this.b = w21Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l21(x21 x21Var, Context context, int i10, k21 k21Var, f21 f21Var, f21 f21Var2, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, i10, 0, false, k21Var, f21Var, f21Var2, g6Var);
+        this.l3 = x21Var;
+        this.c3 = new org.telegram.ui.h20();
+        pr prVar = pr.h;
+        this.d3 = new z5(this, 320L, prVar);
+        this.e3 = new z5(this, 320L, prVar);
+        this.f3 = new RectF();
+        this.g3 = new Paint(1);
+        this.h3 = new z5(this, 420L, prVar);
+        this.k3 = new Paint(1);
     }
 
-    @Override // f2.z0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                w21 w21Var = this.b;
-                if (w21Var.k()) {
-                    w21Var.l();
-                    break;
+    @Override // org.telegram.ui.Components.tl0
+    public final Integer W0(int i10) {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Components.i61, org.telegram.ui.Components.tl0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Canvas canvas2;
+        float f10;
+        float f11;
+        float f12;
+        float f13;
+        int i10;
+        float e6 = this.d3.e(canScrollHorizontally(-1));
+        float e10 = this.e3.e(canScrollHorizontally(1));
+        int i11 = (e6 > 0.0f ? 1 : (e6 == 0.0f ? 0 : -1));
+        boolean z4 = i11 > 0 || e10 > 0.0f;
+        if (z4) {
+            canvas2 = canvas;
+            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
+        } else {
+            canvas2 = canvas;
+        }
+        float width = getWidth();
+        float f14 = 0.0f;
+        for (int i12 = 0; i12 < getChildCount(); i12++) {
+            View childAt = getChildAt(i12);
+            if (childAt instanceof s21) {
+                s21 s21Var = (s21) childAt;
+                if (s21Var.s) {
+                    if (width > s21Var.getX()) {
+                        width = s21Var.getX();
+                        RecyclerView.R(s21Var);
+                    }
+                    if (f14 < s21Var.getX() + s21Var.getWidth()) {
+                        f14 = s21Var.getX() + s21Var.getWidth();
+                        RecyclerView.R(s21Var);
+                    }
                 }
-                break;
-            default:
-                w21 w21Var2 = this.b;
-                if (w21Var2.k()) {
-                    w21Var2.l();
-                    break;
+            }
+        }
+        org.telegram.ui.ActionBar.g6 g6Var = this.m2;
+        if (f14 > width) {
+            int l1 = org.telegram.ui.ActionBar.k6.l1(0.06f, org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.G6, g6Var));
+            Paint paint = this.k3;
+            paint.setColor(l1);
+            RectF rectF = AndroidUtilities.rectTmp;
+            f10 = 14.0f;
+            f11 = 1.0f;
+            rectF.set(width + AndroidUtilities.dp(1.0f), (getHeight() - AndroidUtilities.dp(28.0f)) / 2.0f, f14 - AndroidUtilities.dp(1.0f), (AndroidUtilities.dp(28.0f) + getHeight()) / 2.0f);
+            canvas2.drawRoundRect(rectF, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), paint);
+            if (this.i3 == null) {
+                this.i3 = getContext().getResources().getDrawable(R.drawable.msg_limit_pin).mutate();
+            }
+            int v02 = org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.b9, g6Var);
+            if (this.j3 != v02) {
+                Drawable drawable = this.i3;
+                this.j3 = v02;
+                drawable.setColorFilter(new PorterDuffColorFilter(v02, PorterDuff.Mode.SRC_IN));
+            }
+            this.i3.setBounds((int) (AndroidUtilities.dp(-17.0f) + f14), (int) (rectF.top + AndroidUtilities.dp(10.0f)), (int) (f14 + AndroidUtilities.dp(-7.0f)), (int) (rectF.top + AndroidUtilities.dp(20.0f)));
+            this.i3.draw(canvas2);
+        } else {
+            f10 = 14.0f;
+            f11 = 1.0f;
+        }
+        super.dispatchDraw(canvas);
+        x21 x21Var = this.l3;
+        long j10 = x21Var.E;
+        long j11 = x21Var.S;
+        z5 z5Var = this.h3;
+        if (j10 != j11) {
+            x21Var.F = j10;
+            z5Var.d(0.0f, true);
+        }
+        x21Var.E = x21Var.S;
+        s21 s21Var2 = null;
+        s21 s21Var3 = null;
+        int i13 = 0;
+        while (i13 < getChildCount()) {
+            View childAt2 = getChildAt(i13);
+            if (childAt2 instanceof s21) {
+                s21 s21Var4 = (s21) childAt2;
+                if (!s21Var4.x) {
+                    i10 = i11;
+                    if (s21Var4.getTopicId() == x21Var.S) {
+                        s21Var2 = s21Var4;
+                    }
+                    f13 = e10;
+                    if (s21Var4.getTopicId() == x21Var.F) {
+                        s21Var3 = s21Var4;
+                    }
+                    i13++;
+                    i11 = i10;
+                    e10 = f13;
                 }
-                break;
+            }
+            f13 = e10;
+            i10 = i11;
+            i13++;
+            i11 = i10;
+            e10 = f13;
+        }
+        float f15 = e10;
+        int i14 = i11;
+        if (s21Var2 != null) {
+            float x10 = s21Var2.getX() + AndroidUtilities.dp(f11);
+            float y10 = s21Var2.getY() + AndroidUtilities.dp(4.0f);
+            float x11 = (s21Var2.getX() + s21Var2.getWidth()) - AndroidUtilities.dp(f11);
+            float y11 = (s21Var2.getY() + getHeight()) - AndroidUtilities.dp(4.0f);
+            RectF rectF2 = this.f3;
+            rectF2.set(x10, y10, x11, y11);
+            if (s21Var3 != null) {
+                RectF rectF3 = AndroidUtilities.rectTmp;
+                rectF3.set(s21Var3.getX() + AndroidUtilities.dp(f11), s21Var3.getY() + AndroidUtilities.dp(4.0f), (s21Var3.getX() + s21Var3.getWidth()) - AndroidUtilities.dp(f11), (s21Var3.getY() + getHeight()) - AndroidUtilities.dp(4.0f));
+                AndroidUtilities.lerp(rectF3, rectF2, z5Var.d(1.0f, false), rectF2);
+            }
+            int k10 = i0.a.k(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Oh, g6Var), 31);
+            Paint paint2 = this.g3;
+            paint2.setColor(k10);
+            canvas2.drawRoundRect(rectF2, AndroidUtilities.dp(f10), AndroidUtilities.dp(f10), paint2);
+        }
+        if (z4) {
+            canvas2.save();
+            org.telegram.ui.h20 h20Var = this.c3;
+            if (i14 > 0) {
+                RectF rectF4 = AndroidUtilities.rectTmp;
+                f12 = 0.0f;
+                rectF4.set(0.0f, 0.0f, AndroidUtilities.dp(12.0f), getHeight());
+                h20Var.b(canvas2, rectF4, 0, e6);
+            } else {
+                f12 = 0.0f;
+            }
+            if (f15 > f12) {
+                RectF rectF5 = AndroidUtilities.rectTmp;
+                rectF5.set(getWidth() - AndroidUtilities.dp(12.0f), f12, getWidth(), getHeight());
+                h20Var.b(canvas2, rectF5, 2, f15);
+            }
+            canvas2.restore();
+            canvas2.restore();
         }
     }
 }

@@ -6,7 +6,7 @@ import androidx.datastore.preferences.protobuf.w;
 import androidx.datastore.preferences.protobuf.x;
 import androidx.datastore.preferences.protobuf.x0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class k extends x {
     public static final int BOOLEAN_FIELD_NUMBER = 1;
@@ -76,7 +76,7 @@ public final class k extends x {
     @Override // androidx.datastore.preferences.protobuf.x
     public final Object d(int i10) {
         x0 x0Var;
-        switch (j.b(i10)) {
+        switch (j.c(i10)) {
             case 0:
                 return (byte) 1;
             case 1:

@@ -12,7 +12,7 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class m extends c2.w {
     public static final u5.b f = new u5.b("MRDiscoveryCallback", null);
@@ -23,7 +23,7 @@ public final class m extends c2.w {
     public final l a = new l(this);
 
     public m(Context context) {
-        this.e = new bf.b(context, 22);
+        this.e = new bf.b(context, 19);
     }
 
     @Override // c2.w
@@ -46,7 +46,7 @@ public final class m extends c2.w {
 
     public final void m() {
         u5.b bVar = f;
-        bVar.b(kh.a2.k(this.d.size(), "Starting RouteDiscovery with ", " IDs"), new Object[0]);
+        bVar.b(l.d.k(this.d.size(), "Starting RouteDiscovery with ", " IDs"), new Object[0]);
         bVar.b("appIdToRouteInfo has these appId route keys: ".concat(String.valueOf(this.c.keySet())), new Object[0]);
         if (Looper.myLooper() == Looper.getMainLooper()) {
             n();
@@ -150,22 +150,22 @@ public final class m extends c2.w {
                     HashMap hashMap = new HashMap();
                     synchronized (this.c) {
                         for (String str2 : this.c.keySet()) {
-                            k kVar2 = (k) this.c.get(j7.u5.a(str2));
+                            k kVar2 = (k) this.c.get(j7.s5.a(str2));
                             if (kVar2 == null) {
-                                int i10 = j0.c;
-                                r10 = s0.s;
+                                int i10 = i0.c;
+                                r10 = r0.s;
                             } else {
                                 LinkedHashSet linkedHashSet = kVar2.a;
-                                int i11 = j0.c;
+                                int i11 = i0.c;
                                 Object[] array = linkedHashSet.toArray();
-                                r10 = j0.r(array.length, array);
+                                r10 = i0.r(array.length, array);
                             }
                             if (!r10.isEmpty()) {
                                 hashMap.put(str2, r10);
                             }
                         }
                     }
-                    i0.a(hashMap.entrySet());
+                    h0.a(hashMap.entrySet());
                     Iterator it = this.b.iterator();
                     if (it.hasNext()) {
                         if (it.next() != null) {

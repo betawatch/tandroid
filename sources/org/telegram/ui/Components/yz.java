@@ -2,55 +2,140 @@ package org.telegram.ui.Components;
 
 import android.graphics.PointF;
 import java.nio.ByteBuffer;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public interface yz {
-    ByteBuffer a();
+public final class yz implements a00 {
+    public final /* synthetic */ MediaController.SavedFilterState a;
 
-    boolean b();
+    public yz(MediaController.SavedFilterState savedFilterState) {
+        this.a = savedFilterState;
+    }
 
-    boolean c();
+    @Override // org.telegram.ui.Components.a00
+    public final ByteBuffer a() {
+        MediaController.SavedFilterState savedFilterState = this.a;
+        savedFilterState.curvesToolValue.a();
+        return savedFilterState.curvesToolValue.e;
+    }
 
-    float getBlurAngle();
+    @Override // org.telegram.ui.Components.a00
+    public final boolean b() {
+        return false;
+    }
 
-    float getBlurExcludeBlurSize();
+    @Override // org.telegram.ui.Components.a00
+    public final boolean c() {
+        return !this.a.curvesToolValue.b();
+    }
 
-    PointF getBlurExcludePoint();
+    @Override // org.telegram.ui.Components.a00
+    public final float getBlurAngle() {
+        return this.a.blurAngle;
+    }
 
-    float getBlurExcludeSize();
+    @Override // org.telegram.ui.Components.a00
+    public final float getBlurExcludeBlurSize() {
+        return this.a.blurExcludeBlurSize;
+    }
 
-    int getBlurType();
+    @Override // org.telegram.ui.Components.a00
+    public final PointF getBlurExcludePoint() {
+        return this.a.blurExcludePoint;
+    }
 
-    float getContrastValue();
+    @Override // org.telegram.ui.Components.a00
+    public final float getBlurExcludeSize() {
+        return this.a.blurExcludeSize;
+    }
 
-    float getEnhanceValue();
+    @Override // org.telegram.ui.Components.a00
+    public final int getBlurType() {
+        return this.a.blurType;
+    }
 
-    float getExposureValue();
+    @Override // org.telegram.ui.Components.a00
+    public final float getContrastValue() {
+        return w.c.c(this.a.contrastValue, 100.0f, 0.3f, 1.0f);
+    }
 
-    float getFadeValue();
+    @Override // org.telegram.ui.Components.a00
+    public final float getEnhanceValue() {
+        return this.a.enhanceValue / 100.0f;
+    }
 
-    float getGrainValue();
+    @Override // org.telegram.ui.Components.a00
+    public final float getExposureValue() {
+        return this.a.exposureValue / 100.0f;
+    }
 
-    float getHighlightsValue();
+    @Override // org.telegram.ui.Components.a00
+    public final float getFadeValue() {
+        return this.a.fadeValue / 100.0f;
+    }
 
-    float getSaturationValue();
+    @Override // org.telegram.ui.Components.a00
+    public final float getGrainValue() {
+        return (this.a.grainValue / 100.0f) * 0.04f;
+    }
 
-    float getShadowsValue();
+    @Override // org.telegram.ui.Components.a00
+    public final float getHighlightsValue() {
+        return e2.c.v(this.a.highlightsValue, 0.75f, 100.0f, 100.0f);
+    }
 
-    float getSharpenValue();
+    @Override // org.telegram.ui.Components.a00
+    public final float getSaturationValue() {
+        float f10 = this.a.saturationValue / 100.0f;
+        if (f10 > 0.0f) {
+            f10 *= 1.05f;
+        }
+        return f10 + 1.0f;
+    }
 
-    float getSoftenSkinValue();
+    @Override // org.telegram.ui.Components.a00
+    public final float getShadowsValue() {
+        return e2.c.v(this.a.shadowsValue, 0.55f, 100.0f, 100.0f);
+    }
 
-    int getTintHighlightsColor();
+    @Override // org.telegram.ui.Components.a00
+    public final float getSharpenValue() {
+        return w.c.c(this.a.sharpenValue, 100.0f, 0.6f, 0.11f);
+    }
 
-    float getTintHighlightsIntensityValue();
+    @Override // org.telegram.ui.Components.a00
+    public final float getSoftenSkinValue() {
+        return this.a.softenSkinValue / 100.0f;
+    }
 
-    int getTintShadowsColor();
+    @Override // org.telegram.ui.Components.a00
+    public final int getTintHighlightsColor() {
+        return this.a.tintHighlightsColor;
+    }
 
-    float getTintShadowsIntensityValue();
+    @Override // org.telegram.ui.Components.a00
+    public final float getTintHighlightsIntensityValue() {
+        return this.a.tintHighlightsColor == 0 ? 0.0f : 0.5f;
+    }
 
-    float getVignetteValue();
+    @Override // org.telegram.ui.Components.a00
+    public final int getTintShadowsColor() {
+        return this.a.tintShadowsColor;
+    }
 
-    float getWarmthValue();
+    @Override // org.telegram.ui.Components.a00
+    public final float getTintShadowsIntensityValue() {
+        return this.a.tintShadowsColor == 0 ? 0.0f : 0.5f;
+    }
+
+    @Override // org.telegram.ui.Components.a00
+    public final float getVignetteValue() {
+        return this.a.vignetteValue / 100.0f;
+    }
+
+    @Override // org.telegram.ui.Components.a00
+    public final float getWarmthValue() {
+        return this.a.warmthValue / 100.0f;
+    }
 }

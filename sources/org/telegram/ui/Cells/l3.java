@@ -11,9 +11,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.f51;
+import org.telegram.ui.Components.g51;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class l3 {
     public boolean a;
@@ -30,7 +30,7 @@ public final class l3 {
     public final void a(t1 t1Var) {
         TLRPC.Message message;
         String str;
-        SpannableStringBuilder e = nh.m7.e(R.string.ExpiredStory, false, new Object[0]);
+        SpannableStringBuilder e6 = oh.m7.e(R.string.ExpiredStory, false, new Object[0]);
         MessageObject messageObject = t1Var.getMessageObject();
         if (messageObject != null && (message = messageObject.messageOwner) != null) {
             TLRPC.MessageMedia messageMedia = message.media;
@@ -39,26 +39,26 @@ public final class l3 {
                 String str2 = user == null ? "DELETED" : user.first_name;
                 int minTabletSide = (int) ((AndroidUtilities.isTablet() ? AndroidUtilities.getMinTabletSide() : t1Var.getParentWidth()) * 0.4f);
                 String string = LocaleController.getString(R.string.From);
-                TextPaint textPaint = org.telegram.ui.ActionBar.j6.X2;
+                TextPaint textPaint = org.telegram.ui.ActionBar.k6.X2;
                 int ceil = (int) Math.ceil(textPaint.measureText(string + " "));
                 if (str2 == null) {
                     str2 = "";
                 }
-                String str3 = (String) TextUtils.ellipsize(str2.replace('\n', ' '), org.telegram.ui.ActionBar.j6.Y2, minTabletSide - ceil, TextUtils.TruncateAt.END);
+                String str3 = (String) TextUtils.ellipsize(str2.replace('\n', ' '), org.telegram.ui.ActionBar.k6.Y2, minTabletSide - ceil, TextUtils.TruncateAt.END);
                 String string2 = LocaleController.getString(R.string.FromFormatted);
                 int indexOf = string2.indexOf("%1$s");
                 String format = String.format(string2, str3);
                 if (indexOf >= 0) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(format);
-                    spannableStringBuilder.setSpan(new f51(AndroidUtilities.bold()), indexOf, str3.length() + indexOf, 33);
+                    spannableStringBuilder.setSpan(new g51(AndroidUtilities.bold()), indexOf, str3.length() + indexOf, 33);
                     str = spannableStringBuilder;
                 } else {
                     str = format;
                 }
-                TextPaint textPaint2 = org.telegram.ui.ActionBar.j6.Z2;
-                int dp = AndroidUtilities.dp(10.0f) + ((int) (textPaint2.measureText(e, 0, e.length()) + 1.0f));
+                TextPaint textPaint2 = org.telegram.ui.ActionBar.k6.Z2;
+                int dp = AndroidUtilities.dp(10.0f) + ((int) (textPaint2.measureText(e6, 0, e6.length()) + 1.0f));
                 Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
-                this.b = new StaticLayout(e, textPaint2, dp, alignment, 1.0f, 0.0f, false);
+                this.b = new StaticLayout(e6, textPaint2, dp, alignment, 1.0f, 0.0f, false);
                 this.c = new StaticLayout(str, textPaint2, AndroidUtilities.dp(10.0f) + ((int) (textPaint2.measureText((CharSequence) str, 0, str.length()) + 1.0f)), alignment, 1.0f, 0.0f, false);
                 this.e = 0;
                 this.h = AndroidUtilities.dp(4.0f);

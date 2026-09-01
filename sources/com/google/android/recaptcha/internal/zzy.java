@@ -2,14 +2,14 @@ package com.google.android.recaptcha.internal;
 
 import android.os.Build;
 import dd.p;
-import k7.p7;
+import k7.q7;
 import tc.f;
 import tc.h;
 import uc.c;
 import vc.a;
 import wc.i;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 final class zzy extends i implements p {
     final /* synthetic */ zzz zza;
@@ -33,7 +33,7 @@ final class zzy extends i implements p {
     @Override // wc.a
     public final Object invokeSuspend(Object obj) {
         a aVar = a.a;
-        p7.b(obj);
+        q7.b(obj);
         zzyu zzf = zzyx.zzf();
         zzz zzzVar = this.zza;
         zzyw zzb = zzz.zzb(zzzVar, Build.MANUFACTURER);

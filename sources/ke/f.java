@@ -1,8 +1,8 @@
 package ke;
 
-import k7.u;
+import k7.v;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class f extends pe.a {
     public final ne.h a;
@@ -52,8 +52,8 @@ public final class f extends pe.a {
         if (i12 < 4) {
             char c3 = hVar.g;
             int i13 = hVar.h;
-            int b10 = u.b(c3, charSequence, i10, charSequence.length()) - i10;
-            if (b10 >= i13 && u.c(i10 + b10, charSequence.length(), charSequence) == charSequence.length()) {
+            int b10 = v.b(c3, charSequence, i10, charSequence.length()) - i10;
+            if (b10 >= i13 && v.c(i10 + b10, charSequence.length(), charSequence) == charSequence.length()) {
                 return new j4.h(-1, -1, true);
             }
         }

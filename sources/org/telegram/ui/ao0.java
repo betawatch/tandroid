@@ -1,73 +1,28 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class ao0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ jo0 c;
+public final class ao0 {
+    public final /* synthetic */ lo0 a;
 
-    public /* synthetic */ ao0(jo0 jo0Var, boolean z4, int i10) {
-        this.a = i10;
-        this.c = jo0Var;
-        this.b = z4;
+    public ao0(lo0 lo0Var) {
+        this.a = lo0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 0:
-                jo0 jo0Var = this.c;
-                AnimatorSet animatorSet = jo0Var.v;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    jo0Var.v = null;
-                    break;
-                }
-                break;
-            default:
-                jo0 jo0Var2 = this.c;
-                AnimatorSet animatorSet2 = jo0Var2.v;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    jo0Var2.v = null;
-                    break;
-                }
-                break;
+    public final void a(Exception exc) {
+        lo0 lo0Var = this.a;
+        if (lo0Var.N0) {
+            return;
         }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                jo0 jo0Var = this.c;
-                AnimatorSet animatorSet = jo0Var.v;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    if (!this.b) {
-                        jo0Var.r.setVisibility(4);
-                        break;
-                    } else {
-                        jo0Var.n.getContentView().setVisibility(4);
-                        break;
-                    }
-                }
-                break;
-            default:
-                jo0 jo0Var2 = this.c;
-                AnimatorSet animatorSet2 = jo0Var2.v;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    if (!this.b) {
-                        jo0Var2.s.setVisibility(4);
-                        break;
-                    } else {
-                        jo0Var2.R.setVisibility(4);
-                        break;
-                    }
-                }
-                break;
+        lo0Var.H0(true, false);
+        lo0Var.D0(false);
+        if ((exc instanceof fc.a) || (exc instanceof fc.b)) {
+            org.telegram.ui.Components.z4.w0(lo0Var, LocaleController.getString(R.string.PaymentConnectionFailed));
+        } else {
+            org.telegram.ui.Components.z4.w0(lo0Var, exc.getMessage());
         }
     }
 }

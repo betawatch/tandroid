@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotForumHelper;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class ae extends FrameLayout {
     public final /* synthetic */ int a;
@@ -26,8 +26,8 @@ public final class ae extends FrameLayout {
         switch (this.a) {
             case 0:
                 ChatActivityEnterView chatActivityEnterView = this.b;
-                rh.f3 f3Var = chatActivityEnterView.h0;
-                return (f3Var == null || f3Var.getVisibility() != 0) ? super.dispatchTouchEvent(motionEvent) : chatActivityEnterView.h0.dispatchTouchEvent(motionEvent);
+                sh.e3 e3Var = chatActivityEnterView.h0;
+                return (e3Var == null || e3Var.getVisibility() != 0) ? super.dispatchTouchEvent(motionEvent) : chatActivityEnterView.h0.dispatchTouchEvent(motionEvent);
             case 1:
                 ChatActivityEnterView chatActivityEnterView2 = this.b;
                 if (!chatActivityEnterView2.G || chatActivityEnterView2.P4 == BotForumHelper.SteamingSendButtonState.BLOCKING) {

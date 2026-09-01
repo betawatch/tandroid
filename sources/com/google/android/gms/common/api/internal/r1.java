@@ -10,15 +10,15 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class r1 extends Fragment implements m {
     public static final WeakHashMap b = new WeakHashMap();
-    public final b4.e0 a = new b4.e0(2, (byte) 0);
+    public final b4.e0 a = new b4.e0(1, (byte) 0);
 
     @Override // com.google.android.gms.common.api.internal.m
     public final void a(String str, l lVar) {
-        this.a.C(str, lVar);
+        this.a.D(str, lVar);
     }
 
     @Override // com.google.android.gms.common.api.internal.m
@@ -52,7 +52,7 @@ public final class r1 extends Fragment implements m {
     @Override // android.app.Fragment
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.a.E(bundle);
+        this.a.F(bundle);
     }
 
     @Override // android.app.Fragment
@@ -80,7 +80,7 @@ public final class r1 extends Fragment implements m {
     @Override // android.app.Fragment
     public final void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
-        this.a.F(bundle);
+        this.a.G(bundle);
     }
 
     @Override // android.app.Fragment

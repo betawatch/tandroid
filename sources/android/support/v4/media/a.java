@@ -9,7 +9,7 @@ import androidx.car.app.hardware.common.CarZone;
 import androidx.car.app.navigation.model.Maneuver;
 import androidx.datastore.preferences.protobuf.k;
 import androidx.fragment.app.j0;
-import com.google.android.gms.internal.cast.y4;
+import com.google.android.gms.internal.cast.x4;
 import com.google.android.gms.internal.vision.r0;
 import com.google.android.recaptcha.internal.zzqv;
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ import kotlin.jvm.internal.j;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class a {
     public static int A(int i10, int i11, int i12) {
@@ -38,8 +38,8 @@ public abstract /* synthetic */ class a {
         if (j0.K(2)) {
             Log.v("FragmentManager", "SpecialEffectsController: Calling apply state");
         }
-        int b10 = m1.j.b(i10);
-        if (b10 == 0) {
+        int c3 = m1.j.c(i10);
+        if (c3 == 0) {
             ViewParent parent = view.getParent();
             ViewGroup viewGroup = parent instanceof ViewGroup ? (ViewGroup) parent : null;
             if (viewGroup != null) {
@@ -51,7 +51,7 @@ public abstract /* synthetic */ class a {
             }
             return;
         }
-        if (b10 == 1) {
+        if (c3 == 1) {
             if (j0.K(2)) {
                 Log.v("FragmentManager", "SpecialEffectsController: Setting view " + view + " to VISIBLE");
             }
@@ -65,14 +65,14 @@ public abstract /* synthetic */ class a {
             view.setVisibility(0);
             return;
         }
-        if (b10 == 2) {
+        if (c3 == 2) {
             if (j0.K(2)) {
                 Log.v("FragmentManager", "SpecialEffectsController: Setting view " + view + " to GONE");
             }
             view.setVisibility(8);
             return;
         }
-        if (b10 != 3) {
+        if (c3 != 3) {
             return;
         }
         if (j0.K(2)) {
@@ -758,7 +758,7 @@ public abstract /* synthetic */ class a {
     }
 
     public static int x(int i10, int i11, int i12) {
-        return y4.o(i10) + i11 + i12;
+        return x4.o(i10) + i11 + i12;
     }
 
     public static int y(int i10, int i11, int i12, int i13) {

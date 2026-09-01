@@ -19,7 +19,7 @@ import java.util.StringTokenizer;
 import java.util.logging.Level;
 import javax.net.ssl.SSLException;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class e {
     public final d a;
@@ -131,8 +131,8 @@ public final class e {
                 readLine2 = bufferedReader.readLine();
             }
             hashMap.put("uri", b10);
-        } catch (IOException e) {
-            throw new j("SERVER INTERNAL ERROR: IOException: " + e.getMessage(), e);
+        } catch (IOException e6) {
+            throw new j("SERVER INTERNAL ERROR: IOException: " + e6.getMessage(), e6);
         }
     }
 
@@ -197,49 +197,49 @@ public final class e {
                             this.j = new c(this.i);
                             String str2 = (String) this.i.get("connection");
                             boolean z10 = "HTTP/1.1".equals(this.l) && (str2 == null || !str2.matches("(?i).*close.*"));
-                            i e = lVar.e(this);
+                            i e6 = lVar.e(this);
                             String str3 = (String) this.i.get("accept-encoding");
                             this.j.i();
-                            e.i(this.g);
-                            if (l.g(e) && str3 != null && str3.contains("gzip")) {
+                            e6.i(this.g);
+                            if (l.g(e6) && str3 != null && str3.contains("gzip")) {
                                 z4 = true;
                             }
-                            e.g(z4);
-                            e.h(z10);
-                            e.d(outputStream);
-                            if (!z10 || e.b()) {
+                            e6.g(z4);
+                            e6.h(z10);
+                            e6.d(outputStream);
+                            if (!z10 || e6.b()) {
                                 throw new SocketException("NanoHttpd Shutdown");
                             }
-                            l.d(e);
+                            l.d(e6);
                             dVar.a();
-                        } catch (SSLException e6) {
-                            throw e6;
+                        } catch (SSLException e10) {
+                            throw e10;
                         } catch (IOException unused) {
                             l.d(bufferedInputStream);
                             l.d(outputStream);
                             throw new SocketException("NanoHttpd Shutdown");
                         }
-                    } catch (j e10) {
-                        l.c(e10.a(), "text/plain", e10.getMessage()).d(outputStream);
+                    } catch (j e11) {
+                        l.c(e11.a(), "text/plain", e11.getMessage()).d(outputStream);
                         l.d(outputStream);
                         l.d(null);
                         dVar.a();
                     }
-                } catch (SSLException e11) {
-                    l.c(hVar, "text/plain", "SSL PROTOCOL FAILURE: " + e11.getMessage()).d(outputStream);
+                } catch (SSLException e12) {
+                    l.c(hVar, "text/plain", "SSL PROTOCOL FAILURE: " + e12.getMessage()).d(outputStream);
                     l.d(outputStream);
                     l.d(null);
                     dVar.a();
-                } catch (IOException e12) {
-                    l.c(hVar, "text/plain", "SERVER INTERNAL ERROR: IOException: " + e12.getMessage()).d(outputStream);
+                } catch (IOException e13) {
+                    l.c(hVar, "text/plain", "SERVER INTERNAL ERROR: IOException: " + e13.getMessage()).d(outputStream);
                     l.d(outputStream);
                     l.d(null);
                     dVar.a();
                 }
-            } catch (SocketException e13) {
-                throw e13;
-            } catch (SocketTimeoutException e14) {
+            } catch (SocketException e14) {
                 throw e14;
+            } catch (SocketTimeoutException e15) {
+                throw e15;
             }
         } catch (Throwable th2) {
             l.d(null);

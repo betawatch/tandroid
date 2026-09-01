@@ -9,8 +9,8 @@ import j4.i;
 import j4.n;
 import java.io.EOFException;
 import l3.o0;
+import org.telegram.ui.Components.ai;
 import org.telegram.ui.Components.jb;
-import ph.j5;
 import r3.j;
 import r3.k;
 import r3.l;
@@ -18,7 +18,7 @@ import r3.m;
 import r3.p;
 import r3.v;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class d implements k {
     public final int a;
@@ -26,7 +26,7 @@ public final class d implements k {
     public final w c;
     public final o0 d;
     public final p e;
-    public final j5 f;
+    public final ai f;
     public final j g;
     public m h;
     public v i;
@@ -48,7 +48,7 @@ public final class d implements k {
 
     public final a a(l lVar, boolean z4) {
         w wVar = this.c;
-        lVar.c(0, 4, wVar.a);
+        lVar.b(0, 4, wVar.a);
         wVar.F(0);
         int g10 = wVar.g();
         o0 o0Var = this.d;
@@ -58,7 +58,7 @@ public final class d implements k {
 
     /* JADX WARN: Code restructure failed: missing block: B:6:0x0018, code lost:
     
-        if (r9.i() > (r2 - 4)) goto L12;
+        if (r9.g() > (r2 - 4)) goto L12;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -71,7 +71,7 @@ public final class d implements k {
             }
         }
         try {
-            return !lVar.h(this.c.a, 0, 4, true);
+            return !lVar.f(this.c.a, 0, 4, true);
         } catch (EOFException unused) {
             return true;
         }
@@ -83,7 +83,7 @@ public final class d implements k {
      */
     /* JADX WARN: Code restructure failed: missing block: B:60:0x00dd, code lost:
     
-        r18.u(r4 + r6);
+        r18.s(r4 + r6);
      */
     /* JADX WARN: Code restructure failed: missing block: B:61:0x00e5, code lost:
     
@@ -95,7 +95,7 @@ public final class d implements k {
      */
     /* JADX WARN: Code restructure failed: missing block: B:63:0x00e2, code lost:
     
-        r18.t();
+        r18.r();
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -105,14 +105,14 @@ public final class d implements k {
         int i11;
         int d;
         int i12 = z4 ? 32768 : 131072;
-        lVar.t();
+        lVar.r();
         if (lVar.getPosition() == 0) {
             w wVar = (w) this.f.b;
             e4.c cVar = null;
             int i13 = 0;
             while (true) {
                 try {
-                    lVar.c(0, 10, wVar.a);
+                    lVar.b(0, 10, wVar.a);
                     wVar.F(0);
                     if (wVar.w() != 4801587) {
                         break;
@@ -123,24 +123,24 @@ public final class d implements k {
                     if (cVar == null) {
                         byte[] bArr = new byte[i14];
                         System.arraycopy(wVar.a, 0, bArr, 0, 10);
-                        lVar.c(10, t6, bArr);
+                        lVar.b(10, t6, bArr);
                         cVar = new i(null).c(i14, bArr);
                     } else {
-                        lVar.n(t6);
+                        lVar.i(t6);
                     }
                     i13 += i14;
                 } catch (EOFException unused) {
                 }
             }
-            lVar.t();
-            lVar.n(i13);
+            lVar.r();
+            lVar.i(i13);
             this.l = cVar;
             if (cVar != null) {
                 this.e.b(cVar);
             }
-            i11 = (int) lVar.i();
+            i11 = (int) lVar.g();
             if (!z4) {
-                lVar.u(i11);
+                lVar.s(i11);
             }
             i10 = 0;
         } else {
@@ -164,7 +164,7 @@ public final class d implements k {
                         this.d.a(g10);
                         i10 = g10;
                     }
-                    lVar.n(d - 4);
+                    lVar.i(d - 4);
                 } else {
                     int i17 = i16 + 1;
                     if (i16 == i12) {
@@ -174,10 +174,10 @@ public final class d implements k {
                         throw r1.a("Searched too many bytes.", null);
                     }
                     if (z4) {
-                        lVar.t();
-                        lVar.n(i11 + i17);
+                        lVar.r();
+                        lVar.i(i11 + i17);
                     } else {
-                        lVar.u(1);
+                        lVar.s(1);
                     }
                     i16 = i17;
                     i10 = 0;
@@ -207,10 +207,10 @@ public final class d implements k {
     @Override // r3.k
     public final void e(m mVar) {
         this.h = mVar;
-        v c22 = mVar.c2(0, 1);
-        this.i = c22;
-        this.j = c22;
-        this.h.f1();
+        v i22 = mVar.i2(0, 1);
+        this.i = i22;
+        this.j = i22;
+        this.h.i1();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:14:0x006c, code lost:
@@ -271,7 +271,7 @@ public final class d implements k {
         if (fVar2 == null) {
             w wVar2 = new w(o0Var.b);
             j10 = 1000000;
-            ((r3.h) lVar).h(wVar2.a, 0, o0Var.b, false);
+            ((r3.h) lVar).f(wVar2.a, 0, o0Var.b, false);
             int i17 = 21;
             if ((o0Var.a & 1) != 0) {
                 if (o0Var.d != 1) {
@@ -323,7 +323,7 @@ public final class d implements k {
                     if (fVar != null && (pVar2.a == -1 || pVar2.b == -1)) {
                         hVar.f = 0;
                         hVar.a(i17 + 141, false);
-                        hVar.h(wVar.a, 0, 3, false);
+                        hVar.f(wVar.a, 0, 3, false);
                         wVar.F(0);
                         int w10 = wVar.w();
                         i13 = w10 >> 12;
@@ -333,7 +333,7 @@ public final class d implements k {
                             pVar2.b = i14;
                         }
                     }
-                    hVar.u(o0Var.b);
+                    hVar.s(o0Var.b);
                     if (fVar == null && !fVar.c() && i12 == 1231971951) {
                         dVar = this;
                         lVar2 = lVar;
@@ -400,7 +400,7 @@ public final class d implements k {
                                 }
                             }
                         }
-                        hVar3.u(o0Var.b);
+                        hVar3.s(o0Var.b);
                         dVar = this;
                         lVar2 = lVar;
                     } else {
@@ -461,7 +461,7 @@ public final class d implements k {
                                 a2 = new e(-9223372036854775807L);
                             }
                             dVar.q = a2;
-                            dVar.h.g2(a2);
+                            dVar.h.m2(a2);
                             v vVar = dVar.j;
                             m0 m0Var = new m0();
                             m0Var.o = (String) o0Var.g;
@@ -480,7 +480,7 @@ public final class d implements k {
                 if (dVar.r) {
                 }
                 dVar.q = a2;
-                dVar.h.g2(a2);
+                dVar.h.m2(a2);
                 v vVar2 = dVar.j;
                 m0 m0Var2 = new m0();
                 m0Var2.o = (String) o0Var.g;
@@ -513,7 +513,7 @@ public final class d implements k {
                     if (fVar != null) {
                         hVar.f = 0;
                         hVar.a(i17 + 141, false);
-                        hVar.h(wVar.a, 0, 3, false);
+                        hVar.f(wVar.a, 0, 3, false);
                         wVar.F(0);
                         int w102 = wVar.w();
                         i13 = w102 >> 12;
@@ -523,7 +523,7 @@ public final class d implements k {
                         pVar2.a = i13;
                         pVar2.b = i14;
                     }
-                    hVar.u(o0Var.b);
+                    hVar.s(o0Var.b);
                     if (fVar == null) {
                     }
                     dVar = this;
@@ -537,7 +537,7 @@ public final class d implements k {
                     if (dVar.r) {
                     }
                     dVar.q = a2;
-                    dVar.h.g2(a2);
+                    dVar.h.m2(a2);
                     v vVar22 = dVar.j;
                     m0 m0Var22 = new m0();
                     m0Var22.o = (String) o0Var.g;
@@ -567,7 +567,7 @@ public final class d implements k {
             pVar2 = pVar;
             if (fVar != null) {
             }
-            hVar.u(o0Var.b);
+            hVar.s(o0Var.b);
             if (fVar == null) {
             }
             dVar = this;
@@ -581,7 +581,7 @@ public final class d implements k {
             if (dVar.r) {
             }
             dVar.q = a2;
-            dVar.h.g2(a2);
+            dVar.h.m2(a2);
             v vVar222 = dVar.j;
             m0 m0Var222 = new m0();
             m0Var222.o = (String) o0Var.g;
@@ -602,7 +602,7 @@ public final class d implements k {
             if (j23 != 0) {
                 long j24 = ((r3.h) lVar2).d;
                 if (j24 < j23) {
-                    ((r3.h) lVar2).u((int) (j23 - j24));
+                    ((r3.h) lVar2).s((int) (j23 - j24));
                 }
             }
         }
@@ -612,7 +612,7 @@ public final class d implements k {
                 wVar.F(0);
                 int g12 = wVar.g();
                 if (((-128000) & g12) != (dVar.k & (-128000)) || l3.a.d(g12) == -1) {
-                    ((r3.h) lVar2).u(1);
+                    ((r3.h) lVar2).s(1);
                     dVar.k = 0;
                     i10 = -1;
                     i11 = 0;
@@ -622,7 +622,7 @@ public final class d implements k {
                             if (fVar3.g() != ((dVar.n * j10) / o0Var.c) + dVar.m) {
                                 f fVar4 = dVar.q;
                                 ((b) fVar4).getClass();
-                                dVar.h.g2(fVar4);
+                                dVar.h.m2(fVar4);
                             }
                         }
                     }
@@ -657,9 +657,9 @@ public final class d implements k {
             }
             return i11;
         }
-        int e = dVar.j.e(lVar2, dVar.p, true);
-        if (e != -1) {
-            int i26 = dVar.p - e;
+        int e6 = dVar.j.e(lVar2, dVar.p, true);
+        if (e6 != -1) {
+            int i26 = dVar.p - e6;
             dVar.p = i26;
             if (i26 <= 0) {
                 dVar.j.c(((dVar.n * j10) / o0Var.c) + dVar.m, 1, o0Var.b, 0, null);
@@ -691,7 +691,7 @@ public final class d implements k {
         this.d = new o0();
         this.e = new p();
         this.m = -9223372036854775807L;
-        this.f = new j5(2);
+        this.f = new ai(9);
         j jVar = new j();
         this.g = jVar;
         this.j = jVar;

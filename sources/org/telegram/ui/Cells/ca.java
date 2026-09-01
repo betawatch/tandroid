@@ -4,7 +4,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class ca extends GestureDetector.SimpleOnGestureListener {
     public final /* synthetic */ da a;
@@ -20,14 +20,14 @@ public final class ca extends GestureDetector.SimpleOnGestureListener {
         if (daVar.Fe != 2 || MediaDataController.getInstance(i10).getDoubleTapReaction() == null) {
             return false;
         }
-        boolean selectReaction = daVar.getMessageObject().selectReaction(mg.q0.b(MediaDataController.getInstance(i10).getDoubleTapReaction()), false, false);
+        boolean selectReaction = daVar.getMessageObject().selectReaction(ng.q0.b(MediaDataController.getInstance(i10).getDoubleTapReaction()), false, false);
         daVar.X3(daVar.getMessageObject(), null, false, false, false, false);
         daVar.requestLayout();
-        mg.m0.b(false);
+        ng.m0.b(false);
         if (selectReaction) {
             ea eaVar = daVar.Ge;
-            mg.m0.d(eaVar.r, null, eaVar.e[1], null, motionEvent.getX(), motionEvent.getY(), mg.q0.b(MediaDataController.getInstance(i10).getDoubleTapReaction()), daVar.F7, 0);
-            mg.m0.f();
+            ng.m0.d(eaVar.r, null, eaVar.e[1], null, motionEvent.getX(), motionEvent.getY(), ng.q0.b(MediaDataController.getInstance(i10).getDoubleTapReaction()), daVar.F7, 0);
+            ng.m0.f();
         }
         daVar.getViewTreeObserver().addOnPreDrawListener(new ba(this, 0));
         return true;

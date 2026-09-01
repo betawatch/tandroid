@@ -1,10 +1,10 @@
 package j3;
 
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class w implements h5.j, qg.c {
+public final /* synthetic */ class w implements h5.j, rg.c {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ int c;
@@ -15,8 +15,8 @@ public final /* synthetic */ class w implements h5.j, qg.c {
         this.c = i11;
     }
 
-    @Override // qg.c
-    public int g(f6 f6Var, boolean z4) {
+    @Override // rg.c
+    public int g(g6 g6Var, boolean z4) {
         return z4 ? this.b : this.c;
     }
 

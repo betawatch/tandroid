@@ -8,25 +8,25 @@ import android.util.Property;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class xl extends AnimatorListenerAdapter {
     public final /* synthetic */ boolean a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ org.telegram.ui.Components.p9 c;
     public final /* synthetic */ wn d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.k5 e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.l5 e;
     public final /* synthetic */ boolean f;
-    public final /* synthetic */ gg.q h;
+    public final /* synthetic */ hg.q h;
     public final /* synthetic */ xn n;
 
-    public xl(xn xnVar, boolean z4, boolean z10, org.telegram.ui.Components.p9 p9Var, wn wnVar, org.telegram.ui.ActionBar.k5 k5Var, boolean z11, gg.q qVar) {
+    public xl(xn xnVar, boolean z4, boolean z10, org.telegram.ui.Components.p9 p9Var, wn wnVar, org.telegram.ui.ActionBar.l5 l5Var, boolean z11, hg.q qVar) {
         this.n = xnVar;
         this.a = z4;
         this.b = z10;
         this.c = p9Var;
         this.d = wnVar;
-        this.e = k5Var;
+        this.e = l5Var;
         this.f = z11;
         this.h = qVar;
     }
@@ -50,17 +50,17 @@ public final class xl extends AnimatorListenerAdapter {
                 return;
             }
             animatorSetArr[1] = new AnimatorSet();
-            animatorSetArr[1].setInterpolator(org.telegram.ui.Components.nr.h);
+            animatorSetArr[1].setInterpolator(org.telegram.ui.Components.pr.h);
             animatorSetArr[1].setDuration(360L);
             ArrayList arrayList = new ArrayList();
             if (z10) {
                 arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<wn, Float>) View.TRANSLATION_Y, 0.0f));
             }
             if (z4) {
-                arrayList.add(ObjectAnimator.ofFloat(this.e, (Property<org.telegram.ui.ActionBar.k5, Float>) View.TRANSLATION_Y, 0.0f));
+                arrayList.add(ObjectAnimator.ofFloat(this.e, (Property<org.telegram.ui.ActionBar.l5, Float>) View.TRANSLATION_Y, 0.0f));
             }
             if (this.f) {
-                arrayList.add(ObjectAnimator.ofFloat(this.h, (Property<gg.q, Float>) View.TRANSLATION_Y, 0.0f));
+                arrayList.add(ObjectAnimator.ofFloat(this.h, (Property<hg.q, Float>) View.TRANSLATION_Y, 0.0f));
             }
             if (p9Var != null) {
                 arrayList.add(ObjectAnimator.ofFloat(p9Var, (Property<org.telegram.ui.Components.p9, Float>) View.TRANSLATION_Y, 0.0f));

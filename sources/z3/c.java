@@ -1,9 +1,9 @@
 package z3;
 
 import h5.w;
-import k7.t6;
+import k7.u6;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class c {
     public final int a;
@@ -24,7 +24,7 @@ public final class c {
         this.a = wVar2.x();
         wVar.F(12);
         this.i = wVar.x();
-        t6.a("first_chunk must be 1", wVar.g() == 1);
+        u6.a("first_chunk must be 1", wVar.g() == 1);
         this.b = -1;
     }
 

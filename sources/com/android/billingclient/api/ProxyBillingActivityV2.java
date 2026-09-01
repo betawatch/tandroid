@@ -10,10 +10,11 @@ import androidx.activity.result.g;
 import androidx.fragment.app.e0;
 import com.google.android.gms.internal.play_billing.u;
 import kotlin.jvm.internal.j;
-import o2.o;
+import oh.h4;
 import org.telegram.ui.Cells.f1;
+import org.telegram.ui.Components.ai;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class ProxyBillingActivityV2 extends m {
     public c G;
@@ -27,8 +28,8 @@ public class ProxyBillingActivityV2 extends m {
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         this.G = r(new f1(this, 8), new e0(3));
-        this.H = r(new ja.c(this, 28), new e0(3));
-        this.I = r(new o(this, 10), new e0(3));
+        this.H = r(new ai(this, 5), new e0(3));
+        this.I = r(new h4(this, 8), new e0(3));
         if (bundle != null) {
             if (bundle.containsKey("alternative_billing_only_dialog_result_receiver")) {
                 this.J = (ResultReceiver) bundle.getParcelable("alternative_billing_only_dialog_result_receiver");

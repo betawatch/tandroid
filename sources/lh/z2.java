@@ -1,26 +1,30 @@
 package lh;
 
-import android.content.DialogInterface;
-
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class z2 implements DialogInterface.OnDismissListener {
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class z2 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ g5 b;
+    public final /* synthetic */ n3 b;
 
-    public /* synthetic */ z2(g5 g5Var, int i10) {
+    public /* synthetic */ z2(n3 n3Var, int i10) {
         this.a = i10;
-        this.b = g5Var;
+        this.b = n3Var;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.g0.setLoading(false);
+                this.b.setReordering(true);
+                break;
+            case 1:
+                this.b.setReordering(true);
+                break;
+            case 2:
+                this.b.f(false);
                 break;
             default:
-                this.b.g0.setLoading(false);
+                this.b.setReordering(true);
                 break;
         }
     }

@@ -19,12 +19,12 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class ua extends FrameLayout {
     public final org.telegram.ui.Components.p9 a;
-    public final ig.c b;
-    public final org.telegram.ui.ActionBar.k5 c;
+    public final jg.c b;
+    public final org.telegram.ui.ActionBar.l5 c;
     public final ImageView d;
     public final org.telegram.ui.Components.z8 e;
     public TLObject f;
@@ -35,38 +35,38 @@ public final class ua extends FrameLayout {
     public final int v;
     public final int w;
 
-    public ua(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public ua(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         this.s = UserConfig.selectedAccount;
-        this.v = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.y6, f6Var);
-        this.w = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.n6, f6Var);
-        this.e = new org.telegram.ui.Components.z8((org.telegram.ui.ActionBar.f6) null);
+        this.v = org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.y6, g6Var);
+        this.w = org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.n6, g6Var);
+        this.e = new org.telegram.ui.Components.z8((org.telegram.ui.ActionBar.g6) null);
         org.telegram.ui.Components.p9 p9Var = new org.telegram.ui.Components.p9(context);
         this.a = p9Var;
         p9Var.setRoundRadius(AndroidUtilities.dp(24.0f));
         boolean z4 = LocaleController.isRTL;
-        addView(p9Var, k7.b6.d(48, 48.0f, (z4 ? 5 : 3) | 48, z4 ? 0.0f : 11, 11.0f, z4 ? 11 : 0.0f, 0.0f));
-        ig.c cVar = new ig.c(context, 4);
+        addView(p9Var, k7.c6.d(48, 48.0f, (z4 ? 5 : 3) | 48, z4 ? 0.0f : 11, 11.0f, z4 ? 11 : 0.0f, 0.0f));
+        jg.c cVar = new jg.c(context, 4);
         this.b = cVar;
         NotificationCenter.listenEmojiLoading(cVar);
-        cVar.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, f6Var));
+        cVar.setTextColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.G6, g6Var));
         cVar.setTextSize(17);
         cVar.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z10 = LocaleController.isRTL;
-        addView(cVar, k7.b6.d(-1, 20.0f, (z10 ? 5 : 3) | 48, z10 ? 28 : 72, 14.5f, z10 ? 72 : 28, 0.0f));
-        org.telegram.ui.ActionBar.k5 k5Var = new org.telegram.ui.ActionBar.k5(context);
-        this.c = k5Var;
-        k5Var.setTextSize(14);
-        k5Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
+        addView(cVar, k7.c6.d(-1, 20.0f, (z10 ? 5 : 3) | 48, z10 ? 28 : 72, 14.5f, z10 ? 72 : 28, 0.0f));
+        org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(context);
+        this.c = l5Var;
+        l5Var.setTextSize(14);
+        l5Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z11 = LocaleController.isRTL;
-        addView(k5Var, k7.b6.d(-1, 20.0f, (z11 ? 5 : 3) | 48, z11 ? 28.0f : 72, 37.5f, z11 ? 72 : 28.0f, 0.0f));
+        addView(l5Var, k7.c6.d(-1, 20.0f, (z11 ? 5 : 3) | 48, z11 ? 28.0f : 72, 37.5f, z11 ? 72 : 28.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.d = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.m6, f6Var), PorterDuff.Mode.MULTIPLY));
+        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.m6, g6Var), PorterDuff.Mode.MULTIPLY));
         imageView.setVisibility(8);
         boolean z12 = LocaleController.isRTL;
-        addView(imageView, k7.b6.d(-2, -2.0f, (z12 ? 5 : 3) | 16, z12 ? 0.0f : 16.0f, 0.0f, z12 ? 16.0f : 0.0f, 0.0f));
+        addView(imageView, k7.c6.d(-2, -2.0f, (z12 ? 5 : 3) | 16, z12 ? 0.0f : 16.0f, 0.0f, z12 ? 16.0f : 0.0f, 0.0f));
     }
 
     public final void a(TLObject tLObject, String str) {
@@ -116,50 +116,50 @@ public final class ua extends FrameLayout {
         CharSequence charSequence = this.h;
         int i11 = this.v;
         org.telegram.ui.Components.p9 p9Var = this.a;
-        org.telegram.ui.ActionBar.k5 k5Var = this.c;
+        org.telegram.ui.ActionBar.l5 l5Var = this.c;
         if (charSequence != null) {
-            k5Var.setTextColor(i11);
-            k5Var.l(this.h, false);
+            l5Var.setTextColor(i11);
+            l5Var.l(this.h, false);
             if (p9Var != null) {
                 p9Var.e(user, z8Var);
             }
         } else if (user != null) {
             if (user.bot) {
-                k5Var.setTextColor(i11);
+                l5Var.setTextColor(i11);
                 if (user.bot_chat_history) {
-                    k5Var.l(LocaleController.getString(R.string.BotStatusRead), false);
+                    l5Var.l(LocaleController.getString(R.string.BotStatusRead), false);
                 } else {
-                    k5Var.l(LocaleController.getString(R.string.BotStatusCantRead), false);
+                    l5Var.l(LocaleController.getString(R.string.BotStatusCantRead), false);
                 }
             } else if (user.id == UserConfig.getInstance(i10).getClientUserId() || (((userStatus = user.status) != null && userStatus.expires > ConnectionsManager.getInstance(i10).getCurrentTime()) || MessagesController.getInstance(i10).onlinePrivacy.containsKey(Long.valueOf(user.id)))) {
-                k5Var.setTextColor(this.w);
-                k5Var.l(LocaleController.getString(R.string.Online), false);
+                l5Var.setTextColor(this.w);
+                l5Var.l(LocaleController.getString(R.string.Online), false);
             } else {
-                k5Var.setTextColor(i11);
-                k5Var.l(LocaleController.formatUserStatus(i10, user), false);
+                l5Var.setTextColor(i11);
+                l5Var.l(LocaleController.formatUserStatus(i10, user), false);
             }
             p9Var.e(user, z8Var);
         } else if (chat != null) {
-            k5Var.setTextColor(i11);
+            l5Var.setTextColor(i11);
             if (!ChatObject.isChannel(chat) || chat.megagroup) {
                 int i12 = chat.participants_count;
                 if (i12 != 0) {
-                    k5Var.l(LocaleController.formatPluralString("Members", i12, new Object[0]), false);
+                    l5Var.l(LocaleController.formatPluralString("Members", i12, new Object[0]), false);
                 } else if (chat.has_geo) {
-                    k5Var.l(LocaleController.getString(R.string.MegaLocation), false);
+                    l5Var.l(LocaleController.getString(R.string.MegaLocation), false);
                 } else if (ChatObject.isPublic(chat)) {
-                    k5Var.l(LocaleController.getString(R.string.MegaPublic), false);
+                    l5Var.l(LocaleController.getString(R.string.MegaPublic), false);
                 } else {
-                    k5Var.l(LocaleController.getString(R.string.MegaPrivate), false);
+                    l5Var.l(LocaleController.getString(R.string.MegaPrivate), false);
                 }
             } else {
                 int i13 = chat.participants_count;
                 if (i13 != 0) {
-                    k5Var.l(LocaleController.formatPluralString("Subscribers", i13, new Object[0]), false);
+                    l5Var.l(LocaleController.formatPluralString("Subscribers", i13, new Object[0]), false);
                 } else if (ChatObject.isPublic(chat)) {
-                    k5Var.l(LocaleController.getString(R.string.ChannelPublic), false);
+                    l5Var.l(LocaleController.getString(R.string.ChannelPublic), false);
                 } else {
-                    k5Var.l(LocaleController.getString(R.string.ChannelPrivate), false);
+                    l5Var.l(LocaleController.getString(R.string.ChannelPrivate), false);
                 }
             }
             p9Var.e(chat, z8Var);

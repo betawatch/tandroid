@@ -3,9 +3,9 @@ package k1;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import k7.p7;
+import k7.q7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class f extends wc.i implements dd.p {
     public Iterator a;
@@ -41,7 +41,7 @@ public final class f extends wc.i implements dd.p {
         vc.a aVar = vc.a.a;
         int i10 = this.c;
         if (i10 == 0) {
-            p7.b(obj);
+            q7.b(obj);
             obj = this.d;
             it = this.e.iterator();
             list = this.f;
@@ -49,7 +49,7 @@ public final class f extends wc.i implements dd.p {
             Object obj2 = this.b;
             Iterator it2 = this.a;
             List list2 = (List) this.d;
-            p7.b(obj);
+            q7.b(obj);
             if (((Boolean) obj).booleanValue()) {
                 list2.add(new e(1, null));
                 this.d = list2;
@@ -67,7 +67,7 @@ public final class f extends wc.i implements dd.p {
             }
             it = this.a;
             list = (List) this.d;
-            p7.b(obj);
+            q7.b(obj);
         }
         if (!it.hasNext()) {
             return obj;

@@ -3,9 +3,9 @@ package b4;
 import j3.m0;
 import j3.n0;
 import java.util.List;
-import k7.s6;
+import k7.t6;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class d0 {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final class d0 {
         int g11 = wVar.g();
         int u10 = wVar.u();
         if (g10 == 434 && g11 == 1195456820 && u10 == 3) {
-            s6.b(j10, wVar, this.c);
+            t6.b(j10, wVar, this.c);
         }
     }
 
@@ -49,7 +49,7 @@ public final class d0 {
                     } else {
                         h0Var.a();
                         h0Var.b();
-                        r3.v c22 = mVar.c2(h0Var.d, 3);
+                        r3.v i22 = mVar.i2(h0Var.d, 3);
                         n0 n0Var = (n0) this.b.get(i10);
                         String str = n0Var.C;
                         h5.a.e("Invalid closed caption MIME type provided: " + str, "application/cea-608".equals(str) || "application/cea-708".equals(str));
@@ -65,8 +65,8 @@ public final class d0 {
                         m0Var.c = n0Var.c;
                         m0Var.G = n0Var.U;
                         m0Var.q = n0Var.E;
-                        c22.b(new n0(m0Var));
-                        vVarArr[i10] = c22;
+                        i22.b(new n0(m0Var));
+                        vVarArr[i10] = i22;
                         i10++;
                     }
                 }
@@ -80,7 +80,7 @@ public final class d0 {
                     } else {
                         h0Var.a();
                         h0Var.b();
-                        r3.v c23 = mVar.c2(h0Var.d, 3);
+                        r3.v i23 = mVar.i2(h0Var.d, 3);
                         n0 n0Var2 = (n0) this.b.get(i11);
                         String str3 = n0Var2.C;
                         h5.a.e("Invalid closed caption MIME type provided: " + str3, "application/cea-608".equals(str3) || "application/cea-708".equals(str3));
@@ -92,8 +92,8 @@ public final class d0 {
                         m0Var2.c = n0Var2.c;
                         m0Var2.G = n0Var2.U;
                         m0Var2.q = n0Var2.E;
-                        c23.b(new n0(m0Var2));
-                        vVarArr2[i11] = c23;
+                        i23.b(new n0(m0Var2));
+                        vVarArr2[i11] = i23;
                         i11++;
                     }
                 }

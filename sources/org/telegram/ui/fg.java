@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fg implements Utilities.Callback2 {
     public final /* synthetic */ int a = 0;
@@ -64,31 +64,31 @@ public final /* synthetic */ class fg implements Utilities.Callback2 {
                 }
                 xn xnVar = this.b;
                 org.telegram.ui.Cells.t1 t1Var2 = this.c;
-                org.telegram.ui.Components.o70 I = org.telegram.ui.Components.o70.I(xnVar, t1Var2);
-                org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(xnVar.getParentActivity(), xnVar.ba);
-                I.p = new pe(im0Var, 0);
+                org.telegram.ui.Components.q70 I = org.telegram.ui.Components.q70.I(xnVar, t1Var2);
+                org.telegram.ui.Components.jm0 jm0Var = new org.telegram.ui.Components.jm0(xnVar.getParentActivity(), xnVar.ba);
+                I.p = new pe(jm0Var, 0);
                 if (j10 != 0) {
                     bool = bool2;
                     z11 = false;
-                    I.c(z4 ? R.drawable.msg_channel : R.drawable.msg_discussion, LocaleController.getString(z4 ? R.string.ViewChannel : R.string.SendMessage), new gg.y0(xnVar, j10, 5), false);
+                    I.c(z4 ? R.drawable.msg_channel : R.drawable.msg_discussion, LocaleController.getString(z4 ? R.string.ViewChannel : R.string.SendMessage), new hg.y0(xnVar, j10, 5), false);
                 } else {
                     bool = bool2;
                     z11 = false;
                 }
                 boolean z12 = z4;
-                I.c(R.drawable.msg_copy, LocaleController.getString(R.string.ProfileCopyUsername), new ve(xnVar, im0Var, str, 1), z11);
+                I.c(R.drawable.msg_copy, LocaleController.getString(R.string.ProfileCopyUsername), new ve(xnVar, jm0Var, str, 1), z11);
                 if (bool.booleanValue()) {
                     I.c(R.drawable.outline_gram_24, LocaleController.getString(R.string.BuyUsernameOnFragment), new qe(xnVar, str, 11), z11);
                 }
                 I.k();
                 if (j10 != 0) {
-                    I.n(tLObject, LocaleController.getString(z10 ? R.string.ViewProfile : z12 ? R.string.ViewChannelProfile : R.string.ViewGroupProfile), new gg.y0(xnVar, j10, 6));
+                    I.n(tLObject, LocaleController.getString(z10 ? R.string.ViewProfile : z12 ? R.string.ViewChannelProfile : R.string.ViewGroupProfile), new hg.y0(xnVar, j10, 6));
                 } else {
                     I.p(13, AndroidUtilities.dp(200.0f), LocaleController.getString(R.string.NoUsernameFound2));
                 }
-                im0Var.e(I);
-                im0Var.f(t1Var2, characterStyle, null, false);
-                xnVar.showDialog(im0Var);
+                jm0Var.e(I);
+                jm0Var.f(t1Var2, characterStyle, null, false);
+                xnVar.showDialog(jm0Var);
                 break;
             default:
                 wi wiVar = (wi) this.d;

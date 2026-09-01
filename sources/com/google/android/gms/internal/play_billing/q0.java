@@ -1,10 +1,10 @@
 package com.google.android.gms.internal.play_billing;
 
-import j7.h6;
+import j7.f6;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class q0 implements Runnable {
     public final t0 a;
@@ -32,7 +32,7 @@ public final class q0 implements Runnable {
             boolean z10 = false;
             Future future = t0Var;
             if (!isDone) {
-                throw new IllegalStateException(h6.a("Future was expected to be done: %s", t0Var));
+                throw new IllegalStateException(f6.a("Future was expected to be done: %s", t0Var));
             }
             while (true) {
                 try {
@@ -53,19 +53,19 @@ public final class q0 implements Runnable {
             }
             Integer num = (Integer) obj;
             int intValue = num.intValue();
-            p2.y yVar = (p2.y) uVar.d;
+            p2.x xVar = (p2.x) uVar.d;
             if (intValue <= 0) {
                 ((Runnable) uVar.c).run();
                 return;
             }
             int i10 = uVar.a;
             int intValue2 = num.intValue();
-            yVar.getClass();
-            p2.h a2 = p2.b0.a(intValue2, "Billing override value was set by a license tester.");
-            yVar.F(93, i10, a2);
+            xVar.getClass();
+            p2.h a2 = p2.a0.a(intValue2, "Billing override value was set by a license tester.");
+            xVar.F(93, i10, a2);
             ((q0.a) uVar.b).accept(a2);
-        } catch (ExecutionException e) {
-            uVar.i(e.getCause());
+        } catch (ExecutionException e6) {
+            uVar.i(e6.getCause());
         } catch (Throwable th3) {
             uVar.i(th3);
         }

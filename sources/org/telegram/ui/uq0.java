@@ -1,113 +1,194 @@
 package org.telegram.ui;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.graphics.Bitmap;
-import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.util.Property;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Components.ClippingImageView;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uq0 implements org.telegram.ui.Components.y4, org.telegram.ui.ActionBar.c2, ImageReceiver.ImageReceiverDelegate, r0.o {
-    public final /* synthetic */ PhotoViewer a;
+public final /* synthetic */ class uq0 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PhotoViewer b;
 
-    public /* synthetic */ uq0(PhotoViewer photoViewer) {
-        this.a = photoViewer;
+    public /* synthetic */ uq0(PhotoViewer photoViewer, int i10) {
+        this.a = i10;
+        this.b = photoViewer;
     }
 
-    @Override // org.telegram.ui.Components.y4
-    public void J(int i10, int i11, boolean z4) {
-        Drawable[] drawableArr = PhotoViewer.Q8;
-        this.a.w2(z4, i10, i11, false, false, false);
-    }
-
-    @Override // r0.o
-    public r0.m1 N0(View view, r0.m1 m1Var) {
-        PhotoViewer photoViewer = this.a;
-        mq0 mq0Var = photoViewer.s4;
-        Rect rect = photoViewer.p2;
-        Rect rect2 = new Rect(rect);
-        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(m1Var, false);
-        int i10 = defaultWindowInsets.a;
-        int i11 = defaultWindowInsets.b;
-        int i12 = defaultWindowInsets.c;
-        rect.set(i10, i11, i12, defaultWindowInsets.d);
-        if (!rect2.equals(rect)) {
-            int i13 = photoViewer.k4;
-            if (i13 == 1 || i13 == 3) {
-                ClippingImageView clippingImageView = photoViewer.e0;
-                clippingImageView.setTranslationX(clippingImageView.getTranslationX() - rect.left);
-                photoViewer.h4[0][2] = photoViewer.e0.getTranslationX();
-            }
-            iu0 iu0Var = photoViewer.d0;
-            if (iu0Var != null) {
-                iu0Var.requestLayout();
-            }
-        }
-        View view2 = photoViewer.g0;
-        if (view2 != null) {
-            photoViewer.h0 = rect.bottom;
-            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view2.getLayoutParams();
-            int i14 = photoViewer.h0;
-            marginLayoutParams.height = i14;
-            marginLayoutParams.bottomMargin = (-i14) / 2;
-            photoViewer.g0.setLayoutParams(marginLayoutParams);
-        }
-        photoViewer.b0.setPadding(defaultWindowInsets.a, 0, i12, 0);
-        if (photoViewer.C != null) {
-            AndroidUtilities.cancelRunOnUIThread(mq0Var);
-            if (photoViewer.e && photoViewer.k4 == 0) {
-                AndroidUtilities.runOnUIThread(mq0Var, 200L);
-            }
-        }
-        return r0.m1.b;
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public void didSetImage(ImageReceiver imageReceiver, boolean z4, boolean z10, boolean z11) {
-        hu0 hu0Var;
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         int i10;
-        Bitmap bitmap;
-        int i11;
-        PhotoViewer photoViewer = this.a;
-        if (imageReceiver == photoViewer.z4 && z4 && !z10) {
-            if (!photoViewer.o1 && ((photoViewer.r4 == 1 || (i11 = photoViewer.Z1) == 1 || i11 == 11) && photoViewer.z1 != null && (bitmap = imageReceiver.getBitmap()) != null)) {
-                org.telegram.ui.Components.ye0 ye0Var = photoViewer.z1;
-                int orientation = imageReceiver.getOrientation();
-                int i12 = photoViewer.Z1;
-                ye0Var.b(bitmap, orientation, (i12 == 1 || i12 == 11) ? false : true, true, photoViewer.A1, null, null);
-            }
-            if (photoViewer.v4.getVisibility() == 0) {
-                photoViewer.b0.requestLayout();
-            }
-            photoViewer.Q0();
+        int i11 = 9;
+        int i12 = 8;
+        switch (this.a) {
+            case 0:
+                PhotoViewer photoViewer = this.b;
+                eg.l3 l3Var = (eg.l3) obj;
+                Drawable[] drawableArr = PhotoViewer.Q8;
+                try {
+                    boolean isEmpty = TextUtils.isEmpty(((MediaController.MediaEditState) photoViewer.d7.get(photoViewer.M4)).filterPath);
+                    eg.o3 o3Var = photoViewer.m5;
+                    o3Var.I = true;
+                    o3Var.B = l3Var;
+                    Bitmap bitmap = photoViewer.z4.getBitmap();
+                    photoViewer.z4.getOrientation();
+                    eg.l3 l3Var2 = o3Var.B;
+                    photoViewer.z4.setImageBitmap(l3Var2 == null ? o3Var.F : (isEmpty || bitmap == null) ? l3Var2.b() : o3Var.e(bitmap));
+                    photoViewer.q5.setUndoCutState(true);
+                    photoViewer.a3(true, true);
+                    photoViewer.q5.post(new oq0(photoViewer, i11));
+                    break;
+                } catch (Exception e6) {
+                    FileLog.e(e6);
+                    return;
+                }
+            case 1:
+                org.telegram.ui.Components.qc.F(this.b.b0, true).j();
+                break;
+            case 2:
+                PhotoViewer photoViewer2 = this.b;
+                photoViewer2.I1.e2 = photoViewer2.H1.c();
+                photoViewer2.b0.invalidate();
+                int max = Math.max(((Integer) obj).intValue(), photoViewer2.I1.g2);
+                float dp = (!(photoViewer2.I1.P0 instanceof eg.z3) || max <= 0) ? 0.0f : ((AndroidUtilities.displaySize.y - max) - AndroidUtilities.dp(80.0f)) - photoViewer2.I1.getSelectedEntityBottom();
+                ValueAnimator valueAnimator = photoViewer2.p7;
+                if (valueAnimator != null) {
+                    valueAnimator.cancel();
+                    photoViewer2.p7 = null;
+                }
+                if (photoViewer2.r4 != 3) {
+                    dp = 0.0f;
+                }
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(photoViewer2.W5, dp);
+                photoViewer2.p7 = ofFloat;
+                ofFloat.addUpdateListener(new nq0(photoViewer2, i11));
+                photoViewer2.p7.setDuration(320L);
+                ValueAnimator valueAnimator2 = photoViewer2.p7;
+                org.telegram.ui.Components.pr prVar = org.telegram.ui.Components.pr.h;
+                valueAnimator2.setInterpolator(prVar);
+                photoViewer2.p7.start();
+                AnimatorSet animatorSet = photoViewer2.G1;
+                if (animatorSet != null) {
+                    animatorSet.cancel();
+                }
+                ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
+                ofFloat2.addUpdateListener(new nq0(photoViewer2, i12));
+                AnimatorSet animatorSet2 = new AnimatorSet();
+                photoViewer2.G1 = animatorSet2;
+                eg.r2 r2Var = photoViewer2.I1.i1;
+                Property property = View.TRANSLATION_Y;
+                ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(r2Var, (Property<eg.r2, Float>) property, (-max) / 2.5f);
+                ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(photoViewer2.I1.Z0, (Property<eg.y0, Float>) property, Math.min(0, AndroidUtilities.dp(40.0f) + r15));
+                eg.i0 i0Var = photoViewer2.I1.c1;
+                Property property2 = View.ALPHA;
+                animatorSet2.playTogether(ofFloat3, ofFloat4, ObjectAnimator.ofFloat(i0Var, (Property<eg.i0, Float>) property2, max > AndroidUtilities.dp(20.0f) ? 0.0f : 1.0f), ObjectAnimator.ofFloat(photoViewer2.I1.x0, (Property<eg.z1, Float>) property2, max > AndroidUtilities.dp(20.0f) ? 0.0f : 1.0f), ObjectAnimator.ofFloat(photoViewer2.I1.y0, (Property<eg.d2, Float>) property2, max > AndroidUtilities.dp(20.0f) ? 0.0f : 1.0f), ofFloat2);
+                animatorSet2.setDuration(320L);
+                animatorSet2.setInterpolator(prVar);
+                animatorSet2.start();
+                ht0 ht0Var = photoViewer2.I1;
+                eg.i2 i2Var = ht0Var.r1;
+                if (i2Var != null) {
+                    if (ht0Var.e2) {
+                        i2Var.a(R.drawable.input_smile);
+                    } else if (ht0Var.d2) {
+                        i2Var.a(R.drawable.input_keyboard);
+                    } else {
+                        i2Var.a(R.drawable.msg_add);
+                    }
+                }
+                AndroidUtilities.updateViewShow(ht0Var.v1, (ht0Var.e2 || ht0Var.d2) ? false : true, false, 1.0f, true, null);
+                AndroidUtilities.updateViewShow(ht0Var.t1, (ht0Var.e2 || ht0Var.d2) ? false : true, false, 1.0f, true, null);
+                AndroidUtilities.updateViewShow(ht0Var.x1, ht0Var.e2 || ht0Var.d2, false, 1.0f, true, null);
+                AndroidUtilities.updateViewShow(ht0Var.w1, ht0Var.e2 || ht0Var.d2, false, 1.0f, true, null);
+                break;
+            case 3:
+                PhotoViewer photoViewer3 = this.b;
+                MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) obj;
+                if (!photoViewer3.n5.b.K && (i10 = photoViewer3.M4) >= 0 && i10 < photoViewer3.d7.size() && (photoViewer3.d7.get(photoViewer3.M4) instanceof MediaController.PhotoEntry)) {
+                    org.telegram.ui.Components.qf0 qf0Var = photoViewer3.n5;
+                    qh.d3 d3Var = qf0Var.h;
+                    if (d3Var != null) {
+                        d3Var.dismiss();
+                        qf0Var.h = null;
+                    }
+                    photoViewer3.n5.b.setLoading(true);
+                    Utilities.globalQueue.postRunnable(new b30(photoViewer3, photoEntry, (MediaController.PhotoEntry) photoViewer3.d7.get(photoViewer3.M4), PhotoViewer.y1(), 19));
+                    break;
+                }
+                break;
+            case 4:
+                PhotoViewer photoViewer4 = this.b;
+                Integer num = (Integer) obj;
+                Object obj2 = photoViewer4.d7.get(photoViewer4.M4);
+                if (obj2 instanceof MediaController.PhotoEntry) {
+                    ((MediaController.PhotoEntry) obj2).ttl = num.intValue();
+                } else if (obj2 instanceof MediaController.SearchImage) {
+                    ((MediaController.SearchImage) obj2).ttl = num.intValue();
+                }
+                if (num.intValue() != 0 && !photoViewer4.d.x(photoViewer4.M4)) {
+                    photoViewer4.M2();
+                }
+                photoViewer4.S1.setTimer(num.intValue());
+                break;
+            case 5:
+                PhotoViewer photoViewer5 = this.b;
+                Integer num2 = (Integer) obj;
+                FrameLayout frameLayout = photoViewer5.N7;
+                if (frameLayout != null && frameLayout.getVisibility() != 8) {
+                    photoViewer5.N7.setTranslationY(photoViewer5.M0.getTranslationY() - (photoViewer5.R1.getAlpha() * l.d.c(46.0f, photoViewer5.R1.getEditTextHeight(), 0)));
+                }
+                photoViewer5.b1.setTranslationY(photoViewer5.R1.getAlpha() * (-l.d.c(46.0f, num2.intValue(), 0)));
+                photoViewer5.c1.setTranslationY(photoViewer5.R1.getAlpha() * (-l.d.c(46.0f, num2.intValue(), 0)));
+                photoViewer5.d1.setTranslationY(photoViewer5.R1.getAlpha() * (-l.d.c(46.0f, num2.intValue(), 0)));
+                org.telegram.ui.Components.zh zhVar = photoViewer5.R1.J;
+                if (zhVar != null) {
+                    zhVar.setTranslationY((-num2.intValue()) - AndroidUtilities.dp(14.0f));
+                    break;
+                }
+                break;
+            case 6:
+                PhotoViewer photoViewer6 = this.b;
+                Integer num3 = (Integer) obj;
+                Object obj3 = photoViewer6.d7.get(photoViewer6.M4);
+                if (obj3 instanceof MediaController.PhotoEntry) {
+                    ((MediaController.PhotoEntry) obj3).ttl = num3.intValue();
+                } else if (obj3 instanceof MediaController.SearchImage) {
+                    ((MediaController.SearchImage) obj3).ttl = num3.intValue();
+                }
+                if (num3.intValue() != 0 && !photoViewer6.d.x(photoViewer6.M4)) {
+                    photoViewer6.M2();
+                }
+                photoViewer6.R1.setTimer(num3.intValue());
+                break;
+            case 7:
+                Integer num4 = (Integer) obj;
+                org.telegram.ui.Components.zh zhVar2 = this.b.S1.J;
+                if (zhVar2 != null) {
+                    zhVar2.setTranslationY(num4.intValue());
+                    break;
+                }
+                break;
+            case 8:
+                PhotoViewer photoViewer7 = this.b;
+                Drawable[] drawableArr2 = PhotoViewer.Q8;
+                photoViewer7.B0(0, false);
+                break;
+            default:
+                PhotoViewer photoViewer8 = this.b;
+                Drawable[] drawableArr3 = PhotoViewer.Q8;
+                photoViewer8.B0(0, false);
+                break;
         }
-        if (imageReceiver != photoViewer.z4 || !z4 || (hu0Var = photoViewer.d) == null || !hu0Var.J() || photoViewer.h5 || (i10 = photoViewer.Z1) == 1 || i10 == 11) {
-            return;
-        }
-        if (photoViewer.Q5) {
-            photoViewer.N2();
-        } else {
-            photoViewer.R5 = true;
-        }
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.j5.a(this, i10, str, drawable);
-    }
-
-    @Override // org.telegram.ui.ActionBar.c2
-    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
-        Drawable[] drawableArr = PhotoViewer.Q8;
-        this.a.e3(0);
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.j5.b(this, imageReceiver);
     }
 }

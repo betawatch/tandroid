@@ -1,6 +1,6 @@
 package r4;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class i {
     public final q4.d a;
@@ -20,52 +20,52 @@ public final class i {
     }
 
     public final i a(long j10, s4.m mVar) {
-        long q10;
-        long q11;
+        long t6;
+        long t9;
         h c3 = this.b.c();
         h c10 = mVar.c();
         if (c3 == null) {
             return new i(j10, mVar, this.c, this.a, this.f, c3);
         }
-        if (!c3.w()) {
+        if (!c3.A()) {
             return new i(j10, mVar, this.c, this.a, this.f, c10);
         }
-        long U = c3.U(j10);
-        if (U == 0) {
+        long F = c3.F(j10);
+        if (F == 0) {
             return new i(j10, mVar, this.c, this.a, this.f, c10);
         }
-        long S = c3.S();
-        long a2 = c3.a(S);
-        long j11 = U + S;
+        long C = c3.C();
+        long a2 = c3.a(C);
+        long j11 = F + C;
         long j12 = j11 - 1;
-        long e = c3.e(j12, j10) + c3.a(j12);
-        long S2 = c10.S();
-        long a10 = c10.a(S2);
+        long h = c3.h(j12, j10) + c3.a(j12);
+        long C2 = c10.C();
+        long a10 = c10.a(C2);
         long j13 = this.f;
-        if (e == a10) {
-            q10 = j11 - S2;
+        if (h == a10) {
+            t6 = j11 - C2;
         } else {
-            if (e < a10) {
+            if (h < a10) {
                 throw new o4.b();
             }
             if (a10 < a2) {
-                q11 = j13 - (c10.q(a2, j10) - S);
-                return new i(j10, mVar, this.c, this.a, q11, c10);
+                t9 = j13 - (c10.t(a2, j10) - C);
+                return new i(j10, mVar, this.c, this.a, t9, c10);
             }
-            q10 = c3.q(a10, j10) - S2;
+            t6 = c3.t(a10, j10) - C2;
         }
-        q11 = q10 + j13;
-        return new i(j10, mVar, this.c, this.a, q11, c10);
+        t9 = t6 + j13;
+        return new i(j10, mVar, this.c, this.a, t9, c10);
     }
 
     public final long b(long j10) {
         h hVar = this.d;
         long j11 = this.e;
-        return (hVar.W(j11, j10) + (hVar.j(j11, j10) + this.f)) - 1;
+        return (hVar.I(j11, j10) + (hVar.m(j11, j10) + this.f)) - 1;
     }
 
     public final long c(long j10) {
-        return this.d.e(j10 - this.f, this.e) + d(j10);
+        return this.d.h(j10 - this.f, this.e) + d(j10);
     }
 
     public final long d(long j10) {

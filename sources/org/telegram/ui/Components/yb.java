@@ -7,7 +7,7 @@ import android.graphics.RectF;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class yb extends FrameLayout {
     public final z5 a;
@@ -21,9 +21,9 @@ public final class yb extends FrameLayout {
     public yb(zb zbVar, Activity activity) {
         super(activity);
         this.f = zbVar;
-        nr nrVar = nr.h;
-        this.a = new z5(this, 320L, nrVar);
-        this.b = new z5(this, 320L, nrVar);
+        pr prVar = pr.h;
+        this.a = new z5(this, 320L, prVar);
+        this.b = new z5(this, 320L, prVar);
         Paint paint = new Paint(1);
         this.c = paint;
         paint.setStyle(Paint.Style.STROKE);
@@ -39,7 +39,7 @@ public final class yb extends FrameLayout {
     public final void onDraw(Canvas canvas) {
         zb zbVar = this.f;
         float d = this.a.d(zbVar.a, false);
-        float e = this.b.e(zbVar.a >= 1.0f);
+        float e6 = this.b.e(zbVar.a >= 1.0f);
         float width = getWidth() / 2.0f;
         float height = getHeight() / 2.0f;
         float dpf2 = width - AndroidUtilities.dpf2(13.0f);
@@ -51,15 +51,15 @@ public final class yb extends FrameLayout {
         float currentTimeMillis = ((System.currentTimeMillis() - this.e) * 0.45f) % 5400.0f;
         float max = Math.max(0.0f, ((1520.0f * currentTimeMillis) / 5400.0f) - 20.0f);
         for (int i10 = 0; i10 < 4; i10++) {
-            u1.a aVar = rp.h;
+            u1.a aVar = tp.h;
             aVar.getInterpolation((currentTimeMillis - (i10 * 1350)) / 667.0f);
             max += aVar.getInterpolation((currentTimeMillis - (r8 + 667)) / 667.0f) * 250.0f;
         }
-        int l1 = org.telegram.ui.ActionBar.j6.l1((1.0f - e) * 1.0f, -1);
+        int l1 = org.telegram.ui.ActionBar.k6.l1((1.0f - e6) * 1.0f, -1);
         Paint paint = this.c;
         paint.setColor(l1);
         canvas.drawArc(rectF, (-90.0f) - max, Math.max(0.02f, d) * (-360.0f), false, paint);
-        if (d < 1.0f && e < 1.0f) {
+        if (d < 1.0f && e6 < 1.0f) {
             invalidate();
         }
         super.onDraw(canvas);

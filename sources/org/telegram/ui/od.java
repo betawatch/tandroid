@@ -7,7 +7,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class od implements Runnable {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class od implements Runnable {
                 break;
             case 1:
                 od odVar = keVar.f1;
-                lh.n nVar = keVar.V0;
+                mh.m mVar = keVar.V0;
                 org.telegram.ui.Components.ic.e();
                 if (keVar.K0.amount < MessagesController.getInstance(i11).starsRevenueWithdrawalMin) {
                     keVar.T0 = true;
@@ -41,8 +41,8 @@ public final /* synthetic */ class od implements Runnable {
                     keVar.U0 = MessagesController.getInstance(i11).starsRevenueWithdrawalMin;
                 }
                 keVar.S0 = true;
-                nVar.setText(Long.toString(keVar.U0));
-                nVar.setSelection(nVar.getText().length());
+                mVar.setText(Long.toString(keVar.U0));
+                mVar.setSelection(mVar.getText().length());
                 keVar.S0 = false;
                 AndroidUtilities.cancelRunOnUIThread(odVar);
                 odVar.run();
@@ -54,24 +54,24 @@ public final /* synthetic */ class od implements Runnable {
                 beVar.setEnabled(keVar.U0 > 0 || keVar.I0 > currentTime);
                 if (currentTime >= keVar.I0) {
                     beVar.f(null, true);
-                    beVar.g(lh.ja.V0(false, keVar.T0 ? LocaleController.getString(R.string.MonetizationStarsWithdrawAll) : LocaleController.formatPluralStringSpaced("MonetizationStarsWithdraw", (int) keVar.U0), keVar.O0), true, true);
+                    beVar.g(mh.ja.V0(false, keVar.T0 ? LocaleController.getString(R.string.MonetizationStarsWithdrawAll) : LocaleController.formatPluralStringSpaced("MonetizationStarsWithdraw", (int) keVar.U0), keVar.O0), true, true);
                     break;
                 } else {
                     beVar.g(LocaleController.getString(R.string.MonetizationStarsWithdrawUntil), true, true);
                     if (keVar.e1 == null) {
                         keVar.e1 = new SpannableStringBuilder("l");
-                        org.telegram.ui.Components.mq mqVar = new org.telegram.ui.Components.mq(R.drawable.mini_switch_lock, 0);
-                        mqVar.setTopOffset(1);
-                        keVar.e1.setSpan(mqVar, 0, 1, 33);
+                        org.telegram.ui.Components.oq oqVar = new org.telegram.ui.Components.oq(R.drawable.mini_switch_lock, 0);
+                        oqVar.setTopOffset(1);
+                        keVar.e1.setSpan(oqVar, 0, 1, 33);
                     }
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                    spannableStringBuilder.append((CharSequence) keVar.e1).append((CharSequence) lh.q.j0(keVar.I0 - currentTime));
+                    spannableStringBuilder.append((CharSequence) keVar.e1).append((CharSequence) mh.p.j0(keVar.I0 - currentTime));
                     beVar.f(spannableStringBuilder, true);
                     org.telegram.ui.Components.ic icVar = keVar.W0;
                     if (icVar != null) {
                         org.telegram.ui.Components.nb nbVar = icVar.e;
                         if ((nbVar instanceof org.telegram.ui.Components.qb) && nbVar.isAttachedToWindow()) {
-                            b.o(R.string.BotStarsWithdrawalToast, new Object[]{lh.q.j0(keVar.I0 - currentTime)}, ((org.telegram.ui.Components.qb) keVar.W0.e).b);
+                            b.o(R.string.BotStarsWithdrawalToast, new Object[]{mh.p.j0(keVar.I0 - currentTime)}, ((org.telegram.ui.Components.qb) keVar.W0.e).b);
                         }
                     }
                     AndroidUtilities.cancelRunOnUIThread(odVar2);

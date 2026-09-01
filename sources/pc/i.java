@@ -1,18 +1,18 @@
 package pc;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class i extends j {
     @Override // pc.j, n3.a
-    public final /* bridge */ /* synthetic */ n3.a h() {
-        h();
+    public final /* bridge */ /* synthetic */ n3.a g() {
+        g();
         return this;
     }
 
     @Override // pc.j
-    /* renamed from: s */
-    public final j h() {
-        super.h();
+    /* renamed from: r */
+    public final j g() {
+        super.g();
         this.v = new oc.b();
         return this;
     }
@@ -21,8 +21,8 @@ public final class i extends j {
     public final String toString() {
         oc.b bVar = this.v;
         if (bVar == null || bVar.a <= 0) {
-            return "<" + q() + ">";
+            return "<" + o() + ">";
         }
-        return "<" + q() + " " + this.v.toString() + ">";
+        return "<" + o() + " " + this.v.toString() + ">";
     }
 }

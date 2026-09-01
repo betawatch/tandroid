@@ -1,41 +1,98 @@
 package dg;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.view.View;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.kv0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class d2 extends View {
-    public int a;
-    public float b;
-    public final /* synthetic */ e2 c;
+public final class d2 {
+    public o1 a;
+    public i1 b;
+    public Paint c;
+    public Paint d;
+    public Paint e;
+    public Paint f;
+    public Paint g;
+    public r1 h;
+    public float i;
+    public float j;
+    public c2 k;
+    public z1 l;
+    public ArrayList m;
+    public ArrayList n;
+    public Matrix o;
+    public float[] p;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d2(e2 e2Var, Context context) {
-        super(context);
-        this.c = e2Var;
-        setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
-        setLayoutParams(new f2.w0(-2, 0));
+    public static float a(float f10, float f11, float f12, float f13, float f14, float f15) {
+        float f16 = f14 - f12;
+        float f17 = f15 - f13;
+        float max = Math.max(Math.min((((f11 - f13) * f17) + ((f10 - f12) * f16)) / ((f17 * f17) + (f16 * f16)), 1.0f), 0.0f);
+        float f18 = ((f16 * max) + f12) - f10;
+        float f19 = ((max * f17) + f13) - f11;
+        return (float) Math.sqrt((f19 * f19) + (f18 * f18));
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        e2 e2Var = this.c;
-        e2Var.U2.setColor(this.a);
-        float min = Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f;
-        if (this.b != 0.0f) {
-            min -= (e2Var.V2.getStrokeWidth() + AndroidUtilities.dp(3.0f)) * this.b;
+    public final void b(Canvas canvas, kv0 kv0Var, c2 c2Var) {
+        float width = (c2Var.d / kv0Var.a) * canvas.getWidth();
+        float height = (c2Var.e / kv0Var.b) * canvas.getHeight();
+        float dp = AndroidUtilities.dp(5.0f);
+        boolean z4 = c2Var.a;
+        canvas.drawCircle(width, height, dp, z4 ? this.d : this.f);
+        canvas.drawCircle((c2Var.d / kv0Var.a) * canvas.getWidth(), (c2Var.e / kv0Var.b) * canvas.getHeight(), AndroidUtilities.dp(5.0f), z4 ? this.e : this.g);
+    }
+
+    public final void c(float f10, float f11, boolean z4) {
+        float[] fArr = this.p;
+        fArr[0] = f10;
+        fArr[1] = f11;
+        d(z4);
+    }
+
+    public final void d(boolean z4) {
+        float[] fArr = this.p;
+        r1 r1Var = this.h;
+        if (r1Var != null) {
+            float f10 = r1Var.h;
+            if (f10 != 0.0f) {
+                float f11 = fArr[0] - r1Var.b;
+                fArr[0] = f11;
+                fArr[1] = fArr[1] - r1Var.c;
+                double d = f10 * (z4 ? -1 : 1);
+                float cos = (float) ((Math.cos(d) * f11) - (Math.sin(d) * fArr[1]));
+                float a2 = (float) l.d.a(d, fArr[1], Math.sin(d) * fArr[0]);
+                r1 r1Var2 = this.h;
+                fArr[0] = cos + r1Var2.b;
+                fArr[1] = a2 + r1Var2.c;
+            }
         }
-        float width = ((getWidth() / 2.0f) + getPaddingLeft()) - getPaddingRight();
-        float height = ((getHeight() / 2.0f) + getPaddingTop()) - getPaddingBottom();
-        e2.x1(width, height, min, this.a, canvas);
-        if (this.b != 0.0f) {
-            e2Var.V2.setColor(this.a);
-            e2Var.V2.setAlpha(255);
-            canvas.drawCircle(width, height, (Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f) - AndroidUtilities.dp(2.0f), e2Var.V2);
+    }
+
+    public final void e() {
+        r1 r1Var;
+        o1 o1Var = this.a;
+        if (o1Var == null || o1Var.getPainting() == null || (r1Var = this.h) == null) {
+            return;
         }
+        r1Var.f = o1Var.getCurrentWeight();
+        c1 painting = o1Var.getPainting();
+        r1 r1Var2 = this.h;
+        int currentColor = o1Var.getCurrentColor();
+        if (r1Var2 == null) {
+            painting.getClass();
+        } else if (painting.r != null) {
+            painting.f.f(new bh.a(painting, r1Var2, currentColor, 1));
+        }
+        this.m.clear();
+        this.n.clear();
+        this.h = null;
+        n1 n1Var = o1Var.a;
+        if (n1Var != null) {
+            n1Var.c();
+        }
+        o1Var.e.z = true;
     }
 }

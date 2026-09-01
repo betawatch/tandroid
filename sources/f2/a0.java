@@ -3,7 +3,7 @@ package f2;
 import android.view.animation.Interpolator;
 import org.telegram.messenger.y3;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a0 implements Interpolator {
     public final /* synthetic */ int a;
@@ -19,10 +19,10 @@ public final class a0 implements Interpolator {
                 return f10 * f10 * f10 * f10 * f10;
             case 1:
             case 2:
-            case 4:
+            case 3:
                 float f11 = f10 - 1.0f;
                 return (f11 * f11 * f11 * f11 * f11) + 1.0f;
-            case 3:
+            case 4:
                 return (float) Math.pow(f10, 2.0d);
             default:
                 if (f10 < 0.33f) {

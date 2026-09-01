@@ -1,86 +1,33 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.webkit.CookieManager;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Components.RadialProgressView;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class nt0 extends org.telegram.ui.Components.vf0 {
-    public final Rect J;
-    public final /* synthetic */ PhotoViewer K;
+public final class nt0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ ot0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nt0(PhotoViewer photoViewer, PhotoViewer photoViewer2, Context context, org.telegram.ui.ActionBar.g1 g1Var) {
-        super(context);
-        this.K = photoViewer;
-        this.a = UserConfig.selectedAccount;
-        this.v = new ArrayList();
-        this.I = new org.telegram.ui.Components.cc0(this, 10);
-        this.b = photoViewer2;
-        this.r = g1Var;
-        org.telegram.ui.Components.ju juVar = new org.telegram.ui.Components.ju(this, context, context, 1);
-        this.f = juVar;
-        juVar.getSettings().setJavaScriptEnabled(true);
-        juVar.getSettings().setDomStorageEnabled(true);
-        juVar.getSettings().setMediaPlaybackRequiresUserGesture(false);
-        juVar.getSettings().setMixedContentMode(0);
-        CookieManager.getInstance().setAcceptThirdPartyCookies(juVar, true);
-        juVar.setWebViewClient(new org.telegram.ui.Components.rf0(this, 0));
-        addView(juVar, k7.b6.e(-1, -1, 51));
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.c = linearLayout;
-        linearLayout.setOrientation(1);
-        linearLayout.setGravity(17);
-        linearLayout.setVisibility(8);
-        addView(linearLayout, k7.b6.e(-2, -2, 17));
-        TextView textView = new TextView(context);
-        this.d = textView;
-        textView.setTextSize(1, 16.0f);
-        yh.t(org.telegram.ui.ActionBar.j6.y6, null, false, textView, 17);
-        linearLayout.addView(textView, k7.b6.q(-2, -2, 1));
-        TextView textView2 = new TextView(context);
-        this.e = textView2;
-        textView2.setTextSize(1, 16.0f);
-        int i10 = org.telegram.ui.ActionBar.j6.n6;
-        textView2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
-        textView2.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f));
-        int i11 = org.telegram.ui.ActionBar.z5.a;
-        textView2.setBackground(org.telegram.ui.ActionBar.z5.d(new float[]{12.0f}, 0, org.telegram.ui.ActionBar.z5.b(org.telegram.ui.ActionBar.j6.w0(null, i10, false))));
-        textView2.setVisibility(8);
-        linearLayout.addView(textView2, k7.b6.t(-2, -2, 1, 0, 8, 0, 0));
-        eg.h0 h0Var = new eg.h0(this, context, 15);
-        this.h = h0Var;
-        h0Var.setBackgroundColor(-16777216);
-        h0Var.setVisibility(4);
-        addView(h0Var, k7.b6.c(-1.0f, -1));
-        RadialProgressView radialProgressView = new RadialProgressView(context, null);
-        this.n = radialProgressView;
-        radialProgressView.setVisibility(4);
-        addView(radialProgressView, k7.b6.e(-2, -2, 17));
-        this.J = new Rect();
+    public nt0(ot0 ot0Var) {
+        this.a = ot0Var;
     }
 
-    public final void j(Canvas canvas, int i10, int i11) {
-        Bitmap bitmap = this.K.z4.getBitmap();
-        if (bitmap != null) {
-            float min = Math.min(i10 / bitmap.getWidth(), i11 / bitmap.getHeight());
-            int width = (int) (bitmap.getWidth() * min);
-            int height = (int) (bitmap.getHeight() * min);
-            int i12 = (i11 - height) / 2;
-            int i13 = (i10 - width) / 2;
-            Rect rect = this.J;
-            rect.set(i13, i12, width + i13, height + i12);
-            canvas.drawBitmap(bitmap, (Rect) null, rect, (Paint) null);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        super.onAnimationEnd(animator);
+        ot0 ot0Var = this.a;
+        PhotoViewer photoViewer = ot0Var.c;
+        photoViewer.k4 = 0;
+        photoViewer.F1();
+        photoViewer.I0.setAlpha(255);
+        photoViewer.b0.invalidate();
+        photoViewer.M0.setTranslationY(0.0f);
+        if (photoViewer.q4) {
+            PhotoViewer.a0(photoViewer, ot0Var.b.intValue());
+        }
+        ju0 ju0Var = ot0Var.a;
+        if (ju0Var != null) {
+            ju0Var.d();
         }
     }
 }

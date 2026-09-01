@@ -6,7 +6,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class l00 extends u00 {
     public final /* synthetic */ m00 B;
@@ -27,7 +27,7 @@ public final class l00 extends u00 {
 
     @Override // org.telegram.ui.u00
     public final void c() {
-        org.telegram.ui.Components.o70 F = org.telegram.ui.Components.o70.F(this.B.d.container, null, this);
+        org.telegram.ui.Components.q70 F = org.telegram.ui.Components.q70.F(this.B.d.container, null, this);
         final int i10 = 0;
         F.c(R.drawable.msg_copy, LocaleController.getString(R.string.CopyLink), new Runnable(this) { // from class: org.telegram.ui.k00
             public final /* synthetic */ l00 b;

@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class p7 extends org.telegram.ui.Cells.r7 {
     public final /* synthetic */ q7 D0;
@@ -15,6 +15,6 @@ public final class p7 extends org.telegram.ui.Cells.r7 {
 
     @Override // org.telegram.ui.Cells.r7
     public final void h() {
-        this.D0.v.v.r(null, (mh.a) getTag(), true);
+        this.D0.v.v.Y(null, (nh.a) getTag(), true);
     }
 }

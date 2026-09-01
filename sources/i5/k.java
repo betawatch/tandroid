@@ -14,7 +14,7 @@ import android.os.Message;
 import h5.d0;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class k extends HandlerThread implements Handler.Callback {
     public h5.f a;
@@ -130,21 +130,21 @@ public final class k extends HandlerThread implements Handler.Callback {
                         notify();
                     }
                     return true;
-                } catch (h5.h e) {
-                    h5.a.p("PlaceholderSurface", "Failed to initialize placeholder surface", e);
-                    this.d = new IllegalStateException(e);
-                    synchronized (this) {
-                        notify();
-                    }
-                } catch (Error e6) {
+                } catch (h5.h e6) {
                     h5.a.p("PlaceholderSurface", "Failed to initialize placeholder surface", e6);
-                    this.c = e6;
+                    this.d = new IllegalStateException(e6);
                     synchronized (this) {
                         notify();
                     }
-                } catch (RuntimeException e10) {
+                } catch (Error e10) {
                     h5.a.p("PlaceholderSurface", "Failed to initialize placeholder surface", e10);
-                    this.d = e10;
+                    this.c = e10;
+                    synchronized (this) {
+                        notify();
+                    }
+                } catch (RuntimeException e11) {
+                    h5.a.p("PlaceholderSurface", "Failed to initialize placeholder surface", e11);
+                    this.d = e11;
                     synchronized (this) {
                         notify();
                     }

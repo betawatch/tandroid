@@ -1,259 +1,83 @@
 package zf;
 
-import android.app.Activity;
-import android.content.SharedPreferences;
-import android.content.res.Configuration;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.util.DisplayMetrics;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.Window;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
-import java.util.List;
-import k7.n;
-import o1.j;
-import o1.k;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.e5;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.z;
-import org.telegram.ui.Components.nq;
-import org.telegram.ui.Components.sl0;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.c21;
-import org.telegram.ui.yh;
-import ph.z4;
+import android.view.ViewTreeObserver;
+import org.telegram.messenger.MediaController;
+import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class i extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
-    public ArrayList B;
-    public int C;
-    public z4 a;
-    public nq b;
-    public j c;
-    public j d;
-    public SharedPreferences e;
-    public boolean f;
-    public boolean h;
-    public boolean n;
-    public c r;
-    public boolean s;
-    public int v;
-    public LinearLayout w;
-    public TextView x;
-    public sl0 y;
+public final class i implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ MediaController.CropState a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ n d;
 
-    public static float a(DisplayMetrics displayMetrics, float f10) {
-        return n.a(f10, AndroidUtilities.dp(16.0f), displayMetrics.widthPixels - AndroidUtilities.dp(72.0f));
+    public i(n nVar, MediaController.CropState cropState, int i10, int i11) {
+        this.d = nVar;
+        this.a = cropState;
+        this.b = i10;
+        this.c = i11;
     }
 
-    public static float b(DisplayMetrics displayMetrics, float f10) {
-        return n.a(f10, AndroidUtilities.dp(16.0f), displayMetrics.heightPixels - AndroidUtilities.dp(72.0f));
-    }
-
-    private List<a> getBuiltInDebugItems() {
-        ArrayList arrayList = new ArrayList();
-        arrayList.add(new a("Theme"));
-        arrayList.add(new a("Draw action bar shadow", new c21(19)));
-        arrayList.add(new a("Show blur settings", new c(this, 0)));
-        arrayList.add(new a(LocaleController.getString(R.string.DebugGeneral)));
-        arrayList.add(new a(LocaleController.getString(SharedConfig.debugWebView ? R.string.DebugMenuDisableWebViewDebug : R.string.DebugMenuEnableWebViewDebug), new c(this, 1)));
-        arrayList.add(new a(j6.I.q() ? "Switch to day theme" : "Switch to dark theme", new c21(20)));
-        arrayList.add(new a(LocaleController.getString(R.string.DebugSendLogs), new c(this, 2)));
-        return arrayList;
-    }
-
-    public final void c(final boolean z4) {
-        z4 z4Var = this.a;
-        ArrayList arrayList = this.B;
-        if (this.s == z4) {
-            return;
-        }
-        this.s = z4;
-        if (z4) {
-            this.w.setVisibility(0);
-            arrayList.clear();
-            if (getContext() instanceof LaunchActivity) {
-                e5 O = ((LaunchActivity) getContext()).O();
-                if (O instanceof b) {
-                    arrayList.addAll(((b) O).B());
-                }
-                ActionBarLayout actionBarLayout = ((LaunchActivity) getContext()).p0;
-                if (actionBarLayout != null) {
-                    arrayList.addAll(actionBarLayout.B());
-                }
-                ActionBarLayout actionBarLayout2 = ((LaunchActivity) getContext()).o0;
-                if (actionBarLayout2 != null) {
-                    arrayList.addAll(actionBarLayout2.B());
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        float f10;
+        float f11;
+        n nVar = this.d;
+        nVar.l(false);
+        CropAreaView cropAreaView = nVar.a;
+        MediaController.CropState cropState = this.a;
+        if (cropState != null) {
+            float f12 = cropState.lockedAspectRatio;
+            if (f12 > 1.0E-4f) {
+                cropAreaView.setLockedAspectRatio(f12);
+                m mVar = nVar.J;
+                if (mVar != null) {
+                    mVar.F(true);
                 }
             }
-            arrayList.addAll(getBuiltInDebugItems());
-            this.y.getAdapter().l();
-        }
-        final Window window = ((Activity) getContext()).getWindow();
-        if (z4) {
-            this.v = window.getStatusBarColor();
-        }
-        final float translationX = z4Var.getTranslationX();
-        final float translationY = z4Var.getTranslationY();
-        j jVar = new j(new kb.a(z4 ? 0.0f : 1000.0f));
-        k n10 = yh.n(1000.0f, 900.0f, 1.0f);
-        n10.i = z4 ? 1000.0f : 0.0f;
-        jVar.u = n10;
-        jVar.b(new o1.g() { // from class: zf.d
-            @Override // o1.g
-            public final void a(o1.h hVar, float f10, float f11) {
-                float f12 = f10 / 1000.0f;
-                i iVar = i.this;
-                LinearLayout linearLayout = iVar.w;
-                linearLayout.setAlpha(f12);
-                float dp = AndroidUtilities.dp(8.0f);
-                float f13 = translationX;
-                linearLayout.setTranslationX(AndroidUtilities.lerp(f13 - dp, 0.0f, f12));
-                float dp2 = AndroidUtilities.dp(8.0f);
-                float f14 = translationY;
-                linearLayout.setTranslationY(AndroidUtilities.lerp(f14 - dp2, 0.0f, f12));
-                z4 z4Var2 = iVar.a;
-                linearLayout.setPivotX(z4Var2.getTranslationX() + AndroidUtilities.dp(28.0f));
-                linearLayout.setPivotY(z4Var2.getTranslationY() + AndroidUtilities.dp(28.0f));
-                if (linearLayout.getWidth() != 0) {
-                    linearLayout.setScaleX(AndroidUtilities.lerp(z4Var2.getWidth() / linearLayout.getWidth(), 1.0f, f12));
-                }
-                if (linearLayout.getHeight() != 0) {
-                    linearLayout.setScaleY(AndroidUtilities.lerp(z4Var2.getHeight() / linearLayout.getHeight(), 1.0f, f12));
-                }
-                z4Var2.setTranslationX(AndroidUtilities.lerp(f13, (iVar.getWidth() / 2.0f) - AndroidUtilities.dp(28.0f), f12));
-                z4Var2.setTranslationY(AndroidUtilities.lerp(f14, (iVar.getHeight() / 2.0f) - AndroidUtilities.dp(28.0f), f12));
-                z4Var2.setAlpha(1.0f - f12);
-                window.setStatusBarColor(i0.a.d(f12, iVar.v, 2046820352));
-                iVar.invalidate();
+            nVar.setFreeform(cropState.freeform);
+            float aspectRatio = cropAreaView.getAspectRatio();
+            int i10 = cropState.transformRotation;
+            int i11 = this.b;
+            int i12 = this.c;
+            if (i10 == 90 || i10 == 270) {
+                aspectRatio = 1.0f / aspectRatio;
+                l lVar = nVar.I;
+                f10 = lVar.b;
+                f11 = lVar.a;
+            } else {
+                l lVar2 = nVar.I;
+                f10 = lVar2.a;
+                f11 = lVar2.b;
+                i12 = i11;
+                i11 = i12;
             }
-        });
-        jVar.a(new o1.f() { // from class: zf.e
-            @Override // o1.f
-            public final void a(o1.h hVar, boolean z10, float f10, float f11) {
-                i iVar = i.this;
-                z4 z4Var2 = iVar.a;
-                z4Var2.setTranslationX(translationX);
-                z4Var2.setTranslationY(translationY);
-                if (z4) {
-                    return;
-                }
-                iVar.w.setVisibility(8);
+            if (!nVar.x || cropAreaView.getLockAspectRatio() <= 0.0f) {
+                cropAreaView.e(nVar.getCurrentWidth(), nVar.getCurrentHeight(), (((float) i10) + nVar.I.g) % 180.0f != 0.0f, nVar.x);
+            } else {
+                cropAreaView.setLockedAspectRatio(1.0f / cropAreaView.getLockAspectRatio());
+                cropAreaView.setActualRect(cropAreaView.getLockAspectRatio());
             }
-        });
-        jVar.f();
-    }
-
-    public final void d() {
-        z h02 = j6.h0(AndroidUtilities.dp(56.0f), j6.w0(null, j6.P9, false), j6.w0(null, j6.Q9, false));
-        Drawable mutate = getResources().getDrawable(R.drawable.floating_shadow).mutate();
-        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-        mutate.setColorFilter(new PorterDuffColorFilter(-16777216, mode));
-        nq nqVar = new nq(mutate, h02, 0, 0);
-        int dp = AndroidUtilities.dp(56.0f);
-        int dp2 = AndroidUtilities.dp(56.0f);
-        nqVar.e = dp;
-        nqVar.f = dp2;
-        this.b = nqVar;
-        Drawable drawable = getResources().getDrawable(R.drawable.popup_fixed_alert3);
-        drawable.setColorFilter(new PorterDuffColorFilter(j6.w0(null, j6.h5, false), mode));
-        this.w.setBackground(drawable);
-        this.x.setTextColor(j6.w0(null, j6.j5, false));
-        invalidate();
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.didSetNewTheme) {
-            d();
-            this.y.getAdapter().l();
+            l.d(nVar.I, i10);
+            cropAreaView.setActualRect((aspectRatio * cropState.cropPw) / cropState.cropPh);
+            l lVar3 = nVar.I;
+            lVar3.j = cropState.mirrored;
+            l.e(lVar3, cropState.cropRotate);
+            l lVar4 = nVar.I;
+            float f13 = cropState.cropPx * i11;
+            float f14 = lVar4.f;
+            l.f(lVar4, f13 * f14, cropState.cropPy * i12 * f14);
+            float max = Math.max(cropAreaView.getCropWidth() / f10, cropAreaView.getCropHeight() / f11);
+            l lVar5 = nVar.I;
+            l.g(lVar5, cropState.cropScale * (max / lVar5.f), 0.0f, 0.0f);
+            nVar.r(false);
+            m mVar2 = nVar.J;
+            if (mVar2 != null) {
+                mVar2.N(false);
+            }
         }
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        LinearLayout linearLayout = this.w;
-        if (view == linearLayout) {
-            canvas.drawColor(Color.argb((int) (linearLayout.getAlpha() * 122.0f), 0, 0, 0));
-        }
-        return super.drawChild(canvas, view, j10);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        SharedPreferences sharedPreferences = this.e;
-        float f10 = sharedPreferences.getFloat("x", -1.0f);
-        float f11 = sharedPreferences.getFloat("y", -1.0f);
-        DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-        z4 z4Var = this.a;
-        z4Var.setTranslationX((f10 == -1.0f || f10 >= ((float) displayMetrics.widthPixels) / 2.0f) ? a(displayMetrics, 2.14748365E9f) : a(displayMetrics, -2.14748365E9f));
-        z4Var.setTranslationY(f11 == -1.0f ? b(displayMetrics, 2.14748365E9f) : b(displayMetrics, f11));
-        j jVar = new j(z4Var, o1.h.m, z4Var.getTranslationX());
-        k kVar = new k(z4Var.getTranslationX());
-        kVar.b(650.0f);
-        kVar.a(0.75f);
-        jVar.u = kVar;
-        this.c = jVar;
-        j jVar2 = new j(z4Var, o1.h.n, z4Var.getTranslationY());
-        k kVar2 = new k(z4Var.getTranslationY());
-        kVar2.b(650.0f);
-        kVar2.a(0.75f);
-        jVar2.u = kVar2;
-        this.d = jVar2;
-        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.didSetNewTheme);
-    }
-
-    @Override // android.view.View
-    public final void onConfigurationChanged(Configuration configuration) {
-        super.onConfigurationChanged(configuration);
-        this.c.c();
-        this.d.c();
-        DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-        z4 z4Var = this.a;
-        z4Var.setTranslationX(a(displayMetrics, z4Var.getTranslationX() >= ((float) displayMetrics.widthPixels) / 2.0f ? 2.14748365E9f : -2.14748365E9f));
-        z4Var.setTranslationY(b(displayMetrics, z4Var.getTranslationY()));
-        this.c.u.i = z4Var.getTranslationX();
-        this.d.u.i = z4Var.getTranslationY();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.c.c();
-        this.d.c();
-        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.didSetNewTheme);
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        canvas.save();
-        z4 z4Var = this.a;
-        canvas.translate(z4Var.getTranslationX(), z4Var.getTranslationY());
-        canvas.scale(z4Var.getScaleX(), z4Var.getScaleY(), z4Var.getPivotX(), z4Var.getPivotY());
-        this.b.setAlpha((int) (z4Var.getAlpha() * 255.0f));
-        this.b.setBounds(z4Var.getLeft(), z4Var.getTop(), z4Var.getRight(), z4Var.getBottom());
-        this.b.draw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return this.s;
+        cropAreaView.getViewTreeObserver().removeOnPreDrawListener(this);
+        return false;
     }
 }

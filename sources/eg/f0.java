@@ -1,88 +1,156 @@
 package eg;
 
-import org.telegram.messenger.ChannelBoostsController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.h90;
-import ph.a6;
-import ph.b6;
-import ph.z5;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f0 implements h5.d {
+public final /* synthetic */ class f0 implements g6, rg.c {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ g6 b;
 
-    public /* synthetic */ f0(Object obj, Object obj2, Object obj3, int i10) {
+    public /* synthetic */ f0(int i10, g6 g6Var) {
         this.a = i10;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
+        this.b = g6Var;
     }
 
-    @Override // h5.d
-    public final void accept(Object obj) {
-        TLRPC.ChatFull t12;
-        switch (this.a) {
-            case 0:
-                v0 v0Var = (v0) this.b;
-                h90 h90Var = (h90) this.c;
-                TL_stories.TL_premium_myBoosts tL_premium_myBoosts = (TL_stories.TL_premium_myBoosts) this.d;
-                TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
-                v0Var.getClass();
-                h90Var.setLoading(false);
-                if (tL_premium_boostsStatus != null) {
-                    v0Var.Y.boosts++;
-                    if (v0Var.e0 == 32 && (t12 = v0Var.t1()) != null) {
-                        t12.boosts_applied++;
-                    }
-                    v0Var.z1();
-                    v0Var.F1(tL_premium_boostsStatus, v0Var.b0);
-                    ChannelBoostsController.CanApplyBoost canApplyBoost = v0Var.Z;
-                    canApplyBoost.isMaxLvl = v0Var.Y.next_level_boosts <= 0;
-                    canApplyBoost.boostedNow = true;
-                    canApplyBoost.setMyBoosts(tL_premium_myBoosts);
-                    v0Var.B1();
-                    break;
-                }
-                break;
-            case 1:
-                z5 z5Var = (z5) this.b;
-                MessagesController messagesController = (MessagesController) this.c;
-                String str = (String) this.d;
-                Long l10 = (Long) obj;
-                if (l10 != null) {
-                    TLObject userOrChat = messagesController.getUserOrChat(l10.longValue());
-                    if (!(userOrChat instanceof TLRPC.User)) {
-                        if (userOrChat instanceof TLRPC.Chat) {
-                            z5Var.run(new b6(str, (TLRPC.Chat) userOrChat));
-                            break;
-                        }
-                    } else {
-                        z5Var.run(new a6(str, (TLRPC.User) userOrChat));
-                        break;
-                    }
-                } else {
-                    z5Var.run(null);
-                    break;
-                }
-                break;
-            default:
-                org.telegram.ui.ActionBar.d2 d2Var = (org.telegram.ui.ActionBar.d2) this.b;
-                Utilities.Callback callback = (Utilities.Callback) this.c;
-                TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) this.d;
-                d2Var.dismiss();
-                if (((Boolean) obj).booleanValue() && callback != null) {
-                    callback.run(inputPeer);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.ActionBar.g6
+    public int B0(int i10) {
+        if (i10 == k6.G8) {
+            return -14145495;
         }
+        if (i10 == k6.E8) {
+            return -1;
+        }
+        if (i10 == k6.h5) {
+            return -14737633;
+        }
+        if (i10 == k6.j5) {
+            return -592138;
+        }
+        if (i10 == k6.r5) {
+            return -8553091;
+        }
+        if (i10 == k6.He) {
+            return -16777216;
+        }
+        if (i10 == k6.Ke) {
+            return -1610612736;
+        }
+        if (i10 == k6.Ne || i10 == k6.Re || i10 == k6.Me) {
+            return -9539985;
+        }
+        if (i10 == k6.G6) {
+            return -1;
+        }
+        int i11 = k6.Mh;
+        if (i10 == i11) {
+            return -11754001;
+        }
+        if (i10 == k6.i6) {
+            return 536870911;
+        }
+        if (i10 == k6.Fh || i10 == k6.Eh || i10 == k6.Gh) {
+            return -1;
+        }
+        if (i10 == k6.Hh) {
+            return 352321535;
+        }
+        if (i10 == k6.Je || i10 == i11) {
+            return -7895161;
+        }
+        if (i10 == k6.Ie) {
+            return 780633991;
+        }
+        if (i10 == k6.a7) {
+            return -15921907;
+        }
+        if (i10 == k6.m7) {
+            return -12500671;
+        }
+        if (i10 == k6.l7) {
+            return -13133079;
+        }
+        if (i10 == k6.n7) {
+            return -1;
+        }
+        if (i10 == k6.d6) {
+            return -15198183;
+        }
+        if (i10 == k6.d7) {
+            return -16777216;
+        }
+        g6 g6Var = this.b;
+        return g6Var != null ? g6Var.B0(i10) : k6.w0(null, i10, false);
+    }
+
+    @Override // org.telegram.ui.ActionBar.g6
+    public Paint F(String str) {
+        return k6.S0(str);
+    }
+
+    @Override // org.telegram.ui.ActionBar.g6
+    public int Z0(int i10) {
+        return B0(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.g6
+    public boolean a() {
+        return k6.I.q();
+    }
+
+    @Override // org.telegram.ui.ActionBar.g6
+    public int e0(int i10) {
+        return B0(i10);
+    }
+
+    @Override // rg.c
+    public int g(g6 g6Var, boolean z4) {
+        switch (this.a) {
+            case 1:
+                if (sg.b.c(UserConfig.selectedAccount, this.b)) {
+                    return k6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, k6.v0(k6.Sd, g6Var));
+                }
+                return i0.a.k(k6.v0(k6.Sd, g6Var), 255);
+            case 2:
+                if (sg.b.c(UserConfig.selectedAccount, this.b)) {
+                    return k6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, k6.v0(k6.ce, g6Var));
+                }
+                return i0.a.k(k6.v0(z4 ? k6.s8 : k6.ce, g6Var), 255);
+            default:
+                if (sg.b.c(UserConfig.selectedAccount, this.b)) {
+                    return k6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, k6.v0(k6.ce, g6Var));
+                }
+                return i0.a.k(k6.v0(z4 ? k6.s8 : k6.ce, g6Var), 255);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.g6
+    public /* synthetic */ Drawable getDrawable(String str) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.ActionBar.g6
+    public void l(float f10, float f11, int i10, int i11) {
+        k6.q(f10, f11, i10, i11);
+    }
+
+    @Override // org.telegram.ui.ActionBar.g6
+    public /* synthetic */ boolean o0() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.g6
+    public ColorFilter w() {
+        return k6.v3;
+    }
+
+    @Override // org.telegram.ui.ActionBar.g6
+    public /* synthetic */ void J0(int i10, int i11) {
     }
 }

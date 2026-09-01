@@ -12,9 +12,9 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.hb1;
+import org.telegram.ui.ib1;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class o8 extends qv0 {
     public final c5.e t0;
@@ -99,7 +99,7 @@ public final class o8 extends qv0 {
         if (view != kVar || w8Var.K <= 0.0f) {
             canvas2 = canvas;
         } else {
-            paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
+            paint.setColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.d6, false));
             paint.setAlpha((int) (w8Var.K * 255.0f));
             canvas2 = canvas;
             canvas2.drawRect(0.0f, 0.0f, view.getMeasuredWidth(), view.getMeasuredHeight(), paint);
@@ -137,9 +137,9 @@ public final class o8 extends qv0 {
             if (w8Var.R) {
                 w8Var.i0(0.0f, false);
                 w8Var.a.setExpanded(false);
-                addView(w8Var.a, 0, k7.b6.c(-1.0f, -1));
+                addView(w8Var.a, 0, k7.c6.c(-1.0f, -1));
             } else {
-                w8Var.r.addView(w8Var.a, 0, k7.b6.c(-2.0f, -1));
+                w8Var.r.addView(w8Var.a, 0, k7.c6.c(-2.0f, -1));
             }
             AndroidUtilities.requestAdjustResize(w8Var.getParentActivity(), w8Var.getClassGuid());
         }
@@ -171,8 +171,8 @@ public final class o8 extends qv0 {
             } else {
                 i12 = 0;
             }
-            hb1 hb1Var = w8Var.r;
-            hb1Var.setTranslationY((hb1Var.getTranslationY() + ((ViewGroup.MarginLayoutParams) w8Var.r.getLayoutParams()).topMargin) - i12);
+            ib1 ib1Var = w8Var.r;
+            ib1Var.setTranslationY((ib1Var.getTranslationY() + ((ViewGroup.MarginLayoutParams) w8Var.r.getLayoutParams()).topMargin) - i12);
             ((ViewGroup.MarginLayoutParams) w8Var.r.getLayoutParams()).topMargin = i12;
             boolean z12 = w8Var.I;
             if (!w8Var.R) {

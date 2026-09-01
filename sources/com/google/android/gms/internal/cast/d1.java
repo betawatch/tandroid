@@ -1,73 +1,87 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public enum d1 {
-    b(0),
-    c(1),
-    d(2),
-    e(3),
-    f(4),
-    h(5),
-    n(6),
-    r(7),
-    s(8),
-    v(9),
-    w(10),
-    x(11),
-    y(12),
-    B(13),
-    C(14),
-    D(15),
-    E(16),
-    F(17),
-    G(18),
-    H(19),
-    I(20),
-    J(21),
-    K(22),
-    L(23),
-    M(24),
-    N(25),
-    O(26),
-    P(27),
-    Q(28),
-    R(29),
-    S(30),
-    T(31),
-    U(32),
-    V(33),
-    W(34),
-    X(35),
-    Y(36),
-    Z(37),
-    a0(38),
-    b0(39),
-    c0(40),
-    d0(41),
-    e0(42),
-    f0(43),
-    g0(44),
-    h0(45),
-    i0(46),
-    j0(47),
-    k0(48),
-    l0(49),
-    m0(50),
-    n0(51),
-    o0(52),
-    p0(53),
-    q0(54),
-    r0(55);
+public final class d1 implements a0, t, g5 {
+    public static final d1 a = new d1();
+    public static final /* synthetic */ d1 b = new d1();
 
-    public final int a;
-
-    d1(int i10) {
-        this.a = i10;
+    public static boolean a(int i10, byte[] bArr) {
+        int i11;
+        int i12 = 0;
+        while (i12 < i10 && bArr[i12] >= 0) {
+            i12++;
+        }
+        if (i12 < i10) {
+            while (i12 < i10) {
+                int i13 = i12 + 1;
+                i11 = bArr[i12];
+                if (i11 < 0) {
+                    if (i11 >= -32) {
+                        if (i11 >= -16) {
+                            if (i13 < i10 - 2) {
+                                int i14 = i12 + 2;
+                                int i15 = bArr[i13];
+                                if (i15 <= -65) {
+                                    if ((((i15 + 112) + (i11 << 28)) >> 30) == 0) {
+                                        int i16 = i12 + 3;
+                                        if (bArr[i14] <= 65471) {
+                                            i12 += 4;
+                                            if (bArr[i16] > 65471) {
+                                            }
+                                        }
+                                    }
+                                }
+                                i11 = -1;
+                                break;
+                            }
+                            i11 = s6.a(bArr, i13, i10);
+                            break;
+                        }
+                        if (i13 < i10 - 1) {
+                            int i17 = i12 + 2;
+                            char c3 = bArr[i13];
+                            if (c3 <= 65471 && ((i11 != -32 || c3 >= 65440) && (i11 != -19 || c3 < 65440))) {
+                                i12 += 3;
+                                if (bArr[i17] > 65471) {
+                                }
+                            }
+                            i11 = -1;
+                            break;
+                        }
+                        i11 = s6.a(bArr, i13, i10);
+                        break;
+                    }
+                    if (i13 < i10) {
+                        if (i11 >= -62) {
+                            i12 += 2;
+                            if (bArr[i13] > 65471) {
+                            }
+                        }
+                        i11 = -1;
+                        break;
+                    }
+                    break;
+                }
+                i12 = i13;
+            }
+        }
+        i11 = 0;
+        return i11 == 0;
     }
 
-    @Override // java.lang.Enum
-    public final String toString() {
-        return Integer.toString(this.a);
+    @Override // com.google.android.gms.internal.cast.t
+    public void zza() {
+    }
+
+    @Override // com.google.android.gms.internal.cast.a0
+    public Object zza() {
+        u5.b bVar = t6.n;
+        u5.b bVar2 = r5.a.l;
+        b6.m.e("Must be called from the main thread.");
+        r5.a aVar = r5.a.n;
+        b6.m.h(aVar);
+        b6.m.e("Must be called from the main thread.");
+        return aVar.e.a;
     }
 }

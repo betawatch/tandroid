@@ -5,13 +5,13 @@ import android.graphics.Canvas;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.ImageView;
 import java.util.ArrayList;
-import org.telegram.ui.Components.g90;
-import org.telegram.ui.Components.kq;
+import org.telegram.ui.Components.i90;
+import org.telegram.ui.Components.mq;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.ds0;
-import org.telegram.ui.og1;
+import org.telegram.ui.fs0;
+import org.telegram.ui.qg1;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class l0 extends ImageView {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final class l0 extends ImageView {
             case 3:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
                 accessibilityNodeInfo.setCheckable(true);
-                accessibilityNodeInfo.setChecked(((og1) this.b).n.getTransformationMethod() == null);
+                accessibilityNodeInfo.setChecked(((qg1) this.b).n.getTransformationMethod() == null);
                 break;
             default:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
@@ -83,7 +83,7 @@ public final class l0 extends ImageView {
         switch (this.a) {
             case 1:
                 super.setAlpha(f10);
-                ((kq) this.b).x.invalidate();
+                ((mq) this.b).x.invalidate();
                 break;
             default:
                 super.setAlpha(f10);
@@ -104,16 +104,16 @@ public final class l0 extends ImageView {
                     while (i10 < size) {
                         Object obj = arrayList.get(i10);
                         i10++;
-                        ((ph.f3) obj).setTranslationY(f10);
+                        ((qh.f3) obj).setTranslationY(f10);
                     }
                 }
-                ds0 ds0Var = photoViewer.d1;
-                if (ds0Var != null) {
-                    ds0Var.setTranslationY(f10);
+                fs0 fs0Var = photoViewer.d1;
+                if (fs0Var != null) {
+                    fs0Var.setTranslationY(f10);
                 }
-                g90 g90Var = photoViewer.c1;
-                if (g90Var != null) {
-                    g90Var.setTranslationY(f10);
+                i90 i90Var = photoViewer.c1;
+                if (i90Var != null) {
+                    i90Var.setTranslationY(f10);
                     break;
                 }
                 break;

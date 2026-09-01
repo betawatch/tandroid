@@ -9,9 +9,9 @@ import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import o5.d;
-import org.telegram.ui.yy;
+import org.telegram.ui.zy;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a implements Runnable {
     public static Handler f;
@@ -36,8 +36,8 @@ public final class a implements Runnable {
         }
         try {
             dVar.i.tryAcquire(i10, 5L, TimeUnit.SECONDS);
-        } catch (InterruptedException e) {
-            Log.i("GACSignInLoader", "Unexpected InterruptedException", e);
+        } catch (InterruptedException e6) {
+            Log.i("GACSignInLoader", "Unexpected InterruptedException", e6);
             Thread.currentThread().interrupt();
         }
     }
@@ -54,7 +54,7 @@ public final class a implements Runnable {
                 throw th2;
             }
         }
-        handler.post(new yy(11, this, obj));
+        handler.post(new zy(10, this, obj));
     }
 
     @Override // java.lang.Runnable

@@ -1,23 +1,41 @@
 package dh;
 
-import android.graphics.Canvas;
+import android.graphics.RectF;
 import android.view.View;
-import org.telegram.messenger.ImageReceiver;
+import r0.j0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public abstract class h {
-    public final ImageReceiver a = new ImageReceiver();
+public final /* synthetic */ class h implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ i b;
 
-    public void a(View view) {
-        ImageReceiver imageReceiver = this.a;
-        imageReceiver.setParentView(view);
-        imageReceiver.onAttachedToWindow();
+    public /* synthetic */ h(i iVar, int i10) {
+        this.a = i10;
+        this.b = iVar;
     }
 
-    public void b() {
-        this.a.onDetachedFromWindow();
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        i iVar = this.b;
+        switch (i10) {
+            case 0:
+                if (iVar.v != 0) {
+                    iVar.h(false);
+                    break;
+                }
+                break;
+            default:
+                int i11 = iVar.D - 1;
+                iVar.D = i11;
+                if (i11 == 0) {
+                    View view = iVar.B;
+                    RectF rectF = e.e;
+                    iVar.j(e.L(j0.f(view), view, view.getRootView()), false);
+                    break;
+                }
+                break;
+        }
     }
-
-    public abstract void c(Canvas canvas, int i10, int i11);
 }

@@ -1,215 +1,115 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import java.util.HashMap;
+import android.graphics.Bitmap;
+import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class pi1 extends org.telegram.ui.Components.rl0 {
-    public final /* synthetic */ WallpapersListActivity B;
-    public final Context c;
-    public final ArrayList d = new ArrayList();
-    public final HashMap e = new HashMap();
-    public boolean f = true;
-    public String h;
-    public String n;
-    public String r;
-    public int s;
-    public int v;
-    public boolean w;
-    public String x;
-    public kg1 y;
+public final class pi1 {
+    public String a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
+    public int f;
+    public TLRPC.TL_wallPaper g;
+    public float h;
+    public final File i;
+    public final boolean j;
+    public final boolean k;
+    public TLRPC.WallPaper l;
+    public Bitmap m;
 
-    public pi1(WallpapersListActivity wallpapersListActivity, Context context) {
-        this.B = wallpapersListActivity;
-        this.c = context;
+    public pi1(int i10, int i11, String str, int i12) {
+        this.a = str;
+        this.b = i10 | (-16777216);
+        int i13 = i11 == 0 ? 0 : i11 | (-16777216);
+        this.c = i13;
+        this.f = i13 == 0 ? 0 : i12;
+        this.h = 1.0f;
     }
 
-    @Override // org.telegram.ui.Components.rl0
-    public final boolean D(f2.l1 l1Var) {
-        return l1Var.f != 2;
+    public final String a() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(String.valueOf(this.b));
+        sb.append(this.c);
+        sb.append(this.d);
+        sb.append(this.e);
+        sb.append(this.f);
+        sb.append(this.h);
+        String str = this.a;
+        if (str == null) {
+            str = "";
+        }
+        sb.append(str);
+        return Utilities.MD5(sb.toString());
     }
 
-    public final void E(String str, boolean z4) {
-        int i10;
-        if (str != null && this.n != null) {
-            str = android.support.v4.media.a.p(this.n, " ", str, new StringBuilder("#color"));
-        }
-        kg1 kg1Var = this.y;
-        if (kg1Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(kg1Var);
-            this.y = null;
-        }
-        boolean isEmpty = TextUtils.isEmpty(str);
-        HashMap hashMap = this.e;
-        ArrayList arrayList = this.d;
-        WallpapersListActivity wallpapersListActivity = this.B;
-        if (isEmpty) {
-            arrayList.clear();
-            hashMap.clear();
-            this.f = true;
-            this.h = null;
-            if (this.s != 0) {
-                i10 = ((org.telegram.ui.ActionBar.p2) wallpapersListActivity).currentAccount;
-                ConnectionsManager.getInstance(i10).cancelRequest(this.s, true);
-                this.s = 0;
+    public final String b() {
+        int i10 = this.c;
+        String lowerCase = i10 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i10 >> 16)) & 255), Integer.valueOf(((byte) (i10 >> 8)) & 255), Byte.valueOf((byte) (i10 & 255))).toLowerCase() : null;
+        int i11 = this.b;
+        String lowerCase2 = String.format("%02x%02x%02x", Integer.valueOf(((byte) (i11 >> 16)) & 255), Integer.valueOf(((byte) (i11 >> 8)) & 255), Byte.valueOf((byte) (i11 & 255))).toLowerCase();
+        int i12 = this.d;
+        String lowerCase3 = i12 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i12 >> 16)) & 255), Integer.valueOf(((byte) (i12 >> 8)) & 255), Byte.valueOf((byte) (i12 & 255))).toLowerCase() : null;
+        int i13 = this.e;
+        String lowerCase4 = i13 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i13 >> 16)) & 255), Integer.valueOf(((byte) (i13 >> 8)) & 255), Byte.valueOf((byte) (i13 & 255))).toLowerCase() : null;
+        if (lowerCase == null || lowerCase3 == null) {
+            if (lowerCase != null) {
+                String z4 = android.support.v4.media.a.z(lowerCase2, "-", lowerCase);
+                if (this.g != null) {
+                    StringBuilder f10 = w.c.f(z4, "&rotation=");
+                    f10.append(AndroidUtilities.getWallpaperRotation(this.f, true));
+                    lowerCase2 = f10.toString();
+                } else {
+                    StringBuilder f11 = w.c.f(z4, "?rotation=");
+                    f11.append(AndroidUtilities.getWallpaperRotation(this.f, true));
+                    lowerCase2 = f11.toString();
+                }
             }
-            wallpapersListActivity.K.c();
+        } else if (lowerCase4 != null) {
+            StringBuilder sb = new StringBuilder();
+            sb.append(lowerCase2);
+            sb.append("~");
+            sb.append(lowerCase);
+            sb.append("~");
+            sb.append(lowerCase3);
+            lowerCase2 = android.support.v4.media.a.r(sb, "~", lowerCase4);
         } else {
-            wallpapersListActivity.K.b();
-            if (z4) {
-                arrayList.clear();
-                hashMap.clear();
-                this.f = true;
-                F(str, "", true);
-                this.h = str;
-                l();
-            } else {
-                kg1 kg1Var2 = new kg1(6, this, str);
-                this.y = kg1Var2;
-                AndroidUtilities.runOnUIThread(kg1Var2, 500L);
-            }
+            lowerCase2 = lowerCase2 + "~" + lowerCase + "~" + lowerCase3;
         }
-        l();
+        if (this.g == null) {
+            return android.support.v4.media.a.p(MessagesController.getInstance(UserConfig.selectedAccount).linkPrefix, "/bg/", lowerCase2, new StringBuilder("https://"));
+        }
+        String str = "https://" + MessagesController.getInstance(UserConfig.selectedAccount).linkPrefix + "/bg/" + this.g.slug + "?intensity=" + ((int) (this.h * 100.0f)) + "&bg_color=" + lowerCase2;
+        return this.j ? w.c.e(str, "&mode=motion") : str;
     }
 
-    public final void F(String str, String str2, boolean z4) {
-        int i10;
-        int i11;
-        int i12;
-        int i13;
-        int i14;
-        int i15;
-        int i16;
-        int i17;
-        int i18;
-        int i19 = this.s;
-        WallpapersListActivity wallpapersListActivity = this.B;
-        if (i19 != 0) {
-            i18 = ((org.telegram.ui.ActionBar.p2) wallpapersListActivity).currentAccount;
-            ConnectionsManager.getInstance(i18).cancelRequest(this.s, true);
-            this.s = 0;
-        }
-        this.x = str;
-        i10 = ((org.telegram.ui.ActionBar.p2) wallpapersListActivity).currentAccount;
-        MessagesController messagesController = MessagesController.getInstance(i10);
-        i11 = ((org.telegram.ui.ActionBar.p2) wallpapersListActivity).currentAccount;
-        TLObject userOrChat = messagesController.getUserOrChat(MessagesController.getInstance(i11).imageSearchBot);
-        if (!(userOrChat instanceof TLRPC.User)) {
-            if (!z4 || this.w) {
-                return;
-            }
-            this.w = true;
-            TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
-            i16 = ((org.telegram.ui.ActionBar.p2) wallpapersListActivity).currentAccount;
-            tL_contacts_resolveUsername.username = MessagesController.getInstance(i16).imageSearchBot;
-            i17 = ((org.telegram.ui.ActionBar.p2) wallpapersListActivity).currentAccount;
-            ConnectionsManager.getInstance(i17).sendRequest(tL_contacts_resolveUsername, new o(this, 25));
-            return;
-        }
-        TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
-        tL_messages_getInlineBotResults.query = vh.v2.e("#wallpaper ", str);
-        i12 = ((org.telegram.ui.ActionBar.p2) wallpapersListActivity).currentAccount;
-        tL_messages_getInlineBotResults.bot = MessagesController.getInstance(i12).getInputUser((TLRPC.User) userOrChat);
-        tL_messages_getInlineBotResults.offset = str2;
-        tL_messages_getInlineBotResults.peer = new TLRPC.TL_inputPeerEmpty();
-        int i20 = this.v + 1;
-        this.v = i20;
-        i13 = ((org.telegram.ui.ActionBar.p2) wallpapersListActivity).currentAccount;
-        this.s = ConnectionsManager.getInstance(i13).sendRequest(tL_messages_getInlineBotResults, new lh.s1(this, i20, 8));
-        i14 = ((org.telegram.ui.ActionBar.p2) wallpapersListActivity).currentAccount;
-        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i14);
-        int i21 = this.s;
-        i15 = ((org.telegram.ui.ActionBar.p2) wallpapersListActivity).classGuid;
-        connectionsManager.bindRequestToGuid(i21, i15);
+    public pi1(String str, int i10, int i11, int i12, int i13) {
+        this.a = str;
+        this.b = i10 | (-16777216);
+        this.c = i11 == 0 ? 0 : i11 | (-16777216);
+        this.d = i12 == 0 ? 0 : i12 | (-16777216);
+        this.e = i13 != 0 ? i13 | (-16777216) : 0;
+        this.h = 1.0f;
+        this.k = true;
     }
 
-    @Override // f2.o0
-    public final int h() {
-        if (TextUtils.isEmpty(this.h)) {
-            return 2;
-        }
-        return (int) Math.ceil(this.d.size() / this.B.O);
-    }
-
-    @Override // f2.o0
-    public final int j(int i10) {
-        if (TextUtils.isEmpty(this.h)) {
-            return i10 == 0 ? 2 : 1;
-        }
-        return 0;
-    }
-
-    @Override // f2.o0
-    public final void v(f2.l1 l1Var, int i10) {
-        int i11 = l1Var.f;
-        View view = l1Var.a;
-        if (i11 != 0) {
-            if (i11 != 2) {
-                return;
-            }
-            ((org.telegram.ui.Cells.u3) view).setText(LocaleController.getString(R.string.SearchByColor));
-            return;
-        }
-        org.telegram.ui.Cells.za zaVar = (org.telegram.ui.Cells.za) view;
-        WallpapersListActivity wallpapersListActivity = this.B;
-        int i12 = i10 * wallpapersListActivity.O;
-        ArrayList arrayList = this.d;
-        int ceil = (int) Math.ceil(arrayList.size() / wallpapersListActivity.O);
-        int i13 = wallpapersListActivity.O;
-        zaVar.d(i13, i12 == 0, i12 / i13 == ceil - 1);
-        for (int i14 = 0; i14 < wallpapersListActivity.O; i14++) {
-            int i15 = i12 + i14;
-            zaVar.e(wallpapersListActivity.v, i15 < arrayList.size() ? arrayList.get(i15) : null, "", i14);
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r2v1, types: [android.view.View, android.view.ViewGroup, androidx.recyclerview.widget.RecyclerView, org.telegram.ui.Components.sl0, org.telegram.ui.jb1] */
-    @Override // f2.o0
-    public final f2.l1 x(ViewGroup viewGroup, int i10) {
-        FrameLayout yiVar;
-        FrameLayout frameLayout;
-        Context context = this.c;
-        if (i10 != 0) {
-            yiVar = null;
-            boolean z4 = false;
-            if (i10 == 1) {
-                ?? jb1Var = new jb1(context, 12, z4 ? 1 : 0);
-                jb1Var.setItemAnimator(null);
-                jb1Var.setLayoutAnimation(null);
-                k kVar = new k(18);
-                jb1Var.setPadding(AndroidUtilities.dp(7.0f), 0, AndroidUtilities.dp(7.0f), 0);
-                jb1Var.setClipToPadding(false);
-                kVar.j1(0);
-                jb1Var.setLayoutManager(kVar);
-                jb1Var.setAdapter(new eg.g(this, 5));
-                jb1Var.setOnItemClickListener(new p21(this, 12));
-                frameLayout = jb1Var;
-            } else if (i10 == 2) {
-                frameLayout = new org.telegram.ui.Cells.u3(context, null);
-            }
-            yiVar = frameLayout;
-        } else {
-            yiVar = new org.telegram.ui.Components.yi(this, context, 2);
-        }
-        if (i10 == 1) {
-            yiVar.setLayoutParams(new f2.w0(-1, AndroidUtilities.dp(60.0f)));
-        } else {
-            yiVar.setLayoutParams(new f2.w0(-1, -2));
-        }
-        return new org.telegram.ui.Components.el0(yiVar);
+    public pi1(String str, int i10, int i11, int i12, int i13, int i14, float f10, boolean z4, File file) {
+        this.a = str;
+        this.b = i10 | (-16777216);
+        int i15 = i11 == 0 ? 0 : i11 | (-16777216);
+        this.c = i15;
+        this.d = i12 == 0 ? 0 : i12 | (-16777216);
+        this.e = i13 != 0 ? i13 | (-16777216) : 0;
+        this.f = i15 == 0 ? 45 : i14;
+        this.h = f10;
+        this.i = file;
+        this.j = z4;
     }
 }

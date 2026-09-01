@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class b0 {
     public static final long a = TimeUnit.MINUTES.toMillis(1);
@@ -44,7 +44,7 @@ public abstract class b0 {
                 if (!booleanExtra) {
                     c.a(a);
                 }
-                e0Var.b(intent).addOnCompleteListener(new a1.c(intent, 7));
+                e0Var.b(intent).addOnCompleteListener(new a1.c(intent, 6));
             } catch (Throwable th2) {
                 throw th2;
             }

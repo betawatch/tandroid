@@ -29,7 +29,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class MusicPlayerService extends Service implements NotificationCenter.NotificationCenterDelegate {
     private static final int ID_NOTIFICATION = 5;
@@ -299,13 +299,13 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
         this.mediaSession.f(this.playbackState.b());
         updateRepeatMode();
         updateShuffleMode();
-        android.support.v4.media.d dVar = new android.support.v4.media.d();
+        o5.i iVar = new o5.i(1);
         String str8 = str3;
-        dVar.e("android.media.metadata.ALBUM_ARTIST", str8);
-        dVar.e("android.media.metadata.ARTIST", str8);
-        dVar.d(duration, "android.media.metadata.DURATION");
+        iVar.A("android.media.metadata.ALBUM_ARTIST", str8);
+        iVar.A("android.media.metadata.ARTIST", str8);
+        iVar.x(duration, "android.media.metadata.DURATION");
         String str9 = str2;
-        dVar.e("android.media.metadata.TITLE", str9);
+        iVar.A("android.media.metadata.TITLE", str9);
         if (aVar == null || !messageObject2.isMusic()) {
             aVar2 = aVar;
             str6 = str5;
@@ -313,14 +313,14 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
             aVar2 = aVar;
             str6 = aVar2.f;
         }
-        dVar.e("android.media.metadata.ALBUM", str6);
+        iVar.A("android.media.metadata.ALBUM", str6);
         if (bitmap4 == null || bitmap4.isRecycled()) {
             bitmap3 = bitmap4;
         } else {
             bitmap3 = bitmap4;
-            dVar.c("android.media.metadata.ALBUM_ART", bitmap3);
+            iVar.w("android.media.metadata.ALBUM_ART", bitmap3);
         }
-        this.mediaSession.e(dVar.a());
+        this.mediaSession.e(iVar.b());
         builder.setVisibility(1);
         Notification build = builder.build();
         if (i10 >= 31) {
@@ -433,7 +433,7 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
         if (z4) {
             return null;
         }
-        org.telegram.ui.ActionBar.j6.R(this);
+        org.telegram.ui.ActionBar.k6.R(this);
         org.telegram.ui.Components.z8 z8Var = tLObject instanceof TLRPC.User ? new org.telegram.ui.Components.z8(0, (TLRPC.User) tLObject) : new org.telegram.ui.Components.z8((TLRPC.Chat) tLObject);
         z8Var.r = 1;
         float f12 = i10;
@@ -616,7 +616,7 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
         }
         ImageReceiver imageReceiver = new ImageReceiver(null);
         this.imageReceiver = imageReceiver;
-        imageReceiver.setDelegate(new d(this, 10));
+        imageReceiver.setDelegate(new d0(this, 9));
         this.mediaSession = new android.support.v4.media.session.c0(this, "telegramAudioPlayer", null, null);
         this.playbackState = new android.support.v4.media.session.f0();
         this.albumArtPlaceholder = Bitmap.createBitmap(AndroidUtilities.dp(102.0f), AndroidUtilities.dp(102.0f), Bitmap.Config.ARGB_8888);
@@ -757,8 +757,8 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
                     MediaController.getInstance().cleanupPlayer(true, true);
                     return 2;
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
+            } catch (Exception e6) {
+                e6.printStackTrace();
             }
         }
         MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
@@ -778,8 +778,8 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
                     this.audioManager.registerRemoteControlClient(remoteControlClient);
                 }
                 this.remoteControlClient.setTransportControlFlags(189);
-            } catch (Exception e6) {
-                FileLog.e(e6);
+            } catch (Exception e10) {
+                FileLog.e(e10);
             }
         }
         createNotification(playingMessageObject, false);

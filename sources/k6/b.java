@@ -2,22 +2,20 @@ package k6;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;
-import android.content.pm.ServiceInfo;
-import android.os.Build;
-import android.os.Bundle;
-import android.util.Log;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import android.os.CancellationSignal;
+import androidx.biometric.u;
+import k7.h8;
 import kotlin.jvm.internal.j;
-import tc.g;
-import v0.l;
-import v0.n;
-import v0.p;
+import ld.m;
+import org.telegram.ui.sb0;
+import org.telegram.ui.web.e0;
+import v0.e;
+import v0.g;
+import v0.h;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final class b {
+public final class b implements h {
     public final Context a;
 
     public b(Context context, int i10) {
@@ -32,72 +30,28 @@ public final class b {
         }
     }
 
-    public static v0.j a(b bVar, Object obj) {
-        if (obj.equals("androidx.credentials.TYPE_CLEAR_RESTORE_CREDENTIAL")) {
-            return bVar.c();
+    public Object a(Context context, e eVar, uc.c cVar) {
+        m mVar = new m(1, h8.b(cVar));
+        mVar.s();
+        CancellationSignal cancellationSignal = new CancellationSignal();
+        mVar.u(new g(cancellationSignal));
+        e0 e0Var = new e0(mVar, 15);
+        sb0 sb0Var = new sb0(1);
+        j.e(context, "context");
+        v0.j b10 = u.b(new u(this.a, 2), eVar);
+        if (b10 == null) {
+            e0Var.onError(new w0.c("createCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added", 1));
+        } else if (context.getPackageManager().hasSystemFeature("android.hardware.type.watch")) {
+            e0Var.onError(new w0.c("createCredential is not supported on this device", 3));
+        } else {
+            b10.onCreateCredential(context, eVar, cancellationSignal, sb0Var, e0Var);
         }
-        if (obj instanceof n) {
-            for (p pVar : ((n) obj).a) {
-            }
-        }
-        Context ctx = bVar.a;
-        j.e(ctx, "ctx");
-        if (ctx.getPackageManager().hasSystemFeature("android.software.leanback") || ctx.getPackageManager().hasSystemFeature("android.hardware.type.automotive")) {
-            return bVar.c();
-        }
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 34) {
-            l lVar = new l(ctx);
-            l lVar2 = lVar.isAvailableOnDevice() ? lVar : null;
-            return lVar2 == null ? bVar.c() : lVar2;
-        }
-        if (i10 <= 33) {
-            return bVar.c();
-        }
-        return null;
+        Object r10 = mVar.r();
+        vc.a aVar = vc.a.a;
+        return r10;
     }
 
     public PackageInfo b(int i10, String str) {
         return this.a.getPackageManager().getPackageInfo(str, i10);
-    }
-
-    public v0.j c() {
-        String string;
-        Context context = this.a;
-        PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 132);
-        ArrayList arrayList = new ArrayList();
-        ServiceInfo[] serviceInfoArr = packageInfo.services;
-        if (serviceInfoArr != null) {
-            for (ServiceInfo serviceInfo : serviceInfoArr) {
-                Bundle bundle = serviceInfo.metaData;
-                if (bundle != null && (string = bundle.getString("androidx.credentials.CREDENTIAL_PROVIDER_KEY")) != null) {
-                    arrayList.add(string);
-                }
-            }
-        }
-        List m9 = g.m(arrayList);
-        if (m9.isEmpty()) {
-            return null;
-        }
-        Iterator it = m9.iterator();
-        v0.j jVar = null;
-        while (it.hasNext()) {
-            try {
-                Object newInstance = Class.forName((String) it.next()).getConstructor(Context.class).newInstance(context);
-                j.c(newInstance, "null cannot be cast to non-null type androidx.credentials.CredentialProvider");
-                v0.j jVar2 = (v0.j) newInstance;
-                if (!jVar2.isAvailableOnDevice()) {
-                    continue;
-                } else {
-                    if (jVar != null) {
-                        Log.i("CredProviderFactory", "Only one active OEM CredentialProvider allowed");
-                        return null;
-                    }
-                    jVar = jVar2;
-                }
-            } catch (Throwable unused) {
-            }
-        }
-        return jVar;
     }
 }

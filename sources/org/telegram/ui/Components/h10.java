@@ -1,91 +1,119 @@
 package org.telegram.ui.Components;
 
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
-import android.text.TextPaint;
-import android.text.style.URLSpan;
-import android.view.View;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
+import android.app.Application;
+import android.os.Bundle;
+import android.os.SystemClock;
+import java.util.Iterator;
+import java.util.concurrent.CopyOnWriteArrayList;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class h10 extends URLSpan {
-    public static final /* synthetic */ int e = 0;
-    public final String a;
-    public final TLRPC.TL_messageEntityFormattedDate b;
-    public final s01 c;
-    public final boolean d;
+public abstract class h10 implements Application.ActivityLifecycleCallbacks {
+    private static h10 Instance;
+    private int refs;
+    private boolean wasInBackground = true;
+    private long enterBackgroundTime = 0;
+    private CopyOnWriteArrayList<g10> listeners = new CopyOnWriteArrayList<>();
 
-    public h10(String str, s01 s01Var, TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate) {
-        super(str);
-        this.a = str;
-        this.b = tL_messageEntityFormattedDate;
-        this.c = s01Var;
-        this.d = false;
+    public h10(Application application) {
+        Instance = this;
+        application.registerActivityLifecycleCallbacks(this);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r4v0 */
-    /* JADX WARN: Type inference failed for: r4v1 */
-    /* JADX WARN: Type inference failed for: r4v2 */
-    /* JADX WARN: Type inference failed for: r4v3, types: [android.text.SpannableStringBuilder] */
-    /* JADX WARN: Type inference failed for: r4v4 */
-    /* JADX WARN: Type inference failed for: r4v5 */
-    public static CharSequence a(CharSequence charSequence, boolean z4) {
-        if (charSequence instanceof Spanned) {
-            Spanned spanned = (Spanned) charSequence;
-            int i10 = 0;
-            h10[] h10VarArr = (h10[]) spanned.getSpans(0, spanned.length(), h10.class);
-            int length = h10VarArr.length;
-            ?? r42 = 0;
-            while (i10 < length) {
-                h10 h10Var = h10VarArr[i10];
-                TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate = h10Var.b;
-                if (tL_messageEntityFormattedDate.flags != 0 && (h10Var.d != z4 || (z4 && tL_messageEntityFormattedDate.relative))) {
-                    if (r42 == 0) {
-                        charSequence = new SpannableStringBuilder(spanned);
-                        r42 = charSequence;
-                    }
-                    int spanStart = r42.getSpanStart(h10Var);
-                    int spanEnd = r42.getSpanEnd(h10Var);
-                    String formatEntityFormattedDate = z4 ? LocaleController.formatEntityFormattedDate(h10Var.b) : h10Var.a;
-                    r42.removeSpan(h10Var);
-                    r42.replace(spanStart, spanEnd, formatEntityFormattedDate);
-                    r42.setSpan(new h10(h10Var, z4), spanStart, formatEntityFormattedDate.length() + spanStart, 33);
+    public static h10 getInstance() {
+        return Instance;
+    }
+
+    public void addListener(g10 g10Var) {
+        this.listeners.add(g10Var);
+    }
+
+    public boolean isBackground() {
+        return this.refs == 0;
+    }
+
+    public boolean isForeground() {
+        return this.refs > 0;
+    }
+
+    public boolean isWasInBackground(boolean z4) {
+        if (z4 && SystemClock.elapsedRealtime() - this.enterBackgroundTime < 200) {
+            this.wasInBackground = false;
+        }
+        return this.wasInBackground;
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityStarted(Activity activity) {
+        int i10 = this.refs + 1;
+        this.refs = i10;
+        if (i10 == 1) {
+            if (SystemClock.elapsedRealtime() - this.enterBackgroundTime < 200) {
+                this.wasInBackground = false;
+            }
+            if (BuildVars.LOGS_ENABLED) {
+                FileLog.d("switch to foreground");
+            }
+            Iterator<g10> it = this.listeners.iterator();
+            while (it.hasNext()) {
+                try {
+                    it.next().onBecameForeground();
+                } catch (Exception e6) {
+                    FileLog.e(e6);
                 }
-                i10++;
-                r42 = r42;
             }
         }
-        return charSequence;
     }
 
-    public static CharSequence e(SpannableStringBuilder spannableStringBuilder) {
-        return a(spannableStringBuilder, false);
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        int i10 = textPaint.linkColor;
-        int color = textPaint.getColor();
-        super.updateDrawState(textPaint);
-        s01 s01Var = this.c;
-        if (s01Var != null) {
-            s01Var.a(textPaint);
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityStopped(Activity activity) {
+        int i10 = this.refs - 1;
+        this.refs = i10;
+        if (i10 == 0) {
+            this.enterBackgroundTime = SystemClock.elapsedRealtime();
+            this.wasInBackground = true;
+            if (BuildVars.LOGS_ENABLED) {
+                FileLog.d("switch to background");
+            }
+            Iterator<g10> it = this.listeners.iterator();
+            while (it.hasNext()) {
+                try {
+                    it.next().onBecameBackground();
+                } catch (Exception e6) {
+                    FileLog.e(e6);
+                }
+            }
         }
-        textPaint.setUnderlineText(i10 == color);
     }
 
-    public h10(h10 h10Var, boolean z4) {
-        super(h10Var.a);
-        this.a = h10Var.a;
-        this.b = h10Var.b;
-        this.c = h10Var.c;
-        this.d = z4;
+    public void removeListener(g10 g10Var) {
+        this.listeners.remove(g10Var);
     }
 
-    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
-    public final void onClick(View view) {
+    public void resetBackgroundVar() {
+        this.wasInBackground = false;
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityDestroyed(Activity activity) {
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityPaused(Activity activity) {
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityResumed(Activity activity) {
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityCreated(Activity activity, Bundle bundle) {
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
     }
 }

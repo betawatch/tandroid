@@ -1,28 +1,49 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.content.Context;
-import android.graphics.Bitmap;
-import java.util.ArrayList;
-import org.telegram.messenger.MediaController;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.ViewPropertyAnimator;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class ft0 extends dg.e1 {
-    public final /* synthetic */ PhotoViewer l2;
+public final class ft0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ PhotoViewer c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ft0(PhotoViewer photoViewer, Context context, Activity activity, int i10, Bitmap bitmap, Bitmap bitmap2, int i11, ArrayList arrayList, MediaController.CropState cropState, mq0 mq0Var, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, activity, i10, bitmap, bitmap2, i11, arrayList, cropState, mq0Var, f6Var);
-        this.l2 = photoViewer;
+    public /* synthetic */ ft0(PhotoViewer photoViewer, int i10, int i11) {
+        this.a = i11;
+        this.c = photoViewer;
+        this.b = i10;
     }
 
-    @Override // dg.e1
-    public final int getPKeyboardHeight() {
-        ph.i3 i3Var = this.l2.H1;
-        if (i3Var != null) {
-            return i3Var.l;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                PhotoViewer photoViewer = this.c;
+                gt0 gt0Var = photoViewer.K1;
+                gt0Var.e.setVisibility(0);
+                FrameLayout frameLayout = gt0Var.r;
+                frameLayout.setVisibility(0);
+                frameLayout.setTranslationY(AndroidUtilities.dp(18.0f));
+                ViewPropertyAnimator translationY = frameLayout.animate().alpha(1.0f).translationY(0.0f);
+                org.telegram.ui.Components.pr prVar = org.telegram.ui.Components.pr.h;
+                b.p(translationY, prVar, 320L);
+                gt0Var.w.animate().alpha(1.0f).translationX(0.0f).setInterpolator(prVar).setDuration(320L).start();
+                photoViewer.r4 = this.b;
+                photoViewer.n6 = null;
+                photoViewer.l6 = -1;
+                break;
+            default:
+                int i10 = this.b;
+                PhotoViewer photoViewer2 = this.c;
+                photoViewer2.r4 = i10;
+                photoViewer2.n6 = null;
+                photoViewer2.l6 = -1;
+                break;
         }
-        return 0;
     }
 }

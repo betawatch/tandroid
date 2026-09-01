@@ -4,7 +4,6 @@ import android.media.ResourceBusyException;
 import android.media.UnsupportedSchemeException;
 import android.os.Handler;
 import android.os.Looper;
-import androidx.biometric.f0;
 import h5.d0;
 import j3.n0;
 import java.util.ArrayList;
@@ -14,13 +13,13 @@ import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
-import m.j0;
+import mh.c3;
+import mh.m2;
 import n7.qa;
-import nh.n4;
 import s8.i0;
 import s8.u0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class e implements o {
     public int B;
@@ -33,7 +32,7 @@ public final class e implements o {
     public k3.k I;
     public volatile androidx.mediarouter.app.d J;
     public final UUID a;
-    public final j0 b;
+    public final c3 b;
     public final cb.m c;
     public final HashMap d;
     public final boolean e;
@@ -41,7 +40,7 @@ public final class e implements o {
     public final boolean h;
     public final qa n;
     public final ab.a r;
-    public final a3.c s;
+    public final o5.i s;
     public final long v;
     public final ArrayList w;
     public final Set x;
@@ -59,7 +58,7 @@ public final class e implements o {
         this.h = z10;
         this.r = aVar;
         this.n = new qa();
-        this.s = new a3.c(this, 28);
+        this.s = new o5.i(this, 26);
         this.w = new ArrayList();
         this.x = Collections.newSetFromMap(new IdentityHashMap());
         this.y = Collections.newSetFromMap(new IdentityHashMap());
@@ -93,14 +92,6 @@ public final class e implements o {
     }
 
     @Override // o3.o
-    public final i J(l lVar, n0 n0Var) {
-        k(false);
-        h5.a.i(this.B > 0);
-        h5.a.j(this.F);
-        return d(this.F, lVar, n0Var, true);
-    }
-
-    @Override // o3.o
     public final void a() {
         v uVar;
         k(true);
@@ -120,12 +111,12 @@ public final class e implements o {
                     uVar = new h7.u(13);
                 }
                 this.C = uVar;
-                uVar.B(new f0(this, 24));
+                uVar.M0(new ja.c(this));
                 return;
-            } catch (UnsupportedSchemeException e) {
-                throw new c0(e);
-            } catch (Exception e6) {
+            } catch (UnsupportedSchemeException e6) {
                 throw new c0(e6);
+            } catch (Exception e10) {
+                throw new c0(e10);
             }
         }
         if (this.v == -9223372036854775807L) {
@@ -147,7 +138,7 @@ public final class e implements o {
         k(false);
         v vVar = this.C;
         vVar.getClass();
-        int b22 = vVar.b2();
+        int h22 = vVar.h2();
         g gVar = n0Var.F;
         if (gVar == null) {
             int g10 = h5.o.g(n0Var.C);
@@ -179,7 +170,7 @@ public final class e implements o {
                 return 1;
             }
         }
-        return b22;
+        return h22;
     }
 
     @Override // o3.o
@@ -189,7 +180,7 @@ public final class e implements o {
         d dVar = new d(this, lVar);
         Handler handler = this.G;
         handler.getClass();
-        handler.post(new n4(21, dVar, n0Var));
+        handler.post(new m2(22, dVar, n0Var));
         return dVar;
     }
 
@@ -205,7 +196,7 @@ public final class e implements o {
             int g10 = h5.o.g(n0Var.C);
             v vVar = this.C;
             vVar.getClass();
-            if (vVar.b2() != 2 || !w.d) {
+            if (vVar.h2() != 2 || !w.d) {
                 int[] iArr = this.f;
                 while (true) {
                     if (i10 >= iArr.length) {
@@ -217,7 +208,7 @@ public final class e implements o {
                     }
                     i10++;
                 }
-                if (i10 != -1 && vVar.b2() != 1) {
+                if (i10 != -1 && vVar.h2() != 1) {
                     b bVar2 = this.D;
                     if (bVar2 == null) {
                         s8.t tVar = s8.v.b;
@@ -295,10 +286,10 @@ public final class e implements o {
 
     public final b g(List list, boolean z4, l lVar, boolean z10) {
         b f10 = f(list, z4, lVar);
-        boolean e = e(f10);
+        boolean e6 = e(f10);
         long j10 = this.v;
         Set set = this.y;
-        if (e && !set.isEmpty()) {
+        if (e6 && !set.isEmpty()) {
             u0 it = s8.z.u(set).iterator();
             while (it.hasNext()) {
                 ((i) it.next()).c(null);
@@ -392,5 +383,13 @@ public final class e implements o {
             ((d) it.next()).release();
         }
         j();
+    }
+
+    @Override // o3.o
+    public final i x(l lVar, n0 n0Var) {
+        k(false);
+        h5.a.i(this.B > 0);
+        h5.a.j(this.F);
+        return d(this.F, lVar, n0Var, true);
     }
 }

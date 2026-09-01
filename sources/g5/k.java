@@ -4,9 +4,9 @@ import android.net.Uri;
 import android.util.Base64;
 import j3.r1;
 import java.net.URLDecoder;
-import vh.v2;
+import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class k extends g {
     public p a;
@@ -51,8 +51,8 @@ public final class k extends g {
         if (split[0].contains(";base64")) {
             try {
                 this.b = Base64.decode(str, 0);
-            } catch (IllegalArgumentException e) {
-                throw new r1(v2.e("Error while parsing Base64 encoded string: ", str), e, true, 0);
+            } catch (IllegalArgumentException e6) {
+                throw new r1(yh.k("Error while parsing Base64 encoded string: ", str), e6, true, 0);
             }
         } else {
             this.b = URLDecoder.decode(str, r8.d.a.name()).getBytes(r8.d.c);

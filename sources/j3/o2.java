@@ -2,7 +2,7 @@ package j3;
 
 import android.util.Pair;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class o2 implements g {
     public static final l2 a = new l2();
@@ -32,11 +32,11 @@ public abstract class o2 implements g {
         if (m(i12, n2Var, 0L).C != i10) {
             return i10 + 1;
         }
-        int e = e(i12, i11, z4);
-        if (e == -1) {
+        int e6 = e(i12, i11, z4);
+        if (e6 == -1) {
             return -1;
         }
-        return m(e, n2Var, 0L).B;
+        return m(e6, n2Var, 0L).B;
     }
 
     public int e(int i10, int i11, boolean z4) {
@@ -74,9 +74,9 @@ public abstract class o2 implements g {
                                     int a2 = a(true);
                                     if (a2 == o2Var.a(true) && (c3 = c(true)) == o2Var.c(true)) {
                                         while (a2 != c3) {
-                                            int e = e(a2, 0, true);
-                                            if (e == o2Var.e(a2, 0, true)) {
-                                                a2 = e;
+                                            int e6 = e(a2, 0, true);
+                                            if (e6 == o2Var.e(a2, 0, true)) {
+                                                a2 = e6;
                                             }
                                         }
                                     }

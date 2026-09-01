@@ -5,7 +5,7 @@ import android.os.Build;
 import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class c {
     public static final c c;
@@ -26,23 +26,23 @@ public final class c {
         new c(null, 32, null, null);
         new c(null, 64, null, null);
         new c(null, 128, null, null);
-        new c(null, 256, null, g.class);
-        new c(null, 512, null, g.class);
-        new c(null, 1024, null, h.class);
-        new c(null, 2048, null, h.class);
+        new c(null, 256, null, f.class);
+        new c(null, 512, null, f.class);
+        new c(null, 1024, null, g.class);
+        new c(null, 2048, null, g.class);
         d = new c(null, 4096, null, null);
         e = new c(null, 8192, null, null);
         new c(null, 16384, null, null);
         new c(null, 32768, null, null);
         new c(null, 65536, null, null);
-        new c(null, 131072, null, l.class);
+        new c(null, 131072, null, k.class);
         new c(null, 262144, null, null);
         new c(null, TLObject.FLAG_19, null, null);
         new c(null, 1048576, null, null);
-        new c(null, TLObject.FLAG_21, null, m.class);
+        new c(null, TLObject.FLAG_21, null, l.class);
         int i10 = Build.VERSION.SDK_INT;
         new c(i10 >= 23 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_SHOW_ON_SCREEN : null, R.id.accessibilityActionShowOnScreen, null, null);
-        new c(i10 >= 23 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_TO_POSITION : null, R.id.accessibilityActionScrollToPosition, null, j.class);
+        new c(i10 >= 23 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_TO_POSITION : null, R.id.accessibilityActionScrollToPosition, null, i.class);
         f = new c(i10 >= 23 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_UP : null, R.id.accessibilityActionScrollUp, null, null);
         new c(i10 >= 23 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_LEFT : null, R.id.accessibilityActionScrollLeft, null, null);
         g = new c(i10 >= 23 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_DOWN : null, R.id.accessibilityActionScrollDown, null, null);
@@ -52,8 +52,8 @@ public final class c {
         new c(i10 >= 29 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_PAGE_LEFT : null, R.id.accessibilityActionPageLeft, null, null);
         new c(i10 >= 29 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_PAGE_RIGHT : null, R.id.accessibilityActionPageRight, null, null);
         new c(i10 >= 23 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_CONTEXT_CLICK : null, R.id.accessibilityActionContextClick, null, null);
-        h = new c(i10 >= 24 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_SET_PROGRESS : null, R.id.accessibilityActionSetProgress, null, k.class);
-        new c(i10 >= 26 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_MOVE_WINDOW : null, R.id.accessibilityActionMoveWindow, null, i.class);
+        h = new c(i10 >= 24 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_SET_PROGRESS : null, R.id.accessibilityActionSetProgress, null, j.class);
+        new c(i10 >= 26 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_MOVE_WINDOW : null, R.id.accessibilityActionMoveWindow, null, h.class);
         new c(i10 >= 28 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_SHOW_TOOLTIP : null, R.id.accessibilityActionShowTooltip, null, null);
         new c(i10 >= 28 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_HIDE_TOOLTIP : null, R.id.accessibilityActionHideTooltip, null, null);
         new c(i10 >= 30 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_PRESS_AND_HOLD : null, R.id.accessibilityActionPressAndHold, null, null);
@@ -93,7 +93,7 @@ public final class c {
 
     public final String toString() {
         StringBuilder sb = new StringBuilder("AccessibilityActionCompat: ");
-        String e6 = e.e(this.b);
+        String e6 = d.e(this.b);
         if (e6.equals("ACTION_UNKNOWN")) {
             Object obj = this.a;
             if (((AccessibilityNodeInfo.AccessibilityAction) obj).getLabel() != null) {

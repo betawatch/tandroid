@@ -3,7 +3,7 @@ package od;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class m extends pd.b implements k, b {
     public static final /* synthetic */ AtomicReferenceFieldUpdater e = AtomicReferenceFieldUpdater.newUpdater(m.class, Object.class, "_state$volatile");
@@ -31,7 +31,7 @@ public final class m extends pd.b implements k, b {
     public final void d(Object obj) {
         int i10;
         o[] oVarArr;
-        i5.c cVar;
+        com.google.android.gms.internal.clearcut.e eVar;
         if (obj == null) {
             obj = pd.e.a;
         }
@@ -56,10 +56,10 @@ public final class m extends pd.b implements k, b {
                             AtomicReference atomicReference = oVar.a;
                             while (true) {
                                 Object obj2 = atomicReference.get();
-                                if (obj2 != null && obj2 != (cVar = n.b)) {
-                                    i5.c cVar2 = n.a;
-                                    if (obj2 != cVar2) {
-                                        while (!atomicReference.compareAndSet(obj2, cVar2)) {
+                                if (obj2 != null && obj2 != (eVar = n.b)) {
+                                    com.google.android.gms.internal.clearcut.e eVar2 = n.a;
+                                    if (obj2 != eVar2) {
+                                        while (!atomicReference.compareAndSet(obj2, eVar2)) {
                                             if (atomicReference.get() != obj2) {
                                                 break;
                                             }
@@ -67,7 +67,7 @@ public final class m extends pd.b implements k, b {
                                         ((ld.m) obj2).resumeWith(sc.i.a);
                                         break;
                                     }
-                                    while (!atomicReference.compareAndSet(obj2, cVar)) {
+                                    while (!atomicReference.compareAndSet(obj2, eVar)) {
                                         if (atomicReference.get() != obj2) {
                                             break;
                                         }
@@ -108,11 +108,11 @@ public final class m extends pd.b implements k, b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final java.lang.Object z(od.c r18, wc.c r19) {
+    public final java.lang.Object x(od.c r18, wc.c r19) {
         /*
             Method dump skipped, instructions count: 330
             To view this dump add '--comments-level debug' option
         */
-        throw new UnsupportedOperationException("Method not decompiled: od.m.z(od.c, wc.c):java.lang.Object");
+        throw new UnsupportedOperationException("Method not decompiled: od.m.x(od.c, wc.c):java.lang.Object");
     }
 }

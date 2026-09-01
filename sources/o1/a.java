@@ -3,13 +3,12 @@ package o1;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.view.Choreographer;
-import androidx.biometric.f0;
 import java.util.ArrayList;
 import l7.w0;
-import org.telegram.ui.Components.a11;
-import org.telegram.ui.Components.y01;
+import org.telegram.ui.Components.b11;
+import org.telegram.ui.Components.z01;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a implements Choreographer.FrameCallback {
     public final /* synthetic */ int a;
@@ -27,7 +26,7 @@ public final class a implements Choreographer.FrameCallback {
         boolean z4;
         switch (this.a) {
             case 0:
-                b bVar = (b) ((f0) ((w0) this.b).b).b;
+                b bVar = (b) ((ja.c) ((w0) this.b).b).a;
                 long uptimeMillis = SystemClock.uptimeMillis();
                 ArrayList arrayList = bVar.b;
                 long uptimeMillis2 = SystemClock.uptimeMillis();
@@ -115,13 +114,13 @@ public final class a implements Choreographer.FrameCallback {
                 }
                 break;
             default:
-                y01 y01Var = ((a11) this.b).a;
-                if (y01Var != null) {
-                    Handler handler = y01Var.getHandler();
-                    if (handler != null && y01Var.b.get()) {
+                z01 z01Var = ((b11) this.b).a;
+                if (z01Var != null) {
+                    Handler handler = z01Var.getHandler();
+                    if (handler != null && z01Var.b.get()) {
                         handler.sendMessage(handler.obtainMessage(0));
                     }
-                    if (((a11) this.b).a.P) {
+                    if (((b11) this.b).a.P) {
                         Choreographer.getInstance().postFrameCallback(this);
                         break;
                     }

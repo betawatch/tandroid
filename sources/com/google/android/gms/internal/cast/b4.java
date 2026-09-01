@@ -1,79 +1,21 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+import java.lang.reflect.Field;
+import java.security.PrivilegedExceptionAction;
+import sun.misc.Unsafe;
+
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final class b4 extends j7.a6 {
-    @Override // j7.a6
-    public final z3 a(f4 f4Var) {
-        z3 z3Var;
-        z3 z3Var2 = z3.d;
-        synchronized (f4Var) {
-            try {
-                z3Var = f4Var.b;
-                if (z3Var != z3Var2) {
-                    f4Var.b = z3Var2;
-                }
-            } catch (Throwable th2) {
-                throw th2;
+public final class b4 implements PrivilegedExceptionAction {
+    @Override // java.security.PrivilegedExceptionAction
+    public final /* bridge */ /* synthetic */ Object run() {
+        for (Field field : Unsafe.class.getDeclaredFields()) {
+            field.setAccessible(true);
+            Object obj = field.get(null);
+            if (Unsafe.class.isInstance(obj)) {
+                return (Unsafe) Unsafe.class.cast(obj);
             }
         }
-        return z3Var;
-    }
-
-    @Override // j7.a6
-    public final e4 b(f4 f4Var) {
-        e4 e4Var;
-        e4 e4Var2 = e4.c;
-        synchronized (f4Var) {
-            try {
-                e4Var = f4Var.c;
-                if (e4Var != e4Var2) {
-                    f4Var.c = e4Var2;
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        return e4Var;
-    }
-
-    @Override // j7.a6
-    public final void c(e4 e4Var, e4 e4Var2) {
-        e4Var.b = e4Var2;
-    }
-
-    @Override // j7.a6
-    public final void d(e4 e4Var, Thread thread) {
-        e4Var.a = thread;
-    }
-
-    @Override // j7.a6
-    public final boolean e(f4 f4Var, Object obj, Object obj2) {
-        synchronized (f4Var) {
-            try {
-                if (f4Var.a != obj) {
-                    return false;
-                }
-                f4Var.a = obj2;
-                return true;
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-    }
-
-    @Override // j7.a6
-    public final boolean f(f4 f4Var, e4 e4Var, e4 e4Var2) {
-        synchronized (f4Var) {
-            try {
-                if (f4Var.c != e4Var) {
-                    return false;
-                }
-                f4Var.c = e4Var2;
-                return true;
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
+        throw new NoSuchFieldError("the Unsafe");
     }
 }

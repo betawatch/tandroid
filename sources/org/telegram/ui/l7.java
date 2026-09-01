@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class l7 extends h7 {
     public final ArrayList f;
@@ -24,8 +24,8 @@ public final class l7 extends h7 {
         this.f = new ArrayList();
     }
 
-    @Override // org.telegram.ui.Components.rl0
-    public final boolean D(f2.l1 l1Var) {
+    @Override // org.telegram.ui.Components.sl0
+    public final boolean D(f2.m1 m1Var) {
         return true;
     }
 
@@ -48,13 +48,13 @@ public final class l7 extends h7 {
         E(arrayList, arrayList2);
     }
 
-    @Override // f2.o0
-    public final void v(f2.l1 l1Var, int i10) {
+    @Override // f2.p0
+    public final void v(f2.m1 m1Var, int i10) {
         String dialogPhotoTitle;
-        if (l1Var.f != 1) {
+        if (m1Var.f != 1) {
             return;
         }
-        a7 a7Var = (a7) l1Var.a;
+        a7 a7Var = (a7) m1Var.a;
         ArrayList arrayList = this.e;
         u6 u6Var = ((o7) arrayList.get(i10)).c;
         u7 u7Var = this.h;
@@ -85,28 +85,28 @@ public final class l7 extends h7 {
         a7Var.setWillNotDraw(!z10);
         a7Var.requestLayout();
         boolean contains = u7Var.f.l.contains(Long.valueOf(u6Var.a));
-        org.telegram.ui.Components.lp lpVar = a7Var.n;
-        if (lpVar != null || contains) {
-            if (lpVar == null) {
-                org.telegram.ui.Components.lp lpVar2 = new org.telegram.ui.Components.lp(a7Var.getContext(), 21, a7Var.b);
-                a7Var.n = lpVar2;
-                lpVar2.b(-1, org.telegram.ui.ActionBar.j6.d6, org.telegram.ui.ActionBar.j6.k7);
+        org.telegram.ui.Components.np npVar = a7Var.n;
+        if (npVar != null || contains) {
+            if (npVar == null) {
+                org.telegram.ui.Components.np npVar2 = new org.telegram.ui.Components.np(a7Var.getContext(), 21, a7Var.b);
+                a7Var.n = npVar2;
+                npVar2.b(-1, org.telegram.ui.ActionBar.k6.d6, org.telegram.ui.ActionBar.k6.k7);
                 a7Var.n.setDrawUnchecked(false);
                 a7Var.n.setDrawBackgroundAsArc(3);
-                a7Var.addView(a7Var.n, k7.b6.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 48, 38.0f, 25.0f, 38.0f, 0.0f));
+                a7Var.addView(a7Var.n, k7.c6.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 48, 38.0f, 25.0f, 38.0f, 0.0f));
             }
             a7Var.n.a(contains, z4);
         }
     }
 
-    @Override // f2.o0
-    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+    @Override // f2.p0
+    public final f2.m1 x(ViewGroup viewGroup, int i10) {
         a7 a7Var = null;
         if (i10 == 1) {
             a7 a7Var2 = new a7(this.h.getContext(), null);
-            a7Var2.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
+            a7Var2.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.d6, false));
             a7Var = a7Var2;
         }
-        return new org.telegram.ui.Components.el0(a7Var);
+        return new org.telegram.ui.Components.fl0(a7Var);
     }
 }

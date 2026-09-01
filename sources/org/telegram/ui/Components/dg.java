@@ -25,15 +25,15 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public abstract class dg extends vt {
+public abstract class dg extends xt {
     public xc c;
     public final /* synthetic */ ChatActivityEnterView d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dg(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var);
+    public dg(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, g6Var);
         this.d = chatActivityEnterView;
     }
 
@@ -117,13 +117,13 @@ public abstract class dg extends vt {
     }
 
     @Override // org.telegram.ui.Components.EditTextBoldCursor
-    public final org.telegram.ui.ActionBar.f6 getResourcesProvider() {
+    public final org.telegram.ui.ActionBar.g6 getResourcesProvider() {
         return this.d.S3;
     }
 
     public final void m(Uri uri, String str) {
         org.telegram.ui.xn xnVar = this.d.L2;
-        Utilities.globalQueue.postRunnable(new lh.p6(this, uri, AndroidUtilities.generatePicturePath(xnVar != null && xnVar.v(), MimeTypeMap.getSingleton().getExtensionFromMimeType(str)), 26));
+        Utilities.globalQueue.postRunnable(new mh.p6(this, uri, AndroidUtilities.generatePicturePath(xnVar != null && xnVar.w(), MimeTypeMap.getSingleton().getExtensionFromMimeType(str)), 26));
     }
 
     public final void n(File file, ArrayList arrayList) {
@@ -175,19 +175,19 @@ public abstract class dg extends vt {
         }
         eg egVar = chatActivityEnterView.V2;
         if (egVar != null) {
-            egVar.D(null, true, i10, i11, 0L);
+            egVar.C(null, true, i10, i11, 0L);
         }
     }
 
-    @Override // org.telegram.ui.Components.vt
+    @Override // org.telegram.ui.Components.xt
     public final void onContextMenuClose() {
         eg egVar = this.d.V2;
         if (egVar != null) {
-            egVar.h2();
+            egVar.n2();
         }
     }
 
-    @Override // org.telegram.ui.Components.vt
+    @Override // org.telegram.ui.Components.xt
     public final void onContextMenuOpen() {
         eg egVar = this.d.V2;
         if (egVar != null) {
@@ -216,7 +216,7 @@ public abstract class dg extends vt {
         }
     }
 
-    @Override // org.telegram.ui.Components.vt, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.xt, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
     public void onMeasure(int i10, int i11) {
         boolean z4 = getMeasuredWidth() == 0 && getMeasuredHeight() == 0;
         ChatActivityEnterView chatActivityEnterView = this.d;
@@ -239,16 +239,16 @@ public abstract class dg extends vt {
         }
     }
 
-    @Override // org.telegram.ui.Components.xt, android.widget.TextView
+    @Override // org.telegram.ui.Components.zt, android.widget.TextView
     public final void onSelectionChanged(int i10, int i11) {
         super.onSelectionChanged(i10, i11);
         eg egVar = this.d.V2;
         if (egVar != null) {
-            egVar.I0(i10, i11);
+            egVar.J0(i10, i11);
         }
     }
 
-    @Override // org.telegram.ui.Components.vt, android.widget.EditText, android.widget.TextView
+    @Override // org.telegram.ui.Components.xt, android.widget.EditText, android.widget.TextView
     public boolean onTextContextMenuItem(int i10) {
         if (i10 == 16908322) {
             ChatActivityEnterView chatActivityEnterView = this.d;
@@ -351,8 +351,8 @@ public abstract class dg extends vt {
             }
             try {
                 return super.onTouchEvent(motionEvent);
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e6) {
+                FileLog.e(e6);
             }
         }
         return false;
@@ -374,7 +374,7 @@ public abstract class dg extends vt {
         return super.requestRectangleOnScreen(rect);
     }
 
-    @Override // org.telegram.ui.Components.xt
+    @Override // org.telegram.ui.Components.zt
     public void setOffsetY(float f10) {
         super.setOffsetY(f10);
         ChatActivityEnterView chatActivityEnterView = this.d;

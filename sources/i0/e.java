@@ -14,8 +14,8 @@ import com.google.android.gms.common.api.internal.s1;
 import h5.b0;
 import j$.util.DesugarCollections;
 import j$.util.Objects;
-import j7.i8;
-import j7.z7;
+import j7.a8;
+import j7.j8;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,14 +25,14 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import n7.qa;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class e {
-    public static final z7 a;
+    public static final a8 a;
     public static final a0.j b;
 
     static {
-        i8.a("TypefaceCompat static init");
+        j8.a("TypefaceCompat static init");
         int i10 = Build.VERSION.SDK_INT;
         if (i10 >= 29) {
             a = new j();
@@ -56,7 +56,7 @@ public abstract class e {
         Trace.endSection();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0029, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0028, code lost:
     
         if (r1.equals(r5) == false) goto L15;
      */
@@ -68,7 +68,7 @@ public abstract class e {
         Typeface a2;
         Typeface typeface;
         List unmodifiableList;
-        int i13 = 10;
+        int i13 = 3;
         if (dVar instanceof h0.g) {
             h0.g gVar = (h0.g) dVar;
             String str2 = gVar.e;
@@ -92,14 +92,15 @@ public abstract class e {
             boolean z10 = gVar.d == 0;
             int i15 = gVar.c;
             Handler handler = new Handler(Looper.getMainLooper());
-            o5.i iVar = new o5.i(20);
-            iVar.b = b0Var;
+            y5.h hVar = new y5.h(19, z4);
+            hVar.b = b0Var;
             o0.d dVar2 = gVar.b;
+            int i16 = 2;
             if (dVar2 != null) {
                 Object[] objArr4 = {gVar.a, dVar2};
                 ArrayList arrayList = new ArrayList(2);
-                for (int i16 = 0; i16 < 2; i16++) {
-                    Object obj = objArr4[i16];
+                for (int i17 = 0; i17 < 2; i17++) {
+                    Object obj = objArr4[i17];
                     Objects.requireNonNull(obj);
                     arrayList.add(obj);
                 }
@@ -113,13 +114,13 @@ public abstract class e {
                 unmodifiableList = DesugarCollections.unmodifiableList(arrayList2);
             }
             p pVar = new p(handler, 4);
-            qa qaVar = new qa(iVar, pVar, z4, 3);
-            int i17 = 26;
+            qa qaVar = new qa(i16, hVar, pVar);
+            int i18 = 26;
             if (!z10) {
                 String a10 = o0.h.a(i12, unmodifiableList);
                 Typeface typeface2 = (Typeface) o0.h.a.a(a10);
                 if (typeface2 != null) {
-                    pVar.execute(new k(iVar, typeface2, objArr2 == true ? 1 : 0, i17));
+                    pVar.execute(new k(hVar, typeface2, objArr2 == true ? 1 : 0, i18));
                     a2 = typeface2;
                 } else {
                     o0.f fVar = new o0.f(qaVar, objArr == true ? 1 : 0);
@@ -160,7 +161,7 @@ public abstract class e {
                 String a11 = o0.h.a(i12, DesugarCollections.unmodifiableList(arrayList5));
                 Typeface typeface3 = (Typeface) o0.h.a.a(a11);
                 if (typeface3 != null) {
-                    pVar.execute(new k(iVar, typeface3, objArr3 == true ? 1 : 0, i17));
+                    pVar.execute(new k(hVar, typeface3, objArr3 == true ? 1 : 0, i18));
                     a2 = typeface3;
                 } else if (i15 == -1) {
                     Object[] objArr6 = {dVar3};
@@ -169,25 +170,23 @@ public abstract class e {
                     Objects.requireNonNull(obj4);
                     arrayList6.add(obj4);
                     o0.g b10 = o0.h.b(a11, context, DesugarCollections.unmodifiableList(arrayList6), i12);
-                    qaVar.c1(b10);
+                    qaVar.Y0(b10);
                     a2 = b10.a;
                 } else {
                     try {
                         try {
-                            try {
-                                o0.g gVar2 = (o0.g) o0.h.b.submit(new o0.e(a11, context, dVar3, i12, 0)).get(i15, TimeUnit.MILLISECONDS);
-                                qaVar.c1(gVar2);
-                                a2 = gVar2.a;
-                            } catch (TimeoutException unused) {
-                                throw new InterruptedException("timeout");
-                            }
-                        } catch (InterruptedException e) {
-                            throw e;
-                        } catch (ExecutionException e6) {
-                            throw new RuntimeException(e6);
+                            o0.g gVar2 = (o0.g) o0.h.b.submit(new o0.e(a11, context, dVar3, i12, 0)).get(i15, TimeUnit.MILLISECONDS);
+                            qaVar.Y0(gVar2);
+                            a2 = gVar2.a;
+                        } catch (InterruptedException e6) {
+                            throw e6;
+                        } catch (ExecutionException e10) {
+                            throw new RuntimeException(e10);
+                        } catch (TimeoutException unused) {
+                            throw new InterruptedException("timeout");
                         }
                     } catch (InterruptedException unused2) {
-                        ((p) qaVar.c).execute(new m2.b((o5.i) qaVar.b, -3));
+                        ((p) qaVar.c).execute(new m2.b((y5.h) qaVar.b, -3));
                     }
                 }
             }

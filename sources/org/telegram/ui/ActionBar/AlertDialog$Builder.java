@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public class AlertDialog$Builder {
     public final d2 a;
@@ -23,8 +23,8 @@ public class AlertDialog$Builder {
         return this.a;
     }
 
-    public d2 b(Context context, int i10, f6 f6Var) {
-        return new d2(context, i10, f6Var);
+    public d2 b(Context context, int i10, g6 g6Var) {
+        return new d2(context, i10, g6Var);
     }
 
     public final void c() {
@@ -108,7 +108,7 @@ public class AlertDialog$Builder {
                 return d2Var;
             }
             if (zArr[i10] && (textView = (TextView) d2Var.d(-(i10 + 1))) != null) {
-                textView.setTextColor(d2Var.e(j6.q7));
+                textView.setTextColor(d2Var.e(k6.q7));
             }
             i10++;
         }
@@ -121,15 +121,15 @@ public class AlertDialog$Builder {
         return this;
     }
 
-    public AlertDialog$Builder(Context context, f6 f6Var) {
-        this(context, 0, f6Var);
+    public AlertDialog$Builder(Context context, g6 g6Var) {
+        this(context, 0, g6Var);
     }
 
-    public AlertDialog$Builder(Context context, int i10, f6 f6Var) {
+    public AlertDialog$Builder(Context context, int i10, g6 g6Var) {
         this.b = new boolean[3];
         if (context == null && (context = AndroidUtilities.findActivity(LaunchActivity.D1)) == null) {
             context = ApplicationLoader.applicationContext;
         }
-        this.a = b(context, i10, f6Var);
+        this.a = b(context, i10, g6Var);
     }
 }

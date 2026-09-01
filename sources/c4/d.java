@@ -5,7 +5,7 @@ import c2.a1;
 import h5.d0;
 import h5.w;
 import j3.r1;
-import j7.j0;
+import j7.k0;
 import org.telegram.ui.Components.jb;
 import r3.h;
 import r3.k;
@@ -13,7 +13,7 @@ import r3.l;
 import r3.m;
 import r3.v;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class d implements k {
     public m a;
@@ -36,8 +36,8 @@ public final class d implements k {
     @Override // r3.k
     public final void e(m mVar) {
         this.a = mVar;
-        this.b = mVar.c2(0, 1);
-        mVar.f1();
+        this.b = mVar.i2(0, 1);
+        mVar.i1();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:51:0x0175, code lost:
@@ -60,15 +60,15 @@ public final class d implements k {
             h5.a.i(((h) lVar).d == 0);
             int i12 = this.f;
             if (i12 != -1) {
-                ((h) lVar).u(i12);
+                ((h) lVar).s(i12);
                 this.c = 4;
                 return 0;
             }
-            if (!j0.a(lVar)) {
+            if (!k0.a(lVar)) {
                 throw r1.a("Unsupported or unrecognized wav file type.", null);
             }
             h hVar = (h) lVar;
-            hVar.u((int) (hVar.i() - hVar.d));
+            hVar.s((int) (hVar.g() - hVar.d));
             this.c = 1;
             return 0;
         }
@@ -82,9 +82,9 @@ public final class d implements k {
                 h hVar2 = (h) lVar;
                 hVar2.a(8, false);
                 wVar.F(0);
-                hVar2.h(wVar.a, 0, 8, false);
+                hVar2.f(wVar.a, 0, 8, false);
                 j10 = wVar.j();
-                hVar2.u(((int) b10.b) + 8);
+                hVar2.s(((int) b10.b) + 8);
             }
             this.d = j10;
             this.c = 2;
@@ -102,9 +102,9 @@ public final class d implements k {
                 return bVar.b(lVar, j11) ? -1 : 0;
             }
             ((h) lVar).f = 0;
-            e b11 = j0.b(1684108385, lVar, new w(8));
+            e b11 = k0.b(1684108385, lVar, new w(8));
             h hVar3 = (h) lVar;
-            hVar3.u(8);
+            hVar3.s(8);
             Pair create = Pair.create(Long.valueOf(hVar3.d), Long.valueOf(b11.b));
             this.f = ((Long) create.first).intValue();
             long longValue = ((Long) create.second).longValue();
@@ -126,10 +126,10 @@ public final class d implements k {
             return 0;
         }
         w wVar2 = new w(16);
-        long j15 = j0.b(1718449184, lVar, wVar2).b;
+        long j15 = k0.b(1718449184, lVar, wVar2).b;
         h5.a.i(j15 >= 16);
         h hVar4 = (h) lVar;
-        hVar4.h(wVar2.a, 0, 16, false);
+        hVar4.f(wVar2.a, 0, 16, false);
         wVar2.F(0);
         int n10 = wVar2.n();
         int n11 = wVar2.n();
@@ -140,11 +140,11 @@ public final class d implements k {
         int i13 = ((int) j15) - 16;
         if (i13 > 0) {
             bArr = new byte[i13];
-            hVar4.h(bArr, 0, i13, false);
+            hVar4.f(bArr, 0, i13, false);
         } else {
             bArr = d0.f;
         }
-        hVar4.u((int) (hVar4.i() - hVar4.d));
+        hVar4.s((int) (hVar4.g() - hVar4.d));
         a1 a1Var = new a1();
         a1Var.a = n11;
         a1Var.b = m9;
@@ -182,7 +182,7 @@ public final class d implements k {
 
     @Override // r3.k
     public final boolean i(l lVar) {
-        return j0.a(lVar);
+        return k0.a(lVar);
     }
 
     @Override // r3.k

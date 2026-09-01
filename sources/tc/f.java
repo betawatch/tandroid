@@ -1,14 +1,14 @@
 package tc;
 
-import j7.q8;
+import j7.r8;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import k7.r7;
 import k7.s7;
+import k7.t7;
 
 /* loaded from: classes.dex */
-public abstract class f extends r7 {
+public abstract class f extends s7 {
     public static boolean a(Object[] objArr, Object obj) {
         int i10;
         kotlin.jvm.internal.j.e(objArr, "<this>");
@@ -69,7 +69,7 @@ public abstract class f extends r7 {
             if (i10 > 1) {
                 sb.append((CharSequence) ",");
             }
-            q8.a(sb, obj, null);
+            r8.a(sb, obj, null);
         }
         sb.append((CharSequence) "]");
         return sb.toString();
@@ -83,7 +83,7 @@ public abstract class f extends r7 {
         }
         int i10 = 0;
         if (length == 1) {
-            return s7.a(Long.valueOf(jArr[0]));
+            return t7.a(Long.valueOf(jArr[0]));
         }
         ArrayList arrayList = new ArrayList(jArr.length);
         int length2 = jArr.length;
@@ -96,6 +96,6 @@ public abstract class f extends r7 {
     public static List h(Object[] objArr) {
         kotlin.jvm.internal.j.e(objArr, "<this>");
         int length = objArr.length;
-        return length != 0 ? length != 1 ? new ArrayList(new d(objArr, false)) : s7.a(objArr[0]) : o.a;
+        return length != 0 ? length != 1 ? new ArrayList(new d(objArr, false)) : t7.a(objArr[0]) : o.a;
     }
 }

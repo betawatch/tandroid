@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class i extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final class i extends AnimatorListenerAdapter {
                 view.setTranslationX(0.0f);
                 view.setTranslationY(0.0f);
                 j jVar = this.b;
-                l1 l1Var = jVar.a;
+                m1 m1Var = jVar.a;
                 lVar.O();
                 lVar.d(jVar.a);
                 lVar.B.remove(jVar.a);
@@ -55,7 +55,7 @@ public final class i extends AnimatorListenerAdapter {
                 view2.setTranslationX(0.0f);
                 view2.setTranslationY(0.0f);
                 j jVar2 = this.b;
-                l1 l1Var2 = jVar2.b;
+                m1 m1Var2 = jVar2.b;
                 lVar2.O();
                 lVar2.d(jVar2.b);
                 lVar2.B.remove(jVar2.b);
@@ -68,11 +68,11 @@ public final class i extends AnimatorListenerAdapter {
     public final void onAnimationStart(Animator animator) {
         switch (this.a) {
             case 0:
-                l1 l1Var = this.b.a;
+                m1 m1Var = this.b.a;
                 this.e.getClass();
                 break;
             default:
-                l1 l1Var2 = this.b.b;
+                m1 m1Var2 = this.b.b;
                 this.e.getClass();
                 break;
         }

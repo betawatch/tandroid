@@ -1,53 +1,48 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.content.Context;
-import android.view.OrientationEventListener;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class ss0 extends OrientationEventListener {
-    public final /* synthetic */ PhotoViewer a;
+public final class ss0 extends org.telegram.ui.Components.v00 {
+    public final /* synthetic */ zr0 e;
+    public final /* synthetic */ PhotoViewer f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ss0(Context context, PhotoViewer photoViewer) {
-        super(context);
-        this.a = photoViewer;
+    public ss0(PhotoViewer photoViewer, zr0 zr0Var) {
+        super(false);
+        this.f = photoViewer;
+        this.e = zr0Var;
     }
 
-    @Override // android.view.OrientationEventListener
-    public final void onOrientationChanged(int i10) {
-        xs0 xs0Var;
-        Activity activity;
-        int i11;
-        PhotoViewer photoViewer = this.a;
-        if (photoViewer.T3 == null || (xs0Var = photoViewer.v2) == null || xs0Var.getVisibility() != 0 || (activity = photoViewer.y) == null || (i11 = photoViewer.V3) == 0) {
-            return;
-        }
-        if (i11 != 1) {
-            if (i10 > 0 && (i10 >= 330 || i10 <= 30)) {
-                photoViewer.W3 = true;
-                return;
-            }
-            if (!photoViewer.W3 || i10 < 240 || i10 > 300) {
-                return;
-            }
-            activity.setRequestedOrientation(photoViewer.U3);
-            photoViewer.V3 = 0;
-            photoViewer.W3 = false;
-            return;
-        }
-        if (i10 >= 240 && i10 <= 300) {
-            photoViewer.W3 = true;
-            return;
-        }
-        if (!photoViewer.W3 || i10 <= 0) {
-            return;
-        }
-        if (i10 >= 330 || i10 <= 30) {
-            activity.setRequestedOrientation(photoViewer.U3);
-            photoViewer.V3 = 0;
-            photoViewer.W3 = false;
-        }
+    @Override // org.telegram.ui.Components.io0
+    public final CharSequence d() {
+        StringBuilder sb = new StringBuilder();
+        PhotoViewer photoViewer = this.f;
+        int[] iArr = photoViewer.j3;
+        sb.append(LocaleController.formatPluralString("Minutes", iArr[0], new Object[0]));
+        sb.append(' ');
+        sb.append(LocaleController.formatPluralString("Seconds", iArr[1], new Object[0]));
+        String sb2 = sb.toString();
+        StringBuilder sb3 = new StringBuilder();
+        int[] iArr2 = photoViewer.k3;
+        sb3.append(LocaleController.formatPluralString("Minutes", iArr2[0], new Object[0]));
+        sb3.append(' ');
+        sb3.append(LocaleController.formatPluralString("Seconds", iArr2[1], new Object[0]));
+        return LocaleController.formatString("AccDescrPlayerDuration", R.string.AccDescrPlayerDuration, sb2, sb3.toString());
+    }
+
+    @Override // org.telegram.ui.Components.v00
+    public final float k() {
+        return this.f.n3.c();
+    }
+
+    @Override // org.telegram.ui.Components.v00
+    public final void l(float f10) {
+        this.e.b(f10);
+        PhotoViewer photoViewer = this.f;
+        photoViewer.n3.h(f10, false);
+        photoViewer.o3.invalidate();
     }
 }

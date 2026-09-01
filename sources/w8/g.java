@@ -20,7 +20,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class g {
     public static final Object k = new Object();
@@ -50,13 +50,13 @@ public final class g {
         a aVar = FirebaseInitProvider.a;
         Trace.beginSection("Firebase");
         Trace.beginSection("ComponentDiscovery");
-        ArrayList w10 = new bf.b(16, context, new ja.c(ComponentDiscoveryService.class, 4)).w();
+        ArrayList v = new bf.b(16, context, new o5.i(ComponentDiscoveryService.class, 5)).v();
         Trace.endSection();
         Trace.beginSection("Runtime");
         l lVar = l.a;
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
-        arrayList.addAll(w10);
+        arrayList.addAll(v);
         int i10 = 1;
         arrayList.add(new c9.d(new FirebaseCommonRegistrar(), i10));
         arrayList.add(new c9.d(new ExecutorsRegistrar(), i10));
@@ -71,7 +71,7 @@ public final class g {
         this.d = iVar2;
         Trace.endSection();
         this.g = new p(new c9.h(1, this, context));
-        this.h = iVar2.d(z9.c.class);
+        this.h = iVar2.c(z9.c.class);
         d dVar = new d(this);
         a();
         if (atomicBoolean.get()) {
@@ -224,8 +224,8 @@ public final class g {
 
     public final String toString() {
         bf.b bVar = new bf.b((Object) this);
-        bVar.s(this.b, "name");
-        bVar.s(this.c, "options");
+        bVar.r(this.b, "name");
+        bVar.r(this.c, "options");
         return bVar.toString();
     }
 }

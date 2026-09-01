@@ -1,22 +1,21 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class zu extends lq0 {
-    public final /* synthetic */ mv Y0;
+public final class zu extends ov {
+    public final /* synthetic */ ov T;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zu(mv mvVar, Context context, String str, String str2, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, null, str, false, str2, false, f6Var);
-        this.Y0 = mvVar;
+    public zu(ov ovVar, org.telegram.ui.ActionBar.p2 p2Var, Context context, org.telegram.ui.ActionBar.g6 g6Var, ArrayList arrayList) {
+        super(p2Var, context, g6Var, arrayList);
+        this.T = ovVar;
     }
 
-    @Override // org.telegram.ui.Components.lq0
-    public final void R0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z4) {
-        AndroidUtilities.runOnUIThread(new ah.a(this, hVar, i10, 29), 100L);
+    @Override // org.telegram.ui.Components.ov
+    public final void Y() {
+        this.T.dismiss();
     }
 }

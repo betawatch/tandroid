@@ -17,13 +17,13 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class ve extends zo0 {
+public final class ve extends ap0 {
     public final /* synthetic */ ChatActivityEnterView H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ve(ChatActivityEnterView chatActivityEnterView, final Context context, final org.telegram.ui.xn xnVar, MessagesController messagesController, final boolean z4, TLRPC.Peer peer, TLRPC.TL_channels_sendAsPeers tL_channels_sendAsPeers, final androidx.car.app.utils.a aVar, org.telegram.ui.ActionBar.f6 f6Var) {
+    public ve(ChatActivityEnterView chatActivityEnterView, final Context context, final org.telegram.ui.xn xnVar, MessagesController messagesController, final boolean z4, TLRPC.Peer peer, TLRPC.TL_channels_sendAsPeers tL_channels_sendAsPeers, final androidx.car.app.utils.a aVar, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         this.H = chatActivityEnterView;
         this.b = true;
@@ -35,60 +35,60 @@ public final class ve extends zo0 {
         this.G = new ArrayList();
         this.r = peer;
         this.s = tL_channels_sendAsPeers;
-        dg.u2 u2Var = new dg.u2(this, context, 24);
-        this.t = u2Var;
-        u2Var.setLayoutParams(k7.b6.c(-2.0f, -2));
-        setContentView(u2Var);
+        eg.s2 s2Var = new eg.s2(this, context, 24);
+        this.t = s2Var;
+        s2Var.setLayoutParams(k7.c6.c(-2.0f, -2));
+        setContentView(s2Var);
         setWidth(-2);
         setHeight(-2);
         setBackgroundDrawable(null);
         Drawable mutate = context.getDrawable(R.drawable.popup_fixed_alert4).mutate();
-        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G8, f6Var), PorterDuff.Mode.MULTIPLY));
-        u2Var.setBackground(mutate);
+        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.G8, g6Var), PorterDuff.Mode.MULTIPLY));
+        s2Var.setBackground(mutate);
         Rect rect = new Rect();
         mutate.getPadding(rect);
-        u2Var.setPadding(rect.left, rect.top, rect.right, rect.bottom);
+        s2Var.setPadding(rect.left, rect.top, rect.right, rect.bottom);
         int width = (int) ((xnVar == null ? AndroidUtilities.displaySize.x : xnVar.U0.getWidth()) * 0.75f);
-        to0 to0Var = new to0(context, width, AndroidUtilities.dp(450.0f));
-        this.o = to0Var;
-        to0Var.setOrientation(1);
+        uo0 uo0Var = new uo0(context, width, AndroidUtilities.dp(450.0f));
+        this.o = uo0Var;
+        uo0Var.setOrientation(1);
         TextView textView = new TextView(context);
         this.p = textView;
-        org.telegram.ui.b.l(org.telegram.ui.ActionBar.j6.m5, f6Var, textView, 1, 16.0f);
+        org.telegram.ui.b.l(org.telegram.ui.ActionBar.k6.m5, g6Var, textView, 1, 16.0f);
         textView.setText(LocaleController.getString(R.string.SendMessageAsTitle));
         textView.setTypeface(AndroidUtilities.bold(), 1);
         int dp = AndroidUtilities.dp(18.0f);
         textView.setPadding(dp, AndroidUtilities.dp(12.0f), dp, AndroidUtilities.dp(12.0f));
-        to0Var.addView(textView);
+        uo0Var.addView(textView);
         FrameLayout frameLayout = new FrameLayout(context);
         final ArrayList<TLRPC.TL_sendAsPeer> arrayList = tL_channels_sendAsPeers.peers;
-        sl0 sl0Var = new sl0(context, null);
-        this.v = sl0Var;
-        f2.i0 i0Var = new f2.i0();
-        this.w = i0Var;
-        sl0Var.setLayoutManager(i0Var);
-        sl0Var.setAdapter(new uo0(f6Var, arrayList, messagesController, width, peer));
-        sl0Var.j(new vo0(this));
-        sl0Var.setOnItemClickListener(new il0() { // from class: org.telegram.ui.Components.so0
-            @Override // org.telegram.ui.Components.il0
+        tl0 tl0Var = new tl0(context, null);
+        this.v = tl0Var;
+        f2.j0 j0Var = new f2.j0();
+        this.w = j0Var;
+        tl0Var.setLayoutManager(j0Var);
+        tl0Var.setAdapter(new vo0(g6Var, arrayList, messagesController, width, peer));
+        tl0Var.j(new wo0(this));
+        tl0Var.setOnItemClickListener(new jl0() { // from class: org.telegram.ui.Components.to0
+            @Override // org.telegram.ui.Components.jl0
             public final void f(int i10, View view) {
-                zo0.k(ve.this, arrayList, context, xnVar, z4, aVar, view, i10);
+                ap0.k(ve.this, arrayList, context, xnVar, z4, aVar, view, i10);
             }
         });
-        sl0Var.setOverScrollMode(2);
-        frameLayout.addView(sl0Var);
+        tl0Var.setOverScrollMode(2);
+        frameLayout.addView(tl0Var);
         View view = new View(context);
         this.u = view;
         Drawable drawable = context.getDrawable(R.drawable.header_shadow);
         drawable.setAlpha(153);
         view.setBackground(drawable);
         view.setAlpha(0.0f);
-        frameLayout.addView(view, k7.b6.c(4.0f, -1));
-        to0Var.addView(frameLayout, k7.b6.c(-2.0f, -1));
-        u2Var.addView(to0Var);
+        frameLayout.addView(view, k7.c6.c(4.0f, -1));
+        uo0Var.addView(frameLayout, k7.c6.c(-2.0f, -1));
+        s2Var.addView(uo0Var);
     }
 
-    @Override // org.telegram.ui.Components.zo0, org.telegram.ui.ActionBar.p1, android.widget.PopupWindow
+    @Override // org.telegram.ui.Components.ap0, org.telegram.ui.ActionBar.p1, android.widget.PopupWindow
     public final void dismiss() {
         ArrayList arrayList = this.z;
         ChatActivityEnterView chatActivityEnterView = this.H;

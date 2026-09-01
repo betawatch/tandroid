@@ -1,9 +1,9 @@
 package sa;
 
 import java.lang.reflect.Field;
-import vh.v2;
+import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class u extends t {
     public final ra.m b;
@@ -15,7 +15,7 @@ public final class u extends t {
 
     @Override // sa.t
     public final Object a() {
-        return this.b.s2();
+        return this.b.y2();
     }
 
     @Override // sa.t
@@ -26,7 +26,7 @@ public final class u extends t {
             return;
         }
         if (sVar.h) {
-            throw new pa.j(v2.e("Cannot set value of 'static final' ", ua.c.d(field, false)));
+            throw new pa.j(yh.k("Cannot set value of 'static final' ", ua.c.d(field, false)));
         }
         field.set(obj, read);
     }

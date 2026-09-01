@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class pm extends org.telegram.ui.Components.qv0 {
     public Paint A0;
@@ -49,8 +49,8 @@ public final class pm extends org.telegram.ui.Components.qv0 {
     public final ArrayList z0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pm(xn xnVar, Context context, org.telegram.ui.ActionBar.e5 e5Var) {
-        super(context, e5Var);
+    public pm(xn xnVar, Context context, org.telegram.ui.ActionBar.f5 f5Var) {
+        super(context, f5Var);
         this.G0 = xnVar;
         this.t0 = 0;
         this.w0 = new ArrayList();
@@ -71,17 +71,17 @@ public final class pm extends org.telegram.ui.Components.qv0 {
         if (alVar != null) {
             alVar.setTranslationY(xnVar.l1 != null ? r3.getCurrentHeight() : 0);
         }
-        ph.f3 f3Var = xnVar.t1;
+        qh.f3 f3Var = xnVar.t1;
         if (f3Var != null) {
             f3Var.setTranslationY(0.0f);
         }
-        ph.f3 f3Var2 = xnVar.s1;
+        qh.f3 f3Var2 = xnVar.s1;
         if (f3Var2 != null) {
             f3Var2.setTranslationY(0.0f);
         }
-        org.telegram.ui.Components.w21 w21Var = xnVar.O1;
-        if (w21Var != null) {
-            w21Var.setTranslationY(0.0f);
+        org.telegram.ui.Components.x21 x21Var = xnVar.O1;
+        if (x21Var != null) {
+            x21Var.setTranslationY(0.0f);
         }
         xnVar.N0.setTranslationY(0.0f);
         xnVar.M.setTranslationY(0.0f);
@@ -93,7 +93,7 @@ public final class pm extends org.telegram.ui.Components.qv0 {
             dlVar.q0 = 0.0f;
             dlVar.s();
         }
-        eg.i0 i0Var = xnVar.v2;
+        fg.i0 i0Var = xnVar.v2;
         if (i0Var != null) {
             org.telegram.ui.Components.x9 x9Var = (org.telegram.ui.Components.x9) i0Var.b;
             x9Var.u = 0.0f;
@@ -115,21 +115,21 @@ public final class pm extends org.telegram.ui.Components.qv0 {
 
     @Override // org.telegram.ui.Components.qv0
     public final void U(Drawable drawable) {
-        if (drawable instanceof org.telegram.ui.Components.dc0) {
-            ((org.telegram.ui.Components.dc0) drawable).p();
+        if (drawable instanceof org.telegram.ui.Components.fc0) {
+            ((org.telegram.ui.Components.fc0) drawable).p();
         }
         xn xnVar = this.G0;
-        sg.a c3 = xnVar.T.c(drawable);
+        tg.a c3 = xnVar.T.c(drawable);
         float computePerceivedBrightness = AndroidUtilities.computePerceivedBrightness(xnVar.T.b(c3));
         float computePerceivedBrightness2 = AndroidUtilities.computePerceivedBrightness(xnVar.T.a(c3));
         xnVar.Ab = computePerceivedBrightness <= 0.721f;
         xnVar.Bb = computePerceivedBrightness2 <= 0.9f;
         xnVar.I.a = c3;
-        wg.f fVar = xnVar.U;
+        xg.f fVar = xnVar.U;
         if (fVar != null) {
             fVar.invalidate();
         }
-        ug.f fVar2 = xnVar.P;
+        vg.f fVar2 = xnVar.P;
         if (fVar2 != null) {
             fVar2.invalidate();
         }
@@ -177,12 +177,12 @@ public final class pm extends org.telegram.ui.Components.qv0 {
     public final void addView(View view, int i10, ViewGroup.LayoutParams layoutParams) {
         org.telegram.ui.Components.ig igVar;
         xn xnVar = this.G0;
-        ng.a aVar = xnVar.G;
+        og.a aVar = xnVar.G;
         jk jkVar = xnVar.V;
         if (jkVar == null || view != jkVar.j0) {
             super.addView(view, i10, layoutParams);
         } else {
-            wg.f fVar = xnVar.U;
+            xg.f fVar = xnVar.U;
             int indexOfChild = fVar != null ? indexOfChild(fVar) : -1;
             if (indexOfChild >= 0) {
                 i10 = indexOfChild;
@@ -191,8 +191,8 @@ public final class pm extends org.telegram.ui.Components.qv0 {
         }
         jk jkVar2 = xnVar.V;
         if (jkVar2 != null && view == jkVar2.j0) {
-            rh.w wVar = (rh.w) view;
-            wVar.setBackgroundDrawable(aVar.c(wVar.c, xnVar.x, false));
+            sh.v vVar = (sh.v) view;
+            vVar.setBackgroundDrawable(aVar.c(vVar.c, xnVar.x, false));
         }
         jk jkVar3 = xnVar.V;
         if (jkVar3 == null || view != (igVar = jkVar3.K1)) {
@@ -248,8 +248,8 @@ public final class pm extends org.telegram.ui.Components.qv0 {
         pm pmVar;
         float f11;
         View view3;
-        org.telegram.ui.Components.pa0 pa0Var;
-        org.telegram.ui.Components.pa0 pa0Var2;
+        org.telegram.ui.Components.ra0 ra0Var;
+        org.telegram.ui.Components.ra0 ra0Var2;
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.ActionBar.k kVar2;
         org.telegram.ui.ActionBar.k kVar3;
@@ -290,14 +290,14 @@ public final class pm extends org.telegram.ui.Components.qv0 {
         ArrayList arrayList5;
         org.telegram.ui.Cells.t1 t1Var2;
         ArrayList arrayList6;
-        ch.i iVar;
+        dh.i iVar;
         Integer num4;
         float f15;
         float f16;
         boolean z4;
         tm tmVar4;
         tm tmVar5;
-        org.telegram.ui.Components.pa0 pa0Var3;
+        org.telegram.ui.Components.ra0 ra0Var3;
         float f17;
         float f18;
         tm tmVar6;
@@ -366,20 +366,20 @@ public final class pm extends org.telegram.ui.Components.qv0 {
         tm tmVar19;
         Integer num12;
         org.telegram.ui.Components.df dfVar;
-        org.telegram.ui.Components.pa0 pa0Var4;
-        org.telegram.ui.Components.pa0 pa0Var5;
+        org.telegram.ui.Components.ra0 ra0Var4;
+        org.telegram.ui.Components.ra0 ra0Var5;
         org.telegram.ui.Cells.t1 t1Var3;
         float f40;
         tm tmVar20;
         org.telegram.ui.Cells.t1 t1Var4;
         boolean z10;
-        org.telegram.ui.Components.pa0 pa0Var6;
+        org.telegram.ui.Components.ra0 ra0Var6;
         float f41;
-        org.telegram.ui.Components.pa0 pa0Var7;
+        org.telegram.ui.Components.ra0 ra0Var7;
         float f42;
         tm tmVar21;
-        org.telegram.ui.Components.pa0 pa0Var8;
-        org.telegram.ui.Components.pa0 pa0Var9;
+        org.telegram.ui.Components.ra0 ra0Var8;
+        org.telegram.ui.Components.ra0 ra0Var9;
         tm tmVar22;
         View view11;
         float f43;
@@ -426,14 +426,14 @@ public final class pm extends org.telegram.ui.Components.qv0 {
         org.telegram.ui.ActionBar.k kVar9;
         boolean z11;
         org.telegram.ui.ActionBar.k kVar10;
-        org.telegram.ui.Components.k40 k40Var;
+        org.telegram.ui.Components.m40 m40Var;
         View view25;
         ej ejVar;
         View view26;
         sj sjVar;
         pm pmVar3 = this;
         xn xnVar = pmVar3.G0;
-        ch.i iVar2 = xnVar.v;
+        dh.i iVar2 = xnVar.v;
         ArrayList arrayList7 = xnVar.k6;
         xnVar.V.T1();
         xnVar.jc();
@@ -447,9 +447,9 @@ public final class pm extends org.telegram.ui.Components.qv0 {
         if (ejVar2 != null && ejVar2.getTag() != null && (view26 = (ejVar = xnVar.d2).e) != null) {
             ejVar.g(view26);
         }
-        org.telegram.ui.Components.k40 k40Var2 = xnVar.f2;
-        if (k40Var2 != null && k40Var2.getTag() != null && (view25 = (k40Var = xnVar.f2).e) != null) {
-            k40Var.g(view25);
+        org.telegram.ui.Components.m40 m40Var2 = xnVar.f2;
+        if (m40Var2 != null && m40Var2.getTag() != null && (view25 = (m40Var = xnVar.f2).e) != null) {
+            m40Var.g(view25);
         }
         if (xnVar.ha) {
             kVar10 = ((org.telegram.ui.ActionBar.p2) xnVar).actionBar;
@@ -715,18 +715,18 @@ public final class pm extends org.telegram.ui.Components.qv0 {
                                 }
                                 canvas3.save();
                                 float measuredHeight7 = ((getMeasuredHeight() - iVar2.d()) - xnVar.pc) - AndroidUtilities.dp(9.0f);
-                                pa0Var6 = xnVar.F1;
-                                if (pa0Var6 != null) {
-                                    pa0Var9 = xnVar.F1;
-                                    f41 = pa0Var9.d();
+                                ra0Var6 = xnVar.F1;
+                                if (ra0Var6 != null) {
+                                    ra0Var9 = xnVar.F1;
+                                    f41 = ra0Var9.d();
                                 } else {
                                     f41 = 0.0f;
                                 }
                                 float f63 = measuredHeight7 - f41;
-                                pa0Var7 = xnVar.F1;
-                                if (pa0Var7 != null) {
-                                    pa0Var8 = xnVar.F1;
-                                    f42 = pa0Var8.e();
+                                ra0Var7 = xnVar.F1;
+                                if (ra0Var7 != null) {
+                                    ra0Var8 = xnVar.F1;
+                                    f42 = ra0Var8.e();
                                 } else {
                                     f42 = 0.0f;
                                 }
@@ -752,13 +752,13 @@ public final class pm extends org.telegram.ui.Components.qv0 {
                             float left3 = tmVar4.getLeft();
                             tmVar5 = xnVar.u0;
                             float right2 = tmVar5.getRight();
-                            float measuredHeight8 = (((getMeasuredHeight() - iVar.d()) - xnVar.pc) - xnVar.W8(org.telegram.ui.Components.s21.c)) - AndroidUtilities.dp(f15);
-                            pa0Var3 = xnVar.F1;
-                            if (pa0Var3 != null) {
-                                pa0Var4 = xnVar.F1;
-                                float max = Math.max(0.0f, pa0Var4.e());
-                                pa0Var5 = xnVar.F1;
-                                f18 = Math.max(0.0f, pa0Var5.d());
+                            float measuredHeight8 = (((getMeasuredHeight() - iVar.d()) - xnVar.pc) - xnVar.W8(org.telegram.ui.Components.t21.c)) - AndroidUtilities.dp(f15);
+                            ra0Var3 = xnVar.F1;
+                            if (ra0Var3 != null) {
+                                ra0Var4 = xnVar.F1;
+                                float max = Math.max(0.0f, ra0Var4.e());
+                                ra0Var5 = xnVar.F1;
+                                f18 = Math.max(0.0f, ra0Var5.d());
                                 f17 = max;
                             } else {
                                 f17 = 0.0f;
@@ -932,13 +932,13 @@ public final class pm extends org.telegram.ui.Components.qv0 {
                                         canvas3.translate(x12, view27.getY() + tmVar11.getY() + view27.getPaddingTop());
                                         num7 = xnVar.J8;
                                         boolean z13 = xnVar.F8;
-                                        mg.r0 r0Var = v0Var2.z0;
+                                        ng.r0 r0Var = v0Var2.z0;
                                         if (!r0Var.b) {
-                                            org.telegram.ui.ActionBar.f6 f6Var = v0Var2.V0;
-                                            if (f6Var != null) {
-                                                f6Var.l(v0Var2.r0, v0Var2.q0 + AndroidUtilities.dp(4.0f), v0Var2.getMeasuredWidth(), v0Var2.s0);
+                                            org.telegram.ui.ActionBar.g6 g6Var = v0Var2.V0;
+                                            if (g6Var != null) {
+                                                g6Var.l(v0Var2.r0, v0Var2.q0 + AndroidUtilities.dp(4.0f), v0Var2.getMeasuredWidth(), v0Var2.s0);
                                             } else {
-                                                org.telegram.ui.ActionBar.j6.q(v0Var2.r0, v0Var2.q0 + AndroidUtilities.dp(4.0f), v0Var2.getMeasuredWidth(), v0Var2.s0);
+                                                org.telegram.ui.ActionBar.k6.q(v0Var2.r0, v0Var2.q0 + AndroidUtilities.dp(4.0f), v0Var2.getMeasuredWidth(), v0Var2.s0);
                                             }
                                             r0Var.D = f73;
                                             r0Var.E = z13;
@@ -1177,9 +1177,9 @@ public final class pm extends org.telegram.ui.Components.qv0 {
         }
         view3 = xnVar.G8;
         if (view3 != null || ((ArrayList) xnVar.J9.c).size() > 0) {
-            pa0Var = xnVar.F1;
-            if (pa0Var != null) {
-                pa0Var2 = xnVar.F1;
+            ra0Var = xnVar.F1;
+            if (ra0Var != null) {
+                ra0Var2 = xnVar.F1;
             }
             super.drawChild(canvas3, xnVar.g1, SystemClock.uptimeMillis());
             zj zjVar = xnVar.U2;
@@ -1190,17 +1190,17 @@ public final class pm extends org.telegram.ui.Components.qv0 {
             if (yjVar != null && yjVar.getTag() != null) {
                 super.drawChild(canvas3, xnVar.V2, SystemClock.uptimeMillis());
             }
-            org.telegram.ui.Components.r00 r00Var = xnVar.j9;
-            if (r00Var != null) {
-                super.drawChild(canvas3, r00Var, SystemClock.uptimeMillis());
+            org.telegram.ui.Components.s00 s00Var = xnVar.j9;
+            if (s00Var != null) {
+                super.drawChild(canvas3, s00Var, SystemClock.uptimeMillis());
             }
-            hh.k kVar11 = xnVar.U9;
+            ih.k kVar11 = xnVar.U9;
             if (kVar11 != null) {
                 super.drawChild(canvas3, kVar11, SystemClock.uptimeMillis());
             }
-            org.telegram.ui.Components.k40 k40Var3 = xnVar.b2;
-            if (k40Var3 != null) {
-                super.drawChild(canvas3, k40Var3, SystemClock.uptimeMillis());
+            org.telegram.ui.Components.m40 m40Var3 = xnVar.b2;
+            if (m40Var3 != null) {
+                super.drawChild(canvas3, m40Var3, SystemClock.uptimeMillis());
             }
             UndoView undoView = xnVar.v3;
             if (undoView != null && undoView.getVisibility() == 0) {
@@ -1210,7 +1210,7 @@ public final class pm extends org.telegram.ui.Components.qv0 {
             if (glVar != null && glVar.getVisibility() == 0) {
                 super.drawChild(canvas3, xnVar.w3, SystemClock.uptimeMillis());
             }
-            ph.f3 f3Var = xnVar.u1;
+            qh.f3 f3Var = xnVar.u1;
             if (f3Var != null && f3Var.getVisibility() == 0) {
                 super.drawChild(canvas3, xnVar.u1, SystemClock.uptimeMillis());
             }
@@ -1218,7 +1218,7 @@ public final class pm extends org.telegram.ui.Components.qv0 {
             if (vlVar != null && vlVar.getVisibility() == 0) {
                 super.drawChild(canvas3, xnVar.y1, SystemClock.uptimeMillis());
             }
-            ph.f3 f3Var2 = xnVar.w1;
+            qh.f3 f3Var2 = xnVar.w1;
             if (f3Var2 != null && f3Var2.getVisibility() == 0) {
                 super.drawChild(canvas3, xnVar.w1, SystemClock.uptimeMillis());
             }
@@ -1231,7 +1231,7 @@ public final class pm extends org.telegram.ui.Components.qv0 {
             }
         }
         if (xnVar.ma > 0 && pmVar.f < AndroidUtilities.dp(f11)) {
-            int themedColor = xnVar.getThemedColor(org.telegram.ui.ActionBar.j6.d6);
+            int themedColor = xnVar.getThemedColor(org.telegram.ui.ActionBar.k6.d6);
             if (pmVar.A0 == null) {
                 pmVar.A0 = new Paint();
             }
@@ -1244,15 +1244,15 @@ public final class pm extends org.telegram.ui.Components.qv0 {
             canvas6.drawRect(0.0f, pmVar.getMeasuredHeight() - xnVar.ma, pmVar.getMeasuredWidth(), pmVar.getMeasuredHeight(), pmVar.A0);
             canvas3 = canvas6;
         }
-        tp tpVar = xnVar.M9;
-        if (tpVar != null && tpVar.e()) {
+        up upVar = xnVar.M9;
+        if (upVar != null && upVar.e()) {
             int inputBubbleTop = (int) xnVar.P.getInputBubbleTop();
             int inputBubbleBottom = (int) xnVar.P.getInputBubbleBottom();
             xn xnVar2 = xnVar.Q9;
             int i27 = inputBubbleTop - ((int) (xnVar.R9 * (xnVar2 == null ? 0.0f : xnVar2.L9)));
-            tp tpVar2 = xnVar.M9;
+            up upVar2 = xnVar.M9;
             pmVar.getMeasuredWidth();
-            tpVar2.b(canvas3, i27, inputBubbleBottom);
+            upVar2.b(canvas3, i27, inputBubbleBottom);
         }
         if (xnVar.Q9 != null) {
             canvas.saveLayerAlpha(0.0f, 0.0f, pmVar.getMeasuredWidth(), pmVar.getMeasuredHeight(), (int) (xnVar.R9 * 255.0f), 31);
@@ -1306,13 +1306,13 @@ public final class pm extends org.telegram.ui.Components.qv0 {
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         boolean z4;
         sk skVar;
-        org.telegram.ui.ActionBar.e5 e5Var;
-        org.telegram.ui.ActionBar.e5 e5Var2;
+        org.telegram.ui.ActionBar.f5 f5Var;
+        org.telegram.ui.ActionBar.f5 f5Var2;
         boolean z10;
         boolean z11;
         org.telegram.ui.ActionBar.k kVar;
         xn xnVar = this.G0;
-        ug.d dVar = xnVar.K3;
+        vg.d dVar = xnVar.K3;
         if (dVar != null) {
             dVar.n = SystemClock.uptimeMillis();
         }
@@ -1355,7 +1355,7 @@ public final class pm extends org.telegram.ui.Components.qv0 {
                                             for (int i11 = 3; i10 < i11; i11 = 3) {
                                                 s5.m mVar2 = xnVar.g1.e[i10 == 0 ? (char) 1 : i10 == 1 ? (char) 2 : (char) 3];
                                                 if (mVar2 != null) {
-                                                    ((vg.b) mVar2.b).getLocationInWindow(iArr2);
+                                                    ((wg.b) mVar2.b).getLocationInWindow(iArr2);
                                                     Rect rect = AndroidUtilities.rectTmp2;
                                                     int i12 = iArr2[0] - iArr[0];
                                                     rect.set(i12, iArr2[1] - iArr[1], AndroidUtilities.dp(56.0f) + i12, AndroidUtilities.dp(61.0f) + (iArr2[1] - iArr[1]));
@@ -1399,14 +1399,14 @@ public final class pm extends org.telegram.ui.Components.qv0 {
                                         if (ljVar3 != null) {
                                             ljVar3.e0.c(false);
                                         }
-                                        if (this.F0 || (k7.n6.a(this.C0, this.D0, motionEvent.getX(), motionEvent.getY()) < AndroidUtilities.dp(6.0f) && SystemClock.elapsedRealtime() - this.E0 <= ViewConfiguration.getTapTimeout())) {
+                                        if (this.F0 || (k7.o6.a(this.C0, this.D0, motionEvent.getX(), motionEvent.getY()) < AndroidUtilities.dp(6.0f) && SystemClock.elapsedRealtime() - this.E0 <= ViewConfiguration.getTapTimeout())) {
                                             if (this.F0) {
-                                                e5Var2 = ((org.telegram.ui.ActionBar.p2) xnVar).parentLayout;
+                                                f5Var2 = ((org.telegram.ui.ActionBar.p2) xnVar).parentLayout;
                                                 xnVar.removeSelfFromStack(false);
-                                                ((ActionBarLayout) e5Var2).P(ProfileActivity.m4(xnVar.Q5));
+                                                ((ActionBarLayout) f5Var2).P(ProfileActivity.m4(xnVar.Q5));
                                             } else {
-                                                e5Var = ((org.telegram.ui.ActionBar.p2) xnVar).parentLayout;
-                                                ((ActionBarLayout) e5Var).r();
+                                                f5Var = ((org.telegram.ui.ActionBar.p2) xnVar).parentLayout;
+                                                ((ActionBarLayout) f5Var).r();
                                             }
                                             motionEvent.setAction(3);
                                         }
@@ -1443,9 +1443,9 @@ public final class pm extends org.telegram.ui.Components.qv0 {
                             }
                             ekVar.d = 0;
                             ekVar.c = 1.0f;
-                            org.telegram.ui.Components.a81 a81Var = ekVar.J;
-                            if (a81Var != null) {
-                                a81Var.e(1.0f, 0, ekVar.b);
+                            org.telegram.ui.Components.c81 c81Var = ekVar.J;
+                            if (c81Var != null) {
+                                c81Var.e(1.0f, 0, ekVar.b);
                             }
                             ekVar.w(false);
                         }
@@ -1486,7 +1486,7 @@ public final class pm extends org.telegram.ui.Components.qv0 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean drawChild(Canvas canvas, View view, long j10) {
-        eg.i0 i0Var;
+        fg.i0 i0Var;
         org.telegram.ui.ActionBar.k kVar;
         MessageObject playingMessageObject;
         boolean z4;
@@ -1533,14 +1533,14 @@ public final class pm extends org.telegram.ui.Components.qv0 {
                                     canvas.save();
                                     canvas.translate(0.0f, (-xnVar.K9) - (xnVar.R9 != 0.0f ? (xnVar.u0.getMeasuredHeight() - xnVar.K9) * xnVar.R9 : 0.0f));
                                     if (playingMessageObject != null && playingMessageObject.type == 5) {
-                                        if (org.telegram.ui.ActionBar.j6.k3 != null && xnVar.s8.d) {
+                                        if (org.telegram.ui.ActionBar.k6.k3 != null && xnVar.s8.d) {
                                             int x10 = ((int) view.getX()) - AndroidUtilities.dp(3.0f);
                                             int y10 = ((int) view.getY()) - AndroidUtilities.dp(2.0f);
                                             canvas.save();
                                             canvas.scale(xnVar.q8.getScaleX(), xnVar.q8.getScaleY(), view.getX(), view.getY());
-                                            org.telegram.ui.ActionBar.j6.k3.setAlpha(255);
-                                            org.telegram.ui.ActionBar.j6.k3.setBounds(x10, y10, AndroidUtilities.dp(6.0f) + AndroidUtilities.roundPlayingMessageSize(xnVar.C9()) + x10, AndroidUtilities.dp(6.0f) + AndroidUtilities.roundPlayingMessageSize(xnVar.C9()) + y10);
-                                            org.telegram.ui.ActionBar.j6.k3.draw(canvas);
+                                            org.telegram.ui.ActionBar.k6.k3.setAlpha(255);
+                                            org.telegram.ui.ActionBar.k6.k3.setBounds(x10, y10, AndroidUtilities.dp(6.0f) + AndroidUtilities.roundPlayingMessageSize(xnVar.C9()) + x10, AndroidUtilities.dp(6.0f) + AndroidUtilities.roundPlayingMessageSize(xnVar.C9()) + y10);
+                                            org.telegram.ui.ActionBar.k6.k3.draw(canvas);
                                             canvas.restore();
                                         }
                                         z11 = super.drawChild(canvas, view, j10);
@@ -1644,21 +1644,21 @@ public final class pm extends org.telegram.ui.Components.qv0 {
 
     @Override // org.telegram.ui.Components.qv0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
-        org.telegram.ui.ActionBar.e5 e5Var;
-        org.telegram.ui.ActionBar.e5 e5Var2;
-        org.telegram.ui.ActionBar.e5 e5Var3;
+        org.telegram.ui.ActionBar.f5 f5Var;
+        org.telegram.ui.ActionBar.f5 f5Var2;
+        org.telegram.ui.ActionBar.f5 f5Var3;
         super.onAttachedToWindow();
         xn xnVar = this.G0;
         if (xnVar.La) {
             this.E.b = xnVar.U0;
         } else {
-            e5Var = ((org.telegram.ui.ActionBar.p2) xnVar).parentLayout;
-            if (e5Var != null) {
-                e5Var2 = ((org.telegram.ui.ActionBar.p2) xnVar).parentLayout;
-                if (((ActionBarLayout) e5Var2).b) {
+            f5Var = ((org.telegram.ui.ActionBar.p2) xnVar).parentLayout;
+            if (f5Var != null) {
+                f5Var2 = ((org.telegram.ui.ActionBar.p2) xnVar).parentLayout;
+                if (((ActionBarLayout) f5Var2).b) {
                     org.telegram.ui.ActionBar.r1 r1Var = this.E;
-                    e5Var3 = ((org.telegram.ui.ActionBar.p2) xnVar).parentLayout;
-                    r1Var.b = (FrameLayout) e5Var3.getView().getParent().getParent().getParent().getParent();
+                    f5Var3 = ((org.telegram.ui.ActionBar.p2) xnVar).parentLayout;
+                    r1Var.b = (FrameLayout) f5Var3.getView().getParent().getParent().getParent().getParent();
                 }
             }
         }
@@ -1668,9 +1668,9 @@ public final class pm extends org.telegram.ui.Components.qv0 {
         if (playingMessageObject != null && ((playingMessageObject.isRoundVideo() || playingMessageObject.isVideo()) && playingMessageObject.eventId == 0 && playingMessageObject.getDialogId() == xnVar.Q5)) {
             MediaController.getInstance().setTextureView(xnVar.N7(false), xnVar.s8, xnVar.q8, true);
         }
-        tp tpVar = xnVar.M9;
-        if (tpVar != null) {
-            tpVar.f();
+        up upVar = xnVar.M9;
+        if (upVar != null) {
+            upVar.f();
         }
         xnVar.ua.j();
     }
@@ -1681,26 +1681,26 @@ public final class pm extends org.telegram.ui.Components.qv0 {
         super.onDetachedFromWindow();
         this.E.d();
         xn xnVar = this.G0;
-        tp tpVar = xnVar.M9;
-        if (tpVar != null) {
-            NotificationCenter.getInstance(tpVar.b0).removeObserver(tpVar, NotificationCenter.updateInterfaces);
-            tpVar.C.onDetachedFromWindow();
-            org.telegram.ui.Components.l5 l5Var = tpVar.h0;
-            if (l5Var != null && (view = tpVar.X) != null) {
+        up upVar = xnVar.M9;
+        if (upVar != null) {
+            NotificationCenter.getInstance(upVar.b0).removeObserver(upVar, NotificationCenter.updateInterfaces);
+            upVar.C.onDetachedFromWindow();
+            org.telegram.ui.Components.l5 l5Var = upVar.h0;
+            if (l5Var != null && (view = upVar.X) != null) {
                 l5Var.o(view);
             }
-            tpVar.N = 0.0f;
-            tpVar.M = 0L;
+            upVar.N = 0.0f;
+            upVar.M = 0L;
             xnVar.M9 = null;
         }
         xnVar.ua.k();
-        AndroidUtilities.runOnUIThread(new cg.n0(22));
+        AndroidUtilities.runOnUIThread(new ag.f(24));
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         xn xnVar;
-        eg.i0 i0Var;
+        fg.i0 i0Var;
         if (getTag(67108867) != null) {
             return;
         }
@@ -1743,7 +1743,7 @@ public final class pm extends org.telegram.ui.Components.qv0 {
         int childCount = getChildCount();
         int measuredWidth = getMeasuredWidth();
         xn xnVar = this.G0;
-        ch.i iVar = xnVar.v;
+        dh.i iVar = xnVar.v;
         int i22 = (measuredWidth - xnVar.Ra) - xnVar.Sa;
         for (int i23 = 0; i23 < childCount; i23++) {
             View childAt = getChildAt(i23);
@@ -1758,7 +1758,7 @@ public final class pm extends org.telegram.ui.Components.qv0 {
                 int i25 = i24 & 112;
                 int i26 = i24 & 7;
                 if (i26 == 1) {
-                    d = kh.a2.d(i22, measuredWidth2, 2, xnVar.Ra) + layoutParams.leftMargin;
+                    d = l.d.d(i22, measuredWidth2, 2, xnVar.Ra) + layoutParams.leftMargin;
                     i14 = layoutParams.rightMargin;
                 } else if (i26 != 5) {
                     i15 = xnVar.Ra + layoutParams.leftMargin;
@@ -1783,7 +1783,7 @@ public final class pm extends org.telegram.ui.Components.qv0 {
                             i18 = 0;
                             i15 = 0;
                         } else {
-                            if (childAt != xnVar.J9 && childAt != xnVar.U9 && childAt != xnVar.P && !(childAt instanceof org.telegram.ui.Components.k40) && !(childAt instanceof org.telegram.ui.Components.op)) {
+                            if (childAt != xnVar.J9 && childAt != xnVar.U9 && childAt != xnVar.P && !(childAt instanceof org.telegram.ui.Components.m40) && !(childAt instanceof org.telegram.ui.Components.qp)) {
                                 if (childAt instanceof org.telegram.ui.Cells.y9) {
                                     i20 = xnVar.wa;
                                 } else if (childAt == xnVar.N0) {
@@ -1829,7 +1829,7 @@ public final class pm extends org.telegram.ui.Components.qv0 {
                                                 kVar2 = ((org.telegram.ui.ActionBar.p2) xnVar).actionBar;
                                                 i18 = kVar2.getMeasuredHeight();
                                             } else if (childAt != xnVar.Y2 && childAt != xnVar.Z2 && childAt != xnVar.r0) {
-                                                if (childAt instanceof org.telegram.ui.Components.wb0) {
+                                                if (childAt instanceof org.telegram.ui.Components.yb0) {
                                                     i18 = AndroidUtilities.statusBarHeight;
                                                 } else if (childAt != xnVar.Q) {
                                                     if (childAt != xnVar.K3) {
@@ -1910,15 +1910,15 @@ public final class pm extends org.telegram.ui.Components.qv0 {
         org.telegram.ui.ActionBar.w0 w0Var;
         TLRPC.User user;
         xn xnVar = this.G0;
-        ch.i iVar = xnVar.v;
+        dh.i iVar = xnVar.v;
         xnVar.Ac.a();
         int size = View.MeasureSpec.getSize(i10);
         int size2 = View.MeasureSpec.getSize(i11);
         int i15 = (size - xnVar.Ra) - xnVar.Sa;
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i15, TLObject.FLAG_30);
-        sg.a aVar = xnVar.I.a;
-        if (aVar instanceof sg.b) {
-            ((sg.b) aVar).b(i15, size2);
+        tg.a aVar = xnVar.I.a;
+        if (aVar instanceof tg.b) {
+            ((tg.b) aVar).c(i15, size2);
         }
         if (this.v0 != i15) {
             xnVar.C4 = false;
@@ -1927,7 +1927,7 @@ public final class pm extends org.telegram.ui.Components.qv0 {
             if (z12 || (user = xnVar.f) == null || !user.self) {
                 xnVar.H9 = false;
             } else {
-                org.telegram.ui.ActionBar.k5 titleTextView = xnVar.X0.getTitleTextView();
+                org.telegram.ui.ActionBar.l5 titleTextView = xnVar.X0.getTitleTextView();
                 if (i15 - AndroidUtilities.dp(152.0f) > AndroidUtilities.dp(10.0f) + ((int) titleTextView.getPaint().measureText(titleTextView.getText(), 0, titleTextView.getText().length()))) {
                     xnVar.H9 = !xnVar.I9;
                 } else {
@@ -2082,7 +2082,7 @@ public final class pm extends org.telegram.ui.Components.qv0 {
                                                 bk bkVar = xnVar.F1;
                                                 if (childAt2 == bkVar) {
                                                     FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) bkVar.getLayoutParams();
-                                                    tf.u0 adapter = xnVar.F1.getAdapter();
+                                                    uf.u0 adapter = xnVar.F1.getAdapter();
                                                     if (adapter.t0 == null || adapter.e0) {
                                                         xnVar.F1.setIgnoreLayout(true);
                                                         layoutParams.height = i17;
@@ -2106,7 +2106,7 @@ public final class pm extends org.telegram.ui.Components.qv0 {
                                                         qmVar2.x();
                                                     }
                                                     childAt2.measure(makeMeasureSpec5, View.MeasureSpec.makeMeasureSpec(i21, TLObject.FLAG_30));
-                                                } else if (childAt2 instanceof org.telegram.ui.Components.wb0) {
+                                                } else if (childAt2 instanceof org.telegram.ui.Components.yb0) {
                                                     childAt2.measure(View.MeasureSpec.makeMeasureSpec(i15, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((size2 - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight, TLObject.FLAG_30));
                                                 } else if (childAt2 == xnVar.O1) {
                                                     kVar5 = ((org.telegram.ui.ActionBar.p2) xnVar).actionBar;
@@ -2186,7 +2186,7 @@ public final class pm extends org.telegram.ui.Components.qv0 {
     public final void onSizeChanged(int i10, int i11, int i12, int i13) {
         super.onSizeChanged(i10, i11, i12, i13);
         xn xnVar = this.G0;
-        tg.c.c(xnVar.w8, xnVar.fragmentView);
+        ug.c.c(xnVar.w8, xnVar.fragmentView);
         xnVar.x8.d();
     }
 

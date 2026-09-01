@@ -3,7 +3,7 @@ package af;
 import a0.h;
 import android.content.Context;
 import android.net.Uri;
-import f2.l1;
+import f2.m1;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
@@ -18,7 +18,7 @@ import org.telegram.ui.j4;
 import org.telegram.ui.l4;
 import org.telegram.ui.p3;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -42,7 +42,7 @@ public final /* synthetic */ class d implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        l1 K;
+        m1 K;
         int i10 = 0;
         switch (this.a) {
             case 0:

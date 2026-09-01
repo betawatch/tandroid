@@ -27,7 +27,7 @@ import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class IconCompat extends CustomVersionedParcelable {
     public static final PorterDuff.Mode k = PorterDuff.Mode.SRC_IN;
@@ -180,14 +180,14 @@ public class IconCompat extends CustomVersionedParcelable {
         }
         try {
             return ((Integer) obj.getClass().getMethod("getResId", null).invoke(obj, null)).intValue();
-        } catch (IllegalAccessException e) {
-            Log.e("IconCompat", "Unable to get icon resource", e);
-            return 0;
-        } catch (NoSuchMethodException e6) {
+        } catch (IllegalAccessException e6) {
             Log.e("IconCompat", "Unable to get icon resource", e6);
             return 0;
-        } catch (InvocationTargetException e10) {
+        } catch (NoSuchMethodException e10) {
             Log.e("IconCompat", "Unable to get icon resource", e10);
+            return 0;
+        } catch (InvocationTargetException e11) {
+            Log.e("IconCompat", "Unable to get icon resource", e11);
             return 0;
         }
     }
@@ -208,14 +208,14 @@ public class IconCompat extends CustomVersionedParcelable {
         }
         try {
             return (String) obj.getClass().getMethod("getResPackage", null).invoke(obj, null);
-        } catch (IllegalAccessException e) {
-            Log.e("IconCompat", "Unable to get icon package", e);
-            return null;
-        } catch (NoSuchMethodException e6) {
+        } catch (IllegalAccessException e6) {
             Log.e("IconCompat", "Unable to get icon package", e6);
             return null;
-        } catch (InvocationTargetException e10) {
+        } catch (NoSuchMethodException e10) {
             Log.e("IconCompat", "Unable to get icon package", e10);
+            return null;
+        } catch (InvocationTargetException e11) {
+            Log.e("IconCompat", "Unable to get icon package", e11);
             return null;
         }
     }
@@ -232,14 +232,14 @@ public class IconCompat extends CustomVersionedParcelable {
         }
         try {
             return ((Integer) obj.getClass().getMethod("getType", null).invoke(obj, null)).intValue();
-        } catch (IllegalAccessException e) {
-            Log.e("IconCompat", "Unable to get icon type " + obj, e);
-            return -1;
-        } catch (NoSuchMethodException e6) {
+        } catch (IllegalAccessException e6) {
             Log.e("IconCompat", "Unable to get icon type " + obj, e6);
             return -1;
-        } catch (InvocationTargetException e10) {
+        } catch (NoSuchMethodException e10) {
             Log.e("IconCompat", "Unable to get icon type " + obj, e10);
+            return -1;
+        } catch (InvocationTargetException e11) {
+            Log.e("IconCompat", "Unable to get icon type " + obj, e11);
             return -1;
         }
     }
@@ -259,14 +259,14 @@ public class IconCompat extends CustomVersionedParcelable {
         }
         try {
             return (Uri) obj.getClass().getMethod("getUri", null).invoke(obj, null);
-        } catch (IllegalAccessException e) {
-            Log.e("IconCompat", "Unable to get icon uri", e);
-            return null;
-        } catch (NoSuchMethodException e6) {
+        } catch (IllegalAccessException e6) {
             Log.e("IconCompat", "Unable to get icon uri", e6);
             return null;
-        } catch (InvocationTargetException e10) {
+        } catch (NoSuchMethodException e10) {
             Log.e("IconCompat", "Unable to get icon uri", e10);
+            return null;
+        } catch (InvocationTargetException e11) {
+            Log.e("IconCompat", "Unable to get icon uri", e11);
             return null;
         }
     }
@@ -277,15 +277,15 @@ public class IconCompat extends CustomVersionedParcelable {
         if ("content".equals(scheme) || "file".equals(scheme)) {
             try {
                 return context.getContentResolver().openInputStream(j10);
-            } catch (Exception e) {
-                Log.w("IconCompat", "Unable to load image from URI: " + j10, e);
+            } catch (Exception e6) {
+                Log.w("IconCompat", "Unable to load image from URI: " + j10, e6);
                 return null;
             }
         }
         try {
             return new FileInputStream(new File((String) this.b));
-        } catch (FileNotFoundException e6) {
-            Log.w("IconCompat", "Unable to load image from path: " + j10, e6);
+        } catch (FileNotFoundException e10) {
+            Log.w("IconCompat", "Unable to load image from path: " + j10, e10);
             return null;
         }
     }

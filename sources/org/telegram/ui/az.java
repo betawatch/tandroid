@@ -1,35 +1,45 @@
 package org.telegram.ui;
 
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class az {
-    public float a;
-    public float b;
-    public boolean c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public boolean h;
-    public boolean i;
-    public mg.d j;
-    public long k;
-    public boolean l;
-    public boolean m;
-    public boolean n;
-    public float o;
-    public int p;
-    public TLRPC.Document q;
-    public final ImageReceiver r;
-    public String s;
+public final class az implements ImageReceiver.ImageReceiverDelegate {
+    public final /* synthetic */ bz a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ MessageObject c;
+    public final /* synthetic */ cz d;
 
-    public az() {
-        ImageReceiver imageReceiver = new ImageReceiver();
-        this.r = imageReceiver;
-        imageReceiver.setAllowLoadingOnAttachedOnly(true);
-        imageReceiver.setAllowDrawWhileCacheGenerating(true);
+    public az(cz czVar, bz bzVar, boolean z4, MessageObject messageObject) {
+        this.d = czVar;
+        this.a = bzVar;
+        this.b = z4;
+        this.c = messageObject;
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public final void didSetImage(ImageReceiver imageReceiver, boolean z4, boolean z10, boolean z11) {
+        bz bzVar = this.a;
+        if (bzVar.r.getLottieAnimation() != null) {
+            bzVar.r.getLottieAnimation().L(0, false, true);
+        }
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public final /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
+        org.telegram.messenger.j5.a(this, i10, str, drawable);
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public final void onAnimationReady(ImageReceiver imageReceiver) {
+        MessageObject messageObject;
+        if (this.b && (messageObject = this.c) != null && messageObject.isAnimatedAnimatedEmoji() && imageReceiver.getLottieAnimation() != null && imageReceiver.getLottieAnimation().x == null) {
+            try {
+                this.d.D.performHapticFeedback(3, 1);
+            } catch (Exception unused) {
+            }
+        }
     }
 }

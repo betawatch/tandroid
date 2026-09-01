@@ -1,14 +1,14 @@
 package y2;
 
 import android.content.Context;
-import com.google.firebase.messaging.r;
+import com.google.firebase.messaging.s;
 import j$.util.DesugarCollections;
 import java.nio.charset.Charset;
 import java.util.Collections;
 import java.util.Set;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class q {
     public static volatile j e;
@@ -17,12 +17,12 @@ public final class q {
     public final d3.b c;
     public final e3.g d;
 
-    public q(h3.a aVar, h3.a aVar2, d3.b bVar, e3.g gVar, r rVar) {
+    public q(h3.a aVar, h3.a aVar2, d3.b bVar, e3.g gVar, s sVar) {
         this.a = aVar;
         this.b = aVar2;
         this.c = bVar;
         this.d = gVar;
-        ((Executor) rVar.b).execute(new ag.d(rVar, 29));
+        ((Executor) sVar.a).execute(new ag.e(sVar, 22));
     }
 
     public static q a() {
@@ -38,10 +38,10 @@ public final class q {
             synchronized (q.class) {
                 try {
                     if (e == null) {
-                        y5.h hVar = new y5.h();
+                        k0.b bVar = new k0.b();
                         context.getClass();
-                        hVar.a = context;
-                        e = hVar.b();
+                        bVar.a = context;
+                        e = bVar.b();
                     }
                 } catch (Throwable th2) {
                     throw th2;

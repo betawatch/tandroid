@@ -1,31 +1,39 @@
 package k7;
 
-import java.io.Serializable;
-
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class r6 {
-    public static String a(byte[] bArr) {
-        StringBuilder sb = new StringBuilder(bArr.length * 2);
-        for (byte b10 : bArr) {
-            sb.append(String.format("%02x", Byte.valueOf(b10)));
+    public static int a(int i10) {
+        if (i10 == 1) {
+            return 0;
         }
-        return sb.toString();
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public static long[] b(Serializable serializable) {
-        if (!(serializable instanceof int[])) {
-            if (serializable instanceof long[]) {
-                return (long[]) serializable;
-            }
-            return null;
+        if (i10 == 2) {
+            return 1;
         }
-        int[] iArr = (int[]) serializable;
-        long[] jArr = new long[iArr.length];
-        for (int i10 = 0; i10 < iArr.length; i10++) {
-            jArr[i10] = iArr[i10];
+        if (i10 == 4) {
+            return 2;
         }
-        return jArr;
+        if (i10 == 8) {
+            return 3;
+        }
+        if (i10 == 16) {
+            return 4;
+        }
+        if (i10 == 32) {
+            return 5;
+        }
+        if (i10 == 64) {
+            return 6;
+        }
+        if (i10 == 128) {
+            return 7;
+        }
+        if (i10 == 256) {
+            return 8;
+        }
+        if (i10 == 512) {
+            return 9;
+        }
+        throw new IllegalArgumentException(l.d.j(i10, "type needs to be >= FIRST and <= LAST, type="));
     }
 }

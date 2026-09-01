@@ -2,14 +2,14 @@ package i;
 
 import android.graphics.drawable.Drawable;
 import android.view.View;
-import lh.t4;
-import mg.o0;
-import org.telegram.ui.Components.c31;
-import org.telegram.ui.Components.cq;
-import org.telegram.ui.Components.oo0;
-import vh.q0;
+import mh.t4;
+import ng.o0;
+import org.telegram.ui.Components.d31;
+import org.telegram.ui.Components.eq;
+import org.telegram.ui.Components.po0;
+import wh.r0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class f implements Drawable.Callback {
     public final /* synthetic */ int a;
@@ -21,13 +21,13 @@ public final class f implements Drawable.Callback {
             case 0:
                 break;
             case 1:
-                ((jg.a) this.b).c.invalidate();
+                ((k2.d) this.b).invalidateSelf();
                 break;
             case 2:
-                ((jg.c) this.b).c.invalidate();
+                ((kg.a) this.b).c.invalidate();
                 break;
             case 3:
-                ((k2.d) this.b).invalidateSelf();
+                ((kg.c) this.b).c.invalidate();
                 break;
             case 4:
                 ((t4) this.b).f.invalidate();
@@ -44,19 +44,19 @@ public final class f implements Drawable.Callback {
                 }
                 break;
             case 6:
-                ((cq) this.b).invalidateSelf();
+                ((eq) this.b).invalidateSelf();
                 break;
             case 7:
-                ((oo0) this.b).b.run();
+                ((po0) this.b).b.run();
                 break;
             case 8:
-                ((ef.g) this.b).invalidateSelf();
+                ((ef.f) this.b).invalidateSelf();
                 break;
             case 9:
-                ((c31) this.b).invalidateSelf();
+                ((d31) this.b).invalidateSelf();
                 break;
             default:
-                ((q0) this.b).b.invalidate();
+                ((r0) this.b).b.invalidate();
                 break;
         }
     }
@@ -72,13 +72,13 @@ public final class f implements Drawable.Callback {
                 }
                 break;
             case 1:
-                ((jg.a) this.b).c.invalidate();
+                ((k2.d) this.b).scheduleSelf(runnable, j10);
                 break;
             case 2:
-                ((jg.c) this.b).c.invalidate();
+                ((kg.a) this.b).c.invalidate();
                 break;
             case 3:
-                ((k2.d) this.b).scheduleSelf(runnable, j10);
+                ((kg.c) this.b).c.invalidate();
                 break;
             case 5:
                 View view = ((o0) this.b).W;
@@ -88,10 +88,10 @@ public final class f implements Drawable.Callback {
                 }
                 break;
             case 6:
-                ((cq) this.b).scheduleSelf(runnable, j10);
+                ((eq) this.b).scheduleSelf(runnable, j10);
                 break;
             case 8:
-                ((ef.g) this.b).scheduleSelf(runnable, j10);
+                ((ef.f) this.b).scheduleSelf(runnable, j10);
                 break;
         }
     }
@@ -107,13 +107,13 @@ public final class f implements Drawable.Callback {
                 }
                 break;
             case 1:
-                ((jg.a) this.b).c.invalidate();
+                ((k2.d) this.b).unscheduleSelf(runnable);
                 break;
             case 2:
-                ((jg.c) this.b).c.invalidate();
+                ((kg.a) this.b).c.invalidate();
                 break;
             case 3:
-                ((k2.d) this.b).unscheduleSelf(runnable);
+                ((kg.c) this.b).c.invalidate();
                 break;
             case 5:
                 View view = ((o0) this.b).W;
@@ -123,10 +123,10 @@ public final class f implements Drawable.Callback {
                 }
                 break;
             case 6:
-                ((cq) this.b).unscheduleSelf(runnable);
+                ((eq) this.b).unscheduleSelf(runnable);
                 break;
             case 8:
-                ((ef.g) this.b).unscheduleSelf(runnable);
+                ((ef.f) this.b).unscheduleSelf(runnable);
                 break;
         }
     }

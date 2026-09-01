@@ -4,7 +4,7 @@ import j3.r1;
 import java.io.EOFException;
 import org.telegram.ui.Components.jb;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class d implements r3.k {
     public final int a;
@@ -32,7 +32,7 @@ public final class d implements r3.k {
         int i10 = 0;
         while (true) {
             h5.w wVar = this.d;
-            lVar.c(0, 10, wVar.a);
+            lVar.b(0, 10, wVar.a);
             wVar.F(0);
             if (wVar.w() != 4801587) {
                 break;
@@ -40,10 +40,10 @@ public final class d implements r3.k {
             wVar.G(3);
             int t6 = wVar.t();
             i10 += t6 + 10;
-            lVar.n(t6);
+            lVar.i(t6);
         }
-        lVar.t();
-        lVar.n(i10);
+        lVar.r();
+        lVar.i(i10);
         if (this.h == -1) {
             this.h = i10;
         }
@@ -61,7 +61,7 @@ public final class d implements r3.k {
     public final void e(r3.m mVar) {
         this.f = mVar;
         this.b.c(mVar, new h0(0, 1));
-        mVar.f1();
+        mVar.i1();
     }
 
     @Override // r3.k
@@ -85,7 +85,7 @@ public final class d implements r3.k {
                 while (true) {
                     try {
                         r3.h hVar2 = (r3.h) lVar;
-                        if (!hVar2.h(wVar.a, 0, 2, true)) {
+                        if (!hVar2.f(wVar.a, 0, 2, true)) {
                             break;
                         }
                         wVar.F(0);
@@ -93,7 +93,7 @@ public final class d implements r3.k {
                             i12 = 0;
                             break;
                         }
-                        if (!hVar2.h(wVar.a, 0, i11, true)) {
+                        if (!hVar2.f(wVar.a, 0, i11, true)) {
                             break;
                         }
                         vVar.p(14);
@@ -132,11 +132,11 @@ public final class d implements r3.k {
                     if (j12 != -9223372036854775807L) {
                         r3.m mVar = this.f;
                         int i14 = this.i;
-                        mVar.g2(new r3.g(j10, (int) ((i14 * 8000000) / j12), i14, false, this.h));
+                        mVar.m2(new r3.g(j10, (int) ((i14 * 8000000) / j12), i14, false, this.h));
                         this.l = true;
                     }
                 }
-                this.f.g2(new r3.n(-9223372036854775807L));
+                this.f.m2(new r3.n(-9223372036854775807L));
                 this.l = true;
             }
         }
@@ -162,14 +162,14 @@ public final class d implements r3.k {
         do {
             h5.w wVar = this.d;
             r3.h hVar = (r3.h) lVar;
-            hVar.h(wVar.a, 0, 2, false);
+            hVar.f(wVar.a, 0, 2, false);
             wVar.F(0);
             if ((wVar.z() & 65526) == 65520) {
                 i11++;
                 if (i11 >= 4 && i12 > 188) {
                     return true;
                 }
-                hVar.h(wVar.a, 0, 4, false);
+                hVar.f(wVar.a, 0, 4, false);
                 h5.v vVar = this.e;
                 vVar.p(14);
                 int i13 = vVar.i(13);

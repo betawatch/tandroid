@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d0 implements Runnable {
     public final /* synthetic */ int a;
@@ -31,24 +31,24 @@ public final /* synthetic */ class d0 implements Runnable {
                 }
                 break;
             case 2:
-                org.telegram.ui.Components.voip.x0 x0Var = (org.telegram.ui.Components.voip.x0) this.c;
+                org.telegram.ui.Components.voip.y0 y0Var = (org.telegram.ui.Components.voip.y0) this.c;
                 float f10 = this.b;
-                th1 th1Var = x0Var.c;
+                vh1 vh1Var = y0Var.c;
                 if (f10 > 0.0f) {
-                    int i10 = th1Var.w;
+                    int i10 = vh1Var.w;
                     if (i10 < 2) {
-                        th1Var.c(i10 + 1, true);
+                        vh1Var.c(i10 + 1, true);
                     }
                 } else {
-                    int i11 = th1Var.w;
+                    int i11 = vh1Var.w;
                     if (i11 > 0) {
-                        th1Var.c(i11 - 1, true);
+                        vh1Var.c(i11 - 1, true);
                     }
                 }
-                x0Var.b = false;
+                y0Var.b = false;
                 break;
             case 3:
-                ((a80) this.c).f.e.smoothScrollTo(0, (int) this.b);
+                ((b80) this.c).f.e.smoothScrollTo(0, (int) this.b);
                 break;
             case 4:
                 ApplicationLoader.applicationContext.getSharedPreferences("media_saved_pos", 0).edit().putFloat((String) this.c, this.b).commit();

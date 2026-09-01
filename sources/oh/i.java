@@ -1,92 +1,44 @@
 package oh;
 
 import android.content.Context;
-import android.graphics.Canvas;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.cl0;
-import org.telegram.ui.Components.ou0;
-import org.telegram.ui.Components.pt0;
+import org.telegram.ui.hx;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes4.dex */
-public final class i extends ou0 {
-    public final /* synthetic */ r n3;
+public final class i extends org.telegram.ui.ActionBar.m {
+    public final /* synthetic */ int d = 1;
+    public final /* synthetic */ FrameLayout e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i(r rVar, Context context) {
-        super(context);
-        this.n3 = rVar;
+    public i(hx hxVar, Context context, cb.m mVar) {
+        super(context, null, mVar);
+        this.e = hxVar;
     }
 
-    @Override // org.telegram.ui.Components.ou0
-    public final boolean A1() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.ou0, org.telegram.ui.Components.aa, org.telegram.ui.Components.sl0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        int i10 = 0;
-        for (int i11 = 0; i11 < getChildCount(); i11++) {
-            int bottom = getChildAt(i11).getBottom() - getPaddingTop();
-            if (bottom > i10) {
-                i10 = bottom;
-            }
-        }
-        float f10 = i10;
-        r rVar = this.n3;
-        o oVar = rVar.G;
-        if (rVar.b) {
-            pt0 pt0Var = rVar.r;
-            int i12 = 0;
-            for (int i13 = 0; i13 < pt0Var.getChildCount(); i13++) {
-                int bottom2 = pt0Var.getChildAt(i13).getBottom() - pt0Var.getPaddingTop();
-                if (bottom2 > i12) {
-                    i12 = bottom2;
+    @Override // org.telegram.ui.ActionBar.m, xd.i
+    public final void e(xd.j jVar) {
+        switch (this.d) {
+            case 0:
+                super.e(jVar);
+                ((hx) this.e).invalidate();
+                break;
+            default:
+                super.e(jVar);
+                float totalVisibility = getTotalVisibility();
+                eh.d dVar = ((org.telegram.ui.ActionBar.k) this.e).C0;
+                if (dVar != null) {
+                    dVar.setTranslationY(totalVisibility * AndroidUtilities.dp(-11.0f));
+                    break;
                 }
-            }
-            f10 = AndroidUtilities.lerp(f10, i12, rVar.c);
+                break;
         }
-        oVar.setVisibility(rVar.v.h() <= 0 ? 8 : 0);
-        oVar.setTranslationY(f10);
     }
 
-    @Override // org.telegram.ui.Components.ou0
-    public final int getAnimateToColumnsCount() {
-        return this.n3.e;
-    }
-
-    @Override // org.telegram.ui.Components.ou0
-    public final float getChangeColumnsProgress() {
-        return this.n3.c;
-    }
-
-    @Override // org.telegram.ui.Components.ou0
-    public final int getColumnsCount() {
-        return this.n3.d;
-    }
-
-    @Override // org.telegram.ui.Components.ou0
-    public final cl0 getMovingAdapter() {
-        r rVar = this.n3;
-        if (rVar.D.y != 0 || rVar.T.D.z1) {
-            return null;
-        }
-        return rVar.v;
-    }
-
-    @Override // org.telegram.ui.Components.ou0
-    public final cl0 getSupportingAdapter() {
-        return this.n3.w;
-    }
-
-    @Override // org.telegram.ui.Components.ou0
-    public final pt0 getSupportingListView() {
-        return this.n3.r;
-    }
-
-    @Override // org.telegram.ui.Components.ou0
-    public final boolean z1() {
-        return this.n3.b;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i(org.telegram.ui.ActionBar.k kVar, Context context, org.telegram.ui.ActionBar.g6 g6Var, cb.m mVar) {
+        super(context, g6Var, mVar);
+        this.e = kVar;
     }
 }

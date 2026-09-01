@@ -1,64 +1,98 @@
 package gg;
 
-import android.content.SharedPreferences;
-import android.text.TextUtils;
-import java.util.HashMap;
-import java.util.HashSet;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.l3;
-import org.telegram.ui.ActionBar.n3;
-import org.telegram.ui.Cells.sa;
-import org.telegram.ui.n31;
+import n3.l;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h implements Utilities.Callback {
-    public final /* synthetic */ int a;
+public final class h extends Thread {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ h(int i10) {
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h(l lVar) {
+        super("ExoPlayer:SimpleDecoder");
+        this.b = lVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Thread, java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                break;
-            case 1:
-                HashMap hashMap = n3.H;
-                break;
-            case 2:
-                int i10 = l3.r;
-                break;
-            case 3:
-                int i11 = sa.f;
-                break;
-            case 4:
-                ((Boolean) obj).getClass();
-                break;
-            case 5:
-                break;
-            default:
-                HashSet hashSet = (HashSet) obj;
-                String str = LocaleController.getInstance().getCurrentLocaleInfo().pluralLangCode;
-                hashSet.addAll(n31.Y());
-                SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
-                if (hashSet.size() == 1 && TextUtils.equals((CharSequence) hashSet.iterator().next(), str)) {
-                    edit.remove("translate_button_restricted_languages");
-                } else {
-                    edit.putStringSet("translate_button_restricted_languages", hashSet);
-                }
-                edit.putInt("translate_button_restricted_languages_version", 2).apply();
-                n31.s = false;
-                for (int i12 = 0; i12 < 4; i12++) {
-                    try {
-                        MessagesController.getInstance(i12).getTranslateController().checkRestrictedLanguagesUpdate();
-                    } catch (Exception unused) {
+                i iVar = (i) this.b;
+                iVar.x = true;
+                try {
+                    i.a(iVar);
+                    int glGetError = ((i) this.b).r.glGetError();
+                    if (glGetError != 0) {
+                        FileLog.e("GL error = 0x" + Integer.toHexString(glGetError));
                     }
+                    long currentTimeMillis = System.currentTimeMillis();
+                    while (((i) this.b).x) {
+                        while (true) {
+                            i iVar2 = (i) this.b;
+                            a aVar = iVar2.b;
+                            if (aVar == null) {
+                                try {
+                                    Thread.sleep(100L);
+                                } catch (InterruptedException unused) {
+                                }
+                            } else {
+                                if (iVar2.B) {
+                                    synchronized (iVar2) {
+                                        if (iVar2.x) {
+                                            aVar.onSurfaceCreated(iVar2.r, iVar2.n);
+                                            aVar.onSurfaceChanged(iVar2.r, iVar2.w, iVar2.v);
+                                        }
+                                    }
+                                    ((i) this.b).B = false;
+                                }
+                                try {
+                                    if (!i.b((i) this.b)) {
+                                        long currentTimeMillis2 = System.currentTimeMillis();
+                                        i.c((i) this.b, (currentTimeMillis2 - currentTimeMillis) / 1000.0f);
+                                        if (!((i) this.b).M) {
+                                            ((i) this.b).M = true;
+                                            AndroidUtilities.runOnUIThread(((i) this.b).N);
+                                            ((i) this.b).N = null;
+                                        }
+                                        currentTimeMillis = currentTimeMillis2;
+                                    }
+                                    try {
+                                        if (i.b((i) this.b)) {
+                                            Thread.sleep(100L);
+                                        } else {
+                                            for (long currentTimeMillis3 = System.currentTimeMillis(); currentTimeMillis3 - currentTimeMillis < ((i) this.b).s; currentTimeMillis3 = System.currentTimeMillis()) {
+                                            }
+                                        }
+                                    } catch (InterruptedException unused2) {
+                                    }
+                                } catch (Exception e6) {
+                                    FileLog.e(e6);
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                    return;
+                } catch (Exception e10) {
+                    FileLog.e(e10);
+                    ((i) this.b).x = false;
+                    return;
                 }
-                break;
+            default:
+                do {
+                    try {
+                    } catch (InterruptedException e11) {
+                        throw new IllegalStateException(e11);
+                    }
+                } while (((l) this.b).i());
+                return;
         }
+    }
+
+    public h(i iVar) {
+        this.b = iVar;
     }
 }

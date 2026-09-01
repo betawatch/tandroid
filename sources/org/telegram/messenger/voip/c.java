@@ -1,28 +1,24 @@
 package org.telegram.messenger.voip;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class c implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ConferenceCall b;
+import j$.util.function.Function$-CC;
+import java.util.function.Function;
+import org.telegram.messenger.voip.ConferenceCall;
 
-    public /* synthetic */ c(ConferenceCall conferenceCall, int i10) {
-        this.a = i10;
-        this.b = conferenceCall;
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class c implements Function {
+    public /* synthetic */ Function andThen(Function function) {
+        return Function$-CC.$default$andThen(this, function);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$checkParticipants$1();
-                break;
-            case 1:
-                this.b.lambda$checkEmojiHash$0();
-                break;
-            default:
-                this.b.poll();
-                break;
-        }
+    @Override // java.util.function.Function
+    public final Object apply(Object obj) {
+        String lambda$poll$9;
+        lambda$poll$9 = ConferenceCall.lambda$poll$9((ConferenceCall.CallParticipant) obj);
+        return lambda$poll$9;
+    }
+
+    public /* synthetic */ Function compose(Function function) {
+        return Function$-CC.$default$compose(this, function);
     }
 }

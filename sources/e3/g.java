@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import f3.h;
 import j$.util.Objects;
-import j7.i0;
+import j7.j0;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.net.URL;
@@ -18,14 +18,13 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 import k9.b0;
 import k9.k0;
-import m.s3;
+import m.r3;
 import m1.j;
 import o4.h0;
 import org.json.JSONObject;
 import org.telegram.ui.Cells.f1;
-import org.telegram.ui.Components.qk0;
+import org.telegram.ui.web.e0;
 import s5.m;
-import vh.v2;
 import x2.k;
 import x2.t;
 import x2.u;
@@ -34,7 +33,7 @@ import y2.i;
 import y2.l;
 import y2.n;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class g {
     public Object a;
@@ -62,19 +61,19 @@ public final class g {
             str = str.concat(" processName");
         }
         if (((Integer) this.c) == null) {
-            str = v2.k(str, " reasonCode");
+            str = w.c.e(str, " reasonCode");
         }
         if (((Integer) this.d) == null) {
-            str = v2.k(str, " importance");
+            str = w.c.e(str, " importance");
         }
         if (((Long) this.e) == null) {
-            str = v2.k(str, " pss");
+            str = w.c.e(str, " pss");
         }
         if (((Long) this.f) == null) {
-            str = v2.k(str, " rss");
+            str = w.c.e(str, " rss");
         }
         if (((Long) this.g) == null) {
-            str = v2.k(str, " timestamp");
+            str = w.c.e(str, " timestamp");
         }
         if (str.isEmpty()) {
             return new b0(((Integer) this.a).intValue(), (String) this.b, ((Integer) this.c).intValue(), ((Integer) this.d).intValue(), ((Long) this.e).longValue(), ((Long) this.f).longValue(), ((Long) this.g).longValue(), (String) this.h, (List) this.i);
@@ -88,25 +87,25 @@ public final class g {
             str = str.concat(" model");
         }
         if (((Integer) this.c) == null) {
-            str = v2.k(str, " cores");
+            str = w.c.e(str, " cores");
         }
         if (((Long) this.d) == null) {
-            str = v2.k(str, " ram");
+            str = w.c.e(str, " ram");
         }
         if (((Long) this.e) == null) {
-            str = v2.k(str, " diskSpace");
+            str = w.c.e(str, " diskSpace");
         }
         if (((Boolean) this.f) == null) {
-            str = v2.k(str, " simulator");
+            str = w.c.e(str, " simulator");
         }
         if (((Integer) this.g) == null) {
-            str = v2.k(str, " state");
+            str = w.c.e(str, " state");
         }
         if (((String) this.h) == null) {
-            str = v2.k(str, " manufacturer");
+            str = w.c.e(str, " manufacturer");
         }
         if (((String) this.i) == null) {
-            str = v2.k(str, " modelClass");
+            str = w.c.e(str, " modelClass");
         }
         if (str.isEmpty()) {
             return new k0(((Integer) this.a).intValue(), (String) this.b, ((Integer) this.c).intValue(), ((Long) this.d).longValue(), ((Long) this.e).longValue(), ((Boolean) this.f).booleanValue(), ((Integer) this.g).intValue(), (String) this.h, (String) this.i);
@@ -117,22 +116,22 @@ public final class g {
     public p9.a c(int i10) {
         p9.a aVar = null;
         try {
-            if (!j.a(2, i10)) {
-                JSONObject U = ((f1) this.e).U();
-                if (U != null) {
-                    p9.a f10 = ((qk0) this.c).f(U);
-                    f("Loaded cached settings: ", U);
+            if (!j.b(2, i10)) {
+                JSONObject O = ((f1) this.e).O();
+                if (O != null) {
+                    p9.a i11 = ((e0) this.c).i(O);
+                    f("Loaded cached settings: ", O);
                     ((db.a) this.d).getClass();
                     long currentTimeMillis = System.currentTimeMillis();
-                    if (j.a(3, i10) || f10.c >= currentTimeMillis) {
+                    if (j.b(3, i10) || i11.c >= currentTimeMillis) {
                         try {
                             if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                                 Log.v("FirebaseCrashlytics", "Returning cached settings.", null);
                             }
-                            return f10;
-                        } catch (Exception e) {
-                            e = e;
-                            aVar = f10;
+                            return i11;
+                        } catch (Exception e6) {
+                            e = e6;
+                            aVar = i11;
                             Log.e("FirebaseCrashlytics", "Failed to get cached settings", e);
                             return aVar;
                         }
@@ -146,8 +145,8 @@ public final class g {
                 }
             }
             return null;
-        } catch (Exception e6) {
-            e = e6;
+        } catch (Exception e10) {
+            e = e10;
         }
     }
 
@@ -155,8 +154,8 @@ public final class g {
         return (p9.a) ((AtomicReference) this.h).get();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0407  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x03eb A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0406  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x03ea A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -170,13 +169,13 @@ public final class g {
         h0 b10;
         String str2;
         Integer num;
-        s3 s3Var;
+        r3 r3Var;
         int i12;
         final g gVar = this;
         final i iVar2 = iVar;
         byte[] bArr2 = iVar2.b;
         g3.c cVar = (g3.c) gVar.f;
-        z2.e a2 = ((z2.d) gVar.b).a(iVar2.a);
+        z2.f a2 = ((z2.e) gVar.b).a(iVar2.a);
         long j11 = 0;
         while (true) {
             final int i13 = 0;
@@ -220,7 +219,7 @@ public final class g {
                         default:
                             h hVar3 = (h) ((f3.d) this.b.c);
                             hVar3.getClass();
-                            return (Iterable) hVar3.c(new c1.b(9, hVar3, iVar2));
+                            return (Iterable) hVar3.c(new c1.b(8, hVar3, iVar2));
                     }
                 }
             })).booleanValue()) {
@@ -267,7 +266,7 @@ public final class g {
                         default:
                             h hVar3 = (h) ((f3.d) this.b.c);
                             hVar3.getClass();
-                            return (Iterable) hVar3.c(new c1.b(9, hVar3, iVar2));
+                            return (Iterable) hVar3.c(new c1.b(8, hVar3, iVar2));
                     }
                 }
             });
@@ -275,7 +274,7 @@ public final class g {
                 return;
             }
             if (a2 == null) {
-                i0.a(iVar2, "Uploader", "Unknown backend for %s, deleting event batch for it...");
+                j0.a(iVar2, "Uploader", "Unknown backend for %s, deleting event batch for it...");
                 aVar2 = new z2.a(3, -1L);
                 bArr = bArr2;
                 j10 = j11;
@@ -288,11 +287,11 @@ public final class g {
                 if (bArr2 != null) {
                     f3.c cVar2 = (f3.c) gVar.i;
                     Objects.requireNonNull(cVar2);
-                    b3.a aVar3 = (b3.a) hVar.f(new a1.c(cVar2, 22));
+                    b3.a aVar3 = (b3.a) hVar.f(new a1.c(cVar2, 13));
                     a9.a aVar4 = new a9.a();
                     aVar4.f = new HashMap();
-                    aVar4.d = Long.valueOf(((h3.a) gVar.g).X());
-                    aVar4.e = Long.valueOf(((h3.a) gVar.h).X());
+                    aVar4.d = Long.valueOf(((h3.a) gVar.g).W());
+                    aVar4.e = Long.valueOf(((h3.a) gVar.h).W());
                     aVar4.b = "GDT_CLIENT_METRICS";
                     v2.c cVar3 = new v2.c("proto");
                     aVar3.getClass();
@@ -329,8 +328,8 @@ public final class g {
                     Map.Entry entry = (Map.Entry) it2.next();
                     y2.h hVar3 = (y2.h) ((List) entry.getValue()).get(0);
                     w wVar = w.a;
-                    long X = bVar.f.X();
-                    long X2 = bVar.e.X();
+                    long W = bVar.f.W();
+                    long W2 = bVar.e.W();
                     x2.j jVar = new x2.j(new x2.h(Integer.valueOf(hVar3.b("sdk-version")), hVar3.a("model"), hVar3.a("hardware"), hVar3.a("device"), hVar3.a("product"), hVar3.a("os-uild"), hVar3.a("manufacturer"), hVar3.a("fingerprint"), hVar3.a("locale"), hVar3.a("country"), hVar3.a("mcc_mnc"), hVar3.a("application_build")));
                     try {
                         num = Integer.valueOf(Integer.parseInt((String) entry.getKey()));
@@ -348,15 +347,15 @@ public final class g {
                         byte[] bArr4 = lVar.b;
                         long j12 = j11;
                         if (cVar4.equals(new v2.c("proto"))) {
-                            s3Var = new s3();
-                            s3Var.d = bArr4;
+                            r3Var = new r3();
+                            r3Var.d = bArr4;
                         } else if (cVar4.equals(new v2.c("json"))) {
                             String str4 = new String(bArr4, Charset.forName("UTF-8"));
-                            s3 s3Var2 = new s3();
-                            s3Var2.e = str4;
-                            s3Var = s3Var2;
+                            r3 r3Var2 = new r3();
+                            r3Var2.e = str4;
+                            r3Var = r3Var2;
                         } else {
-                            String c3 = i0.c("CctTransportBackend");
+                            String c3 = j0.c("CctTransportBackend");
                             if (Log.isLoggable(c3, 5)) {
                                 Log.w(c3, "Received event of unsupported encoding " + cVar4 + ". Skipping...");
                             }
@@ -364,31 +363,31 @@ public final class g {
                             bArr2 = bArr3;
                             j11 = j12;
                         }
-                        s3Var.a = Long.valueOf(hVar4.d);
-                        s3Var.c = Long.valueOf(hVar4.e);
+                        r3Var.a = Long.valueOf(hVar4.d);
+                        r3Var.c = Long.valueOf(hVar4.e);
                         String str5 = (String) hVar4.f.get("tz-offset");
-                        s3Var.f = Long.valueOf(str5 == null ? 0L : Long.valueOf(str5).longValue());
-                        s3Var.h = new x2.n((u) u.a.get(hVar4.b("net-type")), (t) t.a.get(hVar4.b("mobile-subtype")));
+                        r3Var.f = Long.valueOf(str5 == null ? 0L : Long.valueOf(str5).longValue());
+                        r3Var.h = new x2.n((u) u.a.get(hVar4.b("net-type")), (t) t.a.get(hVar4.b("mobile-subtype")));
                         Integer num2 = hVar4.b;
                         if (num2 != null) {
-                            s3Var.b = num2;
+                            r3Var.b = num2;
                         }
-                        String str6 = ((Long) s3Var.a) == null ? " eventTimeMs" : "";
-                        if (((Long) s3Var.c) == null) {
+                        String str6 = ((Long) r3Var.a) == null ? " eventTimeMs" : "";
+                        if (((Long) r3Var.c) == null) {
                             str6 = str6.concat(" eventUptimeMs");
                         }
-                        if (((Long) s3Var.f) == null) {
-                            str6 = v2.k(str6, " timezoneOffsetSeconds");
+                        if (((Long) r3Var.f) == null) {
+                            str6 = w.c.e(str6, " timezoneOffsetSeconds");
                         }
                         if (!str6.isEmpty()) {
                             throw new IllegalStateException("Missing required properties:".concat(str6));
                         }
-                        arrayList4.add(new k(((Long) s3Var.a).longValue(), (Integer) s3Var.b, ((Long) s3Var.c).longValue(), (byte[]) s3Var.d, (String) s3Var.e, ((Long) s3Var.f).longValue(), (x2.n) s3Var.h));
+                        arrayList4.add(new k(((Long) r3Var.a).longValue(), (Integer) r3Var.b, ((Long) r3Var.c).longValue(), (byte[]) r3Var.d, (String) r3Var.e, ((Long) r3Var.f).longValue(), (x2.n) r3Var.h));
                         it2 = it3;
                         bArr2 = bArr3;
                         j11 = j12;
                     }
-                    arrayList3.add(new x2.l(X, X2, jVar, num, str2, arrayList4));
+                    arrayList3.add(new x2.l(W, W2, jVar, num, str2, arrayList4));
                     it2 = it2;
                 }
                 bArr = bArr2;
@@ -414,13 +413,13 @@ public final class g {
                 }
                 try {
                     m mVar2 = new m(url, iVar3, str, 6);
-                    rh.e eVar = new rh.e(bVar, 17);
+                    sf.g gVar2 = new sf.g(bVar, 10);
                     int i16 = 5;
                     do {
-                        b10 = eVar.b(mVar2);
+                        b10 = gVar2.b(mVar2);
                         URL url2 = (URL) b10.c;
                         if (url2 != null) {
-                            i0.a(url2, "CctTransportBackend", "Following redirect to: %s");
+                            j0.a(url2, "CctTransportBackend", "Following redirect to: %s");
                             mVar2 = new m(url2, (x2.i) mVar2.c, (String) mVar2.d, 6);
                         } else {
                             mVar2 = null;
@@ -431,18 +430,18 @@ public final class g {
                             i16--;
                         }
                     } while (i16 >= 1);
-                    int i17 = b10.b;
+                    int i17 = b10.a;
                     if (i17 == 200) {
-                        aVar2 = new z2.a(1, b10.a);
+                        aVar2 = new z2.a(1, b10.b);
                     } else {
                         if (i17 >= 500 || i17 == 404) {
                             aVar = new z2.a(2, -1L);
                         } else if (i17 == 400) {
                             try {
                                 aVar = new z2.a(4, -1L);
-                            } catch (IOException e) {
-                                e = e;
-                                i0.b("CctTransportBackend", "Could not make request to the backend", e);
+                            } catch (IOException e6) {
+                                e = e6;
+                                j0.b("CctTransportBackend", "Could not make request to the backend", e);
                                 i11 = 2;
                                 aVar2 = new z2.a(2, -1L);
                                 i12 = aVar2.a;
@@ -454,8 +453,8 @@ public final class g {
                         }
                         aVar2 = aVar;
                     }
-                } catch (IOException e6) {
-                    e = e6;
+                } catch (IOException e10) {
+                    e = e10;
                 }
             }
             i11 = 2;
@@ -468,11 +467,11 @@ public final class g {
             gVar = this;
             iVar2 = iVar;
             j11 = j10;
-            hVar.f(new c1.b(6, gVar, iterable));
+            hVar.f(new c1.b(5, gVar, iterable));
             if (i12 == 1) {
                 j11 = Math.max(j11, aVar2.b);
                 if (bArr != null) {
-                    hVar.f(new a1.c(gVar, 24));
+                    hVar.f(new a1.c(gVar, 15));
                 }
             } else if (i12 == 4) {
                 HashMap hashMap2 = new HashMap();
@@ -485,7 +484,7 @@ public final class g {
                         hashMap2.put(str8, 1);
                     }
                 }
-                hVar.f(new c1.b(7, gVar, hashMap2));
+                hVar.f(new c1.b(6, gVar, hashMap2));
             }
             bArr2 = bArr;
         }

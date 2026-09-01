@@ -1,25 +1,25 @@
 package f2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final class b implements k0 {
-    public final k0 a;
+public final class b implements l0 {
+    public final l0 a;
     public int b = 0;
     public int c = -1;
     public int d = -1;
 
-    public b(k0 k0Var) {
-        this.a = k0Var;
+    public b(l0 l0Var) {
+        this.a = l0Var;
     }
 
-    @Override // f2.k0
-    public final void D(int i10, int i11) {
+    @Override // f2.l0
+    public final void C(int i10, int i11) {
         a();
-        this.a.D(i10, i11);
+        this.a.C(i10, i11);
     }
 
-    @Override // f2.k0
-    public final void M0(int i10, int i11) {
+    @Override // f2.l0
+    public final void L0(int i10, int i11) {
         int i12;
         if (this.b == 2 && (i12 = this.c) >= i10 && i12 <= i10 + i11) {
             this.d += i11;
@@ -37,19 +37,35 @@ public final class b implements k0 {
         if (i10 == 0) {
             return;
         }
-        k0 k0Var = this.a;
+        l0 l0Var = this.a;
         if (i10 == 1) {
-            k0Var.e0(this.c, this.d);
+            l0Var.j0(this.c, this.d);
         } else if (i10 == 2) {
-            k0Var.M0(this.c, this.d);
+            l0Var.L0(this.c, this.d);
         } else if (i10 == 3) {
-            k0Var.k1(this.c, this.d);
+            l0Var.i1(this.c, this.d);
         }
         this.b = 0;
     }
 
-    @Override // f2.k0
-    public final void e0(int i10, int i11) {
+    @Override // f2.l0
+    public final void i1(int i10, int i11) {
+        int i12;
+        int i13;
+        int i14;
+        if (this.b == 3 && i10 <= (i13 = this.d + (i12 = this.c)) && (i14 = i10 + i11) >= i12) {
+            this.c = Math.min(i10, i12);
+            this.d = Math.max(i13, i14) - this.c;
+        } else {
+            a();
+            this.c = i10;
+            this.d = i11;
+            this.b = 3;
+        }
+    }
+
+    @Override // f2.l0
+    public final void j0(int i10, int i11) {
         int i12;
         if (this.b == 1 && i10 >= (i12 = this.c)) {
             int i13 = this.d;
@@ -63,21 +79,5 @@ public final class b implements k0 {
         this.c = i10;
         this.d = i11;
         this.b = 1;
-    }
-
-    @Override // f2.k0
-    public final void k1(int i10, int i11) {
-        int i12;
-        int i13;
-        int i14;
-        if (this.b == 3 && i10 <= (i13 = this.d + (i12 = this.c)) && (i14 = i10 + i11) >= i12) {
-            this.c = Math.min(i10, i12);
-            this.d = Math.max(i13, i14) - this.c;
-        } else {
-            a();
-            this.c = i10;
-            this.d = i11;
-            this.b = 3;
-        }
     }
 }

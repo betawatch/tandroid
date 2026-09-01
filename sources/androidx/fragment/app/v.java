@@ -11,7 +11,7 @@ import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class v extends androidx.activity.m implements e0.c, e0.d {
     public final androidx.biometric.f0 G;
@@ -36,10 +36,10 @@ public abstract class v extends androidx.activity.m implements e0.c, e0.d {
             public final void accept(Object obj) {
                 switch (i11) {
                     case 0:
-                        this.b.G.m();
+                        this.b.G.O();
                         break;
                     default:
-                        this.b.G.m();
+                        this.b.G.O();
                         break;
                 }
             }
@@ -56,26 +56,26 @@ public abstract class v extends androidx.activity.m implements e0.c, e0.d {
             public final void accept(Object obj) {
                 switch (i12) {
                     case 0:
-                        this.b.G.m();
+                        this.b.G.O();
                         break;
                     default:
-                        this.b.G.m();
+                        this.b.G.O();
                         break;
                 }
             }
         });
         androidx.activity.f fVar = new androidx.activity.f(this, 1);
-        com.google.android.gms.internal.cast.c0 c0Var = this.b;
-        c0Var.getClass();
-        if (((androidx.activity.m) c0Var.c) != null) {
+        com.google.android.gms.internal.cast.b0 b0Var = this.b;
+        b0Var.getClass();
+        if (((androidx.activity.m) b0Var.c) != null) {
             fVar.a();
         }
-        ((CopyOnWriteArraySet) c0Var.b).add(fVar);
+        ((CopyOnWriteArraySet) b0Var.b).add(fVar);
     }
 
     public static boolean t(j0 j0Var) {
         boolean z4 = false;
-        for (s sVar : j0Var.c.z()) {
+        for (s sVar : j0Var.c.v()) {
             if (sVar != null) {
                 u uVar = sVar.H;
                 if ((uVar == null ? null : uVar.e) != null) {
@@ -145,14 +145,14 @@ public abstract class v extends androidx.activity.m implements e0.c, e0.d {
         printWriter.print(" mStopped=");
         printWriter.print(this.K);
         if (getApplication() != null) {
-            new q5.g0(this, f()).y(str3, printWriter);
+            new q5.g0(this, f()).g(str3, printWriter);
         }
         ((u) this.G.b).d.w(str, fileDescriptor, printWriter, strArr);
     }
 
     @Override // androidx.activity.m, android.app.Activity
     public void onActivityResult(int i10, int i11, Intent intent) {
-        this.G.m();
+        this.G.O();
         super.onActivityResult(i10, i11, intent);
     }
 
@@ -212,14 +212,14 @@ public abstract class v extends androidx.activity.m implements e0.c, e0.d {
 
     @Override // androidx.activity.m, android.app.Activity
     public void onRequestPermissionsResult(int i10, String[] strArr, int[] iArr) {
-        this.G.m();
+        this.G.O();
         super.onRequestPermissionsResult(i10, strArr, iArr);
     }
 
     @Override // android.app.Activity
     public void onResume() {
         androidx.biometric.f0 f0Var = this.G;
-        f0Var.m();
+        f0Var.O();
         super.onResume();
         this.J = true;
         ((u) f0Var.b).d.A(true);
@@ -228,7 +228,7 @@ public abstract class v extends androidx.activity.m implements e0.c, e0.d {
     @Override // android.app.Activity
     public void onStart() {
         androidx.biometric.f0 f0Var = this.G;
-        f0Var.m();
+        f0Var.O();
         u uVar = (u) f0Var.b;
         super.onStart();
         this.K = false;
@@ -251,7 +251,7 @@ public abstract class v extends androidx.activity.m implements e0.c, e0.d {
 
     @Override // android.app.Activity
     public final void onStateNotSaved() {
-        this.G.m();
+        this.G.O();
     }
 
     @Override // android.app.Activity

@@ -17,17 +17,16 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
+import oh.h4;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.ui.Components.qk0;
-import ph.j5;
+import org.telegram.ui.web.e0;
 import q5.a0;
-import q5.e0;
 import q5.f0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class h implements q5.f {
     public static final u5.b k = new u5.b("RemoteMediaClient", null);
@@ -54,7 +53,7 @@ public final class h implements q5.f {
         m mVar = new m(this);
         this.d = mVar;
         this.c = nVar;
-        nVar.h = new qk0(this, 11);
+        nVar.h = new e0(this, 10);
         nVar.c = mVar;
         this.e = new c(this);
     }
@@ -68,8 +67,8 @@ public final class h implements q5.f {
     public static final void x(o oVar) {
         try {
             oVar.p();
-        } catch (IllegalArgumentException e) {
-            throw e;
+        } catch (IllegalArgumentException e6) {
+            throw e6;
         } catch (Throwable unused) {
             oVar.a(new n(new Status(2100, null, null, null), 1));
         }
@@ -89,8 +88,8 @@ public final class h implements q5.f {
         synchronized (this.a) {
             try {
                 b6.m.e("Must be called from the main thread.");
-                q5.q e = e();
-                i10 = e != null ? e.f : 0;
+                q5.q e6 = e();
+                i10 = e6 != null ? e6.f : 0;
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -100,15 +99,15 @@ public final class h implements q5.f {
 
     public final q5.o c() {
         b6.m.e("Must be called from the main thread.");
-        q5.q e = e();
-        if (e == null) {
+        q5.q e6 = e();
+        if (e6 == null) {
             return null;
         }
-        Integer num = (Integer) e.K.get(e.w);
+        Integer num = (Integer) e6.K.get(e6.w);
         if (num == null) {
             return null;
         }
-        return (q5.o) e.D.get(num.intValue());
+        return (q5.o) e6.D.get(num.intValue());
     }
 
     public final MediaInfo d() {
@@ -135,8 +134,8 @@ public final class h implements q5.f {
         synchronized (this.a) {
             try {
                 b6.m.e("Must be called from the main thread.");
-                q5.q e = e();
-                i10 = e != null ? e.e : 1;
+                q5.q e6 = e();
+                i10 = e6 != null ? e6.e : 1;
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -161,14 +160,14 @@ public final class h implements q5.f {
             return true;
         }
         b6.m.e("Must be called from the main thread.");
-        q5.q e = e();
-        return (e != null && e.e == 5) || m() || l() || k();
+        q5.q e6 = e();
+        return (e6 != null && e6.e == 5) || m() || l() || k();
     }
 
     public final boolean i() {
         b6.m.e("Must be called from the main thread.");
-        q5.q e = e();
-        return e != null && e.e == 4;
+        q5.q e6 = e();
+        return e6 != null && e6.e == 4;
     }
 
     public final boolean j() {
@@ -179,17 +178,17 @@ public final class h implements q5.f {
 
     public final boolean k() {
         b6.m.e("Must be called from the main thread.");
-        q5.q e = e();
-        return (e == null || e.w == 0) ? false : true;
+        q5.q e6 = e();
+        return (e6 == null || e6.w == 0) ? false : true;
     }
 
     public final boolean l() {
         b6.m.e("Must be called from the main thread.");
-        q5.q e = e();
-        if (e == null) {
+        q5.q e6 = e();
+        if (e6 == null) {
             return false;
         }
-        if (e.e != 3) {
+        if (e6.e != 3) {
             return j() && b() == 2;
         }
         return true;
@@ -197,14 +196,14 @@ public final class h implements q5.f {
 
     public final boolean m() {
         b6.m.e("Must be called from the main thread.");
-        q5.q e = e();
-        return e != null && e.e == 2;
+        q5.q e6 = e();
+        return e6 != null && e6.e == 2;
     }
 
     public final boolean n() {
         b6.m.e("Must be called from the main thread.");
-        q5.q e = e();
-        return e != null && e.E;
+        q5.q e6 = e();
+        return e6 != null && e6.E;
     }
 
     /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
@@ -250,8 +249,8 @@ public final class h implements q5.f {
             try {
                 optLong = jSONObject.optLong("requestId", -1L);
                 c3 = 1;
-            } catch (JSONException e) {
-                e = e;
+            } catch (JSONException e6) {
+                e = e6;
                 r32 = str2;
                 c3 = 1;
                 Object[] objArr = new Object[2];
@@ -259,8 +258,8 @@ public final class h implements q5.f {
                 objArr[c3] = str;
                 Log.w((String) r32, bVar.d("Message is malformed (%s); ignoring: %s", objArr));
             }
-        } catch (JSONException e6) {
-            e = e6;
+        } catch (JSONException e10) {
+            e = e10;
             r32 = str2;
         }
         try {
@@ -280,7 +279,7 @@ public final class h implements q5.f {
                                 JSONArray jSONArray = jSONObject.getJSONArray("items");
                                 q5.o[] oVarArr = new q5.o[jSONArray.length()];
                                 for (int i12 = 0; i12 < jSONArray.length(); i12++) {
-                                    oVarArr[i12] = new j5(jSONArray.getJSONObject(i12)).X();
+                                    oVarArr[i12] = new h4(jSONArray.getJSONObject(i12)).M();
                                 }
                                 Iterator it = ((h) nVar.h.b).i.iterator();
                                 while (it.hasNext()) {
@@ -315,10 +314,10 @@ public final class h implements q5.f {
                             if (nVar.h == null) {
                                 break;
                             } else {
-                                MediaError e10 = MediaError.e(jSONObject);
+                                MediaError e11 = MediaError.e(jSONObject);
                                 Iterator it4 = ((h) nVar.h.b).i.iterator();
                                 while (it4.hasNext()) {
-                                    ((g) it4.next()).b(e10);
+                                    ((g) it4.next()).b(e11);
                                 }
                                 break;
                             }
@@ -436,9 +435,9 @@ public final class h implements q5.f {
                                         }
                                         if ((i11 & 32) != 0) {
                                             nVar.e = SystemClock.elapsedRealtime();
-                                            qk0 qk0Var = nVar.h;
-                                            if (qk0Var != null) {
-                                                qk0Var.i();
+                                            e0 e0Var = nVar.h;
+                                            if (e0Var != null) {
+                                                e0Var.j();
                                             }
                                         }
                                         if ((i11 & 64) != 0) {
@@ -564,16 +563,16 @@ public final class h implements q5.f {
                         }
                         break;
                 }
-            } catch (JSONException e11) {
-                e = e11;
+            } catch (JSONException e12) {
+                e = e12;
                 r32 = str2;
                 Object[] objArr2 = new Object[2];
                 objArr2[0] = e.getMessage();
                 objArr2[c3] = str;
                 Log.w((String) r32, bVar.d("Message is malformed (%s); ignoring: %s", objArr2));
             }
-        } catch (JSONException e12) {
-            e = e12;
+        } catch (JSONException e13) {
+            e = e13;
             Object[] objArr22 = new Object[2];
             objArr22[0] = e.getMessage();
             objArr22[c3] = str;
@@ -645,15 +644,15 @@ public final class h implements q5.f {
         }
         b6.m.e("Must be called from the main thread.");
         String str = this.c.b;
-        e0 e0Var = (e0) f0Var;
+        q5.e0 e0Var = (q5.e0) f0Var;
         u5.a.b(str);
         synchronized (e0Var.C) {
             e0Var.C.put(str, this);
         }
-        v e = w.e();
-        e.c = new a0(e0Var, str, this);
-        e.a = 8413;
-        e0Var.e(1, e.e());
+        v e6 = w.e();
+        e6.c = new a0(e0Var, str, this);
+        e6.a = 8413;
+        e0Var.e(1, e6.e());
         b6.m.e("Must be called from the main thread.");
         if (w()) {
             x(new i(this, 0));
@@ -662,7 +661,7 @@ public final class h implements q5.f {
         }
     }
 
-    public final void v(e0 e0Var) {
+    public final void v(q5.e0 e0Var) {
         q5.f fVar;
         f0 f0Var = this.f;
         if (f0Var == e0Var) {
@@ -673,17 +672,17 @@ public final class h implements q5.f {
             this.e.c();
             b6.m.e("Must be called from the main thread.");
             String str = this.c.b;
-            e0 e0Var2 = (e0) f0Var;
+            q5.e0 e0Var2 = (q5.e0) f0Var;
             if (TextUtils.isEmpty(str)) {
                 throw new IllegalArgumentException("Channel namespace cannot be null or empty");
             }
             synchronized (e0Var2.C) {
                 fVar = (q5.f) e0Var2.C.remove(str);
             }
-            v e = w.e();
-            e.c = new a0(e0Var2, fVar, str);
-            e.a = 8414;
-            e0Var2.e(1, e.e());
+            v e6 = w.e();
+            e6.c = new a0(e0Var2, fVar, str);
+            e6.a = 8414;
+            e0Var2.e(1, e6.e());
             this.d.b = null;
             this.b.removeCallbacksAndMessages(null);
         }

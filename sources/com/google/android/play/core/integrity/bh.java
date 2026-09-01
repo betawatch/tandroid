@@ -7,7 +7,7 @@ import android.os.RemoteException;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import o8.f0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 final class bh extends bm {
     final /* synthetic */ Bundle a;
@@ -50,12 +50,12 @@ final class bh extends bm {
             bundle.writeToParcel(obtain, 0);
             obtain.writeStrongBinder(a2);
             tVar.F0(obtain, 6);
-        } catch (RemoteException e) {
+        } catch (RemoteException e6) {
             bn bnVar2 = this.e;
             int i11 = this.d;
             f0Var = bnVar2.b;
-            f0Var.a(e, "requestAndShowDialog(%s)", Integer.valueOf(i11));
-            this.c.trySetException(new StandardIntegrityException(-100, e));
+            f0Var.a(e6, "requestAndShowDialog(%s)", Integer.valueOf(i11));
+            this.c.trySetException(new StandardIntegrityException(-100, e6));
         }
     }
 }

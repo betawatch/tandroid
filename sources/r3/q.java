@@ -2,7 +2,7 @@ package r3;
 
 import h5.d0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class q implements s {
     public final long[] a;
@@ -42,14 +42,14 @@ public final class q implements s {
             return new r(tVar, tVar);
         }
         long[] jArr = this.b;
-        int e = d0.e(jArr, j10, true);
-        long j11 = jArr[e];
+        int e6 = d0.e(jArr, j10, true);
+        long j11 = jArr[e6];
         long[] jArr2 = this.a;
-        t tVar2 = new t(j11, jArr2[e]);
-        if (j11 == j10 || e == jArr.length - 1) {
+        t tVar2 = new t(j11, jArr2[e6]);
+        if (j11 == j10 || e6 == jArr.length - 1) {
             return new r(tVar2, tVar2);
         }
-        int i10 = e + 1;
+        int i10 = e6 + 1;
         return new r(tVar2, new t(jArr[i10], jArr2[i10]));
     }
 

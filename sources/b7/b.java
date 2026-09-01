@@ -11,12 +11,11 @@ import java.util.SortedSet;
 import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import kh.a2;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static volatile a b;
@@ -152,10 +151,10 @@ public abstract class b {
             } else {
                 try {
                     l10 = obj.toString();
-                } catch (Exception e) {
+                } catch (Exception e6) {
                     String z4 = android.support.v4.media.a.z(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(z4), (Throwable) e);
-                    l10 = yh.l("<", z4, " threw ", e.getClass().getName(), ">");
+                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(z4), (Throwable) e6);
+                    l10 = yh.l("<", z4, " threw ", e6.getClass().getName(), ">");
                 }
             }
             objArr[i11] = l10;
@@ -193,7 +192,7 @@ public abstract class b {
                 d10 = d("%s (%s) must not be negative", "index", Integer.valueOf(i10));
             } else {
                 if (i11 < 0) {
-                    throw new IllegalArgumentException(a2.j(i11, "negative size: "));
+                    throw new IllegalArgumentException(l.d.j(i11, "negative size: "));
                 }
                 d10 = d("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
             }
@@ -213,15 +212,15 @@ public abstract class b {
     public static final void g(StringBuilder sb, Iterator it, h7.u uVar) {
         if (it.hasNext()) {
             Map.Entry entry = (Map.Entry) it.next();
-            sb.append(h7.u.H2(entry.getKey()));
+            sb.append(h7.u.M2(entry.getKey()));
             sb.append(" : ");
-            sb.append(h7.u.H2(entry.getValue()));
+            sb.append(h7.u.M2(entry.getValue()));
             while (it.hasNext()) {
                 sb.append(",\n  ");
                 Map.Entry entry2 = (Map.Entry) it.next();
-                sb.append(h7.u.H2(entry2.getKey()));
+                sb.append(h7.u.M2(entry2.getKey()));
                 sb.append(" : ");
-                sb.append(h7.u.H2(entry2.getValue()));
+                sb.append(h7.u.M2(entry2.getValue()));
             }
         }
     }
@@ -350,16 +349,16 @@ public abstract class b {
                         i10++;
                     }
                     return new e1(u.b(treeMap));
-                } catch (IOException | RuntimeException e) {
-                    e = e;
+                } catch (IOException | RuntimeException e6) {
+                    e = e6;
                     throw new c1(e);
                 }
-            } catch (RuntimeException e6) {
-                e = e6;
+            } catch (RuntimeException e10) {
+                e = e10;
                 throw new c1(e);
             }
-        } catch (IOException e10) {
-            throw new c1(e10);
+        } catch (IOException e11) {
+            throw new c1(e11);
         }
     }
 
@@ -403,6 +402,6 @@ public abstract class b {
         if (i11 >= 0) {
             return d("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
         }
-        throw new IllegalArgumentException(a2.j(i11, "negative size: "));
+        throw new IllegalArgumentException(l.d.j(i11, "negative size: "));
     }
 }

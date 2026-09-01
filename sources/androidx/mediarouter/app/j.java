@@ -6,7 +6,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class j extends androidx.fragment.app.p {
     public boolean x0 = false;
@@ -58,11 +58,11 @@ public class j extends androidx.fragment.app.p {
         }
         if (!this.x0) {
             i iVar = (i) sVar;
-            iVar.getWindow().setLayout(j7.y.a(iVar.getContext()), -2);
+            iVar.getWindow().setLayout(j7.z.a(iVar.getContext()), -2);
         } else {
             e0 e0Var = (e0) sVar;
             Context context = e0Var.n;
-            e0Var.getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : j7.y.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
+            e0Var.getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : j7.z.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
         }
     }
 }

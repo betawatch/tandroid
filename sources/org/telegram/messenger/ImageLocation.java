@@ -5,7 +5,7 @@ import org.telegram.messenger.DocumentObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class ImageLocation {
     public static final int TYPE_BIG = 0;
@@ -20,7 +20,7 @@ public class ImageLocation {
     public long documentId;
     public byte[] file_reference;
     public int imageType;
-    public org.telegram.ui.web.f2 instantFile;
+    public org.telegram.ui.web.g2 instantFile;
     public byte[] iv;
     public byte[] key;
     public TLRPC.TL_fileLocationToBeDeprecated location;
@@ -53,12 +53,12 @@ public class ImageLocation {
         return imageLocation;
     }
 
-    public static ImageLocation getForInstantFile(org.telegram.ui.web.f2 f2Var) {
-        if (f2Var == null) {
+    public static ImageLocation getForInstantFile(org.telegram.ui.web.g2 g2Var) {
+        if (g2Var == null) {
             return null;
         }
         ImageLocation imageLocation = new ImageLocation();
-        imageLocation.instantFile = f2Var;
+        imageLocation.instantFile = g2Var;
         return imageLocation;
     }
 
@@ -214,7 +214,7 @@ public class ImageLocation {
             if (obj3 != null) {
                 str = obj3.getClass().getSimpleName();
             }
-            org.telegram.ui.yh.w(str, t6);
+            org.telegram.ui.yh.v(str, t6);
         }
         return strippedKeyInternal;
     }
@@ -294,9 +294,9 @@ public class ImageLocation {
         if (webFile != null) {
             return Utilities.MD5(webFile.url);
         }
-        org.telegram.ui.web.f2 f2Var = this.instantFile;
-        if (f2Var != null) {
-            return Utilities.MD5(f2Var.b);
+        org.telegram.ui.web.g2 g2Var = this.instantFile;
+        if (g2Var != null) {
+            return Utilities.MD5(g2Var.b);
         }
         TLRPC.Document document = this.document;
         if (document == null) {
@@ -318,7 +318,7 @@ public class ImageLocation {
         sb.append("_");
         sb.append(this.document.id);
         sb.append("_");
-        sb.append(org.telegram.ui.ActionBar.j6.q0(themeDocument.themeSettings));
+        sb.append(org.telegram.ui.ActionBar.k6.q0(themeDocument.themeSettings));
         sb.append("_");
         sb.append(themeDocument.themeSettings.accent_color);
         sb.append("_");

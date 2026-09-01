@@ -1,35 +1,158 @@
 package org.telegram.ui.Components;
 
-import java.util.Arrays;
-import java.util.Comparator;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.view.animation.AnimationUtils;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class og0 implements Comparator {
-    public final /* synthetic */ vg0 a;
+public final class og0 extends Drawable {
+    public final Paint a;
+    public final int b;
+    public boolean c;
+    public float d;
+    public long e;
+    public View f;
+    public int g = 255;
+    public float h = 300.0f;
 
-    public og0(vg0 vg0Var) {
-        this.a = vg0Var;
+    public og0(int i10) {
+        this.b = AndroidUtilities.dp(i10);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        paint.setColor(-1);
     }
 
-    public final int a(ug0 ug0Var) {
-        vg0 vg0Var = this.a;
-        int size = vg0Var.r.answers.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            if (Arrays.equals(vg0Var.r.answers.get(i10).option, ug0Var.d)) {
-                return i10;
+    public final void a(boolean z4, boolean z10) {
+        if (this.c != z4) {
+            this.c = z4;
+            if (!z10) {
+                this.d = z4 ? 1.0f : 0.0f;
+            }
+            this.e = AnimationUtils.currentAnimationTimeMillis();
+            invalidateSelf();
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0062  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x009f  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x00e8  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00aa  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0067  */
+    @Override // android.graphics.drawable.Drawable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void draw(Canvas canvas) {
+        int i10;
+        Canvas canvas2;
+        ee0 ee0Var;
+        long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
+        long j10 = currentAnimationTimeMillis - this.e;
+        this.e = currentAnimationTimeMillis;
+        if (j10 > 18) {
+            j10 = 16;
+        }
+        boolean z4 = this.c;
+        if (z4) {
+            float f10 = this.d;
+            if (f10 < 1.0f) {
+                float f11 = (j10 / this.h) + f10;
+                this.d = f11;
+                if (f11 >= 1.0f) {
+                    this.d = 1.0f;
+                } else {
+                    View view = this.f;
+                    if (view != null) {
+                        view.invalidate();
+                    }
+                    invalidateSelf();
+                }
+                Rect bounds = getBounds();
+                i10 = this.g;
+                if (i10 != 255) {
+                    canvas.save();
+                    canvas2 = canvas;
+                } else {
+                    canvas2 = canvas;
+                    canvas2.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, i10, 31);
+                }
+                canvas2.translate(e2.c.w(1.0f, this.d, AndroidUtilities.dp(1.0f), bounds.centerX()), bounds.centerY());
+                float f12 = this.d * 500.0f;
+                float interpolation = f12 >= 100.0f ? pr.j.getInterpolation(f12 / 100.0f) * (-5.0f) : f12 < 484.0f ? (pr.j.getInterpolation((f12 - 100.0f) / 384.0f) * 95.0f) - 5.0f : 90.0f;
+                int i11 = this.b;
+                canvas2.scale((i11 * 1.45f) / AndroidUtilities.dp(28.0f), (i11 * 1.5f) / AndroidUtilities.dp(28.0f));
+                canvas2.rotate(interpolation);
+                ee0Var = org.telegram.ui.ActionBar.k6.x3;
+                if (ee0Var != null) {
+                    Paint paint = this.a;
+                    ee0Var.b(canvas2, paint, f12);
+                    canvas2.scale(1.0f, -1.0f);
+                    org.telegram.ui.ActionBar.k6.x3.b(canvas2, paint, f12);
+                }
+                canvas2.restore();
             }
         }
-        return 0;
+        if (!z4) {
+            float f13 = this.d;
+            if (f13 > 0.0f) {
+                float f14 = f13 - (j10 / this.h);
+                this.d = f14;
+                if (f14 <= 0.0f) {
+                    this.d = 0.0f;
+                } else {
+                    View view2 = this.f;
+                    if (view2 != null) {
+                        view2.invalidate();
+                    }
+                    invalidateSelf();
+                }
+            }
+        }
+        Rect bounds2 = getBounds();
+        i10 = this.g;
+        if (i10 != 255) {
+        }
+        canvas2.translate(e2.c.w(1.0f, this.d, AndroidUtilities.dp(1.0f), bounds2.centerX()), bounds2.centerY());
+        float f122 = this.d * 500.0f;
+        if (f122 >= 100.0f) {
+        }
+        int i112 = this.b;
+        canvas2.scale((i112 * 1.45f) / AndroidUtilities.dp(28.0f), (i112 * 1.5f) / AndroidUtilities.dp(28.0f));
+        canvas2.rotate(interpolation);
+        ee0Var = org.telegram.ui.ActionBar.k6.x3;
+        if (ee0Var != null) {
+        }
+        canvas2.restore();
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int a2 = a((ug0) obj);
-        int a10 = a((ug0) obj2);
-        if (a2 > a10) {
-            return 1;
-        }
-        return a2 < a10 ? -1 : 0;
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return this.b;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return this.b;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.g = i10;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
     }
 }

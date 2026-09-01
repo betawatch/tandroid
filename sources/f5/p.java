@@ -18,11 +18,11 @@ import org.telegram.messenger.TranslateController;
 import s8.h0;
 import s8.i0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class p extends t {
-    public static final h0 k = new s8.m(new e5.f(4));
-    public static final h0 l = new s8.m(new e5.f(5));
+    public static final h0 k = new s8.m(new e5.f(3));
+    public static final h0 l = new s8.m(new e5.f(4));
     public final Object d;
     public final Context e;
     public final db.a f;
@@ -51,12 +51,12 @@ public final class p extends t {
 
     public static void c(t0 t0Var, h hVar, HashMap hashMap) {
         for (int i10 = 0; i10 < t0Var.a; i10++) {
-            u uVar = (u) hVar.L.get(t0Var.a(i10));
-            if (uVar != null) {
-                s0 s0Var = uVar.a;
-                u uVar2 = (u) hashMap.get(Integer.valueOf(s0Var.c));
-                if (uVar2 == null || (uVar2.b.isEmpty() && !uVar.b.isEmpty())) {
-                    hashMap.put(Integer.valueOf(s0Var.c), uVar);
+            v vVar = (v) hVar.L.get(t0Var.a(i10));
+            if (vVar != null) {
+                s0 s0Var = vVar.a;
+                v vVar2 = (v) hashMap.get(Integer.valueOf(s0Var.c));
+                if (vVar2 == null || (vVar2.b.isEmpty() && !vVar.b.isEmpty())) {
+                    hashMap.put(Integer.valueOf(s0Var.c), vVar);
                 }
             }
         }
@@ -105,12 +105,12 @@ public final class p extends t {
                 t0 t0Var = sVar2.c[i13];
                 for (int i14 = 0; i14 < t0Var.a; i14++) {
                     s0 a2 = t0Var.a(i14);
-                    i0 e = mVar.e(i13, a2, iArr[i13][i14]);
+                    i0 e6 = mVar.e(i13, a2, iArr[i13][i14]);
                     int i15 = a2.a;
                     boolean[] zArr = new boolean[i15];
                     int i16 = 0;
                     while (i16 < i15) {
-                        n nVar = (n) e.get(i16);
+                        n nVar = (n) e6.get(i16);
                         int a10 = nVar.a();
                         if (zArr[i16] || a10 == 0) {
                             i11 = i12;
@@ -122,7 +122,7 @@ public final class p extends t {
                                 arrayList2.add(nVar);
                                 int i17 = i16 + 1;
                                 while (i17 < i15) {
-                                    n nVar2 = (n) e.get(i17);
+                                    n nVar2 = (n) e6.get(i17);
                                     int i18 = i12;
                                     if (nVar2.a() == 2 && nVar.b(nVar2)) {
                                         arrayList2.add(nVar2);
@@ -223,12 +223,12 @@ public final class p extends t {
         k0Var.n.d(26);
     }
 
-    public final void k(w wVar) {
-        if (wVar instanceof h) {
-            l((h) wVar);
+    public final void k(x xVar) {
+        if (xVar instanceof h) {
+            l((h) xVar);
         }
         g gVar = new g(e());
-        gVar.a(wVar);
+        gVar.a(xVar);
         l(new h(gVar));
     }
 

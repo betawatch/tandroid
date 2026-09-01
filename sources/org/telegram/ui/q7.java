@@ -9,12 +9,12 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class q7 extends i7 {
     public org.telegram.ui.Cells.q7 n;
     public final ArrayList r;
-    public org.telegram.ui.Components.nq s;
+    public org.telegram.ui.Components.pq s;
     public final /* synthetic */ u7 v;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -40,15 +40,15 @@ public final class q7 extends i7 {
         }
     }
 
-    @Override // f2.o0
-    public final void v(f2.l1 l1Var, int i10) {
+    @Override // f2.p0
+    public final void v(f2.m1 m1Var, int i10) {
         if (this.s == null) {
-            org.telegram.ui.Components.nq nqVar = new org.telegram.ui.Components.nq(new ColorDrawable(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.X9, false)), org.telegram.ui.ActionBar.j6.R4);
-            this.s = nqVar;
-            nqVar.w = true;
+            org.telegram.ui.Components.pq pqVar = new org.telegram.ui.Components.pq(new ColorDrawable(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.X9, false)), org.telegram.ui.ActionBar.k6.R4);
+            this.s = pqVar;
+            pqVar.w = true;
         }
-        org.telegram.ui.Cells.r7 r7Var = (org.telegram.ui.Cells.r7) l1Var.a;
-        mh.a aVar = ((o7) this.e.get(i10)).d;
+        org.telegram.ui.Cells.r7 r7Var = (org.telegram.ui.Cells.r7) m1Var.a;
+        nh.a aVar = ((o7) this.e.get(i10)).d;
         Object tag = r7Var.getTag();
         ImageReceiver imageReceiver = r7Var.c;
         boolean z4 = aVar == tag;
@@ -66,13 +66,13 @@ public final class q7 extends i7 {
         r7Var.i(this.v.f.j.contains(aVar), z4);
     }
 
-    @Override // f2.o0
-    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+    @Override // f2.p0
+    public final f2.m1 x(ViewGroup viewGroup, int i10) {
         if (this.n == null) {
             this.n = new org.telegram.ui.Cells.q7(viewGroup.getContext(), null);
         }
         p7 p7Var = new p7(this, viewGroup.getContext(), this.n, this.v.d.getCurrentAccount());
         p7Var.setStyle(1);
-        return new org.telegram.ui.Components.el0(p7Var);
+        return new org.telegram.ui.Components.fl0(p7Var);
     }
 }

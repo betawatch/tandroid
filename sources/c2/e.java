@@ -25,7 +25,7 @@ import java.util.Map;
 import java.util.concurrent.Executor;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class e {
     public static final /* synthetic */ int F = 0;
@@ -37,11 +37,11 @@ public final class e {
     public final z0 c;
     public a0 d;
     public s e;
-    public com.google.android.gms.internal.cast.o f;
+    public com.google.android.gms.internal.cast.n f;
     public y g;
     public final Context h;
     public final a1 n;
-    public final ja.c o;
+    public final o5.i o;
     public final boolean p;
     public final boolean q;
     public l r;
@@ -79,29 +79,28 @@ public final class e {
         z0 z0Var;
         a1 a1Var = new a1();
         a1Var.c = 0;
-        int i10 = 3;
         a1Var.d = 3;
         this.n = a1Var;
-        this.o = new ja.c(this, i10);
-        this.E = new androidx.biometric.f0(this, i10);
+        this.o = new o5.i(this, 4);
+        this.E = new androidx.biometric.f0(this, 3);
         this.h = context;
         this.p = ((ActivityManager) context.getSystemService("activity")).isLowRamDevice();
-        int i11 = Build.VERSION.SDK_INT;
-        if (i11 >= 30) {
-            int i12 = k0.a;
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 30) {
+            int i11 = k0.a;
             Intent intent = new Intent(context, (Class<?>) k0.class);
             intent.setPackage(context.getPackageName());
             if (context.getPackageManager().queryBroadcastReceivers(intent, 0).size() > 0) {
                 z4 = true;
                 this.q = z4;
-                int i13 = b1.a;
+                int i12 = b1.a;
                 Intent intent2 = new Intent(context, (Class<?>) b1.class);
                 intent2.setPackage(context.getPackageName());
                 context.getPackageManager().queryBroadcastReceivers(intent2, 0).size();
-                this.r = (i11 >= 30 || !z4) ? null : new l(context, new a3.c(this, 4));
-                p0 l0Var = i11 < 24 ? new l0(context, this) : new p0(context, this);
+                this.r = (i10 >= 30 || !z4) ? null : new l(context, new ja.c(this));
+                p0 l0Var = i10 < 24 ? new l0(context, this) : new p0(context, this);
                 this.s = l0Var;
-                this.t = new d0(new ag.d(this, 9));
+                this.t = new d0(new ag.e(this, 10));
                 a(l0Var, true);
                 tVar = this.r;
                 if (tVar != null) {
@@ -128,15 +127,15 @@ public final class e {
         }
         z4 = false;
         this.q = z4;
-        int i132 = b1.a;
+        int i122 = b1.a;
         Intent intent22 = new Intent(context, (Class<?>) b1.class);
         intent22.setPackage(context.getPackageName());
         context.getPackageManager().queryBroadcastReceivers(intent22, 0).size();
-        this.r = (i11 >= 30 || !z4) ? null : new l(context, new a3.c(this, 4));
-        if (i11 < 24) {
+        this.r = (i10 >= 30 || !z4) ? null : new l(context, new ja.c(this));
+        if (i10 < 24) {
         }
         this.s = l0Var;
-        this.t = new d0(new ag.d(this, 9));
+        this.t = new d0(new ag.e(this, 10));
         a(l0Var, true);
         tVar = this.r;
         if (tVar != null) {
@@ -276,16 +275,16 @@ public final class e {
             }
             for (a0 a0Var : unmodifiableList) {
                 if (!hashMap.containsKey(a0Var.c)) {
-                    s e = a0Var.c().e(a0Var.b, this.d.b);
-                    e.e();
-                    hashMap.put(a0Var.c, e);
+                    s e6 = a0Var.c().e(a0Var.b, this.d.b);
+                    e6.e();
+                    hashMap.put(a0Var.c, e6);
                 }
             }
         }
     }
 
     public final void h(e eVar, a0 a0Var, s sVar, int i10, a0 a0Var2, Collection collection) {
-        com.google.android.gms.internal.cast.o oVar;
+        com.google.android.gms.internal.cast.n nVar;
         y yVar = this.g;
         if (yVar != null) {
             yVar.a();
@@ -293,24 +292,24 @@ public final class e {
         }
         y yVar2 = new y(eVar, a0Var, sVar, i10, a0Var2, collection);
         this.g = yVar2;
-        if (yVar2.b != 3 || (oVar = this.f) == null) {
+        if (yVar2.b != 3 || (nVar = this.f) == null) {
             yVar2.b();
             return;
         }
         a0 a0Var3 = this.d;
         a0 a0Var4 = (a0) yVar2.g;
         int i11 = 1;
-        com.google.android.gms.internal.cast.o.c.b("Prepare transfer from Route(%s) to Route(%s)", a0Var3, a0Var4);
+        com.google.android.gms.internal.cast.n.c.b("Prepare transfer from Route(%s) to Route(%s)", a0Var3, a0Var4);
         c0.i iVar = new c0.i();
         iVar.c = new c0.l();
         c0.k kVar = new c0.k(iVar);
         c0.j jVar = kVar.b;
         iVar.b = kVar;
-        iVar.a = com.google.android.gms.internal.cast.n.class;
+        iVar.a = androidx.activity.result.c.class;
         try {
-            iVar.a = Boolean.valueOf(oVar.b.post(new p(oVar, a0Var3, a0Var4, iVar, false, 2)));
-        } catch (Exception e) {
-            jVar.l(e);
+            iVar.a = Boolean.valueOf(nVar.b.post(new p(nVar, a0Var3, a0Var4, iVar, false, 2)));
+        } catch (Exception e6) {
+            jVar.l(e6);
         }
         y yVar3 = this.g;
         e eVar2 = (e) ((WeakReference) yVar3.j).get();
@@ -322,10 +321,10 @@ public final class e {
                 throw new IllegalStateException("future is already set");
             }
             yVar3.k = kVar;
-            ag.d dVar = new ag.d(yVar3, 11);
+            ag.e eVar3 = new ag.e(yVar3, 12);
             b bVar = eVar2.a;
             Objects.requireNonNull(bVar);
-            jVar.c(dVar, new f(bVar, i11));
+            jVar.c(eVar3, new f(bVar, i11));
         }
     }
 
@@ -366,17 +365,17 @@ public final class e {
         if (f() && (uVar = a0Var.a.e) != null && uVar.b) {
             r c3 = a0Var.c().c(a0Var.b);
             if (c3 != null) {
-                Executor e = f0.f.e(this.h);
+                Executor e6 = f0.e.e(this.h);
                 androidx.biometric.f0 f0Var = this.E;
                 synchronized (c3.a) {
                     try {
-                        if (e == null) {
+                        if (e6 == null) {
                             throw new NullPointerException("Executor shouldn't be null");
                         }
                         if (f0Var == null) {
                             throw new NullPointerException("Listener shouldn't be null");
                         }
-                        c3.b = e;
+                        c3.b = e6;
                         c3.c = f0Var;
                         ArrayList arrayList = c3.e;
                         if (arrayList != null && !arrayList.isEmpty()) {
@@ -429,7 +428,7 @@ public final class e {
         d0Var.b = 0L;
         d0Var.a = false;
         d0Var.c = SystemClock.elapsedRealtime();
-        ((Handler) d0Var.d).removeCallbacks((ag.d) d0Var.e);
+        ((Handler) d0Var.d).removeCallbacks((ag.e) d0Var.e);
         ArrayList arrayList2 = this.i;
         int size = arrayList2.size();
         int i10 = 0;
@@ -444,22 +443,22 @@ public final class e {
                 if (d0Var2.a) {
                     long j13 = d0Var2.b;
                     if (j13 > j12) {
-                        ((Handler) d0Var2.d).postDelayed((ag.d) d0Var2.e, j13);
+                        ((Handler) d0Var2.d).postDelayed((ag.e) d0Var2.e, j13);
                     }
                 }
                 boolean z11 = d0Var2.a;
                 this.B = i10;
-                v b10 = z4 ? f0Var3.b() : v.c;
-                v b11 = f0Var3.b();
+                v M = z4 ? f0Var3.M() : v.c;
+                v M2 = f0Var3.M();
                 if (f()) {
                     o oVar = this.A;
                     if (oVar != null) {
                         oVar.a();
-                        if (oVar.b.equals(b11)) {
+                        if (oVar.b.equals(M2)) {
                         }
                     }
-                    if (!b11.d() || z11) {
-                        this.A = new o(b11, z11);
+                    if (!M2.d() || z11) {
+                        this.A = new o(M2, z11);
                     } else if (this.A != null) {
                         this.A = null;
                     }
@@ -468,12 +467,12 @@ public final class e {
                 o oVar2 = this.z;
                 if (oVar2 != null) {
                     oVar2.a();
-                    if (oVar2.b.equals(b10) && this.z.b() == z11) {
+                    if (oVar2.b.equals(M) && this.z.b() == z11) {
                         return;
                     }
                 }
-                if (!b10.d() || z11) {
-                    this.z = new o(b10, z11);
+                if (!M.d() || z11) {
+                    this.z = new o(M, z11);
                 } else if (this.z == null) {
                     return;
                 } else {
@@ -574,7 +573,7 @@ public final class e {
         if (a0Var == null) {
             androidx.biometric.e eVar = this.C;
             if (eVar != null) {
-                eVar.k();
+                eVar.j();
                 return;
             }
             return;
@@ -603,7 +602,7 @@ public final class e {
                 throw new IllegalStateException("There is no default route.  The media router has not yet been fully initialized.");
             }
             if (a0Var2 == a0Var3 || a0Var2 == this.w) {
-                eVar2.k();
+                eVar2.j();
                 return;
             }
             int i11 = a1Var.c == 1 ? 2 : 0;

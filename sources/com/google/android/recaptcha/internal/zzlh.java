@@ -1,14 +1,14 @@
 package com.google.android.recaptcha.internal;
 
 import dd.p;
-import k7.p7;
+import k7.q7;
 import ld.e0;
 import ld.t;
 import uc.c;
 import vc.a;
 import wc.i;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 final class zzlh extends i implements p {
     Object zza;
@@ -45,11 +45,11 @@ final class zzlh extends i implements p {
         a aVar = a.a;
         int i10 = this.zzb;
         try {
-        } catch (zzcg e) {
-            ((t) this.zzc.zzz()).L(e);
+        } catch (zzcg e6) {
+            ((t) this.zzc.zzz()).L(e6);
         }
         if (i10 == 0) {
-            p7.b(obj);
+            q7.b(obj);
             zzhkVar = (zzhk) this.zze;
             zzib zzp = zzly.zzp(this.zzc);
             zzxn zzxnVar = this.zzd;
@@ -64,7 +64,7 @@ final class zzlh extends i implements p {
         }
         if (i10 != 1) {
             zzhkVar3 = (zzhk) this.zze;
-            p7.b(obj);
+            q7.b(obj);
             zzly zzlyVar = this.zzc;
             zzD = zzlyVar.zzD();
             e0.q(zzD.zzb(), new zzlg(zzlyVar, zzhkVar3, (String) obj, null));
@@ -72,7 +72,7 @@ final class zzlh extends i implements p {
         }
         zzhk zzhkVar4 = (zzhk) this.zza;
         zzhk zzhkVar5 = (zzhk) this.zze;
-        p7.b(obj);
+        q7.b(obj);
         zzhkVar2 = zzhkVar4;
         zzhkVar = zzhkVar5;
         this.zze = zzhkVar;

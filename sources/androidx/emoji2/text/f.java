@@ -3,7 +3,7 @@ package androidx.emoji2.text;
 import android.content.Context;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class f {
     public volatile Object a;
@@ -18,8 +18,8 @@ public final class f {
         try {
             Context context = (Context) this.c;
             return context.getPackageManager().getApplicationInfo(context.getPackageName(), 128).metaData.getBoolean("com.google.android.play.billingclient.enableBillingOverridesTesting", false);
-        } catch (Exception e) {
-            com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to retrieve metadata value for enableBillingOverridesTesting.", e);
+        } catch (Exception e6) {
+            com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to retrieve metadata value for enableBillingOverridesTesting.", e6);
             return false;
         }
     }
@@ -30,6 +30,6 @@ public final class f {
         this.b = uVar;
         this.c = new ArrayList();
         this.a = aVar;
-        rVar.a(new w(this, 26));
+        rVar.a(new w(this, 25));
     }
 }

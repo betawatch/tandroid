@@ -18,7 +18,6 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
-import kh.a2;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.DispatchQueuePoolBackground;
@@ -26,9 +25,9 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.gj0;
+import org.telegram.ui.Components.ij0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class g {
     public static int A;
@@ -89,7 +88,7 @@ public final class g {
         sb.append("_");
         sb.append(i11);
         sb.append(z4 ? "_nolimit" : " ");
-        File file3 = new File(file2, android.support.v4.media.a.r(sb, i12 != 0 ? a2.j(i12, "_fitz") : "", ".pcache2"));
+        File file3 = new File(file2, android.support.v4.media.a.r(sb, i12 != 0 ? l.d.j(i12, "_fitz") : "", ".pcache2"));
         this.m = file3;
         this.f = i10 < AndroidUtilities.dp(60.0f) && i11 < AndroidUtilities.dp(60.0f);
         if (SharedConfig.getDevicePerformanceClass() < 2) {
@@ -141,8 +140,8 @@ public final class g {
                 th = th3;
                 randomAccessFile = null;
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException e6) {
+            e6.printStackTrace();
         }
     }
 
@@ -151,7 +150,7 @@ public final class g {
         A = i10;
         if (i10 <= 0) {
             A = 0;
-            gj0.Q0.postRunnable(new cg.n0(8));
+            ij0.Q0.postRunnable(new ag.f(9));
         }
     }
 
@@ -160,8 +159,8 @@ public final class g {
         if (randomAccessFile != null) {
             try {
                 randomAccessFile.close();
-            } catch (IOException e) {
-                e.printStackTrace();
+            } catch (IOException e6) {
+                e6.printStackTrace();
             }
         }
     }
@@ -197,10 +196,10 @@ public final class g {
             } finally {
                 this.a.c();
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e6) {
+        } catch (FileNotFoundException e6) {
             e6.printStackTrace();
+        } catch (IOException e10) {
+            e10.printStackTrace();
         }
         if (this.m.exists()) {
             try {
@@ -304,8 +303,8 @@ public final class g {
             if (countDownLatch != null) {
                 try {
                     countDownLatch.await();
-                } catch (InterruptedException e10) {
-                    e10.printStackTrace();
+                } catch (InterruptedException e11) {
+                    e11.printStackTrace();
                 }
             }
             if (!this.o.get() || atomicBoolean2.get()) {
@@ -318,8 +317,8 @@ public final class g {
                     if (countDownLatch2 != null) {
                         try {
                             countDownLatch2.await();
-                        } catch (InterruptedException e11) {
-                            e11.printStackTrace();
+                        } catch (InterruptedException e12) {
+                            e12.printStackTrace();
                         }
                     }
                 }
@@ -365,8 +364,8 @@ public final class g {
             if (countDownLatch3 != null) {
                 try {
                     countDownLatch3.await();
-                } catch (InterruptedException e12) {
-                    e12.printStackTrace();
+                } catch (InterruptedException e13) {
+                    e13.printStackTrace();
                 }
             }
             Bitmap bitmap = bitmapArr[i10];
@@ -446,8 +445,8 @@ public final class g {
                             if (this.j && randomAccessFile != null) {
                                 try {
                                     randomAccessFile.close();
-                                } catch (IOException e) {
-                                    e.printStackTrace();
+                                } catch (IOException e6) {
+                                    e6.printStackTrace();
                                 }
                             }
                             return -1;
@@ -469,8 +468,8 @@ public final class g {
                         if (this.e.size() != 0) {
                             f fVar = (f) this.e.get(Utilities.clamp(i10, this.e.size() - 1, 0));
                             randomAccessFile.seek(fVar.c);
-                            byte[] e6 = e(fVar);
-                            randomAccessFile.readFully(e6, 0, fVar.b);
+                            byte[] e10 = e(fVar);
+                            randomAccessFile.readFully(e10, 0, fVar.b);
                             if (this.r) {
                                 this.s = null;
                                 randomAccessFile.close();
@@ -493,7 +492,7 @@ public final class g {
                             } else {
                                 this.t.inBitmap = bitmap;
                             }
-                            BitmapFactory.decodeByteArray(e6, 0, fVar.b, this.t);
+                            BitmapFactory.decodeByteArray(e10, 0, fVar.b, this.t);
                             if (z4) {
                                 Utilities.extractAlpha(this.u, bitmap);
                             }

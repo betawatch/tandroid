@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.concurrent.locks.LockSupport;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class v0 extends w0 implements j0 {
     public static final /* synthetic */ AtomicReferenceFieldUpdater h = AtomicReferenceFieldUpdater.newUpdater(v0.class, Object.class, "_queue$volatile");
@@ -256,13 +256,13 @@ public abstract class v0 extends w0 implements j0 {
         t0 d;
         c2.a.set(null);
         r.set(this, 1);
-        i5.c cVar = e0.c;
+        com.google.android.gms.internal.clearcut.e eVar = e0.c;
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = h;
         loop0: while (true) {
             Object obj = atomicReferenceFieldUpdater.get(this);
             if (obj != null) {
                 if (!(obj instanceof qd.n)) {
-                    if (obj != cVar) {
+                    if (obj != eVar) {
                         qd.n nVar = new qd.n(8, true);
                         nVar.a((Runnable) obj);
                         while (!atomicReferenceFieldUpdater.compareAndSet(this, obj, nVar)) {
@@ -277,7 +277,7 @@ public abstract class v0 extends w0 implements j0 {
                 ((qd.n) obj).b();
                 break;
             }
-            while (!atomicReferenceFieldUpdater.compareAndSet(this, null, cVar)) {
+            while (!atomicReferenceFieldUpdater.compareAndSet(this, null, eVar)) {
                 if (atomicReferenceFieldUpdater.get(this) != null) {
                     break;
                 }

@@ -1,53 +1,51 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.NotificationsController;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class io implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final /* synthetic */ class io implements Utilities.Callback {
+    public final /* synthetic */ q70 a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.p2 e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 f;
 
-    public /* synthetic */ io(Object obj, Context context, Object obj2, int i10, Object obj3, int i11) {
-        this.a = i11;
-        this.d = obj;
-        this.b = context;
-        this.e = obj2;
-        this.c = i10;
-        this.f = obj3;
+    public /* synthetic */ io(q70 q70Var, int i10, long j10, long j11, org.telegram.ui.xn xnVar, org.telegram.ui.ActionBar.g6 g6Var) {
+        this.a = q70Var;
+        this.b = i10;
+        this.c = j10;
+        this.d = j11;
+        this.e = xnVar;
+        this.f = g6Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                lo loVar = (lo) this.d;
-                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) this.e;
-                ko koVar = (ko) this.f;
-                loVar.a();
-                z4.G(this.b, f6Var, new gg.m2(this.c, koVar, 6));
-                break;
-            default:
-                org.telegram.ui.ActionBar.g3 g3Var = (org.telegram.ui.ActionBar.g3) this.d;
-                lp lpVar = (lp) this.e;
-                TLRPC.TL_inputGroupCallSlug tL_inputGroupCallSlug = (TLRPC.TL_inputGroupCallSlug) this.f;
-                g3Var.dismiss();
-                Activity findActivity = AndroidUtilities.findActivity(this.b);
-                if (findActivity != null) {
-                    MessagesController.getGlobalMainSettings().edit().putBoolean("callmiconstart", lpVar.a.q).apply();
-                    org.telegram.ui.Components.voip.f2.h(findActivity, this.c, tL_inputGroupCallSlug, false, null, null);
-                    break;
-                }
-                break;
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        Integer num = (Integer) obj;
+        this.a.u();
+        int intValue = num.intValue();
+        int i10 = this.b;
+        long j10 = this.c;
+        long j11 = this.d;
+        org.telegram.ui.ActionBar.p2 p2Var = this.e;
+        org.telegram.ui.ActionBar.g6 g6Var = this.f;
+        if (intValue != 0) {
+            NotificationsController.getInstance(i10).muteUntil(j10, j11, num.intValue());
+            if (qc.a(p2Var)) {
+                qc.z(p2Var, 5, num.intValue(), g6Var).j();
+                return;
+            }
+            return;
+        }
+        if (MessagesController.getInstance(i10).isDialogMuted(j10, j11)) {
+            NotificationsController.getInstance(i10).muteDialog(j10, j11, false);
+        }
+        if (qc.a(p2Var)) {
+            qc.z(p2Var, 4, num.intValue(), g6Var).j();
         }
     }
 }

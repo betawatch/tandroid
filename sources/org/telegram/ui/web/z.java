@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z implements Runnable {
     public final /* synthetic */ int a;
@@ -49,8 +49,10 @@ public final /* synthetic */ class z implements Runnable {
     /* JADX WARN: Removed duplicated region for block: B:46:0x00bc  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x00c3  */
     /* JADX WARN: Removed duplicated region for block: B:54:0x00d1  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x00f1  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x018d  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x00f1 A[LOOP:0: B:60:0x00f1->B:94:0x017e, LOOP_START, PHI: r2 r4
+      0x00f1: PHI (r2v8 java.io.File) = (r2v0 java.io.File), (r2v9 java.io.File) binds: [B:59:0x00ef, B:94:0x017e] A[DONT_GENERATE, DONT_INLINE]
+      0x00f1: PHI (r4v2 int) = (r4v0 int), (r4v3 int) binds: [B:59:0x00ef, B:94:0x017e] A[DONT_GENERATE, DONT_INLINE]] */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x018c  */
     /* JADX WARN: Type inference failed for: r0v45, types: [org.json.JSONObject] */
     @Override // java.lang.Runnable
     /*
@@ -64,6 +66,7 @@ public final /* synthetic */ class z implements Runnable {
         LaunchActivity launchActivity;
         int i10 = this.a;
         File file = null;
+        int i11 = 0;
         Object obj = this.c;
         Object obj2 = this.e;
         Object obj3 = this.f;
@@ -105,7 +108,7 @@ public final /* synthetic */ class z implements Runnable {
                 String str6 = (String) obj4;
                 String str7 = (String) obj3;
                 String str8 = (String) obj;
-                w0 w0Var = ((v0) obj5).a;
+                x0 x0Var = ((w0) obj5).a;
                 try {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str5));
                     request.setMimeType(str6);
@@ -114,17 +117,17 @@ public final /* synthetic */ class z implements Runnable {
                     request.setTitle(str8);
                     request.setNotificationVisibility(1);
                     request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, str8);
-                    DownloadManager downloadManager = (DownloadManager) w0Var.getContext().getSystemService("download");
+                    DownloadManager downloadManager = (DownloadManager) x0Var.getContext().getSystemService("download");
                     if (downloadManager != null) {
                         downloadManager.enqueue(request);
                     }
-                    a1 a1Var3 = w0Var.N;
+                    a1 a1Var3 = x0Var.N;
                     if (a1Var3 != null) {
                         new qc(a1Var3, a1Var3.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, str8))).k(true);
                         break;
                     }
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e6) {
+                    FileLog.e(e6);
                     return;
                 }
                 break;
@@ -134,21 +137,21 @@ public final /* synthetic */ class z implements Runnable {
                 byte[] bArr = (byte[]) obj4;
                 String str10 = (String) obj3;
                 String str11 = (String) obj;
-                w0 w0Var2 = botWebViewContainer$WebViewProxy.b;
+                x0 x0Var2 = botWebViewContainer$WebViewProxy.b;
                 long currentTimeMillis = System.currentTimeMillis();
                 a1 a1Var4 = botWebViewContainer$WebViewProxy.a;
                 if (currentTimeMillis - a1Var4.M > 10000) {
-                    w0Var2.d("window.navigator.__share__receive(\"security\")");
+                    x0Var2.d("window.navigator.__share__receive(\"security\")");
                     break;
                 } else {
                     a1Var4.M = 0L;
-                    Context context = w0Var2.getContext();
+                    Context context = x0Var2.getContext();
                     Activity findActivity = AndroidUtilities.findActivity(context);
                     if (findActivity == null && (launchActivity = LaunchActivity.D1) != null) {
                         findActivity = launchActivity;
                     }
-                    if (context == null || findActivity == null || !(findActivity instanceof LaunchActivity) || findActivity.isFinishing() || !w0Var2.isAttachedToWindow()) {
-                        w0Var2.d("window.navigator.__share__receive(\"security\")");
+                    if (context == null || findActivity == null || !(findActivity instanceof LaunchActivity) || findActivity.isFinishing() || !x0Var2.isAttachedToWindow()) {
+                        x0Var2.d("window.navigator.__share__receive(\"security\")");
                         break;
                     } else {
                         LaunchActivity launchActivity2 = (LaunchActivity) findActivity;
@@ -157,19 +160,19 @@ public final /* synthetic */ class z implements Runnable {
                             str = jSONObject.optString("url", null);
                             try {
                                 str2 = jSONObject.optString("text", null);
-                            } catch (Exception e6) {
-                                e = e6;
+                            } catch (Exception e10) {
+                                e = e10;
                                 str2 = null;
                             }
-                        } catch (Exception e10) {
-                            e = e10;
+                        } catch (Exception e11) {
+                            e = e11;
                             str = null;
                             str2 = null;
                         }
                         try {
                             str3 = jSONObject.optString("title", null);
-                        } catch (Exception e11) {
-                            e = e11;
+                        } catch (Exception e12) {
+                            e = e12;
                             FileLog.e(e);
                             str3 = null;
                             StringBuilder sb = new StringBuilder();
@@ -183,7 +186,7 @@ public final /* synthetic */ class z implements Runnable {
                             intent.putExtra("android.intent.extra.TEXT", sb.toString());
                             if (bArr == null) {
                             }
-                            launchActivity2.n1 = new y0(botWebViewContainer$WebViewProxy, 0);
+                            launchActivity2.n1 = new dg.h0(botWebViewContainer$WebViewProxy, 29);
                             launchActivity2.startActivityForResult(Intent.createChooser(intent, LocaleController.getString(R.string.ShareFile)), 521);
                             return;
                         }
@@ -206,13 +209,12 @@ public final /* synthetic */ class z implements Runnable {
                         Intent intent2 = new Intent("android.intent.action.SEND");
                         intent2.putExtra("android.intent.extra.TEXT", sb2.toString());
                         if (bArr == null) {
-                            int i11 = 0;
                             while (true) {
                                 if (file == null || file.exists()) {
                                     File directory = FileLoader.getDirectory(4);
                                     StringBuilder sb3 = new StringBuilder();
                                     sb3.append(FileLoader.fixFileName(str10 == null ? "file" : str10));
-                                    sb3.append(i11 > 0 ? kh.a2.k(i11, " (", ")") : "");
+                                    sb3.append(i11 > 0 ? l.d.k(i11, " (", ")") : "");
                                     file = new File(directory, sb3.toString());
                                     i11++;
                                 } else {
@@ -220,8 +222,8 @@ public final /* synthetic */ class z implements Runnable {
                                         FileOutputStream fileOutputStream = new FileOutputStream(file);
                                         fileOutputStream.write(bArr);
                                         fileOutputStream.close();
-                                    } catch (Exception e12) {
-                                        FileLog.e(e12);
+                                    } catch (Exception e13) {
+                                        FileLog.e(e13);
                                     }
                                     try {
                                         if (str11 == null) {
@@ -242,15 +244,15 @@ public final /* synthetic */ class z implements Runnable {
                                         } else {
                                             intent2.putExtra("android.intent.extra.STREAM", Uri.fromFile(file));
                                         }
-                                    } catch (Exception e13) {
-                                        FileLog.e(e13);
+                                    } catch (Exception e14) {
+                                        FileLog.e(e14);
                                     }
                                 }
                             }
                         } else {
                             intent2.setType("text/plain");
                         }
-                        launchActivity2.n1 = new y0(botWebViewContainer$WebViewProxy, 0);
+                        launchActivity2.n1 = new dg.h0(botWebViewContainer$WebViewProxy, 29);
                         launchActivity2.startActivityForResult(Intent.createChooser(intent2, LocaleController.getString(R.string.ShareFile)), 521);
                     }
                 }
@@ -258,23 +260,23 @@ public final /* synthetic */ class z implements Runnable {
             default:
                 boolean[] zArr = (boolean[]) obj5;
                 WebView webView = (WebView) obj4;
-                a2 a2Var = (a2) obj3;
+                b2 b2Var = (b2) obj3;
                 String str12 = (String) obj2;
-                y1 y1Var = (y1) obj;
+                z1 z1Var = (z1) obj;
                 if (!zArr[0]) {
                     zArr[0] = true;
                     if (!BuildVars.DEBUG_PRIVATE_VERSION) {
                         webView.onPause();
                         webView.destroy();
                         AndroidUtilities.removeFromParent(webView);
-                        AndroidUtilities.removeFromParent(a2Var);
+                        AndroidUtilities.removeFromParent(b2Var);
                     }
                     try {
                         file = new JSONObject(str12);
-                    } catch (Exception e14) {
-                        FileLog.e(e14);
+                    } catch (Exception e15) {
+                        FileLog.e(e15);
                     }
-                    y1Var.run(file);
+                    z1Var.run(file);
                     break;
                 }
                 break;
@@ -300,12 +302,12 @@ public final /* synthetic */ class z implements Runnable {
         this.c = tLObject;
     }
 
-    public /* synthetic */ z(boolean[] zArr, WebView webView, a2 a2Var, String str, y1 y1Var) {
+    public /* synthetic */ z(boolean[] zArr, WebView webView, b2 b2Var, String str, z1 z1Var) {
         this.a = 4;
         this.b = zArr;
         this.d = webView;
-        this.f = a2Var;
+        this.f = b2Var;
         this.e = str;
-        this.c = y1Var;
+        this.c = z1Var;
     }
 }

@@ -1,48 +1,31 @@
 package dg;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class j0 implements s2 {
+public final /* synthetic */ class j0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ b4 b;
-    public final /* synthetic */ float c;
+    public final /* synthetic */ m0 b;
+    public final /* synthetic */ d1 c;
 
-    public /* synthetic */ j0(b4 b4Var, float f10, int i10) {
+    public /* synthetic */ j0(m0 m0Var, d1 d1Var, int i10) {
         this.a = i10;
-        this.b = b4Var;
-        this.c = f10;
+        this.b = m0Var;
+        this.c = d1Var;
     }
 
-    @Override // dg.s2
-    public final void F(float f10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                b4 b4Var = this.b;
-                b4Var.w0 = true;
-                b4Var.setBaseFontSize((int) (this.c * f10));
+                AndroidUtilities.runOnUIThread(new j0(this.b, this.c, 1));
                 break;
             default:
-                b4 b4Var2 = this.b;
-                b4Var2.w0 = true;
-                b4Var2.setBaseFontSize((int) (this.c * f10));
+                m0 m0Var = this.b;
+                m0Var.getClass();
+                m0Var.i = this.c.a;
                 break;
         }
-    }
-
-    @Override // dg.s2
-    public final float get() {
-        float baseFontSize;
-        float f10;
-        switch (this.a) {
-            case 0:
-                baseFontSize = this.b.getBaseFontSize();
-                f10 = this.c;
-                break;
-            default:
-                baseFontSize = this.b.getBaseFontSize();
-                f10 = this.c;
-                break;
-        }
-        return baseFontSize / f10;
     }
 }

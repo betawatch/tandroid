@@ -1,13 +1,14 @@
 package com.googlecode.mp4parser;
 
+import androidx.biometric.f0;
 import java.nio.ByteBuffer;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class c extends a {
-    public static final /* synthetic */ a3.c c;
-    public static final /* synthetic */ a3.c d;
+    public static final /* synthetic */ f0 c;
+    public static final /* synthetic */ f0 d;
     public int a;
     public int b;
 
@@ -42,7 +43,7 @@ public abstract class c extends a {
     }
 
     public final void g(int i10) {
-        yh.v(de.a.c(d, this, this, new Integer(i10)));
+        yh.x(de.a.c(d, this, this, new Integer(i10)));
         this.b = i10;
     }
 
@@ -52,7 +53,7 @@ public abstract class c extends a {
     }
 
     public final void h() {
-        yh.v(de.a.c(c, this, this, new Integer(1)));
+        yh.x(de.a.c(c, this, this, new Integer(1)));
         this.a = 1;
     }
 

@@ -1,44 +1,51 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
-public final class o2 extends e5 {
-    private static final h5 zzb = new e1();
-    private static final o2 zzd;
+public final class o2 extends d5 {
+    private static final o2 zzb;
+    private int zzd;
     private int zze;
-    private boolean zzg;
-    private boolean zzh;
-    private u3 zzi;
-    private boolean zzj;
-    private long zzl;
-    private long zzm;
-    private String zzf = "";
-    private g5 zzk = f5.d;
+    private int zzf;
+    private f5 zzg;
+    private f5 zzh;
+    private i5 zzi;
+    private i5 zzj;
+    private int zzk;
 
     static {
         o2 o2Var = new o2();
-        zzd = o2Var;
-        e5.e(o2.class, o2Var);
+        zzb = o2Var;
+        d5.e(o2.class, o2Var);
     }
 
-    @Override // com.google.android.gms.internal.cast.e5
-    public final Object h(int i10, e5 e5Var) {
+    public o2() {
+        e5 e5Var = e5.d;
+        this.zzg = e5Var;
+        this.zzh = e5Var;
+        d6 d6Var = d6.d;
+        this.zzi = d6Var;
+        this.zzj = d6Var;
+    }
+
+    @Override // com.google.android.gms.internal.cast.d5
+    public final Object h(int i10, d5 d5Var) {
         int i11 = i10 - 1;
         if (i11 == 0) {
             return (byte) 1;
         }
         if (i11 == 2) {
-            return new f6(zzd, "\u0001\b\u0000\u0001\u0001\b\b\u0000\u0001\u0000\u0001ဈ\u0000\u0002ဇ\u0001\u0003ဉ\u0003\u0004ဇ\u0004\u0005ࠬ\u0006ဇ\u0002\u0007ဂ\u0005\bဂ\u0006", new Object[]{"zze", "zzf", "zzg", "zzi", "zzj", "zzk", z0.A, "zzh", "zzl", "zzm"});
+            return new e6(zzb, "\u0001\u0007\u0000\u0001\u0001\u0007\u0007\u0000\u0004\u0000\u0001င\u0000\u0002᠌\u0001\u0003\u0016\u0004\u0016\u0005\u001a\u0006\u001a\u0007᠌\u0002", new Object[]{"zzd", "zze", "zzf", y.P, "zzg", "zzh", "zzi", "zzj", "zzk", y.L});
         }
         if (i11 == 3) {
             return new o2();
         }
         if (i11 == 4) {
-            return new v0(zzd);
+            return new u0(zzb);
         }
         if (i11 != 5) {
             return null;
         }
-        return zzd;
+        return zzb;
     }
 }

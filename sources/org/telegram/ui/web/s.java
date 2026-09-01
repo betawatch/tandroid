@@ -5,7 +5,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -18,7 +18,7 @@ public final /* synthetic */ class s implements Utilities.Callback2 {
 
     @Override // org.telegram.messenger.Utilities.Callback2
     public final void run(Object obj, Object obj2) {
-        e0 e0Var;
+        f0 f0Var;
         switch (this.a) {
             case 0:
                 String str = (String) obj;
@@ -29,9 +29,9 @@ public final /* synthetic */ class s implements Utilities.Callback2 {
                     break;
                 } else {
                     a1Var.v("emoji_status_set", null);
-                    e0 e0Var2 = a1Var.c;
-                    if (e0Var2 != null) {
-                        e0Var2.d(document);
+                    f0 f0Var2 = a1Var.c;
+                    if (f0Var2 != null) {
+                        f0Var2.d(document);
                         break;
                     }
                 }
@@ -41,8 +41,8 @@ public final /* synthetic */ class s implements Utilities.Callback2 {
                 JSONObject x10 = a1.x(str2, "status");
                 a1 a1Var2 = this.b;
                 a1Var2.v("emoji_status_access_requested", x10);
-                if (((Boolean) obj).booleanValue() && "allowed".equalsIgnoreCase(str2) && (e0Var = a1Var2.c) != null) {
-                    e0Var.a();
+                if (((Boolean) obj).booleanValue() && "allowed".equalsIgnoreCase(str2) && (f0Var = a1Var2.c) != null) {
+                    f0Var.a();
                     break;
                 }
                 break;
@@ -59,9 +59,9 @@ public final /* synthetic */ class s implements Utilities.Callback2 {
                 a1 a1Var4 = this.b;
                 a1Var4.getClass();
                 if (((Boolean) obj).booleanValue()) {
-                    rh.q qVar = a1Var4.g0;
-                    qVar.e = true;
-                    qVar.k();
+                    sh.p pVar = a1Var4.g0;
+                    pVar.e = true;
+                    pVar.k();
                 }
                 a1Var4.t();
                 break;
@@ -79,8 +79,8 @@ public final /* synthetic */ class s implements Utilities.Callback2 {
                     jSONObject.put("token", str3);
                     a1Var5.v("biometry_auth_requested", jSONObject);
                     break;
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e6) {
+                    FileLog.e(e6);
                 }
         }
     }

@@ -22,10 +22,10 @@ import java.util.Iterator;
 import java.util.Locale;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
-import m.s3;
+import m.r3;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class g implements com.google.android.gms.common.api.c {
     public static final y5.c[] Q = new y5.c[0];
@@ -59,7 +59,7 @@ public abstract class g implements com.google.android.gms.common.api.c {
     public final Object x;
     public z y;
 
-    public g(Context context, Looper looper, int i10, s3 s3Var, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar, int i11) {
+    public g(Context context, Looper looper, int i10, r3 r3Var, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar, int i11) {
         synchronized (k0.g) {
             try {
                 if (k0.h == null) {
@@ -75,7 +75,7 @@ public abstract class g implements com.google.android.gms.common.api.c {
         m.h(lVar);
         n nVar = new n(kVar);
         n nVar2 = new n(lVar);
-        String str = (String) s3Var.e;
+        String str = (String) r3Var.e;
         Object obj2 = y5.d.c;
         this.f = null;
         this.w = new Object();
@@ -97,7 +97,7 @@ public abstract class g implements com.google.android.gms.common.api.c {
         this.G = nVar;
         this.H = nVar2;
         this.J = str;
-        Set set = (Set) s3Var.b;
+        Set set = (Set) r3Var.b;
         Iterator it = set.iterator();
         while (it.hasNext()) {
             if (!set.contains((Scope) it.next())) {
@@ -253,7 +253,7 @@ public abstract class g implements com.google.android.gms.common.api.c {
 
     @Override // com.google.android.gms.common.api.c
     public final void d(o5.i iVar) {
-        ((p0) iVar.b).o.x.post(new androidx.activity.i(iVar, 12));
+        ((p0) iVar.b).o.x.post(new androidx.activity.i(iVar, 11));
     }
 
     @Override // com.google.android.gms.common.api.c
@@ -415,19 +415,19 @@ public abstract class g implements com.google.android.gms.common.api.c {
                 } finally {
                 }
             }
-        } catch (DeadObjectException e) {
-            Log.w("GmsClient", "IGmsServiceBroker.getService failed", e);
+        } catch (DeadObjectException e6) {
+            Log.w("GmsClient", "IGmsServiceBroker.getService failed", e6);
             int i12 = this.O.get();
             b0 b0Var = this.v;
             b0Var.sendMessage(b0Var.obtainMessage(6, i12, 3));
-        } catch (RemoteException e6) {
-            e = e6;
+        } catch (RemoteException e10) {
+            e = e10;
             Log.w("GmsClient", "IGmsServiceBroker.getService failed", e);
             B(8, null, null, this.O.get());
-        } catch (SecurityException e10) {
-            throw e10;
-        } catch (RuntimeException e11) {
-            e = e11;
+        } catch (SecurityException e11) {
+            throw e11;
+        } catch (RuntimeException e12) {
+            e = e12;
             Log.w("GmsClient", "IGmsServiceBroker.getService failed", e);
             B(8, null, null, this.O.get());
         }

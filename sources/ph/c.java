@@ -1,31 +1,32 @@
 package ph;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import oh.d6;
+import org.telegram.ui.Components.or0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes4.dex */
-public final class c extends AnimatorListenerAdapter {
+public final /* synthetic */ class c implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ d b;
+    public final /* synthetic */ l b;
 
-    public /* synthetic */ c(d dVar, int i10) {
+    public /* synthetic */ c(l lVar, int i10) {
         this.a = i10;
-        this.b = dVar;
+        this.b = lVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                d dVar = this.b;
-                dVar.G = false;
-                dVar.e.q(null, false, true);
+                l lVar = this.b;
+                or0 or0Var = lVar.T;
+                d6 d6Var = lVar.a;
+                or0Var.a(d6Var == null ? "" : d6Var.E);
                 break;
             default:
-                d dVar2 = this.b;
-                dVar2.M = 1.0f;
-                dVar2.invalidate();
+                l lVar2 = this.b;
+                lVar2.T.b(lVar2.a.E);
                 break;
         }
     }

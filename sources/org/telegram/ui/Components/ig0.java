@@ -1,53 +1,28 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ig0 implements o1.f {
+public final class ig0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ ng0 b;
 
-    public /* synthetic */ ig0(Object obj, float f10, int i10) {
+    public /* synthetic */ ig0(ng0 ng0Var, int i10) {
         this.a = i10;
-        this.c = obj;
-        this.b = f10;
+        this.b = ng0Var;
     }
 
-    @Override // o1.f
-    public final void a(o1.h hVar, boolean z4, float f10, float f11) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                jg0 jg0Var = (jg0) this.c;
-                if (!z4) {
-                    lg0 lg0Var = jg0Var.d;
-                    lg0Var.J.u.i = (lg0Var.E / 2.0f) + this.b >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? (r0 - r3) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
-                    break;
-                }
-                break;
-            case 1:
-                ph.da daVar = (ph.da) this.c;
-                if (!z4) {
-                    daVar.J0.setTranslationY(this.b);
-                    daVar.J0.H = false;
-                    daVar.l2 = null;
-                    daVar.m2 = null;
-                    break;
-                }
+                this.b.C = null;
                 break;
             default:
-                rh.n3 n3Var = (rh.n3) this.c;
-                n3Var.v = null;
-                float f12 = this.b;
-                if (!z4) {
-                    n3Var.f = f12;
-                    n3Var.c();
-                    break;
-                } else {
-                    n3Var.h = f12;
-                    break;
-                }
+                this.b.u();
+                break;
         }
     }
 }

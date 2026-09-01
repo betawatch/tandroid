@@ -6,27 +6,27 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class m extends bg.c {
+public final class m extends cg.c {
     public final /* synthetic */ n d;
 
     public m(n nVar) {
         this.d = nVar;
     }
 
-    @Override // org.telegram.ui.Components.rl0
-    public final boolean D(f2.l1 l1Var) {
-        int i10 = l1Var.f;
+    @Override // org.telegram.ui.Components.sl0
+    public final boolean D(f2.m1 m1Var) {
+        int i10 = m1Var.f;
         return (i10 == 2 || i10 == 0) ? false : true;
     }
 
-    @Override // f2.o0
+    @Override // f2.p0
     public final int h() {
         return this.d.h.size();
     }
 
-    @Override // f2.o0
+    @Override // f2.p0
     public final int j(int i10) {
         if (i10 < 0) {
             return 0;
@@ -38,8 +38,8 @@ public final class m extends bg.c {
         return ((l) nVar.h.get(i10)).a;
     }
 
-    @Override // f2.o0
-    public final void v(f2.l1 l1Var, int i10) {
+    @Override // f2.p0
+    public final void v(f2.m1 m1Var, int i10) {
         boolean z4;
         n nVar = this.d;
         ArrayList arrayList = nVar.h;
@@ -50,8 +50,8 @@ public final class m extends bg.c {
         int i11 = i10 + 1;
         int i12 = 0;
         boolean z10 = i11 < arrayList.size() && ((l) arrayList.get(i11)).a == lVar.a;
-        int i13 = l1Var.f;
-        View view = l1Var.a;
+        int i13 = m1Var.f;
+        View view = m1Var.a;
         if (i13 == 0) {
             ((org.telegram.ui.Cells.m4) view).setText(lVar.c);
             return;
@@ -92,9 +92,9 @@ public final class m extends bg.c {
         }
     }
 
-    @Override // f2.o0
-    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+    @Override // f2.p0
+    public final f2.m1 x(ViewGroup viewGroup, int i10) {
         n nVar = this.d;
-        return new org.telegram.ui.Components.el0(i10 == 0 ? new org.telegram.ui.Cells.m4(nVar.getParentActivity()) : i10 == 1 ? new org.telegram.ui.Cells.s8(nVar.getParentActivity()) : new org.telegram.ui.Cells.a9(nVar.getParentActivity()));
+        return new org.telegram.ui.Components.fl0(i10 == 0 ? new org.telegram.ui.Cells.m4(nVar.getParentActivity()) : i10 == 1 ? new org.telegram.ui.Cells.s8(nVar.getParentActivity()) : new org.telegram.ui.Cells.a9(nVar.getParentActivity()));
     }
 }

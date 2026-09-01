@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d5 implements Runnable {
     public final /* synthetic */ int a;
@@ -62,7 +62,7 @@ public final /* synthetic */ class d5 implements Runnable {
                 ((MessagesController) this.e).lambda$getDifference$358((TLRPC.updates_Difference) this.f, (ArrayList) this.c, (a0.h) this.d, (a0.h) this.b);
                 break;
             case 7:
-                ((MessagesController) this.e).lambda$saveThemeToServer$119((String) this.b, (String) this.f, (org.telegram.ui.ActionBar.h6) this.c, (org.telegram.ui.ActionBar.i6) this.d);
+                ((MessagesController) this.e).lambda$saveThemeToServer$119((String) this.b, (String) this.f, (org.telegram.ui.ActionBar.i6) this.c, (org.telegram.ui.ActionBar.j6) this.d);
                 break;
             case 8:
                 ((MessagesController) this.e).lambda$setUserAdminRole$100((TLRPC.User) this.f, (TLRPC.Chat) this.c, (MessagesController.ErrorDelegate) this.d, (TLRPC.TL_error) this.b);
@@ -71,7 +71,7 @@ public final /* synthetic */ class d5 implements Runnable {
                 ((MessagesController) this.e).lambda$updateTimerProc$154((TLRPC.TL_messages_messageViews) this.f, (a0.h) this.c, (a0.h) this.d, (a0.h) this.b);
                 break;
             case 10:
-                ((MessagesController) this.e).lambda$saveThemeToServer$120((String) this.b, (File) this.f, (org.telegram.ui.ActionBar.h6) this.c, (org.telegram.ui.ActionBar.i6) this.d);
+                ((MessagesController) this.e).lambda$saveThemeToServer$120((String) this.b, (File) this.f, (org.telegram.ui.ActionBar.i6) this.c, (org.telegram.ui.ActionBar.j6) this.d);
                 break;
             case 11:
                 ((MessagesStorage) this.e).lambda$readAllDialogs$64((ArrayList) this.c, (ArrayList) this.d, (ArrayList) this.f, (a0.h) this.b);
@@ -133,13 +133,13 @@ public final /* synthetic */ class d5 implements Runnable {
         this.d = arrayList2;
     }
 
-    public /* synthetic */ d5(MessagesController messagesController, String str, Object obj, org.telegram.ui.ActionBar.h6 h6Var, org.telegram.ui.ActionBar.i6 i6Var, int i10) {
+    public /* synthetic */ d5(MessagesController messagesController, String str, Object obj, org.telegram.ui.ActionBar.i6 i6Var, org.telegram.ui.ActionBar.j6 j6Var, int i10) {
         this.a = i10;
         this.e = messagesController;
         this.b = str;
         this.f = obj;
-        this.c = h6Var;
-        this.d = i6Var;
+        this.c = i6Var;
+        this.d = j6Var;
     }
 
     public /* synthetic */ d5(NotificationsController notificationsController, ArrayList arrayList, a0.h hVar, ArrayList arrayList2, Collection collection) {

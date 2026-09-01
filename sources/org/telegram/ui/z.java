@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z implements Runnable {
     public final /* synthetic */ int a;
@@ -21,14 +21,14 @@ public final /* synthetic */ class z implements Runnable {
         switch (this.a) {
             case 0:
                 l4 l4Var = this.b;
-                lh.n nVar = l4Var.e0.V;
+                mh.m mVar = l4Var.e0.V;
                 String str = this.c;
                 if (TextUtils.isEmpty(str)) {
                     str = "about:blank";
                 }
-                nVar.setText(str);
-                lh.n nVar2 = l4Var.e0.V;
-                nVar2.setSelection(nVar2.getText().length());
+                mVar.setText(str);
+                mh.m mVar2 = l4Var.e0.V;
+                mVar2.setSelection(mVar2.getText().length());
                 AndroidUtilities.showKeyboard(l4Var.e0.V);
                 break;
             default:

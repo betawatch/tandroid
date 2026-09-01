@@ -3,7 +3,7 @@ package com.google.android.gms.internal.play_billing;
 import java.util.Arrays;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public enum j {
     b(-999),
@@ -41,7 +41,7 @@ public enum j {
 
     /* JADX WARN: Multi-variable type inference failed */
     static {
-        b4.e0 e0Var = new b4.e0((char) (0 == true ? 1 : 0), 4);
+        b4.e0 e0Var = new b4.e0((char) (0 == true ? 1 : 0), 3);
         e0Var.c = new Object[8];
         e0Var.b = 0;
         for (j jVar : values()) {

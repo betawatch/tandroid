@@ -7,7 +7,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import kh.a2;
 import l3.p0;
 import o4.u0;
 import org.telegram.messenger.MediaController;
@@ -22,7 +21,7 @@ import r3.n;
 import r3.q;
 import r3.v;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class b implements k {
     public final w a = new w(4);
@@ -81,10 +80,10 @@ public final class b implements k {
         this.f = mVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:69:0x0386 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0390  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x0394  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x039e A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0385 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x038f  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x0393  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x039d A[SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:79:0x0007 A[SYNTHETIC] */
     @Override // r3.k
     /*
@@ -103,7 +102,7 @@ public final class b implements k {
             int i12 = this.g;
             if (i12 == 1) {
                 w wVar = this.b;
-                if (!((h) lVar).d(wVar.a, 0, 9, true)) {
+                if (!((h) lVar).c(wVar.a, 0, 9, true)) {
                     return -1;
                 }
                 wVar.F(0);
@@ -112,21 +111,21 @@ public final class b implements k {
                 boolean z11 = (u10 & 4) != 0;
                 boolean z12 = (u10 & 1) != 0;
                 if (z11 && this.o == null) {
-                    this.o = new a(this.f.c2(8, 1));
+                    this.o = new a(this.f.i2(8, 1));
                 }
                 if (z12 && this.p == null) {
-                    this.p = new d(this.f.c2(9, 2));
+                    this.p = new d(this.f.i2(9, 2));
                 }
-                this.f.f1();
+                this.f.i1();
                 this.j = wVar.g() - 5;
                 this.g = 2;
             } else if (i12 == 2) {
-                ((h) lVar).u(this.j);
+                ((h) lVar).s(this.j);
                 this.j = 0;
                 this.g = 3;
             } else if (i12 == 3) {
                 w wVar2 = this.c;
-                if (!((h) lVar).d(wVar2.a, 0, 11, true)) {
+                if (!((h) lVar).c(wVar2.a, 0, 11, true)) {
                     return -1;
                 }
                 wVar2.F(0);
@@ -149,7 +148,7 @@ public final class b implements k {
                     i10 = this.k;
                     if (i10 != 8 && this.o != null) {
                         if (!this.n) {
-                            this.f.g2(new n(-9223372036854775807L));
+                            this.f.m2(new n(-9223372036854775807L));
                             this.n = true;
                         }
                         a aVar = this.o;
@@ -216,7 +215,7 @@ public final class b implements k {
                         j12 = -9223372036854775807L;
                         i11 = 0;
                         if (i10 == 18 || this.n) {
-                            ((h) lVar).u(this.l);
+                            ((h) lVar).s(this.l);
                             z4 = false;
                         } else {
                             w a13 = a(lVar);
@@ -263,7 +262,7 @@ public final class b implements k {
                             }
                             long j13 = cVar.b;
                             if (j13 != -9223372036854775807L) {
-                                this.f.g2(new q(j13, cVar.d, cVar.c));
+                                this.f.m2(new q(j13, cVar.d, cVar.c));
                                 this.n = true;
                             }
                             z4 = true;
@@ -280,7 +279,7 @@ public final class b implements k {
                         }
                     } else {
                         if (!this.n) {
-                            this.f.g2(new n(-9223372036854775807L));
+                            this.f.m2(new n(-9223372036854775807L));
                             this.n = true;
                         }
                         d dVar = this.p;
@@ -290,7 +289,7 @@ public final class b implements k {
                         int i16 = (u13 >> 4) & 15;
                         int i17 = u13 & 15;
                         if (i17 != 7) {
-                            throw new u0(a2.j(i17, "Video format not supported: "));
+                            throw new u0(l.d.j(i17, "Video format not supported: "));
                         }
                         dVar.g = i16;
                         if (i16 != 5) {
@@ -379,7 +378,7 @@ public final class b implements k {
                 i11 = 0;
                 if (i10 == 18) {
                 }
-                ((h) lVar).u(this.l);
+                ((h) lVar).s(this.l);
                 z4 = false;
                 z10 = false;
                 if (!this.h) {
@@ -396,18 +395,18 @@ public final class b implements k {
     public final boolean i(l lVar) {
         w wVar = this.a;
         h hVar = (h) lVar;
-        hVar.h(wVar.a, 0, 3, false);
+        hVar.f(wVar.a, 0, 3, false);
         wVar.F(0);
         if (wVar.w() == 4607062) {
-            hVar.h(wVar.a, 0, 2, false);
+            hVar.f(wVar.a, 0, 2, false);
             wVar.F(0);
             if ((wVar.z() & MediaDataController.MAX_LINKS_COUNT) == 0) {
-                hVar.h(wVar.a, 0, 4, false);
+                hVar.f(wVar.a, 0, 4, false);
                 wVar.F(0);
                 int g10 = wVar.g();
                 hVar.f = 0;
                 hVar.a(g10, false);
-                hVar.h(wVar.a, 0, 4, false);
+                hVar.f(wVar.a, 0, 4, false);
                 wVar.F(0);
                 if (wVar.g() == 0) {
                     return true;

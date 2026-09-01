@@ -8,11 +8,11 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class t1 extends androidx.fragment.app.s implements m {
     public static final WeakHashMap i0 = new WeakHashMap();
-    public final b4.e0 h0 = new b4.e0(2, (byte) 0);
+    public final b4.e0 h0 = new b4.e0(1, (byte) 0);
 
     @Override // androidx.fragment.app.s
     public final void A() {
@@ -38,7 +38,7 @@ public final class t1 extends androidx.fragment.app.s implements m {
 
     @Override // androidx.fragment.app.s
     public final void G(Bundle bundle) {
-        this.h0.F(bundle);
+        this.h0.G(bundle);
     }
 
     @Override // androidx.fragment.app.s
@@ -65,7 +65,7 @@ public final class t1 extends androidx.fragment.app.s implements m {
 
     @Override // com.google.android.gms.common.api.internal.m
     public final void a(String str, l lVar) {
-        this.h0.C(str, lVar);
+        this.h0.D(str, lVar);
     }
 
     @Override // com.google.android.gms.common.api.internal.m
@@ -94,6 +94,6 @@ public final class t1 extends androidx.fragment.app.s implements m {
     @Override // androidx.fragment.app.s
     public final void z(Bundle bundle) {
         super.z(bundle);
-        this.h0.E(bundle);
+        this.h0.F(bundle);
     }
 }

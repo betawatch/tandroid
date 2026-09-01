@@ -1,73 +1,35 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import org.telegram.tgnet.ConnectionsManager;
-
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fp implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qp b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d2[] c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ rp b;
 
-    public /* synthetic */ fp(qp qpVar, org.telegram.ui.ActionBar.d2[] d2VarArr, int i10, int i11) {
-        this.a = i11;
-        this.b = qpVar;
-        this.c = d2VarArr;
-        this.d = i10;
+    public /* synthetic */ fp(rp rpVar, int i10) {
+        this.a = i10;
+        this.b = rpVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.d2[] d2VarArr = this.c;
-                org.telegram.ui.ActionBar.d2 d2Var = d2VarArr[0];
+                rp rpVar = this.b;
+                org.telegram.ui.ActionBar.d2 d2Var = rpVar.r;
                 if (d2Var != null) {
-                    final int i10 = 1;
-                    final qp qpVar = this.b;
-                    final int i11 = this.d;
-                    d2Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.gp
-                        @Override // android.content.DialogInterface.OnCancelListener
-                        public final void onCancel(DialogInterface dialogInterface) {
-                            switch (i10) {
-                                case 0:
-                                    ConnectionsManager.getInstance(qpVar.currentAccount).cancelRequest(i11, true);
-                                    break;
-                                default:
-                                    ConnectionsManager.getInstance(qpVar.currentAccount).cancelRequest(i11, true);
-                                    break;
-                            }
-                        }
-                    });
-                    qpVar.showDialog(d2VarArr[0]);
+                    d2Var.setOnCancelListener(new ig(rpVar, 2));
+                    rpVar.showDialog(rpVar.r);
                     break;
                 }
                 break;
+            case 1:
+                rp rpVar2 = this.b;
+                rpVar2.getMessagesController().loadFullChat(rpVar2.B, 0, true);
+                break;
             default:
-                org.telegram.ui.ActionBar.d2[] d2VarArr2 = this.c;
-                org.telegram.ui.ActionBar.d2 d2Var2 = d2VarArr2[0];
-                if (d2Var2 != null) {
-                    final int i12 = 0;
-                    final qp qpVar2 = this.b;
-                    final int i13 = this.d;
-                    d2Var2.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.gp
-                        @Override // android.content.DialogInterface.OnCancelListener
-                        public final void onCancel(DialogInterface dialogInterface) {
-                            switch (i12) {
-                                case 0:
-                                    ConnectionsManager.getInstance(qpVar2.currentAccount).cancelRequest(i13, true);
-                                    break;
-                                default:
-                                    ConnectionsManager.getInstance(qpVar2.currentAccount).cancelRequest(i13, true);
-                                    break;
-                            }
-                        }
-                    });
-                    qpVar2.showDialog(d2VarArr2[0]);
-                    break;
-                }
+                rp rpVar3 = this.b;
+                rpVar3.getMessagesController().loadFullChat(rpVar3.B, 0, true);
                 break;
         }
     }

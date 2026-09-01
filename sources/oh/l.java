@@ -1,31 +1,53 @@
 package oh;
 
-import android.content.Context;
-import nh.l6;
-import org.telegram.ui.Components.zw0;
+import android.view.ViewGroup;
+import org.telegram.ui.Components.fl0;
+import org.telegram.ui.hx;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes4.dex */
-public final class l extends q {
-    public final /* synthetic */ r v;
+public final class l extends cg.c {
+    public final boolean d;
+    public final /* synthetic */ hx e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l(r rVar, Context context) {
-        super(rVar, context);
-        this.v = rVar;
+    public l(hx hxVar, boolean z4) {
+        this.e = hxVar;
+        this.d = z4;
     }
 
-    @Override // oh.q, f2.o0
-    public final void l() {
-        super.l();
-        r rVar = this.v;
-        if (rVar.r.getVisibility() == 0) {
-            rVar.w.l();
+    @Override // org.telegram.ui.Components.sl0
+    public final boolean D(f2.m1 m1Var) {
+        return false;
+    }
+
+    @Override // f2.p0
+    public final int h() {
+        boolean z4 = this.d;
+        hx hxVar = this.e;
+        return (z4 ? hxVar.y : hxVar.x).size();
+    }
+
+    @Override // f2.p0
+    public final void v(f2.m1 m1Var, int i10) {
+        o oVar = (o) m1Var.a;
+        oVar.b = i10;
+        boolean z4 = this.d;
+        hx hxVar = this.e;
+        if (z4) {
+            oVar.setDialogId(((m) hxVar.y.get(i10)).c);
+        } else {
+            oVar.setDialogId(((m) hxVar.x.get(i10)).c);
         }
-        zw0 zw0Var = rVar.y;
-        if (zw0Var != null) {
-            l6 l6Var = this.e;
-            zw0Var.e(l6Var != null && l6Var.k(), true);
+    }
+
+    @Override // f2.p0
+    public final f2.m1 x(ViewGroup viewGroup, int i10) {
+        o oVar = new o(this.e, viewGroup.getContext());
+        boolean z4 = this.d;
+        oVar.K = z4;
+        if (z4) {
+            oVar.d(1.0f, 1.0f, 0.0f, false);
         }
+        return new fl0(oVar);
     }
 }

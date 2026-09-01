@@ -5,10 +5,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
-import k7.a7;
 import k7.b7;
+import k7.c7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class v extends q implements List, RandomAccess {
     public static final t b = new t(i0.e, 0);
@@ -78,13 +78,13 @@ public abstract class v extends q implements List, RandomAccess {
                         Iterator it = iterator();
                         Iterator it2 = list.iterator();
                         while (it.hasNext()) {
-                            if (it2.hasNext() && a7.a(it.next(), it2.next())) {
+                            if (it2.hasNext() && b7.a(it.next(), it2.next())) {
                             }
                         }
                         return !it2.hasNext();
                     }
                     for (int i10 = 0; i10 < size; i10++) {
-                        if (a7.a(get(i10), list.get(i10))) {
+                        if (b7.a(get(i10), list.get(i10))) {
                         }
                     }
                 }
@@ -158,14 +158,14 @@ public abstract class v extends q implements List, RandomAccess {
     @Override // java.util.List
     /* renamed from: v, reason: merged with bridge method [inline-methods] */
     public final t listIterator(int i10) {
-        b7.d(i10, size());
+        c7.d(i10, size());
         return isEmpty() ? b : new t(this, i10);
     }
 
     @Override // java.util.List
     /* renamed from: y, reason: merged with bridge method [inline-methods] */
     public v subList(int i10, int i11) {
-        b7.e(i10, i11, size());
+        c7.e(i10, i11, size());
         int i12 = i11 - i10;
         return i12 == size() ? this : i12 == 0 ? i0.e : new u(this, i10, i12);
     }

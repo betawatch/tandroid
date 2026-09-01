@@ -10,9 +10,9 @@ import org.telegram.messenger.SendMessageChatArguments;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class cg extends org.telegram.ui.yt0 {
+public final class cg extends org.telegram.ui.au0 {
     public boolean a;
     public final /* synthetic */ MediaController.PhotoEntry b;
     public final /* synthetic */ File c;
@@ -24,7 +24,7 @@ public final class cg extends org.telegram.ui.yt0 {
         this.c = file;
     }
 
-    @Override // org.telegram.ui.yt0, org.telegram.ui.hu0
+    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
     public final void G() {
         if (this.a) {
             return;
@@ -35,12 +35,12 @@ public final class cg extends org.telegram.ui.yt0 {
         }
     }
 
-    @Override // org.telegram.ui.yt0, org.telegram.ui.hu0
+    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
     public final boolean g() {
         return false;
     }
 
-    @Override // org.telegram.ui.yt0, org.telegram.ui.hu0
+    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
     public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z4, int i11, int i12, boolean z10) {
         MessageObject threadMessage;
         String str;
@@ -97,7 +97,7 @@ public final class cg extends org.telegram.ui.yt0 {
         SendMessagesHelper.prepareSendingMedia(accountInstance, arrayList, j10, messageObject, threadMessage, null, nnVar2, false, false, messageObject2, z4, i11, i12, i13, checkUpdateStickersOrder, null, C8, 0L, false, 0L, sendMonoForumPeerId, messageSuggestionParams);
         eg egVar = chatActivityEnterView.V2;
         if (egVar != null) {
-            egVar.D(null, true, i11, i12, 0L);
+            egVar.C(null, true, i11, i12, 0L);
         }
     }
 }

@@ -1,32 +1,23 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.bd1;
+import android.graphics.Bitmap;
+import org.telegram.ui.ed1;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zo implements bd1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ap b;
+public final class zo extends ed1 {
+    public final /* synthetic */ int h2;
 
-    public /* synthetic */ zo(ap apVar, int i10) {
-        this.a = i10;
-        this.b = apVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ zo(Object obj, Bitmap bitmap, boolean z4, int i10) {
+        super(obj, bitmap, z4);
+        this.h2 = i10;
     }
 
-    @Override // org.telegram.ui.bd1
-    public final void a(TLRPC.TL_wallPaper tL_wallPaper) {
-        switch (this.a) {
-            case 0:
-                kp kpVar = this.b.a;
-                kpVar.V.dismissInternal();
-                kpVar.dismiss();
-                break;
-            default:
-                kp kpVar2 = this.b.a;
-                kpVar2.V.dismissInternal();
-                kpVar2.dismiss();
-                break;
+    @Override // org.telegram.ui.ed1
+    public final boolean U0() {
+        switch (this.h2) {
         }
+        return true;
     }
 }

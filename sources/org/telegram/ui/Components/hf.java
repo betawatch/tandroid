@@ -9,7 +9,7 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class hf implements TextWatcher {
     public boolean a;
@@ -83,7 +83,7 @@ public final class hf implements TextWatcher {
                 chatActivityEnterView.V.animate().setListener(null).cancel();
                 chatActivityEnterView.V.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
                 if (i11 >= 0) {
-                    chatActivityEnterView.V.setTextColor(chatActivityEnterView.i0(org.telegram.ui.ActionBar.j6.y6));
+                    chatActivityEnterView.V.setTextColor(chatActivityEnterView.i0(org.telegram.ui.ActionBar.k6.y6));
                     z4 = true;
                     if (chatActivityEnterView.m3 != z4) {
                         chatActivityEnterView.m3 = z4;
@@ -102,7 +102,7 @@ public final class hf implements TextWatcher {
                     chatActivityEnterView.F(true);
                     chatActivityEnterView.v1(chatActivityEnterView.Q <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
                 }
-                chatActivityEnterView.V.setTextColor(chatActivityEnterView.i0(org.telegram.ui.ActionBar.j6.p7));
+                chatActivityEnterView.V.setTextColor(chatActivityEnterView.i0(org.telegram.ui.ActionBar.k6.p7));
                 z4 = false;
                 if (chatActivityEnterView.m3 != z4 && (oeVar = chatActivityEnterView.B1) != null) {
                     chatActivityEnterView.m3 = z4;
@@ -188,7 +188,7 @@ public final class hf implements TextWatcher {
             if (i11 > i13 || i12 - i11 > 2 || TextUtils.isEmpty(charSequence)) {
                 chatActivityEnterView.U2 = true;
             }
-            chatActivityEnterView.V2.n1(charSequence, i11 > i13 || i12 - i11 > 2, false);
+            chatActivityEnterView.V2.r1(charSequence, i11 > i13 || i12 - i11 > 2, false);
         }
         if (chatActivityEnterView.O2 != 2 && i12 - i11 > 1) {
             this.a = true;
@@ -197,7 +197,7 @@ public final class hf implements TextWatcher {
             chatActivityEnterView.y2 = System.currentTimeMillis();
             eg egVar = chatActivityEnterView.V2;
             if (egVar != null) {
-                egVar.H1();
+                egVar.M1();
             }
         }
         chatActivityEnterView.R1();

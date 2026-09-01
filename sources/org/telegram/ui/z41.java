@@ -1,41 +1,40 @@
 package org.telegram.ui;
 
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class z41 extends f2.v {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ q61 d;
+public final /* synthetic */ class z41 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ LinkedHashSet b;
+    public final /* synthetic */ Runnable c;
 
-    public /* synthetic */ z41(q61 q61Var, int i10) {
-        this.c = i10;
-        this.d = q61Var;
+    public /* synthetic */ z41(LinkedHashSet linkedHashSet, Runnable runnable, int i10) {
+        this.a = i10;
+        this.b = linkedHashSet;
+        this.c = runnable;
     }
 
-    @Override // f2.v
-    public final int i(int i10) {
-        int i11;
-        ArrayList arrayList;
-        int i12;
-        switch (this.c) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
             case 0:
-                q61 q61Var = this.d;
-                return (q61Var.t0.indexOfKey(i10) >= 0 || q61Var.w0.indexOfKey(i10) >= 0 || i10 == q61Var.f || i10 == q61Var.y || i10 == q61Var.n || i10 == q61Var.h || i10 == q61Var.v || i10 == q61Var.a || i10 == q61Var.x) ? q61Var.o0.J : ((i10 < q61Var.B || i10 >= q61Var.C) && !q61Var.N) ? 5 : 8;
+                ArrayList arrayList = (ArrayList) obj;
+                if (arrayList != null) {
+                    this.b.addAll(arrayList);
+                }
+                this.c.run();
+                break;
             default:
-                q61 q61Var2 = this.d;
-                z51 z51Var = q61Var2.n0;
-                int j10 = z51Var.j(i10);
-                if (j10 == 6) {
-                    return q61Var2.o0.J;
+                TLRPC.TL_emojiList tL_emojiList = (TLRPC.TL_emojiList) obj;
+                if (tL_emojiList != null) {
+                    this.b.addAll(tL_emojiList.document_id);
                 }
-                if (j10 != 5) {
-                    q61 q61Var3 = z51Var.s;
-                    if (q61Var3.T != 14 ? i10 <= (i11 = z51Var.c) || (i10 - i11) - 1 >= q61Var3.z1.size() : (arrayList = q61Var3.y1) == null || i10 < (i12 = z51Var.c) || i10 - i12 >= arrayList.size()) {
-                        return 5;
-                    }
-                }
-                return 8;
+                this.c.run();
+                break;
         }
     }
 }

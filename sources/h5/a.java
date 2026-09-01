@@ -17,12 +17,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
-import kh.a2;
 import org.xmlpull.v1.XmlPullParser;
 import s8.i0;
-import vh.v2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final byte[] a = {0, 0, 0, 1};
@@ -594,7 +592,7 @@ public abstract class a {
 
     public static void I(MediaFormat mediaFormat, List list) {
         for (int i10 = 0; i10 < list.size(); i10++) {
-            mediaFormat.setByteBuffer(a2.j(i10, "csd-"), ByteBuffer.wrap((byte[]) list.get(i10)));
+            mediaFormat.setByteBuffer(l.d.j(i10, "csd-"), ByteBuffer.wrap((byte[]) list.get(i10)));
         }
     }
 
@@ -752,7 +750,7 @@ public abstract class a {
         if (TextUtils.isEmpty(replace)) {
             return str;
         }
-        StringBuilder f10 = v2.f(str, "\n  ");
+        StringBuilder f10 = w.c.f(str, "\n  ");
         f10.append(replace.replace("\n", "\n  "));
         f10.append('\n');
         return f10.toString();
@@ -825,10 +823,10 @@ public abstract class a {
             throw new IOException("SNTP: Unsynchronized server");
         }
         if (b11 != 4 && b11 != 5) {
-            throw new IOException(a2.j(b11, "SNTP: Untrusted mode: "));
+            throw new IOException(l.d.j(b11, "SNTP: Untrusted mode: "));
         }
         if (i10 == 0 || i10 > 15) {
-            throw new IOException(a2.j(i10, "SNTP: Untrusted stratum: "));
+            throw new IOException(l.d.j(i10, "SNTP: Untrusted stratum: "));
         }
         if (j10 == 0) {
             throw new IOException("SNTP: Zero transmitTime");

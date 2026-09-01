@@ -7,9 +7,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class na extends oc0 {
+public final class na extends qc0 {
     public final /* synthetic */ boolean A0;
     public final /* synthetic */ boolean B0;
     public final /* synthetic */ sa C0;
@@ -36,7 +36,7 @@ public final class na extends oc0 {
         if (motionEvent.getAction() == 0) {
             float y10 = motionEvent.getY();
             sa saVar = this.C0;
-            drawable = ((org.telegram.ui.ActionBar.g3) saVar).shadowDrawable;
+            drawable = ((org.telegram.ui.ActionBar.h3) saVar).shadowDrawable;
             if (y10 < drawable.getBounds().top) {
                 saVar.dismiss();
             }
@@ -52,7 +52,7 @@ public final class na extends oc0 {
         return super.drawChild(canvas, view, j10);
     }
 
-    @Override // org.telegram.ui.Components.oc0, android.widget.FrameLayout, android.view.View
+    @Override // org.telegram.ui.Components.qc0, android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         int size = View.MeasureSpec.getSize(i11);
         sa saVar = this.C0;

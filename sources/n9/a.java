@@ -22,13 +22,13 @@ import java.util.TreeSet;
 import java.util.concurrent.atomic.AtomicInteger;
 import k9.a2;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class a {
     public static final Charset e = Charset.forName("UTF-8");
     public static final int f = 15;
     public static final l9.a g = new l9.a();
-    public static final f h = new f(23);
+    public static final f h = new f(21);
     public static final i i = new i(2);
     public final AtomicInteger a = new AtomicInteger(0);
     public final b b;
@@ -109,7 +109,7 @@ public final class a {
         int i10 = this.c.d().a.a;
         g.getClass();
         try {
-            f(bVar.b(str, android.support.v4.media.a.o("event", String.format(Locale.US, "%010d", Integer.valueOf(this.a.getAndIncrement())), z4 ? "_" : "")), l9.a.a.e(a2Var));
+            f(bVar.b(str, android.support.v4.media.a.o("event", String.format(Locale.US, "%010d", Integer.valueOf(this.a.getAndIncrement())), z4 ? "_" : "")), l9.a.a.d(a2Var));
         } catch (IOException e6) {
             Log.w("FirebaseCrashlytics", "Could not persist event for session " + str, e6);
         }
@@ -118,7 +118,7 @@ public final class a {
         File file = new File(bVar.c, str);
         file.mkdirs();
         List<File> e10 = b.e(file.listFiles(iVar));
-        Collections.sort(e10, new f(24));
+        Collections.sort(e10, new f(22));
         int size = e10.size();
         for (File file2 : e10) {
             if (size <= i10) {

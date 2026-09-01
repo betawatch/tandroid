@@ -5,7 +5,7 @@ import androidx.emoji2.text.w;
 import c9.b;
 import c9.l;
 import com.google.firebase.components.ComponentRegistrar;
-import j7.l8;
+import j7.m8;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -14,7 +14,7 @@ import ma.c;
 import ma.d;
 import w8.g;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class CrashlyticsRegistrar implements ComponentRegistrar {
     public static final /* synthetic */ int a = 0;
@@ -40,8 +40,8 @@ public class CrashlyticsRegistrar implements ComponentRegistrar {
         b10.a(new l(0, 2, f9.a.class));
         b10.a(new l(0, 2, x8.a.class));
         b10.a(new l(0, 2, ka.a.class));
-        b10.g = new w(this, 27);
+        b10.g = new w(this, 26);
         b10.c(2);
-        return Arrays.asList(b10.b(), l8.a("fire-cls", "18.6.0"));
+        return Arrays.asList(b10.b(), m8.a("fire-cls", "18.6.0"));
     }
 }

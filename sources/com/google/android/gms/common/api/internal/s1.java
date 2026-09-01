@@ -10,7 +10,7 @@ import android.view.View;
 import androidx.sharetarget.ShortcutInfoCompatSaverImpl;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import j7.f8;
+import j7.g8;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -28,10 +28,9 @@ import k7.ra;
 import k7.ta;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.dg;
-import org.telegram.ui.Components.qk0;
-import vh.v2;
+import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class s1 implements Runnable {
     public final /* synthetic */ int a;
@@ -67,13 +66,13 @@ public final class s1 implements Runnable {
             }
         }
         str = "NA";
-        f8 f8Var = new f8();
-        f8Var.a = kaVar.a;
-        f8Var.b = kaVar.b;
+        g8 g8Var = new g8();
+        g8Var.a = kaVar.a;
+        g8Var.b = kaVar.b;
         synchronized (ka.class) {
             taVar = ka.j;
             if (taVar == null) {
-                n0.c a2 = k7.w.a(Resources.getSystem().getConfiguration());
+                n0.c a2 = k7.x.a(Resources.getSystem().getConfiguration());
                 Object[] objArr = new Object[4];
                 int i11 = 0;
                 int i12 = 0;
@@ -104,14 +103,14 @@ public final class s1 implements Runnable {
                 ka.j = taVar;
             }
         }
-        f8Var.k = taVar;
-        f8Var.g = Boolean.TRUE;
-        f8Var.d = str;
-        f8Var.c = str2;
-        f8Var.e = kaVar.f.isSuccessful() ? (String) kaVar.f.getResult() : kaVar.d.a();
-        f8Var.i = 10;
-        f8Var.j = Integer.valueOf(kaVar.h);
-        bVar.c = f8Var;
+        g8Var.k = taVar;
+        g8Var.g = Boolean.TRUE;
+        g8Var.d = str;
+        g8Var.c = str2;
+        g8Var.e = kaVar.f.isSuccessful() ? (String) kaVar.f.getResult() : kaVar.d.a();
+        g8Var.i = 10;
+        g8Var.j = Integer.valueOf(kaVar.h);
+        bVar.c = g8Var;
         kaVar.c.a(bVar);
     }
 
@@ -170,8 +169,8 @@ public final class s1 implements Runnable {
                 try {
                     lVar2.get();
                     return;
-                } catch (Exception e) {
-                    eVar.c.l(e);
+                } catch (Exception e6) {
+                    eVar.c.l(e6);
                     return;
                 }
             case 3:
@@ -202,9 +201,9 @@ public final class s1 implements Runnable {
                         }
                         throw th2;
                     }
-                } catch (IOException | OutOfMemoryError | RuntimeException e6) {
-                    Log.wtf("ShortcutInfoCompatSaver", "Unable to write bitmap to file", e6);
-                    throw new RuntimeException(v2.e("Unable to write bitmap to file ", str), e6);
+                } catch (IOException | OutOfMemoryError | RuntimeException e10) {
+                    Log.wtf("ShortcutInfoCompatSaver", "Unable to write bitmap to file", e10);
+                    throw new RuntimeException(yh.k("Unable to write bitmap to file ", str), e10);
                 }
             case 4:
                 a();
@@ -218,7 +217,7 @@ public final class s1 implements Runnable {
                     l8.m.K0(e0Var2, false, null);
                     return;
                 } else {
-                    onRequest.addOnCompleteListener(new a3.c(e0Var2, 23));
+                    onRequest.addOnCompleteListener(new ja.c(e0Var2));
                     return;
                 }
             case 6:
@@ -249,17 +248,17 @@ public final class s1 implements Runnable {
                 return;
             case 9:
                 p2.b bVar2 = (p2.b) this.b;
-                p2.j jVar = (p2.j) this.c;
-                p2.i iVar = (p2.i) this.d;
-                p2.h hVar = p2.b0.i;
+                p2.i iVar = (p2.i) this.c;
+                com.google.android.gms.internal.clearcut.e eVar2 = (com.google.android.gms.internal.clearcut.e) this.d;
+                p2.h hVar = p2.a0.i;
                 bVar2.y(24, 4, hVar);
-                jVar.a(hVar, iVar.a);
+                iVar.a(hVar, eVar2.b);
                 return;
             case 10:
-                super/*p2.b*/.c((qk0) this.c, (org.telegram.messenger.d) this.d);
+                super/*p2.b*/.c((org.telegram.ui.web.e0) this.c, (org.telegram.messenger.d0) this.d);
                 return;
             case 11:
-                super/*p2.b*/.a((p2.i) this.c, (p2.j) this.d);
+                super/*p2.b*/.a((com.google.android.gms.internal.clearcut.e) this.c, (p2.i) this.d);
                 return;
             case 12:
                 b();

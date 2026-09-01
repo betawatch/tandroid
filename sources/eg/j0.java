@@ -1,122 +1,158 @@
 package eg;
 
 import android.animation.Animator;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.PropertyValuesHolder;
-import android.transition.TransitionValues;
-import android.transition.Visibility;
-import android.util.Property;
+import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.voip.k3;
-import org.telegram.ui.Components.voip.v2;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.Components.sg;
+import org.telegram.ui.Components.sv0;
+import org.telegram.ui.tt0;
+import org.telegram.ui.xn;
+import qh.b5;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class j0 extends Visibility {
+public final class j0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
+    public int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ j0(int i10) {
-        this.a = i10;
+    public /* synthetic */ j0(sv0 sv0Var, ViewGroup viewGroup, ViewGroup viewGroup2, int i10, int i11) {
+        this.a = i11;
+        this.e = sv0Var;
+        this.c = viewGroup;
+        this.d = viewGroup2;
+        this.b = i10;
     }
 
-    @Override // android.transition.Visibility
-    public final Animator onAppear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                AnimatorSet animatorSet = new AnimatorSet();
-                animatorSet.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.TRANSLATION_Y, AndroidUtilities.dp(20.0f), 0.0f));
-                animatorSet.setInterpolator(nr.f);
-                return animatorSet;
+                c1 c1Var = (c1) this.e;
+                c1Var.d1 = c1Var.e1;
+                c1Var.e1 = -1;
+                c1Var.c1.invalidate();
+                View view = (View) this.c;
+                if (view != null && ((View) this.d) != null) {
+                    view.setVisibility(8);
+                }
+                if (animator == c1Var.g1) {
+                    c1Var.g1 = null;
+                    break;
+                }
+                break;
             case 1:
-                if (!(view instanceof org.telegram.ui.ActionBar.v0)) {
-                    return ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f);
+                xn xnVar = (xn) this.e;
+                xnVar.L5 = true;
+                ((org.telegram.ui.ActionBar.p2) xnVar).fragmentBeginToShow = true;
+                xnVar.S9 = null;
+                AndroidUtilities.runOnUIThread(new tt0(this, 29), 32L);
+                super.onAnimationEnd(animator);
+                xnVar.U0.invalidate();
+                xnVar.U0.setSkipBackgroundDrawing(false);
+                xnVar.P9 = false;
+                xn xnVar2 = (xn) this.c;
+                xnVar2.R9 = 0.0f;
+                xnVar2.fragmentView.invalidate();
+                xnVar2.u0.invalidate();
+                xnVar2.Q9 = null;
+                xnVar.fragmentView.setAlpha(1.0f);
+                ((Runnable) this.d).run();
+                xnVar.X0.setTranslationY(0.0f);
+                xnVar2.X0.setTranslationY(0.0f);
+                xnVar2.X0.getAvatarImageView().setTranslationY(0.0f);
+                xnVar.X0.getAvatarImageView().setScaleX(1.0f);
+                xnVar.X0.getAvatarImageView().setScaleY(1.0f);
+                xnVar.X0.getAvatarImageView().setAlpha(1.0f);
+                xnVar2.X0.getAvatarImageView().setScaleX(1.0f);
+                xnVar2.X0.getAvatarImageView().setScaleY(1.0f);
+                xnVar2.X0.getAvatarImageView().setAlpha(1.0f);
+                sg sgVar = xnVar2.J0;
+                if (sgVar != null) {
+                    sgVar.setAlpha(1.0f);
+                    break;
                 }
-                AnimatorSet animatorSet2 = new AnimatorSet();
-                animatorSet2.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_X, 0.5f, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 0.5f, 1.0f));
-                animatorSet2.setInterpolator(nr.f);
-                return animatorSet2;
-            case 2:
-                if (!(view instanceof org.telegram.ui.ActionBar.v0)) {
-                    return ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f);
-                }
-                AnimatorSet animatorSet3 = new AnimatorSet();
-                animatorSet3.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_X, 0.5f, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 0.5f, 1.0f));
-                animatorSet3.setInterpolator(nr.f);
-                return animatorSet3;
-            case 3:
-                AnimatorSet animatorSet4 = new AnimatorSet();
-                animatorSet4.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_X, 0.5f, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 0.5f, 1.0f));
-                animatorSet4.setInterpolator(nr.f);
-                return animatorSet4;
-            case 4:
-                AnimatorSet animatorSet5 = new AnimatorSet();
-                view.setAlpha(0.0f);
-                view.setScaleY(0.6f);
-                view.setScaleX(0.6f);
-                animatorSet5.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_X, 0.6f, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 0.6f, 1.0f));
-                animatorSet5.setInterpolator(nr.k);
-                return animatorSet5;
+                break;
             default:
-                ObjectAnimator ofPropertyValuesHolder = ObjectAnimator.ofPropertyValuesHolder(view, PropertyValuesHolder.ofFloat((Property<?, Float>) View.TRANSLATION_Y, AndroidUtilities.dp(100.0f), 0.0f), PropertyValuesHolder.ofFloat((Property<?, Float>) View.SCALE_Y, 0.0f, 1.0f), PropertyValuesHolder.ofFloat((Property<?, Float>) View.SCALE_X, 0.0f, 1.0f));
-                if (view instanceof v2) {
-                    view.setTranslationY(AndroidUtilities.dp(100.0f));
-                    view.setScaleX(0.0f);
-                    view.setScaleY(0.0f);
-                    ofPropertyValuesHolder.setStartDelay(((v2) view).C);
+                b5 b5Var = (b5) this.e;
+                b5Var.V0 = b5Var.W0;
+                b5Var.W0 = -1;
+                b5Var.T0.invalidate();
+                View view2 = (View) this.c;
+                if (view2 != null && ((View) this.d) != null) {
+                    view2.setVisibility(8);
                 }
-                if (view instanceof k3) {
-                    view.setTranslationY(AndroidUtilities.dp(100.0f));
-                    view.setScaleX(0.0f);
-                    view.setScaleY(0.0f);
-                    ofPropertyValuesHolder.setStartDelay(((k3) view).f);
+                if (animator == b5Var.Y0) {
+                    b5Var.Y0 = null;
+                    break;
                 }
-                return ofPropertyValuesHolder;
+                break;
         }
     }
 
-    @Override // android.transition.Visibility
-    public final Animator onDisappear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        View view;
+        int i10;
+        View view2;
         switch (this.a) {
             case 0:
-                AnimatorSet animatorSet = new AnimatorSet();
-                animatorSet.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, view.getAlpha(), 0.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.TRANSLATION_Y, 0.0f, -AndroidUtilities.dp(20.0f)));
-                animatorSet.setInterpolator(nr.f);
-                return animatorSet;
+                c1 c1Var = (c1) this.e;
+                r2 r2Var = c1Var.i1;
+                if (((View) this.c) != null && (view = (View) this.d) != null) {
+                    view.setVisibility(0);
+                }
+                if (this.b != 2) {
+                    dg.m currentBrush = c1Var.T0.getCurrentBrush();
+                    if (!(currentBrush instanceof dg.b) && !(currentBrush instanceof dg.d)) {
+                        r2Var.b(0.05f, 1.0f);
+                        break;
+                    } else {
+                        r2Var.b(0.4f, 1.75f);
+                        break;
+                    }
+                } else {
+                    r2Var.b(0.5f, 2.0f);
+                    break;
+                }
+                break;
             case 1:
-                if (!(view instanceof org.telegram.ui.ActionBar.v0)) {
-                    return ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 1.0f, 0.0f);
-                }
-                AnimatorSet animatorSet2 = new AnimatorSet();
-                animatorSet2.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, view.getAlpha(), 0.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_X, view.getScaleX(), 0.5f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, view.getScaleX(), 0.5f));
-                animatorSet2.setInterpolator(nr.f);
-                return animatorSet2;
-            case 2:
-                if (!(view instanceof org.telegram.ui.ActionBar.v0)) {
-                    return ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 1.0f, 0.0f);
-                }
-                AnimatorSet animatorSet3 = new AnimatorSet();
-                animatorSet3.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, view.getAlpha(), 0.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_X, view.getScaleX(), 0.5f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, view.getScaleX(), 0.5f));
-                animatorSet3.setInterpolator(nr.f);
-                return animatorSet3;
-            case 3:
-                AnimatorSet animatorSet4 = new AnimatorSet();
-                animatorSet4.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, view.getAlpha(), 0.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_X, view.getScaleX(), 0.5f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, view.getScaleX(), 0.5f));
-                animatorSet4.setInterpolator(nr.f);
-                return animatorSet4;
-            case 4:
-                AnimatorSet animatorSet5 = new AnimatorSet();
-                if (view instanceof org.telegram.ui.Components.voip.g2) {
-                    ((org.telegram.ui.Components.voip.g2) view).d = true;
-                }
-                animatorSet5.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 0.7f, 0.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_X, 1.0f, 0.6f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 1.0f, 0.6f));
-                animatorSet5.setInterpolator(nr.f);
-                return animatorSet5;
+                super.onAnimationStart(animator);
+                i10 = ((org.telegram.ui.ActionBar.p2) ((xn) this.e)).currentAccount;
+                this.b = NotificationCenter.getInstance(i10).setAnimationInProgress(this.b, null);
+                break;
             default:
-                return ObjectAnimator.ofPropertyValuesHolder(view, PropertyValuesHolder.ofFloat((Property<?, Float>) View.TRANSLATION_Y, view.getTranslationY(), AndroidUtilities.dp(100.0f)), PropertyValuesHolder.ofFloat((Property<?, Float>) View.SCALE_Y, view.getScaleY(), 0.0f), PropertyValuesHolder.ofFloat((Property<?, Float>) View.SCALE_X, view.getScaleX(), 0.0f));
+                b5 b5Var = (b5) this.e;
+                r2 r2Var2 = b5Var.a1;
+                if (((View) this.c) != null && (view2 = (View) this.d) != null) {
+                    view2.setVisibility(0);
+                }
+                if (this.b != 2) {
+                    dg.m currentBrush2 = b5Var.L0.getCurrentBrush();
+                    if (!(currentBrush2 instanceof dg.b) && !(currentBrush2 instanceof dg.d)) {
+                        r2Var2.b(0.05f, 1.0f);
+                        break;
+                    } else {
+                        r2Var2.b(0.4f, 1.75f);
+                        break;
+                    }
+                } else {
+                    r2Var2.b(0.5f, 2.0f);
+                    break;
+                }
+                break;
         }
+    }
+
+    public j0(xn xnVar, xn xnVar2, Runnable runnable) {
+        this.a = 1;
+        this.e = xnVar;
+        this.c = xnVar2;
+        this.d = runnable;
     }
 }

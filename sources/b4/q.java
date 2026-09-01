@@ -5,10 +5,10 @@ import j3.m0;
 import j3.n0;
 import java.util.ArrayList;
 import java.util.Arrays;
-import k7.s6;
+import k7.t6;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class q implements i {
     public final d0 a;
@@ -164,7 +164,7 @@ public final class q implements i {
                     h5.w wVar2 = this.o;
                     wVar2.D(J, bArr3);
                     wVar2.F(4);
-                    s6.a(j13, wVar2, this.a.c);
+                    t6.a(j13, wVar2, this.a.c);
                 }
                 pVar = this.k;
                 z4 = this.l;
@@ -386,9 +386,9 @@ public final class q implements i {
         h0Var.b();
         this.i = h0Var.e;
         h0Var.b();
-        r3.v c22 = mVar.c2(h0Var.d, 2);
-        this.j = c22;
-        this.k = new p(c22, this.b, this.c);
+        r3.v i22 = mVar.i2(h0Var.d, 2);
+        this.j = i22;
+        this.k = new p(i22, this.b, this.c);
         this.a.b(mVar, h0Var);
     }
 

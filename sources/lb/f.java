@@ -10,7 +10,7 @@ import c5.j;
 import cb.h;
 import cb.o;
 import j7.d9;
-import j7.i6;
+import j7.h6;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
@@ -32,7 +32,7 @@ import l7.w0;
 import l7.x0;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class f extends cb.f {
     public boolean d = true;
@@ -45,9 +45,9 @@ public final class f extends cb.f {
         m.i(bVar, "ImageLabelerOptions can not be null");
         this.f = bVar2;
         this.g = laVar;
-        i6 i6Var = new i6();
-        i6Var.a = Float.valueOf(bVar.a);
-        this.e = new n8(i6Var);
+        h6 h6Var = new h6();
+        h6Var.a = Float.valueOf(bVar.a);
+        this.e = new n8(h6Var);
         this.h = new d9(h.c().b(), 1);
     }
 
@@ -61,7 +61,7 @@ public final class f extends cb.f {
         bVar.b = this.e;
         q qVar = s.b;
         Object[] objArr = {t7.b};
-        k7.g.a(1, objArr);
+        k7.h.a(1, objArr);
         bVar.c = new w(1, objArr);
         aVar.d = new m8(bVar);
         o.a.execute(new p(laVar, new e0(aVar, 0), u7.e, laVar.b(), false, 6));
@@ -86,9 +86,9 @@ public final class f extends cb.f {
                 a2 = this.f.a(aVar);
                 f(t7.b, aVar, elapsedRealtime);
                 this.d = false;
-            } catch (ya.a e) {
-                f(e.a == 14 ? t7.c : t7.d, aVar, elapsedRealtime);
-                throw e;
+            } catch (ya.a e6) {
+                f(e6.a == 14 ? t7.c : t7.d, aVar, elapsedRealtime);
+                throw e6;
             }
         }
         return a2;

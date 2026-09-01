@@ -4,7 +4,7 @@ import h5.w;
 import j3.r1;
 import java.io.EOFException;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class g {
     public int a;
@@ -26,10 +26,10 @@ public final class g {
         w wVar = this.g;
         wVar.C(27);
         try {
-            z10 = lVar.h(wVar.a, 0, 27, z4);
-        } catch (EOFException e) {
+            z10 = lVar.f(wVar.a, 0, 27, z4);
+        } catch (EOFException e6) {
             if (!z4) {
-                throw e;
+                throw e6;
             }
             z10 = false;
         }
@@ -45,10 +45,10 @@ public final class g {
                 this.d = u10 + 27;
                 wVar.C(u10);
                 try {
-                    z11 = lVar.h(wVar.a, 0, this.c, z4);
-                } catch (EOFException e6) {
+                    z11 = lVar.f(wVar.a, 0, this.c, z4);
+                } catch (EOFException e10) {
                     if (!z4) {
-                        throw e6;
+                        throw e10;
                     }
                     z11 = false;
                 }
@@ -69,7 +69,7 @@ public final class g {
 
     public final boolean b(r3.l lVar, long j10) {
         boolean z4;
-        h5.a.f(lVar.getPosition() == lVar.i());
+        h5.a.f(lVar.getPosition() == lVar.g());
         w wVar = this.g;
         wVar.C(4);
         while (true) {
@@ -77,7 +77,7 @@ public final class g {
                 break;
             }
             try {
-                z4 = lVar.h(wVar.a, 0, 4, true);
+                z4 = lVar.f(wVar.a, 0, 4, true);
             } catch (EOFException unused) {
                 z4 = false;
             }
@@ -86,10 +86,10 @@ public final class g {
             }
             wVar.F(0);
             if (wVar.v() == 1332176723) {
-                lVar.t();
+                lVar.r();
                 return true;
             }
-            lVar.u(1);
+            lVar.s(1);
         }
         do {
             if (j10 != -1 && lVar.getPosition() >= j10) {

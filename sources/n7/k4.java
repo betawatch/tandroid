@@ -1,15 +1,15 @@
 package n7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final class k4 implements u9.d {
     public static final k4 a = new k4();
-    public static final u9.c b = new u9.c("maxMs", vh.v2.h(kh.a2.p(w.class, new s(1))));
-    public static final u9.c c = new u9.c("minMs", vh.v2.h(kh.a2.p(w.class, new s(2))));
-    public static final u9.c d = new u9.c("avgMs", vh.v2.h(kh.a2.p(w.class, new s(3))));
-    public static final u9.c e = new u9.c("firstQuartileMs", vh.v2.h(kh.a2.p(w.class, new s(4))));
-    public static final u9.c f = new u9.c("medianMs", vh.v2.h(kh.a2.p(w.class, new s(5))));
-    public static final u9.c g = new u9.c("thirdQuartileMs", vh.v2.h(kh.a2.p(w.class, new s(6))));
+    public static final u9.c b = new u9.c("maxMs", w.c.h(l.d.p(w.class, new s(1))));
+    public static final u9.c c = new u9.c("minMs", w.c.h(l.d.p(w.class, new s(2))));
+    public static final u9.c d = new u9.c("avgMs", w.c.h(l.d.p(w.class, new s(3))));
+    public static final u9.c e = new u9.c("firstQuartileMs", w.c.h(l.d.p(w.class, new s(4))));
+    public static final u9.c f = new u9.c("medianMs", w.c.h(l.d.p(w.class, new s(5))));
+    public static final u9.c g = new u9.c("thirdQuartileMs", w.c.h(l.d.p(w.class, new s(6))));
 
     @Override // u9.a
     public final void a(Object obj, Object obj2) {

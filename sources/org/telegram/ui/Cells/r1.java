@@ -4,9 +4,9 @@ import android.graphics.drawable.Drawable;
 import android.text.StaticLayout;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.k01;
+import org.telegram.ui.Components.l01;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class r1 {
     public StaticLayout A;
@@ -30,14 +30,14 @@ public final class r1 {
     public float n;
     public boolean o;
     public StaticLayout p;
-    public k01 q;
+    public l01 q;
     public org.telegram.ui.Components.q5 r;
     public TLRPC.PollAnswer s;
     public TLRPC.TodoItem t;
     public boolean u;
     public int v;
     public Drawable w;
-    public fh.b x;
+    public gh.b x;
     public org.telegram.ui.Components.z8 y;
     public ImageReceiver z;
 
@@ -54,7 +54,7 @@ public final class r1 {
         if (imageReceiver != null) {
             imageReceiver.onAttachedToWindow();
         }
-        fh.b bVar = this.x;
+        gh.b bVar = this.x;
         if (bVar != null) {
             bVar.b.a();
             bVar.c.onAttachedToWindow();
@@ -67,7 +67,7 @@ public final class r1 {
         if (imageReceiver != null) {
             imageReceiver.onDetachedFromWindow();
         }
-        fh.b bVar = this.x;
+        gh.b bVar = this.x;
         if (bVar != null) {
             bVar.b.b();
             bVar.c.onDetachedFromWindow();

@@ -1,39 +1,57 @@
 package ng;
 
-import android.graphics.RenderNode;
-import g.x;
+import android.view.ViewGroup;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class h {
-    public final RenderNode a;
-    public final g b;
-    public final x c = new x();
-    public long d = 0;
-    public int e;
-    public int f;
+public final /* synthetic */ class h implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ s b;
 
-    public h(RenderNode renderNode, g gVar) {
-        this.a = renderNode;
-        this.b = gVar;
+    public /* synthetic */ h(s sVar, int i10) {
+        this.a = i10;
+        this.b = sVar;
     }
 
-    public final void a() {
-        int width = this.a.getWidth();
-        int height = this.a.getHeight();
-        x xVar = this.c;
-        xVar.a = 0L;
-        xVar.b = false;
-        g gVar = this.b;
-        gVar.Y(xVar);
-        long j10 = xVar.b ? -1L : xVar.a;
-        boolean z4 = (this.a.hasDisplayList() && width == this.e && height == this.f && j10 == this.d && j10 != -1) ? false : true;
-        this.e = width;
-        this.f = height;
-        this.d = j10;
-        if (z4) {
-            gVar.k(this.a.beginRecording());
-            this.a.endRecording();
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        s sVar = this.b;
+        switch (i10) {
+            case 0:
+                sVar.n.requestFocus();
+                break;
+            case 1:
+                sVar.finishFragment();
+                break;
+            case 2:
+                if (!sVar.H) {
+                    sVar.H = true;
+                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
+                    int measuredHeight = sVar.c.getMeasuredHeight();
+                    ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) sVar.y.getLayoutParams();
+                    marginLayoutParams.bottomMargin = measuredHeight;
+                    sVar.y.setLayoutParams(marginLayoutParams);
+                    sVar.c.setVisibility(0);
+                    sVar.c.setTranslationY(r0.getMeasuredHeight());
+                    sVar.c.animate().setListener(null).cancel();
+                    sVar.c.animate().translationY(0.0f).withLayer().setDuration(350L).setInterpolator(pr.f).setUpdateListener(new j(sVar, 0)).setListener(new r(0)).start();
+                    break;
+                }
+                break;
+            case 3:
+                af.g.s(sVar.getParentActivity(), "https://t.me/stickers");
+                break;
+            case 4:
+                af.g.s(sVar.getParentActivity(), LocaleController.getString(R.string.ChannelEnablePaidReactionsInfoLink));
+                break;
+            default:
+                sVar.Y(false);
+                break;
         }
     }
 }

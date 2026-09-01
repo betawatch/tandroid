@@ -12,9 +12,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import k7.b6;
-import lh.k7;
-import lh.r5;
+import k7.c6;
+import mh.k7;
+import mh.r5;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.FileLoadOperation;
@@ -32,19 +32,19 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.kz;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.ap;
-import org.telegram.ui.au;
-import org.telegram.ui.cp;
+import org.telegram.ui.bu;
 import org.telegram.ui.dp;
+import org.telegram.ui.ep;
 import org.telegram.ui.ke;
 import org.telegram.ui.xn;
 import org.telegram.ui.zd;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class n1 implements Runnable {
     public final /* synthetic */ int a;
@@ -134,61 +134,61 @@ public final /* synthetic */ class n1 implements Runnable {
                     linearLayout.setOrientation(1);
                     alertDialog$Builder.n(linearLayout);
                     TextView textView = new TextView(activity);
-                    int i10 = j6.j5;
-                    textView.setTextColor(j6.w0(null, i10, false));
+                    int i10 = k6.j5;
+                    textView.setTextColor(k6.w0(null, i10, false));
                     textView.setTextSize(1, 16.0f);
                     textView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
                     textView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.WithdrawChannelAlertText)));
-                    linearLayout.addView(textView, b6.n(-1, -2));
+                    linearLayout.addView(textView, c6.n(-1, -2));
                     LinearLayout linearLayout2 = new LinearLayout(activity);
                     linearLayout2.setOrientation(0);
-                    linearLayout.addView(linearLayout2, b6.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
+                    linearLayout.addView(linearLayout2, c6.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
                     ImageView imageView = new ImageView(activity);
                     imageView.setImageResource(R.drawable.list_circle);
                     imageView.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(11.0f) : 0, AndroidUtilities.dp(9.0f), LocaleController.isRTL ? 0 : AndroidUtilities.dp(11.0f), 0);
-                    int w02 = j6.w0(null, i10, false);
+                    int w02 = k6.w0(null, i10, false);
                     PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
                     imageView.setColorFilter(new PorterDuffColorFilter(w02, mode));
                     TextView textView2 = new TextView(activity);
-                    textView2.setTextColor(j6.w0(null, i10, false));
+                    textView2.setTextColor(k6.w0(null, i10, false));
                     textView2.setTextSize(1, 16.0f);
                     textView2.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
                     y3.q(R.string.EditAdminTransferAlertText1, textView2);
                     if (LocaleController.isRTL) {
-                        linearLayout2.addView(textView2, b6.n(-1, -2));
-                        linearLayout2.addView(imageView, b6.q(-2, -2, 5));
+                        linearLayout2.addView(textView2, c6.n(-1, -2));
+                        linearLayout2.addView(imageView, c6.q(-2, -2, 5));
                     } else {
-                        linearLayout2.addView(imageView, b6.n(-2, -2));
-                        linearLayout2.addView(textView2, b6.n(-1, -2));
+                        linearLayout2.addView(imageView, c6.n(-2, -2));
+                        linearLayout2.addView(textView2, c6.n(-1, -2));
                     }
-                    LinearLayout h = kh.a2.h(activity, 0);
-                    linearLayout.addView(h, b6.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
+                    LinearLayout h = l.d.h(activity, 0);
+                    linearLayout.addView(h, c6.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
                     ImageView imageView2 = new ImageView(activity);
                     imageView2.setImageResource(R.drawable.list_circle);
                     imageView2.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(11.0f) : 0, AndroidUtilities.dp(9.0f), LocaleController.isRTL ? 0 : AndroidUtilities.dp(11.0f), 0);
-                    imageView2.setColorFilter(new PorterDuffColorFilter(j6.w0(null, i10, false), mode));
+                    imageView2.setColorFilter(new PorterDuffColorFilter(k6.w0(null, i10, false), mode));
                     TextView textView3 = new TextView(activity);
-                    textView3.setTextColor(j6.w0(null, i10, false));
+                    textView3.setTextColor(k6.w0(null, i10, false));
                     textView3.setTextSize(1, 16.0f);
                     textView3.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
                     y3.q(R.string.EditAdminTransferAlertText2, textView3);
                     if (LocaleController.isRTL) {
-                        h.addView(textView3, b6.n(-1, -2));
-                        h.addView(imageView2, b6.q(-2, -2, 5));
+                        h.addView(textView3, c6.n(-1, -2));
+                        h.addView(imageView2, c6.q(-2, -2, 5));
                     } else {
-                        h.addView(imageView2, b6.n(-2, -2));
-                        h.addView(textView3, b6.n(-1, -2));
+                        h.addView(imageView2, c6.n(-2, -2));
+                        h.addView(textView3, c6.n(-1, -2));
                     }
                     if ("PASSWORD_MISSING".equals(tL_error.text)) {
                         alertDialog$Builder.k(LocaleController.getString(R.string.EditAdminTransferSetPassword), new zd(keVar));
                         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
                     } else {
                         TextView textView4 = new TextView(activity);
-                        textView4.setTextColor(j6.w0(null, i10, false));
+                        textView4.setTextColor(k6.w0(null, i10, false));
                         textView4.setTextSize(1, 16.0f);
                         textView4.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
                         textView4.setText(LocaleController.getString(R.string.EditAdminTransferAlertText3));
-                        linearLayout.addView(textView4, b6.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
+                        linearLayout.addView(textView4, c6.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
                         alertDialog$Builder.h(LocaleController.getString(R.string.OK), null);
                     }
                     if (twoStepVerificationActivity == null) {
@@ -217,8 +217,8 @@ public final /* synthetic */ class n1 implements Runnable {
                         try {
                             AndroidUtilities.openForView(messageObject, xnVar.getParentActivity(), xnVar.ba, false);
                             break;
-                        } catch (Exception e) {
-                            FileLog.e(e);
+                        } catch (Exception e6) {
+                            FileLog.e(e6);
                             xnVar.z6(messageObject);
                             return;
                         }
@@ -231,26 +231,26 @@ public final /* synthetic */ class n1 implements Runnable {
                 TLObject tLObject2 = (TLObject) this.b;
                 TLRPC.TL_username tL_username = (TLRPC.TL_username) this.c;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.d;
-                cp cpVar = apVar.a;
-                dp dpVar = cpVar.X2;
-                dpVar.M.remove(tL_channels_toggleUsername.username);
+                dp dpVar = apVar.a;
+                ep epVar = dpVar.X2;
+                epVar.M.remove(tL_channels_toggleUsername.username);
                 boolean z10 = tLObject2 instanceof TLRPC.TL_boolTrue;
                 boolean z11 = this.e;
                 if (z10) {
-                    cpVar.w1(tL_username, !z11, false);
+                    dpVar.w1(tL_username, !z11, false);
                 } else if (tL_error2 == null || !"USERNAMES_ACTIVE_TOO_MUCH".equals(tL_error2.text)) {
-                    cpVar.w1(tL_username, z11, true);
-                    dpVar.V();
+                    dpVar.w1(tL_username, z11, true);
+                    epVar.V();
                 } else {
                     AndroidUtilities.runOnUIThread(new r5(apVar, tL_username, z11, 10));
                 }
-                dpVar.getMessagesController().updateUsernameActiveness(dpVar.U, tL_username.username, tL_username.active);
+                epVar.getMessagesController().updateUsernameActiveness(epVar.U, tL_username.username, tL_username.active);
                 break;
             case 10:
-                ((kz) this.f).K((ah.c) this.h, (TLObject) this.b, (TLRPC.StickerSet) this.c, (TLRPC.Document) this.d, this.e, true);
+                ((mz) this.f).K((bh.c) this.h, (TLObject) this.b, (TLRPC.StickerSet) this.c, (TLRPC.Document) this.d, this.e, true);
                 break;
             default:
-                au.Q((au) this.f, (TLObject) this.h, (ph.d) this.b, this.e, (HashSet) this.c, (TLRPC.TL_error) this.d);
+                bu.Q((bu) this.f, (TLObject) this.h, (qh.d) this.b, this.e, (HashSet) this.c, (TLRPC.TL_error) this.d);
                 break;
         }
     }

@@ -1,128 +1,104 @@
 package lh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RadialGradient;
-import android.graphics.Shader;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.nr;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.q70;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
-/* loaded from: classes4.dex */
-public final class b4 extends View {
-    public final Paint a;
-    public final Paint b;
-    public final Paint c;
-    public final RadialGradient[] d;
-    public final Matrix e;
-    public final org.telegram.ui.Components.z5 f;
-    public final RadialGradient h;
-    public final Path n;
-    public int r;
-    public int s;
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class b4 implements Utilities.Callback5 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ r5 b;
+    public final /* synthetic */ q70 c;
 
-    public b4(Context context) {
-        super(context);
-        this.a = new Paint(1);
-        this.b = new Paint(1);
-        Paint paint = new Paint(1);
-        this.c = paint;
-        this.d = new RadialGradient[2];
-        this.e = new Matrix();
-        this.f = new org.telegram.ui.Components.z5(1.0f, this, 0L, 420L, nr.h);
-        this.h = new RadialGradient(0.0f, 0.0f, 100.0f, new int[]{0, -1, -1, 0}, new float[]{0.15f, 0.35f, 0.65f, 0.88f}, Shader.TileMode.CLAMP);
-        this.n = new Path();
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
+    public /* synthetic */ b4(r5 r5Var, q70 q70Var, int i10) {
+        this.a = i10;
+        this.b = r5Var;
+        this.c = q70Var;
     }
 
-    public final void a(int i10, int i11) {
-        if (this.r == i10 && this.s == i11) {
-            return;
-        }
-        RadialGradient[] radialGradientArr = this.d;
-        radialGradientArr[0] = radialGradientArr[1];
-        this.r = i10;
-        this.s = i11;
-        radialGradientArr[1] = new RadialGradient(0.0f, 0.0f, 100.0f, new int[]{i10, i11}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-        this.f.d(0.0f, true);
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Paint paint;
-        int i10 = 0;
-        float d = this.f.d(1.0f, false);
-        float currentTimeMillis = ((System.currentTimeMillis() % 15000) / 15000.0f) * 360.0f;
-        if (getAlpha() > 0.0f) {
-            invalidate();
-        }
-        Paint.Style style = Paint.Style.STROKE;
-        Paint paint2 = this.b;
-        paint2.setStyle(style);
-        paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        Path path = this.n;
-        path.rewind();
-        float width = getWidth() / 2.0f;
-        float height = getHeight() / 2.0f;
-        float min = Math.min(getWidth(), getHeight()) / 2.0f;
-        for (int i11 = 0; i11 < 6; i11++) {
-            float A = e2.c.A(i11, 60.0f, 12.5f, currentTimeMillis);
-            path.moveTo(width, height);
-            double d10 = ((A - 12.5f) / 180.0f) * 3.141592653589793d;
-            path.lineTo((((float) Math.cos(d10)) * min) + width, (((float) Math.sin(d10)) * min) + height);
-            double d11 = ((A + 12.5f) / 180.0f) * 3.141592653589793d;
-            path.lineTo((((float) Math.cos(d11)) * min) + width, (((float) Math.sin(d11)) * min) + height);
-            path.lineTo(width, height);
-        }
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-        while (true) {
-            RadialGradient[] radialGradientArr = this.d;
-            int length = radialGradientArr.length;
-            Matrix matrix = this.e;
-            if (i10 >= length) {
-                matrix.reset();
-                float f10 = min / 100.0f;
-                matrix.postScale(f10, f10);
-                matrix.postTranslate(width, height);
-                RadialGradient radialGradient = this.h;
-                radialGradient.setLocalMatrix(matrix);
-                Paint paint3 = this.c;
-                paint3.setShader(radialGradient);
-                canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint3);
-                canvas.restore();
-                return;
-            }
-            if (radialGradientArr[i10] == null) {
-                paint = paint2;
-            } else {
-                paint = paint2;
-                float pow = (float) Math.pow(1.0f - Math.abs(i10 - d), 0.5d);
-                if (pow > 0.0f) {
-                    matrix.reset();
-                    float f11 = min / 100.0f;
-                    matrix.postScale(f11, f11);
-                    matrix.postTranslate(width, height);
-                    radialGradientArr[i10].setLocalMatrix(matrix);
-                    RadialGradient radialGradient2 = radialGradientArr[i10];
-                    Paint paint4 = this.a;
-                    paint4.setShader(radialGradient2);
-                    float f12 = pow * 255.0f;
-                    paint4.setAlpha((int) (0.3f * f12));
-                    paint.setShader(radialGradientArr[i10]);
-                    paint.setAlpha((int) f12);
-                    canvas.drawPath(path, paint4);
-                    canvas.drawPath(path, paint);
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        int i10 = this.a;
+        j51 j51Var = (j51) obj;
+        r5 r5Var = this.b;
+        r5Var.getClass();
+        switch (i10) {
+            case 0:
+                long j10 = ((TL_stars.starGiftAttributePattern) j51Var.G).document.id;
+                b5 b5Var = r5Var.d;
+                HashSet hashSet = b5Var.l;
+                if (hashSet.contains(Long.valueOf(j10))) {
+                    hashSet.remove(Long.valueOf(j10));
+                } else if (hashSet.isEmpty()) {
+                    ArrayList arrayList = b5Var.h;
+                    int size = arrayList.size();
+                    int i11 = 0;
+                    while (i11 < size) {
+                        Object obj6 = arrayList.get(i11);
+                        i11++;
+                        long j11 = ((TL_stars.starGiftAttributePattern) obj6).document.id;
+                        if (j11 != j10) {
+                            hashSet.add(Long.valueOf(j11));
+                        }
+                    }
+                } else {
+                    hashSet.add(Long.valueOf(j10));
                 }
-            }
-            i10++;
-            paint2 = paint;
+                b5Var.h();
+                this.c.u();
+                break;
+            case 1:
+                int i12 = ((TL_stars.starGiftAttributeBackdrop) j51Var.G).backdrop_id;
+                b5 b5Var2 = r5Var.d;
+                HashSet hashSet2 = b5Var2.k;
+                if (hashSet2.contains(Integer.valueOf(i12))) {
+                    hashSet2.remove(Integer.valueOf(i12));
+                } else if (hashSet2.isEmpty()) {
+                    ArrayList arrayList2 = b5Var2.g;
+                    int size2 = arrayList2.size();
+                    int i13 = 0;
+                    while (i13 < size2) {
+                        Object obj7 = arrayList2.get(i13);
+                        i13++;
+                        int i14 = ((TL_stars.starGiftAttributeBackdrop) obj7).backdrop_id;
+                        if (i14 != i12) {
+                            hashSet2.add(Integer.valueOf(i14));
+                        }
+                    }
+                } else {
+                    hashSet2.add(Integer.valueOf(i12));
+                }
+                b5Var2.h();
+                this.c.u();
+                break;
+            default:
+                long j12 = ((TL_stars.starGiftAttributeModel) j51Var.G).document.id;
+                b5 b5Var3 = r5Var.d;
+                HashSet hashSet3 = b5Var3.j;
+                if (hashSet3.contains(Long.valueOf(j12))) {
+                    hashSet3.remove(Long.valueOf(j12));
+                } else if (hashSet3.isEmpty()) {
+                    ArrayList arrayList3 = b5Var3.f;
+                    int size3 = arrayList3.size();
+                    int i15 = 0;
+                    while (i15 < size3) {
+                        Object obj8 = arrayList3.get(i15);
+                        i15++;
+                        long j13 = ((TL_stars.starGiftAttributeModel) obj8).document.id;
+                        if (j13 != j12) {
+                            hashSet3.add(Long.valueOf(j13));
+                        }
+                    }
+                } else {
+                    hashSet3.add(Long.valueOf(j12));
+                }
+                b5Var3.h();
+                this.c.u();
+                break;
         }
     }
 }

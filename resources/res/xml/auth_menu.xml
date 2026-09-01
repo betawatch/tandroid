@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:title="@string/Settings"/>
+    <PreferenceCategory android:title="0x7f0fdb93"/>
     <PreferenceScreen
-        android:title="@string/AccountSettings"
+        android:title="0x7f0ffec7"
         android:key="account_settings"
         android:summary="">
         <intent

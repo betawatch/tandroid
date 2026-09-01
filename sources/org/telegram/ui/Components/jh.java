@@ -7,26 +7,26 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class jh implements org.telegram.ui.eq0 {
+public final class jh implements org.telegram.ui.gq0 {
     public boolean a;
     public final /* synthetic */ HashMap b;
     public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ li d;
+    public final /* synthetic */ mi d;
 
-    public jh(li liVar, HashMap hashMap, ArrayList arrayList) {
-        this.d = liVar;
+    public jh(mi miVar, HashMap hashMap, ArrayList arrayList) {
+        this.d = miVar;
         this.b = hashMap;
         this.c = arrayList;
     }
 
-    @Override // org.telegram.ui.eq0
+    @Override // org.telegram.ui.gq0
     public final /* synthetic */ boolean e() {
         return true;
     }
 
-    @Override // org.telegram.ui.eq0
+    @Override // org.telegram.ui.gq0
     public final void f(int i10, boolean z4, boolean z10) {
         if (z4) {
             return;
@@ -71,15 +71,15 @@ public final class jh implements org.telegram.ui.eq0 {
         }
     }
 
-    @Override // org.telegram.ui.eq0
+    @Override // org.telegram.ui.gq0
     public final void a() {
     }
 
-    @Override // org.telegram.ui.eq0
-    public final void b(Editable editable) {
+    @Override // org.telegram.ui.gq0
+    public final void c(Editable editable) {
     }
 
-    @Override // org.telegram.ui.eq0
-    public final /* synthetic */ void c() {
+    @Override // org.telegram.ui.gq0
+    public final /* synthetic */ void d() {
     }
 }

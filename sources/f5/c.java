@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 import o4.s0;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class c {
     public final s0 a;
@@ -28,7 +28,7 @@ public abstract class c {
         for (int i11 = 0; i11 < iArr.length; i11++) {
             this.d[i11] = s0Var.d[iArr[i11]];
         }
-        Arrays.sort(this.d, new e5.f(3));
+        Arrays.sort(this.d, new e5.f(2));
         this.c = new int[this.b];
         while (true) {
             int i12 = this.b;

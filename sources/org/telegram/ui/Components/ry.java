@@ -1,50 +1,120 @@
 package org.telegram.ui.Components;
 
 import java.util.ArrayList;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
+import java.util.List;
+import org.telegram.messenger.FileLoader;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class ry {
-    public final ArrayList a = new ArrayList();
-    public final /* synthetic */ kz b;
+public final class ry extends pz {
+    public final kv0 X;
+    public final /* synthetic */ mz Y;
 
-    public ry(kz kzVar) {
-        this.b = kzVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ry(mz mzVar) {
+        super(100, true);
+        this.Y = mzVar;
+        this.X = new kv0();
+        this.O = new lh.n5(this, 4);
     }
 
-    public final void a(String str, boolean z4) {
-        kz kzVar = this.b;
-        int i10 = kzVar.Z0;
-        String o10 = android.support.v4.media.a.o("gif_search_", str, "_");
-        if (z4 && kzVar.i0.containsKey(o10)) {
-            return;
+    @Override // f2.w0
+    public final int A() {
+        mz mzVar = this.Y;
+        f2.p0 adapter = mzVar.e0.getAdapter();
+        qy qyVar = mzVar.g0;
+        if (adapter == qyVar && qyVar.x.isEmpty()) {
+            return 0;
         }
-        String str2 = str;
-        org.telegram.ui.wd wdVar = new org.telegram.ui.wd(this, str2, z4, o10, 3);
-        ArrayList arrayList = this.a;
-        if (z4) {
-            arrayList.add(o10);
-            MessagesStorage.getInstance(i10).getBotCache(o10, wdVar);
-            return;
-        }
-        MessagesController messagesController = MessagesController.getInstance(i10);
-        TLObject userOrChat = messagesController.getUserOrChat(messagesController.gifSearchBot);
-        if (userOrChat instanceof TLRPC.User) {
-            arrayList.add(o10);
-            TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
-            if (str2 == null) {
-                str2 = "";
+        return B() - 1;
+    }
+
+    @Override // org.telegram.ui.Components.pz
+    public final kv0 D1(int i10) {
+        ArrayList<TLRPC.DocumentAttribute> arrayList;
+        TLRPC.Document document;
+        mz mzVar = this.Y;
+        qy qyVar = mzVar.g0;
+        f2.p0 adapter = mzVar.e0.getAdapter();
+        qy qyVar2 = mzVar.k0;
+        TLRPC.Document document2 = null;
+        r4 = null;
+        ArrayList<TLRPC.DocumentAttribute> arrayList2 = null;
+        if (adapter != qyVar2) {
+            if (qyVar.x.isEmpty()) {
+                arrayList = null;
+                return F1(document2, arrayList);
             }
-            tL_messages_getInlineBotResults.query = str2;
-            tL_messages_getInlineBotResults.bot = messagesController.getInputUser((TLRPC.User) userOrChat);
-            tL_messages_getInlineBotResults.offset = "";
-            tL_messages_getInlineBotResults.peer = new TLRPC.TL_inputPeerEmpty();
-            ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getInlineBotResults, wdVar, 2);
+            TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) qyVar.x.get(i10);
+            document = botInlineResult.document;
+            if (document != null) {
+                arrayList2 = document.attributes;
+            } else {
+                TLRPC.WebDocument webDocument = botInlineResult.content;
+                if (webDocument != null) {
+                    arrayList2 = webDocument.attributes;
+                } else {
+                    TLRPC.WebDocument webDocument2 = botInlineResult.thumb;
+                    if (webDocument2 != null) {
+                        arrayList2 = webDocument2.attributes;
+                    }
+                }
+            }
+            arrayList = arrayList2;
+            document2 = document;
+            return F1(document2, arrayList);
         }
+        int i11 = qyVar2.E;
+        if (i10 <= i11) {
+            if (i10 == i11) {
+                return null;
+            }
+            document2 = (TLRPC.Document) mzVar.f1.get(i10);
+            arrayList = document2.attributes;
+            return F1(document2, arrayList);
+        }
+        TLRPC.BotInlineResult botInlineResult2 = (TLRPC.BotInlineResult) qyVar2.x.get((i10 - i11) - 1);
+        document = botInlineResult2.document;
+        if (document != null) {
+            arrayList2 = document.attributes;
+        } else {
+            TLRPC.WebDocument webDocument3 = botInlineResult2.content;
+            if (webDocument3 != null) {
+                arrayList2 = webDocument3.attributes;
+            } else {
+                TLRPC.WebDocument webDocument4 = botInlineResult2.thumb;
+                if (webDocument4 != null) {
+                    arrayList2 = webDocument4.attributes;
+                }
+            }
+        }
+        arrayList = arrayList2;
+        document2 = document;
+        return F1(document2, arrayList);
+    }
+
+    public final kv0 F1(TLRPC.Document document, List list) {
+        TLRPC.PhotoSize closestPhotoSizeWithSize;
+        int i10;
+        int i11;
+        kv0 kv0Var = this.X;
+        kv0Var.b = 100.0f;
+        kv0Var.a = 100.0f;
+        if (document != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90)) != null && (i10 = closestPhotoSizeWithSize.w) != 0 && (i11 = closestPhotoSizeWithSize.h) != 0) {
+            kv0Var.a = i10;
+            kv0Var.b = i11;
+        }
+        if (list != null) {
+            for (int i12 = 0; i12 < list.size(); i12++) {
+                TLRPC.DocumentAttribute documentAttribute = (TLRPC.DocumentAttribute) list.get(i12);
+                if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
+                    kv0Var.a = documentAttribute.w;
+                    kv0Var.b = documentAttribute.h;
+                    break;
+                }
+            }
+        }
+        return kv0Var;
     }
 }

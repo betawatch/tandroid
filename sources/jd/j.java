@@ -1,8 +1,6 @@
 package jd;
 
-import kh.a2;
-
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class j extends i {
     public static boolean b(String str, String str2) {
@@ -103,7 +101,7 @@ public abstract class j extends i {
         CharSequence charSequence;
         kotlin.jvm.internal.j.e(str, "<this>");
         if (i10 < 0) {
-            throw new IllegalArgumentException(a2.k(i10, "Desired length ", " is less than zero."));
+            throw new IllegalArgumentException(l.d.k(i10, "Desired length ", " is less than zero."));
         }
         if (i10 <= str.length()) {
             charSequence = str.subSequence(0, str.length());

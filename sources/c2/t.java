@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.os.RemoteException;
 import android.util.Log;
 import j$.util.Objects;
-import j7.d7;
+import j7.e7;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class t {
     public final Context a;
@@ -91,8 +91,8 @@ public abstract class t {
             }
             try {
                 j();
-            } catch (RemoteException e) {
-                Log.e((String) this.e, "Could not finalize native handle", e);
+            } catch (RemoteException e6) {
+                Log.e((String) this.e, "Could not finalize native handle", e6);
             }
         }
     }
@@ -113,8 +113,8 @@ public abstract class t {
                 }
                 try {
                     eVar = m6.e.c(this.a, m6.e.b, str);
-                } catch (m6.b e) {
-                    d7.a(e, "Error loading optional module %s", str);
+                } catch (m6.b e6) {
+                    e7.a(e6, "Error loading optional module %s", str);
                     if (!this.b) {
                         String str2 = (String) this.h;
                         if (Log.isLoggable("Vision", 3)) {
@@ -134,8 +134,8 @@ public abstract class t {
             if (eVar != null) {
                 try {
                     this.n = i(eVar, this.a);
-                } catch (RemoteException | m6.b e6) {
-                    Log.e((String) this.e, "Error creating remote native handle", e6);
+                } catch (RemoteException | m6.b e10) {
+                    Log.e((String) this.e, "Error creating remote native handle", e10);
                 }
             }
             boolean z4 = this.c;
@@ -149,15 +149,15 @@ public abstract class t {
         }
     }
 
-    public t(Context context, o5.i iVar) {
+    public t(Context context, y5.h hVar) {
         this.e = new androidx.mediarouter.app.d(this, 4);
         if (context != null) {
             this.a = context;
-            if (iVar == null) {
-                this.d = new o5.i(new ComponentName(context, getClass()), 7);
+            if (hVar == null) {
+                this.d = new y5.h(new ComponentName(context, getClass()), 7);
                 return;
             } else {
-                this.d = iVar;
+                this.d = hVar;
                 return;
             }
         }

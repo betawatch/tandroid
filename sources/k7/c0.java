@@ -1,32 +1,13 @@
 package k7;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Set;
-
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public abstract class c0 {
-    public static boolean a(l7.d0 d0Var, Collection collection) {
-        collection.getClass();
-        if (collection instanceof n7.l) {
-            collection = ((n7.l) collection).zza();
-        }
-        boolean z4 = false;
-        if (!(collection instanceof Set) || collection.size() <= d0Var.size()) {
-            Iterator it = collection.iterator();
-            while (it.hasNext()) {
-                z4 |= d0Var.remove(it.next());
-            }
-            return z4;
-        }
-        Iterator<E> it2 = d0Var.iterator();
-        while (it2.hasNext()) {
-            if (collection.contains(it2.next())) {
-                it2.remove();
-                z4 = true;
+    public static void a(int i10, Object[] objArr) {
+        for (int i11 = 0; i11 < i10; i11++) {
+            if (objArr[i11] == null) {
+                throw new NullPointerException(l.d.j(i11, "at index "));
             }
         }
-        return z4;
     }
 }

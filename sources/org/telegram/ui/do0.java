@@ -2,160 +2,90 @@ package org.telegram.ui;
 
 import android.text.Editable;
 import android.text.TextWatcher;
+import java.util.HashMap;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
 public final class do0 implements TextWatcher {
-    public final String[] a = {"34", "37"};
-    public final String[] b = {"300", "301", "302", "303", "304", "305", "309", "36", "38", "39"};
-    public final String[] c = {"2221", "2222", "2223", "2224", "2225", "2226", "2227", "2228", "2229", "2200", "2201", "2202", "2203", "2204", "8600", "9860", "223", "224", "225", "226", "227", "228", "229", "23", "24", "25", "26", "270", "271", "2720", "50", "51", "52", "53", "54", "55", "4", "60", "62", "64", "65", "35"};
-    public int d = -1;
-    public int e;
-    public final /* synthetic */ jo0 f;
+    public final /* synthetic */ lo0 a;
 
-    public do0(jo0 jo0Var) {
-        this.f = jo0Var;
+    public do0(lo0 lo0Var) {
+        this.a = lo0Var;
     }
 
     @Override // android.text.TextWatcher
     public final void afterTextChanged(Editable editable) {
-        char c3;
-        boolean z4;
-        int i10;
-        int i11;
-        String[] strArr;
-        int i12;
         String str;
-        jo0 jo0Var = this.f;
-        if (jo0Var.l0) {
+        boolean z4;
+        String str2;
+        lo0 lo0Var = this.a;
+        HashMap hashMap = lo0Var.c;
+        if (lo0Var.j0) {
             return;
         }
-        EditTextBoldCursor editTextBoldCursor = jo0Var.f[0];
-        int selectionStart = editTextBoldCursor.getSelectionStart();
-        String obj = editTextBoldCursor.getText().toString();
-        int i13 = 3;
-        int i14 = 1;
-        if (this.d == 3) {
-            obj = obj.substring(0, this.e) + obj.substring(this.e + 1);
-            selectionStart--;
-        }
-        StringBuilder sb = new StringBuilder(obj.length());
-        int i15 = 0;
-        while (i15 < obj.length()) {
-            int i16 = i15 + 1;
-            String substring = obj.substring(i15, i16);
-            if ("0123456789".contains(substring)) {
-                sb.append(substring);
-            }
-            i15 = i16;
-        }
-        jo0Var.l0 = true;
-        String str2 = null;
-        int i17 = 100;
-        if (sb.length() > 0) {
-            String sb2 = sb.toString();
-            int i18 = 0;
-            while (true) {
-                if (i18 >= i13) {
-                    c3 = 1;
-                    break;
-                }
-                if (i18 == 0) {
-                    strArr = this.c;
-                    i12 = 16;
-                    str = "xxxx xxxx xxxx xxxx";
-                } else if (i18 != i14) {
-                    strArr = this.b;
-                    i12 = 14;
-                    str = "xxxx xxxx xxxx xx";
-                } else {
-                    strArr = this.a;
-                    i12 = 15;
-                    str = "xxxx xxxx xxxx xxx";
-                }
-                c3 = 1;
-                for (String str3 : strArr) {
-                    if (sb2.length() <= str3.length()) {
-                        if (str3.startsWith(sb2)) {
-                            i17 = i12;
-                            str2 = str;
-                            break;
-                        }
-                    } else {
-                        if (sb2.startsWith(str3)) {
-                            i17 = i12;
-                            str2 = str;
-                            break;
-                        }
-                    }
-                }
-                if (str2 != null) {
-                    break;
-                }
-                i18++;
-                i13 = 3;
-                i14 = 1;
-            }
-            if (sb.length() > i17) {
-                sb.setLength(i17);
-            }
+        lo0Var.j0 = true;
+        String d = se.b.d(lo0Var.f[8].getText().toString(), false);
+        lo0Var.f[8].setText(d);
+        org.telegram.ui.Components.j40 j40Var = (org.telegram.ui.Components.j40) lo0Var.f[9];
+        if (d.length() == 0) {
+            j40Var.setHintText((String) null);
+            j40Var.setHint(LocaleController.getString(R.string.PaymentShippingPhoneNumber));
         } else {
-            c3 = 1;
-        }
-        if (str2 != null) {
-            if (sb.length() == i17) {
-                jo0Var.f[c3].requestFocus();
-            }
-            editTextBoldCursor.setTextColor(jo0Var.getThemedColor(org.telegram.ui.ActionBar.j6.G6));
-            int i19 = 0;
-            while (true) {
-                if (i19 >= sb.length()) {
-                    break;
-                }
-                if (i19 < str2.length()) {
-                    if (str2.charAt(i19) == ' ') {
-                        sb.insert(i19, ' ');
-                        i19++;
-                        if (selectionStart == i19 && (i11 = this.d) != 2 && i11 != 3) {
-                            selectionStart++;
-                        }
+            int i10 = 4;
+            if (d.length() > 4) {
+                while (true) {
+                    if (i10 < 1) {
+                        str = null;
+                        z4 = false;
+                        break;
                     }
-                    i19++;
-                } else {
-                    sb.insert(i19, ' ');
-                    if (selectionStart == i19 + 1 && (i10 = this.d) != 2 && i10 != 3) {
-                        selectionStart++;
+                    String substring = d.substring(0, i10);
+                    if (((String) hashMap.get(substring)) != null) {
+                        String str3 = d.substring(i10) + lo0Var.f[9].getText().toString();
+                        lo0Var.f[8].setText(substring);
+                        str = str3;
+                        d = substring;
+                        z4 = true;
+                        break;
                     }
+                    i10--;
                 }
+                if (!z4) {
+                    str = d.substring(1) + lo0Var.f[9].getText().toString();
+                    EditTextBoldCursor editTextBoldCursor = lo0Var.f[8];
+                    d = d.substring(0, 1);
+                    editTextBoldCursor.setText(d);
+                }
+            } else {
+                str = null;
+                z4 = false;
+            }
+            String str4 = (String) hashMap.get(d);
+            if (str4 == null || lo0Var.a.indexOf(str4) == -1 || (str2 = (String) lo0Var.d.get(d)) == null) {
+                j40Var.setHintText((String) null);
+                j40Var.setHint(LocaleController.getString(R.string.PaymentShippingPhoneNumber));
+            } else {
+                j40Var.setHintText(str2.replace('X', (char) 8211));
+                j40Var.setHint((CharSequence) null);
+            }
+            if (!z4) {
+                EditTextBoldCursor editTextBoldCursor2 = lo0Var.f[8];
+                editTextBoldCursor2.setSelection(editTextBoldCursor2.getText().length());
+            }
+            if (str != null) {
+                j40Var.requestFocus();
+                j40Var.setText(str);
+                j40Var.setSelection(j40Var.length());
             }
         }
-        if (sb.toString().equals(editable.toString())) {
-            z4 = false;
-        } else {
-            z4 = false;
-            editable.replace(0, editable.length(), sb);
-        }
-        if (selectionStart >= 0) {
-            editTextBoldCursor.setSelection(Math.min(selectionStart, editTextBoldCursor.length()));
-        }
-        jo0Var.l0 = z4;
+        lo0Var.j0 = false;
     }
 
     @Override // android.text.TextWatcher
     public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        if (i11 == 0 && i12 == 1) {
-            this.d = 1;
-            return;
-        }
-        if (i11 != 1 || i12 != 0) {
-            this.d = -1;
-        } else if (charSequence.charAt(i10) != ' ' || i10 <= 0) {
-            this.d = 2;
-        } else {
-            this.d = 3;
-            this.e = i10 - 1;
-        }
     }
 
     @Override // android.text.TextWatcher

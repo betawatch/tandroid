@@ -10,7 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes.dex */
 public class GoogleApiActivity extends Activity implements DialogInterface.OnCancelListener {
     public static final /* synthetic */ int b = 0;
@@ -75,17 +75,17 @@ public class GoogleApiActivity extends Activity implements DialogInterface.OnCan
             }
             try {
                 googleApiActivity = this;
-            } catch (ActivityNotFoundException e) {
-                e = e;
-                googleApiActivity = this;
-            } catch (IntentSender.SendIntentException e6) {
+            } catch (ActivityNotFoundException e6) {
                 e = e6;
+                googleApiActivity = this;
+            } catch (IntentSender.SendIntentException e10) {
+                e = e10;
             }
             try {
                 googleApiActivity.startIntentSenderForResult(pendingIntent.getIntentSender(), 1, null, 0, 0, 0);
                 googleApiActivity.a = 1;
-            } catch (ActivityNotFoundException e10) {
-                e = e10;
+            } catch (ActivityNotFoundException e11) {
+                e = e11;
                 if (extras.getBoolean("notify_manager", true)) {
                     com.google.android.gms.common.api.internal.h.g(this).h(new y5.a(22, null), getIntent().getIntExtra("failing_client_id", -1));
                 } else {
@@ -97,8 +97,8 @@ public class GoogleApiActivity extends Activity implements DialogInterface.OnCan
                 }
                 googleApiActivity.a = 1;
                 finish();
-            } catch (IntentSender.SendIntentException e11) {
-                e = e11;
+            } catch (IntentSender.SendIntentException e12) {
+                e = e12;
                 Log.e("GoogleApiActivity", "Failed to launch pendingIntent", e);
                 finish();
             }

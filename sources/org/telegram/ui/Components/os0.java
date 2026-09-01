@@ -1,22 +1,20 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.content.Context;
 
-/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
 /* loaded from: classes3.dex */
-public final class os0 implements View.OnLayoutChangeListener {
-    public final /* synthetic */ yu0 a;
+public final class os0 extends lu0 {
+    public final /* synthetic */ zu0 q0;
 
-    public os0(yu0 yu0Var) {
-        this.a = yu0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public os0(zu0 zu0Var, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(zu0Var, context, g6Var);
+        this.q0 = zu0Var;
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
-        yu0 yu0Var = this.a;
-        if (yu0Var.k0 == null) {
-            return;
-        }
-        yu0Var.k0.setTranslationX(((View) r2.getParent()).getMeasuredWidth() - yu0Var.k0.getRight());
+    @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip
+    public final int f(int i10) {
+        return this.q0.V0(i10);
     }
 }
