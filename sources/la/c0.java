@@ -3,13 +3,13 @@ package la;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.os.Build;
-import org.telegram.ui.Components.ai;
+import org.telegram.ui.Components.tp0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class c0 {
     public static final c0 a = new c0();
-    public static final ai b;
+    public static final tp0 b;
 
     static {
         w9.d dVar = new w9.d();
@@ -20,7 +20,7 @@ public final class c0 {
         dVar.b(a.class, c.a);
         dVar.b(p.class, f.a);
         dVar.d = true;
-        b = new ai(dVar, 19);
+        b = new tp0(dVar, 23);
     }
 
     public static b a(w8.g gVar) {

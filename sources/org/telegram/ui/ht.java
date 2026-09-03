@@ -1,62 +1,26 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class ht implements View.OnClickListener {
-    public final /* synthetic */ ArrayList a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ mt c;
+public final class ht extends org.telegram.ui.ActionBar.p1 {
+    public final /* synthetic */ nt o;
 
-    public ht(mt mtVar, ArrayList arrayList, boolean z4) {
-        this.c = mtVar;
-        this.a = arrayList;
-        this.b = z4;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ht(nt ntVar, ViewGroup viewGroup) {
+        super(viewGroup, -2, -2);
+        this.o = ntVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        qt qtVar = this.c.a;
-        if (qtVar.w == null) {
-            return;
+    @Override // org.telegram.ui.ActionBar.p1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        rt rtVar = this.o.a;
+        rtVar.k = null;
+        rtVar.K = false;
+        if (rtVar.R) {
+            rtVar.n();
         }
-        int intValue = ((Integer) view.getTag()).intValue();
-        ArrayList arrayList = this.a;
-        if (((Integer) arrayList.get(intValue)).intValue() == 0 || ((Integer) arrayList.get(intValue)).intValue() == 6) {
-            ot otVar = qtVar.l;
-            if (otVar != null) {
-                otVar.l(qtVar.W, qtVar.Y, qtVar.b0, ((Integer) arrayList.get(intValue)).intValue() == 0, 0, 0);
-            }
-        } else if (((Integer) arrayList.get(intValue)).intValue() == 1) {
-            ot otVar2 = qtVar.l;
-            if (otVar2 != null) {
-                otVar2.M(qtVar.a0, qtVar.i);
-            }
-        } else if (((Integer) arrayList.get(intValue)).intValue() == 2) {
-            MediaDataController.getInstance(qtVar.r).addRecentSticker(2, qtVar.b0, qtVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
-        } else if (((Integer) arrayList.get(intValue)).intValue() == 3) {
-            TLRPC.Document document = qtVar.W;
-            Object obj = qtVar.b0;
-            String str = qtVar.Y;
-            ot otVar3 = qtVar.l;
-            if (otVar3 == null) {
-                return;
-            } else {
-                org.telegram.ui.Components.z4.L(qtVar.w, otVar3.a(), new a1.d(otVar3, document, str, obj, 11));
-            }
-        } else if (((Integer) arrayList.get(intValue)).intValue() == 4) {
-            MediaDataController.getInstance(qtVar.r).addRecentSticker(0, qtVar.b0, qtVar.W, (int) (System.currentTimeMillis() / 1000), true);
-        } else if (((Integer) arrayList.get(intValue)).intValue() == 5) {
-            qtVar.l.i(qtVar.X);
-        } else if (((Integer) arrayList.get(intValue)).intValue() == 7) {
-            qtVar.l.n(qtVar.W);
-        } else if (((Integer) arrayList.get(intValue)).intValue() == 8) {
-            qtVar.l.E(qtVar.W);
-        }
-        qtVar.p();
     }
 }

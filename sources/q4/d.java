@@ -7,7 +7,7 @@ import org.telegram.ui.Components.jb;
 import r3.s;
 import r3.v;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class d implements r3.m {
     public static final jb s = new jb();
@@ -55,11 +55,11 @@ public final class d implements r3.m {
                 cVar.e = cVar.c;
             } else {
                 cVar.f = j11;
-                v j12 = qaVar.j1(cVar.a);
-                cVar.e = j12;
+                v M0 = qaVar.M0(cVar.a);
+                cVar.e = M0;
                 n0 n0Var = cVar.d;
                 if (n0Var != null) {
-                    j12.b(n0Var);
+                    M0.b(n0Var);
                 }
             }
             i10++;
@@ -67,19 +67,7 @@ public final class d implements r3.m {
     }
 
     @Override // r3.m
-    public final void i1() {
-        SparseArray sparseArray = this.d;
-        n0[] n0VarArr = new n0[sparseArray.size()];
-        for (int i10 = 0; i10 < sparseArray.size(); i10++) {
-            n0 n0Var = ((c) sparseArray.valueAt(i10)).d;
-            h5.a.j(n0Var);
-            n0VarArr[i10] = n0Var;
-        }
-        this.r = n0VarArr;
-    }
-
-    @Override // r3.m
-    public final v i2(int i10, int i11) {
+    public final v d2(int i10, int i11) {
         SparseArray sparseArray = this.d;
         c cVar = (c) sparseArray.get(i10);
         if (cVar == null) {
@@ -91,11 +79,11 @@ public final class d implements r3.m {
                 cVar.e = cVar.c;
             } else {
                 cVar.f = j10;
-                v j12 = qaVar.j1(i11);
-                cVar.e = j12;
+                v M0 = qaVar.M0(i11);
+                cVar.e = M0;
                 n0 n0Var = cVar.d;
                 if (n0Var != null) {
-                    j12.b(n0Var);
+                    M0.b(n0Var);
                 }
             }
             sparseArray.put(i10, cVar);
@@ -104,7 +92,19 @@ public final class d implements r3.m {
     }
 
     @Override // r3.m
-    public final void m2(s sVar) {
+    public final void h2(s sVar) {
         this.n = sVar;
+    }
+
+    @Override // r3.m
+    public final void j1() {
+        SparseArray sparseArray = this.d;
+        n0[] n0VarArr = new n0[sparseArray.size()];
+        for (int i10 = 0; i10 < sparseArray.size(); i10++) {
+            n0 n0Var = ((c) sparseArray.valueAt(i10)).d;
+            h5.a.j(n0Var);
+            n0VarArr[i10] = n0Var;
+        }
+        this.r = n0VarArr;
     }
 }

@@ -1,13 +1,51 @@
 package o3;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
-/* loaded from: classes.dex */
-public final class t {
-    public final byte[] a;
-    public final String b;
+import java.util.UUID;
 
-    public t(String str, byte[] bArr) {
-        this.a = bArr;
-        this.b = str;
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* loaded from: classes.dex */
+public final class t implements j {
+    public final i a;
+
+    public t(i iVar) {
+        this.a = iVar;
+    }
+
+    @Override // o3.j
+    public final UUID a() {
+        return j3.h.a;
+    }
+
+    @Override // o3.j
+    public final boolean b() {
+        return false;
+    }
+
+    @Override // o3.j
+    public final int e() {
+        return 1;
+    }
+
+    @Override // o3.j
+    public final boolean f(String str) {
+        return false;
+    }
+
+    @Override // o3.j
+    public final i g() {
+        return this.a;
+    }
+
+    @Override // o3.j
+    public final n3.b h() {
+        return null;
+    }
+
+    @Override // o3.j
+    public final void c(m mVar) {
+    }
+
+    @Override // o3.j
+    public final void d(m mVar) {
     }
 }

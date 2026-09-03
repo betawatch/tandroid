@@ -1,71 +1,84 @@
 package lh;
 
-import android.content.Context;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.sa;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatMessagesMetadataController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.yh0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class u implements View.OnClickListener {
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class u implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Context c;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
 
-    public /* synthetic */ u(Context context, g6 g6Var, long j10, TL_stars.StarGift starGift, ArrayList arrayList) {
-        this.a = 2;
-        this.c = context;
-        this.d = g6Var;
-        this.b = j10;
-        this.f = starGift;
-        this.e = arrayList;
+    public /* synthetic */ u(int i10, ph.d dVar, org.telegram.ui.ActionBar.g3 g3Var, long j10) {
+        this.a = 6;
+        this.b = i10;
+        this.d = dVar;
+        this.e = g3Var;
+        this.c = j10;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                f0.Q((f0) this.f, this.b, this.c, (g6) this.d, (Runnable) this.e);
+                AndroidUtilities.runOnUIThread(new kh.x((b0) this.d, (a0) this.e, this.b, tLObject, this.c, 1));
                 break;
             case 1:
-                m0 m0Var = (m0) this.f;
-                g6 g6Var = (g6) this.d;
-                Runnable runnable = (Runnable) this.e;
-                m0Var.getClass();
-                s sVar = new s(this.c, g6Var, new r(this.b, true, null), m0Var.a0);
-                sVar.show();
-                sVar.k0 = runnable;
-                m0Var.dismiss();
+                AndroidUtilities.runOnUIThread(new y8((ph.d) this.d, (org.telegram.ui.ActionBar.g3[]) this.e, this.b, this.c, 0));
                 break;
             case 2:
-                new m0(this.c, (g6) this.d, this.b, (TL_stars.StarGift) this.f, (ArrayList) this.e, null, true).show();
+                AndroidUtilities.runOnUIThread(new kh.x((nh.t6) this.d, tLObject, this.b, (String) this.e, this.c, 3));
+                break;
+            case 3:
+                ((ChatMessagesMetadataController) this.d).lambda$loadStoriesForMessages$2(this.b, (MessageObject) this.e, this.c, tLObject, tL_error);
+                break;
+            case 4:
+                ((MediaDataController) this.d).lambda$loadStickers$101(this.b, (Utilities.Callback) this.e, this.c, tLObject, tL_error);
+                break;
+            case 5:
+                ((MessagesController) this.d).lambda$checkPromoInfoInternal$167(this.b, (TLRPC.TL_help_promoData) this.e, this.c, tLObject, tL_error);
+                break;
+            case 6:
+                AndroidUtilities.runOnUIThread(new u6(tLObject, this.b, (ph.d) this.d, (org.telegram.ui.ActionBar.g3) this.e, this.c, tL_error));
                 break;
             default:
-                e6.S((e6) this.f, this.b, this.c, (Runnable) this.e, (TL_stars.StarGift) this.d);
+                AndroidUtilities.runOnUIThread(new u6((yh0) this.d, tL_error, tLObject, this.c, this.b, (TLRPC.Chat) this.e));
                 break;
         }
     }
 
-    public /* synthetic */ u(e6 e6Var, long j10, Context context, Runnable runnable, TL_stars.StarGift starGift) {
-        this.a = 3;
-        this.f = e6Var;
-        this.b = j10;
-        this.c = context;
-        this.e = runnable;
-        this.d = starGift;
+    public /* synthetic */ u(Object obj, int i10, Object obj2, long j10, int i11) {
+        this.a = i11;
+        this.d = obj;
+        this.b = i10;
+        this.e = obj2;
+        this.c = j10;
     }
 
-    public /* synthetic */ u(sa saVar, long j10, Context context, g6 g6Var, Runnable runnable, int i10) {
-        this.a = i10;
-        this.f = saVar;
-        this.b = j10;
-        this.c = context;
-        this.d = g6Var;
-        this.e = runnable;
+    public /* synthetic */ u(Object obj, Object obj2, int i10, long j10, int i11) {
+        this.a = i11;
+        this.d = obj;
+        this.e = obj2;
+        this.b = i10;
+        this.c = j10;
+    }
+
+    public /* synthetic */ u(yh0 yh0Var, long j10, int i10, TLRPC.Chat chat) {
+        this.a = 7;
+        this.d = yh0Var;
+        this.c = j10;
+        this.b = i10;
+        this.e = chat;
     }
 }

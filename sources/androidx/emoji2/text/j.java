@@ -5,11 +5,11 @@ import android.view.ViewGroup;
 import com.google.android.gms.common.api.internal.p0;
 import java.util.ArrayList;
 import java.util.List;
-import k7.k6;
+import k7.j6;
 import org.telegram.ui.Cells.a0;
-import org.telegram.ui.Cells.l7;
+import org.telegram.ui.Cells.k7;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class j implements Runnable {
     public final /* synthetic */ int a;
@@ -61,19 +61,19 @@ public final class j implements Runnable {
                 }
                 break;
             case 3:
-                l7 l7Var = (l7) this.c;
-                if (l7Var.a && l7Var.getParent() != null && this.b == l7Var.c) {
-                    l7Var.a = false;
+                k7 k7Var = (k7) this.c;
+                if (k7Var.a && k7Var.getParent() != null && this.b == k7Var.c) {
+                    k7Var.a = false;
                     try {
-                        l7Var.performHapticFeedback(0);
+                        k7Var.performHapticFeedback(0);
                     } catch (Exception unused2) {
                     }
-                    int i11 = l7Var.h;
+                    int i11 = k7Var.h;
                     if (i11 >= 0) {
-                        l7Var.x.a(((CharSequence) l7Var.B.get(i11)).toString(), true);
+                        k7Var.x.a(((CharSequence) k7Var.B.get(i11)).toString(), true);
                     }
                     MotionEvent obtain2 = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
-                    l7Var.onTouchEvent(obtain2);
+                    k7Var.onTouchEvent(obtain2);
                     obtain2.recycle();
                     break;
                 }
@@ -92,7 +92,7 @@ public final class j implements Runnable {
 
     public j(List list, int i10, Throwable th2) {
         this.a = 0;
-        k6.a(list, "initCallbacks cannot be null");
+        j6.a(list, "initCallbacks cannot be null");
         this.c = new ArrayList(list);
         this.b = i10;
     }

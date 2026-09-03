@@ -18,7 +18,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class b {
     public static final ReentrantLock c = new ReentrantLock();
@@ -145,11 +145,11 @@ public final class b {
                     jSONObject2.put("hostedDomain", str9);
                 }
                 e(f11, jSONObject2.toString());
-            } catch (JSONException e6) {
-                throw new RuntimeException(e6);
+            } catch (JSONException e) {
+                throw new RuntimeException(e);
             }
-        } catch (JSONException e10) {
-            throw new RuntimeException(e10);
+        } catch (JSONException e6) {
+            throw new RuntimeException(e6);
         }
     }
 

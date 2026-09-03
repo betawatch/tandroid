@@ -6,12 +6,12 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class vw0 extends CacheFetcher {
     @Override // org.telegram.messenger.CacheFetcher
     public final void getLocal(int i10, Object obj, Utilities.Callback2 callback2) {
-        MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new gy(i10, (Integer) obj, callback2, 17));
+        MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new ey(i10, (Integer) obj, callback2, 17));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -41,6 +41,6 @@ public final class vw0 extends CacheFetcher {
 
     @Override // org.telegram.messenger.CacheFetcher
     public final void setLocal(int i10, Object obj, Object obj2, long j10) {
-        MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new gy(i10, (TLRPC.TL_messages_emojiGroups) obj2, (Integer) obj, 16));
+        MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new ey(i10, (TLRPC.TL_messages_emojiGroups) obj2, (Integer) obj, 16));
     }
 }

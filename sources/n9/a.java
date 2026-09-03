@@ -2,7 +2,7 @@ package n9;
 
 import android.util.Log;
 import e3.g;
-import e5.f;
+import e5.e;
 import i9.i;
 import i9.k;
 import java.io.ByteArrayOutputStream;
@@ -22,13 +22,13 @@ import java.util.TreeSet;
 import java.util.concurrent.atomic.AtomicInteger;
 import k9.a2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class a {
     public static final Charset e = Charset.forName("UTF-8");
     public static final int f = 15;
     public static final l9.a g = new l9.a();
-    public static final f h = new f(21);
+    public static final e h = new e(23);
     public static final i i = new i(2);
     public final AtomicInteger a = new AtomicInteger(0);
     public final b b;
@@ -92,10 +92,10 @@ public final class a {
         b bVar = this.b;
         arrayList.addAll(b.e(bVar.e.listFiles()));
         arrayList.addAll(b.e(bVar.f.listFiles()));
-        f fVar = h;
-        Collections.sort(arrayList, fVar);
+        e eVar = h;
+        Collections.sort(arrayList, eVar);
         List e6 = b.e(bVar.d.listFiles());
-        Collections.sort(e6, fVar);
+        Collections.sort(e6, eVar);
         arrayList.addAll(e6);
         return arrayList;
     }
@@ -109,7 +109,7 @@ public final class a {
         int i10 = this.c.d().a.a;
         g.getClass();
         try {
-            f(bVar.b(str, android.support.v4.media.a.o("event", String.format(Locale.US, "%010d", Integer.valueOf(this.a.getAndIncrement())), z4 ? "_" : "")), l9.a.a.d(a2Var));
+            f(bVar.b(str, android.support.v4.media.a.o("event", String.format(Locale.US, "%010d", Integer.valueOf(this.a.getAndIncrement())), z4 ? "_" : "")), l9.a.a.l(a2Var));
         } catch (IOException e6) {
             Log.w("FirebaseCrashlytics", "Could not persist event for session " + str, e6);
         }
@@ -118,7 +118,7 @@ public final class a {
         File file = new File(bVar.c, str);
         file.mkdirs();
         List<File> e10 = b.e(file.listFiles(iVar));
-        Collections.sort(e10, new f(22));
+        Collections.sort(e10, new e(24));
         int size = e10.size();
         for (File file2 : e10) {
             if (size <= i10) {

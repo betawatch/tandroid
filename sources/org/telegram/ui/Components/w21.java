@@ -32,9 +32,9 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.oe1;
+import org.telegram.ui.ne1;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class w21 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, xd.b {
     public static final /* synthetic */ int c0 = 0;
@@ -44,11 +44,11 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
     public long E;
     public long F;
     public final xd.a G;
-    public qg.b H;
-    public qg.b I;
+    public pg.b H;
+    public pg.b I;
     public float J;
     public float K;
-    public org.telegram.ui.le L;
+    public org.telegram.ui.ne L;
     public boolean M;
     public boolean N;
     public float O;
@@ -65,10 +65,10 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
     public final int b;
     public final HashSet b0;
     public final long c;
-    public final org.telegram.ui.ActionBar.g6 d;
+    public final org.telegram.ui.ActionBar.f6 d;
     public final boolean e;
     public final boolean f;
-    public final org.telegram.ui.xn h;
+    public final org.telegram.ui.zn h;
     public final boolean n;
     public final FrameLayout r;
     public final k21 s;
@@ -79,18 +79,18 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
 
     /* JADX WARN: Type inference failed for: r3v9, types: [org.telegram.ui.Components.j21] */
     /* JADX WARN: Type inference failed for: r4v3, types: [org.telegram.ui.Components.j21] */
-    public w21(Activity activity, org.telegram.ui.xn xnVar, int i10, long j10, org.telegram.ui.ActionBar.g6 g6Var) {
+    public w21(Activity activity, org.telegram.ui.zn znVar, int i10, long j10, org.telegram.ui.ActionBar.f6 f6Var) {
         super(activity);
         ViewGroup viewGroup;
-        pr prVar = pr.h;
-        this.a = new xd.a(0, this, prVar, 380L, true);
-        this.G = new xd.a(0, new e21(this), prVar, 320L, false);
+        mr mrVar = mr.h;
+        this.a = new xd.a(0, this, mrVar, 380L, true);
+        this.G = new xd.a(0, new e21(this), mrVar, 320L, false);
         this.O = 0.0f;
         this.b0 = new HashSet();
-        this.h = xnVar;
+        this.h = znVar;
         this.b = i10;
         this.c = j10;
-        this.d = g6Var;
+        this.d = f6Var;
         long j11 = -j10;
         this.e = ChatObject.isMonoForum(MessagesController.getInstance(i10).getChat(Long.valueOf(j11)));
         boolean isBotForumWithEditableTopics = UserObject.isBotForumWithEditableTopics(MessagesController.getInstance(i10).getUser(Long.valueOf(j10)));
@@ -101,10 +101,10 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
         setWillNotDraw(false);
         FrameLayout frameLayout = new FrameLayout(activity);
         this.r = frameLayout;
-        addView(frameLayout, k7.c6.d(-1, 36.0f, 55, 7.0f, 7.0f, 7.0f, 7.0f));
+        addView(frameLayout, k7.b6.d(-1, 36.0f, 55, 7.0f, 7.0f, 7.0f, 7.0f));
         FrameLayout frameLayout2 = new FrameLayout(activity);
         this.C = frameLayout2;
-        addView(frameLayout2, k7.c6.d(64, -1.0f, 115, 7.0f, 7.0f, 7.0f, 7.0f));
+        addView(frameLayout2, k7.b6.d(64, -1.0f, 115, 7.0f, 7.0f, 7.0f, 7.0f));
         final int i11 = 0;
         k21 k21Var = new k21(this, activity, i10, new Utilities.Callback2(this) { // from class: org.telegram.ui.Components.j21
             public final /* synthetic */ w21 b;
@@ -143,7 +143,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                         ArrayList<TLRPC.TL_forumTopic> topics = topicsController2.getTopics(j18);
                         boolean z13 = w21Var.e;
                         int i15 = q21.a;
-                        h51 J = h51.J(q21.class);
+                        i51 J = i51.J(q21.class);
                         J.d = 0;
                         J.B = 0L;
                         J.G = null;
@@ -175,7 +175,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                                     boolean z15 = tL_forumTopic2.pinned;
                                     if (!z15 && z14) {
                                         if (!arrayList.isEmpty()) {
-                                            ((h51) l.d.i(1, arrayList)).y |= 8;
+                                            ((i51) kf.k0.i(1, arrayList)).y |= 8;
                                         }
                                         w51Var.L();
                                         z14 = false;
@@ -183,7 +183,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                                         w51Var.M();
                                         z14 = true;
                                     }
-                                    h51 J2 = h51.J(q21.class);
+                                    i51 J2 = i51.J(q21.class);
                                     J2.x = j17;
                                     J2.d = tL_forumTopic2.id;
                                     J2.G = tL_forumTopic2;
@@ -217,22 +217,22 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                             w51Var.L();
                         }
                         if (topics != null && !topics.isEmpty() && !topicsController2.endIsReached(j18) && w21Var.n) {
-                            h51 J3 = h51.J(q21.class);
+                            i51 J3 = i51.J(q21.class);
                             J3.d = -2;
                             J3.r = true;
                             arrayList.add(J3);
-                            h51 J4 = h51.J(q21.class);
+                            i51 J4 = i51.J(q21.class);
                             J4.d = -3;
                             J4.r = true;
                             arrayList.add(J4);
-                            h51 J5 = h51.J(q21.class);
+                            i51 J5 = i51.J(q21.class);
                             J5.d = -4;
                             J5.r = true;
                             arrayList.add(J5);
                         }
                         if (!z12 && !z13) {
                             if ((chat != null && ChatObject.canCreateTopic(chat)) || UserObject.isBotForumWithEditableTopics(user2)) {
-                                h51 J6 = h51.J(q21.class);
+                                i51 J6 = i51.J(q21.class);
                                 J6.d = -2;
                                 J6.B = -2L;
                                 J6.G = null;
@@ -262,7 +262,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                             topicsController = topicsController3;
                         } else {
                             int i20 = u21.a;
-                            h51 J7 = h51.J(u21.class);
+                            i51 J7 = i51.J(u21.class);
                             J7.d = 0;
                             topicsController = topicsController3;
                             J7.B = 0L;
@@ -306,7 +306,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                                         z11 = true;
                                     }
                                     int i23 = u21.a;
-                                    h51 J8 = h51.J(u21.class);
+                                    i51 J8 = i51.J(u21.class);
                                     J8.x = j20;
                                     J8.d = tL_forumTopic4.id;
                                     J8.G = tL_forumTopic4;
@@ -343,17 +343,17 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                         }
                         if (topics2 != null && !topics2.isEmpty() && !topicsController.endIsReached(j21) && w21Var.n) {
                             int i24 = u21.a;
-                            h51 J9 = h51.J(u21.class);
+                            i51 J9 = i51.J(u21.class);
                             J9.d = -2;
                             J9.r = true;
                             J9.e = false;
                             arrayList2.add(J9);
-                            h51 J10 = h51.J(u21.class);
+                            i51 J10 = i51.J(u21.class);
                             J10.d = -3;
                             J10.r = true;
                             J10.e = false;
                             arrayList2.add(J10);
-                            h51 J11 = h51.J(u21.class);
+                            i51 J11 = i51.J(u21.class);
                             J11.d = -4;
                             J11.r = true;
                             J11.e = false;
@@ -362,7 +362,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                         if (!z17 && !z16) {
                             if ((chat4 != null && ChatObject.canCreateTopic(chat4)) || UserObject.isBotForumWithEditableTopics(user4)) {
                                 int i25 = u21.a;
-                                h51 J12 = h51.J(u21.class);
+                                i51 J12 = i51.J(u21.class);
                                 J12.d = -2;
                                 J12.B = -2L;
                                 J12.G = null;
@@ -374,7 +374,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                         break;
                 }
             }
-        }, new e21(this), new e21(this), g6Var);
+        }, new e21(this), new e21(this), f6Var);
         this.s = k21Var;
         final int i12 = 1;
         k21Var.A1(new Utilities.Callback2(this) { // from class: org.telegram.ui.Components.j21
@@ -414,7 +414,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                         ArrayList<TLRPC.TL_forumTopic> topics = topicsController2.getTopics(j18);
                         boolean z13 = w21Var.e;
                         int i15 = q21.a;
-                        h51 J = h51.J(q21.class);
+                        i51 J = i51.J(q21.class);
                         J.d = 0;
                         J.B = 0L;
                         J.G = null;
@@ -446,7 +446,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                                     boolean z15 = tL_forumTopic2.pinned;
                                     if (!z15 && z14) {
                                         if (!arrayList.isEmpty()) {
-                                            ((h51) l.d.i(1, arrayList)).y |= 8;
+                                            ((i51) kf.k0.i(1, arrayList)).y |= 8;
                                         }
                                         w51Var.L();
                                         z14 = false;
@@ -454,7 +454,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                                         w51Var.M();
                                         z14 = true;
                                     }
-                                    h51 J2 = h51.J(q21.class);
+                                    i51 J2 = i51.J(q21.class);
                                     J2.x = j17;
                                     J2.d = tL_forumTopic2.id;
                                     J2.G = tL_forumTopic2;
@@ -488,22 +488,22 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                             w51Var.L();
                         }
                         if (topics != null && !topics.isEmpty() && !topicsController2.endIsReached(j18) && w21Var.n) {
-                            h51 J3 = h51.J(q21.class);
+                            i51 J3 = i51.J(q21.class);
                             J3.d = -2;
                             J3.r = true;
                             arrayList.add(J3);
-                            h51 J4 = h51.J(q21.class);
+                            i51 J4 = i51.J(q21.class);
                             J4.d = -3;
                             J4.r = true;
                             arrayList.add(J4);
-                            h51 J5 = h51.J(q21.class);
+                            i51 J5 = i51.J(q21.class);
                             J5.d = -4;
                             J5.r = true;
                             arrayList.add(J5);
                         }
                         if (!z12 && !z13) {
                             if ((chat != null && ChatObject.canCreateTopic(chat)) || UserObject.isBotForumWithEditableTopics(user2)) {
-                                h51 J6 = h51.J(q21.class);
+                                i51 J6 = i51.J(q21.class);
                                 J6.d = -2;
                                 J6.B = -2L;
                                 J6.G = null;
@@ -533,7 +533,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                             topicsController = topicsController3;
                         } else {
                             int i20 = u21.a;
-                            h51 J7 = h51.J(u21.class);
+                            i51 J7 = i51.J(u21.class);
                             J7.d = 0;
                             topicsController = topicsController3;
                             J7.B = 0L;
@@ -577,7 +577,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                                         z11 = true;
                                     }
                                     int i23 = u21.a;
-                                    h51 J8 = h51.J(u21.class);
+                                    i51 J8 = i51.J(u21.class);
                                     J8.x = j20;
                                     J8.d = tL_forumTopic4.id;
                                     J8.G = tL_forumTopic4;
@@ -614,17 +614,17 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                         }
                         if (topics2 != null && !topics2.isEmpty() && !topicsController.endIsReached(j21) && w21Var.n) {
                             int i24 = u21.a;
-                            h51 J9 = h51.J(u21.class);
+                            i51 J9 = i51.J(u21.class);
                             J9.d = -2;
                             J9.r = true;
                             J9.e = false;
                             arrayList2.add(J9);
-                            h51 J10 = h51.J(u21.class);
+                            i51 J10 = i51.J(u21.class);
                             J10.d = -3;
                             J10.r = true;
                             J10.e = false;
                             arrayList2.add(J10);
-                            h51 J11 = h51.J(u21.class);
+                            i51 J11 = i51.J(u21.class);
                             J11.d = -4;
                             J11.r = true;
                             J11.e = false;
@@ -633,7 +633,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                         if (!z17 && !z16) {
                             if ((chat4 != null && ChatObject.canCreateTopic(chat4)) || UserObject.isBotForumWithEditableTopics(user4)) {
                                 int i25 = u21.a;
-                                h51 J12 = h51.J(u21.class);
+                                i51 J12 = i51.J(u21.class);
                                 J12.d = -2;
                                 J12.B = -2L;
                                 J12.G = null;
@@ -649,13 +649,13 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
         k21Var.setWillNotDraw(false);
         k21Var.V2.r = false;
         k21Var.getContext();
-        org.telegram.ui.cr crVar = new org.telegram.ui.cr((ViewGroup) k21Var, 4);
-        k21Var.U2 = crVar;
-        k21Var.setLayoutManager(crVar);
-        frameLayout.addView(k21Var, k7.c6.d(-1, -1.0f, 119, 41.0f, 0.0f, 0.0f, 0.0f));
+        org.telegram.ui.dr drVar = new org.telegram.ui.dr((ViewGroup) k21Var, 4);
+        k21Var.U2 = drVar;
+        k21Var.setLayoutManager(drVar);
+        frameLayout.addView(k21Var, k7.b6.d(-1, -1.0f, 119, 41.0f, 0.0f, 0.0f, 0.0f));
         k21Var.j(new l21(this, 0));
         if (isBotForumWithEditableTopics) {
-            v21 v21Var = new v21(activity, i10, g6Var);
+            v21 v21Var = new v21(activity, i10, f6Var);
             this.v = v21Var;
             v21Var.c(true, false, this.S == 0);
             final int i13 = 2;
@@ -695,7 +695,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                 }
             });
             viewGroup = frameLayout2;
-            viewGroup.addView(v21Var, k7.c6.d(64, 42.0f, 51, 0.0f, 48.0f, 0.0f, 0.0f));
+            viewGroup.addView(v21Var, k7.b6.d(64, 42.0f, 51, 0.0f, 48.0f, 0.0f, 0.0f));
         } else {
             viewGroup = frameLayout2;
             this.v = null;
@@ -739,7 +739,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                         ArrayList<TLRPC.TL_forumTopic> topics = topicsController2.getTopics(j18);
                         boolean z13 = w21Var.e;
                         int i15 = q21.a;
-                        h51 J = h51.J(q21.class);
+                        i51 J = i51.J(q21.class);
                         J.d = 0;
                         J.B = 0L;
                         J.G = null;
@@ -771,7 +771,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                                     boolean z15 = tL_forumTopic2.pinned;
                                     if (!z15 && z14) {
                                         if (!arrayList.isEmpty()) {
-                                            ((h51) l.d.i(1, arrayList)).y |= 8;
+                                            ((i51) kf.k0.i(1, arrayList)).y |= 8;
                                         }
                                         w51Var.L();
                                         z14 = false;
@@ -779,7 +779,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                                         w51Var.M();
                                         z14 = true;
                                     }
-                                    h51 J2 = h51.J(q21.class);
+                                    i51 J2 = i51.J(q21.class);
                                     J2.x = j17;
                                     J2.d = tL_forumTopic2.id;
                                     J2.G = tL_forumTopic2;
@@ -813,22 +813,22 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                             w51Var.L();
                         }
                         if (topics != null && !topics.isEmpty() && !topicsController2.endIsReached(j18) && w21Var.n) {
-                            h51 J3 = h51.J(q21.class);
+                            i51 J3 = i51.J(q21.class);
                             J3.d = -2;
                             J3.r = true;
                             arrayList.add(J3);
-                            h51 J4 = h51.J(q21.class);
+                            i51 J4 = i51.J(q21.class);
                             J4.d = -3;
                             J4.r = true;
                             arrayList.add(J4);
-                            h51 J5 = h51.J(q21.class);
+                            i51 J5 = i51.J(q21.class);
                             J5.d = -4;
                             J5.r = true;
                             arrayList.add(J5);
                         }
                         if (!z12 && !z13) {
                             if ((chat != null && ChatObject.canCreateTopic(chat)) || UserObject.isBotForumWithEditableTopics(user2)) {
-                                h51 J6 = h51.J(q21.class);
+                                i51 J6 = i51.J(q21.class);
                                 J6.d = -2;
                                 J6.B = -2L;
                                 J6.G = null;
@@ -858,7 +858,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                             topicsController = topicsController3;
                         } else {
                             int i20 = u21.a;
-                            h51 J7 = h51.J(u21.class);
+                            i51 J7 = i51.J(u21.class);
                             J7.d = 0;
                             topicsController = topicsController3;
                             J7.B = 0L;
@@ -902,7 +902,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                                         z11 = true;
                                     }
                                     int i23 = u21.a;
-                                    h51 J8 = h51.J(u21.class);
+                                    i51 J8 = i51.J(u21.class);
                                     J8.x = j20;
                                     J8.d = tL_forumTopic4.id;
                                     J8.G = tL_forumTopic4;
@@ -939,17 +939,17 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                         }
                         if (topics2 != null && !topics2.isEmpty() && !topicsController.endIsReached(j21) && w21Var.n) {
                             int i24 = u21.a;
-                            h51 J9 = h51.J(u21.class);
+                            i51 J9 = i51.J(u21.class);
                             J9.d = -2;
                             J9.r = true;
                             J9.e = false;
                             arrayList2.add(J9);
-                            h51 J10 = h51.J(u21.class);
+                            i51 J10 = i51.J(u21.class);
                             J10.d = -3;
                             J10.r = true;
                             J10.e = false;
                             arrayList2.add(J10);
-                            h51 J11 = h51.J(u21.class);
+                            i51 J11 = i51.J(u21.class);
                             J11.d = -4;
                             J11.r = true;
                             J11.e = false;
@@ -958,7 +958,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                         if (!z17 && !z16) {
                             if ((chat4 != null && ChatObject.canCreateTopic(chat4)) || UserObject.isBotForumWithEditableTopics(user4)) {
                                 int i25 = u21.a;
-                                h51 J12 = h51.J(u21.class);
+                                i51 J12 = i51.J(u21.class);
                                 J12.d = -2;
                                 J12.B = -2L;
                                 J12.G = null;
@@ -970,7 +970,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                         break;
                 }
             }
-        }, new e21(this), new e21(this), g6Var);
+        }, new e21(this), new e21(this), f6Var);
         this.D = m21Var;
         final int i15 = 1;
         m21Var.A1(new Utilities.Callback2(this) { // from class: org.telegram.ui.Components.j21
@@ -1010,7 +1010,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                         ArrayList<TLRPC.TL_forumTopic> topics = topicsController2.getTopics(j18);
                         boolean z13 = w21Var.e;
                         int i152 = q21.a;
-                        h51 J = h51.J(q21.class);
+                        i51 J = i51.J(q21.class);
                         J.d = 0;
                         J.B = 0L;
                         J.G = null;
@@ -1042,7 +1042,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                                     boolean z15 = tL_forumTopic2.pinned;
                                     if (!z15 && z14) {
                                         if (!arrayList.isEmpty()) {
-                                            ((h51) l.d.i(1, arrayList)).y |= 8;
+                                            ((i51) kf.k0.i(1, arrayList)).y |= 8;
                                         }
                                         w51Var.L();
                                         z14 = false;
@@ -1050,7 +1050,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                                         w51Var.M();
                                         z14 = true;
                                     }
-                                    h51 J2 = h51.J(q21.class);
+                                    i51 J2 = i51.J(q21.class);
                                     J2.x = j17;
                                     J2.d = tL_forumTopic2.id;
                                     J2.G = tL_forumTopic2;
@@ -1084,22 +1084,22 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                             w51Var.L();
                         }
                         if (topics != null && !topics.isEmpty() && !topicsController2.endIsReached(j18) && w21Var.n) {
-                            h51 J3 = h51.J(q21.class);
+                            i51 J3 = i51.J(q21.class);
                             J3.d = -2;
                             J3.r = true;
                             arrayList.add(J3);
-                            h51 J4 = h51.J(q21.class);
+                            i51 J4 = i51.J(q21.class);
                             J4.d = -3;
                             J4.r = true;
                             arrayList.add(J4);
-                            h51 J5 = h51.J(q21.class);
+                            i51 J5 = i51.J(q21.class);
                             J5.d = -4;
                             J5.r = true;
                             arrayList.add(J5);
                         }
                         if (!z12 && !z13) {
                             if ((chat != null && ChatObject.canCreateTopic(chat)) || UserObject.isBotForumWithEditableTopics(user2)) {
-                                h51 J6 = h51.J(q21.class);
+                                i51 J6 = i51.J(q21.class);
                                 J6.d = -2;
                                 J6.B = -2L;
                                 J6.G = null;
@@ -1129,7 +1129,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                             topicsController = topicsController3;
                         } else {
                             int i20 = u21.a;
-                            h51 J7 = h51.J(u21.class);
+                            i51 J7 = i51.J(u21.class);
                             J7.d = 0;
                             topicsController = topicsController3;
                             J7.B = 0L;
@@ -1173,7 +1173,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                                         z11 = true;
                                     }
                                     int i23 = u21.a;
-                                    h51 J8 = h51.J(u21.class);
+                                    i51 J8 = i51.J(u21.class);
                                     J8.x = j20;
                                     J8.d = tL_forumTopic4.id;
                                     J8.G = tL_forumTopic4;
@@ -1210,17 +1210,17 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                         }
                         if (topics2 != null && !topics2.isEmpty() && !topicsController.endIsReached(j21) && w21Var.n) {
                             int i24 = u21.a;
-                            h51 J9 = h51.J(u21.class);
+                            i51 J9 = i51.J(u21.class);
                             J9.d = -2;
                             J9.r = true;
                             J9.e = false;
                             arrayList2.add(J9);
-                            h51 J10 = h51.J(u21.class);
+                            i51 J10 = i51.J(u21.class);
                             J10.d = -3;
                             J10.r = true;
                             J10.e = false;
                             arrayList2.add(J10);
-                            h51 J11 = h51.J(u21.class);
+                            i51 J11 = i51.J(u21.class);
                             J11.d = -4;
                             J11.r = true;
                             J11.e = false;
@@ -1229,7 +1229,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                         if (!z17 && !z16) {
                             if ((chat4 != null && ChatObject.canCreateTopic(chat4)) || UserObject.isBotForumWithEditableTopics(user4)) {
                                 int i25 = u21.a;
-                                h51 J12 = h51.J(u21.class);
+                                i51 J12 = i51.J(u21.class);
                                 J12.d = -2;
                                 J12.B = -2L;
                                 J12.G = null;
@@ -1245,7 +1245,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
         m21Var.V2.r = false;
         m21Var.setClipToPadding(false);
         m21Var.setClipChildren(false);
-        viewGroup2.addView(m21Var, k7.c6.d(-1, -1.0f, 119, 0.0f, isBotForumWithEditableTopics ? 90.0f : 48.0f, 0.0f, 0.0f));
+        viewGroup2.addView(m21Var, k7.b6.d(-1, -1.0f, 119, 0.0f, isBotForumWithEditableTopics ? 90.0f : 48.0f, 0.0f, 0.0f));
         m21Var.j(new l21(this, 1));
         final int i16 = 0;
         ImageView i17 = i(activity, R.drawable.menu_sidebar_left, new View.OnClickListener(this) { // from class: org.telegram.ui.Components.h21
@@ -1321,8 +1321,8 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
             }
         });
         this.B = i19;
-        frameLayout.addView(i17, k7.c6.e(44, 36, 51));
-        viewGroup2.addView(i19, k7.c6.e(64, 48, 51));
+        frameLayout.addView(i17, k7.b6.e(44, 36, 51));
+        viewGroup2.addView(i19, k7.b6.e(64, 48, 51));
         final int i20 = 1;
         ImageView i21 = i(activity, R.drawable.msg_select, new View.OnClickListener(this) { // from class: org.telegram.ui.Components.h21
             public final /* synthetic */ w21 b;
@@ -1397,8 +1397,8 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
             }
         });
         this.x = i23;
-        frameLayout.addView(i21, k7.c6.e(44, 36, 51));
-        viewGroup2.addView(i23, k7.c6.e(64, 48, 51));
+        frameLayout.addView(i21, k7.b6.e(44, 36, 51));
+        viewGroup2.addView(i23, k7.b6.e(64, 48, 51));
         MessagesController.getInstance(i10).getTopicsController().loadTopics(j11, false, 3);
         SharedPreferences mainSettings = MessagesController.getInstance(i10).getMainSettings();
         if (org.telegram.messenger.y3.v("topicssidetabs", j10, mainSettings, false)) {
@@ -1414,16 +1414,16 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
         o();
     }
 
-    public static void a(w21 w21Var, h51 h51Var) {
+    public static void a(w21 w21Var, i51 i51Var) {
         if (w21Var.e) {
             Utilities.Callback2 callback2 = w21Var.W;
             if (callback2 != null) {
-                callback2.run(Long.valueOf(h51Var.B), Boolean.FALSE);
+                callback2.run(Long.valueOf(i51Var.B), Boolean.FALSE);
                 return;
             }
             return;
         }
-        if (h51Var.B == -2) {
+        if (i51Var.B == -2) {
             Runnable runnable = w21Var.V;
             if (runnable != null) {
                 runnable.run();
@@ -1433,7 +1433,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
         }
         Utilities.Callback2 callback22 = w21Var.U;
         if (callback22 != null) {
-            callback22.run(Integer.valueOf(h51Var.d), Boolean.FALSE);
+            callback22.run(Integer.valueOf(i51Var.d), Boolean.FALSE);
         }
     }
 
@@ -1443,7 +1443,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
         ArrayList<Integer> arrayList2 = new ArrayList<>();
         int i10 = 0;
         while (i10 < arrayList.size()) {
-            i10 = org.telegram.ui.yh.d(((h51) arrayList.get(i10)).d, i10, 1, arrayList2);
+            i10 = org.telegram.ui.ai.d(((i51) arrayList.get(i10)).d, i10, 1, arrayList2);
         }
         long j11 = -j10;
         topicsController.reorderPinnedTopics(j11, arrayList2);
@@ -1454,24 +1454,24 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
     /* JADX WARN: Type inference failed for: r11v4, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r11v6 */
     /* JADX WARN: Type inference failed for: r11v7 */
-    public static boolean c(final w21 w21Var, h51 h51Var, View view) {
+    public static boolean c(final w21 w21Var, i51 i51Var, View view) {
         TLRPC.Chat chat;
         final w21 w21Var2;
-        org.telegram.ui.ActionBar.g6 g6Var;
+        org.telegram.ui.ActionBar.f6 f6Var;
         final int i10;
         ?? r11;
         byte b10;
         int i11;
-        final q70 q70Var;
-        q70 q70Var2;
-        org.telegram.ui.ActionBar.g6 g6Var2 = w21Var.d;
-        org.telegram.ui.xn xnVar = w21Var.h;
+        final p70 p70Var;
+        p70 p70Var2;
+        org.telegram.ui.ActionBar.f6 f6Var2 = w21Var.d;
+        org.telegram.ui.zn znVar = w21Var.h;
         long j10 = w21Var.c;
         int i12 = w21Var.b;
         if (w21Var.D.Z2 || w21Var.s.Z2) {
             return false;
         }
-        Object obj = h51Var.G;
+        Object obj = i51Var.G;
         if (!(obj instanceof TLRPC.TL_forumTopic)) {
             return false;
         }
@@ -1479,7 +1479,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
         MessagesController messagesController = MessagesController.getInstance(i12);
         TLRPC.Chat chat2 = j10 < 0 ? messagesController.getChat(Long.valueOf(-j10)) : null;
         TLRPC.User user = j10 > 0 ? messagesController.getUser(Long.valueOf(j10)) : null;
-        final q70 I = q70.I(xnVar, view);
+        final p70 I = p70.I(znVar, view);
         if (ChatObject.isMonoForum(chat2)) {
             long peerDialogId = DialogObject.getPeerDialogId(tL_forumTopic.from_id);
             if (peerDialogId == 0 || !ChatObject.canManageMonoForum(i12, chat2)) {
@@ -1497,7 +1497,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
             TLRPC.Chat chat4 = MessagesController.getInstance(i12).getChat(Long.valueOf(j11));
             TLRPC.User user2 = MessagesController.getInstance(i12).getUser(Long.valueOf(peerDialogId));
             if (user2 == null || !ChatObject.canBlockUsers(chat4)) {
-                q70Var2 = I;
+                p70Var2 = I;
                 i11 = 8;
             } else {
                 I.c(R.drawable.msg_remove, LocaleController.getString(R.string.BanUserMonoforum), null, false);
@@ -1505,12 +1505,12 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                 i11 = 8;
                 y10.setVisibility(8);
                 MessagesController messagesController2 = MessagesController.getInstance(i12);
-                mh.o2 o2Var = new mh.o2(w21Var, y10, I, j11, user2, chat4);
-                q70Var2 = I;
-                messagesController2.checkIsInChat(true, chat4, user2, o2Var);
+                lh.p2 p2Var = new lh.p2(w21Var, y10, I, j11, user2, chat4);
+                p70Var2 = I;
+                messagesController2.checkIsInChat(true, chat4, user2, p2Var);
             }
-            q70Var = q70Var2;
-            g6Var = g6Var2;
+            p70Var = p70Var2;
+            f6Var = f6Var2;
             i10 = 2;
             r11 = 1;
             b10 = 0;
@@ -1523,12 +1523,12 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                 int i14 = i13;
                 chat = chat5;
                 w21Var2 = w21Var;
-                org.telegram.ui.ih ihVar = new org.telegram.ui.ih(w21Var2, I, messagesController, tL_forumTopic, 26);
+                org.telegram.ui.kh khVar = new org.telegram.ui.kh(w21Var2, I, messagesController, tL_forumTopic, 26);
                 I = I;
                 messagesController = messagesController;
                 tL_forumTopic = tL_forumTopic;
                 int i15 = 0;
-                I.c(i14, string, ihVar, false);
+                I.c(i14, string, khVar, false);
                 if (tL_forumTopic.pinned) {
                     I.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.FilterReorder), new f21(w21Var2, i15), false);
                 }
@@ -1551,22 +1551,22 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                         int i17 = i16;
                         w21 w21Var3 = this.b;
                         TLRPC.TL_forumTopic tL_forumTopic2 = tL_forumTopic;
-                        q70 q70Var3 = I;
+                        p70 p70Var3 = I;
                         switch (i17) {
                             case 0:
-                                q70Var3.u();
-                                w21Var3.h.presentFragment(oe1.a0(-w21Var3.c, tL_forumTopic2.id));
+                                p70Var3.u();
+                                w21Var3.h.presentFragment(ne1.a0(-w21Var3.c, tL_forumTopic2.id));
                                 break;
                             case 1:
                                 w21Var3.getClass();
-                                q70Var3.u();
+                                p70Var3.u();
                                 MessagesController.getInstance(w21Var3.b).getTopicsController().toggleCloseTopic(-w21Var3.c, tL_forumTopic2.id, true ^ tL_forumTopic2.closed);
                                 break;
                             default:
-                                q70Var3.u();
+                                p70Var3.u();
                                 HashSet hashSet = new HashSet();
                                 hashSet.add(Integer.valueOf(tL_forumTopic2.id));
-                                jc jcVar = new jc(16);
+                                mc mcVar = new mc(14);
                                 w21 w21Var4 = this.b;
                                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(w21Var4.getContext());
                                 String pluralString = LocaleController.getPluralString("DeleteTopics", hashSet.size());
@@ -1581,12 +1581,12 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                                     z10 = false;
                                     d2Var.Q = LocaleController.getString(R.string.DeleteSelectedTopics);
                                 }
-                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new mh.a3(w21Var4, arrayList, j13, hashSet, jcVar));
-                                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new mh0(12));
+                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new lh.b3(w21Var4, arrayList, j13, hashSet, mcVar));
+                                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new lh0(12));
                                 d2Var.show();
                                 TextView textView = (TextView) d2Var.d(-1);
                                 if (textView != null) {
-                                    textView.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.q7, z10));
+                                    textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, z10));
                                     break;
                                 }
                                 break;
@@ -1596,18 +1596,18 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
             }
             long j13 = w21Var2.c;
             long j14 = tL_forumTopic.id;
-            int currentAccount = xnVar.getCurrentAccount();
-            org.telegram.ui.ActionBar.g6 resourceProvider = xnVar.getResourceProvider();
-            q70 q70Var3 = I;
-            io ioVar = new io(q70Var3, currentAccount, j13, j14, xnVar, resourceProvider);
-            q70 J = q70Var3.J();
-            J.c(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new org.telegram.ui.yt0(q70Var3, 25), false);
-            J.c(R.drawable.msg_tone_on, LocaleController.getString(R.string.SoundOn), new org.telegram.messenger.le(q70Var3, currentAccount, j13, j14, J, xnVar, resourceProvider), false);
+            int currentAccount = znVar.getCurrentAccount();
+            org.telegram.ui.ActionBar.f6 resourceProvider = znVar.getResourceProvider();
+            p70 p70Var3 = I;
+            fo foVar = new fo(p70Var3, currentAccount, j13, j14, znVar, resourceProvider);
+            p70 J = p70Var3.J();
+            J.c(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new org.telegram.ui.yt0(p70Var3, 25), false);
+            J.c(R.drawable.msg_tone_on, LocaleController.getString(R.string.SoundOn), new org.telegram.messenger.le(p70Var3, currentAccount, j13, j14, J, znVar, resourceProvider), false);
             org.telegram.ui.ActionBar.g1 y11 = J.y();
-            J.c(R.drawable.msg_mute_period, LocaleController.getString(R.string.MuteForPopup), new dg.u1(q70Var3, resourceProvider, currentAccount, ioVar, 16), false);
-            g6Var = g6Var2;
-            J.c(R.drawable.msg_customize, LocaleController.getString(R.string.NotificationsCustomize), new hg.s0(q70Var3, j13, j14, xnVar, resourceProvider, 8), false);
-            J.c(0, "", new mh.u7(q70Var3, currentAccount, j13, j14, xnVar, resourceProvider), false);
+            J.c(R.drawable.msg_mute_period, LocaleController.getString(R.string.MuteForPopup), new cg.v1(p70Var3, resourceProvider, currentAccount, foVar, 16), false);
+            f6Var = f6Var2;
+            J.c(R.drawable.msg_customize, LocaleController.getString(R.string.NotificationsCustomize), new gg.s0(p70Var3, j13, j14, znVar, resourceProvider, 8), false);
+            J.c(0, "", new lh.u7(p70Var3, currentAccount, j13, j14, znVar, resourceProvider), false);
             new org.telegram.messenger.t9(currentAccount, j13, j14, J.y(), y11).run();
             boolean isDialogMuted = messagesController.isDialogMuted(j10, tL_forumTopic.id);
             int i17 = isDialogMuted ? R.drawable.msg_unmute : R.drawable.msg_mute;
@@ -1617,16 +1617,16 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
             r11 = 1;
             b10 = 0;
             i11 = 8;
-            jy0 jy0Var = new jy0(w21Var, messagesController, tL_forumTopic, q70Var3, J, 1);
-            q70Var = q70Var3;
-            q70Var.c(i17, string2, jy0Var, false);
+            jy0 jy0Var = new jy0(w21Var, messagesController, tL_forumTopic, p70Var3, J, 1);
+            p70Var = p70Var3;
+            p70Var.c(i17, string2, jy0Var, false);
             TLRPC.Chat chat6 = chat;
             if (ChatObject.canManageTopic(i12, chat6, tL_forumTopic) && !UserObject.isBotForum(user)) {
                 boolean z10 = tL_forumTopic.closed;
                 int i18 = z10 ? R.drawable.msg_topic_restart : R.drawable.msg_topic_close;
                 String string3 = LocaleController.getString(z10 ? R.string.RestartTopic : R.string.CloseTopic);
                 final int i19 = r11 == true ? 1 : 0;
-                q70Var.c(i18, string3, new Runnable(w21Var) { // from class: org.telegram.ui.Components.g21
+                p70Var.c(i18, string3, new Runnable(w21Var) { // from class: org.telegram.ui.Components.g21
                     public final /* synthetic */ w21 b;
 
                     {
@@ -1639,22 +1639,22 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                         int i172 = i19;
                         w21 w21Var3 = this.b;
                         TLRPC.TL_forumTopic tL_forumTopic2 = tL_forumTopic;
-                        q70 q70Var32 = q70Var;
+                        p70 p70Var32 = p70Var;
                         switch (i172) {
                             case 0:
-                                q70Var32.u();
-                                w21Var3.h.presentFragment(oe1.a0(-w21Var3.c, tL_forumTopic2.id));
+                                p70Var32.u();
+                                w21Var3.h.presentFragment(ne1.a0(-w21Var3.c, tL_forumTopic2.id));
                                 break;
                             case 1:
                                 w21Var3.getClass();
-                                q70Var32.u();
+                                p70Var32.u();
                                 MessagesController.getInstance(w21Var3.b).getTopicsController().toggleCloseTopic(-w21Var3.c, tL_forumTopic2.id, true ^ tL_forumTopic2.closed);
                                 break;
                             default:
-                                q70Var32.u();
+                                p70Var32.u();
                                 HashSet hashSet = new HashSet();
                                 hashSet.add(Integer.valueOf(tL_forumTopic2.id));
-                                jc jcVar = new jc(16);
+                                mc mcVar = new mc(14);
                                 w21 w21Var4 = this.b;
                                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(w21Var4.getContext());
                                 String pluralString = LocaleController.getPluralString("DeleteTopics", hashSet.size());
@@ -1669,12 +1669,12 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                                     z102 = false;
                                     d2Var.Q = LocaleController.getString(R.string.DeleteSelectedTopics);
                                 }
-                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new mh.a3(w21Var4, arrayList, j132, hashSet, jcVar));
-                                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new mh0(12));
+                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new lh.b3(w21Var4, arrayList, j132, hashSet, mcVar));
+                                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new lh0(12));
                                 d2Var.show();
                                 TextView textView = (TextView) d2Var.d(-1);
                                 if (textView != null) {
-                                    textView.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.q7, z102));
+                                    textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, z102));
                                     break;
                                 }
                                 break;
@@ -1683,7 +1683,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                 }, false);
             }
             if (ChatObject.canDeleteTopic(i12, chat6, tL_forumTopic)) {
-                q70Var.c(R.drawable.msg_delete, LocaleController.getPluralString("DeleteTopics", 1), new Runnable(w21Var) { // from class: org.telegram.ui.Components.g21
+                p70Var.c(R.drawable.msg_delete, LocaleController.getPluralString("DeleteTopics", 1), new Runnable(w21Var) { // from class: org.telegram.ui.Components.g21
                     public final /* synthetic */ w21 b;
 
                     {
@@ -1696,22 +1696,22 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                         int i172 = i10;
                         w21 w21Var3 = this.b;
                         TLRPC.TL_forumTopic tL_forumTopic2 = tL_forumTopic;
-                        q70 q70Var32 = q70Var;
+                        p70 p70Var32 = p70Var;
                         switch (i172) {
                             case 0:
-                                q70Var32.u();
-                                w21Var3.h.presentFragment(oe1.a0(-w21Var3.c, tL_forumTopic2.id));
+                                p70Var32.u();
+                                w21Var3.h.presentFragment(ne1.a0(-w21Var3.c, tL_forumTopic2.id));
                                 break;
                             case 1:
                                 w21Var3.getClass();
-                                q70Var32.u();
+                                p70Var32.u();
                                 MessagesController.getInstance(w21Var3.b).getTopicsController().toggleCloseTopic(-w21Var3.c, tL_forumTopic2.id, true ^ tL_forumTopic2.closed);
                                 break;
                             default:
-                                q70Var32.u();
+                                p70Var32.u();
                                 HashSet hashSet = new HashSet();
                                 hashSet.add(Integer.valueOf(tL_forumTopic2.id));
-                                jc jcVar = new jc(16);
+                                mc mcVar = new mc(14);
                                 w21 w21Var4 = this.b;
                                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(w21Var4.getContext());
                                 String pluralString = LocaleController.getPluralString("DeleteTopics", hashSet.size());
@@ -1726,12 +1726,12 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                                     z102 = false;
                                     d2Var.Q = LocaleController.getString(R.string.DeleteSelectedTopics);
                                 }
-                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new mh.a3(w21Var4, arrayList, j132, hashSet, jcVar));
-                                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new mh0(12));
+                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new lh.b3(w21Var4, arrayList, j132, hashSet, mcVar));
+                                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new lh0(12));
                                 d2Var.show();
                                 TextView textView = (TextView) d2Var.d(-1);
                                 if (textView != null) {
-                                    textView.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.q7, z102));
+                                    textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, z102));
                                     break;
                                 }
                                 break;
@@ -1741,17 +1741,17 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
             }
         }
         if (view instanceof r21) {
-            yv yvVar = new yv(i10, b10);
+            vv vvVar = new vv(i10, b10);
             Paint paint = new Paint((int) r11);
-            yvVar.c = paint;
-            yvVar.b = new RectF();
-            paint.setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.G8, g6Var));
-            q70Var.W(yvVar);
-            q70Var.a0(AndroidUtilities.dp(16.0f), 0.0f);
+            vvVar.c = paint;
+            vvVar.b = new RectF();
+            paint.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G8, f6Var));
+            p70Var.W(vvVar);
+            p70Var.a0(AndroidUtilities.dp(16.0f), 0.0f);
         } else {
             int dp = AndroidUtilities.dp(5.0f);
             int dp2 = AndroidUtilities.dp(5.0f);
-            int v02 = org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.d6, g6Var);
+            int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, f6Var);
             float f10 = b10;
             float f11 = dp;
             float f12 = dp2;
@@ -1766,9 +1766,9 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
             fArr[7] = f10;
             ShapeDrawable shapeDrawable = new ShapeDrawable(new RoundRectShape(fArr, null, null));
             shapeDrawable.getPaint().setColor(v02);
-            q70Var.W(shapeDrawable);
+            p70Var.W(shapeDrawable);
         }
-        q70Var.Z();
+        p70Var.Z();
         return r11;
     }
 
@@ -1777,7 +1777,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
         imageView.setImageResource(i10);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setOnClickListener(onClickListener);
-        k7.e6.a(imageView);
+        k7.d6.a(imageView);
         return imageView;
     }
 
@@ -1823,9 +1823,9 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
         this.P = true;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.O, z4 ? 1.0f : 0.0f);
         this.R = ofFloat;
-        ofFloat.addUpdateListener(new k70(this, 28));
+        ofFloat.addUpdateListener(new j70(this, 28));
         this.R.addListener(new n21(this, z4));
-        this.R.setInterpolator(xh.n.V);
+        this.R.setInterpolator(wh.n.V);
         this.R.setDuration(250L);
         this.R.start();
     }
@@ -1964,7 +1964,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                 if (i10 >= k21Var.getChildCount()) {
                     break;
                 }
-                h51 G = k21Var.V2.G(RecyclerView.R(k21Var.getChildAt(i10)));
+                i51 G = k21Var.V2.G(RecyclerView.R(k21Var.getChildAt(i10)));
                 if (G != null && G.r) {
                     return true;
                 }
@@ -1977,7 +1977,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
                 if (i11 >= m21Var.getChildCount()) {
                     break;
                 }
-                h51 G2 = m21Var.V2.G(RecyclerView.R(m21Var.getChildAt(i11)));
+                i51 G2 = m21Var.V2.G(RecyclerView.R(m21Var.getChildAt(i11)));
                 if (G2 != null && G2.r) {
                     return true;
                 }
@@ -2012,9 +2012,9 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
     }
 
     public final void n() {
-        org.telegram.ui.le leVar = this.L;
-        if (leVar != null) {
-            leVar.run();
+        org.telegram.ui.ne neVar = this.L;
+        if (neVar != null) {
+            neVar.run();
         }
         h();
         float j10 = j(s21.b);
@@ -2022,16 +2022,16 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
         FrameLayout frameLayout = this.C;
         frameLayout.setTranslationX(lerp);
         frameLayout.setVisibility(j10 <= 0.0f ? 8 : 0);
-        int i10 = org.telegram.ui.ActionBar.k6.z6;
-        org.telegram.ui.ActionBar.g6 g6Var = this.d;
-        int v02 = org.telegram.ui.ActionBar.k6.v0(i10, g6Var);
-        int i11 = org.telegram.ui.ActionBar.k6.Oh;
-        int d = i0.a.d(1.0f - this.O, v02, org.telegram.ui.ActionBar.k6.v0(i11, g6Var));
+        int i10 = org.telegram.ui.ActionBar.j6.z6;
+        org.telegram.ui.ActionBar.f6 f6Var = this.d;
+        int v02 = org.telegram.ui.ActionBar.j6.v0(i10, f6Var);
+        int i11 = org.telegram.ui.ActionBar.j6.Oh;
+        int d = i0.a.d(1.0f - this.O, v02, org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         this.y.setColorFilter(new PorterDuffColorFilter(d, mode));
-        this.B.setColorFilter(new PorterDuffColorFilter(i0.a.d(this.O, org.telegram.ui.ActionBar.k6.v0(i10, g6Var), org.telegram.ui.ActionBar.k6.v0(i11, g6Var)), mode));
-        this.w.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.v0(i11, g6Var), mode));
-        this.x.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.v0(i11, g6Var), mode));
+        this.B.setColorFilter(new PorterDuffColorFilter(i0.a.d(this.O, org.telegram.ui.ActionBar.j6.v0(i10, f6Var), org.telegram.ui.ActionBar.j6.v0(i11, f6Var)), mode));
+        this.w.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(i11, f6Var), mode));
+        this.x.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(i11, f6Var), mode));
         invalidate();
     }
 
@@ -2101,7 +2101,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
         this.U = callback2;
     }
 
-    public void setSideMenuBackgroundDrawable(qg.b bVar) {
+    public void setSideMenuBackgroundDrawable(pg.b bVar) {
         this.H = bVar;
         bVar.p(AndroidUtilities.dp(16.0f));
         this.H.o(AndroidUtilities.dp(7.0f));
@@ -2122,7 +2122,7 @@ public final class w21 extends FrameLayout implements NotificationCenter.Notific
         invalidate();
     }
 
-    public void setTopMenuBackgroundDrawable(qg.b bVar) {
+    public void setTopMenuBackgroundDrawable(pg.b bVar) {
         this.I = bVar;
         bVar.p(AndroidUtilities.dp(18.0f));
         this.I.o(AndroidUtilities.dp(7.0f));

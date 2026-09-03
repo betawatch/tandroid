@@ -9,7 +9,7 @@ import java.io.PrintWriter;
 import java.lang.ref.WeakReference;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class l {
     protected final m mLifecycleFragment;
@@ -23,9 +23,9 @@ public abstract class l {
     }
 
     public Activity getActivity() {
-        Activity e6 = this.mLifecycleFragment.e();
-        b6.m.h(e6);
-        return e6;
+        Activity e = this.mLifecycleFragment.e();
+        b6.m.h(e);
+        return e;
     }
 
     public abstract void onStop();
@@ -51,8 +51,8 @@ public abstract class l {
                 }
                 weakHashMap.put(activity, new WeakReference(r1Var2));
                 return r1Var2;
-            } catch (ClassCastException e6) {
-                throw new IllegalStateException("Fragment with tag LifecycleFragmentImpl is not a LifecycleFragmentImpl", e6);
+            } catch (ClassCastException e) {
+                throw new IllegalStateException("Fragment with tag LifecycleFragmentImpl is not a LifecycleFragmentImpl", e);
             }
         }
         androidx.fragment.app.v vVar = (androidx.fragment.app.v) activity;
@@ -73,8 +73,8 @@ public abstract class l {
             }
             weakHashMap2.put(vVar, new WeakReference(t1Var2));
             return t1Var2;
-        } catch (ClassCastException e10) {
-            throw new IllegalStateException("Fragment with tag SLifecycleFragmentImpl is not a SupportLifecycleFragmentImpl", e10);
+        } catch (ClassCastException e6) {
+            throw new IllegalStateException("Fragment with tag SLifecycleFragmentImpl is not a SupportLifecycleFragmentImpl", e6);
         }
     }
 

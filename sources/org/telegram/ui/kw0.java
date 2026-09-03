@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class kw0 extends FrameLayout {
     public boolean a;
@@ -42,14 +42,14 @@ public final class kw0 extends FrameLayout {
         org.telegram.ui.ActionBar.k kVar4;
         ?? r11;
         Canvas canvas2;
-        org.telegram.ui.ActionBar.f5 f5Var;
-        org.telegram.ui.ActionBar.f5 f5Var2;
+        org.telegram.ui.ActionBar.e5 e5Var;
+        org.telegram.ui.ActionBar.e5 e5Var2;
         org.telegram.ui.ActionBar.k kVar5;
         org.telegram.ui.ActionBar.k kVar6;
         org.telegram.ui.ActionBar.k kVar7;
         PremiumPreviewFragment premiumPreviewFragment = this.d;
         boolean z4 = premiumPreviewFragment.e0;
-        fg.p1 p1Var = premiumPreviewFragment.j0;
+        eg.q1 q1Var = premiumPreviewFragment.j0;
         if (Build.VERSION.SDK_INT >= 31 && premiumPreviewFragment.r0 != null) {
             premiumPreviewFragment.j0();
         }
@@ -112,7 +112,7 @@ public final class kw0 extends FrameLayout {
         premiumPreviewFragment.S.setTranslationY(premiumPreviewFragment.R.c.getY() + premiumPreviewFragment.R.getY() + ((-(r1.getMeasuredHeight() - premiumPreviewFragment.R.d.getMeasuredWidth())) / 2.0f));
         float dp5 = AndroidUtilities.dp(72.0f) - premiumPreviewFragment.R.a.getLeft();
         float f16 = premiumPreviewFragment.c0;
-        premiumPreviewFragment.R.a.setTranslationX((1.0f - org.telegram.ui.Components.pr.h.getInterpolation(1.0f - (f16 > 0.3f ? (f16 - 0.3f) / 0.7f : 0.0f))) * dp5);
+        premiumPreviewFragment.R.a.setTranslationX((1.0f - org.telegram.ui.Components.mr.h.getInterpolation(1.0f - (f16 > 0.3f ? (f16 - 0.3f) / 0.7f : 0.0f))) * dp5);
         vw0 vw0Var = premiumPreviewFragment.R;
         vw0Var.d.b.p = (((getMeasuredWidth() * 0.1f) * premiumPreviewFragment.Y) + (premiumPreviewFragment.R.c.getX() + vw0Var.getX())) / getMeasuredWidth();
         vw0 vw0Var2 = premiumPreviewFragment.R;
@@ -122,9 +122,9 @@ public final class kw0 extends FrameLayout {
             premiumPreviewFragment.H.invalidate();
             premiumPreviewFragment.G.invalidate();
         }
-        p1Var.d(0, (-getMeasuredWidth()) * 0.1f * premiumPreviewFragment.Y, 0, getMeasuredWidth(), 0.0f, getMeasuredHeight());
+        q1Var.d(0, (-getMeasuredWidth()) * 0.1f * premiumPreviewFragment.Y, 0, getMeasuredWidth(), 0.0f, getMeasuredHeight());
         if (z4) {
-            int i11 = org.telegram.ui.ActionBar.k6.a7;
+            int i11 = org.telegram.ui.ActionBar.j6.a7;
             int themedColor = premiumPreviewFragment.getThemedColor(i11);
             Paint paint = this.c;
             paint.setColor(themedColor);
@@ -134,7 +134,7 @@ public final class kw0 extends FrameLayout {
             if (premiumPreviewFragment.n0 > 0.0f) {
                 kVar6 = ((org.telegram.ui.ActionBar.p2) premiumPreviewFragment).actionBar;
                 if (kVar6 != null) {
-                    paint.setColor(i0.a.d(premiumPreviewFragment.n0, premiumPreviewFragment.getThemedColor(i11), premiumPreviewFragment.getThemedColor(org.telegram.ui.ActionBar.k6.d6)));
+                    paint.setColor(i0.a.d(premiumPreviewFragment.n0, premiumPreviewFragment.getThemedColor(i11), premiumPreviewFragment.getThemedColor(org.telegram.ui.ActionBar.j6.d6)));
                     float measuredWidth = getMeasuredWidth();
                     kVar7 = ((org.telegram.ui.ActionBar.p2) premiumPreviewFragment).actionBar;
                     float height = kVar7.getHeight();
@@ -146,7 +146,7 @@ public final class kw0 extends FrameLayout {
         } else {
             r11 = 0;
             canvas2 = canvas;
-            canvas2.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), p1Var.f);
+            canvas2.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), q1Var.f);
         }
         super.dispatchDraw(canvas);
         if (premiumPreviewFragment.G.getVisibility() != 0) {
@@ -154,14 +154,14 @@ public final class kw0 extends FrameLayout {
             premiumPreviewFragment.q0.setBounds(r11, getHeight() - premiumPreviewFragment.l0.d, getWidth(), getHeight());
             premiumPreviewFragment.q0.draw(canvas2);
         }
-        f5Var = ((org.telegram.ui.ActionBar.p2) premiumPreviewFragment).parentLayout;
-        if (f5Var == null || !z4) {
+        e5Var = ((org.telegram.ui.ActionBar.p2) premiumPreviewFragment).parentLayout;
+        if (e5Var == null || !z4) {
             return;
         }
-        f5Var2 = ((org.telegram.ui.ActionBar.p2) premiumPreviewFragment).parentLayout;
+        e5Var2 = ((org.telegram.ui.ActionBar.p2) premiumPreviewFragment).parentLayout;
         int i12 = (int) (premiumPreviewFragment.n0 * 255.0f);
         kVar5 = ((org.telegram.ui.ActionBar.p2) premiumPreviewFragment).actionBar;
-        ((ActionBarLayout) f5Var2).p(canvas2, i12, kVar5.getBottom());
+        ((ActionBarLayout) e5Var2).p(canvas2, i12, kVar5.getBottom());
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -224,9 +224,9 @@ public final class kw0 extends FrameLayout {
         if (frameLayout != null && frameLayout.getVisibility() != 8) {
             i12 = AndroidUtilities.dp(68.0f);
         }
-        org.telegram.ui.Components.rz rzVar = premiumPreviewFragment.M;
-        rzVar.M = (premiumPreviewFragment.U + i12) - AndroidUtilities.dp(16.0f);
-        rzVar.p1();
+        org.telegram.ui.Components.pz pzVar = premiumPreviewFragment.M;
+        pzVar.M = (premiumPreviewFragment.U + i12) - AndroidUtilities.dp(16.0f);
+        pzVar.p1();
         premiumPreviewFragment.M.S = i12;
         super.onMeasure(i10, i11);
         if (((getMeasuredWidth() + getMeasuredHeight()) << 16) != 0) {

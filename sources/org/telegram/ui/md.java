@@ -1,43 +1,61 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.content.Context;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class md implements TextWatcher {
-    public final /* synthetic */ int a;
+public final class md extends org.telegram.ui.Components.jj0 {
+    public final /* synthetic */ int r;
+    public final /* synthetic */ Object s;
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int i10 = this.a;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ md(Object obj, Context context, int i10) {
+        super(context);
+        this.r = i10;
+        this.s = obj;
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
+    @Override // android.view.View
+    public void invalidate(int i10, int i11, int i12, int i13) {
+        switch (this.r) {
+            case 0:
+                super.invalidate(i10, i11, i12, i13);
+                ((pd) this.s).f.invalidate();
+                break;
+            case 1:
+            default:
+                super.invalidate(i10, i11, i12, i13);
+                break;
+            case 2:
+                super.invalidate(i10, i11, i12, i13);
+                ((g70) this.s).e.invalidate();
+                break;
+            case 3:
+                super.invalidate(i10, i11, i12, i13);
+                ((bf0) this.s).h.invalidate();
+                break;
+        }
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    private final void a(Editable editable) {
-    }
-
-    private final void b(Editable editable) {
-    }
-
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void e(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void f(int i10, int i11, int i12, CharSequence charSequence) {
+    @Override // android.view.View
+    public final void invalidate() {
+        switch (this.r) {
+            case 0:
+                super.invalidate();
+                ((pd) this.s).f.invalidate();
+                break;
+            case 1:
+                super.invalidate();
+                ((org.telegram.ui.Components.t20) this.s).invalidate();
+                break;
+            case 2:
+                super.invalidate();
+                ((g70) this.s).e.invalidate();
+                break;
+            default:
+                super.invalidate();
+                ((bf0) this.s).h.invalidate();
+                break;
+        }
     }
 }

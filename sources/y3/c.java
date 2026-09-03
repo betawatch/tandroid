@@ -5,7 +5,7 @@ import h5.d0;
 import r3.r;
 import r3.t;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class c implements g {
     public final long[] a;
@@ -19,10 +19,10 @@ public final class c implements g {
     }
 
     public static Pair d(long j10, long[] jArr, long[] jArr2) {
-        int e6 = d0.e(jArr, j10, true);
-        long j11 = jArr[e6];
-        long j12 = jArr2[e6];
-        int i10 = e6 + 1;
+        int e = d0.e(jArr, j10, true);
+        long j11 = jArr[e];
+        long j12 = jArr2[e];
+        int i10 = e + 1;
         if (i10 == jArr.length) {
             return Pair.create(Long.valueOf(j11), Long.valueOf(j12));
         }

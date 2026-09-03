@@ -1,66 +1,51 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.RectShape;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.ActionMode;
+import android.view.Menu;
+import android.view.MenuItem;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class rt extends ShapeDrawable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ EditTextBoldCursor b;
+public final class rt implements ActionMode.Callback {
+    public final /* synthetic */ ActionMode.Callback a;
+    public final /* synthetic */ ut b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rt(EditTextBoldCursor editTextBoldCursor, RectShape rectShape) {
-        super(rectShape);
-        this.b = editTextBoldCursor;
+    public rt(ut utVar, ActionMode.Callback callback) {
+        this.b = utVar;
+        this.a = callback;
     }
 
-    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                EditTextBoldCursor editTextBoldCursor = this.b;
-                if (!editTextBoldCursor.drawInMaim) {
-                    super.draw(canvas);
-                    break;
-                } else {
-                    editTextBoldCursor.cursorDrawn = true;
-                    break;
-                }
-            default:
-                super.draw(canvas);
-                this.b.cursorDrawn = true;
-                break;
+    @Override // android.view.ActionMode.Callback
+    public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
+        if (this.b.performMenuAction(menuItem.getItemId())) {
+            actionMode.finish();
+            return true;
+        }
+        try {
+            return this.a.onActionItemClicked(actionMode, menuItem);
+        } catch (Exception unused) {
+            return true;
         }
     }
 
-    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
-    public int getIntrinsicHeight() {
-        int i10;
-        switch (this.a) {
-            case 0:
-                i10 = this.b.cursorSize;
-                return AndroidUtilities.dp(i10 + 20);
-            default:
-                return super.getIntrinsicHeight();
-        }
+    @Override // android.view.ActionMode.Callback
+    public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
+        ut utVar = this.b;
+        utVar.copyPasteShowed = true;
+        utVar.onContextMenuOpen();
+        return this.a.onCreateActionMode(actionMode, menu);
     }
 
-    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
-    public int getIntrinsicWidth() {
-        float f10;
-        switch (this.a) {
-            case 0:
-                f10 = this.b.cursorWidth;
-                return AndroidUtilities.dp(f10);
-            default:
-                return super.getIntrinsicWidth();
-        }
+    @Override // android.view.ActionMode.Callback
+    public final void onDestroyActionMode(ActionMode actionMode) {
+        ut utVar = this.b;
+        utVar.copyPasteShowed = false;
+        utVar.onContextMenuClose();
+        this.a.onDestroyActionMode(actionMode);
     }
 
-    public rt(EditTextBoldCursor editTextBoldCursor) {
-        this.b = editTextBoldCursor;
+    @Override // android.view.ActionMode.Callback
+    public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
+        return this.a.onPrepareActionMode(actionMode, menu);
     }
 }

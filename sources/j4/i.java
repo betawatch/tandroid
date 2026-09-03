@@ -4,7 +4,7 @@ import h5.d0;
 import h5.v;
 import h5.w;
 import j3.q0;
-import j7.d7;
+import j7.c7;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
@@ -14,9 +14,9 @@ import k7.a7;
 import s8.i0;
 import s8.t;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class i extends d7 {
+public final class i extends c7 {
     public static final q0 b = new q0(16);
     public final g a;
 
@@ -597,7 +597,7 @@ public final class i extends d7 {
         }
     }
 
-    @Override // j7.d7
+    @Override // j7.c7
     public final e4.c b(e4.e eVar, ByteBuffer byteBuffer) {
         return c(byteBuffer.limit(), byteBuffer.array());
     }

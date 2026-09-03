@@ -9,11 +9,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
-import l.d;
+import kf.k0;
 import org.scilab.forge.jlatexmath.TeXFormulaSettingsParser;
-import w.c;
+import vh.w2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 final class zztu {
     private static final char[] zza;
@@ -25,7 +25,7 @@ final class zztu {
     }
 
     public static String zza(zzts zztsVar, String str) {
-        StringBuilder f10 = c.f("# ", str);
+        StringBuilder f10 = w2.f("# ", str);
         zzd(zztsVar, f10, 0);
         return f10.toString();
     }
@@ -194,7 +194,7 @@ final class zztu {
             Iterator zzf = ((zzsk) zztsVar).zzb.zzf();
             while (zzf.hasNext()) {
                 Map.Entry entry2 = (Map.Entry) zzf.next();
-                zzb(sb, i10, d.k(((zzsl) entry2.getKey()).zza, "[", "]"), entry2.getValue());
+                zzb(sb, i10, k0.k(((zzsl) entry2.getKey()).zza, "[", "]"), entry2.getValue());
             }
         }
         zzuw zzuwVar = ((zzsn) zztsVar).zzc;

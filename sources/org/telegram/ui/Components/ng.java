@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class ng extends View {
     public float B;
@@ -76,7 +76,7 @@ public final class ng extends View {
             textPaint2.setTextSize(AndroidUtilities.dp(15.0f));
             this.x.setTypeface(AndroidUtilities.bold());
             TextPaint textPaint3 = this.x;
-            int i10 = org.telegram.ui.ActionBar.k6.nf;
+            int i10 = org.telegram.ui.ActionBar.j6.nf;
             int i11 = ChatActivityEnterView.j5;
             textPaint3.setColor(chatActivityEnterView.i0(i10));
         }
@@ -86,7 +86,7 @@ public final class ng extends View {
         int i12 = ((int) (j10 % 1000)) / 10;
         if (chatActivityEnterView.Z0 && j10 >= 59500 && !this.b) {
             chatActivityEnterView.z2 = -1.0f;
-            chatActivityEnterView.V2.u2(3, 0, chatActivityEnterView.L ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, chatActivityEnterView.O4, 0L, true);
+            chatActivityEnterView.V2.p2(3, 0, chatActivityEnterView.L ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, chatActivityEnterView.O4, 0L, true);
             oe oeVar = chatActivityEnterView.G0;
             chatActivityEnterView.O4 = 0L;
             oeVar.setEffect(0L);
@@ -131,13 +131,13 @@ public final class ng extends View {
                     }
                     i16++;
                     if (i15 != 0) {
-                        nz nzVar = new nz(false);
+                        lz lzVar = new lz(false);
                         if (i17 == length - 2) {
                             i15++;
                         }
                         int i18 = i15 + i13;
-                        spannableStringBuilder.setSpan(nzVar, i13, i18, 33);
-                        spannableStringBuilder2.setSpan(nzVar, i13, i18, 33);
+                        spannableStringBuilder.setSpan(lzVar, i13, i18, 33);
+                        spannableStringBuilder2.setSpan(lzVar, i13, i18, 33);
                         i15 = 0;
                     }
                 } else {
@@ -146,19 +146,19 @@ public final class ng extends View {
                     }
                     i15++;
                     if (i16 != 0) {
-                        this.r.setSpan(new nz(false), i14, i16 + i14, 33);
+                        this.r.setSpan(new lz(false), i14, i16 + i14, 33);
                         i16 = 0;
                     }
                 }
             }
             if (i15 != 0) {
-                nz nzVar2 = new nz(false);
+                lz lzVar2 = new lz(false);
                 int i19 = i15 + i13 + 1;
-                spannableStringBuilder.setSpan(nzVar2, i13, i19, 33);
-                spannableStringBuilder2.setSpan(nzVar2, i13, i19, 33);
+                spannableStringBuilder.setSpan(lzVar2, i13, i19, 33);
+                spannableStringBuilder2.setSpan(lzVar2, i13, i19, 33);
             }
             if (i16 != 0) {
-                this.r.setSpan(new nz(false), i14, i16 + i14, 33);
+                this.r.setSpan(new lz(false), i14, i16 + i14, 33);
             }
             TextPaint textPaint4 = this.x;
             int measuredWidth = getMeasuredWidth();

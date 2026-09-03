@@ -25,7 +25,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import k.j;
 import l7.ja;
 import l7.w0;
-import m.r3;
+import m.s3;
 import n7.bg;
 import n7.eg;
 import n7.fg;
@@ -42,7 +42,7 @@ import n7.kg;
 import n7.wf;
 import n7.xf;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class e extends f {
     public static final y5.c[] k = {k.c};
@@ -101,13 +101,13 @@ public final class e extends f {
                     obtain.writeInterfaceToken(egVar.c);
                     egVar.Q0(obtain, 1);
                     f(hb.b, elapsedRealtime);
-                } catch (RemoteException e6) {
+                } catch (RemoteException e) {
                     f(hb.d, elapsedRealtime);
-                    throw new ya.a("Failed to init module subject segmenter", e6);
+                    throw new ya.a("Failed to init module subject segmenter", e);
                 }
-            } catch (Exception e10) {
+            } catch (Exception e6) {
                 f(hb.f, elapsedRealtime);
-                throw new ya.a("Failed to load subject segmentation module", e10);
+                throw new ya.a("Failed to load subject segmentation module", e6);
             }
         } catch (Throwable th2) {
             throw th2;
@@ -135,9 +135,9 @@ public final class e extends f {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             if (xfVar.d(ibVar, elapsedRealtime)) {
                 xfVar.i.put(ibVar, Long.valueOf(elapsedRealtime));
-                r3 r3Var = new r3();
-                r3Var.c = gb.b;
-                o.a.execute(new p(xfVar, new e0(r3Var, 0), ibVar, xfVar.c(), false, 7));
+                s3 s3Var = new s3();
+                s3Var.c = gb.b;
+                o.a.execute(new p(xfVar, new e0(s3Var, 0), ibVar, xfVar.c(), false, 7));
             }
         } finally {
             this.j = null;
@@ -199,21 +199,21 @@ public final class e extends f {
                                             FloatBuffer allocate2 = FloatBuffer.allocate(fArr2.length);
                                             allocate2.put(fArr2);
                                             allocate2.rewind();
-                                        } catch (RemoteException e6) {
-                                            e = e6;
+                                        } catch (RemoteException e) {
+                                            e = e;
                                             eVar.g(hb.e, elapsedRealtime, eVar.h, aVar2, null);
                                             throw new ya.a("Failed to run thin subject segmenter.", e);
                                         }
-                                    } catch (RemoteException e10) {
-                                        e = e10;
+                                    } catch (RemoteException e6) {
+                                        e = e6;
                                     }
                                 }
                                 return new mb.b(arrayList);
-                            } catch (RemoteException e11) {
-                                e = e11;
+                            } catch (RemoteException e10) {
+                                e = e10;
                             }
-                        } catch (RemoteException e12) {
-                            e = e12;
+                        } catch (RemoteException e11) {
+                            e = e11;
                             eVar = this;
                             aVar2 = aVar;
                         }
@@ -236,14 +236,14 @@ public final class e extends f {
         this.f.b(new wf() { // from class: nb.d
             @Override // n7.wf
             public final e0 zza() {
-                r3 r3Var = new r3();
-                r3Var.c = gb.b;
+                s3 s3Var = new s3();
+                s3Var.c = gb.b;
                 w0 w0Var = new w0(11, false);
                 w0Var.d = e.this.e.a();
                 w0Var.b = hbVar;
                 w0Var.c = Long.valueOf((SystemClock.elapsedRealtime() - j10) & Long.MAX_VALUE);
-                r3Var.e = new ge(w0Var);
-                return new e0(r3Var, 0);
+                s3Var.e = new ge(w0Var);
+                return new e0(s3Var, 0);
             }
         }, ib.L4);
     }

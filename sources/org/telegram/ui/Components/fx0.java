@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SvgHelper;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class fx0 extends FrameLayout {
     public static int D;
@@ -22,7 +22,7 @@ public final class fx0 extends FrameLayout {
     public boolean d;
     public final p9 e;
     public final ImageView f;
-    public final hg.q h;
+    public final gg.q h;
     public final View n;
     public boolean r;
     public final int s;
@@ -43,13 +43,13 @@ public final class fx0 extends FrameLayout {
             p9Var.setLayerNum(1);
             p9Var.setAspectFit(false);
             p9Var.setRoundRadius(AndroidUtilities.dp(6.0f));
-            addView(p9Var, k7.c6.e(26, 26, 17));
+            addView(p9Var, k7.b6.e(26, 26, 17));
             this.n = p9Var;
         } else if (i10 == 1) {
             ImageView imageView = new ImageView(context);
             this.f = imageView;
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            addView(imageView, k7.c6.e(24, 24, 17));
+            addView(imageView, k7.b6.e(24, 24, 17));
             this.n = imageView;
         } else {
             p9 p9Var2 = new p9(getContext());
@@ -57,18 +57,18 @@ public final class fx0 extends FrameLayout {
             p9Var2.setLayerNum(1);
             p9Var2.setAspectFit(true);
             p9Var2.setRoundRadius(AndroidUtilities.dp(6.0f));
-            addView(p9Var2, k7.c6.e(26, 26, 17));
+            addView(p9Var2, k7.b6.e(26, 26, 17));
             this.n = p9Var2;
         }
-        hg.q qVar = new hg.q(context, 23);
+        gg.q qVar = new gg.q(context, 23);
         this.h = qVar;
-        qVar.addOnLayoutChangeListener(new h70(this, 1));
+        qVar.addOnLayoutChangeListener(new g70(this, 1));
         qVar.setLines(1);
         qVar.setEllipsize(TextUtils.TruncateAt.END);
         qVar.setTextSize(1, 11.0f);
         qVar.setGravity(1);
-        qVar.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.G6, false));
-        addView(qVar, k7.c6.d(-1, -2.0f, 81, 8.0f, 0.0f, 8.0f, 10.0f));
+        qVar.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
+        addView(qVar, k7.b6.d(-1, -2.0f, 81, 8.0f, 0.0f, 8.0f, 10.0f));
         qVar.setVisibility(8);
     }
 
@@ -88,12 +88,12 @@ public final class fx0 extends FrameLayout {
         }
         float f11 = i10 == 1 ? 24.0f : 26.0f;
         float f12 = i10 == 1 ? 38.0f : 44.0f;
-        int i11 = pm0.q0;
+        int i11 = om0.q0;
         float f13 = 1.0f - f10;
         view.setTranslationY((((AndroidUtilities.dp(36.0f - f11) / 2.0f) - (AndroidUtilities.dp(86.0f - f12) / 2.0f)) * f13) - (AndroidUtilities.dp(8.0f) * f10));
         view.setTranslationX(((AndroidUtilities.dp(33.0f - f11) / 2.0f) - (AndroidUtilities.dp(64.0f - f12) / 2.0f)) * f13);
         float max = Math.max(0.0f, (f10 - 0.5f) / 0.5f);
-        hg.q qVar = this.h;
+        gg.q qVar = this.h;
         qVar.setAlpha(max);
         qVar.setTranslationY((-AndroidUtilities.dp(40.0f)) * f13);
         qVar.setTranslationX((-AndroidUtilities.dp(12.0f)) * f13);

@@ -18,31 +18,31 @@ import android.util.Pair;
 import android.view.View;
 import android.widget.TextView;
 import b6.m;
-import c9.r;
-import c9.t;
+import c9.s;
 import c9.u;
+import c9.v;
 import com.google.android.gms.internal.cast.a2;
-import com.google.android.gms.internal.cast.b0;
 import com.google.android.gms.internal.cast.b2;
-import com.google.android.gms.internal.cast.g3;
-import com.google.android.gms.internal.cast.i2;
-import com.google.android.gms.internal.cast.j1;
+import com.google.android.gms.internal.cast.c0;
+import com.google.android.gms.internal.cast.c2;
+import com.google.android.gms.internal.cast.h3;
 import com.google.android.gms.internal.cast.j2;
 import com.google.android.gms.internal.cast.k1;
-import com.google.android.gms.internal.cast.n0;
-import com.google.android.gms.internal.cast.q1;
+import com.google.android.gms.internal.cast.k2;
+import com.google.android.gms.internal.cast.l1;
+import com.google.android.gms.internal.cast.o0;
 import com.google.android.gms.internal.cast.r1;
 import com.google.android.gms.internal.cast.s1;
 import com.google.android.gms.internal.cast.t1;
-import com.google.android.gms.internal.cast.t6;
 import com.google.android.gms.internal.cast.u1;
 import com.google.android.gms.internal.cast.u6;
 import com.google.android.gms.internal.cast.v1;
+import com.google.android.gms.internal.cast.v6;
 import com.google.android.gms.internal.cast.w1;
 import com.google.android.gms.internal.cast.x1;
 import com.google.android.gms.internal.cast.y1;
 import com.google.android.gms.internal.cast.z1;
-import eg.y2;
+import dg.a3;
 import h5.d0;
 import j$.util.DesugarCollections;
 import java.math.BigInteger;
@@ -59,21 +59,22 @@ import java.util.TreeSet;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import k9.s0;
-import ng.q0;
+import mg.q0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.o3;
+import org.telegram.ui.ActionBar.n3;
 import org.telegram.ui.Components.ba;
 import org.telegram.ui.Components.fa;
-import org.telegram.ui.Components.pk0;
-import org.telegram.ui.Components.pr;
-import org.telegram.ui.aj1;
-import qh.a5;
+import org.telegram.ui.Components.mr;
+import org.telegram.ui.Components.ok0;
+import org.telegram.ui.zi1;
+import ph.c5;
+import vh.w2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class j implements v4.f, c9.c, a3.b, pk0, xd.b {
+public final class j implements v4.f, c9.c, a3.b, ok0, xd.b {
     public Object a;
     public Object b;
     public Object c;
@@ -84,23 +85,23 @@ public final class j implements v4.f, c9.c, a3.b, pk0, xd.b {
         this(context, new s5.b(-1, 0, 0));
     }
 
-    public static void D(j jVar, u6 u6Var) {
-        int i10 = u6Var.e;
-        if (i10 == 2 && ((t6) jVar.d) != null) {
+    public static void D(j jVar, v6 v6Var) {
+        int i10 = v6Var.e;
+        if (i10 == 2 && ((u6) jVar.d) != null) {
             jVar.F();
         }
         if (i10 == 2) {
-            jVar.d = new t6((n0) jVar.a, (String) jVar.c);
+            jVar.d = new u6((o0) jVar.a, (String) jVar.c);
         } else {
             jVar.d = jVar.E();
         }
-        t6 t6Var = (t6) jVar.d;
-        m.h(t6Var);
-        u6Var.d = t6Var.h;
-        t6Var.b.add(u6Var);
+        u6 u6Var = (u6) jVar.d;
+        m.h(u6Var);
+        v6Var.d = u6Var.h;
+        u6Var.b.add(v6Var);
     }
 
-    public static j r(SharedPreferences sharedPreferences, ScheduledThreadPoolExecutor scheduledThreadPoolExecutor) {
+    public static j t(SharedPreferences sharedPreferences, ScheduledThreadPoolExecutor scheduledThreadPoolExecutor) {
         j jVar = new j();
         jVar.d = new ArrayDeque();
         jVar.a = sharedPreferences;
@@ -131,14 +132,14 @@ public final class j implements v4.f, c9.c, a3.b, pk0, xd.b {
 
     public void A() {
         Bitmap bitmap;
-        if (((ef.f) this.d) != null) {
+        if (((df.f) this.d) != null) {
             this.d = null;
             View view = (View) this.b;
             if (view != null) {
                 view.setBackground(null);
             }
         }
-        if (((ef.f) this.d) == null && ((ef.f) this.e) == null && (bitmap = (Bitmap) this.c) != null) {
+        if (((df.f) this.d) == null && ((df.f) this.e) == null && (bitmap = (Bitmap) this.c) != null) {
             bitmap.recycle();
             this.c = null;
         }
@@ -179,131 +180,131 @@ public final class j implements v4.f, c9.c, a3.b, pk0, xd.b {
         this.c = null;
     }
 
-    public t6 E() {
-        if (((t6) this.d) == null) {
-            t6 t6Var = new t6((n0) this.a, (String) this.c);
-            this.d = t6Var;
-            t6Var.b(1);
+    public u6 E() {
+        if (((u6) this.d) == null) {
+            u6 u6Var = new u6((o0) this.a, (String) this.c);
+            this.d = u6Var;
+            u6Var.b(1);
         }
-        return (t6) this.d;
+        return (u6) this.d;
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     public void F() {
-        q1 q1Var;
+        r1 r1Var;
         int i10;
         long j10;
-        t6 t6Var = (t6) this.d;
-        if (t6Var != null) {
-            Map map = t6Var.e;
-            List<g3> list = t6Var.d;
-            List<com.google.android.gms.internal.cast.a> list2 = t6Var.c;
-            List<u6> list3 = t6Var.b;
-            r5.c cVar = t6Var.j;
+        u6 u6Var = (u6) this.d;
+        if (u6Var != null) {
+            Map map = u6Var.e;
+            List<h3> list = u6Var.d;
+            List<com.google.android.gms.internal.cast.a> list2 = u6Var.c;
+            List<v6> list3 = u6Var.b;
+            r5.c cVar = u6Var.j;
             if (cVar != null) {
                 cVar.l = null;
-                t6Var.j = null;
+                u6Var.j = null;
             }
-            long j11 = t6Var.i;
-            q1 m9 = r1.m();
+            long j11 = u6Var.i;
+            r1 m9 = s1.m();
             m9.c();
-            r1.t((r1) m9.b, j11);
-            String str = t6Var.l;
+            s1.t((s1) m9.b, j11);
+            String str = u6Var.l;
             if (str != null) {
                 m9.c();
-                r1.y((r1) m9.b, str);
+                s1.y((s1) m9.b, str);
             }
-            String str2 = t6Var.m;
+            String str2 = u6Var.m;
             if (str2 != null) {
                 m9.c();
-                r1.u((r1) m9.b, str2);
+                s1.u((s1) m9.b, str2);
             }
-            j1 l10 = k1.l();
-            String str3 = t6.o;
+            k1 l10 = l1.l();
+            String str3 = u6.o;
             l10.c();
-            k1.n((k1) l10.b, str3);
-            String str4 = t6Var.g;
+            l1.n((l1) l10.b, str3);
+            String str4 = u6Var.g;
             l10.c();
-            k1.m((k1) l10.b, str4);
-            k1 k1Var = (k1) l10.a();
+            l1.m((l1) l10.b, str4);
+            l1 l1Var = (l1) l10.a();
             m9.c();
-            r1.r((r1) m9.b, k1Var);
-            b0 b0Var = t6Var.a;
-            w1 l11 = x1.l();
-            Object zza = b0Var.zza();
+            s1.r((s1) m9.b, l1Var);
+            c0 c0Var = u6Var.a;
+            x1 l11 = y1.l();
+            Object zza = c0Var.zza();
             if (zza != null) {
-                i2 l12 = j2.l();
+                j2 l12 = k2.l();
                 l12.c();
-                j2.m((j2) l12.b, (String) zza);
-                j2 j2Var = (j2) l12.a();
+                k2.m((k2) l12.b, (String) zza);
+                k2 k2Var = (k2) l12.a();
                 l11.c();
-                x1.m((x1) l11.b, j2Var);
+                y1.m((y1) l11.b, k2Var);
             }
-            String str5 = t6Var.k;
+            String str5 = u6Var.k;
             if (str5 != null) {
                 try {
                     String replace = str5.replace("-", "");
                     j10 = new BigInteger(replace.substring(0, Math.min(16, replace.length())), 16).longValue();
-                } catch (NumberFormatException e6) {
-                    u5.b bVar = t6.n;
-                    Log.w(bVar.a, bVar.d("receiverSessionId %s is not valid for hash", str5), e6);
+                } catch (NumberFormatException e) {
+                    u5.b bVar = u6.n;
+                    Log.w(bVar.a, bVar.d("receiverSessionId %s is not valid for hash", str5), e);
                     j10 = 0;
                 }
                 l11.c();
-                x1.n((x1) l11.b, j10);
+                y1.n((y1) l11.b, j10);
             }
             if (!list3.isEmpty()) {
                 ArrayList arrayList = new ArrayList();
-                for (u6 u6Var : list3) {
-                    u6Var.getClass();
-                    u1 l13 = v1.l();
-                    int i11 = u6Var.e;
+                for (v6 v6Var : list3) {
+                    v6Var.getClass();
+                    v1 l13 = w1.l();
+                    int i11 = v6Var.e;
                     l13.c();
-                    v1.p((v1) l13.b, i11);
-                    int i12 = (int) (u6Var.b - u6Var.d);
+                    w1.p((w1) l13.b, i11);
+                    int i12 = (int) (v6Var.b - v6Var.d);
                     l13.c();
-                    v1.m((v1) l13.b, i12);
-                    Integer num = u6Var.a;
+                    w1.m((w1) l13.b, i12);
+                    Integer num = v6Var.a;
                     if (num != null) {
                         int intValue = num.intValue();
                         l13.c();
-                        v1.n((v1) l13.b, intValue);
+                        w1.n((w1) l13.b, intValue);
                     }
-                    Boolean bool = u6Var.c;
+                    Boolean bool = v6Var.c;
                     if (bool != null) {
                         boolean booleanValue = bool.booleanValue();
                         l13.c();
-                        v1.o((v1) l13.b, booleanValue);
+                        w1.o((w1) l13.b, booleanValue);
                     }
-                    arrayList.add((v1) l13.a());
+                    arrayList.add((w1) l13.a());
                 }
                 l11.c();
-                x1.o((x1) l11.b, arrayList);
+                y1.o((y1) l11.b, arrayList);
             }
             if (!list2.isEmpty()) {
                 ArrayList arrayList2 = new ArrayList();
                 for (com.google.android.gms.internal.cast.a aVar : list2) {
                     aVar.getClass();
-                    a2 l14 = b2.l();
+                    b2 l14 = c2.l();
                     int i13 = (int) (aVar.b - aVar.c);
                     l14.c();
-                    b2.m((b2) l14.b, i13);
+                    c2.m((c2) l14.b, i13);
                     int i14 = aVar.a;
                     int i15 = i14 != 1 ? i14 != 2 ? i14 != 3 ? 1 : 4 : 3 : 2;
                     l14.c();
-                    b2.n((b2) l14.b, i15);
-                    arrayList2.add((b2) l14.a());
+                    c2.n((c2) l14.b, i15);
+                    arrayList2.add((c2) l14.a());
                 }
                 l11.c();
-                x1.q((x1) l11.b, arrayList2);
+                y1.q((y1) l11.b, arrayList2);
             }
             if (list.isEmpty()) {
-                q1Var = m9;
+                r1Var = m9;
             } else {
                 ArrayList arrayList3 = new ArrayList();
-                for (g3 g3Var : list) {
-                    String str6 = g3Var.a;
-                    s1 l15 = t1.l();
+                for (h3 h3Var : list) {
+                    String str6 = h3Var.a;
+                    t1 l15 = u1.l();
                     switch (str6.hashCode()) {
                         case -1189611734:
                             if (str6.equals("queueInsert")) {
@@ -464,52 +465,52 @@ public final class j implements v4.f, c9.c, a3.b, pk0, xd.b {
                             break;
                     }
                     l15.c();
-                    t1.q((t1) l15.b, i10);
-                    int i16 = (int) g3Var.b;
+                    u1.q((u1) l15.b, i10);
+                    int i16 = (int) h3Var.b;
                     l15.c();
-                    t1.m((t1) l15.b, i16);
-                    int i17 = g3Var.c;
+                    u1.m((u1) l15.b, i16);
+                    int i17 = h3Var.c;
                     l15.c();
-                    t1.n((t1) l15.b, i17);
-                    int i18 = (int) (g3Var.d - g3Var.f);
+                    u1.n((u1) l15.b, i17);
+                    int i18 = (int) (h3Var.d - h3Var.f);
                     l15.c();
-                    t1.o((t1) l15.b, i18);
-                    int i19 = (int) (g3Var.e - g3Var.f);
+                    u1.o((u1) l15.b, i18);
+                    int i19 = (int) (h3Var.e - h3Var.f);
                     l15.c();
-                    t1.p((t1) l15.b, i19);
-                    arrayList3.add((t1) l15.a());
+                    u1.p((u1) l15.b, i19);
+                    arrayList3.add((u1) l15.a());
                     m9 = m9;
                 }
-                q1Var = m9;
+                r1Var = m9;
                 l11.c();
-                x1.p((x1) l11.b, arrayList3);
+                y1.p((y1) l11.b, arrayList3);
             }
             if (!map.isEmpty()) {
                 ArrayList arrayList4 = new ArrayList();
                 for (com.google.android.gms.internal.cast.b bVar2 : map.values()) {
                     bVar2.getClass();
-                    y1 l16 = z1.l();
+                    z1 l16 = a2.l();
                     int i20 = bVar2.e;
                     l16.c();
-                    z1.p((z1) l16.b, i20);
+                    a2.p((a2) l16.b, i20);
                     int i21 = bVar2.d.get();
                     l16.c();
-                    z1.m((z1) l16.b, i21);
+                    a2.m((a2) l16.b, i21);
                     int i22 = (int) (bVar2.a - bVar2.c);
                     l16.c();
-                    z1.n((z1) l16.b, i22);
+                    a2.n((a2) l16.b, i22);
                     int i23 = (int) (bVar2.b - bVar2.c);
                     l16.c();
-                    z1.o((z1) l16.b, i23);
-                    arrayList4.add((z1) l16.a());
+                    a2.o((a2) l16.b, i23);
+                    arrayList4.add((a2) l16.a());
                 }
                 l11.c();
-                x1.r((x1) l11.b, arrayList4);
+                y1.r((y1) l11.b, arrayList4);
             }
-            x1 x1Var = (x1) l11.a();
-            q1Var.c();
-            r1.q((r1) q1Var.b, x1Var);
-            t6Var.f.a((r1) q1Var.a(), 233);
+            y1 y1Var = (y1) l11.a();
+            r1Var.c();
+            s1.q((s1) r1Var.b, y1Var);
+            u6Var.f.a((s1) r1Var.a(), 233);
             this.d = null;
         }
     }
@@ -517,36 +518,44 @@ public final class j implements v4.f, c9.c, a3.b, pk0, xd.b {
     @Override // xd.b
     public void L(int i10, float f10, float f11, xd.c cVar) {
         ((TextView) this.b).setAlpha(AndroidUtilities.lerp(0.5f, 1.0f, ((xd.a) this.d).e));
-        ((xg.c) this.e).b(this);
+        ((wg.c) this.e).b(this);
     }
 
     @Override // c9.c
     public Object a(Class cls) {
-        if (!((Set) this.a).contains(t.a(cls))) {
+        if (!((Set) this.a).contains(u.a(cls))) {
             throw new a7.b("Attempting to request an undeclared dependency " + cls + ".");
         }
         Object a2 = ((c9.c) this.e).a(cls);
         if (!cls.equals(y9.a.class)) {
             return a2;
         }
-        return new u();
+        return new v();
     }
 
     @Override // c9.c
-    public ba.b b(t tVar) {
-        if (((Set) this.b).contains(tVar)) {
-            return ((c9.c) this.e).b(tVar);
+    public ba.b b(u uVar) {
+        if (((Set) this.b).contains(uVar)) {
+            return ((c9.c) this.e).b(uVar);
         }
-        throw new a7.b("Attempting to request an undeclared dependency Provider<" + tVar + ">.");
+        throw new a7.b("Attempting to request an undeclared dependency Provider<" + uVar + ">.");
     }
 
     @Override // c9.c
     public ba.b c(Class cls) {
-        return b(t.a(cls));
+        return b(u.a(cls));
+    }
+
+    @Override // c9.c
+    public s d(u uVar) {
+        if (((Set) this.c).contains(uVar)) {
+            return ((c9.c) this.e).d(uVar);
+        }
+        throw new a7.b("Attempting to request an undeclared dependency Deferred<" + uVar + ">.");
     }
 
     @Override // v4.f
-    public int d(long j10) {
+    public int e(long j10) {
         long[] jArr = (long[]) this.b;
         int b10 = d0.b(jArr, j10, false);
         if (b10 < jArr.length) {
@@ -556,53 +565,61 @@ public final class j implements v4.f, c9.c, a3.b, pk0, xd.b {
     }
 
     @Override // c9.c
-    public r e(t tVar) {
-        if (((Set) this.c).contains(tVar)) {
-            return ((c9.c) this.e).e(tVar);
+    public Object f(u uVar) {
+        if (((Set) this.a).contains(uVar)) {
+            return ((c9.c) this.e).f(uVar);
         }
-        throw new a7.b("Attempting to request an undeclared dependency Deferred<" + tVar + ">.");
+        throw new a7.b("Attempting to request an undeclared dependency " + uVar + ".");
     }
 
     @Override // c9.c
-    public Object f(t tVar) {
-        if (((Set) this.a).contains(tVar)) {
-            return ((c9.c) this.e).f(tVar);
+    public Set g(u uVar) {
+        if (((Set) this.d).contains(uVar)) {
+            return ((c9.c) this.e).g(uVar);
         }
-        throw new a7.b("Attempting to request an undeclared dependency " + tVar + ".");
-    }
-
-    @Override // org.telegram.ui.Components.pk0
-    public /* synthetic */ boolean g() {
-        return true;
+        throw new a7.b("Attempting to request an undeclared dependency Set<" + uVar + ">.");
     }
 
     @Override // rc.a
     public Object get() {
-        return new d3.a((Executor) ((rc.a) this.a).get(), (z2.e) ((rc.a) this.b).get(), (androidx.biometric.e) ((androidx.biometric.e) this.c).get(), (f3.d) ((rc.a) this.d).get(), (g3.c) ((rc.a) this.e).get());
+        return new d3.a((Executor) ((rc.a) this.a).get(), (z2.d) ((rc.a) this.b).get(), (af.d) ((af.d) this.c).get(), (f3.d) ((rc.a) this.d).get(), (g3.c) ((rc.a) this.e).get());
     }
 
-    @Override // org.telegram.ui.Components.pk0
-    public /* synthetic */ boolean h() {
+    @Override // v4.f
+    public long h(int i10) {
+        return ((long[]) this.b)[i10];
+    }
+
+    @Override // org.telegram.ui.Components.ok0
+    public /* synthetic */ boolean i() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ok0
+    public void j(View view, q0 q0Var, boolean z4, boolean z10) {
+        c5 c5Var = (c5) this.e;
+        a3 a3Var = c5Var.X1;
+        if (a3Var == null) {
+            return;
+        }
+        a3Var.s(q0Var, true);
+        c5Var.O0(false);
+    }
+
+    @Override // org.telegram.ui.Components.ok0
+    public /* synthetic */ boolean k() {
         return false;
     }
 
-    @Override // c9.c
-    public Set i(t tVar) {
-        if (((Set) this.d).contains(tVar)) {
-            return ((c9.c) this.e).i(tVar);
-        }
-        throw new a7.b("Attempting to request an undeclared dependency Set<" + tVar + ">.");
-    }
-
-    @Override // org.telegram.ui.Components.pk0
-    public void j(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i10, boolean z4) {
+    @Override // org.telegram.ui.Components.ok0
+    public void l(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i10, boolean z4) {
         Paint paint;
         ba baVar;
         Path path = (Path) this.b;
         fa faVar = (fa) this.c;
         Paint paint2 = (Paint) this.d;
-        a5 a5Var = (a5) this.e;
-        if (!z4 && (baVar = a5Var.b2) != null && baVar.c()) {
+        c5 c5Var = (c5) this.e;
+        if (!z4 && (baVar = c5Var.b2) != null && baVar.c()) {
             if (z4) {
                 faVar = (fa) this.a;
             }
@@ -618,16 +635,16 @@ public final class j implements v4.f, c9.c, a3.b, pk0, xd.b {
         }
         if (z4) {
             if (((fa) this.a) == null) {
-                this.a = new fa(a5Var.b2, a5Var.W1.getReactionsWindow().c, 0, false);
+                this.a = new fa(c5Var.b2, c5Var.W1.getReactionsWindow().c, 0, false);
             }
             float f13 = -f11;
             float f14 = -f12;
-            ((fa) this.a).e(f13, f14, a5Var.getMeasuredWidth() + f13, a5Var.getMeasuredHeight() + f14);
+            ((fa) this.a).e(f13, f14, c5Var.getMeasuredWidth() + f13, c5Var.getMeasuredHeight() + f14);
             paint = ((fa) this.a).h;
         } else {
             float f15 = -f11;
             float f16 = -f12;
-            faVar.e(f15, f16, a5Var.getMeasuredWidth() + f15, a5Var.getMeasuredHeight() + f16);
+            faVar.e(f15, f16, c5Var.getMeasuredWidth() + f15, c5Var.getMeasuredHeight() + f16);
             paint = faVar.h;
         }
         paint.setAlpha(i10);
@@ -636,28 +653,28 @@ public final class j implements v4.f, c9.c, a3.b, pk0, xd.b {
         canvas.drawRoundRect(rectF, f10, f10, paint2);
     }
 
-    public byte[] k() {
+    public byte[] n() {
         byte[] bArr = (byte[]) this.b;
         byte[] bArr2 = (byte[]) this.a;
         SecureRandom secureRandom = new SecureRandom();
         BigInteger bigInteger = new BigInteger(2048, secureRandom);
-        BigInteger bigInteger2 = aj1.b;
-        BigInteger bigInteger3 = aj1.a;
+        BigInteger bigInteger2 = zi1.b;
+        BigInteger bigInteger3 = zi1.a;
         BigInteger modPow = bigInteger2.modPow(bigInteger, bigInteger3);
         BigInteger bigInteger4 = BigInteger.ONE;
         if (modPow.compareTo(bigInteger4) <= 0 || modPow.compareTo(bigInteger3.subtract(bigInteger4)) >= 0) {
             throw new IllegalStateException("our pubkey invalid (extremely unlikely)");
         }
-        byte[] a2 = aj1.a(modPow);
+        byte[] a2 = zi1.a(modPow);
         BigInteger bigInteger5 = new BigInteger(1, bArr);
         if (bigInteger5.compareTo(bigInteger4) <= 0 || bigInteger5.compareTo(bigInteger3.subtract(bigInteger4)) >= 0) {
             throw new IllegalArgumentException("peer pubkey out of range");
         }
-        byte[] a10 = aj1.a(bigInteger5.modPow(bigInteger, bigInteger3));
+        byte[] a10 = zi1.a(bigInteger5.modPow(bigInteger, bigInteger3));
         byte[] bArr3 = new byte[16];
         secureRandom.nextBytes(bArr3);
-        byte[] b10 = aj1.b(new byte[][]{a10, bArr2, bArr3});
-        byte[] b11 = aj1.b(new byte[][]{a10, bArr});
+        byte[] b10 = zi1.b(new byte[][]{a10, bArr2, bArr3});
+        byte[] b11 = zi1.b(new byte[][]{a10, bArr});
         this.d = b10;
         String[] strArr = {"👋", "👍", "👎", "👌", "👊", "🤟", "\u1faf5", "👏", "🤝", "✍", "💪", "👀", "👅", "🥶", "🤡", "💀", "👽", "😈", "😎", "🤠", "🤩", "😍", "🤯", "🦄", "🐶", "🐷", "🐔", "🐥", "🦊", "🐙", "🐸", "🐳", "🦉", "🦆", "🐢", "🦖", "🐵", "🐝", "🦁", "🐧", "🦋", "🐬", "🦀", "🐌", "🦠", "🐠", "🌵", "💐", "💐", "🎄", "🍄", "🍔", "🍕", "☕", "🍩", "🍪", "🎂", "🍫", "🍭", "🍎", "🥥", "🍒", "🌶", "🥒", "🥦", "🍇", "🍋", "🍓", "🍌", "🍍", "🍆", "🌽", "🍺", "🍷", "🍾", "🍦", "🍰", "🍞", "🍖", "🌭", "🧊", "🍳", "⭐", "☁", "🚀", "🎈", "💎", "💡", "🔑", "❄", "🔎", "👠", "👕", "👗", "👖", "👙", "👜", "👓", "🎀", "💄", "💍", "♠", "❤", "♦", "♣", "🌈", "🌊", "🎃", "👻", "🎁", "🔮", "🎥", "💿", "💻", "📡", "🔉", "⏳", "🔒", "🚗", "🔱", "🔗", "🎲", "🎮", "⚽", "🎳", "🏁", "🏆", "🎸", "💣", "🚽", "🎹", "🎤", "🎨", "🔫", "💊", "💰", "📦", "📅", "📚", "❗", "❓", "💯", "💦", "💤", "🌍", "🏝", "🚂", "🛢", "🛹", "🚢", "✈", "🛎", "🧳", "🌖", "🌞", "🔥", "🏓", "🎰", "🧸", "\u1faa9", "🎭", "👑", "🎩", "🧢", "🔈", "🔋", "🕯", "✏", "💼", "📌", "✂", "🗑", "🛡", "⚙", "🧲", "\u1fa8f", "⚖", "🧪", "🚪", "\u1fae7", "🛒", "🪑", "🗿", "🏁", "🏴\u200d☠", "📊", "🥁", "🎧", "🎵", "🧩", "⛳", "🥇", "🥈", "🥈", "🌪", "⛺", "🧭", "\u1fac6", "🧠", "💋"};
         ArrayList arrayList = new ArrayList(4);
@@ -666,7 +683,7 @@ public final class j implements v4.f, c9.c, a3.b, pk0, xd.b {
             arrayList.add(strArr[(int) (((b11[i11 + 7] & 255) | ((((((((b11[i11] & 127) << 56) | ((b11[i11 + 1] & 255) << 48)) | ((b11[i11 + 2] & 255) << 40)) | ((b11[i11 + 3] & 255) << 32)) | ((b11[i11 + 4] & 255) << 24)) | ((b11[i11 + 5] & 255) << 16)) | ((b11[i11 + 6] & 255) << 8))) % 200)]);
         }
         this.e = arrayList;
-        FileLog.d("wear-auth: built answer; session " + aj1.d(bArr2) + " emojis=" + ((ArrayList) this.e));
+        FileLog.d("wear-auth: built answer; session " + zi1.d(bArr2) + " emojis=" + ((ArrayList) this.e));
         byte[] bArr4 = new byte[288];
         System.arraycopy(bArr2, 0, bArr4, 0, 16);
         System.arraycopy(bArr3, 0, bArr4, 16, 16);
@@ -674,68 +691,26 @@ public final class j implements v4.f, c9.c, a3.b, pk0, xd.b {
         return bArr4;
     }
 
-    @Override // v4.f
-    public long l(int i10) {
-        return ((long[]) this.b)[i10];
+    @Override // org.telegram.ui.Components.ok0
+    public boolean o() {
+        return true;
     }
 
-    public s0 n() {
+    public s0 p() {
         String str = ((Long) this.a) == null ? " pc" : "";
         if (((String) this.b) == null) {
             str = str.concat(" symbol");
         }
         if (((Long) this.d) == null) {
-            str = w.c.e(str, " offset");
+            str = w2.k(str, " offset");
         }
         if (((Integer) this.e) == null) {
-            str = w.c.e(str, " importance");
+            str = w2.k(str, " importance");
         }
         if (str.isEmpty()) {
             return new s0(((Long) this.a).longValue(), (String) this.b, (String) this.c, ((Long) this.d).longValue(), ((Integer) this.e).intValue());
         }
         throw new IllegalStateException("Missing required properties:".concat(str));
-    }
-
-    @Override // org.telegram.ui.Components.pk0
-    public void o(View view, q0 q0Var, boolean z4, boolean z10) {
-        a5 a5Var = (a5) this.e;
-        y2 y2Var = a5Var.X1;
-        if (y2Var == null) {
-            return;
-        }
-        y2Var.s(q0Var, true);
-        a5Var.O0(false);
-    }
-
-    public void p(Canvas canvas, boolean z4, boolean z10, int i10, float f10) {
-        RectF rectF = (RectF) this.b;
-        float[] fArr = (float[]) this.c;
-        Paint paint = (Paint) this.e;
-        o3 o3Var = (o3) this.a;
-        Path path = (Path) this.d;
-        int i11 = (int) ((z10 ? 0 : (int) o3Var.D) * f10);
-        int dp = AndroidUtilities.dp(10.0f) * Math.min(1, i11 / AndroidUtilities.dp(60.0f));
-        if (i11 <= 0) {
-            return;
-        }
-        fArr[3] = 0.0f;
-        fArr[2] = 0.0f;
-        fArr[1] = 0.0f;
-        fArr[0] = 0.0f;
-        float f11 = dp;
-        fArr[7] = f11;
-        fArr[6] = f11;
-        fArr[5] = f11;
-        fArr[4] = f11;
-        path.rewind();
-        rectF.set(0.0f, 0.0f, i10, (o3Var.getY() + o3Var.getHeight()) - i11);
-        path.addRoundRect(rectF, fArr, Path.Direction.CW);
-        paint.setAlpha(0);
-        if (z4) {
-            paint.setShadowLayer(AndroidUtilities.dp(2.0f), 0.0f, AndroidUtilities.dp(1.0f), TLObject.FLAG_28);
-            canvas.drawPath(path, paint);
-        }
-        canvas.clipPath(path);
     }
 
     @Override // v4.f
@@ -830,16 +805,47 @@ public final class j implements v4.f, c9.c, a3.b, pk0, xd.b {
         return arrayList2;
     }
 
-    public r s(Class cls) {
-        return e(t.a(cls));
+    @Override // v4.f
+    public int r() {
+        return ((long[]) this.b).length;
     }
 
-    @Override // org.telegram.ui.Components.pk0
-    public boolean t() {
-        return true;
+    public void s(Canvas canvas, boolean z4, boolean z10, int i10, float f10) {
+        RectF rectF = (RectF) this.b;
+        float[] fArr = (float[]) this.c;
+        Paint paint = (Paint) this.e;
+        n3 n3Var = (n3) this.a;
+        Path path = (Path) this.d;
+        int i11 = (int) ((z10 ? 0 : (int) n3Var.D) * f10);
+        int dp = AndroidUtilities.dp(10.0f) * Math.min(1, i11 / AndroidUtilities.dp(60.0f));
+        if (i11 <= 0) {
+            return;
+        }
+        fArr[3] = 0.0f;
+        fArr[2] = 0.0f;
+        fArr[1] = 0.0f;
+        fArr[0] = 0.0f;
+        float f11 = dp;
+        fArr[7] = f11;
+        fArr[6] = f11;
+        fArr[5] = f11;
+        fArr[4] = f11;
+        path.rewind();
+        rectF.set(0.0f, 0.0f, i10, (n3Var.getY() + n3Var.getHeight()) - i11);
+        path.addRoundRect(rectF, fArr, Path.Direction.CW);
+        paint.setAlpha(0);
+        if (z4) {
+            paint.setShadowLayer(AndroidUtilities.dp(2.0f), 0.0f, AndroidUtilities.dp(1.0f), TLObject.FLAG_28);
+            canvas.drawPath(path, paint);
+        }
+        canvas.clipPath(path);
     }
 
-    public String u() {
+    public s u(Class cls) {
+        return d(u.a(cls));
+    }
+
+    public String v() {
         String str;
         synchronized (((ArrayDeque) this.d)) {
             str = (String) ((ArrayDeque) this.d).peek();
@@ -847,24 +853,19 @@ public final class j implements v4.f, c9.c, a3.b, pk0, xd.b {
         return str;
     }
 
-    public boolean v(Object obj) {
+    public boolean w(Object obj) {
         boolean remove;
         synchronized (((ArrayDeque) this.d)) {
             remove = ((ArrayDeque) this.d).remove(obj);
             if (remove) {
-                ((ScheduledThreadPoolExecutor) this.e).execute(new ag.e(this, 14));
+                ((ScheduledThreadPoolExecutor) this.e).execute(new ag.d(this, 18));
             }
         }
         return remove;
     }
 
-    public Set w(Class cls) {
-        return i(t.a(cls));
-    }
-
-    @Override // v4.f
-    public int x() {
-        return ((long[]) this.b).length;
+    public Set x(Class cls) {
+        return g(u.a(cls));
     }
 
     public void y(Bitmap bitmap) {
@@ -874,21 +875,21 @@ public final class j implements v4.f, c9.c, a3.b, pk0, xd.b {
         if (((Bitmap) this.c) == bitmap) {
             return;
         }
-        if (((ef.f) this.e) != null) {
+        if (((df.f) this.e) != null) {
             view.setBackground(null);
             this.e = null;
         }
-        if (((ef.f) this.d) == null && ((ef.f) this.e) == null && (bitmap2 = (Bitmap) this.c) != null) {
+        if (((df.f) this.d) == null && ((df.f) this.e) == null && (bitmap2 = (Bitmap) this.c) != null) {
             bitmap2.recycle();
             this.c = null;
         }
         A();
         this.c = bitmap;
-        ef.f fVar = new ef.f((Bitmap) this.c);
+        df.f fVar = new df.f((Bitmap) this.c);
         this.e = fVar;
         view.setBackground(fVar);
         if (view2 != null) {
-            ef.f fVar2 = new ef.f((Bitmap) this.c);
+            df.f fVar2 = new df.f((Bitmap) this.c);
             this.d = fVar2;
             view2.setBackground(fVar2);
         }
@@ -917,22 +918,22 @@ public final class j implements v4.f, c9.c, a3.b, pk0, xd.b {
         this.b = jArr;
     }
 
-    public j(xg.c cVar) {
+    public j(wg.c cVar) {
         this.e = cVar;
-        pr prVar = pr.h;
-        this.c = new xd.a(0, this, prVar, 320L, true);
-        this.d = new xd.a(1, this, prVar, 320L, true);
+        mr mrVar = mr.h;
+        this.c = new xd.a(0, this, mrVar, 320L, true);
+        this.d = new xd.a(1, this, mrVar, 320L, true);
     }
 
-    public j(o3 o3Var) {
+    public j(n3 n3Var) {
         this.b = new RectF();
         this.c = new float[8];
         this.d = new Path();
         this.e = new Paint(1);
-        this.a = o3Var;
+        this.a = n3Var;
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.ok0
     public /* synthetic */ void m() {
     }
 

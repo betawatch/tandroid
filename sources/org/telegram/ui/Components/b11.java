@@ -16,7 +16,7 @@ import org.telegram.ui.Components.ThemeEditorView;
 import org.telegram.ui.Components.ThemeEditorView.EditorAlert;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class b11 extends FrameLayout {
     public static final /* synthetic */ int e = 0;
@@ -50,8 +50,8 @@ public final class b11 extends FrameLayout {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.f5 f5Var;
-        ArrayList<org.telegram.ui.ActionBar.m6> themeDescriptions;
+        org.telegram.ui.ActionBar.e5 e5Var;
+        ArrayList<org.telegram.ui.ActionBar.l6> themeDescriptions;
         AnimatorSet animatorSet;
         ArrayList arrayList;
         boolean z4;
@@ -71,24 +71,24 @@ public final class b11 extends FrameLayout {
             if (motionEvent.getAction() == 1 && !this.c && themeEditorView.l == null) {
                 LaunchActivity launchActivity = (LaunchActivity) themeEditorView.b;
                 if (AndroidUtilities.isTablet()) {
-                    f5Var = launchActivity.o0;
-                    if (f5Var != null && f5Var.getFragmentStack().isEmpty()) {
-                        f5Var = null;
+                    e5Var = launchActivity.o0;
+                    if (e5Var != null && e5Var.getFragmentStack().isEmpty()) {
+                        e5Var = null;
                     }
-                    if (f5Var == null) {
-                        f5Var = launchActivity.p0;
-                        if (f5Var != null) {
+                    if (e5Var == null) {
+                        e5Var = launchActivity.p0;
+                        if (e5Var != null) {
                         }
                     }
-                    if (f5Var == null) {
-                        f5Var = launchActivity.O();
+                    if (e5Var == null) {
+                        e5Var = launchActivity.O();
                     }
-                    if (f5Var != null) {
-                        org.telegram.ui.ActionBar.p2 p2Var = !f5Var.getFragmentStack().isEmpty() ? (org.telegram.ui.ActionBar.p2) f5Var.getFragmentStack().get(f5Var.getFragmentStack().size() - 1) : null;
+                    if (e5Var != null) {
+                        org.telegram.ui.ActionBar.p2 p2Var = !e5Var.getFragmentStack().isEmpty() ? (org.telegram.ui.ActionBar.p2) e5Var.getFragmentStack().get(e5Var.getFragmentStack().size() - 1) : null;
                         if (p2Var != null && (themeDescriptions = p2Var.getThemeDescriptions()) != null) {
                             ThemeEditorView.EditorAlert editorAlert = themeEditorView.new EditorAlert(themeEditorView.b, themeDescriptions);
                             themeEditorView.l = editorAlert;
-                            editorAlert.setOnDismissListener(new eg.c0(i12));
+                            editorAlert.setOnDismissListener(new dg.e0(i12));
                             themeEditorView.l.setOnDismissListener(new b1(this, 9));
                             themeEditorView.l.show();
                             if (themeEditorView.b != null) {
@@ -134,7 +134,7 @@ public final class b11 extends FrameLayout {
                                         }
                                         int i17 = layoutParams.x;
                                         if (i17 < 0) {
-                                            f10 = w.c.c(i17, i14, 0.5f, 1.0f);
+                                            f10 = vh.w2.c(i17, i14, 0.5f, 1.0f);
                                         } else {
                                             if (i17 > AndroidUtilities.displaySize.x - layoutParams.width) {
                                                 f10 = org.telegram.messenger.y3.A((i17 - r9) + r8, i14, 0.5f, 1.0f);
@@ -253,10 +253,10 @@ public final class b11 extends FrameLayout {
                         }
                     }
                 }
-                f5Var = null;
-                if (f5Var == null) {
+                e5Var = null;
+                if (e5Var == null) {
                 }
-                if (f5Var != null) {
+                if (e5Var != null) {
                 }
             }
         } else if (Math.abs(this.a - rawX) >= AndroidUtilities.getPixelsInCM(0.3f, true) || Math.abs(this.b - rawY) >= AndroidUtilities.getPixelsInCM(0.3f, false)) {

@@ -1,58 +1,70 @@
 package uf;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import org.telegram.SQLite.SQLiteCursor;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.ui.du;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.c5;
+import org.telegram.ui.Components.j6;
+import org.telegram.ui.Components.mr;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ k1 b;
+public final class g1 extends EditTextBoldCursor {
+    public final c5 b;
+    public int c;
+    public final j6 d;
+    public final /* synthetic */ f6 e;
 
-    public /* synthetic */ g1(k1 k1Var, int i10) {
-        this.a = i10;
-        this.b = k1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g1(Context context, f6 f6Var) {
+        super(context);
+        this.e = f6Var;
+        this.b = new c5(this);
+        j6 j6Var = new j6(false, true, true, false);
+        this.d = j6Var;
+        j6Var.k(0.2f, 160L, mr.h);
+        j6Var.t(AndroidUtilities.dp(15.33f));
+        j6Var.setCallback(this);
+        j6Var.b = 5;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                k1 k1Var = this.b;
-                k1Var.getClass();
-                try {
-                    MessagesStorage.getInstance(k1Var.m).getDatabase().executeFast("DELETE FROM hashtag_recent_v2 WHERE 1").stepThis().dispose();
-                    break;
-                } catch (Exception e6) {
-                    FileLog.e(e6);
-                    return;
-                }
-            default:
-                k1 k1Var2 = this.b;
-                try {
-                    SQLiteCursor queryFinalized = MessagesStorage.getInstance(k1Var2.m).getDatabase().queryFinalized("SELECT id, date FROM hashtag_recent_v2 WHERE 1", new Object[0]);
-                    ArrayList arrayList = new ArrayList();
-                    HashMap hashMap = new HashMap();
-                    while (queryFinalized.next()) {
-                        i1 i1Var = new i1();
-                        i1Var.a = queryFinalized.stringValue(0);
-                        i1Var.b = queryFinalized.intValue(1);
-                        arrayList.add(i1Var);
-                        hashMap.put(i1Var.a, i1Var);
-                    }
-                    queryFinalized.dispose();
-                    Collections.sort(arrayList, new du(21));
-                    AndroidUtilities.runOnUIThread(new h1(k1Var2, arrayList, hashMap, 0));
-                    break;
-                } catch (Exception e10) {
-                    FileLog.e(e10);
-                }
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        int a2 = this.b.a(org.telegram.ui.ActionBar.j6.v0(this.c < 0 ? org.telegram.ui.ActionBar.j6.p7 : org.telegram.ui.ActionBar.j6.P5, this.e), false);
+        j6 j6Var = this.d;
+        j6Var.r(a2);
+        j6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
+        j6Var.draw(canvas);
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(36.0f), TLObject.FLAG_30));
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.wt, android.widget.TextView
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        super.onTextChanged(charSequence, i10, i11, i12);
+        j6 j6Var = this.d;
+        if (j6Var != null) {
+            this.c = 32 - charSequence.length();
+            j6Var.b();
+            String str = "";
+            if (this.c <= 4) {
+                str = "" + this.c;
+            }
+            j6Var.q(str, true, true);
         }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.d || super.verifyDrawable(drawable);
     }
 }

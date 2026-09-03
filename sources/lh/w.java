@@ -1,40 +1,65 @@
 package lh;
 
-import android.text.style.ClickableSpan;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.h90;
+import android.content.DialogInterface;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.Components.fy;
+import org.telegram.ui.LanguageSelectActivity;
+import org.telegram.ui.cd0;
+import org.telegram.ui.e60;
+import org.telegram.ui.ln;
+import org.telegram.ui.od1;
+import org.telegram.ui.ro;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class w implements Runnable {
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class w implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qh.e3 b;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ w(qh.e3 e3Var, int i10) {
-        this.a = i10;
-        this.b = e3Var;
+    public /* synthetic */ w(Object obj, int i10, int i11) {
+        this.a = i11;
+        this.c = obj;
+        this.b = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.removeFromParent(this.b);
+                ConnectionsManager.getInstance(((b0) this.c).a).cancelRequest(this.b, true);
                 break;
             case 1:
-                AndroidUtilities.removeFromParent(this.b);
+                ConnectionsManager.getInstance(((org.telegram.ui.ra) this.c).currentAccount).cancelRequest(this.b, true);
                 break;
             case 2:
-                AndroidUtilities.removeFromParent(this.b);
+                ((ln) this.c).a.getConnectionsManager().cancelRequest(this.b, true);
+                break;
+            case 3:
+                ro roVar = (ro) this.c;
+                roVar.K0 = false;
+                roVar.b = null;
+                roVar.getConnectionsManager().cancelRequest(this.b, true);
+                break;
+            case 4:
+                ((ChatActivityEnterView) this.c).L2.getConnectionsManager().cancelRequest(this.b, true);
+                break;
+            case 5:
+                ConnectionsManager.getInstance(((fy) this.c).c.a.C.Z0).cancelRequest(this.b, true);
+                break;
+            case 6:
+                ((e60) this.c).d.getConnectionsManager().cancelRequest(this.b, true);
+                break;
+            case 7:
+                ConnectionsManager.getInstance(((LanguageSelectActivity) this.c).currentAccount).cancelRequest(this.b, true);
+                break;
+            case 8:
+                ((cd0) this.c).getConnectionsManager().cancelRequest(this.b, true);
                 break;
             default:
-                this.b.getClass();
+                ConnectionsManager.getInstance(((od1) this.c).currentAccount).cancelRequest(this.b, true);
                 break;
         }
-    }
-
-    public /* synthetic */ w(qh.e3 e3Var, h90 h90Var, ClickableSpan clickableSpan) {
-        this.a = 3;
-        this.b = e3Var;
     }
 }

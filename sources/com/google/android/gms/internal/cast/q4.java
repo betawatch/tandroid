@@ -1,107 +1,47 @@
 package com.google.android.gms.internal.cast;
 
 import java.util.concurrent.Callable;
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.concurrent.locks.LockSupport;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class q4 extends AtomicReference implements Runnable {
-    public static final j4 c = new j4();
-    public static final j4 d = new j4();
-    public final Callable a;
-    public final /* synthetic */ r4 b;
+public final class q4 extends m4 implements ScheduledExecutorService {
+    public final ScheduledExecutorService b;
 
-    public q4(r4 r4Var, Callable callable) {
-        this.b = r4Var;
-        callable.getClass();
-        this.a = callable;
+    public q4(ScheduledExecutorService scheduledExecutorService) {
+        super(scheduledExecutorService);
+        this.b = scheduledExecutorService;
     }
 
-    public final void a(Thread thread) {
-        Runnable runnable = (Runnable) get();
-        i4 i4Var = null;
-        boolean z4 = false;
-        int i10 = 0;
-        while (true) {
-            boolean z10 = runnable instanceof i4;
-            j4 j4Var = d;
-            if (!z10) {
-                if (runnable != j4Var) {
-                    break;
-                }
-            } else {
-                i4Var = (i4) runnable;
-            }
-            i10++;
-            if (i10 <= 1000) {
-                Thread.yield();
-            } else if (runnable == j4Var || compareAndSet(runnable, j4Var)) {
-                z4 = Thread.interrupted() || z4;
-                LockSupport.park(i4Var);
-            }
-            runnable = (Runnable) get();
-        }
-        if (z4) {
-            thread.interrupt();
-        }
+    @Override // com.google.android.gms.internal.cast.m4, java.lang.AutoCloseable
+    public final /* synthetic */ void close() {
+        i4.d(this);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        Object call;
-        Thread currentThread = Thread.currentThread();
-        if (compareAndSet(null, currentThread)) {
-            r4 r4Var = this.b;
-            boolean isDone = r4Var.isDone();
-            j4 j4Var = c;
-            if (isDone) {
-                call = null;
-            } else {
-                try {
-                    call = this.a.call();
-                } catch (Throwable th2) {
-                    try {
-                        if (th2 instanceof InterruptedException) {
-                            Thread.currentThread().interrupt();
-                        }
-                        if (!compareAndSet(currentThread, j4Var)) {
-                            a(currentThread);
-                        }
-                        if (e4.f.e(r4Var, null, new x3(th2))) {
-                            e4.g(r4Var);
-                            return;
-                        }
-                        return;
-                    } catch (Throwable th3) {
-                        if (!compareAndSet(currentThread, j4Var)) {
-                            a(currentThread);
-                        }
-                        if (e4.f.e(r4Var, null, e4.h)) {
-                            e4.g(r4Var);
-                        }
-                        throw th3;
-                    }
-                }
-            }
-            if (!compareAndSet(currentThread, j4Var)) {
-                a(currentThread);
-            }
-            if (isDone) {
-                return;
-            }
-            if (call == null) {
-                call = e4.h;
-            }
-            if (e4.f.e(r4Var, null, call)) {
-                e4.g(r4Var);
-            }
-        }
+    @Override // java.util.concurrent.ScheduledExecutorService
+    public final ScheduledFuture schedule(Runnable runnable, long j10, TimeUnit timeUnit) {
+        s4 s4Var = new s4(Executors.callable(runnable, null));
+        return new n4(s4Var, this.b.schedule(s4Var, j10, timeUnit));
     }
 
-    @Override // java.util.concurrent.atomic.AtomicReference
-    public final String toString() {
-        Runnable runnable = (Runnable) get();
-        return android.support.v4.media.a.z(runnable == c ? "running=[DONE]" : runnable instanceof i4 ? "running=[INTERRUPTED]" : runnable instanceof Thread ? android.support.v4.media.a.o("running=[RUNNING ON ", ((Thread) runnable).getName(), "]") : "running=[NOT STARTED YET]", ", ", this.a.toString());
+    @Override // java.util.concurrent.ScheduledExecutorService
+    public final /* bridge */ /* synthetic */ ScheduledFuture scheduleAtFixedRate(Runnable runnable, long j10, long j11, TimeUnit timeUnit) {
+        p4 p4Var = new p4(runnable);
+        return new n4(p4Var, this.b.scheduleAtFixedRate(p4Var, j10, j11, timeUnit));
+    }
+
+    @Override // java.util.concurrent.ScheduledExecutorService
+    public final /* bridge */ /* synthetic */ ScheduledFuture scheduleWithFixedDelay(Runnable runnable, long j10, long j11, TimeUnit timeUnit) {
+        p4 p4Var = new p4(runnable);
+        return new n4(p4Var, this.b.scheduleWithFixedDelay(p4Var, j10, j11, timeUnit));
+    }
+
+    @Override // java.util.concurrent.ScheduledExecutorService
+    public final /* bridge */ /* synthetic */ ScheduledFuture schedule(Callable callable, long j10, TimeUnit timeUnit) {
+        s4 s4Var = new s4(callable);
+        return new n4(s4Var, this.b.schedule(s4Var, j10, timeUnit));
     }
 }

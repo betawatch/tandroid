@@ -10,7 +10,7 @@ import java.nio.ByteBuffer;
 import n3.i;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class a extends e {
     public final i B;
@@ -70,13 +70,13 @@ public final class a extends e {
             i iVar = this.B;
             iVar.b();
             b bVar = this.c;
-            bVar.l();
-            if (s(bVar, iVar, 0) != -4 || iVar.e(4)) {
+            bVar.m();
+            if (s(bVar, iVar, 0) != -4 || iVar.d(4)) {
                 return;
             }
             this.E = iVar.f;
-            if (this.D != null && !iVar.e(TLObject.FLAG_31)) {
-                iVar.k();
+            if (this.D != null && !iVar.d(TLObject.FLAG_31)) {
+                iVar.l();
                 ByteBuffer byteBuffer = iVar.d;
                 int i10 = h5.d0.a;
                 if (byteBuffer.remaining() != 16) {

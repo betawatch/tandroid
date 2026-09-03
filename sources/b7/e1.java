@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class e1 extends h1 {
     public final int a;
@@ -93,14 +93,14 @@ public final class e1 extends h1 {
             Map.Entry entry = (Map.Entry) p10.next();
             linkedHashMap.put(((h1) entry.getKey()).toString().replace("\n", "\n  "), ((h1) entry.getValue()).toString().replace("\n", "\n  "));
         }
-        h7.u uVar2 = new h7.u(3);
+        db.a aVar = new db.a(3);
         StringBuilder sb = new StringBuilder("{\n  ");
         try {
-            b.g(sb, linkedHashMap.entrySet().iterator(), uVar2);
+            b.g(sb, linkedHashMap.entrySet().iterator(), aVar);
             sb.append("\n}");
             return sb.toString();
-        } catch (IOException e6) {
-            throw new AssertionError(e6);
+        } catch (IOException e) {
+            throw new AssertionError(e);
         }
     }
 

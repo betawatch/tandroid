@@ -14,7 +14,7 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
 public final class c2 extends WebViewClient {
     public boolean a = true;
@@ -37,35 +37,35 @@ public final class c2 extends WebViewClient {
         }
         h2 h2Var = this.d;
         if (str == null || !str.endsWith("/index.html")) {
-            com.google.firebase.messaging.s sVar = h2Var.b;
-            j1 j1Var = sVar != null ? (j1) ((HashMap) sVar.c).get(str) : null;
-            if (j1Var == null) {
+            com.google.firebase.messaging.r rVar = h2Var.b;
+            k1 k1Var = rVar != null ? (k1) ((HashMap) rVar.c).get(str) : null;
+            if (k1Var == null) {
                 return new WebResourceResponse("text/plain", "utf-8", 404, "Not Found", null, null);
             }
-            k1 k1Var = (k1) j1Var.a.get("content-type");
-            String str3 = k1Var == null ? null : k1Var.a;
+            l1 l1Var = (l1) k1Var.a.get("content-type");
+            String str3 = l1Var == null ? null : l1Var.a;
             if (!"text/html".equalsIgnoreCase(str3) && !"text/css".equalsIgnoreCase(str3)) {
                 return new WebResourceResponse("text/plain", "utf-8", 404, "Not Found", null, null);
             }
             try {
-                a2 = j1Var.a();
+                a2 = k1Var.a();
                 str2 = str3;
-            } catch (IOException e6) {
-                FileLog.e(e6);
+            } catch (IOException e) {
+                FileLog.e(e);
                 return new WebResourceResponse("text/plain", "utf-8", 503, "Server error", null, null);
             }
         } else {
             str2 = "application/octet-stream";
             if (this.b) {
-                com.google.firebase.messaging.s sVar2 = h2Var.b;
-                j1 j1Var2 = sVar2 != null ? (j1) ((ArrayList) sVar2.b).get(0) : null;
-                if (j1Var2 == null) {
+                com.google.firebase.messaging.r rVar2 = h2Var.b;
+                k1 k1Var2 = rVar2 != null ? (k1) ((ArrayList) rVar2.b).get(0) : null;
+                if (k1Var2 == null) {
                     return new WebResourceResponse("text/plain", "utf-8", 404, "Not Found", null, null);
                 }
                 try {
-                    a2 = j1Var2.a();
-                } catch (IOException e10) {
-                    FileLog.e(e10);
+                    a2 = k1Var2.a();
+                } catch (IOException e6) {
+                    FileLog.e(e6);
                     return new WebResourceResponse("text/plain", "utf-8", 503, "Server error", null, null);
                 }
             } else {

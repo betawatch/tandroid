@@ -9,7 +9,7 @@ import java.util.IdentityHashMap;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class q1 {
     public final k3.k a;
@@ -121,7 +121,7 @@ public final class q1 {
                 q1.this.e.n.d(22);
             }
         };
-        f7.b bVar = new f7.b(this, p1Var, false, 17);
+        f7.b bVar = new f7.b(this, p1Var, false, 18);
         this.f.put(p1Var, new o1(qVar, r12, bVar));
         int i10 = h5.d0.a;
         Looper myLooper = Looper.myLooper();
@@ -142,13 +142,13 @@ public final class q1 {
             myLooper2 = Looper.getMainLooper();
         }
         Handler handler2 = new Handler(myLooper2, null);
-        o3.l lVar = qVar.d;
-        lVar.getClass();
-        CopyOnWriteArrayList copyOnWriteArrayList2 = lVar.c;
-        o3.k kVar = new o3.k();
-        kVar.a = handler2;
-        kVar.b = bVar;
-        copyOnWriteArrayList2.add(kVar);
+        o3.m mVar = qVar.d;
+        mVar.getClass();
+        CopyOnWriteArrayList copyOnWriteArrayList2 = mVar.c;
+        o3.l lVar = new o3.l();
+        lVar.a = handler2;
+        lVar.b = bVar;
+        copyOnWriteArrayList2.add(lVar);
         qVar.k(r12, this.l, this.a);
     }
 

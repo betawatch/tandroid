@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBoxBase;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class nw0 extends View {
     public final /* synthetic */ int a;
@@ -26,14 +26,14 @@ public final class nw0 extends View {
         switch (this.a) {
             case 6:
                 canvas.save();
-                qh.ba baVar = (qh.ba) this.b;
-                canvas.translate(baVar.Z0.getX() + baVar.i0.getX(), baVar.Z0.getY() + baVar.i0.getY());
-                qh.q9 q9Var = baVar.Z0;
-                q9Var.k(canvas, q9Var.getBounds(), baVar.Z0.getOver2Alpha());
+                ph.da daVar = (ph.da) this.b;
+                canvas.translate(daVar.Z0.getX() + daVar.i0.getX(), daVar.Z0.getY() + daVar.i0.getY());
+                ph.t9 t9Var = daVar.Z0;
+                t9Var.k(canvas, t9Var.getBounds(), daVar.Z0.getOver2Alpha());
                 canvas.restore();
                 break;
             case 11:
-                og.b bVar = ((vg.f) this.b).F;
+                ng.b bVar = ((ug.f) this.b).F;
                 if (bVar != null) {
                     bVar.draw(canvas);
                 }
@@ -50,7 +50,7 @@ public final class nw0 extends View {
         switch (this.a) {
             case 10:
                 super.onAttachedToWindow();
-                ((uf.z0) this.b).f = true;
+                ((tf.z0) this.b).f = true;
                 break;
             case 13:
                 super.onAttachedToWindow();
@@ -67,7 +67,7 @@ public final class nw0 extends View {
         switch (this.a) {
             case 10:
                 super.onDetachedFromWindow();
-                ((uf.z0) this.b).f = false;
+                ((tf.z0) this.b).f = false;
                 break;
             case 13:
                 super.onDetachedFromWindow();
@@ -85,14 +85,14 @@ public final class nw0 extends View {
             case 2:
                 u21 u21Var = (u21) this.b;
                 canvas.drawColor(u21Var.H ? -15590870 : -6569073);
-                org.telegram.ui.Components.fc0 fc0Var = u21Var.n;
-                if (fc0Var != null) {
-                    fc0Var.setBounds(0, 0, getWidth(), getHeight());
+                org.telegram.ui.Components.ec0 ec0Var = u21Var.n;
+                if (ec0Var != null) {
+                    ec0Var.setBounds(0, 0, getWidth(), getHeight());
                 }
                 u21Var.h.setBounds(0, 0, getWidth(), getHeight());
-                org.telegram.ui.Components.fc0 fc0Var2 = u21Var.n;
-                if (fc0Var2 != null) {
-                    fc0Var2.draw(canvas);
+                org.telegram.ui.Components.ec0 ec0Var2 = u21Var.n;
+                if (ec0Var2 != null) {
+                    ec0Var2.draw(canvas);
                 }
                 u21Var.h.draw(canvas);
                 super.onDraw(canvas);
@@ -102,14 +102,14 @@ public final class nw0 extends View {
                 break;
             case 9:
                 super.onDraw(canvas);
-                th.i0 i0Var = (th.i0) this.b;
-                lf.b0 b0Var = i0Var.H;
+                sh.i0 i0Var = (sh.i0) this.b;
+                kf.b0 b0Var = i0Var.H;
                 float max = Math.max(i0Var.b.e, i0Var.c.e);
-                lf.b0 b0Var2 = i0Var.G;
+                kf.b0 b0Var2 = i0Var.G;
                 b0Var2.c(AndroidUtilities.dp(42.0f) + i0Var.R.b, 0);
                 b0Var2.setBounds(0, 0, getWidth(), AndroidUtilities.dp(56.0f) + i0Var.R.b);
-                int i10 = org.telegram.ui.ActionBar.k6.a7;
-                b0Var2.b(org.telegram.ui.ActionBar.k6.l1(AndroidUtilities.lerp(1.0f, 0.8f, max), i0Var.getThemedColor(i10)));
+                int i10 = org.telegram.ui.ActionBar.j6.a7;
+                b0Var2.b(org.telegram.ui.ActionBar.j6.l1(AndroidUtilities.lerp(1.0f, 0.8f, max), i0Var.getThemedColor(i10)));
                 b0Var2.draw(canvas);
                 if (i0Var.K) {
                     max = 1.0f;
@@ -119,13 +119,13 @@ public final class nw0 extends View {
                 float lerp3 = AndroidUtilities.lerp(0.8f, AndroidUtilities.getNavigationBarThirdButtonsFactor(i0Var.R.d), max);
                 b0Var.c(0, lerp);
                 b0Var.setBounds(0, getHeight() - lerp2, getWidth(), getHeight());
-                b0Var.b(org.telegram.ui.ActionBar.k6.l1(lerp3, i0Var.getThemedColor(i10)));
+                b0Var.b(org.telegram.ui.ActionBar.j6.l1(lerp3, i0Var.getThemedColor(i10)));
                 b0Var.draw(canvas);
                 break;
             case 12:
                 canvas.save();
                 canvas.translate(AndroidUtilities.dpf2(22.6f), AndroidUtilities.dpf2(21.66f));
-                ((wh.r0) this.b).c.draw(canvas);
+                ((vh.r0) this.b).c.draw(canvas);
                 canvas.restore();
                 break;
             case 13:
@@ -184,7 +184,7 @@ public final class nw0 extends View {
                 super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(ow0Var.c.V, TLObject.FLAG_30));
                 break;
             case 7:
-                rh.g gVar = (rh.g) this.b;
+                qh.g gVar = (qh.g) this.b;
                 if (gVar.E) {
                     int i15 = gVar.F;
                     kVar = ((org.telegram.ui.ActionBar.p2) gVar).actionBar;
@@ -199,7 +199,7 @@ public final class nw0 extends View {
                 super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((int) (i12 - (0 * 2.5f)), TLObject.FLAG_30));
                 break;
             case 8:
-                sh.j jVar = (sh.j) this.b;
+                rh.j jVar = (rh.j) this.b;
                 if (jVar.E) {
                     int i16 = jVar.F;
                     kVar2 = ((org.telegram.ui.ActionBar.p2) jVar).actionBar;
@@ -215,7 +215,7 @@ public final class nw0 extends View {
                 break;
             case 10:
                 ((View) getParent()).getMeasuredHeight();
-                uf.z0 z0Var = (uf.z0) this.b;
+                tf.z0 z0Var = (tf.z0) this.b;
                 Integer num = z0Var.d;
                 if (num != null) {
                     i14 = num.intValue();
@@ -261,12 +261,12 @@ public final class nw0 extends View {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nw0(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+    public nw0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.a = 13;
-        CheckBoxBase checkBoxBase = new CheckBoxBase(20, this, g6Var);
+        CheckBoxBase checkBoxBase = new CheckBoxBase(20, this, f6Var);
         this.b = checkBoxBase;
-        checkBoxBase.h(org.telegram.ui.ActionBar.k6.hl, org.telegram.ui.ActionBar.k6.z5, org.telegram.ui.ActionBar.k6.k7);
+        checkBoxBase.h(org.telegram.ui.ActionBar.j6.hl, org.telegram.ui.ActionBar.j6.z5, org.telegram.ui.ActionBar.j6.k7);
         checkBoxBase.d(10);
         checkBoxBase.k(true);
         checkBoxBase.i(AndroidUtilities.dp(5.0f));

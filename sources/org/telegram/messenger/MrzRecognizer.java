@@ -13,11 +13,11 @@ import android.util.SparseArray;
 import java.util.Calendar;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class MrzRecognizer {
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     public static class Result {
         public static final int GENDER_FEMALE = 2;
         public static final int GENDER_MALE = 1;
@@ -413,14 +413,14 @@ public class MrzRecognizer {
             float max = 1500.0f / Math.max(bitmap.getWidth(), bitmap.getHeight());
             bitmap = Bitmap.createScaledBitmap(bitmap, Math.round(bitmap.getWidth() * max), Math.round(bitmap.getHeight() * max), true);
         }
-        androidx.biometric.e eVar = new androidx.biometric.e(15);
+        af.d dVar = new af.d(15);
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();
-        eVar.d = bitmap;
-        e8.a aVar = (e8.a) eVar.b;
+        dVar.d = bitmap;
+        e8.a aVar = (e8.a) dVar.b;
         aVar.a = width;
         aVar.b = height;
-        SparseArray L = nVar.L(eVar);
+        SparseArray L = nVar.L(dVar);
         int i10 = 0;
         for (int i11 = 0; i11 < L.size(); i11++) {
             f8.m mVar = (f8.m) L.valueAt(i11);
@@ -442,9 +442,9 @@ public class MrzRecognizer {
                 result.firstName = capitalize(mVar.y.b);
                 result.lastName = capitalize(mVar.y.d);
                 result.middleName = capitalize(mVar.y.c);
-                f8.e eVar2 = mVar.y;
-                result.number = eVar2.s;
-                String str2 = eVar2.e;
+                f8.e eVar = mVar.y;
+                result.number = eVar.s;
+                String str2 = eVar.e;
                 if (str2 != null) {
                     if (str2.equals("1")) {
                         result.gender = 1;

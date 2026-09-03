@@ -1,153 +1,76 @@
 package bf;
 
-import android.net.Uri;
-import android.os.Bundle;
-import q5.l;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class g {
-    public final String a;
-    public final l b;
-    public final Uri c;
-    public final String d;
-    public final int e;
-    public final int f;
+public final class g extends ViewGroup {
+    public final df.e a;
 
-    /* JADX WARN: Removed duplicated region for block: B:24:0x005c  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0073  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x007c  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0083  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x009f  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x00c6  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x00d9  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x00ce  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public g(f fVar) {
-        String str;
-        int i10;
-        l lVar;
-        Bundle bundle;
-        StringBuilder sb;
-        StringBuilder sb2;
-        String str2;
-        String str3;
-        int i11;
-        str = (String) fVar.c;
-        this.a = str;
-        str.getClass();
-        i10 = 3;
-        switch (str) {
-            case "image/jpeg":
-            case "image/png":
-                i10 = 4;
-                lVar = (l) fVar.h;
-                lVar = lVar == null ? new l(i10) : lVar;
-                bundle = lVar.b;
-                sb = new StringBuilder();
-                sb2 = new StringBuilder();
-                str2 = (String) fVar.e;
-                if (str2 != null) {
-                    sb.append(str2);
-                }
-                str3 = (String) fVar.f;
-                if (str3 != null) {
-                    sb2.append(str3);
-                }
-                i11 = fVar.a;
-                if (i11 != 0 && fVar.b != 0) {
-                    l.f(2, "com.google.android.gms.cast.metadata.WIDTH");
-                    bundle.putInt("com.google.android.gms.cast.metadata.WIDTH", i11);
-                    int i12 = fVar.b;
-                    l.f(2, "com.google.android.gms.cast.metadata.HEIGHT");
-                    bundle.putInt("com.google.android.gms.cast.metadata.HEIGHT", i12);
-                    if (sb2.length() > 0) {
-                        sb2.append(' ');
-                    }
-                    sb2.append("(");
-                    sb2.append(fVar.a);
-                    sb2.append("x");
-                    sb2.append(fVar.b);
-                    sb2.append(")");
-                }
-                if (sb.length() > 0) {
-                    lVar.e("com.google.android.gms.cast.metadata.TITLE", sb.toString());
-                } else {
-                    lVar.e("com.google.android.gms.cast.metadata.TITLE", "No Title");
-                }
-                if (sb2.length() > 0) {
-                    lVar.e("com.google.android.gms.cast.metadata.SUBTITLE", sb2.toString());
-                    break;
-                }
-                break;
-            case "application/x-mpegURL":
-            case "video/mp4":
-                i10 = 1;
-                lVar = (l) fVar.h;
-                if (lVar == null) {
-                }
-                bundle = lVar.b;
-                sb = new StringBuilder();
-                sb2 = new StringBuilder();
-                str2 = (String) fVar.e;
-                if (str2 != null) {
-                }
-                str3 = (String) fVar.f;
-                if (str3 != null) {
-                }
-                i11 = fVar.a;
-                if (i11 != 0) {
-                    l.f(2, "com.google.android.gms.cast.metadata.WIDTH");
-                    bundle.putInt("com.google.android.gms.cast.metadata.WIDTH", i11);
-                    int i122 = fVar.b;
-                    l.f(2, "com.google.android.gms.cast.metadata.HEIGHT");
-                    bundle.putInt("com.google.android.gms.cast.metadata.HEIGHT", i122);
-                    if (sb2.length() > 0) {
-                    }
-                    sb2.append("(");
-                    sb2.append(fVar.a);
-                    sb2.append("x");
-                    sb2.append(fVar.b);
-                    sb2.append(")");
-                    break;
-                }
-                if (sb.length() > 0) {
-                }
-                if (sb2.length() > 0) {
-                }
-                break;
-            default:
-                if (!str.startsWith("audio/")) {
-                    lVar = null;
-                    break;
-                }
-                lVar = (l) fVar.h;
-                if (lVar == null) {
-                }
-                bundle = lVar.b;
-                sb = new StringBuilder();
-                sb2 = new StringBuilder();
-                str2 = (String) fVar.e;
-                if (str2 != null) {
-                }
-                str3 = (String) fVar.f;
-                if (str3 != null) {
-                }
-                i11 = fVar.a;
-                if (i11 != 0) {
-                }
-                if (sb.length() > 0) {
-                }
-                if (sb2.length() > 0) {
-                }
-                break;
+    public g(LaunchActivity launchActivity, df.e eVar) {
+        super(launchActivity);
+        this.a = eVar;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        df.e eVar = this.a;
+        Path path = eVar.m;
+        float f10 = (1.0f - eVar.o) * eVar.j.e;
+        boolean z4 = f10 > 1.0f;
+        canvas.drawColor(i0.a.k(j6.w0(null, j6.d6, false), (int) Math.min(eVar.o * 420.0f, 255.0f)));
+        eVar.d.a(canvas, 1.0f);
+        if (z4) {
+            RectF rectF = eVar.l;
+            if (eVar.k != f10) {
+                eVar.k = f10;
+                rectF.set(eVar.c);
+                path.reset();
+                path.addRoundRect(rectF, f10, f10, Path.Direction.CW);
+                path.close();
+            }
+            canvas.save();
+            canvas.clipPath(path);
         }
-        this.b = lVar;
-        this.c = (Uri) fVar.g;
-        this.d = (String) fVar.d;
-        this.e = fVar.a;
-        this.f = fVar.b;
+        super.dispatchDraw(canvas);
+        eVar.e.a(canvas, 1.0f - eVar.o);
+        if (z4) {
+            canvas.restore();
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+        for (int i14 = 0; i14 < getChildCount(); i14++) {
+            View childAt = getChildAt(i14);
+            Rect rect = this.a.c;
+            childAt.layout(rect.left, rect.top, rect.right, rect.bottom);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        int size2 = View.MeasureSpec.getSize(i11);
+        setMeasuredDimension(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
+        boolean z4 = ((a) getParent()).d;
+        df.e eVar = this.a;
+        Rect rect = eVar.c;
+        if (z4) {
+            rect.set(0, 0, size, size2);
+        } else {
+            rect.set(eVar.b);
+        }
+        for (int i12 = 0; i12 < getChildCount(); i12++) {
+            getChildAt(i12).measure(View.MeasureSpec.makeMeasureSpec(eVar.c.width(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(eVar.c.height(), TLObject.FLAG_30));
+        }
     }
 }

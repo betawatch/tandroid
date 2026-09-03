@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zo0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -28,18 +28,18 @@ public final /* synthetic */ class zo0 implements Utilities.Callback {
                 hp0Var2.H = starGift;
                 np0 np0Var = hp0Var2.m0;
                 if (starGift == null) {
-                    lh.b5 b5Var = hp0Var2.G;
-                    if (b5Var != null) {
-                        b5Var.f();
+                    kh.a5 a5Var = hp0Var2.G;
+                    if (a5Var != null) {
+                        a5Var.f();
                         hp0Var2.G = null;
                     }
                 } else {
-                    lh.b5 b5Var2 = hp0Var2.G;
-                    if (b5Var2 == null || b5Var2.b != starGift.id) {
+                    kh.a5 a5Var2 = hp0Var2.G;
+                    if (a5Var2 == null || a5Var2.b != starGift.id) {
                         i10 = ((org.telegram.ui.ActionBar.p2) np0Var).currentAccount;
-                        lh.b5 b5Var3 = new lh.b5(hp0Var2.H.id, i10, new zo0(ap0Var, 2));
-                        hp0Var2.G = b5Var3;
-                        b5Var3.g(false);
+                        kh.a5 a5Var3 = new kh.a5(hp0Var2.H.id, i10, new zo0(ap0Var, 2));
+                        hp0Var2.G = a5Var3;
+                        a5Var3.g(false);
                     }
                 }
                 hp0.a(hp0Var2);

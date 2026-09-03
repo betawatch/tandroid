@@ -12,10 +12,10 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.yh;
+import org.telegram.ui.ai;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 final class zztv<T> implements zzug<T> {
     private static final int[] zza = new int[0];
@@ -88,7 +88,7 @@ final class zztv<T> implements zzug<T> {
     private static Field zzC(Class cls, String str) {
         try {
             return cls.getDeclaredField(str);
-        } catch (NoSuchFieldException e6) {
+        } catch (NoSuchFieldException e) {
             Field[] declaredFields = cls.getDeclaredFields();
             for (Field field : declaredFields) {
                 if (str.equals(field.getName())) {
@@ -97,9 +97,9 @@ final class zztv<T> implements zzug<T> {
             }
             String name = cls.getName();
             String arrays = Arrays.toString(declaredFields);
-            StringBuilder m9 = yh.m("Field ", str, " for ", name, " not found. Known fields are ");
-            m9.append(arrays);
-            throw new RuntimeException(m9.toString(), e6);
+            StringBuilder l10 = ai.l("Field ", str, " for ", name, " not found. Known fields are ");
+            l10.append(arrays);
+            throw new RuntimeException(l10.toString(), e);
         }
     }
 

@@ -10,7 +10,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class h91 extends View {
     public float B;
@@ -22,7 +22,7 @@ public final class h91 extends View {
     public AnimatorSet H;
     public g91 I;
     public boolean J;
-    public final org.telegram.ui.Cells.c2 K;
+    public final org.telegram.ui.Cells.b2 K;
     public final Drawable a;
     public final Drawable b;
     public final Drawable c;
@@ -41,7 +41,7 @@ public final class h91 extends View {
     public h91(Context context) {
         super(context);
         this.J = true;
-        this.K = new org.telegram.ui.Cells.c2(this);
+        this.K = new org.telegram.ui.Cells.b2(this);
         this.a = context.getResources().getDrawable(R.drawable.zoom_minus);
         this.b = context.getResources().getDrawable(R.drawable.zoom_plus);
         this.c = context.getResources().getDrawable(R.drawable.zoom_slide);

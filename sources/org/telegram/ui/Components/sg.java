@@ -10,10 +10,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class sg extends b6 {
-    public qg.b s;
+    public pg.b s;
     public final Path v;
     public final RectF w;
     public FragmentContextView x;
@@ -23,11 +23,11 @@ public final class sg extends b6 {
         this.v = new Path();
         this.w = new RectF();
         setOrientation(1);
-        qg.b bVar = this.s;
+        pg.b bVar = this.s;
         if (bVar != null) {
             bVar.u();
         }
-        Color.alpha(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.d6, false));
+        Color.alpha(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
         invalidate();
     }
 
@@ -41,7 +41,7 @@ public final class sg extends b6 {
         if (getMetadata().c.a == 0.0f) {
             return;
         }
-        qg.b bVar = this.s;
+        pg.b bVar = this.s;
         if (bVar != null) {
             bVar.draw(canvas2);
         }
@@ -82,11 +82,11 @@ public final class sg extends b6 {
             View view2 = ((a6) n11.a).a;
             float min = Math.min(1.0f, n11.c.a) * n11.c();
             if (min > 0.0f && (!z4 || (fragmentContextView = this.x) == null || (fragmentContextView != view2 && fragmentContextView.getParent() != view2))) {
-                int alpha = org.telegram.ui.ActionBar.k6.k0.getAlpha();
-                org.telegram.ui.ActionBar.k6.k0.setAlpha((int) (alpha * min));
+                int alpha = org.telegram.ui.ActionBar.j6.k0.getAlpha();
+                org.telegram.ui.ActionBar.j6.k0.setAlpha((int) (alpha * min));
                 float f10 = 1.0f - min;
-                canvas2.drawLine(getPaddingLeft() + (AndroidUtilities.dp(16.0f) * f10), paddingTop2, getWidth() - ((AndroidUtilities.dp(16.0f) * f10) + getPaddingRight()), paddingTop2, org.telegram.ui.ActionBar.k6.k0);
-                org.telegram.ui.ActionBar.k6.k0.setAlpha(alpha);
+                canvas2.drawLine(getPaddingLeft() + (AndroidUtilities.dp(16.0f) * f10), paddingTop2, getWidth() - ((AndroidUtilities.dp(16.0f) * f10) + getPaddingRight()), paddingTop2, org.telegram.ui.ActionBar.j6.k0);
+                org.telegram.ui.ActionBar.j6.k0.setAlpha(alpha);
             }
             i12++;
             canvas2 = canvas;
@@ -97,7 +97,7 @@ public final class sg extends b6 {
 
     @Override // android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        qg.b bVar;
+        pg.b bVar;
         if (super.dispatchTouchEvent(motionEvent)) {
             return true;
         }
@@ -119,7 +119,7 @@ public final class sg extends b6 {
         Path path = this.v;
         path.rewind();
         path.addRoundRect(rectF, min, min, Path.Direction.CW);
-        qg.b bVar = this.s;
+        pg.b bVar = this.s;
         if (bVar != null) {
             bVar.setAlpha((int) (f11 * 255.0f));
             this.s.setBounds(getPaddingLeft() - AndroidUtilities.dp(7.0f), 0, AndroidUtilities.dp(7.0f) + (getMeasuredWidth() - getPaddingRight()), getPaddingBottom() + getPaddingTop() + ((int) f10));
@@ -133,7 +133,7 @@ public final class sg extends b6 {
         j();
     }
 
-    public void setBlurredBackground(qg.b bVar) {
+    public void setBlurredBackground(pg.b bVar) {
         this.s = bVar;
     }
 

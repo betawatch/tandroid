@@ -1,14 +1,14 @@
 package n7;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class c8 implements u9.d {
     public static final c8 a = new c8();
-    public static final u9.c b = new u9.c("inferenceCommonLogEvent", w.c.h(l.d.p(w.class, new s(1))));
-    public static final u9.c c = new u9.c("imageInfo", w.c.h(l.d.p(w.class, new s(2))));
-    public static final u9.c d = new u9.c("subjectSegmenterOptions", w.c.h(l.d.p(w.class, new s(3))));
-    public static final u9.c e = new u9.c("subjectInfos", w.c.h(l.d.p(w.class, new s(4))));
-    public static final u9.c f = new u9.c("qualityScores", w.c.h(l.d.p(w.class, new s(5))));
+    public static final u9.c b = new u9.c("inferenceCommonLogEvent", vh.w2.h(kf.k0.p(w.class, new s(1))));
+    public static final u9.c c = new u9.c("imageInfo", vh.w2.h(kf.k0.p(w.class, new s(2))));
+    public static final u9.c d = new u9.c("subjectSegmenterOptions", vh.w2.h(kf.k0.p(w.class, new s(3))));
+    public static final u9.c e = new u9.c("subjectInfos", vh.w2.h(kf.k0.p(w.class, new s(4))));
+    public static final u9.c f = new u9.c("qualityScores", vh.w2.h(kf.k0.p(w.class, new s(5))));
 
     @Override // u9.a
     public final void a(Object obj, Object obj2) {

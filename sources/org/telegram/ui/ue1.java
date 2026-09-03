@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.os.Build;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class ue1 extends f2.a1 {
+public final class ue1 extends f2.z0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ sf1 b;
 
@@ -14,17 +14,17 @@ public final class ue1 extends f2.a1 {
         this.b = sf1Var;
     }
 
-    @Override // f2.a1
+    @Override // f2.z0
     public final void b(RecyclerView recyclerView, int i10, int i11) {
         boolean z4;
         sf1 sf1Var;
-        og.e eVar;
+        ng.e eVar;
         switch (this.a) {
             case 0:
                 sf1 sf1Var2 = this.b;
                 int L0 = sf1Var2.C.L0();
                 if (L0 != -1) {
-                    f2.m1 K = recyclerView.K(L0);
+                    f2.l1 K = recyclerView.K(L0);
                     int top = K != null ? K.a.getTop() : 0;
                     if (L0 == 0) {
                         int i12 = 0 - top;

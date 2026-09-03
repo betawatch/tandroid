@@ -1,20 +1,41 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class n81 extends x01 {
-    public final /* synthetic */ v81 D;
+public final /* synthetic */ class n81 implements Utilities.Callback5, Utilities.Callback5Return, r0.o {
+    public final /* synthetic */ w81 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n81(v81 v81Var, v81 v81Var2, Context context) {
-        super(context, v81Var2);
-        this.D = v81Var;
+    public /* synthetic */ n81(w81 w81Var) {
+        this.a = w81Var;
     }
 
-    @Override // f2.p0
-    public final void l() {
-        this.D.c.V2.N(true);
+    @Override // r0.o
+    public r0.m1 M0(View view, r0.m1 m1Var) {
+        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(m1Var, false);
+        int i10 = defaultWindowInsets.d;
+        w81 w81Var = this.a;
+        w81Var.P = i10;
+        w81Var.c.setPadding(0, AndroidUtilities.dp(12.0f) + defaultWindowInsets.b, 0, w81Var.P + w81Var.Q);
+        return r0.m1.b;
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        return Boolean.valueOf(w81.U(this.a, (org.telegram.ui.Components.i51) obj, (View) obj2));
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        w81.e0(this.a, (org.telegram.ui.Components.i51) obj);
     }
 }

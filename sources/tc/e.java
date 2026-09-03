@@ -6,10 +6,10 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
-import k7.r7;
+import k7.q7;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class e extends AbstractList implements List {
     public static final Object[] d = new Object[0];
@@ -515,7 +515,7 @@ public final class e extends AbstractList implements List {
 
     @Override // java.util.AbstractList
     public final void removeRange(int i10, int i11) {
-        r7.a(i10, i11, this.c);
+        q7.a(i10, i11, this.c);
         int i12 = i11 - i10;
         if (i12 == 0) {
             return;

@@ -4,14 +4,14 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Log;
-import j7.g5;
+import j7.f5;
 import java.util.Arrays;
 import java.util.Locale;
 import java.util.regex.Pattern;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class a extends c6.a {
     public static final Parcelable.Creator<a> CREATOR = new v(0);
@@ -48,9 +48,9 @@ public final class a extends c6.a {
         }
         try {
             this.x = new JSONObject(str6);
-        } catch (JSONException e6) {
+        } catch (JSONException e) {
             Locale locale = Locale.ROOT;
-            Log.w("AdBreakClipInfo", "Error creating AdBreakClipInfo: " + e6.getMessage());
+            Log.w("AdBreakClipInfo", "Error creating AdBreakClipInfo: " + e.getMessage());
             this.h = null;
             this.x = new JSONObject();
         }
@@ -125,21 +125,21 @@ public final class a extends c6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = g5.q(parcel, 20293);
-        g5.l(parcel, 2, this.a);
-        g5.l(parcel, 3, this.b);
-        g5.s(parcel, 4, 8);
+        int q10 = f5.q(parcel, 20293);
+        f5.l(parcel, 2, this.a);
+        f5.l(parcel, 3, this.b);
+        f5.s(parcel, 4, 8);
         parcel.writeLong(this.c);
-        g5.l(parcel, 5, this.d);
-        g5.l(parcel, 6, this.e);
-        g5.l(parcel, 7, this.f);
-        g5.l(parcel, 8, this.h);
-        g5.l(parcel, 9, this.n);
-        g5.l(parcel, 10, this.r);
-        g5.s(parcel, 11, 8);
+        f5.l(parcel, 5, this.d);
+        f5.l(parcel, 6, this.e);
+        f5.l(parcel, 7, this.f);
+        f5.l(parcel, 8, this.h);
+        f5.l(parcel, 9, this.n);
+        f5.l(parcel, 10, this.r);
+        f5.s(parcel, 11, 8);
         parcel.writeLong(this.s);
-        g5.l(parcel, 12, this.v);
-        g5.k(parcel, 13, this.w, i10);
-        g5.r(parcel, q10);
+        f5.l(parcel, 12, this.v);
+        f5.k(parcel, 13, this.w, i10);
+        f5.r(parcel, q10);
     }
 }

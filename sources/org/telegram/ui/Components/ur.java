@@ -1,169 +1,54 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.View;
-import android.view.ViewConfiguration;
-import android.view.ViewGroup;
-import android.widget.EditText;
+import android.widget.PopupWindow;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class ur extends ViewGroup {
-    public static final /* synthetic */ int s = 0;
-    public final rr a;
-    public EditText b;
-    public final View[] c;
-    public View d;
-    public boolean e;
-    public boolean f;
-    public final qr h;
-    public boolean n;
-    public final qr r;
+public abstract class ur {
+    public final org.telegram.ui.ActionBar.p1 a;
+    public boolean b;
 
-    public ur(Context context) {
-        super(context);
-        String str;
-        this.c = new View[12];
-        this.h = new qr(this, 0);
-        this.r = new qr(this, 1);
-        int i10 = 0;
-        int i11 = 0;
-        while (i11 < 11) {
-            if (i11 != 9) {
-                switch (i11) {
-                    case 1:
-                        str = "ABC";
-                        break;
-                    case 2:
-                        str = "DEF";
-                        break;
-                    case 3:
-                        str = "GHI";
-                        break;
-                    case 4:
-                        str = "JKL";
-                        break;
-                    case 5:
-                        str = "MNO";
-                        break;
-                    case 6:
-                        str = "PQRS";
-                        break;
-                    case 7:
-                        str = "TUV";
-                        break;
-                    case 8:
-                        str = "WXYZ";
-                        break;
-                    case 9:
-                    default:
-                        str = "";
-                        break;
-                    case 10:
-                        str = "+";
-                        break;
-                }
-                String valueOf = String.valueOf(i11 != 10 ? i11 + 1 : 0);
-                this.c[i11] = new tr(context, valueOf, str);
-                this.c[i11].setOnClickListener(new w2(12, this, valueOf));
-                addView(this.c[i11]);
-            }
-            i11++;
+    public ur(Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z4) {
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert2, z4 ? 1 : 0, context, f6Var);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setAnimationEnabled(false);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setOnTouchListener(new sr(this, 0));
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setDispatchKeyEventListener(new t(this, 27));
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setShownFromBottom(false);
+        b(actionBarPopupWindow$ActionBarPopupWindowLayout);
+        org.telegram.ui.ActionBar.p1 p1Var = new org.telegram.ui.ActionBar.p1(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
+        this.a = p1Var;
+        p1Var.b = false;
+        p1Var.setAnimationStyle(R.style.PopupContextAnimation2);
+        p1Var.setOutsideTouchable(true);
+        p1Var.setClippingEnabled(true);
+        p1Var.setInputMethodMode(2);
+        p1Var.setSoftInputMode(0);
+        p1Var.getContentView().setFocusableInTouchMode(true);
+        if (AndroidUtilities.isAccessibilityTouchExplorationEnabled()) {
+            p1Var.setFocusable(true);
         }
-        rr rrVar = new rr(this, context, new org.telegram.ui.Cells.f1(context, new sr(this, ViewConfiguration.get(context).getScaledTouchSlop(), 0)));
-        this.a = rrVar;
-        rrVar.setImageResource(R.drawable.msg_clear_input);
-        rrVar.setColorFilter(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.G6, false));
-        int dp = AndroidUtilities.dp(11.0f);
-        rrVar.setPadding(dp, dp, dp, dp);
-        rrVar.setOnClickListener(new eg.m(12));
-        this.c[11] = rrVar;
-        addView(rrVar);
-        while (true) {
-            View[] viewArr = this.c;
-            if (i10 >= viewArr.length) {
-                return;
+        p1Var.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.Components.tr
+            @Override // android.widget.PopupWindow.OnDismissListener
+            public final void onDismiss() {
+                ur urVar = ur.this;
+                urVar.c();
+                urVar.b = false;
             }
-            View view = viewArr[i10];
-            if (view != null) {
-                k7.e6.b(view, 0.02f, 1.2f);
-                view.setBackground(a(i10));
-            }
-            i10++;
+        });
+    }
+
+    public final void a() {
+        org.telegram.ui.ActionBar.p1 p1Var = this.a;
+        if (p1Var != null) {
+            p1Var.dismiss();
         }
     }
 
-    public static org.telegram.ui.Cells.z a(int i10) {
-        boolean z4 = i10 < 3;
-        int i11 = i10 % 3;
-        boolean z10 = i11 == 0;
-        boolean z11 = i11 == 2;
-        boolean z12 = i10 > 8;
-        int i12 = org.telegram.ui.ActionBar.k6.i6;
-        int w02 = org.telegram.ui.ActionBar.k6.w0(null, i12, false);
-        int k10 = i0.a.k(org.telegram.ui.ActionBar.k6.w0(null, i12, false), 30);
-        float f10 = 12.0f;
-        int dp = AndroidUtilities.dp((z10 && z4) ? 24.0f : 12.0f);
-        int dp2 = AndroidUtilities.dp((z11 && z4) ? 24.0f : 12.0f);
-        int dp3 = AndroidUtilities.dp((z11 && z12) ? 24.0f : 12.0f);
-        if (z10 && z12) {
-            f10 = 24.0f;
-        }
-        return org.telegram.ui.ActionBar.k6.i0(dp, dp2, dp3, AndroidUtilities.dp(f10), w02, k10, k10);
-    }
+    public abstract void b(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout);
 
-    @Override // android.view.View
-    public final boolean canScrollHorizontally(int i10) {
-        return true;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
-        int x10 = org.telegram.ui.b.x(32.0f, getWidth(), 3);
-        int x11 = org.telegram.ui.b.x(42.0f, getHeight(), 4);
-        int i14 = 0;
-        while (true) {
-            View[] viewArr = this.c;
-            if (i14 >= viewArr.length) {
-                return;
-            }
-            int dp = AndroidUtilities.dp(6.0f) + x10;
-            int dp2 = AndroidUtilities.dp(10.0f) + (dp * (i14 % 3));
-            int dp3 = AndroidUtilities.dp(6.0f) + x11;
-            int dp4 = AndroidUtilities.dp(10.0f) + (dp3 * (i14 / 3));
-            View view = viewArr[i14];
-            if (view != null) {
-                view.layout(dp2, dp4, dp2 + x10, dp4 + x11);
-            }
-            i14++;
-        }
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
-        int x10 = org.telegram.ui.b.x(32.0f, getWidth(), 3);
-        int x11 = org.telegram.ui.b.x(42.0f, getHeight(), 4);
-        for (View view : this.c) {
-            if (view != null) {
-                view.measure(View.MeasureSpec.makeMeasureSpec(x10, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(x11, TLObject.FLAG_30));
-            }
-        }
-    }
-
-    public void setDispatchBackWhenEmpty(boolean z4) {
-        this.e = z4;
-    }
-
-    public void setEditText(EditText editText) {
-        this.b = editText;
-        this.e = false;
-    }
-
-    public void setViewToFindFocus(View view) {
-        this.d = view;
-    }
+    public abstract void c();
 }

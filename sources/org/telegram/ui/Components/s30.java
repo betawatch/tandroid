@@ -1,55 +1,51 @@
 package org.telegram.ui.Components;
 
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s30 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ u30 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ int d;
+public final class s30 implements tf.i1 {
+    public final /* synthetic */ t30 a;
 
-    public /* synthetic */ s30(u30 u30Var, String str, int i10, int i11) {
-        this.a = i11;
-        this.b = u30Var;
-        this.c = str;
-        this.d = i10;
+    public s30(t30 t30Var) {
+        this.a = t30Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                u30 u30Var = this.b;
-                String str = this.c;
-                int i10 = this.d;
-                if (u30Var.e != null) {
-                    u30Var.e = null;
-                    AndroidUtilities.runOnUIThread(new s30(u30Var, str, i10, 1));
-                    break;
-                }
-                break;
-            default:
-                u30 u30Var2 = this.b;
-                String str2 = this.c;
-                int i11 = this.d;
-                ArrayList arrayList = null;
-                u30Var2.e = null;
-                if (!ChatObject.isChannel(u30Var2.w.S) && u30Var2.w.T != null) {
-                    arrayList = new ArrayList(u30Var2.w.T.participants.participants);
-                }
-                ArrayList arrayList2 = arrayList;
-                if (arrayList2 != null) {
-                    Utilities.searchQueue.postRunnable(new dg.u1(u30Var2, str2, i11, arrayList2, 18));
-                } else {
-                    u30Var2.h = false;
-                }
-                u30Var2.d.g(str2, ChatObject.canAddUsers(u30Var2.w.S), false, true, false, ChatObject.isChannel(u30Var2.w.S) ? u30Var2.w.S.id : 0L, false, 2, i11);
-                break;
+    @Override // tf.i1
+    public final a0.h H0() {
+        return this.a.w.b0;
+    }
+
+    @Override // tf.i1
+    public final /* synthetic */ a0.h X0() {
+        return null;
+    }
+
+    @Override // tf.i1
+    public final void k(int i10) {
+        t30 t30Var = this.a;
+        u30 u30Var = t30Var.w;
+        if (i10 < 0 || i10 != t30Var.n || t30Var.h) {
+            return;
         }
+        int i11 = t30Var.f - 1;
+        boolean z4 = u30Var.s.getVisibility() == 0;
+        t30Var.l();
+        if (t30Var.f > i11) {
+            u30Var.I(i11);
+        }
+        if (t30Var.d.e() || !u30Var.d.R0()) {
+            return;
+        }
+        u30Var.s.e(false, z4);
+    }
+
+    @Override // tf.i1
+    public final /* synthetic */ boolean t1(int i10) {
+        return true;
+    }
+
+    @Override // tf.i1
+    public final /* synthetic */ void J1(ArrayList arrayList) {
     }
 }

@@ -1,143 +1,95 @@
 package org.telegram.ui.Cells;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.graphics.Paint;
-import android.util.Property;
-import android.view.View;
+import android.location.Address;
+import android.location.Geocoder;
+import android.text.TextUtils;
 import android.widget.FrameLayout;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.np;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.LocationController;
+import org.telegram.ui.Components.al;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class s7 extends FrameLayout {
-    public o7[] a;
-    public MessageObject[] b;
-    public int[] c;
-    public p7 d;
-    public int e;
-    public boolean f;
-    public boolean h;
-    public Paint n;
-    public int r;
-    public int s;
+public final /* synthetic */ class s7 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ FrameLayout b;
+    public final /* synthetic */ double c;
+    public final /* synthetic */ double d;
 
-    public static int a(int i10) {
-        if (AndroidUtilities.isTablet()) {
-            return (AndroidUtilities.dp(490.0f) - (AndroidUtilities.dp(2.0f) * (i10 - 1))) / i10;
+    public /* synthetic */ s7(FrameLayout frameLayout, double d, double d10, int i10) {
+        this.a = i10;
+        this.b = frameLayout;
+        this.c = d;
+        this.d = d10;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                t7 t7Var = (t7) this.b;
+                double d = this.c;
+                double d10 = this.d;
+                try {
+                    List<Address> fromLocation = new Geocoder(ApplicationLoader.applicationContext, LocaleController.getInstance().getCurrentLocale()).getFromLocation(d, d10, 1);
+                    if (fromLocation.isEmpty()) {
+                        String detectOcean = LocationController.detectOcean(d10, d);
+                        t7Var.F = detectOcean;
+                        if (detectOcean == null) {
+                            t7Var.F = "";
+                        } else {
+                            t7Var.F = "🌊 " + ((Object) t7Var.F);
+                        }
+                    } else {
+                        Address address = fromLocation.get(0);
+                        StringBuilder sb = new StringBuilder();
+                        HashSet hashSet = new HashSet();
+                        hashSet.add(address.getSubAdminArea());
+                        hashSet.add(address.getAdminArea());
+                        hashSet.add(address.getLocality());
+                        hashSet.add(address.getCountryName());
+                        Iterator it = hashSet.iterator();
+                        while (it.hasNext()) {
+                            String str = (String) it.next();
+                            if (!TextUtils.isEmpty(str)) {
+                                if (sb.length() > 0) {
+                                    sb.append(", ");
+                                }
+                                sb.append(str);
+                            }
+                        }
+                        t7Var.F = sb.toString();
+                        String countryCodeToEmoji = LocationController.countryCodeToEmoji(address.getCountryCode());
+                        if (countryCodeToEmoji != null && Emoji.getEmojiDrawable(countryCodeToEmoji) != null) {
+                            t7Var.F = countryCodeToEmoji + " " + ((Object) t7Var.F);
+                        }
+                    }
+                } catch (Exception unused) {
+                }
+                AndroidUtilities.runOnUIThread(new s7(t7Var, d, d10, 1));
+                break;
+            case 1:
+                t7 t7Var2 = (t7) this.b;
+                double d11 = this.c;
+                double d12 = this.d;
+                t7Var2.C = d11;
+                t7Var2.D = d12;
+                t7Var2.B = false;
+                CharSequence charSequence = t7Var2.F;
+                org.telegram.ui.ActionBar.k5 k5Var = t7Var2.b;
+                CharSequence replaceEmoji = Emoji.replaceEmoji(charSequence, k5Var.getPaint().getFontMetricsInt(), false);
+                t7Var2.F = replaceEmoji;
+                k5Var.l(replaceEmoji, false);
+                break;
+            default:
+                ((al) this.b).b0(this.c, this.d);
+                break;
         }
-        return (AndroidUtilities.displaySize.x - (AndroidUtilities.dp(2.0f) * (i10 - 1))) / i10;
-    }
-
-    public final void b(int i10, boolean z4) {
-        o7 o7Var = this.a[i10];
-        FrameLayout frameLayout = o7Var.f;
-        np npVar = o7Var.e;
-        if (npVar.getVisibility() != 0) {
-            npVar.setVisibility(0);
-        }
-        npVar.a(z4, true);
-        AnimatorSet animatorSet = o7Var.h;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-            o7Var.h = null;
-        }
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        o7Var.h = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(frameLayout, (Property<FrameLayout, Float>) View.SCALE_X, z4 ? 0.81f : 1.0f), ObjectAnimator.ofFloat(frameLayout, (Property<FrameLayout, Float>) View.SCALE_Y, z4 ? 0.81f : 1.0f));
-        o7Var.h.setDuration(200L);
-        o7Var.h.addListener(new org.telegram.ui.s5(o7Var, 10));
-        o7Var.h.start();
-    }
-
-    public final void c(int i10, int i11, MessageObject messageObject) {
-        o7[] o7VarArr = this.a;
-        MessageObject[] messageObjectArr = this.b;
-        messageObjectArr[i10] = messageObject;
-        this.c[i10] = i11;
-        if (messageObject != null) {
-            o7VarArr[i10].setVisibility(0);
-            o7VarArr[i10].setMessageObject(messageObject);
-        } else {
-            o7VarArr[i10].clearAnimation();
-            o7VarArr[i10].setVisibility(4);
-            messageObjectArr[i10] = null;
-        }
-    }
-
-    public p7 getDelegate() {
-        return this.d;
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        for (int i10 = 0; i10 < 6; i10++) {
-            this.a[i10].invalidate();
-        }
-        super.invalidate();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        View[] viewArr = this.a;
-        int z4 = this.r == 1 ? org.telegram.ui.b.z(2.0f, this.e - 1, View.MeasureSpec.getSize(i10)) / this.e : a(this.e);
-        this.h = true;
-        for (int i12 = 0; i12 < this.e; i12++) {
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) viewArr[i12].getLayoutParams();
-            layoutParams.topMargin = this.f ? 0 : AndroidUtilities.dp(2.0f);
-            layoutParams.leftMargin = (AndroidUtilities.dp(2.0f) + z4) * i12;
-            if (i12 != this.e - 1) {
-                layoutParams.width = z4;
-            } else if (AndroidUtilities.isTablet()) {
-                layoutParams.width = AndroidUtilities.dp(490.0f) - ((AndroidUtilities.dp(2.0f) + z4) * (this.e - 1));
-            } else {
-                layoutParams.width = AndroidUtilities.displaySize.x - ((AndroidUtilities.dp(2.0f) + z4) * (this.e - 1));
-            }
-            layoutParams.height = z4;
-            layoutParams.gravity = 51;
-            viewArr[i12].setLayoutParams(layoutParams);
-        }
-        this.h = false;
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((this.f ? 0 : AndroidUtilities.dp(2.0f)) + z4, TLObject.FLAG_30));
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.h) {
-            return;
-        }
-        super.requestLayout();
-    }
-
-    public void setDelegate(p7 p7Var) {
-        this.d = p7Var;
-    }
-
-    public void setIsFirst(boolean z4) {
-        this.f = z4;
-    }
-
-    public void setItemsCount(int i10) {
-        o7[] o7VarArr = this.a;
-        int i11 = 0;
-        while (i11 < o7VarArr.length) {
-            o7VarArr[i11].clearAnimation();
-            o7VarArr[i11].setVisibility(i11 < i10 ? 0 : 4);
-            i11++;
-        }
-        this.e = i10;
     }
 }

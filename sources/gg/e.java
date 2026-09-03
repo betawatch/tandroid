@@ -1,149 +1,167 @@
 package gg;
 
-import android.animation.AnimatorSet;
-import android.animation.ValueAnimator;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import dg.f3;
 import java.util.ArrayList;
-import oh.g5;
-import oh.j4;
+import java.util.Calendar;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.b3;
+import org.telegram.ui.ActionBar.g3;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.b4;
+import org.telegram.ui.Components.c4;
+import org.telegram.ui.Components.p70;
+import org.telegram.ui.Components.p9;
+import org.telegram.ui.Components.t3;
+import org.telegram.ui.Components.v3;
+import org.telegram.ui.Components.xc0;
+import org.telegram.ui.Components.xx0;
+import org.telegram.ui.Components.y4;
+import org.telegram.ui.Components.z4;
+import org.telegram.ui.Components.z8;
+import org.telegram.ui.l51;
+import org.telegram.ui.vl0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class e implements GestureDetector.OnGestureListener {
+public final /* synthetic */ class e implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
 
-    public /* synthetic */ e(int i10, View view) {
+    public /* synthetic */ e(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6, int i10) {
         this.a = i10;
-        this.b = view;
+        this.c = obj;
+        this.b = obj2;
+        this.e = obj3;
+        this.f = obj4;
+        this.h = obj5;
+        this.d = obj6;
     }
 
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final boolean onDown(MotionEvent motionEvent) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                i iVar = (i) this.b;
-                ValueAnimator valueAnimator = iVar.P;
-                if (valueAnimator != null) {
-                    valueAnimator.removeAllListeners();
-                    iVar.P.cancel();
-                    iVar.P = null;
+                Calendar calendar = (Calendar) this.c;
+                xc0 xc0Var = (xc0) this.b;
+                n nVar = (n) this.e;
+                o oVar = (o) this.f;
+                r0 r0Var = (r0) this.h;
+                b3 b3Var = (b3) this.d;
+                calendar.setTimeInMillis((xc0Var.getValue() * 86400000) + System.currentTimeMillis());
+                calendar.set(11, nVar.getValue());
+                calendar.set(12, oVar.getValue() * 5);
+                r0Var.J((int) (calendar.getTimeInMillis() / 1000), 0, true);
+                b3Var.a.dismissRunnable.run();
+                break;
+            case 1:
+                xc0 xc0Var2 = (xc0) this.b;
+                xc0 xc0Var3 = (xc0) this.e;
+                xc0 xc0Var4 = (xc0) this.f;
+                Calendar calendar2 = (Calendar) this.c;
+                MessagesStorage.IntCallback intCallback = (MessagesStorage.IntCallback) this.h;
+                b3 b3Var2 = (b3) this.d;
+                z4.b(xc0Var2, xc0Var3, xc0Var4);
+                calendar2.set(1, xc0Var4.getValue());
+                calendar2.set(2, xc0Var3.getValue());
+                calendar2.set(5, xc0Var2.getValue());
+                calendar2.set(12, 0);
+                calendar2.set(11, 0);
+                calendar2.set(13, 0);
+                intCallback.run((int) (calendar2.getTimeInMillis() / 1000));
+                b3Var2.a.dismissRunnable.run();
+                break;
+            case 2:
+                xc0 xc0Var5 = (xc0) this.b;
+                b4 b4Var = (b4) this.e;
+                c4 c4Var = (c4) this.f;
+                Calendar calendar3 = (Calendar) this.c;
+                vl0 vl0Var = (vl0) this.h;
+                b3 b3Var3 = (b3) this.d;
+                boolean g10 = z4.g(null, null, 0L, 0L, 0, xc0Var5, b4Var, c4Var);
+                calendar3.setTimeInMillis(System.currentTimeMillis());
+                calendar3.add(6, xc0Var5.getValue());
+                calendar3.set(11, b4Var.getValue());
+                calendar3.set(12, c4Var.getValue());
+                if (g10) {
+                    calendar3.set(13, 0);
+                    calendar3.set(14, 0);
                 }
-                AnimatorSet animatorSet = iVar.Q;
-                if (animatorSet != null) {
-                    animatorSet.removeAllListeners();
-                    iVar.Q.cancel();
-                    iVar.Q = null;
+                int timeInMillis = (int) (calendar3.getTimeInMillis() / 1000);
+                l51 l51Var = (l51) vl0Var.b;
+                ((boolean[]) vl0Var.c)[0] = true;
+                l51Var.e(Integer.valueOf(timeInMillis));
+                b3Var3.a.dismissRunnable.run();
+                break;
+            case 3:
+                xc0 xc0Var6 = (xc0) this.b;
+                t3 t3Var = (t3) this.e;
+                v3 v3Var = (v3) this.f;
+                Calendar calendar4 = (Calendar) this.c;
+                y4 y4Var = (y4) this.h;
+                b3 b3Var4 = (b3) this.d;
+                boolean g11 = z4.g(null, null, 0L, 0L, 0, xc0Var6, t3Var, v3Var);
+                calendar4.setTimeInMillis(System.currentTimeMillis());
+                calendar4.add(6, xc0Var6.getValue());
+                calendar4.set(11, t3Var.getValue());
+                calendar4.set(12, v3Var.getValue());
+                if (g11) {
+                    calendar4.set(13, 0);
+                    calendar4.set(14, 0);
                 }
-                AndroidUtilities.cancelRunOnUIThread(iVar.R);
-                iVar.a = true;
+                y4Var.J((int) (calendar4.getTimeInMillis() / 1000), 0, true);
+                b3Var4.a.dismissRunnable.run();
+                break;
+            case 4:
+                xx0.x((xx0) this.c, (int[]) this.b, (EditTextBoldCursor) this.e, (TextView) this.f, (TextView) this.h, (AlertDialog$Builder) this.d);
                 break;
             default:
-                g5 g5Var = (g5) this.b;
-                g5Var.d.abortAnimation();
-                ValueAnimator valueAnimator2 = g5Var.J;
-                if (valueAnimator2 != null) {
-                    valueAnimator2.removeAllListeners();
-                    g5Var.J.cancel();
-                    g5Var.J = null;
-                }
-                g5Var.I = false;
-                g5Var.L.w = false;
-                break;
-        }
-        return true;
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
-        switch (this.a) {
-            case 0:
-                break;
-            default:
-                g5 g5Var = (g5) this.b;
-                g5Var.d.fling((int) g5Var.e, 0, (int) (-f10), 0, (int) g5Var.f, (int) g5Var.h, 0, 0);
-                g5Var.invalidate();
-                break;
-        }
-        return false;
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final void onLongPress(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                ((i) this.b).g();
-                break;
-        }
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
-        switch (this.a) {
-            case 0:
-                a aVar = ((i) this.b).b;
-                aVar.d = (f10 * 0.5f) + aVar.d;
-                aVar.g = (f11 * 0.05f) + aVar.g;
-                return true;
-            default:
-                g5 g5Var = (g5) this.b;
-                float f12 = g5Var.e + f10;
-                g5Var.e = f12;
-                float f13 = g5Var.f;
-                if (f12 < f13) {
-                    g5Var.e = f13;
-                }
-                float f14 = g5Var.e;
-                float f15 = g5Var.h;
-                if (f14 > f15) {
-                    g5Var.e = f15;
-                }
-                g5Var.invalidate();
-                return false;
-        }
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final void onShowPress(MotionEvent motionEvent) {
-        int i10 = this.a;
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final boolean onSingleTapUp(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                float measuredWidth = ((i) this.b).getMeasuredWidth() / 2.0f;
-                AndroidUtilities.runOnUIThread(new d(this, ((measuredWidth - motionEvent.getX()) * (Utilities.random.nextInt(30) + 40)) / measuredWidth, ((measuredWidth - motionEvent.getY()) * (Utilities.random.nextInt(30) + 40)) / measuredWidth, 0), 16L);
-                return true;
-            default:
-                g5 g5Var = (g5) this.b;
-                ArrayList arrayList = g5Var.D;
-                for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    j4 j4Var = (j4) arrayList.get(i10);
-                    if (((j4) arrayList.get(i10)).a.getDrawRegion().contains(motionEvent.getX(), motionEvent.getY())) {
-                        int i11 = g5Var.H;
-                        int i12 = j4Var.b;
-                        if (i11 != i12) {
-                            g5Var.c(i12, true, false);
-                        } else {
-                            g5Var.K.n(false);
-                        }
+                g3 g3Var = (g3) this.c;
+                FrameLayout frameLayout = (FrameLayout) this.b;
+                ArrayList arrayList = (ArrayList) this.e;
+                int[] iArr = (int[]) this.f;
+                z8 z8Var = (z8) this.h;
+                p9 p9Var = (p9) this.d;
+                p70 F = p70.F(g3Var.container, g3Var.getResourcesProvider(), frameLayout);
+                int size = arrayList.size();
+                int i10 = 0;
+                while (i10 < size) {
+                    int i11 = i10 + 1;
+                    int intValue = ((Integer) arrayList.get(i10)).intValue();
+                    TLRPC.User currentUser = UserConfig.getInstance(intValue).getCurrentUser();
+                    if (currentUser != null) {
+                        F.e(intValue, iArr[0] == intValue, new f3(iArr, intValue, z8Var, currentUser, p9Var, 24));
                     }
+                    i10 = i11;
                 }
-                return false;
+                F.t = false;
+                F.Y = true;
+                F.s = 0;
+                F.i = 3;
+                F.a0(-AndroidUtilities.dp(8.0f), -AndroidUtilities.dp(8.0f));
+                F.Z();
+                break;
         }
     }
 
-    private final void a(MotionEvent motionEvent) {
-    }
-
-    private final void b(MotionEvent motionEvent) {
-    }
-
-    private final void c(MotionEvent motionEvent) {
+    public /* synthetic */ e(xc0 xc0Var, xc0 xc0Var2, xc0 xc0Var3, Calendar calendar, Object obj, b3 b3Var, int i10) {
+        this.a = i10;
+        this.b = xc0Var;
+        this.e = xc0Var2;
+        this.f = xc0Var3;
+        this.c = calendar;
+        this.h = obj;
+        this.d = b3Var;
     }
 }

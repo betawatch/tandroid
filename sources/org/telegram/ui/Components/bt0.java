@@ -17,18 +17,18 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class bt0 implements View.OnClickListener {
     public final /* synthetic */ long a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.g6 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 b;
     public final /* synthetic */ Context c;
     public final /* synthetic */ yu0 d;
 
-    public bt0(yu0 yu0Var, long j10, org.telegram.ui.ActionBar.g6 g6Var, Context context) {
+    public bt0(yu0 yu0Var, long j10, org.telegram.ui.ActionBar.f6 f6Var, Context context) {
         this.d = yu0Var;
         this.a = j10;
-        this.b = g6Var;
+        this.b = f6Var;
         this.c = context;
     }
 
@@ -41,12 +41,12 @@ public final class bt0 implements View.OnClickListener {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void onClick(View view) {
-        oh.t6 storiesController;
+        nh.t6 storiesController;
         char c3;
         boolean z4;
         boolean z10;
         ?? r82;
-        oh.l6 l6Var;
+        nh.l6 l6Var;
         TLRPC.Chat chat;
         TLRPC.TL_chatAdminRights tL_chatAdminRights;
         org.telegram.ui.ActionBar.g1 g1Var;
@@ -69,7 +69,7 @@ public final class bt0 implements View.OnClickListener {
         boolean i10 = storiesController.i(j10);
         if (yu0.w0(closestTab) && i10 && (j12 = yu0Var.j1(closestTab)) != null) {
             final int i11 = j12.b;
-            final q70 H = q70.H(p2Var, imageView);
+            final p70 H = p70.H(p2Var, imageView);
             int i12 = R.drawable.menu_add_stories;
             String string = LocaleController.getString(R.string.StoriesAlbumMenuAddStories);
             final int i13 = 0;
@@ -90,7 +90,7 @@ public final class bt0 implements View.OnClickListener {
                 }
             }, false);
             yu0Var.x(H, p2Var, j11, i11);
-            H.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.StoriesAlbumMenuReorder), new gy(yu0Var, i11, H, 9), false);
+            H.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.StoriesAlbumMenuReorder), new ey(yu0Var, i11, H, 9), false);
             final int i14 = 1;
             H.c(R.drawable.msg_delete, LocaleController.getString(R.string.StoriesAlbumMenuDeleteAlbum), new Runnable() { // from class: org.telegram.ui.Components.gr0
                 @Override // java.lang.Runnable
@@ -117,15 +117,15 @@ public final class bt0 implements View.OnClickListener {
         }
         final int i15 = 5;
         if (closestTab == 14) {
-            lh.n3 currentPage = or0Var.getCurrentPage();
-            mh.l7 l7Var = currentPage.e;
+            kh.m3 currentPage = or0Var.getCurrentPage();
+            lh.l7 l7Var = currentPage.e;
             if (l7Var == null) {
                 return;
             }
             long j13 = or0Var.c;
             int i16 = or0Var.b;
             boolean canUserDoAction = j13 == UserConfig.getInstance(i16).getClientUserId() ? true : j13 >= 0 ? false : ChatObject.canUserDoAction(MessagesController.getInstance(i16).getChat(Long.valueOf(-j13)), 5);
-            final q70 H2 = q70.H(p2Var, imageView);
+            final p70 H2 = p70.H(p2Var, imageView);
             if (l7Var.c) {
                 g1Var = null;
                 z11 = false;
@@ -150,7 +150,7 @@ public final class bt0 implements View.OnClickListener {
                             case 0:
                                 or0 or0Var2 = this.b.d.S;
                                 or0Var2.getClass();
-                                or0Var2.h(null, new lh.j2(or0Var2, 0));
+                                or0Var2.h(null, new kh.j2(or0Var2, 0));
                                 H2.u();
                                 break;
                             case 1:
@@ -160,9 +160,9 @@ public final class bt0 implements View.OnClickListener {
                                 bundle.putInt(TeXSymbolParser.TYPE_ATTR, 2);
                                 yu0 yu0Var2 = bt0Var.d;
                                 bundle.putLong("dialog_id", -yu0Var2.a1.id);
-                                fa0 fa0Var = new fa0(bundle, null);
-                                fa0Var.c = yu0Var2.a1;
-                                yu0Var2.s1.presentFragment(fa0Var);
+                                ea0 ea0Var = new ea0(bundle, null);
+                                ea0Var.c = yu0Var2.a1;
+                                yu0Var2.s1.presentFragment(ea0Var);
                                 H2.u();
                                 break;
                             default:
@@ -190,7 +190,7 @@ public final class bt0 implements View.OnClickListener {
                                 case 0:
                                     or0 or0Var2 = this.b.d.S;
                                     or0Var2.getClass();
-                                    or0Var2.h(null, new lh.j2(or0Var2, 0));
+                                    or0Var2.h(null, new kh.j2(or0Var2, 0));
                                     H2.u();
                                     break;
                                 case 1:
@@ -200,9 +200,9 @@ public final class bt0 implements View.OnClickListener {
                                     bundle.putInt(TeXSymbolParser.TYPE_ATTR, 2);
                                     yu0 yu0Var2 = bt0Var.d;
                                     bundle.putLong("dialog_id", -yu0Var2.a1.id);
-                                    fa0 fa0Var = new fa0(bundle, null);
-                                    fa0Var.c = yu0Var2.a1;
-                                    yu0Var2.s1.presentFragment(fa0Var);
+                                    ea0 ea0Var = new ea0(bundle, null);
+                                    ea0Var.c = yu0Var2.a1;
+                                    yu0Var2.s1.presentFragment(ea0Var);
                                     H2.u();
                                     break;
                                 default:
@@ -238,21 +238,21 @@ public final class bt0 implements View.OnClickListener {
                 g1Var2 = null;
                 g1Var3 = null;
             }
-            lh.o3 o3Var = new lh.o3(g1Var, l7Var, h, h9, h10, h11, canUserDoAction, g1Var2, g1Var3);
+            kh.n3 n3Var = new kh.n3(g1Var, l7Var, h, h9, h10, h11, canUserDoAction, g1Var2, g1Var3);
             org.telegram.ui.ActionBar.g1 g1Var5 = g1Var;
             org.telegram.ui.ActionBar.g1 g1Var6 = g1Var2;
             org.telegram.ui.ActionBar.g1 g1Var7 = g1Var3;
-            o3Var.run();
+            n3Var.run();
             if (g1Var5 != null) {
-                g1Var5.setOnClickListener(new w2(29, l7Var, o3Var));
+                g1Var5.setOnClickListener(new w2(29, l7Var, n3Var));
             }
-            lh.x3.j(h, l7Var, o3Var, 1);
-            lh.x3.j(h9, l7Var, o3Var, 2);
-            lh.x3.j(h10, l7Var, o3Var, 4);
-            lh.x3.j(h11, l7Var, o3Var, 8);
+            kh.w3.j(h, l7Var, n3Var, 1);
+            kh.w3.j(h9, l7Var, n3Var, 2);
+            kh.w3.j(h10, l7Var, n3Var, 4);
+            kh.w3.j(h11, l7Var, n3Var, 8);
             if (canUserDoAction) {
-                lh.x3.j(g1Var6, l7Var, o3Var, 256);
-                lh.x3.j(g1Var7, l7Var, o3Var, 512);
+                kh.w3.j(g1Var6, l7Var, n3Var, 256);
+                kh.w3.j(g1Var7, l7Var, n3Var, 512);
             }
             H2.Y = true;
             H2.J = false;
@@ -261,7 +261,7 @@ public final class bt0 implements View.OnClickListener {
             return;
         }
         if (closestTab == 13 && user != null && user.bot && user.bot_has_main_app && user.bot_can_edit && nr0Var != null) {
-            q70 H3 = q70.H(p2Var, imageView);
+            p70 H3 = p70.H(p2Var, imageView);
             boolean z12 = nr0Var.getItemsCount() < p2Var.getMessagesController().botPreviewMediasMax;
             final int i19 = 0;
             H3.l(R.drawable.msg_addbot, LocaleController.getString(R.string.ProfileBotAddPreview), new Runnable(this) { // from class: org.telegram.ui.Components.xs0
@@ -277,7 +277,7 @@ public final class bt0 implements View.OnClickListener {
                         case 0:
                             yu0 yu0Var2 = this.b.d;
                             org.telegram.ui.ActionBar.p2 p2Var2 = yu0Var2.s1;
-                            qh.ba E = qh.ba.E(p2Var2.getParentActivity(), p2Var2.getCurrentAccount());
+                            ph.da E = ph.da.E(p2Var2.getParentActivity(), p2Var2.getCurrentAccount());
                             long j14 = yu0Var2.g1;
                             String currentLang = yu0Var2.R.getCurrentLang();
                             E.s0 = j14;
@@ -308,15 +308,15 @@ public final class bt0 implements View.OnClickListener {
                             Bundle bundle = new Bundle();
                             org.telegram.ui.ActionBar.p2 p2Var3 = yu0Var3.s1;
                             bundle.putLong("user_id", p2Var3.getUserConfig().getClientUserId());
-                            p2Var3.presentFragment(new org.telegram.ui.xn(bundle), true);
+                            p2Var3.presentFragment(new org.telegram.ui.zn(bundle), true);
                             break;
                         case 5:
                             yu0 yu0Var4 = this.b.d;
                             try {
                                 yu0Var4.s1.getMediaDataController().installShortcut(yu0Var4.s1.getUserConfig().getClientUserId(), MediaDataController.SHORTCUT_TYPE_USER_OR_CHAT);
                                 break;
-                            } catch (Exception e6) {
-                                FileLog.e(e6);
+                            } catch (Exception e) {
+                                FileLog.e(e);
                                 return;
                             }
                         default:
@@ -342,7 +342,7 @@ public final class bt0 implements View.OnClickListener {
                         case 0:
                             yu0 yu0Var2 = this.b.d;
                             org.telegram.ui.ActionBar.p2 p2Var2 = yu0Var2.s1;
-                            qh.ba E = qh.ba.E(p2Var2.getParentActivity(), p2Var2.getCurrentAccount());
+                            ph.da E = ph.da.E(p2Var2.getParentActivity(), p2Var2.getCurrentAccount());
                             long j14 = yu0Var2.g1;
                             String currentLang = yu0Var2.R.getCurrentLang();
                             E.s0 = j14;
@@ -373,15 +373,15 @@ public final class bt0 implements View.OnClickListener {
                             Bundle bundle = new Bundle();
                             org.telegram.ui.ActionBar.p2 p2Var3 = yu0Var3.s1;
                             bundle.putLong("user_id", p2Var3.getUserConfig().getClientUserId());
-                            p2Var3.presentFragment(new org.telegram.ui.xn(bundle), true);
+                            p2Var3.presentFragment(new org.telegram.ui.zn(bundle), true);
                             break;
                         case 5:
                             yu0 yu0Var4 = this.b.d;
                             try {
                                 yu0Var4.s1.getMediaDataController().installShortcut(yu0Var4.s1.getUserConfig().getClientUserId(), MediaDataController.SHORTCUT_TYPE_USER_OR_CHAT);
                                 break;
-                            } catch (Exception e6) {
-                                FileLog.e(e6);
+                            } catch (Exception e) {
+                                FileLog.e(e);
                                 return;
                             }
                         default:
@@ -407,7 +407,7 @@ public final class bt0 implements View.OnClickListener {
                         case 0:
                             yu0 yu0Var2 = this.b.d;
                             org.telegram.ui.ActionBar.p2 p2Var2 = yu0Var2.s1;
-                            qh.ba E = qh.ba.E(p2Var2.getParentActivity(), p2Var2.getCurrentAccount());
+                            ph.da E = ph.da.E(p2Var2.getParentActivity(), p2Var2.getCurrentAccount());
                             long j14 = yu0Var2.g1;
                             String currentLang = yu0Var2.R.getCurrentLang();
                             E.s0 = j14;
@@ -438,15 +438,15 @@ public final class bt0 implements View.OnClickListener {
                             Bundle bundle = new Bundle();
                             org.telegram.ui.ActionBar.p2 p2Var3 = yu0Var3.s1;
                             bundle.putLong("user_id", p2Var3.getUserConfig().getClientUserId());
-                            p2Var3.presentFragment(new org.telegram.ui.xn(bundle), true);
+                            p2Var3.presentFragment(new org.telegram.ui.zn(bundle), true);
                             break;
                         case 5:
                             yu0 yu0Var4 = this.b.d;
                             try {
                                 yu0Var4.s1.getMediaDataController().installShortcut(yu0Var4.s1.getUserConfig().getClientUserId(), MediaDataController.SHORTCUT_TYPE_USER_OR_CHAT);
                                 break;
-                            } catch (Exception e6) {
-                                FileLog.e(e6);
+                            } catch (Exception e) {
+                                FileLog.e(e);
                                 return;
                             }
                         default:
@@ -472,7 +472,7 @@ public final class bt0 implements View.OnClickListener {
                         case 0:
                             yu0 yu0Var2 = this.b.d;
                             org.telegram.ui.ActionBar.p2 p2Var2 = yu0Var2.s1;
-                            qh.ba E = qh.ba.E(p2Var2.getParentActivity(), p2Var2.getCurrentAccount());
+                            ph.da E = ph.da.E(p2Var2.getParentActivity(), p2Var2.getCurrentAccount());
                             long j14 = yu0Var2.g1;
                             String currentLang = yu0Var2.R.getCurrentLang();
                             E.s0 = j14;
@@ -503,15 +503,15 @@ public final class bt0 implements View.OnClickListener {
                             Bundle bundle = new Bundle();
                             org.telegram.ui.ActionBar.p2 p2Var3 = yu0Var3.s1;
                             bundle.putLong("user_id", p2Var3.getUserConfig().getClientUserId());
-                            p2Var3.presentFragment(new org.telegram.ui.xn(bundle), true);
+                            p2Var3.presentFragment(new org.telegram.ui.zn(bundle), true);
                             break;
                         case 5:
                             yu0 yu0Var4 = this.b.d;
                             try {
                                 yu0Var4.s1.getMediaDataController().installShortcut(yu0Var4.s1.getUserConfig().getClientUserId(), MediaDataController.SHORTCUT_TYPE_USER_OR_CHAT);
                                 break;
-                            } catch (Exception e6) {
-                                FileLog.e(e6);
+                            } catch (Exception e) {
+                                FileLog.e(e);
                                 return;
                             }
                         default:
@@ -530,7 +530,7 @@ public final class bt0 implements View.OnClickListener {
         }
         int i23 = 11;
         if (yu0Var.getSelectedTab() == 11) {
-            q70 H4 = q70.H(p2Var, imageView);
+            p70 H4 = p70.H(p2Var, imageView);
             final int i24 = 4;
             H4.c(R.drawable.msg_discussion, LocaleController.getString(R.string.SavedViewAsMessages), new Runnable(this) { // from class: org.telegram.ui.Components.xs0
                 public final /* synthetic */ bt0 b;
@@ -545,7 +545,7 @@ public final class bt0 implements View.OnClickListener {
                         case 0:
                             yu0 yu0Var2 = this.b.d;
                             org.telegram.ui.ActionBar.p2 p2Var2 = yu0Var2.s1;
-                            qh.ba E = qh.ba.E(p2Var2.getParentActivity(), p2Var2.getCurrentAccount());
+                            ph.da E = ph.da.E(p2Var2.getParentActivity(), p2Var2.getCurrentAccount());
                             long j14 = yu0Var2.g1;
                             String currentLang = yu0Var2.R.getCurrentLang();
                             E.s0 = j14;
@@ -576,15 +576,15 @@ public final class bt0 implements View.OnClickListener {
                             Bundle bundle = new Bundle();
                             org.telegram.ui.ActionBar.p2 p2Var3 = yu0Var3.s1;
                             bundle.putLong("user_id", p2Var3.getUserConfig().getClientUserId());
-                            p2Var3.presentFragment(new org.telegram.ui.xn(bundle), true);
+                            p2Var3.presentFragment(new org.telegram.ui.zn(bundle), true);
                             break;
                         case 5:
                             yu0 yu0Var4 = this.b.d;
                             try {
                                 yu0Var4.s1.getMediaDataController().installShortcut(yu0Var4.s1.getUserConfig().getClientUserId(), MediaDataController.SHORTCUT_TYPE_USER_OR_CHAT);
                                 break;
-                            } catch (Exception e6) {
-                                FileLog.e(e6);
+                            } catch (Exception e) {
+                                FileLog.e(e);
                                 return;
                             }
                         default:
@@ -610,7 +610,7 @@ public final class bt0 implements View.OnClickListener {
                         case 0:
                             yu0 yu0Var2 = this.b.d;
                             org.telegram.ui.ActionBar.p2 p2Var2 = yu0Var2.s1;
-                            qh.ba E = qh.ba.E(p2Var2.getParentActivity(), p2Var2.getCurrentAccount());
+                            ph.da E = ph.da.E(p2Var2.getParentActivity(), p2Var2.getCurrentAccount());
                             long j14 = yu0Var2.g1;
                             String currentLang = yu0Var2.R.getCurrentLang();
                             E.s0 = j14;
@@ -641,15 +641,15 @@ public final class bt0 implements View.OnClickListener {
                             Bundle bundle = new Bundle();
                             org.telegram.ui.ActionBar.p2 p2Var3 = yu0Var3.s1;
                             bundle.putLong("user_id", p2Var3.getUserConfig().getClientUserId());
-                            p2Var3.presentFragment(new org.telegram.ui.xn(bundle), true);
+                            p2Var3.presentFragment(new org.telegram.ui.zn(bundle), true);
                             break;
                         case 5:
                             yu0 yu0Var4 = this.b.d;
                             try {
                                 yu0Var4.s1.getMediaDataController().installShortcut(yu0Var4.s1.getUserConfig().getClientUserId(), MediaDataController.SHORTCUT_TYPE_USER_OR_CHAT);
                                 break;
-                            } catch (Exception e6) {
-                                FileLog.e(e6);
+                            } catch (Exception e) {
+                                FileLog.e(e);
                                 return;
                             }
                         default:
@@ -675,7 +675,7 @@ public final class bt0 implements View.OnClickListener {
                         case 0:
                             yu0 yu0Var2 = this.b.d;
                             org.telegram.ui.ActionBar.p2 p2Var2 = yu0Var2.s1;
-                            qh.ba E = qh.ba.E(p2Var2.getParentActivity(), p2Var2.getCurrentAccount());
+                            ph.da E = ph.da.E(p2Var2.getParentActivity(), p2Var2.getCurrentAccount());
                             long j14 = yu0Var2.g1;
                             String currentLang = yu0Var2.R.getCurrentLang();
                             E.s0 = j14;
@@ -706,15 +706,15 @@ public final class bt0 implements View.OnClickListener {
                             Bundle bundle = new Bundle();
                             org.telegram.ui.ActionBar.p2 p2Var3 = yu0Var3.s1;
                             bundle.putLong("user_id", p2Var3.getUserConfig().getClientUserId());
-                            p2Var3.presentFragment(new org.telegram.ui.xn(bundle), true);
+                            p2Var3.presentFragment(new org.telegram.ui.zn(bundle), true);
                             break;
                         case 5:
                             yu0 yu0Var4 = this.b.d;
                             try {
                                 yu0Var4.s1.getMediaDataController().installShortcut(yu0Var4.s1.getUserConfig().getClientUserId(), MediaDataController.SHORTCUT_TYPE_USER_OR_CHAT);
                                 break;
-                            } catch (Exception e6) {
-                                FileLog.e(e6);
+                            } catch (Exception e) {
+                                FileLog.e(e);
                                 return;
                             }
                         default:
@@ -731,10 +731,10 @@ public final class bt0 implements View.OnClickListener {
             H4.Z();
             return;
         }
-        final q70 H5 = q70.H(p2Var, imageView);
+        final p70 H5 = p70.H(p2Var, imageView);
         if ((closestTab == 8 || yu0.w0(closestTab)) && i10) {
             c3 = 0;
-            H5.c(R.drawable.menu_album_add, LocaleController.getString(R.string.StoriesAlbumAddAlbum), new jp(this, this.b, H5, 18), false);
+            H5.c(R.drawable.menu_album_add, LocaleController.getString(R.string.StoriesAlbumAddAlbum), new gp(this, this.b, H5, 18), false);
             H5.k();
         } else {
             c3 = 0;
@@ -748,7 +748,7 @@ public final class bt0 implements View.OnClickListener {
                     z4 = false;
                     if (!DialogObject.isEncryptedDialog(j10)) {
                         if (user == null || !user.bot) {
-                            H5.c(R.drawable.msg_calendar2, LocaleController.getString(R.string.Calendar), new gy(this, closestTab, H5, i23), false);
+                            H5.c(R.drawable.msg_calendar2, LocaleController.getString(R.string.Calendar), new ey(this, closestTab, H5, i23), false);
                             if (yu0Var.a1 != null && !yu0Var.v0() && (chat = MessagesController.getInstance(p2Var.getCurrentAccount()).getChat(Long.valueOf(yu0Var.a1.id))) != null && (tL_chatAdminRights = chat.admin_rights) != null && tL_chatAdminRights.edit_stories) {
                                 final int i26 = 1;
                                 H5.c(R.drawable.msg_archive, LocaleController.getString(R.string.OpenChannelArchiveStories), new Runnable(this) { // from class: org.telegram.ui.Components.ws0
@@ -764,7 +764,7 @@ public final class bt0 implements View.OnClickListener {
                                             case 0:
                                                 or0 or0Var2 = this.b.d.S;
                                                 or0Var2.getClass();
-                                                or0Var2.h(null, new lh.j2(or0Var2, 0));
+                                                or0Var2.h(null, new kh.j2(or0Var2, 0));
                                                 H5.u();
                                                 break;
                                             case 1:
@@ -774,9 +774,9 @@ public final class bt0 implements View.OnClickListener {
                                                 bundle.putInt(TeXSymbolParser.TYPE_ATTR, 2);
                                                 yu0 yu0Var2 = bt0Var.d;
                                                 bundle.putLong("dialog_id", -yu0Var2.a1.id);
-                                                fa0 fa0Var = new fa0(bundle, null);
-                                                fa0Var.c = yu0Var2.a1;
-                                                yu0Var2.s1.presentFragment(fa0Var);
+                                                ea0 ea0Var = new ea0(bundle, null);
+                                                ea0Var.c = yu0Var2.a1;
+                                                yu0Var2.s1.presentFragment(ea0Var);
                                                 H5.u();
                                                 break;
                                             default:
@@ -839,7 +839,7 @@ public final class bt0 implements View.OnClickListener {
                                                         break;
                                                     } else {
                                                         g1Var11.getCheckView().a(!g1Var11.getCheckView().a.q, true);
-                                                        oh.l6 l6Var2 = k12.s;
+                                                        nh.l6 l6Var2 = k12.s;
                                                         if (l6Var2 != null) {
                                                             boolean z14 = g1Var11.getCheckView().a.q;
                                                             boolean z15 = g1Var10.getCheckView().a.q;
@@ -864,7 +864,7 @@ public final class bt0 implements View.OnClickListener {
                                                         break;
                                                     } else {
                                                         g1Var13.getCheckView().a(!g1Var13.getCheckView().a.q, true);
-                                                        oh.l6 l6Var3 = k12.s;
+                                                        nh.l6 l6Var3 = k12.s;
                                                         if (l6Var3 != null) {
                                                             boolean z17 = g1Var12.getCheckView().a.q;
                                                             boolean z18 = g1Var13.getCheckView().a.q;
@@ -903,7 +903,7 @@ public final class bt0 implements View.OnClickListener {
                                                         break;
                                                     } else {
                                                         g1Var11.getCheckView().a(!g1Var11.getCheckView().a.q, true);
-                                                        oh.l6 l6Var2 = k12.s;
+                                                        nh.l6 l6Var2 = k12.s;
                                                         if (l6Var2 != null) {
                                                             boolean z14 = g1Var11.getCheckView().a.q;
                                                             boolean z15 = g1Var10.getCheckView().a.q;
@@ -928,7 +928,7 @@ public final class bt0 implements View.OnClickListener {
                                                         break;
                                                     } else {
                                                         g1Var13.getCheckView().a(!g1Var13.getCheckView().a.q, true);
-                                                        oh.l6 l6Var3 = k12.s;
+                                                        nh.l6 l6Var3 = k12.s;
                                                         if (l6Var3 != null) {
                                                             boolean z17 = g1Var12.getCheckView().a.q;
                                                             boolean z18 = g1Var13.getCheckView().a.q;

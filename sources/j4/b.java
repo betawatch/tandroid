@@ -4,8 +4,9 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import h5.d0;
 import java.util.Arrays;
+import kf.k0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class b extends j {
     public static final Parcelable.Creator<b> CREATOR = new f8.o(13);
@@ -30,7 +31,7 @@ public final class b extends j {
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(this.b) + l.d.e(527, 31, this.a);
+        return Arrays.hashCode(this.b) + k0.e(527, 31, this.a);
     }
 
     @Override // android.os.Parcelable

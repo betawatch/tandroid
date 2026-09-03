@@ -4,17 +4,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
-import androidx.biometric.f0;
 import b4.e0;
 import com.google.android.gms.common.api.internal.v;
 import com.google.android.gms.common.api.internal.w;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
-import j7.t7;
+import j7.s7;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class k {
     public static final y5.c[] a = new y5.c[0];
@@ -79,9 +78,9 @@ public abstract class k {
 
     public static boolean a(Context context, y5.c[] cVarArr) {
         try {
-            return ((f6.a) Tasks.await(new g6.g(context, g6.g.k, com.google.android.gms.common.api.b.i, com.google.android.gms.common.api.i.c).f(new t(cVarArr, 1)).addOnFailureListener(new ab.a(4)))).a;
-        } catch (InterruptedException | ExecutionException e6) {
-            Log.e("OptionalModuleUtils", "Failed to complete the task of features availability check", e6);
+            return ((f6.a) Tasks.await(new g6.g(context, g6.g.k, com.google.android.gms.common.api.b.i, com.google.android.gms.common.api.i.c).f(new t(cVarArr, 1)).addOnFailureListener(new z9.d(3)))).a;
+        } catch (InterruptedException | ExecutionException e) {
+            Log.e("OptionalModuleUtils", "Failed to complete the task of features availability check", e);
             return false;
         }
     }
@@ -89,7 +88,7 @@ public abstract class k {
     public static void b(Context context) {
         h7.b bVar = h7.d.b;
         Object[] objArr = {"ica"};
-        t7.a(1, objArr);
+        s7.a(1, objArr);
         h7.g gVar = new h7.g(1, objArr);
         y5.e.b.getClass();
         if (y5.e.a(context) < 221500000) {
@@ -112,22 +111,22 @@ public abstract class k {
     }
 
     public static void c(Context context, y5.c[] cVarArr) {
-        Task e6;
+        Task e;
         ArrayList arrayList = new ArrayList();
         arrayList.add(new t(cVarArr, 0));
         b6.m.a("APIs must not be empty.", !arrayList.isEmpty());
         g6.g gVar = new g6.g(context, g6.g.k, com.google.android.gms.common.api.b.i, com.google.android.gms.common.api.i.c);
-        g6.a e10 = g6.a.e(arrayList, true);
-        if (e10.a.isEmpty()) {
-            e6 = Tasks.forResult(new f6.c(0, false));
+        g6.a e6 = g6.a.e(arrayList, true);
+        if (e6.a.isEmpty()) {
+            e = Tasks.forResult(new f6.c(0, false));
         } else {
-            v e11 = w.e();
-            e11.d = new y5.c[]{y6.b.c};
-            e11.b = true;
-            e11.a = 27304;
-            e11.c = new f0(gVar, e10);
-            e6 = gVar.e(0, e11.e());
+            v e10 = w.e();
+            e10.d = new y5.c[]{y6.b.c};
+            e10.b = true;
+            e10.a = 27304;
+            e10.c = new androidx.biometric.e0(gVar, e6);
+            e = gVar.e(0, e10.e());
         }
-        e6.addOnFailureListener(new z9.d(3));
+        e.addOnFailureListener(new h7.u(3));
     }
 }

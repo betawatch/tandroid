@@ -6,18 +6,18 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class ks0 extends on0 {
+public final class ks0 extends nn0 {
     public final /* synthetic */ yu0 F;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ks0(int i10, long j10, Context context, org.telegram.ui.ActionBar.p2 p2Var, org.telegram.ui.ActionBar.g6 g6Var, yu0 yu0Var) {
-        super(i10, j10, context, p2Var, g6Var);
+    public ks0(int i10, long j10, Context context, org.telegram.ui.ActionBar.p2 p2Var, org.telegram.ui.ActionBar.f6 f6Var, yu0 yu0Var) {
+        super(i10, j10, context, p2Var, f6Var);
         this.F = yu0Var;
     }
 
-    @Override // org.telegram.ui.Components.on0
+    @Override // org.telegram.ui.Components.nn0
     public final void b(boolean z4) {
         ns0 ns0Var = this.F.F0;
         ns0Var.setAlpha(1.0f - this.B);
@@ -27,8 +27,8 @@ public final class ks0 extends on0 {
         ns0Var.setScaleY(((1.0f - this.B) * 0.2f) + 0.8f);
     }
 
-    @Override // org.telegram.ui.Components.on0
-    public final boolean f(ng.q0 q0Var) {
+    @Override // org.telegram.ui.Components.nn0
+    public final boolean f(mg.q0 q0Var) {
         dt0 dt0Var;
         yu0 yu0Var = this.F;
         org.telegram.ui.ActionBar.w0 w0Var = yu0Var.k0;
@@ -49,21 +49,21 @@ public final class ks0 extends on0 {
             return true;
         }
         if (i10 == 12 && (dt0Var = yu0Var.Q) != null) {
-            org.telegram.ui.yn ynVar = dt0Var.a;
-            org.telegram.ui.vk vkVar = ynVar.l1;
-            if (vkVar != null) {
-                vkVar.e(q0Var, true);
+            org.telegram.ui.ao aoVar = dt0Var.a;
+            org.telegram.ui.xk xkVar = aoVar.l1;
+            if (xkVar != null) {
+                xkVar.e(q0Var, true);
             }
-            boolean z4 = (TextUtils.isEmpty(ynVar.q3) && ynVar.n3 == null) ? false : true;
-            ynVar.p3 = z4;
-            ynVar.l0 = z4;
-            ynVar.hc(false);
-            ynVar.Ic();
+            boolean z4 = (TextUtils.isEmpty(aoVar.q3) && aoVar.n3 == null) ? false : true;
+            aoVar.p3 = z4;
+            aoVar.l0 = z4;
+            aoVar.hc(false);
+            aoVar.Ic();
         }
         return true;
     }
 
-    @Override // org.telegram.ui.Components.on0
+    @Override // org.telegram.ui.Components.nn0
     public final void h(boolean z4) {
         super.h(z4);
         yu0 yu0Var = this.F;
@@ -72,14 +72,14 @@ public final class ks0 extends on0 {
         org.telegram.ui.ActionBar.w0 w0Var = yu0Var.j0;
         if (w0Var != null) {
             int i10 = (a() && yu0Var.s1.getUserConfig().isPremium()) ? R.drawable.navbar_search_tag : R.drawable.outline_header_search;
-            kj0 kj0Var = w0Var.x;
-            if (kj0Var != null && w0Var.y != i10) {
+            jj0 jj0Var = w0Var.x;
+            if (jj0Var != null && w0Var.y != i10) {
                 if (z4) {
                     w0Var.y = i10;
-                    AndroidUtilities.updateImageViewImageAnimated(kj0Var, i10);
+                    AndroidUtilities.updateImageViewImageAnimated(jj0Var, i10);
                 } else {
                     w0Var.y = i10;
-                    kj0Var.setImageResource(i10);
+                    jj0Var.setImageResource(i10);
                 }
             }
         }

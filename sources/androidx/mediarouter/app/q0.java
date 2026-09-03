@@ -4,7 +4,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.view.animation.Interpolator;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class q0 {
     public final BitmapDrawable a;
@@ -16,7 +16,7 @@ public final class q0 {
     public long i;
     public boolean j;
     public boolean k;
-    public bf.b l;
+    public af.c l;
     public float b = 1.0f;
     public float h = 1.0f;
 

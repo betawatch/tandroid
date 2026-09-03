@@ -1,27 +1,30 @@
 package j7;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.ResolveInfo;
-import java.util.Iterator;
-import org.telegram.tgnet.TLObject;
+import android.os.CancellationSignal;
+import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class b0 {
-    public static boolean a(Context context) {
-        ApplicationInfo applicationInfo;
-        Intent putExtra = new Intent().addFlags(TLObject.FLAG_28).setAction("com.android.settings.panel.action.MEDIA_OUTPUT").putExtra("com.android.settings.panel.extra.PACKAGE_NAME", context.getPackageName());
-        Iterator<ResolveInfo> it = context.getPackageManager().queryIntentActivities(putExtra, 0).iterator();
-        while (it.hasNext()) {
-            ActivityInfo activityInfo = it.next().activityInfo;
-            if (activityInfo != null && (applicationInfo = activityInfo.applicationInfo) != null && (applicationInfo.flags & 129) != 0) {
-                context.startActivity(putExtra);
-                return true;
-            }
+    public static void a(CancellationSignal cancellationSignal, dd.a onResultOrException) {
+        kotlin.jvm.internal.j.e(onResultOrException, "onResultOrException");
+        CredentialProviderPlayServicesImpl.Companion.getClass();
+        if (a1.g.a(cancellationSignal)) {
+            return;
         }
-        return false;
+        onResultOrException.invoke();
+    }
+
+    public static boolean b(int i10, dd.p pVar, dd.l lVar, CancellationSignal cancellationSignal) {
+        if (i10 == -1) {
+            return false;
+        }
+        kotlin.jvm.internal.q qVar = new kotlin.jvm.internal.q();
+        qVar.a = new w0.h(kf.k0.k(i10, "activity with result code: ", " indicating not RESULT_OK"), 2);
+        if (i10 == 0) {
+            qVar.a = new w0.g("activity is cancelled by the user.");
+        }
+        pVar.invoke(cancellationSignal, new b1.c(lVar, qVar, 1));
+        return true;
     }
 }

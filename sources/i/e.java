@@ -11,10 +11,10 @@ import android.util.AttributeSet;
 import android.util.StateSet;
 import j7.y7;
 import k2.p;
-import m.m2;
+import m.n2;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class e extends g implements j0.b {
     public boolean B;
@@ -98,7 +98,7 @@ public final class e extends g implements j0.b {
                     TypedArray f11 = h0.b.f(resources2, theme, attributeSet, j.c.b);
                     int resourceId = f11.getResourceId(z4 ? 1 : 0, z4 ? 1 : 0);
                     int resourceId2 = f11.getResourceId(i10, -1);
-                    Drawable g10 = resourceId2 > 0 ? m2.d().g(context2, resourceId2) : null;
+                    Drawable g10 = resourceId2 > 0 ? n2.d().g(context2, resourceId2) : null;
                     f11.recycle();
                     int attributeCount = attributeSet.getAttributeCount();
                     int[] iArr = new int[attributeCount];
@@ -141,7 +141,7 @@ public final class e extends g implements j0.b {
                     int resourceId3 = f12.getResourceId(2, -1);
                     int resourceId4 = f12.getResourceId(1, -1);
                     int resourceId5 = f12.getResourceId(z4 ? 1 : 0, -1);
-                    Drawable g11 = resourceId5 > 0 ? m2.d().g(context2, resourceId5) : null;
+                    Drawable g11 = resourceId5 > 0 ? n2.d().g(context2, resourceId5) : null;
                     boolean z10 = f12.getBoolean(3, z4);
                     f12.recycle();
                     if (g11 == null) {
@@ -293,10 +293,10 @@ public final class e extends g implements j0.b {
             this.F = -1;
             this.E = -1;
             b bVar2 = this.C;
-            int e6 = bVar2.e(i10);
-            int e10 = bVar2.e(f10);
-            if (e10 != 0 && e6 != 0) {
-                long j10 = e10 | (e6 << 32);
+            int e = bVar2.e(i10);
+            int e6 = bVar2.e(f10);
+            if (e6 != 0 && e != 0) {
+                long j10 = e6 | (e << 32);
                 int longValue = (int) ((Long) bVar2.I.g(-1L, j10)).longValue();
                 if (longValue >= 0) {
                     boolean z4 = (((Long) bVar2.I.g(-1L, j10)).longValue() & 8589934592L) != 0;

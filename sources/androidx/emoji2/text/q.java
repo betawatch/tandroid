@@ -9,31 +9,32 @@ import java.util.ArrayList;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import k7.k6;
+import k7.j6;
+import kf.k0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class q implements k {
     public final Context a;
     public final o0.d b;
-    public final cb.b c;
+    public final ab.a c;
     public final Object d = new Object();
     public Handler e;
     public ThreadPoolExecutor f;
     public ThreadPoolExecutor g;
-    public j7.t h;
+    public j7.s h;
 
     public q(Context context, o0.d dVar) {
-        k6.a(context, "Context cannot be null");
+        j6.a(context, "Context cannot be null");
         this.a = context.getApplicationContext();
         this.b = dVar;
         this.c = r.d;
     }
 
     @Override // androidx.emoji2.text.k
-    public final void a(j7.t tVar) {
+    public final void a(j7.s sVar) {
         synchronized (this.d) {
-            this.h = tVar;
+            this.h = sVar;
         }
         c();
     }
@@ -71,7 +72,7 @@ public final class q implements k {
                     this.g = threadPoolExecutor;
                     this.f = threadPoolExecutor;
                 }
-                this.f.execute(new ag.e(this, 4));
+                this.f.execute(new ag.d(this, 4));
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -80,10 +81,10 @@ public final class q implements k {
 
     public final o0.i d() {
         try {
-            cb.b bVar = this.c;
+            ab.a aVar = this.c;
             Context context = this.a;
             o0.d dVar = this.b;
-            bVar.getClass();
+            aVar.getClass();
             Object[] objArr = {dVar};
             ArrayList arrayList = new ArrayList(1);
             Object obj = objArr[0];
@@ -92,15 +93,15 @@ public final class q implements k {
             b4.f a2 = o0.c.a(context, DesugarCollections.unmodifiableList(arrayList));
             int i10 = a2.a;
             if (i10 != 0) {
-                throw new RuntimeException(l.d.k(i10, "fetchFonts failed (", ")"));
+                throw new RuntimeException(k0.k(i10, "fetchFonts failed (", ")"));
             }
             o0.i[] iVarArr = (o0.i[]) a2.b.get(0);
             if (iVarArr == null || iVarArr.length == 0) {
                 throw new RuntimeException("fetchFonts failed (empty result)");
             }
             return iVarArr[0];
-        } catch (PackageManager.NameNotFoundException e6) {
-            throw new RuntimeException("provider not found", e6);
+        } catch (PackageManager.NameNotFoundException e) {
+            throw new RuntimeException("provider not found", e);
         }
     }
 }

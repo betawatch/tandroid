@@ -1,36 +1,16 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class gx extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ mz c;
-
-    public /* synthetic */ gx(mz mzVar, boolean z4, int i10) {
-        this.a = i10;
-        this.c = mzVar;
-        this.b = z4;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                if (!this.b) {
-                    this.c.x.setVisibility(4);
-                    break;
-                }
-                break;
-            default:
-                if (!this.b) {
-                    this.c.y.setVisibility(4);
-                    break;
-                }
-                break;
+public final class gx extends org.telegram.ui.zn {
+    @Override // org.telegram.ui.zn, org.telegram.ui.ActionBar.p2
+    public final void onTransitionAnimationEnd(boolean z4, boolean z10) {
+        org.telegram.ui.lk lkVar;
+        super.onTransitionAnimationEnd(z4, z10);
+        if (!z4 || (lkVar = this.V) == null) {
+            return;
         }
+        lkVar.s1();
+        this.V.postDelayed(new up(this, 13), 100L);
     }
 }

@@ -1,28 +1,32 @@
 package m;
 
-import android.view.View;
-import android.window.OnBackInvokedCallback;
-import android.window.OnBackInvokedDispatcher;
-import j$.util.Objects;
-import org.telegram.messenger.MediaController;
+import androidx.appcompat.widget.Toolbar;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public abstract class h3 {
-    public static OnBackInvokedDispatcher a(View view) {
-        return view.findOnBackInvokedDispatcher();
+public final /* synthetic */ class h3 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Toolbar b;
+
+    public /* synthetic */ h3(Toolbar toolbar, int i10) {
+        this.a = i10;
+        this.b = toolbar;
     }
 
-    public static OnBackInvokedCallback b(Runnable runnable) {
-        Objects.requireNonNull(runnable);
-        return new androidx.activity.r(runnable, 2);
-    }
-
-    public static void c(Object obj, Object obj2) {
-        ((OnBackInvokedDispatcher) obj).registerOnBackInvokedCallback(MediaController.VIDEO_BITRATE_480, (OnBackInvokedCallback) obj2);
-    }
-
-    public static void d(Object obj, Object obj2) {
-        ((OnBackInvokedDispatcher) obj).unregisterOnBackInvokedCallback((OnBackInvokedCallback) obj2);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                j3 j3Var = this.b.b0;
+                l.m mVar = j3Var == null ? null : j3Var.b;
+                if (mVar != null) {
+                    mVar.collapseActionView();
+                    break;
+                }
+                break;
+            default:
+                this.b.m();
+                break;
+        }
     }
 }

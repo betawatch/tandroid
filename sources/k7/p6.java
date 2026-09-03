@@ -1,48 +1,153 @@
 package k7;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+import android.graphics.Bitmap;
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.zip.GZIPInputStream;
+import java.util.zip.GZIPOutputStream;
+
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class p6 {
-    public static void a(ne.s sVar, ne.s sVar2, int i10) {
-        if (sVar == null || sVar2 == null || sVar == sVar2) {
-            return;
-        }
-        StringBuilder sb = new StringBuilder(i10);
-        sb.append(sVar.g);
-        ne.p pVar = (ne.p) sVar.f;
-        ne.p pVar2 = (ne.p) sVar2.f;
-        while (pVar != pVar2) {
-            sb.append(((ne.s) pVar).g);
-            ne.p pVar3 = (ne.p) pVar.f;
-            pVar.g();
-            pVar = pVar3;
-        }
-        sVar.g = sb.toString();
+    public static String a(BufferedInputStream bufferedInputStream, ArrayList arrayList) {
+        String b10;
+        do {
+            b10 = b(bufferedInputStream, arrayList);
+            if (b10 == null) {
+                throw new IOException("Unexpected EOF in header");
+            }
+        } while (b10.startsWith("#"));
+        return b10;
     }
 
-    public static void b(ne.p pVar, ne.p pVar2) {
-        ne.s sVar = null;
-        ne.s sVar2 = null;
-        int i10 = 0;
-        while (pVar != null) {
-            if (pVar instanceof ne.s) {
-                sVar2 = (ne.s) pVar;
-                if (sVar == null) {
-                    sVar = sVar2;
+    public static String b(BufferedInputStream bufferedInputStream, ArrayList arrayList) {
+        StringBuilder sb = new StringBuilder();
+        while (true) {
+            bufferedInputStream.mark(1);
+            int read = bufferedInputStream.read();
+            if (read == -1) {
+                if (sb.length() == 0) {
+                    return null;
                 }
-                i10 = sVar2.g.length() + i10;
-            } else {
-                a(sVar, sVar2, i10);
-                sVar = null;
-                sVar2 = null;
-                i10 = 0;
+                return sb.toString();
             }
-            if (pVar == pVar2) {
-                break;
+            if (Character.isWhitespace(read)) {
+                if (sb.length() > 0) {
+                    return sb.toString();
+                }
             } else {
-                pVar = (ne.p) pVar.f;
+                if (read != 35) {
+                    sb.append((char) read);
+                    while (true) {
+                        bufferedInputStream.mark(1);
+                        int read2 = bufferedInputStream.read();
+                        if (read2 == -1 || Character.isWhitespace(read2)) {
+                            break;
+                        }
+                        if (read2 == 35) {
+                            bufferedInputStream.reset();
+                            return sb.toString();
+                        }
+                        sb.append((char) read2);
+                    }
+                    return sb.toString();
+                }
+                StringBuilder sb2 = new StringBuilder();
+                while (true) {
+                    int read3 = bufferedInputStream.read();
+                    if (read3 == -1 || read3 == 10) {
+                        break;
+                    }
+                    if (read3 != 13) {
+                        sb2.append((char) read3);
+                    }
+                }
+                arrayList.add(sb2.toString());
+                if (sb.length() > 0) {
+                    return sb.toString();
+                }
             }
         }
-        a(sVar, sVar2, i10);
+    }
+
+    public static int c(String str, String str2) {
+        try {
+            int parseInt = Integer.parseInt(str);
+            if (parseInt > 0) {
+                return parseInt;
+            }
+            throw new IOException("Invalid " + str2 + ": " + parseInt);
+        } catch (NumberFormatException e) {
+            throw new IOException(e2.c.k("Invalid ", str2, ": ", str), e);
+        }
+    }
+
+    public static Bitmap d(GZIPInputStream gZIPInputStream, ArrayList arrayList) {
+        BufferedInputStream bufferedInputStream = new BufferedInputStream(gZIPInputStream);
+        String b10 = b(bufferedInputStream, arrayList);
+        if (!"P5".equals(b10)) {
+            throw new IOException(vh.w2.e("Not a binary PGM (P5), got: ", b10));
+        }
+        int c3 = c(a(bufferedInputStream, arrayList), "width");
+        int c10 = c(a(bufferedInputStream, arrayList), "height");
+        int c11 = c(a(bufferedInputStream, arrayList), "maxval");
+        if (c11 != 255) {
+            throw new IOException(kf.k0.j(c11, "Only 8-bit PGM supported (maxval=255), got: "));
+        }
+        Bitmap createBitmap = Bitmap.createBitmap(c3, c10, Bitmap.Config.ALPHA_8);
+        int rowBytes = createBitmap.getRowBytes();
+        byte[] bArr = new byte[rowBytes * c10];
+        ByteBuffer wrap = ByteBuffer.wrap(bArr);
+        byte[] bArr2 = new byte[c3];
+        int i10 = 0;
+        for (int i11 = 0; i11 < c10; i11++) {
+            int i12 = 0;
+            while (i12 < c3) {
+                int read = bufferedInputStream.read(bArr2, i12, c3 - i12);
+                if (read < 0) {
+                    throw new IOException("Unexpected EOF");
+                }
+                i12 += read;
+            }
+            System.arraycopy(bArr2, 0, bArr, i10, c3);
+            i10 += rowBytes;
+        }
+        createBitmap.copyPixelsFromBuffer(wrap);
+        return createBitmap;
+    }
+
+    public static void e(Bitmap bitmap, GZIPOutputStream gZIPOutputStream, List list) {
+        if (bitmap.getConfig() != Bitmap.Config.ALPHA_8) {
+            throw new IllegalArgumentException("Only Bitmap.Config.ALPHA_8 is supported");
+        }
+        int width = bitmap.getWidth();
+        int height = bitmap.getHeight();
+        gZIPOutputStream.write("P5\n".getBytes(StandardCharsets.US_ASCII));
+        if (list != null && !list.isEmpty()) {
+            Iterator it = list.iterator();
+            while (it.hasNext()) {
+                String str = (String) it.next();
+                gZIPOutputStream.write(android.support.v4.media.a.o("#", str == null ? "" : str.replace('\r', ' ').replace('\n', ' '), "\n").getBytes(StandardCharsets.US_ASCII));
+            }
+        }
+        Charset charset = StandardCharsets.US_ASCII;
+        gZIPOutputStream.write((width + " " + height + "\n").getBytes(charset));
+        gZIPOutputStream.write("255\n".getBytes(charset));
+        int rowBytes = bitmap.getRowBytes();
+        byte[] bArr = new byte[rowBytes * height];
+        bitmap.copyPixelsToBuffer(ByteBuffer.wrap(bArr));
+        int i10 = 0;
+        int i11 = 0;
+        while (i10 < height) {
+            gZIPOutputStream.write(bArr, i11, width);
+            i10++;
+            i11 += rowBytes;
+        }
     }
 }

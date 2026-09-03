@@ -6,14 +6,14 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.widget.SeekBar;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class c0 extends SeekBar {
     public final d0 a;
 
     public c0(Context context, AttributeSet attributeSet, int i10) {
         super(context, attributeSet, i10);
-        c3.a(this, getContext());
+        d3.a(this, getContext());
         d0 d0Var = new d0(this);
         this.a = d0Var;
         d0Var.b(attributeSet, i10);

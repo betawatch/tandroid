@@ -14,12 +14,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
 import java.util.ArrayList;
-import k7.x5;
+import k7.w5;
 import o8.a0;
 import o8.f0;
 import o8.j0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 final class aj {
     final o8.c a;
@@ -89,7 +89,7 @@ final class aj {
         }
         ArrayList arrayList = new ArrayList();
         arrayList.add(new o8.s(3, System.currentTimeMillis()));
-        bundle.putParcelableArrayList("event_timestamps", new ArrayList<>(x5.a(arrayList)));
+        bundle.putParcelableArrayList("event_timestamps", new ArrayList<>(w5.a(arrayList)));
         return bundle;
     }
 
@@ -120,8 +120,8 @@ final class aj {
             TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
             this.a.c(new af(this, taskCompletionSource, decode, cloudProjectNumber, null, taskCompletionSource, integrityTokenRequest), taskCompletionSource);
             return taskCompletionSource.getTask();
-        } catch (IllegalArgumentException e6) {
-            return Tasks.forException(new IntegrityServiceException(-13, e6));
+        } catch (IllegalArgumentException e) {
+            return Tasks.forException(new IntegrityServiceException(-13, e));
         }
     }
 }

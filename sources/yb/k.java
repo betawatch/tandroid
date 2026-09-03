@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class k {
     public static final Logger a = Logger.getLogger(k.class.getName());
@@ -61,9 +61,9 @@ public abstract class k {
         } else {
             try {
                 nVar = (b) cls.newInstance();
-            } catch (Exception e6) {
-                logger.log(Level.SEVERE, "Couldn't instantiate BaseDescriptor class " + cls + " for objectTypeIndication " + i10 + " and tag " + k10, (Throwable) e6);
-                throw new RuntimeException(e6);
+            } catch (Exception e) {
+                logger.log(Level.SEVERE, "Couldn't instantiate BaseDescriptor class " + cls + " for objectTypeIndication " + i10 + " and tag " + k10, (Throwable) e);
+                throw new RuntimeException(e);
             }
         }
         nVar.a = k10;

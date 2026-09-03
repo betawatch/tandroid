@@ -23,12 +23,13 @@ import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.WriteToSocketDelegate;
-import org.telegram.ui.Components.fo0;
-import org.telegram.ui.xn;
+import org.telegram.ui.Components.eo0;
+import org.telegram.ui.zn;
+import p2.r;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d0 implements ResultCallback, WriteToSocketDelegate, OnSuccessListener, OnFailureListener, qh.p6, TelegramMediaSession.BrowseChildrenCallback, ImageReceiver.ImageReceiverDelegate, RequestTimeDelegate, OnCompleteListener, fo0, org.telegram.ui.ActionBar.c2 {
+public final /* synthetic */ class d0 implements ResultCallback, WriteToSocketDelegate, OnSuccessListener, OnFailureListener, ph.r6, TelegramMediaSession.BrowseChildrenCallback, ImageReceiver.ImageReceiverDelegate, RequestTimeDelegate, OnCompleteListener, eo0, org.telegram.ui.ActionBar.c2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -37,16 +38,16 @@ public final /* synthetic */ class d0 implements ResultCallback, WriteToSocketDe
         this.b = obj;
     }
 
-    public void a(p2.h hVar, p2.q qVar) {
-        BillingController.lambda$queryProductDetails$0((BillingController.ProductDetailsResponseListenerLegacy) this.b, hVar, qVar);
+    public void a(p2.h hVar, r rVar) {
+        BillingController.lambda$queryProductDetails$0((BillingController.ProductDetailsResponseListenerLegacy) this.b, hVar, rVar);
     }
 
-    @Override // org.telegram.ui.Components.fo0
+    @Override // org.telegram.ui.Components.eo0
     public void b(float f10) {
         ((RichMessageLayout.RichAudioBlock) this.b).lambda$new$0(f10);
     }
 
-    @Override // qh.p6
+    @Override // ph.r6
     public Bitmap c(BitmapFactory.Options options) {
         Bitmap lambda$rebuildPhoto$0;
         lambda$rebuildPhoto$0 = ((MediaController.PhotoEntry) this.b).lambda$rebuildPhoto$0(options);
@@ -64,8 +65,8 @@ public final /* synthetic */ class d0 implements ResultCallback, WriteToSocketDe
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
-        SendMessagesHelper.lambda$sendCallback$42((xn) this.b, d2Var, i10);
+    public void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        SendMessagesHelper.lambda$sendCallback$42((zn) this.b, d2Var, i10);
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
@@ -127,7 +128,7 @@ public final /* synthetic */ class d0 implements ResultCallback, WriteToSocketDe
         ProxyRotationController.lambda$new$1((SharedConfig.ProxyInfo) this.b, j10);
     }
 
-    @Override // org.telegram.ui.Components.fo0
+    @Override // org.telegram.ui.Components.eo0
     public /* synthetic */ void d(float f10) {
     }
 }

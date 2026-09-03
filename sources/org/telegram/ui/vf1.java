@@ -9,17 +9,17 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class vf1 implements org.telegram.ui.Components.il0 {
+public final class vf1 implements org.telegram.ui.Components.hl0 {
     public final /* synthetic */ yf1 a;
 
     public vf1(yf1 yf1Var) {
         this.a = yf1Var;
     }
 
-    @Override // org.telegram.ui.Components.il0
-    public final void f(int i10, View view) {
+    @Override // org.telegram.ui.Components.hl0
+    public final void d(int i10, View view) {
         yf1 yf1Var = this.a;
         ArrayList arrayList = yf1Var.d;
         if (((xf1) arrayList.get(i10)).a == 1) {
@@ -37,9 +37,9 @@ public final class vf1 implements org.telegram.ui.Components.il0 {
             bundle2.putLong("dialog_id", yf1Var.c);
             bundle2.putLong("topic_id", tL_forumTopic.id);
             bundle2.putBoolean("exception", false);
-            k11 k11Var = new k11(bundle2, null);
-            k11Var.r = new uf1(this, tL_forumTopic);
-            yf1Var.presentFragment(k11Var);
+            l11 l11Var = new l11(bundle2, null);
+            l11Var.r = new uf1(this, tL_forumTopic);
+            yf1Var.presentFragment(l11Var);
         }
         if (((xf1) arrayList.get(i10)).a == 4) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(yf1Var.getParentActivity());
@@ -51,7 +51,7 @@ public final class vf1 implements org.telegram.ui.Components.il0 {
             yf1Var.showDialog(d2Var);
             TextView textView = (TextView) d2Var.d(-1);
             if (textView != null) {
-                textView.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.q7, false));
+                textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, false));
             }
         }
     }

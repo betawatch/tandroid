@@ -2,7 +2,7 @@ package o4;
 
 import j3.h2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class n implements t, s {
     public final v a;
@@ -20,48 +20,21 @@ public final class n implements t, s {
     }
 
     @Override // o4.s
-    public final void a(t tVar) {
+    public final void E1(t tVar) {
         s sVar = this.f;
         int i10 = h5.d0.a;
-        sVar.a(this);
+        sVar.E1(this);
     }
 
     @Override // o4.n0
-    public final boolean b() {
+    public final long H() {
         t tVar = this.e;
-        return tVar != null && tVar.b();
-    }
-
-    public final void c(v vVar) {
-        long j10 = this.h;
-        if (j10 == -9223372036854775807L) {
-            j10 = this.b;
-        }
-        a aVar = this.d;
-        aVar.getClass();
-        t b10 = aVar.b(vVar, this.c, j10);
-        this.e = b10;
-        if (this.f != null) {
-            b10.f(this, j10);
-        }
+        int i10 = h5.d0.a;
+        return tVar.H();
     }
 
     @Override // o4.t
-    public final long d(long j10, h2 h2Var) {
-        t tVar = this.e;
-        int i10 = h5.d0.a;
-        return tVar.d(j10, h2Var);
-    }
-
-    @Override // o4.n0
-    public final long e() {
-        t tVar = this.e;
-        int i10 = h5.d0.a;
-        return tVar.e();
-    }
-
-    @Override // o4.t
-    public final void f(s sVar, long j10) {
+    public final void J(s sVar, long j10) {
         this.f = sVar;
         t tVar = this.e;
         if (tVar != null) {
@@ -69,12 +42,19 @@ public final class n implements t, s {
             if (j11 == -9223372036854775807L) {
                 j11 = this.b;
             }
-            tVar.f(this, j11);
+            tVar.J(this, j11);
         }
     }
 
+    @Override // o4.m0
+    public final void X1(n0 n0Var) {
+        s sVar = this.f;
+        int i10 = h5.d0.a;
+        sVar.X1(this);
+    }
+
     @Override // o4.t
-    public final long g(f5.c[] cVarArr, boolean[] zArr, l0[] l0VarArr, boolean[] zArr2, long j10) {
+    public final long Y(f5.c[] cVarArr, boolean[] zArr, l0[] l0VarArr, boolean[] zArr2, long j10) {
         long j11;
         long j12 = this.h;
         if (j12 == -9223372036854775807L || j10 != this.b) {
@@ -85,14 +65,41 @@ public final class n implements t, s {
         }
         t tVar = this.e;
         int i10 = h5.d0.a;
-        return tVar.g(cVarArr, zArr, l0VarArr, zArr2, j11);
+        return tVar.Y(cVarArr, zArr, l0VarArr, zArr2, j11);
+    }
+
+    public final void a(v vVar) {
+        long j10 = this.h;
+        if (j10 == -9223372036854775807L) {
+            j10 = this.b;
+        }
+        a aVar = this.d;
+        aVar.getClass();
+        t b10 = aVar.b(vVar, this.c, j10);
+        this.e = b10;
+        if (this.f != null) {
+            b10.J(this, j10);
+        }
     }
 
     @Override // o4.t
-    public final void i() {
+    public final long a1() {
+        t tVar = this.e;
+        int i10 = h5.d0.a;
+        return tVar.a1();
+    }
+
+    @Override // o4.n0
+    public final boolean b() {
+        t tVar = this.e;
+        return tVar != null && tVar.b();
+    }
+
+    @Override // o4.t
+    public final void d0() {
         t tVar = this.e;
         if (tVar != null) {
-            tVar.i();
+            tVar.d0();
             return;
         }
         a aVar = this.d;
@@ -102,57 +109,50 @@ public final class n implements t, s {
     }
 
     @Override // o4.t
-    public final long j(long j10) {
+    public final long j0(long j10) {
         t tVar = this.e;
         int i10 = h5.d0.a;
-        return tVar.j(j10);
-    }
-
-    @Override // o4.t
-    public final void k(long j10) {
-        t tVar = this.e;
-        int i10 = h5.d0.a;
-        tVar.k(j10);
+        return tVar.j0(j10);
     }
 
     @Override // o4.n0
-    public final boolean m(long j10) {
+    public final void k2(long j10) {
         t tVar = this.e;
-        return tVar != null && tVar.m(j10);
+        int i10 = h5.d0.a;
+        tVar.k2(j10);
     }
 
     @Override // o4.t
-    public final long n() {
+    public final void m0(long j10) {
         t tVar = this.e;
         int i10 = h5.d0.a;
-        return tVar.n();
+        tVar.m0(j10);
+    }
+
+    @Override // o4.n0
+    public final boolean n0(long j10) {
+        t tVar = this.e;
+        return tVar != null && tVar.n0(j10);
     }
 
     @Override // o4.t
-    public final t0 o() {
+    public final t0 o1() {
         t tVar = this.e;
         int i10 = h5.d0.a;
-        return tVar.o();
+        return tVar.o1();
     }
 
     @Override // o4.n0
-    public final long r() {
+    public final long y1() {
         t tVar = this.e;
         int i10 = h5.d0.a;
-        return tVar.r();
+        return tVar.y1();
     }
 
-    @Override // o4.m0
-    public final void s(n0 n0Var) {
-        s sVar = this.f;
-        int i10 = h5.d0.a;
-        sVar.s(this);
-    }
-
-    @Override // o4.n0
-    public final void t(long j10) {
+    @Override // o4.t
+    public final long z(long j10, h2 h2Var) {
         t tVar = this.e;
         int i10 = h5.d0.a;
-        tVar.t(j10);
+        return tVar.z(j10, h2Var);
     }
 }

@@ -22,7 +22,7 @@ import java.util.ArrayDeque;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class p extends g {
     public static final PorterDuff.Mode s = PorterDuff.Mode.SRC_IN;
@@ -472,8 +472,8 @@ public final class p extends g {
                 ThreadLocal threadLocal = h0.c.a;
                 try {
                     colorStateList = h0.c.a(resources2, resources2.getXml(resourceId), theme);
-                } catch (Exception e6) {
-                    Log.e("CSLCompat", "Failed to inflate ColorStateList.", e6);
+                } catch (Exception e) {
+                    Log.e("CSLCompat", "Failed to inflate ColorStateList.", e);
                 }
             }
         }

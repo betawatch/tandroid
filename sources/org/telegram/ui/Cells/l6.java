@@ -1,53 +1,38 @@
 package org.telegram.ui.Cells;
 
-import android.view.View;
-import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.wn;
-import org.telegram.ui.LaunchActivity;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
+import org.telegram.ui.Components.cc0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class l6 extends oh.i7 {
-    public final /* synthetic */ int S = 0;
-    public final /* synthetic */ View T;
+public final class l6 extends org.telegram.ui.Components.p9 {
+    public final /* synthetic */ int D;
+    public final /* synthetic */ m6 E;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l6(n6 n6Var, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(g6Var, false);
-        this.T = n6Var;
+    public l6(m6 m6Var, Context context, int i10) {
+        super(context);
+        this.E = m6Var;
+        this.D = i10;
     }
 
-    @Override // oh.i7
-    public final void f(long j10) {
-        switch (this.S) {
-            case 0:
-                ((n6) this.T).b(j10);
-                break;
-            case 1:
-                va vaVar = (va) this.T;
-                org.telegram.ui.ActionBar.p2 R = LaunchActivity.R();
-                if (R != null) {
-                    R.getOrCreateStoryViewer().getClass();
-                    R.getOrCreateStoryViewer().D(vaVar.getContext(), j10, oh.c7.a((sl0) vaVar.getParent()));
-                    break;
-                }
-                break;
-            default:
-                wn wnVar = (wn) this.T;
-                wnVar.E.getOrCreateStoryViewer().D(wnVar.getContext(), j10, new org.telegram.ui.Components.t(this, 25));
-                break;
+    @Override // org.telegram.ui.Components.p9, android.view.View
+    public final void onDraw(Canvas canvas) {
+        m6 m6Var = this.E;
+        k6 k6Var = m6Var.y;
+        cc0 cc0Var = m6.D;
+        if (this.D != 1) {
+            super.onDraw(canvas);
+        } else {
+            k6Var.F.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+            nh.m7.h(m6Var.x, canvas, getImageReceiver(), k6Var);
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l6(va vaVar) {
-        super(null, false);
-        this.T = vaVar;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l6(wn wnVar) {
-        super(null, true);
-        this.T = wnVar;
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return this.E.y.a(motionEvent, this);
     }
 }

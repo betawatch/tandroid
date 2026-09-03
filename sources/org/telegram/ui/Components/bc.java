@@ -11,7 +11,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class bc extends View {
     public final Paint a;
@@ -27,7 +27,7 @@ public final class bc extends View {
     public long v;
     public final RectF w;
 
-    public bc(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+    public bc(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.r = 1.0f;
         this.w = new RectF();
@@ -40,7 +40,7 @@ public final class bc extends View {
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
         paint.setStrokeCap(Paint.Cap.ROUND);
-        setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Hi, g6Var));
+        setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Hi, f6Var));
     }
 
     @Override // android.view.View
@@ -95,7 +95,7 @@ public final class bc extends View {
                 textPaint.setAlpha((int) (alpha * f13));
             }
             canvas.save();
-            canvas.translate(rectF.centerX() - (this.e / 2.0f), org.telegram.ui.yh.c(1.0f, this.r, AndroidUtilities.dp(10.0f), rectF.centerY() - (this.f.getHeight() / 2.0f)) - AndroidUtilities.dp(0.5f));
+            canvas.translate(rectF.centerX() - (this.e / 2.0f), org.telegram.ui.ai.c(1.0f, this.r, AndroidUtilities.dp(10.0f), rectF.centerY() - (this.f.getHeight() / 2.0f)) - AndroidUtilities.dp(0.5f));
             this.f.draw(canvas);
             if (this.r != 1.0f) {
                 textPaint.setAlpha(alpha);

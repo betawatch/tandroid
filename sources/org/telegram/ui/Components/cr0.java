@@ -6,7 +6,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cr0 implements org.telegram.ui.ActionBar.c2, MessagesStorage.StringCallback {
     public final /* synthetic */ yu0 a;
@@ -18,7 +18,7 @@ public final /* synthetic */ class cr0 implements org.telegram.ui.ActionBar.c2, 
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    public void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         ArrayList arrayList = new ArrayList(1);
         arrayList.add(this.b);
         yu0 yu0Var = this.a;
@@ -30,6 +30,6 @@ public final /* synthetic */ class cr0 implements org.telegram.ui.ActionBar.c2, 
 
     @Override // org.telegram.messenger.MessagesStorage.StringCallback
     public void run(String str) {
-        r0.getStoriesController().r(r0.g1, str, new xk(9, this.a, this.b));
+        r0.getStoriesController().r(r0.g1, str, new vk(9, this.a, this.b));
     }
 }

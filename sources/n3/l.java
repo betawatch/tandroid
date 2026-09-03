@@ -3,10 +3,10 @@ package n3;
 import java.util.ArrayDeque;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class l implements e {
-    public final gg.h a;
+    public final fg.h a;
     public final Object b = new Object();
     public final ArrayDeque c = new ArrayDeque();
     public final ArrayDeque d = new ArrayDeque();
@@ -31,7 +31,7 @@ public abstract class l implements e {
         for (int i11 = 0; i11 < this.h; i11++) {
             this.f[i11] = f();
         }
-        gg.h hVar = new gg.h(this);
+        fg.h hVar = new fg.h(this);
         this.a = hVar;
         hVar.start();
     }
@@ -130,7 +130,7 @@ public abstract class l implements e {
                     iVarArr2[i11] = iVar2;
                 }
                 while (!this.d.isEmpty()) {
-                    ((j) this.d.removeFirst()).i();
+                    ((j) this.d.removeFirst()).j();
                 }
             } catch (Throwable th2) {
                 throw th2;
@@ -164,21 +164,21 @@ public abstract class l implements e {
             j jVar = jVarArr[i10];
             boolean z4 = this.k;
             this.k = false;
-            if (iVar.e(4)) {
+            if (iVar.d(4)) {
                 jVar.a(4);
             } else {
-                if (iVar.e(TLObject.FLAG_31)) {
+                if (iVar.d(TLObject.FLAG_31)) {
                     jVar.a(TLObject.FLAG_31);
                 }
-                if (iVar.e(TLObject.FLAG_27)) {
+                if (iVar.d(TLObject.FLAG_27)) {
                     jVar.a(TLObject.FLAG_27);
                 }
                 try {
                     g10 = h(iVar, jVar, z4);
-                } catch (OutOfMemoryError e6) {
+                } catch (OutOfMemoryError e) {
+                    g10 = g(e);
+                } catch (RuntimeException e6) {
                     g10 = g(e6);
-                } catch (RuntimeException e10) {
-                    g10 = g(e10);
                 }
                 if (g10 != null) {
                     synchronized (this.b) {
@@ -190,10 +190,10 @@ public abstract class l implements e {
             synchronized (this.b) {
                 try {
                     if (this.k) {
-                        jVar.i();
-                    } else if (jVar.e(TLObject.FLAG_31)) {
+                        jVar.j();
+                    } else if (jVar.d(TLObject.FLAG_31)) {
                         this.m++;
-                        jVar.i();
+                        jVar.j();
                     } else {
                         jVar.d = this.m;
                         this.m = 0;

@@ -4,7 +4,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class f7 {
     public static String a(String str, Object... objArr) {
@@ -18,7 +18,7 @@ public abstract class f7 {
             } else {
                 try {
                     sb = obj.toString();
-                } catch (Exception e6) {
+                } catch (Exception e) {
                     String name = obj.getClass().getName();
                     String hexString = Integer.toHexString(System.identityHashCode(obj));
                     StringBuilder sb2 = new StringBuilder(String.valueOf(hexString).length() + name.length() + 1);
@@ -29,8 +29,8 @@ public abstract class f7 {
                     Logger logger = Logger.getLogger("com.google.common.base.Strings");
                     Level level = Level.WARNING;
                     String valueOf = String.valueOf(sb3);
-                    logger.log(level, valueOf.length() != 0 ? "Exception during lenientFormat for ".concat(valueOf) : new String("Exception during lenientFormat for "), (Throwable) e6);
-                    String name2 = e6.getClass().getName();
+                    logger.log(level, valueOf.length() != 0 ? "Exception during lenientFormat for ".concat(valueOf) : new String("Exception during lenientFormat for "), (Throwable) e);
+                    String name2 = e.getClass().getName();
                     StringBuilder sb4 = new StringBuilder(name2.length() + String.valueOf(sb3).length() + 9);
                     sb4.append("<");
                     sb4.append(sb3);

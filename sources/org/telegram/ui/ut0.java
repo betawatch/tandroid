@@ -13,9 +13,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class ut0 extends org.telegram.ui.Components.xf0 {
+public final class ut0 extends org.telegram.ui.Components.wf0 {
     public final Rect J;
     public final /* synthetic */ PhotoViewer K;
 
@@ -25,48 +25,48 @@ public final class ut0 extends org.telegram.ui.Components.xf0 {
         this.K = photoViewer;
         this.a = UserConfig.selectedAccount;
         this.v = new ArrayList();
-        this.I = new org.telegram.ui.Components.ec0(this, 10);
+        this.I = new org.telegram.ui.Components.dc0(this, 10);
         this.b = photoViewer2;
         this.r = g1Var;
-        org.telegram.ui.Components.lu luVar = new org.telegram.ui.Components.lu(this, context, context, 1);
-        this.f = luVar;
-        luVar.getSettings().setJavaScriptEnabled(true);
-        luVar.getSettings().setDomStorageEnabled(true);
-        luVar.getSettings().setMediaPlaybackRequiresUserGesture(false);
-        luVar.getSettings().setMixedContentMode(0);
-        CookieManager.getInstance().setAcceptThirdPartyCookies(luVar, true);
-        luVar.setWebViewClient(new org.telegram.ui.Components.tf0(this, 0));
-        addView(luVar, k7.c6.e(-1, -1, 51));
+        org.telegram.ui.Components.iu iuVar = new org.telegram.ui.Components.iu(this, context, context, 1);
+        this.f = iuVar;
+        iuVar.getSettings().setJavaScriptEnabled(true);
+        iuVar.getSettings().setDomStorageEnabled(true);
+        iuVar.getSettings().setMediaPlaybackRequiresUserGesture(false);
+        iuVar.getSettings().setMixedContentMode(0);
+        CookieManager.getInstance().setAcceptThirdPartyCookies(iuVar, true);
+        iuVar.setWebViewClient(new org.telegram.ui.Components.sf0(this, 0));
+        addView(iuVar, k7.b6.e(-1, -1, 51));
         LinearLayout linearLayout = new LinearLayout(context);
         this.c = linearLayout;
         linearLayout.setOrientation(1);
         linearLayout.setGravity(17);
         linearLayout.setVisibility(8);
-        addView(linearLayout, k7.c6.e(-2, -2, 17));
+        addView(linearLayout, k7.b6.e(-2, -2, 17));
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setTextSize(1, 16.0f);
-        yh.t(org.telegram.ui.ActionBar.k6.y6, null, false, textView, 17);
-        linearLayout.addView(textView, k7.c6.q(-2, -2, 1));
+        ai.s(org.telegram.ui.ActionBar.j6.y6, null, false, textView, 17);
+        linearLayout.addView(textView, k7.b6.q(-2, -2, 1));
         TextView textView2 = new TextView(context);
         this.e = textView2;
         textView2.setTextSize(1, 16.0f);
-        int i10 = org.telegram.ui.ActionBar.k6.n6;
-        textView2.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, i10, false));
+        int i10 = org.telegram.ui.ActionBar.j6.n6;
+        textView2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
         textView2.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f));
-        int i11 = org.telegram.ui.ActionBar.a6.a;
-        textView2.setBackground(org.telegram.ui.ActionBar.a6.d(new float[]{12.0f}, 0, org.telegram.ui.ActionBar.a6.b(org.telegram.ui.ActionBar.k6.w0(null, i10, false))));
+        int i11 = org.telegram.ui.ActionBar.z5.a;
+        textView2.setBackground(org.telegram.ui.ActionBar.z5.d(new float[]{12.0f}, 0, org.telegram.ui.ActionBar.z5.b(org.telegram.ui.ActionBar.j6.w0(null, i10, false))));
         textView2.setVisibility(8);
-        linearLayout.addView(textView2, k7.c6.t(-2, -2, 1, 0, 8, 0, 0));
-        fg.h0 h0Var = new fg.h0(this, context, 15);
+        linearLayout.addView(textView2, k7.b6.t(-2, -2, 1, 0, 8, 0, 0));
+        eg.h0 h0Var = new eg.h0(this, context, 15);
         this.h = h0Var;
         h0Var.setBackgroundColor(-16777216);
         h0Var.setVisibility(4);
-        addView(h0Var, k7.c6.c(-1.0f, -1));
+        addView(h0Var, k7.b6.c(-1.0f, -1));
         RadialProgressView radialProgressView = new RadialProgressView(context, null);
         this.n = radialProgressView;
         radialProgressView.setVisibility(4);
-        addView(radialProgressView, k7.c6.e(-2, -2, 17));
+        addView(radialProgressView, k7.b6.e(-2, -2, 17));
         this.J = new Rect();
     }
 

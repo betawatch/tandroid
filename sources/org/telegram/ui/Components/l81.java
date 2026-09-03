@@ -22,7 +22,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public class l81 extends FrameLayout {
     public static final kr0 P = new kr0(1);
@@ -33,14 +33,14 @@ public class l81 extends FrameLayout {
     public boolean F;
     public final AnimationNotificationsLocker G;
     public final float H;
-    public d81 I;
-    public b81 J;
-    public final f2.d0 K;
+    public c81 I;
+    public a81 J;
+    public final eg.b1 K;
     public final Rect L;
     public boolean M;
     public ValueAnimator N;
     public float O;
-    public final org.telegram.ui.ActionBar.g6 a;
+    public final org.telegram.ui.ActionBar.f6 a;
     public int b;
     public float c;
     public int d;
@@ -55,15 +55,15 @@ public class l81 extends FrameLayout {
     public boolean x;
     public boolean y;
 
-    public l81(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+    public l81(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.c = 1.0f;
         this.h = new SparseArray();
         this.G = new AnimationNotificationsLocker();
-        this.K = new f2.d0(this, 7);
+        this.K = new eg.b1(this, 8);
         this.L = new Rect();
         this.M = true;
-        this.a = g6Var;
+        this.a = f6Var;
         this.H = AndroidUtilities.getPixelsInCM(0.3f, true);
         this.D = ViewConfiguration.get(context).getScaledMaximumFlingVelocity();
         this.f = new int[2];
@@ -71,15 +71,15 @@ public class l81 extends FrameLayout {
         setClipChildren(true);
     }
 
-    public static sl0 p(View view) {
+    public static rl0 p(View view) {
         if (!(view instanceof ViewGroup)) {
             return null;
         }
         ViewGroup viewGroup = (ViewGroup) view;
         for (int i10 = 0; i10 < viewGroup.getChildCount(); i10++) {
             View childAt = viewGroup.getChildAt(i10);
-            if (childAt instanceof sl0) {
-                return (sl0) childAt;
+            if (childAt instanceof rl0) {
+                return (rl0) childAt;
             }
             if (childAt instanceof ViewGroup) {
                 p(childAt);
@@ -101,8 +101,8 @@ public class l81 extends FrameLayout {
         float f12;
         boolean z4;
         View q10;
-        b81 b81Var = this.J;
-        if (b81Var == null || !b81Var.G) {
+        a81 a81Var = this.J;
+        if (a81Var == null || !a81Var.G) {
             if (motionEvent != null) {
                 if (this.v == null) {
                     this.v = VelocityTracker.obtain();
@@ -160,9 +160,9 @@ public class l81 extends FrameLayout {
                             }
                             this.d = 0;
                             this.c = 1.0f;
-                            b81 b81Var2 = this.J;
-                            if (b81Var2 != null) {
-                                b81Var2.e(1.0f, 0, this.b);
+                            a81 a81Var2 = this.J;
+                            if (a81Var2 != null) {
+                                a81Var2.e(1.0f, 0, this.b);
                             }
                             w(false);
                         }
@@ -189,9 +189,9 @@ public class l81 extends FrameLayout {
                         }
                         float f13 = 1.0f - abs2;
                         this.c = f13;
-                        b81 b81Var3 = this.J;
-                        if (b81Var3 != null) {
-                            b81Var3.e(f13, this.d, this.b);
+                        a81 a81Var3 = this.J;
+                        if (a81Var3 != null) {
+                            a81Var3.e(f13, this.d, this.b);
                         }
                         w(false);
                     }
@@ -263,7 +263,7 @@ public class l81 extends FrameLayout {
                         }
                         if (this.d < 0) {
                             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.O, this.C ? 0.0f : 1.0f);
-                            ofFloat.addUpdateListener(new z71(this, i10));
+                            ofFloat.addUpdateListener(new y71(this, i10));
                             this.w.playTogether(ofFloat);
                         }
                         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
@@ -273,16 +273,16 @@ public class l81 extends FrameLayout {
                         float measuredWidth = getMeasuredWidth() / 2;
                         float sin = (((float) Math.sin((Math.min(1.0f, (f12 * 1.0f) / r2) - 0.5f) * 0.47123894f)) * measuredWidth) + measuredWidth;
                         this.w.setDuration(Math.max(ImageReceiver.DEFAULT_CROSSFADE_DURATION, Math.min(Math.abs(f10) > 0.0f ? Math.round(Math.abs(sin / r4) * 1000.0f) * 4 : (int) (((f12 / getMeasuredWidth()) + 1.0f) * 100.0f), 600)));
-                        this.w.addListener(new a81(this, i10));
+                        this.w.addListener(new z71(this, i10));
                         this.w.start();
                         this.x = true;
                         this.E = false;
                         w(false);
                     } else {
                         this.F = false;
-                        b81 b81Var4 = this.J;
-                        if (b81Var4 != null) {
-                            b81Var4.setEnabled(true);
+                        a81 a81Var4 = this.J;
+                        if (a81Var4 != null) {
+                            a81Var4.setEnabled(true);
                         }
                     }
                     VelocityTracker velocityTracker2 = this.v;
@@ -312,9 +312,9 @@ public class l81 extends FrameLayout {
         this.E = true;
         v();
         this.r = (int) (motionEvent.getX() + this.B);
-        b81 b81Var = this.J;
-        if (b81Var != null) {
-            b81Var.setEnabled(false);
+        a81 a81Var = this.J;
+        if (a81Var != null) {
+            a81Var.setEnabled(false);
         }
         this.G.lock();
         this.y = z4;
@@ -334,9 +334,9 @@ public class l81 extends FrameLayout {
 
     public final void C(boolean z4) {
         onTouchEvent(null);
-        d81 d81Var = this.I;
-        d81Var.getClass();
-        if (!(d81Var instanceof org.telegram.ui.g7)) {
+        c81 c81Var = this.I;
+        c81Var.getClass();
+        if (!(c81Var instanceof org.telegram.ui.i7)) {
             z4 = false;
         }
         AnimatorSet animatorSet = this.w;
@@ -415,17 +415,17 @@ public class l81 extends FrameLayout {
             this.w.playTogether(H(view9, 0.0f));
         }
         w(true);
-        b81 b81Var = this.J;
-        b81Var.a = 0.0f;
-        b81Var.v.e1();
+        a81 a81Var = this.J;
+        a81Var.a = 0.0f;
+        a81Var.v.e1();
         this.J.invalidate();
         int i10 = 2;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        ofFloat.addUpdateListener(new z71(this, i10));
+        ofFloat.addUpdateListener(new y71(this, i10));
         this.w.playTogether(ofFloat);
         this.w.setInterpolator(P);
         this.w.setDuration(220L);
-        this.w.addListener(new a81(this, i10));
+        this.w.addListener(new z71(this, i10));
         this.J.setEnabled(false);
         this.x = true;
         this.w.start();
@@ -455,10 +455,10 @@ public class l81 extends FrameLayout {
                 }
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 this.N = ofFloat;
-                ofFloat.addUpdateListener(new z71(this, i11));
-                this.N.addListener(new a81(this, i11));
+                ofFloat.addUpdateListener(new y71(this, i11));
+                this.N.addListener(new z71(this, i11));
                 this.N.setDuration(getManualScrollDuration());
-                this.N.setInterpolator(pr.h);
+                this.N.setInterpolator(mr.h);
                 this.N.start();
             }
         }
@@ -493,7 +493,7 @@ public class l81 extends FrameLayout {
     public final ValueAnimator H(View view, float f10) {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(view.getTranslationX(), f10);
         ofFloat.addUpdateListener(new dx0(this, view, 1));
-        ofFloat.addListener(new c81(this, view, f10));
+        ofFloat.addListener(new b81(this, view, f10));
         return ofFloat;
     }
 
@@ -544,8 +544,8 @@ public class l81 extends FrameLayout {
         addView(view3);
         viewArr[i10] = view3;
         view3.setVisibility(0);
-        d81 d81Var = this.I;
-        d81Var.b(viewArr[i10], i11, d81Var.h(i11));
+        c81 c81Var = this.I;
+        c81Var.b(viewArr[i10], i11, c81Var.h(i11));
     }
 
     @Override // android.view.View
@@ -691,7 +691,7 @@ public class l81 extends FrameLayout {
             int i10 = 3;
             if (this.d < 0) {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(this.O, this.C ? 0.0f : 1.0f);
-                ofFloat.addUpdateListener(new z71(this, i10));
+                ofFloat.addUpdateListener(new y71(this, i10));
                 this.w.playTogether(ofFloat);
             }
             ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
@@ -701,16 +701,16 @@ public class l81 extends FrameLayout {
             float measuredWidth = getMeasuredWidth() / 2;
             float sin = (((float) Math.sin((Math.min(1.0f, (f10 * 1.0f) / r0) - 0.5f) * 0.47123894f)) * measuredWidth) + measuredWidth;
             this.w.setDuration(Math.max(ImageReceiver.DEFAULT_CROSSFADE_DURATION, Math.min(Math.abs(0.0f) > 0.0f ? Math.round(Math.abs(sin / r6) * 1000.0f) * 4 : (int) (((f10 / getMeasuredWidth()) + 1.0f) * 100.0f), 600)));
-            this.w.addListener(new a81(this, i10));
+            this.w.addListener(new z71(this, i10));
             this.w.start();
             this.x = true;
             this.E = false;
             w(false);
         } else {
             this.F = false;
-            b81 b81Var = this.J;
-            if (b81Var != null) {
-                b81Var.setEnabled(true);
+            a81 a81Var = this.J;
+            if (a81Var != null) {
+                a81Var.setEnabled(true);
             }
         }
         VelocityTracker velocityTracker2 = this.v;
@@ -761,47 +761,47 @@ public class l81 extends FrameLayout {
     }
 
     public final k81 n(int i10, boolean z4) {
-        b81 b81Var = new b81(this, getContext(), z4, i10, this.a);
-        this.J = b81Var;
-        b81Var.r = G();
-        this.J.setDelegate(new oh.h4(this, 6));
+        a81 a81Var = new a81(this, getContext(), z4, i10, this.a);
+        this.J = a81Var;
+        a81Var.r = G();
+        this.J.setDelegate(new tp0(this, 1));
         o(false);
         return this.J;
     }
 
     public final void o(boolean z4) {
-        b81 b81Var;
-        if (this.I == null || (b81Var = this.J) == null) {
+        a81 a81Var;
+        if (this.I == null || (a81Var = this.J) == null) {
             return;
         }
-        b81Var.h.clear();
-        b81Var.V.clear();
-        b81Var.W.clear();
-        b81Var.a0.clear();
-        b81Var.b0.clear();
-        b81Var.E = 0;
+        a81Var.h.clear();
+        a81Var.V.clear();
+        a81Var.W.clear();
+        a81Var.a0.clear();
+        a81Var.b0.clear();
+        a81Var.E = 0;
         for (int i10 = 0; i10 < this.I.e(); i10++) {
             this.I.getClass();
             this.J.a(this.I.f(i10), this.I.g(i10));
         }
         h();
         if (z4) {
-            mh.d1 d1Var = this.J.v;
+            lh.e1 e1Var = this.J.v;
             TransitionSet transitionSet = new TransitionSet();
             ChangeBounds changeBounds = new ChangeBounds();
             changeBounds.setDuration(150L);
             transitionSet.addTransition(new Fade().setDuration(150L)).addTransition(changeBounds);
             transitionSet.setOrdering(0);
-            transitionSet.setInterpolator((TimeInterpolator) pr.f);
-            TransitionManager.beginDelayedTransition(d1Var, transitionSet);
+            transitionSet.setInterpolator((TimeInterpolator) mr.f);
+            TransitionManager.beginDelayedTransition(e1Var, transitionSet);
         }
         this.J.x.l();
     }
 
     @Override // android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        b81 b81Var = this.J;
-        if (b81Var != null && b81Var.G) {
+        a81 a81Var = this.J;
+        if (a81Var != null && a81Var.G) {
             return false;
         }
         if (m()) {
@@ -840,7 +840,7 @@ public class l81 extends FrameLayout {
     }
 
     public final float r(int i10) {
-        return getMeasuredWidth() == 0 ? k7.o.b(1 - Math.abs(getCurrentPosition() - i10), 0, 1) : k7.o.a(1.0f - Math.abs(getPositionAnimated() - i10), 0.0f, 1.0f);
+        return getMeasuredWidth() == 0 ? k7.n.b(1 - Math.abs(getCurrentPosition() - i10), 0, 1) : k7.n.a(1.0f - Math.abs(getPositionAnimated() - i10), 0.0f, 1.0f);
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent
@@ -851,21 +851,21 @@ public class l81 extends FrameLayout {
         super.requestDisallowInterceptTouchEvent(z4);
     }
 
-    public void setAdapter(d81 d81Var) {
-        this.I = d81Var;
-        int h = d81Var.h(this.b);
+    public void setAdapter(c81 c81Var) {
+        this.I = c81Var;
+        int h = c81Var.h(this.b);
         int[] iArr = this.f;
         iArr[0] = h;
-        View d = d81Var.d(h);
+        View d = c81Var.d(h);
         View[] viewArr = this.e;
         viewArr[0] = d;
         if (d == null && this.b != 0) {
             this.b = 0;
-            int h9 = d81Var.h(0);
+            int h9 = c81Var.h(0);
             iArr[0] = h9;
-            viewArr[0] = d81Var.d(h9);
+            viewArr[0] = c81Var.d(h9);
         }
-        d81Var.b(viewArr[0], this.b, iArr[0]);
+        c81Var.b(viewArr[0], this.b, iArr[0]);
         addView(viewArr[0]);
         viewArr[0].setVisibility(0);
         o(false);
@@ -900,9 +900,9 @@ public class l81 extends FrameLayout {
             I(0);
             t(viewArr[0], view2, this.b, i11);
             E(viewArr[0], 0.0f);
-            b81 b81Var = this.J;
-            if (b81Var != null) {
-                b81Var.e(this.c, this.b, this.d);
+            a81 a81Var = this.J;
+            if (a81Var != null) {
+                a81Var.e(this.c, this.b, this.d);
             }
             w(true);
         }

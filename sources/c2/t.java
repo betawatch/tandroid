@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.os.RemoteException;
 import android.util.Log;
 import j$.util.Objects;
-import j7.e7;
+import j7.d7;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class t {
     public final Context a;
@@ -52,7 +52,7 @@ public abstract class t {
     public abstract void f(o oVar);
 
     public void g(u uVar) {
-        c0.b();
+        d0.b();
         if (((u) this.n) != uVar) {
             this.n = uVar;
             if (this.c) {
@@ -64,7 +64,7 @@ public abstract class t {
     }
 
     public void h(o oVar) {
-        c0.b();
+        d0.b();
         if (Objects.equals((o) this.h, oVar)) {
             return;
         }
@@ -91,8 +91,8 @@ public abstract class t {
             }
             try {
                 j();
-            } catch (RemoteException e6) {
-                Log.e((String) this.e, "Could not finalize native handle", e6);
+            } catch (RemoteException e) {
+                Log.e((String) this.e, "Could not finalize native handle", e);
             }
         }
     }
@@ -113,8 +113,8 @@ public abstract class t {
                 }
                 try {
                     eVar = m6.e.c(this.a, m6.e.b, str);
-                } catch (m6.b e6) {
-                    e7.a(e6, "Error loading optional module %s", str);
+                } catch (m6.b e) {
+                    d7.a(e, "Error loading optional module %s", str);
                     if (!this.b) {
                         String str2 = (String) this.h;
                         if (Log.isLoggable("Vision", 3)) {
@@ -134,8 +134,8 @@ public abstract class t {
             if (eVar != null) {
                 try {
                     this.n = i(eVar, this.a);
-                } catch (RemoteException | m6.b e10) {
-                    Log.e((String) this.e, "Error creating remote native handle", e10);
+                } catch (RemoteException | m6.b e6) {
+                    Log.e((String) this.e, "Error creating remote native handle", e6);
                 }
             }
             boolean z4 = this.c;
@@ -149,15 +149,15 @@ public abstract class t {
         }
     }
 
-    public t(Context context, y5.h hVar) {
+    public t(Context context, o5.i iVar) {
         this.e = new androidx.mediarouter.app.d(this, 4);
         if (context != null) {
             this.a = context;
-            if (hVar == null) {
-                this.d = new y5.h(new ComponentName(context, getClass()), 7);
+            if (iVar == null) {
+                this.d = new o5.i(new ComponentName(context, getClass()), 7);
                 return;
             } else {
-                this.d = hVar;
+                this.d = iVar;
                 return;
             }
         }

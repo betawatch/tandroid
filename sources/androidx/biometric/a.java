@@ -8,7 +8,7 @@ import java.security.Signature;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class a extends BiometricPrompt.AuthenticationCallback {
     public final /* synthetic */ d a;
@@ -24,36 +24,36 @@ public final class a extends BiometricPrompt.AuthenticationCallback {
 
     @Override // android.hardware.biometrics.BiometricPrompt.AuthenticationCallback
     public void onAuthenticationFailed() {
-        WeakReference weakReference = ((y) this.a).a;
-        if (weakReference.get() == null || !((a0) weakReference.get()).n) {
+        WeakReference weakReference = ((x) this.a).a;
+        if (weakReference.get() == null || !((z) weakReference.get()).n) {
             return;
         }
-        a0 a0Var = (a0) weakReference.get();
-        if (a0Var.u == null) {
-            a0Var.u = new androidx.lifecycle.z();
+        z zVar = (z) weakReference.get();
+        if (zVar.u == null) {
+            zVar.u = new androidx.lifecycle.z();
         }
-        a0.h(a0Var.u, Boolean.TRUE);
+        z.h(zVar.u, Boolean.TRUE);
     }
 
     @Override // android.hardware.biometrics.BiometricPrompt.AuthenticationCallback
     public void onAuthenticationSucceeded(BiometricPrompt.AuthenticationResult authenticationResult) {
         BiometricPrompt.CryptoObject cryptoObject;
         IdentityCredential b10;
-        w wVar = null;
+        v vVar = null;
         if (authenticationResult != null && (cryptoObject = authenticationResult.getCryptoObject()) != null) {
-            Cipher d = d0.d(cryptoObject);
+            Cipher d = c0.d(cryptoObject);
             if (d != null) {
-                wVar = new w(d);
+                vVar = new v(d);
             } else {
-                Signature f10 = d0.f(cryptoObject);
+                Signature f10 = c0.f(cryptoObject);
                 if (f10 != null) {
-                    wVar = new w(f10);
+                    vVar = new v(f10);
                 } else {
-                    Mac e6 = d0.e(cryptoObject);
-                    if (e6 != null) {
-                        wVar = new w(e6);
-                    } else if (Build.VERSION.SDK_INT >= 30 && (b10 = e0.b(cryptoObject)) != null) {
-                        wVar = new w(b10);
+                    Mac e = c0.e(cryptoObject);
+                    if (e != null) {
+                        vVar = new v(e);
+                    } else if (Build.VERSION.SDK_INT >= 30 && (b10 = d0.b(cryptoObject)) != null) {
+                        vVar = new v(b10);
                     }
                 }
             }
@@ -67,7 +67,7 @@ public final class a extends BiometricPrompt.AuthenticationCallback {
         } else if (i10 != 29) {
             i11 = 2;
         }
-        this.a.b(new v(wVar, i11));
+        this.a.b(new u(vVar, i11));
     }
 
     @Override // android.hardware.biometrics.BiometricPrompt.AuthenticationCallback

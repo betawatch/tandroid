@@ -9,11 +9,11 @@ import j3.c0;
 import j3.n0;
 import j3.z;
 import java.util.List;
-import org.telegram.ui.yh;
 import s8.i0;
 import s8.v;
+import vh.w2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class l extends j3.e implements Handler.Callback {
     public final Handler B;
@@ -46,7 +46,7 @@ public final class l extends j3.e implements Handler.Callback {
         }
         this.B = handler;
         this.D = i.a;
-        this.E = new f7.b((char) 0, 16);
+        this.E = new f7.b((char) 0, 17);
         this.P = -9223372036854775807L;
         this.Q = -9223372036854775807L;
         this.R = -9223372036854775807L;
@@ -62,7 +62,7 @@ public final class l extends j3.e implements Handler.Callback {
         v vVar = cVar.a;
         c0 c0Var = this.C;
         c0Var.a.l.e(27, new z(vVar));
-        c0Var.a.l.e(27, new hg.f(cVar, 11));
+        c0Var.a.l.e(27, new gg.f(cVar, 11));
     }
 
     public final void C() {
@@ -70,12 +70,12 @@ public final class l extends j3.e implements Handler.Callback {
         this.O = -1;
         k kVar = this.M;
         if (kVar != null) {
-            kVar.i();
+            kVar.j();
             this.M = null;
         }
         k kVar2 = this.N;
         if (kVar2 != null) {
-            kVar2.i();
+            kVar2.j();
             this.N = null;
         }
     }
@@ -264,7 +264,7 @@ public final class l extends j3.e implements Handler.Callback {
                     aVar = new e5.a();
                     break;
                 case 3:
-                    aVar = new e5.l();
+                    aVar = new e5.k();
                     break;
                 case 4:
                     aVar = new d5.a(list);
@@ -292,7 +292,7 @@ public final class l extends j3.e implements Handler.Callback {
             this.K = aVar;
             return;
         }
-        throw new IllegalArgumentException(yh.k("Attempted to create decoder for unsupported MIME type: ", str));
+        throw new IllegalArgumentException(w2.e("Attempted to create decoder for unsupported MIME type: ", str));
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -421,7 +421,7 @@ public final class l extends j3.e implements Handler.Callback {
                     this.K = bVar;
                     return;
                 case 3:
-                    bVar = new e5.l();
+                    bVar = new e5.k();
                     this.K = bVar;
                     return;
                 case 4:
@@ -458,7 +458,7 @@ public final class l extends j3.e implements Handler.Callback {
                     return;
             }
         }
-        throw new IllegalArgumentException(yh.k("Attempted to create decoder for unsupported MIME type: ", str));
+        throw new IllegalArgumentException(w2.e("Attempted to create decoder for unsupported MIME type: ", str));
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -489,7 +489,7 @@ public final class l extends j3.e implements Handler.Callback {
         g bVar;
         Object obj4;
         long j13;
-        long l10;
+        long h;
         String str2;
         char c10;
         g aVar2;
@@ -520,8 +520,8 @@ public final class l extends j3.e implements Handler.Callback {
                 g gVar2 = this.K;
                 gVar2.getClass();
                 this.N = (k) gVar2.b();
-            } catch (h e6) {
-                h5.a.p("TextRenderer", "Subtitle decoding failed. streamFormat=" + this.J, e6);
+            } catch (h e) {
+                h5.a.p("TextRenderer", "Subtitle decoding failed. streamFormat=" + this.J, e);
                 c cVar = new c(A(this.R), i0.e);
                 if (handler2 != null) {
                     i11 = 0;
@@ -646,7 +646,7 @@ public final class l extends j3.e implements Handler.Callback {
                             this.K = bVar2;
                             return;
                         case 3:
-                            bVar2 = new e5.l();
+                            bVar2 = new e5.k();
                             this.K = bVar2;
                             return;
                         case 4:
@@ -680,7 +680,7 @@ public final class l extends j3.e implements Handler.Callback {
                     this.K = bVar2;
                     return;
                 }
-                throw new IllegalArgumentException(yh.k("Attempted to create decoder for unsupported MIME type: ", str3));
+                throw new IllegalArgumentException(w2.e("Attempted to create decoder for unsupported MIME type: ", str3));
             }
         }
         String str4 = "Attempted to create decoder for unsupported MIME type: ";
@@ -701,16 +701,16 @@ public final class l extends j3.e implements Handler.Callback {
         }
         k kVar2 = this.N;
         if (kVar2 != null) {
-            if (!kVar2.e(4)) {
+            if (!kVar2.d(4)) {
                 z10 = z4;
                 obj = "application/dvbsubs";
                 if (kVar2.c <= j10) {
                     k kVar3 = this.M;
                     if (kVar3 != null) {
-                        kVar3.i();
+                        kVar3.j();
                     }
                     j12 = j10;
-                    this.O = kVar2.d(j12);
+                    this.O = kVar2.e(j12);
                     this.M = kVar2;
                     this.N = null;
                     z10 = true;
@@ -854,7 +854,7 @@ public final class l extends j3.e implements Handler.Callback {
                                 aVar2 = new e5.a();
                                 break;
                             case 3:
-                                aVar2 = new e5.l();
+                                aVar2 = new e5.k();
                                 break;
                             case 4:
                                 aVar2 = new d5.a(list2);
@@ -884,7 +884,7 @@ public final class l extends j3.e implements Handler.Callback {
                     } else {
                         str2 = str4;
                     }
-                    throw new IllegalArgumentException(yh.k(str2, str5));
+                    throw new IllegalArgumentException(w2.e(str2, str5));
                 }
                 z10 = z4;
                 C();
@@ -897,20 +897,20 @@ public final class l extends j3.e implements Handler.Callback {
                     handler = handler2;
                 } else {
                     this.M.getClass();
-                    int d = this.M.d(j12);
-                    if (d == 0 || this.M.x() == 0) {
+                    int e6 = this.M.e(j12);
+                    if (e6 == 0 || this.M.r() == 0) {
                         obj2 = "application/x-mp4-vtt";
                         obj4 = "application/x-mp4-cea-608";
                         j13 = this.M.c;
                     } else {
-                        if (d == -1) {
-                            l10 = this.M.l(r0.x() - 1);
+                        if (e6 == -1) {
+                            h = this.M.h(r0.r() - 1);
                         } else {
-                            l10 = this.M.l(d - 1);
+                            h = this.M.h(e6 - 1);
                         }
                         obj2 = "application/x-mp4-vtt";
                         obj4 = "application/x-mp4-cea-608";
-                        j13 = l10;
+                        j13 = h;
                     }
                     obj3 = obj4;
                     c cVar2 = new c(A(j13), this.M.q(j12));
@@ -1076,7 +1076,7 @@ public final class l extends j3.e implements Handler.Callback {
                                             this.K = bVar;
                                             return;
                                         case 3:
-                                            bVar = new e5.l();
+                                            bVar = new e5.k();
                                             this.K = bVar;
                                             return;
                                         case 4:
@@ -1113,14 +1113,14 @@ public final class l extends j3.e implements Handler.Callback {
                                             return;
                                     }
                                 }
-                                throw new IllegalArgumentException(yh.k(str4, str));
+                                throw new IllegalArgumentException(w2.e(str4, str));
                             }
                         }
                         f7.b bVar5 = bVar4;
                         int s6 = s(bVar5, jVar, 0);
                         if (s6 == -4) {
                             try {
-                                if (jVar.e(4)) {
+                                if (jVar.d(4)) {
                                     this.F = true;
                                     this.H = false;
                                 } else {
@@ -1129,8 +1129,8 @@ public final class l extends j3.e implements Handler.Callback {
                                         return;
                                     }
                                     jVar.s = n0Var4.G;
-                                    jVar.k();
-                                    this.H &= !jVar.e(1);
+                                    jVar.l();
+                                    this.H &= !jVar.d(1);
                                 }
                                 if (!this.H) {
                                     g gVar8 = this.K;
@@ -1159,7 +1159,7 @@ public final class l extends j3.e implements Handler.Callback {
                                 List list32 = n0Var32.E;
                                 if (str != null) {
                                 }
-                                throw new IllegalArgumentException(yh.k(str4, str));
+                                throw new IllegalArgumentException(w2.e(str4, str));
                             }
                         } else if (s6 == -3) {
                             return;
@@ -1196,9 +1196,9 @@ public final class l extends j3.e implements Handler.Callback {
             return Long.MAX_VALUE;
         }
         this.M.getClass();
-        if (this.O >= this.M.x()) {
+        if (this.O >= this.M.r()) {
             return Long.MAX_VALUE;
         }
-        return this.M.l(this.O);
+        return this.M.h(this.O);
     }
 }

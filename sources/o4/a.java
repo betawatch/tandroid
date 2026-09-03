@@ -8,13 +8,13 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class a {
     public final ArrayList a = new ArrayList(1);
     public final HashSet b = new HashSet(1);
     public final b4.e0 c = new b4.e0(new CopyOnWriteArrayList(), 0, (v) null);
-    public final o3.l d = new o3.l(new CopyOnWriteArrayList(), 0, null);
+    public final o3.m d = new o3.m(new CopyOnWriteArrayList(), 0, null);
     public Looper e;
     public o2 f;
     public k3.k g;
@@ -106,13 +106,13 @@ public abstract class a {
 
     public abstract void p();
 
-    public final void q(o3.m mVar) {
+    public final void q(o3.n nVar) {
         CopyOnWriteArrayList copyOnWriteArrayList = this.d.c;
         Iterator it = copyOnWriteArrayList.iterator();
         while (it.hasNext()) {
-            o3.k kVar = (o3.k) it.next();
-            if (kVar.b == mVar) {
-                copyOnWriteArrayList.remove(kVar);
+            o3.l lVar = (o3.l) it.next();
+            if (lVar.b == nVar) {
+                copyOnWriteArrayList.remove(lVar);
             }
         }
     }

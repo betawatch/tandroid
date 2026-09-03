@@ -2,10 +2,10 @@ package j3;
 
 import android.net.Uri;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class z0 implements g {
-    public static final z0 c = new z0(new androidx.biometric.e(19, false));
+    public static final z0 c = new z0(new af.d(19, false));
     public static final String d;
     public static final String e;
     public static final String f;
@@ -21,9 +21,9 @@ public final class z0 implements g {
         h = new q0(6);
     }
 
-    public z0(androidx.biometric.e eVar) {
-        this.a = (Uri) eVar.b;
-        this.b = (String) eVar.c;
+    public z0(af.d dVar) {
+        this.a = (Uri) dVar.b;
+        this.b = (String) dVar.c;
     }
 
     public final boolean equals(Object obj) {

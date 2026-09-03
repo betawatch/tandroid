@@ -10,7 +10,7 @@ import org.json.JSONObject;
 import org.telegram.messenger.FileLog;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class y81 extends AsyncTask {
     public final /* synthetic */ int a;
@@ -76,8 +76,8 @@ public final class y81 extends AsyncTask {
                             }
                         }
                     }
-                } catch (Exception e6) {
-                    FileLog.e(e6);
+                } catch (Exception e) {
+                    FileLog.e(e);
                 }
                 if (isCancelled()) {
                     return null;
@@ -102,8 +102,8 @@ public final class y81 extends AsyncTask {
                         strArr2[2] = string2;
                         strArr2[3] = "other";
                     }
-                } catch (Exception e10) {
-                    FileLog.e(e10);
+                } catch (Exception e6) {
+                    FileLog.e(e6);
                 }
                 if (isCancelled()) {
                     return null;
@@ -123,8 +123,8 @@ public final class y81 extends AsyncTask {
                         strArr3[0] = new JSONObject(matcher2.group(1)).getJSONArray("quality_options").getJSONObject(0).getString("source");
                         strArr3[1] = "other";
                     }
-                } catch (Exception e11) {
-                    FileLog.e(e11);
+                } catch (Exception e10) {
+                    FileLog.e(e10);
                 }
                 if (isCancelled()) {
                     return null;
@@ -154,8 +154,8 @@ public final class y81 extends AsyncTask {
                     String str5 = "allow_source=true&allow_audio_only=true&allow_spectre=true&player=twitchweb&segment_preference=4&p=" + ((int) (Math.random() * 1.0E7d)) + "&sig=" + encode + "&token=" + encode2;
                     strArr4[0] = "https://usher.ttvnw.net/api/channel/hls/" + this.b + ".m3u8?" + str5;
                     strArr4[1] = "hls";
-                } catch (Exception e12) {
-                    FileLog.e(e12);
+                } catch (Exception e11) {
+                    FileLog.e(e11);
                 }
                 if (isCancelled()) {
                     return null;
@@ -184,8 +184,8 @@ public final class y81 extends AsyncTask {
                         strArr5[1] = "other";
                         strArr5[0] = jSONObject4.getJSONArray("progressive").getJSONObject(0).getString("url");
                     }
-                } catch (Exception e13) {
-                    FileLog.e(e13);
+                } catch (Exception e12) {
+                    FileLog.e(e12);
                 }
                 if (isCancelled()) {
                     return null;

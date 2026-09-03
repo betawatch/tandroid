@@ -1,118 +1,169 @@
 package lh;
 
 import android.view.View;
-import android.widget.FrameLayout;
-import java.util.HashSet;
-import mh.l7;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.pz;
-import org.telegram.ui.Components.q70;
-import org.telegram.ui.Components.rl0;
-import org.telegram.ui.Components.sa;
-import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.u00;
-import org.telegram.ui.Components.w51;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
-/* loaded from: classes.dex */
-public final class s3 extends sa implements NotificationCenter.NotificationCenterDelegate {
-    public final int U;
-    public final l7 V;
-    public final HashSet W;
-    public final pz X;
-    public final qh.d Y;
-    public q70 Z;
-    public w51 a0;
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class s3 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f4 b;
 
-    public s3(org.telegram.ui.ActionBar.p2 p2Var, long j10, int i10, eg.h3 h3Var) {
-        super(p2Var);
-        this.W = new HashSet();
-        this.I = false;
-        this.H = AndroidUtilities.dp(12.0f);
-        fixNavigationBar();
-        J();
-        this.U = i10;
-        this.V = new l7(this.currentAccount, j10, true);
-        this.e.setActionBarMenuOnItemClick(new p3(this, this.e.n().a(1, R.drawable.ic_ab_other), j10));
-        FrameLayout frameLayout = new FrameLayout(getContext());
-        frameLayout.setBackgroundColor(k6.v0(k6.h5, this.resourcesProvider));
-        int i11 = this.backgroundPaddingLeft;
-        frameLayout.setPadding(i11, 0, i11, 0);
-        this.containerView.addView(frameLayout, k7.c6.d(-1, -2.0f, 87, 0.0f, 0.0f, 0.0f, 0.0f));
-        View view = new View(getContext());
-        view.setBackgroundColor(k6.v0(k6.d7, this.resourcesProvider));
-        frameLayout.addView(view, k7.c6.a(-1.0f, 1.0f / AndroidUtilities.density, 55));
-        qh.d dVar = new qh.d(getContext(), this.resourcesProvider, true);
-        this.Y = dVar;
-        dVar.g(LocaleController.getString(R.string.Gift2CollectionAddGiftsButton), false, true);
-        dVar.setEnabled(false);
-        dVar.setOnClickListener(new dg.n(12, this, h3Var));
-        frameLayout.addView(dVar, k7.c6.d(-1, 48.0f, 119, 10.0f, (1.0f / AndroidUtilities.density) + 10.0f, 10.0f, 10.0f));
-        getContext();
-        pz pzVar = new pz(3, false);
-        this.X = pzVar;
-        pzVar.O = new q3(this);
-        this.d.setPadding(AndroidUtilities.dp(9.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(9.0f) + this.backgroundPaddingLeft, 0);
-        this.d.setSelectorType(9);
-        this.d.setSelectorDrawableColor(0);
-        this.d.setLayoutManager(pzVar);
-        this.d.setOnItemClickListener(new ag.h(this, 7));
-        this.d.j(new r3(this));
-        f2.l lVar = new f2.l();
-        lVar.m = false;
-        lVar.C = false;
-        lVar.o(pr.h);
-        lVar.n(350L);
-        this.d.setItemAnimator(lVar);
-        this.a0.N(true);
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.starUserGiftsLoaded);
+    public /* synthetic */ s3(f4 f4Var, int i10) {
+        this.a = i10;
+        this.b = f4Var;
     }
 
-    public final boolean S() {
-        sl0 sl0Var = this.d;
-        if (sl0Var != null && sl0Var.D) {
-            for (int i10 = 0; i10 < sl0Var.getChildCount(); i10++) {
-                if (sl0Var.getChildAt(i10) instanceof u00) {
-                    return true;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        d4 d4Var;
+        int i10 = this.a;
+        boolean z4 = true;
+        f4 f4Var = this.b;
+        switch (i10) {
+            case 0:
+                if (f4Var.M.getAlpha() >= 1.0f) {
+                    f4Var.d0.run();
+                    break;
                 }
-            }
+                break;
+            case 1:
+                if (f4Var.M.getAlpha() >= 1.0f) {
+                    f4Var.d0.run();
+                    break;
+                }
+                break;
+            case 2:
+                f4Var.getClass();
+                f4Var.b((u3) view);
+                break;
+            case 3:
+                f4Var.getClass();
+                f4Var.b((u3) view);
+                break;
+            case 4:
+                f4 f4Var2 = this.b;
+                LinearLayout linearLayout = f4Var2.D;
+                d4[] d4VarArr = f4Var2.n;
+                if (f4Var2.getAlpha() >= 1.0f && !f4Var2.e0) {
+                    if (f4Var2.g0) {
+                        f4Var2.a(f4Var2.T, f4Var2.U, f4Var2.V, f4Var2.W);
+                        break;
+                    } else {
+                        ArrayList arrayList = new ArrayList();
+                        for (d4 d4Var2 : d4VarArr) {
+                            if (d4Var2 != null) {
+                                TL_stars.StarGift starGift = d4Var2.h;
+                                if ((starGift != null ? starGift : null) != null) {
+                                    if (starGift == null) {
+                                        starGift = null;
+                                    }
+                                    arrayList.add(starGift);
+                                }
+                            }
+                        }
+                        if (!arrayList.isEmpty() && f4Var2.b0 != null) {
+                            TextView textView = f4Var2.H;
+                            f4Var2.e0 = true;
+                            f4Var2.g0 = false;
+                            ph.f3 f3Var = f4Var2.Q;
+                            if (f3Var != null) {
+                                f3Var.e(true);
+                                f4Var2.Q = null;
+                            }
+                            textView.setText("");
+                            f4Var2.I.setText(LocaleController.formatString(R.string.GiftCraftProgressSuccessChance, rh.j.G0(f4Var2.getGiftsSuccessChance())));
+                            for (int i11 = 0; i11 < d4VarArr.length; i11++) {
+                                d4 d4Var3 = d4VarArr[i11];
+                                if (d4Var3 != null) {
+                                    d4Var3.setClickable(false);
+                                    d4 d4Var4 = d4VarArr[i11];
+                                    TL_stars.StarGift starGift2 = d4Var4.h;
+                                    if (starGift2 == null) {
+                                        starGift2 = null;
+                                    }
+                                    if (starGift2 == null) {
+                                        d4Var4.animate().alpha(0.0f).start();
+                                    }
+                                }
+                            }
+                            int i12 = 0;
+                            while (true) {
+                                if (i12 < d4VarArr.length) {
+                                    d4 d4Var5 = d4VarArr[i12];
+                                    if (d4Var5 != null) {
+                                        TL_stars.StarGift starGift3 = d4Var5.h;
+                                        if ((starGift3 != null ? starGift3 : null) != null) {
+                                            if (starGift3 == null) {
+                                                starGift3 = null;
+                                            }
+                                            textView.setText(starGift3.title + " #" + LocaleController.formatNumber(starGift3.num, ','));
+                                        }
+                                    }
+                                    i12++;
+                                }
+                            }
+                            f4Var2.N.animate().alpha(0.0f).start();
+                            linearLayout.animate().alpha(0.0f).start();
+                            f4Var2.O.animate().alpha(1.0f).start();
+                            f4Var2.M.animate().alpha(0.25f).start();
+                            f4Var2.G.d();
+                            ArrayList arrayList2 = new ArrayList();
+                            for (d4 d4Var6 : d4VarArr) {
+                                TL_stars.StarGift starGift4 = d4Var6.h;
+                                if ((starGift4 != null ? starGift4 : null) != null) {
+                                    if (starGift4 == null) {
+                                        starGift4 = null;
+                                    }
+                                    arrayList2.add(starGift4);
+                                }
+                            }
+                            f4Var2.b0.run(arrayList2, new dh.v(3, f4Var2, arrayList2), new b(f4Var2, 6));
+                            break;
+                        } else {
+                            AndroidUtilities.shakeViewSpring(linearLayout);
+                            break;
+                        }
+                    }
+                }
+                break;
+            default:
+                d4 d4Var7 = (d4) view;
+                TL_stars.StarGift starGift5 = d4Var7.h;
+                if (starGift5 == null) {
+                    starGift5 = null;
+                }
+                if (starGift5 != null && !d4Var7.n) {
+                    d4Var7.a(null, true);
+                    f4Var.d(true);
+                    break;
+                } else {
+                    int i13 = 0;
+                    while (true) {
+                        d4[] d4VarArr2 = f4Var.n;
+                        if (i13 < d4VarArr2.length && (d4Var = d4VarArr2[i13]) != view) {
+                            if (d4Var != null) {
+                                TL_stars.StarGift starGift6 = d4Var.h;
+                                if (starGift6 == null) {
+                                    starGift6 = null;
+                                }
+                                if (starGift6 != null) {
+                                    z4 = false;
+                                }
+                            }
+                            i13++;
+                        }
+                    }
+                    f4Var.c0.run(new kh.a1(6, f4Var, d4Var7), Boolean.valueOf(z4));
+                    break;
+                }
+                break;
         }
-        return false;
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        w51 w51Var;
-        if (i10 != NotificationCenter.starUserGiftsLoaded || (w51Var = this.a0) == null) {
-            return;
-        }
-        w51Var.N(true);
-        if (S()) {
-            this.V.a();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.h3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.l2
-    public final void dismiss() {
-        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.starUserGiftsLoaded);
-        super.dismiss();
-    }
-
-    @Override // org.telegram.ui.Components.sa
-    public final rl0 v(sl0 sl0Var) {
-        w51 w51Var = new w51(sl0Var, getContext(), this.currentAccount, 0, false, new eg.p1(this, 11), this.resourcesProvider);
-        this.a0 = w51Var;
-        w51Var.r = false;
-        return w51Var;
-    }
-
-    @Override // org.telegram.ui.Components.sa
-    public final CharSequence y() {
-        return LocaleController.getString(R.string.Gift2CollectionAddGiftsTitle);
     }
 }

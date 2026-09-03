@@ -23,7 +23,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.WebFile;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public class cv0 {
     public float A;
@@ -54,8 +54,8 @@ public class cv0 {
     public ImageReceiver g;
     public ImageReceiver h;
     public boolean i;
-    public final jh.k j;
-    public jh.j k;
+    public final ih.k j;
+    public ih.j k;
     public final Path l;
     public final float[] m;
     public boolean n;
@@ -75,7 +75,7 @@ public class cv0 {
     public cv0(ViewGroup viewGroup, ViewGroup viewGroup2) {
         this.g = new ImageReceiver();
         this.h = new ImageReceiver();
-        this.j = new jh.k();
+        this.j = new ih.k();
         this.l = new Path();
         this.m = new float[8];
         this.Q = new float[2];
@@ -178,10 +178,10 @@ public class cv0 {
                     boolean z10 = (messageObject == null || !messageObject.hasMediaSpoilers() || messageObject.isMediaSpoilersRevealed) ? false : true;
                     this.i = z10;
                     if (z10 && this.k == null) {
-                        jh.j e6 = jh.j.e(this.d);
-                        this.k = e6;
-                        if (e6 != null) {
-                            e6.k.put(this.d, Integer.valueOf(i10));
+                        ih.j e = ih.j.e(this.d);
+                        this.k = e;
+                        if (e != null) {
+                            e.k.put(this.d, Integer.valueOf(i10));
                         }
                     }
                     ImageLocation imageLocation = null;
@@ -303,7 +303,7 @@ public class cv0 {
                         this.d.b.setScaleY(1.0f);
                         yu0 yu0Var = this.E;
                         if (yu0Var != null) {
-                            this.d.d.setImageBitmap(yu0Var.h0().getBitmap((int) this.z, (int) this.y));
+                            this.d.d.setImageBitmap(yu0Var.e0().getBitmap((int) this.z, (int) this.y));
                             this.d.d.s((int) this.z, (int) this.y);
                             this.d.d.getImageReceiver().setRoundRadius(imageReceiver.getRoundRadius(true));
                         }
@@ -330,7 +330,7 @@ public class cv0 {
                 }
                 yu0 yu0Var2 = this.E;
                 if (yu0Var2 != null) {
-                    yu0Var2.y0(messageObject);
+                    yu0Var2.w0(messageObject);
                 }
                 this.P = 0.0f;
                 i12 = i14;
@@ -359,7 +359,7 @@ public class cv0 {
         if (this.n) {
             yu0 yu0Var = this.E;
             if (yu0Var != null) {
-                yu0Var.G(this.D);
+                yu0Var.H(this.D);
             }
             this.n = false;
         }
@@ -367,7 +367,7 @@ public class cv0 {
         if (bv0Var != null && bv0Var.getParent() != null) {
             this.a.removeView(this.d);
             this.d.d.getImageReceiver().clearImage();
-            jh.j jVar = this.k;
+            ih.j jVar = this.k;
             if (jVar != null) {
                 jVar.b(this.d);
                 this.k = null;
@@ -413,10 +413,10 @@ public class cv0 {
             }
             ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, 0.0f);
             this.C = ofFloat;
-            ofFloat.addUpdateListener(new e3(this, 25));
+            ofFloat.addUpdateListener(new g3(this, 25));
             this.C.addListener(new ss0(this, 9));
             this.C.setDuration(220L);
-            this.C.setInterpolator(org.telegram.ui.Components.pr.f);
+            this.C.setInterpolator(org.telegram.ui.Components.mr.f);
             this.C.start();
         }
     }
@@ -444,8 +444,8 @@ public class cv0 {
         return this.e.onTouchEvent(motionEvent);
     }
 
-    public final void h(te teVar) {
-        this.F = teVar;
+    public final void h(ve veVar) {
+        this.F = veVar;
     }
 
     public final boolean i() {
@@ -491,7 +491,7 @@ public class cv0 {
     public cv0() {
         this.g = new ImageReceiver();
         this.h = new ImageReceiver();
-        this.j = new jh.k();
+        this.j = new ih.k();
         this.l = new Path();
         this.m = new float[8];
         this.Q = new float[2];

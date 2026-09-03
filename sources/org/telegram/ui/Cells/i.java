@@ -9,12 +9,12 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.eo;
+import org.telegram.ui.Components.em;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.od1;
-import org.telegram.ui.xo;
+import org.telegram.ui.zo;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class i extends ClickableSpan {
     public final /* synthetic */ int a;
@@ -43,38 +43,38 @@ public final class i extends ClickableSpan {
                 break;
             case 2:
                 CharacterStyle characterStyle = (CharacterStyle) this.b;
-                if (!(characterStyle instanceof p1)) {
-                    t1 t1Var = ((q1) this.c).d;
-                    k1 k1Var = t1Var.Gc;
-                    if (k1Var != null) {
-                        k1Var.a1(t1Var, characterStyle, false);
+                if (!(characterStyle instanceof o1)) {
+                    s1 s1Var = ((p1) this.c).d;
+                    j1 j1Var = s1Var.Gc;
+                    if (j1Var != null) {
+                        j1Var.b1(s1Var, characterStyle, false);
                         break;
                     }
                 } else {
-                    ((p1) characterStyle).onClick(view);
+                    ((o1) characterStyle).onClick(view);
                     break;
                 }
                 break;
             case 3:
                 try {
                     ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.b));
-                    if (qc.a((org.telegram.ui.pa) this.c)) {
-                        qc.j((org.telegram.ui.pa) this.c).j();
+                    if (qc.a((org.telegram.ui.ra) this.c)) {
+                        qc.j((org.telegram.ui.ra) this.c).j();
                         break;
                     }
-                } catch (Exception e6) {
-                    FileLog.e(e6);
+                } catch (Exception e) {
+                    FileLog.e(e);
                     return;
                 }
                 break;
             case 4:
-                af.g.s(((x1) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
+                ze.d.s(((w1) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
                 break;
             case 5:
-                af.g.s(((xo) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
+                ze.d.s(((zo) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
                 break;
             case 6:
-                ((eo) this.c).run();
+                ((em) this.c).run();
                 break;
             case 7:
                 AndroidUtilities.addToClipboard((CharSequence) this.b);
@@ -87,8 +87,8 @@ public final class i extends ClickableSpan {
                         qc.j((od1) this.c).j();
                         break;
                     }
-                } catch (Exception e10) {
-                    FileLog.e(e10);
+                } catch (Exception e6) {
+                    FileLog.e(e6);
                     return;
                 }
                 break;
@@ -113,7 +113,7 @@ public final class i extends ClickableSpan {
             case 6:
                 super.updateDrawState(textPaint);
                 textPaint.setUnderlineText(false);
-                textPaint.setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Gi, (org.telegram.ui.ActionBar.g6) this.b));
+                textPaint.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Gi, (org.telegram.ui.ActionBar.f6) this.b));
                 break;
             case 7:
                 textPaint.setColor(textPaint.linkColor);

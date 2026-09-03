@@ -3,11 +3,11 @@ package q4;
 import h5.d0;
 import h5.w;
 import j3.n0;
-import org.telegram.ui.yh;
+import org.telegram.ui.ai;
 import r3.u;
 import r3.v;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class c implements v {
     public final int a;
@@ -54,7 +54,7 @@ public final class c implements v {
 
     @Override // r3.v
     public final /* synthetic */ void d(int i10, w wVar) {
-        yh.a(this, wVar, i10);
+        ai.a(this, wVar, i10);
     }
 
     @Override // r3.v

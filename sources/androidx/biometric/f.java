@@ -1,39 +1,33 @@
 package androidx.biometric;
 
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class f {
-    public final int a;
-    public final CharSequence b;
+public final class f implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ CharSequence c;
+    public final /* synthetic */ q d;
 
-    public f(int i10, CharSequence charSequence) {
-        this.a = i10;
-        this.b = charSequence;
+    public /* synthetic */ f(q qVar, int i10, CharSequence charSequence, int i11) {
+        this.a = i11;
+        this.d = qVar;
+        this.b = i10;
+        this.c = charSequence;
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof f)) {
-            return false;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                z zVar = this.d.i0;
+                if (zVar.e == null) {
+                    zVar.e = new w();
+                }
+                zVar.e.a(this.b, this.c);
+                break;
+            default:
+                this.d.T(this.b, this.c);
+                break;
         }
-        f fVar = (f) obj;
-        if (this.a != fVar.a) {
-            return false;
-        }
-        CharSequence charSequence = fVar.b;
-        CharSequence charSequence2 = this.b;
-        String charSequence3 = charSequence2 != null ? charSequence2.toString() : null;
-        String charSequence4 = charSequence != null ? charSequence.toString() : null;
-        if (charSequence3 == null && charSequence4 == null) {
-            return true;
-        }
-        return charSequence3 != null && charSequence3.equals(charSequence4);
-    }
-
-    public final int hashCode() {
-        Integer valueOf = Integer.valueOf(this.a);
-        CharSequence charSequence = this.b;
-        return Arrays.hashCode(new Object[]{valueOf, charSequence != null ? charSequence.toString() : null});
     }
 }

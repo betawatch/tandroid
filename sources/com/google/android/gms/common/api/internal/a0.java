@@ -6,7 +6,7 @@ import android.os.RemoteException;
 import com.google.android.gms.common.api.Status;
 import java.util.Set;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class a0 implements k0 {
     public final m0 a;
@@ -16,7 +16,7 @@ public final class a0 implements k0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final boolean G() {
+    public final boolean D() {
         m0 m0Var = this.a;
         m0Var.o.getClass();
         m0Var.h();
@@ -24,7 +24,7 @@ public final class a0 implements k0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final e L(e eVar) {
+    public final e H(e eVar) {
         m0 m0Var = this.a;
         try {
             h1 h1Var = m0Var.o.J;
@@ -39,11 +39,11 @@ public final class a0 implements k0 {
             }
             try {
                 eVar.n(cVar);
-            } catch (DeadObjectException e6) {
+            } catch (DeadObjectException e) {
+                eVar.o(new Status(8, e.getLocalizedMessage(), null, null));
+                throw e;
+            } catch (RemoteException e6) {
                 eVar.o(new Status(8, e6.getLocalizedMessage(), null, null));
-                throw e6;
-            } catch (RemoteException e10) {
-                eVar.o(new Status(8, e10.getLocalizedMessage(), null, null));
             }
             return eVar;
         } catch (DeadObjectException unused) {
@@ -55,25 +55,25 @@ public final class a0 implements k0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final void z(int i10) {
+    public final void t(int i10) {
         m0 m0Var = this.a;
         m0Var.h();
-        m0Var.p.o(i10);
+        m0Var.p.m(i10);
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final void C() {
+    public final void h() {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final void e() {
+    public final void w() {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final void b(Bundle bundle) {
+    public final void d(Bundle bundle) {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final void f(y5.a aVar, com.google.android.gms.common.api.e eVar, boolean z4) {
+    public final void k(y5.a aVar, com.google.android.gms.common.api.e eVar, boolean z4) {
     }
 }

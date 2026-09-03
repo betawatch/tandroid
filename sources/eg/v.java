@@ -1,34 +1,15 @@
 package eg;
 
-import android.view.KeyEvent;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v implements org.telegram.ui.ActionBar.n1, Utilities.Callback3Return {
-    public final /* synthetic */ c1 a;
-
-    public /* synthetic */ v(c1 c1Var) {
-        this.a = c1Var;
-    }
-
-    @Override // org.telegram.ui.ActionBar.n1
-    public void n(KeyEvent keyEvent) {
-        org.telegram.ui.ActionBar.p1 p1Var;
-        c1 c1Var = this.a;
-        c1Var.getClass();
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (p1Var = c1Var.O1) != null && p1Var.isShowing()) {
-            c1Var.O1.d(true);
-        }
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback3Return
-    public Object run(Object obj, Object obj2, Object obj3) {
-        n0 i02 = this.a.i0(obj, (TLRPC.Document) obj2, true);
-        if (((Boolean) obj3).booleanValue()) {
-            i02.setScale(1.5f);
-        }
-        return Boolean.TRUE;
-    }
+public final class v {
+    public boolean a;
+    public final ArrayList b = new ArrayList();
+    public float c;
+    public boolean d;
+    public float e;
+    public ValueAnimator f;
 }

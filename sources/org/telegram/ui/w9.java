@@ -1,34 +1,17 @@
 package org.telegram.ui;
 
-import com.google.android.gms.common.api.Status;
+import org.telegram.messenger.MrzRecognizer;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w9 implements com.google.android.gms.common.api.o {
-    public final /* synthetic */ int a;
+public interface w9 {
+    String C0();
 
-    public /* synthetic */ w9(int i10) {
-        this.a = i10;
-    }
+    void K(String str);
 
-    @Override // com.google.android.gms.common.api.o
-    public final void a(Status status) {
-        switch (this.a) {
-            case 0:
-                d1.f.b.decrementAndGet();
-                break;
-            case 1:
-                d1.f.b.decrementAndGet();
-                break;
-            case 2:
-                d1.f.b.decrementAndGet();
-                break;
-            case 3:
-                d1.f.b.decrementAndGet();
-                break;
-            default:
-                d1.f.b.decrementAndGet();
-                break;
-        }
-    }
+    void P0(MrzRecognizer.Result result);
+
+    boolean a1(String str, o9 o9Var);
+
+    void onDismiss();
 }

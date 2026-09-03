@@ -8,18 +8,18 @@ import android.util.Log;
 import c6.a;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import j$.util.DesugarCollections;
-import j7.g5;
+import j7.f5;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
-import org.telegram.ui.yh;
+import org.telegram.ui.ai;
 import q5.v;
 import u5.y;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class CastDevice extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<CastDevice> CREATOR = new v(22);
@@ -50,8 +50,8 @@ public class CastDevice extends a implements ReflectedParcelable {
         if (!TextUtils.isEmpty(str2)) {
             try {
                 this.c = InetAddress.getByName(str2);
-            } catch (UnknownHostException e6) {
-                Log.i("CastDevice", "Unable to convert host address (" + this.b + ") to ipaddress: " + e6.getMessage());
+            } catch (UnknownHostException e) {
+                Log.i("CastDevice", "Unable to convert host address (" + this.b + ") to ipaddress: " + e.getMessage());
             }
         }
         this.d = str3 == null ? "" : str3;
@@ -135,35 +135,35 @@ public class CastDevice extends a implements ReflectedParcelable {
             int length = str.length();
             str = length <= 2 ? length == 2 ? "xx" : "x" : String.format(locale, "%c%d%c", Character.valueOf(str.charAt(0)), Integer.valueOf(length - 2), Character.valueOf(str.charAt(length - 1)));
         }
-        return yh.l("\"", str, "\" (", this.a, ")");
+        return ai.k("\"", str, "\" (", this.a, ")");
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = g5.q(parcel, 20293);
-        g5.l(parcel, 2, this.a);
-        g5.l(parcel, 3, this.b);
-        g5.l(parcel, 4, this.d);
-        g5.l(parcel, 5, this.e);
-        g5.l(parcel, 6, this.f);
-        g5.s(parcel, 7, 4);
+        int q10 = f5.q(parcel, 20293);
+        f5.l(parcel, 2, this.a);
+        f5.l(parcel, 3, this.b);
+        f5.l(parcel, 4, this.d);
+        f5.l(parcel, 5, this.e);
+        f5.l(parcel, 6, this.f);
+        f5.s(parcel, 7, 4);
         parcel.writeInt(this.h);
-        g5.p(parcel, 8, DesugarCollections.unmodifiableList(this.n));
-        g5.s(parcel, 9, 4);
+        f5.p(parcel, 8, DesugarCollections.unmodifiableList(this.n));
+        f5.s(parcel, 9, 4);
         parcel.writeInt(this.r);
-        g5.s(parcel, 10, 4);
+        f5.s(parcel, 10, 4);
         parcel.writeInt(this.s);
-        g5.l(parcel, 11, this.v);
-        g5.l(parcel, 12, this.w);
-        g5.s(parcel, 13, 4);
+        f5.l(parcel, 11, this.v);
+        f5.l(parcel, 12, this.w);
+        f5.s(parcel, 13, 4);
         parcel.writeInt(this.x);
-        g5.l(parcel, 14, this.y);
-        g5.c(parcel, 15, this.B);
-        g5.l(parcel, 16, this.C);
-        g5.s(parcel, 17, 4);
+        f5.l(parcel, 14, this.y);
+        f5.c(parcel, 15, this.B);
+        f5.l(parcel, 16, this.C);
+        f5.s(parcel, 17, 4);
         parcel.writeInt(this.D ? 1 : 0);
-        g5.k(parcel, 18, g(), i10);
-        g5.i(parcel, 19, this.F);
-        g5.r(parcel, q10);
+        f5.k(parcel, 18, g(), i10);
+        f5.i(parcel, 19, this.F);
+        f5.r(parcel, q10);
     }
 }

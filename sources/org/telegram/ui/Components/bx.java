@@ -1,63 +1,38 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
+import android.content.Context;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class bx {
-    public final int a;
-    public final long b;
-    public final long c;
-    public boolean e;
-    public final /* synthetic */ int g;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate h;
-    public boolean d = false;
-    public long f = -1;
+public final class bx extends lv {
+    public final /* synthetic */ TLRPC.StickerSet T;
+    public final /* synthetic */ kz U;
 
-    public bx(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10, long j10, long j11, int i11) {
-        this.g = i11;
-        this.h = notificationCenterDelegate;
-        this.a = i10;
-        this.b = j10;
-        this.c = j11;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bx(kz kzVar, org.telegram.ui.ActionBar.p2 p2Var, Context context, org.telegram.ui.ActionBar.f6 f6Var, ArrayList arrayList, TLRPC.StickerSet stickerSet) {
+        super(p2Var, context, f6Var, arrayList);
+        this.U = kzVar;
+        this.T = stickerSet;
     }
 
-    public final void a() {
-        boolean z4;
-        switch (this.g) {
-            case 0:
-                mz mzVar = (mz) this.h;
-                if (mzVar.q1 == null || mzVar.getVisibility() != 0 || !mzVar.H0) {
-                    z4 = false;
-                    break;
-                } else {
-                    z4 = true;
-                    break;
-                }
-            default:
-                z4 = ((uf.u0) this.h).N();
-                break;
+    @Override // org.telegram.ui.Components.lv
+    public final void X(boolean z4) {
+        kz kzVar = this.U;
+        ArrayList arrayList = kzVar.m1;
+        TLRPC.StickerSet stickerSet = this.T;
+        if (!z4) {
+            arrayList.remove(Long.valueOf(stickerSet.id));
+        } else if (!arrayList.contains(Long.valueOf(stickerSet.id))) {
+            arrayList.add(Long.valueOf(stickerSet.id));
         }
-        this.d = z4;
-        if (z4) {
-            return;
-        }
-        if (this.e) {
-            MessagesController.getInstance(this.a).sendTyping(this.b, this.c, 2, 0);
-        }
-        this.f = -1L;
+        kzVar.V();
     }
 
-    public final void b() {
-        if (this.d) {
-            if (this.f == -1) {
-                this.f = System.currentTimeMillis();
-            } else if (System.currentTimeMillis() - this.f > 2000) {
-                this.e = true;
-                this.f = System.currentTimeMillis();
-                MessagesController.getInstance(this.a).sendTyping(this.b, this.c, 10, 0);
-            }
-        }
+    @Override // org.telegram.ui.Components.lv, org.telegram.ui.ActionBar.g3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.l2
+    public final void dismiss() {
+        this.U.t2 = false;
+        super.dismiss();
     }
 }

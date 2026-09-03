@@ -1,6 +1,8 @@
 package kotlin.jvm.internal;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+import kf.k0;
+
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class t {
     public static void a(int i10, Object obj) {
@@ -10,7 +12,7 @@ public abstract class t {
                     return;
                 }
             }
-            ClassCastException classCastException = new ClassCastException(android.support.v4.media.a.z(obj.getClass().getName(), " cannot be cast to ", l.d.j(i10, "kotlin.jvm.functions.Function")));
+            ClassCastException classCastException = new ClassCastException(android.support.v4.media.a.z(obj.getClass().getName(), " cannot be cast to ", k0.j(i10, "kotlin.jvm.functions.Function")));
             j.f(classCastException, t.class.getName());
             throw classCastException;
         }

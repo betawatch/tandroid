@@ -7,27 +7,27 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class d01 extends pv0 {
-    public final org.telegram.ui.h20 t0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.g6 u0;
+public final class d01 extends qv0 {
+    public final org.telegram.ui.i20 t0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 u0;
     public final /* synthetic */ b01 v0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d01(Context context, org.telegram.ui.ActionBar.g6 g6Var, b01 b01Var) {
+    public d01(Context context, org.telegram.ui.ActionBar.f6 f6Var, b01 b01Var) {
         super(context, null);
-        this.u0 = g6Var;
+        this.u0 = f6Var;
         this.v0 = b01Var;
-        this.t0 = new org.telegram.ui.h20();
+        this.t0 = new org.telegram.ui.i20();
     }
 
-    @Override // org.telegram.ui.Components.pv0
+    @Override // org.telegram.ui.Components.qv0
     public final boolean P() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.pv0
+    @Override // org.telegram.ui.Components.qv0
     public final boolean Q() {
         return false;
     }
@@ -48,8 +48,8 @@ public final class d01 extends pv0 {
         return drawChild;
     }
 
-    @Override // org.telegram.ui.Components.pv0
-    public final org.telegram.ui.ActionBar.g6 getResourceProvider() {
+    @Override // org.telegram.ui.Components.qv0
+    public final org.telegram.ui.ActionBar.f6 getResourceProvider() {
         return this.u0;
     }
 

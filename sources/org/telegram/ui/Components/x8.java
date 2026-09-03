@@ -3,48 +3,48 @@ package org.telegram.ui.Components;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class x8 implements Runnable {
-    public final /* synthetic */ em a;
+    public final /* synthetic */ cm a;
 
-    public x8(em emVar) {
-        this.a = emVar;
+    public x8(cm cmVar) {
+        this.a = cmVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        oh.z2 z2Var;
-        em emVar = this.a;
-        AndroidUtilities.runOnUIThread(emVar.y, 1000L);
-        TLRPC.TL_emojiList tL_emojiList = emVar.n;
-        if (tL_emojiList == null || tL_emojiList.document_id.isEmpty() || emVar.w != 1.0f) {
+        nh.y2 y2Var;
+        cm cmVar = this.a;
+        AndroidUtilities.runOnUIThread(cmVar.y, 1000L);
+        TLRPC.TL_emojiList tL_emojiList = cmVar.n;
+        if (tL_emojiList == null || tL_emojiList.document_id.isEmpty() || cmVar.w != 1.0f) {
             return;
         }
-        if (emVar.x || ((z2Var = emVar.b.k) != null && z2Var.hasImageLoaded())) {
-            int i10 = emVar.v + 1;
-            emVar.v = i10;
-            emVar.s++;
+        if (cmVar.x || ((y2Var = cmVar.b.k) != null && y2Var.hasImageLoaded())) {
+            int i10 = cmVar.v + 1;
+            cmVar.v = i10;
+            cmVar.s++;
             if (i10 > tL_emojiList.document_id.size() - 1) {
-                emVar.v = 0;
+                cmVar.v = 0;
             }
-            if (emVar.s > 6) {
-                emVar.s = 0;
+            if (cmVar.s > 6) {
+                cmVar.s = 0;
             }
-            l5 l5Var = new l5(4, emVar.r, tL_emojiList.document_id.get(emVar.v).longValue());
-            emVar.a = l5Var;
-            emVar.d.setAnimatedEmojiDrawable(l5Var);
-            int[] iArr = w8.Z[emVar.s];
+            l5 l5Var = new l5(4, cmVar.r, tL_emojiList.document_id.get(cmVar.v).longValue());
+            cmVar.a = l5Var;
+            cmVar.d.setAnimatedEmojiDrawable(l5Var);
+            int[] iArr = w8.Z[cmVar.s];
             int i11 = iArr[0];
             int i12 = iArr[1];
             int i13 = iArr[2];
             int i14 = iArr[3];
             q20 q20Var = new q20();
-            emVar.f = q20Var;
+            cmVar.f = q20Var;
             q20Var.d(i11, i12, i13, i14);
-            emVar.w = 0.0f;
-            emVar.b();
-            emVar.invalidate();
+            cmVar.w = 0.0f;
+            cmVar.b();
+            cmVar.invalidate();
         }
     }
 }

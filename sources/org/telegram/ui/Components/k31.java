@@ -13,7 +13,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class k31 extends Thread {
     public final /* synthetic */ String a;
@@ -75,9 +75,9 @@ public final class k31 extends Thread {
                 if (str2.length() > 0 && str2.charAt(0) == '\n') {
                     str3 = "\n" + str3;
                 }
-                AndroidUtilities.runOnUIThread(new b90(27, callback2, str3));
-            } catch (Exception e6) {
-                e = e6;
+                AndroidUtilities.runOnUIThread(new z80(28, callback2, str3));
+            } catch (Exception e) {
+                e = e;
                 try {
                     StringBuilder sb2 = new StringBuilder();
                     sb2.append("failed to translate a text ");
@@ -85,8 +85,8 @@ public final class k31 extends Thread {
                     sb2.append(" ");
                     sb2.append(httpURLConnection != null ? httpURLConnection.getResponseMessage() : null);
                     Log.e("translate", sb2.toString());
-                } catch (IOException e10) {
-                    e10.printStackTrace();
+                } catch (IOException e6) {
+                    e6.printStackTrace();
                 }
                 e.printStackTrace();
                 if (httpURLConnection != null) {
@@ -99,10 +99,10 @@ public final class k31 extends Thread {
                         return;
                     }
                 }
-                AndroidUtilities.runOnUIThread(new qv0(1, callback2, z4));
+                AndroidUtilities.runOnUIThread(new kv0(2, callback2, z4));
             }
-        } catch (Exception e11) {
-            e = e11;
+        } catch (Exception e10) {
+            e = e10;
             httpURLConnection = null;
         }
     }

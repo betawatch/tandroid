@@ -5,11 +5,11 @@ import android.os.Handler;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class l {
     public final Context a;
-    public final h7.u b = new h7.u(4);
+    public final db.a b = new db.a(4);
     public int c = 0;
 
     public l(Context context) {
@@ -17,14 +17,14 @@ public class l {
     }
 
     public l3.k0 a(Context context) {
-        com.google.firebase.messaging.s sVar = new com.google.firebase.messaging.s();
-        sVar.a = context;
-        sVar.b = l3.g.c;
-        sVar.d = l3.l0.a;
-        if (((androidx.biometric.e) sVar.c) == null) {
-            sVar.c = new androidx.biometric.e(new l3.n[0]);
+        com.google.firebase.messaging.r rVar = new com.google.firebase.messaging.r();
+        rVar.a = context;
+        rVar.b = l3.g.c;
+        rVar.d = l3.l0.a;
+        if (((af.d) rVar.c) == null) {
+            rVar.c = new af.d(new l3.n[0]);
         }
-        return new l3.k0(sVar);
+        return new l3.k0(rVar);
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(12:(2:12|13)|15|16|17|18|19|21|22|23|24|25|(2:27|28)) */
@@ -63,8 +63,8 @@ public class l {
         Class<?> cls = Integer.TYPE;
         Class<?> cls2 = Long.TYPE;
         Context context = this.a;
-        h7.u uVar = this.b;
-        arrayList.add(new i5.j(context, uVar, handler, c0Var));
+        db.a aVar = this.b;
+        arrayList.add(new i5.j(context, aVar, handler, c0Var));
         if (i13 == 0) {
             c3 = 0;
         } else {
@@ -101,7 +101,7 @@ public class l {
                             h5.a.v("DefaultRenderersFactory", "Loaded Libgav1VideoRenderer.");
                             l3.k0 a2 = a(context);
                             i11 = this.c;
-                            arrayList.add(new l3.n0(this.a, uVar, handler, c0Var2, a2));
+                            arrayList.add(new l3.n0(this.a, aVar, handler, c0Var2, a2));
                             if (i11 != 0) {
                             }
                             arrayList.add(new v4.l(c0Var3, handler.getLooper()));
@@ -130,16 +130,16 @@ public class l {
                     arrayList.add(i10, (e) constructor2.newInstance(objArr2));
                     h5.a.v("DefaultRenderersFactory", "Loaded Libgav1VideoRenderer.");
                 } catch (ClassNotFoundException unused4) {
-                } catch (Exception e6) {
-                    throw new RuntimeException("Error instantiating AV1 extension", e6);
+                } catch (Exception e) {
+                    throw new RuntimeException("Error instantiating AV1 extension", e);
                 }
-            } catch (Exception e10) {
-                throw new RuntimeException("Error instantiating VP9 extension", e10);
+            } catch (Exception e6) {
+                throw new RuntimeException("Error instantiating VP9 extension", e6);
             }
         }
         l3.k0 a22 = a(context);
         i11 = this.c;
-        arrayList.add(new l3.n0(this.a, uVar, handler, c0Var2, a22));
+        arrayList.add(new l3.n0(this.a, aVar, handler, c0Var2, a22));
         if (i11 != 0) {
             int size2 = arrayList.size();
             if (i11 == 2) {
@@ -148,8 +148,8 @@ public class l {
             try {
                 try {
                     i12 = size2 + 1;
-                } catch (Exception e11) {
-                    throw new RuntimeException("Error instantiating MIDI extension", e11);
+                } catch (Exception e10) {
+                    throw new RuntimeException("Error instantiating MIDI extension", e10);
                 }
             } catch (ClassNotFoundException unused5) {
             }
@@ -229,11 +229,11 @@ public class l {
                         arrayList.add(i162, (e) constructor52.newInstance(objArr52));
                         h5.a.v("DefaultRenderersFactory", "Loaded FfmpegAudioRenderer.");
                     } catch (ClassNotFoundException unused7) {
-                    } catch (Exception e12) {
-                        throw new RuntimeException("Error instantiating FFmpeg extension", e12);
+                    } catch (Exception e11) {
+                        throw new RuntimeException("Error instantiating FFmpeg extension", e11);
                     }
-                } catch (Exception e13) {
-                    throw new RuntimeException("Error instantiating FLAC extension", e13);
+                } catch (Exception e12) {
+                    throw new RuntimeException("Error instantiating FLAC extension", e12);
                 }
                 Class<?> cls42 = Class.forName("com.google.android.exoplayer2.ext.opus.LibopusAudioRenderer");
                 Class<?>[] clsArr32 = new Class[3];
@@ -248,8 +248,8 @@ public class l {
                 int i152 = i12 + 1;
                 arrayList.add(i12, (e) constructor32.newInstance(objArr32));
                 h5.a.v("DefaultRenderersFactory", "Loaded LibopusAudioRenderer.");
-            } catch (Exception e14) {
-                throw new RuntimeException("Error instantiating Opus extension", e14);
+            } catch (Exception e13) {
+                throw new RuntimeException("Error instantiating Opus extension", e13);
             }
         }
         arrayList.add(new v4.l(c0Var3, handler.getLooper()));

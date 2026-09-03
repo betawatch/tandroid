@@ -15,9 +15,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class x51 extends org.telegram.ui.Components.gt {
+public final class x51 extends org.telegram.ui.Components.dt {
     public int J;
     public int K;
     public ArrayList L;
@@ -32,13 +32,13 @@ public final class x51 extends org.telegram.ui.Components.gt {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:38:0x00ca  */
-    @Override // org.telegram.ui.Components.gt
+    @Override // org.telegram.ui.Components.dt
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void a(Canvas canvas, long j10, int i10, int i11, float f10) {
         boolean z4;
-        f2.u0 u0Var;
+        f2.t0 t0Var;
         int i12;
         ArrayList arrayList = this.L;
         if (arrayList == null) {
@@ -48,17 +48,17 @@ public final class x51 extends org.telegram.ui.Components.gt {
         if (!arrayList.isEmpty()) {
             View view = (View) this.L.get(0);
             if (view.getY() > (this.Q.getHeight() - this.Q.getPaddingBottom()) - view.getHeight()) {
-                this.N = (k7.o.a((-((view.getY() - this.Q.getHeight()) + this.Q.getPaddingBottom())) / view.getHeight(), 0.0f, 1.0f) * 0.75f) + 0.25f;
+                this.N = (k7.n.a((-((view.getY() - this.Q.getHeight()) + this.Q.getPaddingBottom())) / view.getHeight(), 0.0f, 1.0f) * 0.75f) + 0.25f;
             }
         }
         y51 y51Var = this.Q;
         boolean z10 = true;
-        boolean z11 = y51Var.b3.T == 13 || this.N < 1.0f || ((u0Var = y51Var.W) != null && u0Var.k()) || this.L.size() <= 4 || !this.O || w61.c(this.Q.b3) || (i12 = this.Q.b3.T) == 4 || i12 == 6;
+        boolean z11 = y51Var.b3.T == 13 || this.N < 1.0f || ((t0Var = y51Var.W) != null && t0Var.k()) || this.L.size() <= 4 || !this.O || x61.c(this.Q.b3) || (i12 = this.Q.b3.T) == 4 || i12 == 6;
         if (!z11) {
             if (this.Q.b3.M1 > 0) {
                 long elapsedRealtime = SystemClock.elapsedRealtime();
-                w61 w61Var = this.Q.b3;
-                if (elapsedRealtime - w61Var.M1 < w61Var.g()) {
+                x61 x61Var = this.Q.b3;
+                if (elapsedRealtime - x61Var.M1 < x61Var.g()) {
                     z4 = true;
                     for (int i13 = 0; i13 < this.L.size(); i13++) {
                         f61 f61Var = (f61) this.L.get(i13);
@@ -67,8 +67,8 @@ public final class x51 extends org.telegram.ui.Components.gt {
                         }
                         if (z4) {
                             int i14 = f61Var.c;
-                            w61 w61Var2 = this.Q.b3;
-                            if (i14 > w61Var2.K1 && i14 < w61Var2.L1) {
+                            x61 x61Var2 = this.Q.b3;
+                            if (i14 > x61Var2.K1 && i14 < x61Var2.L1) {
                                 break;
                             }
                         }
@@ -83,8 +83,8 @@ public final class x51 extends org.telegram.ui.Components.gt {
             }
         }
         z10 = z11;
-        float f11 = ng.g0.b ? 1.0f : f10;
-        if (!z10 && !ng.g0.e) {
+        float f11 = mg.g0.b ? 1.0f : f10;
+        if (!z10 && !mg.g0.e) {
             super.a(canvas, j10, i10, i11, f11);
             return;
         }
@@ -93,12 +93,12 @@ public final class x51 extends org.telegram.ui.Components.gt {
         k();
     }
 
-    @Override // org.telegram.ui.Components.gt
+    @Override // org.telegram.ui.Components.dt
     public final void b(Canvas canvas, Bitmap bitmap, Paint paint) {
         canvas.drawBitmap(bitmap, 0.0f, 0.0f, paint);
     }
 
-    @Override // org.telegram.ui.Components.gt
+    @Override // org.telegram.ui.Components.dt
     public final void c(Canvas canvas) {
         int i10 = 0;
         while (true) {
@@ -122,11 +122,11 @@ public final class x51 extends org.telegram.ui.Components.gt {
         }
     }
 
-    @Override // org.telegram.ui.Components.gt
+    @Override // org.telegram.ui.Components.dt
     public final void d(Canvas canvas, float f10) {
         Drawable drawable;
         int i10;
-        w61 w61Var = this.Q.b3;
+        x61 x61Var = this.Q.b3;
         if (this.L != null) {
             canvas.save();
             float f11 = 0.0f;
@@ -137,7 +137,7 @@ public final class x51 extends org.telegram.ui.Components.gt {
                 f61 f61Var = (f61) this.L.get(i11);
                 if (!f61Var.b) {
                     float scaleX = f61Var.getScaleX();
-                    int i12 = w61Var.T;
+                    int i12 = x61Var.T;
                     if (i12 == 13) {
                         scaleX *= 0.87f;
                     }
@@ -145,16 +145,16 @@ public final class x51 extends org.telegram.ui.Components.gt {
                     if (f13 != f11 || (f61Var.P > f11 && i12 != 3 && i12 != 4)) {
                         scaleX *= ((1.0f - Math.max((i12 == 3 || i12 == 4) ? 1.0f : f61Var.P * 0.7f, f13)) * 0.2f) + 0.8f;
                     }
-                    boolean z4 = w61Var.M1 > 0 && SystemClock.elapsedRealtime() - w61Var.M1 < w61Var.g();
-                    if (!z4 || w61Var.K1 < 0 || w61Var.L1 < 0 || w61Var.M1 <= 0) {
+                    boolean z4 = x61Var.M1 > 0 && SystemClock.elapsedRealtime() - x61Var.M1 < x61Var.g();
+                    if (!z4 || x61Var.K1 < 0 || x61Var.L1 < 0 || x61Var.M1 <= 0) {
                         f12 *= f61Var.getAlpha();
                     } else {
                         int R = RecyclerView.R(f61Var);
-                        int i13 = w61Var.K1;
+                        int i13 = x61Var.K1;
                         int i14 = R - i13;
-                        int i15 = w61Var.L1 - i13;
+                        int i15 = x61Var.L1 - i13;
                         if (i14 >= 0 && i14 < i15) {
-                            float a2 = k7.o.a((SystemClock.elapsedRealtime() - w61Var.M1) / w61Var.f(), 0.0f, 1.0f);
+                            float a2 = k7.n.a((SystemClock.elapsedRealtime() - x61Var.M1) / x61Var.f(), 0.0f, 1.0f);
                             float f14 = i14;
                             float f15 = i15;
                             float f16 = f15 / 4.0f;
@@ -165,12 +165,12 @@ public final class x51 extends org.telegram.ui.Components.gt {
                     }
                     Rect rect = AndroidUtilities.rectTmp2;
                     rect.set(f61Var.getPaddingLeft() + ((int) f61Var.getX()), f61Var.getPaddingTop(), (f61Var.getWidth() + ((int) f61Var.getX())) - f61Var.getPaddingRight(), f61Var.getHeight() - f61Var.getPaddingBottom());
-                    if (!w61Var.t1 && !z4) {
+                    if (!x61Var.t1 && !z4) {
                         rect.offset(0, (int) f61Var.getTranslationY());
                     }
                     if (f61Var.a) {
-                        drawable = w61Var.getPremiumStar();
-                        int i16 = w61Var.T;
+                        drawable = x61Var.getPremiumStar();
+                        int i16 = x61Var.T;
                         if (i16 == 5 || i16 == 10 || i16 == 9 || i16 == 7) {
                             rect.inset((int) ((-rect.width()) * 0.15f), (int) ((-rect.height()) * 0.15f));
                         }
@@ -182,11 +182,11 @@ public final class x51 extends org.telegram.ui.Components.gt {
                             imageReceiver.setImageCoords(rect);
                         }
                         drawable = null;
-                    } else if ((f61Var.e != null || w61Var.T == 13) && !f61Var.b && (drawable = f61Var.B) != null) {
+                    } else if ((f61Var.e != null || x61Var.T == 13) && !f61Var.b && (drawable = f61Var.B) != null) {
                         drawable.setAlpha(255);
                         drawable.setBounds(rect);
                     }
-                    PorterDuffColorFilter porterDuffColorFilter = w61Var.h1;
+                    PorterDuffColorFilter porterDuffColorFilter = x61Var.h1;
                     if (porterDuffColorFilter != null) {
                         Drawable drawable2 = f61Var.B;
                         if (drawable2 instanceof org.telegram.ui.Components.l5) {
@@ -199,11 +199,11 @@ public final class x51 extends org.telegram.ui.Components.gt {
                     if (scaleX != 1.0f || f17 < 1.0f) {
                         canvas.save();
                         float f18 = f61Var.P;
-                        if (f18 > 1.0f && (i10 = w61Var.T) != 3 && i10 != 4 && i10 != 6) {
+                        if (f18 > 1.0f && (i10 = x61Var.T) != 3 && i10 != 4 && i10 != 6) {
                             float lerp = AndroidUtilities.lerp(1.0f, 0.85f, f18);
                             canvas.scale(lerp, lerp, rect.centerX(), rect.centerY());
                         }
-                        int i17 = w61Var.T;
+                        int i17 = x61Var.T;
                         if (i17 == 6 || i17 == 13 || i17 == 14) {
                             canvas.scale(scaleX, scaleX, rect.centerX(), rect.centerY());
                         } else {
@@ -227,7 +227,7 @@ public final class x51 extends org.telegram.ui.Components.gt {
         }
     }
 
-    @Override // org.telegram.ui.Components.gt
+    @Override // org.telegram.ui.Components.dt
     public final void g() {
         int i10 = 0;
         while (true) {
@@ -248,7 +248,7 @@ public final class x51 extends org.telegram.ui.Components.gt {
     /* JADX WARN: Removed duplicated region for block: B:75:0x01f6  */
     /* JADX WARN: Removed duplicated region for block: B:78:0x0207  */
     /* JADX WARN: Removed duplicated region for block: B:88:0x01de  */
-    @Override // org.telegram.ui.Components.gt
+    @Override // org.telegram.ui.Components.dt
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -261,7 +261,7 @@ public final class x51 extends org.telegram.ui.Components.gt {
         Rect rect;
         int i11;
         Drawable premiumStar;
-        w61 w61Var = this.Q.b3;
+        x61 x61Var = this.Q.b3;
         ArrayList arrayList = this.M;
         arrayList.clear();
         int i12 = 0;
@@ -272,8 +272,8 @@ public final class x51 extends org.telegram.ui.Components.gt {
             ImageReceiver.BackgroundThreadDrawHolder[] backgroundThreadDrawHolderArr2 = f61Var.f;
             if (!z4) {
                 if (f61Var.a) {
-                    premiumStar = w61Var.getPremiumStar();
-                    int i14 = w61Var.T;
+                    premiumStar = x61Var.getPremiumStar();
+                    int i14 = x61Var.T;
                     float f11 = (i14 == 5 || i14 == 10 || i14 == 9 || i14 == 7) ? 1.3f : 1.0f;
                     float f12 = f61Var.K;
                     if (f12 != 0.0f || f61Var.P > 0.0f) {
@@ -300,16 +300,16 @@ public final class x51 extends org.telegram.ui.Components.gt {
                     if (f15 != 0.0f || f61Var.P > 0.0f) {
                         Math.max(f61Var.P * 0.8f, f15);
                     }
-                    if (w61Var.M1 > 0) {
+                    if (x61Var.M1 > 0) {
                         f10 = 4.0f;
-                        if (SystemClock.elapsedRealtime() - w61Var.M1 >= w61Var.g() || w61Var.K1 < 0 || w61Var.L1 < 0 || w61Var.M1 <= 0) {
+                        if (SystemClock.elapsedRealtime() - x61Var.M1 >= x61Var.g() || x61Var.K1 < 0 || x61Var.L1 < 0 || x61Var.M1 <= 0) {
                             i10 = i13;
                             backgroundThreadDrawHolderArr = backgroundThreadDrawHolderArr2;
                         } else {
                             int R = RecyclerView.R(f61Var);
-                            int i15 = w61Var.K1;
+                            int i15 = x61Var.K1;
                             int i16 = R - i15;
-                            int i17 = w61Var.L1 - i15;
+                            int i17 = x61Var.L1 - i15;
                             if (i16 < 0 || i16 >= i17) {
                                 i10 = i13;
                                 backgroundThreadDrawHolderArr = backgroundThreadDrawHolderArr2;
@@ -317,7 +317,7 @@ public final class x51 extends org.telegram.ui.Components.gt {
                             } else {
                                 i10 = i13;
                                 backgroundThreadDrawHolderArr = backgroundThreadDrawHolderArr2;
-                                float a2 = k7.o.a((SystemClock.elapsedRealtime() - w61Var.M1) / w61Var.f(), 0.0f, 1.0f);
+                                float a2 = k7.n.a((SystemClock.elapsedRealtime() - x61Var.M1) / x61Var.f(), 0.0f, 1.0f);
                                 float f16 = i16;
                                 float f17 = i17;
                                 float f18 = f17 / 4.0f;
@@ -335,13 +335,13 @@ public final class x51 extends org.telegram.ui.Components.gt {
                                     if (l5Var != null && (imageReceiver = l5Var.k) != null) {
                                         l5Var.setAlpha((int) (alpha * 255.0f));
                                         f61Var.setDrawable(l5Var);
-                                        f61Var.B.setColorFilter(w61Var.h1);
+                                        f61Var.B.setColorFilter(x61Var.h1);
                                     }
                                 }
                                 i13 = i10 + 1;
                                 i12 = 0;
                             }
-                            imageReceiver.setEmojiPaused((w61Var.H1 || (w61Var.I1 && f61Var.I)) ? false : true);
+                            imageReceiver.setEmojiPaused((x61Var.H1 || (x61Var.I1 && f61Var.I)) ? false : true);
                             if (f61Var.I) {
                                 imageReceiver.setRoundRadius(0);
                             } else {
@@ -366,7 +366,7 @@ public final class x51 extends org.telegram.ui.Components.gt {
                             f61Var.getPaddingBottom();
                             rect = AndroidUtilities.rectTmp2;
                             rect.set(f61Var.getPaddingLeft(), f61Var.getPaddingTop(), f61Var.getWidth() - f61Var.getPaddingRight(), f61Var.getHeight() - f61Var.getPaddingBottom());
-                            if (f61Var.I && (i11 = w61Var.T) != 3 && i11 != 4) {
+                            if (f61Var.I && (i11 = x61Var.T) != 3 && i11 != 4) {
                                 rect.set(Math.round(rect.centerX() - ((rect.width() / 2.0f) * 0.86f)), Math.round(rect.centerY() - ((rect.height() / 2.0f) * 0.86f)), Math.round(((rect.width() / 2.0f) * 0.86f) + rect.centerX()), Math.round(((rect.height() / 2.0f) * 0.86f) + rect.centerY()));
                             }
                             rect.offset((f61Var.getLeft() + ((int) f61Var.getTranslationX())) - this.K, 0);
@@ -387,7 +387,7 @@ public final class x51 extends org.telegram.ui.Components.gt {
                     }
                     imageReceiver = f61Var.h;
                     imageReceiver.setAlpha(alpha);
-                    imageReceiver.setEmojiPaused((w61Var.H1 || (w61Var.I1 && f61Var.I)) ? false : true);
+                    imageReceiver.setEmojiPaused((x61Var.H1 || (x61Var.I1 && f61Var.I)) ? false : true);
                     if (f61Var.I) {
                     }
                     int i182 = this.H;

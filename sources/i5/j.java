@@ -23,12 +23,13 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.regex.Pattern;
+import kf.k0;
 import o4.l0;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
 import s8.i0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class j extends d4.r {
     public static boolean A1;
@@ -1373,8 +1374,8 @@ public final class j extends d4.r {
     }
 
     public static List t0(Context context, d4.s sVar, n0 n0Var, boolean z4, boolean z10) {
-        Iterable e6;
-        List e10;
+        Iterable e;
+        List e6;
         String str = n0Var.C;
         if (str == null) {
             s8.t tVar = s8.v.b;
@@ -1384,30 +1385,30 @@ public final class j extends d4.r {
             String b10 = d4.y.b(n0Var);
             if (b10 == null) {
                 s8.t tVar2 = s8.v.b;
-                e10 = i0.e;
+                e6 = i0.e;
             } else {
                 sVar.getClass();
-                e10 = d4.y.e(b10, z4, z10);
+                e6 = d4.y.e(b10, z4, z10);
             }
-            if (!e10.isEmpty()) {
-                return e10;
+            if (!e6.isEmpty()) {
+                return e6;
             }
         }
         Pattern pattern = d4.y.a;
         String str2 = n0Var.C;
         sVar.getClass();
-        List e11 = d4.y.e(str2, z4, z10);
+        List e10 = d4.y.e(str2, z4, z10);
         String b11 = d4.y.b(n0Var);
         if (b11 == null) {
             s8.t tVar3 = s8.v.b;
-            e6 = i0.e;
+            e = i0.e;
         } else {
-            e6 = d4.y.e(b11, z4, z10);
+            e = d4.y.e(b11, z4, z10);
         }
         s8.t tVar4 = s8.v.b;
         s8.s sVar2 = new s8.s();
-        sVar2.d(e11);
-        sVar2.d(e6);
+        sVar2.d(e10);
+        sVar2.d(e);
         return sVar2.i();
     }
 
@@ -1515,7 +1516,7 @@ public final class j extends d4.r {
         List t02 = t0(this.R0, sVar, n0Var, z4, this.v1);
         Pattern pattern = d4.y.a;
         ArrayList arrayList = new ArrayList(t02);
-        Collections.sort(arrayList, new d4.t(new a1.c(n0Var, 10), 0));
+        Collections.sort(arrayList, new d4.t(new a1.c(n0Var, 11), 0));
         return arrayList;
     }
 
@@ -1754,7 +1755,7 @@ public final class j extends d4.r {
         f7.b bVar = this.T0;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new gf.c(14, bVar, exc));
+            handler.post(new ff.c(15, bVar, exc));
         }
     }
 
@@ -1810,7 +1811,7 @@ public final class j extends d4.r {
         f7.b bVar = this.T0;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new gf.c(13, bVar, str));
+            handler.post(new ff.c(14, bVar, str));
         }
     }
 
@@ -1953,8 +1954,8 @@ public final class j extends d4.r {
             c8.a();
             c8.e.invoke(c8.d.newInstance(null), null).getClass();
             throw new ClassCastException();
-        } catch (Exception e6) {
-            throw jVar.a(e6, n0Var, false, 7000);
+        } catch (Exception e) {
+            throw jVar.c(e, n0Var, false, 7000);
         }
         b bVar3 = b.f;
         Pair.create(bVar3, bVar3);
@@ -2052,7 +2053,7 @@ public final class j extends d4.r {
             }
             y yVar = this.u1;
             if (yVar != null) {
-                bVar.v(yVar);
+                bVar.w(yVar);
             }
             if (this.d1) {
                 Surface surface3 = this.b1;
@@ -2098,7 +2099,7 @@ public final class j extends d4.r {
         }
         y yVar2 = this.u1;
         if (yVar2 != null) {
-            bVar.v(yVar2);
+            bVar.w(yVar2);
         }
         q0();
         if (i11 == 2) {
@@ -2248,15 +2249,15 @@ public final class j extends d4.r {
                 if (j29 < -500000 && !z10) {
                     l0 l0Var = this.n;
                     l0Var.getClass();
-                    int l10 = l0Var.l(j10 - this.s);
-                    if (l10 != 0) {
+                    int e = l0Var.e(j10 - this.s);
+                    if (e != 0) {
                         if (z14) {
                             n3.f fVar = this.M0;
-                            fVar.d += l10;
+                            fVar.d += e;
                             fVar.f += this.n1;
                         } else {
                             this.M0.j++;
-                            C0(l10, this.n1);
+                            C0(e, this.n1);
                         }
                         if (H()) {
                             P();
@@ -2372,10 +2373,10 @@ public final class j extends d4.r {
             if (handler != null) {
                 handler.post(new w(bVar, fVar, 0));
             }
-            bVar.v(y.e);
+            bVar.w(y.e);
         } catch (Throwable th2) {
-            bVar.o(this.M0);
-            bVar.v(y.e);
+            bVar.p(this.M0);
+            bVar.w(y.e);
             throw th2;
         }
     }
@@ -2472,7 +2473,7 @@ public final class j extends d4.r {
             if (!t03.isEmpty()) {
                 Pattern pattern = d4.y.a;
                 ArrayList arrayList = new ArrayList(t03);
-                Collections.sort(arrayList, new d4.t(new a1.c(n0Var, 10), i10));
+                Collections.sort(arrayList, new d4.t(new a1.c(n0Var, 11), i10));
                 d4.n nVar3 = (d4.n) arrayList.get(0);
                 if (nVar3.d(n0Var) && nVar3.e(n0Var)) {
                     i10 = 32;
@@ -2491,7 +2492,7 @@ public final class j extends d4.r {
                 C();
                 e0();
             } finally {
-                l.d.D(this.P, null);
+                k0.D(this.P, null);
                 this.P = null;
             }
         } finally {
@@ -2524,7 +2525,7 @@ public final class j extends d4.r {
             r rVar = sVar.c;
             rVar.getClass();
             rVar.b.sendEmptyMessage(1);
-            pVar.r(new hg.f(sVar, 3));
+            pVar.l(new gg.f(sVar, 4));
         }
         sVar.c(false);
     }
@@ -2548,7 +2549,7 @@ public final class j extends d4.r {
         sVar.d = false;
         p pVar = sVar.b;
         if (pVar != null) {
-            pVar.s();
+            pVar.z();
             r rVar = sVar.c;
             rVar.getClass();
             rVar.b.sendEmptyMessage(2);
@@ -2617,7 +2618,7 @@ public final class j extends d4.r {
             return;
         }
         this.u1 = yVar;
-        this.T0.v(yVar);
+        this.T0.w(yVar);
     }
 
     public final void y0(d4.k kVar, int i10) {

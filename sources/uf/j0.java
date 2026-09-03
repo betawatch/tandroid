@@ -1,35 +1,42 @@
 package uf;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.Cells.d2;
-import org.telegram.ui.Components.ma0;
+import android.view.View;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.c2;
+import org.telegram.ui.ActionBar.d2;
+import org.telegram.ui.Components.i51;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j0 implements MediaDataController.KeywordResultCallback, d2 {
-    public final /* synthetic */ u0 a;
+public final /* synthetic */ class j0 implements c2, Utilities.Callback5 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ l0 b;
 
-    public /* synthetic */ j0(u0 u0Var) {
-        this.a = u0Var;
+    public /* synthetic */ j0(l0 l0Var, int i10) {
+        this.a = i10;
+        this.b = l0Var;
     }
 
-    @Override // org.telegram.messenger.MediaDataController.KeywordResultCallback
-    public void run(ArrayList arrayList, String str) {
-        u0 u0Var = this.a;
-        u0Var.K = arrayList;
-        u0Var.F = null;
-        u0Var.x0 = null;
-        u0Var.x = null;
-        u0Var.y = null;
-        u0Var.G = null;
-        u0Var.N = null;
-        u0Var.J = null;
-        u0Var.H = null;
-        u0Var.M = null;
-        u0Var.l();
-        ma0 ma0Var = u0Var.S;
-        ArrayList arrayList2 = u0Var.K;
-        ma0Var.a((arrayList2 == null || arrayList2.isEmpty()) ? false : true);
+    @Override // org.telegram.ui.ActionBar.c2
+    public void l(d2 d2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                this.b.a0();
+                break;
+            case 1:
+                this.b.finishFragment();
+                break;
+            default:
+                this.b.a0();
+                break;
+        }
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        l0.W(this.b, (i51) obj, (View) obj2);
     }
 }

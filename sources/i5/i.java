@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.os.Message;
 import h5.d0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class i implements Handler.Callback {
     public final Handler a;
@@ -32,8 +32,8 @@ public final class i implements Handler.Callback {
             jVar.M0.e++;
             jVar.w0();
             jVar.X(j10);
-        } catch (j3.n e6) {
-            jVar.L0 = e6;
+        } catch (j3.n e) {
+            jVar.L0 = e;
         }
     }
 

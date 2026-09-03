@@ -1,68 +1,54 @@
 package ug;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
 import android.graphics.RectF;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import org.telegram.ui.ActionBar.w5;
-import vg.i;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public abstract class c {
-    public static final Matrix a = new Matrix();
-    public static final RectF b = new RectF();
-    public static final RectF c = new RectF();
+public final class c {
+    public final int a;
+    public final long b;
+    public long e;
+    public long f;
+    public long g;
+    public long h;
+    public boolean i;
+    public final RectF c = new RectF();
+    public float j = 0.0f;
+    public float k = 0.0f;
+    public float l = Float.MAX_VALUE;
+    public float m = 0.0f;
+    public final long d = Utilities.random.nextLong();
 
-    public static void a(pg.a aVar, Canvas canvas, RectF rectF, View view, ViewGroup viewGroup, int i10) {
-        if (i10 <= 0) {
-            return;
-        }
-        RectF rectF2 = c;
-        if (i.c(view, viewGroup, rectF2)) {
-            float f10 = rectF2.left;
-            float f11 = rectF2.top;
-            RectF rectF3 = b;
-            rectF3.set(rectF);
-            rectF3.offset(-f10, -f11);
-            boolean z4 = (f10 == 0.0f && f11 == 0.0f) ? false : true;
-            boolean z10 = i10 != 255;
-            if (z4) {
-                canvas.save();
-                canvas.translate(f10, f11);
-            }
-            if (z10) {
-                canvas.saveLayerAlpha(rectF3, i10);
-            }
-            aVar.e(canvas, rectF3);
-            if (z10) {
-                canvas.restore();
-            }
-            if (z4) {
-                canvas.restore();
-            }
-        }
+    public c(int i10, long j10) {
+        this.a = i10;
+        this.b = j10;
     }
 
-    public static void b(pg.a aVar, Canvas canvas, RectF rectF, View view, FrameLayout frameLayout) {
-        a(aVar, canvas, rectF, view, frameLayout, 255);
+    public final TLRPC.TL_inputMessageReadMetric a() {
+        TLRPC.TL_inputMessageReadMetric tL_inputMessageReadMetric = new TLRPC.TL_inputMessageReadMetric();
+        tL_inputMessageReadMetric.msg_id = this.a;
+        tL_inputMessageReadMetric.view_id = this.d;
+        tL_inputMessageReadMetric.time_in_view_ms = (int) this.g;
+        tL_inputMessageReadMetric.active_time_in_view_ms = (int) this.h;
+        float f10 = this.k;
+        tL_inputMessageReadMetric.height_to_viewport_ratio_permille = f10 == 0.0f ? MediaDataController.MAX_STYLE_RUNS_COUNT : Math.round((this.j / f10) * 1000.0f);
+        tL_inputMessageReadMetric.seen_range_ratio_permille = b();
+        return tL_inputMessageReadMetric;
     }
 
-    public static void c(tg.b bVar, View view) {
-        Bitmap bitmap;
-        if (bVar == null || view == null || view.getWidth() == 0 || view.getHeight() == 0 || (bitmap = bVar.d) == null || bitmap.isRecycled() || bitmap.getWidth() == 0 || bitmap.getHeight() == 0) {
-            return;
+    public final int b() {
+        float f10 = this.j;
+        if (f10 == 0.0f) {
+            return 0;
         }
-        Matrix matrix = a;
-        matrix.reset();
-        matrix.setScale(view.getWidth() / bitmap.getWidth(), view.getHeight() / bitmap.getHeight());
-        bVar.b.set(matrix);
-    }
-
-    public static w5 d(qg.b bVar, int i10, int i11) {
-        return new w5(i10, i11, bVar);
+        float f11 = this.l;
+        float f12 = this.m;
+        if (f11 > f12) {
+            return 0;
+        }
+        return Math.round(((f12 - f11) / f10) * 1000.0f);
     }
 }

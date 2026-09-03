@@ -1,8 +1,8 @@
 package ld;
 
-import k7.q7;
+import k7.p7;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class q1 extends wc.h implements dd.p {
     public v1 b;
@@ -43,7 +43,7 @@ public final class q1 extends wc.h implements dd.p {
         vc.a aVar = vc.a.a;
         int i10 = this.d;
         if (i10 == 0) {
-            q7.b(obj);
+            p7.b(obj);
             id.c cVar2 = (id.c) this.e;
             Object u10 = this.f.u();
             if (u10 instanceof q) {
@@ -63,7 +63,7 @@ public final class q1 extends wc.h implements dd.p {
                 }
             }
         } else if (i10 == 1) {
-            q7.b(obj);
+            p7.b(obj);
         } else {
             if (i10 != 2) {
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -71,7 +71,7 @@ public final class q1 extends wc.h implements dd.p {
             kVar = this.c;
             v1Var = this.b;
             cVar = (id.c) this.e;
-            q7.b(obj);
+            p7.b(obj);
             kVar = kVar.g();
             if (!kVar.equals(v1Var)) {
                 if (kVar instanceof q) {

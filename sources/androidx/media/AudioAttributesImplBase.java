@@ -1,9 +1,9 @@
 package androidx.media;
 
 import java.util.Arrays;
-import l.d;
+import kf.k0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class AudioAttributesImplBase implements AudioAttributesImpl {
     public int a = 0;
@@ -141,7 +141,7 @@ public class AudioAttributesImplBase implements AudioAttributesImpl {
                 break;
             case 15:
             default:
-                str = d.j(i10, "unknown usage ");
+                str = k0.j(i10, "unknown usage ");
                 break;
             case 16:
                 str = "USAGE_ASSISTANT";

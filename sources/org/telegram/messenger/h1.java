@@ -10,10 +10,10 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.f90;
-import org.telegram.ui.z10;
+import org.telegram.ui.g90;
+import org.telegram.ui.w10;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h1 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -65,17 +65,17 @@ public final /* synthetic */ class h1 implements RequestDelegate {
             default:
                 Pattern pattern = LaunchActivity.y1;
                 boolean z4 = this.b;
-                AndroidUtilities.runOnUIThread(new f90((LaunchActivity) obj6, (z10) obj5, tLObject, z4, (Long) serializable3, (af.f) obj4, (Long) serializable2, (Integer) serializable, (Integer) obj3, (byte[]) obj2, (org.telegram.ui.ActionBar.p2) obj, this.c, (Bundle) cloneable));
+                AndroidUtilities.runOnUIThread(new g90((LaunchActivity) obj6, (w10) obj5, tLObject, z4, (Long) serializable3, (ze.c) obj4, (Long) serializable2, (Integer) serializable, (Integer) obj3, (byte[]) obj2, (org.telegram.ui.ActionBar.p2) obj, this.c, (Bundle) cloneable));
                 break;
         }
     }
 
-    public /* synthetic */ h1(LaunchActivity launchActivity, z10 z10Var, boolean z4, Long l10, af.f fVar, Long l11, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.p2 p2Var, int i10, Bundle bundle) {
+    public /* synthetic */ h1(LaunchActivity launchActivity, w10 w10Var, boolean z4, Long l10, ze.c cVar, Long l11, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.p2 p2Var, int i10, Bundle bundle) {
         this.d = launchActivity;
-        this.e = z10Var;
+        this.e = w10Var;
         this.b = z4;
         this.f = l10;
-        this.g = fVar;
+        this.g = cVar;
         this.h = l11;
         this.i = num;
         this.j = num2;

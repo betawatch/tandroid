@@ -10,13 +10,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public class to0 extends View {
     public boolean B;
     public boolean C;
     public int a;
-    public final org.telegram.ui.ActionBar.g6 b;
+    public final org.telegram.ui.ActionBar.f6 b;
     public float c;
     public boolean d;
     public int e;
@@ -30,15 +30,15 @@ public class to0 extends View {
     public RadialGradient x;
     public final Paint y;
 
-    public to0(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+    public to0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.c = 0.0f;
-        org.telegram.ui.Components.pr prVar = org.telegram.ui.Components.pr.h;
-        this.h = new org.telegram.ui.Components.c5(this, 350L, prVar);
-        this.n = new org.telegram.ui.Components.c5(this, 350L, prVar);
+        org.telegram.ui.Components.mr mrVar = org.telegram.ui.Components.mr.h;
+        this.h = new org.telegram.ui.Components.c5(this, 350L, mrVar);
+        this.n = new org.telegram.ui.Components.c5(this, 350L, mrVar);
         this.y = new Paint(1);
-        this.b = g6Var;
-        this.a = org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.s8, g6Var);
+        this.b = f6Var;
+        this.a = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.s8, f6Var);
         b(-1, -1, false);
     }
 
@@ -53,14 +53,14 @@ public class to0 extends View {
 
     public final void c(MessagesController.PeerColor peerColor, boolean z4) {
         this.d = false;
-        org.telegram.ui.ActionBar.g6 g6Var = this.b;
+        org.telegram.ui.ActionBar.f6 f6Var = this.b;
         if (peerColor == null) {
             this.d = true;
-            int v02 = org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.s8, g6Var);
+            int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.s8, f6Var);
             this.f = v02;
             this.e = v02;
         } else {
-            boolean a2 = g6Var != null ? g6Var.a() : org.telegram.ui.ActionBar.k6.I.q();
+            boolean a2 = f6Var != null ? f6Var.a() : org.telegram.ui.ActionBar.j6.I.q();
             this.e = peerColor.getBgColor1(a2);
             this.f = peerColor.getBgColor2(a2);
         }
@@ -102,23 +102,23 @@ public class to0 extends View {
     }
 
     public int getActionBarButtonColor() {
-        int i10 = org.telegram.ui.ActionBar.k6.v8;
-        org.telegram.ui.ActionBar.g6 g6Var = this.b;
-        return i0.a.d(this.c, org.telegram.ui.ActionBar.k6.v0(i10, g6Var), this.d ? org.telegram.ui.ActionBar.k6.v0(i10, g6Var) : -1);
+        int i10 = org.telegram.ui.ActionBar.j6.v8;
+        org.telegram.ui.ActionBar.f6 f6Var = this.b;
+        return i0.a.d(this.c, org.telegram.ui.ActionBar.j6.v0(i10, f6Var), this.d ? org.telegram.ui.ActionBar.j6.v0(i10, f6Var) : -1);
     }
 
     public int getColor() {
-        return i0.a.d(this.c, org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.s8, this.b), i0.a.d(0.75f, this.h.c, this.n.c));
+        return i0.a.d(this.c, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.s8, this.b), i0.a.d(0.75f, this.h.c, this.n.c));
     }
 
     public int getTabsViewBackgroundColor() {
-        int i10 = org.telegram.ui.ActionBar.k6.s8;
-        org.telegram.ui.ActionBar.g6 g6Var = this.b;
-        int v02 = AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.k6.v0(i10, g6Var)) > 0.721f ? org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.v8, g6Var) : org.telegram.ui.ActionBar.k6.b(0.08f, -0.08f, org.telegram.ui.ActionBar.k6.v0(i10, g6Var));
+        int i10 = org.telegram.ui.ActionBar.j6.s8;
+        org.telegram.ui.ActionBar.f6 f6Var = this.b;
+        int v02 = AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.j6.v0(i10, f6Var)) > 0.721f ? org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.v8, f6Var) : org.telegram.ui.ActionBar.j6.b(0.08f, -0.08f, org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
         org.telegram.ui.Components.c5 c5Var = this.h;
         int i11 = c5Var.c;
         org.telegram.ui.Components.c5 c5Var2 = this.n;
-        return i0.a.d(this.c, v02, AndroidUtilities.computePerceivedBrightness(i0.a.d(0.75f, i11, c5Var2.c)) > 0.721f ? org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.v6, g6Var) : org.telegram.ui.ActionBar.k6.b(0.08f, -0.08f, i0.a.d(0.75f, c5Var.c, c5Var2.c)));
+        return i0.a.d(this.c, v02, AndroidUtilities.computePerceivedBrightness(i0.a.d(0.75f, i11, c5Var2.c)) > 0.721f ? org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.v6, f6Var) : org.telegram.ui.ActionBar.j6.b(0.08f, -0.08f, i0.a.d(0.75f, c5Var.c, c5Var2.c)));
     }
 
     @Override // android.view.View

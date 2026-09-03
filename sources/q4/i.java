@@ -3,11 +3,11 @@ package q4;
 import g5.p;
 import g5.u0;
 import j3.n0;
-import j7.q7;
+import j7.p7;
 import n7.qa;
 import o4.k0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class i extends a {
     public final int B;
@@ -57,26 +57,26 @@ public final class i extends a {
                     this.E = hVar.d - this.b.e;
                 }
             }
-            q7.a(this.r);
+            p7.a(this.r);
             this.G = !this.F;
         } catch (Throwable th2) {
-            q7.a(this.r);
+            p7.a(this.r);
             throw th2;
         }
     }
 
+    @Override // g5.j0
+    public final void b() {
+        this.F = true;
+    }
+
     @Override // q4.k
-    public final long b() {
+    public final long c() {
         return this.s + this.B;
     }
 
     @Override // q4.k
-    public final boolean c() {
+    public final boolean d() {
         return this.G;
-    }
-
-    @Override // g5.j0
-    public final void l() {
-        this.F = true;
     }
 }

@@ -3,19 +3,25 @@ package od;
 import java.io.Serializable;
 import java.util.NoSuchElementException;
 import java.util.concurrent.CancellationException;
-import k7.o7;
-import k7.q7;
+import k7.n7;
+import k7.p7;
 import kotlin.jvm.internal.q;
 import la.t;
 import ld.b0;
 import ld.f1;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class n {
-    public static final com.google.android.gms.internal.clearcut.e a = new com.google.android.gms.internal.clearcut.e("NONE", 2);
-    public static final com.google.android.gms.internal.clearcut.e b = new com.google.android.gms.internal.clearcut.e("PENDING", 2);
+    public static final o3.c a;
+    public static final o3.c b;
+
+    static {
+        int i10 = 14;
+        a = new o3.c("NONE", i10);
+        b = new o3.c("PENDING", i10);
+    }
 
     /* JADX WARN: Removed duplicated region for block: B:30:0x0080 A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:31:0x0081  */
@@ -40,13 +46,13 @@ public abstract class n {
                 vc.a aVar = vc.a.a;
                 i10 = eVar.c;
                 if (i10 != 0) {
-                    q7.b(obj);
+                    p7.b(obj);
                     q qVar2 = new q();
                     try {
                         c gVar = new g(cVar, qVar2);
                         eVar.a = qVar2;
                         eVar.c = 1;
-                        if (bVar.x(gVar, eVar) == aVar) {
+                        if (bVar.z(gVar, eVar) == aVar) {
                             return aVar;
                         }
                         return null;
@@ -60,7 +66,7 @@ public abstract class n {
                     }
                     qVar = eVar.a;
                     try {
-                        q7.b(obj);
+                        p7.b(obj);
                         return null;
                     } catch (Throwable th4) {
                         th = th4;
@@ -74,10 +80,10 @@ public abstract class n {
                     return th;
                 }
                 if (th instanceof CancellationException) {
-                    o7.a(th2, th);
+                    n7.a(th2, th);
                     throw th2;
                 }
-                o7.a(th, th2);
+                n7.a(th, th2);
                 throw th;
             }
         }
@@ -105,9 +111,9 @@ public abstract class n {
     public static final Object b(b bVar, wc.c cVar) {
         j jVar;
         int i10;
-        com.google.android.gms.internal.clearcut.e eVar;
+        o3.c cVar2;
         q qVar;
-        pd.a e6;
+        pd.a e;
         t tVar;
         Object obj;
         if (cVar instanceof j) {
@@ -118,28 +124,28 @@ public abstract class n {
                 Object obj2 = jVar.c;
                 Object obj3 = vc.a.a;
                 i10 = jVar.d;
-                eVar = pd.e.a;
+                cVar2 = pd.e.a;
                 if (i10 != 0) {
-                    q7.b(obj2);
+                    p7.b(obj2);
                     q qVar2 = new q();
-                    qVar2.a = eVar;
+                    qVar2.a = cVar2;
                     t tVar2 = new t(qVar2, 1);
                     try {
                         jVar.a = qVar2;
                         jVar.b = tVar2;
                         jVar.d = 1;
-                        if (bVar.x(tVar2, jVar) == obj3) {
+                        if (bVar.z(tVar2, jVar) == obj3) {
                             return obj3;
                         }
                         qVar = qVar2;
-                    } catch (pd.a e10) {
+                    } catch (pd.a e6) {
                         qVar = qVar2;
-                        e6 = e10;
+                        e = e6;
                         tVar = tVar2;
-                        if (e6.a != tVar) {
+                        if (e.a != tVar) {
                         }
                         obj = qVar.a;
-                        if (obj == eVar) {
+                        if (obj == cVar2) {
                         }
                     }
                 } else {
@@ -149,19 +155,19 @@ public abstract class n {
                     tVar = jVar.b;
                     qVar = jVar.a;
                     try {
-                        q7.b(obj2);
-                    } catch (pd.a e11) {
-                        e6 = e11;
-                        if (e6.a != tVar) {
-                            throw e6;
+                        p7.b(obj2);
+                    } catch (pd.a e10) {
+                        e = e10;
+                        if (e.a != tVar) {
+                            throw e;
                         }
                         obj = qVar.a;
-                        if (obj == eVar) {
+                        if (obj == cVar2) {
                         }
                     }
                 }
                 obj = qVar.a;
-                if (obj == eVar) {
+                if (obj == cVar2) {
                     return obj;
                 }
                 throw new NoSuchElementException("Expected at least one element");
@@ -171,11 +177,11 @@ public abstract class n {
         Object obj22 = jVar.c;
         Object obj32 = vc.a.a;
         i10 = jVar.d;
-        eVar = pd.e.a;
+        cVar2 = pd.e.a;
         if (i10 != 0) {
         }
         obj = qVar.a;
-        if (obj == eVar) {
+        if (obj == cVar2) {
         }
     }
 }

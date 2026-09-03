@@ -1,10 +1,20 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class k20 extends fg.o2 {
-    @Override // fg.o2
-    public final int b() {
-        return i0.a.k(org.telegram.ui.ActionBar.k6.C0(this.P), 200);
+public final class k20 extends eg.q1 {
+    public final /* synthetic */ int r;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ k20(int i10, int i11, int i12, int i13, org.telegram.ui.ActionBar.f6 f6Var, int i14) {
+        super(i10, i11, i12, i13, f6Var);
+        this.r = i14;
+    }
+
+    @Override // eg.q1
+    public final int c(int i10) {
+        switch (this.r) {
+        }
+        return org.telegram.ui.ActionBar.j6.C0(i10);
     }
 }

@@ -14,7 +14,7 @@ import org.telegram.messenger.TopicsController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class cf1 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ Context a;
@@ -51,9 +51,9 @@ public final class cf1 extends org.telegram.ui.ActionBar.j {
                 sf1Var.F = true;
                 Bundle bundle = new Bundle();
                 bundle.putLong("chat_id", j10);
-                xn xnVar = new xn(bundle);
-                xnVar.ga = true;
-                sf1Var.presentFragment(xnVar);
+                zn znVar = new zn(bundle);
+                znVar.ga = true;
+                sf1Var.presentFragment(znVar);
                 break;
             case 2:
                 TLRPC.ChatFull chatFull = sf1Var.getMessagesController().getChatFull(j10);
@@ -78,9 +78,9 @@ public final class cf1 extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 3:
-                oe1 a02 = oe1.a0(j10, 0L);
+                ne1 a02 = ne1.a0(j10, 0L);
                 sf1Var.presentFragment(a02);
-                AndroidUtilities.runOnUIThread(new je1(a02, 1), 200L);
+                AndroidUtilities.runOnUIThread(new ie1(a02, 1), 200L);
                 break;
             case 4:
             case 5:
@@ -175,13 +175,13 @@ public final class cf1 extends org.telegram.ui.ActionBar.j {
                 break;
             case 14:
                 if (ChatObject.hasAdminRights(sf1Var.getMessagesController().getChat(Long.valueOf(j10)))) {
-                    y5 y5Var = new y5(-j10);
+                    a6 a6Var = new a6(-j10);
                     TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = sf1Var.U;
-                    y5Var.O = tL_premium_boostsStatus;
+                    a6Var.O = tL_premium_boostsStatus;
                     if (tL_premium_boostsStatus != null) {
-                        y5Var.getMessagesController().getBoostsController().userCanBoostChannel(y5Var.M, y5Var.O, new p5(y5Var, 0));
+                        a6Var.getMessagesController().getBoostsController().userCanBoostChannel(a6Var.M, a6Var.O, new r5(a6Var, 0));
                     }
-                    sf1Var.presentFragment(y5Var);
+                    sf1Var.presentFragment(a6Var);
                     break;
                 } else {
                     sf1Var.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.openBoostForUsersDialog, Long.valueOf(-j10));

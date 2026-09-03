@@ -7,17 +7,17 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class ps0 implements tm0 {
+public final class ps0 implements sm0 {
     public final /* synthetic */ yu0 a;
 
     public ps0(yu0 yu0Var) {
         this.a = yu0Var;
     }
 
-    @Override // org.telegram.ui.Components.tm0
-    public final void B() {
+    @Override // org.telegram.ui.Components.sm0
+    public final void C() {
         int a2;
         qt0[] qt0VarArr = this.a.h0;
         int i10 = qt0VarArr[0].C;
@@ -31,19 +31,19 @@ public final class ps0 implements tm0 {
             }
             a2 = AndroidUtilities.dp(56.0f);
         } else {
-            a2 = org.telegram.ui.Cells.s7.a(1);
+            a2 = org.telegram.ui.Cells.r7.a(1);
         }
         if ((qt0VarArr[0].C == 0 ? (r5.x.L0() / r0.j1[0]) * a2 : r5.x.L0() * a2) < qt0VarArr[0].h.getMeasuredHeight() * 1.2f) {
             qt0VarArr[0].h.x0(0);
             return;
         }
-        c2.y yVar = qt0VarArr[0].B;
-        yVar.b = 1;
-        yVar.c(0, 0, false, false);
+        c2.z zVar = qt0VarArr[0].B;
+        zVar.b = 1;
+        zVar.c(0, 0, false, false);
     }
 
-    @Override // org.telegram.ui.Components.tm0
-    public final void f(int i10, boolean z4) {
+    @Override // org.telegram.ui.Components.sm0
+    public final void d(int i10, boolean z4) {
         yu0 yu0Var = this.a;
         qt0[] qt0VarArr = yu0Var.h0;
         if (qt0VarArr[0].C == i10) {
@@ -64,8 +64,8 @@ public final class ps0 implements tm0 {
         yu0Var.q1(true);
     }
 
-    @Override // org.telegram.ui.Components.tm0
-    public final boolean j1(int i10, View view) {
+    @Override // org.telegram.ui.Components.sm0
+    public final boolean k1(int i10, View view) {
         TLRPC.UserFull userFull;
         TLRPC.ProfileTab profileTab;
         yu0 yu0Var = this.a;
@@ -75,9 +75,9 @@ public final class ps0 implements tm0 {
                 if (ChatObject.canUserDoAction(p2Var.getMessagesController().getChat(Long.valueOf(yu0Var.a1.id)), 5)) {
                     profileTab = yu0Var.a1.main_tab;
                     if (profileTab != null || (i10 != yu0.e0(profileTab) && yu0Var.O1 != i10)) {
-                        q70 H = q70.H(p2Var, view);
-                        H.W(org.telegram.ui.ActionBar.k6.b0(AndroidUtilities.dp(24.0f), org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.d6, false)));
-                        H.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.ProfileTabSetAsMain), new im(this, i10, 7), false);
+                        p70 H = p70.H(p2Var, view);
+                        H.W(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(24.0f), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false)));
+                        H.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.ProfileTabSetAsMain), new dw(this, i10, 6), false);
                         H.Z();
                         return true;
                     }
@@ -86,9 +86,9 @@ public final class ps0 implements tm0 {
                 profileTab = userFull.main_tab;
                 if (profileTab != null) {
                 }
-                q70 H2 = q70.H(p2Var, view);
-                H2.W(org.telegram.ui.ActionBar.k6.b0(AndroidUtilities.dp(24.0f), org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.d6, false)));
-                H2.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.ProfileTabSetAsMain), new im(this, i10, 7), false);
+                p70 H2 = p70.H(p2Var, view);
+                H2.W(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(24.0f), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false)));
+                H2.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.ProfileTabSetAsMain), new dw(this, i10, 6), false);
                 H2.Z();
                 return true;
             }
@@ -96,8 +96,8 @@ public final class ps0 implements tm0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.tm0
-    public final void w0(float f10) {
+    @Override // org.telegram.ui.Components.sm0
+    public final void u0(float f10) {
         yu0 yu0Var = this.a;
         org.telegram.ui.ActionBar.w0 w0Var = yu0Var.k0;
         qt0[] qt0VarArr = yu0Var.h0;

@@ -2,7 +2,7 @@ package la;
 
 import android.os.Build;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class b {
     public final String a;
@@ -38,7 +38,7 @@ public final class b {
     }
 
     public final int hashCode() {
-        return this.b.hashCode() + ((o.b.hashCode() + l.d.e((((Build.MODEL.hashCode() + (this.a.hashCode() * 31)) * 31) + 46672439) * 31, 31, Build.VERSION.RELEASE)) * 31);
+        return this.b.hashCode() + ((o.b.hashCode() + kf.k0.e((((Build.MODEL.hashCode() + (this.a.hashCode() * 31)) * 31) + 46672439) * 31, 31, Build.VERSION.RELEASE)) * 31);
     }
 
     public final String toString() {

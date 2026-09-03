@@ -13,15 +13,15 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class zz0 extends org.telegram.ui.Components.yu0 {
     public boolean c2;
     public final /* synthetic */ ProfileActivity d2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zz0(ProfileActivity profileActivity, Context context, long j10, org.telegram.ui.Components.qu0 qu0Var, int i10, ArrayList arrayList, TLRPC.ChatFull chatFull, TLRPC.UserFull userFull, int i11, int i12, ProfileActivity profileActivity2, ProfileActivity profileActivity3, org.telegram.ui.ActionBar.g6 g6Var, og.a aVar) {
-        super(context, j10, qu0Var, i10, arrayList, chatFull, userFull, i11, i12, profileActivity2, profileActivity3, 1, g6Var, aVar);
+    public zz0(ProfileActivity profileActivity, Context context, long j10, org.telegram.ui.Components.qu0 qu0Var, int i10, ArrayList arrayList, TLRPC.ChatFull chatFull, TLRPC.UserFull userFull, int i11, int i12, ProfileActivity profileActivity2, ProfileActivity profileActivity3, org.telegram.ui.ActionBar.f6 f6Var, ng.a aVar) {
+        super(context, j10, qu0Var, i10, arrayList, chatFull, userFull, i11, i12, profileActivity2, profileActivity3, 1, f6Var, aVar);
         this.d2 = profileActivity;
     }
 
@@ -136,10 +136,10 @@ public final class zz0 extends org.telegram.ui.Components.yu0 {
                     i10 = ((org.telegram.ui.ActionBar.p2) profileActivity).currentAccount;
                 }
                 f10 = AndroidUtilities.dp(72.0f);
-                animate.translationY(f10).setDuration(320L).setInterpolator(org.telegram.ui.Components.pr.h).setUpdateListener(new e3(this, 27)).start();
+                animate.translationY(f10).setDuration(320L).setInterpolator(org.telegram.ui.Components.mr.h).setUpdateListener(new g3(this, 27)).start();
             }
             f10 = 0.0f;
-            animate.translationY(f10).setDuration(320L).setInterpolator(org.telegram.ui.Components.pr.h).setUpdateListener(new e3(this, 27)).start();
+            animate.translationY(f10).setDuration(320L).setInterpolator(org.telegram.ui.Components.mr.h).setUpdateListener(new g3(this, 27)).start();
         }
     }
 

@@ -1,24 +1,16 @@
 package j7;
 
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.tasks.TaskCompletionSource;
+import android.opengl.GLES20;
+import android.opengl.GLUtils;
+import android.util.Log;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class p5 {
-    public static void a(Status status, Object obj, TaskCompletionSource taskCompletionSource) {
-        if (status.e()) {
-            taskCompletionSource.setResult(obj);
-        } else {
-            taskCompletionSource.setException(b6.m.m(status));
-        }
-    }
-
-    public static void b(Status status, Object obj, TaskCompletionSource taskCompletionSource) {
-        if (status.e()) {
-            taskCompletionSource.trySetResult(obj);
-        } else {
-            taskCompletionSource.trySetException(b6.m.m(status));
+    public static void a() {
+        int glGetError = GLES20.glGetError();
+        if (glGetError != 0) {
+            Log.d("Paint", GLUtils.getEGLErrorString(glGetError));
         }
     }
 }

@@ -9,13 +9,13 @@ import android.widget.ScrollView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.e70;
+import org.telegram.ui.Components.d70;
 import org.telegram.ui.UsersSelectActivity;
-import org.telegram.ui.d80;
+import org.telegram.ui.e80;
 import org.telegram.ui.fn0;
-import org.telegram.ui.og0;
+import org.telegram.ui.pg0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class x1 extends ScrollView {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final class x1 extends ScrollView {
         switch (this.a) {
             case 3:
                 int action = motionEvent.getAction();
-                float f10 = ((d80) this.b).b.e;
+                float f10 = ((e80) this.b).b.e;
                 float y10 = motionEvent.getY();
                 if (action != 0 || y10 <= f10) {
                     return super.dispatchTouchEvent(motionEvent);
@@ -68,19 +68,19 @@ public final class x1 extends ScrollView {
     public void onMeasure(int i10, int i11) {
         switch (this.a) {
             case 1:
-                e70 e70Var = (e70) this.b;
+                d70 d70Var = (d70) this.b;
                 int size = View.MeasureSpec.getSize(i10);
                 int size2 = View.MeasureSpec.getSize(i11);
                 if (AndroidUtilities.isTablet() || size2 > size) {
-                    e70Var.p0 = AndroidUtilities.dp(144.0f);
+                    d70Var.p0 = AndroidUtilities.dp(144.0f);
                 } else {
-                    e70Var.p0 = AndroidUtilities.dp(56.0f);
+                    d70Var.p0 = AndroidUtilities.dp(56.0f);
                 }
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(e70Var.p0, TLObject.FLAG_31));
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(d70Var.p0, TLObject.FLAG_31));
                 break;
             case 2:
                 super.onMeasure(i10, i11);
-                setMeasuredDimension(((eg.i0) this.b).getMeasuredWidth(), getMeasuredHeight());
+                setMeasuredDimension(((dg.k0) this.b).getMeasuredWidth(), getMeasuredHeight());
                 break;
             case 3:
             case 4:
@@ -108,18 +108,18 @@ public final class x1 extends ScrollView {
     public boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z4) {
         switch (this.a) {
             case 3:
-                d80 d80Var = (d80) this.b;
-                if (!d80Var.v) {
+                e80 e80Var = (e80) this.b;
+                if (!e80Var.v) {
                     rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-                    rect.top = org.telegram.messenger.y3.C(20.0f, d80Var.F, rect.top);
-                    rect.bottom = org.telegram.messenger.y3.C(50.0f, d80Var.F, rect.bottom);
+                    rect.top = org.telegram.messenger.y3.C(20.0f, e80Var.F, rect.top);
+                    rect.bottom = org.telegram.messenger.y3.C(50.0f, e80Var.F, rect.bottom);
                     break;
                 } else {
-                    d80Var.v = false;
+                    e80Var.v = false;
                     break;
                 }
             case 4:
-                int i10 = ((og0) this.b).a;
+                int i10 = ((pg0) this.b).a;
                 if (i10 == 1 || i10 == 2 || i10 == 4) {
                     rect.bottom = AndroidUtilities.dp(40.0f) + rect.bottom;
                 }
@@ -146,9 +146,9 @@ public final class x1 extends ScrollView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x1(Context context, int i10, eg.i0 i0Var) {
+    public x1(Context context, int i10, dg.k0 k0Var) {
         super(context, null, 0, i10);
         this.a = 2;
-        this.b = i0Var;
+        this.b = k0Var;
     }
 }

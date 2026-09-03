@@ -7,11 +7,12 @@ import android.os.Looper;
 import android.util.AttributeSet;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import kf.k0;
 import org.webrtc.EglBase;
 import org.webrtc.EglRenderer;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
 public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Callback, VideoSink, RendererCommon.RendererEvents {
     private static final String TAG = "SurfaceViewRenderer";
@@ -89,7 +90,7 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
         sb.append(", frame size: ");
         sb.append(this.rotatedFrameWidth);
         sb.append("x");
-        l.d.w(sb, this.rotatedFrameHeight, ", requested surface size: ", min, "x");
+        k0.w(sb, this.rotatedFrameHeight, ", requested surface size: ", min, "x");
         sb.append(min2);
         sb.append(", old surface size: ");
         sb.append(this.surfaceWidth);

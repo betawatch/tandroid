@@ -12,22 +12,22 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.sf1;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vq0 implements w10, org.telegram.ui.jy {
+public final /* synthetic */ class vq0 implements w10, org.telegram.ui.ky {
     public final /* synthetic */ yu0 a;
 
     public /* synthetic */ vq0(yu0 yu0Var) {
         this.a = yu0Var;
     }
 
-    @Override // org.telegram.ui.jy
+    @Override // org.telegram.ui.ky
     public /* synthetic */ boolean C() {
         return false;
     }
 
-    @Override // org.telegram.ui.jy
-    public /* synthetic */ boolean J(org.telegram.ui.py pyVar) {
+    @Override // org.telegram.ui.ky
+    public /* synthetic */ boolean I(org.telegram.ui.qy qyVar) {
         return false;
     }
 
@@ -39,8 +39,8 @@ public final /* synthetic */ class vq0 implements w10, org.telegram.ui.jy {
         yu0Var.setVisibleHeight(yu0Var.J1);
     }
 
-    @Override // org.telegram.ui.jy
-    public boolean v(org.telegram.ui.py pyVar, ArrayList arrayList, CharSequence charSequence, boolean z4, boolean z10, int i10, int i11, sf1 sf1Var) {
+    @Override // org.telegram.ui.ky
+    public boolean w(org.telegram.ui.qy qyVar, ArrayList arrayList, CharSequence charSequence, boolean z4, boolean z10, int i10, int i11, sf1 sf1Var) {
         yu0 yu0Var = this.a;
         SparseArray[] sparseArrayArr = yu0Var.W0;
         org.telegram.ui.ActionBar.p2 p2Var = yu0Var.s1;
@@ -85,15 +85,15 @@ public final /* synthetic */ class vq0 implements w10, org.telegram.ui.jy {
                 } else {
                     i15.putLong("chat_id", -j10);
                 }
-                if (!p2Var.getMessagesController().checkCanOpenChat(i15, pyVar)) {
+                if (!p2Var.getMessagesController().checkCanOpenChat(i15, qyVar)) {
                     return true;
                 }
             }
             p2Var.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
-            org.telegram.ui.xn xnVar = new org.telegram.ui.xn(i15);
-            bg.e.a(xnVar, (MessagesStorage.TopicKey) arrayList.get(0));
-            pyVar.presentFragment(xnVar, true);
-            xnVar.Ab(arrayList2);
+            org.telegram.ui.zn znVar = new org.telegram.ui.zn(i15);
+            ag.f.a(znVar, (MessagesStorage.TopicKey) arrayList.get(0));
+            qyVar.presentFragment(znVar, true);
+            znVar.Ab(arrayList2);
             return true;
         }
         yu0Var.r1(true);
@@ -104,7 +104,7 @@ public final /* synthetic */ class vq0 implements w10, org.telegram.ui.jy {
             }
             p2Var.getSendMessagesHelper().sendMessage(arrayList2, j11, false, false, true, 0, 0L);
         }
-        pyVar.finishFragment();
+        qyVar.finishFragment();
         UndoView undoView = p2Var instanceof ProfileActivity ? ((ProfileActivity) p2Var).J : null;
         if (undoView == null) {
             return true;

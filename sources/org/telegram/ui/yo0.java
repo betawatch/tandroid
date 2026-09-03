@@ -3,20 +3,20 @@ package org.telegram.ui;
 import android.content.Context;
 import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class yo0 extends org.telegram.ui.Components.sl0 {
+public final class yo0 extends org.telegram.ui.Components.rl0 {
     public final /* synthetic */ int U2;
     public final /* synthetic */ hp0 V2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yo0(hp0 hp0Var, Context context, org.telegram.ui.ActionBar.g6 g6Var, int i10) {
-        super(context, g6Var);
+    public yo0(hp0 hp0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
+        super(context, f6Var);
         this.V2 = hp0Var;
         this.U2 = i10;
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final Integer V0(int i10) {
         hp0 hp0Var = this.V2;
         if ((i10 < hp0Var.V || i10 >= hp0Var.W) && (i10 < hp0Var.a0 || i10 >= hp0Var.b0)) {
@@ -25,7 +25,7 @@ public final class yo0 extends org.telegram.ui.Components.sl0 {
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.sl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.rl0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         hp0 hp0Var = this.V2;
@@ -38,7 +38,7 @@ public final class yo0 extends org.telegram.ui.Components.sl0 {
         canvas.restoreToCount(save);
     }
 
-    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.rl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
         super.onLayout(z4, i10, i11, i12, i13);
         hp0 hp0Var = this.V2;
@@ -51,7 +51,7 @@ public final class yo0 extends org.telegram.ui.Components.sl0 {
             hp0Var.G.g(false);
             return;
         }
-        mh.l7 l7Var = this.U2 == 1 ? np0Var.c : np0Var.b;
+        lh.l7 l7Var = this.U2 == 1 ? np0Var.c : np0Var.b;
         if (l7Var == null || !hp0Var.c()) {
             return;
         }

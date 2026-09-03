@@ -1,57 +1,107 @@
 package org.telegram.ui.Components;
 
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
+import java.util.ArrayList;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class lf0 {
-    public final mf0 a = new mf0();
-    public final mf0 b = new mf0();
-    public final mf0 c = new mf0();
-    public final mf0 d = new mf0();
-    public final ByteBuffer e;
-    public int f;
+    public float a = 0.0f;
+    public float b = 25.0f;
+    public float c = 50.0f;
+    public float d = 75.0f;
+    public float e = 100.0f;
+    public float[] f;
 
-    public lf0() {
-        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(800);
-        this.e = allocateDirect;
-        allocateDirect.order(ByteOrder.LITTLE_ENDIAN);
-    }
-
-    public final void a() {
-        ByteBuffer byteBuffer = this.e;
-        byteBuffer.position(0);
-        mf0 mf0Var = this.a;
-        if (mf0Var.f == null) {
-            mf0Var.a();
+    public final float[] a() {
+        float f10 = this.a;
+        float f11 = this.b / 100.0f;
+        float f12 = this.c / 100.0f;
+        float f13 = this.d / 100.0f;
+        float f14 = this.e;
+        int i10 = 5;
+        float[] fArr = {-0.001f, f10 / 100.0f, 0.0f, f10 / 100.0f, 0.25f, f11, 0.5f, f12, 0.75f, f13, 1.0f, f14 / 100.0f, 1.001f, f14 / 100.0f};
+        int i11 = 100;
+        ArrayList arrayList = new ArrayList(100);
+        ArrayList arrayList2 = new ArrayList(100);
+        arrayList2.add(Float.valueOf(fArr[0]));
+        arrayList2.add(Float.valueOf(fArr[1]));
+        int i12 = 1;
+        while (i12 < i10) {
+            int i13 = (i12 - 1) * 2;
+            float f15 = fArr[i13];
+            float f16 = fArr[i13 + 1];
+            int i14 = i12 * 2;
+            float f17 = fArr[i14];
+            float f18 = fArr[i14 + 1];
+            int i15 = i12 + 1;
+            int i16 = i15 * 2;
+            float f19 = fArr[i16];
+            float f20 = fArr[i16 + 1];
+            int i17 = (i12 + 2) * 2;
+            float f21 = fArr[i17];
+            float f22 = fArr[i17 + 1];
+            int i18 = 1;
+            while (i18 < i11) {
+                float f23 = i18 * 0.01f;
+                float f24 = f23 * f23;
+                float f25 = f24 * f23;
+                float w10 = ((((((f17 * 3.0f) - f15) - (f19 * 3.0f)) + f21) * f25) + ((((f19 * 4.0f) + ((f15 * 2.0f) - (f17 * 5.0f))) - f21) * f24) + e2.c.w(f19, f15, f23, f17 * 2.0f)) * 0.5f;
+                float max = Math.max(0.0f, Math.min(1.0f, ((((((f18 * 3.0f) - f16) - (f20 * 3.0f)) + f22) * f25) + ((((4.0f * f20) + ((2.0f * f16) - (5.0f * f18))) - f22) * f24) + e2.c.w(f20, f16, f23, f18 * 2.0f)) * 0.5f));
+                if (w10 > f15) {
+                    arrayList2.add(Float.valueOf(w10));
+                    arrayList2.add(Float.valueOf(max));
+                }
+                if ((i18 - 1) % 2 == 0) {
+                    arrayList.add(Float.valueOf(max));
+                }
+                i18++;
+                i11 = 100;
+            }
+            arrayList2.add(Float.valueOf(f19));
+            arrayList2.add(Float.valueOf(f20));
+            i12 = i15;
+            i10 = 5;
+            i11 = 100;
         }
-        float[] fArr = mf0Var.f;
-        mf0 mf0Var2 = this.b;
-        if (mf0Var2.f == null) {
-            mf0Var2.a();
+        arrayList2.add(Float.valueOf(fArr[12]));
+        arrayList2.add(Float.valueOf(fArr[13]));
+        this.f = new float[arrayList.size()];
+        int i19 = 0;
+        while (true) {
+            float[] fArr2 = this.f;
+            if (i19 >= fArr2.length) {
+                break;
+            }
+            fArr2[i19] = ((Float) arrayList.get(i19)).floatValue();
+            i19++;
         }
-        float[] fArr2 = mf0Var2.f;
-        mf0 mf0Var3 = this.c;
-        if (mf0Var3.f == null) {
-            mf0Var3.a();
+        int size = arrayList2.size();
+        float[] fArr3 = new float[size];
+        for (int i20 = 0; i20 < size; i20++) {
+            fArr3[i20] = ((Float) arrayList2.get(i20)).floatValue();
         }
-        float[] fArr3 = mf0Var3.f;
-        mf0 mf0Var4 = this.d;
-        if (mf0Var4.f == null) {
-            mf0Var4.a();
-        }
-        float[] fArr4 = mf0Var4.f;
-        for (int i10 = 0; i10 < 200; i10++) {
-            byteBuffer.put((byte) (fArr2[i10] * 255.0f));
-            byteBuffer.put((byte) (fArr3[i10] * 255.0f));
-            byteBuffer.put((byte) (fArr4[i10] * 255.0f));
-            byteBuffer.put((byte) (fArr[i10] * 255.0f));
-        }
-        byteBuffer.position(0);
+        return fArr3;
     }
 
     public final boolean b() {
-        return this.a.b() && this.b.b() && this.c.b() && this.d.b();
+        return ((double) Math.abs(this.a - 0.0f)) < 1.0E-5d && ((double) Math.abs(this.b - 25.0f)) < 1.0E-5d && ((double) Math.abs(this.c - 50.0f)) < 1.0E-5d && ((double) Math.abs(this.d - 75.0f)) < 1.0E-5d && ((double) Math.abs(this.e - 100.0f)) < 1.0E-5d;
+    }
+
+    public final void c(InputSerializedData inputSerializedData, boolean z4) {
+        this.a = inputSerializedData.readFloat(z4);
+        this.b = inputSerializedData.readFloat(z4);
+        this.c = inputSerializedData.readFloat(z4);
+        this.d = inputSerializedData.readFloat(z4);
+        this.e = inputSerializedData.readFloat(z4);
+    }
+
+    public final void d(OutputSerializedData outputSerializedData) {
+        outputSerializedData.writeFloat(this.a);
+        outputSerializedData.writeFloat(this.b);
+        outputSerializedData.writeFloat(this.c);
+        outputSerializedData.writeFloat(this.d);
+        outputSerializedData.writeFloat(this.e);
     }
 }

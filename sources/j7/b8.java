@@ -16,7 +16,7 @@ import java.io.InputStream;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class b8 {
     public static void a(Closeable closeable) {
@@ -54,8 +54,8 @@ public abstract class b8 {
         try {
             try {
                 fileOutputStream = new FileOutputStream(file, false);
-            } catch (IOException e6) {
-                e = e6;
+            } catch (IOException e) {
+                e = e;
             }
         } catch (Throwable th2) {
             th = th2;
@@ -71,8 +71,8 @@ public abstract class b8 {
                 }
                 fileOutputStream.write(bArr, 0, read);
             }
-        } catch (IOException e10) {
-            e = e10;
+        } catch (IOException e6) {
+            e = e6;
             fileOutputStream2 = fileOutputStream;
             Log.e("TypefaceCompatUtil", "Error copying resource contents to temp file: " + e.getMessage());
             a(fileOutputStream2);

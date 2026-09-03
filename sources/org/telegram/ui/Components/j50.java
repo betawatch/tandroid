@@ -1,44 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.graphics.Paint;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class j50 extends AnimatorListenerAdapter {
+public final class j50 extends Paint {
     public final /* synthetic */ int a;
-    public final /* synthetic */ z50 b;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
 
-    public /* synthetic */ j50(z50 z50Var, int i10) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ j50(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
+        super(1);
         this.a = i10;
-        this.b = z50Var;
+        this.b = notificationCenterDelegate;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.graphics.Paint
+    public final void setAlpha(int i10) {
         switch (this.a) {
             case 0:
-                z50 z50Var = this.b;
-                if (animator.equals(z50Var.D)) {
-                    z50Var.D = null;
-                    break;
-                }
-                break;
-            case 1:
-                z50 z50Var2 = this.b;
-                if (z50Var2.Y0 != null) {
-                    z50Var2.Y0 = null;
-                    break;
-                }
+                super.setAlpha(i10);
+                ((y50) this.b).invalidate();
                 break;
             default:
-                z50 z50Var3 = this.b;
-                if (animator.equals(z50Var3.T)) {
-                    z50Var3.h(true);
-                    z50Var3.T0 = false;
-                    z50Var3.setVisibility(4);
-                    break;
-                }
+                super.setAlpha(i10);
+                ((ProfileActivity) this.b).fragmentView.invalidate();
                 break;
         }
     }

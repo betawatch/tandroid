@@ -7,7 +7,7 @@ import java.util.concurrent.locks.LockSupport;
 import kotlin.jvm.internal.q;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class a extends Thread {
     public static final /* synthetic */ AtomicIntegerFieldUpdater r = AtomicIntegerFieldUpdater.newUpdater(a.class, "workerCtl$volatile");
@@ -130,9 +130,9 @@ public final class a extends Thread {
     }
 
     public final i f() {
-        int e6 = e(2);
+        int e = e(2);
         c cVar = this.n;
-        if (e6 == 0) {
+        if (e == 0) {
             i iVar = (i) cVar.e.d();
             return iVar != null ? iVar : (i) cVar.f.d();
         }
@@ -178,15 +178,15 @@ public final class a extends Thread {
         if (i11 < 2) {
             return null;
         }
-        int e6 = e(i11);
+        int e = e(i11);
         int i12 = 0;
         long j13 = Long.MAX_VALUE;
         while (i12 < i11) {
-            e6++;
-            if (e6 > i11) {
-                e6 = 1;
+            e++;
+            if (e > i11) {
+                e = 1;
             }
-            a aVar = (a) cVar.h.b(e6);
+            a aVar = (a) cVar.h.b(e);
             if (aVar != null && aVar != this) {
                 m mVar = aVar.a;
                 if (i10 == 3) {
@@ -330,15 +330,15 @@ public final class a extends Thread {
                     this.h = false;
                     if (this.e == 0) {
                         Object obj = this.nextParkedWorker;
-                        com.google.android.gms.internal.clearcut.e eVar = c.v;
-                        if (obj != eVar) {
+                        o3.c cVar2 = c.v;
+                        if (obj != cVar2) {
                             r.set(this, -1);
                             while (this.nextParkedWorker != c.v) {
                                 AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = r;
                                 if (atomicIntegerFieldUpdater.get(this) == -1) {
-                                    c cVar2 = this.n;
+                                    c cVar3 = this.n;
                                     AtomicIntegerFieldUpdater atomicIntegerFieldUpdater2 = c.s;
-                                    if (atomicIntegerFieldUpdater2.get(cVar2) != 0) {
+                                    if (atomicIntegerFieldUpdater2.get(cVar3) != 0) {
                                         break;
                                     }
                                     b bVar3 = this.c;
@@ -357,26 +357,26 @@ public final class a extends Thread {
                                     LockSupport.parkNanos(this.n.c);
                                     if (System.nanoTime() - this.d >= 0) {
                                         this.d = 0L;
-                                        c cVar3 = this.n;
-                                        synchronized (cVar3.h) {
+                                        c cVar4 = this.n;
+                                        synchronized (cVar4.h) {
                                             try {
-                                                if (!(atomicIntegerFieldUpdater2.get(cVar3) != 0)) {
+                                                if (!(atomicIntegerFieldUpdater2.get(cVar4) != 0)) {
                                                     AtomicLongFieldUpdater atomicLongFieldUpdater = c.r;
-                                                    if (((int) (atomicLongFieldUpdater.get(cVar3) & j10)) > cVar3.a) {
+                                                    if (((int) (atomicLongFieldUpdater.get(cVar4) & j10)) > cVar4.a) {
                                                         if (atomicIntegerFieldUpdater.compareAndSet(this, -1, 1)) {
                                                             int i11 = this.indexInArray;
                                                             g(0);
-                                                            cVar3.c(this, i11, 0);
-                                                            int andDecrement = (int) (atomicLongFieldUpdater.getAndDecrement(cVar3) & j10);
+                                                            cVar4.c(this, i11, 0);
+                                                            int andDecrement = (int) (atomicLongFieldUpdater.getAndDecrement(cVar4) & j10);
                                                             if (andDecrement != i11) {
-                                                                Object b10 = cVar3.h.b(andDecrement);
+                                                                Object b10 = cVar4.h.b(andDecrement);
                                                                 kotlin.jvm.internal.j.b(b10);
                                                                 a aVar = (a) b10;
-                                                                cVar3.h.c(i11, aVar);
+                                                                cVar4.h.c(i11, aVar);
                                                                 aVar.g(i11);
-                                                                cVar3.c(aVar, andDecrement, i11);
+                                                                cVar4.c(aVar, andDecrement, i11);
                                                             }
-                                                            cVar3.h.c(andDecrement, null);
+                                                            cVar4.h.c(andDecrement, null);
                                                             this.c = bVar4;
                                                         }
                                                     }
@@ -389,18 +389,18 @@ public final class a extends Thread {
                                 }
                             }
                         } else {
-                            c cVar4 = this.n;
-                            if (this.nextParkedWorker == eVar) {
+                            c cVar5 = this.n;
+                            if (this.nextParkedWorker == cVar2) {
                                 AtomicLongFieldUpdater atomicLongFieldUpdater2 = c.n;
                                 while (true) {
-                                    long j11 = atomicLongFieldUpdater2.get(cVar4);
+                                    long j11 = atomicLongFieldUpdater2.get(cVar5);
                                     int i12 = this.indexInArray;
-                                    this.nextParkedWorker = cVar4.h.b((int) (j11 & 2097151));
-                                    c cVar5 = cVar4;
-                                    if (c.n.compareAndSet(cVar5, j11, ((j11 + 2097152) & (-2097152)) | i12)) {
+                                    this.nextParkedWorker = cVar5.h.b((int) (j11 & 2097151));
+                                    c cVar6 = cVar5;
+                                    if (c.n.compareAndSet(cVar6, j11, ((j11 + 2097152) & (-2097152)) | i12)) {
                                         break;
                                     } else {
-                                        cVar4 = cVar5;
+                                        cVar5 = cVar6;
                                     }
                                 }
                             }

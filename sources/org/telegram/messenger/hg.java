@@ -6,9 +6,9 @@ import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.py;
+import org.telegram.ui.qy;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class hg implements Runnable {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class hg implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        oh.c7 c7Var;
+        nh.c7 c7Var;
         TL_stories.StoryItem storyItem;
         int i10 = this.a;
         Object obj = this.f;
@@ -63,13 +63,13 @@ public final /* synthetic */ class hg implements Runnable {
                         storyItem.dialogId = j10;
                         org.telegram.ui.ActionBar.p2 R = LaunchActivity.R();
                         if (R != null) {
-                            if (R instanceof py) {
+                            if (R instanceof qy) {
                                 try {
-                                    c7Var = oh.c7.a(((py) R).B0.h);
+                                    c7Var = nh.c7.a(((qy) R).B0.h);
                                 } catch (Exception unused) {
                                 }
                             }
-                            oh.c7 c7Var2 = c7Var;
+                            nh.c7 c7Var2 = c7Var;
                             R.getOrCreateStoryViewer().v();
                             ArrayList arrayList = new ArrayList();
                             arrayList.add(Long.valueOf(j10));

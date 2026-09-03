@@ -1,49 +1,38 @@
 package org.telegram.ui;
 
-import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fd implements View.OnClickListener {
+public final /* synthetic */ class fd implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ nd b;
+    public final /* synthetic */ pd b;
 
-    public /* synthetic */ fd(nd ndVar, int i10) {
+    public /* synthetic */ fd(pd pdVar, int i10) {
         this.a = i10;
-        this.b = ndVar;
+        this.b = pdVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                nd.X(this.b, view);
+                AndroidUtilities.runOnUIThread(new hc(4, this.b, tLObject));
                 break;
             case 1:
-                nd ndVar = this.b;
-                ndVar.v.o(ndVar.x != null, new ed(ndVar, 1), new v5(ndVar, 2), 0);
-                ndVar.G.K(0);
-                ndVar.G.N(43);
-                ndVar.h.d();
+                if (tLObject instanceof TLRPC.TL_boolTrue) {
+                    AndroidUtilities.runOnUIThread(new gd(this.b, 3));
+                    break;
+                }
                 break;
             case 2:
-                nd ndVar2 = this.b;
-                if (!ndVar2.g0) {
-                    ndVar2.f0();
-                    break;
-                } else if (ndVar2.X) {
-                    ndVar2.X = false;
-                    ndVar2.h0();
-                    break;
-                }
+                AndroidUtilities.runOnUIThread(new hc(2, this.b, tL_error));
                 break;
             default:
-                nd ndVar3 = this.b;
-                if (!ndVar3.X) {
-                    ndVar3.X = true;
-                    ndVar3.h0();
-                    break;
-                }
+                AndroidUtilities.runOnUIThread(new u1(this.b, tL_error, tLObject, 11));
                 break;
         }
     }

@@ -6,9 +6,9 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import k7.t7;
+import k7.s7;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class w {
     public static final HashMap a = new HashMap();
@@ -18,12 +18,12 @@ public abstract class w {
         try {
             kotlin.jvm.internal.j.d(constructor.newInstance(sVar), "{\n            constructo…tance(`object`)\n        }");
             throw new ClassCastException();
-        } catch (IllegalAccessException e6) {
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        } catch (InstantiationException e6) {
             throw new RuntimeException(e6);
-        } catch (InstantiationException e10) {
+        } catch (InvocationTargetException e10) {
             throw new RuntimeException(e10);
-        } catch (InvocationTargetException e11) {
-            throw new RuntimeException(e11);
         }
     }
 
@@ -60,12 +60,12 @@ public abstract class w {
                 }
             } catch (ClassNotFoundException unused) {
                 constructor = null;
-            } catch (NoSuchMethodException e6) {
-                throw new RuntimeException(e6);
+            } catch (NoSuchMethodException e) {
+                throw new RuntimeException(e);
             }
             HashMap hashMap2 = b;
             if (constructor != null) {
-                hashMap2.put(cls, t7.a(constructor));
+                hashMap2.put(cls, s7.a(constructor));
             } else {
                 d dVar = d.c;
                 HashMap hashMap3 = dVar.b;
@@ -90,8 +90,8 @@ public abstract class w {
                             }
                             i11++;
                         }
-                    } catch (NoClassDefFoundError e10) {
-                        throw new IllegalArgumentException("The observer class has some methods that use newer APIs which are not available in the current OS version. Lifecycles cannot access even other methods so you should make sure that your observer classes only access framework classes that are available in your min API level OR use lifecycle:compiler annotation processor.", e10);
+                    } catch (NoClassDefFoundError e6) {
+                        throw new IllegalArgumentException("The observer class has some methods that use newer APIs which are not available in the current OS version. Lifecycles cannot access even other methods so you should make sure that your observer classes only access framework classes that are available in your min API level OR use lifecycle:compiler annotation processor.", e6);
                     }
                 }
                 if (!z4) {

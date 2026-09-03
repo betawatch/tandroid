@@ -1,12 +1,12 @@
 package m8;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class d implements l8.c {
-    public final androidx.biometric.f0 a;
+    public final androidx.biometric.e0 a;
 
-    public d(androidx.biometric.f0 f0Var) {
-        this.a = f0Var;
+    public d(androidx.biometric.e0 e0Var) {
+        this.a = e0Var;
     }
 
     public final boolean equals(Object obj) {

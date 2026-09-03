@@ -1,40 +1,73 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class h1 extends d5 {
-    private static final h1 zzb;
-    private int zzd;
+public final class h1 extends e5 {
+    private static final h5 zzb = new e1();
+    private static final h1 zzd;
     private int zze;
-    private double zzf;
-    private double zzg;
-    private double zzh;
-    private double zzi;
+    private l1 zzf;
+    private x2 zzg;
+    private j5 zzh = e6.d;
+    private g5 zzi = f5.d;
 
     static {
         h1 h1Var = new h1();
-        zzb = h1Var;
-        d5.e(h1.class, h1Var);
+        zzd = h1Var;
+        e5.e(h1.class, h1Var);
     }
 
-    @Override // com.google.android.gms.internal.cast.d5
-    public final Object h(int i10, d5 d5Var) {
+    public static g1 l() {
+        return (g1) zzd.j();
+    }
+
+    public static /* synthetic */ void m(h1 h1Var, l1 l1Var) {
+        h1Var.zzf = l1Var;
+        h1Var.zze |= 1;
+    }
+
+    public static void n(h1 h1Var, ArrayList arrayList) {
+        List list = h1Var.zzi;
+        if (!((u4) list).a) {
+            int size = list.size();
+            int i10 = size == 0 ? 10 : size + size;
+            f5 f5Var = (f5) list;
+            if (i10 < f5Var.c) {
+                throw new IllegalArgumentException();
+            }
+            h1Var.zzi = new f5(Arrays.copyOf(f5Var.b, i10), f5Var.c, true);
+        }
+        int size2 = arrayList.size();
+        int i11 = 0;
+        while (i11 < size2) {
+            Object obj = arrayList.get(i11);
+            i11++;
+            ((f5) h1Var.zzi).zzh(((d1) obj).a);
+        }
+    }
+
+    @Override // com.google.android.gms.internal.cast.e5
+    public final Object h(int i10, e5 e5Var) {
         int i11 = i10 - 1;
         if (i11 == 0) {
             return (byte) 1;
         }
         if (i11 == 2) {
-            return new e6(zzb, "\u0001\u0005\u0000\u0001\u0001\u0005\u0005\u0000\u0000\u0000\u0001ဋ\u0000\u0002က\u0001\u0003က\u0002\u0004က\u0003\u0005က\u0004", new Object[]{"zzd", "zze", "zzf", "zzg", "zzh", "zzi"});
+            return new f6(zzd, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0002\u0000\u0001ဉ\u0000\u0002ဉ\u0001\u0003\u001b\u0004ࠞ", new Object[]{"zze", "zzf", "zzg", "zzh", v2.class, "zzi", z0.C});
         }
         if (i11 == 3) {
             return new h1();
         }
         if (i11 == 4) {
-            return new u0(zzb);
+            return new g1(zzd);
         }
         if (i11 != 5) {
             return null;
         }
-        return zzb;
+        return zzd;
     }
 }

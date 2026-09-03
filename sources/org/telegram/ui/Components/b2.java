@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b2 implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -52,12 +52,12 @@ public final /* synthetic */ class b2 implements TextView.OnEditorActionListener
                 }
                 break;
             default:
-                vf.n nVar = (vf.n) this.e;
+                uf.n nVar = (uf.n) this.e;
                 TL_account.TL_businessChatLink tL_businessChatLink = (TL_account.TL_businessChatLink) this.f;
                 if (i10 == 6) {
                     String obj2 = nVar.getText().toString();
                     if (obj2.length() <= 32) {
-                        vf.t d = vf.t.d(this.b);
+                        uf.t d = uf.t.d(this.b);
                         TL_account.TL_businessChatLink c3 = d.c(tL_businessChatLink.link);
                         if (c3 != null) {
                             TL_account.TL_inputBusinessChatLink tL_inputBusinessChatLink = new TL_account.TL_inputBusinessChatLink();
@@ -71,8 +71,8 @@ public final /* synthetic */ class b2 implements TextView.OnEditorActionListener
                         if (d2Var2 != null) {
                             d2Var2.dismiss();
                         }
-                        if (d2VarArr[0] == vf.q.d) {
-                            vf.q.d = null;
+                        if (d2VarArr[0] == uf.q.d) {
+                            uf.q.d = null;
                         }
                         View view2 = this.d;
                         if (view2 != null) {

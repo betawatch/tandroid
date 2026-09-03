@@ -5,7 +5,7 @@ import j3.n0;
 import java.util.Arrays;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class n implements i {
     public static final float[] l = {1.0f, 1.0f, 1.0909091f, 0.90909094f, 1.4545455f, 1.2121212f, 1.0f};
@@ -393,9 +393,9 @@ public final class n implements i {
         h0Var.b();
         this.h = h0Var.e;
         h0Var.b();
-        r3.v i22 = mVar.i2(h0Var.d, 2);
-        this.i = i22;
-        this.f = new m(i22);
+        r3.v d22 = mVar.d2(h0Var.d, 2);
+        this.i = d22;
+        this.f = new m(d22);
         this.a.b(mVar, h0Var);
     }
 

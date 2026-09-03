@@ -9,7 +9,7 @@ import h5.d0;
 import java.util.Arrays;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class b implements j3.g {
     public static final b E = new b("", null, null, null, -3.4028235E38f, TLObject.FLAG_31, TLObject.FLAG_31, -3.4028235E38f, TLObject.FLAG_31, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f);
@@ -30,7 +30,7 @@ public final class b implements j3.g {
     public static final String T;
     public static final String U;
     public static final String V;
-    public static final sg.a W;
+    public static final s0.b W;
     public final float B;
     public final int C;
     public final float D;
@@ -68,7 +68,7 @@ public final class b implements j3.g {
         T = Integer.toString(14, 36);
         U = Integer.toString(15, 36);
         V = Integer.toString(16, 36);
-        W = new sg.a(18);
+        W = new s0.b(23);
     }
 
     public b(CharSequence charSequence, Layout.Alignment alignment, Layout.Alignment alignment2, Bitmap bitmap, float f10, int i10, int i11, float f11, int i12, int i13, float f12, float f13, float f14, boolean z4, int i14, int i15, float f15) {

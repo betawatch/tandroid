@@ -1,45 +1,42 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.play.core.integrity.IntegrityTokenResponse;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ed0 implements OnSuccessListener {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ og0 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ TLRPC.auth_SentCode d;
-    public final /* synthetic */ Bundle e;
-    public final /* synthetic */ boolean f;
+public final /* synthetic */ class ed0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ pg0 b;
 
-    public /* synthetic */ ed0(og0 og0Var, Bundle bundle, TLRPC.auth_SentCode auth_sentcode, String str, boolean z4) {
-        this.b = og0Var;
-        this.e = bundle;
-        this.d = auth_sentcode;
-        this.c = str;
-        this.f = z4;
+    public /* synthetic */ ed0(pg0 pg0Var, int i10) {
+        this.a = i10;
+        this.b = pg0Var;
     }
 
-    @Override // com.google.android.gms.tasks.OnSuccessListener
-    public final void onSuccess(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                og0.X(this.b, this.e, this.d, this.c, this.f, (IntegrityTokenResponse) obj);
+                pg0 pg0Var = this.b;
+                pg0Var.o0 = false;
+                pg0Var.x1(true, true);
+                break;
+            case 1:
+                this.b.Z = false;
                 break;
             default:
-                og0.V(this.b, this.c, this.d, this.e, this.f, (a8.d) obj);
+                pg0 pg0Var2 = this.b;
+                if (pg0Var2.getParentActivity() != null && !pg0Var2.getParentActivity().isFinishing() && pg0Var2.getParentActivity() != null) {
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(pg0Var2.getParentActivity());
+                    alertDialog$Builder.a.O = LocaleController.getString(R.string.RestorePasswordNoEmailTitle);
+                    alertDialog$Builder.a.Q = LocaleController.getString(R.string.SafetyNetErrorOccurred);
+                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), new jd0(pg0Var2, 1));
+                    alertDialog$Builder.o();
+                    break;
+                }
                 break;
         }
-    }
-
-    public /* synthetic */ ed0(og0 og0Var, String str, TLRPC.auth_SentCode auth_sentcode, Bundle bundle, boolean z4) {
-        this.b = og0Var;
-        this.c = str;
-        this.d = auth_sentcode;
-        this.e = bundle;
-        this.f = z4;
     }
 }

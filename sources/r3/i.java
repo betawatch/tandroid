@@ -8,7 +8,7 @@ import org.telegram.ui.cl0;
 import q5.c0;
 import s8.i0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class i {
     public static final int[] b = {5, 4, 12, 8, 3, 10, 9, 11, 6, 2, 0, 1, 7, 16, 15, 14};
@@ -31,12 +31,12 @@ public final class i {
                 arrayList.add(new s3.a(1));
                 break;
             case 4:
-                k I = c.I(0);
-                if (I == null) {
+                k F = c.F(0);
+                if (F == null) {
                     arrayList.add(new u3.a());
                     break;
                 } else {
-                    arrayList.add(I);
+                    arrayList.add(F);
                     break;
                 }
             case 5:
@@ -77,9 +77,9 @@ public final class i {
                 arrayList.add(new w3.a());
                 break;
             case 15:
-                k I2 = d.I(new Object[0]);
-                if (I2 != null) {
-                    arrayList.add(I2);
+                k F2 = d.F(new Object[0]);
+                if (F2 != null) {
+                    arrayList.add(F2);
                     break;
                 }
                 break;

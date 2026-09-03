@@ -1,79 +1,585 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Point;
+import android.graphics.drawable.Drawable;
+import android.text.Layout;
+import android.text.TextUtils;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
-import android.widget.HorizontalScrollView;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Locale;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DownloadController;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class g2 extends HorizontalScrollView {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class g2 extends FrameLayout implements DownloadController.FileDownloadProgressListener, org.telegram.ui.Cells.k9 {
+    public boolean B;
+    public int C;
+    public int D;
+    public TLRPC.PhotoSize E;
+    public String F;
+    public TLRPC.PhotoSize G;
+    public String H;
+    public TLRPC.Photo I;
+    public final int J;
+    public TL_iv.pageBlockPhoto K;
+    public TLObject L;
+    public TL_iv.PageBlock M;
+    public boolean N;
+    public MessageObject.GroupedMessagePosition O;
+    public Drawable P;
+    public boolean Q;
+    public final p70 a;
+    public final l4 b;
+    public f3 c;
+    public f3 d;
+    public final ImageReceiver e;
+    public final RadialProgress2 f;
+    public final g1 h;
+    public final int n;
+    public boolean r;
+    public int s;
+    public int v;
+    public int w;
+    public int x;
+    public int y;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ g2(FrameLayout frameLayout, Context context, int i10) {
+    public g2(Context context, p70 p70Var, l4 l4Var, int i10) {
         super(context);
-        this.a = i10;
-        this.b = frameLayout;
+        this.a = p70Var;
+        this.b = l4Var;
+        setWillNotDraw(false);
+        this.e = new ImageReceiver(this);
+        g1 g1Var = new g1(context, p70Var, l4Var, 1);
+        this.h = g1Var;
+        RadialProgress2 radialProgress2 = new RadialProgress2(this, null);
+        this.f = radialProgress2;
+        radialProgress2.d = -1;
+        radialProgress2.setColors(1711276032, 2130706432, -1, -2500135);
+        this.J = DownloadController.getInstance(((n4) p70Var).U).generateObserverTag();
+        addView(g1Var, k7.b6.c(-2.0f, -1));
+        this.n = i10;
     }
 
-    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 1:
-                int mode = View.MeasureSpec.getMode(i10);
-                if (mode != 1073741824) {
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), 0), i11);
-                    int measuredWidth = getMeasuredWidth();
-                    int i12 = ((wh.v3) this.b).H;
-                    if (mode == Integer.MIN_VALUE) {
-                        i12 = Math.min(i12, View.MeasureSpec.getSize(i10));
-                    }
-                    setMeasuredDimension(Math.min(measuredWidth, i12), getMeasuredHeight());
-                    break;
-                } else {
-                    super.onMeasure(i10, i11);
-                    break;
+    private int getIconForCurrentState() {
+        int i10 = this.C;
+        if (i10 == 0) {
+            return 2;
+        }
+        return i10 == 1 ? 3 : 4;
+    }
+
+    public final void a(TL_iv.pageBlockPhoto pageblockphoto, TLObject tLObject, boolean z4, boolean z10) {
+        this.M = null;
+        this.K = pageblockphoto;
+        this.L = tLObject;
+        this.N = z4;
+        this.r = z10;
+        this.h.setVisibility(4);
+        if (!TextUtils.isEmpty(this.K.url)) {
+            this.P = getResources().getDrawable(R.drawable.msg_instant_link);
+        }
+        TL_iv.pageBlockPhoto pageblockphoto2 = this.K;
+        if (pageblockphoto2 != null) {
+            TLRPC.Photo d = k4.d(pageblockphoto2.photo_id, this.L);
+            if (d != null) {
+                this.E = FileLoader.getClosestPhotoSizeWithSize(d.sizes, AndroidUtilities.getPhotoSize());
+            } else {
+                this.E = null;
+            }
+        } else {
+            this.E = null;
+        }
+        b(false);
+        requestLayout();
+    }
+
+    public final void b(boolean z4) {
+        int i10 = ((n4) this.a).U;
+        String attachFileName = FileLoader.getAttachFileName(this.E);
+        File pathToAttach = FileLoader.getInstance(i10).getPathToAttach(this.E, true);
+        File pathToAttach2 = FileLoader.getInstance(i10).getPathToAttach(this.E, false);
+        boolean z10 = pathToAttach.exists() || (pathToAttach2 != null && pathToAttach2.exists());
+        boolean isEmpty = TextUtils.isEmpty(attachFileName);
+        RadialProgress2 radialProgress2 = this.f;
+        if (isEmpty) {
+            radialProgress2.setIcon(4, false, false);
+            return;
+        }
+        if (z10) {
+            DownloadController.getInstance(i10).removeLoadingFileObserver(this);
+            this.C = -1;
+            radialProgress2.setIcon(getIconForCurrentState(), false, z4);
+        } else {
+            DownloadController.getInstance(i10).addLoadingFileObserver(attachFileName, null, this);
+            float f10 = 0.0f;
+            if (this.Q || FileLoader.getInstance(i10).isLoadingFile(attachFileName)) {
+                this.C = 1;
+                Float fileProgress = ImageLoader.getInstance().getFileProgress(attachFileName);
+                if (fileProgress != null) {
+                    f10 = fileProgress.floatValue();
                 }
-            default:
-                super.onMeasure(i10, i11);
-                break;
+            } else {
+                this.C = 0;
+            }
+            radialProgress2.setIcon(getIconForCurrentState(), true, z4);
+            radialProgress2.o(f10, false);
+        }
+        invalidate();
+    }
+
+    @Override // org.telegram.ui.Cells.k9
+    public final void fillTextLayoutBlocks(ArrayList arrayList) {
+        f3 f3Var = this.c;
+        if (f3Var != null) {
+            arrayList.add(f3Var);
+        }
+        f3 f3Var2 = this.d;
+        if (f3Var2 != null) {
+            arrayList.add(f3Var2);
+        }
+    }
+
+    public View getChannelCell() {
+        return this.h;
+    }
+
+    public TL_iv.pageBlockPhoto getCurrentBlock() {
+        return this.K;
+    }
+
+    public TLObject getCurrentPage() {
+        return this.L;
+    }
+
+    public ImageReceiver getImageView() {
+        return this.e;
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public int getObserverTag() {
+        return this.J;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.e.onAttachedToWindow();
+        b(false);
+        f3 f3Var = this.c;
+        if (f3Var != null) {
+            f3Var.attach(this);
+        }
+        f3 f3Var2 = this.d;
+        if (f3Var2 != null) {
+            f3Var2.attach(this);
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.e.onDetachedFromWindow();
+        DownloadController.getInstance(((n4) this.a).U).removeLoadingFileObserver(this);
+        f3 f3Var = this.c;
+        if (f3Var != null) {
+            f3Var.detach(this);
+        }
+        f3 f3Var2 = this.d;
+        if (f3Var2 != null) {
+            f3Var2.detach(this);
         }
     }
 
     @Override // android.view.View
-    public void onScrollChanged(int i10, int i11, int i12, int i13) {
-        org.telegram.ui.Cells.m9 textSelectionHelper;
-        switch (this.a) {
-            case 0:
-                super.onScrollChanged(i10, i11, i12, i13);
-                o70 o70Var = (o70) this.b;
-                if (o70Var.d != null) {
-                    o70Var.d = null;
-                    o70Var.f = null;
-                    break;
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        if (this.K == null) {
+            return;
+        }
+        ImageReceiver imageReceiver = this.e;
+        if (imageReceiver.hasBitmapImage() && imageReceiver.getCurrentAlpha() == 1.0f) {
+            canvas2 = canvas;
+        } else {
+            canvas2 = canvas;
+            canvas2.drawRect(imageReceiver.getImageX(), imageReceiver.getImageY(), imageReceiver.getImageX2(), imageReceiver.getImageY2(), n4.l1);
+        }
+        imageReceiver.draw(canvas2);
+        if (imageReceiver.getVisible()) {
+            this.f.draw(canvas2);
+        }
+        if (!TextUtils.isEmpty(this.K.url) && !(this.I instanceof org.telegram.ui.web.g2)) {
+            int measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(35.0f);
+            int imageY = (int) (imageReceiver.getImageY() + AndroidUtilities.dp(11.0f));
+            this.P.setBounds(measuredWidth, imageY, AndroidUtilities.dp(24.0f) + measuredWidth, AndroidUtilities.dp(24.0f) + imageY);
+            this.P.draw(canvas2);
+        }
+        f3 f3Var = this.c;
+        p70 p70Var = this.a;
+        int i10 = 0;
+        if (f3Var != null) {
+            canvas2.save();
+            canvas2.translate(this.s, this.v);
+            n4.v(p70Var, canvas2, this, 0);
+            this.c.draw(canvas2, this);
+            canvas2.restore();
+            i10 = 1;
+        }
+        if (this.d != null) {
+            canvas2.save();
+            canvas2.translate(this.s, this.v + this.w);
+            n4.v(p70Var, canvas2, this, i10);
+            this.d.draw(canvas2, this);
+            canvas2.restore();
+        }
+        n4.u(canvas2, p70Var, this.K, getMeasuredHeight());
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onFailedDownload(String str, boolean z4) {
+        b(false);
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setEnabled(true);
+        StringBuilder sb = new StringBuilder(LocaleController.getString(R.string.AttachPhoto));
+        if (this.c != null) {
+            sb.append(", ");
+            sb.append(this.c.d.getText());
+        }
+        accessibilityNodeInfo.setText(sb.toString());
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:108:0x017c  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x015b  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0157  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x017a  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0185  */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x0048  */
+    @Override // android.widget.FrameLayout, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onMeasure(int i10, int i11) {
+        int i12;
+        int i13;
+        TL_iv.pageBlockPhoto pageblockphoto;
+        int dp;
+        int i14;
+        int i15;
+        int i16;
+        l4 l4Var;
+        ArrayList arrayList;
+        int i17;
+        int i18;
+        int i19;
+        int i20;
+        int i21;
+        int i22;
+        int size = View.MeasureSpec.getSize(i10);
+        int i23 = this.n;
+        int i24 = 1;
+        if (i23 == 1) {
+            size = ((View) getParent()).getMeasuredWidth();
+            i13 = ((View) getParent()).getMeasuredHeight();
+        } else {
+            if (i23 != 2) {
+                i12 = size;
+                i13 = 0;
+                pageblockphoto = this.K;
+                ImageReceiver imageReceiver = this.e;
+                if (pageblockphoto != null) {
+                    this.I = k4.d(pageblockphoto.photo_id, this.L);
+                    int dp2 = AndroidUtilities.dp(48.0f);
+                    if (i23 != 0 || (i22 = this.K.level) <= 0) {
+                        this.s = AndroidUtilities.dp(18.0f);
+                        dp = i12 - AndroidUtilities.dp(36.0f);
+                        i14 = i12;
+                        i15 = 0;
+                    } else {
+                        i15 = AndroidUtilities.dp(18.0f) + AndroidUtilities.dp(i22 * 14);
+                        this.s = i15;
+                        i14 = b.t(18.0f, i15, i12);
+                        dp = i14;
+                    }
+                    TLRPC.Photo photo = this.I;
+                    l4 l4Var2 = this.b;
+                    if (photo == null || (this.E == null && !(photo instanceof org.telegram.ui.web.g2))) {
+                        i16 = i13;
+                    } else {
+                        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, 40, true);
+                        this.G = closestPhotoSizeWithSize;
+                        TLRPC.PhotoSize photoSize = this.E;
+                        if (photoSize == closestPhotoSizeWithSize) {
+                            this.G = null;
+                        }
+                        TLRPC.Photo photo2 = this.I;
+                        if (photo2 instanceof org.telegram.ui.web.g2) {
+                            org.telegram.ui.web.g2 g2Var = (org.telegram.ui.web.g2) photo2;
+                            i17 = g2Var.d;
+                            i18 = g2Var.e;
+                        } else {
+                            int i25 = photoSize.w;
+                            int i26 = photoSize.h;
+                            i17 = i25;
+                            i18 = i26;
+                        }
+                        if (i23 == 0) {
+                            float f10 = i17;
+                            float f11 = i18;
+                            i13 = (int) ((i14 / f10) * f11);
+                            if (this.M instanceof TL_iv.pageBlockCover) {
+                                i13 = Math.min(i13, i14);
+                            } else {
+                                Point point = AndroidUtilities.displaySize;
+                                int max = (int) ((Math.max(point.x, point.y) - AndroidUtilities.dp(56.0f)) * 0.9f);
+                                if (i13 > max) {
+                                    i14 = (int) ((max / f11) * f10);
+                                    i15 += ((i12 - i15) - i14) / 2;
+                                    i13 = max;
+                                }
+                            }
+                        } else if (i23 == 2) {
+                            if ((this.O.flags & 2) == 0) {
+                                i14 -= AndroidUtilities.dp(2.0f);
+                            }
+                            int dp3 = (this.O.flags & 8) == 0 ? i13 - AndroidUtilities.dp(2.0f) : i13;
+                            if (this.O.leftSpanOffset != 0) {
+                                int ceil = (int) Math.ceil((r7 * i12) / 1000.0f);
+                                i14 -= ceil;
+                                i15 += ceil;
+                            }
+                            int i27 = i14;
+                            i19 = i13;
+                            i13 = dp3;
+                            i20 = i15;
+                            i21 = i27;
+                            imageReceiver.setImageCoords(i20, (!this.r || i23 == 1 || i23 == 2 || this.K.level > 0) ? 0.0f : AndroidUtilities.dp(8.0f), i21, i13);
+                            if (i23 != 0) {
+                                this.F = null;
+                            } else {
+                                Locale locale = Locale.US;
+                                this.F = e2.c.h(i21, "_", i13);
+                            }
+                            this.H = "80_80_b";
+                            n4 n4Var = (n4) this.a;
+                            this.Q = (DownloadController.getInstance(n4Var.U).getCurrentDownloadMask() & 1) == 0;
+                            if (!this.N) {
+                                if (this.I instanceof org.telegram.ui.web.g2) {
+                                    this.Q = true;
+                                    imageReceiver.setStrippedLocation(null);
+                                    org.telegram.ui.web.h2.g((org.telegram.ui.web.g2) this.I, imageReceiver, new yt0(this, 9));
+                                } else {
+                                    File pathToAttach = FileLoader.getInstance(n4Var.U).getPathToAttach(this.E, true);
+                                    if (this.Q || pathToAttach.exists()) {
+                                        imageReceiver.setStrippedLocation(null);
+                                        imageReceiver.setImage(ImageLocation.getForPhoto(this.E, this.I), this.F, ImageLocation.getForPhoto(this.G, this.I), this.H, this.E.size, null, l4Var2 != null ? l4Var2.B : null, 1);
+                                    } else {
+                                        imageReceiver.setStrippedLocation(ImageLocation.getForPhoto(this.E, this.I));
+                                        imageReceiver.setImage(null, this.F, ImageLocation.getForPhoto(this.G, this.I), this.H, this.E.size, null, l4Var2 != null ? l4Var2.B : null, 1);
+                                    }
+                                }
+                            }
+                            float f12 = dp2;
+                            this.x = (int) e2.c.x(imageReceiver.getImageWidth(), f12, 2.0f, imageReceiver.getImageX());
+                            int imageHeight = (int) (((imageReceiver.getImageHeight() - f12) / 2.0f) + imageReceiver.getImageY());
+                            this.y = imageHeight;
+                            int i28 = this.x;
+                            this.f.q(i28, imageHeight, i28 + dp2, dp2 + imageHeight);
+                            i16 = i19;
+                        }
+                        i20 = i15;
+                        i21 = i14;
+                        i19 = i13;
+                        imageReceiver.setImageCoords(i20, (!this.r || i23 == 1 || i23 == 2 || this.K.level > 0) ? 0.0f : AndroidUtilities.dp(8.0f), i21, i13);
+                        if (i23 != 0) {
+                        }
+                        this.H = "80_80_b";
+                        n4 n4Var2 = (n4) this.a;
+                        this.Q = (DownloadController.getInstance(n4Var2.U).getCurrentDownloadMask() & 1) == 0;
+                        if (!this.N) {
+                        }
+                        float f122 = dp2;
+                        this.x = (int) e2.c.x(imageReceiver.getImageWidth(), f122, 2.0f, imageReceiver.getImageX());
+                        int imageHeight2 = (int) (((imageReceiver.getImageHeight() - f122) / 2.0f) + imageReceiver.getImageY());
+                        this.y = imageHeight2;
+                        int i282 = this.x;
+                        this.f.q(i282, imageHeight2, i282 + dp2, dp2 + imageHeight2);
+                        i16 = i19;
+                    }
+                    int imageHeight3 = (int) (imageReceiver.getImageHeight() + imageReceiver.getImageY() + AndroidUtilities.dp(8.0f));
+                    this.v = imageHeight3;
+                    if (i23 == 0) {
+                        TL_iv.pageBlockPhoto pageblockphoto2 = this.K;
+                        f3 q10 = n4.q(this.a, this, null, pageblockphoto2.caption.text, dp, imageHeight3, pageblockphoto2, this.b);
+                        this.c = q10;
+                        if (q10 != null) {
+                            int height = this.c.d.getHeight() + AndroidUtilities.dp(4.0f);
+                            this.w = height;
+                            i16 = org.telegram.messenger.y3.C(4.0f, height, i16);
+                        }
+                        int i29 = i16;
+                        TL_iv.pageBlockPhoto pageblockphoto3 = this.K;
+                        l4Var = l4Var2;
+                        f3 p10 = n4.p(this.a, this, null, pageblockphoto3.caption.credit, dp, this.v + this.w, pageblockphoto3, (l4Var2 == null || !l4Var2.D) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.kw0.a(), 0, this.b);
+                        this.d = p10;
+                        i16 = p10 != null ? this.d.d.getHeight() + AndroidUtilities.dp(4.0f) + i29 : i29;
+                    } else {
+                        l4Var = l4Var2;
+                    }
+                    if (!this.r && i23 == 0 && this.K.level <= 0) {
+                        i16 += AndroidUtilities.dp(8.0f);
+                    }
+                    i24 = (i23 == 2 || ((this.M instanceof TL_iv.pageBlockCover) && l4Var != null && (arrayList = l4Var.e) != null && arrayList.size() > 1 && (arrayList.get(1) instanceof TL_iv.pageBlockChannel))) ? i16 : AndroidUtilities.dp(8.0f) + i16;
+                    f3 f3Var = this.c;
+                    if (f3Var != null) {
+                        f3Var.s = this.s;
+                        f3Var.v = this.v;
+                    }
+                    f3 f3Var2 = this.d;
+                    if (f3Var2 != null) {
+                        f3Var2.s = this.s;
+                        f3Var2.v = this.v + this.w;
+                    }
                 }
-                break;
-            case 1:
-            default:
-                super.onScrollChanged(i10, i11, i12, i13);
-                break;
-            case 2:
-                super.onScrollChanged(i10, i11, i12, i13);
-                wh.y2 y2Var = ((wh.i5) this.b).B;
-                if (y2Var != null && (textSelectionHelper = y2Var.a.getTextSelectionHelper()) != null && textSelectionHelper.y()) {
-                    textSelectionHelper.x();
-                }
-                invalidate();
-                break;
+                g1 g1Var = this.h;
+                g1Var.measure(i10, i11);
+                g1Var.setTranslationY(imageReceiver.getImageHeight() - AndroidUtilities.dp(39.0f));
+                setMeasuredDimension(i12, i24);
+            }
+            float f13 = this.O.ph;
+            Point point2 = AndroidUtilities.displaySize;
+            i13 = (int) Math.ceil(f13 * Math.max(point2.x, point2.y) * 0.5f);
+        }
+        i12 = size;
+        pageblockphoto = this.K;
+        ImageReceiver imageReceiver2 = this.e;
+        if (pageblockphoto != null) {
+        }
+        g1 g1Var2 = this.h;
+        g1Var2.measure(i10, i11);
+        g1Var2.setTranslationY(imageReceiver2.getImageHeight() - AndroidUtilities.dp(39.0f));
+        setMeasuredDimension(i12, i24);
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onProgressDownload(String str, long j10, long j11) {
+        this.f.o(Math.min(1.0f, j10 / j11), true);
+        if (this.C != 1) {
+            b(true);
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g2(Context context, o70 o70Var) {
-        super(context);
-        this.a = 0;
-        this.b = o70Var;
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onSuccessDownload(String str) {
+        this.f.o(1.0f, true);
+        b(true);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x006d, code lost:
+    
+        if (r1 <= (org.telegram.messenger.AndroidUtilities.dp(48.0f) + r0)) goto L29;
+     */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        float x10 = motionEvent.getX();
+        float y10 = motionEvent.getY();
+        g1 g1Var = this.h;
+        int visibility = g1Var.getVisibility();
+        l4 l4Var = this.b;
+        if (visibility != 0 || y10 <= g1Var.getTranslationY() || y10 >= g1Var.getTranslationY() + AndroidUtilities.dp(39.0f)) {
+            int action = motionEvent.getAction();
+            ImageReceiver imageReceiver = this.e;
+            if (action == 0 && imageReceiver.isInsideImage(x10, y10)) {
+                if (this.C != -1) {
+                    if (x10 >= this.x && x10 <= AndroidUtilities.dp(48.0f) + r2) {
+                        if (y10 >= this.y) {
+                        }
+                    }
+                }
+                if (this.C != 0) {
+                    this.B = true;
+                }
+                this.D = 1;
+                invalidate();
+            } else if (motionEvent.getAction() == 1) {
+                if (this.B) {
+                    this.B = false;
+                    this.a.d(this.K, l4Var);
+                } else if (this.D == 1) {
+                    this.D = 0;
+                    playSoundEffect(0);
+                    if (this.E != null) {
+                        int i10 = this.C;
+                        RadialProgress2 radialProgress2 = this.f;
+                        if (i10 == 0) {
+                            radialProgress2.o(0.0f, true);
+                            imageReceiver.setImage(ImageLocation.getForPhoto(this.E, this.I), this.F, ImageLocation.getForPhoto(this.G, this.I), this.H, this.E.size, null, this.L, 1);
+                            this.C = 1;
+                            radialProgress2.setIcon(getIconForCurrentState(), true, true);
+                            invalidate();
+                        } else if (i10 == 1) {
+                            imageReceiver.cancelLoadImage();
+                            this.C = 0;
+                            radialProgress2.setIcon(getIconForCurrentState(), false, true);
+                            invalidate();
+                        }
+                    }
+                    invalidate();
+                }
+            } else if (motionEvent.getAction() == 3) {
+                this.B = false;
+                this.D = 0;
+            }
+            if (!this.B && this.D == 0) {
+                if (!n4.l(this.a, this.b, motionEvent, this, this.c, this.s, this.v)) {
+                    if (!n4.l(this.a, this.b, motionEvent, this, this.d, this.s, this.v + this.w) && !super.onTouchEvent(motionEvent)) {
+                        return false;
+                    }
+                }
+            }
+        } else if (l4Var != null && l4Var.C != null) {
+            motionEvent.getAction();
+            return true;
+        }
+        return true;
+    }
+
+    public void setParentBlock(TL_iv.PageBlock pageBlock) {
+        TL_iv.pageBlockChannel pageblockchannel;
+        this.M = pageBlock;
+        l4 l4Var = this.b;
+        if (l4Var == null || (pageblockchannel = l4Var.C) == null || !(pageBlock instanceof TL_iv.pageBlockCover)) {
+            return;
+        }
+        g1 g1Var = this.h;
+        g1Var.setBlock(pageblockchannel);
+        g1Var.setVisibility(0);
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onProgressUpload(String str, long j10, long j11, boolean z4) {
     }
 }

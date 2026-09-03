@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.os.Build;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j8 implements org.telegram.ui.ActionBar.c2, lq {
+public final /* synthetic */ class j8 implements org.telegram.ui.ActionBar.c2, iq {
     public final /* synthetic */ int a;
     public final /* synthetic */ w8 b;
 
@@ -14,13 +14,13 @@ public final /* synthetic */ class j8 implements org.telegram.ui.ActionBar.c2, l
         this.b = w8Var;
     }
 
-    @Override // org.telegram.ui.Components.lq
+    @Override // org.telegram.ui.Components.iq
     public /* synthetic */ int H0(int i10) {
         return 0;
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    public void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         switch (this.a) {
             case 0:
                 this.b.finishFragment();
@@ -31,8 +31,8 @@ public final /* synthetic */ class j8 implements org.telegram.ui.ActionBar.c2, l
         }
     }
 
-    @Override // org.telegram.ui.Components.lq
-    public void v0(int i10, int i11, boolean z4) {
+    @Override // org.telegram.ui.Components.iq
+    public void r0(int i10, int i11, boolean z4) {
         w8 w8Var = this.b;
         if (i11 == 0) {
             s8 s8Var = w8Var.V;
@@ -81,11 +81,11 @@ public final /* synthetic */ class j8 implements org.telegram.ui.ActionBar.c2, l
         w8Var.a.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.lq
+    @Override // org.telegram.ui.Components.iq
     public /* synthetic */ void k(boolean z4) {
     }
 
-    @Override // org.telegram.ui.Components.lq
-    public /* synthetic */ void x() {
+    @Override // org.telegram.ui.Components.iq
+    public /* synthetic */ void z() {
     }
 }

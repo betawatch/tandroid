@@ -10,7 +10,7 @@ import android.util.Log;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import i9.u;
-import j7.x6;
+import j7.z6;
 import java.lang.ref.SoftReference;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -21,14 +21,14 @@ import org.telegram.ui.ActionBar.v;
 import x5.j;
 import x5.k;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
     public static SoftReference a;
 
     public static int a(Context context, Intent intent) {
         int i10;
-        Task e6;
+        Task e;
         int i11 = 500;
         if (intent.getExtras() == null) {
             return 500;
@@ -38,7 +38,7 @@ public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
             stringExtra = intent.getStringExtra("message_id");
         }
         if (TextUtils.isEmpty(stringExtra)) {
-            e6 = Tasks.forResult(null);
+            e = Tasks.forResult(null);
         } else {
             Bundle bundle = new Bundle();
             String stringExtra2 = intent.getStringExtra("google.message_id");
@@ -56,17 +56,17 @@ public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
                 i10 = d.a;
                 d.a = i10 + 1;
             }
-            e6 = d.e(new j(i10, 2, bundle, 0));
+            e = d.e(new j(i10, 2, bundle, 0));
         }
         try {
             i11 = ((Integer) Tasks.await(new com.google.firebase.messaging.j(context).b(intent))).intValue();
-        } catch (InterruptedException | ExecutionException e10) {
-            Log.e("FirebaseMessaging", "Failed to send message to service.", e10);
+        } catch (InterruptedException | ExecutionException e6) {
+            Log.e("FirebaseMessaging", "Failed to send message to service.", e6);
         }
         try {
-            Tasks.await(e6, TimeUnit.SECONDS.toMillis(1L), TimeUnit.MILLISECONDS);
-        } catch (InterruptedException | ExecutionException | TimeoutException e11) {
-            Log.w("CloudMessagingReceiver", "Message ack failed: ".concat(e11.toString()));
+            Tasks.await(e, TimeUnit.SECONDS.toMillis(1L), TimeUnit.MILLISECONDS);
+        } catch (InterruptedException | ExecutionException | TimeoutException e10) {
+            Log.w("CloudMessagingReceiver", "Message ack failed: ".concat(e10.toString()));
         }
         return i11;
     }
@@ -92,10 +92,10 @@ public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
             return 500;
         }
         Intent putExtras = new Intent("com.google.firebase.messaging.NOTIFICATION_DISMISS").putExtras(extras);
-        if (!x6.b(putExtras)) {
+        if (!z6.b(putExtras)) {
             return -1;
         }
-        x6.a("_nd", putExtras.getExtras());
+        z6.a("_nd", putExtras.getExtras());
         return -1;
     }
 

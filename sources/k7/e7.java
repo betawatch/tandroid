@@ -1,6 +1,6 @@
 package k7;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class e7 {
     public final Long a;
@@ -11,13 +11,13 @@ public final class e7 {
     public final Integer f;
     public final Integer g;
 
-    public /* synthetic */ e7(m.r3 r3Var) {
-        this.a = (Long) r3Var.a;
-        this.b = (d7) r3Var.b;
-        this.c = (y6) r3Var.c;
-        this.d = (Integer) r3Var.d;
-        this.e = (Integer) r3Var.e;
-        this.f = (Integer) r3Var.f;
-        this.g = (Integer) r3Var.h;
+    public /* synthetic */ e7(m.s3 s3Var) {
+        this.a = (Long) s3Var.a;
+        this.b = (d7) s3Var.b;
+        this.c = (y6) s3Var.c;
+        this.d = (Integer) s3Var.d;
+        this.e = (Integer) s3Var.e;
+        this.f = (Integer) s3Var.f;
+        this.g = (Integer) s3Var.h;
     }
 }

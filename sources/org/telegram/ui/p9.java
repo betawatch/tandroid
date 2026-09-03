@@ -1,35 +1,28 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p9 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class p9 implements o1.g {
     public final /* synthetic */ int a;
-    public final /* synthetic */ v9 b;
+    public final /* synthetic */ x9 b;
 
-    public /* synthetic */ p9(v9 v9Var, int i10) {
+    public /* synthetic */ p9(x9 x9Var, int i10) {
         this.a = i10;
-        this.b = v9Var;
+        this.b = x9Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // o1.g
+    public final void a(o1.h hVar, float f10, float f11) {
         switch (this.a) {
             case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                v9 v9Var = this.b;
-                v9Var.U = floatValue;
-                v9Var.a.setAlpha(1.0f - floatValue);
-                if (v9Var.S == 3) {
-                    v9Var.b.setAlpha(1.0f - v9Var.U);
-                }
-                v9Var.r.setAlpha(1.0f - v9Var.U);
-                v9Var.v = (v9Var.U * 0.25f) + 0.5f;
-                v9Var.fragmentView.invalidate();
+                x9 x9Var = this.b;
+                x9Var.y = f10 / 500.0f;
+                x9Var.fragmentView.invalidate();
                 break;
             default:
-                this.b.r.invalidate();
+                x9 x9Var2 = this.b;
+                x9Var2.X = x9Var2.J ? f10 / 500.0f : 1.0f - (f10 / 500.0f);
+                x9Var2.fragmentView.invalidate();
                 break;
         }
     }

@@ -2,37 +2,37 @@ package org.telegram.ui.ActionBar;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q2 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ h3 b;
+    public final /* synthetic */ g3 b;
 
-    public /* synthetic */ q2(h3 h3Var, int i10) {
+    public /* synthetic */ q2(g3 g3Var, int i10) {
         this.a = i10;
-        this.b = h3Var;
+        this.b = g3Var;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                h3 h3Var = this.b;
-                h3Var.getClass();
-                h3Var.navigationBarAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                f3 f3Var = h3Var.container;
-                if (f3Var != null) {
-                    f3Var.invalidate();
+                g3 g3Var = this.b;
+                g3Var.getClass();
+                g3Var.navigationBarAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                e3 e3Var = g3Var.container;
+                if (e3Var != null) {
+                    e3Var.invalidate();
                     break;
                 }
                 break;
             case 1:
-                h3 h3Var2 = this.b;
-                h3Var2.getClass();
-                h3Var2.navigationBarAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                f3 f3Var2 = h3Var2.container;
-                if (f3Var2 != null) {
-                    f3Var2.invalidate();
+                g3 g3Var2 = this.b;
+                g3Var2.getClass();
+                g3Var2.navigationBarAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                e3 e3Var2 = g3Var2.container;
+                if (e3Var2 != null) {
+                    e3Var2.invalidate();
                     break;
                 }
                 break;
@@ -46,13 +46,13 @@ public final /* synthetic */ class q2 implements ValueAnimator.AnimatorUpdateLis
                 this.b.onContainerViewTranslation();
                 break;
             case 5:
-                h3.j(this.b, valueAnimator);
+                g3.j(this.b, valueAnimator);
                 break;
             case 6:
                 this.b.onContainerViewTranslation();
                 break;
             default:
-                h3.i(this.b, valueAnimator);
+                g3.i(this.b, valueAnimator);
                 break;
         }
     }

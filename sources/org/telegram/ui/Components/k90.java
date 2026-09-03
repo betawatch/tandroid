@@ -1,393 +1,93 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.CornerPathEffect;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
-import android.os.SystemClock;
+import android.text.style.ReplacementSpan;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class k90 extends Drawable {
-    public final float[] A;
-    public final RectF B;
-    public boolean C;
-    public int D;
-    public Paint E;
-    public LinearGradient F;
-    public Matrix G;
-    public int H;
-    public Paint I;
-    public LinearGradient J;
-    public Matrix K;
-    public final org.telegram.ui.ActionBar.g6 a;
-    public long b;
-    public long c;
-    public LinearGradient d;
-    public LinearGradient e;
-    public final Matrix f;
-    public final Matrix g;
-    public int h;
-    public int i;
-    public int j;
-    public int k;
-    public int l;
-    public int m;
+public final class k90 extends ReplacementSpan {
+    public final int a;
+    public View b;
+    public final j90 c;
+    public final int d;
+    public float e;
+    public float f;
+    public float h;
     public boolean n;
-    public Integer o;
-    public Integer p;
-    public Integer q;
-    public Integer r;
-    public int s;
-    public float t;
-    public float u;
-    public final Paint v;
-    public final Paint w;
-    public Path x;
-    public final Path y;
-    public Rect z;
 
-    public k90(org.telegram.ui.ActionBar.g6 g6Var) {
-        this();
-        this.a = g6Var;
+    public k90(int i10, View view) {
+        this(view, i10, AndroidUtilities.dp(2.0f), null);
     }
 
-    public final void a() {
-        if (b() || c()) {
-            return;
-        }
-        this.c = SystemClock.elapsedRealtime();
+    public final void a(int i10, int i11) {
+        Integer valueOf = Integer.valueOf(i10);
+        j90 j90Var = this.c;
+        j90Var.o = valueOf;
+        j90Var.p = Integer.valueOf(i11);
     }
 
-    public final boolean b() {
-        return this.c > 0 && ((float) (SystemClock.elapsedRealtime() - this.c)) >= 320.0f;
-    }
-
-    public final boolean c() {
-        return this.c > 0 && ((float) (SystemClock.elapsedRealtime() - this.c)) < 320.0f;
-    }
-
-    public final void d(RectF rectF) {
-        setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-        this.z = null;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0217  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x02db  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x02fe  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x0303  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x034f  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x039a  */
-    /* JADX WARN: Removed duplicated region for block: B:77:? A[RETURN, SYNTHETIC] */
-    @Override // android.graphics.drawable.Drawable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void draw(Canvas canvas) {
-        boolean z4;
-        Path path;
-        if (b()) {
-            return;
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f10, int i12, int i13, int i14, Paint paint) {
+        View view;
+        boolean z4 = this.n;
+        int i15 = this.a;
+        if (z4 && (view = this.b) != null && view.getMeasuredWidth() > 0) {
+            i15 = ((this.b.getMeasuredWidth() - this.b.getPaddingLeft()) - this.b.getPaddingRight()) - i15;
         }
-        Rect bounds = getBounds();
-        Paint paint = this.v;
-        if (paint.getAlpha() <= 0) {
-            return;
+        float f11 = this.f;
+        j90 j90Var = this.c;
+        if (f11 > 0.0f) {
+            float f12 = (i12 + i14) / 2.0f;
+            int i16 = (int) f10;
+            float f13 = f11 / 2.0f;
+            j90Var.setBounds(i16, (int) (f12 - f13), i15 + i16, (int) (f13 + f12));
+        } else {
+            int i17 = (int) f10;
+            float w10 = e2.c.w(1.0f, this.e, org.telegram.messenger.y3.B(2.0f, i14, i12) / 2.0f, i12);
+            float f14 = this.d;
+            j90Var.setBounds(i17, (int) (w10 + f14), i15 + i17, (int) (((i14 - AndroidUtilities.dp(2.0f)) - ((1.0f - this.e) * (org.telegram.messenger.y3.B(2.0f, i14, i12) / 2.0f))) + f14));
         }
-        int width = bounds.width();
-        if (width <= 0) {
-            width = AndroidUtilities.dp(200.0f);
-        }
-        int min = (int) (Math.min(AndroidUtilities.dp(400.0f), width) * this.t);
-        Integer num = this.o;
-        org.telegram.ui.ActionBar.g6 g6Var = this.a;
-        int intValue = num != null ? num.intValue() : org.telegram.ui.ActionBar.k6.v0(this.l, g6Var);
-        Integer num2 = this.p;
-        int intValue2 = num2 != null ? num2.intValue() : org.telegram.ui.ActionBar.k6.v0(this.m, g6Var);
-        Integer num3 = this.q;
-        int intValue3 = num3 != null ? num3.intValue() : org.telegram.ui.ActionBar.k6.v0(this.l, g6Var);
-        Integer num4 = this.r;
-        int intValue4 = num4 != null ? num4.intValue() : org.telegram.ui.ActionBar.k6.v0(this.m, g6Var);
-        LinearGradient linearGradient = this.d;
-        Matrix matrix = this.g;
-        Matrix matrix2 = this.f;
-        Paint paint2 = this.w;
-        if (linearGradient == null || min != this.s || intValue != this.h || intValue2 != this.i || intValue3 != this.j || intValue4 != this.k) {
-            this.s = min;
-            this.h = intValue;
-            this.i = intValue2;
-            float f10 = this.s;
-            int i10 = this.h;
-            Shader.TileMode tileMode = Shader.TileMode.REPEAT;
-            LinearGradient linearGradient2 = new LinearGradient(0.0f, 0.0f, f10, 0.0f, new int[]{i10, this.i, i10}, new float[]{0.0f, 0.67f, 1.0f}, tileMode);
-            this.d = linearGradient2;
-            linearGradient2.setLocalMatrix(matrix2);
-            paint.setShader(this.d);
-            this.j = intValue3;
-            this.k = intValue4;
-            float f11 = this.s;
-            int i11 = this.j;
-            LinearGradient linearGradient3 = new LinearGradient(0.0f, 0.0f, f11, 0.0f, new int[]{i11, i11, this.k, i11}, new float[]{0.0f, 0.4f, 0.67f, 1.0f}, tileMode);
-            this.e = linearGradient3;
-            linearGradient3.setLocalMatrix(matrix);
-            paint2.setShader(this.e);
-        }
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (this.b < 0) {
-            this.b = elapsedRealtime;
-        }
-        float pow = ((float) Math.pow((((elapsedRealtime - this.b) / 2000.0f) * this.u) / 4.0f, 0.8500000238418579d)) * 4.0f * AndroidUtilities.density;
-        float f12 = this.s;
-        float f13 = (pow * f12) % f12;
-        float f14 = (elapsedRealtime - this.b) / 550.0f;
-        float interpolation = this.c > 0 ? 1.0f - pr.g.getInterpolation(Math.min(1.0f, (elapsedRealtime - r8) / 320.0f)) : 0.0f;
-        boolean c3 = c();
-        boolean z10 = false;
-        RectF rectF = this.B;
-        if (c3) {
-            int max = Math.max(AndroidUtilities.dp(200.0f), bounds.width() / 3);
-            if (interpolation < 1.0f) {
-                if (this.I == null) {
-                    this.I = new Paint(1);
-                    this.H = max;
-                    this.J = new LinearGradient(0.0f, 0.0f, max, 0.0f, new int[]{-1, 16777215}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-                    Matrix matrix3 = new Matrix();
-                    this.K = matrix3;
-                    this.J.setLocalMatrix(matrix3);
-                    this.I.setShader(this.J);
-                    this.I.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-                } else if (this.H != max) {
-                    this.H = max;
-                    LinearGradient linearGradient4 = new LinearGradient(0.0f, 0.0f, max, 0.0f, new int[]{-1, 16777215}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-                    this.J = linearGradient4;
-                    linearGradient4.setLocalMatrix(this.K);
-                    this.I.setShader(this.J);
-                }
-                rectF.set(bounds);
-                rectF.inset(-paint2.getStrokeWidth(), -paint2.getStrokeWidth());
-                canvas.saveLayerAlpha(rectF, 255, 31);
-                z4 = true;
-                if (this.C) {
-                    int max2 = Math.max(AndroidUtilities.dp(200.0f), bounds.width() / 3);
-                    if (f14 < 1.0f) {
-                        if (this.E == null) {
-                            this.E = new Paint(1);
-                            this.D = max2;
-                            this.F = new LinearGradient(0.0f, 0.0f, max2, 0.0f, new int[]{16777215, -1}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-                            Matrix matrix4 = new Matrix();
-                            this.G = matrix4;
-                            this.F.setLocalMatrix(matrix4);
-                            this.E.setShader(this.F);
-                            this.E.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-                        } else if (this.D != max2) {
-                            this.D = max2;
-                            LinearGradient linearGradient5 = new LinearGradient(0.0f, 0.0f, max2, 0.0f, new int[]{16777215, -1}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-                            this.F = linearGradient5;
-                            linearGradient5.setLocalMatrix(this.G);
-                            this.E.setShader(this.F);
-                        }
-                        rectF.set(bounds);
-                        rectF.inset(-paint2.getStrokeWidth(), -paint2.getStrokeWidth());
-                        canvas.saveLayerAlpha(rectF, 255, 31);
-                        z10 = true;
-                    }
-                }
-                matrix2.setTranslate(f13, 0.0f);
-                this.d.setLocalMatrix(matrix2);
-                matrix.setTranslate(f13, 0.0f);
-                this.e.setLocalMatrix(matrix);
-                path = this.x;
-                if (path == null) {
-                    Rect rect = this.z;
-                    Path path2 = this.y;
-                    if (rect == null || !rect.equals(bounds)) {
-                        path2.rewind();
-                        this.z = bounds;
-                        rectF.set(bounds);
-                        path2.addRoundRect(rectF, this.A, Path.Direction.CW);
-                    }
-                    path = path2;
-                }
-                canvas.drawPath(path, paint);
-                if (this.n) {
-                    canvas.drawPath(path, paint2);
-                }
-                if (z10) {
-                    canvas.save();
-                    int width2 = bounds.width() + this.D;
-                    this.G.setTranslate(bounds.left + ((f14 * (width2 + r2)) - this.D), 0.0f);
-                    this.F.setLocalMatrix(this.G);
-                    int strokeWidth = (int) paint2.getStrokeWidth();
-                    canvas.drawRect(bounds.left - strokeWidth, bounds.top - strokeWidth, bounds.right + strokeWidth, bounds.bottom + strokeWidth, this.E);
-                    canvas.restore();
-                    canvas.restore();
-                }
-                if (z4) {
-                    canvas.save();
-                    int width3 = bounds.width() + this.H;
-                    this.K.setTranslate(bounds.right - ((interpolation * (width3 + r1)) - this.H), 0.0f);
-                    this.J.setLocalMatrix(this.K);
-                    int strokeWidth2 = (int) paint2.getStrokeWidth();
-                    canvas.drawRect(bounds.left - strokeWidth2, bounds.top - strokeWidth2, bounds.right + strokeWidth2, bounds.bottom + strokeWidth2, this.I);
-                    canvas.restore();
-                    canvas.restore();
-                }
-                if (b()) {
-                    invalidateSelf();
-                    return;
-                }
-                return;
-            }
-        }
-        z4 = false;
-        if (this.C) {
-        }
-        matrix2.setTranslate(f13, 0.0f);
-        this.d.setLocalMatrix(matrix2);
-        matrix.setTranslate(f13, 0.0f);
-        this.e.setLocalMatrix(matrix);
-        path = this.x;
-        if (path == null) {
-        }
-        canvas.drawPath(path, paint);
-        if (this.n) {
-        }
-        if (z10) {
-        }
-        if (z4) {
-        }
-        if (b()) {
+        j90Var.setAlpha((int) ((paint == null ? 255 : paint.getAlpha()) * this.h));
+        j90Var.draw(canvas);
+        View view2 = this.b;
+        if (view2 != null) {
+            view2.invalidate();
         }
     }
 
-    public final void e(int i10, int i11) {
-        this.o = Integer.valueOf(i10);
-        this.p = Integer.valueOf(i11);
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        View view;
+        Paint.FontMetrics fontMetrics = paint.getFontMetrics();
+        if (fontMetricsInt != null) {
+            fontMetricsInt.ascent = (int) fontMetrics.ascent;
+            fontMetricsInt.bottom = (int) fontMetrics.bottom;
+            fontMetricsInt.descent = (int) fontMetrics.descent;
+            fontMetricsInt.leading = (int) fontMetrics.leading;
+            fontMetricsInt.top = (int) fontMetrics.top;
+        }
+        j90 j90Var = this.c;
+        if (j90Var.o == null && j90Var.p == null) {
+            j90Var.e(org.telegram.ui.ActionBar.j6.l1(0.1f, paint.getColor()), org.telegram.ui.ActionBar.j6.l1(0.25f, paint.getColor()));
+        }
+        boolean z4 = this.n;
+        int i12 = this.a;
+        return (!z4 || (view = this.b) == null || view.getMeasuredWidth() <= 0) ? i12 : ((this.b.getMeasuredWidth() - this.b.getPaddingLeft()) - this.b.getPaddingRight()) - i12;
+    }
+
+    public k90(View view, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
+        this.e = 1.0f;
+        this.f = -1.0f;
+        this.h = 1.0f;
         this.n = false;
-    }
-
-    public final void f(int i10, int i11, int i12, int i13) {
-        this.o = Integer.valueOf(i10);
-        this.p = Integer.valueOf(i11);
-        this.n = true;
-        this.q = Integer.valueOf(i12);
-        this.r = Integer.valueOf(i13);
-    }
-
-    public final void g() {
-        this.t = 2.0f;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    public final void h(float f10) {
-        if (this.x != null) {
-            this.v.setPathEffect(new CornerPathEffect(f10));
-            this.w.setPathEffect(new CornerPathEffect(f10));
-            return;
-        }
-        float[] fArr = this.A;
-        boolean z4 = (fArr[0] == f10 && fArr[2] == f10 && fArr[4] == f10 && fArr[6] == f10) ? false : true;
-        fArr[1] = f10;
-        fArr[0] = f10;
-        fArr[3] = f10;
-        fArr[2] = f10;
-        fArr[5] = f10;
-        fArr[4] = f10;
-        fArr[7] = f10;
-        fArr[6] = f10;
-        if (this.z == null || !z4) {
-            return;
-        }
-        Path path = this.y;
-        path.rewind();
-        Rect rect = this.z;
-        RectF rectF = this.B;
-        rectF.set(rect);
-        path.addRoundRect(rectF, fArr, Path.Direction.CW);
-    }
-
-    public final void i(float[] fArr) {
-        if (fArr == null || fArr.length != 8) {
-            return;
-        }
-        boolean z4 = false;
-        for (int i10 = 0; i10 < 8; i10++) {
-            float[] fArr2 = this.A;
-            float f10 = fArr2[i10];
-            float f11 = fArr[i10];
-            if (f10 != f11) {
-                fArr2[i10] = f11;
-                z4 = true;
-            }
-        }
-        if (this.z == null || !z4) {
-            return;
-        }
-        Path path = this.y;
-        path.rewind();
-        Rect rect = this.z;
-        RectF rectF = this.B;
-        rectF.set(rect);
-        path.addRoundRect(rectF, fArr, Path.Direction.CW);
-    }
-
-    public final void j(float f10) {
-        h(AndroidUtilities.dp(f10));
-    }
-
-    public final void k() {
-        Path path = this.x;
-        if (path != null) {
-            RectF rectF = AndroidUtilities.rectTmp;
-            path.computeBounds(rectF, false);
-            d(rectF);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.v.setAlpha(i10);
-        this.w.setAlpha(i10);
-        if (i10 > 0) {
-            invalidateSelf();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.v.setColorFilter(colorFilter);
-    }
-
-    public k90() {
-        this.b = -1L;
-        this.c = -1L;
-        this.f = new Matrix();
-        this.g = new Matrix();
-        this.l = org.telegram.ui.ActionBar.k6.h5;
-        this.m = org.telegram.ui.ActionBar.k6.i5;
-        this.t = 1.0f;
-        this.u = 1.0f;
-        this.v = new Paint(1);
-        Paint paint = new Paint(1);
-        this.w = paint;
-        this.y = new Path();
-        this.A = new float[8];
-        this.B = new RectF();
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(AndroidUtilities.density > 2.0f ? 2.0f : 1.0f);
+        this.b = view;
+        this.a = i10;
+        this.d = i11;
+        j90 j90Var = new j90(f6Var);
+        this.c = j90Var;
+        j90Var.j(4.0f);
     }
 }

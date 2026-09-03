@@ -5,18 +5,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public abstract class eb extends nb {
     private db button;
     private int childrenMeasuredWidth;
-    org.telegram.ui.ActionBar.g6 resourcesProvider;
+    org.telegram.ui.ActionBar.f6 resourcesProvider;
     public bc timerView;
     private boolean wrapWidth;
 
-    public eb(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, g6Var);
-        this.resourcesProvider = g6Var;
+    public eb(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var);
+        this.resourcesProvider = f6Var;
     }
 
     public db getButton() {
@@ -58,7 +58,7 @@ public abstract class eb extends nb {
         this.button = dbVar;
         if (dbVar != null) {
             addCallback(dbVar);
-            addView(dbVar, 0, k7.c6.h(-2.0f, -2.0f, 8388629));
+            addView(dbVar, 0, k7.b6.h(-2.0f, -2.0f, 8388629));
         }
     }
 
@@ -66,7 +66,7 @@ public abstract class eb extends nb {
         bc bcVar = new bc(getContext(), this.resourcesProvider);
         this.timerView = bcVar;
         bcVar.b = 5000L;
-        addView(bcVar, k7.c6.i(20.0f, 20.0f, 8388627, 21.0f, 0.0f, 21.0f, 0.0f));
+        addView(bcVar, k7.b6.i(20.0f, 20.0f, 8388627, 21.0f, 0.0f, 21.0f, 0.0f));
     }
 
     public void setWrapWidth() {

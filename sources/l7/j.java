@@ -4,7 +4,7 @@ import java.util.AbstractSet;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class j extends AbstractSet {
     public final /* synthetic */ int a;
@@ -38,11 +38,11 @@ public final class j extends AbstractSet {
                 }
                 if (obj instanceof Map.Entry) {
                     Map.Entry entry = (Map.Entry) obj;
-                    int e6 = nVar.e(entry.getKey());
-                    if (e6 != -1) {
+                    int e = nVar.e(entry.getKey());
+                    if (e != -1) {
                         Object[] objArr = nVar.d;
                         objArr.getClass();
-                        if (k7.j.a(objArr[e6], entry.getValue())) {
+                        if (k7.i.a(objArr[e], entry.getValue())) {
                             return true;
                         }
                     }
@@ -90,9 +90,9 @@ public final class j extends AbstractSet {
                         objArr.getClass();
                         Object[] objArr2 = nVar.d;
                         objArr2.getClass();
-                        int b10 = j7.g9.b(key, value, d, obj2, iArr, objArr, objArr2);
-                        if (b10 != -1) {
-                            nVar.b(b10, d);
+                        int a10 = j7.y8.a(key, value, d, obj2, iArr, objArr, objArr2);
+                        if (a10 != -1) {
+                            nVar.b(a10, d);
                             nVar.f--;
                             nVar.e += 32;
                             return true;
@@ -102,8 +102,8 @@ public final class j extends AbstractSet {
                 return false;
             default:
                 n nVar2 = this.b;
-                Map a10 = nVar2.a();
-                return a10 != null ? a10.keySet().remove(obj) : nVar2.g(obj) != n.s;
+                Map a11 = nVar2.a();
+                return a11 != null ? a11.keySet().remove(obj) : nVar2.g(obj) != n.s;
         }
     }
 

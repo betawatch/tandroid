@@ -12,7 +12,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public class vu0 extends su0 {
     public boolean B;
@@ -20,7 +20,7 @@ public class vu0 extends su0 {
     public final boolean h;
     public final int n;
     public final ArrayList r;
-    public oh.l6 s;
+    public nh.l6 s;
     public final int v;
     public final tu0 w;
     public boolean x;
@@ -30,33 +30,33 @@ public class vu0 extends su0 {
         this(yu0Var, context, 0, z4);
     }
 
-    @Override // org.telegram.ui.Components.su0, org.telegram.ui.Components.rl0
-    public final boolean D(f2.m1 m1Var) {
+    @Override // org.telegram.ui.Components.su0, org.telegram.ui.Components.ql0
+    public final boolean D(f2.l1 l1Var) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.su0, org.telegram.ui.Components.cl0
+    @Override // org.telegram.ui.Components.su0, org.telegram.ui.Components.bl0
     public final String F(int i10) {
         MessageObject messageObject;
         TL_stories.StoryItem storyItem;
-        oh.l6 l6Var = this.s;
+        nh.l6 l6Var = this.s;
         if (l6Var == null || i10 < 0 || i10 >= l6Var.i.size() || (messageObject = (MessageObject) this.s.i.get(i10)) == null || (storyItem = messageObject.storyItem) == null) {
             return null;
         }
         return LocaleController.formatYearMont(storyItem.date, true);
     }
 
-    @Override // org.telegram.ui.Components.su0, org.telegram.ui.Components.cl0
+    @Override // org.telegram.ui.Components.su0, org.telegram.ui.Components.bl0
     public final void I() {
         this.C.c1(this.h ? 9 : 8, true);
     }
 
     public final boolean M(int i10) {
-        oh.l6 l6Var;
+        nh.l6 l6Var;
         if (this.h || (l6Var = this.s) == null) {
             return false;
         }
-        if (l6Var instanceof oh.d6) {
+        if (l6Var instanceof nh.d6) {
             yu0 yu0Var = this.C;
             TLRPC.User user = MessagesController.getInstance(yu0Var.s1.getCurrentAccount()).getUser(Long.valueOf(yu0Var.g1));
             return user != null && user.bot && user.bot_has_main_app && user.bot_can_edit;
@@ -65,7 +65,7 @@ public class vu0 extends su0 {
             return false;
         }
         MessageObject messageObject = (MessageObject) this.s.i.get(i10);
-        oh.l6 l6Var2 = this.s;
+        nh.l6 l6Var2 = this.s;
         if (l6Var2.f > 0) {
             return true;
         }
@@ -77,7 +77,7 @@ public class vu0 extends su0 {
         qt0 qt0Var2;
         qt0 qt0Var3;
         qt0 qt0Var4;
-        oh.l6 l6Var = this.s;
+        nh.l6 l6Var = this.s;
         if (l6Var == null || this.h) {
             return;
         }
@@ -118,7 +118,7 @@ public class vu0 extends su0 {
         this.s.p(Math.min(100, Math.max(1, O / 2) * O * O), false);
     }
 
-    @Override // org.telegram.ui.Components.su0, f2.p0
+    @Override // org.telegram.ui.Components.su0, f2.o0
     public final int h() {
         if (this.s == null) {
             return 0;
@@ -126,17 +126,17 @@ public class vu0 extends su0 {
         return this.r.size() + ((this.s.l() && this.C.i0()) ? 0 : this.s.g());
     }
 
-    @Override // org.telegram.ui.Components.su0, f2.p0
+    @Override // org.telegram.ui.Components.su0, f2.o0
     public final int j(int i10) {
         return 19;
     }
 
-    @Override // org.telegram.ui.Components.su0, f2.p0
+    @Override // org.telegram.ui.Components.su0, f2.o0
     public final int k() {
         return h();
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public void l() {
         if (this.s != null) {
             yu0 yu0Var = this.C;
@@ -153,17 +153,17 @@ public class vu0 extends su0 {
         N();
     }
 
-    @Override // org.telegram.ui.Components.su0, f2.p0
-    public final void v(f2.m1 m1Var, int i10) {
-        if (this.s != null && m1Var.f == 19) {
-            View view = m1Var.a;
-            if (view instanceof org.telegram.ui.Cells.r7) {
-                org.telegram.ui.Cells.r7 r7Var = (org.telegram.ui.Cells.r7) view;
-                r7Var.a0 = true;
+    @Override // org.telegram.ui.Components.su0, f2.o0
+    public final void v(f2.l1 l1Var, int i10) {
+        if (this.s != null && l1Var.f == 19) {
+            View view = l1Var.a;
+            if (view instanceof org.telegram.ui.Cells.q7) {
+                org.telegram.ui.Cells.q7 q7Var = (org.telegram.ui.Cells.q7) view;
+                q7Var.a0 = true;
                 ArrayList arrayList = this.r;
                 if (i10 >= 0 && i10 < arrayList.size()) {
-                    oh.s6 s6Var = (oh.s6) arrayList.get(i10);
-                    r7Var.c0 = false;
+                    nh.s6 s6Var = (nh.s6) arrayList.get(i10);
+                    q7Var.c0 = false;
                     if (s6Var.H == null) {
                         TL_stories.TL_storyItem tL_storyItem = new TL_stories.TL_storyItem();
                         long j10 = s6Var.a;
@@ -175,41 +175,41 @@ public class vu0 extends su0 {
                         s6Var.H = uu0Var;
                         uu0Var.uploadingStory = s6Var;
                     }
-                    r7Var.k(s6Var.H, O(), false);
-                    r7Var.a0 = true;
-                    r7Var.setReorder(false);
-                    r7Var.i(false, false);
+                    q7Var.k(s6Var.H, O(), false);
+                    q7Var.a0 = true;
+                    q7Var.setReorder(false);
+                    q7Var.i(false, false);
                     return;
                 }
                 int size = i10 - arrayList.size();
                 if (size < 0 || size >= this.s.i.size()) {
-                    r7Var.c0 = false;
-                    r7Var.k(null, O(), false);
-                    r7Var.a0 = true;
+                    q7Var.c0 = false;
+                    q7Var.k(null, O(), false);
+                    q7Var.a0 = true;
                     return;
                 }
                 MessageObject messageObject = (MessageObject) this.s.i.get(size);
-                r7Var.c0 = messageObject != null && this.s.m(messageObject.getId());
+                q7Var.c0 = messageObject != null && this.s.m(messageObject.getId());
                 yu0 yu0Var = this.C;
-                r7Var.setReorder(yu0Var.r0() || r7Var.c0);
-                r7Var.h = yu0Var.t0();
-                r7Var.k(messageObject, O(), false);
+                q7Var.setReorder(yu0Var.r0() || q7Var.c0);
+                q7Var.h = yu0Var.t0();
+                q7Var.k(messageObject, O(), false);
                 if (!yu0Var.z1 || messageObject == null) {
-                    r7Var.i(false, false);
+                    q7Var.i(false, false);
                 } else {
-                    r7Var.i(yu0Var.W0[(messageObject.getDialogId() > yu0Var.g1 ? 1 : (messageObject.getDialogId() == yu0Var.g1 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(messageObject.getId()) >= 0, true);
+                    q7Var.i(yu0Var.W0[(messageObject.getDialogId() > yu0Var.g1 ? 1 : (messageObject.getDialogId() == yu0Var.g1 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(messageObject.getId()) >= 0, true);
                 }
-                r7Var.l(this.x, false);
+                q7Var.l(this.x, false);
             }
         }
     }
 
-    @Override // org.telegram.ui.Components.su0, f2.p0
-    public final f2.m1 x(ViewGroup viewGroup, int i10) {
-        f2.m1 x10 = super.x(viewGroup, i10);
+    @Override // org.telegram.ui.Components.su0, f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+        f2.l1 x10 = super.x(viewGroup, i10);
         View view = x10.a;
-        if (view instanceof org.telegram.ui.Cells.r7) {
-            ((org.telegram.ui.Cells.r7) view).a0 = true;
+        if (view instanceof org.telegram.ui.Cells.q7) {
+            ((org.telegram.ui.Cells.q7) view).a0 = true;
         }
         return x10;
     }
@@ -228,12 +228,12 @@ public class vu0 extends su0 {
         int currentAccount = p2Var.getCurrentAccount();
         if (!TextUtils.isEmpty(yu0Var.getStoriesHashtag())) {
             if (yu0Var.Q1 == null) {
-                yu0Var.Q1 = new oh.f6(currentAccount, TextUtils.isEmpty(yu0Var.getStoriesHashtagUsername()) ? null : yu0Var.getStoriesHashtagUsername(), yu0Var.getStoriesHashtag());
+                yu0Var.Q1 = new nh.f6(currentAccount, TextUtils.isEmpty(yu0Var.getStoriesHashtagUsername()) ? null : yu0Var.getStoriesHashtagUsername(), yu0Var.getStoriesHashtag());
             }
             this.s = yu0Var.Q1;
         } else if (yu0Var.getStoriesArea() != null) {
             if (yu0Var.Q1 == null) {
-                yu0Var.Q1 = new oh.f6(currentAccount, yu0Var.getStoriesArea());
+                yu0Var.Q1 = new nh.f6(currentAccount, yu0Var.getStoriesArea());
             }
             this.s = yu0Var.Q1;
         } else if ((!z4 || yu0Var.v0()) && (z4 || !yu0Var.q0())) {
@@ -246,7 +246,7 @@ public class vu0 extends su0 {
         } else {
             this.s = null;
         }
-        oh.l6 l6Var = this.s;
+        nh.l6 l6Var = this.s;
         if (l6Var != null) {
             this.v = l6Var.o();
             this.w = new tu0(this, p2Var.getMessagesController().getStoriesController(), yu0Var.g1, this.s.c);

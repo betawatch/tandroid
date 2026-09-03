@@ -1,28 +1,79 @@
 package dg;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.mt0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class k extends l {
-    @Override // dg.m
-    public final int e() {
-        return R.drawable.photo_star;
+public final /* synthetic */ class k implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e1 b;
+
+    public /* synthetic */ k(e1 e1Var, int i10) {
+        this.a = i10;
+        this.b = e1Var;
     }
 
-    @Override // dg.l
-    public final int m() {
-        return R.drawable.photo_star_fill;
-    }
-
-    @Override // dg.l
-    public final String n() {
-        return LocaleController.getString(R.string.PaintStar);
-    }
-
-    @Override // dg.l
-    public final int o() {
-        return 2;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                e1 e1Var = this.b;
+                if (!e1Var.Q0) {
+                    e1Var.B0(0);
+                    break;
+                } else {
+                    e1Var.r0(null, true);
+                    break;
+                }
+            case 1:
+                e1 e1Var2 = this.b;
+                int i10 = e1Var2.d1;
+                e1Var2.B0(1);
+                e1Var2.postDelayed(new q(e1Var2, 1), 350L);
+                m0 m0Var = new m0(e1Var2.getContext(), e1Var2.N1, false, false);
+                m0Var.y = new w(e1Var2);
+                m0Var.q0(new a0(e1Var2, 0));
+                m0Var.setOnDismissListener(new b0(e1Var2, i10));
+                m0Var.show();
+                PhotoViewer photoViewer = ((mt0) e1Var2).l2;
+                if (photoViewer.C2 != null) {
+                    photoViewer.E2 = false;
+                    photoViewer.u0();
+                    photoViewer.C2.B();
+                    break;
+                }
+                break;
+            case 2:
+                e1 e1Var3 = this.b;
+                j jVar = e1Var3.P0;
+                if ((jVar instanceof b4) && !e1Var3.Q0) {
+                    b4 b4Var = (b4) jVar;
+                    e1Var3.Q0 = true;
+                    b4Var.q();
+                    View focusedView = b4Var.getFocusedView();
+                    focusedView.requestFocus();
+                    AndroidUtilities.showKeyboard(focusedView);
+                }
+                org.telegram.ui.ActionBar.p1 p1Var = e1Var3.O1;
+                if (p1Var != null && p1Var.isShowing()) {
+                    e1Var3.O1.d(true);
+                    break;
+                }
+                break;
+            case 3:
+                e1.b0(this.b);
+                break;
+            default:
+                e1 e1Var4 = this.b;
+                e1Var4.B0(2);
+                if (!(e1Var4.P0 instanceof b4)) {
+                    e1Var4.j0(true);
+                    break;
+                }
+                break;
+        }
     }
 }

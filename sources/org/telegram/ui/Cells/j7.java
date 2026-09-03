@@ -1,31 +1,14 @@
 package org.telegram.ui.Cells;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j7 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l7 b;
+public interface j7 {
+    void a(String str, boolean z4);
 
-    public /* synthetic */ j7(l7 l7Var, int i10) {
-        this.a = i10;
-        this.b = l7Var;
-    }
+    void b(TLRPC.WebPage webPage, MessageObject messageObject);
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                l7 l7Var = this.b;
-                l7Var.post(new j7(l7Var, 1));
-                break;
-            default:
-                l7 l7Var2 = this.b;
-                l7Var2.V.isSpoilersRevealed = true;
-                l7Var2.E.clear();
-                l7Var2.F.clear();
-                l7Var2.G.clear();
-                l7Var2.invalidate();
-                break;
-        }
-    }
+    boolean e();
 }

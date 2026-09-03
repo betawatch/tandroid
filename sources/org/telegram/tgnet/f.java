@@ -12,7 +12,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.j5;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f implements OnSuccessListener, OnFailureListener, ImageReceiver.ImageReceiverDelegate {
     public final /* synthetic */ int a;
@@ -44,8 +44,8 @@ public final /* synthetic */ class f implements OnSuccessListener, OnFailureList
         }
         if (drawableSafe != null) {
             Drawable drawable = drawableSafe.drawable;
-            if (drawable instanceof qf.b) {
-                list = ((qf.b) drawable).a;
+            if (drawable instanceof pf.b) {
+                list = ((pf.b) drawable).a;
                 bitmap = bitmapSafe.bitmap;
                 if (bitmap == null) {
                     Drawable drawable2 = bitmapSafe.drawable;
@@ -53,7 +53,7 @@ public final /* synthetic */ class f implements OnSuccessListener, OnFailureList
                         bitmap = ((BitmapDrawable) drawable2).getBitmap();
                     }
                 }
-                qf.a aVar = new qf.a(bitmap, this.a, list);
+                pf.a aVar = new pf.a(bitmap, this.a, list);
                 if (callback != null) {
                     callback.run(aVar);
                 }
@@ -64,7 +64,7 @@ public final /* synthetic */ class f implements OnSuccessListener, OnFailureList
         bitmap = bitmapSafe.bitmap;
         if (bitmap == null) {
         }
-        qf.a aVar2 = new qf.a(bitmap, this.a, list);
+        pf.a aVar2 = new pf.a(bitmap, this.a, list);
         if (callback != null) {
         }
         ChatThemeController.getInstance(this.c).saveWallpaperBitmap(aVar2, this.b);

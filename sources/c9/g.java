@@ -1,38 +1,12 @@
 package c9;
 
-import android.os.StrictMode;
-import com.google.firebase.concurrent.ExecutorsRegistrar;
-import java.util.Collections;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
+import com.google.firebase.components.ComponentRegistrar;
+import java.util.List;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g implements ba.b {
-    public final /* synthetic */ int a;
+public interface g {
+    public static final af.a g = new af.a(6);
 
-    public /* synthetic */ g(int i10) {
-        this.a = i10;
-    }
-
-    @Override // ba.b
-    public final Object get() {
-        switch (this.a) {
-            case 0:
-                return Collections.EMPTY_SET;
-            case 1:
-                return null;
-            case 2:
-                return ExecutorsRegistrar.a();
-            case 3:
-                p pVar = ExecutorsRegistrar.a;
-                return new d9.g(Executors.newFixedThreadPool(Math.max(2, Runtime.getRuntime().availableProcessors()), new d9.a("Firebase Lite", 0, new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build())), (ScheduledExecutorService) ExecutorsRegistrar.d.get());
-            case 4:
-                p pVar2 = ExecutorsRegistrar.a;
-                return new d9.g(Executors.newCachedThreadPool(new d9.a("Firebase Blocking", 11, null)), (ScheduledExecutorService) ExecutorsRegistrar.d.get());
-            default:
-                p pVar3 = ExecutorsRegistrar.a;
-                return Executors.newSingleThreadScheduledExecutor(new d9.a("Firebase Scheduler", 0, null));
-        }
-    }
+    List b(ComponentRegistrar componentRegistrar);
 }

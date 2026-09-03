@@ -45,36 +45,34 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ConcurrentNavigableMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 import k7.a8;
-import m.r3;
-import oh.h4;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.p2;
-import org.telegram.ui.Cells.f1;
-import org.telegram.ui.Cells.m9;
-import org.telegram.ui.Components.ai;
-import org.telegram.ui.Components.mi;
-import org.telegram.ui.Components.nj;
-import org.telegram.ui.Components.q70;
+import org.telegram.ui.Cells.l9;
+import org.telegram.ui.Components.li;
+import org.telegram.ui.Components.lj;
+import org.telegram.ui.Components.p70;
+import org.telegram.ui.Components.tp0;
 import org.telegram.ui.cl0;
-import qh.l1;
-import wh.d1;
-import wh.d4;
-import wh.e1;
-import wh.f3;
-import wh.h0;
-import wh.i0;
-import wh.o3;
-import wh.p3;
-import wh.q3;
-import wh.v3;
-import wh.v5;
+import ph.l1;
+import vh.d1;
+import vh.e1;
+import vh.e4;
+import vh.g3;
+import vh.h0;
+import vh.i0;
+import vh.p3;
+import vh.q3;
+import vh.r3;
+import vh.s3;
+import vh.w3;
+import vh.w5;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c0 implements com.google.android.gms.common.api.internal.s, q9.a, oe.b, t5.a, u4.p, p3, d1, Continuation, xd.d, a3.b {
+public final /* synthetic */ class c0 implements com.google.android.gms.common.api.internal.s, q9.a, oe.b, t5.a, u4.p, q3, d1, Continuation, xd.d, a3.b {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -85,7 +83,7 @@ public final /* synthetic */ class c0 implements com.google.android.gms.common.a
         this.b = obj2;
     }
 
-    public static String K(c0 c0Var) {
+    public static String G(c0 c0Var) {
         Collection<String> collection = (Collection) c0Var.c;
         StringBuilder sb = new StringBuilder("com.google.android.gms.cast.CATEGORY_CAST");
         String str = (String) c0Var.b;
@@ -137,7 +135,7 @@ public final /* synthetic */ class c0 implements com.google.android.gms.common.a
         return sb.toString();
     }
 
-    public static String f(Class cls) {
+    public static String e(Class cls) {
         int modifiers = cls.getModifiers();
         if (Modifier.isInterface(modifiers)) {
             return "Interfaces can't be instantiated! Register an InstanceCreator or a TypeAdapter for this type. Interface name: ".concat(cls.getName());
@@ -148,60 +146,169 @@ public final /* synthetic */ class c0 implements com.google.android.gms.common.a
         return "Abstract classes can't be instantiated! Adjust the R8 configuration or register an InstanceCreator or a TypeAdapter for this type. Class name: " + cls.getName() + "\nSee " + "https://github.com/google/gson/blob/main/Troubleshooting.md#".concat("r8-abstract-class");
     }
 
-    @Override // wh.p3
+    @Override // vh.q3
     public void A() {
-        wh.q qVar = (wh.q) this.b;
-        if (qVar.getCurrentItemTop() != qVar.F) {
-            qVar.b.X1(qVar, 0);
+        w3 w3Var = ((vh.q) this.b).s;
+        if (w3Var != null) {
+            w3Var.e(false, true);
+            int i10 = w3Var.V;
+            w3Var.f(i10 != 2 ? i10 : 0, true);
         }
-        qVar.a0();
-        wh.q.J(qVar);
     }
 
-    @Override // u4.p
-    public o0 B(u4.l lVar, u4.i iVar) {
-        return new f7.b(29, ((u4.p) this.c).B(lVar, iVar), (List) this.b);
-    }
-
-    @Override // wh.p3
-    public void C(int i10) {
-        wh.q qVar = (wh.q) this.b;
-        qVar.b.X1(qVar, i10);
-        qVar.a0();
-        wh.q.J(qVar);
-    }
-
-    @Override // wh.d1
-    public /* synthetic */ boolean D(e1 e1Var) {
-        return false;
-    }
-
-    @Override // xd.d
-    public void E() {
-        ((xd.i) this.c).e((xd.j) this.b);
-    }
-
-    @Override // wh.p3
-    public void F(v5 v5Var, String str) {
-        wh.q qVar = (wh.q) this.b;
-        if (qVar.v == null) {
-            g6 g6Var = (g6) this.c;
-            qVar.v = new r3(new org.telegram.ui.web.m(11, this, g6Var), g6Var);
+    /* JADX WARN: Removed duplicated region for block: B:10:0x003e  */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0046  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public CctBackendFactory B(String str) {
+        Bundle bundle;
+        Map map;
+        PackageManager packageManager;
+        if (((Map) this.b) == null) {
+            Context context = (Context) this.c;
+            try {
+                packageManager = context.getPackageManager();
+            } catch (PackageManager.NameNotFoundException unused) {
+                Log.w("BackendRegistry", "Application info not found.");
+            }
+            if (packageManager == null) {
+                Log.w("BackendRegistry", "Context has no PackageManager.");
+            } else {
+                ServiceInfo serviceInfo = packageManager.getServiceInfo(new ComponentName(context, (Class<?>) TransportBackendDiscovery.class), 128);
+                if (serviceInfo == null) {
+                    Log.w("BackendRegistry", "TransportBackendDiscovery has no service info.");
+                } else {
+                    bundle = serviceInfo.metaData;
+                    if (bundle != null) {
+                        Log.w("BackendRegistry", "Could not retrieve metadata, returning empty list of transport backends.");
+                        map = Collections.EMPTY_MAP;
+                    } else {
+                        HashMap hashMap = new HashMap();
+                        for (String str2 : bundle.keySet()) {
+                            Object obj = bundle.get(str2);
+                            if ((obj instanceof String) && str2.startsWith("backend:")) {
+                                for (String str3 : ((String) obj).split(",", -1)) {
+                                    String trim = str3.trim();
+                                    if (!trim.isEmpty()) {
+                                        hashMap.put(trim, str2.substring(8));
+                                    }
+                                }
+                            }
+                        }
+                        map = hashMap;
+                    }
+                    this.b = map;
+                }
+            }
+            bundle = null;
+            if (bundle != null) {
+            }
+            this.b = map;
         }
-        qVar.v.f(v5Var, str);
+        String str4 = (String) ((Map) this.b).get(str);
+        if (str4 == null) {
+            return null;
+        }
+        try {
+            return (CctBackendFactory) Class.forName(str4).asSubclass(CctBackendFactory.class).getDeclaredConstructor(null).newInstance(null);
+        } catch (ClassNotFoundException e) {
+            Log.w("BackendRegistry", "Class " + str4 + " is not found.", e);
+            return null;
+        } catch (IllegalAccessException e6) {
+            Log.w("BackendRegistry", "Could not instantiate " + str4 + ".", e6);
+            return null;
+        } catch (InstantiationException e10) {
+            Log.w("BackendRegistry", "Could not instantiate " + str4 + ".", e10);
+            return null;
+        } catch (NoSuchMethodException e11) {
+            Log.w("BackendRegistry", "Could not instantiate ".concat(str4), e11);
+            return null;
+        } catch (InvocationTargetException e12) {
+            Log.w("BackendRegistry", "Could not instantiate ".concat(str4), e12);
+            return null;
+        }
     }
 
-    @Override // u4.p
-    public o0 G() {
-        return new f7.b(29, ((u4.p) this.c).G(), (List) this.b);
+    @Override // vh.q3
+    public p70 C(View view) {
+        vh.q qVar = (vh.q) this.b;
+        p70 p70Var = new p70(qVar, (f6) this.c, view, false, false, true);
+        qVar.E = p70Var;
+        return p70Var;
     }
 
-    @Override // wh.d1
-    public void H(CharSequence charSequence) {
-        ((h0) this.c).B(charSequence);
+    @Override // vh.q3
+    public void D() {
+        vh.q qVar = (vh.q) this.b;
+        qVar.X();
+        qVar.Y();
     }
 
-    public r3.k I(Object... objArr) {
+    /* JADX WARN: Removed duplicated region for block: B:15:0x008f A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0090  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public ra.m E(wa.a aVar) {
+        String str;
+        ra.m eVar;
+        Type type = aVar.b;
+        Class cls = aVar.a;
+        HashMap hashMap = (HashMap) this.c;
+        if (hashMap.get(type) != null) {
+            throw new ClassCastException();
+        }
+        if (hashMap.get(cls) != null) {
+            throw new ClassCastException();
+        }
+        ra.m mVar = null;
+        ra.m tp0Var = EnumSet.class.isAssignableFrom(cls) ? new tp0(type, 11) : cls == EnumMap.class ? new o3.c(type, 17) : null;
+        if (tp0Var != null) {
+            return tp0Var;
+        }
+        ra.d.f((ArrayList) this.b);
+        if (!Modifier.isAbstract(cls.getModifiers())) {
+            try {
+                Constructor declaredConstructor = cls.getDeclaredConstructor(null);
+                a8 a8Var = ua.c.a;
+                try {
+                    declaredConstructor.setAccessible(true);
+                    str = null;
+                } catch (Exception e) {
+                    str = "Failed making constructor '" + ua.c.b(declaredConstructor) + "' accessible; either increase its visibility or write a custom InstanceCreator or TypeAdapter for its declaring type: " + e.getMessage() + ua.c.e(e);
+                }
+                eVar = str != null ? new com.google.android.gms.internal.clearcut.e(str) : new o2.i(declaredConstructor, 16);
+            } catch (NoSuchMethodException unused) {
+            }
+            if (eVar == null) {
+                return eVar;
+            }
+            int i10 = 22;
+            if (Collection.class.isAssignableFrom(cls)) {
+                mVar = SortedSet.class.isAssignableFrom(cls) ? new z9.d(21) : Set.class.isAssignableFrom(cls) ? new ab.a(i10) : Queue.class.isAssignableFrom(cls) ? new cb.b(i10) : new db.a(i10);
+            } else if (Map.class.isAssignableFrom(cls)) {
+                if (ConcurrentNavigableMap.class.isAssignableFrom(cls)) {
+                    mVar = new h7.u(i10);
+                } else if (ConcurrentMap.class.isAssignableFrom(cls)) {
+                    mVar = new z9.d(i10);
+                } else {
+                    int i11 = 23;
+                    mVar = SortedMap.class.isAssignableFrom(cls) ? new ab.a(i11) : (!(type instanceof ParameterizedType) || String.class.isAssignableFrom(new wa.a(((ParameterizedType) type).getActualTypeArguments()[0]).a)) ? new db.a(i11) : new cb.b(i11);
+                }
+            }
+            if (mVar != null) {
+                return mVar;
+            }
+            String e6 = e(cls);
+            return e6 != null ? new p9.a(e6) : new c9.e(cls);
+        }
+        eVar = null;
+        if (eVar == null) {
+        }
+    }
+
+    public r3.k F(Object... objArr) {
         Constructor a2;
         synchronized (((AtomicBoolean) this.b)) {
             if (!((AtomicBoolean) this.b).get()) {
@@ -209,8 +316,8 @@ public final /* synthetic */ class c0 implements com.google.android.gms.common.a
                     a2 = ((cl0) this.c).a();
                 } catch (ClassNotFoundException unused) {
                     ((AtomicBoolean) this.b).set(true);
-                } catch (Exception e6) {
-                    throw new RuntimeException("Error instantiating extension", e6);
+                } catch (Exception e) {
+                    throw new RuntimeException("Error instantiating extension", e);
                 }
             }
             a2 = null;
@@ -220,44 +327,32 @@ public final /* synthetic */ class c0 implements com.google.android.gms.common.a
         }
         try {
             return (r3.k) a2.newInstance(objArr);
-        } catch (Exception e10) {
-            throw new IllegalStateException("Unexpected error creating extractor", e10);
+        } catch (Exception e6) {
+            throw new IllegalStateException("Unexpected error creating extractor", e6);
         }
     }
 
-    @Override // wh.p3
-    public void J() {
-        v3 v3Var = ((wh.q) this.b).s;
-        if (v3Var != null) {
-            v3Var.e(false, true);
-            int i10 = v3Var.V;
-            v3Var.f(i10 != 2 ? i10 : 0, true);
+    @Override // oe.b
+    public oe.a P0(f7.b bVar) {
+        List list = (List) this.b;
+        List list2 = (List) bVar.b;
+        int size = list2 != null ? list2.size() : 0;
+        if (size > 0) {
+            ArrayList arrayList = new ArrayList(list.size() + size);
+            arrayList.addAll(list);
+            arrayList.addAll(list2);
+            list = arrayList;
         }
+        return new qc.i(bVar, (List) this.c, list);
     }
 
-    @Override // wh.d1
-    public void O(Editable editable) {
-        ((i0) this.b).i();
-        ((h0) this.c).Q();
+    @Override // vh.d1
+    public void Q0(CharSequence charSequence) {
+        ((h0) this.c).L0(charSequence);
     }
 
-    @Override // wh.p3
-    public q70 P(View view) {
-        wh.q qVar = (wh.q) this.b;
-        q70 q70Var = new q70(qVar, (g6) this.c, view, false, false, true);
-        qVar.E = q70Var;
-        return q70Var;
-    }
-
-    @Override // wh.p3
-    public void S() {
-        wh.q qVar = (wh.q) this.b;
-        qVar.X();
-        qVar.Y();
-    }
-
-    @Override // wh.d1
-    public /* synthetic */ boolean T(boolean z4) {
+    @Override // vh.d1
+    public /* synthetic */ boolean V0(e1 e1Var) {
         return false;
     }
 
@@ -291,52 +386,159 @@ public final /* synthetic */ class c0 implements com.google.android.gms.common.a
     }
 
     /* JADX WARN: Removed duplicated region for block: B:8:0x0023 A[RETURN] */
-    @Override // wh.p3
+    @Override // vh.q3
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public boolean b(float f10) {
         boolean z4;
-        v3 v3Var = ((wh.q) this.b).s;
-        if (v3Var != null) {
-            FrameLayout frameLayout = v3Var.E;
+        w3 w3Var = ((vh.q) this.b).s;
+        if (w3Var != null) {
+            FrameLayout frameLayout = w3Var.E;
             if (frameLayout != null) {
                 frameLayout.getLocationOnScreen(new int[2]);
                 if (f10 >= r4[1]) {
                     z4 = true;
-                    v3Var.e(z4, true);
+                    w3Var.e(z4, true);
                     if (!z4) {
                         return true;
                     }
                 }
             }
             z4 = false;
-            v3Var.e(z4, true);
+            w3Var.e(z4, true);
             if (!z4) {
             }
         }
         return false;
     }
 
-    @Override // wh.d1
+    @Override // vh.d1
     public void c(e1 e1Var) {
         ((h0) this.c).c(e1Var);
     }
 
-    @Override // wh.p3
-    public void d(o3 o3Var, View view) {
-        wh.q qVar = (wh.q) this.b;
-        q70 q70Var = new q70(qVar, (g6) this.c, view, false, false, true);
-        q70Var.Q = true;
-        qVar.E = d4.c(q70Var, qVar.b.c0, qVar.getContext(), (g6) this.c, o3Var, true);
+    @Override // vh.q3
+    public void d(e1 e1Var, boolean z4) {
+        ((vh.q) this.b).b.t1(e1Var, z4);
     }
 
-    @Override // wh.d1
-    public boolean e() {
-        return ((h0) this.c).L();
+    @Override // xd.d
+    public boolean g() {
+        return false;
     }
 
-    public void g(String str, PrintWriter printWriter) {
+    @Override // vh.d1
+    public void g1(e1 e1Var) {
+        ((h0) this.c).l();
+    }
+
+    @Override // rc.a
+    public Object get() {
+        return new z2.d((Context) ((a3.c) this.c).a, (s5.m) ((xe.b) this.b).get());
+    }
+
+    @Override // vh.d1
+    public boolean h() {
+        return ((h0) this.c).Y0();
+    }
+
+    @Override // vh.d1
+    public /* synthetic */ boolean h0(e1 e1Var) {
+        return false;
+    }
+
+    @Override // xd.d
+    public boolean i(float f10) {
+        return false;
+    }
+
+    @Override // u4.p
+    public o0 k(u4.l lVar, u4.i iVar) {
+        return new f7.b(29, ((u4.p) this.c).k(lVar, iVar), (List) this.b);
+    }
+
+    @Override // u4.p
+    public o0 l() {
+        return new f7.b(29, ((u4.p) this.c).l(), (List) this.b);
+    }
+
+    @Override // vh.d1
+    public void l1(Editable editable) {
+        ((i0) this.b).i();
+        ((h0) this.c).s1();
+    }
+
+    @Override // vh.q3
+    public void m(p3 p3Var, View view) {
+        vh.q qVar = (vh.q) this.b;
+        p70 p70Var = new p70(qVar, (f6) this.c, view, false, false, true);
+        p70Var.Q = true;
+        qVar.E = e4.c(p70Var, qVar.b.c0, qVar.getContext(), (f6) this.c, p3Var, true);
+    }
+
+    @Override // vh.q3
+    public void n(int i10) {
+        vh.q.O((vh.q) this.b, 74, i10);
+    }
+
+    @Override // vh.d1
+    public void n1(e1 e1Var, int i10, int i11) {
+        l9 J0;
+        h0 h0Var = (h0) this.c;
+        if (((i0) this.b).d || i10 == i11 || (J0 = h0Var.J0()) == null) {
+            return;
+        }
+        if (J0.y() && J0.W == h0Var.O0()) {
+            return;
+        }
+        e1Var.post(new lj(this, e1Var, i11, J0, h0Var, i10));
+    }
+
+    @Override // vh.q3
+    public void o() {
+        vh.q qVar = (vh.q) this.b;
+        s3 s3Var = qVar.r;
+        w3 w3Var = qVar.s;
+        if (w3Var != null) {
+            g3 g3Var = s3Var.k3;
+            int i10 = (g3Var != null && g3Var.y() && s3Var.B4()) ? 1 : 0;
+            if (w3Var.U == 2) {
+                w3Var.V = i10;
+            } else {
+                w3Var.f(i10, true);
+            }
+            if (i10 != 0) {
+                qVar.W();
+            }
+        }
+        qVar.Z();
+    }
+
+    @Override // vh.q3
+    public void onContentChanged() {
+        vh.q qVar = (vh.q) this.b;
+        w3 w3Var = qVar.s;
+        if (w3Var != null) {
+            w3Var.setSendLoading(qVar.r.l3());
+        }
+        qVar.V(true);
+        qVar.Y();
+        vh.e eVar = qVar.M;
+        AndroidUtilities.cancelRunOnUIThread(eVar);
+        AndroidUtilities.runOnUIThread(eVar, 1000L);
+    }
+
+    @Override // t5.a
+    public void p(Bitmap bitmap) {
+        c0 c0Var = (c0) this.c;
+        c0Var.b = bitmap;
+        t5.f fVar = (t5.f) this.b;
+        fVar.l = c0Var;
+        fVar.b();
+    }
+
+    public void q(String str, PrintWriter printWriter) {
         w1.b bVar = (w1.b) this.b;
         if (bVar.d.c <= 0) {
             return;
@@ -438,116 +640,33 @@ public final /* synthetic */ class c0 implements com.google.android.gms.common.a
         }
     }
 
-    @Override // rc.a
-    public Object get() {
-        return new z2.e((Context) ((a3.c) this.c).a, (s5.m) ((z2.d) this.b).get());
+    @Override // vh.d1
+    public void r(int i10, int i11) {
+        ((h0) this.c).f1(i10, i11);
     }
 
-    @Override // wh.p3
-    public void h(e1 e1Var, boolean z4) {
-        ((wh.q) this.b).b.t1(e1Var, z4);
-    }
-
-    @Override // wh.d1
-    public void j(int i10, int i11) {
-        ((h0) this.c).M(i10, i11);
-    }
-
-    @Override // xd.d
-    public boolean k() {
-        return false;
-    }
-
-    @Override // xd.d
-    public boolean l(float f10) {
-        return false;
-    }
-
-    @Override // wh.p3
-    public void n(wh.a aVar) {
-        wh.q qVar = (wh.q) this.b;
-        mi miVar = qVar.b;
-        p2 p2Var = miVar.c0;
-        if (p2Var != null && aVar != null && (aVar.b instanceof TL_iv.pageBlockMap) && AndroidUtilities.isMapsInstalled(p2Var)) {
-            mi miVar2 = new mi(qVar.getContext(), miVar.c0, false, false, false, null);
-            miVar2.W1 = new db.a(24);
-            miVar2.M = true;
-            miVar2.u1.setVisibility(8);
-            miVar2.q2 = new l1(qVar, aVar, miVar2, 5);
-            miVar2.r1();
-            miVar2.show();
-        }
-    }
-
-    @Override // wh.d1
-    public void o(e1 e1Var) {
-        ((h0) this.c).f();
-    }
-
-    @Override // wh.p3
-    public void onContentChanged() {
-        wh.q qVar = (wh.q) this.b;
-        v3 v3Var = qVar.s;
-        if (v3Var != null) {
-            v3Var.setSendLoading(qVar.r.l3());
-        }
-        qVar.V(true);
-        qVar.Y();
-        wh.e eVar = qVar.M;
-        AndroidUtilities.cancelRunOnUIThread(eVar);
-        AndroidUtilities.runOnUIThread(eVar, 1000L);
-    }
-
-    @Override // wh.p3
-    public void p(int i10) {
-        wh.q.O((wh.q) this.b, 74, i10);
-    }
-
-    @Override // wh.p3
-    public void q() {
-        wh.q qVar = (wh.q) this.b;
-        wh.r3 r3Var = qVar.r;
-        v3 v3Var = qVar.s;
-        if (v3Var != null) {
-            f3 f3Var = r3Var.k3;
-            int i10 = (f3Var != null && f3Var.y() && r3Var.B4()) ? 1 : 0;
-            if (v3Var.U == 2) {
-                v3Var.V = i10;
-            } else {
-                v3Var.f(i10, true);
+    @Override // vh.q3
+    public void s() {
+        w3 w3Var = ((vh.q) this.b).s;
+        if (w3Var != null) {
+            int i10 = w3Var.U;
+            if (i10 == 2) {
+                i10 = 0;
             }
-            if (i10 != 0) {
-                qVar.W();
-            }
+            w3Var.V = i10;
+            w3Var.e(false, false);
+            w3Var.f(2, true);
         }
-        qVar.Z();
     }
 
-    @Override // wh.d1
-    public /* synthetic */ boolean r(e1 e1Var) {
-        return false;
-    }
-
-    @Override // wh.d1
-    public void s(e1 e1Var, int i10, int i11) {
-        m9 z4;
-        h0 h0Var = (h0) this.c;
-        if (((i0) this.b).d || i10 == i11 || (z4 = h0Var.z()) == null) {
-            return;
+    @Override // vh.q3
+    public void t(w5 w5Var, String str) {
+        vh.q qVar = (vh.q) this.b;
+        if (qVar.v == null) {
+            f6 f6Var = (f6) this.c;
+            qVar.v = new m.s3(new org.telegram.ui.web.m(11, this, f6Var), f6Var);
         }
-        if (z4.y() && z4.W == h0Var.E()) {
-            return;
-        }
-        e1Var.post(new nj(this, e1Var, i11, z4, h0Var, i10));
-    }
-
-    @Override // t5.a
-    public void t(Bitmap bitmap) {
-        c0 c0Var = (c0) this.c;
-        c0Var.b = bitmap;
-        t5.f fVar = (t5.f) this.b;
-        fVar.l = c0Var;
-        fVar.b();
+        qVar.v.f(w5Var, str);
     }
 
     @Override // com.google.android.gms.tasks.Continuation
@@ -568,7 +687,7 @@ public final /* synthetic */ class c0 implements com.google.android.gms.common.a
                 return "Bounds{lower=" + ((i0.b) this.c) + " upper=" + ((i0.b) this.b) + "}";
             case 7:
                 return ((HashMap) this.c).toString();
-            case 13:
+            case 15:
                 StringBuilder sb = new StringBuilder(128);
                 sb.append("LoaderManager{");
                 sb.append(Integer.toHexString(System.identityHashCode(this)));
@@ -584,22 +703,18 @@ public final /* synthetic */ class c0 implements com.google.android.gms.common.a
         }
     }
 
-    @Override // wh.p3
+    @Override // vh.q3
     public void u() {
-        v3 v3Var = ((wh.q) this.b).s;
-        if (v3Var != null) {
-            int i10 = v3Var.U;
-            if (i10 == 2) {
-                i10 = 0;
-            }
-            v3Var.V = i10;
-            v3Var.e(false, false);
-            v3Var.f(2, true);
+        vh.q qVar = (vh.q) this.b;
+        if (qVar.getCurrentItemTop() != qVar.F) {
+            qVar.b.X1(qVar, 0);
         }
+        qVar.a0();
+        vh.q.J(qVar);
     }
 
     @Override // q9.a
-    public StackTraceElement[] v0(StackTraceElement[] stackTraceElementArr) {
+    public StackTraceElement[] v(StackTraceElement[] stackTraceElementArr) {
         if (stackTraceElementArr.length <= 1024) {
             return stackTraceElementArr;
         }
@@ -610,168 +725,52 @@ public final /* synthetic */ class c0 implements com.google.android.gms.common.a
             if (stackTraceElementArr2.length <= 1024) {
                 break;
             }
-            stackTraceElementArr2 = aVar.v0(stackTraceElementArr);
+            stackTraceElementArr2 = aVar.v(stackTraceElementArr);
         }
-        return stackTraceElementArr2.length > 1024 ? ((h7.u) this.b).v0(stackTraceElementArr2) : stackTraceElementArr2;
+        return stackTraceElementArr2.length > 1024 ? ((db.a) this.b).v(stackTraceElementArr2) : stackTraceElementArr2;
     }
 
-    @Override // oe.b
-    public oe.a w(f7.b bVar) {
-        List list = (List) this.b;
-        List list2 = (List) bVar.b;
-        int size = list2 != null ? list2.size() : 0;
-        if (size > 0) {
-            ArrayList arrayList = new ArrayList(list.size() + size);
-            arrayList.addAll(list);
-            arrayList.addAll(list2);
-            list = arrayList;
-        }
-        return new qc.i(bVar, (List) this.c, list);
-    }
-
-    @Override // wh.p3
-    public void x(q3 q3Var, View view) {
-        wh.q qVar = (wh.q) this.b;
-        q70 q70Var = new q70(qVar, (g6) this.c, view, false, false, true);
-        q70Var.Q = true;
+    @Override // vh.q3
+    public void w(r3 r3Var, View view) {
+        vh.q qVar = (vh.q) this.b;
+        p70 p70Var = new p70(qVar, (f6) this.c, view, false, false, true);
+        p70Var.Q = true;
         p2 p2Var = qVar.b.c0;
         qVar.getContext();
-        qVar.E = d4.b(q70Var, p2Var, q3Var, true);
+        qVar.E = e4.b(p70Var, p2Var, r3Var, true);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x003e  */
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0046  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public CctBackendFactory y(String str) {
-        Bundle bundle;
-        Map map;
-        PackageManager packageManager;
-        if (((Map) this.b) == null) {
-            Context context = (Context) this.c;
-            try {
-                packageManager = context.getPackageManager();
-            } catch (PackageManager.NameNotFoundException unused) {
-                Log.w("BackendRegistry", "Application info not found.");
-            }
-            if (packageManager == null) {
-                Log.w("BackendRegistry", "Context has no PackageManager.");
-            } else {
-                ServiceInfo serviceInfo = packageManager.getServiceInfo(new ComponentName(context, (Class<?>) TransportBackendDiscovery.class), 128);
-                if (serviceInfo == null) {
-                    Log.w("BackendRegistry", "TransportBackendDiscovery has no service info.");
-                } else {
-                    bundle = serviceInfo.metaData;
-                    if (bundle != null) {
-                        Log.w("BackendRegistry", "Could not retrieve metadata, returning empty list of transport backends.");
-                        map = Collections.EMPTY_MAP;
-                    } else {
-                        HashMap hashMap = new HashMap();
-                        for (String str2 : bundle.keySet()) {
-                            Object obj = bundle.get(str2);
-                            if ((obj instanceof String) && str2.startsWith("backend:")) {
-                                for (String str3 : ((String) obj).split(",", -1)) {
-                                    String trim = str3.trim();
-                                    if (!trim.isEmpty()) {
-                                        hashMap.put(trim, str2.substring(8));
-                                    }
-                                }
-                            }
-                        }
-                        map = hashMap;
-                    }
-                    this.b = map;
-                }
-            }
-            bundle = null;
-            if (bundle != null) {
-            }
-            this.b = map;
-        }
-        String str4 = (String) ((Map) this.b).get(str);
-        if (str4 == null) {
-            return null;
-        }
-        try {
-            return (CctBackendFactory) Class.forName(str4).asSubclass(CctBackendFactory.class).getDeclaredConstructor(null).newInstance(null);
-        } catch (ClassNotFoundException e6) {
-            Log.w("BackendRegistry", "Class " + str4 + " is not found.", e6);
-            return null;
-        } catch (IllegalAccessException e10) {
-            Log.w("BackendRegistry", "Could not instantiate " + str4 + ".", e10);
-            return null;
-        } catch (InstantiationException e11) {
-            Log.w("BackendRegistry", "Could not instantiate " + str4 + ".", e11);
-            return null;
-        } catch (NoSuchMethodException e12) {
-            Log.w("BackendRegistry", "Could not instantiate ".concat(str4), e12);
-            return null;
-        } catch (InvocationTargetException e13) {
-            Log.w("BackendRegistry", "Could not instantiate ".concat(str4), e13);
-            return null;
-        }
+    @Override // vh.d1
+    public /* synthetic */ boolean w1(boolean z4) {
+        return false;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0090 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0091  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public ra.m z(wa.a aVar) {
-        String str;
-        ra.m eVar;
-        Type type = aVar.b;
-        Class cls = aVar.a;
-        HashMap hashMap = (HashMap) this.c;
-        if (hashMap.get(type) != null) {
-            throw new ClassCastException();
-        }
-        if (hashMap.get(cls) != null) {
-            throw new ClassCastException();
-        }
-        int i10 = 16;
-        ra.m mVar = null;
-        ra.m h4Var = EnumSet.class.isAssignableFrom(cls) ? new h4(type, i10) : cls == EnumMap.class ? new org.telegram.ui.web.e0(type, 9) : null;
-        if (h4Var != null) {
-            return h4Var;
-        }
-        ra.d.f((ArrayList) this.b);
-        if (!Modifier.isAbstract(cls.getModifiers())) {
-            try {
-                Constructor declaredConstructor = cls.getDeclaredConstructor(null);
-                a8 a8Var = ua.c.a;
-                try {
-                    declaredConstructor.setAccessible(true);
-                    str = null;
-                } catch (Exception e6) {
-                    str = "Failed making constructor '" + ua.c.b(declaredConstructor) + "' accessible; either increase its visibility or write a custom InstanceCreator or TypeAdapter for its declaring type: " + e6.getMessage() + ua.c.e(e6);
-                }
-                eVar = str != null ? new com.google.android.gms.internal.clearcut.e(str, 3) : new ai(declaredConstructor, 12);
-            } catch (NoSuchMethodException unused) {
-            }
-            if (eVar == null) {
-                return eVar;
-            }
-            int i11 = 22;
-            if (Collection.class.isAssignableFrom(cls)) {
-                mVar = SortedSet.class.isAssignableFrom(cls) ? new ab.a(i11) : Set.class.isAssignableFrom(cls) ? new cb.b(i11) : Queue.class.isAssignableFrom(cls) ? new db.a(i11) : new h7.u(i11);
-            } else if (Map.class.isAssignableFrom(cls)) {
-                if (ConcurrentNavigableMap.class.isAssignableFrom(cls)) {
-                    mVar = new z9.d(i11);
-                } else {
-                    int i12 = 23;
-                    mVar = ConcurrentMap.class.isAssignableFrom(cls) ? new ab.a(i12) : SortedMap.class.isAssignableFrom(cls) ? new cb.b(i12) : (!(type instanceof ParameterizedType) || String.class.isAssignableFrom(new wa.a(((ParameterizedType) type).getActualTypeArguments()[0]).a)) ? new h7.u(i12) : new db.a(i12);
-                }
-            }
-            if (mVar != null) {
-                return mVar;
-            }
-            String f10 = f(cls);
-            return f10 != null ? new hc.a(f10) : new f1(cls, i10);
-        }
-        eVar = null;
-        if (eVar == null) {
+    @Override // xd.d
+    public void x() {
+        ((xd.i) this.c).e((xd.j) this.b);
+    }
+
+    @Override // vh.q3
+    public void y(int i10) {
+        vh.q qVar = (vh.q) this.b;
+        qVar.b.X1(qVar, i10);
+        qVar.a0();
+        vh.q.J(qVar);
+    }
+
+    @Override // vh.q3
+    public void z(vh.a aVar) {
+        vh.q qVar = (vh.q) this.b;
+        li liVar = qVar.b;
+        p2 p2Var = liVar.c0;
+        if (p2Var != null && aVar != null && (aVar.b instanceof TL_iv.pageBlockMap) && AndroidUtilities.isMapsInstalled(p2Var)) {
+            li liVar2 = new li(qVar.getContext(), liVar.c0, false, false, false, null);
+            liVar2.W1 = new ab.a(24);
+            liVar2.M = true;
+            liVar2.u1.setVisibility(8);
+            liVar2.q2 = new l1(qVar, aVar, liVar2, 5);
+            liVar2.r1();
+            liVar2.show();
         }
     }
 
@@ -805,13 +804,13 @@ public final /* synthetic */ class c0 implements com.google.android.gms.common.a
     public c0(q9.a[] aVarArr) {
         this.a = 2;
         this.c = aVarArr;
-        this.b = new h7.u(20);
+        this.b = new db.a(20);
     }
 
     public c0(androidx.lifecycle.t tVar, t0 t0Var) {
-        this.a = 13;
+        this.a = 15;
         this.c = tVar;
-        this.b = (w1.b) new androidx.biometric.e(t0Var, w1.b.f).m(w1.b.class);
+        this.b = (w1.b) new af.d(t0Var, w1.b.f).m(w1.b.class);
     }
 
     public c0(String str, String str2) {
@@ -824,11 +823,11 @@ public final /* synthetic */ class c0 implements com.google.android.gms.common.a
     }
 
     @Override // xd.d
-    public void m() {
+    public void j() {
     }
 
-    @Override // wh.d1
-    public /* synthetic */ void v() {
+    @Override // vh.d1
+    public /* synthetic */ void q0() {
     }
 
     public c0(Context context) {
@@ -838,7 +837,7 @@ public final /* synthetic */ class c0 implements com.google.android.gms.common.a
     }
 
     @Override // xd.d
-    public void i(boolean z4) {
+    public void f(boolean z4) {
     }
 
     public c0(String str) {

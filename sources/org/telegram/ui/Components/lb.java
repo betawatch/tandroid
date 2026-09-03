@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.view.ViewGroup;
 import java.util.LinkedList;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lb implements o1.f {
     public final /* synthetic */ int a;
@@ -30,38 +30,38 @@ public final /* synthetic */ class lb implements o1.f {
                 }
                 break;
             case 1:
-                mi.r((mi) this.b, (mh.p6) this.c);
+                li.r((li) this.b, (lh.p6) this.c);
                 break;
             case 2:
-                mh.k3 k3Var = (mh.k3) this.b;
+                lh.k3 k3Var = (lh.k3) this.b;
                 wg wgVar = (wg) this.c;
-                mi miVar = (mi) k3Var.d;
-                miVar.w0.setTranslationY(0.0f);
-                miVar.w0.k(miVar.i2);
-                viewGroup = ((org.telegram.ui.ActionBar.h3) miVar).containerView;
+                li liVar = (li) k3Var.d;
+                liVar.w0.setTranslationY(0.0f);
+                liVar.w0.k(liVar.i2);
+                viewGroup = ((org.telegram.ui.ActionBar.g3) liVar).containerView;
                 viewGroup.invalidate();
                 wgVar.run();
-                miVar.a2(0);
+                liVar.a2(0);
                 break;
             case 3:
-                xd0 xd0Var = (xd0) this.b;
-                fc0 fc0Var = (fc0) this.c;
-                LinkedList linkedList = xd0Var.J;
-                xd0Var.I = null;
-                fc0Var.D = null;
-                fc0Var.z();
+                wd0 wd0Var = (wd0) this.b;
+                ec0 ec0Var = (ec0) this.c;
+                LinkedList linkedList = wd0Var.J;
+                wd0Var.I = null;
+                ec0Var.D = null;
+                ec0Var.z();
                 if (!z4) {
-                    fc0Var.h = 1.0f;
-                    fc0Var.z();
+                    ec0Var.h = 1.0f;
+                    ec0Var.z();
                     if (!linkedList.isEmpty()) {
                         ((Runnable) linkedList.poll()).run();
-                        xd0Var.K.poll();
+                        wd0Var.K.poll();
                         break;
                     }
                 }
                 break;
             default:
-                sh.m3 m3Var = (sh.m3) this.b;
+                rh.m3 m3Var = (rh.m3) this.b;
                 Runnable runnable = (Runnable) this.c;
                 if (hVar == m3Var.D) {
                     m3Var.D = null;

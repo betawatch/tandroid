@@ -30,7 +30,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 import org.webrtc.EglRenderer;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cr0 implements Runnable {
     public final /* synthetic */ int a;
@@ -93,22 +93,22 @@ public final /* synthetic */ class cr0 implements Runnable {
                     }
                     return;
                 }
-                org.telegram.ui.Components.lh0 lh0Var = profileActivity.X;
-                if (lh0Var != null) {
-                    org.telegram.ui.Components.ih0 j10 = org.telegram.ui.Components.lh0.j(7, lh0Var.a);
+                org.telegram.ui.Components.kh0 kh0Var = profileActivity.X;
+                if (kh0Var != null) {
+                    org.telegram.ui.Components.hh0 j10 = org.telegram.ui.Components.kh0.j(7, kh0Var.a);
                     if (j10 != null && j10.s) {
                         j10.s = false;
-                        lh0Var.invalidate();
+                        kh0Var.invalidate();
                     }
                     if (zArr[0]) {
-                        org.telegram.ui.Components.lh0 lh0Var2 = profileActivity.X;
-                        lh0Var2.F = true;
-                        lh0Var2.o(7, false);
+                        org.telegram.ui.Components.kh0 kh0Var2 = profileActivity.X;
+                        kh0Var2.F = true;
+                        kh0Var2.o(7, false);
                         profileActivity.X.o(9, true);
-                        org.telegram.ui.Components.lh0 lh0Var3 = profileActivity.X;
-                        if (lh0Var3.F) {
-                            lh0Var3.F = false;
-                            lh0Var3.d();
+                        org.telegram.ui.Components.kh0 kh0Var3 = profileActivity.X;
+                        if (kh0Var3.F) {
+                            kh0Var3.F = false;
+                            kh0Var3.d();
                             return;
                         }
                         return;
@@ -167,8 +167,8 @@ public final /* synthetic */ class cr0 implements Runnable {
                                                     bufferedInputStream.close();
                                                 }
                                             }
-                                        } catch (Exception e6) {
-                                            e = e6;
+                                        } catch (Exception e) {
+                                            e = e;
                                             e.printStackTrace();
                                             if (bufferedInputStream != null) {
                                                 bufferedInputStream.close();
@@ -176,7 +176,7 @@ public final /* synthetic */ class cr0 implements Runnable {
                                             if (zipOutputStream != null) {
                                                 zipOutputStream.close();
                                             }
-                                            AndroidUtilities.runOnUIThread(new b30(d2Var, zArr2, activity, file, 26));
+                                            AndroidUtilities.runOnUIThread(new c30(d2Var, zArr2, activity, file, 26));
                                             return;
                                         }
                                     } catch (Throwable th2) {
@@ -192,8 +192,8 @@ public final /* synthetic */ class cr0 implements Runnable {
                                 }
                             }
                             zArr2[0] = true;
-                        } catch (Exception e10) {
-                            e = e10;
+                        } catch (Exception e6) {
+                            e = e6;
                             bufferedInputStream = null;
                         } catch (Throwable th3) {
                             th = th3;
@@ -204,8 +204,8 @@ public final /* synthetic */ class cr0 implements Runnable {
                             }
                             throw th;
                         }
-                    } catch (Exception e11) {
-                        e = e11;
+                    } catch (Exception e10) {
+                        e = e10;
                         bufferedInputStream = null;
                         zipOutputStream = null;
                     } catch (Throwable th4) {
@@ -214,14 +214,14 @@ public final /* synthetic */ class cr0 implements Runnable {
                         zipOutputStream = null;
                     }
                     zipOutputStream.close();
-                    AndroidUtilities.runOnUIThread(new b30(d2Var, zArr2, activity, file, 26));
+                    AndroidUtilities.runOnUIThread(new c30(d2Var, zArr2, activity, file, 26));
                     return;
-                } catch (Exception e12) {
-                    e12.printStackTrace();
+                } catch (Exception e11) {
+                    e11.printStackTrace();
                     return;
                 }
             case 3:
-                g41.P((g41) this.c, this.b, (org.telegram.ui.Components.b90) this.d);
+                g41.P((g41) this.c, this.b, (org.telegram.ui.Components.z80) this.d);
                 return;
             case 4:
                 TwoStepVerificationActivity.X((TwoStepVerificationActivity) this.c, this.b, (byte[]) this.d);
@@ -258,18 +258,18 @@ public final /* synthetic */ class cr0 implements Runnable {
                                     wallpapersListActivity.d0.add(wallPaper);
                                     hashMap2.put(Long.valueOf(wallPaper.document.id), wallPaper);
                                 }
-                                if (i12 != i14 && ((!(z4 = wallPaper.pattern) || ((wallPaperSettings3 = wallPaper.settings) != null && wallPaperSettings3.background_color != 0)) && ((i12 != i13 || z4) && (org.telegram.ui.ActionBar.k6.I.q() || (wallPaperSettings2 = wallPaper.settings) == null || wallPaperSettings2.intensity >= 0)))) {
+                                if (i12 != i14 && ((!(z4 = wallPaper.pattern) || ((wallPaperSettings3 = wallPaper.settings) != null && wallPaperSettings3.background_color != 0)) && ((i12 != i13 || z4) && (org.telegram.ui.ActionBar.j6.I.q() || (wallPaperSettings2 = wallPaper.settings) == null || wallPaperSettings2.intensity >= 0)))) {
                                     arrayList3.add(wallPaper);
                                 }
-                            } else if (wallPaper.settings.background_color != 0 && (org.telegram.ui.ActionBar.k6.I.q() || (wallPaperSettings = wallPaper.settings) == null || wallPaperSettings.intensity >= 0)) {
+                            } else if (wallPaper.settings.background_color != 0 && (org.telegram.ui.ActionBar.j6.I.q() || (wallPaperSettings = wallPaper.settings) == null || wallPaperSettings.intensity >= 0)) {
                                 TLRPC.WallPaperSettings wallPaperSettings4 = wallPaper.settings;
                                 int i16 = wallPaperSettings4.second_background_color;
-                                vi1 vi1Var = (i16 == 0 || (i11 = wallPaperSettings4.third_background_color) == 0) ? new vi1(wallPaperSettings4.background_color, i16, null, wallPaperSettings4.rotation) : new vi1(null, wallPaperSettings4.background_color, i16, i11, wallPaperSettings4.fourth_background_color);
-                                vi1Var.a = wallPaper.slug;
-                                vi1Var.h = wallPaperSettings4.intensity / 100.0f;
-                                vi1Var.f = AndroidUtilities.getWallpaperRotation(wallPaperSettings4.rotation, false);
-                                vi1Var.l = wallPaper;
-                                arrayList3.add(vi1Var);
+                                ui1 ui1Var = (i16 == 0 || (i11 = wallPaperSettings4.third_background_color) == 0) ? new ui1(wallPaperSettings4.background_color, i16, null, wallPaperSettings4.rotation) : new ui1(null, wallPaperSettings4.background_color, i16, i11, wallPaperSettings4.fourth_background_color);
+                                ui1Var.a = wallPaper.slug;
+                                ui1Var.h = wallPaperSettings4.intensity / 100.0f;
+                                ui1Var.f = AndroidUtilities.getWallpaperRotation(wallPaperSettings4.rotation, false);
+                                ui1Var.l = wallPaper;
+                                arrayList3.add(ui1Var);
                             }
                         }
                         i15++;
@@ -295,22 +295,22 @@ public final /* synthetic */ class cr0 implements Runnable {
                 org.telegram.ui.web.c cVar = kVar.w;
                 ArrayList arrayList4 = kVar.x;
                 arrayList4.clear();
-                org.telegram.ui.web.m1.a().getClass();
+                org.telegram.ui.web.n1.a().getClass();
                 ArrayList arrayList5 = new ArrayList();
                 try {
                     JSONArray jSONArray = new JSONArray(str2).getJSONArray(1);
                     for (int i17 = 0; i17 < jSONArray.length(); i17++) {
                         arrayList5.add(jSONArray.getString(i17));
                     }
-                } catch (Exception e13) {
-                    FileLog.e((Throwable) e13, false);
+                } catch (Exception e12) {
+                    FileLog.e((Throwable) e12, false);
                     try {
                         JSONArray jSONArray2 = new JSONObject(str2).getJSONObject("gossip").getJSONArray("results");
                         for (int i18 = 0; i18 < jSONArray2.length(); i18++) {
                             arrayList5.add(jSONArray2.getJSONObject(i18).getString("key"));
                         }
-                    } catch (Exception e14) {
-                        FileLog.e((Throwable) e14, false);
+                    } catch (Exception e13) {
+                        FileLog.e((Throwable) e13, false);
                         try {
                             JSONArray jSONArray3 = new JSONArray(str2);
                             for (int i19 = 0; i19 < jSONArray3.length(); i19++) {
@@ -319,8 +319,8 @@ public final /* synthetic */ class cr0 implements Runnable {
                                     arrayList5.add(string);
                                 }
                             }
-                        } catch (Exception e15) {
-                            FileLog.e((Throwable) e15, false);
+                        } catch (Exception e14) {
+                            FileLog.e((Throwable) e14, false);
                         }
                     }
                 }
@@ -345,8 +345,8 @@ public final /* synthetic */ class cr0 implements Runnable {
                     } catch (Throwable th5) {
                         throw th5;
                     }
-                } catch (Exception e16) {
-                    FileLog.e(e16);
+                } catch (Exception e15) {
+                    FileLog.e(e15);
                     break;
                 }
                 if (database == null) {
@@ -362,11 +362,11 @@ public final /* synthetic */ class cr0 implements Runnable {
                     NativeByteBuffer byteBufferValue = sQLiteCursor.byteBufferValue(1);
                     if (byteBufferValue != null) {
                         try {
-                            qh.s0 s0Var = new qh.s0(byteBufferValue);
+                            ph.s0 s0Var = new ph.s0(byteBufferValue);
                             s0Var.a = longValue;
                             arrayList6.add(s0Var);
-                        } catch (Exception e17) {
-                            FileLog.e(e17);
+                        } catch (Exception e16) {
+                            FileLog.e(e16);
                             arrayList7.add(Long.valueOf(longValue));
                         }
                         byteBufferValue.reuse();
@@ -379,15 +379,15 @@ public final /* synthetic */ class cr0 implements Runnable {
                     }
                 }
                 sQLiteCursor.dispose();
-                AndroidUtilities.runOnUIThread(new bh1(17, callback, arrayList6));
+                AndroidUtilities.runOnUIThread(new sg1(18, callback, arrayList6));
                 return;
             case 9:
-                qh.y2 y2Var = (qh.y2) this.c;
+                ph.z2 z2Var = (ph.z2) this.c;
                 TLObject tLObject2 = (TLObject) this.d;
-                ArrayList arrayList8 = y2Var.c;
+                ArrayList arrayList8 = z2Var.c;
                 if (tLObject2 instanceof TLRPC.messages_BotResults) {
                     TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject2;
-                    y2Var.h = messages_botresults.next_offset;
+                    z2Var.h = messages_botresults.next_offset;
                     if (this.b) {
                         arrayList8.clear();
                     }
@@ -405,14 +405,14 @@ public final /* synthetic */ class cr0 implements Runnable {
                             }
                         }
                     }
-                    y2Var.d = false;
-                    y2Var.F(false);
-                    y2Var.l();
+                    z2Var.d = false;
+                    z2Var.F(false);
+                    z2Var.l();
                     return;
                 }
                 return;
             case 10:
-                vf.t tVar = (vf.t) this.c;
+                uf.t tVar = (uf.t) this.c;
                 MessagesStorage messagesStorage2 = (MessagesStorage) this.d;
                 ArrayList arrayList9 = new ArrayList();
                 ArrayList<TLRPC.User> arrayList10 = new ArrayList<>();
@@ -447,12 +447,12 @@ public final /* synthetic */ class cr0 implements Runnable {
                         if (!arrayList13.isEmpty()) {
                             messagesStorage2.getChatsInternal(TextUtils.join(",", arrayList13), arrayList11);
                         }
-                    } catch (Exception e18) {
-                        FileLog.e(e18);
+                    } catch (Exception e17) {
+                        FileLog.e(e17);
                         break;
                     }
                     sQLiteCursor2.dispose();
-                    AndroidUtilities.runOnUIThread(new hg.j(tVar, arrayList9, arrayList10, arrayList11, this.b, 22));
+                    AndroidUtilities.runOnUIThread(new gg.j(tVar, arrayList9, arrayList10, arrayList11, this.b, 22));
                     return;
                 } finally {
                     if (sQLiteCursor2 != null) {
@@ -460,58 +460,58 @@ public final /* synthetic */ class cr0 implements Runnable {
                     }
                 }
             case 11:
-                ((vh.a) this.c).P((Utilities.Callback) this.d, this.b, false);
+                ((uh.a) this.c).P((Utilities.Callback) this.d, this.b, false);
                 return;
             case 12:
                 ((Utilities.Callback2) this.c).run((Bitmap) this.d, Boolean.valueOf(this.b));
                 return;
             case 13:
-                wh.r3 r3Var = (wh.r3) this.c;
-                wh.i5 i5Var = (wh.i5) this.d;
+                vh.s3 s3Var = (vh.s3) this.c;
+                vh.j5 j5Var = (vh.j5) this.d;
                 boolean z10 = this.b;
                 boolean z11 = !z10;
-                wh.k5 k5Var = i5Var.v;
-                Iterator it = i5Var.E.iterator();
+                vh.l5 l5Var = j5Var.v;
+                Iterator it = j5Var.E.iterator();
                 while (it.hasNext()) {
                     TL_iv.pageTableCell pagetablecell = (TL_iv.pageTableCell) it.next();
-                    wh.l5 m9 = k5Var.m(pagetablecell);
+                    vh.m5 m9 = l5Var.m(pagetablecell);
                     if (m9 == null) {
-                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(wh.z5.h(pagetablecell));
-                        boolean z12 = spannableStringBuilder.length() > 0 && (wh.x5.q(0, spannableStringBuilder.length(), spannableStringBuilder) & 1) != 0;
-                        wh.z5.l(pagetablecell, z11);
+                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(vh.a6.h(pagetablecell));
+                        boolean z12 = spannableStringBuilder.length() > 0 && (vh.y5.q(0, spannableStringBuilder.length(), spannableStringBuilder) & 1) != 0;
+                        vh.a6.l(pagetablecell, z11);
                         if (!z10 && spannableStringBuilder.length() > 0) {
-                            wh.x5.o(spannableStringBuilder, 0, spannableStringBuilder.length(), 1, true, null);
+                            vh.y5.o(spannableStringBuilder, 0, spannableStringBuilder.length(), 1, true, null);
                         } else if (z10 && z12) {
-                            wh.x5.o(spannableStringBuilder, 0, spannableStringBuilder.length(), 1, false, null);
+                            vh.y5.o(spannableStringBuilder, 0, spannableStringBuilder.length(), 1, false, null);
                         }
-                        wh.z5.d(pagetablecell, spannableStringBuilder);
+                        vh.a6.d(pagetablecell, spannableStringBuilder);
                     } else if (m9.b != null) {
                         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(m9.a.getText());
-                        boolean z13 = spannableStringBuilder2.length() > 0 && (wh.x5.q(0, spannableStringBuilder2.length(), spannableStringBuilder2) & 1) != 0;
-                        wh.z5.l(m9.b, z11);
+                        boolean z13 = spannableStringBuilder2.length() > 0 && (vh.y5.q(0, spannableStringBuilder2.length(), spannableStringBuilder2) & 1) != 0;
+                        vh.a6.l(m9.b, z11);
                         if (z10) {
                             if (z13) {
-                                wh.x5.o(spannableStringBuilder2, 0, spannableStringBuilder2.length(), 1, false, null);
+                                vh.y5.o(spannableStringBuilder2, 0, spannableStringBuilder2.length(), 1, false, null);
                             }
                         } else if (spannableStringBuilder2.length() > 0) {
-                            wh.x5.o(spannableStringBuilder2, 0, spannableStringBuilder2.length(), 1, true, null);
+                            vh.y5.o(spannableStringBuilder2, 0, spannableStringBuilder2.length(), 1, true, null);
                         }
-                        wh.z5.d(m9.b, spannableStringBuilder2);
+                        vh.a6.d(m9.b, spannableStringBuilder2);
                         m9.b(m9.b);
                     }
                 }
-                k5Var.invalidate();
-                wh.y2 y2Var2 = i5Var.B;
-                if (y2Var2 != null && i5Var.a != null) {
-                    y2Var2.a();
+                l5Var.invalidate();
+                vh.z2 z2Var2 = j5Var.B;
+                if (z2Var2 != null && j5Var.a != null) {
+                    z2Var2.a();
                 }
-                r3Var.L2();
+                s3Var.L2();
                 return;
             default:
                 org.telegram.ui.ActionBar.p2 p2Var = (org.telegram.ui.ActionBar.p2) this.c;
-                wh.q3 q3Var = (wh.q3) this.d;
-                q3Var.f.n3(true);
-                wh.d4.k(p2Var, this.b, new wh.a4(q3Var, 2));
+                vh.r3 r3Var = (vh.r3) this.d;
+                r3Var.f.n3(true);
+                vh.e4.k(p2Var, this.b, new vh.b4(r3Var, 2));
                 return;
         }
     }

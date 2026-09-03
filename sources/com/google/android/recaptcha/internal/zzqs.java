@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import android.support.v4.media.a;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 final class zzqs extends zzqv {
     private final byte[] zzc;
@@ -35,13 +35,13 @@ final class zzqs extends zzqv {
             try {
                 this.zzc[i10] = b10;
                 this.zze = i11;
-            } catch (IndexOutOfBoundsException e6) {
-                e = e6;
+            } catch (IndexOutOfBoundsException e) {
+                e = e;
                 i10 = i11;
                 throw new zzqt(i10, this.zzd, 1, e);
             }
-        } catch (IndexOutOfBoundsException e10) {
-            e = e10;
+        } catch (IndexOutOfBoundsException e6) {
+            e = e6;
         }
     }
 
@@ -49,8 +49,8 @@ final class zzqs extends zzqv {
         try {
             System.arraycopy(bArr, 0, this.zzc, this.zze, i11);
             this.zze += i11;
-        } catch (IndexOutOfBoundsException e6) {
-            throw new zzqt(this.zze, this.zzd, i11, e6);
+        } catch (IndexOutOfBoundsException e) {
+            throw new zzqt(this.zze, this.zzd, i11, e);
         }
     }
 
@@ -83,8 +83,8 @@ final class zzqs extends zzqv {
             bArr[i11 + 2] = (byte) (i10 >> 16);
             bArr[i11 + 3] = (byte) (i10 >> 24);
             this.zze = i11 + 4;
-        } catch (IndexOutOfBoundsException e6) {
-            throw new zzqt(i11, this.zzd, 4, e6);
+        } catch (IndexOutOfBoundsException e) {
+            throw new zzqt(i11, this.zzd, 4, e);
         }
     }
 
@@ -108,8 +108,8 @@ final class zzqs extends zzqv {
             bArr[i10 + 6] = (byte) (j10 >> 48);
             bArr[i10 + 7] = (byte) (j10 >> 56);
             this.zze = i10 + 8;
-        } catch (IndexOutOfBoundsException e6) {
-            throw new zzqt(i10, this.zzd, 8, e6);
+        } catch (IndexOutOfBoundsException e) {
+            throw new zzqt(i10, this.zzd, 8, e);
         }
     }
 
@@ -182,11 +182,11 @@ final class zzqs extends zzqv {
             this.zze = i10;
             zzt((zzb - i10) - zzA2);
             this.zze = zzb;
-        } catch (zzve e6) {
+        } catch (zzve e) {
             this.zze = i10;
-            zzD(str, e6);
-        } catch (IndexOutOfBoundsException e10) {
-            throw new zzqt(e10);
+            zzD(str, e);
+        } catch (IndexOutOfBoundsException e6) {
+            throw new zzqt(e6);
         }
     }
 
@@ -213,13 +213,13 @@ final class zzqs extends zzqv {
                     this.zzc[i12] = (byte) (i10 | 128);
                     i10 >>>= 7;
                     i12 = i11;
-                } catch (IndexOutOfBoundsException e6) {
-                    indexOutOfBoundsException = e6;
+                } catch (IndexOutOfBoundsException e) {
+                    indexOutOfBoundsException = e;
                     i12 = i11;
                     throw new zzqt(i12, this.zzd, 1, indexOutOfBoundsException);
                 }
-            } catch (IndexOutOfBoundsException e10) {
-                indexOutOfBoundsException = e10;
+            } catch (IndexOutOfBoundsException e6) {
+                indexOutOfBoundsException = e6;
                 throw new zzqt(i12, this.zzd, 1, indexOutOfBoundsException);
             }
         }
@@ -250,20 +250,20 @@ final class zzqs extends zzqv {
                         this.zzc[i12] = (byte) (((int) j10) | 128);
                         j10 >>>= 7;
                         i12 = i13;
-                    } catch (IndexOutOfBoundsException e6) {
-                        indexOutOfBoundsException = e6;
+                    } catch (IndexOutOfBoundsException e) {
+                        indexOutOfBoundsException = e;
                         i12 = i13;
                         throw new zzqt(i12, this.zzd, 1, indexOutOfBoundsException);
                     }
-                } catch (IndexOutOfBoundsException e10) {
-                    indexOutOfBoundsException = e10;
+                } catch (IndexOutOfBoundsException e6) {
+                    indexOutOfBoundsException = e6;
                 }
             }
             i10 = i12 + 1;
             try {
                 this.zzc[i12] = (byte) j10;
-            } catch (IndexOutOfBoundsException e11) {
-                indexOutOfBoundsException = e11;
+            } catch (IndexOutOfBoundsException e10) {
+                indexOutOfBoundsException = e10;
                 i12 = i10;
                 throw new zzqt(i12, this.zzd, 1, indexOutOfBoundsException);
             }

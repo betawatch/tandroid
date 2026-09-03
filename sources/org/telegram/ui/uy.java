@@ -1,44 +1,52 @@
 package org.telegram.ui;
 
-import android.graphics.Rect;
-import android.view.View;
-import android.widget.ImageView;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class uy implements org.telegram.ui.Components.ll0 {
-    public final Rect a = new Rect();
-    public final /* synthetic */ yy b;
+public final /* synthetic */ class uy implements DialogInterface.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    public uy(yy yyVar) {
-        this.b = yyVar;
+    public /* synthetic */ uy(Object obj, int i10, int i11) {
+        this.a = i11;
+        this.c = obj;
+        this.b = i10;
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public final boolean c(float f10, float f11, int i10, View view) {
-        yy yyVar = this.b;
-        if (yyVar.getParentActivity() != null && (view instanceof org.telegram.ui.Cells.g4)) {
-            ImageView imageView = (ImageView) view.getTag(R.id.object_tag);
-            Rect rect = this.a;
-            imageView.getHitRect(rect);
-            if (!rect.contains((int) f10, (int) f11)) {
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(yyVar.getParentActivity());
-                alertDialog$Builder.f(new CharSequence[]{LocaleController.getString(R.string.Delete)}, new ty(this, i10, 0));
-                yyVar.showDialog(alertDialog$Builder.a);
-                return true;
-            }
+    @Override // android.content.DialogInterface.OnClickListener
+    public final void onClick(DialogInterface dialogInterface, int i10) {
+        switch (this.a) {
+            case 0:
+                zy zyVar = ((vy) this.c).b;
+                if (i10 == 0) {
+                    zyVar.e.remove(this.b - zyVar.n);
+                    zyVar.Z();
+                    yy yyVar = zyVar.f;
+                    if (yyVar != null) {
+                        yyVar.a();
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                NotificationsSettingsActivity.X((NotificationsSettingsActivity) this.c, this.b, i10);
+                break;
+            default:
+                ThemeActivity themeActivity = (ThemeActivity) this.c;
+                themeActivity.getClass();
+                SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
+                edit.putInt("sortContactsBy", i10);
+                edit.commit();
+                tb1 tb1Var = themeActivity.a;
+                if (tb1Var != null) {
+                    tb1Var.m(this.b);
+                    break;
+                }
+                break;
         }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ll0
-    public final void h() {
-    }
-
-    @Override // org.telegram.ui.Components.ll0
-    public final void p(float f10) {
     }
 }

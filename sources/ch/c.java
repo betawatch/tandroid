@@ -1,41 +1,31 @@
 package ch;
 
-import android.content.Context;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import k7.c6;
+import cg.h0;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public abstract class c extends FrameLayout {
-    public final LinearLayout a;
-    public float b;
-    public final Rect c;
-    public final Rect d;
-    public final Paint e;
+public final class c {
+    public final h0 a;
+    public b c = b.a;
+    public final ag.d d = new ag.d(this, 16);
+    public final long b = (long) ((AndroidUtilities.getAnimatorDurationScale() * 250.0f) * 1.1f);
 
-    public c(Context context) {
-        super(context);
-        this.c = new Rect();
-        this.d = new Rect();
-        this.e = new Paint(1);
-        setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.a = linearLayout;
-        linearLayout.setOrientation(0);
-        addView(linearLayout, c6.c(-1.0f, -1));
+    public c(h0 h0Var) {
+        this.a = h0Var;
     }
 
-    public void setLensVisibility(float f10) {
-        this.b = f10;
-        int dp = AndroidUtilities.dp(f10 * 7.0f);
-        Rect rect = this.c;
-        Rect rect2 = this.d;
-        rect2.set(rect);
-        int i10 = -dp;
-        rect2.inset(i10, i10);
+    public final void a(b bVar, boolean z4) {
+        if (this.c != bVar) {
+            ag.d dVar = this.d;
+            AndroidUtilities.cancelRunOnUIThread(dVar);
+            this.c = bVar;
+            if (z4) {
+                this.a.run(bVar);
+            }
+            if (bVar == b.b || bVar == b.c) {
+                AndroidUtilities.runOnUIThread(dVar, this.b);
+            }
+        }
     }
 }

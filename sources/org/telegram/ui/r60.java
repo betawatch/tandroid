@@ -1,40 +1,48 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class r60 extends org.telegram.ui.Components.h20 {
-    public final /* synthetic */ z60 r;
+public final /* synthetic */ class r60 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a70 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r60(z60 z60Var, Context context, int i10) {
-        super(context, i10);
-        this.r = z60Var;
+    public /* synthetic */ r60(a70 a70Var, int i10) {
+        this.a = i10;
+        this.b = a70Var;
     }
 
-    @Override // org.telegram.ui.Components.h20
-    public final void a(org.telegram.ui.Components.p30 p30Var) {
-        super.a(p30Var);
-        z60.Z(this.r);
-    }
-
-    @Override // org.telegram.ui.Components.h20
-    public final void b() {
-        super.b();
-        z60.Z(this.r);
-    }
-
-    @Override // org.telegram.ui.Components.h20
-    public final void c(org.telegram.ui.Components.p30 p30Var) {
-        z60 z60Var = this.r;
-        if (p30Var == z60Var.U) {
-            z60Var.U = null;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                a70 a70Var = this.b;
+                a70Var.f.r.clearFocus();
+                a70Var.f.r.requestFocus();
+                AndroidUtilities.showKeyboard(a70Var.f.r);
+                break;
+            case 1:
+                this.b.o0();
+                break;
+            case 2:
+                a70 a70Var2 = this.b;
+                a70Var2.n0(a70Var2.l0());
+                break;
+            case 3:
+                a70 a70Var3 = this.b;
+                a70Var3.n0(a70Var3.l0());
+                break;
+            default:
+                a70 a70Var4 = this.b;
+                a70Var4.U = null;
+                a70Var4.W.b();
+                a70Var4.h.b();
+                a70Var4.k0();
+                a70Var4.r0();
+                a70Var4.s0();
+                break;
         }
-        if (p30Var == z60Var.V) {
-            z60Var.V = null;
-        }
-        super.c(p30Var);
-        z60.Z(z60Var);
     }
 }

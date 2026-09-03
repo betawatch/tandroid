@@ -1,34 +1,28 @@
 package j7;
 
+import android.app.KeyguardManager;
 import android.content.Context;
-import android.util.Log;
-import org.telegram.messenger.beta.R;
+import android.os.Build;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class m {
-    public static String a(Context context, int i10) {
-        if (context == null) {
-            return "";
+    public static KeyguardManager a(Context context) {
+        if (Build.VERSION.SDK_INT >= 23) {
+            return androidx.biometric.j0.a(context);
         }
-        if (i10 == 1) {
-            return context.getString(R.string.fingerprint_error_hw_not_available);
+        Object systemService = context.getSystemService("keyguard");
+        if (systemService instanceof KeyguardManager) {
+            return (KeyguardManager) systemService;
         }
-        if (i10 != 7) {
-            switch (i10) {
-                case 9:
-                    break;
-                case 10:
-                    return context.getString(R.string.fingerprint_error_user_canceled);
-                case 11:
-                    return context.getString(R.string.fingerprint_error_no_fingerprints);
-                case 12:
-                    return context.getString(R.string.fingerprint_error_hw_not_present);
-                default:
-                    Log.e("BiometricUtils", "Unknown error code: " + i10);
-                    return context.getString(R.string.default_error_msg);
-            }
+        return null;
+    }
+
+    public static boolean b(Context context) {
+        KeyguardManager a2 = a(context);
+        if (a2 == null) {
+            return false;
         }
-        return context.getString(R.string.fingerprint_error_lockout);
+        return Build.VERSION.SDK_INT >= 23 ? androidx.biometric.j0.b(a2) : androidx.biometric.i0.a(a2);
     }
 }

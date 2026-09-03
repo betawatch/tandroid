@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class j {
     public final m a;
@@ -64,14 +64,14 @@ public abstract class j {
                         } else {
                             taskCompletionSource2.setResult(call);
                         }
-                    } catch (RuntimeException e6) {
-                        throw new ya.a("Internal error has occurred when executing ML Kit tasks", e6);
+                    } catch (RuntimeException e) {
+                        throw new ya.a("Internal error has occurred when executing ML Kit tasks", e);
                     }
-                } catch (Exception e10) {
+                } catch (Exception e6) {
                     if (cancellationToken2.isCancellationRequested()) {
                         cancellationTokenSource2.cancel();
                     } else {
-                        taskCompletionSource2.setException(e10);
+                        taskCompletionSource2.setException(e6);
                     }
                 }
             }
@@ -80,13 +80,13 @@ public abstract class j {
             public final void execute(Runnable runnable) {
                 try {
                     executor.execute(runnable);
-                } catch (RuntimeException e6) {
+                } catch (RuntimeException e) {
                     if (cancellationToken.isCancellationRequested()) {
                         cancellationTokenSource.cancel();
                     } else {
-                        taskCompletionSource.setException(e6);
+                        taskCompletionSource.setException(e);
                     }
-                    throw e6;
+                    throw e;
                 }
             }
         });
@@ -100,7 +100,7 @@ public abstract class j {
     public final void d(Executor executor) {
         b6.m.k(this.b.get() > 0);
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        this.a.w(new androidx.biometric.k(this, taskCompletionSource, false, 3), executor);
+        this.a.w(new androidx.biometric.j(this, taskCompletionSource, false, 3), executor);
         taskCompletionSource.getTask();
     }
 }

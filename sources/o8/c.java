@@ -15,7 +15,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class c {
     public static final HashMap o = new HashMap();
@@ -25,7 +25,7 @@ public final class c {
     public boolean g;
     public final Intent h;
     public final j0 i;
-    public jf.a m;
+    public hf.a m;
     public IInterface n;
     public final ArrayList d = new ArrayList();
     public final HashSet e = new HashSet();
@@ -82,7 +82,7 @@ public final class c {
         }
         f0Var.b("Initiate binding to the service.", new Object[0]);
         arrayList.add(g0Var);
-        jf.a aVar = new jf.a(cVar, 2);
+        hf.a aVar = new hf.a(cVar, 2);
         cVar.m = aVar;
         cVar.g = true;
         if (cVar.a.bindService(cVar.h, aVar, 1)) {

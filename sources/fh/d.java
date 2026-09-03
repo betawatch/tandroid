@@ -1,67 +1,93 @@
 package fh;
 
 import android.graphics.Canvas;
+import android.graphics.Rect;
+import kf.r;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Cells.s1;
+import org.telegram.ui.Components.j6;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.mr;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class d extends eh.h {
-    public final MediaController.PhotoEntry b;
-    public final SendMessagesHelper.SendingMediaInfo c;
+public final class d extends c {
+    public final j6 d;
+    public final kj0 e;
+    public final xd.a f;
+    public float h;
 
-    /* JADX WARN: Removed duplicated region for block: B:6:0x0087  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0090  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public d(SendMessagesHelper.SendingMediaInfo sendingMediaInfo) {
-        ImageLocation imageLocation;
-        ImageLocation imageLocation2;
-        this.c = sendingMediaInfo;
-        MediaController.PhotoEntry photoEntry = sendingMediaInfo.originalPhotoEntry;
-        this.b = photoEntry;
-        this.a.setRoundRadius(AndroidUtilities.dp(7.0f));
-        ImageReceiver imageReceiver = this.a;
-        imageReceiver.setOrientation(0, true);
-        String str = photoEntry.coverPath;
-        if (str != null) {
-            imageLocation = ImageLocation.getForPath(str);
-        } else {
-            String str2 = photoEntry.thumbPath;
-            if (str2 != null) {
-                imageLocation = ImageLocation.getForPath(str2);
-            } else if (photoEntry.path == null) {
-                imageReceiver.clearImage();
-                imageLocation = null;
-            } else {
-                if (!photoEntry.isVideo || photoEntry.isLivePhoto()) {
-                    ImageLocation forPath = ImageLocation.getForPath("thumb://" + photoEntry.imageId + ":" + photoEntry.path);
-                    imageReceiver.setOrientation(photoEntry.orientation, photoEntry.invert, true);
-                    imageLocation2 = forPath;
-                    if (imageLocation2 == null) {
-                        imageReceiver.setImage(imageLocation2, null, null, null, null, 0);
-                        return;
-                    } else {
-                        imageReceiver.clearImage();
-                        return;
-                    }
-                }
-                imageLocation = ImageLocation.getForPath("vthumb://" + photoEntry.imageId + ":" + photoEntry.path);
-            }
-        }
-        imageLocation2 = imageLocation;
-        if (imageLocation2 == null) {
+    public d(s1 s1Var, f6 f6Var) {
+        super(f6Var);
+        kj0 kj0Var = new kj0(s1Var);
+        this.e = kj0Var;
+        kj0Var.d(null, true, false);
+        kj0Var.v = 650.0f;
+        kj0Var.e(0.69f, false);
+        kj0Var.p.setStrokeWidth(AndroidUtilities.dp(1.5f));
+        this.f = new xd.a(s1Var, mr.h, 260L);
+        j6 j6Var = new j6(true, false, false, false);
+        this.d = j6Var;
+        j6Var.u(AndroidUtilities.bold());
+        j6Var.t(AndroidUtilities.dp(13.0f));
+        j6Var.b = 17;
+        int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.i6, f6Var);
+        if (this.b != v02) {
+            org.telegram.ui.ActionBar.j6.B1(this.a, v02, false);
+            this.b = v02;
         }
     }
 
-    @Override // eh.h
-    public final void c(Canvas canvas, int i10, int i11) {
-        ImageReceiver imageReceiver = this.a;
-        imageReceiver.setImageCoords(0.0f, 0.0f, i10, i11);
-        imageReceiver.draw(canvas);
+    @Override // fh.c
+    public final void a(int i10) {
+        this.a.setAlpha(i10);
+        this.d.w = i10;
+    }
+
+    public final float b() {
+        return this.f.e;
+    }
+
+    public final void c(int i10) {
+        this.d.r(i10);
+        this.e.o = i10;
+    }
+
+    public final void d(float f10) {
+        if (this.h != f10) {
+            this.h = f10;
+            Rect bounds = getBounds();
+            int i10 = (int) this.h;
+            this.d.setBounds(bounds.left, bounds.top + i10, bounds.right, bounds.bottom + i10);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        float f10 = this.f.e;
+        if (f10 < 1.0f) {
+            r.b(canvas, this.d, 1.0f - f10);
+        }
+        if (f10 > 0.0f) {
+            float exactCenterX = getBounds().exactCenterX();
+            float exactCenterY = getBounds().exactCenterY();
+            canvas.save();
+            canvas.scale(f10, f10, exactCenterX, exactCenterY);
+            this.e.a(canvas);
+            canvas.restore();
+        }
+    }
+
+    @Override // fh.c, android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        super.onBoundsChange(rect);
+        Rect bounds = getBounds();
+        int i10 = (int) this.h;
+        this.d.setBounds(bounds.left, bounds.top + i10, bounds.right, bounds.bottom + i10);
+        int dp = AndroidUtilities.dp(11.0f);
+        int centerX = rect.centerX();
+        int centerY = rect.centerY();
+        this.e.f(centerX - dp, centerY - dp, centerX + dp, centerY + dp);
     }
 }

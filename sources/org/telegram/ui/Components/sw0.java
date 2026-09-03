@@ -12,9 +12,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class sw0 extends kj0 {
+public final class sw0 extends jj0 {
     public float B;
     public ValueAnimator C;
     public ValueAnimator D;
@@ -29,16 +29,16 @@ public final class sw0 extends kj0 {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public sw0(xw0 xw0Var, Context context) {
         super(context);
-        org.telegram.ui.ActionBar.g6 g6Var = xw0Var.m2;
+        org.telegram.ui.ActionBar.f6 f6Var = xw0Var.m2;
         this.E = xw0Var;
         this.w = false;
         this.y = 1.0f;
-        k(xw0Var.t3 ? i0.a.k(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Wk, g6Var), (int) 102.0f) : org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Me, g6Var));
+        k(xw0Var.t3 ? i0.a.k(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Wk, f6Var), (int) 102.0f) : org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Me, f6Var));
         setScaleType(ImageView.ScaleType.CENTER);
         setLayerNum(null);
     }
 
-    @Override // org.telegram.ui.Components.kj0
+    @Override // org.telegram.ui.Components.jj0
     public final void c() {
         this.w = true;
         if (this.y < 1.0f) {
@@ -52,7 +52,7 @@ public final class sw0 extends kj0 {
             ofFloat.addUpdateListener(new pw0(this, 2));
             this.D.addListener(new rw0(this, 0));
             this.D.setDuration(320L);
-            this.D.setInterpolator(pr.h);
+            this.D.setInterpolator(mr.h);
             this.D.start();
         }
     }
@@ -83,7 +83,7 @@ public final class sw0 extends kj0 {
             return;
         }
         this.x = System.currentTimeMillis();
-        hj0 animatedDrawable = getAnimatedDrawable();
+        gj0 animatedDrawable = getAnimatedDrawable();
         if (animatedDrawable == null && getImageReceiver() != null) {
             animatedDrawable = getImageReceiver().getLottieAnimation();
         }
@@ -120,7 +120,7 @@ public final class sw0 extends kj0 {
             ofFloat.addUpdateListener(new pw0(this, 1));
             this.v.addListener(new rw0(this, 1));
             this.v.setDuration(350L);
-            this.v.setInterpolator(pr.h);
+            this.v.setInterpolator(mr.h);
             this.v.start();
         }
     }
@@ -128,11 +128,11 @@ public final class sw0 extends kj0 {
     public final void m(float f10) {
         this.s = f10;
         xw0 xw0Var = this.E;
-        org.telegram.ui.ActionBar.g6 g6Var = xw0Var.m2;
+        org.telegram.ui.ActionBar.f6 f6Var = xw0Var.m2;
         if (xw0Var.t3) {
-            k(i0.a.k(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Wk, g6Var), (int) (AndroidUtilities.lerp(0.4f, 0.8f, f10) * 255.0f)));
+            k(i0.a.k(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Wk, f6Var), (int) (AndroidUtilities.lerp(0.4f, 0.8f, f10) * 255.0f)));
         } else {
-            k(i0.a.d(this.s, org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Me, g6Var), org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Oe, g6Var)));
+            k(i0.a.d(this.s, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Me, f6Var), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Oe, f6Var)));
         }
         invalidate();
     }

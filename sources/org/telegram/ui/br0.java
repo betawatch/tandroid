@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.ClippingImageView;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class br0 implements org.telegram.ui.Components.y4, org.telegram.ui.ActionBar.c2, ImageReceiver.ImageReceiverDelegate, r0.o {
     public final /* synthetic */ PhotoViewer a;
@@ -19,7 +19,7 @@ public final /* synthetic */ class br0 implements org.telegram.ui.Components.y4,
     }
 
     @Override // org.telegram.ui.Components.y4
-    public void I(int i10, int i11, boolean z4) {
+    public void J(int i10, int i11, boolean z4) {
         Drawable[] drawableArr = PhotoViewer.Q8;
         this.a.w2(z4, i10, i11, false, false, false);
     }
@@ -75,10 +75,10 @@ public final /* synthetic */ class br0 implements org.telegram.ui.Components.y4,
         PhotoViewer photoViewer = this.a;
         if (imageReceiver == photoViewer.z4 && z4 && !z10) {
             if (!photoViewer.o1 && ((photoViewer.r4 == 1 || (i11 = photoViewer.Z1) == 1 || i11 == 11) && photoViewer.z1 != null && (bitmap = imageReceiver.getBitmap()) != null)) {
-                org.telegram.ui.Components.af0 af0Var = photoViewer.z1;
+                org.telegram.ui.Components.ze0 ze0Var = photoViewer.z1;
                 int orientation = imageReceiver.getOrientation();
                 int i12 = photoViewer.Z1;
-                af0Var.b(bitmap, orientation, (i12 == 1 || i12 == 11) ? false : true, true, photoViewer.A1, null, null);
+                ze0Var.b(bitmap, orientation, (i12 == 1 || i12 == 11) ? false : true, true, photoViewer.A1, null, null);
             }
             if (photoViewer.v4.getVisibility() == 0) {
                 photoViewer.b0.requestLayout();
@@ -101,7 +101,7 @@ public final /* synthetic */ class br0 implements org.telegram.ui.Components.y4,
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    public void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         Drawable[] drawableArr = PhotoViewer.Q8;
         this.a.e3(0);
     }

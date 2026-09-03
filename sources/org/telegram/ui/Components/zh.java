@@ -7,24 +7,24 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class zh extends ra0 {
+public final class zh extends qa0 {
     public final /* synthetic */ int S;
     public final /* synthetic */ KeyEvent.Callback T;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ zh(KeyEvent.Callback callback, Context context, long j10, org.telegram.ui.ActionBar.p2 p2Var, org.telegram.ui.ActionBar.g6 g6Var, int i10) {
-        super(context, j10, 0L, p2Var, g6Var);
+    public /* synthetic */ zh(KeyEvent.Callback callback, Context context, long j10, org.telegram.ui.ActionBar.p2 p2Var, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
+        super(context, j10, 0L, p2Var, f6Var);
         this.S = i10;
         this.T = callback;
     }
 
-    @Override // org.telegram.ui.Components.ra0
+    @Override // org.telegram.ui.Components.qa0
     public void f(Canvas canvas, Rect rect, float f10) {
         switch (this.S) {
             case 1:
-                qh.k kVar = (qh.k) this.T;
+                ph.k kVar = (ph.k) this.T;
                 Paint paint = kVar.e;
                 RectF rectF = kVar.w0;
                 rectF.set(rect);
@@ -50,7 +50,7 @@ public final class zh extends ra0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ra0
+    @Override // org.telegram.ui.Components.qa0
     public boolean h() {
         switch (this.S) {
             case 1:
@@ -60,11 +60,11 @@ public final class zh extends ra0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ra0
+    @Override // org.telegram.ui.Components.qa0
     public void i() {
         switch (this.S) {
             case 0:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((mi) this.T).g0;
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((li) this.T).g0;
                 if (chatAttachAlertPhotoLayout != null) {
                     chatAttachAlertPhotoLayout.V();
                     break;
@@ -73,11 +73,11 @@ public final class zh extends ra0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ra0
+    @Override // org.telegram.ui.Components.qa0
     public void n(boolean z4) {
         switch (this.S) {
             case 0:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((mi) this.T).g0;
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((li) this.T).g0;
                 if (chatAttachAlertPhotoLayout != null) {
                     chatAttachAlertPhotoLayout.V();
                     break;

@@ -4,9 +4,9 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import b7.p1;
 import java.util.Arrays;
-import org.telegram.ui.yh;
+import org.telegram.ui.ai;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class u extends c6.a {
     public static final Parcelable.Creator<u> CREATOR = new l4.j(28);
@@ -56,14 +56,14 @@ public final class u extends c6.a {
         String valueOf2 = String.valueOf(this.e);
         String valueOf3 = String.valueOf(this.f);
         String valueOf4 = String.valueOf(this.h);
-        StringBuilder m9 = yh.m("PublicKeyCredential{\n id='", this.a, "', \n type='", this.b, "', \n rawId=");
-        yh.w(m9, c3, ", \n registerResponse=", valueOf, ", \n signResponse=");
-        yh.w(m9, valueOf2, ", \n errorResponse=", valueOf3, ", \n extensionsClientOutputs=");
-        m9.append(valueOf4);
-        m9.append(", \n authenticatorAttachment='");
-        m9.append(this.n);
-        m9.append("'}");
-        return m9.toString();
+        StringBuilder l10 = ai.l("PublicKeyCredential{\n id='", this.a, "', \n type='", this.b, "', \n rawId=");
+        ai.w(l10, c3, ", \n registerResponse=", valueOf, ", \n signResponse=");
+        ai.w(l10, valueOf2, ", \n errorResponse=", valueOf3, ", \n extensionsClientOutputs=");
+        l10.append(valueOf4);
+        l10.append(", \n authenticatorAttachment='");
+        l10.append(this.n);
+        l10.append("'}");
+        return l10.toString();
     }
 
     @Override // android.os.Parcelable

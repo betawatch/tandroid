@@ -1,8 +1,8 @@
 package ne;
 
-import k7.h0;
+import k7.g0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class k extends p {
     public final /* synthetic */ int g;
@@ -16,13 +16,13 @@ public final class k extends p {
     }
 
     @Override // ne.p
-    public final void a(h0 h0Var) {
+    public final void a(g0 g0Var) {
         switch (this.g) {
             case 0:
-                h0Var.i(this);
+                g0Var.i(this);
                 break;
             default:
-                h0Var.s(this);
+                g0Var.s(this);
                 break;
         }
     }

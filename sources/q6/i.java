@@ -2,12 +2,12 @@ package q6;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import j7.g5;
+import j7.f5;
 import java.util.Arrays;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class i extends l {
     public static final Parcelable.Creator<i> CREATOR = new r0(18);
@@ -46,8 +46,8 @@ public final class i extends l {
             }
             jSONObject.put("userHandle", i6.b.c(w0Var == null ? null : w0Var.u()));
             return jSONObject;
-        } catch (JSONException e6) {
-            throw new RuntimeException("Error encoding AuthenticatorAssertionResponse to JSON object", e6);
+        } catch (JSONException e) {
+            throw new RuntimeException("Error encoding AuthenticatorAssertionResponse to JSON object", e);
         }
     }
 
@@ -64,33 +64,33 @@ public final class i extends l {
     }
 
     public final String toString() {
-        androidx.biometric.e eVar = new androidx.biometric.e(getClass().getSimpleName(), 7);
+        af.d dVar = new af.d(getClass().getSimpleName(), 8);
         b7.o0 o0Var = b7.q0.d;
         byte[] u10 = this.a.u();
-        eVar.D(o0Var.c(u10.length, u10), "keyHandle");
+        dVar.D(o0Var.c(u10.length, u10), "keyHandle");
         byte[] u11 = this.b.u();
-        eVar.D(o0Var.c(u11.length, u11), "clientDataJSON");
+        dVar.D(o0Var.c(u11.length, u11), "clientDataJSON");
         byte[] u12 = this.c.u();
-        eVar.D(o0Var.c(u12.length, u12), "authenticatorData");
+        dVar.D(o0Var.c(u12.length, u12), "authenticatorData");
         byte[] u13 = this.d.u();
-        eVar.D(o0Var.c(u13.length, u13), "signature");
+        dVar.D(o0Var.c(u13.length, u13), "signature");
         b7.w0 w0Var = this.e;
         byte[] u14 = w0Var == null ? null : w0Var.u();
         if (u14 != null) {
-            eVar.D(o0Var.c(u14.length, u14), "userHandle");
+            dVar.D(o0Var.c(u14.length, u14), "userHandle");
         }
-        return eVar.toString();
+        return dVar.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = g5.q(parcel, 20293);
-        g5.c(parcel, 2, this.a.u());
-        g5.c(parcel, 3, this.b.u());
-        g5.c(parcel, 4, this.c.u());
-        g5.c(parcel, 5, this.d.u());
+        int q10 = f5.q(parcel, 20293);
+        f5.c(parcel, 2, this.a.u());
+        f5.c(parcel, 3, this.b.u());
+        f5.c(parcel, 4, this.c.u());
+        f5.c(parcel, 5, this.d.u());
         b7.w0 w0Var = this.e;
-        g5.c(parcel, 6, w0Var == null ? null : w0Var.u());
-        g5.r(parcel, q10);
+        f5.c(parcel, 6, w0Var == null ? null : w0Var.u());
+        f5.r(parcel, q10);
     }
 }

@@ -6,7 +6,7 @@ import java.util.WeakHashMap;
 import r0.j0;
 import r0.o0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class y extends o0 {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final class y extends o0 {
                 a0Var.s = null;
                 f7.b bVar = a0Var.k;
                 if (bVar != null) {
-                    bVar.t(a0Var.j);
+                    bVar.u(a0Var.j);
                     a0Var.j = null;
                     a0Var.k = null;
                 }

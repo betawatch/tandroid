@@ -4,20 +4,20 @@ import android.content.Context;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class st0 extends org.telegram.ui.Cells.h7 {
+public final class st0 extends org.telegram.ui.Cells.g7 {
     public final /* synthetic */ int i0;
-    public final /* synthetic */ rl0 j0;
+    public final /* synthetic */ ql0 j0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ st0(rl0 rl0Var, Context context, org.telegram.ui.ActionBar.g6 g6Var, int i10) {
-        super(context, 0, g6Var);
+    public /* synthetic */ st0(ql0 ql0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
+        super(context, 0, f6Var);
         this.i0 = i10;
-        this.j0 = rl0Var;
+        this.j0 = ql0Var;
     }
 
-    @Override // org.telegram.ui.Cells.h7
+    @Override // org.telegram.ui.Cells.g7
     public final boolean d(MessageObject messageObject) {
         switch (this.i0) {
             case 0:

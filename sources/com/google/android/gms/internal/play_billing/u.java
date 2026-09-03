@@ -5,12 +5,12 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import com.android.billingclient.api.Purchase;
-import j7.j6;
+import j7.p6;
 import java.util.ArrayList;
 import org.json.JSONException;
 import org.telegram.messenger.OneUIUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class u {
     public static final int a = Runtime.getRuntime().availableProcessors();
@@ -55,10 +55,10 @@ public abstract class u {
         bundle.putString("SKU_DETAILS_RESPONSE_FORMAT", "PRODUCT_DETAILS");
         p pVar = r.b;
         Object[] objArr = {"subs", "inapp"};
-        j6.a(2, objArr);
+        p6.a(2, objArr);
         bundle.putStringArrayList("PRODUCT_TYPES_TO_RETURN_MULTIPLE_OFFERS", new ArrayList<>(r.t(2, objArr)));
         Object[] objArr2 = {"inapp"};
-        j6.a(1, objArr2);
+        p6.a(1, objArr2);
         bundle.putStringArrayList("PRODUCT_TYPES_TO_RETURN_RENT_OFFERS", new ArrayList<>(r.t(1, objArr2)));
         bundle.putBoolean("SHOULD_RETURN_UNFETCHED_PRODUCTS", true);
         ArrayList<String> arrayList2 = new ArrayList<>();
@@ -68,12 +68,12 @@ public abstract class u {
         boolean z4 = false;
         boolean z10 = false;
         for (int i10 = 0; i10 < size; i10++) {
-            p2.p pVar2 = (p2.p) arrayList.get(i10);
+            p2.q qVar = (p2.q) arrayList.get(i10);
             arrayList2.add(null);
             z4 |= !TextUtils.isEmpty(null);
             arrayList4.add(null);
             z10 |= !TextUtils.isEmpty(null);
-            if (pVar2.b.equals("first_party")) {
+            if (qVar.b.equals("first_party")) {
                 throw new NullPointerException("Serialized DocId is required for constructing ExtraParams to query ProductDetails for all first party products.");
             }
         }
@@ -165,8 +165,8 @@ public abstract class u {
         }
         try {
             return new Purchase(str, str2);
-        } catch (JSONException e6) {
-            h("BillingHelper", "Got JSONException while parsing purchase data: ".concat(e6.toString()));
+        } catch (JSONException e) {
+            h("BillingHelper", "Got JSONException while parsing purchase data: ".concat(e.toString()));
             return null;
         }
     }

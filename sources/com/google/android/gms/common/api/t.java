@@ -3,9 +3,9 @@ package com.google.android.gms.common.api;
 import android.app.PendingIntent;
 import android.os.Parcel;
 import android.os.Parcelable;
-import j7.f5;
+import j7.l0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class t implements Parcelable.Creator {
     public static final t b = new t(0);
@@ -24,20 +24,20 @@ public final class t implements Parcelable.Creator {
                     parcel.setDataPosition(dataPosition - 4);
                     return g.b;
                 }
-                int z4 = f5.z(parcel);
+                int z4 = l0.z(parcel);
                 h hVar = null;
                 while (parcel.dataPosition() < z4) {
                     int readInt = parcel.readInt();
                     if (((char) readInt) != 1) {
-                        f5.y(parcel, readInt);
+                        l0.y(parcel, readInt);
                     } else {
-                        hVar = (h) f5.g(parcel, readInt, h.CREATOR);
+                        hVar = (h) l0.g(parcel, readInt, h.CREATOR);
                     }
                 }
-                f5.m(parcel, z4);
+                l0.m(parcel, z4);
                 return new g(hVar);
             case 1:
-                int z10 = f5.z(parcel);
+                int z10 = l0.z(parcel);
                 int i10 = 0;
                 int i11 = 0;
                 int i12 = 0;
@@ -46,38 +46,38 @@ public final class t implements Parcelable.Creator {
                     int readInt2 = parcel.readInt();
                     char c3 = (char) readInt2;
                     if (c3 == 1) {
-                        i10 = f5.u(parcel, readInt2);
+                        i10 = l0.u(parcel, readInt2);
                     } else if (c3 == 2) {
-                        i11 = f5.u(parcel, readInt2);
+                        i11 = l0.u(parcel, readInt2);
                     } else if (c3 == 3) {
-                        i12 = f5.u(parcel, readInt2);
+                        i12 = l0.u(parcel, readInt2);
                     } else if (c3 != 4) {
-                        f5.y(parcel, readInt2);
+                        l0.y(parcel, readInt2);
                     } else {
-                        z11 = f5.n(parcel, readInt2);
+                        z11 = l0.n(parcel, readInt2);
                     }
                 }
-                f5.m(parcel, z10);
+                l0.m(parcel, z10);
                 return new h(i10, i11, i12, z11);
             case 2:
-                int z12 = f5.z(parcel);
+                int z12 = l0.z(parcel);
                 String str = null;
                 int i13 = 0;
                 while (parcel.dataPosition() < z12) {
                     int readInt3 = parcel.readInt();
                     char c10 = (char) readInt3;
                     if (c10 == 1) {
-                        i13 = f5.u(parcel, readInt3);
+                        i13 = l0.u(parcel, readInt3);
                     } else if (c10 != 2) {
-                        f5.y(parcel, readInt3);
+                        l0.y(parcel, readInt3);
                     } else {
-                        str = f5.h(parcel, readInt3);
+                        str = l0.h(parcel, readInt3);
                     }
                 }
-                f5.m(parcel, z12);
+                l0.m(parcel, z12);
                 return new Scope(i13, str);
             default:
-                int z13 = f5.z(parcel);
+                int z13 = l0.z(parcel);
                 String str2 = null;
                 PendingIntent pendingIntent = null;
                 y5.a aVar = null;
@@ -86,18 +86,18 @@ public final class t implements Parcelable.Creator {
                     int readInt4 = parcel.readInt();
                     char c11 = (char) readInt4;
                     if (c11 == 1) {
-                        i14 = f5.u(parcel, readInt4);
+                        i14 = l0.u(parcel, readInt4);
                     } else if (c11 == 2) {
-                        str2 = f5.h(parcel, readInt4);
+                        str2 = l0.h(parcel, readInt4);
                     } else if (c11 == 3) {
-                        pendingIntent = (PendingIntent) f5.g(parcel, readInt4, PendingIntent.CREATOR);
+                        pendingIntent = (PendingIntent) l0.g(parcel, readInt4, PendingIntent.CREATOR);
                     } else if (c11 != 4) {
-                        f5.y(parcel, readInt4);
+                        l0.y(parcel, readInt4);
                     } else {
-                        aVar = (y5.a) f5.g(parcel, readInt4, y5.a.CREATOR);
+                        aVar = (y5.a) l0.g(parcel, readInt4, y5.a.CREATOR);
                     }
                 }
-                f5.m(parcel, z13);
+                l0.m(parcel, z13);
                 return new Status(i14, str2, pendingIntent, aVar);
         }
     }

@@ -4,9 +4,9 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
-import org.telegram.ui.yh;
+import org.telegram.ui.ai;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class j {
     public static final Object[] a = new Object[0];
@@ -54,9 +54,9 @@ public abstract class j {
                 i10++;
             }
             StackTraceElement stackTraceElement = stackTrace[i10];
-            StringBuilder m9 = yh.m("Parameter specified as non-null is null: method ", stackTraceElement.getClassName(), ".", stackTraceElement.getMethodName(), ", parameter ");
-            m9.append(str);
-            NullPointerException nullPointerException = new NullPointerException(m9.toString());
+            StringBuilder l10 = ai.l("Parameter specified as non-null is null: method ", stackTraceElement.getClassName(), ".", stackTraceElement.getMethodName(), ", parameter ");
+            l10.append(str);
+            NullPointerException nullPointerException = new NullPointerException(l10.toString());
             f(nullPointerException, j.class.getName());
             throw nullPointerException;
         }

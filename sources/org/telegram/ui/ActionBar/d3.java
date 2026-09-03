@@ -1,61 +1,50 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.ValueAnimator;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d3 implements ValueAnimator.AnimatorUpdateListener {
+public final class d3 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f3 b;
+    public final /* synthetic */ e3 b;
 
-    public /* synthetic */ d3(f3 f3Var, int i10) {
+    public /* synthetic */ d3(e3 e3Var, int i10) {
         this.a = i10;
-        this.b = f3Var;
+        this.b = e3Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i10 = this.a;
+        e3 e3Var = this.b;
+        switch (i10) {
             case 0:
-                f3 f3Var = this.b;
-                h3 h3Var = f3Var.D;
-                h3Var.containerView.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                h3Var.onContainerViewTranslation();
-                h3Var.onSmoothContainerViewLayout(h3Var.containerView.getTranslationY());
-                f3Var.invalidate();
+                e3Var.y = 0.0f;
+                e3Var.D.containerView.setTranslationX(0.0f);
+                e3Var.D.container.invalidate();
                 break;
             case 1:
-                f3 f3Var2 = this.b;
-                f3Var2.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                f3Var2.y = floatValue;
-                h3 h3Var2 = f3Var2.D;
-                h3Var2.containerView.setTranslationX(floatValue);
-                h3Var2.container.invalidate();
+                e3Var.D.skipDismissAnimation = true;
+                e3Var.D.containerView.setTranslationX(e3Var.getMeasuredWidth());
+                e3Var.D.dismiss();
+                e3Var.D.container.invalidate();
                 break;
             case 2:
-                f3 f3Var3 = this.b;
-                f3Var3.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                f3Var3.y = floatValue2;
-                h3 h3Var3 = f3Var3.D;
-                h3Var3.containerView.setTranslationX(floatValue2);
-                h3Var3.container.invalidate();
-                break;
-            case 3:
-                f3 f3Var4 = this.b;
-                f3Var4.getClass();
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                h3 h3Var4 = f3Var4.D;
-                h3Var4.backDrawable.setAlpha(h3Var4.dimBehind ? (int) (h3Var4.dimBehindAlpha * floatValue3) : 0);
+                e3Var.D.containerView.setTranslationY(0.0f);
+                e3Var.D.onContainerViewTranslation();
+                g3 g3Var = e3Var.D;
+                g3Var.onSmoothContainerViewLayout(g3Var.containerView.getTranslationY());
+                e3Var.invalidate();
                 break;
             default:
-                h3 h3Var5 = this.b.D;
-                f3 f3Var5 = h3Var5.container;
-                if (f3Var5 != null) {
-                    f3Var5.invalidate();
+                AnimatorSet animatorSet = e3Var.h;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    e3Var.h = null;
                 }
-                h3Var5.onContainerViewTranslation();
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
                 break;
         }
     }

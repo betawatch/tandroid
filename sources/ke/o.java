@@ -2,11 +2,11 @@ package ke;
 
 import java.util.Locale;
 import java.util.regex.Pattern;
+import k7.t;
 import k7.u;
-import k7.v;
 import ne.r;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class o extends pe.a {
     public final r a = new r();
@@ -33,7 +33,7 @@ public final class o extends pe.a {
         while (i11 < charSequence.length()) {
             int c3 = m1.j.c(kVar.a);
             if (c3 == 0) {
-                int c10 = v.c(i11, charSequence.length(), charSequence);
+                int c10 = u.c(i11, charSequence.length(), charSequence);
                 if (c10 < charSequence.length() && charSequence.charAt(c10) == '[') {
                     kVar.a = 2;
                     kVar.d = new StringBuilder();
@@ -44,7 +44,7 @@ public final class o extends pe.a {
                 }
                 i11 = -1;
             } else if (c3 == 1) {
-                b10 = u.b(i11, charSequence);
+                b10 = t.b(i11, charSequence);
                 if (b10 != -1) {
                     kVar.d.append(charSequence, i11, b10);
                     if (b10 >= charSequence.length()) {
@@ -57,17 +57,17 @@ public final class o extends pe.a {
                         if (!replaceAll.isEmpty()) {
                             kVar.e = replaceAll;
                             kVar.a = 3;
-                            i11 = v.c(b10 + 2, charSequence.length(), charSequence);
+                            i11 = u.c(b10 + 2, charSequence.length(), charSequence);
                         }
                     }
                 }
                 i11 = -1;
             } else if (c3 == 2) {
-                int c11 = v.c(i11, charSequence.length(), charSequence);
-                int a2 = u.a(c11, charSequence);
+                int c11 = u.c(i11, charSequence.length(), charSequence);
+                int a2 = t.a(c11, charSequence);
                 if (a2 != -1) {
                     kVar.f = charSequence.charAt(c11) == '<' ? charSequence.subSequence(c11 + 1, a2 - 1).toString() : charSequence.subSequence(c11, a2).toString();
-                    i11 = v.c(a2, charSequence.length(), charSequence);
+                    i11 = u.c(a2, charSequence.length(), charSequence);
                     if (i11 >= charSequence.length()) {
                         kVar.i = true;
                         sb.setLength(0);
@@ -76,7 +76,7 @@ public final class o extends pe.a {
                 }
                 i11 = -1;
             } else if (c3 == 3) {
-                i11 = v.c(i11, charSequence.length(), charSequence);
+                i11 = u.c(i11, charSequence.length(), charSequence);
                 if (i11 >= charSequence.length()) {
                     kVar.a = 1;
                 } else {
@@ -100,14 +100,14 @@ public final class o extends pe.a {
                     }
                 }
             } else if (c3 == 4) {
-                b10 = u.d(charSequence, i11, kVar.g);
+                b10 = t.d(charSequence, i11, kVar.g);
                 if (b10 != -1) {
                     kVar.h.append(charSequence.subSequence(i11, b10));
                     if (b10 >= charSequence.length()) {
                         kVar.h.append('\n');
                         i11 = b10;
                     } else {
-                        i11 = v.c(b10 + 1, charSequence.length(), charSequence);
+                        i11 = u.c(b10 + 1, charSequence.length(), charSequence);
                         if (i11 == charSequence.length()) {
                             kVar.i = true;
                             kVar.a();

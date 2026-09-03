@@ -6,20 +6,20 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c31 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ xn b;
+    public final /* synthetic */ zn b;
     public final /* synthetic */ Activity c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.g6 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 d;
     public final /* synthetic */ MessageObject e;
 
-    public /* synthetic */ c31(xn xnVar, Activity activity, org.telegram.ui.ActionBar.g6 g6Var, MessageObject messageObject, int i10) {
+    public /* synthetic */ c31(zn znVar, Activity activity, org.telegram.ui.ActionBar.f6 f6Var, MessageObject messageObject, int i10) {
         this.a = i10;
-        this.b = xnVar;
+        this.b = znVar;
         this.c = activity;
-        this.d = g6Var;
+        this.d = f6Var;
         this.e = messageObject;
     }
 
@@ -27,8 +27,8 @@ public final /* synthetic */ class c31 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                xn xnVar = this.b;
-                org.telegram.ui.Components.qc a02 = org.telegram.ui.Components.qc.a0(xnVar);
+                zn znVar = this.b;
+                org.telegram.ui.Components.qc a02 = org.telegram.ui.Components.qc.a0(znVar);
                 String string = LocaleController.getString(R.string.AdReported);
                 final int i10 = 1;
                 final Activity activity = this.c;
@@ -37,24 +37,24 @@ public final /* synthetic */ class c31 implements Runnable {
                     public final void run() {
                         switch (i10) {
                             case 0:
-                                af.g.s(activity, "https://promote.telegram.org/guidelines");
+                                ze.d.s(activity, "https://promote.telegram.org/guidelines");
                                 break;
                             case 1:
-                                af.g.s(activity, "https://promote.telegram.org/guidelines");
+                                ze.d.s(activity, "https://promote.telegram.org/guidelines");
                                 break;
                             default:
-                                af.g.s(activity, "https://promote.telegram.org/guidelines");
+                                ze.d.s(activity, "https://promote.telegram.org/guidelines");
                                 break;
                         }
                     }
                 }, this.d)).j();
                 MessageObject messageObject = this.e;
-                xnVar.Fa(messageObject);
-                xnVar.Ha(messageObject);
+                znVar.Fa(messageObject);
+                znVar.Ha(messageObject);
                 break;
             case 1:
-                xn xnVar2 = this.b;
-                org.telegram.ui.Components.qc a03 = org.telegram.ui.Components.qc.a0(xnVar2);
+                zn znVar2 = this.b;
+                org.telegram.ui.Components.qc a03 = org.telegram.ui.Components.qc.a0(znVar2);
                 String string2 = LocaleController.getString(R.string.AdReported);
                 final int i11 = 0;
                 final Activity activity2 = this.c;
@@ -63,24 +63,24 @@ public final /* synthetic */ class c31 implements Runnable {
                     public final void run() {
                         switch (i11) {
                             case 0:
-                                af.g.s(activity2, "https://promote.telegram.org/guidelines");
+                                ze.d.s(activity2, "https://promote.telegram.org/guidelines");
                                 break;
                             case 1:
-                                af.g.s(activity2, "https://promote.telegram.org/guidelines");
+                                ze.d.s(activity2, "https://promote.telegram.org/guidelines");
                                 break;
                             default:
-                                af.g.s(activity2, "https://promote.telegram.org/guidelines");
+                                ze.d.s(activity2, "https://promote.telegram.org/guidelines");
                                 break;
                         }
                     }
                 }, this.d)).j();
                 MessageObject messageObject2 = this.e;
-                xnVar2.Fa(messageObject2);
-                xnVar2.Ha(messageObject2);
+                znVar2.Fa(messageObject2);
+                znVar2.Ha(messageObject2);
                 break;
             default:
-                xn xnVar3 = this.b;
-                org.telegram.ui.Components.qc a04 = org.telegram.ui.Components.qc.a0(xnVar3);
+                zn znVar3 = this.b;
+                org.telegram.ui.Components.qc a04 = org.telegram.ui.Components.qc.a0(znVar3);
                 String string3 = LocaleController.getString(R.string.AdReported);
                 final int i12 = 2;
                 final Activity activity3 = this.c;
@@ -89,20 +89,20 @@ public final /* synthetic */ class c31 implements Runnable {
                     public final void run() {
                         switch (i12) {
                             case 0:
-                                af.g.s(activity3, "https://promote.telegram.org/guidelines");
+                                ze.d.s(activity3, "https://promote.telegram.org/guidelines");
                                 break;
                             case 1:
-                                af.g.s(activity3, "https://promote.telegram.org/guidelines");
+                                ze.d.s(activity3, "https://promote.telegram.org/guidelines");
                                 break;
                             default:
-                                af.g.s(activity3, "https://promote.telegram.org/guidelines");
+                                ze.d.s(activity3, "https://promote.telegram.org/guidelines");
                                 break;
                         }
                     }
                 }, this.d)).j();
                 MessageObject messageObject3 = this.e;
-                xnVar3.Fa(messageObject3);
-                xnVar3.Ha(messageObject3);
+                znVar3.Fa(messageObject3);
+                znVar3.Ha(messageObject3);
                 break;
         }
     }

@@ -9,8 +9,9 @@ import java.util.HashMap;
 import java.util.Locale;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
+import vh.w2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class b {
     public static volatile b j;
@@ -34,14 +35,14 @@ public final class b {
             try {
                 try {
                     byteArrayOutputStream = new ByteArrayOutputStream();
-                } catch (Exception e6) {
-                    e = e6;
+                } catch (Exception e) {
+                    e = e;
                 }
             } catch (Throwable th2) {
                 th = th2;
             }
-        } catch (Exception e10) {
-            e = e10;
+        } catch (Exception e6) {
+            e = e6;
             inputStream = null;
         } catch (Throwable th3) {
             th = th3;
@@ -64,13 +65,13 @@ public final class b {
             wrap.order(ByteOrder.LITTLE_ENDIAN);
             try {
                 byteArrayOutputStream.close();
-            } catch (Exception e11) {
-                FileLog.e(e11);
+            } catch (Exception e10) {
+                FileLog.e(e10);
             }
             try {
                 inputStream.close();
-            } catch (Exception e12) {
-                FileLog.e(e12);
+            } catch (Exception e11) {
+                FileLog.e(e11);
             }
             this.d = Locale.getDefault().getCountry().toLowerCase();
             this.f = new HashMap(255);
@@ -102,22 +103,22 @@ public final class b {
                 a(str);
             }
             this.b = true;
-        } catch (Exception e13) {
-            e = e13;
+        } catch (Exception e12) {
+            e = e12;
             byteArrayOutputStream2 = byteArrayOutputStream;
             e.printStackTrace();
             if (byteArrayOutputStream2 != null) {
                 try {
                     byteArrayOutputStream2.close();
-                } catch (Exception e14) {
-                    FileLog.e(e14);
+                } catch (Exception e13) {
+                    FileLog.e(e13);
                 }
             }
             if (inputStream != null) {
                 try {
                     inputStream.close();
-                } catch (Exception e15) {
-                    FileLog.e(e15);
+                } catch (Exception e14) {
+                    FileLog.e(e14);
                 }
             }
         } catch (Throwable th4) {
@@ -126,8 +127,8 @@ public final class b {
             if (byteArrayOutputStream2 != null) {
                 try {
                     byteArrayOutputStream2.close();
-                } catch (Exception e16) {
-                    FileLog.e(e16);
+                } catch (Exception e15) {
+                    FileLog.e(e15);
                 }
             }
             if (inputStream == null) {
@@ -136,8 +137,8 @@ public final class b {
             try {
                 inputStream.close();
                 throw th;
-            } catch (Exception e17) {
-                FileLog.e(e17);
+            } catch (Exception e16) {
+                FileLog.e(e16);
                 throw th;
             }
         }
@@ -193,9 +194,9 @@ public final class b {
         aVar2.d = new ArrayList();
         aVar2.a = str;
         bVar.h.put(str, aVar2);
-        short e6 = bVar.e(intValue);
-        short e10 = bVar.e(intValue + 4);
-        short e11 = bVar.e(intValue + 8);
+        short e = bVar.e(intValue);
+        short e6 = bVar.e(intValue + 4);
+        short e10 = bVar.e(intValue + 8);
         int i10 = intValue + 12;
         ArrayList arrayList = new ArrayList(5);
         while (true) {
@@ -218,19 +219,19 @@ public final class b {
             i11 += g11.length() + 1;
         }
         aVar2.c = arrayList2;
-        ArrayList arrayList3 = new ArrayList(e11);
-        int i12 = intValue + e6;
+        ArrayList arrayList3 = new ArrayList(e10);
+        int i12 = intValue + e;
         int i13 = i12;
         int i14 = 0;
-        while (i14 < e11) {
+        while (i14 < e10) {
             d dVar = new d();
             dVar.b = new ArrayList();
             dVar.a = bVar.e(i13);
-            short e12 = bVar.e(i13 + 2);
+            short e11 = bVar.e(i13 + 2);
             i13 += 4;
-            ArrayList arrayList4 = new ArrayList(e12);
+            ArrayList arrayList4 = new ArrayList(e11);
             int i15 = 0;
-            while (i15 < e12) {
+            while (i15 < e11) {
                 c cVar = new c();
                 cVar.a = bVar.f(i13);
                 cVar.b = bVar.f(i13 + 4);
@@ -241,13 +242,13 @@ public final class b {
                 byte b12 = bArr[i13 + 11];
                 cVar.d = bArr[i13 + 12];
                 byte b13 = bArr[i13 + 13];
-                short e13 = bVar.e(i13 + 14);
+                short e12 = bVar.e(i13 + 14);
                 i13 += 16;
-                String g12 = bVar.g(i12 + e10 + e13);
+                String g12 = bVar.g(i12 + e6 + e12);
                 cVar.e = g12;
                 int indexOf = g12.indexOf("[[");
                 if (indexOf != -1) {
-                    cVar.e = w.c.e(cVar.e.substring(0, indexOf), cVar.e.substring(cVar.e.indexOf("]]") + 2));
+                    cVar.e = w2.k(cVar.e.substring(0, indexOf), cVar.e.substring(cVar.e.indexOf("]]") + 2));
                 }
                 arrayList4.add(cVar);
                 i15++;
@@ -326,8 +327,8 @@ public final class b {
                         return str2 + " " + substring2;
                     }
                 }
-            } catch (Exception e6) {
-                FileLog.e(e6);
+            } catch (Exception e) {
+                FileLog.e(e);
                 return str;
             }
         }
@@ -381,8 +382,8 @@ public final class b {
                     break;
                 }
                 i11++;
-            } catch (Exception e6) {
-                e6.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
                 return "";
             }
         }

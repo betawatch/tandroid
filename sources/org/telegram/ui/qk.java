@@ -2,19 +2,20 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class qk extends org.telegram.ui.Components.j61 {
-    public final /* synthetic */ xn K;
+public final class qk extends wg.e {
+    public final /* synthetic */ zn I;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qk(xn xnVar, Context context) {
-        super(context);
-        this.K = xnVar;
+    public qk(zn znVar, Context context, org.telegram.ui.ActionBar.f6 f6Var, hj hjVar, ng.a aVar) {
+        super(context, aVar, f6Var, hjVar);
+        this.I = znVar;
     }
 
-    @Override // org.telegram.ui.Components.j61
-    public final org.telegram.ui.ActionBar.g6 getResourceProvider() {
-        return this.K.ba;
+    @Override // wg.e, android.view.View
+    public final void setVisibility(int i10) {
+        super.setVisibility(i10);
+        this.I.yc.h(3, i10 == 0, getMeasuredWidth() > 0);
     }
 }

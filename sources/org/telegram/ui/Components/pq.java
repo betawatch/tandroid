@@ -1,169 +1,53 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public class pq extends Drawable implements Drawable.Callback {
-    public Drawable a;
-    public final Drawable b;
-    public final int c;
-    public final int d;
-    public int e;
-    public int f;
-    public int h;
-    public int n;
-    public boolean r;
-    public int s;
-    public int v;
-    public boolean w;
-    public float x;
+public final class pq extends LinearLayout {
+    public final p9 a;
 
-    public pq(Drawable drawable, Drawable drawable2, int i10, int i11) {
-        this.a = drawable;
-        this.b = drawable2;
-        this.c = i10;
-        this.d = i11;
-        if (drawable2 != null) {
-            drawable2.setCallback(this);
+    public pq(Context context) {
+        super(context);
+        setOrientation(1);
+        p9 p9Var = new p9(context);
+        this.a = p9Var;
+        p9Var.setImageDrawable(new l90(p9Var, "m418 282.6c13.4-21.1 20.2-44.9 20.2-70.8 0-88.3-79.8-175.3-178.9-175.3-100.1 0-178.9 88-178.9 175.3 0 46.6 16.9 73.1 29.1 86.1-19.3 23.4-30.9 52.3-34.6 86.1-2.5 22.7 3.2 41.4 17.4 57.3 14.3 16 51.7 35 148.1 35 41.2 0 119.9-5.3 156.7-18.3 49.5-17.4 59.2-41.1 59.2-76.2 0-41.5-12.9-74.8-38.3-99.2z", AndroidUtilities.dp(110.0f), AndroidUtilities.dp(110.0f)));
+        if (!AndroidUtilities.isTablet()) {
+            addView(p9Var, k7.b6.q(110, 110, 49));
         }
+        TextView g10 = org.telegram.messenger.y3.g(context, 1, 20.0f);
+        org.telegram.ui.ai.s(org.telegram.ui.ActionBar.j6.G6, null, false, g10, 1);
+        g10.setText(LocaleController.getString(R.string.NoContactsYet3));
+        g10.setTypeface(AndroidUtilities.bold());
+        addView(g10, k7.b6.t(-2, -2, 49, 0, 15, 0, 7));
+        TextView textView = new TextView(context);
+        textView.setTextSize(1, 14.0f);
+        org.telegram.ui.ai.s(org.telegram.ui.ActionBar.j6.c7, null, false, textView, 1);
+        textView.setText(LocaleController.getString(R.string.NoContactsYet3Sub));
+        textView.setMaxWidth(AndroidUtilities.dp(260.0f));
+        textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+        addView(textView, k7.b6.t(-2, -2, 49, 0, 0, 0, 19));
+        ph.d dVar = new ph.d(context, null, true);
+        dVar.setUseWrapContent(true);
+        dVar.e();
+        dVar.setPadding(AndroidUtilities.dp(28.0f), 0, AndroidUtilities.dp(28.0f), 0);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("c");
+        spannableStringBuilder.setSpan(new lq(R.drawable.filled_new_contact_24, 0), 0, 1, 33);
+        spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) LocaleController.getString(R.string.NewContact));
+        dVar.g(spannableStringBuilder, false, true);
+        addView(dVar, k7.b6.q(-2, 44, 49));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public void draw(Canvas canvas) {
-        canvas.save();
-        canvas.translate(this.x, 0.0f);
-        if (this.r) {
-            Rect bounds = getBounds();
-            setBounds(bounds.centerX() - (getIntrinsicWidth() / 2), bounds.centerY() - (getIntrinsicHeight() / 2), (getIntrinsicWidth() / 2) + bounds.centerX(), (getIntrinsicHeight() / 2) + bounds.centerY());
-        }
-        Drawable drawable = this.a;
-        if (drawable != null) {
-            drawable.setBounds(getBounds());
-            this.a.draw(canvas);
-        }
-        Drawable drawable2 = this.b;
-        if (drawable2 != null) {
-            boolean z4 = this.w;
-            int i10 = this.d;
-            int i11 = this.c;
-            if (z4) {
-                Rect bounds2 = getBounds();
-                if (i11 != 0) {
-                    drawable2.setBounds(bounds2.left + i11, bounds2.top + i10, bounds2.right - i11, bounds2.bottom - i10);
-                } else {
-                    drawable2.setBounds(bounds2);
-                }
-            } else if (this.e != 0) {
-                int centerX = (getBounds().centerX() - (this.e / 2)) + i11 + this.s;
-                int centerY = getBounds().centerY();
-                int i12 = this.f;
-                int i13 = (centerY - (i12 / 2)) + i10 + this.v;
-                drawable2.setBounds(centerX, i13, this.e + centerX, i12 + i13);
-            } else {
-                int centerX2 = (getBounds().centerX() - (drawable2.getIntrinsicWidth() / 2)) + i11;
-                int centerY2 = (getBounds().centerY() - (drawable2.getIntrinsicHeight() / 2)) + i10;
-                drawable2.setBounds(centerX2, centerY2, drawable2.getIntrinsicWidth() + centerX2, drawable2.getIntrinsicHeight() + centerY2);
-            }
-            drawable2.draw(canvas);
-        }
-        canvas.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final Drawable.ConstantState getConstantState() {
-        return this.b.getConstantState();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        int i10 = this.n;
-        return i10 != 0 ? i10 : this.a.getIntrinsicHeight();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        int i10 = this.h;
-        return i10 != 0 ? i10 : this.a.getIntrinsicWidth();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getMinimumHeight() {
-        int i10 = this.n;
-        return i10 != 0 ? i10 : this.a.getMinimumHeight();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getMinimumWidth() {
-        int i10 = this.h;
-        return i10 != 0 ? i10 : this.a.getMinimumWidth();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return this.b.getOpacity();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int[] getState() {
-        return this.b.getState();
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final boolean isStateful() {
-        return this.b.isStateful();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void jumpToCurrentState() {
-        this.b.jumpToCurrentState();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final boolean onStateChange(int[] iArr) {
-        return true;
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j10) {
-        scheduleSelf(runnable, j10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.b.setAlpha(i10);
-        this.a.setAlpha(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setColorFilter(ColorFilter colorFilter) {
-        this.b.setColorFilter(colorFilter);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final boolean setState(int[] iArr) {
-        this.b.setState(iArr);
-        return true;
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        unscheduleSelf(runnable);
-    }
-
-    public pq(Drawable drawable, Drawable drawable2) {
-        this.a = drawable;
-        this.b = drawable2;
-        if (drawable2 != null) {
-            drawable2.setCallback(this);
-        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.setImageDrawable(new gj0(R.raw.utyan_empty, AndroidUtilities.dp(110.0f), AndroidUtilities.dp(110.0f)));
     }
 }

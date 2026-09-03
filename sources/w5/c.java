@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import b6.m;
 import com.google.android.gms.internal.clearcut.d2;
 import com.google.android.gms.internal.clearcut.x1;
-import j7.g5;
+import j7.f5;
 import java.util.Arrays;
 import u6.p;
 
@@ -76,17 +76,17 @@ public final class c extends c6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = g5.q(parcel, 20293);
-        g5.k(parcel, 2, this.a, i10);
-        g5.c(parcel, 3, this.b);
-        g5.g(parcel, 4, this.c);
-        g5.m(parcel, 5, this.d);
-        g5.g(parcel, 6, this.e);
-        g5.d(parcel, 7, this.f);
-        g5.s(parcel, 8, 4);
+        int q10 = f5.q(parcel, 20293);
+        f5.k(parcel, 2, this.a, i10);
+        f5.c(parcel, 3, this.b);
+        f5.g(parcel, 4, this.c);
+        f5.m(parcel, 5, this.d);
+        f5.g(parcel, 6, this.e);
+        f5.d(parcel, 7, this.f);
+        f5.s(parcel, 8, 4);
         parcel.writeInt(this.n ? 1 : 0);
-        g5.o(parcel, 9, this.h, i10);
-        g5.r(parcel, q10);
+        f5.o(parcel, 9, this.h, i10);
+        f5.r(parcel, q10);
     }
 
     public c(d2 d2Var, byte[] bArr, int[] iArr, String[] strArr, int[] iArr2, byte[][] bArr2, boolean z4, y7.a[] aVarArr) {

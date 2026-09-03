@@ -4,8 +4,9 @@ import android.util.SparseIntArray;
 import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Comparator;
-import mh.y3;
-import oh.t6;
+import kf.k0;
+import lh.y3;
+import nh.t6;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessagesController;
@@ -14,9 +15,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
-import wh.z5;
+import vh.a6;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t implements Comparator {
     public final /* synthetic */ int a;
@@ -44,7 +45,7 @@ public final /* synthetic */ class t implements Comparator {
                 return xVar.b(obj2) - xVar.b(obj);
             case 1:
                 SparseIntArray sparseIntArray = (SparseIntArray) this.b;
-                return sparseIntArray.get(((fg.k) obj).e, ConnectionsManager.DEFAULT_DATACENTER_ID) - sparseIntArray.get(((fg.k) obj2).e, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                return sparseIntArray.get(((eg.k) obj).e, ConnectionsManager.DEFAULT_DATACENTER_ID) - sparseIntArray.get(((eg.k) obj2).e, ConnectionsManager.DEFAULT_DATACENTER_ID);
             case 2:
                 return ((Collator) this.b).compare((String) obj, (String) obj2);
             case 3:
@@ -82,7 +83,7 @@ public final /* synthetic */ class t implements Comparator {
                 TLRPC.User user2 = MessagesController.getInstance(i10).getUser(Long.valueOf(peerDialogId2));
                 ?? r12 = user2 == null ? 0 : user2.premium;
                 if (r02 == r12) {
-                    return (peerStories2.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) l.d.i(1, peerStories2.stories)).date) - (peerStories.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) l.d.i(1, peerStories.stories)).date);
+                    return (peerStories2.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) k0.i(1, peerStories2.stories)).date) - (peerStories.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) k0.i(1, peerStories.stories)).date);
                 }
                 return r12 - r02;
             case 5:
@@ -100,12 +101,12 @@ public final /* synthetic */ class t implements Comparator {
                 }
                 return -1;
             default:
-                z5 z5Var = (z5) this.b;
+                a6 a6Var = (a6) this.b;
                 TL_iv.pageTableCell pagetablecell = (TL_iv.pageTableCell) obj;
                 TL_iv.pageTableCell pagetablecell2 = (TL_iv.pageTableCell) obj2;
-                int b10 = z5Var.b(pagetablecell);
-                int b11 = z5Var.b(pagetablecell2);
-                return b10 != b11 ? Integer.compare(b10, b11) : Integer.compare(z5Var.a(pagetablecell), z5Var.a(pagetablecell2));
+                int b10 = a6Var.b(pagetablecell);
+                int b11 = a6Var.b(pagetablecell2);
+                return b10 != b11 ? Integer.compare(b10, b11) : Integer.compare(a6Var.a(pagetablecell), a6Var.a(pagetablecell2));
         }
     }
 }

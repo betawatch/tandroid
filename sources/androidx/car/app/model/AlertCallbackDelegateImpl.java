@@ -5,12 +5,12 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.model.IAlertCallback;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class AlertCallbackDelegateImpl implements e {
     private final IAlertCallback mCallback;
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     public static class AlertCallbackStub extends IAlertCallback.Stub {
         private final d mCallback;
 
@@ -51,8 +51,8 @@ public class AlertCallbackDelegateImpl implements e {
             IAlertCallback iAlertCallback = this.mCallback;
             Objects.requireNonNull(iAlertCallback);
             iAlertCallback.onAlertCancelled(i10, androidx.car.app.utils.j.a());
-        } catch (RemoteException e6) {
-            throw new RuntimeException(e6);
+        } catch (RemoteException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -61,8 +61,8 @@ public class AlertCallbackDelegateImpl implements e {
             IAlertCallback iAlertCallback = this.mCallback;
             Objects.requireNonNull(iAlertCallback);
             iAlertCallback.onAlertDismissed(androidx.car.app.utils.j.a());
-        } catch (RemoteException e6) {
-            throw new RuntimeException(e6);
+        } catch (RemoteException e) {
+            throw new RuntimeException(e);
         }
     }
 

@@ -1,21 +1,33 @@
 package org.telegram.ui;
 
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class tc0 extends org.telegram.ui.ActionBar.p1 {
-    public final /* synthetic */ bd0 o;
+public final class tc0 extends f2.z0 {
+    public final /* synthetic */ cd0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tc0(bd0 bd0Var, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
-        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-        this.o = bd0Var;
+    public tc0(cd0 cd0Var) {
+        this.a = cd0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.p1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        this.o.F0 = null;
+    @Override // f2.z0
+    public final void a(RecyclerView recyclerView, int i10) {
+        boolean z4 = i10 != 0;
+        cd0 cd0Var = this.a;
+        cd0Var.N = z4;
+        if (z4 || cd0Var.I == null) {
+            return;
+        }
+        cd0Var.I = null;
+    }
+
+    @Override // f2.z0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        cd0 cd0Var = this.a;
+        cd0Var.A0(false);
+        if (cd0Var.I != null) {
+            cd0Var.K += i11;
+        }
     }
 }

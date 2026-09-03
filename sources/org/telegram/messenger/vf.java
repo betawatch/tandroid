@@ -6,7 +6,7 @@ import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class vf implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -44,7 +44,7 @@ public final /* synthetic */ class vf implements Runnable {
                 this.c.lambda$loadPendingTasks$22(this.d, this.b, (TLRPC.InputChannel) obj, this.f, this.e);
                 return;
             default:
-                final org.telegram.ui.Cells.f6 f6Var = (org.telegram.ui.Cells.f6) obj;
+                final org.telegram.ui.Cells.e6 e6Var = (org.telegram.ui.Cells.e6) obj;
                 long j11 = this.e;
                 final ArrayList arrayList = new ArrayList();
                 ArrayList<TLRPC.User> arrayList2 = new ArrayList<>();
@@ -56,14 +56,14 @@ public final /* synthetic */ class vf implements Runnable {
                     try {
                         try {
                             i10 = i12;
-                        } catch (Exception e6) {
-                            e = e6;
+                        } catch (Exception e) {
+                            e = e;
                             i10 = i12;
                         }
                         try {
                             queryFinalized = messagesStorage.getDatabase().queryFinalized("SELECT data, mid FROM messages_v2 WHERE uid = ? ORDER BY mid DESC LIMIT 10", Long.valueOf(-j12));
-                        } catch (Exception e10) {
-                            e = e10;
+                        } catch (Exception e6) {
+                            e = e6;
                             sQLiteCursor = null;
                             try {
                                 FileLog.e(e);
@@ -72,10 +72,10 @@ public final /* synthetic */ class vf implements Runnable {
                                 }
                                 final int i13 = this.f;
                                 final int i14 = i10;
-                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.e6
+                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.d6
                                     @Override // java.lang.Runnable
                                     public final void run() {
-                                        f6.b(f6.this, i13, arrayList, j12, i14, messagesStorage);
+                                        e6.b(e6.this, i13, arrayList, j12, i14, messagesStorage);
                                     }
                                 });
                                 return;
@@ -98,18 +98,18 @@ public final /* synthetic */ class vf implements Runnable {
                     i10 = i12;
                     try {
                         queryFinalized = messagesStorage.getDatabase().queryFinalized("SELECT data, mid FROM messages_v2 WHERE uid = ? AND mid <= ? ORDER BY mid DESC LIMIT 10", Long.valueOf(-j12), Integer.valueOf(i10));
-                    } catch (Exception e11) {
-                        e = e11;
+                    } catch (Exception e10) {
+                        e = e10;
                         sQLiteCursor = null;
                         FileLog.e(e);
                         if (sQLiteCursor != null) {
                         }
                         final int i132 = this.f;
                         final int i142 = i10;
-                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.e6
+                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.d6
                             @Override // java.lang.Runnable
                             public final void run() {
-                                f6.b(f6.this, i132, arrayList, j12, i142, messagesStorage);
+                                e6.b(e6.this, i132, arrayList, j12, i142, messagesStorage);
                             }
                         });
                         return;
@@ -150,18 +150,18 @@ public final /* synthetic */ class vf implements Runnable {
                         }
                     }
                     queryFinalized.dispose();
-                } catch (Exception e12) {
-                    e = e12;
+                } catch (Exception e11) {
+                    e = e11;
                     sQLiteCursor = queryFinalized;
                     FileLog.e(e);
                     if (sQLiteCursor != null) {
                     }
                     final int i1322 = this.f;
                     final int i1422 = i10;
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.e6
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.d6
                         @Override // java.lang.Runnable
                         public final void run() {
-                            f6.b(f6.this, i1322, arrayList, j12, i1422, messagesStorage);
+                            e6.b(e6.this, i1322, arrayList, j12, i1422, messagesStorage);
                         }
                     });
                     return;
@@ -174,18 +174,18 @@ public final /* synthetic */ class vf implements Runnable {
                 }
                 final int i13222 = this.f;
                 final int i14222 = i10;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.e6
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.d6
                     @Override // java.lang.Runnable
                     public final void run() {
-                        f6.b(f6.this, i13222, arrayList, j12, i14222, messagesStorage);
+                        e6.b(e6.this, i13222, arrayList, j12, i14222, messagesStorage);
                     }
                 });
                 return;
         }
     }
 
-    public /* synthetic */ vf(org.telegram.ui.Cells.f6 f6Var, int i10, MessagesStorage messagesStorage, long j10, long j11, int i11) {
-        this.h = f6Var;
+    public /* synthetic */ vf(org.telegram.ui.Cells.e6 e6Var, int i10, MessagesStorage messagesStorage, long j10, long j11, int i11) {
+        this.h = e6Var;
         this.b = i10;
         this.c = messagesStorage;
         this.d = j10;

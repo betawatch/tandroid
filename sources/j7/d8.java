@@ -1,6 +1,6 @@
 package j7;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class d8 {
     public static void a(int i10, int i11) {
@@ -10,7 +10,7 @@ public abstract class d8 {
                 a2 = e8.a("%s (%s) must not be negative", "index", Integer.valueOf(i10));
             } else {
                 if (i11 < 0) {
-                    throw new IllegalArgumentException(l.d.j(i11, "negative size: "));
+                    throw new IllegalArgumentException(kf.k0.j(i11, "negative size: "));
                 }
                 a2 = e8.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
             }
@@ -31,6 +31,6 @@ public abstract class d8 {
         if (i11 >= 0) {
             return e8.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
         }
-        throw new IllegalArgumentException(l.d.j(i11, "negative size: "));
+        throw new IllegalArgumentException(kf.k0.j(i11, "negative size: "));
     }
 }

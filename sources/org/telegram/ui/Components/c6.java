@@ -7,21 +7,21 @@ import android.text.TextPaint;
 import java.util.ArrayList;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class c6 {
-    public static final ih.g h = new ih.g("progress", 5);
+    public static final hh.g h = new hh.g("progress", 5);
     public final TextPaint c;
     public ObjectAnimator d;
-    public final org.telegram.ui.Cells.t1 g;
+    public final org.telegram.ui.Cells.s1 g;
     public final ArrayList a = new ArrayList();
     public final ArrayList b = new ArrayList();
     public float e = 0.0f;
     public int f = 1;
 
-    public c6(org.telegram.ui.Cells.t1 t1Var, TextPaint textPaint) {
+    public c6(org.telegram.ui.Cells.s1 s1Var, TextPaint textPaint) {
         this.c = textPaint;
-        this.g = t1Var;
+        this.g = s1Var;
     }
 
     public final int a() {
@@ -80,7 +80,7 @@ public final class c6 {
                 ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, h, z10 ? -1.0f : 1.0f, 0.0f);
                 this.d = ofFloat;
                 ofFloat.setDuration(150L);
-                this.d.addListener(new org.telegram.ui.s5(this, 25));
+                this.d.addListener(new org.telegram.ui.u5(this, 25));
                 this.d.start();
             }
             this.g.invalidate();

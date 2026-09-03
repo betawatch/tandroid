@@ -7,9 +7,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class ow0 extends rl0 {
+public final class ow0 extends ql0 {
     public int c;
     public final /* synthetic */ xw0 d;
 
@@ -17,18 +17,18 @@ public final class ow0 extends rl0 {
         this.d = xw0Var;
     }
 
-    @Override // org.telegram.ui.Components.rl0
-    public final boolean D(f2.m1 m1Var) {
-        return m1Var.f == 1;
+    @Override // org.telegram.ui.Components.ql0
+    public final boolean D(f2.l1 l1Var) {
+        return l1Var.f == 1;
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final int h() {
         xw0 xw0Var = this.d;
         tw0[] tw0VarArr = xw0Var.V2;
         int length = (tw0VarArr == null ? 0 : tw0VarArr.length) + 1;
         if (length != this.c) {
-            fg.h0 h0Var = xw0Var.i3;
+            eg.h0 h0Var = xw0Var.i3;
             if (h0Var != null) {
                 h0Var.requestLayout();
             }
@@ -37,21 +37,21 @@ public final class ow0 extends rl0 {
         return length;
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final int j(int i10) {
         return i10 == 0 ? 0 : 1;
     }
 
-    @Override // f2.p0
-    public final void v(f2.m1 m1Var, int i10) {
+    @Override // f2.o0
+    public final void v(f2.l1 l1Var, int i10) {
         xw0 xw0Var;
         tw0[] tw0VarArr;
-        if (m1Var.f != 1 || (tw0VarArr = (xw0Var = this.d).V2) == null) {
+        if (l1Var.f != 1 || (tw0VarArr = (xw0Var = this.d).V2) == null) {
             return;
         }
         int i11 = i10 - 1;
         tw0 tw0Var = tw0VarArr[i11];
-        final sw0 sw0Var = (sw0) m1Var.a;
+        final sw0 sw0Var = (sw0) l1Var.a;
         boolean z4 = xw0Var.j3 == i11;
         sw0Var.getClass();
         if (!TextUtils.isEmpty(tw0Var.d)) {
@@ -90,25 +90,25 @@ public final class ow0 extends rl0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // f2.p0
-    public final f2.m1 x(ViewGroup viewGroup, int i10) {
+    @Override // f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
         sw0 sw0Var;
         xw0 xw0Var = this.d;
         if (i10 == 0) {
-            fg.h0 h0Var = new fg.h0(this, xw0Var.getContext(), 20);
+            eg.h0 h0Var = new eg.h0(this, xw0Var.getContext(), 20);
             xw0Var.i3 = h0Var;
             sw0Var = h0Var;
         } else {
             sw0Var = new sw0(xw0Var, xw0Var.getContext());
         }
-        return new el0(sw0Var);
+        return new dl0(sw0Var);
     }
 
-    @Override // f2.p0
-    public final void y(f2.m1 m1Var) {
-        if (m1Var.f == 1) {
-            sw0 sw0Var = (sw0) m1Var.a;
-            sw0Var.l(this.d.j3 == m1Var.b() - 1, false);
+    @Override // f2.o0
+    public final void y(f2.l1 l1Var) {
+        if (l1Var.f == 1) {
+            sw0 sw0Var = (sw0) l1Var.a;
+            sw0Var.l(this.d.j3 == l1Var.b() - 1, false);
             sw0Var.j();
         }
     }

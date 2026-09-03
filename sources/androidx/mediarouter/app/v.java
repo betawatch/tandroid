@@ -41,7 +41,7 @@ import java.util.HashSet;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class v extends g.f {
     public static final int C0;
@@ -71,15 +71,15 @@ public final class v extends g.f {
     public HashSet W;
     public SeekBar X;
     public t Y;
-    public c2.a0 Z;
+    public c2.b0 Z;
     public int a0;
     public int b0;
     public int c0;
     public final int d0;
     public HashMap e0;
-    public bf.b f0;
+    public af.c f0;
     public final s g0;
-    public final c2.c0 h;
+    public final c2.d0 h;
     public PlaybackStateCompat h0;
     public MediaDescriptionCompat i0;
     public r j0;
@@ -91,7 +91,7 @@ public final class v extends g.f {
     public int o0;
     public boolean p0;
     public boolean q0;
-    public final c2.a0 r;
+    public final c2.b0 r;
     public boolean r0;
     public final Context s;
     public boolean s0;
@@ -117,20 +117,20 @@ public final class v extends g.f {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public v(Context context) {
-        super(r5, r1 == 0 ? j7.a0.e(r5) : r1);
+        super(r5, r1 == 0 ? j7.z.e(r5) : r1);
         int i10 = 1;
-        ContextThemeWrapper a2 = j7.a0.a(context, true);
-        int g10 = j7.a0.g(a2, R.attr.mediaRouteTheme);
+        ContextThemeWrapper a2 = j7.z.a(context, true);
+        int g10 = j7.z.g(a2, R.attr.mediaRouteTheme);
         this.L = true;
         this.B0 = new androidx.activity.i(this, 6);
         Context context2 = getContext();
         this.s = context2;
         this.g0 = new s(this, 0);
-        this.h = c2.c0.d(context2);
-        this.M = c2.c0.g();
+        this.h = c2.d0.d(context2);
+        this.M = c2.d0.g();
         this.n = new e(this, i10);
-        this.r = c2.c0.f();
-        p(c2.c0.e());
+        this.r = c2.d0.f();
+        p(c2.d0.e());
         this.d0 = context2.getResources().getDimensionPixelSize(R.dimen.mr_controller_volume_group_list_padding_top);
         this.A0 = (AccessibilityManager) context2.getSystemService("accessibility");
         this.y0 = AnimationUtils.loadInterpolator(a2, R.interpolator.mr_linear_out_slow_in);
@@ -160,8 +160,8 @@ public final class v extends g.f {
         int firstVisiblePosition = this.R.getFirstVisiblePosition();
         for (int i10 = 0; i10 < this.R.getChildCount(); i10++) {
             View childAt = this.R.getChildAt(i10);
-            c2.a0 a0Var = (c2.a0) this.S.getItem(firstVisiblePosition + i10);
-            if (!z4 || (hashSet = this.U) == null || !hashSet.contains(a0Var)) {
+            c2.b0 b0Var = (c2.b0) this.S.getItem(firstVisiblePosition + i10);
+            if (!z4 || (hashSet = this.U) == null || !hashSet.contains(b0Var)) {
                 ((LinearLayout) childAt.findViewById(R.id.volume_item_container)).setVisibility(0);
                 AnimationSet animationSet = new AnimationSet(true);
                 AlphaAnimation alphaAnimation = new AlphaAnimation(1.0f, 1.0f);
@@ -183,10 +183,10 @@ public final class v extends g.f {
             q0 q0Var = (q0) obj;
             q0Var.j = true;
             q0Var.k = true;
-            bf.b bVar = q0Var.l;
-            if (bVar != null) {
-                v vVar = (v) bVar.c;
-                vVar.W.remove((c2.a0) bVar.b);
+            af.c cVar = q0Var.l;
+            if (cVar != null) {
+                v vVar = (v) cVar.c;
+                vVar.W.remove((c2.b0) cVar.b);
                 vVar.S.notifyDataSetChanged();
             }
         }
@@ -226,16 +226,16 @@ public final class v extends g.f {
     }
 
     public final boolean n() {
-        c2.a0 a0Var = this.r;
-        return a0Var.e() && DesugarCollections.unmodifiableList(a0Var.v).size() > 1;
+        c2.b0 b0Var = this.r;
+        return b0Var.e() && DesugarCollections.unmodifiableList(b0Var.v).size() > 1;
     }
 
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.w = true;
-        this.h.a(c2.v.c, this.n, 2);
-        p(c2.c0.e());
+        this.h.a(c2.w.c, this.n, 2);
+        p(c2.d0.e());
     }
 
     @Override // g.f, g.s, androidx.activity.n, android.app.Dialog
@@ -252,9 +252,9 @@ public final class v extends g.f {
         this.F = linearLayout;
         linearLayout.setOnClickListener(new m());
         Context context = this.s;
-        int f10 = j7.a0.f(context, 0, R.attr.colorPrimary);
-        if (i0.a.e(f10, j7.a0.f(context, 0, android.R.attr.colorBackground)) < 3.0d) {
-            f10 = j7.a0.f(context, 0, R.attr.colorAccent);
+        int f10 = j7.z.f(context, 0, R.attr.colorPrimary);
+        if (i0.a.e(f10, j7.z.f(context, 0, android.R.attr.colorBackground)) < 3.0d) {
+            f10 = j7.z.f(context, 0, R.attr.colorAccent);
         }
         Button button = (Button) findViewById(android.R.id.button2);
         this.y = button;
@@ -287,8 +287,8 @@ public final class v extends g.f {
         linearLayout2.setVisibility(8);
         SeekBar seekBar = (SeekBar) findViewById(R.id.mr_volume_slider);
         this.X = seekBar;
-        c2.a0 a0Var = this.r;
-        seekBar.setTag(a0Var);
+        c2.b0 b0Var = this.r;
+        seekBar.setTag(b0Var);
         t tVar = new t(this);
         this.Y = tVar;
         this.X.setOnSeekBarChangeListener(tVar);
@@ -301,9 +301,9 @@ public final class v extends g.f {
         LinearLayout linearLayout3 = this.N;
         OverlayListView overlayListView = this.R;
         boolean n10 = n();
-        int f11 = j7.a0.f(context, 0, R.attr.colorPrimary);
-        int f12 = j7.a0.f(context, 0, R.attr.colorPrimaryDark);
-        if (n10 && j7.a0.b(context, 0) == -570425344) {
+        int f11 = j7.z.f(context, 0, R.attr.colorPrimary);
+        int f12 = j7.z.f(context, 0, R.attr.colorPrimaryDark);
+        if (n10 && j7.z.b(context, 0) == -570425344) {
             f12 = f11;
             f11 = -1;
         }
@@ -313,14 +313,14 @@ public final class v extends g.f {
         overlayListView.setTag(Integer.valueOf(f12));
         MediaRouteVolumeSlider mediaRouteVolumeSlider = (MediaRouteVolumeSlider) this.X;
         LinearLayout linearLayout4 = this.N;
-        int b10 = j7.a0.b(context, 0);
+        int b10 = j7.z.b(context, 0);
         if (Color.alpha(b10) != 255) {
             b10 = i0.a.h(b10, ((Integer) linearLayout4.getTag()).intValue());
         }
         mediaRouteVolumeSlider.a(b10, b10);
         HashMap hashMap = new HashMap();
         this.e0 = hashMap;
-        hashMap.put(a0Var, this.X);
+        hashMap.put(b0Var, this.X);
         MediaRouteExpandCollapseButton mediaRouteExpandCollapseButton = (MediaRouteExpandCollapseButton) findViewById(R.id.mr_group_expand_collapse);
         this.D = mediaRouteExpandCollapseButton;
         mediaRouteExpandCollapseButton.r = new q(this, 3);
@@ -361,16 +361,16 @@ public final class v extends g.f {
 
     public final void p(MediaSessionCompat$Token mediaSessionCompat$Token) {
         MediaMetadataCompat mediaMetadataCompat;
-        bf.b bVar = this.f0;
+        af.c cVar = this.f0;
         s sVar = this.g0;
-        if (bVar != null) {
-            bVar.e0(sVar);
+        if (cVar != null) {
+            cVar.f0(sVar);
             this.f0 = null;
         }
         if (mediaSessionCompat$Token != null && this.w) {
-            bf.b bVar2 = new bf.b(this.s, mediaSessionCompat$Token);
-            this.f0 = bVar2;
-            bVar2.Y(sVar);
+            af.c cVar2 = new af.c(this.s, mediaSessionCompat$Token);
+            this.f0 = cVar2;
+            cVar2.Z(sVar);
             MediaMetadata metadata = ((android.support.v4.media.session.h) this.f0.b).a.getMetadata();
             if (metadata != null) {
                 a0.f fVar = MediaMetadataCompat.d;
@@ -416,14 +416,14 @@ public final class v extends g.f {
         }
         this.p0 = false;
         this.q0 = false;
-        c2.a0 a0Var = this.r;
-        if (!a0Var.g() || a0Var.d()) {
+        c2.b0 b0Var = this.r;
+        if (!b0Var.g() || b0Var.d()) {
             dismiss();
             return;
         }
         if (this.v) {
-            this.K.setText(a0Var.d);
-            this.y.setVisibility(a0Var.j ? 0 : 8);
+            this.K.setText(b0Var.d);
+            this.y.setVisibility(b0Var.j ? 0 : 8);
             if (this.m0) {
                 Bitmap bitmap = this.n0;
                 if (bitmap == null || !bitmap.isRecycled()) {
@@ -440,13 +440,13 @@ public final class v extends g.f {
             if (z14 || !n()) {
                 if (!this.r0 || z14) {
                     if (this.L) {
-                        if (((!a0Var.e() || c2.c0.g()) ? a0Var.o : 0) == 1) {
+                        if (((!b0Var.e() || c2.d0.g()) ? b0Var.o : 0) == 1) {
                             z10 = true;
                             if (z10) {
                                 if (this.P.getVisibility() == 8) {
                                     this.P.setVisibility(0);
-                                    this.X.setMax(a0Var.q);
-                                    this.X.setProgress(a0Var.p);
+                                    this.X.setMax(b0Var.q);
+                                    this.X.setProgress(b0Var.p);
                                     this.D.setVisibility(n() ? 0 : 8);
                                 }
                             }
@@ -471,7 +471,7 @@ public final class v extends g.f {
                 MediaDescriptionCompat mediaDescriptionCompat2 = this.i0;
                 CharSequence charSequence2 = mediaDescriptionCompat2 != null ? mediaDescriptionCompat2.c : null;
                 boolean isEmpty2 = TextUtils.isEmpty(charSequence2);
-                if (a0Var.r != -1) {
+                if (b0Var.r != -1) {
                     this.I.setText(R.string.mr_controller_casting_screen);
                 } else {
                     PlaybackStateCompat playbackStateCompat2 = this.h0;
@@ -502,7 +502,7 @@ public final class v extends g.f {
                                         i11 = R.string.mr_controller_pause;
                                         this.C.setVisibility(z13 ? 0 : 8);
                                         if (z13) {
-                                            this.C.setImageResource(j7.a0.g(context, i10));
+                                            this.C.setImageResource(j7.z.g(context, i10));
                                             this.C.setContentDescription(context.getResources().getText(i11));
                                         }
                                     }
@@ -584,7 +584,7 @@ public final class v extends g.f {
 
     public final void s() {
         Context context = this.s;
-        int a2 = j7.z.a(context);
+        int a2 = j7.y.a(context);
         getWindow().setLayout(a2, -2);
         View decorView = getWindow().getDecorView();
         this.x = (a2 - decorView.getPaddingLeft()) - decorView.getPaddingRight();

@@ -1,55 +1,42 @@
 package org.telegram.ui.Components;
 
-import com.google.android.gms.common.api.internal.BasePendingResult;
-import java.util.ArrayDeque;
-import java.util.TimerTask;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class i50 extends TimerTask {
+public final class i50 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ y50 b;
 
-    public /* synthetic */ i50(Object obj, int i10) {
+    public /* synthetic */ i50(y50 y50Var, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = y50Var;
     }
 
-    @Override // java.util.TimerTask, java.lang.Runnable
-    public final void run() {
-        BasePendingResult basePendingResult;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new xp(this, 24));
+                y50 y50Var = this.b;
+                if (animator.equals(y50Var.D)) {
+                    y50Var.D = null;
+                    break;
+                }
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.c10(this, 23));
-                break;
-            case 2:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.gl0(this, 5));
-                break;
-            case 3:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.s0(this, 17));
+                y50 y50Var2 = this.b;
+                if (y50Var2.Y0 != null) {
+                    y50Var2.Y0 = null;
+                    break;
+                }
                 break;
             default:
-                s5.c cVar = (s5.c) this.b;
-                ArrayDeque arrayDeque = cVar.h;
-                if (!arrayDeque.isEmpty() && cVar.k == null && cVar.b != 0) {
-                    s5.h hVar = cVar.c;
-                    int[] e6 = u5.a.e(arrayDeque);
-                    hVar.getClass();
-                    b6.m.e("Must be called from the main thread.");
-                    if (hVar.w()) {
-                        s5.j jVar = new s5.j(hVar, e6);
-                        s5.h.x(jVar);
-                        basePendingResult = jVar;
-                    } else {
-                        basePendingResult = s5.h.t();
-                    }
-                    cVar.k = basePendingResult;
-                    basePendingResult.i(new s5.q(cVar, 1));
-                    arrayDeque.clear();
+                y50 y50Var3 = this.b;
+                if (animator.equals(y50Var3.T)) {
+                    y50Var3.h(true);
+                    y50Var3.T0 = false;
+                    y50Var3.setVisibility(4);
                     break;
                 }
                 break;

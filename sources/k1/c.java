@@ -9,7 +9,7 @@ import android.os.RemoteException;
 import android.util.Log;
 import com.google.firebase.sessions.SessionLifecycleService;
 import j$.util.DesugarCollections;
-import j7.t8;
+import j7.s8;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -20,14 +20,14 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-import k7.h8;
-import k7.q7;
+import k7.g8;
+import k7.p7;
 import la.l0;
 import la.n0;
 import la.o0;
 import la.p0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class c extends wc.i implements dd.p {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final class c extends wc.i implements dd.p {
                 cVar2.c = obj;
                 return cVar2;
             case 1:
-                return new c((com.google.firebase.messaging.s) this.d, cVar, 1);
+                return new c((com.google.firebase.messaging.r) this.d, cVar, 1);
             case 2:
                 return new c((dd.p) this.d, this.c, cVar);
             case 3:
@@ -59,7 +59,7 @@ public final class c extends wc.i implements dd.p {
             case 4:
                 return new c((la.z) this.c, (String) this.d, cVar, 4);
             case 5:
-                return new c((sf.f) this.c, (ArrayList) this.d, cVar, 5);
+                return new c((rf.f) this.c, (ArrayList) this.d, cVar, 5);
             default:
                 return new c((na.k) this.d, cVar, 6);
         }
@@ -133,32 +133,32 @@ public final class c extends wc.i implements dd.p {
                 vc.a aVar2 = vc.a.a;
                 int i11 = this.b;
                 if (i11 == 0) {
-                    q7.b(obj);
+                    p7.b(obj);
                     w wVar = (w) this.c;
                     this.b = 1;
-                    if (t8.a((List) obj4, wVar, this) == aVar2) {
+                    if (s8.a((List) obj4, wVar, this) == aVar2) {
                         return aVar2;
                     }
                 } else {
                     if (i11 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    q7.b(obj);
+                    p7.b(obj);
                 }
                 return iVar2;
             case 1:
-                com.google.firebase.messaging.s sVar = (com.google.firebase.messaging.s) obj4;
-                AtomicInteger atomicInteger2 = (AtomicInteger) sVar.d;
+                com.google.firebase.messaging.r rVar = (com.google.firebase.messaging.r) obj4;
+                AtomicInteger atomicInteger2 = (AtomicInteger) rVar.d;
                 vc.a aVar3 = vc.a.a;
                 int i12 = this.b;
                 if (i12 == 0) {
-                    q7.b(obj);
+                    p7.b(obj);
                     if (atomicInteger2.get() <= 0) {
                         throw new IllegalStateException("Check failed.");
                     }
-                    ld.e0.h(((ld.c0) sVar.a).c());
-                    pVar = (p) sVar.b;
-                    r10 = (nd.b) sVar.c;
+                    ld.e0.h(((ld.c0) rVar.a).c());
+                    pVar = (p) rVar.b;
+                    r10 = (nd.b) rVar.c;
                     this.c = pVar;
                     this.b = r82;
                     r10.getClass();
@@ -177,7 +177,7 @@ public final class c extends wc.i implements dd.p {
                     if (i12 != 2) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    q7.b(obj);
+                    p7.b(obj);
                     obj2 = null;
                     aVar = aVar3;
                     atomicInteger = atomicInteger2;
@@ -189,9 +189,9 @@ public final class c extends wc.i implements dd.p {
                     atomicInteger2 = atomicInteger;
                     iVar2 = iVar;
                     r82 = 1;
-                    ld.e0.h(((ld.c0) sVar.a).c());
-                    pVar = (p) sVar.b;
-                    r10 = (nd.b) sVar.c;
+                    ld.e0.h(((ld.c0) rVar.a).c());
+                    pVar = (p) rVar.b;
+                    r10 = (nd.b) rVar.c;
                     this.c = pVar;
                     this.b = r82;
                     r10.getClass();
@@ -207,33 +207,33 @@ public final class c extends wc.i implements dd.p {
                         int i14 = (int) (andIncrement % j10);
                         sc.i iVar3 = iVar2;
                         if (hVar22.c != j11) {
-                            nd.h e6 = r10.e(j11, hVar22);
-                            if (e6 == null) {
+                            nd.h e = r10.e(j11, hVar22);
+                            if (e == null) {
                                 atomicLongFieldUpdater2 = atomicLongFieldUpdater3;
                                 iVar2 = iVar3;
                                 aVar3 = aVar4;
                                 r82 = 1;
                             } else {
-                                hVar22 = e6;
+                                hVar22 = e;
                             }
                         }
                         nd.h hVar3 = hVar22;
                         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater3 = atomicReferenceFieldUpdater2;
                         String str = "Channel was closed";
                         Object o10 = r10.o(hVar3, i14, andIncrement, null);
-                        com.google.android.gms.internal.clearcut.e eVar = nd.d.m;
-                        if (o10 == eVar) {
+                        o3.c cVar2 = nd.d.m;
+                        if (o10 == cVar2) {
                             throw new IllegalStateException("unexpected");
                         }
-                        com.google.android.gms.internal.clearcut.e eVar2 = nd.d.o;
-                        if (o10 != eVar2) {
+                        o3.c cVar3 = nd.d.o;
+                        if (o10 != cVar3) {
                             atomicInteger = atomicInteger2;
                             if (o10 == nd.d.n) {
-                                ld.m l10 = ld.e0.l(h8.b(this));
+                                ld.m l10 = ld.e0.l(g8.b(this));
                                 try {
                                     Object o11 = r10.o(hVar3, i14, andIncrement, l10);
-                                    if (o11 != eVar) {
-                                        if (o11 != eVar2) {
+                                    if (o11 != cVar2) {
+                                        if (o11 != cVar3) {
                                             iVar = iVar3;
                                             hVar3.b();
                                             l10.B(null, o11);
@@ -254,13 +254,13 @@ public final class c extends wc.i implements dd.p {
                                                 if (hVar4.c == j13) {
                                                     hVar = hVar4;
                                                 } else {
-                                                    nd.h e10 = r10.e(j13, hVar4);
-                                                    if (e10 == null) {
+                                                    nd.h e6 = r10.e(j13, hVar4);
+                                                    if (e6 == null) {
                                                         continue;
                                                         str = str2;
                                                         iVar3 = iVar;
                                                     } else {
-                                                        hVar = e10;
+                                                        hVar = e6;
                                                     }
                                                 }
                                                 Object o12 = r10.o(hVar, i15, andIncrement2, l10);
@@ -286,7 +286,7 @@ public final class c extends wc.i implements dd.p {
                                             if (th3 == null) {
                                                 th3 = new nd.i(str);
                                             }
-                                            l10.resumeWith(q7.a(th3));
+                                            l10.resumeWith(p7.a(th3));
                                         }
                                         obj3 = l10.r();
                                         vc.a aVar5 = vc.a.a;
@@ -332,7 +332,7 @@ public final class c extends wc.i implements dd.p {
                     throw th2;
                 }
                 pVar = (p) this.c;
-                q7.b(obj);
+                p7.b(obj);
                 obj2 = null;
                 aVar = aVar3;
                 atomicInteger = atomicInteger2;
@@ -347,10 +347,10 @@ public final class c extends wc.i implements dd.p {
                     if (i16 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    q7.b(obj);
+                    p7.b(obj);
                     return obj;
                 }
-                q7.b(obj);
+                p7.b(obj);
                 Object obj5 = this.c;
                 this.b = 1;
                 Object invoke = ((dd.p) obj4).invoke(obj5, this);
@@ -361,20 +361,20 @@ public final class c extends wc.i implements dd.p {
                 vc.a aVar7 = vc.a.a;
                 int i17 = this.b;
                 if (i17 == 0) {
-                    q7.b(obj);
-                    ma.c cVar2 = ma.c.a;
+                    p7.b(obj);
+                    ma.c cVar4 = ma.c.a;
                     this.b = 1;
-                    b10 = cVar2.b(this);
+                    b10 = cVar4.b(this);
                     break;
                 } else {
                     if (i17 != 1) {
                         if (i17 != 2) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        q7.b(obj);
-                        Boolean e11 = hVar6.a.e();
-                        if (e11 != null) {
-                            booleanValue = e11.booleanValue();
+                        p7.b(obj);
+                        Boolean b13 = hVar6.a.b();
+                        if (b13 != null) {
+                            booleanValue = b13.booleanValue();
                         } else {
                             Boolean a2 = hVar6.b.a();
                             booleanValue = a2 != null ? a2.booleanValue() : true;
@@ -384,13 +384,13 @@ public final class c extends wc.i implements dd.p {
                             return iVar2;
                         }
                         uc.h hVar7 = (uc.h) obj4;
-                        sf.f fVar = new sf.f(hVar7);
-                        Object b13 = w8.g.c().b(n0.class);
-                        kotlin.jvm.internal.j.d(b13, "Firebase.app[SessionLife…erviceBinder::class.java]");
+                        rf.f fVar = new rf.f(hVar7);
+                        Object b14 = w8.g.c().b(n0.class);
+                        kotlin.jvm.internal.j.d(b14, "Firebase.app[SessionLife…erviceBinder::class.java]");
                         Messenger messenger = new Messenger(new androidx.mediarouter.app.d(hVar7));
-                        jf.a serviceConnection = (jf.a) fVar.e;
+                        hf.a serviceConnection = (hf.a) fVar.e;
                         kotlin.jvm.internal.j.e(serviceConnection, "serviceConnection");
-                        w8.g gVar = ((o0) ((n0) b13)).a;
+                        w8.g gVar = ((o0) ((n0) b14)).a;
                         gVar.a();
                         Context applicationContext = gVar.a.getApplicationContext();
                         Intent intent = new Intent(applicationContext, (Class<?>) SessionLifecycleService.class);
@@ -404,12 +404,12 @@ public final class c extends wc.i implements dd.p {
                             fVar.F(1);
                         }
                         w8.g gVar2 = lVar.a;
-                        k3.e eVar3 = new k3.e(16);
+                        k3.e eVar = new k3.e(20);
                         gVar2.a();
-                        gVar2.j.add(eVar3);
+                        gVar2.j.add(eVar);
                         return iVar2;
                     }
-                    q7.b(obj);
+                    p7.b(obj);
                     b10 = obj;
                 }
                 Collection values = ((Map) b10).values();
@@ -431,27 +431,27 @@ public final class c extends wc.i implements dd.p {
                     if (i18 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    q7.b(obj);
+                    p7.b(obj);
                     return iVar2;
                 }
-                q7.b(obj);
+                p7.b(obj);
                 la.v vVar = la.z.e;
                 Context context = ((la.z) this.c).a;
                 vVar.getClass();
-                y5.h a10 = la.z.f.a(context, la.v.a[0]);
+                bb.b a10 = la.z.f.a(context, la.v.a[0]);
                 q qVar = new q((String) obj4, cVar, r83 == true ? 1 : 0);
                 this.b = 1;
-                return a10.d(new n1.c(qVar, null, 1), this) == aVar8 ? aVar8 : iVar2;
+                return a10.C(new n1.c(qVar, null, 1), this) == aVar8 ? aVar8 : iVar2;
             case 5:
                 ArrayList arrayList = (ArrayList) obj4;
-                sf.f fVar2 = (sf.f) this.c;
+                rf.f fVar2 = (rf.f) this.c;
                 vc.a aVar9 = vc.a.a;
                 int i19 = this.b;
                 if (i19 == 0) {
-                    q7.b(obj);
-                    ma.c cVar3 = ma.c.a;
+                    p7.b(obj);
+                    ma.c cVar5 = ma.c.a;
                     this.b = 1;
-                    b11 = cVar3.b(this);
+                    b11 = cVar5.b(this);
                     if (b11 == aVar9) {
                         return aVar9;
                     }
@@ -459,7 +459,7 @@ public final class c extends wc.i implements dd.p {
                     if (i19 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    q7.b(obj);
+                    p7.b(obj);
                     b11 = obj;
                 }
                 Map map = (Map) b11;
@@ -472,7 +472,7 @@ public final class c extends wc.i implements dd.p {
                     Iterator it2 = values2.iterator();
                     while (it2.hasNext()) {
                         if (((i9.k) it2.next()).a.a()) {
-                            ArrayList f10 = tc.g.f(new ArrayList(new tc.d(new Message[]{sf.f.l(fVar2, arrayList, 2), sf.f.l(fVar2, arrayList, 1)}, true)));
+                            ArrayList f10 = tc.g.f(new ArrayList(new tc.d(new Message[]{rf.f.k(fVar2, arrayList, 2), rf.f.k(fVar2, arrayList, 1)}, true)));
                             l0 l0Var = new l0();
                             if (f10.size() <= 1) {
                                 asList = tc.g.m(f10);
@@ -493,8 +493,8 @@ public final class c extends wc.i implements dd.p {
                                         if (messenger2 != null) {
                                             messenger2.send(message);
                                         }
-                                    } catch (RemoteException e12) {
-                                        Log.w("SessionLifecycleClient", "Unable to deliver message: " + message.what, e12);
+                                    } catch (RemoteException e10) {
+                                        Log.w("SessionLifecycleClient", "Unable to deliver message: " + message.what, e10);
                                         fVar2.E(message);
                                     }
                                 } else {
@@ -511,7 +511,7 @@ public final class c extends wc.i implements dd.p {
                 vc.a aVar10 = vc.a.a;
                 int i20 = this.b;
                 if (i20 == 0) {
-                    q7.b(obj);
+                    p7.b(obj);
                     na.k kVar2 = (na.k) obj4;
                     od.b data = kVar2.a.getData();
                     this.c = kVar2;
@@ -526,7 +526,7 @@ public final class c extends wc.i implements dd.p {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     kVar = (na.k) this.c;
-                    q7.b(obj);
+                    p7.b(obj);
                     b12 = obj;
                 }
                 Map unmodifiableMap = DesugarCollections.unmodifiableMap(((n1.b) b12).a);

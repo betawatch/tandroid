@@ -1,41 +1,35 @@
 package org.telegram.ui.Components.voip;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c2 implements org.telegram.ui.ActionBar.c2 {
+public final /* synthetic */ class c2 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Activity b;
+    public final /* synthetic */ Runnable b;
 
-    public /* synthetic */ c2(Activity activity, int i10) {
+    public /* synthetic */ c2(int i10, Runnable runnable) {
         this.a = i10;
-        this.b = activity;
+        this.b = runnable;
     }
 
-    @Override // org.telegram.ui.ActionBar.c2
-    public final void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                Activity activity = this.b;
-                Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                intent.setData(Uri.fromParts("package", activity.getPackageName(), null));
-                activity.startActivity(intent);
+                Runnable runnable = this.b;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
                 break;
             default:
-                Activity activity2 = this.b;
-                try {
-                    Intent intent2 = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent2.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-                    activity2.startActivity(intent2);
+                Runnable runnable2 = this.b;
+                if (runnable2 != null) {
+                    runnable2.run();
                     break;
-                } catch (Exception e6) {
-                    FileLog.e(e6);
                 }
+                break;
         }
     }
 }

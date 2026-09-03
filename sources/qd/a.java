@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-import k7.o7;
-import k7.q7;
+import k7.n7;
+import k7.p7;
 import ld.a0;
 import ld.b0;
 import ld.b2;
@@ -16,15 +16,25 @@ import ld.g2;
 import ld.w0;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class a {
-    public static final com.google.android.gms.internal.clearcut.e a = new com.google.android.gms.internal.clearcut.e("NO_DECISION", 2);
-    public static final com.google.android.gms.internal.clearcut.e b = new com.google.android.gms.internal.clearcut.e("CLOSED", 2);
-    public static final com.google.android.gms.internal.clearcut.e c = new com.google.android.gms.internal.clearcut.e("UNDEFINED", 2);
-    public static final com.google.android.gms.internal.clearcut.e d = new com.google.android.gms.internal.clearcut.e("REUSABLE_CLAIMED", 2);
-    public static final com.google.android.gms.internal.clearcut.e e = new com.google.android.gms.internal.clearcut.e("CONDITION_FALSE", 2);
-    public static final com.google.android.gms.internal.clearcut.e f = new com.google.android.gms.internal.clearcut.e("NO_THREAD_ELEMENTS", 2);
+    public static final o3.c a;
+    public static final o3.c b;
+    public static final o3.c c;
+    public static final o3.c d;
+    public static final o3.c e;
+    public static final o3.c f;
+
+    static {
+        int i10 = 14;
+        a = new o3.c("NO_DECISION", i10);
+        b = new o3.c("CLOSED", i10);
+        c = new o3.c("UNDEFINED", i10);
+        d = new o3.c("REUSABLE_CLAIMED", i10);
+        e = new o3.c("CONDITION_FALSE", i10);
+        f = new o3.c("NO_THREAD_ELEMENTS", i10);
+    }
 
     public static final Object a(t tVar, long j10, dd.p pVar) {
         while (true) {
@@ -33,9 +43,9 @@ public abstract class a {
             }
             AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = d.a;
             Object obj = atomicReferenceFieldUpdater.get(tVar);
-            com.google.android.gms.internal.clearcut.e eVar = b;
-            if (obj == eVar) {
-                return eVar;
+            o3.c cVar = b;
+            if (obj == cVar) {
+                return cVar;
             }
             t tVar2 = (t) ((d) obj);
             if (tVar2 == null) {
@@ -71,14 +81,14 @@ public abstract class a {
                     runtimeException = th2;
                 } else {
                     runtimeException = new RuntimeException("Exception while trying to handle coroutine exception", th3);
-                    o7.a(runtimeException, th2);
+                    n7.a(runtimeException, th2);
                 }
                 Thread currentThread = Thread.currentThread();
                 currentThread.getUncaughtExceptionHandler().uncaughtException(currentThread, runtimeException);
             }
         }
         try {
-            o7.a(th2, new g(hVar));
+            n7.a(th2, new g(hVar));
         } catch (Throwable unused) {
         }
         Thread currentThread2 = Thread.currentThread();
@@ -172,7 +182,7 @@ public abstract class a {
             } else {
                 CancellationException cancellationException = f1Var.getCancellationException();
                 hVar.c(vVar, cancellationException);
-                hVar.resumeWith(q7.a(cancellationException));
+                hVar.resumeWith(p7.a(cancellationException));
             }
             while (a10.j()) {
             }

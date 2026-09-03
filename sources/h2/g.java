@@ -18,7 +18,7 @@ import k7.ga;
 import k7.na;
 import k7.oa;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class g implements Callable {
     public final /* synthetic */ int a;
@@ -95,9 +95,9 @@ public final class g implements Callable {
                 }
                 gaVar.a();
                 try {
-                    Object e6 = mobileVisionBase.b.e(aVar);
+                    Object e = mobileVisionBase.b.e(aVar);
                     gaVar.close();
-                    return e6;
+                    return e;
                 } catch (Throwable th2) {
                     try {
                         gaVar.close();

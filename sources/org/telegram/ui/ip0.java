@@ -10,7 +10,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class ip0 extends Drawable {
     public static final /* synthetic */ int j = 0;
@@ -43,8 +43,8 @@ public final class ip0 extends Drawable {
 
     public static ip0 a(int i10, int i11) {
         if (i11 < 7) {
-            int[] iArr = org.telegram.ui.ActionBar.k6.r8;
-            return new ip0(org.telegram.ui.ActionBar.k6.w0(null, iArr[i11], false), org.telegram.ui.ActionBar.k6.w0(null, iArr[i11], false), org.telegram.ui.ActionBar.k6.w0(null, iArr[i11], false));
+            int[] iArr = org.telegram.ui.ActionBar.j6.r8;
+            return new ip0(org.telegram.ui.ActionBar.j6.w0(null, iArr[i11], false), org.telegram.ui.ActionBar.j6.w0(null, iArr[i11], false), org.telegram.ui.ActionBar.j6.w0(null, iArr[i11], false));
         }
         MessagesController.PeerColors peerColors = MessagesController.getInstance(i10).peerColors;
         return b(peerColors != null ? peerColors.getColor(i11) : null, false);
@@ -54,7 +54,7 @@ public final class ip0 extends Drawable {
         if (peerColor == null) {
             return new ip0(0, 0, 0);
         }
-        return new ip0(peerColor.getColor1(), (!z4 || peerColor.hasColor6(org.telegram.ui.ActionBar.k6.I.q())) ? peerColor.getColor2() : peerColor.getColor1(), z4 ? peerColor.getColor1() : peerColor.getColor3());
+        return new ip0(peerColor.getColor1(), (!z4 || peerColor.hasColor6(org.telegram.ui.ActionBar.j6.I.q())) ? peerColor.getColor2() : peerColor.getColor1(), z4 ? peerColor.getColor1() : peerColor.getColor3());
     }
 
     public static ip0 c(int i10, int i11) {
@@ -110,7 +110,7 @@ public final class ip0 extends Drawable {
             if (j5Var != null) {
                 j5Var.l(view);
             }
-            view.addOnAttachStateChangeListener(new h5(this, 3));
+            view.addOnAttachStateChangeListener(new j5(this, 3));
         } else if (j5Var != null) {
             j5Var.b();
             j5Var.l(null);

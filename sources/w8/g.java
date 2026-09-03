@@ -6,9 +6,10 @@ import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Trace;
 import android.util.Log;
-import androidx.emoji2.text.x;
+import androidx.emoji2.text.w;
 import b6.m;
-import c9.p;
+import c9.j;
+import c9.q;
 import com.google.firebase.FirebaseCommonRegistrar;
 import com.google.firebase.components.ComponentDiscoveryService;
 import com.google.firebase.concurrent.ExecutorsRegistrar;
@@ -20,7 +21,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class g {
     public static final Object k = new Object();
@@ -28,10 +29,10 @@ public final class g {
     public final Context a;
     public final String b;
     public final i c;
-    public final c9.i d;
+    public final j d;
     public final AtomicBoolean e;
     public final AtomicBoolean f;
-    public final p g;
+    public final q g;
     public final ba.b h;
     public final CopyOnWriteArrayList i;
     public final CopyOnWriteArrayList j;
@@ -50,28 +51,28 @@ public final class g {
         a aVar = FirebaseInitProvider.a;
         Trace.beginSection("Firebase");
         Trace.beginSection("ComponentDiscovery");
-        ArrayList v = new bf.b(16, context, new o5.i(ComponentDiscoveryService.class, 5)).v();
+        ArrayList w10 = new af.c(16, context, new c9.e(ComponentDiscoveryService.class)).w();
         Trace.endSection();
         Trace.beginSection("Runtime");
         l lVar = l.a;
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
-        arrayList.addAll(v);
+        arrayList.addAll(w10);
         int i10 = 1;
         arrayList.add(new c9.d(new FirebaseCommonRegistrar(), i10));
         arrayList.add(new c9.d(new ExecutorsRegistrar(), i10));
         arrayList2.add(c9.b.c(context, Context.class, new Class[0]));
         arrayList2.add(c9.b.c(this, g.class, new Class[0]));
         arrayList2.add(c9.b.c(iVar, i.class, new Class[0]));
-        cb.b bVar = new cb.b(14);
-        if ((Build.VERSION.SDK_INT >= 24 ? x.g(context) : true) && FirebaseInitProvider.b.get()) {
+        ab.a aVar2 = new ab.a(15);
+        if ((Build.VERSION.SDK_INT >= 24 ? w.g(context) : true) && FirebaseInitProvider.b.get()) {
             arrayList2.add(c9.b.c(aVar, a.class, new Class[0]));
         }
-        c9.i iVar2 = new c9.i(lVar, arrayList, arrayList2, bVar);
-        this.d = iVar2;
+        j jVar = new j(lVar, arrayList, arrayList2, aVar2);
+        this.d = jVar;
         Trace.endSection();
-        this.g = new p(new c9.h(1, this, context));
-        this.h = iVar2.c(z9.c.class);
+        this.g = new q(new c9.i(1, this, context));
+        this.h = jVar.c(z9.c.class);
         d dVar = new d(this);
         a();
         if (atomicBoolean.get()) {
@@ -171,7 +172,7 @@ public final class g {
     public final void e() {
         int i10 = Build.VERSION.SDK_INT;
         Context context = this.a;
-        boolean g10 = i10 >= 24 ? x.g(context) : true;
+        boolean g10 = i10 >= 24 ? w.g(context) : true;
         String str = this.b;
         if (g10) {
             StringBuilder sb = new StringBuilder("Device unlocked: initializing all Firebase APIs for app ");
@@ -179,7 +180,7 @@ public final class g {
             sb.append(str);
             Log.i("FirebaseApp", sb.toString());
             a();
-            this.d.g("[DEFAULT]".equals(str));
+            this.d.h("[DEFAULT]".equals(str));
             ((z9.c) this.h.get()).c();
             return;
         }
@@ -223,9 +224,9 @@ public final class g {
     }
 
     public final String toString() {
-        bf.b bVar = new bf.b((Object) this);
-        bVar.r(this.b, "name");
-        bVar.r(this.c, "options");
-        return bVar.toString();
+        af.c cVar = new af.c((Object) this);
+        cVar.s(this.b, "name");
+        cVar.s(this.c, "options");
+        return cVar.toString();
     }
 }

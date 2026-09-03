@@ -1821,7 +1821,7 @@ public final class q0 implements a1 {
                 int f12 = n1.f(bArr, i10, mVar);
                 int i23 = mVar.a;
                 b0 u10 = u(i17);
-                if (u10 == null || u10.a(i23) != null) {
+                if (u10 == null || u10.b(i23) != null) {
                     unsafe.putObject(obj, j10, Integer.valueOf(i23));
                     m9 = f12;
                     unsafe.putInt(obj, j12, i13);
@@ -2226,7 +2226,7 @@ public final class q0 implements a1 {
                         for (int i32 = 0; i32 < size2; i32++) {
                             Integer num = (Integer) c0Var.get(i32);
                             int intValue = num.intValue();
-                            if (u10.a(intValue) != null) {
+                            if (u10.b(intValue) != null) {
                                 if (i32 != i31) {
                                     c0Var.set(i31, num);
                                 }
@@ -2247,7 +2247,7 @@ public final class q0 implements a1 {
                         Iterator it = c0Var.iterator();
                         while (it.hasNext()) {
                             int intValue2 = ((Integer) it.next()).intValue();
-                            if (u10.a(intValue2) == null) {
+                            if (u10.b(intValue2) == null) {
                                 if (c1Var2 == null) {
                                     d1Var.getClass();
                                     c1Var2 = c1.b();
@@ -2964,7 +2964,7 @@ public final class q0 implements a1 {
                                     i26 = n1.f(bArr3, i33, mVar2);
                                     int i48 = mVar2.a;
                                     b0 u10 = q0Var2.u(w10);
-                                    if (u10 == null || u10.a(i48) != null) {
+                                    if (u10 == null || u10.b(i48) != null) {
                                         i22 = i38;
                                         unsafe5.putInt(obj3, j10, i48);
                                         int i4522222 = i18;

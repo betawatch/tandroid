@@ -2,7 +2,7 @@ package k7;
 
 import org.telegram.ui.Components.zy0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class oa implements v2.e {
     public static oa b;
@@ -46,7 +46,7 @@ public final class oa implements v2.e {
         aVar.b(b9.class, a5.a);
         aVar.b(s7.class, q3.a);
         aVar.b(da.class, p1.a);
-        aVar.b(t7.class, r3.a);
+        aVar.b(tc.r.class, r3.a);
         aVar.b(f8.class, e4.a);
         aVar.b(i8.class, h4.a);
         aVar.b(h8.class, g4.a);
@@ -76,8 +76,8 @@ public final class oa implements v2.e {
         aVar.b(d6.class, w1.a);
         aVar.b(c6.class, v1.a);
         aVar.b(e6.class, x1.a);
-        aVar.b(f6.class, y1.a);
-        aVar.b(zy0.class, z1.a);
+        aVar.b(zy0.class, y1.a);
+        aVar.b(f6.class, z1.a);
         aVar.b(g6.class, a2.a);
         aVar.b(h6.class, b2.a);
         aVar.b(h0.class, l1.a);
@@ -137,7 +137,7 @@ public final class oa implements v2.e {
         aVar.b(k6.class, e2.a);
         aVar.b(j6.class, d2.a);
         aVar.b(i6.class, c2.a);
-        aVar.b(tc.r.class, s3.a);
+        aVar.b(t7.class, s3.a);
         aVar.b(v7.class, u3.a);
         aVar.b(u7.class, t3.a);
         aVar.b(o.class, r0.a);
@@ -167,7 +167,7 @@ public final class oa implements v2.e {
         aVar.b(t.class, y0.a);
     }
 
-    @Override // v2.e, f3.f
+    @Override // v2.e
     public Object apply(Object obj) {
         switch (this.a) {
         }

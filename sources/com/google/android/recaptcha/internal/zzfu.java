@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
 import dd.p;
-import k7.q7;
+import k7.p7;
 import kotlin.jvm.internal.j;
 import uc.c;
 import vc.a;
 import wc.i;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 final class zzfu extends i implements p {
     int zza;
@@ -58,7 +58,7 @@ final class zzfu extends i implements p {
         int i10 = this.zza;
         try {
             if (i10 == 0) {
-                q7.b(obj);
+                p7.b(obj);
                 zzhkVar = (zzhk) this.zzd;
                 zzgb zzgbVar = this.zzb;
                 long j10 = this.zzc;
@@ -67,17 +67,17 @@ final class zzfu extends i implements p {
                 obj = zzgbVar.zzq(j10, this);
             } else if (i10 == 1) {
                 zzhkVar = (zzhk) this.zzd;
-                q7.b(obj);
+                p7.b(obj);
             } else {
                 if (i10 != 2) {
-                    q7.b(obj);
+                    p7.b(obj);
                     longValue = this.zzc - ((Number) obj).longValue();
                     if (longValue < 500) {
                         return new Long(longValue);
                     }
                     throw new zzcg(zzce.zzc, zzcd.zzas, null, null, 12, null);
                 }
-                q7.b(obj);
+                p7.b(obj);
                 zzgb zzgbVar2 = this.zzb;
                 zzft zzftVar = new zzft(this.zzc, zzgbVar2, null);
                 this.zza = 3;
@@ -91,10 +91,10 @@ final class zzfu extends i implements p {
             }
             this.zzd = null;
             this.zza = 2;
-        } catch (Exception e6) {
-            zzcg zzcgVar2 = e6 instanceof zzcg ? (zzcg) e6 : null;
+        } catch (Exception e) {
+            zzcg zzcgVar2 = e instanceof zzcg ? (zzcg) e : null;
             if (zzcgVar2 == null) {
-                zzcgVar2 = new zzcg(zzce.zzc, zzcd.zzas, e6.getMessage(), null, 8, null);
+                zzcgVar2 = new zzcg(zzce.zzc, zzcd.zzas, e.getMessage(), null, 8, null);
             }
             zzgb zzgbVar3 = this.zzb;
             zzdv zze = zzgbVar3.zze();

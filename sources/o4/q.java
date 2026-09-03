@@ -5,7 +5,7 @@ import j3.m2;
 import j3.n2;
 import j3.o2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class q extends v0 {
     public final boolean l;
@@ -132,7 +132,7 @@ public final class q extends v0 {
                         if (b10 == null) {
                             n nVar4 = this.p;
                             nVar4.getClass();
-                            nVar4.c(b10);
+                            nVar4.a(b10);
                             return;
                         }
                         return;
@@ -186,7 +186,7 @@ public final class q extends v0 {
         if (this.o.d != null && obj.equals(o.e)) {
             obj = this.o.d;
         }
-        nVar.c(vVar.b(obj));
+        nVar.a(vVar.b(obj));
         return nVar;
     }
 

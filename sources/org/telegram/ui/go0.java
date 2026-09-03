@@ -8,7 +8,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class go0 implements TextWatcher {
     public int a = -1;
@@ -31,7 +31,7 @@ public final class go0 implements TextWatcher {
     */
     public final void afterTextChanged(Editable editable) {
         int i10;
-        tt ttVar;
+        ut utVar;
         lo0 lo0Var = this.d;
         if (lo0Var.l0) {
             return;
@@ -55,7 +55,7 @@ public final class go0 implements TextWatcher {
             i11 = i12;
         }
         lo0Var.l0 = true;
-        lo0Var.f[1].setTextColor(lo0Var.getThemedColor(org.telegram.ui.ActionBar.k6.G6));
+        lo0Var.f[1].setTextColor(lo0Var.getThemedColor(org.telegram.ui.ActionBar.j6.G6));
         if (sb.length() > 4) {
             sb.setLength(4);
         }
@@ -72,7 +72,7 @@ public final class go0 implements TextWatcher {
             } else if (sb.length() == 2) {
                 int intValue2 = Utilities.parseInt((CharSequence) sb.toString()).intValue();
                 if (intValue2 > 12 || intValue2 == 0) {
-                    lo0Var.f[1].setTextColor(lo0Var.getThemedColor(org.telegram.ui.ActionBar.k6.p7));
+                    lo0Var.f[1].setTextColor(lo0Var.getThemedColor(org.telegram.ui.ActionBar.j6.p7));
                 } else {
                     z4 = false;
                 }
@@ -109,11 +109,11 @@ public final class go0 implements TextWatcher {
             int intValue4 = Utilities.parseInt((CharSequence) strArr[1]).intValue() + 2000;
             Calendar calendar = Calendar.getInstance();
             i10 = ((org.telegram.ui.ActionBar.p2) lo0Var).currentAccount;
-            boolean z10 = UserConfig.getInstance(i10).getClientPhone().startsWith("7") || ((ttVar = lo0Var.x0) != null && ttVar.c.equals("7"));
+            boolean z10 = UserConfig.getInstance(i10).getClientPhone().startsWith("7") || ((utVar = lo0Var.x0) != null && utVar.c.equals("7"));
             int i14 = z10 ? 2022 : calendar.get(1);
             int i15 = z10 ? 1 : calendar.get(2) + 1;
             if (intValue4 < i14 || (intValue4 == i14 && intValue3 < i15)) {
-                lo0Var.f[1].setTextColor(lo0Var.getThemedColor(org.telegram.ui.ActionBar.k6.p7));
+                lo0Var.f[1].setTextColor(lo0Var.getThemedColor(org.telegram.ui.ActionBar.j6.p7));
                 if (!z4) {
                 }
                 if (sb.length() == 2) {
@@ -137,7 +137,7 @@ public final class go0 implements TextWatcher {
         }
         int intValue5 = Utilities.parseInt((CharSequence) strArr[0]).intValue();
         if (intValue5 > 12 || intValue5 == 0) {
-            lo0Var.f[1].setTextColor(lo0Var.getThemedColor(org.telegram.ui.ActionBar.k6.p7));
+            lo0Var.f[1].setTextColor(lo0Var.getThemedColor(org.telegram.ui.ActionBar.j6.p7));
             if (!z4 && sb.length() == 4) {
                 lo0Var.f[lo0Var.f0 ? (char) 2 : (char) 3].requestFocus();
             }

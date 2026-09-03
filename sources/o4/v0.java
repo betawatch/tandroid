@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class v0 extends a {
     public final HashMap h = new HashMap();
@@ -68,7 +68,7 @@ public abstract class v0 extends a {
         HashMap hashMap = this.h;
         for (f fVar : hashMap.values()) {
             a aVar = fVar.a;
-            sf.f fVar2 = fVar.c;
+            rf.f fVar2 = fVar.c;
             aVar.o(fVar.b);
             aVar.r(fVar2);
             aVar.q(fVar2);
@@ -97,7 +97,7 @@ public abstract class v0 extends a {
                 v0Var.u(o2Var);
             }
         };
-        sf.f fVar = new sf.f(this, num);
+        rf.f fVar = new rf.f(this, num);
         hashMap.put(num, new f(aVar, r12, fVar));
         Handler handler = this.i;
         handler.getClass();
@@ -111,17 +111,17 @@ public abstract class v0 extends a {
         copyOnWriteArrayList.add(yVar);
         Handler handler2 = this.i;
         handler2.getClass();
-        o3.l lVar = aVar.d;
-        lVar.getClass();
-        CopyOnWriteArrayList copyOnWriteArrayList2 = lVar.c;
-        o3.k kVar = new o3.k();
-        kVar.a = handler2;
-        kVar.b = fVar;
-        copyOnWriteArrayList2.add(kVar);
+        o3.m mVar = aVar.d;
+        mVar.getClass();
+        CopyOnWriteArrayList copyOnWriteArrayList2 = mVar.c;
+        o3.l lVar = new o3.l();
+        lVar.a = handler2;
+        lVar.b = fVar;
+        copyOnWriteArrayList2.add(lVar);
         g5.v0 v0Var = this.j;
-        k3.k kVar2 = this.g;
-        h5.a.j(kVar2);
-        aVar.k(r12, v0Var, kVar2);
+        k3.k kVar = this.g;
+        h5.a.j(kVar);
+        aVar.k(r12, v0Var, kVar);
         if (this.b.isEmpty()) {
             aVar.c(r12);
         }

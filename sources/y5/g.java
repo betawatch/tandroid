@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class g {
     public static boolean b = false;
@@ -28,9 +28,9 @@ public abstract class g {
         try {
             if (!c) {
                 try {
-                    PackageInfo b10 = k6.c.a(context).b(64, "com.google.android.gms");
-                    h.m(context);
-                    if (b10 == null || h.w(b10, false) || !h.w(b10, true)) {
+                    PackageInfo L = k6.b.a(context).L(64, "com.google.android.gms");
+                    h.b(context);
+                    if (L == null || h.d(L, false) || !h.d(L, true)) {
                         b = false;
                     } else {
                         b = true;
@@ -48,12 +48,12 @@ public abstract class g {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:52:0x00d5  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x0103  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0115  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0125  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x00e7 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x00d7  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x00d7  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0105  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0117  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0127  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x00e9 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x00d9  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -74,7 +74,7 @@ public abstract class g {
                     if (!b6.m.b) {
                         b6.m.b = true;
                         try {
-                            bundle = k6.c.a(context).a.getPackageManager().getApplicationInfo(context.getPackageName(), 128).metaData;
+                            bundle = ((Context) k6.b.a(context).b).getPackageManager().getApplicationInfo(context.getPackageName(), 128).metaData;
                         } catch (PackageManager.NameNotFoundException e6) {
                             Log.wtf("MetadataValueReader", "This should never happen.", e6);
                         }
@@ -114,13 +114,13 @@ public abstract class g {
                         }
                     }
                     packageInfo2 = packageManager.getPackageInfo("com.google.android.gms", 64);
-                    h.m(context);
-                    if (h.w(packageInfo2, true)) {
+                    h.b(context);
+                    if (h.d(packageInfo2, true)) {
                         Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play services, but their signature is invalid."));
                     } else {
                         if (z4) {
                             b6.m.h(packageInfo);
-                            if (!h.w(packageInfo, true)) {
+                            if (!h.d(packageInfo, true)) {
                                 Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play Store, but its signature is invalid."));
                             }
                         }
@@ -147,8 +147,8 @@ public abstract class g {
                 }
             }
             packageInfo2 = packageManager.getPackageInfo("com.google.android.gms", 64);
-            h.m(context);
-            if (h.w(packageInfo2, true)) {
+            h.b(context);
+            if (h.d(packageInfo2, true)) {
             }
             return 9;
         } catch (PackageManager.NameNotFoundException unused3) {

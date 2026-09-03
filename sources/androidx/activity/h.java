@@ -10,7 +10,7 @@ import androidx.fragment.app.e0;
 import androidx.fragment.app.j0;
 import java.util.LinkedHashMap;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class h extends androidx.activity.result.f {
     public final /* synthetic */ m h;
@@ -21,7 +21,7 @@ public final class h extends androidx.activity.result.f {
 
     @Override // androidx.activity.result.f
     public final void b(int i10, e0 e0Var, Object obj) {
-        e.a aVar;
+        b7.c cVar;
         Intent input;
         Bundle bundleExtra;
         Bundle bundle;
@@ -33,11 +33,11 @@ public final class h extends androidx.activity.result.f {
                 String[] input2 = (String[]) obj;
                 kotlin.jvm.internal.j.e(input2, "input");
                 if (input2.length == 0) {
-                    aVar = new e.a(tc.p.a);
+                    cVar = new b7.c(tc.p.a);
                     break;
                 } else {
                     for (String str : input2) {
-                        if (f0.e.b(mVar, str) == 0) {
+                        if (f0.f.b(mVar, str) == 0) {
                         }
                     }
                     int a2 = tc.r.a(input2.length);
@@ -48,15 +48,15 @@ public final class h extends androidx.activity.result.f {
                     for (String str2 : input2) {
                         linkedHashMap.put(str2, Boolean.TRUE);
                     }
-                    aVar = new e.a(linkedHashMap);
+                    cVar = new b7.c(linkedHashMap);
                     break;
                 }
             default:
-                aVar = null;
+                cVar = null;
                 break;
         }
-        if (aVar != null) {
-            new Handler(Looper.getMainLooper()).post(new g(this, i10, aVar, 0));
+        if (cVar != null) {
+            new Handler(Looper.getMainLooper()).post(new g(this, i10, cVar, 0));
             return;
         }
         switch (e0Var.a) {
@@ -123,12 +123,12 @@ public final class h extends androidx.activity.result.f {
             i11 = i10;
             try {
                 mVar.startIntentSenderForResult(gVar2.a, i11, gVar2.b, gVar2.c, gVar2.d, 0, bundle2);
-            } catch (IntentSender.SendIntentException e6) {
-                e = e6;
+            } catch (IntentSender.SendIntentException e) {
+                e = e;
                 new Handler(Looper.getMainLooper()).post(new g(this, i11, e, 1));
             }
-        } catch (IntentSender.SendIntentException e10) {
-            e = e10;
+        } catch (IntentSender.SendIntentException e6) {
+            e = e6;
             i11 = i10;
         }
     }

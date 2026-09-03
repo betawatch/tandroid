@@ -1,17 +1,24 @@
 package nf;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+import h7.u;
+import java.nio.ShortBuffer;
+import z9.d;
+
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public abstract class a {
-    public float a = 1.0f;
+public interface a {
+    public static final db.a j = new db.a(13);
+    public static final ab.a k = new ab.a(14);
+    public static final u l;
+    public static final d m;
 
-    public abstract short a();
+    static {
+        int i10 = 13;
+        l = new u(i10);
+        m = new d(i10);
+    }
 
-    public abstract int b();
+    int P1(int i10, int i11, int i12);
 
-    public abstract boolean c();
-
-    public abstract void d();
-
-    public abstract void e(int i10, int i11);
+    void X0(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11);
 }

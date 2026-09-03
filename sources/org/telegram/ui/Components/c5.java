@@ -4,7 +4,7 @@ import android.animation.TimeInterpolator;
 import android.os.SystemClock;
 import android.view.View;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class c5 {
     public final View a;
@@ -20,7 +20,7 @@ public final class c5 {
 
     public c5(View view) {
         this.f = 200L;
-        this.g = pr.f;
+        this.g = mr.f;
         this.a = view;
         this.e = true;
     }
@@ -40,7 +40,7 @@ public final class c5 {
             this.i = elapsedRealtime;
         }
         if (this.h) {
-            float a2 = k7.o.a((elapsedRealtime - this.i) / j10, 0.0f, 1.0f);
+            float a2 = k7.n.a((elapsedRealtime - this.i) / j10, 0.0f, 1.0f);
             if (elapsedRealtime - this.i >= 0) {
                 TimeInterpolator timeInterpolator = this.g;
                 if (timeInterpolator == null) {
@@ -67,7 +67,7 @@ public final class c5 {
 
     public c5(View view, long j10, TimeInterpolator timeInterpolator) {
         this.f = 200L;
-        pr prVar = pr.f;
+        mr mrVar = mr.f;
         this.a = view;
         this.f = j10;
         this.g = timeInterpolator;
@@ -76,7 +76,7 @@ public final class c5 {
 
     public c5(View view, long j10, TimeInterpolator timeInterpolator, int i10) {
         this.f = 200L;
-        pr prVar = pr.f;
+        mr mrVar = mr.f;
         this.a = view;
         this.f = j10;
         this.g = timeInterpolator;
@@ -85,7 +85,7 @@ public final class c5 {
 
     public c5(Runnable runnable, long j10, TimeInterpolator timeInterpolator) {
         this.f = 200L;
-        pr prVar = pr.f;
+        mr mrVar = mr.f;
         this.b = runnable;
         this.f = j10;
         this.g = timeInterpolator;

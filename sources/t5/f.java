@@ -15,12 +15,12 @@ import android.util.Log;
 import b6.m;
 import c5.j;
 import com.google.android.gms.cast.framework.media.MediaIntentReceiver;
-import com.google.android.gms.internal.cast.c1;
-import com.google.android.gms.internal.cast.c2;
-import com.google.android.gms.internal.cast.x;
+import com.google.android.gms.internal.cast.d1;
+import com.google.android.gms.internal.cast.d2;
+import com.google.android.gms.internal.cast.y;
 import e0.k;
 import e0.t;
-import j7.c7;
+import j7.b7;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.messenger.beta.R;
@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLObject;
 import q5.c0;
 import s5.p;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class f {
     public static final u5.b u = new u5.b("MediaNotificationProxy", null);
@@ -87,7 +87,7 @@ public final class f {
             notificationChannel.setShowBadge(false);
             notificationManager.createNotificationChannel(notificationChannel);
         }
-        c2.a(c1.r0);
+        d2.a(d1.r0);
     }
 
     /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
@@ -108,7 +108,7 @@ public final class f {
                         Intent intent = new Intent(MediaIntentReceiver.ACTION_REWIND);
                         intent.setComponent(componentName);
                         intent.putExtra(MediaIntentReceiver.EXTRA_SKIP_STEP_MS, j10);
-                        PendingIntent broadcast = PendingIntent.getBroadcast(context, 0, intent, x.a | TLObject.FLAG_27);
+                        PendingIntent broadcast = PendingIntent.getBroadcast(context, 0, intent, y.a | TLObject.FLAG_27);
                         u5.b bVar = i.a;
                         int i12 = fVar.y;
                         if (j10 == 10000) {
@@ -134,7 +134,7 @@ public final class f {
                         if (z4) {
                             Intent intent2 = new Intent(MediaIntentReceiver.ACTION_SKIP_NEXT);
                             intent2.setComponent(componentName);
-                            pendingIntent = PendingIntent.getBroadcast(context, 0, intent2, x.a);
+                            pendingIntent = PendingIntent.getBroadcast(context, 0, intent2, y.a);
                         }
                         this.o = new e0.j(fVar.r, resources.getString(fVar.J), pendingIntent).b();
                     }
@@ -148,7 +148,7 @@ public final class f {
                         if (z10) {
                             Intent intent3 = new Intent(MediaIntentReceiver.ACTION_SKIP_PREV);
                             intent3.setComponent(componentName);
-                            pendingIntent = PendingIntent.getBroadcast(context, 0, intent3, x.a);
+                            pendingIntent = PendingIntent.getBroadcast(context, 0, intent3, y.a);
                         }
                         this.p = new e0.j(fVar.s, resources.getString(fVar.K), pendingIntent).b();
                     }
@@ -160,7 +160,7 @@ public final class f {
                     if (this.t == null) {
                         Intent intent4 = new Intent(MediaIntentReceiver.ACTION_STOP_CASTING);
                         intent4.setComponent(componentName);
-                        this.t = new e0.j(fVar.D, resources.getString(fVar.R), PendingIntent.getBroadcast(context, 0, intent4, x.a)).b();
+                        this.t = new e0.j(fVar.D, resources.getString(fVar.R), PendingIntent.getBroadcast(context, 0, intent4, y.a)).b();
                     }
                     return this.t;
                 }
@@ -170,7 +170,7 @@ public final class f {
                     if (this.s == null) {
                         Intent intent5 = new Intent(MediaIntentReceiver.ACTION_DISCONNECT);
                         intent5.setComponent(componentName);
-                        this.s = new e0.j(fVar.D, resources.getString(fVar.R, ""), PendingIntent.getBroadcast(context, 0, intent5, x.a)).b();
+                        this.s = new e0.j(fVar.D, resources.getString(fVar.R, ""), PendingIntent.getBroadcast(context, 0, intent5, y.a)).b();
                     }
                     return this.s;
                 }
@@ -183,7 +183,7 @@ public final class f {
                         if (this.m == null) {
                             Intent intent6 = new Intent(MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK);
                             intent6.setComponent(componentName);
-                            this.m = new e0.j(fVar.n, resources.getString(fVar.I), PendingIntent.getBroadcast(context, 0, intent6, x.a)).b();
+                            this.m = new e0.j(fVar.n, resources.getString(fVar.I), PendingIntent.getBroadcast(context, 0, intent6, y.a)).b();
                         }
                         return this.m;
                     }
@@ -197,7 +197,7 @@ public final class f {
                         }
                         Intent intent7 = new Intent(MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK);
                         intent7.setComponent(componentName);
-                        this.n = new e0.j(i10, resources.getString(i11), PendingIntent.getBroadcast(context, 0, intent7, x.a)).b();
+                        this.n = new e0.j(i10, resources.getString(i11), PendingIntent.getBroadcast(context, 0, intent7, y.a)).b();
                     }
                     return this.n;
                 }
@@ -208,7 +208,7 @@ public final class f {
                         Intent intent8 = new Intent(MediaIntentReceiver.ACTION_FORWARD);
                         intent8.setComponent(componentName);
                         intent8.putExtra(MediaIntentReceiver.EXTRA_SKIP_STEP_MS, j10);
-                        PendingIntent broadcast2 = PendingIntent.getBroadcast(context, 0, intent8, x.a | TLObject.FLAG_27);
+                        PendingIntent broadcast2 = PendingIntent.getBroadcast(context, 0, intent8, y.a | TLObject.FLAG_27);
                         u5.b bVar3 = i.a;
                         int i15 = fVar.v;
                         if (j10 == 10000) {
@@ -269,16 +269,16 @@ public final class f {
             if (component != null) {
                 int size = arrayList.size();
                 try {
-                    for (Intent a10 = c7.a(context, component); a10 != null; a10 = c7.a(context, a10.getComponent())) {
+                    for (Intent a10 = b7.a(context, component); a10 != null; a10 = b7.a(context, a10.getComponent())) {
                         arrayList.add(size, a10);
                     }
-                } catch (PackageManager.NameNotFoundException e6) {
+                } catch (PackageManager.NameNotFoundException e) {
                     Log.e("TaskStackBuilder", "Bad ComponentName while traversing activity parent metadata");
-                    throw new IllegalArgumentException(e6);
+                    throw new IllegalArgumentException(e);
                 }
             }
             arrayList.add(intent);
-            int i11 = x.a | TLObject.FLAG_27;
+            int i11 = y.a | TLObject.FLAG_27;
             if (arrayList.isEmpty()) {
                 throw new IllegalStateException("No intents added to TaskStackBuilder; cannot getPendingIntent");
             }
@@ -310,7 +310,7 @@ public final class f {
                     } else {
                         Intent intent2 = new Intent(str);
                         intent2.setComponent(this.d);
-                        a2 = new e0.j(dVar.b, dVar.c, PendingIntent.getBroadcast(context, 0, intent2, x.a)).b();
+                        a2 = new e0.j(dVar.b, dVar.c, PendingIntent.getBroadcast(context, 0, intent2, y.a)).b();
                     }
                     if (a2 != null) {
                         this.f.add(a2);

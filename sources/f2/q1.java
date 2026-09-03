@@ -1,17 +1,15 @@
 package f2;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public interface q1 {
-    View I(int i10);
+public final class q1 {
+    public static final p2.w d = new p2.w(20);
+    public int a;
+    public c5.e b;
+    public c5.e c;
 
-    int J(View view);
-
-    int d(View view);
-
-    int n();
-
-    int v();
+    public static q1 a() {
+        q1 q1Var = (q1) d.b();
+        return q1Var == null ? new q1() : q1Var;
+    }
 }

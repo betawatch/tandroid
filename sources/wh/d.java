@@ -1,30 +1,40 @@
 package wh;
 
-import org.telegram.messenger.NotificationCenter;
+import android.animation.ValueAnimator;
+import o4.h0;
+import org.telegram.ui.Cells.u0;
+import org.telegram.ui.Cells.v0;
+import ph.z8;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d implements Runnable {
+public final /* synthetic */ class d implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ d(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, long j10, int i10) {
+    public /* synthetic */ d(int i10, Object obj, Object obj2) {
         this.a = i10;
-        this.c = notificationCenterDelegate;
-        this.b = j10;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                q qVar = (q) this.c;
-                org.telegram.ui.Components.z4.M(qVar.b.c0.getParentActivity(), this.b, new oh.h4(qVar, 25), qVar.a);
+                u0 u0Var = (u0) this.b;
+                v0 v0Var = (v0) this.c;
+                u0Var.c = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                v0Var.invalidate();
                 break;
             default:
-                z1 z1Var = (z1) this.c;
-                org.telegram.ui.Components.z4.M(z1Var.getParentActivity(), this.b, new org.telegram.ui.web.e0(z1Var, 20), z1Var.getResourceProvider());
+                h0 h0Var = (h0) this.b;
+                z8 z8Var = (z8) this.c;
+                h0Var.getClass();
+                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                h0Var.b = intValue;
+                z8Var.c(intValue);
                 break;
         }
     }

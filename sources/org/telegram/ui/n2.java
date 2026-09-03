@@ -1,44 +1,154 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.text.Layout;
 import android.view.MotionEvent;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class n2 extends m2.h {
-    public final /* synthetic */ s2 t0;
+public final class n2 extends View implements org.telegram.ui.Cells.k9, i3 {
+    public final p70 a;
+    public final l4 b;
+    public f3 c;
+    public final int d;
+    public int e;
+    public TL_iv.pageBlockRelatedArticles f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n2(s2 s2Var, Context context) {
+    public n2(Context context, p70 p70Var, l4 l4Var) {
         super(context);
-        this.t0 = s2Var;
+        this.d = AndroidUtilities.dp(18.0f);
+        this.a = p70Var;
+        this.b = l4Var;
     }
 
-    @Override // m2.h, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        int actionMasked = motionEvent.getActionMasked();
-        s2 s2Var = this.t0;
-        if (actionMasked == 0) {
-            s2Var.x.c0.requestDisallowInterceptTouchEvent(true);
-        } else if (motionEvent.getActionMasked() == 1 || motionEvent.getActionMasked() == 3) {
-            s2Var.x.c0.requestDisallowInterceptTouchEvent(false);
+    @Override // org.telegram.ui.Cells.k9
+    public final void fillTextLayoutBlocks(ArrayList arrayList) {
+        f3 f3Var = this.c;
+        if (f3Var != null) {
+            arrayList.add(f3Var);
         }
-        s2Var.x.k();
-        return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // m2.h, android.view.View
+    @Override // org.telegram.ui.i3
+    public int getBoundLeft() {
+        f3 f3Var = this.c;
+        if (f3Var == null) {
+            return -1;
+        }
+        int a2 = f3Var.a() + f3Var.s;
+        this.a.getClass();
+        return a2 - AndroidUtilities.dp(18);
+    }
+
+    @Override // org.telegram.ui.i3
+    public int getBoundRight() {
+        f3 f3Var = this.c;
+        if (f3Var == null) {
+            return -1;
+        }
+        int b10 = f3Var.b() + f3Var.s;
+        this.a.getClass();
+        return AndroidUtilities.dp(18) + b10;
+    }
+
+    @Override // org.telegram.ui.i3
+    public int getLastLineBoundRight() {
+        f3 f3Var = this.c;
+        if (f3Var == null) {
+            return -1;
+        }
+        int c3 = f3Var.c() + f3Var.s;
+        this.a.getClass();
+        return AndroidUtilities.dp(18) + c3;
+    }
+
+    public /* bridge */ /* synthetic */ int getMinWidth() {
+        return b.b(this);
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        f3 f3Var = this.c;
+        if (f3Var != null) {
+            f3Var.attach(this);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        f3 f3Var = this.c;
+        if (f3Var != null) {
+            f3Var.detach(this);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.f == null || this.c == null) {
+            return;
+        }
+        canvas.save();
+        canvas.translate(this.d, this.e);
+        n4.v(this.a, canvas, this, 0);
+        this.c.draw(canvas, this);
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.TextView");
+        accessibilityNodeInfo.setEnabled(true);
+        accessibilityNodeInfo.setClickable(false);
+        accessibilityNodeInfo.setLongClickable(false);
+        f3 f3Var = this.c;
+        if (f3Var == null) {
+            return;
+        }
+        accessibilityNodeInfo.setText(n4.i(R.string.AccDescrIVRelatedArticles, n4.j(this.a, this.b, f3Var)));
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        n2 n2Var;
+        int size = View.MeasureSpec.getSize(i10);
+        TL_iv.pageBlockRelatedArticles pageblockrelatedarticles = this.f;
+        if (pageblockrelatedarticles != null) {
+            n2Var = this;
+            f3 p10 = n4.p(this.a, n2Var, null, pageblockrelatedarticles.title, size - AndroidUtilities.dp(52.0f), 0, this.f, Layout.Alignment.ALIGN_NORMAL, 1, this.b);
+            n2Var.c = p10;
+            if (p10 != null) {
+                n2Var.e = ((AndroidUtilities.dp(32.0f) - n2Var.c.d.getHeight()) / 2) + AndroidUtilities.dp(6.0f);
+            }
+        } else {
+            n2Var = this;
+        }
+        if (n2Var.c == null) {
+            setMeasuredDimension(size, 1);
+            return;
+        }
+        setMeasuredDimension(size, AndroidUtilities.dp(38.0f));
+        f3 f3Var = n2Var.c;
+        f3Var.s = n2Var.d;
+        f3Var.v = n2Var.e;
+    }
+
+    @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int actionMasked = motionEvent.getActionMasked();
-        s2 s2Var = this.t0;
-        if (actionMasked == 0) {
-            s2Var.x.c0.requestDisallowInterceptTouchEvent(true);
-        }
-        boolean onTouchEvent = super.onTouchEvent(motionEvent);
-        if (motionEvent.getActionMasked() != 1 && motionEvent.getActionMasked() != 3) {
-            return onTouchEvent;
-        }
-        s2Var.x.c0.requestDisallowInterceptTouchEvent(false);
-        return onTouchEvent;
+        return n4.l(this.a, this.b, motionEvent, this, this.c, this.d, this.e) || super.onTouchEvent(motionEvent);
+    }
+
+    public void setBlock(TL_iv.pageBlockRelatedArticles pageblockrelatedarticles) {
+        this.f = pageblockrelatedarticles;
+        requestLayout();
     }
 }

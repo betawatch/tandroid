@@ -1,173 +1,68 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.Drawable;
-import android.os.Looper;
-import android.util.LongSparseArray;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.SerializedData;
+import android.content.Context;
+import android.graphics.Rect;
+import android.view.KeyEvent;
+import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sj0 implements Runnable {
-    public final /* synthetic */ int a;
+public final class sj0 extends AnimatedPhoneNumberEditText {
+    public final /* synthetic */ int D;
+    public final /* synthetic */ Object E;
 
-    public /* synthetic */ sj0(int i10) {
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ sj0(Object obj, Context context, int i10) {
+        super(context);
+        this.D = i10;
+        this.E = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.Components.qc a02;
-        int i10 = 0;
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final void onFocusChanged(boolean z4, int i10, Rect rect) {
+        switch (this.D) {
             case 0:
-                org.telegram.ui.Components.qc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
+                super.onFocusChanged(z4, i10, rect);
+                uj0 uj0Var = (uj0) this.E;
+                org.telegram.ui.Components.bd0 bd0Var = uj0Var.s;
+                float f10 = (z4 || uj0Var.N.isFocused()) ? 1.0f : 0.0f;
+                bd0Var.b(f10, f10, true);
                 break;
             case 1:
-                Drawable[] drawableArr = PhotoViewer.Q8;
-                break;
-            case 2:
-                org.telegram.ui.Components.qc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
-                break;
-            case 3:
-                org.telegram.ui.Components.qc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
-                break;
-            case 4:
-                org.telegram.ui.ActionBar.p2 U = LaunchActivity.U();
-                if (U != null && (a02 = org.telegram.ui.Components.qc.a0(U)) != null) {
-                    org.telegram.ui.Components.ic M = a02.M(LocaleController.getString(R.string.ReportChatSent), LocaleController.getString(R.string.Reported2), R.raw.msg_antispam);
-                    M.j = 5000;
-                    M.j();
-                    break;
-                }
-                break;
-            case 5:
-                int i11 = f91.a0;
-                break;
-            case 6:
-                org.telegram.ui.ActionBar.k6.N = false;
-                org.telegram.ui.ActionBar.k6.E(false);
-                break;
-            case 7:
-                if (VoIPService.getSharedState() != null) {
-                    VoIPService.getSharedState().acceptIncomingCall();
-                    break;
-                }
-                break;
-            case 8:
-                int[][] iArr = WallpapersListActivity.h0;
-                PhotoViewer.t1().G0(false, false);
-                break;
-            case 9:
-                Utilities.globalQueue.postRunnable(new sj0(11));
-                break;
-            case 10:
-                ArrayList arrayList = new ArrayList();
-                LongSparseArray longSparseArray = new LongSparseArray();
-                try {
-                    File file = new File(FileLoader.getDirectory(4), "webhistory.dat");
-                    if (file.exists()) {
-                        SerializedData serializedData = new SerializedData(file);
-                        long readInt64 = serializedData.readInt64(true);
-                        for (long j10 = 0; j10 < readInt64; j10++) {
-                            org.telegram.ui.web.b1 b1Var = new org.telegram.ui.web.b1();
-                            b1Var.readParams(serializedData, true);
-                            arrayList.add(b1Var);
-                            longSparseArray.put(b1Var.a, b1Var);
-                        }
-                    }
-                } catch (Exception e6) {
-                    FileLog.e(e6);
-                }
-                AndroidUtilities.runOnUIThread(new bh1(8, arrayList, longSparseArray));
-                break;
-            case 11:
-                try {
-                    File file2 = new File(FileLoader.getDirectory(4), "webhistory.dat");
-                    if (!file2.exists()) {
-                        file2.createNewFile();
-                    }
-                    long size = org.telegram.ui.web.c1.c.size();
-                    SerializedData serializedData2 = new SerializedData(true);
-                    serializedData2.writeInt64(size);
-                    ArrayList arrayList2 = org.telegram.ui.web.c1.c;
-                    int size2 = arrayList2.size();
-                    int i12 = 0;
-                    while (i12 < size2) {
-                        Object obj = arrayList2.get(i12);
-                        i12++;
-                        ((org.telegram.ui.web.b1) obj).serializeToStream(serializedData2);
-                    }
-                    SerializedData serializedData3 = new SerializedData(serializedData2.length());
-                    serializedData3.writeInt64(size);
-                    ArrayList arrayList3 = org.telegram.ui.web.c1.c;
-                    int size3 = arrayList3.size();
-                    while (i10 < size3) {
-                        Object obj2 = arrayList3.get(i10);
-                        i10++;
-                        ((org.telegram.ui.web.b1) obj2).serializeToStream(serializedData3);
-                    }
-                    try {
-                        FileOutputStream fileOutputStream = new FileOutputStream(file2);
-                        fileOutputStream.write(serializedData3.toByteArray());
-                        fileOutputStream.close();
-                        break;
-                    } catch (Exception e10) {
-                        FileLog.e(e10);
-                        return;
-                    }
-                } catch (Exception e11) {
-                    FileLog.e(e11);
-                    return;
-                }
-            case 12:
-                break;
-            case 13:
-                int i13 = qh.y.u0;
-                break;
-            case 14:
-                Looper myLooper = Looper.myLooper();
-                if (myLooper != null) {
-                    myLooper.quit();
-                    break;
-                }
-                break;
-            case 15:
-                break;
-            case 16:
-                MessagesController.getGlobalMainSettings().edit().putInt("storydualhint", MessagesController.getGlobalMainSettings().getInt("storydualhint", 0) + 1).apply();
-                break;
-            case 17:
-                HashSet hashSet = sh.p2.T0;
-                break;
-            case 18:
-                break;
-            case 19:
-                int i14 = uh.g.C;
+                super.onFocusChanged(z4, i10, rect);
+                uj0 uj0Var2 = (uj0) this.E;
+                org.telegram.ui.Components.bd0 bd0Var2 = uj0Var2.s;
+                float f11 = (z4 || uj0Var2.L.isFocused()) ? 1.0f : 0.0f;
+                bd0Var2.b(f11, f11, true);
                 break;
             default:
-                vf.p1[] p1VarArr = vf.p1.g;
+                super.onFocusChanged(z4, i10, rect);
+                og0 og0Var = (og0) this.E;
+                org.telegram.ui.Components.bd0 bd0Var3 = og0Var.f;
+                float f12 = (z4 || og0Var.b.isFocused()) ? 1.0f : 0.0f;
+                bd0Var3.b(f12, f12, true);
+                if (z4) {
+                    og0Var.S.c.setEditText(this);
+                    break;
+                }
                 break;
         }
     }
 
-    private final void a() {
-    }
-
-    private final void b() {
-    }
-
-    private final void c() {
+    @Override // android.widget.TextView, android.view.View, android.view.KeyEvent.Callback
+    public boolean onKeyDown(int i10, KeyEvent keyEvent) {
+        switch (this.D) {
+            case 1:
+                uj0 uj0Var = (uj0) this.E;
+                if (i10 == 67 && uj0Var.N.length() == 0) {
+                    uj0Var.L.requestFocus();
+                    sj0 sj0Var = uj0Var.L;
+                    sj0Var.setSelection(sj0Var.length());
+                    uj0Var.L.dispatchKeyEvent(keyEvent);
+                }
+                return super.onKeyDown(i10, keyEvent);
+            default:
+                return super.onKeyDown(i10, keyEvent);
+        }
     }
 }

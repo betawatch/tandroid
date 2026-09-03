@@ -3,12 +3,12 @@ package com.google.android.gms.wallet.wobs;
 import android.os.Parcel;
 import android.os.Parcelable;
 import c6.a;
-import j7.g5;
+import j7.f5;
 import j8.t;
 import java.util.ArrayList;
 import k8.f;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class CommonWalletObject extends a {
     public static final Parcelable.Creator<CommonWalletObject> CREATOR = new t(16);
@@ -34,30 +34,30 @@ public class CommonWalletObject extends a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = g5.q(parcel, 20293);
-        g5.l(parcel, 2, this.a);
-        g5.l(parcel, 3, this.b);
-        g5.l(parcel, 4, this.c);
-        g5.l(parcel, 5, this.d);
-        g5.l(parcel, 6, this.e);
-        g5.l(parcel, 7, this.f);
-        g5.l(parcel, 8, this.h);
-        g5.l(parcel, 9, this.n);
+        int q10 = f5.q(parcel, 20293);
+        f5.l(parcel, 2, this.a);
+        f5.l(parcel, 3, this.b);
+        f5.l(parcel, 4, this.c);
+        f5.l(parcel, 5, this.d);
+        f5.l(parcel, 6, this.e);
+        f5.l(parcel, 7, this.f);
+        f5.l(parcel, 8, this.h);
+        f5.l(parcel, 9, this.n);
         int i11 = this.r;
-        g5.s(parcel, 10, 4);
+        f5.s(parcel, 10, 4);
         parcel.writeInt(i11);
-        g5.p(parcel, 11, this.s);
-        g5.k(parcel, 12, this.v, i10);
-        g5.p(parcel, 13, this.w);
-        g5.l(parcel, 14, this.x);
-        g5.l(parcel, 15, this.y);
-        g5.p(parcel, 16, this.B);
+        f5.p(parcel, 11, this.s);
+        f5.k(parcel, 12, this.v, i10);
+        f5.p(parcel, 13, this.w);
+        f5.l(parcel, 14, this.x);
+        f5.l(parcel, 15, this.y);
+        f5.p(parcel, 16, this.B);
         boolean z4 = this.C;
-        g5.s(parcel, 17, 4);
+        f5.s(parcel, 17, 4);
         parcel.writeInt(z4 ? 1 : 0);
-        g5.p(parcel, 18, this.D);
-        g5.p(parcel, 19, this.E);
-        g5.p(parcel, 20, this.F);
-        g5.r(parcel, q10);
+        f5.p(parcel, 18, this.D);
+        f5.p(parcel, 19, this.E);
+        f5.p(parcel, 20, this.F);
+        f5.r(parcel, q10);
     }
 }

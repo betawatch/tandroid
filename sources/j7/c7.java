@@ -1,41 +1,20 @@
 package j7;
 
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.content.pm.PackageManager;
-import android.os.Build;
-import android.os.Bundle;
+import java.nio.ByteBuffer;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class c7 {
-    public static Intent a(Context context, ComponentName componentName) {
-        String b10 = b(context, componentName);
-        if (b10 == null) {
+    public e4.c a(e4.e eVar) {
+        ByteBuffer byteBuffer = eVar.d;
+        byteBuffer.getClass();
+        h5.a.f(byteBuffer.position() == 0 && byteBuffer.hasArray() && byteBuffer.arrayOffset() == 0);
+        if (eVar.d(TLObject.FLAG_31)) {
             return null;
         }
-        ComponentName componentName2 = new ComponentName(componentName.getPackageName(), b10);
-        return b(context, componentName2) == null ? Intent.makeMainActivity(componentName2) : new Intent().setComponent(componentName2);
+        return b(eVar, byteBuffer);
     }
 
-    public static String b(Context context, ComponentName componentName) {
-        String string;
-        PackageManager packageManager = context.getPackageManager();
-        int i10 = Build.VERSION.SDK_INT;
-        ActivityInfo activityInfo = packageManager.getActivityInfo(componentName, i10 >= 29 ? 269222528 : i10 >= 24 ? 787072 : 640);
-        String str = activityInfo.parentActivityName;
-        if (str != null) {
-            return str;
-        }
-        Bundle bundle = activityInfo.metaData;
-        if (bundle == null || (string = bundle.getString("android.support.PARENT_ACTIVITY")) == null) {
-            return null;
-        }
-        if (string.charAt(0) != '.') {
-            return string;
-        }
-        return context.getPackageName() + string;
-    }
+    public abstract e4.c b(e4.e eVar, ByteBuffer byteBuffer);
 }

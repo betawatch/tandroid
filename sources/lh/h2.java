@@ -1,37 +1,45 @@
 package lh;
 
+import android.os.Bundle;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.zz0;
+import org.telegram.ui.oa1;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class h2 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ProfileActivity b;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.p2 b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ h2(ProfileActivity profileActivity, int i10) {
-        this.a = i10;
-        this.b = profileActivity;
+    public /* synthetic */ h2(long j10, org.telegram.ui.ActionBar.p2 p2Var) {
+        this.c = j10;
+        this.b = p2Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.G4(true);
-                break;
-            case 1:
-                this.b.G4(true);
+                Bundle bundle = new Bundle();
+                long j10 = this.c;
+                if (j10 >= 0) {
+                    bundle.putLong("user_id", j10);
+                } else {
+                    bundle.putLong("chat_id", -j10);
+                }
+                bundle.putBoolean("my_profile", true);
+                bundle.putBoolean("open_gifts", true);
+                this.b.presentFragment(new ProfileActivity(bundle, null));
                 break;
             default:
-                ProfileActivity profileActivity = this.b;
-                zz0 zz0Var = profileActivity.L;
-                if (zz0Var != null) {
-                    zz0Var.Y0(14);
-                    profileActivity.G4(false);
-                    break;
-                }
+                org.telegram.ui.ActionBar.p2 p2Var = this.b;
+                p2Var.presentFragment(oa1.d0(p2Var.getMessagesController().getChat(Long.valueOf(-this.c)), true));
                 break;
         }
+    }
+
+    public /* synthetic */ h2(org.telegram.ui.ActionBar.p2 p2Var, long j10) {
+        this.b = p2Var;
+        this.c = j10;
     }
 }

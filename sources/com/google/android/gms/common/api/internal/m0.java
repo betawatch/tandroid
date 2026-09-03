@@ -10,9 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
-import m.r3;
+import m.s3;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class m0 implements x0, com.google.android.gms.common.api.k {
     public final Lock a;
@@ -22,7 +22,7 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
     public final h0 e;
     public final Map f;
     public final HashMap i = new HashMap();
-    public final r3 j;
+    public final s3 j;
     public final Map k;
     public final a8.j l;
     public volatile k0 m;
@@ -30,12 +30,12 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
     public final j0 o;
     public final v0 p;
 
-    public m0(Context context, j0 j0Var, Lock lock, Looper looper, y5.e eVar, a0.f fVar, r3 r3Var, a0.f fVar2, a8.j jVar, ArrayList arrayList, v0 v0Var) {
+    public m0(Context context, j0 j0Var, Lock lock, Looper looper, y5.e eVar, a0.f fVar, s3 s3Var, a0.f fVar2, a8.j jVar, ArrayList arrayList, v0 v0Var) {
         this.c = context;
         this.a = lock;
         this.d = eVar;
         this.f = fVar;
-        this.j = r3Var;
+        this.j = s3Var;
         this.k = fVar2;
         this.l = jVar;
         this.o = j0Var;
@@ -46,12 +46,12 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
         }
         this.e = new h0(this, looper, 1);
         this.b = lock.newCondition();
-        this.m = new androidx.biometric.f0(this, 5);
+        this.m = new bb.b(this, 6);
     }
 
     @Override // com.google.android.gms.common.api.internal.x0
     public final void a() {
-        this.m.e();
+        this.m.h();
     }
 
     @Override // com.google.android.gms.common.api.internal.x0
@@ -62,12 +62,12 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
     @Override // com.google.android.gms.common.api.internal.x0
     public final e c(e eVar) {
         eVar.l();
-        return this.m.L(eVar);
+        return this.m.H(eVar);
     }
 
     @Override // com.google.android.gms.common.api.internal.x0
     public final void e() {
-        if (this.m.G()) {
+        if (this.m.D()) {
             this.i.clear();
         }
     }
@@ -92,8 +92,8 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
     public final void h() {
         this.a.lock();
         try {
-            this.m = new androidx.biometric.f0(this, 5);
-            this.m.C();
+            this.m = new bb.b(this, 6);
+            this.m.w();
             this.b.signalAll();
         } finally {
             this.a.unlock();
@@ -104,7 +104,7 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
     public final void onConnected(Bundle bundle) {
         this.a.lock();
         try {
-            this.m.b(bundle);
+            this.m.d(bundle);
         } finally {
             this.a.unlock();
         }
@@ -114,7 +114,7 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
     public final void onConnectionSuspended(int i10) {
         this.a.lock();
         try {
-            this.m.z(i10);
+            this.m.t(i10);
         } finally {
             this.a.unlock();
         }

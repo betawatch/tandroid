@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class rm0 implements RequestDelegate {
     public final /* synthetic */ boolean a;
@@ -30,8 +30,8 @@ public final class rm0 implements RequestDelegate {
 
     public final void a() {
         int i10;
-        org.telegram.ui.ActionBar.f5 f5Var;
-        org.telegram.ui.ActionBar.f5 f5Var2;
+        org.telegram.ui.ActionBar.e5 e5Var;
+        org.telegram.ui.ActionBar.e5 e5Var2;
         int i11;
         fn0 fn0Var = this.e;
         if (fn0Var.V == null) {
@@ -52,10 +52,10 @@ public final class rm0 implements RequestDelegate {
         fn0Var2.Z0 = fn0Var.Z0;
         fn0Var2.Y0 = fn0Var.Y0;
         fn0Var2.z1 = fn0Var.z1;
-        f5Var = ((org.telegram.ui.ActionBar.p2) fn0Var).parentLayout;
-        if (f5Var != null) {
-            f5Var2 = ((org.telegram.ui.ActionBar.p2) fn0Var).parentLayout;
-            if (((ActionBarLayout) f5Var2).j()) {
+        e5Var = ((org.telegram.ui.ActionBar.p2) fn0Var).parentLayout;
+        if (e5Var != null) {
+            e5Var2 = ((org.telegram.ui.ActionBar.p2) fn0Var).parentLayout;
+            if (((ActionBarLayout) e5Var2).j()) {
                 fn0Var.e1 = fn0Var2;
                 return;
             }
@@ -90,10 +90,10 @@ public final class rm0 implements RequestDelegate {
         int i10;
         if (tL_error == null || !"SRP_ID_INVALID".equals(tL_error.text)) {
             if (tL_error == null) {
-                Utilities.globalQueue.postRunnable(new dg.t0(this, tLObject, this.d, this.a, 20));
+                Utilities.globalQueue.postRunnable(new cg.u0(this, tLObject, this.d, this.a, 20));
                 return;
             } else {
-                AndroidUtilities.runOnUIThread(new mh.r5(this, this.a, tL_error, 27));
+                AndroidUtilities.runOnUIThread(new lh.r5(this, this.a, tL_error, 27));
                 return;
             }
         }

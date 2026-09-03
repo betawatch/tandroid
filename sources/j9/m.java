@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class m implements c {
     public static final Charset c = Charset.forName("UTF-8");
@@ -30,7 +30,7 @@ public final class m implements c {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final String c() {
+    public final String d() {
         l lVar;
         byte[] bArr;
         File file = this.a;
@@ -38,8 +38,8 @@ public final class m implements c {
             if (this.b == null) {
                 try {
                     this.b = new k(file);
-                } catch (IOException e6) {
-                    Log.e("FirebaseCrashlytics", "Could not open log file: " + file, e6);
+                } catch (IOException e) {
+                    Log.e("FirebaseCrashlytics", "Could not open log file: " + file, e);
                 }
             }
             k kVar = this.b;
@@ -56,8 +56,8 @@ public final class m implements c {
                 byte[] bArr2 = new byte[i10];
                 try {
                     kVar.a(new e(bArr2, iArr));
-                } catch (IOException e10) {
-                    Log.e("FirebaseCrashlytics", "A problem occurred while reading the Crashlytics log file.", e10);
+                } catch (IOException e6) {
+                    Log.e("FirebaseCrashlytics", "A problem occurred while reading the Crashlytics log file.", e6);
                 }
                 lVar = new l(bArr2, iArr[0]);
                 if (lVar != null) {

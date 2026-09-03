@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o2 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -14,12 +14,12 @@ public final /* synthetic */ class o2 implements Runnable {
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ o2(Context context, String str, long j10, boolean z4, af.f fVar) {
+    public /* synthetic */ o2(Context context, String str, long j10, boolean z4, ze.c cVar) {
         this.d = context;
         this.e = str;
         this.b = j10;
         this.c = z4;
-        this.f = fVar;
+        this.f = cVar;
     }
 
     @Override // java.lang.Runnable
@@ -28,7 +28,7 @@ public final /* synthetic */ class o2 implements Runnable {
             case 0:
                 Context context = (Context) this.d;
                 String str = (String) this.e;
-                af.g.q(context, Uri.parse(str), this.b == 0, this.c, (af.f) this.f);
+                ze.d.q(context, Uri.parse(str), this.b == 0, this.c, (ze.c) this.f);
                 break;
             default:
                 c8.A((c8) this.d, this.b, this.c, (TLRPC.Document) this.e, (Runnable) this.f);

@@ -1,145 +1,70 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
-import java.util.WeakHashMap;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.sl0;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class u3 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
-    public final org.telegram.ui.Components.t5 a;
-    public final t3 b;
-    public final FrameLayout.LayoutParams c;
-    public final org.telegram.ui.ActionBar.g6 d;
-    public int e;
-    public boolean f;
+public abstract class u3 extends FrameLayout {
+    public org.telegram.ui.Components.p9 a;
+    public org.telegram.ui.ActionBar.k5 b;
+    public org.telegram.ui.ActionBar.k5 c;
+    public ImageView d;
+    public org.telegram.ui.Components.z8 e;
+    public TLRPC.User f;
+    public Paint h;
+    public int n;
+    public boolean r;
 
-    public u3(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
-        this(context, 16, g6Var);
+    public final void a(int i10, int i11) {
+        this.n = i10;
+        ImageView imageView = this.d;
+        imageView.setColorFilter(new PorterDuffColorFilter(i11, PorterDuff.Mode.MULTIPLY));
+        this.c.setTextColor(i11);
+        org.telegram.ui.ActionBar.j6.B1(imageView.getDrawable(), i11 & 620756991, true);
     }
 
-    public static void a(ArrayList arrayList, sl0 sl0Var) {
-        int i10 = org.telegram.ui.ActionBar.k6.f7;
-        arrayList.add(new org.telegram.ui.ActionBar.m6(sl0Var, 0, new Class[]{u3.class}, new String[]{"textView"}, null, null, -1, null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(sl0Var, 0, new Class[]{u3.class}, new String[]{"rightTextView"}, null, null, -1, null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(sl0Var, 16, new Class[]{u3.class}, null, null, null, org.telegram.ui.ActionBar.k6.e7));
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Canvas canvas2;
+        if (this.r) {
+            canvas2 = canvas;
+            canvas2.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(68.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(68.0f) : 0), getMeasuredHeight() - 1, this.h);
+        } else {
+            canvas2 = canvas;
+        }
+        super.dispatchDraw(canvas2);
     }
 
-    public final void b(CharSequence charSequence, View.OnClickListener onClickListener) {
-        t3 t3Var = this.b;
-        t3Var.c(charSequence, true, true);
-        t3Var.setOnClickListener(onClickListener);
-        t3Var.setVisibility(0);
+    public CharSequence getName() {
+        return this.b.getText();
     }
 
-    public final void c(CharSequence charSequence, CharSequence charSequence2, View.OnClickListener onClickListener) {
-        this.a.setText(charSequence);
-        t3 t3Var = this.b;
-        t3Var.c(charSequence2, false, true);
-        t3Var.setOnClickListener(onClickListener);
-        t3Var.setVisibility(0);
+    public TLRPC.User getUser() {
+        return this.f;
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void e() {
-        boolean z4 = this.f;
-        org.telegram.ui.ActionBar.g6 g6Var = this.d;
-        setBackgroundColor(z4 ? 0 : org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.e7, g6Var));
-        int i10 = org.telegram.ui.ActionBar.k6.f7;
-        this.a.setTextColor(org.telegram.ui.ActionBar.k6.v0(i10, g6Var));
-        this.b.setTextColor(org.telegram.ui.ActionBar.k6.v0(i10, g6Var));
-    }
-
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
-    }
-
-    public CharSequence getText() {
-        return this.a.getText();
-    }
-
-    public TextView getTextView() {
-        return this.a;
+    @Override // android.view.View
+    public final boolean hasOverlappingRendering() {
+        return false;
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.e), TLObject.FLAG_30));
+    public void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(58.0f), TLObject.FLAG_30));
     }
 
-    public void setLayerHeight(int i10) {
-        this.e = i10;
-        requestLayout();
-    }
-
-    public void setNoBackground(boolean z4) {
-        this.f = z4;
-        e();
-    }
-
-    public void setRightText(CharSequence charSequence) {
-        t3 t3Var = this.b;
-        t3Var.c(charSequence, true, true);
-        t3Var.setVisibility(0);
-    }
-
-    public void setRightTextMargin(int i10) {
-        float f10 = i10;
-        int dp = AndroidUtilities.dp(f10);
-        FrameLayout.LayoutParams layoutParams = this.c;
-        layoutParams.leftMargin = dp;
-        layoutParams.rightMargin = AndroidUtilities.dp(f10);
-        this.b.setLayoutParams(layoutParams);
-    }
-
-    public void setText(CharSequence charSequence) {
-        this.a.setText(charSequence);
-        t3 t3Var = this.b;
-        t3Var.setVisibility(8);
-        t3Var.setOnClickListener(null);
-    }
-
-    public void setTextColor(int i10) {
-        int v02 = org.telegram.ui.ActionBar.k6.v0(i10, this.d);
-        this.a.setTextColor(v02);
-        this.b.setTextColor(v02);
-    }
-
-    public u3(Context context, int i10, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context);
-        this.e = 32;
-        this.d = g6Var;
-        setBackgroundColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.e7, g6Var));
-        org.telegram.ui.Components.t5 t5Var = new org.telegram.ui.Components.t5(getContext());
-        this.a = t5Var;
-        boolean z4 = true;
-        t5Var.setTextSize(1, 14.0f);
-        t5Var.setTypeface(AndroidUtilities.bold());
-        int i11 = org.telegram.ui.ActionBar.k6.f7;
-        t5Var.setTextColor(org.telegram.ui.ActionBar.k6.v0(i11, g6Var));
-        t5Var.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-        float f10 = i10;
-        addView(t5Var, k7.c6.d(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, f10, 0.0f, f10, 0.0f));
-        t3 t3Var = new t3(getContext(), z4, z4, z4, 0);
-        this.b = t3Var;
-        t3Var.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
-        t3Var.b(0.9f, 420L, pr.h);
-        t3Var.setTextSize(AndroidUtilities.dp(14.0f));
-        t3Var.setTextColor(org.telegram.ui.ActionBar.k6.v0(i11, g6Var));
-        t3Var.setGravity(LocaleController.isRTL ? 3 : 5);
-        FrameLayout.LayoutParams d = k7.c6.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, f10, 0.0f, f10, 0.0f);
-        this.c = d;
-        addView(t3Var, d);
-        WeakHashMap weakHashMap = r0.j0.a;
-        new r0.x(R.id.tag_accessibility_heading, Boolean.class, 0, 28, 2).d(this, Boolean.TRUE);
+    public void setDrawDivider(boolean z4) {
+        this.r = z4;
+        invalidate();
     }
 }

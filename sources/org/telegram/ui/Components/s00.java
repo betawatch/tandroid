@@ -19,7 +19,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public class s00 extends View {
     public static final int[] B;
@@ -121,8 +121,8 @@ public class s00 extends View {
             r00Var.d = (byte) ((Utilities.random.nextFloat() * 2.0f) + 4.0f);
             if (!z4) {
             }
-        } catch (Exception e6) {
-            FileLog.e(e6);
+        } catch (Exception e) {
+            FileLog.e(e);
             return r00Var;
         }
     }
@@ -278,7 +278,7 @@ public class s00 extends View {
             if (f20 > f19) {
                 r00Var.k = ((AndroidUtilities.dp(1.0f) / 3.0f) * f13 * s00Var2.e) + f20;
             } else {
-                r00Var.k = w.c.c(AndroidUtilities.dp(1.0f), 3.0f, f13, f20);
+                r00Var.k = vh.w2.c(AndroidUtilities.dp(1.0f), 3.0f, f13, f20);
             }
             if (z4 && r00Var.k > f19) {
                 s00Var2.f++;
@@ -316,7 +316,7 @@ public class s00 extends View {
             return;
         }
         this.c = false;
-        AndroidUtilities.runOnUIThread(new xp(this, 18));
+        AndroidUtilities.runOnUIThread(new up(this, 18));
         b();
     }
 

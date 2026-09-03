@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import v4.e;
 import v4.f;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class b extends e {
     public final w n;
@@ -128,7 +128,7 @@ public final class b extends e {
                                     double u13 = wVar.u() - 128;
                                     int[] iArr3 = iArr2;
                                     double u14 = wVar.u() - 128;
-                                    iArr3[u11] = (d0.h((int) ((u12 - (0.34414d * u14)) - (u13 * 0.71414d)), 0, 255) << 8) | (d0.h((int) ((1.402d * u13) + u12), 0, 255) << 16) | (wVar.u() << 24) | d0.h((int) ((u14 * 1.772d) + u12), 0, 255);
+                                    iArr3[u11] = (d0.h((int) ((1.402d * u13) + u12), 0, 255) << 16) | (wVar.u() << 24) | (d0.h((int) ((u12 - (0.34414d * u14)) - (u13 * 0.71414d)), 0, 255) << 8) | d0.h((int) ((u14 * 1.772d) + u12), 0, 255);
                                     i20++;
                                     iArr2 = iArr3;
                                 }
@@ -224,7 +224,7 @@ public final class b extends e {
             i13 = 0;
             i14 = 2;
         }
-        return new e5.b(2, DesugarCollections.unmodifiableList(arrayList));
+        return new x7.a(DesugarCollections.unmodifiableList(arrayList));
         inflater.reset();
         a aVar2 = this.p;
         aVar2.d = 0;
@@ -240,6 +240,6 @@ public final class b extends e {
         ArrayList arrayList2 = new ArrayList();
         while (wVar.a() >= 3) {
         }
-        return new e5.b(2, DesugarCollections.unmodifiableList(arrayList2));
+        return new x7.a(DesugarCollections.unmodifiableList(arrayList2));
     }
 }

@@ -3,9 +3,9 @@ package tc;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
-import k7.q7;
+import k7.p7;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class u extends wc.h implements dd.p {
     public Object b;
@@ -46,7 +46,7 @@ public final class u extends wc.h implements dd.p {
         vc.a aVar = vc.a.a;
         int i12 = this.e;
         if (i12 == 0) {
-            q7.b(obj);
+            p7.b(obj);
             id.c cVar3 = (id.c) this.f;
             arrayList = new ArrayList(20);
             i10 = 0;
@@ -60,7 +60,7 @@ public final class u extends wc.h implements dd.p {
                         Iterator it2 = this.c;
                         t tVar2 = (t) this.b;
                         id.c cVar4 = (id.c) this.f;
-                        q7.b(obj);
+                        p7.b(obj);
                         tVar2.n();
                         while (true) {
                             int i13 = tVar2.b;
@@ -105,7 +105,7 @@ public final class u extends wc.h implements dd.p {
                     } else if (i12 == 4) {
                         tVar = (t) this.b;
                         cVar2 = (id.c) this.f;
-                        q7.b(obj);
+                        p7.b(obj);
                         tVar.n();
                     } else if (i12 != 5) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -131,13 +131,13 @@ public final class u extends wc.h implements dd.p {
                     }
                     return sc.i.a;
                 }
-                q7.b(obj);
+                p7.b(obj);
                 return sc.i.a;
             }
             i10 = this.d;
             Iterator it3 = this.c;
             id.c cVar5 = (id.c) this.f;
-            q7.b(obj);
+            p7.b(obj);
             arrayList = new ArrayList(20);
             cVar = cVar5;
             it = it3;

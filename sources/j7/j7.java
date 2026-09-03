@@ -1,15 +1,15 @@
 package j7;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class j7 {
     public final e6 a;
-    public final i6 b;
+    public final j6 b;
     public final h7 c;
 
-    public /* synthetic */ j7(androidx.biometric.e eVar) {
-        this.a = (e6) eVar.b;
-        this.b = (i6) eVar.c;
-        this.c = (h7) eVar.d;
+    public /* synthetic */ j7(af.d dVar) {
+        this.a = (e6) dVar.b;
+        this.b = (j6) dVar.c;
+        this.c = (h7) dVar.d;
     }
 }

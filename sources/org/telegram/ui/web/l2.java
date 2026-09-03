@@ -13,7 +13,7 @@ import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
 public final class l2 extends TLObject {
     public long a = System.currentTimeMillis();
@@ -25,25 +25,25 @@ public final class l2 extends TLObject {
     public Bitmap i;
     public byte[] j;
 
-    public static l2 a(x0 x0Var) {
+    public static l2 a(y0 y0Var) {
         l2 l2Var = new l2();
-        String hostAuthority = AndroidUtilities.getHostAuthority(x0Var.getUrl(), true);
+        String hostAuthority = AndroidUtilities.getHostAuthority(y0Var.getUrl(), true);
         l2Var.b = hostAuthority;
         if (TextUtils.isEmpty(hostAuthority)) {
             return null;
         }
-        if (x0Var.G) {
-            l2Var.c = x0Var.H;
+        if (y0Var.G) {
+            l2Var.c = y0Var.H;
         }
-        l2Var.d = x0Var.r;
-        if (x0Var.s) {
-            l2Var.e = x0Var.w;
+        l2Var.d = y0Var.r;
+        if (y0Var.s) {
+            l2Var.e = y0Var.w;
         }
-        if (x0Var.v) {
-            l2Var.f = x0Var.x;
+        if (y0Var.v) {
+            l2Var.f = y0Var.x;
         }
-        if (x0Var.J) {
-            l2Var.i = x0Var.L;
+        if (y0Var.J) {
+            l2Var.i = y0Var.L;
         }
         return l2Var;
     }
@@ -105,8 +105,8 @@ public final class l2 extends TLObject {
         outputSerializedData.writeByteArray(byteArray);
         try {
             byteArrayOutputStream.close();
-        } catch (Exception e6) {
-            FileLog.e(e6);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 }

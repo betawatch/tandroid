@@ -1,188 +1,39 @@
 package oh;
 
-import j$.util.DesugarArrays;
-import j$.util.stream.Collectors;
-import java.util.ArrayList;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.RichMessageLayout;
-import org.telegram.messenger.qd;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.TranslateController;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.i51;
+import org.telegram.ui.Components.rl0;
+import org.telegram.ui.Components.w51;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
-public abstract class s {
-    public static int[] a() {
-        return new int[]{10000, 3600, 400, 20, -10787210, -8681059, -14341066, 2000, 1800, 280, 10, -2013375, -1482439, -7666429, 500, RichMessageLayout.PART_MAX_HEIGHT_DP, 200, 7, -1214690, -1214690, -6606592, MediaDataController.MAX_LINKS_COUNT, 600, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 4, -1926647, -1926647, -6668800, 100, 300, 110, 3, -12539616, -12539616, -15244800, 50, 120, 80, 2, -12147733, -12147733, -16756594, 10, 60, 60, 1, -6988581, -6988581, -11991141, 0, 30, 30, 0, -6988581, -6988581, -11991141};
+public final class s extends h51 {
+    public static final /* synthetic */ int a = 0;
+
+    static {
+        h51.setup(new s());
     }
 
-    public static int b(int i10, int i11, int i12) {
-        int[] iArr = MessagesController.getInstance(i10).starsGroupcallMessageLimits;
-        for (int i13 = 0; i13 < iArr.length / 7; i13++) {
-            int i14 = i13 * 7;
-            if (i11 >= iArr[i14]) {
-                return iArr[i14 + 1 + i12];
-            }
+    @Override // org.telegram.ui.Components.h51
+    public final void bindView(View view, i51 i51Var, boolean z4, w51 w51Var, g61 g61Var) {
+        t tVar = (t) view;
+        TranslateController.Language language = (TranslateController.Language) i51Var.G;
+        tVar.a.setText(language.displayName);
+        tVar.b.setText(language.ownDisplayName);
+        if (tVar.c != z4) {
+            tVar.invalidate();
         }
-        return 0;
+        tVar.c = z4;
+        tVar.setWillNotDraw(!z4);
     }
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x00ab, code lost:
-    
-        if (r6.equals("color_bg") == false) goto L42;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static int[] c(TLRPC.TL_jsonArray tL_jsonArray) {
-        char c3;
-        int[] iArr = new int[tL_jsonArray.value.size() * 7];
-        for (int i10 = 0; i10 < tL_jsonArray.value.size(); i10++) {
-            TLRPC.JSONValue jSONValue = tL_jsonArray.value.get(i10);
-            if (jSONValue instanceof TLRPC.TL_jsonObject) {
-                ArrayList<TLRPC.TL_jsonObjectValue> arrayList = ((TLRPC.TL_jsonObject) jSONValue).value;
-                int size = arrayList.size();
-                int i11 = 0;
-                while (i11 < size) {
-                    TLRPC.TL_jsonObjectValue tL_jsonObjectValue = arrayList.get(i11);
-                    i11++;
-                    TLRPC.TL_jsonObjectValue tL_jsonObjectValue2 = tL_jsonObjectValue;
-                    TLRPC.JSONValue jSONValue2 = tL_jsonObjectValue2.value;
-                    int i12 = 2;
-                    int i13 = -1;
-                    if (jSONValue2 instanceof TLRPC.TL_jsonNumber) {
-                        int i14 = (int) ((TLRPC.TL_jsonNumber) jSONValue2).value;
-                        String str = tL_jsonObjectValue2.key;
-                        str.getClass();
-                        switch (str.hashCode()) {
-                            case -1544802595:
-                                if (str.equals("text_length_max")) {
-                                    c3 = 0;
-                                    break;
-                                }
-                                c3 = 65535;
-                                break;
-                            case -1186480213:
-                                if (str.equals("pin_period")) {
-                                    c3 = 1;
-                                    break;
-                                }
-                                c3 = 65535;
-                                break;
-                            case 109757537:
-                                if (str.equals("stars")) {
-                                    c3 = 2;
-                                    break;
-                                }
-                                c3 = 65535;
-                                break;
-                            case 1686749675:
-                                if (str.equals("emoji_max")) {
-                                    c3 = 3;
-                                    break;
-                                }
-                                c3 = 65535;
-                                break;
-                            default:
-                                c3 = 65535;
-                                break;
-                        }
-                        switch (c3) {
-                            case 0:
-                                break;
-                            case 1:
-                                i12 = 1;
-                                break;
-                            case 2:
-                                i12 = 0;
-                                break;
-                            case 3:
-                                i12 = 3;
-                                break;
-                            default:
-                                i12 = -1;
-                                break;
-                        }
-                        if (i12 >= 0) {
-                            iArr[(i10 * 7) + i12] = i14;
-                        }
-                    } else if (jSONValue2 instanceof TLRPC.TL_jsonString) {
-                        String str2 = ((TLRPC.TL_jsonString) jSONValue2).value;
-                        String str3 = tL_jsonObjectValue2.key;
-                        str3.getClass();
-                        switch (str3.hashCode()) {
-                            case -1354842834:
-                                if (str3.equals("color1")) {
-                                    i12 = 0;
-                                    break;
-                                }
-                                i12 = -1;
-                                break;
-                            case -1354842833:
-                                if (str3.equals("color2")) {
-                                    i12 = 1;
-                                    break;
-                                }
-                                i12 = -1;
-                                break;
-                            case -628825439:
-                                break;
-                            default:
-                                i12 = -1;
-                                break;
-                        }
-                        switch (i12) {
-                            case 0:
-                                i13 = 4;
-                                break;
-                            case 1:
-                                i13 = 5;
-                                break;
-                            case 2:
-                                i13 = 6;
-                                break;
-                        }
-                        if (i13 >= 0) {
-                            try {
-                                iArr[(i10 * 7) + i13] = (int) Long.parseLong("FF" + str2, 16);
-                            } catch (Exception e6) {
-                                FileLog.e(e6);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        return iArr;
-    }
-
-    public static int[] d(String str) {
-        if (str == null || str.length() == 0) {
-            return a();
-        }
-        try {
-            return DesugarArrays.stream(str.split(",")).mapToInt(new org.telegram.messenger.e4(1)).toArray();
-        } catch (Exception e6) {
-            FileLog.e(e6);
-            return a();
-        }
-    }
-
-    public static boolean e(int[] iArr, int[] iArr2) {
-        if (iArr2 != null && iArr.length == iArr2.length) {
-            for (int i10 = 0; i10 < iArr.length; i10++) {
-                if (iArr[i10] == iArr2[i10]) {
-                }
-            }
-            return true;
-        }
-        return false;
-    }
-
-    public static String f(int[] iArr) {
-        return (String) DesugarArrays.stream(iArr).mapToObj(new qd(0)).collect(Collectors.joining(","));
+    @Override // org.telegram.ui.Components.h51
+    public final View createView(Context context, rl0 rl0Var, int i10, int i11, f6 f6Var) {
+        return new t(context);
     }
 }

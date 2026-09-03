@@ -1,21 +1,21 @@
 package com.google.android.recaptcha.internal;
 
+import k7.o7;
 import k7.p7;
-import k7.q7;
 import ld.e0;
 import org.telegram.tgnet.TLObject;
 import sc.c;
 import sc.g;
 import vc.a;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class zzif {
     private final c zza;
 
     public zzif() {
         int i10 = zzby.zza;
-        this.zza = p7.a(zzie.zza);
+        this.zza = o7.a(zzie.zza);
     }
 
     public static final /* synthetic */ zzhm zza(zzif zzifVar) {
@@ -42,10 +42,10 @@ public final class zzif {
                     if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    q7.b(obj);
+                    p7.b(obj);
                     return obj;
                 }
-                q7.b(obj);
+                p7.b(obj);
                 zzid zzidVar = new zzid(zzifVar, zzcyVar, zzyeVar, null);
                 zzicVar.zzc = 1;
                 Object f10 = e0.f(zzidVar, zzicVar);

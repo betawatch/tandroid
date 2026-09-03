@@ -1,12 +1,12 @@
 package com.google.android.recaptcha.internal;
 
 import dd.p;
-import k7.q7;
+import k7.p7;
 import uc.c;
 import vc.a;
 import wc.i;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 final class zzao extends i implements p {
     int zza;
@@ -53,13 +53,13 @@ final class zzao extends i implements p {
         a aVar = a.a;
         int i10 = this.zza;
         try {
-        } catch (Exception e6) {
+        } catch (Exception e) {
             zzar zzarVar = this.zzb;
             this.zza = 2;
-            obj = zzarVar.zzg(e6, this);
+            obj = zzarVar.zzg(e, this);
         }
         if (i10 == 0) {
-            q7.b(obj);
+            p7.b(obj);
             zzhk zzhkVar = (zzhk) this.zzd;
             zzar zzarVar2 = this.zzb;
             int zza = zzarVar2.zza();
@@ -68,10 +68,10 @@ final class zzao extends i implements p {
             obj = new zzhf(37, zzanVar, new Integer(zza)).zza(zzhkVar, this);
         } else {
             if (i10 != 1) {
-                q7.b(obj);
+                p7.b(obj);
                 return (zzat) obj;
             }
-            q7.b(obj);
+            p7.b(obj);
         }
         return (zzat) obj;
     }

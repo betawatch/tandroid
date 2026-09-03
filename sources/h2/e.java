@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.PersistableBundle;
 import android.text.TextUtils;
-import androidx.biometric.k;
+import androidx.biometric.j;
 import androidx.core.graphics.drawable.IconCompat;
 import androidx.sharetarget.ShortcutInfoCompatSaverImpl;
 import c0.l;
@@ -17,7 +17,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class e implements Runnable {
     public final /* synthetic */ int a;
@@ -132,7 +132,7 @@ public final class e implements Runnable {
                                         if (f10 != null) {
                                             s1 s1Var = new s1(shortcutInfoCompatSaverImpl2, f10, str2, 3);
                                             l lVar = new l();
-                                            shortcutInfoCompatSaverImpl2.e.submit(new k(lVar, s1Var, false, 15));
+                                            shortcutInfoCompatSaverImpl2.e.submit(new j(lVar, s1Var, false, 15));
                                             v8.a aVar2 = (v8.a) shortcutInfoCompatSaverImpl2.c.put(str4, lVar);
                                             if (aVar2 != null) {
                                                 aVar2.cancel(false);

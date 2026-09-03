@@ -1,54 +1,87 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.ValueAnimator;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.view.WindowManager;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.AnimationNotificationsLocker;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class x2 implements Runnable {
+public final class x2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ g3 b;
 
-    public /* synthetic */ x2(Object obj, int i10) {
+    public /* synthetic */ x2(g3 g3Var, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = g3Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        boolean z4;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
         switch (this.a) {
             case 0:
-                h3 h3Var = (h3) this.b;
-                if (h3Var.startAnimationRunnable == this) {
-                    z4 = h3Var.dismissed;
-                    if (!z4) {
-                        h3Var.startAnimationRunnable = null;
-                        h3.access$2400(h3Var);
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                ActionBarLayout actionBarLayout = (ActionBarLayout) this.b;
-                if (actionBarLayout.d == this) {
-                    actionBarLayout.d = null;
-                    actionBarLayout.d0(false, true, false);
-                    break;
-                }
-                break;
-            case 2:
-                r1 r1Var = (r1) this.b;
-                ValueAnimator valueAnimator = r1Var.m;
-                if (valueAnimator != null && !valueAnimator.isRunning()) {
-                    r1Var.m.start();
+                g3 g3Var = this.b;
+                AnimatorSet animatorSet = g3Var.currentSheetAnimation;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    g3Var.currentSheetAnimation = null;
+                    g3Var.currentSheetAnimationType = 0;
                     break;
                 }
                 break;
             default:
-                x4 x4Var = (x4) this.b;
-                x4Var.k();
-                x4Var.j();
-                x4Var.f.setAlpha(1.0f);
+                g3 g3Var2 = this.b;
+                AnimatorSet animatorSet2 = g3Var2.currentSheetAnimation;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    g3Var2.currentSheetAnimation = null;
+                    g3Var2.currentSheetAnimationType = 0;
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        AnimationNotificationsLocker animationNotificationsLocker;
+        int i10 = this.a;
+        g3 g3Var = this.b;
+        switch (i10) {
+            case 0:
+                AnimatorSet animatorSet = g3Var.currentSheetAnimation;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    g3Var.currentSheetAnimation = null;
+                    g3Var.currentSheetAnimationType = 0;
+                    g3Var.onOpenAnimationEnd();
+                    a3 a3Var = g3Var.delegate;
+                    if (a3Var != null) {
+                        a3Var.onOpenAnimationEnd();
+                    }
+                    if (g3Var.useHardwareLayer) {
+                        g3Var.container.setLayerType(0, null);
+                    }
+                    if (g3Var.isFullscreen) {
+                        WindowManager.LayoutParams attributes = g3Var.getWindow().getAttributes();
+                        attributes.flags &= -1025;
+                        g3Var.getWindow().setAttributes(attributes);
+                    }
+                }
+                if (g3Var.pauseAllHeavyOperations) {
+                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
+                }
+                animationNotificationsLocker = g3Var.notificationsLocker;
+                animationNotificationsLocker.unlock();
+                break;
+            default:
+                AnimatorSet animatorSet2 = g3Var.currentSheetAnimation;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    g3Var.currentSheetAnimation = null;
+                    g3Var.currentSheetAnimationType = 0;
+                    AndroidUtilities.runOnUIThread(new p(this, 9));
+                }
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
                 break;
         }
     }

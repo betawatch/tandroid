@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class a11 extends TextureView {
     public static Boolean f;
@@ -25,7 +25,7 @@ public final class a11 extends TextureView {
         this.c = new ArrayList();
         this.d = runnable;
         setOpaque(false);
-        setSurfaceTextureListener(new jh.h(this, 3));
+        setSurfaceTextureListener(new ih.h(this, 3));
     }
 
     public static void b(Runnable runnable) {

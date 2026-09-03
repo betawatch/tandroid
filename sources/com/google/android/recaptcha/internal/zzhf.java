@@ -1,12 +1,12 @@
 package com.google.android.recaptcha.internal;
 
 import dd.p;
-import k7.q7;
+import k7.p7;
 import org.telegram.tgnet.TLObject;
 import uc.c;
 import vc.a;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class zzhf {
     private final p zza;
@@ -27,7 +27,7 @@ public final class zzhf {
     public final Object zza(zzhk zzhkVar, c cVar) {
         zzhe zzheVar;
         int i10;
-        zzcg e6;
+        zzcg e;
         zzgr zzgrVar;
         if (cVar instanceof zzhe) {
             zzheVar = (zzhe) cVar;
@@ -38,7 +38,7 @@ public final class zzhf {
                 a aVar = a.a;
                 i10 = zzheVar.zzc;
                 if (i10 != 0) {
-                    q7.b(obj);
+                    p7.b(obj);
                     zzgr zzgrVar2 = new zzgr(zzhkVar, this.zzc, this.zzb);
                     try {
                         p pVar = this.zza;
@@ -49,11 +49,11 @@ public final class zzhf {
                             return aVar;
                         }
                         zzgrVar = zzgrVar2;
-                    } catch (zzcg e10) {
-                        e6 = e10;
+                    } catch (zzcg e6) {
+                        e = e6;
                         zzgrVar = zzgrVar2;
-                        zzgrVar.zzc(e6);
-                        throw e6;
+                        zzgrVar.zzc(e);
+                        throw e;
                     }
                 } else {
                     if (i10 != 1) {
@@ -61,11 +61,11 @@ public final class zzhf {
                     }
                     zzgrVar = zzheVar.zzd;
                     try {
-                        q7.b(obj);
-                    } catch (zzcg e11) {
-                        e6 = e11;
-                        zzgrVar.zzc(e6);
-                        throw e6;
+                        p7.b(obj);
+                    } catch (zzcg e10) {
+                        e = e10;
+                        zzgrVar.zzc(e);
+                        throw e;
                     }
                 }
                 zzgrVar.zzb();

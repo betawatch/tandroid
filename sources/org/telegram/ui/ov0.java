@@ -4,7 +4,7 @@ import android.os.Bundle;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ov0 implements Runnable {
     public final /* synthetic */ int a;
@@ -37,30 +37,30 @@ public final /* synthetic */ class ov0 implements Runnable {
                 yv0Var.c(false);
                 return;
             case 1:
-                qh.w7 w7Var = (qh.w7) this.c;
+                ph.y7 y7Var = (ph.y7) this.c;
                 long j11 = this.b;
                 TLRPC.ChatFull chatFull = (TLRPC.ChatFull) this.d;
-                w7Var.getClass();
-                w7Var.d(j11, chatFull.participants);
+                y7Var.getClass();
+                y7Var.d(j11, chatFull.participants);
                 return;
             case 2:
-                sf.f fVar = (sf.f) this.c;
-                sf.e eVar = (sf.e) this.d;
+                rf.f fVar = (rf.f) this.c;
+                rf.e eVar = (rf.e) this.d;
                 long j12 = this.b;
-                if (((sf.e) fVar.c) != eVar) {
+                if (((rf.e) fVar.c) != eVar) {
                     return;
                 }
-                sf.c cVar = (sf.c) fVar.e;
+                rf.c cVar = (rf.c) fVar.e;
                 if (cVar != null) {
                     AndroidUtilities.cancelRunOnUIThread(cVar);
                     fVar.e = null;
                 }
-                synchronized (sf.k.t) {
+                synchronized (rf.j.t) {
                     try {
-                        sf.k kVar = sf.k.v;
-                        if (kVar != null) {
-                            kVar.m();
-                            sf.k.v = null;
+                        rf.j jVar = rf.j.v;
+                        if (jVar != null) {
+                            jVar.m();
+                            rf.j.v = null;
                         }
                     } catch (Throwable th2) {
                         throw th2;
@@ -73,14 +73,14 @@ public final /* synthetic */ class ov0 implements Runnable {
             default:
                 long[] jArr = (long[]) this.c;
                 long j13 = this.b;
-                eg.d3 d3Var = (eg.d3) this.d;
+                dg.f3 f3Var = (dg.f3) this.d;
                 jArr[0] = j13;
-                d3Var.run();
+                f3Var.run();
                 return;
         }
     }
 
-    public /* synthetic */ ov0(sf.f fVar, sf.e eVar, long j10) {
+    public /* synthetic */ ov0(rf.f fVar, rf.e eVar, long j10) {
         this.a = 2;
         this.c = fVar;
         this.d = eVar;

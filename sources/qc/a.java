@@ -3,9 +3,9 @@ package qc;
 import java.util.regex.Pattern;
 import ne.p;
 import ne.s;
-import org.telegram.ui.yh;
+import vh.w2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class a extends h {
     public static final Pattern e = Pattern.compile("^<([a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*)>");
@@ -16,7 +16,7 @@ public final class a extends h {
         String a2 = a(e);
         if (a2 != null) {
             String j10 = e2.c.j(a2, 1, 1);
-            ne.k kVar = new ne.k(1, yh.k("mailto:", j10), null);
+            ne.k kVar = new ne.k(1, w2.e("mailto:", j10), null);
             kVar.b(new s(j10));
             return kVar;
         }

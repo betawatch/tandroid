@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class t1 implements l2 {
     public static final t1 b = new t1(0);
@@ -40,8 +40,8 @@ public final class t1 implements l2 {
                 }
                 try {
                     return (s2) v1.h(cls.asSubclass(v1.class)).d(3);
-                } catch (Exception e6) {
-                    throw new RuntimeException("Unable to get message info for ".concat(cls.getName()), e6);
+                } catch (Exception e) {
+                    throw new RuntimeException("Unable to get message info for ".concat(cls.getName()), e);
                 }
             default:
                 throw new IllegalStateException("This should never be called.");

@@ -1,235 +1,191 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.content.SharedPreferences;
+import android.content.Context;
+import android.content.res.Configuration;
+import android.graphics.Canvas;
 import android.view.MotionEvent;
-import android.view.View;
 import android.view.WindowManager;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class lg0 extends n20 {
-    public float a;
-    public float b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ ng0 d;
+public final class lg0 extends FrameLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ mg0 b;
 
-    public lg0(ng0 ng0Var, int i10) {
-        this.d = ng0Var;
-        this.c = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ lg0(mg0 mg0Var, Context context, int i10) {
+        super(context);
+        this.a = i10;
+        this.b = mg0Var;
     }
 
-    @Override // org.telegram.ui.Components.n20
-    public final boolean a() {
-        ng0 ng0Var = this.d;
-        PhotoViewer photoViewer = ng0Var.S;
-        if (photoViewer == null) {
-            return false;
+    @Override // android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        switch (this.a) {
+            case 1:
+                super.dispatchDraw(canvas);
+                mg0 mg0Var = this.b;
+                no0 no0Var = mg0Var.O;
+                if (no0Var != null && no0Var.a()) {
+                    mg0Var.O.setBounds(getLeft(), getTop(), getRight(), getBottom());
+                    mg0Var.O.draw(canvas);
+                    break;
+                }
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
         }
-        if ((photoViewer.C2 == null && ng0Var.r == null) || ng0Var.Z || ng0Var.V || ng0Var.w || ng0Var.s.isInProgress() || !ng0Var.c0) {
-            return false;
-        }
-        return ng0Var.l() != -9223372036854775807L && ng0Var.m() >= 15000;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:34:0x008a  */
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onDoubleTap(MotionEvent motionEvent) {
-        boolean z4;
-        ng0 ng0Var = this.d;
-        PhotoViewer photoViewer = ng0Var.S;
-        z61 z61Var = ng0Var.N;
-        if (photoViewer != null && ((photoViewer.C2 != null || ng0Var.r != null) && !ng0Var.Z && !ng0Var.V && !ng0Var.w && !ng0Var.s.isInProgress() && ng0Var.c0)) {
-            ng0Var.S.getClass();
-            boolean z10 = motionEvent.getX() >= (((float) ng0Var.t()) * ng0Var.G) * 0.5f;
-            long l10 = ng0Var.l();
-            long m9 = ng0Var.m();
-            if (l10 != -9223372036854775807L && m9 >= 15000) {
-                long j10 = z10 ? l10 + 10000 : l10 - 10000;
-                if (l10 != j10) {
-                    if (j10 > m9) {
-                        j10 = m9;
-                    } else if (j10 < 0) {
-                        z4 = j10 >= -9000;
-                        j10 = 0;
-                        if (z4) {
-                            z61Var.e(true);
-                            z61Var.d(!z10);
-                            long j11 = z61Var.o + 10000;
-                            z61Var.o = j11;
-                            z61Var.p = LocaleController.formatPluralString("Seconds", (int) (j11 / 1000), new Object[0]);
-                            xf0 xf0Var = ng0Var.r;
-                            if (xf0Var != null) {
-                                xf0Var.i(j10);
-                            } else {
-                                j71 j71Var = ng0Var.S.C2;
-                                if (j71Var != null) {
-                                    j71Var.K(j10);
-                                }
-                            }
-                            z61Var.g(0L);
-                            ng0Var.W = j10 / m9;
-                            oh.b3 b3Var = ng0Var.Y;
-                            if (b3Var != null) {
-                                b3Var.invalidate();
-                            }
-                            mg0 mg0Var = ng0Var.h;
-                            if (mg0Var != null) {
-                                mg0Var.invalidate();
-                            }
-                            if (!ng0Var.B) {
-                                ng0Var.B = true;
-                                ng0Var.y(true);
-                                if (!ng0Var.f0) {
-                                    ng0Var.f0 = true;
-                                    AndroidUtilities.runOnUIThread(ng0Var.g0, 2500L);
-                                }
-                            }
-                        }
+    @Override // android.view.ViewGroup, android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        PhotoViewer photoViewer;
+        org.telegram.ui.ws0 ws0Var;
+        switch (this.a) {
+            case 0:
+                int actionMasked = motionEvent.getActionMasked();
+                mg0 mg0Var = this.b;
+                if (actionMasked == 0 || actionMasked == 5) {
+                    if (motionEvent.getPointerCount() == 1) {
+                        mg0Var.c0 = true;
+                        mg0Var.d0 = new float[]{motionEvent.getX(), motionEvent.getY()};
+                        AndroidUtilities.runOnUIThread(mg0Var.e0, 500L);
+                    } else {
+                        mg0Var.c0 = false;
+                        mg0Var.i();
+                        AndroidUtilities.cancelRunOnUIThread(mg0Var.e0);
+                    }
+                }
+                if (actionMasked == 1 || actionMasked == 3 || actionMasked == 6) {
+                    mg0Var.c0 = false;
+                    mg0Var.i();
+                    AndroidUtilities.cancelRunOnUIThread(mg0Var.e0);
+                } else if (actionMasked == 2 && (photoViewer = mg0Var.S) != null && (ws0Var = photoViewer.Z3) != null && ws0Var.rewinding) {
+                    ws0Var.setX(motionEvent.getX());
+                }
+                if (mg0Var.y != null) {
+                    MotionEvent obtain = MotionEvent.obtain(motionEvent);
+                    obtain.offsetLocation(mg0Var.y.getX(), mg0Var.y.getY());
+                    boolean dispatchTouchEvent = mg0Var.y.dispatchTouchEvent(motionEvent);
+                    obtain.recycle();
+                    if (actionMasked == 1 || actionMasked == 3 || actionMasked == 6) {
+                        mg0Var.y = null;
+                    }
+                    if (dispatchTouchEvent) {
                         return true;
                     }
-                    z4 = true;
-                    if (z4) {
+                }
+                MotionEvent obtain2 = MotionEvent.obtain(motionEvent);
+                obtain2.offsetLocation(motionEvent.getRawX() - motionEvent.getX(), motionEvent.getRawY() - motionEvent.getY());
+                boolean onTouchEvent = mg0Var.s.onTouchEvent(obtain2);
+                obtain2.recycle();
+                boolean z4 = !mg0Var.s.isInProgress() && mg0Var.v.w2(motionEvent);
+                if (actionMasked == 1 || actionMasked == 3 || actionMasked == 6) {
+                    mg0Var.w = false;
+                    mg0Var.x = false;
+                    if (mg0Var.a0) {
+                        mg0Var.a0 = false;
+                        mg0 mg0Var2 = mg0.m0;
+                        ou ouVar = mg0Var2.R;
+                        if (ouVar != null) {
+                            ouVar.G();
+                        } else {
+                            PhotoViewer photoViewer2 = mg0Var2.S;
+                            if (photoViewer2 != null) {
+                                photoViewer2.P0();
+                                MediaController.getInstance().tryResumePausedAudio();
+                            }
+                        }
+                        mg0.j(false);
+                    } else {
+                        o1.j jVar = mg0Var.J;
+                        if (!jVar.f) {
+                            float f10 = mg0Var.H;
+                            jVar.b = f10;
+                            jVar.c = true;
+                            jVar.u.i = (mg0Var.E / 2.0f) + f10 >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? (r1 - r6) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
+                            mg0Var.J.f();
+                        }
+                        o1.j jVar2 = mg0Var.K;
+                        if (!jVar2.f) {
+                            jVar2.b = mg0Var.I;
+                            jVar2.c = true;
+                            jVar2.u.i = k7.n.a(r1, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - mg0Var.F) - AndroidUtilities.dp(16.0f));
+                            mg0Var.K.f();
+                        }
                     }
-                    return true;
                 }
-            }
+                return onTouchEvent || z4;
+            default:
+                return super.dispatchTouchEvent(motionEvent);
         }
-        return false;
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onDown(MotionEvent motionEvent) {
-        ng0 ng0Var = this.d;
-        if (ng0Var.B) {
-            for (int i10 = 1; i10 < ng0Var.e.getChildCount(); i10++) {
-                View childAt = ng0Var.e.getChildAt(i10);
-                if (childAt.dispatchTouchEvent(motionEvent)) {
-                    ng0Var.y = childAt;
-                    return true;
+    @Override // android.view.View
+    public void onConfigurationChanged(Configuration configuration) {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.checkDisplaySize(getContext(), configuration);
+                mg0 mg0Var = this.b;
+                mg0Var.D = null;
+                AndroidUtilities.setPreferredMaxRefreshRate(mg0Var.b, mg0Var.d, mg0Var.c);
+                if (mg0Var.E != mg0Var.t() * mg0Var.G || mg0Var.F != mg0Var.r() * mg0Var.G) {
+                    WindowManager.LayoutParams layoutParams = mg0Var.c;
+                    int t6 = (int) (mg0Var.t() * mg0Var.G);
+                    mg0Var.E = t6;
+                    layoutParams.width = t6;
+                    WindowManager.LayoutParams layoutParams2 = mg0Var.c;
+                    int r10 = (int) (mg0Var.r() * mg0Var.G);
+                    mg0Var.F = r10;
+                    layoutParams2.height = r10;
+                    AndroidUtilities.updateViewLayout(mg0Var.b, mg0Var.d, mg0Var.c);
+                    o1.j jVar = mg0Var.J;
+                    float f10 = mg0Var.H;
+                    jVar.b = f10;
+                    jVar.c = true;
+                    jVar.u.i = android.support.v4.media.a.d(mg0Var.t(), mg0Var.G, 2.0f, f10) >= AndroidUtilities.displaySize.x / 2.0f ? (r3 - (mg0Var.t() * mg0Var.G)) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
+                    mg0Var.J.f();
+                    o1.j jVar2 = mg0Var.K;
+                    jVar2.b = mg0Var.I;
+                    jVar2.c = true;
+                    jVar2.u.i = k7.n.a(r1, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - (mg0Var.r() * mg0Var.G)) - AndroidUtilities.dp(16.0f));
+                    mg0Var.K.f();
+                    break;
                 }
-            }
+                break;
+            default:
+                super.onConfigurationChanged(configuration);
+                break;
         }
-        this.a = ng0Var.H;
-        this.b = ng0Var.I;
-        return true;
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
-        ng0 ng0Var = this.d;
-        if (!ng0Var.w || ng0Var.x) {
-            return false;
-        }
-        o1.j jVar = ng0Var.J;
-        jVar.a = f10;
-        float f12 = ng0Var.H;
-        jVar.b = f12;
-        jVar.c = true;
-        jVar.u.i = (f10 / 7.0f) + ((ng0Var.E / 2.0f) + f12) >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? (r3 - r2) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
-        ng0Var.J.f();
-        o1.j jVar2 = ng0Var.K;
-        jVar2.a = f10;
-        jVar2.b = ng0Var.I;
-        jVar2.c = true;
-        jVar2.u.i = k7.o.a((f11 / 10.0f) + r9, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - ng0Var.F) - AndroidUtilities.dp(16.0f));
-        ng0Var.K.f();
-        return true;
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
-        ng0 ng0Var = this.d;
-        if (!ng0Var.w && ng0Var.C == null && !ng0Var.x) {
-            float abs = Math.abs(f10);
-            float f12 = this.c;
-            if (abs >= f12 || Math.abs(f11) >= f12) {
-                ng0Var.w = true;
-                ng0Var.J.c();
-                ng0Var.K.c();
-                ng0Var.c0 = false;
-                ng0Var.i();
-                AndroidUtilities.cancelRunOnUIThread(ng0Var.e0);
-            }
-        }
-        if (ng0Var.w) {
-            float f13 = ng0Var.H;
-            float rawX = (motionEvent2.getRawX() + this.a) - motionEvent.getRawX();
-            ng0Var.I = (motionEvent2.getRawY() + this.b) - motionEvent.getRawY();
-            int i10 = ng0Var.E;
-            if (rawX > (-i10) * 0.25f && rawX < AndroidUtilities.displaySize.x - (i10 * 0.75f)) {
-                boolean z4 = ng0Var.a0;
-                if (z4) {
-                    if (z4) {
-                        ng0Var.J.a(new kg0(this, rawX, 0));
-                        o1.j jVar = ng0Var.J;
-                        jVar.b = f13;
-                        jVar.c = true;
-                        jVar.u.i = rawX;
-                        jVar.f();
-                    }
-                    ng0Var.a0 = false;
-                    return true;
+    @Override // android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 1:
+                mg0 mg0Var = this.b;
+                y61 y61Var = mg0Var.N;
+                if (y61Var.j) {
+                    y61Var.setBounds(getLeft(), getTop(), getRight(), getBottom());
+                    mg0Var.N.draw(canvas);
                 }
-                o1.j jVar2 = ng0Var.J;
-                if (jVar2.f) {
-                    jVar2.u.i = rawX;
-                } else {
-                    WindowManager.LayoutParams layoutParams = ng0Var.c;
-                    ng0Var.H = rawX;
-                    layoutParams.x = (int) rawX;
-                    ((SharedPreferences) ng0Var.n().b).edit().putFloat("x", rawX).apply();
+                PhotoViewer photoViewer = mg0Var.S;
+                if (photoViewer != null && photoViewer.Y3 != null) {
+                    canvas.save();
+                    canvas.translate(getLeft(), getTop());
+                    mg0Var.S.Y3.draw(canvas, getRight() - getLeft(), getBottom() - getTop());
+                    canvas.restore();
+                    break;
                 }
-                ng0Var.c.y = (int) ng0Var.I;
-                ((SharedPreferences) ng0Var.n().b).edit().putFloat("y", ng0Var.I).apply();
-                AndroidUtilities.updateViewLayout(ng0Var.b, ng0Var.d, ng0Var.c);
-                return true;
-            }
-            if (!ng0Var.a0) {
-                o1.j jVar3 = ng0Var.J;
-                jVar3.b = f13;
-                jVar3.c = true;
-                jVar3.u.i = (i10 / 2.0f) + rawX >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? r9 - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f) - ng0Var.E;
-                ng0Var.J.f();
-            }
-            ng0Var.a0 = true;
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
         }
-        return true;
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
-    public final boolean onSingleTapConfirmed(MotionEvent motionEvent) {
-        ng0 ng0Var = this.d;
-        ValueAnimator valueAnimator = ng0Var.C;
-        gg0 gg0Var = ng0Var.g0;
-        if (valueAnimator == null) {
-            if (ng0Var.f0) {
-                AndroidUtilities.cancelRunOnUIThread(gg0Var);
-                ng0Var.f0 = false;
-            }
-            boolean z4 = !ng0Var.B;
-            ng0Var.B = z4;
-            ng0Var.y(z4);
-            if (ng0Var.B && !ng0Var.f0) {
-                AndroidUtilities.runOnUIThread(gg0Var, 2500L);
-                ng0Var.f0 = true;
-            }
-        }
-        return true;
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onSingleTapUp(MotionEvent motionEvent) {
-        if (a()) {
-            return super.onSingleTapUp(motionEvent);
-        }
-        onSingleTapConfirmed(motionEvent);
-        return true;
     }
 }

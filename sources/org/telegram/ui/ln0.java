@@ -5,9 +5,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ln0 implements OnCompleteListener, org.telegram.ui.ActionBar.c2, yt {
+public final /* synthetic */ class ln0 implements OnCompleteListener, org.telegram.ui.ActionBar.c2, zt {
     public final /* synthetic */ int a;
     public final /* synthetic */ lo0 b;
 
@@ -16,25 +16,25 @@ public final /* synthetic */ class ln0 implements OnCompleteListener, org.telegr
         this.b = lo0Var;
     }
 
-    @Override // org.telegram.ui.yt
-    public void V0(tt ttVar) {
+    @Override // org.telegram.ui.zt
+    public void Y0(ut utVar) {
         switch (this.a) {
             case 2:
                 lo0 lo0Var = this.b;
-                lo0Var.x0 = ttVar;
-                lo0Var.f[4].setText(ttVar.a);
+                lo0Var.x0 = utVar;
+                lo0Var.f[4].setText(utVar.a);
                 break;
             default:
                 lo0 lo0Var2 = this.b;
-                lo0Var2.x0 = ttVar;
-                lo0Var2.f[4].setText(ttVar.a);
-                lo0Var2.y0 = ttVar.d;
+                lo0Var2.x0 = utVar;
+                lo0Var2.f[4].setText(utVar.a);
+                lo0Var2.y0 = utVar.d;
                 break;
         }
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    public void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         switch (this.a) {
             case 1:
                 lo0 lo0Var = this.b;

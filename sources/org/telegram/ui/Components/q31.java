@@ -18,7 +18,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q31 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -63,45 +63,45 @@ public final /* synthetic */ class q31 implements View.OnClickListener {
                 }
                 break;
             case 1:
-                org.telegram.ui.wk wkVar = (org.telegram.ui.wk) this.b;
+                org.telegram.ui.yk ykVar = (org.telegram.ui.yk) this.b;
                 TranslateController translateController = (TranslateController) this.c;
                 org.telegram.ui.ActionBar.p1 p1Var = (org.telegram.ui.ActionBar.p1) this.d;
-                long j10 = wkVar.b;
+                long j10 = ykVar.b;
                 translateController.setHideTranslateDialog(j10, true);
-                TLRPC.Chat chat = MessagesController.getInstance(wkVar.a).getChat(Long.valueOf(-j10));
-                qc.a0(wkVar.c).J(R.raw.msg_translate, AndroidUtilities.replaceTags((chat == null || !ChatObject.isChannelAndNotMegaGroup(chat)) ? chat != null ? LocaleController.getString(R.string.TranslationBarHiddenForGroup) : LocaleController.getString(R.string.TranslationBarHiddenForChat) : LocaleController.getString(R.string.TranslationBarHiddenForChannel)), LocaleController.getString(R.string.UndoNoCaps), new b90(29, wkVar, translateController)).j();
+                TLRPC.Chat chat = MessagesController.getInstance(ykVar.a).getChat(Long.valueOf(-j10));
+                qc.a0(ykVar.c).J(R.raw.msg_translate, AndroidUtilities.replaceTags((chat == null || !ChatObject.isChannelAndNotMegaGroup(chat)) ? chat != null ? LocaleController.getString(R.string.TranslationBarHiddenForGroup) : LocaleController.getString(R.string.TranslationBarHiddenForChat) : LocaleController.getString(R.string.TranslationBarHiddenForChannel)), LocaleController.getString(R.string.UndoNoCaps), new k41(0, ykVar, translateController)).j();
                 p1Var.d(true);
                 break;
             case 2:
-                qh.q9 q9Var = (qh.q9) this.b;
+                ph.t9 t9Var = (ph.t9) this.b;
                 FrameLayout frameLayout = (FrameLayout) this.c;
-                oh.b bVar = (oh.b) this.d;
-                q70 q70Var = q9Var.S0;
-                if (q70Var == null || !q70Var.D()) {
-                    qh.m mVar = new qh.m(q9Var, 0);
-                    boolean isPremium = UserConfig.getInstance(q9Var.R).isPremium();
-                    qh.m mVar2 = isPremium ? null : new qh.m(q9Var, 1);
-                    q70 F = q70.F(frameLayout, bVar, q9Var.Q0);
-                    q9Var.S0 = F;
+                nh.b bVar = (nh.b) this.d;
+                p70 p70Var = t9Var.S0;
+                if (p70Var == null || !p70Var.D()) {
+                    ph.m mVar = new ph.m(t9Var, 0);
+                    boolean isPremium = UserConfig.getInstance(t9Var.R).isPremium();
+                    ph.m mVar2 = isPremium ? null : new ph.m(t9Var, 1);
+                    p70 F = p70.F(frameLayout, bVar, t9Var.Q0);
+                    t9Var.S0 = F;
                     F.p(13, AndroidUtilities.dp(200.0f), LocaleController.getString("StoryPeriodHint"));
-                    q9Var.S0.k();
+                    t9Var.S0.k();
                     int i10 = 0;
                     while (true) {
-                        int[] iArr = qh.p.N1;
+                        int[] iArr = ph.p.N1;
                         if (i10 >= 4) {
-                            q70 q70Var2 = q9Var.S0;
-                            q70Var2.s = 0;
-                            q70Var2.Z();
+                            p70 p70Var2 = t9Var.S0;
+                            p70Var2.s = 0;
+                            p70Var2.Z();
                             break;
                         } else {
                             int i11 = iArr[i10];
-                            q70 q70Var3 = q9Var.S0;
+                            p70 p70Var3 = t9Var.S0;
                             String string = i11 == Integer.MAX_VALUE ? LocaleController.getString("StoryPeriodKeep") : LocaleController.formatPluralString("Hours", i11 / 3600, new Object[0]);
-                            int i12 = org.telegram.ui.ActionBar.k6.E8;
-                            q70Var3.b(0, null, string, i12, i12, new im(mVar, i11, 27));
-                            q70Var3.M((isPremium || i11 == 86400 || i11 == Integer.MAX_VALUE) ? null : new im(mVar2, i11, 28));
-                            if (q9Var.U0 == i10) {
-                                q9Var.S0.L();
+                            int i12 = org.telegram.ui.ActionBar.j6.E8;
+                            p70Var3.b(0, null, string, i12, i12, new dw(mVar, i11, 26));
+                            p70Var3.M((isPremium || i11 == 86400 || i11 == Integer.MAX_VALUE) ? null : new dw(mVar2, i11, 27));
+                            if (t9Var.U0 == i10) {
+                                t9Var.S0.L();
                             }
                             i10++;
                         }
@@ -109,72 +109,72 @@ public final /* synthetic */ class q31 implements View.OnClickListener {
                 }
                 break;
             case 3:
-                qh.u2 u2Var = (qh.u2) this.b;
+                ph.v2 v2Var = (ph.v2) this.b;
                 MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) this.c;
-                qh.w2 w2Var = (qh.w2) this.d;
-                qh.z2 z2Var = u2Var.c;
-                ArrayList arrayList = z2Var.e0;
+                ph.x2 x2Var = (ph.x2) this.d;
+                ph.a3 a3Var = v2Var.c;
+                ArrayList arrayList = a3Var.e0;
                 if (arrayList.contains(photoEntry)) {
                     arrayList.remove(photoEntry);
-                } else if (arrayList.size() + 1 > z2Var.O) {
-                    int i13 = -z2Var.K;
-                    z2Var.K = i13;
-                    AndroidUtilities.shakeViewSpring(w2Var, i13);
+                } else if (arrayList.size() + 1 > a3Var.O) {
+                    int i13 = -a3Var.K;
+                    a3Var.K = i13;
+                    AndroidUtilities.shakeViewSpring(x2Var, i13);
                     BotWebViewVibrationEffect.APP_ERROR.vibrate();
                     break;
                 } else {
                     arrayList.add(photoEntry);
                 }
-                AndroidUtilities.updateVisibleRows(z2Var.d);
-                z2Var.j();
+                AndroidUtilities.updateVisibleRows(a3Var.d);
+                a3Var.j();
                 break;
             case 4:
-                qh.e9 e9Var = (qh.e9) this.b;
+                ph.h9 h9Var = (ph.h9) this.b;
                 Context context = (Context) this.c;
-                dg.e1 e1Var = (dg.e1) this.d;
-                if (!e9Var.y1) {
-                    Runnable runnable2 = e9Var.H1;
+                cg.f1 f1Var = (cg.f1) this.d;
+                if (!h9Var.y1) {
+                    Runnable runnable2 = h9Var.H1;
                     if (runnable2 != null) {
                         runnable2.run();
                         break;
                     }
                 } else {
-                    dg.e0 e0Var = new dg.e0(context, e9Var.D1);
-                    e9Var.Q1 = e0Var;
-                    e0Var.m(e9Var.x1.a, 2);
-                    e0Var.n = new qh.h4(e9Var, e1Var);
-                    e0Var.h = new hg.m0(5, e9Var, e1Var);
+                    cg.e0 e0Var = new cg.e0(context, h9Var.D1);
+                    h9Var.Q1 = e0Var;
+                    e0Var.m(h9Var.x1.a, 2);
+                    e0Var.n = new ph.i4(h9Var, f1Var);
+                    e0Var.h = new gg.m0(5, h9Var, f1Var);
                     e0Var.show();
                     break;
                 }
                 break;
             case 5:
-                vf.e eVar = (vf.e) this.b;
-                q70 F2 = q70.F(((org.telegram.ui.xn) this.c).getLayoutContainer(), (org.telegram.ui.ActionBar.g6) this.d, eVar.n);
-                F2.c(R.drawable.msg_cancel, LocaleController.getString(R.string.BizBotRemove), new vf.d(eVar, 1), true);
+                uf.e eVar = (uf.e) this.b;
+                p70 F2 = p70.F(((org.telegram.ui.zn) this.c).getLayoutContainer(), (org.telegram.ui.ActionBar.f6) this.d, eVar.n);
+                F2.c(R.drawable.msg_cancel, LocaleController.getString(R.string.BizBotRemove), new uf.d(eVar, 1), true);
                 F2.E();
                 if (eVar.x != null) {
-                    F2.c(R.drawable.msg_settings, LocaleController.getString(R.string.BizBotManage), new vf.d(eVar, 2), false);
+                    F2.c(R.drawable.msg_settings, LocaleController.getString(R.string.BizBotManage), new uf.d(eVar, 2), false);
                 }
                 F2.a0(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(7.0f));
                 F2.s = 0;
                 F2.Z();
                 break;
             case 6:
-                vf.e0.S((vf.e0) this.b, (TL_account.TL_connectedBot) this.c, (im) this.d);
+                uf.f0.S((uf.f0) this.b, (TL_account.TL_connectedBot) this.c, (dw) this.d);
                 break;
             case 7:
-                vh.a aVar = (vh.a) this.b;
+                uh.a aVar = (uh.a) this.b;
                 Utilities.Callback callback = (Utilities.Callback) this.c;
                 TLRPC.Chat chat2 = (TLRPC.Chat) this.d;
                 aVar.P(callback, aVar.V, (chat2 == null || ChatObject.canAddChatToCommunity(chat2)) ? false : true);
                 break;
             default:
-                m.r3 r3Var = (m.r3) this.b;
-                wh.v5 v5Var = (wh.v5) this.c;
-                wh.l0 l0Var = (wh.l0) this.d;
-                r3Var.c();
-                v5Var.D(l0Var);
+                m.s3 s3Var = (m.s3) this.b;
+                vh.w5 w5Var = (vh.w5) this.c;
+                vh.l0 l0Var = (vh.l0) this.d;
+                s3Var.c();
+                w5Var.D(l0Var);
                 break;
         }
     }

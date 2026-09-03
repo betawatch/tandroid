@@ -1,86 +1,21 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.os.Bundle;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagePreviewParams;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class fl extends org.telegram.ui.Components.yb0 {
-    public final /* synthetic */ xn E;
+public final class fl extends org.telegram.ui.Components.y50 {
+    public final /* synthetic */ zn a1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fl(xn xnVar, Context context, xn xnVar2, og.a aVar, MessagePreviewParams messagePreviewParams, TLRPC.User user, TLRPC.Chat chat, int i10, org.telegram.ui.Components.ub0 ub0Var, int i11, boolean z4) {
-        super(context, xnVar2, aVar, messagePreviewParams, user, chat, i10, ub0Var, i11, z4);
-        this.E = xnVar;
+    public fl(zn znVar, Activity activity, org.telegram.ui.Components.r50 r50Var, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(activity, r50Var, f6Var, true);
+        this.a1 = znVar;
     }
 
-    @Override // org.telegram.ui.Components.yb0
-    public final void b() {
-        MessageObject messageObject;
-        nn nnVar;
-        xn xnVar = this.E;
-        nn nnVar2 = xnVar.i5;
-        if (nnVar2 == null || (messageObject = nnVar2.a) == null || !((nnVar = xnVar.c5.quote) == null || nnVar.a == null || messageObject.getId() == xnVar.c5.quote.a.getId())) {
-            xnVar.i5 = xnVar.c5.quote;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.yb0
-    public final void c(boolean z4) {
-        int i10;
-        boolean z10;
-        MessagePreviewParams.Messages messages;
-        a(false);
-        xn xnVar = this.E;
-        MessagePreviewParams messagePreviewParams = xnVar.c5;
-        if (messagePreviewParams != null) {
-            if (!z4) {
-                xnVar.j5 = true;
-            }
-            MessagePreviewParams.Messages messages2 = messagePreviewParams.forwardMessages;
-            if (messages2 != null) {
-                int size = messages2.messages.size();
-                i10 = 0;
-                z10 = false;
-                for (int i11 = 0; i11 < size; i11++) {
-                    MessageObject messageObject = xnVar.c5.forwardMessages.messages.get(i11);
-                    if (messageObject.isTodo()) {
-                        i10 = 3;
-                    } else if (messageObject.isPoll()) {
-                        if (i10 != 2) {
-                            i10 = messageObject.isPublicPoll() ? 2 : 1;
-                        }
-                    } else if (messageObject.isInvoice()) {
-                        z10 = true;
-                    }
-                    xnVar.T5[0].put(messageObject.getId(), messageObject);
-                }
-            } else {
-                i10 = 0;
-                z10 = false;
-            }
-            Bundle e6 = org.telegram.messenger.y3.e(3, "onlySelect", "dialogsType", true);
-            e6.putBoolean("quote", !z4);
-            boolean z11 = (z4 || (messages = xnVar.c5.replyMessage) == null || messages.messages.isEmpty() || xnVar.c5.quote != null) ? false : true;
-            e6.putBoolean("reply_to", z11);
-            if (z11) {
-                long peerDialogId = DialogObject.getPeerDialogId(xnVar.c5.replyMessage.messages.get(0).getFromPeer());
-                if (peerDialogId != 0 && peerDialogId != xnVar.a() && peerDialogId != xnVar.getUserConfig().getClientUserId() && peerDialogId > 0) {
-                    e6.putLong("reply_to_author", peerDialogId);
-                }
-            }
-            e6.putInt("hasPoll", i10);
-            e6.putBoolean("hasInvoice", z10);
-            MessagePreviewParams.Messages messages3 = xnVar.c5.forwardMessages;
-            e6.putInt("messagesCount", messages3 != null ? messages3.messages.size() : 0);
-            e6.putBoolean("canSelectTopics", true);
-            py pyVar = new py(e6);
-            pyVar.z2 = xnVar;
-            xnVar.presentFragment(pyVar);
-        }
+    @Override // org.telegram.ui.Components.y50
+    public final void m(boolean z4, boolean z10) {
+        super.m(z4, z10);
+        this.a1.sc.a(z4, true);
     }
 }

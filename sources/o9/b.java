@@ -4,15 +4,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.text.TextUtils;
+import cg.u0;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import dg.t0;
 import i9.y;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
-import lh.h;
-import mh.m2;
+import kh.h;
+import nh.n4;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BotWebViewVibrationEffect;
@@ -29,11 +29,11 @@ import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.by0;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.xn;
+import org.telegram.ui.zn;
 import v2.g;
-import wh.o3;
+import vh.p3;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements g, c2, MessagesController.ErrorDelegate, MessagesStorage.LongCallback {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class b implements g, c2, MessagesController.ErrorD
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void d(Exception exc) {
+    public void b(Exception exc) {
         c cVar = (c) this.c;
         TaskCompletionSource taskCompletionSource = (TaskCompletionSource) this.d;
         i9.b bVar = (i9.b) this.e;
@@ -66,7 +66,7 @@ public final /* synthetic */ class b implements g, c2, MessagesController.ErrorD
         if (this.b) {
             boolean z4 = true;
             CountDownLatch countDownLatch = new CountDownLatch(1);
-            new Thread(new m2(24, cVar, countDownLatch)).start();
+            new Thread(new n4(23, cVar, countDownLatch)).start();
             TimeUnit timeUnit = TimeUnit.SECONDS;
             ExecutorService executorService = y.a;
             boolean z10 = false;
@@ -108,17 +108,17 @@ public final /* synthetic */ class b implements g, c2, MessagesController.ErrorD
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public void j(d2 d2Var, int i10) {
+    public void l(d2 d2Var, int i10) {
         switch (this.a) {
             case 1:
-                xn xnVar = (xn) this.c;
+                zn znVar = (zn) this.c;
                 MessagesController messagesController = (MessagesController) this.d;
                 CharSequence charSequence = (CharSequence) this.e;
                 boolean z4 = this.b;
                 messagesController.secretWebpagePreview = 1;
-                MessagesController.getGlobalMainSettings().edit().putInt("secretWebpage2", xnVar.getMessagesController().secretWebpagePreview).commit();
-                xnVar.E5 = null;
-                xnVar.Ya(charSequence, z4);
+                MessagesController.getGlobalMainSettings().edit().putInt("secretWebpage2", znVar.getMessagesController().secretWebpagePreview).commit();
+                znVar.E5 = null;
+                znVar.Ya(charSequence, z4);
                 break;
             case 2:
                 boolean z10 = this.b;
@@ -135,8 +135,8 @@ public final /* synthetic */ class b implements g, c2, MessagesController.ErrorD
                         intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
                         context.startActivity(intent);
                         break;
-                    } catch (Exception e6) {
-                        FileLog.e(e6);
+                    } catch (Exception e) {
+                        FileLog.e(e);
                         return;
                     }
                 }
@@ -148,7 +148,7 @@ public final /* synthetic */ class b implements g, c2, MessagesController.ErrorD
                 String trim = by0Var.getText().toString().trim();
                 if (!TextUtils.isEmpty(trim) && !TextUtils.isEmpty(AndroidUtilities.translitSafe(trim.toString()))) {
                     AndroidUtilities.hideKeyboard(by0Var);
-                    d2 d2Var2 = new d2(context2, 3, z11 ? null : new oh.b());
+                    d2 d2Var2 = new d2(context2, 3, z11 ? null : new nh.b());
                     d2Var2.q(250L);
                     callback2.run(trim, new h(d2Var2, d2Var, by0Var, 10));
                     break;
@@ -162,26 +162,26 @@ public final /* synthetic */ class b implements g, c2, MessagesController.ErrorD
                 break;
             default:
                 boolean z12 = this.b;
-                t0 t0Var = (t0) this.c;
+                u0 u0Var = (u0) this.c;
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.d;
-                o3 o3Var = (o3) this.e;
-                int i11 = o3Var.b;
+                p3 p3Var = (p3) this.e;
+                int i11 = p3Var.b;
                 if (!z12) {
-                    t0Var.run();
+                    u0Var.run();
                     break;
                 } else {
                     String trim2 = editTextBoldCursor.getText().toString().trim();
                     if (!TextUtils.isEmpty(trim2)) {
-                        TL_iv.pageBlockButtonRow d = o3Var.d();
+                        TL_iv.pageBlockButtonRow d = p3Var.d();
                         TL_keyboard.PageButton pageButton = (d == null || i11 < 0 || i11 >= d.buttons.size()) ? null : d.buttons.get(i11);
                         TL_keyboard.InlineButtonType inlineButtonType = pageButton == null ? null : pageButton.type;
                         if ((inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeUserProfile ? ((TL_keyboard.TL_inlineButtonTypeUserProfile) inlineButtonType).user_id : 0L) > 0) {
                             TL_keyboard.TL_inlineButtonTypeUserProfile tL_inlineButtonTypeUserProfile = new TL_keyboard.TL_inlineButtonTypeUserProfile();
-                            TL_iv.pageBlockButtonRow d10 = o3Var.d();
+                            TL_iv.pageBlockButtonRow d10 = p3Var.d();
                             TL_keyboard.PageButton pageButton2 = (d10 == null || i11 < 0 || i11 >= d10.buttons.size()) ? null : d10.buttons.get(i11);
                             TL_keyboard.InlineButtonType inlineButtonType2 = pageButton2 != null ? pageButton2.type : null;
                             tL_inlineButtonTypeUserProfile.user_id = inlineButtonType2 instanceof TL_keyboard.TL_inlineButtonTypeUserProfile ? ((TL_keyboard.TL_inlineButtonTypeUserProfile) inlineButtonType2).user_id : 0L;
-                            o3Var.a(trim2, tL_inlineButtonTypeUserProfile);
+                            p3Var.a(trim2, tL_inlineButtonTypeUserProfile);
                             break;
                         }
                     }
@@ -205,7 +205,7 @@ public final /* synthetic */ class b implements g, c2, MessagesController.ErrorD
 
     @Override // org.telegram.messenger.MessagesStorage.LongCallback
     public void run(long j10) {
-        th.g gVar = (th.g) this.c;
+        sh.g gVar = (sh.g) this.c;
         d2 d2Var = (d2) this.d;
         String str = (String) this.e;
         gVar.getClass();

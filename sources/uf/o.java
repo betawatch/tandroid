@@ -1,147 +1,100 @@
 package uf;
 
-import eg.d3;
-import java.util.ArrayList;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import k7.b6;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.rl0;
-import org.telegram.ui.ay;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.k5;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ z b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ String e;
+public final class o extends FrameLayout {
+    public final k5 a;
+    public final ih.s b;
+    public final k5 c;
+    public final f6 d;
+    public boolean e;
+    public TL_account.TL_businessChatLink f;
 
-    public /* synthetic */ o(z zVar, int i10, String str, String str2) {
-        this.a = 0;
-        this.b = zVar;
-        this.d = i10;
-        this.c = str;
-        this.e = str2;
+    public o(Context context, f6 f6Var) {
+        super(context);
+        this.d = f6Var;
+        setWillNotDraw(false);
+        ImageView imageView = new ImageView(context);
+        imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        imageView.setImageResource(R.drawable.msg_limit_links);
+        imageView.setPadding(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f));
+        imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        imageView.setBackground(j6.K(AndroidUtilities.dp(36.0f), j6.w0(null, j6.Oh, false)));
+        imageView.setOnClickListener(new oh.n(this, 24));
+        addView(imageView, b6.i(36.0f, 36.0f, 8388627, 14.0f, 0.0f, 14.0f, 0.0f));
+        k5 k5Var = new k5(context);
+        this.a = k5Var;
+        k5Var.setTextSize(15);
+        k5Var.setTextColor(j6.w0(null, j6.G6, false));
+        k5Var.setGravity(LocaleController.isRTL ? 5 : 3);
+        addView(k5Var, b6.i(-1.0f, 20.0f, 55, 64.0f, 10.0f, 14.0f, 0.0f));
+        k5 k5Var2 = new k5(context);
+        this.c = k5Var2;
+        k5Var2.setTextSize(14);
+        int i10 = j6.z6;
+        k5Var2.setTextColor(j6.w0(null, i10, false));
+        k5Var2.setGravity(LocaleController.isRTL ? 3 : 5);
+        addView(k5Var2, b6.i(-1.0f, 18.0f, 55, 64.0f, 10.66f, 14.0f, 0.0f));
+        ih.s sVar = new ih.s(context);
+        this.b = sVar;
+        sVar.setTextSize(1, 13.0f);
+        sVar.setMaxLines(1);
+        sVar.setEllipsize(TextUtils.TruncateAt.END);
+        sVar.setTextColor(j6.v0(i10, f6Var));
+        sVar.setGravity(LocaleController.isRTL ? 5 : 3);
+        sVar.f = false;
+        sVar.setUseAlphaForEmoji(false);
+        NotificationCenter.listenEmojiLoading(sVar);
+        addView(sVar, b6.i(-1.0f, 20.0f, 87, 64.0f, 0.0f, 14.0f, 6.0f));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x006b  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0065  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        long j10;
-        boolean z4;
-        String str;
-        int i10;
-        switch (this.a) {
-            case 0:
-                z zVar = this.b;
-                int i11 = zVar.S;
-                int i12 = zVar.e0;
-                zVar.h = null;
-                int i13 = zVar.a0;
-                int i14 = this.d;
-                if (i14 == i13) {
-                    if (i11 == 2 || i12 == 6 || i12 == 5 || zVar.R.a() != 0) {
-                        zVar.A0 -= 2;
-                    } else {
-                        s sVar = zVar.g0;
-                        boolean z10 = i12 != 4;
-                        if (i12 == 4 || i12 == 11) {
-                            j10 = 0;
-                            z4 = false;
-                        } else {
-                            j10 = 0;
-                            z4 = true;
-                        }
-                        boolean z11 = i12 == 2 || i12 == 1;
-                        boolean z12 = i12 == 0;
-                        ay ayVar = zVar.R;
-                        if (ayVar != null) {
-                            j10 = ayVar.a();
-                        }
-                        sVar.h(this.c, true, z10, true, z4, z11, 0L, z12, 0, i14, j10, null);
-                        i14 = i14;
-                    }
-                    if (i11 != 0 && i12 != 15) {
-                        String str2 = this.e;
-                        zVar.X(str2);
-                        zVar.W(i14, str2);
-                        zVar.V(i14, str2);
-                        break;
-                    } else {
-                        zVar.A0--;
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                z zVar2 = this.b;
-                zVar2.getClass();
-                ArrayList<Object> arrayList = new ArrayList<>();
-                ArrayList<CharSequence> arrayList2 = new ArrayList<>();
-                ArrayList<TLRPC.User> arrayList3 = new ArrayList<>();
-                new ArrayList();
-                MessagesStorage messagesStorage = MessagesStorage.getInstance(zVar2.p0);
-                int i15 = zVar2.e0;
-                ArrayList<Long> arrayList4 = zVar2.n0;
-                String str3 = this.c;
-                messagesStorage.localSearch(i15, str3, arrayList, arrayList2, arrayList3, arrayList4, -1);
-                AndroidUtilities.runOnUIThread(new d3((rl0) zVar2, this.d, (ArrayList) arrayList, (ArrayList) arrayList2, (ArrayList) arrayList3, 28));
-                g0.x1(str3, zVar2.v0);
-                zVar2.w0 = false;
-                if (str3.length() >= 3 && (LocaleController.getString(R.string.ArchiveSearchFilter).toLowerCase().startsWith(str3) || "archive".startsWith(this.e))) {
-                    zVar2.w0 = true;
-                }
-                AndroidUtilities.runOnUIThread(new p(zVar2, 0));
-                break;
-            default:
-                z zVar3 = this.b;
-                zVar3.f = null;
-                int i16 = zVar3.S;
-                String str4 = this.c;
-                int i17 = this.d;
-                if (i16 != 2) {
-                    String lowerCase = str4.trim().toLowerCase();
-                    if (lowerCase.length() != 0) {
-                        str = str4;
-                        i10 = i17;
-                        MessagesStorage.getInstance(zVar3.p0).getStorageQueue().postRunnable(new o(zVar3, lowerCase, i10, str, 1));
-                        if (zVar3.e0 == 15) {
-                            o oVar = new o(zVar3, i10, str, this.e);
-                            zVar3.h = oVar;
-                            AndroidUtilities.runOnUIThread(oVar);
-                            break;
-                        } else {
-                            zVar3.A0 -= 2;
-                            break;
-                        }
-                    } else {
-                        zVar3.a0 = 0;
-                        ArrayList arrayList5 = new ArrayList();
-                        ArrayList arrayList6 = new ArrayList();
-                        ArrayList arrayList7 = new ArrayList();
-                        new ArrayList();
-                        AndroidUtilities.runOnUIThread(new d3((rl0) zVar3, zVar3.a0, arrayList5, arrayList6, arrayList7, 28));
-                    }
-                }
-                str = str4;
-                i10 = i17;
-                if (zVar3.e0 == 15) {
-                }
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.e) {
+            Paint T0 = j6.T0("paintDivider", this.d);
+            if (T0 == null) {
+                T0 = j6.k0;
+            }
+            canvas.drawRect(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 64.0f), getMeasuredHeight() - 1, getWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 64.0f : 0.0f), getMeasuredHeight(), T0);
         }
     }
 
-    public /* synthetic */ o(z zVar, String str, int i10, String str2, int i11) {
-        this.a = i11;
-        this.b = zVar;
-        this.c = str;
-        this.d = i10;
-        this.e = str2;
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+        super.onLayout(z4, i10, i11, i12, i13);
+        boolean z10 = LocaleController.isRTL;
+        k5 k5Var = this.c;
+        k5 k5Var2 = this.a;
+        if (z10) {
+            k5Var2.setPadding(k5Var.getTextWidth(), 0, 0, 0);
+        } else {
+            k5Var2.setPadding(0, 0, k5Var.getTextWidth(), 0);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f) + (this.e ? 1 : 0), TLObject.FLAG_30));
     }
 }

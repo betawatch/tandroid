@@ -5,7 +5,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
 public final class f2 {
     public final int a;
@@ -19,7 +19,7 @@ public final class f2 {
     public boolean i;
     public TLRPC.TL_webPage j;
     public int k;
-    public s0 l;
+    public q0 l;
     public final ArrayList m = new ArrayList();
 
     public f2(int i10) {
@@ -27,7 +27,7 @@ public final class f2 {
     }
 
     public final void a() {
-        s0 s0Var;
+        q0 q0Var;
         if (this.c) {
             return;
         }
@@ -35,10 +35,10 @@ public final class f2 {
         if (!this.g) {
             ConnectionsManager.getInstance(this.a).cancelRequest(this.k, true);
         }
-        if (this.i || (s0Var = this.l) == null) {
+        if (this.i || (q0Var = this.l) == null) {
             return;
         }
-        s0Var.run();
+        q0Var.run();
     }
 
     public final TLRPC.WebPage b() {
@@ -64,7 +64,7 @@ public final class f2 {
         }
     }
 
-    public final void d(x0 x0Var) {
+    public final void d(y0 y0Var) {
         if (this.c) {
             return;
         }
@@ -74,13 +74,13 @@ public final class f2 {
             this.j = null;
         }
         this.i = false;
-        this.d = x0Var.getUrl();
-        this.e = x0Var.getProgress();
-        this.f = x0Var.b;
-        s0 s0Var = this.l;
-        if (s0Var != null) {
-            s0Var.run();
+        this.d = y0Var.getUrl();
+        this.e = y0Var.getProgress();
+        this.f = y0Var.b;
+        q0 q0Var = this.l;
+        if (q0Var != null) {
+            q0Var.run();
         }
-        this.l = h2.e(x0Var, new e2(this, 1));
+        this.l = h2.e(y0Var, new e2(this, 1));
     }
 }

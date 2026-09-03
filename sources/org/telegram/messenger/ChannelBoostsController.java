@@ -11,7 +11,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class ChannelBoostsController {
     public static final int BOOSTS_FOR_LEVEL_1 = 1;
@@ -20,7 +20,7 @@ public class ChannelBoostsController {
     private final int currentAccount;
     private final MessagesController messagesController;
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     public static class CanApplyBoost {
         public boolean alreadyActive;
         public int boostCount = 0;
@@ -114,7 +114,7 @@ public class ChannelBoostsController {
                     this.canApply = true;
                 } else if (arrayList3.size() >= 1) {
                     this.needSelector = true;
-                    if (!hg.p0.i()) {
+                    if (!gg.p0.i()) {
                         TL_stories.TL_myBoost tL_myBoost7 = (TL_stories.TL_myBoost) arrayList3.get(0);
                         this.replaceDialogId = DialogObject.getPeerDialogId(tL_myBoost7.peer);
                         this.slot = tL_myBoost7.slot;
@@ -153,14 +153,14 @@ public class ChannelBoostsController {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(R.getContext(), 0, R.getResourceProvider());
                 alertDialog$Builder.a.O = LocaleController.getString(R.string.AppName);
                 HashMap hashMap = new HashMap();
-                int i10 = org.telegram.ui.ActionBar.k6.L5;
-                hashMap.put("info1", Integer.valueOf(org.telegram.ui.ActionBar.k6.w0(null, i10, false)));
-                hashMap.put("info2", Integer.valueOf(org.telegram.ui.ActionBar.k6.w0(null, i10, false)));
-                alertDialog$Builder.m(R.raw.not_available, 52, org.telegram.ui.ActionBar.k6.w0(null, i10, false), hashMap);
+                int i10 = org.telegram.ui.ActionBar.j6.L5;
+                hashMap.put("info1", Integer.valueOf(org.telegram.ui.ActionBar.j6.w0(null, i10, false)));
+                hashMap.put("info2", Integer.valueOf(org.telegram.ui.ActionBar.j6.w0(null, i10, false)));
+                alertDialog$Builder.m(R.raw.not_available, 52, org.telegram.ui.ActionBar.j6.w0(null, i10, false), hashMap);
                 alertDialog$Builder.a.T = true;
                 alertDialog$Builder.a.O = LocaleController.getString(R.string.ChannelPrivate);
                 alertDialog$Builder.a.Q = LocaleController.getString(R.string.ChannelCantOpenPrivate2);
-                l.d.C(R.string.Close, alertDialog$Builder, null);
+                kf.k0.C(R.string.Close, alertDialog$Builder, null);
             }
         }
         dVar.accept(null);
@@ -190,7 +190,7 @@ public class ChannelBoostsController {
     }
 
     public void applyBoost(long j10, int i10, Utilities.Callback<TL_stories.TL_premium_myBoosts> callback, Utilities.Callback<TLRPC.TL_error> callback2) {
-        hg.p0.a(-j10, Arrays.asList(Integer.valueOf(i10)), callback, callback2);
+        gg.p0.a(-j10, Arrays.asList(Integer.valueOf(i10)), callback, callback2);
     }
 
     public void getBoostsStats(long j10, h5.d dVar) {
@@ -206,6 +206,6 @@ public class ChannelBoostsController {
         canApplyBoost.currentChat = this.messagesController.getChat(Long.valueOf(-j10));
         h2 h2Var = new h2(canApplyBoost, tL_premium_boostsStatus, dVar, 1);
         w wVar = new w(1, canApplyBoost, dVar);
-        ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(new TL_stories.TL_premium_getMyBoosts(), new hg.y((Utilities.Callback) wVar, MessagesController.getInstance(UserConfig.selectedAccount), (Utilities.Callback) h2Var, 1));
+        ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(new TL_stories.TL_premium_getMyBoosts(), new gg.y((Utilities.Callback) wVar, MessagesController.getInstance(UserConfig.selectedAccount), (Utilities.Callback) h2Var, 1));
     }
 }

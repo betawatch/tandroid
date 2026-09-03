@@ -1,15 +1,15 @@
 package h1;
 
 import android.database.DataSetObserver;
-import m.b3;
-import m.d2;
+import m.c3;
+import m.e2;
 import m2.h;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.q01;
 import org.telegram.ui.sz0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class a extends DataSetObserver {
     public final /* synthetic */ int a;
@@ -24,14 +24,14 @@ public final class a extends DataSetObserver {
     public final void onChanged() {
         switch (this.a) {
             case 0:
-                b3 b3Var = (b3) this.b;
-                b3Var.a = true;
-                b3Var.notifyDataSetChanged();
+                c3 c3Var = (c3) this.b;
+                c3Var.a = true;
+                c3Var.notifyDataSetChanged();
                 break;
             case 1:
-                d2 d2Var = (d2) this.b;
-                if (d2Var.L.isShowing()) {
-                    d2Var.g();
+                e2 e2Var = (e2) this.b;
+                if (e2Var.L.isShowing()) {
+                    e2Var.g();
                     break;
                 }
                 break;
@@ -64,12 +64,12 @@ public final class a extends DataSetObserver {
     public void onInvalidated() {
         switch (this.a) {
             case 0:
-                b3 b3Var = (b3) this.b;
-                b3Var.a = false;
-                b3Var.notifyDataSetInvalidated();
+                c3 c3Var = (c3) this.b;
+                c3Var.a = false;
+                c3Var.notifyDataSetInvalidated();
                 break;
             case 1:
-                ((d2) this.b).dismiss();
+                ((e2) this.b).dismiss();
                 break;
             case 2:
                 ((h) this.b).f();

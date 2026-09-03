@@ -1,100 +1,219 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.text.Layout;
+import android.text.SpannableStringBuilder;
+import android.text.StaticLayout;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.Stack;
+import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class f3 extends FrameLayout {
-    public final LinearLayout a;
-    public boolean b;
-    public final org.telegram.ui.Components.p9 c;
-    public final TextView d;
-    public final TextView e;
-    public final TextView f;
-    public final qh.d h;
-    public ValueAnimator n;
-    public boolean r;
+public final class f3 implements org.telegram.ui.Cells.w9, kj0, org.telegram.ui.Components.fz0 {
+    public int B = -1;
+    public int C = -1;
+    public int D = -1;
+    public org.telegram.ui.Components.q5 E;
+    public ArrayList F;
+    public Stack G;
+    public AtomicReference H;
+    public View I;
+    public final p70 a;
+    public View b;
+    public boolean c;
+    public StaticLayout d;
+    public org.telegram.ui.Components.y80 e;
+    public org.telegram.ui.Components.y80 f;
+    public org.telegram.ui.Components.y80 h;
+    public TL_iv.PageBlock n;
+    public TL_iv.RichText r;
+    public int s;
+    public int v;
+    public int w;
+    public CharSequence x;
+    public SpannableStringBuilder y;
 
-    public f3(Context context) {
-        super(context);
-        this.r = true;
-        setVisibility(8);
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.a = linearLayout;
-        linearLayout.setPadding(AndroidUtilities.dp(32.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(32.0f), AndroidUtilities.dp(24.0f));
-        linearLayout.setOrientation(1);
-        linearLayout.setGravity(3);
-        addView(linearLayout, k7.c6.e(-2, -2, 17));
-        org.telegram.ui.Components.p9 p9Var = new org.telegram.ui.Components.p9(context);
-        this.c = p9Var;
-        linearLayout.addView(p9Var, k7.c6.n(100, 100));
-        TextView textView = new TextView(context);
-        this.d = textView;
-        textView.setTextSize(1, 19.0f);
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setTextColor(-1);
-        TextView i10 = yh.i(linearLayout, textView, k7.c6.t(-2, -2, 3, 0, 4, 0, 2), context);
-        this.e = i10;
-        i10.setTextSize(1, 15.0f);
-        i10.setTextColor(-1);
-        i10.setSingleLine(false);
-        i10.setMaxLines(3);
-        TextView i11 = yh.i(linearLayout, i10, k7.c6.t(-2, -2, 3, 0, 0, 0, 1), context);
-        this.f = i11;
-        i11.setTextSize(1, 12.0f);
-        i11.setTextColor(-1);
-        i11.setAlpha(0.4f);
-        linearLayout.addView(i11, k7.c6.q(-2, -2, 3));
-        qh.d dVar = new qh.d(context, null, true);
-        this.h = dVar;
-        dVar.setMinWidth(AndroidUtilities.dp(140.0f));
-        dVar.g(LocaleController.getString(R.string.Refresh), false, true);
-        linearLayout.addView(dVar, k7.c6.t(-2, 40, 3, 0, 12, 0, 0));
+    public f3(p70 p70Var) {
+        this.a = p70Var;
     }
 
-    public final void a(String str, String str2) {
-        this.d.setText(LocaleController.getString(R.string.WebErrorTitle));
-        b.o(R.string.WebErrorInfoBot, new Object[]{str}, this.e);
-        this.f.setText(str2);
+    public final int a() {
+        int i10 = this.B;
+        if (i10 != -1) {
+            return i10;
+        }
+        this.B = this.d.getWidth();
+        for (int i11 = 0; i11 < this.d.getLineCount(); i11++) {
+            this.B = Math.min(this.B, (int) this.d.getLineLeft(i11));
+        }
+        return this.B;
     }
 
-    public final void b(boolean z4, boolean z10) {
-        if (this.r == z4) {
-            return;
+    @Override // org.telegram.ui.Components.fz0
+    public final void attach(View view) {
+        this.I = view;
+        StaticLayout staticLayout = this.d;
+        if (staticLayout != null) {
+            this.E = org.telegram.ui.Components.u5.update(0, view, false, this.E, staticLayout);
         }
-        this.r = z4;
-        ValueAnimator valueAnimator = this.n;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
+    }
+
+    public final int b() {
+        int i10 = this.C;
+        if (i10 != -1) {
+            return i10;
         }
-        if (!z10) {
-            this.d.setTextColor(!z4 ? -16777216 : -1);
-            this.e.setTextColor(!z4 ? -16777216 : -1);
-            this.f.setTextColor(z4 ? -1 : -16777216);
+        this.C = 0;
+        for (int i11 = 0; i11 < this.d.getLineCount(); i11++) {
+            this.C = Math.max(this.C, (int) this.d.getLineRight(i11));
+        }
+        return this.C;
+    }
+
+    public final int c() {
+        int i10 = this.D;
+        if (i10 != -1) {
+            return i10;
+        }
+        this.D = 0;
+        if (this.d.getLineCount() > 0) {
+            this.D = Math.max(this.D, (int) this.d.getLineRight(r1.getLineCount() - 1));
+        }
+        return this.D;
+    }
+
+    @Override // org.telegram.ui.Components.fz0
+    public final void detach(View view) {
+        if (view == null) {
+            view = this.I;
+        }
+        org.telegram.ui.Components.u5.release(view, this.E);
+        this.I = null;
+    }
+
+    @Override // org.telegram.ui.Components.fz0
+    public final void draw(Canvas canvas, View view) {
+        float width;
+        Object obj;
+        TL_iv.RichText richText;
+        this.c = true;
+        this.b = view;
+        p70 p70Var = this.a;
+        float f10 = 0.0f;
+        if (p70Var.B.isEmpty()) {
+            this.h = null;
         } else {
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(z4 ? 0.0f : 1.0f, z4 ? 1.0f : 0.0f);
-            this.n = ofFloat;
-            ofFloat.addUpdateListener(new e3(this, 0));
-            this.n.start();
+            w3 w3Var = (w3) p70Var.B.get(p70Var.D);
+            if (w3Var.c != this.n || ((obj = w3Var.b) != (richText = this.r) && (!(obj instanceof String) || richText != null))) {
+                this.h = null;
+            } else if (-1 != w3Var.a) {
+                org.telegram.ui.Components.y80 y80Var = new org.telegram.ui.Components.y80(0);
+                this.h = y80Var;
+                y80Var.n = false;
+                y80Var.d(this.d, w3Var.a, 0.0f);
+                this.h.o = 0;
+                StaticLayout staticLayout = this.d;
+                int i10 = w3Var.a;
+                staticLayout.getSelectionPath(i10, p70Var.C.length() + i10, this.h);
+                this.h.n = true;
+            }
         }
+        org.telegram.ui.Components.y80 y80Var2 = this.h;
+        if (y80Var2 != null) {
+            canvas.drawPath(y80Var2, n4.v1);
+        }
+        org.telegram.ui.Components.y80 y80Var3 = this.e;
+        if (y80Var3 != null) {
+            canvas.drawPath(y80Var3, n4.u1);
+        }
+        org.telegram.ui.Components.y80 y80Var4 = this.f;
+        if (y80Var4 != null) {
+            canvas.drawPath(y80Var4, n4.w1);
+        }
+        if (p70Var.c.g(canvas, this)) {
+            view.invalidate();
+        }
+        if (p70Var.d == this && p70Var.b == null && p70Var.h) {
+            if (this.d.getLineCount() == 1) {
+                width = this.d.getLineWidth(0);
+                f10 = this.d.getLineLeft(0);
+            } else {
+                width = this.d.getWidth();
+            }
+            canvas.drawRect((-AndroidUtilities.dp(2.0f)) + f10, 0.0f, f10 + width + AndroidUtilities.dp(2.0f), this.d.getHeight(), n4.t1);
+        }
+        ArrayList arrayList = this.F;
+        if (arrayList == null || arrayList.isEmpty()) {
+            this.d.draw(canvas);
+        } else {
+            ih.k.g(view, false, this.d.getPaint().getColor(), 0, this.H, 0, this.d, this.F, canvas, false);
+        }
+        this.c = false;
     }
 
-    @Override // android.view.View
-    public void setVisibility(int i10) {
-        super.setVisibility(i10);
-        if (i10 != 0 || this.b) {
-            return;
-        }
-        this.b = true;
-        MediaDataController.getInstance(UserConfig.selectedAccount).setPlaceholderImage(this.c, AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME, "🧐", "100_100");
+    @Override // org.telegram.ui.Components.fz0
+    public final /* synthetic */ int getEmojiOnlyCount() {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Cells.w9
+    public final Layout getLayout() {
+        return this.d;
+    }
+
+    @Override // org.telegram.ui.kj0
+    public final View getParentView() {
+        View view = this.I;
+        return view != null ? view : this.b;
+    }
+
+    @Override // org.telegram.ui.Cells.w9
+    public final CharSequence getPrefix() {
+        return this.x;
+    }
+
+    @Override // org.telegram.ui.Cells.w9
+    public final int getRow() {
+        return this.w;
+    }
+
+    @Override // org.telegram.ui.Cells.w9
+    public final /* synthetic */ Rect getSelectionBounds() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Cells.w9
+    public final CharSequence getText() {
+        return this.d.getText();
+    }
+
+    @Override // org.telegram.ui.Cells.w9
+    public final int getX() {
+        return this.s;
+    }
+
+    @Override // org.telegram.ui.Cells.w9
+    public final int getY() {
+        return this.v;
+    }
+
+    @Override // org.telegram.ui.Components.fz0
+    public final void setRow(int i10) {
+        this.w = i10;
+    }
+
+    @Override // org.telegram.ui.Components.fz0
+    public final void setX(int i10) {
+        this.s = i10;
+    }
+
+    @Override // org.telegram.ui.Components.fz0
+    public final void setY(int i10) {
+        this.v = i10;
     }
 }

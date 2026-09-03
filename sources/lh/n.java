@@ -2,47 +2,72 @@ package lh;
 
 import android.content.Context;
 import android.view.MotionEvent;
-import mh.bb;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
-/* loaded from: classes.dex */
-public final class n extends bb {
-    public final /* synthetic */ s j0;
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* loaded from: classes4.dex */
+public final class n extends EditTextBoldCursor {
+    public final /* synthetic */ int b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n(s sVar, Context context, g6 g6Var) {
-        super(context, g6Var);
-        this.j0 = sVar;
+    public /* synthetic */ n(Context context, int i10) {
+        super(context);
+        this.b = i10;
     }
 
-    @Override // mh.bb
-    public final boolean d(float f10) {
-        if (getProgress() <= 0.99d && f10 <= getMeasuredWidth() * 0.9f) {
-            return false;
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.wt, android.view.View
+    public void onDetachedFromWindow() {
+        switch (this.b) {
+            case 0:
+                super.onDetachedFromWindow();
+                AndroidUtilities.hideKeyboard(this);
+                break;
+            case 1:
+                super.onDetachedFromWindow();
+                AndroidUtilities.hideKeyboard(this);
+                break;
+            default:
+                super.onDetachedFromWindow();
+                break;
         }
-        s.U(this.j0);
-        return true;
     }
 
-    @Override // mh.bb, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0 && motionEvent.getY() > getMeasuredHeight() - AndroidUtilities.dp(48.0f)) {
-            return false;
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.b) {
+            case 2:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f), TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
         }
-        super.dispatchTouchEvent(motionEvent);
-        return true;
     }
 
-    @Override // mh.bb
-    public final void e(int i10) {
-        s.T(this.j0, i10);
-    }
-
-    @Override // mh.bb
-    public final void setValue(int i10) {
-        super.setValue(i10);
-        s.T(this.j0, i10);
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.b) {
+            case 3:
+                if (motionEvent.getAction() == 0 && !AndroidUtilities.showKeyboard(this)) {
+                    clearFocus();
+                    requestFocus();
+                }
+                break;
+            case 4:
+                if (motionEvent.getAction() == 0 && !AndroidUtilities.showKeyboard(this)) {
+                    clearFocus();
+                    requestFocus();
+                }
+                break;
+            case 5:
+                if (isEnabled()) {
+                    break;
+                }
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

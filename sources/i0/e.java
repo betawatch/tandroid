@@ -1,5 +1,6 @@
 package i0;
 
+import a0.k;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Typeface;
@@ -8,8 +9,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Trace;
 import android.util.Log;
-import androidx.biometric.k;
-import androidx.biometric.p;
+import androidx.biometric.o;
 import com.google.android.gms.common.api.internal.s1;
 import h5.b0;
 import j$.util.DesugarCollections;
@@ -25,7 +25,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import n7.qa;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class e {
     public static final a8 a;
@@ -56,7 +56,7 @@ public abstract class e {
         Trace.endSection();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0028, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0029, code lost:
     
         if (r1.equals(r5) == false) goto L15;
      */
@@ -68,7 +68,7 @@ public abstract class e {
         Typeface a2;
         Typeface typeface;
         List unmodifiableList;
-        int i13 = 3;
+        int i13 = 10;
         if (dVar instanceof h0.g) {
             h0.g gVar = (h0.g) dVar;
             String str2 = gVar.e;
@@ -85,22 +85,21 @@ public abstract class e {
             }
             typeface = null;
             if (typeface != null) {
-                new Handler(Looper.getMainLooper()).post(new gf.c(i13, b0Var, typeface));
+                new Handler(Looper.getMainLooper()).post(new ff.c(i13, b0Var, typeface));
                 return typeface;
             }
             int i14 = 1;
             boolean z10 = gVar.d == 0;
             int i15 = gVar.c;
             Handler handler = new Handler(Looper.getMainLooper());
-            y5.h hVar = new y5.h(19, z4);
-            hVar.b = b0Var;
+            o5.i iVar = new o5.i(20);
+            iVar.b = b0Var;
             o0.d dVar2 = gVar.b;
-            int i16 = 2;
             if (dVar2 != null) {
                 Object[] objArr4 = {gVar.a, dVar2};
                 ArrayList arrayList = new ArrayList(2);
-                for (int i17 = 0; i17 < 2; i17++) {
-                    Object obj = objArr4[i17];
+                for (int i16 = 0; i16 < 2; i16++) {
+                    Object obj = objArr4[i16];
                     Objects.requireNonNull(obj);
                     arrayList.add(obj);
                 }
@@ -113,20 +112,20 @@ public abstract class e {
                 arrayList2.add(obj2);
                 unmodifiableList = DesugarCollections.unmodifiableList(arrayList2);
             }
-            p pVar = new p(handler, 4);
-            qa qaVar = new qa(i16, hVar, pVar);
-            int i18 = 26;
+            o oVar = new o(handler, 4);
+            qa qaVar = new qa(iVar, oVar, z4, 3);
+            int i17 = 26;
             if (!z10) {
                 String a10 = o0.h.a(i12, unmodifiableList);
                 Typeface typeface2 = (Typeface) o0.h.a.a(a10);
                 if (typeface2 != null) {
-                    pVar.execute(new k(hVar, typeface2, objArr2 == true ? 1 : 0, i18));
+                    oVar.execute(new androidx.biometric.j(iVar, typeface2, objArr2 == true ? 1 : 0, i17));
                     a2 = typeface2;
                 } else {
                     o0.f fVar = new o0.f(qaVar, objArr == true ? 1 : 0);
                     synchronized (o0.h.c) {
                         try {
-                            a0.k kVar = o0.h.d;
+                            k kVar = o0.h.d;
                             ArrayList arrayList3 = (ArrayList) kVar.get(a10);
                             if (arrayList3 != null) {
                                 arrayList3.add(fVar);
@@ -161,7 +160,7 @@ public abstract class e {
                 String a11 = o0.h.a(i12, DesugarCollections.unmodifiableList(arrayList5));
                 Typeface typeface3 = (Typeface) o0.h.a.a(a11);
                 if (typeface3 != null) {
-                    pVar.execute(new k(hVar, typeface3, objArr3 == true ? 1 : 0, i18));
+                    oVar.execute(new androidx.biometric.j(iVar, typeface3, objArr3 == true ? 1 : 0, i17));
                     a2 = typeface3;
                 } else if (i15 == -1) {
                     Object[] objArr6 = {dVar3};
@@ -170,30 +169,32 @@ public abstract class e {
                     Objects.requireNonNull(obj4);
                     arrayList6.add(obj4);
                     o0.g b10 = o0.h.b(a11, context, DesugarCollections.unmodifiableList(arrayList6), i12);
-                    qaVar.Y0(b10);
+                    qaVar.r0(b10);
                     a2 = b10.a;
                 } else {
                     try {
                         try {
-                            o0.g gVar2 = (o0.g) o0.h.b.submit(new o0.e(a11, context, dVar3, i12, 0)).get(i15, TimeUnit.MILLISECONDS);
-                            qaVar.Y0(gVar2);
-                            a2 = gVar2.a;
-                        } catch (InterruptedException e6) {
-                            throw e6;
-                        } catch (ExecutionException e10) {
-                            throw new RuntimeException(e10);
-                        } catch (TimeoutException unused) {
-                            throw new InterruptedException("timeout");
+                            try {
+                                o0.g gVar2 = (o0.g) o0.h.b.submit(new o0.e(a11, context, dVar3, i12, 0)).get(i15, TimeUnit.MILLISECONDS);
+                                qaVar.r0(gVar2);
+                                a2 = gVar2.a;
+                            } catch (TimeoutException unused) {
+                                throw new InterruptedException("timeout");
+                            }
+                        } catch (InterruptedException e) {
+                            throw e;
+                        } catch (ExecutionException e6) {
+                            throw new RuntimeException(e6);
                         }
                     } catch (InterruptedException unused2) {
-                        ((p) qaVar.c).execute(new m2.b((y5.h) qaVar.b, -3));
+                        ((o) qaVar.c).execute(new m2.b((o5.i) qaVar.b, -3));
                     }
                 }
             }
         } else {
             a2 = a.a(context, (h0.e) dVar, resources, i12);
             if (a2 != null) {
-                new Handler(Looper.getMainLooper()).post(new gf.c(i13, b0Var, a2));
+                new Handler(Looper.getMainLooper()).post(new ff.c(i13, b0Var, a2));
             } else {
                 b0Var.b();
             }

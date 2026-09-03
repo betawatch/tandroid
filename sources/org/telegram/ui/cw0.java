@@ -6,7 +6,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class cw0 implements org.telegram.ui.Components.eg {
     public final /* synthetic */ PopupNotificationActivity a;
@@ -16,7 +16,12 @@ public final class cw0 implements org.telegram.ui.Components.eg {
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final void C(CharSequence charSequence, boolean z4, int i10, int i11, long j10) {
+    public final /* synthetic */ boolean B1() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.eg
+    public final void G(CharSequence charSequence, boolean z4, int i10, int i11, long j10) {
         PopupNotificationActivity popupNotificationActivity = this.a;
         if (popupNotificationActivity.N == null) {
             return;
@@ -31,12 +36,7 @@ public final class cw0 implements org.telegram.ui.Components.eg {
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final /* synthetic */ boolean D1() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.eg
-    public final /* synthetic */ TLRPC.TL_channels_sendAsPeers F() {
+    public final /* synthetic */ TLRPC.TL_channels_sendAsPeers H() {
         return null;
     }
 
@@ -46,7 +46,7 @@ public final class cw0 implements org.telegram.ui.Components.eg {
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final void M1() {
+    public final void J1() {
         PopupNotificationActivity popupNotificationActivity = this.a;
         MessageObject messageObject = popupNotificationActivity.N;
         if (messageObject != null) {
@@ -55,28 +55,23 @@ public final class cw0 implements org.telegram.ui.Components.eg {
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final /* synthetic */ int f1() {
+    public final /* synthetic */ int g1() {
         return 0;
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final /* synthetic */ TL_stories.StoryItem h1() {
+    public final /* synthetic */ TL_stories.StoryItem i1() {
         return null;
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final /* synthetic */ boolean j1(long j10) {
+    public final /* synthetic */ boolean k1(long j10) {
         return false;
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final /* synthetic */ boolean k() {
+    public final /* synthetic */ boolean l() {
         return false;
-    }
-
-    @Override // org.telegram.ui.Components.eg
-    public final /* synthetic */ int l() {
-        return 0;
     }
 
     @Override // org.telegram.ui.Components.eg
@@ -85,42 +80,47 @@ public final class cw0 implements org.telegram.ui.Components.eg {
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final /* synthetic */ TLRPC.Peer p() {
+    public final /* synthetic */ int p() {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Components.eg
+    public final /* synthetic */ TLRPC.Peer r() {
         return null;
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final /* synthetic */ nn r0() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.eg
-    public final /* synthetic */ boolean u1() {
+    public final /* synthetic */ boolean t1() {
         return false;
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final /* synthetic */ void A(boolean z4) {
+    public final /* synthetic */ pn u0() {
+        return null;
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final void B() {
+    public final void A1(CharSequence charSequence) {
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final void C1(CharSequence charSequence) {
+    public final void A2() {
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final void F2() {
+    public final /* synthetic */ void B(boolean z4) {
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final /* synthetic */ void G1() {
+    public final void D() {
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final void J2() {
+    public final /* synthetic */ void E1() {
+    }
+
+    @Override // org.telegram.ui.Components.eg
+    public final void E2() {
     }
 
     @Override // org.telegram.ui.Components.eg
@@ -128,7 +128,7 @@ public final class cw0 implements org.telegram.ui.Components.eg {
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final /* synthetic */ void P0() {
+    public final /* synthetic */ void O0() {
     }
 
     @Override // org.telegram.ui.Components.eg
@@ -144,47 +144,51 @@ public final class cw0 implements org.telegram.ui.Components.eg {
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final void e1(int i10) {
+    public final void c() {
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final void f() {
+    public final void f1(int i10) {
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final /* synthetic */ void h() {
+    public final /* synthetic */ void i2() {
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final /* synthetic */ void n2() {
+    public final /* synthetic */ void k() {
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final /* synthetic */ void o0() {
+    public final void k2(int i10) {
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final void p2(int i10) {
+    public final void n2() {
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final void s2() {
+    public final void o2(boolean z4) {
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final void t1() {
+    public final /* synthetic */ void q0() {
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final void t2(boolean z4) {
+    public final void s1() {
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final void u() {
+    public final void t2() {
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final void w0() {
+    public final void v() {
+    }
+
+    @Override // org.telegram.ui.Components.eg
+    public final /* synthetic */ void v1() {
     }
 
     @Override // org.telegram.ui.Components.eg
@@ -196,19 +200,11 @@ public final class cw0 implements org.telegram.ui.Components.eg {
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final /* synthetic */ void x1() {
+    public final void x0() {
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final void x2() {
-    }
-
-    @Override // org.telegram.ui.Components.eg
-    public final void y1() {
-    }
-
-    @Override // org.telegram.ui.Components.eg
-    public final void G(float f10, int i10) {
+    public final void x1() {
     }
 
     @Override // org.telegram.ui.Components.eg
@@ -216,14 +212,18 @@ public final class cw0 implements org.telegram.ui.Components.eg {
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final void r1(CharSequence charSequence, boolean z4, boolean z10) {
+    public final void K(float f10, int i10) {
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final void z1(View view, CharSequence charSequence, boolean z4) {
+    public final void q1(CharSequence charSequence, boolean z4, boolean z10) {
     }
 
     @Override // org.telegram.ui.Components.eg
-    public final void u2(int i10, int i11, int i12, long j10, long j11, boolean z4) {
+    public final void y1(View view, CharSequence charSequence, boolean z4) {
+    }
+
+    @Override // org.telegram.ui.Components.eg
+    public final void p2(int i10, int i11, int i12, long j10, long j11, boolean z4) {
     }
 }

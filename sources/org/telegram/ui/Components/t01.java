@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.text.TextPaint;
 import android.text.style.MetricAffectingSpan;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class t01 extends MetricAffectingSpan {
     public final int a;
@@ -18,12 +18,12 @@ public final class t01 extends MetricAffectingSpan {
 
     public final void a(TextPaint textPaint) {
         s01 s01Var = this.b;
-        if (k7.x8.a(s01Var.a, 49152)) {
+        if (k7.w8.a(s01Var.a, 49152)) {
             float textSize = textPaint.getTextSize();
             textPaint.setTextSize(0.75f * textSize);
-            if (k7.x8.a(s01Var.a, 32768)) {
+            if (k7.w8.a(s01Var.a, 32768)) {
                 textPaint.baselineShift -= (int) (textSize * 0.35f);
-            } else if (k7.x8.a(s01Var.a, 16384)) {
+            } else if (k7.w8.a(s01Var.a, 16384)) {
                 textPaint.baselineShift += (int) (textSize * 0.12f);
             }
         }

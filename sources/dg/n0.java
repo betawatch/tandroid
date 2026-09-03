@@ -1,38 +1,50 @@
 package dg;
 
-import android.graphics.Bitmap;
-import java.util.ArrayList;
-import org.telegram.messenger.NotificationCenter;
+import android.app.Activity;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ArrayList b;
+public final class n0 extends zn {
+    public final /* synthetic */ e1 Nc;
 
-    public /* synthetic */ n0(ArrayList arrayList, int i10) {
-        this.a = i10;
-        this.b = arrayList;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n0(e1 e1Var) {
+        super(null);
+        this.Nc = e1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                s0.h = this.b;
-                s0.i = false;
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.customTypefacesLoaded, new Object[0]);
-                break;
-            default:
-                ArrayList arrayList = this.b;
-                int size = arrayList.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    ((Bitmap) obj).recycle();
-                }
-                break;
-        }
+    @Override // org.telegram.ui.zn, org.telegram.ui.Components.rg, org.telegram.ui.Components.r50
+    public final long a() {
+        return 0L;
+    }
+
+    @Override // org.telegram.ui.ActionBar.p2, org.telegram.ui.Components.r50
+    public final Activity getParentActivity() {
+        return AndroidUtilities.findActivity(this.Nc.getContext());
+    }
+
+    @Override // org.telegram.ui.zn, org.telegram.ui.ActionBar.p2
+    public final f6 getResourceProvider() {
+        return this.Nc.N1;
+    }
+
+    @Override // org.telegram.ui.zn, org.telegram.ui.Components.rg
+    public final TLRPC.User i() {
+        return UserConfig.getInstance(this.currentAccount).getCurrentUser();
+    }
+
+    @Override // org.telegram.ui.zn, org.telegram.ui.ActionBar.p2
+    public final boolean isLightStatusBar() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.zn
+    public final boolean x9() {
+        return false;
     }
 }

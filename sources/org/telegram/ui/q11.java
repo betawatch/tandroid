@@ -13,55 +13,55 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public abstract class q11 extends org.telegram.ui.Components.y9 implements NotificationCenter.NotificationCenterDelegate {
     public boolean B;
     public final Rect C;
     public final sz0 D;
-    public final o11 h;
+    public final oh.a h;
     public final org.telegram.ui.Components.k81 n;
-    public final oh.h6 r;
+    public final nh.h6 r;
     public final p11 s;
     public int v;
     public boolean w;
     public ValueAnimator x;
     public float y;
 
-    public q11(Context context, org.telegram.ui.Components.pv0 pv0Var, oh.h6 h6Var, final org.telegram.ui.Components.rr0 rr0Var) {
-        super(context, pv0Var);
+    public q11(Context context, org.telegram.ui.Components.qv0 qv0Var, nh.h6 h6Var, final org.telegram.ui.Components.rr0 rr0Var) {
+        super(context, qv0Var);
         this.C = new Rect();
         this.r = h6Var;
         Objects.requireNonNull(h6Var);
         this.D = new sz0(h6Var, 6);
         final org.telegram.ui.Components.sr0 sr0Var = (org.telegram.ui.Components.sr0) this;
-        o11 o11Var = new o11(sr0Var, context, rr0Var);
-        this.h = o11Var;
-        o11Var.setAllowDisallowInterceptTouch(true);
+        oh.a aVar = new oh.a(sr0Var, context, rr0Var);
+        this.h = aVar;
+        aVar.setAllowDisallowInterceptTouch(true);
         p11 p11Var = new p11(sr0Var);
         this.s = p11Var;
         p11Var.a = h6Var.a();
-        o11Var.setAdapter(p11Var);
-        o11Var.setTranslationY(AndroidUtilities.dp(42.0f));
-        org.telegram.ui.Components.k81 n10 = o11Var.n(10, true);
+        aVar.setAdapter(p11Var);
+        aVar.setTranslationY(AndroidUtilities.dp(42.0f));
+        org.telegram.ui.Components.k81 n10 = aVar.n(10, true);
         this.n = n10;
-        int i10 = org.telegram.ui.ActionBar.k6.Gh;
-        int i11 = org.telegram.ui.ActionBar.k6.G6;
-        int i12 = org.telegram.ui.ActionBar.k6.Eh;
-        int i13 = org.telegram.ui.ActionBar.k6.Hh;
-        int i14 = org.telegram.ui.ActionBar.k6.s8;
+        int i10 = org.telegram.ui.ActionBar.j6.Gh;
+        int i11 = org.telegram.ui.ActionBar.j6.G6;
+        int i12 = org.telegram.ui.ActionBar.j6.Eh;
+        int i13 = org.telegram.ui.ActionBar.j6.Hh;
+        int i14 = org.telegram.ui.ActionBar.j6.s8;
         n10.M = i10;
         n10.N = i11;
         n10.O = i12;
         n10.P = i13;
         n10.Q = i14;
-        n10.L.setColor(org.telegram.ui.ActionBar.k6.v0(i10, n10.g0));
+        n10.L.setColor(org.telegram.ui.ActionBar.j6.v0(i10, n10.g0));
         n10.r = 12;
         final int i15 = 0;
-        n10.setPreTabClick(new Utilities.Callback2Return() { // from class: org.telegram.ui.m11
+        n10.setPreTabClick(new Utilities.Callback2Return() { // from class: org.telegram.ui.n11
             @Override // org.telegram.messenger.Utilities.Callback2Return
             public final Object run(Object obj, Object obj2) {
-                oh.t6 storiesController;
+                nh.t6 storiesController;
                 Integer num = (Integer) obj;
                 switch (i15) {
                     case 0:
@@ -70,7 +70,7 @@ public abstract class q11 extends org.telegram.ui.Components.y9 implements Notif
                                 break;
                             } else {
                                 org.telegram.ui.Components.rr0 rr0Var2 = rr0Var;
-                                org.telegram.ui.Components.z4.S(rr0Var2.a, rr0Var2.b, rr0Var2.c, new org.telegram.ui.Components.hv(rr0Var2, 19));
+                                org.telegram.ui.Components.z4.S(rr0Var2.a, rr0Var2.b, rr0Var2.c, new org.telegram.ui.Components.ev(rr0Var2, 19));
                                 break;
                             }
                         } else {
@@ -85,8 +85,8 @@ public abstract class q11 extends org.telegram.ui.Components.y9 implements Notif
                             org.telegram.ui.ActionBar.p2 p2Var = yu0Var.s1;
                             storiesController = yu0Var.getStoriesController();
                             if (storiesController.i(yu0Var.g1)) {
-                                org.telegram.ui.Components.q70 H = org.telegram.ui.Components.q70.H(p2Var, view);
-                                H.W(new lh.s2(rr0Var3));
+                                org.telegram.ui.Components.p70 H = org.telegram.ui.Components.p70.H(p2Var, view);
+                                H.W(new kh.s2(rr0Var3));
                                 final int i16 = 0;
                                 H.c(R.drawable.menu_add_stories, LocaleController.getString(R.string.StoriesAlbumMenuAddStories), new Runnable() { // from class: org.telegram.ui.Components.pr0
                                     @Override // java.lang.Runnable
@@ -192,10 +192,10 @@ public abstract class q11 extends org.telegram.ui.Components.y9 implements Notif
             }
         });
         final int i16 = 1;
-        n10.setOnTabLongClick(new Utilities.Callback2Return() { // from class: org.telegram.ui.m11
+        n10.setOnTabLongClick(new Utilities.Callback2Return() { // from class: org.telegram.ui.n11
             @Override // org.telegram.messenger.Utilities.Callback2Return
             public final Object run(Object obj, Object obj2) {
-                oh.t6 storiesController;
+                nh.t6 storiesController;
                 Integer num = (Integer) obj;
                 switch (i16) {
                     case 0:
@@ -204,7 +204,7 @@ public abstract class q11 extends org.telegram.ui.Components.y9 implements Notif
                                 break;
                             } else {
                                 org.telegram.ui.Components.rr0 rr0Var2 = rr0Var;
-                                org.telegram.ui.Components.z4.S(rr0Var2.a, rr0Var2.b, rr0Var2.c, new org.telegram.ui.Components.hv(rr0Var2, 19));
+                                org.telegram.ui.Components.z4.S(rr0Var2.a, rr0Var2.b, rr0Var2.c, new org.telegram.ui.Components.ev(rr0Var2, 19));
                                 break;
                             }
                         } else {
@@ -219,8 +219,8 @@ public abstract class q11 extends org.telegram.ui.Components.y9 implements Notif
                             org.telegram.ui.ActionBar.p2 p2Var = yu0Var.s1;
                             storiesController = yu0Var.getStoriesController();
                             if (storiesController.i(yu0Var.g1)) {
-                                org.telegram.ui.Components.q70 H = org.telegram.ui.Components.q70.H(p2Var, view);
-                                H.W(new lh.s2(rr0Var3));
+                                org.telegram.ui.Components.p70 H = org.telegram.ui.Components.p70.H(p2Var, view);
+                                H.W(new kh.s2(rr0Var3));
                                 final int i162 = 0;
                                 H.c(R.drawable.menu_add_stories, LocaleController.getString(R.string.StoriesAlbumMenuAddStories), new Runnable() { // from class: org.telegram.ui.Components.pr0
                                     @Override // java.lang.Runnable
@@ -325,7 +325,7 @@ public abstract class q11 extends org.telegram.ui.Components.y9 implements Notif
                 return Boolean.FALSE;
             }
         });
-        addView(n10, k7.c6.e(-1, 42, 48));
+        addView(n10, k7.b6.e(-1, 42, 48));
         b(!h6Var.h.isEmpty(), false, true);
     }
 
@@ -348,8 +348,8 @@ public abstract class q11 extends org.telegram.ui.Components.y9 implements Notif
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.y, z4 ? 1.0f : 0.0f);
             this.x = ofFloat;
             ofFloat.setDuration(480L);
-            this.x.setInterpolator(org.telegram.ui.Components.pr.h);
-            this.x.addUpdateListener(new n11(this, 0));
+            this.x.setInterpolator(org.telegram.ui.Components.mr.h);
+            this.x.addUpdateListener(new o11(this, 0));
             this.x.start();
         }
     }
@@ -358,7 +358,7 @@ public abstract class q11 extends org.telegram.ui.Components.y9 implements Notif
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         if (i10 == NotificationCenter.storyAlbumsCollectionsUpdate) {
             long longValue = ((Long) objArr[0]).longValue();
-            oh.h6 h6Var = this.r;
+            nh.h6 h6Var = this.r;
             if (longValue != h6Var.b) {
                 return;
             }
@@ -372,7 +372,7 @@ public abstract class q11 extends org.telegram.ui.Components.y9 implements Notif
             int i12 = this.v;
             if (i12 > 0) {
                 if (p11Var.i(i12) != -1) {
-                    AndroidUtilities.runOnUIThread(new l11(this, this.v, 1), 500L);
+                    AndroidUtilities.runOnUIThread(new m11(this, this.v, 1), 500L);
                     this.v = 0;
                     return;
                 }
@@ -426,7 +426,7 @@ public abstract class q11 extends org.telegram.ui.Components.y9 implements Notif
 
     public void setInitialTabId(int i10) {
         if (this.s.i(i10) != -1) {
-            AndroidUtilities.runOnUIThread(new l11(this, i10, 0), 500L);
+            AndroidUtilities.runOnUIThread(new m11(this, i10, 0), 500L);
         } else {
             this.v = i10;
         }
@@ -444,21 +444,21 @@ public abstract class q11 extends org.telegram.ui.Components.y9 implements Notif
         org.telegram.ui.Components.yu0 yu0Var = sr0Var.E;
         TextView textView = yu0Var.n0;
         textView.setVisibility(0);
-        textView.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.4f).scaleY(z10 ? 1.0f : 0.4f).withEndAction(new kh.f(28, sr0Var, z10)).start();
+        textView.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.4f).scaleY(z10 ? 1.0f : 0.4f).withEndAction(new jh.f(29, sr0Var, z10)).start();
         yu0Var.q1(true);
         if (z4) {
             org.telegram.ui.ActionBar.p2 U = LaunchActivity.U();
             if (U instanceof ProfileActivity) {
                 ProfileActivity profileActivity = (ProfileActivity) U;
                 profileActivity.G4(false);
-                AndroidUtilities.runOnUIThread(new pb0(profileActivity, 27));
+                AndroidUtilities.runOnUIThread(new qb0(profileActivity, 27));
             }
         }
         if (z4) {
             return;
         }
         AndroidUtilities.cancelRunOnUIThread(this.D);
-        oh.h6 h6Var = this.r;
+        nh.h6 h6Var = this.r;
         h6Var.e();
         h6Var.f(false);
         int currentPosition = k81Var.getCurrentPosition();

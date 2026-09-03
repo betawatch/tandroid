@@ -1,14 +1,11 @@
 package androidx.biometric;
 
-import android.graphics.drawable.AnimatedVectorDrawable;
-import android.graphics.drawable.Drawable;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class g0 {
-    public static void a(Drawable drawable) {
-        if (drawable instanceof AnimatedVectorDrawable) {
-            ((AnimatedVectorDrawable) drawable).start();
-        }
+    public static int a() {
+        return R.attr.colorError;
     }
 }

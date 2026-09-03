@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class oh1 extends org.telegram.ui.Components.l81 {
     public boolean Q;
@@ -53,18 +53,18 @@ public final class oh1 extends org.telegram.ui.Components.l81 {
 
     @Override // org.telegram.ui.Components.l81
     public final boolean j(MotionEvent motionEvent) {
-        Object X = ((wg0) this.S).X();
-        if (X instanceof vg0) {
-            return ((vg0) X).S(motionEvent, false);
+        Object X = ((xg0) this.S).X();
+        if (X instanceof wg0) {
+            return ((wg0) X).S(motionEvent, false);
         }
         return false;
     }
 
     @Override // org.telegram.ui.Components.l81
     public final boolean k(MotionEvent motionEvent) {
-        Object X = ((wg0) this.S).X();
-        if (X instanceof vg0) {
-            return ((vg0) X).S(motionEvent, true);
+        Object X = ((xg0) this.S).X();
+        if (X instanceof wg0) {
+            return ((wg0) X).S(motionEvent, true);
         }
         return false;
     }
@@ -94,28 +94,28 @@ public final class oh1 extends org.telegram.ui.Components.l81 {
 
     @Override // org.telegram.ui.Components.l81
     public final void u() {
-        py pyVar;
+        qy qyVar;
         ph1 ph1Var = this.S;
-        wg0 wg0Var = (wg0) ph1Var;
-        if (wg0Var.C != null) {
-            wg0Var.m0(wg0Var.c.getCurrentPosition(), true);
-            wg0Var.n0(0.0f, false);
+        xg0 xg0Var = (xg0) ph1Var;
+        if (xg0Var.C != null) {
+            xg0Var.m0(xg0Var.c.getCurrentPosition(), true);
+            xg0Var.n0(0.0f, false);
         }
-        wg0Var.d0();
-        oh1 oh1Var = wg0Var.c;
+        xg0Var.d0();
+        oh1 oh1Var = xg0Var.c;
         if (oh1Var != null) {
             int currentPosition = oh1Var.getCurrentPosition();
-            if (currentPosition != 2 && wg0Var.x) {
-                wg0Var.W(2);
-                wg0Var.x = false;
+            if (currentPosition != 2 && xg0Var.x) {
+                xg0Var.W(2);
+                xg0Var.x = false;
             }
             if (currentPosition != 3) {
-                wg0Var.W(3);
+                xg0Var.W(3);
             }
-            Integer num = wg0Var.F;
-            if (num != null && currentPosition == 0 && (pyVar = wg0Var.G) != null) {
-                pyVar.w4(num.intValue());
-                wg0Var.F = null;
+            Integer num = xg0Var.F;
+            if (num != null && currentPosition == 0 && (qyVar = xg0Var.G) != null) {
+                qyVar.w4(num.intValue());
+                xg0Var.F = null;
             }
         }
         ph1Var.U();
@@ -124,18 +124,18 @@ public final class oh1 extends org.telegram.ui.Components.l81 {
     @Override // org.telegram.ui.Components.l81
     public final void w(boolean z4) {
         ph1 ph1Var = this.S;
-        wg0 wg0Var = (wg0) ph1Var;
+        xg0 xg0Var = (xg0) ph1Var;
         boolean z10 = !z4;
-        if (wg0Var.C != null) {
-            float positionAnimated = wg0Var.c.getPositionAnimated();
-            wg0Var.n0(positionAnimated, z10);
+        if (xg0Var.C != null) {
+            float positionAnimated = xg0Var.c.getPositionAnimated();
+            xg0Var.n0(positionAnimated, z10);
             if (!z4) {
-                wg0Var.m0(Math.round(positionAnimated), true);
+                xg0Var.m0(Math.round(positionAnimated), true);
             }
         }
-        wg0Var.h0();
-        wg0Var.d0();
-        wg0Var.b.invalidate();
+        xg0Var.h0();
+        xg0Var.d0();
+        xg0Var.b.invalidate();
         ph1Var.U();
         ph1Var.checkSystemBarColors();
     }

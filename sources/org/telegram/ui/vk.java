@@ -1,65 +1,25 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.TextUtils;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class vk extends org.telegram.ui.Components.on0 {
-    public final /* synthetic */ xn F;
+public final class vk implements NotificationCenter.PostponeNotificationCallback {
+    public final /* synthetic */ zn a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vk(xn xnVar, Context context, xn xnVar2, int i10, long j10, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(i10, j10, context, xnVar2, g6Var);
-        this.F = xnVar;
+    public vk(zn znVar) {
+        this.a = znVar;
     }
 
-    @Override // org.telegram.ui.Components.on0
-    public final void b(boolean z4) {
-        xn xnVar = this.F;
-        xnVar.t7();
-        xnVar.r7();
-        al alVar = xnVar.Ya;
-        if (alVar != null) {
-            alVar.setTranslationY(xnVar.t9 + getCurrentHeight());
+    @Override // org.telegram.messenger.NotificationCenter.PostponeNotificationCallback
+    public final boolean needPostpone(int i10, int i11, Object[] objArr) {
+        if (i10 == NotificationCenter.didReceiveNewMessages) {
+            long longValue = ((Long) objArr[0]).longValue();
+            zn znVar = this.a;
+            if (znVar.E6 && longValue == znVar.Q5) {
+                return true;
+            }
         }
-        if (z4) {
-            xnVar.A9 = true;
-            xnVar.jc();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.on0
-    public final boolean f(ng.q0 q0Var) {
-        int i10;
-        xn xnVar = this.F;
-        xnVar.n3 = q0Var;
-        xnVar.o3 = q0Var != null;
-        if (q0Var == null) {
-            xnVar.getMediaDataController().clearFoundMessageObjects();
-            xnVar.kb(false);
-            xnVar.Fc(0, 0, -1);
-        }
-        xnVar.Ic();
-        xnVar.vc();
-        xnVar.q3 = xnVar.g0.getSearchField().getText().toString();
-        MediaDataController mediaDataController = xnVar.getMediaDataController();
-        String str = xnVar.q3;
-        long j10 = xnVar.Q5;
-        long j11 = xnVar.I6;
-        i10 = ((org.telegram.ui.ActionBar.p2) xnVar).classGuid;
-        mediaDataController.searchMessagesInChat(str, j10, j11, i10, 0, xnVar.a4, false, xnVar.l3, xnVar.m3, (TextUtils.isEmpty(xnVar.q3) && xnVar.n3 == null) ? false : true, xnVar.n3);
-        AndroidUtilities.hideKeyboard(xnVar.g0.getSearchField());
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.on0
-    public final void h(boolean z4) {
-        super.h(z4);
-        xn xnVar = this.F;
-        org.telegram.ui.ActionBar.w0 w0Var = xnVar.g0;
-        g(w0Var != null && w0Var.s() && a() && xnVar.r3 == null);
+        return false;
     }
 }

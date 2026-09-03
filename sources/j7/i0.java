@@ -1,15 +1,30 @@
 package j7;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+import android.os.Build;
+import android.util.Log;
+
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class i0 {
-    public abstract boolean a(c0.h hVar, c0.d dVar, c0.d dVar2);
+    public static void a(Object obj, String str, String str2) {
+        String c3 = c(str);
+        if (Log.isLoggable(c3, 3)) {
+            Log.d(c3, String.format(str2, obj));
+        }
+    }
 
-    public abstract boolean b(c0.h hVar, Object obj, Object obj2);
+    public static void b(String str, String str2, Exception exc) {
+        String c3 = c(str);
+        if (Log.isLoggable(c3, 6)) {
+            Log.e(c3, str2, exc);
+        }
+    }
 
-    public abstract boolean c(c0.h hVar, c0.g gVar, c0.g gVar2);
-
-    public abstract void d(c0.g gVar, c0.g gVar2);
-
-    public abstract void e(c0.g gVar, Thread thread);
+    public static String c(String str) {
+        if (Build.VERSION.SDK_INT >= 26) {
+            return "TRuntime.".concat(str);
+        }
+        String concat = "TRuntime.".concat(str);
+        return concat.length() > 23 ? concat.substring(0, 23) : concat;
+    }
 }

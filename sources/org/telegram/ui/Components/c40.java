@@ -1,67 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.util.SparseArray;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class c40 extends yu0 {
-    public final /* synthetic */ f40 c2;
+public final class c40 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e40 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c40(f40 f40Var, Context context, qu0 qu0Var, f40 f40Var2, b40 b40Var, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, 0L, qu0Var, 0, null, null, null, 8, 0, f40Var2, b40Var, 0, g6Var, null);
-        this.c2 = f40Var;
+    public /* synthetic */ c40(e40 e40Var, int i10) {
+        this.a = i10;
+        this.b = e40Var;
     }
 
-    @Override // org.telegram.ui.Components.yu0
-    public final int getInitialTab() {
-        return 8;
-    }
-
-    @Override // org.telegram.ui.Components.yu0
-    public final String getStoriesHashtag() {
-        return this.c2.b;
-    }
-
-    @Override // org.telegram.ui.Components.yu0
-    public final String getStoriesHashtagUsername() {
-        return this.c2.c;
-    }
-
-    @Override // org.telegram.ui.Components.yu0
-    public final boolean t0() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.yu0
-    public final void D0(SparseArray sparseArray) {
-    }
-
-    @Override // org.telegram.ui.Components.yu0
-    public final void K0(boolean z4) {
-    }
-
-    @Override // org.telegram.ui.Components.yu0
-    public final void M0(float f10) {
-    }
-
-    @Override // org.telegram.ui.Components.yu0
-    public final void N0(boolean z4) {
-    }
-
-    @Override // org.telegram.ui.Components.yu0
-    public final void b1(boolean z4) {
-    }
-
-    @Override // org.telegram.ui.Components.yu0
-    public final void o0() {
-    }
-
-    @Override // org.telegram.ui.Components.yu0
-    public final void P(Canvas canvas, float f10, Rect rect, Paint paint) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        org.telegram.ui.ao aoVar;
+        lh.e1 e1Var;
+        switch (this.a) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                e40 e40Var = this.b;
+                e40Var.w = floatValue;
+                e40Var.e.setTranslationY(floatValue * AndroidUtilities.dp(48.0f));
+                e40Var.e.setPadding(0, 0, 0, (int) (e40Var.w * AndroidUtilities.dp(48.0f)));
+                break;
+            default:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                e40 e40Var2 = this.b;
+                e40Var2.B = floatValue2;
+                e40Var2.n.setScaleX(AndroidUtilities.lerp(0.95f, 1.0f, floatValue2));
+                e40Var2.n.setScaleY(AndroidUtilities.lerp(0.95f, 1.0f, e40Var2.B));
+                org.telegram.ui.hk hkVar = e40Var2.f;
+                if (hkVar != null && (aoVar = hkVar.a) != null && (e1Var = aoVar.I3) != null) {
+                    e1Var.setScaleX(AndroidUtilities.lerp(1.0f, 0.95f, e40Var2.B));
+                    e40Var2.f.a.I3.setScaleY(AndroidUtilities.lerp(1.0f, 0.95f, e40Var2.B));
+                }
+                e40Var2.h.setAlpha(e40Var2.B);
+                break;
+        }
     }
 }

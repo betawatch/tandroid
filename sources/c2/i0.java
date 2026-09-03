@@ -2,22 +2,10 @@ package c2;
 
 import android.media.MediaRouter;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class i0 extends MediaRouter.VolumeCallback {
-    public final h0 a;
+public interface i0 {
+    void a(MediaRouter.RouteInfo routeInfo, int i10);
 
-    public i0(h0 h0Var) {
-        this.a = h0Var;
-    }
-
-    @Override // android.media.MediaRouter.VolumeCallback
-    public final void onVolumeSetRequest(MediaRouter.RouteInfo routeInfo, int i10) {
-        this.a.a(routeInfo, i10);
-    }
-
-    @Override // android.media.MediaRouter.VolumeCallback
-    public final void onVolumeUpdateRequest(MediaRouter.RouteInfo routeInfo, int i10) {
-        this.a.b(routeInfo, i10);
-    }
+    void b(MediaRouter.RouteInfo routeInfo, int i10);
 }

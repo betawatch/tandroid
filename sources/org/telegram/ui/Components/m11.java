@@ -27,7 +27,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class m11 extends FrameLayout {
     public boolean B;
@@ -74,7 +74,7 @@ public final class m11 extends FrameLayout {
         LinearLayout linearLayout = new LinearLayout(context);
         this.a = linearLayout;
         linearLayout.setOrientation(0);
-        addView(linearLayout, k7.c6.e(-2, -2, 49));
+        addView(linearLayout, k7.b6.e(-2, -2, 49));
         int i10 = 0;
         while (i10 < 4) {
             this.n[i10] = new EditTextBoldCursor(context);
@@ -85,7 +85,7 @@ public final class m11 extends FrameLayout {
             this.n[i10].setCursorWidth(1.5f);
             this.n[i10].setTextSize(1, 18.0f);
             this.n[i10].setBackground(null);
-            this.n[i10].setLineColors(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.u5, false), org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.v5, false), org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.q7, false));
+            this.n[i10].setLineColors(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.u5, false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.v5, false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, false));
             this.n[i10].setMaxLines(1);
             this.n[i10].setTag(Integer.valueOf(i10));
             this.n[i10].setGravity(17);
@@ -100,9 +100,9 @@ public final class m11 extends FrameLayout {
             }
             this.n[i10].setImeOptions((i10 == 3 ? 6 : 5) | TLObject.FLAG_28);
             this.n[i10].setFilters(new InputFilter[]{new InputFilter.LengthFilter(3)});
-            this.a.addView(this.n[i10], k7.c6.k(0.0f, 0.0f, i10 != 3 ? 16.0f : 0.0f, 0.0f, 55, 36));
+            this.a.addView(this.n[i10], k7.b6.k(0.0f, 0.0f, i10 != 3 ? 16.0f : 0.0f, 0.0f, 55, 36));
             this.n[i10].addTextChangedListener(new l11(this, i10));
-            this.n[i10].setOnEditorActionListener(new dg.a0(4));
+            this.n[i10].setOnEditorActionListener(new cg.a0(4));
             i10++;
         }
     }
@@ -152,7 +152,7 @@ public final class m11 extends FrameLayout {
     }
 
     public final void d(boolean z4) {
-        org.telegram.ui.ActionBar.g3 g3Var;
+        org.telegram.ui.ActionBar.f3 f3Var;
         ViewGroup viewGroup;
         ThemeEditorView.EditorAlert editorAlert = this.F;
         if (editorAlert.G == z4) {
@@ -165,9 +165,9 @@ public final class m11 extends FrameLayout {
         editorAlert.G = z4;
         AnimatorSet animatorSet2 = new AnimatorSet();
         editorAlert.F = animatorSet2;
-        g3Var = ((org.telegram.ui.ActionBar.h3) editorAlert).backDrawable;
-        ObjectAnimator ofInt = ObjectAnimator.ofInt(g3Var, n6.d, z4 ? 0 : 51);
-        viewGroup = ((org.telegram.ui.ActionBar.h3) editorAlert).containerView;
+        f3Var = ((org.telegram.ui.ActionBar.g3) editorAlert).backDrawable;
+        ObjectAnimator ofInt = ObjectAnimator.ofInt(f3Var, n6.d, z4 ? 0 : 51);
+        viewGroup = ((org.telegram.ui.ActionBar.g3) editorAlert).containerView;
         animatorSet2.playTogether(ofInt, ObjectAnimator.ofFloat(viewGroup, (Property<ViewGroup, Float>) View.ALPHA, z4 ? 0.2f : 1.0f));
         editorAlert.F.setDuration(150L);
         editorAlert.F.setInterpolator(this.E);
@@ -234,7 +234,7 @@ public final class m11 extends FrameLayout {
 
     @Override // android.view.View
     public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        int c3 = l.d.c(20.0f, (i10 / 2) - (this.b * 2), 1);
+        int c3 = kf.k0.c(20.0f, (i10 / 2) - (this.b * 2), 1);
         this.r = c3;
         int i14 = c3 * 2;
         int i15 = c3 * 2;
@@ -350,11 +350,11 @@ public final class m11 extends FrameLayout {
                             d(z4);
                             int b10 = b();
                             for (i12 = 0; i12 < themeEditorView.c.size(); i12++) {
-                                int i22 = ((org.telegram.ui.ActionBar.m6) themeEditorView.c.get(i12)).f;
-                                if ((i12 == 0 && i22 == org.telegram.ui.ActionBar.k6.Nd) || i22 == org.telegram.ui.ActionBar.k6.Od || i22 == org.telegram.ui.ActionBar.k6.Pd || i22 == org.telegram.ui.ActionBar.k6.Qd || i22 == org.telegram.ui.ActionBar.k6.d6 || i22 == org.telegram.ui.ActionBar.k6.a7) {
+                                int i22 = ((org.telegram.ui.ActionBar.l6) themeEditorView.c.get(i12)).f;
+                                if ((i12 == 0 && i22 == org.telegram.ui.ActionBar.j6.Nd) || i22 == org.telegram.ui.ActionBar.j6.Od || i22 == org.telegram.ui.ActionBar.j6.Pd || i22 == org.telegram.ui.ActionBar.j6.Qd || i22 == org.telegram.ui.ActionBar.j6.d6 || i22 == org.telegram.ui.ActionBar.j6.a7) {
                                     b10 |= -16777216;
                                 }
-                                ((org.telegram.ui.ActionBar.m6) themeEditorView.c.get(i12)).d(b10, false, true);
+                                ((org.telegram.ui.ActionBar.l6) themeEditorView.c.get(i12)).d(b10, false, true);
                             }
                             int red = Color.red(b10);
                             int green = Color.green(b10);

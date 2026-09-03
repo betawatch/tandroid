@@ -16,9 +16,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class tx0 extends rl0 {
+public final class tx0 extends ql0 {
     public final Context c;
     public int d;
     public final SparseArray e = new SparseArray();
@@ -32,17 +32,17 @@ public final class tx0 extends rl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.rl0
-    public final boolean D(f2.m1 m1Var) {
+    @Override // org.telegram.ui.Components.ql0
+    public final boolean D(f2.l1 l1Var) {
         return false;
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final int h() {
         return this.h;
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final int j(int i10) {
         xx0 xx0Var = this.r;
         if (xx0Var.T == null) {
@@ -56,7 +56,7 @@ public final class tx0 extends rl0 {
         return 1;
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final void l() {
         int i10;
         int i11;
@@ -128,7 +128,7 @@ public final class tx0 extends rl0 {
         super.l();
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final void u(int i10) {
         ArrayList arrayList = this.r.V;
         if (arrayList != null) {
@@ -137,89 +137,89 @@ public final class tx0 extends rl0 {
         super.u(i10);
     }
 
-    @Override // f2.p0
-    public final void v(f2.m1 m1Var, int i10) {
-        View view = m1Var.a;
+    @Override // f2.o0
+    public final void v(f2.l1 l1Var, int i10) {
+        View view = l1Var.a;
         xx0 xx0Var = this.r;
         ArrayList arrayList = xx0Var.T;
         if (arrayList == null) {
             if (xx0Var.U != null) {
-                ((org.telegram.ui.Cells.d8) view).setSticker((SendMessagesHelper.ImportingSticker) xx0Var.V.get(i10));
+                ((org.telegram.ui.Cells.c8) view).setSticker((SendMessagesHelper.ImportingSticker) xx0Var.V.get(i10));
                 return;
             }
-            if (m1Var.f != 3) {
-                org.telegram.ui.Cells.d8 d8Var = (org.telegram.ui.Cells.d8) view;
+            if (l1Var.f != 3) {
+                org.telegram.ui.Cells.c8 c8Var = (org.telegram.ui.Cells.c8) view;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = xx0Var.P;
                 if (tL_messages_stickerSet == null) {
                     return;
                 }
-                d8Var.d(tL_messages_stickerSet.documents.get(i10), null, xx0Var.P, null, xx0Var.e0, xx0Var.O);
-                d8Var.G.setOnClickListener(new rx0(0, this, d8Var));
+                c8Var.d(tL_messages_stickerSet.documents.get(i10), null, xx0Var.P, null, xx0Var.e0, xx0Var.O);
+                c8Var.G.setOnClickListener(new rx0(0, this, c8Var));
                 return;
             }
             return;
         }
-        int i11 = m1Var.f;
+        int i11 = l1Var.f;
         SparseArray sparseArray = this.e;
         if (i11 == 0) {
-            ((org.telegram.ui.Cells.d8) view).d((TLRPC.Document) sparseArray.get(i10), null, this.f.get(i10), null, false, false);
+            ((org.telegram.ui.Cells.c8) view).d((TLRPC.Document) sparseArray.get(i10), null, this.f.get(i10), null, false, false);
         } else if (i11 == 1) {
-            ((org.telegram.ui.Cells.k3) view).setHeight(AndroidUtilities.dp(82.0f));
+            ((org.telegram.ui.Cells.j3) view).setHeight(AndroidUtilities.dp(82.0f));
         } else {
             if (i11 != 2) {
                 return;
             }
-            ((org.telegram.ui.Cells.r3) view).c((TLRPC.StickerSetCovered) arrayList.get(((Integer) sparseArray.get(i10)).intValue()), false, false, 0, 0, false);
+            ((org.telegram.ui.Cells.q3) view).c((TLRPC.StickerSetCovered) arrayList.get(((Integer) sparseArray.get(i10)).intValue()), false, false, 0, 0, false);
         }
     }
 
-    @Override // f2.p0
-    public final f2.m1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.ActionBar.g6 g6Var;
+    @Override // f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+        org.telegram.ui.ActionBar.f6 f6Var;
         FrameLayout frameLayout;
         FrameLayout frameLayout2;
-        org.telegram.ui.ActionBar.g6 g6Var2;
-        org.telegram.ui.ActionBar.g6 g6Var3;
+        org.telegram.ui.ActionBar.f6 f6Var2;
+        org.telegram.ui.ActionBar.f6 f6Var3;
         xx0 xx0Var = this.r;
         Context context = this.c;
         if (i10 != 0) {
             if (i10 == 1) {
-                frameLayout2 = new org.telegram.ui.Cells.k3(context);
+                frameLayout2 = new org.telegram.ui.Cells.j3(context);
             } else if (i10 == 2) {
-                g6Var2 = ((org.telegram.ui.ActionBar.h3) xx0Var).resourcesProvider;
-                frameLayout2 = new org.telegram.ui.Cells.r3(8, this.c, g6Var2, true, false);
+                f6Var2 = ((org.telegram.ui.ActionBar.g3) xx0Var).resourcesProvider;
+                frameLayout2 = new org.telegram.ui.Cells.q3(8, this.c, f6Var2, true, false);
             } else if (i10 != 3) {
                 frameLayout2 = null;
             } else {
-                g6Var3 = ((org.telegram.ui.ActionBar.h3) xx0Var).resourcesProvider;
+                f6Var3 = ((org.telegram.ui.ActionBar.g3) xx0Var).resourcesProvider;
                 FrameLayout qx0Var = new qx0(context);
                 View view = new View(context);
                 int dp = AndroidUtilities.dp(28.0f);
-                int i11 = org.telegram.ui.ActionBar.k6.Me;
-                ShapeDrawable b02 = org.telegram.ui.ActionBar.k6.b0(dp, org.telegram.ui.ActionBar.k6.l1(0.12f, org.telegram.ui.ActionBar.k6.v0(i11, g6Var3)));
+                int i11 = org.telegram.ui.ActionBar.j6.Me;
+                ShapeDrawable b02 = org.telegram.ui.ActionBar.j6.b0(dp, org.telegram.ui.ActionBar.j6.l1(0.12f, org.telegram.ui.ActionBar.j6.v0(i11, f6Var3)));
                 Drawable mutate = context.getResources().getDrawable(R.drawable.filled_add_sticker).mutate();
-                mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.v0(i11, g6Var3), PorterDuff.Mode.MULTIPLY));
-                pq pqVar = new pq(b02, mutate);
+                mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(i11, f6Var3), PorterDuff.Mode.MULTIPLY));
+                mq mqVar = new mq(b02, mutate);
                 int dp2 = AndroidUtilities.dp(56.0f);
                 int dp3 = AndroidUtilities.dp(56.0f);
-                pqVar.h = dp2;
-                pqVar.n = dp3;
+                mqVar.h = dp2;
+                mqVar.n = dp3;
                 int dp4 = AndroidUtilities.dp(24.0f);
                 int dp5 = AndroidUtilities.dp(24.0f);
-                pqVar.e = dp4;
-                pqVar.f = dp5;
-                view.setBackground(pqVar);
-                k7.e6.a(view);
-                qx0Var.addView(view, k7.c6.e(56, 56, 17));
+                mqVar.e = dp4;
+                mqVar.f = dp5;
+                view.setBackground(mqVar);
+                k7.d6.a(view);
+                qx0Var.addView(view, k7.b6.e(56, 56, 17));
                 frameLayout = qx0Var;
             }
-            return new el0(frameLayout2);
+            return new dl0(frameLayout2);
         }
-        g6Var = ((org.telegram.ui.ActionBar.h3) xx0Var).resourcesProvider;
-        sx0 sx0Var = new sx0(this, context, g6Var);
+        f6Var = ((org.telegram.ui.ActionBar.g3) xx0Var).resourcesProvider;
+        sx0 sx0Var = new sx0(this, context, f6Var);
         sx0Var.getImageView().setLayerNum(7);
         frameLayout = sx0Var;
         frameLayout2 = frameLayout;
-        return new el0(frameLayout2);
+        return new dl0(frameLayout2);
     }
 }

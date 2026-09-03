@@ -1,32 +1,31 @@
 package org.telegram.ui;
 
-import android.text.style.URLSpan;
 import android.view.View;
-import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pf implements Utilities.CallbackReturn {
+public final /* synthetic */ class pf implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout b;
 
-    public /* synthetic */ pf(int i10, Object obj, Object obj2) {
+    public /* synthetic */ pf(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int i10) {
         this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+        this.b = actionBarPopupWindow$ActionBarPopupWindowLayout;
     }
 
-    @Override // org.telegram.messenger.Utilities.CallbackReturn
-    public final Object run(Object obj) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                xn xnVar = (xn) this.b;
-                View view = (View) this.c;
-                xnVar.U7((URLSpan) obj, false, xnVar.a5, view instanceof org.telegram.ui.Cells.t1 ? (org.telegram.ui.Cells.t1) view : null);
-                return Boolean.TRUE;
+                this.b.getSwipeBack().b(true);
+                break;
+            case 1:
+                this.b.getSwipeBack().b(true);
+                break;
             default:
-                return fh.c.d((View) obj, (String) this.b, (String) this.c, null, null);
+                this.b.getSwipeBack().b(true);
+                break;
         }
     }
 }

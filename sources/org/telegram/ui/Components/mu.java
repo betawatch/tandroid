@@ -1,67 +1,38 @@
 package org.telegram.ui.Components;
 
+import android.app.Activity;
 import android.content.Context;
-import android.webkit.RenderProcessGoneDetail;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.view.OrientationEventListener;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class mu extends WebViewClient {
-    public final /* synthetic */ ru a;
+public final class mu extends OrientationEventListener {
+    public final /* synthetic */ ou a;
 
-    public mu(ru ruVar) {
-        this.a = ruVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mu(ou ouVar, Context context) {
+        super(context);
+        this.a = ouVar;
     }
 
-    @Override // android.webkit.WebViewClient
-    public final void onPageFinished(WebView webView, String str) {
-        super.onPageFinished(webView, str);
-        ru ruVar = this.a;
-        ImageView imageView = ruVar.x;
-        if (ruVar.y) {
-            return;
-        }
-        ruVar.n.setVisibility(4);
-        ruVar.h.setVisibility(4);
-        imageView.setEnabled(true);
-        imageView.setAlpha(1.0f);
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {
-        org.telegram.ui.ActionBar.g6 g6Var;
-        ru ruVar = this.a;
-        try {
-            if (!AndroidUtilities.isSafeToShow(ruVar.getContext())) {
-                return true;
+    @Override // android.view.OrientationEventListener
+    public final void onOrientationChanged(int i10) {
+        Activity activity;
+        ou ouVar = this.a;
+        e91 e91Var = ouVar.c;
+        if (ouVar.C != null && e91Var.getVisibility() == 0 && (activity = ouVar.r) != null && e91Var.Q && ouVar.J) {
+            if (i10 >= 240 && i10 <= 300) {
+                ouVar.K = true;
+                return;
             }
-            Context context = ruVar.getContext();
-            g6Var = ((org.telegram.ui.ActionBar.h3) ruVar).resourcesProvider;
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, g6Var);
-            alertDialog$Builder.a.O = LocaleController.getString(R.string.ChromeCrashTitle);
-            alertDialog$Builder.a.Q = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ChromeCrashMessage), new xp(this, 10));
-            alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-            alertDialog$Builder.o();
-            return true;
-        } catch (Exception e6) {
-            FileLog.e(e6);
-            return false;
+            if (!ouVar.K || i10 <= 0) {
+                return;
+            }
+            if (i10 >= 330 || i10 <= 30) {
+                activity.setRequestedOrientation(ouVar.I);
+                ouVar.J = false;
+                ouVar.K = false;
+            }
         }
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final boolean shouldOverrideUrlLoading(WebView webView, String str) {
-        if (!this.a.y) {
-            return super.shouldOverrideUrlLoading(webView, str);
-        }
-        af.g.s(webView.getContext(), str);
-        return true;
     }
 }

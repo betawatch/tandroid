@@ -5,10 +5,12 @@ import java.util.ArrayList;
 import org.telegram.messenger.ContactsController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.rl0;
-import org.telegram.ui.xn;
+import org.telegram.ui.Components.ql0;
+import org.telegram.ui.Components.tp0;
+import org.telegram.ui.web.r;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p6 implements Runnable {
     public final /* synthetic */ int a;
@@ -48,21 +50,21 @@ public final /* synthetic */ class p6 implements Runnable {
                 ((MediaController) this.d).lambda$loadMoreMusic$11(this.b, (TLRPC.TL_error) this.e, (TLObject) this.f, this.c);
                 break;
             case 1:
-                xn xnVar = (xn) this.d;
+                zn znVar = (zn) this.d;
                 CharacterStyle characterStyle = (CharacterStyle) this.e;
-                org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) this.f;
-                xnVar.tb = this.b;
-                xnVar.ub = this.c;
-                xnVar.vb = characterStyle;
-                t1Var.invalidate();
+                org.telegram.ui.Cells.s1 s1Var = (org.telegram.ui.Cells.s1) this.f;
+                znVar.tb = this.b;
+                znVar.ub = this.c;
+                znVar.vb = characterStyle;
+                s1Var.invalidate();
                 break;
             case 2:
                 TLRPC.User user = (TLRPC.User) this.d;
                 TLRPC.Document document = (TLRPC.Document) this.e;
-                sh.w3.g(this.b, user, document, this.c, new sh.o3((org.telegram.ui.web.s) this.f, document, 0));
+                rh.w3.g(this.b, user, document, this.c, new rh.o3((r) this.f, document, 0));
                 break;
             case 3:
-                uf.c1 c1Var = (uf.c1) this.d;
+                tf.c1 c1Var = (tf.c1) this.d;
                 String str = (String) this.e;
                 ArrayList arrayList2 = (ArrayList) this.f;
                 c1Var.getClass();
@@ -70,7 +72,7 @@ public final /* synthetic */ class p6 implements Runnable {
                 int length = lowerCase.length();
                 int i12 = this.b;
                 if (length == 0) {
-                    AndroidUtilities.runOnUIThread(new eg.d3((rl0) c1Var, i12, new ArrayList(), new ArrayList(), c1Var.E, 29));
+                    AndroidUtilities.runOnUIThread(new dg.f3((ql0) c1Var, i12, new ArrayList(), new ArrayList(), c1Var.E, 28));
                     break;
                 } else {
                     String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
@@ -101,7 +103,7 @@ public final /* synthetic */ class p6 implements Runnable {
                                     ContactsController.Contact contact = arrayList6.get(i17);
                                     i17++;
                                     ContactsController.Contact contact2 = contact;
-                                    uf.b1 b1Var = new uf.b1();
+                                    tf.b1 b1Var = new tf.b1();
                                     b1Var.b = contact2;
                                     b1Var.a = (contact2.first_name + " " + contact2.last_name).toLowerCase();
                                     (contact2.last_name + " " + contact2.first_name).toLowerCase();
@@ -109,12 +111,12 @@ public final /* synthetic */ class p6 implements Runnable {
                                 }
                             }
                             for (int i18 = 0; i18 < c1Var.D.size(); i18++) {
-                                uf.b1 b1Var2 = (uf.b1) c1Var.D.get(i18);
+                                tf.b1 b1Var2 = (tf.b1) c1Var.D.get(i18);
                                 if ((translitString != null && (b1Var2.a.toLowerCase().contains(translitString) || b1Var2.a.toLowerCase().contains(translitString))) || b1Var2.a.toLowerCase().contains(lowerCase) || b1Var2.a.toLowerCase().contains(lowerCase)) {
                                     arrayList5.add(b1Var2.b);
                                 }
                             }
-                            AndroidUtilities.runOnUIThread(new eg.d3((rl0) c1Var, i16, arrayList3, arrayList4, arrayList5, 29));
+                            AndroidUtilities.runOnUIThread(new dg.f3((ql0) c1Var, i16, arrayList3, arrayList4, arrayList5, 28));
                             break;
                         } else {
                             int i19 = i13;
@@ -189,13 +191,13 @@ public final /* synthetic */ class p6 implements Runnable {
                 }
                 break;
             case 4:
-                wh.o0 o0Var = (wh.o0) this.d;
-                wh.e1 e1Var = (wh.e1) this.e;
-                org.telegram.ui.Cells.m9 m9Var = (org.telegram.ui.Cells.m9) this.f;
-                wh.r0 r0Var = o0Var.a;
+                vh.o0 o0Var = (vh.o0) this.d;
+                vh.e1 e1Var = (vh.e1) this.e;
+                org.telegram.ui.Cells.l9 l9Var = (org.telegram.ui.Cells.l9) this.f;
+                vh.r0 r0Var = o0Var.a;
                 int length2 = e1Var.length();
                 int i23 = this.b;
-                if (length2 >= i23 && e1Var.getSelectionStart() != e1Var.getSelectionEnd() && m9Var.k0(r0Var, 0, this.c, i23)) {
+                if (length2 >= i23 && e1Var.getSelectionStart() != e1Var.getSelectionEnd() && l9Var.k0(r0Var, 0, this.c, i23)) {
                     r0Var.n = true;
                     e1Var.setSelection(i23);
                     r0Var.n = false;
@@ -203,78 +205,78 @@ public final /* synthetic */ class p6 implements Runnable {
                 }
                 break;
             case 5:
-                org.telegram.ui.Components.ai aiVar = (org.telegram.ui.Components.ai) this.d;
-                wh.e1 e1Var2 = (wh.e1) this.e;
-                org.telegram.ui.Cells.m9 m9Var2 = (org.telegram.ui.Cells.m9) this.f;
-                wh.a5 a5Var = (wh.a5) aiVar.b;
+                o2.i iVar = (o2.i) this.d;
+                vh.e1 e1Var2 = (vh.e1) this.e;
+                org.telegram.ui.Cells.l9 l9Var2 = (org.telegram.ui.Cells.l9) this.f;
+                vh.b5 b5Var = (vh.b5) iVar.b;
                 int length3 = e1Var2.length();
                 int i24 = this.b;
                 if (length3 >= i24 && e1Var2.getSelectionStart() != e1Var2.getSelectionEnd()) {
-                    if (m9Var2.y()) {
-                        a5Var.w = true;
+                    if (l9Var2.y()) {
+                        b5Var.w = true;
                         e1Var2.setSelection(i24);
-                        a5Var.w = false;
+                        b5Var.w = false;
                         break;
-                    } else if (m9Var2.k0(a5Var, 0, this.c, i24)) {
-                        a5Var.w = true;
+                    } else if (l9Var2.k0(b5Var, 0, this.c, i24)) {
+                        b5Var.w = true;
                         e1Var2.setSelection(i24);
-                        a5Var.w = false;
+                        b5Var.w = false;
                         break;
                     }
                 }
                 break;
             case 6:
-                oh.h4 h4Var = (oh.h4) this.d;
-                wh.e1 e1Var3 = (wh.e1) this.e;
-                org.telegram.ui.Cells.m9 m9Var3 = (org.telegram.ui.Cells.m9) this.f;
-                wh.i5 i5Var = (wh.i5) h4Var.b;
+                tp0 tp0Var = (tp0) this.d;
+                vh.e1 e1Var3 = (vh.e1) this.e;
+                org.telegram.ui.Cells.l9 l9Var3 = (org.telegram.ui.Cells.l9) this.f;
+                vh.j5 j5Var = (vh.j5) tp0Var.b;
                 int length4 = e1Var3.length();
                 int i25 = this.b;
-                if (length4 >= i25 && e1Var3.getSelectionStart() != e1Var3.getSelectionEnd() && m9Var3.k0(i5Var, 0, this.c, i25)) {
-                    i5Var.D = true;
+                if (length4 >= i25 && e1Var3.getSelectionStart() != e1Var3.getSelectionEnd() && l9Var3.k0(j5Var, 0, this.c, i25)) {
+                    j5Var.D = true;
                     e1Var3.setSelection(i25);
-                    i5Var.D = false;
+                    j5Var.D = false;
                     break;
                 }
                 break;
             case 7:
-                wh.q5 q5Var = (wh.q5) this.d;
-                wh.e1 e1Var4 = (wh.e1) this.e;
-                org.telegram.ui.Cells.m9 m9Var4 = (org.telegram.ui.Cells.m9) this.f;
-                wh.v5 v5Var = q5Var.a;
+                vh.r5 r5Var = (vh.r5) this.d;
+                vh.e1 e1Var4 = (vh.e1) this.e;
+                org.telegram.ui.Cells.l9 l9Var4 = (org.telegram.ui.Cells.l9) this.f;
+                vh.w5 w5Var = r5Var.a;
                 int length5 = e1Var4.length();
                 int i26 = this.b;
                 if (length5 >= i26 && e1Var4.getSelectionStart() != e1Var4.getSelectionEnd()) {
-                    if (m9Var4.y()) {
-                        v5Var.C = true;
+                    if (l9Var4.y()) {
+                        w5Var.C = true;
                         e1Var4.setSelection(i26);
-                        v5Var.C = false;
+                        w5Var.C = false;
                         break;
-                    } else if (m9Var4.k0(v5Var, 0, this.c, i26)) {
-                        v5Var.C = true;
+                    } else if (l9Var4.k0(w5Var, 0, this.c, i26)) {
+                        w5Var.C = true;
                         e1Var4.setSelection(i26);
-                        v5Var.C = false;
+                        w5Var.C = false;
                         break;
                     }
                 }
                 break;
             default:
-                wh.r5 r5Var = (wh.r5) this.d;
-                wh.e1 e1Var5 = (wh.e1) this.e;
-                org.telegram.ui.Cells.m9 m9Var5 = (org.telegram.ui.Cells.m9) this.f;
-                wh.v5 v5Var2 = r5Var.a;
+                vh.s5 s5Var = (vh.s5) this.d;
+                vh.e1 e1Var5 = (vh.e1) this.e;
+                org.telegram.ui.Cells.l9 l9Var5 = (org.telegram.ui.Cells.l9) this.f;
+                vh.w5 w5Var2 = s5Var.a;
                 int length6 = e1Var5.length();
                 int i27 = this.b;
                 if (length6 >= i27 && e1Var5.getSelectionStart() != e1Var5.getSelectionEnd()) {
-                    if (m9Var5.y()) {
-                        v5Var2.n = true;
+                    if (l9Var5.y()) {
+                        w5Var2.n = true;
                         e1Var5.setSelection(i27);
-                        v5Var2.n = false;
+                        w5Var2.n = false;
                         break;
-                    } else if (m9Var5.k0(v5Var2, 1, this.c, i27)) {
-                        v5Var2.n = true;
+                    } else if (l9Var5.k0(w5Var2, 1, this.c, i27)) {
+                        w5Var2.n = true;
                         e1Var5.setSelection(i27);
-                        v5Var2.n = false;
+                        w5Var2.n = false;
                         break;
                     }
                 }
@@ -282,13 +284,13 @@ public final /* synthetic */ class p6 implements Runnable {
         }
     }
 
-    public /* synthetic */ p6(int i10, TLRPC.User user, TLRPC.Document document, int i11, org.telegram.ui.web.s sVar) {
+    public /* synthetic */ p6(int i10, TLRPC.User user, TLRPC.Document document, int i11, r rVar) {
         this.a = 2;
         this.b = i10;
         this.d = user;
         this.e = document;
         this.c = i11;
-        this.f = sVar;
+        this.f = rVar;
     }
 
     public /* synthetic */ p6(Object obj, Object obj2, int i10, Object obj3, int i11, int i12) {
@@ -300,12 +302,12 @@ public final /* synthetic */ class p6 implements Runnable {
         this.c = i11;
     }
 
-    public /* synthetic */ p6(xn xnVar, int i10, int i11, CharacterStyle characterStyle, org.telegram.ui.Cells.t1 t1Var) {
+    public /* synthetic */ p6(zn znVar, int i10, int i11, CharacterStyle characterStyle, org.telegram.ui.Cells.s1 s1Var) {
         this.a = 1;
-        this.d = xnVar;
+        this.d = znVar;
         this.b = i10;
         this.c = i11;
         this.e = characterStyle;
-        this.f = t1Var;
+        this.f = s1Var;
     }
 }

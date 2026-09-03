@@ -1,6 +1,6 @@
 package o4;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class c implements l0 {
     public final l0 a;
@@ -18,34 +18,34 @@ public final class c implements l0 {
     }
 
     @Override // o4.l0
-    public final boolean h() {
-        return !this.c.c() && this.a.h();
+    public final boolean d() {
+        return !this.c.a() && this.a.d();
     }
 
     @Override // o4.l0
-    public final int l(long j10) {
-        if (this.c.c()) {
+    public final int e(long j10) {
+        if (this.c.a()) {
             return -3;
         }
-        return this.a.l(j10);
+        return this.a.e(j10);
     }
 
     @Override // o4.l0
-    public final int p(f7.b bVar, n3.i iVar, int i10) {
+    public final int f(f7.b bVar, n3.i iVar, int i10) {
         d dVar = this.c;
-        if (dVar.c()) {
+        if (dVar.a()) {
             return -3;
         }
         if (this.b) {
             iVar.b = 4;
             return -4;
         }
-        long r10 = dVar.r();
-        int p10 = this.a.p(bVar, iVar, i10);
-        if (p10 != -5) {
+        long y12 = dVar.y1();
+        int f10 = this.a.f(bVar, iVar, i10);
+        if (f10 != -5) {
             long j10 = dVar.f;
-            if (j10 == Long.MIN_VALUE || ((p10 != -4 || iVar.f < j10) && !(p10 == -3 && r10 == Long.MIN_VALUE && !iVar.e))) {
-                return p10;
+            if (j10 == Long.MIN_VALUE || ((f10 != -4 || iVar.f < j10) && !(f10 == -3 && y12 == Long.MIN_VALUE && !iVar.e))) {
+                return f10;
             }
             iVar.b();
             iVar.b = 4;

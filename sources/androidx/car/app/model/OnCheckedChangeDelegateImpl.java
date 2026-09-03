@@ -6,12 +6,12 @@ import androidx.car.app.model.IOnCheckedChangeListener;
 import androidx.car.app.model.OnCheckedChangeDelegateImpl;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class OnCheckedChangeDelegateImpl implements z {
     private final IOnCheckedChangeListener mStub;
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     public static class OnCheckedChangeListenerStub extends IOnCheckedChangeListener.Stub {
         private final z0 mListener;
 
@@ -49,8 +49,8 @@ public class OnCheckedChangeDelegateImpl implements z {
             IOnCheckedChangeListener iOnCheckedChangeListener = this.mStub;
             Objects.requireNonNull(iOnCheckedChangeListener);
             iOnCheckedChangeListener.onCheckedChange(z4, androidx.car.app.utils.j.a());
-        } catch (RemoteException e6) {
-            throw new RuntimeException(e6);
+        } catch (RemoteException e) {
+            throw new RuntimeException(e);
         }
     }
 

@@ -6,9 +6,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class xe1 implements org.telegram.ui.Components.mo {
+public final class xe1 implements org.telegram.ui.Components.jo {
     public final /* synthetic */ TLRPC.TL_forumTopic a;
     public final /* synthetic */ sf1 b;
 
@@ -17,12 +17,12 @@ public final class xe1 implements org.telegram.ui.Components.mo {
         this.a = tL_forumTopic;
     }
 
-    @Override // org.telegram.ui.Components.mo
+    @Override // org.telegram.ui.Components.jo
     public final void dismiss() {
         this.b.finishPreviewFragment();
     }
 
-    @Override // org.telegram.ui.Components.mo
+    @Override // org.telegram.ui.Components.jo
     public final void k() {
         sf1 sf1Var = this.b;
         sf1Var.finishPreviewFragment();
@@ -36,14 +36,14 @@ public final class xe1 implements org.telegram.ui.Components.mo {
         }
     }
 
-    @Override // org.telegram.ui.Components.mo
-    public final void o() {
+    @Override // org.telegram.ui.Components.jo
+    public final void l() {
         this.b.finishPreviewFragment();
-        AndroidUtilities.runOnUIThread(new h21(22, this, this.a), 500L);
+        AndroidUtilities.runOnUIThread(new b11(23, this, this.a), 500L);
     }
 
-    @Override // org.telegram.ui.Components.mo
-    public final void u() {
+    @Override // org.telegram.ui.Components.jo
+    public final void o() {
         int i10;
         sf1 sf1Var = this.b;
         i10 = ((org.telegram.ui.ActionBar.p2) sf1Var).currentAccount;
@@ -59,8 +59,8 @@ public final class xe1 implements org.telegram.ui.Components.mo {
         }
     }
 
-    @Override // org.telegram.ui.Components.mo
-    public final void v(int i10) {
+    @Override // org.telegram.ui.Components.jo
+    public final void s(int i10) {
         sf1 sf1Var = this.b;
         long j10 = sf1Var.a;
         sf1Var.finishPreviewFragment();
@@ -81,7 +81,7 @@ public final class xe1 implements org.telegram.ui.Components.mo {
         }
     }
 
-    @Override // org.telegram.ui.Components.mo
+    @Override // org.telegram.ui.Components.jo
     public final /* synthetic */ void j() {
     }
 }

@@ -1,35 +1,48 @@
 package o2;
 
-import k7.y;
+import android.content.pm.PackageInfo;
+import android.os.Build;
+import java.lang.reflect.InvocationTargetException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class j extends b {
-    public final /* synthetic */ int e;
+public final class j extends c {
+    public final Pattern d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ j(int i10, String str, String str2) {
-        super(2, str, str2);
-        this.e = i10;
+    public j() {
+        super("ALGORITHMIC_DARKENING", "ALGORITHMIC_DARKENING");
+        this.d = Pattern.compile("\\A\\d+");
+    }
+
+    @Override // o2.c
+    public final boolean a() {
+        return Build.VERSION.SDK_INT >= 33;
     }
 
     @Override // o2.c
     public final boolean b() {
-        switch (this.e) {
-            case 0:
-                if (!super.b() || !y.a("MULTI_PROCESS")) {
-                    return false;
-                }
-                boolean z4 = n2.a.a;
-                if (k.b.b()) {
-                    return l.a.getStatics().isMultiProcessEnabled();
-                }
-                throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
-            default:
-                if (y.a("MULTI_PROFILE")) {
-                    return super.b();
-                }
-                return false;
+        int i10;
+        PackageInfo packageInfo;
+        boolean b10 = super.b();
+        if (!b10 || (i10 = Build.VERSION.SDK_INT) >= 29) {
+            return b10;
         }
+        boolean z4 = n2.b.a;
+        if (i10 >= 26) {
+            packageInfo = k6.a.c();
+        } else {
+            try {
+                packageInfo = n2.b.b();
+            } catch (ClassNotFoundException | IllegalAccessException | NoSuchMethodException | InvocationTargetException unused) {
+                packageInfo = null;
+            }
+        }
+        if (packageInfo == null) {
+            return false;
+        }
+        Matcher matcher = this.d.matcher(packageInfo.versionName);
+        return matcher.find() && Integer.parseInt(packageInfo.versionName.substring(matcher.start(), matcher.end())) >= 105;
     }
 }

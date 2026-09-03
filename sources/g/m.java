@@ -29,7 +29,7 @@ import org.telegram.messenger.beta.R;
 import r0.j0;
 import r0.m0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class m implements Window.Callback {
     public final Window.Callback a;
@@ -76,7 +76,7 @@ public final class m implements Window.Callback {
     public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
         boolean z4 = this.c;
         Window.Callback callback = this.a;
-        return z4 ? callback.dispatchKeyEvent(keyEvent) : this.e.i(keyEvent) || callback.dispatchKeyEvent(keyEvent);
+        return z4 ? callback.dispatchKeyEvent(keyEvent) : this.e.j(keyEvent) || callback.dispatchKeyEvent(keyEvent);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:30:0x0066, code lost:
@@ -94,19 +94,19 @@ public final class m implements Window.Callback {
     */
     public final boolean dispatchKeyShortcutEvent(KeyEvent keyEvent) {
         boolean z4;
-        l.l lVar;
+        l.k kVar;
         boolean performShortcut;
         if (!this.a.dispatchKeyShortcutEvent(keyEvent)) {
             int keyCode = keyEvent.getKeyCode();
             q qVar = this.e;
-            a0 q10 = qVar.q();
-            if (q10 != null) {
-                z zVar = q10.i;
-                if (zVar == null || (lVar = zVar.d) == null) {
+            a0 r10 = qVar.r();
+            if (r10 != null) {
+                z zVar = r10.i;
+                if (zVar == null || (kVar = zVar.d) == null) {
                     performShortcut = false;
                 } else {
-                    lVar.setQwertyMode(KeyCharacterMap.load(keyEvent.getDeviceId()).getKeyboardType() != 1);
-                    performShortcut = lVar.performShortcut(keyCode, keyEvent, 0);
+                    kVar.setQwertyMode(KeyCharacterMap.load(keyEvent.getDeviceId()).getKeyboardType() != 1);
+                    performShortcut = kVar.performShortcut(keyCode, keyEvent, 0);
                 }
             }
             p pVar = qVar.S;
@@ -157,36 +157,36 @@ public final class m implements Window.Callback {
         ViewGroup viewGroup;
         q qVar = this.e;
         Context context = qVar.e;
-        sf.f fVar = new sf.f(context, callback);
+        rf.f fVar = new rf.f(context, callback);
         k.a aVar = qVar.x;
         if (aVar != null) {
             aVar.a();
         }
         f7.b bVar = new f7.b(qVar, fVar, false, 2);
-        a0 q10 = qVar.q();
+        a0 r10 = qVar.r();
         int i10 = 1;
-        if (q10 != null) {
-            z zVar = q10.i;
+        if (r10 != null) {
+            z zVar = r10.i;
             if (zVar != null) {
                 zVar.a();
             }
-            q10.c.setHideOnContentScrollEnabled(false);
-            q10.f.e();
-            z zVar2 = new z(q10, q10.f.getContext(), bVar);
-            l.l lVar = zVar2.d;
-            lVar.w();
+            r10.c.setHideOnContentScrollEnabled(false);
+            r10.f.e();
+            z zVar2 = new z(r10, r10.f.getContext(), bVar);
+            l.k kVar = zVar2.d;
+            kVar.w();
             try {
-                if (((sf.f) zVar2.e.b).B(zVar2, lVar)) {
-                    q10.i = zVar2;
+                if (((rf.f) zVar2.e.b).B(zVar2, kVar)) {
+                    r10.i = zVar2;
                     zVar2.g();
-                    q10.f.c(zVar2);
-                    q10.a(true);
+                    r10.f.c(zVar2);
+                    r10.a(true);
                 } else {
                     zVar2 = null;
                 }
                 qVar.x = zVar2;
             } finally {
-                lVar.v();
+                kVar.v();
             }
         }
         if (qVar.x == null) {
@@ -241,11 +241,11 @@ public final class m implements Window.Callback {
                 dVar.c = context2;
                 dVar.d = actionBarContextView;
                 dVar.e = bVar;
-                l.l lVar2 = new l.l(actionBarContextView.getContext());
-                lVar2.l = 1;
-                dVar.n = lVar2;
-                lVar2.e = dVar;
-                if (fVar.B(dVar, lVar2)) {
+                l.k kVar2 = new l.k(actionBarContextView.getContext());
+                kVar2.l = 1;
+                dVar.n = kVar2;
+                kVar2.e = dVar;
+                if (fVar.B(dVar, kVar2)) {
                     dVar.g();
                     qVar.y.c(dVar);
                     qVar.x = dVar;
@@ -310,7 +310,7 @@ public final class m implements Window.Callback {
 
     @Override // android.view.Window.Callback
     public final boolean onCreatePanelMenu(int i10, Menu menu) {
-        if (i10 != 0 || (menu instanceof l.l)) {
+        if (i10 != 0 || (menu instanceof l.k)) {
             return this.a.onCreatePanelMenu(i10, menu);
         }
         return false;
@@ -333,12 +333,12 @@ public final class m implements Window.Callback {
 
     @Override // android.view.Window.Callback
     public final boolean onMenuOpened(int i10, Menu menu) {
-        a0 q10;
+        a0 r10;
         b(i10, menu);
-        if (i10 == 108 && (q10 = this.e.q()) != null) {
-            ArrayList arrayList = q10.m;
-            if (true != q10.l) {
-                q10.l = true;
+        if (i10 == 108 && (r10 = this.e.r()) != null) {
+            ArrayList arrayList = r10.m;
+            if (true != r10.l) {
+                r10.l = true;
                 if (arrayList.size() > 0) {
                     arrayList.get(0).getClass();
                     throw new ClassCastException();
@@ -367,11 +367,11 @@ public final class m implements Window.Callback {
             }
             return;
         }
-        a0 q10 = qVar.q();
-        if (q10 != null) {
-            ArrayList arrayList = q10.m;
-            if (q10.l) {
-                q10.l = false;
+        a0 r10 = qVar.r();
+        if (r10 != null) {
+            ArrayList arrayList = r10.m;
+            if (r10.l) {
+                r10.l = false;
                 if (arrayList.size() <= 0) {
                     return;
                 }
@@ -388,25 +388,25 @@ public final class m implements Window.Callback {
 
     @Override // android.view.Window.Callback
     public final boolean onPreparePanel(int i10, View view, Menu menu) {
-        l.l lVar = menu instanceof l.l ? (l.l) menu : null;
-        if (i10 == 0 && lVar == null) {
+        l.k kVar = menu instanceof l.k ? (l.k) menu : null;
+        if (i10 == 0 && kVar == null) {
             return false;
         }
-        if (lVar != null) {
-            lVar.x = true;
+        if (kVar != null) {
+            kVar.x = true;
         }
         boolean onPreparePanel = this.a.onPreparePanel(i10, view, menu);
-        if (lVar != null) {
-            lVar.x = false;
+        if (kVar != null) {
+            kVar.x = false;
         }
         return onPreparePanel;
     }
 
     @Override // android.view.Window.Callback
     public final void onProvideKeyboardShortcuts(List list, Menu menu, int i10) {
-        l.l lVar = this.e.p(0).h;
-        if (lVar != null) {
-            d(list, lVar, i10);
+        l.k kVar = this.e.p(0).h;
+        if (kVar != null) {
+            d(list, kVar, i10);
         } else {
             d(list, menu, i10);
         }

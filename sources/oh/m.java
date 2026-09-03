@@ -1,25 +1,41 @@
 package oh;
 
-import j$.util.Objects;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.u00;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
-public final class m extends cg.b {
-    public final long c;
+public final class m extends u00 {
+    public final Paint R;
+    public final /* synthetic */ r S;
 
-    public m(long j10) {
-        super(0, false);
-        this.c = j10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m(r rVar, Context context) {
+        super(context, null);
+        this.S = rVar;
+        this.R = new Paint();
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        return (obj instanceof m) && this.c == ((m) obj).c;
+    @Override // org.telegram.ui.Components.u00
+    public final int getColumnsCount() {
+        return this.S.d;
     }
 
-    public final int hashCode() {
-        return Objects.hash(Long.valueOf(this.c));
+    @Override // org.telegram.ui.Components.u00
+    public final int getViewType() {
+        setIsSingleCell(false);
+        return 27;
+    }
+
+    @Override // org.telegram.ui.Components.u00, android.view.View
+    public final void onDraw(Canvas canvas) {
+        int v02 = j6.v0(j6.d6, this.S.T.c);
+        Paint paint = this.R;
+        paint.setColor(v02);
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), paint);
+        super.onDraw(canvas);
     }
 }

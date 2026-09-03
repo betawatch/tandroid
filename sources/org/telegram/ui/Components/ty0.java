@@ -6,7 +6,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class ty0 extends Drawable {
     public boolean a;
@@ -15,10 +15,10 @@ public final class ty0 extends Drawable {
     public final Drawable d;
     public int e = 255;
 
-    public ty0(org.telegram.ui.Cells.t1 t1Var) {
-        this.b = new z5(t1Var, 420L, pr.h);
-        this.c = t1Var.getContext().getResources().getDrawable(R.drawable.summary_arrow);
-        this.d = t1Var.getContext().getResources().getDrawable(R.drawable.summary_stars);
+    public ty0(org.telegram.ui.Cells.s1 s1Var) {
+        this.b = new z5(s1Var, 420L, mr.h);
+        this.c = s1Var.getContext().getResources().getDrawable(R.drawable.summary_arrow);
+        this.d = s1Var.getContext().getResources().getDrawable(R.drawable.summary_stars);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -28,18 +28,18 @@ public final class ty0 extends Drawable {
         drawable.setBounds(bounds);
         drawable.setAlpha(this.e);
         drawable.draw(canvas);
-        float e6 = this.b.e(this.a);
+        float e = this.b.e(this.a);
         float centerX = getBounds().centerX();
         float centerY = getBounds().centerY();
         float width = getBounds().width();
         canvas.save();
-        if (e6 < 0.5f) {
-            float abs = Math.abs(e6 - 0.5f) + 0.5f;
+        if (e < 0.5f) {
+            float abs = Math.abs(e - 0.5f) + 0.5f;
             canvas.scale(abs, abs, centerX, centerY);
         }
         canvas.save();
-        if (e6 > 0.5f) {
-            float abs2 = Math.abs(e6 - 0.5f) + 0.5f;
+        if (e > 0.5f) {
+            float abs2 = Math.abs(e - 0.5f) + 0.5f;
             float f10 = -abs2;
             float f11 = width * 0.32f;
             canvas.scale(f10, f10, getBounds().left + f11, getBounds().bottom - f11);
@@ -53,14 +53,14 @@ public final class ty0 extends Drawable {
         drawable2.draw(canvas);
         canvas.restore();
         canvas.save();
-        if (e6 > 0.5f) {
-            float f13 = -(Math.abs(e6 - 0.5f) + 0.5f);
+        if (e > 0.5f) {
+            float f13 = -(Math.abs(e - 0.5f) + 0.5f);
             float f14 = 0.32f * width;
             canvas.scale(f13, f13, getBounds().right - f14, getBounds().top + f14);
         }
         canvas.rotate(180.0f, centerX, centerY);
-        if (e6 > 0.5f) {
-            float abs3 = 1.0f - (Math.abs(e6 - 0.5f) + 0.5f);
+        if (e > 0.5f) {
+            float abs3 = 1.0f - (Math.abs(e - 0.5f) + 0.5f);
             canvas.translate((-width) * abs3 * 0.4f, width * abs3 * 0.4f);
         }
         drawable2.setBounds(getBounds());

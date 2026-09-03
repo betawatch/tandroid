@@ -1,9 +1,35 @@
 package org.telegram.ui.ActionBar;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
-/* loaded from: classes3.dex */
-public interface b3 {
-    boolean g();
+import android.content.Context;
+import android.view.ViewGroup;
+import org.telegram.ui.Components.q6;
 
-    void onOpenAnimationEnd();
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* loaded from: classes3.dex */
+public final class b3 {
+    public final g3 a;
+
+    public b3(Context context, f6 f6Var) {
+        g3 g3Var = new g3(context, f6Var, false, false);
+        this.a = g3Var;
+        g3Var.fixNavigationBar();
+    }
+
+    public final void a() {
+        this.a.applyBottomPadding = false;
+    }
+
+    public final void b(ViewGroup viewGroup) {
+        this.a.customView = viewGroup;
+    }
+
+    public final void c(q6 q6Var) {
+        g3 g3Var = this.a;
+        g3Var.customView = q6Var;
+        g3Var.customViewGravity = 49;
+    }
+
+    public final void d() {
+        this.a.dimBehind = false;
+    }
 }

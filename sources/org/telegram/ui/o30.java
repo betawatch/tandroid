@@ -1,33 +1,43 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.text.TextUtils;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class o30 extends org.telegram.ui.Components.w7 {
-    public final /* synthetic */ d60 B;
-    public final /* synthetic */ Activity y;
+public final class o30 implements Runnable {
+    public final /* synthetic */ e60 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o30(d60 d60Var, LaunchActivity launchActivity, Activity activity) {
-        super(launchActivity);
-        this.B = d60Var;
-        this.y = activity;
+    public o30(e60 e60Var) {
+        this.a = e60Var;
     }
 
-    @Override // org.telegram.ui.Components.w7
-    public final TextView a() {
-        TextView textView = new TextView(this.y);
-        textView.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.hg, false));
-        textView.setTextSize(1, 20.0f);
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setGravity(51);
-        textView.setSingleLine(true);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setOnClickListener(new org.telegram.ui.Components.rx0(24, this, textView));
-        return textView;
+    @Override // java.lang.Runnable
+    public final void run() {
+        e60 e60Var = this.a;
+        org.telegram.ui.ActionBar.k5 k5Var = e60Var.R;
+        k50 k50Var = e60Var.S;
+        if (k50Var == null || e60Var.isDismissed()) {
+            return;
+        }
+        ChatObject.Call call = e60Var.X0;
+        int i10 = call != null ? call.call.schedule_date : e60Var.h2;
+        if (i10 == 0) {
+            return;
+        }
+        int currentTime = i10 - e60Var.d.getConnectionsManager().getCurrentTime();
+        if (currentTime >= 86400) {
+            k50Var.l(LocaleController.formatPluralString("Days", Math.round(currentTime / 86400.0f), new Object[0]), false);
+        } else {
+            k50Var.l(AndroidUtilities.formatFullDuration(Math.abs(currentTime)), false);
+            if (currentTime < 0 && k5Var.getTag() == null) {
+                k5Var.setTag(1);
+                k5Var.l(LocaleController.getString(R.string.VoipChatLateBy), false);
+            }
+        }
+        e60Var.T.l(LocaleController.formatStartsTime(i10, 3), false);
+        AndroidUtilities.runOnUIThread(e60Var.t2, 1000L);
     }
 }

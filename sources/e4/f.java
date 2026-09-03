@@ -10,17 +10,17 @@ import j3.d1;
 import j3.e1;
 import j3.f0;
 import j3.n0;
-import j7.d7;
+import j7.c7;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class f extends j3.e implements Handler.Callback {
     public final d B;
     public final c0 C;
     public final Handler D;
     public final e E;
-    public d7 F;
+    public c7 F;
     public boolean G;
     public boolean H;
     public long I;
@@ -68,9 +68,9 @@ public final class f extends j3.e implements Handler.Callback {
         e1 L = f0Var.L();
         if (!L.equals(f0Var.M)) {
             f0Var.M = L;
-            mVar.c(14, new hg.f(c0Var, 12));
+            mVar.c(14, new gg.f(c0Var, 12));
         }
-        mVar.c(28, new hg.f(cVar, 13));
+        mVar.c(28, new gg.f(cVar, 13));
         mVar.b();
     }
 
@@ -135,17 +135,17 @@ public final class f extends j3.e implements Handler.Callback {
                 e eVar = this.E;
                 eVar.b();
                 f7.b bVar = this.c;
-                bVar.l();
+                bVar.m();
                 int s6 = s(bVar, eVar, 0);
                 if (s6 == -4) {
-                    if (eVar.e(4)) {
+                    if (eVar.d(4)) {
                         this.G = true;
                     } else {
                         eVar.s = this.I;
-                        eVar.k();
-                        d7 d7Var = this.F;
+                        eVar.l();
+                        c7 c7Var = this.F;
                         int i10 = d0.a;
-                        c a2 = d7Var.a(eVar);
+                        c a2 = c7Var.a(eVar);
                         if (a2 != null) {
                             ArrayList arrayList = new ArrayList(a2.a.length);
                             z(a2, arrayList);
@@ -199,14 +199,14 @@ public final class f extends j3.e implements Handler.Callback {
             if (b10 != null) {
                 d dVar = this.B;
                 if (dVar.b(b10)) {
-                    d7 a2 = dVar.a(b10);
+                    c7 a2 = dVar.a(b10);
                     byte[] d = bVarArr[i10].d();
                     d.getClass();
                     e eVar = this.E;
                     eVar.b();
-                    eVar.j(d.length);
+                    eVar.k(d.length);
                     eVar.d.put(d);
-                    eVar.k();
+                    eVar.l();
                     c a10 = a2.a(eVar);
                     if (a10 != null) {
                         z(a10, arrayList);

@@ -7,11 +7,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.aj1;
 import org.telegram.ui.vl0;
+import org.telegram.ui.yi1;
 import org.telegram.ui.zi1;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class mh implements Utilities.Callback2 {
     public final /* synthetic */ int a = 0;
@@ -21,10 +21,10 @@ public final /* synthetic */ class mh implements Utilities.Callback2 {
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ mh(org.telegram.ui.ActionBar.d2 d2Var, Utilities.Callback2 callback2, k6.b bVar, Context context, int i10) {
+    public /* synthetic */ mh(org.telegram.ui.ActionBar.d2 d2Var, Utilities.Callback2 callback2, androidx.biometric.t tVar, Context context, int i10) {
         this.c = d2Var;
         this.d = callback2;
-        this.e = bVar;
+        this.e = tVar;
         this.f = context;
         this.b = i10;
     }
@@ -33,11 +33,11 @@ public final /* synthetic */ class mh implements Utilities.Callback2 {
     public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                PasskeysController.lambda$create$9((org.telegram.ui.ActionBar.d2) this.c, (Utilities.Callback2) this.d, (k6.b) this.e, (Context) this.f, this.b, (TL_account.passkeyRegistrationOptions) obj, (TLRPC.TL_error) obj2);
+                PasskeysController.lambda$create$9((org.telegram.ui.ActionBar.d2) this.c, (Utilities.Callback2) this.d, (androidx.biometric.t) this.e, (Context) this.f, this.b, (TL_account.passkeyRegistrationOptions) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                qh.d dVar = (qh.d) this.c;
-                org.telegram.ui.ActionBar.h3 h3Var = (org.telegram.ui.ActionBar.h3) this.d;
+                ph.d dVar = (ph.d) this.c;
+                org.telegram.ui.ActionBar.g3 g3Var = (org.telegram.ui.ActionBar.g3) this.d;
                 View view = (View) this.e;
                 c5.j jVar = (c5.j) this.f;
                 TLRPC.UrlAuthResult urlAuthResult = (TLRPC.UrlAuthResult) obj;
@@ -45,16 +45,16 @@ public final /* synthetic */ class mh implements Utilities.Callback2 {
                 dVar.setLoading(false);
                 if (!(urlAuthResult instanceof TLRPC.TL_urlAuthResultAccepted)) {
                     if (tL_error == null) {
-                        new org.telegram.ui.Components.qc(h3Var.topBulletinContainer, h3Var.getResourcesProvider()).c0("NO_TOKEN", false);
+                        new org.telegram.ui.Components.qc(g3Var.topBulletinContainer, g3Var.getResourcesProvider()).c0("NO_TOKEN", false);
                         break;
                     } else {
-                        org.telegram.ui.yh.u(h3Var.topBulletinContainer, h3Var.getResourcesProvider(), tL_error, false);
+                        org.telegram.ui.ai.u(g3Var.topBulletinContainer, g3Var.getResourcesProvider(), tL_error, false);
                         break;
                     }
                 } else {
                     String queryParameter = Uri.parse("?" + Uri.parse(((TLRPC.TL_urlAuthResultAccepted) urlAuthResult).url).getFragment()).getQueryParameter("tgWebAuthToken");
                     if (queryParameter == null) {
-                        new org.telegram.ui.Components.qc(h3Var.topBulletinContainer, h3Var.getResourcesProvider()).c0("NO_TOKEN", false);
+                        new org.telegram.ui.Components.qc(g3Var.topBulletinContainer, g3Var.getResourcesProvider()).c0("NO_TOKEN", false);
                         break;
                     } else {
                         int i10 = this.b;
@@ -65,18 +65,18 @@ public final /* synthetic */ class mh implements Utilities.Callback2 {
                         FileLog.d(m9.toString());
                         Context applicationContext = view.getContext().getApplicationContext();
                         try {
-                            byte[] c3 = aj1.c(jVar, queryParameter, currentDatacenterId, isTestBackend);
+                            byte[] c3 = zi1.c(jVar, queryParameter, currentDatacenterId, isTestBackend);
                             a8.e eVar = new a8.e(applicationContext, com.google.android.gms.common.api.i.c);
                             String str = (String) jVar.c;
                             com.google.android.gms.common.api.internal.t0 t0Var = eVar.h;
                             m8.i0 i0Var = new m8.i0(t0Var, str, "/tg-wear-auth/token", c3);
                             t0Var.b.d(0, i0Var);
-                            b6.m.n(i0Var, m8.k0.a).addOnSuccessListener(new vl0(28, jVar, dVar)).addOnFailureListener(new zi1(dVar, 1));
-                            h3Var.dismiss();
+                            b6.m.n(i0Var, m8.k0.a).addOnSuccessListener(new vl0(28, jVar, dVar)).addOnFailureListener(new yi1(dVar, 1));
+                            g3Var.dismiss();
                             break;
-                        } catch (Exception e6) {
-                            FileLog.e(e6);
-                            new org.telegram.ui.Components.qc(h3Var.topBulletinContainer, h3Var.getResourcesProvider()).c0(e6.getMessage(), false);
+                        } catch (Exception e) {
+                            FileLog.e(e);
+                            new org.telegram.ui.Components.qc(g3Var.topBulletinContainer, g3Var.getResourcesProvider()).c0(e.getMessage(), false);
                             return;
                         }
                     }
@@ -84,9 +84,9 @@ public final /* synthetic */ class mh implements Utilities.Callback2 {
         }
     }
 
-    public /* synthetic */ mh(qh.d dVar, org.telegram.ui.ActionBar.h3 h3Var, int i10, View view, c5.j jVar) {
+    public /* synthetic */ mh(ph.d dVar, org.telegram.ui.ActionBar.g3 g3Var, int i10, View view, c5.j jVar) {
         this.c = dVar;
-        this.d = h3Var;
+        this.d = g3Var;
         this.b = i10;
         this.e = view;
         this.f = jVar;

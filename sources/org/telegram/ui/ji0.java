@@ -1,165 +1,141 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class ji0 implements org.telegram.ui.Components.pk0 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.p2 a;
-    public final /* synthetic */ ti0 b;
+public final /* synthetic */ class ji0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.p2 b;
 
-    public ji0(ti0 ti0Var, org.telegram.ui.ActionBar.p2 p2Var) {
-        this.b = ti0Var;
-        this.a = p2Var;
+    public /* synthetic */ ji0(int i10, org.telegram.ui.ActionBar.p2 p2Var) {
+        this.a = i10;
+        this.b = p2Var;
     }
 
-    @Override // org.telegram.ui.Components.pk0
-    public final /* synthetic */ boolean g() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.pk0
-    public final /* synthetic */ boolean h() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.pk0
-    public final void o(View view, ng.q0 q0Var, boolean z4, boolean z10) {
-        boolean z11;
-        org.telegram.ui.ActionBar.p2 p2Var;
-        boolean z12;
-        long j10;
-        ng.q0 q0Var2 = q0Var;
-        if (q0Var2 != null) {
-            ti0 ti0Var = this.b;
-            hi0 hi0Var = ti0Var.b0;
-            fi0 fi0Var = ti0Var.X;
-            int i10 = ti0Var.c;
-            if (hi0Var == null) {
-                return;
-            }
-            boolean z13 = !UserConfig.getInstance(i10).isPremium() && q0Var2.d;
-            org.telegram.ui.Cells.t1 t1Var = ti0Var.N;
-            if (t1Var != null) {
-                MessageObject messageObject = t1Var.getMessageObject();
-                if (messageObject == null) {
-                    return;
-                }
-                TLRPC.Message message = messageObject.messageOwner;
-                long j11 = message.effect;
-                long j12 = q0Var2.c;
-                if (j12 == j11) {
-                    message.flags2 &= -5;
-                    message.effect = 0L;
-                    z12 = true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.ActionBar.n2 n2Var = new org.telegram.ui.ActionBar.n2();
+                n2Var.a = true;
+                this.b.showAsSheet(new PremiumPreviewFragment(0, "effect"), n2Var);
+                break;
+            case 1:
+                org.telegram.ui.ActionBar.p2 p2Var = this.b;
+                if (p2Var instanceof PremiumPreviewFragment) {
+                    PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) p2Var;
+                    premiumPreviewFragment.m0 = true;
+                    premiumPreviewFragment.getMediaDataController().loadPremiumPromo(false);
+                    premiumPreviewFragment.a.x0(0);
                 } else {
-                    message.flags2 |= 4;
-                    message.effect = j12;
-                    z12 = false;
-                }
-                if (z13) {
-                    j10 = j11;
-                } else {
-                    j10 = j11;
-                    ti0Var.N.X3(messageObject, ti0Var.l(messageObject), ti0Var.K.size() > 1, false, false, false);
-                    ti0Var.b0.setSelectedReactionAnimated(z12 ? null : q0Var2);
-                    if (ti0Var.b0.getReactionsWindow() != null && ti0Var.b0.getReactionsWindow().m != null) {
-                        ng.z zVar = ti0Var.b0.getReactionsWindow().m;
-                        if (z12) {
-                            q0Var2 = null;
-                        }
-                        zVar.setSelectedReaction(q0Var2);
-                        ti0Var.b0.getReactionsWindow().a.invalidate();
-                    }
-                }
-                fi0Var.c();
-                if (!z12) {
-                    fi0Var.o(ti0Var.N, 0, false, false);
-                }
-                if (z13) {
-                    TLRPC.Message message2 = messageObject.messageOwner;
-                    message2.effect = j10;
-                    if (j10 == 0) {
-                        message2.flags2 &= -5;
-                    }
-                }
-                gi0 gi0Var = ti0Var.U;
-                if (gi0Var != null) {
-                    gi0Var.setEffect(messageObject.messageOwner.effect);
-                }
-                ti0Var.m(messageObject.messageOwner.effect);
-            } else if (ti0Var.i0 != null) {
-                long j13 = q0Var2.c;
-                if (j13 == ti0Var.F) {
-                    ti0Var.F = 0L;
-                    z11 = true;
-                } else {
-                    ti0Var.F = j13;
-                    z11 = false;
-                }
-                gi0 gi0Var2 = ti0Var.U;
-                if (gi0Var2 != null) {
-                    gi0Var2.setEffect(ti0Var.F);
-                }
-                ti0Var.m(ti0Var.F);
-                if (!z13) {
-                    TLRPC.TL_availableEffect effect = ti0Var.F == 0 ? null : MessagesController.getInstance(i10).getEffect(ti0Var.F);
-                    org.telegram.ui.Components.j5 j5Var = ti0Var.G;
-                    if (j5Var != null) {
-                        if (ti0Var.F == 0 || effect == null) {
-                            j5Var.g(null, true);
-                        } else {
-                            j5Var.g(Emoji.getEmojiDrawable(effect.emoticon), true);
+                    PremiumPreviewFragment premiumPreviewFragment2 = new PremiumPreviewFragment(0, null);
+                    premiumPreviewFragment2.m0 = true;
+                    if (p2Var != null) {
+                        p2Var.presentFragment(premiumPreviewFragment2);
+                    } else {
+                        org.telegram.ui.ActionBar.p2 U = LaunchActivity.U();
+                        if (U != null) {
+                            U.presentFragment(premiumPreviewFragment2);
                         }
                     }
-                    ti0Var.b0.setSelectedReactionAnimated(z11 ? null : q0Var2);
-                    if (ti0Var.b0.getReactionsWindow() != null && ti0Var.b0.getReactionsWindow().m != null) {
-                        ng.z zVar2 = ti0Var.b0.getReactionsWindow().m;
-                        if (z11) {
-                            q0Var2 = null;
-                        }
-                        zVar2.setSelectedReaction(q0Var2);
-                        ti0Var.b0.getReactionsWindow().a.invalidate();
-                    }
                 }
-                fi0Var.c();
-                if (!z11) {
-                    TLRPC.TL_message tL_message = new TLRPC.TL_message();
-                    long j14 = ti0Var.F;
-                    tL_message.effect = j14;
-                    if (j14 != 0) {
-                        tL_message.flags2 |= 4;
+                if (p2Var != null && (p2Var.getParentActivity() instanceof LaunchActivity)) {
+                    try {
+                        p2Var.getFragmentView().performHapticFeedback(3, 2);
+                    } catch (Exception unused) {
                     }
-                    ti0Var.X.d(null, 0, null, new MessageObject(i10, tL_message, false, false), 0, false, false, 0.0f, 0.0f, true);
+                    ((LaunchActivity) p2Var.getParentActivity()).u0.c(false);
+                    break;
                 }
-            }
-            if (z13 && (p2Var = this.a) != null) {
-                new org.telegram.ui.Components.qc(ti0Var.D, ti0Var.b).Q(R.raw.star_premium_2, 36, AndroidUtilities.premiumText(LocaleController.getString(R.string.AnimatedEffectPremium), new ii0(0, p2Var))).j();
-            }
-            ti0Var.E.invalidate();
+                break;
+            case 2:
+                this.b.presentFragment(new DataSettingsActivity());
+                break;
+            case 3:
+                this.b.presentFragment(new DataSettingsActivity());
+                break;
+            case 4:
+                this.b.presentFragment(new DataSettingsActivity());
+                break;
+            case 5:
+                b.k(0, this.b);
+                break;
+            case 6:
+                b.k(0, this.b);
+                break;
+            case 7:
+                this.b.presentFragment(new WallpapersListActivity(0));
+                break;
+            case 8:
+                this.b.presentFragment(new NotificationsCustomSettingsActivity(2, new ArrayList(), null, true));
+                break;
+            case 9:
+                this.b.presentFragment(new WallpapersListActivity(1));
+                break;
+            case 10:
+                this.b.presentFragment(new WallpapersListActivity(0));
+                break;
+            case 11:
+                b.k(0, this.b);
+                break;
+            case 12:
+                org.telegram.ui.ActionBar.p2 p2Var2 = this.b;
+                eg.o1 o1Var = new eg.o1(p2Var2, 4, false);
+                o1Var.C();
+                p2Var2.showDialog(o1Var);
+                break;
+            case 13:
+                b.k(3, this.b);
+                break;
+            case 14:
+                b.k(3, this.b);
+                break;
+            case 15:
+                b.k(0, this.b);
+                break;
+            case 16:
+                b.k(0, this.b);
+                break;
+            case 17:
+                b.k(0, this.b);
+                break;
+            case 18:
+                b.k(0, this.b);
+                break;
+            case 19:
+                b.k(1, this.b);
+                break;
+            case 20:
+                this.b.presentFragment(new NotificationsSettingsActivity());
+                break;
+            case 21:
+                b.k(0, this.b);
+                break;
+            case 22:
+                b.k(0, this.b);
+                break;
+            case 23:
+                this.b.presentFragment(new NotificationsSettingsActivity());
+                break;
+            case 24:
+                b.k(0, this.b);
+                break;
+            case 25:
+                b.k(0, this.b);
+                break;
+            case 26:
+                b.k(0, this.b);
+                break;
+            case 27:
+                b.k(0, this.b);
+                break;
+            case 28:
+                b.k(0, this.b);
+                break;
+            default:
+                b.k(0, this.b);
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.pk0
-    public final /* synthetic */ boolean t() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.pk0
-    public final /* synthetic */ void m() {
-    }
-
-    @Override // org.telegram.ui.Components.pk0
-    public final /* synthetic */ void j(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i10, boolean z4) {
     }
 }

@@ -3,8 +3,9 @@ package kotlin.jvm.internal;
 import com.google.android.gms.common.data.DataHolder;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import kf.k0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class a implements Iterator {
     public final /* synthetic */ int a;
@@ -54,9 +55,9 @@ public class a implements Iterator {
                     int i10 = this.b;
                     this.b = i10 + 1;
                     return objArr[i10];
-                } catch (ArrayIndexOutOfBoundsException e6) {
+                } catch (ArrayIndexOutOfBoundsException e) {
                     this.b--;
-                    throw new NoSuchElementException(e6.getMessage());
+                    throw new NoSuchElementException(e.getMessage());
                 }
             case 1:
                 oc.b bVar = (oc.b) this.c;
@@ -89,7 +90,7 @@ public class a implements Iterator {
                 return cVar.get(i12);
             default:
                 if (!hasNext()) {
-                    throw new NoSuchElementException(l.d.j(this.b, "Cannot advance the iterator beyond "));
+                    throw new NoSuchElementException(k0.j(this.b, "Cannot advance the iterator beyond "));
                 }
                 l8.e eVar = (l8.e) this.c;
                 int i13 = this.b;

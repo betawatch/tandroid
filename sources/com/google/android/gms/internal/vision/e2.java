@@ -14,7 +14,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class e2 implements n2 {
     public static final int[] n = new int[0];
@@ -606,20 +606,20 @@ public final class e2 implements n2 {
             r0Var.e = i11;
             r0Var.H((h - i11) - T2);
             r0Var.e = h;
-        } catch (b3 e6) {
+        } catch (b3 e) {
             r0Var.e = i11;
-            r0.f.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e6);
+            r0.f.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e);
             byte[] bytes = str.getBytes(j1.a);
             try {
                 r0Var.H(bytes.length);
                 r0Var.L(bytes, 0, bytes.length);
-            } catch (s0 e10) {
-                throw e10;
-            } catch (IndexOutOfBoundsException e11) {
-                throw new s0(e11);
+            } catch (s0 e6) {
+                throw e6;
+            } catch (IndexOutOfBoundsException e10) {
+                throw new s0(e10);
             }
-        } catch (IndexOutOfBoundsException e12) {
-            throw new s0(e12);
+        } catch (IndexOutOfBoundsException e11) {
+            throw new s0(e11);
         }
     }
 
@@ -2229,12 +2229,12 @@ public final class e2 implements n2 {
                             o1Var = o1Var.zza(size == 0 ? 10 : size << 1);
                             unsafe3.putObject(obj6, j10, o1Var);
                         }
-                        int e6 = e1.e(e2Var.l(i35), i38, bArr2, i30, i22, o1Var, mVar2);
+                        int e = e1.e(e2Var.l(i35), i38, bArr2, i30, i22, o1Var, mVar2);
                         obj5 = obj;
                         bArr2 = bArr;
                         i22 = i11;
                         mVar2 = mVar;
-                        i23 = e6;
+                        i23 = e;
                         unsafe4 = unsafe3;
                         i25 = i35;
                         i24 = i18;

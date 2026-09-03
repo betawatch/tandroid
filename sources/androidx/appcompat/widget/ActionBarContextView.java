@@ -16,18 +16,19 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.mediarouter.app.y;
 import b7.l0;
-import j7.s7;
+import j7.r7;
 import java.util.WeakHashMap;
-import l.a0;
-import l.l;
+import kf.k0;
+import l.k;
+import l.z;
 import m.h;
-import m.u3;
+import m.v3;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import r0.j0;
 import r0.m0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class ActionBarContextView extends ViewGroup {
     public TextView B;
@@ -63,7 +64,7 @@ public class ActionBarContextView extends ViewGroup {
     public static int g(int i10, int i11, int i12, View view, boolean z4) {
         int measuredWidth = view.getMeasuredWidth();
         int measuredHeight = view.getMeasuredHeight();
-        int d = l.d.d(i12, measuredHeight, 2, i11);
+        int d = k0.d(i12, measuredHeight, 2, i11);
         if (z4) {
             view.layout(i10 - measuredWidth, d, i10, measuredHeight + d);
         } else {
@@ -84,7 +85,7 @@ public class ActionBarContextView extends ViewGroup {
         View findViewById = this.v.findViewById(R.id.action_mode_close_button);
         this.w = findViewById;
         findViewById.setOnClickListener(new y(aVar, 6));
-        l c3 = aVar.c();
+        k c3 = aVar.c();
         h hVar = this.d;
         if (hVar != null) {
             hVar.f();
@@ -100,18 +101,18 @@ public class ActionBarContextView extends ViewGroup {
         ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(-2, -1);
         c3.b(this.d, this.b);
         h hVar3 = this.d;
-        a0 a0Var = hVar3.n;
-        if (a0Var == null) {
-            a0 a0Var2 = (a0) hVar3.d.inflate(hVar3.f, (ViewGroup) this, false);
-            hVar3.n = a0Var2;
-            a0Var2.b(hVar3.c);
+        z zVar = hVar3.n;
+        if (zVar == null) {
+            z zVar2 = (z) hVar3.d.inflate(hVar3.f, (ViewGroup) this, false);
+            hVar3.n = zVar2;
+            zVar2.b(hVar3.c);
             hVar3.e();
         }
-        a0 a0Var3 = hVar3.n;
-        if (a0Var != a0Var3) {
-            ((ActionMenuView) a0Var3).setPresenter(hVar3);
+        z zVar3 = hVar3.n;
+        if (zVar != zVar3) {
+            ((ActionMenuView) zVar3).setPresenter(hVar3);
         }
-        ActionMenuView actionMenuView = (ActionMenuView) a0Var3;
+        ActionMenuView actionMenuView = (ActionMenuView) zVar3;
         this.c = actionMenuView;
         WeakHashMap weakHashMap = j0.a;
         actionMenuView.setBackground(null);
@@ -233,9 +234,9 @@ public class ActionBarContextView extends ViewGroup {
             int i10 = configuration2.screenWidthDp;
             int i11 = configuration2.screenHeightDp;
             hVar.C = (configuration2.smallestScreenWidthDp > 600 || i10 > 600 || (i10 > 960 && i11 > 720) || (i10 > 720 && i11 > 960)) ? 5 : (i10 >= 500 || (i10 > 640 && i11 > 480) || (i10 > 480 && i11 > 640)) ? 4 : i10 >= 360 ? 3 : 2;
-            l lVar = hVar.c;
-            if (lVar != null) {
-                lVar.p(true);
+            k kVar = hVar.c;
+            if (kVar != null) {
+                kVar.p(true);
             }
         }
     }
@@ -275,7 +276,7 @@ public class ActionBarContextView extends ViewGroup {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
-        boolean a2 = u3.a(this);
+        boolean a2 = v3.a(this);
         int paddingRight = a2 ? (i12 - i10) - getPaddingRight() : getPaddingLeft();
         int paddingTop = getPaddingTop();
         int paddingTop2 = ((i13 - i11) - getPaddingTop()) - getPaddingBottom();
@@ -461,7 +462,7 @@ public class ActionBarContextView extends ViewGroup {
         }
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, f.a.d, i10, 0);
         if (obtainStyledAttributes.hasValue(0) && (resourceId = obtainStyledAttributes.getResourceId(0, 0)) != 0) {
-            drawable = s7.b(context, resourceId);
+            drawable = r7.b(context, resourceId);
         } else {
             drawable = obtainStyledAttributes.getDrawable(0);
         }

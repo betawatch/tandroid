@@ -1,15 +1,14 @@
 package s2;
 
-import androidx.biometric.f0;
 import java.nio.ByteBuffer;
-import org.telegram.ui.yh;
+import org.telegram.ui.ai;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class z extends a {
-    public static final /* synthetic */ f0 h;
-    public static final /* synthetic */ f0 n;
-    public static final /* synthetic */ f0 r;
+    public static final /* synthetic */ bb.b h;
+    public static final /* synthetic */ bb.b n;
+    public static final /* synthetic */ bb.b r;
     public int e;
     public int[] f;
 
@@ -47,21 +46,21 @@ public final class z extends a {
     }
 
     public final String toString() {
-        sf.f b10 = de.a.b(r, this, this);
+        rf.f b10 = de.a.b(r, this, this);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb = new StringBuilder("VideoMediaHeaderBox[graphicsmode=");
-        yh.x(de.a.b(h, this, this));
+        ai.x(de.a.b(h, this, this));
         sb.append(this.e);
         sb.append(";opcolor0=");
-        f0 f0Var = n;
-        yh.x(de.a.b(f0Var, this, this));
+        bb.b bVar = n;
+        ai.x(de.a.b(bVar, this, this));
         sb.append(this.f[0]);
         sb.append(";opcolor1=");
-        yh.x(de.a.b(f0Var, this, this));
+        ai.x(de.a.b(bVar, this, this));
         sb.append(this.f[1]);
         sb.append(";opcolor2=");
-        yh.x(de.a.b(f0Var, this, this));
+        ai.x(de.a.b(bVar, this, this));
         return android.support.v4.media.a.m(this.f[2], "]", sb);
     }
 }

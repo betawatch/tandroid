@@ -1,16 +1,16 @@
 package o3;
 
-import android.media.MediaDrm;
-import h5.d0;
+import android.media.DeniedByServerException;
+import android.media.NotProvisionedException;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class q {
     public static boolean a(Throwable th2) {
-        return th2 instanceof MediaDrm.MediaDrmStateException;
+        return th2 instanceof DeniedByServerException;
     }
 
-    public static int b(Throwable th2) {
-        return d0.r(d0.s(((MediaDrm.MediaDrmStateException) th2).getDiagnosticInfo()));
+    public static boolean b(Throwable th2) {
+        return th2 instanceof NotProvisionedException;
     }
 }

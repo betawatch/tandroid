@@ -4,7 +4,7 @@ import java.util.Arrays;
 import kotlin.jvm.internal.j;
 import tc.f;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class zzjy implements zzjt {
     public static final zzjy zza = new zzjy();
@@ -41,8 +41,8 @@ public final class zzjy implements zzjt {
         Class[] zzf = zzizVar.zzc().zzf(f.h(zzztVarArr).subList(2, length));
         try {
             zzizVar.zzc().zze(i10, cls.getMethod(zza4, (Class[]) Arrays.copyOf(zzf, zzf.length)));
-        } catch (Exception e6) {
-            throw new zzdm(6, 13, e6);
+        } catch (Exception e) {
+            throw new zzdm(6, 13, e);
         }
     }
 }

@@ -4,7 +4,7 @@ import j3.m2;
 import j3.n2;
 import j3.o2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class k extends h {
     public final /* synthetic */ int c;
@@ -20,8 +20,8 @@ public final class k extends h {
         switch (this.c) {
             case 0:
                 o2 o2Var = this.b;
-                int e6 = o2Var.e(i10, i11, z4);
-                return e6 == -1 ? o2Var.a(z4) : e6;
+                int e = o2Var.e(i10, i11, z4);
+                return e == -1 ? o2Var.a(z4) : e;
             default:
                 return super.e(i10, i11, z4);
         }

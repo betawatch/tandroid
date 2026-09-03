@@ -24,27 +24,26 @@ import com.google.android.gms.cast.CastDevice;
 import com.google.android.gms.cast.MediaInfo;
 import com.google.android.gms.cast.framework.ReconnectionService;
 import com.google.android.gms.cast.framework.media.MediaIntentReceiver;
-import com.google.android.gms.internal.cast.o;
-import com.google.android.gms.internal.cast.x;
+import com.google.android.gms.internal.cast.p;
+import com.google.android.gms.internal.cast.y;
 import java.util.ArrayList;
 import java.util.List;
-import oh.h4;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.tl0;
-import org.telegram.ui.web.e0;
+import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.zz;
 import q5.l;
+import q5.o;
 import q5.q;
 import r5.d0;
-import s5.p;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class h {
     public static final u5.b v = new u5.b("MediaSessionManager", null);
     public final Context a;
     public final r5.b b;
-    public final o c;
+    public final p c;
     public final r5.g d;
     public final s5.f e;
     public final ComponentName f;
@@ -53,7 +52,7 @@ public final class h {
     public final j i;
     public final f j;
     public final a7.e k;
-    public final tl0 l;
+    public final sl0 l;
     public final d0 m;
     public s5.h n;
     public CastDevice o;
@@ -64,11 +63,11 @@ public final class h {
     public PlaybackStateCompat.CustomAction t;
     public PlaybackStateCompat.CustomAction u;
 
-    public h(Context context, r5.b bVar, o oVar) {
+    public h(Context context, r5.b bVar, p pVar) {
         s5.f fVar;
         this.a = context;
         this.b = bVar;
-        this.c = oVar;
+        this.c = pVar;
         u5.b bVar2 = r5.a.l;
         m.e("Must be called from the main thread.");
         r5.a aVar = r5.a.n;
@@ -83,18 +82,18 @@ public final class h {
         this.g = !TextUtils.isEmpty(str2) ? new ComponentName(context, str2) : null;
         j jVar = new j(context);
         this.h = jVar;
-        jVar.e = new h4(this, 20);
+        jVar.e = new o3.c(this, 20);
         j jVar2 = new j(context);
         this.i = jVar2;
-        jVar2.e = new e0(this, 12);
+        jVar2.e = new zz(this, 16);
         this.k = new a7.e(Looper.getMainLooper(), 2);
         u5.b bVar3 = f.u;
         s5.a aVar3 = bVar.f;
         if (aVar3 != null && (fVar = aVar3.d) != null) {
-            p pVar = fVar.S;
-            if (pVar != null) {
-                ArrayList a2 = i.a(pVar);
-                int[] b10 = i.b(pVar);
+            s5.p pVar2 = fVar.S;
+            if (pVar2 != null) {
+                ArrayList a2 = i.a(pVar2);
+                int[] b10 = i.b(pVar2);
                 int size = a2 == null ? 0 : a2.size();
                 if (a2 == null || a2.isEmpty()) {
                     Log.e(bVar3.a, bVar3.d(s5.e.class.getSimpleName().concat(" doesn't provide any action."), new Object[0]));
@@ -114,7 +113,7 @@ public final class h {
             fVar2 = new f(context);
         }
         this.j = fVar2;
-        this.l = new tl0(this, 8);
+        this.l = new sl0(this, 8);
     }
 
     public final void a(s5.h hVar, CastDevice castDevice) {
@@ -130,7 +129,7 @@ public final class h {
         this.o = castDevice;
         Intent intent = new Intent("android.intent.action.MEDIA_BUTTON");
         intent.setComponent(componentName);
-        int i10 = x.a;
+        int i10 = y.a;
         Context context = this.a;
         PendingIntent broadcast = PendingIntent.getBroadcast(context, 0, intent, i10);
         if (aVar.f) {
@@ -169,7 +168,7 @@ public final class h {
         ke.b bVar;
         Uri uri;
         q5.c0 c0Var;
-        q5.o c3;
+        o c3;
         MediaInfo mediaInfo;
         s5.h hVar = this.n;
         if (hVar == null) {
@@ -195,17 +194,17 @@ public final class h {
                 c0 c0Var2 = this.p;
                 if (castDevice != null && hVar2 != null && c0Var2 != null && (d = hVar2.d()) != null && (lVar = d.d) != null) {
                     List list = lVar.a;
-                    q e6 = hVar2.e();
-                    if (e6 != null) {
-                        int i10 = e6.C;
+                    q e = hVar2.e();
+                    if (e != null) {
+                        int i10 = e.C;
                         if (i10 == 1 || i10 == 2 || i10 == 3) {
                             z4 = true;
                             z10 = true;
                         } else {
-                            Integer num = (Integer) e6.K.get(e6.c);
+                            Integer num = (Integer) e.K.get(e.c);
                             if (num != null) {
                                 z10 = num.intValue() > 0;
-                                z4 = num.intValue() < e6.D.size() + (-1);
+                                z4 = num.intValue() < e.D.size() + (-1);
                             }
                         }
                         boolean z11 = hVar2.f() != 2;
@@ -285,12 +284,12 @@ public final class h {
             } else if (str.equals(MediaIntentReceiver.ACTION_SKIP_PREV)) {
                 s5.h hVar = this.n;
                 if (hVar != null && hVar.h()) {
-                    q e6 = hVar.e();
-                    m.h(e6);
-                    if ((128 & e6.n) != 0 || e6.C != 0) {
+                    q e = hVar.e();
+                    m.h(e);
+                    if ((128 & e.n) != 0 || e.C != 0) {
                         return 16L;
                     }
-                    Integer num = (Integer) e6.K.get(e6.c);
+                    Integer num = (Integer) e.K.get(e.c);
                     if (num != null && num.intValue() > 0) {
                         return 16L;
                     }
@@ -301,13 +300,13 @@ public final class h {
         } else if (str.equals(MediaIntentReceiver.ACTION_SKIP_NEXT)) {
             s5.h hVar2 = this.n;
             if (hVar2 != null && hVar2.h()) {
-                q e10 = hVar2.e();
-                m.h(e10);
-                if ((64 & e10.n) != 0 || e10.C != 0) {
+                q e6 = hVar2.e();
+                m.h(e6);
+                if ((64 & e6.n) != 0 || e6.C != 0) {
                     return 32L;
                 }
-                Integer num2 = (Integer) e10.K.get(e10.c);
-                if (num2 != null && num2.intValue() < e10.D.size() - 1) {
+                Integer num2 = (Integer) e6.K.get(e6.c);
+                if (num2 != null && num2.intValue() < e6.D.size() - 1) {
                     return 32L;
                 }
             }
@@ -351,9 +350,9 @@ public final class h {
             createFromParcel.b = metadata;
             mediaMetadataCompat = createFromParcel;
         }
-        o5.i iVar = mediaMetadataCompat == null ? new o5.i(1) : new o5.i(mediaMetadataCompat);
-        iVar.w(i10 == 0 ? "android.media.metadata.DISPLAY_ICON" : "android.media.metadata.ALBUM_ART", bitmap);
-        c0Var.e(iVar.b());
+        android.support.v4.media.d dVar = mediaMetadataCompat == null ? new android.support.v4.media.d() : new android.support.v4.media.d(mediaMetadataCompat);
+        dVar.c(i10 == 0 ? "android.media.metadata.DISPLAY_ICON" : "android.media.metadata.ALBUM_ART", bitmap);
+        c0Var.e(dVar.a());
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -521,9 +520,9 @@ public final class h {
     public final void g(boolean z4) {
         if (this.b.h) {
             a7.e eVar = this.k;
-            tl0 tl0Var = this.l;
-            if (tl0Var != null) {
-                eVar.removeCallbacks(tl0Var);
+            sl0 sl0Var = this.l;
+            if (sl0Var != null) {
+                eVar.removeCallbacks(sl0Var);
             }
             Context context = this.a;
             Intent intent = new Intent(context, (Class<?>) ReconnectionService.class);
@@ -532,7 +531,7 @@ public final class h {
                 context.startService(intent);
             } catch (IllegalStateException unused) {
                 if (z4) {
-                    eVar.postDelayed(tl0Var, 1000L);
+                    eVar.postDelayed(sl0Var, 1000L);
                 }
             }
         }
@@ -587,7 +586,7 @@ public final class h {
             if (i10 == 0) {
                 b10 = f0Var.b();
             } else {
-                p pVar = fVar != null ? fVar.S : null;
+                s5.p pVar = fVar != null ? fVar.S : null;
                 s5.h hVar2 = this.n;
                 long j10 = (hVar2 == null || hVar2.j() || this.n.n()) ? 0L : 256L;
                 if (pVar != null) {
@@ -656,7 +655,7 @@ public final class h {
             } else {
                 Intent intent = new Intent();
                 intent.setComponent(componentName);
-                activity = PendingIntent.getActivity(this.a, 0, intent, x.a | TLObject.FLAG_27);
+                activity = PendingIntent.getActivity(this.a, 0, intent, y.a | TLObject.FLAG_27);
             }
             if (activity != null) {
                 vVar.a.setSessionActivity(activity);
@@ -684,16 +683,16 @@ public final class h {
             obtain.recycle();
             createFromParcel.b = metadata;
         }
-        o5.i iVar = createFromParcel == null ? new o5.i(1) : new o5.i(createFromParcel);
-        iVar.x(j11, "android.media.metadata.DURATION");
+        android.support.v4.media.d dVar2 = createFromParcel == null ? new android.support.v4.media.d() : new android.support.v4.media.d(createFromParcel);
+        dVar2.d(j11, "android.media.metadata.DURATION");
         if (string != null) {
-            iVar.A("android.media.metadata.TITLE", string);
-            iVar.A("android.media.metadata.DISPLAY_TITLE", string);
+            dVar2.e("android.media.metadata.TITLE", string);
+            dVar2.e("android.media.metadata.DISPLAY_TITLE", string);
         }
         if (string2 != null) {
-            iVar.A("android.media.metadata.DISPLAY_SUBTITLE", string2);
+            dVar2.e("android.media.metadata.DISPLAY_SUBTITLE", string2);
         }
-        c0Var.e(iVar.b());
+        c0Var.e(dVar2.a());
         Uri d = d(lVar);
         if (d != null) {
             this.h.B(d);

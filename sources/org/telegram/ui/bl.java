@@ -1,175 +1,49 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.util.SparseArray;
+import android.animation.LayoutTransition;
 import android.view.View;
-import java.util.HashSet;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class bl implements org.telegram.ui.Components.pk0 {
-    public final /* synthetic */ xn a;
+public final class bl implements LayoutTransition.TransitionListener {
+    public al a;
+    public int b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.z c;
+    public final /* synthetic */ zn d;
 
-    public bl(xn xnVar) {
-        this.a = xnVar;
+    public bl(zn znVar, org.telegram.ui.ActionBar.z zVar) {
+        this.d = znVar;
+        this.c = zVar;
     }
 
-    @Override // org.telegram.ui.Components.pk0
-    public final /* synthetic */ boolean g() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.pk0
-    public final /* synthetic */ boolean h() {
-        return false;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x008b, code lost:
-    
-        if (r5 == null) goto L26;
-     */
-    @Override // org.telegram.ui.Components.pk0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void o(View view, ng.q0 q0Var, boolean z4, boolean z10) {
-        TLRPC.Document f10;
-        boolean z11;
-        HashSet hashSet;
-        int i10;
-        int i11;
-        MessageObject messageObject;
-        TLRPC.Message message;
-        xn xnVar = this.a;
-        SparseArray[] sparseArrayArr = xnVar.T5;
-        if (xnVar.Ya == null) {
+    @Override // android.animation.LayoutTransition.TransitionListener
+    public final void endTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i10) {
+        int i11 = this.b - 1;
+        this.b = i11;
+        if (i11 != 0 || this.a == null) {
             return;
         }
-        if (xnVar.a() == xnVar.getUserConfig().getClientUserId() && !xnVar.getUserConfig().isPremium()) {
-            new fg.n1((org.telegram.ui.ActionBar.p2) xnVar, 24, true).show();
-            xnVar.z7(false);
-            return;
-        }
-        boolean contains = xnVar.Ya.getSelectedReactions().contains(q0Var);
-        HashSet hashSet2 = new HashSet();
-        int i12 = 0;
-        boolean z12 = false;
-        boolean z13 = false;
-        int i13 = 0;
-        while (i12 < sparseArrayArr.length) {
-            boolean z14 = z12;
-            boolean z15 = z13;
-            int i14 = i13;
-            int i15 = 0;
-            while (i15 < sparseArrayArr[i12].size()) {
-                MessageObject messageObject2 = (MessageObject) sparseArrayArr[i12].valueAt(i15);
-                if (messageObject2.hasValidGroupId()) {
-                    MessageObject.GroupedMessages X8 = xnVar.X8(messageObject2);
-                    if (X8 != null && !hashSet2.contains(Long.valueOf(X8.groupId))) {
-                        hashSet2.add(Long.valueOf(X8.groupId));
-                        messageObject2 = X8.findPrimaryMessageObject();
-                    }
-                    z11 = contains;
-                    hashSet = hashSet2;
-                    i10 = i12;
-                    i11 = i15;
-                    i15 = i11 + 1;
-                    hashSet2 = hashSet;
-                    contains = z11;
-                    i12 = i10;
-                }
-                if (messageObject2.hasReaction(q0Var) == contains) {
-                    hashSet = hashSet2;
-                    messageObject = messageObject2;
-                    z11 = contains;
-                    i10 = i12;
-                    i11 = i15;
-                    xnVar.ab(xnVar.q8(messageObject2.getId(), false), messageObject, null, null, 0.0f, 0.0f, q0Var, false, false, false, true);
-                    if (!z11) {
-                        i14++;
-                    }
-                } else {
-                    z11 = contains;
-                    hashSet = hashSet2;
-                    i10 = i12;
-                    i11 = i15;
-                    messageObject = messageObject2;
-                }
-                if (messageObject.messageOwner != null) {
-                    boolean z16 = xnVar.x0.K;
-                    if (z16) {
-                        MessageObject messageObject3 = (MessageObject) xnVar.l6[0].get(messageObject.getId());
-                        if (messageObject3 != null && (message = messageObject3.messageOwner) != null) {
-                            message.reactions = messageObject.messageOwner.reactions;
-                        }
-                    } else if (!z16 && xnVar.n3 != null) {
-                        z14 = true;
-                    }
-                }
-                if (xnVar.x0.K && !messageObject.hasReaction(xnVar.n3)) {
-                    MessageObject.GroupedMessages X82 = xnVar.X8(messageObject);
-                    if (X82 != null) {
-                        for (int i16 = 0; i16 < X82.messages.size(); i16++) {
-                            xnVar.getMediaDataController().removeMessageFromResults(X82.messages.get(i16).getId());
-                        }
-                    } else {
-                        xnVar.getMediaDataController().removeMessageFromResults(messageObject.getId());
-                    }
-                    uf.y0 y0Var = xnVar.J3;
-                    if (y0Var != null) {
-                        y0Var.l();
-                    }
-                    z14 = true;
-                    z15 = true;
-                }
-                i15 = i11 + 1;
-                hashSet2 = hashSet;
-                contains = z11;
-                i12 = i10;
-            }
-            i12++;
-            z12 = z14;
-            z13 = z15;
-            i13 = i14;
-        }
-        if (z12) {
-            xnVar.kc(z13);
-        }
-        xnVar.z7(true);
-        if (i13 > 0) {
-            long j10 = q0Var.g;
-            if (j10 == 0) {
-                TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(q0Var.f);
-                if (tL_availableReaction == null) {
-                    return;
-                } else {
-                    f10 = tL_availableReaction.activate_animation;
-                }
-            } else {
-                f10 = org.telegram.ui.Components.l5.f(UserConfig.selectedAccount, j10);
-            }
-            if (f10 == null) {
-                return;
-            }
-            org.telegram.ui.Components.qc.a0(xnVar).y(i13, f10, null).k(true);
-        }
+        this.c.getViewTreeObserver().removeOnPreDrawListener(this.a);
+        this.a = null;
     }
 
-    @Override // org.telegram.ui.Components.pk0
-    public final /* synthetic */ boolean t() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.pk0
-    public final /* synthetic */ void m() {
-    }
-
-    @Override // org.telegram.ui.Components.pk0
-    public final /* synthetic */ void j(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i10, boolean z4) {
+    /* JADX WARN: Type inference failed for: r1v5, types: [org.telegram.ui.al] */
+    @Override // android.animation.LayoutTransition.TransitionListener
+    public final void startTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i10) {
+        if (this.b == 0 && this.a == null) {
+            this.a = new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.al
+                @Override // android.view.ViewTreeObserver.OnPreDrawListener
+                public final boolean onPreDraw() {
+                    org.telegram.ui.ActionBar.k kVar;
+                    kVar = ((org.telegram.ui.ActionBar.p2) bl.this.d).actionBar;
+                    kVar.invalidate();
+                    return true;
+                }
+            };
+            this.c.getViewTreeObserver().addOnPreDrawListener(this.a);
+        }
+        this.b++;
     }
 }

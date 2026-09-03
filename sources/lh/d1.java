@@ -1,52 +1,32 @@
 package lh;
 
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.view.View;
+import org.telegram.ui.Components.rl0;
 import org.telegram.ui.Components.w51;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class d1 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g2 b;
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* loaded from: classes4.dex */
+public final class d1 extends w51 {
+    public final /* synthetic */ j1 K;
 
-    public /* synthetic */ d1(g2 g2Var, int i10) {
-        this.a = i10;
-        this.b = g2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d1(j1 j1Var, rl0 rl0Var, Context context, int i10, dg.r1 r1Var, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(rl0Var, context, i10, 0, true, r1Var, f6Var);
+        this.K = j1Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
-            case 0:
-                int intValue = ((Integer) obj).intValue();
-                g2 g2Var = this.b;
-                if (g2Var.p0 != intValue) {
-                    g2Var.p0 = intValue;
-                    g2Var.h0.g();
-                    g2Var.V.N(true);
-                    break;
-                }
-                break;
-            default:
-                List list = (List) obj;
-                g2 g2Var2 = this.b;
-                if (g2Var2.getContext() != null && g2Var2.isShown()) {
-                    ArrayList b10 = hg.p0.b(1, list);
-                    g2Var2.W = b10;
-                    List c3 = hg.p0.c(b10);
-                    g2Var2.W = c3;
-                    if (!((ArrayList) c3).isEmpty()) {
-                        g2Var2.W();
-                        w51 w51Var = g2Var2.V;
-                        if (w51Var != null) {
-                            w51Var.N(true);
-                            break;
-                        }
-                    }
-                }
-                break;
+    @Override // org.telegram.ui.Components.w51, f2.o0
+    public final void v(f2.l1 l1Var, int i10) {
+        super.v(l1Var, i10);
+        View view = l1Var.a;
+        if (view instanceof h1) {
+            h1 h1Var = (h1) view;
+            f1 f1Var = h1Var.v;
+            boolean R = this.K.R(f1Var);
+            h1Var.c.f(R, false);
+            h1Var.r.a(R, false);
+            h1Var.setOnClickListener(new cg.n(20, this, f1Var));
         }
     }
 }

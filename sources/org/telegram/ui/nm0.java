@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class nm0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ fn0 a;
@@ -28,9 +28,9 @@ public final class nm0 extends org.telegram.ui.ActionBar.j {
         this.a = fn0Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:74:0x0216  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x021d  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x0226  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x0215  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x021c  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x0225  */
     @Override // org.telegram.ui.ActionBar.j
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -61,7 +61,7 @@ public final class nm0 extends org.telegram.ui.ActionBar.j {
             if (fn0Var.getParentActivity() == null) {
                 return;
             }
-            org.telegram.ui.Components.g90 g90Var = new org.telegram.ui.Components.g90(fn0Var.getParentActivity(), null);
+            org.telegram.ui.Components.f90 f90Var = new org.telegram.ui.Components.f90(fn0Var.getParentActivity(), null);
             String string = LocaleController.getString(R.string.PassportInfo2);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string);
             int indexOf = string.indexOf(42);
@@ -71,15 +71,15 @@ public final class nm0 extends org.telegram.ui.ActionBar.j {
                 spannableStringBuilder.replace(indexOf, indexOf + 1, (CharSequence) "");
                 spannableStringBuilder.setSpan(new org.telegram.ui.Components.h4(LocaleController.getString(R.string.PassportInfoUrl), 4, this), indexOf, lastIndexOf - 1, 33);
             }
-            g90Var.setText(spannableStringBuilder);
-            g90Var.setTextSize(1, 16.0f);
-            g90Var.setLinkTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.k5, false));
-            g90Var.setHighlightColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.l5, false));
-            g90Var.setPadding(AndroidUtilities.dp(23.0f), 0, AndroidUtilities.dp(23.0f), 0);
-            g90Var.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
-            g90Var.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.j5, false));
+            f90Var.setText(spannableStringBuilder);
+            f90Var.setTextSize(1, 16.0f);
+            f90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.k5, false));
+            f90Var.setHighlightColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.l5, false));
+            f90Var.setPadding(AndroidUtilities.dp(23.0f), 0, AndroidUtilities.dp(23.0f), 0);
+            f90Var.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
+            f90Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.j5, false));
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(fn0Var.getParentActivity());
-            alertDialog$Builder.n(g90Var);
+            alertDialog$Builder.n(f90Var);
             alertDialog$Builder.a.O = LocaleController.getString(R.string.PassportInfoTitle);
             alertDialog$Builder.h(LocaleController.getString(R.string.Close), null);
             fn0Var.showDialog(alertDialog$Builder.a);
@@ -95,7 +95,7 @@ public final class nm0 extends org.telegram.ui.ActionBar.j {
                 return;
             }
             gl0 gl0Var = new gl0(this, 3);
-            n7.qa qaVar = new n7.qa(this, gl0Var, false, 17);
+            n7.qa qaVar = new n7.qa(17, this, gl0Var);
             if (i15 == 4) {
                 if (fn0Var.f) {
                     obj = fn0Var.a1;
@@ -164,7 +164,7 @@ public final class nm0 extends org.telegram.ui.ActionBar.j {
                 tL_emailVerificationCode.code = fn0Var.V[0].getText().toString();
                 verifyemail.verification = tL_emailVerificationCode;
                 i11 = ((org.telegram.ui.ActionBar.p2) fn0Var).currentAccount;
-                int sendRequest = ConnectionsManager.getInstance(i11).sendRequest(verifyemail, new lh.b1(this, gl0Var, qaVar, verifyemail, 13));
+                int sendRequest = ConnectionsManager.getInstance(i11).sendRequest(verifyemail, new kh.b1(this, gl0Var, qaVar, verifyemail, 13));
                 i12 = ((org.telegram.ui.ActionBar.p2) fn0Var).currentAccount;
                 ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i12);
                 i13 = ((org.telegram.ui.ActionBar.p2) fn0Var).classGuid;
@@ -232,8 +232,8 @@ public final class nm0 extends org.telegram.ui.ActionBar.j {
                                 org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
                                 d2Var.Q = formatString;
                                 d2Var.O = LocaleController.getString(R.string.AppName);
-                                alertDialog$Builder.k(LocaleController.getString(R.string.Done), new hg.d0(this, translitString, translitString2, translitString3, gl0Var, qaVar, 3));
-                                alertDialog$Builder.h(LocaleController.getString(R.string.Edit), new hg.m2(this, i12, 15));
+                                alertDialog$Builder.k(LocaleController.getString(R.string.Done), new gg.d0(this, translitString, translitString2, translitString3, gl0Var, qaVar, 3));
+                                alertDialog$Builder.h(LocaleController.getString(R.string.Edit), new gg.m2(this, i12, 15));
                                 fn0Var.showDialog(d2Var);
                             }
                             z4 = true;

@@ -1,77 +1,142 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
+import android.view.KeyEvent;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class ja extends FrameLayout {
-    public final EditTextBoldCursor a;
-    public final TextView b;
-    public final /* synthetic */ pa c;
+public final /* synthetic */ class ja implements TextView.OnEditorActionListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ja(pa paVar, Activity activity) {
-        super(activity);
-        this.c = paVar;
-        LinearLayout linearLayout = new LinearLayout(getContext());
-        linearLayout.setOrientation(0);
-        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(getContext());
-        this.a = editTextBoldCursor;
-        editTextBoldCursor.setTextSize(1, 17.0f);
-        editTextBoldCursor.setHintTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.H6, false));
-        int i10 = org.telegram.ui.ActionBar.k6.G6;
-        editTextBoldCursor.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, i10, false));
-        editTextBoldCursor.setBackgroundDrawable(null);
-        editTextBoldCursor.setMaxLines(1);
-        editTextBoldCursor.setLines(1);
-        editTextBoldCursor.setPadding(0, 0, 0, 0);
-        editTextBoldCursor.setSingleLine(true);
-        editTextBoldCursor.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        editTextBoldCursor.setInputType(180224);
-        editTextBoldCursor.setImeOptions(6);
-        editTextBoldCursor.setHint(LocaleController.getString(R.string.UsernameLinkPlaceholder));
-        editTextBoldCursor.setCursorColor(org.telegram.ui.ActionBar.k6.w0(null, i10, false));
-        editTextBoldCursor.setCursorSize(AndroidUtilities.dp(19.0f));
-        editTextBoldCursor.setCursorWidth(1.5f);
-        editTextBoldCursor.setOnEditorActionListener(new ha(this, 0));
-        String str = paVar.r;
-        long j10 = paVar.x;
-        editTextBoldCursor.setText(str);
-        editTextBoldCursor.addTextChangedListener(new ia(this));
-        if (j10 != 0) {
-            editTextBoldCursor.setEnabled(false);
-        }
-        TextView textView = new TextView(getContext());
-        this.b = textView;
-        textView.setMaxLines(1);
-        textView.setLines(1);
-        textView.setPadding(0, 0, 0, 0);
-        textView.setSingleLine(true);
-        textView.setText(paVar.getMessagesController().linkPrefix + "/");
-        textView.setTextSize(1, 17.0f);
-        textView.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, i10, false));
-        textView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        textView.setTranslationY(-AndroidUtilities.dp(3.0f));
-        linearLayout.addView(textView, k7.c6.p(-2, -2, 0.0f, 16, 21, 15, 0, 15));
-        linearLayout.addView(editTextBoldCursor, k7.c6.p(-2, -2, 1.0f, 16, 0, 15, 21, 15));
-        addView(linearLayout, k7.c6.e(-1, -1, 48));
-        if (j10 != 0) {
-            editTextBoldCursor.setAlpha(0.6f);
-            textView.setAlpha(0.6f);
-        }
+    public /* synthetic */ ja(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
+        org.telegram.ui.ActionBar.w0 w0Var;
+        org.telegram.ui.Cells.s1 s1Var;
+        org.telegram.ui.ActionBar.w0 w0Var2;
+        switch (this.a) {
+            case 0:
+                la laVar = (la) this.b;
+                if (i10 != 6 || (w0Var = laVar.c.a) == null) {
+                    return false;
+                }
+                w0Var.performClick();
+                return true;
+            case 1:
+                zn znVar = (zn) this.b;
+                if (i10 == 6) {
+                    dh.f fVar = znVar.zc;
+                    if (fVar != null && (s1Var = fVar.n) != null) {
+                        znVar.ua(s1Var);
+                        return true;
+                    }
+                } else {
+                    znVar.getClass();
+                }
+                return false;
+            case 2:
+                ro roVar = (ro) this.b;
+                if (i10 != 6 || (w0Var2 = roVar.a) == null) {
+                    return false;
+                }
+                w0Var2.performClick();
+                return true;
+            case 3:
+                as asVar = (as) this.b;
+                if (i10 == 5) {
+                    asVar.a();
+                    return true;
+                }
+                asVar.getClass();
+                return false;
+            case 4:
+                return i10 == 6 && ((a70) this.b).o0();
+            case 5:
+                je0 je0Var = (je0) this.b;
+                if (i10 == 5) {
+                    je0Var.h(null);
+                    return true;
+                }
+                je0Var.getClass();
+                return false;
+            case 6:
+                re0 re0Var = (re0) this.b;
+                if (i10 == 5) {
+                    re0Var.h(null);
+                    return true;
+                }
+                re0Var.getClass();
+                return false;
+            case 7:
+                ff0 ff0Var = (ff0) this.b;
+                if (i10 == 5) {
+                    ff0Var.h(null);
+                    return true;
+                }
+                ff0Var.getClass();
+                return false;
+            case 8:
+                PasscodeActivity passcodeActivity = (PasscodeActivity) this.b;
+                int i11 = passcodeActivity.B;
+                if (i11 == 0) {
+                    passcodeActivity.h0();
+                    return true;
+                }
+                if (i11 != 1) {
+                    return false;
+                }
+                passcodeActivity.g0();
+                return true;
+            case 9:
+                bn0 bn0Var = (bn0) this.b;
+                if (i10 == 5) {
+                    bn0Var.h(null);
+                    return true;
+                }
+                bn0Var.getClass();
+                return false;
+            case 10:
+                d21 d21Var = (d21) this.b;
+                d21Var.getClass();
+                if (i10 != 5) {
+                    if (i10 != 6) {
+                        return false;
+                    }
+                    d21Var.finishFragment();
+                    return true;
+                }
+                int intValue = ((Integer) textView.getTag()).intValue() + 1;
+                EditTextBoldCursor[] editTextBoldCursorArr = d21Var.a;
+                if (intValue >= editTextBoldCursorArr.length) {
+                    return true;
+                }
+                editTextBoldCursorArr[intValue].requestFocus();
+                return true;
+            case 11:
+                i71 i71Var = (i71) this.b;
+                if (keyEvent == null) {
+                    return false;
+                }
+                if ((keyEvent.getAction() != 1 || keyEvent.getKeyCode() != 84) && (keyEvent.getAction() != 0 || keyEvent.getKeyCode() != 66)) {
+                    return false;
+                }
+                AndroidUtilities.hideKeyboard(i71Var.Z);
+                return false;
+            default:
+                TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.b;
+                twoStepVerificationActivity.getClass();
+                if (i10 != 5 && i10 != 6) {
+                    return false;
+                }
+                twoStepVerificationActivity.t0();
+                return true;
+        }
     }
 }

@@ -17,7 +17,7 @@ import android.util.Log;
 import j7.i8;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class d extends Drawable implements Drawable.Callback, c, b {
     public static final PorterDuff.Mode h = PorterDuff.Mode.SRC_IN;
@@ -33,8 +33,8 @@ public final class d extends Drawable implements Drawable.Callback, c, b {
         if (n == null) {
             try {
                 n = Drawable.class.getDeclaredMethod("isProjected", null);
-            } catch (Exception e6) {
-                Log.w("WrappedDrawableApi21", "Failed to retrieve Drawable#isProjected() method", e6);
+            } catch (Exception e) {
+                Log.w("WrappedDrawableApi21", "Failed to retrieve Drawable#isProjected() method", e);
             }
         }
     }
@@ -222,8 +222,8 @@ public final class d extends Drawable implements Drawable.Callback, c, b {
         }
         try {
             return ((Boolean) method.invoke(drawable, null)).booleanValue();
-        } catch (Exception e6) {
-            Log.w("WrappedDrawableApi21", "Error calling Drawable#isProjected() method", e6);
+        } catch (Exception e) {
+            Log.w("WrappedDrawableApi21", "Error calling Drawable#isProjected() method", e);
             return false;
         }
     }

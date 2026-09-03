@@ -1,274 +1,201 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import java.util.ArrayList;
+import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.XiaomiUtilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.UndoView;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.CheckBox;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tv implements org.telegram.ui.Components.pq0, org.telegram.ui.Components.jl0, org.telegram.ui.Components.kl0, k10, org.telegram.ui.ActionBar.c2, r0.o, org.telegram.ui.Components.yk0 {
+public final /* synthetic */ class tv implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ py b;
+    public final /* synthetic */ qy b;
 
-    public /* synthetic */ tv(py pyVar, int i10) {
+    public /* synthetic */ tv(qy qyVar, int i10) {
         this.a = i10;
-        this.b = pyVar;
+        this.b = qyVar;
     }
 
-    @Override // r0.o
-    public r0.m1 M0(View view, r0.m1 m1Var) {
-        py pyVar = this.b;
-        pyVar.v.i(m1Var);
-        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(m1Var, false);
-        pyVar.c4 = defaultWindowInsets.b;
-        pyVar.d4 = defaultWindowInsets.d;
-        int i10 = m1Var.a.f(8).d;
-        if (pyVar.e4 != i10) {
-            pyVar.e4 = i10;
-            pyVar.fragmentView.requestLayout();
-        }
-        pyVar.C0.setPadding(0, pyVar.c4, 0, 0);
-        pyVar.X4();
-        for (UndoView undoView : pyVar.v0) {
-            if (undoView != null) {
-                int i11 = pyVar.d4 + pyVar.f4;
-                ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) undoView.getLayoutParams();
-                if (marginLayoutParams != null && marginLayoutParams.bottomMargin != i11) {
-                    marginLayoutParams.bottomMargin = i11;
-                    undoView.setLayoutParams(marginLayoutParams);
-                }
-            }
-        }
-        kx kxVar = pyVar.C3;
-        if (kxVar != null) {
-            r0.j0.b(kxVar, m1Var);
-        }
-        return r0.m1.b;
-    }
-
-    @Override // org.telegram.ui.Components.jl0
-    public /* synthetic */ boolean Y0(View view) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        ArrayList arrayList;
+        ix ixVar;
+        ix ixVar2;
         switch (this.a) {
-        }
-        return false;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0117 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x00fa A[SYNTHETIC] */
-    @Override // org.telegram.ui.Components.jl0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void c(float f10, float f11, int i10, View view) {
-        TLRPC.Chat chat;
-        switch (this.a) {
-            case 1:
-                py pyVar = this.b;
-                org.telegram.ui.Components.h51 G = pyVar.z0.g0.G(i10);
-                Object obj = G != null ? G.G : null;
-                if (!(obj instanceof TLRPC.Chat)) {
-                    if (obj instanceof MessageObject) {
-                        MessageObject messageObject = (MessageObject) obj;
-                        Bundle bundle = new Bundle();
-                        if (messageObject.getDialogId() >= 0) {
-                            bundle.putLong("user_id", messageObject.getDialogId());
-                        } else {
-                            bundle.putLong("chat_id", -messageObject.getDialogId());
-                        }
-                        bundle.putInt("message_id", messageObject.getId());
-                        xn xnVar = new xn(bundle);
-                        py.d4(xnVar, messageObject);
-                        pyVar.presentFragment(xnVar);
+            case 0:
+                qy qyVar = this.b;
+                if (qyVar.a4() && (arrayList = qyVar.A2) != null && !arrayList.isEmpty() && qyVar.getParentActivity() != null) {
+                    int i10 = 0;
+                    MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) qyVar.A2.get(0);
+                    bx bxVar = qyVar.y1;
+                    CharSequence fieldText = bxVar != null ? bxVar.getFieldText() : photoEntry.caption;
+                    ArrayList arrayList2 = qyVar.A2;
+                    int size = arrayList2.size();
+                    while (i10 < size) {
+                        Object obj = arrayList2.get(i10);
+                        i10++;
+                        ((MediaController.PhotoEntry) obj).caption = fieldText;
+                    }
+                    PhotoViewer.t1().K2(null, qyVar, qyVar.getResourceProvider());
+                    PhotoViewer.t1().m7 = true;
+                    PhotoViewer.t1().n7 = fieldText;
+                    ArrayList arrayList3 = new ArrayList(qyVar.A2);
+                    boolean[] zArr = new boolean[qyVar.A2.size()];
+                    Arrays.fill(zArr, true);
+                    PhotoViewer.t1().f2(arrayList3, 0, 0, false, new wx(qyVar, zArr), null);
+                    PhotoViewer t12 = PhotoViewer.t1();
+                    t12.c4 = true;
+                    CheckBox checkBox = t12.K0;
+                    if (checkBox != null) {
+                        checkBox.setVisibility(8);
+                    }
+                    PhotoViewer.CounterView counterView = t12.L0;
+                    if (counterView != null) {
+                        counterView.setVisibility(8);
                         break;
                     }
-                } else {
-                    Bundle bundle2 = new Bundle();
-                    bundle2.putLong("chat_id", ((TLRPC.Chat) obj).id);
-                    xn xnVar2 = new xn(bundle2);
-                    org.telegram.ui.Components.yn0 yn0Var = pyVar.z0.g0;
-                    yn0Var.getClass();
-                    ArrayList arrayList = new ArrayList();
-                    while (true) {
-                        i10++;
-                        if (i10 >= yn0Var.x.size()) {
-                            xnVar2.cb = arrayList;
-                            pyVar.presentFragment(xnVar2);
-                            break;
-                        } else {
-                            org.telegram.ui.Components.h51 G2 = yn0Var.G(i10);
-                            if (G2 != null) {
-                                Object obj2 = G2.G;
-                                if (obj2 instanceof TLRPC.Chat) {
-                                    chat = (TLRPC.Chat) obj2;
-                                    if (chat == null) {
-                                        arrayList.add(chat);
-                                    }
-                                }
-                            }
-                            chat = null;
-                            if (chat == null) {
-                            }
-                        }
-                    }
                 }
+                break;
+            case 1:
+                qy qyVar2 = this.b;
+                qyVar2.O4(true, false, true, false);
+                qyVar2.V.b(true);
+                AndroidUtilities.runOnUIThread(new ov(qyVar2, 3), 100L);
                 break;
             case 2:
-                py pyVar2 = this.b;
-                org.telegram.ui.Components.h51 G3 = pyVar2.z0.l0.G(i10);
-                Object obj3 = G3 != null ? G3.G : null;
-                if (!(obj3 instanceof TLRPC.User)) {
-                    if (obj3 instanceof MessageObject) {
-                        MessageObject messageObject2 = (MessageObject) obj3;
-                        Bundle bundle3 = new Bundle();
-                        if (messageObject2.getDialogId() >= 0) {
-                            bundle3.putLong("user_id", messageObject2.getDialogId());
-                        } else {
-                            bundle3.putLong("chat_id", -messageObject2.getDialogId());
-                        }
-                        bundle3.putInt("message_id", messageObject2.getId());
-                        xn xnVar3 = new xn(bundle3);
-                        py.d4(xnVar3, messageObject2);
-                        pyVar2.presentFragment(xnVar3);
-                        break;
-                    }
+                qy qyVar3 = this.b;
+                if (qyVar3.D0 && (ixVar = qyVar3.B0) != null && !ixVar.g()) {
+                    qyVar3.x4(true, true);
+                    break;
                 } else {
-                    pyVar2.presentFragment(ProfileActivity.m4(((TLRPC.User) obj3).id));
+                    qyVar3.P4();
                     break;
                 }
                 break;
-            default:
-                py pyVar3 = this.b;
-                Object J = pyVar3.z0.V.J(i10);
-                if (!(J instanceof TLRPC.TL_sponsoredPeer)) {
-                    if (view instanceof org.telegram.ui.Cells.h6) {
-                        org.telegram.ui.Cells.h6 h6Var = (org.telegram.ui.Cells.h6) view;
-                        if (h6Var.k0) {
-                            pyVar3.N4(h6Var.getDialogId(), view);
-                            break;
-                        }
-                    }
-                    if (pyVar3.O0 != 10) {
-                        pyVar3.n4(view, i10, pyVar3.z0.V);
-                        break;
-                    } else {
-                        yx yxVar = pyVar3.z0;
-                        mh.d1 d1Var = yxVar.S;
-                        pyVar3.o4(view, i10, f10, yxVar.V);
-                        break;
-                    }
+            case 3:
+                qy qyVar4 = this.b;
+                if (qyVar4.D0 && (ixVar2 = qyVar4.B0) != null && !ixVar2.g()) {
+                    qyVar4.x4(true, true);
+                    break;
                 } else {
-                    TLRPC.TL_sponsoredPeer tL_sponsoredPeer = (TLRPC.TL_sponsoredPeer) J;
-                    pyVar3.presentFragment(xn.R9(DialogObject.getPeerDialogId(tL_sponsoredPeer.peer)));
-                    org.telegram.ui.Components.wn0 wn0Var = pyVar3.z0.V;
-                    wn0Var.getClass();
-                    TLRPC.TL_messages_clickSponsoredMessage tL_messages_clickSponsoredMessage = new TLRPC.TL_messages_clickSponsoredMessage();
-                    tL_messages_clickSponsoredMessage.random_id = tL_sponsoredPeer.random_id;
-                    ConnectionsManager.getInstance(wn0Var.p0).sendRequest(tL_messages_clickSponsoredMessage, null);
+                    qyVar4.P4();
                     break;
                 }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.yk0
-    public void d() {
-        py pyVar = this.b;
-        pyVar.N = true;
-        pyVar.fragmentView.invalidate();
-    }
-
-    @Override // org.telegram.ui.Components.kl0
-    public boolean f(int i10, View view) {
-        py.n0(this.b, i10);
-        return false;
-    }
-
-    public void g(int i10) {
-        ax axVar = this.b.y1;
-        if (axVar == null) {
-            return;
-        }
-        if (i10 == 0) {
-            axVar.q0(true);
-        } else {
-            axVar.x1(true, false);
-        }
-    }
-
-    public void h(boolean z4, ArrayList arrayList, ArrayList arrayList2, boolean z10) {
-        this.b.W4(z4, arrayList, arrayList2, z10, true);
-    }
-
-    @Override // org.telegram.ui.ActionBar.c2
-    public void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
-        switch (this.a) {
+                break;
+            case 4:
+                qy qyVar5 = this.b;
+                qyVar5.getClass();
+                Bundle bundle = new Bundle();
+                bundle.putLong("community_id", qyVar5.U2);
+                qyVar5.presentFragment(new sh.q(bundle));
+                break;
+            case 5:
+                qy qyVar6 = this.b;
+                ArrayList arrayList4 = qyVar6.F2;
+                if (qyVar6.z2 != null && !arrayList4.isEmpty()) {
+                    ArrayList arrayList5 = new ArrayList();
+                    for (int i11 = 0; i11 < arrayList4.size(); i11++) {
+                        arrayList5.add(MessagesStorage.TopicKey.of(((Long) arrayList4.get(i11)).longValue(), 0L));
+                    }
+                    qyVar6.z2.w(qyVar6, arrayList5, qyVar6.y1.getFieldText(), false, qyVar6.G2, qyVar6.H2, qyVar6.I2, null);
+                    break;
+                }
+                break;
             case 6:
-                py.f0(this.b);
+                this.b.b4(true);
                 break;
             case 7:
-            default:
-                py pyVar = this.b;
-                pyVar.getMessagesController().hidePromoDialog();
-                pyVar.b4(false);
+                this.b.finishPreviewFragment();
                 break;
             case 8:
-                py pyVar2 = this.b;
-                pyVar2.getClass();
-                Intent permissionManagerIntent = XiaomiUtilities.getPermissionManagerIntent();
-                if (permissionManagerIntent != null) {
-                    try {
-                        try {
-                            pyVar2.getParentActivity().startActivity(permissionManagerIntent);
-                            break;
-                        } catch (Exception unused) {
-                            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                            intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-                            pyVar2.getParentActivity().startActivity(intent);
-                            return;
-                        }
-                    } catch (Exception e6) {
-                        FileLog.e(e6);
-                        return;
-                    }
-                }
+                qy qyVar7 = this.b;
+                qyVar7.w0.setIsEditing(false);
+                qyVar7.I4(false);
                 break;
             case 9:
-                py pyVar3 = this.b;
-                pyVar3.getClass();
-                Intent intent2 = new Intent("android.settings.MANAGE_APP_USE_FULL_SCREEN_INTENT");
-                intent2.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-                try {
-                    pyVar3.getParentActivity().startActivity(intent2);
-                    break;
-                } catch (Exception e10) {
-                    FileLog.e(e10);
-                    return;
-                }
+                qy qyVar8 = this.b;
+                qyVar8.getClass();
+                qyVar8.showDialog(new eg.o1((org.telegram.ui.ActionBar.p2) qyVar8, 2, true));
+                break;
+            case 10:
+                qy qyVar9 = this.b;
+                qyVar9.getContactsController().loadGlobalPrivacySetting();
+                qyVar9.K4();
+                break;
+            case 11:
+                this.b.p4(view);
+                break;
+            case 12:
+                qy.s0(this.b);
+                break;
+            case 13:
+                qy.J0(this.b);
+                break;
+            case 14:
+                qy.u0(this.b);
+                break;
+            case 15:
+                qy qyVar10 = this.b;
+                qyVar10.showDialog(org.telegram.ui.Components.z4.m(qyVar10.getParentActivity(), LocaleController.getString(R.string.EditProfileBirthdayTitle), LocaleController.getString(R.string.EditProfileBirthdayButton), null, new wv(qyVar10, 1), new ov(qyVar10, 17), false, false, qyVar10.getResourceProvider()).a);
+                break;
+            case 16:
+                qy.C0(this.b);
+                break;
+            case 17:
+                qy.z0(this.b);
+                break;
+            case 18:
+                PremiumPreviewFragment premiumPreviewFragment = new PremiumPreviewFragment(0, "dialogs_hint");
+                premiumPreviewFragment.g0 = true;
+                qy qyVar11 = this.b;
+                qyVar11.presentFragment(premiumPreviewFragment);
+                AndroidUtilities.runOnUIThread(new ov(qyVar11, 21), 250L);
+                break;
+            case 19:
+                qy.Z(this.b);
+                break;
+            case 20:
+                PremiumPreviewFragment premiumPreviewFragment2 = new PremiumPreviewFragment(0, "dialogs_hint");
+                premiumPreviewFragment2.g0 = true;
+                qy qyVar12 = this.b;
+                qyVar12.presentFragment(premiumPreviewFragment2);
+                AndroidUtilities.runOnUIThread(new ov(qyVar12, 15), 250L);
+                break;
+            case 21:
+                d7 d7Var = new d7();
+                qy qyVar13 = this.b;
+                qyVar13.presentFragment(d7Var);
+                AndroidUtilities.runOnUIThread(new fw(qyVar13, 10), 250L);
+                break;
+            case 22:
+                qy.D0(this.b);
+                break;
+            case 23:
+                qy.Y(this.b);
+                break;
+            case 24:
+                qy.l0(this.b);
+                break;
+            case 25:
+                qy qyVar14 = this.b;
+                ze.d.s(qyVar14.getParentActivity(), qyVar14.getMessagesController().premiumManageSubscriptionUrl);
+                break;
+            case 26:
+                qy.k0(this.b);
+                break;
+            case 27:
+                qy.y0(this.b);
+                break;
+            default:
+                qy.X(this.b);
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.jl0
-    public /* synthetic */ void r0(View view, float f10, float f11) {
-        int i10 = this.a;
-    }
-
-    private final /* synthetic */ void a(View view, float f10, float f11) {
-    }
-
-    private final /* synthetic */ void b(View view, float f10, float f11) {
-    }
-
-    private final /* synthetic */ void e(View view, float f10, float f11) {
     }
 }

@@ -1,6 +1,6 @@
 package j3;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class e implements b2 {
     public final int b;
@@ -15,7 +15,7 @@ public abstract class e implements b2 {
     public boolean x;
     public f5.p y;
     public final Object a = new Object();
-    public final f7.b c = new f7.b((char) 0, 16);
+    public final f7.b c = new f7.b((char) 0, 17);
     public long v = Long.MIN_VALUE;
 
     public e(int i10) {
@@ -27,7 +27,7 @@ public abstract class e implements b2 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final n a(Throwable th2, n0 n0Var, boolean z4, int i10) {
+    public final n c(Throwable th2, n0 n0Var, boolean z4, int i10) {
         int i11;
         if (n0Var != null && !this.x) {
             this.x = true;
@@ -66,18 +66,18 @@ public abstract class e implements b2 {
     public final int s(f7.b bVar, n3.i iVar, int i10) {
         o4.l0 l0Var = this.n;
         l0Var.getClass();
-        int p10 = l0Var.p(bVar, iVar, i10);
-        if (p10 == -4) {
-            if (iVar.e(4)) {
+        int f10 = l0Var.f(bVar, iVar, i10);
+        if (f10 == -4) {
+            if (iVar.d(4)) {
                 this.v = Long.MIN_VALUE;
                 return this.w ? -4 : -3;
             }
             long j10 = iVar.f + this.s;
             iVar.f = j10;
             this.v = Math.max(this.v, j10);
-            return p10;
+            return f10;
         }
-        if (p10 == -5) {
+        if (f10 == -5) {
             n0 n0Var = (n0) bVar.c;
             n0Var.getClass();
             long j11 = n0Var.G;
@@ -87,7 +87,7 @@ public abstract class e implements b2 {
                 bVar.c = new n0(a2);
             }
         }
-        return p10;
+        return f10;
     }
 
     public abstract void t(long j10, long j11);
@@ -105,7 +105,7 @@ public abstract class e implements b2 {
 
     public final void v() {
         h5.a.i(this.h == 0);
-        this.c.l();
+        this.c.m();
         o();
     }
 

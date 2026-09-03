@@ -3,9 +3,9 @@ package l7;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class q extends com.google.android.gms.internal.cast.t0 implements ListIterator {
+public final class q extends com.google.android.gms.internal.cast.u0 implements ListIterator {
     public final int b;
     public int c;
     public final s d;
@@ -15,7 +15,7 @@ public final class q extends com.google.android.gms.internal.cast.t0 implements 
         super(7);
         int size = sVar.size();
         if (i10 < 0 || i10 > size) {
-            throw new IndexOutOfBoundsException(k7.k.c(i10, size, "index"));
+            throw new IndexOutOfBoundsException(k7.j.c(i10, size, "index"));
         }
         this.b = size;
         this.c = i10;

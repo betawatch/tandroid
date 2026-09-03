@@ -5,7 +5,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f21 implements Runnable {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class f21 implements Runnable {
             case 1:
                 u21 u21Var = this.b;
                 u21Var.d0(0, u21Var.G, true);
-                org.telegram.ui.Components.hj0 animatedDrawable = u21Var.C.getAnimatedDrawable();
+                org.telegram.ui.Components.gj0 animatedDrawable = u21Var.C.getAnimatedDrawable();
                 if (u21Var.F == null && animatedDrawable != null) {
                     u21Var.F = Bitmap.createBitmap(animatedDrawable.b, animatedDrawable.c, Bitmap.Config.ARGB_8888);
                     animatedDrawable.b();
@@ -42,7 +42,7 @@ public final /* synthetic */ class f21 implements Runnable {
             case 2:
                 int i10 = R.raw.default_pattern;
                 u21 u21Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new h21(0, u21Var2, SvgHelper.getBitmap(i10, u21Var2.w.getWidth(), u21Var2.w.getHeight(), -16777216)));
+                AndroidUtilities.runOnUIThread(new b11(1, u21Var2, SvgHelper.getBitmap(i10, u21Var2.w.getWidth(), u21Var2.w.getHeight(), -16777216)));
                 break;
             case 3:
                 u21 u21Var3 = this.b;

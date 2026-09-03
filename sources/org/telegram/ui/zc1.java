@@ -15,7 +15,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class zc1 extends View {
     public org.telegram.ui.Components.k01 a;
@@ -32,8 +32,8 @@ public final class zc1 extends View {
     public zc1(Context context, jd1 jd1Var) {
         super(context);
         this.r = jd1Var;
-        this.d = new org.telegram.ui.Components.z5(this, 0L, 350L, org.telegram.ui.Components.pr.h);
-        org.telegram.ui.Cells.z Y = org.telegram.ui.ActionBar.k6.Y(285212671, 8, 8);
+        this.d = new org.telegram.ui.Components.z5(this, 0L, 350L, org.telegram.ui.Components.mr.h);
+        org.telegram.ui.Cells.z Y = org.telegram.ui.ActionBar.j6.Y(285212671, 8, 8);
         this.e = Y;
         this.h = new Paint(1);
         this.n = new Paint(1);
@@ -75,13 +75,13 @@ public final class zc1 extends View {
         rectF.set(0.0f, 0.0f, getWidth(), getHeight());
         jd1 jd1Var = this.r;
         yc1 yc1Var = jd1Var.u0;
-        ic1 ic1Var = jd1Var.a;
-        org.telegram.ui.ActionBar.k6.s(this, yc1Var, ic1Var);
-        Paint F = ic1Var.F("paintChatActionBackground");
-        ColorFilter colorFilter = F.getColorFilter();
-        F.setColorFilter(this.f);
-        canvas.drawRoundRect(rectF, height, height, F);
-        F.setColorFilter(colorFilter);
+        jc1 jc1Var = jd1Var.a;
+        org.telegram.ui.ActionBar.j6.s(this, yc1Var, jc1Var);
+        Paint G = jc1Var.G("paintChatActionBackground");
+        ColorFilter colorFilter = G.getColorFilter();
+        G.setColorFilter(this.f);
+        canvas.drawRoundRect(rectF, height, height, G);
+        G.setColorFilter(colorFilter);
         if (jd1Var.J1) {
             float f10 = jd1Var.k1;
             if (f10 > 0.0f) {
@@ -94,18 +94,18 @@ public final class zc1 extends View {
         Paint paint2 = this.h;
         paint2.setColor(520093695);
         canvas.drawRoundRect(rectF, height, height, paint2);
-        float e6 = this.d.e(this.c);
+        float e = this.d.e(this.c);
         org.telegram.ui.Components.k01 k01Var = this.a;
         if (k01Var != null) {
             k01Var.p = getWidth() - AndroidUtilities.dp(14.0f);
-            k01Var.c((getWidth() - this.a.l()) / 2.0f, ((AndroidUtilities.dp(24.0f) * 0.0f) + (getHeight() / 2.0f)) - (AndroidUtilities.dp(7.0f) * e6), 1.0f, -1, canvas);
+            k01Var.c((getWidth() - this.a.l()) / 2.0f, ((AndroidUtilities.dp(24.0f) * 0.0f) + (getHeight() / 2.0f)) - (AndroidUtilities.dp(7.0f) * e), 1.0f, -1, canvas);
         }
         if (this.b != null) {
             canvas.save();
-            canvas.scale(e6, e6, getWidth() / 2.0f, (getHeight() / 2.0f) + AndroidUtilities.dp(11.0f));
+            canvas.scale(e, e, getWidth() / 2.0f, (getHeight() / 2.0f) + AndroidUtilities.dp(11.0f));
             org.telegram.ui.Components.k01 k01Var2 = this.b;
             k01Var2.p = getWidth() - AndroidUtilities.dp(14.0f);
-            k01Var2.c((getWidth() - this.b.l()) / 2.0f, AndroidUtilities.dp(11.0f) + (0.0f * AndroidUtilities.dp(24.0f)) + (getHeight() / 2.0f), 1.0f, org.telegram.ui.ActionBar.k6.l1(0.75f, -1), canvas);
+            k01Var2.c((getWidth() - this.b.l()) / 2.0f, AndroidUtilities.dp(11.0f) + (0.0f * AndroidUtilities.dp(24.0f)) + (getHeight() / 2.0f), 1.0f, org.telegram.ui.ActionBar.j6.l1(0.75f, -1), canvas);
             canvas.restore();
         }
         int width = getWidth();

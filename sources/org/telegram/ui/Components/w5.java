@@ -9,7 +9,7 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w5 implements Runnable {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class w5 implements Runnable {
                 this.b.i();
                 return;
             case 1:
-                lf.g gVar = this.b.w0;
+                kf.g gVar = this.b.w0;
                 return;
             case 2:
                 y5 y5Var = this.b;
@@ -48,13 +48,13 @@ public final /* synthetic */ class w5 implements Runnable {
                     return;
                 }
                 y5Var2.d0 = System.currentTimeMillis();
-                if (hj0.Q0 == null) {
-                    hj0.Q0 = new DispatchQueue("cache generator queue");
+                if (gj0.Q0 == null) {
+                    gj0.Q0 = new DispatchQueue("cache generator queue");
                 }
                 y5Var2.z0 = true;
                 y5Var2.e = null;
-                lf.g.A++;
-                DispatchQueue dispatchQueue = hj0.Q0;
+                kf.g.A++;
+                DispatchQueue dispatchQueue = gj0.Q0;
                 w5 w5Var = new w5(y5Var2, 7);
                 y5Var2.A0 = w5Var;
                 dispatchQueue.postRunnable(w5Var);
@@ -165,7 +165,7 @@ public final /* synthetic */ class w5 implements Runnable {
                     System.currentTimeMillis();
                     c5.c cVar = y5Var4.x0;
                     int i13 = cVar.a;
-                    lf.g gVar2 = y5Var4.w0;
+                    kf.g gVar2 = y5Var4.w0;
                     int f11 = gVar2.f(y5Var4.v.b, gVar2.i);
                     cVar.a = gVar2.i;
                     if (gVar2.q && !gVar2.e.isEmpty()) {
@@ -275,7 +275,7 @@ public final /* synthetic */ class w5 implements Runnable {
             default:
                 y5 y5Var7 = this.b;
                 if (y5Var7.A0 != null) {
-                    lf.g.c();
+                    kf.g.c();
                     y5Var7.A0 = null;
                 }
                 y5Var7.z0 = false;

@@ -8,9 +8,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.TranslateController;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class s31 extends org.telegram.ui.Components.rl0 {
+public final class s31 extends org.telegram.ui.Components.ql0 {
     public final Context c;
     public final boolean d;
     public final /* synthetic */ t31 e;
@@ -21,12 +21,12 @@ public final class s31 extends org.telegram.ui.Components.rl0 {
         this.d = z4;
     }
 
-    @Override // org.telegram.ui.Components.rl0
-    public final boolean D(f2.m1 m1Var) {
-        return m1Var.f == 0;
+    @Override // org.telegram.ui.Components.ql0
+    public final boolean D(f2.l1 l1Var) {
+        return l1Var.f == 0;
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final int h() {
         boolean z4 = this.d;
         t31 t31Var = this.e;
@@ -40,7 +40,7 @@ public final class s31 extends org.telegram.ui.Components.rl0 {
         return arrayList.size();
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final int j(int i10) {
         return (!this.d && i10 == this.e.e) ? 1 : 0;
     }
@@ -57,21 +57,21 @@ public final class s31 extends org.telegram.ui.Components.rl0 {
     
         if (r8 == (r3.h.size() - 1)) goto L16;
      */
-    @Override // f2.p0
+    @Override // f2.o0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void v(f2.m1 m1Var, int i10) {
+    public final void v(f2.l1 l1Var, int i10) {
         boolean z4;
-        int i11 = m1Var.f;
-        View view = m1Var.a;
+        int i11 = l1Var.f;
+        View view = l1Var.a;
         if (i11 != 0) {
             if (i11 != 1) {
                 return;
             }
             return;
         }
-        org.telegram.ui.Cells.t8 t8Var = (org.telegram.ui.Cells.t8) view;
+        org.telegram.ui.Cells.s8 s8Var = (org.telegram.ui.Cells.s8) view;
         boolean z10 = this.d;
         t31 t31Var = this.e;
         TranslateController.Language language = null;
@@ -94,23 +94,23 @@ public final class s31 extends org.telegram.ui.Components.rl0 {
         if (str == null) {
             str = language.displayName;
         }
-        t8Var.b(str, language.displayName, false, !z4);
-        t8Var.setChecked(t31Var.r.contains(language.code));
+        s8Var.b(str, language.displayName, false, !z4);
+        s8Var.setChecked(t31Var.r.contains(language.code));
     }
 
-    @Override // f2.p0
-    public final f2.m1 x(ViewGroup viewGroup, int i10) {
+    @Override // f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
         View view;
         Context context = this.c;
         if (i10 == 0) {
-            view = new org.telegram.ui.Cells.t8(context);
+            view = new org.telegram.ui.Cells.s8(context);
         } else if (i10 != 2) {
-            view = new org.telegram.ui.Cells.z6(context, (b) null);
+            view = new org.telegram.ui.Cells.y6(context, (b) null);
         } else {
-            org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(context);
-            m4Var.setText(LocaleController.getString(R.string.ChooseLanguages));
-            view = m4Var;
+            org.telegram.ui.Cells.l4 l4Var = new org.telegram.ui.Cells.l4(context);
+            l4Var.setText(LocaleController.getString(R.string.ChooseLanguages));
+            view = l4Var;
         }
-        return new org.telegram.ui.Components.el0(view);
+        return new org.telegram.ui.Components.dl0(view);
     }
 }

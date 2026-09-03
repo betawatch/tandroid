@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class uv0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final class uv0 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
-        org.telegram.ui.Cells.t1 t1Var;
+        org.telegram.ui.Cells.s1 s1Var;
         switch (this.a) {
             case 0:
                 yv0 yv0Var = this.b;
@@ -40,9 +40,9 @@ public final class uv0 extends FrameLayout {
                     canvas2 = canvas;
                     canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), yv0Var.w);
                 }
-                if (yv0Var.L && (t1Var = yv0Var.I) != null) {
-                    t1Var.I7 = yv0Var.M;
-                    t1Var.invalidate();
+                if (yv0Var.L && (s1Var = yv0Var.I) != null) {
+                    s1Var.I7 = yv0Var.M;
+                    s1Var.invalidate();
                     yv0Var.L = false;
                 }
                 super.dispatchDraw(canvas2);
@@ -122,9 +122,9 @@ public final class uv0 extends FrameLayout {
                             viewGroup2.measure(View.MeasureSpec.makeMeasureSpec(Math.min(size, (int) f11), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
                         }
                     }
-                    org.telegram.ui.Components.qk0 qk0Var = yv0Var.N;
-                    if (childAt == qk0Var) {
-                        childAt.measure(View.MeasureSpec.makeMeasureSpec(qk0Var.getTotalWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
+                    org.telegram.ui.Components.pk0 pk0Var = yv0Var.N;
+                    if (childAt == pk0Var) {
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec(pk0Var.getTotalWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
                     } else {
                         childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
                     }
@@ -143,7 +143,7 @@ public final class uv0 extends FrameLayout {
             case 0:
                 super.onSizeChanged(i10, i11, i12, i13);
                 yv0 yv0Var = this.b;
-                ug.c.c(yv0Var.C, yv0Var.c);
+                tg.c.c(yv0Var.C, yv0Var.c);
                 yv0Var.D.d();
                 break;
             default:

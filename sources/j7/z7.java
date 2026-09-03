@@ -4,7 +4,7 @@ import android.graphics.Path;
 import androidx.car.app.navigation.model.Maneuver;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class z7 {
     public static boolean a(i0.d[] dVarArr, i0.d[] dVarArr2) {
@@ -132,8 +132,8 @@ public abstract class z7 {
                                 }
                                 fArr = b(fArr2, i15);
                                 i11 = 0;
-                            } catch (NumberFormatException e6) {
-                                throw new RuntimeException(android.support.v4.media.a.o("error in parsing \"", trim, "\""), e6);
+                            } catch (NumberFormatException e) {
+                                throw new RuntimeException(android.support.v4.media.a.o("error in parsing \"", trim, "\""), e);
                             }
                         }
                         arrayList.add(new i0.d(trim.charAt(i11), fArr));
@@ -165,8 +165,8 @@ public abstract class z7 {
         try {
             i0.d.b(c(str), path);
             return path;
-        } catch (RuntimeException e6) {
-            throw new RuntimeException("Error in parsing ".concat(str), e6);
+        } catch (RuntimeException e) {
+            throw new RuntimeException("Error in parsing ".concat(str), e);
         }
     }
 

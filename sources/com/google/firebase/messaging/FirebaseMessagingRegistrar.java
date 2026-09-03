@@ -5,7 +5,7 @@ import j7.m8;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class FirebaseMessagingRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-fcm";
@@ -23,14 +23,14 @@ public class FirebaseMessagingRegistrar implements ComponentRegistrar {
     public List<c9.b> getComponents() {
         c9.a b10 = c9.b.b(FirebaseMessaging.class);
         b10.a = LIBRARY_NAME;
-        b10.a(c9.l.b(w8.g.class));
-        b10.a(new c9.l(0, 0, aa.a.class));
-        b10.a(new c9.l(0, 1, ja.b.class));
-        b10.a(new c9.l(0, 1, z9.f.class));
-        b10.a(new c9.l(0, 0, v2.f.class));
-        b10.a(c9.l.b(ca.d.class));
-        b10.a(c9.l.b(y9.b.class));
-        b10.g = new androidx.emoji2.text.w(13);
+        b10.a(c9.m.b(w8.g.class));
+        b10.a(new c9.m(0, 0, aa.a.class));
+        b10.a(new c9.m(0, 1, ja.b.class));
+        b10.a(new c9.m(0, 1, z9.f.class));
+        b10.a(new c9.m(0, 0, v2.f.class));
+        b10.a(c9.m.b(ca.d.class));
+        b10.a(c9.m.b(y9.b.class));
+        b10.g = new af.a(19);
         b10.c(1);
         return Arrays.asList(b10.b(), m8.a(LIBRARY_NAME, "23.4.0"));
     }

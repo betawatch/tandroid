@@ -5,7 +5,7 @@ import java.util.Map;
 import s8.v;
 import s8.x;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class i extends m {
     public final int d;
@@ -21,14 +21,14 @@ public final class i extends m {
     public final long n;
     public final boolean o;
     public final boolean p;
-    public final o3.g q;
+    public final o3.h q;
     public final v r;
     public final v s;
     public final x t;
     public final long u;
     public final h v;
 
-    public i(int i10, String str, List list, long j10, boolean z4, long j11, boolean z10, int i11, long j12, int i12, long j13, long j14, boolean z11, boolean z12, boolean z13, o3.g gVar, List list2, List list3, h hVar, Map map) {
+    public i(int i10, String str, List list, long j10, boolean z4, long j11, boolean z10, int i11, long j12, int i12, long j13, long j14, boolean z11, boolean z12, boolean z13, o3.h hVar, List list2, List list3, h hVar2, Map map) {
         super(str, list, z11);
         this.d = i10;
         this.h = j11;
@@ -41,7 +41,7 @@ public final class i extends m {
         this.n = j14;
         this.o = z12;
         this.p = z13;
-        this.q = gVar;
+        this.q = hVar;
         this.r = v.t(list2);
         this.s = v.t(list3);
         this.t = x.a(map);
@@ -56,7 +56,7 @@ public final class i extends m {
         }
         this.e = j10 != -9223372036854775807L ? j10 >= 0 ? Math.min(this.u, j10) : Math.max(0L, this.u + j10) : -9223372036854775807L;
         this.f = j10 >= 0;
-        this.v = hVar;
+        this.v = hVar2;
     }
 
     @Override // n4.a

@@ -7,10 +7,10 @@ import java.util.Set;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import k7.b8;
-import k7.h8;
-import k7.o7;
+import k7.g8;
+import k7.n7;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class u1 implements f1, r, y1 {
     public static final /* synthetic */ AtomicReferenceFieldUpdater a = AtomicReferenceFieldUpdater.newUpdater(u1.class, Object.class, "_state$volatile");
@@ -103,7 +103,7 @@ public class u1 implements f1, r, y1 {
                     k1Var.a(th2);
                 } catch (Throwable th3) {
                     if (bVar != null) {
-                        o7.a(bVar, th3);
+                        n7.a(bVar, th3);
                     } else {
                         bVar = new a7.b("Exception in completion handler " + k1Var + " for " + this, th3);
                     }
@@ -378,7 +378,7 @@ public class u1 implements f1, r, y1 {
                 return e0.u(u10);
             }
         } while (I(u10) < 0);
-        l1 l1Var = new l1(this, h8.b(cVar));
+        l1 l1Var = new l1(this, g8.b(cVar));
         l1Var.s();
         l1Var.v(new j(e0.n(this, false, new p0(l1Var, 3), 3), 2));
         Object r10 = l1Var.r();
@@ -394,7 +394,7 @@ public class u1 implements f1, r, y1 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean i(Object obj) {
-        com.google.android.gms.internal.clearcut.e eVar;
+        o3.c cVar;
         Object obj2 = e0.d;
         if (s()) {
             do {
@@ -412,7 +412,7 @@ public class u1 implements f1, r, y1 {
                 Object u11 = u();
                 if (!(u11 instanceof n1)) {
                     if (!(u11 instanceof a1)) {
-                        eVar = e0.g;
+                        cVar = e0.g;
                         break;
                     }
                     if (th2 == null) {
@@ -430,7 +430,7 @@ public class u1 implements f1, r, y1 {
                                 }
                             }
                             E(t6, th2);
-                            eVar = e0.d;
+                            cVar = e0.d;
                             break loop1;
                         }
                         continue;
@@ -447,7 +447,7 @@ public class u1 implements f1, r, y1 {
                 } else {
                     synchronized (u11) {
                         if (n1.d.get((n1) u11) == e0.h) {
-                            eVar = e0.g;
+                            cVar = e0.g;
                         } else {
                             boolean d = ((n1) u11).d();
                             if (th2 == null) {
@@ -458,12 +458,12 @@ public class u1 implements f1, r, y1 {
                             if (b10 != null) {
                                 E(((n1) u11).a, b10);
                             }
-                            eVar = e0.d;
+                            cVar = e0.d;
                         }
                     }
                 }
             }
-            obj2 = eVar;
+            obj2 = cVar;
         }
         if (obj2 != e0.d && obj2 != e0.e) {
             if (obj2 == e0.g) {
@@ -517,7 +517,7 @@ public class u1 implements f1, r, y1 {
                 return iVar;
             }
         } while (I(u10) < 0);
-        m mVar = new m(1, h8.b(cVar));
+        m mVar = new m(1, g8.b(cVar));
         mVar.s();
         mVar.v(new j(e0.n(this, false, new p0(mVar, 4), 3), 2));
         Object r10 = mVar.r();
@@ -569,7 +569,7 @@ public class u1 implements f1, r, y1 {
                         k1Var.a(th2);
                     } catch (Throwable th4) {
                         if (bVar != null) {
-                            o7.a(bVar, th4);
+                            n7.a(bVar, th4);
                         } else {
                             bVar = new a7.b("Exception in completion handler " + k1Var + " for " + this, th4);
                         }
@@ -628,7 +628,7 @@ public class u1 implements f1, r, y1 {
                     i10++;
                     Throwable th3 = (Throwable) obj2;
                     if (th3 != q10 && th3 != q10 && !(th3 instanceof CancellationException) && newSetFromMap.add(th3)) {
-                        o7.a(q10, th3);
+                        n7.a(q10, th3);
                     }
                 }
             }

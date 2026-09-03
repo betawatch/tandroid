@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Bitmaps;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class ll0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -74,7 +74,7 @@ public final class ll0 extends org.telegram.ui.ActionBar.j {
                             if (bitmap == zp0Var.a) {
                                 zp0Var.e = true;
                             }
-                            ((org.telegram.ui.Components.y40) zp0Var.c).s(false, bitmap, null);
+                            ((org.telegram.ui.Components.x40) zp0Var.c).s(false, bitmap, null);
                             zp0Var.f = true;
                         }
                         zp0Var.finishFragment();
@@ -226,20 +226,20 @@ public final class ll0 extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 17:
-                v81 v81Var = (v81) obj;
+                w81 w81Var = (w81) obj;
                 if (i10 != -1) {
                     if (i10 == 2) {
-                        v81Var.l0(new qg0(null));
+                        w81Var.l0(new rg0(null));
                         break;
                     }
                 } else {
-                    v81Var.finishFragment();
+                    w81Var.finishFragment();
                     break;
                 }
                 break;
             case 18:
                 if (i10 == -1) {
-                    ((na1) obj).finishFragment();
+                    ((oa1) obj).finishFragment();
                     break;
                 }
                 break;
@@ -267,7 +267,7 @@ public final class ll0 extends org.telegram.ui.ActionBar.j {
                 break;
             case 21:
                 if (i10 == -1) {
-                    ((he1) obj).finishFragment();
+                    ((ge1) obj).finishFragment();
                     break;
                 }
                 break;
@@ -314,36 +314,36 @@ public final class ll0 extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 26:
-                org.telegram.ui.web.f1 f1Var = (org.telegram.ui.web.f1) obj;
+                org.telegram.ui.web.g1 g1Var = (org.telegram.ui.web.g1) obj;
                 if (i10 == -1) {
-                    kVar = ((org.telegram.ui.ActionBar.p2) f1Var).actionBar;
+                    kVar = ((org.telegram.ui.ActionBar.p2) g1Var).actionBar;
                     if (!kVar.s()) {
-                        f1Var.finishFragment();
+                        g1Var.finishFragment();
                         break;
                     } else {
-                        kVar2 = ((org.telegram.ui.ActionBar.p2) f1Var).actionBar;
+                        kVar2 = ((org.telegram.ui.ActionBar.p2) g1Var).actionBar;
                         kVar2.r();
-                        f1Var.s.clear();
-                        AndroidUtilities.forEachViews((RecyclerView) f1Var.a, (h5.d) new ag.d(17));
+                        g1Var.s.clear();
+                        AndroidUtilities.forEachViews((RecyclerView) g1Var.a, (h5.d) new nh.e(16));
                         break;
                     }
                 }
                 break;
             case 27:
                 if (i10 == -1) {
-                    ((sh.r) obj).finishFragment();
+                    ((rh.r) obj).finishFragment();
                     break;
                 }
                 break;
             case 28:
                 if (i10 == -1) {
-                    ((sh.p2) obj).q();
+                    ((rh.p2) obj).q();
                     break;
                 }
                 break;
             default:
                 if (i10 == -1) {
-                    ((sh.x3) obj).finishFragment();
+                    ((rh.x3) obj).finishFragment();
                     break;
                 }
                 break;

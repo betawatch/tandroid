@@ -1,44 +1,47 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.view.ViewGroup;
-import org.telegram.ui.Components.np;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class k2 extends np {
-    public final /* synthetic */ int d;
-    public final /* synthetic */ ViewGroup e;
+public final class k2 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ q2 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ k2(ViewGroup viewGroup, Context context, org.telegram.ui.ActionBar.g6 g6Var, int i10) {
-        super(context, 21, g6Var);
-        this.d = i10;
-        this.e = viewGroup;
+    public /* synthetic */ k2(q2 q2Var, int i10) {
+        this.a = i10;
+        this.b = q2Var;
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        switch (this.d) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
             case 0:
-                super.invalidate();
-                ((r2) this.e).invalidate();
+                q2 q2Var = this.b;
+                q2Var.O3 = 1.0f;
+                q2Var.R3 = null;
+                q2Var.S3 = null;
+                q2Var.T3 = null;
+                q2Var.invalidate();
                 break;
             case 1:
-                super.invalidate();
-                ((org.telegram.ui.web.h) this.e).invalidate();
+                q2 q2Var2 = this.b;
+                q2Var2.P3 = 1.0f;
+                q2Var2.invalidate();
                 break;
             default:
-                super.invalidate();
-                ((qh.w2) this.e).invalidate();
+                q2 q2Var3 = this.b;
+                int i10 = (q2Var3.P2 ? 1 : 0) + (q2Var3.N2 ? 2 : 0) + (q2Var3.O2 ? 4 : 0);
+                int i11 = q2Var3.o4;
+                if (i11 != i10) {
+                    q2Var3.A(i11, i10);
+                } else {
+                    q2Var3.s4 = false;
+                    q2Var3.q4 = i11;
+                }
+                q2Var3.invalidate();
                 break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k2(qh.w2 w2Var, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, 24, g6Var);
-        this.d = 2;
-        this.e = w2Var;
     }
 }

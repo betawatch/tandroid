@@ -8,7 +8,7 @@ import k7.w6;
 import q5.c0;
 import r3.o;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class d extends j {
     public o n;
@@ -31,13 +31,13 @@ public final class d extends j {
     }
 
     @Override // a4.j
-    public final boolean c(w wVar, long j10, bf.b bVar) {
+    public final boolean c(w wVar, long j10, af.c cVar) {
         byte[] bArr = wVar.a;
         o oVar = this.n;
         if (oVar == null) {
             o oVar2 = new o(bArr, 17);
             this.n = oVar2;
-            bVar.b = oVar2.c(Arrays.copyOfRange(bArr, 9, wVar.c), null);
+            cVar.b = oVar2.c(Arrays.copyOfRange(bArr, 9, wVar.c), null);
             return true;
         }
         byte b10 = bArr[0];
@@ -45,23 +45,23 @@ public final class d extends j {
             if (b10 != -1) {
                 return true;
             }
-            c cVar = this.o;
-            if (cVar != null) {
-                cVar.a = j10;
-                bVar.c = cVar;
+            c cVar2 = this.o;
+            if (cVar2 != null) {
+                cVar2.a = j10;
+                cVar.c = cVar2;
             }
-            ((n0) bVar.b).getClass();
+            ((n0) cVar.b).getClass();
             return false;
         }
         c0 b11 = w6.b(wVar);
         o oVar3 = new o(oVar.a, oVar.b, oVar.c, oVar.d, oVar.e, oVar.g, oVar.h, oVar.j, b11, oVar.l);
         this.n = oVar3;
-        c cVar2 = new c();
-        cVar2.c = oVar3;
-        cVar2.d = b11;
-        cVar2.a = -1L;
-        cVar2.b = -1L;
-        this.o = cVar2;
+        c cVar3 = new c();
+        cVar3.c = oVar3;
+        cVar3.d = b11;
+        cVar3.a = -1L;
+        cVar3.b = -1L;
+        this.o = cVar3;
         return true;
     }
 

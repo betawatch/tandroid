@@ -11,30 +11,30 @@ import java.util.HashSet;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
+import k7.r;
 import k7.s;
-import k7.t;
 import m1.j;
 import org.webrtc.MediaStreamTrack;
 import pc.h;
 import pc.i;
 import pc.k;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class d extends t {
+public final class d extends s {
     public static final Set g = DesugarCollections.unmodifiableSet(new HashSet(Arrays.asList("a", "abbr", "acronym", "b", "bdo", "big", "br", "button", "cite", "code", "dfn", "em", "i", "img", "input", "kbd", "label", "map", "object", "q", "samp", "script", "select", "small", "span", "strong", "sub", "sup", "textarea", "time", "tt", "var")));
     public static final Set h = DesugarCollections.unmodifiableSet(new HashSet(Arrays.asList("area", "base", "br", "col", "embed", "hr", "img", "input", "keygen", "link", "meta", "param", "source", "track", "wbr")));
     public static final Set i = DesugarCollections.unmodifiableSet(new HashSet(Arrays.asList("address", "article", "aside", "blockquote", "canvas", "dd", "div", "dl", "dt", "fieldset", "figcaption", "figure", "footer", "form", "h1", "h2", "h3", "h4", "h5", "h6", "header", "hgroup", "hr", "li", "main", "nav", "noscript", "ol", "output", "p", "pre", "section", "table", "tfoot", "ul", MediaStreamTrack.VIDEO_TRACK_KIND)));
-    public final u a;
-    public final z9.d b;
+    public final db.a a;
+    public final u b;
     public final ArrayList c = new ArrayList(0);
     public a d = new a("", 0, Collections.EMPTY_MAP, null);
     public boolean e;
     public boolean f;
 
-    public d(u uVar, z9.d dVar) {
-        this.a = uVar;
-        this.b = dVar;
+    public d(db.a aVar, u uVar) {
+        this.a = aVar;
+        this.b = uVar;
     }
 
     public static Map a(i iVar) {
@@ -103,7 +103,7 @@ public final class d extends t {
      */
     /* JADX WARN: Code restructure failed: missing block: B:112:0x01a1, code lost:
     
-        k7.s.a(r17, '\n');
+        k7.r.a(r17, '\n');
      */
     /* JADX WARN: Code restructure failed: missing block: B:113:0x01a4, code lost:
     
@@ -132,7 +132,7 @@ public final class d extends t {
     /* JADX WARN: Code restructure failed: missing block: B:99:0x0173, code lost:
     
         r8.getClass();
-        r8 = h7.u.L2(r6);
+        r8 = db.a.R3(r6);
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r17v0, types: [java.lang.Appendable] */
@@ -172,7 +172,7 @@ public final class d extends t {
                     return;
                 }
                 int c3 = j.c(i10);
-                u uVar = this.a;
+                db.a aVar = this.a;
                 Set set = i;
                 ArrayList arrayList = this.c;
                 Set set2 = g;
@@ -187,18 +187,18 @@ public final class d extends t {
                         if (this.f) {
                             int length3 = charSequence.length();
                             if (length3 > 0 && '\n' != charSequence.charAt(length3 - 1)) {
-                                s.a(appendable, '\n');
+                                r.a(appendable, '\n');
                             }
                             this.f = false;
                         }
                         if (set3.contains(str3) || iVar.s) {
-                            uVar.getClass();
-                            String L2 = u.L2(bVar2);
-                            if (L2 != null && L2.length() > 0) {
+                            aVar.getClass();
+                            String R3 = db.a.R3(bVar2);
+                            if (R3 != null && R3.length() > 0) {
                                 try {
-                                    appendable.append(L2);
-                                } catch (IOException e6) {
-                                    throw new RuntimeException(e6);
+                                    appendable.append(R3);
+                                } catch (IOException e) {
+                                    throw new RuntimeException(e);
                                 }
                             }
                             int length4 = charSequence.length();
@@ -211,7 +211,7 @@ public final class d extends t {
                         String str4 = iVar.d;
                         if ("p".equals(this.d.a)) {
                             this.d.b(((CharSequence) appendable).length());
-                            s.a(appendable, '\n');
+                            r.a(appendable, '\n');
                             this.d = this.d.e;
                         } else if ("li".equals(str4) && "li".equals(this.d.a)) {
                             this.d.b(((CharSequence) appendable).length());
@@ -222,42 +222,42 @@ public final class d extends t {
                             CharSequence charSequence2 = (CharSequence) appendable;
                             int length5 = charSequence2.length();
                             if (length5 > 0 && '\n' != charSequence2.charAt(length5 - 1)) {
-                                s.a(appendable, '\n');
+                                r.a(appendable, '\n');
                             }
                         } else if (this.f) {
                             CharSequence charSequence3 = (CharSequence) appendable;
                             int length6 = charSequence3.length();
                             if (length6 > 0 && '\n' != charSequence3.charAt(length6 - 1)) {
-                                s.a(appendable, '\n');
+                                r.a(appendable, '\n');
                             }
                             this.f = false;
                         }
                         CharSequence charSequence4 = (CharSequence) appendable;
                         int length7 = charSequence4.length();
                         Map a2 = a(iVar);
-                        a aVar = this.d;
-                        a aVar2 = new a(str4, length7, a2, aVar);
+                        a aVar2 = this.d;
+                        a aVar3 = new a(str4, length7, a2, aVar2);
                         boolean z4 = set3.contains(str4) || iVar.s;
                         if (z4) {
-                            uVar.getClass();
-                            String L22 = u.L2(aVar2);
-                            if (L22 != null && L22.length() > 0) {
+                            aVar.getClass();
+                            String R32 = db.a.R3(aVar3);
+                            if (R32 != null && R32.length() > 0) {
                                 try {
-                                    appendable.append(L22);
-                                } catch (IOException e10) {
-                                    throw new RuntimeException(e10);
+                                    appendable.append(R32);
+                                } catch (IOException e6) {
+                                    throw new RuntimeException(e6);
                                 }
                             }
-                            aVar2.b(charSequence4.length());
+                            aVar3.b(charSequence4.length());
                         }
-                        ArrayList arrayList2 = aVar.f;
+                        ArrayList arrayList2 = aVar2.f;
                         if (arrayList2 == null) {
                             arrayList2 = new ArrayList(2);
-                            aVar.f = arrayList2;
+                            aVar2.f = arrayList2;
                         }
-                        arrayList2.add(aVar2);
+                        arrayList2.add(aVar3);
                         if (!z4) {
-                            this.d = aVar2;
+                            this.d = aVar3;
                         }
                     }
                 } else if (c3 == 2) {
@@ -280,13 +280,13 @@ public final class d extends t {
                         if (bVar != null) {
                             CharSequence charSequence5 = (CharSequence) appendable;
                             if (bVar.b == charSequence5.length()) {
-                                uVar.getClass();
-                                String L23 = u.L2(bVar);
-                                if (L23 != null) {
+                                aVar.getClass();
+                                String R33 = db.a.R3(bVar);
+                                if (R33 != null) {
                                     try {
-                                        appendable.append(L23);
-                                    } catch (IOException e11) {
-                                        throw new RuntimeException(e11);
+                                        appendable.append(R33);
+                                    } catch (IOException e10) {
+                                        throw new RuntimeException(e10);
                                     }
                                 }
                             }
@@ -297,9 +297,9 @@ public final class d extends t {
                         }
                     } else {
                         String str6 = hVar.d;
-                        a aVar3 = this.d;
-                        while (aVar3 != null && !str6.equals(aVar3.a) && aVar3.d <= -1) {
-                            aVar3 = aVar3.e;
+                        a aVar4 = this.d;
+                        while (aVar4 != null && !str6.equals(aVar4.a) && aVar4.d <= -1) {
+                            aVar4 = aVar4.e;
                         }
                     }
                 } else if (c3 == 4) {
@@ -307,15 +307,15 @@ public final class d extends t {
                     if (this.e) {
                         try {
                             appendable.append(dVar3.c);
-                        } catch (IOException e12) {
-                            throw new RuntimeException(e12);
+                        } catch (IOException e11) {
+                            throw new RuntimeException(e11);
                         }
                     } else {
                         if (this.f) {
                             CharSequence charSequence6 = (CharSequence) appendable;
                             int length9 = charSequence6.length();
                             if (length9 > 0 && '\n' != charSequence6.charAt(length9 - 1)) {
-                                s.a(appendable, '\n');
+                                r.a(appendable, '\n');
                             }
                             this.f = false;
                         }
@@ -331,14 +331,14 @@ public final class d extends t {
                                 z10 = true;
                             } else {
                                 if (z10 && (length = charSequence7.length()) > 0 && !Character.isWhitespace(charSequence7.charAt(length - 1))) {
-                                    s.a(appendable, ' ');
+                                    r.a(appendable, ' ');
                                 }
-                                s.a(appendable, charAt);
+                                r.a(appendable, charAt);
                                 z10 = false;
                             }
                         }
                         if (z10 && length10 < charSequence7.length()) {
-                            s.a(appendable, ' ');
+                            r.a(appendable, ' ');
                         }
                     }
                 }

@@ -6,7 +6,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sz0 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,12 +35,12 @@ public final /* synthetic */ class sz0 implements Runnable {
                 ((q01) obj).c();
                 break;
             case 3:
-                ((e11) obj).a();
+                ((f11) obj).a();
                 break;
             case 4:
-                b11 b11Var = (b11) obj;
-                b11Var.f.add(b11Var.c);
-                b11Var.a();
+                c11 c11Var = (c11) obj;
+                c11Var.f.add(c11Var.c);
+                c11Var.a();
                 break;
             case 5:
                 Runnable[] runnableArr = (Runnable[]) obj;
@@ -48,7 +48,7 @@ public final /* synthetic */ class sz0 implements Runnable {
                 runnableArr[0] = null;
                 break;
             case 6:
-                ((oh.h6) obj).e();
+                ((nh.h6) obj).e();
                 break;
             case 7:
                 org.telegram.ui.Components.qc qcVar = (org.telegram.ui.Components.qc) obj;
@@ -76,7 +76,7 @@ public final /* synthetic */ class sz0 implements Runnable {
             case 10:
                 g41 g41Var = (g41) obj;
                 g41Var.dismiss();
-                af.g.s(g41Var.getContext(), LocaleController.getString(R.string.PromoteUrl));
+                ze.d.s(g41Var.getContext(), LocaleController.getString(R.string.PromoteUrl));
                 break;
             case 11:
                 SecretMediaViewer secretMediaViewer = (SecretMediaViewer) ((org.telegram.ui.Components.ex0) obj).c;
@@ -99,17 +99,17 @@ public final /* synthetic */ class sz0 implements Runnable {
                 AndroidUtilities.updateViewShow(((l61) obj).c, true);
                 break;
             case 15:
-                org.telegram.ui.Components.w51 w51Var = ((h71) obj).f0;
+                org.telegram.ui.Components.w51 w51Var = ((i71) obj).f0;
                 if (w51Var != null) {
                     w51Var.N(true);
                     break;
                 }
                 break;
             case 16:
-                ((a71) obj).a();
+                ((b71) obj).a();
                 break;
             case 17:
-                vf.f.a(((SessionsActivity) obj).currentAccount).b();
+                uf.f.a(((SessionsActivity) obj).currentAccount).b();
                 break;
             case 18:
                 ((te1) obj).J.r.l();
@@ -129,7 +129,7 @@ public final /* synthetic */ class sz0 implements Runnable {
             case 23:
                 ii1 ii1Var = ((wh1) obj).b;
                 ii1Var.I0.unlock();
-                org.telegram.ui.Components.voip.n2.k().getClass();
+                org.telegram.ui.Components.voip.m2.k().getClass();
                 if (VoIPService.getSharedInstance() != null) {
                     VoIPService.getSharedInstance().swapSinks();
                 }
@@ -139,7 +139,7 @@ public final /* synthetic */ class sz0 implements Runnable {
                 ii1Var.Y.release();
                 ii1Var.l();
                 ii1Var.r0.d();
-                org.telegram.ui.Components.voip.n2.Q = false;
+                org.telegram.ui.Components.voip.m2.Q = false;
                 ii1Var.B0 = false;
                 ii1.k1 = null;
                 break;

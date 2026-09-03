@@ -6,9 +6,9 @@ import ld.e2;
 import ld.g0;
 import ld.j0;
 import ld.o0;
-import org.telegram.ui.zy;
+import org.telegram.ui.az;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class i extends a0 implements j0 {
     public static final /* synthetic */ AtomicIntegerFieldUpdater n = AtomicIntegerFieldUpdater.newUpdater(i.class, "runningWorkers$volatile");
@@ -53,7 +53,7 @@ public final class i extends a0 implements j0 {
                 if (f10 == null) {
                     return;
                 }
-                this.c.c(this, new zy(7, this, f10));
+                this.c.c(this, new az(7, this, f10));
             }
         }
     }

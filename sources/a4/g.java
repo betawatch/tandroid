@@ -4,7 +4,7 @@ import h5.w;
 import j3.r1;
 import java.io.EOFException;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class g {
     public int a;
@@ -27,9 +27,9 @@ public final class g {
         wVar.C(27);
         try {
             z10 = lVar.f(wVar.a, 0, 27, z4);
-        } catch (EOFException e6) {
+        } catch (EOFException e) {
             if (!z4) {
-                throw e6;
+                throw e;
             }
             z10 = false;
         }
@@ -46,9 +46,9 @@ public final class g {
                 wVar.C(u10);
                 try {
                     z11 = lVar.f(wVar.a, 0, this.c, z4);
-                } catch (EOFException e10) {
+                } catch (EOFException e6) {
                     if (!z4) {
-                        throw e10;
+                        throw e6;
                     }
                     z11 = false;
                 }
@@ -86,10 +86,10 @@ public final class g {
             }
             wVar.F(0);
             if (wVar.v() == 1332176723) {
-                lVar.r();
+                lVar.m();
                 return true;
             }
-            lVar.s(1);
+            lVar.n(1);
         }
         do {
             if (j10 != -1 && lVar.getPosition() >= j10) {

@@ -1,51 +1,66 @@
 package android.support.v4.media;
 
-import android.media.Rating;
+import a0.f;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.os.Bundle;
+import android.support.v4.media.session.c0;
+import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public abstract class d {
-    public static float a(Rating rating) {
-        return rating.getPercentRating();
+public final class d {
+    public final Bundle a;
+
+    public d(Context context) {
+        j.e(context, "context");
+        Bundle bundle = context.getPackageManager().getApplicationInfo(context.getPackageName(), 128).metaData;
+        this.a = bundle == null ? Bundle.EMPTY : bundle;
     }
 
-    public static int b(Rating rating) {
-        return rating.getRatingStyle();
+    public MediaMetadataCompat a() {
+        return new MediaMetadataCompat(this.a);
     }
 
-    public static float c(Rating rating) {
-        return rating.getStarRating();
+    public Boolean b() {
+        Bundle bundle = this.a;
+        if (bundle.containsKey("firebase_sessions_enabled")) {
+            return Boolean.valueOf(bundle.getBoolean("firebase_sessions_enabled"));
+        }
+        return null;
     }
 
-    public static boolean d(Rating rating) {
-        return rating.hasHeart();
+    public void c(String str, Bitmap bitmap) {
+        f fVar = MediaMetadataCompat.d;
+        if (fVar.containsKey(str) && ((Integer) fVar.get(str)).intValue() != 2) {
+            throw new IllegalArgumentException(a.o("The ", str, " key cannot be used to put a Bitmap"));
+        }
+        this.a.putParcelable(str, bitmap);
     }
 
-    public static boolean e(Rating rating) {
-        return rating.isRated();
+    public void d(long j10, String str) {
+        f fVar = MediaMetadataCompat.d;
+        if (fVar.containsKey(str) && ((Integer) fVar.get(str)).intValue() != 0) {
+            throw new IllegalArgumentException(a.o("The ", str, " key cannot be used to put a long"));
+        }
+        this.a.putLong(str, j10);
     }
 
-    public static boolean f(Rating rating) {
-        return rating.isThumbUp();
+    public void e(String str, String str2) {
+        f fVar = MediaMetadataCompat.d;
+        if (fVar.containsKey(str) && ((Integer) fVar.get(str)).intValue() != 1) {
+            throw new IllegalArgumentException(a.o("The ", str, " key cannot be used to put a String"));
+        }
+        this.a.putCharSequence(str, str2);
     }
 
-    public static Rating g(boolean z4) {
-        return Rating.newHeartRating(z4);
+    public d() {
+        this.a = new Bundle();
     }
 
-    public static Rating h(float f10) {
-        return Rating.newPercentageRating(f10);
-    }
-
-    public static Rating i(int i10, float f10) {
-        return Rating.newStarRating(i10, f10);
-    }
-
-    public static Rating j(boolean z4) {
-        return Rating.newThumbRating(z4);
-    }
-
-    public static Rating k(int i10) {
-        return Rating.newUnratedRating(i10);
+    public d(MediaMetadataCompat mediaMetadataCompat) {
+        Bundle bundle = new Bundle(mediaMetadataCompat.a);
+        this.a = bundle;
+        c0.a(bundle);
     }
 }

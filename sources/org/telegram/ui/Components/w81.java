@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Bitmaps;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class w81 implements Runnable {
     public final /* synthetic */ int a;
@@ -25,10 +25,10 @@ public final class w81 implements Runnable {
             case 0:
                 e91 e91Var = this.b;
                 a91 a91Var = e91Var.c0;
-                j71 j71Var = e91Var.a;
-                if (j71Var != null && j71Var.y()) {
-                    a91Var.c((int) (j71Var.n() / 1000));
-                    a91Var.w = (int) (j71Var.j() / 1000);
+                i71 i71Var = e91Var.a;
+                if (i71Var != null && i71Var.y()) {
+                    a91Var.c((int) (i71Var.n() / 1000));
+                    a91Var.w = (int) (i71Var.j() / 1000);
                     a91Var.invalidate();
                     AndroidUtilities.runOnUIThread(e91Var.f0, 1000L);
                     break;

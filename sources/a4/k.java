@@ -11,15 +11,14 @@ import android.util.SparseArray;
 import android.util.SparseBooleanArray;
 import android.util.SparseIntArray;
 import androidx.core.graphics.drawable.IconCompat;
-import androidx.emoji2.text.x;
 import b4.b0;
 import b4.f0;
 import b4.g0;
 import b4.h0;
 import b4.i0;
-import com.google.firebase.messaging.q;
+import com.google.firebase.messaging.p;
 import e0.o0;
-import e0.p;
+import e0.q;
 import e0.q0;
 import e0.r;
 import e0.t;
@@ -33,13 +32,14 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import l7.w0;
-import mh.m5;
+import lh.m5;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.ui.Components.bz0;
 import org.telegram.ui.Components.dz0;
+import org.telegram.ui.Components.tp0;
 import r3.m;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class k implements b0 {
     public int a;
@@ -137,7 +137,7 @@ public final class k implements b0 {
         vVar.s(4);
         wVar.G(vVar.i(12));
         if (i13 == 2 && f0Var.p == null) {
-            i0 a2 = fVar.a(21, new androidx.biometric.e(21, (String) null, (ArrayList) null, d0.f));
+            i0 a2 = fVar.a(21, new af.d(21, (String) null, (ArrayList) null, d0.f));
             f0Var.p = a2;
             if (a2 != null) {
                 a2.c(c0Var, f0Var.k, new h0(z4, 21, 8192));
@@ -232,7 +232,7 @@ public final class k implements b0 {
             }
             SparseArray sparseArray7 = sparseArray3;
             wVar.F(i18);
-            androidx.biometric.e eVar = new androidx.biometric.e(i20, str, arrayList, Arrays.copyOfRange(wVar.a, i17, i18));
+            af.d dVar = new af.d(i20, str, arrayList, Arrays.copyOfRange(wVar.a, i17, i18));
             if (i14 == 6 || i14 == 5) {
                 i14 = i20;
             }
@@ -241,7 +241,7 @@ public final class k implements b0 {
             if (sparseBooleanArray.get(i21)) {
                 sparseArray2 = sparseArray7;
             } else {
-                i0 a11 = (i13 == 2 && i14 == 21) ? f0Var.p : fVar.a(i14, eVar);
+                i0 a11 = (i13 == 2 && i14 == 21) ? f0Var.p : fVar.a(i14, dVar);
                 if (i13 != 2 || i15 < sparseIntArray.get(i21, 8192)) {
                     sparseIntArray.put(i21, i15);
                     sparseArray2 = sparseArray7;
@@ -294,7 +294,7 @@ public final class k implements b0 {
             if (f0Var.m) {
                 return;
             }
-            f0Var.k.i1();
+            f0Var.k.j1();
             f0Var.l = 0;
             f0Var.m = true;
             return;
@@ -303,7 +303,7 @@ public final class k implements b0 {
         int i24 = i13 == 1 ? 0 : f0Var.l - 1;
         f0Var.l = i24;
         if (i24 == 0) {
-            f0Var.k.i1();
+            f0Var.k.j1();
             f0Var.m = true;
         }
     }
@@ -346,7 +346,7 @@ public final class k implements b0 {
         Notification.BubbleMetadata bubbleMetadata;
         int i11;
         Notification.BubbleMetadata a2;
-        f0.h hVar;
+        f0.i iVar;
         Bundle bundle;
         ArrayList arrayList;
         int i12;
@@ -415,14 +415,14 @@ public final class k implements b0 {
             bundle2.putBoolean("android.support.allowGeneratedReplies", z4);
             int i19 = Build.VERSION.SDK_INT;
             if (i19 >= 24) {
-                x.h(builder, z4);
+                androidx.emoji2.text.w.h(builder, z4);
             }
             bundle2.putInt("android.support.action.semanticAction", i17);
             if (i19 >= 28) {
                 d1.f.y(builder, i17);
             }
             if (i19 >= 29) {
-                q.g(builder);
+                p.g(builder);
             }
             if (i19 >= 31) {
                 e0.h0.a(builder);
@@ -570,7 +570,7 @@ public final class k implements b0 {
         int i26 = Build.VERSION.SDK_INT;
         if (i26 >= 24) {
             ((Notification.Builder) this.c).setExtras(tVar.v);
-            x.i((Notification.Builder) this.c);
+            androidx.emoji2.text.w.i((Notification.Builder) this.c);
         }
         if (i26 >= 26) {
             k6.a.i((Notification.Builder) this.c);
@@ -597,27 +597,27 @@ public final class k implements b0 {
                 if (i11 >= 29) {
                     return;
                 }
-                q.e((Notification.Builder) this.c, tVar.C);
+                p.e((Notification.Builder) this.c, tVar.C);
                 Notification.Builder builder5 = (Notification.Builder) this.c;
                 r rVar = tVar.D;
                 if (rVar != null) {
                     if (i11 >= 30) {
-                        a2 = e0.q.a(rVar);
+                        a2 = q.a(rVar);
                     } else if (i11 == 29) {
-                        a2 = p.a(rVar);
+                        a2 = e0.p.a(rVar);
                     }
-                    q.f(builder5, a2);
-                    hVar = tVar.A;
-                    if (hVar == null) {
-                        q.i((Notification.Builder) this.c, hVar.b);
+                    p.f(builder5, a2);
+                    iVar = tVar.A;
+                    if (iVar == null) {
+                        p.i((Notification.Builder) this.c, iVar.b);
                         return;
                     }
                     return;
                 }
                 a2 = bubbleMetadata;
-                q.f(builder5, a2);
-                hVar = tVar.A;
-                if (hVar == null) {
+                p.f(builder5, a2);
+                iVar = tVar.A;
+                if (iVar == null) {
                 }
             }
         }
@@ -635,19 +635,19 @@ public final class k implements b0 {
     }
 
     public k(g5.l lVar, r3.i iVar) {
-        m5 m5Var = new m5(iVar, 5);
+        m5 m5Var = new m5(iVar, 14);
         w0 w0Var = new w0(14);
-        ab.a aVar = new ab.a(7);
+        z9.d dVar = new z9.d(6);
         this.b = lVar;
         this.c = m5Var;
         this.d = w0Var;
-        this.e = aVar;
+        this.e = dVar;
         this.a = 1048576;
     }
 
-    public k(l3.o0 o0Var, r3.x xVar, byte[] bArr, h5.c[] cVarArr, int i10) {
+    public k(l3.o0 o0Var, tp0 tp0Var, byte[] bArr, h5.c[] cVarArr, int i10) {
         this.b = o0Var;
-        this.c = xVar;
+        this.c = tp0Var;
         this.d = bArr;
         this.e = cVarArr;
         this.a = i10;
@@ -666,14 +666,14 @@ public final class k implements b0 {
         int length = bz0VarArr.length;
         this.b = new bz0[length];
         this.a = length - 1;
-        int e6 = dz0Var.e() + 1;
-        bz0[][] bz0VarArr2 = new bz0[e6][];
-        int[] iArr = new int[e6];
+        int e = dz0Var.e() + 1;
+        bz0[][] bz0VarArr2 = new bz0[e][];
+        int[] iArr = new int[e];
         for (bz0 bz0Var : bz0VarArr) {
             int i10 = bz0Var.a.a;
             iArr[i10] = iArr[i10] + 1;
         }
-        for (int i11 = 0; i11 < e6; i11++) {
+        for (int i11 = 0; i11 < e; i11++) {
             bz0VarArr2[i11] = new bz0[iArr[i11]];
         }
         Arrays.fill(iArr, 0);

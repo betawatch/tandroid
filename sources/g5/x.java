@@ -17,9 +17,9 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
-import org.telegram.ui.yh;
+import vh.w2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class x extends g {
     public final boolean a;
@@ -76,8 +76,8 @@ public final class x extends g {
         if (httpURLConnection != null) {
             try {
                 httpURLConnection.disconnect();
-            } catch (Exception e6) {
-                h5.a.p("DefaultHttpDataSource", "Unexpected error while disconnecting", e6);
+            } catch (Exception e) {
+                h5.a.p("DefaultHttpDataSource", "Unexpected error while disconnecting", e);
             }
             this.h = null;
         }
@@ -96,9 +96,9 @@ public final class x extends g {
                 k(this.h, j11);
                 try {
                     inputStream.close();
-                } catch (IOException e6) {
+                } catch (IOException e) {
                     int i10 = h5.d0.a;
-                    throw new c0(e6, 2000, 3);
+                    throw new c0(e, 2000, 3);
                 }
             }
         } finally {
@@ -111,7 +111,7 @@ public final class x extends g {
         }
     }
 
-    public final URL d(URL url, String str) {
+    public final URL e(URL url, String str) {
         if (str == null) {
             throw new c0("Null location redirect", 2001);
         }
@@ -119,14 +119,14 @@ public final class x extends g {
             URL url2 = new URL(url, str);
             String protocol = url2.getProtocol();
             if (!"https".equals(protocol) && !"http".equals(protocol)) {
-                throw new c0(yh.k("Unsupported protocol redirect: ", protocol), 2001);
+                throw new c0(w2.e("Unsupported protocol redirect: ", protocol), 2001);
             }
             if (this.a || protocol.equals(url.getProtocol())) {
                 return url2;
             }
             throw new c0("Disallowed cross-protocol redirect (" + url.getProtocol() + " to " + protocol + ")", 2001);
-        } catch (MalformedURLException e6) {
-            throw new c0(e6, 2001, 1);
+        } catch (MalformedURLException e) {
+            throw new c0(e, 2001, 1);
         }
     }
 
@@ -161,20 +161,20 @@ public final class x extends g {
         while (true) {
             int i13 = i12 + 1;
             if (i12 > 20) {
-                throw new c0(new NoRouteToHostException(l.d.j(i13, "Too many redirects: ")), 2001, 1);
+                throw new c0(new NoRouteToHostException(kf.k0.j(i13, "Too many redirects: ")), 2001, 1);
             }
             j10 = j(url, i10, bArr, j11, j12, z4, false, pVar.d);
             int responseCode = j10.getResponseCode();
             String headerField = j10.getHeaderField("Location");
             if ((i10 == i11 || i10 == 3) && (responseCode == 300 || responseCode == 301 || responseCode == 302 || responseCode == 303 || responseCode == 307 || responseCode == 308)) {
                 j10.disconnect();
-                url = d(url, headerField);
+                url = e(url, headerField);
             } else {
                 if (i10 != 2 || (responseCode != 300 && responseCode != 301 && responseCode != 302 && responseCode != 303)) {
                     break;
                 }
                 j10.disconnect();
-                url = d(url, headerField);
+                url = e(url, headerField);
                 bArr = null;
                 i10 = 1;
             }
@@ -193,9 +193,9 @@ public final class x extends g {
         HashMap hashMap = new HashMap();
         f7.b bVar = this.e;
         if (bVar != null) {
-            hashMap.putAll(bVar.s());
+            hashMap.putAll(bVar.t());
         }
-        hashMap.putAll(this.f.s());
+        hashMap.putAll(this.f.t());
         hashMap.putAll(map);
         for (Map.Entry entry : hashMap.entrySet()) {
             httpURLConnection.setRequestProperty((String) entry.getKey(), (String) entry.getValue());
@@ -407,20 +407,20 @@ public final class x extends g {
                 try {
                     l(j12);
                     return this.v;
-                } catch (IOException e6) {
+                } catch (IOException e) {
                     a();
-                    if (e6 instanceof c0) {
-                        throw ((c0) e6);
+                    if (e instanceof c0) {
+                        throw ((c0) e);
                     }
-                    throw new c0(e6, 2000, 1);
+                    throw new c0(e, 2000, 1);
                 }
-            } catch (IOException e10) {
+            } catch (IOException e6) {
                 a();
-                throw new c0(e10, 2000, 1);
+                throw new c0(e6, 2000, 1);
             }
-        } catch (IOException e11) {
+        } catch (IOException e10) {
             a();
-            throw c0.a(e11, 1);
+            throw c0.a(e10, 1);
         }
     }
 
@@ -447,9 +447,9 @@ public final class x extends g {
                 return read;
             }
             return -1;
-        } catch (IOException e6) {
+        } catch (IOException e) {
             int i13 = h5.d0.a;
-            throw c0.a(e6, 2);
+            throw c0.a(e, 2);
         }
     }
 }

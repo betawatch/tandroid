@@ -1,41 +1,19 @@
 package org.telegram.ui;
 
-import android.util.SparseArray;
+import android.content.Context;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class u6 {
-    public long a;
-    public int b;
-    public long c;
-    public final SparseArray d = new SparseArray();
+public final class u6 extends q6 {
+    public final /* synthetic */ d7 d;
 
-    public u6(long j10) {
-        this.a = j10;
-    }
-
-    public final void a(nh.a aVar, int i10) {
-        SparseArray sparseArray = this.d;
-        v6 v6Var = (v6) sparseArray.get(i10, null);
-        if (v6Var == null) {
-            v6Var = new v6();
-            sparseArray.put(i10, v6Var);
-        }
-        long j10 = aVar.c;
-        v6Var.a += j10;
-        this.c += j10;
-        this.b++;
-        v6Var.b.add(aVar);
-    }
-
-    public final void b(nh.a aVar) {
-        v6 v6Var = (v6) this.d.get(aVar.d, null);
-        if (v6Var != null && v6Var.b.remove(aVar)) {
-            long j10 = v6Var.a;
-            long j11 = aVar.c;
-            v6Var.a = j10 - j11;
-            this.c -= j11;
-            this.b--;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u6(d7 d7Var, Context context) {
+        super(context);
+        this.d = d7Var;
+        ((ViewGroup.MarginLayoutParams) this.a.getLayoutParams()).topMargin = AndroidUtilities.dp(5.0f);
+        this.a.setOnClickListener(new a(this, 6));
     }
 }

@@ -8,15 +8,15 @@ import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class ns0 extends org.telegram.ui.Components.bd {
     public final Path q1;
     public final /* synthetic */ PhotoViewer r1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ns0(PhotoViewer photoViewer, ContextThemeWrapper contextThemeWrapper, pu0 pu0Var, org.telegram.ui.Components.pv0 pv0Var, FrameLayout frameLayout, org.telegram.ui.ActionBar.g6 g6Var, org.telegram.ui.Components.ba baVar, tq0 tq0Var) {
-        super(contextThemeWrapper, pu0Var, pv0Var, frameLayout, g6Var, baVar, tq0Var);
+    public ns0(PhotoViewer photoViewer, ContextThemeWrapper contextThemeWrapper, pu0 pu0Var, org.telegram.ui.Components.qv0 qv0Var, FrameLayout frameLayout, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.Components.ba baVar, tq0 tq0Var) {
+        super(contextThemeWrapper, pu0Var, qv0Var, frameLayout, f6Var, baVar, tq0Var);
         this.r1 = photoViewer;
         this.q1 = new Path();
     }
@@ -41,7 +41,7 @@ public final class ns0 extends org.telegram.ui.Components.bd {
         return ou0Var != null && ou0Var.l();
     }
 
-    @Override // qh.k
+    @Override // ph.k
     public final boolean e() {
         PhotoViewer photoViewer = this.r1;
         org.telegram.ui.Components.ic icVar = photoViewer.k7;
@@ -51,12 +51,12 @@ public final class ns0 extends org.telegram.ui.Components.bd {
         return false;
     }
 
-    @Override // qh.k
+    @Override // ph.k
     public final boolean g() {
         return true;
     }
 
-    @Override // qh.k
+    @Override // ph.k
     public final void h(org.telegram.ui.Components.fa faVar, Canvas canvas, RectF rectF, float f10, boolean z4, float f11, float f12, boolean z10) {
         canvas.save();
         Path path = this.q1;
@@ -69,7 +69,7 @@ public final class ns0 extends org.telegram.ui.Components.bd {
         } else {
             canvas.translate(f11, f12);
         }
-        photoViewer.T0(canvas, faVar, org.telegram.ui.ActionBar.k6.l1(1.0f, z4 ? -8882056 : -14277082), org.telegram.ui.ActionBar.k6.l1(1.0f, z10 ? z4 ? 0 : 855638016 : 1140850688), false, !z4, !z4 && z10);
+        photoViewer.T0(canvas, faVar, org.telegram.ui.ActionBar.j6.l1(1.0f, z4 ? -8882056 : -14277082), org.telegram.ui.ActionBar.j6.l1(1.0f, z10 ? z4 ? 0 : 855638016 : 1140850688), false, !z4, !z4 && z10);
         canvas.restore();
     }
 
@@ -82,12 +82,12 @@ public final class ns0 extends org.telegram.ui.Components.bd {
         super.invalidate();
     }
 
-    @Override // qh.k
+    @Override // ph.k
     public final boolean l(float f10, float f11) {
         return (this.m0 || this.r1.r4 == 0) ? false : true;
     }
 
-    @Override // qh.k
+    @Override // ph.k
     public final void w() {
         this.J.setReversed(true);
         this.J.getAdapter().c = false;
@@ -104,12 +104,12 @@ public final class ns0 extends org.telegram.ui.Components.bd {
             this.J.getAdapter().b0 = false;
         }
         this.J.getAdapter().c0 = false;
-        this.J.setLayoutParams(k7.c6.e(-1, -1, 51));
+        this.J.setLayoutParams(k7.b6.e(-1, -1, 51));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0037  */
     /* JADX WARN: Removed duplicated region for block: B:21:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.ui.Components.bd, qh.k
+    @Override // org.telegram.ui.Components.bd, ph.k
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -148,7 +148,7 @@ public final class ns0 extends org.telegram.ui.Components.bd {
         }
     }
 
-    @Override // qh.k
+    @Override // ph.k
     public final void y() {
         org.telegram.ui.Components.zh zhVar = this.J;
         if (zhVar != null) {

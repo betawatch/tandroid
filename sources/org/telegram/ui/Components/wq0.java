@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wq0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -50,8 +50,8 @@ public final /* synthetic */ class wq0 implements View.OnClickListener {
                             wr0 wr0Var = W.h;
                             for (int i10 = 0; i10 < wr0Var.getChildCount(); i10++) {
                                 View childAt = wr0Var.getChildAt(i10);
-                                if (childAt instanceof org.telegram.ui.Cells.r7) {
-                                    ((org.telegram.ui.Cells.r7) childAt).l(false, true);
+                                if (childAt instanceof org.telegram.ui.Cells.q7) {
+                                    ((org.telegram.ui.Cells.q7) childAt).l(false, true);
                                 }
                             }
                             wu0 wu0Var = i12.c;
@@ -66,7 +66,7 @@ public final /* synthetic */ class wq0 implements View.OnClickListener {
             default:
                 org.telegram.ui.ActionBar.p2 p2Var = this.b.s1;
                 p2Var.getMessagesController().getMainSettings().edit().putBoolean("story_keep", true).apply();
-                qh.ba.E(p2Var.getParentActivity(), p2Var.getCurrentAccount()).R(null);
+                ph.da.E(p2Var.getParentActivity(), p2Var.getCurrentAccount()).R(null);
                 break;
         }
     }

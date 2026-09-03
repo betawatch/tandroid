@@ -1,6 +1,8 @@
 package l8;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+import kf.k0;
+
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class j {
     public static final com.google.android.gms.common.api.e a = new com.google.android.gms.common.api.e("Wearable.API", new a8.j(11), new com.google.android.gms.common.api.d());
@@ -17,7 +19,7 @@ public abstract class j {
             case 11:
             case 12:
             default:
-                return l.d.j(i10, "unknown status code: ");
+                return k0.j(i10, "unknown status code: ");
             case 2:
                 return "SERVICE_VERSION_UPDATE_REQUIRED";
             case 3:

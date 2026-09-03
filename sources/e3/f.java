@@ -9,12 +9,12 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.Pair;
 import android.view.View;
-import f3.h;
-import hg.y1;
+import gg.y1;
 import java.io.File;
 import java.util.ArrayList;
 import k9.b1;
-import mh.p;
+import lh.j;
+import lh.q;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ImageReceiver;
@@ -25,23 +25,23 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.c2;
+import org.telegram.ui.ActionBar.c4;
 import org.telegram.ui.ActionBar.d2;
-import org.telegram.ui.ActionBar.d4;
 import org.telegram.ui.ActionBar.p2;
-import org.telegram.ui.Components.jl0;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.ir;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.d60;
+import org.telegram.ui.e60;
 import org.telegram.ui.ig1;
-import org.telegram.ui.py;
+import org.telegram.ui.qy;
 import org.telegram.ui.vz0;
-import qh.w7;
+import ph.y7;
 import y2.i;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f implements g3.b, f3.f, ba.a, ig1, ChatObject.Call.OnParticipantsLoad, ImageReceiver.ImageReceiverDelegate, c2, jl0, MessagesController.IsInChatCheckedCallback {
+public final /* synthetic */ class f implements g3.b, f3.f, ba.a, ig1, ChatObject.Call.OnParticipantsLoad, ImageReceiver.ImageReceiverDelegate, c2, il0, MessagesController.IsInChatCheckedCallback {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
@@ -54,8 +54,8 @@ public final /* synthetic */ class f implements g3.b, f3.f, ba.a, ig1, ChatObjec
         this.d = obj2;
     }
 
-    @Override // org.telegram.ui.Components.jl0
-    public /* synthetic */ boolean Y0(View view) {
+    @Override // org.telegram.ui.Components.il0
+    public /* synthetic */ boolean Z0(View view) {
         return false;
     }
 
@@ -85,7 +85,7 @@ public final /* synthetic */ class f implements g3.b, f3.f, ba.a, ig1, ChatObjec
         }
     }
 
-    @Override // org.telegram.ui.Components.jl0
+    @Override // org.telegram.ui.Components.il0
     public void c(float f10, float f11, int i10, View view) {
         ProfileActivity.b0((ProfileActivity) this.c, (Context) this.d, this.b, view, i10, f10, f11);
     }
@@ -110,7 +110,7 @@ public final /* synthetic */ class f implements g3.b, f3.f, ba.a, ig1, ChatObjec
             if (resultCallback != null) {
                 resultCallback.onComplete(new Pair(Long.valueOf(j10), bitmap));
             }
-            Utilities.globalQueue.postRunnable(new d4(file, bitmap));
+            Utilities.globalQueue.postRunnable(new c4(file, bitmap));
         } else if (resultCallback != null) {
             resultCallback.onComplete(null);
         }
@@ -126,49 +126,49 @@ public final /* synthetic */ class f implements g3.b, f3.f, ba.a, ig1, ChatObjec
         ((f9.a) bVar.get()).d((String) this.c, this.b, (b1) this.d);
     }
 
+    @Override // org.telegram.ui.ig1
+    public void g(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
+        ((q) this.c).h0(true, this.b, tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.d);
+    }
+
     @Override // g3.b
-    public Object g() {
+    public Object h() {
         g gVar = (g) this.c;
         i iVar = (i) this.d;
         f3.d dVar = (f3.d) gVar.c;
-        long W = ((h3.a) gVar.g).W() + this.b;
-        h hVar = (h) dVar;
+        long l10 = ((h3.a) gVar.g).l() + this.b;
+        f3.h hVar = (f3.h) dVar;
         hVar.getClass();
-        hVar.c(new f3.e(W, iVar));
+        hVar.c(new f3.e(l10, iVar));
         return null;
     }
 
-    @Override // org.telegram.ui.ig1
-    public void i(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
-        ((p) this.c).h0(true, this.b, tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.d);
-    }
-
     @Override // org.telegram.ui.ActionBar.c2
-    public void j(d2 d2Var, int i10) {
+    public void l(d2 d2Var, int i10) {
         switch (this.a) {
             case 6:
-                lr.Q((lr) this.c, (qh.d) this.d, this.b);
+                ir.Q((ir) this.c, (ph.d) this.d, this.b);
                 break;
             case 7:
-                d60 d60Var = (d60) this.c;
-                d60Var.d.getMessagesController().addUserToChat(d60Var.i1(), (TLRPC.User) this.d, 0, null, (p2) d60Var.f0.O().getFragmentStack().get(d60Var.f0.O().getFragmentStack().size() - 1), new y1(d60Var, this.b, 20));
+                e60 e60Var = (e60) this.c;
+                e60Var.d.getMessagesController().addUserToChat(e60Var.i1(), (TLRPC.User) this.d, 0, null, (p2) e60Var.f0.O().getFragmentStack().get(e60Var.f0.O().getFragmentStack().size() - 1), new y1(e60Var, this.b, 20));
                 break;
             default:
-                w7 w7Var = (w7) this.c;
+                y7 y7Var = (y7) this.c;
                 ArrayList arrayList = (ArrayList) this.d;
-                w7Var.d.put(Long.valueOf(this.b), arrayList);
+                y7Var.d.put(Long.valueOf(this.b), arrayList);
                 int size = arrayList.size();
                 int i11 = 0;
                 while (i11 < size) {
                     Object obj = arrayList.get(i11);
                     i11++;
-                    w7Var.b.k(Boolean.TRUE, ((Long) obj).longValue());
+                    y7Var.b.k(Boolean.TRUE, ((Long) obj).longValue());
                 }
-                w7Var.i(true);
-                w7Var.e(true);
-                w7Var.f(true);
+                y7Var.i(true);
+                y7Var.e(true);
+                y7Var.f(true);
                 d2Var.dismiss();
-                w7Var.x.H = true;
+                y7Var.x.H = true;
                 break;
         }
     }
@@ -185,7 +185,7 @@ public final /* synthetic */ class f implements g3.b, f3.f, ba.a, ig1, ChatObjec
 
     @Override // org.telegram.messenger.MessagesController.IsInChatCheckedCallback
     public void run(boolean z4, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str) {
-        AndroidUtilities.runOnUIThread(new mh.i((vz0) this.c, this.b, tL_chatAdminRights, str, z4, (py) this.d));
+        AndroidUtilities.runOnUIThread(new j((vz0) this.c, this.b, tL_chatAdminRights, str, z4, (qy) this.d));
     }
 
     public /* synthetic */ f(Object obj, Object obj2, long j10, int i10) {
@@ -195,7 +195,7 @@ public final /* synthetic */ class f implements g3.b, f3.f, ba.a, ig1, ChatObjec
         this.b = j10;
     }
 
-    @Override // org.telegram.ui.Components.jl0
-    public /* synthetic */ void r0(View view, float f10, float f11) {
+    @Override // org.telegram.ui.Components.il0
+    public /* synthetic */ void n0(View view, float f10, float f11) {
     }
 }

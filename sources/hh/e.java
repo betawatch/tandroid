@@ -1,47 +1,29 @@
 package hh;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.g51;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.w51;
+import android.view.animation.Interpolator;
+import k7.n;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class e extends g51 {
-    public static final /* synthetic */ int a = 0;
+public final /* synthetic */ class e implements Interpolator {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ Interpolator d;
 
-    static {
-        g51.setup(new e());
+    public /* synthetic */ e(boolean z4, float f10, float f11, Interpolator interpolator) {
+        this.a = z4;
+        this.b = f10;
+        this.c = f11;
+        this.d = interpolator;
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final void bindView(View view, h51 h51Var, boolean z4, w51 w51Var, h61 h61Var) {
-        lg.c cVar = (lg.c) view;
-        cVar.s = (TLRPC.TL_help_country) h51Var.G;
-        cVar.f();
-        cVar.setDivider(z4);
-        cVar.c(h51Var.e, false);
-    }
-
-    @Override // org.telegram.ui.Components.g51
-    public final boolean contentsEquals(h51 h51Var, h51 h51Var2) {
-        return h51Var.H(h51Var2);
-    }
-
-    @Override // org.telegram.ui.Components.g51
-    public final View createView(Context context, sl0 sl0Var, int i10, int i11, g6 g6Var) {
-        lg.c cVar = new lg.c(context, g6Var);
-        cVar.setBackground(null);
-        return cVar;
-    }
-
-    @Override // org.telegram.ui.Components.g51
-    public final boolean equals(h51 h51Var, h51 h51Var2) {
-        return h51Var.I(h51Var2);
+    @Override // android.animation.TimeInterpolator
+    public final float getInterpolation(float f10) {
+        boolean z4 = this.a;
+        float f11 = this.b;
+        float f12 = this.c;
+        Interpolator interpolator = this.d;
+        return z4 ? 1.0f - interpolator.getInterpolation(1.0f - n.a((f10 - f11) / (f12 - f11), 0.0f, 1.0f)) : interpolator.getInterpolation(n.a((f10 - f11) / (f12 - f11), 0.0f, 1.0f));
     }
 }

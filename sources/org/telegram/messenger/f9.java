@@ -4,7 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f9 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -31,16 +31,16 @@ public final /* synthetic */ class f9 implements Runnable {
                 ((MediaDataController) this.e).lambda$processLoadedDiceStickers$89(this.c, (TLRPC.TL_messages_stickerSet) this.f, this.b, (String) this.h, this.d);
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.p(org.telegram.ui.ActionBar.k6.k1((org.telegram.ui.ActionBar.d6) this.e, (File) this.f, this.b, this.c, (TLRPC.Document) this.h, this.d), 15));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.p(org.telegram.ui.ActionBar.j6.k1((org.telegram.ui.ActionBar.c6) this.e, (File) this.f, this.b, this.c, (TLRPC.Document) this.h, this.d), 15));
                 break;
             default:
-                ((uf.u0) this.e).U((CharSequence) this.f, this.b, (ArrayList) this.h, this.c, this.d);
+                ((tf.u0) this.e).U((CharSequence) this.f, this.b, (ArrayList) this.h, this.c, this.d);
                 break;
         }
     }
 
-    public /* synthetic */ f9(org.telegram.ui.ActionBar.d6 d6Var, File file, int i10, boolean z4, TLRPC.Document document, boolean z10) {
-        this.e = d6Var;
+    public /* synthetic */ f9(org.telegram.ui.ActionBar.c6 c6Var, File file, int i10, boolean z4, TLRPC.Document document, boolean z10) {
+        this.e = c6Var;
         this.f = file;
         this.b = i10;
         this.c = z4;
@@ -48,7 +48,7 @@ public final /* synthetic */ class f9 implements Runnable {
         this.d = z10;
     }
 
-    public /* synthetic */ f9(uf.u0 u0Var, CharSequence charSequence, int i10, ArrayList arrayList, boolean z4, boolean z10) {
+    public /* synthetic */ f9(tf.u0 u0Var, CharSequence charSequence, int i10, ArrayList arrayList, boolean z4, boolean z10) {
         this.e = u0Var;
         this.f = charSequence;
         this.b = i10;

@@ -1,40 +1,55 @@
 package fg;
 
-import android.content.Context;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLObject;
+import android.animation.ValueAnimator;
+import org.telegram.ui.Components.voip.k0;
+import org.telegram.ui.ii1;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class c extends b {
-    public d d;
+public final /* synthetic */ class c implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ Object e;
 
-    @Override // fg.b
-    public final f2.p0 a() {
-        d dVar = new d(UserConfig.selectedAccount, this.a);
-        this.d = dVar;
-        dVar.r = this;
-        return dVar;
+    public /* synthetic */ c(Object obj, float f10, float f11, float f12, int i10) {
+        this.a = i10;
+        this.e = obj;
+        this.b = f10;
+        this.c = f11;
+        this.d = f12;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        d dVar = this.d;
-        Context context = getContext();
-        int measuredWidth = getMeasuredWidth();
-        int measuredHeight = getMeasuredHeight();
-        ArrayList arrayList = dVar.f;
-        f fVar = new f(context, dVar.c);
-        int i12 = 0;
-        for (int i13 = 0; i13 < arrayList.size(); i13++) {
-            fVar.a((e) arrayList.get(i13));
-            fVar.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(measuredHeight, TLObject.FLAG_31));
-            ((e) arrayList.get(i13)).e = i12;
-            i12 += fVar.getMeasuredHeight();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                i iVar = (i) this.e;
+                iVar.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                a aVar = iVar.b;
+                aVar.d = this.b * floatValue;
+                aVar.e = this.c * floatValue;
+                aVar.g = floatValue * this.d;
+                break;
+            case 1:
+                k0 k0Var = (k0) this.e;
+                k0Var.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                k0Var.v0 = e2.c.w(1.0f, floatValue2, 1.0f, this.b * floatValue2);
+                k0Var.o0 = this.c * floatValue2;
+                k0Var.p0 = this.d * floatValue2;
+                k0Var.invalidate();
+                break;
+            default:
+                ii1 ii1Var = (ii1) this.e;
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ii1Var.c1 = e2.c.w(1.0f, floatValue3, 1.0f, this.b * floatValue3);
+                ii1Var.V0 = this.c * floatValue3;
+                ii1Var.W0 = this.d * floatValue3;
+                ii1Var.s.invalidate();
+                break;
         }
-        dVar.n = i12;
     }
 }

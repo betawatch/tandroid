@@ -16,7 +16,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class y {
     public static final Pattern a = Pattern.compile("^\\D?(\\d+)$");
@@ -1121,9 +1121,9 @@ public abstract class y {
                     return list;
                 }
                 int i10 = d0.a;
-                ArrayList f10 = f(uVar, i10 >= 21 ? new p2.v(z4, z10) : new z9.d(4));
+                ArrayList f10 = f(uVar, i10 >= 21 ? new p2.w(z4, z10) : new h7.u(4));
                 if (z4 && f10.isEmpty() && 21 <= i10 && i10 <= 23) {
-                    f10 = f(uVar, new z9.d(4));
+                    f10 = f(uVar, new h7.u(4));
                     if (!f10.isEmpty()) {
                         h5.a.K("MediaCodecUtil", "MediaCodecList API didn't list secure decoder for: " + str + ". Assuming: " + ((n) f10.get(0)).a);
                     }
@@ -1153,24 +1153,24 @@ public abstract class y {
         try {
             ArrayList arrayList = new ArrayList();
             String str4 = uVar2.a;
-            int F = wVar.F();
-            boolean J = wVar.J();
+            int x10 = wVar.x();
+            boolean B = wVar.B();
             int i10 = 0;
-            while (i10 < F) {
+            while (i10 < x10) {
                 MediaCodecInfo a2 = wVar.a(i10);
                 int i11 = d0.a;
                 if (i11 < 29 || !a2.isAlias()) {
                     String name = a2.getName();
-                    if (g(a2, name, J, str4) && (c3 = c(a2, name, str4)) != null) {
+                    if (g(a2, name, B, str4) && (c3 = c(a2, name, str4)) != null) {
                         try {
                             MediaCodecInfo.CodecCapabilities capabilitiesForType = a2.getCapabilitiesForType(c3);
-                            boolean l10 = wVar.l("tunneled-playback", c3, capabilitiesForType);
-                            boolean B = wVar.B("tunneled-playback", capabilitiesForType);
+                            boolean c10 = wVar.c("tunneled-playback", c3, capabilitiesForType);
+                            boolean d = wVar.d("tunneled-playback", capabilitiesForType);
                             boolean z10 = uVar2.c;
-                            if ((z10 || !B) && (!z10 || l10)) {
-                                boolean l11 = wVar.l("secure-playback", c3, capabilitiesForType);
-                                boolean B2 = wVar.B("secure-playback", capabilitiesForType);
-                                if ((z4 || !B2) && (!z4 || l11)) {
+                            if ((z10 || !d) && (!z10 || c10)) {
+                                boolean c11 = wVar.c("secure-playback", c3, capabilitiesForType);
+                                boolean d10 = wVar.d("secure-playback", capabilitiesForType);
+                                if ((z4 || !d10) && (!z4 || c11)) {
                                     try {
                                         boolean h = h(a2, str4);
                                         i(a2, str4);
@@ -1182,16 +1182,16 @@ public abstract class y {
                                                 b10.startsWith("c2.google.");
                                             }
                                         }
-                                        if (!(J && z4 == l11) && (J || z4)) {
+                                        if (!(B && z4 == c11) && (B || z4)) {
                                             str3 = name;
-                                            if (!J && l11) {
+                                            if (!B && c11) {
                                                 str2 = str3;
                                                 str = c3;
                                                 try {
                                                     arrayList.add(n.h(str3 + ".secure", str4, str, capabilitiesForType, h, true));
                                                     break;
-                                                } catch (Exception e6) {
-                                                    e = e6;
+                                                } catch (Exception e) {
+                                                    e = e;
                                                     if (d0.a > 23) {
                                                     }
                                                     h5.a.o("MediaCodecUtil", "Failed to query codec " + str2 + " (" + str + ")");
@@ -1202,8 +1202,8 @@ public abstract class y {
                                             str3 = name;
                                             str = c3;
                                             try {
-                                            } catch (Exception e10) {
-                                                e = e10;
+                                            } catch (Exception e6) {
+                                                e = e6;
                                                 str2 = str3;
                                                 if (d0.a > 23 || arrayList.isEmpty()) {
                                                     h5.a.o("MediaCodecUtil", "Failed to query codec " + str2 + " (" + str + ")");
@@ -1215,8 +1215,8 @@ public abstract class y {
                                             }
                                             try {
                                                 arrayList.add(n.h(str3, str4, str, capabilitiesForType, h, false));
-                                            } catch (Exception e11) {
-                                                e = e11;
+                                            } catch (Exception e10) {
+                                                e = e10;
                                                 str2 = str3;
                                                 str = c3;
                                                 if (d0.a > 23) {
@@ -1225,14 +1225,14 @@ public abstract class y {
                                                 throw e;
                                             }
                                         }
-                                    } catch (Exception e12) {
-                                        e = e12;
+                                    } catch (Exception e11) {
+                                        e = e11;
                                         str2 = name;
                                     }
                                 }
                             }
-                        } catch (Exception e13) {
-                            e = e13;
+                        } catch (Exception e12) {
+                            e = e12;
                             str = c3;
                             str2 = name;
                         }
@@ -1242,8 +1242,8 @@ public abstract class y {
                 uVar2 = uVar;
             }
             return arrayList;
-        } catch (Exception e14) {
-            throw new v("Failed to query underlying media codecs", e14);
+        } catch (Exception e13) {
+            throw new v("Failed to query underlying media codecs", e13);
         }
     }
 
@@ -1326,8 +1326,8 @@ public abstract class y {
         int i10;
         if (c == -1) {
             int i11 = 0;
-            List e6 = e(MediaController.VIDEO_MIME_TYPE, false, false);
-            n nVar = e6.isEmpty() ? null : (n) e6.get(0);
+            List e = e(MediaController.VIDEO_MIME_TYPE, false, false);
+            n nVar = e.isEmpty() ? null : (n) e.get(0);
             if (nVar != null) {
                 MediaCodecInfo.CodecCapabilities codecCapabilities = nVar.d;
                 if (codecCapabilities == null || (codecProfileLevelArr = codecCapabilities.profileLevels) == null) {

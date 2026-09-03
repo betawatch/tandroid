@@ -4,36 +4,26 @@ import android.content.ContentResolver;
 import android.net.Uri;
 import android.util.Log;
 import java.util.HashMap;
-import org.telegram.ui.yh;
+import org.telegram.ui.ai;
 
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements h, ra.m {
-    public final /* synthetic */ int a;
-    public String b;
+    public String a;
 
-    public /* synthetic */ e() {
-        this.a = 1;
-    }
-
-    public String toString() {
-        switch (this.a) {
-            case 2:
-                return "<" + this.b + '>';
-            default:
-                return super.toString();
-        }
+    public /* synthetic */ e(String str) {
+        this.a = str;
     }
 
     @Override // ra.m
-    public Object y2() {
-        throw new pa.j(this.b);
+    public Object u2() {
+        throw new pa.j(this.a);
     }
 
     @Override // com.google.android.gms.internal.clearcut.h
     public Object zzp() {
         Object obj;
         boolean z4;
-        String str = this.b;
+        String str = this.a;
         ContentResolver contentResolver = d.g.getContentResolver();
         Uri uri = f2.a;
         synchronized (f2.class) {
@@ -53,7 +43,7 @@ public final /* synthetic */ class e implements h, ra.m {
                     bool = Boolean.TRUE;
                     z10 = true;
                 } else if (!f2.d.matcher(b10).matches()) {
-                    Log.w("Gservices", yh.l("attempt to read gservices key ", str, " (value \"", b10, "\") as boolean"));
+                    Log.w("Gservices", ai.k("attempt to read gservices key ", str, " (value \"", b10, "\") as boolean"));
                 }
                 f2.e(obj, hashMap, str, bool);
                 z4 = z10;
@@ -63,10 +53,5 @@ public final /* synthetic */ class e implements h, ra.m {
             z4 = z10;
         }
         return Boolean.valueOf(z4);
-    }
-
-    public /* synthetic */ e(String str, int i10) {
-        this.a = i10;
-        this.b = str;
     }
 }

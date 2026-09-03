@@ -2,10 +2,10 @@ package org.telegram.ui.Cells;
 
 import android.util.Property;
 import android.view.View;
-import org.telegram.ui.Components.qk0;
+import org.telegram.ui.Components.pk0;
 import org.telegram.ui.xu0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class b1 extends Property {
     public final /* synthetic */ int a;
@@ -20,11 +20,11 @@ public final class b1 extends Property {
     public final Object get(Object obj) {
         switch (this.a) {
             case 0:
-                return Float.valueOf(((t1) obj).we);
+                return Float.valueOf(((s1) obj).we);
             case 1:
                 return Integer.valueOf(Math.round(((View) obj).getTranslationY()));
             case 2:
-                return Float.valueOf(((qk0) obj).v);
+                return Float.valueOf(((pk0) obj).v);
             default:
                 return Float.valueOf(((xu0) obj).a);
         }
@@ -34,13 +34,13 @@ public final class b1 extends Property {
     public final void set(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                ((t1) obj).setAnimationOffsetX(((Float) obj2).floatValue());
+                ((s1) obj).setAnimationOffsetX(((Float) obj2).floatValue());
                 break;
             case 1:
                 ((View) obj).setTranslationY(((Integer) obj2).intValue());
                 break;
             case 2:
-                ((qk0) obj).setTransitionProgress(((Float) obj2).floatValue());
+                ((pk0) obj).setTransitionProgress(((Float) obj2).floatValue());
                 break;
             default:
                 ((xu0) obj).b(((Float) obj2).floatValue());

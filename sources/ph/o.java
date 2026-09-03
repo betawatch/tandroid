@@ -1,51 +1,91 @@
 package ph;
 
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import eg.p1;
-import hg.v0;
-import org.telegram.ui.ActionBar.p2;
-import org.telegram.ui.Components.rl0;
-import org.telegram.ui.Components.sa;
-import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.w51;
-import org.telegram.ui.web.d1;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.gj0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
-public final class o extends sa {
-    public final int U;
-    public final CharSequence V;
-    public w51 W;
+public final class o extends Drawable {
+    public final Paint a;
+    public float b;
+    public float c;
+    public long d;
+    public boolean e;
+    public boolean f;
+    public boolean g;
+    public final gj0 h;
+    public final t9 i;
+    public final /* synthetic */ t9 j;
 
-    public o(p2 p2Var, String str, d1 d1Var) {
-        super(p2Var.getParentActivity(), p2Var, true, false, false, 1, p2Var.getResourceProvider());
-        new FrameLayout(getContext());
-        new ImageView(getContext());
-        this.U = p2Var.getCurrentAccount();
-        this.V = str;
-        N();
-        this.v = 0.6f;
-        this.y = true;
-        this.B = true;
-        fixNavigationBar();
-        J();
-        sl0 sl0Var = this.d;
-        int i10 = this.backgroundPaddingLeft;
-        sl0Var.setPadding(i10, 0, i10, 0);
-        this.d.setOnItemClickListener(new v0(23, this, d1Var));
+    public o(t9 t9Var, t9 t9Var2) {
+        this.j = t9Var;
+        Paint paint = new Paint(1);
+        this.a = paint;
+        this.c = 1.0f;
+        this.i = t9Var2;
+        gj0 gj0Var = new gj0(R.raw.chat_audio_record_delete_3, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), false, null);
+        this.h = gj0Var;
+        gj0Var.m0 = true;
+        paint.setColor(-2406842);
+        gj0Var.X = true;
+        gj0Var.O(-2406842, "Cup Red");
+        gj0Var.O(-2406842, "Box");
+        gj0Var.m();
     }
 
-    @Override // org.telegram.ui.Components.sa
-    public final rl0 v(sl0 sl0Var) {
-        w51 w51Var = new w51(sl0Var, getContext(), this.U, 0, false, new p1(this, 25), this.resourcesProvider);
-        this.W = w51Var;
-        w51Var.r = false;
-        return w51Var;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        boolean z4 = this.g;
+        gj0 gj0Var = this.h;
+        if (z4) {
+            gj0Var.setAlpha((int) (this.b * 255.0f * this.c));
+        }
+        int i10 = (int) (this.b * 255.0f * this.c);
+        Paint paint = this.a;
+        paint.setAlpha(i10);
+        long currentTimeMillis = System.currentTimeMillis() - this.d;
+        if (this.e || this.g) {
+            float f10 = (currentTimeMillis / 600.0f) + this.b;
+            this.b = f10;
+            if (f10 >= 1.0f) {
+                this.b = 1.0f;
+                this.e = false;
+            }
+        } else {
+            float f11 = this.b - (currentTimeMillis / 600.0f);
+            this.b = f11;
+            if (f11 <= 0.0f) {
+                this.b = 0.0f;
+                this.e = true;
+            }
+        }
+        this.d = System.currentTimeMillis();
+        gj0Var.setBounds(getBounds());
+        if (this.g) {
+            gj0Var.draw(canvas);
+        }
+        if (!this.g || !gj0Var.s()) {
+            canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), AndroidUtilities.dp(5.0f), paint);
+        }
+        this.j.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.sa
-    public final CharSequence y() {
-        return this.V;
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.c = i10 / 255.0f;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

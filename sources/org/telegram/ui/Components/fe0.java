@@ -1,184 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import androidx.core.widget.NestedScrollView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class fe0 extends org.telegram.ui.ActionBar.h3 {
-    public final TextView b;
-    public final TextView c;
-    public final TextView d;
-    public final kj0 e;
-    public final hj0 f;
-    public final y80 h;
-    public final long n;
-    public boolean r;
-    public TLRPC.TL_chatInviteExported s;
+public final /* synthetic */ class fe0 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ String[] b;
+    public final /* synthetic */ Activity c;
+    public final /* synthetic */ Utilities.Callback d;
 
-    public fe0(Context context, org.telegram.ui.z60 z60Var, TLRPC.ChatFull chatFull, long j10, boolean z4) {
-        super(context, false);
-        TLRPC.TL_chatInviteExported tL_chatInviteExported;
-        this.n = j10;
-        setAllowNestedScroll(true);
-        setApplyBottomPadding(false);
-        setApplyTopPadding(false);
-        fixNavigationBar(getThemedColor(org.telegram.ui.ActionBar.k6.d6));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        FrameLayout frameLayout = new FrameLayout(context);
-        frameLayout.addView(linearLayout);
-        ImageView imageView = new ImageView(context);
-        imageView.setBackground(org.telegram.ui.ActionBar.k6.f0(getThemedColor(org.telegram.ui.ActionBar.k6.i6), 1, -1));
-        imageView.setColorFilter(getThemedColor(org.telegram.ui.ActionBar.k6.Ji));
-        imageView.setImageResource(R.drawable.ic_layer_close);
-        imageView.setOnClickListener(new b80(this, 5));
-        int dp = AndroidUtilities.dp(8.0f);
-        imageView.setPadding(dp, dp, dp, dp);
-        frameLayout.addView(imageView, k7.c6.d(36, 36.0f, 8388661, 6.0f, 8.0f, 8.0f, 0.0f));
-        y80 y80Var = new y80(context, z60Var, this, true, z4);
-        this.h = y80Var;
-        y80Var.setPermanent(true);
-        kj0 kj0Var = new kj0(context);
-        this.e = kj0Var;
-        hj0 hj0Var = new hj0(R.raw.shared_link_enter, AndroidUtilities.dp(90.0f), AndroidUtilities.dp(90.0f), false, null);
-        this.f = hj0Var;
-        hj0Var.N(42);
-        kj0Var.setAnimation(hj0Var);
-        y80Var.d(0, null, false);
-        y80Var.b(true);
-        y80Var.setDelegate(new hv(this, 9));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setText(LocaleController.getString(R.string.InviteLink));
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setTextSize(1, 20.0f);
-        textView.setGravity(1);
-        textView.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.G6, false));
-        TextView textView2 = new TextView(context);
-        this.c = textView2;
-        textView2.setText(LocaleController.getString(z4 ? R.string.LinkInfoChannel : R.string.LinkInfo));
-        textView2.setTextSize(1, 14.0f);
-        textView2.setGravity(1);
-        textView2.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.j5, false));
-        textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
-        TextView textView3 = new TextView(context);
-        this.d = textView3;
-        org.telegram.messenger.y3.r(R.string.ManageInviteLinks, textView3, 17);
-        textView3.setEllipsize(TextUtils.TruncateAt.END);
-        textView3.setSingleLine(true);
-        textView3.setTypeface(AndroidUtilities.bold());
-        textView3.setTextSize(1, 14.0f);
-        int i10 = org.telegram.ui.ActionBar.k6.Oh;
-        textView3.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, i10, false));
-        int dp2 = AndroidUtilities.dp(8.0f);
-        int k10 = i0.a.k(org.telegram.ui.ActionBar.k6.w0(null, i10, false), 120);
-        textView3.setBackground(org.telegram.ui.ActionBar.k6.i0(dp2, dp2, dp2, dp2, 0, k10, k10));
-        textView3.setLetterSpacing(0.025f);
-        textView3.setOnClickListener(new eg.o(this, chatFull, z60Var, 28));
-        linearLayout.addView(kj0Var, k7.c6.t(90, 90, 1, 0, 33, 0, 0));
-        linearLayout.addView(textView, k7.c6.t(-1, -2, 1, 60, 10, 60, 0));
-        linearLayout.addView(textView2, k7.c6.t(-1, -2, 1, 28, 7, 28, 2));
-        linearLayout.addView(y80Var, k7.c6.n(-1, -2));
-        linearLayout.addView(textView3, k7.c6.t(-1, 48, 1, 14, -2, 14, 6));
-        NestedScrollView nestedScrollView = new NestedScrollView(context);
-        nestedScrollView.setVerticalScrollBarEnabled(false);
-        nestedScrollView.addView(frameLayout);
-        setCustomView(nestedScrollView);
-        TLRPC.Chat chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(j10));
-        if (chat != null && ChatObject.isPublic(chat)) {
-            y80Var.setLink("https://t.me/" + ChatObject.getPublicUsername(chat));
-            textView3.setVisibility(8);
-        } else if (chatFull == null || (tL_chatInviteExported = chatFull.exported_invite) == null) {
-            p(false);
-        } else {
-            y80Var.setLink(tL_chatInviteExported.link);
+    public /* synthetic */ fe0(String[] strArr, Activity activity, Utilities.Callback callback, int i10) {
+        this.a = i10;
+        this.b = strArr;
+        this.c = activity;
+        this.d = callback;
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        int i10 = this.a;
+        String[] strArr = this.b;
+        switch (i10) {
+            case 0:
+                he0.a(strArr, this.c, this.d);
+                break;
+            default:
+                he0.b(strArr, this.c, this.d);
+                break;
         }
-        q();
-    }
-
-    public static void m(fe0 fe0Var) {
-        super.dismiss();
-    }
-
-    public static void n(fe0 fe0Var, TLRPC.ChatFull chatFull, org.telegram.ui.z60 z60Var) {
-        org.telegram.ui.qh0 qh0Var = new org.telegram.ui.qh0(chatFull.id, 0L, 0);
-        qh0Var.g0(chatFull, chatFull.exported_invite);
-        z60Var.presentFragment(qh0Var);
-        super.dismiss();
-    }
-
-    public static /* synthetic */ void o(fe0 fe0Var, TLRPC.TL_error tL_error, TLObject tLObject) {
-        if (tL_error == null) {
-            fe0Var.s = (TLRPC.TL_chatInviteExported) tLObject;
-            TLRPC.ChatFull chatFull = MessagesController.getInstance(fe0Var.currentAccount).getChatFull(fe0Var.n);
-            if (chatFull != null) {
-                chatFull.exported_invite = fe0Var.s;
-            }
-            fe0Var.h.setLink(fe0Var.s.link);
-        }
-        fe0Var.r = false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.h3
-    public final ArrayList getThemeDescriptions() {
-        ArrayList arrayList = new ArrayList();
-        t6 t6Var = new t6(this, 5);
-        arrayList.add(new org.telegram.ui.ActionBar.m6(this.b, 4, null, null, null, null, org.telegram.ui.ActionBar.k6.G6));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(this.c, 4, null, null, null, null, org.telegram.ui.ActionBar.k6.j5));
-        int i10 = org.telegram.ui.ActionBar.k6.Oh;
-        arrayList.add(new org.telegram.ui.ActionBar.m6(this.d, 4, null, null, null, null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(null, 0, null, null, null, t6Var, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(null, 0, null, null, null, t6Var, org.telegram.ui.ActionBar.k6.Sh));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(null, 0, null, null, null, t6Var, org.telegram.ui.ActionBar.k6.n6));
-        return arrayList;
-    }
-
-    public final void p(boolean z4) {
-        if (this.r) {
-            return;
-        }
-        this.r = true;
-        TLRPC.TL_messages_exportChatInvite tL_messages_exportChatInvite = new TLRPC.TL_messages_exportChatInvite();
-        tL_messages_exportChatInvite.legacy_revoke_permanent = true;
-        tL_messages_exportChatInvite.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(-this.n);
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_exportChatInvite, new org.telegram.messenger.zd(6, this, z4));
-    }
-
-    public final void q() {
-        int dp = AndroidUtilities.dp(90.0f);
-        int i10 = org.telegram.ui.ActionBar.k6.Oh;
-        this.e.setBackground(org.telegram.ui.ActionBar.k6.K(dp, org.telegram.ui.ActionBar.k6.w0(null, i10, false)));
-        int dp2 = AndroidUtilities.dp(8.0f);
-        int k10 = i0.a.k(org.telegram.ui.ActionBar.k6.w0(null, i10, false), 120);
-        this.d.setBackground(org.telegram.ui.ActionBar.k6.i0(dp2, dp2, dp2, dp2, 0, k10, k10));
-        int w02 = org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.Sh, false);
-        hj0 hj0Var = this.f;
-        hj0Var.O(w02, "Top");
-        hj0Var.O(w02, "Bottom");
-        hj0Var.O(w02, "Center");
-        this.h.f();
-        setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.h5, false));
-    }
-
-    @Override // org.telegram.ui.ActionBar.h3, android.app.Dialog
-    public final void show() {
-        super.show();
-        AndroidUtilities.runOnUIThread(new ec0(this, 5), 50L);
     }
 }

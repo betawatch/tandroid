@@ -1,23 +1,72 @@
 package qg;
 
-import android.graphics.Canvas;
+import j3.w;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class d extends b {
-    public final tg.a E;
+public final class d implements a {
+    public final f6 a;
+    public c b;
+    public c c;
+    public c d;
+    public c e;
+    public float f;
+    public float h;
+    public float n;
+    public float r;
 
-    public d(tg.a aVar) {
-        this.E = aVar;
+    public d(f6 f6Var) {
+        this.a = f6Var;
+        float dpf2 = AndroidUtilities.dpf2(1.0f);
+        float dpf22 = AndroidUtilities.dpf2(0.33333334f);
+        this.n = dpf2;
+        this.r = dpf22;
+        float dpf23 = AndroidUtilities.dpf2(1.0f);
+        float dpf24 = AndroidUtilities.dpf2(0.6666667f);
+        this.f = dpf23;
+        this.h = dpf24;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        c(canvas, this.E);
+    @Override // qg.a
+    public final int D() {
+        return a(this.d);
     }
 
-    @Override // qg.b
-    public final tg.a i() {
-        return this.E;
+    public final int a(c cVar) {
+        if (cVar == null) {
+            return 0;
+        }
+        f6 f6Var = this.a;
+        return cVar.f(f6Var, ((f6Var instanceof nh.b) || f6Var != null) ? f6Var.a() : j6.I.q());
+    }
+
+    public final void b(int i10, int i11) {
+        this.b = new w(i11, i10, 2);
+    }
+
+    public final void c(int i10, int i11) {
+        this.d = new w(i11, i10, 2);
+    }
+
+    public final void d(int i10, int i11) {
+        this.c = new w(i11, i10, 2);
+    }
+
+    @Override // qg.a
+    public final int e0() {
+        return a(this.b);
+    }
+
+    @Override // qg.a
+    public final int m0() {
+        return a(this.e);
+    }
+
+    @Override // qg.a
+    public final int x() {
+        return a(this.c);
     }
 }

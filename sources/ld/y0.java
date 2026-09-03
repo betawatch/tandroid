@@ -10,7 +10,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class y0 extends x0 implements j0 {
     public final Executor c;
@@ -36,9 +36,9 @@ public final class y0 extends x0 implements j0 {
         if (scheduledExecutorService != null) {
             try {
                 scheduledFuture = scheduledExecutorService.schedule(e2Var, j10, TimeUnit.MILLISECONDS);
-            } catch (RejectedExecutionException e6) {
+            } catch (RejectedExecutionException e) {
                 CancellationException cancellationException = new CancellationException("The task was rejected");
-                cancellationException.initCause(e6);
+                cancellationException.initCause(e);
                 e0.e(hVar, cancellationException);
             }
         }
@@ -51,13 +51,13 @@ public final class y0 extends x0 implements j0 {
         ScheduledFuture<?> scheduledFuture = null;
         ScheduledExecutorService scheduledExecutorService = executor instanceof ScheduledExecutorService ? (ScheduledExecutorService) executor : null;
         if (scheduledExecutorService != null) {
-            androidx.biometric.k kVar = new androidx.biometric.k(this, mVar, false, 24);
+            androidx.biometric.j jVar = new androidx.biometric.j(this, mVar, false, 24);
             uc.h hVar = mVar.e;
             try {
-                scheduledFuture = scheduledExecutorService.schedule(kVar, j10, TimeUnit.MILLISECONDS);
-            } catch (RejectedExecutionException e6) {
+                scheduledFuture = scheduledExecutorService.schedule(jVar, j10, TimeUnit.MILLISECONDS);
+            } catch (RejectedExecutionException e) {
                 CancellationException cancellationException = new CancellationException("The task was rejected");
-                cancellationException.initCause(e6);
+                cancellationException.initCause(e);
                 e0.e(hVar, cancellationException);
             }
         }
@@ -72,9 +72,9 @@ public final class y0 extends x0 implements j0 {
     public final void c(uc.h hVar, Runnable runnable) {
         try {
             this.c.execute(runnable);
-        } catch (RejectedExecutionException e6) {
+        } catch (RejectedExecutionException e) {
             CancellationException cancellationException = new CancellationException("The task was rejected");
-            cancellationException.initCause(e6);
+            cancellationException.initCause(e);
             e0.e(hVar, cancellationException);
             m0.b.c(hVar, runnable);
         }

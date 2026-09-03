@@ -5,12 +5,11 @@ import android.text.TextUtils;
 import android.util.Log;
 import b4.e0;
 import b6.m;
-import c9.p;
+import c9.q;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
 import d9.k;
-import h7.u;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -24,15 +23,15 @@ import java.util.regex.Pattern;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class c implements d {
     public static final Object m = new Object();
     public final w8.g a;
     public final ea.c b;
-    public final bf.b c;
+    public final af.c c;
     public final j d;
-    public final p e;
+    public final q e;
     public final h f;
     public final Object g;
     public final ExecutorService h;
@@ -48,25 +47,25 @@ public final class c implements d {
     public c(w8.g gVar, ba.b bVar, ExecutorService executorService, k kVar) {
         gVar.a();
         ea.c cVar = new ea.c(gVar.a, bVar);
-        bf.b bVar2 = new bf.b(gVar);
-        if (u.c == null) {
-            u.c = new u(6);
+        af.c cVar2 = new af.c(gVar);
+        if (db.a.b == null) {
+            db.a.b = new db.a(6);
         }
-        u uVar = u.c;
+        db.a aVar = db.a.b;
         if (j.d == null) {
-            j.d = new j(uVar);
+            j.d = new j(aVar);
         }
         j jVar = j.d;
-        p pVar = new p(new c9.d(gVar, 2));
+        q qVar = new q(new c9.d(gVar, 2));
         h hVar = new h();
         this.g = new Object();
         this.k = new HashSet();
         this.l = new ArrayList();
         this.a = gVar;
         this.b = cVar;
-        this.c = bVar2;
+        this.c = cVar2;
         this.d = jVar;
-        this.e = pVar;
+        this.e = qVar;
         this.f = hVar;
         this.h = executorService;
         this.i = kVar;
@@ -93,25 +92,25 @@ public final class c implements d {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void b() {
-        da.b X;
+        da.b Y;
         synchronized (m) {
             try {
                 w8.g gVar = this.a;
                 gVar.a();
-                bf.b p10 = bf.b.p(gVar.a);
+                af.c p10 = af.c.p(gVar.a);
                 try {
-                    X = this.c.X();
-                    int i10 = X.b;
+                    Y = this.c.Y();
+                    int i10 = Y.b;
                     boolean z4 = true;
                     if (i10 != 2 && i10 != 1) {
                         z4 = false;
                     }
                     if (p10 != null) {
-                        p10.Z();
+                        p10.a0();
                     }
                 } catch (Throwable th2) {
                     if (p10 != null) {
-                        p10.Z();
+                        p10.a0();
                     }
                     throw th2;
                 }
@@ -119,7 +118,7 @@ public final class c implements d {
                 throw th3;
             }
         }
-        k(X);
+        k(Y);
         this.i.execute(new b(this, 1));
     }
 
@@ -239,15 +238,15 @@ public final class c implements d {
             try {
                 w8.g gVar = this.a;
                 gVar.a();
-                bf.b p10 = bf.b.p(gVar.a);
+                af.c p10 = af.c.p(gVar.a);
                 try {
                     this.c.T(bVar);
                     if (p10 != null) {
-                        p10.Z();
+                        p10.a0();
                     }
                 } catch (Throwable th2) {
                     if (p10 != null) {
-                        p10.Z();
+                        p10.a0();
                     }
                     throw th2;
                 }
@@ -382,10 +381,10 @@ public final class c implements d {
                 } catch (IOException | AssertionError unused2) {
                 }
                 if (responseCode >= 200 && responseCode < 300) {
-                    ea.a e6 = ea.c.e(c3);
+                    ea.a e = ea.c.e(c3);
                     c3.disconnect();
                     TrafficStats.clearThreadStatsTag();
-                    aVar = e6;
+                    aVar = e;
                 } else {
                     try {
                         ea.c.b(c3, str7, str4, str6);

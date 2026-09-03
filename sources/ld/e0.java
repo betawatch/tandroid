@@ -6,25 +6,37 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import k7.g7;
+import k7.g8;
 import k7.h7;
-import k7.h8;
-import k7.o7;
-import k7.q7;
+import k7.n7;
+import k7.p7;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class e0 {
-    public static final com.google.android.gms.internal.clearcut.e a = new com.google.android.gms.internal.clearcut.e("RESUME_TOKEN", 2);
-    public static final com.google.android.gms.internal.clearcut.e b = new com.google.android.gms.internal.clearcut.e("REMOVED_TASK", 2);
-    public static final com.google.android.gms.internal.clearcut.e c = new com.google.android.gms.internal.clearcut.e("CLOSED_EMPTY", 2);
-    public static final com.google.android.gms.internal.clearcut.e d = new com.google.android.gms.internal.clearcut.e("COMPLETING_ALREADY", 2);
-    public static final com.google.android.gms.internal.clearcut.e e = new com.google.android.gms.internal.clearcut.e("COMPLETING_WAITING_CHILDREN", 2);
-    public static final com.google.android.gms.internal.clearcut.e f = new com.google.android.gms.internal.clearcut.e("COMPLETING_RETRY", 2);
-    public static final com.google.android.gms.internal.clearcut.e g = new com.google.android.gms.internal.clearcut.e("TOO_LATE_TO_CANCEL", 2);
-    public static final com.google.android.gms.internal.clearcut.e h = new com.google.android.gms.internal.clearcut.e("SEALED", 2);
+    public static final o3.c a;
+    public static final o3.c b;
+    public static final o3.c c;
+    public static final o3.c d;
+    public static final o3.c e;
+    public static final o3.c f;
+    public static final o3.c g;
+    public static final o3.c h;
     public static final q0 i = new q0(false);
     public static final q0 j = new q0(true);
+
+    static {
+        int i10 = 14;
+        a = new o3.c("RESUME_TOKEN", i10);
+        b = new o3.c("REMOVED_TASK", i10);
+        c = new o3.c("CLOSED_EMPTY", i10);
+        d = new o3.c("COMPLETING_ALREADY", i10);
+        e = new o3.c("COMPLETING_WAITING_CHILDREN", i10);
+        f = new o3.c("COMPLETING_RETRY", i10);
+        g = new o3.c("TOO_LATE_TO_CANCEL", i10);
+        h = new o3.c("SEALED", i10);
+    }
 
     public static t a() {
         t tVar = new t(true);
@@ -57,7 +69,7 @@ public abstract class e0 {
             return tc.o.a;
         }
         e eVar = new e(h0VarArr);
-        m mVar = new m(1, h8.b(iVar));
+        m mVar = new m(1, g8.b(iVar));
         mVar.s();
         int length = h0VarArr.length;
         c[] cVarArr = new c[length];
@@ -100,7 +112,7 @@ public abstract class e0 {
 
     public static final Object g(long j10, wc.c cVar) {
         if (j10 > 0) {
-            m mVar = new m(1, h8.b(cVar));
+            m mVar = new m(1, g8.b(cVar));
             mVar.s();
             if (j10 < Long.MAX_VALUE) {
                 j(mVar.e).b(j10, mVar);
@@ -155,18 +167,18 @@ public abstract class e0 {
             return new m(1, cVar);
         }
         qd.h hVar = (qd.h) cVar;
-        com.google.android.gms.internal.clearcut.e eVar = qd.a.d;
+        o3.c cVar2 = qd.a.d;
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = qd.h.n;
         loop0: while (true) {
             Object obj = atomicReferenceFieldUpdater.get(hVar);
             mVar = null;
             if (obj == null) {
-                atomicReferenceFieldUpdater.set(hVar, eVar);
+                atomicReferenceFieldUpdater.set(hVar, cVar2);
                 mVar2 = null;
                 break;
             }
             if (obj instanceof m) {
-                while (!atomicReferenceFieldUpdater.compareAndSet(hVar, obj, eVar)) {
+                while (!atomicReferenceFieldUpdater.compareAndSet(hVar, obj, cVar2)) {
                     if (atomicReferenceFieldUpdater.get(hVar) != obj) {
                         break;
                     }
@@ -174,7 +186,7 @@ public abstract class e0 {
                 mVar2 = (m) obj;
                 break loop0;
             }
-            if (obj != eVar && !(obj instanceof Throwable)) {
+            if (obj != cVar2 && !(obj instanceof Throwable)) {
                 throw new IllegalStateException(("Inconsistent state " + obj).toString());
             }
         }
@@ -206,7 +218,7 @@ public abstract class e0 {
         } catch (Throwable th3) {
             if (th2 != th3) {
                 RuntimeException runtimeException = new RuntimeException("Exception while trying to handle coroutine exception", th3);
-                o7.a(runtimeException, th2);
+                n7.a(runtimeException, th2);
                 th2 = runtimeException;
             }
             qd.a.c(th2, hVar);
@@ -240,14 +252,14 @@ public abstract class e0 {
                 vc.a aVar = vc.a.a;
                 i10 = gVar.c;
                 if (i10 != 0) {
-                    q7.b(obj);
+                    p7.b(obj);
                     it = collection.iterator();
                 } else {
                     if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     it = gVar.a;
-                    q7.b(obj);
+                    p7.b(obj);
                 }
                 while (it.hasNext()) {
                     f1 f1Var = (f1) it.next();
@@ -294,7 +306,7 @@ public abstract class e0 {
                 vc.a aVar = vc.a.a;
                 i10 = fVar.e;
                 if (i10 != 0) {
-                    q7.b(obj);
+                    p7.b(obj);
                     i11 = 0;
                     f1VarArr2 = f1VarArr;
                     length = f1VarArr.length;
@@ -307,7 +319,7 @@ public abstract class e0 {
                     length = fVar.c;
                     i11 = fVar.b;
                     f1[] f1VarArr3 = (f1[]) fVar.a;
-                    q7.b(obj);
+                    p7.b(obj);
                     f1VarArr2 = f1VarArr3;
                     i11++;
                     if (i11 < length) {
@@ -349,13 +361,13 @@ public abstract class e0 {
     }
 
     public static final Object r(Object obj) {
-        return obj instanceof v ? q7.a(((v) obj).a) : obj;
+        return obj instanceof v ? p7.a(((v) obj).a) : obj;
     }
 
     public static final void s(m mVar, uc.c cVar, boolean z4) {
         Object obj = m.h.get(mVar);
         Throwable g10 = mVar.g(obj);
-        Object a2 = g10 != null ? q7.a(g10) : mVar.h(obj);
+        Object a2 = g10 != null ? p7.a(g10) : mVar.h(obj);
         if (!z4) {
             cVar.resumeWith(a2);
             return;
@@ -388,7 +400,7 @@ public abstract class e0 {
         try {
             a2 = cVar + '@' + k(cVar);
         } catch (Throwable th2) {
-            a2 = q7.a(th2);
+            a2 = p7.a(th2);
         }
         if (sc.f.a(a2) != null) {
             a2 = cVar.getClass().getName() + '@' + k(cVar);

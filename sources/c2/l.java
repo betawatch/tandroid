@@ -19,14 +19,14 @@ import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class l extends t {
     public final f B;
     public ArrayList C;
     public final ArrayMap D;
     public final MediaRouter2 r;
-    public final ja.c s;
+    public final bb.b s;
     public final ArrayMap v;
     public final MediaRouter2.RouteCallback w;
     public final k x;
@@ -36,7 +36,7 @@ public final class l extends t {
         Log.isLoggable("MR2Provider", 3);
     }
 
-    public l(Context context, ja.c cVar) {
+    public l(Context context, bb.b bVar) {
         super(context, null);
         this.v = new ArrayMap();
         this.x = new k(this);
@@ -44,7 +44,7 @@ public final class l extends t {
         this.C = new ArrayList();
         this.D = new ArrayMap();
         this.r = MediaRouter2.getInstance(context);
-        this.s = cVar;
+        this.s = bVar;
         this.B = new f(new Handler(Looper.getMainLooper()), 0);
         if (Build.VERSION.SDK_INT >= 34) {
             this.w = new j(this, 1);
@@ -101,10 +101,10 @@ public final class l extends t {
     @Override // c2.t
     public final void f(o oVar) {
         ArrayList<String> arrayList;
-        v vVar;
+        w wVar;
         RouteDiscoveryPreference build;
         String str;
-        int i10 = c0.c == null ? 0 : c0.c().B;
+        int i10 = d0.c == null ? 0 : d0.c().B;
         g gVar = this.y;
         k kVar = this.x;
         if (i10 <= 0) {
@@ -113,10 +113,10 @@ public final class l extends t {
             this.r.unregisterControllerCallback(gVar);
             return;
         }
-        f0 f0Var = c0.c().u;
-        boolean z4 = f0Var == null ? false : f0Var.d;
+        g0 g0Var = d0.c().u;
+        boolean z4 = g0Var == null ? false : g0Var.d;
         if (oVar == null) {
-            oVar = new o(v.c, false);
+            oVar = new o(w.c, false);
         }
         oVar.a();
         ArrayList c3 = oVar.b.c();
@@ -147,28 +147,28 @@ public final class l extends t {
             }
         }
         if (arrayList == null) {
-            vVar = v.c;
+            wVar = w.c;
         } else {
             Bundle bundle = new Bundle();
             bundle.putStringArrayList("controlCategories", arrayList);
-            vVar = new v(bundle, arrayList);
+            wVar = new w(bundle, arrayList);
         }
         boolean b10 = oVar.b();
-        if (vVar == null) {
+        if (wVar == null) {
             throw new IllegalArgumentException("selector must not be null");
         }
         Bundle bundle2 = new Bundle();
-        bundle2.putBundle("selector", vVar.a);
+        bundle2.putBundle("selector", wVar.a);
         bundle2.putBoolean("activeScan", b10);
         MediaRouter2 mediaRouter2 = this.r;
         MediaRouter2.RouteCallback routeCallback = this.w;
-        vVar.a();
-        if (vVar.b.contains(null)) {
+        wVar.a();
+        if (wVar.b.contains(null)) {
             build = new RouteDiscoveryPreference.Builder(new ArrayList(), false).build();
         } else {
             boolean z10 = bundle2.getBoolean("activeScan");
             ArrayList arrayList2 = new ArrayList();
-            ArrayList c10 = vVar.c();
+            ArrayList c10 = wVar.c();
             int size2 = c10.size();
             int i12 = 0;
             while (i12 < size2) {
@@ -207,7 +207,7 @@ public final class l extends t {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            MediaRoute2Info d = androidx.emoji2.text.w.d(obj);
+            MediaRoute2Info d = af.a.d(obj);
             if (TextUtils.equals(d.getId(), str)) {
                 return d;
             }
@@ -220,7 +220,7 @@ public final class l extends t {
         ArraySet arraySet = new ArraySet();
         Iterator<MediaRoute2Info> it = this.r.getRoutes().iterator();
         while (it.hasNext()) {
-            MediaRoute2Info d = androidx.emoji2.text.w.d(it.next());
+            MediaRoute2Info d = af.a.d(it.next());
             if (d != null && !arraySet.contains(d) && !d.isSystemRoute()) {
                 arraySet.add(d);
                 arrayList.add(d);
@@ -239,7 +239,7 @@ public final class l extends t {
         while (i11 < size) {
             Object obj = arrayList2.get(i11);
             i11++;
-            MediaRoute2Info d10 = androidx.emoji2.text.w.d(obj);
+            MediaRoute2Info d10 = af.a.d(obj);
             Bundle extras = d10.getExtras();
             if (extras == null || extras.getString("androidx.mediarouter.media.KEY_ORIGINAL_ROUTE_ID") == null) {
                 Log.w("MR2Provider", "Cannot find the original route Id. route=" + d10);
@@ -254,7 +254,7 @@ public final class l extends t {
         while (i12 < size2) {
             Object obj2 = arrayList4.get(i12);
             i12++;
-            MediaRoute2Info d11 = androidx.emoji2.text.w.d(obj2);
+            MediaRoute2Info d11 = af.a.d(obj2);
             n v = g0.f.v(d11);
             if (d11 != null) {
                 arrayList3.add(v);
@@ -293,7 +293,7 @@ public final class l extends t {
         }
         ArrayList h = g0.f.h(selectedRoutes);
         int i10 = 0;
-        n v = g0.f.v(androidx.emoji2.text.w.d(selectedRoutes.get(0)));
+        n v = g0.f.v(af.a.d(selectedRoutes.get(0)));
         Bundle controlHints = routingController.getControlHints();
         String string = this.a.getString(R.string.mr_dialog_default_group_name);
         n nVar = null;
@@ -307,8 +307,8 @@ public final class l extends t {
                 if (bundle != null) {
                     nVar = new n(bundle);
                 }
-            } catch (Exception e6) {
-                Log.w("MR2Provider", "Exception while unparceling control hints.", e6);
+            } catch (Exception e) {
+                Log.w("MR2Provider", "Exception while unparceling control hints.", e);
             }
         }
         if (nVar == null) {

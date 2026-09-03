@@ -1,15 +1,38 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class r2 {
-    public final String a;
-    public long b;
-    public int c;
-    public long d;
-    public long e;
+public final class r2 extends e5 {
+    private static final r2 zzb;
+    private int zzd;
+    private int zze;
+    private int zzf;
+    private int zzg;
 
-    public r2(String str) {
-        this.a = str;
+    static {
+        r2 r2Var = new r2();
+        zzb = r2Var;
+        e5.e(r2.class, r2Var);
+    }
+
+    @Override // com.google.android.gms.internal.cast.e5
+    public final Object h(int i10, e5 e5Var) {
+        int i11 = i10 - 1;
+        if (i11 == 0) {
+            return (byte) 1;
+        }
+        if (i11 == 2) {
+            return new f6(zzb, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001᠌\u0000\u0002င\u0001\u0003င\u0002", new Object[]{"zzd", "zze", z.P, "zzf", "zzg"});
+        }
+        if (i11 == 3) {
+            return new r2();
+        }
+        if (i11 == 4) {
+            return new v0(zzb);
+        }
+        if (i11 != 5) {
+            return null;
+        }
+        return zzb;
     }
 }

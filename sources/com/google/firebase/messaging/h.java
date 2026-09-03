@@ -11,7 +11,7 @@ import java.util.ArrayDeque;
 import java.util.concurrent.Callable;
 import org.webrtc.audio.WebRtcAudioRecord;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h implements Callable {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class h implements Callable {
             case 0:
                 Context context = (Context) this.b;
                 Intent intent = (Intent) this.c;
-                s f10 = s.f();
+                r f10 = r.f();
                 f10.getClass();
                 if (Log.isLoggable("FirebaseMessaging", 3)) {
                     Log.d("FirebaseMessaging", "Starting service");
@@ -75,7 +75,7 @@ public final /* synthetic */ class h implements Callable {
                 }
                 try {
                     if (f10.h(context)) {
-                        startService = b0.d(context, intent2);
+                        startService = a0.d(context, intent2);
                     } else {
                         startService = context.startService(intent2);
                         Log.d("FirebaseMessaging", "Missing wake lock permission, service start may be delayed");
@@ -86,11 +86,11 @@ public final /* synthetic */ class h implements Callable {
                     } else {
                         i10 = -1;
                     }
-                } catch (IllegalStateException e6) {
-                    Log.e("FirebaseMessaging", "Failed to start service while in background: " + e6);
+                } catch (IllegalStateException e) {
+                    Log.e("FirebaseMessaging", "Failed to start service while in background: " + e);
                     i10 = 402;
-                } catch (SecurityException e10) {
-                    Log.e("FirebaseMessaging", "Error while delivering the message to the serviceIntent", e10);
+                } catch (SecurityException e6) {
+                    Log.e("FirebaseMessaging", "Error while delivering the message to the serviceIntent", e6);
                     i10 = 401;
                 }
                 return Integer.valueOf(i10);

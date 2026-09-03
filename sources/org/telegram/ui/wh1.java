@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class wh1 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -17,8 +17,8 @@ public final class wh1 extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        oh.z2 z2Var;
-        oh.z2 z2Var2;
+        nh.y2 y2Var;
+        nh.y2 y2Var2;
         switch (this.a) {
             case 0:
                 ii1 ii1Var = this.b;
@@ -29,7 +29,7 @@ public final class wh1 extends AnimatorListenerAdapter {
                 ii1Var.s.invalidate();
                 break;
             case 1:
-                org.telegram.ui.Components.voip.n2.k().a.setAlpha(1.0f);
+                org.telegram.ui.Components.voip.m2.k().a.setAlpha(1.0f);
                 AndroidUtilities.runOnUIThread(new sz0(this, 23), 200L);
                 break;
             case 2:
@@ -44,8 +44,8 @@ public final class wh1 extends AnimatorListenerAdapter {
             case 3:
                 for (org.telegram.ui.Components.p9 p9Var : this.b.S) {
                     org.telegram.ui.Components.l5 l5Var = p9Var.e;
-                    if (l5Var != null && (z2Var = l5Var.k) != null) {
-                        z2Var.setAllowStartAnimation(true);
+                    if (l5Var != null && (y2Var = l5Var.k) != null) {
+                        y2Var.setAllowStartAnimation(true);
                         p9Var.e.k.startAnimation();
                     }
                 }
@@ -55,8 +55,8 @@ public final class wh1 extends AnimatorListenerAdapter {
                 ii1Var3.B();
                 for (org.telegram.ui.Components.p9 p9Var2 : ii1Var3.S) {
                     org.telegram.ui.Components.l5 l5Var2 = p9Var2.e;
-                    if (l5Var2 != null && (z2Var2 = l5Var2.k) != null) {
-                        z2Var2.setAllowStartAnimation(false);
+                    if (l5Var2 != null && (y2Var2 = l5Var2.k) != null) {
+                        y2Var2.setAllowStartAnimation(false);
                         p9Var2.e.k.stopAnimation();
                     }
                 }

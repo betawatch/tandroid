@@ -13,15 +13,15 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.jj0;
 import org.telegram.ui.Components.p9;
-import org.telegram.ui.dc1;
+import org.telegram.ui.ec1;
 import org.telegram.ui.jd1;
 import org.telegram.ui.o21;
 import org.telegram.ui.u21;
-import org.telegram.ui.xn;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class r0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -48,23 +48,23 @@ public final class r0 extends FrameLayout {
 
     @Override // android.view.ViewGroup
     public boolean drawChild(Canvas canvas, View view, long j10) {
-        f5 f5Var;
-        f5 f5Var2;
+        e5 e5Var;
+        e5 e5Var2;
         int i10;
         switch (this.a) {
             case 3:
                 boolean drawChild = super.drawChild(canvas, view, j10);
                 jd1 jd1Var = (jd1) this.c;
                 if (view == jd1Var.p0) {
-                    f5Var = jd1Var.parentLayout;
-                    if (f5Var != null) {
-                        f5Var2 = jd1Var.parentLayout;
+                    e5Var = jd1Var.parentLayout;
+                    if (e5Var != null) {
+                        e5Var2 = jd1Var.parentLayout;
                         if (jd1Var.p0.getVisibility() == 0) {
                             i10 = (int) (jd1Var.p0.getTranslationY() + jd1Var.p0.getMeasuredHeight());
                         } else {
                             i10 = 0;
                         }
-                        ((ActionBarLayout) f5Var2).q(canvas, i10);
+                        ((ActionBarLayout) e5Var2).q(canvas, i10);
                     }
                 }
                 return drawChild;
@@ -87,7 +87,7 @@ public final class r0 extends FrameLayout {
                 if (w0Var.f.getVisibility() == 0) {
                     i14 += w0Var.f.getMeasuredWidth();
                 }
-                lg.f fVar = w0Var.e;
+                kg.f fVar = w0Var.e;
                 fVar.layout(i14, fVar.getTop(), w0Var.e.getMeasuredWidth() + i14, w0Var.e.getBottom());
                 break;
             case 1:
@@ -135,9 +135,9 @@ public final class r0 extends FrameLayout {
                         u21Var.x.layout(getMeasuredWidth() - u21Var.x.getMeasuredWidth(), measuredHeight4, getMeasuredWidth(), u21Var.x.getMeasuredHeight() + measuredHeight4);
                     }
                 }
-                kj0 kj0Var = u21Var.C;
+                jj0 jj0Var = u21Var.C;
                 Rect rect = u21Var.c;
-                kj0Var.layout(rect.left + measuredWidth2, rect.top + measuredHeight, measuredWidth2 + rect.right, measuredHeight + rect.bottom);
+                jj0Var.layout(rect.left + measuredWidth2, rect.top + measuredHeight, measuredWidth2 + rect.right, measuredHeight + rect.bottom);
                 int dp2 = AndroidUtilities.dp(11.0f) + u21Var.N.a;
                 int dp3 = AndroidUtilities.dp(11.0f) + u21Var.N.b;
                 ImageView imageView = u21Var.D;
@@ -175,7 +175,7 @@ public final class r0 extends FrameLayout {
                     r0Var.b = true;
                     r0Var.measureChildWithMargins(w0Var.f, i10, i13, i11, 0);
                     int measuredWidth = w0Var.f.getVisibility() == 0 ? w0Var.f.getMeasuredWidth() : 0;
-                    lg.f fVar = w0Var.e;
+                    kg.f fVar = w0Var.e;
                     int i15 = i13 + measuredWidth;
                     View view2 = w0Var.w;
                     measureChildWithMargins(fVar, i10, i15 + (view2 != null ? view2.getMeasuredWidth() : 0), i11, 0);
@@ -200,41 +200,41 @@ public final class r0 extends FrameLayout {
                 }
             case 1:
                 int size3 = View.MeasureSpec.getSize(i10);
-                xn xnVar = (xn) this.c;
-                if (xnVar.C9()) {
+                zn znVar = (zn) this.c;
+                if (znVar.C9()) {
                     size3 -= AndroidUtilities.dp(71.0f);
                     i14 = AndroidUtilities.dp(32.0f);
                 } else {
                     i14 = 0;
                 }
-                TextView textView2 = xnVar.I1;
-                if (textView2 != null && textView2.getVisibility() == 0 && (textView = xnVar.K1) != null && textView.getVisibility() == 0) {
+                TextView textView2 = znVar.I1;
+                if (textView2 != null && textView2.getVisibility() == 0 && (textView = znVar.K1) != null && textView.getVisibility() == 0) {
                     size3 = org.telegram.ui.b.x(31.0f, size3, 2);
                 }
                 this.b = true;
-                TextView textView3 = xnVar.K1;
+                TextView textView3 = znVar.K1;
                 if (textView3 != null && textView3.getVisibility() == 0) {
-                    FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) xnVar.K1.getLayoutParams();
+                    FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) znVar.K1.getLayoutParams();
                     layoutParams.width = size3;
-                    TextView textView4 = xnVar.I1;
+                    TextView textView4 = znVar.I1;
                     if (textView4 == null || textView4.getVisibility() != 0) {
-                        xnVar.K1.setPadding(AndroidUtilities.dp(48.0f), 0, AndroidUtilities.dp(48.0f), 0);
+                        znVar.K1.setPadding(AndroidUtilities.dp(48.0f), 0, AndroidUtilities.dp(48.0f), 0);
                         layoutParams.leftMargin = i14;
                     } else {
-                        xnVar.K1.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+                        znVar.K1.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
                         layoutParams.leftMargin = i14 + size3;
                         layoutParams.width -= AndroidUtilities.dp(15.0f);
                     }
                 }
-                TextView textView5 = xnVar.I1;
+                TextView textView5 = znVar.I1;
                 if (textView5 != null && textView5.getVisibility() == 0) {
-                    FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) xnVar.I1.getLayoutParams();
+                    FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) znVar.I1.getLayoutParams();
                     layoutParams2.width = size3;
-                    TextView textView6 = xnVar.K1;
+                    TextView textView6 = znVar.K1;
                     if (textView6 == null || textView6.getVisibility() != 0) {
-                        xnVar.I1.setPadding(AndroidUtilities.dp(48.0f), 0, AndroidUtilities.dp(48.0f), 0);
+                        znVar.I1.setPadding(AndroidUtilities.dp(48.0f), 0, AndroidUtilities.dp(48.0f), 0);
                     } else {
-                        xnVar.I1.setPadding(AndroidUtilities.dp(11.0f), 0, AndroidUtilities.dp(4.0f), 0);
+                        znVar.I1.setPadding(AndroidUtilities.dp(11.0f), 0, AndroidUtilities.dp(4.0f), 0);
                     }
                     layoutParams2.leftMargin = i14;
                 }
@@ -251,20 +251,20 @@ public final class r0 extends FrameLayout {
                 super.onMeasure(i10, i11);
                 if (!z4) {
                     this.b = true;
-                    ag.l lVar = u21Var.x;
+                    ah.e eVar = u21Var.x;
                     i0.b bVar = u21Var.N;
-                    lVar.setPadding(0, (bVar.b * 2) / 3, bVar.c, bVar.d);
+                    eVar.setPadding(0, (bVar.b * 2) / 3, bVar.c, bVar.d);
                     this.b = false;
                     u21Var.x.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(273.0f) + u21Var.N.c, TLObject.FLAG_30), i11);
                     u21Var.B.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(260.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(310.0f), TLObject.FLAG_30));
                     break;
                 } else {
                     this.b = true;
-                    ag.l lVar2 = u21Var.x;
+                    ah.e eVar2 = u21Var.x;
                     int i16 = u21Var.N.a;
                     int dp = AndroidUtilities.dp(8.0f);
                     i0.b bVar2 = u21Var.N;
-                    lVar2.setPadding(i16, dp, bVar2.c, bVar2.d);
+                    eVar2.setPadding(i16, dp, bVar2.c, bVar2.d);
                     this.b = false;
                     u21Var.x.measure(View.MeasureSpec.makeMeasureSpec(size4, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(size5 + u21Var.N.d, TLObject.FLAG_31));
                     u21Var.B.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(260.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(330.0f), TLObject.FLAG_30));
@@ -297,22 +297,22 @@ public final class r0 extends FrameLayout {
                 layoutParams4.topMargin = measuredHeight;
                 jd1 jd1Var = (jd1) this.c;
                 if (jd1Var.b == 2) {
-                    dc1 dc1Var = jd1Var.r0;
+                    ec1 ec1Var = jd1Var.r0;
                     int dp2 = AndroidUtilities.dp(4.0f);
                     jd1 jd1Var2 = (jd1) this.c;
-                    dc1Var.setPadding(0, dp2, 0, (AndroidUtilities.dp(((jd1Var2.H1 || jd1Var2.G1 <= 0) ? 0 : 58) + 72) - 12) + (((jd1) this.c).U0() ? AndroidUtilities.navigationBarHeight : 0));
+                    ec1Var.setPadding(0, dp2, 0, (AndroidUtilities.dp(((jd1Var2.H1 || jd1Var2.G1 <= 0) ? 0 : 58) + 72) - 12) + (((jd1) this.c).U0() ? AndroidUtilities.navigationBarHeight : 0));
                 }
                 ((jd1) this.c).r0.measure(View.MeasureSpec.makeMeasureSpec(size6, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size7 - layoutParams4.bottomMargin, TLObject.FLAG_30));
                 ((FrameLayout.LayoutParams) ((jd1) this.c).u0.getLayoutParams()).topMargin = measuredHeight;
                 ((jd1) this.c).u0.measure(View.MeasureSpec.makeMeasureSpec(size6, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size7, TLObject.FLAG_30));
-                eg.q1 q1Var = ((jd1) this.c).N1;
-                if (q1Var != null) {
-                    ((FrameLayout.LayoutParams) q1Var.getLayoutParams()).topMargin = measuredHeight;
+                dg.s1 s1Var = ((jd1) this.c).N1;
+                if (s1Var != null) {
+                    ((FrameLayout.LayoutParams) s1Var.getLayoutParams()).topMargin = measuredHeight;
                     ((jd1) this.c).N1.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(222.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(76.0f), TLObject.FLAG_30));
                 }
-                org.telegram.ui.w4 w4Var = ((jd1) this.c).z0;
-                if (w4Var != null) {
-                    w4Var.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f) + (((jd1) this.c).U0() ? AndroidUtilities.navigationBarHeight : 0));
+                org.telegram.ui.y4 y4Var = ((jd1) this.c).z0;
+                if (y4Var != null) {
+                    y4Var.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f) + (((jd1) this.c).U0() ? AndroidUtilities.navigationBarHeight : 0));
                     FrameLayout.LayoutParams layoutParams5 = (FrameLayout.LayoutParams) ((jd1) this.c).z0.getLayoutParams();
                     jd1 jd1Var3 = (jd1) this.c;
                     layoutParams5.height = AndroidUtilities.dp(72 + ((jd1Var3.H1 || jd1Var3.G1 <= 0) ? 0 : 58)) + (((jd1) this.c).U0() ? AndroidUtilities.navigationBarHeight : 0);

@@ -5,9 +5,9 @@ import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class h31 extends sl0 {
+public final class h31 extends rl0 {
     public final /* synthetic */ v31 U2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -16,7 +16,7 @@ public final class h31 extends sl0 {
         this.U2 = v31Var;
     }
 
-    @Override // org.telegram.ui.Components.sl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.rl0, android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         if (motionEvent.getAction() == 0) {
             float y10 = motionEvent.getY();

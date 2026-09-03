@@ -12,7 +12,7 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import f2.m1;
+import f2.l1;
 import j$.util.DesugarCollections;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -21,9 +21,9 @@ import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class n0 extends f2.p0 {
+public final class n0 extends f2.o0 {
     public final ArrayList c = new ArrayList();
     public final LayoutInflater d;
     public final Drawable e;
@@ -39,18 +39,18 @@ public final class n0 extends f2.p0 {
         this.w = p0Var;
         Context context = p0Var.y;
         this.d = LayoutInflater.from(context);
-        this.e = j7.a0.d(context, R.attr.mediaRouteDefaultIconDrawable);
-        this.f = j7.a0.d(context, R.attr.mediaRouteTvIconDrawable);
-        this.h = j7.a0.d(context, R.attr.mediaRouteSpeakerIconDrawable);
-        this.n = j7.a0.d(context, R.attr.mediaRouteSpeakerGroupIconDrawable);
+        this.e = j7.z.d(context, R.attr.mediaRouteDefaultIconDrawable);
+        this.f = j7.z.d(context, R.attr.mediaRouteTvIconDrawable);
+        this.h = j7.z.d(context, R.attr.mediaRouteSpeakerIconDrawable);
+        this.n = j7.z.d(context, R.attr.mediaRouteSpeakerGroupIconDrawable);
         this.s = context.getResources().getInteger(R.integer.mr_cast_volume_slider_layout_animation_duration_ms);
         this.v = new AccelerateDecelerateInterpolator();
         G();
     }
 
-    @Override // f2.p0
-    public final void A(m1 m1Var) {
-        this.w.I.values().remove(m1Var);
+    @Override // f2.o0
+    public final void A(l1 l1Var) {
+        this.w.I.values().remove(l1Var);
     }
 
     public final void D(int i10, View view) {
@@ -61,20 +61,20 @@ public final class n0 extends f2.p0 {
         view.startAnimation(oVar);
     }
 
-    public final Drawable E(c2.a0 a0Var) {
-        Uri uri = a0Var.f;
+    public final Drawable E(c2.b0 b0Var) {
+        Uri uri = b0Var.f;
         if (uri != null) {
             try {
                 Drawable createFromStream = Drawable.createFromStream(this.w.y.getContentResolver().openInputStream(uri), null);
                 if (createFromStream != null) {
                     return createFromStream;
                 }
-            } catch (IOException e6) {
-                Log.w("MediaRouteCtrlDialog", "Failed to load " + uri, e6);
+            } catch (IOException e) {
+                Log.w("MediaRouteCtrlDialog", "Failed to load " + uri, e);
             }
         }
-        int i10 = a0Var.n;
-        return i10 != 1 ? i10 != 2 ? a0Var.e() ? this.n : this.e : this.h : this.f;
+        int i10 = b0Var.n;
+        return i10 != 1 ? i10 != 2 ? b0Var.e() ? this.n : this.e : this.h : this.f;
     }
 
     public final void F() {
@@ -84,13 +84,13 @@ public final class n0 extends f2.p0 {
         arrayList.clear();
         ArrayList arrayList2 = p0Var.v;
         ArrayList arrayList3 = new ArrayList();
-        c2.z zVar = p0Var.r.a;
-        zVar.getClass();
-        c2.c0.b();
-        for (c2.a0 a0Var : DesugarCollections.unmodifiableList(zVar.b)) {
-            ja.c b10 = p0Var.r.b(a0Var);
-            if (b10 != null && (qVar = (c2.q) b10.a) != null && qVar.d) {
-                arrayList3.add(a0Var);
+        c2.a0 a0Var = p0Var.r.a;
+        a0Var.getClass();
+        c2.d0.b();
+        for (c2.b0 b0Var : DesugarCollections.unmodifiableList(a0Var.b)) {
+            bb.b b10 = p0Var.r.b(b0Var);
+            if (b10 != null && (qVar = (c2.q) b10.b) != null && qVar.d) {
+                arrayList3.add(b0Var);
             }
         }
         HashSet hashSet = new HashSet(arrayList2);
@@ -117,7 +117,7 @@ public final class n0 extends f2.p0 {
             while (i10 < size) {
                 Object obj = arrayList4.get(i10);
                 i10++;
-                arrayList.add(new l0((c2.a0) obj, 3));
+                arrayList.add(new l0((c2.b0) obj, 3));
             }
         }
         if (!arrayList3.isEmpty()) {
@@ -127,11 +127,11 @@ public final class n0 extends f2.p0 {
             while (i11 < size2) {
                 Object obj2 = arrayList3.get(i11);
                 i11++;
-                c2.a0 a0Var = (c2.a0) obj2;
-                if (!arrayList4.contains(a0Var)) {
+                c2.b0 b0Var = (c2.b0) obj2;
+                if (!arrayList4.contains(b0Var)) {
                     if (!z10) {
                         p0Var.r.getClass();
-                        c2.r a2 = c2.a0.a();
+                        c2.r a2 = c2.b0.a();
                         String j10 = a2 != null ? a2.j() : null;
                         if (TextUtils.isEmpty(j10)) {
                             j10 = context.getString(R.string.mr_dialog_groupable_header);
@@ -139,7 +139,7 @@ public final class n0 extends f2.p0 {
                         arrayList.add(new l0(j10, 2));
                         z10 = true;
                     }
-                    arrayList.add(new l0(a0Var, 3));
+                    arrayList.add(new l0(b0Var, 3));
                 }
             }
         }
@@ -149,12 +149,12 @@ public final class n0 extends f2.p0 {
             while (i12 < size3) {
                 Object obj3 = arrayList2.get(i12);
                 i12++;
-                c2.a0 a0Var2 = (c2.a0) obj3;
-                c2.a0 a0Var3 = p0Var.r;
-                if (a0Var3 != a0Var2) {
+                c2.b0 b0Var2 = (c2.b0) obj3;
+                c2.b0 b0Var3 = p0Var.r;
+                if (b0Var3 != b0Var2) {
                     if (!z4) {
-                        a0Var3.getClass();
-                        c2.r a10 = c2.a0.a();
+                        b0Var3.getClass();
+                        c2.r a10 = c2.b0.a();
                         String k10 = a10 != null ? a10.k() : null;
                         if (TextUtils.isEmpty(k10)) {
                             k10 = context.getString(R.string.mr_dialog_transferable_header);
@@ -162,19 +162,19 @@ public final class n0 extends f2.p0 {
                         arrayList.add(new l0(k10, 2));
                         z4 = true;
                     }
-                    arrayList.add(new l0(a0Var2, 4));
+                    arrayList.add(new l0(b0Var2, 4));
                 }
             }
         }
         F();
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final int h() {
         return this.c.size() + 1;
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final int j(int i10) {
         l0 l0Var;
         if (i10 == 0) {
@@ -185,9 +185,9 @@ public final class n0 extends f2.p0 {
         return l0Var.b;
     }
 
-    @Override // f2.p0
-    public final void v(m1 m1Var, int i10) {
-        ja.c b10;
+    @Override // f2.o0
+    public final void v(l1 l1Var, int i10) {
+        bb.b b10;
         c2.q qVar;
         ArrayList arrayList = this.c;
         int i11 = (i10 == 0 ? this.r : (l0) arrayList.get(i10 - 1)).b;
@@ -195,8 +195,8 @@ public final class n0 extends f2.p0 {
         p0 p0Var = this.w;
         int i12 = 0;
         if (i11 == 1) {
-            p0Var.I.put(((c2.a0) l0Var.a).c, (h0) m1Var);
-            j0 j0Var = (j0) m1Var;
+            p0Var.I.put(((c2.b0) l0Var.a).c, (h0) l1Var);
+            j0 j0Var = (j0) l1Var;
             View view = j0Var.a;
             p0 p0Var2 = j0Var.B.w;
             if (p0Var2.f0 && DesugarCollections.unmodifiableList(p0Var2.r.v).size() > 1) {
@@ -205,63 +205,63 @@ public final class n0 extends f2.p0 {
             ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
             layoutParams.height = i12;
             view.setLayoutParams(layoutParams);
-            c2.a0 a0Var = (c2.a0) l0Var.a;
-            j0Var.t(a0Var);
-            j0Var.z.setText(a0Var.d);
+            c2.b0 b0Var = (c2.b0) l0Var.a;
+            j0Var.t(b0Var);
+            j0Var.z.setText(b0Var.d);
             return;
         }
         if (i11 == 2) {
-            ((k0) m1Var).v.setText(l0Var.a.toString());
+            ((k0) l1Var).v.setText(l0Var.a.toString());
             return;
         }
         if (i11 != 3) {
             if (i11 != 4) {
                 throw new IllegalStateException();
             }
-            i0 i0Var = (i0) m1Var;
+            i0 i0Var = (i0) l1Var;
             View view2 = i0Var.v;
-            c2.a0 a0Var2 = (c2.a0) l0Var.a;
-            i0Var.A = a0Var2;
+            c2.b0 b0Var2 = (c2.b0) l0Var.a;
+            i0Var.A = b0Var2;
             ImageView imageView = i0Var.w;
             imageView.setVisibility(0);
             i0Var.x.setVisibility(4);
             n0 n0Var = i0Var.B;
             List unmodifiableList = DesugarCollections.unmodifiableList(n0Var.w.r.v);
-            view2.setAlpha((unmodifiableList.size() == 1 && unmodifiableList.get(0) == a0Var2) ? i0Var.z : 1.0f);
+            view2.setAlpha((unmodifiableList.size() == 1 && unmodifiableList.get(0) == b0Var2) ? i0Var.z : 1.0f);
             view2.setOnClickListener(new y(i0Var, 2));
-            imageView.setImageDrawable(n0Var.E(a0Var2));
-            i0Var.y.setText(a0Var2.d);
+            imageView.setImageDrawable(n0Var.E(b0Var2));
+            i0Var.y.setText(b0Var2.d);
             return;
         }
-        p0Var.I.put(((c2.a0) l0Var.a).c, (h0) m1Var);
-        m0 m0Var = (m0) m1Var;
+        p0Var.I.put(((c2.b0) l0Var.a).c, (h0) l1Var);
+        m0 m0Var = (m0) l1Var;
         float f10 = m0Var.F;
         y yVar = m0Var.H;
         ImageView imageView2 = m0Var.A;
         View view3 = m0Var.z;
         CheckBox checkBox = m0Var.E;
-        c2.a0 a0Var3 = (c2.a0) l0Var.a;
+        c2.b0 b0Var3 = (c2.b0) l0Var.a;
         n0 n0Var2 = m0Var.I;
         p0 p0Var3 = n0Var2.w;
-        if (a0Var3 == p0Var3.r && DesugarCollections.unmodifiableList(a0Var3.v).size() > 0) {
-            Iterator it = DesugarCollections.unmodifiableList(a0Var3.v).iterator();
+        if (b0Var3 == p0Var3.r && DesugarCollections.unmodifiableList(b0Var3.v).size() > 0) {
+            Iterator it = DesugarCollections.unmodifiableList(b0Var3.v).iterator();
             while (true) {
                 if (!it.hasNext()) {
                     break;
                 }
-                c2.a0 a0Var4 = (c2.a0) it.next();
-                if (!p0Var3.v.contains(a0Var4)) {
-                    a0Var3 = a0Var4;
+                c2.b0 b0Var4 = (c2.b0) it.next();
+                if (!p0Var3.v.contains(b0Var4)) {
+                    b0Var3 = b0Var4;
                     break;
                 }
             }
         }
-        m0Var.t(a0Var3);
-        imageView2.setImageDrawable(n0Var2.E(a0Var3));
-        m0Var.C.setText(a0Var3.d);
+        m0Var.t(b0Var3);
+        imageView2.setImageDrawable(n0Var2.E(b0Var3));
+        m0Var.C.setText(b0Var3.d);
         checkBox.setVisibility(0);
-        boolean v = m0Var.v(a0Var3);
-        boolean z4 = !p0Var3.x.contains(a0Var3) && (!m0Var.v(a0Var3) || DesugarCollections.unmodifiableList(p0Var3.r.v).size() >= 2) && (!m0Var.v(a0Var3) || ((b10 = p0Var3.r.b(a0Var3)) != null && ((qVar = (c2.q) b10.a) == null || qVar.c)));
+        boolean v = m0Var.v(b0Var3);
+        boolean z4 = !p0Var3.x.contains(b0Var3) && (!m0Var.v(b0Var3) || DesugarCollections.unmodifiableList(p0Var3.r.v).size() >= 2) && (!m0Var.v(b0Var3) || ((b10 = p0Var3.r.b(b0Var3)) != null && ((qVar = (c2.q) b10.b) == null || qVar.c)));
         checkBox.setChecked(v);
         m0Var.B.setVisibility(4);
         imageView2.setVisibility(0);
@@ -282,8 +282,8 @@ public final class n0 extends f2.p0 {
         checkBox.setAlpha((z4 || !v) ? 1.0f : f10);
     }
 
-    @Override // f2.p0
-    public final m1 x(ViewGroup viewGroup, int i10) {
+    @Override // f2.o0
+    public final l1 x(ViewGroup viewGroup, int i10) {
         LayoutInflater layoutInflater = this.d;
         if (i10 == 1) {
             return new j0(this, layoutInflater.inflate(R.layout.mr_cast_group_volume_item, viewGroup, false));

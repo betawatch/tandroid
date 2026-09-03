@@ -1,64 +1,17 @@
 package f2;
 
-import java.util.ArrayList;
+import android.view.View;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public abstract class p1 extends u0 {
-    public boolean m;
-    public boolean n;
+public interface p1 {
+    View B(int i10);
 
-    public p1() {
-        this.a = null;
-        this.b = new ArrayList();
-        this.c = 120L;
-        this.d = 120L;
-        this.e = 250L;
-        this.f = 250L;
-        this.g = 250L;
-        this.l = 0L;
-        this.m = true;
-    }
+    int E(View view);
 
-    @Override // f2.u0
-    public boolean a(m1 m1Var, c5.e eVar, c5.e eVar2) {
-        int i10;
-        int i11;
-        if (eVar != null && ((i10 = eVar.a) != (i11 = eVar2.a) || eVar.b != eVar2.b || this.n)) {
-            return r(m1Var, eVar, i10, eVar.b, i11, eVar2.b);
-        }
-        p(m1Var);
-        return true;
-    }
+    int f(View view);
 
-    public abstract void p(m1 m1Var);
+    int j();
 
-    public abstract boolean q(m1 m1Var, m1 m1Var2, c5.e eVar, int i10, int i11, int i12, int i13);
-
-    public abstract boolean r(m1 m1Var, c5.e eVar, int i10, int i11, int i12, int i13);
-
-    public abstract void s(m1 m1Var, c5.e eVar);
-
-    public boolean t(m1 m1Var) {
-        return !this.m || m1Var.h();
-    }
-
-    public final void u(m1 m1Var) {
-        w(m1Var);
-        d(m1Var);
-    }
-
-    public final void v(m1 m1Var) {
-        x(m1Var);
-        d(m1Var);
-    }
-
-    public void y() {
-    }
-
-    public void w(m1 m1Var) {
-    }
-
-    public void x(m1 m1Var) {
-    }
+    int s();
 }

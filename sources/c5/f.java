@@ -12,7 +12,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import k7.a7;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.yh;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -22,8 +21,9 @@ import s8.o0;
 import s8.q0;
 import s8.t0;
 import s8.z;
+import vh.w2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class f extends v4.e {
     public static final Pattern o = Pattern.compile("^([0-9][0-9]+):([0-9][0-9]):([0-9][0-9])(?:(\\.[0-9]+)|:([0-9][0-9])(?:\\.([0-9]+))?)?$");
@@ -43,8 +43,8 @@ public final class f extends v4.e {
             XmlPullParserFactory newInstance = XmlPullParserFactory.newInstance();
             this.n = newInstance;
             newInstance.setNamespaceAware(true);
-        } catch (XmlPullParserException e6) {
-            throw new RuntimeException("Couldn't create XmlPullParserFactory instance", e6);
+        } catch (XmlPullParserException e) {
+            throw new RuntimeException("Couldn't create XmlPullParserFactory instance", e);
         }
     }
 
@@ -151,8 +151,8 @@ public final class f extends v4.e {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x022d  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x019f  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x022c  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x019e  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -853,8 +853,8 @@ public final class f extends v4.e {
                             String group = matcher.group(1);
                             group.getClass();
                             f10 = Math.min(100.0f, Math.max(-100.0f, Float.parseFloat(group)));
-                        } catch (NumberFormatException e6) {
-                            h5.a.L("TtmlDecoder", "Failed to parse shear: " + attributeValue, e6);
+                        } catch (NumberFormatException e) {
+                            h5.a.L("TtmlDecoder", "Failed to parse shear: " + attributeValue, e);
                         }
                     } else {
                         android.support.v4.media.a.w("Invalid value for shear: ", attributeValue, "TtmlDecoder");
@@ -1085,7 +1085,7 @@ public final class f extends v4.e {
         }
         Matcher matcher2 = p.matcher(str);
         if (!matcher2.matches()) {
-            throw new v4.h(yh.k("Malformed time expression: ", str));
+            throw new v4.h(w2.e("Malformed time expression: ", str));
         }
         String group3 = matcher2.group(1);
         group3.getClass();
@@ -1216,8 +1216,8 @@ public final class f extends v4.e {
                                         }
                                         gVar.m.add(r10);
                                     }
-                                } catch (v4.h e6) {
-                                    h5.a.L("TtmlDecoder", "Suppressing parser error", e6);
+                                } catch (v4.h e) {
+                                    h5.a.L("TtmlDecoder", "Suppressing parser error", e);
                                 }
                             }
                             cVar2 = cVar3;
@@ -1254,10 +1254,10 @@ public final class f extends v4.e {
                 return jVar;
             }
             throw new v4.h("No TTML subtitles found");
-        } catch (IOException e10) {
-            throw new IllegalStateException("Unexpected error when reading input.", e10);
-        } catch (XmlPullParserException e11) {
-            throw new v4.h("Unable to decode source", e11);
+        } catch (IOException e6) {
+            throw new IllegalStateException("Unexpected error when reading input.", e6);
+        } catch (XmlPullParserException e10) {
+            throw new v4.h("Unable to decode source", e10);
         }
     }
 }

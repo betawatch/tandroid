@@ -32,6 +32,7 @@ import java.util.MissingResourceException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import k7.a7;
+import kf.k0;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessagesStorage;
@@ -41,7 +42,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class d0 {
     public static final int a;
@@ -111,7 +112,7 @@ public abstract class d0 {
             case 6:
                 return "camera motion";
             default:
-                return i10 >= 10000 ? l.d.k(i10, "custom (", ")") : "?";
+                return i10 >= 10000 ? k0.k(i10, "custom (", ")") : "?";
         }
     }
 

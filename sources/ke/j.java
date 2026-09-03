@@ -10,12 +10,12 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import k7.t;
 import k7.u;
-import k7.v;
 import ne.s;
-import org.telegram.ui.yh;
+import vh.w2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class j implements oe.a {
     public static final Pattern i = Pattern.compile("^[!\"#\\$%&'\\(\\)\\*\\+,\\-\\./:;<=>\\?@\\[\\\\\\]\\^_`\\{\\|\\}~\\p{Pc}\\p{Pd}\\p{Pe}\\p{Pf}\\p{Pi}\\p{Po}\\p{Ps}]");
@@ -78,25 +78,25 @@ public final class j implements oe.a {
         Iterator it = iterable.iterator();
         while (it.hasNext()) {
             qe.a aVar = (qe.a) it.next();
-            char e6 = aVar.e();
+            char e = aVar.e();
             char b10 = aVar.b();
-            if (e6 == b10) {
-                qe.a aVar2 = (qe.a) hashMap.get(Character.valueOf(e6));
+            if (e == b10) {
+                qe.a aVar2 = (qe.a) hashMap.get(Character.valueOf(e));
                 if (aVar2 == null || aVar2.e() != aVar2.b()) {
-                    b(e6, aVar, hashMap);
+                    b(e, aVar, hashMap);
                 } else {
                     if (aVar2 instanceof p) {
                         pVar = (p) aVar2;
                     } else {
-                        p pVar2 = new p(e6);
+                        p pVar2 = new p(e);
                         pVar2.f(aVar2);
                         pVar = pVar2;
                     }
                     pVar.f(aVar);
-                    hashMap.put(Character.valueOf(e6), pVar);
+                    hashMap.put(Character.valueOf(e), pVar);
                 }
             } else {
-                b(e6, aVar, hashMap);
+                b(e, aVar, hashMap);
                 b(b10, aVar, hashMap);
             }
         }
@@ -232,7 +232,7 @@ public final class j implements oe.a {
                     if (d11 != null) {
                         i10 = 1;
                         String j10 = e2.c.j(d11, 1, 1);
-                        kVar = new ne.k(1, yh.k("mailto:", j10), null);
+                        kVar = new ne.k(1, w2.e("mailto:", j10), null);
                         kVar.b(new s(j10));
                     } else {
                         i10 = 1;
@@ -305,7 +305,7 @@ public final class j implements oe.a {
                                         this.f++;
                                         Pattern pattern = q;
                                         d(pattern);
-                                        int a2 = u.a(this.f, this.e);
+                                        int a2 = t.a(this.f, this.e);
                                         if (a2 == -1) {
                                             str3 = null;
                                         } else {
@@ -318,7 +318,7 @@ public final class j implements oe.a {
                                             String str7 = this.e;
                                             int i16 = this.f;
                                             if (s.matcher(str7.substring(i16 - 1, i16)).matches()) {
-                                                int c3 = u.c(this.f, this.e);
+                                                int c3 = t.c(this.f, this.e);
                                                 if (c3 == -1) {
                                                     str2 = null;
                                                 } else {
@@ -349,7 +349,7 @@ public final class j implements oe.a {
                                         int i17 = this.f;
                                         if (i17 < this.e.length() && this.e.charAt(this.f) == '[') {
                                             int i18 = this.f + 1;
-                                            int b10 = u.b(i18, this.e);
+                                            int b10 = t.b(i18, this.e);
                                             int i19 = b10 - i18;
                                             if (b10 != -1 && i19 <= 999 && b10 < this.e.length() && this.e.charAt(b10) == ']') {
                                                 this.f = b10 + 1;
@@ -502,7 +502,7 @@ public final class j implements oe.a {
                         String replace = this.e.substring(i29, this.f - d14.length()).replace('\n', ' ');
                         if (replace.length() >= 3 && replace.charAt(0) == ' ' && replace.charAt(replace.length() - 1) == ' ') {
                             int length2 = replace.length();
-                            if (v.b(' ', replace, 0, length2) != length2) {
+                            if (u.b(' ', replace, 0, length2) != length2) {
                                 replace = e2.c.j(replace, 1, 1);
                             }
                         }
@@ -574,12 +574,12 @@ public final class j implements oe.a {
             if (!cVar2.d || aVar == null) {
                 cVar2 = cVar2.f;
             } else {
-                char e6 = aVar.e();
+                char e = aVar.e();
                 c cVar4 = cVar2.e;
                 int i10 = 0;
                 boolean z10 = false;
                 while (cVar4 != null && cVar4 != cVar && cVar4 != hashMap.get(Character.valueOf(c3))) {
-                    if (cVar4.c && cVar4.b == e6) {
+                    if (cVar4.c && cVar4.b == e) {
                         i10 = aVar.c(cVar4, cVar2);
                         z10 = true;
                         if (i10 > 0) {

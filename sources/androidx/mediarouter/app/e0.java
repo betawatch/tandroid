@@ -11,34 +11,34 @@ import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class e0 extends g.s {
     public final long B;
     public long C;
     public final d D;
-    public final c2.c0 f;
+    public final c2.d0 f;
     public final e h;
     public final Context n;
-    public c2.v r;
+    public c2.w r;
     public ArrayList s;
     public d0 v;
     public RecyclerView w;
     public boolean x;
-    public c2.a0 y;
+    public c2.b0 y;
 
     /* JADX WARN: Illegal instructions before constructor call */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public e0(Context context) {
-        super(r3, r0 == 0 ? j7.a0.e(r3) : r0);
-        ContextThemeWrapper a2 = j7.a0.a(context, false);
-        int g10 = j7.a0.g(a2, R.attr.mediaRouteTheme);
-        this.r = c2.v.c;
+        super(r3, r0 == 0 ? j7.z.e(r3) : r0);
+        ContextThemeWrapper a2 = j7.z.a(context, false);
+        int g10 = j7.z.g(a2, R.attr.mediaRouteTheme);
+        this.r = c2.w.c;
         this.D = new d(this, 1);
         Context context2 = getContext();
-        this.f = c2.c0.d(context2);
+        this.f = c2.d0.d(context2);
         this.h = new e(this, 2);
         this.n = context2;
         this.B = context2.getResources().getInteger(R.integer.mr_update_routes_delay_ms);
@@ -47,16 +47,16 @@ public final class e0 extends g.s {
     public final void e() {
         if (this.y == null && this.x) {
             this.f.getClass();
-            c2.c0.b();
-            ArrayList arrayList = new ArrayList(c2.c0.c().j);
+            c2.d0.b();
+            ArrayList arrayList = new ArrayList(c2.d0.c().j);
             int size = arrayList.size();
             while (true) {
                 int i10 = size - 1;
                 if (size <= 0) {
                     break;
                 }
-                c2.a0 a0Var = (c2.a0) arrayList.get(i10);
-                if (a0Var.d() || !a0Var.g || !a0Var.h(this.r)) {
+                c2.b0 b0Var = (c2.b0) arrayList.get(i10);
+                if (b0Var.d() || !b0Var.g || !b0Var.h(this.r)) {
                     arrayList.remove(i10);
                 }
                 size = i10;
@@ -77,19 +77,19 @@ public final class e0 extends g.s {
         }
     }
 
-    public final void f(c2.v vVar) {
-        if (vVar == null) {
+    public final void f(c2.w wVar) {
+        if (wVar == null) {
             throw new IllegalArgumentException("selector must not be null");
         }
-        if (this.r.equals(vVar)) {
+        if (this.r.equals(wVar)) {
             return;
         }
-        this.r = vVar;
+        this.r = wVar;
         if (this.x) {
-            c2.c0 c0Var = this.f;
+            c2.d0 d0Var = this.f;
             e eVar = this.h;
-            c0Var.h(eVar);
-            c0Var.a(vVar, eVar, 1);
+            d0Var.h(eVar);
+            d0Var.a(wVar, eVar, 1);
         }
         e();
     }
@@ -108,15 +108,15 @@ public final class e0 extends g.s {
         setContentView(R.layout.mr_picker_dialog);
         View decorView = getWindow().getDecorView();
         Context context = this.n;
-        decorView.setBackgroundColor(f0.e.c(context, j7.a0.h(context) ? R.color.mr_dynamic_dialog_background_light : R.color.mr_dynamic_dialog_background_dark));
+        decorView.setBackgroundColor(f0.f.c(context, j7.z.h(context) ? R.color.mr_dynamic_dialog_background_light : R.color.mr_dynamic_dialog_background_dark));
         this.s = new ArrayList();
         ((ImageButton) findViewById(R.id.mr_picker_close_button)).setOnClickListener(new y(this, 0));
         this.v = new d0(this);
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.mr_picker_list);
         this.w = recyclerView;
         recyclerView.setAdapter(this.v);
-        this.w.setLayoutManager(new f2.j0());
-        getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : j7.z.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
+        this.w.setLayoutManager(new f2.i0());
+        getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : j7.y.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
     }
 
     @Override // android.app.Dialog, android.view.Window.Callback

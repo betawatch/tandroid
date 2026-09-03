@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SavedMessagesController;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class fu0 extends f2.b0 {
     public final /* synthetic */ hu0 d;
@@ -15,34 +15,34 @@ public final class fu0 extends f2.b0 {
     }
 
     @Override // f2.b0
-    public final void a(RecyclerView recyclerView, f2.m1 m1Var) {
-        super.a(recyclerView, m1Var);
-        m1Var.a.setPressed(false);
+    public final void a(RecyclerView recyclerView, f2.l1 l1Var) {
+        super.a(recyclerView, l1Var);
+        l1Var.a.setPressed(false);
     }
 
     @Override // f2.b0
-    public final int e(RecyclerView recyclerView, f2.m1 m1Var) {
+    public final int e(RecyclerView recyclerView, f2.l1 l1Var) {
         SavedMessagesController.SavedDialog r10;
         int l10 = f2.b0.l(0, 0);
         yu0 yu0Var = this.d.x;
-        return (!yu0Var.z1 || recyclerView.getAdapter() == yu0Var.P || (r10 = r(m1Var)) == null || !r10.pinned) ? l10 : f2.b0.l(3, 0);
+        return (!yu0Var.z1 || recyclerView.getAdapter() == yu0Var.P || (r10 = r(l1Var)) == null || !r10.pinned) ? l10 : f2.b0.l(3, 0);
     }
 
     @Override // f2.b0
-    public final boolean n(RecyclerView recyclerView, f2.m1 m1Var, f2.m1 m1Var2) {
+    public final boolean n(RecyclerView recyclerView, f2.l1 l1Var, f2.l1 l1Var2) {
         hu0 hu0Var = this.d;
         ArrayList arrayList = hu0Var.f;
         yu0 yu0Var = hu0Var.x;
         if (!yu0Var.z1 || recyclerView.getAdapter() == yu0Var.P) {
             return false;
         }
-        SavedMessagesController.SavedDialog r10 = r(m1Var);
-        SavedMessagesController.SavedDialog r11 = r(m1Var2);
+        SavedMessagesController.SavedDialog r10 = r(l1Var);
+        SavedMessagesController.SavedDialog r11 = r(l1Var2);
         if (r10 == null || r11 == null || !r10.pinned || !r11.pinned) {
             return false;
         }
-        int b10 = m1Var.b();
-        int b11 = m1Var2.b();
+        int b10 = l1Var.b();
+        int b11 = l1Var2.b();
         arrayList.remove(b10);
         arrayList.add(b11, r10);
         hu0Var.p(b10, b11);
@@ -51,11 +51,11 @@ public final class fu0 extends f2.b0 {
     }
 
     @Override // f2.b0
-    public final void p(f2.m1 m1Var, int i10) {
+    public final void p(f2.l1 l1Var, int i10) {
         pt0 pt0Var;
         hu0 hu0Var = this.d;
         nq0 nq0Var = hu0Var.n;
-        if (m1Var != null && (pt0Var = hu0Var.s) != null) {
+        if (l1Var != null && (pt0Var = hu0Var.s) != null) {
             pt0Var.c1(false);
         }
         if (i10 == 0) {
@@ -64,9 +64,9 @@ public final class fu0 extends f2.b0 {
         }
     }
 
-    public final SavedMessagesController.SavedDialog r(f2.m1 m1Var) {
+    public final SavedMessagesController.SavedDialog r(f2.l1 l1Var) {
         int b10;
-        if (m1Var != null && (b10 = m1Var.b()) >= 0) {
+        if (l1Var != null && (b10 = l1Var.b()) >= 0) {
             hu0 hu0Var = this.d;
             if (b10 < hu0Var.f.size()) {
                 return (SavedMessagesController.SavedDialog) hu0Var.f.get(b10);
@@ -76,6 +76,6 @@ public final class fu0 extends f2.b0 {
     }
 
     @Override // f2.b0
-    public final void q(f2.m1 m1Var) {
+    public final void q(f2.l1 l1Var) {
     }
 }

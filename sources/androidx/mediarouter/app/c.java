@@ -1,26 +1,27 @@
 package androidx.mediarouter.app;
 
 import android.view.View;
-import eg.w3;
-import fg.d2;
-import fg.n1;
-import hg.d1;
-import hg.i1;
-import hg.m1;
-import lh.g2;
-import mh.aa;
-import mh.e5;
-import mh.ja;
-import mh.k4;
-import mh.v0;
-import mh.x7;
-import mh.y9;
-import oh.b9;
-import oh.h2;
-import oh.i9;
-import oh.m8;
-import oh.r5;
-import oh.r8;
+import dg.y3;
+import eg.e2;
+import eg.o1;
+import gg.d1;
+import gg.i1;
+import gg.m1;
+import kh.g2;
+import lh.aa;
+import lh.e5;
+import lh.j1;
+import lh.ja;
+import lh.k4;
+import lh.q2;
+import lh.w0;
+import lh.x7;
+import lh.y9;
+import nh.b9;
+import nh.i9;
+import nh.m8;
+import nh.r5;
+import nh.r8;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
@@ -28,12 +29,12 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.ActionBar.p2;
-import org.telegram.ui.Components.g90;
+import org.telegram.ui.Components.f90;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.ng;
+import org.telegram.ui.pg;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -53,33 +54,33 @@ public final /* synthetic */ class c implements View.OnClickListener {
                 ((i) this.b).dismiss();
                 break;
             case 1:
-                ((dg.e0) this.b).dismiss();
+                ((cg.e0) this.b).dismiss();
                 break;
             case 2:
-                ((bh.a) this.b).run();
+                ((ah.a) this.b).run();
                 break;
             case 3:
-                ((w3) this.b).onBackPressed();
+                ((y3) this.b).onBackPressed();
                 break;
             case 4:
-                ((ng) this.b).run();
+                ((pg) this.b).run();
                 break;
             case 5:
-                ((g90) this.b).performClick();
+                ((f90) this.b).performClick();
                 break;
             case 6:
-                d2 d2Var = (d2) this.b;
+                e2 e2Var = (e2) this.b;
                 PremiumPreviewFragment.p0();
-                PremiumPreviewFragment.k0(d2Var.q0, null, "profile", null);
+                PremiumPreviewFragment.k0(e2Var.q0, null, "profile", null);
                 break;
             case 7:
                 final i1 i1Var = (i1) this.b;
-                jg.a aVar = i1Var.N0;
+                ig.a aVar = i1Var.N0;
                 if (!aVar.a.K) {
                     aVar.b(true);
                     String str = i1Var.O0;
                     final int i10 = 0;
-                    Utilities.Callback callback = new Utilities.Callback() { // from class: hg.h1
+                    Utilities.Callback callback = new Utilities.Callback() { // from class: gg.h1
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj) {
                             switch (i10) {
@@ -96,7 +97,7 @@ public final /* synthetic */ class c implements View.OnClickListener {
                         }
                     };
                     final int i11 = 1;
-                    Utilities.Callback callback2 = new Utilities.Callback() { // from class: hg.h1
+                    Utilities.Callback callback2 = new Utilities.Callback() { // from class: gg.h1
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj) {
                             switch (i11) {
@@ -115,7 +116,7 @@ public final /* synthetic */ class c implements View.OnClickListener {
                     ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
                     TLRPC.TL_payments_applyGiftCode tL_payments_applyGiftCode = new TLRPC.TL_payments_applyGiftCode();
                     tL_payments_applyGiftCode.slug = str;
-                    connectionsManager.sendRequest(tL_payments_applyGiftCode, new hg.f0(callback2, callback, 0), 2);
+                    connectionsManager.sendRequest(tL_payments_applyGiftCode, new gg.f0(callback2, callback, 0), 2);
                     break;
                 }
                 break;
@@ -123,20 +124,20 @@ public final /* synthetic */ class c implements View.OnClickListener {
                 ((m1) this.b).dismiss();
                 break;
             case 9:
-                ((d1) ((ig.e) this.b)).r.dismiss();
+                ((d1) ((hg.e) this.b)).r.dismiss();
                 break;
             case 10:
-                Runnable runnable = ((lg.d) this.b).d;
+                Runnable runnable = ((kg.d) this.b).d;
                 if (runnable != null) {
                     runnable.run();
                     break;
                 }
                 break;
             case 11:
-                ((lh.d) this.b).dismiss();
+                ((kh.d) this.b).dismiss();
                 break;
             case 12:
-                ((lh.m0) this.b).dismiss();
+                ((kh.m0) this.b).dismiss();
                 break;
             case 13:
                 if (((g2) this.b).c0.f > 0 && (R = LaunchActivity.R()) != null) {
@@ -147,29 +148,29 @@ public final /* synthetic */ class c implements View.OnClickListener {
                 }
                 break;
             case 14:
-                ((mh.e0) this.b).dismiss();
+                ((lh.f0) this.b).dismiss();
                 break;
             case 15:
-                ((mh.r0) this.b).dismiss();
+                ((lh.s0) this.b).dismiss();
                 break;
             case 16:
-                v0 v0Var = (v0) this.b;
-                mf.b bVar = v0Var.B.a;
-                mf.b bVar2 = mf.b.b;
+                w0 w0Var = (w0) this.b;
+                lf.b bVar = w0Var.B.a;
+                lf.b bVar2 = lf.b.b;
                 if (bVar == bVar2) {
-                    bVar2 = mf.b.a;
+                    bVar2 = lf.b.a;
                 }
-                v0Var.n(mf.a.i(0L, bVar2), true, false, true);
-                v0Var.c.setText("");
+                w0Var.n(lf.a.i(0L, bVar2), true, false, true);
+                w0Var.c.setText("");
                 break;
             case 17:
-                ((mh.i1) this.b).dismiss();
+                ((j1) this.b).dismiss();
                 break;
             case 18:
-                ((mh.p2) this.b).run();
+                ((q2) this.b).run();
                 break;
             case 19:
-                ((mh.p2) this.b).run();
+                ((q2) this.b).run();
                 break;
             case 20:
                 k4 k4Var = (k4) this.b;
@@ -183,7 +184,7 @@ public final /* synthetic */ class c implements View.OnClickListener {
                 ((x7) this.b).run();
                 break;
             case 23:
-                if (((y9) ((lg.a) this.b).c).f > 0 && (R2 = LaunchActivity.R()) != null) {
+                if (((y9) ((kg.a) this.b).c).f > 0 && (R2 = LaunchActivity.R()) != null) {
                     n2 n2Var2 = new n2();
                     n2Var2.a = true;
                     R2.showAsSheet(new ja(), n2Var2);
@@ -191,14 +192,14 @@ public final /* synthetic */ class c implements View.OnClickListener {
                 }
                 break;
             case 24:
-                ng.d0 d0Var = (ng.d0) this.b;
+                mg.d0 d0Var = (mg.d0) this.b;
                 if (d0Var.k) {
                     d0Var.d();
                     break;
                 }
                 break;
             case 25:
-                ((h2) this.b).q(!r6.c0, true);
+                ((nh.g2) this.b).q(!r6.c0, true);
                 break;
             case 26:
                 ((i9) this.b).N();
@@ -207,7 +208,7 @@ public final /* synthetic */ class c implements View.OnClickListener {
                 ((r5) this.b).dismiss();
                 p2 R3 = LaunchActivity.R();
                 if (R3 != null) {
-                    R3.showDialog(new n1(R3, 14, false));
+                    R3.showDialog(new o1(R3, 14, false));
                     break;
                 }
                 break;

@@ -6,13 +6,13 @@ import android.app.Fragment;
 import android.os.Build;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class h0 extends Fragment {
     public static final /* synthetic */ int b = 0;
-    public androidx.biometric.f0 a;
+    public androidx.biometric.e0 a;
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     public static final class a implements Application.ActivityLifecycleCallbacks {
         public static final g0 Companion = new g0();
 
@@ -130,9 +130,9 @@ public class h0 extends Fragment {
     @Override // android.app.Fragment
     public final void onResume() {
         super.onResume();
-        androidx.biometric.f0 f0Var = this.a;
-        if (f0Var != null) {
-            ((e0) f0Var.b).a();
+        androidx.biometric.e0 e0Var = this.a;
+        if (e0Var != null) {
+            ((e0) e0Var.b).a();
         }
         a(m.ON_RESUME);
     }
@@ -140,14 +140,14 @@ public class h0 extends Fragment {
     @Override // android.app.Fragment
     public final void onStart() {
         super.onStart();
-        androidx.biometric.f0 f0Var = this.a;
-        if (f0Var != null) {
-            e0 e0Var = (e0) f0Var.b;
-            int i10 = e0Var.a + 1;
-            e0Var.a = i10;
-            if (i10 == 1 && e0Var.d) {
-                e0Var.f.e(m.ON_START);
-                e0Var.d = false;
+        androidx.biometric.e0 e0Var = this.a;
+        if (e0Var != null) {
+            e0 e0Var2 = (e0) e0Var.b;
+            int i10 = e0Var2.a + 1;
+            e0Var2.a = i10;
+            if (i10 == 1 && e0Var2.d) {
+                e0Var2.f.e(m.ON_START);
+                e0Var2.d = false;
             }
         }
         a(m.ON_START);

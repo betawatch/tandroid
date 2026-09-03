@@ -1,8 +1,9 @@
 package sa;
 
 import java.util.BitSet;
+import vh.w2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class w0 extends pa.u {
     @Override // pa.u
@@ -20,7 +21,7 @@ public class w0 extends pa.u {
                     z4 = false;
                 } else {
                     if (p10 != 1) {
-                        StringBuilder m9 = l.d.m(p10, "Invalid bitset value ", ", expected 0 or 1; at path ");
+                        StringBuilder m9 = kf.k0.m(p10, "Invalid bitset value ", ", expected 0 or 1; at path ");
                         m9.append(aVar.j());
                         throw new pa.j(m9.toString());
                     }
@@ -28,7 +29,7 @@ public class w0 extends pa.u {
                 }
             } else {
                 if (c3 != 7) {
-                    throw new pa.j("Invalid bitset value type: " + w.c.m(x10) + "; at path " + aVar.h());
+                    throw new pa.j("Invalid bitset value type: " + w2.m(x10) + "; at path " + aVar.h());
                 }
                 z4 = aVar.n();
             }

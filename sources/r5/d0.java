@@ -2,17 +2,17 @@ package r5;
 
 import android.util.Log;
 import android.util.SparseIntArray;
-import com.google.android.gms.internal.cast.g3;
-import com.google.android.gms.internal.cast.n4;
-import com.google.android.gms.internal.cast.r2;
-import com.google.android.gms.internal.cast.t6;
+import com.google.android.gms.internal.cast.h3;
+import com.google.android.gms.internal.cast.o4;
+import com.google.android.gms.internal.cast.s2;
+import com.google.android.gms.internal.cast.u6;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
-import org.telegram.ui.yh;
+import org.telegram.ui.ai;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class d0 extends s5.g {
     public final /* synthetic */ int a;
@@ -64,9 +64,9 @@ public final class d0 extends s5.g {
         switch (this.a) {
             case 1:
                 s5.c cVar = (s5.c) this.b;
-                long e6 = cVar.e();
-                if (e6 != cVar.b) {
-                    cVar.b = e6;
+                long e = cVar.e();
+                if (e != cVar.b) {
+                    cVar.b = e;
                     cVar.c();
                     if (cVar.b != 0) {
                         cVar.d();
@@ -84,17 +84,17 @@ public final class d0 extends s5.g {
     public void h(String str, long j10, int i10, long j11, long j12) {
         switch (this.a) {
             case 0:
-                n4 n4Var = ((c) this.b).l;
-                if (n4Var != null) {
-                    t6 E = n4Var.a.E();
-                    r2 r2Var = new r2(str);
-                    r2Var.b = j10;
-                    r2Var.c = i10;
-                    r2Var.d = j11;
-                    r2Var.e = j12;
-                    g3 g3Var = new g3(r2Var);
-                    g3Var.f = E.h;
-                    E.d.add(g3Var);
+                o4 o4Var = ((c) this.b).l;
+                if (o4Var != null) {
+                    u6 E = o4Var.a.E();
+                    s2 s2Var = new s2(str);
+                    s2Var.b = j10;
+                    s2Var.c = i10;
+                    s2Var.d = j11;
+                    s2Var.e = j12;
+                    h3 h3Var = new h3(s2Var);
+                    h3Var.f = E.h;
+                    E.d.add(h3Var);
                     break;
                 }
                 break;
@@ -299,7 +299,7 @@ public final class d0 extends s5.g {
                         cVar.d();
                         break;
                     } else {
-                        i10 = yh.d(i12, i10, 1, arrayList);
+                        i10 = ai.d(i12, i10, 1, arrayList);
                     }
                 }
                 Collections.sort(arrayList);

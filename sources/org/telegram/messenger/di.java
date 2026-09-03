@@ -21,24 +21,24 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.q70;
-import org.telegram.ui.Components.v30;
+import org.telegram.ui.Components.p70;
+import org.telegram.ui.Components.u30;
 import org.telegram.ui.Components.w21;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.b10;
-import org.telegram.ui.d60;
+import org.telegram.ui.c10;
+import org.telegram.ui.e60;
+import org.telegram.ui.ie0;
 import org.telegram.ui.ov0;
-import org.telegram.ui.oy;
 import org.telegram.ui.py;
-import org.telegram.ui.qa0;
+import org.telegram.ui.qy;
 import org.telegram.ui.ra0;
-import org.telegram.ui.sq;
-import org.telegram.ui.ue0;
-import org.telegram.ui.xn;
-import org.telegram.ui.y61;
+import org.telegram.ui.sa0;
+import org.telegram.ui.tq;
+import org.telegram.ui.z61;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class di implements Runnable {
     public final /* synthetic */ int a;
@@ -56,8 +56,8 @@ public final /* synthetic */ class di implements Runnable {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:36:0x00db  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x025f  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x0276  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0260  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x0278  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -67,10 +67,10 @@ public final /* synthetic */ class di implements Runnable {
         TLRPC.ChatParticipants chatParticipants;
         ArrayList<TLRPC.ChatParticipant> arrayList;
         SQLiteCursor sQLiteCursor;
-        vf.p1 p1Var;
+        uf.p1 p1Var;
         ArrayList arrayList2;
         Runnable runnable;
-        vf.o1 o1Var;
+        uf.o1 o1Var;
         int i11;
         SQLiteDatabase sQLiteDatabase;
         String str;
@@ -98,25 +98,25 @@ public final /* synthetic */ class di implements Runnable {
                 ((CameraController) obj3).lambda$finishRecordingVideo$15((File) obj2, (Bitmap) obj, j10);
                 return;
             case 3:
-                org.telegram.ui.Components.mi miVar = (org.telegram.ui.Components.mi) obj3;
-                xn xnVar = (xn) obj2;
-                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj;
-                Context context = miVar.getContext();
-                int i14 = miVar.G1;
-                MessageSuggestionParams messageSuggestionParams = xnVar.d5;
+                org.telegram.ui.Components.li liVar = (org.telegram.ui.Components.li) obj3;
+                zn znVar = (zn) obj2;
+                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj;
+                Context context = liVar.getContext();
+                int i14 = liVar.G1;
+                MessageSuggestionParams messageSuggestionParams = znVar.d5;
                 if (messageSuggestionParams == null) {
                     messageSuggestionParams = MessageSuggestionParams.empty();
                 }
-                new mh.r0(context, i14, this.d, messageSuggestionParams, xnVar, g6Var, 0, new lh.a1(28, miVar, xnVar)).show();
+                new lh.s0(context, i14, this.d, messageSuggestionParams, znVar, f6Var, 0, new kh.a1(28, liVar, znVar)).show();
                 return;
             case 4:
                 w21 w21Var = (w21) obj3;
                 TLRPC.Chat chat = (TLRPC.Chat) obj;
-                ((q70) obj2).u();
+                ((p70) obj2).u();
                 TLRPC.User user = MessagesController.getInstance(w21Var.b).getUser(Long.valueOf(j10));
                 if (user != null) {
-                    xn xnVar2 = w21Var.h;
-                    org.telegram.ui.Components.z4.r(xnVar2, -1, user, chat, true, new f3.e(w21Var, j10, 5), xnVar2.getResourceProvider());
+                    zn znVar2 = w21Var.h;
+                    org.telegram.ui.Components.z4.r(znVar2, -1, user, chat, true, new f3.e(w21Var, j10, 5), znVar2.getResourceProvider());
                     return;
                 }
                 return;
@@ -138,30 +138,30 @@ public final /* synthetic */ class di implements Runnable {
                 }
                 return;
             case 6:
-                py pyVar = (py) obj3;
+                qy qyVar = (qy) obj3;
                 MessagesController.DialogFilter dialogFilter = (MessagesController.DialogFilter) obj2;
                 TLRPC.Dialog dialog = (TLRPC.Dialog) obj;
                 int i16 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                if (dialogFilter == null || !pyVar.g4(dialog)) {
+                if (dialogFilter == null || !qyVar.g4(dialog)) {
                     i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                 } else {
                     int size2 = dialogFilter.pinnedDialogs.size();
                     for (int i17 = 0; i17 < size2; i17++) {
                         i16 = Math.min(i16, dialogFilter.pinnedDialogs.valueAt(i17));
                     }
-                    i10 = i16 - pyVar.K2;
+                    i10 = i16 - qyVar.K2;
                 }
                 long j11 = this.d;
-                TLRPC.EncryptedChat n10 = DialogObject.isEncryptedDialog(j11) ? y3.n(pyVar.getMessagesController(), j11) : null;
-                UndoView Y3 = pyVar.Y3();
+                TLRPC.EncryptedChat n10 = DialogObject.isEncryptedDialog(j11) ? y3.n(qyVar.getMessagesController(), j11) : null;
+                UndoView Y3 = qyVar.Y3();
                 if (Y3 == null) {
                     return;
                 }
-                if (pyVar.g4(dialog)) {
-                    pyVar.s4(j11, false, dialogFilter, i10, true);
+                if (qyVar.g4(dialog)) {
+                    qyVar.s4(j11, false, dialogFilter, i10, true);
                     Y3.k(0L, 79, 1, 1600, null, null);
                 } else {
-                    pyVar.s4(j11, true, dialogFilter, i10, true);
+                    qyVar.s4(j11, true, dialogFilter, i10, true);
                     Y3.k(0L, 78, 1, 1600, null, null);
                     if (dialogFilter != null) {
                         if (n10 != null) {
@@ -174,61 +174,60 @@ public final /* synthetic */ class di implements Runnable {
                     }
                 }
                 if (dialogFilter != null) {
-                    b10.t0(dialogFilter, dialogFilter.flags, dialogFilter.name, dialogFilter.entities, dialogFilter.title_noanimate, dialogFilter.color, dialogFilter.alwaysShow, dialogFilter.neverShow, dialogFilter.pinnedDialogs, false, false, true, true, false, pyVar, null);
-                    pyVar = pyVar;
+                    c10.t0(dialogFilter, dialogFilter.flags, dialogFilter.name, dialogFilter.entities, dialogFilter.title_noanimate, dialogFilter.color, dialogFilter.alwaysShow, dialogFilter.neverShow, dialogFilter.pinnedDialogs, false, false, true, true, false, qyVar, null);
                 }
-                pyVar.getMessagesController().reorderPinnedDialogs(pyVar.S2, null, 0L);
-                pyVar.T4(true);
-                if (pyVar.b0 != null) {
+                qyVar.getMessagesController().reorderPinnedDialogs(qyVar.S2, null, 0L);
+                qyVar.T4(true);
+                if (qyVar.b0 != null) {
                     int i18 = 0;
                     while (true) {
-                        oy[] oyVarArr = pyVar.b0;
-                        if (i18 < oyVarArr.length) {
-                            oyVarArr[i18].d.E = false;
+                        py[] pyVarArr = qyVar.b0;
+                        if (i18 < pyVarArr.length) {
+                            pyVarArr[i18].d.E = false;
                             i18++;
                         }
                     }
                 }
-                pyVar.g5(MessagesController.UPDATE_MASK_REORDER | MessagesController.UPDATE_MASK_CHECK, true);
+                qyVar.g5(MessagesController.UPDATE_MASK_REORDER | MessagesController.UPDATE_MASK_CHECK, true);
                 return;
             case 7:
-                d60 d60Var = (d60) obj3;
+                e60 e60Var = (e60) obj3;
                 org.telegram.ui.ActionBar.d2[] d2VarArr = (org.telegram.ui.ActionBar.d2[]) obj2;
                 TLRPC.User user2 = (TLRPC.User) obj;
-                ChatObject.Call call = d60Var.X0;
-                if (call == null || d60Var.p0) {
+                ChatObject.Call call = e60Var.X0;
+                if (call == null || e60Var.p0) {
                     return;
                 }
                 call.addInvitedUser(j10);
-                d60Var.O0(true);
-                v30 v30Var = d60Var.B1;
-                if (v30Var != null) {
-                    v30Var.dismiss();
+                e60Var.O0(true);
+                u30 u30Var = e60Var.B1;
+                if (u30Var != null) {
+                    u30Var.dismiss();
                 }
                 try {
                     d2VarArr[0].dismiss();
                 } catch (Throwable unused) {
                 }
                 d2VarArr[0] = null;
-                d60Var.k1().k(0L, 34, user2, d60Var.W0, null, null);
+                e60Var.k1().k(0L, 34, user2, e60Var.W0, null, null);
                 return;
             case 8:
                 TLObject tLObject = (TLObject) obj3;
                 MessagesController messagesController = (MessagesController) obj2;
-                sq sqVar = (sq) obj;
+                tq tqVar = (tq) obj;
                 Pattern pattern = LaunchActivity.y1;
                 if (!(tLObject instanceof TL_stories.TL_stories_peerStories)) {
-                    sqVar.run();
+                    tqVar.run();
                     return;
                 }
                 TL_stories.TL_stories_peerStories tL_stories_peerStories = (TL_stories.TL_stories_peerStories) tLObject;
                 messagesController.putUsers(tL_stories_peerStories.users, false);
                 messagesController.getStoriesController().a0(j10, tL_stories_peerStories.stories);
-                sqVar.run();
+                tqVar.run();
                 return;
             case 9:
-                ra0 ra0Var = (ra0) obj3;
-                LaunchActivity launchActivity = ra0Var.g;
+                sa0 sa0Var = (sa0) obj3;
+                LaunchActivity launchActivity = sa0Var.g;
                 org.telegram.ui.ActionBar.p2 p2Var = (org.telegram.ui.ActionBar.p2) obj;
                 if (((String) obj2) != null) {
                     AccountInstance accountInstance = AccountInstance.getInstance(launchActivity.L);
@@ -238,17 +237,17 @@ public final /* synthetic */ class di implements Runnable {
                     if (messagesController2.getGroupCall(j13, false) != null) {
                         TLRPC.Chat chat2 = accountInstance.getMessagesController().getChat(Long.valueOf(j13));
                         accountInstance.getMessagesController().getInputPeer(j12);
-                        org.telegram.ui.Components.voip.g2.l(chat2, null, false, Boolean.valueOf(!r0.call.rtmp_stream), launchActivity, p2Var, accountInstance);
+                        org.telegram.ui.Components.voip.f2.l(chat2, null, false, Boolean.valueOf(!r0.call.rtmp_stream), launchActivity, p2Var, accountInstance);
                         return;
                     }
                     TLRPC.ChatFull chatFull = accountInstance.getMessagesController().getChatFull(j13);
                     if (chatFull != null) {
                         if (chatFull.call != null) {
-                            accountInstance.getMessagesController().getGroupCall(j13, true, new qa0(ra0Var, accountInstance, j12, p2Var, 0));
+                            accountInstance.getMessagesController().getGroupCall(j13, true, new ra0(sa0Var, accountInstance, j12, p2Var, 0));
                             return;
                         } else {
                             if (p2Var.getParentActivity() != null) {
-                                l.d.v(R.string.InviteExpired, org.telegram.ui.Components.qc.a0(p2Var), R.raw.linkbroken, 36);
+                                kf.k0.v(R.string.InviteExpired, org.telegram.ui.Components.qc.a0(p2Var), R.raw.linkbroken, 36);
                                 return;
                             }
                             return;
@@ -262,10 +261,10 @@ public final /* synthetic */ class di implements Runnable {
                 MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) obj;
                 Drawable[] drawableArr = PhotoViewer.Q8;
                 long j14 = this.d;
-                lh.y0 y0Var = new lh.y0(photoViewer, (String) obj2, photoEntry, j14, 5);
+                kh.y0 y0Var = new kh.y0(photoViewer, (String) obj2, photoEntry, j14, 5);
                 if (photoViewer.A2) {
                     Bitmap createBitmap = Bitmap.createBitmap(photoViewer.z2.getWidth(), photoViewer.z2.getHeight(), Bitmap.Config.ARGB_8888);
-                    AndroidUtilities.getBitmapFromSurface(photoViewer.z2, createBitmap, new ue0(28, y0Var, createBitmap));
+                    AndroidUtilities.getBitmapFromSurface(photoViewer.z2, createBitmap, new ie0(29, y0Var, createBitmap));
                     return;
                 }
                 TextureView textureView = photoViewer.y2;
@@ -278,19 +277,19 @@ public final /* synthetic */ class di implements Runnable {
                     return;
                 }
             case 11:
-                qh.w7 w7Var = (qh.w7) obj3;
+                ph.y7 y7Var = (ph.y7) obj3;
                 boolean isChannel = ChatObject.isChannel((TLRPC.Chat) obj);
                 long j15 = this.d;
                 TLRPC.ChatFull loadChatInfoInQueue = ((MessagesStorage) obj2).loadChatInfoInQueue(j15, isChannel, true, true, 0);
                 if (loadChatInfoInQueue == null || (chatParticipants = loadChatInfoInQueue.participants) == null || ((arrayList = chatParticipants.participants) != null && arrayList.size() < loadChatInfoInQueue.participants_count - 1)) {
-                    AndroidUtilities.runOnUIThread(new mh.pa(w7Var, isChannel, j15, 5));
+                    AndroidUtilities.runOnUIThread(new lh.pa(y7Var, isChannel, j15, 5));
                     return;
                 } else {
-                    AndroidUtilities.runOnUIThread(new ov0(w7Var, j15, loadChatInfoInQueue, 1));
+                    AndroidUtilities.runOnUIThread(new ov0(y7Var, j15, loadChatInfoInQueue, 1));
                     return;
                 }
             case 12:
-                vf.p1 p1Var2 = (vf.p1) obj3;
+                uf.p1 p1Var2 = (uf.p1) obj3;
                 MessagesStorage messagesStorage = (MessagesStorage) obj2;
                 Runnable runnable2 = (Runnable) obj;
                 ArrayList arrayList6 = new ArrayList();
@@ -303,15 +302,15 @@ public final /* synthetic */ class di implements Runnable {
                         try {
                             try {
                                 try {
-                                    vf.o1 o1Var2 = new vf.o1();
+                                    uf.o1 o1Var2 = new uf.o1();
                                     o1Var2.a = queryFinalized2.intValue(i13);
                                     o1Var2.b = queryFinalized2.stringValue(1);
                                     o1Var2.c = queryFinalized2.intValue(2);
                                     o1Var2.f = queryFinalized2.intValue(3);
                                     arrayList6.add(o1Var2);
                                     i13 = 0;
-                                } catch (Exception e6) {
-                                    e = e6;
+                                } catch (Exception e) {
+                                    e = e;
                                     p1Var = p1Var2;
                                     arrayList2 = arrayList6;
                                     sQLiteCursor = queryFinalized2;
@@ -320,7 +319,7 @@ public final /* synthetic */ class di implements Runnable {
                                         FileLog.e(e);
                                         if (sQLiteCursor != null) {
                                         }
-                                        AndroidUtilities.runOnUIThread(new y61(p1Var, arrayList7, arrayList8, arrayList2, runnable, 4));
+                                        AndroidUtilities.runOnUIThread(new z61(p1Var, arrayList7, arrayList8, arrayList2, runnable, 4));
                                         return;
                                     } catch (Throwable th2) {
                                         th = th2;
@@ -334,8 +333,8 @@ public final /* synthetic */ class di implements Runnable {
                                 th = th3;
                                 sQLiteCursor = queryFinalized2;
                             }
-                        } catch (Exception e10) {
-                            e = e10;
+                        } catch (Exception e6) {
+                            e = e6;
                             p1Var = p1Var2;
                             arrayList2 = arrayList6;
                             runnable = runnable2;
@@ -351,16 +350,16 @@ public final /* synthetic */ class di implements Runnable {
                     while (i19 < arrayList6.size()) {
                         try {
                             try {
-                                o1Var = (vf.o1) arrayList6.get(i19);
+                                o1Var = (uf.o1) arrayList6.get(i19);
                                 arrayList2 = arrayList6;
                                 try {
                                     i11 = i19;
-                                } catch (Exception e11) {
-                                    e = e11;
+                                } catch (Exception e10) {
+                                    e = e10;
                                     p1Var = p1Var2;
                                 }
-                            } catch (Exception e12) {
-                                e = e12;
+                            } catch (Exception e11) {
+                                e = e11;
                                 p1Var = p1Var2;
                                 arrayList2 = arrayList6;
                             }
@@ -407,23 +406,23 @@ public final /* synthetic */ class di implements Runnable {
                                                     runnable2 = runnable;
                                                     p1Var2 = p1Var;
                                                     c3 = 0;
-                                                } catch (Exception e13) {
-                                                    e = e13;
+                                                } catch (Exception e12) {
+                                                    e = e12;
                                                     sQLiteCursor = queryFinalized3;
                                                     FileLog.e(e);
                                                     if (sQLiteCursor != null) {
                                                     }
-                                                    AndroidUtilities.runOnUIThread(new y61(p1Var, arrayList7, arrayList8, arrayList2, runnable, 4));
+                                                    AndroidUtilities.runOnUIThread(new z61(p1Var, arrayList7, arrayList8, arrayList2, runnable, 4));
                                                     return;
                                                 }
-                                            } catch (Exception e14) {
-                                                e = e14;
+                                            } catch (Exception e13) {
+                                                e = e13;
                                                 p1Var = p1Var2;
                                                 sQLiteCursor = queryFinalized3;
                                                 FileLog.e(e);
                                                 if (sQLiteCursor != null) {
                                                 }
-                                                AndroidUtilities.runOnUIThread(new y61(p1Var, arrayList7, arrayList8, arrayList2, runnable, 4));
+                                                AndroidUtilities.runOnUIThread(new z61(p1Var, arrayList7, arrayList8, arrayList2, runnable, 4));
                                                 return;
                                             }
                                         }
@@ -442,8 +441,8 @@ public final /* synthetic */ class di implements Runnable {
                                     runnable2 = runnable;
                                     p1Var2 = p1Var;
                                     c3 = 0;
-                                } catch (Exception e15) {
-                                    e = e15;
+                                } catch (Exception e14) {
+                                    e = e14;
                                     p1Var = p1Var2;
                                     runnable = runnable2;
                                 }
@@ -454,15 +453,15 @@ public final /* synthetic */ class di implements Runnable {
                                 }
                                 throw th;
                             }
-                        } catch (Exception e16) {
-                            e = e16;
+                        } catch (Exception e15) {
+                            e = e15;
                             p1Var = p1Var2;
                             runnable = runnable2;
                             sQLiteCursor = sQLiteCursor3;
                             FileLog.e(e);
                             if (sQLiteCursor != null) {
                             }
-                            AndroidUtilities.runOnUIThread(new y61(p1Var, arrayList7, arrayList8, arrayList2, runnable, 4));
+                            AndroidUtilities.runOnUIThread(new z61(p1Var, arrayList7, arrayList8, arrayList2, runnable, 4));
                             return;
                         }
                     }
@@ -477,18 +476,18 @@ public final /* synthetic */ class di implements Runnable {
                             messagesStorage.getUsersInternal(arrayList9, arrayList7);
                         }
                         sQLiteCursor3.dispose();
-                    } catch (Exception e17) {
-                        e = e17;
+                    } catch (Exception e16) {
+                        e = e16;
                         sQLiteCursor = sQLiteCursor3;
                         FileLog.e(e);
                         if (sQLiteCursor != null) {
                             sQLiteCursor.dispose();
                         }
-                        AndroidUtilities.runOnUIThread(new y61(p1Var, arrayList7, arrayList8, arrayList2, runnable, 4));
+                        AndroidUtilities.runOnUIThread(new z61(p1Var, arrayList7, arrayList8, arrayList2, runnable, 4));
                         return;
                     }
-                } catch (Exception e18) {
-                    e = e18;
+                } catch (Exception e17) {
+                    e = e17;
                     p1Var = p1Var2;
                     arrayList2 = arrayList6;
                     runnable = runnable2;
@@ -497,18 +496,18 @@ public final /* synthetic */ class di implements Runnable {
                     th = th6;
                     sQLiteCursor = null;
                 }
-                AndroidUtilities.runOnUIThread(new y61(p1Var, arrayList7, arrayList8, arrayList2, runnable, 4));
+                AndroidUtilities.runOnUIThread(new z61(p1Var, arrayList7, arrayList8, arrayList2, runnable, 4));
                 return;
             default:
-                vf.p1 p1Var3 = (vf.p1) obj3;
+                uf.p1 p1Var3 = (uf.p1) obj3;
                 MessagesStorage messagesStorage2 = (MessagesStorage) obj2;
-                vf.o1 o1Var3 = (vf.o1) obj;
+                uf.o1 o1Var3 = (uf.o1) obj;
                 try {
                     arrayList3 = new ArrayList<>();
                     arrayList4 = new ArrayList();
                     queryFinalized = messagesStorage2.getDatabase().queryFinalized("SELECT data, send_state, mid, date, topic_id, ttl FROM quick_replies_messages WHERE topic_id = ? ORDER BY mid ASC", Integer.valueOf(o1Var3.a));
-                } catch (Exception e19) {
-                    e = e19;
+                } catch (Exception e18) {
+                    e = e18;
                     sQLiteCursor2 = null;
                 } catch (Throwable th7) {
                     th = th7;
@@ -539,11 +538,11 @@ public final /* synthetic */ class di implements Runnable {
                     if (!arrayList3.isEmpty()) {
                         messagesStorage2.getUsersInternal(arrayList3, arrayList11);
                     }
-                    AndroidUtilities.runOnUIThread(new y61(p1Var3, arrayList11, arrayList12, o1Var3, messageObject, 5));
+                    AndroidUtilities.runOnUIThread(new z61(p1Var3, arrayList11, arrayList12, o1Var3, messageObject, 5));
                     queryFinalized.dispose();
                     return;
-                } catch (Exception e20) {
-                    e = e20;
+                } catch (Exception e19) {
+                    e = e19;
                     sQLiteCursor2 = queryFinalized;
                     try {
                         FileLog.e(e);
@@ -577,17 +576,17 @@ public final /* synthetic */ class di implements Runnable {
         this.d = j10;
     }
 
-    public /* synthetic */ di(org.telegram.ui.ActionBar.h3 h3Var, long j10, Object obj, Object obj2, int i10) {
+    public /* synthetic */ di(org.telegram.ui.ActionBar.g3 g3Var, long j10, Object obj, Object obj2, int i10) {
         this.a = i10;
-        this.b = h3Var;
+        this.b = g3Var;
         this.d = j10;
         this.c = obj;
         this.e = obj2;
     }
 
-    public /* synthetic */ di(qh.w7 w7Var, TLRPC.Chat chat, MessagesStorage messagesStorage, long j10) {
+    public /* synthetic */ di(ph.y7 y7Var, TLRPC.Chat chat, MessagesStorage messagesStorage, long j10) {
         this.a = 11;
-        this.b = w7Var;
+        this.b = y7Var;
         this.e = chat;
         this.c = messagesStorage;
         this.d = j10;

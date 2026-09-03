@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SaveToGallerySettingsHelper;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.p2 {
     public int a;
@@ -28,7 +28,7 @@ public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.p2 
     public int h;
     public int maxVideoSizeRow;
     public d41 n;
-    public org.telegram.ui.Components.sl0 r;
+    public org.telegram.ui.Components.rl0 r;
     public final ArrayList s;
     public LongSparseArray v;
 
@@ -135,7 +135,7 @@ public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.p2 
     public final View createView(Context context) {
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        yh.z(false, this.actionBar);
+        ai.z(false, this.actionBar);
         this.actionBar.setActionBarMenuOnItemClick(new ll0(this, 14));
         int i10 = 1;
         if (this.c == null) {
@@ -152,37 +152,37 @@ public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.p2 
         } else {
             this.actionBar.setTitle(LocaleController.getString(R.string.SaveToGalleryException));
         }
-        org.telegram.ui.Components.sl0 sl0Var = new org.telegram.ui.Components.sl0(context, null);
-        this.r = sl0Var;
-        sl0Var.o1();
+        org.telegram.ui.Components.rl0 rl0Var = new org.telegram.ui.Components.rl0(context, null);
+        this.r = rl0Var;
+        rl0Var.o1();
         this.actionBar.setAdaptiveBackground(this.r);
         f2.l lVar = new f2.l();
         lVar.n(400L);
-        lVar.o(org.telegram.ui.Components.pr.h);
+        lVar.o(org.telegram.ui.Components.mr.h);
         lVar.C = false;
         lVar.m = false;
         this.r.setItemAnimator(lVar);
-        this.r.setLayoutManager(new f2.j0());
-        org.telegram.ui.Components.sl0 sl0Var2 = this.r;
+        this.r.setLayoutManager(new f2.i0());
+        org.telegram.ui.Components.rl0 rl0Var2 = this.r;
         d41 d41Var = new d41(this);
         this.n = d41Var;
-        sl0Var2.setAdapter(d41Var);
+        rl0Var2.setAdapter(d41Var);
         this.r.setOnItemClickListener(new b41(this));
         this.r.setOnItemLongClickListener(new b41(this));
         frameLayout.addView(this.r);
-        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.a7, false));
+        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
         if (this.c != null) {
             FrameLayout frameLayout2 = new FrameLayout(getParentActivity());
-            frameLayout2.setBackground(org.telegram.ui.ActionBar.a6.f(new float[]{8.0f}, org.telegram.ui.ActionBar.k6.Oh));
+            frameLayout2.setBackground(org.telegram.ui.ActionBar.z5.f(new float[]{8.0f}, org.telegram.ui.ActionBar.j6.Oh));
             TextView textView = new TextView(getParentActivity());
             textView.setTextSize(1, 14.0f);
             textView.setText(LocaleController.getString(this.d ? R.string.AddException : R.string.SaveException));
             textView.setGravity(17);
             textView.setTypeface(AndroidUtilities.bold());
-            textView.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.Sh, false));
-            frameLayout2.addView(textView, k7.c6.e(-2, -2, 17));
+            textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Sh, false));
+            frameLayout2.addView(textView, k7.b6.e(-2, -2, 17));
             frameLayout2.setOnClickListener(new v31(this, i10));
-            frameLayout.addView(frameLayout2, k7.c6.d(-1, 48.0f, 80, 16.0f, 16.0f, 16.0f, 16.0f));
+            frameLayout.addView(frameLayout2, k7.b6.d(-1, 48.0f, 80, 16.0f, 16.0f, 16.0f, 16.0f));
         }
         Z();
         return this.fragmentView;

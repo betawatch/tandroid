@@ -1,27 +1,36 @@
 package k7;
 
-import android.os.Build;
-import android.webkit.WebView;
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class i0 {
-    public static InvocationHandler a() {
-        ClassLoader classLoader;
-        if (Build.VERSION.SDK_INT >= 28) {
-            classLoader = d1.f.t();
-        } else {
-            try {
-                Method declaredMethod = WebView.class.getDeclaredMethod("getFactory", null);
-                declaredMethod.setAccessible(true);
-                classLoader = declaredMethod.invoke(null, null).getClass().getClassLoader();
-            } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException e6) {
-                throw new RuntimeException(e6);
+    public static void a(int i10, int i11) {
+        String a2;
+        if (i10 < 0 || i10 >= i11) {
+            if (i10 < 0) {
+                a2 = j0.a("%s (%s) must not be negative", "index", Integer.valueOf(i10));
+            } else {
+                if (i11 < 0) {
+                    throw new IllegalArgumentException(kf.k0.j(i11, "negative size: "));
+                }
+                a2 = j0.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
             }
+            throw new IndexOutOfBoundsException(a2);
         }
-        return (InvocationHandler) Class.forName("org.chromium.support_lib_glue.SupportLibReflectionUtil", false, classLoader).getDeclaredMethod("createWebViewProviderFactory", null).invoke(null, null);
+    }
+
+    public static void b(int i10, int i11, int i12) {
+        if (i10 < 0 || i11 < i10 || i11 > i12) {
+            throw new IndexOutOfBoundsException((i10 < 0 || i10 > i12) ? c(i10, i12, "start index") : (i11 < 0 || i11 > i12) ? c(i11, i12, "end index") : j0.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i11), Integer.valueOf(i10)));
+        }
+    }
+
+    public static String c(int i10, int i11, String str) {
+        if (i10 < 0) {
+            return j0.a("%s (%s) must not be negative", str, Integer.valueOf(i10));
+        }
+        if (i11 >= 0) {
+            return j0.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
+        }
+        throw new IllegalArgumentException(kf.k0.j(i11, "negative size: "));
     }
 }

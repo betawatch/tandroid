@@ -28,9 +28,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class y5 extends BitmapDrawable implements Animatable, lf.e {
+public final class y5 extends BitmapDrawable implements Animatable, kf.e {
     public static final float[] S0 = new float[8];
     public static final ScheduledThreadPoolExecutor T0 = new ScheduledThreadPoolExecutor(8, new ThreadPoolExecutor.DiscardPolicy());
     public static final PorterDuffXfermode U0 = new PorterDuffXfermode(PorterDuff.Mode.SRC);
@@ -111,7 +111,7 @@ public final class y5 extends BitmapDrawable implements Animatable, lf.e {
     public v5 v;
     public int v0;
     public boolean w;
-    public final lf.g w0;
+    public final kf.g w0;
     public boolean x;
     public c5.c x0;
     public boolean y;
@@ -215,7 +215,7 @@ public final class y5 extends BitmapDrawable implements Animatable, lf.e {
         }
     }
 
-    @Override // lf.e
+    @Override // kf.e
     public final int a(Bitmap bitmap) {
         int i10;
         if (this.K0 == null) {
@@ -252,12 +252,12 @@ public final class y5 extends BitmapDrawable implements Animatable, lf.e {
         return 1;
     }
 
-    @Override // lf.e
+    @Override // kf.e
     public final void b() {
         this.K0 = AnimatedFileNative.a(this.D.getAbsolutePath(), this.d, this.G, this.E, this.r0, false);
     }
 
-    @Override // lf.e
+    @Override // kf.e
     public final void c() {
         AnimatedFileNative animatedFileNative = this.K0;
         if (animatedFileNative != null) {
@@ -393,7 +393,7 @@ public final class y5 extends BitmapDrawable implements Animatable, lf.e {
             if (this.R0) {
                 this.R0 = false;
                 this.N0 = 0;
-                lf.j.d().g(this.P0);
+                kf.j.d().g(this.P0);
                 return;
             }
             return;
@@ -403,7 +403,7 @@ public final class y5 extends BitmapDrawable implements Animatable, lf.e {
         }
         this.R0 = true;
         this.N0 = 0;
-        lf.j.d().b(this.P0, i10);
+        kf.j.d().b(this.P0, i10);
     }
 
     @Override // android.graphics.drawable.Animatable
@@ -809,8 +809,8 @@ public final class y5 extends BitmapDrawable implements Animatable, lf.e {
         this.Z = true;
         AndroidUtilities.executeOnUIThread(new w5(this, 0));
         if (this.A0 != null) {
-            lf.g.c();
-            hj0.Q0.cancelRunnable(this.A0);
+            kf.g.c();
+            gj0.Q0.cancelRunnable(this.A0);
             this.A0 = null;
         }
         if (this.e == null) {
@@ -1026,7 +1026,7 @@ public final class y5 extends BitmapDrawable implements Animatable, lf.e {
             c3 = 0;
             this.r0 = new AnimatedFileDrawableStream(document, imageLocation, obj, i11, z10, i10, i14);
         }
-        lf.g gVar = null;
+        kf.g gVar = null;
         if (!z4 || z13) {
             c10 = 1;
         } else {
@@ -1047,7 +1047,7 @@ public final class y5 extends BitmapDrawable implements Animatable, lf.e {
             if (this.a0 == null || (iArr[c3] <= 3840 && iArr[c10] <= 3840)) {
                 j12 = j11;
                 z12 = false;
-                gVar = new lf.g(file, this, iVar, this.g0, this.f0, !this.u0, 0);
+                gVar = new kf.g(file, this, iVar, this.g0, this.f0, !this.u0, 0);
                 this.w0 = gVar;
                 if (j12 == 0) {
                     y(j12, z12, z12);

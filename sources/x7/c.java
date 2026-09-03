@@ -1,33 +1,52 @@
 package x7;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.maps.model.LatLng;
+import j7.f5;
+import java.util.ArrayList;
+import u6.p;
+
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class c extends h {
-    public final /* synthetic */ int c;
-    public final float d;
+public final class c extends c6.a {
+    public static final Parcelable.Creator<c> CREATOR = new p(14);
+    public LatLng a;
+    public double b;
+    public float c;
+    public int d;
+    public int e;
+    public float f;
+    public boolean h;
+    public boolean n;
+    public ArrayList r;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c(float f10, int i10) {
-        super(0, Float.valueOf(Math.max(f10, 0.0f)));
-        this.c = i10;
-        switch (i10) {
-            case 1:
-                super(2, Float.valueOf(Math.max(f10, 0.0f)));
-                this.d = Math.max(f10, 0.0f);
-                break;
-            default:
-                this.d = Math.max(f10, 0.0f);
-                break;
-        }
-    }
-
-    @Override // x7.h
-    public final String toString() {
-        switch (this.c) {
-            case 0:
-                return "[Dash: length=" + this.d + "]";
-            default:
-                return "[Gap: length=" + this.d + "]";
-        }
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q10 = f5.q(parcel, 20293);
+        f5.k(parcel, 2, this.a, i10);
+        double d = this.b;
+        f5.s(parcel, 3, 8);
+        parcel.writeDouble(d);
+        float f10 = this.c;
+        f5.s(parcel, 4, 4);
+        parcel.writeFloat(f10);
+        int i11 = this.d;
+        f5.s(parcel, 5, 4);
+        parcel.writeInt(i11);
+        int i12 = this.e;
+        f5.s(parcel, 6, 4);
+        parcel.writeInt(i12);
+        float f11 = this.f;
+        f5.s(parcel, 7, 4);
+        parcel.writeFloat(f11);
+        boolean z4 = this.h;
+        f5.s(parcel, 8, 4);
+        parcel.writeInt(z4 ? 1 : 0);
+        boolean z10 = this.n;
+        f5.s(parcel, 9, 4);
+        parcel.writeInt(z10 ? 1 : 0);
+        f5.p(parcel, 10, this.r);
+        f5.r(parcel, q10);
     }
 }

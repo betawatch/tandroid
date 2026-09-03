@@ -20,7 +20,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class vw0 extends LinearLayout {
     public final TextView a;
@@ -41,10 +41,10 @@ public final class vw0 extends LinearLayout {
         this.c = frameLayout;
         int i10 = premiumPreviewFragment.d0;
         int i11 = i10 == 1 ? 175 : 190;
-        addView(frameLayout, k7.c6.q(i11, i11, 1));
+        addView(frameLayout, k7.b6.q(i11, i11, 1));
         rw0 rw0Var = new rw0(this, context, premiumPreviewFragment.e0 ? 1 : 0, i10 == 1 ? 1 : 0, context);
         this.d = rw0Var;
-        frameLayout.addView(rw0Var, k7.c6.c(-1.0f, -1));
+        frameLayout.addView(rw0Var, k7.b6.c(-1.0f, -1));
         frameLayout.setClipChildren(false);
         setClipChildren(false);
         TextView textView = new TextView(context);
@@ -52,17 +52,17 @@ public final class vw0 extends LinearLayout {
         textView.setTextSize(1, 22.0f);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(1);
-        addView(textView, k7.c6.p(-2, -2, 0.0f, 1, 16, i10 == 1 ? 8 : 20, 16, 0));
+        addView(textView, k7.b6.p(-2, -2, 0.0f, 1, 16, i10 == 1 ? 8 : 20, 16, 0));
         TextView textView2 = new TextView(context);
         this.b = textView2;
         textView2.setTextSize(1, 14.0f);
         textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
         textView2.setGravity(1);
-        addView(textView2, k7.c6.p(-1, -2, 0.0f, 1, 16, 7, 16, 0));
+        addView(textView2, k7.b6.p(-1, -2, 0.0f, 1, 16, 7, 16, 0));
         sw0 sw0Var = new sw0(this, context);
         this.e = sw0Var;
         sw0Var.setOverScrollMode(2);
-        sw0Var.setLayoutManager(new f2.j0());
+        sw0Var.setLayoutManager(new f2.i0());
         sw0Var.setAdapter(new uw0(this, context));
         sw0Var.setOnItemClickListener(new j(this, 25));
         final Path path = new Path();
@@ -93,7 +93,7 @@ public final class vw0 extends LinearLayout {
         });
         setClipChildren(false);
         setClipToPadding(false);
-        addView(sw0Var, k7.c6.k(12.0f, 16.0f, 12.0f, 4.0f, -1, -2));
+        addView(sw0Var, k7.b6.k(12.0f, 16.0f, 12.0f, 4.0f, -1, -2));
         a();
         b();
     }
@@ -237,7 +237,7 @@ public final class vw0 extends LinearLayout {
             textView.setText(LocaleController.getString(premiumPreviewFragment.m0 ? R.string.TelegramPremiumSubscribedTitle : R.string.TelegramBusiness));
             org.telegram.messenger.y3.q((premiumPreviewFragment.getUserConfig().isPremium() || premiumPreviewFragment.m0) ? R.string.TelegramBusinessSubscribedSubtitleTemp : R.string.TelegramBusinessSubtitleTemp, textView2);
         }
-        textView2.getLayoutParams().width = Math.min(AndroidUtilities.displaySize.x - AndroidUtilities.dp(42.0f), qh.e3.a(textView2.getText(), textView2.getPaint()));
+        textView2.getLayoutParams().width = Math.min(AndroidUtilities.displaySize.x - AndroidUtilities.dp(42.0f), ph.f3.a(textView2.getText(), textView2.getPaint()));
         boolean z4 = premiumPreviewFragment.m0 || BuildVars.IS_BILLING_UNAVAILABLE || premiumPreviewFragment.d.size() <= 1;
         boolean z10 = this.f;
         sw0 sw0Var = this.e;
@@ -248,7 +248,7 @@ public final class vw0 extends LinearLayout {
             ValueAnimator duration = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(250L);
             duration.addUpdateListener(new qw0(this, sw0Var, duration, r2));
             duration.addListener(new org.telegram.ui.Components.ex0(7, this, sw0Var));
-            duration.setInterpolator(org.telegram.ui.Components.pr.f);
+            duration.setInterpolator(org.telegram.ui.Components.mr.f);
             duration.start();
         }
         this.h = !z4;

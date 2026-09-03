@@ -9,9 +9,9 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class oa extends pv0 {
+public final class oa extends qv0 {
     public final /* synthetic */ boolean t0;
     public final /* synthetic */ boolean u0;
     public final /* synthetic */ sa v0;
@@ -24,7 +24,7 @@ public final class oa extends pv0 {
         this.u0 = z10;
     }
 
-    @Override // org.telegram.ui.Components.pv0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.qv0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         sa saVar = this.v0;
         saVar.H(canvas, this);
@@ -38,7 +38,7 @@ public final class oa extends pv0 {
         if (motionEvent.getAction() == 0) {
             float y10 = motionEvent.getY();
             sa saVar = this.v0;
-            drawable = ((org.telegram.ui.ActionBar.h3) saVar).shadowDrawable;
+            drawable = ((org.telegram.ui.ActionBar.g3) saVar).shadowDrawable;
             if (y10 < drawable.getBounds().top) {
                 saVar.dismiss();
             }
@@ -57,7 +57,7 @@ public final class oa extends pv0 {
     /* JADX WARN: Removed duplicated region for block: B:31:0x0095  */
     /* JADX WARN: Removed duplicated region for block: B:38:0x00c1  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x00b1  */
-    @Override // org.telegram.ui.Components.pv0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.qv0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -79,7 +79,7 @@ public final class oa extends pv0 {
         int childCount = getChildCount();
         int R = R();
         int paddingBottom = getPaddingBottom();
-        z10 = ((org.telegram.ui.ActionBar.h3) saVar).keyboardVisible;
+        z10 = ((org.telegram.ui.ActionBar.g3) saVar).keyboardVisible;
         if (!z10 && saVar.M != null && R <= AndroidUtilities.dp(20.0f) && !AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
             paddingBottom += saVar.M.getEmojiPadding();
         }
@@ -110,7 +110,7 @@ public final class oa extends pv0 {
                             i17 = ((i13 - paddingBottom) - i11) - measuredHeight3;
                             i18 = layoutParams.bottomMargin;
                         }
-                        if (childAt instanceof mz) {
+                        if (childAt instanceof kz) {
                             if (AndroidUtilities.isTablet()) {
                                 measuredHeight = getMeasuredHeight();
                                 measuredHeight2 = childAt.getMeasuredHeight();
@@ -126,18 +126,18 @@ public final class oa extends pv0 {
                         i18 = layoutParams.bottomMargin;
                     }
                     i19 = i17 - i18;
-                    if (childAt instanceof mz) {
+                    if (childAt instanceof kz) {
                     }
                     childAt.layout(i16, i19, measuredWidth + i16, measuredHeight3 + i19);
                 } else {
                     i14 = (((i12 - i10) - measuredWidth) - layoutParams.rightMargin) - getPaddingRight();
-                    i15 = ((org.telegram.ui.ActionBar.h3) saVar).backgroundPaddingLeft;
+                    i15 = ((org.telegram.ui.ActionBar.g3) saVar).backgroundPaddingLeft;
                 }
                 i16 = i14 - i15;
                 if (i22 == 16) {
                 }
                 i19 = i17 - i18;
-                if (childAt instanceof mz) {
+                if (childAt instanceof kz) {
                 }
                 childAt.layout(i16, i19, measuredWidth + i16, measuredHeight3 + i19);
             }
@@ -149,7 +149,7 @@ public final class oa extends pv0 {
     public final void onMeasure(int i10, int i11) {
         int i12;
         boolean z4;
-        fu fuVar;
+        cu cuVar;
         int size = View.MeasureSpec.getSize(i11);
         sa saVar = this.v0;
         saVar.h = size;
@@ -164,17 +164,17 @@ public final class oa extends pv0 {
         int size2 = View.MeasureSpec.getSize(i10);
         int size3 = View.MeasureSpec.getSize(i11);
         setMeasuredDimension(size2, size3);
-        fu fuVar2 = saVar.M;
-        if (fuVar2 != null && !fuVar2.K && AndroidUtilities.dp(20.0f) >= 0) {
-            fu fuVar3 = saVar.M;
-            if (!fuVar3.e && !fuVar3.L) {
-                fuVar3.j();
+        cu cuVar2 = saVar.M;
+        if (cuVar2 != null && !cuVar2.K && AndroidUtilities.dp(20.0f) >= 0) {
+            cu cuVar3 = saVar.M;
+            if (!cuVar3.e && !cuVar3.L) {
+                cuVar3.j();
             }
         }
         int i13 = 0;
         if (AndroidUtilities.dp(20.0f) >= 0) {
-            z4 = ((org.telegram.ui.ActionBar.h3) saVar).keyboardVisible;
-            int emojiPadding = (z4 || (fuVar = saVar.M) == null) ? 0 : fuVar.getEmojiPadding();
+            z4 = ((org.telegram.ui.ActionBar.g3) saVar).keyboardVisible;
+            int emojiPadding = (z4 || (cuVar = saVar.M) == null) ? 0 : cuVar.getEmojiPadding();
             if (!AndroidUtilities.isInMultiwindow) {
                 size3 -= emojiPadding;
                 i11 = View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30);
@@ -185,8 +185,8 @@ public final class oa extends pv0 {
         while (i13 < childCount) {
             View childAt = getChildAt(i13);
             if (childAt != null && childAt.getVisibility() != 8) {
-                fu fuVar4 = saVar.M;
-                if (fuVar4 == null || !fuVar4.l(childAt)) {
+                cu cuVar4 = saVar.M;
+                if (cuVar4 == null || !cuVar4.l(childAt)) {
                     i12 = i10;
                     measureChildWithMargins(childAt, i12, 0, i14, 0);
                     i13++;

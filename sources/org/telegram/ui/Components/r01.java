@@ -18,7 +18,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public abstract class r01 extends View {
     public boolean B;
@@ -97,7 +97,7 @@ public abstract class r01 extends View {
         this.B = false;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.C, 0.0f);
         ofFloat.addUpdateListener(new q01(this, 0));
-        ofFloat.addListener(new pd0(this, 20));
+        ofFloat.addListener(new od0(this, 20));
         this.D = ofFloat;
         ofFloat.start();
     }
@@ -134,13 +134,13 @@ public abstract class r01 extends View {
         ValueAnimator ofFloat3 = ValueAnimator.ofFloat(1.0f, 0.0f);
         ofFloat3.setStartDelay(500L);
         ofFloat3.addUpdateListener(new q01(this, 3));
-        pr prVar = pr.g;
-        ofFloat3.setInterpolator(prVar);
+        mr mrVar = mr.g;
+        ofFloat3.setInterpolator(mrVar);
         ofFloat3.setDuration(500L);
         ValueAnimator ofFloat4 = ValueAnimator.ofFloat(1.0f, 0.0f);
         ofFloat4.setStartDelay(400L);
         ofFloat4.addUpdateListener(new q01(this, 4));
-        ofFloat4.setInterpolator(prVar);
+        ofFloat4.setInterpolator(mrVar);
         ofFloat4.setDuration(900L);
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playSequentially(ofFloat, ofFloat2, ofFloat3, ofFloat4);
@@ -241,7 +241,7 @@ public abstract class r01 extends View {
         }
         canvas2.save();
         float primaryHorizontal4 = this.a.getPrimaryHorizontal(0);
-        canvas2.translate(((int) (((this.a.getPrimaryHorizontal(this.h) - this.a.getPrimaryHorizontal(0)) * this.s) + org.telegram.ui.yh.c(f11, this.s, AndroidUtilities.dp(4.0f), primaryHorizontal4))) - i10, i11);
+        canvas2.translate(((int) (((this.a.getPrimaryHorizontal(this.h) - this.a.getPrimaryHorizontal(0)) * this.s) + org.telegram.ui.ai.c(f11, this.s, AndroidUtilities.dp(4.0f), primaryHorizontal4))) - i10, i11);
         canvas2.scale(interpolation, interpolation, f13, f13);
         path.reset();
         path.addCircle(f13, f13, f13, direction);

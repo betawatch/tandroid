@@ -5,54 +5,54 @@ import android.view.KeyEvent;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class ra extends rl0 {
+public final class ra extends ql0 {
     public final /* synthetic */ int c;
     public final Context d;
     public final Object e;
     public final /* synthetic */ KeyEvent.Callback f;
 
-    public ra(bj bjVar, Context context) {
+    public ra(zi ziVar, Context context) {
         this.c = 1;
-        this.f = bjVar;
+        this.f = ziVar;
         this.e = new ArrayList();
         this.d = context;
     }
 
-    @Override // f2.p0
-    public void B(f2.r0 r0Var) {
+    @Override // f2.o0
+    public void B(f2.q0 q0Var) {
         switch (this.c) {
             case 0:
-                ((rl0) this.e).B(new qa(this, r0Var));
+                ((ql0) this.e).B(new qa(this, q0Var));
                 break;
             default:
-                super.B(r0Var);
+                super.B(q0Var);
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.rl0
-    public final boolean D(f2.m1 m1Var) {
+    @Override // org.telegram.ui.Components.ql0
+    public final boolean D(f2.l1 l1Var) {
         switch (this.c) {
             case 0:
-                return ((rl0) this.e).D(m1Var);
+                return ((ql0) this.e).D(l1Var);
             default:
-                return m1Var.f == 0;
+                return l1Var.f == 0;
         }
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final int h() {
         switch (this.c) {
             case 0:
-                return ((rl0) this.e).h() + 1;
+                return ((ql0) this.e).h() + 1;
             default:
                 return ((ArrayList) this.e).size();
         }
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final int j(int i10) {
         switch (this.c) {
             case 0:
@@ -60,47 +60,47 @@ public final class ra extends rl0 {
                 if (i10 == (saVar.N ? h() - 1 : 0)) {
                     return -1000;
                 }
-                return ((rl0) this.e).j(i10 - (!saVar.N ? 1 : 0));
+                return ((ql0) this.e).j(i10 - (!saVar.N ? 1 : 0));
             default:
                 return 0;
         }
     }
 
-    @Override // f2.p0
-    public final void v(f2.m1 m1Var, int i10) {
+    @Override // f2.o0
+    public final void v(f2.l1 l1Var, int i10) {
         switch (this.c) {
             case 0:
                 sa saVar = (sa) this.f;
                 if (i10 != (saVar.N ? h() - 1 : 0)) {
-                    ((rl0) this.e).v(m1Var, i10 - (!saVar.N ? 1 : 0));
+                    ((ql0) this.e).v(l1Var, i10 - (!saVar.N ? 1 : 0));
                     break;
                 }
                 break;
             default:
-                org.telegram.ui.Cells.za zaVar = (org.telegram.ui.Cells.za) m1Var.a;
-                zaVar.d(1, false, false);
-                zaVar.setSize(((bj) this.f).r);
-                zaVar.e(1, ((ArrayList) this.e).get(i10), null, 0);
+                org.telegram.ui.Cells.ya yaVar = (org.telegram.ui.Cells.ya) l1Var.a;
+                yaVar.d(1, false, false);
+                yaVar.setSize(((zi) this.f).r);
+                yaVar.e(1, ((ArrayList) this.e).get(i10), null, 0);
                 break;
         }
     }
 
-    @Override // f2.p0
-    public final f2.m1 x(ViewGroup viewGroup, int i10) {
+    @Override // f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
         switch (this.c) {
             case 0:
-                return i10 == -1000 ? new el0(new fg.h0((sa) this.f, this.d)) : ((rl0) this.e).x(viewGroup, i10);
+                return i10 == -1000 ? new dl0(new eg.h0((sa) this.f, this.d)) : ((ql0) this.e).x(viewGroup, i10);
             default:
-                aj ajVar = new aj(this, this.d);
-                ajVar.b = false;
-                return new el0(ajVar);
+                yi yiVar = new yi(this, this.d);
+                yiVar.b = false;
+                return new dl0(yiVar);
         }
     }
 
-    public ra(sa saVar, rl0 rl0Var, Context context) {
+    public ra(sa saVar, ql0 ql0Var, Context context) {
         this.c = 0;
         this.f = saVar;
-        this.e = rl0Var;
+        this.e = ql0Var;
         this.d = context;
     }
 }

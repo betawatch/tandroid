@@ -15,7 +15,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class m extends FrameLayout implements GiftAuctionController.OnActiveAuctionsUpdateListeners {
     public final int a;
@@ -29,30 +29,30 @@ public final class m extends FrameLayout implements GiftAuctionController.OnActi
         super(activity);
         this.e = new ArrayList();
         this.a = i10;
-        LinearLayout h = l.d.h(activity, 1);
+        LinearLayout h = kf.k0.h(activity, 1);
         org.telegram.ui.Components.k6 k6Var = new org.telegram.ui.Components.k6(activity, false, false, false);
         this.b = k6Var;
         k6Var.setTextSize(AndroidUtilities.dp(14.0f));
         k6Var.setTypeface(AndroidUtilities.bold());
         k6Var.setTranslationY(-AndroidUtilities.dp(1.0f));
-        h.addView(k6Var, k7.c6.n(-1, 18));
+        h.addView(k6Var, k7.b6.n(-1, 18));
         org.telegram.ui.Components.k6 k6Var2 = new org.telegram.ui.Components.k6(activity, false, false, false);
         this.c = k6Var2;
         k6Var2.setTextSize(AndroidUtilities.dp(13.0f));
-        h.addView(k6Var2, k7.c6.k(2.0f, 0.0f, 2.0f, 0.0f, -1, 17));
+        h.addView(k6Var2, k7.b6.k(2.0f, 0.0f, 2.0f, 0.0f, -1, 17));
         l lVar = new l(activity, i10);
         this.d = lVar;
         lVar.b(299L);
-        addView(h, k7.c6.d(-1, -2.0f, 16, 14.0f, 0.0f, 90.0f, 0.0f));
-        addView(lVar, k7.c6.d(-2, -2.0f, 21, 0.0f, 0.0f, 11.0f, 0.0f));
+        addView(h, k7.b6.d(-1, -2.0f, 16, 14.0f, 0.0f, 90.0f, 0.0f));
+        addView(lVar, k7.b6.d(-2, -2.0f, 21, 0.0f, 0.0f, 11.0f, 0.0f));
         a();
         setOnClickListener(new a(this, 1));
     }
 
     public final void a() {
-        setBackground(org.telegram.ui.ActionBar.k6.K0(false));
-        this.b.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.G6, false));
-        this.c.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, this.f ? org.telegram.ui.ActionBar.k6.q7 : org.telegram.ui.ActionBar.k6.y6, false));
+        setBackground(org.telegram.ui.ActionBar.j6.K0(false));
+        this.b.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
+        this.c.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, this.f ? org.telegram.ui.ActionBar.j6.q7 : org.telegram.ui.ActionBar.j6.y6, false));
         invalidate();
     }
 

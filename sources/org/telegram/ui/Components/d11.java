@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class d11 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final class d11 extends AnimatorListenerAdapter {
                 break;
             default:
                 ThemeEditorView themeEditorView2 = this.b;
-                org.telegram.ui.ActionBar.k6.r1(themeEditorView2.m, true, false, false);
+                org.telegram.ui.ActionBar.j6.r1(themeEditorView2.m, true, false, false);
                 themeEditorView2.a();
                 break;
         }

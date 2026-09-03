@@ -3,7 +3,7 @@ package cb;
 import android.content.Context;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class l {
     public static final c9.b b;
@@ -11,9 +11,9 @@ public final class l {
 
     static {
         c9.a b10 = c9.b.b(l.class);
-        b10.a(c9.l.b(h.class));
-        b10.a(c9.l.b(Context.class));
-        b10.g = new b(4);
+        b10.a(c9.m.b(h.class));
+        b10.a(c9.m.b(Context.class));
+        b10.g = new ab.a(4);
         b = b10.b();
     }
 

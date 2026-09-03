@@ -9,7 +9,7 @@ import java.util.ServiceConfigurationError;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class z0 {
     public static final Logger a = Logger.getLogger(r0.class.getName());
@@ -31,15 +31,15 @@ public abstract class z0 {
                 try {
                     android.support.v4.media.a.v(Class.forName(str, true, classLoader).getConstructor(null).newInstance(null));
                     throw null;
-                } catch (IllegalAccessException e6) {
+                } catch (IllegalAccessException e) {
+                    throw new IllegalStateException(e);
+                } catch (InvocationTargetException e6) {
                     throw new IllegalStateException(e6);
-                } catch (InvocationTargetException e10) {
-                    throw new IllegalStateException(e10);
                 }
-            } catch (InstantiationException e11) {
+            } catch (InstantiationException e10) {
+                throw new IllegalStateException(e10);
+            } catch (NoSuchMethodException e11) {
                 throw new IllegalStateException(e11);
-            } catch (NoSuchMethodException e12) {
-                throw new IllegalStateException(e12);
             }
         } catch (ClassNotFoundException unused) {
             try {
@@ -51,10 +51,10 @@ public abstract class z0 {
                             throw null;
                         }
                         throw new ClassCastException();
-                    } catch (ServiceConfigurationError e13) {
+                    } catch (ServiceConfigurationError e12) {
                         Level level = Level.SEVERE;
                         String simpleName = u0.class.getSimpleName();
-                        a.logp(level, "com.google.protobuf.GeneratedExtensionRegistryLoader", "load", simpleName.length() != 0 ? "Unable to load ".concat(simpleName) : new String("Unable to load "), (Throwable) e13);
+                        a.logp(level, "com.google.protobuf.GeneratedExtensionRegistryLoader", "load", simpleName.length() != 0 ? "Unable to load ".concat(simpleName) : new String("Unable to load "), (Throwable) e12);
                     }
                 }
                 if (arrayList.size() == 1) {
@@ -65,12 +65,12 @@ public abstract class z0 {
                 }
                 try {
                     return (u0) u0.class.getMethod("combine", Collection.class).invoke(null, arrayList);
-                } catch (IllegalAccessException e14) {
+                } catch (IllegalAccessException e13) {
+                    throw new IllegalStateException(e13);
+                } catch (NoSuchMethodException e14) {
                     throw new IllegalStateException(e14);
-                } catch (NoSuchMethodException e15) {
+                } catch (InvocationTargetException e15) {
                     throw new IllegalStateException(e15);
-                } catch (InvocationTargetException e16) {
-                    throw new IllegalStateException(e16);
                 }
             } catch (Throwable th2) {
                 throw new ServiceConfigurationError(th2.getMessage(), th2);

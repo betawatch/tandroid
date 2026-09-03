@@ -9,13 +9,13 @@ import j$.util.Objects;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.ex0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class q0 implements View.OnApplyWindowInsetsListener {
-    public final dh.e a;
+    public final ch.e a;
     public m1 b;
 
-    public q0(ViewGroup viewGroup, dh.e eVar) {
+    public q0(ViewGroup viewGroup, ch.e eVar) {
         m1 m1Var;
         this.a = eVar;
         m1 f10 = j0.f(viewGroup);

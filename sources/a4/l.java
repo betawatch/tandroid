@@ -9,16 +9,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import k7.x6;
 import l3.o0;
-import r3.x;
+import org.telegram.ui.Components.tp0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class l extends j {
     public k n;
     public int o;
     public boolean p;
     public o0 q;
-    public x r;
+    public tp0 r;
 
     @Override // a4.j
     public final void a(long j10) {
@@ -62,10 +62,10 @@ public final class l extends j {
 
     /* JADX WARN: Type inference failed for: r1v59, types: [byte[], java.io.Serializable] */
     @Override // a4.j
-    public final boolean c(w wVar, long j10, bf.b bVar) {
+    public final boolean c(w wVar, long j10, af.c cVar) {
         k kVar;
         if (this.n != null) {
-            ((n0) bVar.b).getClass();
+            ((n0) cVar.b).getClass();
             return false;
         }
         o0 o0Var = this.q;
@@ -97,8 +97,8 @@ public final class l extends j {
             o0Var2.g = copyOf;
             this.q = o0Var2;
         } else {
-            x xVar = this.r;
-            if (xVar == null) {
+            tp0 tp0Var = this.r;
+            if (tp0Var == null) {
                 this.r = x6.b(wVar, true, true);
             } else {
                 int i14 = wVar.c;
@@ -275,9 +275,9 @@ public final class l extends j {
                                     vVar.i(16);
                                     vVar.i(16);
                                     vVar.i(8);
-                                    h5.c cVar = new h5.c();
-                                    cVar.a = h;
-                                    cVarArr[i65] = cVar;
+                                    h5.c cVar2 = new h5.c();
+                                    cVar2.a = h;
+                                    cVarArr[i65] = cVar2;
                                 }
                                 if (!vVar.h()) {
                                     throw r1.a("framing bit after modes not set as expected", null);
@@ -287,7 +287,7 @@ public final class l extends j {
                                     i66++;
                                     i63 >>>= 1;
                                 }
-                                kVar = new k(o0Var, xVar, bArr, cVarArr, i66);
+                                kVar = new k(o0Var, tp0Var, bArr, cVarArr, i66);
                             }
                         }
                     } else {
@@ -342,7 +342,7 @@ public final class l extends j {
         ArrayList arrayList = new ArrayList();
         arrayList.add((byte[]) o0Var3.g);
         arrayList.add((byte[]) kVar.d);
-        e4.c a2 = x6.a(s8.v.u(((x) kVar.c).a));
+        e4.c a2 = x6.a(s8.v.u((String[]) ((tp0) kVar.c).b));
         m0 m0Var = new m0();
         m0Var.o = "audio/vorbis";
         m0Var.f = o0Var3.d;
@@ -351,7 +351,7 @@ public final class l extends j {
         m0Var.C = o0Var3.b;
         m0Var.q = arrayList;
         m0Var.i = a2;
-        bVar.b = new n0(m0Var);
+        cVar.b = new n0(m0Var);
         return true;
     }
 

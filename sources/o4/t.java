@@ -2,22 +2,22 @@ package o4;
 
 import j3.h2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public interface t extends n0 {
-    long d(long j10, h2 h2Var);
+    void J(s sVar, long j10);
 
-    void f(s sVar, long j10);
+    long Y(f5.c[] cVarArr, boolean[] zArr, l0[] l0VarArr, boolean[] zArr2, long j10);
 
-    long g(f5.c[] cVarArr, boolean[] zArr, l0[] l0VarArr, boolean[] zArr2, long j10);
+    long a1();
 
-    void i();
+    void d0();
 
-    long j(long j10);
+    long j0(long j10);
 
-    void k(long j10);
+    void m0(long j10);
 
-    long n();
+    t0 o1();
 
-    t0 o();
+    long z(long j10, h2 h2Var);
 }

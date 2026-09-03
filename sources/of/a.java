@@ -1,25 +1,13 @@
 package of;
 
-import cb.b;
+import h7.u;
 import java.nio.ShortBuffer;
-import z9.d;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public interface a {
-    public static final d l = new d(14);
-    public static final db.a m;
-    public static final ab.a o;
-    public static final b p;
+    public static final u q = new u(15);
+    public static final ab.a t = new ab.a(16);
 
-    static {
-        int i10 = 15;
-        m = new db.a(i10);
-        o = new ab.a(i10);
-        p = new b(i10);
-    }
-
-    int S1(int i10, int i11, int i12);
-
-    void X0(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11);
+    void r(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11, int i12);
 }

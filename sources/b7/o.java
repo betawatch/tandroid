@@ -9,7 +9,7 @@ import java.util.ListIterator;
 import java.util.RandomAccess;
 import java.util.function.UnaryOperator;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class o extends j implements List, RandomAccess, j$.util.List {
     public static final k b = new k(a0.e, 0);
@@ -26,7 +26,7 @@ public abstract class o extends j implements List, RandomAccess, j$.util.List {
         int length = objArr2.length;
         for (int i10 = 0; i10 < length; i10++) {
             if (objArr2[i10] == null) {
-                throw new NullPointerException(l.d.j(i10, "at index "));
+                throw new NullPointerException(kf.k0.j(i10, "at index "));
             }
         }
         return t(length, objArr2);

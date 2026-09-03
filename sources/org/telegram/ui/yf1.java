@@ -10,11 +10,11 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class yf1 extends org.telegram.ui.ActionBar.p2 {
     public wf1 a;
-    public org.telegram.ui.Components.sl0 b;
+    public org.telegram.ui.Components.rl0 b;
     public long c;
     public ArrayList d;
     public HashSet e;
@@ -27,7 +27,7 @@ public final class yf1 extends org.telegram.ui.ActionBar.p2 {
         tL_inputNotifyForumTopic.peer = yf1Var.getMessagesController().getInputPeer(yf1Var.c);
         tL_inputNotifyForumTopic.top_msg_id = i10;
         updatenotifysettings.peer = tL_inputNotifyForumTopic;
-        yf1Var.getConnectionsManager().sendRequest(updatenotifysettings, new oh.p5(4));
+        yf1Var.getConnectionsManager().sendRequest(updatenotifysettings, new nh.p5(4));
     }
 
     public final void V() {
@@ -69,22 +69,22 @@ public final class yf1 extends org.telegram.ui.ActionBar.p2 {
     public final View createView(Context context) {
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        yh.z(false, this.actionBar);
+        ai.z(false, this.actionBar);
         this.actionBar.setActionBarMenuOnItemClick(new ll0(this, 22));
         this.actionBar.setTitle(LocaleController.getString(R.string.NotificationsExceptions));
-        this.b = new org.telegram.ui.Components.sl0(context, null);
+        this.b = new org.telegram.ui.Components.rl0(context, null);
         f2.l lVar = new f2.l();
         lVar.C = false;
         lVar.m = false;
         this.b.setItemAnimator(lVar);
-        this.b.setLayoutManager(new f2.j0());
-        org.telegram.ui.Components.sl0 sl0Var = this.b;
+        this.b.setLayoutManager(new f2.i0());
+        org.telegram.ui.Components.rl0 rl0Var = this.b;
         wf1 wf1Var = new wf1(this);
         this.a = wf1Var;
-        sl0Var.setAdapter(wf1Var);
+        rl0Var.setAdapter(wf1Var);
         this.b.setOnItemClickListener(new vf1(this));
         frameLayout.addView(this.b);
-        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.a7, false));
+        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
         return this.fragmentView;
     }
 

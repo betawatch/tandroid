@@ -9,13 +9,13 @@ import java.util.Random;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import mh.e0;
+import lh.f0;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
-import org.telegram.ui.sb0;
+import org.telegram.ui.tb0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -36,37 +36,37 @@ public final /* synthetic */ class f implements Runnable {
                 new ThreadPoolExecutor(0, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue()).execute(new f(this.b, 2));
                 break;
             case 2:
-                e.s(this.b, new sb0(1), e.a, false);
+                e.s(this.b, new tb0(1), e.a, false);
                 break;
             case 3:
-                new e0(this.b).show();
+                new f0(this.b).show();
                 break;
             case 4:
-                af.g.s(this.b, LocaleController.getString(R.string.StarsTOSLink));
+                ze.d.s(this.b, LocaleController.getString(R.string.StarsTOSLink));
                 break;
             case 5:
-                new e0(this.b).show();
+                new f0(this.b).show();
                 break;
             case 6:
-                af.g.s(this.b, LocaleController.getString(R.string.StarsTOSLink));
+                ze.d.s(this.b, LocaleController.getString(R.string.StarsTOSLink));
                 break;
             case 7:
-                af.g.s(this.b, LocaleController.getString(R.string.StarsTOSLink));
+                ze.d.s(this.b, LocaleController.getString(R.string.StarsTOSLink));
                 break;
             case 8:
-                af.g.s(this.b, LocaleController.getString(R.string.PaidContentInfoLink));
+                ze.d.s(this.b, LocaleController.getString(R.string.PaidContentInfoLink));
                 break;
             case 9:
-                af.g.s(this.b, LocaleController.getString(R.string.StarsSubscribeInfoLink));
+                ze.d.s(this.b, LocaleController.getString(R.string.StarsSubscribeInfoLink));
                 break;
             case 10:
-                af.g.s(this.b, LocaleController.getString(R.string.StarsReactionTermsLink));
+                ze.d.s(this.b, LocaleController.getString(R.string.StarsReactionTermsLink));
                 break;
             case 11:
-                new e0(this.b).show();
+                new f0(this.b).show();
                 break;
             default:
-                af.g.s(this.b, LocaleController.getString(R.string.ChannelAffiliateProgramJoinButtonInfoLink));
+                ze.d.s(this.b, LocaleController.getString(R.string.ChannelAffiliateProgramJoinButtonInfoLink));
                 break;
         }
     }

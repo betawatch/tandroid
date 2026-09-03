@@ -10,7 +10,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i2 implements Runnable {
     public final /* synthetic */ int a;
@@ -62,8 +62,8 @@ public final /* synthetic */ class i2 implements Runnable {
                                                 if (!exists) {
                                                     try {
                                                         file.createNewFile();
-                                                    } catch (Exception e6) {
-                                                        FileLog.e(e6);
+                                                    } catch (Exception e) {
+                                                        FileLog.e(e);
                                                         m2Var3.d = false;
                                                         return;
                                                     }
@@ -76,8 +76,8 @@ public final /* synthetic */ class i2 implements Runnable {
                                                     FileOutputStream fileOutputStream = new FileOutputStream(file);
                                                     fileOutputStream.write(serializedData.toByteArray());
                                                     fileOutputStream.close();
-                                                } catch (Exception e10) {
-                                                    FileLog.e(e10);
+                                                } catch (Exception e6) {
+                                                    FileLog.e(e6);
                                                 }
                                                 AndroidUtilities.runOnUIThread(new i2(m2Var3, 2));
                                                 break;
@@ -116,8 +116,8 @@ public final /* synthetic */ class i2 implements Runnable {
                                     if (!exists) {
                                         try {
                                             file.createNewFile();
-                                        } catch (Exception e6) {
-                                            FileLog.e(e6);
+                                        } catch (Exception e) {
+                                            FileLog.e(e);
                                             m2Var3.d = false;
                                             return;
                                         }
@@ -130,8 +130,8 @@ public final /* synthetic */ class i2 implements Runnable {
                                         FileOutputStream fileOutputStream = new FileOutputStream(file);
                                         fileOutputStream.write(serializedData.toByteArray());
                                         fileOutputStream.close();
-                                    } catch (Exception e10) {
-                                        FileLog.e(e10);
+                                    } catch (Exception e6) {
+                                        FileLog.e(e6);
                                     }
                                     AndroidUtilities.runOnUIThread(new i2(m2Var3, 2));
                                     break;
@@ -150,8 +150,8 @@ public final /* synthetic */ class i2 implements Runnable {
                         k2 k2Var = new k2();
                         k2Var.readParams(serializedData, true);
                         arrayList2.addAll(k2Var.a);
-                    } catch (Exception e6) {
-                        FileLog.e(e6);
+                    } catch (Exception e) {
+                        FileLog.e(e);
                     }
                     final int i11 = 0;
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.j2
@@ -181,8 +181,8 @@ public final /* synthetic */ class i2 implements Runnable {
                                     if (!exists) {
                                         try {
                                             file2.createNewFile();
-                                        } catch (Exception e62) {
-                                            FileLog.e(e62);
+                                        } catch (Exception e6) {
+                                            FileLog.e(e6);
                                             m2Var3.d = false;
                                             return;
                                         }
@@ -195,8 +195,8 @@ public final /* synthetic */ class i2 implements Runnable {
                                         FileOutputStream fileOutputStream = new FileOutputStream(file2);
                                         fileOutputStream.write(serializedData2.toByteArray());
                                         fileOutputStream.close();
-                                    } catch (Exception e10) {
-                                        FileLog.e(e10);
+                                    } catch (Exception e62) {
+                                        FileLog.e(e62);
                                     }
                                     AndroidUtilities.runOnUIThread(new i2(m2Var3, 2));
                                     break;

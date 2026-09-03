@@ -9,14 +9,14 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class m extends lq0 {
     public final /* synthetic */ f0 Y0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m(f0 f0Var, Context context, String str, String str2, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, null, str, false, str2, false, g6Var);
+    public m(f0 f0Var, Context context, String str, String str2, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, null, str, false, str2, false, f6Var);
         this.Y0 = f0Var;
     }
 

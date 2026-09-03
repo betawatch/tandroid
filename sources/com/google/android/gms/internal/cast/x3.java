@@ -1,16 +1,25 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class x3 {
-    public final Throwable a;
+    public static final x3 c;
+    public static final x3 d;
+    public final boolean a;
+    public final Throwable b;
 
     static {
-        new x3(new c0.b("Failure occurred while trying to finish a future.", 2));
+        if (f4.d) {
+            d = null;
+            c = null;
+        } else {
+            d = new x3(null, false);
+            c = new x3(null, true);
+        }
     }
 
-    public x3(Throwable th2) {
-        th2.getClass();
-        this.a = th2;
+    public x3(Throwable th2, boolean z4) {
+        this.a = z4;
+        this.b = th2;
     }
 }

@@ -1,27 +1,77 @@
 package org.telegram.ui.ActionBar;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+import android.content.SharedPreferences;
+import java.io.File;
+import java.util.ArrayList;
+import org.json.JSONObject;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public enum c6 {
-    h(k6.Af, k6.Bf, k6.Cf, k6.Pf, k6.Qf, k6.Rf),
-    n(k6.Df, k6.Ef, k6.Ff, k6.Sf, k6.Tf, k6.Uf),
-    r(k6.Gf, k6.Hf, k6.If, k6.Vf, k6.Wf, k6.Xf),
-    s(k6.Jf, k6.Kf, k6.Lf, k6.Yf, k6.Zf, k6.ag),
-    v(k6.Mf, k6.Nf, k6.Of, k6.bg, k6.cg, k6.dg);
+public final class c6 {
+    public String a = "";
+    public String b = "";
+    public String c = "";
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public boolean i;
+    public boolean j;
+    public float k;
+    public long l;
+    public long m;
+    public long n;
+    public boolean o;
+    public i6 p;
+    public h6 q;
+    public float r;
+    public ArrayList s;
+    public TLRPC.WallPaper t;
 
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
+    public static void a(c6 c6Var) {
+        ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0).edit().remove(c6Var.b()).commit();
+        new File(ApplicationLoader.getFilesDirFixed(), c6Var.a).delete();
+        new File(ApplicationLoader.getFilesDirFixed(), c6Var.b).delete();
+    }
 
-    c6(int i10, int i11, int i12, int i13, int i14, int i15) {
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
-        this.d = i13;
-        this.e = i14;
-        this.f = i15;
+    public final String b() {
+        if (this.q == null) {
+            return android.support.v4.media.a.r(new StringBuilder(), this.p.a, "_owp");
+        }
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.p.a);
+        sb.append("_");
+        return android.support.v4.media.a.m(this.q.a, "_owp", sb);
+    }
+
+    public final void c() {
+        try {
+            String b10 = b();
+            SharedPreferences.Editor edit = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0).edit();
+            JSONObject jSONObject = new JSONObject();
+            jSONObject.put("wall", this.a);
+            jSONObject.put("owall", this.b);
+            jSONObject.put("pColor", this.d);
+            jSONObject.put("pGrColor", this.e);
+            jSONObject.put("pGrColor2", this.f);
+            jSONObject.put("pGrColor3", this.g);
+            jSONObject.put("pGrAngle", this.h);
+            String str = this.c;
+            if (str == null) {
+                str = "";
+            }
+            jSONObject.put("wallSlug", str);
+            jSONObject.put("wBlur", this.i);
+            jSONObject.put("wMotion", this.j);
+            jSONObject.put("pIntensity", this.k);
+            edit.putString(b10, jSONObject.toString());
+            edit.commit();
+        } catch (Throwable th2) {
+            FileLog.e(th2);
+        }
     }
 }

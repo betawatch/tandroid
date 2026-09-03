@@ -4,7 +4,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.ShortBuffer;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class s0 implements n {
     public int b;
@@ -83,7 +83,7 @@ public final class s0 implements n {
             int i10 = r0Var.k;
             float f10 = r0Var.c;
             float f11 = r0Var.d;
-            int b10 = r0Var.m + ((int) l.d.b(i10 / (f10 / f11), r0Var.o, r0Var.e * f11, 0.5f));
+            int b10 = r0Var.m + ((int) kf.k0.b(i10 / (f10 / f11), r0Var.o, r0Var.e * f11, 0.5f));
             short[] sArr = r0Var.j;
             int i11 = r0Var.h * 2;
             r0Var.j = r0Var.c(sArr, i10, i11 + i10);

@@ -1,27 +1,25 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.FileLog;
-
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class lx extends f2.w {
-    public final /* synthetic */ mz Q;
+public final class lx extends k7.c6 {
+    public final /* synthetic */ kz a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lx(mz mzVar) {
-        super(8);
-        this.Q = mzVar;
+    public lx(kz kzVar) {
+        this.a = kzVar;
     }
 
-    @Override // f2.j0, f2.w0
-    public final void v0(RecyclerView recyclerView, f2.j1 j1Var, int i10) {
-        try {
-            fx fxVar = new fx(this, recyclerView.getContext(), 1);
-            fxVar.a = i10;
-            w0(fxVar);
-        } catch (Exception e6) {
-            FileLog.e(e6);
-        }
+    @Override // k7.c6
+    public final void a() {
+        kz kzVar = this.a;
+        kzVar.c0 = false;
+        kzVar.M.w1();
+    }
+
+    @Override // k7.c6
+    public final void b() {
+        kz kzVar = this.a;
+        kzVar.M.w1();
+        kzVar.c0 = true;
     }
 }

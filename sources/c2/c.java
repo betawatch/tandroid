@@ -1,6 +1,6 @@
 package c2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
@@ -17,16 +17,16 @@ public final /* synthetic */ class c implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                a0 a0Var = ((e) ((androidx.biometric.e) this.b.f).d).d;
-                if (a0Var != null) {
-                    a0Var.j(this.c);
+                b0 b0Var = ((e) ((af.d) this.b.f).d).d;
+                if (b0Var != null) {
+                    b0Var.j(this.c);
                     break;
                 }
                 break;
             default:
-                a0 a0Var2 = ((e) ((androidx.biometric.e) this.b.f).d).d;
-                if (a0Var2 != null) {
-                    a0Var2.k(this.c);
+                b0 b0Var2 = ((e) ((af.d) this.b.f).d).d;
+                if (b0Var2 != null) {
+                    b0Var2.k(this.c);
                     break;
                 }
                 break;

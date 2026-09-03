@@ -1,32 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ag0 implements ValueAnimator.AnimatorUpdateListener {
+public final class ag0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ cg0 b;
+    public final /* synthetic */ bg0 b;
 
-    public /* synthetic */ ag0(cg0 cg0Var, int i10) {
+    public /* synthetic */ ag0(bg0 bg0Var, int i10) {
         this.a = i10;
-        this.b = cg0Var;
+        this.b = bg0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                cg0 cg0Var = this.b;
-                cg0Var.getClass();
-                cg0Var.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                cg0Var.invalidate();
+                bg0 bg0Var = this.b;
+                bg0Var.h = false;
+                bg0Var.a = bg0Var.c;
+                bg0Var.invalidate();
+                int i10 = bg0Var.G;
+                if (i10 >= 0) {
+                    bg0Var.b(i10);
+                    bg0Var.G = -1;
+                    break;
+                }
                 break;
             default:
-                cg0 cg0Var2 = this.b;
-                cg0Var2.getClass();
-                cg0Var2.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                cg0Var2.invalidate();
+                bg0 bg0Var2 = this.b;
+                bg0Var2.n = false;
+                bg0Var2.h = false;
+                bg0Var2.invalidate();
+                int i11 = bg0Var2.G;
+                if (i11 >= 0) {
+                    bg0Var2.b(i11);
+                    bg0Var2.G = -1;
+                }
+                bg0Var2.a();
                 break;
         }
     }

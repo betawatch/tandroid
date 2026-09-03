@@ -1,225 +1,64 @@
 package org.telegram.ui.Components;
 
-import android.text.Layout;
-import android.text.StaticLayout;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public abstract class qo extends LinearLayout {
-    public qk0 a;
-    public ActionBarPopupWindow$ActionBarPopupWindowLayout b;
-    public FrameLayout c;
-    public int d;
-    public float e;
-    public float f;
-    public float h;
-    public float n;
-    public float r;
+public final /* synthetic */ class qo implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ jp b;
 
-    public final void a() {
-        FrameLayout frameLayout = this.c;
-        if (frameLayout != null) {
-            frameLayout.setTranslationY(this.h + this.n + this.r);
-        }
+    public /* synthetic */ qo(jp jpVar, int i10) {
+        this.a = i10;
+        this.b = jpVar;
     }
 
-    public final void b() {
-        float f10 = (1.0f - this.f) * this.e;
-        this.b.setTranslationX(f10);
-        FrameLayout frameLayout = this.c;
-        if (frameLayout != null) {
-            frameLayout.setTranslationX(f10);
-        }
-    }
-
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
-        super.onLayout(z4, i10, i11, i12, i13);
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int i12 = i10;
-        int i13 = this.d;
-        int makeMeasureSpec = i13 != 0 ? View.MeasureSpec.makeMeasureSpec(i13, TLObject.FLAG_31) : i11;
-        qk0 qk0Var = this.a;
-        if (qk0Var == null || this.b == null) {
-            super.onMeasure(i12, makeMeasureSpec);
-        } else {
-            qk0Var.getLayoutParams().width = -2;
-            ((LinearLayout.LayoutParams) this.a.getLayoutParams()).rightMargin = 0;
-            this.e = 0.0f;
-            super.onMeasure(i12, makeMeasureSpec);
-            int measuredWidth = this.a.getMeasuredWidth();
-            if (this.b.getSwipeBack() != null && this.b.getSwipeBack().getMeasuredWidth() > measuredWidth) {
-                measuredWidth = this.b.getSwipeBack().getMeasuredWidth();
-            }
-            if (this.b.getMeasuredWidth() > measuredWidth) {
-                measuredWidth = this.b.getMeasuredWidth();
-            }
-            if (this.a.q()) {
-                i12 = View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30);
-            }
-            qk0 qk0Var2 = this.a;
-            if (!qk0Var2.b1 && qk0Var2.N0 && qk0Var2.getMeasuredWidth() > 0) {
-                int min = Math.min(AndroidUtilities.dp(320.0f), qk0Var2.getMeasuredWidth() - AndroidUtilities.dp(16.0f));
-                StaticLayout staticLayout = new StaticLayout(qk0Var2.O0.getText(), qk0Var2.O0.getPaint(), min, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                qk0Var2.Q0 = staticLayout.getHeight();
-                qk0Var2.P0 = 0;
-                for (int i14 = 0; i14 < staticLayout.getLineCount(); i14++) {
-                    qk0Var2.P0 = Math.max(qk0Var2.P0, (int) Math.ceil(staticLayout.getLineWidth(i14)));
-                }
-                if (staticLayout.getLineCount() <= 1 || qk0Var2.O0.getText().toString().contains("\n")) {
-                    qk0Var2.O0.setWidth(AndroidUtilities.dp(16.0f) + min);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                jp jpVar = this.b;
+                li liVar = jpVar.V;
+                if (liVar.v0 != liVar.g0) {
+                    jpVar.X.setText(LocaleController.getString(R.string.SetColorAsBackground));
+                    li liVar2 = jpVar.V;
+                    liVar2.Q1(liVar2.g0);
+                    break;
                 } else {
-                    int a2 = qh.e3.a(qk0Var2.O0.getText(), qk0Var2.O0.getPaint());
-                    StaticLayout staticLayout2 = new StaticLayout(qk0Var2.O0.getText(), qk0Var2.O0.getPaint(), a2, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                    qk0Var2.Q0 = staticLayout2.getHeight();
-                    qk0Var2.P0 = 0;
-                    for (int i15 = 0; i15 < staticLayout2.getLineCount(); i15++) {
-                        qk0Var2.P0 = Math.max(qk0Var2.P0, (int) Math.ceil(staticLayout2.getLineWidth(i15)));
-                    }
-                    qk0Var2.O0.setPadding(AndroidUtilities.dp(24.0f), 0, AndroidUtilities.dp(24.0f), 0);
-                    qk0Var2.O0.setWidth(AndroidUtilities.dp(48.0f) + a2);
+                    jpVar.X.setText(LocaleController.getString(R.string.ChooseBackgroundFromGallery));
+                    jpVar.V.C1();
+                    zi ziVar = jpVar.V.o0;
+                    boolean z4 = jpVar.K;
+                    ra raVar = ziVar.v;
+                    ((ArrayList) raVar.e).clear();
+                    WallpapersListActivity.z0((ArrayList) raVar.e, z4);
+                    raVar.l();
+                    break;
                 }
-                int max = Math.max(AndroidUtilities.dp(20.0f), AndroidUtilities.dp(7.0f) + qk0Var2.Q0);
-                int i16 = qk0Var2.J0;
-                if (i16 == 1 || i16 == 2) {
-                    max = AndroidUtilities.dp(20.0f);
+            case 1:
+                jp jpVar2 = this.b;
+                if (!jpVar2.v()) {
+                    jpVar2.dismiss();
+                    break;
                 } else {
-                    qk0Var2.getLayoutParams().height = AndroidUtilities.dp(22.0f) + AndroidUtilities.dp(52.0f) + max;
+                    jpVar2.A(true);
+                    jpVar2.E(true);
+                    break;
                 }
-                ((FrameLayout.LayoutParams) qk0Var2.w0.getLayoutParams()).topMargin = max;
-                ((FrameLayout.LayoutParams) qk0Var2.b.getLayoutParams()).topMargin = max;
-                qk0Var2.b1 = true;
-            }
-            int totalWidth = this.a.getTotalWidth();
-            View childAt = (this.b.getSwipeBack() != null ? this.b.getSwipeBack() : this.b).getChildAt(0);
-            int dp = AndroidUtilities.dp(36.0f) + AndroidUtilities.dp(16.0f) + AndroidUtilities.dp(16.0f) + childAt.getMeasuredWidth();
-            int hintTextWidth = this.a.getHintTextWidth();
-            if (hintTextWidth > dp) {
-                dp = hintTextWidth;
-            } else if (dp > measuredWidth) {
-                dp = measuredWidth;
-            }
-            this.a.D = AndroidUtilities.dp(36.0f);
-            if (this.a.q()) {
-                this.a.getLayoutParams().width = totalWidth;
-                this.a.D = Math.max((totalWidth - childAt.getMeasuredWidth()) - AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f));
-            } else if (totalWidth > dp) {
-                int dp2 = ((dp - AndroidUtilities.dp(16.0f)) / AndroidUtilities.dp(36.0f)) + 1;
-                int dp3 = AndroidUtilities.dp(8.0f) + (AndroidUtilities.dp(36.0f) * dp2);
-                if (AndroidUtilities.dp(24.0f) + hintTextWidth > dp3) {
-                    dp3 = AndroidUtilities.dp(24.0f) + hintTextWidth;
+            case 2:
+                jp jpVar3 = this.b;
+                if (jpVar3.Q == null) {
+                    jpVar3.C(!jpVar3.K);
+                    break;
                 }
-                if (dp3 <= totalWidth && dp2 != this.a.getItemsCount()) {
-                    totalWidth = dp3;
-                }
-                this.a.getLayoutParams().width = totalWidth;
-            } else {
-                this.a.getLayoutParams().width = -2;
-            }
-            if (this.a.getMeasuredWidth() == measuredWidth && this.a.q()) {
-                float measuredWidth2 = (measuredWidth - childAt.getMeasuredWidth()) * 0.25f;
-                this.e = measuredWidth2;
-                int i17 = (int) (r6.D - measuredWidth2);
-                this.a.D = i17;
-                if (i17 < AndroidUtilities.dp(36.0f)) {
-                    this.e = 0.0f;
-                    this.a.D = AndroidUtilities.dp(36.0f);
-                }
-                b();
-            } else {
-                int measuredWidth3 = this.b.getSwipeBack() != null ? this.b.getSwipeBack().getMeasuredWidth() - this.b.getSwipeBack().getChildAt(0).getMeasuredWidth() : 0;
-                if (this.a.getLayoutParams().width != -2 && this.a.getLayoutParams().width + measuredWidth3 > measuredWidth) {
-                    measuredWidth3 = AndroidUtilities.dp(8.0f) + (measuredWidth - this.a.getLayoutParams().width);
-                }
-                r5 = measuredWidth3 >= 0 ? measuredWidth3 : 0;
-                ((LinearLayout.LayoutParams) this.a.getLayoutParams()).rightMargin = r5;
-                this.e = 0.0f;
-                b();
-            }
-            if (this.c != null) {
-                if (this.a.q()) {
-                    this.c.getLayoutParams().width = AndroidUtilities.dp(16.0f) + childAt.getMeasuredWidth();
-                    b();
-                } else {
-                    this.c.getLayoutParams().width = -1;
-                }
-                if (this.b.getSwipeBack() != null) {
-                    ((LinearLayout.LayoutParams) this.c.getLayoutParams()).rightMargin = AndroidUtilities.dp(36.0f) + r5;
-                } else {
-                    ((LinearLayout.LayoutParams) this.c.getLayoutParams()).rightMargin = AndroidUtilities.dp(36.0f);
-                }
-            }
-            super.onMeasure(i12, makeMeasureSpec);
-        }
-        this.d = getMeasuredHeight();
-    }
-
-    public void setExpandSize(float f10) {
-        this.b.setTranslationY(f10);
-        this.n = f10;
-        a();
-    }
-
-    public void setMaxHeight(int i10) {
-        this.d = i10;
-    }
-
-    public void setPopupAlpha(float f10) {
-        this.b.setAlpha(f10);
-        FrameLayout frameLayout = this.c;
-        if (frameLayout != null) {
-            frameLayout.setAlpha(f10);
-        }
-    }
-
-    public void setPopupWindowLayout(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
-        this.b = actionBarPopupWindow$ActionBarPopupWindowLayout;
-        actionBarPopupWindow$ActionBarPopupWindowLayout.setOnSizeChangedListener(new o1(17, this, actionBarPopupWindow$ActionBarPopupWindowLayout));
-        if (actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack() != null) {
-            ch0 swipeBack = actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack();
-            swipeBack.x.add(new bh0() { // from class: org.telegram.ui.Components.po
-                @Override // org.telegram.ui.Components.bh0
-                public final void a(float f10, float f11) {
-                    qo qoVar = qo.this;
-                    FrameLayout frameLayout = qoVar.c;
-                    if (frameLayout != null) {
-                        frameLayout.setAlpha(1.0f - f11);
-                    }
-                    qoVar.f = f11;
-                    qoVar.b();
-                }
-            });
-        }
-    }
-
-    public void setReactionsLayout(qk0 qk0Var) {
-        this.a = qk0Var;
-        if (qk0Var != null) {
-            qk0Var.setChatScrimView(this);
-        }
-    }
-
-    public void setReactionsTransitionProgress(float f10) {
-        this.b.setReactionsTransitionProgress(f10);
-        FrameLayout frameLayout = this.c;
-        if (frameLayout != null) {
-            frameLayout.setAlpha(f10);
-            float f11 = (f10 * 0.5f) + 0.5f;
-            this.c.setPivotX(r0.getMeasuredWidth());
-            this.c.setPivotY(0.0f);
-            this.r = (1.0f - f10) * (-this.b.getMeasuredHeight());
-            a();
-            this.c.setScaleX(f11);
-            this.c.setScaleY(f11);
+                break;
+            default:
+                this.b.s(false);
+                break;
         }
     }
 }

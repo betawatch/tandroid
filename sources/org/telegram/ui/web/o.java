@@ -2,23 +2,23 @@ package org.telegram.ui.web;
 
 import android.text.TextUtils;
 import android.widget.EditText;
-import oh.t3;
+import nh.n5;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.i5;
+import org.telegram.ui.ActionBar.h5;
 import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Components.a61;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
-public final class o extends i5 {
-    public final t3 f = new t3(this, 28);
+public final class o extends h5 {
+    public final n5 f = new n5(this, 29);
     public final /* synthetic */ p h;
 
     public o(p pVar) {
         this.h = pVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.i5
+    @Override // org.telegram.ui.ActionBar.h5
     public final void m() {
         p pVar = this.h;
         pVar.s = null;
@@ -35,7 +35,7 @@ public final class o extends i5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.i5
+    @Override // org.telegram.ui.ActionBar.h5
     public final void q(EditText editText) {
         int i10;
         p pVar = this.h;
@@ -51,9 +51,9 @@ public final class o extends i5 {
             i iVar2 = new i(obj, i10, new l(pVar, 1));
             pVar.e = iVar2;
             iVar2.a();
-            t3 t3Var = this.f;
-            AndroidUtilities.cancelRunOnUIThread(t3Var);
-            AndroidUtilities.runOnUIThread(t3Var, 500L);
+            n5 n5Var = this.f;
+            AndroidUtilities.cancelRunOnUIThread(n5Var);
+            AndroidUtilities.runOnUIThread(n5Var, 500L);
         }
         a61 a61Var = pVar.a;
         if (a61Var != null) {
@@ -64,7 +64,7 @@ public final class o extends i5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.i5
+    @Override // org.telegram.ui.ActionBar.h5
     public final void n() {
     }
 }

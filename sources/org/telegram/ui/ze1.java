@@ -13,7 +13,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ze1 implements Utilities.Callback {
     public final /* synthetic */ int a = 1;
@@ -24,13 +24,13 @@ public final /* synthetic */ class ze1 implements Utilities.Callback {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object g;
 
-    public /* synthetic */ ze1(int i10, long j10, Context context, TL_payments.connectedBotStarRef connectedbotstarref, org.telegram.ui.ActionBar.h3 h3Var, org.telegram.ui.ActionBar.g6 g6Var) {
+    public /* synthetic */ ze1(int i10, long j10, Context context, TL_payments.connectedBotStarRef connectedbotstarref, org.telegram.ui.ActionBar.g3 g3Var, org.telegram.ui.ActionBar.f6 f6Var) {
         this.b = i10;
         this.d = connectedbotstarref;
-        this.e = h3Var;
+        this.e = g3Var;
         this.f = context;
         this.c = j10;
-        this.g = g6Var;
+        this.g = f6Var;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback
@@ -82,20 +82,20 @@ public final /* synthetic */ class ze1 implements Utilities.Callback {
                 break;
             default:
                 TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) obj5;
-                org.telegram.ui.ActionBar.h3 h3Var = (org.telegram.ui.ActionBar.h3) obj4;
+                org.telegram.ui.ActionBar.g3 g3Var = (org.telegram.ui.ActionBar.g3) obj4;
                 Context context = (Context) obj3;
-                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj2;
+                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj2;
                 TL_payments.connectedBotStarRef connectedbotstarref2 = (TL_payments.connectedBotStarRef) obj;
                 int i13 = this.b;
                 long j11 = this.c;
                 if (connectedbotstarref2 != null) {
-                    h3Var.dismiss();
-                    sh.d3.H0(context, i13, connectedbotstarref2, j11, g6Var);
+                    g3Var.dismiss();
+                    rh.d3.H0(context, i13, connectedbotstarref2, j11, f6Var);
                     break;
                 } else {
                     TLRPC.User user = MessagesController.getInstance(i13).getUser(Long.valueOf(connectedbotstarref.bot_id));
                     if (user != null) {
-                        MessagesController.getInstance(i13).loadFullUser(user, 0, true, new sh.s2(h3Var, context, i13, j11, g6Var, 1));
+                        MessagesController.getInstance(i13).loadFullUser(user, 0, true, new rh.s2(g3Var, context, i13, j11, f6Var, 1));
                         break;
                     }
                 }

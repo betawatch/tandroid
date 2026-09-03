@@ -1,95 +1,56 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.os.SystemClock;
-import java.io.File;
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLObject;
+import android.view.View;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t70 implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d2 b;
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ TLObject f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ Object r;
-    public final /* synthetic */ Object s;
+public final class t70 extends LinearLayout {
+    public boolean a;
+    public final /* synthetic */ z70 b;
 
-    public /* synthetic */ t70(org.telegram.ui.ActionBar.d2 d2Var, Context context, int i10, long j10, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, File[] fileArr, org.telegram.ui.ActionBar.g6 g6Var, org.telegram.ui.web.u uVar, eh.w wVar) {
-        this.b = d2Var;
-        this.c = context;
-        this.d = i10;
-        this.e = j10;
-        this.f = tL_messages_preparedInlineMessage;
-        this.h = fileArr;
-        this.n = g6Var;
-        this.r = uVar;
-        this.s = wVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t70(z70 z70Var, Context context) {
+        super(context);
+        this.b = z70Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.d2 d2Var = this.b;
-                AccountInstance accountInstance = (AccountInstance) this.h;
-                y70 y70Var = (y70) this.n;
-                org.telegram.ui.ActionBar.p2 p2Var = (org.telegram.ui.ActionBar.p2) this.r;
-                TLRPC.Peer peer = (TLRPC.Peer) this.s;
-                try {
-                    d2Var.dismiss();
-                } catch (Exception e6) {
-                    FileLog.e(e6);
-                }
-                TLObject tLObject = this.f;
-                if (tLObject != null) {
-                    TL_phone.joinAsPeers joinaspeers = (TL_phone.joinAsPeers) tLObject;
-                    if (joinaspeers.peers.size() != 1) {
-                        a80.D = joinaspeers.peers;
-                        long j10 = this.e;
-                        a80.F = j10;
-                        a80.E = SystemClock.elapsedRealtime();
-                        a80.G = accountInstance.getCurrentAccount();
-                        accountInstance.getMessagesController().putChats(joinaspeers.chats, false);
-                        accountInstance.getMessagesController().putUsers(joinaspeers.users, false);
-                        a80.v(this.c, j10, joinaspeers.peers, p2Var, this.d, peer, y70Var);
-                        break;
-                    } else {
-                        y70Var.a(accountInstance.getMessagesController().getInputPeer(MessageObject.getPeerId(joinaspeers.peers.get(0))), false, false, false);
-                        break;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        z70 z70Var = this.b;
+        ArrayList arrayList = z70Var.h;
+        if (z70Var.s == 0) {
+            int size = View.MeasureSpec.getSize(i10);
+            int dp = AndroidUtilities.dp(95.0f) * arrayList.size();
+            LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) z70Var.d.getLayoutParams();
+            if (dp > size) {
+                layoutParams.width = -1;
+                layoutParams.gravity = 51;
+                if (!this.a) {
+                    TLRPC.Peer peer = z70Var.v;
+                    if (peer != null) {
+                        arrayList.remove(peer);
+                        arrayList.add(0, z70Var.v);
                     }
+                    this.a = true;
                 }
-                break;
-            default:
-                TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage = (TLRPC.TL_messages_preparedInlineMessage) this.f;
-                File[] fileArr = (File[]) this.h;
-                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) this.n;
-                org.telegram.ui.web.u uVar = (org.telegram.ui.web.u) this.r;
-                eh.w wVar = (eh.w) this.s;
-                this.b.dismiss();
-                new sh.e1(this.c, this.d, this.e, tL_messages_preparedInlineMessage, fileArr[0], null, g6Var, uVar, wVar).show();
-                break;
+            } else {
+                layoutParams.width = -2;
+                layoutParams.gravity = 49;
+                if (!this.a) {
+                    if (z70Var.v != null) {
+                        int max = arrayList.size() % 2 == 0 ? Math.max(0, (arrayList.size() / 2) - 1) : arrayList.size() / 2;
+                        arrayList.remove(z70Var.v);
+                        arrayList.add(max, z70Var.v);
+                    }
+                    this.a = true;
+                }
+            }
         }
-    }
-
-    public /* synthetic */ t70(org.telegram.ui.ActionBar.d2 d2Var, TLObject tLObject, AccountInstance accountInstance, y70 y70Var, long j10, Context context, org.telegram.ui.ActionBar.p2 p2Var, int i10, TLRPC.Peer peer) {
-        this.b = d2Var;
-        this.f = tLObject;
-        this.h = accountInstance;
-        this.n = y70Var;
-        this.e = j10;
-        this.c = context;
-        this.r = p2Var;
-        this.d = i10;
-        this.s = peer;
+        super.onMeasure(i10, i11);
     }
 }

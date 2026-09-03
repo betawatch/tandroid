@@ -22,10 +22,10 @@ import android.view.inputmethod.InputConnection;
 import android.widget.AbsSeekBar;
 import android.widget.EditText;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
-import k7.k6;
+import k7.j6;
 import n7.qa;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class y {
     public static final int[] d = {R.attr.indeterminateDrawable, R.attr.progressDrawable};
@@ -40,7 +40,7 @@ public class y {
         if (keyListener instanceof NumberKeyListener) {
             return keyListener;
         }
-        ((qa) ((org.telegram.ui.Cells.f1) this.c).b).getClass();
+        ((qa) ((o3.c) this.c).b).getClass();
         if (keyListener instanceof q1.e) {
             return keyListener;
         }
@@ -63,9 +63,9 @@ public class y {
                         AnimationDrawable animationDrawable2 = new AnimationDrawable();
                         animationDrawable2.setOneShot(animationDrawable.isOneShot());
                         for (int i11 = 0; i11 < numberOfFrames; i11++) {
-                            Drawable e6 = e(animationDrawable.getFrame(i11), true);
-                            e6.setLevel(10000);
-                            animationDrawable2.addFrame(e6, animationDrawable.getDuration(i11));
+                            Drawable e = e(animationDrawable.getFrame(i11), true);
+                            e.setLevel(10000);
+                            animationDrawable2.addFrame(e, animationDrawable.getDuration(i11));
                         }
                         animationDrawable2.setLevel(10000);
                         u10 = animationDrawable2;
@@ -93,12 +93,12 @@ public class y {
     }
 
     public q1.b c(InputConnection inputConnection, EditorInfo editorInfo) {
-        org.telegram.ui.Cells.f1 f1Var = (org.telegram.ui.Cells.f1) this.c;
+        o3.c cVar = (o3.c) this.c;
         if (inputConnection == null) {
-            f1Var.getClass();
+            cVar.getClass();
             inputConnection = null;
         } else {
-            qa qaVar = (qa) f1Var.b;
+            qa qaVar = (qa) cVar.b;
             qaVar.getClass();
             if (!(inputConnection instanceof q1.b)) {
                 inputConnection = new q1.b((EditText) qaVar.b, inputConnection, editorInfo);
@@ -108,13 +108,13 @@ public class y {
     }
 
     public void d(boolean z4) {
-        q1.i iVar = (q1.i) ((qa) ((org.telegram.ui.Cells.f1) this.c).b).c;
+        q1.i iVar = (q1.i) ((qa) ((o3.c) this.c).b).c;
         if (iVar.c != z4) {
             if (iVar.b != null) {
                 androidx.emoji2.text.l a2 = androidx.emoji2.text.l.a();
                 q1.h hVar = iVar.b;
                 a2.getClass();
-                k6.a(hVar, "initCallback cannot be null");
+                j6.a(hVar, "initCallback cannot be null");
                 ReentrantReadWriteLock reentrantReadWriteLock = a2.a;
                 reentrantReadWriteLock.writeLock().lock();
                 try {
@@ -178,6 +178,6 @@ public class y {
 
     public y(EditText editText) {
         this.b = editText;
-        this.c = new org.telegram.ui.Cells.f1(editText);
+        this.c = new o3.c(editText);
     }
 }

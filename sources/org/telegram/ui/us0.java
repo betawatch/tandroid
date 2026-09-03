@@ -9,7 +9,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class us0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -22,16 +22,16 @@ public final class us0 extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        org.telegram.ui.Components.mi miVar;
+        org.telegram.ui.Components.li liVar;
         int i10 = this.a;
         PhotoViewer photoViewer = this.b;
         switch (i10) {
             case 0:
                 photoViewer.m6 = null;
-                org.telegram.ui.Components.af0 af0Var = photoViewer.z1;
-                if (af0Var != null) {
-                    if (af0Var.b.j()) {
-                        photoViewer.X0.setColorFilter(new PorterDuffColorFilter(photoViewer.z1(org.telegram.ui.ActionBar.k6.zf), PorterDuff.Mode.MULTIPLY));
+                org.telegram.ui.Components.ze0 ze0Var = photoViewer.z1;
+                if (ze0Var != null) {
+                    if (ze0Var.b.j()) {
+                        photoViewer.X0.setColorFilter(new PorterDuffColorFilter(photoViewer.z1(org.telegram.ui.ActionBar.j6.zf), PorterDuff.Mode.MULTIPLY));
                     } else {
                         photoViewer.X0.setColorFilter((ColorFilter) null);
                     }
@@ -50,21 +50,21 @@ public final class us0 extends AnimatorListenerAdapter {
             case 3:
                 photoViewer.I1.n0(false);
                 mt0 mt0Var = photoViewer.I1;
-                mt0Var.r1.setTypeface(dg.e1.e(mt0Var.M1).j);
+                mt0Var.r1.setTypeface(cg.f1.e(mt0Var.M1).j);
                 mt0Var.W0.setVisibility(0);
                 mt0Var.T0.setVisibility(0);
                 mt0Var.U0.setVisibility(0);
-                org.telegram.ui.Components.jd0 jd0Var = photoViewer.v4;
-                int childCount = jd0Var.getChildCount();
+                org.telegram.ui.Components.id0 id0Var = photoViewer.v4;
+                int childCount = id0Var.getChildCount();
                 for (int i11 = 0; i11 < childCount; i11++) {
-                    jd0Var.getChildAt(i11).setVisibility(4);
+                    id0Var.getChildAt(i11).setVisibility(4);
                 }
                 photoViewer.m6 = null;
                 photoViewer.r4 = 3;
                 photoViewer.f1().I.b(photoViewer.r4 != 0);
-                qh.h3 h3Var = photoViewer.H1;
-                if (h3Var != null) {
-                    h3Var.b(photoViewer.r4 != 3);
+                ph.i3 i3Var = photoViewer.H1;
+                if (i3Var != null) {
+                    i3Var.b(photoViewer.r4 != 3);
                 }
                 photoViewer.l6 = -1;
                 float r22 = photoViewer.r2(false);
@@ -96,15 +96,15 @@ public final class us0 extends AnimatorListenerAdapter {
                 photoViewer.j6 = 1.0f;
                 Runnable runnable = photoViewer.m4;
                 if (runnable != null) {
-                    xn xnVar = photoViewer.i4;
-                    if (xnVar == null && (miVar = photoViewer.X1) != null) {
-                        org.telegram.ui.ActionBar.p2 p2Var = miVar.c0;
-                        if (p2Var instanceof xn) {
-                            xnVar = (xn) p2Var;
+                    zn znVar = photoViewer.i4;
+                    if (znVar == null && (liVar = photoViewer.X1) != null) {
+                        org.telegram.ui.ActionBar.p2 p2Var = liVar.c0;
+                        if (p2Var instanceof zn) {
+                            znVar = (zn) p2Var;
                         }
                     }
-                    if (xnVar != null) {
-                        xnVar.h8(runnable);
+                    if (znVar != null) {
+                        znVar.h8(runnable);
                         break;
                     } else {
                         runnable.run();

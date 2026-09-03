@@ -6,7 +6,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h01 implements org.telegram.ui.ActionBar.c2 {
     public final /* synthetic */ int a;
@@ -18,7 +18,7 @@ public final /* synthetic */ class h01 implements org.telegram.ui.ActionBar.c2 {
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public final void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    public final void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         switch (this.a) {
             case 0:
                 this.b.a();
@@ -29,7 +29,7 @@ public final /* synthetic */ class h01 implements org.telegram.ui.ActionBar.c2 {
                 alertDialog$Builder.a.Q = LocaleController.getString(R.string.TosDeclineDeleteAccount);
                 alertDialog$Builder.a.O = LocaleController.getString(R.string.AppName);
                 alertDialog$Builder.k(LocaleController.getString(R.string.Deactivate), new h01(j01Var, 2));
-                l.d.u(R.string.Cancel, alertDialog$Builder, null);
+                kf.k0.u(R.string.Cancel, alertDialog$Builder, null);
                 break;
             default:
                 j01 j01Var2 = this.b;
@@ -37,7 +37,7 @@ public final /* synthetic */ class h01 implements org.telegram.ui.ActionBar.c2 {
                 d2Var2.d0 = false;
                 TL_account.deleteAccount deleteaccount = new TL_account.deleteAccount();
                 deleteaccount.reason = "Decline ToS update";
-                ConnectionsManager.getInstance(j01Var2.d).sendRequest(deleteaccount, new org.telegram.ui.lo(16, j01Var2, d2Var2));
+                ConnectionsManager.getInstance(j01Var2.d).sendRequest(deleteaccount, new org.telegram.ui.no(16, j01Var2, d2Var2));
                 d2Var2.show();
                 break;
         }

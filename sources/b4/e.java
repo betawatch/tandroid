@@ -7,7 +7,7 @@ import java.util.Collections;
 import l3.p0;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class e implements i {
     public static final byte[] v = {73, 68, 51};
@@ -305,22 +305,22 @@ public final class e implements i {
         h0Var.b();
         this.e = h0Var.e;
         h0Var.b();
-        r3.v i22 = mVar.i2(h0Var.d, 1);
-        this.f = i22;
-        this.t = i22;
+        r3.v d22 = mVar.d2(h0Var.d, 1);
+        this.f = d22;
+        this.t = d22;
         if (!this.a) {
             this.g = new r3.j();
             return;
         }
         h0Var.a();
         h0Var.b();
-        r3.v i23 = mVar.i2(h0Var.d, 5);
-        this.g = i23;
+        r3.v d23 = mVar.d2(h0Var.d, 5);
+        this.g = d23;
         m0 m0Var = new m0();
         h0Var.b();
         m0Var.a = h0Var.e;
         m0Var.o = "application/id3";
-        i23.b(new n0(m0Var));
+        d23.b(new n0(m0Var));
     }
 
     @Override // b4.i

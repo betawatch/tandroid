@@ -16,13 +16,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class a91 extends FrameLayout {
     public static final /* synthetic */ int F = 0;
     public int B;
     public int C;
-    public final a71 D;
+    public final z61 D;
     public final /* synthetic */ e91 E;
     public final ImageReceiver a;
     public boolean b;
@@ -44,7 +44,7 @@ public final class a91 extends FrameLayout {
         super(context);
         this.E = e91Var;
         this.x = true;
-        this.D = new a71(this, 4);
+        this.D = new z61(this, 4);
         setWillNotDraw(false);
         TextPaint textPaint = new TextPaint(1);
         this.c = textPaint;
@@ -63,10 +63,10 @@ public final class a91 extends FrameLayout {
     }
 
     public final void a() {
-        a71 a71Var = this.D;
-        AndroidUtilities.cancelRunOnUIThread(a71Var);
+        z61 z61Var = this.D;
+        AndroidUtilities.cancelRunOnUIThread(z61Var);
         if (this.x && this.E.a.y()) {
-            AndroidUtilities.runOnUIThread(a71Var, 3000L);
+            AndroidUtilities.runOnUIThread(z61Var, 3000L);
         }
     }
 
@@ -198,7 +198,7 @@ public final class a91 extends FrameLayout {
             if (i14 != 0 && (i10 = this.s) != 0) {
                 float f12 = i11;
                 float f13 = dp;
-                float c3 = w.c.c(i14, i10, measuredWidth - i11, f12);
+                float c3 = vh.w2.c(i14, i10, measuredWidth - i11, f12);
                 float dp3 = AndroidUtilities.dp(3.0f) + dp;
                 if (e91Var.Q) {
                     paint = this.n;
@@ -236,7 +236,7 @@ public final class a91 extends FrameLayout {
         int i10;
         int i11;
         e91 e91Var = this.E;
-        j71 j71Var = e91Var.a;
+        i71 i71Var = e91Var.a;
         if (e91Var.Q) {
             i10 = AndroidUtilities.dp(36.0f) + this.r;
             measuredWidth = (getMeasuredWidth() - AndroidUtilities.dp(76.0f)) - this.r;
@@ -254,7 +254,7 @@ public final class a91 extends FrameLayout {
         }
         int i13 = i11 + i10;
         int action = motionEvent.getAction();
-        a71 a71Var = this.D;
+        z61 z61Var = this.D;
         if (action == 0) {
             if (!this.x || e91Var.R || e91Var.E) {
                 d(true, true);
@@ -269,17 +269,17 @@ public final class a91 extends FrameLayout {
                     invalidate();
                 }
             }
-            AndroidUtilities.cancelRunOnUIThread(a71Var);
+            AndroidUtilities.cancelRunOnUIThread(z61Var);
         } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            if (e91Var.w && j71Var.y()) {
-                AndroidUtilities.runOnUIThread(a71Var, 3000L);
+            if (e91Var.w && i71Var.y()) {
+                AndroidUtilities.runOnUIThread(z61Var, 3000L);
             }
             if (this.b) {
                 this.b = false;
                 if (e91Var.w) {
                     int i14 = (int) (((this.C - i10) / (measuredWidth - i10)) * this.s);
                     this.v = i14;
-                    j71Var.L(i14 * 1000, false);
+                    i71Var.L(i14 * 1000, false);
                 }
             }
         } else if (motionEvent.getAction() == 2 && this.b) {

@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.List;
 import v4.f;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class b implements f {
     public static final b b = new b();
@@ -15,12 +15,12 @@ public final class b implements f {
     }
 
     @Override // v4.f
-    public final int d(long j10) {
+    public final int e(long j10) {
         return j10 < 0 ? 0 : -1;
     }
 
     @Override // v4.f
-    public final long l(int i10) {
+    public final long h(int i10) {
         h5.a.f(i10 == 0);
         return 0L;
     }
@@ -31,7 +31,7 @@ public final class b implements f {
     }
 
     @Override // v4.f
-    public final int x() {
+    public final int r() {
         return 1;
     }
 

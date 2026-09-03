@@ -4,7 +4,7 @@ import j$.util.Objects;
 import java.io.IOException;
 import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class q0 {
     public static final o0 d;
@@ -76,8 +76,8 @@ public class q0 {
         try {
             a(sb, bArr, i10);
             return sb.toString();
-        } catch (IOException e6) {
-            throw new AssertionError(e6);
+        } catch (IOException e) {
+            throw new AssertionError(e);
         }
     }
 

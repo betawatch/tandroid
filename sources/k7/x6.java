@@ -3,8 +3,9 @@ package k7;
 import android.util.Base64;
 import java.util.ArrayList;
 import java.util.List;
+import org.telegram.ui.Components.tp0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class x6 {
     public static e4.c a(List list) {
@@ -18,8 +19,8 @@ public abstract class x6 {
             } else if (split[0].equals("METADATA_BLOCK_PICTURE")) {
                 try {
                     arrayList.add(h4.a.a(new h5.w(Base64.decode(split[1], 0))));
-                } catch (RuntimeException e6) {
-                    h5.a.L("VorbisUtil", "Failed to parse vorbis picture", e6);
+                } catch (RuntimeException e) {
+                    h5.a.L("VorbisUtil", "Failed to parse vorbis picture", e);
                 }
             } else {
                 arrayList.add(new m4.a(split[0], split[1]));
@@ -31,7 +32,7 @@ public abstract class x6 {
         return new e4.c(arrayList);
     }
 
-    public static r3.x b(h5.w wVar, boolean z4, boolean z10) {
+    public static tp0 b(h5.w wVar, boolean z4, boolean z10) {
         if (z4) {
             c(3, wVar, false);
         }
@@ -44,7 +45,7 @@ public abstract class x6 {
         if (z10 && (wVar.u() & 1) == 0) {
             throw j3.r1.a("framing bit expected to be set", null);
         }
-        return new r3.x(strArr);
+        return new tp0(strArr, 8);
     }
 
     public static boolean c(int i10, h5.w wVar, boolean z4) {

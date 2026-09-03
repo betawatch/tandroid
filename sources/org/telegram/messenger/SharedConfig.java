@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class SharedConfig {
     private static final int[] LOW_SOC;
@@ -185,7 +185,7 @@ public class SharedConfig {
     public static boolean useSystemEmoji;
     public static boolean useThreeLinesLayout;
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     public static class BackgroundActivityPrefs {
         private static SharedPreferences prefs;
 
@@ -206,25 +206,25 @@ public class SharedConfig {
         }
     }
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PasscodeType {
     }
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PerformanceClass {
     }
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     public static class ProxyInfo {
         public boolean available;
         public long availableCheckTime;
         public boolean checking;
         public long ping;
-        public sf.b settings;
+        public rf.b settings;
 
-        public ProxyInfo(sf.b bVar) {
+        public ProxyInfo(rf.b bVar) {
             this.settings = bVar;
         }
 
@@ -232,7 +232,7 @@ public class SharedConfig {
         public static ProxyInfo fromSerializedData(int i10, InputSerializedData inputSerializedData) {
             long j10;
             long j11;
-            sf.a a2 = sf.b.a();
+            rf.a a2 = rf.b.a();
             String readString = inputSerializedData.readString(false);
             if (readString == null) {
                 readString = "";
@@ -259,12 +259,12 @@ public class SharedConfig {
                 j11 = 0;
             }
             if (i10 >= 3) {
-                int d = sf.b.d(inputSerializedData.readInt32(false));
+                int d = rf.b.d(inputSerializedData.readInt32(false));
                 a2.a = d != 0 ? d : 1;
             } else {
                 a2.a = TextUtils.isEmpty(readString4) ? 1 : 2;
             }
-            ProxyInfo proxyInfo = new ProxyInfo(new sf.b(a2));
+            ProxyInfo proxyInfo = new ProxyInfo(new rf.b(a2));
             proxyInfo.availableCheckTime = j11;
             proxyInfo.ping = j10;
             return proxyInfo;
@@ -400,8 +400,8 @@ public class SharedConfig {
     public static int buildVersion() {
         try {
             return ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0).versionCode;
-        } catch (Exception e6) {
-            FileLog.e(e6);
+        } catch (Exception e) {
+            FileLog.e(e);
             return 0;
         }
     }
@@ -435,8 +435,8 @@ public class SharedConfig {
                 System.arraycopy(bytes, 0, bArr, 16, bytes.length);
                 System.arraycopy(passcodeSalt, 0, bArr, bytes.length + 16, 16);
                 return passcodeHash.equals(Utilities.bytesToHex(Utilities.computeSHA256(bArr, 0, length)));
-            } catch (Exception e6) {
-                FileLog.e(e6);
+            } catch (Exception e) {
+                FileLog.e(e);
                 return false;
             }
         }
@@ -454,8 +454,8 @@ public class SharedConfig {
                 passcodeHash = Utilities.bytesToHex(Utilities.computeSHA256(bArr2, 0, length2));
                 saveConfig();
                 return equals;
-            } catch (Exception e10) {
-                FileLog.e(e10);
+            } catch (Exception e6) {
+                FileLog.e(e6);
             }
         }
         return equals;
@@ -744,8 +744,8 @@ public class SharedConfig {
         }
         try {
             buildVersion = ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0).versionCode;
-        } catch (Exception e6) {
-            FileLog.e(e6);
+        } catch (Exception e) {
+            FileLog.e(e);
             buildVersion = buildVersion();
         }
         return pendingAppUpdateBuildVersion == buildVersion;
@@ -880,8 +880,8 @@ public class SharedConfig {
         String str2;
         synchronized (sync) {
             try {
-            } catch (Exception e6) {
-                FileLog.e(e6);
+            } catch (Exception e) {
+                FileLog.e(e);
             } finally {
             }
             if (!configLoaded && ApplicationLoader.applicationContext != null) {
@@ -938,8 +938,8 @@ public class SharedConfig {
                         i10 = packageInfo.versionCode;
                         try {
                             str = packageInfo.versionName;
-                        } catch (Exception e10) {
-                            e = e10;
+                        } catch (Exception e6) {
+                            e = e6;
                             FileLog.e(e);
                             str = null;
                             if (i10 == 0) {
@@ -1048,8 +1048,8 @@ public class SharedConfig {
                             showNotificationsForAllAccounts = ApplicationLoader.applicationContext.getSharedPreferences("Notifications", 0).getBoolean("AllAccounts", true);
                             configLoaded = true;
                         }
-                    } catch (Exception e11) {
-                        e = e11;
+                    } catch (Exception e10) {
+                        e = e10;
                         i10 = 0;
                     }
                     if (i10 == 0) {
@@ -1175,7 +1175,7 @@ public class SharedConfig {
             return;
         }
         SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
-        sf.b b10 = sf.b.b(sharedPreferences);
+        rf.b b10 = rf.b.b(sharedPreferences);
         proxyListLoaded = true;
         proxyList.clear();
         currentProxy = null;
@@ -1275,7 +1275,7 @@ public class SharedConfig {
         }
         if (BuildVars.LOGS_ENABLED) {
             StringBuilder m9 = e2.c.m("device performance info selected_class = ", i12, " (cpu_count = ", i11, ", freq = ");
-            l.d.w(m9, ceil, ", memoryClass = ", memoryClass, ", android version ");
+            kf.k0.w(m9, ceil, ", memoryClass = ", memoryClass, ", android version ");
             m9.append(i10);
             m9.append(", manufacture ");
             m9.append(Build.MANUFACTURER);
@@ -1392,8 +1392,8 @@ public class SharedConfig {
                     edit2.putBoolean("floatingDebugActive", isFloatingDebugActive);
                     edit2.putBoolean("record_via_sco", recordViaSco);
                     edit2.apply();
-                } catch (Exception e6) {
-                    FileLog.e(e6);
+                } catch (Exception e) {
+                    FileLog.e(e);
                 }
             } catch (Throwable th2) {
                 throw th2;
@@ -1478,14 +1478,14 @@ public class SharedConfig {
         try {
             packageInfo = ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0);
             i10 = packageInfo.versionCode;
-        } catch (Exception e6) {
-            e = e6;
+        } catch (Exception e) {
+            e = e;
             i10 = 0;
         }
         try {
             str = packageInfo.versionName;
-        } catch (Exception e10) {
-            e = e10;
+        } catch (Exception e6) {
+            e = e6;
             FileLog.e(e);
             str = null;
             if (i10 == 0) {

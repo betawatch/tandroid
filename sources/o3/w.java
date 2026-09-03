@@ -1,32 +1,37 @@
 package o3;
 
-import h5.d0;
-import java.util.UUID;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class w implements n3.b {
-    public static final boolean d;
-    public final UUID a;
-    public final byte[] b;
-    public final boolean c;
+public interface w {
+    byte[] B();
 
-    static {
-        boolean z4;
-        if ("Amazon".equals(d0.c)) {
-            String str = d0.d;
-            if ("AFTM".equals(str) || "AFTB".equals(str)) {
-                z4 = true;
-                d = z4;
-            }
-        }
-        z4 = false;
-        d = z4;
-    }
+    void C(c cVar);
 
-    public w(UUID uuid, byte[] bArr, boolean z4) {
-        this.a = uuid;
-        this.b = bArr;
-        this.c = z4;
-    }
+    void G(byte[] bArr, byte[] bArr2);
+
+    void H(byte[] bArr);
+
+    byte[] X(byte[] bArr, byte[] bArr2);
+
+    void Y(byte[] bArr);
+
+    Map a(byte[] bArr);
+
+    u b0(byte[] bArr, List list, int i10, HashMap hashMap);
+
+    v d();
+
+    int h0();
+
+    boolean j0(String str, byte[] bArr);
+
+    void k(byte[] bArr, k3.k kVar);
+
+    void release();
+
+    n3.b z(byte[] bArr);
 }

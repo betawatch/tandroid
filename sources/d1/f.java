@@ -24,21 +24,21 @@ import com.google.android.gms.common.api.internal.BasePendingResult;
 import com.google.android.gms.internal.clearcut.g2;
 import e0.o0;
 import java.util.concurrent.atomic.AtomicInteger;
-import m.z0;
+import m.a1;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.w9;
+import org.telegram.ui.y9;
 import org.webrtc.MediaStreamTrack;
 import q5.p;
 import s5.h;
 import s5.i;
 import s5.l;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class f {
     public static int a;
@@ -66,7 +66,7 @@ public abstract class f {
         } else {
             basePendingResult = h.t();
         }
-        basePendingResult.b(new w9(2));
+        basePendingResult.b(new y9(2));
     }
 
     public static boolean B(ViewConfiguration viewConfiguration) {
@@ -224,8 +224,8 @@ public abstract class f {
         return viewConfiguration.getScaledHoverSlop();
     }
 
-    public static PrecomputedText.Params p(z0 z0Var) {
-        return z0Var.getTextMetricsParams();
+    public static PrecomputedText.Params p(a1 a1Var) {
+        return a1Var.getTextMetricsParams();
     }
 
     public static int q(Object obj) {
@@ -274,7 +274,7 @@ public abstract class f {
             b = new AtomicInteger(0);
         }
         b.incrementAndGet();
-        e6.q(new p(j10)).b(new w9(3));
+        e6.q(new p(j10)).b(new y9(3));
     }
 
     public static void w(int i10, TextView textView) {
@@ -301,7 +301,7 @@ public abstract class f {
             } else {
                 basePendingResult2 = h.t();
             }
-            basePendingResult2.b(new w9(0));
+            basePendingResult2.b(new y9(0));
             return;
         }
         m.e("Must be called from the main thread.");
@@ -312,7 +312,7 @@ public abstract class f {
         } else {
             basePendingResult = h.t();
         }
-        basePendingResult.b(new w9(1));
+        basePendingResult.b(new y9(1));
     }
 
     public static void y(Notification.Action.Builder builder, int i10) {
@@ -338,6 +338,6 @@ public abstract class f {
         } else {
             basePendingResult = h.t();
         }
-        basePendingResult.b(new w9(4));
+        basePendingResult.b(new y9(4));
     }
 }

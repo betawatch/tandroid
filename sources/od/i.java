@@ -1,10 +1,10 @@
 package od;
 
 import k1.q;
-import k7.q7;
+import k7.p7;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class i implements c {
     public final /* synthetic */ kotlin.jvm.internal.o a;
@@ -39,7 +39,7 @@ public final class i implements c {
                 i10 = hVar.e;
                 sc.i iVar2 = sc.i.a;
                 if (i10 != 0) {
-                    q7.b(obj2);
+                    p7.b(obj2);
                     if (this.a.a) {
                         hVar.e = 1;
                         if (this.b.c(obj, hVar) != aVar) {
@@ -57,19 +57,19 @@ public final class i implements c {
                     return aVar;
                 }
                 if (i10 == 1) {
-                    q7.b(obj2);
+                    p7.b(obj2);
                     return iVar2;
                 }
                 if (i10 != 2) {
                     if (i10 != 3) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    q7.b(obj2);
+                    p7.b(obj2);
                     return iVar2;
                 }
                 obj = hVar.b;
                 iVar = hVar.a;
-                q7.b(obj2);
+                p7.b(obj2);
                 if (!((Boolean) obj2).booleanValue()) {
                     iVar.a.a = true;
                     c cVar2 = iVar.b;

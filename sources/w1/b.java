@@ -2,13 +2,13 @@ package w1;
 
 import a0.l;
 import androidx.lifecycle.p0;
-import c2.u;
+import h7.u;
 import o5.d;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class b extends p0 {
-    public static final cb.b f = new cb.b(24);
+    public static final u f = new u(24);
     public final l d = new l();
     public boolean e = false;
 
@@ -21,7 +21,7 @@ public class b extends p0 {
             d dVar = aVar.l;
             dVar.a();
             dVar.c = true;
-            u uVar = aVar.n;
+            c2.u uVar = aVar.n;
             if (uVar != null) {
                 aVar.i(uVar);
             }

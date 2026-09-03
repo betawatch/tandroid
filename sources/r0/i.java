@@ -3,12 +3,13 @@ package r0;
 import android.content.Context;
 import android.view.VelocityTracker;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.Components.tp0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class i {
     public final Context a;
-    public final org.telegram.ui.Cells.f1 b;
+    public final tp0 b;
     public VelocityTracker c;
     public float d;
     public int e = -1;
@@ -16,8 +17,8 @@ public final class i {
     public int g = -1;
     public final int[] h = {ConnectionsManager.DEFAULT_DATACENTER_ID, 0};
 
-    public i(Context context, org.telegram.ui.Cells.f1 f1Var) {
+    public i(Context context, tp0 tp0Var) {
         this.a = context;
-        this.b = f1Var;
+        this.b = tp0Var;
     }
 }

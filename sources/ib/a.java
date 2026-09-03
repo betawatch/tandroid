@@ -3,20 +3,20 @@ package ib;
 import android.util.Log;
 import b6.h;
 import c5.j;
-import c9.e;
+import c9.f;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.mlkit.vision.common.internal.MobileVisionBase;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class a implements OnFailureListener, e {
+public final class a implements OnFailureListener, f {
     public static final a a = new a();
     public static final /* synthetic */ a b = new a();
     public static final /* synthetic */ a c = new a();
 
-    @Override // c9.e
-    public Object e0(j jVar) {
-        return new c(jVar.w(b.class));
+    @Override // c9.f
+    public Object d0(j jVar) {
+        return new c(jVar.x(b.class));
     }
 
     @Override // com.google.android.gms.tasks.OnFailureListener

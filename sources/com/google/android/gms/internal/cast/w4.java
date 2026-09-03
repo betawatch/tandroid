@@ -1,120 +1,35 @@
 package com.google.android.gms.internal.cast;
 
-import java.io.Serializable;
-import java.nio.charset.Charset;
-import java.util.Iterator;
-import java.util.Locale;
-
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public class w4 implements Iterable, Serializable {
-    public static final w4 c = new w4(j5.b);
-    public int a = 0;
-    public final byte[] b;
-
-    static {
-        int i10 = u4.a;
-    }
+public final class w4 extends x4 {
+    public final int d;
 
     public w4(byte[] bArr) {
-        bArr.getClass();
-        this.b = bArr;
+        super(bArr);
+        x4.p(bArr.length);
+        this.d = 47;
     }
 
-    public static void p(int i10) {
-        if (((i10 - 47) | 47) < 0) {
-            throw new IndexOutOfBoundsException(l.d.j(i10, "End index: 47 >= "));
+    @Override // com.google.android.gms.internal.cast.x4
+    public final byte i(int i10) {
+        int i11 = this.d;
+        if (((i11 - (i10 + 1)) | i10) >= 0) {
+            return this.b[i10];
         }
+        if (i10 < 0) {
+            throw new ArrayIndexOutOfBoundsException(kf.k0.j(i10, "Index < 0: "));
+        }
+        throw new ArrayIndexOutOfBoundsException(android.support.v4.media.a.k(i10, i11, "Index > length: ", ", "));
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if ((obj instanceof w4) && o() == ((w4) obj).o()) {
-            if (o() == 0) {
-                return true;
-            }
-            if (!(obj instanceof w4)) {
-                return obj.equals(this);
-            }
-            w4 w4Var = (w4) obj;
-            int i10 = this.a;
-            int i11 = w4Var.a;
-            if (i10 == 0 || i11 == 0 || i10 == i11) {
-                int o10 = o();
-                if (o10 > w4Var.o()) {
-                    throw new IllegalArgumentException("Length too large: " + o10 + o());
-                }
-                if (o10 > w4Var.o()) {
-                    throw new IllegalArgumentException(android.support.v4.media.a.k(o10, w4Var.o(), "Ran off end of other: 0, ", ", "));
-                }
-                byte[] bArr = w4Var.b;
-                int i12 = 0;
-                int i13 = 0;
-                while (i12 < o10) {
-                    if (this.b[i12] == bArr[i13]) {
-                        i12++;
-                        i13++;
-                    }
-                }
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        int i10 = this.a;
-        if (i10 != 0) {
-            return i10;
-        }
-        int o10 = o();
-        Charset charset = j5.a;
-        int i11 = o10;
-        for (int i12 = 0; i12 < o10; i12++) {
-            i11 = (i11 * 31) + this.b[i12];
-        }
-        if (i11 == 0) {
-            i11 = 1;
-        }
-        this.a = i11;
-        return i11;
-    }
-
-    public byte i(int i10) {
+    @Override // com.google.android.gms.internal.cast.x4
+    public final byte n(int i10) {
         return this.b[i10];
     }
 
-    @Override // java.lang.Iterable
-    public final /* synthetic */ Iterator iterator() {
-        return new androidx.datastore.preferences.protobuf.e(this);
-    }
-
-    public byte n(int i10) {
-        return this.b[i10];
-    }
-
-    public int o() {
-        return this.b.length;
-    }
-
-    public final String toString() {
-        String concat;
-        Locale locale = Locale.ROOT;
-        String hexString = Integer.toHexString(System.identityHashCode(this));
-        int o10 = o();
-        if (o() <= 50) {
-            concat = j7.c6.a(this);
-        } else {
-            p(o());
-            concat = j7.c6.a(new v4(this.b)).concat("...");
-        }
-        StringBuilder sb = new StringBuilder("<ByteString@");
-        sb.append(hexString);
-        sb.append(" size=");
-        sb.append(o10);
-        sb.append(" contents=\"");
-        return android.support.v4.media.a.r(sb, concat, "\">");
+    @Override // com.google.android.gms.internal.cast.x4
+    public final int o() {
+        return this.d;
     }
 }

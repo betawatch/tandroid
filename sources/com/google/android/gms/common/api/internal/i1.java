@@ -6,7 +6,7 @@ import android.util.Log;
 import com.google.android.gms.common.api.Status;
 import java.util.Map;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class i1 extends l1 {
     public final e b;
@@ -20,8 +20,8 @@ public final class i1 extends l1 {
     public final void a(Status status) {
         try {
             this.b.o(status);
-        } catch (IllegalStateException e6) {
-            Log.w("ApiCallRunner", "Exception reporting failure", e6);
+        } catch (IllegalStateException e) {
+            Log.w("ApiCallRunner", "Exception reporting failure", e);
         }
     }
 
@@ -29,8 +29,8 @@ public final class i1 extends l1 {
     public final void b(Exception exc) {
         try {
             this.b.o(new Status(10, android.support.v4.media.a.z(exc.getClass().getSimpleName(), ": ", exc.getLocalizedMessage()), null, null));
-        } catch (IllegalStateException e6) {
-            Log.w("ApiCallRunner", "Exception reporting failure", e6);
+        } catch (IllegalStateException e) {
+            Log.w("ApiCallRunner", "Exception reporting failure", e);
         }
     }
 
@@ -42,14 +42,14 @@ public final class i1 extends l1 {
             eVar.getClass();
             try {
                 eVar.n(cVar);
-            } catch (DeadObjectException e6) {
+            } catch (DeadObjectException e) {
+                eVar.o(new Status(8, e.getLocalizedMessage(), null, null));
+                throw e;
+            } catch (RemoteException e6) {
                 eVar.o(new Status(8, e6.getLocalizedMessage(), null, null));
-                throw e6;
-            } catch (RemoteException e10) {
-                eVar.o(new Status(8, e10.getLocalizedMessage(), null, null));
             }
-        } catch (RuntimeException e11) {
-            b(e11);
+        } catch (RuntimeException e10) {
+            b(e10);
         }
     }
 

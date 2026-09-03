@@ -1,11 +1,61 @@
 package j7;
 
-import android.view.View;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.os.Build;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class x {
-    public abstract View b(int i10);
+    public static Boolean a;
+    public static Boolean b;
+    public static Boolean c;
+    public static Boolean d;
+    public static Boolean e;
+    public static Boolean f;
+    public static Boolean g;
 
-    public abstract boolean c();
+    public static boolean a(Context context) {
+        PackageManager packageManager = context.getPackageManager();
+        if (f == null) {
+            f = Boolean.valueOf(Build.VERSION.SDK_INT >= 26 && packageManager.hasSystemFeature("android.hardware.type.automotive"));
+        }
+        return f.booleanValue();
+    }
+
+    public static boolean b(Resources resources) {
+        boolean z4 = false;
+        if (resources == null) {
+            return false;
+        }
+        if (d == null) {
+            Configuration configuration = resources.getConfiguration();
+            if ((configuration.screenLayout & 15) <= 3 && configuration.smallestScreenWidthDp >= 600) {
+                z4 = true;
+            }
+            d = Boolean.valueOf(z4);
+        }
+        return d.booleanValue();
+    }
+
+    public static boolean c(Context context) {
+        Resources resources = context.getResources();
+        if (resources == null) {
+            return false;
+        }
+        if (b == null) {
+            b = Boolean.valueOf((resources.getConfiguration().screenLayout & 15) > 3 || b(resources));
+        }
+        return b.booleanValue();
+    }
+
+    public static boolean d(Context context) {
+        PackageManager packageManager = context.getPackageManager();
+        if (g == null) {
+            g = Boolean.valueOf(packageManager.hasSystemFeature("com.google.android.tv") || packageManager.hasSystemFeature("android.hardware.type.television") || packageManager.hasSystemFeature("android.software.leanback"));
+        }
+        return g.booleanValue();
+    }
 }

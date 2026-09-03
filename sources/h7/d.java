@@ -1,7 +1,7 @@
 package h7;
 
 import j$.util.List;
-import j7.u7;
+import j7.t7;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.Iterator;
@@ -10,7 +10,7 @@ import java.util.ListIterator;
 import java.util.RandomAccess;
 import java.util.function.UnaryOperator;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class d extends a implements List, RandomAccess, j$.util.List {
     public static final b b = new b(g.e, 0);
@@ -125,7 +125,7 @@ public abstract class d extends a implements List, RandomAccess, j$.util.List {
     @Override // java.util.List
     /* renamed from: q */
     public d subList(int i10, int i11) {
-        u7.c(i10, i11, size());
+        t7.c(i10, i11, size());
         int i12 = i11 - i10;
         return i12 == size() ? this : i12 == 0 ? g.e : new c(this, i10, i12);
     }
@@ -133,7 +133,7 @@ public abstract class d extends a implements List, RandomAccess, j$.util.List {
     @Override // java.util.List
     /* renamed from: r, reason: merged with bridge method [inline-methods] */
     public final b listIterator(int i10) {
-        u7.b(i10, size());
+        t7.b(i10, size());
         return isEmpty() ? b : new b(this, i10);
     }
 

@@ -2,11 +2,11 @@ package l;
 
 import android.view.View;
 import androidx.appcompat.view.menu.ActionMenuItemView;
-import m.u1;
+import m.v1;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class b extends u1 {
+public final class b extends v1 {
     public final /* synthetic */ int s = 0;
     public final /* synthetic */ View v;
 
@@ -16,8 +16,8 @@ public final class b extends u1 {
         this.v = actionMenuItemView;
     }
 
-    @Override // m.u1
-    public final c0 b() {
+    @Override // m.v1
+    public final b0 b() {
         m.d dVar;
         switch (this.s) {
             case 0:
@@ -35,21 +35,21 @@ public final class b extends u1 {
         }
     }
 
-    @Override // m.u1
+    @Override // m.v1
     public final boolean c() {
-        c0 b10;
+        b0 b10;
         switch (this.s) {
             case 0:
                 ActionMenuItemView actionMenuItemView = (ActionMenuItemView) this.v;
-                k kVar = actionMenuItemView.v;
-                return kVar != null && kVar.a(actionMenuItemView.n) && (b10 = b()) != null && b10.a();
+                j jVar = actionMenuItemView.v;
+                return jVar != null && jVar.a(actionMenuItemView.n) && (b10 = b()) != null && b10.a();
             default:
                 ((m.g) this.v).d.l();
                 return true;
         }
     }
 
-    @Override // m.u1
+    @Override // m.v1
     public boolean d() {
         switch (this.s) {
             case 1:

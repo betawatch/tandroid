@@ -1,17 +1,16 @@
 package cb;
 
 import android.content.Context;
-import androidx.emoji2.text.w;
 import com.google.mlkit.common.internal.MlKitComponentDiscoveryService;
 import java.util.ArrayList;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class h {
     public static final Object b = new Object();
     public static h c;
-    public c9.i a;
+    public c9.j a;
 
     public static h c() {
         h hVar;
@@ -33,16 +32,16 @@ public final class h {
             if (applicationContext != null) {
                 context = applicationContext;
             }
-            ArrayList v = new bf.b(16, context, new o5.i(MlKitComponentDiscoveryService.class, 5)).v();
+            ArrayList w10 = new af.c(16, context, new c9.e(MlKitComponentDiscoveryService.class)).w();
             ArrayList arrayList = new ArrayList();
             ArrayList arrayList2 = new ArrayList();
-            w wVar = c9.f.g;
-            arrayList.addAll(v);
+            af.a aVar = c9.g.g;
+            arrayList.addAll(w10);
             arrayList2.add(c9.b.c(context, Context.class, new Class[0]));
             arrayList2.add(c9.b.c(hVar2, h.class, new Class[0]));
-            c9.i iVar = new c9.i(executor, arrayList, arrayList2, wVar);
-            hVar2.a = iVar;
-            iVar.g(true);
+            c9.j jVar = new c9.j(executor, arrayList, arrayList2, aVar);
+            hVar2.a = jVar;
+            jVar.h(true);
             hVar = c;
         }
         return hVar;

@@ -11,12 +11,12 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class bv0 extends FrameLayout {
     public final FrameLayout a;
     public final TextureView b;
-    public final o4 c;
+    public final q4 c;
     public final org.telegram.ui.Components.p9 d;
     public final /* synthetic */ cv0 e;
 
@@ -34,15 +34,15 @@ public final class bv0 extends FrameLayout {
         this.d = p9Var;
         frameLayout.addView(p9Var);
         frameLayout.setWillNotDraw(false);
-        o4 o4Var = new o4(context);
-        this.c = o4Var;
-        o4Var.setBackgroundColor(0);
-        frameLayout.addView(o4Var, k7.c6.e(-1, -1, 17));
+        q4 q4Var = new q4(context);
+        this.c = q4Var;
+        q4Var.setBackgroundColor(0);
+        frameLayout.addView(q4Var, k7.b6.e(-1, -1, 17));
         TextureView textureView = new TextureView(context);
         this.b = textureView;
         textureView.setOpaque(false);
-        o4Var.addView(textureView, k7.c6.c(-1.0f, -1));
-        addView(frameLayout, k7.c6.c(-2.0f, -2));
+        q4Var.addView(textureView, k7.b6.c(-1.0f, -1));
+        addView(frameLayout, k7.b6.c(-2.0f, -2));
         setWillNotDraw(false);
     }
 
@@ -50,7 +50,7 @@ public final class bv0 extends FrameLayout {
         float f10;
         cv0 cv0Var = this.e;
         float[] fArr = cv0Var.m;
-        jh.k kVar = cv0Var.j;
+        ih.k kVar = cv0Var.j;
         Path path = cv0Var.l;
         if (!cv0Var.n || cv0Var.e == null || cv0Var.a == null) {
             return;
@@ -184,7 +184,7 @@ public final class bv0 extends FrameLayout {
                 }
             }
         }
-        float interpolation = org.telegram.ui.Components.pr.f.getInterpolation(cv0Var.P) * cv0Var.A;
+        float interpolation = org.telegram.ui.Components.mr.f.getInterpolation(cv0Var.P) * cv0Var.A;
         float measuredHeight = getMeasuredHeight();
         float f13 = 0.0f;
         if (interpolation == 1.0f || (zu0Var = cv0Var.F) == null) {

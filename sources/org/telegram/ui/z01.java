@@ -5,9 +5,9 @@ import android.view.View;
 import android.widget.TextView;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class z01 extends TextView implements org.telegram.ui.ActionBar.b6 {
+public final class z01 extends TextView implements org.telegram.ui.ActionBar.a6 {
     public final /* synthetic */ ProfileActivity a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -17,9 +17,9 @@ public final class z01 extends TextView implements org.telegram.ui.ActionBar.b6 
         e();
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.a6
     public final void e() {
-        setTextColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.G6, this.a.w0));
+        setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, this.a.w0));
     }
 
     @Override // android.widget.TextView, android.view.View

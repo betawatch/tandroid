@@ -11,10 +11,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public class a01 extends org.telegram.ui.Components.p9 implements org.telegram.ui.Components.mv0 {
-    public static final u0 d0 = new u0("crossfadeProgress", 3);
+public class a01 extends org.telegram.ui.Components.p9 implements org.telegram.ui.Components.nv0 {
+    public static final w0 d0 = new w0("crossfadeProgress", 3);
     public boolean D;
     public float E;
     public float F;
@@ -34,7 +34,7 @@ public class a01 extends org.telegram.ui.Components.p9 implements org.telegram.u
     public ImageReceiver.BitmapHolder T;
     public boolean U;
     public float V;
-    public org.telegram.ui.Components.xh0 W;
+    public org.telegram.ui.Components.wh0 W;
     public boolean a0;
     public float b0;
     public Runnable c0;
@@ -58,7 +58,7 @@ public class a01 extends org.telegram.ui.Components.p9 implements org.telegram.u
         paint.setColor(-16777216);
     }
 
-    @Override // org.telegram.ui.Components.mv0
+    @Override // org.telegram.ui.Components.nv0
     public final void g(Runnable runnable) {
         this.c0 = runnable;
     }
@@ -78,9 +78,9 @@ public class a01 extends org.telegram.ui.Components.p9 implements org.telegram.u
     @Override // android.view.View
     public final void invalidate() {
         super.invalidate();
-        org.telegram.ui.Components.xh0 xh0Var = this.W;
-        if (xh0Var != null) {
-            xh0Var.invalidate();
+        org.telegram.ui.Components.wh0 wh0Var = this.W;
+        if (wh0Var != null) {
+            wh0Var.invalidate();
         }
         Runnable runnable = this.c0;
         if (runnable != null) {
@@ -107,7 +107,7 @@ public class a01 extends org.telegram.ui.Components.p9 implements org.telegram.u
 
     @Override // org.telegram.ui.Components.p9, android.view.View
     public final void onDraw(Canvas canvas) {
-        org.telegram.ui.Components.oh0 oh0Var;
+        org.telegram.ui.Components.nh0 nh0Var;
         boolean z4;
         float f10;
         float f11;
@@ -116,14 +116,14 @@ public class a01 extends org.telegram.ui.Components.p9 implements org.telegram.u
         float f13;
         int measuredWidth = getMeasuredWidth();
         int measuredHeight = getMeasuredHeight();
-        org.telegram.ui.Components.xh0 xh0Var = this.W;
-        boolean z10 = xh0Var != null && xh0Var.getVisibility() == 0 && this.J && this.E > 0.0f;
+        org.telegram.ui.Components.wh0 wh0Var = this.W;
+        boolean z10 = wh0Var != null && wh0Var.getVisibility() == 0 && this.J && this.E > 0.0f;
         if (z10) {
-            org.telegram.ui.Components.oh0 blurDrawer = this.W.getBlurDrawer();
-            oh0Var = blurDrawer;
+            org.telegram.ui.Components.nh0 blurDrawer = this.W.getBlurDrawer();
+            nh0Var = blurDrawer;
             z10 = blurDrawer != null;
         } else {
-            oh0Var = null;
+            nh0Var = null;
         }
         float y10 = org.telegram.messenger.y3.y(1.0f, this.S, this.b0, (1.0f - this.V) * (this.a0 ? (int) AndroidUtilities.dpf2(3.5f) : 0.0f));
         org.telegram.ui.Components.l5 l5Var = this.e;
@@ -220,7 +220,7 @@ public class a01 extends org.telegram.ui.Components.p9 implements org.telegram.u
             float f24 = measuredHeight;
             canvas.translate(y10, y10 + f24);
             float f25 = y10 * f10;
-            oh0Var.f(canvas, this, f16 - f25, f24 - f25, true, (this.D || oh0Var.a || this.W.getRealPosition() == 0) ? 1.0f - this.E : 1.0f, f12);
+            nh0Var.f(canvas, this, f16 - f25, f24 - f25, true, (this.D || nh0Var.a || this.W.getRealPosition() == 0) ? 1.0f - this.E : 1.0f, f12);
         }
         canvas.restore();
     }
@@ -229,8 +229,8 @@ public class a01 extends org.telegram.ui.Components.p9 implements org.telegram.u
         this.Q = imageReceiver;
     }
 
-    public void setAvatarsViewPager(org.telegram.ui.Components.xh0 xh0Var) {
-        this.W = xh0Var;
+    public void setAvatarsViewPager(org.telegram.ui.Components.wh0 wh0Var) {
+        this.W = wh0Var;
     }
 
     public void setCrossfadeProgress(float f10) {

@@ -6,7 +6,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gn0 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,18 +35,18 @@ public final /* synthetic */ class gn0 implements Runnable {
                 lo0Var.D0(false);
                 lo0Var.w0 = true;
                 lo0Var.H0(true, true);
-                org.telegram.ui.Components.tq tqVar = lo0Var.r;
-                if (tqVar != null) {
-                    tqVar.setVisibility(0);
+                org.telegram.ui.Components.qq qqVar = lo0Var.r;
+                if (qqVar != null) {
+                    qqVar.setVisibility(0);
                 }
                 org.telegram.ui.ActionBar.w0 w0Var = lo0Var.n;
                 if (w0Var != null) {
                     w0Var.setEnabled(false);
                     lo0Var.n.getContentView().setVisibility(4);
                 }
-                org.telegram.ui.ActionBar.f5 parentLayout = lo0Var.getParentLayout();
+                org.telegram.ui.ActionBar.e5 parentLayout = lo0Var.getParentLayout();
                 Activity parentActivity = lo0Var.getParentActivity();
-                lo0Var.getMessagesController().newMessageCallback = new d7(lo0Var, parentLayout, parentActivity, 17);
+                lo0Var.getMessagesController().newMessageCallback = new f7(lo0Var, parentLayout, parentActivity, 17);
                 WebView webView = lo0Var.w;
                 if (webView != null) {
                     webView.setVisibility(0);

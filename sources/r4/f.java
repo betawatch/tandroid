@@ -13,13 +13,13 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class f implements o0 {
     public static final Pattern a = Pattern.compile("(.+?)(Z|((\\+|-|−)(\\d\\d)(:?(\\d\\d))?))");
 
     @Override // g5.o0
-    public final Object w(Uri uri, g5.o oVar) {
+    public final Object k(Uri uri, g5.o oVar) {
         String readLine = new BufferedReader(new InputStreamReader(oVar, r8.d.c)).readLine();
         try {
             Matcher matcher = a.matcher(readLine);
@@ -37,8 +37,8 @@ public final class f implements o0 {
                 time -= (((parseLong * 60) + (TextUtils.isEmpty(group2) ? 0L : Long.parseLong(group2))) * 60000) * j10;
             }
             return Long.valueOf(time);
-        } catch (ParseException e6) {
-            throw r1.b(null, e6);
+        } catch (ParseException e) {
+            throw r1.b(null, e);
         }
     }
 }

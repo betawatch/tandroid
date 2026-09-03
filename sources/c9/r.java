@@ -1,45 +1,42 @@
 package c9;
 
-import androidx.emoji2.text.w;
+import j$.util.DesugarCollections;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.Set;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class r implements ba.b {
-    public static final w c = new w(7);
-    public static final g d = new g(1);
-    public ba.a a;
-    public volatile ba.b b;
+    public volatile Set a;
+    public volatile Set b;
 
-    public r(w wVar, ba.b bVar) {
-        this.a = wVar;
-        this.b = bVar;
-    }
-
-    public final void a(ba.a aVar) {
-        ba.b bVar;
-        ba.b bVar2;
-        ba.b bVar3 = this.b;
-        g gVar = d;
-        if (bVar3 != gVar) {
-            aVar.f(bVar3);
-            return;
-        }
-        synchronized (this) {
-            bVar = this.b;
-            if (bVar != gVar) {
-                bVar2 = bVar;
-            } else {
-                this.a = new c1.b(1, this.a, aVar);
-                bVar2 = null;
+    public final synchronized void a() {
+        try {
+            Iterator it = this.a.iterator();
+            while (it.hasNext()) {
+                this.b.add(((ba.b) it.next()).get());
             }
-        }
-        if (bVar2 != null) {
-            aVar.f(bVar);
+            this.a = null;
+        } catch (Throwable th2) {
+            throw th2;
         }
     }
 
     @Override // ba.b
     public final Object get() {
-        return this.b.get();
+        if (this.b == null) {
+            synchronized (this) {
+                try {
+                    if (this.b == null) {
+                        this.b = Collections.newSetFromMap(new ConcurrentHashMap());
+                        a();
+                    }
+                } finally {
+                }
+            }
+        }
+        return DesugarCollections.unmodifiableSet(this.b);
     }
 }

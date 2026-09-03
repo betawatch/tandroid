@@ -7,7 +7,7 @@ import android.graphics.RectF;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class hi1 extends View {
     public final Paint a;
@@ -36,10 +36,10 @@ public final class hi1 extends View {
         }
         float dp = AndroidUtilities.dp(4.0f);
         org.telegram.ui.Components.c9 c9Var = this.b;
-        float e6 = c9Var.e() + dp + AndroidUtilities.dp(7.0f) + this.c.c + AndroidUtilities.dp(13.0f);
+        float e = c9Var.e() + dp + AndroidUtilities.dp(7.0f) + this.c.c + AndroidUtilities.dp(13.0f);
         float dp2 = AndroidUtilities.dp(30.0f);
         RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set((getWidth() - e6) / 2.0f, 0.0f, (getWidth() + e6) / 2.0f, getHeight());
+        rectF.set((getWidth() - e) / 2.0f, 0.0f, (getWidth() + e) / 2.0f, getHeight());
         float f10 = dp2 / 2.0f;
         canvas.drawRoundRect(rectF, f10, f10, this.a);
         canvas.save();

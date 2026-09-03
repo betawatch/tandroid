@@ -23,7 +23,7 @@ import k7.a7;
 import org.telegram.tgnet.TLObject;
 import v4.f;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class a extends v4.e {
     public static final Pattern s = Pattern.compile("(?:(\\d+):)?(\\d+):(\\d+)[:.](\\d+)");
@@ -127,7 +127,7 @@ public final class a extends v4.e {
         while (true) {
             String h = wVar2.h(B);
             if (h == null) {
-                return new bf.b(2, arrayList, arrayList2);
+                return new af.c(2, arrayList, arrayList2);
             }
             if (h.startsWith("Format:")) {
                 bVar2 = b.b(h);
@@ -581,8 +581,8 @@ public final class a extends v4.e {
                                                     String trim2 = split3[i28].trim();
                                                     try {
                                                         f11 = Float.parseFloat(trim2);
-                                                    } catch (NumberFormatException e6) {
-                                                        h5.a.L("SsaStyle", "Failed to parse font size: '" + trim2 + "'", e6);
+                                                    } catch (NumberFormatException e) {
+                                                        h5.a.L("SsaStyle", "Failed to parse font size: '" + trim2 + "'", e);
                                                     }
                                                     f10 = f11;
                                                 } else {
@@ -613,8 +613,8 @@ public final class a extends v4.e {
                                                     i10 = -1;
                                                 }
                                                 eVar = new e(trim, a2, c11, c12, f10, z4, z10, z11, z12, i10);
-                                            } catch (RuntimeException e10) {
-                                                h5.a.L("SsaStyle", "Skipping malformed 'Style:' line: '" + h10 + "'", e10);
+                                            } catch (RuntimeException e6) {
+                                                h5.a.L("SsaStyle", "Skipping malformed 'Style:' line: '" + h10 + "'", e6);
                                             }
                                             if (eVar != null) {
                                                 linkedHashMap.put(eVar.a, eVar);

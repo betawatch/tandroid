@@ -4,9 +4,10 @@ import dd.q;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import kf.k0;
 import ld.e0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class g extends wc.c implements od.c {
     public final od.c a;
@@ -106,7 +107,7 @@ public final class g extends wc.c implements od.c {
                     } else {
                         kotlin.jvm.internal.j.e(str4, "<this>");
                         if (intValue < 0) {
-                            throw new IllegalArgumentException(l.d.k(intValue, "Requested character count ", " is less than zero.").toString());
+                            throw new IllegalArgumentException(k0.k(intValue, "Requested character count ", " is less than zero.").toString());
                         }
                         int length3 = str4.length();
                         if (intValue <= length3) {

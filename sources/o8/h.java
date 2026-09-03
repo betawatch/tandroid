@@ -1,6 +1,6 @@
 package o8;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class h extends i {
     public final transient int c;
@@ -15,7 +15,7 @@ public final class h extends i {
 
     @Override // java.util.List
     public final Object get(int i10) {
-        k7.j0.a(i10, this.d);
+        k7.i0.a(i10, this.d);
         return this.e.get(i10 + this.c);
     }
 
@@ -37,7 +37,7 @@ public final class h extends i {
     @Override // o8.i, java.util.List
     /* renamed from: q, reason: merged with bridge method [inline-methods] */
     public final i subList(int i10, int i11) {
-        k7.j0.b(i10, i11, this.d);
+        k7.i0.b(i10, i11, this.d);
         int i12 = this.c;
         return this.e.subList(i10 + i12, i11 + i12);
     }

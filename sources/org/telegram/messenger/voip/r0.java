@@ -4,9 +4,9 @@ import android.content.DialogInterface;
 import android.view.KeyEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.h3;
+import org.telegram.ui.ActionBar.g3;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r0 implements DialogInterface.OnShowListener {
     public final /* synthetic */ int a;
@@ -23,11 +23,11 @@ public final /* synthetic */ class r0 implements DialogInterface.OnShowListener 
     public final void onShow(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                VoIPService.lambda$toggleSpeakerphoneOrShowRouteSheet$94((h3) this.b, (Integer) this.c, dialogInterface);
+                VoIPService.lambda$toggleSpeakerphoneOrShowRouteSheet$94((g3) this.b, (Integer) this.c, dialogInterface);
                 break;
             default:
                 View view = (View) this.b;
-                vf.n nVar = (vf.n) this.c;
+                uf.n nVar = (uf.n) this.c;
                 if (view != null) {
                     view.clearFocus();
                 }

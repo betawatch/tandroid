@@ -1,0 +1,45 @@
+package kg;
+
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import k7.b6;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ai;
+
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* loaded from: classes3.dex */
+public final class e extends FrameLayout {
+    public final f6 a;
+    public final TextView b;
+
+    public e(Context context, f6 f6Var) {
+        super(context);
+        this.a = f6Var;
+        setBackgroundColor(j6.v0(j6.e7, f6Var));
+        TextView textView = new TextView(getContext());
+        this.b = textView;
+        ai.o(14.0f, 1, textView);
+        textView.setTextColor(j6.v0(j6.f7, f6Var));
+        textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
+        addView(textView, b6.d(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, 16.0f, 0.0f, 16.0f, 0.0f));
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
+    }
+
+    public void setLetter(CharSequence charSequence) {
+        this.b.setText(charSequence);
+    }
+
+    public void setTextColor(int i10) {
+        this.b.setTextColor(j6.v0(i10, this.a));
+    }
+}

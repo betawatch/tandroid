@@ -2,7 +2,7 @@ package j3;
 
 import android.os.Looper;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class i2 extends cb.e implements q {
     public final f0 b;
@@ -71,21 +71,21 @@ public final class i2 extends cb.e implements q {
     }
 
     @Override // j3.a2
-    public final void a() {
+    public final void a(v1 v1Var) {
         L();
-        this.b.a();
+        this.b.a(v1Var);
     }
 
     @Override // j3.a2
-    public final int b() {
+    public final void b() {
         L();
-        return this.b.b();
+        this.b.b();
     }
 
     @Override // j3.a2
-    public final void c(v1 v1Var) {
+    public final int c() {
         L();
-        this.b.c(v1Var);
+        return this.b.c();
     }
 
     @Override // j3.a2

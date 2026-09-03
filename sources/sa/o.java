@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class o extends pa.u {
     public final /* synthetic */ int a;
@@ -37,8 +37,8 @@ public final class o extends pa.u {
                 ((HashMap) this.c).put(str, r42);
                 ((HashMap) this.d).put(r42, name);
             }
-        } catch (IllegalAccessException e6) {
-            throw new AssertionError(e6);
+        } catch (IllegalAccessException e) {
+            throw new AssertionError(e);
         }
     }
 
@@ -51,7 +51,7 @@ public final class o extends pa.u {
                     aVar.t();
                     return null;
                 }
-                Map map = (Map) ((ra.m) this.d).y2();
+                Map map = (Map) ((ra.m) this.d).u2();
                 if (x10 == 1) {
                     aVar.a();
                     while (aVar.k()) {
@@ -66,7 +66,7 @@ public final class o extends pa.u {
                 } else {
                     aVar.b();
                     while (aVar.k()) {
-                        cb.b.b.getClass();
+                        ab.a.b.getClass();
                         if (aVar instanceof l) {
                             l lVar = (l) aVar;
                             lVar.F(5);

@@ -1,20 +1,20 @@
 package k7;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+import android.graphics.Rect;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class j8 {
-    public static String a(String str, String str2) {
-        int length = str.length() - str2.length();
-        if (length < 0 || length > 1) {
-            throw new IllegalArgumentException("Invalid input received");
+    public static StaticLayout a;
+
+    public static vh.a0 a(int i10, int i11, int i12, int i13) {
+        Rect rect = new Rect(i10, i11, i12, i13);
+        if (a == null) {
+            a = new StaticLayout(" ", new TextPaint(), 1, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         }
-        StringBuilder sb = new StringBuilder(str2.length() + str.length());
-        for (int i10 = 0; i10 < str.length(); i10++) {
-            sb.append(str.charAt(i10));
-            if (str2.length() > i10) {
-                sb.append(str2.charAt(i10));
-            }
-        }
-        return sb.toString();
+        return new vh.a0(a, rect);
     }
 }

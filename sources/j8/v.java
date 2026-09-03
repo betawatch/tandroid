@@ -10,7 +10,7 @@ import android.util.Log;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.Task;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class v extends Fragment {
     public static final /* synthetic */ int d = 0;
@@ -44,9 +44,9 @@ public final class v extends Fragment {
             try {
                 ((com.google.android.gms.common.api.p) exception).getStatus().f(activity, i11);
                 return;
-            } catch (IntentSender.SendIntentException e6) {
+            } catch (IntentSender.SendIntentException e) {
                 if (Log.isLoggable("AutoResolveHelper", 6)) {
-                    Log.e("AutoResolveHelper", "Error starting pending intent!", e6);
+                    Log.e("AutoResolveHelper", "Error starting pending intent!", e);
                     return;
                 }
                 return;

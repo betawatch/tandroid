@@ -1,29 +1,50 @@
 package ug;
 
-import android.graphics.Bitmap;
-import java.lang.ref.WeakReference;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.MessageObject;
+import org.telegram.ui.sj;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class a {
-    public WeakReference a;
-    public long b;
-    public boolean c = true;
+    public RecyclerView a;
+    public int b;
+    public long c;
+    public int d;
+    public boolean e;
 
-    public final boolean a(Bitmap bitmap) {
-        if (this.c) {
-            return true;
+    public final boolean a(MessageObject messageObject) {
+        if (messageObject == null) {
+            return false;
         }
-        WeakReference weakReference = this.a;
-        if ((weakReference != null ? (Bitmap) weakReference.get() : null) != bitmap) {
-            return true;
+        if (messageObject.getId() != this.b) {
+            return this.c != 0 && messageObject.getGroupId() == this.c;
         }
-        return ((bitmap == null || bitmap.isRecycled()) ? 0L : (long) bitmap.getGenerationId()) != this.b;
+        return true;
     }
 
-    public final void b(Bitmap bitmap) {
-        this.a = bitmap != null ? new WeakReference(bitmap) : null;
-        this.b = (bitmap == null || bitmap.isRecycled()) ? 0L : bitmap.getGenerationId();
-        this.c = false;
+    public final boolean b() {
+        return this.e;
+    }
+
+    public final boolean c(int i10, long j10) {
+        if (this.b == i10 && this.c == j10) {
+            return false;
+        }
+        this.b = i10;
+        this.c = j10;
+        if (i10 != 0) {
+            return true;
+        }
+        this.e = false;
+        return true;
+    }
+
+    public final void d(int i10) {
+        this.d = i10;
+    }
+
+    public final void e(sj sjVar) {
+        this.a = sjVar;
     }
 }

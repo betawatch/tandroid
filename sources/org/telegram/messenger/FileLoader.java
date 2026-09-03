@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class FileLoader extends BaseController {
     public static final long DEFAULT_MAX_FILE_SIZE = 2097152000;
@@ -75,7 +75,7 @@ public class FileLoader extends BaseController {
     private static SparseArray<File> mediaDirs = null;
     private static final FileLoader[] Instance = new FileLoader[4];
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     public class 1 implements FileUploadOperation.FileUploadOperationDelegate {
         final /* synthetic */ boolean val$encrypted;
         final /* synthetic */ String val$location;
@@ -161,7 +161,7 @@ public class FileLoader extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     public class 2 implements FileLoadOperation.FileLoadOperationDelegate {
         final /* synthetic */ TLRPC.Document val$document;
         final /* synthetic */ String val$fileName;
@@ -249,7 +249,7 @@ public class FileLoader extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     public interface FileLoaderDelegate {
         void fileDidFailedLoad(String str, int i10);
 
@@ -264,12 +264,12 @@ public class FileLoader extends BaseController {
         void fileUploadProgressChanged(FileUploadOperation fileUploadOperation, String str, long j10, long j11, boolean z4);
     }
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     public interface FileResolver {
         File getFile();
     }
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     public static class LoadOperationUIObject {
         Runnable loadInternalRunnable;
 
@@ -310,7 +310,7 @@ public class FileLoader extends BaseController {
             int i12 = i11 + 1;
             sb.append(i12);
             fileLoaderPriorityQueueArr[i11] = new FileLoaderPriorityQueue(i10, sb.toString(), 0, fileLoaderQueue);
-            this.largeFilesQueue[i11] = new FileLoaderPriorityQueue(i10, l.d.j(i12, "largeFilesQueue dc"), 1, fileLoaderQueue);
+            this.largeFilesQueue[i11] = new FileLoaderPriorityQueue(i10, kf.k0.j(i12, "largeFilesQueue dc"), 1, fileLoaderQueue);
             i11 = i12;
         }
     }
@@ -364,8 +364,8 @@ public class FileLoader extends BaseController {
     private void awaitFileLoadOperation(CountDownLatch countDownLatch, boolean z4) {
         try {
             countDownLatch.await();
-        } catch (Exception e6) {
-            FileLog.e((Throwable) e6, false);
+        } catch (Exception e) {
+            FileLog.e((Throwable) e, false);
             if (z4) {
                 awaitFileLoadOperation(countDownLatch, false);
             }
@@ -581,8 +581,8 @@ public class FileLoader extends BaseController {
             fileMeta3.messageType = Integer.parseInt(matcher.group(3));
             fileMeta3.messageSize = Long.parseLong(matcher.group(4));
             return fileMeta3;
-        } catch (Exception e6) {
-            FileLog.e(e6);
+        } catch (Exception e) {
+            FileLog.e(e);
             return null;
         }
     }
@@ -813,7 +813,7 @@ public class FileLoader extends BaseController {
         sb.append(" position in queue ");
         sb.append(fileLoadOperation.getPositionInQueue());
         sb.append(" account=");
-        l.d.t(this.currentAccount, sb);
+        kf.k0.t(this.currentAccount, sb);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -850,24 +850,24 @@ public class FileLoader extends BaseController {
                     if (!file2.delete()) {
                         file2.deleteOnExit();
                     }
-                } catch (Exception e6) {
-                    FileLog.e(e6);
+                } catch (Exception e) {
+                    FileLog.e(e);
                 }
                 try {
                     File file3 = new File(getInternalCacheDir(), file.getName() + ".enc.key");
                     if (!file3.delete()) {
                         file3.deleteOnExit();
                     }
-                } catch (Exception e10) {
-                    FileLog.e(e10);
+                } catch (Exception e6) {
+                    FileLog.e(e6);
                 }
             } else if (file.exists()) {
                 try {
                     if (!file.delete()) {
                         file.deleteOnExit();
                     }
-                } catch (Exception e11) {
-                    FileLog.e(e11);
+                } catch (Exception e10) {
+                    FileLog.e(e10);
                 }
             }
             try {
@@ -875,8 +875,8 @@ public class FileLoader extends BaseController {
                 if (file4.exists() && !file4.delete()) {
                     file4.deleteOnExit();
                 }
-            } catch (Exception e12) {
-                FileLog.e(e12);
+            } catch (Exception e11) {
+                FileLog.e(e11);
             }
         }
         if (i10 == 2) {
@@ -1301,7 +1301,7 @@ public class FileLoader extends BaseController {
                                 t6.append(" position in queue ");
                                 t6.append(fileLoadOperation8.getPositionInQueue());
                                 t6.append(" account=");
-                                l.d.w(t6, this.currentAccount, " cacheType=", i11, " priority=");
+                                kf.k0.w(t6, this.currentAccount, " cacheType=", i11, " priority=");
                                 t6.append(fileLoadOperation8.getPriority());
                                 t6.append(" stream=");
                                 t6.append(fileStreamLoadOperation);
@@ -1674,7 +1674,7 @@ public class FileLoader extends BaseController {
     }
 
     public void onNetworkChanged(boolean z4) {
-        fileLoaderQueue.postRunnable(new kh.f(6, this, z4));
+        fileLoaderQueue.postRunnable(new jh.f(7, this, z4));
     }
 
     public void removeLoadingVideo(TLRPC.Document document, boolean z4, boolean z10) {
@@ -1797,7 +1797,7 @@ public class FileLoader extends BaseController {
     }
 
     public void checkUploadNewDataAvailable(String str, boolean z4, long j10, long j11, Float f10) {
-        fileLoaderQueue.postRunnable(new oh.y5(this, z4, str, j10, j11, f10));
+        fileLoaderQueue.postRunnable(new nh.y5(this, z4, str, j10, j11, f10));
     }
 
     public File getPathToAttach(TLObject tLObject, boolean z4) {

@@ -5,7 +5,7 @@ import j3.n0;
 import java.util.List;
 import k7.t6;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class d0 {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final class d0 {
                     } else {
                         h0Var.a();
                         h0Var.b();
-                        r3.v i22 = mVar.i2(h0Var.d, 3);
+                        r3.v d22 = mVar.d2(h0Var.d, 3);
                         n0 n0Var = (n0) this.b.get(i10);
                         String str = n0Var.C;
                         h5.a.e("Invalid closed caption MIME type provided: " + str, "application/cea-608".equals(str) || "application/cea-708".equals(str));
@@ -65,8 +65,8 @@ public final class d0 {
                         m0Var.c = n0Var.c;
                         m0Var.G = n0Var.U;
                         m0Var.q = n0Var.E;
-                        i22.b(new n0(m0Var));
-                        vVarArr[i10] = i22;
+                        d22.b(new n0(m0Var));
+                        vVarArr[i10] = d22;
                         i10++;
                     }
                 }
@@ -80,7 +80,7 @@ public final class d0 {
                     } else {
                         h0Var.a();
                         h0Var.b();
-                        r3.v i23 = mVar.i2(h0Var.d, 3);
+                        r3.v d23 = mVar.d2(h0Var.d, 3);
                         n0 n0Var2 = (n0) this.b.get(i11);
                         String str3 = n0Var2.C;
                         h5.a.e("Invalid closed caption MIME type provided: " + str3, "application/cea-608".equals(str3) || "application/cea-708".equals(str3));
@@ -92,8 +92,8 @@ public final class d0 {
                         m0Var2.c = n0Var2.c;
                         m0Var2.G = n0Var2.U;
                         m0Var2.q = n0Var2.E;
-                        i23.b(new n0(m0Var2));
-                        vVarArr2[i11] = i23;
+                        d23.b(new n0(m0Var2));
+                        vVarArr2[i11] = d23;
                         i11++;
                     }
                 }

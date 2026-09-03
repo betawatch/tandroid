@@ -2,7 +2,7 @@ package i9;
 
 import android.content.Context;
 import android.util.Log;
-import androidx.biometric.f0;
+import androidx.biometric.e0;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class p {
     public final Context a;
@@ -27,12 +27,12 @@ public final class p {
     public final e9.a i;
     public final e9.a j;
     public final ExecutorService k;
-    public final sf.f l;
+    public final rf.f l;
     public final k m;
     public final f9.a n;
-    public final f0 o;
+    public final e0 o;
 
-    public p(w8.g gVar, w wVar, f9.a aVar, s sVar, e9.a aVar2, e9.a aVar3, n9.b bVar, ExecutorService executorService, k kVar, f0 f0Var) {
+    public p(w8.g gVar, w wVar, f9.a aVar, s sVar, e9.a aVar2, e9.a aVar3, n9.b bVar, ExecutorService executorService, k kVar, e0 e0Var) {
         this.b = sVar;
         gVar.a();
         this.a = gVar.a;
@@ -42,9 +42,9 @@ public final class p {
         this.j = aVar3;
         this.k = executorService;
         this.h = bVar;
-        this.l = new sf.f(executorService);
+        this.l = new rf.f(executorService);
         this.m = kVar;
-        this.o = f0Var;
+        this.o = e0Var;
         System.currentTimeMillis();
         this.c = new f7.b(15, (byte) 0);
     }
@@ -52,17 +52,17 @@ public final class p {
     public static Task a(p pVar, e3.g gVar) {
         Task forException;
         o oVar;
-        sf.f fVar = pVar.l;
+        rf.f fVar = pVar.l;
         if (!Boolean.TRUE.equals(((ThreadLocal) fVar.e).get())) {
             throw new IllegalStateException("Not running on background worker thread as intended.");
         }
-        pVar.d.n();
+        pVar.d.o();
         if (Log.isLoggable("FirebaseCrashlytics", 2)) {
             Log.v("FirebaseCrashlytics", "Initialization marker file was created.", null);
         }
         try {
             try {
-                pVar.i.a(new f5.u(19));
+                pVar.i.a(new f0.d(19));
                 pVar.f.g();
                 if (gVar.d().b.a) {
                     if (!pVar.f.d(gVar)) {
@@ -77,9 +77,9 @@ public final class p {
                     forException = Tasks.forException(new RuntimeException("Collection of crash reports disabled in Crashlytics settings."));
                     oVar = new o(pVar, 0);
                 }
-            } catch (Exception e6) {
-                Log.e("FirebaseCrashlytics", "Crashlytics encountered a problem during asynchronous initialization.", e6);
-                forException = Tasks.forException(e6);
+            } catch (Exception e) {
+                Log.e("FirebaseCrashlytics", "Crashlytics encountered a problem during asynchronous initialization.", e);
+                forException = Tasks.forException(e);
                 oVar = new o(pVar, 0);
             }
             fVar.H(oVar);
@@ -91,18 +91,18 @@ public final class p {
     }
 
     public final void b(e3.g gVar) {
-        Future<?> submit = this.k.submit(new androidx.biometric.k(16, this, gVar));
+        Future<?> submit = this.k.submit(new androidx.biometric.j(16, this, gVar));
         if (Log.isLoggable("FirebaseCrashlytics", 3)) {
             Log.d("FirebaseCrashlytics", "Crashlytics detected incomplete initialization on previous app launch. Will initialize synchronously.", null);
         }
         try {
             submit.get(3L, TimeUnit.SECONDS);
-        } catch (InterruptedException e6) {
-            Log.e("FirebaseCrashlytics", "Crashlytics was interrupted during initialization.", e6);
-        } catch (ExecutionException e10) {
-            Log.e("FirebaseCrashlytics", "Crashlytics encountered a problem during initialization.", e10);
-        } catch (TimeoutException e11) {
-            Log.e("FirebaseCrashlytics", "Crashlytics timed out during initialization.", e11);
+        } catch (InterruptedException e) {
+            Log.e("FirebaseCrashlytics", "Crashlytics was interrupted during initialization.", e);
+        } catch (ExecutionException e6) {
+            Log.e("FirebaseCrashlytics", "Crashlytics encountered a problem during initialization.", e6);
+        } catch (TimeoutException e10) {
+            Log.e("FirebaseCrashlytics", "Crashlytics timed out during initialization.", e10);
         }
     }
 }

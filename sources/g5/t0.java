@@ -3,11 +3,11 @@ package g5;
 import java.util.ArrayList;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class t0 {
-    public static final e5.f h = new e5.f(11);
-    public static final e5.f i = new e5.f(12);
+    public static final e5.e h = new e5.e(11);
+    public static final e5.e i = new e5.e(12);
     public final int a;
     public int e;
     public int f;
@@ -87,6 +87,6 @@ public final class t0 {
         if (arrayList.isEmpty()) {
             return Float.NaN;
         }
-        return ((s0) l.d.i(1, arrayList)).c;
+        return ((s0) kf.k0.i(1, arrayList)).c;
     }
 }

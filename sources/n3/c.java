@@ -1,13 +1,13 @@
 package n3;
 
 import android.media.MediaCodec;
-import com.google.android.gms.internal.cast.h4;
+import com.google.android.gms.internal.cast.i4;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class c {
     public final MediaCodec.CryptoInfo a;
-    public final MediaCodec.CryptoInfo.Pattern b = h4.a();
+    public final MediaCodec.CryptoInfo.Pattern b = i4.a();
 
     public c(MediaCodec.CryptoInfo cryptoInfo) {
         this.a = cryptoInfo;

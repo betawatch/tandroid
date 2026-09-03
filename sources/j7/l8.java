@@ -4,7 +4,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class l8 {
     public static String a(String str, Object... objArr) {
@@ -25,11 +25,11 @@ public abstract class l8 {
             } else {
                 try {
                     sb = obj.toString();
-                } catch (Exception e6) {
+                } catch (Exception e) {
                     String str2 = obj.getClass().getName() + '@' + Integer.toHexString(System.identityHashCode(obj));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(str2), (Throwable) e6);
+                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(str2), (Throwable) e);
                     StringBuilder t6 = android.support.v4.media.a.t("<", str2, " threw ");
-                    t6.append(e6.getClass().getName());
+                    t6.append(e.getClass().getName());
                     t6.append(">");
                     sb = t6.toString();
                 }

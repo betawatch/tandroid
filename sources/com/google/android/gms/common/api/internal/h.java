@@ -28,7 +28,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class h implements Handler.Callback {
     public static final Status B = new Status(4, "Sign-out occurred while this API call was in progress.", null, null);
@@ -41,7 +41,7 @@ public final class h implements Handler.Callback {
     public d6.b d;
     public final Context e;
     public final y5.d f;
-    public final bf.b h;
+    public final af.c h;
     public final AtomicInteger n;
     public final AtomicInteger r;
     public final ConcurrentHashMap s;
@@ -64,7 +64,7 @@ public final class h implements Handler.Callback {
         a7.e eVar = new a7.e(looper, this);
         this.x = eVar;
         this.f = dVar;
-        this.h = new bf.b((y5.e) dVar);
+        this.h = new af.c((y5.e) dVar);
         PackageManager packageManager = context.getPackageManager();
         if (i6.b.e == null) {
             i6.b.e = Boolean.valueOf(i6.b.d() && packageManager.hasSystemFeature("android.hardware.type.automotive"));
@@ -130,9 +130,9 @@ public final class h implements Handler.Callback {
         dVar.getClass();
         Context context = this.e;
         if (!k6.a.f(context)) {
-            boolean e6 = aVar.e();
+            boolean e = aVar.e();
             int i11 = aVar.b;
-            if (e6) {
+            if (e) {
                 pendingIntent = aVar.c;
             } else {
                 pendingIntent = null;
@@ -210,7 +210,7 @@ public final class h implements Handler.Callback {
                 Task task = taskCompletionSource.getTask();
                 a7.e eVar = hVar.x;
                 eVar.getClass();
-                task.addOnCompleteListener(new androidx.biometric.p(eVar, 2), y0Var);
+                task.addOnCompleteListener(new androidx.biometric.o(eVar, 2), y0Var);
                 return;
             }
             return;
@@ -293,7 +293,7 @@ public final class h implements Handler.Callback {
                     }
                 }
                 if (p0Var == null) {
-                    Log.wtf("GoogleApiManager", l.d.k(i11, "Could not find API instance ", " while trying to fail enqueued calls."), new Exception());
+                    Log.wtf("GoogleApiManager", kf.k0.k(i11, "Could not find API instance ", " while trying to fail enqueued calls."), new Exception());
                     return true;
                 }
                 int i12 = aVar.b;

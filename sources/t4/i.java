@@ -12,18 +12,17 @@ import java.util.List;
 import java.util.Map;
 import k7.y7;
 import o4.s0;
-import oh.h4;
-import org.telegram.ui.Components.ai;
-import org.telegram.ui.web.e0;
+import org.telegram.ui.Components.tp0;
+import org.telegram.ui.Components.zz;
 import s8.i0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class i {
     public final j a;
     public final g5.m b;
     public final g5.m c;
-    public final ai d;
+    public final tp0 d;
     public final Uri[] e;
     public final n0[] f;
     public final u4.c g;
@@ -36,24 +35,24 @@ public final class i {
     public boolean p;
     public f5.c q;
     public boolean s;
-    public final e0 j = new e0(11);
+    public final zz j = new zz(15);
     public byte[] m = d0.f;
     public long r = -9223372036854775807L;
 
-    public i(j jVar, u4.c cVar, Uri[] uriArr, n0[] n0VarArr, h4 h4Var, v0 v0Var, ai aiVar, List list, k3.k kVar) {
+    public i(j jVar, u4.c cVar, Uri[] uriArr, n0[] n0VarArr, o3.c cVar2, v0 v0Var, tp0 tp0Var, List list, k3.k kVar) {
         this.a = jVar;
         this.g = cVar;
         this.e = uriArr;
         this.f = n0VarArr;
-        this.d = aiVar;
+        this.d = tp0Var;
         this.i = list;
         this.k = kVar;
-        g5.m createDataSource = ((g5.l) h4Var.b).createDataSource();
+        g5.m createDataSource = ((g5.l) cVar2.b).createDataSource();
         this.b = createDataSource;
         if (v0Var != null) {
             createDataSource.addTransferListener(v0Var);
         }
-        this.c = ((g5.l) h4Var.b).createDataSource();
+        this.c = ((g5.l) cVar2.b).createDataSource();
         this.h = new s0("", n0VarArr);
         ArrayList arrayList = new ArrayList();
         for (int i10 = 0; i10 < uriArr.length; i10++) {
@@ -166,7 +165,7 @@ public final class i {
                     return new Pair(Long.valueOf(j12), Integer.valueOf(i10));
                 }
                 if (i10 == -1) {
-                    j12 = kVar.b();
+                    j12 = kVar.c();
                 }
                 return new Pair(Long.valueOf(j12), Integer.valueOf(i10 != -1 ? i10 + 1 : -1));
             }
@@ -214,8 +213,8 @@ public final class i {
         if (uri == null) {
             return null;
         }
-        e0 e0Var = this.j;
-        byte[] bArr = (byte[]) ((d) e0Var.b).remove(uri);
+        zz zzVar = this.j;
+        byte[] bArr = (byte[]) ((d) zzVar.b).remove(uri);
         if (bArr != null) {
             return null;
         }

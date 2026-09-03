@@ -4,7 +4,7 @@ import android.content.DialogInterface;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b1 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class b1 implements DialogInterface.OnDismissListen
         Object obj = this.b;
         switch (i10) {
             case 0:
-                ((org.telegram.ui.ng) obj).run();
+                ((org.telegram.ui.pg) obj).run();
                 break;
             case 1:
                 AndroidUtilities.hideKeyboard((EditTextBoldCursor) obj);
@@ -33,21 +33,21 @@ public final /* synthetic */ class b1 implements DialogInterface.OnDismissListen
                 ((ChatActivityEnterView) obj).I0 = null;
                 break;
             case 4:
-                ((mi) obj).w2 = false;
+                ((li) obj).w2 = false;
                 break;
             case 5:
-                xt.i((xt) obj);
+                ut.i((ut) obj);
                 break;
             case 6:
                 float[] fArr = FragmentContextView.J0;
                 ((FragmentContextView) obj).c(false);
                 break;
             case 7:
-                on0.E = null;
+                nn0.E = null;
                 ((View) obj).requestFocus();
                 break;
             case 8:
-                AndroidUtilities.hideKeyboard((in0) obj);
+                AndroidUtilities.hideKeyboard((hn0) obj);
                 break;
             default:
                 ThemeEditorView themeEditorView = ((b11) obj).d;

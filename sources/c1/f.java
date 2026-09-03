@@ -12,8 +12,8 @@ import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import b7.w0;
 import com.google.android.gms.common.api.internal.v;
 import com.google.android.gms.common.api.internal.w;
-import j7.y6;
-import j7.y8;
+import j7.a7;
+import j7.x8;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.concurrent.Executor;
@@ -22,8 +22,6 @@ import l5.g;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.ui.Cells.f1;
-import org.telegram.ui.yh;
 import q6.k;
 import q6.r;
 import q6.u;
@@ -32,9 +30,10 @@ import v0.m;
 import v0.n;
 import v0.o;
 import v0.p;
+import vh.w2;
 import w0.h;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class f extends b1.d {
     public final Context e;
@@ -134,7 +133,7 @@ public final class f extends b1.d {
                     String str6 = kVar3.b;
                     x0.a aVar = (x0.a) d1.g.a.get(rVar);
                     if (aVar == null) {
-                        throw new y0.b(new x0.a(26), yh.k("unknown fido gms exception - ", str6));
+                        throw new y0.b(new x0.a(26), w2.e("unknown fido gms exception - ", str6));
                     }
                     if (rVar == r.w && str6 != null && jd.j.b(str6, "Unable to get sync account")) {
                         throw new w0.g("Passkey retrieval was cancelled by the user.");
@@ -176,8 +175,8 @@ public final class f extends b1.d {
                                             jSONObject2.put("message", str11);
                                         }
                                         str10 = "error";
-                                    } catch (JSONException e6) {
-                                        throw new RuntimeException("Error encoding AuthenticatorErrorResponse to JSON object", e6);
+                                    } catch (JSONException e) {
+                                        throw new RuntimeException("Error encoding AuthenticatorErrorResponse to JSON object", e);
                                     }
                                 }
                                 if (jSONObject2 != null) {
@@ -200,8 +199,8 @@ public final class f extends b1.d {
                             }
                             jSONObject = jSONObject4.toString();
                             j.d(jSONObject, "toJson(...)");
-                        } catch (JSONException e10) {
-                            throw new RuntimeException("Error encoding PublicKeyCredential to JSON object", e10);
+                        } catch (JSONException e6) {
+                            throw new RuntimeException("Error encoding PublicKeyCredential to JSON object", e6);
                         }
                     } catch (Throwable th2) {
                         throw new h("The PublicKeyCredential response json had an unexpected exception when parsing: " + th2.getMessage(), 2);
@@ -271,15 +270,15 @@ public final class f extends b1.d {
             int i11 = 1;
             if (!it.hasNext()) {
                 boolean z10 = j10 > 241217000 ? request.b : false;
-                w6.b a2 = y8.a(context);
+                w6.b a2 = x8.a(context);
                 new l5.a(false, null, null, true, null, null, false);
                 l5.e eVar = new l5.e(dVar, aVar, a2.k, false, 0, cVar, bVar2, z10);
-                v e6 = w.e();
-                e6.d = new y5.c[]{new y5.c("auth_api_credentials_begin_sign_in", 8L)};
-                e6.c = new f1(a2, eVar);
-                e6.b = false;
-                e6.a = 1553;
-                a2.e(0, e6.e()).addOnSuccessListener(new a1.c(new b1.f(i11, cancellationSignal, this), i11)).addOnFailureListener(new b(i10, this, cancellationSignal));
+                v e = w.e();
+                e.d = new y5.c[]{new y5.c("auth_api_credentials_begin_sign_in", 8L)};
+                e.c = new o2.i(a2, eVar, 29);
+                e.b = false;
+                e.a = 1553;
+                a2.e(0, e.e()).addOnSuccessListener(new a1.c(new b1.f(i11, cancellationSignal, this), i11)).addOnFailureListener(new b(i10, this, cancellationSignal));
                 return;
             }
             p pVar = (p) it.next();
@@ -295,7 +294,7 @@ public final class f extends b1.d {
                     if (optString.length() == 0) {
                         throw new JSONException("GetPublicKeyCredentialOption - rpId not specified in the request or is unexpectedly empty");
                     }
-                    cVar = new l5.c(true, y6.a(jSONObject), optString);
+                    cVar = new l5.c(true, a7.a(jSONObject), optString);
                 }
                 z4 = true;
             }

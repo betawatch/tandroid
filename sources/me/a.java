@@ -2,19 +2,20 @@ package me;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import z9.d;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final Pattern a = Pattern.compile("[\\\\&]");
     public static final Pattern b = Pattern.compile("\\\\[!\"#$%&'()*+,./:;<=>?@\\[\\\\\\]^_`{|}~-]|&(?:#x[a-f0-9]{1,6}|#[0-9]{1,7}|[a-z][a-z0-9]{1,31});", 2);
     public static final Pattern c;
-    public static final ab.a d;
+    public static final d d;
 
     static {
         Pattern.compile("(%[a-fA-F0-9]{0,2}|[^:/?#@!$&'()*+,;=a-zA-Z0-9\\-._~])");
         c = Pattern.compile("[ \t\r\n]+");
-        d = new ab.a(13);
+        d = new d(12);
     }
 
     public static String a(String str) {

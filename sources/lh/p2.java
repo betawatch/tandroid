@@ -1,60 +1,48 @@
 package lh;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.BirthdayController;
-import org.telegram.ui.Components.or0;
-import org.telegram.ui.Components.yu0;
-import qh.ba;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.p70;
+import org.telegram.ui.Components.w21;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class p2 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ FrameLayout d;
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class p2 implements org.telegram.ui.ActionBar.c2, MessagesController.IsInChatCheckedCallback {
+    public final /* synthetic */ long a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ TLObject e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ p2(FrameLayout frameLayout, boolean z4, int i10, int i11) {
-        this.a = i11;
-        this.d = frameLayout;
-        this.b = z4;
-        this.c = i10;
+    public /* synthetic */ p2(g5 g5Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, TLRPC.PaymentForm paymentForm, TLRPC.TL_inputInvoiceStarGiftDropOriginalDetails tL_inputInvoiceStarGiftDropOriginalDetails, long j10, CharSequence charSequence) {
+        this.b = g5Var;
+        this.c = tL_starGiftUnique;
+        this.d = paymentForm;
+        this.e = tL_inputInvoiceStarGiftDropOriginalDetails;
+        this.a = j10;
+        this.f = charSequence;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                or0 or0Var = (or0) this.d;
-                if (or0Var.e.h() && or0Var.h.getCurrentPosition() != 0) {
-                    or0Var.a();
-                    break;
-                } else {
-                    boolean z4 = this.b;
-                    int i10 = this.c;
-                    if (!z4) {
-                        hg.v2.e0(2, BirthdayController.getInstance(i10).getState());
-                        break;
-                    } else {
-                        g2 g2Var = new g2(or0Var.getContext(), i10, or0Var.c, null, null);
-                        g2Var.V(BirthdayController.getInstance(i10).isToday(or0Var.c));
-                        g2Var.show();
-                        break;
-                    }
-                }
-                break;
-            default:
-                yu0 yu0Var = (yu0) this.d;
-                org.telegram.ui.ActionBar.p2 p2Var = yu0Var.s1;
-                if (!this.b) {
-                    p2Var.getMessagesController().getMainSettings().edit().putBoolean("story_keep", true).apply();
-                    ba.E(p2Var.getParentActivity(), p2Var.getCurrentAccount()).R(null);
-                    break;
-                } else {
-                    yu0Var.O0(p2Var, yu0Var.g1, this.c);
-                    break;
-                }
-        }
+    @Override // org.telegram.ui.ActionBar.c2
+    public void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        g5.L0((g5) this.b, (TL_stars.TL_starGiftUnique) this.c, (TLRPC.PaymentForm) this.d, (TLRPC.TL_inputInvoiceStarGiftDropOriginalDetails) this.e, this.a, (CharSequence) this.f, d2Var);
+    }
+
+    @Override // org.telegram.messenger.MessagesController.IsInChatCheckedCallback
+    public void run(boolean z4, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str) {
+        AndroidUtilities.runOnUIThread(new g((w21) this.b, z4, (org.telegram.ui.ActionBar.g1) this.c, (p70) this.d, this.a, (TLRPC.User) this.e, (TLRPC.Chat) this.f));
+    }
+
+    public /* synthetic */ p2(w21 w21Var, org.telegram.ui.ActionBar.g1 g1Var, p70 p70Var, long j10, TLRPC.User user, TLRPC.Chat chat) {
+        this.b = w21Var;
+        this.c = g1Var;
+        this.d = p70Var;
+        this.a = j10;
+        this.e = user;
+        this.f = chat;
     }
 }

@@ -2,138 +2,80 @@ package eg;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
 import android.graphics.RectF;
-import android.view.View;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.ql0;
+import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.ui.gw0;
+import org.telegram.ui.ow0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public abstract class c2 extends sl0 {
-    public static final Paint Z2;
-    public static final Paint a3;
-    public static final Path b3;
-    public static final Paint c3;
-    public final Paint U2;
-    public final Paint V2;
-    public int W2;
-    public dg.e1 X2;
-    public q0.a Y2;
+public final class c2 extends gw0 {
+    public final /* synthetic */ int r = 0;
+    public final /* synthetic */ ql0 s;
 
-    static {
-        Paint paint = new Paint(1);
-        Z2 = paint;
-        Paint paint2 = new Paint(1);
-        a3 = paint2;
-        paint.setColor(-2013265920);
-        paint2.setColor(-1996488705);
-        b3 = new Path();
-        c3 = new Paint(1);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c2(d2 d2Var, Context context, f6 f6Var) {
+        super(context, f6Var);
+        this.s = d2Var;
     }
 
-    public c2(Context context) {
+    @Override // org.telegram.ui.gw0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        f6 f6Var;
+        boolean q10;
+        f6 f6Var2;
+        switch (this.r) {
+            case 0:
+                RectF rectF = AndroidUtilities.rectTmp;
+                ImageView imageView = this.c;
+                rectF.set(imageView.getLeft(), imageView.getTop(), imageView.getRight(), imageView.getBottom());
+                d2 d2Var = (d2) this.s;
+                d2Var.c.m0.d(0, 0.0f, 0, getMeasuredWidth(), -this.f.e, d2Var.c.b0);
+                canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), d2Var.c.m0.f);
+                super.dispatchDraw(canvas);
+                break;
+            default:
+                float dp = AndroidUtilities.dp(10.0f);
+                RectF rectF2 = AndroidUtilities.rectTmp;
+                ImageView imageView2 = this.c;
+                rectF2.set(imageView2.getLeft(), imageView2.getTop(), imageView2.getRight(), imageView2.getBottom());
+                PremiumPreviewFragment premiumPreviewFragment = ((ow0) this.s).c;
+                premiumPreviewFragment.P.reset();
+                premiumPreviewFragment.P.postScale(1.0f, premiumPreviewFragment.K / 100.0f, 0.0f, 0.0f);
+                premiumPreviewFragment.P.postTranslate(0.0f, -this.f.e);
+                premiumPreviewFragment.O.setLocalMatrix(premiumPreviewFragment.P);
+                canvas.drawRoundRect(rectF2, dp, dp, premiumPreviewFragment.Q);
+                f6Var = ((org.telegram.ui.ActionBar.p2) premiumPreviewFragment).resourceProvider;
+                if (f6Var != null) {
+                    f6Var2 = ((org.telegram.ui.ActionBar.p2) premiumPreviewFragment).resourceProvider;
+                    q10 = f6Var2.a();
+                } else {
+                    q10 = j6.I.q();
+                }
+                if (q10) {
+                    float dp2 = AndroidUtilities.dp(1.0f);
+                    premiumPreviewFragment.N.setStrokeWidth(dp2);
+                    canvas.save();
+                    canvas.translate(rectF2.left, rectF2.top);
+                    rectF2.offset(-rectF2.left, -rectF2.top);
+                    float f10 = dp2 / 2.0f;
+                    rectF2.inset(f10, f10);
+                    canvas.drawRoundRect(rectF2, dp, dp, premiumPreviewFragment.N);
+                    canvas.restore();
+                }
+                super.dispatchDraw(canvas);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c2(ow0 ow0Var, Context context) {
         super(context, null);
-        this.U2 = new Paint(1);
-        Paint paint = new Paint(1);
-        this.V2 = paint;
-        this.W2 = -1;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-        setLayoutManager(new f2.w(7));
-        setAdapter(new a2(this, context));
-        setOverScrollMode(2);
-        setOnItemClickListener(new ag.h(this, 2));
-    }
-
-    public static void v1(Canvas canvas, RectF rectF, int i10) {
-        float f10 = rectF.left;
-        while (f10 <= rectF.right) {
-            float f11 = rectF.top;
-            while (f11 <= rectF.bottom) {
-                float f12 = i10;
-                float f13 = f10 + f12;
-                float f14 = f11 + f12;
-                Paint paint = Z2;
-                Canvas canvas2 = canvas;
-                canvas2.drawRect(f10, f11, f13, f14, paint);
-                float f15 = i10 * 2;
-                float f16 = f10 + f15;
-                Paint paint2 = a3;
-                float f17 = f11;
-                canvas2.drawRect(f13, f17, f16, f14, paint2);
-                float f18 = f17 + f15;
-                canvas2.drawRect(f13, f14, f16, f18, paint);
-                canvas2.drawRect(f10, f14, f13, f18, paint2);
-                canvas = canvas2;
-                f11 = f18;
-            }
-            f10 += i10 * 2;
-            canvas = canvas;
-        }
-    }
-
-    public static void w1(float f10, float f11, float f12, int i10, Canvas canvas) {
-        Paint paint = c3;
-        paint.setColor(i10);
-        if (paint.getAlpha() == 255) {
-            canvas.drawCircle(f10, f11, f12, paint);
-            return;
-        }
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(f10 - f12, f11 - f12, f10 + f12, f11 + f12);
-        paint.setAlpha(255);
-        canvas.drawArc(rectF, -45.0f, -180.0f, true, paint);
-        Path path = b3;
-        path.rewind();
-        path.moveTo(rectF.centerX(), rectF.centerY());
-        path.lineTo((float) l.d.a(-1.5707963267948966d, rectF.width() / 2.0f, rectF.centerX()), (float) ((Math.sin(-1.5707963267948966d) * (rectF.height() / 2.0f)) + rectF.centerY()));
-        path.moveTo(rectF.centerX(), rectF.centerY());
-        path.lineTo((float) l.d.a(4.71238898038469d, rectF.width() / 2.0f, rectF.centerX()), (float) ((Math.sin(4.71238898038469d) * (rectF.height() / 2.0f)) + rectF.centerY()));
-        path.addArc(rectF, -45.0f, 180.0f);
-        canvas.save();
-        canvas.clipPath(path);
-        v1(canvas, rectF, AndroidUtilities.dp(4.0f));
-        canvas.restore();
-        paint.setColor(i10);
-        canvas.drawArc(rectF, -45.0f, 180.0f, true, paint);
-    }
-
-    public int getSelectedColorIndex() {
-        return this.W2;
-    }
-
-    public void setColorListener(q0.a aVar) {
-        this.Y2 = aVar;
-    }
-
-    public void setColorPalette(dg.e1 e1Var) {
-        this.X2 = e1Var;
-        getAdapter().l();
-    }
-
-    public void setSelectedColorIndex(int i10) {
-        this.W2 = i10;
-        getAdapter().l();
-    }
-
-    public final void x1(float f10, boolean z4) {
-        float interpolation = z4 ? pr.g.getInterpolation(f10) : pr.i.getInterpolation(f10);
-        float childCount = 1.0f / (getChildCount() - 1);
-        for (int i10 = 0; i10 < getChildCount(); i10++) {
-            View childAt = getChildAt(i10);
-            if (i10 == 0) {
-                childAt.setAlpha(interpolation == 1.0f ? 1.0f : 0.0f);
-            } else {
-                float f11 = i10 * childCount;
-                float min = Math.min(interpolation, f11) / f11;
-                childAt.setScaleX(min);
-                childAt.setScaleY(min);
-            }
-        }
-        invalidate();
+        this.s = ow0Var;
     }
 }

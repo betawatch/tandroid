@@ -3,16 +3,16 @@ package a;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.telegram.messenger.BuildConfig;
-import org.telegram.ui.yh;
+import org.telegram.ui.ai;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static String a(Object... objArr) {
         int length;
         int length2;
         int indexOf;
-        String l10;
+        String k10;
         int i10 = 0;
         int i11 = 0;
         while (true) {
@@ -22,17 +22,17 @@ public abstract class a {
             }
             Object obj = objArr[i11];
             if (obj == null) {
-                l10 = BuildConfig.BETA_URL;
+                k10 = BuildConfig.BETA_URL;
             } else {
                 try {
-                    l10 = obj.toString();
-                } catch (Exception e6) {
+                    k10 = obj.toString();
+                } catch (Exception e) {
                     String z4 = android.support.v4.media.a.z(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(z4), (Throwable) e6);
-                    l10 = yh.l("<", z4, " threw ", e6.getClass().getName(), ">");
+                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(z4), (Throwable) e);
+                    k10 = ai.k("<", z4, " threw ", e.getClass().getName(), ">");
                 }
             }
-            objArr[i11] = l10;
+            objArr[i11] = k10;
             i11++;
         }
         StringBuilder sb = new StringBuilder((length * 16) + 29);

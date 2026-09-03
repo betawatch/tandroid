@@ -1,43 +1,65 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class hn0 extends f2.l {
-    @Override // f2.l, f2.p1
-    public final boolean r(f2.m1 m1Var, c5.e eVar, int i10, int i11, int i12, int i13) {
-        nn0 nn0Var;
-        mn0 mn0Var;
-        View view = m1Var.a;
-        if ((view instanceof nn0) && (mn0Var = (nn0Var = (nn0) view).a) != null) {
-            mn0Var.i = mn0Var.N;
-            mn0Var.g = mn0Var.O;
-            mn0Var.h = mn0Var.P;
-            nn0Var.b.d(0.0f, true);
-            nn0Var.invalidate();
-        }
-        int translationX = i10 + ((int) view.getTranslationX());
-        int translationY = i11 + ((int) view.getTranslationY());
-        R(m1Var);
-        int i14 = i12 - translationX;
-        int i15 = i13 - translationY;
-        if (i14 == 0 && i15 == 0) {
-            v(m1Var);
-            return false;
-        }
-        if (i14 != 0) {
-            view.setTranslationX(-i14);
-        }
-        if (i15 != 0) {
-            view.setTranslationY(-i15);
-        }
-        this.r.add(new f2.k(m1Var, translationX, translationY, i12, i13));
-        return true;
+public final class hn0 extends EditTextBoldCursor {
+    public final c5 b;
+    public int c;
+    public final j6 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 e;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hn0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        this.e = f6Var;
+        this.b = new c5(this);
+        j6 j6Var = new j6(false, true, true, false);
+        this.d = j6Var;
+        j6Var.k(0.2f, 160L, mr.h);
+        j6Var.t(AndroidUtilities.dp(15.33f));
+        j6Var.setCallback(this);
+        j6Var.b = 5;
     }
 
-    @Override // f2.p1
-    public final boolean t(f2.m1 m1Var) {
-        return true;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        int a2 = this.b.a(org.telegram.ui.ActionBar.j6.v0(this.c < 0 ? org.telegram.ui.ActionBar.j6.p7 : org.telegram.ui.ActionBar.j6.P5, this.e), false);
+        j6 j6Var = this.d;
+        j6Var.r(a2);
+        j6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
+        j6Var.draw(canvas);
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(36.0f), TLObject.FLAG_30));
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.wt, android.widget.TextView
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        super.onTextChanged(charSequence, i10, i11, i12);
+        j6 j6Var = this.d;
+        if (j6Var != null) {
+            this.c = 12 - charSequence.length();
+            j6Var.b();
+            String str = "";
+            if (this.c <= 4) {
+                str = "" + this.c;
+            }
+            j6Var.q(str, true, true);
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.d || super.verifyDrawable(drawable);
     }
 }

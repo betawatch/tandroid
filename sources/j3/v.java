@@ -19,18 +19,18 @@ import org.telegram.messenger.voip.VoIPGroupNotification;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.io;
-import org.telegram.ui.Components.kb0;
-import org.telegram.ui.Components.mo;
-import org.telegram.ui.Components.n71;
-import org.telegram.ui.Components.sb0;
-import org.telegram.ui.du;
-import org.telegram.ui.xn;
+import org.telegram.ui.Components.fo;
+import org.telegram.ui.Components.jb0;
+import org.telegram.ui.Components.jo;
+import org.telegram.ui.Components.m71;
+import org.telegram.ui.Components.rb0;
+import org.telegram.ui.eu;
+import org.telegram.ui.zn;
 import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -69,9 +69,9 @@ public final /* synthetic */ class v implements Runnable {
                 ((ConnectionsManager) this.d).lambda$discardConnection$0(this.b, this.c);
                 break;
             case 5:
-                org.telegram.ui.web.x0 x0Var = (org.telegram.ui.web.x0) this.d;
+                org.telegram.ui.web.y0 y0Var = (org.telegram.ui.web.y0) this.d;
                 for (int i12 = 0; i12 < this.b - this.c; i12++) {
-                    x0Var.goBack();
+                    y0Var.goBack();
                 }
                 break;
             case 6:
@@ -79,54 +79,54 @@ public final /* synthetic */ class v implements Runnable {
                 Bundle bundle = new Bundle();
                 bundle.putLong("user_id", UserConfig.getInstance(this.b).getClientUserId());
                 bundle.putInt("message_id", this.c);
-                p2Var.presentFragment(new xn(bundle));
+                p2Var.presentFragment(new zn(bundle));
                 break;
             case 7:
-                mo moVar = (mo) this.d;
+                jo joVar = (jo) this.d;
                 int i13 = this.b;
                 if (i13 != 0) {
                     SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(this.c);
                     notificationsSettings.edit().putInt("last_selected_mute_until_time", i13).putInt("last_selected_mute_until_time2", notificationsSettings.getInt("last_selected_mute_until_time", 0)).apply();
                 }
-                moVar.v(i13);
+                joVar.s(i13);
                 break;
             case 8:
-                io ioVar = (io) this.d;
+                fo foVar = (fo) this.d;
                 int i14 = this.b;
                 if (i14 != 0) {
                     SharedPreferences notificationsSettings2 = MessagesController.getNotificationsSettings(this.c);
                     notificationsSettings2.edit().putInt("last_selected_mute_until_time", i14).putInt("last_selected_mute_until_time2", notificationsSettings2.getInt("last_selected_mute_until_time", 0)).apply();
                 }
-                ioVar.run(Integer.valueOf(i14));
+                foVar.run(Integer.valueOf(i14));
                 break;
             case 9:
-                sb0 sb0Var = ((kb0) this.d).U2;
-                View d = sb0Var.d();
-                kb0 kb0Var = sb0Var.f;
+                rb0 rb0Var = ((jb0) this.d).U2;
+                View d = rb0Var.d();
+                jb0 jb0Var = rb0Var.f;
                 if (d != null) {
                     int top = d.getTop() + this.b;
                     int top2 = d.getTop() + this.c;
                     int i15 = top2 - top;
-                    int paddingTop = kb0Var.getPaddingTop();
-                    int height = kb0Var.getHeight() - kb0Var.getPaddingBottom();
+                    int paddingTop = jb0Var.getPaddingTop();
+                    int height = jb0Var.getHeight() - jb0Var.getPaddingBottom();
                     if (i15 <= height - paddingTop) {
                         top = (top + top2) / 2;
                         paddingTop = (paddingTop + height) / 2;
                     }
                     int i16 = top - paddingTop;
                     if (i16 < 0) {
-                        kb0Var.scrollBy(0, i16);
+                        jb0Var.scrollBy(0, i16);
                         break;
                     }
                 }
                 break;
             case 10:
-                org.telegram.ui.Components.voip.h1 h1Var = ((org.telegram.ui.Components.voip.g1) this.d).a;
-                cf.f fVar = h1Var.L;
+                org.telegram.ui.Components.voip.g1 g1Var = ((org.telegram.ui.Components.voip.f1) this.d).a;
+                bf.f fVar = g1Var.L;
                 if (fVar != null) {
                     fVar.d(this.b, this.c);
                 }
-                h1Var.i(false);
+                g1Var.i(false);
                 break;
             case 11:
                 ((SurfaceTextureHelper) this.d).lambda$setTextureSize$2(this.b, this.c);
@@ -139,7 +139,7 @@ public final /* synthetic */ class v implements Runnable {
                 break;
             default:
                 int i17 = this.b;
-                uf.x xVar = (uf.x) this.d;
+                tf.x xVar = (tf.x) this.d;
                 try {
                     SQLiteCursor queryFinalized = MessagesStorage.getInstance(i17).getDatabase().queryFinalized("SELECT did, date FROM search_recent WHERE 1", new Object[0]);
                     ArrayList<Long> arrayList = new ArrayList<>();
@@ -157,7 +157,7 @@ public final /* synthetic */ class v implements Runnable {
                                 int encryptedChatId = DialogObject.getEncryptedChatId(longValue);
                                 if (!arrayList3.contains(Integer.valueOf(encryptedChatId))) {
                                     arrayList3.add(Integer.valueOf(encryptedChatId));
-                                    uf.y yVar = new uf.y();
+                                    tf.y yVar = new tf.y();
                                     yVar.c = longValue;
                                     yVar.b = queryFinalized.intValue(1);
                                     arrayList4.add(yVar);
@@ -168,7 +168,7 @@ public final /* synthetic */ class v implements Runnable {
                             long j10 = -longValue;
                             if (!arrayList2.contains(Long.valueOf(j10))) {
                                 arrayList2.add(Long.valueOf(j10));
-                                uf.y yVar2 = new uf.y();
+                                tf.y yVar2 = new tf.y();
                                 yVar2.c = longValue;
                                 yVar2.b = queryFinalized.intValue(1);
                                 arrayList4.add(yVar2);
@@ -176,7 +176,7 @@ public final /* synthetic */ class v implements Runnable {
                             }
                         } else if (i18 != 2 && !arrayList.contains(Long.valueOf(longValue))) {
                             arrayList.add(Long.valueOf(longValue));
-                            uf.y yVar22 = new uf.y();
+                            tf.y yVar22 = new tf.y();
                             yVar22.c = longValue;
                             yVar22.b = queryFinalized.intValue(1);
                             arrayList4.add(yVar22);
@@ -189,7 +189,7 @@ public final /* synthetic */ class v implements Runnable {
                         ArrayList<TLRPC.EncryptedChat> arrayList6 = new ArrayList<>();
                         MessagesStorage.getInstance(i17).getEncryptedChatsInternal(TextUtils.join(",", arrayList3), arrayList6, arrayList);
                         for (int i19 = 0; i19 < arrayList6.size(); i19++) {
-                            uf.y yVar3 = (uf.y) hVar.f(DialogObject.makeEncryptedDialogId(arrayList6.get(i19).id));
+                            tf.y yVar3 = (tf.y) hVar.f(DialogObject.makeEncryptedDialogId(arrayList6.get(i19).id));
                             if (yVar3 != null) {
                                 yVar3.a = arrayList6.get(i19);
                             }
@@ -202,13 +202,13 @@ public final /* synthetic */ class v implements Runnable {
                             TLRPC.Chat chat = arrayList7.get(i20);
                             long j11 = -chat.id;
                             if (chat.migrated_to != null) {
-                                uf.y yVar4 = (uf.y) hVar.f(j11);
+                                tf.y yVar4 = (tf.y) hVar.f(j11);
                                 hVar.l(j11);
                                 if (yVar4 != null) {
                                     arrayList4.remove(yVar4);
                                 }
                             } else {
-                                uf.y yVar5 = (uf.y) hVar.f(j11);
+                                tf.y yVar5 = (tf.y) hVar.f(j11);
                                 if (yVar5 != null) {
                                     yVar5.a = chat;
                                 }
@@ -219,17 +219,17 @@ public final /* synthetic */ class v implements Runnable {
                         MessagesStorage.getInstance(i17).getUsersInternal(arrayList, arrayList5);
                         for (int i21 = 0; i21 < arrayList5.size(); i21++) {
                             TLRPC.User user = arrayList5.get(i21);
-                            uf.y yVar6 = (uf.y) hVar.f(user.id);
+                            tf.y yVar6 = (tf.y) hVar.f(user.id);
                             if (yVar6 != null) {
                                 yVar6.a = user;
                             }
                         }
                     }
-                    Collections.sort(arrayList4, new du(19));
-                    AndroidUtilities.runOnUIThread(new n71(xVar, arrayList4, hVar, 27));
+                    Collections.sort(arrayList4, new eu(19));
+                    AndroidUtilities.runOnUIThread(new m71(xVar, arrayList4, hVar, 26));
                     break;
-                } catch (Exception e6) {
-                    FileLog.e(e6);
+                } catch (Exception e) {
+                    FileLog.e(e);
                 }
                 break;
         }

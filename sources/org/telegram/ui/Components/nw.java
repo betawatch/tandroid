@@ -1,28 +1,65 @@
 package org.telegram.ui.Components;
 
-import android.os.Build;
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class nw extends lz {
-    public final /* synthetic */ mz d;
+public final class nw extends FrameLayout {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ kz b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nw(mz mzVar) {
-        super(mzVar, 2);
-        this.d = mzVar;
+    public nw(kz kzVar, Context context, boolean z4) {
+        super(context);
+        this.b = kzVar;
+        this.a = z4;
     }
 
-    @Override // org.telegram.ui.Components.lz, f2.a1
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        mz mzVar;
-        og.e eVar;
-        super.b(recyclerView, i10, i11);
-        if (Build.VERSION.SDK_INT < 31 || (eVar = (mzVar = this.d).g2) == null) {
-            return;
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        kz kzVar = this.b;
+        tw twVar = kzVar.y0;
+        pw pwVar = kzVar.A0;
+        sw swVar = kzVar.D0;
+        if (this.a || !(view == pwVar || view == swVar)) {
+            return super.drawChild(canvas, view, j10);
         }
-        eVar.f(i10, i11);
-        mzVar.C();
+        canvas.save();
+        float y10 = twVar.getY() + twVar.getMeasuredHeight() + 1.0f;
+        if (view == pwVar) {
+            y10 = Math.max(y10, swVar.getY() + swVar.getMeasuredHeight() + 1.0f);
+        }
+        canvas.clipRect(0.0f, y10 - (AndroidUtilities.dp(16.0f) * kzVar.a.e), getMeasuredWidth(), getMeasuredHeight());
+        boolean drawChild = super.drawChild(canvas, view, j10);
+        canvas.restore();
+        return drawChild;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        kz kzVar = this.b;
+        kzVar.H0 = true;
+        kzVar.a0();
+        zw zwVar = kzVar.Q0;
+        if (zwVar != null) {
+            zwVar.a();
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        kz kzVar = this.b;
+        kzVar.H0 = false;
+        kzVar.a0();
+        zw zwVar = kzVar.Q0;
+        if (zwVar != null) {
+            zwVar.a();
+        }
     }
 }

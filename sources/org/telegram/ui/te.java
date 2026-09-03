@@ -1,317 +1,106 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FlagSecureReason;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagePreviewParams;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class te implements org.telegram.ui.ActionBar.c2, org.telegram.ui.Components.go, MessagesStorage.BooleanCallback, org.telegram.ui.Components.wj0, ResultCallback, kh.d, xg.a, xg.b, u60, ns, org.telegram.ui.Components.kl0, xg.d, org.telegram.ui.Components.yk0, FlagSecureReason.FlagSecureCondition, zu0 {
+public final /* synthetic */ class te implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ xn b;
+    public final /* synthetic */ zn b;
+    public final /* synthetic */ MessageObject c;
 
-    public /* synthetic */ te(xn xnVar, int i10) {
+    public /* synthetic */ te(zn znVar, MessageObject messageObject, int i10) {
         this.a = i10;
-        this.b = xnVar;
+        this.b = znVar;
+        this.c = messageObject;
     }
 
-    @Override // org.telegram.ui.ns
-    public void a() {
-        xn xnVar = this.b;
-        if (xnVar.v3 != null || xnVar.getParentActivity() == null) {
-            return;
-        }
-        xnVar.Q7();
-        xnVar.v3.m(xnVar.Q5, xnVar.f, 8);
-    }
-
-    @Override // org.telegram.ui.Components.go
-    public void b(TLRPC.Document document) {
-        switch (this.a) {
-            case 2:
-                xn.u0(this.b, document);
-                break;
-            default:
-                xn.v0(this.b, document);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.zu0
-    public void c(float[] fArr) {
-        xn xnVar = this.b;
-        fArr[1] = xnVar.u0.getBottom() - xnVar.xa;
-        fArr[0] = (xnVar.u0.getTop() + xnVar.p9) - AndroidUtilities.dp(4.0f);
-    }
-
-    @Override // org.telegram.ui.Components.yk0
-    public void d() {
-        xn xnVar = this.b;
-        xnVar.q9(1);
-        xnVar.r9();
-    }
-
-    @Override // org.telegram.ui.Components.wj0
-    public void e(ArrayList arrayList) {
-        switch (this.a) {
-            case 9:
-                xn xnVar = this.b;
-                if (xnVar.getParentActivity() != null && xnVar.getParentActivity() != null) {
-                    fi fiVar = new fi(xnVar, xnVar, xnVar.getParentActivity(), xnVar.ba, arrayList);
-                    fiVar.setCalcMandatoryInsets(xnVar.x9());
-                    fiVar.setDimBehind(false);
-                    xnVar.A7(false);
-                    xnVar.showDialog(fiVar);
-                    break;
-                }
-                break;
-            default:
-                xn xnVar2 = this.b;
-                if (xnVar2.getParentActivity() != null && xnVar2.getParentActivity() != null) {
-                    cj cjVar = new cj(xnVar2, xnVar2, xnVar2.getParentActivity(), xnVar2.ba, arrayList);
-                    cjVar.setCalcMandatoryInsets(xnVar2.x9());
-                    cjVar.setDimBehind(false);
-                    xnVar2.A7(false);
-                    xnVar2.showDialog(cjVar);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.kl0
-    public boolean f(int i10, View view) {
-        xn xnVar = this.b;
-        boolean z4 = false;
-        if (xnVar.getParentActivity() != null) {
-            uf.u0 adapter = xnVar.F1.getAdapter();
-            if ((adapter.F != null || adapter.G != null) && i10 != 0) {
-                uf.u0 adapter2 = xnVar.F1.getAdapter();
-                if (adapter2.t0 != null && !adapter2.e0) {
-                    return false;
-                }
-                Object J = xnVar.F1.getAdapter().J(i10 - 1);
-                if (J instanceof uf.r0) {
-                    uf.r0 r0Var = (uf.r0) J;
-                    if (xnVar.F1.getAdapter().G != null && org.telegram.ui.Components.i51.h) {
-                        xnVar.V.setFieldText("");
-                        jk jkVar = xnVar.V;
-                        String str = r0Var.a;
-                        TLRPC.Chat chat = xnVar.e;
-                        if (chat != null && chat.megagroup) {
-                            z4 = true;
-                        }
-                        jkVar.a1(null, str, true, z4);
-                        return true;
-                    }
-                } else if (J instanceof String) {
-                    if (xnVar.F1.getAdapter().G == null) {
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(xnVar.getParentActivity(), 0, xnVar.ba);
-                        alertDialog$Builder.a.O = LocaleController.getString(R.string.AppName);
-                        alertDialog$Builder.a.Q = LocaleController.getString(R.string.ClearSearch);
-                        alertDialog$Builder.k(LocaleController.getString(R.string.ClearButton), new te(xnVar, 10));
-                        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                        xnVar.showDialog(alertDialog$Builder.a);
-                        return true;
-                    }
-                    if (org.telegram.ui.Components.i51.h) {
-                        xnVar.V.setFieldText("");
-                        jk jkVar2 = xnVar.V;
-                        String str2 = (String) J;
-                        TLRPC.Chat chat2 = xnVar.e;
-                        if (chat2 != null && chat2.megagroup) {
-                            z4 = true;
-                        }
-                        jkVar2.a1(null, str2, true, z4);
-                        return true;
-                    }
-                }
-            }
-        }
-        return false;
-    }
-
-    @Override // kh.d
-    public void g(boolean z4, boolean z10) {
-        xn xnVar = this.b;
-        xnVar.J0.i(xnVar.ca.c(), z4, z10);
-    }
-
-    @Override // org.telegram.ui.u60
-    public void i(int i10, ArrayList arrayList) {
-        xn xnVar = this.b;
-        xnVar.getMessagesController().addUsersToChat(xnVar.e, xnVar, arrayList, i10, null, null, null);
-        xnVar.getMessagesController().hidePeerSettingsBar(xnVar.Q5, xnVar.f, xnVar.e);
-        xnVar.Qc(true);
-        xnVar.oc(true);
-    }
-
-    @Override // org.telegram.ui.ActionBar.c2
-    public void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        TLRPC.WebPage webPage;
         switch (this.a) {
             case 0:
-                qk qkVar = this.b.y0;
-                if (qkVar != null) {
-                    qkVar.callOnClick();
-                    break;
+                MessageObject messageObject = this.c;
+                TLRPC.MessageMedia messageMedia = messageObject.messageOwner.media;
+                if (messageMedia != null && (webPage = messageMedia.webpage) != null && webPage.cached_page != null) {
+                    LaunchActivity launchActivity = LaunchActivity.D1;
+                    if (launchActivity == null || launchActivity.P() == null || LaunchActivity.D1.P().k(messageObject) == null) {
+                        this.b.createArticleViewer(false).N(messageObject, null, null, null);
+                        break;
+                    }
                 }
                 break;
             case 1:
-                this.b.finishFragment();
-                break;
-            case 2:
-            case 3:
-            case 7:
-            case 9:
-            case 11:
-            case 14:
-            default:
-                xn xnVar = this.b;
-                MessageObject messageObject = (MessageObject) xnVar.G4.get(Integer.valueOf(xnVar.I4));
-                if (messageObject == null) {
-                    messageObject = (MessageObject) xnVar.l6[0].get(xnVar.I4);
+                zn znVar = this.b;
+                znVar.getClass();
+                MessageObject messageObject2 = this.c;
+                TLRPC.Message message = messageObject2.messageOwner;
+                int i10 = message.ttl;
+                boolean z4 = i10 != Integer.MAX_VALUE;
+                int i11 = i10 == Integer.MAX_VALUE ? 0 : i10;
+                message.destroyTime = znVar.getConnectionsManager().getCurrentTime() + i11;
+                messageObject2.messageOwner.destroyTimeMillis = znVar.getConnectionsManager().getCurrentTimeMillis() + (i11 * 1000);
+                if (znVar.h == null) {
+                    znVar.getMessagesController().markMessageAsRead2(znVar.Q5, messageObject2.getId(), null, i11, 0L, z4);
+                    break;
+                } else {
+                    znVar.getMessagesController().markMessageAsRead(znVar.Q5, messageObject2.messageOwner.random_id, i11);
+                    break;
                 }
-                xnVar.cc(messageObject);
+            case 2:
+                int id2 = this.c.getId();
+                zn znVar2 = this.b;
+                znVar2.Xa(id2, 0, true, 0, true, 0, null, null, new pg(znVar2, 13));
+                if (znVar2.e6.isEmpty()) {
+                    znVar2.Lb(false);
+                    break;
+                }
+                break;
+            case 3:
+                zn znVar3 = this.b;
+                znVar3.getClass();
+                MessageObject messageObject3 = this.c;
+                znVar3.Xa(messageObject3.getReplyMsgId(), messageObject3.messageOwner.id, true, messageObject3.getDialogId() == znVar3.I6 ? 1 : 0, false, 0, null, ((TLRPC.TL_messageActionPollAppendAnswer) messageObject3.messageOwner.action).answer.option, null);
                 break;
             case 4:
-                xn xnVar2 = this.b;
-                MessagePreviewParams messagePreviewParams = xnVar2.c5;
-                if (messagePreviewParams != null) {
-                    messagePreviewParams.updateForward(null, xnVar2.Q5);
-                }
-                xnVar2.j8();
+                zn znVar4 = this.b;
+                znVar4.getClass();
+                MessageObject messageObject4 = this.c;
+                znVar4.Xa(messageObject4.getReplyMsgId(), messageObject4.messageOwner.id, true, messageObject4.getDialogId() == znVar4.I6 ? 1 : 0, false, 0, null, null, null);
                 break;
             case 5:
-                this.b.ca(1);
+                zn znVar5 = this.b;
+                znVar5.getClass();
+                MessageObject messageObject5 = this.c;
+                znVar5.j(messageObject5.getReplyMsgId(), messageObject5.messageOwner.id, true, messageObject5.getDialogId() == znVar5.I6 ? 1 : 0, false, 0);
                 break;
             case 6:
-                xn xnVar3 = this.b;
-                xnVar3.getMessagesController().unblockPeer(xnVar3.f.id);
-                break;
-            case 8:
-                this.b.finishFragment();
-                break;
-            case 10:
-                uf.u0 adapter = this.b.F1.getAdapter();
-                adapter.w.c();
-                adapter.F.clear();
-                adapter.l();
-                org.telegram.ui.Components.ma0 ma0Var = adapter.S;
-                if (ma0Var != null) {
-                    ma0Var.a(false);
+                zn znVar6 = this.b;
+                znVar6.getClass();
+                MessageObject messageObject6 = this.c;
+                if (!messageObject6.isVideo()) {
+                    MediaController.getInstance().playMessage(messageObject6);
+                    break;
+                } else {
+                    znVar6.ha(null, messageObject6);
                     break;
                 }
+            case 7:
+                zn znVar7 = this.b;
+                znVar7.getMessagesController().pinMessage(znVar7.e, znVar7.f, this.c.getId(), true, false, false);
+                znVar7.x3 = null;
                 break;
-            case 12:
-                xn xnVar4 = this.b;
-                xnVar4.showDialog(new ul(xnVar4, xnVar4.getParentActivity(), xnVar4));
-                break;
-            case 13:
-                xn xnVar5 = this.b;
-                xnVar5.Q7();
-                UndoView undoView = xnVar5.v3;
-                if (undoView != null) {
-                    undoView.j(75, 0L, null);
-                    break;
-                }
-                break;
-            case 15:
-                xn xnVar6 = this.b;
-                MessagePreviewParams messagePreviewParams2 = xnVar6.c5;
-                if (messagePreviewParams2 != null && messagePreviewParams2.quote != null) {
-                    xnVar6.ca(0);
-                    break;
-                }
-                break;
-            case 16:
-                this.b.e9(true);
+            default:
+                zn znVar8 = this.b;
+                org.telegram.ui.Components.qc.a0(znVar8).c(LocaleController.getString(R.string.AdHidden)).j();
+                MessageObject messageObject7 = this.c;
+                znVar8.Fa(messageObject7);
+                znVar8.Ha(messageObject7);
                 break;
         }
-    }
-
-    @Override // xg.a
-    public void k(int i10) {
-        xn xnVar = this.b;
-        if (i10 == 1) {
-            xnVar.U9();
-            return;
-        }
-        if (i10 == 2) {
-            xnVar.H9();
-            return;
-        }
-        if (i10 == 3) {
-            xnVar.A4 = true;
-            xnVar.getMessagesController().getNextReactionMention(xnVar.Q5, xnVar.b(), xnVar.i1, new jg(xnVar, 0));
-            return;
-        }
-        if (i10 == 4) {
-            xnVar.A4 = true;
-            xnVar.getMessagesController().getNextPollVotesMention(xnVar.Q5, xnVar.b(), xnVar.j1, new jg(xnVar, 1));
-            return;
-        }
-        if (i10 == 6) {
-            xnVar.Y8(true);
-            return;
-        }
-        if (i10 == 5) {
-            xnVar.Y8(false);
-        } else if (i10 == 0) {
-            oh.u2 u2Var = xnVar.G1;
-            if (u2Var != null) {
-                u2Var.I1(null, 0);
-            }
-            xnVar.X9();
-        }
-    }
-
-    @Override // org.telegram.tgnet.ResultCallback
-    public void onComplete(Object obj) {
-        org.telegram.ui.ActionBar.f4 f4Var = (org.telegram.ui.ActionBar.f4) obj;
-        xn xnVar = this.b;
-        vn vnVar = xnVar.ba;
-        vnVar.i(f4Var, vnVar.h, xnVar.M5 != 0, null, false);
-    }
-
-    @Override // org.telegram.tgnet.ResultCallback
-    public /* synthetic */ void onError(Throwable th2) {
-        org.telegram.tgnet.k.a(this, th2);
-    }
-
-    @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
-    public void run(boolean z4) {
-        xn xnVar = this.b;
-        NotificationCenter notificationCenter = xnVar.getNotificationCenter();
-        int i10 = NotificationCenter.closeChats;
-        notificationCenter.removeObserver(xnVar, i10);
-        xnVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(i10, new Object[0]);
-        xnVar.finishFragment();
-        xnVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needDeleteDialog, Long.valueOf(xnVar.Q5), xnVar.f, xnVar.e, Boolean.valueOf(z4));
-    }
-
-    @Override // org.telegram.tgnet.ResultCallback
-    public /* synthetic */ void onError(TLRPC.TL_error tL_error) {
-        org.telegram.tgnet.k.b(this, tL_error);
-    }
-
-    @Override // org.telegram.messenger.FlagSecureReason.FlagSecureCondition
-    public boolean run() {
-        xn xnVar = this.b;
-        return xnVar.h != null || xnVar.y9();
-    }
-
-    @Override // org.telegram.ui.u60
-    public /* synthetic */ void h(TLRPC.User user) {
     }
 }

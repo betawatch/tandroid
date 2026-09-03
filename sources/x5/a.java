@@ -14,10 +14,10 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.sl0;
 import s5.m;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class a {
     public static int h;
@@ -106,7 +106,7 @@ public final class a {
                     Log.d("Rpc", "Messenger failed, fallback to startService");
                 }
             }
-            taskCompletionSource.getTask().addOnCompleteListener(l.a, new m(this, b10, this.d.schedule(new tl0(taskCompletionSource, 11), 30L, TimeUnit.SECONDS), 7));
+            taskCompletionSource.getTask().addOnCompleteListener(l.a, new m(this, b10, this.d.schedule(new sl0(taskCompletionSource, 11), 30L, TimeUnit.SECONDS), 8));
             return taskCompletionSource.getTask();
         }
         if (this.c.h() == 2) {
@@ -114,7 +114,7 @@ public final class a {
         } else {
             this.b.startService(intent);
         }
-        taskCompletionSource.getTask().addOnCompleteListener(l.a, new m(this, b10, this.d.schedule(new tl0(taskCompletionSource, 11), 30L, TimeUnit.SECONDS), 7));
+        taskCompletionSource.getTask().addOnCompleteListener(l.a, new m(this, b10, this.d.schedule(new sl0(taskCompletionSource, 11), 30L, TimeUnit.SECONDS), 8));
         return taskCompletionSource.getTask();
     }
 

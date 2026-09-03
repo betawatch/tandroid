@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class q41 extends FrameLayout {
     public float a;
@@ -17,7 +17,7 @@ public final class q41 extends FrameLayout {
     public int e;
     public final kb.a f;
     public final o1.j h;
-    public final u0 n;
+    public final w0 n;
     public final /* synthetic */ SecretMediaViewer r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -30,10 +30,10 @@ public final class q41 extends FrameLayout {
         kb.a aVar = new kb.a(0.0f);
         this.f = aVar;
         o1.j jVar = new o1.j(aVar);
-        jVar.u = yh.n(0.0f, 750.0f, 1.0f);
-        jVar.b(new md0(this, 5));
+        jVar.u = ai.m(0.0f, 750.0f, 1.0f);
+        jVar.b(new nd0(this, 5));
         this.h = jVar;
-        this.n = new u0("progress", 6);
+        this.n = new w0("progress", 6);
         setWillNotDraw(false);
     }
 
@@ -84,12 +84,12 @@ public final class q41 extends FrameLayout {
                 this.e = ceil;
             }
         }
-        org.telegram.ui.Components.l71 l71Var = secretMediaViewer.N;
+        org.telegram.ui.Components.k71 k71Var = secretMediaViewer.N;
         int B = org.telegram.messenger.y3.B(16.0f, getMeasuredWidth(), ceil);
         int measuredHeight = getMeasuredHeight();
-        l71Var.h = B;
-        l71Var.i = measuredHeight;
-        View view = l71Var.v;
+        k71Var.h = B;
+        k71Var.i = measuredHeight;
+        View view = k71Var.v;
         if (view != null) {
             view.invalidate();
         }

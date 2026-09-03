@@ -1,69 +1,60 @@
 package org.telegram.ui;
 
-import android.view.View;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* JADX WARN: Enum visitor error
+jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'f' uses external variables
+	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
+	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
+	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
+	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
+ */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class h5 implements View.OnAttachStateChangeListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class h5 {
+    public static final h5 d;
+    public static final h5 e;
+    public static final h5 f;
+    public static final h5 h;
+    public static final h5 n;
+    public static final h5 r;
+    public static final /* synthetic */ h5[] s;
+    public final String a;
+    public final int b;
+    public final int c;
 
-    public /* synthetic */ h5(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    static {
+        h5 h5Var = new h5(0, R.string.OpenProfile, R.drawable.msg_openprofile, "OPEN_PROFILE", "OpenProfile");
+        d = h5Var;
+        h5 h5Var2 = new h5(1, R.string.OpenChannel2, R.drawable.msg_channel, "OPEN_CHANNEL", "OpenChannel2");
+        e = h5Var2;
+        int i10 = R.string.OpenGroup2;
+        int i11 = R.drawable.msg_discussion;
+        h5 h5Var3 = new h5(2, i10, i11, "OPEN_GROUP", "OpenGroup2");
+        f = h5Var3;
+        h5 h5Var4 = new h5(3, R.string.SendMessage, i11, "SEND_MESSAGE", "SendMessage");
+        h = h5Var4;
+        h5 h5Var5 = new h5(4, R.string.Mention, R.drawable.msg_mention, "MENTION", "Mention");
+        n = h5Var5;
+        h5 h5Var6 = new h5(5, R.string.AvatarPreviewSearchMessages, R.drawable.msg_search, "SEARCH_MESSAGES", "AvatarPreviewSearchMessages");
+        r = h5Var6;
+        s = new h5[]{h5Var, h5Var2, h5Var3, h5Var4, h5Var5, h5Var6};
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        switch (this.a) {
-            case 0:
-                ((i5) this.b).b.onAttachedToWindow();
-                break;
-            case 1:
-                ((org.telegram.ui.Components.j5) this.b).a();
-                break;
-            case 2:
-                ((q70) this.b).b.onAttachedToWindow();
-                break;
-            case 3:
-                org.telegram.ui.Components.j5 j5Var = ((ip0) this.b).i;
-                if (j5Var != null) {
-                    j5Var.a();
-                    break;
-                }
-                break;
-            default:
-                q81 q81Var = (q81) this.b;
-                q81Var.h.a();
-                q81Var.n.a();
-                break;
-        }
+    public h5(int i10, int i11, int i12, String str, String str2) {
+        this.a = str2;
+        this.b = i11;
+        this.c = i12;
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        switch (this.a) {
-            case 0:
-                ((i5) this.b).b.onDetachedFromWindow();
-                break;
-            case 1:
-                ((org.telegram.ui.Components.j5) this.b).b();
-                break;
-            case 2:
-                ((q70) this.b).b.onDetachedFromWindow();
-                break;
-            case 3:
-                org.telegram.ui.Components.j5 j5Var = ((ip0) this.b).i;
-                if (j5Var != null) {
-                    j5Var.b();
-                    break;
-                }
-                break;
-            default:
-                q81 q81Var = (q81) this.b;
-                q81Var.h.b();
-                q81Var.n.b();
-                break;
-        }
+    public static h5 valueOf(String str) {
+        return (h5) Enum.valueOf(h5.class, str);
+    }
+
+    public static h5[] values() {
+        return (h5[]) s.clone();
     }
 }

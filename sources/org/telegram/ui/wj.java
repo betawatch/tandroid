@@ -1,59 +1,25 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class wj implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ xn b;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
 
-    public /* synthetic */ wj(xn xnVar, int i10) {
-        this.a = i10;
-        this.b = xnVar;
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* loaded from: classes3.dex */
+public final class wj extends f2.v {
+    public final /* synthetic */ zn c;
+
+    public wj(zn znVar) {
+        this.c = znVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        xn xnVar = this.b;
-        switch (i10) {
-            case 0:
-                xn.i2(xnVar);
-                break;
-            case 1:
-                xn.i2(xnVar);
-                break;
-            case 2:
-                int i11 = xn.Ec;
-                xnVar.Ma();
-                break;
-            case 3:
-                int i12 = xn.Ec;
-                xnVar.Ma();
-                break;
-            case 4:
-                int i13 = xn.Ec;
-                xnVar.Ma();
-                break;
-            case 5:
-                int i14 = xn.Ec;
-                xnVar.Ma();
-                break;
-            case 6:
-                int i15 = xn.Ec;
-                xnVar.Ma();
-                break;
-            case 7:
-                int i16 = xn.Ec;
-                xnVar.Ma();
-                break;
-            case 8:
-                int i17 = xn.Ec;
-                xnVar.Ma();
-                break;
-            default:
-                int i18 = xn.Ec;
-                xnVar.Ma();
-                break;
-        }
+    @Override // f2.v
+    public final int i(int i10) {
+        int i11;
+        MessageObject messageObject;
+        MessageObject.GroupedMessages X8;
+        zn znVar = this.c;
+        lm lmVar = znVar.x0;
+        int i12 = lmVar.G;
+        return (i10 < i12 || i10 >= lmVar.H || (i11 = i10 - i12) < 0 || i11 >= lmVar.L().size() || (X8 = znVar.X8((messageObject = (MessageObject) znVar.x0.L().get(i11)))) == null) ? MediaDataController.MAX_STYLE_RUNS_COUNT : X8.getPosition(messageObject).spanSize;
     }
 }

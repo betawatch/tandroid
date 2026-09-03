@@ -1,14 +1,15 @@
 package w8;
 
+import c9.u;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.internal.t;
 import java.util.concurrent.Executor;
 import l8.j;
 import ld.y0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class h implements c9.e, t {
+public final class h implements c9.f, t {
     public static final h b = new h(0);
     public static final h c = new h(1);
     public static final h d = new h(2);
@@ -36,23 +37,23 @@ public final class h implements c9.e, t {
         return new c(str);
     }
 
-    @Override // c9.e
-    public Object e0(c5.j jVar) {
+    @Override // c9.f
+    public Object d0(c5.j jVar) {
         switch (this.a) {
             case 0:
-                Object f10 = jVar.f(new c9.t(y8.a.class, Executor.class));
+                Object f10 = jVar.f(new u(y8.a.class, Executor.class));
                 kotlin.jvm.internal.j.d(f10, "c.get(Qualified.qualifie…a, Executor::class.java))");
                 return new y0((Executor) f10);
             case 1:
-                Object f11 = jVar.f(new c9.t(y8.c.class, Executor.class));
+                Object f11 = jVar.f(new u(y8.c.class, Executor.class));
                 kotlin.jvm.internal.j.d(f11, "c.get(Qualified.qualifie…a, Executor::class.java))");
                 return new y0((Executor) f11);
             case 2:
-                Object f12 = jVar.f(new c9.t(y8.b.class, Executor.class));
+                Object f12 = jVar.f(new u(y8.b.class, Executor.class));
                 kotlin.jvm.internal.j.d(f12, "c.get(Qualified.qualifie…a, Executor::class.java))");
                 return new y0((Executor) f12);
             default:
-                Object f13 = jVar.f(new c9.t(y8.d.class, Executor.class));
+                Object f13 = jVar.f(new u(y8.d.class, Executor.class));
                 kotlin.jvm.internal.j.d(f13, "c.get(Qualified.qualifie…a, Executor::class.java))");
                 return new y0((Executor) f13);
         }

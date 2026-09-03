@@ -6,7 +6,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import java.io.Writer;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class u {
     public final Object fromJson(Reader reader) {
@@ -22,8 +22,8 @@ public abstract class u {
             lVar.E = new int[32];
             lVar.L(iVar);
             return read(lVar);
-        } catch (IOException e6) {
-            throw new j(e6);
+        } catch (IOException e) {
+            throw new j(e);
         }
     }
 
@@ -42,8 +42,8 @@ public abstract class u {
             sa.n nVar = new sa.n();
             write(nVar, obj);
             return nVar.u();
-        } catch (IOException e6) {
-            throw new j(e6);
+        } catch (IOException e) {
+            throw new j(e);
         }
     }
 
@@ -58,8 +58,8 @@ public abstract class u {
         try {
             toJson(stringWriter, obj);
             return stringWriter.toString();
-        } catch (IOException e6) {
-            throw new j(e6);
+        } catch (IOException e) {
+            throw new j(e);
         }
     }
 }

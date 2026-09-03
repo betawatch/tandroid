@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class a0 extends ReplacementSpan {
     public static final /* synthetic */ int d = 0;
@@ -22,7 +22,7 @@ public final class a0 extends ReplacementSpan {
 
     public a0(View[] viewArr) {
         this.a = 2;
-        this.b = new pr(0.33d, 0.0d, 0.67d, 1.0d);
+        this.b = new mr(0.33d, 0.0d, 0.67d, 1.0d);
         this.c = viewArr;
     }
 
@@ -47,19 +47,19 @@ public final class a0 extends ReplacementSpan {
                 float f13 = dpf2 / 2.0f;
                 rectF2.set(f10, f12 - f13, ((int) (((k01) this.c).c + AndroidUtilities.dp(10.0f))) + f10, f13 + f12);
                 Paint paint3 = (Paint) this.b;
-                int i15 = org.telegram.ui.ActionBar.k6.z6;
-                paint3.setColor(org.telegram.ui.ActionBar.k6.l1(0.15f, org.telegram.ui.ActionBar.k6.w0(null, i15, false)));
+                int i15 = org.telegram.ui.ActionBar.j6.z6;
+                paint3.setColor(org.telegram.ui.ActionBar.j6.l1(0.15f, org.telegram.ui.ActionBar.j6.w0(null, i15, false)));
                 canvas.drawRoundRect(rectF2, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), paint3);
-                ((k01) this.c).c(f10 + AndroidUtilities.dp(5.0f), f12, Utilities.clamp((paint.getAlpha() * 2) / 255.0f, 1.0f, 0.0f), org.telegram.ui.ActionBar.k6.w0(null, i15, false), canvas);
+                ((k01) this.c).c(f10 + AndroidUtilities.dp(5.0f), f12, Utilities.clamp((paint.getAlpha() * 2) / 255.0f, 1.0f, 0.0f), org.telegram.ui.ActionBar.j6.w0(null, i15, false), canvas);
                 break;
             default:
-                pr prVar = (pr) this.b;
+                mr mrVar = (mr) this.b;
                 canvas.save();
                 canvas.translate(f10 + AndroidUtilities.dp(4.0f), i13 / 2.0f);
                 long uptimeMillis = (SystemClock.uptimeMillis() % 250) + 500;
                 for (int i16 = 0; i16 < 3; i16++) {
                     float min = Math.min(1.0f, (((i16 * 250) + uptimeMillis) % 750) / 667.0f);
-                    canvas.drawCircle(AndroidUtilities.dpf2((prVar.getInterpolation(min) * 16.0f) + 1.667f), AndroidUtilities.dp(3.0f), AndroidUtilities.dpf2((min <= 0.425f ? prVar.getInterpolation(min / 0.425f) : 1.0f - prVar.getInterpolation((min - 0.425f) / 0.575f)) * 2.0f), paint);
+                    canvas.drawCircle(AndroidUtilities.dpf2((mrVar.getInterpolation(min) * 16.0f) + 1.667f), AndroidUtilities.dp(3.0f), AndroidUtilities.dpf2((min <= 0.425f ? mrVar.getInterpolation(min / 0.425f) : 1.0f - mrVar.getInterpolation((min - 0.425f) / 0.575f)) * 2.0f), paint);
                 }
                 canvas.restore();
                 for (View view : (View[]) this.c) {

@@ -7,7 +7,7 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.telephony.TelephonyManager;
 import android.util.SparseArray;
-import j7.j0;
+import j7.i0;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Calendar;
@@ -15,11 +15,11 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.TimeZone;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.Components.ai;
-import org.telegram.ui.yh;
+import org.telegram.ui.Components.tp0;
+import vh.w2;
 import w9.d;
 import x2.c;
-import x2.e;
+import x2.f;
 import x2.g;
 import x2.h;
 import x2.i;
@@ -34,12 +34,12 @@ import x2.s;
 import x2.t;
 import x2.u;
 import x2.v;
-import z2.f;
+import z2.e;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class b implements f {
-    public final ai a;
+public final class b implements e {
+    public final tp0 a;
     public final ConnectivityManager b;
     public final Context c;
     public final URL d;
@@ -52,7 +52,7 @@ public final class b implements f {
         c cVar = c.a;
         dVar.b(o.class, cVar);
         dVar.b(i.class, cVar);
-        x2.f fVar = x2.f.a;
+        f fVar = f.a;
         dVar.b(s.class, fVar);
         dVar.b(l.class, fVar);
         x2.d dVar2 = x2.d.a;
@@ -61,14 +61,14 @@ public final class b implements f {
         x2.b bVar = x2.b.a;
         dVar.b(x2.a.class, bVar);
         dVar.b(h.class, bVar);
-        e eVar = e.a;
+        x2.e eVar = x2.e.a;
         dVar.b(r.class, eVar);
         dVar.b(k.class, eVar);
         g gVar = g.a;
         dVar.b(v.class, gVar);
         dVar.b(n.class, gVar);
         dVar.d = true;
-        this.a = new ai(dVar, 19);
+        this.a = new tp0(dVar, 23);
         this.c = context;
         this.b = (ConnectivityManager) context.getSystemService("connectivity");
         this.d = b(a.c);
@@ -80,8 +80,8 @@ public final class b implements f {
     public static URL b(String str) {
         try {
             return new URL(str);
-        } catch (MalformedURLException e6) {
-            throw new IllegalArgumentException(yh.k("Invalid url: ", str), e6);
+        } catch (MalformedURLException e) {
+            throw new IllegalArgumentException(w2.e("Invalid url: ", str), e);
         }
     }
 
@@ -149,8 +149,8 @@ public final class b implements f {
             c3.c("mcc_mnc", ((TelephonyManager) context.getSystemService("phone")).getSimOperator());
             try {
                 i11 = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
-            } catch (PackageManager.NameNotFoundException e6) {
-                j0.b("CctTransportBackend", "Unable to find version code for package", e6);
+            } catch (PackageManager.NameNotFoundException e) {
+                i0.b("CctTransportBackend", "Unable to find version code for package", e);
             }
             c3.c("application_build", Integer.toString(i11));
             return c3.j();

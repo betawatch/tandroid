@@ -10,7 +10,7 @@ import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class x implements Map, Serializable, j$.util.Map {
     public transient k0 a;
@@ -23,7 +23,7 @@ public abstract class x implements Map, Serializable, j$.util.Map {
         }
         Set<Map.Entry> entrySet = map.entrySet();
         boolean z4 = entrySet != null;
-        b4.e0 e0Var = new b4.e0(z4 ? entrySet.size() : 4, 22);
+        b4.e0 e0Var = new b4.e0(z4 ? entrySet.size() : 4, 23);
         if (z4) {
             int size = entrySet.size() * 2;
             Object[] objArr = (Object[]) e0Var.c;

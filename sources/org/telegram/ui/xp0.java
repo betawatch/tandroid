@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class xp0 extends FrameLayout {
     public int B;
@@ -57,7 +57,7 @@ public final class xp0 extends FrameLayout {
         this.c = paint3;
         paint3.setColor(-939524096);
         setBackgroundColor(-13421773);
-        setOnTouchListener(new f0(this, 4));
+        setOnTouchListener(new g0(this, 4));
     }
 
     @Override // android.view.View
@@ -113,11 +113,11 @@ public final class xp0 extends FrameLayout {
             float f29 = this.d;
             float f30 = i12;
             float f31 = this.h;
-            canvas.drawRect(((f29 / 3.0f) * f30) + f28, f31 + f17, w.c.c(f29, 3.0f, f30, f28 + f17), (f31 + this.e) - f17, this.b);
+            canvas.drawRect(((f29 / 3.0f) * f30) + f28, f31 + f17, vh.w2.c(f29, 3.0f, f30, f28 + f17), (f31 + this.e) - f17, this.b);
             float f32 = this.f;
             float f33 = this.h;
             float f34 = this.e;
-            canvas.drawRect(f32 + f17, w.c.c(f34, 3.0f, f30, f33), this.d + (f32 - f17), ((f34 / 3.0f) * f30) + f33 + f17, this.b);
+            canvas.drawRect(f32 + f17, vh.w2.c(f34, 3.0f, f30, f33), this.d + (f32 - f17), ((f34 / 3.0f) * f30) + f33 + f17, this.b);
         }
     }
 

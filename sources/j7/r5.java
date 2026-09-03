@@ -1,24 +1,24 @@
 package j7;
 
-import android.os.Bundle;
-import j$.util.DesugarCollections;
-import java.util.HashMap;
-import java.util.Map;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class r5 {
-    public static Map a(String str, Bundle bundle) {
-        Map map = (Map) bundle.getSerializable(str);
-        if (map == null) {
-            return com.google.android.gms.internal.cast.q0.n;
+    public static void a(Status status, Object obj, TaskCompletionSource taskCompletionSource) {
+        if (status.e()) {
+            taskCompletionSource.setResult(obj);
+        } else {
+            taskCompletionSource.setException(b6.m.m(status));
         }
-        HashMap hashMap = new HashMap();
-        for (Map.Entry entry : map.entrySet()) {
-            if (entry != null && entry.getKey() != null && entry.getValue() != null) {
-                hashMap.put((Integer) entry.getKey(), (Integer) entry.getValue());
-            }
+    }
+
+    public static void b(Status status, Object obj, TaskCompletionSource taskCompletionSource) {
+        if (status.e()) {
+            taskCompletionSource.trySetResult(obj);
+        } else {
+            taskCompletionSource.trySetException(b6.m.m(status));
         }
-        return DesugarCollections.unmodifiableMap(hashMap);
     }
 }

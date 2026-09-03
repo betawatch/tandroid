@@ -18,7 +18,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public abstract class au0 extends NestedScrollView {
     public final Paint T;
@@ -57,24 +57,24 @@ public abstract class au0 extends NestedScrollView {
         this.U = jVar;
         jVar.u.b(100.0f);
         jVar.j = 1.0f;
-        jVar.b(new md0(this, i10));
-        jVar.a(new o9(this, i10));
+        jVar.b(new nd0(this, i10));
+        jVar.a(new q9(this, i10));
         jVar.u.a(1.0f);
         try {
             Method declaredMethod = NestedScrollView.class.getDeclaredMethod("d", null);
             this.c0 = declaredMethod;
             declaredMethod.setAccessible(true);
-        } catch (Exception e6) {
+        } catch (Exception e) {
             this.c0 = null;
-            FileLog.e(e6);
+            FileLog.e(e);
         }
         try {
             Field declaredField = NestedScrollView.class.getDeclaredField("d");
             declaredField.setAccessible(true);
             this.d0 = (OverScroller) declaredField.get(this);
-        } catch (Exception e10) {
+        } catch (Exception e6) {
             this.d0 = null;
-            FileLog.e(e10);
+            FileLog.e(e6);
         }
     }
 

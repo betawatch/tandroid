@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class SecretChatHelper extends BaseController {
     public static int CURRENT_SECRET_CHAT_LAYER = 151;
@@ -42,7 +42,7 @@ public class SecretChatHelper extends BaseController {
     private ArrayList<Integer> sendingNotifyLayer;
     private boolean startingSecretChat;
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     public static class TL_decryptedMessageHolder extends TLObject {
         public static int constructor = 1431655929;
         public int date;
@@ -609,8 +609,8 @@ public class SecretChatHelper extends BaseController {
                 tL_messages_sendEncryptedFile = tL_messages_sendEncryptedFile3;
             }
             getConnectionsManager().sendRequest(tL_messages_sendEncryptedFile, new ol(this, decryptedMessage, encryptedChat, message, messageObject, str), 64);
-        } catch (Exception e6) {
-            FileLog.e(e6);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 
@@ -790,12 +790,12 @@ public class SecretChatHelper extends BaseController {
                 SQLiteDatabase database3 = getMessagesStorage().getDatabase();
                 Locale locale3 = Locale.US;
                 database3.executeFast("REPLACE INTO requested_holes VALUES(" + encryptedChat2.id + ", " + i15 + ", " + i11 + ")").stepThis().dispose();
-            } catch (Exception e6) {
-                e = e6;
+            } catch (Exception e) {
+                e = e;
                 FileLog.e(e);
             }
-        } catch (Exception e10) {
-            e = e10;
+        } catch (Exception e6) {
+            e = e6;
         }
     }
 
@@ -806,8 +806,8 @@ public class SecretChatHelper extends BaseController {
                 return;
             }
             d2Var.dismiss();
-        } catch (Exception e6) {
-            FileLog.e(e6);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 
@@ -826,8 +826,8 @@ public class SecretChatHelper extends BaseController {
         if (!((Activity) context).isFinishing()) {
             try {
                 d2Var.dismiss();
-            } catch (Exception e6) {
-                FileLog.e(e6);
+            } catch (Exception e) {
+                FileLog.e(e);
             }
         }
         TLRPC.EncryptedChat encryptedChat = (TLRPC.EncryptedChat) tLObject;
@@ -858,8 +858,8 @@ public class SecretChatHelper extends BaseController {
         this.startingSecretChat = false;
         try {
             d2Var.dismiss();
-        } catch (Exception e6) {
-            FileLog.e(e6);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
         alertDialog$Builder.a.O = LocaleController.getString(R.string.AppName);
@@ -886,8 +886,8 @@ public class SecretChatHelper extends BaseController {
         }
         try {
             d2Var.dismiss();
-        } catch (Exception e6) {
-            FileLog.e(e6);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 
@@ -946,7 +946,7 @@ public class SecretChatHelper extends BaseController {
         if (encryptedFile != null) {
             TLRPC.MessageMedia messageMedia = message.media;
             if ((messageMedia instanceof TLRPC.TL_messageMediaPhoto) && (photo = messageMedia.photo) != null) {
-                TLRPC.PhotoSize photoSize = (TLRPC.PhotoSize) l.d.i(1, photo.sizes);
+                TLRPC.PhotoSize photoSize = (TLRPC.PhotoSize) kf.k0.i(1, photo.sizes);
                 String str2 = photoSize.location.volume_id + "_" + photoSize.location.local_id;
                 TLRPC.TL_fileEncryptedLocation tL_fileEncryptedLocation = new TLRPC.TL_fileEncryptedLocation();
                 photoSize.location = tL_fileEncryptedLocation;
@@ -958,7 +958,7 @@ public class SecretChatHelper extends BaseController {
                 tL_fileEncryptedLocation.secret = encryptedFile.access_hash;
                 tL_fileEncryptedLocation.local_id = encryptedFile.key_fingerprint;
                 String str3 = photoSize.location.volume_id + "_" + photoSize.location.local_id;
-                new File(FileLoader.getDirectory(4), w.c.e(str2, ".jpg")).renameTo(getFileLoader().getPathToAttach(photoSize));
+                new File(FileLoader.getDirectory(4), vh.w2.k(str2, ".jpg")).renameTo(getFileLoader().getPathToAttach(photoSize));
                 ImageLoader.getInstance().replaceImageInCache(str2, str3, ImageLocation.getForPhoto(photoSize, message.media.photo), true);
                 ArrayList<TLRPC.Message> arrayList = new ArrayList<>();
                 arrayList.add(message);
@@ -1228,8 +1228,8 @@ public class SecretChatHelper extends BaseController {
                 if (bArr == null) {
                 }
                 return null;
-            } catch (Exception e6) {
-                FileLog.e(e6);
+            } catch (Exception e) {
+                FileLog.e(e);
                 return null;
             }
         }
@@ -2237,33 +2237,33 @@ public class SecretChatHelper extends BaseController {
 
     public void declineSecretChat(int i10, boolean z4, long j10) {
         NativeByteBuffer nativeByteBuffer;
-        Exception e6;
+        Exception e;
         if (j10 == 0) {
             try {
                 nativeByteBuffer = new NativeByteBuffer(12);
-            } catch (Exception e10) {
+            } catch (Exception e6) {
                 nativeByteBuffer = null;
-                e6 = e10;
+                e = e6;
             }
             try {
                 nativeByteBuffer.writeInt32(100);
                 nativeByteBuffer.writeInt32(i10);
                 nativeByteBuffer.writeBool(z4);
-            } catch (Exception e11) {
-                e6 = e11;
-                FileLog.e(e6);
+            } catch (Exception e10) {
+                e = e10;
+                FileLog.e(e);
                 j10 = getMessagesStorage().createPendingTask(nativeByteBuffer);
                 TLRPC.TL_messages_discardEncryption tL_messages_discardEncryption = new TLRPC.TL_messages_discardEncryption();
                 tL_messages_discardEncryption.chat_id = i10;
                 tL_messages_discardEncryption.delete_history = z4;
-                getConnectionsManager().sendRequest(tL_messages_discardEncryption, new oh.t5(this, j10, 4));
+                getConnectionsManager().sendRequest(tL_messages_discardEncryption, new nh.t5(this, j10, 4));
             }
             j10 = getMessagesStorage().createPendingTask(nativeByteBuffer);
         }
         TLRPC.TL_messages_discardEncryption tL_messages_discardEncryption2 = new TLRPC.TL_messages_discardEncryption();
         tL_messages_discardEncryption2.chat_id = i10;
         tL_messages_discardEncryption2.delete_history = z4;
-        getConnectionsManager().sendRequest(tL_messages_discardEncryption2, new oh.t5(this, j10, 4));
+        getConnectionsManager().sendRequest(tL_messages_discardEncryption2, new nh.t5(this, j10, 4));
     }
 
     public void performSendEncryptedRequest(TLRPC.DecryptedMessage decryptedMessage, TLRPC.Message message, TLRPC.EncryptedChat encryptedChat, TLRPC.InputEncryptedFile inputEncryptedFile, String str, MessageObject messageObject) {

@@ -14,7 +14,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class d91 extends AsyncTask {
     public final String a;
@@ -158,17 +158,17 @@ public final class d91 extends AsyncTask {
                 sb.append("&eurl=");
                 sb.append(URLEncoder.encode("https://youtube.googleapis.com/v/" + this.a, "UTF-8"));
                 r10 = sb.toString();
-            } catch (Exception e6) {
-                FileLog.e(e6);
+            } catch (Exception e) {
+                FileLog.e(e);
             }
             if (c11 != null) {
                 Matcher matcher = e91.q0.matcher(c11);
                 if (matcher.find()) {
-                    StringBuilder f10 = w.c.f(r10, "&sts=");
+                    StringBuilder f10 = vh.w2.f(r10, "&sts=");
                     f10.append(c11.substring(matcher.start() + 6, matcher.end()));
                     r10 = f10.toString();
                 } else {
-                    r10 = w.c.e(r10, "&sts=");
+                    r10 = vh.w2.k(r10, "&sts=");
                 }
             }
             this.c[1] = "dash";
@@ -206,8 +206,8 @@ public final class d91 extends AsyncTask {
                             if (split2.length == i11) {
                                 try {
                                     this.c[c12] = URLDecoder.decode(split2[r52], "UTF-8");
-                                } catch (Exception e10) {
-                                    FileLog.e(e10);
+                                } catch (Exception e6) {
+                                    FileLog.e(e6);
                                 }
                             }
                             z10 = true;
@@ -243,8 +243,8 @@ public final class d91 extends AsyncTask {
                                                     i13 = i14 + 1;
                                                     split4 = strArr2;
                                                 }
-                                            } catch (Exception e11) {
-                                                e = e11;
+                                            } catch (Exception e10) {
+                                                e = e10;
                                                 FileLog.e(e);
                                                 i12++;
                                                 r52 = 1;
@@ -253,8 +253,8 @@ public final class d91 extends AsyncTask {
                                                 r16 = r16;
                                             }
                                         }
-                                    } catch (Exception e12) {
-                                        e = e12;
+                                    } catch (Exception e11) {
+                                        e = e11;
                                     }
                                 }
                             } else if (split[i12].startsWith("use_cipher_signature")) {
@@ -267,8 +267,8 @@ public final class d91 extends AsyncTask {
                                 if (split7.length == 2) {
                                     try {
                                         r16 = URLDecoder.decode(split7[1], "UTF-8");
-                                    } catch (Exception e13) {
-                                        FileLog.e(e13);
+                                    } catch (Exception e12) {
+                                        FileLog.e(e12);
                                     }
                                 }
                             } else if (split[i12].startsWith("livestream")) {
@@ -358,12 +358,12 @@ public final class d91 extends AsyncTask {
                         }
                         if (str3 != null) {
                             try {
-                                str2 = new com.google.firebase.messaging.s(c14).e(str3);
+                                str2 = new com.google.firebase.messaging.r(c14).e(str3);
                                 if (!TextUtils.isEmpty(str2) && str != null) {
                                     sharedPreferences.edit().putString(str, str2).putString(str + "n", str3).commit();
                                 }
-                            } catch (Exception e14) {
-                                FileLog.e(e14);
+                            } catch (Exception e13) {
+                                FileLog.e(e13);
                             }
                         }
                     }
@@ -373,10 +373,10 @@ public final class d91 extends AsyncTask {
             obj = null;
             if (!TextUtils.isEmpty(str2)) {
                 try {
-                    AndroidUtilities.runOnUIThread(new q51(5, this, str2 + str3 + "('" + this.d.substring(3) + "');"));
+                    AndroidUtilities.runOnUIThread(new k41(6, this, str2 + str3 + "('" + this.d.substring(3) + "');"));
                     this.b.await();
-                } catch (Exception e15) {
-                    FileLog.e(e15);
+                } catch (Exception e14) {
+                    FileLog.e(e14);
                     z15 = true;
                     if (!isCancelled() && !z15) {
                         return this.c;
@@ -422,7 +422,7 @@ public final class d91 extends AsyncTask {
             StringBuilder sb = new StringBuilder("start play youtube video ");
             sb.append(strArr[1]);
             sb.append(" ");
-            org.telegram.ui.yh.v(strArr[0], sb);
+            org.telegram.ui.ai.v(strArr[0], sb);
         }
         e91Var.w = true;
         e91Var.x = strArr[0];

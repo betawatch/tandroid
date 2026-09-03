@@ -2,9 +2,9 @@ package com.google.android.recaptcha.internal;
 
 import j$.util.Objects;
 import java.math.RoundingMode;
-import l.d;
+import kf.k0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 class zzpo extends zzpp {
     public static final /* synthetic */ int zzc = 0;
@@ -58,7 +58,7 @@ class zzpo extends zzpp {
         int length = zze.length();
         zzpk zzpkVar = this.zza;
         if (!zzpkVar.zzc(length)) {
-            throw new zzpn(d.j(zze.length(), "Invalid input length "));
+            throw new zzpn(k0.j(zze.length(), "Invalid input length "));
         }
         int i11 = 0;
         int i12 = 0;

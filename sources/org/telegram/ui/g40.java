@@ -1,71 +1,44 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.os.Build;
-import android.widget.FrameLayout;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import org.telegram.messenger.BotWebViewVibrationEffect;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class g40 extends FrameLayout {
-    public final RectF a;
-    public final RectF b;
-    public final RectF c;
-    public final Paint d;
-    public final /* synthetic */ d60 e;
+public final class g40 implements TextWatcher {
+    public final /* synthetic */ e60 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g40(d60 d60Var, LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.e = d60Var;
-        this.a = new RectF();
-        this.b = new RectF();
-        this.c = new RectF();
-        this.d = new Paint(1);
+    public g40(e60 e60Var) {
+        this.a = e60Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        d60 d60Var = this.e;
-        h40 h40Var = d60Var.C;
-        float y10 = h40Var.getY() + h40Var.getMeasuredHeight();
-        xd.c cVar = d60Var.y3;
-        float f10 = y10 - cVar.e;
-        float measuredWidth = getMeasuredWidth();
-        float measuredHeight = getMeasuredHeight();
-        RectF rectF = this.a;
-        rectF.set(0.0f, f10, measuredWidth, measuredHeight);
-        float y11 = h40Var.getY() + h40Var.getMeasuredHeight();
-        float measuredWidth2 = getMeasuredWidth();
-        float measuredHeight2 = getMeasuredHeight();
-        RectF rectF2 = this.b;
-        rectF2.set(0.0f, y11, measuredWidth2, measuredHeight2);
-        float y12 = (h40Var.getY() + h40Var.getMeasuredHeight()) - cVar.e;
-        float measuredWidth3 = getMeasuredWidth();
-        float y13 = h40Var.getY() + h40Var.getMeasuredHeight();
-        RectF rectF3 = this.c;
-        rectF3.set(0.0f, y12, measuredWidth3, y13);
-        int i10 = Build.VERSION.SDK_INT;
-        Paint paint = this.d;
-        if (i10 < 29 || d60Var.N2 == null || !canvas.isHardwareAccelerated()) {
-            paint.setColor(-14933463);
-            canvas.drawRect(rectF3, paint);
-            paint.setColor(i0.a.h(234881023, -14933463));
-            canvas.drawRect(rectF2, paint);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        String str;
+        e60 e60Var = this.a;
+        e60Var.x3.a(TextUtils.isEmpty(editable), true);
+        int codePointCount = Character.codePointCount(editable, 0, editable.length());
+        int i10 = e60Var.a0;
+        if (codePointCount + 25 > i10) {
+            str = "" + (i10 - codePointCount);
         } else {
-            paint.setColor(-14933463);
-            canvas.drawRect(rectF, paint);
-            canvas.save();
-            canvas.clipRect(rectF);
-            canvas.translate(-getX(), -getY());
-            float f11 = d60Var.O2;
-            canvas.scale(f11, f11);
-            canvas.drawRenderNode(d60Var.N2);
-            canvas.restore();
-            paint.setColor(234881023);
-            canvas.drawRect(rectF2, paint);
+            str = null;
         }
-        super.dispatchDraw(canvas);
+        e60Var.J.a();
+        e60Var.J.setText(str);
+        e60Var.J.setTextColor(codePointCount >= i10 ? -1280137 : -1);
+        if (codePointCount > i10) {
+            BotWebViewVibrationEffect.APP_ERROR.vibrate();
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

@@ -17,9 +17,9 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class b8 extends rl0 {
+public final class b8 extends ql0 {
     public final Context c;
     public ArrayList d = new ArrayList();
     public String e;
@@ -32,9 +32,9 @@ public final class b8 extends rl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.rl0
-    public final boolean D(f2.m1 m1Var) {
-        return (this.n.s0 && m1Var.b() == 0) ? false : true;
+    @Override // org.telegram.ui.Components.ql0
+    public final boolean D(f2.l1 l1Var) {
+        return (this.n.s0 && l1Var.b() == 0) ? false : true;
     }
 
     public final void E(String str) {
@@ -54,7 +54,7 @@ public final class b8 extends rl0 {
         }
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final int h() {
         int size;
         c8 c8Var = this.n;
@@ -70,12 +70,12 @@ public final class b8 extends rl0 {
         return size + (z4 ? 1 : 0);
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final int j(int i10) {
         return (this.n.s0 && i10 == 0) ? 1 : 0;
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final void l() {
         super.l();
         c8 c8Var = this.n;
@@ -102,16 +102,16 @@ public final class b8 extends rl0 {
                         ViewGroup viewGroup2;
                         switch (i10) {
                             case 0:
-                                viewGroup = ((org.telegram.ui.ActionBar.h3) this.b.n).containerView;
+                                viewGroup = ((org.telegram.ui.ActionBar.g3) this.b.n).containerView;
                                 viewGroup.invalidate();
                                 break;
                             default:
-                                viewGroup2 = ((org.telegram.ui.ActionBar.h3) this.b.n).containerView;
+                                viewGroup2 = ((org.telegram.ui.ActionBar.g3) this.b.n).containerView;
                                 viewGroup2.invalidate();
                                 break;
                         }
                     }
-                }).setDuration(420L).setInterpolator(pr.h).start();
+                }).setDuration(420L).setInterpolator(mr.h).start();
             } else {
                 final int i11 = 1;
                 o7Var.animate().translationY(AndroidUtilities.displaySize.y).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.y7
@@ -127,24 +127,24 @@ public final class b8 extends rl0 {
                         ViewGroup viewGroup2;
                         switch (i11) {
                             case 0:
-                                viewGroup = ((org.telegram.ui.ActionBar.h3) this.b.n).containerView;
+                                viewGroup = ((org.telegram.ui.ActionBar.g3) this.b.n).containerView;
                                 viewGroup.invalidate();
                                 break;
                             default:
-                                viewGroup2 = ((org.telegram.ui.ActionBar.h3) this.b.n).containerView;
+                                viewGroup2 = ((org.telegram.ui.ActionBar.g3) this.b.n).containerView;
                                 viewGroup2.invalidate();
                                 break;
                         }
                     }
-                }).setDuration(420L).setInterpolator(pr.h).withEndAction(new fg(this, 9)).start();
+                }).setDuration(420L).setInterpolator(mr.h).withEndAction(new fg(this, 9)).start();
             }
         }
         if (c8Var.u0.size() > 1) {
-            j7Var.setBackgroundColor(c8Var.getThemedColor(org.telegram.ui.ActionBar.k6.Ri));
+            j7Var.setBackgroundColor(c8Var.getThemedColor(org.telegram.ui.ActionBar.j6.Ri));
             view.setVisibility(0);
             o7Var.setPadding(0, o7Var.getPaddingTop(), 0, AndroidUtilities.dp(231.0f));
         } else {
-            j7Var.setBackgroundColor(c8Var.getThemedColor(org.telegram.ui.ActionBar.k6.Ri));
+            j7Var.setBackgroundColor(c8Var.getThemedColor(org.telegram.ui.ActionBar.j6.Ri));
             view.setVisibility(0);
             o7Var.setPadding(0, o7Var.getPaddingTop(), 0, 0);
         }
@@ -172,14 +172,14 @@ public final class b8 extends rl0 {
     
         if ((r12 + 1) < r0.u0.size()) goto L11;
      */
-    @Override // f2.p0
+    @Override // f2.o0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void v(f2.m1 m1Var, int i10) {
+    public final void v(f2.l1 l1Var, int i10) {
         MessageObject messageObject;
         boolean z4;
-        org.telegram.ui.ActionBar.g6 g6Var;
+        org.telegram.ui.ActionBar.f6 f6Var;
         c8 c8Var = this.n;
         if (c8Var.s0) {
             if (i10 == 0) {
@@ -188,7 +188,7 @@ public final class b8 extends rl0 {
                 i10--;
             }
         }
-        org.telegram.ui.Cells.x xVar = (org.telegram.ui.Cells.x) m1Var.a;
+        org.telegram.ui.Cells.x xVar = (org.telegram.ui.Cells.x) l1Var.a;
         if (c8Var.f) {
             messageObject = (MessageObject) this.d.get(i10);
         } else if (c8Var.t0 == null ? !SharedConfig.playOrderReversed : SharedConfig.playOrderReversed) {
@@ -201,11 +201,11 @@ public final class b8 extends rl0 {
             messageObject.setQuery(this.e);
         }
         org.telegram.ui.ActionBar.i1 i1Var = c8Var.s0() ? new org.telegram.ui.ActionBar.i1(1, this, xVar) : null;
-        int i11 = org.telegram.ui.ActionBar.k6.h5;
-        g6Var = ((org.telegram.ui.ActionBar.h3) c8Var).resourcesProvider;
-        xVar.setBackgroundColor(org.telegram.ui.ActionBar.k6.v0(i11, g6Var));
+        int i11 = org.telegram.ui.ActionBar.j6.h5;
+        f6Var = ((org.telegram.ui.ActionBar.g3) c8Var).resourcesProvider;
+        xVar.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
         boolean s02 = c8Var.s0();
-        eg.o oVar = (c8Var.s0() || c8Var.w0 || messageObject.getId() <= 0) ? null : new eg.o(this, xVar, messageObject, 18);
+        dg.p pVar = (c8Var.s0() || c8Var.w0 || messageObject.getId() <= 0) ? null : new dg.p(this, xVar, messageObject, 18);
         RadialProgress2 radialProgress2 = xVar.E;
         ImageView imageView = xVar.v;
         xVar.w = messageObject;
@@ -214,8 +214,8 @@ public final class b8 extends rl0 {
         }
         xVar.x = z4;
         imageView.setImageResource(s02 ? R.drawable.list_reorder : R.drawable.ic_ab_other);
-        imageView.setVisibility((s02 || oVar != null) ? 0 : 8);
-        imageView.setOnClickListener(oVar);
+        imageView.setVisibility((s02 || pVar != null) ? 0 : 8);
+        imageView.setOnClickListener(pVar);
         imageView.setOnTouchListener(i1Var);
         TLRPC.Document document = messageObject.getDocument();
         TLRPC.PhotoSize closestPhotoSizeWithSize = document != null ? FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90) : null;
@@ -233,17 +233,17 @@ public final class b8 extends rl0 {
         xVar.b(false, false);
     }
 
-    @Override // f2.p0
-    public final f2.m1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.ActionBar.g6 g6Var;
+    @Override // f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+        org.telegram.ui.ActionBar.f6 f6Var;
         Context context = this.c;
         if (i10 == 1) {
-            in inVar = new in(context, 7);
-            inVar.setTag(-33024);
-            return new el0(inVar);
+            gn gnVar = new gn(context, 7);
+            gnVar.setTag(-33024);
+            return new dl0(gnVar);
         }
         boolean currentPlaylistIsGlobalSearch = MediaController.getInstance().currentPlaylistIsGlobalSearch();
-        g6Var = ((org.telegram.ui.ActionBar.h3) this.n).resourcesProvider;
-        return new el0(new org.telegram.ui.Cells.x(context, currentPlaylistIsGlobalSearch ? 1 : 0, g6Var));
+        f6Var = ((org.telegram.ui.ActionBar.g3) this.n).resourcesProvider;
+        return new dl0(new org.telegram.ui.Cells.x(context, currentPlaylistIsGlobalSearch ? 1 : 0, f6Var));
     }
 }

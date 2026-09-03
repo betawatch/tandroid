@@ -1,14 +1,15 @@
 package y2;
 
 import android.content.Context;
-import com.google.firebase.messaging.s;
+import androidx.biometric.t;
+import com.google.firebase.messaging.r;
 import j$.util.DesugarCollections;
 import java.nio.charset.Charset;
 import java.util.Collections;
 import java.util.Set;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class q {
     public static volatile j e;
@@ -17,12 +18,12 @@ public final class q {
     public final d3.b c;
     public final e3.g d;
 
-    public q(h3.a aVar, h3.a aVar2, d3.b bVar, e3.g gVar, s sVar) {
+    public q(h3.a aVar, h3.a aVar2, d3.b bVar, e3.g gVar, r rVar) {
         this.a = aVar;
         this.b = aVar2;
         this.c = bVar;
         this.d = gVar;
-        ((Executor) sVar.a).execute(new ag.e(sVar, 22));
+        ((Executor) rVar.a).execute(new e3.h(rVar, 0));
     }
 
     public static q a() {
@@ -38,10 +39,10 @@ public final class q {
             synchronized (q.class) {
                 try {
                     if (e == null) {
-                        k0.b bVar = new k0.b();
+                        t tVar = new t();
                         context.getClass();
-                        bVar.a = context;
-                        e = bVar.b();
+                        tVar.a = context;
+                        e = tVar.b();
                     }
                 } catch (Throwable th2) {
                     throw th2;

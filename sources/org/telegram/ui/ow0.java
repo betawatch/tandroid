@@ -11,27 +11,27 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class ow0 extends org.telegram.ui.Components.rl0 {
+public final class ow0 extends org.telegram.ui.Components.ql0 {
     public final /* synthetic */ PremiumPreviewFragment c;
 
     public ow0(PremiumPreviewFragment premiumPreviewFragment) {
         this.c = premiumPreviewFragment;
     }
 
-    @Override // org.telegram.ui.Components.rl0
-    public final boolean D(f2.m1 m1Var) {
-        int i10 = m1Var.f;
+    @Override // org.telegram.ui.Components.ql0
+    public final boolean D(f2.l1 l1Var) {
+        int i10 = l1Var.f;
         return i10 == 1 || i10 == 8;
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final int h() {
         return this.c.h;
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final int j(int i10) {
         if (i10 == 0) {
             return 0;
@@ -59,16 +59,16 @@ public final class ow0 extends org.telegram.ui.Components.rl0 {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:79:0x02be  */
-    @Override // f2.p0
+    @Override // f2.o0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void v(f2.m1 m1Var, int i10) {
+    public final void v(f2.l1 l1Var, int i10) {
         TLRPC.TL_help_premiumPromo premiumPromo;
         String str;
         String str2;
         int i11;
-        View view = m1Var.a;
+        View view = l1Var.a;
         PremiumPreviewFragment premiumPreviewFragment = this.c;
         boolean z4 = premiumPreviewFragment.e0;
         int i12 = premiumPreviewFragment.n;
@@ -84,46 +84,46 @@ public final class ow0 extends org.telegram.ui.Components.rl0 {
         }
         String str3 = "";
         if (i10 == premiumPreviewFragment.x) {
-            org.telegram.ui.Cells.a9 a9Var = (org.telegram.ui.Cells.a9) view;
-            a9Var.setText("");
-            a9Var.setFixedSize(12);
+            org.telegram.ui.Cells.z8 z8Var = (org.telegram.ui.Cells.z8) view;
+            z8Var.setText("");
+            z8Var.setFixedSize(12);
             return;
         }
         if (i10 != premiumPreviewFragment.y && i10 != premiumPreviewFragment.B && i10 != premiumPreviewFragment.E) {
             if (i10 == premiumPreviewFragment.s) {
-                ((org.telegram.ui.Cells.m4) view).setText(LocaleController.getString(R.string.PremiumPreviewMoreBusinessFeatures));
+                ((org.telegram.ui.Cells.l4) view).setText(LocaleController.getString(R.string.PremiumPreviewMoreBusinessFeatures));
                 return;
             }
             if (i10 == premiumPreviewFragment.D) {
-                ((org.telegram.ui.Cells.m4) view).setText(LocaleController.getString(R.string.ShowAdsTitle));
+                ((org.telegram.ui.Cells.l4) view).setText(LocaleController.getString(R.string.ShowAdsTitle));
                 return;
             }
             if (i10 == premiumPreviewFragment.showAdsRow) {
                 TLRPC.UserFull userFull = premiumPreviewFragment.getMessagesController().getUserFull(premiumPreviewFragment.getUserConfig().getClientUserId());
-                org.telegram.ui.Cells.o8 o8Var = (org.telegram.ui.Cells.o8) view;
+                org.telegram.ui.Cells.n8 n8Var = (org.telegram.ui.Cells.n8) view;
                 String string = LocaleController.getString(R.string.ShowAds);
                 if (userFull != null && !userFull.sponsored_enabled) {
                     r6 = false;
                 }
-                o8Var.j(string, r6, false);
+                n8Var.j(string, r6, false);
                 return;
             }
             return;
         }
-        org.telegram.ui.Cells.a9 a9Var2 = (org.telegram.ui.Cells.a9) view;
+        org.telegram.ui.Cells.z8 z8Var2 = (org.telegram.ui.Cells.z8) view;
         if (!z4) {
-            a9Var2.setTextColor(org.telegram.ui.ActionBar.k6.l1(0.75f, -1));
-            a9Var2.getTextView().setLinkTextColor(-1);
-            a9Var2.setLinkTextRippleColor(Integer.valueOf(org.telegram.ui.ActionBar.k6.l1(0.15f, -1)));
+            z8Var2.setTextColor(org.telegram.ui.ActionBar.j6.l1(0.75f, -1));
+            z8Var2.getTextView().setLinkTextColor(-1);
+            z8Var2.setLinkTextRippleColor(Integer.valueOf(org.telegram.ui.ActionBar.j6.l1(0.15f, -1)));
         }
-        a9Var2.setFixedSize(0);
+        z8Var2.setFixedSize(0);
         if (i10 == premiumPreviewFragment.E) {
-            a9Var2.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ShowAdsInfo), new gl0(this, 23)), true));
+            z8Var2.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ShowAdsInfo), new gl0(this, 23)), true));
             return;
         }
         int i14 = premiumPreviewFragment.y;
         if (i10 == i14 && premiumPreviewFragment.d0 == 1) {
-            a9Var2.setText(LocaleController.getString(R.string.PremiumPreviewMoreBusinessFeaturesInfo));
+            z8Var2.setText(LocaleController.getString(R.string.PremiumPreviewMoreBusinessFeaturesInfo));
             return;
         }
         if (i10 != i14 || (premiumPromo = premiumPreviewFragment.getMediaDataController().getPremiumPromo()) == null) {
@@ -146,49 +146,49 @@ public final class ow0 extends org.telegram.ui.Components.rl0 {
             }
             TLRPC.MessageEntity messageEntity2 = s01Var.d;
             if (messageEntity2 instanceof TLRPC.TL_messageEntityBotCommand) {
-                spannableString.setSpan(new org.telegram.ui.Components.i51(str, 0, s01Var), s01Var.b, s01Var.c, 33);
+                spannableString.setSpan(new org.telegram.ui.Components.j51(str, 0, s01Var), s01Var.b, s01Var.c, 33);
             } else {
                 if ((messageEntity2 instanceof TLRPC.TL_messageEntityHashtag) || (messageEntity2 instanceof TLRPC.TL_messageEntityMention) || (messageEntity2 instanceof TLRPC.TL_messageEntityCashtag)) {
                     str2 = str3;
                     i11 = 33;
-                    spannableString.setSpan(new org.telegram.ui.Components.l51(str, s01Var), s01Var.b, s01Var.c, 33);
+                    spannableString.setSpan(new org.telegram.ui.Components.m51(str, s01Var), s01Var.b, s01Var.c, 33);
                 } else if (messageEntity2 instanceof TLRPC.TL_messageEntityEmail) {
-                    spannableString.setSpan(new org.telegram.ui.Components.n51(yh.k("mailto:", str), s01Var), s01Var.b, s01Var.c, 33);
+                    spannableString.setSpan(new org.telegram.ui.Components.o51(vh.w2.e("mailto:", str), s01Var), s01Var.b, s01Var.c, 33);
                 } else if (messageEntity2 instanceof TLRPC.TL_messageEntityUrl) {
                     if (str.toLowerCase().contains("://")) {
-                        spannableString.setSpan(new org.telegram.ui.Components.j51(str, s01Var), s01Var.b, s01Var.c, 33);
+                        spannableString.setSpan(new org.telegram.ui.Components.k51(str, s01Var), s01Var.b, s01Var.c, 33);
                     } else {
-                        spannableString.setSpan(new org.telegram.ui.Components.j51("http://".concat(str), s01Var), s01Var.b, s01Var.c, 33);
+                        spannableString.setSpan(new org.telegram.ui.Components.k51("http://".concat(str), s01Var), s01Var.b, s01Var.c, 33);
                     }
                 } else if (messageEntity2 instanceof TLRPC.TL_messageEntityBankCard) {
-                    spannableString.setSpan(new org.telegram.ui.Components.l51(yh.k("card:", str), s01Var), s01Var.b, s01Var.c, 33);
+                    spannableString.setSpan(new org.telegram.ui.Components.m51(vh.w2.e("card:", str), s01Var), s01Var.b, s01Var.c, 33);
                 } else if (messageEntity2 instanceof TLRPC.TL_messageEntityPhone) {
                     String d = se.b.d(str, z10);
                     if (str.startsWith("+")) {
-                        d = yh.k("+", d);
+                        d = vh.w2.e("+", d);
                     }
-                    spannableString.setSpan(new org.telegram.ui.Components.j51(yh.k("tel:", d), s01Var), s01Var.b, s01Var.c, 33);
+                    spannableString.setSpan(new org.telegram.ui.Components.k51(vh.w2.e("tel:", d), s01Var), s01Var.b, s01Var.c, 33);
                 } else if (messageEntity2 instanceof TLRPC.TL_messageEntityTextUrl) {
-                    org.telegram.ui.Components.n51 n51Var = new org.telegram.ui.Components.n51(s01Var.d.url, s01Var);
-                    n51Var.b = true;
-                    spannableString.setSpan(n51Var, s01Var.b, s01Var.c, 33);
+                    org.telegram.ui.Components.o51 o51Var = new org.telegram.ui.Components.o51(s01Var.d.url, s01Var);
+                    o51Var.b = true;
+                    spannableString.setSpan(o51Var, s01Var.b, s01Var.c, 33);
                     if (!z4) {
-                        spannableString.setSpan(new org.telegram.ui.Components.e51(AndroidUtilities.bold()), s01Var.b, s01Var.c, 33);
+                        spannableString.setSpan(new org.telegram.ui.Components.f51(AndroidUtilities.bold()), s01Var.b, s01Var.c, 33);
                     }
                 } else {
                     if (messageEntity2 instanceof TLRPC.TL_messageEntityMentionName) {
                         StringBuilder sb = new StringBuilder(str3);
                         str2 = str3;
                         sb.append(((TLRPC.TL_messageEntityMentionName) s01Var.d).user_id);
-                        spannableString.setSpan(new org.telegram.ui.Components.o51(sb.toString(), 0, s01Var), s01Var.b, s01Var.c, 33);
+                        spannableString.setSpan(new org.telegram.ui.Components.p51(sb.toString(), 0, s01Var), s01Var.b, s01Var.c, 33);
                     } else {
                         str2 = str3;
                         if (messageEntity2 instanceof TLRPC.TL_inputMessageEntityMentionName) {
-                            spannableString.setSpan(new org.telegram.ui.Components.o51(str2 + ((TLRPC.TL_inputMessageEntityMentionName) s01Var.d).user_id.user_id, 0, s01Var), s01Var.b, s01Var.c, 33);
+                            spannableString.setSpan(new org.telegram.ui.Components.p51(str2 + ((TLRPC.TL_inputMessageEntityMentionName) s01Var.d).user_id.user_id, 0, s01Var), s01Var.b, s01Var.c, 33);
                         } else if ((s01Var.a & 4) != 0) {
                             str2 = str2;
                             i11 = 33;
-                            spannableString.setSpan(new org.telegram.ui.Components.k51(spannableString, s01Var.b, s01Var.c, (byte) 0, s01Var), s01Var.b, s01Var.c, 33);
+                            spannableString.setSpan(new org.telegram.ui.Components.l51(spannableString, s01Var.b, s01Var.c, (byte) 0, s01Var), s01Var.b, s01Var.c, 33);
                         } else {
                             str2 = str2;
                             spannableString.setSpan(new org.telegram.ui.Components.t01(s01Var, 0), s01Var.b, s01Var.c, 33);
@@ -217,44 +217,44 @@ public final class ow0 extends org.telegram.ui.Components.rl0 {
             str3 = str2;
             z10 = false;
         }
-        a9Var2.setText(spannableString);
+        z8Var2.setText(spannableString);
     }
 
-    @Override // f2.p0
-    public final f2.m1 x(ViewGroup viewGroup, int i10) {
-        View b2Var;
-        org.telegram.ui.ActionBar.g6 g6Var;
+    @Override // f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+        View c2Var;
+        org.telegram.ui.ActionBar.f6 f6Var;
         Context context = viewGroup.getContext();
         switch (i10) {
             case 1:
-                b2Var = new fg.b2(this, context);
+                c2Var = new eg.c2(this, context);
                 break;
             case 2:
-                b2Var = new org.telegram.ui.Cells.z6(context, 0, 0);
+                c2Var = new org.telegram.ui.Cells.y6(context, 0, 0);
                 break;
             case 3:
             default:
-                b2Var = new nw0(this, context, 0);
-                b2Var.setTag(-33024);
+                c2Var = new nw0(this, context, 0);
+                c2Var.setTag(-33024);
                 break;
             case 4:
-                b2Var = new fg.a(context);
+                c2Var = new eg.a(context);
                 break;
             case 5:
-                b2Var = new org.telegram.ui.Cells.a9(context);
+                c2Var = new org.telegram.ui.Cells.z8(context);
                 break;
             case 6:
-                b2Var = new View(context);
-                b2Var.setTag(-33024);
+                c2Var = new View(context);
+                c2Var.setTag(-33024);
                 break;
             case 7:
-                b2Var = new org.telegram.ui.Cells.m4(context);
+                c2Var = new org.telegram.ui.Cells.l4(context);
                 break;
             case 8:
-                g6Var = ((org.telegram.ui.ActionBar.p2) this.c).resourceProvider;
-                b2Var = new org.telegram.ui.Cells.o8(23, context, g6Var, false, true);
+                f6Var = ((org.telegram.ui.ActionBar.p2) this.c).resourceProvider;
+                c2Var = new org.telegram.ui.Cells.n8(23, context, f6Var, false, true);
                 break;
         }
-        return yh.o(b2Var, b2Var, -1, -2);
+        return ai.n(c2Var, c2Var, -1, -2);
     }
 }

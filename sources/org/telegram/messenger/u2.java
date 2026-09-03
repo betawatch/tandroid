@@ -7,9 +7,9 @@ import org.telegram.messenger.FileLoadOperation;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.n71;
+import org.telegram.ui.Components.m71;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class u2 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class u2 implements RequestDelegate {
                 ((FileLoadOperation) this.d).lambda$startDownloadRequest$29((FileLoadOperation.RequestInfo) this.e, this.b, this.c, this.f, tLObject, tL_error);
                 break;
             case 1:
-                uf.z zVar = (uf.z) this.d;
+                tf.z zVar = (tf.z) this.d;
                 String str = (String) this.e;
                 TLRPC.TL_messages_search tL_messages_search = (TLRPC.TL_messages_search) this.f;
                 ArrayList arrayList = new ArrayList();
@@ -60,7 +60,7 @@ public final /* synthetic */ class u2 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new o7(zVar, this.b, this.c, tL_error, str, tLObject, tL_messages_search, arrayList, 1));
                 break;
             default:
-                uf.z zVar2 = (uf.z) this.d;
+                tf.z zVar2 = (tf.z) this.d;
                 String str2 = (String) this.e;
                 TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = (TLRPC.TL_messages_searchGlobal) this.f;
                 int i13 = zVar2.p0;
@@ -99,7 +99,7 @@ public final /* synthetic */ class u2 implements RequestDelegate {
                     AndroidUtilities.runOnUIThread(o7Var);
                     break;
                 } else {
-                    MessagesStorage.getInstance(i13).getStorageQueue().postRunnable(new n71(zVar2, hashSet, o7Var, 26));
+                    MessagesStorage.getInstance(i13).getStorageQueue().postRunnable(new m71(zVar2, hashSet, o7Var, 25));
                     break;
                 }
         }

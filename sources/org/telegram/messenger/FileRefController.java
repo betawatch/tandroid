@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class FileRefController extends BaseController {
     private static volatile FileRefController[] Instance = new FileRefController[4];
@@ -32,7 +32,7 @@ public class FileRefController extends BaseController {
     private ArrayList<Waiter> savedGifsWaiters;
     private ArrayList<Waiter> wallpaperWaiters;
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     public static class CachedResult {
         private long firstQueryTime;
         private TLObject response;
@@ -41,7 +41,7 @@ public class FileRefController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     public static class Requester {
         private Object[] args;
         private boolean completed;
@@ -52,7 +52,7 @@ public class FileRefController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     public static class Waiter {
         private String locationKey;
         private String parentKey;
@@ -321,7 +321,7 @@ public class FileRefController extends BaseController {
                 if (obj != null && inputFileLocationArr != null) {
                     inputFileLocationArr[0] = (TLRPC.InputFileLocation) obj;
                 }
-                if (tLObject2 instanceof oh.c6) {
+                if (tLObject2 instanceof nh.c6) {
                     fileRefController = this;
                     TLRPC.InputFileLocation inputFileLocation5 = inputFileLocation;
                     inputFileLocationArr2 = inputFileLocationArr;
@@ -444,13 +444,13 @@ public class FileRefController extends BaseController {
                                     try {
                                         SharedConfig.pendingAppUpdate = tL_help_appUpdate;
                                         SharedConfig.saveConfig();
-                                    } catch (Exception e6) {
-                                        FileLog.e(e6);
+                                    } catch (Exception e) {
+                                        FileLog.e(e);
                                     }
                                     try {
                                         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.appUpdateAvailable, new Object[0]);
-                                    } catch (Exception e10) {
-                                        FileLog.e(e10);
+                                    } catch (Exception e6) {
+                                        FileLog.e(e6);
                                     }
                                     try {
                                         TLRPC.Document document3 = tL_help_appUpdate.document;
@@ -467,8 +467,8 @@ public class FileRefController extends BaseController {
                                             inputFileLocationArr4 = inputFileLocationArr2;
                                         }
                                         inputFileLocationArr2 = inputFileLocationArr4;
-                                    } catch (Exception e11) {
-                                        FileLog.e(e11);
+                                    } catch (Exception e10) {
+                                        FileLog.e(e10);
                                         bArr = null;
                                     }
                                     if (bArr == null) {
@@ -701,7 +701,7 @@ public class FileRefController extends BaseController {
                         }
                     }
                 } else {
-                    TLRPC.MessageMedia messageMedia4 = ((oh.c6) tLObject2).media;
+                    TLRPC.MessageMedia messageMedia4 = ((nh.c6) tLObject2).media;
                     TLRPC.Document document6 = messageMedia4.document;
                     if (document6 != null) {
                         fileRefController2 = this;
@@ -727,7 +727,7 @@ public class FileRefController extends BaseController {
             tLObject2 = tLObject;
         }
         bArr = null;
-        if (tLObject2 instanceof oh.c6) {
+        if (tLObject2 instanceof nh.c6) {
         }
         inputFileLocationArr3 = inputFileLocationArr2;
         if (bArr == null) {
@@ -760,8 +760,8 @@ public class FileRefController extends BaseController {
         TLRPC.Message message;
         TLRPC.MessageFwdHeader messageFwdHeader;
         TLRPC.Peer peer;
-        if (obj instanceof oh.c6) {
-            oh.c6 c6Var = (oh.c6) obj;
+        if (obj instanceof nh.c6) {
+            nh.c6 c6Var = (nh.c6) obj;
             if (c6Var.a == null) {
                 FileLog.d("failed request reference can't find list in botpreview");
                 return null;
@@ -925,17 +925,17 @@ public class FileRefController extends BaseController {
     /* JADX INFO: Access modifiers changed from: private */
     public static void lambda$onRequestComplete$46(TLRPC.TL_theme tL_theme) {
         TLRPC.Document document;
-        ArrayList arrayList = org.telegram.ui.ActionBar.k6.F;
+        ArrayList arrayList = org.telegram.ui.ActionBar.j6.F;
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
-            TLRPC.TL_theme tL_theme2 = ((org.telegram.ui.ActionBar.j6) arrayList.get(i10)).C;
+            TLRPC.TL_theme tL_theme2 = ((org.telegram.ui.ActionBar.i6) arrayList.get(i10)).C;
             if (tL_theme2 != null && tL_theme2.id == tL_theme.id) {
                 TLRPC.Document document2 = tL_theme2.document;
                 if (document2 == null || (document = tL_theme.document) == null) {
                     return;
                 }
                 document2.file_reference = document.file_reference;
-                org.telegram.ui.ActionBar.k6.s1(true, false);
+                org.telegram.ui.ActionBar.j6.s1(true, false);
                 return;
             }
         }
@@ -997,12 +997,12 @@ public class FileRefController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$requestReferenceFromServer$0(String str, String str2, oh.c6 c6Var) {
+    public /* synthetic */ void lambda$requestReferenceFromServer$0(String str, String str2, nh.c6 c6Var) {
         onRequestComplete(str, str2, c6Var, null, true, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$requestReferenceFromServer$1(String str, String str2, oh.c6 c6Var) {
+    public /* synthetic */ void lambda$requestReferenceFromServer$1(String str, String str2, nh.c6 c6Var) {
         Utilities.stageQueue.postRunnable(new sk(this, str, str2, c6Var, 8));
     }
 
@@ -1281,8 +1281,8 @@ public class FileRefController extends BaseController {
                         TLRPC.InputFileLocation[] inputFileLocationArr2 = inputFileLocationArr;
                         boolean[] zArr4 = zArr3;
                         requester4.completed = i15;
-                        if (tLObject2 instanceof oh.c6) {
-                            TLRPC.MessageMedia messageMedia2 = ((oh.c6) tLObject2).media;
+                        if (tLObject2 instanceof nh.c6) {
+                            TLRPC.MessageMedia messageMedia2 = ((nh.c6) tLObject2).media;
                             requester = requester4;
                             zArr = zArr4;
                             TLRPC.Document document3 = messageMedia2.document;
@@ -1479,13 +1479,13 @@ public class FileRefController extends BaseController {
                                         try {
                                             SharedConfig.pendingAppUpdate = tL_help_appUpdate;
                                             SharedConfig.saveConfig();
-                                        } catch (Exception e6) {
-                                            FileLog.e(e6);
+                                        } catch (Exception e) {
+                                            FileLog.e(e);
                                         }
                                         try {
                                             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.appUpdateAvailable, new Object[0]);
-                                        } catch (Exception e10) {
-                                            FileLog.e(e10);
+                                        } catch (Exception e6) {
+                                            FileLog.e(e6);
                                         }
                                         try {
                                             TLRPC.Document document4 = tL_help_appUpdate.document;
@@ -1501,8 +1501,8 @@ public class FileRefController extends BaseController {
                                             } else {
                                                 bArr3 = bArr4;
                                             }
-                                        } catch (Exception e11) {
-                                            FileLog.e(e11);
+                                        } catch (Exception e10) {
+                                            FileLog.e(e10);
                                             bArr3 = null;
                                         }
                                         if (bArr3 == null) {
@@ -1929,7 +1929,7 @@ public class FileRefController extends BaseController {
             StringBuilder sb = new StringBuilder("fileref updated for ");
             sb.append(requester.args[0]);
             sb.append(" ");
-            org.telegram.ui.yh.v(requester.locationKey, sb);
+            org.telegram.ui.ai.v(requester.locationKey, sb);
         }
         if (requester.args[0] instanceof TL_stories.TL_storyItem) {
             ((TL_stories.TL_storyItem) requester.args[0]).media.document.file_reference = bArr;
@@ -2451,14 +2451,14 @@ public class FileRefController extends BaseController {
     }
 
     private void requestReferenceFromServer(Object obj, final String str, final String str2, Object[] objArr) {
-        if (obj instanceof oh.c6) {
-            oh.c6 c6Var = (oh.c6) obj;
-            oh.d6 d6Var = c6Var.a;
+        if (obj instanceof nh.c6) {
+            nh.c6 c6Var = (nh.c6) obj;
+            nh.d6 d6Var = c6Var.a;
             if (d6Var == null) {
                 sendErrorToObject(objArr, 0);
                 return;
             }
-            mh.p6 p6Var = new mh.p6(d6Var, c6Var, new h2(this, str, str2, 2), 8);
+            lh.p6 p6Var = new lh.p6(d6Var, c6Var, new h2(this, str, str2, 2), 6);
             if (d6Var.F != 0) {
                 ConnectionsManager.getInstance(d6Var.c).cancelRequest(d6Var.F, true);
                 d6Var.F = 0;
@@ -5213,8 +5213,8 @@ public class FileRefController extends BaseController {
         if ((obj2 instanceof TL_ephemeral.TL_sendMessage) && (((TL_ephemeral.TL_sendMessage) obj2).media instanceof TLRPC.TL_inputMediaPoll) && (obj instanceof ArrayList)) {
             return null;
         }
-        if (obj2 instanceof oh.c6) {
-            oh.c6 c6Var = (oh.c6) obj2;
+        if (obj2 instanceof nh.c6) {
+            nh.c6 c6Var = (nh.c6) obj2;
             TLRPC.MessageMedia messageMedia = c6Var.media;
             if (messageMedia.document != null) {
                 TLRPC.TL_inputDocumentFileLocation tL_inputDocumentFileLocation = new TLRPC.TL_inputDocumentFileLocation();

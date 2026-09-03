@@ -5,7 +5,7 @@ import android.text.TextWatcher;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class l11 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final class l11 implements TextWatcher {
                 }
                 m11Var.c(b10);
                 for (i12 = 0; i12 < ThemeEditorView.this.c.size(); i12++) {
-                    ((org.telegram.ui.ActionBar.m6) ThemeEditorView.this.c.get(i12)).d(m11Var.b(), false, true);
+                    ((org.telegram.ui.ActionBar.l6) ThemeEditorView.this.c.get(i12)).d(m11Var.b(), false, true);
                 }
                 editorAlert.H = false;
             }

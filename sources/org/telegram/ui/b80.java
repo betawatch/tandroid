@@ -1,120 +1,60 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.RectF;
-import android.graphics.drawable.GradientDrawable;
-import android.os.Build;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.Editable;
+import android.text.TextWatcher;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class b80 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
-    public final Paint a;
-    public final Path b;
-    public final ImageView c;
-    public final lg.f d;
-    public GradientDrawable e;
-    public final /* synthetic */ d80 f;
+public final class b80 implements TextWatcher {
+    public final /* synthetic */ c80 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b80(d80 d80Var, Context context, org.telegram.ui.ActionBar.x1 x1Var) {
-        super(context);
-        this.f = d80Var;
-        this.a = new Paint(1);
-        this.b = new Path();
-        setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(3.0f));
-        setClipChildren(false);
-        setClipToPadding(false);
-        ImageView imageView = new ImageView(context);
-        this.c = imageView;
-        imageView.setImageResource(R.drawable.outline_search_1_24);
-        int i10 = org.telegram.ui.ActionBar.k6.G6;
-        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.l1(0.6f, d80Var.getThemedColor(i10)), PorterDuff.Mode.SRC_IN));
-        addView(imageView, k7.c6.d(24, 24.0f, 51, 11.0f, 8.0f, 11.0f, 8.0f));
-        x1Var.setClipChildren(true);
-        addView(x1Var, k7.c6.d(-1, -1.0f, 119, 0.0f, 0.0f, 0.0f, 40.0f));
-        lg.f fVar = new lg.f(this, context, 6);
-        this.d = fVar;
-        fVar.setHint(LocaleController.getString(R.string.Search));
-        fVar.setTextSize(1, 15.0f);
-        fVar.setCursorWidth(1.5f);
-        fVar.setInputType(fVar.getInputType() | 176);
-        fVar.setSingleLine(true);
-        fVar.setBackground(null);
-        fVar.setVerticalScrollBarEnabled(false);
-        fVar.setHorizontalScrollBarEnabled(false);
-        fVar.setClipToPadding(true);
-        fVar.setPadding(AndroidUtilities.dp(46.0f), 0, AndroidUtilities.dp(46.0f), 0);
-        fVar.setEllipsizeByGradient(true);
-        fVar.setImeOptions(268435462);
-        fVar.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-        fVar.addTextChangedListener(new a80(this));
-        if (Build.VERSION.SDK_INT >= 35) {
-            fVar.setLocalePreferredLineHeightForMinimumUsed(false);
+    public b80(c80 c80Var) {
+        this.a = c80Var;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        e80 e80Var = this.a.f;
+        if (e80Var.d.d.length() != 0) {
+            e80Var.B = true;
+            e80Var.y = true;
+            a80 a80Var = e80Var.s;
+            if (!a80Var.h) {
+                a80Var.h = true;
+                a80Var.l();
+            }
+            e80Var.s.E(e80Var.d.d.toString());
+            e80Var.h.setFastScrollVisible(false);
+            e80Var.h.setVerticalScrollBarEnabled(true);
+            e80Var.r.e(true, true);
+            e80Var.r.setStickerType(1);
+            e80Var.r.d.setText(LocaleController.getString(R.string.NoResult));
+            e80Var.r.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+            return;
         }
-        fVar.setTextColor(d80Var.getThemedColor(i10));
-        fVar.setHintTextColor(d80Var.getThemedColor(org.telegram.ui.ActionBar.k6.H6));
-        addView(fVar, k7.c6.d(-1, 40.0f, 55, 0.0f, 0.0f, 0.0f, 0.0f));
-        e();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float dpf2 = AndroidUtilities.dpf2(2.0f);
-        float dpf22 = AndroidUtilities.dpf2(0.33f);
-        Paint paint = this.a;
-        paint.setShadowLayer(dpf2, 0.0f, dpf22, 285212672);
-        int i10 = org.telegram.ui.ActionBar.k6.d6;
-        d80 d80Var = this.f;
-        paint.setColor(d80Var.getThemedColor(i10));
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(3.0f), getWidth() - AndroidUtilities.dp(12.0f), AndroidUtilities.dp(3.0f) + d80Var.b.e + AndroidUtilities.dp(3.0f));
-        Path path = this.b;
-        path.rewind();
-        path.addRoundRect(rectF, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f), Path.Direction.CW);
-        GradientDrawable gradientDrawable = this.e;
-        if (gradientDrawable != null) {
-            gradientDrawable.setBounds(0, 0, getWidth(), Math.min(getHeight(), AndroidUtilities.dp(24.0f) + ((int) d80Var.b.e)));
-            this.e.draw(canvas);
+        e80Var.B = false;
+        e80Var.y = false;
+        a80 a80Var2 = e80Var.s;
+        if (a80Var2.h) {
+            a80Var2.h = false;
+            a80Var2.l();
         }
-        canvas.save();
-        canvas.drawPath(path, paint);
-        canvas.clipPath(path);
-        super.dispatchDraw(canvas);
-        canvas.restore();
+        e80Var.s.E(null);
+        e80Var.h.setFastScrollVisible(true);
+        e80Var.h.setVerticalScrollBarEnabled(false);
+        e80Var.r.e(false, true);
+        e80Var.r.setStickerType(0);
+        e80Var.r.d.setText(LocaleController.getString(R.string.NoContacts));
+        e80Var.r.e.setText("");
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        if (view != this.f.e) {
-            return super.drawChild(canvas, view, j10);
-        }
-        canvas.save();
-        canvas.clipRect(view.getX(), view.getY(), view.getX() + view.getWidth(), view.getY() + view.getHeight());
-        boolean drawChild = super.drawChild(canvas, view, j10);
-        canvas.restore();
-        return drawChild;
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void e() {
-        int themedColor = this.f.getThemedColor(org.telegram.ui.ActionBar.k6.a7);
-        this.e = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{org.telegram.ui.ActionBar.k6.l1(1.0f, themedColor), org.telegram.ui.ActionBar.k6.l1(0.0f, themedColor)});
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(144.0f), TLObject.FLAG_30));
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

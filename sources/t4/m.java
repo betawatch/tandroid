@@ -16,17 +16,16 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import o4.r0;
-import oh.h4;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class m extends o4.a {
     public final j h;
     public final y0 i;
-    public final h4 j;
-    public final z9.d k;
-    public final o3.o l;
-    public final ab.a m;
+    public final o3.c j;
+    public final h7.u k;
+    public final o3.p l;
+    public final z9.d m;
     public final boolean n;
     public final int o;
     public final u4.c p;
@@ -39,18 +38,18 @@ public final class m extends o4.a {
         l0.a("goog.exo.hls");
     }
 
-    public m(c1 c1Var, h4 h4Var, c cVar, z9.d dVar, o3.o oVar, ab.a aVar, u4.c cVar2, long j10, boolean z4, int i10) {
+    public m(c1 c1Var, o3.c cVar, c cVar2, h7.u uVar, o3.p pVar, z9.d dVar, u4.c cVar3, long j10, boolean z4, int i10) {
         y0 y0Var = c1Var.b;
         y0Var.getClass();
         this.i = y0Var;
         this.r = c1Var;
         this.s = c1Var.c;
-        this.j = h4Var;
-        this.h = cVar;
-        this.k = dVar;
-        this.l = oVar;
-        this.m = aVar;
-        this.p = cVar2;
+        this.j = cVar;
+        this.h = cVar2;
+        this.k = uVar;
+        this.l = pVar;
+        this.m = dVar;
+        this.p = cVar3;
         this.q = j10;
         this.n = z4;
         this.o = i10;
@@ -75,11 +74,11 @@ public final class m extends o4.a {
     @Override // o4.a
     public final o4.t b(o4.v vVar, g5.q qVar, long j10) {
         e0 a2 = a(vVar);
-        o3.l lVar = new o3.l(this.d.c, 0, vVar);
+        o3.m mVar = new o3.m(this.d.c, 0, vVar);
         v0 v0Var = this.t;
         k3.k kVar = this.g;
         h5.a.j(kVar);
-        return new l(this.h, this.p, this.j, v0Var, this.l, lVar, this.m, a2, qVar, this.k, this.n, this.o, kVar);
+        return new l(this.h, this.p, this.j, v0Var, this.l, mVar, this.m, a2, qVar, this.k, this.n, this.o, kVar);
     }
 
     @Override // o4.a
@@ -112,9 +111,9 @@ public final class m extends o4.a {
         myLooper.getClass();
         k3.k kVar = this.g;
         h5.a.j(kVar);
-        o3.o oVar = this.l;
-        oVar.h(myLooper, kVar);
-        oVar.a();
+        o3.p pVar = this.l;
+        pVar.e0(myLooper, kVar);
+        pVar.b();
         e0 a2 = a(null);
         Uri uri = this.i.a;
         u4.c cVar = this.p;
@@ -122,13 +121,13 @@ public final class m extends o4.a {
         cVar.n = d0.l(null);
         cVar.f = a2;
         cVar.r = this;
-        p0 p0Var = new p0(((g5.l) cVar.a.b).createDataSource(), uri, 4, cVar.b.G());
+        p0 p0Var = new p0(((g5.l) cVar.a.b).createDataSource(), uri, 4, cVar.b.l());
         h5.a.i(cVar.h == null);
         m0 m0Var = new m0("DefaultHlsPlaylistTracker:MultivariantPlaylist");
         cVar.h = m0Var;
-        ab.a aVar = cVar.c;
+        z9.d dVar = cVar.c;
         int i10 = p0Var.c;
-        m0Var.f(p0Var, cVar, aVar.n3(i10));
+        m0Var.f(p0Var, cVar, dVar.p(i10));
         a2.u(new o4.j(p0Var.b), i10, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 
@@ -140,9 +139,9 @@ public final class m extends o4.a {
             if (rVar.Q) {
                 for (q qVar : rVar.I) {
                     qVar.i();
-                    o3.i iVar = qVar.h;
-                    if (iVar != null) {
-                        iVar.c(qVar.e);
+                    o3.j jVar = qVar.h;
+                    if (jVar != null) {
+                        jVar.c(qVar.e);
                         qVar.h = null;
                         qVar.g = null;
                     }

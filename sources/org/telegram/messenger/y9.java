@@ -7,7 +7,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y9 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -30,10 +30,10 @@ public final /* synthetic */ class y9 implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.b).lambda$checkCanOpenChat$452((org.telegram.ui.ActionBar.d2) this.c, (af.f) this.d, (org.telegram.ui.ActionBar.p2) this.e, (Bundle) this.f, tLObject, tL_error);
+                ((MessagesController) this.b).lambda$checkCanOpenChat$452((org.telegram.ui.ActionBar.d2) this.c, (ze.c) this.d, (org.telegram.ui.ActionBar.p2) this.e, (Bundle) this.f, tLObject, tL_error);
                 break;
             case 1:
-                ((MessagesController) this.b).lambda$didReceivedNotification$51((TLRPC.TL_theme) this.c, (org.telegram.ui.ActionBar.j6) this.d, (TLRPC.TL_inputThemeSettings) this.e, (org.telegram.ui.ActionBar.i6) this.f, tLObject, tL_error);
+                ((MessagesController) this.b).lambda$didReceivedNotification$51((TLRPC.TL_theme) this.c, (org.telegram.ui.ActionBar.i6) this.d, (TLRPC.TL_inputThemeSettings) this.e, (org.telegram.ui.ActionBar.h6) this.f, tLObject, tL_error);
                 break;
             case 2:
                 ((SecretChatHelper) this.b).lambda$startSecretChat$28((Context) this.d, (org.telegram.ui.ActionBar.d2) this.c, (byte[]) this.e, (TLRPC.User) this.f, tLObject, tL_error);

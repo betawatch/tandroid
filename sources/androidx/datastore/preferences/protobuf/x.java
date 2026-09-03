@@ -5,7 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class x extends a {
     private static Map<Object, x> defaultInstanceMap = new ConcurrentHashMap();
@@ -24,8 +24,8 @@ public abstract class x extends a {
             try {
                 Class.forName(cls.getName(), true, cls.getClassLoader());
                 xVar = defaultInstanceMap.get(cls);
-            } catch (ClassNotFoundException e6) {
-                throw new IllegalStateException("Class initialization cannot fail.", e6);
+            } catch (ClassNotFoundException e) {
+                throw new IllegalStateException("Class initialization cannot fail.", e);
             }
         }
         if (xVar != null) {
@@ -42,10 +42,10 @@ public abstract class x extends a {
     public static Object f(Method method, x xVar, Object... objArr) {
         try {
             return method.invoke(xVar, objArr);
-        } catch (IllegalAccessException e6) {
-            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e6);
-        } catch (InvocationTargetException e10) {
-            Throwable cause = e10.getCause();
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e);
+        } catch (InvocationTargetException e6) {
+            Throwable cause = e6.getCause();
             if (cause instanceof RuntimeException) {
                 throw ((RuntimeException) cause);
             }
@@ -106,9 +106,9 @@ public abstract class x extends a {
         }
         z0 z0Var = z0.c;
         z0Var.getClass();
-        boolean e6 = z0Var.a(getClass()).e(this);
+        boolean e = z0Var.a(getClass()).e(this);
         d(2);
-        return e6;
+        return e;
     }
 
     public final int hashCode() {

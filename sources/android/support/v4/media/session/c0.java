@@ -21,18 +21,18 @@ import android.support.v4.media.session.PlaybackStateCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.TypedValue;
-import c2.k0;
+import c2.l0;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class c0 {
     public static int d;
     public final v a;
-    public final bf.b b;
+    public final af.c b;
     public final ArrayList c = new ArrayList();
 
     public c0(Context context, String str, ComponentName componentName, PendingIntent pendingIntent) {
@@ -43,7 +43,7 @@ public final class c0 {
             throw new IllegalArgumentException("tag must not be null or empty");
         }
         if (componentName == null) {
-            int i10 = k0.a;
+            int i10 = l0.a;
             Intent intent = new Intent("android.intent.action.MEDIA_BUTTON");
             intent.setPackage(context.getPackageName());
             List<ResolveInfo> queryBroadcastReceivers = context.getPackageManager().queryBroadcastReceivers(intent, 0);
@@ -77,7 +77,7 @@ public final class c0 {
         }
         d(new p(), new Handler(Looper.myLooper() != null ? Looper.myLooper() : Looper.getMainLooper()));
         this.a.a.setMediaButtonReceiver(pendingIntent);
-        this.b = new bf.b(context, this);
+        this.b = new af.c(context, this);
         if (d == 0) {
             d = (int) (TypedValue.applyDimension(1, 320.0f, context.getResources().getDisplayMetrics()) + 0.5f);
         }
@@ -116,8 +116,8 @@ public final class c0 {
                 if (handler != null) {
                     handler.removeCallbacksAndMessages(null);
                 }
-            } catch (Exception e6) {
-                Log.w("MediaSessionCompat", "Exception happened while accessing MediaSession.mCallback.", e6);
+            } catch (Exception e) {
+                Log.w("MediaSessionCompat", "Exception happened while accessing MediaSession.mCallback.", e);
             }
         }
         mediaSession.setCallback(null);
@@ -200,9 +200,9 @@ public final class c0 {
                     PlaybackStateCompat.CustomAction customAction = (PlaybackStateCompat.CustomAction) obj;
                     PlaybackState.CustomAction customAction2 = customAction.e;
                     if (customAction2 == null) {
-                        PlaybackState.CustomAction.Builder e6 = d0.e(customAction.a, customAction.b, customAction.c);
-                        d0.w(e6, customAction.d);
-                        customAction2 = d0.b(e6);
+                        PlaybackState.CustomAction.Builder e = d0.e(customAction.a, customAction.b, customAction.c);
+                        d0.w(e, customAction.d);
+                        customAction2 = d0.b(e);
                     }
                     d0.a(d10, customAction2);
                 }

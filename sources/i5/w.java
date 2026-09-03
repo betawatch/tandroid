@@ -4,7 +4,7 @@ import h5.d0;
 import j3.c0;
 import j3.f0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w implements Runnable {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class w implements Runnable {
                 f0 f0Var = c0Var.a;
                 k3.f fVar2 = f0Var.q;
                 k3.a n10 = fVar2.n((o4.v) fVar2.d.e);
-                fVar2.q(n10, 1020, new hg.f(n10, fVar, 18));
+                fVar2.q(n10, 1020, new gg.f(n10, fVar, 18));
                 f0Var.N = null;
                 break;
             default:
@@ -40,7 +40,7 @@ public final /* synthetic */ class w implements Runnable {
                 int i11 = d0.a;
                 k3.f fVar4 = c0Var2.a.q;
                 k3.a p10 = fVar4.p();
-                fVar4.q(p10, 1015, new k3.c(p10, fVar3, 2));
+                fVar4.q(p10, 1015, new k3.c(p10, fVar3, 3));
                 break;
         }
     }

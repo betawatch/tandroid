@@ -1,11 +1,10 @@
 package de;
 
-import androidx.biometric.f0;
 import java.util.Hashtable;
 import java.util.StringTokenizer;
-import sf.f;
+import rf.f;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class a {
     public static final Hashtable b;
@@ -48,20 +47,20 @@ public final class a {
                 try {
                     cls2 = Class.forName("java.lang.ClassNotFoundException");
                     d = cls2;
-                } catch (ClassNotFoundException e6) {
-                    throw new NoClassDefFoundError(e6.getMessage());
+                } catch (ClassNotFoundException e) {
+                    throw new NoClassDefFoundError(e.getMessage());
                 }
             }
             return cls2;
         }
     }
 
-    public static f b(f0 f0Var, Object obj, Object obj2) {
-        return new f(f0Var, obj, obj2, c);
+    public static f b(bb.b bVar, Object obj, Object obj2) {
+        return new f(bVar, obj, obj2, c);
     }
 
-    public static f c(f0 f0Var, Object obj, Object obj2, Object obj3) {
-        return new f(f0Var, obj, obj2, new Object[]{obj3});
+    public static f c(bb.b bVar, Object obj, Object obj2, Object obj3) {
+        return new f(bVar, obj, obj2, new Object[]{obj3});
     }
 
     public final da.a d(String str, String str2, String str3, String str4, String str5) {
@@ -96,9 +95,9 @@ public final class a {
         return aVar;
     }
 
-    public final f0 e(da.a aVar) {
-        f0 f0Var = new f0(7);
-        f0Var.b = aVar;
-        return f0Var;
+    public final bb.b e(da.a aVar) {
+        bb.b bVar = new bb.b(9);
+        bVar.b = aVar;
+        return bVar;
     }
 }

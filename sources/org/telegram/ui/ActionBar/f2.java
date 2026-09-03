@@ -2,7 +2,7 @@ package org.telegram.ui.ActionBar;
 
 import android.view.animation.Animation;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class f2 implements Animation.AnimationListener {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final class f2 implements Animation.AnimationListener {
                 ((h2) this.b).d1.setAlpha(0.0f);
                 break;
             default:
-                ((x4) this.b).f.post(new p(this, 12));
+                ((w4) this.b).f.post(new p(this, 12));
                 break;
         }
     }
@@ -36,10 +36,10 @@ public final class f2 implements Animation.AnimationListener {
             case 0:
                 break;
             default:
-                x4 x4Var = (x4) this.b;
-                x4Var.i.setEnabled(false);
-                x4Var.g.setVisibility(0);
-                x4Var.h.setVisibility(0);
+                w4 w4Var = (w4) this.b;
+                w4Var.i.setEnabled(false);
+                w4Var.g.setVisibility(0);
+                w4Var.h.setVisibility(0);
                 break;
         }
     }

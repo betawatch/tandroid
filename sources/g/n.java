@@ -9,18 +9,18 @@ import android.os.Process;
 import android.util.Log;
 import java.util.Calendar;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class n extends f2.v {
-    public final /* synthetic */ int c = 0;
+    public final /* synthetic */ int c = 1;
     public final /* synthetic */ q d;
     public final Object e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n(q qVar, androidx.biometric.e eVar) {
+    public n(q qVar, af.d dVar) {
         super(qVar);
         this.d = qVar;
-        this.e = eVar;
+        this.e = dVar;
     }
 
     @Override // f2.v
@@ -49,18 +49,18 @@ public final class n extends f2.v {
             case 0:
                 return ((PowerManager) this.e).isPowerSaveMode() ? 2 : 1;
             default:
-                androidx.biometric.e eVar = (androidx.biometric.e) this.e;
-                x xVar = (x) eVar.d;
-                LocationManager locationManager = (LocationManager) eVar.c;
+                af.d dVar = (af.d) this.e;
+                x xVar = (x) dVar.d;
+                LocationManager locationManager = (LocationManager) dVar.c;
                 if (xVar.a > System.currentTimeMillis()) {
                     z4 = xVar.b;
                 } else {
-                    Context context = (Context) eVar.b;
+                    Context context = (Context) dVar.b;
                     Location location3 = null;
-                    if (f0.e.a(context, "android.permission.ACCESS_COARSE_LOCATION", Process.myPid(), Process.myUid(), context.getPackageName()) == 0) {
+                    if (f0.f.a(context, "android.permission.ACCESS_COARSE_LOCATION", Process.myPid(), Process.myUid(), context.getPackageName()) == 0) {
                         try {
-                        } catch (Exception e6) {
-                            Log.d("TwilightManager", "Failed to get last known location", e6);
+                        } catch (Exception e) {
+                            Log.d("TwilightManager", "Failed to get last known location", e);
                         }
                         if (locationManager.isProviderEnabled("network")) {
                             location2 = locationManager.getLastKnownLocation("network");
@@ -71,13 +71,13 @@ public final class n extends f2.v {
                     } else {
                         location = null;
                     }
-                    if (f0.e.a(context, "android.permission.ACCESS_FINE_LOCATION", Process.myPid(), Process.myUid(), context.getPackageName()) == 0) {
+                    if (f0.f.a(context, "android.permission.ACCESS_FINE_LOCATION", Process.myPid(), Process.myUid(), context.getPackageName()) == 0) {
                         try {
                             if (locationManager.isProviderEnabled("gps")) {
                                 location3 = locationManager.getLastKnownLocation("gps");
                             }
-                        } catch (Exception e10) {
-                            Log.d("TwilightManager", "Failed to get last known location", e10);
+                        } catch (Exception e6) {
+                            Log.d("TwilightManager", "Failed to get last known location", e6);
                         }
                     }
                     if (location3 == null || location == null ? location3 != null : location3.getTime() > location.getTime()) {

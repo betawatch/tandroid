@@ -1,61 +1,39 @@
 package org.telegram.ui.web;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.os.Bundle;
+import nh.j7;
+import org.json.JSONObject;
+import org.telegram.ui.qy;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
-public interface f0 {
-    void a();
+public final class f0 extends qy {
+    public final /* synthetic */ c1 A4;
+    public final /* synthetic */ boolean[] y4;
+    public final /* synthetic */ j7 z4;
 
-    void b();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f0(c1 c1Var, Bundle bundle, boolean[] zArr, j7 j7Var) {
+        super(bundle);
+        this.A4 = c1Var;
+        this.y4 = zArr;
+        this.z4 = j7Var;
+    }
 
-    void c();
-
-    void d(TLRPC.Document document);
-
-    void e(String str);
-
-    void f(ArrayList arrayList);
-
-    String g(boolean z4, boolean z10);
-
-    boolean h();
-
-    void i(boolean z4);
-
-    void j();
-
-    void k(boolean z4);
-
-    void l(boolean z4, boolean z10, String str, long j10, int i10, int i11, boolean z11, boolean z12, String str2);
-
-    void m(int i10);
-
-    void n(TLRPC.InputInvoice inputInvoice, String str, TLObject tLObject);
-
-    void o(int i10, boolean z4);
-
-    void p(boolean z4);
-
-    void q(boolean z4, boolean z10, String str, long j10, int i10, int i11, boolean z11, boolean z12);
-
-    void r(int i10);
-
-    void s();
-
-    void t(boolean z4);
-
-    void u(int i10, int i11, boolean z4);
-
-    void v(TLRPC.User user, String str, ArrayList arrayList);
-
-    void w(boolean z4);
-
-    void x(boolean z4);
-
-    void y();
-
-    sh.u0 z();
+    @Override // org.telegram.ui.qy, org.telegram.ui.ActionBar.p2
+    public final void onFragmentDestroy() {
+        JSONObject jSONObject;
+        super.onFragmentDestroy();
+        boolean[] zArr = this.y4;
+        if (zArr[0]) {
+            return;
+        }
+        zArr[0] = true;
+        try {
+            jSONObject = new JSONObject();
+        } catch (Exception unused) {
+            jSONObject = null;
+        }
+        this.A4.z(this.z4, "requested_chat_failed", jSONObject);
+    }
 }

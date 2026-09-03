@@ -1,51 +1,31 @@
 package ph;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import k7.c6;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
-public final class n extends LinearLayout {
-    public final TextView a;
-    public final TextView b;
-    public boolean c;
+public final class n extends x5 {
+    public final /* synthetic */ p C;
 
-    public n(Context context) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n(p pVar, Context context) {
         super(context);
-        setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
-        setOrientation(1);
-        TextView textView = new TextView(context);
-        this.a = textView;
-        textView.setTextSize(1, 16.0f);
-        textView.setTextColor(k6.w0(null, k6.j5, false));
-        textView.setGravity(LocaleController.isRTL ? 5 : 3);
-        addView(textView, c6.t(-1, -2, 51, 0, 7, 0, 0));
-        TextView textView2 = new TextView(context);
-        this.b = textView2;
-        textView2.setTextSize(1, 13.0f);
-        textView2.setTextColor(k6.w0(null, k6.q5, false));
-        textView2.setGravity(LocaleController.isRTL ? 5 : 3);
-        addView(textView2, c6.t(-1, -2, 51, 0, 4, 0, 0));
+        this.C = pVar;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.c) {
-            canvas.drawRect(getPaddingLeft(), getHeight() - 1, getWidth(), getHeight(), k6.k0);
+    @Override // ph.x5
+    public final void c() {
+        AndroidUtilities.cancelRunOnUIThread(this.h);
+        if (this.c <= 0) {
+            a(true);
+        } else {
+            CameraController.getInstance().stopVideoRecording(this.a.getCameraSessionRecording(), false, false);
         }
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLObject.FLAG_30));
+        p pVar = this.C;
+        if (pVar.L1) {
+            pVar.z(true, false);
+        }
     }
 }

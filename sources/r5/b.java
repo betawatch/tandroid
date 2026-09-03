@@ -4,12 +4,12 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 import j$.util.DesugarCollections;
-import j7.g5;
+import j7.f5;
 import java.util.ArrayList;
 import java.util.List;
-import k7.m7;
+import k7.l7;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class b extends c6.a {
     public static final Parcelable.Creator<b> CREATOR;
@@ -34,7 +34,7 @@ public final class b extends c6.a {
     public final boolean y;
 
     static {
-        new s5.f(s5.f.V, s5.f.W, 10000L, null, m7.a("smallIconDrawableResId"), m7.a("stopLiveStreamDrawableResId"), m7.a("pauseDrawableResId"), m7.a("playDrawableResId"), m7.a("skipNextDrawableResId"), m7.a("skipPrevDrawableResId"), m7.a("forwardDrawableResId"), m7.a("forward10DrawableResId"), m7.a("forward30DrawableResId"), m7.a("rewindDrawableResId"), m7.a("rewind10DrawableResId"), m7.a("rewind30DrawableResId"), m7.a("disconnectDrawableResId"), m7.a("notificationImageSizeDimenResId"), m7.a("castingToDeviceStringResId"), m7.a("stopLiveStreamStringResId"), m7.a("pauseStringResId"), m7.a("playStringResId"), m7.a("skipNextStringResId"), m7.a("skipPrevStringResId"), m7.a("forwardStringResId"), m7.a("forward10StringResId"), m7.a("forward30StringResId"), m7.a("rewindStringResId"), m7.a("rewind10StringResId"), m7.a("rewind30StringResId"), m7.a("disconnectStringResId"), null, false, false);
+        new s5.f(s5.f.V, s5.f.W, 10000L, null, l7.a("smallIconDrawableResId"), l7.a("stopLiveStreamDrawableResId"), l7.a("pauseDrawableResId"), l7.a("playDrawableResId"), l7.a("skipNextDrawableResId"), l7.a("skipPrevDrawableResId"), l7.a("forwardDrawableResId"), l7.a("forward10DrawableResId"), l7.a("forward30DrawableResId"), l7.a("rewindDrawableResId"), l7.a("rewind10DrawableResId"), l7.a("rewind30DrawableResId"), l7.a("disconnectDrawableResId"), l7.a("notificationImageSizeDimenResId"), l7.a("castingToDeviceStringResId"), l7.a("stopLiveStreamStringResId"), l7.a("pauseStringResId"), l7.a("playStringResId"), l7.a("skipNextStringResId"), l7.a("skipPrevStringResId"), l7.a("forwardStringResId"), l7.a("forward10StringResId"), l7.a("forward30StringResId"), l7.a("rewindStringResId"), l7.a("rewind10StringResId"), l7.a("rewind30StringResId"), l7.a("disconnectStringResId"), null, false, false);
         F = new s5.a("com.google.android.gms.cast.framework.media.MediaIntentReceiver", null, null, null, false, false);
         CREATOR = new c0(0);
     }
@@ -65,34 +65,34 @@ public final class b extends c6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = g5.q(parcel, 20293);
-        g5.l(parcel, 2, this.a);
-        g5.n(parcel, 3, DesugarCollections.unmodifiableList(this.b));
-        g5.s(parcel, 4, 4);
+        int q10 = f5.q(parcel, 20293);
+        f5.l(parcel, 2, this.a);
+        f5.n(parcel, 3, DesugarCollections.unmodifiableList(this.b));
+        f5.s(parcel, 4, 4);
         parcel.writeInt(this.c ? 1 : 0);
-        g5.k(parcel, 5, this.d, i10);
-        g5.s(parcel, 6, 4);
+        f5.k(parcel, 5, this.d, i10);
+        f5.s(parcel, 6, 4);
         parcel.writeInt(this.e ? 1 : 0);
-        g5.k(parcel, 7, this.f, i10);
-        g5.s(parcel, 8, 4);
+        f5.k(parcel, 7, this.f, i10);
+        f5.s(parcel, 8, 4);
         parcel.writeInt(this.h ? 1 : 0);
-        g5.s(parcel, 9, 8);
+        f5.s(parcel, 9, 8);
         parcel.writeDouble(this.n);
-        g5.s(parcel, 10, 4);
+        f5.s(parcel, 10, 4);
         parcel.writeInt(this.r ? 1 : 0);
-        g5.s(parcel, 11, 4);
+        f5.s(parcel, 11, 4);
         parcel.writeInt(this.s ? 1 : 0);
-        g5.s(parcel, 12, 4);
+        f5.s(parcel, 12, 4);
         parcel.writeInt(this.v ? 1 : 0);
-        g5.n(parcel, 13, DesugarCollections.unmodifiableList(this.w));
-        g5.s(parcel, 14, 4);
+        f5.n(parcel, 13, DesugarCollections.unmodifiableList(this.w));
+        f5.s(parcel, 14, 4);
         parcel.writeInt(this.x ? 1 : 0);
-        g5.s(parcel, 15, 4);
+        f5.s(parcel, 15, 4);
         parcel.writeInt(0);
-        g5.s(parcel, 16, 4);
+        f5.s(parcel, 16, 4);
         parcel.writeInt(this.y ? 1 : 0);
-        g5.k(parcel, 17, this.B, i10);
-        g5.k(parcel, 18, this.C, i10);
-        g5.r(parcel, q10);
+        f5.k(parcel, 17, this.B, i10);
+        f5.k(parcel, 18, this.C, i10);
+        f5.r(parcel, q10);
     }
 }

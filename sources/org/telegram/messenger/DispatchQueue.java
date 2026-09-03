@@ -7,7 +7,7 @@ import android.os.Process;
 import android.os.SystemClock;
 import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class DispatchQueue extends Thread {
     private static final int THREAD_PRIORITY_DEFAULT = -1000;
@@ -32,8 +32,8 @@ public class DispatchQueue extends Thread {
         try {
             this.syncLatch.await();
             this.handler.removeCallbacks(runnable);
-        } catch (Exception e6) {
-            FileLog.e((Throwable) e6, false);
+        } catch (Exception e) {
+            FileLog.e((Throwable) e, false);
         }
     }
 
@@ -43,8 +43,8 @@ public class DispatchQueue extends Thread {
             for (Runnable runnable : runnableArr) {
                 this.handler.removeCallbacks(runnable);
             }
-        } catch (Exception e6) {
-            FileLog.e((Throwable) e6, false);
+        } catch (Exception e) {
+            FileLog.e((Throwable) e, false);
         }
     }
 
@@ -52,8 +52,8 @@ public class DispatchQueue extends Thread {
         try {
             this.syncLatch.await();
             this.handler.removeCallbacksAndMessages(null);
-        } catch (Exception e6) {
-            FileLog.e((Throwable) e6, false);
+        } catch (Exception e) {
+            FileLog.e((Throwable) e, false);
         }
     }
 
@@ -77,8 +77,8 @@ public class DispatchQueue extends Thread {
     public boolean postToFrontRunnable(Runnable runnable) {
         try {
             this.syncLatch.await();
-        } catch (Exception e6) {
-            FileLog.e((Throwable) e6, false);
+        } catch (Exception e) {
+            FileLog.e((Throwable) e, false);
         }
         return this.handler.postAtFrontOfQueue(runnable);
     }
@@ -127,8 +127,8 @@ public class DispatchQueue extends Thread {
     public boolean postRunnable(Runnable runnable, long j10) {
         try {
             this.syncLatch.await();
-        } catch (Exception e6) {
-            FileLog.e((Throwable) e6, false);
+        } catch (Exception e) {
+            FileLog.e((Throwable) e, false);
         }
         if (j10 <= 0) {
             return this.handler.post(runnable);

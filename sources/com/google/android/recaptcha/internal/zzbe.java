@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import com.google.android.play.core.integrity.StandardIntegrityException;
 import dd.p;
-import k7.q7;
+import k7.p7;
 import kotlin.jvm.internal.q;
 import ld.c0;
 import ld.e0;
@@ -12,7 +12,7 @@ import uc.c;
 import vc.a;
 import wc.i;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 final class zzbe extends i implements p {
     Object zza;
@@ -48,10 +48,10 @@ final class zzbe extends i implements p {
         try {
             if (qVar != 0) {
                 q qVar2 = (q) this.zza;
-                q7.b(obj);
+                p7.b(obj);
                 qVar = qVar2;
             } else {
-                q7.b(obj);
+                p7.b(obj);
                 q qVar3 = new q();
                 zzbd zzbdVar = new zzbd(this.zzc, qVar3, null);
                 this.zza = qVar3;
@@ -62,19 +62,19 @@ final class zzbe extends i implements p {
                 }
             }
             return sc.i.a;
-        } catch (Exception e6) {
+        } catch (Exception e) {
             zzbo zzboVar = this.zzc;
             s zzf = zzboVar.zzf();
             Throwable th2 = (Throwable) qVar.a;
             if (th2 == null) {
-                th2 = e6;
+                th2 = e;
             }
             ((t) zzf).L(th2);
             zzboVar.zzc = zzbp.zza;
             zzce zzceVar = zzce.zzb;
             Throwable th3 = (Throwable) qVar.a;
             if (th3 == null) {
-                th3 = e6;
+                th3 = e;
             }
             if (th3 instanceof StandardIntegrityException) {
                 int errorCode = ((StandardIntegrityException) th3).getErrorCode();
@@ -134,7 +134,7 @@ final class zzbe extends i implements p {
             } else {
                 zzcdVar = zzcd.zza;
             }
-            throw new zzcg(zzceVar, zzcdVar, e6.getMessage(), null, 8, null);
+            throw new zzcg(zzceVar, zzcdVar, e.getMessage(), null, 8, null);
         }
     }
 }

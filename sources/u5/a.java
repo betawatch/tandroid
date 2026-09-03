@@ -8,9 +8,9 @@ import java.util.Iterator;
 import java.util.Random;
 import java.util.regex.Pattern;
 import org.json.JSONObject;
-import org.telegram.ui.yh;
+import org.telegram.ui.ai;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final Pattern a = Pattern.compile("urn:x-cast:[-A-Za-z0-9_]+(\\.[-A-Za-z0-9_]+)*");
@@ -43,7 +43,7 @@ public abstract class a {
         int length = iArr.length;
         int i10 = 0;
         while (i10 < length) {
-            i10 = yh.d(iArr[i10], i10, 1, arrayList);
+            i10 = ai.d(iArr[i10], i10, 1, arrayList);
         }
         return arrayList;
     }

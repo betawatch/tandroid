@@ -1,73 +1,33 @@
 package org.telegram.ui;
 
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sw implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ oy b;
+public final class sw extends org.telegram.ui.Components.xs {
+    public final /* synthetic */ py E;
 
-    public /* synthetic */ sw(oy oyVar, int i10) {
-        this.a = i10;
-        this.b = oyVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public sw(my myVar, py pyVar) {
+        super(myVar);
+        this.E = pyVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.d.l();
-                break;
-            case 1:
-                oy oyVar = this.b;
-                py pyVar = oyVar.H;
-                ly lyVar = oyVar.a;
-                if (lyVar != null && lyVar.getScrollState() == 0 && oyVar.a.getChildCount() > 0 && oyVar.a.getLayoutManager() != null) {
-                    int i10 = 1;
-                    boolean z4 = oyVar.s == 0 && pyVar.Z3() && oyVar.v == 2;
-                    float f10 = pyVar.K;
-                    f2.j0 j0Var = (f2.j0) oyVar.a.getLayoutManager();
-                    View view = null;
-                    int i11 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                    int i12 = -1;
-                    for (int i13 = 0; i13 < oyVar.a.getChildCount(); i13++) {
-                        int R = RecyclerView.R(oyVar.a.getChildAt(i13));
-                        View childAt = oyVar.a.getChildAt(i13);
-                        if (R != -1 && childAt != null && childAt.getTop() < i11) {
-                            i11 = childAt.getTop();
-                            i12 = R;
-                            view = childAt;
-                        }
-                    }
-                    if (view != null) {
-                        float top = view.getTop() - oyVar.a.getPaddingTop();
-                        if (pyVar.H) {
-                            f10 = 0.0f;
-                        }
-                        if (oyVar.a.getScrollState() != 1) {
-                            if (z4 && i12 == 0 && ((oyVar.a.getPaddingTop() - view.getTop()) - view.getMeasuredHeight()) + f10 < 0.0f) {
-                                top = f10;
-                            } else {
-                                i10 = i12;
-                            }
-                            j0Var.h1(i10, (int) top);
-                            break;
-                        }
-                    }
-                }
-                break;
-            default:
-                oy oyVar2 = this.b;
-                oyVar2.d.W(oyVar2.F);
-                oyVar2.H.N = true;
-                ly lyVar2 = oyVar2.a;
-                lyVar2.a3 = true;
-                oyVar2.E = false;
-                lyVar2.invalidate();
-                break;
+    @Override // f2.o1
+    public final void y() {
+        py pyVar = this.E;
+        if (pyVar.c.L0() == 0) {
+            View m9 = pyVar.c.m(0);
+            if (m9 != null) {
+                m9.invalidate();
+            }
+            if (pyVar.v == 2) {
+                pyVar.v = 1;
+            }
+            xw xwVar = pyVar.n;
+            if (xwVar != null) {
+                xwVar.b();
+            }
         }
     }
 }

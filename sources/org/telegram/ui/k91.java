@@ -1,63 +1,29 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class k91 implements pg.a {
-    public final RectF a = new RectF();
-    public final /* synthetic */ lh.j4 b;
-    public final /* synthetic */ na1 c;
+public final /* synthetic */ class k91 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ oa1 b;
 
-    public k91(na1 na1Var, lh.j4 j4Var) {
-        this.c = na1Var;
-        this.b = j4Var;
+    public /* synthetic */ k91(oa1 oa1Var, int i10) {
+        this.a = i10;
+        this.b = oa1Var;
     }
 
-    @Override // pg.a
-    public final void e(Canvas canvas, RectF rectF) {
-        og.k kVar;
-        View view;
-        ac acVar;
-        na1 na1Var = this.c;
-        na1Var.fragmentView.getMeasuredWidth();
-        na1Var.fragmentView.getMeasuredHeight();
-        canvas.drawColor(na1Var.getThemedColor(org.telegram.ui.ActionBar.k6.d6));
-        for (int i10 = 0; i10 < 3; i10++) {
-            if (i10 == 0) {
-                kVar = na1Var.Q;
-                view = na1Var.P;
-            } else if (i10 != 1 || (acVar = na1Var.g0) == null) {
-                ke keVar = na1Var.h0;
-                if (keVar != null) {
-                    kVar = keVar.Y0;
-                    view = keVar;
-                } else {
-                    kVar = null;
-                    view = null;
-                }
-            } else {
-                kVar = acVar.D;
-                view = acVar;
-            }
-            if (kVar != null && view != null) {
-                lh.j4 j4Var = this.b;
-                RectF rectF2 = this.a;
-                vg.i.c(view, j4Var, rectF2);
-                if (rectF2.right > 0.0f) {
-                    na1Var.fragmentView.getMeasuredWidth();
-                }
-                canvas.save();
-                kVar.e(canvas, rectF);
-                canvas.restore();
-            }
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                oa1.U(this.b, tLObject);
+                break;
+            default:
+                oa1.V(this.b, tLObject);
+                break;
         }
-    }
-
-    @Override // pg.a
-    public final void g(g.x xVar, RectF rectF) {
-        xVar.b = true;
     }
 }

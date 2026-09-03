@@ -1,29 +1,42 @@
 package m;
 
-import android.widget.AbsListView;
+import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class b2 implements AbsListView.OnScrollListener {
-    public final /* synthetic */ d2 a;
+public final class b2 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e2 b;
 
-    public b2(d2 d2Var) {
-        this.a = d2Var;
+    public /* synthetic */ b2(e2 e2Var, int i10) {
+        this.a = i10;
+        this.b = e2Var;
     }
 
-    @Override // android.widget.AbsListView.OnScrollListener
-    public final void onScrollStateChanged(AbsListView absListView, int i10) {
-        d2 d2Var = this.a;
-        a2 a2Var = d2Var.D;
-        x xVar = d2Var.L;
-        if (i10 != 1 || xVar.getInputMethodMode() == 2 || xVar.getContentView() == null) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        e2 e2Var = this.b;
+        switch (i10) {
+            case 0:
+                s1 s1Var = e2Var.c;
+                if (s1Var != null) {
+                    s1Var.setListSelectionHidden(true);
+                    s1Var.requestLayout();
+                    break;
+                }
+                break;
+            default:
+                s1 s1Var2 = e2Var.c;
+                if (s1Var2 != null) {
+                    WeakHashMap weakHashMap = r0.j0.a;
+                    if (s1Var2.isAttachedToWindow() && e2Var.c.getCount() > e2Var.c.getChildCount() && e2Var.c.getChildCount() <= e2Var.x) {
+                        e2Var.L.setInputMethodMode(2);
+                        e2Var.g();
+                        break;
+                    }
+                }
+                break;
         }
-        d2Var.H.removeCallbacks(a2Var);
-        a2Var.run();
-    }
-
-    @Override // android.widget.AbsListView.OnScrollListener
-    public final void onScroll(AbsListView absListView, int i10, int i11, int i12) {
     }
 }

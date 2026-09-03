@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r41 implements Runnable {
     public final /* synthetic */ int a;
@@ -26,14 +26,14 @@ public final /* synthetic */ class r41 implements Runnable {
                     if (u41Var != null) {
                         u41Var.Ud = (w41Var.w.p() - w41Var.w.n()) / 1000;
                         w41Var.K.q4();
-                        org.telegram.ui.Components.mo0 seekBarWaveform = w41Var.K.getSeekBarWaveform();
+                        org.telegram.ui.Components.lo0 seekBarWaveform = w41Var.K.getSeekBarWaveform();
                         if (seekBarWaveform != null) {
                             float f10 = w41Var.X;
                             seekBarWaveform.J = true;
                             seekBarWaveform.K = f10;
-                            org.telegram.ui.Cells.t1 t1Var = seekBarWaveform.n;
-                            if (t1Var != null) {
-                                t1Var.invalidate();
+                            org.telegram.ui.Cells.s1 s1Var = seekBarWaveform.n;
+                            if (s1Var != null) {
+                                s1Var.invalidate();
                             }
                         }
                     }
@@ -54,9 +54,9 @@ public final /* synthetic */ class r41 implements Runnable {
                 w41 w41Var2 = this.b;
                 if (w41Var2.d == null) {
                     AndroidUtilities.runOnUIThread(new r41(w41Var2, 2));
-                    org.telegram.ui.Cells.t1 t1Var2 = w41Var2.L;
-                    if (t1Var2 != null) {
-                        t1Var2.setVisibility(0);
+                    org.telegram.ui.Cells.s1 s1Var2 = w41Var2.L;
+                    if (s1Var2 != null) {
+                        s1Var2.setVisibility(0);
                         w41Var2.L.invalidate();
                     }
                 }

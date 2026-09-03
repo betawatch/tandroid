@@ -1,36 +1,39 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import android.os.Build;
-import android.view.Surface;
-import android.view.TextureView;
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class a3 {
-    public long a;
-    public Bitmap b;
+public final class a3 extends VideoPlayerHolderBase {
+    public final /* synthetic */ b3 a;
 
-    public static a3 a(VideoPlayerHolderBase videoPlayerHolderBase, z2 z2Var) {
-        a3 a3Var = new a3();
-        a3Var.a = videoPlayerHolderBase.getCurrentPosition();
-        if (videoPlayerHolderBase.firstFrameRendered) {
-            TextureView textureView = z2Var.n;
-            TextureView textureView2 = z2Var.n;
-            if (textureView != null && textureView.getSurfaceTexture() != null) {
-                if (Build.VERSION.SDK_INT >= 24) {
-                    Surface surface = new Surface(textureView2.getSurfaceTexture());
-                    Bitmap createBitmap = Bitmap.createBitmap(textureView2.getMeasuredWidth(), textureView2.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
-                    AndroidUtilities.getBitmapFromSurface(surface, createBitmap);
-                    surface.release();
-                    a3Var.b = createBitmap;
-                    return a3Var;
-                }
-                a3Var.b = textureView2.getBitmap();
-            }
+    public a3(b3 b3Var) {
+        this.a = b3Var;
+    }
+
+    @Override // org.telegram.messenger.video.VideoPlayerHolderBase
+    public final boolean needRepeat() {
+        return true;
+    }
+
+    @Override // org.telegram.messenger.video.VideoPlayerHolderBase
+    public final void onRenderedFirstFrame() {
+        super.onRenderedFirstFrame();
+        if (this.firstFrameRendered) {
+            return;
         }
-        return a3Var;
+        this.firstFrameRendered = true;
+        b3 b3Var = this.a;
+        b3Var.n.setAlpha(1.0f);
+        TL_iv.pageBlockVideo pageblockvideo = b3Var.I;
+        if (pageblockvideo != null) {
+            p70 p70Var = b3Var.a;
+            a0.h hVar = p70Var.y;
+            long j10 = pageblockvideo.video_id;
+            c3 a2 = c3.a(p70Var.w, b3Var);
+            b3Var.c(a2);
+            hVar.k(a2, j10);
+        }
     }
 }

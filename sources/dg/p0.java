@@ -1,11 +1,34 @@
 package dg;
 
-import android.graphics.fonts.Font;
+import android.content.Context;
+import android.graphics.PointF;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.gj0;
+import org.telegram.ui.Components.i71;
+import org.telegram.ui.Components.jv0;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.mt0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class p0 {
-    public Font a;
-    public String b;
-    public String c;
+public final class p0 extends r3 {
+    public final /* synthetic */ e1 v0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p0(e1 e1Var, Context context, PointF pointF, float f10, float f11, jv0 jv0Var, TLRPC.Document document, Object obj) {
+        super(context, pointF, f10, f11, jv0Var, document, obj);
+        this.v0 = e1Var;
+    }
+
+    @Override // dg.r3
+    public final void q(gj0 gj0Var) {
+        PhotoViewer photoViewer = ((mt0) this.v0).l2;
+        i71 i71Var = photoViewer.C2;
+        if (i71Var == null) {
+            return;
+        }
+        long n10 = i71Var.n();
+        long j10 = photoViewer.i8;
+        gj0Var.R(n10 - (j10 > 0 ? j10 / 1000 : 0L));
+    }
 }

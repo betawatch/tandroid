@@ -1,28 +1,27 @@
 package s2;
 
-import androidx.biometric.f0;
-import j7.m5;
+import j7.l5;
 import java.nio.ByteBuffer;
 import java.util.Date;
-import org.telegram.ui.yh;
+import org.telegram.ui.ai;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class m extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ f0 F;
-    public static final /* synthetic */ f0 G;
-    public static final /* synthetic */ f0 H;
-    public static final /* synthetic */ f0 I;
-    public static final /* synthetic */ f0 J;
-    public static final /* synthetic */ f0 K;
-    public static final /* synthetic */ f0 L;
-    public static final /* synthetic */ f0 M;
-    public static final /* synthetic */ f0 N;
-    public static final /* synthetic */ f0 O;
-    public static final /* synthetic */ f0 P;
-    public static final /* synthetic */ f0 Q;
-    public static final /* synthetic */ f0 R;
-    public static final /* synthetic */ f0 S;
+    public static final /* synthetic */ bb.b F;
+    public static final /* synthetic */ bb.b G;
+    public static final /* synthetic */ bb.b H;
+    public static final /* synthetic */ bb.b I;
+    public static final /* synthetic */ bb.b J;
+    public static final /* synthetic */ bb.b K;
+    public static final /* synthetic */ bb.b L;
+    public static final /* synthetic */ bb.b M;
+    public static final /* synthetic */ bb.b N;
+    public static final /* synthetic */ bb.b O;
+    public static final /* synthetic */ bb.b P;
+    public static final /* synthetic */ bb.b Q;
+    public static final /* synthetic */ bb.b R;
+    public static final /* synthetic */ bb.b S;
     public int B;
     public int C;
     public int D;
@@ -75,13 +74,13 @@ public final class m extends com.googlecode.mp4parser.c {
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
         if (e() == 1) {
-            this.e = m5.b(r2.b.j(byteBuffer));
-            this.f = m5.b(r2.b.j(byteBuffer));
+            this.e = l5.b(r2.b.j(byteBuffer));
+            this.f = l5.b(r2.b.j(byteBuffer));
             this.h = r2.b.i(byteBuffer);
             this.n = r2.b.j(byteBuffer);
         } else {
-            this.e = m5.b(r2.b.i(byteBuffer));
-            this.f = m5.b(r2.b.i(byteBuffer));
+            this.e = l5.b(r2.b.i(byteBuffer));
+            this.f = l5.b(r2.b.i(byteBuffer));
             this.h = r2.b.i(byteBuffer);
             this.n = r2.b.i(byteBuffer);
         }
@@ -104,13 +103,13 @@ public final class m extends com.googlecode.mp4parser.c {
     public final void getContent(ByteBuffer byteBuffer) {
         i(byteBuffer);
         if (e() == 1) {
-            byteBuffer.putLong(m5.a(this.e));
-            byteBuffer.putLong(m5.a(this.f));
+            byteBuffer.putLong(l5.a(this.e));
+            byteBuffer.putLong(l5.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putLong(this.n);
         } else {
-            byteBuffer.putInt((int) m5.a(this.e));
-            byteBuffer.putInt((int) m5.a(this.f));
+            byteBuffer.putInt((int) l5.a(this.e));
+            byteBuffer.putInt((int) l5.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putInt((int) this.n);
         }
@@ -136,31 +135,31 @@ public final class m extends com.googlecode.mp4parser.c {
     }
 
     public final String toString() {
-        sf.f b10 = de.a.b(M, this, this);
+        rf.f b10 = de.a.b(M, this, this);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb = new StringBuilder("MovieHeaderBox[creationTime=");
-        yh.x(de.a.b(F, this, this));
+        ai.x(de.a.b(F, this, this));
         sb.append(this.e);
         sb.append(";modificationTime=");
-        yh.x(de.a.b(G, this, this));
+        ai.x(de.a.b(G, this, this));
         sb.append(this.f);
         sb.append(";timescale=");
-        yh.x(de.a.b(H, this, this));
+        ai.x(de.a.b(H, this, this));
         sb.append(this.h);
         sb.append(";duration=");
-        yh.x(de.a.b(I, this, this));
+        ai.x(de.a.b(I, this, this));
         sb.append(this.n);
         sb.append(";rate=");
-        yh.x(de.a.b(J, this, this));
+        ai.x(de.a.b(J, this, this));
         sb.append(this.r);
         sb.append(";volume=");
-        yh.x(de.a.b(K, this, this));
+        ai.x(de.a.b(K, this, this));
         sb.append(this.s);
         sb.append(";matrix=");
         sb.append(this.v);
         sb.append(";nextTrackId=");
-        yh.x(de.a.b(L, this, this));
+        ai.x(de.a.b(L, this, this));
         return android.support.v4.media.a.q(sb, this.w, "]");
     }
 }

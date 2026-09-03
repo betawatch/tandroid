@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class u extends Binder implements d {
     public static final /* synthetic */ int b = 0;
@@ -105,12 +105,17 @@ public final class u extends Binder implements d {
     }
 
     @Override // android.support.v4.media.session.d
-    public final void a() {
+    public final void b() {
         throw new AssertionError();
     }
 
     @Override // android.support.v4.media.session.d
-    public final PlaybackStateCompat b() {
+    public final void b0(RatingCompat ratingCompat, Bundle bundle) {
+        throw new AssertionError();
+    }
+
+    @Override // android.support.v4.media.session.d
+    public final PlaybackStateCompat c() {
         v vVar = this.a;
         PlaybackStateCompat playbackStateCompat = vVar.f;
         MediaMetadataCompat mediaMetadataCompat = vVar.h;
@@ -147,11 +152,6 @@ public final class u extends Binder implements d {
             arrayList.addAll(arrayList2);
         }
         return new PlaybackStateCompat(playbackStateCompat.a, j14, j15, playbackStateCompat.d, j16, i11, charSequence, elapsedRealtime, arrayList, playbackStateCompat.s, playbackStateCompat.v);
-    }
-
-    @Override // android.support.v4.media.session.d
-    public final void b0(RatingCompat ratingCompat, Bundle bundle) {
-        throw new AssertionError();
     }
 
     @Override // android.support.v4.media.session.d
@@ -431,14 +431,14 @@ public final class u extends Binder implements d {
                 return true;
             case 28:
                 parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                PlaybackStateCompat b10 = b();
+                PlaybackStateCompat c3 = c();
                 parcel2.writeNoException();
-                if (b10 == null) {
+                if (c3 == null) {
                     parcel2.writeInt(0);
                     return true;
                 }
                 parcel2.writeInt(1);
-                b10.writeToParcel(parcel2, 1);
+                c3.writeToParcel(parcel2, 1);
                 return true;
             case 29:
                 parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
@@ -475,7 +475,7 @@ public final class u extends Binder implements d {
                 return true;
             case 33:
                 parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                a();
+                b();
                 parcel2.writeNoException();
                 return true;
             case 34:

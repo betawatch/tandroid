@@ -1,6 +1,6 @@
 package j7;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class h9 implements v2.e {
     public static h9 b;
@@ -38,14 +38,14 @@ public final class h9 implements v2.e {
         aVar.b(y8.class, n2.a);
         aVar.b(c6.class, p2.a);
         aVar.b(b6.class, m2.a);
-        aVar.b(b7.class, o3.a);
+        aVar.b(androidx.fragment.app.e0.class, o3.a);
         aVar.b(z7.class, m4.a);
         aVar.b(a8.class, n4.a);
         aVar.b(y7.class, l4.a);
         aVar.b(v6.class, i3.a);
         aVar.b(x8.class, o1.a);
         aVar.b(w6.class, j3.a);
-        aVar.b(androidx.fragment.app.e0.class, p3.a);
+        aVar.b(b7.class, p3.a);
         aVar.b(e7.class, s3.a);
         aVar.b(d7.class, r3.a);
         aVar.b(c7.class, q3.a);
@@ -61,7 +61,7 @@ public final class h9 implements v2.e {
         aVar.b(x7.class, j4.a);
         aVar.b(w7.class, k4.a);
         aVar.b(j7.class, t3.a);
-        aVar.b(i6.class, w2.a);
+        aVar.b(j6.class, w2.a);
         aVar.b(h7.class, v3.a);
         aVar.b(f7.class, u3.a);
         aVar.b(i7.class, w3.a);
@@ -74,14 +74,14 @@ public final class h9 implements v2.e {
         aVar.b(m5.class, v1.a);
         aVar.b(l5.class, u1.a);
         aVar.b(n5.class, w1.a);
-        aVar.b(a8.j.class, x1.a);
-        aVar.b(o5.class, y1.a);
-        aVar.b(p5.class, z1.a);
+        aVar.b(o5.class, x1.a);
+        aVar.b(p5.class, y1.a);
+        aVar.b(a8.j.class, z1.a);
         aVar.b(q5.class, a2.a);
         aVar.b(j0.class, k1.a);
         aVar.b(l0.class, m1.a);
         aVar.b(k0.class, l1.a);
-        aVar.b(com.google.android.gms.internal.play_billing.h.class, u2.a);
+        aVar.b(g6.class, u2.a);
         aVar.b(y5.class, i2.a);
         aVar.b(o.class, n0.a);
         aVar.b(n.class, o0.a);
@@ -116,10 +116,10 @@ public final class h9 implements v2.e {
         aVar.b(u8.class, c5.a);
         aVar.b(d8.class, u4.a);
         aVar.b(f6.class, t2.a);
-        aVar.b(j6.class, x2.a);
+        aVar.b(com.google.android.gms.internal.play_billing.h.class, x2.a);
         aVar.b(g5.class, p1.a);
         aVar.b(d6.class, q2.a);
-        aVar.b(g6.class, v2.a);
+        aVar.b(h6.class, v2.a);
         aVar.b(a6.class, l2.a);
         aVar.b(t6.class, e3.a);
         aVar.b(s6.class, d3.a);
@@ -146,7 +146,7 @@ public final class h9 implements v2.e {
         aVar.b(e8.class, v4.a);
     }
 
-    @Override // v2.e, f3.f
+    @Override // v2.e
     public Object apply(Object obj) {
         switch (this.a) {
         }

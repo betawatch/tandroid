@@ -1,6 +1,6 @@
 package pc;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public enum o extends a2 {
     public o() {
@@ -16,9 +16,9 @@ public enum o extends a2 {
     @Override // pc.a2
     public final void d(k kVar, a aVar) {
         if (aVar.o()) {
-            String e6 = aVar.e();
-            kVar.i.n(e6);
-            kVar.h.append(e6);
+            String e = aVar.e();
+            kVar.i.n(e);
+            kVar.h.append(e);
             return;
         }
         char d = aVar.d();

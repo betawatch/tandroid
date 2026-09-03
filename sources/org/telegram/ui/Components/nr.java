@@ -1,74 +1,54 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.EditText;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class nr implements Drawable.Callback {
+public final /* synthetic */ class nr implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ or b;
+    public final /* synthetic */ rr b;
 
-    public /* synthetic */ nr(or orVar, int i10) {
+    public /* synthetic */ nr(rr rrVar, int i10) {
         this.a = i10;
-        this.b = orVar;
+        this.b = rrVar;
     }
 
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        View view;
         switch (this.a) {
             case 0:
-                or orVar = this.b;
-                if (orVar.c < 1.0f) {
-                    orVar.invalidateSelf();
-                    break;
+                rr rrVar = this.b;
+                if (rrVar.b == null && (view = rrVar.d) != null) {
+                    View findFocus = view.findFocus();
+                    if (findFocus instanceof EditText) {
+                        rrVar.b = (EditText) findFocus;
+                    }
+                }
+                EditText editText = rrVar.b;
+                if (editText != null) {
+                    if (editText.length() != 0 || rrVar.e) {
+                        try {
+                            rrVar.performHapticFeedback(3, 2);
+                            rrVar.playSoundEffect(0);
+                        } catch (Exception unused) {
+                        }
+                        rrVar.b.dispatchKeyEvent(new KeyEvent(0, 67));
+                        rrVar.b.dispatchKeyEvent(new KeyEvent(1, 67));
+                        if (rrVar.f) {
+                            rrVar.postDelayed(rrVar.h, 50L);
+                            break;
+                        }
+                    }
                 }
                 break;
             default:
-                or orVar2 = this.b;
-                if (orVar2.c > 0.0f) {
-                    orVar2.invalidateSelf();
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j10) {
-        switch (this.a) {
-            case 0:
-                or orVar = this.b;
-                if (orVar.c < 1.0f) {
-                    orVar.scheduleSelf(runnable, j10);
-                    break;
-                }
-                break;
-            default:
-                or orVar2 = this.b;
-                if (orVar2.c > 0.0f) {
-                    orVar2.scheduleSelf(runnable, j10);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        switch (this.a) {
-            case 0:
-                or orVar = this.b;
-                if (orVar.c < 1.0f) {
-                    orVar.unscheduleSelf(runnable);
-                    break;
-                }
-                break;
-            default:
-                or orVar2 = this.b;
-                if (orVar2.c > 0.0f) {
-                    orVar2.unscheduleSelf(runnable);
-                    break;
-                }
+                rr rrVar2 = this.b;
+                rrVar2.n = false;
+                rrVar2.f = true;
+                rrVar2.h.run();
                 break;
         }
     }

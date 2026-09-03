@@ -4,17 +4,17 @@ import android.text.TextUtils;
 import android.view.ViewGroup;
 import org.telegram.messenger.voip.GroupCallMessage;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class v10 implements ae.a {
     public final ViewGroup a;
-    public final zg.c b;
+    public final yg.c b;
 
-    public v10(eh.d dVar, GroupCallMessage groupCallMessage) {
-        zg.c cVar = new zg.c(dVar.getContext());
+    public v10(dh.d dVar, GroupCallMessage groupCallMessage) {
+        yg.c cVar = new yg.c(dVar.getContext());
         this.b = cVar;
         cVar.setBackgroundColor(i0.a.k(-16777216, 34));
-        jh.s sVar = cVar.v;
+        ih.s sVar = cVar.v;
         sVar.setMaxLines(1);
         sVar.setSingleLine(true);
         sVar.setEllipsize(TextUtils.TruncateAt.END);

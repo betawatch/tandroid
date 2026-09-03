@@ -11,10 +11,10 @@ import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class v extends androidx.activity.m implements e0.c, e0.d {
-    public final androidx.biometric.f0 G;
+    public final androidx.biometric.e0 G;
     public boolean I;
     public boolean J;
     public final androidx.lifecycle.v H = new androidx.lifecycle.v(this);
@@ -22,7 +22,7 @@ public abstract class v extends androidx.activity.m implements e0.c, e0.d {
 
     public v() {
         int i10 = 1;
-        this.G = new androidx.biometric.f0(new u(this), i10);
+        this.G = new androidx.biometric.e0(new u(this), i10);
         ((g2.e) this.e.c).f("android:support:lifecycle", new androidx.activity.e(this, i10));
         final int i11 = 0;
         o(new q0.a(this) { // from class: androidx.fragment.app.t
@@ -36,10 +36,10 @@ public abstract class v extends androidx.activity.m implements e0.c, e0.d {
             public final void accept(Object obj) {
                 switch (i11) {
                     case 0:
-                        this.b.G.O();
+                        this.b.G.t();
                         break;
                     default:
-                        this.b.G.O();
+                        this.b.G.t();
                         break;
                 }
             }
@@ -56,21 +56,21 @@ public abstract class v extends androidx.activity.m implements e0.c, e0.d {
             public final void accept(Object obj) {
                 switch (i12) {
                     case 0:
-                        this.b.G.O();
+                        this.b.G.t();
                         break;
                     default:
-                        this.b.G.O();
+                        this.b.G.t();
                         break;
                 }
             }
         });
         androidx.activity.f fVar = new androidx.activity.f(this, 1);
-        com.google.android.gms.internal.cast.b0 b0Var = this.b;
-        b0Var.getClass();
-        if (((androidx.activity.m) b0Var.c) != null) {
+        com.google.android.gms.internal.cast.c0 c0Var = this.b;
+        c0Var.getClass();
+        if (((androidx.activity.m) c0Var.c) != null) {
             fVar.a();
         }
-        ((CopyOnWriteArraySet) b0Var.b).add(fVar);
+        ((CopyOnWriteArraySet) c0Var.b).add(fVar);
     }
 
     public static boolean t(j0 j0Var) {
@@ -145,14 +145,14 @@ public abstract class v extends androidx.activity.m implements e0.c, e0.d {
         printWriter.print(" mStopped=");
         printWriter.print(this.K);
         if (getApplication() != null) {
-            new q5.c0(this, f()).g(str3, printWriter);
+            new q5.c0(this, f()).q(str3, printWriter);
         }
         ((u) this.G.b).d.w(str, fileDescriptor, printWriter, strArr);
     }
 
     @Override // androidx.activity.m, android.app.Activity
     public void onActivityResult(int i10, int i11, Intent intent) {
-        this.G.O();
+        this.G.t();
         super.onActivityResult(i10, i11, intent);
     }
 
@@ -212,24 +212,24 @@ public abstract class v extends androidx.activity.m implements e0.c, e0.d {
 
     @Override // androidx.activity.m, android.app.Activity
     public void onRequestPermissionsResult(int i10, String[] strArr, int[] iArr) {
-        this.G.O();
+        this.G.t();
         super.onRequestPermissionsResult(i10, strArr, iArr);
     }
 
     @Override // android.app.Activity
     public void onResume() {
-        androidx.biometric.f0 f0Var = this.G;
-        f0Var.O();
+        androidx.biometric.e0 e0Var = this.G;
+        e0Var.t();
         super.onResume();
         this.J = true;
-        ((u) f0Var.b).d.A(true);
+        ((u) e0Var.b).d.A(true);
     }
 
     @Override // android.app.Activity
     public void onStart() {
-        androidx.biometric.f0 f0Var = this.G;
-        f0Var.O();
-        u uVar = (u) f0Var.b;
+        androidx.biometric.e0 e0Var = this.G;
+        e0Var.t();
+        u uVar = (u) e0Var.b;
         super.onStart();
         this.K = false;
         if (!this.I) {
@@ -251,7 +251,7 @@ public abstract class v extends androidx.activity.m implements e0.c, e0.d {
 
     @Override // android.app.Activity
     public final void onStateNotSaved() {
-        this.G.O();
+        this.G.t();
     }
 
     @Override // android.app.Activity

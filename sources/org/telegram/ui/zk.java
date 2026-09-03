@@ -1,49 +1,17 @@
 package org.telegram.ui;
 
-import android.animation.LayoutTransition;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class zk implements LayoutTransition.TransitionListener {
-    public yk a;
-    public int b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.z c;
-    public final /* synthetic */ xn d;
+public final class zk extends ro {
+    public boolean Q0;
 
-    public zk(xn xnVar, org.telegram.ui.ActionBar.z zVar) {
-        this.d = xnVar;
-        this.c = zVar;
-    }
-
-    @Override // android.animation.LayoutTransition.TransitionListener
-    public final void endTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i10) {
-        int i11 = this.b - 1;
-        this.b = i11;
-        if (i11 != 0 || this.a == null) {
+    @Override // org.telegram.ui.ActionBar.p2
+    public final void onBecomeFullyVisible() {
+        super.onBecomeFullyVisible();
+        if (this.Q0) {
             return;
         }
-        this.c.getViewTreeObserver().removeOnPreDrawListener(this.a);
-        this.a = null;
-    }
-
-    /* JADX WARN: Type inference failed for: r1v5, types: [org.telegram.ui.yk] */
-    @Override // android.animation.LayoutTransition.TransitionListener
-    public final void startTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i10) {
-        if (this.b == 0 && this.a == null) {
-            this.a = new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.yk
-                @Override // android.view.ViewTreeObserver.OnPreDrawListener
-                public final boolean onPreDraw() {
-                    org.telegram.ui.ActionBar.k kVar;
-                    kVar = ((org.telegram.ui.ActionBar.p2) zk.this.d).actionBar;
-                    kVar.invalidate();
-                    return true;
-                }
-            };
-            this.c.getViewTreeObserver().addOnPreDrawListener(this.a);
-        }
-        this.b++;
+        i0();
+        this.Q0 = true;
     }
 }

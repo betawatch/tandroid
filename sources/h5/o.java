@@ -9,7 +9,7 @@ import k7.a7;
 import org.telegram.messenger.MediaController;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class o {
     public static final ArrayList a = new ArrayList();
@@ -35,7 +35,7 @@ public abstract class o {
     }
 
     public static int b(String str, String str2) {
-        c5.e e6;
+        c5.e e;
         str.getClass();
         switch (str) {
             case "audio/eac3-joc":
@@ -45,10 +45,10 @@ public abstract class o {
             case "audio/vnd.dts":
                 return 7;
             case "audio/mp4a-latm":
-                if (str2 == null || (e6 = e(str2)) == null) {
+                if (str2 == null || (e = e(str2)) == null) {
                     return 0;
                 }
-                return e6.a();
+                return e.a();
             case "audio/ac3":
                 return 5;
             case "audio/ac4":
@@ -71,7 +71,7 @@ public abstract class o {
     }
 
     public static String c(String str) {
-        c5.e e6;
+        c5.e e;
         String str2 = null;
         if (str != null) {
             String b10 = a7.b(str.trim());
@@ -94,8 +94,8 @@ public abstract class o {
                 return "video/x-vnd.on2.vp8";
             }
             if (b10.startsWith("mp4a")) {
-                if (b10.startsWith("mp4a.") && (e6 = e(b10)) != null) {
-                    str2 = d(e6.a);
+                if (b10.startsWith("mp4a.") && (e = e(b10)) != null) {
+                    str2 = d(e.a);
                 }
                 return str2 == null ? MediaController.AUDIO_MIME_TYPE : str2;
             }

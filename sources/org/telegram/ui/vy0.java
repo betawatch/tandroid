@@ -3,17 +3,17 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class vy0 extends f2.j0 {
+public final class vy0 extends f2.i0 {
     public final /* synthetic */ ProfileActivity I;
 
     public vy0(ProfileActivity profileActivity) {
         this.I = profileActivity;
     }
 
-    @Override // f2.j0, f2.w0
-    public final int o0(int i10, bf.f fVar, f2.j1 j1Var) {
+    @Override // f2.i0, f2.v0
+    public final int o0(int i10, af.h hVar, f2.i1 i1Var) {
         ProfileActivity profileActivity = this.I;
         View m9 = profileActivity.c.m(0);
         if (m9 != null && !profileActivity.C0) {
@@ -33,12 +33,12 @@ public final class vy0 extends f2.j0 {
             i10 = top;
         }
         if (!profileActivity.L1 || profileActivity.a.L0) {
-            return super.o0(i10, fVar, j1Var);
+            return super.o0(i10, hVar, i1Var);
         }
         return 0;
     }
 
-    @Override // f2.j0, f2.w0
+    @Override // f2.i0, f2.v0
     public final boolean y0() {
         return this.I.n0 != null;
     }

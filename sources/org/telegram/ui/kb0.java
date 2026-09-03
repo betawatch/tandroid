@@ -1,34 +1,27 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.MotionEvent;
-import android.widget.EditText;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class kb0 extends EditText {
-    public final /* synthetic */ int a;
+public final class kb0 extends dg.u3 {
+    public final /* synthetic */ pb0 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ kb0(Context context, int i10) {
+    public kb0(pb0 pb0Var, Context context) {
         super(context);
-        this.a = i10;
+        this.c = pb0Var;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                if (motionEvent.getAction() == 1) {
-                    setCursorVisible(true);
-                }
-                break;
-            default:
-                if (motionEvent.getAction() == 1) {
-                    setCursorVisible(true);
-                }
-                break;
-        }
-        return super.onTouchEvent(motionEvent);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        this.c.getClass();
+    }
+
+    @Override // dg.u3, android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
     }
 }

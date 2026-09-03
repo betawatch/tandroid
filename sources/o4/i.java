@@ -3,7 +3,7 @@ package o4;
 import android.net.Uri;
 import java.util.Map;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class i implements g5.m {
     public final g5.m a;
@@ -72,7 +72,7 @@ public final class i implements g5.m {
                     if (i14 > 0) {
                         h5.w wVar = new h5.w(bArr3, i14);
                         b0 b0Var = this.c;
-                        long max = !b0Var.w ? b0Var.r : Math.max(b0Var.x.p(true), b0Var.r);
+                        long max = !b0Var.w ? b0Var.r : Math.max(b0Var.x.f(true), b0Var.r);
                         int a2 = wVar.a();
                         k0 k0Var = b0Var.v;
                         k0Var.getClass();

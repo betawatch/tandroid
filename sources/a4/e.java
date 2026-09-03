@@ -11,7 +11,7 @@ import r3.m;
 import r3.s;
 import r3.v;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class e implements r3.k {
     public m a;
@@ -72,7 +72,7 @@ public final class e implements r3.k {
                 jVar.e = j12;
                 h hVar = jVar.d;
                 int i10 = d0.a;
-                hVar.u(j12);
+                hVar.p(j12);
                 jVar.h = 2;
             }
         }
@@ -101,11 +101,11 @@ public final class e implements r3.k {
             ((r3.h) lVar).f = 0;
         }
         if (!this.c) {
-            v i22 = this.a.i2(0, 1);
-            this.a.i1();
+            v d22 = this.a.d2(0, 1);
+            this.a.j1();
             j jVar = this.b;
             jVar.c = this.a;
-            jVar.b = i22;
+            jVar.b = d22;
             jVar.d(true);
             this.c = true;
         }
@@ -117,7 +117,7 @@ public final class e implements r3.k {
         long j10 = -1;
         if (i12 != 0) {
             if (i12 == 1) {
-                ((r3.h) lVar).s((int) jVar2.f);
+                ((r3.h) lVar).n((int) jVar2.f);
                 jVar2.h = 2;
                 return 0;
             }
@@ -136,9 +136,9 @@ public final class e implements r3.k {
                 jVar2.a(-(c3 + 2));
             }
             if (!jVar2.l) {
-                s h = jVar2.d.h();
-                h5.a.j(h);
-                jVar2.c.m2(h);
+                s l10 = jVar2.d.l();
+                h5.a.j(l10);
+                jVar2.c.h2(l10);
                 jVar2.l = true;
             }
             if (jVar2.k <= 0 && !fVar.b(lVar)) {

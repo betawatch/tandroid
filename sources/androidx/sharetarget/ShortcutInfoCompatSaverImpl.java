@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.PersistableBundle;
 import android.text.TextUtils;
-import androidx.biometric.k;
+import androidx.biometric.j;
 import androidx.core.graphics.drawable.IconCompat;
 import c0.l;
 import e0.o0;
@@ -24,7 +24,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class ShortcutInfoCompatSaverImpl extends e {
     public static final Object h = new Object();
@@ -44,7 +44,7 @@ public class ShortcutInfoCompatSaverImpl extends e {
         File file = new File(context.getFilesDir(), "ShortcutInfoCompatSaver_share_targets");
         this.g = new File(file, "ShortcutInfoCompatSaver_share_targets_bitmaps");
         this.f = new File(file, "targets.xml");
-        threadPoolExecutor.submit(new k(13, this, file));
+        threadPoolExecutor.submit(new j(13, this, file));
     }
 
     public static void f(File file) {
@@ -120,7 +120,7 @@ public class ShortcutInfoCompatSaverImpl extends e {
     @Override // g0.e
     public final Object c() {
         l lVar = new l();
-        this.d.submit(new k(14, this, lVar));
+        this.d.submit(new j(14, this, lVar));
         return lVar;
     }
 
@@ -180,9 +180,9 @@ public class ShortcutInfoCompatSaverImpl extends e {
     }
 
     public final void h(l lVar) {
-        k kVar = new k(11, this, new ArrayList(this.b.values()));
+        j jVar = new j(11, this, new ArrayList(this.b.values()));
         l lVar2 = new l();
-        this.e.submit(new k(lVar2, kVar, false, 15));
-        lVar2.c(new k(lVar2, lVar, false, 12), this.d);
+        this.e.submit(new j(lVar2, jVar, false, 15));
+        lVar2.c(new j(lVar2, lVar, false, 12), this.d);
     }
 }

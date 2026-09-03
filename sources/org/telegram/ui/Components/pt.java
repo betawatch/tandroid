@@ -1,33 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewTreeObserver;
+import android.text.Editable;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pt implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+public final /* synthetic */ class pt implements Utilities.Callback {
+    public final /* synthetic */ ut a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ pt(int i10, View view) {
-        this.a = i10;
-        this.b = view;
+    public /* synthetic */ pt(ut utVar, int i10, int i11) {
+        this.a = utVar;
+        this.b = i10;
+        this.c = i11;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.k4 k4Var = ((EditTextBoldCursor) this.b).floatingActionMode;
-                if (k4Var != null) {
-                    k4Var.e();
-                    break;
-                }
-                break;
-            default:
-                ((o70) this.b).invalidate();
-                break;
-        }
-        return true;
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        CharSequence charSequence = (CharSequence) obj;
+        ut utVar = this.a;
+        Editable text = utVar.getText();
+        int i10 = this.b;
+        text.replace(i10, this.c, charSequence);
+        utVar.setSelection(i10, charSequence.length() + i10);
     }
 }

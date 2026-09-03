@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class lf extends AnimatorListenerAdapter {
     public final /* synthetic */ boolean a;
@@ -35,9 +35,9 @@ public final class lf extends AnimatorListenerAdapter {
             ffVar.setAlpha(0.0f);
         }
         if (this.a) {
-            rk0 rk0Var = chatActivityEnterView.e1;
-            if (rk0Var != null) {
-                rk0Var.setVisibility(8);
+            qk0 qk0Var = chatActivityEnterView.e1;
+            if (qk0Var != null) {
+                qk0Var.setVisibility(8);
             }
             ae aeVar = chatActivityEnterView.b1;
             if (aeVar != null) {

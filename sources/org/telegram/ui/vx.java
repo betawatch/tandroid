@@ -1,246 +1,193 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import android.graphics.Canvas;
+import android.graphics.Point;
+import android.text.TextUtils;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class vx extends fu0 {
-    public final /* synthetic */ boolean[] a;
-    public final /* synthetic */ py b;
+public final class vx implements ng.g, org.telegram.ui.Components.yn0, org.telegram.ui.Components.kl0, ph.u9, org.telegram.ui.Components.c20 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qy b;
 
-    public vx(py pyVar, boolean[] zArr) {
-        this.b = pyVar;
-        this.a = zArr;
+    public /* synthetic */ vx(qy qyVar, int i10) {
+        this.a = i10;
+        this.b = qyVar;
     }
 
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final CharSequence C(int i10) {
-        py pyVar = this.b;
-        if (i10 < 0 || i10 >= pyVar.A2.size() || !((MediaController.PhotoEntry) pyVar.A2.get(i10)).isVideo) {
-            return py.s2(pyVar);
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final void D() {
-        int i10;
-        py pyVar = this.b;
-        org.telegram.ui.Components.qq0 qq0Var = pyVar.D2;
-        if (qq0Var != null) {
-            i10 = ((org.telegram.ui.ActionBar.p2) pyVar).currentAccount;
-            qq0Var.i(i10, pyVar.A2);
-        }
-    }
-
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final qu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z4, boolean z10) {
-        py pyVar = this.b;
-        org.telegram.ui.Components.qq0 qq0Var = pyVar.D2;
-        org.telegram.ui.Components.p9 f10 = qq0Var != null ? qq0Var.f(i10) : null;
-        if (f10 == null) {
-            return null;
-        }
-        int[] iArr = new int[2];
-        f10.getLocationInWindow(iArr);
-        qu0 qu0Var = new qu0();
-        qu0Var.b = iArr[0];
-        qu0Var.c = iArr[1];
-        qu0Var.d = pyVar.D2;
-        ImageReceiver imageReceiver = f10.getImageReceiver();
-        qu0Var.a = imageReceiver;
-        qu0Var.e = imageReceiver.getBitmapSafe();
-        qu0Var.k = f10.getScaleX();
-        qu0Var.h = new int[]{AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f)};
-        return qu0Var;
-    }
-
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final long a() {
-        py pyVar = this.b;
-        if (pyVar.F2.isEmpty()) {
-            return 0L;
-        }
-        return ((Long) pyVar.F2.get(0)).longValue();
-    }
-
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final boolean b() {
-        py pyVar = this.b;
-        if (pyVar.F2.isEmpty()) {
-            return false;
-        }
-        ArrayList arrayList = pyVar.F2;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            long longValue = ((Long) obj).longValue();
-            if (DialogObject.isEncryptedDialog(longValue) || pyVar.getMessagesController().getSendPaidMessagesStars(longValue) > 0) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final CharSequence b0(int i10) {
-        py pyVar = this.b;
-        ArrayList arrayList = pyVar.A2;
-        if (arrayList == null || arrayList.isEmpty()) {
-            return null;
-        }
-        int size = pyVar.A2.size();
-        if (size == 1) {
-            return LocaleController.getString(((MediaController.PhotoEntry) pyVar.A2.get(0)).isVideo ? R.string.AttachVideo : R.string.AttachPhoto);
-        }
-        ArrayList arrayList2 = pyVar.A2;
-        int size2 = arrayList2.size();
-        int i11 = 0;
-        int i12 = 0;
-        int i13 = 0;
-        while (i13 < size2) {
-            Object obj = arrayList2.get(i13);
-            i13++;
-            if (((MediaController.PhotoEntry) obj).isVideo) {
-                i11++;
-            } else {
-                i12++;
-            }
-        }
-        return i11 == 0 ? LocaleController.formatPluralString("ShareSendPhotos", size, new Object[0]) : i12 == 0 ? LocaleController.formatPluralString("ShareSendVideos", size, new Object[0]) : LocaleController.formatPluralString("ShareSendItems", size, new Object[0]);
-    }
-
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final void e(CharSequence charSequence) {
-        py pyVar = this.b;
-        ax axVar = pyVar.y1;
-        if (axVar != null) {
-            axVar.setFieldText(charSequence);
-        }
-        ArrayList arrayList = pyVar.A2;
-        if (arrayList != null) {
-            int size = arrayList.size();
-            int i10 = 0;
-            while (i10 < size) {
-                Object obj = arrayList.get(i10);
-                i10++;
-                ((MediaController.PhotoEntry) obj).caption = charSequence;
-            }
+    @Override // ng.g
+    public void D(Canvas canvas) {
+        sg.d dVar;
+        sg.d dVar2;
+        switch (this.a) {
+            case 0:
+                qy qyVar = this.b;
+                int measuredWidth = qyVar.fragmentView.getMeasuredWidth();
+                int measuredHeight = qyVar.fragmentView.getMeasuredHeight();
+                canvas.drawColor(qyVar.getThemedColor(org.telegram.ui.ActionBar.j6.d6));
+                if (SharedConfig.chatBlurEnabled()) {
+                    lx lxVar = qyVar.C3;
+                    sf1 sf1Var = (lxVar == null || !(lxVar.getFragment() instanceof sf1)) ? null : (sf1) qyVar.C3.getFragment();
+                    if (sf1Var != null && sf1Var.getFragmentView() != null && !qyVar.g2 && (dVar = sf1Var.d1) != null) {
+                        canvas.save();
+                        canvas.translate(sf1Var.getFragmentView().getTranslationX(), sf1Var.getFragmentView().getTranslationY());
+                        dVar.H(canvas, 0.0f, 0.0f, measuredWidth, measuredHeight);
+                        canvas.restore();
+                    }
+                    qyVar.i4.b(canvas, -3);
+                    break;
+                }
+                break;
+            default:
+                qy qyVar2 = this.b;
+                int measuredWidth2 = qyVar2.fragmentView.getMeasuredWidth();
+                int measuredHeight2 = qyVar2.fragmentView.getMeasuredHeight();
+                canvas.drawColor(qyVar2.getThemedColor(org.telegram.ui.ActionBar.j6.d6));
+                if (SharedConfig.chatBlurEnabled()) {
+                    lx lxVar2 = qyVar2.C3;
+                    sf1 sf1Var2 = (lxVar2 == null || !(lxVar2.getFragment() instanceof sf1)) ? null : (sf1) qyVar2.C3.getFragment();
+                    if (sf1Var2 != null && sf1Var2.getFragmentView() != null && !qyVar2.g2 && (dVar2 = sf1Var2.e1) != null) {
+                        canvas.save();
+                        canvas.translate(sf1Var2.getFragmentView().getTranslationX(), sf1Var2.getFragmentView().getTranslationY());
+                        dVar2.H(canvas, 0.0f, 0.0f, measuredWidth2, measuredHeight2);
+                        canvas.restore();
+                    }
+                    qyVar2.i4.b(canvas, -2);
+                    break;
+                }
+                break;
         }
     }
 
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final boolean h() {
-        TLRPC.User user;
-        py pyVar = this.b;
-        if (pyVar.F2.isEmpty()) {
-            return false;
+    @Override // ng.g
+    public void D1(g.x xVar) {
+        switch (this.a) {
+            case 0:
+                int i10 = org.telegram.ui.ActionBar.j6.d6;
+                qy qyVar = this.b;
+                xVar.a(qyVar.getThemedColor(i10));
+                xVar.b(SharedConfig.chatBlurEnabled());
+                if (SharedConfig.chatBlurEnabled()) {
+                    lx lxVar = qyVar.C3;
+                    sf1 sf1Var = (lxVar == null || !(lxVar.getFragment() instanceof sf1)) ? null : (sf1) qyVar.C3.getFragment();
+                    if (sf1Var != null && sf1Var.getFragmentView() != null && !qyVar.g2) {
+                        xVar.b = true;
+                        break;
+                    }
+                }
+                break;
+            default:
+                int i11 = org.telegram.ui.ActionBar.j6.d6;
+                qy qyVar2 = this.b;
+                xVar.a(qyVar2.getThemedColor(i11));
+                xVar.b(SharedConfig.chatBlurEnabled());
+                if (SharedConfig.chatBlurEnabled()) {
+                    lx lxVar2 = qyVar2.C3;
+                    sf1 sf1Var2 = (lxVar2 == null || !(lxVar2.getFragment() instanceof sf1)) ? null : (sf1) qyVar2.C3.getFragment();
+                    if (sf1Var2 != null && sf1Var2.getFragmentView() != null && !qyVar2.g2) {
+                        xVar.b = true;
+                        break;
+                    }
+                }
+                break;
         }
-        MessagesController messagesController = pyVar.getMessagesController();
-        ArrayList arrayList = pyVar.F2;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            Long l10 = (Long) obj;
-            if (!DialogObject.isUserDialog(l10.longValue()) || (user = messagesController.getUser(l10)) == null || user.bot || UserObject.isUserSelf(user)) {
-                return false;
-            }
-        }
-        return true;
     }
 
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final ImageReceiver.BitmapHolder j(int i10) {
-        org.telegram.ui.Components.qq0 qq0Var = this.b.D2;
-        org.telegram.ui.Components.p9 f10 = qq0Var != null ? qq0Var.f(i10) : null;
-        if (f10 != null) {
-            return f10.getImageReceiver().getBitmapSafe();
-        }
-        return null;
+    @Override // ph.u9
+    public ph.y9 a(long j10) {
+        ix ixVar = this.b.B0;
+        return ph.y9.c(ixVar != null ? ixVar.e(j10) : null);
     }
 
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z4, int i11, int i12, boolean z10) {
-        int i13;
-        ArrayList arrayList;
-        py pyVar = this.b;
-        ArrayList arrayList2 = pyVar.F2;
-        if (pyVar.y1 != null && (arrayList = pyVar.A2) != null && !arrayList.isEmpty()) {
-            MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) pyVar.A2.get(0);
-            ax axVar = pyVar.y1;
-            CharSequence charSequence = photoEntry.caption;
-            if (charSequence == null) {
-                charSequence = "";
-            }
-            axVar.setFieldText(charSequence);
-        }
-        org.telegram.ui.Components.qq0 qq0Var = pyVar.D2;
-        if (qq0Var != null) {
-            i13 = ((org.telegram.ui.ActionBar.p2) pyVar).currentAccount;
-            qq0Var.i(i13, pyVar.A2);
-        }
-        if ((z4 && i11 == 0) || pyVar.z2 == null || arrayList2.isEmpty()) {
-            PhotoViewer.t1().G0(true, false);
+    @Override // ph.u9
+    public void b(long j10, gg.y1 y1Var) {
+        qy qyVar = this.b;
+        if (qyVar.B0 == null) {
+            y1Var.run();
             return;
         }
-        pyVar.G2 = z4;
-        pyVar.H2 = i11;
-        ArrayList arrayList3 = new ArrayList();
-        for (int i14 = 0; i14 < arrayList2.size(); i14++) {
-            arrayList3.add(MessagesStorage.TopicKey.of(((Long) arrayList2.get(i14)).longValue(), 0L));
+        qyVar.x4(false, true);
+        qyVar.N = true;
+        qyVar.fragmentView.invalidate();
+        if (j10 == 0 || j10 == qyVar.getUserConfig().getClientUserId()) {
+            qyVar.B0.P.h1(0, 0);
+        } else {
+            qyVar.B0.k(j10);
         }
-        PhotoViewer.t1().G0(true, false);
-        pyVar.z2.v(pyVar, arrayList3, pyVar.y1.getFieldText(), false, z4, i11, i12, null);
+        qyVar.b0[0].a.getViewTreeObserver().addOnPreDrawListener(new hh.f(2, this, y1Var));
     }
 
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final void s() {
-        ax axVar;
-        org.telegram.ui.Components.bd f12;
-        PhotoViewer t12 = PhotoViewer.t1();
-        CharSequence charSequence = null;
-        if (t12.Q1() && (f12 = t12.f1()) != null) {
-            charSequence = f12.getText();
-        }
-        py pyVar = this.b;
-        if (charSequence != null && (axVar = pyVar.y1) != null) {
-            axVar.setFieldText(charSequence);
-        }
-        ArrayList arrayList = pyVar.A2;
-        if (arrayList != null) {
-            int size = arrayList.size();
-            int i10 = 0;
-            while (i10 < size) {
-                Object obj = arrayList.get(i10);
-                i10++;
-                ((MediaController.PhotoEntry) obj).caption = charSequence;
+    @Override // org.telegram.ui.Components.kl0
+    public boolean c(float f10, float f11, int i10, View view) {
+        boolean z4 = view instanceof org.telegram.ui.Cells.g6;
+        qy qyVar = this.b;
+        if (z4) {
+            org.telegram.ui.Cells.g6 g6Var = (org.telegram.ui.Cells.g6) view;
+            if (g6Var.k0) {
+                qyVar.N4(g6Var.getDialogId(), view);
+                return true;
             }
         }
+        zx zxVar = qyVar.z0;
+        lh.e1 e1Var = zxVar.S;
+        return qyVar.o4(view, i10, f10, zxVar.V);
     }
 
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final boolean x(int i10) {
-        return this.a[i10];
+    public void d(tf.e0 e0Var) {
+        qy qyVar = this.b;
+        if (qyVar.m3) {
+            zx zxVar = qyVar.z0;
+            if (zxVar != null) {
+                zxVar.x0.remove(e0Var);
+                zx zxVar2 = qyVar.z0;
+                String obj = qyVar.g0.getSearchField().getText().toString();
+                View currentView = zxVar2.getCurrentView();
+                boolean z4 = TextUtils.isEmpty(zxVar2.H0) ? true : !zxVar2.b0;
+                zxVar2.H0 = obj;
+                zxVar2.O(currentView, zxVar2.getCurrentPosition(), obj, z4);
+            }
+            qyVar.W4(true, null, null, false, true);
+            qyVar.V.a.q(qyVar.U.r);
+        }
     }
 
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final int k(int i10, VideoEditedInfo videoEditedInfo) {
-        return i10;
+    @Override // org.telegram.ui.Components.yn0
+    public void e(float f10) {
+        Point point = AndroidUtilities.displaySize;
+        if (point.x > point.y) {
+            this.b.movePreviewFragment(f10);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.yn0
+    public void f(org.telegram.ui.Cells.q2 q2Var) {
+        this.b.H4(q2Var);
+    }
+
+    @Override // org.telegram.ui.Components.yn0
+    public void finish() {
+        Point point = AndroidUtilities.displaySize;
+        if (point.x > point.y) {
+            this.b.finishPreviewFragment();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.kl0
+    public void h() {
+        Point point = AndroidUtilities.displaySize;
+        if (point.x > point.y) {
+            this.b.finishPreviewFragment();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.kl0
+    public void p(float f10) {
+        Point point = AndroidUtilities.displaySize;
+        if (point.x > point.y) {
+            this.b.movePreviewFragment(f10);
+        }
     }
 }

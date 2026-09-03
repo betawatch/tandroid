@@ -2,12 +2,12 @@ package com.google.android.recaptcha.internal;
 
 import dd.p;
 import jd.j;
-import k7.q7;
+import k7.p7;
 import uc.c;
 import vc.a;
 import wc.i;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 final class zzhv extends i implements p {
     int zza;
@@ -48,7 +48,7 @@ final class zzhv extends i implements p {
         int i10 = this.zza;
         try {
             if (i10 == 0) {
-                q7.b(obj);
+                p7.b(obj);
                 zzhkVar = (zzhk) this.zzd;
                 zzib zzibVar = this.zzb;
                 zzxn zzxnVar = this.zzc;
@@ -59,11 +59,11 @@ final class zzhv extends i implements p {
                 obj = new zzhg(new zzhw(zzibVar, zzN, zzM, null));
             } else {
                 if (i10 != 1) {
-                    q7.b(obj);
+                    p7.b(obj);
                     return j.g(this.zzc.zzl(), "JAVASCRIPT_TAG", (String) obj);
                 }
                 zzhkVar = (zzhk) this.zzd;
-                q7.b(obj);
+                p7.b(obj);
             }
             this.zzd = null;
             this.zza = 2;
@@ -72,11 +72,11 @@ final class zzhv extends i implements p {
                 return aVar;
             }
             return j.g(this.zzc.zzl(), "JAVASCRIPT_TAG", (String) obj);
-        } catch (Exception e6) {
-            if (e6 instanceof zzcg) {
-                throw e6;
+        } catch (Exception e) {
+            if (e instanceof zzcg) {
+                throw e;
             }
-            throw new zzcg(zzce.zzb, zzcd.zzL, e6.getMessage(), null, 8, null);
+            throw new zzcg(zzce.zzb, zzcd.zzL, e.getMessage(), null, 8, null);
         }
     }
 }

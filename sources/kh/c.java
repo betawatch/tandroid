@@ -1,26 +1,21 @@
 package kh;
 
-import org.telegram.ui.ActionBar.p2;
-import org.telegram.ui.Components.ha0;
+import android.content.Context;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.f6;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class c extends ha0 {
-    public final /* synthetic */ e X;
+public final class c extends FrameLayout {
+    public static final /* synthetic */ int c = 0;
+    public final f6 a;
+    public final int b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c(e eVar, p2 p2Var, long j10) {
-        super(p2Var, j10);
-        this.X = eVar;
-    }
-
-    @Override // org.telegram.ui.Components.r61, org.telegram.ui.ActionBar.h3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.l2
-    public final void dismiss() {
-        e eVar = this.X;
-        c cVar = eVar.i;
-        if (cVar != null && !cVar.R.b) {
-            eVar.i = null;
-        }
-        super.dismiss();
+    public c(Context context, int i10, f6 f6Var) {
+        super(context);
+        this.b = i10;
+        this.a = f6Var;
+        setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(9.0f));
     }
 }

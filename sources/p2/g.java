@@ -8,7 +8,7 @@ import android.content.pm.ResolveInfo;
 import android.util.Log;
 import java.util.List;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class g implements z3.d {
     public int a;
@@ -88,9 +88,9 @@ public final class g implements z3.d {
         PackageInfo packageInfo;
         if (this.a == 0) {
             try {
-                packageInfo = k6.c.a((Context) this.c).b(0, "com.google.android.gms");
-            } catch (PackageManager.NameNotFoundException e6) {
-                Log.w("Metadata", "Failed to find package ".concat(e6.toString()));
+                packageInfo = k6.b.a((Context) this.c).L(0, "com.google.android.gms");
+            } catch (PackageManager.NameNotFoundException e) {
+                Log.w("Metadata", "Failed to find package ".concat(e.toString()));
                 packageInfo = null;
             }
             if (packageInfo != null) {
@@ -107,7 +107,7 @@ public final class g implements z3.d {
         }
         Context context = (Context) this.c;
         PackageManager packageManager = context.getPackageManager();
-        if (k6.c.a(context).a.getPackageManager().checkPermission("com.google.android.c2dm.permission.SEND", "com.google.android.gms") == -1) {
+        if (((Context) k6.b.a(context).b).getPackageManager().checkPermission("com.google.android.c2dm.permission.SEND", "com.google.android.gms") == -1) {
             Log.e("Metadata", "Google Play services missing or without correct permission.");
             return 0;
         }

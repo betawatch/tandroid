@@ -1,11 +1,11 @@
 package com.google.android.datatransport.runtime.scheduling.jobscheduling;
 
-import ag.f;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Base64;
-import dg.u1;
+import cg.n0;
+import cg.v1;
 import e3.g;
 import i3.a;
 import java.util.concurrent.Executor;
@@ -13,7 +13,7 @@ import s5.m;
 import y2.i;
 import y2.q;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class AlarmManagerSchedulerBroadcastReceiver extends BroadcastReceiver {
     public static final /* synthetic */ int a = 0;
@@ -32,6 +32,6 @@ public class AlarmManagerSchedulerBroadcastReceiver extends BroadcastReceiver {
             a2.c = Base64.decode(queryParameter2, 0);
         }
         g gVar = q.a().d;
-        ((Executor) gVar.e).execute(new u1(gVar, a2.f(), i10, new f(3), 1));
+        ((Executor) gVar.e).execute(new v1(gVar, a2.f(), i10, new n0(4), 2));
     }
 }

@@ -11,9 +11,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.sf1;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xd implements org.telegram.ui.hj0, org.telegram.ui.jy {
+public final /* synthetic */ class xd implements org.telegram.ui.ij0, org.telegram.ui.ky {
     public final /* synthetic */ ChatActivityEnterView a;
     public final /* synthetic */ MessageObject b;
     public final /* synthetic */ TL_keyboard.TL_buttonTypeRequestPeer c;
@@ -24,17 +24,17 @@ public final /* synthetic */ class xd implements org.telegram.ui.hj0, org.telegr
         this.c = tL_buttonTypeRequestPeer;
     }
 
-    @Override // org.telegram.ui.jy
+    @Override // org.telegram.ui.ky
     public /* synthetic */ boolean C() {
         return false;
     }
 
-    @Override // org.telegram.ui.jy
-    public /* synthetic */ boolean J(org.telegram.ui.py pyVar) {
+    @Override // org.telegram.ui.ky
+    public /* synthetic */ boolean I(org.telegram.ui.qy qyVar) {
         return false;
     }
 
-    @Override // org.telegram.ui.hj0
+    @Override // org.telegram.ui.ij0
     public void a(ArrayList arrayList) {
         int i10 = ChatActivityEnterView.j5;
         if (arrayList.isEmpty()) {
@@ -58,8 +58,8 @@ public final /* synthetic */ class xd implements org.telegram.ui.hj0, org.telegr
         ConnectionsManager.getInstance(chatActivityEnterView.N).sendRequest(tL_messages_sendBotRequestedPeer, null);
     }
 
-    @Override // org.telegram.ui.jy
-    public boolean v(org.telegram.ui.py pyVar, ArrayList arrayList, CharSequence charSequence, boolean z4, boolean z10, int i10, int i11, sf1 sf1Var) {
+    @Override // org.telegram.ui.ky
+    public boolean w(org.telegram.ui.qy qyVar, ArrayList arrayList, CharSequence charSequence, boolean z4, boolean z10, int i10, int i11, sf1 sf1Var) {
         int i12 = ChatActivityEnterView.j5;
         if (!arrayList.isEmpty()) {
             TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
@@ -84,7 +84,7 @@ public final /* synthetic */ class xd implements org.telegram.ui.hj0, org.telegr
             }
             ConnectionsManager.getInstance(chatActivityEnterView.N).sendRequest(tL_messages_sendBotRequestedPeer, null);
         }
-        pyVar.finishFragment();
+        qyVar.finishFragment();
         return true;
     }
 }

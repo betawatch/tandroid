@@ -1,30 +1,30 @@
 package m;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class e0 extends u1 {
-    public final /* synthetic */ m0 s;
-    public final /* synthetic */ p0 v;
+public final class e0 extends v1 {
+    public final /* synthetic */ n0 s;
+    public final /* synthetic */ q0 v;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e0(p0 p0Var, p0 p0Var2, m0 m0Var) {
-        super(p0Var2);
-        this.v = p0Var;
-        this.s = m0Var;
+    public e0(q0 q0Var, q0 q0Var2, n0 n0Var) {
+        super(q0Var2);
+        this.v = q0Var;
+        this.s = n0Var;
     }
 
-    @Override // m.u1
-    public final l.c0 b() {
+    @Override // m.v1
+    public final l.b0 b() {
         return this.s;
     }
 
-    @Override // m.u1
+    @Override // m.v1
     public final boolean c() {
-        p0 p0Var = this.v;
-        if (p0Var.getInternalPopup().a()) {
+        q0 q0Var = this.v;
+        if (q0Var.getInternalPopup().a()) {
             return true;
         }
-        p0Var.f.m(g0.b(p0Var), g0.a(p0Var));
+        q0Var.f.m(g0.b(q0Var), g0.a(q0Var));
         return true;
     }
 }

@@ -2,7 +2,7 @@ package com.google.android.gms.internal.play_billing;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class g3 extends v1 {
     private static final g3 zzb;
@@ -34,15 +34,15 @@ public final class g3 extends v1 {
                 a2.e(r22, bArr, 0, length, h1Var);
                 a2.zzf(r22);
                 g3Var = r22;
-            } catch (c2 e6) {
-                throw e6;
-            } catch (w2 e10) {
-                throw new c2(e10.getMessage());
-            } catch (IOException e11) {
-                if (e11.getCause() instanceof c2) {
-                    throw ((c2) e11.getCause());
+            } catch (c2 e) {
+                throw e;
+            } catch (w2 e6) {
+                throw new c2(e6.getMessage());
+            } catch (IOException e10) {
+                if (e10.getCause() instanceof c2) {
+                    throw ((c2) e10.getCause());
                 }
-                throw new c2(e11.getMessage(), e11);
+                throw new c2(e10.getMessage(), e10);
             } catch (IndexOutOfBoundsException unused) {
                 throw new c2("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
             }

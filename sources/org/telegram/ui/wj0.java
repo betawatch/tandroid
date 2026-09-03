@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class wj0 extends View {
     public final Paint a;
@@ -28,24 +28,24 @@ public final class wj0 extends View {
         this.a = paint;
         Paint paint2 = new Paint(1);
         this.b = paint2;
-        org.telegram.ui.Components.pr prVar = org.telegram.ui.Components.pr.h;
-        this.c = new org.telegram.ui.Components.z5(this, 0L, 320L, prVar);
+        org.telegram.ui.Components.mr mrVar = org.telegram.ui.Components.mr.h;
+        this.c = new org.telegram.ui.Components.z5(this, 0L, 320L, mrVar);
         org.telegram.ui.Components.j6 j6Var = new org.telegram.ui.Components.j6(false, true, true, false);
         this.d = j6Var;
         this.f = 1.0f;
-        paint.setColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.Oh, false));
-        paint2.setColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.h5, false));
+        paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Oh, false));
+        paint2.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.h5, false));
         paint2.setStyle(Paint.Style.STROKE);
         paint2.setStrokeWidth(AndroidUtilities.dp(4.0f));
         j6Var.setCallback(this);
-        j6Var.k(0.35f, 200L, prVar);
+        j6Var.k(0.35f, 200L, mrVar);
         Paint.Style style = Paint.Style.FILL_AND_STROKE;
         TextPaint textPaint = j6Var.a;
         textPaint.setStyle(style);
         textPaint.setStrokeWidth(AndroidUtilities.dp(0.24f));
         textPaint.setStrokeJoin(Paint.Join.ROUND);
         j6Var.t(AndroidUtilities.dp(13.3f));
-        j6Var.r(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.Sh, false));
+        j6Var.r(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Sh, false));
         j6Var.G = AndroidUtilities.dp(64.0f);
         j6Var.b = 1;
     }
@@ -68,7 +68,7 @@ public final class wj0 extends View {
                 }
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 this.h = ofFloat;
-                ofFloat.addUpdateListener(new e3(this, 18));
+                ofFloat.addUpdateListener(new g3(this, 18));
                 this.h.addListener(new org.telegram.ui.Components.f91(this, 26));
                 this.h.setInterpolator(new OvershootInterpolator(2.0f));
                 this.h.setDuration(200L);

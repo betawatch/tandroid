@@ -1,59 +1,38 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import j$.util.function.Function$-CC;
+import java.util.function.Function;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p8 implements View.OnClickListener {
+public final /* synthetic */ class p8 implements Function {
     public final /* synthetic */ int a;
-    public final /* synthetic */ l9 b;
 
-    public /* synthetic */ p8(l9 l9Var, int i10) {
+    public /* synthetic */ p8(int i10) {
         this.a = i10;
-        this.b = l9Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    public /* synthetic */ Function andThen(Function function) {
+        int i10 = this.a;
+        return Function$-CC.$default$andThen(this, function);
+    }
+
+    @Override // java.util.function.Function
+    public final Object apply(Object obj) {
         switch (this.a) {
-            case 0:
-                Long l10 = (Long) view.getTag();
-                l9 l9Var = this.b;
-                ChatObject.Call groupCall = l9Var.getMessagesController().getGroupCall(l10.longValue(), false);
-                TLRPC.Chat chat = l9Var.getMessagesController().getChat(l10);
-                l9Var.N = chat;
-                if (groupCall == null) {
-                    l9Var.O = l10;
-                    l9Var.getMessagesController().loadFullChat(l10.longValue(), 0, true);
-                    break;
-                } else {
-                    org.telegram.ui.Components.voip.g2.l(chat, null, false, null, l9Var.getParentActivity(), l9Var, l9Var.getAccountInstance());
+            case 3:
+                TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) obj;
+                if (channelParticipant != null) {
                     break;
                 }
-            case 1:
-                this.b.k0(true);
-                break;
-            case 2:
-                l9 l9Var2 = this.b;
-                org.telegram.ui.Components.q70 H = org.telegram.ui.Components.q70.H(l9Var2, l9Var2.C);
-                H.s = 8;
-                if (l9Var2.getUserConfig().showCallsTab) {
-                    H.c(R.drawable.msg_archive_hide, LocaleController.getString(R.string.HideCallTab), new l8(l9Var2, 1), false);
-                }
-                H.c(R.drawable.msg_delete, LocaleController.getString(R.string.DeleteAllCalls), new l8(l9Var2, 2), true);
-                H.Z();
-                H.X(-AndroidUtilities.dp(64.0f));
-                break;
-            default:
-                l9 l9Var3 = this.b;
-                l9Var3.getClass();
-                l9.m0(l9Var3);
                 break;
         }
+        return ((ut) obj).a;
+    }
+
+    public /* synthetic */ Function compose(Function function) {
+        int i10 = this.a;
+        return Function$-CC.$default$compose(this, function);
     }
 }

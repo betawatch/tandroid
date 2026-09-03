@@ -17,11 +17,11 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public abstract class fy0 extends View implements NotificationCenter.NotificationCenterDelegate {
     public ValueAnimator B;
-    public nh.b C;
+    public mh.b C;
     public float D;
     public ValueAnimator E;
     public RectF a;
@@ -123,8 +123,8 @@ public abstract class fy0 extends View implements NotificationCenter.Notificatio
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.B = ofFloat;
-        ofFloat.addUpdateListener(new bg.a(15, this, ey0VarArr));
-        this.B.addListener(new pd0(ey0VarArr, 17));
+        ofFloat.addUpdateListener(new ag.a(15, this, ey0VarArr));
+        this.B.addListener(new od0(ey0VarArr, 17));
         this.B.setDuration(450L);
         this.B.setInterpolator(new u1.a());
         this.B.start();
@@ -233,7 +233,7 @@ public abstract class fy0 extends View implements NotificationCenter.Notificatio
                         if (w11 > 0.0f) {
                             w11 = 0.0f;
                         }
-                        ey0Var.b.setColor(org.telegram.ui.ActionBar.k6.w0(null, ey0Var.a, z4));
+                        ey0Var.b.setColor(org.telegram.ui.ActionBar.j6.w0(null, ey0Var.a, z4));
                         this.b[i12].b.setAlpha(255);
                         double width = rectF.width() / 2.0f;
                         i11 = i12;
@@ -276,7 +276,7 @@ public abstract class fy0 extends View implements NotificationCenter.Notificatio
                         if (w12 > 0.0f) {
                             w12 = 0.0f;
                         }
-                        ey0Var2.b.setColor(org.telegram.ui.ActionBar.k6.w0(null, ey0Var2.a, false));
+                        ey0Var2.b.setColor(org.telegram.ui.ActionBar.j6.w0(null, ey0Var2.a, false));
                         this.b[i13].b.setAlpha(i10);
                         double width2 = rectF.width() / 2.0f;
                         f11 = f21;
@@ -307,9 +307,9 @@ public abstract class fy0 extends View implements NotificationCenter.Notificatio
             canvas.restore();
         }
         if (j6Var2 != null) {
-            int i14 = org.telegram.ui.ActionBar.k6.j5;
-            j6Var2.r(org.telegram.ui.ActionBar.k6.w0(null, i14, false));
-            j6Var.r(org.telegram.ui.ActionBar.k6.w0(null, i14, false));
+            int i14 = org.telegram.ui.ActionBar.j6.j5;
+            j6Var2.r(org.telegram.ui.ActionBar.j6.w0(null, i14, false));
+            j6Var.r(org.telegram.ui.ActionBar.j6.w0(null, i14, false));
             if (this.n != null) {
                 float d11 = j6Var.d() + j6Var2.d() + AndroidUtilities.dp(4.0f);
                 float width3 = (getWidth() - d11) / 2.0f;
@@ -322,7 +322,7 @@ public abstract class fy0 extends View implements NotificationCenter.Notificatio
         if (this.x != null) {
             canvas.save();
             canvas.translate(AndroidUtilities.dp(30.0f), AndroidUtilities.dp(148.0f) - ((this.x.getHeight() - AndroidUtilities.dp(13.0f)) / 2.0f));
-            this.w.setColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.j5, false));
+            this.w.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.j5, false));
             this.x.draw(canvas);
             canvas.restore();
         }
@@ -345,11 +345,11 @@ public abstract class fy0 extends View implements NotificationCenter.Notificatio
             rectF.set(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(107.0f), AndroidUtilities.dp(107.0f));
             i12 = 0;
         }
-        pr prVar = pr.h;
-        j6Var2.k(0.18f, 300L, prVar);
+        mr mrVar = mr.h;
+        j6Var2.k(0.18f, 300L, mrVar);
         j6Var2.t(AndroidUtilities.dp(24.0f));
         j6Var2.u(AndroidUtilities.bold());
-        j6Var.k(0.18f, 300L, prVar);
+        j6Var.k(0.18f, 300L, mrVar);
         if (l10 != null) {
             j6Var.t(AndroidUtilities.dp(16.0f));
             j6Var2.b = 5;
@@ -404,7 +404,7 @@ public abstract class fy0 extends View implements NotificationCenter.Notificatio
         return super.onTouchEvent(motionEvent);
     }
 
-    public void setCacheModel(nh.b bVar) {
+    public void setCacheModel(mh.b bVar) {
         this.C = bVar;
     }
 
@@ -425,8 +425,8 @@ public abstract class fy0 extends View implements NotificationCenter.Notificatio
             if (f10 != 0.0f) {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, 0.0f);
                 this.E = ofFloat;
-                ofFloat.addUpdateListener(new k70(this, 25));
-                this.E.addListener(new pd0(this, 18));
+                ofFloat.addUpdateListener(new j70(this, 25));
+                this.E.addListener(new od0(this, 18));
                 this.E.setInterpolator(new OvershootInterpolator(2.0f));
                 this.E.setDuration(350L);
                 this.E.start();

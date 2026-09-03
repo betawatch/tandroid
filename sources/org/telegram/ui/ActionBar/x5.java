@@ -2,52 +2,44 @@ package org.telegram.ui.ActionBar;
 
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
-import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import android.view.View;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class x5 extends Drawable {
     public final RectF a = new RectF();
-    public final /* synthetic */ View b;
-    public final /* synthetic */ View c;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
     public final /* synthetic */ int d;
-    public final /* synthetic */ Paint e;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ float f;
 
-    public x5(View view, View view2, int i10, Paint paint) {
-        this.b = view;
-        this.c = view2;
-        this.d = i10;
-        this.e = paint;
+    public x5(int i10, int i11, int i12, int i13, float f10) {
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
+        this.e = i13;
+        this.f = f10;
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
         Rect bounds = getBounds();
-        float f10 = bounds.left;
-        float f11 = bounds.top;
-        float f12 = bounds.right;
-        float f13 = bounds.bottom;
         RectF rectF = this.a;
-        rectF.set(f10, f11, f12, f13);
-        k6.s(this.b, this.c, null);
-        float f14 = this.d;
-        Paint paint = this.e;
-        if (paint == null) {
-            paint = k6.S0("paintChatActionBackground");
-        }
-        canvas.drawRoundRect(rectF, f14, f14, paint);
-        if (k6.a1()) {
-            canvas.drawRoundRect(rectF, f14, f14, k6.S0("paintChatActionBackgroundDarken"));
-        }
+        rectF.set(bounds);
+        rectF.left += this.b;
+        rectF.top += this.c;
+        rectF.right -= this.d;
+        rectF.bottom -= this.e;
+        float f10 = this.f;
+        canvas.drawRoundRect(rectF, f10, f10, j6.z);
     }
 
     @Override // android.graphics.drawable.Drawable
     public final int getOpacity() {
-        return -2;
+        return 0;
     }
 
     @Override // android.graphics.drawable.Drawable

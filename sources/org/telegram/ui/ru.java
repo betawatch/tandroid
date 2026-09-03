@@ -1,69 +1,69 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.StatsController;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class ru extends org.telegram.ui.Components.wc {
-    public final /* synthetic */ su b0;
+public final /* synthetic */ class ru implements org.telegram.ui.Components.el0, org.telegram.ui.ActionBar.c2 {
+    public final /* synthetic */ vu a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ru(su suVar, Context context, int i10, int[] iArr, int[] iArr2) {
-        super(context, i10, iArr, 1, iArr2);
-        this.b0 = suVar;
+    public /* synthetic */ ru(vu vuVar) {
+        this.a = vuVar;
     }
 
-    @Override // org.telegram.ui.Components.wc
-    public final int c() {
-        return 216;
-    }
-
-    @Override // org.telegram.ui.Components.wc
-    public final void d(int i10, boolean z4) {
+    @Override // org.telegram.ui.ActionBar.c2
+    public void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         int i11;
-        uu uuVar = (uu) this.b0.e;
-        if (!z4) {
-            uuVar.i1();
-            return;
-        }
-        if (i10 < 0 || i10 >= uuVar.d3.length) {
-            return;
-        }
-        int i12 = 0;
+        int i12;
+        int i13;
+        vu vuVar = this.a;
+        zu zuVar = vuVar.l3;
+        ArrayList arrayList = vuVar.c3;
+        arrayList.clear();
+        int i14 = 0;
         while (true) {
-            tu[] tuVarArr = uuVar.d3;
-            i11 = -1;
-            if (i12 >= tuVarArr.length) {
-                i12 = -1;
-                break;
-            } else if (tuVarArr[i12].d == i10) {
-                break;
-            } else {
-                i12++;
+            uu[] uuVarArr = vuVar.d3;
+            if (i14 >= uuVarArr.length) {
+                i11 = ((org.telegram.ui.ActionBar.p2) zuVar).currentAccount;
+                StatsController.getInstance(i11).resetStats(0);
+                i12 = ((org.telegram.ui.ActionBar.p2) zuVar).currentAccount;
+                StatsController.getInstance(i12).resetStats(1);
+                i13 = ((org.telegram.ui.ActionBar.p2) zuVar).currentAccount;
+                StatsController.getInstance(i13).resetStats(2);
+                vuVar.U2 = true;
+                vuVar.y1();
+                vuVar.z1(true);
+                return;
             }
-        }
-        int i13 = 0;
-        while (true) {
-            if (i13 < uuVar.Z2.size()) {
-                pu puVar = (pu) uuVar.Z2.get(i13);
-                if (puVar != null && puVar.a == 2 && puVar.h == i12) {
-                    i11 = i13;
-                    break;
-                }
-                i13++;
-            } else {
-                break;
+            uu uuVar = uuVarArr[i14];
+            if (uuVar.c > 0) {
+                arrayList.add(Integer.valueOf(uuVar.d));
             }
-        }
-        if (i11 >= 0) {
-            uuVar.d1(new d4.b(i11, 3), 0, true);
-        } else {
-            uuVar.i1();
+            i14++;
         }
     }
 
-    @Override // org.telegram.ui.Components.wc
-    public final int e() {
-        return 10;
+    @Override // org.telegram.ui.Components.el0
+    public int run() {
+        vu vuVar = this.a;
+        ArrayList arrayList = vuVar.Z2;
+        int i10 = 0;
+        while (true) {
+            if (i10 >= arrayList.size()) {
+                i10 = -1;
+                break;
+            }
+            if (((qu) arrayList.get(i10)).a == 5) {
+                break;
+            }
+            i10++;
+        }
+        if (i10 < 0) {
+            return -1;
+        }
+        vuVar.W2.h1(i10, AndroidUtilities.dp(60.0f));
+        return i10;
     }
 }

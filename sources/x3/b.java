@@ -1,16 +1,15 @@
 package x3;
 
 import java.util.ArrayDeque;
-import org.telegram.ui.web.e0;
 import r3.l;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class b {
     public final byte[] a = new byte[8];
     public final ArrayDeque b = new ArrayDeque();
     public final e c = new e();
-    public e0 d;
+    public o3.c d;
     public int e;
     public int f;
     public long g;

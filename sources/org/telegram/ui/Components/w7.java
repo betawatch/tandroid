@@ -19,7 +19,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public abstract class w7 extends FrameLayout {
     public final TextView[] a;
@@ -49,7 +49,7 @@ public abstract class w7 extends FrameLayout {
                 this.a[i10].setAlpha(0.0f);
                 this.a[i10].setVisibility(8);
             }
-            addView(this.a[i10], k7.c6.c(-1.0f, -2));
+            addView(this.a[i10], k7.b6.c(-1.0f, -2));
         }
         this.d = new Matrix();
         Paint paint = new Paint(1);
@@ -98,7 +98,7 @@ public abstract class w7 extends FrameLayout {
         }
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.n = animatorSet2;
-        animatorSet2.addListener(new org.telegram.ui.Cells.b4(this, i14, 2));
+        animatorSet2.addListener(new org.telegram.ui.Cells.a4(this, i14, 2));
         textViewArr[i15].setText(charSequence);
         textViewArr[i15].bringToFront();
         textViewArr[i15].setVisibility(0);
@@ -183,7 +183,7 @@ public abstract class w7 extends FrameLayout {
                     break;
                 }
                 TextView textView = textViewArr[i11];
-                if ((textView instanceof v90) && ((v90) textView).d) {
+                if ((textView instanceof u90) && ((u90) textView).d) {
                     this.s = -1;
                     break;
                 }
@@ -284,8 +284,8 @@ public abstract class w7 extends FrameLayout {
     public void setCustomPaddingRight(int i10) {
         this.w = i10;
         for (TextView textView : this.a) {
-            if (textView instanceof v90) {
-                ((v90) textView).setCustomPaddingRight(i10);
+            if (textView instanceof u90) {
+                ((u90) textView).setCustomPaddingRight(i10);
             }
         }
         invalidate();

@@ -1,542 +1,195 @@
 package org.telegram.ui.Components;
 
-import j$.util.DesugarCollections;
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeSet;
-import org.telegram.messenger.FileLog;
-import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class q90 extends k7.h0 {
-    public final ArrayList a;
-    public TL_iv.RichText b;
-    public final ArrayList c = new ArrayList();
-    public final StringBuilder d = new StringBuilder();
-    public final mc.d e = new mc.d(new h7.u(12), new z9.d(12));
-    public final ArrayDeque f;
+public final class q90 extends k7.g0 {
+    public int a;
+    public final TL_iv.PageBlock b;
+    public TL_iv.textConcat c = new TL_iv.textConcat();
 
-    public q90(ArrayList arrayList, ArrayDeque arrayDeque) {
-        this.a = arrayList;
-        this.f = arrayDeque;
+    public q90(TL_iv.PageBlock pageBlock) {
+        this.b = pageBlock;
     }
 
-    public static void A(int i10, List list, List list2) {
-        for (Object obj : list) {
-            if (obj instanceof o90) {
-                list2.add(((o90) obj).a);
-            } else if (obj instanceof p90) {
-                C((p90) obj, list2, i10);
-            }
-        }
+    public static TL_iv.RichText x(TL_iv.textConcat textconcat) {
+        return textconcat.texts.isEmpty() ? new TL_iv.textEmpty() : textconcat.texts.size() == 1 ? textconcat.texts.get(0) : textconcat;
     }
 
-    public static int B(ne.p pVar) {
-        ne.s sVar;
-        String str;
-        ne.p pVar2 = (ne.p) pVar.c;
-        if (!(pVar2 instanceof ne.r)) {
-            return -1;
-        }
-        ne.p pVar3 = (ne.p) pVar2.c;
-        if (!(pVar3 instanceof ne.s) || (str = (sVar = (ne.s) pVar3).g) == null) {
-            return -1;
-        }
-        int i10 = 3;
-        if (str.length() < 3) {
-            return -1;
-        }
-        int i11 = 0;
-        if (str.charAt(0) != '[' || str.charAt(2) != ']') {
-            return -1;
-        }
-        char charAt = str.charAt(1);
-        if (charAt != ' ') {
-            if (charAt != 'x' && charAt != 'X') {
-                return -1;
-            }
-            i11 = 1;
-        }
-        if (str.length() > 3 && str.charAt(3) == ' ') {
-            i10 = 4;
-        }
-        sVar.g = str.substring(i10);
-        return i11;
-    }
-
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    public static void C(p90 p90Var, List list, int i10) {
-        String str;
-        mc.a aVar = p90Var.a;
-        ArrayList arrayList = p90Var.c;
-        String str2 = aVar.a;
-        String lowerCase = str2 == null ? "" : str2.toLowerCase();
-        if (i10 >= 64) {
-            A(i10 + 1, arrayList, list);
-        }
-        switch (lowerCase.hashCode()) {
-            case -1857640538:
-                if (lowerCase.equals("summary")) {
-                }
-                A(i10 + 1, arrayList, list);
-                break;
-            case -1268861541:
-                str = "footer";
-                lowerCase.equals(str);
-                A(i10 + 1, arrayList, list);
-                break;
-            case -1221270899:
-                str = "header";
-                lowerCase.equals(str);
-                A(i10 + 1, arrayList, list);
-                break;
-            case -732377866:
-                str = "article";
-                lowerCase.equals(str);
-                A(i10 + 1, arrayList, list);
-                break;
-            case 112:
-                str = "p";
-                lowerCase.equals(str);
-                A(i10 + 1, arrayList, list);
-                break;
-            case 99473:
-                str = "div";
-                lowerCase.equals(str);
-                A(i10 + 1, arrayList, list);
-                break;
-            case 108835:
-                str = "nav";
-                lowerCase.equals(str);
-                A(i10 + 1, arrayList, list);
-                break;
-            case 3343801:
-                str = "main";
-                lowerCase.equals(str);
-                A(i10 + 1, arrayList, list);
-                break;
-            case 93111608:
-                str = "aside";
-                lowerCase.equals(str);
-                A(i10 + 1, arrayList, list);
-                break;
-            case 1557721666:
-                if (lowerCase.equals("details")) {
-                    TL_iv.pageBlockDetails pageblockdetails = new TL_iv.pageBlockDetails();
-                    Map map = aVar.c;
-                    int i11 = 0;
-                    pageblockdetails.open = map != null && map.containsKey("open");
-                    pageblockdetails.title = new TL_iv.textEmpty();
-                    ArrayList arrayList2 = new ArrayList();
-                    int size = arrayList.size();
-                    while (i11 < size) {
-                        Object obj = arrayList.get(i11);
-                        i11++;
-                        boolean z4 = obj instanceof p90;
-                        if (z4) {
-                            p90 p90Var2 = (p90) obj;
-                            if ("summary".equalsIgnoreCase(p90Var2.a.a)) {
-                                StringBuilder sb = new StringBuilder();
-                                w(p90Var2.c, sb);
-                                String trim = sb.toString().trim();
-                                pageblockdetails.title = trim.isEmpty() ? new TL_iv.textEmpty() : u90.j(trim);
-                            }
-                        }
-                        if (obj instanceof o90) {
-                            arrayList2.add(((o90) obj).a);
-                        } else if (z4) {
-                            C((p90) obj, arrayList2, i10 + 1);
-                        }
-                    }
-                    pageblockdetails.blocks.addAll(arrayList2);
-                    list.add(pageblockdetails);
-                    break;
-                }
-                A(i10 + 1, arrayList, list);
-                break;
-            case 1970241253:
-                str = "section";
-                lowerCase.equals(str);
-                A(i10 + 1, arrayList, list);
-                break;
-            default:
-                A(i10 + 1, arrayList, list);
-                break;
-        }
-    }
-
-    public static void w(List list, StringBuilder sb) {
-        for (Object obj : list) {
-            if (obj instanceof o90) {
-                TL_iv.PageBlock pageBlock = ((o90) obj).a;
-                if (pageBlock instanceof TL_iv.pageBlockParagraph) {
-                    if (sb.length() > 0) {
-                        sb.append('\n');
-                    }
-                    sb.append(u90.l(((TL_iv.pageBlockParagraph) pageBlock).text));
-                } else if (pageBlock instanceof TL_iv.pageBlockHeader) {
-                    if (sb.length() > 0) {
-                        sb.append('\n');
-                    }
-                    sb.append(u90.l(((TL_iv.pageBlockHeader) pageBlock).text));
-                } else if (pageBlock instanceof TL_iv.pageBlockSubheader) {
-                    if (sb.length() > 0) {
-                        sb.append('\n');
-                    }
-                    sb.append(u90.l(((TL_iv.pageBlockSubheader) pageBlock).text));
-                }
-            } else if (obj instanceof p90) {
-                w(((p90) obj).c, sb);
-            }
-        }
-    }
-
-    public static void z(ArrayList arrayList, List list) {
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            mc.a aVar = (mc.a) it.next();
-            arrayList.add(aVar);
-            ArrayList arrayList2 = aVar.f;
-            z(arrayList, arrayList2 == null ? Collections.EMPTY_LIST : DesugarCollections.unmodifiableList(arrayList2));
-        }
-    }
-
-    @Override // k7.h0
+    @Override // k7.g0
     public final void a(ne.b bVar) {
-        for (TL_iv.RichText richText : u90.b(u90.a(bVar, null))) {
-            TL_iv.pageBlockBlockquote pageblockblockquote = new TL_iv.pageBlockBlockquote();
-            pageblockblockquote.text = richText;
-            pageblockblockquote.caption = new TL_iv.textEmpty();
-            x(pageblockblockquote);
+        int i10 = this.a;
+        if (i10 >= 64) {
+            return;
+        }
+        this.a = i10 + 1;
+        try {
+            v(bVar);
+        } finally {
+            this.a--;
         }
     }
 
-    @Override // k7.h0
+    @Override // k7.g0
     public final void b(ne.c cVar) {
-        TL_iv.pageBlockList pageblocklist = new TL_iv.pageBlockList();
-        for (ne.p pVar = (ne.p) cVar.c; pVar != null; pVar = (ne.p) pVar.f) {
-            if (pVar instanceof ne.o) {
-                int B = B(pVar);
-                TL_iv.TL_pageListItemText tL_pageListItemText = new TL_iv.TL_pageListItemText();
-                if (B >= 0) {
-                    tL_pageListItemText.checkbox = true;
-                    tL_pageListItemText.checked = B == 1;
-                }
-                tL_pageListItemText.text = u90.d(u90.a(pVar, pageblocklist));
-                pageblocklist.items.add(tL_pageListItemText);
-            }
+        int i10 = this.a;
+        if (i10 >= 64) {
+            return;
         }
-        x(pageblocklist);
+        this.a = i10 + 1;
+        try {
+            v(cVar);
+        } finally {
+            this.a--;
+        }
     }
 
-    @Override // k7.h0
-    public final void f(ne.h hVar) {
-        TL_iv.pageBlockPreformatted pageblockpreformatted = new TL_iv.pageBlockPreformatted();
-        pageblockpreformatted.text = u90.d(u90.j(hVar.k));
-        String str = hVar.j;
+    @Override // k7.g0
+    public final void c(ne.d dVar) {
+        TL_iv.textFixed textfixed = new TL_iv.textFixed();
+        textfixed.text = t90.j(dVar.h);
+        w(textfixed);
+    }
+
+    @Override // k7.g0
+    public final void d(ne.e eVar) {
+        if (eVar instanceof ge.a) {
+            TL_iv.textStrike textstrike = new TL_iv.textStrike();
+            textstrike.text = y(eVar);
+            w(textstrike);
+        } else if (eVar instanceof lc.d) {
+            w(t90.c(((lc.d) eVar).g));
+        } else {
+            v(eVar);
+        }
+    }
+
+    @Override // k7.g0
+    public final void e(ne.g gVar) {
+        TL_iv.textItalic textitalic = new TL_iv.textItalic();
+        textitalic.text = y(gVar);
+        w(textitalic);
+    }
+
+    @Override // k7.g0
+    public final void i(ne.k kVar) {
+        w(y(kVar));
+    }
+
+    @Override // k7.g0
+    public final void k(ne.n nVar) {
+        if (!(nVar instanceof lc.a)) {
+            v(nVar);
+            return;
+        }
+        if (!this.c.texts.isEmpty()) {
+            w(t90.j("\n"));
+        }
+        w(t90.c(((lc.a) nVar).g));
+        w(t90.j("\n"));
+    }
+
+    @Override // k7.g0
+    public final void l(ne.o oVar) {
+        int i10 = this.a;
+        if (i10 >= 64) {
+            return;
+        }
+        this.a = i10 + 1;
+        try {
+            v(oVar);
+        } finally {
+            this.a--;
+        }
+    }
+
+    @Override // k7.g0
+    public final void m(ne.q qVar) {
+        int i10 = this.a;
+        if (i10 >= 64) {
+            return;
+        }
+        this.a = i10 + 1;
+        try {
+            v(qVar);
+        } finally {
+            this.a--;
+        }
+    }
+
+    @Override // k7.g0
+    public final void n(ne.r rVar) {
+        if (!this.c.texts.isEmpty()) {
+            w(t90.j("\n\n"));
+        }
+        v(rVar);
+    }
+
+    @Override // k7.g0
+    public final void o(ne.s sVar) {
+        w(t90.j(sVar.g));
+    }
+
+    @Override // k7.g0
+    public final void q(ne.d dVar) {
+        w(t90.j(dVar.h));
+    }
+
+    @Override // k7.g0
+    public final void r(ne.g gVar) {
+        w(t90.j("\n"));
+    }
+
+    @Override // k7.g0
+    public final void s(ne.k kVar) {
+        String str = kVar.h;
         if (str == null) {
             str = "";
         }
-        pageblockpreformatted.language = str;
-        x(pageblockpreformatted);
-    }
-
-    @Override // k7.h0
-    public final void g(ne.i iVar) {
-        TL_iv.RichText d = u90.d(u90.a(iVar, null));
-        if (this.c.isEmpty()) {
-            this.b = d;
-        }
-        switch (iVar.g) {
-            case 1:
-                TL_iv.pageBlockHeading1 pageblockheading1 = new TL_iv.pageBlockHeading1();
-                pageblockheading1.text = d;
-                x(pageblockheading1);
-                break;
-            case 2:
-                TL_iv.pageBlockHeading2 pageblockheading2 = new TL_iv.pageBlockHeading2();
-                pageblockheading2.text = d;
-                x(pageblockheading2);
-                break;
-            case 3:
-                TL_iv.pageBlockHeading3 pageblockheading3 = new TL_iv.pageBlockHeading3();
-                pageblockheading3.text = d;
-                x(pageblockheading3);
-                break;
-            case 4:
-                TL_iv.pageBlockHeading4 pageblockheading4 = new TL_iv.pageBlockHeading4();
-                pageblockheading4.text = d;
-                x(pageblockheading4);
-                break;
-            case 5:
-                TL_iv.pageBlockHeading5 pageblockheading5 = new TL_iv.pageBlockHeading5();
-                pageblockheading5.text = d;
-                x(pageblockheading5);
-                break;
-            case 6:
-                TL_iv.pageBlockHeading6 pageblockheading6 = new TL_iv.pageBlockHeading6();
-                pageblockheading6.text = d;
-                x(pageblockheading6);
-                break;
-            default:
-                TL_iv.pageBlockHeader pageblockheader = new TL_iv.pageBlockHeader();
-                pageblockheader.text = d;
-                x(pageblockheader);
-                break;
-        }
-    }
-
-    @Override // k7.h0
-    public final void h(ne.j jVar) {
-        StringBuilder sb = this.d;
-        String str = jVar.g;
-        if (str == null) {
+        String trim = str.trim();
+        if (trim.startsWith("mailto:")) {
+            TL_iv.RichText textemail = new TL_iv.textEmail();
+            textemail.text = y(kVar);
+            textemail.email = trim.substring(7);
+            w(textemail);
             return;
         }
-        try {
-            this.e.b(sb, str);
-        } catch (Throwable th2) {
-            FileLog.e(th2);
-            sb.append(str);
-        }
-    }
-
-    @Override // k7.h0
-    public final void j(ne.l lVar) {
-        TL_iv.pageBlockPreformatted pageblockpreformatted = new TL_iv.pageBlockPreformatted();
-        pageblockpreformatted.text = u90.d(u90.j(lVar.g));
-        pageblockpreformatted.language = "";
-        x(pageblockpreformatted);
-    }
-
-    @Override // k7.h0
-    public final void k(ne.n nVar) {
-        if (!(nVar instanceof ie.a)) {
-            if (!(nVar instanceof lc.a)) {
-                v(nVar);
-                return;
-            }
-            TL_iv.PageBlock pageblockparagraph = new TL_iv.pageBlockParagraph();
-            pageblockparagraph.text = u90.c(((lc.a) nVar).g);
-            x(pageblockparagraph);
+        if (trim.startsWith("tel:")) {
+            TL_iv.textPhone textphone = new TL_iv.textPhone();
+            textphone.text = y(kVar);
+            textphone.phone = trim.substring(4);
+            w(textphone);
             return;
         }
-        TL_iv.pageBlockTable pageblocktable = new TL_iv.pageBlockTable();
-        pageblocktable.bordered = true;
-        pageblocktable.title = new TL_iv.textEmpty();
-        for (ne.p pVar = (ne.p) ((ie.a) nVar).c; pVar != null; pVar = (ne.p) pVar.f) {
-            boolean z4 = pVar instanceof ie.e;
-            if (z4 || (pVar instanceof ie.b)) {
-                for (ne.p pVar2 = (ne.p) pVar.c; pVar2 != null; pVar2 = (ne.p) pVar2.f) {
-                    if (pVar2 instanceof ie.f) {
-                        ArrayList<TL_iv.pageTableRow> arrayList = pageblocktable.rows;
-                        TL_iv.pageTableRow pagetablerow = new TL_iv.pageTableRow();
-                        for (ne.p pVar3 = (ne.p) ((ie.f) pVar2).c; pVar3 != null; pVar3 = (ne.p) pVar3.f) {
-                            if (pVar3 instanceof ie.d) {
-                                ArrayList<TL_iv.pageTableCell> arrayList2 = pagetablerow.cells;
-                                ie.d dVar = (ie.d) pVar3;
-                                TL_iv.pageTableCell pagetablecell = new TL_iv.pageTableCell();
-                                pagetablecell.header = z4 || dVar.g;
-                                ie.c cVar = dVar.h;
-                                if (cVar == ie.c.b) {
-                                    pagetablecell.align_center = true;
-                                } else if (cVar == ie.c.c) {
-                                    pagetablecell.align_right = true;
-                                }
-                                pagetablecell.text = u90.d(u90.a(dVar, null));
-                                pagetablecell.flags |= 128;
-                                arrayList2.add(pagetablecell);
-                            }
-                        }
-                        arrayList.add(pagetablerow);
-                    }
-                }
-            }
-        }
-        x(pageblocktable);
+        TL_iv.RichText texturl = new TL_iv.textUrl();
+        texturl.text = y(kVar);
+        texturl.url = trim;
+        w(texturl);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x003e  */
-    @Override // k7.h0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void m(ne.q qVar) {
-        String valueOf;
-        int B;
-        TL_iv.pageBlockOrderedList pageblockorderedlist = new TL_iv.pageBlockOrderedList();
-        boolean z4 = ((ne.a) ((ne.p) qVar.b)) instanceof ne.f;
-        int i10 = qVar.g;
-        for (ne.p pVar = (ne.p) qVar.c; pVar != null; pVar = (ne.p) pVar.f) {
-            if (pVar instanceof ne.o) {
-                if (z4) {
-                    ArrayDeque arrayDeque = this.f;
-                    if (!arrayDeque.isEmpty()) {
-                        valueOf = (String) arrayDeque.poll();
-                        B = B(pVar);
-                        TL_iv.TL_pageListOrderedItemText tL_pageListOrderedItemText = new TL_iv.TL_pageListOrderedItemText();
-                        if (B >= 0) {
-                            tL_pageListOrderedItemText.checkbox = true;
-                            tL_pageListOrderedItemText.checked = B == 1;
-                        }
-                        tL_pageListOrderedItemText.num = valueOf;
-                        tL_pageListOrderedItemText.text = u90.d(u90.a(pVar, pageblockorderedlist));
-                        pageblockorderedlist.items.add(tL_pageListOrderedItemText);
-                    }
-                }
-                valueOf = String.valueOf(i10);
-                i10++;
-                B = B(pVar);
-                TL_iv.TL_pageListOrderedItemText tL_pageListOrderedItemText2 = new TL_iv.TL_pageListOrderedItemText();
-                if (B >= 0) {
-                }
-                tL_pageListOrderedItemText2.num = valueOf;
-                tL_pageListOrderedItemText2.text = u90.d(u90.a(pVar, pageblockorderedlist));
-                pageblockorderedlist.items.add(tL_pageListOrderedItemText2);
-            }
-        }
-        x(pageblockorderedlist);
+    @Override // k7.g0
+    public final void t(ne.g gVar) {
+        w(t90.j(this.b instanceof TL_iv.pageBlockBlockquote ? "\n" : " "));
     }
 
-    @Override // k7.h0
-    public final void n(ne.r rVar) {
-        for (TL_iv.RichText richText : u90.b(u90.a(rVar, null))) {
-            TL_iv.pageBlockParagraph pageblockparagraph = new TL_iv.pageBlockParagraph();
-            pageblockparagraph.text = richText;
-            x(pageblockparagraph);
-        }
+    @Override // k7.g0
+    public final void u(ne.g gVar) {
+        TL_iv.textBold textbold = new TL_iv.textBold();
+        textbold.text = y(gVar);
+        w(textbold);
     }
 
-    @Override // k7.h0
-    public final void p(ne.t tVar) {
-        x(new TL_iv.pageBlockDivider());
+    public final void w(TL_iv.RichText richText) {
+        this.c.texts.add(richText);
     }
 
-    public final void x(TL_iv.PageBlock pageBlock) {
-        StringBuilder sb = this.d;
-        int length = sb.length();
-        sb.append((char) 1);
-        sb.length();
-        this.c.add(new o90(length, pageBlock));
-    }
-
-    public final void y() {
-        StringBuilder sb = this.d;
-        ArrayList arrayList = new ArrayList();
-        try {
-            mc.d dVar = this.e;
-            int length = sb.length();
-            mc.a aVar = dVar.d;
-            while (true) {
-                mc.a aVar2 = aVar.e;
-                if (aVar2 == null) {
-                    break;
-                } else {
-                    aVar = aVar2;
-                }
-            }
-            if (length > -1) {
-                aVar.b(length);
-            }
-            ArrayList arrayList2 = aVar.f;
-            List unmodifiableList = arrayList2 == null ? Collections.EMPTY_LIST : DesugarCollections.unmodifiableList(arrayList2);
-            if (unmodifiableList.size() > 0) {
-                arrayList.addAll(unmodifiableList);
-            } else {
-                arrayList.addAll(Collections.EMPTY_LIST);
-            }
-            dVar.d = new mc.a("", 0, Collections.EMPTY_MAP, null);
-        } catch (Throwable th2) {
-            FileLog.e(th2);
-        }
-        ArrayList arrayList3 = new ArrayList();
-        z(arrayList3, arrayList);
-        HashMap hashMap = new HashMap();
-        ArrayList arrayList4 = this.c;
-        int size = arrayList4.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList4.get(i10);
-            i10++;
-            o90 o90Var = (o90) obj;
-            hashMap.put(Integer.valueOf(o90Var.b), o90Var);
-        }
-        TreeSet treeSet = new TreeSet();
-        treeSet.add(0);
-        treeSet.add(Integer.valueOf(sb.length()));
-        for (Integer num : hashMap.keySet()) {
-            treeSet.add(num);
-            treeSet.add(Integer.valueOf(num.intValue() + 1));
-        }
-        int size2 = arrayList3.size();
-        int i11 = 0;
-        while (i11 < size2) {
-            Object obj2 = arrayList3.get(i11);
-            i11++;
-            mc.a aVar3 = (mc.a) obj2;
-            treeSet.add(Integer.valueOf(aVar3.b));
-            treeSet.add(Integer.valueOf(aVar3.d));
-        }
-        ArrayList arrayList5 = new ArrayList();
-        Iterator it = treeSet.iterator();
-        Integer num2 = null;
-        while (it.hasNext()) {
-            Integer num3 = (Integer) it.next();
-            if (num2 != null && num3.intValue() > num2.intValue()) {
-                int intValue = num2.intValue();
-                int intValue2 = num3.intValue();
-                if (intValue2 - intValue == 1 && hashMap.containsKey(num2)) {
-                    arrayList5.add((o90) hashMap.get(num2));
-                } else {
-                    String trim = sb.substring(intValue, intValue2).trim();
-                    if (!trim.isEmpty()) {
-                        TL_iv.pageBlockParagraph pageblockparagraph = new TL_iv.pageBlockParagraph();
-                        pageblockparagraph.text = u90.d(u90.j(trim));
-                        arrayList5.add(new o90(intValue, pageblockparagraph));
-                    }
-                }
-            }
-            num2 = num3;
-        }
-        Collections.sort(arrayList3, new oh.k0(21));
-        p90 p90Var = new p90(null, ConnectionsManager.DEFAULT_DATACENTER_ID);
-        ArrayDeque arrayDeque = new ArrayDeque();
-        arrayDeque.push(p90Var);
-        int size3 = arrayList5.size();
-        int i12 = 0;
-        int i13 = 0;
-        while (i13 < size3) {
-            Object obj3 = arrayList5.get(i13);
-            i13++;
-            o90 o90Var2 = (o90) obj3;
-            while (i12 < arrayList3.size() && ((mc.a) arrayList3.get(i12)).b <= o90Var2.b) {
-                int i14 = i12 + 1;
-                mc.a aVar4 = (mc.a) arrayList3.get(i12);
-                int i15 = aVar4.d;
-                int i16 = aVar4.b;
-                if (i15 >= o90Var2.b) {
-                    while (arrayDeque.peek() != p90Var && ((p90) arrayDeque.peek()).b <= i16) {
-                        arrayDeque.pop();
-                    }
-                    p90 p90Var2 = new p90(aVar4, aVar4.d);
-                    ((p90) arrayDeque.peek()).c.add(p90Var2);
-                    arrayDeque.push(p90Var2);
-                }
-                i12 = i14;
-            }
-            while (arrayDeque.peek() != p90Var && ((p90) arrayDeque.peek()).b <= o90Var2.b) {
-                arrayDeque.pop();
-            }
-            TL_iv.PageBlock pageBlock = o90Var2.a;
-            ((p90) arrayDeque.peek()).c.add(o90Var2);
-        }
-        A(0, p90Var.c, this.a);
+    public final TL_iv.RichText y(ne.p pVar) {
+        TL_iv.textConcat textconcat = this.c;
+        this.c = new TL_iv.textConcat();
+        v(pVar);
+        TL_iv.RichText x10 = x(this.c);
+        this.c = textconcat;
+        return x10;
     }
 }

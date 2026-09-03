@@ -1,6 +1,6 @@
 package n3;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class a {
     public final /* synthetic */ int a;
@@ -14,7 +14,7 @@ public abstract class a {
         return (i10 >> 24) & 255;
     }
 
-    public static void h(StringBuilder sb) {
+    public static void i(StringBuilder sb) {
         if (sb != null) {
             sb.delete(0, sb.length());
         }
@@ -26,7 +26,7 @@ public abstract class a {
 
     public abstract void b();
 
-    public boolean e(int i10) {
+    public boolean d(int i10) {
         return (this.b & i10) == i10;
     }
 

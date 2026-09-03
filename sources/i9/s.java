@@ -7,9 +7,9 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import org.telegram.ui.yh;
+import org.telegram.ui.ai;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class s {
     public final SharedPreferences a;
@@ -52,8 +52,8 @@ public final class s {
         if (bool == null) {
             try {
                 packageManager = context.getPackageManager();
-            } catch (PackageManager.NameNotFoundException e6) {
-                Log.e("FirebaseCrashlytics", "Could not read data collection permission from manifest", e6);
+            } catch (PackageManager.NameNotFoundException e) {
+                Log.e("FirebaseCrashlytics", "Could not read data collection permission from manifest", e);
             }
             if (packageManager != null && (applicationInfo = packageManager.getApplicationInfo(context.getPackageName(), 128)) != null && (bundle = applicationInfo.metaData) != null && bundle.containsKey("firebase_crashlytics_collection_enabled")) {
                 bool2 = Boolean.valueOf(applicationInfo.metaData.getBoolean("firebase_crashlytics_collection_enabled"));
@@ -94,9 +94,9 @@ public final class s {
                 z4 = false;
             }
         }
-        String l10 = yh.l("Crashlytics automatic data collection ", z4 ? "ENABLED" : "DISABLED", " by ", this.g == null ? "global Firebase setting" : this.f ? "firebase_crashlytics_collection_enabled manifest flag" : "API", ".");
+        String k10 = ai.k("Crashlytics automatic data collection ", z4 ? "ENABLED" : "DISABLED", " by ", this.g == null ? "global Firebase setting" : this.f ? "firebase_crashlytics_collection_enabled manifest flag" : "API", ".");
         if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-            Log.d("FirebaseCrashlytics", l10, null);
+            Log.d("FirebaseCrashlytics", k10, null);
         }
         return z4;
     }

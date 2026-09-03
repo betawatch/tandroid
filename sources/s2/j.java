@@ -1,21 +1,20 @@
 package s2;
 
-import androidx.biometric.f0;
 import j$.util.DesugarCollections;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.util.HashMap;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
-import org.telegram.ui.yh;
+import org.telegram.ui.ai;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class j extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ f0 B;
-    public static final /* synthetic */ f0 C;
-    public static final /* synthetic */ f0 w;
-    public static final /* synthetic */ f0 x;
-    public static final /* synthetic */ f0 y;
+    public static final /* synthetic */ bb.b B;
+    public static final /* synthetic */ bb.b C;
+    public static final /* synthetic */ bb.b w;
+    public static final /* synthetic */ bb.b x;
+    public static final /* synthetic */ bb.b y;
     public String e;
     public String f;
     public long h;
@@ -74,8 +73,8 @@ public final class j extends com.googlecode.mp4parser.c {
                 this.f = e2.c.j(this.f, 1, 0);
                 this.s = true;
             }
-        } catch (UnsupportedEncodingException e6) {
-            throw new Error(e6);
+        } catch (UnsupportedEncodingException e) {
+            throw new Error(e);
         }
     }
 
@@ -102,14 +101,14 @@ public final class j extends com.googlecode.mp4parser.c {
     }
 
     public final String toString() {
-        sf.f b10 = de.a.b(C, this, this);
+        rf.f b10 = de.a.b(C, this, this);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb = new StringBuilder("HandlerBox[handlerType=");
-        yh.x(de.a.b(w, this, this));
+        ai.x(de.a.b(w, this, this));
         sb.append(this.e);
         sb.append(";name=");
-        yh.x(de.a.b(B, this, this));
+        ai.x(de.a.b(B, this, this));
         return android.support.v4.media.a.r(sb, this.f, "]");
     }
 }

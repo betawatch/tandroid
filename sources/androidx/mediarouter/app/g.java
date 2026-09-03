@@ -2,7 +2,7 @@ package androidx.mediarouter.app;
 
 import java.util.Comparator;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class g implements Comparator {
     public static final g b = new g(0);
@@ -18,6 +18,6 @@ public final class g implements Comparator {
     public final int compare(Object obj, Object obj2) {
         switch (this.a) {
         }
-        return ((c2.a0) obj).d.compareToIgnoreCase(((c2.a0) obj2).d);
+        return ((c2.b0) obj).d.compareToIgnoreCase(((c2.b0) obj2).d);
     }
 }

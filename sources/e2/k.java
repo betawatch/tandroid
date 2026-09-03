@@ -3,25 +3,26 @@ package e2;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import h7.u;
 import java.io.File;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class k {
     public static final c0.l a = new c0.l();
     public static final Object b = new Object();
-    public static z9.d c = null;
+    public static u c = null;
 
     public static long a(Context context) {
         PackageManager packageManager = context.getApplicationContext().getPackageManager();
         return Build.VERSION.SDK_INT >= 33 ? i.a(packageManager, context).lastUpdateTime : packageManager.getPackageInfo(context.getPackageName(), 0).lastUpdateTime;
     }
 
-    public static z9.d b() {
-        z9.d dVar = new z9.d(5);
-        c = dVar;
-        a.k(dVar);
+    public static u b() {
+        u uVar = new u(5);
+        c = uVar;
+        a.k(uVar);
         return c;
     }
 

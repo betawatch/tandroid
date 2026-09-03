@@ -5,13 +5,13 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class t8 extends sl0 {
+public final class t8 extends rl0 {
     public final ArrayList U2;
     public final int V2;
     public int W2;
-    public final org.telegram.ui.y7 X2;
+    public final org.telegram.ui.a8 X2;
     public s8 Y2;
     public final /* synthetic */ w8 Z2;
 
@@ -22,9 +22,9 @@ public final class t8 extends sl0 {
         this.U2 = new ArrayList();
         this.V2 = 200;
         this.W2 = -1;
-        f2.j0 j0Var = new f2.j0();
-        j0Var.j1(0);
-        setLayoutManager(j0Var);
+        f2.i0 i0Var = new f2.i0();
+        i0Var.j1(0);
+        setLayoutManager(i0Var);
         for (int i10 = 0; i10 < 7; i10++) {
             s8 s8Var = new s8();
             int i11 = this.V2;
@@ -55,13 +55,13 @@ public final class t8 extends sl0 {
         this.e1 = true;
         int i14 = 2;
         setOnItemClickListener(new k(this, i14));
-        org.telegram.ui.y7 y7Var = new org.telegram.ui.y7(this, i14);
-        this.X2 = y7Var;
-        setAdapter(y7Var);
+        org.telegram.ui.a8 a8Var = new org.telegram.ui.a8(this, i14);
+        this.X2 = a8Var;
+        setAdapter(a8Var);
         setOverScrollMode(1);
     }
 
-    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.rl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i10, int i11) {
         int size = View.MeasureSpec.getSize(i10) / this.X2.h();
         w8 w8Var = this.Z2;

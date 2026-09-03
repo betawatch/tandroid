@@ -6,15 +6,15 @@ import android.graphics.PorterDuffColorFilter;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class qo0 extends to0 {
     public int D;
     public final /* synthetic */ np0 E;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qo0(np0 np0Var, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, g6Var);
+    public qo0(np0 np0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var);
         this.E = np0Var;
         this.D = 0;
     }

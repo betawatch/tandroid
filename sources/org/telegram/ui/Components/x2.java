@@ -5,7 +5,7 @@ import android.content.DialogInterface;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x2 implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -28,8 +28,8 @@ public final /* synthetic */ class x2 implements DialogInterface.OnClickListener
             case 0:
                 int[] iArr = (int[]) this.b;
                 Context context = (Context) this.c;
-                oh.b bVar = (oh.b) this.d;
-                lh.t tVar = (lh.t) this.e;
+                nh.b bVar = (nh.b) this.d;
+                kh.t tVar = (kh.t) this.e;
                 int i11 = iArr[i10];
                 if (i11 != 100) {
                     tVar.run(Integer.valueOf(i11), "");

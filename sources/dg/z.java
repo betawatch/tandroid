@@ -1,68 +1,63 @@
 package dg;
 
-import android.text.TextUtils;
-import android.view.View;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import wh.v5;
+import android.widget.FrameLayout;
+import org.telegram.ui.Components.qa0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z implements View.OnFocusChangeListener {
+public final /* synthetic */ class z implements o1.f {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ FrameLayout b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ z(Object obj, int i10) {
+    public /* synthetic */ z(FrameLayout frameLayout, boolean z4, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = frameLayout;
+        this.c = z4;
     }
 
-    @Override // android.view.View.OnFocusChangeListener
-    public final void onFocusChange(View view, boolean z4) {
+    @Override // o1.f
+    public final void a(o1.h hVar, boolean z4, float f10, float f11) {
         switch (this.a) {
             case 0:
-                EditTextBoldCursor editTextBoldCursor = ((c0) this.b).c;
-                if (!z4 && TextUtils.isEmpty(editTextBoldCursor.getText())) {
-                    editTextBoldCursor.setText("0");
+                e1 e1Var = (e1) this.b;
+                q2 q2Var = e1Var.s1;
+                if (hVar == e1Var.C1) {
+                    e1Var.C1 = null;
+                    if (!this.c) {
+                        q2Var.setVisibility(8);
+                    }
+                    q2Var.setMaskProvider(null);
                     break;
                 }
                 break;
             case 1:
-                EditTextBoldCursor editTextBoldCursor2 = ((d0) this.b).d;
-                if (!z4 && TextUtils.isEmpty(editTextBoldCursor2.getText())) {
-                    editTextBoldCursor2.setText("0");
-                    break;
-                }
-                break;
-            case 2:
-                mh.l lVar = ((mh.p) this.b).J;
-                float f10 = z4 ? 1.0f : 0.0f;
-                lVar.b(f10, f10, true);
-                break;
-            case 3:
-                ((mh.m0) this.b).Z.c(z4, !TextUtils.isEmpty(r2.a0.getText()));
-                break;
-            case 4:
-                ((mh.r0) this.b).f.c(z4, !TextUtils.isEmpty(r2.h.getText()));
-                break;
-            case 5:
-                ((mh.v0) this.b).b.c(z4, !TextUtils.isEmpty(r2.c.getText()));
-                break;
-            case 6:
-                ng.p pVar = (ng.p) this.b;
-                if (!z4) {
-                    pVar.m();
-                    break;
-                } else {
-                    pVar.n(true);
-                    Runnable runnable = pVar.e;
-                    if (runnable != null) {
-                        runnable.run();
+                e1 e1Var2 = (e1) this.b;
+                z0 z0Var = e1Var2.D1;
+                if (hVar == e1Var2.J1) {
+                    e1Var2.J1 = null;
+                    if (!this.c) {
+                        z0Var.setVisibility(8);
+                        cg.f1.e(e1Var2.M1).g();
+                        z0Var.getAdapter().l();
                         break;
                     }
                 }
                 break;
             default:
-                v5.a((v5) this.b, z4);
+                qa0 qa0Var = (qa0) this.b;
+                if (!z4) {
+                    qa0Var.H = null;
+                    boolean z10 = this.c;
+                    qa0Var.setVisibility(z10 ? 8 : 0);
+                    if (qa0Var.K && z10) {
+                        qa0Var.K = false;
+                        qa0Var.b.setLayoutManager(qa0Var.getNeededLayoutManager());
+                        qa0Var.F = true;
+                        qa0Var.o(true);
+                        break;
+                    }
+                }
                 break;
         }
     }

@@ -4,12 +4,12 @@ import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class p0 implements Application.ActivityLifecycleCallbacks {
     public static final p0 a = new p0();
     public static boolean b;
-    public static sf.f c;
+    public static rf.f c;
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public final void onActivityCreated(Activity activity, Bundle bundle) {
@@ -24,7 +24,7 @@ public final class p0 implements Application.ActivityLifecycleCallbacks {
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public final void onActivityPaused(Activity activity) {
         kotlin.jvm.internal.j.e(activity, "activity");
-        sf.f fVar = c;
+        rf.f fVar = c;
         if (fVar != null) {
             fVar.F(2);
         }
@@ -34,7 +34,7 @@ public final class p0 implements Application.ActivityLifecycleCallbacks {
     public final void onActivityResumed(Activity activity) {
         sc.i iVar;
         kotlin.jvm.internal.j.e(activity, "activity");
-        sf.f fVar = c;
+        rf.f fVar = c;
         if (fVar != null) {
             fVar.F(1);
             iVar = sc.i.a;

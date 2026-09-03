@@ -2,12 +2,12 @@ package v6;
 
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import j7.p5;
+import j7.r5;
 import kotlin.jvm.internal.j;
 import u6.l;
 import u6.r;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class f extends a7.c implements a {
     public final /* synthetic */ int b;
@@ -26,7 +26,7 @@ public final class f extends a7.c implements a {
         switch (this.b) {
             case 1:
                 j.e(status, "status");
-                p5.a(status, lVar, this.c);
+                r5.a(status, lVar, this.c);
                 return;
             default:
                 j.e(status, "status");
@@ -45,7 +45,7 @@ public final class f extends a7.c implements a {
         switch (this.b) {
             case 0:
                 j.e(status, "status");
-                p5.a(status, eVar, this.c);
+                r5.a(status, eVar, this.c);
                 return;
             default:
                 j.e(status, "status");

@@ -18,7 +18,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nq0 implements Runnable {
     public final /* synthetic */ int a;
@@ -79,7 +79,7 @@ public final /* synthetic */ class nq0 implements Runnable {
                 ((ju0) obj).F();
                 break;
             case 7:
-                ((pv0) obj).X();
+                ((qv0) obj).X();
                 break;
             case 8:
                 ((zv0) obj).getClass();
@@ -104,9 +104,9 @@ public final /* synthetic */ class nq0 implements Runnable {
                     int selectionEnd = qy0Var.c.getEditField().getSelectionEnd();
                     if (selectionStart != selectionEnd) {
                         qy0Var.s = false;
-                        eg.s2 s2Var = qy0Var.d;
-                        if (s2Var != null) {
-                            s2Var.invalidate();
+                        dg.u2 u2Var = qy0Var.d;
+                        if (u2Var != null) {
+                            u2Var.invalidate();
                             break;
                         }
                     } else {
@@ -143,7 +143,7 @@ public final /* synthetic */ class nq0 implements Runnable {
                                             AndroidUtilities.cancelRunOnUIThread(runnable);
                                             qy0Var.H = null;
                                         }
-                                        qy0Var.H = new dg.u1(qy0Var, currentKeyboardLanguage, substring, i13, 26);
+                                        qy0Var.H = new cg.v1(qy0Var, currentKeyboardLanguage, substring, i13, 26);
                                         ArrayList arrayList5 = qy0Var.w;
                                         if (arrayList5 == null || arrayList5.isEmpty()) {
                                             AndroidUtilities.runOnUIThread(qy0Var.H, 600L);
@@ -158,9 +158,9 @@ public final /* synthetic */ class nq0 implements Runnable {
                                         qy0Var.d.invalidate();
                                     }
                                 }
-                                eg.s2 s2Var2 = qy0Var.d;
-                                if (s2Var2 != null) {
-                                    s2Var2.invalidate();
+                                dg.u2 u2Var2 = qy0Var.d;
+                                if (u2Var2 != null) {
+                                    u2Var2.invalidate();
                                     break;
                                 }
                             }
@@ -186,7 +186,7 @@ public final /* synthetic */ class nq0 implements Runnable {
                                             if (runnable2 != null) {
                                                 AndroidUtilities.cancelRunOnUIThread(runnable2);
                                             }
-                                            qy0Var.H = new gy(qy0Var, substring2, i14, 19);
+                                            qy0Var.H = new ey(qy0Var, substring2, i14, 19);
                                             ArrayList arrayList6 = qy0Var.w;
                                             if (arrayList6 == null || arrayList6.isEmpty()) {
                                                 AndroidUtilities.runOnUIThread(qy0Var.H, 600L);
@@ -196,16 +196,16 @@ public final /* synthetic */ class nq0 implements Runnable {
                                         } else {
                                             qy0Var.v = false;
                                             qy0Var.c();
-                                            eg.s2 s2Var3 = qy0Var.d;
-                                            if (s2Var3 != null) {
-                                                s2Var3.setVisibility(0);
+                                            dg.u2 u2Var3 = qy0Var.d;
+                                            if (u2Var3 != null) {
+                                                u2Var3.setVisibility(0);
                                                 qy0Var.d.invalidate();
                                             }
                                         }
                                     }
-                                    eg.s2 s2Var4 = qy0Var.d;
-                                    if (s2Var4 != null) {
-                                        s2Var4.invalidate();
+                                    dg.u2 u2Var4 = qy0Var.d;
+                                    if (u2Var4 != null) {
+                                        u2Var4.invalidate();
                                         break;
                                     }
                                 }
@@ -217,18 +217,18 @@ public final /* synthetic */ class nq0 implements Runnable {
                             qy0Var.H = null;
                         }
                         qy0Var.s = false;
-                        eg.s2 s2Var5 = qy0Var.d;
-                        if (s2Var5 != null) {
-                            s2Var5.invalidate();
+                        dg.u2 u2Var5 = qy0Var.d;
+                        if (u2Var5 != null) {
+                            u2Var5.invalidate();
                             break;
                         }
                     }
                 } else {
                     qy0Var.s = false;
                     qy0Var.v = true;
-                    eg.s2 s2Var6 = qy0Var.d;
-                    if (s2Var6 != null) {
-                        s2Var6.invalidate();
+                    dg.u2 u2Var6 = qy0Var.d;
+                    if (u2Var6 != null) {
+                        u2Var6.invalidate();
                         break;
                     }
                 }
@@ -254,20 +254,20 @@ public final /* synthetic */ class nq0 implements Runnable {
                 ArrayList arrayList7 = ((x01) obj).a;
                 for (int i15 = 0; i15 < arrayList7.size(); i15++) {
                     ((View) arrayList7.get(i15)).setVisibility(8);
-                    if (arrayList7.get(i15) instanceof org.telegram.ui.Cells.t1) {
-                        ((org.telegram.ui.Cells.t1) arrayList7.get(i15)).J3(false, false);
-                        ((org.telegram.ui.Cells.t1) arrayList7.get(i15)).L3(false, false, false);
+                    if (arrayList7.get(i15) instanceof org.telegram.ui.Cells.s1) {
+                        ((org.telegram.ui.Cells.s1) arrayList7.get(i15)).J3(false, false);
+                        ((org.telegram.ui.Cells.s1) arrayList7.get(i15)).L3(false, false, false);
                     }
                 }
                 break;
             case 16:
                 w11 w11Var = (w11) obj;
                 w11Var.G = null;
-                w11Var.E.animate().scaleX(1.0f).scaleY(1.0f).setDuration(150L).setInterpolator(pr.f).start();
+                w11Var.E.animate().scaleX(1.0f).scaleY(1.0f).setDuration(150L).setInterpolator(mr.f).start();
                 break;
             case 17:
                 a21 a21Var = (a21) obj;
-                ViewPropertyAnimator duration = a21Var.animate().alpha(0.0f).setListener(new pd0(a21Var, 21)).setDuration(300L);
+                ViewPropertyAnimator duration = a21Var.animate().alpha(0.0f).setListener(new od0(a21Var, 21)).setDuration(300L);
                 a21Var.b = duration;
                 duration.start();
                 break;
@@ -300,13 +300,13 @@ public final /* synthetic */ class nq0 implements Runnable {
                 ((f41) obj).c.setVisibility(8);
                 break;
             case 24:
-                ((org.telegram.ui.wk) obj).c.presentFragment(new org.telegram.ui.t31());
+                ((org.telegram.ui.yk) obj).c.presentFragment(new org.telegram.ui.t31());
                 break;
             case 25:
-                ((o41) obj).requestLayout();
+                ((p41) obj).requestLayout();
                 break;
             case 26:
-                ((f51) obj).f();
+                ((g51) obj).f();
                 break;
             case 27:
                 UndoView undoView = (UndoView) obj;
@@ -319,12 +319,12 @@ public final /* synthetic */ class nq0 implements Runnable {
                     return;
                 }
             case 28:
-                ((k61) obj).invalidateSelf();
+                ((j61) obj).invalidateSelf();
                 break;
             default:
-                xz xzVar = ((x61) obj).b;
-                if (xzVar != null) {
-                    xzVar.e(false, true, false);
+                vz vzVar = ((w61) obj).b;
+                if (vzVar != null) {
+                    vzVar.e(false, true, false);
                     break;
                 }
                 break;

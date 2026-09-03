@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class d {
     public static int c;
@@ -349,11 +349,11 @@ public final class d {
             c cVar = (c) d.get(i11);
             Object obj = cVar.a;
             Object obj2 = cVar.a;
-            String e6 = e(((AccessibilityNodeInfo.AccessibilityAction) obj).getId());
-            if (e6.equals("ACTION_UNKNOWN") && ((AccessibilityNodeInfo.AccessibilityAction) obj2).getLabel() != null) {
-                e6 = ((AccessibilityNodeInfo.AccessibilityAction) obj2).getLabel().toString();
+            String e = e(((AccessibilityNodeInfo.AccessibilityAction) obj).getId());
+            if (e.equals("ACTION_UNKNOWN") && ((AccessibilityNodeInfo.AccessibilityAction) obj2).getLabel() != null) {
+                e = ((AccessibilityNodeInfo.AccessibilityAction) obj2).getLabel().toString();
             }
-            sb.append(e6);
+            sb.append(e);
             if (i11 != d.size() - 1) {
                 sb.append(", ");
             }

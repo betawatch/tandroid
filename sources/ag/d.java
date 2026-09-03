@@ -1,164 +1,353 @@
 package ag;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.RectF;
+import android.graphics.Typeface;
+import android.os.Bundle;
+import android.os.Trace;
+import android.util.Log;
 import android.view.View;
-import o4.i0;
+import androidx.activity.m;
+import androidx.activity.n;
+import androidx.emoji2.text.q;
+import androidx.fragment.app.j0;
+import androidx.fragment.app.l;
+import androidx.fragment.app.u0;
+import androidx.lifecycle.e0;
+import androidx.lifecycle.v;
+import c2.z;
+import c5.j;
+import cg.c1;
+import cg.d1;
+import cg.h2;
+import cg.i2;
+import cg.n1;
+import cg.s1;
+import com.google.firebase.messaging.c0;
+import com.google.firebase.messaging.k;
+import com.google.firebase.messaging.r;
+import dg.b4;
+import dg.o3;
+import dh.u;
+import j7.a8;
+import j7.b8;
+import j7.j8;
+import j7.s;
+import j7.t;
+import java.nio.MappedByteBuffer;
+import java.util.ArrayDeque;
+import java.util.Iterator;
+import n0.g;
+import o0.i;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.ui.ActionBar.a3;
-import org.telegram.ui.ActionBar.p2;
-import org.telegram.ui.Cells.d8;
-import org.telegram.ui.Cells.h5;
-import org.telegram.ui.Cells.t1;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.bd;
-import org.telegram.ui.sj0;
-import vf.l1;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.sf1;
+import org.telegram.ui.zn;
+import ph.o4;
+import w0.h;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d implements h5.d {
+public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ d(int i10) {
-        this.a = i10;
+    public /* synthetic */ d(l lVar, u0 u0Var) {
+        this.a = 5;
+        this.b = lVar;
     }
 
-    @Override // h5.d
-    public final void accept(Object obj) {
-        MessageObject messageObject;
-        MessageObject messageObject2;
-        switch (this.a) {
-            case 0:
-                ((View) obj).invalidate();
-                break;
-            case 1:
-                ((o3.l) obj).a();
-                break;
-            case 2:
-                ((i0) obj).b.release();
-                break;
-            case 3:
-                View view = (View) obj;
-                view.setAlpha(1.0f);
-                view.setTranslationX(0.0f);
-                view.setTranslationY(0.0f);
-                break;
-            case 4:
-                ((View) obj).setTranslationY(0.0f);
-                break;
-            case 5:
-                ((oh.o) ((View) obj)).invalidate();
-                break;
-            case 6:
-                bd.Y0((View) obj);
-                break;
-            case 7:
-                View view2 = (View) obj;
-                if ((view2 instanceof t1) && (messageObject = ((t1) view2).getMessageObject()) != null) {
-                    messageObject.forceUpdate = true;
-                    break;
-                }
-                break;
-            case 8:
-                View view3 = (View) obj;
-                if ((view3 instanceof t1) && (messageObject2 = ((t1) view3).getMessageObject()) != null) {
-                    messageObject2.forceUpdate = true;
-                    messageObject2.reactionsChanged = true;
-                    break;
-                }
-                break;
-            case 9:
-                View view4 = (View) obj;
-                if (!(view4 instanceof a3)) {
-                    view4.invalidate();
-                    break;
-                } else {
-                    ((a3) view4).getTextView().invalidate();
-                    break;
-                }
-            case 10:
-                View view5 = (View) obj;
-                if (!(view5 instanceof h5)) {
-                    if (!(view5 instanceof l1)) {
-                        view5.invalidate();
-                        break;
-                    } else {
-                        ((l1) view5).c.invalidate();
-                        break;
-                    }
-                } else {
-                    h5 h5Var = (h5) view5;
-                    h5Var.b.invalidate();
-                    h5Var.c.invalidate();
-                    break;
-                }
-            case 11:
-                View view6 = (View) obj;
-                if (view6 instanceof d8) {
-                    ((d8) view6).a(true);
-                    break;
-                }
-                break;
-            case 12:
-                View view7 = (View) obj;
-                if (view7 instanceof d8) {
-                    ((d8) view7).c(true);
-                    break;
-                }
-                break;
-            case 13:
-                Long l10 = (Long) obj;
-                if (l10 != null && l10.longValue() != Long.MAX_VALUE) {
-                    p2 U = LaunchActivity.U();
-                    if (U != null) {
-                        U.presentFragment(ProfileActivity.m4(l10.longValue()));
-                        break;
-                    }
-                } else {
-                    AndroidUtilities.runOnUIThread(new sj0(0));
-                    break;
-                }
-                break;
-            case 14:
-                break;
-            case 15:
-                View view8 = (View) obj;
-                view8.setScaleX(1.0f);
-                view8.setScaleY(1.0f);
-                break;
-            case 16:
-                View view9 = (View) obj;
-                if (view9 instanceof org.telegram.ui.web.h) {
-                    ((org.telegram.ui.web.h) view9).setChecked(false);
-                    break;
-                }
-                break;
-            case 17:
-                View view10 = (View) obj;
-                if (view10 instanceof org.telegram.ui.web.h) {
-                    ((org.telegram.ui.web.h) view10).setChecked(false);
-                    break;
-                }
-                break;
-            case 18:
-                View view11 = (View) obj;
-                if (view11 instanceof l1) {
-                    ((l1) view11).c.invalidate();
-                    break;
-                }
-                break;
-            default:
-                View view12 = (View) obj;
-                if (view12 instanceof l1) {
-                    ((l1) view12).d.a(false, true);
-                    break;
-                }
-                break;
+    private final void a() {
+        j jVar = (j) this.b;
+        synchronized (((ArrayDeque) jVar.d)) {
+            SharedPreferences.Editor edit = ((SharedPreferences) jVar.a).edit();
+            String str = (String) jVar.b;
+            StringBuilder sb = new StringBuilder();
+            Iterator it = ((ArrayDeque) jVar.d).iterator();
+            while (it.hasNext()) {
+                sb.append((String) it.next());
+                sb.append((String) jVar.c);
+            }
+            edit.putString(str, sb.toString()).commit();
         }
     }
 
-    public /* synthetic */ d(bd bdVar) {
-        this.a = 6;
+    private final void b() {
+        d4.f fVar = (d4.f) this.b;
+        synchronized (fVar.a) {
+            try {
+                if (fVar.l) {
+                    return;
+                }
+                long j10 = fVar.k - 1;
+                fVar.k = j10;
+                if (j10 > 0) {
+                    return;
+                }
+                if (j10 < 0) {
+                    fVar.c(new IllegalStateException());
+                } else {
+                    fVar.a();
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                sf1 sf1Var = (sf1) this.b;
+                if (sf1Var.getParentLayout() != null) {
+                    sf1Var.E = true;
+                    Bundle bundle = new Bundle();
+                    bundle.putLong("chat_id", sf1Var.a);
+                    zn znVar = new zn(bundle);
+                    znVar.ga = true;
+                    sf1Var.presentFragment(znVar);
+                    return;
+                }
+                return;
+            case 1:
+                ((m) this.b).invalidateOptionsMenu();
+                return;
+            case 2:
+                androidx.activity.l lVar = (androidx.activity.l) this.b;
+                Runnable runnable = lVar.b;
+                if (runnable != null) {
+                    runnable.run();
+                    lVar.b = null;
+                    return;
+                }
+                return;
+            case 3:
+                n.a((n) this.b);
+                return;
+            case 4:
+                q qVar = (q) this.b;
+                synchronized (qVar.d) {
+                    try {
+                        if (qVar.h == null) {
+                            return;
+                        }
+                        try {
+                            i d = qVar.d();
+                            int i10 = d.e;
+                            if (i10 == 2) {
+                                synchronized (qVar.d) {
+                                }
+                            }
+                            if (i10 != 0) {
+                                throw new RuntimeException("fetchFonts result is not OK. (" + i10 + ")");
+                            }
+                            try {
+                                int i11 = g.a;
+                                Trace.beginSection("EmojiCompat.FontRequestEmojiCompatConfig.buildTypeface");
+                                ab.a aVar = qVar.c;
+                                Context context = qVar.a;
+                                aVar.getClass();
+                                i[] iVarArr = {d};
+                                a8 a8Var = i0.e.a;
+                                j8.a("TypefaceCompat.createFromFontInfo");
+                                try {
+                                    Typeface b10 = i0.e.a.b(context, iVarArr, 0);
+                                    Trace.endSection();
+                                    MappedByteBuffer e = b8.e(qVar.a, d.a);
+                                    if (e == null || b10 == null) {
+                                        throw new RuntimeException("Unable to open file.");
+                                    }
+                                    try {
+                                        Trace.beginSection("EmojiCompat.MetadataRepo.create");
+                                        r rVar = new r(b10, t.a(e));
+                                        Trace.endSection();
+                                        synchronized (qVar.d) {
+                                            try {
+                                                s sVar = qVar.h;
+                                                if (sVar != null) {
+                                                    sVar.b(rVar);
+                                                }
+                                            } finally {
+                                            }
+                                        }
+                                        qVar.b();
+                                        return;
+                                    } finally {
+                                        int i12 = g.a;
+                                    }
+                                } finally {
+                                    Trace.endSection();
+                                }
+                            } catch (Throwable th2) {
+                                throw th2;
+                            }
+                        } catch (Throwable th3) {
+                            synchronized (qVar.d) {
+                                try {
+                                    s sVar2 = qVar.h;
+                                    if (sVar2 != null) {
+                                        sVar2.a(th3);
+                                    }
+                                    qVar.b();
+                                    return;
+                                } finally {
+                                }
+                            }
+                        }
+                    } finally {
+                    }
+                }
+            case 5:
+                l this$0 = (l) this.b;
+                kotlin.jvm.internal.j.e(this$0, "this$0");
+                kotlin.jvm.internal.j.e(null, "$operation");
+                this$0.a(null);
+                return;
+            case 6:
+                Iterator it = ((j0) this.b).n.iterator();
+                if (it.hasNext()) {
+                    it.next().getClass();
+                    throw new ClassCastException();
+                }
+                return;
+            case 7:
+                e0 e0Var = (e0) this.b;
+                v vVar = e0Var.f;
+                if (e0Var.b == 0) {
+                    e0Var.c = true;
+                    vVar.e(androidx.lifecycle.m.ON_PAUSE);
+                }
+                if (e0Var.a == 0 && e0Var.c) {
+                    vVar.e(androidx.lifecycle.m.ON_STOP);
+                    e0Var.d = true;
+                    return;
+                }
+                return;
+            case 8:
+                ((c1.f) this.b).e().onError(new h("Failed to launch the selector UI. Hint: ensure the `context` parameter is an Activity-based context.", 2));
+                return;
+            case 9:
+                ((c2.e) this.b).k();
+                return;
+            case 10:
+                ((c2.h) this.b).n = -1;
+                return;
+            case 11:
+                ((z) this.b).b();
+                return;
+            case 12:
+                o5.i iVar = ((c1) this.b).b.a;
+                if (iVar != null) {
+                    iVar.q();
+                    return;
+                }
+                return;
+            case 13:
+                d1 d1Var = ((c1) this.b).b;
+                if (d1Var.d == null) {
+                    d1Var.L = null;
+                    return;
+                }
+                int currentColor = d1Var.f.getCurrentColor();
+                d1Var.l(d1Var.b, false, false);
+                b4.e0 d10 = d1Var.d(d1Var.b, currentColor, new RectF(d1Var.h));
+                d1Var.b();
+                s1 s1Var = d1Var.d;
+                RectF rectF = new RectF();
+                d1Var.h = rectF;
+                s1Var.a(rectF);
+                d1Var.p(d1Var.e(s1Var, currentColor, new RectF(d1Var.h)), false);
+                d1Var.p(d10, false);
+                d1Var.e(s1Var, currentColor, null);
+                d1Var.d = null;
+                d1Var.J = 0.0f;
+                d1Var.L = null;
+                return;
+            case 14:
+                ((n1) ((androidx.activity.i) this.b).b).y.a.a();
+                return;
+            case 15:
+                h2 h2Var = ((i2) this.b).a;
+                if (h2Var != null) {
+                    h2Var.g();
+                    return;
+                }
+                return;
+            case 16:
+                ch.c cVar = (ch.c) this.b;
+                ch.b bVar = cVar.c;
+                if (bVar == ch.b.b) {
+                    cVar.a(ch.b.a, true);
+                    return;
+                } else {
+                    if (bVar == ch.b.c) {
+                        cVar.a(ch.b.d, true);
+                        return;
+                    }
+                    return;
+                }
+            case 17:
+                k.a((Intent) this.b);
+                return;
+            case 18:
+                a();
+                return;
+            case 19:
+                c0 c0Var = (c0) this.b;
+                Log.w("FirebaseMessaging", "Service took too long to process intent: " + c0Var.a.getAction() + " finishing.");
+                c0Var.b.trySetResult(null);
+                return;
+            case 20:
+                b();
+                return;
+            case 21:
+                ((j) this.b).A();
+                return;
+            case 22:
+                o4 o4Var = (o4) this.b;
+                o4Var.u0 = true;
+                o4Var.s();
+                return;
+            case 23:
+                ((View) this.b).performClick();
+                return;
+            case 24:
+                MediaDataController.getInstance(UserConfig.selectedAccount).addRecentSticker(2, null, ((o3) this.b).f.document, (int) (System.currentTimeMillis() / 1000), false);
+                return;
+            case 25:
+                AndroidUtilities.showKeyboard(((b4) this.b).n0);
+                return;
+            case 26:
+                AndroidUtilities.showKeyboard(((dh.f) this.b).a);
+                return;
+            case 27:
+                dh.f fVar = (dh.f) ((dh.b) this.b).d;
+                org.telegram.ui.Cells.s1 s1Var2 = fVar.n;
+                if (s1Var2 == null || s1Var2.getDelegate() == null) {
+                    return;
+                }
+                fVar.n.getDelegate().I1(fVar.n, false);
+                return;
+            case 28:
+                ((u) this.b).c.V2.N(true);
+                return;
+            default:
+                ((dh.t) this.b).a();
+                return;
+        }
+    }
+
+    public /* synthetic */ d(k kVar, Intent intent) {
+        this.a = 17;
+        this.b = intent;
+    }
+
+    public /* synthetic */ d(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 }

@@ -1,196 +1,168 @@
 package org.telegram.ui.Components;
 
+import android.app.Dialog;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.Region;
-import android.text.TextPaint;
-import android.text.TextUtils;
-import android.widget.EditText;
+import android.content.ContextWrapper;
+import android.os.Build;
+import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public class cd0 extends FrameLayout {
-    public static final iv0 F;
-    public static final iv0 G;
-    public static final iv0 H;
-    public boolean B;
-    public boolean C;
-    public final org.telegram.ui.ActionBar.g6 D;
-    public float E;
-    public final RectF a;
-    public String b;
-    public final Paint c;
-    public final TextPaint d;
-    public final o1.j e;
-    public float f;
-    public final o1.j h;
-    public float n;
-    public final o1.j r;
-    public float s;
-    public final float v;
-    public final float w;
-    public EditText x;
-    public boolean y;
+public final class cd0 extends Dialog implements org.telegram.ui.ActionBar.b5 {
+    public final ActionBarLayout a;
+    public final FrameLayout b;
+    public final wd0 c;
 
-    static {
-        iv0 iv0Var = new iv0(new k2(18), new k2(19));
-        iv0Var.c = 100.0f;
-        F = iv0Var;
-        iv0 iv0Var2 = new iv0(new k2(20), new k2(21));
-        iv0Var2.c = 100.0f;
-        G = iv0Var2;
-        iv0 iv0Var3 = new iv0(new k2(22), new k2(23));
-        iv0Var3.c = 100.0f;
-        H = iv0Var3;
-    }
-
-    public cd0(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context);
-        this.a = new RectF();
-        this.b = "";
-        Paint paint = new Paint(1);
-        this.c = paint;
-        TextPaint textPaint = new TextPaint(1);
-        this.d = textPaint;
-        this.e = new o1.j(this, F);
-        this.h = new o1.j(this, G);
-        this.r = new o1.j(this, H);
-        float max = Math.max(2, AndroidUtilities.dp(0.5f));
-        this.v = max;
-        this.w = AndroidUtilities.dp(1.6667f);
-        this.D = g6Var;
-        setWillNotDraw(false);
-        textPaint.setTextSize(AndroidUtilities.dp(16.0f));
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeWidth(max);
-        f();
-        setPadding(0, AndroidUtilities.dp(6.0f), 0, 0);
-    }
-
-    public static void d(o1.j jVar, float f10) {
-        float f11 = f10 * 100.0f;
-        o1.k kVar = jVar.u;
-        if (kVar == null || f11 != ((float) kVar.i)) {
-            jVar.c();
-            o1.k kVar2 = new o1.k(f11);
-            kVar2.b(500.0f);
-            kVar2.a(1.0f);
-            kVar2.i = f11;
-            jVar.u = kVar2;
-            jVar.f();
+    public cd0(Context context) {
+        super(context, R.style.TransparentDialog);
+        ActionBarLayout actionBarLayout = new ActionBarLayout(context, false);
+        this.a = actionBarLayout;
+        actionBarLayout.setFragmentStack(new ArrayList());
+        org.telegram.ui.ActionBar.c5 c5Var = new org.telegram.ui.ActionBar.c5(new eg.y1(this, 9));
+        c5Var.c = true;
+        actionBarLayout.R(c5Var);
+        actionBarLayout.setDelegate(this);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.b = frameLayout;
+        frameLayout.setLayoutParams(new ViewGroup.LayoutParams(-1, -1));
+        frameLayout.addView(actionBarLayout.getView(), new FrameLayout.LayoutParams(-1, -1, 17));
+        if (AndroidUtilities.isTablet() && !AndroidUtilities.isInMultiwindow && !AndroidUtilities.isSmallTablet()) {
+            frameLayout.setBackgroundColor(-1728053248);
+            frameLayout.setOnClickListener(new a80(this, 4));
+            actionBarLayout.setRemoveActionBarExtraHeight(true);
+            n7.qa.V(actionBarLayout.getView());
         }
+        wd0 wd0Var = new wd0(context);
+        this.c = wd0Var;
+        frameLayout.addView(wd0Var, k7.b6.c(-1.0f, -1));
+        setContentView(frameLayout);
     }
 
-    private void setColor(int i10) {
-        this.c.setColor(i10);
-        invalidate();
+    public final void c(org.telegram.ui.ActionBar.p2 p2Var) {
+        this.a.Q(p2Var, (!AndroidUtilities.isTablet() || AndroidUtilities.isInMultiwindow || AndroidUtilities.isSmallTablet()) ? false : true);
     }
 
-    public final void a(float f10) {
-        d(this.r, f10);
-    }
-
-    public final void b(float f10, float f11, boolean z4) {
-        if (z4) {
-            d(this.e, f10);
-            d(this.h, f11);
+    @Override // org.telegram.ui.ActionBar.b5
+    public final void e(int[] iArr) {
+        if (!AndroidUtilities.isTablet() || AndroidUtilities.isInMultiwindow || AndroidUtilities.isSmallTablet()) {
             return;
         }
-        this.f = f10;
-        this.n = f11;
-        if (!this.y) {
-            float f12 = this.w;
-            float f13 = this.v;
-            this.c.setStrokeWidth(((f12 - f13) * f10) + f13);
+        iArr[0] = View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(530.0f), View.MeasureSpec.getSize(iArr[0])), TLObject.FLAG_30);
+        iArr[1] = View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(528.0f), View.MeasureSpec.getSize(iArr[1])), TLObject.FLAG_30);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b5
+    public final boolean h(org.telegram.ui.ActionBar.p2 p2Var, ActionBarLayout actionBarLayout) {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.b5
+    public final boolean j() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.b5
+    public final boolean k(ActionBarLayout actionBarLayout) {
+        if (actionBarLayout.getFragmentStack().size() <= 1) {
+            dismiss();
         }
-        f();
+        return true;
     }
 
-    public final void c(boolean z4, boolean z10) {
-        b(z4 ? 1.0f : 0.0f, z10 ? 1.0f : 0.0f, true);
+    @Override // org.telegram.ui.ActionBar.b5
+    public final boolean l(ActionBarLayout actionBarLayout, org.telegram.ui.ActionBar.c5 c5Var) {
+        org.telegram.ui.ActionBar.p2 p2Var = c5Var.a;
+        return true;
     }
 
-    public final void e(EditTextBoldCursor editTextBoldCursor) {
-        this.x = editTextBoldCursor;
-        invalidate();
-    }
-
-    public final void f() {
-        int i10 = org.telegram.ui.ActionBar.k6.H6;
-        org.telegram.ui.ActionBar.g6 g6Var = this.D;
-        int d = i0.a.d((!this.y || this.C) ? this.n : 0.0f, org.telegram.ui.ActionBar.k6.v0(i10, g6Var), org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.I6, g6Var));
-        int i11 = org.telegram.ui.ActionBar.k6.q7;
-        this.d.setColor(i0.a.d(this.s, d, org.telegram.ui.ActionBar.k6.v0(i11, g6Var)));
-        setColor(i0.a.d(this.s, i0.a.d((!this.y || this.C) ? this.f : 0.0f, org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.k6, g6Var), org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.l6, g6Var)), org.telegram.ui.ActionBar.k6.v0(i11, g6Var)));
-    }
-
-    public EditText getAttachedEditText() {
-        return this.x;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        TextPaint textPaint = this.d;
-        float paddingTop = getPaddingTop() + ((textPaint.getTextSize() / 2.0f) - AndroidUtilities.dp(1.75f));
-        float textSize = (textPaint.getTextSize() / 2.0f) + (getHeight() / 2.0f);
-        EditText editText = this.x;
-        boolean z4 = (editText != null && editText.length() == 0 && TextUtils.isEmpty(this.x.getHint())) || this.y || this.B;
-        if (z4) {
-            paddingTop = e2.c.w(1.0f, this.n, textSize - paddingTop, paddingTop);
+    @Override // android.app.Dialog
+    public final void onBackPressed() {
+        if (this.c.getVisibility() == 0) {
+            if (getOwnerActivity() != null) {
+                getOwnerActivity().finish();
+            }
+        } else {
+            ActionBarLayout actionBarLayout = this.a;
+            actionBarLayout.G();
+            if (actionBarLayout.getFragmentStack().size() <= 1) {
+                dismiss();
+            }
         }
-        float f10 = paddingTop;
-        float f11 = z4 ? (1.0f - this.n) * this.E : 0.0f;
-        Paint paint = this.c;
-        float strokeWidth = paint.getStrokeWidth();
-        float w10 = z4 ? e2.c.w(1.0f, this.n, 0.25f, 0.75f) : 0.75f;
-        float measureText = textPaint.measureText(this.b) * w10;
-        canvas.save();
-        RectF rectF = this.a;
-        rectF.set(AndroidUtilities.dp(10.0f) + getPaddingLeft(), getPaddingTop(), (getWidth() - AndroidUtilities.dp(18.0f)) - getPaddingRight(), (strokeWidth * 2.0f) + getPaddingTop());
-        canvas.clipRect(rectF, Region.Op.DIFFERENCE);
-        rectF.set(getPaddingLeft() + strokeWidth, getPaddingTop() + strokeWidth, (getWidth() - strokeWidth) - getPaddingRight(), (getHeight() - strokeWidth) - getPaddingBottom());
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), paint);
-        canvas.restore();
-        float dp = AndroidUtilities.dp(10.0f) + getPaddingLeft();
-        float paddingTop2 = getPaddingTop() + strokeWidth;
-        float f12 = (measureText / 2.0f) + dp;
-        canvas.drawLine(((((dp + measureText) + AndroidUtilities.dp(10.0f)) - f12) * (z4 ? this.n : 1.0f)) + f12, paddingTop2, ((getWidth() - strokeWidth) - getPaddingRight()) - AndroidUtilities.dp(6.0f), paddingTop2, paint);
-        float dp2 = f12 + AndroidUtilities.dp(4.0f);
-        canvas.drawLine(dp, paddingTop2, ((dp - dp2) * (z4 ? this.n : 1.0f)) + dp2, paddingTop2, paint);
-        canvas.save();
-        canvas.scale(w10, w10, AndroidUtilities.dp(18.0f) + getPaddingLeft(), f10);
-        canvas.drawText(this.b, AndroidUtilities.dp(14.0f) + getPaddingLeft() + f11, f10, textPaint);
-        canvas.restore();
     }
 
-    public void setForceForceUseCenter(boolean z4) {
-        this.y = z4;
-        this.C = z4;
-        invalidate();
+    @Override // android.app.Dialog
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        Window window = getWindow();
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 30) {
+            window.addFlags(-2147483392);
+        } else {
+            window.addFlags(-2147417856);
+        }
+        window.setWindowAnimations(R.style.DialogNoAnimation);
+        WindowManager.LayoutParams attributes = window.getAttributes();
+        attributes.width = -1;
+        attributes.gravity = 51;
+        attributes.dimAmount = 0.0f;
+        attributes.flags &= -3;
+        attributes.softInputMode = 16;
+        attributes.height = -1;
+        if (i10 >= 28) {
+            attributes.layoutInDisplayCutoutMode = 1;
+        }
+        window.setAttributes(attributes);
+        if (i10 >= 23) {
+            window.setStatusBarColor(0);
+        }
+        FrameLayout frameLayout = this.b;
+        frameLayout.setSystemUiVisibility(1280);
+        frameLayout.setOnApplyWindowInsetsListener(new org.telegram.ui.ActionBar.h3(2));
+        if (i10 >= 26) {
+            AndroidUtilities.setLightNavigationBar(this, i0.a.f(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, true)) >= 0.9d);
+        }
     }
 
-    public void setForceUseCenter(boolean z4) {
-        this.y = z4;
-        invalidate();
+    @Override // android.app.Dialog
+    public final void onStart() {
+        super.onStart();
+        Context context = getContext();
+        if ((context instanceof ContextWrapper) && !(context instanceof LaunchActivity)) {
+            context = ((ContextWrapper) context).getBaseContext();
+        }
+        if (context instanceof LaunchActivity) {
+            ((LaunchActivity) context).y0.add(this.c);
+        }
     }
 
-    public void setForceUseCenter2(boolean z4) {
-        this.B = z4;
+    @Override // android.app.Dialog
+    public final void onStop() {
+        super.onStop();
+        Context context = getContext();
+        if ((context instanceof ContextWrapper) && !(context instanceof LaunchActivity)) {
+            context = ((ContextWrapper) context).getBaseContext();
+        }
+        if (context instanceof LaunchActivity) {
+            ((LaunchActivity) context).y0.remove(this.c);
+        }
     }
 
-    public void setLeftPadding(float f10) {
-        this.E = f10;
-        invalidate();
+    @Override // org.telegram.ui.ActionBar.b5
+    public final /* synthetic */ void a(float f10) {
     }
 
-    public void setText(String str) {
-        this.b = str;
-        invalidate();
+    @Override // org.telegram.ui.ActionBar.b5
+    public final void b(ActionBarLayout actionBarLayout, boolean z4) {
     }
 }

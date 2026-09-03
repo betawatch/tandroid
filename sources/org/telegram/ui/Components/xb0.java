@@ -1,132 +1,181 @@
 package org.telegram.ui.Components;
 
+import android.animation.ValueAnimator;
+import android.app.Activity;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagePreviewParams;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class xb0 extends View {
-    public final j6 a;
-    public final tb0 b;
-    public boolean c;
-    public boolean d;
-    public final String e;
-    public final String f;
-    public final int h;
+public abstract class xb0 extends FrameLayout {
+    public final ArrayList B;
+    public final tb0 C;
+    public final ng.a D;
+    public TLRPC.Peer a;
+    public final boolean b;
+    public final org.telegram.ui.zn c;
+    public final MessagePreviewParams d;
+    public final vb0 e;
+    public final ya0 f;
+    public ValueAnimator h;
+    public final TLRPC.User n;
+    public final TLRPC.Chat r;
+    public boolean s;
+    public boolean v;
+    public final int w;
+    public boolean x;
+    public final m2.b y;
 
-    public xb0(Context context, int i10, String str, int i11, String str2, org.telegram.ui.ActionBar.g6 g6Var) {
+    public xb0(Context context, org.telegram.ui.zn znVar, ng.a aVar, MessagePreviewParams messagePreviewParams, TLRPC.User user, TLRPC.Chat chat, int i10, tb0 tb0Var, int i11, final boolean z4) {
         super(context);
-        this.c = true;
-        this.e = str;
-        this.f = str2;
-        setBackground(org.telegram.ui.ActionBar.k6.f0(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.i6, g6Var), 2, -1));
-        j6 j6Var = new j6(true, true, true, false);
-        this.a = j6Var;
-        j6Var.k(0.35f, 300L, pr.h);
-        j6Var.t(AndroidUtilities.dp(16.0f));
-        j6Var.r(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.E8, g6Var));
-        j6Var.setCallback(this);
-        j6Var.n(!LocaleController.isRTL);
-        if (LocaleController.isRTL) {
-            j6Var.b = 5;
-        }
-        float dp = AndroidUtilities.dp(77.0f);
-        TextPaint textPaint = j6Var.a;
-        int max = (int) (Math.max(textPaint.measureText(str), textPaint.measureText(str2)) + dp);
-        this.h = max;
-        j6Var.G = max;
-        tb0 tb0Var = new tb0(0);
-        hj0 hj0Var = new hj0(i10, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
-        tb0Var.c = hj0Var;
-        hj0Var.s0 = this;
-        hj0Var.H(true);
-        hj0Var.h = true;
-        hj0Var.I(0);
-        hj0 hj0Var2 = new hj0(i11, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
-        tb0Var.d = hj0Var2;
-        hj0Var2.s0 = this;
-        hj0Var2.H(true);
-        hj0Var2.h = true;
-        hj0Var2.I(0);
-        tb0Var.e = hj0Var;
-        this.b = tb0Var;
-        tb0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.F8, g6Var), PorterDuff.Mode.SRC_IN));
-    }
-
-    public final void a(boolean z4, boolean z10) {
-        if (this.c || z4 != this.d) {
-            this.d = z4;
-            String str = z4 ? this.e : this.f;
-            boolean z11 = z10 && !LocaleController.isRTL;
-            j6 j6Var = this.a;
-            j6Var.q(str, z11, true);
-            tb0 tb0Var = this.b;
-            hj0 hj0Var = (hj0) tb0Var.d;
-            hj0 hj0Var2 = (hj0) tb0Var.c;
-            tb0Var.b = z4;
-            if (z10) {
-                tb0Var.e = z4 ? hj0Var2 : hj0Var;
-                hj0Var2.K(0);
-                hj0Var.K(0);
-                ((hj0) tb0Var.e).start();
-            } else {
-                if (z4) {
-                    hj0Var = hj0Var2;
+        this.y = new m2.b(this, 25);
+        this.B = new ArrayList(10);
+        this.b = z4;
+        this.c = znVar;
+        this.w = i10;
+        this.D = aVar;
+        this.n = user;
+        this.r = chat;
+        this.d = messagePreviewParams;
+        this.C = tb0Var;
+        this.f = new ya0(this, context, tb0Var);
+        vb0 vb0Var = new vb0(context, tb0Var);
+        this.e = vb0Var;
+        pg.b c3 = aVar.c(vb0Var, null, false);
+        c3.n(rg.b.k(tb0Var));
+        c3.h.e = true;
+        c3.o(AndroidUtilities.dp(8.0f));
+        c3.p(AndroidUtilities.dp(16.0f));
+        vb0Var.setBackground(c3);
+        int i12 = 0;
+        for (int i13 = 0; i13 < 3; i13++) {
+            if (i13 == 0 && messagePreviewParams.replyMessage != null) {
+                this.e.a(0, LocaleController.getString(R.string.MessageOptionsReply));
+            } else if (i13 != 1 || messagePreviewParams.forwardMessages == null || z4) {
+                if (i13 == 2 && messagePreviewParams.linkMessage != null && !z4) {
+                    this.e.a(2, LocaleController.getString(R.string.MessageOptionsLink));
                 }
-                tb0Var.e = hj0Var;
-                hj0Var.K(hj0Var.e[0] - 1);
+            } else {
+                this.e.a(1, LocaleController.getString(R.string.MessageOptionsForward));
             }
-            this.c = false;
-            setContentDescription(j6Var.g);
+            if (i13 == i11) {
+                i12 = this.e.a.size() - 1;
+            }
+        }
+        this.f.setAdapter(new za0(this, context));
+        this.f.setPosition(i12);
+        this.e.setSelectedTab(i12);
+        addView(this.e, k7.b6.e(-1, 66, 87));
+        addView(this.f, k7.b6.d(-1, -1.0f, 119, 0.0f, 0.0f, 0.0f, 66.0f));
+        this.e.setOnTabClick(new v2(this, 7));
+        setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.xa0
+            @Override // android.view.View.OnTouchListener
+            public final boolean onTouch(View view, MotionEvent motionEvent) {
+                xb0 xb0Var = xb0.this;
+                xb0Var.getClass();
+                if (motionEvent.getAction() == 1 && !z4) {
+                    xb0Var.a(true);
+                }
+                return true;
+            }
+        });
+        this.s = true;
+        setAlpha(0.0f);
+        setScaleX(0.95f);
+        setScaleY(0.95f);
+        animate().alpha(1.0f).scaleX(1.0f).setDuration(250L).setInterpolator(wh.n.V).scaleY(1.0f);
+    }
+
+    public final void a(boolean z4) {
+        int i10;
+        if (this.s) {
+            this.s = false;
+            animate().alpha(0.0f).scaleX(0.95f).scaleY(0.95f).setDuration(250L).setInterpolator(wh.n.V).setListener(new m00(6, this, z4));
+            int i11 = 0;
+            while (true) {
+                View[] viewArr = this.f.e;
+                if (i11 >= viewArr.length) {
+                    break;
+                }
+                View view = viewArr[i11];
+                if (view instanceof rb0) {
+                    rb0 rb0Var = (rb0) view;
+                    if (rb0Var.a == 0) {
+                        rb0Var.j();
+                        break;
+                    }
+                }
+                i11++;
+            }
+            org.telegram.ui.hl hlVar = (org.telegram.ui.hl) this;
+            org.telegram.ui.zn znVar = hlVar.E;
+            znVar.Ba = null;
+            znVar.d7();
+            MessagePreviewParams messagePreviewParams = znVar.c5;
+            if (messagePreviewParams != null) {
+                if (znVar.i5 == null) {
+                    znVar.i5 = messagePreviewParams.quote;
+                }
+                if (messagePreviewParams.quote == null) {
+                    znVar.i5 = null;
+                }
+                org.telegram.ui.pn pnVar = znVar.i5;
+                if (pnVar != null) {
+                    pnVar.f = false;
+                    pnVar.b = messagePreviewParams.quoteStart;
+                    pnVar.c = messagePreviewParams.quoteEnd;
+                    pnVar.e();
+                    if (znVar.lb == 2) {
+                        znVar.Cb(znVar.k5, znVar.i5);
+                    }
+                } else {
+                    ArrayList<MessageObject> arrayList = new ArrayList<>();
+                    MessagePreviewParams.Messages messages = znVar.c5.forwardMessages;
+                    if (messages != null) {
+                        messages.getSelectedMessages(arrayList);
+                    }
+                    znVar.j8();
+                }
+            }
+            if (znVar.bb && z4) {
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.gl(hlVar, 1), 50L);
+                znVar.bb = false;
+            }
+            Activity parentActivity = znVar.getParentActivity();
+            i10 = ((org.telegram.ui.ActionBar.p2) znVar).classGuid;
+            AndroidUtilities.requestAdjustResize(parentActivity, i10);
         }
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        boolean z4 = LocaleController.isRTL;
-        j6 j6Var = this.a;
-        tb0 tb0Var = this.b;
-        if (z4) {
-            tb0Var.setBounds(getMeasuredWidth() - AndroidUtilities.dp(41.0f), org.telegram.ui.b.x(24.0f, getMeasuredHeight(), 2), getMeasuredWidth() - AndroidUtilities.dp(17.0f), (AndroidUtilities.dp(24.0f) + getMeasuredHeight()) / 2);
-            j6Var.setBounds(0, 0, getMeasuredWidth() - AndroidUtilities.dp(59.0f), getMeasuredHeight());
-        } else {
-            tb0Var.setBounds(AndroidUtilities.dp(17.0f), org.telegram.ui.b.x(24.0f, getMeasuredHeight(), 2), AndroidUtilities.dp(41.0f), (AndroidUtilities.dp(24.0f) + getMeasuredHeight()) / 2);
-            j6Var.setBounds(AndroidUtilities.dp(59.0f), 0, getMeasuredWidth(), getMeasuredHeight());
+    public abstract void b();
+
+    public abstract void c(boolean z4);
+
+    public void setSendAsPeer(TLRPC.Peer peer) {
+        this.a = peer;
+        int i10 = 0;
+        while (true) {
+            View[] viewArr = this.f.e;
+            if (i10 >= viewArr.length) {
+                return;
+            }
+            View view = viewArr[i10];
+            if (view != null) {
+                rb0 rb0Var = (rb0) view;
+                if (rb0Var.a == 1) {
+                    rb0Var.h();
+                }
+            }
+            i10++;
         }
-        j6Var.draw(canvas);
-        tb0Var.draw(canvas);
-    }
-
-    public boolean getState() {
-        return this.d;
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int mode = View.MeasureSpec.getMode(i10);
-        int i12 = this.h;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(mode == 1073741824 ? Math.max(View.MeasureSpec.getSize(i10), i12) : Math.min(View.MeasureSpec.getSize(i10), i12), mode), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (getVisibility() != 0 || getAlpha() < 0.5f) {
-            return false;
-        }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.a || super.verifyDrawable(drawable);
     }
 }

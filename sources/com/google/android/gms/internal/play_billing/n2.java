@@ -11,10 +11,10 @@ import org.telegram.messenger.CharacterCompat;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.yh;
+import org.telegram.ui.ai;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class n2 implements t2 {
     public static final int[] j = new int[0];
@@ -44,7 +44,7 @@ public final class n2 implements t2 {
     public static Field B(Class cls, String str) {
         try {
             return cls.getDeclaredField(str);
-        } catch (NoSuchFieldException e6) {
+        } catch (NoSuchFieldException e) {
             Field[] declaredFields = cls.getDeclaredFields();
             for (Field field : declaredFields) {
                 if (str.equals(field.getName())) {
@@ -53,9 +53,9 @@ public final class n2 implements t2 {
             }
             String name = cls.getName();
             String arrays = Arrays.toString(declaredFields);
-            StringBuilder m9 = yh.m("Field ", str, " for ", name, " not found. Known fields are ");
-            m9.append(arrays);
-            throw new RuntimeException(m9.toString(), e6);
+            StringBuilder l10 = ai.l("Field ", str, " for ", name, " not found. Known fields are ");
+            l10.append(arrays);
+            throw new RuntimeException(l10.toString(), e);
         }
     }
 
@@ -1222,13 +1222,13 @@ public final class n2 implements t2 {
                                 m1Var.b[i19] = g10;
                                 m1Var.d = i20;
                                 break;
-                            } catch (IndexOutOfBoundsException e6) {
-                                e = e6;
+                            } catch (IndexOutOfBoundsException e) {
+                                e = e;
                                 i19 = i20;
                                 throw new b7.y0(i19, m1Var.c, 1, e);
                             }
-                        } catch (IndexOutOfBoundsException e10) {
-                            e = e10;
+                        } catch (IndexOutOfBoundsException e6) {
+                            e = e6;
                         }
                     } else {
                         continue;
@@ -1519,15 +1519,15 @@ public final class n2 implements t2 {
                         int i32 = m1Var3.d;
                         try {
                             i11 = i32 + 1;
-                        } catch (IndexOutOfBoundsException e11) {
-                            e = e11;
+                        } catch (IndexOutOfBoundsException e10) {
+                            e = e10;
                         }
                         try {
                             m1Var3.b[i32] = booleanValue;
                             m1Var3.d = i11;
                             break;
-                        } catch (IndexOutOfBoundsException e12) {
-                            e = e12;
+                        } catch (IndexOutOfBoundsException e11) {
+                            e = e11;
                             i32 = i11;
                             throw new b7.y0(i32, m1Var3.c, 1, e);
                         }
@@ -2868,7 +2868,7 @@ public final class n2 implements t2 {
 
     @Override // com.google.android.gms.internal.play_billing.t2
     public final boolean f(v1 v1Var, v1 v1Var2) {
-        boolean e6;
+        boolean e;
         int i10 = 0;
         while (true) {
             int[] iArr = this.a;
@@ -3034,10 +3034,10 @@ public final class n2 implements t2 {
                     case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
                     case 48:
                     case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
-                        e6 = u2.e(c3.h(v1Var, j10), c3.h(v1Var2, j10));
+                        e = u2.e(c3.h(v1Var, j10), c3.h(v1Var2, j10));
                         break;
                     case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
-                        e6 = u2.e(c3.h(v1Var, j10), c3.h(v1Var2, j10));
+                        e = u2.e(c3.h(v1Var, j10), c3.h(v1Var2, j10));
                         break;
                     case 51:
                     case 52:
@@ -3066,7 +3066,7 @@ public final class n2 implements t2 {
                     default:
                         i10 += 3;
                 }
-                if (e6) {
+                if (e) {
                     i10 += 3;
                 }
             } else if (v1Var.zzc.equals(v1Var2.zzc)) {

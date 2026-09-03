@@ -6,11 +6,11 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public abstract class ph1 extends org.telegram.ui.ActionBar.p2 {
     public final SparseArray a;
-    public l0 b;
+    public n0 b;
     public oh1 c;
     public int d;
     public float e;
@@ -137,20 +137,20 @@ public abstract class ph1 extends org.telegram.ui.ActionBar.p2 {
     @Override // org.telegram.ui.ActionBar.p2
     public View createView(Context context) {
         this.hasOwnBackground = true;
-        this.b = new l0((wg0) this, context, 13);
+        this.b = new n0((xg0) this, context, 13);
         oh1 oh1Var = new oh1(this, context);
         this.c = oh1Var;
         if (this.d == -1) {
             this.d = 0;
         }
         oh1Var.setPosition(this.d);
-        this.c.setAdapter(new hg.u(this, context, 5));
-        this.b.addView(this.c, k7.c6.c(-1.0f, -1));
-        l0 l0Var = this.b;
-        this.fragmentView = l0Var;
+        this.c.setAdapter(new gg.u(this, context, 5));
+        this.b.addView(this.c, k7.b6.c(-1.0f, -1));
+        n0 n0Var = this.b;
+        this.fragmentView = n0Var;
         kl0 kl0Var = new kl0(this, 26);
         WeakHashMap weakHashMap = r0.j0.a;
-        r0.b0.j(l0Var, kl0Var);
+        r0.b0.j(n0Var, kl0Var);
         return this.fragmentView;
     }
 

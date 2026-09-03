@@ -1,14 +1,14 @@
 package com.google.android.recaptcha.internal;
 
 import dd.p;
-import k7.q7;
+import k7.p7;
 import ld.e0;
 import sc.f;
 import uc.c;
 import vc.a;
 import wc.i;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 final class zzd extends i implements p {
     int zza;
@@ -54,14 +54,14 @@ final class zzd extends i implements p {
         int i10 = this.zza;
         sc.i iVar = sc.i.a;
         try {
-        } catch (Exception e6) {
+        } catch (Exception e) {
             zzg zzgVar = this.zzb;
             zzgVar.zza = false;
             this.zza = 2;
-            obj = zzgVar.zzf(e6, this);
+            obj = zzgVar.zzf(e, this);
         }
         if (i10 == 0) {
-            q7.b(obj);
+            p7.b(obj);
             zzgr zzgrVar = (zzgr) this.zze;
             zzg zzgVar2 = this.zzb;
             if (zzgVar2.zzi()) {
@@ -75,10 +75,10 @@ final class zzd extends i implements p {
             if (i10 != 1) {
                 if (i10 != 2) {
                     zzcg zzcgVar = (zzcg) this.zze;
-                    q7.b(obj);
+                    p7.b(obj);
                     throw zzcgVar;
                 }
-                q7.b(obj);
+                p7.b(obj);
                 zzg zzgVar3 = this.zzb;
                 zzcg zzcgVar2 = (zzcg) obj;
                 this.zze = zzcgVar2;
@@ -88,9 +88,9 @@ final class zzd extends i implements p {
                 }
                 return aVar;
             }
-            q7.b(obj);
+            p7.b(obj);
         }
-        q7.b(((f) obj).a);
+        p7.b(((f) obj).a);
         this.zzb.zza = true;
         return iVar;
     }

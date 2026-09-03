@@ -1,107 +1,44 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class yv extends Drawable {
+public final /* synthetic */ class yv implements ng.j {
     public final /* synthetic */ int a;
-    public RectF b;
-    public Paint c;
+    public final /* synthetic */ ViewGroup b;
 
-    public /* synthetic */ yv(int i10, byte b10) {
+    public /* synthetic */ yv(ViewGroup viewGroup, int i10) {
         this.a = i10;
+        this.b = viewGroup;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // ng.j
+    public final boolean a(Canvas canvas, View view, long j10) {
         switch (this.a) {
             case 0:
-                RectF rectF = this.b;
-                rectF.set(0.0f, 0.0f, AndroidUtilities.dp(30.0f), AndroidUtilities.dp(30.0f));
-                canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(8.0f), AndroidUtilities.dpf2(8.0f), this.c);
-                break;
+                return ((ix) this.b).drawChild(canvas, view, j10);
             case 1:
-                RectF rectF2 = this.b;
-                rectF2.set(getBounds());
-                float height = rectF2.height() * 0.2f;
-                canvas.drawRoundRect(rectF2, height, height, this.c);
-                break;
+                return ((rl0) this.b).drawChild(canvas, view, j10);
             case 2:
-                RectF rectF3 = this.b;
-                rectF3.set(getBounds());
-                rectF3.inset(AndroidUtilities.dp(1.0f), (rectF3.height() - AndroidUtilities.dp(28.0f)) / 2.0f);
-                canvas.drawRoundRect(rectF3, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), this.c);
-                break;
+                pw pwVar = ((kz) this.b).A0;
+                if (view instanceof bg.d) {
+                    canvas.save();
+                    canvas.translate(view.getX(), view.getY());
+                    org.telegram.ui.Cells.c8 c8Var = (org.telegram.ui.Cells.c8) ((bg.d) view);
+                    if (c8Var.I) {
+                        c8Var.b(canvas, pwVar);
+                    }
+                    canvas.restore();
+                }
+                return pwVar.drawChild(canvas, view, j10);
+            case 3:
+                return ((lp0) this.b).drawChild(canvas, view, j10);
             default:
-                RectF rectF4 = this.b;
-                rectF4.set(getBounds());
-                rectF4.inset(0.0f, (rectF4.height() - AndroidUtilities.dp(28.0f)) / 2.0f);
-                canvas.drawRoundRect(rectF4, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), this.c);
-                break;
+                return ((pt0) this.b).drawChild(canvas, view, j10);
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        switch (this.a) {
-        }
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        switch (this.a) {
-            case 0:
-                this.c.setAlpha(i10);
-                break;
-            case 1:
-                this.c.setAlpha(i10);
-                break;
-            case 2:
-                this.c.setAlpha(i10);
-                break;
-            default:
-                this.c.setAlpha(i10);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        switch (this.a) {
-            case 1:
-                this.c.setColorFilter(colorFilter);
-                break;
-        }
-    }
-
-    public yv() {
-        this.a = 1;
-        this.b = new RectF();
-        this.c = new Paint(1);
-    }
-
-    public yv(int i10) {
-        this.a = 0;
-        Paint paint = new Paint();
-        this.c = paint;
-        this.b = new RectF();
-        paint.setAlpha(45);
-        paint.setColor(i10);
-    }
-
-    private final void a(ColorFilter colorFilter) {
-    }
-
-    private final void b(ColorFilter colorFilter) {
-    }
-
-    private final void c(ColorFilter colorFilter) {
     }
 }

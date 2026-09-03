@@ -5,12 +5,12 @@ import j$.util.DesugarCollections;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import k7.q7;
+import k7.p7;
 import kotlin.jvm.internal.j;
 import org.telegram.tgnet.TLObject;
 import tc.r;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class c {
     public static final c a = new c();
@@ -50,7 +50,7 @@ public final class c {
                 vc.a aVar = vc.a.a;
                 i10 = bVar.r;
                 if (i10 != 0) {
-                    q7.b(obj);
+                    p7.b(obj);
                     Map dependencies = b;
                     j.d(dependencies, "dependencies");
                     linkedHashMap = new LinkedHashMap(r.a(dependencies.size()));
@@ -67,7 +67,7 @@ public final class c {
                     d subscriberName = bVar.c;
                     it = bVar.b;
                     Map map = bVar.a;
-                    q7.b(obj);
+                    p7.b(obj);
                     try {
                         j.e(subscriberName, "subscriberName");
                         k kVar = a(subscriberName).b;

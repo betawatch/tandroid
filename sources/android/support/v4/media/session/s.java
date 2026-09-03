@@ -13,7 +13,7 @@ import android.view.KeyEvent;
 import android.view.ViewConfiguration;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class s {
     q mCallbackHandler;
@@ -26,9 +26,9 @@ public abstract class s {
         if (this.mMediaPlayPausePendingOnHandler) {
             this.mMediaPlayPausePendingOnHandler = false;
             handler.removeMessages(1);
-            PlaybackStateCompat b10 = tVar.b();
-            long j10 = b10 == null ? 0L : b10.e;
-            boolean z4 = b10 != null && b10.a == 3;
+            PlaybackStateCompat c3 = tVar.c();
+            long j10 = c3 == null ? 0L : c3.e;
+            boolean z4 = c3 != null && c3.a == 3;
             boolean z10 = (516 & j10) != 0;
             boolean z11 = (j10 & 514) != 0;
             if (z4 && z11) {
@@ -55,7 +55,7 @@ public abstract class s {
                 qVar = this.mCallbackHandler;
             }
             if (tVar != null && qVar != null && (keyEvent = (KeyEvent) intent.getParcelableExtra("android.intent.extra.KEY_EVENT")) != null && keyEvent.getAction() == 0) {
-                y1.a c3 = tVar.c();
+                y1.a b10 = tVar.b();
                 int keyCode = keyEvent.getKeyCode();
                 if (keyCode != 79 && keyCode != 85) {
                     handleMediaPlayPauseIfPendingOnHandler(tVar, qVar);
@@ -67,13 +67,13 @@ public abstract class s {
                 }
                 if (!this.mMediaPlayPausePendingOnHandler) {
                     this.mMediaPlayPausePendingOnHandler = true;
-                    qVar.sendMessageDelayed(qVar.obtainMessage(1, c3), ViewConfiguration.getDoubleTapTimeout());
+                    qVar.sendMessageDelayed(qVar.obtainMessage(1, b10), ViewConfiguration.getDoubleTapTimeout());
                     return true;
                 }
                 qVar.removeMessages(1);
                 this.mMediaPlayPausePendingOnHandler = false;
-                PlaybackStateCompat b10 = tVar.b();
-                if (((b10 == null ? 0L : b10.e) & 32) != 0) {
+                PlaybackStateCompat c3 = tVar.c();
+                if (((c3 == null ? 0L : c3.e) & 32) != 0) {
                     onSkipToNext();
                 }
                 return true;

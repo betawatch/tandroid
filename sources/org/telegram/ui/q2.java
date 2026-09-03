@@ -1,63 +1,93 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.messenger.Intro;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class q2 extends m2.a {
-    public final /* synthetic */ s2 c;
+public final class q2 implements m2.f {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public q2(s2 s2Var) {
-        this.c = s2Var;
+    public /* synthetic */ q2(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // m2.a
-    public final void a(m2.h hVar, Object obj) {
-        hVar.removeView(((p2) obj).b);
-    }
-
-    @Override // m2.a
-    public final int b() {
-        TL_iv.pageBlockSlideshow pageblockslideshow = this.c.d;
-        if (pageblockslideshow == null) {
-            return 0;
+    @Override // m2.f
+    public final void a(int i10) {
+        switch (this.a) {
+            case 0:
+                u2 u2Var = (u2) this.b;
+                u2Var.v = i10;
+                u2Var.c.invalidate();
+                break;
+            case 1:
+                ((w70) this.b).E = i10;
+                break;
+            default:
+                ((jd1) this.b).X.invalidate();
+                break;
         }
-        return pageblockslideshow.items.size();
     }
 
-    @Override // m2.a
-    public final int c(Object obj) {
-        return this.c.d.items.contains(((p2) obj).a) ? -1 : -2;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // m2.a
-    public final Object e(m2.h hVar, int i10) {
-        z2 z2Var;
-        s2 s2Var = this.c;
-        j4 j4Var = s2Var.w;
-        l4 l4Var = s2Var.x;
-        TL_iv.PageBlock pageBlock = s2Var.d.items.get(i10);
-        if (pageBlock instanceof TL_iv.pageBlockPhoto) {
-            e2 e2Var = new e2(s2Var.getContext(), l4Var, j4Var, 1);
-            e2Var.a((TL_iv.pageBlockPhoto) pageBlock, j4Var.B.cached_page, false, true);
-            z2Var = e2Var;
-        } else {
-            z2 z2Var2 = new z2(s2Var.getContext(), l4Var, j4Var, 1);
-            TL_iv.pageBlockVideo pageblockvideo = (TL_iv.pageBlockVideo) pageBlock;
-            z2Var2.b(pageblockvideo, (a3) l4Var.y.f(pageblockvideo.video_id), false, true);
-            z2Var = z2Var2;
+    @Override // m2.f
+    public final void b(float f10, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                u2 u2Var = (u2) this.b;
+                float measuredWidth = u2Var.a.getMeasuredWidth();
+                if (measuredWidth != 0.0f) {
+                    u2Var.s = e2.c.d(u2Var.v, measuredWidth, (i10 * measuredWidth) + i11, measuredWidth);
+                    u2Var.c.invalidate();
+                    break;
+                }
+                break;
+            case 1:
+                w70 w70Var = (w70) this.b;
+                org.telegram.ui.Components.ka kaVar = w70Var.e;
+                kaVar.b = f10;
+                kaVar.c = i10;
+                kaVar.invalidate();
+                float measuredWidth2 = w70Var.d.getMeasuredWidth();
+                if (measuredWidth2 != 0.0f) {
+                    Intro.setScrollOffset((((i10 * measuredWidth2) + i11) - (w70Var.E * measuredWidth2)) / measuredWidth2);
+                    break;
+                }
+                break;
         }
-        hVar.addView(z2Var);
-        p2 p2Var = new p2();
-        p2Var.b = z2Var;
-        p2Var.a = pageBlock;
-        return p2Var;
     }
 
-    @Override // m2.a
-    public final boolean f(View view, Object obj) {
-        return ((p2) obj).b == view;
+    @Override // m2.f
+    public final void c(int i10) {
+        switch (this.a) {
+            case 1:
+                w70 w70Var = (w70) this.b;
+                if (i10 != 1) {
+                    if (i10 == 0 || i10 == 2) {
+                        if (w70Var.H) {
+                            w70Var.H = false;
+                        }
+                        if (w70Var.w != w70Var.d.getCurrentItem()) {
+                            w70Var.w = w70Var.d.getCurrentItem();
+                            break;
+                        }
+                    }
+                } else {
+                    w70Var.H = true;
+                    w70Var.d.getCurrentItem();
+                    w70Var.d.getMeasuredWidth();
+                    break;
+                }
+                break;
+        }
+    }
+
+    private final void d(int i10) {
+    }
+
+    private final void e(int i10) {
+    }
+
+    private final void f(float f10, int i10, int i11) {
     }
 }

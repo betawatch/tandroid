@@ -1,76 +1,47 @@
 package org.telegram.ui.ActionBar;
 
-import android.util.Pair;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.UserConfig;
+import android.graphics.Point;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.xw0;
-import qh.w7;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b4 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ Utilities.Callback a;
+    public final /* synthetic */ TLRPC.WallPaper b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ long e;
 
-    public /* synthetic */ b4(Object obj, long j10, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = j10;
+    public /* synthetic */ b4(Utilities.Callback callback, TLRPC.WallPaper wallPaper, int i10, int i11, long j10) {
+        this.a = callback;
+        this.b = wallPaper;
+        this.c = i10;
+        this.d = i11;
+        this.e = j10;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
-        int i10;
-        long j10;
-        switch (this.a) {
-            case 0:
-                ResultCallback resultCallback = (ResultCallback) this.c;
-                qf.a aVar = (qf.a) obj;
-                if (resultCallback != null) {
-                    resultCallback.onComplete(new Pair(Long.valueOf(this.b), aVar));
-                    break;
-                }
-                break;
-            case 1:
-                xw0 xw0Var = (xw0) this.c;
-                TLRPC.TL_messages_emojiGroups tL_messages_emojiGroups = (TLRPC.TL_messages_emojiGroups) obj;
-                if (tL_messages_emojiGroups != null) {
-                    NotificationCenter.getInstance(UserConfig.selectedAccount).doOnIdle(new i5.v(xw0Var, tL_messages_emojiGroups, this.b, 24));
-                    break;
-                }
-                break;
-            default:
-                w7 w7Var = (w7) this.c;
-                TLRPC.TL_channels_channelParticipants tL_channels_channelParticipants = (TLRPC.TL_channels_channelParticipants) obj;
-                d2 d2Var = w7Var.D;
-                if (d2Var != null) {
-                    d2Var.c(350L);
-                    w7Var.D = null;
-                }
-                if (tL_channels_channelParticipants != null && !tL_channels_channelParticipants.participants.isEmpty()) {
-                    TLRPC.TL_chatParticipants tL_chatParticipants = new TLRPC.TL_chatParticipants();
-                    while (i10 < tL_channels_channelParticipants.participants.size()) {
-                        TLRPC.ChannelParticipant channelParticipant = tL_channels_channelParticipants.participants.get(i10);
-                        TLRPC.TL_chatParticipant tL_chatParticipant = new TLRPC.TL_chatParticipant();
-                        TLRPC.Peer peer = channelParticipant.peer;
-                        if (peer != null) {
-                            j10 = DialogObject.getPeerDialogId(peer);
-                            i10 = j10 < 0 ? i10 + 1 : 0;
-                        } else {
-                            j10 = channelParticipant.user_id;
-                        }
-                        tL_chatParticipant.user_id = j10;
-                        tL_chatParticipants.participants.add(tL_chatParticipant);
-                    }
-                    w7Var.d(this.b, tL_chatParticipants);
-                    break;
-                }
-                break;
+        pf.a aVar = (pf.a) obj;
+        Utilities.Callback callback = this.a;
+        if (aVar != null) {
+            callback.run(aVar);
+            return;
         }
+        TLRPC.WallPaper wallPaper = this.b;
+        ImageLocation forDocument = ImageLocation.getForDocument(wallPaper.document);
+        ImageReceiver imageReceiver = new ImageReceiver();
+        imageReceiver.setAllowLoadingOnAttachedOnly(false);
+        Point point = AndroidUtilities.displaySize;
+        int min = Math.min(point.x, point.y);
+        Point point2 = AndroidUtilities.displaySize;
+        imageReceiver.setImage(forDocument, (min / AndroidUtilities.density) + "_" + (Math.max(point2.x, point2.y) / AndroidUtilities.density) + "_f", null, ".jpg", wallPaper, 1);
+        imageReceiver.setDelegate(new org.telegram.tgnet.f(this.c, this.d, this.e, callback));
+        ImageLoader.getInstance().loadImageForImageReceiver(imageReceiver);
     }
 }

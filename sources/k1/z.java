@@ -3,7 +3,7 @@ package k1;
 import java.io.FileInputStream;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class z extends wc.c {
     public d0 a;
@@ -22,6 +22,6 @@ public final class z extends wc.c {
     public final Object invokeSuspend(Object obj) {
         this.c = obj;
         this.e |= TLObject.FLAG_31;
-        return this.d.g(this);
+        return this.d.f(this);
     }
 }

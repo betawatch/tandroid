@@ -13,17 +13,17 @@ import java.util.HashMap;
 import java.util.Iterator;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class p0 {
-    public final bf.b a;
-    public final sf.f b;
+    public final af.c a;
+    public final rf.f b;
     public final s c;
     public boolean d = false;
     public int e = -1;
 
-    public p0(bf.b bVar, sf.f fVar, s sVar) {
-        this.a = bVar;
+    public p0(af.c cVar, rf.f fVar, s sVar) {
+        this.a = cVar;
         this.b = fVar;
         this.c = sVar;
     }
@@ -54,7 +54,7 @@ public final class p0 {
         k0Var.I = false;
         k0Var.O.i = false;
         k0Var.u(4);
-        this.a.w(sVar, false);
+        this.a.x(sVar, false);
     }
 
     public final void b() {
@@ -65,7 +65,7 @@ public final class p0 {
         }
         s sVar2 = sVar.h;
         p0 p0Var = null;
-        sf.f fVar = this.b;
+        rf.f fVar = this.b;
         if (sVar2 != null) {
             p0 p0Var2 = (p0) ((HashMap) fVar.c).get(sVar2.e);
             if (p0Var2 == null) {
@@ -89,8 +89,8 @@ public final class p0 {
         j0 j0Var = sVar.G;
         sVar.H = j0Var.w;
         sVar.J = j0Var.y;
-        bf.b bVar = this.a;
-        bVar.E(sVar, false);
+        af.c cVar = this.a;
+        cVar.E(sVar, false);
         ArrayList arrayList = sVar.e0;
         int size = arrayList.size();
         int i10 = 0;
@@ -116,7 +116,7 @@ public final class p0 {
         k0Var.I = false;
         k0Var.O.i = false;
         k0Var.u(0);
-        bVar.y(sVar, false);
+        cVar.y(sVar, false);
     }
 
     public final int c() {
@@ -227,8 +227,8 @@ public final class p0 {
             k0Var.u(1);
             return;
         }
-        bf.b bVar = this.a;
-        bVar.F(sVar, false);
+        af.c cVar = this.a;
+        cVar.F(sVar, false);
         sVar.I.R();
         sVar.a = 1;
         sVar.R = false;
@@ -244,7 +244,7 @@ public final class p0 {
         sVar.X = true;
         if (sVar.R) {
             sVar.a0.e(androidx.lifecycle.m.ON_CREATE);
-            bVar.A(sVar, false);
+            cVar.A(sVar, false);
         } else {
             throw new w0("Fragment " + sVar + " did not call through to super.onCreate()");
         }
@@ -304,7 +304,7 @@ public final class p0 {
         boolean z4 = true;
         int i10 = 0;
         boolean z10 = sVar.w && !sVar.v();
-        sf.f fVar = this.b;
+        rf.f fVar = this.b;
         if (z10) {
             fVar.G(sVar.e, null);
         }
@@ -376,7 +376,7 @@ public final class p0 {
         if (!sVar.R) {
             throw new w0("Fragment " + sVar + " did not call through to super.onDestroyView()");
         }
-        a0.l lVar = ((w1.b) new androidx.biometric.e(sVar.f(), w1.b.f).m(w1.b.class)).d;
+        a0.l lVar = ((w1.b) new af.d(sVar.f(), w1.b.f).m(w1.b.class)).d;
         int i10 = lVar.c;
         for (int i11 = 0; i11 < i10; i11++) {
             ((w1.a) lVar.b[i11]).k();
@@ -435,7 +435,7 @@ public final class p0 {
     }
 
     public final void j() {
-        sf.f fVar = this.b;
+        rf.f fVar = this.b;
         boolean z4 = this.d;
         s sVar = this.c;
         if (z4) {
@@ -584,8 +584,8 @@ public final class p0 {
                 return;
             }
             sVar.T = true;
-        } catch (BadParcelableException e6) {
-            throw new IllegalStateException("Failed to restore view hierarchy state for fragment " + sVar, e6);
+        } catch (BadParcelableException e) {
+            throw new IllegalStateException("Failed to restore view hierarchy state for fragment " + sVar, e);
         }
     }
 
@@ -667,8 +667,8 @@ public final class p0 {
         throw new w0("Fragment " + sVar + " did not call through to super.onStop()");
     }
 
-    public p0(bf.b bVar, sf.f fVar, ClassLoader classLoader, c0 c0Var, Bundle bundle) {
-        this.a = bVar;
+    public p0(af.c cVar, rf.f fVar, ClassLoader classLoader, c0 c0Var, Bundle bundle) {
+        this.a = cVar;
         this.b = fVar;
         o0 o0Var = (o0) bundle.getParcelable("state");
         s a2 = c0Var.a(o0Var.a);
@@ -699,8 +699,8 @@ public final class p0 {
         }
     }
 
-    public p0(bf.b bVar, sf.f fVar, s sVar, Bundle bundle) {
-        this.a = bVar;
+    public p0(af.c cVar, rf.f fVar, s sVar, Bundle bundle) {
+        this.a = cVar;
         this.b = fVar;
         this.c = sVar;
         sVar.c = null;

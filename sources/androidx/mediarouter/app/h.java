@@ -9,14 +9,14 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.util.Log;
-import c2.z0;
+import c2.a1;
 import com.google.firebase.messaging.FirebaseMessaging;
 import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.ui.Components.fg;
-import org.telegram.ui.Components.jk;
+import org.telegram.ui.Components.hk;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class h extends BroadcastReceiver {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final class h extends BroadcastReceiver {
         if (Log.isLoggable("FirebaseMessaging", 3) || (Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3))) {
             Log.d("FirebaseMessaging", "Connectivity change received registered");
         }
-        ((FirebaseMessaging) ((com.google.firebase.messaging.u) this.b).d).b.registerReceiver(this, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
+        ((FirebaseMessaging) ((com.google.firebase.messaging.t) this.b).d).b.registerReceiver(this, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
     }
 
     @Override // android.content.BroadcastReceiver
@@ -43,13 +43,10 @@ public final class h extends BroadcastReceiver {
                 }
                 return;
             case 1:
-                ((z0) this.b).d();
-                return;
-            case 2:
                 if ("PIP_CUSTOM_EVENT".equals(intent.getAction())) {
                     String stringExtra = intent.getStringExtra("source_id");
                     intent.getIntExtra("action_id", -1);
-                    ArrayList arrayList = (ArrayList) ((cf.c) this.b).c.get(stringExtra);
+                    ArrayList arrayList = (ArrayList) ((bf.c) this.b).c.get(stringExtra);
                     if (arrayList == null) {
                         return;
                     }
@@ -61,16 +58,19 @@ public final class h extends BroadcastReceiver {
                     return;
                 }
                 return;
+            case 2:
+                ((a1) this.b).d();
+                return;
             case 3:
-                com.google.firebase.messaging.u uVar = (com.google.firebase.messaging.u) this.b;
-                if (uVar != null && uVar.a()) {
+                com.google.firebase.messaging.t tVar = (com.google.firebase.messaging.t) this.b;
+                if (tVar != null && tVar.a()) {
                     if (Log.isLoggable("FirebaseMessaging", 3) || (Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3))) {
                         Log.d("FirebaseMessaging", "Connectivity changed. Starting background sync.");
                     }
-                    com.google.firebase.messaging.u uVar2 = (com.google.firebase.messaging.u) this.b;
-                    ((FirebaseMessaging) uVar2.d).getClass();
-                    FirebaseMessaging.b(uVar2, 0L);
-                    ((FirebaseMessaging) ((com.google.firebase.messaging.u) this.b).d).b.unregisterReceiver(this);
+                    com.google.firebase.messaging.t tVar2 = (com.google.firebase.messaging.t) this.b;
+                    ((FirebaseMessaging) tVar2.d).getClass();
+                    FirebaseMessaging.b(tVar2, 0L);
+                    ((FirebaseMessaging) ((com.google.firebase.messaging.t) this.b).d).b.unregisterReceiver(this);
                     this.b = null;
                     return;
                 }
@@ -86,7 +86,7 @@ public final class h extends BroadcastReceiver {
                     return;
                 }
             case 6:
-                h5.u uVar3 = (h5.u) this.b;
+                h5.u uVar = (h5.u) this.b;
                 ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService("connectivity");
                 int i10 = 0;
                 if (connectivityManager != null) {
@@ -150,22 +150,22 @@ public final class h extends BroadcastReceiver {
                     }
                 }
                 if (h5.d0.a < 31 || i10 != 5) {
-                    h5.u.b(uVar3, i10);
+                    h5.u.b(uVar, i10);
                     return;
                 } else {
-                    h5.t.a(context, uVar3);
+                    h5.t.a(context, uVar);
                     return;
                 }
             case 7:
                 if (isInitialStickyBroadcast()) {
                     return;
                 }
-                z0.a((z0) this.b, l3.g.b(context, intent));
+                a1.a((a1) this.b, l3.g.b(context, intent));
                 return;
             default:
                 fg fgVar = new fg(this, 22);
                 if ("android.intent.action.MEDIA_UNMOUNTED".equals(intent.getAction())) {
-                    ((jk) this.b).r.postDelayed(fgVar, 1000L);
+                    ((hk) this.b).r.postDelayed(fgVar, 1000L);
                     return;
                 } else {
                     fgVar.run();

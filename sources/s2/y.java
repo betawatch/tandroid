@@ -1,38 +1,37 @@
 package s2;
 
-import androidx.biometric.f0;
-import j7.m5;
+import j7.l5;
 import java.nio.ByteBuffer;
 import java.util.Date;
-import org.telegram.ui.yh;
+import org.telegram.ui.ai;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class y extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ f0 B;
-    public static final /* synthetic */ f0 C;
-    public static final /* synthetic */ f0 D;
-    public static final /* synthetic */ f0 E;
-    public static final /* synthetic */ f0 F;
-    public static final /* synthetic */ f0 G;
-    public static final /* synthetic */ f0 H;
-    public static final /* synthetic */ f0 I;
-    public static final /* synthetic */ f0 J;
-    public static final /* synthetic */ f0 K;
-    public static final /* synthetic */ f0 L;
-    public static final /* synthetic */ f0 M;
-    public static final /* synthetic */ f0 N;
-    public static final /* synthetic */ f0 O;
-    public static final /* synthetic */ f0 P;
-    public static final /* synthetic */ f0 Q;
-    public static final /* synthetic */ f0 R;
-    public static final /* synthetic */ f0 S;
-    public static final /* synthetic */ f0 T;
-    public static final /* synthetic */ f0 U;
-    public static final /* synthetic */ f0 V;
-    public static final /* synthetic */ f0 W;
-    public static final /* synthetic */ f0 X;
-    public static final /* synthetic */ f0 Y;
+    public static final /* synthetic */ bb.b B;
+    public static final /* synthetic */ bb.b C;
+    public static final /* synthetic */ bb.b D;
+    public static final /* synthetic */ bb.b E;
+    public static final /* synthetic */ bb.b F;
+    public static final /* synthetic */ bb.b G;
+    public static final /* synthetic */ bb.b H;
+    public static final /* synthetic */ bb.b I;
+    public static final /* synthetic */ bb.b J;
+    public static final /* synthetic */ bb.b K;
+    public static final /* synthetic */ bb.b L;
+    public static final /* synthetic */ bb.b M;
+    public static final /* synthetic */ bb.b N;
+    public static final /* synthetic */ bb.b O;
+    public static final /* synthetic */ bb.b P;
+    public static final /* synthetic */ bb.b Q;
+    public static final /* synthetic */ bb.b R;
+    public static final /* synthetic */ bb.b S;
+    public static final /* synthetic */ bb.b T;
+    public static final /* synthetic */ bb.b U;
+    public static final /* synthetic */ bb.b V;
+    public static final /* synthetic */ bb.b W;
+    public static final /* synthetic */ bb.b X;
+    public static final /* synthetic */ bb.b Y;
     public Date e;
     public Date f;
     public long h;
@@ -82,8 +81,8 @@ public final class y extends com.googlecode.mp4parser.c {
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
         if (e() == 1) {
-            this.e = m5.b(r2.b.j(byteBuffer));
-            this.f = m5.b(r2.b.j(byteBuffer));
+            this.e = l5.b(r2.b.j(byteBuffer));
+            this.f = l5.b(r2.b.j(byteBuffer));
             this.h = r2.b.i(byteBuffer);
             r2.b.i(byteBuffer);
             long j10 = byteBuffer.getLong();
@@ -92,8 +91,8 @@ public final class y extends com.googlecode.mp4parser.c {
                 throw new RuntimeException("The tracks duration is bigger than Long.MAX_VALUE");
             }
         } else {
-            this.e = m5.b(r2.b.i(byteBuffer));
-            this.f = m5.b(r2.b.i(byteBuffer));
+            this.e = l5.b(r2.b.i(byteBuffer));
+            this.f = l5.b(r2.b.i(byteBuffer));
             this.h = r2.b.i(byteBuffer);
             r2.b.i(byteBuffer);
             this.n = r2.b.i(byteBuffer);
@@ -111,19 +110,19 @@ public final class y extends com.googlecode.mp4parser.c {
 
     @Override // com.googlecode.mp4parser.c, com.googlecode.mp4parser.a
     public final void getContent(ByteBuffer byteBuffer) {
-        sf.f c3 = de.a.c(K, this, this, byteBuffer);
+        rf.f c3 = de.a.c(K, this, this, byteBuffer);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(c3);
         i(byteBuffer);
         if (e() == 1) {
-            byteBuffer.putLong(m5.a(this.e));
-            byteBuffer.putLong(m5.a(this.f));
+            byteBuffer.putLong(l5.a(this.e));
+            byteBuffer.putLong(l5.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putInt((int) 0);
             byteBuffer.putLong(this.n);
         } else {
-            byteBuffer.putInt((int) m5.a(this.e));
-            byteBuffer.putInt((int) m5.a(this.f));
+            byteBuffer.putInt((int) l5.a(this.e));
+            byteBuffer.putInt((int) l5.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putInt((int) 0);
             byteBuffer.putInt((int) this.n);
@@ -146,37 +145,37 @@ public final class y extends com.googlecode.mp4parser.c {
     }
 
     public final String toString() {
-        sf.f b10 = de.a.b(L, this, this);
+        rf.f b10 = de.a.b(L, this, this);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb = new StringBuilder("TrackHeaderBox[creationTime=");
-        yh.x(de.a.b(B, this, this));
+        ai.x(de.a.b(B, this, this));
         sb.append(this.e);
         sb.append(";modificationTime=");
-        yh.x(de.a.b(C, this, this));
+        ai.x(de.a.b(C, this, this));
         sb.append(this.f);
         sb.append(";trackId=");
-        yh.x(de.a.b(D, this, this));
+        ai.x(de.a.b(D, this, this));
         sb.append(this.h);
         sb.append(";duration=");
-        yh.x(de.a.b(E, this, this));
+        ai.x(de.a.b(E, this, this));
         sb.append(this.n);
         sb.append(";layer=");
-        yh.x(de.a.b(F, this, this));
+        ai.x(de.a.b(F, this, this));
         sb.append(this.r);
         sb.append(";alternateGroup=");
-        yh.x(de.a.b(G, this, this));
+        ai.x(de.a.b(G, this, this));
         sb.append(this.s);
         sb.append(";volume=");
-        yh.x(de.a.b(H, this, this));
+        ai.x(de.a.b(H, this, this));
         sb.append(this.v);
         sb.append(";matrix=");
         sb.append(this.w);
         sb.append(";width=");
-        yh.x(de.a.b(I, this, this));
+        ai.x(de.a.b(I, this, this));
         sb.append(this.x);
         sb.append(";height=");
-        yh.x(de.a.b(J, this, this));
+        ai.x(de.a.b(J, this, this));
         sb.append(this.y);
         sb.append("]");
         return sb.toString();

@@ -5,13 +5,13 @@ import java.util.Locale;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.yc0;
+import org.telegram.ui.Components.xc0;
 import org.telegram.ui.ThemeActivity;
 import org.telegram.ui.fn0;
-import org.telegram.ui.jn;
-import org.telegram.ui.xn;
+import org.telegram.ui.ln;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class dk implements org.telegram.ui.ActionBar.c2 {
     public final /* synthetic */ int a = 0;
@@ -21,16 +21,16 @@ public final /* synthetic */ class dk implements org.telegram.ui.ActionBar.c2 {
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ dk(SendMessagesHelper sendMessagesHelper, boolean z4, MessageObject messageObject, TL_keyboard.KeyboardButtonProto keyboardButtonProto, xn xnVar) {
+    public /* synthetic */ dk(SendMessagesHelper sendMessagesHelper, boolean z4, MessageObject messageObject, TL_keyboard.KeyboardButtonProto keyboardButtonProto, zn znVar) {
         this.c = sendMessagesHelper;
         this.b = z4;
         this.d = messageObject;
         this.e = keyboardButtonProto;
-        this.f = xnVar;
+        this.f = znVar;
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public final void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    public final void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         int i11;
         int i12 = this.a;
         boolean z4 = this.b;
@@ -40,13 +40,13 @@ public final /* synthetic */ class dk implements org.telegram.ui.ActionBar.c2 {
         Object obj4 = this.c;
         switch (i12) {
             case 0:
-                ((SendMessagesHelper) obj4).lambda$sendCallback$41(this.b, (MessageObject) obj3, (TL_keyboard.KeyboardButtonProto) obj2, (xn) obj, d2Var, i10);
+                ((SendMessagesHelper) obj4).lambda$sendCallback$41(this.b, (MessageObject) obj3, (TL_keyboard.KeyboardButtonProto) obj2, (zn) obj, d2Var, i10);
                 break;
             case 1:
-                jn jnVar = (jn) obj4;
+                ln lnVar = (ln) obj4;
                 TL_account.contentSettings contentsettings = (TL_account.contentSettings) obj;
-                xn xnVar = jnVar.a;
-                lh.a1 a1Var = new lh.a1(23, jnVar, (org.telegram.ui.Cells.t1) obj3);
+                zn znVar = lnVar.a;
+                kh.a1 a1Var = new kh.a1(23, lnVar, (org.telegram.ui.Cells.s1) obj3);
                 if (!((boolean[]) obj2)[0]) {
                     a1Var.run(Boolean.FALSE);
                     break;
@@ -54,22 +54,22 @@ public final /* synthetic */ class dk implements org.telegram.ui.ActionBar.c2 {
                     a1Var.run(Boolean.TRUE);
                     break;
                 } else {
-                    Activity parentActivity = xnVar.getParentActivity();
-                    i11 = ((org.telegram.ui.ActionBar.p2) xnVar).currentAccount;
-                    ThemeActivity.C0(i11, parentActivity, new lh.a1(24, jnVar, a1Var), xnVar.getResourceProvider());
+                    Activity parentActivity = znVar.getParentActivity();
+                    i11 = ((org.telegram.ui.ActionBar.p2) znVar).currentAccount;
+                    ThemeActivity.C0(i11, parentActivity, new kh.a1(24, lnVar, a1Var), znVar.getResourceProvider());
                     break;
                 }
             default:
-                yc0 yc0Var = (yc0) obj4;
-                yc0 yc0Var2 = (yc0) obj3;
-                yc0 yc0Var3 = (yc0) obj2;
+                xc0 xc0Var = (xc0) obj4;
+                xc0 xc0Var2 = (xc0) obj3;
+                xc0 xc0Var3 = (xc0) obj2;
                 e3.d dVar = (e3.d) obj;
                 if (z4) {
-                    org.telegram.ui.Components.z4.d(yc0Var, yc0Var2, yc0Var3);
+                    org.telegram.ui.Components.z4.d(xc0Var, xc0Var2, xc0Var3);
                 }
-                int value = yc0Var3.getValue();
-                int value2 = yc0Var2.getValue();
-                int value3 = yc0Var.getValue();
+                int value = xc0Var3.getValue();
+                int value2 = xc0Var2.getValue();
+                int value3 = xc0Var.getValue();
                 fn0 fn0Var = (fn0) dVar.c;
                 int i13 = dVar.b;
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) dVar.d;
@@ -86,19 +86,19 @@ public final /* synthetic */ class dk implements org.telegram.ui.ActionBar.c2 {
         }
     }
 
-    public /* synthetic */ dk(jn jnVar, org.telegram.ui.Cells.t1 t1Var, boolean[] zArr, boolean z4, TL_account.contentSettings contentsettings) {
-        this.c = jnVar;
-        this.d = t1Var;
+    public /* synthetic */ dk(ln lnVar, org.telegram.ui.Cells.s1 s1Var, boolean[] zArr, boolean z4, TL_account.contentSettings contentsettings) {
+        this.c = lnVar;
+        this.d = s1Var;
         this.e = zArr;
         this.b = z4;
         this.f = contentsettings;
     }
 
-    public /* synthetic */ dk(boolean z4, yc0 yc0Var, yc0 yc0Var2, yc0 yc0Var3, e3.d dVar) {
+    public /* synthetic */ dk(boolean z4, xc0 xc0Var, xc0 xc0Var2, xc0 xc0Var3, e3.d dVar) {
         this.b = z4;
-        this.c = yc0Var;
-        this.d = yc0Var2;
-        this.e = yc0Var3;
+        this.c = xc0Var;
+        this.d = xc0Var2;
+        this.e = xc0Var3;
         this.f = dVar;
     }
 }

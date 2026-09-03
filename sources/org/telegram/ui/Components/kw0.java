@@ -9,7 +9,7 @@ import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public abstract class kw0 {
     public static final Layout.Alignment[] a = Layout.Alignment.values();
@@ -63,8 +63,8 @@ public abstract class kw0 {
                 return StaticLayout.Builder.obtain(spannableStringBuilder, 0, spannableStringBuilder.length(), textPaint, i10).setAlignment(alignment).setLineSpacing(f10, 1.0f).setIncludePad(z4).setEllipsize(((u5[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), u5.class)).length > 0 ? null : truncateAt).setEllipsizedWidth(i11).setMaxLines(i12).setBreakStrategy(z10 ? 1 : 0).setHyphenationFrequency(0).build();
             }
             return new StaticLayout(spannableStringBuilder, textPaint, i10, alignment, 1.0f, f10, z4);
-        } catch (Exception e6) {
-            FileLog.e(e6);
+        } catch (Exception e) {
+            FileLog.e(e);
             return null;
         }
     }

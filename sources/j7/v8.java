@@ -1,64 +1,40 @@
 package j7;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.telegram.messenger.BuildConfig;
-
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class v8 {
-    public static String a(String str, Object... objArr) {
-        int length;
-        int length2;
-        int indexOf;
-        String sb;
-        int i10 = 0;
-        int i11 = 0;
-        while (true) {
-            length = objArr.length;
-            if (i11 >= length) {
-                break;
-            }
-            Object obj = objArr[i11];
-            if (obj == null) {
-                sb = BuildConfig.BETA_URL;
-            } else {
-                try {
-                    sb = obj.toString();
-                } catch (Exception e6) {
-                    String str2 = obj.getClass().getName() + '@' + Integer.toHexString(System.identityHashCode(obj));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(str2), (Throwable) e6);
-                    StringBuilder t6 = android.support.v4.media.a.t("<", str2, " threw ");
-                    t6.append(e6.getClass().getName());
-                    t6.append(">");
-                    sb = t6.toString();
-                }
-            }
-            objArr[i11] = sb;
-            i11++;
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x005d, code lost:
+    
+        if (r8 > 4611686018427387903L) goto L14;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final long a(int i10, kd.c unit) {
+        kotlin.jvm.internal.j.e(unit, "unit");
+        if (unit.compareTo(kd.c.d) <= 0) {
+            long a2 = w8.a(i10, unit, kd.c.b) << 1;
+            int i11 = kd.a.d;
+            int i12 = kd.b.a;
+            return a2;
         }
-        StringBuilder sb2 = new StringBuilder(str.length() + (length * 16));
-        int i12 = 0;
-        while (true) {
-            length2 = objArr.length;
-            if (i10 >= length2 || (indexOf = str.indexOf("%s", i12)) == -1) {
-                break;
-            }
-            sb2.append((CharSequence) str, i12, indexOf);
-            sb2.append(objArr[i10]);
-            i10++;
-            i12 = indexOf + 2;
+        long j10 = i10;
+        kd.c cVar = kd.c.b;
+        long a10 = w8.a(4611686018426999999L, cVar, unit);
+        if ((-a10) <= j10 && j10 <= a10) {
+            long a11 = w8.a(j10, unit, cVar) << 1;
+            int i13 = kd.a.d;
+            int i14 = kd.b.a;
+            return a11;
         }
-        sb2.append((CharSequence) str, i12, str.length());
-        if (i10 < length2) {
-            sb2.append(" [");
-            sb2.append(objArr[i10]);
-            for (int i13 = i10 + 1; i13 < objArr.length; i13++) {
-                sb2.append(", ");
-                sb2.append(objArr[i13]);
-            }
-            sb2.append(']');
-        }
-        return sb2.toString();
+        kd.c targetUnit = kd.c.c;
+        kotlin.jvm.internal.j.e(targetUnit, "targetUnit");
+        long convert = targetUnit.a.convert(j10, unit.a);
+        long j11 = convert >= -4611686018427387903L ? 4611686018427387903L : -4611686018427387903L;
+        convert = j11;
+        long j12 = (convert << 1) + 1;
+        int i15 = kd.a.d;
+        int i16 = kd.b.a;
+        return j12;
     }
 }

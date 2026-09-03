@@ -1,17 +1,16 @@
 package s2;
 
-import androidx.biometric.f0;
-import j7.l5;
+import j7.k5;
 import java.nio.ByteBuffer;
-import org.telegram.ui.yh;
+import org.telegram.ui.ai;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class o extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ f0 n;
-    public static final /* synthetic */ f0 r;
-    public static final /* synthetic */ f0 s;
-    public static final /* synthetic */ f0 v;
+    public static final /* synthetic */ bb.b n;
+    public static final /* synthetic */ bb.b r;
+    public static final /* synthetic */ bb.b s;
+    public static final /* synthetic */ bb.b v;
     public long e;
     public long[] f;
     public int h;
@@ -31,7 +30,7 @@ public final class o extends com.googlecode.mp4parser.c {
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
         this.e = r2.b.i(byteBuffer);
-        int a2 = l5.a(r2.b.i(byteBuffer));
+        int a2 = k5.a(r2.b.i(byteBuffer));
         this.h = a2;
         if (this.e == 0) {
             this.f = new long[a2];
@@ -61,14 +60,14 @@ public final class o extends com.googlecode.mp4parser.c {
     }
 
     public final String toString() {
-        sf.f b10 = de.a.b(v, this, this);
+        rf.f b10 = de.a.b(v, this, this);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb = new StringBuilder("SampleSizeBox[sampleSize=");
-        yh.x(de.a.b(n, this, this));
+        ai.x(de.a.b(n, this, this));
         sb.append(this.e);
         sb.append(";sampleCount=");
-        yh.x(de.a.b(r, this, this));
+        ai.x(de.a.b(r, this, this));
         return android.support.v4.media.a.q(sb, this.e > 0 ? this.h : this.f.length, "]");
     }
 }

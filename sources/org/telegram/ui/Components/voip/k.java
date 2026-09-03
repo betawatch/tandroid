@@ -7,12 +7,12 @@ import android.transition.TransitionSet;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import k7.c6;
+import k7.b6;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.q51;
+import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.mr;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class k extends FrameLayout {
     public final j a;
@@ -25,13 +25,13 @@ public final class k extends FrameLayout {
         setWillNotDraw(false);
         j jVar = new j(activity);
         this.a = jVar;
-        addView(jVar, c6.e(52, 52, 5));
+        addView(jVar, b6.e(52, 52, 5));
         TransitionSet transitionSet = new TransitionSet();
         this.b = transitionSet;
         transitionSet.setOrdering(0);
         transitionSet.addTransition(new org.telegram.ui.ActionBar.i(1));
         transitionSet.setDuration(500L);
-        transitionSet.setInterpolator((TimeInterpolator) pr.f);
+        transitionSet.setInterpolator((TimeInterpolator) mr.f);
     }
 
     public final void a(View.OnClickListener onClickListener, boolean z4) {
@@ -50,7 +50,7 @@ public final class k extends FrameLayout {
         ViewGroup.LayoutParams layoutParams = jVar.getLayoutParams();
         layoutParams.width = -1;
         jVar.setLayoutParams(layoutParams);
-        AndroidUtilities.runOnUIThread(new q51(6, this, onClickListener), 500L);
+        AndroidUtilities.runOnUIThread(new k41(7, this, onClickListener), 500L);
     }
 
     public j getEndCloseView() {

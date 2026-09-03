@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_fragment;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class g01 extends ClickableSpan {
     public final /* synthetic */ TLRPC.TL_username a;
@@ -33,7 +33,7 @@ public final class g01 extends ClickableSpan {
             TL_fragment.TL_inputCollectibleUsername tL_inputCollectibleUsername = new TL_fragment.TL_inputCollectibleUsername();
             tL_inputCollectibleUsername.username = tL_username.username;
             tL_getCollectibleInfo.collectible = tL_inputCollectibleUsername;
-            profileActivity.getConnectionsManager().bindRequestToGuid(profileActivity.getConnectionsManager().sendRequest(tL_getCollectibleInfo, new tb0(18, this, tL_username)), profileActivity.getClassGuid());
+            profileActivity.getConnectionsManager().bindRequestToGuid(profileActivity.getConnectionsManager().sendRequest(tL_getCollectibleInfo, new ub0(18, this, tL_username)), profileActivity.getClassGuid());
             return;
         }
         profileActivity.M4(null);

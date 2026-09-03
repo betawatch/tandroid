@@ -1,12 +1,12 @@
 package com.google.android.recaptcha.internal;
 
 import dd.p;
-import k7.q7;
+import k7.p7;
 import uc.c;
 import vc.a;
 import wc.i;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 final class zzhw extends i implements p {
     Object zza;
@@ -71,7 +71,7 @@ final class zzhw extends i implements p {
             r12 = i10;
         }
         if (i10 == 0) {
-            q7.b(obj);
+            p7.b(obj);
             zzhk zzhkVar5 = (zzhk) this.zzf;
             zzib zzibVar = this.zzc;
             String str2 = this.zzd;
@@ -87,14 +87,14 @@ final class zzhw extends i implements p {
         if (i10 != 1) {
             if (i10 == 2) {
                 ?? r14 = (zzhk) this.zzf;
-                q7.b(obj);
+                p7.b(obj);
                 i10 = r14;
                 return (String) obj;
             }
             if (i10 == 3) {
                 zzhk zzhkVar6 = (zzhk) this.zza;
                 zzhkVar = (zzhk) this.zzf;
-                q7.b(obj);
+                p7.b(obj);
                 zzhkVar2 = zzhkVar6;
                 this.zzf = zzhkVar;
                 this.zza = null;
@@ -116,19 +116,19 @@ final class zzhw extends i implements p {
             if (i10 != 4) {
                 if (i10 != 5) {
                     String str5 = (String) this.zzf;
-                    q7.b(obj);
+                    p7.b(obj);
                     return str5;
                 }
                 zzhkVar3 = (zzhk) this.zza;
                 str = (String) this.zzf;
-                q7.b(obj);
+                p7.b(obj);
                 this.zzf = str;
                 this.zza = null;
                 this.zzb = 6;
                 return zzhj.zzb(zzhkVar3, (zzhf) obj, this) == aVar ? str : aVar;
             }
             zzhkVar3 = (zzhk) this.zzf;
-            q7.b(obj);
+            p7.b(obj);
             zzib zzibVar22 = this.zzc;
             String str32 = this.zzd;
             String str42 = (String) obj;
@@ -149,7 +149,7 @@ final class zzhw extends i implements p {
         zzhk zzhkVar7 = (zzhk) this.zza;
         zzhk zzhkVar8 = (zzhk) this.zzf;
         try {
-            q7.b(obj);
+            p7.b(obj);
             zzhkVar4 = zzhkVar7;
             r13 = zzhkVar8;
         } catch (Exception unused2) {

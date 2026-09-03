@@ -1,11 +1,11 @@
 package kd;
 
 import java.util.concurrent.TimeUnit;
-import k7.p8;
+import k7.o8;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class c {
     public static final c b;
@@ -33,7 +33,7 @@ public final class c {
         h = cVar7;
         c[] cVarArr = {cVar, cVar2, cVar3, cVar4, cVar5, cVar6, cVar7};
         n = cVarArr;
-        p8.a(cVarArr);
+        o8.a(cVarArr);
     }
 
     public c(String str, int i10, TimeUnit timeUnit) {

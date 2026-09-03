@@ -7,7 +7,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class r11 implements TextWatcher {
     public final /* synthetic */ s11 a;
@@ -24,12 +24,12 @@ public final class r11 implements TextWatcher {
         }
         String obj = this.a.b.getText().toString();
         if (obj.length() != 0) {
-            oz ozVar = this.a.c.e;
-            if (ozVar != null) {
-                ozVar.setText(LocaleController.getString(R.string.NoResult));
+            mz mzVar = this.a.c.e;
+            if (mzVar != null) {
+                mzVar.setText(LocaleController.getString(R.string.NoResult));
             }
         } else {
-            f2.p0 adapter = this.a.c.c.getAdapter();
+            f2.o0 adapter = this.a.c.c.getAdapter();
             ThemeEditorView.EditorAlert editorAlert = this.a.c;
             if (adapter != editorAlert.n) {
                 int I = ThemeEditorView.EditorAlert.I(editorAlert);
@@ -55,7 +55,7 @@ public final class r11 implements TextWatcher {
         if (obj.length() != 0) {
             int i10 = o11Var.d + 1;
             o11Var.d = i10;
-            o11Var.h = new gy(o11Var, obj, i10, 20);
+            o11Var.h = new ey(o11Var, obj, i10, 20);
             Utilities.searchQueue.postRunnable(o11Var.h, 300L);
             return;
         }

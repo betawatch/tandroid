@@ -9,7 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import j7.i8;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class d0 extends y {
     public final c0 e;
@@ -41,27 +41,27 @@ public final class d0 extends y {
         if (u10 != null) {
             c0Var.setThumb(u10);
         }
-        Drawable s6 = y10.s(1);
+        Drawable t6 = y10.t(1);
         Drawable drawable = this.f;
         if (drawable != null) {
             drawable.setCallback(null);
         }
-        this.f = s6;
-        if (s6 != null) {
-            s6.setCallback(c0Var);
-            i8.b(c0Var.getLayoutDirection(), s6);
-            if (s6.isStateful()) {
-                s6.setState(c0Var.getDrawableState());
+        this.f = t6;
+        if (t6 != null) {
+            t6.setCallback(c0Var);
+            i8.b(c0Var.getLayoutDirection(), t6);
+            if (t6.isStateful()) {
+                t6.setState(c0Var.getDrawableState());
             }
             f();
         }
         c0Var.invalidate();
         if (typedArray.hasValue(3)) {
-            this.h = l1.b(typedArray.getInt(3, -1), this.h);
+            this.h = m1.b(typedArray.getInt(3, -1), this.h);
             this.j = true;
         }
         if (typedArray.hasValue(2)) {
-            this.g = y10.r(2);
+            this.g = y10.s(2);
             this.i = true;
         }
         y10.A();

@@ -7,7 +7,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class do0 implements TextWatcher {
     public final /* synthetic */ lo0 a;
@@ -29,10 +29,10 @@ public final class do0 implements TextWatcher {
         lo0Var.j0 = true;
         String d = se.b.d(lo0Var.f[8].getText().toString(), false);
         lo0Var.f[8].setText(d);
-        org.telegram.ui.Components.j40 j40Var = (org.telegram.ui.Components.j40) lo0Var.f[9];
+        org.telegram.ui.Components.i40 i40Var = (org.telegram.ui.Components.i40) lo0Var.f[9];
         if (d.length() == 0) {
-            j40Var.setHintText((String) null);
-            j40Var.setHint(LocaleController.getString(R.string.PaymentShippingPhoneNumber));
+            i40Var.setHintText((String) null);
+            i40Var.setHint(LocaleController.getString(R.string.PaymentShippingPhoneNumber));
         } else {
             int i10 = 4;
             if (d.length() > 4) {
@@ -65,20 +65,20 @@ public final class do0 implements TextWatcher {
             }
             String str4 = (String) hashMap.get(d);
             if (str4 == null || lo0Var.a.indexOf(str4) == -1 || (str2 = (String) lo0Var.d.get(d)) == null) {
-                j40Var.setHintText((String) null);
-                j40Var.setHint(LocaleController.getString(R.string.PaymentShippingPhoneNumber));
+                i40Var.setHintText((String) null);
+                i40Var.setHint(LocaleController.getString(R.string.PaymentShippingPhoneNumber));
             } else {
-                j40Var.setHintText(str2.replace('X', (char) 8211));
-                j40Var.setHint((CharSequence) null);
+                i40Var.setHintText(str2.replace('X', (char) 8211));
+                i40Var.setHint((CharSequence) null);
             }
             if (!z4) {
                 EditTextBoldCursor editTextBoldCursor2 = lo0Var.f[8];
                 editTextBoldCursor2.setSelection(editTextBoldCursor2.getText().length());
             }
             if (str != null) {
-                j40Var.requestFocus();
-                j40Var.setText(str);
-                j40Var.setSelection(j40Var.length());
+                i40Var.requestFocus();
+                i40Var.setText(str);
+                i40Var.setSelection(i40Var.length());
             }
         }
         lo0Var.j0 = false;

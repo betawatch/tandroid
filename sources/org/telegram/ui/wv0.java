@@ -7,9 +7,9 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class wv0 extends org.telegram.ui.Cells.t1 {
+public final class wv0 extends org.telegram.ui.Cells.s1 {
     public final Path Ce;
     public final Paint De;
     public final /* synthetic */ byte[] Ee;
@@ -18,8 +18,8 @@ public final class wv0 extends org.telegram.ui.Cells.t1 {
     public final /* synthetic */ yv0 He;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wv0(yv0 yv0Var, Context context, int i10, org.telegram.ui.ActionBar.g6 g6Var, byte[] bArr, int i11, int i12) {
-        super(context, i10, false, null, g6Var);
+    public wv0(yv0 yv0Var, Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var, byte[] bArr, int i11, int i12) {
+        super(context, i10, false, null, f6Var);
         this.He = yv0Var;
         this.Ee = bArr;
         this.Fe = i11;
@@ -28,7 +28,7 @@ public final class wv0 extends org.telegram.ui.Cells.t1 {
         this.De = new Paint(1);
     }
 
-    @Override // org.telegram.ui.Cells.t1
+    @Override // org.telegram.ui.Cells.s1
     public final void Y1(Canvas canvas) {
         this.f6 = 0;
         this.g6 = this.V5.size() - 1;
@@ -36,7 +36,7 @@ public final class wv0 extends org.telegram.ui.Cells.t1 {
         super.Y1(canvas);
     }
 
-    @Override // org.telegram.ui.Cells.t1, android.view.View
+    @Override // org.telegram.ui.Cells.s1, android.view.View
     public final void onDraw(Canvas canvas) {
         canvas.save();
         int I2 = I2(this.Ee);
@@ -60,19 +60,19 @@ public final class wv0 extends org.telegram.ui.Cells.t1 {
         path.addRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), Path.Direction.CW);
         Paint paint = this.De;
         paint.setColor(0);
-        paint.setShadowLayer(AndroidUtilities.dp(2.0f), 0.0f, AndroidUtilities.dp(0.66f), org.telegram.ui.ActionBar.k6.l1(yv0Var.y * 0.2f, -16777216));
+        paint.setShadowLayer(AndroidUtilities.dp(2.0f), 0.0f, AndroidUtilities.dp(0.66f), org.telegram.ui.ActionBar.j6.l1(yv0Var.y * 0.2f, -16777216));
         canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), paint);
         canvas.clipPath(path);
         S1(canvas);
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Cells.t1, android.view.View
+    @Override // org.telegram.ui.Cells.s1, android.view.View
     public final void onMeasure(int i10, int i11) {
         setMeasuredDimension(this.Fe, this.Ge);
     }
 
-    @Override // org.telegram.ui.Cells.t1, android.view.View
+    @Override // org.telegram.ui.Cells.s1, android.view.View
     public final void setPressed(boolean z4) {
     }
 }

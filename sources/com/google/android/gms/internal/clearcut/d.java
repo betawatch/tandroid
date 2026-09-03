@@ -71,13 +71,13 @@ public abstract class d {
             if (context == null) {
                 return false;
             }
-            h = Boolean.valueOf(f0.e.a(context, "com.google.android.providers.gsf.permission.READ_GSERVICES", Binder.getCallingPid(), Binder.getCallingUid(), Binder.getCallingPid() == Process.myPid() ? context.getPackageName() : null) == 0);
+            h = Boolean.valueOf(f0.f.a(context, "com.google.android.providers.gsf.permission.READ_GSERVICES", Binder.getCallingPid(), Binder.getCallingUid(), Binder.getCallingPid() == Process.myPid() ? context.getPackageName() : null) == 0);
         }
         return h.booleanValue();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00cd A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00ce  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00cc A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00cd  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -89,7 +89,7 @@ public abstract class d {
         }
         this.a.getClass();
         Object obj = null;
-        if (e() ? ((Boolean) c(new e("gms:phenotype:phenotype_flag:debug_bypass_phenotype", 0))).booleanValue() : false) {
+        if (e() ? ((Boolean) c(new e("gms:phenotype:phenotype_flag:debug_bypass_phenotype"))).booleanValue() : false) {
             String valueOf = String.valueOf(this.b);
             Log.w("PhenotypeFlag", valueOf.length() != 0 ? "Bypass reading Phenotype values for flag: ".concat(valueOf) : new String("Bypass reading Phenotype values for flag: "));
         } else if (this.a.a != null) {
@@ -109,7 +109,7 @@ public abstract class d {
                 }
                 this.e = bVar;
             }
-            String str = (String) c(new bf.b(20, this, this.e));
+            String str = (String) c(new af.c(23, this, this.e));
             if (str != null) {
                 obj = d(str);
             }

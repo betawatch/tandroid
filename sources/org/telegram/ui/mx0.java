@@ -11,14 +11,14 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class mx0 extends FrameLayout {
     public org.telegram.ui.Components.n9 a;
-    public org.telegram.ui.Cells.t1 b;
+    public org.telegram.ui.Cells.s1 b;
     public Drawable c;
     public Drawable d;
-    public org.telegram.ui.Components.m40 e;
+    public org.telegram.ui.Components.l40 e;
     public MessageObject f;
 
     @Override // android.view.ViewGroup, android.view.View
@@ -51,7 +51,7 @@ public final class mx0 extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         Drawable drawable = this.d;
-        Drawable s02 = org.telegram.ui.ActionBar.k6.s0();
+        Drawable s02 = org.telegram.ui.ActionBar.j6.s0();
         if (s02 != null && this.c != s02) {
             org.telegram.ui.Components.n9 n9Var = this.a;
             if (n9Var != null) {
@@ -61,7 +61,7 @@ public final class mx0 extends FrameLayout {
             this.c = s02;
         }
         Drawable drawable2 = this.c;
-        if ((drawable2 instanceof ColorDrawable) || (drawable2 instanceof GradientDrawable) || (drawable2 instanceof org.telegram.ui.Components.fc0)) {
+        if ((drawable2 instanceof ColorDrawable) || (drawable2 instanceof GradientDrawable) || (drawable2 instanceof org.telegram.ui.Components.ec0)) {
             drawable2.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
             Drawable drawable3 = this.c;
             if (drawable3 instanceof org.telegram.ui.Components.o9) {

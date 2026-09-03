@@ -1,112 +1,82 @@
 package uh;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.text.SpannableStringBuilder;
 import android.widget.TextView;
-import k7.c6;
-import lf.r;
+import cg.u;
+import k7.b6;
+import oh.n;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.lq;
 import org.telegram.ui.Components.p9;
+import org.telegram.ui.Components.ql0;
+import org.telegram.ui.Components.rl0;
+import org.telegram.ui.Components.sa;
+import org.telegram.ui.Components.w51;
 import org.telegram.ui.Components.z8;
+import ph.d;
+import ph.d4;
+import ph.s8;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
-public final class b extends FrameLayout implements b6 {
-    public final g6 a;
-    public final p9 b;
-    public final TextView c;
-    public final TextView d;
-    public final ImageView e;
+public final class b extends sa {
+    public final u U;
+    public w51 V;
 
-    public b(Context context, g6 g6Var) {
-        super(context);
-        this.a = g6Var;
-        p9 p9Var = new p9(context);
-        this.b = p9Var;
-        p9Var.setRoundRadius(AndroidUtilities.dp(9.0f));
-        addView(p9Var, c6.d(32, 32.0f, 19, 20.0f, 0.0f, 0.0f, 0.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        linearLayout.setGravity(16);
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setTextSize(1, 16.0f);
-        textView.setSingleLine(true);
-        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-        textView.setEllipsize(truncateAt);
-        linearLayout.addView(textView, c6.n(-1, -2));
-        TextView textView2 = new TextView(context);
-        this.d = textView2;
-        textView2.setTextSize(1, 13.0f);
-        textView2.setSingleLine(true);
-        textView2.setEllipsize(truncateAt);
-        linearLayout.addView(textView2, c6.k(0.0f, 2.0f, 0.0f, 0.0f, -1, -2));
-        addView(linearLayout, c6.d(-1, -2.0f, 19, 67.0f, 0.0f, 48.0f, 1.0f));
-        ImageView imageView = new ImageView(context);
-        this.e = imageView;
-        imageView.setImageResource(R.drawable.msg_inputarrow);
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, c6.d(24, 24.0f, 21, 0.0f, 0.0f, 11.0f, 0.0f));
-        e();
+    public b(Context context, TLRPC.Chat chat, Runnable runnable) {
+        super(context, null, false, true, false, false, false, 2, null);
+        this.H = AndroidUtilities.dp(30.0f);
+        rl0 rl0Var = this.d;
+        int i10 = this.backgroundPaddingLeft;
+        rl0Var.setPadding(i10, 0, i10, AndroidUtilities.dp(130.0f) + AndroidUtilities.navigationBarHeight);
+        this.d.setClipToPadding(false);
+        d dVar = new d(context, this.resourcesProvider, true);
+        dVar.setText(LocaleController.getString(R.string.Cancel));
+        dVar.d();
+        dVar.e();
+        dVar.setOnClickListener(new n(this, 25));
+        boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat);
+        d dVar2 = new d(context, this.resourcesProvider, true);
+        dVar2.setText(LocaleController.getString(isChannelAndNotMegaGroup ? R.string.CommunityInviteOnlyChannelMessageOwner : R.string.CommunityInviteOnlyGroupMessageOwner));
+        dVar2.e();
+        dVar2.setOnClickListener(new s8(6, this, runnable));
+        u uVar = new u(context, 5);
+        TextView textView = (TextView) uVar.d;
+        TextView textView2 = (TextView) uVar.c;
+        this.U = uVar;
+        uVar.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(17.0f));
+        ((p9) uVar.b).e(chat, new z8(chat));
+        textView2.setText(DialogObject.getName(chat));
+        int i11 = j6.G6;
+        textView2.setTextColor(getThemedColor(i11));
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        spannableStringBuilder.append((CharSequence) "* ");
+        spannableStringBuilder.setSpan(new lq(R.drawable.mini_ephemeral_hidden_14, 0), 0, 1, 33);
+        spannableStringBuilder.append((CharSequence) LocaleController.getString(isChannelAndNotMegaGroup ? R.string.CommunityInviteOnlyChannelInfo : R.string.CommunityInviteOnlyGroupInfo));
+        textView.setTextColor(getThemedColor(i11));
+        textView.setText(spannableStringBuilder);
+        this.containerView.addView(dVar2, b6.f(48.0f, 80, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(70.0f) + AndroidUtilities.navigationBarHeight));
+        this.containerView.addView(dVar, b6.f(48.0f, 80, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(12.0f) + AndroidUtilities.navigationBarHeight));
+        this.V.N(false);
     }
 
-    public final void a(int i10, TLRPC.Chat chat) {
-        if (chat == null) {
-            return;
-        }
-        TLRPC.ChatFull chatFull = MessagesController.getInstance(i10).getChatFull(chat.id);
-        setTitle(DialogObject.getShortName(chat));
-        setSubtitle(LocaleController.formatPluralString("CommunityWithChats", chatFull != null ? chatFull.linked_peers.size() : 0, new Object[0]));
-        this.b.e(chat, new z8(chat));
+    @Override // org.telegram.ui.Components.sa
+    public final ql0 v(rl0 rl0Var) {
+        w51 w51Var = new w51(this.d, getContext(), this.currentAccount, 0, true, new d4(this, 26), this.resourcesProvider);
+        this.V = w51Var;
+        w51Var.r = false;
+        return w51Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Drawable drawable = k6.S0;
-        p9 p9Var = this.b;
-        r.a(canvas, drawable, (p9Var.getWidth() / 2.0f) + p9Var.getLeft(), (p9Var.getHeight() / 2.0f) + p9Var.getTop(), p9Var.getHeight());
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void e() {
-        int i10 = k6.z6;
-        g6 g6Var = this.a;
-        this.e.setColorFilter(k6.v0(i10, g6Var));
-        this.c.setTextColor(k6.v0(k6.G6, g6Var));
-        this.d.setTextColor(k6.v0(i10, g6Var));
-    }
-
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+    @Override // org.telegram.ui.Components.sa
+    public final CharSequence y() {
         return null;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(60.0f), TLObject.FLAG_30));
-    }
-
-    public void setSubtitle(CharSequence charSequence) {
-        this.d.setText(charSequence);
-    }
-
-    public void setTitle(CharSequence charSequence) {
-        this.c.setText(charSequence);
     }
 }

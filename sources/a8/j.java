@@ -11,13 +11,13 @@ import com.google.android.gms.common.api.k;
 import com.google.android.gms.common.api.l;
 import com.google.android.gms.internal.clearcut.a2;
 import j8.o;
-import m.r3;
+import m.s3;
 import m8.z0;
 import u5.t;
 import u5.w;
 import u5.x;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class j {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final class j {
         this.a = i10;
     }
 
-    public com.google.android.gms.common.api.c a(Context context, Looper looper, r3 commonSettings, Object obj, k kVar, l lVar) {
+    public com.google.android.gms.common.api.c a(Context context, Looper looper, s3 commonSettings, Object obj, k kVar, l lVar) {
         switch (this.a) {
             case 0:
                 return new p7.a(context, looper, kVar, lVar, commonSettings);

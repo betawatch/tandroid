@@ -1,34 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ge0 implements Utilities.Callback {
+public final class ge0 implements NotificationCenter.NotificationCenterDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ String[] b;
-    public final /* synthetic */ Activity c;
-    public final /* synthetic */ Utilities.Callback d;
+    public final /* synthetic */ Utilities.Callback b;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate[] c;
 
-    public /* synthetic */ ge0(String[] strArr, Activity activity, Utilities.Callback callback, int i10) {
+    public ge0(int i10, Utilities.Callback callback, NotificationCenter.NotificationCenterDelegate[] notificationCenterDelegateArr) {
         this.a = i10;
-        this.b = strArr;
-        this.c = activity;
-        this.d = callback;
+        this.b = callback;
+        this.c = notificationCenterDelegateArr;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        int i10 = this.a;
-        String[] strArr = this.b;
-        switch (i10) {
-            case 0:
-                ie0.a(strArr, this.c, this.d);
-                break;
-            default:
-                ie0.b(strArr, this.c, this.d);
-                break;
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        int i12 = NotificationCenter.activityPermissionsGranted;
+        if (i10 == i12) {
+            int intValue = ((Integer) objArr[0]).intValue();
+            int[] iArr = (int[]) objArr[2];
+            if (intValue == this.a) {
+                Utilities.Callback callback = this.b;
+                if (callback != null) {
+                    callback.run(iArr);
+                }
+                NotificationCenter.getGlobalInstance().removeObserver(this.c[0], i12);
+            }
         }
     }
 }

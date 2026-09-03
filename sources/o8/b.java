@@ -1,6 +1,6 @@
 package o8;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class b extends g0 {
     public final /* synthetic */ int h;
@@ -15,7 +15,7 @@ public final class b extends g0 {
     public final void b() {
         switch (this.h) {
             case 0:
-                c cVar = (c) ((jf.a) this.n).b;
+                c cVar = (c) ((hf.a) this.n).b;
                 cVar.b.b("unlinkToDeath", new Object[0]);
                 cVar.n.asBinder().unlinkToDeath(cVar.k, 0);
                 cVar.n = null;

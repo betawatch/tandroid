@@ -11,7 +11,7 @@ import android.os.Looper;
 import android.util.Base64;
 import b7.w0;
 import com.google.android.gms.fido.common.Transport;
-import j7.y6;
+import j7.a7;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.concurrent.Executor;
@@ -36,7 +36,7 @@ import q6.x;
 import q6.y;
 import v0.i;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class e extends b1.d {
     public final Context e;
@@ -94,8 +94,8 @@ public final class e extends b1.d {
                                 }
                                 str4 = "error";
                                 jSONObject = jSONObject3;
-                            } catch (JSONException e6) {
-                                throw new RuntimeException("Error encoding AuthenticatorErrorResponse to JSON object", e6);
+                            } catch (JSONException e) {
+                                throw new RuntimeException("Error encoding AuthenticatorErrorResponse to JSON object", e);
                             }
                         } else {
                             jSONObject = null;
@@ -116,8 +116,8 @@ public final class e extends b1.d {
                 Bundle bundle = new Bundle();
                 bundle.putString("androidx.credentials.BUNDLE_KEY_REGISTRATION_RESPONSE_JSON", jSONObject4);
                 return new v0.f(jSONObject4, bundle);
-            } catch (JSONException e10) {
-                throw new RuntimeException("Error encoding PublicKeyCredential to JSON object", e10);
+            } catch (JSONException e6) {
+                throw new RuntimeException("Error encoding PublicKeyCredential to JSON object", e6);
             }
         } catch (Throwable th2) {
             throw new w0.c("The PublicKeyCredential response json had an unexpected exception when parsing: " + th2.getMessage(), 2);
@@ -153,7 +153,7 @@ public final class e extends b1.d {
             }
         }
         JSONObject jSONObject = new JSONObject(str2);
-        byte[] a2 = y6.a(jSONObject);
+        byte[] a2 = a7.a(jSONObject);
         JSONObject jSONObject2 = jSONObject.getJSONObject("user");
         String str3 = "id";
         String string = jSONObject2.getString("id");
@@ -251,8 +251,8 @@ public final class e extends b1.d {
                             arrayList.add(Transport.a(jSONArray4.getString(i13)));
                             i13++;
                             jSONArray4 = jSONArray5;
-                        } catch (o6.a e6) {
-                            throw new y0.a(new x0.a(4), e6.getMessage());
+                        } catch (o6.a e) {
+                            throw new y0.a(new x0.a(4), e.getMessage());
                         }
                     }
                 } else {

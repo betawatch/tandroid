@@ -5,13 +5,13 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.List;
-import k7.t7;
+import k7.s7;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class o0 {
     public static final List a = tc.h.c(Application.class, i0.class);
-    public static final List b = t7.a(i0.class);
+    public static final List b = s7.a(i0.class);
 
     public static final Constructor a(List signature, Class cls) {
         kotlin.jvm.internal.j.e(signature, "signature");
@@ -34,12 +34,12 @@ public abstract class o0 {
     public static final p0 b(Class cls, Constructor constructor, Object... objArr) {
         try {
             return (p0) constructor.newInstance(Arrays.copyOf(objArr, objArr.length));
-        } catch (IllegalAccessException e6) {
-            throw new RuntimeException("Failed to access " + cls, e6);
-        } catch (InstantiationException e10) {
-            throw new RuntimeException("A " + cls + " cannot be instantiated.", e10);
-        } catch (InvocationTargetException e11) {
-            throw new RuntimeException("An exception happened in constructor of " + cls, e11.getCause());
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException("Failed to access " + cls, e);
+        } catch (InstantiationException e6) {
+            throw new RuntimeException("A " + cls + " cannot be instantiated.", e6);
+        } catch (InvocationTargetException e10) {
+            throw new RuntimeException("An exception happened in constructor of " + cls, e10.getCause());
         }
     }
 }

@@ -18,19 +18,18 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseCommonRegistrar;
-import eg.t2;
+import eg.v0;
 import f3.g;
 import f3.h;
 import f5.m;
 import f5.o;
-import fg.v0;
+import gg.i1;
+import gg.t0;
+import gg.v2;
+import gg.x1;
 import h5.d0;
 import h5.j;
 import h5.k;
-import hg.i1;
-import hg.t0;
-import hg.v2;
-import hg.x1;
 import j3.a2;
 import j3.n0;
 import java.util.ArrayList;
@@ -42,15 +41,16 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicBoolean;
-import lh.n3;
-import lh.p5;
-import lh.q5;
-import lh.s;
-import lh.u2;
-import lh.w3;
-import mh.g5;
-import mh.p;
-import mh.r3;
+import kf.k0;
+import kh.m3;
+import kh.o5;
+import kh.p5;
+import kh.s;
+import kh.u2;
+import kh.v3;
+import lh.g5;
+import lh.q;
+import lh.r3;
 import o4.r;
 import o4.s0;
 import org.telegram.messenger.AndroidUtilities;
@@ -67,17 +67,17 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.c2;
 import org.telegram.ui.ActionBar.d2;
-import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.i51;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.jl0;
+import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.or0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.ig1;
-import org.telegram.ui.jy;
 import org.telegram.ui.ko0;
-import org.telegram.ui.py;
+import org.telegram.ui.ky;
+import org.telegram.ui.qy;
 import org.telegram.ui.sf1;
 import org.telegram.ui.vo0;
 import s8.i0;
@@ -86,9 +86,9 @@ import s8.t;
 import s8.v;
 import y2.i;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements OnFailureListener, ba.a, OnCompleteListener, Continuation, g3.b, f3.f, m, c2, ko0, jy, c9.e, k, j, r3, Utilities.Callback5, jl0, ig1 {
+public final /* synthetic */ class b implements OnFailureListener, ba.a, OnCompleteListener, Continuation, g3.b, c2, f3.f, m, ko0, ky, c9.f, k, j, r3, Utilities.Callback5, il0, ig1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -99,22 +99,22 @@ public final /* synthetic */ class b implements OnFailureListener, ba.a, OnCompl
         this.c = obj2;
     }
 
-    @Override // org.telegram.ui.jy
+    @Override // org.telegram.ui.ky
     public /* synthetic */ boolean C() {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.jy
-    public /* synthetic */ boolean J(py pyVar) {
+    @Override // org.telegram.ui.ky
+    public /* synthetic */ boolean I(qy qyVar) {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Components.jl0
-    public /* synthetic */ boolean Y0(View view) {
+    @Override // org.telegram.ui.Components.il0
+    public /* synthetic */ boolean Z0(View view) {
         return false;
     }
 
@@ -206,14 +206,14 @@ public final /* synthetic */ class b implements OnFailureListener, ba.a, OnCompl
         return d;
     }
 
-    @Override // mh.r3
+    @Override // lh.r3
     public void b(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, boolean z4) {
-        n3 n3Var = (n3) this.b;
+        m3 m3Var = (m3) this.b;
         TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) this.c;
-        or0 or0Var = n3Var.a;
-        n3Var.e.l.remove(savedStarGift);
-        n3Var.f(true);
-        int i10 = n3Var.b;
+        or0 or0Var = m3Var.a;
+        m3Var.e.l.remove(savedStarGift);
+        m3Var.f(true);
+        int i10 = m3Var.b;
         if (j10 == UserConfig.getInstance(i10).getClientUserId()) {
             qc a02 = qc.a0(or0Var.a);
             TLRPC.Document document = tL_starGiftUnique.getDocument();
@@ -222,7 +222,7 @@ public final /* synthetic */ class b implements OnFailureListener, ba.a, OnCompl
             StringBuilder sb = new StringBuilder();
             sb.append(tL_starGiftUnique.title);
             sb.append(" #");
-            ic O = a02.O(document, string, LocaleController.formatString(i11, l.d.l(tL_starGiftUnique.num, ',', sb)));
+            ic O = a02.O(document, string, LocaleController.formatString(i11, k0.l(tL_starGiftUnique.num, ',', sb)));
             O.r = false;
             O.j();
         } else {
@@ -236,15 +236,69 @@ public final /* synthetic */ class b implements OnFailureListener, ba.a, OnCompl
         }
     }
 
-    @Override // org.telegram.ui.Components.jl0
+    @Override // org.telegram.ui.Components.il0
     public void c(float f10, float f11, int i10, View view) {
-        q5.Q((q5) this.b, (p5) this.c, i10);
+        p5.Q((p5) this.b, (o5) this.c, i10);
     }
 
     @Override // h5.k
     public void d(Object obj, h5.g gVar) {
         k3.b bVar = (k3.b) obj;
         bVar.a((a2) this.c, new f7.b(gVar, ((k3.f) this.b).e));
+    }
+
+    @Override // c9.f
+    public Object d0(c5.j jVar) {
+        String valueOf;
+        String str = (String) this.b;
+        s0.b bVar = (s0.b) this.c;
+        Context context = (Context) jVar.a(Context.class);
+        switch (bVar.a) {
+            case 25:
+                ApplicationInfo applicationInfo = context.getApplicationInfo();
+                if (applicationInfo != null) {
+                    valueOf = String.valueOf(applicationInfo.targetSdkVersion);
+                    break;
+                }
+                valueOf = "";
+                break;
+            case 26:
+                valueOf = FirebaseCommonRegistrar.a(context);
+                break;
+            case 27:
+                int i10 = Build.VERSION.SDK_INT;
+                if (!context.getPackageManager().hasSystemFeature("android.hardware.type.television")) {
+                    if (!context.getPackageManager().hasSystemFeature("android.hardware.type.watch")) {
+                        if (i10 >= 23 && context.getPackageManager().hasSystemFeature("android.hardware.type.automotive")) {
+                            valueOf = "auto";
+                            break;
+                        } else {
+                            if (i10 >= 26 && context.getPackageManager().hasSystemFeature("android.hardware.type.embedded")) {
+                                valueOf = "embedded";
+                                break;
+                            }
+                            valueOf = "";
+                            break;
+                        }
+                    } else {
+                        valueOf = "watch";
+                        break;
+                    }
+                } else {
+                    valueOf = "tv";
+                    break;
+                }
+                break;
+            default:
+                String installerPackageName = context.getPackageManager().getInstallerPackageName(context.getPackageName());
+                if (installerPackageName != null) {
+                    valueOf = FirebaseCommonRegistrar.b(installerPackageName);
+                    break;
+                }
+                valueOf = "";
+                break;
+        }
+        return new ja.a(str, valueOf);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:37:0x0096  */
@@ -267,7 +321,7 @@ public final /* synthetic */ class b implements OnFailureListener, ba.a, OnCompl
         Object obj = this.c;
         f5.h hVar = (f5.h) this.b;
         switch (i17) {
-            case 9:
+            case 10:
                 int i18 = ((int[]) obj)[i10];
                 int i19 = hVar.r;
                 int i20 = hVar.s;
@@ -373,60 +427,6 @@ public final /* synthetic */ class b implements OnFailureListener, ba.a, OnCompl
         }
     }
 
-    @Override // c9.e
-    public Object e0(c5.j jVar) {
-        String valueOf;
-        String str = (String) this.b;
-        sg.a aVar = (sg.a) this.c;
-        Context context = (Context) jVar.a(Context.class);
-        switch (aVar.a) {
-            case 24:
-                ApplicationInfo applicationInfo = context.getApplicationInfo();
-                if (applicationInfo != null) {
-                    valueOf = String.valueOf(applicationInfo.targetSdkVersion);
-                    break;
-                }
-                valueOf = "";
-                break;
-            case 25:
-                valueOf = FirebaseCommonRegistrar.a(context);
-                break;
-            case 26:
-                int i10 = Build.VERSION.SDK_INT;
-                if (!context.getPackageManager().hasSystemFeature("android.hardware.type.television")) {
-                    if (!context.getPackageManager().hasSystemFeature("android.hardware.type.watch")) {
-                        if (i10 >= 23 && context.getPackageManager().hasSystemFeature("android.hardware.type.automotive")) {
-                            valueOf = "auto";
-                            break;
-                        } else {
-                            if (i10 >= 26 && context.getPackageManager().hasSystemFeature("android.hardware.type.embedded")) {
-                                valueOf = "embedded";
-                                break;
-                            }
-                            valueOf = "";
-                            break;
-                        }
-                    } else {
-                        valueOf = "watch";
-                        break;
-                    }
-                } else {
-                    valueOf = "tv";
-                    break;
-                }
-                break;
-            default:
-                String installerPackageName = context.getPackageManager().getInstallerPackageName(context.getPackageName());
-                if (installerPackageName != null) {
-                    valueOf = FirebaseCommonRegistrar.b(installerPackageName);
-                    break;
-                }
-                valueOf = "";
-                break;
-        }
-        return new ja.a(str, valueOf);
-    }
-
     @Override // ba.a
     public void f(ba.b bVar) {
         ba.a aVar = (ba.a) this.b;
@@ -435,10 +435,22 @@ public final /* synthetic */ class b implements OnFailureListener, ba.a, OnCompl
         aVar2.f(bVar);
     }
 
-    @Override // g3.b
-    public Object g() {
+    @Override // org.telegram.ui.ig1
+    public void g(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
         switch (this.a) {
-            case 5:
+            case 27:
+                ((q) this.b).h0(false, 0L, tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.c);
+                break;
+            default:
+                ((g5) this.b).M1(tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.c);
+                break;
+        }
+    }
+
+    @Override // g3.b
+    public Object h() {
+        switch (this.a) {
+            case 6:
                 e3.g gVar = (e3.g) this.b;
                 Iterable iterable = (Iterable) this.c;
                 h hVar = (h) ((f3.d) gVar.c);
@@ -458,18 +470,6 @@ public final /* synthetic */ class b implements OnFailureListener, ba.a, OnCompl
         return null;
     }
 
-    @Override // org.telegram.ui.ig1
-    public void i(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
-        switch (this.a) {
-            case 27:
-                ((p) this.b).h0(false, 0L, tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.c);
-                break;
-            default:
-                ((g5) this.b).M1(tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.c);
-                break;
-        }
-    }
-
     @Override // h5.j
     public void invoke(Object obj) {
         switch (this.a) {
@@ -483,9 +483,9 @@ public final /* synthetic */ class b implements OnFailureListener, ba.a, OnCompl
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public void j(d2 d2Var, int i10) {
+    public void l(d2 d2Var, int i10) {
         switch (this.a) {
-            case 11:
+            case 8:
                 v0.Q((v0) this.b, (ArrayList) this.c);
                 break;
             case 12:
@@ -499,7 +499,7 @@ public final /* synthetic */ class b implements OnFailureListener, ba.a, OnCompl
                 break;
             case 22:
                 s sVar = (s) this.b;
-                eh.b bVar = (eh.b) this.c;
+                dh.b bVar = (dh.b) this.c;
                 try {
                     int parseInt = Integer.parseInt(bVar.getText().toString().trim());
                     sVar.X(parseInt);
@@ -527,7 +527,7 @@ public final /* synthetic */ class b implements OnFailureListener, ba.a, OnCompl
             default:
                 g5 g5Var = (g5) this.b;
                 v2[] v2VarArr = (v2[]) this.c;
-                af.f g10 = d2Var.g(i10, true, true);
+                ze.c g10 = d2Var.g(i10, true, true);
                 TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
                 b bVar2 = new b(29, g5Var, twoStepVerificationActivity);
                 twoStepVerificationActivity.W = 2;
@@ -545,15 +545,15 @@ public final /* synthetic */ class b implements OnFailureListener, ba.a, OnCompl
     }
 
     @Override // com.google.android.gms.tasks.OnFailureListener
-    public void onFailure(Exception e6) {
+    public void onFailure(Exception e) {
         w0.i gVar;
         switch (this.a) {
             case 0:
                 f fVar = (f) this.b;
                 CancellationSignal cancellationSignal = (CancellationSignal) this.c;
-                kotlin.jvm.internal.j.e(e6, "e");
-                String str = ((e6 instanceof com.google.android.gms.common.api.f) && b1.d.b.contains(Integer.valueOf(((com.google.android.gms.common.api.f) e6).getStatusCode()))) ? "GET_INTERRUPTED" : "GET_NO_CREDENTIALS";
-                String str2 = "During begin sign in, failure response from one tap: " + e6.getMessage();
+                kotlin.jvm.internal.j.e(e, "e");
+                String str = ((e instanceof com.google.android.gms.common.api.f) && b1.d.b.contains(Integer.valueOf(((com.google.android.gms.common.api.f) e).getStatusCode()))) ? "GET_INTERRUPTED" : "GET_NO_CREDENTIALS";
+                String str2 = "During begin sign in, failure response from one tap: " + e.getMessage();
                 int hashCode = str.hashCode();
                 if (hashCode == -1567968963) {
                     if (str.equals("GET_CANCELED_TAG")) {
@@ -580,9 +580,9 @@ public final /* synthetic */ class b implements OnFailureListener, ba.a, OnCompl
             case 4:
                 d1.e eVar = (d1.e) this.b;
                 CancellationSignal cancellationSignal2 = (CancellationSignal) this.c;
-                kotlin.jvm.internal.j.e(e6, "e");
-                String str3 = ((e6 instanceof com.google.android.gms.common.api.f) && b1.d.b.contains(Integer.valueOf(((com.google.android.gms.common.api.f) e6).getStatusCode()))) ? "CREATE_INTERRUPTED" : "CREATE_UNKNOWN";
-                String str4 = "During create public key credential, fido registration failure: " + e6.getMessage();
+                kotlin.jvm.internal.j.e(e, "e");
+                String str3 = ((e instanceof com.google.android.gms.common.api.f) && b1.d.b.contains(Integer.valueOf(((com.google.android.gms.common.api.f) e).getStatusCode()))) ? "CREATE_INTERRUPTED" : "CREATE_UNKNOWN";
+                String str4 = "During create public key credential, fido registration failure: " + e.getMessage();
                 w0.d bVar = str3.equals("CREATE_CANCELED") ? new w0.b(str4) : str3.equals("CREATE_INTERRUPTED") ? new w0.e(str4) : new w0.c(str4, 2);
                 CredentialProviderPlayServicesImpl.Companion.getClass();
                 if (a1.g.a(cancellationSignal2)) {
@@ -597,15 +597,15 @@ public final /* synthetic */ class b implements OnFailureListener, ba.a, OnCompl
                     throw null;
                 }
             default:
-                t2 t2Var = (t2) this.b;
+                dg.v2 v2Var = (dg.v2) this.b;
                 Bitmap bitmap = (Bitmap) this.c;
-                t2Var.y0 = false;
-                FileLog.e(e6);
-                if (Build.VERSION.SDK_INT >= 24 && (e6 instanceof ya.a) && e6.getMessage() != null && e6.getMessage().contains("segmentation optional module to be downloaded") && t2Var.isAttachedToWindow()) {
-                    AndroidUtilities.runOnUIThread(new a1.e(22, t2Var, bitmap), 2000L);
+                v2Var.y0 = false;
+                FileLog.e(e);
+                if (Build.VERSION.SDK_INT >= 24 && (e instanceof ya.a) && e.getMessage() != null && e.getMessage().contains("segmentation optional module to be downloaded") && v2Var.isAttachedToWindow()) {
+                    AndroidUtilities.runOnUIThread(new a1.e(18, v2Var, bitmap), 2000L);
                     return;
                 } else {
-                    t2Var.z0 = true;
+                    v2Var.z0 = true;
                     return;
                 }
         }
@@ -613,24 +613,24 @@ public final /* synthetic */ class b implements OnFailureListener, ba.a, OnCompl
 
     @Override // org.telegram.messenger.Utilities.Callback5
     public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        w3 w3Var = (w3) this.b;
-        qh.d dVar = (qh.d) this.c;
+        v3 v3Var = (v3) this.b;
+        ph.d dVar = (ph.d) this.c;
         View view = (View) obj2;
-        w3Var.getClass();
-        long j10 = ((TL_stars.SavedStarGift) ((h51) obj).G).gift.id;
-        if (w3Var.b == j10) {
-            w3Var.b = 0L;
+        v3Var.getClass();
+        long j10 = ((TL_stars.SavedStarGift) ((i51) obj).G).gift.id;
+        if (v3Var.b == j10) {
+            v3Var.b = 0L;
         } else {
-            w3Var.b = j10;
+            v3Var.b = j10;
         }
-        dVar.setEnabled(w3Var.b != 0);
+        dVar.setEnabled(v3Var.b != 0);
         if (view.getParent() instanceof ViewGroup) {
             ViewGroup viewGroup = (ViewGroup) view.getParent();
             for (int i10 = 0; i10 < viewGroup.getChildCount(); i10++) {
                 View childAt = viewGroup.getChildAt(i10);
                 if (childAt instanceof vo0) {
                     vo0 vo0Var = (vo0) childAt;
-                    vo0Var.b(w3Var.b == vo0Var.getGiftId(), true);
+                    vo0Var.b(v3Var.b == vo0Var.getGiftId(), true);
                 }
             }
         }
@@ -646,8 +646,8 @@ public final /* synthetic */ class b implements OnFailureListener, ba.a, OnCompl
         return task;
     }
 
-    @Override // org.telegram.ui.jy
-    public boolean v(py pyVar, ArrayList arrayList, CharSequence charSequence, boolean z4, boolean z10, int i10, int i11, sf1 sf1Var) {
+    @Override // org.telegram.ui.ky
+    public boolean w(qy qyVar, ArrayList arrayList, CharSequence charSequence, boolean z4, boolean z10, int i10, int i11, sf1 sf1Var) {
         switch (this.a) {
             case 16:
                 i1 i1Var = (i1) this.b;
@@ -657,11 +657,11 @@ public final /* synthetic */ class b implements OnFailureListener, ba.a, OnCompl
                     j10 = ((MessagesStorage.TopicKey) arrayList.get(i12)).dialogId;
                     i1Var.n.getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.of(str, j10, null, null, null, true, null, null, null, true, 0, 0, null, false));
                 }
-                pyVar.finishFragment();
-                hg.r.h(j10);
+                qyVar.finishFragment();
+                gg.r.h(j10);
                 break;
             default:
-                ig.e eVar = (ig.e) this.b;
+                hg.e eVar = (hg.e) this.b;
                 String str2 = (String) this.c;
                 long j11 = 0;
                 int i13 = 0;
@@ -671,8 +671,8 @@ public final /* synthetic */ class b implements OnFailureListener, ba.a, OnCompl
                     i13++;
                     eVar = eVar;
                 }
-                pyVar.finishFragment();
-                hg.r.h(j11);
+                qyVar.finishFragment();
+                gg.r.h(j11);
                 break;
         }
         return true;
@@ -684,7 +684,7 @@ public final /* synthetic */ class b implements OnFailureListener, ba.a, OnCompl
         this.c = obj;
     }
 
-    @Override // org.telegram.ui.Components.jl0
-    public /* synthetic */ void r0(View view, float f10, float f11) {
+    @Override // org.telegram.ui.Components.il0
+    public /* synthetic */ void n0(View view, float f10, float f11) {
     }
 }

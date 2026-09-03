@@ -5,9 +5,9 @@ import android.content.Context;
 import android.view.ActionMode;
 import android.view.Menu;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class iv0 extends org.telegram.ui.Cells.c6 {
+public final class iv0 extends org.telegram.ui.Cells.b6 {
     public final /* synthetic */ kv0 C;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -16,24 +16,24 @@ public final class iv0 extends org.telegram.ui.Cells.c6 {
         this.C = kv0Var;
     }
 
-    @Override // org.telegram.ui.Cells.c6
-    public final void g(eh.b bVar, ActionMode actionMode) {
+    @Override // org.telegram.ui.Cells.b6
+    public final void g(dh.b bVar, ActionMode actionMode) {
         if (bVar.isFocused() && bVar.hasSelection()) {
             Menu menu = actionMode.getMenu();
             if (menu.findItem(R.id.copy) == null) {
                 return;
             }
-            xn.k8(menu, this.C.d.f.h, false, true, true, true);
+            zn.k8(menu, this.C.d.f.h, false, true, true, true);
         }
     }
 
-    @Override // org.telegram.ui.Cells.c6
+    @Override // org.telegram.ui.Cells.b6
     public final void i(boolean z4) {
         mv0.d0(this.C.d, this, z4);
     }
 
-    @Override // org.telegram.ui.Cells.c6
-    public final void j(org.telegram.ui.Cells.c6 c6Var) {
-        mv0.e0(this.C.d, c6Var);
+    @Override // org.telegram.ui.Cells.b6
+    public final void j(org.telegram.ui.Cells.b6 b6Var) {
+        mv0.e0(this.C.d, b6Var);
     }
 }

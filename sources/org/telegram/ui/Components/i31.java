@@ -5,16 +5,16 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class i31 extends f2.a1 {
+public final class i31 extends f2.z0 {
     public final /* synthetic */ v31 a;
 
     public i31(v31 v31Var) {
         this.a = v31Var;
     }
 
-    @Override // f2.a1
+    @Override // f2.z0
     public final void a(RecyclerView recyclerView, int i10) {
         v31 v31Var = this.a;
         h31 h31Var = v31Var.E;
@@ -27,11 +27,11 @@ public final class i31 extends f2.a1 {
         }
     }
 
-    @Override // f2.a1
+    @Override // f2.z0
     public final void b(RecyclerView recyclerView, int i10, int i11) {
         ViewGroup viewGroup;
         v31 v31Var = this.a;
-        viewGroup = ((org.telegram.ui.ActionBar.h3) v31Var).containerView;
+        viewGroup = ((org.telegram.ui.ActionBar.g3) v31Var).containerView;
         viewGroup.invalidate();
         boolean canScrollVertically = v31Var.E.canScrollVertically(1);
         View view = v31Var.I;
@@ -39,7 +39,7 @@ public final class i31 extends f2.a1 {
         if (bool == null || bool.booleanValue() != canScrollVertically) {
             v31Var.N = Boolean.valueOf(canScrollVertically);
             view.animate().cancel();
-            org.telegram.ui.b.p(view.animate().alpha(canScrollVertically ? 1.0f : 0.0f), pr.h, 320L);
+            org.telegram.ui.b.p(view.animate().alpha(canScrollVertically ? 1.0f : 0.0f), mr.h, 320L);
         }
     }
 }

@@ -1,31 +1,50 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.AbstractMap;
-
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class l0 extends f0 {
-    public final /* synthetic */ m0 c;
+public final class l0 extends g0 {
+    public static final l0 e = new l0(0, new Object[0]);
+    public final transient Object[] c;
+    public final transient int d;
 
-    public l0(m0 m0Var) {
-        this.c = m0Var;
+    public l0(int i10, Object[] objArr) {
+        this.c = objArr;
+        this.d = i10;
     }
 
     @Override // java.util.List
-    public final /* bridge */ /* synthetic */ Object get(int i10) {
-        m0 m0Var = this.c;
-        j7.t5.a(i10, m0Var.f);
-        Object[] objArr = m0Var.e;
-        int i11 = i10 + i10;
-        Object obj = objArr[i11];
+    public final Object get(int i10) {
+        j7.v5.a(i10, this.d);
+        Object obj = this.c[i10];
         obj.getClass();
-        Object obj2 = objArr[i11 + 1];
-        obj2.getClass();
-        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
+        return obj;
+    }
+
+    @Override // com.google.android.gms.internal.cast.g0, com.google.android.gms.internal.cast.d0
+    public final int i(Object[] objArr) {
+        Object[] objArr2 = this.c;
+        int i10 = this.d;
+        System.arraycopy(objArr2, 0, objArr, 0, i10);
+        return i10;
+    }
+
+    @Override // com.google.android.gms.internal.cast.d0
+    public final int n() {
+        return this.d;
+    }
+
+    @Override // com.google.android.gms.internal.cast.d0
+    public final int o() {
+        return 0;
+    }
+
+    @Override // com.google.android.gms.internal.cast.d0
+    public final Object[] p() {
+        return this.c;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final int size() {
-        return this.c.f;
+        return this.d;
     }
 }

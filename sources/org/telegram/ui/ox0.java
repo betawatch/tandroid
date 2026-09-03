@@ -9,7 +9,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ox0 implements org.telegram.ui.ActionBar.c2 {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class ox0 implements org.telegram.ui.ActionBar.c2 {
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    public void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         String string;
         switch (this.a) {
             case 0:
@@ -48,8 +48,8 @@ public final /* synthetic */ class ox0 implements org.telegram.ui.ActionBar.c2 {
                     if (dialog != null) {
                         dialog.dismiss();
                     }
-                } catch (Exception e6) {
-                    FileLog.e(e6);
+                } catch (Exception e) {
+                    FileLog.e(e);
                 }
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(privacySettingsActivity.getParentActivity());
                 alertDialog$Builder.a.O = LocaleController.getString("PrivacyPaymentsClearAlertTitle", R.string.PrivacyPaymentsClearAlertTitle);
@@ -61,7 +61,7 @@ public final /* synthetic */ class ox0 implements org.telegram.ui.ActionBar.c2 {
                 privacySettingsActivity.showDialog(d2Var2);
                 TextView textView = (TextView) d2Var2.d(-1);
                 if (textView != null) {
-                    textView.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.q7, false));
+                    textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, false));
                     break;
                 }
                 break;
@@ -73,7 +73,7 @@ public final /* synthetic */ class ox0 implements org.telegram.ui.ActionBar.c2 {
                 tL_payments_clearSavedInfo.info = zArr[0];
                 privacySettingsActivity2.getUserConfig().tmpPassword = null;
                 privacySettingsActivity2.getUserConfig().saveConfig(false);
-                privacySettingsActivity2.getConnectionsManager().sendRequest(tL_payments_clearSavedInfo, new oh.p5(4));
+                privacySettingsActivity2.getConnectionsManager().sendRequest(tL_payments_clearSavedInfo, new nh.p5(4));
                 boolean z4 = zArr[0];
                 if (z4 && zArr[1]) {
                     string = LocaleController.getString("PrivacyPaymentsPaymentShippingCleared", R.string.PrivacyPaymentsPaymentShippingCleared);
@@ -101,13 +101,13 @@ public final /* synthetic */ class ox0 implements org.telegram.ui.ActionBar.c2 {
                 privacySettingsActivity3.getContactsController().deleteAllContacts(new nx0(privacySettingsActivity3, 1));
                 break;
             case 4:
-                og0 og0Var = new og0();
+                pg0 pg0Var = new pg0();
                 PrivacySettingsActivity privacySettingsActivity4 = this.b;
                 nx0 nx0Var = new nx0(privacySettingsActivity4, 2);
-                og0Var.C = 3;
-                og0Var.a = 12;
-                og0Var.a0 = nx0Var;
-                privacySettingsActivity4.presentFragment(og0Var);
+                pg0Var.C = 3;
+                pg0Var.a = 12;
+                pg0Var.a0 = nx0Var;
+                privacySettingsActivity4.presentFragment(pg0Var);
                 break;
         }
     }

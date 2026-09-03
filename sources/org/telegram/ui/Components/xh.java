@@ -5,31 +5,31 @@ import java.util.ArrayList;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SendMessagesHelper;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class xh implements zj {
-    public final /* synthetic */ mi a;
+public final class xh implements xj {
+    public final /* synthetic */ li a;
 
-    public xh(mi miVar) {
-        this.a = miVar;
+    public xh(li liVar) {
+        this.a = liVar;
     }
 
-    @Override // org.telegram.ui.Components.zj
+    @Override // org.telegram.ui.Components.xj
     public final void O() {
         this.a.B1(true);
     }
 
-    @Override // org.telegram.ui.Components.zj
+    @Override // org.telegram.ui.Components.xj
     public final void l(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z4, int i10, long j10, boolean z10, long j11) {
-        mi miVar = this.a;
-        zj zjVar = miVar.U;
-        if (zjVar != null) {
-            zjVar.l(arrayList, str, arrayList2, arrayList3, z4, i10, j10, z10, j11);
+        li liVar = this.a;
+        xj xjVar = liVar.U;
+        if (xjVar != null) {
+            xjVar.l(arrayList, str, arrayList2, arrayList3, z4, i10, j10, z10, j11);
             return;
         }
-        Object obj = miVar.c0;
-        if (obj instanceof zj) {
-            ((zj) obj).l(arrayList, str, arrayList2, arrayList3, z4, i10, j10, z10, j11);
+        Object obj = liVar.c0;
+        if (obj instanceof xj) {
+            ((xj) obj).l(arrayList, str, arrayList2, arrayList3, z4, i10, j10, z10, j11);
             return;
         }
         if (obj instanceof org.telegram.ui.fn0) {
@@ -45,33 +45,33 @@ public final class xh implements zj {
         }
     }
 
-    @Override // org.telegram.ui.Components.zj
+    @Override // org.telegram.ui.Components.xj
     public final void m(long j10, ArrayList arrayList, boolean z4, int i10) {
-        mi miVar = this.a;
-        zj zjVar = miVar.U;
-        if (zjVar != null) {
-            zjVar.m(j10, arrayList, z4, i10);
+        li liVar = this.a;
+        xj xjVar = liVar.U;
+        if (xjVar != null) {
+            xjVar.m(j10, arrayList, z4, i10);
             return;
         }
-        org.telegram.ui.ActionBar.p2 p2Var = miVar.c0;
-        if (p2Var instanceof org.telegram.ui.xn) {
-            ((org.telegram.ui.xn) p2Var).m(j10, arrayList, z4, i10);
+        org.telegram.ui.ActionBar.p2 p2Var = liVar.c0;
+        if (p2Var instanceof org.telegram.ui.zn) {
+            ((org.telegram.ui.zn) p2Var).m(j10, arrayList, z4, i10);
         } else if (p2Var instanceof org.telegram.ui.fn0) {
             ((org.telegram.ui.fn0) p2Var).G1(arrayList);
         }
     }
 
-    @Override // org.telegram.ui.Components.zj
+    @Override // org.telegram.ui.Components.xj
     public final void x() {
-        mi miVar = this.a;
-        zj zjVar = miVar.U;
-        if (zjVar != null) {
-            zjVar.x();
+        li liVar = this.a;
+        xj xjVar = liVar.U;
+        if (xjVar != null) {
+            xjVar.x();
             return;
         }
-        Object obj = miVar.c0;
-        if (obj instanceof zj) {
-            ((zj) obj).x();
+        Object obj = liVar.c0;
+        if (obj instanceof xj) {
+            ((xj) obj).x();
             return;
         }
         if (obj instanceof org.telegram.ui.fn0) {
@@ -82,8 +82,8 @@ public final class xh implements zj {
                 intent.putExtra("android.intent.extra.ALLOW_MULTIPLE", true);
                 intent.setType("*/*");
                 fn0Var.startActivityForResult(intent, 21);
-            } catch (Exception e6) {
-                FileLog.e(e6);
+            } catch (Exception e) {
+                FileLog.e(e);
             }
         }
     }

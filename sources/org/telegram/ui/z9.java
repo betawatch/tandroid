@@ -1,25 +1,19 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import com.google.android.gms.cast.MediaError;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class z9 extends EditTextBoldCursor {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ aa c;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ z9(aa aaVar, Context context, int i10) {
-        super(context);
-        this.b = i10;
-        this.c = aaVar;
+public final class z9 extends s5.g {
+    @Override // s5.g
+    public final void b(MediaError mediaError) {
+        FileLog.e("Chromecast Media Error: " + mediaError);
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor
-    public final org.telegram.ui.ActionBar.g6 getResourcesProvider() {
-        switch (this.b) {
-        }
-        return this.c.d;
+    @Override // s5.g
+    public final void g() {
+        FileLog.d("onStatusUpdated");
+        d1.f.C();
     }
 }

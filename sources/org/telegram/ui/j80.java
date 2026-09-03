@@ -1,50 +1,28 @@
 package org.telegram.ui;
 
-import android.telephony.PhoneNumberUtils;
-import j$.util.function.Predicate$-CC;
-import java.util.function.Predicate;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j80 implements Predicate {
+public final /* synthetic */ class j80 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ LanguageSelectActivity b;
 
-    public /* synthetic */ j80(Object obj, int i10) {
+    public /* synthetic */ j80(LanguageSelectActivity languageSelectActivity, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = languageSelectActivity;
     }
 
-    public /* synthetic */ Predicate and(Predicate predicate) {
-        int i10 = this.a;
-        return Predicate$-CC.$default$and(this, predicate);
-    }
-
-    public /* synthetic */ Predicate negate() {
-        switch (this.a) {
-        }
-        return Predicate$-CC.$default$negate(this);
-    }
-
-    public /* synthetic */ Predicate or(Predicate predicate) {
-        int i10 = this.a;
-        return Predicate$-CC.$default$or(this, predicate);
-    }
-
-    @Override // java.util.function.Predicate
-    public final boolean test(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                String str = (String) obj;
-                return str != null && str.equals((String) this.b);
+                LanguageSelectActivity.Y(this.b);
+                break;
             case 1:
-                return PhoneNumberUtils.compare((String) this.b, (String) obj);
-            case 2:
-                String str2 = (String) obj;
-                return str2 != null && str2.equals((String) this.b);
+                LanguageSelectActivity.W(this.b);
+                break;
             default:
-                return xn.v1((xn) this.b, (TLRPC.MessageEntity) obj);
+                this.b.a.l();
+                break;
         }
     }
 }

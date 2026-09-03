@@ -3,9 +3,9 @@ package org.telegram.ui;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class az0 extends f2.a1 {
+public final class az0 extends f2.z0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ ProfileActivity b;
 
@@ -14,7 +14,7 @@ public final class az0 extends f2.a1 {
         this.b = profileActivity;
     }
 
-    @Override // f2.a1
+    @Override // f2.z0
     public final void a(RecyclerView recyclerView, int i10) {
         switch (this.a) {
             case 0:
@@ -44,14 +44,14 @@ public final class az0 extends f2.a1 {
         }
     }
 
-    @Override // f2.a1
+    @Override // f2.z0
     public void b(RecyclerView recyclerView, int i10, int i11) {
         switch (this.a) {
             case 1:
                 ProfileActivity profileActivity = this.b;
-                org.telegram.ui.Components.m40 m40Var = profileActivity.U;
-                if (m40Var != null) {
-                    m40Var.b(true);
+                org.telegram.ui.Components.l40 l40Var = profileActivity.U;
+                if (l40Var != null) {
+                    l40Var.b(true);
                 }
                 profileActivity.A3();
                 if (profileActivity.z1 != null && !profileActivity.A1 && profileActivity.c.N0() > profileActivity.s4 - 8) {

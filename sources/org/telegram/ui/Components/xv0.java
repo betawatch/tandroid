@@ -5,22 +5,22 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xv0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ TLRPC.Document b;
     public final /* synthetic */ int c;
     public final /* synthetic */ MessageObject d;
-    public final /* synthetic */ org.telegram.ui.Cells.t1 e;
+    public final /* synthetic */ org.telegram.ui.Cells.s1 e;
     public final /* synthetic */ TLRPC.TL_messages_stickerSet f;
 
-    public /* synthetic */ xv0(TLRPC.Document document, int i10, MessageObject messageObject, org.telegram.ui.Cells.t1 t1Var, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i11) {
+    public /* synthetic */ xv0(TLRPC.Document document, int i10, MessageObject messageObject, org.telegram.ui.Cells.s1 s1Var, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i11) {
         this.a = i11;
         this.b = document;
         this.c = i10;
         this.d = messageObject;
-        this.e = t1Var;
+        this.e = s1Var;
         this.f = tL_messages_stickerSet;
     }
 

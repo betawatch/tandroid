@@ -1,53 +1,31 @@
 package oh;
 
-import android.view.ViewGroup;
-import org.telegram.ui.Components.el0;
-import org.telegram.ui.hx;
+import android.content.Context;
+import nh.l6;
+import org.telegram.ui.Components.zw0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
-public final class l extends cg.c {
-    public final boolean d;
-    public final /* synthetic */ hx e;
+public final class l extends q {
+    public final /* synthetic */ r v;
 
-    public l(hx hxVar, boolean z4) {
-        this.e = hxVar;
-        this.d = z4;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l(r rVar, Context context) {
+        super(rVar, context);
+        this.v = rVar;
     }
 
-    @Override // org.telegram.ui.Components.rl0
-    public final boolean D(f2.m1 m1Var) {
-        return false;
-    }
-
-    @Override // f2.p0
-    public final int h() {
-        boolean z4 = this.d;
-        hx hxVar = this.e;
-        return (z4 ? hxVar.y : hxVar.x).size();
-    }
-
-    @Override // f2.p0
-    public final void v(f2.m1 m1Var, int i10) {
-        o oVar = (o) m1Var.a;
-        oVar.b = i10;
-        boolean z4 = this.d;
-        hx hxVar = this.e;
-        if (z4) {
-            oVar.setDialogId(((m) hxVar.y.get(i10)).c);
-        } else {
-            oVar.setDialogId(((m) hxVar.x.get(i10)).c);
+    @Override // oh.q, f2.o0
+    public final void l() {
+        super.l();
+        r rVar = this.v;
+        if (rVar.r.getVisibility() == 0) {
+            rVar.w.l();
         }
-    }
-
-    @Override // f2.p0
-    public final f2.m1 x(ViewGroup viewGroup, int i10) {
-        o oVar = new o(this.e, viewGroup.getContext());
-        boolean z4 = this.d;
-        oVar.K = z4;
-        if (z4) {
-            oVar.d(1.0f, 1.0f, 0.0f, false);
+        zw0 zw0Var = rVar.y;
+        if (zw0Var != null) {
+            l6 l6Var = this.e;
+            zw0Var.e(l6Var != null && l6Var.k(), true);
         }
-        return new el0(oVar);
     }
 }

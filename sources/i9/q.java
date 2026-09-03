@@ -18,8 +18,9 @@ import k9.o0;
 import k9.p0;
 import k9.u0;
 import q5.c0;
+import vh.w2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class q {
     public static final HashMap f;
@@ -33,8 +34,8 @@ public final class q {
     static {
         HashMap hashMap = new HashMap();
         f = hashMap;
-        w.c.i(5, hashMap, "armeabi", 6, "armeabi-v7a");
-        w.c.i(9, hashMap, "arm64-v8a", 0, "x86");
+        w2.i(5, hashMap, "armeabi", 6, "armeabi-v7a");
+        w2.i(9, hashMap, "arm64-v8a", 0, "x86");
         hashMap.put("x86_64", 1);
         Locale locale = Locale.US;
         g = "Crashlytics Android SDK/18.6.0";
@@ -48,7 +49,7 @@ public final class q {
         this.e = gVar;
     }
 
-    public static p0 c(sf.f fVar, int i10) {
+    public static p0 c(rf.f fVar, int i10) {
         int i11;
         String str = (String) fVar.c;
         String str2 = (String) fVar.b;
@@ -57,11 +58,11 @@ public final class q {
         if (stackTraceElementArr == null) {
             stackTraceElementArr = new StackTraceElement[0];
         }
-        sf.f fVar2 = (sf.f) fVar.e;
+        rf.f fVar2 = (rf.f) fVar.e;
         if (i10 >= 8) {
-            sf.f fVar3 = fVar2;
+            rf.f fVar3 = fVar2;
             while (fVar3 != null) {
-                fVar3 = (sf.f) fVar3.e;
+                fVar3 = (rf.f) fVar3.e;
                 i12++;
             }
             i11 = i12;
@@ -98,7 +99,7 @@ public final class q {
             jVar.b = str;
             jVar.c = fileName;
             jVar.d = Long.valueOf(j10);
-            arrayList.add(jVar.n());
+            arrayList.add(jVar.p());
         }
         return DesugarCollections.unmodifiableList(arrayList);
     }
@@ -126,8 +127,8 @@ public final class q {
         int i11 = 2;
         try {
             registerReceiver = context.registerReceiver(null, new IntentFilter("android.intent.action.BATTERY_CHANGED"));
-        } catch (IllegalStateException e6) {
-            e = e6;
+        } catch (IllegalStateException e) {
+            e = e;
             z4 = false;
         }
         if (registerReceiver != null) {
@@ -139,8 +140,8 @@ public final class q {
                 if (intExtra2 != -1 && intExtra3 != -1) {
                     f10 = Float.valueOf(intExtra2 / intExtra3);
                 }
-            } catch (IllegalStateException e10) {
-                e = e10;
+            } catch (IllegalStateException e6) {
+                e = e6;
                 Log.e("FirebaseCrashlytics", "An error occurred getting battery state.", e);
                 f10 = null;
                 if (f10 != null) {

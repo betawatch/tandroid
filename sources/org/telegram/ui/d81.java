@@ -1,32 +1,101 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.UndoView;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.MotionEvent;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class d81 extends UndoView {
-    public final /* synthetic */ SessionsActivity c0;
+public final class d81 extends org.telegram.ui.Components.rl0 {
+    public final /* synthetic */ int U2;
+    public final /* synthetic */ Object V2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d81(SessionsActivity sessionsActivity, Context context) {
-        super(context);
-        this.c0 = sessionsActivity;
+    public /* synthetic */ d81(Object obj, Context context, int i10) {
+        super(context, null);
+        this.U2 = i10;
+        this.V2 = obj;
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final void e(int i10, boolean z4) {
-        int i11;
-        if (!z4 && getCurrentInfoObject() != null) {
-            TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) getCurrentInfoObject();
-            TL_account.resetAuthorization resetauthorization = new TL_account.resetAuthorization();
-            resetauthorization.hash = tL_authorization.hash;
-            i11 = ((org.telegram.ui.ActionBar.p2) this.c0).currentAccount;
-            ConnectionsManager.getInstance(i11).sendRequest(resetauthorization, new tb0(19, this, tL_authorization));
+    @Override // org.telegram.ui.Components.rl0
+    public boolean E0(float f10) {
+        switch (this.U2) {
+            case 3:
+                org.telegram.ui.Components.li liVar = ((uf.c0) this.V2).b;
+                return f10 >= ((float) ((AndroidUtilities.dp(30.0f) + liVar.Y1[0]) + (!liVar.d0 ? AndroidUtilities.statusBarHeight : 0)));
+            default:
+                return super.E0(f10);
         }
-        super.e(i10, z4);
+    }
+
+    @Override // org.telegram.ui.Components.rl0
+    public Integer V0(int i10) {
+        int i11;
+        switch (this.U2) {
+            case 0:
+                i11 = ((SessionsActivity) this.V2).terminateAllSessionsRow;
+                org.telegram.ui.ActionBar.f6 f6Var = this.m2;
+                return i10 == i11 ? Integer.valueOf(org.telegram.ui.ActionBar.j6.l1(0.1f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.p7, f6Var))) : Integer.valueOf(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.i6, f6Var));
+            default:
+                return super.V0(i10);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.rl0, android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        switch (this.U2) {
+            case 2:
+                org.telegram.ui.Components.df dfVar = (org.telegram.ui.Components.df) this.V2;
+                d81 d81Var = dfVar.c;
+                if (d81Var.getLayoutManager() != null && d81Var.getAdapter() != null && d81Var.getAdapter().h() != 0) {
+                    float dp = dfVar.h - AndroidUtilities.dp(8.0f);
+                    dfVar.e = dp - AndroidUtilities.dp(16.0f);
+                    pg.b bVar = dfVar.r;
+                    if (bVar != null) {
+                        bVar.draw(canvas);
+                    }
+                    RectF rectF = AndroidUtilities.rectTmp;
+                    rectF.set((getMeasuredWidth() / 2.0f) - AndroidUtilities.dp(12.0f), dp - AndroidUtilities.dp(4.0f), (getMeasuredWidth() / 2.0f) + AndroidUtilities.dp(12.0f), dp);
+                    canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), dfVar.d);
+                    super.dispatchDraw(canvas);
+                    break;
+                } else {
+                    super.dispatchDraw(canvas);
+                    break;
+                }
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public void k0(int i10, int i11) {
+        int i12 = this.U2;
+    }
+
+    @Override // org.telegram.ui.Components.rl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        switch (this.U2) {
+            case 1:
+                rt q10 = rt.q();
+                ph.h1 h1Var = (ph.h1) this.V2;
+                return super.onInterceptTouchEvent(motionEvent) || q10.r(motionEvent, h1Var.b, h1Var.f, this.m2);
+            default:
+                return super.onInterceptTouchEvent(motionEvent);
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d81(uf.c0 c0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var);
+        this.U2 = 3;
+        this.V2 = c0Var;
+    }
+
+    private final void v1(int i10, int i11) {
     }
 }

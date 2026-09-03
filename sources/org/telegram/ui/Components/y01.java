@@ -24,7 +24,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class y01 extends DispatchQueue {
     public int B;
@@ -103,7 +103,7 @@ public final class y01 extends DispatchQueue {
 
     public final void c(Matrix matrix, Bitmap bitmap, Runnable runnable, Runnable runnable2) {
         if (!this.b.get()) {
-            AndroidUtilities.runOnUIThread(new mh.l8(runnable, runnable2, 1));
+            AndroidUtilities.runOnUIThread(new lh.l8(runnable, runnable2, 1));
             a11.b(this.d);
             this.d = null;
         } else {
@@ -284,8 +284,8 @@ public final class y01 extends DispatchQueue {
                 if (glGetError == 0) {
                     try {
                         break;
-                    } catch (Exception e6) {
-                        FileLog.e(e6);
+                    } catch (Exception e) {
+                        FileLog.e(e);
                         for (int i22 = 0; i22 < this.R.size(); i22++) {
                             AndroidUtilities.runOnUIThread(((x01) this.R.get(i22)).e);
                         }
@@ -294,7 +294,7 @@ public final class y01 extends DispatchQueue {
                             ((x01) this.Q.get(i23)).a();
                         }
                         this.Q.clear();
-                        AndroidUtilities.runOnUIThread(new jc(15));
+                        AndroidUtilities.runOnUIThread(new mc(13));
                         j();
                         return;
                     }
@@ -534,8 +534,8 @@ public final class y01 extends DispatchQueue {
                 arrayList.clear();
             }
             super.run();
-        } catch (Exception e6) {
-            FileLog.e(e6);
+        } catch (Exception e) {
+            FileLog.e(e);
             while (i10 < arrayList.size()) {
                 x01 x01Var = (x01) arrayList.get(i10);
                 Runnable runnable = x01Var.e;
@@ -546,7 +546,7 @@ public final class y01 extends DispatchQueue {
                 i10++;
             }
             arrayList.clear();
-            AndroidUtilities.runOnUIThread(new jc(14));
+            AndroidUtilities.runOnUIThread(new mc(12));
             j();
         }
     }

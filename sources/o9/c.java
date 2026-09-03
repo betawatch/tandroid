@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 import v2.d;
 import y2.p;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class c {
     public final double a;
@@ -24,14 +24,14 @@ public final class c {
     public int j;
     public long k;
 
-    public c(p pVar, p9.a aVar, f7.b bVar) {
-        double d = aVar.d;
-        double d10 = aVar.e;
+    public c(p pVar, p9.b bVar, f7.b bVar2) {
+        double d = bVar.d;
+        double d10 = bVar.e;
         this.a = d;
         this.b = d10;
-        this.c = aVar.f * 1000;
+        this.c = bVar.f * 1000;
         this.h = pVar;
-        this.i = bVar;
+        this.i = bVar2;
         this.d = SystemClock.elapsedRealtime();
         int i10 = (int) d;
         this.e = i10;

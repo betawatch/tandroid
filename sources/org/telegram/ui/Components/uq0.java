@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class uq0 implements Runnable {
     public final /* synthetic */ int a;
@@ -18,11 +18,11 @@ public final /* synthetic */ class uq0 implements Runnable {
         switch (this.a) {
             case 0:
                 yu0 yu0Var = this.b;
-                ls lsVar = yu0Var.M0;
-                yu0Var.Y1 = (int) lsVar.c(AndroidUtilities.dp(14.0f));
+                is isVar = yu0Var.M0;
+                yu0Var.Y1 = (int) isVar.c(AndroidUtilities.dp(14.0f));
                 or0 or0Var = yu0Var.S;
                 if (or0Var != null) {
-                    or0Var.setPaddingTop(AndroidUtilities.dp(48.0f) + ((int) lsVar.c(AndroidUtilities.dp(7.0f))));
+                    or0Var.setPaddingTop(AndroidUtilities.dp(48.0f) + ((int) isVar.c(AndroidUtilities.dp(7.0f))));
                 }
                 qt0[] qt0VarArr = yu0Var.h0;
                 if (qt0VarArr != null) {
@@ -37,7 +37,7 @@ public final /* synthetic */ class uq0 implements Runnable {
                             int Y = yu0Var.Y(yu0Var.v0());
                             wr0Var2.b3 = Y;
                             wr0Var.setPadding(paddingLeft, Z, paddingRight, Y);
-                            AndroidUtilities.doOnLayout(qt0Var.h, new im(qt0Var, paddingTop - qt0Var.h.getPaddingTop(), 6));
+                            AndroidUtilities.doOnLayout(qt0Var.h, new dw(qt0Var, paddingTop - qt0Var.h.getPaddingTop(), 5));
                         }
                     }
                     break;

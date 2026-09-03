@@ -20,9 +20,9 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class qs0 implements ot {
+public final class qs0 implements pt {
     public final /* synthetic */ String a;
     public final /* synthetic */ VideoEditedInfo b;
     public final /* synthetic */ MediaController.PhotoEntry c;
@@ -43,47 +43,50 @@ public final class qs0 implements ot {
         this.g = z10;
     }
 
-    @Override // org.telegram.ui.ot
-    public final boolean A() {
+    @Override // org.telegram.ui.pt
+    public final void A(CharSequence charSequence, String str, org.telegram.ui.Components.vk vkVar) {
+        PhotoViewer photoViewer = this.h;
+        photoViewer.t7 = true;
+        R();
+        photoViewer.m5.p(this.a, this.b, str, charSequence, false, 0L, null, null, photoViewer.v1(), this.c.thumbPath, vkVar, null);
+    }
+
+    @Override // org.telegram.ui.pt
+    public final boolean B() {
         return this.h.u7 != null;
     }
 
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ boolean C() {
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ boolean D() {
         return false;
     }
 
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ boolean D(TLRPC.Document document) {
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ boolean E(TLRPC.Document document) {
         return false;
     }
 
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ String F(boolean z4) {
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ String G(boolean z4) {
         return null;
     }
 
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ boolean H() {
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ boolean I() {
         return false;
     }
 
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ org.telegram.ui.Components.q70 I(ag.l lVar) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.ot
+    @Override // org.telegram.ui.pt
     public final boolean J() {
         return this.h.q7 != null;
     }
 
-    @Override // org.telegram.ui.ot
+    @Override // org.telegram.ui.pt
     public final /* synthetic */ boolean N(TLRPC.Document document) {
         return false;
     }
 
-    @Override // org.telegram.ui.ot
+    @Override // org.telegram.ui.pt
     public final void O(String str) {
         PhotoViewer photoViewer = this.h;
         photoViewer.t7 = true;
@@ -91,25 +94,25 @@ public final class qs0 implements ot {
         photoViewer.m5.p(this.a, this.b, str, null, true, 0L, null, null, photoViewer.v1(), this.c.thumbPath, null, null);
     }
 
-    @Override // org.telegram.ui.ot
+    @Override // org.telegram.ui.pt
     public final /* synthetic */ Boolean P(TLRPC.Document document) {
         return null;
     }
 
-    @Override // org.telegram.ui.ot
+    @Override // org.telegram.ui.pt
     public final /* synthetic */ boolean Q() {
         return true;
     }
 
     public final void R() {
-        qt q10 = qt.q();
+        rt q10 = rt.q();
         ImageReceiver imageReceiver = q10.A;
         MediaController.PhotoEntry photoEntry = this.c;
         if (photoEntry.thumbPath != null) {
             try {
                 new File(photoEntry.thumbPath).delete();
-            } catch (Exception e6) {
-                FileLog.e(e6);
+            } catch (Exception e) {
+                FileLog.e(e);
             }
             photoEntry.thumbPath = null;
         }
@@ -138,79 +141,84 @@ public final class qs0 implements ot {
         photoEntry.thumbPath = FileLoader.getInstance(photoViewer.Q).getPathToAttach(ImageLoader.scaleAndSaveImage(createBitmap, photoViewer.g1(), 512.0f, 512.0f, 83, false, 101, 101), true).toString();
     }
 
-    @Override // org.telegram.ui.ot
+    @Override // org.telegram.ui.pt
     public final long a() {
         return this.h.B5;
     }
 
-    @Override // org.telegram.ui.ot
+    @Override // org.telegram.ui.pt
     public final /* synthetic */ boolean b() {
         return false;
     }
 
-    @Override // org.telegram.ui.ot
+    @Override // org.telegram.ui.pt
     public final /* synthetic */ boolean c() {
         return false;
     }
 
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ TLRPC.TL_messageMediaPoll d() {
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ org.telegram.ui.Components.p70 d(ah.e eVar) {
         return null;
     }
 
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ boolean e(TLRPC.Document document) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ boolean f() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ TLRPC.PollAnswer g() {
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ TLRPC.TL_messageMediaPoll e() {
         return null;
     }
 
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ boolean h() {
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ boolean f(TLRPC.Document document) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ boolean g() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ TLRPC.PollAnswer h() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ boolean i() {
         return true;
     }
 
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ boolean j() {
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ boolean k() {
         return false;
     }
 
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ boolean k(int i10) {
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ boolean l(int i10) {
         return false;
     }
 
-    @Override // org.telegram.ui.ot
-    public final void m(String str) {
+    @Override // org.telegram.ui.pt
+    public final void n(String str) {
         PhotoViewer photoViewer = this.h;
         photoViewer.t7 = true;
         R();
         photoViewer.m5.p(this.a, this.b, str, null, false, 0L, null, null, photoViewer.v1(), this.c.thumbPath, null, photoViewer.u7);
     }
 
-    @Override // org.telegram.ui.ot
-    public final boolean o() {
+    @Override // org.telegram.ui.pt
+    public final boolean p() {
         return true;
     }
 
-    @Override // org.telegram.ui.ot
-    public final void u(TLRPC.StickerSet stickerSet, String str) {
+    @Override // org.telegram.ui.pt
+    public final void v(TLRPC.StickerSet stickerSet, String str) {
         PhotoViewer photoViewer = this.h;
         photoViewer.t7 = true;
         R();
         photoViewer.m5.p(this.a, this.b, str, null, false, 0L, stickerSet, photoViewer.q7, photoViewer.v1(), this.c.thumbPath, null, null);
     }
 
-    @Override // org.telegram.ui.ot
-    public final boolean w() {
+    @Override // org.telegram.ui.pt
+    public final boolean x() {
         PhotoViewer photoViewer = this.h;
         ou0 ou0Var = photoViewer.d;
         if (ou0Var != null) {
@@ -219,8 +227,8 @@ public final class qs0 implements ot {
         return false;
     }
 
-    @Override // org.telegram.ui.ot
-    public final void x(String str) {
+    @Override // org.telegram.ui.pt
+    public final void y(String str) {
         PhotoViewer photoViewer = this.h;
         ou0 ou0Var = photoViewer.d;
         if (ou0Var == null) {
@@ -244,76 +252,68 @@ public final class qs0 implements ot {
         NotificationCenter.getInstance(UserConfig.selectedAccount).postNotificationNameOnUIThread(NotificationCenter.customStickerCreated, Boolean.TRUE);
     }
 
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ MessageObject y() {
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ MessageObject z() {
         return null;
     }
 
-    @Override // org.telegram.ui.ot
-    public final void z(CharSequence charSequence, String str, org.telegram.ui.Components.xk xkVar) {
-        PhotoViewer photoViewer = this.h;
-        photoViewer.t7 = true;
-        R();
-        photoViewer.m5.p(this.a, this.b, str, charSequence, false, 0L, null, null, photoViewer.v1(), this.c.thumbPath, xkVar, null);
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void C(TLRPC.Document document) {
     }
 
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ void B(TLRPC.Document document) {
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void F(TLRPC.Document document) {
     }
 
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ void E(TLRPC.Document document) {
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void H(TLRPC.Document document) {
     }
 
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ void G(TLRPC.Document document) {
-    }
-
-    @Override // org.telegram.ui.ot
+    @Override // org.telegram.ui.pt
     public final /* synthetic */ void K() {
     }
 
-    @Override // org.telegram.ui.ot
+    @Override // org.telegram.ui.pt
     public final /* synthetic */ void L() {
     }
 
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ void i(SendMessagesHelper.ImportingSticker importingSticker) {
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void j(SendMessagesHelper.ImportingSticker importingSticker) {
     }
 
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ void n(TLRPC.Document document) {
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void o(TLRPC.Document document) {
     }
 
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ void p(TLRPC.Document document) {
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void q(TLRPC.Document document) {
     }
 
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ void q() {
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void r() {
     }
 
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ void s() {
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void t() {
     }
 
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ void t(TLRPC.Document document) {
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void u(TLRPC.Document document) {
     }
 
-    @Override // org.telegram.ui.ot
+    @Override // org.telegram.ui.pt
     public final /* synthetic */ void M(TLRPC.InputStickerSet inputStickerSet, boolean z4) {
     }
 
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ void v(TLObject tLObject, Object obj) {
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void w(TLObject tLObject, Object obj) {
     }
 
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ void r(int i10, int i11, Object obj, TLObject tLObject, boolean z4) {
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void s(int i10, int i11, Object obj, TLObject tLObject, boolean z4) {
     }
 
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ void l(TLRPC.Document document, String str, Object obj, boolean z4, int i10, int i11) {
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void m(TLRPC.Document document, String str, Object obj, boolean z4, int i10, int i11) {
     }
 }

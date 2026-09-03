@@ -1,100 +1,33 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 import android.view.View;
-import android.webkit.WebChromeClient;
-import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class q1 extends WebChromeClient {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ KeyEvent.Callback b;
+public final class q1 extends View {
+    public final RectF a;
 
-    public /* synthetic */ q1(KeyEvent.Callback callback, int i10) {
-        this.a = i10;
-        this.b = callback;
+    public q1(Context context) {
+        super(context);
+        this.a = new RectF();
+        setImportantForAccessibility(2);
     }
 
-    @Override // android.webkit.WebChromeClient
-    public final void onHideCustomView() {
-        switch (this.a) {
-            case 0:
-                super.onHideCustomView();
-                u1 u1Var = (u1) this.b;
-                l4 l4Var = u1Var.x;
-                if (l4Var.L != null) {
-                    l4Var.M.setVisibility(4);
-                    l4 l4Var2 = u1Var.x;
-                    l4Var2.M.removeView(l4Var2.L);
-                    WebChromeClient.CustomViewCallback customViewCallback = u1Var.x.P;
-                    if (customViewCallback != null && !customViewCallback.getClass().getName().contains(".chromium.")) {
-                        u1Var.x.P.onCustomViewHidden();
-                    }
-                    u1Var.x.L = null;
-                    break;
-                }
-                break;
-            default:
-                super.onHideCustomView();
-                org.telegram.ui.Components.ru ruVar = (org.telegram.ui.Components.ru) this.b;
-                if (ruVar.d != null) {
-                    ruVar.getSheetContainer().setVisibility(0);
-                    ruVar.e.setVisibility(4);
-                    ruVar.e.removeView(ruVar.d);
-                    WebChromeClient.CustomViewCallback customViewCallback2 = ruVar.f;
-                    if (customViewCallback2 != null && !customViewCallback2.getClass().getName().contains(".chromium.")) {
-                        ruVar.f.onCustomViewHidden();
-                    }
-                    ruVar.d = null;
-                    break;
-                }
-                break;
-        }
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int measuredWidth = getMeasuredWidth() / 3;
+        float dp = AndroidUtilities.dp(10.0f);
+        RectF rectF = this.a;
+        rectF.set(measuredWidth, AndroidUtilities.dp(8.0f), measuredWidth * 2, dp);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), n4.o1);
     }
 
-    @Override // android.webkit.WebChromeClient
-    public final void onShowCustomView(View view, int i10, WebChromeClient.CustomViewCallback customViewCallback) {
-        switch (this.a) {
-            case 0:
-                onShowCustomView(view, customViewCallback);
-                break;
-            default:
-                onShowCustomView(view, customViewCallback);
-                break;
-        }
-    }
-
-    @Override // android.webkit.WebChromeClient
-    public final void onShowCustomView(View view, WebChromeClient.CustomViewCallback customViewCallback) {
-        switch (this.a) {
-            case 0:
-                l4 l4Var = ((u1) this.b).x;
-                if (l4Var.L != null) {
-                    customViewCallback.onCustomViewHidden();
-                    break;
-                } else {
-                    l4Var.L = view;
-                    l4Var.P = customViewCallback;
-                    AndroidUtilities.runOnUIThread(new yt0(this, 7), 100L);
-                    break;
-                }
-            default:
-                org.telegram.ui.Components.ru ruVar = (org.telegram.ui.Components.ru) this.b;
-                FrameLayout frameLayout = ruVar.e;
-                if (ruVar.d == null && !org.telegram.ui.Components.ng0.m0.M) {
-                    ruVar.H();
-                    ruVar.d = view;
-                    ruVar.getSheetContainer().setVisibility(4);
-                    frameLayout.setVisibility(0);
-                    frameLayout.addView(view, k7.c6.c(-1.0f, -1));
-                    ruVar.f = customViewCallback;
-                    break;
-                } else {
-                    customViewCallback.onCustomViewHidden();
-                    break;
-                }
-        }
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(18.0f));
     }
 }

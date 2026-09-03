@@ -7,7 +7,7 @@ import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class b0 extends a7.e {
     public final /* synthetic */ g a;
@@ -97,7 +97,7 @@ public final class b0 extends a7.e {
         }
         int i13 = message.what;
         if (i13 != 2 && i13 != 1 && i13 != 7) {
-            Log.wtf("GmsClient", l.d.j(i13, "Don't know how to handle message: "), new Exception());
+            Log.wtf("GmsClient", kf.k0.j(i13, "Don't know how to handle message: "), new Exception());
             return;
         }
         x xVar4 = (x) message.obj;

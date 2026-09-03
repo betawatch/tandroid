@@ -3,35 +3,35 @@ package org.telegram.ui.Components;
 import android.graphics.Bitmap;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j9 implements n9 {
     public final /* synthetic */ o9 a;
-    public final /* synthetic */ k7.z5[] b;
+    public final /* synthetic */ k7.y5[] b;
     public final /* synthetic */ Runnable[] c;
-    public final /* synthetic */ b60[] d;
+    public final /* synthetic */ a60[] d;
 
-    public /* synthetic */ j9(o9 o9Var, k7.z5[] z5VarArr, Runnable[] runnableArr, b60[] b60VarArr) {
+    public /* synthetic */ j9(o9 o9Var, k7.y5[] y5VarArr, Runnable[] runnableArr, a60[] a60VarArr) {
         this.a = o9Var;
-        this.b = z5VarArr;
+        this.b = y5VarArr;
         this.c = runnableArr;
-        this.d = b60VarArr;
+        this.d = a60VarArr;
     }
 
     @Override // org.telegram.ui.Components.n9
     public final void dispose() {
         o9 o9Var = this.a;
-        k7.z5[] z5VarArr = this.b;
+        k7.y5[] y5VarArr = this.b;
         Runnable[] runnableArr = this.c;
-        b60[] b60VarArr = this.d;
-        z5VarArr[0] = null;
+        a60[] a60VarArr = this.d;
+        y5VarArr[0] = null;
         if (o9Var.e.contains(runnableArr)) {
             Utilities.globalQueue.cancelRunnables(runnableArr);
             o9Var.e.remove(runnableArr);
         }
-        for (b60 b60Var : b60VarArr) {
-            Bitmap bitmap = (Bitmap) o9Var.b.remove(b60Var);
-            o9Var.c.remove(b60Var);
+        for (a60 a60Var : a60VarArr) {
+            Bitmap bitmap = (Bitmap) o9Var.b.remove(a60Var);
+            o9Var.c.remove(a60Var);
             if (bitmap != null) {
                 bitmap.recycle();
             }

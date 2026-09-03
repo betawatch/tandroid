@@ -278,11 +278,11 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                                                 lVar.c = obj2;
                                             }
                                         } else if (k10 instanceof q) {
-                                            r e6 = ((q) k10).e(i10, obj, obj2);
-                                            if (e6 != null) {
-                                                Object obj7 = e6.c;
+                                            r e = ((q) k10).e(i10, obj, obj2);
+                                            if (e != null) {
+                                                Object obj7 = e.c;
                                                 if (!z4) {
-                                                    e6.c = obj2;
+                                                    e.c = obj2;
                                                 }
                                                 obj3 = obj7;
                                             } else {

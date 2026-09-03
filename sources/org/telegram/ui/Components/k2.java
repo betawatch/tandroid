@@ -13,9 +13,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k2 implements uc0, org.telegram.ui.ActionBar.c2, y4, ImageReceiver.ImageReceiverDelegate, GenericProvider, p.a, ug.b, gv0, hv0, r0.o {
+public final /* synthetic */ class k2 implements tc0, org.telegram.ui.ActionBar.c2, y4, ImageReceiver.ImageReceiverDelegate, GenericProvider, p.a, tg.b, gv0, hv0, r0.o {
     public final /* synthetic */ int a;
 
     public /* synthetic */ k2(int i10) {
@@ -27,7 +27,7 @@ public final /* synthetic */ class k2 implements uc0, org.telegram.ui.ActionBar.
     }
 
     @Override // org.telegram.ui.Components.y4
-    public void I(int i10, int i11, boolean z4) {
+    public void J(int i10, int i11, boolean z4) {
         switch (this.a) {
             case 9:
                 MediaController.getInstance().stopRecording(1, z4, i10, false, 0L);
@@ -43,7 +43,7 @@ public final /* synthetic */ class k2 implements uc0, org.telegram.ui.ActionBar.
         return r0.m1.b;
     }
 
-    @Override // ug.b
+    @Override // tg.b
     public Object a(Bitmap bitmap) {
         return bitmap.getConfig() == Bitmap.Config.ALPHA_8 ? bitmap : bitmap.extractAlpha();
     }
@@ -52,49 +52,49 @@ public final /* synthetic */ class k2 implements uc0, org.telegram.ui.ActionBar.
     public void b(Object obj, float f10) {
         switch (this.a) {
             case 19:
-                cd0 cd0Var = (cd0) obj;
-                cd0Var.f = f10;
-                if (!cd0Var.y || cd0Var.C) {
-                    cd0Var.c.setStrokeWidth(AndroidUtilities.lerp(cd0Var.v, cd0Var.w, f10));
-                    cd0Var.f();
+                bd0 bd0Var = (bd0) obj;
+                bd0Var.f = f10;
+                if (!bd0Var.y || bd0Var.C) {
+                    bd0Var.c.setStrokeWidth(AndroidUtilities.lerp(bd0Var.v, bd0Var.w, f10));
+                    bd0Var.f();
                 }
-                cd0Var.invalidate();
+                bd0Var.invalidate();
                 break;
             case 21:
-                cd0 cd0Var2 = (cd0) obj;
-                cd0Var2.n = f10;
-                if (!cd0Var2.y || cd0Var2.C) {
-                    cd0Var2.f();
+                bd0 bd0Var2 = (bd0) obj;
+                bd0Var2.n = f10;
+                if (!bd0Var2.y || bd0Var2.C) {
+                    bd0Var2.f();
                 }
-                cd0Var2.invalidate();
+                bd0Var2.invalidate();
                 break;
             case 23:
-                cd0 cd0Var3 = (cd0) obj;
-                cd0Var3.s = f10;
-                cd0Var3.f();
+                bd0 bd0Var3 = (bd0) obj;
+                bd0Var3.s = f10;
+                bd0Var3.f();
                 break;
             case 27:
-                ng0 ng0Var = (ng0) obj;
-                WindowManager.LayoutParams layoutParams = ng0Var.c;
-                ng0Var.H = f10;
+                mg0 mg0Var = (mg0) obj;
+                WindowManager.LayoutParams layoutParams = mg0Var.c;
+                mg0Var.H = f10;
                 layoutParams.x = (int) f10;
                 try {
-                    AndroidUtilities.updateViewLayout(ng0Var.b, ng0Var.d, layoutParams);
+                    AndroidUtilities.updateViewLayout(mg0Var.b, mg0Var.d, layoutParams);
                     break;
                 } catch (IllegalArgumentException unused) {
-                    ng0Var.J.c();
+                    mg0Var.J.c();
                     return;
                 }
             default:
-                ng0 ng0Var2 = (ng0) obj;
-                WindowManager.LayoutParams layoutParams2 = ng0Var2.c;
-                ng0Var2.I = f10;
+                mg0 mg0Var2 = (mg0) obj;
+                WindowManager.LayoutParams layoutParams2 = mg0Var2.c;
+                mg0Var2.I = f10;
                 layoutParams2.y = (int) f10;
                 try {
-                    AndroidUtilities.updateViewLayout(ng0Var2.b, ng0Var2.d, layoutParams2);
+                    AndroidUtilities.updateViewLayout(mg0Var2.b, mg0Var2.d, layoutParams2);
                     break;
                 } catch (IllegalArgumentException unused2) {
-                    ng0Var2.K.c();
+                    mg0Var2.K.c();
                 }
         }
     }
@@ -106,15 +106,15 @@ public final /* synthetic */ class k2 implements uc0, org.telegram.ui.ActionBar.
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z4, boolean z10, boolean z11) {
-        hj0 lottieAnimation;
+        gj0 lottieAnimation;
         switch (this.a) {
             case 11:
                 Drawable drawable = imageReceiver.getDrawable();
-                if (drawable instanceof hj0) {
-                    hj0 hj0Var = (hj0) drawable;
-                    hj0Var.N(0);
-                    hj0Var.stop();
-                    hj0Var.Q(0.0f, false);
+                if (drawable instanceof gj0) {
+                    gj0 gj0Var = (gj0) drawable;
+                    gj0Var.N(0);
+                    gj0Var.stop();
+                    gj0Var.Q(0.0f, false);
                     break;
                 }
                 break;
@@ -133,7 +133,7 @@ public final /* synthetic */ class k2 implements uc0, org.telegram.ui.ActionBar.
         org.telegram.messenger.j5.a(this, i10, str, drawable);
     }
 
-    @Override // org.telegram.ui.Components.uc0
+    @Override // org.telegram.ui.Components.tc0
     public String e(int i10) {
         switch (this.a) {
             case 0:
@@ -141,7 +141,7 @@ public final /* synthetic */ class k2 implements uc0, org.telegram.ui.ActionBar.
             case 1:
                 return String.format("%02d", Integer.valueOf(i10));
             case 2:
-                return l.d.j(i10, "");
+                return kf.k0.j(i10, "");
             case 3:
                 return String.format("%02d", Integer.valueOf(i10));
             case 4:
@@ -177,7 +177,7 @@ public final /* synthetic */ class k2 implements uc0, org.telegram.ui.ActionBar.
                         return LocaleController.getString(R.string.December);
                 }
             case 7:
-                return l.d.j(i10, "");
+                return kf.k0.j(i10, "");
         }
     }
 
@@ -185,20 +185,20 @@ public final /* synthetic */ class k2 implements uc0, org.telegram.ui.ActionBar.
     public float get(Object obj) {
         switch (this.a) {
             case 18:
-                return ((cd0) obj).f;
+                return ((bd0) obj).f;
             case 20:
-                return ((cd0) obj).n;
+                return ((bd0) obj).n;
             case 22:
-                return ((cd0) obj).s;
+                return ((bd0) obj).s;
             case 26:
-                return ((ng0) obj).H;
+                return ((mg0) obj).H;
             default:
-                return ((ng0) obj).I;
+                return ((mg0) obj).I;
         }
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    public void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         switch (this.a) {
             case 6:
                 Pattern pattern = z4.a;
@@ -221,7 +221,7 @@ public final /* synthetic */ class k2 implements uc0, org.telegram.ui.ActionBar.
             case 12:
                 return CheckBoxBase.I;
             default:
-                int i10 = mz.L2;
+                int i10 = kz.L2;
                 return 0;
         }
     }

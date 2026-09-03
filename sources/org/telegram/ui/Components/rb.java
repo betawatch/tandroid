@@ -5,19 +5,19 @@ import android.view.MotionEvent;
 import android.view.WindowManager;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class rb extends qk0 {
+public final class rb extends pk0 {
     public final /* synthetic */ int i1 = 0;
     public final /* synthetic */ Object j1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rb(org.telegram.ui.qt qtVar, Context context, int i10, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(4, i10, context, null, g6Var);
-        this.j1 = qtVar;
+    public rb(org.telegram.ui.rt rtVar, Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(4, i10, context, null, f6Var);
+        this.j1 = rtVar;
     }
 
-    @Override // org.telegram.ui.Components.qk0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pk0, android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         ic icVar;
         switch (this.i1) {
@@ -36,24 +36,24 @@ public final class rb extends qk0 {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.qk0
+    @Override // org.telegram.ui.Components.pk0
     public void j() {
         switch (this.i1) {
             case 1:
                 super.j();
-                org.telegram.ui.qt qtVar = (org.telegram.ui.qt) this.j1;
+                org.telegram.ui.rt rtVar = (org.telegram.ui.rt) this.j1;
                 if (getReactionsWindow() != null) {
-                    WindowManager.LayoutParams layoutParams = qtVar.x;
+                    WindowManager.LayoutParams layoutParams = rtVar.x;
                     layoutParams.flags &= -131073;
                     layoutParams.softInputMode = 16;
                 } else {
-                    qtVar.x.flags |= 131072;
+                    rtVar.x.flags |= 131072;
                 }
                 try {
-                    ((WindowManager) qtVar.w.getSystemService("window")).updateViewLayout(qtVar.y, qtVar.x);
+                    ((WindowManager) rtVar.w.getSystemService("window")).updateViewLayout(rtVar.y, rtVar.x);
                     break;
-                } catch (Exception e6) {
-                    FileLog.e(e6);
+                } catch (Exception e) {
+                    FileLog.e(e);
                     return;
                 }
             default:
@@ -62,7 +62,7 @@ public final class rb extends qk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qk0
+    @Override // org.telegram.ui.Components.pk0
     public void m() {
         switch (this.i1) {
             case 0:
@@ -76,8 +76,8 @@ public final class rb extends qk0 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rb(tb tbVar, org.telegram.ui.ActionBar.p2 p2Var, Context context, int i10, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(3, i10, context, p2Var, g6Var);
+    public rb(tb tbVar, org.telegram.ui.ActionBar.p2 p2Var, Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(3, i10, context, p2Var, f6Var);
         this.j1 = tbVar;
     }
 }

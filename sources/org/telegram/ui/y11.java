@@ -7,7 +7,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class y11 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ d21 a;
@@ -29,10 +29,10 @@ public final class y11 extends org.telegram.ui.ActionBar.j {
         if (i10 != 1 || d21Var.getParentActivity() == null) {
             return;
         }
-        sf.a a2 = sf.b.a();
+        rf.a a2 = rf.b.a();
         int i11 = d21Var.v;
         a2.a = i11 != 0 ? i11 : 1;
-        String i12 = i11 == 3 ? sf.k.i(d21Var.a[0].getText().toString()) : d21Var.a[0].getText().toString();
+        String i12 = i11 == 3 ? rf.j.i(d21Var.a[0].getText().toString()) : d21Var.a[0].getText().toString();
         if (i12 == null) {
             i12 = "";
         }
@@ -50,7 +50,7 @@ public final class y11 extends org.telegram.ui.ActionBar.j {
         a2.e = obj2;
         String obj3 = d21Var.v != 1 ? d21Var.a[4].getText().toString() : "";
         a2.f = obj3 != null ? obj3 : "";
-        proxyInfo.settings = new sf.b(a2);
+        proxyInfo.settings = new rf.b(a2);
         SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
         SharedPreferences.Editor edit = globalMainSettings.edit();
         if (z4) {

@@ -8,7 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class j extends o {
     public final /* synthetic */ int r;
@@ -93,9 +93,9 @@ public final class j extends o {
                     }
                     jSONObject2.putOpt("customData", kVar.n);
                     jSONObject2.put("requestId", kVar.x);
-                } catch (JSONException e6) {
+                } catch (JSONException e) {
                     u5.b bVar = q5.k.y;
-                    Log.e(bVar.a, bVar.d("Error transforming MediaLoadRequestData into JSONObject", e6));
+                    Log.e(bVar.a, bVar.d("Error transforming MediaLoadRequestData into JSONObject", e));
                     jSONObject2 = new JSONObject();
                 }
                 long b11 = nVar2.b();

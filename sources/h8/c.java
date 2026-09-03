@@ -11,7 +11,7 @@ import com.google.android.gms.internal.vision.t2;
 import java.nio.ByteBuffer;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class c extends e {
     public final e8.b b;
@@ -42,15 +42,15 @@ public final class c extends e {
         }
     }
 
-    public final SparseArray L(androidx.biometric.e eVar) {
-        ByteBuffer r10;
+    public final SparseArray L(af.d dVar) {
+        ByteBuffer s6;
         a[] n10;
-        Bitmap bitmap = (Bitmap) eVar.d;
+        Bitmap bitmap = (Bitmap) dVar.d;
         if (bitmap != null) {
             int width = bitmap.getWidth();
             int height = bitmap.getHeight();
             int i10 = width * height;
-            r10 = ByteBuffer.allocateDirect(((((height + 1) / 2) * ((width + 1) / 2)) << 1) + i10);
+            s6 = ByteBuffer.allocateDirect(((((height + 1) / 2) * ((width + 1) / 2)) << 1) + i10);
             int i11 = i10;
             for (int i12 = 0; i12 < i10; i12++) {
                 int i13 = i12 % width;
@@ -59,26 +59,26 @@ public final class c extends e {
                 float red = Color.red(pixel);
                 float green = Color.green(pixel);
                 float blue = Color.blue(pixel);
-                r10.put(i12, (byte) ((0.114f * blue) + (0.587f * green) + (0.299f * red)));
+                s6.put(i12, (byte) ((0.114f * blue) + (0.587f * green) + (0.299f * red)));
                 if (i14 % 2 == 0 && i13 % 2 == 0) {
                     float A = e2.c.A(blue, 0.5f, ((-0.331f) * green) + ((-0.169f) * red), 128.0f);
                     float A2 = e2.c.A(blue, -0.081f, (green * (-0.419f)) + (red * 0.5f), 128.0f);
                     int i15 = i11 + 1;
-                    r10.put(i11, (byte) A);
+                    s6.put(i11, (byte) A);
                     i11 += 2;
-                    r10.put(i15, (byte) A2);
+                    s6.put(i15, (byte) A2);
                 }
             }
         } else {
-            r10 = eVar.r();
+            s6 = dVar.s();
         }
         synchronized (this.d) {
             if (!this.e) {
                 throw new IllegalStateException("Cannot use detector after release()");
             }
             t2 t2Var = this.c;
-            m.h(r10);
-            n10 = t2Var.n(r10, f3.e(eVar));
+            m.h(s6);
+            n10 = t2Var.n(s6, f3.e(dVar));
         }
         HashSet hashSet = new HashSet();
         SparseArray sparseArray = new SparseArray(n10.length);

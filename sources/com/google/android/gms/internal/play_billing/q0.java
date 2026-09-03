@@ -1,10 +1,10 @@
 package com.google.android.gms.internal.play_billing;
 
-import j7.f6;
+import j7.h6;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class q0 implements Runnable {
     public final t0 a;
@@ -32,7 +32,7 @@ public final class q0 implements Runnable {
             boolean z10 = false;
             Future future = t0Var;
             if (!isDone) {
-                throw new IllegalStateException(f6.a("Future was expected to be done: %s", t0Var));
+                throw new IllegalStateException(h6.a("Future was expected to be done: %s", t0Var));
             }
             while (true) {
                 try {
@@ -53,30 +53,30 @@ public final class q0 implements Runnable {
             }
             Integer num = (Integer) obj;
             int intValue = num.intValue();
-            p2.x xVar = (p2.x) uVar.d;
+            p2.y yVar = (p2.y) uVar.d;
             if (intValue <= 0) {
                 ((Runnable) uVar.c).run();
                 return;
             }
             int i10 = uVar.a;
             int intValue2 = num.intValue();
-            xVar.getClass();
-            p2.h a2 = p2.a0.a(intValue2, "Billing override value was set by a license tester.");
-            xVar.F(93, i10, a2);
+            yVar.getClass();
+            p2.h a2 = p2.b0.a(intValue2, "Billing override value was set by a license tester.");
+            yVar.F(93, i10, a2);
             ((q0.a) uVar.b).accept(a2);
-        } catch (ExecutionException e6) {
-            uVar.i(e6.getCause());
+        } catch (ExecutionException e) {
+            uVar.i(e.getCause());
         } catch (Throwable th3) {
             uVar.i(th3);
         }
     }
 
     public final String toString() {
-        androidx.biometric.e eVar = new androidx.biometric.e(q0.class.getSimpleName(), 10);
+        af.d dVar = new af.d(q0.class.getSimpleName(), 10);
         k kVar = new k();
-        ((k) eVar.d).b = kVar;
-        eVar.d = kVar;
+        ((k) dVar.d).b = kVar;
+        dVar.d = kVar;
         kVar.a = this.b;
-        return eVar.toString();
+        return dVar.toString();
     }
 }

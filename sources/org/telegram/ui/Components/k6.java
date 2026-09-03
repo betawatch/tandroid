@@ -14,7 +14,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public class k6 extends View {
     public boolean a;
@@ -62,10 +62,10 @@ public class k6 extends View {
                 return;
             }
         }
-        int e6 = (int) j6Var.e();
+        int e = (int) j6Var.e();
         j6Var.setBounds(getPaddingLeft(), getPaddingTop(), this.d - getPaddingRight(), getMeasuredHeight() - getPaddingBottom());
         j6Var.q(charSequence, z11, z10);
-        float f10 = e6;
+        float f10 = e;
         if (f10 < j6Var.e() || !(z11 || f10 == j6Var.e())) {
             requestLayout();
         }

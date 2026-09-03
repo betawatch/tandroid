@@ -11,7 +11,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class p41 extends FrameLayout {
     public final Paint a;
@@ -21,7 +21,7 @@ public final class p41 extends FrameLayout {
     public boolean e;
     public long f;
     public long h;
-    public final org.telegram.ui.Components.hj0 n;
+    public final org.telegram.ui.Components.gj0 n;
     public final TextPaint r;
     public StaticLayout s;
     public float v;
@@ -51,11 +51,11 @@ public final class p41 extends FrameLayout {
         paint2.setColor(-1644826);
         paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
         new Paint(1).setColor(2130706432);
-        org.telegram.ui.Components.hj0 hj0Var = new org.telegram.ui.Components.hj0(R.raw.fire_on, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
-        this.n = hj0Var;
-        hj0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        hj0Var.s0 = this;
-        hj0Var.start();
+        org.telegram.ui.Components.gj0 gj0Var = new org.telegram.ui.Components.gj0(R.raw.fire_on, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
+        this.n = gj0Var;
+        gj0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        gj0Var.s0 = this;
+        gj0Var.start();
     }
 
     /*  JADX ERROR: NullPointerException in pass: LoopRegionVisitor

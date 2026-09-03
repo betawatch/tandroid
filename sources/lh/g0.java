@@ -1,49 +1,36 @@
 package lh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_payments;
+import org.telegram.ui.Components.ut;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
-/* loaded from: classes.dex */
-public final class g0 extends FrameLayout {
-    public final RectF a;
-    public final RectF b;
-    public final /* synthetic */ m0 c;
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class g0 implements org.telegram.ui.ActionBar.c2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g0(m0 m0Var, Context context) {
-        super(context);
-        this.c = m0Var;
-        this.a = new RectF();
-        this.b = new RectF();
+    public /* synthetic */ g0(int i10, int i11, org.telegram.ui.ActionBar.p2 p2Var) {
+        this.a = i10;
+        this.b = i11;
+        this.c = p2Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        m0 m0Var = this.c;
-        h0 h0Var = m0Var.X;
-        FrameLayout frameLayout = h0Var.b;
-        RectF rectF = this.a;
-        if (vg.i.c(frameLayout, this, rectF)) {
-            TextView textView = m0Var.Y;
-            RectF rectF2 = this.b;
-            if (vg.i.c(textView, this, rectF2)) {
-                float dp = rectF2.right - AndroidUtilities.dp(32.0f);
-                float centerY = rectF2.centerY() - AndroidUtilities.dp(16.0f);
-                if (rectF.isEmpty()) {
-                    return;
-                }
-                canvas.save();
-                canvas.translate(dp, centerY);
-                canvas.scale(AndroidUtilities.dp(32.0f) / rectF.width(), AndroidUtilities.dp(32.0f) / rectF.height());
-                h0Var.b.draw(canvas);
-                canvas.restore();
-            }
-        }
+    @Override // org.telegram.ui.ActionBar.c2
+    public void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        org.telegram.ui.ActionBar.p2 p2Var = (org.telegram.ui.ActionBar.p2) this.c;
+        ze.c g10 = d2Var.g(-1, true, true);
+        g10.d();
+        TL_payments.TL_resolveStarGiftOffer tL_resolveStarGiftOffer = new TL_payments.TL_resolveStarGiftOffer();
+        tL_resolveStarGiftOffer.offer_msg_id = this.a;
+        int i11 = this.b;
+        ConnectionsManager.getInstance(i11).sendRequestTyped(tL_resolveStarGiftOffer, new i0(i11, p2Var, g10, d2Var));
+    }
+
+    public /* synthetic */ g0(ut utVar, int i10, int i11) {
+        this.c = utVar;
+        this.a = i10;
+        this.b = i11;
     }
 }

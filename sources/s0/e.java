@@ -2,14 +2,14 @@ package s0;
 
 import android.os.Bundle;
 import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.ui.Cells.f1;
-import org.telegram.ui.Components.hh0;
+import org.telegram.ui.Components.gh0;
+import org.telegram.ui.Components.zz;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class e extends hh0 {
+public final class e extends gh0 {
     @Override // android.view.accessibility.AccessibilityNodeProvider
     public final void addExtraDataToAccessibilityNodeInfo(int i10, AccessibilityNodeInfo accessibilityNodeInfo, String str, Bundle bundle) {
-        ((f1) this.b).getClass();
+        ((zz) this.b).getClass();
     }
 }

@@ -7,7 +7,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class kg extends View {
     public float a;
@@ -15,7 +15,7 @@ public final class kg extends View {
     public boolean c;
     public boolean d;
     public boolean e;
-    public final hj0 f;
+    public final gj0 f;
     public boolean h;
     public final /* synthetic */ ChatActivityEnterView n;
 
@@ -23,27 +23,27 @@ public final class kg extends View {
     public kg(ChatActivityEnterView chatActivityEnterView, Context context) {
         super(context);
         this.n = chatActivityEnterView;
-        hj0 hj0Var = new hj0(R.raw.chat_audio_record_delete_2, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), false, null);
-        this.f = hj0Var;
-        hj0Var.m0 = true;
+        gj0 gj0Var = new gj0(R.raw.chat_audio_record_delete_2, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), false, null);
+        this.f = gj0Var;
+        gj0Var.m0 = true;
         a();
     }
 
     public final void a() {
-        int i10 = org.telegram.ui.ActionBar.k6.jf;
+        int i10 = org.telegram.ui.ActionBar.j6.jf;
         int i11 = ChatActivityEnterView.j5;
         ChatActivityEnterView chatActivityEnterView = this.n;
         int i02 = chatActivityEnterView.i0(i10);
-        int i03 = chatActivityEnterView.i0(org.telegram.ui.ActionBar.k6.Sd);
+        int i03 = chatActivityEnterView.i0(org.telegram.ui.ActionBar.j6.Sd);
         chatActivityEnterView.s3.setColor(i02);
-        hj0 hj0Var = this.f;
-        hj0Var.X = true;
-        hj0Var.O(i02, "Cup Red");
-        hj0Var.O(i02, "Box");
-        hj0Var.O(i03, "Line 1");
-        hj0Var.O(i03, "Line 2");
-        hj0Var.O(i03, "Line 3");
-        hj0Var.m();
+        gj0 gj0Var = this.f;
+        gj0Var.X = true;
+        gj0Var.O(i02, "Cup Red");
+        gj0Var.O(i02, "Box");
+        gj0Var.O(i03, "Line 1");
+        gj0Var.O(i03, "Line 2");
+        gj0Var.O(i03, "Line 3");
+        gj0Var.m();
     }
 
     @Override // android.view.View
@@ -51,29 +51,29 @@ public final class kg extends View {
         super.onAttachedToWindow();
         this.d = true;
         boolean z4 = this.e;
-        hj0 hj0Var = this.f;
+        gj0 gj0Var = this.f;
         if (z4) {
-            hj0Var.start();
+            gj0Var.start();
         }
-        hj0Var.s0 = this;
+        gj0Var.s0 = this;
     }
 
     @Override // android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.d = false;
-        hj0 hj0Var = this.f;
-        hj0Var.stop();
-        hj0Var.s0 = null;
+        gj0 gj0Var = this.f;
+        gj0Var.stop();
+        gj0Var.s0 = null;
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         Paint paint = this.n.s3;
         boolean z4 = this.e;
-        hj0 hj0Var = this.f;
+        gj0 gj0Var = this.f;
         if (z4) {
-            hj0Var.setAlpha((int) (this.a * 255.0f));
+            gj0Var.setAlpha((int) (this.a * 255.0f));
         }
         paint.setAlpha((int) (this.a * 255.0f));
         long currentTimeMillis = System.currentTimeMillis() - this.b;
@@ -96,9 +96,9 @@ public final class kg extends View {
         }
         this.b = System.currentTimeMillis();
         if (this.e) {
-            hj0Var.draw(canvas);
+            gj0Var.draw(canvas);
         }
-        if (!this.e || !hj0Var.s()) {
+        if (!this.e || !gj0Var.s()) {
             canvas.drawCircle(getMeasuredWidth() >> 1, getMeasuredHeight() >> 1, AndroidUtilities.dp(5.0f), paint);
         }
         invalidate();

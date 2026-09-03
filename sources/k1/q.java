@@ -1,8 +1,8 @@
 package k1;
 
-import k7.q7;
+import k7.p7;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class q extends wc.i implements dd.p {
     public final /* synthetic */ int a;
@@ -50,12 +50,12 @@ public final class q extends wc.i implements dd.p {
         switch (i10) {
             case 0:
                 vc.a aVar = vc.a.a;
-                q7.b(obj);
+                p7.b(obj);
                 e0 e0Var = (e0) obj2;
                 return Boolean.valueOf(((e0Var instanceof b) || (e0Var instanceof h) || ((e0) this.b) != e0Var) ? false : true);
             default:
                 vc.a aVar2 = vc.a.a;
-                q7.b(obj);
+                p7.b(obj);
                 n1.b bVar = (n1.b) this.b;
                 bVar.getClass();
                 n1.d key = la.w.a;

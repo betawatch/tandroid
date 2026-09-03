@@ -24,10 +24,10 @@ import java.io.InputStream;
 import java.security.Signature;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
-import m.z0;
+import m.a1;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static void A(LayerDrawable layerDrawable, LayerDrawable layerDrawable2, int i10) {
@@ -42,30 +42,30 @@ public abstract class b {
         layerDrawable2.setLayerInsetEnd(i10, layerDrawable.getLayerInsetEnd(i10));
     }
 
-    public static androidx.biometric.e B(Object obj) {
+    public static af.d B(Object obj) {
         FingerprintManager.CryptoObject cryptoObject = (FingerprintManager.CryptoObject) obj;
         if (cryptoObject == null) {
             return null;
         }
         if (cryptoObject.getCipher() != null) {
-            return new androidx.biometric.e(cryptoObject.getCipher());
+            return new af.d(cryptoObject.getCipher());
         }
         if (cryptoObject.getSignature() != null) {
-            return new androidx.biometric.e(cryptoObject.getSignature());
+            return new af.d(cryptoObject.getSignature());
         }
         if (cryptoObject.getMac() != null) {
-            return new androidx.biometric.e(cryptoObject.getMac());
+            return new af.d(cryptoObject.getMac());
         }
         return null;
     }
 
-    public static FingerprintManager.CryptoObject C(androidx.biometric.e eVar) {
-        if (eVar == null) {
+    public static FingerprintManager.CryptoObject C(af.d dVar) {
+        if (dVar == null) {
             return null;
         }
-        Mac mac = (Mac) eVar.d;
-        Signature signature = (Signature) eVar.b;
-        Cipher cipher = (Cipher) eVar.c;
+        Mac mac = (Mac) dVar.d;
+        Signature signature = (Signature) dVar.b;
+        Cipher cipher = (Cipher) dVar.c;
         if (cipher != null) {
             return new FingerprintManager.CryptoObject(cipher);
         }
@@ -86,8 +86,8 @@ public abstract class b {
         return new Notification.Action.Builder(icon, charSequence, pendingIntent);
     }
 
-    public static int c(z0 z0Var) {
-        return z0Var.getBreakStrategy();
+    public static int c(a1 a1Var) {
+        return a1Var.getBreakStrategy();
     }
 
     public static Drawable d(CompoundButton compoundButton) {
@@ -109,8 +109,8 @@ public abstract class b {
         return (FingerprintManager) context.getSystemService(FingerprintManager.class);
     }
 
-    public static int g(z0 z0Var) {
-        return z0Var.getHyphenationFrequency();
+    public static int g(a1 a1Var) {
+        return a1Var.getHyphenationFrequency();
     }
 
     public static int h(Drawable drawable) {
@@ -123,13 +123,13 @@ public abstract class b {
 
     public static boolean j(Context context) {
         try {
-            FingerprintManager a2 = k3.e.a(context.getSystemService("fingerprint"));
-            if (a2 == null) {
+            FingerprintManager b10 = j3.q0.b(context.getSystemService("fingerprint"));
+            if (b10 == null) {
                 return false;
             }
-            return a2.hasEnrolledFingerprints();
-        } catch (Exception e6) {
-            FileLog.e(e6);
+            return b10.hasEnrolledFingerprints();
+        } catch (Exception e) {
+            FileLog.e(e);
             return false;
         }
     }
@@ -144,13 +144,13 @@ public abstract class b {
 
     public static boolean m(Context context) {
         try {
-            FingerprintManager a2 = k3.e.a(context.getSystemService("fingerprint"));
-            if (a2 == null) {
+            FingerprintManager b10 = j3.q0.b(context.getSystemService("fingerprint"));
+            if (b10 == null) {
                 return false;
             }
-            return a2.isHardwareDetected();
-        } catch (Exception e6) {
-            FileLog.e(e6);
+            return b10.isHardwareDetected();
+        } catch (Exception e) {
+            FileLog.e(e);
             return false;
         }
     }
@@ -171,8 +171,8 @@ public abstract class b {
         activity.requestPermissions(strArr, i10);
     }
 
-    public static void r(z0 z0Var, int i10) {
-        z0Var.setBreakStrategy(i10);
+    public static void r(a1 a1Var, int i10) {
+        a1Var.setBreakStrategy(i10);
     }
 
     public static void s(TextView textView, ColorStateList colorStateList) {
@@ -183,8 +183,8 @@ public abstract class b {
         textView.setCompoundDrawableTintMode(mode);
     }
 
-    public static void u(z0 z0Var, int i10) {
-        z0Var.setHyphenationFrequency(i10);
+    public static void u(a1 a1Var, int i10) {
+        a1Var.setHyphenationFrequency(i10);
     }
 
     public static void v(Notification.Builder builder, Icon icon) {

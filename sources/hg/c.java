@@ -1,47 +1,36 @@
 package hg;
 
-import java.util.Calendar;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.uc0;
+import gg.d1;
+import org.telegram.messenger.y3;
+import org.telegram.ui.qy;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c implements uc0 {
+public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Calendar c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ e b;
 
-    public /* synthetic */ c(long j10, Calendar calendar, int i10, int i11) {
-        this.a = i11;
-        this.b = j10;
-        this.c = calendar;
-        this.d = i10;
+    public /* synthetic */ c(e eVar, int i10) {
+        this.a = i10;
+        this.b = eVar;
     }
 
-    @Override // org.telegram.ui.Components.uc0
-    public final String e(int i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                if (i10 == 0) {
-                    return LocaleController.getString("MessageScheduleToday", R.string.MessageScheduleToday);
-                }
-                long j10 = (i10 * 86400000) + this.b;
-                Calendar calendar = this.c;
-                calendar.setTimeInMillis(j10);
-                return calendar.get(1) == this.d ? LocaleController.getInstance().getFormatterScheduleDay().format(j10) : LocaleController.getInstance().getFormatterScheduleYear().format(j10);
+                this.b.E();
+                break;
             default:
-                if (i10 == 0) {
-                    return LocaleController.getString(R.string.MessageScheduleToday);
-                }
-                long j11 = (i10 * 86400000) + this.b;
-                Calendar calendar2 = this.c;
-                calendar2.setTimeInMillis(j11);
-                if (calendar2.get(1) != this.d) {
-                    return LocaleController.getInstance().getFormatterScheduleYear().format(j11);
-                }
-                return LocaleController.getInstance().getFormatterWeek().format(j11) + " " + LocaleController.getInstance().getFormatterScheduleDay().format(j11);
+                StringBuilder sb = new StringBuilder("https://t.me/giftcode/");
+                e eVar = this.b;
+                sb.append(eVar.h);
+                String sb2 = sb.toString();
+                qy qyVar = new qy(y3.e(3, "onlySelect", "dialogsType", true));
+                qyVar.z2 = new c1.b(17, eVar, sb2);
+                eVar.e.presentFragment(qyVar);
+                ((d1) eVar).r.dismiss();
+                break;
         }
     }
 }

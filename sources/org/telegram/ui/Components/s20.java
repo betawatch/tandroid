@@ -7,7 +7,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.view.KeyEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class s20 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final class s20 extends AnimatorListenerAdapter {
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         int i10;
-        f2.p0 adapter;
+        f2.o0 adapter;
         switch (this.a) {
             case 0:
                 t20 t20Var = (t20) this.d;
@@ -65,20 +65,20 @@ public final class s20 extends AnimatorListenerAdapter {
                 yu0Var.X0();
                 break;
             case 2:
-                org.telegram.ui.Components.voip.u uVar = (org.telegram.ui.Components.voip.u) this.d;
+                org.telegram.ui.Components.voip.t tVar = (org.telegram.ui.Components.voip.t) this.d;
                 int i14 = this.b;
-                uVar.A0 = i14;
-                uVar.B0 = i14;
+                tVar.A0 = i14;
+                tVar.B0 = i14;
                 int i15 = this.c;
-                uVar.C0 = i15;
-                uVar.Q.setColor(i15);
-                if (uVar.P > 0.0f) {
-                    uVar.invalidate();
+                tVar.C0 = i15;
+                tVar.Q.setColor(i15);
+                if (tVar.P > 0.0f) {
+                    tVar.invalidate();
                     break;
                 }
                 break;
             default:
-                sh.p2 p2Var = (sh.p2) this.d;
+                rh.p2 p2Var = (rh.p2) this.d;
                 p2Var.O = i0.a.d(1.0f, this.b, this.c);
                 p2Var.h();
                 break;

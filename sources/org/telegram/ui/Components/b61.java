@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public abstract class b61 extends org.telegram.ui.ActionBar.p2 {
     public a61 a;
@@ -20,21 +20,21 @@ public abstract class b61 extends org.telegram.ui.ActionBar.p2 {
 
     public abstract CharSequence V();
 
-    public abstract void W(h51 h51Var, View view);
+    public abstract void W(i51 i51Var, View view);
 
-    public abstract boolean X(h51 h51Var, View view);
+    public abstract boolean X(i51 i51Var, View view);
 
     @Override // org.telegram.ui.ActionBar.p2
     public View createView(Context context) {
-        org.telegram.ui.yh.z(false, this.actionBar);
+        org.telegram.ui.ai.z(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(V());
         this.actionBar.setActionBarMenuOnItemClick(new y51(this, 0));
         z51 z51Var = new z51(context, null, 0);
-        z51Var.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.a7, false));
+        z51Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
         a61 a61Var = new a61(this, this, new d(this, 22), new x51(this), new x51(this));
         this.a = a61Var;
-        z51Var.addView(a61Var, k7.c6.c(-1.0f, -1));
+        z51Var.addView(a61Var, k7.b6.c(-1.0f, -1));
         this.fragmentView = z51Var;
         return z51Var;
     }

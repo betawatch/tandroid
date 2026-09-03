@@ -1,24 +1,58 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
+import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.view.animation.OvershootInterpolator;
+import android.widget.FrameLayout;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class le1 extends org.telegram.ui.Components.pv0 {
-    public boolean t0;
+public final class le1 extends FrameLayout {
+    public ValueAnimator a;
+    public boolean b;
+    public float c;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        R();
-        if (getKeyboardHeight() != 0 || this.t0) {
-            this.t0 = true;
-            setPadding(0, 0, 0, 0);
-        } else {
-            int i12 = MessagesController.getGlobalEmojiSettings().getInt("kbd_height", AndroidUtilities.dp(200.0f));
-            this.f = i12;
-            setPadding(0, 0, 0, i12);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float f10 = ((1.0f - this.c) * 0.2f) + 0.8f;
+        canvas.save();
+        canvas.scale(f10, f10, getMeasuredHeight() / 2.0f, getMeasuredWidth() / 2.0f);
+        super.dispatchDraw(canvas);
+        canvas.restore();
+        if (isPressed()) {
+            float f11 = this.c;
+            if (f11 != 1.0f) {
+                this.c = Utilities.clamp(f11 + 0.16f, 1.0f, 0.0f);
+                invalidate();
+            }
         }
-        super.onMeasure(i10, i11);
+    }
+
+    @Override // android.view.View
+    public final void setPressed(boolean z4) {
+        ValueAnimator valueAnimator;
+        super.setPressed(z4);
+        if (this.b != z4) {
+            this.b = z4;
+            invalidate();
+            if (z4 && (valueAnimator = this.a) != null) {
+                valueAnimator.removeAllListeners();
+                this.a.cancel();
+            }
+            if (z4) {
+                return;
+            }
+            float f10 = this.c;
+            if (f10 != 0.0f) {
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, 0.0f);
+                this.a = ofFloat;
+                ofFloat.addUpdateListener(new o11(this, 16));
+                this.a.addListener(new ss0(this, 22));
+                this.a.setInterpolator(new OvershootInterpolator(5.0f));
+                this.a.setDuration(350L);
+                this.a.start();
+            }
+        }
     }
 }

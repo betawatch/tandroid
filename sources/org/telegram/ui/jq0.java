@@ -7,9 +7,9 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class jq0 implements org.telegram.ui.Cells.s5 {
+public final class jq0 implements org.telegram.ui.Cells.r5 {
     public final /* synthetic */ kq0 a;
 
     public jq0(kq0 kq0Var) {
@@ -17,10 +17,10 @@ public final class jq0 implements org.telegram.ui.Cells.s5 {
     }
 
     public final void a() {
-        xn xnVar;
+        zn znVar;
         TLRPC.Chat chat;
         mq0 mq0Var = this.a.d;
-        if (!mq0Var.F || (xnVar = mq0Var.R) == null || (chat = xnVar.e) == null || ChatObject.hasAdminRights(chat) || !chat.slowmode_enabled || mq0Var.T == 2) {
+        if (!mq0Var.F || (znVar = mq0Var.R) == null || (chat = znVar.e) == null || ChatObject.hasAdminRights(chat) || !chat.slowmode_enabled || mq0Var.T == 2) {
             return;
         }
         org.telegram.ui.Components.z4.u0(mq0Var, LocaleController.getString(R.string.Slowmode), LocaleController.getString(R.string.SlowmodeSelectSendError), null);
@@ -29,10 +29,10 @@ public final class jq0 implements org.telegram.ui.Cells.s5 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.s5
-    public final void b(org.telegram.ui.Cells.t5 t5Var) {
+    @Override // org.telegram.ui.Cells.r5
+    public final void b(org.telegram.ui.Cells.s5 s5Var) {
         boolean z4;
-        int intValue = ((Integer) t5Var.getTag()).intValue();
+        int intValue = ((Integer) s5Var.getTag()).intValue();
         mq0 mq0Var = this.a.d;
         MediaController.AlbumEntry albumEntry = mq0Var.G;
         int i10 = -1;
@@ -47,7 +47,7 @@ public final class jq0 implements org.telegram.ui.Cells.s5 {
             if (mq0Var.e && !containsKey) {
                 i10 = mq0Var.c.size();
             }
-            t5Var.b(i10, z4, true);
+            s5Var.b(i10, z4, true);
             mq0Var.Y(intValue, photoEntry);
         } else {
             AndroidUtilities.hideKeyboard(mq0Var.getParentActivity().getCurrentFocus());
@@ -61,7 +61,7 @@ public final class jq0 implements org.telegram.ui.Cells.s5 {
             if (mq0Var.e && !containsKey2) {
                 i10 = mq0Var.c.size();
             }
-            t5Var.b(i10, z4, true);
+            s5Var.b(i10, z4, true);
             mq0Var.Y(intValue, searchImage);
         }
         mq0Var.i0(z4 ? 1 : 2);

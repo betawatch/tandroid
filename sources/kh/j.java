@@ -1,47 +1,44 @@
 package kh;
 
-import mh.g5;
+import android.content.DialogInterface;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final /* synthetic */ class j implements DialogInterface.OnShowListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ EditTextBoldCursor b;
 
-    public /* synthetic */ j(v vVar, boolean z4, i iVar, String str, boolean z10) {
-        this.d = vVar;
-        this.b = z4;
-        this.e = iVar;
-        this.f = str;
-        this.c = z10;
+    public /* synthetic */ j(int i10, EditTextBoldCursor editTextBoldCursor) {
+        this.a = i10;
+        this.b = editTextBoldCursor;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // android.content.DialogInterface.OnShowListener
+    public final void onShow(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new k((v) this.d, this.b, (Runnable) this.e, (String) this.f, tL_error, tLObject, this.c));
+                dh.b bVar = (dh.b) this.b;
+                bVar.requestFocus();
+                AndroidUtilities.showKeyboard(bVar);
+                break;
+            case 1:
+                u2 u2Var = (u2) this.b;
+                u2Var.requestFocus();
+                AndroidUtilities.showKeyboard(u2Var);
+                break;
+            case 2:
+                uf.n nVar = (uf.n) this.b;
+                nVar.requestFocus();
+                AndroidUtilities.showKeyboard(nVar);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new k((g5) this.d, tLObject, this.b, (TLRPC.Document) this.e, this.c, tL_error, (TL_stars.saveStarGift) this.f));
+                EditTextBoldCursor editTextBoldCursor = this.b;
+                editTextBoldCursor.requestFocus();
+                AndroidUtilities.showKeyboard(editTextBoldCursor);
+                editTextBoldCursor.setSelection(0, editTextBoldCursor.length());
                 break;
         }
-    }
-
-    public /* synthetic */ j(g5 g5Var, boolean z4, TLRPC.Document document, boolean z10, TL_stars.saveStarGift savestargift) {
-        this.d = g5Var;
-        this.b = z4;
-        this.e = document;
-        this.c = z10;
-        this.f = savestargift;
     }
 }

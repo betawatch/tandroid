@@ -5,13 +5,13 @@ import android.os.Message;
 import g5.q;
 import h5.d0;
 import java.util.TreeMap;
-import org.telegram.ui.Cells.f1;
+import org.telegram.ui.Components.zz;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class o implements Handler.Callback {
     public final q a;
-    public final f1 b;
+    public final zz b;
     public s4.c f;
     public boolean h;
     public boolean n;
@@ -20,9 +20,9 @@ public final class o implements Handler.Callback {
     public final Handler d = d0.l(this);
     public final f4.b c = new f4.b(1);
 
-    public o(s4.c cVar, f1 f1Var, q qVar) {
+    public o(s4.c cVar, zz zzVar, q qVar) {
         this.f = cVar;
-        this.b = f1Var;
+        this.b = zzVar;
         this.a = qVar;
     }
 

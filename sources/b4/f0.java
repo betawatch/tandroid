@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.List;
 import org.telegram.ui.Components.jb;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class f0 implements r3.k {
     public final int a;
@@ -58,7 +58,7 @@ public final class f0 implements r3.k {
         for (int i11 = 0; i11 < size; i11++) {
             sparseArray.put(sparseArray2.keyAt(i11), (i0) sparseArray2.valueAt(i11));
         }
-        sparseArray.put(0, new c0(new bf.b(this)));
+        sparseArray.put(0, new c0(new af.c(this)));
         this.p = null;
     }
 
@@ -161,7 +161,7 @@ public final class f0 implements r3.k {
                             } else {
                                 i19++;
                                 if (i19 == 5) {
-                                    long a2 = j7.d0.a(wVar, i17, i14);
+                                    long a2 = j7.c0.a(wVar, i17, i14);
                                     if (a2 != -9223372036854775807L) {
                                         j12 = a2;
                                         break;
@@ -212,7 +212,7 @@ public final class f0 implements r3.k {
                         break;
                     }
                     if (wVar.a[i21] == 71) {
-                        long a10 = j7.d0.a(wVar, i21, i14);
+                        long a10 = j7.c0.a(wVar, i21, i14);
                         if (a10 != -9223372036854775807L) {
                             j12 = a10;
                             break;
@@ -238,15 +238,15 @@ public final class f0 implements r3.k {
                     j10 = 0;
                     z4 = false;
                     i12 = 1;
-                    x xVar = new x(new cb.b(21), new e0(this.r, c0Var2), j17, j17 + 1, 0L, j11, 188L, 940);
+                    x xVar = new x(new ab.a(21), new e0(this.r, c0Var2), j17, j17 + 1, 0L, j11, 188L, 940);
                     this.j = xVar;
-                    this.k.m2(xVar.a);
+                    this.k.h2(xVar.a);
                 } else {
                     i10 = i13;
                     j10 = 0;
                     z4 = false;
                     i12 = 1;
-                    this.k.m2(new r3.n(j17));
+                    this.k.h2(new r3.n(j17));
                 }
             }
             if (this.o) {
@@ -372,7 +372,7 @@ public final class f0 implements r3.k {
                     break;
                 }
             }
-            hVar.s(i10);
+            hVar.n(i10);
             return true;
         }
         return false;

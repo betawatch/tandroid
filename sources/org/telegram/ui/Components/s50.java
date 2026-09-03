@@ -1,24 +1,58 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.view.View;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.VideoEditedInfo;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.widget.FrameLayout;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public interface s50 {
-    long a();
+public abstract class s50 extends FrameLayout {
+    public ImageReceiver a;
+    public float b;
+    public final /* synthetic */ y50 c;
 
-    boolean c();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s50(y50 y50Var, Context context) {
+        super(context);
+        this.c = y50Var;
+        y50Var.setWillNotDraw(false);
+    }
 
-    int getClassGuid();
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        float f10 = this.b;
+        if (f10 != 1.0f) {
+            float f11 = f10 + 0.064f;
+            this.b = f11;
+            if (f11 > 1.0f) {
+                this.b = 1.0f;
+            }
+            invalidate();
+        }
+        if (this.a != null) {
+            canvas.save();
+            float imageWidth = this.a.getImageWidth();
+            int i10 = this.c.K0;
+            if (imageWidth != i10) {
+                float imageWidth2 = i10 / this.a.getImageWidth();
+                canvas.scale(imageWidth2, imageWidth2);
+            }
+            canvas.translate(-this.a.getImageX(), -this.a.getImageY());
+            float alpha = this.a.getAlpha();
+            this.a.setAlpha(this.b);
+            this.a.draw(canvas);
+            this.a.setAlpha(alpha);
+            canvas.restore();
+        }
+    }
 
-    View getFragmentView();
-
-    Activity getParentActivity();
-
-    void r(MediaController.PhotoEntry photoEntry, VideoEditedInfo videoEditedInfo, boolean z4, int i10, int i11, boolean z10, long j10);
-
-    boolean w();
+    public void setImageReceiver(ImageReceiver imageReceiver) {
+        if (this.a == null) {
+            this.b = 0.0f;
+        }
+        this.a = imageReceiver;
+        invalidate();
+    }
 }

@@ -10,23 +10,25 @@ import android.view.ViewGroup;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import b4.e0;
 import c2.p;
-import c9.q;
 import c9.r;
+import c9.s;
+import cg.d1;
+import cg.k1;
+import cg.n1;
+import cg.p1;
 import com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.m;
-import dg.c1;
-import dg.j1;
-import dg.m1;
-import dg.o1;
-import eg.l3;
-import eg.o3;
-import eg.t2;
-import f2.j0;
-import fg.t0;
-import fg.u0;
-import fg.v0;
+import dg.e1;
+import dg.n3;
+import dg.q3;
+import dg.v2;
+import eg.t0;
+import eg.u0;
+import eg.u2;
+import eg.v0;
+import f2.i0;
 import java.io.File;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -34,6 +36,7 @@ import java.util.HashMap;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicBoolean;
 import kotlin.jvm.internal.j;
+import kotlin.jvm.internal.q;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.NotificationBadge;
@@ -43,14 +46,14 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.j90;
-import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.i90;
+import org.telegram.ui.Components.mr;
+import org.telegram.ui.Components.rl0;
 import v0.i;
 import v0.o;
 import w0.h;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -64,14 +67,14 @@ public final /* synthetic */ class e implements Runnable {
     }
 
     private final void a() {
-        q qVar = (q) this.b;
+        r rVar = (r) this.b;
         ba.b bVar = (ba.b) this.c;
-        synchronized (qVar) {
+        synchronized (rVar) {
             try {
-                if (qVar.b == null) {
-                    qVar.a.add(bVar);
+                if (rVar.b == null) {
+                    rVar.a.add(bVar);
                 } else {
-                    qVar.b.add(bVar.get());
+                    rVar.b.add(bVar.get());
                 }
             } catch (Throwable th2) {
                 throw th2;
@@ -89,7 +92,7 @@ public final /* synthetic */ class e implements Runnable {
                 CredentialProviderPlayServicesImpl.runFallbackClearCredFlow$lambda$27$lambda$26$lambda$25$lambda$24((i) this.b, (Exception) this.c);
                 return;
             case 1:
-                CredentialProviderPlayServicesImpl.onClearCredential$lambda$14$lambda$13$lambda$12((i) this.b, (kotlin.jvm.internal.q) this.c);
+                CredentialProviderPlayServicesImpl.onClearCredential$lambda$14$lambda$13$lambda$12((i) this.b, (q) this.c);
                 return;
             case 2:
                 ViewGroup container = (ViewGroup) this.b;
@@ -103,7 +106,7 @@ public final /* synthetic */ class e implements Runnable {
                 ((i) this.b).onResult((o) this.c);
                 return;
             case 5:
-                ((c1.f) this.b).e().onError(((kotlin.jvm.internal.q) this.c).a);
+                ((c1.f) this.b).e().onError(((q) this.c).a);
                 return;
             case 6:
                 ((c1.f) this.b).e().onError((h) this.c);
@@ -112,15 +115,15 @@ public final /* synthetic */ class e implements Runnable {
                 ((c1.f) this.b).e().onResult((o) this.c);
                 return;
             case 8:
-                r rVar = (r) this.b;
+                s sVar = (s) this.b;
                 ba.b bVar = (ba.b) this.c;
-                if (rVar.b != r.d) {
+                if (sVar.b != s.d) {
                     throw new IllegalStateException("provide() can be called only once.");
                 }
-                synchronized (rVar) {
-                    aVar = rVar.a;
-                    rVar.a = null;
-                    rVar.b = bVar;
+                synchronized (sVar) {
+                    aVar = sVar.a;
+                    sVar.a = null;
+                    sVar.b = bVar;
                 }
                 aVar.f(bVar);
                 return;
@@ -128,6 +131,27 @@ public final /* synthetic */ class e implements Runnable {
                 a();
                 return;
             case 10:
+                d1 d1Var = (d1) this.b;
+                k1 k1Var = (k1) this.c;
+                d1Var.v = true;
+                ByteBuffer byteBuffer = (ByteBuffer) d1Var.h(d1Var.f(), true, false, false).c;
+                RectF f10 = d1Var.f();
+                Object obj = d1Var.a.b;
+                d1Var.w = new e0(byteBuffer, 0, f10);
+                d1Var.a(false);
+                k1Var.run();
+                return;
+            case 11:
+                p1 p1Var = (p1) this.b;
+                Runnable runnable = (Runnable) this.c;
+                n1 n1Var = p1Var.d;
+                if (n1Var == null || !n1Var.f) {
+                    return;
+                }
+                n1.b(n1Var);
+                runnable.run();
+                return;
+            case 12:
                 FirebaseMessaging firebaseMessaging = (FirebaseMessaging) this.b;
                 TaskCompletionSource taskCompletionSource = (TaskCompletionSource) this.c;
                 ja.c cVar = FirebaseMessaging.l;
@@ -135,21 +159,21 @@ public final /* synthetic */ class e implements Runnable {
                 try {
                     taskCompletionSource.setResult(firebaseMessaging.a());
                     return;
-                } catch (Exception e6) {
-                    taskCompletionSource.setException(e6);
+                } catch (Exception e) {
+                    taskCompletionSource.setException(e);
                     return;
                 }
-            case 11:
+            case 13:
                 m mVar = (m) this.b;
                 TaskCompletionSource taskCompletionSource2 = (TaskCompletionSource) this.c;
                 try {
                     taskCompletionSource2.setResult(mVar.a());
                     return;
-                } catch (Exception e10) {
-                    taskCompletionSource2.setException(e10);
+                } catch (Exception e6) {
+                    taskCompletionSource2.setException(e6);
                     return;
                 }
-            case 12:
+            case 14:
                 d1.e eVar = (d1.e) this.b;
                 v0.f fVar = (v0.f) this.c;
                 i iVar = eVar.f;
@@ -160,54 +184,56 @@ public final /* synthetic */ class e implements Runnable {
                     j.h("callback");
                     throw null;
                 }
-            case 13:
+            case 15:
                 d9.a aVar2 = (d9.a) this.b;
-                Runnable runnable = (Runnable) this.c;
+                Runnable runnable2 = (Runnable) this.c;
                 Process.setThreadPriority(aVar2.c);
                 StrictMode.ThreadPolicy threadPolicy = aVar2.d;
                 if (threadPolicy != null) {
                     StrictMode.setThreadPolicy(threadPolicy);
                 }
-                runnable.run();
+                runnable2.run();
                 return;
-            case 14:
+            case 16:
                 Callable callable = (Callable) this.b;
-                d9.i iVar2 = (d9.i) ((y5.h) this.c).b;
+                d9.i iVar2 = (d9.i) ((androidx.biometric.e0) this.c).b;
                 try {
                     iVar2.k(callable.call());
                     return;
-                } catch (Exception e11) {
-                    iVar2.l(e11);
+                } catch (Exception e10) {
+                    iVar2.l(e10);
                     return;
                 }
-            case 15:
-                c1 c1Var = (c1) this.b;
-                j1 j1Var = (j1) this.c;
-                c1Var.v = true;
-                ByteBuffer byteBuffer = (ByteBuffer) c1Var.h(c1Var.f(), true, false, false).c;
-                RectF f10 = c1Var.f();
-                Object obj = c1Var.a.b;
-                c1Var.w = new e0(byteBuffer, 0, f10);
-                c1Var.a(false);
-                j1Var.run();
-                return;
-            case 16:
-                o1 o1Var = (o1) this.b;
-                Runnable runnable2 = (Runnable) this.c;
-                m1 m1Var = o1Var.d;
-                if (m1Var == null || !m1Var.f) {
-                    return;
-                }
-                m1.b(m1Var);
-                runnable2.run();
-                return;
             case 17:
-                ((i) this.b).onError((w0.d) this.c);
+                e1 e1Var = (e1) this.b;
+                v2 v2Var = (v2) this.c;
+                v2Var.m();
+                e1Var.r0(v2Var, true);
                 return;
             case 18:
-                ((i) this.b).onResult((v0.f) this.c);
+                ((v2) this.b).s((Bitmap) this.c);
                 return;
             case 19:
+                q3 q3Var = (q3) this.b;
+                ArrayList arrayList = (ArrayList) this.c;
+                q3Var.D = false;
+                n3[] n3VarArr = (n3[]) arrayList.toArray(new n3[0]);
+                q3Var.E = n3VarArr;
+                if (n3VarArr.length > 0) {
+                    q3Var.V.setScaleX(0.3f);
+                    q3Var.V.setScaleY(0.3f);
+                    q3Var.V.setAlpha(0.0f);
+                    q3Var.V.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).setInterpolator(mr.f).start();
+                    return;
+                }
+                return;
+            case 20:
+                ((i) this.b).onError((w0.d) this.c);
+                return;
+            case 21:
+                ((i) this.b).onResult((v0.f) this.c);
+                return;
+            case 22:
                 e1.d dVar = (e1.d) this.b;
                 v0.c cVar2 = (v0.c) this.c;
                 i iVar3 = dVar.f;
@@ -218,38 +244,15 @@ public final /* synthetic */ class e implements Runnable {
                     j.h("callback");
                     throw null;
                 }
-            case 20:
+            case 23:
                 JobInfoSchedulerService jobInfoSchedulerService = (JobInfoSchedulerService) this.b;
                 JobParameters jobParameters = (JobParameters) this.c;
                 int i11 = JobInfoSchedulerService.a;
                 jobInfoSchedulerService.jobFinished(jobParameters, false);
                 return;
-            case 21:
-                eg.c1 c1Var2 = (eg.c1) this.b;
-                t2 t2Var = (t2) this.c;
-                t2Var.m();
-                c1Var2.r0(t2Var, true);
-                return;
-            case 22:
-                ((t2) this.b).s((Bitmap) this.c);
-                return;
-            case 23:
-                o3 o3Var = (o3) this.b;
-                ArrayList arrayList = (ArrayList) this.c;
-                o3Var.D = false;
-                l3[] l3VarArr = (l3[]) arrayList.toArray(new l3[0]);
-                o3Var.E = l3VarArr;
-                if (l3VarArr.length > 0) {
-                    o3Var.V.setScaleX(0.3f);
-                    o3Var.V.setScaleY(0.3f);
-                    o3Var.V.setAlpha(0.0f);
-                    o3Var.V.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).setInterpolator(pr.f).start();
-                    return;
-                }
-                return;
             case 24:
                 p pVar = (p) this.b;
-                ef.b bVar2 = (ef.b) this.c;
+                df.b bVar2 = (df.b) this.c;
                 if (((AtomicBoolean) pVar.d).compareAndSet(false, true)) {
                     bVar2.a(true);
                     return;
@@ -259,7 +262,7 @@ public final /* synthetic */ class e implements Runnable {
                 v0 v0Var = (v0) this.b;
                 TLObject tLObject = (TLObject) this.c;
                 ArrayList arrayList2 = v0Var.f0;
-                sl0 sl0Var = v0Var.d;
+                rl0 rl0Var = v0Var.d;
                 if (tLObject != null) {
                     arrayList2.clear();
                     arrayList2.addAll(((TLRPC.TL_messages_chats) tLObject).chats);
@@ -267,17 +270,17 @@ public final /* synthetic */ class e implements Runnable {
                     v0Var.G0.b(v0Var.k0 + 4);
                     int i12 = 0;
                     while (true) {
-                        if (i12 >= sl0Var.getChildCount()) {
+                        if (i12 >= rl0Var.getChildCount()) {
                             i10 = 0;
-                        } else if (sl0Var.getChildAt(i12) instanceof u0) {
-                            i10 = sl0Var.getChildAt(i12).getTop();
+                        } else if (rl0Var.getChildAt(i12) instanceof u0) {
+                            i10 = rl0Var.getChildAt(i12).getTop();
                         } else {
                             i12++;
                         }
                     }
                     v0Var.M1();
                     if (v0Var.i0 >= 0 && i10 != 0) {
-                        ((j0) sl0Var.getLayoutManager()).h1(v0Var.i0 + 1, i10);
+                        ((i0) rl0Var.getLayoutManager()).h1(v0Var.i0 + 1, i10);
                     }
                 }
                 int max = Math.max(arrayList2.size(), v0Var.J0.b);
@@ -288,19 +291,19 @@ public final /* synthetic */ class e implements Runnable {
                 t0Var.requestLayout();
                 return;
             case 26:
-                ((v0) this.b).m1((j90) this.c, true);
+                ((v0) this.b).m1((i90) this.c, true);
                 return;
             case 27:
-                fg.t2 t2Var2 = (fg.t2) this.b;
-                AndroidUtilities.runOnUIThread(new e(28, t2Var2, FileLoader.getInstance(t2Var2.s).getPathToAttach((TLRPC.Document) this.c)));
+                u2 u2Var = (u2) this.b;
+                AndroidUtilities.runOnUIThread(new e(28, u2Var, FileLoader.getInstance(u2Var.s).getPathToAttach((TLRPC.Document) this.c)));
                 return;
             case 28:
-                fg.t2 t2Var3 = (fg.t2) this.b;
-                t2Var3.e = (File) this.c;
-                t2Var3.a();
+                u2 u2Var2 = (u2) this.b;
+                u2Var2.e = (File) this.c;
+                u2Var2.a();
                 return;
             default:
-                gf.e eVar2 = (gf.e) this.b;
+                ff.e eVar2 = (ff.e) this.b;
                 TLObject tLObject2 = (TLObject) this.c;
                 if (tLObject2 != null) {
                     if (tLObject2 instanceof TL_account.TL_savedRingtonesNotModified) {
@@ -319,7 +322,7 @@ public final /* synthetic */ class e implements Runnable {
                         while (i13 < size) {
                             Object obj2 = arrayList4.get(i13);
                             i13++;
-                            gf.d dVar2 = (gf.d) obj2;
+                            ff.d dVar2 = (ff.d) obj2;
                             if (dVar2.b != null && (document = dVar2.a) != null) {
                                 hashMap.put(Long.valueOf(document.id), dVar2.b);
                             }
@@ -338,7 +341,7 @@ public final /* synthetic */ class e implements Runnable {
                             if (str != null) {
                                 edit.putString("tone_local_path" + i14, str);
                             }
-                            gf.d dVar3 = new gf.d();
+                            ff.d dVar3 = new ff.d();
                             dVar3.a = document2;
                             dVar3.b = str;
                             int i15 = eVar2.d;
@@ -350,10 +353,10 @@ public final /* synthetic */ class e implements Runnable {
                         NotificationCenter.getInstance(eVar2.c).lambda$postNotificationNameOnUIThread$1(NotificationCenter.onUserRingtonesUpdated, new Object[0]);
                         SharedPreferences.Editor edit2 = eVar2.d().edit();
                         long j10 = tL_savedRingtones.hash;
-                        gf.e.g = j10;
+                        ff.e.g = j10;
                         SharedPreferences.Editor putLong = edit2.putLong("hash", j10);
                         long currentTimeMillis = System.currentTimeMillis();
-                        gf.e.h = currentTimeMillis;
+                        ff.e.h = currentTimeMillis;
                         putLong.putLong("lastReload", currentTimeMillis).apply();
                     }
                     eVar2.b();

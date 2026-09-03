@@ -8,9 +8,9 @@ import android.graphics.RectF;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ex0 implements v60, ug.e {
+public final /* synthetic */ class ex0 implements w60, tg.e {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -21,14 +21,14 @@ public final /* synthetic */ class ex0 implements v60, ug.e {
         this.b = z4;
     }
 
-    @Override // ug.e
+    @Override // tg.e
     public void a(Canvas canvas, RectF rectF, float[] fArr) {
         Paint paint;
         Path.Direction direction;
         float f10;
-        qg.b bVar = (qg.b) this.c;
-        float[] fArr2 = qg.b.C;
-        qg.a aVar = bVar.h;
+        pg.b bVar = (pg.b) this.c;
+        float[] fArr2 = pg.b.C;
+        pg.a aVar = bVar.h;
         Path path = new Path();
         Path.Direction direction2 = Path.Direction.CW;
         path.addRoundRect(rectF, fArr, direction2);
@@ -46,7 +46,7 @@ public final /* synthetic */ class ex0 implements v60, ug.e {
         }
         if (this.b) {
             float[] copyOf = Arrays.copyOf(aVar.b, 8);
-            boolean c3 = lf.l0.c(copyOf);
+            boolean c3 = kf.m0.c(copyOf);
             float min = Math.min(rectF.width(), rectF.height()) / 2.0f;
             Paint paint3 = new Paint(1);
             if (Color.alpha(bVar.f) <= 0 || copyOf[0] <= 0.0f) {
@@ -100,7 +100,7 @@ public final /* synthetic */ class ex0 implements v60, ug.e {
         }
     }
 
-    @Override // org.telegram.ui.v60
+    @Override // org.telegram.ui.w60
     public void b(ArrayList arrayList, boolean z4, boolean z10) {
         PrivacyControlActivity privacyControlActivity = (PrivacyControlActivity) this.c;
         boolean[] zArr = privacyControlActivity.B;

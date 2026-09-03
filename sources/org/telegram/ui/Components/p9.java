@@ -17,7 +17,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public class p9 extends View {
     public Path B;
@@ -91,7 +91,7 @@ public class p9 extends View {
 
     public z8 getAvatarDrawable() {
         if (this.h == null) {
-            this.h = new z8((org.telegram.ui.ActionBar.g6) null);
+            this.h = new z8((org.telegram.ui.ActionBar.f6) null);
         }
         return this.h;
     }
@@ -135,9 +135,9 @@ public class p9 extends View {
         m(imageLocation, str, null, null, drawable, null, 0, obj);
     }
 
-    public final void o(t61 t61Var, ImageLocation imageLocation, String str, ImageLocation imageLocation2, ImageLocation imageLocation3, String str2, int i10, String str3) {
-        if (t61Var != null) {
-            this.a.setImageBitmap(t61Var);
+    public final void o(s61 s61Var, ImageLocation imageLocation, String str, ImageLocation imageLocation2, ImageLocation imageLocation3, String str2, int i10, String str3) {
+        if (s61Var != null) {
+            this.a.setImageBitmap(s61Var);
         } else {
             this.a.setImage(imageLocation, str, imageLocation2, null, imageLocation3, str2, null, i10, null, str3, 1);
         }

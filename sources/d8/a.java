@@ -21,9 +21,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
-import k6.c;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class a {
     public static final long n = TimeUnit.DAYS.toMillis(366);
@@ -73,7 +72,7 @@ public final class a {
             packageName = (packageName == null || packageName.trim().isEmpty()) ? context.getPackageName() : packageName;
             if (context.getPackageManager() != null && packageName != null) {
                 try {
-                    ApplicationInfo applicationInfo = c.a(context).a.getPackageManager().getApplicationInfo(packageName, 0);
+                    ApplicationInfo applicationInfo = ((Context) k6.b.a(context).b).getPackageManager().getApplicationInfo(packageName, 0);
                     if (applicationInfo == null) {
                         Log.e("WorkSourceUtil", "Could not get applicationInfo from package: ".concat(packageName));
                     } else {
@@ -88,8 +87,8 @@ public final class a {
             if (workSource != null) {
                 try {
                     this.b.setWorkSource(workSource);
-                } catch (ArrayIndexOutOfBoundsException | IllegalArgumentException e6) {
-                    Log.wtf("WakeLock", e6.toString());
+                } catch (ArrayIndexOutOfBoundsException | IllegalArgumentException e) {
+                    Log.wtf("WakeLock", e.toString());
                 }
             }
         }
@@ -142,7 +141,7 @@ public final class a {
                     if (scheduledFuture != null) {
                         scheduledFuture.cancel(false);
                     }
-                    this.d = this.m.schedule(new i(this, 15), max, TimeUnit.MILLISECONDS);
+                    this.d = this.m.schedule(new i(this, 16), max, TimeUnit.MILLISECONDS);
                 }
             } catch (Throwable th2) {
                 throw th2;
@@ -232,11 +231,11 @@ public final class a {
                                 if (this.h != null) {
                                     this.h = null;
                                 }
-                            } catch (RuntimeException e6) {
-                                if (!e6.getClass().equals(RuntimeException.class)) {
-                                    throw e6;
+                            } catch (RuntimeException e) {
+                                if (!e.getClass().equals(RuntimeException.class)) {
+                                    throw e;
                                 }
-                                Log.e("WakeLock", String.valueOf(this.j).concat(" failed to release!"), e6);
+                                Log.e("WakeLock", String.valueOf(this.j).concat(" failed to release!"), e);
                                 if (this.h != null) {
                                     this.h = null;
                                 }

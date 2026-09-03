@@ -14,11 +14,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class b31 extends org.telegram.ui.ActionBar.p2 implements NotificationCenter.NotificationCenterDelegate {
     public LinearLayout a;
-    public org.telegram.ui.Components.sl0 b;
+    public org.telegram.ui.Components.rl0 b;
     public x21 c;
     public int d;
     public int e;
@@ -37,7 +37,7 @@ public final class b31 extends org.telegram.ui.ActionBar.p2 implements Notificat
         if (view instanceof org.telegram.ui.Cells.y) {
             org.telegram.ui.Cells.y yVar = (org.telegram.ui.Cells.y) view;
             if (yVar.h && !b31Var.getUserConfig().isPremium()) {
-                b31Var.showDialog(new fg.n1((org.telegram.ui.ActionBar.p2) b31Var, 4, true));
+                b31Var.showDialog(new eg.o1((org.telegram.ui.ActionBar.p2) b31Var, 4, true));
                 return;
             } else {
                 MediaDataController.getInstance(b31Var.currentAccount).setDoubleTapReaction(yVar.e.reaction);
@@ -74,7 +74,7 @@ public final class b31 extends org.telegram.ui.ActionBar.p2 implements Notificat
             List<TLRPC.TL_availableReaction> reactionsList = b31Var.getMediaDataController().getReactionsList();
             ArrayList arrayList = new ArrayList(20);
             for (int i12 = 0; i12 < reactionsList.size(); i12++) {
-                ng.q0 q0Var = new ng.q0();
+                mg.q0 q0Var = new mg.q0();
                 q0Var.f = reactionsList.get(i12).reaction;
                 arrayList.add(q0Var);
             }
@@ -111,21 +111,21 @@ public final class b31 extends org.telegram.ui.ActionBar.p2 implements Notificat
         this.actionBar.setActionBarMenuOnItemClick(new ll0(this, 12));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        org.telegram.ui.Components.sl0 sl0Var = new org.telegram.ui.Components.sl0(context, null);
-        this.b = sl0Var;
-        sl0Var.o1();
+        org.telegram.ui.Components.rl0 rl0Var = new org.telegram.ui.Components.rl0(context, null);
+        this.b = rl0Var;
+        rl0Var.o1();
         this.actionBar.setAdaptiveBackground(this.b);
         ((f2.l) this.b.getItemAnimator()).m = false;
-        this.b.setLayoutManager(new f2.j0());
-        org.telegram.ui.Components.sl0 sl0Var2 = this.b;
+        this.b.setLayoutManager(new f2.i0());
+        org.telegram.ui.Components.rl0 rl0Var2 = this.b;
         x21 x21Var = new x21(this, context);
         this.c = x21Var;
-        sl0Var2.setAdapter(x21Var);
+        rl0Var2.setAdapter(x21Var);
         this.b.setOnItemClickListener(new p21(this, 1));
-        linearLayout.addView(this.b, k7.c6.n(-1, -1));
+        linearLayout.addView(this.b, k7.b6.n(-1, -1));
         this.a = linearLayout;
         this.fragmentView = linearLayout;
-        linearLayout.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.a7, false));
+        linearLayout.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
         this.c.l();
         c0();
         return this.a;
@@ -146,7 +146,7 @@ public final class b31 extends org.telegram.ui.ActionBar.p2 implements Notificat
 
     @Override // org.telegram.ui.ActionBar.p2
     public final ArrayList getThemeDescriptions() {
-        return k7.f6.a(new jy0(4, this), org.telegram.ui.ActionBar.k6.d6, org.telegram.ui.ActionBar.k6.G6, org.telegram.ui.ActionBar.k6.z6, org.telegram.ui.ActionBar.k6.i6, org.telegram.ui.ActionBar.k6.a7, org.telegram.ui.ActionBar.k6.B6, org.telegram.ui.ActionBar.k6.p7, org.telegram.ui.ActionBar.k6.f6, org.telegram.ui.ActionBar.k6.g6, org.telegram.ui.ActionBar.k6.O6, org.telegram.ui.ActionBar.k6.P6, org.telegram.ui.ActionBar.k6.Q6, org.telegram.ui.ActionBar.k6.R6);
+        return k7.e6.a(new jy0(4, this), org.telegram.ui.ActionBar.j6.d6, org.telegram.ui.ActionBar.j6.G6, org.telegram.ui.ActionBar.j6.z6, org.telegram.ui.ActionBar.j6.i6, org.telegram.ui.ActionBar.j6.a7, org.telegram.ui.ActionBar.j6.B6, org.telegram.ui.ActionBar.j6.p7, org.telegram.ui.ActionBar.j6.f6, org.telegram.ui.ActionBar.j6.g6, org.telegram.ui.ActionBar.j6.O6, org.telegram.ui.ActionBar.j6.P6, org.telegram.ui.ActionBar.j6.Q6, org.telegram.ui.ActionBar.j6.R6);
     }
 
     @Override // org.telegram.ui.ActionBar.p2

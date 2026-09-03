@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class qz0 extends FrameLayout {
     public final sz0 a;
@@ -22,7 +22,7 @@ public final class qz0 extends FrameLayout {
         if (!z4) {
             setPadding(AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f), AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f));
         }
-        addView(view, k7.c6.c(-1.0f, -1));
+        addView(view, k7.b6.c(-1.0f, -1));
     }
 
     @Override // android.view.View

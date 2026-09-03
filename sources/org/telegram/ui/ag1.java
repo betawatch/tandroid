@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ag1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -54,7 +54,7 @@ public final /* synthetic */ class ag1 implements RequestDelegate {
                                     org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
                                     d2Var.O = string;
                                     d2Var.Q = LocaleController.getString(R.string.RestorePasswordResetPasswordOk);
-                                    twoStepVerificationActivity2.showDialog(d2Var, new v5(twoStepVerificationActivity2, 18));
+                                    twoStepVerificationActivity2.showDialog(d2Var, new x5(twoStepVerificationActivity2, 18));
                                     break;
                                 }
                                 break;
@@ -128,7 +128,7 @@ public final /* synthetic */ class ag1 implements RequestDelegate {
                                     org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
                                     d2Var.O = string;
                                     d2Var.Q = LocaleController.getString(R.string.RestorePasswordResetPasswordOk);
-                                    twoStepVerificationActivity22.showDialog(d2Var, new v5(twoStepVerificationActivity22, 18));
+                                    twoStepVerificationActivity22.showDialog(d2Var, new x5(twoStepVerificationActivity22, 18));
                                     break;
                                 }
                                 break;

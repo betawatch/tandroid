@@ -4,7 +4,7 @@ import h5.w;
 import r3.m;
 import r3.v;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class j {
     public v b;
@@ -19,7 +19,7 @@ public abstract class j {
     public boolean l;
     public boolean m;
     public final f a = new f();
-    public bf.b j = new bf.b((char) 0, 1);
+    public af.c j = new af.c((char) 0, 1);
 
     public void a(long j10) {
         this.g = j10;
@@ -27,11 +27,11 @@ public abstract class j {
 
     public abstract long b(w wVar);
 
-    public abstract boolean c(w wVar, long j10, bf.b bVar);
+    public abstract boolean c(w wVar, long j10, af.c cVar);
 
     public void d(boolean z4) {
         if (z4) {
-            this.j = new bf.b((char) 0, 1);
+            this.j = new af.c((char) 0, 1);
             this.f = 0L;
             this.h = 0;
         } else {

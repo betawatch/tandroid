@@ -7,7 +7,7 @@ import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.TopicsController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class rf1 extends f2.b0 {
     public boolean d;
@@ -18,21 +18,21 @@ public final class rf1 extends f2.b0 {
     }
 
     @Override // f2.b0
-    public final void a(RecyclerView recyclerView, f2.m1 m1Var) {
-        super.a(recyclerView, m1Var);
-        m1Var.a.setPressed(false);
+    public final void a(RecyclerView recyclerView, f2.l1 l1Var) {
+        super.a(recyclerView, l1Var);
+        l1Var.a.setPressed(false);
     }
 
     @Override // f2.b0
-    public final int e(RecyclerView recyclerView, f2.m1 m1Var) {
+    public final int e(RecyclerView recyclerView, f2.l1 l1Var) {
         int l10 = f2.b0.l(0, 0);
-        int b10 = m1Var.b();
+        int b10 = l1Var.b();
         if (b10 >= 0) {
             sf1 sf1Var = this.e;
             if (b10 < sf1Var.b.size() && ((jf1) sf1Var.b.get(b10)).c != null && ChatObject.canManageTopics(sf1Var.g())) {
                 TLRPC.TL_forumTopic tL_forumTopic = ((jf1) sf1Var.b.get(b10)).c;
                 if (sf1Var.X.isEmpty()) {
-                    View view = m1Var.a;
+                    View view = l1Var.a;
                     if ((view instanceof pf1) && tL_forumTopic.id == 1) {
                         this.d = true;
                         ((pf1) view).setSliding(true);
@@ -51,20 +51,20 @@ public final class rf1 extends f2.b0 {
     }
 
     @Override // f2.b0
-    public final boolean n(RecyclerView recyclerView, f2.m1 m1Var, f2.m1 m1Var2) {
+    public final boolean n(RecyclerView recyclerView, f2.l1 l1Var, f2.l1 l1Var2) {
         int b10;
         sf1 sf1Var = this.e;
         ArrayList arrayList = sf1Var.b;
-        if (m1Var.f != m1Var2.f || (b10 = m1Var2.b()) < 0 || b10 >= arrayList.size() || ((jf1) arrayList.get(b10)).c == null || !((jf1) arrayList.get(b10)).c.pinned) {
+        if (l1Var.f != l1Var2.f || (b10 = l1Var2.b()) < 0 || b10 >= arrayList.size() || ((jf1) arrayList.get(b10)).c == null || !((jf1) arrayList.get(b10)).c.pinned) {
             return false;
         }
         hf1 hf1Var = sf1Var.r;
-        int b11 = m1Var.b();
-        int b12 = m1Var2.b();
+        int b11 = l1Var.b();
+        int b12 = l1Var2.b();
         sf1 sf1Var2 = hf1Var.d;
         ArrayList arrayList2 = sf1Var2.b;
         arrayList2.add(b12, (jf1) arrayList2.remove(b11));
-        f2.u0 itemAnimator = sf1Var2.K.getItemAnimator();
+        f2.t0 itemAnimator = sf1Var2.K.getItemAnimator();
         ff1 ff1Var = sf1Var2.F0;
         if (itemAnimator != ff1Var) {
             sf1Var2.K.setItemAnimator(ff1Var);
@@ -74,11 +74,11 @@ public final class rf1 extends f2.b0 {
     }
 
     @Override // f2.b0
-    public final void p(f2.m1 m1Var, int i10) {
+    public final void p(f2.l1 l1Var, int i10) {
         sf1 sf1Var = this.e;
         if (i10 != 0) {
             sf1Var.K.I0(false);
-            m1Var.a.setPressed(true);
+            l1Var.a.setPressed(true);
             return;
         }
         ArrayList arrayList = sf1Var.b;
@@ -93,9 +93,9 @@ public final class rf1 extends f2.b0 {
     }
 
     @Override // f2.b0
-    public final void q(f2.m1 m1Var) {
-        if (m1Var != null) {
-            pf1 pf1Var = (pf1) m1Var.a;
+    public final void q(f2.l1 l1Var) {
+        if (l1Var != null) {
+            pf1 pf1Var = (pf1) l1Var.a;
             TLRPC.TL_forumTopic tL_forumTopic = pf1Var.K;
             sf1 sf1Var = this.e;
             if (tL_forumTopic != null) {

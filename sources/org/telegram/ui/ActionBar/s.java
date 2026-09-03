@@ -1,9 +1,9 @@
 package org.telegram.ui.ActionBar;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.mr;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class s implements Runnable {
     public final /* synthetic */ boolean a;
@@ -65,7 +65,7 @@ public final class s implements Runnable {
             valueOf2 = valueOf;
         }
         if (actionBarLayout.E != null && valueOf != null && valueOf2 != null) {
-            int d = i0.a.d(k7.o.a(actionBarLayout.B0 * 4.0f, 0.0f, 1.0f), valueOf.intValue(), valueOf2.intValue());
+            int d = i0.a.d(k7.n.a(actionBarLayout.B0 * 4.0f, 0.0f, 1.0f), valueOf.intValue(), valueOf2.intValue());
             r rVar = actionBarLayout.D;
             if (rVar != null && rVar.sheetsStack != null) {
                 for (int i10 = 0; i10 < actionBarLayout.D.sheetsStack.size(); i10++) {
@@ -77,9 +77,9 @@ public final class s implements Runnable {
             }
             actionBarLayout.E.setNavigationBarColor(d);
         }
-        float interpolation = z11 ? z10 ? actionBarLayout.J.getInterpolation(actionBarLayout.B0) : pr.h.getInterpolation(actionBarLayout.B0) : actionBarLayout.I.getInterpolation(actionBarLayout.B0);
+        float interpolation = z11 ? z10 ? actionBarLayout.J.getInterpolation(actionBarLayout.B0) : mr.h.getInterpolation(actionBarLayout.B0) : actionBarLayout.I.getInterpolation(actionBarLayout.B0);
         if (z10) {
-            float a2 = k7.o.a(interpolation, 0.0f, 1.0f);
+            float a2 = k7.n.a(interpolation, 0.0f, 1.0f);
             actionBarLayout.s.setAlpha(a2);
             if (z11) {
                 float f11 = (0.3f * interpolation) + 0.7f;
@@ -94,7 +94,7 @@ public final class s implements Runnable {
                     actionBarLayout.G.setScaleY(f13);
                 }
                 actionBarLayout.r.setAlpha((int) (46.0f * a2));
-                k6.s0.setAlpha((int) (a2 * 255.0f));
+                j6.s0.setAlpha((int) (a2 * 255.0f));
                 actionBarLayout.s.invalidate();
                 actionBarLayout.invalidate();
             } else {
@@ -102,7 +102,7 @@ public final class s implements Runnable {
             }
         } else {
             float f14 = 1.0f - interpolation;
-            float a10 = k7.o.a(f14, 0.0f, 1.0f);
+            float a10 = k7.n.a(f14, 0.0f, 1.0f);
             actionBarLayout.v.setAlpha(a10);
             if (z11) {
                 float f15 = (f14 * 0.1f) + 0.9f;
@@ -110,7 +110,7 @@ public final class s implements Runnable {
                 actionBarLayout.v.setScaleY(f15);
                 actionBarLayout.r.setAlpha((int) (46.0f * a10));
                 if (actionBarLayout.G == null) {
-                    k6.s0.setAlpha((int) (a10 * 255.0f));
+                    j6.s0.setAlpha((int) (a10 * 255.0f));
                 }
                 actionBarLayout.s.invalidate();
                 actionBarLayout.invalidate();

@@ -10,11 +10,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ff;
 import org.telegram.ui.Components.lg;
 import org.telegram.ui.Components.p9;
-import org.telegram.ui.gi0;
-import org.telegram.ui.mi0;
-import org.telegram.ui.ti0;
+import org.telegram.ui.hi0;
+import org.telegram.ui.ni0;
+import org.telegram.ui.ui0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class f extends AnimatorListenerAdapter {
     public final /* synthetic */ int a = 0;
@@ -33,9 +33,9 @@ public final class f extends AnimatorListenerAdapter {
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         ff ffVar;
-        org.telegram.ui.Cells.t1 t1Var;
+        org.telegram.ui.Cells.s1 s1Var;
         ViewGroup viewGroup;
-        gi0 gi0Var;
+        hi0 hi0Var;
         switch (this.a) {
             case 0:
                 ArrayList arrayList = (ArrayList) this.d;
@@ -46,13 +46,13 @@ public final class f extends AnimatorListenerAdapter {
                     boolean z4 = this.b;
                     if (i10 >= size) {
                         if (z4 && !this.c) {
-                            l5 l5Var = kVar.n[0];
-                            if (l5Var != null) {
-                                l5Var.setVisibility(8);
+                            k5 k5Var = kVar.n[0];
+                            if (k5Var != null) {
+                                k5Var.setVisibility(8);
                             }
-                            l5 l5Var2 = kVar.n[1];
-                            if (l5Var2 != null) {
-                                l5Var2.setVisibility(8);
+                            k5 k5Var2 = kVar.n[1];
+                            if (k5Var2 != null) {
+                                k5Var2.setVisibility(8);
                             }
                         }
                         p9 p9Var = kVar.f;
@@ -74,46 +74,46 @@ public final class f extends AnimatorListenerAdapter {
                 break;
             default:
                 Runnable runnable = (Runnable) this.d;
-                ti0 ti0Var = (ti0) this.e;
-                mi0 mi0Var = ti0Var.H;
+                ui0 ui0Var = (ui0) this.e;
+                ni0 ni0Var = ui0Var.H;
                 boolean z10 = this.b;
                 float f10 = z10 ? 1.0f : 0.0f;
-                ti0Var.B = f10;
-                ti0Var.x = false;
-                ti0Var.y = false;
-                ti0Var.E.setAlpha(f10);
+                ui0Var.B = f10;
+                ui0Var.x = false;
+                ui0Var.y = false;
+                ui0Var.E.setAlpha(f10);
                 if (z10) {
-                    ti0Var.w = false;
-                    ti0Var.v = false;
+                    ui0Var.w = false;
+                    ui0Var.v = false;
                 }
-                ff ffVar2 = ti0Var.P;
+                ff ffVar2 = ui0Var.P;
                 if (ffVar2 != null) {
                     ffVar2.setAlpha(1.0f);
                 }
-                org.telegram.ui.Cells.t1 t1Var2 = ti0Var.o0;
-                if (t1Var2 != null) {
-                    t1Var2.setVisibility(0);
+                org.telegram.ui.Cells.s1 s1Var2 = ui0Var.o0;
+                if (s1Var2 != null) {
+                    s1Var2.setVisibility(0);
                 }
-                lg lgVar = ti0Var.T;
-                if (lgVar != null && !ti0Var.s) {
+                lg lgVar = ui0Var.T;
+                if (lgVar != null && !ui0Var.s) {
                     lgVar.setAlpha(1.0f);
                 }
-                if (!z10 && (gi0Var = ti0Var.U) != null) {
-                    gi0Var.setAlpha(0.0f);
+                if (!z10 && (hi0Var = ui0Var.U) != null) {
+                    hi0Var.setAlpha(0.0f);
                 }
-                if (!this.c && (viewGroup = ti0Var.W) != null) {
-                    viewGroup.setAlpha(ti0Var.B);
+                if (!this.c && (viewGroup = ui0Var.W) != null) {
+                    viewGroup.setAlpha(ui0Var.B);
                 }
-                mi0Var.invalidate();
-                mi0Var.setAlpha(ti0Var.B);
-                ti0Var.C.invalidate();
-                ti0Var.D.invalidate();
+                ni0Var.invalidate();
+                ni0Var.setAlpha(ui0Var.B);
+                ui0Var.C.invalidate();
+                ui0Var.D.invalidate();
                 if (runnable != null) {
-                    if (!z10 && (t1Var = ti0Var.o0) != null && t1Var.isAttachedToWindow()) {
-                        ti0Var.o0.post(runnable);
+                    if (!z10 && (s1Var = ui0Var.o0) != null && s1Var.isAttachedToWindow()) {
+                        ui0Var.o0.post(runnable);
                         break;
-                    } else if (!z10 && (ffVar = ti0Var.P) != null && ffVar.isAttachedToWindow()) {
-                        ti0Var.P.post(runnable);
+                    } else if (!z10 && (ffVar = ui0Var.P) != null && ffVar.isAttachedToWindow()) {
+                        ui0Var.P.post(runnable);
                         break;
                     } else {
                         AndroidUtilities.runOnUIThread(runnable);
@@ -124,8 +124,8 @@ public final class f extends AnimatorListenerAdapter {
         }
     }
 
-    public f(ti0 ti0Var, boolean z4, boolean z10, Runnable runnable) {
-        this.e = ti0Var;
+    public f(ui0 ui0Var, boolean z4, boolean z10, Runnable runnable) {
+        this.e = ui0Var;
         this.b = z4;
         this.c = z10;
         this.d = runnable;

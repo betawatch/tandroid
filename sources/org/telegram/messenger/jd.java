@@ -6,7 +6,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class jd implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -31,13 +31,13 @@ public final /* synthetic */ class jd implements RequestDelegate {
                 ((MessagesController) this.d).lambda$loadFullUser$72(this.b, (Utilities.Callback) this.e, (TLRPC.User) this.f, this.c, tLObject, tL_error);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new mh.u6((org.telegram.ui.Cells.f6) this.d, tLObject, (MessagesStorage) this.e, this.b, this.c, (ArrayList) this.f));
+                AndroidUtilities.runOnUIThread(new lh.u6((org.telegram.ui.Cells.e6) this.d, tLObject, (MessagesStorage) this.e, this.b, this.c, (ArrayList) this.f));
                 break;
         }
     }
 
-    public /* synthetic */ jd(org.telegram.ui.Cells.f6 f6Var, MessagesStorage messagesStorage, long j10, int i10, ArrayList arrayList) {
-        this.d = f6Var;
+    public /* synthetic */ jd(org.telegram.ui.Cells.e6 e6Var, MessagesStorage messagesStorage, long j10, int i10, ArrayList arrayList) {
+        this.d = e6Var;
         this.e = messagesStorage;
         this.b = j10;
         this.c = i10;

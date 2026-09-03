@@ -7,9 +7,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class hl0 extends org.telegram.ui.Components.rl0 {
+public final class hl0 extends org.telegram.ui.Components.ql0 {
     public final Context c;
     public final /* synthetic */ PasscodeActivity d;
 
@@ -18,13 +18,13 @@ public final class hl0 extends org.telegram.ui.Components.rl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.rl0
-    public final boolean D(f2.m1 m1Var) {
+    @Override // org.telegram.ui.Components.ql0
+    public final boolean D(f2.l1 l1Var) {
         int i10;
         int i11;
         int i12;
         int i13;
-        int b10 = m1Var.b();
+        int b10 = l1Var.b();
         PasscodeActivity passcodeActivity = this.d;
         i10 = passcodeActivity.fingerprintRow;
         if (b10 == i10) {
@@ -42,12 +42,12 @@ public final class hl0 extends org.telegram.ui.Components.rl0 {
         return b10 == i13;
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final int h() {
         return this.d.I;
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final int j(int i10) {
         int i11;
         int i12;
@@ -79,24 +79,24 @@ public final class hl0 extends org.telegram.ui.Components.rl0 {
         return i10 == 0 ? 4 : 0;
     }
 
-    @Override // f2.p0
-    public final void v(f2.m1 m1Var, int i10) {
+    @Override // f2.o0
+    public final void v(f2.l1 l1Var, int i10) {
         int i11;
         int i12;
         int i13;
         int i14;
-        int i15 = m1Var.f;
-        View view = m1Var.a;
+        int i15 = l1Var.f;
+        View view = l1Var.a;
         PasscodeActivity passcodeActivity = this.d;
         if (i15 == 0) {
-            org.telegram.ui.Cells.s8 s8Var = (org.telegram.ui.Cells.s8) view;
+            org.telegram.ui.Cells.r8 r8Var = (org.telegram.ui.Cells.r8) view;
             i11 = passcodeActivity.fingerprintRow;
             if (i10 == i11) {
-                s8Var.f(LocaleController.getString(R.string.UnlockFingerprint), SharedConfig.useFingerprintLock, false);
+                r8Var.f(LocaleController.getString(R.string.UnlockFingerprint), SharedConfig.useFingerprintLock, false);
                 return;
             } else {
                 if (i10 == passcodeActivity.G) {
-                    s8Var.f(LocaleController.getString(R.string.ScreenCaptureShowContent), SharedConfig.allowScreenCapture, false);
+                    r8Var.f(LocaleController.getString(R.string.ScreenCaptureShowContent), SharedConfig.allowScreenCapture, false);
                     return;
                 }
                 return;
@@ -113,83 +113,83 @@ public final class hl0 extends org.telegram.ui.Components.rl0 {
                     il0Var.a.d();
                     return;
                 }
-                org.telegram.ui.Cells.m4 m4Var = (org.telegram.ui.Cells.m4) view;
-                m4Var.setHeight(46);
+                org.telegram.ui.Cells.l4 l4Var = (org.telegram.ui.Cells.l4) view;
+                l4Var.setHeight(46);
                 if (i10 == passcodeActivity.F) {
-                    m4Var.setText(LocaleController.getString(R.string.ScreenCaptureHeader));
+                    l4Var.setText(LocaleController.getString(R.string.ScreenCaptureHeader));
                     return;
                 }
                 return;
             }
-            org.telegram.ui.Cells.a9 a9Var = (org.telegram.ui.Cells.a9) view;
+            org.telegram.ui.Cells.z8 z8Var = (org.telegram.ui.Cells.z8) view;
             if (i10 == passcodeActivity.D) {
-                a9Var.setText(LocaleController.getString(R.string.PasscodeScreenHint));
-                a9Var.setBackground(null);
-                a9Var.getTextView().setGravity(1);
+                z8Var.setText(LocaleController.getString(R.string.PasscodeScreenHint));
+                z8Var.setBackground(null);
+                z8Var.getTextView().setGravity(1);
                 return;
             } else if (i10 == passcodeActivity.E) {
-                a9Var.setText(LocaleController.getString(R.string.AutoLockInfo));
-                a9Var.getTextView().setGravity(LocaleController.isRTL ? 5 : 3);
+                z8Var.setText(LocaleController.getString(R.string.AutoLockInfo));
+                z8Var.getTextView().setGravity(LocaleController.isRTL ? 5 : 3);
                 return;
             } else {
                 if (i10 == passcodeActivity.H) {
-                    a9Var.setText(LocaleController.getString(R.string.ScreenCaptureInfo));
-                    a9Var.getTextView().setGravity(LocaleController.isRTL ? 5 : 3);
+                    z8Var.setText(LocaleController.getString(R.string.ScreenCaptureInfo));
+                    z8Var.getTextView().setGravity(LocaleController.isRTL ? 5 : 3);
                     return;
                 }
                 return;
             }
         }
-        org.telegram.ui.Cells.aa aaVar = (org.telegram.ui.Cells.aa) view;
+        org.telegram.ui.Cells.z9 z9Var = (org.telegram.ui.Cells.z9) view;
         i12 = passcodeActivity.changePasscodeRow;
         if (i10 == i12) {
-            aaVar.b(LocaleController.getString(R.string.ChangePasscode), true);
+            z9Var.b(LocaleController.getString(R.string.ChangePasscode), true);
             if (SharedConfig.passcodeHash.isEmpty()) {
-                int i16 = org.telegram.ui.ActionBar.k6.E6;
-                aaVar.setTag(Integer.valueOf(i16));
-                aaVar.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, i16, false));
+                int i16 = org.telegram.ui.ActionBar.j6.E6;
+                z9Var.setTag(Integer.valueOf(i16));
+                z9Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i16, false));
                 return;
             } else {
-                int i17 = org.telegram.ui.ActionBar.k6.G6;
-                aaVar.setTag(Integer.valueOf(i17));
-                aaVar.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, i17, false));
+                int i17 = org.telegram.ui.ActionBar.j6.G6;
+                z9Var.setTag(Integer.valueOf(i17));
+                z9Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i17, false));
                 return;
             }
         }
         i13 = passcodeActivity.autoLockRow;
         if (i10 == i13) {
             int i18 = SharedConfig.autoLockIn;
-            aaVar.c(LocaleController.getString(R.string.AutoLock), i18 == 0 ? LocaleController.formatString("AutoLockDisabled", R.string.AutoLockDisabled, new Object[0]) : i18 < 3600 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Minutes", i18 / 60, new Object[0])) : i18 < 86400 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Hours", (int) Math.ceil((i18 / 60.0f) / 60.0f), new Object[0])) : LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Days", (int) Math.ceil(((i18 / 60.0f) / 60.0f) / 24.0f), new Object[0])), false, true);
-            int i19 = org.telegram.ui.ActionBar.k6.G6;
-            aaVar.setTag(Integer.valueOf(i19));
-            aaVar.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, i19, false));
+            z9Var.c(LocaleController.getString(R.string.AutoLock), i18 == 0 ? LocaleController.formatString("AutoLockDisabled", R.string.AutoLockDisabled, new Object[0]) : i18 < 3600 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Minutes", i18 / 60, new Object[0])) : i18 < 86400 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Hours", (int) Math.ceil((i18 / 60.0f) / 60.0f), new Object[0])) : LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Days", (int) Math.ceil(((i18 / 60.0f) / 60.0f) / 24.0f), new Object[0])), false, true);
+            int i19 = org.telegram.ui.ActionBar.j6.G6;
+            z9Var.setTag(Integer.valueOf(i19));
+            z9Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i19, false));
             return;
         }
         i14 = passcodeActivity.disablePasscodeRow;
         if (i10 == i14) {
-            aaVar.b(LocaleController.getString(R.string.DisablePasscode), false);
-            int i20 = org.telegram.ui.ActionBar.k6.q7;
-            aaVar.setTag(Integer.valueOf(i20));
-            aaVar.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, i20, false));
+            z9Var.b(LocaleController.getString(R.string.DisablePasscode), false);
+            int i20 = org.telegram.ui.ActionBar.j6.q7;
+            z9Var.setTag(Integer.valueOf(i20));
+            z9Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i20, false));
         }
     }
 
-    @Override // f2.p0
-    public final f2.m1 x(ViewGroup viewGroup, int i10) {
-        View s8Var;
+    @Override // f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+        View r8Var;
         Context context = this.c;
         if (i10 == 0) {
-            s8Var = new org.telegram.ui.Cells.s8(context);
+            r8Var = new org.telegram.ui.Cells.r8(context);
         } else if (i10 == 1) {
-            s8Var = new org.telegram.ui.Cells.aa(context);
+            r8Var = new org.telegram.ui.Cells.z9(context);
         } else if (i10 == 3) {
-            s8Var = new org.telegram.ui.Cells.m4(context);
+            r8Var = new org.telegram.ui.Cells.l4(context);
         } else if (i10 != 4) {
-            s8Var = new org.telegram.ui.Cells.a9(context);
+            r8Var = new org.telegram.ui.Cells.z8(context);
         } else {
-            s8Var = new il0(context);
-            s8Var.setTag(-33024);
+            r8Var = new il0(context);
+            r8Var.setTag(-33024);
         }
-        return new org.telegram.ui.Components.el0(s8Var);
+        return new org.telegram.ui.Components.dl0(r8Var);
     }
 }

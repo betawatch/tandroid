@@ -1,25 +1,72 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.tl.TL_stars;
+import android.content.Context;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class he {
-    public String b;
-    public CharSequence c;
-    public long d;
-    public long e;
-    public String f;
-    public boolean g;
-    public String h;
-    public long j;
-    public boolean a = true;
-    public TL_stars.StarsAmount i = TL_stars.StarsAmount.ofStars(0);
+public final class he extends org.telegram.ui.Components.c81 {
+    public final Context a;
+    public final int b;
+    public final int c;
+    public final org.telegram.ui.ActionBar.f6 d;
+    public final ArrayList e = new ArrayList();
+    public final /* synthetic */ ie f;
 
-    public static he a(String str, String str2) {
-        he heVar = new he();
-        heVar.b = str;
-        heVar.c = str2;
-        return heVar;
+    public he(ie ieVar, Context context, int i10, long j10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
+        this.f = ieVar;
+        this.a = context;
+        this.b = i10;
+        this.c = i11;
+        this.d = f6Var;
+        i();
+    }
+
+    @Override // org.telegram.ui.Components.c81
+    public final View d(int i10) {
+        return new ge(this.f, this.a, i10, this.b, this.c, new ah.b(this, i10, 15), this.d);
+    }
+
+    @Override // org.telegram.ui.Components.c81
+    public final int e() {
+        return this.e.size();
+    }
+
+    @Override // org.telegram.ui.Components.c81
+    public final CharSequence g(int i10) {
+        int h = h(i10);
+        return h != 0 ? h != 1 ? "" : LocaleController.getString(R.string.MonetizationTransactionsTON) : LocaleController.getString(R.string.MonetizationTransactionsStars);
+    }
+
+    @Override // org.telegram.ui.Components.c81
+    public final int h(int i10) {
+        if (i10 < 0) {
+            return 1;
+        }
+        ArrayList arrayList = this.e;
+        if (i10 >= arrayList.size()) {
+            return 1;
+        }
+        return ((org.telegram.ui.Components.i51) arrayList.get(i10)).z;
+    }
+
+    public final void i() {
+        ArrayList arrayList = this.e;
+        arrayList.clear();
+        ie ieVar = this.f;
+        if (!ieVar.h.isEmpty()) {
+            arrayList.add(org.telegram.ui.Components.i51.C(1));
+        }
+        if (ieVar.n.isEmpty()) {
+            return;
+        }
+        arrayList.add(org.telegram.ui.Components.i51.C(0));
+    }
+
+    @Override // org.telegram.ui.Components.c81
+    public final void b(View view, int i10, int i11) {
     }
 }

@@ -6,14 +6,14 @@ import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class n0 implements g {
     public final String B;
     public final String C;
     public final int D;
     public final List E;
-    public final o3.g F;
+    public final o3.h F;
     public final long G;
     public final int H;
     public final int I;
@@ -80,7 +80,7 @@ public final class n0 implements g {
     public static final String D0 = Integer.toString(29, 36);
     public static final String E0 = Integer.toString(30, 36);
     public static final String F0 = Integer.toString(31, 36);
-    public static final f5.u G0 = new f5.u(27);
+    public static final f0.d G0 = new f0.d(27);
 
     public n0(m0 m0Var) {
         this.a = m0Var.a;
@@ -104,8 +104,8 @@ public final class n0 implements g {
         this.D = m0Var.p;
         List list = m0Var.q;
         this.E = list == null ? Collections.EMPTY_LIST : list;
-        o3.g gVar = m0Var.r;
-        this.F = gVar;
+        o3.h hVar = m0Var.r;
+        this.F = hVar;
         this.G = m0Var.s;
         this.H = m0Var.t;
         this.I = m0Var.u;
@@ -128,7 +128,7 @@ public final class n0 implements g {
         this.V = m0Var.H;
         this.W = m0Var.I;
         int i15 = m0Var.J;
-        if (i15 != 0 || gVar == null) {
+        if (i15 != 0 || hVar == null) {
             this.X = i15;
         } else {
             this.X = 1;
@@ -232,52 +232,52 @@ public final class n0 implements g {
         }
         int i14 = this.d | n0Var.d;
         int i15 = this.e | n0Var.e;
-        o3.g gVar = n0Var.F;
+        o3.h hVar = n0Var.F;
         ArrayList arrayList = new ArrayList();
-        if (gVar != null) {
-            str2 = gVar.c;
-            o3.f[] fVarArr = gVar.a;
-            int length = fVarArr.length;
+        if (hVar != null) {
+            str2 = hVar.c;
+            o3.g[] gVarArr = hVar.a;
+            int length = gVarArr.length;
             int i16 = 0;
             while (i16 < length) {
-                o3.f[] fVarArr2 = fVarArr;
-                o3.f fVar = fVarArr2[i16];
+                o3.g[] gVarArr2 = gVarArr;
+                o3.g gVar = gVarArr2[i16];
                 int i17 = length;
-                if (fVar.e != null) {
-                    arrayList.add(fVar);
+                if (gVar.e != null) {
+                    arrayList.add(gVar);
                 }
                 i16++;
-                fVarArr = fVarArr2;
+                gVarArr = gVarArr2;
                 length = i17;
             }
         } else {
             str2 = null;
         }
-        o3.g gVar2 = this.F;
-        if (gVar2 != null) {
+        o3.h hVar2 = this.F;
+        if (hVar2 != null) {
             if (str2 == null) {
-                str2 = gVar2.c;
+                str2 = hVar2.c;
             }
             int size = arrayList.size();
-            o3.f[] fVarArr3 = gVar2.a;
-            int length2 = fVarArr3.length;
+            o3.g[] gVarArr3 = hVar2.a;
+            int length2 = gVarArr3.length;
             int i18 = 0;
             while (i18 < length2) {
                 int i19 = i18;
-                o3.f fVar2 = fVarArr3[i19];
-                o3.f[] fVarArr4 = fVarArr3;
-                if (fVar2.e != null) {
-                    UUID uuid = fVar2.b;
+                o3.g gVar2 = gVarArr3[i19];
+                o3.g[] gVarArr4 = gVarArr3;
+                if (gVar2.e != null) {
+                    UUID uuid = gVar2.b;
                     i11 = length2;
                     int i20 = 0;
                     while (true) {
                         if (i20 >= size) {
                             i10 = size;
-                            arrayList.add(fVar2);
+                            arrayList.add(gVar2);
                             break;
                         }
                         i10 = size;
-                        if (((o3.f) arrayList.get(i20)).b.equals(uuid)) {
+                        if (((o3.g) arrayList.get(i20)).b.equals(uuid)) {
                             break;
                         }
                         i20++;
@@ -288,12 +288,12 @@ public final class n0 implements g {
                     i11 = length2;
                 }
                 i18 = i19 + 1;
-                fVarArr3 = fVarArr4;
+                gVarArr3 = gVarArr4;
                 length2 = i11;
                 size = i10;
             }
         }
-        o3.g gVar3 = arrayList.isEmpty() ? null : new o3.g(str2, arrayList);
+        o3.h hVar3 = arrayList.isEmpty() ? null : new o3.h(str2, arrayList);
         m0 a2 = a();
         a2.a = str3;
         a2.b = str4;
@@ -304,7 +304,7 @@ public final class n0 implements g {
         a2.g = i13;
         a2.h = str5;
         a2.i = cVar;
-        a2.r = gVar3;
+        a2.r = hVar3;
         a2.v = f10;
         return new n0(a2);
     }

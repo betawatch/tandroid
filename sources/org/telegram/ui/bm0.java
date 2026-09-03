@@ -7,7 +7,7 @@ import j$.util.Objects;
 import java.util.regex.Pattern;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class bm0 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -38,8 +38,8 @@ public final class bm0 implements TextWatcher {
                 fn0.J0((fn0) this.d, (EditTextBoldCursor) this.b, this.c, editable, false);
                 break;
             default:
-                dg.d0 d0Var = (dg.d0) this.d;
-                dg.e0 e0Var = d0Var.f;
+                cg.d0 d0Var = (cg.d0) this.d;
+                cg.e0 e0Var = d0Var.f;
                 EditTextBoldCursor editTextBoldCursor = d0Var.d;
                 if (!d0Var.e && this.c != null && editable != null && !TextUtils.isEmpty(editable) && !Objects.equals(this.c.toString(), editable.toString())) {
                     String obj = editable.toString();
@@ -90,7 +90,7 @@ public final class bm0 implements TextWatcher {
         int i13 = this.a;
     }
 
-    public bm0(dg.d0 d0Var) {
+    public bm0(cg.d0 d0Var) {
         this.a = 2;
         this.d = d0Var;
         this.b = Pattern.compile("^[0-9a-fA-F]*$");

@@ -8,15 +8,15 @@ import java.net.SocketTimeoutException;
 import java.util.List;
 import java.util.logging.Level;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class a implements Runnable {
     public final InputStream a;
     public final Socket b;
-    public final /* synthetic */ l c;
+    public final /* synthetic */ k c;
 
-    public a(l lVar, InputStream inputStream, Socket socket) {
-        this.c = lVar;
+    public a(k kVar, InputStream inputStream, Socket socket) {
+        this.c = kVar;
         this.a = inputStream;
         this.b = socket;
     }
@@ -25,45 +25,45 @@ public final class a implements Runnable {
     public final void run() {
         OutputStream outputStream;
         InputStream inputStream = this.a;
-        l lVar = this.c;
+        k kVar = this.c;
         Socket socket = this.b;
         OutputStream outputStream2 = null;
         try {
             try {
                 outputStream = socket.getOutputStream();
-            } catch (Exception e6) {
-                e = e6;
+            } catch (Throwable th2) {
+                th = th2;
             }
-        } catch (Throwable th2) {
-            th = th2;
+        } catch (Exception e) {
+            e = e;
         }
         try {
-            e eVar = new e(lVar, new d(0), this.a, outputStream, socket.getInetAddress());
+            d dVar = new d(kVar, new ja.c(16), this.a, outputStream, socket.getInetAddress());
             while (!socket.isClosed()) {
-                eVar.c();
+                dVar.c();
             }
-            l.d(outputStream);
-        } catch (Exception e10) {
-            e = e10;
+            k.d(outputStream);
+        } catch (Exception e6) {
+            e = e6;
             outputStream2 = outputStream;
             if ((!(e instanceof SocketException) || !"NanoHttpd Shutdown".equals(e.getMessage())) && !(e instanceof SocketTimeoutException)) {
-                l.d.log(Level.SEVERE, "Communication with the client broken, or an bug in the handler code", (Throwable) e);
+                k.d.log(Level.SEVERE, "Communication with the client broken, or an bug in the handler code", (Throwable) e);
             }
-            l.d(outputStream2);
-            l.d(inputStream);
-            l.d(socket);
-            ((List) lVar.c.c).remove(this);
+            k.d(outputStream2);
+            k.d(inputStream);
+            k.d(socket);
+            ((List) kVar.c.c).remove(this);
         } catch (Throwable th3) {
             th = th3;
             outputStream2 = outputStream;
-            l.d(outputStream2);
-            l.d(inputStream);
-            l.d(socket);
-            ((List) lVar.c.c).remove(this);
+            k.d(outputStream2);
+            k.d(inputStream);
+            k.d(socket);
+            ((List) kVar.c.c).remove(this);
             throw th;
         }
-        l.d(inputStream);
-        l.d(socket);
-        ((List) lVar.c.c).remove(this);
+        k.d(inputStream);
+        k.d(socket);
+        ((List) kVar.c.c).remove(this);
     }
 }

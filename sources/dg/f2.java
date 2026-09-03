@@ -1,94 +1,37 @@
 package dg;
 
-import android.graphics.Bitmap;
-import android.opengl.GLES20;
-import android.opengl.GLUtils;
-import android.os.Build;
-import j7.b7;
-import java.nio.ByteBuffer;
-import java.nio.IntBuffer;
-import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.jv0;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class f2 {
-    public final Bitmap a;
-    public int b;
+public final class f2 extends View {
+    public final Paint a;
+    public float b;
 
-    public f2(Bitmap bitmap) {
-        this.a = bitmap;
+    public f2(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        paint.setColor(-1);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
     }
 
-    public static int b(jv0 jv0Var) {
-        int i10 = (int) jv0Var.a;
-        int i11 = (int) jv0Var.b;
-        int[] iArr = new int[1];
-        GLES20.glGenTextures(1, iArr, 0);
-        int i12 = iArr[0];
-        GLES20.glBindTexture(3553, i12);
-        GLES20.glTexParameteri(3553, 10242, 33071);
-        GLES20.glTexParameteri(3553, 10243, 33071);
-        GLES20.glTexParameteri(3553, 10240, 9729);
-        GLES20.glTexParameteri(3553, 10241, 9729);
-        GLES20.glTexImage2D(3553, 0, 6408, i10, i11, 0, 6408, 5121, null);
-        return i12;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        Paint paint = this.a;
+        canvas.drawLine((getWidth() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(-6.7f, -7.0f, this.b)), (getHeight() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(0.71f, 0.0f, this.b)), (getWidth() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(-2.45f, 7.0f, this.b)), (getHeight() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(4.79f, 0.0f, this.b)), paint);
+        canvas.drawLine((getWidth() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(-2.45f, 0.0f, this.b)), (getHeight() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(4.79f, 7.0f, this.b)), (getWidth() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(6.59f, 0.0f, this.b)), (getHeight() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(-4.27f, -7.0f, this.b)), paint);
     }
 
-    public final void a(boolean z4) {
-        Bitmap bitmap;
-        int i10 = this.b;
-        if (i10 == 0) {
-            return;
-        }
-        GLES20.glDeleteTextures(1, new int[]{i10}, 0);
-        this.b = 0;
-        if (!z4 || (bitmap = this.a) == null || bitmap.isRecycled()) {
-            return;
-        }
-        bitmap.recycle();
-    }
-
-    public final int c() {
-        int i10 = this.b;
-        if (i10 != 0) {
-            return i10;
-        }
-        Bitmap bitmap = this.a;
-        if (bitmap == null || bitmap.isRecycled()) {
-            return 0;
-        }
-        int[] iArr = new int[1];
-        GLES20.glGenTextures(1, iArr, 0);
-        int i11 = iArr[0];
-        this.b = i11;
-        GLES20.glBindTexture(3553, i11);
-        GLES20.glTexParameteri(3553, 10242, 33071);
-        GLES20.glTexParameteri(3553, 10243, 33071);
-        GLES20.glTexParameteri(3553, 10240, 9729);
-        GLES20.glTexParameteri(3553, 10241, 9729);
-        try {
-            GLUtils.texImage2D(3553, 0, 6408, this.a, 5121, 0);
-        } catch (Exception e6) {
-            FileLog.e(e6);
-            int width = bitmap.getWidth();
-            int height = bitmap.getHeight();
-            int i12 = width * height;
-            int[] iArr2 = new int[i12];
-            this.a.getPixels(iArr2, 0, width, 0, 0, width, height);
-            for (int i13 = 0; i13 < i12; i13++) {
-                int i14 = iArr2[i13];
-                iArr2[i13] = ((i14 >> 16) & 255) | (i14 & (-16711936)) | ((i14 & 255) << 16);
-            }
-            GLES20.glTexImage2D(3553, 0, 6408, width, height, 0, 6408, 5121, IntBuffer.wrap(iArr2));
-        }
-        if (!bitmap.isRecycled() && Build.VERSION.SDK_INT <= 28) {
-            int pixel = bitmap.getPixel(0, 0);
-            ByteBuffer allocateDirect = ByteBuffer.allocateDirect(4);
-            allocateDirect.putInt(((pixel >> 16) & 255) | (pixel & (-16711936)) | ((pixel & 255) << 16)).position(0);
-            GLES20.glTexSubImage2D(3553, 0, 0, 0, 1, 1, 6408, 5121, allocateDirect);
-        }
-        b7.a();
-        return this.b;
+    public void setProgress(float f10) {
+        this.b = f10;
+        invalidate();
     }
 }

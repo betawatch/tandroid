@@ -1,50 +1,93 @@
 package f5;
 
-import h5.d0;
-import java.util.Collections;
-import java.util.List;
-import o4.s0;
+import java.util.HashMap;
+import java.util.HashSet;
+import org.telegram.tgnet.ConnectionsManager;
+import s8.i0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class v implements j3.g {
-    public static final String c;
-    public static final String d;
-    public final s0 a;
-    public final s8.v b;
+public class v {
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public s8.v l;
+    public int m;
+    public s8.v n;
+    public int o;
+    public int p;
+    public int q;
+    public s8.v r;
+    public s8.v s;
+    public int t;
+    public int u;
+    public boolean v;
+    public boolean w;
+    public boolean x;
+    public HashMap y;
+    public HashSet z;
+    public int a = ConnectionsManager.DEFAULT_DATACENTER_ID;
+    public int b = ConnectionsManager.DEFAULT_DATACENTER_ID;
+    public int c = ConnectionsManager.DEFAULT_DATACENTER_ID;
+    public int d = ConnectionsManager.DEFAULT_DATACENTER_ID;
+    public int i = ConnectionsManager.DEFAULT_DATACENTER_ID;
+    public int j = ConnectionsManager.DEFAULT_DATACENTER_ID;
+    public boolean k = true;
 
-    static {
-        int i10 = d0.a;
-        c = Integer.toString(0, 36);
-        d = Integer.toString(1, 36);
+    public v() {
+        s8.t tVar = s8.v.b;
+        i0 i0Var = i0.e;
+        this.l = i0Var;
+        this.m = 0;
+        this.n = i0Var;
+        this.o = 0;
+        this.p = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        this.q = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        this.r = i0Var;
+        this.s = i0Var;
+        this.t = 0;
+        this.u = 0;
+        this.v = false;
+        this.w = false;
+        this.x = false;
+        this.y = new HashMap();
+        this.z = new HashSet();
     }
 
-    public v(s0 s0Var, int i10) {
-        this(s0Var, s8.v.x(Integer.valueOf(i10)));
+    public final void a(w wVar) {
+        this.a = wVar.a;
+        this.b = wVar.b;
+        this.c = wVar.c;
+        this.d = wVar.d;
+        this.e = wVar.e;
+        this.f = wVar.f;
+        this.g = wVar.h;
+        this.h = wVar.n;
+        this.i = wVar.r;
+        this.j = wVar.s;
+        this.k = wVar.v;
+        this.l = wVar.w;
+        this.m = wVar.x;
+        this.n = wVar.y;
+        this.o = wVar.B;
+        this.p = wVar.C;
+        this.q = wVar.D;
+        this.r = wVar.E;
+        this.s = wVar.F;
+        this.t = wVar.G;
+        this.u = wVar.H;
+        this.v = wVar.I;
+        this.w = wVar.J;
+        this.x = wVar.K;
+        this.z = new HashSet(wVar.M);
+        this.y = new HashMap(wVar.L);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && v.class == obj.getClass()) {
-            v vVar = (v) obj;
-            if (this.a.equals(vVar.a) && this.b.equals(vVar.b)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return (this.b.hashCode() * 31) + this.a.hashCode();
-    }
-
-    public v(s0 s0Var, List list) {
-        if (!list.isEmpty() && (((Integer) Collections.min(list)).intValue() < 0 || ((Integer) Collections.max(list)).intValue() >= s0Var.a)) {
-            throw new IndexOutOfBoundsException();
-        }
-        this.a = s0Var;
-        this.b = s8.v.t(list);
+    public v b(int i10, int i11) {
+        this.i = i10;
+        this.j = i11;
+        this.k = true;
+        return this;
     }
 }

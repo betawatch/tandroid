@@ -7,7 +7,7 @@ import java.io.InterruptedIOException;
 import java.util.Arrays;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class h implements l {
     public final g5.j b;
@@ -29,7 +29,7 @@ public final class h implements l {
     }
 
     public final boolean a(int i10, boolean z4) {
-        d(i10);
+        e(i10);
         int i11 = this.h - this.f;
         while (i11 < i10) {
             int i12 = i10;
@@ -72,19 +72,11 @@ public final class h implements l {
         return i13 != -1;
     }
 
-    public final void d(int i10) {
-        int i11 = this.f + i10;
-        byte[] bArr = this.e;
-        if (i11 > bArr.length) {
-            this.e = Arrays.copyOf(this.e, d0.h(bArr.length * 2, 65536 + i11, i11 + TLObject.FLAG_19));
-        }
-    }
-
     @Override // r3.l
-    public final int e(int i10, int i11, byte[] bArr) {
+    public final int d(int i10, int i11, byte[] bArr) {
         h hVar;
         int min;
-        d(i11);
+        e(i11);
         int i12 = this.h;
         int i13 = this.f;
         int i14 = i12 - i13;
@@ -102,6 +94,14 @@ public final class h implements l {
         System.arraycopy(hVar.e, hVar.f, bArr, i10, min);
         hVar.f += min;
         return min;
+    }
+
+    public final void e(int i10) {
+        int i11 = this.f + i10;
+        byte[] bArr = this.e;
+        if (i11 > bArr.length) {
+            this.e = Arrays.copyOf(this.e, d0.h(bArr.length * 2, 65536 + i11, i11 + TLObject.FLAG_19));
+        }
     }
 
     @Override // r3.l
@@ -158,8 +158,22 @@ public final class h implements l {
     }
 
     @Override // r3.l
-    public final void r() {
+    public final void m() {
         this.f = 0;
+    }
+
+    @Override // r3.l
+    public final void n(int i10) {
+        int min = Math.min(this.h, i10);
+        j(min);
+        int i11 = min;
+        while (i11 < i10 && i11 != -1) {
+            byte[] bArr = this.a;
+            i11 = h(bArr, -i11, Math.min(i10, bArr.length + i11), i11, false);
+        }
+        if (i11 != -1) {
+            this.d += i11;
+        }
     }
 
     @Override // g5.j
@@ -188,20 +202,6 @@ public final class h implements l {
     @Override // r3.l
     public final void readFully(byte[] bArr, int i10, int i11) {
         c(bArr, i10, i11, false);
-    }
-
-    @Override // r3.l
-    public final void s(int i10) {
-        int min = Math.min(this.h, i10);
-        j(min);
-        int i11 = min;
-        while (i11 < i10 && i11 != -1) {
-            byte[] bArr = this.a;
-            i11 = h(bArr, -i11, Math.min(i10, bArr.length + i11), i11, false);
-        }
-        if (i11 != -1) {
-            this.d += i11;
-        }
     }
 
     @Override // r3.l

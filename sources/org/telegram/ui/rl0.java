@@ -6,7 +6,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rl0 implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -27,9 +27,9 @@ public final /* synthetic */ class rl0 implements View.OnTouchListener {
             case 0:
                 if (fn0Var.getParentActivity() != null) {
                     if (motionEvent.getAction() == 1) {
-                        zt ztVar = new zt(null, false);
-                        ztVar.r = new vl0(i12, fn0Var, view);
-                        fn0Var.presentFragment(ztVar);
+                        au auVar = new au(null, false);
+                        auVar.r = new vl0(i12, fn0Var, view);
+                        fn0Var.presentFragment(auVar);
                         break;
                     }
                 }
@@ -41,7 +41,7 @@ public final /* synthetic */ class rl0 implements View.OnTouchListener {
                         String string = LocaleController.getString(R.string.PassportSelectGender);
                         org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
                         d2Var.O = string;
-                        alertDialog$Builder.f(new CharSequence[]{LocaleController.getString(R.string.PassportMale), LocaleController.getString(R.string.PassportFemale)}, new rv(fn0Var, i11));
+                        alertDialog$Builder.f(new CharSequence[]{LocaleController.getString(R.string.PassportMale), LocaleController.getString(R.string.PassportFemale)}, new sv(fn0Var, i11));
                         alertDialog$Builder.k(LocaleController.getString(R.string.Cancel), null);
                         fn0Var.showDialog(d2Var);
                         break;
@@ -51,9 +51,9 @@ public final /* synthetic */ class rl0 implements View.OnTouchListener {
             case 2:
                 if (fn0Var.getParentActivity() != null) {
                     if (motionEvent.getAction() == 1) {
-                        zt ztVar2 = new zt(null, false);
-                        ztVar2.r = new sl0(fn0Var, i11);
-                        fn0Var.presentFragment(ztVar2);
+                        au auVar2 = new au(null, false);
+                        auVar2.r = new sl0(fn0Var, i11);
+                        fn0Var.presentFragment(auVar2);
                         break;
                     }
                 }
@@ -61,9 +61,9 @@ public final /* synthetic */ class rl0 implements View.OnTouchListener {
             default:
                 if (fn0Var.getParentActivity() != null) {
                     if (motionEvent.getAction() == 1) {
-                        zt ztVar3 = new zt(null, false);
-                        ztVar3.r = new sl0(fn0Var, 3);
-                        fn0Var.presentFragment(ztVar3);
+                        au auVar3 = new au(null, false);
+                        auVar3.r = new sl0(fn0Var, 3);
+                        fn0Var.presentFragment(auVar3);
                         break;
                     }
                 }

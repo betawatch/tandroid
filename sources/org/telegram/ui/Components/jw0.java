@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class jw0 extends View {
     public final q9 a;
@@ -27,7 +27,7 @@ public final class jw0 extends View {
         hw0Var.c = -16777216;
         hw0Var.d = -1;
         this.b = hw0Var;
-        z5 z5Var = new z5(new gw0(this, 0), 380L, pr.h);
+        z5 z5Var = new z5(new gw0(this, 0), 380L, mr.h);
         this.c = z5Var;
         q9 q9Var = new q9(context);
         this.a = q9Var;
@@ -69,12 +69,12 @@ public final class jw0 extends View {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        float e6 = this.c.e(this.d);
+        float e = this.c.e(this.d);
         int x10 = org.telegram.ui.b.x(24.0f, getMeasuredWidth(), 2);
         int measuredHeight = (getMeasuredHeight() - AndroidUtilities.dp(24.0f)) / 2;
         canvas.save();
         canvas.translate(x10, measuredHeight);
-        canvas.scale(e6, e6, 0.0f, AndroidUtilities.dp(12.0f));
+        canvas.scale(e, e, 0.0f, AndroidUtilities.dp(12.0f));
         int dp = AndroidUtilities.dp(24.0f);
         int dp2 = AndroidUtilities.dp(24.0f);
         q9 q9Var = this.a;
@@ -122,7 +122,7 @@ public final class jw0 extends View {
             if (i10 < 0) {
                 b10 = 18;
             } else {
-                b10 = k7.o.b(i10 <= 10 ? i10 - 1 : (i10 / 10) + 8, 0, 17);
+                b10 = k7.n.b(i10 <= 10 ? i10 - 1 : (i10 / 10) + 8, 0, 17);
             }
             Context context = q9Var.a;
             if (q9Var.n != b10 || q9Var.c == null || q9Var.d == null) {
@@ -165,8 +165,8 @@ public final class jw0 extends View {
         invalidate();
     }
 
-    public void setResourcesProvider(org.telegram.ui.ActionBar.g6 g6Var) {
-        this.b.b = g6Var;
+    public void setResourcesProvider(org.telegram.ui.ActionBar.f6 f6Var) {
+        this.b.b = f6Var;
     }
 
     public void setVisibility(boolean z4) {

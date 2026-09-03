@@ -5,7 +5,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class j {
     public final String a;
@@ -14,14 +14,14 @@ public final class j {
     public final String d;
     public final ArrayList e;
     public final String f;
-    public final h7.u g;
+    public final cb.b g;
 
     public j(JSONObject jSONObject) {
         this.a = jSONObject.optString("formattedPrice");
         this.b = jSONObject.optLong("priceAmountMicros");
         this.c = jSONObject.optString("priceCurrencyCode");
         String optString = jSONObject.optString("offerIdToken");
-        h7.u uVar = null;
+        cb.b bVar = null;
         this.d = true == optString.isEmpty() ? null : optString;
         jSONObject.optString("offerId").getClass();
         jSONObject.optString("purchaseOptionId").getClass();
@@ -75,10 +75,10 @@ public final class j {
         }
         JSONObject optJSONObject7 = jSONObject.optJSONObject("autoPayDetails");
         if (optJSONObject7 != null) {
-            uVar = new h7.u(18);
+            bVar = new cb.b(19);
             optJSONObject7.getString(TeXSymbolParser.TYPE_ATTR);
         }
-        this.g = uVar;
+        this.g = bVar;
         JSONArray optJSONArray2 = jSONObject.optJSONArray("pricingPhases");
         if (optJSONArray2 == null) {
             return;

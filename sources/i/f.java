@@ -2,14 +2,14 @@ package i;
 
 import android.graphics.drawable.Drawable;
 import android.view.View;
-import mh.t4;
-import ng.o0;
+import lh.t4;
+import mg.o0;
+import org.telegram.ui.Components.bq;
 import org.telegram.ui.Components.c31;
-import org.telegram.ui.Components.eq;
-import org.telegram.ui.Components.oo0;
-import wh.r0;
+import org.telegram.ui.Components.no0;
+import vh.r0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class f implements Drawable.Callback {
     public final /* synthetic */ int a;
@@ -21,13 +21,13 @@ public final class f implements Drawable.Callback {
             case 0:
                 break;
             case 1:
-                ((k2.d) this.b).invalidateSelf();
+                ((jg.a) this.b).c.invalidate();
                 break;
             case 2:
-                ((kg.a) this.b).c.invalidate();
+                ((jg.c) this.b).c.invalidate();
                 break;
             case 3:
-                ((kg.c) this.b).c.invalidate();
+                ((k2.d) this.b).invalidateSelf();
                 break;
             case 4:
                 ((t4) this.b).f.invalidate();
@@ -44,13 +44,13 @@ public final class f implements Drawable.Callback {
                 }
                 break;
             case 6:
-                ((eq) this.b).invalidateSelf();
+                ((bq) this.b).invalidateSelf();
                 break;
             case 7:
-                ((oo0) this.b).b.run();
+                ((no0) this.b).b.run();
                 break;
             case 8:
-                ((ef.f) this.b).invalidateSelf();
+                ((df.f) this.b).invalidateSelf();
                 break;
             case 9:
                 ((c31) this.b).invalidateSelf();
@@ -72,13 +72,13 @@ public final class f implements Drawable.Callback {
                 }
                 break;
             case 1:
-                ((k2.d) this.b).scheduleSelf(runnable, j10);
+                ((jg.a) this.b).c.invalidate();
                 break;
             case 2:
-                ((kg.a) this.b).c.invalidate();
+                ((jg.c) this.b).c.invalidate();
                 break;
             case 3:
-                ((kg.c) this.b).c.invalidate();
+                ((k2.d) this.b).scheduleSelf(runnable, j10);
                 break;
             case 5:
                 View view = ((o0) this.b).W;
@@ -88,10 +88,10 @@ public final class f implements Drawable.Callback {
                 }
                 break;
             case 6:
-                ((eq) this.b).scheduleSelf(runnable, j10);
+                ((bq) this.b).scheduleSelf(runnable, j10);
                 break;
             case 8:
-                ((ef.f) this.b).scheduleSelf(runnable, j10);
+                ((df.f) this.b).scheduleSelf(runnable, j10);
                 break;
         }
     }
@@ -107,13 +107,13 @@ public final class f implements Drawable.Callback {
                 }
                 break;
             case 1:
-                ((k2.d) this.b).unscheduleSelf(runnable);
+                ((jg.a) this.b).c.invalidate();
                 break;
             case 2:
-                ((kg.a) this.b).c.invalidate();
+                ((jg.c) this.b).c.invalidate();
                 break;
             case 3:
-                ((kg.c) this.b).c.invalidate();
+                ((k2.d) this.b).unscheduleSelf(runnable);
                 break;
             case 5:
                 View view = ((o0) this.b).W;
@@ -123,10 +123,10 @@ public final class f implements Drawable.Callback {
                 }
                 break;
             case 6:
-                ((eq) this.b).unscheduleSelf(runnable);
+                ((bq) this.b).unscheduleSelf(runnable);
                 break;
             case 8:
-                ((ef.f) this.b).unscheduleSelf(runnable);
+                ((df.f) this.b).unscheduleSelf(runnable);
                 break;
         }
     }

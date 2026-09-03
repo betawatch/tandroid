@@ -7,11 +7,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.view.Surface;
-import c2.a1;
+import c2.b1;
 import h5.d0;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class c implements k {
     public final MediaCodec a;
@@ -119,12 +119,12 @@ public final class c implements k {
                     if (!z4) {
                         return -1;
                     }
-                    a1 a1Var = fVar.d;
-                    if (a1Var.c != 0) {
+                    b1 b1Var = fVar.d;
+                    if (b1Var.c != 0) {
                         z10 = false;
                     }
                     if (!z10) {
-                        i10 = a1Var.e();
+                        i10 = b1Var.e();
                     }
                     return i10;
                 }
@@ -173,22 +173,22 @@ public final class c implements k {
                     if (!z4) {
                         return -1;
                     }
-                    a1 a1Var = fVar.e;
-                    if (a1Var.c != 0) {
+                    b1 b1Var = fVar.e;
+                    if (b1Var.c != 0) {
                         z10 = false;
                     }
                     if (z10) {
                         return -1;
                     }
-                    int e6 = a1Var.e();
-                    if (e6 >= 0) {
+                    int e = b1Var.e();
+                    if (e >= 0) {
                         h5.a.j(fVar.h);
                         MediaCodec.BufferInfo bufferInfo2 = (MediaCodec.BufferInfo) fVar.f.remove();
                         bufferInfo.set(bufferInfo2.offset, bufferInfo2.size, bufferInfo2.presentationTimeUs, bufferInfo2.flags);
-                    } else if (e6 == -2) {
+                    } else if (e == -2) {
                         fVar.h = (MediaFormat) fVar.g.remove();
                     }
-                    return e6;
+                    return e;
                 }
                 z4 = true;
                 if (!z4) {
@@ -207,7 +207,7 @@ public final class c implements k {
             fVar.k++;
             Handler handler = fVar.c;
             int i10 = d0.a;
-            handler.post(new ag.e(fVar, 16));
+            handler.post(new ag.d(fVar, 20));
         }
         this.a.start();
     }

@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class c {
     public final int a;
@@ -206,8 +206,8 @@ public final class c {
                                 try {
                                     bVar.close();
                                     return str2;
-                                } catch (IOException e6) {
-                                    Log.e("ExifInterface", "IOException occurred while closing InputStream", e6);
+                                } catch (IOException e) {
+                                    Log.e("ExifInterface", "IOException occurred while closing InputStream", e);
                                     return str2;
                                 }
                             }
@@ -295,26 +295,26 @@ public final class c {
                             try {
                                 bVar.close();
                                 return null;
-                            } catch (IOException e10) {
-                                Log.e("ExifInterface", "IOException occurred while closing InputStream", e10);
+                            } catch (IOException e6) {
+                                Log.e("ExifInterface", "IOException occurred while closing InputStream", e6);
                                 return null;
                             }
                     }
                     try {
                         bVar.close();
                         return str;
-                    } catch (IOException e11) {
-                        Log.e("ExifInterface", "IOException occurred while closing InputStream", e11);
+                    } catch (IOException e10) {
+                        Log.e("ExifInterface", "IOException occurred while closing InputStream", e10);
                         return str;
                     }
-                } catch (IOException e12) {
-                    e = e12;
+                } catch (IOException e11) {
+                    e = e11;
                     Log.w("ExifInterface", "IOException occurred during reading a value", e);
                     if (bVar != null) {
                         try {
                             bVar.close();
-                        } catch (IOException e13) {
-                            Log.e("ExifInterface", "IOException occurred while closing InputStream", e13);
+                        } catch (IOException e12) {
+                            Log.e("ExifInterface", "IOException occurred while closing InputStream", e12);
                         }
                     }
                     return null;
@@ -325,14 +325,14 @@ public final class c {
                 if (inputStream2 != null) {
                     try {
                         inputStream2.close();
-                    } catch (IOException e14) {
-                        Log.e("ExifInterface", "IOException occurred while closing InputStream", e14);
+                    } catch (IOException e13) {
+                        Log.e("ExifInterface", "IOException occurred while closing InputStream", e13);
                     }
                 }
                 throw th;
             }
-        } catch (IOException e15) {
-            e = e15;
+        } catch (IOException e14) {
+            e = e14;
             bVar = null;
         } catch (Throwable th3) {
             th = th3;

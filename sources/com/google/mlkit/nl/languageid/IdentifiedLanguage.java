@@ -1,10 +1,10 @@
 package com.google.mlkit.nl.languageid;
 
-import androidx.biometric.e;
+import af.d;
 import j7.t0;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class IdentifiedLanguage {
     public final String a;
@@ -39,18 +39,18 @@ public final class IdentifiedLanguage {
     }
 
     public final String toString() {
-        e eVar = new e("IdentifiedLanguage", 22);
-        e eVar2 = new e(21, false);
-        ((e) eVar.d).d = eVar2;
-        eVar.d = eVar2;
-        eVar2.c = this.a;
-        eVar2.b = "languageTag";
+        d dVar = new d("IdentifiedLanguage", 22);
+        d dVar2 = new d(21, false);
+        ((d) dVar.d).d = dVar2;
+        dVar.d = dVar2;
+        dVar2.c = this.a;
+        dVar2.b = "languageTag";
         String valueOf = String.valueOf(this.b);
         t0 t0Var = new t0(21, false);
-        ((e) eVar.d).d = t0Var;
-        eVar.d = t0Var;
+        ((d) dVar.d).d = t0Var;
+        dVar.d = t0Var;
         t0Var.c = valueOf;
         t0Var.b = "confidence";
-        return eVar.toString();
+        return dVar.toString();
     }
 }

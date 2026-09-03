@@ -4,7 +4,7 @@ import j3.r1;
 import java.io.EOFException;
 import org.telegram.ui.Components.jb;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class d implements r3.k {
     public final int a;
@@ -42,7 +42,7 @@ public final class d implements r3.k {
             i10 += t6 + 10;
             lVar.i(t6);
         }
-        lVar.r();
+        lVar.m();
         lVar.i(i10);
         if (this.h == -1) {
             this.h = i10;
@@ -61,7 +61,7 @@ public final class d implements r3.k {
     public final void e(r3.m mVar) {
         this.f = mVar;
         this.b.c(mVar, new h0(0, 1));
-        mVar.i1();
+        mVar.j1();
     }
 
     @Override // r3.k
@@ -132,11 +132,11 @@ public final class d implements r3.k {
                     if (j12 != -9223372036854775807L) {
                         r3.m mVar = this.f;
                         int i14 = this.i;
-                        mVar.m2(new r3.g(j10, (int) ((i14 * 8000000) / j12), i14, false, this.h));
+                        mVar.h2(new r3.g(j10, (int) ((i14 * 8000000) / j12), i14, false, this.h));
                         this.l = true;
                     }
                 }
-                this.f.m2(new r3.n(-9223372036854775807L));
+                this.f.h2(new r3.n(-9223372036854775807L));
                 this.l = true;
             }
         }

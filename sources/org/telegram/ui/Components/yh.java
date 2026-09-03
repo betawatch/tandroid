@@ -4,23 +4,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class yh extends m6 {
     public final /* synthetic */ int b;
-    public final /* synthetic */ mi c;
+    public final /* synthetic */ li c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yh(mi miVar, int i10) {
+    public yh(li liVar, int i10) {
         super("translation", 0);
         this.b = i10;
         switch (i10) {
             case 1:
-                this.c = miVar;
+                this.c = liVar;
                 super("openProgress", 0);
                 break;
             default:
-                this.c = miVar;
+                this.c = liVar;
                 break;
         }
     }
@@ -31,41 +31,41 @@ public final class yh extends m6 {
         float f11;
         switch (this.b) {
             case 0:
-                mi miVar = this.c;
-                miVar.a0 = f10;
-                ei eiVar = miVar.w0;
-                if (eiVar != null) {
-                    if ((eiVar instanceof pm) || (miVar.v0 instanceof pm)) {
-                        int max = Math.max(eiVar.getWidth(), miVar.v0.getWidth());
-                        if (miVar.w0 instanceof pm) {
-                            miVar.v0.setTranslationX((-max) * f10);
-                            miVar.w0.setTranslationX((1.0f - f10) * max);
+                li liVar = this.c;
+                liVar.a0 = f10;
+                di diVar = liVar.w0;
+                if (diVar != null) {
+                    if ((diVar instanceof nm) || (liVar.v0 instanceof nm)) {
+                        int max = Math.max(diVar.getWidth(), liVar.v0.getWidth());
+                        if (liVar.w0 instanceof nm) {
+                            liVar.v0.setTranslationX((-max) * f10);
+                            liVar.w0.setTranslationX((1.0f - f10) * max);
                         } else {
-                            miVar.v0.setTranslationX(max * f10);
-                            miVar.w0.setTranslationX((1.0f - f10) * (-max));
+                            liVar.v0.setTranslationX(max * f10);
+                            liVar.w0.setTranslationX((1.0f - f10) * (-max));
                         }
                     } else {
-                        eiVar.setAlpha(f10);
-                        miVar.w0.s(f10);
-                        ei eiVar2 = miVar.w0;
-                        rn rnVar = miVar.j0;
-                        if (eiVar2 == rnVar || miVar.v0 == rnVar) {
-                            miVar.a2(eiVar2 == rnVar ? 1 : 0);
+                        diVar.setAlpha(f10);
+                        liVar.w0.s(f10);
+                        di diVar2 = liVar.w0;
+                        pn pnVar = liVar.j0;
+                        if (diVar2 == pnVar || liVar.v0 == pnVar) {
+                            liVar.a2(diVar2 == pnVar ? 1 : 0);
                         }
-                        ei eiVar3 = miVar.w0;
-                        rn rnVar2 = miVar.k0;
-                        if (eiVar3 == rnVar2 || miVar.v0 == rnVar2) {
-                            miVar.a2(eiVar3 == rnVar2 ? 1 : 0);
+                        di diVar3 = liVar.w0;
+                        pn pnVar2 = liVar.k0;
+                        if (diVar3 == pnVar2 || liVar.v0 == pnVar2) {
+                            liVar.a2(diVar3 == pnVar2 ? 1 : 0);
                         }
-                        miVar.w0.setTranslationY(AndroidUtilities.dp(78.0f) * f10);
-                        miVar.v0.s(1.0f - Math.min(1.0f, f10 / 0.7f));
-                        miVar.v0.k(miVar.i2);
+                        liVar.w0.setTranslationY(AndroidUtilities.dp(78.0f) * f10);
+                        liVar.v0.s(1.0f - Math.min(1.0f, f10 / 0.7f));
+                        liVar.v0.k(liVar.i2);
                     }
-                    if (miVar.q1 != null) {
-                        miVar.a2(1);
+                    if (liVar.q1 != null) {
+                        liVar.a2(1);
                     }
-                    miVar.Z0();
-                    viewGroup = ((org.telegram.ui.ActionBar.h3) miVar).containerView;
+                    liVar.Z0();
+                    viewGroup = ((org.telegram.ui.ActionBar.g3) liVar).containerView;
                     viewGroup.invalidate();
                     break;
                 }
@@ -80,18 +80,18 @@ public final class yh extends m6 {
                         float f13 = f10 - f12;
                         if (f13 <= 200.0f) {
                             float f14 = f13 / 200.0f;
-                            f11 = pr.g.getInterpolation(f14) * 1.1f;
-                            childAt.setAlpha(pr.j.getInterpolation(f14));
+                            f11 = mr.g.getInterpolation(f14) * 1.1f;
+                            childAt.setAlpha(mr.j.getInterpolation(f14));
                         } else {
                             childAt.setAlpha(1.0f);
                             float f15 = f13 - 200.0f;
-                            f11 = f15 <= 100.0f ? 1.1f - (pr.i.getInterpolation(f15 / 100.0f) * 0.1f) : 1.0f;
+                            f11 = f15 <= 100.0f ? 1.1f - (mr.i.getInterpolation(f15 / 100.0f) * 0.1f) : 1.0f;
                         }
                     } else {
                         f11 = 0.0f;
                     }
-                    if (childAt instanceof hi) {
-                        ((hi) childAt).a.setAttachScale(f11);
+                    if (childAt instanceof gi) {
+                        ((gi) childAt).a.setAttachScale(f11);
                     }
                 }
                 break;

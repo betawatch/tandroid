@@ -3,7 +3,7 @@ package n3;
 import j3.l0;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class i extends a {
     public final d c = new d();
@@ -37,7 +37,7 @@ public class i extends a {
         this.e = false;
     }
 
-    public final ByteBuffer i(int i10) {
+    public final ByteBuffer j(int i10) {
         int i11 = this.n;
         if (i11 == 1) {
             return ByteBuffer.allocate(i10);
@@ -49,11 +49,11 @@ public class i extends a {
         throw new h("Buffer too small (" + (byteBuffer == null ? 0 : byteBuffer.capacity()) + " < " + i10 + ")");
     }
 
-    public final void j(int i10) {
+    public final void k(int i10) {
         int i11 = i10 + this.r;
         ByteBuffer byteBuffer = this.d;
         if (byteBuffer == null) {
-            this.d = i(i11);
+            this.d = j(i11);
             return;
         }
         int capacity = byteBuffer.capacity();
@@ -63,16 +63,16 @@ public class i extends a {
             this.d = byteBuffer;
             return;
         }
-        ByteBuffer i13 = i(i12);
-        i13.order(byteBuffer.order());
+        ByteBuffer j10 = j(i12);
+        j10.order(byteBuffer.order());
         if (position > 0) {
             byteBuffer.flip();
-            i13.put(byteBuffer);
+            j10.put(byteBuffer);
         }
-        this.d = i13;
+        this.d = j10;
     }
 
-    public final void k() {
+    public final void l() {
         ByteBuffer byteBuffer = this.d;
         if (byteBuffer != null) {
             byteBuffer.flip();

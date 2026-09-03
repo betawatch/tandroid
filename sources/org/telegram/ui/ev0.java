@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class ev0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ mv0 a;
@@ -27,7 +27,7 @@ public final class ev0 extends org.telegram.ui.ActionBar.j {
         mv0 mv0Var = this.a;
         boolean[] zArr = mv0Var.w;
         CharSequence[] charSequenceArr = mv0Var.v;
-        xn xnVar = mv0Var.f;
+        zn znVar = mv0Var.f;
         if (i10 == -1) {
             if (mv0Var.h0(true)) {
                 mv0Var.finishFragment();
@@ -38,7 +38,7 @@ public final class ev0 extends org.telegram.ui.ActionBar.j {
         if (i10 == 1) {
             int i17 = 0;
             if (mv0Var.a0) {
-                CharSequence[] charSequenceArr2 = {org.telegram.ui.Components.rn.Y(mv0Var.B)};
+                CharSequence[] charSequenceArr2 = {org.telegram.ui.Components.pn.Y(mv0Var.B)};
                 i14 = ((org.telegram.ui.ActionBar.p2) mv0Var).currentAccount;
                 ArrayList<TLRPC.MessageEntity> entities = MediaDataController.getInstance(i14).getEntities(charSequenceArr2, true);
                 CharSequence charSequence = charSequenceArr2[0];
@@ -72,8 +72,8 @@ public final class ev0 extends org.telegram.ui.ActionBar.j {
                     i15 = 0;
                 }
                 for (int i20 = 0; i20 < charSequenceArr.length; i20++) {
-                    if (!TextUtils.isEmpty(org.telegram.ui.Components.rn.Y(charSequenceArr[i20]))) {
-                        CharSequence[] charSequenceArr3 = {org.telegram.ui.Components.rn.Y(charSequenceArr[i20])};
+                    if (!TextUtils.isEmpty(org.telegram.ui.Components.pn.Y(charSequenceArr[i20]))) {
+                        CharSequence[] charSequenceArr3 = {org.telegram.ui.Components.pn.Y(charSequenceArr[i20])};
                         i16 = ((org.telegram.ui.ActionBar.p2) mv0Var).currentAccount;
                         ArrayList<TLRPC.MessageEntity> entities2 = MediaDataController.getInstance(i16).getEntities(charSequenceArr3, true);
                         CharSequence charSequence2 = charSequenceArr3[0];
@@ -99,8 +99,8 @@ public final class ev0 extends org.telegram.ui.ActionBar.j {
                         tL_messageMediaToDo.todo.list.add(todoItem);
                     }
                 }
-                if (xnVar.c()) {
-                    org.telegram.ui.Components.z4.L(xnVar.getParentActivity(), xnVar.a(), new vl0(8, this, tL_messageMediaToDo));
+                if (znVar.c()) {
+                    org.telegram.ui.Components.z4.L(znVar.getParentActivity(), znVar.a(), new vl0(8, this, tL_messageMediaToDo));
                     return;
                 } else {
                     mv0Var.b0.a(tL_messageMediaToDo);
@@ -111,7 +111,7 @@ public final class ev0 extends org.telegram.ui.ActionBar.j {
             if (mv0Var.I && mv0Var.a.getAlpha() != 1.0f) {
                 int i22 = 0;
                 while (i17 < zArr.length) {
-                    if (!TextUtils.isEmpty(org.telegram.ui.Components.rn.Y(charSequenceArr[i17])) && zArr[i17]) {
+                    if (!TextUtils.isEmpty(org.telegram.ui.Components.pn.Y(charSequenceArr[i17])) && zArr[i17]) {
                         i22++;
                     }
                     i17++;
@@ -119,13 +119,13 @@ public final class ev0 extends org.telegram.ui.ActionBar.j {
                 if (i22 <= 0) {
                     mv0Var.c.getChildCount();
                     for (int i23 = mv0Var.k0; i23 < mv0Var.k0 + mv0Var.y; i23++) {
-                        f2.m1 K = mv0Var.c.K(i23);
+                        f2.l1 K = mv0Var.c.K(i23);
                         if (K != null) {
                             View view = K.a;
-                            if (view instanceof org.telegram.ui.Cells.c6) {
-                                org.telegram.ui.Cells.c6 c6Var = (org.telegram.ui.Cells.c6) view;
-                                if (c6Var.getTop() > AndroidUtilities.dp(40.0f)) {
-                                    mv0Var.h.f(c6Var.getCheckBox(), true);
+                            if (view instanceof org.telegram.ui.Cells.b6) {
+                                org.telegram.ui.Cells.b6 b6Var = (org.telegram.ui.Cells.b6) view;
+                                if (b6Var.getTop() > AndroidUtilities.dp(40.0f)) {
+                                    mv0Var.h.f(b6Var.getCheckBox(), true);
                                     return;
                                 }
                             } else {
@@ -137,7 +137,7 @@ public final class ev0 extends org.telegram.ui.ActionBar.j {
                 }
                 return;
             }
-            CharSequence[] charSequenceArr4 = {org.telegram.ui.Components.rn.Y(mv0Var.B)};
+            CharSequence[] charSequenceArr4 = {org.telegram.ui.Components.pn.Y(mv0Var.B)};
             i11 = ((org.telegram.ui.ActionBar.p2) mv0Var).currentAccount;
             ArrayList<TLRPC.MessageEntity> entities3 = MediaDataController.getInstance(i11).getEntities(charSequenceArr4, true);
             CharSequence charSequence3 = charSequenceArr4[0];
@@ -160,9 +160,9 @@ public final class ev0 extends org.telegram.ui.ActionBar.j {
             ArrayList arrayList = new ArrayList(mv0Var.n);
             int i25 = 0;
             while (i25 < charSequenceArr.length) {
-                if (!TextUtils.isEmpty(org.telegram.ui.Components.rn.Y(charSequenceArr[i25]))) {
+                if (!TextUtils.isEmpty(org.telegram.ui.Components.pn.Y(charSequenceArr[i25]))) {
                     CharSequence[] charSequenceArr5 = new CharSequence[1];
-                    charSequenceArr5[i17] = org.telegram.ui.Components.rn.Y(charSequenceArr[i25]);
+                    charSequenceArr5[i17] = org.telegram.ui.Components.pn.Y(charSequenceArr[i25]);
                     i13 = ((org.telegram.ui.ActionBar.p2) mv0Var).currentAccount;
                     ArrayList<TLRPC.MessageEntity> entities4 = MediaDataController.getInstance(i13).getEntities(charSequenceArr5, true);
                     CharSequence charSequence4 = charSequenceArr5[i17];
@@ -188,7 +188,7 @@ public final class ev0 extends org.telegram.ui.ActionBar.j {
                 i17 = 0;
             }
             tL_messageMediaPoll.results = new TLRPC.TL_pollResults();
-            CharSequence Y = org.telegram.ui.Components.rn.Y(mv0Var.C);
+            CharSequence Y = org.telegram.ui.Components.pn.Y(mv0Var.C);
             if (Y != null) {
                 tL_messageMediaPoll.results.solution = Y.toString();
                 CharSequence[] charSequenceArr6 = {Y};
@@ -201,8 +201,8 @@ public final class ev0 extends org.telegram.ui.ActionBar.j {
                     tL_messageMediaPoll.results.flags |= 16;
                 }
             }
-            if (xnVar.c()) {
-                org.telegram.ui.Components.z4.L(xnVar.getParentActivity(), xnVar.a(), new vl0(this, tL_messageMediaPoll, arrayList));
+            if (znVar.c()) {
+                org.telegram.ui.Components.z4.L(znVar.getParentActivity(), znVar.a(), new vl0(this, tL_messageMediaPoll, arrayList));
             } else {
                 mv0Var.b0.a(tL_messageMediaPoll);
                 mv0Var.finishFragment();

@@ -1,8 +1,248 @@
 package org.telegram.ui;
 
-import android.widget.FrameLayout;
+import android.app.Activity;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import j$.util.Objects;
+import java.util.ArrayList;
+import java.util.Locale;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stats;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class t5 extends FrameLayout {
+public final class t5 extends bg.c {
+    public final /* synthetic */ a6 d;
+
+    public t5(a6 a6Var) {
+        this.d = a6Var;
+    }
+
+    @Override // org.telegram.ui.Components.ql0
+    public final boolean D(f2.l1 l1Var) {
+        return ((z5) this.d.X.get(l1Var.b())).b;
+    }
+
+    @Override // f2.o0
+    public final int h() {
+        return this.d.X.size();
+    }
+
+    @Override // f2.o0
+    public final int j(int i10) {
+        return ((z5) this.d.X.get(i10)).a;
+    }
+
+    @Override // f2.o0
+    public final void v(f2.l1 l1Var, int i10) {
+        int i11;
+        a6 a6Var = this.d;
+        int i12 = a6Var.N;
+        TLRPC.Chat chat = a6Var.d0;
+        ArrayList arrayList = a6Var.X;
+        int i13 = l1Var.f;
+        View view = l1Var.a;
+        if (i13 == 4 || i13 == 14 || i13 == 15) {
+            return;
+        }
+        if (i13 == 1 || i13 == 12 || i13 == 16) {
+            xf.c cVar = (xf.c) view;
+            cVar.setTitle(((z5) arrayList.get(i10)).c);
+            cVar.c(false);
+            if (l1Var.f == 12) {
+                cVar.setPadding(AndroidUtilities.dp(3.0f), cVar.getPaddingTop(), cVar.getPaddingRight(), cVar.getPaddingBottom());
+                return;
+            }
+            return;
+        }
+        if (i13 == 0) {
+            ia1 ia1Var = (ia1) view;
+            ia1Var.a(Integer.toString(a6Var.O.level), 0, null, LocaleController.getString(R.string.BoostsLevel2));
+            TL_stats.TL_statsPercentValue tL_statsPercentValue = a6Var.O.premium_audience;
+            if (tL_statsPercentValue != null) {
+                double d = tL_statsPercentValue.total;
+                if (d != 0.0d) {
+                    ia1Var.a("≈" + ((int) a6Var.O.premium_audience.part), 1, String.format(Locale.US, "%.1f", Float.valueOf((((float) tL_statsPercentValue.part) / ((float) d)) * 100.0f)).concat("%"), LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.PremiumSubscribers : R.string.PremiumMembers));
+                    ia1Var.a(String.valueOf(a6Var.O.boosts), 2, null, LocaleController.getString(R.string.BoostsExisting));
+                    TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = a6Var.O;
+                    ia1Var.a(String.valueOf(Math.max(0, tL_premium_boostsStatus.next_level_boosts - tL_premium_boostsStatus.boosts)), 3, null, LocaleController.getString(R.string.BoostsToLevel));
+                    ia1Var.setPadding(AndroidUtilities.dp(23.0f), ia1Var.getPaddingTop(), AndroidUtilities.dp(23.0f), ia1Var.getPaddingBottom());
+                    return;
+                }
+            }
+            ia1Var.a("~0", 1, "0%", LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.PremiumSubscribers : R.string.PremiumMembers));
+            ia1Var.a(String.valueOf(a6Var.O.boosts), 2, null, LocaleController.getString(R.string.BoostsExisting));
+            TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus2 = a6Var.O;
+            ia1Var.a(String.valueOf(Math.max(0, tL_premium_boostsStatus2.next_level_boosts - tL_premium_boostsStatus2.boosts)), 3, null, LocaleController.getString(R.string.BoostsToLevel));
+            ia1Var.setPadding(AndroidUtilities.dp(23.0f), ia1Var.getPaddingTop(), AndroidUtilities.dp(23.0f), ia1Var.getPaddingBottom());
+            return;
+        }
+        if (i13 == 5) {
+            TL_stories.Boost boost = ((z5) arrayList.get(i10)).d;
+            TLRPC.User user = MessagesController.getInstance(i12).getUser(Long.valueOf(boost.user_id));
+            lg.b bVar = (lg.b) view;
+            bVar.d(user, ContactsController.formatName(user), boost.multiplier > 1 ? LocaleController.formatString("BoostsExpireOn", R.string.BoostsExpireOn, LocaleController.formatDate(boost.expires)) : LocaleController.formatString("BoostExpireOn", R.string.BoostExpireOn, LocaleController.formatDate(boost.expires)), !((z5) arrayList.get(i10)).f);
+            bVar.setStatus(boost);
+            bVar.setAvatarPadding(5);
+            return;
+        }
+        if (i13 == 6) {
+            org.telegram.ui.Cells.z8 z8Var = (org.telegram.ui.Cells.z8) view;
+            z8Var.setText(((z5) arrayList.get(i10)).c);
+            z8Var.setTextColor(org.telegram.ui.ActionBar.j6.l1(0.875f, -1));
+            return;
+        }
+        if (i13 == 9) {
+            org.telegram.ui.Cells.x4 x4Var = (org.telegram.ui.Cells.x4) view;
+            if (a6Var.Y == 0) {
+                x4Var.b(LocaleController.formatPluralString("BoostingShowMoreBoosts", a6Var.U, new Object[0]), R.drawable.arrow_more, 5, false);
+                return;
+            } else {
+                x4Var.b(LocaleController.formatPluralString("BoostingShowMoreGifts", a6Var.W, new Object[0]), R.drawable.arrow_more, 5, false);
+                return;
+            }
+        }
+        if (i13 == 3) {
+            ((org.telegram.ui.Components.x80) view).setLink(((z5) arrayList.get(i10)).c);
+            return;
+        }
+        if (i13 == 11) {
+            z5 z5Var = (z5) arrayList.get(i10);
+            TL_stories.PrepaidGiveaway prepaidGiveaway = z5Var.e;
+            boolean z4 = z5Var.f;
+            lg.c cVar2 = (lg.c) view;
+            if (prepaidGiveaway instanceof TL_stories.TL_prepaidGiveaway) {
+                cVar2.d(prepaidGiveaway, LocaleController.formatPluralString("BoostingTelegramPremiumCountPlural", prepaidGiveaway.quantity, new Object[0]), LocaleController.formatPluralString("BoostingSubscriptionsCountPlural", prepaidGiveaway.quantity, LocaleController.formatPluralString("PrepaidGiveawayMonths", ((TL_stories.TL_prepaidGiveaway) prepaidGiveaway).months, new Object[0])), !z4);
+            } else if (prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway) {
+                TL_stories.TL_prepaidStarsGiveaway tL_prepaidStarsGiveaway = (TL_stories.TL_prepaidStarsGiveaway) prepaidGiveaway;
+                cVar2.d(prepaidGiveaway, LocaleController.formatPluralStringComma("BoostingStarsCountPlural", (int) tL_prepaidStarsGiveaway.stars), LocaleController.formatPluralString("AmongWinners", tL_prepaidStarsGiveaway.quantity, new Object[0]), !z4);
+            }
+            cVar2.setImage(prepaidGiveaway);
+            cVar2.setAvatarPadding(5);
+            return;
+        }
+        if (i13 == 13) {
+            if (a6Var.Q.getTag() == null || ((Integer) a6Var.Q.getTag()).intValue() != Objects.hash(Integer.valueOf(a6Var.j0), Integer.valueOf(a6Var.i0))) {
+                a6Var.Q.setTag(Integer.valueOf(Objects.hash(Integer.valueOf(a6Var.j0), Integer.valueOf(a6Var.i0))));
+                a6Var.Q.g();
+                a6Var.Q.a(0, LocaleController.formatPluralString("BoostingBoostsCount", a6Var.j0, new Object[0]), null);
+                if (MessagesController.getInstance(i12).giveawayGiftsPurchaseAvailable && (i11 = a6Var.i0) > 0 && i11 != a6Var.j0) {
+                    a6Var.Q.a(1, LocaleController.formatPluralString("BoostingGiftsCount", i11, new Object[0]), null);
+                }
+                a6Var.Q.setInitialTabId(a6Var.Y);
+                a6Var.Q.c();
+            }
+        }
+    }
+
+    @Override // f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+        View y6Var;
+        View view;
+        org.telegram.ui.ActionBar.f6 f6Var;
+        org.telegram.ui.ActionBar.f6 f6Var2;
+        a6 a6Var = this.d;
+        switch (i10) {
+            case 0:
+                view = new ia1(a6Var.getParentActivity(), 2);
+                return ai.n(view, view, -1, -2);
+            case 1:
+            case 16:
+                xf.c cVar = new xf.c(a6Var.getParentActivity(), null);
+                cVar.setPadding(cVar.getPaddingLeft(), AndroidUtilities.dp(16.0f), cVar.getRight(), AndroidUtilities.dp(16.0f));
+                view = cVar;
+                return ai.n(view, view, -1, -2);
+            case 2:
+                y6Var = new org.telegram.ui.Cells.y6(viewGroup.getContext(), 0, 0);
+                view = y6Var;
+                return ai.n(view, view, -1, -2);
+            case 3:
+                org.telegram.ui.Components.x80 x80Var = new org.telegram.ui.Components.x80(a6Var.getParentActivity(), a6Var, null, false, false);
+                x80Var.d.setVisibility(8);
+                x80Var.a.setGravity(17);
+                x80Var.h.setVisibility(8);
+                x80Var.v.setVisibility(8);
+                x80Var.setPadding(AndroidUtilities.dp(11.0f), 0, AndroidUtilities.dp(11.0f), AndroidUtilities.dp(24.0f));
+                view = x80Var;
+                return ai.n(view, view, -1, -2);
+            case 4:
+            default:
+                throw new UnsupportedOperationException();
+            case 5:
+                view = new lg.b(a6Var.getParentActivity());
+                return ai.n(view, view, -1, -2);
+            case 6:
+                Context context = viewGroup.getContext();
+                f6Var = ((org.telegram.ui.ActionBar.p2) a6Var).resourceProvider;
+                y6Var = new org.telegram.ui.Cells.z8(context, 20, f6Var);
+                view = y6Var;
+                return ai.n(view, view, -1, -2);
+            case 7:
+                view = new org.telegram.ui.Cells.r3(a6Var.getParentActivity(), 8);
+                return ai.n(view, view, -1, -2);
+            case 8:
+                dh.d dVar = new dh.d(a6Var.getParentActivity(), 7);
+                TextView textView = new TextView(a6Var.getParentActivity());
+                textView.setText(LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(a6Var.d0) ? R.string.NoBoostersHint : R.string.NoBoostersGroupHint));
+                textView.setTextSize(1, 14.0f);
+                ai.s(org.telegram.ui.ActionBar.j6.y6, null, false, textView, 17);
+                dVar.addView(textView, k7.b6.d(-1, -2.0f, 0, 0.0f, 16.0f, 0.0f, 0.0f));
+                view = dVar;
+                return ai.n(view, view, -1, -2);
+            case 9:
+                s5 s5Var = new s5(a6Var.getParentActivity(), 0);
+                s5Var.a(org.telegram.ui.ActionBar.j6.v6, org.telegram.ui.ActionBar.j6.u6);
+                view = s5Var;
+                return ai.n(view, view, -1, -2);
+            case 10:
+                org.telegram.ui.Cells.n8 n8Var = new org.telegram.ui.Cells.n8(a6Var.getParentActivity());
+                n8Var.m(R.drawable.msg_gift_premium, LocaleController.formatString(R.string.BoostingGetBoostsViaGifts, new Object[0]), false);
+                n8Var.s = 64;
+                int i11 = org.telegram.ui.ActionBar.j6.q6;
+                n8Var.e(i11, i11);
+                view = n8Var;
+                return ai.n(view, view, -1, -2);
+            case 11:
+                view = new lg.c(a6Var.getParentActivity());
+                return ai.n(view, view, -1, -2);
+            case 12:
+                xf.c cVar2 = new xf.c(a6Var.getParentActivity(), null);
+                cVar2.setPadding(cVar2.getPaddingLeft(), AndroidUtilities.dp(16.0f), cVar2.getRight(), AndroidUtilities.dp(8.0f));
+                view = cVar2;
+                return ai.n(view, view, -1, -2);
+            case 13:
+                Activity parentActivity = a6Var.getParentActivity();
+                f6Var2 = ((org.telegram.ui.ActionBar.p2) a6Var).resourceProvider;
+                ScrollSlidingTextTabStrip scrollSlidingTextTabStrip = new ScrollSlidingTextTabStrip(parentActivity, f6Var2);
+                a6Var.Q = scrollSlidingTextTabStrip;
+                int i12 = org.telegram.ui.ActionBar.j6.Fh;
+                int i13 = org.telegram.ui.ActionBar.j6.Eh;
+                scrollSlidingTextTabStrip.I = i12;
+                scrollSlidingTextTabStrip.J = i13;
+                scrollSlidingTextTabStrip.e();
+                ah.e eVar = new ah.e(this, a6Var.getParentActivity());
+                a6Var.Q.setDelegate(new h(this, 6));
+                eVar.addView(a6Var.Q, k7.b6.c(48.0f, -2));
+                view = eVar;
+                return ai.n(view, view, -1, -2);
+            case 14:
+                view = a6Var.r0(a6Var.getParentActivity());
+                return ai.n(view, view, -1, -2);
+            case 15:
+                eg.h0 h0Var = new eg.h0(this, a6Var.getParentActivity(), 4);
+                h0Var.setTag(-33024);
+                view = h0Var;
+                return ai.n(view, view, -1, -2);
+        }
+    }
 }

@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Log;
 import com.google.android.gms.tasks.Task;
-import j7.w6;
+import j7.y6;
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,7 +12,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.concurrent.Future;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class m implements Closeable {
     public final URL a;
@@ -35,7 +35,7 @@ public final class m implements Closeable {
         }
         InputStream inputStream = openConnection.getInputStream();
         try {
-            byte[] b10 = w6.b(new d(inputStream));
+            byte[] b10 = y6.b(new d(inputStream));
             if (inputStream != null) {
                 inputStream.close();
             }

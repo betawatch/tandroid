@@ -1,6 +1,6 @@
 package c0;
 
-import j7.i0;
+import j7.h0;
 import java.util.Locale;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
@@ -12,20 +12,21 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import vh.w2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class h implements v8.a {
     public static final boolean d = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
     public static final Logger e = Logger.getLogger(h.class.getName());
-    public static final i0 f;
+    public static final h0 f;
     public static final Object h;
     public volatile Object a;
     public volatile d b;
     public volatile g c;
 
     static {
-        i0 fVar;
+        h0 fVar;
         try {
             fVar = new e(AtomicReferenceFieldUpdater.newUpdater(g.class, Thread.class, "a"), AtomicReferenceFieldUpdater.newUpdater(g.class, g.class, "b"), AtomicReferenceFieldUpdater.newUpdater(h.class, g.class, "c"), AtomicReferenceFieldUpdater.newUpdater(h.class, d.class, "b"), AtomicReferenceFieldUpdater.newUpdater(h.class, Object.class, "a"));
             th = null;
@@ -192,9 +193,9 @@ public abstract class h implements v8.a {
             if (gVar2 != gVar) {
                 g gVar3 = new g();
                 do {
-                    i0 i0Var = f;
-                    i0Var.d(gVar3, gVar2);
-                    if (i0Var.c(this, gVar2, gVar3)) {
+                    h0 h0Var = f;
+                    h0Var.d(gVar3, gVar2);
+                    if (h0Var.c(this, gVar2, gVar3)) {
                         while (true) {
                             LockSupport.parkNanos(this, nanos);
                             if (Thread.interrupted()) {
@@ -238,25 +239,25 @@ public abstract class h implements v8.a {
         s6.append(timeUnit.toString().toLowerCase(locale));
         String sb = s6.toString();
         if (nanos + 1000 < 0) {
-            String e6 = w.c.e(sb, " (plus ");
+            String k10 = w2.k(sb, " (plus ");
             long j11 = -nanos;
             long convert = timeUnit.convert(j11, TimeUnit.NANOSECONDS);
             long nanos2 = j11 - timeUnit.toNanos(convert);
             boolean z4 = convert == 0 || nanos2 > 1000;
             if (convert > 0) {
-                String str = e6 + convert + " " + lowerCase;
+                String str = k10 + convert + " " + lowerCase;
                 if (z4) {
-                    str = w.c.e(str, ",");
+                    str = w2.k(str, ",");
                 }
-                e6 = w.c.e(str, " ");
+                k10 = w2.k(str, " ");
             }
             if (z4) {
-                e6 = e6 + nanos2 + " nanoseconds ";
+                k10 = k10 + nanos2 + " nanoseconds ";
             }
-            sb = w.c.e(e6, "delay)");
+            sb = w2.k(k10, "delay)");
         }
         if (isDone()) {
-            throw new TimeoutException(w.c.e(sb, " but future completed as timeout expired"));
+            throw new TimeoutException(w2.k(sb, " but future completed as timeout expired"));
         }
         throw new TimeoutException(android.support.v4.media.a.z(sb, " for ", hVar));
     }
@@ -369,9 +370,9 @@ public abstract class h implements v8.a {
             if (gVar2 != gVar) {
                 g gVar3 = new g();
                 do {
-                    i0 i0Var = f;
-                    i0Var.d(gVar3, gVar2);
-                    if (i0Var.c(this, gVar2, gVar3)) {
+                    h0 h0Var = f;
+                    h0Var.d(gVar3, gVar2);
+                    if (h0Var.c(this, gVar2, gVar3)) {
                         do {
                             LockSupport.park(this);
                             if (!Thread.interrupted()) {

@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.view.View;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e21 implements xd.b, Utilities.Callback5, Utilities.Callback5Return {
     public final /* synthetic */ w21 a;
@@ -22,7 +22,7 @@ public final /* synthetic */ class e21 implements xd.b, Utilities.Callback5, Uti
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        return Boolean.valueOf(w21.c(this.a, (h51) obj, (View) obj2));
+        return Boolean.valueOf(w21.c(this.a, (i51) obj, (View) obj2));
     }
 
     @Override // org.telegram.messenger.Utilities.Callback5
@@ -30,7 +30,7 @@ public final /* synthetic */ class e21 implements xd.b, Utilities.Callback5, Uti
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        w21.a(this.a, (h51) obj);
+        w21.a(this.a, (i51) obj);
     }
 
     @Override // xd.b

@@ -2,10 +2,10 @@ package l7;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class ma implements ka {
-    public final c9.p a;
+    public final c9.q a;
     public final ha b;
 
     public ma(Context context, ha haVar) {
@@ -14,14 +14,14 @@ public final class ma implements ka {
         y2.q.b(context);
         y2.o c3 = y2.q.a().c(aVar);
         if (w2.a.d.contains(new v2.c("json"))) {
-            new c9.p(new j7.e9(c3, 4));
+            new c9.q(new j7.e9(c3, 4));
         }
-        this.a = new c9.p(new j7.e9(c3, 5));
+        this.a = new c9.q(new j7.e9(c3, 5));
     }
 
     @Override // l7.ka
     public final void a(b4.e0 e0Var) {
         this.b.getClass();
-        ((y2.p) this.a.get()).a(e0Var.b != 0 ? new v2.a(null, e0Var.E(), v2.d.a, null) : new v2.a(null, e0Var.E(), v2.d.b, null), new sg.a(29));
+        ((y2.p) this.a.get()).a(e0Var.b != 0 ? new v2.a(null, e0Var.E(), v2.d.a, null) : new v2.a(null, e0Var.E(), v2.d.b, null), new s0.b(29));
     }
 }

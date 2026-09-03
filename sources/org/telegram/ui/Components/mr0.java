@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class mr0 extends vu0 {
     public final /* synthetic */ yu0 D;
@@ -13,7 +13,7 @@ public final class mr0 extends vu0 {
         this.D = yu0Var;
     }
 
-    @Override // org.telegram.ui.Components.vu0, f2.p0
+    @Override // org.telegram.ui.Components.vu0, f2.o0
     public final void l() {
         super.l();
         yu0 yu0Var = this.D;
@@ -23,7 +23,7 @@ public final class mr0 extends vu0 {
         }
         if (W != null) {
             hs0 hs0Var = W.w;
-            oh.l6 l6Var = this.s;
+            nh.l6 l6Var = this.s;
             hs0Var.e(l6Var != null && (l6Var.k() || (yu0Var.i0() && this.s.g() > 0)), true);
         }
     }

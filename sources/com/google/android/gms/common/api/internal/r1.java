@@ -10,11 +10,11 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class r1 extends Fragment implements m {
     public static final WeakHashMap b = new WeakHashMap();
-    public final b4.e0 a = new b4.e0(1, (byte) 0);
+    public final b4.e0 a = new b4.e0(2, (byte) 0);
 
     @Override // com.google.android.gms.common.api.internal.m
     public final void a(String str, l lVar) {

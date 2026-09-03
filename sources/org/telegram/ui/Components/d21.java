@@ -17,12 +17,12 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class d21 {
     public final int a;
     public final View b;
-    public final org.telegram.ui.ActionBar.g6 c;
+    public final org.telegram.ui.ActionBar.f6 c;
     public final boolean d;
     public k01 e;
     public final ImageReceiver g;
@@ -37,10 +37,10 @@ public final class d21 {
     public final rc q;
     public Runnable r;
     public long s;
-    public final z8 f = new z8((org.telegram.ui.ActionBar.g6) null);
+    public final z8 f = new z8((org.telegram.ui.ActionBar.f6) null);
     public final Path i = new Path();
 
-    public d21(int i10, View view, org.telegram.ui.ActionBar.g6 g6Var, boolean z4) {
+    public d21(int i10, View view, org.telegram.ui.ActionBar.f6 f6Var, boolean z4) {
         Paint paint = new Paint(1);
         this.n = paint;
         Path path = new Path();
@@ -48,7 +48,7 @@ public final class d21 {
         this.p = new RectF();
         this.a = i10;
         this.b = view;
-        this.c = g6Var;
+        this.c = f6Var;
         this.d = z4;
         this.q = new rc(view);
         this.g = new ImageReceiver(view);
@@ -138,14 +138,14 @@ public final class d21 {
         canvas.save();
         float f20 = f10 / f14;
         canvas.translate(f20, f11);
-        org.telegram.ui.ActionBar.g6 g6Var = this.c;
-        Paint T0 = org.telegram.ui.ActionBar.k6.T0("paintChatActionBackground", g6Var);
+        org.telegram.ui.ActionBar.f6 f6Var = this.c;
+        Paint T0 = org.telegram.ui.ActionBar.j6.T0("paintChatActionBackground", f6Var);
         int alpha = T0.getAlpha();
         T0.setAlpha((int) (alpha * f13 * f12));
         canvas.drawPath(path, T0);
         T0.setAlpha(alpha);
-        if (g6Var != null ? g6Var.o0() : org.telegram.ui.ActionBar.k6.a1()) {
-            Paint T02 = org.telegram.ui.ActionBar.k6.T0("paintChatActionBackgroundDarken", g6Var);
+        if (f6Var != null ? f6Var.m0() : org.telegram.ui.ActionBar.j6.a1()) {
+            Paint T02 = org.telegram.ui.ActionBar.j6.T0("paintChatActionBackgroundDarken", f6Var);
             int alpha2 = T02.getAlpha();
             T02.setAlpha((int) (alpha2 * f13 * f12));
             canvas.drawPath(path, T02);
@@ -169,11 +169,11 @@ public final class d21 {
                 imageReceiver.setAlpha(f13);
                 imageReceiver.draw(canvas);
             }
-            int v02 = org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.ic, g6Var);
+            int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.ic, f6Var);
             this.e.c(f21 + AndroidUtilities.dp(27.66f), AndroidUtilities.dp(16.5f) + f11, f13, v02, canvas);
             canvas.save();
             canvas.translate(f22 - AndroidUtilities.dp(11.25f), AndroidUtilities.dp(16.5f) + f11);
-            int l1 = org.telegram.ui.ActionBar.k6.l1(0.75f * f13, v02);
+            int l1 = org.telegram.ui.ActionBar.j6.l1(0.75f * f13, v02);
             Paint paint = this.n;
             paint.setColor(l1);
             paint.setStrokeWidth(AndroidUtilities.dp(1.66f));
@@ -264,13 +264,13 @@ public final class d21 {
                     return false;
                 }
                 if (topicId == 1) {
-                    imageReceiver.setImageBitmap(bg.e.c(view.getContext(), 0.75f, org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.v8, this.c), false));
+                    imageReceiver.setImageBitmap(ag.f.c(view.getContext(), 0.75f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.v8, this.c), false));
                 } else if (findTopic.icon_emoji_id != 0) {
                     this.h = new l5(0, i10, findTopic.icon_emoji_id);
                     imageReceiver.onDetachedFromWindow();
                     this.h.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
                 } else {
-                    imageReceiver.setImageBitmap(bg.e.e(findTopic));
+                    imageReceiver.setImageBitmap(ag.f.e(findTopic));
                 }
                 this.e = new k01(findTopic.title, 14.0f, AndroidUtilities.bold());
             }

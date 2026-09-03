@@ -1,25 +1,49 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.net.Uri;
+import java.util.Map;
+import org.telegram.messenger.secretmedia.ExtendedDefaultDataSource;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class d71 extends j3.l {
-    public final /* synthetic */ j71 d;
+public final class d71 implements g5.m {
+    public final g5.m a;
+    public final long b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d71(Context context, j71 j71Var) {
-        super(context);
-        this.d = j71Var;
+    public d71(ExtendedDefaultDataSource extendedDefaultDataSource, long j10) {
+        this.a = extendedDefaultDataSource;
+        this.b = j10;
     }
 
-    @Override // j3.l
-    public final l3.k0 a(Context context) {
-        com.google.firebase.messaging.s sVar = new com.google.firebase.messaging.s(8);
-        l3.g a2 = l3.g.a(context);
-        a2.getClass();
-        sVar.b = a2;
-        sVar.c = new androidx.biometric.e(new l3.n[]{new l3.t0(new i71(this.d))});
-        return new l3.k0(sVar);
+    @Override // g5.m
+    public final void addTransferListener(g5.v0 v0Var) {
+        this.a.addTransferListener(v0Var);
+    }
+
+    @Override // g5.m
+    public final void close() {
+        this.a.close();
+    }
+
+    @Override // g5.m
+    public final Map getResponseHeaders() {
+        return this.a.getResponseHeaders();
+    }
+
+    @Override // g5.m
+    public final Uri getUri() {
+        return this.a.getUri();
+    }
+
+    @Override // g5.m
+    public final long open(g5.p pVar) {
+        c4.c a2 = pVar.a();
+        a2.b = pVar.e + this.b;
+        return this.a.open(a2.d());
+    }
+
+    @Override // g5.j
+    public final int read(byte[] bArr, int i10, int i11) {
+        return this.a.read(bArr, i10, i11);
     }
 }

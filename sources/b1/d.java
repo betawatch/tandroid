@@ -7,15 +7,16 @@ import android.os.Parcel;
 import android.os.ResultReceiver;
 import dd.l;
 import dd.p;
-import j7.c0;
+import j7.b0;
 import java.util.LinkedHashSet;
 import java.util.concurrent.Executor;
+import kf.k0;
 import kotlin.jvm.internal.j;
 import kotlin.jvm.internal.q;
 import tc.r;
 import v0.i;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final a a = new a();
@@ -53,7 +54,7 @@ public abstract class d {
         if (!bundle.getBoolean("FAILURE_RESPONSE")) {
             return false;
         }
-        c0.a(cancellationSignal, new b(executor, callback, pVar.invoke(bundle.getString("EXCEPTION_TYPE"), bundle.getString("EXCEPTION_MESSAGE")), 0));
+        b0.a(cancellationSignal, new b(executor, callback, pVar.invoke(bundle.getString("EXCEPTION_TYPE"), bundle.getString("EXCEPTION_MESSAGE")), 0));
         return true;
     }
 
@@ -62,7 +63,7 @@ public abstract class d {
             return false;
         }
         q qVar = new q();
-        qVar.a = new w0.c(l.d.k(i10, "activity with result code: ", " indicating not RESULT_OK"), 2);
+        qVar.a = new w0.c(k0.k(i10, "activity with result code: ", " indicating not RESULT_OK"), 2);
         if (i10 == 0) {
             qVar.a = new w0.b("activity is cancelled by the user.");
         }

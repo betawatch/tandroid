@@ -1,86 +1,42 @@
 package org.telegram.ui.web;
 
+import nh.j7;
 import org.json.JSONObject;
-import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s implements Utilities.Callback2 {
+public final /* synthetic */ class s implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ a1 b;
+    public final /* synthetic */ c1 b;
+    public final /* synthetic */ j7 c;
 
-    public /* synthetic */ s(a1 a1Var, int i10) {
+    public /* synthetic */ s(c1 c1Var, j7 j7Var, int i10) {
         this.a = i10;
-        this.b = a1Var;
+        this.b = c1Var;
+        this.c = j7Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        f0 f0Var;
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                String str = (String) obj;
-                TLRPC.Document document = (TLRPC.Document) obj2;
-                a1 a1Var = this.b;
-                if (str != null) {
-                    a1Var.v("emoji_status_failed", a1.x(str, "error"));
-                    break;
-                } else {
-                    a1Var.v("emoji_status_set", null);
-                    f0 f0Var2 = a1Var.c;
-                    if (f0Var2 != null) {
-                        f0Var2.d(document);
-                        break;
-                    }
-                }
+                this.b.z(this.c, "location_requested", (JSONObject) obj);
                 break;
             case 1:
-                String str2 = (String) obj2;
-                JSONObject x10 = a1.x(str2, "status");
-                a1 a1Var2 = this.b;
-                a1Var2.v("emoji_status_access_requested", x10);
-                if (((Boolean) obj).booleanValue() && "allowed".equalsIgnoreCase(str2) && (f0Var = a1Var2.c) != null) {
-                    f0Var.a();
-                    break;
-                }
-                break;
-            case 2:
-                Boolean bool = (Boolean) obj;
-                Boolean bool2 = (Boolean) obj2;
-                a1 a1Var3 = this.b;
-                if (a1Var3.c != null && bool.booleanValue()) {
-                    a1Var3.c.w(bool2.booleanValue());
-                }
-                a1Var3.h0.k(new r(a1Var3, 2));
-                break;
-            case 3:
-                a1 a1Var4 = this.b;
-                a1Var4.getClass();
-                if (((Boolean) obj).booleanValue()) {
-                    sh.p pVar = a1Var4.g0;
-                    pVar.e = true;
-                    pVar.k();
-                }
-                a1Var4.t();
+                this.b.z(this.c, "location_requested", (JSONObject) obj);
                 break;
             default:
-                Boolean bool3 = (Boolean) obj;
-                String str3 = (String) obj2;
-                a1 a1Var5 = this.b;
-                a1Var5.getClass();
-                if (bool3.booleanValue()) {
-                    a1Var5.g0.e = true;
-                }
-                try {
-                    JSONObject jSONObject = new JSONObject();
-                    jSONObject.put("status", bool3.booleanValue() ? "authorized" : "failed");
-                    jSONObject.put("token", str3);
-                    a1Var5.v("biometry_auth_requested", jSONObject);
+                c1 c1Var = this.b;
+                c1Var.getClass();
+                boolean booleanValue = ((Boolean) obj).booleanValue();
+                j7 j7Var = this.c;
+                if (!booleanValue) {
+                    c1Var.z(j7Var, "home_screen_failed", c1.B("UNSUPPORTED", "error"));
                     break;
-                } catch (Exception e6) {
-                    FileLog.e(e6);
+                } else {
+                    c1Var.z(j7Var, "home_screen_added", null);
+                    break;
                 }
         }
     }

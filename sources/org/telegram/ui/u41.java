@@ -16,9 +16,9 @@ import android.view.animation.LinearInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class u41 extends org.telegram.ui.Cells.t1 {
+public final class u41 extends org.telegram.ui.Cells.s1 {
     public boolean Ce;
     public final RectF De;
     public final RectF Ee;
@@ -35,8 +35,8 @@ public final class u41 extends org.telegram.ui.Cells.t1 {
     public final /* synthetic */ w41 Pe;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u41(w41 w41Var, Context context, int i10, org.telegram.ui.ActionBar.g6 g6Var, int i11, int i12) {
-        super(context, i10, false, null, g6Var);
+    public u41(w41 w41Var, Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var, int i11, int i12) {
+        super(context, i10, false, null, f6Var);
         this.Pe = w41Var;
         this.Ne = i11;
         this.Oe = i12;
@@ -48,7 +48,7 @@ public final class u41 extends org.telegram.ui.Cells.t1 {
         this.Me = new org.telegram.ui.Components.z5(0.0f, this, 0L, 120L, new LinearInterpolator());
     }
 
-    @Override // org.telegram.ui.Cells.t1
+    @Override // org.telegram.ui.Cells.s1
     public final void E1(Canvas canvas) {
         Paint paint = this.Ge;
         w41 w41Var = this.Pe;
@@ -123,13 +123,13 @@ public final class u41 extends org.telegram.ui.Cells.t1 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Cells.t1
+    @Override // org.telegram.ui.Cells.s1
     public final void F1(Canvas canvas) {
         AndroidUtilities.lerp(1.0f, 1.5f, this.Pe.v);
         super.F1(canvas);
     }
 
-    @Override // org.telegram.ui.Cells.t1
+    @Override // org.telegram.ui.Cells.s1
     public final void d2(Canvas canvas, float f10, Integer num) {
         canvas.save();
         int i10 = -this.K.c;
@@ -139,17 +139,17 @@ public final class u41 extends org.telegram.ui.Cells.t1 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Cells.t1, org.telegram.ui.Cells.a0
+    @Override // org.telegram.ui.Cells.s1, org.telegram.ui.Cells.a0
     public final int getBoundsLeft() {
         return 0;
     }
 
-    @Override // org.telegram.ui.Cells.t1, org.telegram.ui.Cells.a0
+    @Override // org.telegram.ui.Cells.s1, org.telegram.ui.Cells.a0
     public final int getBoundsRight() {
         return getWidth();
     }
 
-    @Override // org.telegram.ui.Cells.t1
+    @Override // org.telegram.ui.Cells.s1
     public final void m2(float f10, Canvas canvas, boolean z4) {
         canvas.save();
         w41 w41Var = this.Pe;
@@ -170,7 +170,7 @@ public final class u41 extends org.telegram.ui.Cells.t1 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Cells.t1, android.view.View
+    @Override // org.telegram.ui.Cells.s1, android.view.View
     public final void onDraw(Canvas canvas) {
         Canvas canvas2;
         w41 w41Var = this.Pe;
@@ -211,7 +211,7 @@ public final class u41 extends org.telegram.ui.Cells.t1 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.t1, android.view.View
+    @Override // org.telegram.ui.Cells.s1, android.view.View
     public final void onMeasure(int i10, int i11) {
         setMeasuredDimension(this.Ne, this.Oe);
     }
@@ -226,7 +226,7 @@ public final class u41 extends org.telegram.ui.Cells.t1 {
         textureView.setVisibility(i10);
     }
 
-    @Override // org.telegram.ui.Cells.t1, android.view.View
+    @Override // org.telegram.ui.Cells.s1, android.view.View
     public final void setPressed(boolean z4) {
     }
 }

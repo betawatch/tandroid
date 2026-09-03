@@ -3,7 +3,7 @@ package o8;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import n7.qa;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class i0 extends g0 {
     public final /* synthetic */ TaskCompletionSource h;
@@ -25,7 +25,7 @@ public final class i0 extends g0 {
                 c cVar = this.r;
                 TaskCompletionSource taskCompletionSource = this.h;
                 cVar.e.add(taskCompletionSource);
-                taskCompletionSource.getTask().addOnCompleteListener(new qa(4, cVar, taskCompletionSource));
+                taskCompletionSource.getTask().addOnCompleteListener(new qa(cVar, taskCompletionSource, false, 5));
                 if (this.r.l.getAndIncrement() > 0) {
                     this.r.b.b("Already connected to the service.", new Object[0]);
                 }

@@ -14,7 +14,7 @@ import n7.tf;
 import n7.vf;
 import n7.xf;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class r extends cb.e {
     public final /* synthetic */ int b;
@@ -33,12 +33,12 @@ public final class r extends cb.e {
                 Context b10 = cb.h.c().b();
                 ArrayList arrayList = new ArrayList();
                 ((o) obj).getClass();
-                cb.b bVar = new cb.b(8);
-                w2.a aVar = w2.a.e;
+                ab.a aVar = new ab.a(8);
+                w2.a aVar2 = w2.a.e;
                 y2.q.b(b10);
-                y2.q.a().c(aVar);
+                y2.q.a().c(aVar2);
                 w2.a.d.contains(new v2.c("json"));
-                arrayList.add(bVar);
+                arrayList.add(aVar);
                 return new q(c3.b(), (cb.l) c3.a(cb.l.class));
             case 1:
                 z8 z8Var = (z8) obj;

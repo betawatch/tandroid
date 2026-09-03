@@ -9,9 +9,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class pf1 extends org.telegram.ui.Cells.r2 {
+public final class pf1 extends org.telegram.ui.Cells.q2 {
     public boolean T4;
     public int U4;
     public TLRPC.TL_forumTopic V4;
@@ -38,23 +38,23 @@ public final class pf1 extends org.telegram.ui.Cells.r2 {
         this.k1 = true;
     }
 
-    @Override // org.telegram.ui.Cells.r2
+    @Override // org.telegram.ui.Cells.q2
     public final boolean E() {
         return this.a5;
     }
 
     public final void f0() {
         Drawable drawable = this.X4;
-        boolean z4 = drawable instanceof bg.d;
+        boolean z4 = drawable instanceof ag.e;
         sf1 sf1Var = this.e5;
         if (z4) {
-            ((bg.d) drawable).a(i0.a.d(this.c5, sf1Var.getThemedColor(org.telegram.ui.ActionBar.k6.R9), sf1Var.getThemedColor(org.telegram.ui.ActionBar.k6.L7)));
+            ((ag.e) drawable).a(i0.a.d(this.c5, sf1Var.getThemedColor(org.telegram.ui.ActionBar.j6.R9), sf1Var.getThemedColor(org.telegram.ui.ActionBar.j6.L7)));
         }
         Drawable[] drawableArr = this.e0;
         if (drawableArr != null) {
             Drawable drawable2 = drawableArr[0];
-            if (drawable2 instanceof bg.d) {
-                ((bg.d) drawable2).a(i0.a.d(this.c5, sf1Var.getThemedColor(org.telegram.ui.ActionBar.k6.R9), sf1Var.getThemedColor(org.telegram.ui.ActionBar.k6.L7)));
+            if (drawable2 instanceof ag.e) {
+                ((ag.e) drawable2).a(i0.a.d(this.c5, sf1Var.getThemedColor(org.telegram.ui.ActionBar.j6.R9), sf1Var.getThemedColor(org.telegram.ui.ActionBar.j6.L7)));
             }
         }
         invalidate();
@@ -75,17 +75,17 @@ public final class pf1 extends org.telegram.ui.Cells.r2 {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.c5, z4 ? 1.0f : 0.0f);
         this.d5 = ofFloat;
-        ofFloat.addUpdateListener(new n11(this, 18));
-        this.d5.setInterpolator(org.telegram.ui.Components.pr.g);
+        ofFloat.addUpdateListener(new o11(this, 18));
+        this.d5.setInterpolator(org.telegram.ui.Components.mr.g);
         this.d5.start();
     }
 
-    @Override // org.telegram.ui.Cells.r2
+    @Override // org.telegram.ui.Cells.q2
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }
 
-    @Override // org.telegram.ui.Cells.r2, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Cells.q2, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.Y4 = true;
@@ -95,7 +95,7 @@ public final class pf1 extends org.telegram.ui.Cells.r2 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.r2, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Cells.q2, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.Y4 = false;
@@ -105,22 +105,22 @@ public final class pf1 extends org.telegram.ui.Cells.r2 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.r2, android.view.View
+    @Override // org.telegram.ui.Cells.q2, android.view.View
     public final void onDraw(Canvas canvas) {
-        org.telegram.ui.Components.ri0 ri0Var;
-        org.telegram.ui.Cells.k2 k2Var;
+        org.telegram.ui.Components.qi0 qi0Var;
+        org.telegram.ui.Cells.j2 j2Var;
         sf1 sf1Var = this.e5;
         if (sf1Var.getMessagesController().isMonoForum(-sf1Var.a)) {
             super.onDraw(canvas);
             return;
         }
-        this.C3 = (!this.h0 || (k2Var = this.n2) == null) ? 0.0f : k2Var.getProgress() * AndroidUtilities.dp(30.0f);
+        this.C3 = (!this.h0 || (j2Var = this.n2) == null) ? 0.0f : j2Var.getProgress() * AndroidUtilities.dp(30.0f);
         canvas.save();
         float f10 = this.C3;
         int i10 = -AndroidUtilities.dp(4.0f);
         this.B3 = i10;
         canvas.translate(f10, i10);
-        canvas.drawColor(sf1Var.getThemedColor(org.telegram.ui.ActionBar.k6.d6));
+        canvas.drawColor(sf1Var.getThemedColor(org.telegram.ui.ActionBar.j6.d6));
         super.onDraw(canvas);
         canvas.restore();
         canvas.save();
@@ -128,12 +128,12 @@ public final class pf1 extends org.telegram.ui.Cells.r2 {
         if (this.T4) {
             int dp = this.q2 ? 0 : AndroidUtilities.dp(this.F);
             if (LocaleController.isRTL) {
-                canvas.drawLine(0.0f - this.t1, getMeasuredHeight() - 1, getMeasuredWidth() - dp, getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
+                canvas.drawLine(0.0f - this.t1, getMeasuredHeight() - 1, getMeasuredWidth() - dp, getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
             } else {
-                canvas.drawLine(dp - this.t1, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
+                canvas.drawLine(dp - this.t1, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
             }
         }
-        if ((!this.Z4 || (ri0Var = this.b2) == null || ri0Var.C != 0.0f) && (this.W4 != null || this.X4 != null)) {
+        if ((!this.Z4 || (qi0Var = this.b2) == null || qi0Var.C != 0.0f) && (this.W4 != null || this.X4 != null)) {
             int dp2 = AndroidUtilities.dp(10.0f);
             int dp3 = AndroidUtilities.dp(10.0f);
             int dp4 = AndroidUtilities.dp(28.0f);
@@ -166,7 +166,7 @@ public final class pf1 extends org.telegram.ui.Cells.r2 {
             l5Var2.o(this);
         }
         if (l5Var != null) {
-            l5Var.setColorFilter(org.telegram.ui.ActionBar.k6.v3);
+            l5Var.setColorFilter(org.telegram.ui.ActionBar.j6.v3);
         }
         this.W4 = l5Var;
         if (l5Var == null || !this.Y4) {
@@ -192,18 +192,18 @@ public final class pf1 extends org.telegram.ui.Cells.r2 {
         if (tL_forumTopic != null && this != sf1Var.Y0) {
             if (tL_forumTopic.hidden) {
                 this.I1 = true;
-                this.J1 = org.telegram.ui.ActionBar.k6.d9;
-                this.K1 = org.telegram.ui.ActionBar.k6.c9;
+                this.J1 = org.telegram.ui.ActionBar.j6.d9;
+                this.K1 = org.telegram.ui.ActionBar.j6.c9;
                 this.L1 = "Unhide";
                 this.M1 = R.string.Unhide;
-                this.N1 = org.telegram.ui.ActionBar.k6.y1;
+                this.N1 = org.telegram.ui.ActionBar.j6.y1;
             } else {
                 this.I1 = true;
-                this.J1 = org.telegram.ui.ActionBar.k6.c9;
-                this.K1 = org.telegram.ui.ActionBar.k6.d9;
+                this.J1 = org.telegram.ui.ActionBar.j6.c9;
+                this.K1 = org.telegram.ui.ActionBar.j6.d9;
                 this.L1 = "Hide";
                 this.M1 = R.string.Hide;
-                this.N1 = org.telegram.ui.ActionBar.k6.x1;
+                this.N1 = org.telegram.ui.ActionBar.j6.x1;
             }
             invalidate();
         }
@@ -212,10 +212,10 @@ public final class pf1 extends org.telegram.ui.Cells.r2 {
         }
         if (tL_forumTopic != null && tL_forumTopic.id == 1) {
             setAnimatedEmojiDrawable(null);
-            setForumIcon(bg.e.c(getContext(), 1.0f, sf1Var.getThemedColor(org.telegram.ui.ActionBar.k6.Ac), false));
+            setForumIcon(ag.f.c(getContext(), 1.0f, sf1Var.getThemedColor(org.telegram.ui.ActionBar.j6.Ac), false));
         } else if (tL_forumTopic == null || tL_forumTopic.icon_emoji_id == 0) {
             setAnimatedEmojiDrawable(null);
-            setForumIcon(bg.e.e(tL_forumTopic));
+            setForumIcon(ag.f.e(tL_forumTopic));
         } else {
             setForumIcon(null);
             org.telegram.ui.Components.l5 l5Var = this.W4;
@@ -232,7 +232,7 @@ public final class pf1 extends org.telegram.ui.Cells.r2 {
         t();
     }
 
-    @Override // org.telegram.ui.Cells.r2
+    @Override // org.telegram.ui.Cells.q2
     public final void t() {
         super.t();
         f0();

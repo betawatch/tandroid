@@ -3,7 +3,7 @@ package j7;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class o {
     public static Object a(Parcel parcel, Parcelable.Creator creator) {
@@ -13,12 +13,12 @@ public abstract class o {
         return null;
     }
 
-    public static void b(Parcel parcel, Parcelable parcelable, int i10) {
+    public static void b(Parcel parcel, Parcelable parcelable) {
         if (parcelable == null) {
             parcel.writeInt(0);
         } else {
             parcel.writeInt(1);
-            parcelable.writeToParcel(parcel, i10);
+            parcelable.writeToParcel(parcel, 0);
         }
     }
 }

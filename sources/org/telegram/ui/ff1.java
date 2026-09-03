@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class ff1 extends f2.l {
     public Runnable F;
@@ -38,7 +38,7 @@ public final class ff1 extends f2.l {
         AndroidUtilities.runOnUIThread(ef1Var);
     }
 
-    @Override // f2.l, f2.u0
+    @Override // f2.l, f2.t0
     public final void g() {
         super.g();
         Runnable runnable = this.F;
@@ -51,10 +51,10 @@ public final class ff1 extends f2.l {
     }
 
     @Override // f2.l
-    public final void z(f2.m1 m1Var) {
+    public final void z(f2.l1 l1Var) {
         sf1 sf1Var = this.H;
         View view = sf1Var.Y0;
-        if (view == m1Var.a) {
+        if (view == l1Var.a) {
             view.setTranslationX(0.0f);
             ve1 ve1Var = sf1Var.L;
             if (ve1Var != null) {

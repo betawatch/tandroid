@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class dz0 {
     public final boolean a;
@@ -168,9 +168,9 @@ public final class dz0 {
                     i12 = i13;
                 }
             }
-            int e6 = e();
-            j(arrayList, new hz0(0, e6), this.v, false);
-            j(arrayList2, new hz0(e6, 0), this.w, false);
+            int e = e();
+            j(arrayList, new hz0(0, e), this.v, false);
+            j(arrayList2, new hz0(e, 0), this.w, false);
             bz0[] q10 = q(arrayList);
             bz0[] q11 = q(arrayList2);
             Object[] objArr = (Object[]) Array.newInstance(bz0[].class.getComponentType(), q10.length + q11.length);
@@ -234,9 +234,9 @@ public final class dz0 {
                 gz0 d = nz0Var.d(i11);
                 iz0 iz0Var2 = d.a;
                 kz0 kz0Var2 = z4 ? iz0Var2.b : iz0Var2.a;
-                int e6 = nz0Var.e(d, z4, false) + nz0Var.e(d, z4, true) + (z4 ? d.k : d.l);
+                int e = nz0Var.e(d, z4, false) + nz0Var.e(d, z4, true) + (z4 ? d.k : d.l);
                 float f10 = kz0Var2.d;
-                int i12 = e6 + (f10 == 0.0f ? 0 : this.t[i11]);
+                int i12 = e + (f10 == 0.0f ? 0 : this.t[i11]);
                 l7.w0 w0Var2 = this.d;
                 ez0 ez0Var2 = (ez0) ((Object[]) w0Var2.d)[((int[]) w0Var2.b)[i11]];
                 ez0Var2.c = ((kz0Var2.c == nz0.O && f10 == 0.0f) ? 0 : 2) & ez0Var2.c;
@@ -401,7 +401,7 @@ public final class dz0 {
 
     public final void n(int i10) {
         if (i10 != Integer.MIN_VALUE && i10 < h()) {
-            throw new IllegalArgumentException(w.c.e((this.a ? "column" : "row").concat("Count must be greater than or equal to the maximum of all grid indices (and spans) defined in the LayoutParams of each child"), ". "));
+            throw new IllegalArgumentException(vh.w2.k((this.a ? "column" : "row").concat("Count must be greater than or equal to the maximum of all grid indices (and spans) defined in the LayoutParams of each child"), ". "));
         }
         this.b = i10;
     }
@@ -423,10 +423,10 @@ public final class dz0 {
     }
 
     public final boolean p(bz0[] bz0VarArr, int[] iArr, boolean z4) {
-        int e6 = e() + 1;
+        int e = e() + 1;
         loop0: for (int i10 = 0; i10 < bz0VarArr.length; i10++) {
             Arrays.fill(iArr, 0);
-            for (int i11 = 0; i11 < e6; i11++) {
+            for (int i11 = 0; i11 < e; i11++) {
                 boolean z10 = false;
                 for (bz0 bz0Var : bz0VarArr) {
                     z10 |= m(iArr, bz0Var);
@@ -439,7 +439,7 @@ public final class dz0 {
                 return false;
             }
             boolean[] zArr = new boolean[bz0VarArr.length];
-            for (int i12 = 0; i12 < e6; i12++) {
+            for (int i12 = 0; i12 < e; i12++) {
                 int length = bz0VarArr.length;
                 for (int i13 = 0; i13 < length; i13++) {
                     zArr[i13] = zArr[i13] | m(iArr, bz0VarArr[i13]);

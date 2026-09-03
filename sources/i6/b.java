@@ -11,7 +11,7 @@ import java.io.Closeable;
 import java.io.IOException;
 import y5.h;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final char[] a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
@@ -51,12 +51,12 @@ public abstract class b {
         if (g(context, "com.google.android.gms", i10)) {
             try {
                 PackageInfo packageInfo = context.getPackageManager().getPackageInfo("com.google.android.gms", 64);
-                h m9 = h.m(context);
-                m9.getClass();
+                h b10 = h.b(context);
+                b10.getClass();
                 if (packageInfo != null) {
-                    if (!h.w(packageInfo, false)) {
-                        if (h.w(packageInfo, true)) {
-                            if (!y5.g.a((Context) m9.b)) {
+                    if (!h.d(packageInfo, false)) {
+                        if (h.d(packageInfo, true)) {
+                            if (!y5.g.a(b10.a)) {
                                 Log.w("GoogleSignatureVerifier", "Test-keys aren't accepted on this build.");
                             }
                         }
@@ -91,10 +91,10 @@ public abstract class b {
     }
 
     public static boolean g(Context context, String str, int i10) {
-        k6.b a2 = k6.c.a(context);
+        bb.b a2 = k6.b.a(context);
         a2.getClass();
         try {
-            AppOpsManager appOpsManager = (AppOpsManager) a2.a.getSystemService("appops");
+            AppOpsManager appOpsManager = (AppOpsManager) ((Context) a2.b).getSystemService("appops");
             if (appOpsManager == null) {
                 throw new NullPointerException("context.getSystemService(Context.APP_OPS_SERVICE) is null");
             }

@@ -6,10 +6,10 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class fw0 extends sa {
-    public rs U;
+    public os U;
 
     public fw0(Context context) {
         super(context, null, true, false, false, 1, null);
@@ -17,15 +17,15 @@ public final class fw0 extends sa {
         this.B = true;
         this.y = true;
         J();
-        sl0 sl0Var = this.d;
+        rl0 rl0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
-        sl0Var.setPadding(i10, 0, i10, 0);
-        this.d.j(new nb0(this, 6));
+        rl0Var.setPadding(i10, 0, i10, 0);
+        this.d.j(new mb0(this, 6));
         this.d.setOnItemClickListener(new k(this, 14));
     }
 
     public static void P(fw0 fw0Var, int i10) {
-        h51 G = fw0Var.U.G(i10 - 1);
+        i51 G = fw0Var.U.G(i10 - 1);
         Object obj = G != null ? G.G : null;
         if (obj instanceof TLRPC.User) {
             MessagesController.getInstance(fw0Var.currentAccount).openApp(fw0Var.attachedFragment, (TLRPC.User) obj, null, 0, null);
@@ -33,11 +33,11 @@ public final class fw0 extends sa {
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final rl0 v(sl0 sl0Var) {
-        rs rsVar = new rs(sl0Var, getContext(), this.currentAccount, 0, true, this.resourcesProvider);
-        this.U = rsVar;
-        rsVar.r = false;
-        return rsVar;
+    public final ql0 v(rl0 rl0Var) {
+        os osVar = new os(rl0Var, getContext(), this.currentAccount, 0, true, this.resourcesProvider);
+        this.U = osVar;
+        osVar.r = false;
+        return osVar;
     }
 
     @Override // org.telegram.ui.Components.sa

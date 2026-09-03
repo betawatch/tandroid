@@ -31,9 +31,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import n7.qa;
-import o5.i;
+import vh.w2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class c {
     public static final MediaMetadataCompat l;
@@ -83,20 +83,19 @@ public final class c {
         MediaMetadataCompat mediaMetadataCompat = l;
         qa qaVar = this.h;
         if (qaVar != null && (a2Var = this.i) != null) {
-            bf.b bVar = (bf.b) qaVar.b;
+            af.c cVar = (af.c) qaVar.b;
             String str = (String) qaVar.c;
             if (!a2Var.z().p()) {
-                i iVar = new i(1);
-                Bundle bundle = (Bundle) iVar.b;
+                d dVar = new d();
                 if (a2Var.f()) {
-                    iVar.x(1L, "android.media.metadata.ADVERTISEMENT");
+                    dVar.d(1L, "android.media.metadata.ADVERTISEMENT");
                 }
                 e eVar = (e) a2Var;
                 o2 z4 = eVar.z();
-                iVar.x(((z4.p() || !z4.m(eVar.x(), (n2) eVar.a, 0L).r) && a2Var.getDuration() != -9223372036854775807L) ? a2Var.getDuration() : -1L, "android.media.metadata.DURATION");
-                long j10 = bVar.P().s;
+                dVar.d(((z4.p() || !z4.m(eVar.x(), (n2) eVar.a, 0L).r) && a2Var.getDuration() != -9223372036854775807L) ? a2Var.getDuration() : -1L, "android.media.metadata.DURATION");
+                long j10 = cVar.P().s;
                 if (j10 != -1) {
-                    List<MediaSession.QueueItem> queue = ((h) bVar.b).a.getQueue();
+                    List<MediaSession.QueueItem> queue = ((h) cVar.b).a.getQueue();
                     ArrayList a2 = queue != null ? MediaSessionCompat$QueueItem.a(queue) : null;
                     int i10 = 0;
                     while (true) {
@@ -106,110 +105,114 @@ public final class c {
                         MediaSessionCompat$QueueItem mediaSessionCompat$QueueItem = (MediaSessionCompat$QueueItem) a2.get(i10);
                         if (mediaSessionCompat$QueueItem.b == j10) {
                             MediaDescriptionCompat mediaDescriptionCompat = mediaSessionCompat$QueueItem.a;
-                            Bundle bundle2 = mediaDescriptionCompat.h;
-                            if (bundle2 != null) {
-                                for (String str2 : bundle2.keySet()) {
-                                    Object obj2 = bundle2.get(str2);
+                            Bundle bundle = mediaDescriptionCompat.h;
+                            if (bundle != null) {
+                                for (String str2 : bundle.keySet()) {
+                                    Object obj2 = bundle.get(str2);
                                     if (obj2 instanceof String) {
-                                        iVar.A(w.c.e(str, str2), (String) obj2);
-                                    } else if (obj2 instanceof CharSequence) {
-                                        String e6 = w.c.e(str, str2);
-                                        CharSequence charSequence = (CharSequence) obj2;
-                                        f fVar = MediaMetadataCompat.d;
-                                        if (fVar.containsKey(e6) && ((Integer) fVar.get(e6)).intValue() != 1) {
-                                            throw new IllegalArgumentException(android.support.v4.media.a.o("The ", e6, " key cannot be used to put a CharSequence"));
-                                        }
-                                        bundle.putCharSequence(e6, charSequence);
-                                    } else if (obj2 instanceof Long) {
-                                        iVar.x(((Long) obj2).longValue(), w.c.e(str, str2));
-                                    } else if (obj2 instanceof Integer) {
-                                        iVar.x(((Integer) obj2).intValue(), w.c.e(str, str2));
-                                    } else if (obj2 instanceof Bitmap) {
-                                        iVar.w(w.c.e(str, str2), (Bitmap) obj2);
-                                    } else if (obj2 instanceof RatingCompat) {
-                                        String e10 = w.c.e(str, str2);
-                                        RatingCompat ratingCompat = (RatingCompat) obj2;
-                                        float f10 = ratingCompat.b;
-                                        int i11 = ratingCompat.a;
-                                        f fVar2 = MediaMetadataCompat.d;
-                                        if (fVar2.containsKey(e10) && ((Integer) fVar2.get(e10)).intValue() != 3) {
-                                            throw new IllegalArgumentException(android.support.v4.media.a.o("The ", e10, " key cannot be used to put a Rating"));
-                                        }
-                                        if (ratingCompat.c == null) {
-                                            if (ratingCompat.a()) {
-                                                switch (i11) {
-                                                    case 1:
-                                                        ratingCompat.c = d.g(i11 == 1 && f10 == 1.0f);
-                                                        break;
-                                                    case 2:
-                                                        ratingCompat.c = d.j(i11 == 2 && f10 == 1.0f);
-                                                        break;
-                                                    case 3:
-                                                    case 4:
-                                                    case 5:
-                                                        if ((i11 != 3 && i11 != 4 && i11 != 5) || !ratingCompat.a()) {
-                                                            f10 = -1.0f;
-                                                        }
-                                                        ratingCompat.c = d.i(i11, f10);
-                                                        break;
-                                                    case 6:
-                                                        if (i11 != 6 || !ratingCompat.a()) {
-                                                            f10 = -1.0f;
-                                                        }
-                                                        ratingCompat.c = d.h(f10);
-                                                        break;
-                                                    default:
-                                                        obj = null;
-                                                        break;
-                                                }
-                                                bundle.putParcelable(e10, (Parcelable) obj);
-                                            } else {
-                                                ratingCompat.c = d.k(i11);
-                                            }
-                                        }
-                                        obj = ratingCompat.c;
-                                        bundle.putParcelable(e10, (Parcelable) obj);
+                                        dVar.e(w2.k(str, str2), (String) obj2);
                                     } else {
-                                        continue;
+                                        boolean z10 = obj2 instanceof CharSequence;
+                                        Bundle bundle2 = dVar.a;
+                                        if (z10) {
+                                            String k10 = w2.k(str, str2);
+                                            CharSequence charSequence = (CharSequence) obj2;
+                                            f fVar = MediaMetadataCompat.d;
+                                            if (fVar.containsKey(k10) && ((Integer) fVar.get(k10)).intValue() != 1) {
+                                                throw new IllegalArgumentException(android.support.v4.media.a.o("The ", k10, " key cannot be used to put a CharSequence"));
+                                            }
+                                            bundle2.putCharSequence(k10, charSequence);
+                                        } else if (obj2 instanceof Long) {
+                                            dVar.d(((Long) obj2).longValue(), w2.k(str, str2));
+                                        } else if (obj2 instanceof Integer) {
+                                            dVar.d(((Integer) obj2).intValue(), w2.k(str, str2));
+                                        } else if (obj2 instanceof Bitmap) {
+                                            dVar.c(w2.k(str, str2), (Bitmap) obj2);
+                                        } else if (obj2 instanceof RatingCompat) {
+                                            String k11 = w2.k(str, str2);
+                                            RatingCompat ratingCompat = (RatingCompat) obj2;
+                                            float f10 = ratingCompat.b;
+                                            int i11 = ratingCompat.a;
+                                            f fVar2 = MediaMetadataCompat.d;
+                                            if (fVar2.containsKey(k11) && ((Integer) fVar2.get(k11)).intValue() != 3) {
+                                                throw new IllegalArgumentException(android.support.v4.media.a.o("The ", k11, " key cannot be used to put a Rating"));
+                                            }
+                                            if (ratingCompat.c == null) {
+                                                if (ratingCompat.a()) {
+                                                    switch (i11) {
+                                                        case 1:
+                                                            ratingCompat.c = android.support.v4.media.e.g(i11 == 1 && f10 == 1.0f);
+                                                            break;
+                                                        case 2:
+                                                            ratingCompat.c = android.support.v4.media.e.j(i11 == 2 && f10 == 1.0f);
+                                                            break;
+                                                        case 3:
+                                                        case 4:
+                                                        case 5:
+                                                            if ((i11 != 3 && i11 != 4 && i11 != 5) || !ratingCompat.a()) {
+                                                                f10 = -1.0f;
+                                                            }
+                                                            ratingCompat.c = android.support.v4.media.e.i(i11, f10);
+                                                            break;
+                                                        case 6:
+                                                            if (i11 != 6 || !ratingCompat.a()) {
+                                                                f10 = -1.0f;
+                                                            }
+                                                            ratingCompat.c = android.support.v4.media.e.h(f10);
+                                                            break;
+                                                        default:
+                                                            obj = null;
+                                                            break;
+                                                    }
+                                                    bundle2.putParcelable(k11, (Parcelable) obj);
+                                                } else {
+                                                    ratingCompat.c = android.support.v4.media.e.k(i11);
+                                                }
+                                            }
+                                            obj = ratingCompat.c;
+                                            bundle2.putParcelable(k11, (Parcelable) obj);
+                                        } else {
+                                            continue;
+                                        }
                                     }
                                 }
                             }
                             CharSequence charSequence2 = mediaDescriptionCompat.b;
                             if (charSequence2 != null) {
                                 String valueOf = String.valueOf(charSequence2);
-                                iVar.A("android.media.metadata.TITLE", valueOf);
-                                iVar.A("android.media.metadata.DISPLAY_TITLE", valueOf);
+                                dVar.e("android.media.metadata.TITLE", valueOf);
+                                dVar.e("android.media.metadata.DISPLAY_TITLE", valueOf);
                             }
                             CharSequence charSequence3 = mediaDescriptionCompat.c;
                             if (charSequence3 != null) {
-                                iVar.A("android.media.metadata.DISPLAY_SUBTITLE", String.valueOf(charSequence3));
+                                dVar.e("android.media.metadata.DISPLAY_SUBTITLE", String.valueOf(charSequence3));
                             }
                             CharSequence charSequence4 = mediaDescriptionCompat.d;
                             if (charSequence4 != null) {
-                                iVar.A("android.media.metadata.DISPLAY_DESCRIPTION", String.valueOf(charSequence4));
+                                dVar.e("android.media.metadata.DISPLAY_DESCRIPTION", String.valueOf(charSequence4));
                             }
                             Bitmap bitmap = mediaDescriptionCompat.e;
                             if (bitmap != null) {
-                                iVar.w("android.media.metadata.DISPLAY_ICON", bitmap);
+                                dVar.c("android.media.metadata.DISPLAY_ICON", bitmap);
                             }
                             Uri uri = mediaDescriptionCompat.f;
                             if (uri != null) {
-                                iVar.A("android.media.metadata.DISPLAY_ICON_URI", String.valueOf(uri));
+                                dVar.e("android.media.metadata.DISPLAY_ICON_URI", String.valueOf(uri));
                             }
                             String str3 = mediaDescriptionCompat.a;
                             if (str3 != null) {
-                                iVar.A("android.media.metadata.MEDIA_ID", str3);
+                                dVar.e("android.media.metadata.MEDIA_ID", str3);
                             }
                             Uri uri2 = mediaDescriptionCompat.n;
                             if (uri2 != null) {
-                                iVar.A("android.media.metadata.MEDIA_URI", String.valueOf(uri2));
+                                dVar.e("android.media.metadata.MEDIA_URI", String.valueOf(uri2));
                             }
                         } else {
                             i10++;
                         }
                     }
                 }
-                mediaMetadataCompat = iVar.b();
+                mediaMetadataCompat = dVar.a();
             }
         }
         this.a.e(mediaMetadataCompat);
@@ -243,12 +246,12 @@ public final class c {
         this.g = DesugarCollections.unmodifiableMap(hashMap);
         Bundle bundle = new Bundle();
         if (a2Var.v() == null) {
-            int b10 = a2Var.b();
+            int c3 = a2Var.c();
             boolean j10 = a2Var.j();
-            if (b10 != 2) {
+            if (c3 != 2) {
                 i10 = 3;
-                if (b10 != 3) {
-                    i10 = b10 != 4 ? 0 : 1;
+                if (c3 != 3) {
+                    i10 = c3 != 4 ? 0 : 1;
                 }
             } else {
                 if (j10) {

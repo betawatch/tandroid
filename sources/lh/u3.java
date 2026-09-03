@@ -1,332 +1,101 @@
 package lh;
 
 import android.content.Context;
-import android.graphics.drawable.ColorDrawable;
-import android.net.Uri;
-import android.text.TextUtils;
-import android.view.View;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RadialGradient;
+import android.graphics.Shader;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.OvalShape;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
-import java.util.ArrayList;
-import java.util.Collections;
-import mh.ja;
-import mh.l7;
-import oh.i9;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.video.VideoAds;
-import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Cells.ba;
-import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.g8;
-import org.telegram.ui.Components.h8;
-import org.telegram.ui.Components.mi;
-import org.telegram.ui.Components.q70;
-import org.telegram.ui.Components.q80;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.r80;
-import org.telegram.ui.Components.u80;
-import org.telegram.ui.Components.xb0;
-import org.telegram.ui.Components.y80;
-import org.telegram.ui.b30;
-import org.telegram.ui.f11;
-import org.telegram.ui.k11;
-import org.telegram.ui.ti0;
-import org.telegram.ui.w31;
-import org.telegram.ui.xf0;
-import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class u3 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* loaded from: classes4.dex */
+public final class u3 extends FrameLayout {
+    public final org.telegram.ui.Components.p9 a;
+    public final a4 b;
+    public final org.telegram.ui.Components.k6 c;
+    public TL_stars.starGiftAttributeBackdrop d;
+    public TL_stars.starGiftAttributePattern e;
+    public float f;
 
-    public /* synthetic */ u3(Object obj, Object obj2, Object obj3, Object obj4, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
-        this.e = obj4;
+    public u3(Context context) {
+        super(context);
+        org.telegram.ui.Components.p9 p9Var = new org.telegram.ui.Components.p9(context);
+        this.a = p9Var;
+        p9Var.setRoundRadius(AndroidUtilities.dp(13.0f));
+        addView(p9Var, k7.b6.d(26, 26.0f, 49, 0.0f, 11.33f, 0.0f, 0.0f));
+        a4 a4Var = new a4(context);
+        this.b = a4Var;
+        a4Var.e = AndroidUtilities.dp(18.0f);
+        a4Var.a.setStrokeWidth(AndroidUtilities.dp(3.0f));
+        addView(a4Var, k7.b6.d(48, 48.0f, 49, 0.0f, 0.66f, 0.0f, 0.0f));
+        org.telegram.ui.Components.k6 k6Var = new org.telegram.ui.Components.k6(context, false, false, false);
+        this.c = k6Var;
+        k6Var.setTypeface(AndroidUtilities.bold());
+        k6Var.setGravity(17);
+        k6Var.setTextSize(AndroidUtilities.dp(12.0f));
+        k6Var.setTextColor(-1);
+        addView(k6Var, k7.b6.d(-1, 14.0f, 48, 0.0f, 39.0f, 0.0f, 0.0f));
+        c(0.0f, false);
+        k7.d6.a(this);
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        char c3;
-        float f10;
-        int i10 = this.a;
-        TL_stars.SavedStarGift savedStarGift = null;
-        int i11 = -1;
-        char c10 = 1;
-        Object obj = this.e;
-        Object obj2 = this.d;
-        Object obj3 = this.c;
-        Object obj4 = this.b;
-        switch (i10) {
-            case 0:
-                w3 w3Var = (w3) obj4;
-                l7 l7Var = (l7) obj3;
-                TL_stars.SavedStarGift savedStarGift2 = (TL_stars.SavedStarGift) obj2;
-                Utilities.Callback0Return callback0Return = (Utilities.Callback0Return) obj;
-                ArrayList h = l7Var.h();
-                int i12 = 0;
-                while (true) {
-                    if (i12 < h.size()) {
-                        if (((TL_stars.SavedStarGift) h.get(i12)).gift.id == w3Var.b) {
-                            savedStarGift = (TL_stars.SavedStarGift) h.get(i12);
-                            i11 = i12;
-                        } else {
-                            i12++;
-                        }
-                    }
-                }
-                if (savedStarGift != null) {
-                    savedStarGift.pinned_to_top = false;
-                    h.set(i11, savedStarGift2);
-                    savedStarGift2.pinned_to_top = true;
-                    ArrayList arrayList = l7Var.l;
-                    arrayList.removeAll(h);
-                    if (l7Var.e && !l7Var.c) {
-                        Collections.sort(arrayList, new e5.f(19));
-                    }
-                    arrayList.addAll(0, h);
-                    NotificationCenter.getInstance(l7Var.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(l7Var.b), l7Var);
-                    l7Var.l();
-                    w3Var.dismiss();
-                    ((qc) callback0Return.run()).M(LocaleController.formatString(R.string.Gift2ReplacedPinTitle, mh.g5.D1(savedStarGift2.gift)), LocaleController.formatString(R.string.Gift2ReplacedPinSubtitle, mh.g5.D1(savedStarGift.gift)), R.raw.ic_pin).j();
-                    break;
-                }
-                break;
-            case 1:
-                TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj3;
-                i9 i9Var = (i9) obj2;
-                TLRPC.Chat chat = (TLRPC.Chat) obj;
-                oh.f4 f4Var = ((oh.y3) obj4).l;
-                oh.y3 y3Var = f4Var.q1;
-                if (y3Var != null) {
-                    y3Var.a();
-                }
-                storyItem.dialogId = f4Var.y1;
-                storyItem.messageId = storyItem.id;
-                MessageObject messageObject = new MessageObject(f4Var.z2, storyItem);
-                messageObject.generateThumbs(false);
-                i9Var.H(new oh.x3(messageObject, false, chat.id));
-                break;
-            case 2:
-                ((VideoAds) obj4).lambda$show$7((q70) obj3, (TLRPC.TL_sponsoredMessage) obj2, (Context) obj, view);
-                break;
-            case 3:
-                q70 F = q70.F(((org.telegram.ui.ActionBar.h3) obj4).getContainer(), (g6) obj3, (ImageView) obj2);
-                F.c(R.drawable.menu_link_revoke, LocaleController.getString(R.string.GroupCallCreatedLinkRevoke), (l2) obj, false);
-                F.Y = true;
-                F.a0(0.0f, -AndroidUtilities.dp(6.0f));
-                F.s = 0;
-                F.Z();
-                break;
-            case 4:
-                ((org.telegram.ui.Components.y4) obj2).I(((int[]) obj4)[((org.telegram.ui.Components.i4) obj3).getValue()] * 60, 0, true);
-                ((org.telegram.ui.ActionBar.c3) obj).a.dismissRunnable.run();
-                break;
-            case 5:
-                f11 f11Var = (f11) obj2;
-                k11.U(f11Var.a, f11Var.b, ((org.telegram.ui.Components.f4) obj4).getValue() + 1, (((org.telegram.ui.Components.g4) obj3).getValue() + 1) * 60);
-                ((org.telegram.ui.ActionBar.c3) obj).a.dismissRunnable.run();
-                break;
-            case 6:
-                ((org.telegram.ui.Components.y4) obj2).I(((int[]) obj4)[((org.telegram.ui.Components.d4) obj3).getValue()], 0, true);
-                ((org.telegram.ui.ActionBar.c3) obj).a.dismissRunnable.run();
-                break;
-            case 7:
-                ((h8) obj4).a();
-                org.telegram.ui.Components.z4.k((Context) obj3, (g6) obj2, new org.telegram.ui.Components.t((g8) obj, 13));
-                break;
-            case 8:
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj4;
-                ArrayList arrayList2 = (ArrayList) obj3;
-                xb0 xb0Var = (xb0) obj2;
-                ti0 ti0Var = (ti0) obj;
-                chatActivityEnterView.N4 = !chatActivityEnterView.N4;
-                for (int i13 = 0; i13 < arrayList2.size(); i13++) {
-                    ((MessageObject) arrayList2.get(i13)).messageOwner.invert_media = chatActivityEnterView.N4;
-                }
-                xb0Var.a(!chatActivityEnterView.N4, true);
-                if (!arrayList2.isEmpty()) {
-                    ti0Var.f((MessageObject) arrayList2.get(0));
-                }
-                ti0Var.n(!chatActivityEnterView.N4);
-                break;
-            case 9:
-                ChatActivityEnterView chatActivityEnterView2 = (ChatActivityEnterView) obj4;
-                MessageObject.GroupedMessages groupedMessages = (MessageObject.GroupedMessages) obj3;
-                MessageObject messageObject2 = (MessageObject) obj2;
-                ti0 ti0Var2 = (ti0) obj;
-                int i14 = ChatActivityEnterView.j5;
-                chatActivityEnterView2.getClass();
-                if (groupedMessages != null) {
-                    ArrayList<MessageObject> arrayList3 = groupedMessages.messages;
-                    int size = arrayList3.size();
-                    int i15 = 0;
-                    while (i15 < size) {
-                        MessageObject messageObject3 = arrayList3.get(i15);
-                        i15++;
-                        messageObject3.messageOwner.invert_media = chatActivityEnterView2.N4;
-                    }
-                    groupedMessages.calculate();
-                } else {
-                    messageObject2.messageOwner.invert_media = chatActivityEnterView2.N4;
-                }
-                chatActivityEnterView2.d0();
-                ti0Var2.h(true);
-                chatActivityEnterView2.N4 = false;
-                break;
-            case 10:
-                mi miVar = (mi) obj4;
-                Context context = (Context) obj3;
-                org.telegram.ui.ActionBar.g1 g1Var = (org.telegram.ui.ActionBar.g1) obj2;
-                g6 g6Var = (g6) obj;
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = miVar.g0;
-                if (chatAttachAlertPhotoLayout != null) {
-                    ja.g1(context, chatAttachAlertPhotoLayout.getStarsPrice(), true, new eh.w(14, miVar, g1Var), g6Var);
-                    break;
-                }
-                break;
-            case 11:
-                y80 y80Var = (y80) obj4;
-                Context context2 = (Context) obj3;
-                org.telegram.ui.ActionBar.h3 h3Var = (org.telegram.ui.ActionBar.h3) obj2;
-                org.telegram.ui.ActionBar.p2 p2Var = (org.telegram.ui.ActionBar.p2) obj;
-                float[] fArr = y80Var.F;
-                FrameLayout frameLayout = y80Var.n;
-                if (y80Var.s == null) {
-                    ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(context2, null);
-                    if (!y80Var.x && y80Var.D) {
-                        org.telegram.ui.ActionBar.g1 g1Var2 = new org.telegram.ui.ActionBar.g1(context2, true, false);
-                        g1Var2.g(LocaleController.getString(R.string.Edit), R.drawable.msg_edit, null);
-                        actionBarPopupWindow$ActionBarPopupWindowLayout.a(g1Var2, k7.c6.n(-1, 48));
-                        g1Var2.setOnClickListener(new r80(y80Var, c10 == true ? 1 : 0));
-                    }
-                    org.telegram.ui.ActionBar.g1 g1Var3 = new org.telegram.ui.ActionBar.g1(context2, true, false);
-                    g1Var3.g(LocaleController.getString(R.string.GetQRCode), R.drawable.msg_qrcode, null);
-                    actionBarPopupWindow$ActionBarPopupWindowLayout.a(g1Var3, k7.c6.n(-1, 48));
-                    g1Var3.setOnClickListener(new r80(y80Var, 2));
-                    int i16 = 3;
-                    if (y80Var.C) {
-                        c3 = 1;
-                    } else {
-                        org.telegram.ui.ActionBar.g1 g1Var4 = new org.telegram.ui.ActionBar.g1(context2, false, true);
-                        c3 = 1;
-                        g1Var4.g(LocaleController.getString(R.string.RevokeLink), R.drawable.msg_delete, null);
-                        int i17 = k6.p7;
-                        g1Var4.c(k6.w0(null, i17, false), k6.w0(null, i17, false));
-                        g1Var4.setOnClickListener(new r80(y80Var, i16));
-                        actionBarPopupWindow$ActionBarPopupWindowLayout.a(g1Var4, k7.c6.n(-1, 48));
-                    }
-                    FrameLayout overlayContainerView = h3Var == null ? p2Var.getParentLayout().getOverlayContainerView() : h3Var.getContainer();
-                    if (overlayContainerView != null) {
-                        y80.a(frameLayout, overlayContainerView, fArr);
-                        float f11 = fArr[c3];
-                        fg.i0 i0Var = new fg.i0(y80Var, context2, overlayContainerView, 6);
-                        ba baVar = new ba(i0Var, i16);
-                        overlayContainerView.getViewTreeObserver().addOnPreDrawListener(baVar);
-                        overlayContainerView.addView(i0Var, k7.c6.c(-1.0f, -1));
-                        i0Var.setAlpha(0.0f);
-                        i0Var.animate().alpha(1.0f).setDuration(150L);
-                        actionBarPopupWindow$ActionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(overlayContainerView.getMeasuredWidth(), 0), View.MeasureSpec.makeMeasureSpec(overlayContainerView.getMeasuredHeight(), 0));
-                        org.telegram.ui.ActionBar.p1 p1Var = new org.telegram.ui.ActionBar.p1(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-                        y80Var.s = p1Var;
-                        p1Var.setOnDismissListener(new u80(y80Var, i0Var, overlayContainerView, baVar, 0));
-                        y80Var.s.setOutsideTouchable(true);
-                        y80Var.s.setFocusable(true);
-                        y80Var.s.setBackgroundDrawable(new ColorDrawable(0));
-                        y80Var.s.setAnimationStyle(R.style.PopupContextAnimation);
-                        y80Var.s.setInputMethodMode(2);
-                        y80Var.s.setSoftInputMode(0);
-                        actionBarPopupWindow$ActionBarPopupWindowLayout.setDispatchKeyEventListener(new q80(y80Var, 2));
-                        if (AndroidUtilities.isTablet()) {
-                            f11 += overlayContainerView.getPaddingTop();
-                            f10 = 0.0f - overlayContainerView.getPaddingLeft();
-                        } else {
-                            f10 = 0.0f;
-                        }
-                        y80Var.s.showAtLocation(overlayContainerView, 0, (int) (overlayContainerView.getX() + ((overlayContainerView.getMeasuredWidth() - actionBarPopupWindow$ActionBarPopupWindowLayout.getMeasuredWidth()) - AndroidUtilities.dp(16.0f)) + f10), (int) (overlayContainerView.getY() + f11 + frameLayout.getMeasuredHeight()));
-                        break;
-                    }
-                }
-                break;
-            case 12:
-                xf0 xf0Var = (xf0) obj4;
-                q70 H = q70.H(xf0Var.v, xf0Var.a);
-                H.c(R.drawable.msg_help, LocaleController.getString(R.string.SettingsHelp), new b30(xf0Var, (String) obj3, (String) obj2, (String) obj, 12), false);
-                H.V(5);
-                H.Z();
-                break;
-            case 13:
-                q70 G = q70.G(((w31) obj4).container, (g6) obj2, (ImageView) obj, true);
-                G.V(5);
-                G.t = false;
-                G.a0(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(-32.0f));
-                ((Utilities.Callback) obj3).run(G);
-                break;
-            case 14:
-                sh.l lVar = (sh.l) obj4;
-                xn xnVar = (xn) obj3;
-                MessageObject messageObject4 = (MessageObject) obj2;
-                String str = (String) obj;
-                if (xnVar != null) {
-                    lVar.getClass();
-                    xnVar.J9(messageObject4, false, false);
-                }
-                af.g.r(lVar.getContext(), Uri.parse(str), true, false, false, null, null, false, MessagesController.getInstance(UserConfig.selectedAccount).sponsoredLinksInappAllow, false);
-                break;
-            case 15:
-                String[] strArr = (String[]) obj4;
-                ArrayList arrayList4 = (ArrayList) obj2;
-                qh.d dVar = (qh.d) obj;
-                strArr[0] = ((sh.h1) obj3).a;
-                int size2 = arrayList4.size();
-                int i18 = 0;
-                while (i18 < size2) {
-                    Object obj5 = arrayList4.get(i18);
-                    i18++;
-                    sh.g1 g1Var5 = (sh.g1) obj5;
-                    g1Var5.b.a(TextUtils.equals(g1Var5.a, strArr[0]), true);
-                }
-                dVar.setEnabled(strArr[0] != null);
-                break;
-            default:
-                boolean[] zArr = (boolean[]) obj4;
-                hg.c1 c1Var = (hg.c1) obj3;
-                String[] strArr2 = (String[]) obj2;
-                org.telegram.ui.ActionBar.h3 h3Var2 = (org.telegram.ui.ActionBar.h3) obj;
-                if (!zArr[0]) {
-                    zArr[0] = true;
-                    c1Var.run(strArr2[0]);
-                }
-                h3Var2.dismiss();
-                break;
+    public final void a(TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop) {
+        this.d = stargiftattributebackdrop;
+        this.e = null;
+        org.telegram.ui.Components.p9 p9Var = this.a;
+        p9Var.setScaleX(1.0f);
+        p9Var.setScaleY(1.0f);
+        if (stargiftattributebackdrop == null) {
+            p9Var.setAlpha(1.0f);
+            p9Var.setImageDrawable(org.telegram.ui.ActionBar.j6.K(AndroidUtilities.dp(26.0f), org.telegram.ui.ActionBar.j6.l1(0.25f, -1)));
+            return;
         }
+        p9Var.setAlpha(1.0f);
+        OvalShape ovalShape = new OvalShape();
+        ovalShape.resize(AndroidUtilities.dp(26.0f), AndroidUtilities.dp(26.0f));
+        ShapeDrawable shapeDrawable = new ShapeDrawable(ovalShape);
+        shapeDrawable.setIntrinsicWidth(AndroidUtilities.dp(26.0f));
+        shapeDrawable.setIntrinsicHeight(AndroidUtilities.dp(26.0f));
+        shapeDrawable.getPaint().setShader(new RadialGradient(AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), new int[]{stargiftattributebackdrop.center_color | (-16777216), stargiftattributebackdrop.edge_color | (-16777216)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
+        p9Var.setImageDrawable(shapeDrawable);
     }
 
-    public /* synthetic */ u3(h8 h8Var, Context context, int i10, g6 g6Var, g8 g8Var) {
-        this.a = 7;
-        this.b = h8Var;
-        this.c = context;
-        this.d = g6Var;
-        this.e = g8Var;
+    public final void b(TL_stars.starGiftAttributePattern stargiftattributepattern) {
+        this.d = null;
+        this.e = stargiftattributepattern;
+        org.telegram.ui.Components.p9 p9Var = this.a;
+        if (stargiftattributepattern == null) {
+            p9Var.setAlpha(0.25f);
+            p9Var.setScaleX(0.75f);
+            p9Var.setScaleY(0.75f);
+            p9Var.setTranslationY(0.0f);
+            p9Var.setAnimatedEmojiDrawable(null);
+            p9Var.setImageResource(R.drawable.mini_roll);
+            return;
+        }
+        p9Var.setAlpha(1.0f);
+        p9Var.setScaleX(0.95f);
+        p9Var.setScaleY(0.95f);
+        p9Var.setTranslationY(AndroidUtilities.dp(2.0f));
+        org.telegram.ui.Components.l5 m9 = org.telegram.ui.Components.l5.m(UserConfig.selectedAccount, 9, stargiftattributepattern.document);
+        m9.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        p9Var.setAnimatedEmojiDrawable(m9);
+    }
+
+    public final void c(float f10, boolean z4) {
+        this.f = f10;
+        a4 a4Var = this.b;
+        a4Var.d = f10;
+        if (!z4) {
+            a4Var.b.d(f10, true);
+        }
+        a4Var.invalidate();
+        this.c.c(Math.round(f10 * 100.0f) + "%", z4, true);
     }
 }

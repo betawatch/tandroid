@@ -6,7 +6,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class cz0 extends a01 {
     public cz0(Context context) {
@@ -15,13 +15,13 @@ public final class cz0 extends a01 {
 
     @Override // android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        oh.z2 z2Var;
+        nh.y2 y2Var;
         super.dispatchDraw(canvas);
         org.telegram.ui.Components.l5 l5Var = this.e;
-        if (l5Var == null || (z2Var = l5Var.k) == null) {
+        if (l5Var == null || (y2Var = l5Var.k) == null) {
             return;
         }
-        z2Var.startAnimation();
+        y2Var.startAnimation();
     }
 
     @Override // android.view.View

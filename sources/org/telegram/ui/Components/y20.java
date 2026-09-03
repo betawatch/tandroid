@@ -1,42 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class y20 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c30 b;
+public final class y20 implements Runnable {
+    public final /* synthetic */ z20 a;
 
-    public /* synthetic */ y20(c30 c30Var, int i10) {
-        this.a = i10;
-        this.b = c30Var;
+    public y20(z20 z20Var) {
+        this.a = z20Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                c30 c30Var = this.b;
-                c30Var.r.x = (int) floatValue;
-                c30Var.h();
-                a30 a30Var = c30Var.a;
-                if (a30Var.getParent() != null) {
-                    c30Var.n.updateViewLayout(a30Var, c30Var.r);
-                    break;
-                }
-                break;
-            default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                c30 c30Var2 = this.b;
-                c30Var2.r.y = (int) floatValue2;
-                a30 a30Var2 = c30Var2.a;
-                if (a30Var2.getParent() != null) {
-                    c30Var2.n.updateViewLayout(a30Var2, c30Var2.r);
-                    break;
-                }
-                break;
+    @Override // java.lang.Runnable
+    public final void run() {
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        if (sharedInstance == null || !sharedInstance.isMicMute()) {
+            return;
+        }
+        TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) sharedInstance.groupCall.participants.f(sharedInstance.getSelfId());
+        if (groupCallParticipant == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted || ChatObject.canManageCalls(sharedInstance.getChat())) {
+            z20 z20Var = this.a;
+            AndroidUtilities.runOnUIThread(z20Var.f, 90L);
+            try {
+                z20Var.performHapticFeedback(3, 2);
+            } catch (Exception unused) {
+            }
+            z20Var.c = true;
         }
     }
 }

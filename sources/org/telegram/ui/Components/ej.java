@@ -1,65 +1,75 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class ej implements TextWatcher {
-    public final /* synthetic */ sj a;
+public final class ej extends pz {
+    public final /* synthetic */ int U;
+    public final /* synthetic */ di V;
 
-    public ej(sj sjVar) {
-        this.a = sjVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ej(di diVar, int i10, rl0 rl0Var, int i11) {
+        super(i10, 0, rl0Var);
+        this.U = i11;
+        this.V = diVar;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int currentTop;
-        String obj = editable.toString();
-        if (obj.isEmpty()) {
-            f2.p0 adapter = this.a.s.getAdapter();
-            sj sjVar = this.a;
-            if (adapter != sjVar.B) {
-                currentTop = sjVar.getCurrentTop();
-                this.a.D.setText(LocaleController.getString(R.string.NoContacts));
-                this.a.D.c();
-                sj sjVar2 = this.a;
-                sjVar2.s.setAdapter(sjVar2.B);
-                this.a.B.l();
-                if (currentTop > 0) {
-                    this.a.v.h1(0, -currentTop);
+    @Override // f2.v0
+    public int[] t(View view, Rect rect) {
+        switch (this.U) {
+            case 3:
+                int C = this.n - C();
+                int top = (view.getTop() + rect.top) - view.getScrollY();
+                int height = rect.height() + top;
+                int min = Math.min(0, top);
+                int max = Math.max(0, height - C);
+                if (min == 0) {
+                    min = Math.min(top, max);
                 }
-            }
-        } else {
-            oz ozVar = this.a.D;
-            if (ozVar != null) {
-                ozVar.setText(LocaleController.getString(R.string.NoResult));
-            }
-        }
-        oj ojVar = this.a.C;
-        if (ojVar != null) {
-            if (ojVar.f != null) {
-                Utilities.searchQueue.cancelRunnable(ojVar.f);
-                ojVar.f = null;
-            }
-            int i10 = ojVar.h + 1;
-            ojVar.h = i10;
-            DispatchQueue dispatchQueue = Utilities.searchQueue;
-            mj mjVar = new mj(ojVar, obj, i10, 0);
-            ojVar.f = mjVar;
-            dispatchQueue.postRunnable(mjVar, 300L);
+                return new int[]{0, min};
+            default:
+                return super.t(view, rect);
         }
     }
 
-    @Override // android.text.TextWatcher
-    public final /* synthetic */ void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // f2.i0, f2.v0
+    public final void v0(RecyclerView recyclerView, f2.i1 i1Var, int i10) {
+        switch (this.U) {
+            case 0:
+                dj djVar = new dj(this, recyclerView.getContext());
+                djVar.a = i10;
+                w0(djVar);
+                break;
+            case 1:
+                wj wjVar = new wj(this, recyclerView.getContext());
+                wjVar.a = i10;
+                w0(wjVar);
+                break;
+            case 2:
+                rk rkVar = new rk(this, recyclerView.getContext());
+                rkVar.a = i10;
+                w0(rkVar);
+                break;
+            case 3:
+                en enVar = new en(this, recyclerView.getContext());
+                enVar.a = i10;
+                w0(enVar);
+                break;
+            default:
+                uf.y yVar = new uf.y(this, recyclerView.getContext());
+                yVar.a = i10;
+                w0(yVar);
+                break;
+        }
     }
 
-    @Override // android.text.TextWatcher
-    public final /* synthetic */ void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ej(al alVar, lh.e1 e1Var) {
+        super(0, 0, e1Var);
+        this.U = 2;
+        this.V = alVar;
     }
 }

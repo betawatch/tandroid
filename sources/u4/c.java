@@ -18,17 +18,16 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
-import oh.h4;
 import org.telegram.messenger.MediaDataController;
 import s8.n0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class c implements h0 {
-    public static final sg.a B = new sg.a(12);
-    public final h4 a;
+    public static final s0.b B = new s0.b(12);
+    public final o3.c a;
     public final p b;
-    public final ab.a c;
+    public final z9.d c;
     public e0 f;
     public m0 h;
     public Handler n;
@@ -41,10 +40,44 @@ public final class c implements h0 {
     public final HashMap d = new HashMap();
     public long y = -9223372036854775807L;
 
-    public c(h4 h4Var, ab.a aVar, p pVar) {
-        this.a = h4Var;
+    public c(o3.c cVar, z9.d dVar, p pVar) {
+        this.a = cVar;
         this.b = pVar;
-        this.c = aVar;
+        this.c = dVar;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0054  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x005c  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x005f  */
+    @Override // g5.h0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final c4.e X(j0 j0Var, IOException iOException, int i10) {
+        long j10;
+        p0 p0Var = (p0) j0Var;
+        long j11 = p0Var.a;
+        Uri uri = p0Var.d.c;
+        o4.j jVar = new o4.j();
+        int i11 = p0Var.c;
+        this.c.getClass();
+        if (!(iOException instanceof r1) && !(iOException instanceof FileNotFoundException) && !(iOException instanceof b0) && !(iOException instanceof l0)) {
+            int i12 = g5.n.b;
+            for (Throwable th2 = iOException; th2 != null; th2 = th2.getCause()) {
+                if (!(th2 instanceof g5.n) || ((g5.n) th2).a != 2008) {
+                }
+            }
+            j10 = Math.min((i10 - 1) * MediaDataController.MAX_STYLE_RUNS_COUNT, 5000);
+            boolean z4 = j10 == -9223372036854775807L;
+            this.f.s(jVar, i11, iOException, z4);
+            return !z4 ? m0.f : new c4.e(0, j10, false);
+        }
+        j10 = -9223372036854775807L;
+        if (j10 == -9223372036854775807L) {
+        }
+        this.f.s(jVar, i11, iOException, z4);
+        if (!z4) {
+        }
     }
 
     public final i a(Uri uri, boolean z4) {
@@ -106,52 +139,8 @@ public final class c implements h0 {
         return iVar.o || (i10 = iVar.d) == 2 || i10 == 1 || bVar.e + max > elapsedRealtime;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0054  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x005c  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x005f  */
     @Override // g5.h0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final c4.e q(j0 j0Var, IOException iOException, int i10) {
-        long j10;
-        p0 p0Var = (p0) j0Var;
-        long j11 = p0Var.a;
-        Uri uri = p0Var.d.c;
-        o4.j jVar = new o4.j();
-        int i11 = p0Var.c;
-        this.c.getClass();
-        if (!(iOException instanceof r1) && !(iOException instanceof FileNotFoundException) && !(iOException instanceof b0) && !(iOException instanceof l0)) {
-            int i12 = g5.n.b;
-            for (Throwable th2 = iOException; th2 != null; th2 = th2.getCause()) {
-                if (!(th2 instanceof g5.n) || ((g5.n) th2).a != 2008) {
-                }
-            }
-            j10 = Math.min((i10 - 1) * MediaDataController.MAX_STYLE_RUNS_COUNT, 5000);
-            boolean z4 = j10 == -9223372036854775807L;
-            this.f.s(jVar, i11, iOException, z4);
-            return !z4 ? m0.f : new c4.e(0, j10, false);
-        }
-        j10 = -9223372036854775807L;
-        if (j10 == -9223372036854775807L) {
-        }
-        this.f.s(jVar, i11, iOException, z4);
-        if (!z4) {
-        }
-    }
-
-    @Override // g5.h0
-    public final void u(j0 j0Var, long j10, long j11, boolean z4) {
-        p0 p0Var = (p0) j0Var;
-        long j12 = p0Var.a;
-        Uri uri = p0Var.d.c;
-        o4.j jVar = new o4.j();
-        this.c.getClass();
-        this.f.m(jVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
-    }
-
-    @Override // g5.h0
-    public final void x(j0 j0Var, long j10, long j11) {
+    public final void k1(j0 j0Var, long j10, long j11) {
         l lVar;
         p0 p0Var = (p0) j0Var;
         m mVar = (m) p0Var.f;
@@ -188,5 +177,15 @@ public final class c implements h0 {
         }
         this.c.getClass();
         this.f.p(jVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+    }
+
+    @Override // g5.h0
+    public final void x0(j0 j0Var, long j10, long j11, boolean z4) {
+        p0 p0Var = (p0) j0Var;
+        long j12 = p0Var.a;
+        Uri uri = p0Var.d.c;
+        o4.j jVar = new o4.j();
+        this.c.getClass();
+        this.f.m(jVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 }

@@ -1,9 +1,9 @@
 package k1;
 
-import k7.q7;
+import k7.p7;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class s implements od.c {
     public final /* synthetic */ int a = 0;
@@ -43,10 +43,10 @@ public final class s implements od.c {
                             if (i10 != 1) {
                                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                             }
-                            q7.b(obj2);
+                            p7.b(obj2);
                             return iVar;
                         }
-                        q7.b(obj2);
+                        p7.b(obj2);
                         e0 e0Var = (e0) obj;
                         if (e0Var instanceof i) {
                             throw ((i) e0Var).a;
@@ -84,10 +84,10 @@ public final class s implements od.c {
                             if (i11 != 1) {
                                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                             }
-                            q7.b(obj4);
+                            p7.b(obj4);
                             return iVar;
                         }
-                        q7.b(obj4);
+                        p7.b(obj4);
                         la.v vVar = la.z.e;
                         la.m mVar = new la.m((String) ((n1.b) obj).a(la.w.a));
                         yVar.b = 1;

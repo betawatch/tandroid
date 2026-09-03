@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import android.text.style.ClickableSpan;
 import android.util.Log;
 import android.util.Pair;
-import androidx.biometric.u;
+import androidx.biometric.t;
 import androidx.car.app.IOnDoneCallback;
 import androidx.emoji2.text.m;
 import androidx.emoji2.text.q;
@@ -14,12 +14,12 @@ import androidx.emoji2.text.r;
 import androidx.lifecycle.n;
 import androidx.lifecycle.o;
 import androidx.lifecycle.v;
+import cg.h0;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import dg.h0;
+import gg.c2;
+import gg.v2;
 import h5.d0;
-import hg.c2;
-import hg.v2;
 import i9.x;
 import j3.a2;
 import j3.c0;
@@ -30,18 +30,16 @@ import j3.n0;
 import j3.q0;
 import j3.q1;
 import j7.s;
-import j7.t;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ThreadPoolExecutor;
-import lh.b5;
-import lh.n3;
-import lh.x1;
-import lh.z2;
-import mh.g5;
-import mh.p;
-import mh.t7;
+import kh.a5;
+import kh.m3;
+import kh.x1;
+import kh.z2;
+import lh.g5;
+import lh.t7;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
@@ -58,16 +56,16 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.ActionBar.p2;
-import org.telegram.ui.Components.f90;
-import org.telegram.ui.Components.h90;
+import org.telegram.ui.Components.e90;
+import org.telegram.ui.Components.g90;
 import org.telegram.ui.Components.or0;
-import org.telegram.ui.Components.q70;
+import org.telegram.ui.Components.p70;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.yh;
+import org.telegram.ui.ai;
 import s8.i0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -105,8 +103,8 @@ public final /* synthetic */ class b implements Runnable {
                             dVar.a();
                             return;
                         }
-                    } catch (w.g e6) {
-                        Log.e("CarApp.Dispatch", "Serialization failure in ".concat(str), e6);
+                    } catch (w.f e) {
+                        Log.e("CarApp.Dispatch", "Serialization failure in ".concat(str), e);
                         return;
                     }
                 }
@@ -118,19 +116,19 @@ public final /* synthetic */ class b implements Runnable {
                 try {
                     j.d(str2.concat(" onSuccess"), new a(iOnDoneCallback, ((d) this.c).a(), str2, 0));
                     return;
-                } catch (RuntimeException e10) {
+                } catch (RuntimeException e6) {
+                    j.f(iOnDoneCallback, str2, e6);
+                    throw new RuntimeException(e6);
+                } catch (w.f e10) {
                     j.f(iOnDoneCallback, str2, e10);
-                    throw new RuntimeException(e10);
-                } catch (w.g e11) {
-                    j.f(iOnDoneCallback, str2, e11);
                     return;
                 }
             case 2:
-                u uVar = (u) this.d;
-                t tVar = (t) this.c;
+                t tVar = (t) this.d;
+                s sVar = (s) this.c;
                 ThreadPoolExecutor threadPoolExecutor = (ThreadPoolExecutor) this.b;
                 try {
-                    r a2 = s.a(uVar.a);
+                    r a2 = j7.r.a(tVar.a);
                     if (a2 == null) {
                         throw new RuntimeException("EmojiCompat font provider not available on this device.");
                     }
@@ -138,10 +136,10 @@ public final /* synthetic */ class b implements Runnable {
                     synchronized (qVar.d) {
                         qVar.f = threadPoolExecutor;
                     }
-                    ((androidx.emoji2.text.k) a2.b).a(new m(tVar, threadPoolExecutor));
+                    ((androidx.emoji2.text.k) a2.b).a(new m(sVar, threadPoolExecutor));
                     return;
                 } catch (Throwable th2) {
-                    tVar.a(th2);
+                    sVar.a(th2);
                     threadPoolExecutor.shutdown();
                     return;
                 }
@@ -157,7 +155,7 @@ public final /* synthetic */ class b implements Runnable {
                     taskCompletionSource.setResult(false);
                 }
             case 4:
-                gf.f fVar = (gf.f) this.d;
+                ff.f fVar = (ff.f) this.d;
                 TLObject tLObject = (TLObject) this.c;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.b;
                 String str3 = fVar.b;
@@ -168,7 +166,7 @@ public final /* synthetic */ class b implements Runnable {
                     fVar.a();
                     MediaDataController.getInstance(i10).onRingtoneUploaded(str3, null, true);
                     if (tL_error != null) {
-                        NotificationCenter.getInstance(i10).doOnIdle(new gf.c(2, fVar, tL_error));
+                        NotificationCenter.getInstance(i10).doOnIdle(new ff.c(2, fVar, tL_error));
                     }
                 }
                 fVar.a();
@@ -220,7 +218,7 @@ public final /* synthetic */ class b implements Runnable {
                 f0Var.N = n0Var;
                 k3.f fVar2 = f0Var.q;
                 k3.a p10 = fVar2.p();
-                fVar2.q(p10, 1017, new k3.c(p10, n0Var, kVar, 1));
+                fVar2.q(p10, 1017, new k3.c(p10, n0Var, kVar, 2));
                 return;
             case 10:
                 h2.g gVar2 = (h2.g) this.d;
@@ -229,16 +227,28 @@ public final /* synthetic */ class b implements Runnable {
                 try {
                     ((Task) gVar2.call()).continueWith(executor, new x(2, taskCompletionSource2));
                     return;
-                } catch (Exception e12) {
-                    taskCompletionSource2.setException(e12);
+                } catch (Exception e11) {
+                    taskCompletionSource2.setException(e11);
                     return;
                 }
             case 11:
+                ih.s sVar2 = (ih.s) this.d;
+                g90 g90Var = (g90) this.c;
+                ClickableSpan clickableSpan = (ClickableSpan) this.b;
+                e90 e90Var = sVar2.y;
+                if (e90Var == null || sVar2.B != g90Var) {
+                    return;
+                }
+                e90Var.a(clickableSpan);
+                sVar2.B = null;
+                sVar2.s.d(true);
+                return;
+            case 12:
                 h1 h1Var = (h1) this.d;
-                s8.s sVar = (s8.s) this.c;
+                s8.s sVar3 = (s8.s) this.c;
                 o4.v vVar = (o4.v) this.b;
                 k3.f fVar3 = h1Var.c;
-                i0 i13 = sVar.i();
+                i0 i13 = sVar3.i();
                 a9.a aVar = fVar3.d;
                 a2 a2Var = fVar3.h;
                 a2Var.getClass();
@@ -254,35 +264,12 @@ public final /* synthetic */ class b implements Runnable {
                 }
                 aVar.E(a2Var.z());
                 return;
-            case 12:
+            case 13:
                 f7.b bVar2 = (f7.b) this.d;
                 Pair pair = (Pair) this.c;
                 ((q1) bVar2.c).h.e(((Integer) pair.first).intValue(), (o4.v) pair.second, (Exception) this.b);
                 return;
-            case 13:
-                jh.s sVar2 = (jh.s) this.d;
-                h90 h90Var = (h90) this.c;
-                ClickableSpan clickableSpan = (ClickableSpan) this.b;
-                f90 f90Var = sVar2.y;
-                if (f90Var == null || sVar2.B != h90Var) {
-                    return;
-                }
-                f90Var.a(clickableSpan);
-                sVar2.B = null;
-                sVar2.s.d(true);
-                return;
             case 14:
-                f7.b bVar3 = (f7.b) this.d;
-                n0 n0Var2 = (n0) this.c;
-                n3.k kVar2 = (n3.k) this.b;
-                l3.q qVar2 = (l3.q) bVar3.c;
-                int i14 = d0.a;
-                qVar2.getClass();
-                k3.f fVar4 = ((c0) qVar2).a.q;
-                k3.a p11 = fVar4.p();
-                fVar4.q(p11, 1009, new q0(p11, n0Var2, kVar2, 20));
-                return;
-            case 15:
                 or0 or0Var = (or0) this.d;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) this.c;
                 p2 p2Var = (p2) this.b;
@@ -292,57 +279,57 @@ public final /* synthetic */ class b implements Runnable {
                     return;
                 }
                 return;
-            case 16:
-                n3 n3Var = (n3) this.d;
+            case 15:
+                m3 m3Var = (m3) this.d;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) this.c;
-                q70 q70Var = (q70) this.b;
-                or0 or0Var2 = n3Var.a;
-                or0Var2.e.k(n3Var.e.d, savedStarGift);
-                q70Var.u();
+                p70 p70Var = (p70) this.b;
+                or0 or0Var2 = m3Var.a;
+                or0Var2.e.k(m3Var.e.d, savedStarGift);
+                p70Var.u();
                 or0Var2.n();
-                TL_stars.TL_starGiftCollection c3 = or0Var2.e.c(n3Var.e.d);
+                TL_stars.TL_starGiftCollection c3 = or0Var2.e.c(m3Var.e.d);
                 if (c3 != null) {
                     qc.a0(or0Var2.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, g5.D1(savedStarGift.gift), c3.title))).j();
                     return;
                 }
                 return;
-            case 17:
-                n3 n3Var2 = (n3) this.d;
+            case 16:
+                m3 m3Var2 = (m3) this.d;
                 TL_stars.SavedStarGift savedStarGift2 = (TL_stars.SavedStarGift) this.c;
                 x1 x1Var = (x1) this.b;
-                if (n3Var2.d || !savedStarGift2.pinned_to_top || savedStarGift2.unsaved) {
+                if (m3Var2.d || !savedStarGift2.pinned_to_top || savedStarGift2.unsaved) {
                     z4 = true;
                 } else {
                     z4 = true;
                     x1Var.c(false, true);
-                    n3Var2.e.m(savedStarGift2, false, false);
+                    m3Var2.e.m(savedStarGift2, false, false);
                 }
                 savedStarGift2.unsaved ^= z4;
-                x1Var.h(savedStarGift2, z4, n3Var2.d);
-                n3Var2.a.e.m(savedStarGift2, savedStarGift2.unsaved);
+                x1Var.h(savedStarGift2, z4, m3Var2.d);
+                m3Var2.a.e.m(savedStarGift2, savedStarGift2.unsaved);
                 TL_stars.saveStarGift savestargift = new TL_stars.saveStarGift();
-                savestargift.stargift = n3Var2.e.g(savedStarGift2);
+                savestargift.stargift = m3Var2.e.g(savedStarGift2);
                 savestargift.unsave = savedStarGift2.unsaved;
-                ConnectionsManager.getInstance(n3Var2.b).sendRequest(savestargift, null);
+                ConnectionsManager.getInstance(m3Var2.b).sendRequest(savestargift, null);
                 return;
-            case 18:
-                b5 b5Var = (b5) this.d;
+            case 17:
+                a5 a5Var = (a5) this.d;
                 TLObject tLObject3 = (TLObject) this.c;
                 TL_stars.getResaleStarGifts getresalestargifts = (TL_stars.getResaleStarGifts) this.b;
-                HashMap hashMap = b5Var.m;
-                HashMap hashMap2 = b5Var.o;
-                HashMap hashMap3 = b5Var.n;
-                ArrayList arrayList2 = b5Var.h;
-                ArrayList arrayList3 = b5Var.g;
-                ArrayList arrayList4 = b5Var.f;
-                int i15 = b5Var.a;
-                ArrayList arrayList5 = b5Var.d;
-                b5Var.v = -1;
+                HashMap hashMap = a5Var.m;
+                HashMap hashMap2 = a5Var.o;
+                HashMap hashMap3 = a5Var.n;
+                ArrayList arrayList2 = a5Var.h;
+                ArrayList arrayList3 = a5Var.g;
+                ArrayList arrayList4 = a5Var.f;
+                int i14 = a5Var.a;
+                ArrayList arrayList5 = a5Var.d;
+                a5Var.v = -1;
                 if (tLObject3 instanceof TL_stars.resaleStarGifts) {
                     TL_stars.resaleStarGifts resalestargifts = (TL_stars.resaleStarGifts) tLObject3;
-                    MessagesController.getInstance(i15).putUsers(resalestargifts.users, false);
-                    MessagesController.getInstance(i15).putChats(resalestargifts.chats, false);
-                    b5Var.e = resalestargifts.count;
+                    MessagesController.getInstance(i14).putUsers(resalestargifts.users, false);
+                    MessagesController.getInstance(i14).putChats(resalestargifts.chats, false);
+                    a5Var.e = resalestargifts.count;
                     if (TextUtils.isEmpty(getresalestargifts.offset)) {
                         arrayList5.clear();
                         z10 = true;
@@ -351,18 +338,18 @@ public final /* synthetic */ class b implements Runnable {
                     }
                     ArrayList<TL_stars.StarGift> arrayList6 = resalestargifts.gifts;
                     int size = arrayList6.size();
-                    int i16 = 0;
-                    while (i16 < size) {
-                        TL_stars.StarGift starGift = arrayList6.get(i16);
-                        i16++;
+                    int i15 = 0;
+                    while (i15 < size) {
+                        TL_stars.StarGift starGift = arrayList6.get(i15);
+                        i15++;
                         TL_stars.StarGift starGift2 = starGift;
                         if (starGift2 instanceof TL_stars.TL_starGiftUnique) {
                             arrayList5.add((TL_stars.TL_starGiftUnique) starGift2);
                         }
                     }
-                    b5Var.u = arrayList5.size() >= b5Var.e || TextUtils.isEmpty(resalestargifts.next_offset);
-                    b5Var.q = resalestargifts.next_offset;
-                    b5Var.t = false;
+                    a5Var.u = arrayList5.size() >= a5Var.e || TextUtils.isEmpty(resalestargifts.next_offset);
+                    a5Var.q = resalestargifts.next_offset;
+                    a5Var.t = false;
                     ArrayList<TL_stars.StarGiftAttribute> arrayList7 = resalestargifts.attributes;
                     if (arrayList7 != null && !arrayList7.isEmpty()) {
                         arrayList4.clear();
@@ -371,7 +358,7 @@ public final /* synthetic */ class b implements Runnable {
                         arrayList4.addAll(t7.m(resalestargifts.attributes, TL_stars.starGiftAttributeModel.class));
                         arrayList3.addAll(t7.m(resalestargifts.attributes, TL_stars.starGiftAttributeBackdrop.class));
                         arrayList2.addAll(t7.m(resalestargifts.attributes, TL_stars.starGiftAttributePattern.class));
-                        b5Var.i = resalestargifts.attributes_hash;
+                        a5Var.i = resalestargifts.attributes_hash;
                     }
                     if (!resalestargifts.counters.isEmpty()) {
                         hashMap3.clear();
@@ -379,10 +366,10 @@ public final /* synthetic */ class b implements Runnable {
                         hashMap.clear();
                         ArrayList<TL_stars.starGiftAttributeCounter> arrayList8 = resalestargifts.counters;
                         int size2 = arrayList8.size();
-                        int i17 = 0;
-                        while (i17 < size2) {
-                            TL_stars.starGiftAttributeCounter stargiftattributecounter = arrayList8.get(i17);
-                            i17++;
+                        int i16 = 0;
+                        while (i16 < size2) {
+                            TL_stars.starGiftAttributeCounter stargiftattributecounter = arrayList8.get(i16);
+                            i16++;
                             TL_stars.starGiftAttributeCounter stargiftattributecounter2 = stargiftattributecounter;
                             TL_stars.StarGiftAttributeId starGiftAttributeId = stargiftattributecounter2.attribute;
                             if (starGiftAttributeId instanceof TL_stars.starGiftAttributeIdBackdrop) {
@@ -394,7 +381,7 @@ public final /* synthetic */ class b implements Runnable {
                             }
                         }
                     }
-                    Utilities.Callback callback3 = b5Var.c;
+                    Utilities.Callback callback3 = a5Var.c;
                     if (callback3 != null) {
                         callback3.run(Boolean.valueOf(z10));
                         return;
@@ -402,56 +389,67 @@ public final /* synthetic */ class b implements Runnable {
                     return;
                 }
                 return;
+            case 18:
+                f7.b bVar3 = (f7.b) this.d;
+                n0 n0Var2 = (n0) this.c;
+                n3.k kVar2 = (n3.k) this.b;
+                l3.q qVar2 = (l3.q) bVar3.c;
+                int i17 = d0.a;
+                qVar2.getClass();
+                k3.f fVar4 = ((c0) qVar2).a.q;
+                k3.a p11 = fVar4.p();
+                fVar4.q(p11, 1009, new q0(p11, n0Var2, kVar2, 21));
+                return;
             case 19:
-                p pVar = (p) this.d;
+                lh.q qVar3 = (lh.q) this.d;
                 TLObject tLObject4 = (TLObject) this.c;
                 Context context = (Context) this.b;
                 if (tLObject4 instanceof TLRPC.TL_payments_starsRevenueAdsAccountUrl) {
-                    af.g.s(context, ((TLRPC.TL_payments_starsRevenueAdsAccountUrl) tLObject4).url);
+                    ze.d.s(context, ((TLRPC.TL_payments_starsRevenueAdsAccountUrl) tLObject4).url);
                 }
-                AndroidUtilities.runOnUIThread(new mh.c(pVar, 5), 1000L);
+                AndroidUtilities.runOnUIThread(new lh.d(qVar3, 5), 1000L);
                 return;
             case 20:
-                p.a0((p) this.d, (TLObject) this.c, (TLRPC.TL_error) this.b);
+                lh.q.a0((lh.q) this.d, (TLObject) this.c, (TLRPC.TL_error) this.b);
                 return;
             case 21:
                 g5 g5Var = (g5) this.d;
                 Long l10 = (Long) this.c;
-                g5Var.Z1(l10.longValue(), new lh.h(g5Var, l10, (v2[]) this.b, 2));
+                g5Var.Z1(l10.longValue(), new kh.h(g5Var, l10, (v2[]) this.b, 2));
                 return;
             case 22:
                 g5.j0((g5) this.d, (TLObject) this.c, (MessageObject) this.b);
                 return;
             case 23:
                 g5 g5Var2 = (g5) this.d;
-                af.f fVar5 = (af.f) this.c;
+                ze.c cVar = (ze.c) this.c;
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) this.b;
                 g5Var2.getClass();
-                fVar5.c(false);
+                cVar.c(false);
                 tL_starGiftUnique.flags &= -17;
                 tL_starGiftUnique.resale_ton_only = false;
                 tL_starGiftUnique.resell_amount = null;
-                g5Var2.b0.setResellPrice(mf.a.i(0L, mf.b.a));
+                g5Var2.b0.setResellPrice(lf.a.i(0L, lf.b.a));
                 z2 z2Var = g5Var2.a1;
                 if (z2Var != null) {
                     z2Var.run();
                 }
-                yh.s(R.string.Gift2ResaleDisable, new Object[]{g5Var2.C1()}, g5Var2.getBulletinFactory(), R.raw.contact_check, 36);
+                ai.r(R.string.Gift2ResaleDisable, new Object[]{g5Var2.C1()}, g5Var2.getBulletinFactory(), R.raw.contact_check, 36);
                 return;
             case 24:
                 g5 g5Var3 = (g5) this.d;
-                af.f fVar6 = (af.f) this.c;
+                ze.c cVar2 = (ze.c) this.c;
                 TLRPC.TL_error tL_error4 = (TLRPC.TL_error) this.b;
                 g5Var3.getClass();
-                fVar6.c(false);
+                cVar2.c(false);
                 g5Var3.getBulletinFactory().d0(tL_error4, false);
                 return;
             case 25:
                 v2[] v2VarArr = (v2[]) this.d;
-                af.f fVar7 = (af.f) this.c;
+                ze.c cVar3 = (ze.c) this.c;
                 TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.b;
                 v2VarArr[0].dismiss();
-                fVar7.c(false);
+                cVar3.c(false);
                 g5.d2(twoStepVerificationActivity);
                 return;
             case 26:

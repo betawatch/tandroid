@@ -13,9 +13,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.BuildConfig;
-import org.telegram.ui.yh;
+import org.telegram.ui.ai;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static volatile a b;
@@ -137,7 +137,7 @@ public abstract class b {
         int length;
         int length2;
         int indexOf;
-        String l10;
+        String k10;
         int i10 = 0;
         int i11 = 0;
         while (true) {
@@ -147,17 +147,17 @@ public abstract class b {
             }
             Object obj = objArr[i11];
             if (obj == null) {
-                l10 = BuildConfig.BETA_URL;
+                k10 = BuildConfig.BETA_URL;
             } else {
                 try {
-                    l10 = obj.toString();
-                } catch (Exception e6) {
+                    k10 = obj.toString();
+                } catch (Exception e) {
                     String z4 = android.support.v4.media.a.z(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(z4), (Throwable) e6);
-                    l10 = yh.l("<", z4, " threw ", e6.getClass().getName(), ">");
+                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(z4), (Throwable) e);
+                    k10 = ai.k("<", z4, " threw ", e.getClass().getName(), ">");
                 }
             }
-            objArr[i11] = l10;
+            objArr[i11] = k10;
             i11++;
         }
         StringBuilder sb = new StringBuilder(str.length() + (length * 16));
@@ -192,7 +192,7 @@ public abstract class b {
                 d10 = d("%s (%s) must not be negative", "index", Integer.valueOf(i10));
             } else {
                 if (i11 < 0) {
-                    throw new IllegalArgumentException(l.d.j(i11, "negative size: "));
+                    throw new IllegalArgumentException(kf.k0.j(i11, "negative size: "));
                 }
                 d10 = d("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
             }
@@ -209,18 +209,18 @@ public abstract class b {
         }
     }
 
-    public static final void g(StringBuilder sb, Iterator it, h7.u uVar) {
+    public static final void g(StringBuilder sb, Iterator it, db.a aVar) {
         if (it.hasNext()) {
             Map.Entry entry = (Map.Entry) it.next();
-            sb.append(h7.u.M2(entry.getKey()));
+            sb.append(db.a.W3(entry.getKey()));
             sb.append(" : ");
-            sb.append(h7.u.M2(entry.getValue()));
+            sb.append(db.a.W3(entry.getValue()));
             while (it.hasNext()) {
                 sb.append(",\n  ");
                 Map.Entry entry2 = (Map.Entry) it.next();
-                sb.append(h7.u.M2(entry2.getKey()));
+                sb.append(db.a.W3(entry2.getKey()));
                 sb.append(" : ");
-                sb.append(h7.u.M2(entry2.getValue()));
+                sb.append(db.a.W3(entry2.getValue()));
             }
         }
     }
@@ -327,7 +327,7 @@ public abstract class b {
                     }
                     l(b11, c3);
                     int i11 = (int) c3;
-                    bf.b[] bVarArr = new bf.b[i11];
+                    af.c[] cVarArr = new af.c[i11];
                     h1 h1Var = null;
                     int i12 = 0;
                     while (i12 < c3) {
@@ -335,30 +335,30 @@ public abstract class b {
                         if (h1Var != null && k10.compareTo(h1Var) <= 0) {
                             throw new y0("Keys in CBOR Map not in strictly ascending natural order:\nPrevious key: " + h1Var.toString() + "\nCurrent key: " + k10.toString());
                         }
-                        bVarArr[i12] = new bf.b(15, k10, k(j1Var));
+                        cVarArr[i12] = new af.c(15, k10, k(j1Var));
                         i12++;
                         h1Var = k10;
                     }
                     TreeMap treeMap = new TreeMap();
                     while (i10 < i11) {
-                        bf.b bVar = bVarArr[i10];
-                        if (treeMap.containsKey((h1) bVar.b)) {
+                        af.c cVar = cVarArr[i10];
+                        if (treeMap.containsKey((h1) cVar.b)) {
                             throw new y0("Attempted to add duplicate key to canonical CBOR Map.");
                         }
-                        treeMap.put((h1) bVar.b, (h1) bVar.c);
+                        treeMap.put((h1) cVar.b, (h1) cVar.c);
                         i10++;
                     }
                     return new e1(u.b(treeMap));
-                } catch (IOException | RuntimeException e6) {
-                    e = e6;
+                } catch (IOException | RuntimeException e) {
+                    e = e;
                     throw new c1(e);
                 }
-            } catch (RuntimeException e10) {
-                e = e10;
+            } catch (RuntimeException e6) {
+                e = e6;
                 throw new c1(e);
             }
-        } catch (IOException e11) {
-            throw new c1(e11);
+        } catch (IOException e10) {
+            throw new c1(e10);
         }
     }
 
@@ -402,6 +402,6 @@ public abstract class b {
         if (i11 >= 0) {
             return d("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
         }
-        throw new IllegalArgumentException(l.d.j(i11, "negative size: "));
+        throw new IllegalArgumentException(kf.k0.j(i11, "negative size: "));
     }
 }

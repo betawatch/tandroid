@@ -1,31 +1,60 @@
 package com.google.android.gms.internal.cast;
 
-import android.content.Context;
-import java.util.UUID;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.Iterator;
+import java.util.Map;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class n0 {
-    public static final u5.b i = new u5.b("ClientCastAnalytics", null);
-    public static final boolean j = true;
-    public final r5.g a;
-    public final r b;
-    public final c c;
-    public Long e;
-    public y2.p g;
-    public int h = 1;
-    public final String d = UUID.randomUUID().toString();
-    public final ExecutorService f = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool());
+public final class n0 extends j0 {
+    public final transient i0 d;
+    public final transient Object[] e;
+    public final transient int f;
 
-    public n0(Context context, u5.s sVar, r5.g gVar, r rVar, c cVar) {
-        this.a = gVar;
-        this.b = rVar;
-        this.c = cVar;
+    public n0(i0 i0Var, Object[] objArr, int i10) {
+        this.d = i0Var;
+        this.e = objArr;
+        this.f = i10;
     }
 
-    public final void a(r1 r1Var, int i10) {
-        this.f.execute(new androidx.activity.g(this, r1Var, i10, 3));
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        if (obj instanceof Map.Entry) {
+            Map.Entry entry = (Map.Entry) obj;
+            Object key = entry.getKey();
+            Object value = entry.getValue();
+            if (value != null && value.equals(this.d.get(key))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // com.google.android.gms.internal.cast.d0
+    public final int i(Object[] objArr) {
+        g0 g0Var = this.b;
+        if (g0Var == null) {
+            g0Var = s();
+            this.b = g0Var;
+        }
+        return g0Var.i(objArr);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        g0 g0Var = this.b;
+        if (g0Var == null) {
+            g0Var = s();
+            this.b = g0Var;
+        }
+        return g0Var.listIterator(0);
+    }
+
+    public final g0 s() {
+        return new m0(this);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.f;
     }
 }

@@ -1,51 +1,82 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.os.SystemClock;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class rb extends k7.d6 {
-    public MessageObject a;
-    public int b = 0;
-    public boolean c = true;
-    public int d = 0;
-    public int e;
-    public final /* synthetic */ sb f;
+public abstract class rb extends org.telegram.ui.Components.qv0 {
+    public final /* synthetic */ ub t0;
 
-    public rb(sb sbVar) {
-        this.f = sbVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rb(ub ubVar, Context context) {
+        super(context, null);
+        this.t0 = ubVar;
     }
 
-    @Override // k7.d6
-    public final void a() {
-        MessageObject messageObject = this.a;
-        sb sbVar = this.f;
-        if (messageObject != null) {
-            int indexOf = sbVar.p0.indexOf(messageObject) + sbVar.F.f;
-            if (indexOf >= 0) {
-                sbVar.D.i1(indexOf, this.e, false);
+    public final void Z(Canvas canvas, RectF rectF) {
+        boolean z4;
+        long uptimeMillis = SystemClock.uptimeMillis();
+        ub ubVar = this.t0;
+        if (ubVar.B.Y0()) {
+            canvas.save();
+            canvas.clipRect(rectF);
+            drawChild(canvas, ubVar.B, uptimeMillis);
+            canvas.restore();
+            return;
+        }
+        canvas.save();
+        canvas.clipRect(rectF);
+        canvas.translate(0.0f, ubVar.B.getY());
+        ubVar.B.getClass();
+        for (int i10 = 0; i10 < ubVar.B.getChildCount(); i10++) {
+            View childAt = ubVar.B.getChildAt(i10);
+            RectF rectF2 = ubVar.T0;
+            if (rectF == null || ubVar.B == null || childAt == null) {
+                z4 = false;
+            } else {
+                rectF2.set(childAt.getX(), ubVar.B.getY() + childAt.getY(), childAt.getX() + childAt.getWidth(), ubVar.B.getY() + childAt.getY() + childAt.getHeight());
+                z4 = !rectF2.intersect(rectF);
             }
-        } else {
-            sbVar.D.i1(this.b, this.d, this.c);
+            if (!z4) {
+                if (childAt instanceof org.telegram.ui.Cells.s1) {
+                    canvas.save();
+                    canvas.translate(childAt.getX(), childAt.getY());
+                    org.telegram.ui.Cells.s1 s1Var = (org.telegram.ui.Cells.s1) childAt;
+                    if (s1Var.C1()) {
+                        canvas.save();
+                        canvas.translate(0.0f, s1Var.S);
+                        s1Var.D1(canvas, true, false);
+                        canvas.restore();
+                    }
+                    canvas.restore();
+                    ubVar.B.drawChild(canvas, childAt, uptimeMillis);
+                    if (s1Var.U2()) {
+                        canvas.save();
+                        canvas.translate(s1Var.getX(), s1Var.getY());
+                        s1Var.X1(canvas);
+                        canvas.restore();
+                    }
+                } else if (childAt instanceof org.telegram.ui.Cells.v0) {
+                    ubVar.B.drawChild(canvas, childAt, uptimeMillis);
+                    canvas.save();
+                    canvas.translate(childAt.getX(), childAt.getY());
+                    ((org.telegram.ui.Cells.v0) childAt).A(canvas);
+                    canvas.restore();
+                } else {
+                    ubVar.B.drawChild(canvas, childAt, uptimeMillis);
+                }
+            }
         }
-        this.a = null;
-        sbVar.W = true;
-        sbVar.e1();
-        AndroidUtilities.runOnUIThread(new yt0(this, 21));
+        ubVar.B.getClass();
+        canvas.restore();
     }
 
-    @Override // k7.d6
-    public final void c() {
-        sb sbVar = this.f;
-        sbVar.L0 = sbVar.getNotificationCenter().setAnimationInProgress(sbVar.L0, sb.V0);
-    }
-
-    @Override // k7.d6
-    public final void d(View view) {
-        if (view instanceof org.telegram.ui.Cells.t1) {
-            this.f.v.add((org.telegram.ui.Cells.t1) view);
-        }
+    @Override // org.telegram.ui.Components.qv0
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
     }
 }

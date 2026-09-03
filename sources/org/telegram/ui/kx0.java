@@ -9,7 +9,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class kx0 extends ClickableSpan {
     public final /* synthetic */ String a;
@@ -26,7 +26,7 @@ public final class kx0 extends ClickableSpan {
         ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", this.a));
         org.telegram.ui.Components.qc a02 = org.telegram.ui.Components.qc.a0(this.b.d);
         String string = LocaleController.getString(R.string.LinkCopied);
-        org.telegram.ui.ActionBar.g6 resourceProvider = this.b.d.getResourceProvider();
+        org.telegram.ui.ActionBar.f6 resourceProvider = this.b.d.getResourceProvider();
         a02.getClass();
         if (AndroidUtilities.shouldShowClipboardToast()) {
             org.telegram.ui.Components.qb qbVar = new org.telegram.ui.Components.qb(a02.W(), resourceProvider);

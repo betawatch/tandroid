@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gl0 implements Runnable {
     public final /* synthetic */ int a;
@@ -30,13 +30,13 @@ public final /* synthetic */ class gl0 implements Runnable {
     public final void run() {
         int i10;
         int i11;
-        jk jkVar;
+        lk lkVar;
         int i12 = this.a;
         int i13 = 0;
         Object obj = this.b;
         switch (i12) {
             case 0:
-                ((PasscodeActivity) ((wd0) obj).n).h0();
+                ((PasscodeActivity) ((xd0) obj).n).h0();
                 break;
             case 1:
                 PasskeysActivity.X((PasskeysActivity) obj);
@@ -59,7 +59,7 @@ public final /* synthetic */ class gl0 implements Runnable {
                 break;
             case 5:
                 double currentTimeMillis = System.currentTimeMillis();
-                bn0 bn0Var = (bn0) ((org.telegram.ui.Components.i50) obj).b;
+                bn0 bn0Var = (bn0) ((org.telegram.ui.Components.h50) obj).b;
                 double d = currentTimeMillis - bn0Var.D;
                 bn0Var.D = currentTimeMillis;
                 int i14 = (int) (bn0Var.B - d);
@@ -76,7 +76,7 @@ public final /* synthetic */ class gl0 implements Runnable {
                 bn0 bn0Var2 = an0Var.a;
                 int i15 = bn0Var2.y;
                 cn0 cn0Var = bn0Var2.s;
-                hg.q qVar = bn0Var2.n;
+                gg.q qVar = bn0Var2.n;
                 if (i15 < 1000) {
                     if (cn0Var != null) {
                         cn0Var.c = 1.0f;
@@ -137,7 +137,7 @@ public final /* synthetic */ class gl0 implements Runnable {
                 }
                 break;
             case 7:
-                af.g.s(((wn0) obj).b.getParentActivity(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
+                ze.d.s(((wn0) obj).b.getParentActivity(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
                 break;
             case 8:
                 lo0 lo0Var = ((ao0) obj).a;
@@ -146,7 +146,7 @@ public final /* synthetic */ class gl0 implements Runnable {
                 lo0Var.D0(false);
                 break;
             case 9:
-                af.g.s(((eo0) obj).b.getParentActivity(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
+                ze.d.s(((eo0) obj).b.getParentActivity(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
                 break;
             case 10:
                 fp0 fp0Var = (fp0) obj;
@@ -158,18 +158,18 @@ public final /* synthetic */ class gl0 implements Runnable {
                     TL_stars.StarGift starGift = (TL_stars.StarGift) hp0Var.J.get(1);
                     hp0Var.H = starGift;
                     if (starGift == null) {
-                        lh.b5 b5Var = hp0Var.G;
-                        if (b5Var != null) {
-                            b5Var.f();
+                        kh.a5 a5Var = hp0Var.G;
+                        if (a5Var != null) {
+                            a5Var.f();
                             hp0Var.G = null;
                         }
                     } else {
-                        lh.b5 b5Var2 = hp0Var.G;
-                        if (b5Var2 == null || b5Var2.b != starGift.id) {
+                        kh.a5 a5Var2 = hp0Var.G;
+                        if (a5Var2 == null || a5Var2.b != starGift.id) {
                             i11 = ((org.telegram.ui.ActionBar.p2) np0Var).currentAccount;
-                            lh.b5 b5Var3 = new lh.b5(hp0Var.H.id, i11, new w3(fp0Var, 13));
-                            hp0Var.G = b5Var3;
-                            b5Var3.g(false);
+                            kh.a5 a5Var3 = new kh.a5(hp0Var.H.id, i11, new y3(fp0Var, 13));
+                            hp0Var.G = a5Var3;
+                            a5Var3.g(false);
                         }
                     }
                     hp0.a(hp0Var);
@@ -220,9 +220,9 @@ public final /* synthetic */ class gl0 implements Runnable {
                 }
                 break;
             case 16:
-                xn xnVar = ((rs0) obj).a1.i4;
-                if (xnVar != null && (jkVar = xnVar.V) != null) {
-                    jkVar.H0();
+                zn znVar = ((rs0) obj).a1.i4;
+                if (znVar != null && (lkVar = znVar.V) != null) {
+                    lkVar.H0();
                     break;
                 }
                 break;
@@ -230,18 +230,18 @@ public final /* synthetic */ class gl0 implements Runnable {
                 org.telegram.ui.Components.ex0 ex0Var = (org.telegram.ui.Components.ex0) ((ss0) obj).b;
                 PhotoViewer photoViewer3 = (PhotoViewer) ex0Var.c;
                 photoViewer3.E2 = false;
-                org.telegram.ui.Components.j71 j71Var = photoViewer3.C2;
-                if (j71Var != null) {
-                    j71Var.C();
+                org.telegram.ui.Components.i71 i71Var = photoViewer3.C2;
+                if (i71Var != null) {
+                    i71Var.C();
                 }
                 ((PhotoViewer) ex0Var.c).F2 = null;
                 break;
             case 18:
                 PhotoViewer photoViewer4 = ((es0) obj).a;
                 photoViewer4.E2 = false;
-                org.telegram.ui.Components.j71 j71Var2 = photoViewer4.C2;
-                if (j71Var2 != null) {
-                    j71Var2.C();
+                org.telegram.ui.Components.i71 i71Var2 = photoViewer4.C2;
+                if (i71Var2 != null) {
+                    i71Var2.C();
                 }
                 photoViewer4.F2 = null;
                 break;
@@ -282,7 +282,7 @@ public final /* synthetic */ class gl0 implements Runnable {
                 AndroidUtilities.addToClipboard((String) obj);
                 break;
             case 26:
-                ((qh.e3) obj).e(true);
+                ((ph.f3) obj).e(true);
                 break;
             case 27:
                 AndroidUtilities.addToClipboard("@" + UserObject.getPublicUsername((TLRPC.User) obj));
@@ -292,7 +292,7 @@ public final /* synthetic */ class gl0 implements Runnable {
                 uy0Var.G.getNotificationCenter().onAnimationFinish(uy0Var.F);
                 break;
             default:
-                ProfileActivity profileActivity = (ProfileActivity) ((ag.l) obj).c;
+                ProfileActivity profileActivity = (ProfileActivity) ((ah.e) obj).c;
                 if (profileActivity.k5 != 1.0f) {
                     dz0 dz0Var = profileActivity.k0;
                     while (dz0Var.A0.k(i13) != dz0Var.getRealCount() - 1) {

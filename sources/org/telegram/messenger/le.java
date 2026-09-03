@@ -2,10 +2,10 @@ package org.telegram.messenger;
 
 import android.content.SharedPreferences;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.q70;
-import org.telegram.ui.xn;
+import org.telegram.ui.Components.p70;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class le implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -34,33 +34,33 @@ public final /* synthetic */ class le implements Runnable {
                 ((MessagesController) this.e).lambda$getChannelDifference$346((TLRPC.updates_ChannelDifference) this.f, this.c, (TLRPC.Chat) this.h, (a0.h) this.n, this.b, this.d);
                 break;
             default:
-                q70 q70Var = (q70) this.e;
-                q70 q70Var2 = (q70) this.f;
+                p70 p70Var = (p70) this.e;
+                p70 p70Var2 = (p70) this.f;
                 org.telegram.ui.ActionBar.p2 p2Var = (org.telegram.ui.ActionBar.p2) this.h;
-                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) this.n;
-                q70Var.u();
+                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) this.n;
+                p70Var.u();
                 SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(this.b);
                 StringBuilder sb = new StringBuilder("sound_enabled_");
                 long j10 = this.c;
                 long j11 = this.d;
                 boolean z4 = notificationsSettings.getBoolean(y3.i(j10, j11, sb), true);
                 notificationsSettings.edit().putBoolean(y3.i(j10, j11, new StringBuilder("sound_enabled_")), !z4).apply();
-                q70Var2.u();
+                p70Var2.u();
                 if (org.telegram.ui.Components.qc.a(p2Var)) {
-                    org.telegram.ui.Components.qc.S(z4 ? 1 : 0, p2Var, g6Var).j();
+                    org.telegram.ui.Components.qc.S(z4 ? 1 : 0, p2Var, f6Var).j();
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ le(q70 q70Var, int i10, long j10, long j11, q70 q70Var2, xn xnVar, org.telegram.ui.ActionBar.g6 g6Var) {
-        this.e = q70Var;
+    public /* synthetic */ le(p70 p70Var, int i10, long j10, long j11, p70 p70Var2, zn znVar, org.telegram.ui.ActionBar.f6 f6Var) {
+        this.e = p70Var;
         this.b = i10;
         this.c = j10;
         this.d = j11;
-        this.f = q70Var2;
-        this.h = xnVar;
-        this.n = g6Var;
+        this.f = p70Var2;
+        this.h = znVar;
+        this.n = f6Var;
     }
 }

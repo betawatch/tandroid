@@ -1,39 +1,64 @@
 package org.telegram.ui.Components;
 
+import android.view.View;
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class ky implements zy {
-    public final /* synthetic */ ly a;
+public interface ky {
+    boolean A();
 
-    public ky(ly lyVar) {
-        this.a = lyVar;
-    }
+    long a();
 
-    @Override // org.telegram.ui.Components.zy
-    public final void d() {
-        ly lyVar = this.a;
-        if (lyVar.C.S.C) {
-            return;
-        }
-        ArrayList arrayList = new ArrayList();
-        lyVar.C.S.e(true);
-        ly.E(lyVar, new eo(15, this, arrayList), arrayList, true);
-    }
+    boolean b();
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        LinkedHashSet linkedHashSet = new LinkedHashSet();
-        String str = this.a.v;
-        eo eoVar = new eo(14, this, str);
-        if (Emoji.fullyConsistsOfEmojis(str)) {
-            xw0.v3.fetch(UserConfig.selectedAccount, str, new xk(2, linkedHashSet, eoVar));
-        } else {
-            eoVar.run();
-        }
-    }
+    boolean c();
+
+    void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z4);
+
+    void e(Object obj, Object obj2);
+
+    int f();
+
+    boolean g();
+
+    void h(TLRPC.StickerSetCovered stickerSetCovered);
+
+    void i(int i10);
+
+    boolean j();
+
+    boolean k();
+
+    void l(String str);
+
+    void m(View view, TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z4, int i10);
+
+    void n();
+
+    void o(e51 e51Var);
+
+    float p();
+
+    void q();
+
+    void r(TLRPC.StickerSetCovered stickerSetCovered);
+
+    void s(int i10);
+
+    void t(ArrayList arrayList);
+
+    void u();
+
+    void v(View view, Object obj, String str, Object obj2, boolean z4, int i10, int i11);
+
+    void w();
+
+    void x(long j10, TLRPC.Document document, String str, boolean z4);
+
+    void y(long j10);
+
+    boolean z();
 }

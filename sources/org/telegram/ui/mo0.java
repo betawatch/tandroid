@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mo0 implements lf.d0, r0.o, org.telegram.ui.ActionBar.c2 {
+public final /* synthetic */ class mo0 implements kf.d0, r0.o, org.telegram.ui.ActionBar.c2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ np0 b;
 
@@ -40,25 +40,25 @@ public final /* synthetic */ class mo0 implements lf.d0, r0.o, org.telegram.ui.A
         return r0.m1.b;
     }
 
-    @Override // lf.d0
+    @Override // kf.d0
     public void a(int i10) {
         np0 np0Var = this.b;
-        tg.d dVar = np0Var.d0;
+        sg.d dVar = np0Var.d0;
         ArrayList arrayList = np0Var.h0;
-        og.e eVar = np0Var.c0;
+        ng.e eVar = np0Var.c0;
         int i11 = Build.VERSION.SDK_INT;
         if (i11 < 31 || eVar == null) {
             return;
         }
         ArrayList arrayList2 = np0Var.g0;
-        int a2 = lf.l0.a((i11 < 29 || dVar == null) ? 0 : dVar.d(arrayList2, 0, AndroidUtilities.dp(8.0f)), arrayList2, arrayList);
+        int a2 = kf.m0.a((i11 < 29 || dVar == null) ? 0 : dVar.d(arrayList2, 0, AndroidUtilities.dp(8.0f)), arrayList2, arrayList);
         int measuredWidth = np0Var.d.getMeasuredWidth();
         for (int i12 = 0; i12 < a2; i12++) {
             RectF rectF = (RectF) arrayList.get(i12);
             float f10 = measuredWidth;
-            rectF.left = k7.o.a(rectF.left, 0.0f, f10);
+            rectF.left = k7.n.a(rectF.left, 0.0f, f10);
             rectF.top = Math.max(0.0f, rectF.top);
-            rectF.right = k7.o.a(rectF.right, 0.0f, f10);
+            rectF.right = k7.n.a(rectF.right, 0.0f, f10);
             rectF.bottom = Math.min(np0Var.d.getHeight(), rectF.bottom);
         }
         eVar.g(a2, arrayList);
@@ -74,7 +74,7 @@ public final /* synthetic */ class mo0 implements lf.d0, r0.o, org.telegram.ui.A
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    public void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         switch (this.a) {
             case 2:
                 this.b.finishFragment();

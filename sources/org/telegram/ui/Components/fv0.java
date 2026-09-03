@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class fv0 extends View {
     public final ImageReceiver a;
@@ -25,7 +25,7 @@ public final class fv0 extends View {
         super(context);
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.a = imageReceiver;
-        this.b = new z8((org.telegram.ui.ActionBar.g6) null);
+        this.b = new z8((org.telegram.ui.ActionBar.f6) null);
         Paint paint = new Paint(1);
         this.c = paint;
         imageReceiver.setRoundRadius(AndroidUtilities.dp(28.0f));
@@ -44,9 +44,9 @@ public final class fv0 extends View {
             return;
         }
         ValueAnimator duration = ValueAnimator.ofFloat(this.d, z4 ? 1.0f : 0.0f).setDuration(200L);
-        duration.setInterpolator(pr.f);
-        duration.addUpdateListener(new k70(this, 21));
-        duration.addListener(new pd0(this, 14));
+        duration.setInterpolator(mr.f);
+        duration.addUpdateListener(new j70(this, 21));
+        duration.addListener(new od0(this, 14));
         duration.start();
         this.f = duration;
     }
@@ -74,7 +74,7 @@ public final class fv0 extends View {
         canvas.save();
         float f10 = (this.d * 0.1f) + 0.9f;
         canvas.scale(f10, f10);
-        int w02 = org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.m5, false);
+        int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.m5, false);
         Paint paint = this.c;
         paint.setColor(w02);
         paint.setAlpha((int) (Color.alpha(paint.getColor()) * this.d));

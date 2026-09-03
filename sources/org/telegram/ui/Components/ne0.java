@@ -1,24 +1,18 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.view.ViewGroup;
-
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class ne0 extends org.telegram.ui.ActionBar.k {
-    public final /* synthetic */ ue0 q1;
+public final class ne0 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ te0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ne0(ue0 ue0Var, Activity activity) {
-        super(activity, null);
-        this.q1 = ue0Var;
+    public ne0(te0 te0Var) {
+        this.a = te0Var;
     }
 
-    @Override // android.view.View
-    public final void setAlpha(float f10) {
-        ViewGroup viewGroup;
-        super.setAlpha(f10);
-        viewGroup = ((org.telegram.ui.ActionBar.h3) this.q1).containerView;
-        viewGroup.invalidate();
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        if (i10 == -1) {
+            this.a.dismiss();
+        }
     }
 }

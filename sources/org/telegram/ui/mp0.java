@@ -13,20 +13,20 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class mp0 extends FrameLayout {
     public int B;
     public xo0 C;
-    public qg.b D;
-    public qg.b E;
+    public pg.b D;
+    public pg.b E;
     public boolean F;
     public final Path G;
     public int H;
     public final /* synthetic */ np0 I;
-    public final mh.d1 a;
-    public final f2.j0 b;
-    public final y7 c;
+    public final lh.e1 a;
+    public final f2.i0 b;
+    public final a8 c;
     public int d;
     public final org.telegram.ui.Components.z5 e;
     public final ArrayList f;
@@ -40,7 +40,7 @@ public final class mp0 extends FrameLayout {
     public int y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mp0(np0 np0Var, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+    public mp0(np0 np0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.I = np0Var;
         this.f = new ArrayList();
@@ -51,26 +51,26 @@ public final class mp0 extends FrameLayout {
         this.w = new Paint(1);
         this.G = new Path();
         this.H = TLObject.FLAG_31;
-        mh.d1 d1Var = new mh.d1(this, context, g6Var, 29);
-        this.a = d1Var;
-        d1Var.setClipToPadding(false);
-        d1Var.setClipChildren(false);
-        d1Var.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
-        d1Var.setOverScrollMode(2);
-        d1Var.setHorizontalScrollBarEnabled(false);
-        d1Var.setItemAnimator(null);
-        f2.j0 j0Var = new f2.j0(0, false);
-        this.b = j0Var;
-        d1Var.setLayoutManager(j0Var);
-        y7 y7Var = new y7(this, 5);
-        this.c = y7Var;
-        d1Var.setAdapter(y7Var);
-        d1Var.setOnItemClickListener(new j(this, 20));
-        addView(d1Var, k7.c6.e(-1, -1, 119));
+        lh.e1 e1Var = new lh.e1(this, context, f6Var, 29);
+        this.a = e1Var;
+        e1Var.setClipToPadding(false);
+        e1Var.setClipChildren(false);
+        e1Var.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
+        e1Var.setOverScrollMode(2);
+        e1Var.setHorizontalScrollBarEnabled(false);
+        e1Var.setItemAnimator(null);
+        f2.i0 i0Var = new f2.i0(0, false);
+        this.b = i0Var;
+        e1Var.setLayoutManager(i0Var);
+        a8 a8Var = new a8(this, 5);
+        this.c = a8Var;
+        e1Var.setAdapter(a8Var);
+        e1Var.setOnItemClickListener(new j(this, 20));
+        addView(e1Var, k7.b6.e(-1, -1, 119));
         setHorizontalScrollBarEnabled(false);
         setClipToPadding(false);
         setClipChildren(false);
-        this.e = new org.telegram.ui.Components.z5(d1Var, 0L, 320L, org.telegram.ui.Components.pr.h);
+        this.e = new org.telegram.ui.Components.z5(e1Var, 0L, 320L, org.telegram.ui.Components.mr.h);
     }
 
     public final void a(int i10, boolean z4) {
@@ -85,16 +85,16 @@ public final class mp0 extends FrameLayout {
         }
         ArrayList arrayList = this.f;
         boolean isEmpty = arrayList.isEmpty();
-        mh.d1 d1Var = this.a;
+        lh.e1 e1Var = this.a;
         if (!isEmpty) {
             int clamp = Utilities.clamp(i10, arrayList.size() - 1, 0);
             if (z4) {
-                d1Var.x0(clamp);
+                e1Var.x0(clamp);
             } else {
-                d1Var.u0(clamp);
+                e1Var.u0(clamp);
             }
         }
-        d1Var.invalidate();
+        e1Var.invalidate();
     }
 
     public final void b(int i10) {
@@ -107,8 +107,8 @@ public final class mp0 extends FrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        lf.r.g(this.D, 0, 0, getWidth(), getHeight());
-        lf.r.g(this.E, 0, 0, getWidth(), getHeight());
+        kf.r.g(this.D, 0, 0, getWidth(), getHeight());
+        kf.r.g(this.E, 0, 0, getWidth(), getHeight());
         (this.F ? this.E : this.D).draw(canvas);
         canvas.save();
         canvas.clipPath(this.G);

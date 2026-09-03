@@ -6,14 +6,13 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import oh.h4;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import v4.k;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class c extends i {
     public final int h;
@@ -69,11 +68,11 @@ public final class c extends i {
     }
 
     @Override // w4.i
-    public final h4 e() {
+    public final o3.c e() {
         List list = this.n;
         this.o = list;
         list.getClass();
-        return new h4(list, 24);
+        return new o3.c(list, 28);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:160:0x007e A[SYNTHETIC] */
@@ -324,7 +323,7 @@ public final class c extends i {
         }
         this.n = Collections.EMPTY_LIST;
         this.x = -9223372036854775807L;
-        kVar.j(this.e, e(), Long.MAX_VALUE);
+        kVar.k(this.e, e(), Long.MAX_VALUE);
         return kVar;
     }
 

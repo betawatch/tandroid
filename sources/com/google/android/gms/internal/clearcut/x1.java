@@ -29,8 +29,8 @@ public final class x1 extends o1 implements Cloneable {
         byte[] bArr = this.e;
         long j10 = this.a;
         if (j10 != 0) {
-            iVar.e0(1, 0);
-            iVar.m0(j10);
+            iVar.L(1, 0);
+            iVar.P(j10);
         }
         y1[] y1VarArr = this.d;
         if (y1VarArr != null && y1VarArr.length > 0) {
@@ -46,41 +46,41 @@ public final class x1 extends o1 implements Cloneable {
         }
         byte[] bArr2 = n1.d;
         if (!Arrays.equals(bArr, bArr2)) {
-            iVar.X(4, bArr);
+            iVar.D(4, bArr);
         }
         if (!Arrays.equals(this.f, bArr2)) {
-            iVar.X(6, this.f);
+            iVar.D(6, this.f);
         }
         if (str4 != null && !str4.equals("")) {
-            iVar.J(8, str4);
+            iVar.C(8, str4);
         }
         int i11 = this.c;
         if (i11 != 0) {
-            iVar.e0(11, 0);
+            iVar.L(11, 0);
             if (i11 >= 0) {
-                iVar.b0(i11);
+                iVar.I(i11);
             } else {
-                iVar.m0(i11);
+                iVar.P(i11);
             }
         }
         if (str3 != null && !str3.equals("")) {
-            iVar.J(13, str3);
+            iVar.C(13, str3);
         }
         if (str2 != null && !str2.equals("")) {
-            iVar.J(14, str2);
+            iVar.C(14, str2);
         }
         long j11 = this.s;
         if (j11 != 180000) {
-            iVar.e0(15, 0);
-            iVar.m0((j11 >> 63) ^ (j11 << 1));
+            iVar.L(15, 0);
+            iVar.P((j11 >> 63) ^ (j11 << 1));
         }
         long j12 = this.b;
         if (j12 != 0) {
-            iVar.e0(17, 0);
-            iVar.m0(j12);
+            iVar.L(17, 0);
+            iVar.P(j12);
         }
         if (!Arrays.equals(this.v, bArr2)) {
-            iVar.X(18, this.v);
+            iVar.D(18, this.v);
         }
         int[] iArr = this.x;
         if (iArr != null && iArr.length > 0) {
@@ -91,21 +91,21 @@ public final class x1 extends o1 implements Cloneable {
                     break;
                 }
                 int i13 = iArr2[i12];
-                iVar.e0(20, 0);
+                iVar.L(20, 0);
                 if (i13 >= 0) {
-                    iVar.b0(i13);
+                    iVar.I(i13);
                 } else {
-                    iVar.m0(i13);
+                    iVar.P(i13);
                 }
                 i12++;
             }
         }
         if (str != null && !str.equals("")) {
-            iVar.J(24, str);
+            iVar.C(24, str);
         }
         boolean z4 = this.y;
         if (z4) {
-            iVar.e0(25, 0);
+            iVar.L(25, 0);
             byte b10 = z4 ? (byte) 1 : (byte) 0;
             ByteBuffer byteBuffer = (ByteBuffer) iVar.b;
             if (!byteBuffer.hasRemaining()) {
@@ -136,8 +136,8 @@ public final class x1 extends o1 implements Cloneable {
                 x1Var.x = (int[]) iArr.clone();
             }
             return x1Var;
-        } catch (CloneNotSupportedException e6) {
-            throw new AssertionError(e6);
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError(e);
         }
     }
 

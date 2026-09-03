@@ -3,7 +3,7 @@ package org.telegram.ui.ActionBar;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.v00;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class b1 extends v00 {
     public final /* synthetic */ c1 e;
@@ -14,10 +14,10 @@ public final class b1 extends v00 {
         this.e = c1Var;
     }
 
-    @Override // org.telegram.ui.Components.ho0
+    @Override // org.telegram.ui.Components.go0
     public final CharSequence d() {
         StringBuilder sb = new StringBuilder();
-        sb.append(ef.f.a(this.e.getSpeed()));
+        sb.append(df.f.a(this.e.getSpeed()));
         sb.append("x  ");
         return org.telegram.messenger.y3.h(R.string.AccDescrSpeedSlider, sb);
     }

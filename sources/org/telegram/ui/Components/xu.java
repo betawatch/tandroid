@@ -1,294 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Paint;
-import android.text.SpannableStringBuilder;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class xu implements org.telegram.ui.ot {
-    public final /* synthetic */ ov a;
+public final class xu extends f2.v {
+    public final /* synthetic */ lv c;
 
-    public xu(ov ovVar) {
-        this.a = ovVar;
+    public xu(lv lvVar) {
+        this.c = lvVar;
     }
 
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ boolean A() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ot
-    public final void B(TLRPC.Document document) {
-        ov ovVar = this.a;
-        org.telegram.ui.ActionBar.p2 p2Var = ovVar.c;
-        if (p2Var instanceof org.telegram.ui.xn) {
-            ((org.telegram.ui.xn) p2Var).bb(document);
+    @Override // f2.v
+    public final int i(int i10) {
+        TLRPC.StickerSet stickerSet;
+        lv lvVar = this.c;
+        f2.w wVar = lvVar.y;
+        vu vuVar = lvVar.e;
+        org.telegram.ui.m3 m3Var = lvVar.h;
+        if (m3Var.getAdapter() == null || m3Var.getAdapter().j(i10) != 1) {
+            return wVar.J;
         }
-        ovVar.Y();
-        ovVar.dismiss();
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ boolean C() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ot
-    public final boolean D(TLRPC.Document document) {
-        return UserConfig.getInstance(UserConfig.selectedAccount).isPremium() && MessageObject.isAnimatedEmoji(document);
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ String F(boolean z4) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.ot
-    public final void G(TLRPC.Document document) {
-        ViewGroup viewGroup;
-        org.telegram.ui.ActionBar.g6 g6Var;
-        SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(MessageObject.findAnimatedEmojiEmoticon(document));
-        valueOf.setSpan(new u5(document, (Paint.FontMetricsInt) null), 0, valueOf.length(), 33);
-        if (AndroidUtilities.addToClipboard(valueOf)) {
-            ov ovVar = this.a;
-            viewGroup = ((org.telegram.ui.ActionBar.h3) ovVar).containerView;
-            g6Var = ((org.telegram.ui.ActionBar.h3) ovVar).resourcesProvider;
-            org.telegram.ui.b.m(R.string.EmojiCopied, new qc((FrameLayout) viewGroup, g6Var));
+        int i11 = 0;
+        int i12 = 0;
+        while (true) {
+            ArrayList[] arrayListArr = vuVar.c;
+            if (i11 >= arrayListArr.length) {
+                break;
+            }
+            int size = arrayListArr[i11].size();
+            if (vuVar.c.length > 1) {
+                size = Math.min(wVar.J * 2, size);
+            }
+            i12 += size + 2;
+            if (i10 < i12) {
+                break;
+            }
+            i11++;
         }
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ boolean H() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ q70 I(ag.l lVar) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ boolean J() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ boolean N(TLRPC.Document document) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ot
-    public final Boolean P(TLRPC.Document document) {
-        TLRPC.User currentUser;
-        if (!UserConfig.getInstance(UserConfig.selectedAccount).isPremium() || !MessageObject.isAnimatedEmoji(document) || (currentUser = UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser()) == null) {
-            return null;
-        }
-        Long emojiStatusDocumentId = UserObject.getEmojiStatusDocumentId(currentUser);
-        return Boolean.valueOf(document != null && (emojiStatusDocumentId == null || emojiStatusDocumentId.longValue() != document.id));
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ boolean Q() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.ot
-    public final long a() {
-        return 0L;
-    }
-
-    @Override // org.telegram.ui.ot
-    public final boolean b() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ot
-    public final boolean c() {
-        org.telegram.ui.ActionBar.p2 p2Var = this.a.c;
-        if (p2Var instanceof org.telegram.ui.xn) {
-            return ((org.telegram.ui.xn) p2Var).c();
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ TLRPC.TL_messageMediaPoll d() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ boolean e(TLRPC.Document document) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ boolean f() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ TLRPC.PollAnswer g() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.ot
-    public final boolean h() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ boolean j() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ot
-    public final boolean k(int i10) {
-        ov ovVar = this.a;
-        org.telegram.ui.ActionBar.p2 p2Var = ovVar.c;
-        if (!(p2Var instanceof org.telegram.ui.xn) || !((org.telegram.ui.xn) p2Var).E6()) {
-            return false;
-        }
-        if (UserConfig.getInstance(UserConfig.selectedAccount).isPremium()) {
-            return true;
-        }
-        return ((org.telegram.ui.xn) ovVar.c).i() != null && UserObject.isUserSelf(((org.telegram.ui.xn) ovVar.c).i());
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ boolean o() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ot
-    public final void t(TLRPC.Document document) {
-        TLRPC.EmojiStatus emojiStatus;
-        int i10;
-        ViewGroup viewGroup;
-        org.telegram.ui.ActionBar.g6 g6Var;
-        org.telegram.ui.ActionBar.g6 g6Var2;
-        org.telegram.ui.ActionBar.g6 g6Var3;
-        ViewGroup viewGroup2;
-        if (document == null) {
-            emojiStatus = new TLRPC.TL_emojiStatusEmpty();
-        } else {
-            TLRPC.TL_emojiStatus tL_emojiStatus = new TLRPC.TL_emojiStatus();
-            tL_emojiStatus.document_id = document.id;
-            emojiStatus = tL_emojiStatus;
-        }
-        TLRPC.User currentUser = UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser();
-        Object tL_emojiStatusEmpty = currentUser == null ? new TLRPC.TL_emojiStatusEmpty() : currentUser.emoji_status;
-        ov ovVar = this.a;
-        i10 = ((org.telegram.ui.ActionBar.h3) ovVar).currentAccount;
-        MessagesController.getInstance(i10).updateEmojiStatus(emojiStatus);
-        eo eoVar = new eo(10, this, tL_emojiStatusEmpty);
-        if (document != null) {
-            viewGroup = ((org.telegram.ui.ActionBar.h3) ovVar).containerView;
-            g6Var = ((org.telegram.ui.ActionBar.h3) ovVar).resourcesProvider;
-            new qc((FrameLayout) viewGroup, g6Var).q(document, LocaleController.getString(R.string.SetAsEmojiStatusInfo), LocaleController.getString(R.string.UndoNoCaps), eoVar).j();
-            return;
-        }
-        Context context = ovVar.getContext();
-        g6Var2 = ((org.telegram.ui.ActionBar.h3) ovVar).resourcesProvider;
-        ac acVar = new ac(context, g6Var2);
-        acVar.b.setText(LocaleController.getString(R.string.RemoveStatusInfo));
-        acVar.a.setImageResource(R.drawable.msg_settings_premium);
-        Context context2 = ovVar.getContext();
-        g6Var3 = ((org.telegram.ui.ActionBar.h3) ovVar).resourcesProvider;
-        gc gcVar = new gc(context2, g6Var3, true);
-        gcVar.a = eoVar;
-        acVar.setButton(gcVar);
-        viewGroup2 = ((org.telegram.ui.ActionBar.h3) ovVar).containerView;
-        ic.f((FrameLayout) viewGroup2, acVar, 1500).j();
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ boolean w() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ MessageObject y() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ void E(TLRPC.Document document) {
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ void K() {
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ void L() {
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ void O(String str) {
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ void i(SendMessagesHelper.ImportingSticker importingSticker) {
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ void m(String str) {
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ void n(TLRPC.Document document) {
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ void p(TLRPC.Document document) {
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ void q() {
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ void s() {
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ void x(String str) {
-    }
-
-    @Override // org.telegram.ui.ot
-    public final void M(TLRPC.InputStickerSet inputStickerSet, boolean z4) {
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ void u(TLRPC.StickerSet stickerSet, String str) {
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ void v(TLObject tLObject, Object obj) {
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ void z(CharSequence charSequence, String str, xk xkVar) {
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ void r(int i10, int i11, Object obj, TLObject tLObject, boolean z4) {
-    }
-
-    @Override // org.telegram.ui.ot
-    public final /* synthetic */ void l(TLRPC.Document document, String str, Object obj, boolean z4, int i10, int i11) {
+        ArrayList arrayList = vuVar.b;
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (arrayList == null || i11 >= arrayList.size()) ? null : (TLRPC.TL_messages_stickerSet) vuVar.b.get(i11);
+        return (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null || stickerSet.emojis) ? 5 : 8;
     }
 }

@@ -5,7 +5,7 @@ import org.telegram.messenger.DocumentObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class ImageLocation {
     public static final int TYPE_BIG = 0;
@@ -214,7 +214,7 @@ public class ImageLocation {
             if (obj3 != null) {
                 str = obj3.getClass().getSimpleName();
             }
-            org.telegram.ui.yh.v(str, t6);
+            org.telegram.ui.ai.v(str, t6);
         }
         return strippedKeyInternal;
     }
@@ -318,7 +318,7 @@ public class ImageLocation {
         sb.append("_");
         sb.append(this.document.id);
         sb.append("_");
-        sb.append(org.telegram.ui.ActionBar.k6.q0(themeDocument.themeSettings));
+        sb.append(org.telegram.ui.ActionBar.j6.q0(themeDocument.themeSettings));
         sb.append("_");
         sb.append(themeDocument.themeSettings.accent_color);
         sb.append("_");

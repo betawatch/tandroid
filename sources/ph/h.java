@@ -2,40 +2,33 @@ package ph;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.u00;
+import android.widget.ImageView;
+import org.telegram.ui.Components.rc;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
-public final class h extends u00 {
-    public final Paint R;
-    public final /* synthetic */ l S;
+public final class h extends ImageView {
+    public final float a;
+    public final rc b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h(l lVar, Context context) {
-        super(context, null);
-        this.S = lVar;
-        this.R = new Paint();
+    public h(Context context) {
+        super(context);
+        this.b = new rc(this);
+        this.a = 0.2f;
     }
 
-    @Override // org.telegram.ui.Components.u00
-    public final int getColumnsCount() {
-        return this.S.d;
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        canvas.save();
+        float a2 = this.b.a(this.a);
+        canvas.scale(a2, a2, getWidth() / 2.0f, getHeight() / 2.0f);
+        super.draw(canvas);
+        canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.u00
-    public final int getViewType() {
-        setIsSingleCell(false);
-        return 27;
-    }
-
-    @Override // org.telegram.ui.Components.u00, android.view.View
-    public final void onDraw(Canvas canvas) {
-        int v02 = k6.v0(k6.d6, this.S.T.c);
-        Paint paint = this.R;
-        paint.setColor(v02);
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), paint);
-        super.onDraw(canvas);
+    @Override // android.view.View
+    public void setPressed(boolean z4) {
+        super.setPressed(z4);
+        this.b.c(z4);
     }
 }

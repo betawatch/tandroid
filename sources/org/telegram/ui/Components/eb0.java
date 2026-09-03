@@ -1,34 +1,63 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MediaDataController;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class eb0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ sb0 b;
+public final class eb0 extends f2.x {
+    public final /* synthetic */ rb0 S;
 
-    public /* synthetic */ eb0(sb0 sb0Var, int i10) {
-        this.a = i10;
-        this.b = sb0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public eb0(rb0 rb0Var) {
+        super(true);
+        this.S = rb0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                sb0 sb0Var = this.b;
-                kb0 kb0Var = sb0Var.f;
-                if (!sb0Var.W.d.webpageTop) {
-                    kb0Var.w0(kb0Var.computeVerticalScrollRange() - (kb0Var.computeVerticalScrollExtent() + kb0Var.computeVerticalScrollOffset()), MediaDataController.MAX_LINKS_COUNT, xh.n.V);
-                    break;
-                } else {
-                    kb0Var.w0(-kb0Var.computeVerticalScrollOffset(), MediaDataController.MAX_LINKS_COUNT, xh.n.V);
-                    break;
+    @Override // f2.x
+    public final boolean B1(int i10) {
+        byte b10;
+        rb0 rb0Var = this.S;
+        MessageObject messageObject = rb0Var.r.previewMessages.get(i10);
+        MessageObject.GroupedMessages a2 = rb0.a(rb0Var, messageObject);
+        if (a2 != null) {
+            MessageObject.GroupedMessagePosition position = a2.getPosition(messageObject);
+            if (position.minX != position.maxX && (b10 = position.minY) == position.maxY && b10 != 0) {
+                int size = a2.posArray.size();
+                for (int i11 = 0; i11 < size; i11++) {
+                    MessageObject.GroupedMessagePosition groupedMessagePosition = a2.posArray.get(i11);
+                    if (groupedMessagePosition != position) {
+                        byte b11 = groupedMessagePosition.minY;
+                        byte b12 = position.minY;
+                        if (b11 <= b12 && groupedMessagePosition.maxY >= b12) {
+                            return true;
+                        }
+                    }
                 }
-            default:
-                this.b.g(true, false);
-                break;
+            }
+        }
+        return false;
+    }
+
+    @Override // f2.x
+    public final boolean C1(View view) {
+        return false;
+    }
+
+    @Override // f2.w, f2.i0, f2.v0
+    public final void b0(af.h hVar, f2.i1 i1Var) {
+        if (BuildVars.DEBUG_PRIVATE_VERSION) {
+            super.b0(hVar, i1Var);
+            return;
+        }
+        try {
+            super.b0(hVar, i1Var);
+        } catch (Exception e) {
+            FileLog.e(e);
+            AndroidUtilities.runOnUIThread(new up(this, 28));
         }
     }
 }

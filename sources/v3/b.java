@@ -7,6 +7,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import kf.k0;
 import l3.p0;
 import o4.u0;
 import org.telegram.messenger.MediaController;
@@ -21,7 +22,7 @@ import r3.n;
 import r3.q;
 import r3.v;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class b implements k {
     public final w a = new w(4);
@@ -111,16 +112,16 @@ public final class b implements k {
                 boolean z11 = (u10 & 4) != 0;
                 boolean z12 = (u10 & 1) != 0;
                 if (z11 && this.o == null) {
-                    this.o = new a(this.f.i2(8, 1));
+                    this.o = new a(this.f.d2(8, 1));
                 }
                 if (z12 && this.p == null) {
-                    this.p = new d(this.f.i2(9, 2));
+                    this.p = new d(this.f.d2(9, 2));
                 }
-                this.f.i1();
+                this.f.j1();
                 this.j = wVar.g() - 5;
                 this.g = 2;
             } else if (i12 == 2) {
-                ((h) lVar).s(this.j);
+                ((h) lVar).n(this.j);
                 this.j = 0;
                 this.g = 3;
             } else if (i12 == 3) {
@@ -148,7 +149,7 @@ public final class b implements k {
                     i10 = this.k;
                     if (i10 != 8 && this.o != null) {
                         if (!this.n) {
-                            this.f.m2(new n(-9223372036854775807L));
+                            this.f.h2(new n(-9223372036854775807L));
                             this.n = true;
                         }
                         a aVar = this.o;
@@ -215,7 +216,7 @@ public final class b implements k {
                         j12 = -9223372036854775807L;
                         i11 = 0;
                         if (i10 == 18 || this.n) {
-                            ((h) lVar).s(this.l);
+                            ((h) lVar).n(this.l);
                             z4 = false;
                         } else {
                             w a13 = a(lVar);
@@ -262,7 +263,7 @@ public final class b implements k {
                             }
                             long j13 = cVar.b;
                             if (j13 != -9223372036854775807L) {
-                                this.f.m2(new q(j13, cVar.d, cVar.c));
+                                this.f.h2(new q(j13, cVar.d, cVar.c));
                                 this.n = true;
                             }
                             z4 = true;
@@ -279,7 +280,7 @@ public final class b implements k {
                         }
                     } else {
                         if (!this.n) {
-                            this.f.m2(new n(-9223372036854775807L));
+                            this.f.h2(new n(-9223372036854775807L));
                             this.n = true;
                         }
                         d dVar = this.p;
@@ -289,7 +290,7 @@ public final class b implements k {
                         int i16 = (u13 >> 4) & 15;
                         int i17 = u13 & 15;
                         if (i17 != 7) {
-                            throw new u0(l.d.j(i17, "Video format not supported: "));
+                            throw new u0(k0.j(i17, "Video format not supported: "));
                         }
                         dVar.g = i16;
                         if (i16 != 5) {
@@ -378,7 +379,7 @@ public final class b implements k {
                 i11 = 0;
                 if (i10 == 18) {
                 }
-                ((h) lVar).s(this.l);
+                ((h) lVar).n(this.l);
                 z4 = false;
                 z10 = false;
                 if (!this.h) {

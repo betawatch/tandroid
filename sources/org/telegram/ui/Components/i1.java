@@ -6,7 +6,7 @@ import android.net.Uri;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i1 implements org.telegram.ui.ActionBar.c2 {
     public final /* synthetic */ int a;
@@ -18,7 +18,7 @@ public final /* synthetic */ class i1 implements org.telegram.ui.ActionBar.c2 {
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public final void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    public final void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         switch (this.a) {
             case 0:
                 z4.a(this.b);
@@ -30,8 +30,8 @@ public final /* synthetic */ class i1 implements org.telegram.ui.ActionBar.c2 {
                     intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
                     activity.startActivity(intent);
                     break;
-                } catch (Exception e6) {
-                    FileLog.e(e6);
+                } catch (Exception e) {
+                    FileLog.e(e);
                     return;
                 }
             default:
@@ -41,8 +41,8 @@ public final /* synthetic */ class i1 implements org.telegram.ui.ActionBar.c2 {
                     intent2.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
                     activity2.startActivity(intent2);
                     break;
-                } catch (Exception e10) {
-                    FileLog.e(e10);
+                } catch (Exception e6) {
+                    FileLog.e(e6);
                 }
         }
     }

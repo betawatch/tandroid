@@ -37,8 +37,8 @@ public final class w1 extends com.google.android.gms.common.api.internal.e {
             } finally {
                 obtain.recycle();
             }
-        } catch (RuntimeException e6) {
-            Log.e("ClearcutLoggerApiImpl", "derived ClearcutLogger.MessageProducer ", e6);
+        } catch (RuntimeException e) {
+            Log.e("ClearcutLoggerApiImpl", "derived ClearcutLogger.MessageProducer ", e);
             o(new Status(10, "MessageProducer", null, null));
         }
     }

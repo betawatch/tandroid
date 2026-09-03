@@ -1,83 +1,239 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.View;
-import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_communities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vr implements View.OnTouchListener {
+public final /* synthetic */ class vr implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ ds b;
 
-    public /* synthetic */ vr(Object obj, int i10) {
+    public /* synthetic */ vr(ds dsVar, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = dsVar;
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        l70 l70Var;
+    /* JADX WARN: Removed duplicated region for block: B:199:0x03fd  */
+    @Override // org.telegram.messenger.Utilities.Callback2
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run(Object obj, Object obj2) {
+        boolean z4;
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.p1 p1Var = ((xr) this.b).a;
-                if (motionEvent.getActionMasked() != 1 || p1Var == null || !p1Var.isShowing()) {
-                    return false;
-                }
-                Rect rect = AndroidUtilities.rectTmp2;
-                view.getHitRect(rect);
-                if (rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                    return false;
-                }
-                p1Var.d(true);
-                return false;
-            case 1:
-                q70 q70Var = (q70) ((WeakReference) this.b).get();
-                if (q70Var == null || (l70Var = q70Var.m) == null || !l70Var.isShowing()) {
-                    view.setOnTouchListener(null);
-                    return false;
-                }
-                if (view.getParent() != null) {
-                    view.getParent().requestDisallowInterceptTouchEvent(true);
-                }
-                int actionMasked = motionEvent.getActionMasked();
-                if (actionMasked == 2) {
-                    q70Var.b0((int) motionEvent.getRawX(), (int) motionEvent.getRawY());
-                } else if (actionMasked == 1) {
-                    q70Var.b0((int) motionEvent.getRawX(), (int) motionEvent.getRawY());
-                    View view2 = q70Var.p0;
-                    if (view2 != null) {
-                        q70Var.p0 = null;
-                        view2.setPressed(false);
-                        view2.performClick();
+                ArrayList arrayList = (ArrayList) obj;
+                w51 w51Var = (w51) obj2;
+                ds dsVar = this.b;
+                cs csVar = dsVar.g0;
+                cs csVar2 = dsVar.i0;
+                TLRPC.TL_chatBannedRights tL_chatBannedRights = dsVar.t0;
+                TLRPC.TL_chatBannedRights tL_chatBannedRights2 = dsVar.s0;
+                if (dsVar.Y != null) {
+                    arrayList.add(i51.C(AndroidUtilities.dp(12.0f)));
+                    org.telegram.ui.ai.q(R.string.DeleteAdditionalActions, arrayList);
+                    dsVar.T(arrayList, dsVar.f0);
+                    if (dsVar.w0) {
+                        csVar.g();
+                        int i10 = (dsVar.z0 ? 1 : 0) + (dsVar.A0 ? 1 : 0);
+                        String str = csVar.b;
+                        Locale locale = Locale.US;
+                        i51 z10 = i51.z(i10 + "/2", str, 100);
+                        z10.K(i10 == 2);
+                        z10.f = dsVar.y0;
+                        z10.D = new w2(14, dsVar, w51Var);
+                        arrayList.add(z10);
+                        if (!dsVar.y0) {
+                            i51 y10 = i51.y(101, LocaleController.getString(R.string.RestrictUserDeleteAllMessages));
+                            y10.K(dsVar.z0);
+                            y10.i = 1;
+                            arrayList.add(y10);
+                            i51 y11 = i51.y(102, LocaleController.getString(R.string.RestrictUserDeleteAllReactions));
+                            y11.K(dsVar.A0);
+                            y11.i = 1;
+                            arrayList.add(y11);
+                        }
+                    } else {
+                        dsVar.T(arrayList, csVar);
+                        dsVar.T(arrayList, dsVar.h0);
                     }
-                    view.setOnTouchListener(null);
-                    q70Var.o0 = null;
-                } else if (actionMasked == 3) {
-                    View view3 = q70Var.p0;
-                    if (view3 != null) {
-                        view3.setPressed(false);
-                        q70Var.p0 = null;
+                    dsVar.T(arrayList, csVar2);
+                    if (!dsVar.e0 && csVar2.c()) {
+                        if (dsVar.d0) {
+                            arrayList.add(i51.B(null));
+                            if (csVar2.b()) {
+                                String formatPluralString = LocaleController.formatPluralString("UserRestrictionsCanDoUsers", csVar2.i, new Object[0]);
+                                i51 i51Var = new i51(42);
+                                i51Var.d = 0;
+                                i51Var.o = formatPluralString;
+                                arrayList.add(i51Var);
+                            } else {
+                                String string = LocaleController.getString(R.string.UserRestrictionsCanDo);
+                                i51 i51Var2 = new i51(42);
+                                i51Var2.d = 0;
+                                i51Var2.o = string;
+                                arrayList.add(i51Var2);
+                            }
+                            i51 E = i51.E(0, LocaleController.getString(R.string.UserRestrictionsSend));
+                            E.K((tL_chatBannedRights.send_plain || tL_chatBannedRights2.send_plain) ? false : true);
+                            E.t = tL_chatBannedRights2.send_plain;
+                            arrayList.add(E);
+                            int i11 = (tL_chatBannedRights.send_photos || tL_chatBannedRights2.send_photos) ? 0 : 1;
+                            if (!tL_chatBannedRights.send_videos && !tL_chatBannedRights2.send_videos) {
+                                i11++;
+                            }
+                            if (!tL_chatBannedRights.send_stickers && !tL_chatBannedRights2.send_stickers) {
+                                i11++;
+                            }
+                            if (!tL_chatBannedRights.send_audios && !tL_chatBannedRights2.send_audios) {
+                                i11++;
+                            }
+                            if (!tL_chatBannedRights.send_docs && !tL_chatBannedRights2.send_docs) {
+                                i11++;
+                            }
+                            if (!tL_chatBannedRights.send_voices && !tL_chatBannedRights2.send_voices) {
+                                i11++;
+                            }
+                            if (!tL_chatBannedRights.send_roundvideos && !tL_chatBannedRights2.send_roundvideos) {
+                                i11++;
+                            }
+                            if (!tL_chatBannedRights.embed_links && !tL_chatBannedRights2.embed_links && !tL_chatBannedRights.send_plain && !tL_chatBannedRights2.send_plain) {
+                                i11++;
+                            }
+                            if (!tL_chatBannedRights.send_polls && !tL_chatBannedRights2.send_polls) {
+                                i11++;
+                            }
+                            if (!tL_chatBannedRights.send_reactions && !tL_chatBannedRights2.send_reactions) {
+                                i11++;
+                            }
+                            String string2 = LocaleController.getString(R.string.UserRestrictionsSendMedia);
+                            Locale locale2 = Locale.US;
+                            i51 m9 = i51.m(1, string2, i11 + "/10");
+                            m9.K(i11 > 0);
+                            m9.t = dsVar.S();
+                            m9.f = dsVar.v0;
+                            m9.D = new dg.m2(dsVar, i11, w51Var, 10);
+                            arrayList.add(m9);
+                            if (!dsVar.v0) {
+                                i51 y12 = i51.y(6, LocaleController.getString(R.string.SendMediaPermissionPhotos));
+                                y12.K((tL_chatBannedRights.send_photos || tL_chatBannedRights2.send_photos) ? false : true);
+                                y12.t = tL_chatBannedRights2.send_photos;
+                                y12.i = 1;
+                                arrayList.add(y12);
+                                i51 y13 = i51.y(7, LocaleController.getString(R.string.SendMediaPermissionVideos));
+                                y13.K((tL_chatBannedRights.send_videos || tL_chatBannedRights2.send_videos) ? false : true);
+                                y13.t = tL_chatBannedRights2.send_videos;
+                                y13.i = 1;
+                                arrayList.add(y13);
+                                i51 y14 = i51.y(8, LocaleController.getString(R.string.SendMediaPermissionFiles));
+                                y14.K((tL_chatBannedRights.send_docs || tL_chatBannedRights2.send_docs) ? false : true);
+                                y14.t = tL_chatBannedRights2.send_docs;
+                                y14.i = 1;
+                                arrayList.add(y14);
+                                i51 y15 = i51.y(9, LocaleController.getString(R.string.SendMediaPermissionMusic));
+                                y15.K((tL_chatBannedRights.send_audios || tL_chatBannedRights2.send_audios) ? false : true);
+                                y15.t = tL_chatBannedRights2.send_audios;
+                                y15.i = 1;
+                                arrayList.add(y15);
+                                i51 y16 = i51.y(10, LocaleController.getString(R.string.SendMediaPermissionVoice));
+                                y16.K((tL_chatBannedRights.send_voices || tL_chatBannedRights2.send_voices) ? false : true);
+                                y16.t = tL_chatBannedRights2.send_voices;
+                                y16.i = 1;
+                                arrayList.add(y16);
+                                i51 y17 = i51.y(11, LocaleController.getString(R.string.SendMediaPermissionRound));
+                                y17.K((tL_chatBannedRights.send_roundvideos || tL_chatBannedRights2.send_roundvideos) ? false : true);
+                                y17.t = tL_chatBannedRights2.send_roundvideos;
+                                y17.i = 1;
+                                arrayList.add(y17);
+                                i51 y18 = i51.y(12, LocaleController.getString(R.string.SendMediaPermissionStickersGifs));
+                                y18.K((tL_chatBannedRights.send_stickers || tL_chatBannedRights2.send_stickers) ? false : true);
+                                y18.t = tL_chatBannedRights2.send_stickers;
+                                y18.i = 1;
+                                arrayList.add(y18);
+                                i51 y19 = i51.y(13, LocaleController.getString(R.string.SendMediaPolls));
+                                y19.K((tL_chatBannedRights.send_polls || tL_chatBannedRights2.send_polls) ? false : true);
+                                y19.t = tL_chatBannedRights2.send_polls;
+                                y19.i = 1;
+                                arrayList.add(y19);
+                                i51 y20 = i51.y(14, LocaleController.getString(R.string.UserRestrictionsEmbedLinks));
+                                y20.K((tL_chatBannedRights.embed_links || tL_chatBannedRights2.embed_links || tL_chatBannedRights.send_plain || tL_chatBannedRights2.send_plain) ? false : true);
+                                y20.t = tL_chatBannedRights2.embed_links;
+                                y20.i = 1;
+                                arrayList.add(y20);
+                                i51 y21 = i51.y(15, LocaleController.getString(R.string.UserRestrictionsSendReactions));
+                                y21.K((tL_chatBannedRights.send_reactions || tL_chatBannedRights2.send_reactions) ? false : true);
+                                y21.t = tL_chatBannedRights2.send_reactions;
+                                y21.i = 1;
+                                arrayList.add(y21);
+                            }
+                            i51 E2 = i51.E(2, LocaleController.getString(R.string.UserRestrictionsInviteUsers));
+                            E2.K((tL_chatBannedRights.invite_users || tL_chatBannedRights2.invite_users) ? false : true);
+                            E2.t = tL_chatBannedRights2.invite_users;
+                            arrayList.add(E2);
+                            i51 E3 = i51.E(3, LocaleController.getString(R.string.UserRestrictionsPinMessages));
+                            E3.K((tL_chatBannedRights.pin_messages || tL_chatBannedRights2.pin_messages) ? false : true);
+                            E3.t = tL_chatBannedRights2.pin_messages;
+                            arrayList.add(E3);
+                            i51 E4 = i51.E(4, LocaleController.getString(R.string.UserRestrictionsChangeInfo));
+                            E4.K((tL_chatBannedRights.change_info || tL_chatBannedRights2.change_info) ? false : true);
+                            E4.t = tL_chatBannedRights2.change_info;
+                            arrayList.add(E4);
+                            if (dsVar.X) {
+                                i51 E5 = i51.E(5, LocaleController.getString(R.string.CreateTopicsPermission));
+                                E5.K((tL_chatBannedRights.manage_topics || tL_chatBannedRights2.manage_topics) ? false : true);
+                                E5.t = tL_chatBannedRights2.manage_topics;
+                                arrayList.add(E5);
+                            }
+                        }
+                        if (dsVar.l0) {
+                            String string3 = LocaleController.getString(!csVar2.b() ? dsVar.d0 ? R.string.DeleteToggleBanUser : R.string.DeleteToggleRestrictUser : dsVar.d0 ? R.string.DeleteToggleBanUsers : R.string.DeleteToggleRestrictUsers);
+                            i51 i51Var3 = new i51(38);
+                            i51Var3.d = 1;
+                            i51Var3.o = string3;
+                            i51Var3.f = !dsVar.d0;
+                            i51Var3.q = true;
+                            arrayList.add(i51Var3);
+                            z4 = false;
+                            if (dsVar.n0 == 0) {
+                                if (z4) {
+                                    arrayList.add(i51.C(AndroidUtilities.dp(12.0f)));
+                                }
+                                String string4 = LocaleController.getString(R.string.CommunityBanFromCommunity);
+                                i51 i51Var4 = new i51(39);
+                                i51Var4.d = 103;
+                                i51Var4.l = string4;
+                                i51Var4.z = 0;
+                                i51Var4.K(dsVar.m0);
+                                arrayList.add(i51Var4);
+                                TL_communities.ParticipantJoinedChats participantJoinedChats = dsVar.o0;
+                                arrayList.add(i51.A(104, AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.formatPluralString("CommunityBanFromCommunityInfo", participantJoinedChats != null ? participantJoinedChats.joined_chat_ids.size() : 1, new Object[0]), new wr(dsVar, 1)), true)));
+                                break;
+                            }
+                        }
                     }
-                    view.setOnTouchListener(null);
-                    q70Var.o0 = null;
+                    z4 = true;
+                    if (dsVar.n0 == 0) {
+                    }
                 }
-                return true;
-            case 2:
-                ra0 ra0Var = (ra0) this.b;
-                ra0Var.getClass();
-                return org.telegram.ui.qt.q().s(motionEvent, ra0Var.getListView(), ra0Var.w, null, ra0Var.a);
-            case 3:
-                sb0 sb0Var = (sb0) this.b;
-                sb0Var.getClass();
-                if (motionEvent.getAction() == 1) {
-                    sb0Var.W.a(true);
-                }
-                return true;
+                break;
             default:
-                return xx0.v((xx0) this.b, motionEvent);
+                TL_communities.ParticipantJoinedChats participantJoinedChats2 = (TL_communities.ParticipantJoinedChats) obj;
+                ds dsVar2 = this.b;
+                if (participantJoinedChats2 == null) {
+                    dsVar2.getClass();
+                    break;
+                } else {
+                    dsVar2.o0 = participantJoinedChats2;
+                    dsVar2.U.N(true);
+                    break;
+                }
         }
     }
 }

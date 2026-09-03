@@ -1,323 +1,121 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.util.SparseArray;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.LocaleController;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fk implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ TLObject b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ TLRPC.TL_error h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ Object r;
-    public final /* synthetic */ Object s;
-    public final /* synthetic */ Object v;
-    public final /* synthetic */ Object w;
-    public final /* synthetic */ Object x;
+public final class fk implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MessageObject b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ ViewGroup d;
+    public final /* synthetic */ ql0 e;
 
-    public /* synthetic */ fk(ik ikVar, int i10, TLRPC.TL_error tL_error, TLObject tLObject, AccountInstance accountInstance, boolean z4, String str, ArrayList arrayList, long j10, long j11, ArrayList arrayList2, ArrayList arrayList3) {
-        this.n = ikVar;
-        this.c = i10;
-        this.h = tL_error;
-        this.b = tLObject;
-        this.r = accountInstance;
-        this.f = z4;
-        this.s = str;
-        this.v = arrayList;
-        this.d = j10;
-        this.e = j11;
-        this.w = arrayList2;
-        this.x = arrayList3;
+    public /* synthetic */ fk(ql0 ql0Var, ViewGroup viewGroup, MessageObject messageObject, boolean z4, int i10) {
+        this.a = i10;
+        this.e = ql0Var;
+        this.d = viewGroup;
+        this.b = messageObject;
+        this.c = z4;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:128:0x0354, code lost:
-    
-        if (r2.getChildCount() > 1) goto L121;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:129:0x035a, code lost:
-    
-        r7.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.wq(r12, (org.telegram.ui.Components.u00) r13, r1, r4));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:130:0x0368, code lost:
-    
-        r12.l();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:132:0x0358, code lost:
-    
-        if (r13 != null) goto L122;
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        int i10;
-        ArrayList arrayList;
-        int i11;
-        TLRPC.User user;
-        char c3;
-        TL_payments.connectedBotStarRef connectedbotstarref;
-        org.telegram.ui.ActionBar.p2 U;
-        int i12 = this.a;
-        TLRPC.TL_error tL_error = this.h;
-        Object obj = this.x;
-        Object obj2 = this.w;
-        Object obj3 = this.v;
-        boolean z4 = this.f;
-        long j10 = this.e;
-        Object obj4 = this.s;
-        Object obj5 = this.r;
-        TLObject tLObject = this.b;
-        Object obj6 = this.n;
-        switch (i12) {
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        switch (this.a) {
             case 0:
-                ik ikVar = (ik) obj6;
-                AccountInstance accountInstance = (AccountInstance) obj5;
-                String str = (String) obj4;
-                ArrayList arrayList2 = (ArrayList) obj3;
-                ArrayList arrayList3 = (ArrayList) obj2;
-                ArrayList arrayList4 = (ArrayList) obj;
-                ArrayList arrayList5 = ikVar.M;
-                SparseArray sparseArray = ikVar.L;
-                ArrayList arrayList6 = ikVar.J;
-                HashMap hashMap = ikVar.N;
-                ArrayList arrayList7 = ikVar.K;
-                ArrayList arrayList8 = ikVar.I;
-                jk jkVar = ikVar.U;
-                oh.z4 z4Var = jkVar.I;
-                if (this.c == ikVar.Q) {
-                    ikVar.P = false;
-                    if (tL_error != null) {
-                        jh.s sVar = z4Var.d;
-                        g90 g90Var = z4Var.e;
-                        sVar.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
-                        g90Var.setVisibility(0);
-                        g90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
-                        z4Var.e(false, true);
-                        break;
-                    } else {
-                        xj xjVar = jkVar.r;
-                        z4Var.e(false, true);
-                        g90 g90Var2 = z4Var.e;
-                        jh.s sVar2 = z4Var.d;
-                        TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
-                        ikVar.D = messages_messages.next_rate;
-                        xj xjVar2 = xjVar;
-                        accountInstance.getMessagesStorage().putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
-                        accountInstance.getMessagesController().putUsers(messages_messages.users, false);
-                        accountInstance.getMessagesController().putChats(messages_messages.chats, false);
-                        if (!z4) {
-                            arrayList7.clear();
-                            sparseArray.clear();
-                            arrayList5.clear();
-                            hashMap.clear();
-                        }
-                        int i13 = messages_messages.count;
-                        ikVar.H = str;
-                        int size = arrayList2.size();
-                        int i14 = 0;
-                        while (i14 < size) {
-                            MessageObject messageObject = (MessageObject) arrayList2.get(i14);
-                            ArrayList arrayList9 = (ArrayList) hashMap.get(messageObject.monthKey);
-                            if (arrayList9 == null) {
-                                arrayList9 = new ArrayList();
-                                arrayList = arrayList2;
-                                hashMap.put(messageObject.monthKey, arrayList9);
-                                arrayList5.add(messageObject.monthKey);
-                            } else {
-                                arrayList = arrayList2;
-                            }
-                            arrayList9.add(messageObject);
-                            arrayList7.add(messageObject);
-                            sparseArray.put(messageObject.getId(), messageObject);
-                            i14++;
-                            arrayList2 = arrayList;
-                        }
-                        if (arrayList7.size() > i13) {
-                            i13 = arrayList7.size();
-                        }
-                        ikVar.S = arrayList7.size() >= i13;
-                        if (arrayList7.isEmpty()) {
-                            if (TextUtils.isEmpty(ikVar.H) && this.d == 0 && j10 == 0) {
-                                sVar2.setText(LocaleController.getString(R.string.SearchEmptyViewTitle));
-                                g90Var2.setVisibility(0);
-                                g90Var2.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitleFiles));
-                            } else {
-                                sVar2.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
-                                g90Var2.setVisibility(0);
-                                g90Var2.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
-                            }
-                        }
-                        if (!z4) {
-                            arrayList8.clear();
-                            if (arrayList3 != null) {
-                                arrayList8.addAll(arrayList3);
-                            }
-                            if (str.length() >= 3 && (LocaleController.getString(R.string.SavedMessages).toLowerCase().startsWith(str) || "saved messages".startsWith(str))) {
-                                for (int i15 = 0; i15 < arrayList8.size(); i15++) {
-                                    if (!(arrayList8.get(i15) instanceof TLRPC.User) || UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser().id != ((TLRPC.User) arrayList8.get(i15)).id) {
-                                    }
-                                }
-                                arrayList8.add(0, UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser());
-                                arrayList6.clear();
-                                arrayList6.addAll(arrayList4);
-                                ikVar.a0(arrayList8, arrayList6, TextUtils.isEmpty(ikVar.H));
-                            }
-                            arrayList6.clear();
-                            arrayList6.addAll(arrayList4);
-                            ikVar.a0(arrayList8, arrayList6, TextUtils.isEmpty(ikVar.H));
-                        }
-                        int i16 = -1;
-                        View view = null;
-                        int i17 = 0;
-                        while (i17 < size) {
-                            xj xjVar3 = xjVar2;
-                            View childAt = xjVar3.getChildAt(i17);
-                            if (childAt instanceof u00) {
-                                i16 = RecyclerView.R(childAt);
-                                view = childAt;
-                            }
-                            i17++;
-                            xjVar2 = xjVar3;
-                        }
-                        xj xjVar4 = xjVar2;
-                        if (view != null) {
-                            xjVar4.removeView(view);
-                        }
-                        if (jkVar.G.getVisibility() == 0) {
-                            i10 = 1;
-                            break;
-                        } else {
-                            i10 = 1;
-                            break;
-                        }
-                    }
-                }
-                break;
-            default:
-                org.telegram.ui.ActionBar.h3 h3Var = (org.telegram.ui.ActionBar.h3) obj5;
-                TL_payments.starRefProgram starrefprogram = (TL_payments.starRefProgram) obj4;
-                Context context = (Context) obj3;
-                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj2;
-                TLRPC.User user2 = (TLRPC.User) obj;
-                ((qh.d) obj6).setLoading(false);
-                if (tLObject instanceof TL_payments.connectedStarRefBots) {
-                    TL_payments.connectedStarRefBots connectedstarrefbots = (TL_payments.connectedStarRefBots) tLObject;
-                    int i18 = this.c;
-                    mh.a0 g10 = mh.a0.g(i18);
-                    long j11 = this.d;
-                    mh.x d = g10.d(j11);
-                    int i19 = d.a;
-                    MessagesController.getInstance(i19).putUsers(connectedstarrefbots.users, false);
-                    d.c = 0;
-                    d.h = false;
-                    d.d = false;
-                    ArrayList arrayList10 = d.e;
-                    arrayList10.clear();
-                    if (d.i != 0) {
-                        i11 = i18;
-                        user = user2;
-                        ConnectionsManager.getInstance(i19).cancelRequest(d.i, true);
-                        d.i = 0;
-                    } else {
-                        i11 = i18;
-                        user = user2;
-                    }
-                    d.g = false;
-                    d.c = connectedstarrefbots.count;
-                    arrayList10.addAll(connectedstarrefbots.connected_bots);
-                    d.d = connectedstarrefbots.connected_bots.isEmpty() || arrayList10.size() >= d.c;
-                    d.h = false;
-                    NotificationCenter.getInstance(i19).lambda$postNotificationNameOnUIThread$1(NotificationCenter.channelConnectedBotsUpdate, Long.valueOf(d.b));
-                    d.a();
-                    h3Var.dismiss();
-                    int i20 = 0;
-                    while (true) {
-                        if (i20 < connectedstarrefbots.connected_bots.size()) {
-                            connectedbotstarref = connectedstarrefbots.connected_bots.get(i20);
-                            c3 = 0;
-                            if (connectedbotstarref.bot_id != starrefprogram.bot_id) {
-                                i20++;
-                            }
-                        } else {
-                            c3 = 0;
-                            connectedbotstarref = null;
-                        }
-                    }
-                    if ((j10 != j11 || z4) && (U = LaunchActivity.U()) != null && (!(U instanceof sh.d3) || ((sh.d3) U).M != j11)) {
-                        U.presentFragment(new sh.d3(j11));
-                    }
-                    if (connectedbotstarref != null) {
-                        mh.y e6 = mh.a0.g(i11).e(j11);
-                        long j12 = connectedbotstarref.bot_id;
-                        ArrayList arrayList11 = e6.e;
-                        int i21 = 0;
-                        while (true) {
-                            if (i21 < arrayList11.size()) {
-                                if (((TL_payments.starRefProgram) arrayList11.get(i21)).bot_id == j12) {
-                                    arrayList11.remove(i21);
-                                    e6.c--;
-                                    NotificationCenter notificationCenter = NotificationCenter.getInstance(e6.a);
-                                    int i22 = NotificationCenter.channelSuggestedBotsUpdate;
-                                    Object[] objArr = new Object[1];
-                                    objArr[c3] = Long.valueOf(e6.b);
-                                    notificationCenter.lambda$postNotificationNameOnUIThread$1(i22, objArr);
-                                } else {
-                                    i21++;
-                                }
-                            }
-                        }
-                        qc qcVar = new qc(sh.d3.H0(context, i11, connectedbotstarref, j11, g6Var).topBulletinContainer, g6Var);
-                        String string = LocaleController.getString(R.string.AffiliateProgramJoinedTitle);
-                        String string2 = LocaleController.getString(R.string.AffiliateProgramJoinedText);
-                        TLObject[] tLObjectArr = new TLObject[1];
-                        tLObjectArr[c3] = user;
-                        qcVar.V(Arrays.asList(tLObjectArr), string, string2, null).j();
-                        break;
-                    }
-                } else if (tL_error != null) {
-                    org.telegram.ui.yh.u(h3Var.topBulletinContainer, g6Var, tL_error, false);
+                org.telegram.ui.Cells.h7 h7Var = (org.telegram.ui.Cells.h7) this.d;
+                h7Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                gk gkVar = (gk) this.e;
+                org.telegram.ui.m10 m10Var = gkVar.E;
+                hk hkVar = gkVar.U;
+                boolean s6 = hkVar.b.U0.s();
+                boolean z4 = this.c;
+                if (!s6) {
+                    h7Var.b(false, z4);
+                    break;
+                } else {
+                    MessageObject messageObject = this.b;
+                    int id2 = messageObject.getId();
+                    m10Var.a = messageObject.getDialogId();
+                    m10Var.b = id2;
+                    h7Var.b(hkVar.Q.containsKey(m10Var), z4);
                     break;
                 }
-                break;
+            case 1:
+                org.telegram.ui.Cells.q2 q2Var = (org.telegram.ui.Cells.q2) this.d;
+                q2Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                org.telegram.ui.u10 u10Var = ((org.telegram.ui.n10) this.e).c;
+                boolean f10 = u10Var.l0.f();
+                boolean z10 = this.c;
+                if (!f10) {
+                    q2Var.V(false, z10);
+                    break;
+                } else {
+                    org.telegram.ui.m10 m10Var2 = u10Var.P;
+                    MessageObject messageObject2 = this.b;
+                    int id3 = messageObject2.getId();
+                    m10Var2.a = messageObject2.getDialogId();
+                    m10Var2.b = id3;
+                    q2Var.V(u10Var.l0.b(u10Var.P), z10);
+                    break;
+                }
+            case 2:
+                org.telegram.ui.Cells.h7 h7Var2 = (org.telegram.ui.Cells.h7) this.d;
+                h7Var2.getViewTreeObserver().removeOnPreDrawListener(this);
+                org.telegram.ui.u10 u10Var2 = ((org.telegram.ui.p10) this.e).v;
+                boolean f11 = u10Var2.l0.f();
+                boolean z11 = this.c;
+                if (!f11) {
+                    h7Var2.b(false, z11);
+                    break;
+                } else {
+                    org.telegram.ui.m10 m10Var3 = u10Var2.P;
+                    MessageObject messageObject3 = this.b;
+                    int id4 = messageObject3.getId();
+                    m10Var3.a = messageObject3.getDialogId();
+                    m10Var3.b = id4;
+                    h7Var2.b(u10Var2.l0.b(u10Var2.P), z11);
+                    break;
+                }
+            case 3:
+                org.telegram.ui.Cells.g7 g7Var = (org.telegram.ui.Cells.g7) this.d;
+                g7Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                org.telegram.ui.u10 u10Var3 = ((org.telegram.ui.p10) this.e).v;
+                boolean f12 = u10Var3.l0.f();
+                boolean z12 = this.c;
+                if (!f12) {
+                    g7Var.e(false, z12);
+                    break;
+                } else {
+                    org.telegram.ui.m10 m10Var4 = u10Var3.P;
+                    MessageObject messageObject4 = this.b;
+                    int id5 = messageObject4.getId();
+                    m10Var4.a = messageObject4.getDialogId();
+                    m10Var4.b = id5;
+                    g7Var.e(u10Var3.l0.b(u10Var3.P), z12);
+                    break;
+                }
+            default:
+                org.telegram.ui.Cells.k7 k7Var = (org.telegram.ui.Cells.k7) this.d;
+                k7Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                org.telegram.ui.u10 u10Var4 = ((org.telegram.ui.r10) this.e).v;
+                boolean f13 = u10Var4.l0.f();
+                boolean z13 = this.c;
+                if (!f13) {
+                    k7Var.f(false, z13);
+                    break;
+                } else {
+                    org.telegram.ui.m10 m10Var5 = u10Var4.P;
+                    MessageObject messageObject5 = this.b;
+                    int id6 = messageObject5.getId();
+                    m10Var5.a = messageObject5.getDialogId();
+                    m10Var5.b = id6;
+                    k7Var.f(u10Var4.l0.b(u10Var4.P), z13);
+                    break;
+                }
         }
-    }
-
-    public /* synthetic */ fk(qh.d dVar, TLObject tLObject, int i10, long j10, org.telegram.ui.ActionBar.h3 h3Var, TL_payments.starRefProgram starrefprogram, long j11, boolean z4, Context context, org.telegram.ui.ActionBar.g6 g6Var, TLRPC.User user, TLRPC.TL_error tL_error) {
-        this.n = dVar;
-        this.b = tLObject;
-        this.c = i10;
-        this.d = j10;
-        this.r = h3Var;
-        this.s = starrefprogram;
-        this.e = j11;
-        this.f = z4;
-        this.v = context;
-        this.w = g6Var;
-        this.x = user;
-        this.h = tL_error;
+        return true;
     }
 }

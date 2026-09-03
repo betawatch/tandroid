@@ -1,26 +1,53 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class pi extends org.telegram.ui.Components.ho {
-    public final /* synthetic */ xn J;
+public final class pi extends org.telegram.ui.ActionBar.p1 {
+    public final /* synthetic */ org.telegram.ui.Components.pk0 o;
+    public final /* synthetic */ zn p;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pi(xn xnVar, Activity activity, int i10, TLRPC.Document document, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(activity, i10, document, g6Var);
-        this.J = xnVar;
+    public pi(zn znVar, cb cbVar, org.telegram.ui.Components.pk0 pk0Var) {
+        super(cbVar, -2, -2);
+        this.p = znVar;
+        this.o = pk0Var;
     }
 
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
-        super.onLayout(z4, i10, i11, i12, i13);
-        float y10 = getY();
-        xn xnVar = this.J;
-        float y11 = xnVar.O0.getY() + y10;
-        this.G = xnVar.U0.getBackgroundSizeY();
-        this.F = y11;
+    @Override // org.telegram.ui.ActionBar.p1
+    public final void d(boolean z4) {
+        super.d(true);
+        org.telegram.ui.Components.pk0 pk0Var = this.o;
+        if (pk0Var != null) {
+            pk0Var.d();
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.p1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        zn znVar = this.p;
+        if (znVar.N8 != this) {
+            return;
+        }
+        org.telegram.ui.Components.ic icVar = org.telegram.ui.Components.ic.w;
+        org.telegram.ui.Components.ic icVar2 = znVar.k1;
+        if (icVar == icVar2 && icVar2 != null) {
+            icVar2.b();
+            znVar.k1 = null;
+        }
+        znVar.N8 = null;
+        znVar.Q8 = null;
+        znVar.P8 = null;
+        znVar.w0.R = true;
+        if (znVar.O8) {
+            znVar.g8(false, true, 0.0f);
+        } else {
+            znVar.O8 = true;
+        }
+        lk lkVar = znVar.V;
+        if (lkVar == null || lkVar.getEditField() == null) {
+            return;
+        }
+        znVar.V.getEditField().setAllowDrawCursor(true);
     }
 }

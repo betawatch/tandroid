@@ -1,33 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jm implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ om b;
+public final class jm extends AnimatorListenerAdapter {
+    public final /* synthetic */ km a;
 
-    public /* synthetic */ jm(om omVar, int i10) {
-        this.a = i10;
-        this.b = omVar;
+    public jm(km kmVar) {
+        this.a = kmVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                om omVar = this.b;
-                omVar.getClass();
-                omVar.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                omVar.invalidate();
-                break;
-            default:
-                om omVar2 = this.b;
-                omVar2.getClass();
-                omVar2.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                omVar2.invalidate();
-                break;
-        }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        km kmVar = this.a;
+        kmVar.b.isChatPreviewSpoilerRevealed = true;
+        kmVar.O.z.invalidate();
     }
 }

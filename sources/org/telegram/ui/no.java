@@ -1,131 +1,159 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.ImageReceiver;
+import android.content.Context;
+import android.util.Pair;
+import j$.util.Objects;
+import java.util.ArrayList;
+import java.util.regex.Pattern;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
+import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class no extends fu0 {
-    public final /* synthetic */ po a;
+public final /* synthetic */ class no implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public no(po poVar) {
-        this.a = poVar;
+    public /* synthetic */ no(int i10, Object obj, Object obj2) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x0029, code lost:
-    
-        if (r0 != null) goto L25;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x0042, code lost:
-    
-        if (r0 != null) goto L25;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0082  */
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final qu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z4, boolean z10) {
-        TLRPC.FileLocation fileLocation2;
-        po poVar = this.a;
-        long j10 = poVar.z0;
-        qu0 qu0Var = null;
-        if (fileLocation != null) {
-            if (poVar.A0 != null) {
-                TLRPC.User user = j10 == 0 ? null : poVar.getMessagesController().getUser(Long.valueOf(j10));
-                if (user != null) {
-                    TLRPC.UserProfilePhoto userProfilePhoto = user.photo;
-                    if (userProfilePhoto != null) {
-                        fileLocation2 = userProfilePhoto.photo_big;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        int i10 = this.a;
+        int i11 = 24;
+        int i12 = 28;
+        int i13 = 8;
+        int i14 = 19;
+        int i15 = 20;
+        int i16 = 0;
+        Object obj = this.c;
+        Object obj2 = this.b;
+        switch (i10) {
+            case 0:
+                ro roVar = (ro) obj2;
+                TL_bots.setBotInfo setbotinfo = (TL_bots.setBotInfo) obj;
+                TLRPC.UserFull userFull = roVar.B0;
+                if (userFull != null) {
+                    userFull.about = setbotinfo.about;
+                    roVar.getMessagesStorage().updateUserInfo(roVar.B0, false);
+                }
+                AndroidUtilities.runOnUIThread(new lo(roVar, 2));
+                break;
+            case 1:
+                AndroidUtilities.runOnUIThread(new hc(i12, (sp) obj2, (org.telegram.ui.ActionBar.d2[]) obj));
+                break;
+            case 2:
+                AndroidUtilities.runOnUIThread(new kh(obj2, (Object) tL_error, tLObject, obj, 3));
+                break;
+            case 3:
+                org.telegram.ui.Components.h5 h5Var = (org.telegram.ui.Components.h5) obj2;
+                NotificationCenter.getInstance(h5Var.e).doOnIdle(new org.telegram.ui.Components.g5(h5Var, (ArrayList) obj, tLObject, i16));
+                break;
+            case 4:
+                AndroidUtilities.runOnUIThread(new lh.p6((org.telegram.ui.Components.c8) obj2, (org.telegram.ui.ActionBar.d2) obj, tLObject, i11));
+                break;
+            case 5:
+                AndroidUtilities.runOnUIThread(new np(i14, (org.telegram.ui.Components.li) obj2, (org.telegram.ui.Components.ei) obj));
+                break;
+            case 6:
+                AndroidUtilities.runOnUIThread(new np(i15, (org.telegram.ui.Components.li) obj2, (TLRPC.TL_attachMenuBot) obj));
+                break;
+            case 7:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.gp((org.telegram.ui.Components.hp) obj2, tLObject, (org.telegram.ui.ActionBar.i6) obj, i16));
+                break;
+            case 8:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.em(21, (org.telegram.ui.Components.d10) obj2, (Pair) obj));
+                break;
+            case 9:
+                AndroidUtilities.runOnUIThread(new kh(obj2, (Object) tL_error, tLObject, obj, 13));
+                break;
+            case 10:
+                AndroidUtilities.runOnUIThread(new kh(obj2, (Object) tL_error, tLObject, obj, 15));
+                break;
+            case 11:
+                AndroidUtilities.runOnUIThread(new kh((org.telegram.ui.Components.x80) obj2, (TLRPC.TL_chatInviteExported) obj, tL_error, tLObject));
+                break;
+            case 12:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.gp(obj2, obj, tLObject, 13));
+                break;
+            case 13:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.z80((org.telegram.ui.Components.lq0) obj2, tLObject, (Context) obj, 16));
+                break;
+            case 14:
+                AndroidUtilities.runOnUIThread(new kh(obj2, (Object) tL_error, tLObject, obj, 23));
+                break;
+            case 15:
+                AndroidUtilities.runOnUIThread(new kh(obj2, (Object) tL_error, tLObject, obj, 24));
+                break;
+            case 16:
+                AndroidUtilities.runOnUIThread(new kh((org.telegram.ui.Components.j01) obj2, (org.telegram.ui.ActionBar.d2) obj, tLObject, tL_error));
+                break;
+            case 17:
+                AndroidUtilities.runOnUIThread(new kh(obj2, (Object) tL_error, tLObject, obj, 27));
+                break;
+            case 18:
+                AndroidUtilities.runOnUIThread(new tq((dz) obj2, tLObject, (MessageObject) obj, 4));
+                break;
+            case 19:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.k41(i11, (yz) obj2, (org.telegram.ui.ActionBar.d2) obj));
+                break;
+            case 20:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.k41(i12, (c10) obj2, (org.telegram.ui.ActionBar.d2) obj));
+                break;
+            case 21:
+                AndroidUtilities.runOnUIThread(new tq((v00) obj2, tL_error, (u00) obj, i13));
+                break;
+            case 22:
+                AndroidUtilities.runOnUIThread(new w10(i16, (FiltersSetupActivity) obj2, (TLRPC.TL_messages_toggleDialogFilterTags) obj));
+                break;
+            case 23:
+                AndroidUtilities.runOnUIThread(new c30(obj2, (Object) tL_error, tLObject, obj, 1));
+                break;
+            case 24:
+                k70 k70Var = (k70) obj2;
+                if (Objects.equals(k70Var.a.e, (String) obj)) {
+                    AndroidUtilities.runOnUIThread(new w10(i13, k70Var, tLObject));
+                    break;
+                }
+                break;
+            case 25:
+                w70 w70Var = (w70) obj2;
+                String str = (String) obj;
+                if (tLObject instanceof Vector) {
+                    Vector vector = (Vector) tLObject;
+                    if (!vector.objects.isEmpty()) {
+                        TLRPC.LangPackString langPackString = (TLRPC.LangPackString) vector.objects.get(0);
+                        if (langPackString instanceof TLRPC.TL_langPackString) {
+                            AndroidUtilities.runOnUIThread(new tq(w70Var, (TLRPC.TL_langPackString) langPackString, str, 11));
+                            break;
+                        }
                     }
                 }
-                fileLocation2 = null;
-                if (fileLocation2 != null && fileLocation2.local_id == fileLocation.local_id && fileLocation2.volume_id == fileLocation.volume_id && fileLocation2.dc_id == fileLocation.dc_id) {
-                    int[] iArr = new int[2];
-                    poVar.e.getLocationInWindow(iArr);
-                    qu0Var = new qu0();
-                    qu0Var.b = iArr[0];
-                    qu0Var.c = iArr[1];
-                    oh.a4 a4Var = poVar.e;
-                    qu0Var.d = a4Var;
-                    ImageReceiver imageReceiver = a4Var.getImageReceiver();
-                    qu0Var.a = imageReceiver;
-                    if (j10 == 0) {
-                        j10 = -poVar.t0;
-                    }
-                    qu0Var.f = j10;
-                    qu0Var.e = imageReceiver.getBitmapSafe();
-                    qu0Var.g = -1L;
-                    qu0Var.h = poVar.e.getImageReceiver().getRoundRadius(true);
-                    qu0Var.k = poVar.d.getScaleX();
-                    qu0Var.p = true;
-                }
-            } else {
-                TLRPC.Chat chat = poVar.getMessagesController().getChat(Long.valueOf(poVar.t0));
-                if (chat != null) {
-                    TLRPC.ChatPhoto chatPhoto = chat.photo;
-                    if (chatPhoto != null) {
-                        fileLocation2 = chatPhoto.photo_big;
-                    }
-                }
-                fileLocation2 = null;
-                if (fileLocation2 != null) {
-                    int[] iArr2 = new int[2];
-                    poVar.e.getLocationInWindow(iArr2);
-                    qu0Var = new qu0();
-                    qu0Var.b = iArr2[0];
-                    qu0Var.c = iArr2[1];
-                    oh.a4 a4Var2 = poVar.e;
-                    qu0Var.d = a4Var2;
-                    ImageReceiver imageReceiver2 = a4Var2.getImageReceiver();
-                    qu0Var.a = imageReceiver2;
-                    if (j10 == 0) {
-                    }
-                    qu0Var.f = j10;
-                    qu0Var.e = imageReceiver2.getBitmapSafe();
-                    qu0Var.g = -1L;
-                    qu0Var.h = poVar.e.getImageReceiver().getRoundRadius(true);
-                    qu0Var.k = poVar.d.getScaleX();
-                    qu0Var.p = true;
-                }
-            }
+                break;
+            case 26:
+                Pattern pattern = LaunchActivity.y1;
+                AndroidUtilities.runOnUIThread(new tq((LaunchActivity) obj2, tLObject, (org.telegram.ui.ActionBar.i6) obj, 17));
+                break;
+            case 27:
+                Pattern pattern2 = LaunchActivity.y1;
+                AndroidUtilities.runOnUIThread(new c30(obj2, tLObject, obj, (Object) tL_error, 5));
+                break;
+            case 28:
+                AndroidUtilities.runOnUIThread(new tq((yb0) obj2, tLObject, (String) obj, i14));
+                break;
+            default:
+                AndroidUtilities.runOnUIThread(new tq((vb0) obj2, tLObject, (TLRPC.User) obj, i15));
+                break;
         }
-        return qu0Var;
-    }
-
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final void G() {
-        this.a.e.getImageReceiver().setVisible(true, true);
-    }
-
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final boolean M() {
-        po poVar = this.a;
-        long j10 = poVar.z0;
-        if (j10 == 0) {
-            return true;
-        }
-        TLRPC.TL_photos_updateProfilePhoto tL_photos_updateProfilePhoto = new TLRPC.TL_photos_updateProfilePhoto();
-        tL_photos_updateProfilePhoto.bot = poVar.getMessagesController().getInputUser(j10);
-        tL_photos_updateProfilePhoto.flags |= 2;
-        tL_photos_updateProfilePhoto.id = new TLRPC.TL_inputPhotoEmpty();
-        poVar.getConnectionsManager().sendRequest(tL_photos_updateProfilePhoto, new o(this, 2));
-        return false;
-    }
-
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final void f(String str, String str2, boolean z4) {
-        this.a.s.q(str, str2, z4);
-    }
-
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final boolean t() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final int y() {
-        return 1;
     }
 }

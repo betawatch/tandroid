@@ -1,39 +1,39 @@
 package ph;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.TranslateController;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.g51;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.w51;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
-public final class m extends g51 {
-    public static final /* synthetic */ int a = 0;
+public final /* synthetic */ class m implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ t9 b;
 
-    static {
-        g51.setup(new m());
+    public /* synthetic */ m(t9 t9Var, int i10) {
+        this.a = i10;
+        this.b = t9Var;
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final void bindView(View view, h51 h51Var, boolean z4, w51 w51Var, h61 h61Var) {
-        n nVar = (n) view;
-        TranslateController.Language language = (TranslateController.Language) h51Var.G;
-        nVar.a.setText(language.displayName);
-        nVar.b.setText(language.ownDisplayName);
-        if (nVar.c != z4) {
-            nVar.invalidate();
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        Integer num = (Integer) obj;
+        switch (this.a) {
+            case 0:
+                int intValue = num.intValue();
+                t9 t9Var = this.b;
+                t9Var.setPeriod(intValue);
+                Utilities.Callback callback = t9Var.y1;
+                if (callback != null) {
+                    callback.run(num);
+                    break;
+                }
+                break;
+            default:
+                Utilities.Callback callback2 = this.b.z1;
+                if (callback2 != null) {
+                    callback2.run(num);
+                    break;
+                }
+                break;
         }
-        nVar.c = z4;
-        nVar.setWillNotDraw(!z4);
-    }
-
-    @Override // org.telegram.ui.Components.g51
-    public final View createView(Context context, sl0 sl0Var, int i10, int i11, g6 g6Var) {
-        return new n(context);
     }
 }

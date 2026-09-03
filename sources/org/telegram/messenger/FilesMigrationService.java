@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.function.Consumer;
 import org.telegram.ui.Components.ax0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class FilesMigrationService extends Service {
     public static FilesMigrationBottomSheet filesMigrationBottomSheet = null;
@@ -36,7 +36,7 @@ public class FilesMigrationService extends Service {
     private int movedFilesCount;
     private int totalFilesCount;
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     public class 1 extends Thread {
         public 1() {
         }
@@ -112,12 +112,12 @@ public class FilesMigrationService extends Service {
         }
         try {
             Files.move(path, file2.toPath(), new CopyOption[0]);
-        } catch (Exception e6) {
-            FileLog.e((Throwable) e6, false);
+        } catch (Exception e) {
+            FileLog.e((Throwable) e, false);
             try {
                 path.toFile().delete();
-            } catch (Exception e10) {
-                FileLog.e(e10);
+            } catch (Exception e6) {
+                FileLog.e(e6);
             }
         }
         this.movedFilesCount++;
@@ -150,13 +150,13 @@ public class FilesMigrationService extends Service {
                         convert.close();
                     } finally {
                     }
-                } catch (Exception e6) {
-                    FileLog.e(e6);
+                } catch (Exception e) {
+                    FileLog.e(e);
                 }
                 try {
                     file.delete();
-                } catch (Exception e10) {
-                    FileLog.e(e10);
+                } catch (Exception e6) {
+                    FileLog.e(e6);
                 }
             }
         }
@@ -216,8 +216,8 @@ public class FilesMigrationService extends Service {
         return super.onStartCommand(intent, i10, i11);
     }
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
-    public static class FilesMigrationBottomSheet extends org.telegram.ui.ActionBar.h3 {
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    public static class FilesMigrationBottomSheet extends org.telegram.ui.ActionBar.g3 {
         org.telegram.ui.ActionBar.p2 fragment;
 
         public FilesMigrationBottomSheet(org.telegram.ui.ActionBar.p2 p2Var) {
@@ -225,32 +225,32 @@ public class FilesMigrationService extends Service {
             this.fragment = p2Var;
             setCanceledOnTouchOutside(false);
             Activity parentActivity = p2Var.getParentActivity();
-            LinearLayout h = l.d.h(parentActivity, 1);
+            LinearLayout h = kf.k0.h(parentActivity, 1);
             ax0 ax0Var = new ax0(parentActivity, this.currentAccount);
             ax0Var.setStickerNum(7);
             ax0Var.getImageReceiver().setAutoRepeat(1);
-            h.addView(ax0Var, k7.c6.t(144, 144, 1, 0, 16, 0, 0));
+            h.addView(ax0Var, k7.b6.t(144, 144, 1, 0, 16, 0, 0));
             TextView textView = new TextView(parentActivity);
             textView.setGravity(8388611);
-            int i10 = org.telegram.ui.ActionBar.k6.j5;
-            y3.t(textView, org.telegram.ui.ActionBar.k6.w0(null, i10, false), 1, 20.0f);
+            int i10 = org.telegram.ui.ActionBar.j6.j5;
+            y3.t(textView, org.telegram.ui.ActionBar.j6.w0(null, i10, false), 1, 20.0f);
             textView.setText(LocaleController.getString(R.string.MigrateOldFolderTitle));
-            h.addView(textView, k7.c6.d(-1, -2.0f, 0, 21.0f, 30.0f, 21.0f, 0.0f));
+            h.addView(textView, k7.b6.d(-1, -2.0f, 0, 21.0f, 30.0f, 21.0f, 0.0f));
             TextView textView2 = new TextView(parentActivity);
             textView2.setGravity(8388611);
             textView2.setTextSize(1, 15.0f);
-            textView2.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, i10, false));
+            textView2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
             y3.q(R.string.MigrateOldFolderDescription, textView2);
-            h.addView(textView2, k7.c6.d(-1, -2.0f, 0, 21.0f, 15.0f, 21.0f, 16.0f));
+            h.addView(textView2, k7.b6.d(-1, -2.0f, 0, 21.0f, 15.0f, 21.0f, 16.0f));
             TextView textView3 = new TextView(parentActivity);
             textView3.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
             textView3.setGravity(17);
             textView3.setTextSize(1, 14.0f);
             textView3.setTypeface(AndroidUtilities.bold());
             textView3.setText(LocaleController.getString(R.string.MigrateOldFolderButton));
-            textView3.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.Sh, false));
-            textView3.setBackground(org.telegram.ui.ActionBar.a6.f(new float[]{6.0f}, org.telegram.ui.ActionBar.k6.Oh));
-            h.addView(textView3, k7.c6.d(-1, 48.0f, 0, 16.0f, 15.0f, 16.0f, 16.0f));
+            textView3.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Sh, false));
+            textView3.setBackground(org.telegram.ui.ActionBar.z5.f(new float[]{6.0f}, org.telegram.ui.ActionBar.j6.Oh));
+            h.addView(textView3, k7.b6.d(-1, 48.0f, 0, 16.0f, 15.0f, 16.0f, 16.0f));
             textView3.setOnClickListener(new x3(this, 0));
             ScrollView scrollView = new ScrollView(parentActivity);
             scrollView.addView(h);
@@ -262,17 +262,17 @@ public class FilesMigrationService extends Service {
             migrateOldFolder();
         }
 
-        @Override // org.telegram.ui.ActionBar.h3
+        @Override // org.telegram.ui.ActionBar.g3
         public boolean canDismissWithSwipe() {
             return false;
         }
 
-        @Override // org.telegram.ui.ActionBar.h3
+        @Override // org.telegram.ui.ActionBar.g3
         public boolean canDismissWithTouchOutside() {
             return false;
         }
 
-        @Override // org.telegram.ui.ActionBar.h3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.l2
+        @Override // org.telegram.ui.ActionBar.g3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.l2
         public void dismiss() {
             super.dismiss();
             FilesMigrationService.filesMigrationBottomSheet = null;
@@ -307,7 +307,7 @@ public class FilesMigrationService extends Service {
             parentActivity.requestPermissions((String[]) arrayList.toArray(new String[arrayList.size()]), 4);
         }
 
-        @Override // org.telegram.ui.ActionBar.h3, org.telegram.ui.ActionBar.l2
+        @Override // org.telegram.ui.ActionBar.g3, org.telegram.ui.ActionBar.l2
         public /* bridge */ /* synthetic */ void setLastVisible(boolean z4) {
         }
     }

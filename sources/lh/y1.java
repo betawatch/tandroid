@@ -1,72 +1,46 @@
 package lh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
-import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
-/* loaded from: classes.dex */
-public final class y1 extends View {
-    public final a2 a;
-    public CharSequence b;
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class y1 implements RequestDelegate {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ g5 b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ Object f;
 
-    public y1(Context context) {
-        super(context);
-        a2 a2Var = new a2(this);
-        this.a = a2Var;
-        a2Var.setCallback(this);
+    public /* synthetic */ y1(g5 g5Var, long j10, long j11, Utilities.Callback callback, long j12) {
+        this.b = g5Var;
+        this.c = j10;
+        this.d = j11;
+        this.f = callback;
+        this.e = j12;
     }
 
-    public final void a(int i10, int i11) {
-        this.a.a.setShader(new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(48.0f), AndroidUtilities.dp(48.0f), new int[]{i10, i11}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new l2(this.b, (org.telegram.ui.ActionBar.d2) this.f, tLObject, this.c, this.d, this.e, tL_error));
+                break;
+            default:
+                AndroidUtilities.runOnUIThread(new l2(this.b, tLObject, this.c, this.d, (Utilities.Callback) this.f, tL_error, this.e));
+                break;
+        }
     }
 
-    public final void b(String str, boolean z4) {
-        this.b = str;
-        this.a.e(z4 ? 10 : 11, str, z4);
-    }
-
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int width = getWidth();
-        int height = getHeight();
-        a2 a2Var = this.a;
-        a2Var.setBounds(0, 0, width, height);
-        a2Var.draw(canvas);
-    }
-
-    public CharSequence getText() {
-        return this.b;
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f));
-    }
-
-    public void setBackdrop(TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop) {
-        this.a.d(stargiftattributebackdrop, false, false);
-        invalidate();
-    }
-
-    public void setColor(int i10) {
-        Paint paint = this.a.a;
-        paint.setShader(null);
-        paint.setColor(i10);
-    }
-
-    public void setStrokeColor(int i10) {
-        this.a.d.setColor(i10);
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return this.a == drawable || super.verifyDrawable(drawable);
+    public /* synthetic */ y1(g5 g5Var, org.telegram.ui.ActionBar.d2 d2Var, long j10, long j11, long j12) {
+        this.b = g5Var;
+        this.f = d2Var;
+        this.c = j10;
+        this.d = j11;
+        this.e = j12;
     }
 }

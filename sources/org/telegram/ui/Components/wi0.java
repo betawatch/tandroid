@@ -1,306 +1,169 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
-import android.graphics.CornerPathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.Rect;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.RectF;
-import android.text.StaticLayout;
+import android.graphics.drawable.Drawable;
+import android.text.Layout;
+import android.text.Spanned;
+import android.text.TextPaint;
 import android.view.View;
-import android.view.ViewParent;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class wi0 extends Path {
-    public final org.telegram.ui.Cells.t1 a;
+public final class wi0 {
+    public final View a;
     public final int b;
     public final int c;
     public final int d;
-    public final boolean e;
-    public final boolean f;
-    public final byte[] g;
-    public int h;
-    public final Paint i;
-    public final uq j;
-    public final z5 k;
-    public final ArrayList l;
-    public final ArrayList m;
-    public final float n;
-    public final float o;
-    public final float p;
-    public vi0 q;
+    public final aj0 e;
+    public final TextPaint f;
+    public RectF g;
 
-    public wi0(final org.telegram.ui.Cells.t1 t1Var, int i10, int i11) {
-        Paint paint = new Paint(1);
-        this.i = paint;
-        this.j = new uq();
-        this.l = new ArrayList();
-        this.m = new ArrayList();
-        this.a = t1Var;
-        final int i12 = 0;
-        this.k = new z5(0.0f, new Runnable() { // from class: org.telegram.ui.Components.ui0
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i12) {
-                    case 0:
-                        org.telegram.ui.Cells.t1 t1Var2 = t1Var;
-                        if (t1Var2 != null) {
-                            t1Var2.invalidate();
-                        }
-                        if (t1Var2.getParent() instanceof View) {
-                            ((View) t1Var2.getParent()).invalidate();
-                            break;
-                        }
-                        break;
-                    default:
-                        org.telegram.ui.Cells.t1 t1Var3 = t1Var;
-                        if (t1Var3 != null) {
-                            t1Var3.invalidate();
-                        }
-                        if (t1Var3.getParent() instanceof View) {
-                            ((View) t1Var3.getParent()).invalidate();
-                            break;
-                        }
-                        break;
-                }
-            }
-        }, 350L, 420L, pr.h);
-        this.b = i10;
-        int i13 = -i11;
-        this.c = i13;
-        this.d = i13;
-        this.e = true;
-        this.f = false;
-        int dp = AndroidUtilities.dp(4.0f);
-        this.h = dp;
-        paint.setPathEffect(new CornerPathEffect(dp));
-    }
-
-    public final void a(float f10, float f11, float f12, float f13) {
-        if (f10 >= f12) {
-            return;
+    public wi0(wt wtVar, Layout layout, Spanned spanned, aj0 aj0Var) {
+        int i10;
+        int i11;
+        this.a = wtVar;
+        this.e = aj0Var;
+        this.f = layout.getPaint();
+        aj0Var.c = spanned.getSpanStart(aj0Var);
+        boolean z4 = aj0Var.a;
+        int spanEnd = spanned.getSpanEnd(aj0Var);
+        aj0Var.d = spanEnd;
+        if (spanEnd - 1 >= 0 && spanEnd < spanned.length() && spanned.charAt(aj0Var.d) != '\n' && spanned.charAt(aj0Var.d - 1) == '\n') {
+            aj0Var.d--;
         }
-        float f14 = this.p;
-        float max = Math.max(f14, f10);
-        float max2 = Math.max(f14, f12);
-        float f15 = this.n;
-        float f16 = max + f15;
-        float f17 = this.o;
-        float f18 = f11 + f17;
-        float f19 = max2 + f15;
-        vi0 vi0Var = new vi0();
-        vi0Var.a = f16 - AndroidUtilities.dp(3.0f);
-        vi0Var.b = f19 + AndroidUtilities.dp(3.0f);
-        vi0Var.c = f18;
-        vi0Var.d = f13 + f17;
-        vi0 vi0Var2 = this.q;
-        if (vi0Var2 != null) {
-            float f20 = vi0Var2.d;
-            vi0Var2.h = (f20 + f18) / 2.0f;
-            vi0Var.g = (f20 + f18) / 2.0f;
-        }
-        this.l.add(vi0Var);
-        this.q = vi0Var;
-    }
-
-    @Override // android.graphics.Path
-    public final void addRect(float f10, float f11, float f12, float f13, Path.Direction direction) {
-        a(f10, f11, f12, f13);
-    }
-
-    public final void b(Canvas canvas, float f10, float f11, Rect rect, float f12) {
-        int i10 = 0;
-        float d = this.k.d(1.0f, false);
-        canvas.save();
-        boolean z4 = this.f;
-        Paint paint = this.i;
-        org.telegram.ui.Cells.t1 t1Var = this.a;
-        uq uqVar = this.j;
+        int lineForOffset = layout.getLineForOffset(aj0Var.c);
+        int lineForOffset2 = layout.getLineForOffset(aj0Var.d);
+        aj0Var.f = lineForOffset2 - lineForOffset < 1;
+        aj0Var.h = lineForOffset <= 0;
+        aj0Var.n = lineForOffset2 + 1 >= layout.getLineCount();
         if (z4) {
-            int lerp = AndroidUtilities.lerp(AndroidUtilities.dp(4.0f), 0, d);
-            if (this.h != lerp) {
-                this.h = lerp;
-                paint.setPathEffect(new CornerPathEffect(lerp));
+            int lineTop = layout.getLineTop(lineForOffset);
+            if (aj0Var.f) {
+                i10 = 0;
+            } else {
+                i10 = (aj0Var.h ? 2 : 0) + 3;
             }
-            uqVar.rewind();
-            int I2 = t1Var.I2(this.g);
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(t1Var.getBackgroundDrawableLeft(), t1Var.H2(I2), t1Var.getBackgroundDrawableRight(), t1Var.G2(I2));
-            AndroidUtilities.lerp(rect, rectF, d, rectF);
-            uqVar.addRect(rectF, Path.Direction.CW);
-            uqVar.a();
-        } else if (this.e) {
-            int lerp2 = AndroidUtilities.lerp(AndroidUtilities.dp(4.0f), 0, d);
-            if (this.h != lerp2) {
-                this.h = lerp2;
-                paint.setPathEffect(new CornerPathEffect(lerp2));
+            this.b = AndroidUtilities.dp(3 - i10) + lineTop;
+            int lineBottom = layout.getLineBottom(lineForOffset2);
+            if (aj0Var.f) {
+                i11 = 0;
+            } else {
+                i11 = (aj0Var.n ? 2 : 0) + 3;
             }
-            uqVar.rewind();
-            int O2 = t1Var.O2(-this.c);
-            RectF rectF2 = AndroidUtilities.rectTmp;
-            rectF2.set(t1Var.getBackgroundDrawableLeft(), t1Var.H2(O2), t1Var.getBackgroundDrawableRight(), t1Var.G2(O2));
-            AndroidUtilities.lerp(rect, rectF2, d, rectF2);
-            uqVar.addRect(rectF2, Path.Direction.CW);
-            uqVar.a();
+            this.c = lineBottom - AndroidUtilities.dp(2 - i11);
         } else {
-            canvas.translate(f10, f11);
-            uqVar.rewind();
-            while (true) {
-                ArrayList arrayList = this.l;
-                if (i10 >= arrayList.size()) {
-                    break;
-                }
-                vi0 vi0Var = (vi0) arrayList.get(i10);
-                uqVar.addRect(AndroidUtilities.lerp(rect.left - f10, vi0Var.a, d), AndroidUtilities.lerp(vi0Var.e ? rect.top - f11 : vi0Var.g, vi0Var.c, d), AndroidUtilities.lerp(rect.right - f10, vi0Var.b, d), AndroidUtilities.lerp(vi0Var.f ? rect.bottom - f11 : vi0Var.h, vi0Var.d, d), Path.Direction.CW);
-                i10++;
-            }
-            uqVar.a();
+            this.b = AndroidUtilities.dp(3 - (aj0Var.f ? 1 : 2)) + layout.getLineTop(lineForOffset);
+            this.c = layout.getLineBottom(lineForOffset2) - AndroidUtilities.dp(2 - (aj0Var.f ? 1 : 2));
         }
-        int alpha = paint.getAlpha();
-        paint.setAlpha((int) (alpha * f12));
-        canvas.drawPath(uqVar, paint);
-        paint.setAlpha(alpha);
+        aj0Var.r = false;
+        float f10 = 0.0f;
+        while (lineForOffset <= lineForOffset2) {
+            f10 = Math.max(f10, layout.getLineRight(lineForOffset));
+            if (layout.getLineLeft(lineForOffset) > 0.0f) {
+                aj0Var.r = true;
+            }
+            lineForOffset++;
+        }
+        this.d = (int) Math.ceil(f10);
+        if (z4 && wtVar != null && aj0Var.G == null) {
+            aj0Var.G = new si0(wtVar);
+        }
+    }
+
+    public final void a(Canvas canvas, int i10, int i11) {
+        RectF rectF;
+        int i12;
+        int i13;
+        Path.Direction direction;
+        aj0 aj0Var = this.e;
+        int i14 = aj0Var.F;
+        float[] fArr = aj0Var.y;
+        boolean z4 = aj0Var.a;
+        Paint paint = aj0Var.x;
+        Paint paint2 = aj0Var.C;
+        Path path = aj0Var.E;
+        float[] fArr2 = aj0Var.D;
+        Path path2 = aj0Var.B;
+        Drawable drawable = aj0Var.w;
+        if (i14 != i11) {
+            aj0Var.F = i11;
+            drawable.setColorFilter(new PorterDuffColorFilter(i11, PorterDuff.Mode.SRC_IN));
+            paint2.setColor(i11);
+            paint.setColor(i0.a.k(i11, 30));
+        }
+        int dp = z4 ? i10 : AndroidUtilities.dp(32.0f) + this.d;
+        int i15 = ((double) dp) >= ((double) i10) * 0.95d ? i10 : dp;
+        canvas.save();
+        canvas.translate(0.0f, 0.0f);
+        RectF rectF2 = AndroidUtilities.rectTmp;
+        int i16 = this.b;
+        float f10 = i16;
+        float f11 = i15;
+        int i17 = i15;
+        int i18 = this.c;
+        float f12 = i18;
+        rectF2.set(0.0f, f10, f11, f12);
+        fArr[7] = 0.0f;
+        fArr[6] = 0.0f;
+        fArr[1] = 0.0f;
+        fArr[0] = 0.0f;
+        float dp2 = AndroidUtilities.dp(4.0f);
+        fArr[5] = dp2;
+        fArr[4] = dp2;
+        fArr[3] = dp2;
+        fArr[2] = dp2;
+        path2.rewind();
+        Path.Direction direction2 = Path.Direction.CW;
+        path2.addRoundRect(rectF2, fArr, direction2);
+        canvas.drawPath(path2, paint);
+        if (!z4 || this.a == null || aj0Var.G == null) {
+            rectF = rectF2;
+            i12 = i16;
+            i13 = i18;
+            direction = direction2;
+        } else {
+            if (this.g == null) {
+                this.g = new RectF();
+            }
+            int dp3 = AndroidUtilities.dp(3.333f);
+            i12 = i16;
+            i13 = i18;
+            direction = direction2;
+            rectF = rectF2;
+            aj0Var.G.a(canvas, this.g, i17 - dp3, i18 - dp3, i11, aj0Var.e, b());
+        }
+        rectF.set(-AndroidUtilities.dp(3.0f), f10, 0.0f, f12);
+        float dp4 = AndroidUtilities.dp(4.0f);
+        fArr2[7] = dp4;
+        fArr2[6] = dp4;
+        fArr2[1] = dp4;
+        fArr2[0] = dp4;
+        fArr2[5] = 0.0f;
+        fArr2[4] = 0.0f;
+        fArr2[3] = 0.0f;
+        fArr2[2] = 0.0f;
+        path.rewind();
+        path.addRoundRect(rectF, fArr2, direction);
+        canvas.drawPath(path, paint2);
+        if (!aj0Var.r) {
+            int intrinsicHeight = (int) (((i12 + i13) - drawable.getIntrinsicHeight()) / 2.0f);
+            if (intrinsicHeight > AndroidUtilities.dp(8.0f) + i12) {
+                intrinsicHeight = AndroidUtilities.dp(4.0f) + i12;
+            }
+            drawable.setBounds((i17 - drawable.getIntrinsicWidth()) - AndroidUtilities.dp(4.0f), intrinsicHeight, i17 - AndroidUtilities.dp(4.0f), drawable.getIntrinsicHeight() + intrinsicHeight);
+            drawable.setAlpha((int) 255.0f);
+            drawable.draw(canvas);
+        }
         canvas.restore();
     }
 
-    public wi0(final org.telegram.ui.Cells.t1 t1Var, int i10, byte[] bArr) {
-        Paint paint = new Paint(1);
-        this.i = paint;
-        this.j = new uq();
-        this.l = new ArrayList();
-        this.m = new ArrayList();
-        this.a = t1Var;
-        final int i11 = 1;
-        this.k = new z5(0.0f, new Runnable() { // from class: org.telegram.ui.Components.ui0
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i11) {
-                    case 0:
-                        org.telegram.ui.Cells.t1 t1Var2 = t1Var;
-                        if (t1Var2 != null) {
-                            t1Var2.invalidate();
-                        }
-                        if (t1Var2.getParent() instanceof View) {
-                            ((View) t1Var2.getParent()).invalidate();
-                            break;
-                        }
-                        break;
-                    default:
-                        org.telegram.ui.Cells.t1 t1Var3 = t1Var;
-                        if (t1Var3 != null) {
-                            t1Var3.invalidate();
-                        }
-                        if (t1Var3.getParent() instanceof View) {
-                            ((View) t1Var3.getParent()).invalidate();
-                            break;
-                        }
-                        break;
-                }
-            }
-        }, 350L, 420L, pr.h);
-        this.b = i10;
-        this.g = bArr;
-        this.c = 0;
-        this.d = 0;
-        this.e = false;
-        this.f = true;
-        int dp = AndroidUtilities.dp(4.0f);
-        this.h = dp;
-        paint.setPathEffect(new CornerPathEffect(dp));
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public wi0(org.telegram.ui.Cells.t1 t1Var, ViewParent viewParent, int i10, ArrayList arrayList, int i11, int i12, float f10) {
-        int i13;
-        float lineLeft;
-        float lineRight;
-        ArrayList arrayList2 = arrayList;
-        int i14 = i11;
-        Paint paint = new Paint(1);
-        this.i = paint;
-        this.j = new uq();
-        this.l = new ArrayList();
-        this.m = new ArrayList();
-        this.a = null;
-        this.k = new z5(0.0f, new b90(7, t1Var, viewParent), 350L, 420L, pr.h);
-        this.b = i10;
-        this.c = i14;
-        this.d = i12;
-        int i15 = 0;
-        this.e = false;
-        this.f = false;
-        if (arrayList2 == null) {
-            return;
-        }
-        int dp = AndroidUtilities.dp(4.0f);
-        this.h = dp;
-        paint.setPathEffect(new CornerPathEffect(dp));
-        int i16 = 0;
-        boolean z4 = false;
-        while (i16 < arrayList2.size()) {
-            MessageObject.TextLayoutBlock textLayoutBlock = (MessageObject.TextLayoutBlock) arrayList2.get(i16);
-            if (textLayoutBlock != 0 && i14 <= textLayoutBlock.charactersEnd && i12 >= (i13 = textLayoutBlock.charactersOffset)) {
-                int max = Math.max(i15, i14 - i13);
-                int i17 = textLayoutBlock.charactersOffset;
-                int min = Math.min(i12 - i17, textLayoutBlock.charactersEnd - i17);
-                float f11 = -f10;
-                this.n = f11;
-                if (textLayoutBlock.code && !textLayoutBlock.quote) {
-                    this.n = f11 + AndroidUtilities.dp(10.0f);
-                }
-                this.o = textLayoutBlock.textYOffset(arrayList2) + textLayoutBlock.padTop;
-                this.p = textLayoutBlock.quote ? AndroidUtilities.dp(10.0f) : 0.0f;
-                z4 = z4 || AndroidUtilities.isRTL(textLayoutBlock.textLayout.getText());
-                if (z4) {
-                    textLayoutBlock.textLayout.getSelectionPath(max, min, this);
-                } else {
-                    StaticLayout staticLayout = textLayoutBlock.textLayout;
-                    if (max != min) {
-                        if (min < max) {
-                            min = max;
-                            max = min;
-                        }
-                        int lineForOffset = staticLayout.getLineForOffset(max);
-                        int lineForOffset2 = staticLayout.getLineForOffset(min);
-                        for (int i18 = lineForOffset; i18 <= lineForOffset2; i18++) {
-                            int lineStart = staticLayout.getLineStart(i18);
-                            int lineEnd = staticLayout.getLineEnd(i18);
-                            if (lineEnd != lineStart && (lineStart + 1 != lineEnd || !Character.isWhitespace(staticLayout.getText().charAt(lineStart)))) {
-                                if (i18 == lineForOffset && max > lineStart) {
-                                    lineLeft = staticLayout.getPrimaryHorizontal(max);
-                                } else {
-                                    lineLeft = staticLayout.getLineLeft(i18);
-                                }
-                                if (i18 == lineForOffset2 && min < lineEnd) {
-                                    lineRight = staticLayout.getPrimaryHorizontal(min);
-                                } else {
-                                    lineRight = staticLayout.getLineRight(i18);
-                                }
-                                a(Math.min(lineLeft, lineRight), staticLayout.getLineTop(i18), Math.max(lineLeft, lineRight), staticLayout.getLineBottom(i18));
-                            }
-                        }
-                    }
-                }
-                if (textLayoutBlock.quoteCollapse && textLayoutBlock.collapsed()) {
-                    this.m.add(Integer.valueOf(textLayoutBlock.index));
-                }
-            }
-            i16++;
-            arrayList2 = arrayList;
-            i14 = i11;
-            i15 = 0;
-        }
-        if (this.l.size() > 0) {
-            vi0 vi0Var = (vi0) this.l.get(0);
-            vi0 vi0Var2 = (vi0) l.d.i(1, this.l);
-            vi0Var.e = true;
-            vi0Var.c -= AndroidUtilities.dp(0.66f);
-            vi0Var2.f = true;
-            vi0Var2.d += AndroidUtilities.dp(0.66f);
-        }
+    public final boolean b() {
+        return this.e.a && ((float) (this.c - this.b)) > (this.f.getTextSize() * 1.3f) * ((float) 3);
     }
 }

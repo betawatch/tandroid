@@ -9,7 +9,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l21 implements Runnable {
     public final /* synthetic */ int a;
@@ -29,10 +29,10 @@ public final /* synthetic */ class l21 implements Runnable {
                 boolean z4 = o21Var.r;
                 if (z4) {
                     if (z4 && o21Var.C == null) {
-                        org.telegram.ui.Components.hj0 hj0Var = new org.telegram.ui.Components.hj0(R.raw.qr_matrix, AndroidUtilities.dp(200.0f), AndroidUtilities.dp(200.0f));
-                        o21Var.C = hj0Var;
-                        hj0Var.s0 = o21Var;
-                        hj0Var.getPaint().setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
+                        org.telegram.ui.Components.gj0 gj0Var = new org.telegram.ui.Components.gj0(R.raw.qr_matrix, AndroidUtilities.dp(200.0f), AndroidUtilities.dp(200.0f));
+                        o21Var.C = gj0Var;
+                        gj0Var.s0 = o21Var;
+                        gj0Var.getPaint().setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
                         o21Var.C.I(1);
                         o21Var.C.start();
                     }
@@ -42,21 +42,21 @@ public final /* synthetic */ class l21 implements Runnable {
                             Utilities.themeQueue.postRunnable(new m21(o21Var, o21Var.getWidth(), o21Var.getHeight(), 2));
                             o21Var.s.q("", true, true);
                         }
-                        MessagesController.getInstance(UserConfig.selectedAccount).requestContactToken(o21Var.G == 0 ? 750L : 1750L, new w3(o21Var, 18));
+                        MessagesController.getInstance(UserConfig.selectedAccount).requestContactToken(o21Var.G == 0 ? 750L : 1750L, new y3(o21Var, 18));
                     }
                     int i10 = o21Var.G;
                     if (i10 > 0 && o21Var.F != null) {
                         long max = Math.max(0L, (i10 - (System.currentTimeMillis() / 1000)) - 1);
                         int i11 = (int) (max % 60);
                         int min = Math.min(99, (int) (max / 60));
-                        org.telegram.ui.Components.no0 no0Var = o21Var.s;
+                        org.telegram.ui.Components.mo0 mo0Var = o21Var.s;
                         StringBuilder sb = new StringBuilder();
                         sb.append(min < 10 ? "0" : "");
                         sb.append(min);
                         sb.append(":");
                         sb.append(i11 < 10 ? "0" : "");
                         sb.append(i11);
-                        no0Var.q(sb.toString(), true, false);
+                        mo0Var.q(sb.toString(), true, false);
                     }
                     if (o21Var.isAttachedToWindow()) {
                         AndroidUtilities.runOnUIThread(o21Var.K, 1000L);

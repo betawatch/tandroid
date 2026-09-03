@@ -7,13 +7,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class BotGuardHelper extends BaseController {
     private static volatile BotGuardHelper[] Instance = new BotGuardHelper[4];
     private final LongSparseLongArray queryIdToBotId;
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     public static class GuardBotDecisionResultNotification {
         public final long dialogId;
         public final long guardBotId;
@@ -63,12 +63,12 @@ public class BotGuardHelper extends BaseController {
 
     public void closeGuardBotWebApp(long j10, long j11, TLRPC.JoinChatBotResult joinChatBotResult) {
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.guardBotDecisionResult, new GuardBotDecisionResultNotification(j10, this.queryIdToBotId.get(j11, 0L), j11, joinChatBotResult));
-        HashSet hashSet = sh.p2.T0;
+        HashSet hashSet = rh.p2.T0;
         if (hashSet != null) {
             Iterator it = hashSet.iterator();
             while (it.hasNext()) {
-                sh.p2 p2Var = (sh.p2) it.next();
-                sh.y3 y3Var = p2Var.s0;
+                rh.p2 p2Var = (rh.p2) it.next();
+                rh.y3 y3Var = p2Var.s0;
                 if (y3Var != null && y3Var.g == 5) {
                     long j12 = y3Var.b;
                     if (j12 == j10 || j12 == 0) {
@@ -104,9 +104,9 @@ public class BotGuardHelper extends BaseController {
         }
         this.queryIdToBotId.put(j12, j11);
         org.telegram.ui.ActionBar.p2 R2 = LaunchActivity.R();
-        sh.y3 b10 = sh.y3.b(this.currentAccount, j10, j11, null, null, 5, 0, 0L, null, false, null, null, 0, false, false);
+        rh.y3 b10 = rh.y3.b(this.currentAccount, j10, j11, null, null, 5, 0, 0L, null, false, null, null, 0, false, false);
         b10.d = j12;
-        sh.p2 p2Var = new sh.p2(LaunchActivity.D1, null);
+        rh.p2 p2Var = new rh.p2(LaunchActivity.D1, null);
         p2Var.w(false);
         p2Var.x0 = true;
         p2Var.h0 = LaunchActivity.D1;

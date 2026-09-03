@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.RandomAccessFile;
 import java.lang.reflect.Array;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class StatsController extends BaseController {
     private static final int OLD_TYPES_COUNT = 7;
@@ -22,7 +22,7 @@ public class StatsController extends BaseController {
     public static final int TYPE_VIDEOS = 2;
     public static final int TYPE_WIFI = 1;
     private byte[] buffer;
-    lf.c0 byteArrayOutputStream;
+    kf.c0 byteArrayOutputStream;
     private int[] callsTotalTime;
     private long lastInternalStatsSaveTime;
     private long[][] receivedBytes;
@@ -52,7 +52,7 @@ public class StatsController extends BaseController {
         this.receivedItems = (int[][]) Array.newInstance((Class<?>) cls2, 3, 8);
         this.resetStatsDate = new long[3];
         this.callsTotalTime = new int[3];
-        this.byteArrayOutputStream = new lf.c0(32);
+        this.byteArrayOutputStream = new kf.c0(32);
         this.saveRunnable = new Runnable() { // from class: org.telegram.messenger.StatsController.2
             @Override // java.lang.Runnable
             public void run() {
@@ -91,7 +91,7 @@ public class StatsController extends BaseController {
                     }
                     StatsController.this.statsFile.seek(0L);
                     RandomAccessFile randomAccessFile = StatsController.this.statsFile;
-                    lf.c0 c0Var = StatsController.this.byteArrayOutputStream;
+                    kf.c0 c0Var = StatsController.this.byteArrayOutputStream;
                     randomAccessFile.write(c0Var.a, 0, c0Var.b);
                     StatsController.this.statsFile.getFD().sync();
                 } catch (Exception unused) {
@@ -100,7 +100,7 @@ public class StatsController extends BaseController {
         };
         File filesDirFixed = ApplicationLoader.getFilesDirFixed();
         if (i10 != 0) {
-            filesDirFixed = new File(ApplicationLoader.getFilesDirFixed(), l.d.k(i10, "account", "/"));
+            filesDirFixed = new File(ApplicationLoader.getFilesDirFixed(), kf.k0.k(i10, "account", "/"));
             filesDirFixed.mkdirs();
         }
         try {

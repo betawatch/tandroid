@@ -11,7 +11,7 @@ import b7.f1;
 import b7.g1;
 import b7.h1;
 import b7.j1;
-import j7.g5;
+import j7.f5;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
@@ -19,7 +19,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class j extends l {
     public static final Parcelable.Creator<j> CREATOR = new r0(19);
@@ -147,8 +147,8 @@ public final class j extends l {
                                         if (bArr2 != null) {
                                         }
                                         return jSONObject;
-                                    } catch (g1 e6) {
-                                        throw new IllegalArgumentException("COSE key ill-formed", e6);
+                                    } catch (g1 e) {
+                                        throw new IllegalArgumentException("COSE key ill-formed", e);
                                     }
                                 } finally {
                                     try {
@@ -156,29 +156,29 @@ public final class j extends l {
                                     } catch (IOException unused) {
                                     }
                                 }
-                            } catch (g1 e10) {
-                                e = e10;
+                            } catch (g1 e6) {
+                                e = e6;
                                 throw new IllegalArgumentException("failed to parse COSE key", e);
                             }
-                        } catch (c1 e11) {
-                            e = e11;
+                        } catch (c1 e10) {
+                            e = e10;
                             throw new IllegalArgumentException("failed to parse COSE key", e);
                         }
-                    } catch (IllegalArgumentException e12) {
-                        throw new IllegalArgumentException("ill-formed authenticator data", e12);
+                    } catch (IllegalArgumentException e11) {
+                        throw new IllegalArgumentException("ill-formed authenticator data", e11);
                     }
-                } catch (g1 e13) {
-                    throw new IllegalArgumentException("authData value has wrong type", e13);
+                } catch (g1 e12) {
+                    throw new IllegalArgumentException("authData value has wrong type", e12);
                 }
-            } catch (c1 e14) {
+            } catch (c1 e13) {
+                e = e13;
+                throw new IllegalArgumentException("failed to parse attestation object", e);
+            } catch (g1 e14) {
                 e = e14;
                 throw new IllegalArgumentException("failed to parse attestation object", e);
-            } catch (g1 e15) {
-                e = e15;
-                throw new IllegalArgumentException("failed to parse attestation object", e);
             }
-        } catch (JSONException e16) {
-            throw new RuntimeException("Error encoding AuthenticatorAttestationResponse to JSON object", e16);
+        } catch (JSONException e15) {
+            throw new RuntimeException("Error encoding AuthenticatorAttestationResponse to JSON object", e15);
         }
     }
 
@@ -195,25 +195,25 @@ public final class j extends l {
     }
 
     public final String toString() {
-        androidx.biometric.e eVar = new androidx.biometric.e(getClass().getSimpleName(), 7);
+        af.d dVar = new af.d(getClass().getSimpleName(), 8);
         b7.o0 o0Var = b7.q0.d;
         byte[] u10 = this.a.u();
-        eVar.D(o0Var.c(u10.length, u10), "keyHandle");
+        dVar.D(o0Var.c(u10.length, u10), "keyHandle");
         byte[] u11 = this.b.u();
-        eVar.D(o0Var.c(u11.length, u11), "clientDataJSON");
+        dVar.D(o0Var.c(u11.length, u11), "clientDataJSON");
         byte[] u12 = this.c.u();
-        eVar.D(o0Var.c(u12.length, u12), "attestationObject");
-        eVar.D(Arrays.toString(this.d), "transports");
-        return eVar.toString();
+        dVar.D(o0Var.c(u12.length, u12), "attestationObject");
+        dVar.D(Arrays.toString(this.d), "transports");
+        return dVar.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = g5.q(parcel, 20293);
-        g5.c(parcel, 2, this.a.u());
-        g5.c(parcel, 3, this.b.u());
-        g5.c(parcel, 4, this.c.u());
-        g5.m(parcel, 5, this.d);
-        g5.r(parcel, q10);
+        int q10 = f5.q(parcel, 20293);
+        f5.c(parcel, 2, this.a.u());
+        f5.c(parcel, 3, this.b.u());
+        f5.c(parcel, 4, this.c.u());
+        f5.m(parcel, 5, this.d);
+        f5.r(parcel, q10);
     }
 }

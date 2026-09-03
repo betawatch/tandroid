@@ -1,78 +1,34 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cq implements Runnable {
+public final /* synthetic */ class cq implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ kq b;
+    public final /* synthetic */ lq b;
 
-    public /* synthetic */ cq(kq kqVar, int i10) {
+    public /* synthetic */ cq(lq lqVar, int i10) {
         this.a = i10;
-        this.b = kqVar;
+        this.b = lqVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        kq kqVar = this.b;
-        int i11 = 1;
-        switch (i10) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
             case 0:
-                TLRPC.User user = kqVar.v;
-                hq hqVar = kqVar.U0;
-                if (hqVar != null) {
-                    hqVar.b(0, kqVar.H ? kqVar.J : null, null, kqVar.P);
-                }
-                Bundle i12 = android.support.v4.media.a.i("scrollToTopOnResume", true);
-                i12.putLong("chat_id", kqVar.w.id);
-                if (!kqVar.getMessagesController().checkCanOpenChat(i12, kqVar)) {
-                    kqVar.t0(false);
-                    break;
-                } else {
-                    xn xnVar = new xn(i12);
-                    kqVar.presentFragment(xnVar, true);
-                    if (org.telegram.ui.Components.qc.a(xnVar)) {
-                        boolean z4 = kqVar.W0;
-                        if (!z4 || !kqVar.H) {
-                            if (!z4 && !kqVar.I && kqVar.H) {
-                                org.telegram.ui.Components.qc.C(xnVar, user.first_name).j();
-                                break;
-                            }
-                        } else {
-                            String str = user.first_name;
-                            org.telegram.ui.Components.qb qbVar = new org.telegram.ui.Components.qb(xnVar.getParentActivity(), xnVar.ba);
-                            qbVar.d(R.raw.ic_admin, "Shield");
-                            qbVar.b.setText(AndroidUtilities.replaceTags(LocaleController.formatString("UserAddedAsAdminHint", R.string.UserAddedAsAdminHint, str)));
-                            org.telegram.ui.Components.ic.g(xnVar, qbVar, 1500).j();
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 1:
-                kqVar.r0(false);
+                lq lqVar = this.b;
+                lqVar.h.b(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                lqVar.h.invalidateSelf();
                 break;
             default:
-                if (kqVar.r) {
-                    long j10 = kqVar.n;
-                    org.telegram.ui.ActionBar.d2[] d2VarArr = {new org.telegram.ui.ActionBar.d2(kqVar.getParentActivity(), 3, null)};
-                    kqVar.getMessagesController().toggleChatJoinRequest(kqVar.s, j10, true, false, true, new qg(d2VarArr, 2), new qg(d2VarArr, 3));
-                    d2VarArr[0].q(300L);
-                }
-                hq hqVar2 = kqVar.U0;
-                if (hqVar2 != null) {
-                    TLRPC.TL_chatAdminRights tL_chatAdminRights = kqVar.J;
-                    if (!tL_chatAdminRights.change_info && !tL_chatAdminRights.post_messages && !tL_chatAdminRights.manage_direct_messages && !tL_chatAdminRights.manage_welcome_messages && !tL_chatAdminRights.edit_messages && !tL_chatAdminRights.delete_messages && !tL_chatAdminRights.ban_users && !tL_chatAdminRights.invite_users && ((!kqVar.D || !tL_chatAdminRights.manage_topics) && !tL_chatAdminRights.pin_messages && !tL_chatAdminRights.manage_ranks && !tL_chatAdminRights.add_admins && !tL_chatAdminRights.anonymous && !tL_chatAdminRights.manage_call && ((!kqVar.B || (!tL_chatAdminRights.post_stories && !tL_chatAdminRights.edit_stories && !tL_chatAdminRights.delete_stories)) && !tL_chatAdminRights.other))) {
-                        i11 = 0;
-                    }
-                    hqVar2.b(i11, tL_chatAdminRights, kqVar.L, kqVar.P);
-                    kqVar.finishFragment();
+                lq lqVar2 = this.b;
+                lqVar2.getClass();
+                lqVar2.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                FrameLayout frameLayout = lqVar2.e;
+                if (frameLayout != null) {
+                    frameLayout.invalidate();
                     break;
                 }
                 break;

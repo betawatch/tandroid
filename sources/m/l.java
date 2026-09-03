@@ -13,34 +13,34 @@ import android.view.ActionMode;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.AutoCompleteTextView;
-import j7.s7;
+import j7.r7;
 import k7.x7;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class l extends AutoCompleteTextView implements u0.k {
     public static final int[] d = {R.attr.popupBackground};
     public final m a;
-    public final w0 b;
+    public final x0 b;
     public final y c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public l(Context context, AttributeSet attributeSet, int i10) {
         super(context, attributeSet, i10);
-        d3.a(context);
-        c3.a(this, getContext());
+        e3.a(context);
+        d3.a(this, getContext());
         l7.w0 y10 = l7.w0.y(getContext(), attributeSet, d, i10);
         if (((TypedArray) y10.c).hasValue(0)) {
-            setDropDownBackgroundDrawable(y10.s(0));
+            setDropDownBackgroundDrawable(y10.t(0));
         }
         y10.A();
         m mVar = new m(this);
         this.a = mVar;
         mVar.d(attributeSet, i10);
-        w0 w0Var = new w0(this);
-        this.b = w0Var;
-        w0Var.f(attributeSet, i10);
-        w0Var.b();
+        x0 x0Var = new x0(this);
+        this.b = x0Var;
+        x0Var.f(attributeSet, i10);
+        x0Var.b();
         y yVar = new y(this);
         this.c = yVar;
         yVar.b(attributeSet, i10);
@@ -70,9 +70,9 @@ public class l extends AutoCompleteTextView implements u0.k {
         if (mVar != null) {
             mVar.a();
         }
-        w0 w0Var = this.b;
-        if (w0Var != null) {
-            w0Var.b();
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            x0Var.b();
         }
     }
 
@@ -108,7 +108,7 @@ public class l extends AutoCompleteTextView implements u0.k {
     @Override // android.widget.TextView, android.view.View
     public InputConnection onCreateInputConnection(EditorInfo editorInfo) {
         InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
-        k7.m.a(editorInfo, onCreateInputConnection, this);
+        k7.l.a(editorInfo, onCreateInputConnection, this);
         return this.c.c(onCreateInputConnection, editorInfo);
     }
 
@@ -133,18 +133,18 @@ public class l extends AutoCompleteTextView implements u0.k {
     @Override // android.widget.TextView
     public final void setCompoundDrawables(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
         super.setCompoundDrawables(drawable, drawable2, drawable3, drawable4);
-        w0 w0Var = this.b;
-        if (w0Var != null) {
-            w0Var.b();
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            x0Var.b();
         }
     }
 
     @Override // android.widget.TextView
     public final void setCompoundDrawablesRelative(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
         super.setCompoundDrawablesRelative(drawable, drawable2, drawable3, drawable4);
-        w0 w0Var = this.b;
-        if (w0Var != null) {
-            w0Var.b();
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            x0Var.b();
         }
     }
 
@@ -155,7 +155,7 @@ public class l extends AutoCompleteTextView implements u0.k {
 
     @Override // android.widget.AutoCompleteTextView
     public void setDropDownBackgroundResource(int i10) {
-        setDropDownBackgroundDrawable(s7.b(getContext(), i10));
+        setDropDownBackgroundDrawable(r7.b(getContext(), i10));
     }
 
     public void setEmojiCompatEnabled(boolean z4) {
@@ -183,24 +183,24 @@ public class l extends AutoCompleteTextView implements u0.k {
 
     @Override // u0.k
     public void setSupportCompoundDrawablesTintList(ColorStateList colorStateList) {
-        w0 w0Var = this.b;
-        w0Var.l(colorStateList);
-        w0Var.b();
+        x0 x0Var = this.b;
+        x0Var.l(colorStateList);
+        x0Var.b();
     }
 
     @Override // u0.k
     public void setSupportCompoundDrawablesTintMode(PorterDuff.Mode mode) {
-        w0 w0Var = this.b;
-        w0Var.m(mode);
-        w0Var.b();
+        x0 x0Var = this.b;
+        x0Var.m(mode);
+        x0Var.b();
     }
 
     @Override // android.widget.TextView
     public final void setTextAppearance(Context context, int i10) {
         super.setTextAppearance(context, i10);
-        w0 w0Var = this.b;
-        if (w0Var != null) {
-            w0Var.g(context, i10);
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            x0Var.g(context, i10);
         }
     }
 }

@@ -1,111 +1,33 @@
 package lh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.SpannableStringBuilder;
-import android.view.View;
-import android.widget.FrameLayout;
-import mh.ja;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.GiftAuctionController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.k6;
-import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.oq;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
-/* loaded from: classes.dex */
-public final class e extends FrameLayout {
-    public final qh.d a;
-    public final k6 b;
-    public final k6 c;
-    public final GiftAuctionController.Auction d;
-    public final Paint e;
-    public final lf.p f;
-    public final oq h;
-    public final oq[] n;
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class e implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ q b;
+    public final /* synthetic */ TwoStepVerificationActivity c;
 
-    public e(Context context, GiftAuctionController.Auction auction) {
-        super(context);
-        Paint paint = new Paint(1);
-        this.e = paint;
-        this.f = new lf.p(new hg.f(this, 22));
-        this.h = new oq(R.drawable.filled_gift_sell_24, 0);
-        this.n = new oq[1];
-        this.d = auction;
-        setPadding(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(9.0f));
-        paint.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, 0.0f, TLObject.FLAG_29);
-        paint.setColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.d6, false));
-        qh.d dVar = new qh.d(context, null, true);
-        this.a = dVar;
-        dVar.d.o(false, true, true);
-        kj0 kj0Var = new kj0(context);
-        k6 k6Var = new k6(context, false, false, false);
-        this.b = k6Var;
-        k6Var.setTextSize(AndroidUtilities.dp(14.0f));
-        k6Var.setTypeface(AndroidUtilities.bold());
-        k6Var.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.G6, false));
-        k6 k6Var2 = new k6(context, false, false, false);
-        this.c = k6Var2;
-        k6Var2.setTextSize(AndroidUtilities.dp(12.0f));
-        TLRPC.Document document = auction.gift.sticker;
-        if (document != null) {
-            kj0Var.g(44, 44, document);
+    public /* synthetic */ e(q qVar, TwoStepVerificationActivity twoStepVerificationActivity, int i10) {
+        this.a = i10;
+        this.b = qVar;
+        this.c = twoStepVerificationActivity;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                q qVar = this.b;
+                qVar.V.setLoading(false);
+                qVar.presentFragment(this.c);
+                break;
+            default:
+                q qVar2 = this.b;
+                qVar2.O.setLoading(false);
+                qVar2.presentFragment(this.c);
+                break;
         }
-        addView(k6Var, k7.c6.d(-1, 18.0f, 51, 64.0f, 15.0f, 15.0f, 0.0f));
-        addView(k6Var2, k7.c6.d(-1, 17.0f, 51, 64.0f, 34.0f, 15.0f, 0.0f));
-        addView(kj0Var, k7.c6.d(44, 44.0f, 51, 14.0f, 11.0f, 0.0f, 0.0f));
-        addView(dVar, k7.c6.d(-1, 44.0f, 80, 15.0f, 0.0f, 15.0f, 15.0f));
-        b(false);
-    }
-
-    public final void a(long j10, boolean z4) {
-        String formatDurationNoHours = AndroidUtilities.formatDurationNoHours((int) j10, false);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("*");
-        spannableStringBuilder.setSpan(this.h, 0, spannableStringBuilder.length(), 33);
-        spannableStringBuilder.append((CharSequence) "  ");
-        spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.Gift2ActiveAuctionsActiveRaiseBid));
-        spannableStringBuilder.append((CharSequence) "  ");
-        spannableStringBuilder.append((CharSequence) formatDurationNoHours);
-        this.a.g(spannableStringBuilder, z4, true);
-    }
-
-    public final void b(boolean z4) {
-        GiftAuctionController.Auction auction = this.d;
-        if (auction.auctionStateActive != null) {
-            this.b.c(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveRound, LocaleController.formatNumber(r1.current_round, ','), LocaleController.formatNumber(auction.auctionStateActive.total_rounds, ',')), z4, true);
-        }
-        String l10 = l.d.l(auction.auctionUserState.bid_amount, ',', new StringBuilder("⭐️"));
-        boolean isOutbid = auction.getBidStatus().isOutbid();
-        oq[] oqVarArr = this.n;
-        k6 k6Var = this.c;
-        if (isOutbid) {
-            k6Var.c(ja.X0(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidOutbid, l10)), 0.66f, oqVarArr), z4, true);
-            k6Var.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.q7, false));
-        } else {
-            k6Var.c(ja.X0(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidActive, l10, Integer.valueOf(auction.getApproximatedMyPlace()))), 0.66f, oqVarArr), z4, true);
-            k6Var.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.G6, false));
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.drawRoundRect(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(9.0f), getMeasuredWidth() - AndroidUtilities.dp(14.0f), getMeasuredHeight() - AndroidUtilities.dp(9.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), this.e);
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.f.b();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(146), TLObject.FLAG_30));
     }
 }

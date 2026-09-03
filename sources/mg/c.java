@@ -1,69 +1,100 @@
 package mg;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import hg.p0;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Cells.va;
-import org.telegram.ui.Components.z8;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ai;
+import vh.w2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class c extends va {
-    public final a U;
-    public TL_stories.PrepaidGiveaway V;
+public final class c {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
+    public float h;
+    public long i;
+    public boolean j;
+    public float k;
+    public final /* synthetic */ d l;
 
-    public c(Context context) {
-        super(context, 0, 0, false);
-        this.U = new a(context);
+    public c(d dVar) {
+        this.l = dVar;
     }
 
-    @Override // org.telegram.ui.Cells.va
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
-    }
-
-    public TL_stories.PrepaidGiveaway getPrepaidGiveaway() {
-        return this.V;
-    }
-
-    @Override // org.telegram.ui.Cells.va, android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.P) {
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(70.0f) : 0), getMeasuredHeight() - 1, k6.k0);
-        }
-    }
-
-    public void setImage(TL_stories.PrepaidGiveaway prepaidGiveaway) {
-        this.V = prepaidGiveaway;
-        boolean z4 = prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway;
-        z8 z8Var = this.B;
-        if (z4) {
-            z8Var.g(26);
-            String valueOf = String.valueOf(((TL_stories.TL_prepaidStarsGiveaway) prepaidGiveaway).stars / 500);
-            a aVar = this.U;
-            aVar.f = valueOf;
-            aVar.e = aVar.a.measureText(valueOf);
-            aVar.invalidateSelf();
-        } else if (prepaidGiveaway instanceof TL_stories.TL_prepaidGiveaway) {
-            z8Var.g(16);
-            int i10 = ((TL_stories.TL_prepaidGiveaway) prepaidGiveaway).months;
-            if (i10 == 12) {
-                z8Var.i(-31392, -2796986);
-            } else if (i10 == 6) {
-                z8Var.i(-10703110, -12481584);
-            } else {
-                z8Var.i(-6631068, -11945404);
+    public final void a() {
+        d dVar;
+        float f10 = 0.0f;
+        this.h = 0.0f;
+        float b10 = b();
+        float c3 = c();
+        int i10 = 0;
+        while (true) {
+            dVar = this.l;
+            if (i10 >= 20) {
+                break;
             }
-            String valueOf2 = String.valueOf(p0.g() * prepaidGiveaway.quantity);
-            a aVar2 = this.U;
-            aVar2.f = valueOf2;
-            aVar2.e = aVar2.a.measureText(valueOf2);
-            aVar2.invalidateSelf();
+            float b11 = b();
+            float c10 = c();
+            float f11 = 2.14748365E9f;
+            for (int i11 = 0; i11 < dVar.c.size(); i11++) {
+                float f12 = ((c) dVar.c.get(i11)).c - b11;
+                float f13 = ((c) dVar.c.get(i11)).d - c10;
+                float f14 = (f13 * f13) + (f12 * f12);
+                if (f14 < f11) {
+                    f11 = f14;
+                }
+            }
+            if (f11 > f10) {
+                b10 = b11;
+                c3 = c10;
+                f10 = f11;
+            }
+            i10++;
         }
-        this.b.i(this.U);
+        float f15 = dVar.f ? 0.8f : 0.5f;
+        this.c = b10;
+        if (b10 > dVar.b.width() * f15) {
+            this.a = dVar.b.width() * f15;
+        } else {
+            float width = dVar.b.width() * f15;
+            this.a = width;
+            if (this.c > width) {
+                this.c = width - 0.1f;
+            }
+        }
+        this.b = w2.c(ai.f(Utilities.fastRandom, 100), 100.0f, dVar.b.height() * 0.1f, dVar.b.height() * 0.45f);
+        if (dVar.f) {
+            float c11 = w2.c(ai.f(Utilities.fastRandom, 100), 100.0f, dVar.b.width() * 0.1f, dVar.b.width() * 0.05f);
+            this.f = c11;
+            this.g = (((ai.f(Utilities.fastRandom, 100) / 100.0f) * 1.5f) + 1.5f) * c11;
+            this.d = w2.c(ai.f(Utilities.fastRandom, 100), 100.0f, dVar.b.height() * 0.1f, this.f / 2.0f);
+            this.e = dVar.b.height() + this.f;
+            this.i = Math.abs(Utilities.fastRandom.nextInt() % 600) + MediaDataController.MAX_STYLE_RUNS_COUNT;
+        } else {
+            float c12 = w2.c(ai.f(Utilities.fastRandom, 100), 100.0f, dVar.b.width() * 0.1f, dVar.b.width() * 0.05f);
+            this.f = c12;
+            this.g = (((ai.f(Utilities.fastRandom, 100) / 100.0f) * 0.5f) + 1.5f) * c12;
+            this.d = c3;
+            this.e = c3 + dVar.b.height();
+            this.i = 1800L;
+        }
+        this.i = (long) (this.i / 1.75f);
+        this.j = Utilities.fastRandom.nextBoolean();
+        this.k = ((Utilities.fastRandom.nextInt() % 100) / 100.0f) * 20.0f;
+    }
+
+    public final float b() {
+        if (!this.l.f) {
+            return (ai.f(Utilities.fastRandom, 100) / 100.0f) * r0.b.width();
+        }
+        return w2.c(ai.f(Utilities.fastRandom, 100), 100.0f, r0.b.width() * 1.5f, r0.b.width() * (-0.25f));
+    }
+
+    public final float c() {
+        return (ai.f(Utilities.fastRandom, 100) / 100.0f) * this.l.b.height() * 0.5f;
     }
 }

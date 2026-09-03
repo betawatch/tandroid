@@ -7,7 +7,7 @@ import android.os.WorkSource;
 import android.util.Log;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class f {
     public static final Method a;
@@ -113,7 +113,7 @@ public abstract class f {
             if (context == null) {
                 return false;
             }
-            boolean z4 = f0.e.b(context, "android.permission.UPDATE_DEVICE_STATS") == 0;
+            boolean z4 = f0.f.b(context, "android.permission.UPDATE_DEVICE_STATS") == 0;
             e = Boolean.valueOf(z4);
             return z4;
         }

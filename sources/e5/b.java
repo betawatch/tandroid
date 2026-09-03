@@ -1,63 +1,79 @@
 package e5;
 
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.List;
+import h5.w;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class b implements v4.f {
-    public final /* synthetic */ int a;
-    public final List b;
+public final class b {
+    public static final Pattern c = Pattern.compile("\\[voice=\"([^\"]*)\"\\]");
+    public static final Pattern d = Pattern.compile("^((?:[0-9]*\\.)?[0-9]+)(px|em|%)$");
+    public final w a = new w();
+    public final StringBuilder b = new StringBuilder();
 
-    public /* synthetic */ b(int i10, List list) {
-        this.a = i10;
-        this.b = list;
-    }
-
-    @Override // v4.f
-    public final int d(long j10) {
-        switch (this.a) {
-            case 0:
-                if (j10 < 0) {
-                }
-                break;
+    public static String a(w wVar, StringBuilder sb) {
+        boolean z4 = false;
+        sb.setLength(0);
+        int i10 = wVar.b;
+        int i11 = wVar.c;
+        while (i10 < i11 && !z4) {
+            char c3 = (char) wVar.a[i10];
+            if ((c3 < 'A' || c3 > 'Z') && ((c3 < 'a' || c3 > 'z') && !((c3 >= '0' && c3 <= '9') || c3 == '#' || c3 == '-' || c3 == '.' || c3 == '_'))) {
+                z4 = true;
+            } else {
+                i10++;
+                sb.append(c3);
+            }
         }
-        return -1;
+        wVar.G(i10 - wVar.b);
+        return sb.toString();
     }
 
-    @Override // v4.f
-    public final long l(int i10) {
-        switch (this.a) {
-            case 0:
-                h5.a.f(i10 == 0);
-                break;
+    public static String b(w wVar, StringBuilder sb) {
+        c(wVar);
+        if (wVar.a() == 0) {
+            return null;
         }
-        return 0L;
+        String a2 = a(wVar, sb);
+        if (!"".equals(a2)) {
+            return a2;
+        }
+        return "" + ((char) wVar.u());
     }
 
-    @Override // v4.f
-    public final List q(long j10) {
-        switch (this.a) {
-            case 0:
-                if (j10 < 0) {
-                    break;
+    public static void c(w wVar) {
+        while (true) {
+            for (boolean z4 = true; wVar.a() > 0 && z4; z4 = false) {
+                int i10 = wVar.b;
+                byte[] bArr = wVar.a;
+                byte b10 = bArr[i10];
+                char c3 = (char) b10;
+                if (c3 == '\t' || c3 == '\n' || c3 == '\f' || c3 == '\r' || c3 == ' ') {
+                    wVar.G(1);
                 } else {
-                    break;
+                    int i11 = wVar.c;
+                    int i12 = i10 + 2;
+                    if (i12 <= i11) {
+                        int i13 = i10 + 1;
+                        if (b10 == 47 && bArr[i13] == 42) {
+                            while (true) {
+                                int i14 = i12 + 1;
+                                if (i14 >= i11) {
+                                    break;
+                                }
+                                if (((char) bArr[i12]) == '*' && ((char) bArr[i14]) == '/') {
+                                    i12 += 2;
+                                    i11 = i12;
+                                } else {
+                                    i12 = i14;
+                                }
+                            }
+                            wVar.G(i11 - wVar.b);
+                        }
+                    }
                 }
+            }
+            return;
         }
-        return this.b;
-    }
-
-    @Override // v4.f
-    public final int x() {
-        switch (this.a) {
-        }
-        return 1;
-    }
-
-    public b(ArrayList arrayList) {
-        this.a = 0;
-        this.b = DesugarCollections.unmodifiableList(arrayList);
     }
 }

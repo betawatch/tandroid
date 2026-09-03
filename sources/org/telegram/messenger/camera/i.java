@@ -1,10 +1,10 @@
 package org.telegram.messenger.camera;
 
 import java.io.File;
-import org.telegram.ui.Cells.b2;
-import org.telegram.ui.Cells.e2;
+import org.telegram.ui.Cells.a2;
+import org.telegram.ui.Cells.d2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -27,22 +27,22 @@ public final /* synthetic */ class i implements Runnable {
                 ((CameraController) this.d).lambda$stopVideoRecording$17(this.e, this.b, this.c);
                 break;
             default:
-                b2 b2Var = (b2) this.d;
+                a2 a2Var = (a2) this.d;
                 String str = (String) this.e;
-                e2 e2Var = b2Var.b;
-                e2Var.a0 = false;
-                e2Var.b0 = str;
+                d2 d2Var = a2Var.b;
+                d2Var.a0 = false;
+                d2Var.b0 = str;
                 if (str == null) {
-                    e2Var.b0 = "";
+                    d2Var.b0 = "";
                 }
-                e2Var.c0 = this.b;
-                e2Var.f(this.c, true);
+                d2Var.c0 = this.b;
+                d2Var.f(this.c, true);
                 break;
         }
     }
 
-    public /* synthetic */ i(b2 b2Var, String str, File file, boolean z4, boolean z10) {
-        this.d = b2Var;
+    public /* synthetic */ i(a2 a2Var, String str, File file, boolean z4, boolean z10) {
+        this.d = a2Var;
         this.e = str;
         this.b = z4;
         this.c = z10;

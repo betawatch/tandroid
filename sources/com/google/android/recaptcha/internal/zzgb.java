@@ -3,8 +3,8 @@ package com.google.android.recaptcha.internal;
 import com.google.android.recaptcha.RecaptchaAction;
 import dd.l;
 import java.util.concurrent.TimeUnit;
+import k7.o7;
 import k7.p7;
-import k7.q7;
 import kotlin.jvm.internal.j;
 import ld.e0;
 import ld.s;
@@ -13,7 +13,7 @@ import sc.c;
 import sc.g;
 import vc.a;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class zzgb implements zzdw {
     private final zzfp zza;
@@ -27,7 +27,7 @@ public final class zzgb implements zzdw {
         zzdu zzduVar;
         this.zza = zzfpVar;
         int i10 = zzby.zza;
-        this.zzc = p7.a(zzfv.zza);
+        this.zzc = o7.a(zzfv.zza);
         zzduVar = zzdv.zza;
         this.zzf = zzduVar;
     }
@@ -63,7 +63,7 @@ public final class zzgb implements zzdw {
                 Object obj2 = a.a;
                 i10 = zzfrVar.zzc;
                 if (i10 != 0) {
-                    q7.b(obj);
+                    p7.b(obj);
                     zzcs zzcsVar2 = new zzcs();
                     zzfrVar.zzd = zzcsVar2;
                     zzfrVar.zzc = 1;
@@ -76,7 +76,7 @@ public final class zzgb implements zzdw {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     zzcsVar = zzfrVar.zzd;
-                    q7.b(obj);
+                    p7.b(obj);
                 }
                 zzcsVar.zzc();
                 return new Long(zzcsVar.zza(TimeUnit.MILLISECONDS));

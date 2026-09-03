@@ -10,9 +10,9 @@ import android.graphics.Shader;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class nh extends sl0 {
+public final class nh extends rl0 {
     public final /* synthetic */ int U2;
     public final Paint V2;
     public final Paint W2;
@@ -39,9 +39,9 @@ public final class nh extends sl0 {
                 paint2.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(8.0f), new int[]{0, -16777216}, new float[]{0.0f, 1.0f}, tileMode));
                 break;
             default:
-                pr prVar = pr.h;
-                this.Z2 = new xd.a(this, prVar, 320L);
-                this.a3 = new xd.a(this, prVar, 320L);
+                mr mrVar = mr.h;
+                this.Z2 = new xd.a(this, mrVar, 320L);
+                this.a3 = new xd.a(this, mrVar, 320L);
                 Shader.TileMode tileMode2 = Shader.TileMode.CLAMP;
                 LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(8.0f), 0.0f, new int[]{0, -16777216}, (float[]) null, tileMode2);
                 LinearGradient linearGradient2 = new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(8.0f), 0.0f, new int[]{-16777216, 0}, (float[]) null, tileMode2);
@@ -58,7 +58,7 @@ public final class nh extends sl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.sl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.rl0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         switch (this.U2) {
             case 0:
@@ -85,7 +85,7 @@ public final class nh extends sl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.rl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public boolean drawChild(Canvas canvas, View view, long j10) {
         switch (this.U2) {
             case 0:
@@ -110,7 +110,7 @@ public final class nh extends sl0 {
                     canvas.saveLayer(dp, getPaddingTop(), AndroidUtilities.dp(19.0f), getMeasuredHeight() - getPaddingBottom(), null);
                     super.drawChild(canvas, view, j10);
                     canvas.save();
-                    canvas.translate(org.telegram.ui.yh.c(1.0f, ((xd.a) this.Z2).e, AndroidUtilities.dp(8.0f), dp), 0.0f);
+                    canvas.translate(org.telegram.ui.ai.c(1.0f, ((xd.a) this.Z2).e, AndroidUtilities.dp(8.0f), dp), 0.0f);
                     canvas.drawPaint(this.V2);
                     canvas.restore();
                     canvas.restore();
@@ -147,7 +147,7 @@ public final class nh extends sl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.rl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public void onMeasure(int i10, int i11) {
         switch (this.U2) {
             case 0:
@@ -156,15 +156,15 @@ public final class nh extends sl0 {
                 float f10 = 0.0f;
                 for (int i12 = 0; i12 < childCount; i12++) {
                     View childAt = getChildAt(i12);
-                    if (childAt instanceof hi) {
-                        f10 = ((hi) childAt).a.c() + f10;
+                    if (childAt instanceof gi) {
+                        f10 = ((gi) childAt).a.c() + f10;
                     }
                 }
                 int floor = (size <= f10 || childCount <= 0) ? 0 : (int) Math.floor((r1 - f10) / childCount);
                 for (int i13 = 0; i13 < childCount; i13++) {
                     View childAt2 = getChildAt(i13);
-                    if (childAt2 instanceof hi) {
-                        ((hi) childAt2).a.setAdditionalWidth(floor);
+                    if (childAt2 instanceof gi) {
+                        ((gi) childAt2).a.setAdditionalWidth(floor);
                     }
                 }
                 super.onMeasure(i10, i11);

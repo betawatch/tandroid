@@ -1,45 +1,96 @@
 package uf;
 
+import android.content.Context;
 import android.view.View;
-import android.view.ViewPropertyAnimator;
-import org.telegram.ui.Components.xs;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.dl0;
+import org.telegram.ui.Components.ql0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class a0 extends f2.l {
-    @Override // f2.l
-    public final void D(f2.m1 m1Var) {
-        View view = m1Var.a;
-        ViewPropertyAnimator animate = view.animate();
-        this.A.add(m1Var);
-        animate.setDuration(this.d).alpha(0.0f).scaleX(0.0f).scaleY(0.0f).setListener(new xs((f2.l) this, m1Var, (Object) animate, (Object) view, 4)).start();
+public final class a0 extends ql0 {
+    public final Context c;
+    public final ArrayList d = new ArrayList();
+    public String e;
+    public final /* synthetic */ c0 f;
+
+    public a0(c0 c0Var, Context context) {
+        this.f = c0Var;
+        this.c = context;
     }
 
-    @Override // f2.l
-    public final long K(long j10, long j11, long j12) {
-        return 0L;
+    @Override // org.telegram.ui.Components.ql0
+    public final boolean D(f2.l1 l1Var) {
+        return l1Var.f == 0;
     }
 
-    @Override // f2.l
-    public final long L() {
-        return 0L;
+    @Override // f2.o0
+    public final int h() {
+        return this.d.size() + 2;
     }
 
-    @Override // f2.u0
-    public final long h() {
-        return 220L;
+    @Override // f2.o0
+    public final int j(int i10) {
+        if (i10 == 0) {
+            return 1;
+        }
+        return i10 == h() - 1 ? 2 : 0;
     }
 
-    @Override // f2.u0
-    public final long j() {
-        return 220L;
+    @Override // f2.o0
+    public final void l() {
+        super.l();
+        this.f.K();
     }
 
-    @Override // f2.l, f2.p1
-    public final void p(f2.m1 m1Var) {
-        super.p(m1Var);
-        View view = m1Var.a;
-        view.setScaleX(0.0f);
-        view.setScaleY(0.0f);
+    /* JADX WARN: Removed duplicated region for block: B:13:0x002b  */
+    /* JADX WARN: Removed duplicated region for block: B:16:? A[RETURN, SYNTHETIC] */
+    @Override // f2.o0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void v(f2.l1 l1Var, int i10) {
+        Object obj;
+        if (l1Var.f != 0) {
+            return;
+        }
+        l1 l1Var2 = (l1) l1Var.a;
+        boolean z4 = i10 != h() + (-2);
+        int i11 = i10 - 1;
+        if (i11 >= 0) {
+            ArrayList arrayList = this.d;
+            if (i11 < arrayList.size()) {
+                obj = arrayList.get(i11);
+                if (obj instanceof o1) {
+                    return;
+                }
+                o1 o1Var = (o1) obj;
+                l1Var2.a(o1Var, this.e, z4);
+                l1Var2.d.a(this.f.w.contains(Integer.valueOf(o1Var.a)), false);
+                return;
+            }
+        }
+        obj = null;
+        if (obj instanceof o1) {
+        }
+    }
+
+    @Override // f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+        View l1Var;
+        Context context = this.c;
+        if (i10 == 0) {
+            l1Var = new l1(context, this.f.a, false);
+        } else if (i10 != 1) {
+            l1Var = new View(context);
+            l1Var.setTag(-33024);
+        } else {
+            l1Var = new View(context);
+            l1Var.setLayoutParams(new f2.w0(-1, AndroidUtilities.dp(56.0f)));
+            l1Var.setTag(-33024);
+        }
+        return new dl0(l1Var);
     }
 }

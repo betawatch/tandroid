@@ -8,7 +8,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class ho0 extends FrameLayout {
     public final Paint a;
@@ -49,18 +49,18 @@ public final class ho0 extends FrameLayout {
         kVar.a(1.0f);
         jVar2.u = kVar;
         this.c = jVar2;
-        jVar2.b(new md0(this, 1));
-        this.c.a(new o9(this, 1));
+        jVar2.b(new nd0(this, 1));
+        this.c.a(new q9(this, 1));
         this.c.f();
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        int i10 = org.telegram.ui.ActionBar.k6.O6;
+        int i10 = org.telegram.ui.ActionBar.j6.O6;
         lo0 lo0Var = this.d;
         canvas.drawColor(lo0Var.getThemedColor(i10));
-        int themedColor = lo0Var.getThemedColor(org.telegram.ui.ActionBar.k6.ei);
+        int themedColor = lo0Var.getThemedColor(org.telegram.ui.ActionBar.j6.ei);
         Paint paint = this.a;
         paint.setColor(themedColor);
         canvas.drawCircle(LocaleController.isRTL ? getWidth() - AndroidUtilities.dp(28.0f) : AndroidUtilities.dp(28.0f), -AndroidUtilities.dp(28.0f), Math.max(getWidth(), getHeight()) * this.b, paint);

@@ -1,16 +1,26 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
-/* loaded from: classes3.dex */
-public final class tn0 extends f2.l {
-    public final /* synthetic */ org.telegram.ui.yx F;
+import android.content.Context;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-    public tn0(org.telegram.ui.yx yxVar) {
-        this.F = yxVar;
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* loaded from: classes3.dex */
+public final class tn0 extends h40 {
+    public final /* synthetic */ org.telegram.ui.zx Z;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public tn0(org.telegram.ui.zx zxVar, rl0 rl0Var, Context context, int i10) {
+        super(rl0Var, context, i10);
+        this.Z = zxVar;
     }
 
-    @Override // f2.l
-    public final void P(f2.m1 m1Var) {
-        this.F.invalidate();
+    @Override // org.telegram.ui.Components.w51
+    public final void N(boolean z4) {
+        super.N(z4);
+        pn0 pn0Var = this.Z.p0;
+        pn0Var.e(false, z4);
+        pn0Var.d.setText(LocaleController.getString(R.string.NoResult));
+        pn0Var.e.setVisibility(8);
     }
 }

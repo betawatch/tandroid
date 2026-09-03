@@ -2,18 +2,18 @@ package c9;
 
 import java.util.Set;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public interface c {
     Object a(Class cls);
 
-    ba.b b(t tVar);
+    ba.b b(u uVar);
 
     ba.b c(Class cls);
 
-    r e(t tVar);
+    s d(u uVar);
 
-    Object f(t tVar);
+    Object f(u uVar);
 
-    Set i(t tVar);
+    Set g(u uVar);
 }

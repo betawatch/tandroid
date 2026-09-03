@@ -2,7 +2,7 @@ package l7;
 
 import java.util.AbstractMap;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class x extends s {
     public final /* synthetic */ y c;
@@ -14,7 +14,7 @@ public final class x extends s {
     @Override // java.util.List
     public final /* synthetic */ Object get(int i10) {
         y yVar = this.c;
-        k7.k.a(i10, yVar.e);
+        k7.j.a(i10, yVar.e);
         int i11 = i10 + i10;
         Object[] objArr = yVar.d;
         Object obj = objArr[i11];

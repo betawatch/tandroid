@@ -9,7 +9,7 @@ import android.util.Log;
 import java.util.Locale;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class r {
     public static final a0.k a = new a0.k(0);
@@ -18,7 +18,7 @@ public abstract class r {
     public static String a(Context context) {
         String packageName = context.getPackageName();
         try {
-            Context context2 = k6.c.a(context).a;
+            Context context2 = (Context) k6.b.a(context).b;
             return context2.getPackageManager().getApplicationLabel(context2.getPackageManager().getApplicationInfo(packageName, 0)).toString();
         } catch (PackageManager.NameNotFoundException | NullPointerException unused) {
             String str = context.getApplicationInfo().name;
@@ -132,7 +132,7 @@ public abstract class r {
         a0.k kVar = a;
         synchronized (kVar) {
             try {
-                Locale locale = k7.x.a(context.getResources().getConfiguration()).a.get(0);
+                Locale locale = k7.w.a(context.getResources().getConfiguration()).a.get(0);
                 if (!locale.equals(b)) {
                     kVar.clear();
                     b = locale;

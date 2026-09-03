@@ -22,7 +22,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class u11 extends BitmapDrawable {
     /* JADX WARN: Illegal instructions before constructor call */
@@ -34,9 +34,9 @@ public final class u11 extends BitmapDrawable {
         int i10;
         int i11;
         BitmapDrawable bitmapDrawable;
-        org.telegram.ui.ActionBar.h5[] h5VarArr;
+        org.telegram.ui.ActionBar.g5[] g5VarArr;
         Bitmap bitmap;
-        fc0 fc0Var;
+        ec0 ec0Var;
         boolean z4;
         Bitmap bitmap2;
         Bitmap decodeFile;
@@ -45,46 +45,46 @@ public final class u11 extends BitmapDrawable {
         Paint paint = new Paint();
         Bitmap createBitmap = Bitmaps.createBitmap(560, 678, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(createBitmap);
-        SparseIntArray Q0 = org.telegram.ui.ActionBar.k6.Q0(null, themeDocument.baseTheme.d, null);
+        SparseIntArray Q0 = org.telegram.ui.ActionBar.j6.Q0(null, themeDocument.baseTheme.d, null);
         SparseIntArray clone = Q0.clone();
         themeDocument.accent.c(Q0, clone);
-        int F0 = org.telegram.ui.ActionBar.k6.F0(clone, org.telegram.ui.ActionBar.k6.s8);
-        int F02 = org.telegram.ui.ActionBar.k6.F0(clone, org.telegram.ui.ActionBar.k6.v8);
-        int F03 = org.telegram.ui.ActionBar.k6.F0(clone, org.telegram.ui.ActionBar.k6.Sd);
-        int F04 = org.telegram.ui.ActionBar.k6.F0(clone, org.telegram.ui.ActionBar.k6.Xd);
-        int F05 = org.telegram.ui.ActionBar.k6.F0(clone, org.telegram.ui.ActionBar.k6.ra);
-        int F06 = org.telegram.ui.ActionBar.k6.F0(clone, org.telegram.ui.ActionBar.k6.Aa);
-        int i13 = clone.get(org.telegram.ui.ActionBar.k6.Nd);
-        int i14 = clone.get(org.telegram.ui.ActionBar.k6.Od);
-        int i15 = clone.get(org.telegram.ui.ActionBar.k6.Pd);
-        int i16 = clone.get(org.telegram.ui.ActionBar.k6.Qd);
-        int i17 = clone.get(org.telegram.ui.ActionBar.k6.Rd);
+        int F0 = org.telegram.ui.ActionBar.j6.F0(clone, org.telegram.ui.ActionBar.j6.s8);
+        int F02 = org.telegram.ui.ActionBar.j6.F0(clone, org.telegram.ui.ActionBar.j6.v8);
+        int F03 = org.telegram.ui.ActionBar.j6.F0(clone, org.telegram.ui.ActionBar.j6.Sd);
+        int F04 = org.telegram.ui.ActionBar.j6.F0(clone, org.telegram.ui.ActionBar.j6.Xd);
+        int F05 = org.telegram.ui.ActionBar.j6.F0(clone, org.telegram.ui.ActionBar.j6.ra);
+        int F06 = org.telegram.ui.ActionBar.j6.F0(clone, org.telegram.ui.ActionBar.j6.Aa);
+        int i13 = clone.get(org.telegram.ui.ActionBar.j6.Nd);
+        int i14 = clone.get(org.telegram.ui.ActionBar.j6.Od);
+        int i15 = clone.get(org.telegram.ui.ActionBar.j6.Pd);
+        int i16 = clone.get(org.telegram.ui.ActionBar.j6.Qd);
+        int i17 = clone.get(org.telegram.ui.ActionBar.j6.Rd);
         Drawable mutate = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_back).mutate();
-        org.telegram.ui.ActionBar.k6.w1(F02, mutate);
+        org.telegram.ui.ActionBar.j6.w1(F02, mutate);
         Drawable mutate2 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_dots).mutate();
-        org.telegram.ui.ActionBar.k6.w1(F02, mutate2);
+        org.telegram.ui.ActionBar.j6.w1(F02, mutate2);
         Drawable mutate3 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_smile).mutate();
-        org.telegram.ui.ActionBar.k6.w1(F04, mutate3);
+        org.telegram.ui.ActionBar.j6.w1(F04, mutate3);
         Drawable mutate4 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_mic).mutate();
-        org.telegram.ui.ActionBar.k6.w1(F04, mutate4);
-        org.telegram.ui.ActionBar.h5[] h5VarArr2 = new org.telegram.ui.ActionBar.h5[2];
+        org.telegram.ui.ActionBar.j6.w1(F04, mutate4);
+        org.telegram.ui.ActionBar.g5[] g5VarArr2 = new org.telegram.ui.ActionBar.g5[2];
         int i18 = 0;
         while (i18 < 2) {
             Drawable drawable = mutate4;
             t11 t11Var = new t11(i18 == 1, clone);
-            h5VarArr2[i18] = t11Var;
-            org.telegram.ui.ActionBar.k6.w1(i18 == 1 ? F06 : F05, t11Var);
+            g5VarArr2[i18] = t11Var;
+            org.telegram.ui.ActionBar.j6.w1(i18 == 1 ? F06 : F05, t11Var);
             i18++;
             mutate4 = drawable;
         }
         Drawable drawable2 = mutate4;
         if (i15 != 0) {
-            fc0 fc0Var2 = new fc0(true, i13, i14, i15, i16);
+            ec0 ec0Var2 = new ec0(true, i13, i14, i15, i16);
             i10 = i13;
             i11 = i14;
             bitmap = createBitmap;
-            h5VarArr = h5VarArr2;
-            fc0Var = fc0Var2;
+            g5VarArr = g5VarArr2;
+            ec0Var = ec0Var2;
             bitmapDrawable = null;
         } else {
             i10 = i13;
@@ -92,14 +92,14 @@ public final class u11 extends BitmapDrawable {
             int width = createBitmap.getWidth();
             int height = createBitmap.getHeight() - 120;
             GradientDrawable.Orientation d = o9.d(i17);
-            h5VarArr = h5VarArr2;
+            g5VarArr = g5VarArr2;
             Resources resources = ApplicationLoader.applicationContext.getResources();
-            Rect e6 = o9.e(d, width, height);
+            Rect e = o9.e(d, width, height);
             bitmap = createBitmap;
             Bitmap createBitmap2 = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-            Utilities.drawDitheredGradient(createBitmap2, new int[]{i10, i11}, e6.left, e6.top, e6.right, e6.bottom);
+            Utilities.drawDitheredGradient(createBitmap2, new int[]{i10, i11}, e.left, e.top, e.right, e.bottom);
             bitmapDrawable = new BitmapDrawable(resources, createBitmap2);
-            fc0Var = null;
+            ec0Var = null;
         }
         int patternColor = AndroidUtilities.getPatternColor(AndroidUtilities.getAverageColor(i10, i11));
         if (bitmapDrawable != null) {
@@ -142,10 +142,10 @@ public final class u11 extends BitmapDrawable {
             }
             bitmap2 = decodeFile;
             if (bitmap2 != null) {
-                if (fc0Var != null) {
-                    fc0Var.t(bitmap2, (int) (themeDocument.accent.p * 100.0f));
-                    fc0Var.setBounds(0, 120, bitmap.getWidth(), bitmap.getHeight() - 120);
-                    fc0Var.draw(canvas);
+                if (ec0Var != null) {
+                    ec0Var.t(bitmap2, (int) (themeDocument.accent.p * 100.0f));
+                    ec0Var.setBounds(0, 120, bitmap.getWidth(), bitmap.getHeight() - 120);
+                    ec0Var.draw(canvas);
                 } else {
                     Paint paint2 = new Paint(2);
                     if (themeDocument.accent.p >= 0.0f) {
@@ -164,9 +164,9 @@ public final class u11 extends BitmapDrawable {
         } else {
             bitmap2 = null;
         }
-        if (bitmap2 == null && fc0Var != null) {
-            fc0Var.setBounds(0, 120, bitmap.getWidth(), bitmap.getHeight() - 120);
-            fc0Var.draw(canvas);
+        if (bitmap2 == null && ec0Var != null) {
+            ec0Var.setBounds(0, 120, bitmap.getWidth(), bitmap.getHeight() - 120);
+            ec0Var.draw(canvas);
         }
         paint.setColor(F0);
         canvas.drawRect(0.0f, 0.0f, bitmap.getWidth(), 120.0f, paint);
@@ -181,15 +181,15 @@ public final class u11 extends BitmapDrawable {
             mutate2.setBounds(width3, intrinsicHeight2, mutate2.getIntrinsicWidth() + width3, mutate2.getIntrinsicHeight() + intrinsicHeight2);
             mutate2.draw(canvas);
         }
-        h5VarArr[1].setBounds(161, 216, bitmap.getWidth() - 20, 308);
-        h5VarArr[1].n(0, 560, 522);
-        h5VarArr[1].draw(canvas);
-        h5VarArr[1].setBounds(161, 430, bitmap.getWidth() - 20, 522);
-        h5VarArr[1].n(430, 560, 522);
-        h5VarArr[1].draw(canvas);
-        h5VarArr[0].setBounds(20, 323, 399, 415);
-        h5VarArr[0].n(323, 560, 522);
-        h5VarArr[0].draw(canvas);
+        g5VarArr[1].setBounds(161, 216, bitmap.getWidth() - 20, 308);
+        g5VarArr[1].n(0, 560, 522);
+        g5VarArr[1].draw(canvas);
+        g5VarArr[1].setBounds(161, 430, bitmap.getWidth() - 20, 522);
+        g5VarArr[1].n(430, 560, 522);
+        g5VarArr[1].draw(canvas);
+        g5VarArr[0].setBounds(20, 323, 399, 415);
+        g5VarArr[0].n(323, 560, 522);
+        g5VarArr[0].draw(canvas);
         paint.setColor(F03);
         canvas.drawRect(0.0f, bitmap.getHeight() - 120, bitmap.getWidth(), bitmap.getHeight(), paint);
         if (mutate3 != null) {

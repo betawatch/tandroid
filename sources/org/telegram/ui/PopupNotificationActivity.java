@@ -48,7 +48,7 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public class PopupNotificationActivity extends Activity implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int Y = 0;
@@ -65,7 +65,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
     public TextView e;
     public FrameLayout f;
     public TextView h;
-    public l0 n;
+    public n0 n;
     public ViewGroup r;
     public ViewGroup s;
     public ViewGroup v;
@@ -178,18 +178,18 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         if (frameLayout != null) {
             frameLayout.getViewTreeObserver().addOnPreDrawListener(new dw0(this, 0));
         }
-        l0 l0Var = this.n;
-        if (l0Var != null) {
-            l0Var.getViewTreeObserver().addOnPreDrawListener(new dw0(this, 1));
+        n0 n0Var = this.n;
+        if (n0Var != null) {
+            n0Var.getViewTreeObserver().addOnPreDrawListener(new dw0(this, 1));
         }
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         TextView textView;
-        org.telegram.ui.Components.yg0 yg0Var;
+        org.telegram.ui.Components.xg0 xg0Var;
         MessageObject messageObject;
-        org.telegram.ui.Components.yg0 yg0Var2;
+        org.telegram.ui.Components.xg0 xg0Var2;
         MessageObject messageObject2;
         MessageObject messageObject3;
         if (i10 == NotificationCenter.appDidLogout) {
@@ -258,13 +258,13 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         }
         if (i10 == NotificationCenter.messagePlayingDidReset) {
             Integer num = (Integer) objArr[0];
-            l0 l0Var = this.n;
-            if (l0Var != null) {
-                int childCount = l0Var.getChildCount();
+            n0 n0Var = this.n;
+            if (n0Var != null) {
+                int childCount = n0Var.getChildCount();
                 while (i12 < childCount) {
                     View childAt = this.n.getChildAt(i12);
-                    if (((Integer) childAt.getTag()).intValue() == 3 && (messageObject2 = (yg0Var2 = (org.telegram.ui.Components.yg0) childAt.findViewWithTag(300)).getMessageObject()) != null && messageObject2.currentAccount == i11 && messageObject2.getId() == num.intValue()) {
-                        yg0Var2.r();
+                    if (((Integer) childAt.getTag()).intValue() == 3 && (messageObject2 = (xg0Var2 = (org.telegram.ui.Components.xg0) childAt.findViewWithTag(300)).getMessageObject()) != null && messageObject2.currentAccount == i11 && messageObject2.getId() == num.intValue()) {
+                        xg0Var2.r();
                         return;
                     }
                     i12++;
@@ -275,13 +275,13 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         }
         if (i10 == NotificationCenter.messagePlayingProgressDidChanged) {
             Integer num2 = (Integer) objArr[0];
-            l0 l0Var2 = this.n;
-            if (l0Var2 != null) {
-                int childCount2 = l0Var2.getChildCount();
+            n0 n0Var2 = this.n;
+            if (n0Var2 != null) {
+                int childCount2 = n0Var2.getChildCount();
                 while (i12 < childCount2) {
                     View childAt2 = this.n.getChildAt(i12);
-                    if (((Integer) childAt2.getTag()).intValue() == 3 && (messageObject = (yg0Var = (org.telegram.ui.Components.yg0) childAt2.findViewWithTag(300)).getMessageObject()) != null && messageObject.currentAccount == i11 && messageObject.getId() == num2.intValue()) {
-                        yg0Var.s();
+                    if (((Integer) childAt2.getTag()).intValue() == 3 && (messageObject = (xg0Var = (org.telegram.ui.Components.xg0) childAt2.findViewWithTag(300)).getMessageObject()) != null && messageObject.currentAccount == i11 && messageObject.getId() == num2.intValue()) {
+                        xg0Var.s();
                         return;
                     }
                     i12++;
@@ -297,9 +297,9 @@ public class PopupNotificationActivity extends Activity implements NotificationC
             }
             return;
         }
-        l0 l0Var3 = this.n;
-        if (l0Var3 != null) {
-            int childCount3 = l0Var3.getChildCount();
+        n0 n0Var3 = this.n;
+        if (n0Var3 != null) {
+            int childCount3 = n0Var3.getChildCount();
             while (i12 < childCount3) {
                 View childAt3 = this.n.getChildAt(i12);
                 if (((Integer) childAt3.getTag()).intValue() == 1 && (textView = (TextView) childAt3.findViewWithTag(301)) != null) {
@@ -350,7 +350,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 TL_keyboard.KeyboardInlineButtonRow keyboardInlineButtonRow = arrayList3.get(i14);
                 int size2 = keyboardInlineButtonRow.buttons.size();
                 for (int i15 = 0; i15 < size2; i15++) {
-                    if (mf.c.c(keyboardInlineButtonRow.buttons.get(i15), TL_keyboard.TL_inlineButtonTypeCallback.class)) {
+                    if (lf.c.c(keyboardInlineButtonRow.buttons.get(i15), TL_keyboard.TL_inlineButtonTypeCallback.class)) {
                         i11++;
                     }
                 }
@@ -374,15 +374,15 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 ?? r10 = linearLayout2;
                 while (i18 < size4) {
                     TL_keyboard.KeyboardInlineButton keyboardInlineButton = keyboardInlineButtonRow2.buttons.get(i18);
-                    if (mf.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeCallback.class)) {
+                    if (lf.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeCallback.class)) {
                         if (r10 == 0) {
                             ?? linearLayout3 = new LinearLayout(this);
                             linearLayout3.setOrientation(r62);
                             arrayList = arrayList4;
-                            linearLayout3.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.d6, r62));
+                            linearLayout3.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, r62));
                             linearLayout3.setWeightSum(100.0f);
                             linearLayout3.setTag("b");
-                            linearLayout3.setOnTouchListener(new org.telegram.ui.ActionBar.s2(28));
+                            linearLayout3.setOnTouchListener(new oh.d(29));
                             r10 = linearLayout3;
                         } else {
                             arrayList = arrayList4;
@@ -392,14 +392,14 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                         textView.setTextSize(1, 16.0f);
                         i12 = size3;
                         obj = null;
-                        textView.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.n6, false));
+                        textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.n6, false));
                         textView.setTypeface(AndroidUtilities.bold());
                         textView.setText(keyboardInlineButton.text.toUpperCase());
                         textView.setTag(keyboardInlineButton);
                         textView.setGravity(17);
-                        textView.setBackgroundDrawable(org.telegram.ui.ActionBar.k6.K0(true));
-                        r10.addView(textView, k7.c6.l(100.0f / i11, -1, -1));
-                        textView.setOnClickListener(new mh.x0(messageObject, i16));
+                        textView.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.K0(true));
+                        r10.addView(textView, k7.b6.l(100.0f / i11, -1, -1));
+                        textView.setOnClickListener(new lh.y0(messageObject, i16));
                     } else {
                         arrayList = arrayList4;
                         i12 = size3;
@@ -474,7 +474,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         ViewGroup viewGroup2;
         ViewGroup viewGroup3;
         ViewGroup viewGroup4;
-        org.telegram.ui.Components.yg0 yg0Var;
+        org.telegram.ui.Components.xg0 xg0Var;
         int i11 = i10;
         ArrayList arrayList = this.X;
         if (arrayList.size() == 1 && (i11 < 0 || i11 >= arrayList.size())) {
@@ -497,17 +497,17 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 FrameLayout frameLayout = new FrameLayout(this);
                 FrameLayout frameLayout2 = new FrameLayout(this);
                 frameLayout2.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
-                frameLayout2.setBackgroundDrawable(org.telegram.ui.ActionBar.k6.K0(false));
-                frameLayout.addView(frameLayout2, k7.c6.c(-1.0f, -1));
+                frameLayout2.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.K0(false));
+                frameLayout.addView(frameLayout2, k7.b6.c(-1.0f, -1));
                 org.telegram.ui.Components.p9 p9Var = new org.telegram.ui.Components.p9(this);
                 p9Var.setTag(311);
-                frameLayout2.addView(p9Var, k7.c6.c(-1.0f, -1));
+                frameLayout2.addView(p9Var, k7.b6.c(-1.0f, -1));
                 TextView textView = new TextView(this);
-                textView.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.G6, false));
+                textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
                 textView.setTextSize(1, 16.0f);
                 textView.setGravity(17);
                 textView.setTag(312);
-                frameLayout2.addView(textView, k7.c6.e(-1, -2, 17));
+                frameLayout2.addView(textView, k7.b6.e(-1, -2, 17));
                 frameLayout.setTag(2);
                 final int i13 = 0;
                 frameLayout.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.aw0
@@ -587,36 +587,36 @@ public class PopupNotificationActivity extends Activity implements NotificationC
             if (arrayList3.size() > 0) {
                 ViewGroup viewGroup6 = (ViewGroup) arrayList3.get(0);
                 arrayList3.remove(0);
-                yg0Var = (org.telegram.ui.Components.yg0) viewGroup6.findViewWithTag(300);
+                xg0Var = (org.telegram.ui.Components.xg0) viewGroup6.findViewWithTag(300);
                 viewGroup4 = viewGroup6;
             } else {
                 FrameLayout frameLayout3 = new FrameLayout(this);
                 FrameLayout frameLayout4 = new FrameLayout(this);
                 frameLayout4.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
-                frameLayout4.setBackgroundDrawable(org.telegram.ui.ActionBar.k6.K0(false));
-                frameLayout3.addView(frameLayout4, k7.c6.c(-1.0f, -1));
+                frameLayout4.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.K0(false));
+                frameLayout3.addView(frameLayout4, k7.b6.c(-1.0f, -1));
                 FrameLayout frameLayout5 = new FrameLayout(this);
-                frameLayout4.addView(frameLayout5, k7.c6.d(-1, -2.0f, 17, 20.0f, 0.0f, 20.0f, 0.0f));
-                org.telegram.ui.Components.yg0 yg0Var2 = new org.telegram.ui.Components.yg0(this);
-                yg0Var2.f = false;
-                yg0Var2.y = 0;
-                yg0Var2.D = 0;
-                yg0Var2.G = 0;
+                frameLayout4.addView(frameLayout5, k7.b6.d(-1, -2.0f, 17, 20.0f, 0.0f, 20.0f, 0.0f));
+                org.telegram.ui.Components.xg0 xg0Var2 = new org.telegram.ui.Components.xg0(this);
+                xg0Var2.f = false;
+                xg0Var2.y = 0;
+                xg0Var2.D = 0;
+                xg0Var2.G = 0;
                 TextPaint textPaint = new TextPaint(1);
-                yg0Var2.r = textPaint;
+                xg0Var2.r = textPaint;
                 textPaint.setTextSize(AndroidUtilities.dp(16.0f));
-                yg0Var2.H = DownloadController.getInstance(yg0Var2.n).generateObserverTag();
-                org.telegram.ui.Components.go0 go0Var = new org.telegram.ui.Components.go0(yg0Var2);
-                yg0Var2.s = go0Var;
-                go0Var.h = yg0Var2;
-                org.telegram.ui.Components.hi0 hi0Var = new org.telegram.ui.Components.hi0();
-                hi0Var.c = 0.0f;
-                hi0Var.f = AndroidUtilities.dp(2.0f);
-                hi0Var.a = new Paint();
-                hi0Var.b = new Paint();
-                yg0Var2.v = hi0Var;
-                yg0Var2.setTag(300);
-                frameLayout5.addView(yg0Var2);
+                xg0Var2.H = DownloadController.getInstance(xg0Var2.n).generateObserverTag();
+                org.telegram.ui.Components.fo0 fo0Var = new org.telegram.ui.Components.fo0(xg0Var2);
+                xg0Var2.s = fo0Var;
+                fo0Var.h = xg0Var2;
+                org.telegram.ui.Components.gi0 gi0Var = new org.telegram.ui.Components.gi0();
+                gi0Var.c = 0.0f;
+                gi0Var.f = AndroidUtilities.dp(2.0f);
+                gi0Var.a = new Paint();
+                gi0Var.b = new Paint();
+                xg0Var2.v = gi0Var;
+                xg0Var2.setTag(300);
+                frameLayout5.addView(xg0Var2);
                 frameLayout3.setTag(3);
                 final int i15 = 1;
                 frameLayout3.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.aw0
@@ -647,16 +647,16 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                     }
                 });
                 viewGroup4 = frameLayout3;
-                yg0Var = yg0Var2;
+                xg0Var = xg0Var2;
             }
-            yg0Var.setMessageObject(messageObject);
+            xg0Var.setMessageObject(messageObject);
             viewGroup2 = viewGroup4;
             if (DownloadController.getInstance(messageObject.currentAccount).canDownloadMedia(messageObject)) {
                 viewGroup2 = viewGroup4;
-                if (yg0Var.y == 2) {
-                    FileLoader.getInstance(yg0Var.n).loadFile(yg0Var.h.getDocument(), yg0Var.h, 1, 0);
-                    yg0Var.y = 3;
-                    yg0Var.invalidate();
+                if (xg0Var.y == 2) {
+                    FileLoader.getInstance(xg0Var.n).loadFile(xg0Var.h.getDocument(), xg0Var.h, 1, 0);
+                    xg0Var.y = 3;
+                    xg0Var.invalidate();
                     viewGroup2 = viewGroup4;
                 }
             }
@@ -670,11 +670,11 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 FrameLayout frameLayout6 = new FrameLayout(this);
                 ScrollView scrollView = new ScrollView(this);
                 scrollView.setFillViewport(true);
-                frameLayout6.addView(scrollView, k7.c6.c(-1.0f, -1));
+                frameLayout6.addView(scrollView, k7.b6.c(-1.0f, -1));
                 LinearLayout linearLayout = new LinearLayout(this);
                 linearLayout.setOrientation(0);
-                linearLayout.setBackgroundDrawable(org.telegram.ui.ActionBar.k6.K0(false));
-                scrollView.addView(linearLayout, k7.c6.x(-1, -2, 1));
+                linearLayout.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.K0(false));
+                scrollView.addView(linearLayout, k7.b6.x(-1, -2, 1));
                 linearLayout.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
                 final int i16 = 2;
                 linearLayout.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.aw0
@@ -707,11 +707,11 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 TextView textView3 = new TextView(this);
                 textView3.setTextSize(1, 16.0f);
                 textView3.setTag(301);
-                int i17 = org.telegram.ui.ActionBar.k6.G6;
-                textView3.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, i17, false));
-                textView3.setLinkTextColor(org.telegram.ui.ActionBar.k6.w0(null, i17, false));
+                int i17 = org.telegram.ui.ActionBar.j6.G6;
+                textView3.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i17, false));
+                textView3.setLinkTextColor(org.telegram.ui.ActionBar.j6.w0(null, i17, false));
                 textView3.setGravity(17);
-                linearLayout.addView(textView3, k7.c6.q(-1, -2, 17));
+                linearLayout.addView(textView3, k7.b6.q(-1, -2, 17));
                 frameLayout6.setTag(1);
                 viewGroup3 = frameLayout6;
             }
@@ -1172,10 +1172,10 @@ public class PopupNotificationActivity extends Activity implements NotificationC
             if (linearLayout != null) {
                 float translationX2 = linearLayout.getTranslationX();
                 m(this.y);
-                LinearLayout e6 = e(this.P + 1, false);
-                this.y = e6;
-                if (e6 != null) {
-                    e6.setTranslationX(translationX2);
+                LinearLayout e = e(this.P + 1, false);
+                this.y = e;
+                if (e != null) {
+                    e.setTranslationX(translationX2);
                 }
             }
         } else if (i10 == 4) {
@@ -1197,10 +1197,10 @@ public class PopupNotificationActivity extends Activity implements NotificationC
             if (linearLayout2 != null) {
                 float translationX4 = linearLayout2.getTranslationX();
                 m(this.x);
-                LinearLayout e10 = e(0, false);
-                this.x = e10;
-                if (e10 != null) {
-                    e10.setTranslationX(translationX4);
+                LinearLayout e6 = e(0, false);
+                this.x = e6;
+                if (e6 != null) {
+                    e6.setTranslationX(translationX4);
                 }
             }
         }
@@ -1270,8 +1270,8 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 }
                 i10++;
             }
-        } catch (Exception e6) {
-            FileLog.e(e6);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 
@@ -1295,8 +1295,8 @@ public class PopupNotificationActivity extends Activity implements NotificationC
     @Override // android.app.Activity
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        org.telegram.ui.ActionBar.k6.R(this);
-        org.telegram.ui.ActionBar.k6.J(this, false);
+        org.telegram.ui.ActionBar.j6.R(this);
+        org.telegram.ui.ActionBar.j6.J(this, false);
         AndroidUtilities.fillStatusBarHeight(this, false);
         for (int i10 = 0; i10 < 4; i10++) {
             NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.appDidLogout);
@@ -1308,39 +1308,39 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.pushMessagesUpdated);
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.emojiLoaded);
         this.H = ConnectionsManager.generateClassGuid();
-        this.G[0] = new org.telegram.ui.Components.f51(false);
-        this.G[1] = new org.telegram.ui.Components.rp(false);
-        this.G[2] = new org.telegram.ui.Components.bp0(false);
-        this.G[3] = new org.telegram.ui.Components.pg0(null, false);
-        this.G[4] = new org.telegram.ui.Components.dm0(false);
-        lh.j4 j4Var = new lh.j4(this, this, 7);
-        setContentView(j4Var);
-        j4Var.setBackgroundColor(-1728053248);
+        this.G[0] = new org.telegram.ui.Components.g51(false);
+        this.G[1] = new org.telegram.ui.Components.op(false);
+        this.G[2] = new org.telegram.ui.Components.ap0(false);
+        this.G[3] = new org.telegram.ui.Components.og0(null, false);
+        this.G[4] = new org.telegram.ui.Components.cm0(false);
+        kh.i4 i4Var = new kh.i4(this, this, 7);
+        setContentView(i4Var);
+        i4Var.setBackgroundColor(-1728053248);
         RelativeLayout relativeLayout = new RelativeLayout(this);
-        j4Var.addView(relativeLayout, k7.c6.c(-1.0f, -1));
+        i4Var.addView(relativeLayout, k7.b6.c(-1.0f, -1));
         bw0 bw0Var = new bw0(this, this);
         this.B = bw0Var;
-        bw0Var.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.d6, false));
+        bw0Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
         float f10 = -1;
-        relativeLayout.addView(this.B, k7.c6.v(12, f10, 12, 240, 13));
+        relativeLayout.addView(this.B, k7.b6.v(12, f10, 12, 240, 13));
         ChatActivityEnterView chatActivityEnterView = this.b;
         if (chatActivityEnterView != null) {
             chatActivityEnterView.B0();
         }
-        ChatActivityEnterView chatActivityEnterView2 = new ChatActivityEnterView(this, j4Var, null, false, null);
+        ChatActivityEnterView chatActivityEnterView2 = new ChatActivityEnterView(this, i4Var, null, false, null);
         this.b = chatActivityEnterView2;
         chatActivityEnterView2.setId(MediaDataController.MAX_STYLE_RUNS_COUNT);
-        this.B.addView(this.b, k7.c6.v(0, f10, 0, -2, 12));
+        this.B.addView(this.b, k7.b6.v(0, f10, 0, -2, 12));
         this.b.setDelegate(new cw0(this));
-        l0 l0Var = new l0(this, this, 19);
-        this.n = l0Var;
-        this.B.addView(l0Var, 0);
+        n0 n0Var = new n0(this, this, 19);
+        this.n = n0Var;
+        this.B.addView(n0Var, 0);
         org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(this, null);
         this.a = kVar;
         kVar.setOccupyStatusBar(false);
         this.a.setBackButtonImage(R.drawable.ic_close_white);
-        this.a.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.s8, false));
-        this.a.B(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.t8, false), false);
+        this.a.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.s8, false));
+        this.a.B(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.t8, false), false);
         this.B.addView(this.a);
         ViewGroup.LayoutParams layoutParams = this.a.getLayoutParams();
         layoutParams.width = -1;
@@ -1348,11 +1348,11 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         org.telegram.ui.ActionBar.w0 g10 = this.a.n().g(2, 0, AndroidUtilities.dp(56.0f));
         TextView textView = new TextView(this);
         this.h = textView;
-        int i11 = org.telegram.ui.ActionBar.k6.B8;
-        textView.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, i11, false));
+        int i11 = org.telegram.ui.ActionBar.j6.B8;
+        textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
         this.h.setTextSize(1, 14.0f);
         this.h.setGravity(17);
-        g10.addView(this.h, k7.c6.c(-1.0f, 56));
+        g10.addView(this.h, k7.b6.c(-1.0f, 56));
         FrameLayout frameLayout = new FrameLayout(this);
         this.f = frameLayout;
         frameLayout.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
@@ -1375,7 +1375,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         this.c.setLayoutParams(layoutParams3);
         TextView textView2 = new TextView(this);
         this.d = textView2;
-        textView2.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.A8, false));
+        textView2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.A8, false));
         this.d.setTextSize(1, 18.0f);
         this.d.setLines(1);
         this.d.setMaxLines(1);
@@ -1395,7 +1395,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         this.d.setLayoutParams(layoutParams4);
         TextView textView4 = new TextView(this);
         this.e = textView4;
-        textView4.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, i11, false));
+        textView4.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
         this.e.setTextSize(1, 14.0f);
         this.e.setLines(1);
         this.e.setMaxLines(1);
@@ -1462,7 +1462,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         alertDialog$Builder.a.O = LocaleController.getString(R.string.AppName);
         alertDialog$Builder.a.Q = LocaleController.getString(R.string.PermissionNoAudioWithHint);
         alertDialog$Builder.h(LocaleController.getString(R.string.PermissionOpenSettings), new kl0(this, 7));
-        l.d.C(R.string.OK, alertDialog$Builder, null);
+        kf.k0.C(R.string.OK, alertDialog$Builder, null);
     }
 
     @Override // android.app.Activity

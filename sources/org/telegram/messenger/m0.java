@@ -1,6 +1,6 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m0 implements Runnable {
     public final /* synthetic */ int a;
@@ -9,12 +9,12 @@ public final /* synthetic */ class m0 implements Runnable {
     public final /* synthetic */ long d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ m0(long j10, long j11, long j12, org.telegram.ui.d5 d5Var) {
+    public /* synthetic */ m0(long j10, long j11, long j12, org.telegram.ui.f5 f5Var) {
         this.a = 2;
         this.b = j10;
         this.c = j11;
         this.d = j12;
-        this.e = d5Var;
+        this.e = f5Var;
     }
 
     @Override // java.lang.Runnable
@@ -27,13 +27,13 @@ public final /* synthetic */ class m0 implements Runnable {
                 ((MediaDataController) this.e).lambda$loadMusic$142(this.b, this.c, this.d);
                 break;
             default:
-                org.telegram.ui.d5 d5Var = (org.telegram.ui.d5) this.e;
+                org.telegram.ui.f5 f5Var = (org.telegram.ui.f5) this.e;
                 long j10 = this.b;
                 long j11 = this.c;
-                org.telegram.ui.b7.k0 = Long.valueOf(j10 * j11);
+                org.telegram.ui.d7.k0 = Long.valueOf(j10 * j11);
                 Long valueOf = Long.valueOf(this.d * j11);
-                org.telegram.ui.b7.l0 = valueOf;
-                d5Var.run(org.telegram.ui.b7.k0, valueOf);
+                org.telegram.ui.d7.l0 = valueOf;
+                f5Var.run(org.telegram.ui.d7.k0, valueOf);
                 break;
         }
     }

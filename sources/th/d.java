@@ -1,43 +1,6 @@
 package th;
 
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.ActionBar.d2;
-
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d implements MessagesStorage.LongCallback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d2 b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate e;
-
-    public /* synthetic */ d(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, d2 d2Var, long j10, boolean z4, int i10) {
-        this.a = i10;
-        this.e = notificationCenterDelegate;
-        this.b = d2Var;
-        this.c = j10;
-        this.d = z4;
-    }
-
-    @Override // org.telegram.messenger.MessagesStorage.LongCallback
-    public final void run(long j10) {
-        switch (this.a) {
-            case 0:
-                g gVar = (g) this.e;
-                gVar.getClass();
-                this.b.dismiss();
-                if (j10 != 0) {
-                    gVar.a = -j10;
-                    gVar.b = gVar.getMessagesController().getChat(Long.valueOf(j10));
-                    gVar.W(this.c, this.d);
-                    break;
-                }
-                break;
-            default:
-                i0.p((i0) this.e, this.b, this.c, this.d, j10);
-                break;
-        }
-    }
+public interface d {
 }

@@ -24,11 +24,11 @@ import java.util.ArrayList;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class d extends g implements Animatable {
     public final Context c;
-    public final i.f d = new i.f(this, 1);
+    public final i.f d = new i.f(this, 3);
     public final b b = new b();
 
     public d(Context context) {
@@ -181,8 +181,8 @@ public final class d extends g implements Animatable {
                                 }
                                 pVar = new p();
                                 pVar.inflate(resources, xml, asAttributeSet, theme);
-                            } catch (IOException e6) {
-                                Log.e("VectorDrawableCompat", "parser error", e6);
+                            } catch (IOException e) {
+                                Log.e("VectorDrawableCompat", "parser error", e);
                                 pVar = null;
                                 pVar.f = false;
                                 pVar.setCallback(this.d);
@@ -192,8 +192,8 @@ public final class d extends g implements Animatable {
                                 bVar.a = pVar;
                                 f10.recycle();
                                 eventType = xmlPullParser.next();
-                            } catch (XmlPullParserException e10) {
-                                Log.e("VectorDrawableCompat", "parser error", e10);
+                            } catch (XmlPullParserException e6) {
+                                Log.e("VectorDrawableCompat", "parser error", e6);
                                 pVar = null;
                                 pVar.f = false;
                                 pVar.setCallback(this.d);
@@ -237,21 +237,21 @@ public final class d extends g implements Animatable {
                                     } catch (Throwable th2) {
                                         th = th2;
                                     }
-                                } catch (IOException e11) {
+                                } catch (IOException e10) {
+                                    e = e10;
+                                } catch (XmlPullParserException e11) {
                                     e = e11;
-                                } catch (XmlPullParserException e12) {
-                                    e = e12;
                                 }
                                 try {
                                     a2 = a.a(context, resources2, theme2, animation, Xml.asAttributeSet(animation), null, 0);
                                     animation.close();
-                                } catch (IOException e13) {
-                                    e = e13;
+                                } catch (IOException e12) {
+                                    e = e12;
                                     Resources.NotFoundException notFoundException = new Resources.NotFoundException("Can't load animation resource ID #0x" + Integer.toHexString(resourceId2));
                                     notFoundException.initCause(e);
                                     throw notFoundException;
-                                } catch (XmlPullParserException e14) {
-                                    e = e14;
+                                } catch (XmlPullParserException e13) {
+                                    e = e13;
                                     Resources.NotFoundException notFoundException2 = new Resources.NotFoundException("Can't load animation resource ID #0x" + Integer.toHexString(resourceId2));
                                     notFoundException2.initCause(e);
                                     throw notFoundException2;

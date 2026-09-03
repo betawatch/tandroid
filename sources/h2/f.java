@@ -21,7 +21,7 @@ import com.google.android.gms.internal.play_billing.i3;
 import com.google.android.gms.internal.play_billing.j3;
 import com.google.android.gms.internal.play_billing.k3;
 import com.google.android.gms.internal.play_billing.z3;
-import com.google.firebase.messaging.u;
+import com.google.firebase.messaging.t;
 import e0.o0;
 import h7.q;
 import j7.c9;
@@ -33,11 +33,11 @@ import java.util.concurrent.Callable;
 import k7.ka;
 import l7.la;
 import n7.xf;
-import p2.a0;
-import p2.t;
-import p2.y;
+import p2.b0;
+import p2.u;
+import p2.z;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class f implements Callable {
     public final /* synthetic */ int a;
@@ -110,7 +110,7 @@ public final class f implements Callable {
                 qVar.getClass();
                 return j.c.a(qVar.a);
             case 3:
-                ((u) this.b).run();
+                ((t) this.b).run();
                 return null;
             case 4:
                 c9 c9Var = (c9) this.b;
@@ -129,8 +129,8 @@ public final class f implements Callable {
                 xfVar.getClass();
                 return j.c.a(xfVar.g);
             case 8:
-                t tVar = (t) this.b;
-                p2.b bVar2 = tVar.d;
+                u uVar = (u) this.b;
+                p2.b bVar2 = uVar.d;
                 synchronized (bVar2.a) {
                     try {
                         if (bVar2.b != 3) {
@@ -147,13 +147,13 @@ public final class f implements Callable {
                                 cVar = bVar2.i;
                             }
                             if (cVar == null) {
-                                p2.b bVar3 = tVar.d;
+                                p2.b bVar3 = uVar.d;
                                 bVar3.k(0);
-                                p2.h hVar = a0.h;
+                                p2.h hVar = b0.h;
                                 bVar3.j(107, hVar);
-                                tVar.c(hVar);
+                                uVar.c(hVar);
                             } else {
-                                p2.b bVar4 = tVar.d;
+                                p2.b bVar4 = uVar.d;
                                 String packageName = bVar4.g.getPackageName();
                                 int i11 = 25;
                                 int i12 = 3;
@@ -170,14 +170,14 @@ public final class f implements Callable {
                                                 int readInt = T0.readInt();
                                                 T0.recycle();
                                                 i12 = readInt;
-                                            } catch (Exception e6) {
-                                                com.google.android.gms.internal.play_billing.u.i("BillingClient", "Exception while checking if billing is supported; try to reconnect", e6);
-                                                boolean z11 = e6 instanceof DeadObjectException;
-                                                int i13 = z11 ? 91 : e6 instanceof RemoteException ? 90 : e6 instanceof SecurityException ? 92 : 42;
-                                                String a2 = m1.j.b(i13, 42) ? y.a(e6) : null;
-                                                tVar.d.k(0);
-                                                tVar.b(z11 ? a0.h : a0.f, i13, a2, z10);
-                                                tVar.c(z11 ? a0.h : a0.f);
+                                            } catch (Exception e) {
+                                                com.google.android.gms.internal.play_billing.u.i("BillingClient", "Exception while checking if billing is supported; try to reconnect", e);
+                                                boolean z11 = e instanceof DeadObjectException;
+                                                int i13 = z11 ? 91 : e instanceof RemoteException ? 90 : e instanceof SecurityException ? 92 : 42;
+                                                String a2 = m1.j.b(i13, 42) ? z.a(e) : null;
+                                                uVar.d.k(0);
+                                                uVar.b(z11 ? b0.h : b0.f, i13, a2, z10);
+                                                uVar.c(z11 ? b0.h : b0.f);
                                             }
                                         } else {
                                             i12 = ((com.google.android.gms.internal.play_billing.a) cVar).U0(i11, packageName, "subs", bundle);
@@ -244,12 +244,12 @@ public final class f implements Callable {
                                 }
                                 p2.b.p(bVar4, i14);
                                 if (i14 != 0) {
-                                    p2.h hVar2 = a0.a;
-                                    tVar.b(hVar2, i10, null, z10);
-                                    tVar.c(hVar2);
+                                    p2.h hVar2 = b0.a;
+                                    uVar.b(hVar2, i10, null, z10);
+                                    uVar.c(hVar2);
                                 } else {
                                     try {
-                                        Long a10 = tVar.a(z10);
+                                        Long a10 = uVar.a(z10);
                                         if (z10) {
                                             h3 s6 = i3.s();
                                             s6.c();
@@ -262,7 +262,7 @@ public final class f implements Callable {
                                                 r10.c();
                                                 d4.p((d4) r10.b, longValue);
                                             }
-                                            p2.b bVar5 = tVar.d;
+                                            p2.b bVar5 = uVar.d;
                                             s6.c();
                                             i3.q((i3) s6.b, (d4) r10.a());
                                             bVar5.i((i3) s6.a());
@@ -278,12 +278,12 @@ public final class f implements Callable {
                                                 p10.c();
                                                 a4.o((a4) p10.b, longValue2);
                                             }
-                                            tVar.d.h.r1((a4) p10.a());
+                                            uVar.d.h.Y0((a4) p10.a());
                                         }
                                     } catch (Throwable th2) {
                                         com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th2);
                                     }
-                                    tVar.c(a0.g);
+                                    uVar.c(b0.g);
                                 }
                             }
                         }

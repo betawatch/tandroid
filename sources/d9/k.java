@@ -6,7 +6,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class k implements Executor {
     public static final Logger f = Logger.getLogger(k.class.getName());
@@ -14,7 +14,7 @@ public final class k implements Executor {
     public final ArrayDeque b = new ArrayDeque();
     public int c = 1;
     public long d = 0;
-    public final androidx.biometric.k e = new androidx.biometric.k(this);
+    public final androidx.biometric.j e = new androidx.biometric.j(this);
 
     public k(Executor executor) {
         m.h(executor);
@@ -45,7 +45,7 @@ public final class k implements Executor {
                         }
                     }
                     return;
-                } catch (Error | RuntimeException e6) {
+                } catch (Error | RuntimeException e) {
                     synchronized (this.b) {
                         try {
                             int i11 = this.c;
@@ -53,8 +53,8 @@ public final class k implements Executor {
                             if ((i11 != 1 && i11 != 2) || !this.b.removeLastOccurrence(jVar)) {
                                 z4 = false;
                             }
-                            if (!(e6 instanceof RejectedExecutionException) || z4) {
-                                throw e6;
+                            if (!(e instanceof RejectedExecutionException) || z4) {
+                                throw e;
                             }
                         } finally {
                         }

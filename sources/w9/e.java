@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.Map;
 import u9.g;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class e implements u9.e, g {
     public final boolean a = true;
@@ -117,8 +117,8 @@ public final class e implements u9.e, g {
                     Object key = entry.getKey();
                     try {
                         i(entry.getValue(), (String) key);
-                    } catch (ClassCastException e6) {
-                        throw new u9.b(String.format("Only String keys are currently supported in maps, got %s of type %s instead.", key, key.getClass()), e6);
+                    } catch (ClassCastException e) {
+                        throw new u9.b(String.format("Only String keys are currently supported in maps, got %s of type %s instead.", key, key.getClass()), e);
                     }
                 }
                 jsonWriter.endObject();

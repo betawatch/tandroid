@@ -1,18 +1,18 @@
 package androidx.emoji2.text;
 
 import android.os.Trace;
-import oh.m7;
+import nh.m7;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.q20;
-import org.telegram.ui.Components.voip.n2;
+import org.telegram.ui.Components.voip.m2;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.w2;
+import org.telegram.ui.y2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class n implements Runnable {
     public final /* synthetic */ int a;
@@ -52,26 +52,26 @@ public final class n implements Runnable {
                 LaunchActivity.R().getFragmentView();
                 return;
             case 3:
-                k6.j = false;
-                k6.l(false);
+                j6.j = false;
+                j6.l(false);
                 return;
             case 4:
-                k6.k = false;
-                k6.l(true);
+                j6.k = false;
+                j6.l(true);
                 return;
             case 5:
                 return;
             default:
-                n2 n2Var = n2.R;
-                if (n2Var != null) {
-                    AndroidUtilities.cancelRunOnUIThread(n2Var.b.f.J);
+                m2 m2Var = m2.R;
+                if (m2Var != null) {
+                    AndroidUtilities.cancelRunOnUIThread(m2Var.b.f.J);
                     return;
                 }
                 return;
         }
     }
 
-    public n(w2 w2Var) {
+    public n(y2 y2Var) {
         this.a = 5;
     }
 

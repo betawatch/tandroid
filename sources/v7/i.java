@@ -11,7 +11,7 @@ import org.telegram.messenger.i4;
 import org.telegram.messenger.j4;
 import org.telegram.messenger.k4;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class i extends a7.c {
     public final /* synthetic */ int b = 0;
@@ -40,7 +40,7 @@ public final class i extends a7.c {
                     }
                     g7.b.a(parcel);
                     org.telegram.messenger.c cVar = (org.telegram.messenger.c) this.c;
-                    lambda$setOnMarkerClickListener$1 = ((GoogleMapsProvider.GoogleMapImpl) cVar.b).lambda$setOnMarkerClickListener$1((IMapsProvider.OnMarkerClickListener) cVar.c, new x7.f(iVar));
+                    lambda$setOnMarkerClickListener$1 = ((GoogleMapsProvider.GoogleMapImpl) cVar.b).lambda$setOnMarkerClickListener$1((IMapsProvider.OnMarkerClickListener) cVar.c, new x7.g(iVar));
                     parcel2.writeNoException();
                     parcel2.writeInt(lambda$setOnMarkerClickListener$1 ? 1 : 0);
                     break;

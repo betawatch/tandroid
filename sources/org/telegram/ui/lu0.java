@@ -15,7 +15,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class lu0 extends View {
     public final Paint a;
@@ -38,12 +38,12 @@ public final class lu0 extends View {
         TextPaint textPaint = new TextPaint(1);
         this.c = textPaint;
         this.r = false;
-        org.telegram.ui.Components.pr prVar = org.telegram.ui.Components.pr.h;
-        this.s = new org.telegram.ui.Components.z5(this, 0L, 350L, prVar);
+        org.telegram.ui.Components.mr mrVar = org.telegram.ui.Components.mr.h;
+        this.s = new org.telegram.ui.Components.z5(this, 0L, 350L, mrVar);
         paint.setColor(2130706432);
         org.telegram.ui.Components.j6 j6Var = new org.telegram.ui.Components.j6(false, true, true, false);
         this.b = j6Var;
-        j6Var.k(0.3f, 320L, prVar);
+        j6Var.k(0.3f, 320L, mrVar);
         j6Var.r(-1);
         j6Var.t(AndroidUtilities.dp(14.0f));
         j6Var.u(AndroidUtilities.bold());
@@ -56,7 +56,7 @@ public final class lu0 extends View {
         c();
         org.telegram.ui.Components.j6 j6Var2 = new org.telegram.ui.Components.j6(false, true, true, false);
         this.h = j6Var2;
-        j6Var2.k(0.3f, 320L, prVar);
+        j6Var2.k(0.3f, 320L, mrVar);
         j6Var2.r(-1);
         j6Var2.t(AndroidUtilities.dp(14.0f));
         j6Var2.u(AndroidUtilities.bold());

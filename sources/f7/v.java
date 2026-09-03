@@ -1,8 +1,8 @@
 package f7;
 
-import j7.m7;
+import j7.l7;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class v extends u {
     public static final v e = new v(0, new Object[0]);
@@ -16,7 +16,7 @@ public final class v extends u {
 
     @Override // java.util.List
     public final Object get(int i10) {
-        m7.a(i10, this.d);
+        l7.a(i10, this.d);
         Object obj = this.c[i10];
         obj.getClass();
         return obj;

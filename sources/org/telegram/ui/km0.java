@@ -7,34 +7,34 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class km0 implements org.telegram.ui.Components.ki {
+public final class km0 implements org.telegram.ui.Components.ji {
     public final /* synthetic */ fn0 a;
 
     public km0(fn0 fn0Var) {
         this.a = fn0Var;
     }
 
-    @Override // org.telegram.ui.Components.ki
-    public final void B0(org.telegram.ui.Components.wg wgVar) {
+    @Override // org.telegram.ui.Components.ji
+    public final void C0(org.telegram.ui.Components.wg wgVar) {
         wgVar.run();
     }
 
-    @Override // org.telegram.ui.Components.ki
-    public final void I1(int i10, boolean z4, boolean z10, int i11, int i12, long j10, boolean z11, boolean z12, long j11) {
-        org.telegram.ui.Components.mi miVar;
+    @Override // org.telegram.ui.Components.ji
+    public final void G1(int i10, boolean z4, boolean z10, int i11, int i12, long j10, boolean z11, boolean z12, long j11) {
+        org.telegram.ui.Components.li liVar;
         fn0 fn0Var = this.a;
-        if (fn0Var.getParentActivity() == null || (miVar = fn0Var.O0) == null) {
+        if (fn0Var.getParentActivity() == null || (liVar = fn0Var.O0) == null) {
             return;
         }
         if (i10 != 8 && i10 != 7) {
-            miVar.dismissWithButtonClick(i10);
+            liVar.dismissWithButtonClick(i10);
             fn0Var.F1(i10);
             return;
         }
         if (i10 != 8) {
-            miVar.dismiss(true);
+            liVar.dismiss(true);
         }
         HashMap<Object, Object> selectedPhotos = fn0Var.O0.g0.getSelectedPhotos();
         ArrayList<Object> selectedPhotosOrder = fn0Var.O0.g0.getSelectedPhotosOrder();
@@ -57,34 +57,34 @@ public final class km0 implements org.telegram.ui.Components.ki {
         fn0Var.G1(arrayList);
     }
 
-    @Override // org.telegram.ui.Components.ki
+    @Override // org.telegram.ui.Components.ji
     public final void Q0() {
         AndroidUtilities.hideKeyboard(this.a.fragmentView.findFocus());
     }
 
-    @Override // org.telegram.ui.Components.ki
-    public final /* synthetic */ boolean b2() {
+    @Override // org.telegram.ui.Components.ji
+    public final /* synthetic */ boolean X1() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ki
+    @Override // org.telegram.ui.Components.ji
     public final /* synthetic */ boolean h0() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ki
+    @Override // org.telegram.ui.Components.ji
     public final /* synthetic */ void Z0(Object obj) {
     }
 
-    @Override // org.telegram.ui.Components.ki
+    @Override // org.telegram.ui.Components.ji
     public final /* synthetic */ void o1(TLRPC.User user) {
     }
 
-    @Override // org.telegram.ui.Components.ki
-    public final /* synthetic */ void y0() {
+    @Override // org.telegram.ui.Components.ji
+    public final /* synthetic */ void z0() {
     }
 
-    @Override // org.telegram.ui.Components.ki
-    public final /* synthetic */ void f2(ArrayList arrayList, CharSequence charSequence, boolean z4, int i10, int i11, long j10, boolean z10, long j11) {
+    @Override // org.telegram.ui.Components.ji
+    public final /* synthetic */ void b2(ArrayList arrayList, CharSequence charSequence, boolean z4, int i10, int i11, long j10, boolean z10, long j11) {
     }
 }

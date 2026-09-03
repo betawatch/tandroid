@@ -5,7 +5,7 @@ import android.os.Bundle;
 import androidx.core.graphics.drawable.IconCompat;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class j {
     public final IconCompat a;
@@ -18,11 +18,11 @@ public final class j {
     public boolean h;
 
     public j(int i10, String str, PendingIntent pendingIntent) {
-        IconCompat e6 = i10 == 0 ? null : IconCompat.e(null, "", i10);
+        IconCompat e = i10 == 0 ? null : IconCompat.e(null, "", i10);
         Bundle bundle = new Bundle();
         this.d = true;
         this.h = true;
-        this.a = e6;
+        this.a = e;
         this.b = t.d(str);
         this.c = pendingIntent;
         this.e = bundle;

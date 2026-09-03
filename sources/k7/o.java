@@ -1,13 +1,14 @@
 package k7;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class o {
-    public static float a(float f10, float f11, float f12) {
-        return f10 < f11 ? f11 : f10 > f12 ? f12 : f10;
-    }
-
-    public static int b(int i10, int i11, int i12) {
-        return i10 < i11 ? i11 : i10 > i12 ? i12 : i10;
+    public static m1.c a(String name) {
+        sd.d dVar = ld.m0.b;
+        ld.a2 a2Var = new ld.a2();
+        dVar.getClass();
+        qd.e b10 = ld.e0.b(b8.c(dVar, a2Var));
+        kotlin.jvm.internal.j.e(name, "name");
+        return new m1.c(name, m1.a.b, b10);
     }
 }

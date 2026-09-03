@@ -11,11 +11,11 @@ import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Cells.f1;
+import org.telegram.ui.Components.zz;
 import r0.j0;
 import s0.d;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class b extends r0.b {
     public static final Rect n = new Rect(ConnectionsManager.DEFAULT_DATACENTER_ID, ConnectionsManager.DEFAULT_DATACENTER_ID, TLObject.FLAG_31, TLObject.FLAG_31);
@@ -41,7 +41,7 @@ public abstract class b extends r0.b {
     }
 
     @Override // r0.b
-    public final f1 a(View view) {
+    public final zz a(View view) {
         if (this.j == null) {
             this.j = new a(this);
         }
@@ -120,9 +120,9 @@ public abstract class b extends r0.b {
         if (!this.h.isEnabled() || (parent = (view = this.i).getParent()) == null) {
             return;
         }
-        AccessibilityEvent e6 = e(-1, 2048);
-        e6.setContentChangeTypes(1);
-        parent.requestSendAccessibilityEvent(view, e6);
+        AccessibilityEvent e = e(-1, 2048);
+        e.setContentChangeTypes(1);
+        parent.requestSendAccessibilityEvent(view, e);
     }
 
     public final d j(int i10) {

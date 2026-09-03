@@ -5,7 +5,7 @@ import j3.n0;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class h implements i {
     public final /* synthetic */ int a;
@@ -119,27 +119,27 @@ public final class h implements i {
                     g0 g0Var = (g0) ((List) this.f).get(i10);
                     h0Var.a();
                     h0Var.b();
-                    r3.v i22 = mVar.i2(h0Var.d, 3);
+                    r3.v d22 = mVar.d2(h0Var.d, 3);
                     m0 m0Var = new m0();
                     h0Var.b();
                     m0Var.a = h0Var.e;
                     m0Var.o = "application/dvbsubs";
                     m0Var.q = Collections.singletonList(g0Var.b);
                     m0Var.c = g0Var.a;
-                    i22.b(new n0(m0Var));
-                    vVarArr[i10] = i22;
+                    d22.b(new n0(m0Var));
+                    vVarArr[i10] = d22;
                 }
                 break;
             default:
                 h0Var.a();
                 h0Var.b();
-                r3.v i23 = mVar.i2(h0Var.d, 5);
-                this.g = i23;
+                r3.v d23 = mVar.d2(h0Var.d, 5);
+                this.g = d23;
                 m0 m0Var2 = new m0();
                 h0Var.b();
                 m0Var2.a = h0Var.e;
                 m0Var2.o = "application/id3";
-                i23.b(new n0(m0Var2));
+                d23.b(new n0(m0Var2));
                 break;
         }
     }

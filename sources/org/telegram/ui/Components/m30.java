@@ -1,69 +1,64 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.accessibility.AccessibilityEvent;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SvgHelper;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class m30 extends ImageView {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+public final class m30 extends m2.a {
+    public final /* synthetic */ n30 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ m30(Object obj, Context context, int i10, int i11) {
-        super(context);
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
+    public m30(n30 n30Var) {
+        this.c = n30Var;
     }
 
-    @Override // android.widget.ImageView, android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 1:
-                super.onDraw(canvas);
-                org.telegram.ui.v10 v10Var = (org.telegram.ui.v10) this.c;
-                k90 k90Var = v10Var.s;
-                if (v10Var.r) {
-                    int i10 = this.b / 2;
-                    k90Var.setBounds(i10, i10, getWidth() - i10, getHeight() - i10);
-                    k90Var.draw(canvas);
-                    break;
-                }
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
+    @Override // m2.a
+    public final void a(m2.h hVar, Object obj) {
+        hVar.removeView((View) obj);
     }
 
-    @Override // android.view.View
-    public void onInitializeAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
-        switch (this.a) {
-            case 0:
-                super.onInitializeAccessibilityEvent(accessibilityEvent);
-                if (accessibilityEvent.getEventType() == 32768) {
-                    ((n30) this.c).c.b.x(this.b, true);
-                    break;
-                }
-                break;
-            default:
-                super.onInitializeAccessibilityEvent(accessibilityEvent);
-                break;
-        }
+    @Override // m2.a
+    public final int b() {
+        return this.c.e.length;
     }
 
-    @Override // android.widget.ImageView, android.view.View
-    public boolean verifyDrawable(Drawable drawable) {
-        switch (this.a) {
-            case 1:
-                return drawable == ((org.telegram.ui.v10) this.c).s || super.verifyDrawable(drawable);
-            default:
-                return super.verifyDrawable(drawable);
+    @Override // m2.a
+    public final Object e(m2.h hVar, int i10) {
+        l30 l30Var = new l30(this, this.c.getContext(), i10, 0);
+        l30Var.setOnClickListener(new lh.y0(this, i10, 7));
+        l30Var.setFocusable(true);
+        l30Var.setTag(Integer.valueOf(i10));
+        l30Var.setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
+        l30Var.setScaleType(ImageView.ScaleType.FIT_XY);
+        l30Var.setLayoutParams(new ViewGroup.LayoutParams(AndroidUtilities.dp(200.0f), -1));
+        if (i10 == 0) {
+            l30Var.setContentDescription(LocaleController.getString(R.string.VoipRecordAudio));
+        } else if (i10 == 1) {
+            l30Var.setContentDescription(LocaleController.getString(R.string.VoipRecordPortrait));
+        } else {
+            l30Var.setContentDescription(LocaleController.getString(R.string.VoipRecordLandscape));
         }
+        SvgHelper.SvgDrawable drawable = SvgHelper.getDrawable(AndroidUtilities.readRes(i10 == 0 ? R.raw.record_audio : i10 == 1 ? R.raw.record_video_p : R.raw.record_video_l));
+        drawable.setAspectFill(false);
+        l30Var.setImageDrawable(drawable);
+        if (l30Var.getParent() != null) {
+            ((ViewGroup) l30Var.getParent()).removeView(l30Var);
+        }
+        hVar.addView(l30Var, 0);
+        return l30Var;
+    }
+
+    @Override // m2.a
+    public final boolean f(View view, Object obj) {
+        return view.equals(obj);
+    }
+
+    @Override // m2.a
+    public final void h(int i10) {
     }
 }

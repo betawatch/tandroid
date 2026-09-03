@@ -6,19 +6,19 @@ import android.os.IInterface;
 import android.os.Parcel;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final u5.b a = new u5.b("CastDynamiteModule", null);
 
-    public static r5.n a(Context context, r5.b bVar, o oVar, HashMap hashMap) {
+    public static r5.n a(Context context, r5.b bVar, p pVar, HashMap hashMap) {
         r5.n lVar;
         f b10 = b(context);
         l6.b bVar2 = new l6.b(context.getApplicationContext());
         Parcel M0 = b10.M0();
-        s.d(M0, bVar2);
-        s.c(M0, bVar);
-        s.d(M0, oVar);
+        t.d(M0, bVar2);
+        t.c(M0, bVar);
+        t.d(M0, pVar);
         M0.writeMap(hashMap);
         Parcel O0 = b10.O0(M0, 1);
         IBinder readStrongBinder = O0.readStrongBinder();
@@ -41,8 +41,8 @@ public abstract class d {
             }
             IInterface queryLocalInterface = b10.queryLocalInterface("com.google.android.gms.cast.framework.internal.ICastDynamiteModule");
             return queryLocalInterface instanceof f ? (f) queryLocalInterface : new f(b10, "com.google.android.gms.cast.framework.internal.ICastDynamiteModule", 1);
-        } catch (m6.b e6) {
-            throw new r5.d(e6);
+        } catch (m6.b e) {
+            throw new r5.d(e);
         }
     }
 }

@@ -4,11 +4,11 @@ import android.content.Context;
 import b6.m;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.MediaController;
-import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.i71;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.x9;
+import org.telegram.ui.z9;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class c implements m6.c, r5.h {
     public int a;
@@ -17,13 +17,8 @@ public final class c implements m6.c, r5.h {
         this.a = 3;
     }
 
-    @Override // m6.c
-    public int G(Context context, String str) {
-        return this.a;
-    }
-
     @Override // r5.h
-    public /* bridge */ /* synthetic */ void e(r5.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void d(r5.f fVar, int i10) {
     }
 
     @Override // r5.h
@@ -41,7 +36,7 @@ public final class c implements m6.c, r5.h {
         if (atomicInteger != null) {
             atomicInteger.set(0);
         }
-        hVar.p(new x9());
+        hVar.p(new z9());
         m.e("Must be called from the main thread.");
         if (hVar.w()) {
             s5.h.x(new s5.i(hVar, 3));
@@ -51,9 +46,9 @@ public final class c implements m6.c, r5.h {
         int i10 = this.a;
         long j10 = -1;
         if (i10 == 0) {
-            j71 j71Var = PhotoViewer.t1().C2;
-            if (j71Var != null) {
-                j10 = j71Var.n();
+            i71 i71Var = PhotoViewer.t1().C2;
+            if (i71Var != null) {
+                j10 = i71Var.n();
             }
         } else if (i10 == 1) {
             j10 = MediaController.getInstance().getCurrentPosition();
@@ -68,8 +63,9 @@ public final class c implements m6.c, r5.h {
     public /* bridge */ /* synthetic */ void g(r5.f fVar, boolean z4) {
     }
 
-    @Override // r5.h
-    public /* bridge */ /* synthetic */ void h(r5.f fVar, int i10) {
+    @Override // m6.c
+    public int h(Context context, String str, boolean z4) {
+        return 0;
     }
 
     @Override // r5.h
@@ -77,11 +73,15 @@ public final class c implements m6.c, r5.h {
     }
 
     @Override // r5.h
-    public /* bridge */ /* synthetic */ void j(r5.f fVar) {
+    public /* bridge */ /* synthetic */ void j(r5.f fVar, int i10) {
     }
 
     @Override // r5.h
-    public /* bridge */ /* synthetic */ void k(r5.f fVar, String str) {
+    public /* bridge */ /* synthetic */ void k(r5.f fVar) {
+    }
+
+    @Override // r5.h
+    public /* bridge */ /* synthetic */ void l(r5.f fVar, String str) {
     }
 
     @Override // r5.h
@@ -97,8 +97,8 @@ public final class c implements m6.c, r5.h {
     }
 
     @Override // m6.c
-    public int u(Context context, String str, boolean z4) {
-        return 0;
+    public int z(Context context, String str) {
+        return this.a;
     }
 
     public /* synthetic */ c(int i10) {

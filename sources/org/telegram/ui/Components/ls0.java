@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class ls0 extends f2.v {
     public final /* synthetic */ int c;
@@ -21,7 +21,7 @@ public final class ls0 extends f2.v {
         switch (this.c) {
             case 0:
                 qt0 qt0Var = (qt0) this.d;
-                f2.p0 adapter = qt0Var.r.getAdapter();
+                f2.o0 adapter = qt0Var.r.getAdapter();
                 yu0 yu0Var = (yu0) this.e;
                 su0 su0Var = yu0Var.F;
                 if (adapter == su0Var) {
@@ -36,13 +36,13 @@ public final class ls0 extends f2.v {
                 ((vu0) adapter).getClass();
                 return 1;
             default:
-                g61 g61Var = (g61) this.d;
-                w51 w51Var = ((h61) this.e).V2;
+                oh.h hVar = (oh.h) this.d;
+                w51 w51Var = ((g61) this.e).V2;
                 if (w51Var == null) {
-                    return g61Var.J;
+                    return hVar.J;
                 }
-                h51 G = w51Var.G(i10);
-                return (G == null || (i11 = G.u) == -1) ? g61Var.J : i11;
+                i51 G = w51Var.G(i10);
+                return (G == null || (i11 = G.u) == -1) ? hVar.J : i11;
         }
     }
 }

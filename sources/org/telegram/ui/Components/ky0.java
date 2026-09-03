@@ -8,13 +8,13 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class ky0 {
     public final int a;
     public final org.telegram.ui.Cells.v0 b;
-    public final org.telegram.ui.ActionBar.g6 c;
-    public final hj0 d;
+    public final org.telegram.ui.ActionBar.f6 c;
+    public final gj0 d;
     public TL_account.TL_birthday e;
     public k01 f;
     public k01[] g;
@@ -25,13 +25,13 @@ public final class ky0 {
     public final Paint l = new Paint(1);
     public final rc m;
 
-    public ky0(int i10, org.telegram.ui.Cells.v0 v0Var, org.telegram.ui.ActionBar.g6 g6Var) {
+    public ky0(int i10, org.telegram.ui.Cells.v0 v0Var, org.telegram.ui.ActionBar.f6 f6Var) {
         this.a = i10;
         this.b = v0Var;
-        this.c = g6Var;
-        hj0 hj0Var = new hj0(R.raw.cake, AndroidUtilities.dp(66.0f), AndroidUtilities.dp(66.0f), true, null);
-        this.d = hj0Var;
-        hj0Var.F(false);
+        this.c = f6Var;
+        gj0 gj0Var = new gj0(R.raw.cake, AndroidUtilities.dp(66.0f), AndroidUtilities.dp(66.0f), true, null);
+        this.d = gj0Var;
+        gj0Var.F(false);
         this.m = new rc(v0Var);
     }
 
@@ -40,9 +40,9 @@ public final class ky0 {
         org.telegram.ui.Cells.v0 v0Var = this.b;
         int width = (v0Var.getWidth() - dp) / 2;
         int dp2 = AndroidUtilities.dp(13.0f) + dp;
-        hj0 hj0Var = this.d;
-        hj0Var.setBounds(width, AndroidUtilities.dp(13.0f), width + dp, dp2);
-        hj0Var.draw(canvas);
+        gj0 gj0Var = this.d;
+        gj0Var.setBounds(width, AndroidUtilities.dp(13.0f), width + dp, dp2);
+        gj0Var.draw(canvas);
         this.f.c((v0Var.getWidth() - this.f.l()) / 2.0f, AndroidUtilities.dp(19.0f) + dp, 1.0f, -1, canvas);
         int j10 = (int) (this.f.j() + AndroidUtilities.dp(19.0f) + dp + AndroidUtilities.dp(17.0f));
         int i10 = 0;

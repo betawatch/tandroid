@@ -1,6 +1,6 @@
 package r3;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class a implements s {
     public final c a;
@@ -26,7 +26,7 @@ public final class a implements s {
 
     @Override // r3.s
     public final r f(long j10) {
-        t tVar = new t(j10, b.a(this.a.f(j10), 0L, this.c, this.d, this.e, this.f));
+        t tVar = new t(j10, b.a(this.a.k(j10), 0L, this.c, this.d, this.e, this.f));
         return new r(tVar, tVar);
     }
 

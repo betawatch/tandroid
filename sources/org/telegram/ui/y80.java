@@ -1,126 +1,126 @@
 package org.telegram.ui;
 
-import java.io.File;
-import java.util.ArrayList;
 import java.util.regex.Pattern;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.ChannelBoostsController;
+import org.telegram.messenger.FileLog;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y80 implements Runnable {
-    public final /* synthetic */ int a;
+public final /* synthetic */ class y80 implements h5.d {
+    public final /* synthetic */ int a = 0;
     public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ ze.c c;
+    public final /* synthetic */ Runnable d;
+    public final /* synthetic */ Long e;
+    public final /* synthetic */ org.telegram.ui.Cells.s1 f;
+    public final /* synthetic */ Object g;
 
-    public /* synthetic */ y80(LaunchActivity launchActivity, int i10) {
-        this.a = i10;
+    public /* synthetic */ y80(LaunchActivity launchActivity, ze.c cVar, Long l10, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, org.telegram.ui.Cells.s1 s1Var, Runnable runnable) {
         this.b = launchActivity;
+        this.c = cVar;
+        this.e = l10;
+        this.g = tL_premium_boostsStatus;
+        this.f = s1Var;
+        this.d = runnable;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x008e, code lost:
+    
+        if (((org.telegram.ui.zn) r6).a() == r0.longValue()) goto L32;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:48:0x00a9, code lost:
+    
+        if (r12.getCurrentFragmetDialogId() == r0.longValue()) goto L32;
+     */
+    @Override // h5.d
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void accept(Object obj) {
         int i10 = this.a;
-        org.telegram.ui.ActionBar.p2 p2Var = null;
-        int i11 = 0;
-        LaunchActivity launchActivity = this.b;
+        Object obj2 = this.g;
         switch (i10) {
             case 0:
+                TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj2;
+                ChannelBoostsController.CanApplyBoost canApplyBoost = (ChannelBoostsController.CanApplyBoost) obj;
                 Pattern pattern = LaunchActivity.y1;
-                org.telegram.ui.Components.qb qbVar = new org.telegram.ui.Components.qb(launchActivity, null);
-                qbVar.d(R.raw.email_check_inbox, new String[0]);
-                qbVar.b.setText(LocaleController.getString(R.string.YourLoginEmailChangedSuccess));
+                ze.c cVar = this.c;
+                if (cVar != null) {
+                    cVar.b();
+                }
                 org.telegram.ui.ActionBar.p2 R = LaunchActivity.R();
-                if (R != null) {
-                    org.telegram.ui.Components.ic.g(R, qbVar, 1500).j();
-                    try {
-                        R.fragmentView.performHapticFeedback(3, 2);
+                if (R instanceof xg0) {
+                    R = ((xg0) R).X();
+                }
+                org.telegram.ui.ActionBar.p2 p2Var = R;
+                if (p2Var != null) {
+                    org.telegram.ui.ActionBar.f6 resourceProvider = p2Var.getResourceProvider();
+                    if (p2Var.getLastStoryViewer() != null && p2Var.getLastStoryViewer().H0) {
+                        resourceProvider = p2Var.getLastStoryViewer().y;
+                    }
+                    LaunchActivity launchActivity = this.b;
+                    eg.v0 v0Var = new eg.v0(19, launchActivity.L, launchActivity, p2Var, resourceProvider);
+                    v0Var.G1(canApplyBoost);
+                    boolean z4 = p2Var instanceof zn;
+                    Long l10 = this.e;
+                    boolean z10 = true;
+                    boolean z11 = false;
+                    if (z4) {
                         break;
-                    } catch (Exception unused) {
-                        return;
+                    } else if (p2Var instanceof qy) {
+                        lx lxVar = ((qy) p2Var).C3;
+                        if (lxVar != null) {
+                            break;
+                        }
+                        z10 = false;
+                        z11 = z10;
+                    }
+                    v0Var.F1(tL_premium_boostsStatus, z11);
+                    v0Var.H1(l10.longValue());
+                    v0Var.d0 = this.f;
+                    p2Var.showDialog(v0Var);
+                    Runnable runnable = this.d;
+                    if (runnable != null) {
+                        try {
+                            runnable.run();
+                            break;
+                        } catch (Exception e) {
+                            FileLog.e(e);
+                            return;
+                        }
                     }
                 }
-                break;
-            case 1:
-                if (launchActivity.T0) {
-                    launchActivity.T0 = false;
-                    launchActivity.H(false, false, true);
-                    break;
-                }
-                break;
-            case 2:
-                Pattern pattern2 = LaunchActivity.y1;
-                launchActivity.H(false, true, false);
-                if (LaunchActivity.R() != null && LaunchActivity.R().getLastStoryViewer() != null) {
-                    LaunchActivity.R().getLastStoryViewer().P();
-                    break;
-                }
-                break;
-            case 3:
-                if (!launchActivity.n0.getFragmentStack().isEmpty()) {
-                    launchActivity.n0.getFragmentStack().get(0).showDialog(new org.telegram.ui.Components.xx0(launchActivity, launchActivity.g0, launchActivity.e0, launchActivity.f0));
-                    break;
-                }
-                break;
-            case 4:
-                Pattern pattern3 = LaunchActivity.y1;
-                launchActivity.getClass();
-                org.telegram.ui.Components.c30.b0 = false;
-                org.telegram.ui.Components.c30.j(launchActivity);
-                break;
-            case 5:
-                ArrayList arrayList = launchActivity.a0;
-                ArrayList arrayList2 = launchActivity.b0;
-                if (AndroidUtilities.isTablet()) {
-                    if (!arrayList2.isEmpty()) {
-                        p2Var = (org.telegram.ui.ActionBar.p2) l.d.i(1, arrayList2);
-                    }
-                } else if (!arrayList.isEmpty()) {
-                    p2Var = (org.telegram.ui.ActionBar.p2) l.d.i(1, arrayList);
-                }
-                if (!(p2Var instanceof ProxyListActivity) && !(p2Var instanceof d21)) {
-                    launchActivity.p0(new ProxyListActivity());
-                    break;
-                }
-                break;
-            case 6:
-                if (!launchActivity.s1) {
-                    try {
-                        org.telegram.ui.ActionBar.d2 C = org.telegram.ui.Components.z4.C(launchActivity);
-                        C.setOnDismissListener(new z80(launchActivity, i11));
-                        launchActivity.s1 = true;
-                        C.show();
-                        break;
-                    } catch (Throwable unused2) {
-                        return;
-                    }
-                }
-                break;
-            case 7:
-                if (launchActivity.Q0 != null) {
-                    File file = new File(ApplicationLoader.getFilesDirFixed(), android.support.v4.media.a.q(new StringBuilder("remote"), launchActivity.Q0.id, ".attheme"));
-                    TLRPC.TL_theme tL_theme = launchActivity.Q0;
-                    org.telegram.ui.ActionBar.j6 u10 = org.telegram.ui.ActionBar.k6.u(file, tL_theme.title, tL_theme, true);
-                    if (u10 != null) {
-                        launchActivity.p0(new jd1(u10, true, 0, false, false));
-                    }
-                    launchActivity.h0();
-                    break;
-                }
-                break;
-            case 8:
-                Pattern pattern4 = LaunchActivity.y1;
-                launchActivity.getClass();
-                launchActivity.p0(new fc0());
-                break;
-            case 9:
-                launchActivity.q1 = null;
                 break;
             default:
-                launchActivity.r1 = null;
+                ChannelBoostsController channelBoostsController = (ChannelBoostsController) obj2;
+                TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus2 = (TL_stories.TL_premium_boostsStatus) obj;
+                Pattern pattern2 = LaunchActivity.y1;
+                ze.c cVar2 = this.c;
+                Runnable runnable2 = this.d;
+                if (tL_premium_boostsStatus2 != null) {
+                    Long l11 = this.e;
+                    channelBoostsController.userCanBoostChannel(l11.longValue(), tL_premium_boostsStatus2, new y80(this.b, cVar2, l11, tL_premium_boostsStatus2, this.f, runnable2));
+                    break;
+                } else {
+                    if (cVar2 != null) {
+                        cVar2.b();
+                    }
+                    if (runnable2 != null) {
+                        runnable2.run();
+                        break;
+                    }
+                }
                 break;
         }
+    }
+
+    public /* synthetic */ y80(LaunchActivity launchActivity, ze.c cVar, Runnable runnable, ChannelBoostsController channelBoostsController, Long l10, org.telegram.ui.Cells.s1 s1Var) {
+        this.b = launchActivity;
+        this.c = cVar;
+        this.d = runnable;
+        this.g = channelBoostsController;
+        this.e = l10;
+        this.f = s1Var;
     }
 }

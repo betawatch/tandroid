@@ -20,7 +20,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class wr0 extends ou0 {
     public float n3;
@@ -50,15 +50,15 @@ public final class wr0 extends ou0 {
                 }
             }
             return null;
-        } catch (Exception e6) {
-            FileLog.e(e6);
+        } catch (Exception e) {
+            FileLog.e(e);
             return null;
         }
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final Integer V0(int i10) {
-        f2.p0 adapter = getAdapter();
+        f2.o0 adapter = getAdapter();
         gt0 gt0Var = this.r3.N;
         if (adapter == gt0Var && gt0Var.e > 0 && i10 == gt0Var.d.size() - 1) {
             return 0;
@@ -66,11 +66,11 @@ public final class wr0 extends ou0 {
         return super.V0(i10);
     }
 
-    @Override // org.telegram.ui.Components.ou0, org.telegram.ui.Components.aa, org.telegram.ui.Components.sl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ou0, org.telegram.ui.Components.aa, org.telegram.ui.Components.rl0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         View childAt;
         View childAt2;
-        f2.p0 adapter = getAdapter();
+        f2.o0 adapter = getAdapter();
         yu0 yu0Var = this.r3;
         org.telegram.ui.ActionBar.p2 p2Var = yu0Var.s1;
         ft0 ft0Var = yu0Var.W;
@@ -91,7 +91,7 @@ public final class wr0 extends ou0 {
                     TextPaint textPaint = new TextPaint(1);
                     this.g3 = textPaint;
                     textPaint.setTextSize(AndroidUtilities.dp(14.0f));
-                    this.g3.setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.z6, this.m2));
+                    this.g3.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.z6, this.m2));
                 }
                 int measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(60.0f);
                 StaticLayout staticLayout = this.h3;
@@ -123,9 +123,9 @@ public final class wr0 extends ou0 {
         }
         if (this.k3 == null) {
             int currentAccount = p2Var.getCurrentAccount();
-            oh.q9[] q9VarArr = oh.q9.f;
+            nh.q9[] q9VarArr = nh.q9.f;
             if (q9VarArr[currentAccount] == null) {
-                q9VarArr[currentAccount] = new oh.q9(currentAccount);
+                q9VarArr[currentAccount] = new nh.q9(currentAccount);
             }
             this.k3 = q9VarArr[currentAccount];
         }
@@ -136,7 +136,7 @@ public final class wr0 extends ou0 {
         yu0Var.m1 = -1;
     }
 
-    @Override // org.telegram.ui.Components.sl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.rl0, android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         yu0 yu0Var = this.r3;
         org.telegram.ui.ActionBar.p2 p2Var = yu0Var.s1;
@@ -178,13 +178,13 @@ public final class wr0 extends ou0 {
     }
 
     @Override // org.telegram.ui.Components.ou0
-    public final cl0 getMovingAdapter() {
+    public final bl0 getMovingAdapter() {
         yu0 yu0Var = this.r3;
         return yu0.p0(yu0Var.m1) ? yu0Var.k1(yu0Var.m1) : yu0Var.E;
     }
 
     @Override // org.telegram.ui.Components.ou0
-    public final cl0 getSupportingAdapter() {
+    public final bl0 getSupportingAdapter() {
         yu0 yu0Var = this.r3;
         return yu0.p0(yu0Var.m1) ? yu0Var.l1(yu0Var.m1) : yu0Var.F;
     }
@@ -203,22 +203,22 @@ public final class wr0 extends ou0 {
             AndroidUtilities.hideKeyboard(p2Var.getParentActivity().getCurrentFocus());
         }
         yu0Var.I();
-        f2.p0 adapter = getAdapter();
+        f2.o0 adapter = getAdapter();
         eu0 eu0Var = yu0Var.K;
         if (adapter == eu0Var) {
             ArrayList<MessageObject> arrayList = eu0Var.h;
             arrayList.clear();
             for (int i12 = 0; i12 < getChildCount(); i12++) {
                 View childAt = getChildAt(i12);
-                if (childAt instanceof org.telegram.ui.Cells.t1) {
-                    arrayList.add(((org.telegram.ui.Cells.t1) childAt).getMessageObject());
+                if (childAt instanceof org.telegram.ui.Cells.s1) {
+                    arrayList.add(((org.telegram.ui.Cells.s1) childAt).getMessageObject());
                 }
             }
             MessagesController.getInstance(eu0Var.d).addToPollsQueue(eu0Var.s.g1, arrayList);
         }
     }
 
-    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.rl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
         super.onLayout(z4, i10, i11, i12, i13);
         tr0 tr0Var = this.p3;
@@ -232,8 +232,8 @@ public final class wr0 extends ou0 {
     public final boolean performAccessibilityAction(int i10, Bundle bundle) {
         View B1;
         try {
-        } catch (Exception e6) {
-            FileLog.e(e6);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
         if (i10 != 4096) {
             if (i10 == 8192) {
@@ -251,11 +251,11 @@ public final class wr0 extends ou0 {
     }
 
     @Override // org.telegram.ui.Components.ou0
-    public final void x1(org.telegram.ui.Cells.r7 r7Var) {
-        int messageId = r7Var.getMessageId();
+    public final void x1(org.telegram.ui.Cells.q7 q7Var) {
+        int messageId = q7Var.getMessageId();
         tr0 tr0Var = this.p3;
-        if (messageId != tr0Var.G || !r7Var.c.hasBitmapImage()) {
-            r7Var.setHighlightProgress(0.0f);
+        if (messageId != tr0Var.G || !q7Var.c.hasBitmapImage()) {
+            q7Var.setHighlightProgress(0.0f);
             return;
         }
         if (!tr0Var.H) {
@@ -263,7 +263,7 @@ public final class wr0 extends ou0 {
             tr0Var.H = true;
         }
         float f10 = tr0Var.I;
-        r7Var.setHighlightProgress(f10 < 0.3f ? f10 / 0.3f : f10 > 0.7f ? (1.0f - f10) / 0.3f : 1.0f);
+        q7Var.setHighlightProgress(f10 < 0.3f ? f10 / 0.3f : f10 > 0.7f ? (1.0f - f10) / 0.3f : 1.0f);
     }
 
     @Override // org.telegram.ui.Components.ou0

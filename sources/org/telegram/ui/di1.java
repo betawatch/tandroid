@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class di1 extends FrameLayout {
     public float a;
@@ -26,11 +26,11 @@ public final class di1 extends FrameLayout {
     @Override // android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j10) {
         ii1 ii1Var = this.e;
-        org.telegram.ui.Components.voip.d3 d3Var = ii1Var.v;
-        if (view == d3Var && (ii1Var.k0 || ii1Var.j0)) {
+        org.telegram.ui.Components.voip.c3 c3Var = ii1Var.v;
+        if (view == c3Var && (ii1Var.k0 || ii1Var.j0)) {
             return false;
         }
-        if ((view != d3Var && view != ii1Var.Z && (view != ii1Var.V || !ii1Var.X)) || (!ii1Var.d1 && ii1Var.f1 == null)) {
+        if ((view != c3Var && view != ii1Var.Z && (view != ii1Var.V || !ii1Var.X)) || (!ii1Var.d1 && ii1Var.f1 == null)) {
             return super.drawChild(canvas, view, j10);
         }
         canvas.save();
@@ -59,7 +59,7 @@ public final class di1 extends FrameLayout {
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.Components.voip.e3 e3Var;
+        org.telegram.ui.Components.voip.d3 d3Var;
         ii1 ii1Var = this.e;
         sh1 sh1Var = ii1Var.Q0;
         if (motionEvent.getActionMasked() == 1) {
@@ -79,18 +79,18 @@ public final class di1 extends FrameLayout {
             ii1Var.X0 = false;
             ii1Var.d1 = false;
         }
-        org.telegram.ui.Components.voip.t2 t2Var = ii1Var.j0 ? ii1Var.Z : ii1Var.a0;
+        org.telegram.ui.Components.voip.s2 s2Var = ii1Var.j0 ? ii1Var.Z : ii1Var.a0;
         if (motionEvent.getActionMasked() == 0 || motionEvent.getActionMasked() == 5) {
             if (motionEvent.getActionMasked() == 0) {
                 RectF rectF = AndroidUtilities.rectTmp;
-                rectF.set(t2Var.getX(), t2Var.getY(), t2Var.getX() + t2Var.getMeasuredWidth(), t2Var.getY() + t2Var.getMeasuredHeight());
-                rectF.inset(((t2Var.getMeasuredHeight() * t2Var.Q) - t2Var.getMeasuredHeight()) / 2.0f, ((t2Var.getMeasuredWidth() * t2Var.Q) - t2Var.getMeasuredWidth()) / 2.0f);
-                if (d60.C3) {
+                rectF.set(s2Var.getX(), s2Var.getY(), s2Var.getX() + s2Var.getMeasuredWidth(), s2Var.getY() + s2Var.getMeasuredHeight());
+                rectF.inset(((s2Var.getMeasuredHeight() * s2Var.Q) - s2Var.getMeasuredHeight()) / 2.0f, ((s2Var.getMeasuredWidth() * s2Var.Q) - s2Var.getMeasuredWidth()) / 2.0f);
+                if (e60.C3) {
                     rectF.top = Math.max(rectF.top, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight());
-                    rectF.right = Math.min(rectF.right, t2Var.getMeasuredWidth() - AndroidUtilities.dp(90.0f));
+                    rectF.right = Math.min(rectF.right, s2Var.getMeasuredWidth() - AndroidUtilities.dp(90.0f));
                 } else {
                     rectF.top = Math.max(rectF.top, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight());
-                    rectF.bottom = Math.min(rectF.bottom, t2Var.getMeasuredHeight() - AndroidUtilities.dp(90.0f));
+                    rectF.bottom = Math.min(rectF.bottom, s2Var.getMeasuredHeight() - AndroidUtilities.dp(90.0f));
                 }
                 boolean contains = rectF.contains(motionEvent.getX(), motionEvent.getY());
                 ii1Var.e1 = contains;
@@ -180,8 +180,8 @@ public final class di1 extends FrameLayout {
                 } else if (ii1Var.w0) {
                     ii1Var.A(!ii1Var.u0);
                     ii1Var.n0 = ii1Var.m0;
-                    if (!ii1Var.u0 && (e3Var = ii1Var.K0) != null && e3Var.S) {
-                        e3Var.e(true);
+                    if (!ii1Var.u0 && (d3Var = ii1Var.K0) != null && d3Var.S) {
+                        d3Var.e(true);
                     }
                     ii1Var.H();
                 }

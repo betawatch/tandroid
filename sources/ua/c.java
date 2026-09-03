@@ -7,7 +7,7 @@ import java.lang.reflect.Method;
 import k7.a8;
 import pa.j;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final a8 a;
@@ -75,10 +75,10 @@ public abstract class c {
     public static void f(AccessibleObject accessibleObject) {
         try {
             accessibleObject.setAccessible(true);
-        } catch (Exception e6) {
+        } catch (Exception e) {
             StringBuilder t6 = android.support.v4.media.a.t("Failed making ", d(accessibleObject, false), " accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.");
-            t6.append(e(e6));
-            throw new j(t6.toString(), e6);
+            t6.append(e(e));
+            throw new j(t6.toString(), e);
         }
     }
 }

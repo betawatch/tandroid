@@ -1,15 +1,15 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pg1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ vg1 b;
+    public final /* synthetic */ wg1 b;
     public final /* synthetic */ byte[] c;
 
-    public /* synthetic */ pg1(vg1 vg1Var, byte[] bArr, int i10) {
+    public /* synthetic */ pg1(wg1 wg1Var, byte[] bArr, int i10) {
         this.a = i10;
-        this.b = vg1Var;
+        this.b = wg1Var;
         this.c = bArr;
     }
 
@@ -17,17 +17,17 @@ public final /* synthetic */ class pg1 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                vg1.Y(this.b, this.c);
+                wg1.Y(this.b, this.c);
                 break;
             default:
-                vg1 vg1Var = this.b;
-                vg1Var.w0();
-                vg1Var.S = this.c;
-                vg1Var.getMessagesController().removeSuggestion(0L, "VALIDATE_PASSWORD");
-                vg1 vg1Var2 = new vg1(9, vg1Var.R);
-                vg1Var2.E = vg1Var.E;
-                vg1Var2.D = vg1Var.D;
-                vg1Var.presentFragment(vg1Var2, true);
+                wg1 wg1Var = this.b;
+                wg1Var.w0();
+                wg1Var.S = this.c;
+                wg1Var.getMessagesController().removeSuggestion(0L, "VALIDATE_PASSWORD");
+                wg1 wg1Var2 = new wg1(9, wg1Var.R);
+                wg1Var2.E = wg1Var.E;
+                wg1Var2.D = wg1Var.D;
+                wg1Var.presentFragment(wg1Var2, true);
                 break;
         }
     }

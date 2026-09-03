@@ -2,7 +2,7 @@ package y2;
 
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class p {
     public final i a;
@@ -29,8 +29,8 @@ public final class p {
         i b10 = this.a.b(aVar.c);
         a9.a aVar2 = new a9.a();
         aVar2.f = new HashMap();
-        aVar2.d = Long.valueOf(qVar.a.W());
-        aVar2.e = Long.valueOf(qVar.b.W());
+        aVar2.d = Long.valueOf(qVar.a.l());
+        aVar2.e = Long.valueOf(qVar.b.l());
         aVar2.b = this.b;
         aVar2.c = new l(this.c, (byte[]) eVar.apply(aVar.b));
         aVar2.a = aVar.a;

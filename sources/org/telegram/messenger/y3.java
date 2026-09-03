@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import javax.microedition.khronos.egl.EGL10;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class y3 {
     public static float A(float f10, float f11, float f12, float f13) {
@@ -102,14 +102,14 @@ public abstract /* synthetic */ class y3 {
         return messagesController.getEncryptedChat(Integer.valueOf(DialogObject.getEncryptedChatId(j10)));
     }
 
-    public static org.telegram.ui.ActionBar.h3 o(Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z4, boolean z10) {
-        org.telegram.ui.ActionBar.h3 h3Var = new org.telegram.ui.ActionBar.h3(context, g6Var, z4, z10);
-        h3Var.fixNavigationBar();
-        return h3Var;
+    public static org.telegram.ui.ActionBar.g3 o(Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z4, boolean z10) {
+        org.telegram.ui.ActionBar.g3 g3Var = new org.telegram.ui.ActionBar.g3(context, f6Var, z4, z10);
+        g3Var.fixNavigationBar();
+        return g3Var;
     }
 
-    public static qh.d p(int i10, Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z4) {
-        qh.d dVar = new qh.d(context, g6Var, z4);
+    public static ph.d p(int i10, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z4) {
+        ph.d dVar = new ph.d(context, f6Var, z4);
         dVar.setRoundRadius(i10);
         return dVar;
     }
@@ -123,8 +123,8 @@ public abstract /* synthetic */ class y3 {
         textView.setGravity(i11);
     }
 
-    public static void s(int i10, org.telegram.ui.Components.qc qcVar, org.telegram.ui.ActionBar.g6 g6Var) {
-        qcVar.t(LocaleController.getString(i10), g6Var).j();
+    public static void s(int i10, org.telegram.ui.Components.qc qcVar, org.telegram.ui.ActionBar.f6 f6Var) {
+        qcVar.t(LocaleController.getString(i10), f6Var).j();
     }
 
     public static void t(TextView textView, int i10, int i11, float f10) {

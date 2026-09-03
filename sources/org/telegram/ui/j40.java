@@ -1,16 +1,32 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class j40 extends org.telegram.ui.Components.yc0 {
-    public j40(LaunchActivity launchActivity) {
-        super(launchActivity, null);
+public final class j40 implements org.telegram.ui.ActionBar.a3 {
+    public final /* synthetic */ e60 a;
+
+    public j40(e60 e60Var) {
+        this.a = e60Var;
     }
 
-    @Override // org.telegram.ui.Components.yc0
-    public final CharSequence d(int i10) {
-        return LocaleController.formatPluralString("Hours", i10, new Object[0]);
+    @Override // org.telegram.ui.ActionBar.a3
+    public final boolean g() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.a3
+    public final void onOpenAnimationEnd() {
+        CountDownLatch groupCallBottomSheetLatch;
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        if (sharedInstance != null && (groupCallBottomSheetLatch = sharedInstance.getGroupCallBottomSheetLatch()) != null) {
+            groupCallBottomSheetLatch.countDown();
+        }
+        e60 e60Var = this.a;
+        if (e60Var.C1 == 6) {
+            e60.B0(e60Var);
+        }
     }
 }

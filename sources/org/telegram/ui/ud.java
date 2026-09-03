@@ -1,34 +1,26 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ud implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ke b;
-    public final /* synthetic */ na1 c;
-    public final /* synthetic */ TwoStepVerificationActivity d;
+import android.view.View;
 
-    public /* synthetic */ ud(ke keVar, na1 na1Var, TwoStepVerificationActivity twoStepVerificationActivity, int i10) {
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class ud implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g3 b;
+
+    public /* synthetic */ ud(org.telegram.ui.ActionBar.g3 g3Var, int i10) {
         this.a = i10;
-        this.b = keVar;
-        this.c = na1Var;
-        this.d = twoStepVerificationActivity;
+        this.b = g3Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                this.b.H0.setLoading(false);
-                this.c.presentFragment(this.d);
-                break;
-            case 1:
-                this.b.N0.setLoading(false);
-                this.c.presentFragment(this.d);
+                this.b.dismiss();
                 break;
             default:
-                this.b.N0.setLoading(false);
-                this.c.presentFragment(this.d);
+                this.b.dismiss();
                 break;
         }
     }

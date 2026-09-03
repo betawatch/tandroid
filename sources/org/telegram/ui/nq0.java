@@ -4,17 +4,17 @@ import android.view.View;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class nq0 implements org.telegram.ui.Components.tm0 {
+public final class nq0 implements org.telegram.ui.Components.sm0 {
     public final /* synthetic */ rq0 a;
 
     public nq0(rq0 rq0Var) {
         this.a = rq0Var;
     }
 
-    @Override // org.telegram.ui.Components.tm0
-    public final void f(int i10, boolean z4) {
+    @Override // org.telegram.ui.Components.sm0
+    public final void d(int i10, boolean z4) {
         rq0 rq0Var = this.a;
         if (rq0Var.n[0].e == i10) {
             return;
@@ -32,13 +32,13 @@ public final class nq0 implements org.telegram.ui.Components.tm0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.tm0
-    public final /* synthetic */ boolean j1(int i10, View view) {
+    @Override // org.telegram.ui.Components.sm0
+    public final /* synthetic */ boolean k1(int i10, View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.tm0
-    public final void w0(float f10) {
+    @Override // org.telegram.ui.Components.sm0
+    public final void u0(float f10) {
         rq0 rq0Var = this.a;
         if (f10 != 1.0f || rq0Var.n[1].getVisibility() == 0) {
             if (rq0Var.v) {
@@ -58,7 +58,7 @@ public final class nq0 implements org.telegram.ui.Components.tm0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.tm0
-    public final /* synthetic */ void B() {
+    @Override // org.telegram.ui.Components.sm0
+    public final /* synthetic */ void C() {
     }
 }

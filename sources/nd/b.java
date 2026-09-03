@@ -9,12 +9,13 @@ import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import k1.m;
-import k7.q7;
+import k7.p7;
+import kf.k0;
 import ld.i2;
 import ld.l;
 import qd.t;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class b {
     public static final /* synthetic */ AtomicLongFieldUpdater b = AtomicLongFieldUpdater.newUpdater(b.class, "sendersAndCloseStatus$volatile");
@@ -40,7 +41,7 @@ public class b {
     public b(int i10) {
         this.a = i10;
         if (i10 < 0) {
-            throw new IllegalArgumentException(l.d.k(i10, "Invalid channel capacity: ", ", should be >=0").toString());
+            throw new IllegalArgumentException(k0.k(i10, "Invalid channel capacity: ", ", should be >=0").toString());
         }
         h hVar = d.a;
         this.bufferEnd$volatile = i10 != 0 ? i10 != Integer.MAX_VALUE ? i10 : Long.MAX_VALUE : 0L;
@@ -70,7 +71,7 @@ public class b {
         }
         l lVar = (l) obj;
         h hVar = d.a;
-        com.google.android.gms.internal.clearcut.e b10 = lVar.b(null, sc.i.a);
+        o3.c b10 = lVar.b(null, sc.i.a);
         if (b10 == null) {
             return false;
         }
@@ -98,14 +99,14 @@ public class b {
             dVar.getClass();
             AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = qd.d.a;
             Object obj3 = atomicReferenceFieldUpdater.get(dVar);
-            com.google.android.gms.internal.clearcut.e eVar = qd.a.b;
+            o3.c cVar = qd.a.b;
             obj = null;
-            if (obj3 == eVar) {
+            if (obj3 == cVar) {
                 break;
             }
             qd.d dVar2 = (qd.d) obj3;
             if (dVar2 == null) {
-                while (!atomicReferenceFieldUpdater.compareAndSet(dVar, null, eVar)) {
+                while (!atomicReferenceFieldUpdater.compareAndSet(dVar, null, cVar)) {
                     if (atomicReferenceFieldUpdater.get(dVar) != null) {
                         break;
                     }
@@ -441,7 +442,7 @@ public class b {
                 }
             } else {
                 if (i10 != 3) {
-                    throw new IllegalStateException(l.d.j(i10, "unexpected close status: ").toString());
+                    throw new IllegalStateException(k0.j(i10, "unexpected close status: ").toString());
                 }
                 h b10 = b(1152921504606846975L & j10);
                 Object obj = null;
@@ -468,11 +469,11 @@ public class b {
                                 }
                             } else if (l11 != d.e && l11 != null) {
                                 if (!(l11 instanceof i2) && !(l11 instanceof j)) {
-                                    com.google.android.gms.internal.clearcut.e eVar = d.g;
-                                    if (l11 == eVar || l11 == d.f) {
+                                    o3.c cVar = d.g;
+                                    if (l11 == cVar || l11 == d.f) {
                                         break loop0;
                                     }
-                                    if (l11 != eVar) {
+                                    if (l11 != cVar) {
                                         break;
                                     }
                                 } else {
@@ -572,7 +573,7 @@ public class b {
         } else {
             f10 = f();
         }
-        cVar.resumeWith(q7.a(f10));
+        cVar.resumeWith(p7.a(f10));
     }
 
     public final boolean m(Object obj, m mVar) {
@@ -581,7 +582,7 @@ public class b {
         }
         l lVar = (l) obj;
         h hVar = d.a;
-        com.google.android.gms.internal.clearcut.e b10 = lVar.b(null, mVar);
+        o3.c b10 = lVar.b(null, mVar);
         if (b10 == null) {
             return false;
         }
@@ -627,8 +628,8 @@ public class b {
                     }
                 }
             } else if (l11 != d.d) {
-                com.google.android.gms.internal.clearcut.e eVar = d.j;
-                if (l11 == eVar) {
+                o3.c cVar = d.j;
+                if (l11 == cVar) {
                     return d.o;
                 }
                 if (l11 == d.h) {
@@ -650,7 +651,7 @@ public class b {
                         hVar.n(i10, null);
                         return obj3;
                     }
-                    hVar.o(i10, eVar);
+                    hVar.o(i10, cVar);
                     hVar.i();
                     if (z4) {
                         d();
@@ -689,8 +690,8 @@ public class b {
                 }
             } else {
                 if (l10 != d.e) {
-                    com.google.android.gms.internal.clearcut.e eVar = d.k;
-                    if (l10 == eVar) {
+                    o3.c cVar = d.k;
+                    if (l10 == cVar) {
                         hVar.n(i10, null);
                         return 5;
                     }
@@ -711,7 +712,7 @@ public class b {
                         hVar.o(i10, d.i);
                         return 0;
                     }
-                    if (hVar.f.getAndSet((i10 * 2) + 1, eVar) != eVar) {
+                    if (hVar.f.getAndSet((i10 * 2) + 1, cVar) != cVar) {
                         hVar.m(i10, true);
                     }
                     return 5;

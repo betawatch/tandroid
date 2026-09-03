@@ -13,15 +13,15 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class m81 extends View {
     public final View B;
     public int[] C;
-    public final org.telegram.ui.Cells.c2 D;
+    public final org.telegram.ui.Cells.b2 D;
     public final Paint E;
     public float F;
-    public final org.telegram.ui.ActionBar.g6 a;
+    public final org.telegram.ui.ActionBar.f6 a;
     public final Paint b;
     public final Paint c;
     public final TextPaint d;
@@ -36,12 +36,12 @@ public final class m81 extends View {
     public float x;
     public ObjectAnimator y;
 
-    public m81(Context context, boolean z4, View view, org.telegram.ui.ActionBar.g6 g6Var) {
+    public m81(Context context, boolean z4, View view, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.C = new int[4];
-        this.D = new org.telegram.ui.Cells.c2(this);
+        this.D = new org.telegram.ui.Cells.b2(this);
         this.E = new Paint(1);
-        this.a = g6Var;
+        this.a = f6Var;
         this.r = new RectF();
         if (z4) {
             Bitmap createBitmap = Bitmap.createBitmap(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f), Bitmap.Config.ARGB_4444);
@@ -118,29 +118,29 @@ public final class m81 extends View {
         RectF rectF = this.r;
         rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
         View view = this.B;
-        org.telegram.ui.ActionBar.g6 g6Var = this.a;
-        org.telegram.ui.ActionBar.k6.s(this, view, g6Var);
+        org.telegram.ui.ActionBar.f6 f6Var = this.a;
+        org.telegram.ui.ActionBar.j6.s(this, view, f6Var);
         float measuredHeight2 = getMeasuredHeight() / 2;
         float measuredHeight3 = getMeasuredHeight() / 2;
-        Paint F = g6Var != null ? g6Var.F("paintChatActionBackground") : null;
-        if (F == null) {
-            F = org.telegram.ui.ActionBar.k6.S0("paintChatActionBackground");
+        Paint G = f6Var != null ? f6Var.G("paintChatActionBackground") : null;
+        if (G == null) {
+            G = org.telegram.ui.ActionBar.j6.S0("paintChatActionBackground");
         }
-        canvas2.drawRoundRect(rectF, measuredHeight2, measuredHeight3, F);
-        if (g6Var == null ? org.telegram.ui.ActionBar.k6.a1() : g6Var.o0()) {
+        canvas2.drawRoundRect(rectF, measuredHeight2, measuredHeight3, G);
+        if (f6Var == null ? org.telegram.ui.ActionBar.j6.a1() : f6Var.m0()) {
             float measuredHeight4 = getMeasuredHeight() / 2;
             float measuredHeight5 = getMeasuredHeight() / 2;
-            Paint F2 = g6Var != null ? g6Var.F("paintChatActionBackgroundDarken") : null;
-            if (F2 == null) {
-                F2 = org.telegram.ui.ActionBar.k6.S0("paintChatActionBackgroundDarken");
+            Paint G2 = f6Var != null ? f6Var.G("paintChatActionBackgroundDarken") : null;
+            if (G2 == null) {
+                G2 = org.telegram.ui.ActionBar.j6.S0("paintChatActionBackgroundDarken");
             }
-            canvas2.drawRoundRect(rectF, measuredHeight4, measuredHeight5, F2);
+            canvas2.drawRoundRect(rectF, measuredHeight4, measuredHeight5, G2);
         }
         if (this.F > 0.0f) {
             canvas2.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, this.E);
         }
-        int i10 = org.telegram.ui.ActionBar.k6.ic;
-        int v02 = org.telegram.ui.ActionBar.k6.v0(i10, g6Var);
+        int i10 = org.telegram.ui.ActionBar.j6.ic;
+        int v02 = org.telegram.ui.ActionBar.j6.v0(i10, f6Var);
         TextPaint textPaint = this.d;
         textPaint.setColor(v02);
         int x10 = org.telegram.ui.b.x(28.0f, getMeasuredWidth() - this.h, 2);
@@ -162,7 +162,7 @@ public final class m81 extends View {
             float dp = AndroidUtilities.dp(1.0f) * f10;
             rectF.set(dp, dp, AndroidUtilities.dp(18.0f) - dp, AndroidUtilities.dp(18.0f) - dp);
             bitmap.eraseColor(0);
-            paint.setColor(org.telegram.ui.ActionBar.k6.v0(i10, g6Var));
+            paint.setColor(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
             float width = rectF.width() / 2.0f;
             float height = rectF.height() / 2.0f;
             Canvas canvas3 = this.v;

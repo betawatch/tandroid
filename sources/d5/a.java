@@ -9,13 +9,14 @@ import h5.d0;
 import h5.w;
 import java.nio.charset.Charset;
 import java.util.List;
+import kf.k0;
 import org.telegram.tgnet.TLObject;
 import r8.d;
 import v4.e;
 import v4.f;
 import v4.h;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class a extends e {
     public final w n;
@@ -138,7 +139,7 @@ public final class a extends e {
                     wVar.G(1);
                     int g12 = wVar.g();
                     if (z13 > spannableStringBuilder.length()) {
-                        StringBuilder m9 = l.d.m(z13, "Truncating styl end (", ") to cueText.length() (");
+                        StringBuilder m9 = k0.m(z13, "Truncating styl end (", ") to cueText.length() (");
                         m9.append(spannableStringBuilder.length());
                         m9.append(").");
                         h5.a.K("Tx3gDecoder", m9.toString());

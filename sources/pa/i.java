@@ -3,7 +3,7 @@ package pa;
 import java.io.IOException;
 import java.io.StringWriter;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class i {
     public final l i() {
@@ -24,8 +24,8 @@ public abstract class i {
             bVar.n = 1;
             ra.d.l(this, bVar);
             return stringWriter.toString();
-        } catch (IOException e6) {
-            throw new AssertionError(e6);
+        } catch (IOException e) {
+            throw new AssertionError(e);
         }
     }
 }

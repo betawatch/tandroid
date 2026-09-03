@@ -3,12 +3,12 @@ package w4;
 import android.text.Layout;
 import android.text.SpannableStringBuilder;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.du;
+import org.telegram.ui.eu;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class d {
-    public static final du c = new du(24);
+    public static final eu c = new eu(24);
     public final v4.b a;
     public final int b;
 

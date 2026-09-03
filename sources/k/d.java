@@ -6,15 +6,15 @@ import android.view.View;
 import androidx.appcompat.widget.ActionBarContextView;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class d extends a implements l.j {
+public final class d extends a implements l.i {
     public Context c;
     public ActionBarContextView d;
     public f7.b e;
     public WeakReference f;
     public boolean h;
-    public l.l n;
+    public l.k n;
 
     @Override // k.a
     public final void a() {
@@ -22,7 +22,7 @@ public final class d extends a implements l.j {
             return;
         }
         this.h = true;
-        this.e.t(this);
+        this.e.u(this);
     }
 
     @Override // k.a
@@ -35,7 +35,7 @@ public final class d extends a implements l.j {
     }
 
     @Override // k.a
-    public final l.l c() {
+    public final l.k c() {
         return this.n;
     }
 
@@ -56,7 +56,7 @@ public final class d extends a implements l.j {
 
     @Override // k.a
     public final void g() {
-        this.e.u(this, this.n);
+        this.e.v(this, this.n);
     }
 
     @Override // k.a
@@ -64,19 +64,19 @@ public final class d extends a implements l.j {
         return this.d.F;
     }
 
-    @Override // k.a
-    public final void i(View view) {
-        this.d.setCustomView(view);
-        this.f = view != null ? new WeakReference(view) : null;
-    }
-
-    @Override // l.j
-    public final void j(l.l lVar) {
+    @Override // l.i
+    public final void i(l.k kVar) {
         g();
         m.h hVar = this.d.d;
         if (hVar != null) {
             hVar.l();
         }
+    }
+
+    @Override // k.a
+    public final void j(View view) {
+        this.d.setCustomView(view);
+        this.f = view != null ? new WeakReference(view) : null;
     }
 
     @Override // k.a
@@ -105,8 +105,8 @@ public final class d extends a implements l.j {
         this.d.setTitleOptional(z4);
     }
 
-    @Override // l.j
-    public final boolean s(l.l lVar, MenuItem menuItem) {
-        return ((sf.f) this.e.b).A(this, menuItem);
+    @Override // l.i
+    public final boolean q(l.k kVar, MenuItem menuItem) {
+        return ((rf.f) this.e.b).A(this, menuItem);
     }
 }

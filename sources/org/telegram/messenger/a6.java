@@ -13,7 +13,7 @@ import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.fn0;
 import org.telegram.ui.xw0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a6 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -63,8 +63,8 @@ public final /* synthetic */ class a6 implements Runnable {
                 ArrayList arrayList = ExternalActionActivity.x;
                 try {
                     d2Var.dismiss();
-                } catch (Exception e6) {
-                    FileLog.e(e6);
+                } catch (Exception e) {
+                    FileLog.e(e);
                 }
                 if (tLObject != null) {
                     MessagesController.getInstance(i11).putUsers(authorizationform.users, false);
@@ -101,14 +101,14 @@ public final /* synthetic */ class a6 implements Runnable {
                 BillingController billingController = BillingController.getInstance();
                 AccountInstance accountInstance = p2Var.getAccountInstance();
                 n7.qa qaVar = new n7.qa(24);
-                qaVar.i1(BillingController.PREMIUM_PRODUCT_DETAILS);
+                qaVar.L0(BillingController.PREMIUM_PRODUCT_DETAILS);
                 xw0Var.a();
                 String str3 = xw0Var.g.a;
                 if (TextUtils.isEmpty(str3)) {
                     throw new IllegalArgumentException("offerToken can not be empty");
                 }
                 qaVar.c = str3;
-                billingController.launchBillingFlow(parentActivity, accountInstance, tL_inputStorePaymentPremiumSubscription, Collections.singletonList(qaVar.O0()), eVar, false);
+                billingController.launchBillingFlow(parentActivity, accountInstance, tL_inputStorePaymentPremiumSubscription, Collections.singletonList(qaVar.X()), eVar, false);
                 return;
         }
     }

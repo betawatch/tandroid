@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zf1 implements org.telegram.ui.ActionBar.c2 {
     public final /* synthetic */ int a;
@@ -14,7 +14,7 @@ public final /* synthetic */ class zf1 implements org.telegram.ui.ActionBar.c2 {
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public final void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    public final void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         switch (this.a) {
             case 0:
                 this.b.finishFragment();

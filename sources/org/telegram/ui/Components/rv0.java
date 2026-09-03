@@ -7,9 +7,9 @@ import android.graphics.Rect;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public abstract class rv0 extends pv0 {
+public abstract class rv0 extends qv0 {
     public Activity t0;
     public final Rect u0;
     public int v0;
@@ -21,7 +21,7 @@ public abstract class rv0 extends pv0 {
         setActivity(activity);
     }
 
-    @Override // org.telegram.ui.Components.pv0
+    @Override // org.telegram.ui.Components.qv0
     public int R() {
         View rootView = getRootView();
         Rect rect = this.u0;
@@ -36,27 +36,27 @@ public abstract class rv0 extends pv0 {
         return height;
     }
 
-    @Override // org.telegram.ui.Components.pv0
+    @Override // org.telegram.ui.Components.qv0
     public void S() {
         if (this.n == null && this.r.isEmpty()) {
             return;
         }
         this.v0 = R();
         Point point = AndroidUtilities.displaySize;
-        post(new qv0(0, this, point.x > point.y));
+        post(new kv0(1, this, point.x > point.y));
     }
 
-    @Override // org.telegram.ui.Components.pv0
+    @Override // org.telegram.ui.Components.qv0
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.pv0
+    @Override // org.telegram.ui.Components.qv0
     public int getKeyboardHeight() {
         return this.v0;
     }
 
-    @Override // org.telegram.ui.Components.pv0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.qv0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
         super.onLayout(z4, i10, i11, i12, i13);
         S();

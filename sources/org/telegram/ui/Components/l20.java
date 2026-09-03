@@ -11,7 +11,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class l20 {
     public static final int x;
@@ -333,11 +333,11 @@ public final class l20 {
                                             } else {
                                                 photoViewer2.w1.e(true);
                                                 photoViewer2.w1.d(x12 < ((float) k12));
-                                                z61 z61Var = photoViewer2.w1;
+                                                y61 y61Var = photoViewer2.w1;
                                                 k20Var = k20Var2;
-                                                long j13 = z61Var.o + 10000;
-                                                z61Var.o = j13;
-                                                z61Var.p = LocaleController.formatPluralString("Seconds", (int) (j13 / 1000), new Object[0]);
+                                                long j13 = y61Var.o + 10000;
+                                                y61Var.o = j13;
+                                                y61Var.p = LocaleController.formatPluralString("Seconds", (int) (j13 / 1000), new Object[0]);
                                                 photoViewer2.t2(j11);
                                                 photoViewer2.b0.invalidate();
                                                 photoViewer2.n3.h(j11 / A1, true);

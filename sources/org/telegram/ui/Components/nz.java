@@ -1,56 +1,176 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.style.ReplacementSpan;
+import android.util.SparseIntArray;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class nz extends ReplacementSpan {
-    public final /* synthetic */ int a;
+public class nz extends f2.w {
+    public final boolean Q;
+    public final SparseIntArray R;
+    public final SparseIntArray S;
+    public int T;
+    public int U;
+    public int V;
+    public int W;
 
-    public /* synthetic */ nz(int i10) {
-        this.a = i10;
+    public nz(int i10, boolean z4) {
+        super(i10);
+        this.R = new SparseIntArray();
+        this.S = new SparseIntArray();
+        this.Q = z4;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f10, int i12, int i13, int i14, Paint paint) {
-        int i15 = this.a;
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        switch (this.a) {
-            case 0:
-                return (int) paint.measureText(charSequence, i10, i11);
-            case 1:
-                return AndroidUtilities.dp(16.0f);
-            case 2:
-                return AndroidUtilities.dp(12.0f);
-            case 3:
-                return AndroidUtilities.dp(12.0f);
-            default:
-                return AndroidUtilities.dp(16.0f);
+    public static jv0 C1(jv0 jv0Var) {
+        if (jv0Var == null) {
+            return null;
         }
+        if (jv0Var.a == 0.0f) {
+            jv0Var.a = 100.0f;
+        }
+        if (jv0Var.b == 0.0f) {
+            jv0Var.b = 100.0f;
+        }
+        float f10 = jv0Var.a;
+        float f11 = jv0Var.b;
+        float f12 = f10 / f11;
+        if (f12 <= 4.0f && f12 >= 0.2f) {
+            return jv0Var;
+        }
+        float max = Math.max(f10, f11);
+        jv0Var.a = max;
+        jv0Var.b = max;
+        return jv0Var;
     }
 
-    public /* synthetic */ nz(boolean z4) {
-        this.a = 0;
+    public final void B1() {
+        int i10;
+        int min;
+        boolean z4;
+        float f10;
+        SparseIntArray sparseIntArray = this.R;
+        if (sparseIntArray.size() == A() && this.W == this.m && this.T == this.J) {
+            return;
+        }
+        int i11 = this.m;
+        this.W = i11;
+        float f11 = i11;
+        if (f11 == 0.0f) {
+            f11 = 100.0f;
+        }
+        sparseIntArray.clear();
+        SparseIntArray sparseIntArray2 = this.S;
+        sparseIntArray2.clear();
+        this.V = 0;
+        this.U = 0;
+        int A = A();
+        this.T = A;
+        if (A == 0) {
+            return;
+        }
+        int dp = AndroidUtilities.dp(100.0f);
+        int i12 = this.J;
+        boolean z10 = this.Q;
+        int i13 = A + (z10 ? 1 : 0);
+        int i14 = i12;
+        int i15 = 0;
+        int i16 = 0;
+        while (i15 < i13) {
+            jv0 C1 = i15 < A ? C1(D1(i15)) : null;
+            if (C1 == null) {
+                z4 = i16 != 0;
+                i10 = dp;
+                min = i12;
+            } else {
+                i10 = dp;
+                min = Math.min(i12, (int) Math.floor((((C1.a / C1.b) * dp) / f11) * i12));
+                boolean z11 = i14 < min || (min > 33 && i14 < min + (-15));
+                if (C1.c) {
+                    sparseIntArray.put(i15, i14);
+                    this.V++;
+                    f10 = f11;
+                    i14 = i12;
+                    i16 = 0;
+                    i15++;
+                    dp = i10;
+                    f11 = f10;
+                } else {
+                    z4 = z11;
+                }
+            }
+            if (z4) {
+                if (i14 == 0 || i16 == 0) {
+                    f10 = f11;
+                } else {
+                    int i17 = i14 / i16;
+                    int i18 = i15 - i16;
+                    f10 = f11;
+                    int i19 = i18;
+                    while (true) {
+                        int i20 = i18 + i16;
+                        if (i19 >= i20) {
+                            break;
+                        }
+                        if (i19 == i20 - 1) {
+                            sparseIntArray.put(i19, sparseIntArray.get(i19) + i14);
+                        } else {
+                            sparseIntArray.put(i19, sparseIntArray.get(i19) + i17);
+                        }
+                        i14 -= i17;
+                        i19++;
+                    }
+                    sparseIntArray2.put(i15 - 1, this.V);
+                }
+                if (i15 == A) {
+                    break;
+                }
+                this.V++;
+                i14 = i12;
+                i16 = 0;
+            } else {
+                f10 = f11;
+                if (i14 < min) {
+                    min = i14;
+                }
+            }
+            if (this.V == 0) {
+                this.U = Math.max(this.U, i15);
+            }
+            if (i15 == A - 1 && !z10) {
+                sparseIntArray2.put(i15, this.V);
+            }
+            i16++;
+            i14 -= min;
+            sparseIntArray.put(i15, min);
+            i15++;
+            dp = i10;
+            f11 = f10;
+        }
+        this.V++;
     }
 
-    private final void a(Canvas canvas, CharSequence charSequence, int i10, int i11, float f10, int i12, int i13, int i14, Paint paint) {
+    public jv0 D1(int i10) {
+        return new jv0(100.0f, 100.0f);
     }
 
-    private final void b(Canvas canvas, CharSequence charSequence, int i10, int i11, float f10, int i12, int i13, int i14, Paint paint) {
+    public final boolean E1(int i10) {
+        B1();
+        return this.S.get(i10, ConnectionsManager.DEFAULT_DATACENTER_ID) != Integer.MAX_VALUE;
     }
 
-    private final void c(Canvas canvas, CharSequence charSequence, int i10, int i11, float f10, int i12, int i13, int i14, Paint paint) {
+    @Override // f2.w, f2.v0
+    public final int I(af.h hVar, f2.i1 i1Var) {
+        return i1Var.b();
     }
 
-    private final void d(Canvas canvas, CharSequence charSequence, int i10, int i11, float f10, int i12, int i13, int i14, Paint paint) {
+    @Override // f2.w, f2.v0
+    public final int u(af.h hVar, f2.i1 i1Var) {
+        return 1;
     }
 
-    private final void e(Canvas canvas, CharSequence charSequence, int i10, int i11, float f10, int i12, int i13, int i14, Paint paint) {
+    @Override // f2.w, f2.i0, f2.v0
+    public boolean y0() {
+        return false;
     }
 }

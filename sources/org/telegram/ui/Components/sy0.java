@@ -14,10 +14,10 @@ import org.telegram.messenger.MessageSuggestionParams;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class sy0 {
-    public final org.telegram.ui.ActionBar.g6 a;
+    public final org.telegram.ui.ActionBar.f6 a;
     public StaticLayout b;
     public final ArrayList c = new ArrayList(2);
     public int d;
@@ -26,8 +26,8 @@ public final class sy0 {
     public int g;
     public int h;
 
-    public sy0(org.telegram.ui.ActionBar.g6 g6Var) {
-        this.a = g6Var;
+    public sy0(org.telegram.ui.ActionBar.f6 f6Var) {
+        this.a = f6Var;
     }
 
     public static void c(StringBuilder sb, int i10, boolean z4) {
@@ -57,16 +57,16 @@ public final class sy0 {
             return;
         }
         MessageSuggestionParams of2 = MessageSuggestionParams.of(suggestedPost);
-        org.telegram.ui.ActionBar.g6 g6Var = this.a;
-        Paint F = g6Var != null ? g6Var.F("paintChatActionText3") : null;
-        if (F == null) {
-            F = org.telegram.ui.ActionBar.k6.S0("paintChatActionText3");
+        org.telegram.ui.ActionBar.f6 f6Var = this.a;
+        Paint G = f6Var != null ? f6Var.G("paintChatActionText3") : null;
+        if (G == null) {
+            G = org.telegram.ui.ActionBar.j6.S0("paintChatActionText3");
         }
-        TextPaint textPaint = (TextPaint) F;
+        TextPaint textPaint = (TextPaint) G;
         this.g = AndroidUtilities.dp(14.0f) * 2;
         ArrayList arrayList = this.c;
         arrayList.clear();
-        mf.a aVar = of2.amount;
+        lf.a aVar = of2.amount;
         if (aVar != null && !aVar.k()) {
             arrayList.add(new ry0(new k01(LocaleController.getString(R.string.SuggestionOfferInfoPrice), textPaint), new k01(LocaleController.bold(of2.amount.f()), textPaint)));
         }

@@ -1,41 +1,75 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import java.util.ArrayList;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.content.Context;
+import android.widget.LinearLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class e50 extends org.telegram.ui.ActionBar.p1 {
-    public final /* synthetic */ d60 o;
+public final class e50 extends org.telegram.ui.Components.n30 {
+    public final /* synthetic */ i50 n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e50(d60 d60Var, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
-        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-        this.o = d60Var;
+    public e50(i50 i50Var, Context context, TLRPC.Chat chat, boolean z4) {
+        super(context, chat, z4);
+        this.n = i50Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.p1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        d60 d60Var = this.o;
-        if (d60Var.c3 != this) {
-            return;
+    @Override // org.telegram.ui.Components.n30
+    public final void n(int i10) {
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext());
+        alertDialog$Builder.a.F = org.telegram.ui.ActionBar.j6.pg;
+        e60 e60Var = this.n.b;
+        e60Var.t0 = false;
+        alertDialog$Builder.a.O = LocaleController.getString(R.string.VoipGroupStartRecordingTitle);
+        if (i10 == 0) {
+            alertDialog$Builder.a.Q = LocaleController.getString(e60Var.X0.call.rtmp_stream ? R.string.VoipGroupStartRecordingRtmpText : R.string.VoipGroupStartRecordingText);
+        } else if (ChatObject.isChannelOrGiga(e60Var.W0)) {
+            alertDialog$Builder.a.Q = LocaleController.getString(e60Var.X0.call.rtmp_stream ? R.string.VoipGroupStartRecordingRtmpVideoText : R.string.VoipChannelStartRecordingVideoText);
+        } else {
+            alertDialog$Builder.a.Q = LocaleController.getString(e60Var.X0.call.rtmp_stream ? R.string.VoipGroupStartRecordingRtmpVideoText : R.string.VoipGroupStartRecordingVideoText);
         }
-        d60Var.c3 = null;
-        AnimatorSet animatorSet = d60Var.b3;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-            d60Var.b3 = null;
-        }
-        d60Var.V.X = true;
-        d60Var.b3 = new AnimatorSet();
-        ArrayList arrayList = new ArrayList();
-        arrayList.add(ObjectAnimator.ofInt(d60Var.T2, org.telegram.ui.Components.n6.b, 0));
-        d60Var.b3.playTogether(arrayList);
-        d60Var.b3.setDuration(220L);
-        d60Var.b3.addListener(new org.telegram.ui.Components.f91(this, 20));
-        d60Var.b3.start();
+        alertDialog$Builder.a.v0 = false;
+        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(getContext());
+        editTextBoldCursor.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.T(getContext(), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.nh, false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.oh, false)));
+        LinearLayout linearLayout = new LinearLayout(getContext());
+        linearLayout.setOrientation(1);
+        alertDialog$Builder.n(linearLayout);
+        editTextBoldCursor.setTextSize(1, 16.0f);
+        int i11 = org.telegram.ui.ActionBar.j6.ng;
+        editTextBoldCursor.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
+        editTextBoldCursor.setMaxLines(1);
+        editTextBoldCursor.setLines(1);
+        editTextBoldCursor.setInputType(16385);
+        editTextBoldCursor.setGravity(51);
+        editTextBoldCursor.setSingleLine(true);
+        editTextBoldCursor.setHint(LocaleController.getString(R.string.VoipGroupSaveFileHint));
+        editTextBoldCursor.setImeOptions(6);
+        editTextBoldCursor.setHintTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.og, false));
+        editTextBoldCursor.setCursorColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
+        editTextBoldCursor.setCursorSize(AndroidUtilities.dp(20.0f));
+        editTextBoldCursor.setCursorWidth(1.5f);
+        editTextBoldCursor.setPadding(0, AndroidUtilities.dp(4.0f), 0, 0);
+        linearLayout.addView(editTextBoldCursor, k7.b6.t(-1, 36, 51, 24, 0, 24, 12));
+        editTextBoldCursor.setOnEditorActionListener(new vz(alertDialog$Builder, 2));
+        int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.fg, false);
+        org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
+        d2Var.i(w02);
+        d2Var.setOnShowListener(new d50(this, d2Var, editTextBoldCursor, 1));
+        d2Var.setOnDismissListener(new wz(2, editTextBoldCursor));
+        alertDialog$Builder.k(LocaleController.getString(R.string.Start), new e3.d(this, editTextBoldCursor, i10, 8));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new uz(2, editTextBoldCursor));
+        int w03 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.ug, false);
+        org.telegram.ui.ActionBar.d2 d2Var2 = alertDialog$Builder.a;
+        d2Var2.i(w03);
+        d2Var2.show();
+        d2Var2.o(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
+        editTextBoldCursor.requestFocus();
     }
 }

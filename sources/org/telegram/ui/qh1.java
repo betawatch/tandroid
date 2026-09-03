@@ -8,9 +8,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qh1 implements org.telegram.ui.ActionBar.c2, org.telegram.ui.Components.voip.s1, r0.o, org.telegram.ui.Components.voip.j3 {
+public final /* synthetic */ class qh1 implements org.telegram.ui.ActionBar.c2, org.telegram.ui.Components.voip.r1, r0.o, org.telegram.ui.Components.voip.i3 {
     public final /* synthetic */ int a;
     public final /* synthetic */ ii1 b;
 
@@ -47,8 +47,8 @@ public final /* synthetic */ class qh1 implements org.telegram.ui.ActionBar.c2, 
         return r0.m1.b;
     }
 
-    @Override // org.telegram.ui.Components.voip.j3
-    public void d(org.telegram.ui.Components.voip.k3 k3Var) {
+    @Override // org.telegram.ui.Components.voip.i3
+    public void f(org.telegram.ui.Components.voip.j3 j3Var) {
         switch (this.a) {
             case 5:
                 VoIPService sharedInstance = VoIPService.getSharedInstance();
@@ -59,7 +59,7 @@ public final /* synthetic */ class qh1 implements org.telegram.ui.ActionBar.c2, 
                     boolean isMicMute = sharedInstance.isMicMute();
                     boolean z4 = !isMicMute;
                     if (ii1Var.t0.isTouchExplorationEnabled()) {
-                        k3Var.announceForAccessibility(LocaleController.getString(!isMicMute ? R.string.AccDescrVoipMicOff : R.string.AccDescrVoipMicOn));
+                        j3Var.announceForAccessibility(LocaleController.getString(!isMicMute ? R.string.AccDescrVoipMicOff : R.string.AccDescrVoipMicOn));
                     }
                     sharedInstance.setMicMute(z4, false, true);
                     ii1Var.n0 = ii1Var.m0;
@@ -74,7 +74,7 @@ public final /* synthetic */ class qh1 implements org.telegram.ui.ActionBar.c2, 
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    public void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         switch (this.a) {
             case 0:
                 ai1 ai1Var = this.b.r0;

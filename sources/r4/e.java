@@ -8,7 +8,7 @@ import j3.o2;
 import j3.x0;
 import java.util.List;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class e extends o2 {
     public final long b;
@@ -115,8 +115,8 @@ public final class e extends o2 {
                 i12++;
                 j14 = j12;
             }
-            if (i12 != -1 && (c3 = ((s4.m) ((s4.a) b10.c.get(i12)).c.get(0)).c()) != null && c3.F(d) != j12) {
-                j13 = (c3.a(c3.t(j15, d)) + j13) - j15;
+            if (i12 != -1 && (c3 = ((s4.m) ((s4.a) b10.c.get(i12)).c.get(0)).c()) != null && c3.N1(d) != j12) {
+                j13 = (c3.a(c3.u0(j15, d)) + j13) - j15;
             }
         } else {
             j11 = -9223372036854775807L;

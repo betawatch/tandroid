@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qw0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -42,13 +42,13 @@ public final /* synthetic */ class qw0 implements ValueAnimator.AnimatorUpdateLi
                 }
                 break;
             default:
-                xa1 xa1Var = (xa1) this.b;
+                ya1 ya1Var = (ya1) this.b;
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
-                org.telegram.ui.Components.li liVar = (org.telegram.ui.Components.li) this.d;
-                xa1Var.getClass();
-                xa1Var.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                chatActivityEnterView.getEditField().setAlpha(xa1Var.a);
-                liVar.invalidate();
+                org.telegram.ui.Components.ki kiVar = (org.telegram.ui.Components.ki) this.d;
+                ya1Var.getClass();
+                ya1Var.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                chatActivityEnterView.getEditField().setAlpha(ya1Var.a);
+                kiVar.invalidate();
                 break;
         }
     }

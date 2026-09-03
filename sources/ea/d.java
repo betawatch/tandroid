@@ -1,11 +1,10 @@
 package ea;
 
 import ca.j;
-import h7.u;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class d {
     public static final long d = TimeUnit.HOURS.toMillis(24);
@@ -15,13 +14,13 @@ public final class d {
     public int c;
 
     public d() {
-        if (u.c == null) {
+        if (db.a.b == null) {
             Pattern pattern = j.c;
-            u.c = new u(6);
+            db.a.b = new db.a(6);
         }
-        u uVar = u.c;
+        db.a aVar = db.a.b;
         if (j.d == null) {
-            j.d = new j(uVar);
+            j.d = new j(aVar);
         }
         this.a = j.d;
     }

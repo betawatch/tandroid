@@ -1,63 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChannelBoostsController;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public abstract class ro extends FrameLayout {
-    public k81 a;
-    public float b;
-    public boolean c;
-    public float d;
-    public ValueAnimator e;
+public final /* synthetic */ class ro implements h5.d {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ jp b;
 
-    public abstract void a(boolean z4);
+    public /* synthetic */ ro(jp jpVar, int i10) {
+        this.a = i10;
+        this.b = jpVar;
+    }
 
-    public final void b(boolean z4) {
-        this.c = z4;
-        ValueAnimator valueAnimator = this.e;
-        if (valueAnimator != null) {
-            this.e = null;
-            valueAnimator.cancel();
+    @Override // h5.d
+    public final void accept(Object obj) {
+        switch (this.a) {
+            case 0:
+                jp jpVar = this.b;
+                jpVar.c0 = (TL_stories.TL_premium_boostsStatus) obj;
+                jpVar.b0 = true;
+                jpVar.E(true);
+                jpVar.a0 = false;
+                break;
+            default:
+                jp.m(this.b, (ChannelBoostsController.CanApplyBoost) obj);
+                break;
         }
-        if (z4) {
-            setVisibility(0);
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.d, z4 ? 1.0f : 0.0f);
-        this.e = ofFloat;
-        ofFloat.addUpdateListener(new f6(this, 12));
-        this.e.setInterpolator(pr.h);
-        this.e.setDuration(320L);
-        this.e.addListener(new eg.u2(24, this, z4));
-        this.e.start();
-    }
-
-    public int getCurrentHeight() {
-        return (int) (getMeasuredHeight() * this.b);
-    }
-
-    @Override // android.view.View
-    public final boolean isShown() {
-        return this.c;
-    }
-
-    public void setShown(float f10) {
-        this.b = f10;
-        k81 k81Var = this.a;
-        if (k81Var != null) {
-            k81Var.setPivotX(k81Var.getWidth() / 2.0f);
-            this.a.setPivotY(0.0f);
-            this.a.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, f10));
-            this.a.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, f10));
-        }
-        setAlpha(f10);
-        invalidate();
-    }
-
-    public void setTabs(k81 k81Var) {
-        this.a = k81Var;
-        addView(k81Var, k7.c6.c(-1.0f, -1));
     }
 }

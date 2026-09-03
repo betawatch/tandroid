@@ -7,7 +7,7 @@ import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.os.Build;
 import android.util.Log;
-import c2.z0;
+import c2.a1;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
@@ -31,11 +31,12 @@ import java.util.zip.DataFormatException;
 import java.util.zip.Deflater;
 import java.util.zip.DeflaterOutputStream;
 import java.util.zip.Inflater;
+import kf.k0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class e {
-    public static final cb.b a = new cb.b(5);
+    public static final ab.a a = new ab.a(5);
     public static final byte[] b = {112, 114, 111, 0};
     public static final byte[] c = {112, 114, 109, 0};
     public static final byte[] d = {48, 49, 53, 0};
@@ -175,7 +176,7 @@ public abstract class e {
         while (i11 < i10) {
             int read = inputStream.read(bArr, i11, i10 - i11);
             if (read < 0) {
-                throw new IllegalStateException(l.d.j(i10, "Not enough bytes to read: "));
+                throw new IllegalStateException(k0.j(i10, "Not enough bytes to read: "));
             }
             i11 += read;
         }
@@ -759,7 +760,7 @@ public abstract class e {
         boolean z11;
         ByteArrayOutputStream byteArrayOutputStream;
         int i10;
-        z0 z0Var;
+        a1 a1Var;
         FileInputStream b10;
         boolean z12;
         Context applicationContext = context.getApplicationContext();
@@ -780,7 +781,7 @@ public abstract class e {
                             dataInputStream.close();
                             z12 = readLong == packageInfo.lastUpdateTime;
                             if (z12) {
-                                dVar.u(2, null);
+                                dVar.r0(2, null);
                             }
                         } finally {
                         }
@@ -799,39 +800,39 @@ public abstract class e {
             Log.d("ProfileInstaller", "Installing profile for " + context.getPackageName());
             int i11 = Build.VERSION.SDK_INT;
             File file2 = new File(new File("/data/misc/profiles/cur/0", packageName), "primary.prof");
-            z0 z0Var2 = new z0(assets, executor, dVar, name, file2);
-            byte[] bArr3 = (byte[]) z0Var2.d;
+            a1 a1Var2 = new a1(assets, executor, dVar, name, file2);
+            byte[] bArr3 = (byte[]) a1Var2.d;
             if (bArr3 == null) {
-                z0Var2.c(3, Integer.valueOf(i11));
+                a1Var2.c(3, Integer.valueOf(i11));
             } else {
                 if (!file2.exists()) {
                     try {
                         file2.createNewFile();
                     } catch (IOException unused2) {
-                        z0Var2.c(4, null);
+                        a1Var2.c(4, null);
                     }
                 } else if (!file2.canWrite()) {
-                    z0Var2.c(4, null);
+                    a1Var2.c(4, null);
                 }
-                z0Var2.a = true;
+                a1Var2.a = true;
                 try {
                     try {
-                        fileInputStream = z0Var2.b(assets, "dexopt/baseline.prof");
+                        fileInputStream = a1Var2.b(assets, "dexopt/baseline.prof");
                     } catch (FileNotFoundException e6) {
-                        dVar.u(6, e6);
+                        dVar.r0(6, e6);
                         fileInputStream = null;
                         bArr = b;
                         if (fileInputStream != null) {
                         }
-                        bVarArr2 = (b[]) z0Var2.g;
+                        bVarArr2 = (b[]) a1Var2.g;
                         if (bVarArr2 != null) {
                         }
-                        d dVar2 = (d) z0Var2.c;
-                        bVarArr3 = (b[]) z0Var2.g;
-                        byte[] bArr4 = (byte[]) z0Var2.d;
+                        d dVar2 = (d) a1Var2.c;
+                        bVarArr3 = (b[]) a1Var2.g;
+                        byte[] bArr4 = (byte[]) a1Var2.d;
                         if (bVarArr3 != null) {
                         }
-                        bArr2 = (byte[]) z0Var2.h;
+                        bArr2 = (byte[]) a1Var2.h;
                         if (bArr2 == null) {
                         }
                         if (z10) {
@@ -839,20 +840,20 @@ public abstract class e {
                         z11 = z10;
                         k.c(context, !z11 && z4);
                     } catch (IOException e10) {
-                        dVar.u(7, e10);
+                        dVar.r0(7, e10);
                         fileInputStream = null;
                         bArr = b;
                         if (fileInputStream != null) {
                         }
-                        bVarArr2 = (b[]) z0Var2.g;
+                        bVarArr2 = (b[]) a1Var2.g;
                         if (bVarArr2 != null) {
                         }
-                        d dVar22 = (d) z0Var2.c;
-                        bVarArr3 = (b[]) z0Var2.g;
-                        byte[] bArr42 = (byte[]) z0Var2.d;
+                        d dVar22 = (d) a1Var2.c;
+                        bVarArr3 = (b[]) a1Var2.g;
+                        byte[] bArr42 = (byte[]) a1Var2.d;
                         if (bVarArr3 != null) {
                         }
-                        bArr2 = (byte[]) z0Var2.h;
+                        bArr2 = (byte[]) a1Var2.h;
                         if (bArr2 == null) {
                         }
                         if (z10) {
@@ -864,41 +865,41 @@ public abstract class e {
                         try {
                             try {
                             } catch (IllegalStateException e11) {
-                                dVar.u(8, e11);
+                                dVar.r0(8, e11);
                                 try {
                                     fileInputStream.close();
                                 } catch (IOException e12) {
-                                    dVar.u(7, e12);
+                                    dVar.r0(7, e12);
                                 }
                                 bVarArr = null;
-                                z0Var2.g = bVarArr;
-                                bVarArr2 = (b[]) z0Var2.g;
+                                a1Var2.g = bVarArr;
+                                bVarArr2 = (b[]) a1Var2.g;
                                 if (bVarArr2 != null) {
                                     if (i10 != 24) {
                                         switch (i10) {
                                         }
                                     }
                                     try {
-                                        b10 = z0Var2.b(assets, "dexopt/baseline.profm");
+                                        b10 = a1Var2.b(assets, "dexopt/baseline.profm");
                                         if (b10 == null) {
                                         }
                                     } catch (FileNotFoundException e13) {
-                                        dVar.u(9, e13);
+                                        dVar.r0(9, e13);
                                     } catch (IOException e14) {
-                                        dVar.u(7, e14);
+                                        dVar.r0(7, e14);
                                     } catch (IllegalStateException e15) {
-                                        z0Var2.g = null;
-                                        dVar.u(8, e15);
+                                        a1Var2.g = null;
+                                        dVar.r0(8, e15);
                                     }
                                 }
-                                d dVar222 = (d) z0Var2.c;
-                                bVarArr3 = (b[]) z0Var2.g;
-                                byte[] bArr422 = (byte[]) z0Var2.d;
+                                d dVar222 = (d) a1Var2.c;
+                                bVarArr3 = (b[]) a1Var2.g;
+                                byte[] bArr422 = (byte[]) a1Var2.d;
                                 if (bVarArr3 != null) {
-                                    if (z0Var2.a) {
+                                    if (a1Var2.a) {
                                     }
                                 }
-                                bArr2 = (byte[]) z0Var2.h;
+                                bArr2 = (byte[]) a1Var2.h;
                                 if (bArr2 == null) {
                                 }
                                 if (z10) {
@@ -907,19 +908,19 @@ public abstract class e {
                                 k.c(context, !z11 && z4);
                             }
                         } catch (IOException e16) {
-                            dVar.u(7, e16);
+                            dVar.r0(7, e16);
                             fileInputStream.close();
                             bVarArr = null;
-                            z0Var2.g = bVarArr;
-                            bVarArr2 = (b[]) z0Var2.g;
+                            a1Var2.g = bVarArr;
+                            bVarArr2 = (b[]) a1Var2.g;
                             if (bVarArr2 != null) {
                             }
-                            d dVar2222 = (d) z0Var2.c;
-                            bVarArr3 = (b[]) z0Var2.g;
-                            byte[] bArr4222 = (byte[]) z0Var2.d;
+                            d dVar2222 = (d) a1Var2.c;
+                            bVarArr3 = (b[]) a1Var2.g;
+                            byte[] bArr4222 = (byte[]) a1Var2.d;
                             if (bVarArr3 != null) {
                             }
-                            bArr2 = (byte[]) z0Var2.h;
+                            bArr2 = (byte[]) a1Var2.h;
                             if (bArr2 == null) {
                             }
                             if (z10) {
@@ -930,31 +931,31 @@ public abstract class e {
                         if (!Arrays.equals(bArr, f(4, fileInputStream))) {
                             throw new IllegalStateException("Invalid magic");
                         }
-                        bVarArr = l(fileInputStream, f(4, fileInputStream), (String) z0Var2.f);
+                        bVarArr = l(fileInputStream, f(4, fileInputStream), (String) a1Var2.f);
                         try {
                             fileInputStream.close();
                         } catch (IOException e17) {
-                            dVar.u(7, e17);
+                            dVar.r0(7, e17);
                         }
-                        z0Var2.g = bVarArr;
+                        a1Var2.g = bVarArr;
                     }
-                    bVarArr2 = (b[]) z0Var2.g;
+                    bVarArr2 = (b[]) a1Var2.g;
                     if (bVarArr2 != null && (i10 = Build.VERSION.SDK_INT) >= 24 && i10 <= 34) {
                         if (i10 != 24 && i10 != 25) {
                             switch (i10) {
                             }
                         }
-                        b10 = z0Var2.b(assets, "dexopt/baseline.profm");
+                        b10 = a1Var2.b(assets, "dexopt/baseline.profm");
                         if (b10 == null) {
                             try {
                                 if (!Arrays.equals(c, f(4, b10))) {
                                     throw new IllegalStateException("Invalid magic");
                                 }
-                                z0Var2.g = i(b10, f(4, b10), bArr3, bVarArr2);
+                                a1Var2.g = i(b10, f(4, b10), bArr3, bVarArr2);
                                 b10.close();
-                                z0Var = z0Var2;
-                                if (z0Var != null) {
-                                    z0Var2 = z0Var;
+                                a1Var = a1Var2;
+                                if (a1Var != null) {
+                                    a1Var2 = a1Var;
                                 }
                             } finally {
                             }
@@ -962,16 +963,16 @@ public abstract class e {
                             if (b10 != null) {
                                 b10.close();
                             }
-                            z0Var = null;
-                            if (z0Var != null) {
+                            a1Var = null;
+                            if (a1Var != null) {
                             }
                         }
                     }
-                    d dVar22222 = (d) z0Var2.c;
-                    bVarArr3 = (b[]) z0Var2.g;
-                    byte[] bArr42222 = (byte[]) z0Var2.d;
+                    d dVar22222 = (d) a1Var2.c;
+                    bVarArr3 = (b[]) a1Var2.g;
+                    byte[] bArr42222 = (byte[]) a1Var2.d;
                     if (bVarArr3 != null && bArr42222 != null) {
-                        if (z0Var2.a) {
+                        if (a1Var2.a) {
                             throw new IllegalStateException("This device doesn't support aot. Did you call deviceSupportsAotProfile()?");
                         }
                         try {
@@ -982,33 +983,33 @@ public abstract class e {
                             } finally {
                             }
                         } catch (IOException e18) {
-                            dVar22222.u(7, e18);
+                            dVar22222.r0(7, e18);
                         } catch (IllegalStateException e19) {
-                            dVar22222.u(8, e19);
+                            dVar22222.r0(8, e19);
                         }
                         if (o(byteArrayOutputStream, bArr42222, bVarArr3)) {
-                            z0Var2.h = byteArrayOutputStream.toByteArray();
+                            a1Var2.h = byteArrayOutputStream.toByteArray();
                             byteArrayOutputStream.close();
-                            z0Var2.g = null;
+                            a1Var2.g = null;
                         } else {
-                            dVar22222.u(5, null);
-                            z0Var2.g = null;
+                            dVar22222.r0(5, null);
+                            a1Var2.g = null;
                             byteArrayOutputStream.close();
                         }
                     }
-                    bArr2 = (byte[]) z0Var2.h;
+                    bArr2 = (byte[]) a1Var2.h;
                     if (bArr2 == null) {
                         z10 = false;
                     } else {
                         try {
-                            if (!z0Var2.a) {
+                            if (!a1Var2.a) {
                                 throw new IllegalStateException("This device doesn't support aot. Did you call deviceSupportsAotProfile()?");
                             }
                             try {
                                 try {
                                     ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(bArr2);
                                     try {
-                                        fileOutputStream = new FileOutputStream((File) z0Var2.e);
+                                        fileOutputStream = new FileOutputStream((File) a1Var2.e);
                                     } catch (Throwable th2) {
                                         th = th2;
                                     }
@@ -1021,11 +1022,11 @@ public abstract class e {
                                                     fileOutputStream.write(bArr5, 0, read);
                                                 } else {
                                                     try {
-                                                        z0Var2.c(1, null);
+                                                        a1Var2.c(1, null);
                                                         fileOutputStream.close();
                                                         byteArrayInputStream.close();
-                                                        z0Var2.h = null;
-                                                        z0Var2.g = null;
+                                                        a1Var2.h = null;
+                                                        a1Var2.g = null;
                                                         z10 = true;
                                                     } catch (Throwable th3) {
                                                         th = th3;
@@ -1056,7 +1057,7 @@ public abstract class e {
                                     }
                                 } catch (FileNotFoundException e20) {
                                     e = e20;
-                                    z0Var2.c(6, e);
+                                    a1Var2.c(6, e);
                                     z10 = false;
                                     if (z10) {
                                     }
@@ -1064,7 +1065,7 @@ public abstract class e {
                                     k.c(context, !z11 && z4);
                                 } catch (IOException e21) {
                                     e = e21;
-                                    z0Var2.c(7, e);
+                                    a1Var2.c(7, e);
                                     z10 = false;
                                     if (z10) {
                                     }
@@ -1073,7 +1074,7 @@ public abstract class e {
                                 }
                             } catch (FileNotFoundException e22) {
                                 e = e22;
-                                z0Var2.c(6, e);
+                                a1Var2.c(6, e);
                                 z10 = false;
                                 if (z10) {
                                 }
@@ -1081,7 +1082,7 @@ public abstract class e {
                                 k.c(context, !z11 && z4);
                             } catch (IOException e23) {
                                 e = e23;
-                                z0Var2.c(7, e);
+                                a1Var2.c(7, e);
                                 z10 = false;
                                 if (z10) {
                                 }
@@ -1089,8 +1090,8 @@ public abstract class e {
                                 k.c(context, !z11 && z4);
                             }
                         } finally {
-                            z0Var2.h = null;
-                            z0Var2.g = null;
+                            a1Var2.h = null;
+                            a1Var2.g = null;
                         }
                     }
                     if (z10) {
@@ -1105,7 +1106,7 @@ public abstract class e {
             z11 = false;
             k.c(context, !z11 && z4);
         } catch (PackageManager.NameNotFoundException e24) {
-            dVar.u(7, e24);
+            dVar.r0(7, e24);
             k.c(context, false);
         }
     }

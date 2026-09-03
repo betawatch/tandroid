@@ -4,9 +4,9 @@ import android.graphics.Canvas;
 import android.graphics.Path;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class zt0 extends eg.a3 {
+public final class zt0 extends dg.c3 {
     public final Path l0;
     public boolean m0;
     public final org.telegram.ui.Components.z5 n0;
@@ -17,7 +17,7 @@ public final class zt0 extends eg.a3 {
         super(photoViewer.m5, photoViewer.B, photoViewer.s2, photoViewer.Y);
         this.o0 = photoViewer;
         this.l0 = new Path();
-        this.n0 = new org.telegram.ui.Components.z5(this, 0L, 420L, org.telegram.ui.Components.pr.h);
+        this.n0 = new org.telegram.ui.Components.z5(this, 0L, 420L, org.telegram.ui.Components.mr.h);
     }
 
     public final void m(boolean z4, boolean z10) {
@@ -28,7 +28,7 @@ public final class zt0 extends eg.a3 {
         invalidate();
     }
 
-    @Override // eg.a3, qh.d, android.view.View
+    @Override // dg.c3, ph.d, android.view.View
     public final void onDraw(Canvas canvas) {
         canvas.save();
         Path path = this.l0;
@@ -41,11 +41,11 @@ public final class zt0 extends eg.a3 {
             canvas.translate(-photoViewer.r5.getX(), -photoViewer.r5.getY());
         }
         photoViewer.T0(canvas, this.e0, -13948117, 855638016, false, true, false);
-        float e6 = this.n0.e(this.m0);
-        if (e6 > 0.0f) {
-            canvas.drawColor(org.telegram.ui.ActionBar.k6.l1(e6, -1));
+        float e = this.n0.e(this.m0);
+        if (e > 0.0f) {
+            canvas.drawColor(org.telegram.ui.ActionBar.j6.l1(e, -1));
         }
-        setTextColor(i0.a.d(e6, -1, -16777216));
+        setTextColor(i0.a.d(e, -1, -16777216));
         canvas.restore();
         super.onDraw(canvas);
     }

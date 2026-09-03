@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class vp0 extends org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ wp0 x;
@@ -36,13 +36,13 @@ public final class vp0 extends org.telegram.ui.ActionBar.r1 {
         lq0 lq0Var = wp0Var.E0;
         int i10 = lq0.X0;
         for (int i11 = 0; i11 < viewGroup.getChildCount(); i11++) {
-            viewGroup2 = ((org.telegram.ui.ActionBar.h3) lq0Var).containerView;
+            viewGroup2 = ((org.telegram.ui.ActionBar.g3) lq0Var).containerView;
             View childAt = viewGroup2.getChildAt(i11);
             if (childAt != lq0Var.h && childAt != lq0Var.v && childAt != lq0Var.P[1] && childAt != lq0Var.x && childAt != lq0Var.c && childAt != lq0Var.Z && childAt != lq0Var.f) {
                 childAt.setTranslationY(f10);
             }
         }
-        mp0 mp0Var = lq0Var.C;
+        lp0 lp0Var = lq0Var.C;
         lq0Var.q0 = f10;
         int i12 = wp0Var.y0;
         if (i12 != -1) {
@@ -52,7 +52,7 @@ public final class vp0 extends org.telegram.ui.ActionBar.r1 {
             float f12 = 1.0f - f11;
             lq0Var.m0 = (int) ((wp0Var.z0 * f11) + (i12 * f12));
             float f13 = ((i12 - r6) * f12) + f10;
-            mp0Var.setTranslationY(f13);
+            lp0Var.setTranslationY(f13);
             if (z4) {
                 lq0Var.D.setTranslationY(f13);
             } else {
@@ -67,9 +67,9 @@ public final class vp0 extends org.telegram.ui.ActionBar.r1 {
                     f14 = f11;
                 }
                 if (z4) {
-                    mp0Var.setTranslationY(f10 - ((i13 - r6) * f11));
+                    lp0Var.setTranslationY(f10 - ((i13 - r6) * f11));
                 } else {
-                    mp0Var.setTranslationY(((r6 - i13) * f14) + f10);
+                    lp0Var.setTranslationY(((r6 - i13) * f14) + f10);
                 }
             }
         }
@@ -85,8 +85,8 @@ public final class vp0 extends org.telegram.ui.ActionBar.r1 {
     @Override // org.telegram.ui.ActionBar.r1
     public final void f() {
         lq0 lq0Var = this.x.E0;
-        pp0 pp0Var = lq0Var.d;
-        if (pp0Var == null || !pp0Var.m()) {
+        op0 op0Var = lq0Var.d;
+        if (op0Var == null || !op0Var.m()) {
             int i10 = lq0Var.K0;
             AndroidUtilities.dp(20.0f);
         }

@@ -21,11 +21,11 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class lh1 extends org.telegram.ui.Components.cl0 {
+public final class lh1 extends org.telegram.ui.Components.bl0 {
     public final Context c;
-    public final uf.k1 f;
+    public final tf.j1 f;
     public Runnable h;
     public boolean n;
     public final int s;
@@ -79,32 +79,32 @@ public final class lh1 extends org.telegram.ui.Components.cl0 {
         if (!z11 && usersSelectActivity.D) {
             this.r.add(0, usersSelectActivity.getMessagesController().getUser(Long.valueOf(usersSelectActivity.getUserConfig().clientUserId)));
         }
-        uf.k1 k1Var = new uf.k1(false);
-        this.f = k1Var;
-        k1Var.p = false;
-        k1Var.a = new kl0(this, 25);
+        tf.j1 j1Var = new tf.j1(false);
+        this.f = j1Var;
+        j1Var.p = false;
+        j1Var.a = new kl0(this, 25);
     }
 
-    @Override // f2.p0
-    public final void A(f2.m1 m1Var) {
-        View view = m1Var.a;
-        if (view instanceof org.telegram.ui.Cells.g4) {
-            ((org.telegram.ui.Cells.g4) view).a.getImageReceiver().cancelLoadImage();
+    @Override // f2.o0
+    public final void A(f2.l1 l1Var) {
+        View view = l1Var.a;
+        if (view instanceof org.telegram.ui.Cells.f4) {
+            ((org.telegram.ui.Cells.f4) view).a.getImageReceiver().cancelLoadImage();
         }
     }
 
-    @Override // org.telegram.ui.Components.rl0
-    public final boolean D(f2.m1 m1Var) {
-        return m1Var.f == 1;
+    @Override // org.telegram.ui.Components.ql0
+    public final boolean D(f2.l1 l1Var) {
+        return l1Var.f == 1;
     }
 
-    @Override // org.telegram.ui.Components.cl0
+    @Override // org.telegram.ui.Components.bl0
     public final String F(int i10) {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.cl0
-    public final void G(org.telegram.ui.Components.sl0 sl0Var, float f10, int[] iArr) {
+    @Override // org.telegram.ui.Components.bl0
+    public final void G(org.telegram.ui.Components.rl0 rl0Var, float f10, int[] iArr) {
         iArr[0] = (int) (h() * f10);
         iArr[1] = 0;
     }
@@ -131,12 +131,12 @@ public final class lh1 extends org.telegram.ui.Components.cl0 {
         l();
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final int h() {
         if (this.n) {
             int size = this.d.size();
-            uf.k1 k1Var = this.f;
-            return k1Var.e.size() + k1Var.d.size() + size;
+            tf.j1 j1Var = this.f;
+            return j1Var.e.size() + j1Var.d.size() + size;
         }
         UsersSelectActivity usersSelectActivity = this.v;
         int i10 = 0;
@@ -151,7 +151,7 @@ public final class lh1 extends org.telegram.ui.Components.cl0 {
         return this.r.size() + i10;
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final int j(int i10) {
         int i11;
         if (!this.n) {
@@ -179,11 +179,11 @@ public final class lh1 extends org.telegram.ui.Components.cl0 {
     /* JADX WARN: Type inference failed for: r11v29 */
     /* JADX WARN: Type inference failed for: r11v6, types: [android.text.SpannableStringBuilder] */
     /* JADX WARN: Type inference failed for: r11v9 */
-    @Override // f2.p0
+    @Override // f2.o0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void v(f2.m1 m1Var, int i10) {
+    public final void v(f2.l1 l1Var, int i10) {
         Object obj;
         String string;
         CharSequence charSequence;
@@ -198,32 +198,32 @@ public final class lh1 extends org.telegram.ui.Components.cl0 {
         SpannableStringBuilder spannableStringBuilder2;
         SpannableStringBuilder spannableStringBuilder3;
         CharSequence charSequence2;
-        int i12 = m1Var.f;
-        View view = m1Var.a;
+        int i12 = l1Var.f;
+        View view = l1Var.a;
         UsersSelectActivity usersSelectActivity = this.v;
         int i13 = 2;
         if (i12 != 1) {
             if (i12 != 2) {
                 return;
             }
-            org.telegram.ui.Cells.u3 u3Var = (org.telegram.ui.Cells.u3) view;
+            org.telegram.ui.Cells.t3 t3Var = (org.telegram.ui.Cells.t3) view;
             if (i10 != 0 || usersSelectActivity.C) {
-                u3Var.setText(LocaleController.getString(R.string.FilterChats));
+                t3Var.setText(LocaleController.getString(R.string.FilterChats));
                 return;
             } else {
-                u3Var.setText(LocaleController.getString(R.string.FilterChatTypes));
+                t3Var.setText(LocaleController.getString(R.string.FilterChatTypes));
                 return;
             }
         }
-        org.telegram.ui.Cells.g4 g4Var = (org.telegram.ui.Cells.g4) view;
+        org.telegram.ui.Cells.f4 f4Var = (org.telegram.ui.Cells.f4) view;
         if (this.n) {
             int size = this.d.size();
-            uf.k1 k1Var = this.f;
-            ArrayList arrayList = k1Var.e;
-            ArrayList arrayList2 = k1Var.d;
+            tf.j1 j1Var = this.f;
+            ArrayList arrayList = j1Var.e;
+            ArrayList arrayList2 = j1Var.d;
             int size2 = arrayList.size();
             int size3 = arrayList2.size();
-            obj = (i10 < 0 || i10 >= size) ? (i10 < size || i10 >= size3 + size) ? (i10 <= size + size3 || i10 >= (size2 + size) + size3) ? null : k1Var.e.get((i10 - size) - size3) : arrayList2.get(i10 - size) : this.d.get(i10);
+            obj = (i10 < 0 || i10 >= size) ? (i10 < size || i10 >= size3 + size) ? (i10 <= size + size3 || i10 >= (size2 + size) + size3) ? null : j1Var.e.get((i10 - size) - size3) : arrayList2.get(i10 - size) : this.d.get(i10);
             if (obj != null) {
                 String publicUsername = obj instanceof TLRPC.User ? ((TLRPC.User) obj).username : ChatObject.getPublicUsername((TLRPC.Chat) obj);
                 if (i10 < size) {
@@ -243,14 +243,14 @@ public final class lh1 extends org.telegram.ui.Components.cl0 {
                             if (i14 > 0) {
                                 SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder();
                                 spannableStringBuilder4.append((CharSequence) "d");
-                                spannableStringBuilder4.setSpan(new org.telegram.ui.Components.oq(R.drawable.msg_mini_fireon, 0), 0, 1, 0);
+                                spannableStringBuilder4.setSpan(new org.telegram.ui.Components.lq(R.drawable.msg_mini_fireon, 0), 0, 1, 0);
                                 spannableStringBuilder4.append((CharSequence) LocaleController.formatString(R.string.AutoDeleteAfter, LocaleController.formatTTLString(i14)).toLowerCase());
                                 spannableStringBuilder = spannableStringBuilder4;
                                 z4 = true;
                             } else {
                                 SpannableStringBuilder spannableStringBuilder5 = new SpannableStringBuilder();
                                 spannableStringBuilder5.append((CharSequence) "d");
-                                spannableStringBuilder5.setSpan(new org.telegram.ui.Components.oq(R.drawable.msg_mini_fireoff, 0), 0, 1, 0);
+                                spannableStringBuilder5.setSpan(new org.telegram.ui.Components.lq(R.drawable.msg_mini_fireoff, 0), 0, 1, 0);
                                 spannableStringBuilder5.append((CharSequence) LocaleController.getString(R.string.AutoDeleteDisabled));
                                 spannableStringBuilder = spannableStringBuilder5;
                                 z4 = false;
@@ -262,8 +262,8 @@ public final class lh1 extends org.telegram.ui.Components.cl0 {
                                 spannableStringBuilder2 = spannableStringBuilder;
                                 if (canUserDoAdminAction) {
                                 }
-                                g4Var.d(obj, charSequence, spannableStringBuilder2);
-                                g4Var.getStatusTextView().setTextColor(org.telegram.ui.ActionBar.k6.w0(null, !z10 ? org.telegram.ui.ActionBar.k6.n6 : org.telegram.ui.ActionBar.k6.y6, false));
+                                f4Var.d(obj, charSequence, spannableStringBuilder2);
+                                f4Var.getStatusTextView().setTextColor(org.telegram.ui.ActionBar.j6.w0(null, !z10 ? org.telegram.ui.ActionBar.j6.n6 : org.telegram.ui.ActionBar.j6.y6, false));
                                 if (j10 == j11) {
                                 }
                             } else {
@@ -273,13 +273,13 @@ public final class lh1 extends org.telegram.ui.Components.cl0 {
                                 spannableStringBuilder2 = spannableStringBuilder3;
                                 if (canUserDoAdminAction) {
                                 }
-                                g4Var.d(obj, charSequence, spannableStringBuilder2);
-                                g4Var.getStatusTextView().setTextColor(org.telegram.ui.ActionBar.k6.w0(null, !z10 ? org.telegram.ui.ActionBar.k6.n6 : org.telegram.ui.ActionBar.k6.y6, false));
+                                f4Var.d(obj, charSequence, spannableStringBuilder2);
+                                f4Var.getStatusTextView().setTextColor(org.telegram.ui.ActionBar.j6.w0(null, !z10 ? org.telegram.ui.ActionBar.j6.n6 : org.telegram.ui.ActionBar.j6.y6, false));
                                 if (j10 == j11) {
                                 }
                             }
                         } else if (!this.n) {
-                            Paint.FontMetricsInt fontMetricsInt = g4Var.getStatusTextView().getPaint().getFontMetricsInt();
+                            Paint.FontMetricsInt fontMetricsInt = f4Var.getStatusTextView().getPaint().getFontMetricsInt();
                             r11 = new SpannableStringBuilder();
                             ArrayList<MessagesController.DialogFilter> arrayList3 = usersSelectActivity.getMessagesController().dialogFilters;
                             int size4 = arrayList3.size();
@@ -298,15 +298,15 @@ public final class lh1 extends org.telegram.ui.Components.cl0 {
                             canUserDoAdminAction = true;
                             spannableStringBuilder2 = spannableStringBuilder3;
                             if (canUserDoAdminAction) {
-                                g4Var.setAlpha(0.5f);
+                                f4Var.setAlpha(0.5f);
                             } else {
-                                g4Var.setAlpha(1.0f);
+                                f4Var.setAlpha(1.0f);
                             }
-                            g4Var.d(obj, charSequence, spannableStringBuilder2);
-                            g4Var.getStatusTextView().setTextColor(org.telegram.ui.ActionBar.k6.w0(null, !z10 ? org.telegram.ui.ActionBar.k6.n6 : org.telegram.ui.ActionBar.k6.y6, false));
+                            f4Var.d(obj, charSequence, spannableStringBuilder2);
+                            f4Var.getStatusTextView().setTextColor(org.telegram.ui.ActionBar.j6.w0(null, !z10 ? org.telegram.ui.ActionBar.j6.n6 : org.telegram.ui.ActionBar.j6.y6, false));
                             if (j10 == j11) {
-                                g4Var.c(usersSelectActivity.K.h(j10) >= 0, false);
-                                g4Var.setCheckBoxEnabled(true);
+                                f4Var.c(usersSelectActivity.K.h(j10) >= 0, false);
+                                f4Var.setCheckBoxEnabled(true);
                                 return;
                             }
                             return;
@@ -319,12 +319,12 @@ public final class lh1 extends org.telegram.ui.Components.cl0 {
                     spannableStringBuilder2 = spannableStringBuilder3;
                     if (canUserDoAdminAction) {
                     }
-                    g4Var.d(obj, charSequence, spannableStringBuilder2);
-                    g4Var.getStatusTextView().setTextColor(org.telegram.ui.ActionBar.k6.w0(null, !z10 ? org.telegram.ui.ActionBar.k6.n6 : org.telegram.ui.ActionBar.k6.y6, false));
+                    f4Var.d(obj, charSequence, spannableStringBuilder2);
+                    f4Var.getStatusTextView().setTextColor(org.telegram.ui.ActionBar.j6.w0(null, !z10 ? org.telegram.ui.ActionBar.j6.n6 : org.telegram.ui.ActionBar.j6.y6, false));
                     if (j10 == j11) {
                     }
                 } else if (i10 > size && !TextUtils.isEmpty(publicUsername)) {
-                    String str = k1Var.c;
+                    String str = j1Var.c;
                     if (str.startsWith("@")) {
                         str = str.substring(1);
                     }
@@ -340,7 +340,7 @@ public final class lh1 extends org.telegram.ui.Components.cl0 {
                             } else {
                                 indexOfIgnoreCase++;
                             }
-                            spannableStringBuilder6.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.q6, false)), indexOfIgnoreCase, length + indexOfIgnoreCase, 33);
+                            spannableStringBuilder6.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q6, false)), indexOfIgnoreCase, length + indexOfIgnoreCase, 33);
                         }
                         charSequence2 = spannableStringBuilder6;
                     } catch (Exception unused) {
@@ -361,8 +361,8 @@ public final class lh1 extends org.telegram.ui.Components.cl0 {
                 spannableStringBuilder2 = spannableStringBuilder3;
                 if (canUserDoAdminAction) {
                 }
-                g4Var.d(obj, charSequence, spannableStringBuilder2);
-                g4Var.getStatusTextView().setTextColor(org.telegram.ui.ActionBar.k6.w0(null, !z10 ? org.telegram.ui.ActionBar.k6.n6 : org.telegram.ui.ActionBar.k6.y6, false));
+                f4Var.d(obj, charSequence, spannableStringBuilder2);
+                f4Var.getStatusTextView().setTextColor(org.telegram.ui.ActionBar.j6.w0(null, !z10 ? org.telegram.ui.ActionBar.j6.n6 : org.telegram.ui.ActionBar.j6.y6, false));
                 if (j10 == j11) {
                 }
             }
@@ -420,9 +420,9 @@ public final class lh1 extends org.telegram.ui.Components.cl0 {
                     i13 = MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED;
                     str2 = "archived";
                 }
-                g4Var.d(str2, string, null);
-                g4Var.c((usersSelectActivity.G & i13) == i13, false);
-                g4Var.setCheckBoxEnabled(true);
+                f4Var.d(str2, string, null);
+                f4Var.c((usersSelectActivity.G & i13) == i13, false);
+                f4Var.setCheckBoxEnabled(true);
                 return;
             }
             obj = this.r.get(i10 - i16);
@@ -441,15 +441,15 @@ public final class lh1 extends org.telegram.ui.Components.cl0 {
         spannableStringBuilder2 = spannableStringBuilder3;
         if (canUserDoAdminAction) {
         }
-        g4Var.d(obj, charSequence, spannableStringBuilder2);
-        g4Var.getStatusTextView().setTextColor(org.telegram.ui.ActionBar.k6.w0(null, !z10 ? org.telegram.ui.ActionBar.k6.n6 : org.telegram.ui.ActionBar.k6.y6, false));
+        f4Var.d(obj, charSequence, spannableStringBuilder2);
+        f4Var.getStatusTextView().setTextColor(org.telegram.ui.ActionBar.j6.w0(null, !z10 ? org.telegram.ui.ActionBar.j6.n6 : org.telegram.ui.ActionBar.j6.y6, false));
         if (j10 == j11) {
         }
     }
 
-    @Override // f2.p0
-    public final f2.m1 x(ViewGroup viewGroup, int i10) {
+    @Override // f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
         Context context = this.c;
-        return new org.telegram.ui.Components.el0(i10 != 1 ? new org.telegram.ui.Cells.u3(context, null) : new org.telegram.ui.Cells.g4(context, 1, 0, true));
+        return new org.telegram.ui.Components.dl0(i10 != 1 ? new org.telegram.ui.Cells.t3(context, null) : new org.telegram.ui.Cells.f4(context, 1, 0, true));
     }
 }

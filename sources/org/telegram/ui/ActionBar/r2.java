@@ -3,36 +3,36 @@ package org.telegram.ui.ActionBar;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r2 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ h3 b;
+    public final /* synthetic */ g3 b;
 
-    public /* synthetic */ r2(h3 h3Var, int i10) {
+    public /* synthetic */ r2(g3 g3Var, int i10) {
         this.a = i10;
-        this.b = h3Var;
+        this.b = g3Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                h3 h3Var = this.b;
-                AndroidUtilities.removeFromParent(h3Var.container);
-                h3Var.attachedFragment.getLayoutContainer().addView(h3Var.container);
+                g3 g3Var = this.b;
+                AndroidUtilities.removeFromParent(g3Var.container);
+                g3Var.attachedFragment.getLayoutContainer().addView(g3Var.container);
                 break;
             case 1:
                 this.b.dismiss();
                 break;
             default:
-                h3 h3Var2 = this.b;
-                h3Var2.getClass();
+                g3 g3Var2 = this.b;
+                g3Var2.getClass();
                 try {
-                    h3Var2.dismissInternal();
+                    g3Var2.dismissInternal();
                     break;
-                } catch (Exception e6) {
-                    FileLog.e(e6);
+                } catch (Exception e) {
+                    FileLog.e(e);
                 }
         }
     }

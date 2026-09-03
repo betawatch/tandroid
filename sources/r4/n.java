@@ -8,15 +8,15 @@ import j3.n0;
 import j3.r1;
 import o4.g0;
 import o4.k0;
-import org.telegram.ui.yh;
+import org.telegram.ui.ai;
 import r3.u;
 import r3.v;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class n implements v {
     public final k0 a;
-    public final f7.b b = new f7.b((char) 0, 16);
+    public final f7.b b = new f7.b((char) 0, 17);
     public final e4.e c = new e4.e();
     public long d = -9223372036854775807L;
     public final /* synthetic */ o e;
@@ -47,7 +47,7 @@ public final class n implements v {
             e4.e eVar = this.c;
             eVar.b();
             if (this.a.z(this.b, eVar, 0, false) == -4) {
-                eVar.k();
+                eVar.l();
             } else {
                 eVar = null;
             }
@@ -84,7 +84,7 @@ public final class n implements v {
 
     @Override // r3.v
     public final /* synthetic */ void d(int i10, w wVar) {
-        yh.a(this, wVar, i10);
+        ai.a(this, wVar, i10);
     }
 
     @Override // r3.v

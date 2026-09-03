@@ -17,7 +17,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fg implements Runnable {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final /* synthetic */ class fg implements Runnable {
                     chatActivityEnterView.F3 = true;
                 }
                 MediaController.getInstance().toggleRecordingPause(chatActivityEnterView.L);
-                chatActivityEnterView.V2.e1(0);
+                chatActivityEnterView.V2.f1(0);
                 ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.g1;
                 if (slideTextView != null) {
                     slideTextView.setEnabled(false);
@@ -53,10 +53,10 @@ public final /* synthetic */ class fg implements Runnable {
                 break;
             case 1:
                 qc qcVar = (qc) obj;
-                new fg.n1(qcVar.W(), 42, qcVar.c).show();
+                new eg.o1(qcVar.W(), 42, qcVar.c).show();
                 break;
             case 2:
-                AndroidUtilities.removeFromParent((qh.e3) obj);
+                AndroidUtilities.removeFromParent((ph.f3) obj);
                 break;
             case 3:
                 AndroidUtilities.showKeyboard((EditText) obj);
@@ -92,7 +92,7 @@ public final /* synthetic */ class fg implements Runnable {
                 ((b8) obj).n.n.setVisibility(8);
                 break;
             case 10:
-                ((h8) obj).c.h1();
+                ((h8) obj).c.i1();
                 break;
             case 11:
                 x9 x9Var = (x9) obj;
@@ -110,7 +110,7 @@ public final /* synthetic */ class fg implements Runnable {
                     x9Var2.f = bitmapArr;
                     x9Var2.i = canvasArr;
                     x9Var2.k = false;
-                    fg.i0 i0Var = x9Var2.d;
+                    eg.i0 i0Var = x9Var2.d;
                     if (i0Var != null) {
                         i0Var.invalidate();
                         break;
@@ -167,39 +167,39 @@ public final /* synthetic */ class fg implements Runnable {
                 ((qg) obj).s = null;
                 break;
             case 21:
-                ((ci) obj).y0.x1.l();
+                ((bi) obj).y0.x1.l();
                 break;
             case 22:
-                jk jkVar = (jk) ((androidx.mediarouter.app.h) obj).b;
+                hk hkVar = (hk) ((androidx.mediarouter.app.h) obj).b;
                 try {
-                    File file = jkVar.L;
+                    File file = hkVar.L;
                     if (file == null) {
-                        jkVar.O();
+                        hkVar.O();
                     } else {
-                        jkVar.N(file);
+                        hkVar.N(file);
                     }
-                    jkVar.V();
+                    hkVar.V();
                     break;
-                } catch (Exception e6) {
-                    FileLog.e(e6);
+                } catch (Exception e) {
+                    FileLog.e(e);
                     return;
                 }
             case 23:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = ((vl) obj).b;
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = ((tl) obj).b;
                 boolean z4 = ChatAttachAlertPhotoLayout.n1;
                 chatAttachAlertPhotoLayout2.p0(-1, true);
                 break;
             case 24:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout3 = ((rl) obj).c;
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout3 = ((pl) obj).c;
                 if (chatAttachAlertPhotoLayout3.M != null && !chatAttachAlertPhotoLayout3.b.isDismissed()) {
                     chatAttachAlertPhotoLayout3.M.setSystemUiVisibility(1028);
                     break;
                 }
                 break;
             case 25:
-                pm pmVar = (pm) obj;
-                mi miVar = pmVar.b;
-                if (pmVar.N && (chatAttachAlertPhotoLayout = miVar.g0) != null) {
+                nm nmVar = (nm) obj;
+                li liVar = nmVar.b;
+                if (nmVar.N && (chatAttachAlertPhotoLayout = liVar.g0) != null) {
                     org.telegram.ui.ActionBar.g1 g1Var = chatAttachAlertPhotoLayout.Z0;
                     g1Var.setIcon(R.drawable.ic_ab_back);
                     g1Var.setText(LocaleController.getString(R.string.Back));
@@ -208,18 +208,18 @@ public final /* synthetic */ class fg implements Runnable {
                 }
                 break;
             case 26:
-                rn rnVar = (rn) obj;
-                rnVar.h1 = -1;
-                rnVar.g1 = null;
+                pn pnVar = (pn) obj;
+                pnVar.h1 = -1;
+                pnVar.g1 = null;
                 break;
             case 27:
-                ((mo) obj).k();
+                ((jo) obj).k();
                 break;
             case 28:
-                ((oo) obj).setVisibility(8);
+                ((lo) obj).setVisibility(8);
                 break;
             default:
-                ((pp) obj).b.a();
+                ((mp) obj).b.a();
                 break;
         }
     }

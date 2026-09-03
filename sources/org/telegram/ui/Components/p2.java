@@ -10,7 +10,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p2 implements org.telegram.ui.ActionBar.c2 {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class p2 implements org.telegram.ui.ActionBar.c2 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    public final void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         TLRPC.User user;
         String string;
         switch (this.a) {
@@ -54,21 +54,21 @@ public final /* synthetic */ class p2 implements org.telegram.ui.ActionBar.c2 {
                                 serializedData.cleanup();
                                 user = TLdeserialize;
                             }
-                        } catch (Exception e6) {
-                            FileLog.e(e6);
+                        } catch (Exception e) {
+                            FileLog.e(e);
                         }
                     }
                     if (user == null) {
                         MessagesController.getInstance(currentAccount).putUser(user, true);
                         Bundle bundle = new Bundle();
                         bundle.putLong("user_id", user.id);
-                        p2Var2.presentFragment(new org.telegram.ui.xn(bundle));
+                        p2Var2.presentFragment(new org.telegram.ui.zn(bundle));
                         break;
                     } else {
                         org.telegram.ui.ActionBar.d2 d2Var2 = new org.telegram.ui.ActionBar.d2(p2Var2.getParentActivity(), 3, null);
                         d2Var2.d0 = false;
                         d2Var2.show();
-                        ConnectionsManager.getInstance(currentAccount).sendRequest(new TLRPC.TL_help_getSupport(), new oh.b8(mainSettings, d2Var2, currentAccount, p2Var2, 2));
+                        ConnectionsManager.getInstance(currentAccount).sendRequest(new TLRPC.TL_help_getSupport(), new nh.b8(mainSettings, d2Var2, currentAccount, p2Var2, 2));
                         break;
                     }
                 }

@@ -2,7 +2,7 @@ package k3;
 
 import android.content.SharedPreferences;
 import android.widget.EditText;
-import oh.p5;
+import nh.p5;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
@@ -18,7 +18,7 @@ import org.telegram.ui.ActionBar.c2;
 import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.Components.yu0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements h5.j, RequestDelegateTimestamp, c2, MessagesStorage.StringCallback {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class d implements h5.j, RequestDelegateTimestamp, 
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public void j(d2 d2Var, int i10) {
+    public void l(d2 d2Var, int i10) {
         int i11 = this.a;
         Object obj = this.d;
         int i12 = this.b;

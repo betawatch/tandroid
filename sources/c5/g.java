@@ -13,16 +13,16 @@ import android.text.style.UnderlineSpan;
 import android.util.Pair;
 import h5.d0;
 import h7.u;
-import j7.l0;
+import j7.k0;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.TreeSet;
-import k7.w8;
+import k7.v8;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class g {
     public final String a;
@@ -139,12 +139,12 @@ public final class g {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:103:0x0024 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x022c  */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x01fb  */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x01f9  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x01fe  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x020e  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x0243 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x022e  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x01fd  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x01fb  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x0200  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x0210  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x0245 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -168,7 +168,7 @@ public final class g {
                     h hVar = (h) hashMap.get(str3);
                     hVar.getClass();
                     int i13 = hVar.j;
-                    i a2 = l0.a(this.f, this.g, map2);
+                    i a2 = k0.a(this.f, this.g, map2);
                     SpannableStringBuilder spannableStringBuilder = (SpannableStringBuilder) aVar.a;
                     if (spannableStringBuilder == null) {
                         spannableStringBuilder = new SpannableStringBuilder();
@@ -207,32 +207,33 @@ public final class g {
                             if (!a2.c) {
                                 throw new IllegalStateException("Font color has not been defined.");
                             }
-                            w8.a(new ForegroundColorSpan(a2.b), spannableStringBuilder, intValue, intValue2);
+                            v8.a(new ForegroundColorSpan(a2.b), spannableStringBuilder, intValue, intValue2);
                         }
                         if (a2.e) {
                             if (!a2.e) {
                                 throw new IllegalStateException("Background color has not been defined.");
                             }
-                            w8.a(new BackgroundColorSpan(a2.d), spannableStringBuilder, intValue, intValue2);
+                            v8.a(new BackgroundColorSpan(a2.d), spannableStringBuilder, intValue, intValue2);
                         }
                         if (a2.a != null) {
-                            w8.a(new TypefaceSpan(a2.a), spannableStringBuilder, intValue, intValue2);
+                            v8.a(new TypefaceSpan(a2.a), spannableStringBuilder, intValue, intValue2);
                         }
                         b bVar = a2.r;
+                        int i17 = 25;
                         if (bVar != null) {
                             if (bVar.a == -1 && i13 != 2) {
                             }
-                            w8.a(new ab.a(26), spannableStringBuilder, intValue, intValue2);
+                            v8.a(new z9.d(i17), spannableStringBuilder, intValue, intValue2);
                         }
-                        int i17 = a2.m;
-                        if (i17 == 2) {
+                        int i18 = a2.m;
+                        if (i18 == 2) {
                             g gVar2 = this.j;
                             while (true) {
                                 if (gVar2 == null) {
                                     gVar2 = null;
                                     break;
                                 }
-                                i a10 = l0.a(gVar2.f, gVar2.g, map2);
+                                i a10 = k0.a(gVar2.f, gVar2.g, map2);
                                 if (a10 != null && a10.m == 1) {
                                     break;
                                 } else {
@@ -248,7 +249,7 @@ public final class g {
                                         break;
                                     }
                                     gVar = (g) arrayDeque.pop();
-                                    i a11 = l0.a(gVar.f, gVar.g, map2);
+                                    i a11 = k0.a(gVar.f, gVar.g, map2);
                                     if (a11 != null && a11.m == 3) {
                                         break;
                                     }
@@ -259,22 +260,22 @@ public final class g {
                                 if (gVar != null) {
                                     if (gVar.c() == 1 && gVar.b(0).b != null) {
                                         String str5 = gVar.b(0).b;
-                                        int i18 = d0.a;
-                                        i a12 = l0.a(gVar.f, gVar.g, map2);
+                                        int i19 = d0.a;
+                                        i a12 = k0.a(gVar.f, gVar.g, map2);
                                         if ((a12 != null ? a12.n : -1) == -1) {
-                                            l0.a(gVar2.f, gVar2.g, map2);
+                                            k0.a(gVar2.f, gVar2.g, map2);
                                         }
-                                        spannableStringBuilder.setSpan(new z9.d(25), intValue, intValue2, 33);
+                                        spannableStringBuilder.setSpan(new u(25), intValue, intValue2, 33);
                                         if (a2.q == 1) {
-                                            w8.a(new u(25), spannableStringBuilder, intValue, intValue2);
+                                            v8.a(new db.a(25), spannableStringBuilder, intValue, intValue2);
                                         }
                                         i11 = a2.j;
                                         if (i11 == 1) {
-                                            w8.a(new AbsoluteSizeSpan((int) a2.k, true), spannableStringBuilder, intValue, intValue2);
+                                            v8.a(new AbsoluteSizeSpan((int) a2.k, true), spannableStringBuilder, intValue, intValue2);
                                         } else if (i11 == 2) {
-                                            w8.a(new RelativeSizeSpan(a2.k), spannableStringBuilder, intValue, intValue2);
+                                            v8.a(new RelativeSizeSpan(a2.k), spannableStringBuilder, intValue, intValue2);
                                         } else if (i11 == 3) {
-                                            w8.a(new RelativeSizeSpan(a2.k / 100.0f), spannableStringBuilder, intValue, intValue2);
+                                            v8.a(new RelativeSizeSpan(a2.k / 100.0f), spannableStringBuilder, intValue, intValue2);
                                         }
                                         if ("p".equals(this.a)) {
                                             float f10 = a2.s;
@@ -301,7 +302,7 @@ public final class g {
                                     }
                                 }
                             }
-                        } else if (i17 == 3 || i17 == 4) {
+                        } else if (i18 == 3 || i18 == 4) {
                             spannableStringBuilder.setSpan(new a(), intValue, intValue2, 33);
                         }
                         if (a2.q == 1) {
@@ -316,10 +317,10 @@ public final class g {
                     }
                 }
             }
-            int i19 = 0;
-            while (i19 < c()) {
-                b(i19).h(j10, map2, hashMap, str3, treeMap);
-                i19++;
+            int i20 = 0;
+            while (i20 < c()) {
+                b(i20).h(j10, map2, hashMap, str3, treeMap);
+                i20++;
                 map2 = map;
             }
         }
@@ -337,10 +338,10 @@ public final class g {
         String str3 = this.h;
         String str4 = "".equals(str3) ? str : str3;
         if (this.c && z4) {
-            SpannableStringBuilder e6 = e(str4, treeMap);
+            SpannableStringBuilder e = e(str4, treeMap);
             String str5 = this.b;
             str5.getClass();
-            e6.append((CharSequence) str5);
+            e.append((CharSequence) str5);
             return;
         }
         if ("br".equals(str2) && z4) {
@@ -359,13 +360,13 @@ public final class g {
                 b(i10).i(j10, z4 || equals, str4, treeMap);
             }
             if (equals) {
-                SpannableStringBuilder e10 = e(str4, treeMap);
-                int length = e10.length() - 1;
-                while (length >= 0 && e10.charAt(length) == ' ') {
+                SpannableStringBuilder e6 = e(str4, treeMap);
+                int length = e6.length() - 1;
+                while (length >= 0 && e6.charAt(length) == ' ') {
                     length--;
                 }
-                if (length >= 0 && e10.charAt(length) != '\n') {
-                    e10.append('\n');
+                if (length >= 0 && e6.charAt(length) != '\n') {
+                    e6.append('\n');
                 }
             }
             for (Map.Entry entry2 : treeMap.entrySet()) {

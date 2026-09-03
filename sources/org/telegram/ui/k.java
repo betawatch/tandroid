@@ -3,28 +3,28 @@ package org.telegram.ui;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class k extends f2.j0 {
+public final class k extends f2.i0 {
     public final /* synthetic */ int I;
 
     public /* synthetic */ k(int i10) {
         this.I = i10;
     }
 
-    @Override // f2.j0
-    public int W0(f2.j1 j1Var) {
+    @Override // f2.i0
+    public int W0(f2.i1 i1Var) {
         switch (this.I) {
             case 3:
                 return 5000;
             case 7:
                 return AndroidUtilities.dp(4000.0f);
             default:
-                return super.W0(j1Var);
+                return super.W0(i1Var);
         }
     }
 
-    @Override // f2.j0, f2.w0
+    @Override // f2.i0, f2.v0
     public boolean e() {
         switch (this.I) {
             case 20:
@@ -34,11 +34,11 @@ public final class k extends f2.j0 {
         }
     }
 
-    @Override // f2.j0, f2.w0
-    public void v0(RecyclerView recyclerView, f2.j1 j1Var, int i10) {
+    @Override // f2.i0, f2.v0
+    public void v0(RecyclerView recyclerView, f2.i1 i1Var, int i10) {
         switch (this.I) {
             case 2:
-                xh.o oVar = new xh.o(recyclerView.getContext(), 0);
+                wh.o oVar = new wh.o(recyclerView.getContext(), 0);
                 oVar.a = i10;
                 w0(oVar);
                 break;
@@ -48,12 +48,12 @@ public final class k extends f2.j0 {
                 w0(os0Var);
                 break;
             default:
-                super.v0(recyclerView, j1Var, i10);
+                super.v0(recyclerView, i1Var, i10);
                 break;
         }
     }
 
-    @Override // f2.j0, f2.w0
+    @Override // f2.i0, f2.v0
     public boolean y0() {
         switch (this.I) {
             case 0:
@@ -103,7 +103,7 @@ public final class k extends f2.j0 {
         this.I = i11;
     }
 
-    public k(sb sbVar) {
+    public k(ub ubVar) {
         this.I = 2;
     }
 

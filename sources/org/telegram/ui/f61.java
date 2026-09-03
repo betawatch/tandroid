@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class f61 extends View {
     public Drawable B;
@@ -43,8 +43,8 @@ public final class f61 extends View {
     public float O;
     public float P;
     public float Q;
-    public final p50 R;
-    public final /* synthetic */ w61 S;
+    public final q50 R;
+    public final /* synthetic */ x61 S;
     public boolean a;
     public boolean b;
     public int c;
@@ -57,20 +57,20 @@ public final class f61 extends View {
     public boolean s;
     public TL_stars.TL_starGiftUnique v;
     public Integer w;
-    public ng.q0 x;
+    public mg.q0 x;
     public boolean y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f61(w61 w61Var, Context context) {
+    public f61(x61 x61Var, Context context) {
         super(context);
-        this.S = w61Var;
+        this.S = x61Var;
         this.a = false;
         this.b = false;
         this.f = new ImageReceiver.BackgroundThreadDrawHolder[2];
         ImageReceiver imageReceiver = new ImageReceiver();
         this.n = imageReceiver;
         this.Q = 1.0f;
-        this.R = new p50(this, 1);
+        this.R = new q50(this, 1);
         imageReceiver.ignoreNotifications = true;
         setFocusable(true);
     }
@@ -96,11 +96,11 @@ public final class f61 extends View {
             if (e61Var.a != 2 || (paint = e61Var.x) == null) {
                 return;
             }
-            paint.setColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.a7, false));
+            paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
             return;
         }
         Context context = getContext();
-        int i10 = fg.r1.I;
+        int i10 = eg.s1.I;
         this.G = new e61(this, context);
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.66f), TLObject.FLAG_30);
         this.G.measure(makeMeasureSpec, makeMeasureSpec);
@@ -111,7 +111,7 @@ public final class f61 extends View {
     public final void c(TLRPC.Document document, y51 y51Var) {
         this.d = document;
         a(y51Var);
-        SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document, org.telegram.ui.ActionBar.k6.m6, 0.2f);
+        SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document, org.telegram.ui.ActionBar.j6.m6, 0.2f);
         if (this.S.T == 6) {
             this.h.setImage(ImageLocation.getForDocument(document), !LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD) ? "34_34_firstframe" : "34_34", null, null, svgThumb, document.size, null, document, 0);
         } else {
@@ -181,7 +181,7 @@ public final class f61 extends View {
 
     @Override // android.view.View
     public final void invalidate() {
-        if (ng.g0.b || getParent() == null) {
+        if (mg.g0.b || getParent() == null) {
             return;
         }
         ((View) getParent()).invalidate();
@@ -214,9 +214,9 @@ public final class f61 extends View {
             Drawable drawable = this.B;
             if (drawable instanceof org.telegram.ui.Components.l5) {
                 ((org.telegram.ui.Components.l5) drawable).p(this.R);
-                oh.z2 z2Var = ((org.telegram.ui.Components.l5) this.B).k;
-                if (z2Var != null) {
-                    z2Var.setEmojiPaused(false);
+                nh.y2 y2Var = ((org.telegram.ui.Components.l5) this.B).k;
+                if (y2Var != null) {
+                    y2Var.setEmojiPaused(false);
                 }
             }
             ImageReceiver imageReceiver = this.h;
@@ -236,7 +236,7 @@ public final class f61 extends View {
         if (this.a) {
             findAnimatedEmojiEmoticon = LocaleController.getString(R.string.RemoveStatus);
         } else {
-            ng.q0 q0Var = this.x;
+            mg.q0 q0Var = this.x;
             if (q0Var == null || (findAnimatedEmojiEmoticon = q0Var.f) == null) {
                 TLRPC.Document document = this.d;
                 if (document == null && (u5Var = this.e) != null && (document = u5Var.document) == null) {
@@ -265,13 +265,13 @@ public final class f61 extends View {
         Drawable drawable2 = this.B;
         if (drawable2 != drawable) {
             boolean z4 = this.E;
-            p50 p50Var = this.R;
+            q50 q50Var = this.R;
             if (z4 && drawable2 != null && (drawable2 instanceof org.telegram.ui.Components.l5)) {
-                ((org.telegram.ui.Components.l5) drawable2).p(p50Var);
+                ((org.telegram.ui.Components.l5) drawable2).p(q50Var);
             }
             this.B = drawable;
             if (this.E && (drawable instanceof org.telegram.ui.Components.l5)) {
-                ((org.telegram.ui.Components.l5) drawable).b(p50Var);
+                ((org.telegram.ui.Components.l5) drawable).b(q50Var);
             }
         }
     }
@@ -313,7 +313,7 @@ public final class f61 extends View {
 
     @Override // android.view.View
     public final void invalidate(int i10, int i11, int i12, int i13) {
-        if (ng.g0.b) {
+        if (mg.g0.b) {
             return;
         }
         super.invalidate(i10, i11, i12, i13);

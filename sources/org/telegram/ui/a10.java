@@ -3,43 +3,86 @@ package org.telegram.ui;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 import android.text.style.ReplacementSpan;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class a10 extends ReplacementSpan {
-    public final org.telegram.ui.ActionBar.g6 a;
+public class a10 extends ReplacementSpan {
+    public final TextPaint a;
     public final Paint b;
-    public final int c;
-    public final org.telegram.ui.Components.k01 d;
+    public StaticLayout c;
+    public float d;
+    public float e;
+    public int f;
+    public final int h;
+    public CharSequence n;
 
-    public a10(String str, int i10, org.telegram.ui.ActionBar.g6 g6Var) {
+    public a10(int i10) {
+        TextPaint textPaint = new TextPaint(1);
+        this.a = textPaint;
         Paint paint = new Paint(1);
         this.b = paint;
-        this.a = g6Var;
-        this.c = i10;
-        this.d = new org.telegram.ui.Components.k01(str, 9.33f, AndroidUtilities.bold());
+        this.n = "NEW";
+        this.h = i10;
+        textPaint.setTypeface(AndroidUtilities.bold());
         paint.setStyle(Paint.Style.FILL);
+        textPaint.setTextSize(AndroidUtilities.dp(i10 < 0 ? 12.0f : i10));
+    }
+
+    public final void a() {
+        if (this.c == null) {
+            StaticLayout staticLayout = new StaticLayout(this.n, this.a, AndroidUtilities.displaySize.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            this.c = staticLayout;
+            this.d = staticLayout.getLineWidth(0);
+            this.e = this.c.getHeight();
+        }
     }
 
     @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f10, int i12, int i13, int i14, Paint paint) {
-        int v02 = org.telegram.ui.ActionBar.k6.v0(this.c, this.a);
-        int l1 = org.telegram.ui.ActionBar.k6.l1(0.15f, v02);
+    public void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f10, int i12, int i13, int i14, Paint paint) {
+        a();
+        int i15 = this.f;
+        if (i15 == 0) {
+            i15 = paint.getColor();
+        }
         Paint paint2 = this.b;
-        paint2.setColor(l1);
-        float f11 = (i14 + i12) / 2.0f;
-        float dp = AndroidUtilities.dp(14.66f);
+        paint2.setColor(i15);
+        int i16 = AndroidUtilities.computePerceivedBrightness(i15) > 0.721f ? -16777216 : -1;
+        TextPaint textPaint = this.a;
+        textPaint.setColor(i16);
+        paint2.setAlpha((int) (paint2.getAlpha() * 1.0f));
+        textPaint.setAlpha((int) (textPaint.getAlpha() * 1.0f));
+        float dp = f10 + AndroidUtilities.dp(2.0f);
+        float dp2 = (i13 - this.e) + AndroidUtilities.dp(1.0f);
         RectF rectF = AndroidUtilities.rectTmp;
-        float f12 = dp / 2.0f;
-        rectF.set(f10, f11 - f12, this.d.l() + f10 + AndroidUtilities.dp(9.33f), f12 + f11);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), paint2);
-        this.d.c(f10 + AndroidUtilities.dp(4.66f), f11, 1.0f, v02, canvas);
+        rectF.set(dp, dp2, this.d + dp, this.e + dp2);
+        float dp3 = AndroidUtilities.dp(4.4f);
+        rectF.inset(AndroidUtilities.dp(-4.0f), AndroidUtilities.dp(this.h == 8 ? -3.66f : -2.33f));
+        canvas.drawRoundRect(rectF, dp3, dp3, paint2);
+        canvas.save();
+        canvas.translate(dp, dp2);
+        this.c.draw(canvas);
+        canvas.restore();
     }
 
     @Override // android.text.style.ReplacementSpan
     public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        return (int) (this.d.l() + AndroidUtilities.dp(9.33f));
+        a();
+        return (int) (AndroidUtilities.dp(10.0f) + this.d);
+    }
+
+    public a10() {
+        TextPaint textPaint = new TextPaint(1);
+        this.a = textPaint;
+        Paint paint = new Paint(1);
+        this.b = paint;
+        this.n = "NEW";
+        textPaint.setTypeface(AndroidUtilities.bold());
+        paint.setStyle(Paint.Style.FILL);
+        textPaint.setTextSize(AndroidUtilities.dp(10.0f));
     }
 }

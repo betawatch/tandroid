@@ -2,10 +2,10 @@ package q6;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import j7.g5;
+import j7.f5;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class k extends l {
     public static final Parcelable.Creator<k> CREATOR = new r0(20);
@@ -18,8 +18,8 @@ public final class k extends l {
             this.a = r.a(i10);
             this.b = str;
             this.c = i11;
-        } catch (q e6) {
-            throw new IllegalArgumentException(e6);
+        } catch (q e) {
+            throw new IllegalArgumentException(e);
         }
     }
 
@@ -36,29 +36,29 @@ public final class k extends l {
     }
 
     public final String toString() {
-        androidx.biometric.e eVar = new androidx.biometric.e(getClass().getSimpleName(), 7);
+        af.d dVar = new af.d(getClass().getSimpleName(), 8);
         String valueOf = String.valueOf(this.a.a);
-        b7.e eVar2 = new b7.e(6, false);
-        ((androidx.biometric.e) eVar.d).d = eVar2;
-        eVar.d = eVar2;
-        eVar2.c = valueOf;
-        eVar2.b = "errorCode";
+        b7.e eVar = new b7.e(7, false);
+        ((af.d) dVar.d).d = eVar;
+        dVar.d = eVar;
+        eVar.c = valueOf;
+        eVar.b = "errorCode";
         String str = this.b;
         if (str != null) {
-            eVar.D(str, "errorMessage");
+            dVar.D(str, "errorMessage");
         }
-        return eVar.toString();
+        return dVar.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = g5.q(parcel, 20293);
+        int q10 = f5.q(parcel, 20293);
         int i11 = this.a.a;
-        g5.s(parcel, 2, 4);
+        f5.s(parcel, 2, 4);
         parcel.writeInt(i11);
-        g5.l(parcel, 3, this.b);
-        g5.s(parcel, 4, 4);
+        f5.l(parcel, 3, this.b);
+        f5.s(parcel, 4, 4);
         parcel.writeInt(this.c);
-        g5.r(parcel, q10);
+        f5.r(parcel, q10);
     }
 }

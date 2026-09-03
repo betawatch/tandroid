@@ -4,9 +4,9 @@ import android.os.Handler;
 import android.view.View;
 import android.view.Window;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class u extends j7.x implements androidx.lifecycle.u0, androidx.lifecycle.t, g2.f, n0 {
+public final class u extends j7.w implements androidx.lifecycle.u0, androidx.lifecycle.t, g2.f, n0 {
     public final v a;
     public final v b;
     public final Handler c;
@@ -22,12 +22,12 @@ public final class u extends j7.x implements androidx.lifecycle.u0, androidx.lif
         this.d = new k0();
     }
 
-    @Override // j7.x
+    @Override // j7.w
     public final View b(int i10) {
         return this.e.findViewById(i10);
     }
 
-    @Override // j7.x
+    @Override // j7.w
     public final boolean c() {
         Window window = this.e.getWindow();
         return (window == null || window.peekDecorView() == null) ? false : true;

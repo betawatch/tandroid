@@ -7,18 +7,15 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
@@ -27,7 +24,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gu0 implements Runnable {
     public final /* synthetic */ int a;
@@ -78,9 +75,9 @@ public final /* synthetic */ class gu0 implements Runnable {
                 break;
             case 2:
                 yv0 yv0Var = (yv0) this.b;
-                xe xeVar = (xe) this.d;
+                ze zeVar = (ze) this.d;
                 int i13 = this.c;
-                xeVar.run(Integer.valueOf(i13));
+                zeVar.run(Integer.valueOf(i13));
                 boolean z4 = true;
                 if (i13 != 1 && i13 != 13) {
                     z4 = false;
@@ -101,21 +98,21 @@ public final /* synthetic */ class gu0 implements Runnable {
                 break;
             case 4:
                 n01 n01Var = (n01) this.b;
-                f2.m1 m1Var = (f2.m1) this.d;
+                f2.l1 l1Var = (f2.l1) this.d;
                 n01Var.getClass();
-                int b10 = m1Var.b();
+                int b10 = l1Var.b();
                 int i14 = this.c;
-                if (b10 == i14 && n01Var.e.R2 == i14 && m1Var.f == 2) {
-                    n01Var.v(m1Var, i14);
+                if (b10 == i14 && n01Var.e.R2 == i14 && l1Var.f == 2) {
+                    n01Var.v(l1Var, i14);
                     break;
                 }
                 break;
             case 5:
                 org.telegram.ui.ActionBar.p2 p2Var = (org.telegram.ui.ActionBar.p2) this.b;
-                org.telegram.ui.Components.b90 b90Var = (org.telegram.ui.Components.b90) this.d;
+                org.telegram.ui.Components.z80 z80Var = (org.telegram.ui.Components.z80) this.d;
                 org.telegram.ui.Components.qc.a0(p2Var).c(LocaleController.getString(R.string.AdHidden)).j();
                 MessagesController.getInstance(this.c).disableAds(false);
-                AndroidUtilities.runOnUIThread(b90Var);
+                AndroidUtilities.runOnUIThread(z80Var);
                 break;
             case 6:
                 org.telegram.messenger.video.a aVar = (org.telegram.messenger.video.a) this.b;
@@ -125,28 +122,28 @@ public final /* synthetic */ class gu0 implements Runnable {
                 MessagesController.getInstance(this.c).disableAds(false);
                 break;
             case 7:
-                zd1 zd1Var = (zd1) this.b;
-                xe xeVar2 = (xe) this.d;
+                yd1 yd1Var = (yd1) this.b;
+                ze zeVar2 = (ze) this.d;
                 int i15 = this.c;
-                xeVar2.run(Integer.valueOf(i15));
+                zeVar2.run(Integer.valueOf(i15));
                 boolean z10 = true;
                 if (i15 != 1 && i15 != 13) {
                     z10 = false;
                 }
-                zd1Var.c(z10);
+                yd1Var.c(z10);
                 break;
             case 8:
-                yi1 yi1Var = (yi1) this.b;
+                xi1 xi1Var = (xi1) this.b;
                 TLObject tLObject = (TLObject) this.d;
-                HashMap hashMap = yi1Var.e;
-                WallpapersListActivity wallpapersListActivity = yi1Var.B;
-                ArrayList arrayList = yi1Var.d;
-                if (this.c == yi1Var.v) {
-                    yi1Var.s = 0;
+                HashMap hashMap = xi1Var.e;
+                WallpapersListActivity wallpapersListActivity = xi1Var.B;
+                ArrayList arrayList = xi1Var.d;
+                if (this.c == xi1Var.v) {
+                    xi1Var.s = 0;
                     int size = arrayList.size();
                     if (tLObject != null) {
                         TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject;
-                        yi1Var.r = messages_botresults.next_offset;
+                        xi1Var.r = messages_botresults.next_offset;
                         int size2 = messages_botresults.results.size();
                         for (int i16 = 0; i16 < size2; i16++) {
                             TLRPC.BotInlineResult botInlineResult = messages_botresults.results.get(i16);
@@ -197,14 +194,14 @@ public final /* synthetic */ class gu0 implements Runnable {
                                 }
                             }
                         }
-                        yi1Var.f = size == arrayList.size() || yi1Var.r == null;
+                        xi1Var.f = size == arrayList.size() || xi1Var.r == null;
                     }
                     if (size != arrayList.size()) {
                         int i18 = size % wallpapersListActivity.O;
                         float f10 = size;
                         int ceil = (int) Math.ceil(f10 / r2);
                         if (i18 != 0) {
-                            yi1Var.m(((int) Math.ceil(f10 / wallpapersListActivity.O)) - 1);
+                            xi1Var.m(((int) Math.ceil(f10 / wallpapersListActivity.O)) - 1);
                         }
                         wallpapersListActivity.G.s(ceil, ((int) Math.ceil(arrayList.size() / wallpapersListActivity.O)) - ceil);
                     }
@@ -213,115 +210,97 @@ public final /* synthetic */ class gu0 implements Runnable {
                 }
                 break;
             case 9:
-                org.telegram.ui.web.a1 a1Var = (org.telegram.ui.web.a1) this.b;
-                int i19 = this.c;
-                org.telegram.ui.web.x0 x0Var = (org.telegram.ui.web.x0) this.d;
-                SendMessagesHelper.getInstance(a1Var.J).sendMessage(SendMessagesHelper.SendMessageParams.of(UserConfig.getInstance(a1Var.J).getCurrentUser(), a1Var.R.id, (MessageObject) null, (MessageObject) null, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, true, 0, 0));
-                try {
-                    JSONObject jSONObject = new JSONObject();
-                    jSONObject.put("status", "sent");
-                    org.telegram.ui.web.a1.u(i19, x0Var, "phone_requested", jSONObject);
-                    break;
-                } catch (Exception e6) {
-                    FileLog.e(e6);
-                    return;
-                }
-            case 10:
                 ((FfmpegAudioWaveformLoader) this.b).lambda$new$0((String) this.d, this.c);
                 break;
-            case 11:
+            case 10:
                 ((FfmpegAudioWaveformLoader) this.b).lambda$receiveChunk$1((short[]) this.d, this.c);
                 break;
-            case 12:
-                qh.a5 a5Var = (qh.a5) this.b;
-                dg.l lVar = (dg.l) this.d;
-                if (a5Var.L0.getCurrentBrush() instanceof dg.l) {
-                    a5Var.Z0 = true;
+            case 11:
+                ph.c5 c5Var = (ph.c5) this.b;
+                cg.l lVar = (cg.l) this.d;
+                if (c5Var.L0.getCurrentBrush() instanceof cg.l) {
+                    c5Var.Z0 = true;
                 }
-                a5Var.g(lVar);
-                eg.m2 m2Var = a5Var.h1;
-                int i20 = m2Var.d + 1;
-                m2Var.a(i20);
-                AndroidUtilities.updateImageViewImageAnimated(m2Var.a[i20], this.c);
-                m2Var.e = true;
+                c5Var.x(lVar);
+                dg.o2 o2Var = c5Var.h1;
+                int i19 = o2Var.d + 1;
+                o2Var.a(i19);
+                AndroidUtilities.updateImageViewImageAnimated(o2Var.a[i19], this.c);
+                o2Var.e = true;
+                break;
+            case 12:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.dw(this.c, ((MessagesStorage) this.b).getUsers(new ArrayList<>((HashSet) this.d))));
                 break;
             case 13:
-                AndroidUtilities.runOnUIThread(new qh.d8(this.c, ((MessagesStorage) this.b).getUsers(new ArrayList<>((HashSet) this.d))));
+                ((ph.ha) this.b).b((short[]) this.d, this.c);
                 break;
             case 14:
-                ((qh.ea) this.b).b((short[]) this.d, this.c);
-                break;
-            case 15:
                 int[] iArr = (int[]) this.b;
                 NotificationCenter.NotificationCenterDelegate[] notificationCenterDelegateArr = (NotificationCenter.NotificationCenterDelegate[]) this.d;
-                int i21 = iArr[0];
-                int i22 = this.c;
-                if (i21 >= 0) {
-                    ConnectionsManager.getInstance(i22).cancelRequest(iArr[0], true);
+                int i20 = iArr[0];
+                int i21 = this.c;
+                if (i20 >= 0) {
+                    ConnectionsManager.getInstance(i21).cancelRequest(iArr[0], true);
                     iArr[0] = -1;
                 }
                 if (notificationCenterDelegateArr[0] != null) {
-                    NotificationCenter.getInstance(i22).addObserver(notificationCenterDelegateArr[0], NotificationCenter.didReceivedWebpagesInUpdates);
+                    NotificationCenter.getInstance(i21).addObserver(notificationCenterDelegateArr[0], NotificationCenter.didReceivedWebpagesInUpdates);
                     notificationCenterDelegateArr[0] = null;
                     break;
                 }
                 break;
-            case 16:
-                sh.n3 n3Var = (sh.n3) this.b;
+            case 15:
+                rh.n3 n3Var = (rh.n3) this.b;
                 TLObject tLObject2 = (TLObject) this.d;
-                sh.i3 i3Var = n3Var.n;
                 if (tLObject2 instanceof TLRPC.TL_webViewResultUrl) {
                     TLRPC.TL_webViewResultUrl tL_webViewResultUrl = (TLRPC.TL_webViewResultUrl) tLObject2;
                     n3Var.x = tL_webViewResultUrl.query_id;
-                    if (tL_webViewResultUrl.same_origin) {
-                        i3Var.setTrustedOrigin(tL_webViewResultUrl.url);
-                    }
-                    i3Var.r(this.c, tL_webViewResultUrl.url);
+                    n3Var.n.u(this.c, tL_webViewResultUrl.url, tL_webViewResultUrl.same_origin);
                     AndroidUtilities.runOnUIThread(n3Var.R);
                     break;
                 }
                 break;
-            case 17:
-                uf.z zVar = (uf.z) this.b;
+            case 16:
+                tf.z zVar = (tf.z) this.b;
                 String str = (String) this.d;
-                int i23 = zVar.p0;
+                int i22 = zVar.p0;
                 zVar.r = null;
-                int i24 = zVar.a0;
-                int i25 = this.c;
-                if (i25 == i24) {
+                int i23 = zVar.a0;
+                int i24 = this.c;
+                if (i24 == i23) {
                     if (zVar.n >= 0) {
-                        ConnectionsManager.getInstance(i23).cancelRequest(zVar.n, true);
+                        ConnectionsManager.getInstance(i22).cancelRequest(zVar.n, true);
                     }
                     TLRPC.TL_channels_searchPosts tL_channels_searchPosts = new TLRPC.TL_channels_searchPosts();
                     tL_channels_searchPosts.flags = 1 | tL_channels_searchPosts.flags;
                     tL_channels_searchPosts.hashtag = str;
                     tL_channels_searchPosts.limit = 3;
                     tL_channels_searchPosts.offset_peer = new TLRPC.TL_inputPeerEmpty();
-                    zVar.n = ConnectionsManager.getInstance(i23).sendRequest(tL_channels_searchPosts, new hg.l0(zVar, i25, str, 10));
+                    zVar.n = ConnectionsManager.getInstance(i22).sendRequest(tL_channels_searchPosts, new gg.l0(zVar, i24, str, 9));
                     break;
                 }
                 break;
-            case 18:
-                vf.t tVar = (vf.t) this.b;
+            case 17:
+                uf.t tVar = (uf.t) this.b;
                 tVar.b.add(this.c, (TL_account.TL_businessChatLink) this.d);
                 NotificationCenter.getInstance(tVar.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.businessLinksUpdated, new Object[0]);
                 break;
-            case 19:
-                wh.l5 m9 = ((wh.i5) this.b).getGrid().m((TL_iv.pageTableCell) this.d);
+            case 18:
+                vh.m5 m9 = ((vh.j5) this.b).getGrid().m((TL_iv.pageTableCell) this.d);
                 if (m9 != null) {
-                    wh.e1 e1Var = m9.a;
+                    vh.e1 e1Var = m9.a;
                     e1Var.r();
                     e1Var.setSelection(Math.max(0, Math.min(this.c, e1Var.length())));
                     break;
                 }
                 break;
             default:
-                wh.q5 q5Var = (wh.q5) this.b;
-                wh.a aVar2 = (wh.a) this.d;
-                wh.v5 v5Var = q5Var.a;
-                if (v5Var.y != null) {
-                    wh.v5.f(aVar2.b, "");
-                    ((wh.a3) v5Var.y).c(aVar2, this.c);
+                vh.r5 r5Var = (vh.r5) this.b;
+                vh.a aVar2 = (vh.a) this.d;
+                vh.w5 w5Var = r5Var.a;
+                if (w5Var.y != null) {
+                    vh.w5.f(aVar2.b, "");
+                    ((vh.b3) w5Var.y).c(aVar2, this.c);
                     break;
                 }
                 break;

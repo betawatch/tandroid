@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import com.google.android.play.core.integrity.StandardIntegrityException;
 import com.google.android.play.core.integrity.StandardIntegrityManager;
 import dd.p;
-import k7.q7;
+import k7.p7;
 import kotlin.jvm.internal.q;
 import ld.c0;
 import ld.t;
@@ -11,7 +11,7 @@ import uc.c;
 import vc.a;
 import wc.i;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 final class zzbd extends i implements p {
     long zza;
@@ -65,7 +65,7 @@ final class zzbd extends i implements p {
         a aVar = a.a;
         int i10 = this.zzc;
         if (i10 == 0) {
-            q7.b(obj);
+            p7.b(obj);
             j10 = 1000;
             z4 = true;
             if (!z4) {
@@ -73,7 +73,7 @@ final class zzbd extends i implements p {
         } else if (i10 != 1) {
             z10 = this.zzb;
             j10 = this.zza;
-            q7.b(obj);
+            p7.b(obj);
             z4 = z10;
             j10 += j10;
             if (!z4) {
@@ -86,12 +86,12 @@ final class zzbd extends i implements p {
         } else {
             j10 = this.zza;
             try {
-                q7.b(obj);
-            } catch (Exception e6) {
-                this.zze.a = e6;
-                z10 = (e6 instanceof StandardIntegrityException) && ((errorCode = ((StandardIntegrityException) e6).getErrorCode()) == -100 || errorCode == -18 || errorCode == -12 || errorCode == -8 || errorCode == -3);
+                p7.b(obj);
+            } catch (Exception e) {
+                this.zze.a = e;
+                z10 = (e instanceof StandardIntegrityException) && ((errorCode = ((StandardIntegrityException) e).getErrorCode()) == -100 || errorCode == -18 || errorCode == -12 || errorCode == -8 || errorCode == -3);
                 if (!z10) {
-                    throw e6;
+                    throw e;
                 }
                 this.zza = j10;
                 this.zzb = true;

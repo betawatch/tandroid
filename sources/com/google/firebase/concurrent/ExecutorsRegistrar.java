@@ -2,14 +2,14 @@ package com.google.firebase.concurrent;
 
 import android.os.Build;
 import android.os.StrictMode;
-import androidx.emoji2.text.w;
 import c9.b;
-import c9.g;
-import c9.p;
-import c9.t;
+import c9.h;
+import c9.q;
+import c9.u;
 import com.google.firebase.components.ComponentRegistrar;
 import d9.a;
-import j7.k5;
+import d9.g;
+import j7.j5;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
@@ -21,15 +21,15 @@ import java.util.concurrent.ScheduledExecutorService;
 import y8.c;
 import y8.d;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class ExecutorsRegistrar implements ComponentRegistrar {
-    public static final p a = new p(new g(2));
-    public static final p b = new p(new g(3));
-    public static final p c = new p(new g(4));
-    public static final p d = new p(new g(5));
+    public static final q a = new q(new h(2));
+    public static final q b = new q(new h(3));
+    public static final q c = new q(new h(4));
+    public static final q d = new q(new h(5));
 
-    public static d9.g a() {
+    public static g a() {
         StrictMode.ThreadPolicy.Builder detectNetwork = new StrictMode.ThreadPolicy.Builder().detectNetwork();
         int i10 = Build.VERSION.SDK_INT;
         if (i10 >= 23) {
@@ -38,46 +38,46 @@ public class ExecutorsRegistrar implements ComponentRegistrar {
                 detectNetwork.detectUnbufferedIo();
             }
         }
-        return new d9.g(Executors.newFixedThreadPool(4, new a("Firebase Background", 10, detectNetwork.penaltyLog().build())), (ScheduledExecutorService) d.get());
+        return new g(Executors.newFixedThreadPool(4, new a("Firebase Background", 10, detectNetwork.penaltyLog().build())), (ScheduledExecutorService) d.get());
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
-        t tVar = new t(y8.a.class, ScheduledExecutorService.class);
-        t[] tVarArr = {new t(y8.a.class, ExecutorService.class), new t(y8.a.class, Executor.class)};
+        u uVar = new u(y8.a.class, ScheduledExecutorService.class);
+        u[] uVarArr = {new u(y8.a.class, ExecutorService.class), new u(y8.a.class, Executor.class)};
         HashSet hashSet = new HashSet();
         HashSet hashSet2 = new HashSet();
         HashSet hashSet3 = new HashSet();
-        hashSet.add(tVar);
-        for (t tVar2 : tVarArr) {
-            k5.a(tVar2, "Null interface");
+        hashSet.add(uVar);
+        for (u uVar2 : uVarArr) {
+            j5.a(uVar2, "Null interface");
         }
-        Collections.addAll(hashSet, tVarArr);
-        b bVar = new b(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new w(15), hashSet3);
-        t tVar3 = new t(y8.b.class, ScheduledExecutorService.class);
-        t[] tVarArr2 = {new t(y8.b.class, ExecutorService.class), new t(y8.b.class, Executor.class)};
+        Collections.addAll(hashSet, uVarArr);
+        b bVar = new b(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new af.a(21), hashSet3);
+        u uVar3 = new u(y8.b.class, ScheduledExecutorService.class);
+        u[] uVarArr2 = {new u(y8.b.class, ExecutorService.class), new u(y8.b.class, Executor.class)};
         HashSet hashSet4 = new HashSet();
         HashSet hashSet5 = new HashSet();
         HashSet hashSet6 = new HashSet();
-        hashSet4.add(tVar3);
-        for (t tVar4 : tVarArr2) {
-            k5.a(tVar4, "Null interface");
+        hashSet4.add(uVar3);
+        for (u uVar4 : uVarArr2) {
+            j5.a(uVar4, "Null interface");
         }
-        Collections.addAll(hashSet4, tVarArr2);
-        b bVar2 = new b(null, new HashSet(hashSet4), new HashSet(hashSet5), 0, 0, new w(16), hashSet6);
-        t tVar5 = new t(c.class, ScheduledExecutorService.class);
-        t[] tVarArr3 = {new t(c.class, ExecutorService.class), new t(c.class, Executor.class)};
+        Collections.addAll(hashSet4, uVarArr2);
+        b bVar2 = new b(null, new HashSet(hashSet4), new HashSet(hashSet5), 0, 0, new af.a(22), hashSet6);
+        u uVar5 = new u(c.class, ScheduledExecutorService.class);
+        u[] uVarArr3 = {new u(c.class, ExecutorService.class), new u(c.class, Executor.class)};
         HashSet hashSet7 = new HashSet();
         HashSet hashSet8 = new HashSet();
         HashSet hashSet9 = new HashSet();
-        hashSet7.add(tVar5);
-        for (t tVar6 : tVarArr3) {
-            k5.a(tVar6, "Null interface");
+        hashSet7.add(uVar5);
+        for (u uVar6 : uVarArr3) {
+            j5.a(uVar6, "Null interface");
         }
-        Collections.addAll(hashSet7, tVarArr3);
-        b bVar3 = new b(null, new HashSet(hashSet7), new HashSet(hashSet8), 0, 0, new w(17), hashSet9);
-        c9.a a2 = b.a(new t(d.class, Executor.class));
-        a2.g = new w(18);
+        Collections.addAll(hashSet7, uVarArr3);
+        b bVar3 = new b(null, new HashSet(hashSet7), new HashSet(hashSet8), 0, 0, new af.a(23), hashSet9);
+        c9.a a2 = b.a(new u(d.class, Executor.class));
+        a2.g = new af.a(24);
         return Arrays.asList(bVar, bVar2, bVar3, a2.b());
     }
 }

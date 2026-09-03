@@ -4,7 +4,7 @@ import android.os.Build;
 import android.os.Trace;
 import android.util.Log;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class g {
     public static final /* synthetic */ int a = 0;
@@ -19,8 +19,8 @@ public abstract class g {
                 Trace.class.getMethod("asyncTraceBegin", cls, String.class, cls2);
                 Trace.class.getMethod("asyncTraceEnd", cls, String.class, cls2);
                 Trace.class.getMethod("traceCounter", cls, String.class, cls2);
-            } catch (Exception e6) {
-                Log.i("TraceCompat", "Unable to initialize via reflection.", e6);
+            } catch (Exception e) {
+                Log.i("TraceCompat", "Unable to initialize via reflection.", e);
             }
         }
     }

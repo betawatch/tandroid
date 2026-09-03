@@ -4,16 +4,16 @@ import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatMessageSharedResources;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class du0 extends org.telegram.ui.Cells.t1 {
+public final class du0 extends org.telegram.ui.Cells.s1 {
     public final /* synthetic */ int Ce = 1;
 
     public /* synthetic */ du0(Context context, int i10) {
         super(context, i10);
     }
 
-    @Override // org.telegram.ui.Cells.t1
+    @Override // org.telegram.ui.Cells.s1
     public int getParentWidth() {
         int i10;
         int dp;
@@ -39,7 +39,7 @@ public final class du0 extends org.telegram.ui.Cells.t1 {
         return false;
     }
 
-    public /* synthetic */ du0(Context context, int i10, boolean z4, ChatMessageSharedResources chatMessageSharedResources, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, i10, z4, chatMessageSharedResources, g6Var);
+    public /* synthetic */ du0(Context context, int i10, boolean z4, ChatMessageSharedResources chatMessageSharedResources, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, i10, z4, chatMessageSharedResources, f6Var);
     }
 }

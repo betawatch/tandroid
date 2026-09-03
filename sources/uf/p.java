@@ -1,41 +1,25 @@
 package uf;
 
-import org.telegram.ui.k10;
-import org.telegram.ui.tv;
+import android.text.TextUtils;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ z b;
+public final class p {
+    public TL_account.TL_businessChatLink a;
 
-    public /* synthetic */ p(z zVar, int i10) {
-        this.a = i10;
-        this.b = zVar;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                z zVar = this.b;
-                k10 k10Var = zVar.x0;
-                if (k10Var != null) {
-                    ((tv) k10Var).h(false, null, zVar.v0, zVar.w0);
-                    break;
-                }
-                break;
-            default:
-                z zVar2 = this.b;
-                zVar2.getClass();
-                zVar2.c = w.d;
-                zVar2.F.clear();
-                int i10 = zVar2.C0;
-                if (i10 >= 0 && i10 < zVar2.h()) {
-                    zVar2.m(zVar2.C0);
-                }
-                zVar2.Q();
-                break;
+    public final boolean equals(Object obj) {
+        TL_account.TL_businessChatLink tL_businessChatLink = this.a;
+        if (this == obj) {
+            return true;
         }
+        if (obj != null && p.class == obj.getClass()) {
+            TL_account.TL_businessChatLink tL_businessChatLink2 = ((p) obj).a;
+            if (tL_businessChatLink.views == tL_businessChatLink2.views && TextUtils.equals(tL_businessChatLink.link, tL_businessChatLink2.link) && TextUtils.equals(tL_businessChatLink.title, tL_businessChatLink2.title) && TextUtils.equals(tL_businessChatLink.message, tL_businessChatLink2.message) && MediaDataController.entitiesEqual(tL_businessChatLink.entities, tL_businessChatLink2.entities)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u81 implements org.telegram.ui.ActionBar.c2 {
     public final /* synthetic */ Object a;
@@ -10,7 +10,7 @@ public final /* synthetic */ class u81 implements org.telegram.ui.ActionBar.c2 {
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
-        ((du) this.a).a.d.r();
+    public void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        ((au) this.a).a.d.r();
     }
 }

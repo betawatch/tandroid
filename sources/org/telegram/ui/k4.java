@@ -1,69 +1,109 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import java.io.File;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class k4 extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ ArticleViewer$WindowView b;
-
-    public k4(ArticleViewer$WindowView articleViewer$WindowView, boolean z4) {
-        this.b = articleViewer$WindowView;
-        this.a = z4;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ArticleViewer$WindowView articleViewer$WindowView = this.b;
-        l4 l4Var = articleViewer$WindowView.E;
-        boolean z4 = articleViewer$WindowView.e;
-        boolean z10 = this.a;
-        if (z4) {
-            Object obj = null;
-            l4Var.r0[0].setBackgroundDrawable(null);
-            if (!z10) {
-                p3[] p3VarArr = l4Var.r0;
-                p3 p3Var = p3VarArr[1];
-                p3VarArr[1] = p3VarArr[0];
-                p3VarArr[0] = p3Var;
-                l4Var.e0.i();
-                l4Var.W0.a(l4Var.r0[0].getBackgroundColor(), true);
-                l4Var.X0.a(l4Var.r0[1].getBackgroundColor(), true);
-                y3 y3Var = l4Var.H;
-                if (y3Var != null) {
-                    y3Var.m();
+public abstract class k4 {
+    public static TLRPC.Document a(TLRPC.WebPage webPage, long j10) {
+        if (webPage != null && webPage.cached_page != null) {
+            TLRPC.Document document = webPage.document;
+            if (document != null && document.id == j10) {
+                return document;
+            }
+            for (int i10 = 0; i10 < webPage.cached_page.documents.size(); i10++) {
+                TLRPC.Document document2 = webPage.cached_page.documents.get(i10);
+                if (document2.id == j10) {
+                    return document2;
                 }
-                obj = e2.c.g(1, l4Var.a0);
-                l4Var.L0.T(l4Var.r0[0].b);
-                org.telegram.ui.Cells.m9 m9Var = l4Var.L0;
-                m9Var.E0 = l4Var.r0[0].d;
-                m9Var.f(true);
-                l4Var.i0(false);
-                l4Var.f0();
-            }
-            l4Var.r0[1].b();
-            l4Var.r0[1].setVisibility(8);
-            if (obj instanceof b3) {
-                ((b3) obj).a();
-            }
-            if (obj instanceof TLRPC.WebPage) {
-                org.telegram.ui.web.h2.o((TLRPC.WebPage) obj);
-            }
-        } else if (!z10) {
-            y3 y3Var2 = l4Var.H;
-            if (y3Var2 != null) {
-                y3Var2.release();
-                l4Var.s();
-            } else {
-                l4Var.U();
-                l4Var.M();
             }
         }
-        articleViewer$WindowView.e = false;
-        articleViewer$WindowView.d = false;
-        l4Var.Q0 = false;
+        return null;
+    }
+
+    public static TLRPC.Document b(TL_iv.RichMessage richMessage, long j10) {
+        if (richMessage == null) {
+            return null;
+        }
+        for (int i10 = 0; i10 < richMessage.documents.size(); i10++) {
+            TLRPC.Document document = richMessage.documents.get(i10);
+            if (document.id == j10) {
+                return document;
+            }
+        }
+        return null;
+    }
+
+    public static File c(TLObject tLObject) {
+        FileLoader fileLoader = FileLoader.getInstance(UserConfig.selectedAccount);
+        File pathToAttach = fileLoader.getPathToAttach(tLObject, false);
+        if (pathToAttach != null && pathToAttach.exists()) {
+            return pathToAttach;
+        }
+        File pathToAttach2 = fileLoader.getPathToAttach(tLObject, true);
+        return (pathToAttach2 == null || !pathToAttach2.exists()) ? pathToAttach != null ? pathToAttach : pathToAttach2 : pathToAttach2;
+    }
+
+    public static TLRPC.Photo d(long j10, TLObject tLObject) {
+        if (tLObject instanceof TL_iv.RichMessage) {
+            return f((TL_iv.RichMessage) tLObject, j10);
+        }
+        if (!(tLObject instanceof TL_iv.Page)) {
+            if (tLObject instanceof TLRPC.WebPage) {
+                return e((TLRPC.WebPage) tLObject, j10);
+            }
+            return null;
+        }
+        TL_iv.Page page = (TL_iv.Page) tLObject;
+        for (int i10 = 0; i10 < page.photos.size(); i10++) {
+            TLRPC.Photo photo = page.photos.get(i10);
+            if (photo.id == j10) {
+                return photo;
+            }
+        }
+        return null;
+    }
+
+    public static TLRPC.Photo e(TLRPC.WebPage webPage, long j10) {
+        if (webPage != null && webPage.cached_page != null) {
+            TLRPC.Photo photo = webPage.photo;
+            if (photo != null && photo.id == j10) {
+                return photo;
+            }
+            for (int i10 = 0; i10 < webPage.cached_page.photos.size(); i10++) {
+                TLRPC.Photo photo2 = webPage.cached_page.photos.get(i10);
+                if (photo2.id == j10) {
+                    return photo2;
+                }
+            }
+        }
+        return null;
+    }
+
+    public static TLRPC.Photo f(TL_iv.RichMessage richMessage, long j10) {
+        if (richMessage == null) {
+            return null;
+        }
+        for (int i10 = 0; i10 < richMessage.photos.size(); i10++) {
+            TLRPC.Photo photo = richMessage.photos.get(i10);
+            if (photo.id == j10) {
+                return photo;
+            }
+        }
+        return null;
+    }
+
+    public static boolean g(TLRPC.WebPage webPage, TL_iv.PageBlock pageBlock) {
+        TLRPC.Document a2;
+        if (!(pageBlock instanceof TL_iv.pageBlockVideo) || (a2 = a(webPage, ((TL_iv.pageBlockVideo) pageBlock).video_id)) == null) {
+            return false;
+        }
+        return MessageObject.isVideoDocument(a2);
     }
 }

@@ -1,126 +1,168 @@
 package org.telegram.ui.Cells;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.cy;
-import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.qp;
-import org.telegram.ui.Components.rh0;
-import org.telegram.ui.Components.ss0;
-import org.telegram.ui.Components.zk0;
-import org.telegram.ui.wq;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
+import org.telegram.messenger.LiteMode;
+import org.telegram.ui.Components.mr;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class b4 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+public final class b4 {
+    public float a;
+    public float b;
+    public float c;
+    public boolean e;
+    public final org.telegram.ui.Components.u9 f;
+    public final org.telegram.ui.Components.u9 g;
+    public boolean h;
+    public int i;
+    public float d = 0.0f;
+    public float j = 0.0f;
 
-    public /* synthetic */ b4(Object obj, int i10, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
+    public b4(int i10, int i11) {
+        org.telegram.ui.Components.u9 u9Var = new org.telegram.ui.Components.u9(6);
+        this.f = u9Var;
+        org.telegram.ui.Components.u9 u9Var2 = new org.telegram.ui.Components.u9(8);
+        this.g = u9Var2;
+        float f10 = i10;
+        u9Var.a = f10;
+        float f11 = i11;
+        u9Var.b = f11;
+        u9Var2.a = f10;
+        u9Var2.b = f11;
+        u9Var.b();
+        u9Var2.b();
+        int i12 = org.telegram.ui.ActionBar.j6.qg;
+        u9Var.d.setColor(i0.a.k(org.telegram.ui.ActionBar.j6.w0(null, i12, false), 38));
+        u9Var2.d.setColor(i0.a.k(org.telegram.ui.ActionBar.j6.w0(null, i12, false), 38));
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                e4 e4Var = (e4) this.c;
-                if (!e4Var.c()) {
-                    e4Var.b(this.b);
+    /* JADX WARN: Removed duplicated region for block: B:24:0x006e  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0075  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void a(Canvas canvas, float f10, float f11, View view) {
+        if (LiteMode.isEnabled(512)) {
+            float f12 = (this.a * 0.4f) + 0.8f;
+            if (this.e || this.d != 0.0f) {
+                canvas.save();
+                float interpolation = mr.f.getInterpolation(this.d) * f12;
+                canvas.scale(interpolation, interpolation, f10, f11);
+                boolean z4 = this.h;
+                org.telegram.ui.Components.u9 u9Var = this.f;
+                if (!z4) {
+                    int i10 = this.i;
+                    if (i10 != 1) {
+                        float f13 = this.j;
+                        if (f13 != 1.0f) {
+                            float f14 = f13 + 0.10666667f;
+                            this.j = f14;
+                            if (f14 > 1.0f) {
+                                this.j = 1.0f;
+                            }
+                            u9Var.d.setColor(i0.a.k(i0.a.d(this.j, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.qg, false), org.telegram.ui.ActionBar.j6.w0(null, this.i != 2 ? org.telegram.ui.ActionBar.j6.sg : org.telegram.ui.ActionBar.j6.pg, false)), 38));
+                        }
+                    }
+                    if (i10 == 1) {
+                        float f15 = this.j;
+                        if (f15 != 0.0f) {
+                            float f16 = f15 - 0.10666667f;
+                            this.j = f16;
+                            if (f16 < 0.0f) {
+                                this.j = 0.0f;
+                            }
+                        }
+                    }
+                    u9Var.d.setColor(i0.a.k(i0.a.d(this.j, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.qg, false), org.telegram.ui.ActionBar.j6.w0(null, this.i != 2 ? org.telegram.ui.ActionBar.j6.sg : org.telegram.ui.ActionBar.j6.pg, false)), 38));
                 }
-                e4Var.a0 = null;
-                break;
-            case 1:
-                ((org.telegram.ui.Components.j6) this.c).r(this.b);
-                break;
-            case 2:
-                ((org.telegram.ui.Components.w7) this.c).a[this.b].setVisibility(8);
-                break;
-            case 3:
-                ((qp) this.c).a[this.b].animate().scaleX(1.0f).scaleY(1.0f).setInterpolator(pr.g).setStartDelay(0L).setDuration(100L).start();
-                break;
-            case 4:
-                cy cyVar = (cy) this.c;
-                fg.b1 b1Var = cyVar.h;
-                int i10 = this.b;
-                b1Var.setVisibility(i10 == 1 ? 0 : 8);
-                cyVar.e.setVisibility(i10 == 2 ? 0 : 8);
-                cyVar.f.setVisibility(i10 == 3 ? 0 : 8);
-                break;
-            case 5:
-                rh0 rh0Var = (rh0) this.c;
-                rh0Var.E = null;
-                rh0Var.M.a1.delete(this.b);
-                break;
-            case 6:
-                wq wqVar = (wq) this.c;
-                ((zk0) wqVar.d).b.remove(this.b);
-                zk0 zk0Var = (zk0) wqVar.d;
-                zk0Var.d = true;
-                zk0Var.a.invalidate();
-                break;
-            case 7:
-                ss0 ss0Var = (ss0) this.c;
-                ss0Var.e.L1.remove(this.b);
-                ss0Var.a.invalidate();
-                break;
-            case 8:
-                org.telegram.ui.Components.voip.b1 b1Var2 = (org.telegram.ui.Components.voip.b1) this.c;
-                b1Var2.x = -1;
-                b1Var2.v = this.b;
-                b1Var2.s = 0.0f;
-                b1Var2.R = null;
-                b1Var2.e();
-                break;
-            case 9:
-                sh.p2 p2Var = (sh.p2) this.c;
-                p2Var.M.setColor(this.b);
-                p2Var.A();
-                p2Var.e.invalidate();
-                org.telegram.ui.f3 f3Var = p2Var.R0;
-                if (f3Var != null) {
-                    f3Var.b(AndroidUtilities.computePerceivedBrightness(p2Var.M.getColor()) <= 0.721f, false);
-                    p2Var.R0.setBackgroundColor(p2Var.M.getColor());
-                }
-                p2Var.F();
-                break;
-            case 10:
-                sh.n3 n3Var = (sh.n3) this.c;
-                sh.i3 i3Var = n3Var.n;
-                if (i3Var.getWebView() != null) {
-                    i3Var.getWebView().setScrollY(this.b);
-                }
-                if (animator == n3Var.r) {
-                    n3Var.r = null;
-                    break;
-                }
-                break;
-            default:
-                wh.o4 o4Var = (wh.o4) this.c;
-                o4Var.T = this.b;
-                o4Var.U = 0.0f;
-                o4Var.requestLayout();
-                o4Var.invalidate();
-                break;
+                u9Var.e(this.a, 1.0f);
+                Paint paint = u9Var.d;
+                u9Var.a(f10, f11, canvas, paint);
+                float f17 = this.a;
+                org.telegram.ui.Components.u9 u9Var2 = this.g;
+                u9Var2.e(f17, 1.0f);
+                u9Var2.a(f10, f11, canvas, paint);
+                canvas.restore();
+            }
+            if (this.d != 0.0f) {
+                view.invalidate();
+            }
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 4:
-                cy cyVar = (cy) this.c;
-                cyVar.h.setVisibility(0);
-                cyVar.e.setVisibility(0);
-                cyVar.f.setVisibility(0);
-                break;
-            default:
-                super.onAnimationStart(animator);
-                break;
+    public final float b() {
+        float f10 = (this.a * 0.2f) + 0.9f;
+        float interpolation = mr.g.getInterpolation(this.d);
+        return e2.c.w(1.0f, interpolation, 1.0f, f10 * interpolation);
+    }
+
+    public final void c(double d) {
+        float f10 = ((float) d) / 80.0f;
+        float f11 = 0.0f;
+        if (!this.e) {
+            f10 = 0.0f;
+        }
+        if (f10 > 1.0f) {
+            f11 = 1.0f;
+        } else if (f10 >= 0.0f) {
+            f11 = f10;
+        }
+        this.b = f11;
+        this.c = (f11 - this.a) / 200.0f;
+    }
+
+    public final void d(int i10) {
+        this.h = true;
+        this.f.d.setColor(i10);
+    }
+
+    public final void e(View view, boolean z4) {
+        if (this.e != z4) {
+            view.invalidate();
+        }
+        this.e = z4;
+    }
+
+    public final void f() {
+        float f10 = this.b;
+        float f11 = this.a;
+        if (f10 != f11) {
+            float f12 = this.c;
+            float f13 = (16.0f * f12) + f11;
+            this.a = f13;
+            if (f12 > 0.0f) {
+                if (f13 > f10) {
+                    this.a = f10;
+                }
+            } else if (f13 < f10) {
+                this.a = f10;
+            }
+        }
+        boolean z4 = this.e;
+        if (z4) {
+            float f14 = this.d;
+            if (f14 != 1.0f) {
+                float f15 = f14 + 0.045714285f;
+                this.d = f15;
+                if (f15 > 1.0f) {
+                    this.d = 1.0f;
+                    return;
+                }
+                return;
+            }
+        }
+        if (z4) {
+            return;
+        }
+        float f16 = this.d;
+        if (f16 != 0.0f) {
+            float f17 = f16 - 0.045714285f;
+            this.d = f17;
+            if (f17 < 0.0f) {
+                this.d = 0.0f;
+            }
         }
     }
 }

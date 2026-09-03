@@ -22,7 +22,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class hp0 extends FrameLayout {
     public static final /* synthetic */ int n0 = 0;
@@ -31,7 +31,7 @@ public final class hp0 extends FrameLayout {
     public boolean D;
     public boolean E;
     public TL_stars.TL_starGiftUnique F;
-    public lh.b5 G;
+    public kh.a5 G;
     public TL_stars.StarGift H;
     public final ArrayList I;
     public final HashMap J;
@@ -79,12 +79,12 @@ public final class hp0 extends FrameLayout {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public hp0(np0 np0Var, Context context, int i10) {
         super(context);
-        org.telegram.ui.ActionBar.f5 f5Var;
-        org.telegram.ui.ActionBar.g6 g6Var;
-        org.telegram.ui.ActionBar.g6 g6Var2;
-        org.telegram.ui.ActionBar.g6 g6Var3;
+        org.telegram.ui.ActionBar.e5 e5Var;
+        org.telegram.ui.ActionBar.f6 f6Var;
+        org.telegram.ui.ActionBar.f6 f6Var2;
+        org.telegram.ui.ActionBar.f6 f6Var3;
         int i11;
-        org.telegram.ui.ActionBar.g6 g6Var4;
+        org.telegram.ui.ActionBar.f6 f6Var4;
         this.m0 = np0Var;
         this.e = new n7.qa(18);
         this.h = -1;
@@ -116,27 +116,28 @@ public final class hp0 extends FrameLayout {
         this.j0 = i10;
         d();
         Context context2 = getContext();
-        org.telegram.ui.ActionBar.g6 resourceProvider = np0Var.getResourceProvider();
-        og.a aVar = np0Var.D;
+        org.telegram.ui.ActionBar.f6 resourceProvider = np0Var.getResourceProvider();
+        ng.a aVar = np0Var.D;
         yo0 yo0Var = new yo0(this, context2, resourceProvider, i10);
         this.b = yo0Var;
         yo0Var.setClipToPadding(false);
         yo0Var.setSections(true);
         ((f2.l) yo0Var.getItemAnimator()).m = false;
         getContext();
+        int i13 = 3;
         f2.w wVar = new f2.w(3);
         this.c = wVar;
-        wVar.O = new lh.n5(this, 6);
-        yo0Var.i(new hg.e2(this, 7));
+        wVar.O = new kh.m5(this, 6);
+        yo0Var.i(new gg.e2(this, 7));
         yo0Var.setLayoutManager(wVar);
         ap0 ap0Var = new ap0(this, context, i10);
         this.d = ap0Var;
         yo0Var.setAdapter(ap0Var);
-        yo0Var.setOnItemClickListener(new org.telegram.ui.Components.xm0(this, i10, 1));
+        yo0Var.setOnItemClickListener(new org.telegram.ui.Components.wm0(this, i10, 1));
         yo0Var.j(new bp0(this, i10));
-        addView(yo0Var, k7.c6.c(-1.0f, -1));
+        addView(yo0Var, k7.b6.c(-1.0f, -1));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("l");
-        spannableStringBuilder.setSpan(new org.telegram.ui.Components.oq(R.drawable.msg_mini_lock2, 0), 0, 1, 33);
+        spannableStringBuilder.setSpan(new org.telegram.ui.Components.lq(R.drawable.msg_mini_lock2, 0), 0, 1, 33);
         String string = LocaleController.getString(np0Var.a ? R.string.ChannelColorApply : R.string.UserColorApply);
         this.L = string;
         this.K = new SpannableStringBuilder(spannableStringBuilder).append((CharSequence) " ").append((CharSequence) string);
@@ -144,51 +145,51 @@ public final class hp0 extends FrameLayout {
         f(false);
         f2.l lVar = new f2.l();
         lVar.n(350L);
-        lVar.o(org.telegram.ui.Components.pr.h);
+        lVar.o(org.telegram.ui.Components.mr.h);
         lVar.C = false;
         lVar.m = false;
         yo0Var.setItemAnimator(lVar);
         View view = new View(getContext());
         this.w = view;
-        og.b bVar = new og.b(aVar.c(view, null, false));
+        ng.b bVar = new ng.b(aVar.c(view, null, false));
         bVar.b(-AndroidUtilities.dp(24.0f), true);
         bVar.q = 220;
         view.setBackground(bVar);
-        addView(view, k7.c6.e(-1, 72, 55));
+        addView(view, k7.b6.e(-1, 72, 55));
         if (i10 == 0) {
             Context context3 = getContext();
             i11 = ((org.telegram.ui.ActionBar.p2) np0Var).currentAccount;
-            g6Var4 = ((org.telegram.ui.ActionBar.p2) np0Var).resourceProvider;
-            this.a = new lp0(i11, 0L, context3, g6Var4);
+            f6Var4 = ((org.telegram.ui.ActionBar.p2) np0Var).resourceProvider;
+            this.a = new lp0(i11, 0L, context3, f6Var4);
             j(false);
         } else {
             View view2 = new View(getContext());
             this.x = view2;
-            og.b bVar2 = new og.b(aVar.c(view2, null, false));
+            ng.b bVar2 = new ng.b(aVar.c(view2, null, false));
             bVar2.b(-AndroidUtilities.dp(16.0f), false);
             view2.setBackground(bVar2);
-            addView(view2, k7.c6.e(-1, 16, 55));
+            addView(view2, k7.b6.e(-1, 16, 55));
             Context context4 = getContext();
-            f5Var = ((org.telegram.ui.ActionBar.p2) np0Var).parentLayout;
-            g6Var = ((org.telegram.ui.ActionBar.p2) np0Var).resourceProvider;
-            cp0 cp0Var = new cp0(context4, f5Var, 3, 0L, g6Var);
+            e5Var = ((org.telegram.ui.ActionBar.p2) np0Var).parentLayout;
+            f6Var = ((org.telegram.ui.ActionBar.p2) np0Var).resourceProvider;
+            cp0 cp0Var = new cp0(context4, e5Var, 3, 0L, f6Var);
             this.v = cp0Var;
             cp0Var.setImportantForAccessibility(4);
             cp0Var.r = np0Var;
             cp0Var.setClipToOutline(true);
             float dp = AndroidUtilities.dp(16.0f);
-            hg.j1 j1Var = lf.q0.a;
-            cp0Var.setOutlineProvider(new lf.p0(0, dp));
-            addView(cp0Var, k7.c6.d(-1, -2.0f, 55, 12.0f, 0.0f, 12.0f, 0.0f));
+            gg.j1 j1Var = kf.r0.a;
+            cp0Var.setOutlineProvider(new kf.q0(0, dp));
+            addView(cp0Var, k7.b6.d(-1, -2.0f, 55, 12.0f, 0.0f, 12.0f, 0.0f));
         }
         Context context5 = getContext();
-        g6Var2 = ((org.telegram.ui.ActionBar.p2) np0Var).resourceProvider;
-        mp0 mp0Var = new mp0(np0Var, context5, g6Var2);
+        f6Var2 = ((org.telegram.ui.ActionBar.p2) np0Var).resourceProvider;
+        mp0 mp0Var = new mp0(np0Var, context5, f6Var2);
         this.B = mp0Var;
-        qg.b c3 = np0Var.B.c(mp0Var, null, false);
-        g6Var3 = ((org.telegram.ui.ActionBar.p2) np0Var).resourceProvider;
-        rg.d dVar = new rg.d(g6Var3);
-        dVar.e = new s0.b(25);
+        pg.b c3 = np0Var.B.c(mp0Var, null, false);
+        f6Var3 = ((org.telegram.ui.ActionBar.p2) np0Var).resourceProvider;
+        qg.d dVar = new qg.d(f6Var3);
+        dVar.e = new rg.a(i13);
         dVar.d(0, 0);
         dVar.c(0, 0);
         dVar.b(0, 0);
@@ -199,10 +200,10 @@ public final class hp0 extends FrameLayout {
         mp0Var.D = c3;
         mp0Var.C = new xo0(this, i12);
         mp0Var.setVisibility(4);
-        addView(mp0Var, k7.c6.d(-1, 36.0f, 55, 12.0f, 0.0f, 12.0f, 0.0f));
+        addView(mp0Var, k7.b6.d(-1, 36.0f, 55, 12.0f, 0.0f, 12.0f, 0.0f));
         View view3 = this.a;
         if (view3 != null) {
-            addView(view3, k7.c6.e(-1, -2, 55));
+            addView(view3, k7.b6.e(-1, -2, 55));
         }
         g();
         k();
@@ -347,12 +348,12 @@ public final class hp0 extends FrameLayout {
         np0 np0Var = this.m0;
         n7.qa qaVar = this.e;
         if (tL_starGiftUnique != null) {
-            mf.a resellAmount = tL_starGiftUnique.getResellAmount(mf.b.a);
+            lf.a resellAmount = tL_starGiftUnique.getResellAmount(lf.b.a);
             if (tL_starGiftUnique.resale_ton_only) {
-                qaVar.b = mh.ja.S0(LocaleController.formatString(R.string.ResellGiftBuyTON, tL_starGiftUnique.getResellAmount(mf.b.b).d()), true);
-                qaVar.c = mh.ja.Q0(LocaleController.formatPluralStringComma("ResellGiftBuyEq", (int) resellAmount.a()));
+                qaVar.b = lh.ja.S0(LocaleController.formatString(R.string.ResellGiftBuyTON, tL_starGiftUnique.getResellAmount(lf.b.b).d()), true);
+                qaVar.c = lh.ja.Q0(LocaleController.formatPluralStringComma("ResellGiftBuyEq", (int) resellAmount.a()));
             } else {
-                qaVar.b = mh.ja.Q0(LocaleController.formatPluralStringComma("ResellGiftBuy", (int) resellAmount.a()));
+                qaVar.b = lh.ja.Q0(LocaleController.formatPluralStringComma("ResellGiftBuy", (int) resellAmount.a()));
                 qaVar.c = null;
             }
         } else {
@@ -367,7 +368,7 @@ public final class hp0 extends FrameLayout {
     }
 
     public final void g() {
-        qh.d dVar = this.m0.N;
+        ph.d dVar = this.m0.N;
         if (dVar != null) {
             dVar.j();
         }
@@ -376,7 +377,7 @@ public final class hp0 extends FrameLayout {
             cp0Var.invalidate();
         }
         j(true);
-        AndroidUtilities.forEachViews((RecyclerView) this.b, (h5.d) new vb(this, 3));
+        AndroidUtilities.forEachViews((RecyclerView) this.b, (h5.d) new xb(this, 3));
         mp0 mp0Var = this.B;
         if (mp0Var != null) {
             l(mp0Var);
@@ -445,10 +446,10 @@ public final class hp0 extends FrameLayout {
         MessageObject messageObject;
         cp0 cp0Var = this.v;
         if (cp0Var != null) {
-            org.telegram.ui.Cells.t1[] cells = cp0Var.getCells();
+            org.telegram.ui.Cells.s1[] cells = cp0Var.getCells();
             for (int i10 = 0; i10 < cells.length; i10++) {
-                org.telegram.ui.Cells.t1 t1Var = cells[i10];
-                if (t1Var != null && (messageObject = t1Var.getMessageObject()) != null) {
+                org.telegram.ui.Cells.s1 s1Var = cells[i10];
+                if (s1Var != null && (messageObject = s1Var.getMessageObject()) != null) {
                     messageObject.notime = true;
                     kp0 kp0Var = this.f;
                     if (kp0Var != null) {
@@ -522,8 +523,8 @@ public final class hp0 extends FrameLayout {
                 vo0 vo0Var = (vo0) childAt;
                 TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible3 = this.r;
                 vo0Var.b((tL_emojiStatusCollectible3 != null && tL_emojiStatusCollectible3.collectible_id == vo0Var.getGiftId()) || ((tL_peerColorCollectible2 = this.s) != null && tL_peerColorCollectible2.collectible_id == vo0Var.getGiftId()), true);
-            } else if (childAt instanceof lh.x1) {
-                lh.x1 x1Var = (lh.x1) childAt;
+            } else if (childAt instanceof kh.x1) {
+                kh.x1 x1Var = (kh.x1) childAt;
                 TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible4 = this.r;
                 x1Var.e((tL_emojiStatusCollectible4 != null && tL_emojiStatusCollectible4.collectible_id == x1Var.getGiftId()) || ((tL_peerColorCollectible = this.s) != null && tL_peerColorCollectible.collectible_id == x1Var.getGiftId()), true);
             }
@@ -534,7 +535,7 @@ public final class hp0 extends FrameLayout {
     public final void k() {
         int i10;
         np0 np0Var = this.m0;
-        mh.l7 l7Var = np0Var.b;
+        lh.l7 l7Var = np0Var.b;
         this.S = -1;
         this.T = -1;
         this.U = -1;
@@ -560,7 +561,7 @@ public final class hp0 extends FrameLayout {
             this.h0 = 5;
             this.T = 4;
         }
-        mh.l7 l7Var2 = i12 == 1 ? np0Var.c : l7Var;
+        lh.l7 l7Var2 = i12 == 1 ? np0Var.c : l7Var;
         if ((i12 == 0 || i12 == 1) && l7Var2 != null) {
             ArrayList arrayList2 = l7Var2.l;
             int i13 = this.h0;
@@ -617,8 +618,8 @@ public final class hp0 extends FrameLayout {
                 this.c0 = size2;
                 int i22 = this.h0;
                 this.W = i22;
-                lh.b5 b5Var = this.G;
-                if (b5Var.t || !b5Var.u) {
+                kh.a5 a5Var = this.G;
+                if (a5Var.t || !a5Var.u) {
                     this.a0 = i22;
                     int i23 = 3 - (size2 % 3);
                     if (size2 <= 0) {
@@ -649,26 +650,26 @@ public final class hp0 extends FrameLayout {
     }
 
     public final void l(mp0 mp0Var) {
-        int i10 = org.telegram.ui.ActionBar.k6.d6;
+        int i10 = org.telegram.ui.ActionBar.j6.d6;
         np0 np0Var = this.m0;
         int themedColor = np0Var.getThemedColor(i10);
-        np0Var.getThemedColor(org.telegram.ui.ActionBar.k6.a7);
-        int themedColor2 = np0Var.getThemedColor(org.telegram.ui.ActionBar.k6.z6);
-        int themedColor3 = np0Var.getThemedColor(org.telegram.ui.ActionBar.k6.G6);
+        np0Var.getThemedColor(org.telegram.ui.ActionBar.j6.a7);
+        int themedColor2 = np0Var.getThemedColor(org.telegram.ui.ActionBar.j6.z6);
+        int themedColor3 = np0Var.getThemedColor(org.telegram.ui.ActionBar.j6.G6);
         mp0Var.v.setColor(themedColor);
-        mp0Var.x = org.telegram.ui.ActionBar.k6.l1(0.06f, themedColor3);
+        mp0Var.x = org.telegram.ui.ActionBar.j6.l1(0.06f, themedColor3);
         mp0Var.y = themedColor2;
         mp0Var.B = themedColor3;
-        mh.d1 d1Var = mp0Var.a;
-        for (int i11 = 0; i11 < d1Var.getChildCount(); i11++) {
-            View childAt = d1Var.getChildAt(i11);
+        lh.e1 e1Var = mp0Var.a;
+        for (int i11 = 0; i11 < e1Var.getChildCount(); i11++) {
+            View childAt = e1Var.getChildAt(i11);
             int R = RecyclerView.R(childAt);
             if (R != -1 && (childAt instanceof TextView)) {
                 ((TextView) childAt).setTextColor(R == mp0Var.d ? mp0Var.B : mp0Var.y);
                 childAt.invalidate();
             }
         }
-        d1Var.invalidate();
+        e1Var.invalidate();
         mp0Var.invalidate();
     }
 

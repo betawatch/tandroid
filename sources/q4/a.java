@@ -4,7 +4,7 @@ import g5.p;
 import j3.n0;
 import n7.qa;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class a extends k {
     public final long v;
@@ -18,7 +18,7 @@ public abstract class a extends k {
         this.w = j13;
     }
 
-    public final int d(int i10) {
+    public final int e(int i10) {
         int[] iArr = this.y;
         h5.a.j(iArr);
         return iArr[i10];

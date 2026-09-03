@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class ts0 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -33,21 +33,21 @@ public final class ts0 implements ViewTreeObserver.OnPreDrawListener {
                 yu0Var.U(i11);
                 break;
             default:
-                r61 r61Var = (r61) callback;
-                mh.d1 d1Var = r61Var.d;
-                d1Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                int childCount = d1Var.getChildCount();
+                q61 q61Var = (q61) callback;
+                lh.e1 e1Var = q61Var.d;
+                e1Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                int childCount = e1Var.getChildCount();
                 AnimatorSet animatorSet = new AnimatorSet();
                 for (int i12 = 0; i12 < childCount; i12++) {
-                    View childAt = d1Var.getChildAt(i12);
-                    d1Var.getClass();
+                    View childAt = e1Var.getChildAt(i12);
+                    e1Var.getClass();
                     int R = RecyclerView.R(childAt);
                     if (R >= i11) {
-                        if (R == 1 && d1Var.getAdapter() == r61Var.e && (childAt instanceof org.telegram.ui.Cells.u3)) {
-                            childAt = ((org.telegram.ui.Cells.u3) childAt).getTextView();
+                        if (R == 1 && e1Var.getAdapter() == q61Var.e && (childAt instanceof org.telegram.ui.Cells.t3)) {
+                            childAt = ((org.telegram.ui.Cells.t3) childAt).getTextView();
                         }
                         childAt.setAlpha(0.0f);
-                        int min = (int) ((Math.min(d1Var.getMeasuredHeight(), Math.max(0, childAt.getTop())) / d1Var.getMeasuredHeight()) * 100.0f);
+                        int min = (int) ((Math.min(e1Var.getMeasuredHeight(), Math.max(0, childAt.getTop())) / e1Var.getMeasuredHeight()) * 100.0f);
                         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f);
                         ofFloat.setStartDelay(min);
                         ofFloat.setDuration(200L);

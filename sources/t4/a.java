@@ -12,7 +12,7 @@ import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class a implements g5.m {
     public final g5.m a;
@@ -60,11 +60,11 @@ public final class a implements g5.m {
                 this.d = new CipherInputStream(oVar, cipher);
                 oVar.a();
                 return -1L;
-            } catch (InvalidAlgorithmParameterException | InvalidKeyException e6) {
-                throw new RuntimeException(e6);
+            } catch (InvalidAlgorithmParameterException | InvalidKeyException e) {
+                throw new RuntimeException(e);
             }
-        } catch (NoSuchAlgorithmException | NoSuchPaddingException e10) {
-            throw new RuntimeException(e10);
+        } catch (NoSuchAlgorithmException | NoSuchPaddingException e6) {
+            throw new RuntimeException(e6);
         }
     }
 

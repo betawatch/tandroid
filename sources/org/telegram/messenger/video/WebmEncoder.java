@@ -16,10 +16,11 @@ import android.text.Spanned;
 import android.text.TextUtils;
 import android.util.Pair;
 import android.view.View;
-import dg.s0;
+import cg.t0;
 import java.io.File;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
+import kf.k0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.Emoji;
@@ -35,11 +36,11 @@ import org.telegram.ui.Components.u5;
 import org.telegram.ui.Components.v5;
 import org.telegram.ui.Components.y5;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class WebmEncoder {
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     public static class FrameDrawer {
         private final int H;
         private final int W;
@@ -270,13 +271,13 @@ public class WebmEncoder {
         private void initTextEntity(final VideoEditedInfo.MediaEntity mediaEntity) {
             Emoji.EmojiSpan[] emojiSpanArr;
             Typeface d;
-            final eg.b bVar = new eg.b(ApplicationLoader.applicationContext);
+            final dg.b bVar = new dg.b(ApplicationLoader.applicationContext);
             bVar.getPaint().setAntiAlias(true);
             bVar.drawAnimatedEmojiDrawables = false;
             bVar.setBackgroundColor(0);
             bVar.setPadding(AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f));
-            s0 s0Var = mediaEntity.textTypeface;
-            if (s0Var != null && (d = s0Var.d()) != null) {
+            t0 t0Var = mediaEntity.textTypeface;
+            if (t0Var != null && (d = t0Var.d()) != null) {
                 bVar.setTypeface(d);
             }
             bVar.setTextSize(0, mediaEntity.fontSize);
@@ -309,7 +310,7 @@ public class WebmEncoder {
                                 double d10 = paddingLeft - f13;
                                 double d11 = (paddingTop - f14) / f15;
                                 paddingLeft = ((float) ((Math.cos(-mediaEntity.rotation) * d10) - (Math.sin(-mediaEntity.rotation) * d11))) + f13;
-                                paddingTop = (((float) l.d.a(-mediaEntity.rotation, d11, Math.sin(-mediaEntity.rotation) * d10)) * f15) + f14;
+                                paddingTop = (((float) k0.a(-mediaEntity.rotation, d11, Math.sin(-mediaEntity.rotation) * d10)) * f15) + f14;
                             }
                             VideoEditedInfo.MediaEntity mediaEntity5 = emojiEntity.entity;
                             int i17 = this.measuredSize;
@@ -409,7 +410,7 @@ public class WebmEncoder {
             canvas.restore();
         }
 
-        public void setBreakStrategy(eg.b bVar) {
+        public void setBreakStrategy(dg.b bVar) {
             bVar.setBreakStrategy(0);
         }
     }
@@ -441,8 +442,8 @@ public class WebmEncoder {
             } catch (Throwable th2) {
                 th = th2;
             }
-        } catch (Exception e6) {
-            e = e6;
+        } catch (Exception e) {
+            e = e;
         }
         try {
             try {
@@ -465,8 +466,8 @@ public class WebmEncoder {
                     if (videoConvertorListener3 != null) {
                         try {
                             bitmap = bitmap2;
-                        } catch (Exception e10) {
-                            e = e10;
+                        } catch (Exception e6) {
+                            e = e6;
                             FileLog.e(e);
                             stop(createEncoder);
                             if (bitmap2 != null) {
@@ -485,8 +486,8 @@ public class WebmEncoder {
                         try {
                             i11 = i12;
                             videoConvertorListener3.didWriteData(Math.min(261120L, convertVideoParams.cacheFile.length()), i14 / ceil);
-                        } catch (Exception e11) {
-                            e = e11;
+                        } catch (Exception e10) {
+                            e = e10;
                             bitmap2 = bitmap;
                             FileLog.e(e);
                             stop(createEncoder);
@@ -528,8 +529,8 @@ public class WebmEncoder {
             } catch (Throwable th4) {
                 th = th4;
             }
-        } catch (Exception e12) {
-            e = e12;
+        } catch (Exception e11) {
+            e = e11;
             FileLog.e(e);
             stop(createEncoder);
             if (bitmap2 != null) {

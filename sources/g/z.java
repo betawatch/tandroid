@@ -6,11 +6,11 @@ import android.view.View;
 import androidx.appcompat.widget.ActionBarContextView;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class z extends k.a implements l.j {
+public final class z extends k.a implements l.i {
     public final Context c;
-    public final l.l d;
+    public final l.k d;
     public f7.b e;
     public WeakReference f;
     public final /* synthetic */ a0 h;
@@ -19,10 +19,10 @@ public final class z extends k.a implements l.j {
         this.h = a0Var;
         this.c = context;
         this.e = bVar;
-        l.l lVar = new l.l(context);
-        lVar.l = 1;
-        this.d = lVar;
-        lVar.e = this;
+        l.k kVar = new l.k(context);
+        kVar.l = 1;
+        this.d = kVar;
+        kVar.e = this;
     }
 
     @Override // k.a
@@ -35,7 +35,7 @@ public final class z extends k.a implements l.j {
             a0Var.j = this;
             a0Var.k = this.e;
         } else {
-            this.e.t(this);
+            this.e.u(this);
         }
         this.e = null;
         a0Var.a(false);
@@ -57,7 +57,7 @@ public final class z extends k.a implements l.j {
     }
 
     @Override // k.a
-    public final l.l c() {
+    public final l.k c() {
         return this.d;
     }
 
@@ -81,12 +81,12 @@ public final class z extends k.a implements l.j {
         if (this.h.i != this) {
             return;
         }
-        l.l lVar = this.d;
-        lVar.w();
+        l.k kVar = this.d;
+        kVar.w();
         try {
-            this.e.u(this, lVar);
+            this.e.v(this, kVar);
         } finally {
-            lVar.v();
+            kVar.v();
         }
     }
 
@@ -95,14 +95,8 @@ public final class z extends k.a implements l.j {
         return this.h.f.F;
     }
 
-    @Override // k.a
-    public final void i(View view) {
-        this.h.f.setCustomView(view);
-        this.f = new WeakReference(view);
-    }
-
-    @Override // l.j
-    public final void j(l.l lVar) {
+    @Override // l.i
+    public final void i(l.k kVar) {
         if (this.e == null) {
             return;
         }
@@ -111,6 +105,12 @@ public final class z extends k.a implements l.j {
         if (hVar != null) {
             hVar.l();
         }
+    }
+
+    @Override // k.a
+    public final void j(View view) {
+        this.h.f.setCustomView(view);
+        this.f = new WeakReference(view);
     }
 
     @Override // k.a
@@ -139,11 +139,11 @@ public final class z extends k.a implements l.j {
         this.h.f.setTitleOptional(z4);
     }
 
-    @Override // l.j
-    public final boolean s(l.l lVar, MenuItem menuItem) {
+    @Override // l.i
+    public final boolean q(l.k kVar, MenuItem menuItem) {
         f7.b bVar = this.e;
         if (bVar != null) {
-            return ((sf.f) bVar.b).A(this, menuItem);
+            return ((rf.f) bVar.b).A(this, menuItem);
         }
         return false;
     }

@@ -1,15 +1,15 @@
 package r4;
 
-import com.google.firebase.messaging.s;
+import com.google.firebase.messaging.r;
 import g5.n0;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class k {
     public final n0 a;
-    public final s b;
+    public final r b;
     public final int[] c;
     public final int d;
     public final g5.m e;
@@ -23,14 +23,14 @@ public final class k {
     public boolean m;
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Object, r4.k] */
-    public k(n0 n0Var, s4.c cVar, s sVar, int i10, int[] iArr, f5.c cVar2, int i11, g5.m mVar, long j10, boolean z4, ArrayList arrayList, n nVar) {
+    public k(n0 n0Var, s4.c cVar, r rVar, int i10, int[] iArr, f5.c cVar2, int i11, g5.m mVar, long j10, boolean z4, ArrayList arrayList, n nVar) {
         r3.k iVar;
         int i12;
         q4.d dVar;
         ?? obj = new Object();
         obj.a = n0Var;
         obj.j = cVar;
-        obj.b = sVar;
+        obj.b = rVar;
         obj.c = iArr;
         obj.i = cVar2;
         obj.d = i11;
@@ -46,7 +46,7 @@ public final class k {
         k kVar = obj;
         while (i14 < kVar.h.length) {
             s4.m mVar2 = (s4.m) a2.get(cVar2.f(i14));
-            s4.b n10 = sVar.n(mVar2.b);
+            s4.b n10 = rVar.n(mVar2.b);
             i[] iVarArr = kVar.h;
             int i15 = i14;
             n10 = n10 == null ? (s4.b) mVar2.b.get(i13) : n10;

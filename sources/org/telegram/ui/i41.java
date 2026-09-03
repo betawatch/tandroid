@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i41 implements Runnable {
     public final /* synthetic */ int a;
@@ -39,9 +39,9 @@ public final /* synthetic */ class i41 implements Runnable {
                 AndroidUtilities.runOnUIThread(new i41(secretMediaViewer, i11), 50L);
                 break;
             case 1:
-                ag.l lVar = secretMediaViewer.e;
-                if (lVar != null) {
-                    lVar.setLayerType(0, null);
+                ah.e eVar = secretMediaViewer.e;
+                if (eVar != null) {
+                    eVar.setLayerType(0, null);
                     secretMediaViewer.e.setVisibility(4);
                     secretMediaViewer.j0 = 0;
                     secretMediaViewer.s = false;
@@ -65,9 +65,9 @@ public final /* synthetic */ class i41 implements Runnable {
                         p10 = 0;
                     }
                     if (p10 > 0) {
-                        org.telegram.ui.Components.l71 l71Var = secretMediaViewer.N;
-                        if (!l71Var.f) {
-                            l71Var.h(n10 / p10, false);
+                        org.telegram.ui.Components.k71 k71Var = secretMediaViewer.N;
+                        if (!k71Var.f) {
+                            k71Var.h(n10 / p10, false);
                             secretMediaViewer.O.invalidate();
                         }
                     }
@@ -88,9 +88,9 @@ public final /* synthetic */ class i41 implements Runnable {
                     String format = i12 >= 60 ? String.format(Locale.ROOT, "%02d:%02d:%02d", Integer.valueOf(i12 / 60), Integer.valueOf(iArr[0] % 60), Integer.valueOf(iArr[1])) : String.format(Locale.ROOT, "%02d:%02d", Integer.valueOf(i12), Integer.valueOf(iArr[1]));
                     int i13 = iArr2[0];
                     String format2 = i13 >= 60 ? String.format(Locale.ROOT, "%02d:%02d:%02d", Integer.valueOf(i13 / 60), Integer.valueOf(iArr2[0] % 60), Integer.valueOf(iArr2[1])) : String.format(Locale.ROOT, "%02d:%02d", Integer.valueOf(i13), Integer.valueOf(iArr2[1]));
-                    org.telegram.ui.ActionBar.l5 l5Var = secretMediaViewer.P;
+                    org.telegram.ui.ActionBar.k5 k5Var = secretMediaViewer.P;
                     Locale locale = Locale.ROOT;
-                    l5Var.l(format + " / " + format2, false);
+                    k5Var.l(format + " / " + format2, false);
                     if (secretMediaViewer.y.y()) {
                         AndroidUtilities.runOnUIThread(secretMediaViewer.f1, 17L);
                         break;
@@ -111,8 +111,8 @@ public final /* synthetic */ class i41 implements Runnable {
                     if (secretMediaViewer.d.getParent() != null) {
                         ((WindowManager) secretMediaViewer.b.getSystemService("window")).removeView(secretMediaViewer.d);
                     }
-                } catch (Exception e6) {
-                    FileLog.e(e6);
+                } catch (Exception e) {
+                    FileLog.e(e);
                 }
                 secretMediaViewer.g0 = false;
                 break;

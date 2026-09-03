@@ -13,7 +13,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class t11 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ Context a;
@@ -48,7 +48,7 @@ public final class t11 extends org.telegram.ui.ActionBar.j {
             proxyListActivity.showDialog(d2Var);
             TextView textView = (TextView) d2Var.d(-1);
             if (textView != null) {
-                textView.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.q7, false));
+                textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, false));
                 return;
             }
             return;
@@ -65,7 +65,7 @@ public final class t11 extends org.telegram.ui.ActionBar.j {
             if (sb.length() > 0) {
                 sb.append("\n\n");
             }
-            sf.b bVar = proxyInfo.settings;
+            rf.b bVar = proxyInfo.settings;
             String str = bVar.f;
             String str2 = bVar.e;
             String str3 = bVar.d;

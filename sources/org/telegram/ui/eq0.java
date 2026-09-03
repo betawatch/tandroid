@@ -6,9 +6,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class eq0 extends org.telegram.ui.ActionBar.i5 {
+public final class eq0 extends org.telegram.ui.ActionBar.h5 {
     public final gl0 f = new gl0(this, 11);
     public final /* synthetic */ mq0 h;
 
@@ -16,18 +16,18 @@ public final class eq0 extends org.telegram.ui.ActionBar.i5 {
         this.h = mq0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.i5
+    @Override // org.telegram.ui.ActionBar.h5
     public final boolean b() {
         this.h.finishFragment();
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.i5
-    public final void p(lg.f fVar) {
+    @Override // org.telegram.ui.ActionBar.h5
+    public final void p(kg.f fVar) {
         this.h.b0(fVar);
     }
 
-    @Override // org.telegram.ui.ActionBar.i5
+    @Override // org.telegram.ui.ActionBar.h5
     public final void q(EditText editText) {
         int i10;
         if (editText.getText().length() != 0) {
@@ -52,7 +52,7 @@ public final class eq0 extends org.telegram.ui.ActionBar.i5 {
         mq0Var.j0();
     }
 
-    @Override // org.telegram.ui.ActionBar.i5
+    @Override // org.telegram.ui.ActionBar.h5
     public final void n() {
     }
 }

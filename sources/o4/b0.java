@@ -1,14 +1,14 @@
 package o4;
 
 import android.net.Uri;
-import j7.q7;
+import j7.p7;
 import java.io.InterruptedIOException;
 import java.util.Collections;
 import java.util.Map;
 import l7.w0;
 import org.telegram.ui.Components.jb;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class b0 implements g5.j0 {
     public final Uri a;
@@ -33,7 +33,7 @@ public final class b0 implements g5.j0 {
         this.d = e0Var2;
         this.e = cVar;
         j.a.getAndIncrement();
-        this.s = b(0L);
+        this.s = c(0L);
     }
 
     @Override // g5.j0
@@ -44,9 +44,9 @@ public final class b0 implements g5.j0 {
         while (i11 == 0 && !this.h) {
             try {
                 long j10 = this.f.a;
-                g5.p b10 = b(j10);
-                this.s = b10;
-                long open = this.b.open(b10);
+                g5.p c3 = c(j10);
+                this.s = c3;
+                long open = this.b.open(c3);
                 if (open != -1) {
                     open += j10;
                     e0 e0Var = this.x;
@@ -60,9 +60,9 @@ public final class b0 implements g5.j0 {
                     mVar = u0Var;
                 } else {
                     mVar = new i(u0Var, i10, this);
-                    k0 z4 = this.x.z(new d0(0, true));
-                    this.v = z4;
-                    z4.b(e0.a0);
+                    k0 k10 = this.x.k(new d0(0, true));
+                    this.v = k10;
+                    k10.b(e0.a0);
                 }
                 this.c.x(mVar, this.a, this.b.a.getResponseHeaders(), j10, j11, this.d);
                 if (this.x.E != null) {
@@ -114,7 +114,7 @@ public final class b0 implements g5.j0 {
                         this.f.a = hVar3 != null ? hVar3.d : -1L;
                     }
                 }
-                q7.a(this.b);
+                p7.a(this.b);
             } catch (Throwable th2) {
                 if (i11 != 1) {
                     r3.h hVar4 = (r3.h) this.c.d;
@@ -122,23 +122,23 @@ public final class b0 implements g5.j0 {
                         this.f.a = hVar4 != null ? hVar4.d : -1L;
                     }
                 }
-                q7.a(this.b);
+                p7.a(this.b);
                 throw th2;
             }
         }
     }
 
-    public final g5.p b(long j10) {
+    @Override // g5.j0
+    public final void b() {
+        this.h = true;
+    }
+
+    public final g5.p c(long j10) {
         Map map = Collections.EMPTY_MAP;
         String str = this.x.r;
         Map map2 = e0.Z;
         Uri uri = this.a;
         h5.a.k(uri, "The uri must be set.");
         return new g5.p(uri, 1, null, map2, j10, -1L, str, 6);
-    }
-
-    @Override // g5.j0
-    public final void l() {
-        this.h = true;
     }
 }

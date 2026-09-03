@@ -1,52 +1,47 @@
 package x7;
 
 import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.maps.model.LatLng;
-import j7.g5;
-import java.util.ArrayList;
-import u6.p;
+import android.os.RemoteException;
+import b6.m;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class b extends c6.a {
-    public static final Parcelable.Creator<b> CREATOR = new p(14);
-    public LatLng a;
-    public double b;
-    public float c;
-    public int d;
-    public int e;
-    public float f;
-    public boolean h;
-    public boolean n;
-    public ArrayList r;
+public final class b {
+    public final g7.h a;
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = g5.q(parcel, 20293);
-        g5.k(parcel, 2, this.a, i10);
-        double d = this.b;
-        g5.s(parcel, 3, 8);
-        parcel.writeDouble(d);
-        float f10 = this.c;
-        g5.s(parcel, 4, 4);
-        parcel.writeFloat(f10);
-        int i11 = this.d;
-        g5.s(parcel, 5, 4);
-        parcel.writeInt(i11);
-        int i12 = this.e;
-        g5.s(parcel, 6, 4);
-        parcel.writeInt(i12);
-        float f11 = this.f;
-        g5.s(parcel, 7, 4);
-        parcel.writeFloat(f11);
-        boolean z4 = this.h;
-        g5.s(parcel, 8, 4);
-        parcel.writeInt(z4 ? 1 : 0);
-        boolean z10 = this.n;
-        g5.s(parcel, 9, 4);
-        parcel.writeInt(z10 ? 1 : 0);
-        g5.p(parcel, 10, this.r);
-        g5.r(parcel, q10);
+    public b(g7.h hVar) {
+        m.h(hVar);
+        this.a = hVar;
+    }
+
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof b)) {
+            return false;
+        }
+        try {
+            g7.h hVar = this.a;
+            g7.h hVar2 = ((b) obj).a;
+            g7.f fVar = (g7.f) hVar;
+            Parcel M0 = fVar.M0();
+            g7.b.c(M0, hVar2);
+            Parcel L0 = fVar.L0(M0, 17);
+            boolean z4 = L0.readInt() != 0;
+            L0.recycle();
+            return z4;
+        } catch (RemoteException e) {
+            throw new a7.b(e);
+        }
+    }
+
+    public final int hashCode() {
+        try {
+            g7.f fVar = (g7.f) this.a;
+            Parcel L0 = fVar.L0(fVar.M0(), 18);
+            int readInt = L0.readInt();
+            L0.recycle();
+            return readInt;
+        } catch (RemoteException e) {
+            throw new a7.b(e);
+        }
     }
 }

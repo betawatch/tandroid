@@ -2,9 +2,9 @@ package org.telegram.ui.Components;
 
 import java.util.function.ToLongFunction;
 import org.telegram.messenger.MessageObject;
-import org.telegram.ui.ka1;
+import org.telegram.ui.la1;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x0 implements ToLongFunction {
     public final /* synthetic */ int a;
@@ -19,7 +19,7 @@ public final /* synthetic */ class x0 implements ToLongFunction {
             case 0:
                 return ((MessageObject) obj).getFromChatId();
             default:
-                if (((ka1) obj).b == null) {
+                if (((la1) obj).b == null) {
                     return 0L;
                 }
                 return r3.messageOwner.date;

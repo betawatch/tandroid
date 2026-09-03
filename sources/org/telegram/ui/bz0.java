@@ -3,26 +3,26 @@ package org.telegram.ui;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class bz0 implements hq {
+public final class bz0 implements iq {
     public final /* synthetic */ TLRPC.Chat a;
-    public final /* synthetic */ kq b;
+    public final /* synthetic */ lq b;
     public final /* synthetic */ ProfileActivity c;
 
-    public bz0(ProfileActivity profileActivity, TLRPC.Chat chat, kq kqVar) {
+    public bz0(ProfileActivity profileActivity, TLRPC.Chat chat, lq lqVar) {
         this.c = profileActivity;
         this.a = chat;
-        this.b = kqVar;
+        this.b = lqVar;
     }
 
-    @Override // org.telegram.ui.hq
+    @Override // org.telegram.ui.iq
     public final void a(TLRPC.User user) {
         ProfileActivity profileActivity = this.c;
         profileActivity.J.m(-profileActivity.c1, user, profileActivity.B2.megagroup ? 10 : 9);
     }
 
-    @Override // org.telegram.ui.hq
+    @Override // org.telegram.ui.iq
     public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
         TLRPC.Chat chat;
         ProfileActivity profileActivity = this.c;
@@ -31,15 +31,15 @@ public final class bz0 implements hq {
         if (user == null || (chat = this.a) == null || profileActivity.b1 == 0) {
             return;
         }
-        kq kqVar = this.b;
-        if (!kqVar.N || kqVar.getParentLayout() == null) {
+        lq lqVar = this.b;
+        if (!lqVar.N || lqVar.getParentLayout() == null) {
             return;
         }
-        for (org.telegram.ui.ActionBar.p2 p2Var : kqVar.getParentLayout().getFragmentStack()) {
-            if (p2Var instanceof sb) {
-                sb sbVar = (sb) p2Var;
-                sbVar.W0();
-                AndroidUtilities.runOnUIThread(new if0(sbVar, user, chat, 25));
+        for (org.telegram.ui.ActionBar.p2 p2Var : lqVar.getParentLayout().getFragmentStack()) {
+            if (p2Var instanceof ub) {
+                ub ubVar = (ub) p2Var;
+                ubVar.W0();
+                AndroidUtilities.runOnUIThread(new jf0(ubVar, user, chat, 25));
                 return;
             }
         }

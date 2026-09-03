@@ -1,19 +1,11 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Shader;
-
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class ft {
-    public int a;
-    public Object b;
-
-    public boolean a(int i10) {
-        if (((lf.k) this.b) != null && this.a == i10) {
-            return false;
-        }
-        this.a = i10;
-        this.b = new lf.k(0.0f, 0.0f, 1.0f, 0.0f, new int[]{i10, i10}, null, Shader.TileMode.CLAMP);
-        return true;
-    }
+public abstract class ft {
+    public static final mr a = new mr(0.39d, 0.575d, 0.565d, 1.0d);
+    public static final mr b = new mr(0.445d, 0.05d, 0.55d, 0.95d);
+    public static final mr c = new mr(0.55d, 0.085d, 0.68d, 0.53d);
+    public static final mr d = new mr(0.25d, 0.46d, 0.45d, 0.94d);
+    public static final mr e = new mr(0.455d, 0.03d, 0.515d, 0.955d);
 }

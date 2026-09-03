@@ -13,7 +13,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import androidx.emoji2.text.w;
 import com.google.firebase.messaging.FirebaseMessaging;
 import g5.e0;
 import g5.u0;
@@ -34,26 +33,28 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import java.util.concurrent.atomic.AtomicReference;
-import m.r3;
-import o3.b0;
-import oh.h3;
+import m.s3;
+import nh.g3;
+import o3.c0;
+import o3.v;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.hu;
-import org.telegram.ui.Components.pr;
-import org.telegram.ui.a1;
-import org.telegram.ui.e5;
-import org.telegram.ui.u4;
-import org.telegram.ui.x4;
-import org.telegram.ui.yh;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.eu;
+import org.telegram.ui.Components.mr;
+import org.telegram.ui.ai;
+import org.telegram.ui.b5;
+import org.telegram.ui.c1;
+import org.telegram.ui.g5;
+import org.telegram.ui.w4;
 import org.telegram.ui.z4;
+import r0.b0;
 import r0.j0;
 import s8.n0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class m {
     public static m e;
@@ -63,13 +64,13 @@ public final class m {
     public Object d;
 
     public m(View view) {
-        hu[] huVarArr = {new hu(), new hu(), new hu()};
-        this.b = huVarArr;
+        eu[] euVarArr = {new eu(), new eu(), new eu()};
+        this.b = euVarArr;
         this.d = new ArrayList();
         AnimatorSet animatorSet = new AnimatorSet();
         this.c = animatorSet;
-        animatorSet.playTogether(g(huVarArr[0], 0, 255, 0, 300), g(huVarArr[1], 0, 255, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 300), g(huVarArr[2], 0, 255, 300, 300), g(huVarArr[0], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), g(huVarArr[1], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), g(huVarArr[2], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400));
-        animatorSet.addListener(new h3(this, view));
+        animatorSet.playTogether(g(euVarArr[0], 0, 255, 0, 300), g(euVarArr[1], 0, 255, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 300), g(euVarArr[2], 0, 255, 300, 300), g(euVarArr[0], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), g(euVarArr[1], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), g(euVarArr[2], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400));
+        animatorSet.addListener(new g3(this, view));
     }
 
     public static void a(vb.e[][][] eVarArr, int i10, vb.e eVar) {
@@ -114,8 +115,8 @@ public final class m {
         return true;
     }
 
-    public static boolean e(z4 z4Var) {
-        return (z4Var.a == null && z4Var.b == null) ? false : true;
+    public static boolean e(b5 b5Var) {
+        return (b5Var.a == null && b5Var.b == null) ? false : true;
     }
 
     public static byte[] j(g5.u uVar, String str, byte[] bArr, Map map) {
@@ -164,7 +165,7 @@ public final class m {
             } catch (Exception e10) {
                 Uri uri = u0Var.c;
                 uri.getClass();
-                throw new b0(pVar, uri, u0Var.a.getResponseHeaders(), u0Var.b, e10);
+                throw new c0(pVar, uri, u0Var.a.getResponseHeaders(), u0Var.b, e10);
             }
         }
     }
@@ -279,12 +280,12 @@ public final class m {
         return this.a ? bVar.b(i11, i10) : bVar.b(i10, i11) ? (i12 << 1) | 1 : i12 << 1;
     }
 
-    public ValueAnimator g(hu huVar, int i10, int i11, int i12, int i13) {
+    public ValueAnimator g(eu euVar, int i10, int i11, int i12, int i13) {
         ValueAnimator ofInt = ValueAnimator.ofInt(i10, i11);
-        ofInt.addUpdateListener(new bg.a(14, this, huVar));
+        ofInt.addUpdateListener(new ag.a(14, this, euVar));
         ofInt.setDuration(i13);
         ofInt.setStartDelay(i12);
-        ofInt.setInterpolator(pr.f);
+        ofInt.setInterpolator(mr.f);
         return ofInt;
     }
 
@@ -326,8 +327,8 @@ public final class m {
         throw new b7.a(android.support.v4.media.a.o("Internal error: failed to encode \"", str, "\""));
     }
 
-    public byte[] i(UUID uuid, o3.t tVar) {
-        String str = tVar.b;
+    public byte[] i(UUID uuid, o3.u uVar) {
+        String str = uVar.b;
         if (this.a || TextUtils.isEmpty(str)) {
             str = (String) this.c;
         }
@@ -335,7 +336,7 @@ public final class m {
             Map map = Collections.EMPTY_MAP;
             Uri uri = Uri.EMPTY;
             h5.a.k(uri, "The uri must be set.");
-            throw new b0(new g5.p(uri, 1, null, map, 0L, -1L, null, 0), uri, n0.h, 0L, new IllegalStateException("No license URL"));
+            throw new c0(new g5.p(uri, 1, null, map, 0L, -1L, null, 0), uri, n0.h, 0L, new IllegalStateException("No license URL"));
         }
         HashMap hashMap = new HashMap();
         UUID uuid2 = j3.h.e;
@@ -346,11 +347,11 @@ public final class m {
         synchronized (((HashMap) this.d)) {
             hashMap.putAll((HashMap) this.d);
         }
-        return j((g5.u) this.b, str, tVar.a, hashMap);
+        return j((g5.u) this.b, str, uVar.a, hashMap);
     }
 
-    public byte[] k(o3.u uVar) {
-        return j((g5.u) this.b, uVar.b + "&signedRequest=" + d0.m(uVar.a), null, Collections.EMPTY_MAP);
+    public byte[] k(v vVar) {
+        return j((g5.u) this.b, vVar.b + "&signedRequest=" + d0.m(vVar.a), null, Collections.EMPTY_MAP);
     }
 
     public synchronized void n() {
@@ -361,7 +362,7 @@ public final class m {
             Boolean p10 = p();
             this.c = p10;
             if (p10 == null) {
-                ((c9.n) ((y9.b) this.b)).a(new w(12));
+                ((c9.o) ((y9.b) this.b)).a(new af.a(18));
             }
             this.a = true;
         } catch (Throwable th2) {
@@ -479,7 +480,7 @@ public final class m {
         int i11 = bVar.b;
         for (int i12 = 0; i12 < i11; i12++) {
             for (int i13 = 0; i13 < i11; i13++) {
-                if (yh.b(i10, i12, i13)) {
+                if (ai.b(i10, i12, i13)) {
                     bVar.a(i13, i12);
                 }
             }
@@ -509,7 +510,7 @@ public final class m {
                         return true;
                     }
                 }
-                ((sf.f) ((r3) this.c).b).H(oVar);
+                ((rf.f) ((s3) this.c).b).H(oVar);
                 return true;
             } catch (Throwable th2) {
                 throw th2;
@@ -517,36 +518,36 @@ public final class m {
         }
     }
 
-    public void v(ViewGroup viewGroup, g6 g6Var, z4 z4Var, x4 x4Var) {
+    public void v(ViewGroup viewGroup, f6 f6Var, b5 b5Var, z4 z4Var) {
         Objects.requireNonNull(viewGroup);
         Context context = viewGroup.getContext();
         if (((ViewGroup) this.b) != viewGroup) {
             if (this.a) {
-                u4 u4Var = (u4) this.d;
-                int i10 = e5.C;
-                u4Var.b(false);
+                w4 w4Var = (w4) this.d;
+                int i10 = g5.C;
+                w4Var.b(false);
             }
             this.b = viewGroup;
-            this.c = (WindowManager) f0.e.f(context, WindowManager.class);
-            u4 u4Var2 = new u4(this, context, g6Var, x4Var);
-            this.d = u4Var2;
-            a1 a1Var = new a1(this, 3);
+            this.c = (WindowManager) f0.f.f(context, WindowManager.class);
+            w4 w4Var2 = new w4(this, context, f6Var, z4Var);
+            this.d = w4Var2;
+            c1 c1Var = new c1(this, 3);
             WeakHashMap weakHashMap = j0.a;
-            r0.b0.j(u4Var2, a1Var);
+            b0.j(w4Var2, c1Var);
         }
-        ((u4) this.d).a(z4Var);
+        ((w4) this.d).a(b5Var);
         if (this.a) {
             return;
         }
-        if (((u4) this.d).getParent() != null) {
-            ((WindowManager) this.c).removeView((u4) this.d);
+        if (((w4) this.d).getParent() != null) {
+            ((WindowManager) this.c).removeView((w4) this.d);
         }
         WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams(-1, -1, MediaDataController.MAX_STYLE_RUNS_COUNT, 0, -3);
         layoutParams.softInputMode = 16;
         layoutParams.flags |= -1945959040;
         AndroidUtilities.applyEdgeToEdgeLayoutParams(layoutParams);
-        AndroidUtilities.setPreferredMaxRefreshRate((WindowManager) this.c, (u4) this.d, layoutParams);
-        ((WindowManager) this.c).addView((u4) this.d, layoutParams);
+        AndroidUtilities.setPreferredMaxRefreshRate((WindowManager) this.c, (w4) this.d, layoutParams);
+        ((WindowManager) this.c).addView((w4) this.d, layoutParams);
         viewGroup.requestDisallowInterceptTouchEvent(true);
         this.a = true;
     }
@@ -567,12 +568,12 @@ public final class m {
     }
 
     public void x(SpannableString spannableString, int i10) {
-        hu[] huVarArr = (hu[]) this.b;
+        eu[] euVarArr = (eu[]) this.b;
         int i11 = i10 + 1;
-        spannableString.setSpan(huVarArr[0], i10, i11, 0);
+        spannableString.setSpan(euVarArr[0], i10, i11, 0);
         int i12 = i10 + 2;
-        spannableString.setSpan(huVarArr[1], i11, i12, 0);
-        spannableString.setSpan(huVarArr[2], i12, i10 + 3, 0);
+        spannableString.setSpan(euVarArr[1], i11, i12, 0);
+        spannableString.setSpan(euVarArr[2], i12, i10 + 3, 0);
     }
 
     public void y() {
@@ -592,14 +593,14 @@ public final class m {
 
     public void z(Runnable runnable, Executor executor) {
         try {
-            executor.execute(new androidx.biometric.k(this, runnable, false, 4));
+            executor.execute(new androidx.biometric.j(this, runnable, false, 4));
         } catch (RejectedExecutionException unused) {
             y();
         }
     }
 
-    public m(r3 r3Var, boolean z4) {
-        this.c = r3Var;
+    public m(s3 s3Var, boolean z4) {
+        this.c = s3Var;
         this.d = new AtomicReference(null);
         this.a = z4;
         this.b = new AtomicMarkableReference(new j9.d(z4 ? 8192 : 1024), false);

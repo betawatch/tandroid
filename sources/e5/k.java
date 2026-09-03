@@ -1,696 +1,338 @@
 package e5;
 
-import android.graphics.Color;
-import android.text.SpannableStringBuilder;
-import android.text.SpannedString;
 import android.text.TextUtils;
-import android.text.style.AbsoluteSizeSpan;
-import android.text.style.BackgroundColorSpan;
-import android.text.style.ForegroundColorSpan;
-import android.text.style.RelativeSizeSpan;
-import android.text.style.StrikethroughSpan;
-import android.text.style.StyleSpan;
-import android.text.style.TypefaceSpan;
-import android.text.style.UnderlineSpan;
 import h5.d0;
 import h5.w;
-import h7.u;
-import j$.util.DesugarCollections;
-import java.util.ArrayDeque;
+import j3.r1;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import k7.w8;
-import org.telegram.tgnet.TLObject;
+import k7.a7;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public abstract class k {
-    public static final Pattern a = Pattern.compile("^(\\S+)\\s+-->\\s+(\\S+)(.*)?$");
-    public static final Pattern b = Pattern.compile("(\\S+?):(\\S+)");
-    public static final Map c;
-    public static final Map d;
+public final class k extends v4.e {
+    public final w n;
+    public final b o;
 
-    static {
-        HashMap hashMap = new HashMap();
-        hashMap.put("white", Integer.valueOf(Color.rgb(255, 255, 255)));
-        hashMap.put("lime", Integer.valueOf(Color.rgb(0, 255, 0)));
-        hashMap.put("cyan", Integer.valueOf(Color.rgb(0, 255, 255)));
-        hashMap.put("red", Integer.valueOf(Color.rgb(255, 0, 0)));
-        hashMap.put("yellow", Integer.valueOf(Color.rgb(255, 255, 0)));
-        hashMap.put("magenta", Integer.valueOf(Color.rgb(255, 0, 255)));
-        hashMap.put("blue", Integer.valueOf(Color.rgb(0, 0, 255)));
-        hashMap.put("black", Integer.valueOf(Color.rgb(0, 0, 0)));
-        c = DesugarCollections.unmodifiableMap(hashMap);
-        HashMap hashMap2 = new HashMap();
-        hashMap2.put("bg_white", Integer.valueOf(Color.rgb(255, 255, 255)));
-        hashMap2.put("bg_lime", Integer.valueOf(Color.rgb(0, 255, 0)));
-        hashMap2.put("bg_cyan", Integer.valueOf(Color.rgb(0, 255, 255)));
-        hashMap2.put("bg_red", Integer.valueOf(Color.rgb(255, 0, 0)));
-        hashMap2.put("bg_yellow", Integer.valueOf(Color.rgb(255, 255, 0)));
-        hashMap2.put("bg_magenta", Integer.valueOf(Color.rgb(255, 0, 255)));
-        hashMap2.put("bg_blue", Integer.valueOf(Color.rgb(0, 0, 255)));
-        hashMap2.put("bg_black", Integer.valueOf(Color.rgb(0, 0, 0)));
-        d = DesugarCollections.unmodifiableMap(hashMap2);
+    public k() {
+        super("WebvttDecoder");
+        this.n = new w();
+        this.o = new b();
     }
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    public static void a(String str, h hVar, List list, SpannableStringBuilder spannableStringBuilder, List list2) {
-        char c3;
-        int i10 = hVar.b;
-        int length = spannableStringBuilder.length();
-        String str2 = hVar.a;
-        str2.getClass();
-        switch (str2.hashCode()) {
-            case 0:
-                if (str2.equals("")) {
-                    c3 = 0;
-                    break;
-                }
-                c3 = 65535;
-                break;
-            case 98:
-                if (str2.equals("b")) {
-                    c3 = 1;
-                    break;
-                }
-                c3 = 65535;
-                break;
-            case 99:
-                if (str2.equals("c")) {
-                    c3 = 2;
-                    break;
-                }
-                c3 = 65535;
-                break;
-            case 105:
-                if (str2.equals("i")) {
-                    c3 = 3;
-                    break;
-                }
-                c3 = 65535;
-                break;
-            case 117:
-                if (str2.equals("u")) {
-                    c3 = 4;
-                    break;
-                }
-                c3 = 65535;
-                break;
-            case 118:
-                if (str2.equals("v")) {
-                    c3 = 5;
-                    break;
-                }
-                c3 = 65535;
-                break;
-            case 3314158:
-                if (str2.equals("lang")) {
-                    c3 = 6;
-                    break;
-                }
-                c3 = 65535;
-                break;
-            case 3511770:
-                if (str2.equals("ruby")) {
-                    c3 = 7;
-                    break;
-                }
-                c3 = 65535;
-                break;
-            default:
-                c3 = 65535;
-                break;
-        }
-        switch (c3) {
-            case 0:
-            case 5:
-            case 6:
-                break;
-            case 1:
-                spannableStringBuilder.setSpan(new StyleSpan(1), i10, length, 33);
-                break;
-            case 2:
-                for (String str3 : hVar.d) {
-                    Map map = c;
-                    if (map.containsKey(str3)) {
-                        spannableStringBuilder.setSpan(new ForegroundColorSpan(((Integer) map.get(str3)).intValue()), i10, length, 33);
-                    } else {
-                        Map map2 = d;
-                        if (map2.containsKey(str3)) {
-                            spannableStringBuilder.setSpan(new BackgroundColorSpan(((Integer) map2.get(str3)).intValue()), i10, length, 33);
-                        }
-                    }
-                }
-                break;
-            case 3:
-                spannableStringBuilder.setSpan(new StyleSpan(2), i10, length, 33);
-                break;
-            case 4:
-                spannableStringBuilder.setSpan(new UnderlineSpan(), i10, length, 33);
-                break;
-            case 7:
-                c(list2, str, hVar);
-                ArrayList arrayList = new ArrayList(list.size());
-                arrayList.addAll(list);
-                Collections.sort(arrayList, g.c);
-                int i11 = hVar.b;
-                int i12 = 0;
-                for (int i13 = 0; i13 < arrayList.size(); i13++) {
-                    if ("rt".equals(((g) arrayList.get(i13)).a.a)) {
-                        g gVar = (g) arrayList.get(i13);
-                        c(list2, str, gVar.a);
-                        int i14 = gVar.a.b - i12;
-                        int i15 = gVar.b - i12;
-                        CharSequence subSequence = spannableStringBuilder.subSequence(i14, i15);
-                        spannableStringBuilder.delete(i14, i15);
-                        subSequence.toString();
-                        spannableStringBuilder.setSpan(new z9.d(25), i11, i14, 33);
-                        i12 = subSequence.length() + i12;
-                        i11 = i14;
-                    }
-                }
-                break;
-            default:
-                return;
-        }
-        ArrayList b10 = b(list2, str, hVar);
-        for (int i16 = 0; i16 < b10.size(); i16++) {
-            d dVar = ((i) b10.get(i16)).b;
-            int i17 = dVar.l;
-            if (((i17 == -1 && dVar.m == -1) ? -1 : (i17 == 1 ? (char) 1 : (char) 0) | (dVar.m == 1 ? (char) 2 : (char) 0)) != -1) {
-                int i18 = dVar.l;
-                w8.a(new StyleSpan((i18 == -1 && dVar.m == -1) ? -1 : (i18 == 1 ? 1 : 0) | (dVar.m == 1 ? 2 : 0)), spannableStringBuilder, i10, length);
-            }
-            if (dVar.j == 1) {
-                spannableStringBuilder.setSpan(new StrikethroughSpan(), i10, length, 33);
-            }
-            if (dVar.k == 1) {
-                spannableStringBuilder.setSpan(new UnderlineSpan(), i10, length, 33);
-            }
-            if (dVar.g) {
-                if (!dVar.g) {
-                    throw new IllegalStateException("Font color not defined");
-                }
-                w8.a(new ForegroundColorSpan(dVar.f), spannableStringBuilder, i10, length);
-            }
-            if (dVar.i) {
-                if (!dVar.i) {
-                    throw new IllegalStateException("Background color not defined.");
-                }
-                w8.a(new BackgroundColorSpan(dVar.h), spannableStringBuilder, i10, length);
-            }
-            if (dVar.e != null) {
-                w8.a(new TypefaceSpan(dVar.e), spannableStringBuilder, i10, length);
-            }
-            int i19 = dVar.n;
-            if (i19 == 1) {
-                w8.a(new AbsoluteSizeSpan((int) dVar.o, true), spannableStringBuilder, i10, length);
-            } else if (i19 == 2) {
-                w8.a(new RelativeSizeSpan(dVar.o), spannableStringBuilder, i10, length);
-            } else if (i19 == 3) {
-                w8.a(new RelativeSizeSpan(dVar.o / 100.0f), spannableStringBuilder, i10, length);
-            }
-            if (dVar.q) {
-                spannableStringBuilder.setSpan(new u(25), i10, length, 33);
-            }
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public static ArrayList b(List list, String str, h hVar) {
-        int size;
-        ArrayList arrayList = new ArrayList();
-        for (int i10 = 0; i10 < list.size(); i10++) {
-            d dVar = (d) list.get(i10);
-            String str2 = hVar.a;
-            Set set = hVar.d;
-            String str3 = hVar.c;
-            if (dVar.a.isEmpty() && dVar.b.isEmpty() && dVar.c.isEmpty() && dVar.d.isEmpty()) {
-                size = TextUtils.isEmpty(str2);
-            } else {
-                int a2 = d.a(d.a(d.a(0, TLObject.FLAG_30, dVar.a, str), 2, dVar.b, str2), 4, dVar.d, str3);
-                size = (a2 == -1 || !set.containsAll(dVar.c)) ? 0 : a2 + (dVar.c.size() * 4);
-            }
-            if (size > 0) {
-                arrayList.add(new i(size, dVar));
-            }
-        }
-        Collections.sort(arrayList);
-        return arrayList;
-    }
-
-    public static void c(List list, String str, h hVar) {
-        ArrayList b10 = b(list, str, hVar);
-        for (int i10 = 0; i10 < b10.size() && ((i) b10.get(i10)).b.p == -1; i10++) {
-        }
-    }
-
-    public static e d(String str, Matcher matcher, w wVar, ArrayList arrayList) {
-        j jVar = new j();
-        try {
-            String group = matcher.group(1);
-            group.getClass();
-            jVar.a = m.c(group);
-            String group2 = matcher.group(2);
-            group2.getClass();
-            jVar.b = m.c(group2);
-            String group3 = matcher.group(3);
-            group3.getClass();
-            e(group3, jVar);
-            StringBuilder sb = new StringBuilder();
-            wVar.getClass();
-            String h = wVar.h(r8.d.c);
-            while (!TextUtils.isEmpty(h)) {
-                if (sb.length() > 0) {
-                    sb.append("\n");
-                }
-                sb.append(h.trim());
-                h = wVar.h(r8.d.c);
-            }
-            jVar.c = f(str, sb.toString(), arrayList);
-            return new e(jVar.a().a(), jVar.a, jVar.b);
-        } catch (NumberFormatException unused) {
-            h5.a.K("WebvttCueParser", "Skipping cue with bad header: " + matcher.group());
-            return null;
-        }
-    }
-
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:101:0x0083, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:194:0x03a6, code lost:
     
-        if (r6.equals("center") == false) goto L14;
+        r2.addAll(r12);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:54:0x00c8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:221:0x010e, code lost:
     
-        if (r7.equals("start") == false) goto L53;
+        if (")".equals(e5.b.b(r11, r6)) == false) goto L37;
      */
     /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r4v0 */
+    /* JADX WARN: Type inference failed for: r4v6, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r4v8 */
+    @Override // v4.e
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void e(String str, j jVar) {
-        int i10;
-        int i11;
-        int i12;
-        Matcher matcher = b.matcher(str);
-        while (matcher.find()) {
-            String group = matcher.group(1);
-            group.getClass();
-            String group2 = matcher.group(2);
-            group2.getClass();
-            try {
-                if ("line".equals(group)) {
-                    g(group2, jVar);
-                } else {
-                    char c3 = 5;
-                    char c10 = 0;
-                    if ("align".equals(group)) {
-                        switch (group2.hashCode()) {
-                            case -1364013995:
-                                break;
-                            case -1074341483:
-                                if (group2.equals("middle")) {
-                                    c10 = 1;
-                                    break;
-                                }
-                                c10 = 65535;
-                                break;
-                            case 100571:
-                                if (group2.equals("end")) {
-                                    c10 = 2;
-                                    break;
-                                }
-                                c10 = 65535;
-                                break;
-                            case 3317767:
-                                if (group2.equals("left")) {
-                                    c10 = 3;
-                                    break;
-                                }
-                                c10 = 65535;
-                                break;
-                            case 108511772:
-                                if (group2.equals("right")) {
-                                    c10 = 4;
-                                    break;
-                                }
-                                c10 = 65535;
-                                break;
-                            case 109757538:
-                                if (group2.equals("start")) {
-                                    c10 = 5;
-                                    break;
-                                }
-                                c10 = 65535;
-                                break;
-                            default:
-                                c10 = 65535;
-                                break;
-                        }
-                        switch (c10) {
-                            case 0:
-                            case 1:
-                                i10 = 2;
-                                break;
-                            case 2:
-                                i10 = 3;
-                                break;
-                            case 3:
-                                i10 = 4;
-                                break;
-                            case 4:
-                                i10 = 5;
-                                break;
-                            case 5:
-                                i10 = 1;
-                                break;
-                            default:
-                                h5.a.K("WebvttCueParser", "Invalid alignment value: ".concat(group2));
-                                i10 = 2;
-                                break;
-                        }
-                        jVar.d = i10;
-                    } else if ("position".equals(group)) {
-                        int indexOf = group2.indexOf(44);
-                        if (indexOf != -1) {
-                            String substring = group2.substring(indexOf + 1);
-                            substring.getClass();
-                            switch (substring.hashCode()) {
-                                case -1842484672:
-                                    if (substring.equals("line-left")) {
-                                        c3 = 0;
-                                        break;
-                                    }
-                                    c3 = 65535;
-                                    break;
-                                case -1364013995:
-                                    if (substring.equals("center")) {
-                                        c3 = 1;
-                                        break;
-                                    }
-                                    c3 = 65535;
-                                    break;
-                                case -1276788989:
-                                    if (substring.equals("line-right")) {
-                                        c3 = 2;
-                                        break;
-                                    }
-                                    c3 = 65535;
-                                    break;
-                                case -1074341483:
-                                    if (substring.equals("middle")) {
-                                        c3 = 3;
-                                        break;
-                                    }
-                                    c3 = 65535;
-                                    break;
-                                case 100571:
-                                    if (substring.equals("end")) {
-                                        c3 = 4;
-                                        break;
-                                    }
-                                    c3 = 65535;
-                                    break;
-                                case 109757538:
-                                    break;
-                                default:
-                                    c3 = 65535;
-                                    break;
-                            }
-                            switch (c3) {
-                                case 0:
-                                case 5:
-                                    i11 = 0;
-                                    break;
-                                case 1:
-                                case 3:
-                                    i11 = 1;
-                                    break;
-                                case 2:
-                                case 4:
-                                    i11 = 2;
-                                    break;
-                                default:
-                                    h5.a.K("WebvttCueParser", "Invalid anchor value: ".concat(substring));
-                                    i11 = TLObject.FLAG_31;
-                                    break;
-                            }
-                            jVar.i = i11;
-                            group2 = group2.substring(0, indexOf);
-                        }
-                        jVar.h = m.b(group2);
-                    } else if ("size".equals(group)) {
-                        jVar.j = m.b(group2);
-                    } else if ("vertical".equals(group)) {
-                        if (group2.equals("lr")) {
-                            i12 = 2;
-                        } else if (group2.equals("rl")) {
-                            i12 = 1;
-                        } else {
-                            h5.a.K("WebvttCueParser", "Invalid 'vertical' value: ".concat(group2));
-                            i12 = TLObject.FLAG_31;
-                        }
-                        jVar.k = i12;
-                    } else {
-                        h5.a.K("WebvttCueParser", "Unknown cue setting " + group + ":" + group2);
-                    }
-                }
-            } catch (NumberFormatException unused) {
-                h5.a.K("WebvttCueParser", "Skipping bad cue setting: " + matcher.group());
-            }
-        }
-    }
-
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    public static SpannedString f(String str, String str2, List list) {
+    public final v4.f k(int i10, boolean z4, byte[] bArr) {
+        d dVar;
+        String str;
+        String str2;
+        String sb;
         char c3;
-        char c10;
-        String substring;
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        ArrayDeque arrayDeque = new ArrayDeque();
+        int i11;
+        k kVar = this;
+        w wVar = kVar.n;
+        wVar.D(i10, bArr);
         ArrayList arrayList = new ArrayList();
-        int i10 = 0;
-        while (true) {
-            String str3 = "";
-            if (i10 >= str2.length()) {
-                while (!arrayDeque.isEmpty()) {
-                    a(str, (h) arrayDeque.pop(), arrayList, spannableStringBuilder, list);
-                }
-                a(str, new h("", 0, "", Collections.EMPTY_SET), Collections.EMPTY_LIST, spannableStringBuilder, list);
-                return SpannedString.valueOf(spannableStringBuilder);
+        try {
+            l.d(wVar);
+            while (!TextUtils.isEmpty(wVar.h(r8.d.c))) {
             }
-            char charAt = str2.charAt(i10);
-            if (charAt == '&') {
-                i10++;
-                int indexOf = str2.indexOf(59, i10);
-                int indexOf2 = str2.indexOf(32, i10);
-                if (indexOf == -1) {
-                    indexOf = indexOf2;
-                } else if (indexOf2 != -1) {
-                    indexOf = Math.min(indexOf, indexOf2);
-                }
-                if (indexOf != -1) {
-                    substring = str2.substring(i10, indexOf);
-                    substring.getClass();
-                    switch (substring) {
-                        case "gt":
-                            spannableStringBuilder.append('>');
-                            break;
-                        case "lt":
-                            spannableStringBuilder.append('<');
-                            break;
-                        case "amp":
-                            spannableStringBuilder.append('&');
-                            break;
-                        case "nbsp":
-                            spannableStringBuilder.append(' ');
-                            break;
-                        default:
-                            h5.a.K("WebvttCueParser", "ignoring unsupported entity: '&" + substring + ";'");
-                            break;
-                    }
-                    if (indexOf == indexOf2) {
-                        spannableStringBuilder.append((CharSequence) " ");
-                    }
-                    i10 = indexOf + 1;
-                } else {
-                    spannableStringBuilder.append(charAt);
-                }
-            } else if (charAt != '<') {
-                spannableStringBuilder.append(charAt);
-                i10++;
-            } else {
-                int i11 = i10 + 1;
-                if (i11 < str2.length()) {
-                    boolean z4 = str2.charAt(i11) == '/';
-                    int indexOf3 = str2.indexOf(62, i11);
-                    i11 = indexOf3 == -1 ? str2.length() : indexOf3 + 1;
-                    int i12 = i11 - 2;
-                    boolean z10 = str2.charAt(i12) == '/';
-                    int i13 = i10 + (z4 ? 2 : 1);
-                    if (!z10) {
-                        i12 = i11 - 1;
-                    }
-                    String substring2 = str2.substring(i13, i12);
-                    if (!substring2.trim().isEmpty()) {
-                        String trim = substring2.trim();
-                        h5.a.f(!trim.isEmpty());
-                        int i14 = d0.a;
-                        String str4 = trim.split("[ \\.]", 2)[0];
-                        str4.getClass();
-                        switch (str4.hashCode()) {
-                            case 98:
-                                if (str4.equals("b")) {
-                                    c3 = 0;
-                                    break;
-                                }
-                                c3 = 65535;
-                                break;
-                            case 99:
-                                if (str4.equals("c")) {
-                                    c3 = 1;
-                                    break;
-                                }
-                                c3 = 65535;
-                                break;
-                            case 105:
-                                if (str4.equals("i")) {
-                                    c3 = 2;
-                                    break;
-                                }
-                                c3 = 65535;
-                                break;
-                            case 117:
-                                if (str4.equals("u")) {
-                                    c3 = 3;
-                                    break;
-                                }
-                                c3 = 65535;
-                                break;
-                            case 118:
-                                if (str4.equals("v")) {
-                                    c3 = 4;
-                                    break;
-                                }
-                                c3 = 65535;
-                                break;
-                            case 3650:
-                                if (str4.equals("rt")) {
-                                    c3 = 5;
-                                    break;
-                                }
-                                c3 = 65535;
-                                break;
-                            case 3314158:
-                                if (str4.equals("lang")) {
-                                    c3 = 6;
-                                    break;
-                                }
-                                c3 = 65535;
-                                break;
-                            case 3511770:
-                                if (str4.equals("ruby")) {
-                                    c3 = 7;
-                                    break;
-                                }
-                                c3 = 65535;
-                                break;
-                            default:
-                                c3 = 65535;
-                                break;
+            ArrayList arrayList2 = new ArrayList();
+            while (true) {
+                ?? r42 = 0;
+                int i12 = -1;
+                char c10 = 65535;
+                int i13 = 0;
+                while (true) {
+                    int i14 = 1;
+                    if (c10 == 65535) {
+                        i13 = wVar.b;
+                        String h = wVar.h(r8.d.c);
+                        c10 = h == null ? (char) 0 : "STYLE".equals(h) ? (char) 2 : h.startsWith("NOTE") ? (char) 1 : (char) 3;
+                    } else {
+                        wVar.F(i13);
+                        if (c10 == 0) {
+                            return new af.d(arrayList2);
                         }
-                        switch (c3) {
-                            case 0:
-                            case 1:
-                            case 2:
-                            case 3:
-                            case 4:
-                            case 5:
-                            case 6:
-                            case 7:
-                                if (z4) {
-                                    while (!arrayDeque.isEmpty()) {
-                                        h hVar = (h) arrayDeque.pop();
-                                        a(str, hVar, arrayList, spannableStringBuilder, list);
-                                        if (arrayDeque.isEmpty()) {
-                                            arrayList.clear();
-                                        } else {
-                                            arrayList.add(new g(hVar, spannableStringBuilder.length()));
-                                        }
-                                        if (hVar.a.equals(str4)) {
-                                            break;
+                        if (c10 == 1) {
+                            while (!TextUtils.isEmpty(wVar.h(r8.d.c))) {
+                            }
+                        } else {
+                            String str3 = null;
+                            if (c10 == 2) {
+                                if (!arrayList2.isEmpty()) {
+                                    throw new v4.h("A style block was found after the first cue.");
+                                }
+                                wVar.h(r8.d.c);
+                                b bVar = kVar.o;
+                                w wVar2 = bVar.a;
+                                StringBuilder sb2 = bVar.b;
+                                sb2.setLength(0);
+                                int i15 = wVar.b;
+                                while (!TextUtils.isEmpty(wVar.h(r8.d.c))) {
+                                }
+                                wVar2.D(wVar.b, wVar.a);
+                                wVar2.F(i15);
+                                ArrayList arrayList3 = new ArrayList();
+                                while (true) {
+                                    b.c(wVar2);
+                                    if (wVar2.a() >= 5 && "::cue".equals(wVar2.s(5, r8.d.c))) {
+                                        int i16 = wVar2.b;
+                                        String b10 = b.b(wVar2, sb2);
+                                        if (b10 != null) {
+                                            if ("{".equals(b10)) {
+                                                wVar2.F(i16);
+                                                str2 = "";
+                                            } else {
+                                                if ("(".equals(b10)) {
+                                                    int i17 = wVar2.b;
+                                                    int i18 = wVar2.c;
+                                                    boolean z10 = false;
+                                                    while (i17 < i18 && !z10) {
+                                                        int i19 = i17 + 1;
+                                                        z10 = ((char) wVar2.a[i17]) == ')';
+                                                        i17 = i19;
+                                                    }
+                                                    str = wVar2.s((i17 - 1) - wVar2.b, r8.d.c).trim();
+                                                } else {
+                                                    str = str3;
+                                                }
+                                                str2 = str;
+                                            }
+                                            if (str2 == 0 && "{".equals(b.b(wVar2, sb2))) {
+                                                c cVar = new c();
+                                                cVar.a = "";
+                                                cVar.b = "";
+                                                cVar.c = Collections.EMPTY_SET;
+                                                cVar.d = "";
+                                                cVar.e = str3;
+                                                cVar.g = r42;
+                                                cVar.i = r42;
+                                                cVar.j = i12;
+                                                cVar.k = i12;
+                                                cVar.l = i12;
+                                                cVar.m = i12;
+                                                cVar.n = i12;
+                                                cVar.p = i12;
+                                                cVar.q = r42;
+                                                if (!"".equals(str2)) {
+                                                    int indexOf = str2.indexOf(91);
+                                                    String str4 = str2;
+                                                    if (indexOf != i12) {
+                                                        Matcher matcher = b.c.matcher(str2.substring(indexOf));
+                                                        if (matcher.matches()) {
+                                                            String group = matcher.group(i14);
+                                                            group.getClass();
+                                                            cVar.d = group;
+                                                        }
+                                                        str4 = str2.substring(r42, indexOf);
+                                                    }
+                                                    int i20 = d0.a;
+                                                    String[] split = str4.split("\\.", i12);
+                                                    String str5 = split[r42];
+                                                    int indexOf2 = str5.indexOf(35);
+                                                    if (indexOf2 != i12) {
+                                                        cVar.b = str5.substring(r42, indexOf2);
+                                                        cVar.a = str5.substring(indexOf2 + 1);
+                                                    } else {
+                                                        cVar.b = str5;
+                                                    }
+                                                    if (split.length > i14) {
+                                                        int length = split.length;
+                                                        h5.a.f(length <= split.length);
+                                                        cVar.c = new HashSet(Arrays.asList((String[]) Arrays.copyOfRange(split, i14, length)));
+                                                    }
+                                                }
+                                                boolean z11 = false;
+                                                String str6 = null;
+                                                while (!z11) {
+                                                    int i21 = wVar2.b;
+                                                    str6 = b.b(wVar2, sb2);
+                                                    boolean z12 = str6 == null || "}".equals(str6);
+                                                    if (!z12) {
+                                                        wVar2.F(i21);
+                                                        b.c(wVar2);
+                                                        String a2 = b.a(wVar2, sb2);
+                                                        if (!"".equals(a2) && ":".equals(b.b(wVar2, sb2))) {
+                                                            b.c(wVar2);
+                                                            StringBuilder sb3 = new StringBuilder();
+                                                            boolean z13 = false;
+                                                            while (true) {
+                                                                if (z13) {
+                                                                    sb = sb3.toString();
+                                                                } else {
+                                                                    int i22 = wVar2.b;
+                                                                    boolean z14 = z13;
+                                                                    String b11 = b.b(wVar2, sb2);
+                                                                    if (b11 == null) {
+                                                                        sb = null;
+                                                                    } else if ("}".equals(b11) || ";".equals(b11)) {
+                                                                        wVar2.F(i22);
+                                                                        z13 = true;
+                                                                    } else {
+                                                                        sb3.append(b11);
+                                                                        z13 = z14;
+                                                                    }
+                                                                }
+                                                            }
+                                                            if (sb != null && !"".equals(sb)) {
+                                                                int i23 = wVar2.b;
+                                                                String b12 = b.b(wVar2, sb2);
+                                                                if (!";".equals(b12)) {
+                                                                    if ("}".equals(b12)) {
+                                                                        wVar2.F(i23);
+                                                                    }
+                                                                }
+                                                                if ("color".equals(a2)) {
+                                                                    cVar.f = h5.b.a(sb, true);
+                                                                    cVar.g = true;
+                                                                } else if ("background-color".equals(a2)) {
+                                                                    cVar.h = h5.b.a(sb, true);
+                                                                    cVar.i = true;
+                                                                } else if ("ruby-position".equals(a2)) {
+                                                                    if ("over".equals(sb)) {
+                                                                        cVar.p = 1;
+                                                                    } else if ("under".equals(sb)) {
+                                                                        cVar.p = 2;
+                                                                    }
+                                                                } else if ("text-combine-upright".equals(a2)) {
+                                                                    cVar.q = "all".equals(sb) || sb.startsWith("digits");
+                                                                } else if ("text-decoration".equals(a2)) {
+                                                                    if ("underline".equals(sb)) {
+                                                                        cVar.k = 1;
+                                                                    }
+                                                                } else if ("font-family".equals(a2)) {
+                                                                    cVar.e = a7.b(sb);
+                                                                } else if ("font-weight".equals(a2)) {
+                                                                    if ("bold".equals(sb)) {
+                                                                        cVar.l = 1;
+                                                                    }
+                                                                } else if ("font-style".equals(a2)) {
+                                                                    if ("italic".equals(sb)) {
+                                                                        cVar.m = 1;
+                                                                    }
+                                                                } else if ("font-size".equals(a2)) {
+                                                                    Matcher matcher2 = b.d.matcher(a7.b(sb));
+                                                                    if (matcher2.matches()) {
+                                                                        String group2 = matcher2.group(2);
+                                                                        group2.getClass();
+                                                                        switch (group2.hashCode()) {
+                                                                            case 37:
+                                                                                if (group2.equals("%")) {
+                                                                                    c3 = 0;
+                                                                                    break;
+                                                                                }
+                                                                                break;
+                                                                            case 3240:
+                                                                                if (group2.equals("em")) {
+                                                                                    c3 = 1;
+                                                                                    break;
+                                                                                }
+                                                                                break;
+                                                                            case 3592:
+                                                                                if (group2.equals("px")) {
+                                                                                    c3 = 2;
+                                                                                    break;
+                                                                                }
+                                                                                break;
+                                                                        }
+                                                                        c3 = 65535;
+                                                                        switch (c3) {
+                                                                            case 0:
+                                                                                i11 = 1;
+                                                                                cVar.n = 3;
+                                                                                break;
+                                                                            case 1:
+                                                                                i11 = 1;
+                                                                                cVar.n = 2;
+                                                                                break;
+                                                                            case 2:
+                                                                                i11 = 1;
+                                                                                cVar.n = 1;
+                                                                                break;
+                                                                            default:
+                                                                                throw new IllegalStateException();
+                                                                        }
+                                                                        String group3 = matcher2.group(i11);
+                                                                        group3.getClass();
+                                                                        cVar.o = Float.parseFloat(group3);
+                                                                        z11 = z12;
+                                                                    } else {
+                                                                        h5.a.K("WebvttCssParser", "Invalid font-size: '" + sb + "'.");
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                    z11 = z12;
+                                                }
+                                                if ("}".equals(str6)) {
+                                                    arrayList3.add(cVar);
+                                                }
+                                                r42 = 0;
+                                                i12 = -1;
+                                                str3 = null;
+                                                i14 = 1;
+                                            }
                                         }
                                     }
-                                    break;
-                                } else if (!z10) {
-                                    int length = spannableStringBuilder.length();
-                                    String trim2 = substring2.trim();
-                                    h5.a.f(!trim2.isEmpty());
-                                    int indexOf4 = trim2.indexOf(" ");
-                                    if (indexOf4 == -1) {
-                                        c10 = 0;
+                                    str2 = str3;
+                                    if (str2 == 0) {
+                                    }
+                                }
+                            } else if (c10 == 3) {
+                                Pattern pattern = j.a;
+                                Charset charset = r8.d.c;
+                                String h9 = wVar.h(charset);
+                                if (h9 == null) {
+                                    dVar = null;
+                                } else {
+                                    Pattern pattern2 = j.a;
+                                    Matcher matcher3 = pattern2.matcher(h9);
+                                    if (matcher3.matches()) {
+                                        dVar = j.d(null, matcher3, wVar, arrayList);
                                     } else {
-                                        str3 = trim2.substring(indexOf4).trim();
-                                        c10 = 0;
-                                        trim2 = trim2.substring(0, indexOf4);
+                                        dVar = null;
+                                        String h10 = wVar.h(charset);
+                                        if (h10 != null) {
+                                            Matcher matcher4 = pattern2.matcher(h10);
+                                            if (matcher4.matches()) {
+                                                dVar = j.d(h9.trim(), matcher4, wVar, arrayList);
+                                            }
+                                        }
                                     }
-                                    String[] split = trim2.split("\\.", -1);
-                                    String str5 = split[c10];
-                                    HashSet hashSet = new HashSet();
-                                    for (int i15 = 1; i15 < split.length; i15++) {
-                                        hashSet.add(split[i15]);
-                                    }
-                                    arrayDeque.push(new h(str5, length, str3, hashSet));
-                                    break;
                                 }
-                                break;
+                                if (dVar != null) {
+                                    arrayList2.add(dVar);
+                                }
+                            }
+                            kVar = this;
                         }
                     }
                 }
-                i10 = i11;
             }
-        }
-    }
-
-    public static void g(String str, j jVar) {
-        String substring;
-        int i10;
-        int indexOf = str.indexOf(44);
-        if (indexOf != -1) {
-            substring = str.substring(indexOf + 1);
-            substring.getClass();
-            i10 = 2;
-            switch (substring) {
-                case "center":
-                case "middle":
-                    i10 = 1;
-                    break;
-                case "end":
-                    break;
-                case "start":
-                    i10 = 0;
-                    break;
-                default:
-                    h5.a.K("WebvttCueParser", "Invalid anchor value: ".concat(substring));
-                    i10 = TLObject.FLAG_31;
-                    break;
-            }
-            jVar.g = i10;
-            str = str.substring(0, indexOf);
-        }
-        if (str.endsWith("%")) {
-            jVar.e = m.b(str);
-            jVar.f = 0;
-        } else {
-            jVar.e = Integer.parseInt(str);
-            jVar.f = 1;
+        } catch (r1 e) {
+            throw new v4.h(e);
         }
     }
 }

@@ -1,54 +1,72 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.messenger.SendMessagesHelper;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class se implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ xn b;
-    public final /* synthetic */ MessagesController c;
-    public final /* synthetic */ CharSequence d;
-    public final /* synthetic */ boolean e;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ zn b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ se(xn xnVar, CharSequence charSequence, MessagesController messagesController, boolean z4) {
-        this.b = xnVar;
-        this.d = charSequence;
-        this.c = messagesController;
-        this.e = z4;
+    public /* synthetic */ se(zn znVar, String str, int i10) {
+        this.a = i10;
+        this.b = znVar;
+        this.c = str;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                xn.k0(this.b, this.d, this.c, this.e);
+                zn.W0(this.b, this.c);
+                break;
+            case 1:
+                zn.h1(this.b, this.c);
+                break;
+            case 2:
+                n4.f(this.c, r1.currentAccount, r1.U0, null, this.b.ba);
+                break;
+            case 3:
+                zn znVar = this.b;
+                String str = this.c;
+                if (str != null) {
+                    znVar.getClass();
+                    if (str.length() != 0) {
+                        znVar.getMessagesController().sendBotStart(znVar.f, str);
+                        break;
+                    }
+                }
+                znVar.getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.of("/start", znVar.Q5, null, null, null, false, null, null, null, true, 0, 0, null, false));
+                break;
+            case 4:
+                this.b.la(this.c);
+                break;
+            case 5:
+                this.b.da(this.c, false);
+                break;
+            case 6:
+                ze.d.s(this.b.getParentActivity(), "tel:" + this.c);
+                break;
+            case 7:
+                AndroidUtilities.addToClipboard(this.c);
+                b.m(R.string.PhoneCopied, org.telegram.ui.Components.qc.a0(this.b));
+                break;
+            case 8:
+                zn.u1(this.b, this.c);
+                break;
+            case 9:
+                ze.d.s(this.b.getParentActivity(), "tel:" + this.c);
+                break;
+            case 10:
+                AndroidUtilities.addToClipboard(this.c);
+                b.m(R.string.PhoneCopied, org.telegram.ui.Components.qc.a0(this.b));
                 break;
             default:
-                xn xnVar = this.b;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(xnVar.getParentActivity(), 0, xnVar.ba);
-                alertDialog$Builder.a.O = LocaleController.getString(R.string.AppName);
-                String string = LocaleController.getString(R.string.OK);
-                MessagesController messagesController = this.c;
-                alertDialog$Builder.k(string, new o9.b(xnVar, messagesController, this.d, this.e, 1));
-                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                String string2 = LocaleController.getString(R.string.SecretLinkPreviewAlert);
-                org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
-                d2Var.Q = string2;
-                xnVar.showDialog(d2Var);
-                messagesController.secretWebpagePreview = 0;
-                MessagesController.getGlobalMainSettings().edit().putInt("secretWebpage2", messagesController.secretWebpagePreview).commit();
+                ze.d.s(this.b.getParentActivity(), "https://fragment.com/username/" + this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ se(xn xnVar, MessagesController messagesController, CharSequence charSequence, boolean z4) {
-        this.b = xnVar;
-        this.c = messagesController;
-        this.d = charSequence;
-        this.e = z4;
     }
 }

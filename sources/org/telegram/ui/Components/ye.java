@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class ye implements Runnable {
     public final /* synthetic */ int a;
@@ -54,38 +54,38 @@ public final class ye implements Runnable {
                 break;
             case 1:
                 int i12 = this.b;
-                mp mpVar = (mp) callback;
-                f2.w0 layoutManager = mpVar.w.getLayoutManager();
+                jp jpVar = (jp) callback;
+                f2.v0 layoutManager = jpVar.w.getLayoutManager();
                 if (layoutManager != null) {
-                    int min = i12 > mpVar.N ? Math.min(i12 + 1, mpVar.h.d.size() - 1) : Math.max(i12 - 1, 0);
-                    fp fpVar = mpVar.E;
-                    fpVar.a = min;
-                    layoutManager.w0(fpVar);
+                    int min = i12 > jpVar.N ? Math.min(i12 + 1, jpVar.h.d.size() - 1) : Math.max(i12 - 1, 0);
+                    cp cpVar = jpVar.E;
+                    cpVar.a = min;
+                    layoutManager.w0(cpVar);
                 }
-                mpVar.N = i12;
+                jpVar.N = i12;
                 break;
             default:
                 int i13 = this.b;
-                td0 td0Var = (td0) callback;
-                if (((ye) td0Var.f) == this) {
+                sd0 sd0Var = (sd0) callback;
+                if (((ye) sd0Var.f) == this) {
                     ArrayList arrayList = new ArrayList();
-                    TextView textView = (TextView) ((ArrayList) td0Var.b).get(i13);
+                    TextView textView = (TextView) ((ArrayList) sd0Var.b).get(i13);
                     Property property = View.SCALE_X;
                     arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f));
                     Property property2 = View.SCALE_Y;
                     arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, 0.0f));
                     Property property3 = View.ALPHA;
                     arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, 0.0f));
-                    TextView textView2 = (TextView) ((ArrayList) td0Var.c).get(i13);
+                    TextView textView2 = (TextView) ((ArrayList) sd0Var.c).get(i13);
                     arrayList.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property, 1.0f));
                     arrayList.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property2, 1.0f));
                     arrayList.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property3, 1.0f));
                     AnimatorSet animatorSet = new AnimatorSet();
-                    td0Var.e = animatorSet;
+                    sd0Var.e = animatorSet;
                     animatorSet.setDuration(150L);
-                    ((AnimatorSet) td0Var.e).playTogether(arrayList);
-                    ((AnimatorSet) td0Var.e).addListener(new pd0(this, i11));
-                    ((AnimatorSet) td0Var.e).start();
+                    ((AnimatorSet) sd0Var.e).playTogether(arrayList);
+                    ((AnimatorSet) sd0Var.e).addListener(new od0(this, i11));
+                    ((AnimatorSet) sd0Var.e).start();
                     break;
                 }
                 break;

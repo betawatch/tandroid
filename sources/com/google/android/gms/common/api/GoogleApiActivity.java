@@ -10,7 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class GoogleApiActivity extends Activity implements DialogInterface.OnCancelListener {
     public static final /* synthetic */ int b = 0;
@@ -75,17 +75,17 @@ public class GoogleApiActivity extends Activity implements DialogInterface.OnCan
             }
             try {
                 googleApiActivity = this;
-            } catch (ActivityNotFoundException e6) {
-                e = e6;
+            } catch (ActivityNotFoundException e) {
+                e = e;
                 googleApiActivity = this;
-            } catch (IntentSender.SendIntentException e10) {
-                e = e10;
+            } catch (IntentSender.SendIntentException e6) {
+                e = e6;
             }
             try {
                 googleApiActivity.startIntentSenderForResult(pendingIntent.getIntentSender(), 1, null, 0, 0, 0);
                 googleApiActivity.a = 1;
-            } catch (ActivityNotFoundException e11) {
-                e = e11;
+            } catch (ActivityNotFoundException e10) {
+                e = e10;
                 if (extras.getBoolean("notify_manager", true)) {
                     com.google.android.gms.common.api.internal.h.g(this).h(new y5.a(22, null), getIntent().getIntExtra("failing_client_id", -1));
                 } else {
@@ -97,8 +97,8 @@ public class GoogleApiActivity extends Activity implements DialogInterface.OnCan
                 }
                 googleApiActivity.a = 1;
                 finish();
-            } catch (IntentSender.SendIntentException e12) {
-                e = e12;
+            } catch (IntentSender.SendIntentException e11) {
+                e = e11;
                 Log.e("GoogleApiActivity", "Failed to launch pendingIntent", e);
                 finish();
             }

@@ -1,124 +1,88 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Color;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.TextView;
-import java.util.HashMap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.text.TextPaint;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.TelegramQRCodeWriter;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public class si0 extends org.telegram.ui.ActionBar.h3 {
-    public final Bitmap b;
-    public final TextView c;
-    public final TextView d;
-    public final TextView e;
-    public final int f;
-    public final kj0 h;
+public final class si0 {
+    public final z5 a;
+    public final j6 b;
+    public final int c;
+    public boolean d;
+    public final xi0 e;
+    public final rc f;
+    public final Paint g = new Paint(1);
+    public boolean h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public si0(Context context, String str, String str2, String str3, boolean z4) {
-        super(context, null, false, false);
-        Bitmap bitmap = null;
-        fixNavigationBar();
-        setTitle(str, true);
-        ge geVar = new ge(context, 2);
-        geVar.setScaleType(ImageView.ScaleType.FIT_XY);
-        geVar.setOutlineProvider(new hg.j1(11));
-        geVar.setClipToOutline(true);
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        linearLayout.setPadding(0, AndroidUtilities.dp(16.0f), 0, 0);
-        Bitmap bitmap2 = this.b;
-        try {
-            HashMap hashMap = new HashMap();
-            hashMap.put(ob.b.a, tb.b.c);
-            hashMap.put(ob.b.c, 0);
-            TelegramQRCodeWriter telegramQRCodeWriter = new TelegramQRCodeWriter();
-            Bitmap encode = telegramQRCodeWriter.encode(str2, 768, 768, hashMap, bitmap2);
-            this.f = telegramQRCodeWriter.getImageSize();
-            bitmap = encode;
-        } catch (Exception e6) {
-            FileLog.e(e6);
-        }
-        this.b = bitmap;
-        geVar.setImageBitmap(bitmap);
-        kj0 kj0Var = new kj0(context);
-        this.h = kj0Var;
-        kj0Var.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        kj0Var.setBackgroundColor(-1);
-        org.telegram.ui.zl0 zl0Var = new org.telegram.ui.zl0(this, context, geVar);
-        zl0Var.addView(geVar, k7.c6.c(-1.0f, -1));
-        zl0Var.addView(kj0Var, k7.c6.e(60, 60, 17));
-        linearLayout.addView(zl0Var, k7.c6.t(220, 220, 1, 30, 0, 30, 0));
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setTextSize(1, 14.0f);
-        textView.setText(str3);
-        textView.setGravity(1);
-        linearLayout.addView(textView, k7.c6.d(-1, -2.0f, 0, 40.0f, 8.0f, 40.0f, 8.0f));
-        TextView textView2 = new TextView(context);
-        this.d = textView2;
-        textView2.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
-        textView2.setGravity(17);
-        textView2.setTextSize(1, 14.0f);
-        textView2.setTypeface(AndroidUtilities.bold());
-        textView2.setText(LocaleController.getString(R.string.ShareQrCode));
-        textView2.setOnClickListener(new w2(27, this, context));
-        linearLayout.addView(textView2, k7.c6.t(-1, 48, 80, 16, 15, 16, 3));
-        if (z4) {
-            TextView textView3 = new TextView(context);
-            this.e = textView3;
-            textView3.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
-            textView3.setGravity(17);
-            textView3.setTextSize(1, 14.0f);
-            textView3.setText(LocaleController.getString(R.string.ShareLink));
-            textView3.setOnClickListener(new w2(28, str2, context));
-            linearLayout.addView(textView3, k7.c6.t(-1, 48, 80, 16, 3, 16, 16));
-        }
-        n();
-        ScrollView scrollView = new ScrollView(context);
-        scrollView.addView(linearLayout);
-        setCustomView(scrollView);
+    public si0(View view) {
+        this.a = new z5(view, 350L, mr.h);
+        this.e = new xi0(view);
+        this.f = new rc(view);
+        j6 j6Var = new j6(false, false, false, false);
+        this.b = j6Var;
+        j6Var.t(AndroidUtilities.dp(11.0f));
+        j6Var.o(true, true, false);
+        j6Var.setCallback(view);
+        j6Var.G = (int) (AndroidUtilities.displaySize.x * 0.3f);
+        this.d = false;
+        j6Var.q(LocaleController.getString(R.string.QuoteCollapse), false, true);
+        String string = LocaleController.getString(R.string.QuoteExpand);
+        TextPaint textPaint = j6Var.a;
+        this.c = (int) Math.ceil(Math.max(textPaint.measureText(string), textPaint.measureText(LocaleController.getString(R.string.QuoteCollapse))));
     }
 
-    public final void m(int i10) {
-        kj0 kj0Var = this.h;
-        kj0Var.setAutoRepeat(true);
-        kj0Var.f(i10, 60, 60, null);
-        kj0Var.d();
+    public final void a(Canvas canvas, RectF rectF, float f10, float f11, int i10, boolean z4, boolean z10) {
+        boolean z11 = this.d;
+        j6 j6Var = this.b;
+        if (z4 != z11) {
+            this.d = z4;
+            j6Var.q(LocaleController.getString(z4 ? R.string.QuoteExpand : R.string.QuoteCollapse), true, true);
+        }
+        int d = (int) (j6Var.d() + AndroidUtilities.dp(23.66f));
+        float dp = AndroidUtilities.dp(17.66f);
+        rectF.set(f10 - d, f11 - dp, f10, f11);
+        float a2 = this.f.a(0.02f) * this.a.e(z10);
+        if (a2 > 0.0f) {
+            int k10 = i0.a.k(i10, 30);
+            Paint paint = this.g;
+            paint.setColor(k10);
+            canvas.save();
+            canvas.scale(a2, a2, f10, f11);
+            float f12 = dp / 2.0f;
+            canvas.drawRoundRect(rectF, f12, f12, paint);
+            j6Var.setBounds((int) (rectF.left + AndroidUtilities.dp(6.0f)), (int) rectF.top, (int) (rectF.right - AndroidUtilities.dp(17.66f)), (int) rectF.bottom);
+            j6Var.r(i10);
+            j6Var.draw(canvas);
+            float dp2 = AndroidUtilities.dp(14.0f);
+            int dp3 = (int) ((rectF.right - AndroidUtilities.dp(3.33f)) - dp2);
+            float f13 = dp2 / 2.0f;
+            int centerY = (int) ((rectF.centerY() - f13) + AndroidUtilities.dp(0.33f));
+            int dp4 = (int) (rectF.right - AndroidUtilities.dp(3.33f));
+            int centerY2 = (int) (rectF.centerY() + f13 + AndroidUtilities.dp(0.33f));
+            xi0 xi0Var = this.e;
+            xi0Var.setBounds(dp3, centerY, dp4, centerY2);
+            Paint paint2 = xi0Var.b;
+            paint2.setColor(i10);
+            paint2.setAlpha(xi0Var.d);
+            boolean z12 = !z4;
+            if (xi0Var.e != z12) {
+                xi0Var.e = z12;
+                xi0Var.a.invalidate();
+            }
+            xi0Var.draw(canvas);
+            canvas.restore();
+        }
     }
 
-    public final void n() {
-        int themedColor = getThemedColor(org.telegram.ui.ActionBar.k6.Sh);
-        TextView textView = this.d;
-        textView.setTextColor(themedColor);
-        int dp = AndroidUtilities.dp(24.0f);
-        int i10 = org.telegram.ui.ActionBar.k6.Oh;
-        int themedColor2 = getThemedColor(i10);
-        int themedColor3 = getThemedColor(org.telegram.ui.ActionBar.k6.Qh);
-        textView.setBackground(org.telegram.ui.ActionBar.k6.i0(dp, dp, dp, dp, themedColor2, themedColor3, themedColor3));
-        TextView textView2 = this.e;
-        if (textView2 != null) {
-            textView2.setTextColor(getThemedColor(i10));
-            textView2.setBackground(org.telegram.ui.ActionBar.k6.f0(i0.a.k(getThemedColor(i10), Math.min(255, Color.alpha(getThemedColor(org.telegram.ui.ActionBar.k6.i6)) * 2)), 7, -1));
-        }
-        int i11 = org.telegram.ui.ActionBar.k6.y6;
-        int themedColor4 = getThemedColor(i11);
-        TextView textView3 = this.c;
-        textView3.setTextColor(themedColor4);
-        textView3.setTextColor(getThemedColor(i11));
-        if (getTitleView() != null) {
-            getTitleView().setTextColor(getThemedColor(org.telegram.ui.ActionBar.k6.G6));
-        }
-        setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.k6.h5));
+    public final void b(boolean z4) {
+        this.h = z4;
+        this.f.c(z4);
     }
 }

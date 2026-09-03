@@ -2,7 +2,7 @@ package b4;
 
 import org.telegram.ui.Components.jb;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class x {
     public final r3.a a;
@@ -54,8 +54,8 @@ public final class x {
             if (position < 0 || position > 262144) {
                 break;
             }
-            lVar.s((int) position);
-            lVar.r();
+            lVar.n((int) position);
+            lVar.m();
             r3.d b10 = eVar.b(lVar, bVar.b);
             int i10 = b10.a;
             long j15 = b10.b;
@@ -76,7 +76,7 @@ public final class x {
                     }
                     long position2 = j16 - lVar.getPosition();
                     if (position2 >= 0 && position2 <= 262144) {
-                        lVar.s((int) position2);
+                        lVar.n((int) position2);
                     }
                     this.c = null;
                     eVar.n();
@@ -93,7 +93,7 @@ public final class x {
         r3.b bVar = this.c;
         if (bVar == null || bVar.a != j10) {
             r3.a aVar = this.a;
-            this.c = new r3.b(j10, aVar.a.f(j10), aVar.c, aVar.d, aVar.e, aVar.f);
+            this.c = new r3.b(j10, aVar.a.k(j10), aVar.c, aVar.d, aVar.e, aVar.f);
         }
     }
 }

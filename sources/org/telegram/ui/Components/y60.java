@@ -1,133 +1,133 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.messenger.DialogObject;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class y60 extends rl0 {
-    public final /* synthetic */ e70 c;
+public final /* synthetic */ class y60 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ z60 b;
+    public final /* synthetic */ String c;
 
-    public y60(e70 e70Var) {
-        this.c = e70Var;
+    public /* synthetic */ y60(z60 z60Var, String str, int i10) {
+        this.a = i10;
+        this.b = z60Var;
+        this.c = str;
     }
 
-    @Override // org.telegram.ui.Components.rl0
-    public final boolean D(f2.m1 m1Var) {
-        int i10 = m1Var.f;
-        return i10 == 3 || i10 == 1;
-    }
-
-    public final TLObject E(int i10) {
-        int i11;
-        int i12;
-        e70 e70Var = this.c;
-        if (e70Var.j0 == null) {
-            return (TLObject) e70Var.b0.get(i10 - e70Var.V);
-        }
-        TLRPC.Dialog dialog = (TLRPC.Dialog) e70Var.k0.get(i10 - e70Var.V);
-        if (DialogObject.isUserDialog(dialog.id)) {
-            i12 = ((org.telegram.ui.ActionBar.h3) e70Var).currentAccount;
-            return MessagesController.getInstance(i12).getUser(Long.valueOf(dialog.id));
-        }
-        i11 = ((org.telegram.ui.ActionBar.h3) e70Var).currentAccount;
-        return MessagesController.getInstance(i11).getChat(Long.valueOf(-dialog.id));
-    }
-
-    @Override // f2.p0
-    public final int h() {
-        return this.c.Z;
-    }
-
-    @Override // f2.p0
-    public final int j(int i10) {
-        e70 e70Var = this.c;
-        if (i10 == e70Var.U) {
-            return 1;
-        }
-        e70Var.getClass();
-        if (i10 == 0) {
-            return 2;
-        }
-        if (i10 >= e70Var.V && i10 < e70Var.W) {
-            return 3;
-        }
-        if (i10 == e70Var.Y) {
-            return 4;
-        }
-        return i10 == e70Var.X ? 5 : 0;
-    }
-
-    @Override // f2.p0
-    public final void v(f2.m1 m1Var, int i10) {
-        int i11 = m1Var.f;
-        View view = m1Var.a;
-        if (i11 == 2) {
-            view.requestLayout();
-            return;
-        }
-        if (i11 != 3) {
-            return;
-        }
-        org.telegram.ui.Cells.g4 g4Var = (org.telegram.ui.Cells.g4) view;
-        TLObject E = E(i10);
-        Object object = g4Var.getObject();
-        long j10 = object instanceof TLRPC.User ? ((TLRPC.User) object).id : object instanceof TLRPC.Chat ? -((TLRPC.Chat) object).id : 0L;
-        e70 e70Var = this.c;
-        g4Var.e(E, null, null, i10 != e70Var.W);
-        long j11 = E instanceof TLRPC.User ? ((TLRPC.User) E).id : E instanceof TLRPC.Chat ? -((TLRPC.Chat) E).id : 0L;
-        if (j11 != 0) {
-            a0.h hVar = e70Var.Q;
-            if (hVar == null || hVar.h(j11) < 0) {
-                g4Var.c(e70Var.c0.h(j11) >= 0, j10 == j11);
-                g4Var.setCheckBoxEnabled(true);
-            } else {
-                g4Var.c(true, false);
-                g4Var.setCheckBoxEnabled(false);
-            }
-        }
-    }
-
-    @Override // f2.p0
-    public final f2.m1 x(ViewGroup viewGroup, int i10) {
-        View view;
-        Context context = viewGroup.getContext();
-        if (i10 != 2) {
-            e70 e70Var = this.c;
-            if (i10 == 3) {
-                view = new org.telegram.ui.Cells.g4(context, 1, 0, e70Var.j0 != null);
-            } else if (i10 == 4) {
-                view = new View(context);
-            } else if (i10 != 5) {
-                org.telegram.ui.Cells.y4 y4Var = new org.telegram.ui.Cells.y4(context);
-                y4Var.b(LocaleController.getString(R.string.VoipGroupCopyInviteLink), R.drawable.msg_link, 7, true);
-                int i11 = org.telegram.ui.ActionBar.k6.n5;
-                y4Var.a(i11, i11);
-                view = y4Var;
-            } else {
-                x60 x60Var = new x60(context, null, 0, null, 0);
-                x60Var.setLayoutParams(new f2.x0(-1, -1));
-                x60Var.e.setVisibility(8);
-                org.telegram.ui.gu guVar = e70Var.j0;
-                jh.s sVar = x60Var.d;
-                if (guVar != null) {
-                    sVar.setText(LocaleController.getString(R.string.FilterNoChats));
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r7v14 */
+    /* JADX WARN: Type inference failed for: r7v16 */
+    /* JADX WARN: Type inference failed for: r7v5 */
+    /* JADX WARN: Type inference failed for: r7v6 */
+    @Override // java.lang.Runnable
+    public final void run() {
+        String str;
+        String publicUsername;
+        ArrayList arrayList;
+        Object obj;
+        switch (this.a) {
+            case 0:
+                z60 z60Var = this.b;
+                String str2 = this.c;
+                z60Var.getClass();
+                AndroidUtilities.runOnUIThread(new y60(z60Var, str2, 1));
+                break;
+            case 1:
+                z60 z60Var2 = this.b;
+                String str3 = this.c;
+                tf.j1 j1Var = z60Var2.e;
+                org.telegram.ui.hu huVar = z60Var2.n.j0;
+                j1Var.g(str3, true, huVar != null, true, huVar != null, 0L, false, 0, 0);
+                DispatchQueue dispatchQueue = Utilities.searchQueue;
+                y60 y60Var = new y60(z60Var2, str3, 2);
+                z60Var2.h = y60Var;
+                dispatchQueue.postRunnable(y60Var);
+                break;
+            default:
+                z60 z60Var3 = this.b;
+                String str4 = this.c;
+                ArrayList arrayList2 = z60Var3.n.b0;
+                String lowerCase = str4.trim().toLowerCase();
+                if (lowerCase.length() != 0) {
+                    String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
+                    if (lowerCase.equals(translitString) || translitString.length() == 0) {
+                        translitString = null;
+                    }
+                    int i10 = 0;
+                    int i11 = (translitString != null ? 1 : 0) + 1;
+                    String[] strArr = new String[i11];
+                    strArr[0] = lowerCase;
+                    if (translitString != null) {
+                        strArr[1] = translitString;
+                    }
+                    ArrayList arrayList3 = new ArrayList();
+                    ArrayList arrayList4 = new ArrayList();
+                    int i12 = 0;
+                    while (i12 < arrayList2.size()) {
+                        TLObject tLObject = (TLObject) arrayList2.get(i12);
+                        boolean z4 = tLObject instanceof TLRPC.User;
+                        if (z4) {
+                            TLRPC.User user = (TLRPC.User) tLObject;
+                            str = ContactsController.formatName(user.first_name, user.last_name).toLowerCase();
+                            publicUsername = UserObject.getPublicUsername(user);
+                        } else {
+                            TLRPC.Chat chat = (TLRPC.Chat) tLObject;
+                            str = chat.title;
+                            publicUsername = ChatObject.getPublicUsername(chat);
+                        }
+                        String translitString2 = LocaleController.getInstance().getTranslitString(str);
+                        if (str.equals(translitString2)) {
+                            translitString2 = null;
+                        }
+                        boolean z10 = false;
+                        while (true) {
+                            if (i10 < i11) {
+                                String str5 = strArr[i10];
+                                ?? r72 = (str.startsWith(str5) || org.telegram.messenger.y3.w(" ", str5, str) || (translitString2 != null && (translitString2.startsWith(str5) || org.telegram.messenger.y3.w(" ", str5, translitString2)))) ? 1 : (publicUsername == null || !publicUsername.startsWith(str5)) ? z10 : 2;
+                                if (r72 != 0) {
+                                    arrayList = arrayList2;
+                                    if (r72 != 1) {
+                                        obj = null;
+                                        arrayList4.add(AndroidUtilities.generateSearchName(vh.w2.e("@", publicUsername), null, "@" + str5));
+                                    } else if (z4) {
+                                        TLRPC.User user2 = (TLRPC.User) tLObject;
+                                        arrayList4.add(AndroidUtilities.generateSearchName(user2.first_name, user2.last_name, str5));
+                                        obj = null;
+                                    } else {
+                                        obj = null;
+                                        arrayList4.add(AndroidUtilities.generateSearchName(((TLRPC.Chat) tLObject).title, null, str5));
+                                    }
+                                    arrayList3.add(tLObject);
+                                } else {
+                                    i10++;
+                                    arrayList2 = arrayList2;
+                                    z10 = r72;
+                                }
+                            } else {
+                                arrayList = arrayList2;
+                            }
+                        }
+                        i12++;
+                        arrayList2 = arrayList;
+                        i10 = 0;
+                    }
+                    AndroidUtilities.runOnUIThread(new gp(z60Var3, arrayList3, arrayList4, 8));
+                    break;
                 } else {
-                    sVar.setText(LocaleController.getString(R.string.NoContacts));
+                    AndroidUtilities.runOnUIThread(new gp(z60Var3, new ArrayList(), new ArrayList(), 8));
+                    break;
                 }
-                x60Var.setAnimateLayoutChange(true);
-                view = x60Var;
-            }
-        } else {
-            view = new fg.h0(this, context, 13);
+                break;
         }
-        return new el0(view);
     }
 }

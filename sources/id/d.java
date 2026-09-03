@@ -3,7 +3,7 @@ package id;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import k7.t7;
+import k7.s7;
 import kotlin.jvm.internal.j;
 import tc.o;
 
@@ -17,7 +17,7 @@ public abstract class d extends f {
         }
         Object next = it.next();
         if (!it.hasNext()) {
-            return t7.a(next);
+            return s7.a(next);
         }
         ArrayList arrayList = new ArrayList();
         arrayList.add(next);

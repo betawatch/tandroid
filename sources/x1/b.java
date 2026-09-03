@@ -7,7 +7,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class b extends FutureTask {
     public final /* synthetic */ a a;
@@ -28,15 +28,15 @@ public final class b extends FutureTask {
                 return;
             }
             aVar.b(obj);
-        } catch (InterruptedException e6) {
-            Log.w("AsyncTask", e6);
+        } catch (InterruptedException e) {
+            Log.w("AsyncTask", e);
         } catch (CancellationException unused) {
             if (atomicBoolean.get()) {
                 return;
             }
             aVar.b(null);
-        } catch (ExecutionException e10) {
-            throw new RuntimeException("An error occurred while executing doInBackground()", e10.getCause());
+        } catch (ExecutionException e6) {
+            throw new RuntimeException("An error occurred while executing doInBackground()", e6.getCause());
         } catch (Throwable th2) {
             throw new RuntimeException("An error occurred while executing doInBackground()", th2);
         }

@@ -1,56 +1,37 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.Canvas;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.CheckBoxSquare;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class p8 extends FrameLayout {
-    public TextView a;
-    public CheckBoxSquare b;
-    public boolean c;
+public final class p8 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ r8 c;
 
-    public final void a(String str, boolean z4, boolean z10) {
-        this.a.setText(str);
-        this.b.a(z4, false);
-        this.c = z10;
-        setWillNotDraw(!z10);
+    public /* synthetic */ p8(r8 r8Var, int i10, int i11) {
+        this.a = i11;
+        this.c = r8Var;
+        this.b = i10;
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        this.b.invalidate();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.c) {
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                r8 r8Var = this.c;
+                r8Var.r = 0;
+                r8Var.setBackgroundColor(this.b);
+                r8Var.invalidate();
+                break;
+            default:
+                int i10 = this.b;
+                r8 r8Var2 = this.c;
+                r8Var2.setBackgroundColor(i10);
+                r8Var2.r = 0;
+                r8Var2.invalidate();
+                break;
         }
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.CheckBox");
-        accessibilityNodeInfo.setCheckable(true);
-        accessibilityNodeInfo.setChecked(this.b.h);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f) + (this.c ? 1 : 0), TLObject.FLAG_30));
-    }
-
-    public void setChecked(boolean z4) {
-        this.b.a(z4, true);
     }
 }

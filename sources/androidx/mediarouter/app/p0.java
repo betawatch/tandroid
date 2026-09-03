@@ -31,7 +31,7 @@ import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class p0 extends g.s {
     public static final /* synthetic */ int g0 = 0;
@@ -43,7 +43,7 @@ public final class p0 extends g.s {
     public n0 G;
     public o0 H;
     public HashMap I;
-    public c2.a0 J;
+    public c2.b0 J;
     public HashMap K;
     public boolean L;
     public boolean M;
@@ -56,7 +56,7 @@ public final class p0 extends g.s {
     public TextView T;
     public TextView U;
     public String V;
-    public bf.b W;
+    public af.c W;
     public final s X;
     public MediaDescriptionCompat Y;
     public g0 Z;
@@ -65,11 +65,11 @@ public final class p0 extends g.s {
     public boolean c0;
     public Bitmap d0;
     public int e0;
-    public final c2.c0 f;
+    public final c2.d0 f;
     public final boolean f0;
     public final e h;
-    public c2.v n;
-    public c2.a0 r;
+    public c2.w n;
+    public c2.b0 r;
     public final ArrayList s;
     public final ArrayList v;
     public final ArrayList w;
@@ -85,10 +85,10 @@ public final class p0 extends g.s {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public p0(Context context) {
-        super(r2, r0 == 0 ? j7.a0.e(r2) : r0);
-        ContextThemeWrapper a2 = j7.a0.a(context, false);
-        int g10 = j7.a0.g(a2, R.attr.mediaRouteTheme);
-        this.n = c2.v.c;
+        super(r2, r0 == 0 ? j7.z.e(r2) : r0);
+        ContextThemeWrapper a2 = j7.z.a(context, false);
+        int g10 = j7.z.g(a2, R.attr.mediaRouteTheme);
+        this.n = c2.w.c;
         this.s = new ArrayList();
         this.v = new ArrayList();
         this.w = new ArrayList();
@@ -96,18 +96,18 @@ public final class p0 extends g.s {
         this.E = new d(this, 2);
         Context context2 = getContext();
         this.y = context2;
-        this.f = c2.c0.d(context2);
-        this.f0 = c2.c0.g();
+        this.f = c2.d0.d(context2);
+        this.f0 = c2.d0.g();
         this.h = new e(this, 3);
-        this.r = c2.c0.f();
+        this.r = c2.d0.f();
         this.X = new s(this, 1);
-        h(c2.c0.e());
+        h(c2.d0.e());
     }
 
     public final void e(List list) {
         for (int size = list.size() - 1; size >= 0; size--) {
-            c2.a0 a0Var = (c2.a0) list.get(size);
-            if (a0Var.d() || !a0Var.g || !a0Var.h(this.n) || this.r == a0Var) {
+            c2.b0 b0Var = (c2.b0) list.get(size);
+            if (b0Var.d() || !b0Var.g || !b0Var.h(this.n) || this.r == b0Var) {
                 list.remove(size);
             }
         }
@@ -133,16 +133,16 @@ public final class p0 extends g.s {
 
     public final void h(MediaSessionCompat$Token mediaSessionCompat$Token) {
         MediaMetadataCompat mediaMetadataCompat;
-        bf.b bVar = this.W;
+        af.c cVar = this.W;
         s sVar = this.X;
-        if (bVar != null) {
-            bVar.e0(sVar);
+        if (cVar != null) {
+            cVar.f0(sVar);
             this.W = null;
         }
         if (mediaSessionCompat$Token != null && this.C) {
-            bf.b bVar2 = new bf.b(this.y, mediaSessionCompat$Token);
-            this.W = bVar2;
-            bVar2.Y(sVar);
+            af.c cVar2 = new af.c(this.y, mediaSessionCompat$Token);
+            this.W = cVar2;
+            cVar2.Z(sVar);
             MediaMetadata metadata = ((android.support.v4.media.session.h) this.W.b).a.getMetadata();
             if (metadata != null) {
                 a0.f fVar = MediaMetadataCompat.d;
@@ -161,26 +161,26 @@ public final class p0 extends g.s {
         }
     }
 
-    public final void i(c2.v vVar) {
-        if (vVar == null) {
+    public final void i(c2.w wVar) {
+        if (wVar == null) {
             throw new IllegalArgumentException("selector must not be null");
         }
-        if (this.n.equals(vVar)) {
+        if (this.n.equals(wVar)) {
             return;
         }
-        this.n = vVar;
+        this.n = wVar;
         if (this.C) {
-            c2.c0 c0Var = this.f;
+            c2.d0 d0Var = this.f;
             e eVar = this.h;
-            c0Var.h(eVar);
-            c0Var.a(vVar, eVar, 1);
+            d0Var.h(eVar);
+            d0Var.a(wVar, eVar, 1);
             l();
         }
     }
 
     public final void j() {
         Context context = this.y;
-        getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : j7.z.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
+        getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : j7.y.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
         this.a0 = null;
         this.b0 = null;
         f();
@@ -287,18 +287,18 @@ public final class p0 extends g.s {
         ArrayList arrayList3 = this.w;
         arrayList3.clear();
         arrayList.addAll(DesugarCollections.unmodifiableList(this.r.v));
-        c2.z zVar = this.r.a;
-        zVar.getClass();
-        c2.c0.b();
-        for (c2.a0 a0Var : DesugarCollections.unmodifiableList(zVar.b)) {
-            ja.c b10 = this.r.b(a0Var);
+        c2.a0 a0Var = this.r.a;
+        a0Var.getClass();
+        c2.d0.b();
+        for (c2.b0 b0Var : DesugarCollections.unmodifiableList(a0Var.b)) {
+            bb.b b10 = this.r.b(b0Var);
             if (b10 != null) {
-                c2.q qVar = (c2.q) b10.a;
+                c2.q qVar = (c2.q) b10.b;
                 if (qVar != null && qVar.d) {
-                    arrayList2.add(a0Var);
+                    arrayList2.add(b0Var);
                 }
                 if (qVar != null && qVar.e) {
-                    arrayList3.add(a0Var);
+                    arrayList3.add(b0Var);
                 }
             }
         }
@@ -347,7 +347,7 @@ public final class p0 extends g.s {
         this.C = true;
         this.f.a(this.n, this.h, 1);
         l();
-        h(c2.c0.e());
+        h(c2.d0.e());
     }
 
     @Override // g.s, androidx.activity.n, android.app.Dialog
@@ -356,7 +356,7 @@ public final class p0 extends g.s {
         setContentView(R.layout.mr_cast_dialog);
         View decorView = getWindow().getDecorView();
         Context context = this.y;
-        decorView.setBackgroundColor(f0.e.c(context, j7.a0.h(context) ? R.color.mr_dynamic_dialog_background_light : R.color.mr_dynamic_dialog_background_dark));
+        decorView.setBackgroundColor(f0.f.c(context, j7.z.h(context) ? R.color.mr_dynamic_dialog_background_light : R.color.mr_dynamic_dialog_background_dark));
         ImageButton imageButton = (ImageButton) findViewById(R.id.mr_cast_close_button);
         this.O = imageButton;
         imageButton.setColorFilter(-1);
@@ -369,7 +369,7 @@ public final class p0 extends g.s {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.mr_cast_list);
         this.F = recyclerView;
         recyclerView.setAdapter(this.G);
-        this.F.setLayoutManager(new f2.j0());
+        this.F.setLayoutManager(new f2.i0());
         this.H = new o0(this);
         this.I = new HashMap();
         this.K = new HashMap();

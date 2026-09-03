@@ -14,7 +14,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class FileUploadOperation {
     private static final int initialRequestsCount = 8;
@@ -68,7 +68,7 @@ public class FileUploadOperation {
     private SparseArray<UploadCachedResult> cachedResults = new SparseArray<>();
     private boolean[] recalculatedEstimatedSize = {false, false};
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     public interface FileUploadOperationDelegate {
         void didChangedUploadProgress(FileUploadOperation fileUploadOperation, long j10, long j11);
 
@@ -77,7 +77,7 @@ public class FileUploadOperation {
         void didFinishUploadingFile(FileUploadOperation fileUploadOperation, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2);
     }
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     public static class UploadCachedResult {
         private long bytesOffset;
         private byte[] iv;
@@ -122,8 +122,8 @@ public class FileUploadOperation {
                 randomAccessFile.close();
                 this.stream = null;
             }
-        } catch (Exception e6) {
-            FileLog.e(e6);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
         AutoDeleteMediaTask.unlockFile(this.uploadingFilePath);
     }
@@ -255,7 +255,7 @@ public class FileUploadOperation {
             StringBuilder sb = new StringBuilder("debug_uploading:  response reqId ");
             sb.append(iArr[0]);
             sb.append(" time");
-            org.telegram.ui.yh.v(this.uploadingFilePath, sb);
+            org.telegram.ui.ai.v(this.uploadingFilePath, sb);
         }
         int currentNetworkType = tLObject != null ? tLObject.networkType : ApplicationLoader.getCurrentNetworkType();
         int i15 = this.currentType;
@@ -580,8 +580,8 @@ public class FileUploadOperation {
                                                     for (int i20 = 0; i20 < 4; i20++) {
                                                         this.fingerprint |= ((digest[i20] ^ digest[i20 + 4]) & 255) << (i20 * 8);
                                                     }
-                                                } catch (Exception e6) {
-                                                    FileLog.e(e6);
+                                                } catch (Exception e) {
+                                                    FileLog.e(e);
                                                 }
                                             }
                                             this.uploadedBytesCount = this.readBytesCount;
@@ -771,13 +771,13 @@ public class FileUploadOperation {
                     sb2.append(" isBig=");
                     sb2.append(this.isBigFile);
                     sb2.append(" file_id=");
-                    l.d.x(sb2, this.currentFileId);
+                    kf.k0.x(sb2, this.currentFileId);
                 }
                 this.requestTokens.put(i26, iArr[0]);
                 AndroidUtilities.runOnUIThread(new t3(this, iArr, 1));
             }
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e6) {
+            FileLog.e(e6);
             this.state = 4;
             this.delegate.didFailedUploadingFile(this);
             cleanup();
@@ -821,7 +821,7 @@ public class FileUploadOperation {
         if (this.state != 1) {
             return;
         }
-        Utilities.stageQueue.postRunnable(new kh.f(7, this, z4));
+        Utilities.stageQueue.postRunnable(new jh.f(8, this, z4));
         AndroidUtilities.runOnUIThread(new s3(this, 3));
     }
 

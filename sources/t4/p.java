@@ -6,9 +6,10 @@ import j3.m0;
 import j3.n0;
 import java.io.EOFException;
 import java.util.Arrays;
-import org.telegram.ui.yh;
+import kf.k0;
+import org.telegram.ui.ai;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class p implements r3.v {
     public static final n0 f;
@@ -34,7 +35,7 @@ public final class p implements r3.v {
             this.b = f;
         } else {
             if (i10 != 3) {
-                throw new IllegalArgumentException(l.d.j(i10, "Unknown metadataType: "));
+                throw new IllegalArgumentException(k0.j(i10, "Unknown metadataType: "));
             }
             this.b = g;
         }
@@ -94,7 +95,7 @@ public final class p implements r3.v {
 
     @Override // r3.v
     public final /* synthetic */ void d(int i10, w wVar) {
-        yh.a(this, wVar, i10);
+        ai.a(this, wVar, i10);
     }
 
     @Override // r3.v

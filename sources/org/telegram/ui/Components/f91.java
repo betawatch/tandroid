@@ -14,7 +14,7 @@ import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.bi1;
 import org.webrtc.OrientationHelper;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class f91 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final class f91 extends AnimatorListenerAdapter {
     public void onAnimationCancel(Animator animator) {
         switch (this.a) {
             case 24:
-                ((org.telegram.ui.af0) this.b).s = null;
+                ((org.telegram.ui.bf0) this.b).s = null;
                 break;
             default:
                 super.onAnimationCancel(animator);
@@ -54,17 +54,17 @@ public final class f91 extends AnimatorListenerAdapter {
                 ((TransitionValues) this.b).view.setEnabled(true);
                 break;
             case 2:
-                org.telegram.ui.Components.voip.u uVar = ((org.telegram.ui.Components.voip.p) this.b).p0;
-                if (uVar.u0.getParent() != null) {
-                    uVar.a.removeView(uVar.u0);
+                org.telegram.ui.Components.voip.t tVar = ((org.telegram.ui.Components.voip.o) this.b).p0;
+                if (tVar.u0.getParent() != null) {
+                    tVar.a.removeView(tVar.u0);
                     break;
                 }
                 break;
             case 3:
                 super.onAnimationEnd(animator);
-                org.telegram.ui.Components.voip.v0 v0Var = (org.telegram.ui.Components.voip.v0) this.b;
-                if (v0Var.getParent() != null) {
-                    ((ViewGroup) v0Var.getParent()).removeView(v0Var);
+                org.telegram.ui.Components.voip.u0 u0Var = (org.telegram.ui.Components.voip.u0) this.b;
+                if (u0Var.getParent() != null) {
+                    ((ViewGroup) u0Var.getParent()).removeView(u0Var);
                     break;
                 }
                 break;
@@ -77,48 +77,48 @@ public final class f91 extends AnimatorListenerAdapter {
                 }
                 break;
             case 5:
-                org.telegram.ui.Components.voip.o1 o1Var = (org.telegram.ui.Components.voip.o1) this.b;
-                o1Var.i = false;
-                o1Var.l.setAlpha(35);
-                o1Var.k.setAlpha(102);
-                o1Var.j.setAlpha(35);
-                o1Var.c();
+                org.telegram.ui.Components.voip.n1 n1Var = (org.telegram.ui.Components.voip.n1) this.b;
+                n1Var.i = false;
+                n1Var.l.setAlpha(35);
+                n1Var.k.setAlpha(102);
+                n1Var.j.setAlpha(35);
+                n1Var.c();
                 break;
             case 6:
-                org.telegram.ui.Components.voip.t1 t1Var = ((org.telegram.ui.Components.voip.r1) this.b).c;
-                t1Var.L = false;
-                t1Var.requestLayout();
+                org.telegram.ui.Components.voip.s1 s1Var = ((org.telegram.ui.Components.voip.q1) this.b).c;
+                s1Var.L = false;
+                s1Var.requestLayout();
                 break;
             case 7:
-                org.telegram.ui.Components.voip.t2 t2Var = (org.telegram.ui.Components.voip.t2) this.b;
-                t2Var.K = 0.0f;
-                t2Var.L = 0.0f;
-                org.telegram.ui.Components.voip.s2 s2Var = t2Var.d;
-                s2Var.setScaleX(t2Var.Q);
-                s2Var.setScaleY(t2Var.Q);
-                TextureView textureView = t2Var.e;
+                org.telegram.ui.Components.voip.s2 s2Var = (org.telegram.ui.Components.voip.s2) this.b;
+                s2Var.K = 0.0f;
+                s2Var.L = 0.0f;
+                org.telegram.ui.Components.voip.r2 r2Var = s2Var.d;
+                r2Var.setScaleX(s2Var.Q);
+                r2Var.setScaleY(s2Var.Q);
+                TextureView textureView = s2Var.e;
                 if (textureView != null) {
-                    textureView.setScaleX(t2Var.R);
-                    textureView.setScaleY(t2Var.R);
+                    textureView.setScaleX(s2Var.R);
+                    textureView.setScaleY(s2Var.R);
                 }
-                t2Var.setTranslationY(0.0f);
-                t2Var.setTranslationX(0.0f);
-                t2Var.T = t2Var.S;
-                t2Var.V = null;
+                s2Var.setTranslationY(0.0f);
+                s2Var.setTranslationX(0.0f);
+                s2Var.T = s2Var.S;
+                s2Var.V = null;
                 break;
             case 8:
-                org.telegram.ui.Components.voip.w2 w2Var = (org.telegram.ui.Components.voip.w2) this.b;
-                w2Var.N = w2Var.M ? 1.0f : 0.0f;
-                w2Var.a(w2Var.O, w2Var.P);
+                org.telegram.ui.Components.voip.v2 v2Var = (org.telegram.ui.Components.voip.v2) this.b;
+                v2Var.N = v2Var.M ? 1.0f : 0.0f;
+                v2Var.a(v2Var.O, v2Var.P);
                 break;
             case 9:
-                ((org.telegram.ui.Components.voip.x2) this.b).c.unlock();
-                AndroidUtilities.unlockOrientation(((org.telegram.ui.Components.voip.x2) this.b).a);
-                if (((org.telegram.ui.Components.voip.x2) this.b).getParent() != null) {
-                    WindowManager windowManager = (WindowManager) ((org.telegram.ui.Components.voip.x2) this.b).a.getSystemService("window");
-                    ((org.telegram.ui.Components.voip.x2) this.b).setVisibility(8);
+                ((org.telegram.ui.Components.voip.w2) this.b).c.unlock();
+                AndroidUtilities.unlockOrientation(((org.telegram.ui.Components.voip.w2) this.b).a);
+                if (((org.telegram.ui.Components.voip.w2) this.b).getParent() != null) {
+                    WindowManager windowManager = (WindowManager) ((org.telegram.ui.Components.voip.w2) this.b).a.getSystemService("window");
+                    ((org.telegram.ui.Components.voip.w2) this.b).setVisibility(8);
                     try {
-                        windowManager.removeView((org.telegram.ui.Components.voip.x2) this.b);
+                        windowManager.removeView((org.telegram.ui.Components.voip.w2) this.b);
                     } catch (Exception unused) {
                     }
                     OrientationHelper.cameraRotationDisabled = false;
@@ -126,17 +126,17 @@ public final class f91 extends AnimatorListenerAdapter {
                 }
                 break;
             case 10:
-                org.telegram.ui.Components.voip.d3 d3Var = (org.telegram.ui.Components.voip.d3) this.b;
-                d3Var.G = false;
-                d3Var.Q.e = false;
-                if (d3Var.R && (animatorSet = d3Var.N) != null) {
+                org.telegram.ui.Components.voip.c3 c3Var = (org.telegram.ui.Components.voip.c3) this.b;
+                c3Var.G = false;
+                c3Var.Q.e = false;
+                if (c3Var.R && (animatorSet = c3Var.N) != null) {
                     animatorSet.cancel();
-                    d3Var.N.start();
+                    c3Var.N.start();
                 }
-                d3Var.c();
+                c3Var.c();
                 break;
             case 11:
-                ((org.telegram.ui.Components.voip.l3) this.b).e.setVisibility(8);
+                ((org.telegram.ui.Components.voip.k3) this.b).e.setVisibility(8);
                 break;
             case 12:
                 AnimatorSet[] animatorSetArr = (AnimatorSet[]) this.b;
@@ -146,134 +146,134 @@ public final class f91 extends AnimatorListenerAdapter {
                 }
                 break;
             case 13:
-                org.telegram.ui.fu fuVar = (org.telegram.ui.fu) this.b;
-                if (animator.equals(fuVar.n[0])) {
-                    fuVar.n[0] = null;
+                org.telegram.ui.gu guVar = (org.telegram.ui.gu) this.b;
+                if (animator.equals(guVar.n[0])) {
+                    guVar.n[0] = null;
                     break;
                 }
                 break;
             case 14:
-                org.telegram.ui.jv jvVar = (org.telegram.ui.jv) this.b;
-                org.telegram.ui.lv lvVar = jvVar.n;
-                org.telegram.ui.kv[] kvVarArr = lvVar.f;
-                lvVar.h = null;
-                if (lvVar.s) {
-                    kvVarArr[1].setVisibility(8);
+                org.telegram.ui.kv kvVar = (org.telegram.ui.kv) this.b;
+                org.telegram.ui.mv mvVar = kvVar.n;
+                org.telegram.ui.lv[] lvVarArr = mvVar.f;
+                mvVar.h = null;
+                if (mvVar.s) {
+                    lvVarArr[1].setVisibility(8);
                 } else {
-                    org.telegram.ui.kv kvVar = kvVarArr[0];
-                    kvVarArr[0] = kvVarArr[1];
-                    kvVarArr[1] = kvVar;
-                    kvVar.setVisibility(8);
-                    lvVar.w = lvVar.f[0].f == lvVar.e.getFirstTabId();
-                    lvVar.e.j(1.0f, lvVar.f[0].f);
+                    org.telegram.ui.lv lvVar = lvVarArr[0];
+                    lvVarArr[0] = lvVarArr[1];
+                    lvVarArr[1] = lvVar;
+                    lvVar.setVisibility(8);
+                    mvVar.w = mvVar.f[0].f == mvVar.e.getFirstTabId();
+                    mvVar.e.j(1.0f, mvVar.f[0].f);
                 }
-                lvVar.n = false;
-                jvVar.c = false;
-                jvVar.b = false;
-                kVar = ((org.telegram.ui.ActionBar.p2) lvVar).actionBar;
+                mvVar.n = false;
+                kvVar.c = false;
+                kvVar.b = false;
+                kVar = ((org.telegram.ui.ActionBar.p2) mvVar).actionBar;
                 kVar.setEnabled(true);
-                lvVar.e.setEnabled(true);
+                mvVar.e.setEnabled(true);
                 break;
             case 15:
-                org.telegram.ui.tw twVar = (org.telegram.ui.tw) this.b;
-                org.telegram.ui.py.q1(twVar.M, twVar.L, 0.0f);
+                org.telegram.ui.uw uwVar = (org.telegram.ui.uw) this.b;
+                org.telegram.ui.qy.q1(uwVar.M, uwVar.L, 0.0f);
                 break;
             case 16:
-                org.telegram.ui.py pyVar = (org.telegram.ui.py) this.b;
-                boolean z4 = pyVar.D0;
-                pyVar.E0 = z4 ? 1.0f : 0.0f;
+                org.telegram.ui.qy qyVar = (org.telegram.ui.qy) this.b;
+                boolean z4 = qyVar.D0;
+                qyVar.E0 = z4 ? 1.0f : 0.0f;
                 if (!z4) {
-                    pyVar.B0.setVisibility(8);
+                    qyVar.B0.setVisibility(8);
                 }
-                View view = pyVar.fragmentView;
+                View view = qyVar.fragmentView;
                 if (view != null) {
                     view.invalidate();
                     break;
                 }
                 break;
             case 17:
-                org.telegram.ui.py pyVar2 = ((org.telegram.ui.iy) this.b).B0;
-                pyVar2.c3 = null;
-                if (!pyVar2.g3) {
-                    org.telegram.ui.oy[] oyVarArr = pyVar2.b0;
-                    org.telegram.ui.oy oyVar = oyVarArr[0];
-                    org.telegram.ui.oy oyVar2 = oyVarArr[1];
-                    oyVarArr[0] = oyVar2;
-                    oyVarArr[1] = oyVar;
-                    pyVar2.w0.g(1.0f, oyVar2.h);
-                    pyVar2.T4(false);
-                    pyVar2.b0[0].d.getClass();
-                    pyVar2.b0[1].d.getClass();
+                org.telegram.ui.qy qyVar2 = ((org.telegram.ui.jy) this.b).B0;
+                qyVar2.c3 = null;
+                if (!qyVar2.g3) {
+                    org.telegram.ui.py[] pyVarArr = qyVar2.b0;
+                    org.telegram.ui.py pyVar = pyVarArr[0];
+                    org.telegram.ui.py pyVar2 = pyVarArr[1];
+                    pyVarArr[0] = pyVar2;
+                    pyVarArr[1] = pyVar;
+                    qyVar2.w0.g(1.0f, pyVar2.h);
+                    qyVar2.T4(false);
+                    qyVar2.b0[0].d.getClass();
+                    qyVar2.b0[1].d.getClass();
                 }
-                pyVar2.b0[1].setVisibility(8);
-                org.telegram.ui.py.f1(pyVar2, true);
-                pyVar2.d3 = false;
-                pyVar2.j3 = false;
-                kVar2 = ((org.telegram.ui.ActionBar.p2) pyVar2).actionBar;
+                qyVar2.b0[1].setVisibility(8);
+                org.telegram.ui.qy.f1(qyVar2, true);
+                qyVar2.d3 = false;
+                qyVar2.j3 = false;
+                kVar2 = ((org.telegram.ui.ActionBar.p2) qyVar2).actionBar;
                 kVar2.setEnabled(true);
-                pyVar2.w0.setEnabled(true);
-                pyVar2.r3(pyVar2.b0[0]);
+                qyVar2.w0.setEnabled(true);
+                qyVar2.r3(qyVar2.b0[0]);
                 break;
             case 18:
                 super.onAnimationEnd(animator);
-                ((org.telegram.ui.ly) this.b).setScrollEnabled(true);
+                ((org.telegram.ui.my) this.b).setScrollEnabled(true);
                 break;
             case 19:
-                u80 u80Var = (u80) this.b;
-                FrameLayout frameLayout = u80Var.b;
-                fg.i0 i0Var = (fg.i0) u80Var.c;
+                t80 t80Var = (t80) this.b;
+                FrameLayout frameLayout = t80Var.b;
+                eg.i0 i0Var = (eg.i0) t80Var.c;
                 if (i0Var.getParent() != null) {
                     frameLayout.removeView(i0Var);
                 }
-                frameLayout.getViewTreeObserver().removeOnPreDrawListener((org.telegram.ui.ai) u80Var.d);
+                frameLayout.getViewTreeObserver().removeOnPreDrawListener((org.telegram.ui.ci) t80Var.d);
                 break;
             case 20:
-                org.telegram.ui.d60 d60Var = ((org.telegram.ui.e50) this.b).o;
-                org.telegram.ui.d60 d60Var2 = org.telegram.ui.d60.A3;
-                d60Var.b1();
-                viewGroup = ((org.telegram.ui.ActionBar.h3) d60Var).containerView;
+                org.telegram.ui.e60 e60Var = ((org.telegram.ui.f50) this.b).o;
+                org.telegram.ui.e60 e60Var2 = org.telegram.ui.e60.A3;
+                e60Var.b1();
+                viewGroup = ((org.telegram.ui.ActionBar.g3) e60Var).containerView;
                 viewGroup.invalidate();
-                d60Var.N.invalidate();
-                if (d60Var.p0) {
-                    d60Var.p0 = false;
-                    d60Var.O0(true);
+                e60Var.N.invalidate();
+                if (e60Var.p0) {
+                    e60Var.p0 = false;
+                    e60Var.O0(true);
                     break;
                 }
                 break;
             case 21:
                 super.onAnimationEnd(animator);
-                org.telegram.ui.r50 r50Var = (org.telegram.ui.r50) this.b;
-                r50Var.G = null;
-                org.telegram.ui.d60 d60Var3 = r50Var.L;
-                d60Var3.N.invalidate();
-                d60Var3.X1.invalidate();
-                viewGroup2 = ((org.telegram.ui.ActionBar.h3) d60Var3).containerView;
+                org.telegram.ui.s50 s50Var = (org.telegram.ui.s50) this.b;
+                s50Var.G = null;
+                org.telegram.ui.e60 e60Var3 = s50Var.L;
+                e60Var3.N.invalidate();
+                e60Var3.X1.invalidate();
+                viewGroup2 = ((org.telegram.ui.ActionBar.g3) e60Var3).containerView;
                 viewGroup2.invalidate();
-                org.telegram.ui.d60.J0(d60Var3);
-                r50Var.H.clear();
-                r50Var.I.clear();
+                org.telegram.ui.e60.J0(e60Var3);
+                s50Var.H.clear();
+                s50Var.I.clear();
                 break;
             case 22:
-                org.telegram.ui.c80 c80Var = (org.telegram.ui.c80) this.b;
-                c80Var.d = null;
-                c80Var.a = null;
-                c80Var.b = false;
+                org.telegram.ui.d80 d80Var = (org.telegram.ui.d80) this.b;
+                d80Var.d = null;
+                d80Var.a = null;
+                d80Var.b = false;
                 break;
             case 23:
-                org.telegram.ui.bd0 bd0Var = (org.telegram.ui.bd0) this.b;
-                bd0Var.E = false;
-                bd0Var.o0();
+                org.telegram.ui.cd0 cd0Var = (org.telegram.ui.cd0) this.b;
+                cd0Var.E = false;
+                cd0Var.o0();
                 break;
             case 24:
-                org.telegram.ui.af0 af0Var = (org.telegram.ui.af0) this.b;
-                if (af0Var.s != null && af0Var.n != null) {
-                    af0Var.r.setVisibility(4);
-                    af0Var.s = null;
+                org.telegram.ui.bf0 bf0Var = (org.telegram.ui.bf0) this.b;
+                if (bf0Var.s != null && bf0Var.n != null) {
+                    bf0Var.r.setVisibility(4);
+                    bf0Var.s = null;
                     break;
                 }
                 break;
             case 25:
-                ((org.telegram.ui.bj0) this.b).Q.setVisibility(8);
+                ((org.telegram.ui.cj0) this.b).Q.setVisibility(8);
                 break;
             case 26:
                 org.telegram.ui.wj0 wj0Var = (org.telegram.ui.wj0) this.b;
@@ -289,9 +289,9 @@ public final class f91 extends AnimatorListenerAdapter {
                 break;
             case 28:
                 org.telegram.ui.np0 np0Var = (org.telegram.ui.np0) this.b;
-                org.telegram.ui.jc jcVar = np0Var.U;
-                if (jcVar != null) {
-                    if (jcVar.getParent() != null) {
+                org.telegram.ui.mc mcVar = np0Var.U;
+                if (mcVar != null) {
+                    if (mcVar.getParent() != null) {
                         ((ViewGroup) np0Var.U.getParent()).removeView(np0Var.U);
                     }
                     np0Var.U = null;

@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class bw0 {
     public final a4.k a;
@@ -24,7 +24,7 @@ public final class bw0 {
     public long k;
     public int n;
     public final Paint e = new Paint();
-    public final int f = org.telegram.ui.ActionBar.k6.A8;
+    public final int f = org.telegram.ui.ActionBar.j6.A8;
     public final ArrayList l = new ArrayList();
     public final ArrayList m = new ArrayList();
 
@@ -88,8 +88,8 @@ public final class bw0 {
             double d12 = dpf22;
             float f17 = f15 + f13;
             float f18 = f16 + f14;
-            canvas.drawLine(f17, f18, f15 + ((float) ((Math.cos(d10) * d11) - (Math.sin(d10) * d12))), ((float) l.d.a(d10, d12, Math.sin(d10) * d11)) + f16, paint);
-            canvas.drawLine(f17, f18, f15 + ((float) (((-Math.cos(d10)) * d11) - (Math.sin(d10) * d12))), ((float) l.d.a(d10, d12, (-Math.sin(d10)) * d11)) + f16, paint);
+            canvas.drawLine(f17, f18, f15 + ((float) ((Math.cos(d10) * d11) - (Math.sin(d10) * d12))), ((float) kf.k0.a(d10, d12, Math.sin(d10) * d11)) + f16, paint);
+            canvas.drawLine(f17, f18, f15 + ((float) (((-Math.cos(d10)) * d11) - (Math.sin(d10) * d12))), ((float) kf.k0.a(d10, d12, (-Math.sin(d10)) * d11)) + f16, paint);
             f11 = f12 + 1.0471976f;
             i10++;
             dp2 = f16;
@@ -252,7 +252,7 @@ public final class bw0 {
     public final void c() {
         int i10 = this.g;
         if (i10 == 0) {
-            i10 = org.telegram.ui.ActionBar.k6.w0(null, this.f, false) & (-1644826);
+            i10 = org.telegram.ui.ActionBar.j6.w0(null, this.f, false) & (-1644826);
         }
         if (this.n != i10) {
             this.n = i10;

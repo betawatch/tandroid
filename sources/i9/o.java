@@ -4,7 +4,7 @@ import android.util.Log;
 import java.io.File;
 import java.util.concurrent.Callable;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class o implements Callable {
     public final /* synthetic */ int a;
@@ -29,8 +29,8 @@ public final class o implements Callable {
                         Log.w("FirebaseCrashlytics", "Initialization marker file was not properly removed.", null);
                     }
                     return Boolean.valueOf(delete);
-                } catch (Exception e6) {
-                    Log.e("FirebaseCrashlytics", "Problem encountered deleting Crashlytics initialization marker.", e6);
+                } catch (Exception e) {
+                    Log.e("FirebaseCrashlytics", "Problem encountered deleting Crashlytics initialization marker.", e);
                     return Boolean.FALSE;
                 }
             default:
@@ -48,8 +48,8 @@ public final class o implements Callable {
                     bVar5.getClass();
                     new File(bVar5.b, str2).delete();
                 } else {
-                    String e10 = nVar.e();
-                    if (e10 == null || !nVar.j.c(e10)) {
+                    String e6 = nVar.e();
+                    if (e6 == null || !nVar.j.c(e6)) {
                         z4 = false;
                     }
                 }

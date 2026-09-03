@@ -1,49 +1,58 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.ImageView;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qg implements Runnable {
+public final /* synthetic */ class qg implements View.OnKeyListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d2[] b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ qg(org.telegram.ui.ActionBar.d2[] d2VarArr, int i10) {
+    public /* synthetic */ qg(Object obj, int i10) {
         this.a = i10;
-        this.b = d2VarArr;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnKeyListener
+    public final boolean onKey(View view, int i10, KeyEvent keyEvent) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.d2[] d2VarArr = this.b;
-                try {
-                    d2VarArr[0].dismiss();
-                } catch (Throwable unused) {
+                zn znVar = (zn) this.b;
+                znVar.getClass();
+                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) view;
+                if (i10 == 67 && keyEvent.getAction() == 0 && editTextBoldCursor.length() == 0) {
+                    znVar.ta();
+                    break;
                 }
-                d2VarArr[0] = null;
                 break;
             case 1:
-                org.telegram.ui.ActionBar.d2[] d2VarArr2 = this.b;
-                try {
-                    d2VarArr2[0].dismiss();
-                } catch (Throwable unused2) {
+                fn0 fn0Var = (fn0) this.b;
+                if (i10 != 67) {
+                    fn0Var.getClass();
+                    break;
+                } else if (fn0Var.V[2].length() == 0) {
+                    fn0Var.V[1].requestFocus();
+                    EditTextBoldCursor editTextBoldCursor2 = fn0Var.V[1];
+                    editTextBoldCursor2.setSelection(editTextBoldCursor2.length());
+                    fn0Var.V[1].dispatchKeyEvent(keyEvent);
+                    break;
                 }
-                d2VarArr2[0] = null;
-                break;
-            case 2:
-                AndroidUtilities.runOnUIThread(new qg(this.b, 4));
-                break;
-            case 3:
-                AndroidUtilities.runOnUIThread(new qg(this.b, 5));
-                break;
-            case 4:
-                this.b[0].dismiss();
                 break;
             default:
-                this.b[0].dismiss();
+                jv0 jv0Var = (jv0) this.b;
+                EditTextBoldCursor editTextBoldCursor3 = (EditTextBoldCursor) view;
+                if (i10 == 67 && keyEvent.getAction() == 0 && editTextBoldCursor3.length() == 0) {
+                    ImageView imageView = jv0Var.f;
+                    if (imageView != null) {
+                        imageView.callOnClick();
+                        break;
+                    }
+                }
                 break;
         }
+        return true;
     }
 }

@@ -5,18 +5,18 @@ import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class tu0 extends oh.r9 {
+public final class tu0 extends nh.r9 {
     public final /* synthetic */ vu0 h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tu0(vu0 vu0Var, oh.t6 t6Var, long j10, int i10) {
+    public tu0(vu0 vu0Var, nh.t6 t6Var, long j10, int i10) {
         super(i10, j10, t6Var);
         this.h = vu0Var;
     }
 
-    @Override // oh.r9
+    @Override // nh.r9
     public final void a(ArrayList arrayList) {
         wr0 wr0Var;
         MessageObject messageObject;
@@ -39,17 +39,17 @@ public final class tu0 extends oh.r9 {
         if (wr0Var != null) {
             for (int i11 = 0; i11 < wr0Var.getChildCount(); i11++) {
                 View childAt = wr0Var.getChildAt(i11);
-                if ((childAt instanceof org.telegram.ui.Cells.r7) && (messageObject = ((org.telegram.ui.Cells.r7) childAt).getMessageObject()) != null && messageObject.isStory()) {
+                if ((childAt instanceof org.telegram.ui.Cells.q7) && (messageObject = ((org.telegram.ui.Cells.q7) childAt).getMessageObject()) != null && messageObject.isStory()) {
                     arrayList.add(Integer.valueOf(messageObject.storyItem.id));
                 }
             }
         }
     }
 
-    @Override // oh.r9
+    @Override // nh.r9
     public final boolean d(ArrayList arrayList, TL_stories.TL_stories_storyViews tL_stories_storyViews) {
         TL_stories.StoryItem storyItem;
-        oh.l6 l6Var = this.h.s;
+        nh.l6 l6Var = this.h.s;
         ArrayList<TL_stories.StoryViews> arrayList2 = tL_stories_storyViews.views;
         l6Var.getClass();
         if (arrayList != null && arrayList2 != null) {

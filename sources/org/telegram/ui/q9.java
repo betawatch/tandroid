@@ -1,24 +1,38 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class q9 extends v9 {
-    public final /* synthetic */ r9 c0;
+public final /* synthetic */ class q9 implements o1.f {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q9(r9 r9Var, int i10) {
-        super(i10);
-        this.c0 = r9Var;
+    public /* synthetic */ q9(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
-    public final void finishFragment() {
-        setFinishing(true);
-        this.c0.dismiss();
-    }
-
-    @Override // org.telegram.ui.ActionBar.p2
-    public final void removeSelfFromStack() {
-        this.c0.dismiss();
+    @Override // o1.f
+    public final void a(o1.h hVar, boolean z4, float f10, float f11) {
+        switch (this.a) {
+            case 0:
+                x9 x9Var = (x9) this.b;
+                o1.j jVar = x9Var.x;
+                if (jVar != null) {
+                    jVar.c();
+                    x9Var.x = null;
+                    break;
+                }
+                break;
+            case 1:
+                ho0 ho0Var = (ho0) this.b;
+                if (hVar == ho0Var.c) {
+                    ho0Var.c = null;
+                    break;
+                }
+                break;
+            default:
+                ((au0) this.b).D();
+                break;
+        }
     }
 }

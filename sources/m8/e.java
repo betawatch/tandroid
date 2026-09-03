@@ -3,10 +3,10 @@ package m8;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
-import j7.g5;
-import org.telegram.ui.yh;
+import j7.f5;
+import org.telegram.ui.ai;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class e extends c6.a {
     public static final Parcelable.Creator<e> CREATOR = new c(1);
@@ -52,24 +52,24 @@ public final class e extends c6.a {
         String num = i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? Integer.toString(i10) : "OUTPUT_CLOSED" : "INPUT_CLOSED" : "CHANNEL_CLOSED" : "CHANNEL_OPENED";
         int i11 = this.c;
         String num2 = i11 != 0 ? i11 != 1 ? i11 != 2 ? i11 != 3 ? Integer.toString(i11) : "CLOSE_REASON_LOCAL_CLOSE" : "CLOSE_REASON_REMOTE_CLOSE" : "CLOSE_REASON_DISCONNECTED" : "CLOSE_REASON_NORMAL";
-        StringBuilder m9 = yh.m("ChannelEventParcelable[, channel=", valueOf, ", type=", num, ", closeReason=");
-        m9.append(num2);
-        m9.append(", appErrorCode=");
-        m9.append(this.d);
-        m9.append("]");
-        return m9.toString();
+        StringBuilder l10 = ai.l("ChannelEventParcelable[, channel=", valueOf, ", type=", num, ", closeReason=");
+        l10.append(num2);
+        l10.append(", appErrorCode=");
+        l10.append(this.d);
+        l10.append("]");
+        return l10.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = g5.q(parcel, 20293);
-        g5.k(parcel, 2, this.a, i10);
-        g5.s(parcel, 3, 4);
+        int q10 = f5.q(parcel, 20293);
+        f5.k(parcel, 2, this.a, i10);
+        f5.s(parcel, 3, 4);
         parcel.writeInt(this.b);
-        g5.s(parcel, 4, 4);
+        f5.s(parcel, 4, 4);
         parcel.writeInt(this.c);
-        g5.s(parcel, 5, 4);
+        f5.s(parcel, 5, 4);
         parcel.writeInt(this.d);
-        g5.r(parcel, q10);
+        f5.r(parcel, q10);
     }
 }

@@ -1,34 +1,37 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class hk extends org.telegram.ui.Components.ro {
-    public final /* synthetic */ xn f;
+public final class hk extends bo {
+    public final /* synthetic */ int f;
+    public boolean h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hk(xn xnVar, Context context) {
-        super(context);
-        this.f = xnVar;
+    public /* synthetic */ hk(Context context, org.telegram.ui.ActionBar.e5 e5Var, Bundle bundle, int i10) {
+        super(context, e5Var, bundle);
+        this.f = i10;
     }
 
-    @Override // org.telegram.ui.Components.ro
-    public final void a(boolean z4) {
-        xn xnVar = this.f;
-        xnVar.t7();
-        xnVar.r7();
-        xnVar.u7();
-        xnVar.v7();
-        al alVar = xnVar.Ya;
-        if (alVar != null) {
-            alVar.setTranslationY(xnVar.t9 + getCurrentHeight());
-        }
-        if (!z4) {
-            xnVar.o9();
-        } else {
-            xnVar.A9 = true;
-            xnVar.jc();
+    @Override // org.telegram.ui.bo
+    public final void a() {
+        switch (this.f) {
+            case 0:
+                if (!this.h) {
+                    this.h = true;
+                    super.a();
+                    break;
+                }
+                break;
+            default:
+                if (!this.h) {
+                    this.h = true;
+                    super.a();
+                    break;
+                }
+                break;
         }
     }
 }

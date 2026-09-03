@@ -1,65 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class js extends View {
-    public final xd.a a;
-    public final Paint b;
-    public final RectF c;
-    public final RectF d;
-    public final RectF e;
-    public final xp f;
+public final /* synthetic */ class js implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d2[] b;
 
-    public js(Context context) {
-        super(context);
-        this.a = new xd.a(this, pr.h, 380L);
-        Paint paint = new Paint(1);
-        this.b = paint;
-        this.c = new RectF();
-        this.d = new RectF();
-        this.e = new RectF();
-        this.f = new xp(this, 5);
-        paint.setColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.hl, false));
-        invalidate();
+    public /* synthetic */ js(org.telegram.ui.ActionBar.d2[] d2VarArr, int i10) {
+        this.a = i10;
+        this.b = d2VarArr;
     }
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        AndroidUtilities.runOnUIThread(this.f, 3000L);
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        AndroidUtilities.cancelRunOnUIThread(this.f);
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float f10 = this.a.e;
-        RectF rectF = this.d;
-        RectF rectF2 = this.c;
-        RectF rectF3 = this.e;
-        AndroidUtilities.lerp(rectF, rectF2, f10, rectF3);
-        float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(15.0f), 0, f10);
-        canvas.drawRoundRect(rectF3, lerp, lerp, this.b);
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-        int paddingTop = getPaddingTop();
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(paddingTop + currentActionBarHeight, TLObject.FLAG_30));
-        this.c.set(0.0f, 0.0f, getMeasuredWidth(), paddingTop);
-        this.d.set(AndroidUtilities.dp(12.0f), ((currentActionBarHeight / 2) + paddingTop) - AndroidUtilities.dp(15.0f), AndroidUtilities.dp(30.0f) + AndroidUtilities.dp(12.0f), AndroidUtilities.dp(30.0f) + r6);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.ActionBar.d2 d2Var = this.b[0];
+                if (d2Var != null) {
+                    d2Var.dismiss();
+                    break;
+                }
+                break;
+            case 1:
+                org.telegram.ui.ActionBar.d2[] d2VarArr = this.b;
+                try {
+                    d2VarArr[0].dismiss();
+                } catch (Throwable unused) {
+                }
+                d2VarArr[0] = null;
+                break;
+            default:
+                org.telegram.ui.ActionBar.d2[] d2VarArr2 = this.b;
+                try {
+                    d2VarArr2[0].dismiss();
+                } catch (Throwable unused2) {
+                }
+                d2VarArr2[0] = null;
+                break;
+        }
     }
 }

@@ -17,7 +17,7 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.Collections;
 import java.util.Set;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class j {
     public final Context a;
@@ -35,17 +35,17 @@ public abstract class j {
         this(context, eVar, aVar, new i(tVar, Looper.getMainLooper()));
     }
 
-    public final androidx.biometric.e a() {
-        androidx.biometric.e eVar = new androidx.biometric.e(5, false);
+    public final af.d a() {
+        af.d dVar = new af.d(6, false);
         Set set = Collections.EMPTY_SET;
-        if (((a0.g) eVar.b) == null) {
-            eVar.b = new a0.g(0);
+        if (((a0.g) dVar.b) == null) {
+            dVar.b = new a0.g(0);
         }
-        ((a0.g) eVar.b).addAll(set);
+        ((a0.g) dVar.b).addAll(set);
         Context context = this.a;
-        eVar.d = context.getClass().getName();
-        eVar.c = context.getPackageName();
-        return eVar;
+        dVar.d = context.getClass().getName();
+        dVar.c = context.getPackageName();
+        return dVar;
     }
 
     public final Task b(h1 h1Var) {

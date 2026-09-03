@@ -1,33 +1,18 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class kn0 extends f2.q {
-    public final /* synthetic */ on0 b;
+public final class kn0 {
+    public mg.q0 a;
+    public int b;
+    public String c;
+    public int d;
 
-    public kn0(on0 on0Var) {
-        this.b = on0Var;
-    }
-
-    @Override // f2.q
-    public final boolean a(int i10, int i11) {
-        on0 on0Var = this.b;
-        return ((ln0) on0Var.n.get(i10)).equals(on0Var.r.get(i11));
-    }
-
-    @Override // f2.q
-    public final boolean b(int i10, int i11) {
-        on0 on0Var = this.b;
-        return ((ln0) on0Var.n.get(i10)).a.h == ((ln0) on0Var.r.get(i11)).a.h;
-    }
-
-    @Override // f2.q
-    public final int d() {
-        return this.b.r.size();
-    }
-
-    @Override // f2.q
-    public final int e() {
-        return this.b.n.size();
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof kn0)) {
+            return false;
+        }
+        kn0 kn0Var = (kn0) obj;
+        return this.b == kn0Var.b && this.a.h == kn0Var.a.h && this.d == kn0Var.d;
     }
 }

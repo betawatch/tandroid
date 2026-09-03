@@ -12,13 +12,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class g20 extends ViewGroup {
     public AnimatorSet a;
     public boolean b;
     public final ArrayList c;
-    public p30 d;
+    public o30 d;
     public final ArrayList e;
     public int f;
     public int h;
@@ -65,7 +65,7 @@ public final class g20 extends ViewGroup {
                 break;
             }
             View childAt = getChildAt(i12);
-            if (childAt instanceof p30) {
+            if (childAt instanceof o30) {
                 childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
                 ArrayList arrayList2 = this.e;
                 boolean contains = arrayList2.contains(childAt);

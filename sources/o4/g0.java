@@ -8,9 +8,9 @@ import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ec0;
+import org.telegram.ui.Components.dc0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class g0 {
     public final int a;
@@ -68,11 +68,11 @@ public final class g0 {
     }
 
     public static a4.c f(a4.c cVar, n3.i iVar, h0 h0Var, h5.w wVar) {
-        if (iVar.e(TLObject.FLAG_30)) {
-            long j10 = h0Var.b;
+        if (iVar.d(TLObject.FLAG_30)) {
+            long j10 = h0Var.a;
             int i10 = 1;
             wVar.C(1);
-            a4.c e6 = e(cVar, j10, wVar.a, 1);
+            a4.c e = e(cVar, j10, wVar.a, 1);
             long j11 = j10 + 1;
             byte b10 = wVar.a[0];
             boolean z4 = (b10 & 128) != 0;
@@ -84,7 +84,7 @@ public final class g0 {
             } else {
                 Arrays.fill(bArr, (byte) 0);
             }
-            cVar = e(e6, j11, dVar.a, i11);
+            cVar = e(e, j11, dVar.a, i11);
             long j12 = j11 + i11;
             if (z4) {
                 wVar.C(2);
@@ -112,7 +112,7 @@ public final class g0 {
                 }
             } else {
                 iArr[0] = 0;
-                iArr2[0] = h0Var.a - ((int) (j12 - h0Var.b));
+                iArr2[0] = h0Var.b - ((int) (j12 - h0Var.a));
             }
             r3.u uVar = (r3.u) h0Var.c;
             int i14 = h5.d0.a;
@@ -141,32 +141,32 @@ public final class g0 {
                 cVar2.getClass();
                 n3.c.a(cVar2, i16, i17);
             }
-            long j13 = h0Var.b;
+            long j13 = h0Var.a;
             int i18 = (int) (j12 - j13);
-            h0Var.b = j13 + i18;
-            h0Var.a -= i18;
+            h0Var.a = j13 + i18;
+            h0Var.b -= i18;
         }
-        if (!iVar.e(TLObject.FLAG_28)) {
-            iVar.j(h0Var.a);
-            return d(cVar, h0Var.b, iVar.d, h0Var.a);
+        if (!iVar.d(TLObject.FLAG_28)) {
+            iVar.k(h0Var.b);
+            return d(cVar, h0Var.a, iVar.d, h0Var.b);
         }
         wVar.C(4);
-        a4.c e10 = e(cVar, h0Var.b, wVar.a, 4);
+        a4.c e6 = e(cVar, h0Var.a, wVar.a, 4);
         int x10 = wVar.x();
-        h0Var.b += 4;
-        h0Var.a -= 4;
-        iVar.j(x10);
-        a4.c d = d(e10, h0Var.b, iVar.d, x10);
-        h0Var.b += x10;
-        int i19 = h0Var.a - x10;
-        h0Var.a = i19;
+        h0Var.a += 4;
+        h0Var.b -= 4;
+        iVar.k(x10);
+        a4.c d = d(e6, h0Var.a, iVar.d, x10);
+        h0Var.a += x10;
+        int i19 = h0Var.b - x10;
+        h0Var.b = i19;
         ByteBuffer byteBuffer = iVar.h;
         if (byteBuffer == null || byteBuffer.capacity() < i19) {
             iVar.h = ByteBuffer.allocate(i19);
         } else {
             iVar.h.clear();
         }
-        return d(d, h0Var.b, iVar.h, h0Var.a);
+        return d(d, h0Var.a, iVar.h, h0Var.b);
     }
 
     public void a(a4.c cVar) {
@@ -266,13 +266,13 @@ public final class g0 {
         return Math.min(i10, (int) (((a4.c) this.g).b - this.b));
     }
 
-    public g0(ec0 ec0Var) {
+    public g0(dc0 dc0Var) {
         this.d = new ArrayList(50);
         this.e = new ArrayList(50);
         Paint paint = new Paint(1);
         this.f = paint;
         this.a = MediaDataController.MAX_LINKS_COUNT;
-        this.c = ec0Var;
+        this.c = dc0Var;
         paint.setStrokeWidth(AndroidUtilities.dp(1.33f));
     }
 }

@@ -2,35 +2,33 @@ package o3;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import h5.d0;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.UUID;
+import kf.k0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class g implements Comparator, Parcelable {
-    public static final Parcelable.Creator<g> CREATOR = new l4.j(14);
-    public final f[] a;
-    public int b;
+public final class g implements Parcelable {
+    public static final Parcelable.Creator<g> CREATOR = new l4.j(15);
+    public int a;
+    public final UUID b;
     public final String c;
-    public final int d;
+    public final String d;
+    public final byte[] e;
 
-    public g(String str, ArrayList arrayList) {
-        this(str, false, (f[]) arrayList.toArray(new f[0]));
+    public g(UUID uuid, String str, String str2, byte[] bArr) {
+        uuid.getClass();
+        this.b = uuid;
+        this.c = str;
+        str2.getClass();
+        this.d = str2;
+        this.e = bArr;
     }
 
-    public final g a(String str) {
-        return d0.a(this.c, str) ? this : new g(str, false, this.a);
-    }
-
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        f fVar = (f) obj;
-        f fVar2 = (f) obj2;
-        UUID uuid = j3.h.a;
-        return uuid.equals(fVar.b) ? uuid.equals(fVar2.b) ? 0 : 1 : fVar.b.compareTo(fVar2.b);
+    public final boolean a(UUID uuid) {
+        UUID uuid2 = j3.h.a;
+        UUID uuid3 = this.b;
+        return uuid2.equals(uuid3) || uuid.equals(uuid3);
     }
 
     @Override // android.os.Parcelable
@@ -38,47 +36,42 @@ public final class g implements Comparator, Parcelable {
         return 0;
     }
 
-    @Override // java.util.Comparator
     public final boolean equals(Object obj) {
-        if (this == obj) {
+        if (!(obj instanceof g)) {
+            return false;
+        }
+        if (obj == this) {
             return true;
         }
-        if (obj != null && g.class == obj.getClass()) {
-            g gVar = (g) obj;
-            if (d0.a(this.c, gVar.c) && Arrays.equals(this.a, gVar.a)) {
-                return true;
-            }
-        }
-        return false;
+        g gVar = (g) obj;
+        return h5.d0.a(this.c, gVar.c) && h5.d0.a(this.d, gVar.d) && h5.d0.a(this.b, gVar.b) && Arrays.equals(this.e, gVar.e);
     }
 
     public final int hashCode() {
-        if (this.b == 0) {
+        if (this.a == 0) {
+            int hashCode = this.b.hashCode() * 31;
             String str = this.c;
-            this.b = ((str == null ? 0 : str.hashCode()) * 31) + Arrays.hashCode(this.a);
+            this.a = Arrays.hashCode(this.e) + k0.e((hashCode + (str == null ? 0 : str.hashCode())) * 31, 31, this.d);
         }
-        return this.b;
+        return this.a;
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
+        UUID uuid = this.b;
+        parcel.writeLong(uuid.getMostSignificantBits());
+        parcel.writeLong(uuid.getLeastSignificantBits());
         parcel.writeString(this.c);
-        parcel.writeTypedArray(this.a, 0);
-    }
-
-    public g(String str, boolean z4, f... fVarArr) {
-        this.c = str;
-        fVarArr = z4 ? (f[]) fVarArr.clone() : fVarArr;
-        this.a = fVarArr;
-        this.d = fVarArr.length;
-        Arrays.sort(fVarArr, this);
+        parcel.writeString(this.d);
+        parcel.writeByteArray(this.e);
     }
 
     public g(Parcel parcel) {
+        this.b = new UUID(parcel.readLong(), parcel.readLong());
         this.c = parcel.readString();
-        f[] fVarArr = (f[]) parcel.createTypedArray(f.CREATOR);
-        int i10 = d0.a;
-        this.a = fVarArr;
-        this.d = fVarArr.length;
+        String readString = parcel.readString();
+        int i10 = h5.d0.a;
+        this.d = readString;
+        this.e = parcel.createByteArray();
     }
 }

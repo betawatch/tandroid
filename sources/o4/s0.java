@@ -1,16 +1,15 @@
 package o4;
 
 import java.util.Arrays;
-import mh.c3;
 import org.telegram.messenger.TranslateController;
-import org.telegram.ui.yh;
+import org.telegram.ui.ai;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class s0 implements j3.g {
     public static final String f;
     public static final String h;
-    public static final c3 n;
+    public static final m.j0 n;
     public final int a;
     public final String b;
     public final int c;
@@ -21,7 +20,7 @@ public final class s0 implements j3.g {
         int i10 = h5.d0.a;
         f = Integer.toString(0, 36);
         h = Integer.toString(1, 36);
-        n = new c3(4);
+        n = new m.j0(11);
     }
 
     public s0(String str, j3.n0... n0VarArr) {
@@ -49,12 +48,12 @@ public final class s0 implements j3.g {
     }
 
     public static void b(String str, int i10, String str2, String str3) {
-        StringBuilder m9 = yh.m("Different ", str, " combined in one TrackGroup: '", str2, "' (track 0) and '");
-        m9.append(str3);
-        m9.append("' (track ");
-        m9.append(i10);
-        m9.append(")");
-        h5.a.p("TrackGroup", "", new IllegalStateException(m9.toString()));
+        StringBuilder l10 = ai.l("Different ", str, " combined in one TrackGroup: '", str2, "' (track 0) and '");
+        l10.append(str3);
+        l10.append("' (track ");
+        l10.append(i10);
+        l10.append(")");
+        h5.a.p("TrackGroup", "", new IllegalStateException(l10.toString()));
     }
 
     public final int a(j3.n0 n0Var) {
@@ -86,7 +85,7 @@ public final class s0 implements j3.g {
 
     public final int hashCode() {
         if (this.e == 0) {
-            this.e = l.d.e(527, 31, this.b) + Arrays.hashCode(this.d);
+            this.e = kf.k0.e(527, 31, this.b) + Arrays.hashCode(this.d);
         }
         return this.e;
     }

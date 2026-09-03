@@ -1,125 +1,110 @@
 package l;
 
-import android.content.Context;
-import android.content.ContextWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.WindowManager;
-import android.widget.AdapterView;
-import androidx.appcompat.view.menu.ExpandedMenuView;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import androidx.appcompat.view.menu.ListMenuItemView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class h implements y, AdapterView.OnItemClickListener {
-    public Context a;
-    public LayoutInflater b;
-    public l c;
-    public ExpandedMenuView d;
-    public x e;
-    public g f;
+public final class h extends BaseAdapter {
+    public final k a;
+    public int b = -1;
+    public boolean c;
+    public final boolean d;
+    public final LayoutInflater e;
+    public final int f;
 
-    public h(ContextWrapper contextWrapper) {
-        this.a = contextWrapper;
-        this.b = LayoutInflater.from(contextWrapper);
+    public h(k kVar, LayoutInflater layoutInflater, boolean z4, int i10) {
+        this.d = z4;
+        this.e = layoutInflater;
+        this.a = kVar;
+        this.f = i10;
+        a();
     }
 
-    @Override // l.y
-    public final boolean b(n nVar) {
-        return false;
-    }
-
-    @Override // l.y
-    public final void c(l lVar, boolean z4) {
-        x xVar = this.e;
-        if (xVar != null) {
-            xVar.c(lVar, z4);
-        }
-    }
-
-    @Override // l.y
-    public final boolean d() {
-        return false;
-    }
-
-    @Override // l.y
-    public final void e() {
-        g gVar = this.f;
-        if (gVar != null) {
-            gVar.notifyDataSetChanged();
-        }
-    }
-
-    @Override // l.y
-    public final void h(x xVar) {
-        throw null;
-    }
-
-    @Override // l.y
-    public final void i(Context context, l lVar) {
-        if (this.a != null) {
-            this.a = context;
-            if (this.b == null) {
-                this.b = LayoutInflater.from(context);
+    public final void a() {
+        k kVar = this.a;
+        m mVar = kVar.v;
+        if (mVar != null) {
+            kVar.i();
+            ArrayList arrayList = kVar.j;
+            int size = arrayList.size();
+            for (int i10 = 0; i10 < size; i10++) {
+                if (((m) arrayList.get(i10)) == mVar) {
+                    this.b = i10;
+                    return;
+                }
             }
         }
-        this.c = lVar;
-        g gVar = this.f;
-        if (gVar != null) {
-            gVar.notifyDataSetChanged();
-        }
+        this.b = -1;
     }
 
-    @Override // l.y
-    public final boolean j(e0 e0Var) {
-        boolean hasVisibleItems = e0Var.hasVisibleItems();
-        Context context = e0Var.a;
-        if (!hasVisibleItems) {
-            return false;
-        }
-        m mVar = new m();
-        mVar.a = e0Var;
-        p2.v vVar = new p2.v(context);
-        g.c cVar = (g.c) vVar.c;
-        h hVar = new h(cVar.a);
-        mVar.c = hVar;
-        hVar.e = mVar;
-        e0Var.b(hVar, context);
-        h hVar2 = mVar.c;
-        if (hVar2.f == null) {
-            hVar2.f = new g(hVar2);
-        }
-        cVar.i = hVar2.f;
-        cVar.j = mVar;
-        View view = e0Var.o;
-        if (view != null) {
-            cVar.e = view;
+    @Override // android.widget.Adapter
+    /* renamed from: b, reason: merged with bridge method [inline-methods] */
+    public final m getItem(int i10) {
+        ArrayList l10;
+        boolean z4 = this.d;
+        k kVar = this.a;
+        if (z4) {
+            kVar.i();
+            l10 = kVar.j;
         } else {
-            cVar.c = e0Var.n;
-            cVar.d = e0Var.m;
+            l10 = kVar.l();
         }
-        cVar.h = mVar;
-        g.f d = vVar.d();
-        mVar.b = d;
-        d.setOnDismissListener(mVar);
-        WindowManager.LayoutParams attributes = mVar.b.getWindow().getAttributes();
-        attributes.type = 1003;
-        attributes.flags |= 131072;
-        mVar.b.show();
-        x xVar = this.e;
-        if (xVar == null) {
-            return true;
+        int i11 = this.b;
+        if (i11 >= 0 && i10 >= i11) {
+            i10++;
         }
-        xVar.d0(e0Var);
-        return true;
+        return (m) l10.get(i10);
     }
 
-    @Override // l.y
-    public final boolean k(n nVar) {
-        return false;
+    @Override // android.widget.Adapter
+    public final int getCount() {
+        ArrayList l10;
+        boolean z4 = this.d;
+        k kVar = this.a;
+        if (z4) {
+            kVar.i();
+            l10 = kVar.j;
+        } else {
+            l10 = kVar.l();
+        }
+        return this.b < 0 ? l10.size() : l10.size() - 1;
     }
 
-    @Override // android.widget.AdapterView.OnItemClickListener
-    public final void onItemClick(AdapterView adapterView, View view, int i10, long j10) {
-        this.c.q(this.f.getItem(i10), this, 0);
+    @Override // android.widget.Adapter
+    public final long getItemId(int i10) {
+        return i10;
+    }
+
+    @Override // android.widget.Adapter
+    public final View getView(int i10, View view, ViewGroup viewGroup) {
+        boolean z4 = false;
+        if (view == null) {
+            view = this.e.inflate(this.f, viewGroup, false);
+        }
+        int i11 = getItem(i10).b;
+        int i12 = i10 - 1;
+        int i13 = i12 >= 0 ? getItem(i12).b : i11;
+        ListMenuItemView listMenuItemView = (ListMenuItemView) view;
+        if (this.a.m() && i11 != i13) {
+            z4 = true;
+        }
+        listMenuItemView.setGroupDividerEnabled(z4);
+        y yVar = (y) view;
+        if (this.c) {
+            listMenuItemView.setForceShowIcon(true);
+        }
+        yVar.b(getItem(i10));
+        return view;
+    }
+
+    @Override // android.widget.BaseAdapter
+    public final void notifyDataSetChanged() {
+        a();
+        super.notifyDataSetChanged();
     }
 }

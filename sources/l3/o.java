@@ -1,6 +1,6 @@
 package l3;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
@@ -24,14 +24,14 @@ public final /* synthetic */ class o implements Runnable {
                 int i11 = h5.d0.a;
                 k3.f fVar = ((j3.c0) qVar).a.q;
                 k3.a p10 = fVar.p();
-                fVar.q(p10, 1029, new k3.e(p10, exc, 5));
+                fVar.q(p10, 1029, new k3.e(p10, exc, 6));
                 break;
             default:
                 q qVar2 = (q) bVar.c;
                 int i12 = h5.d0.a;
                 k3.f fVar2 = ((j3.c0) qVar2).a.q;
                 k3.a p11 = fVar2.p();
-                fVar2.q(p11, 1014, new k3.c(p11, exc, 16));
+                fVar2.q(p11, 1014, new k3.c(p11, exc, 17));
                 break;
         }
     }

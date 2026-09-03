@@ -14,7 +14,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class uv0 extends View {
     public int B;
@@ -27,7 +27,7 @@ public final class uv0 extends View {
     public final z5 I;
     public final z5 J;
     public tv0 K;
-    public final org.telegram.ui.ActionBar.g6 L;
+    public final org.telegram.ui.ActionBar.f6 L;
     public final sv0 a;
     public final Paint b;
     public final Paint c;
@@ -43,14 +43,14 @@ public final class uv0 extends View {
     public float x;
     public float y;
 
-    public uv0(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+    public uv0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.s = -1;
         this.G = TLObject.FLAG_31;
-        pr prVar = pr.f;
-        this.I = new z5(this, 120L, prVar);
-        this.J = new z5(this, 150L, prVar);
-        this.L = g6Var;
+        mr mrVar = mr.f;
+        this.I = new z5(this, 120L, mrVar);
+        this.J = new z5(this, 150L, mrVar);
+        this.L = f6Var;
         this.b = new Paint(1);
         TextPaint textPaint = new TextPaint(1);
         this.d = textPaint;
@@ -70,7 +70,7 @@ public final class uv0 extends View {
         this.F = i10;
         tv0 tv0Var = this.K;
         if (tv0Var != null) {
-            tv0Var.i(i10);
+            tv0Var.g(i10);
         }
         invalidate();
     }
@@ -104,7 +104,7 @@ public final class uv0 extends View {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         int i10;
-        org.telegram.ui.ActionBar.g6 g6Var;
+        org.telegram.ui.ActionBar.f6 f6Var;
         int i11;
         Canvas canvas2 = canvas;
         float d = this.I.d(this.F, false);
@@ -116,18 +116,18 @@ public final class uv0 extends View {
         int i13 = 0;
         while (true) {
             int length = this.C.length;
-            org.telegram.ui.ActionBar.g6 g6Var2 = this.L;
+            org.telegram.ui.ActionBar.f6 f6Var2 = this.L;
             Paint paint = this.b;
             if (i13 >= length) {
                 float f12 = this.n;
                 int i14 = (this.h * 2) + this.r;
                 int i15 = this.f;
                 float f13 = ((i14 + i15) * d) + f12 + (i15 / 2);
-                int i16 = org.telegram.ui.ActionBar.k6.N6;
-                paint.setColor(i0.a.k(org.telegram.ui.ActionBar.k6.v0(i16, g6Var2), 80));
+                int i16 = org.telegram.ui.ActionBar.j6.N6;
+                paint.setColor(i0.a.k(org.telegram.ui.ActionBar.j6.v0(i16, f6Var2), 80));
                 float f14 = dp;
                 canvas2.drawCircle(f13, f14, AndroidUtilities.dp(d10 * 12.0f), paint);
-                paint.setColor(org.telegram.ui.ActionBar.k6.v0(i16, g6Var2));
+                paint.setColor(org.telegram.ui.ActionBar.j6.v0(i16, f6Var2));
                 canvas2.drawCircle(f13, f14, AndroidUtilities.dp(6.0f), paint);
                 return;
             }
@@ -138,11 +138,11 @@ public final class uv0 extends View {
             float f15 = i13;
             float f16 = f15 - d;
             float max = Math.max(f10, f11 - Math.abs(f16));
-            float a2 = k7.o.a((d - f15) + f11, f10, f11);
-            int v02 = org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.M6, g6Var2);
-            int v03 = org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.N6, g6Var2);
+            float a2 = k7.n.a((d - f15) + f11, f10, f11);
+            int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.M6, f6Var2);
+            int v03 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.N6, f6Var2);
             int i21 = this.G;
-            int d11 = i0.a.d(a2, v02, org.telegram.ui.ActionBar.k6.l1((i21 == Integer.MIN_VALUE || i13 > i21) ? 1.0f : 0.5f, v03));
+            int d11 = i0.a.d(a2, v02, org.telegram.ui.ActionBar.j6.l1((i21 == Integer.MIN_VALUE || i13 > i21) ? 1.0f : 0.5f, v03));
             paint.setColor(d11);
             Paint paint2 = this.c;
             paint2.setColor(d11);
@@ -155,10 +155,10 @@ public final class uv0 extends View {
                 int i25 = this.s;
                 if (i25 == -1 || i13 - 1 < i25) {
                     i10 = i20;
-                    g6Var = g6Var2;
+                    f6Var = f6Var2;
                     float f18 = f16 - 1.0f;
-                    float a10 = k7.o.a(1.0f - Math.abs(f18), 0.0f, 1.0f);
-                    int dp2 = (int) (i23 - (AndroidUtilities.dp(3.0f) * k7.o.a(1.0f - Math.min(Math.abs(f16), Math.abs(f18)), 0.0f, 1.0f)));
+                    float a10 = k7.n.a(1.0f - Math.abs(f18), 0.0f, 1.0f);
+                    int dp2 = (int) (i23 - (AndroidUtilities.dp(3.0f) * k7.n.a(1.0f - Math.min(Math.abs(f16), Math.abs(f18)), 0.0f, 1.0f)));
                     canvas2 = canvas;
                     canvas2.drawRect((int) ((AndroidUtilities.dp(3.0f) * a10) + i24), dp - AndroidUtilities.dp(1.0f), dp2 + r2, AndroidUtilities.dp(1.0f) + dp, paint);
                 } else {
@@ -173,17 +173,17 @@ public final class uv0 extends View {
                         i11 = dp3;
                         i10 = i20;
                     }
-                    g6Var = g6Var2;
+                    f6Var = f6Var2;
                     canvas2 = canvas;
                     canvas2.drawLine(AndroidUtilities.dp(1.0f) + i11, f17, (i11 + r12) - AndroidUtilities.dp(1.0f), f17, paint2);
                 }
             } else {
                 i10 = i20;
-                g6Var = g6Var2;
+                f6Var = f6Var2;
             }
             int i26 = this.D[i13];
             String str = this.C[i13];
-            int d12 = i0.a.d(max, org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.y6, g6Var), org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.n6, g6Var));
+            int d12 = i0.a.d(max, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.y6, f6Var), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.n6, f6Var));
             TextPaint textPaint = this.d;
             textPaint.setColor(d12);
             if (this.E != null) {
@@ -240,7 +240,7 @@ public final class uv0 extends View {
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         float x10 = motionEvent.getX();
         float y10 = motionEvent.getY();
-        float a2 = k7.o.a(((this.f / 2.0f) + (x10 - this.n)) / (((this.h * 2) + this.r) + r3), 0.0f, this.C.length - 1);
+        float a2 = k7.n.a(((this.f / 2.0f) + (x10 - this.n)) / (((this.h * 2) + this.r) + r3), 0.0f, this.C.length - 1);
         boolean z4 = Math.abs(a2 - ((float) Math.round(a2))) < 0.35f;
         if (z4) {
             a2 = Math.round(a2);
@@ -292,7 +292,7 @@ public final class uv0 extends View {
         }
         tv0 tv0Var = this.K;
         if (tv0Var != null) {
-            tv0Var.m();
+            tv0Var.j();
         }
         this.w = false;
         this.v = false;

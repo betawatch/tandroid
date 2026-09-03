@@ -2,7 +2,7 @@ package com.google.android.gms.internal.vision;
 
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class r0 extends e1 {
     public static final Logger f = Logger.getLogger(r0.class.getName());
@@ -122,8 +122,8 @@ public final class r0 extends e1 {
             int i10 = this.e;
             this.e = i10 + 1;
             bArr[i10] = b10;
-        } catch (IndexOutOfBoundsException e6) {
-            throw new s0(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.e), Integer.valueOf(this.d), 1), e6);
+        } catch (IndexOutOfBoundsException e) {
+            throw new s0(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.e), Integer.valueOf(this.d), 1), e);
         }
     }
 
@@ -160,8 +160,8 @@ public final class r0 extends e1 {
                 this.e = i12 + 1;
                 bArr[i12] = (byte) ((((int) j10) & 127) | 128);
                 j10 >>>= 7;
-            } catch (IndexOutOfBoundsException e6) {
-                throw new s0(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.e), Integer.valueOf(this.d), 1), e6);
+            } catch (IndexOutOfBoundsException e) {
+                throw new s0(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.e), Integer.valueOf(this.d), 1), e);
             }
         }
         int i13 = this.e;
@@ -183,8 +183,8 @@ public final class r0 extends e1 {
                     this.e = i11 + 1;
                     bArr[i11] = (byte) ((i10 & 127) | 128);
                     i10 >>>= 7;
-                } catch (IndexOutOfBoundsException e6) {
-                    throw new s0(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.e), Integer.valueOf(this.d), 1), e6);
+                } catch (IndexOutOfBoundsException e) {
+                    throw new s0(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.e), Integer.valueOf(this.d), 1), e);
                 }
             }
             int i12 = this.e;
@@ -263,8 +263,8 @@ public final class r0 extends e1 {
             bArr[i16] = (byte) (j10 >> 48);
             this.e = i10 + 8;
             bArr[i17] = (byte) (j10 >> 56);
-        } catch (IndexOutOfBoundsException e6) {
-            throw new s0(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.e), Integer.valueOf(this.d), 1), e6);
+        } catch (IndexOutOfBoundsException e) {
+            throw new s0(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.e), Integer.valueOf(this.d), 1), e);
         }
     }
 
@@ -272,8 +272,8 @@ public final class r0 extends e1 {
         try {
             System.arraycopy(bArr, i10, this.c, this.e, i11);
             this.e += i11;
-        } catch (IndexOutOfBoundsException e6) {
-            throw new s0(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.e), Integer.valueOf(this.d), Integer.valueOf(i11)), e6);
+        } catch (IndexOutOfBoundsException e) {
+            throw new s0(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.e), Integer.valueOf(this.d), Integer.valueOf(i11)), e);
         }
     }
 
@@ -292,8 +292,8 @@ public final class r0 extends e1 {
             bArr[i13] = (byte) (i10 >> 16);
             this.e = i11 + 4;
             bArr[i14] = (byte) (i10 >>> 24);
-        } catch (IndexOutOfBoundsException e6) {
-            throw new s0(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.e), Integer.valueOf(this.d), 1), e6);
+        } catch (IndexOutOfBoundsException e) {
+            throw new s0(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.e), Integer.valueOf(this.d), 1), e);
         }
     }
 }

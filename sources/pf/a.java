@@ -1,19 +1,18 @@
 package pf;
 
-import java.nio.ShortBuffer;
-import z9.d;
+import android.graphics.Bitmap;
+import java.util.List;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public interface a {
-    public static final db.a t;
-    public static final d u;
+public final class a {
+    public final int a;
+    public final Bitmap b;
+    public final List c;
 
-    static {
-        int i10 = 19;
-        t = new db.a(i10);
-        u = new d(i10);
+    public a(Bitmap bitmap, int i10, List list) {
+        this.c = list;
+        this.b = bitmap;
+        this.a = i10;
     }
-
-    void u0(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11, int i12);
 }

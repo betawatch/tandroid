@@ -2,7 +2,7 @@ package j7;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class m8 {
     public static c9.b a(String str, String str2) {
@@ -13,11 +13,11 @@ public abstract class m8 {
         return b10.b();
     }
 
-    public static c9.b b(String str, sg.a aVar) {
+    public static c9.b b(String str, s0.b bVar) {
         c9.a b10 = c9.b.b(ja.a.class);
         b10.c = 1;
-        b10.a(c9.l.b(Context.class));
-        b10.g = new c1.b(18, str, aVar);
+        b10.a(c9.m.b(Context.class));
+        b10.g = new c1.b(18, str, bVar);
         return b10.b();
     }
 }

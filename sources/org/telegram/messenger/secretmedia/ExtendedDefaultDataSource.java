@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.FileStreamLoadOperation;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class ExtendedDefaultDataSource implements m {
     private static final String SCHEME_ASSET = "asset";
@@ -115,8 +115,8 @@ public final class ExtendedDefaultDataSource implements m {
                 addListenersToDataSource(mVar);
             } catch (ClassNotFoundException unused) {
                 a.K(TAG, "Attempting to play RTMP stream without depending on the RTMP extension");
-            } catch (Exception e6) {
-                throw new RuntimeException("Error instantiating RTMP extension", e6);
+            } catch (Exception e) {
+                throw new RuntimeException("Error instantiating RTMP extension", e);
             }
             if (this.rtmpDataSource == null) {
                 this.rtmpDataSource = this.baseDataSource;

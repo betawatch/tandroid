@@ -30,9 +30,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class zy0 implements org.telegram.ui.Components.kl0 {
+public final class zy0 implements org.telegram.ui.Components.jl0 {
     public int a = 0;
     public final /* synthetic */ Context b;
     public final /* synthetic */ ProfileActivity c;
@@ -78,12 +78,12 @@ public final class zy0 implements org.telegram.ui.Components.kl0 {
             zy0Var.c.j5();
             zy0Var.c.d.l();
             if (BuildVars.LOGS_ENABLED) {
-                l.d.x(new StringBuilder("app start time = "), ApplicationLoader.startTime);
+                kf.k0.x(new StringBuilder("app start time = "), ApplicationLoader.startTime);
                 try {
                     FileLog.d("buildVersion = " + ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0).versionCode);
                     return;
-                } catch (Exception e6) {
-                    FileLog.e(e6);
+                } catch (Exception e) {
+                    FileLog.e(e);
                     return;
                 }
             }
@@ -97,7 +97,7 @@ public final class zy0 implements org.telegram.ui.Components.kl0 {
             zy0Var.c.getMessagesStorage().clearSentMedia();
             SharedConfig.setNoSoundHintShowed(false);
             org.telegram.messenger.y3.d(org.telegram.messenger.y3.d(org.telegram.messenger.y3.d(org.telegram.messenger.y3.d(org.telegram.messenger.y3.d(org.telegram.messenger.y3.d(org.telegram.messenger.y3.d(org.telegram.messenger.y3.d(org.telegram.messenger.y3.d(MessagesController.getGlobalMainSettings().edit().remove("archivehint").remove("proximityhint").remove("archivehint_l"), "searchpostsnew", "speedhint", "gifhint", "reminderhint"), "soundHint", "themehint", "bganimationhint", "filterhint"), "n_0", "storyprvhint", "storyhint", "storyhint2"), "storydualhint", "storysvddualhint", "stories_camera", "dualcam"), "dualmatrix", "dual_available", "archivehint", "askNotificationsAfter"), "askNotificationsDuration", "viewoncehint", "voicepausehint", "taptostorysoundhint"), "nothanos", "voiceoncehint", "savedhint", "savedsearchhint"), "savedsearchtaghint", "newppsms", "monetizationadshint", "seekSpeedHintShowed"), "unsupport_video/av01", "statusgiftpage", "multistorieshint", "trimvoicehint").remove("taptostoryhighlighthint").apply();
-            k7.b6.a();
+            k7.a6.a();
             i13 = ((org.telegram.ui.ActionBar.p2) zy0Var.c).currentAccount;
             MessagesController.getEmojiSettings(i13).edit().remove("featured_hidden").remove("emoji_featured_hidden").commit();
             SharedConfig.textSelectionHintShows = 0;
@@ -119,7 +119,7 @@ public final class zy0 implements org.telegram.ui.Components.kl0 {
             zy0Var.c.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.newSuggestionsAvailable, new Object[0]);
             t31.W();
             i15 = ((org.telegram.ui.ActionBar.p2) zy0Var.c).currentAccount;
-            dg.e1.e(i15).a();
+            cg.f1.e(i15).a();
             SharedPreferences mainSettings = zy0Var.c.getMessagesController().getMainSettings();
             SharedPreferences.Editor edit = mainSettings.edit();
             org.telegram.messenger.y3.d(edit, "peerColors", "profilePeerColors", "boostingappearance", "bizbothint").remove("movecaptionhint");
@@ -141,7 +141,7 @@ public final class zy0 implements org.telegram.ui.Components.kl0 {
             return;
         }
         if (i10 == 7) {
-            org.telegram.ui.Components.voip.g2.i(zy0Var.c.getParentActivity());
+            org.telegram.ui.Components.voip.f2.i(zy0Var.c.getParentActivity());
             return;
         }
         if (i10 == 8) {
@@ -204,7 +204,7 @@ public final class zy0 implements org.telegram.ui.Components.kl0 {
                 return;
             }
             if (i10 == 18) {
-                bb.a.a((LaunchActivity) zy0Var.c.getParentActivity(), !SharedConfig.isFloatingDebugActive, true);
+                k7.x8.a((LaunchActivity) zy0Var.c.getParentActivity(), !SharedConfig.isFloatingDebugActive, true);
                 return;
             }
             if (i10 == 19) {
@@ -231,7 +231,7 @@ public final class zy0 implements org.telegram.ui.Components.kl0 {
                     return;
                 }
                 if (i10 == 23) {
-                    boolean q10 = qh.v0.q(zy0Var.c.getParentActivity());
+                    boolean q10 = ph.v0.q(zy0Var.c.getParentActivity());
                     MessagesController.getGlobalMainSettings().edit().putBoolean("dual_available", !q10).apply();
                     Toast.makeText(zy0Var.c.getParentActivity(), LocaleController.getString(!q10 ? R.string.DebugMenuDualOnToast : R.string.DebugMenuDualOffToast), 0).show();
                     return;
@@ -262,10 +262,10 @@ public final class zy0 implements org.telegram.ui.Components.kl0 {
                     return;
                 }
                 if (i10 == 29) {
-                    sh.p.b();
-                    sh.q0.c();
-                    sh.h0.a();
-                    sh.w3.c();
+                    rh.p.b();
+                    rh.q0.c();
+                    rh.h0.a();
+                    rh.w3.c();
                     return;
                 }
                 if (i10 == 30) {
@@ -471,11 +471,11 @@ public final class zy0 implements org.telegram.ui.Components.kl0 {
     /* JADX WARN: Removed duplicated region for block: B:133:0x0209  */
     /* JADX WARN: Removed duplicated region for block: B:134:0x01f0  */
     /* JADX WARN: Removed duplicated region for block: B:135:0x01e5  */
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean f(int i10, View view) {
+    public final boolean d(int i10, View view) {
         String str;
         int i11;
         String string;
@@ -516,8 +516,8 @@ public final class zy0 implements org.telegram.ui.Components.kl0 {
                 AndroidUtilities.addToClipboard(UserInfoActivity.Z(userFull.birthday));
                 org.telegram.ui.Components.qc.a0(profileActivity).i(LocaleController.getString(R.string.BirthdayCopied)).j();
                 return true;
-            } catch (Exception e6) {
-                FileLog.e(e6);
+            } catch (Exception e) {
+                FileLog.e(e);
                 return true;
             }
         }
@@ -527,8 +527,8 @@ public final class zy0 implements org.telegram.ui.Components.kl0 {
             try {
                 Toast.makeText(profileActivity.getParentActivity(), LocaleController.getString("DebugMenuLongPress", R.string.DebugMenuLongPress), 0).show();
                 return true;
-            } catch (Exception e10) {
-                FileLog.e(e10);
+            } catch (Exception e6) {
+                FileLog.e(e6);
                 return true;
             }
         }
@@ -589,8 +589,8 @@ public final class zy0 implements org.telegram.ui.Components.kl0 {
         String str11 = z10 ? "Force remove premium suggestions" : null;
         String str12 = z10 ? "Share device info" : null;
         String str13 = z10 ? "Force performance class" : null;
-        String str14 = (!z10 || org.telegram.ui.Components.z50.c()) ? null : !SharedConfig.bigCameraForRound ? "Force big camera for round" : "Disable big camera for round";
-        String string15 = LocaleController.getString(qh.v0.q(profileActivity.getParentActivity()) ? "DebugMenuDualOff" : "DebugMenuDualOn");
+        String str14 = (!z10 || org.telegram.ui.Components.y50.c()) ? null : !SharedConfig.bigCameraForRound ? "Force big camera for round" : "Disable big camera for round";
+        String string15 = LocaleController.getString(ph.v0.q(profileActivity.getParentActivity()) ? "DebugMenuDualOff" : "DebugMenuDualOn");
         String str15 = BuildVars.DEBUG_VERSION ? SharedConfig.useSurfaceInStories ? "back to TextureView in stories" : "use SurfaceView in stories" : null;
         String str16 = BuildVars.DEBUG_PRIVATE_VERSION ? SharedConfig.photoViewerBlur ? "do not blur in photoviewer" : "blur in photoviewer" : null;
         String str17 = !SharedConfig.payByInvoice ? "Enable Invoice Payment" : "Disable Invoice Payment";
@@ -653,7 +653,7 @@ public final class zy0 implements org.telegram.ui.Components.kl0 {
                 charSequenceArr[36] = str25;
                 charSequenceArr[37] = "Make Memory Dump";
                 charSequenceArr[38] = str26;
-                alertDialog$Builder.f(charSequenceArr, new dg.t1(10, this, this.b));
+                alertDialog$Builder.f(charSequenceArr, new cg.u1(10, this, this.b));
                 alertDialog$Builder.h(LocaleController.getString("Cancel", R.string.Cancel), null);
                 profileActivity.showDialog(d2Var);
                 return true;
@@ -713,7 +713,7 @@ public final class zy0 implements org.telegram.ui.Components.kl0 {
         charSequenceArr2[36] = str25;
         charSequenceArr2[37] = "Make Memory Dump";
         charSequenceArr2[38] = str26;
-        alertDialog$Builder.f(charSequenceArr2, new dg.t1(10, this, this.b));
+        alertDialog$Builder.f(charSequenceArr2, new cg.u1(10, this, this.b));
         alertDialog$Builder.h(LocaleController.getString("Cancel", R.string.Cancel), null);
         profileActivity.showDialog(d2Var);
         return true;

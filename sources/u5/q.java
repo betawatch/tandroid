@@ -10,7 +10,7 @@ import q5.b0;
 import q5.f0;
 import q5.g0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class q {
     public final b a;
@@ -61,9 +61,9 @@ public abstract class q {
             Log.w(bVar2.a, bVar2.d("Message send failed. Message exceeds maximum size", new Object[0]));
             throw new IllegalArgumentException("Message exceeds maximum size524288");
         }
-        com.google.android.gms.common.api.internal.v e6 = com.google.android.gms.common.api.internal.w.e();
-        e6.c = new b0(f0Var, str2, str, 1);
-        e6.a = 8405;
-        f0Var.e(1, e6.e()).addOnFailureListener(new f2.c(mVar, j10, 8));
+        com.google.android.gms.common.api.internal.v e = com.google.android.gms.common.api.internal.w.e();
+        e.c = new b0(f0Var, str2, str, 1);
+        e.a = 8405;
+        f0Var.e(1, e.e()).addOnFailureListener(new f2.c(mVar, j10, 8));
     }
 }

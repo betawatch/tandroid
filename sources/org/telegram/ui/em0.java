@@ -8,7 +8,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SecureDocument;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class em0 extends fu0 {
     public final /* synthetic */ fn0 a;
@@ -31,17 +31,17 @@ public final class em0 extends fu0 {
         String str = null;
         if (i12 == 1) {
             fn0Var.g1 = null;
-            str = yh.k("selfie", n12);
+            str = vh.w2.e("selfie", n12);
         } else if (i12 == 4) {
-            str = yh.k("translation", n12);
+            str = vh.w2.e("translation", n12);
         } else if (i12 == 2) {
             fn0Var.i1 = null;
-            str = yh.k("front", n12);
+            str = vh.w2.e("front", n12);
         } else if (i12 == 3) {
             fn0Var.j1 = null;
-            str = yh.k("reverse", n12);
+            str = vh.w2.e("reverse", n12);
         } else if (i12 == 0) {
-            str = yh.k("files", n12);
+            str = vh.w2.e("files", n12);
         }
         if (str != null) {
             HashMap hashMap = fn0Var.u1;

@@ -1,190 +1,141 @@
 package wh;
 
-import android.text.SpannableString;
-import android.view.KeyEvent;
+import android.content.Context;
+import android.graphics.PointF;
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.d51;
-import org.telegram.ui.Components.my;
+import android.view.ViewGroup;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
+import f2.g1;
+import f2.h1;
+import f2.i0;
+import f2.v0;
+import f2.w0;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
-public final class o implements my {
-    public final /* synthetic */ q a;
+public class o extends h1 {
+    public final LinearInterpolator i;
+    public final DecelerateInterpolator j;
+    public final float k;
+    public int l;
+    public int m;
+    public final int n;
+    public final float o;
+    public int p;
 
-    public o(q qVar) {
-        this.a = qVar;
+    public o(Context context, int i10) {
+        this.i = new LinearInterpolator();
+        this.j = new DecelerateInterpolator(1.5f);
+        this.l = 0;
+        this.m = 0;
+        this.o = 1.0f;
+        this.k = 25.0f / context.getResources().getDisplayMetrics().densityDpi;
+        this.n = i10;
     }
 
-    @Override // org.telegram.ui.Components.my
-    public final /* synthetic */ boolean A() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.my
-    public final /* synthetic */ long a() {
-        return 0L;
-    }
-
-    @Override // org.telegram.ui.Components.my
-    public final /* synthetic */ boolean b() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.my
-    public final /* synthetic */ boolean c() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.my
-    public final /* synthetic */ int f() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.my
-    public final /* synthetic */ boolean g() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.my
-    public final void i(int i10) {
-        e1 focusedEditTextOrNull;
-        q qVar = this.a;
-        if (i10 != 0 && (focusedEditTextOrNull = qVar.r.getFocusedEditTextOrNull()) != null) {
-            qVar.C = focusedEditTextOrNull;
-            qVar.D = Math.max(0, focusedEditTextOrNull.getSelectionEnd());
+    @Override // f2.h1
+    public final PointF a(int i10) {
+        v0 v0Var = this.c;
+        if (v0Var instanceof i0) {
+            return ((i0) v0Var).E0(i10);
         }
-        qVar.y = i10 != 0;
-        qVar.S();
+        return null;
     }
 
-    @Override // org.telegram.ui.Components.my
-    public final /* synthetic */ boolean j() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.my
-    public final boolean k() {
-        e1 M = q.M(this.a);
-        if (M == null || M.length() == 0) {
-            return false;
-        }
-        M.dispatchKeyEvent(new KeyEvent(0, 67));
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.my
-    public final void l(String str) {
-        q qVar = this.a;
-        e1 M = q.M(qVar);
-        if (M == null) {
+    @Override // f2.h1
+    public final void d(int i10, int i11, g1 g1Var) {
+        if (this.b.x.r() == 0) {
+            h();
             return;
         }
-        int N = q.N(qVar, M);
-        try {
-            CharSequence replaceEmoji = Emoji.replaceEmoji((CharSequence) str, M.getPaint().getFontMetricsInt(), false, (int[]) null);
-            M.setText(M.getText().insert(N, replaceEmoji));
-            int length = N + replaceEmoji.length();
-            M.setSelection(length, length);
-            if (M == qVar.C) {
-                qVar.D = length;
+        int i12 = this.l;
+        int i13 = i12 - i10;
+        if (i12 * i13 <= 0) {
+            i13 = 0;
+        }
+        this.l = i13;
+        int i14 = this.m;
+        int i15 = i14 - i11;
+        int i16 = i14 * i15 > 0 ? i15 : 0;
+        this.m = i16;
+        if (i13 == 0 && i16 == 0) {
+            PointF a2 = a(this.a);
+            if (a2 == null || (a2.x == 0.0f && a2.y == 0.0f)) {
+                g1Var.d = this.a;
+                h();
+            } else {
+                h1.b(a2);
+                this.l = (int) (a2.x * 10000.0f);
+                this.m = (int) (a2.y * 10000.0f);
+                g1Var.b((int) (this.l * 1.2f), (int) (this.m * 1.2f), (int) (((int) Math.ceil(Math.abs(10000) * this.k)) * 1.2f), this.i);
             }
-        } catch (Exception unused) {
         }
     }
 
-    @Override // org.telegram.ui.Components.my
-    public final /* synthetic */ float p() {
-        return 0.0f;
+    @Override // f2.h1
+    public final void f() {
+        this.m = 0;
+        this.l = 0;
     }
 
-    @Override // org.telegram.ui.Components.my
-    public final void x(long j10, TLRPC.Document document, String str, boolean z4) {
-        q qVar = this.a;
-        e1 M = q.M(qVar);
-        if (M == null) {
-            return;
-        }
-        int N = q.N(qVar, M);
-        try {
-            if (str == null) {
-                str = "😀";
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x005a, code lost:
+    
+        if (r0 < 0) goto L22;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x007b  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x008d  */
+    @Override // f2.h1
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void g(View view, g1 g1Var) {
+        int i10;
+        int ceil;
+        v0 v0Var = this.c;
+        if (v0Var != null && v0Var.e()) {
+            w0 w0Var = (w0) view.getLayoutParams();
+            int z4 = v0.z(view) - ((ViewGroup.MarginLayoutParams) w0Var).topMargin;
+            int v = v0.v(view) + ((ViewGroup.MarginLayoutParams) w0Var).bottomMargin;
+            int C = (v0Var.n - v0Var.C()) - v0Var.F();
+            int i11 = v - z4;
+            int i12 = this.n;
+            int F = i12 == 2 ? v0Var.F() + this.p : i11 > C ? 0 : i12 == 0 ? (C - i11) / 2 : (v0Var.F() + this.p) - AndroidUtilities.dp(88.0f);
+            int i13 = i11 + F;
+            i10 = F - z4;
+            if (i10 <= 0) {
+                i10 = i13 - v;
             }
-            SpannableString spannableString = new SpannableString(str);
-            org.telegram.ui.Components.u5 u5Var = document != null ? new org.telegram.ui.Components.u5(document, M.getPaint().getFontMetricsInt()) : new org.telegram.ui.Components.u5(j10, M.getPaint().getFontMetricsInt());
-            u5Var.cacheType = org.telegram.ui.Components.l5.g();
-            spannableString.setSpan(u5Var, 0, spannableString.length(), 33);
-            M.setText(M.getText().insert(N, spannableString));
-            int length = N + spannableString.length();
-            M.setSelection(length, length);
-            if (M == qVar.C) {
-                qVar.D = length;
+            ceil = (int) Math.ceil(((int) Math.ceil(Math.abs(i10) * this.k)) / 0.3356d);
+            if (ceil <= 0) {
+                g1Var.b(0, -i10, Math.max((int) (this.o * 400.0f), ceil), this.j);
+                return;
+            } else {
+                i();
+                return;
             }
-        } catch (Exception unused) {
+        }
+        i10 = 0;
+        ceil = (int) Math.ceil(((int) Math.ceil(Math.abs(i10) * this.k)) / 0.3356d);
+        if (ceil <= 0) {
         }
     }
 
-    @Override // org.telegram.ui.Components.my
-    public final boolean z() {
-        return this.a.y;
+    public o(Context context, int i10, float f10) {
+        this.i = new LinearInterpolator();
+        this.j = new DecelerateInterpolator(1.5f);
+        this.l = 0;
+        this.m = 0;
+        this.o = f10;
+        this.k = (25.0f / context.getResources().getDisplayMetrics().densityDpi) * f10;
+        this.n = i10;
     }
 
-    @Override // org.telegram.ui.Components.my
-    public final /* synthetic */ void n() {
+    @Override // f2.h1
+    public void e() {
     }
 
-    @Override // org.telegram.ui.Components.my
-    public final /* synthetic */ void q() {
-    }
-
-    @Override // org.telegram.ui.Components.my
-    public final /* synthetic */ void u() {
-    }
-
-    @Override // org.telegram.ui.Components.my
-    public final /* synthetic */ void w() {
-    }
-
-    @Override // org.telegram.ui.Components.my
-    public final /* synthetic */ void h(TLRPC.StickerSetCovered stickerSetCovered) {
-    }
-
-    @Override // org.telegram.ui.Components.my
-    public final /* synthetic */ void o(d51 d51Var) {
-    }
-
-    @Override // org.telegram.ui.Components.my
-    public final /* synthetic */ void r(TLRPC.StickerSetCovered stickerSetCovered) {
-    }
-
-    @Override // org.telegram.ui.Components.my
-    public final /* synthetic */ void s(int i10) {
-    }
-
-    @Override // org.telegram.ui.Components.my
-    public final /* synthetic */ void t(ArrayList arrayList) {
-    }
-
-    @Override // org.telegram.ui.Components.my
-    public final /* synthetic */ void y(long j10) {
-    }
-
-    @Override // org.telegram.ui.Components.my
-    public final /* synthetic */ void e(Object obj, Object obj2) {
-    }
-
-    @Override // org.telegram.ui.Components.my
-    public final /* synthetic */ void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z4) {
-    }
-
-    @Override // org.telegram.ui.Components.my
-    public final /* synthetic */ void m(View view, TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z4, int i10) {
-    }
-
-    @Override // org.telegram.ui.Components.my
-    public final /* synthetic */ void v(View view, Object obj, String str, Object obj2, boolean z4, int i10, int i11) {
+    public void i() {
     }
 }

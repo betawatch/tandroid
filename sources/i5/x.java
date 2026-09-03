@@ -6,8 +6,8 @@ import j3.q0;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.regex.Pattern;
-import mh.g5;
-import oh.v0;
+import lh.g5;
+import nh.v0;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.FileUploadOperation;
 import org.telegram.messenger.MediaDataController;
@@ -19,13 +19,13 @@ import org.telegram.messenger.voip.GroupCallMessagesController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.no;
+import org.telegram.ui.Components.ko;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.py;
+import org.telegram.ui.qy;
 import org.telegram.ui.sf1;
-import org.telegram.ui.xn;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x implements Runnable {
     public final /* synthetic */ int a;
@@ -97,27 +97,27 @@ public final /* synthetic */ class x implements Runnable {
                 ((GroupCallMessagesController) obj2).lambda$processUpdate$3(this.c, this.d, (byte[]) obj);
                 break;
             case 12:
-                ((no) obj2).d(this.c, this.d, (HashSet) obj);
+                ((ko) obj2).d(this.c, this.d, (HashSet) obj);
                 break;
             case 13:
-                py pyVar = (py) obj2;
+                qy qyVar = (qy) obj2;
                 sf1 sf1Var = (sf1) obj;
-                if (pyVar.z2 == null) {
-                    pyVar.finishFragment();
+                if (qyVar.z2 == null) {
+                    qyVar.finishFragment();
                     break;
                 } else {
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(MessagesStorage.TopicKey.of(j11, j10));
-                    pyVar.z2.v(pyVar, arrayList, null, false, pyVar.G2, pyVar.H2, pyVar.I2, sf1Var);
-                    if (pyVar.f2) {
-                        pyVar.z2 = null;
+                    qyVar.z2.w(qyVar, arrayList, null, false, qyVar.G2, qyVar.H2, qyVar.I2, sf1Var);
+                    if (qyVar.f2) {
+                        qyVar.z2 = null;
                         break;
                     }
                 }
                 break;
             default:
                 LaunchActivity launchActivity = (LaunchActivity) obj2;
-                xn xnVar = (xn) obj;
+                zn znVar = (zn) obj;
                 Pattern pattern = LaunchActivity.y1;
                 TLRPC.TL_forumTopic findTopic = MessagesController.getInstance(launchActivity.L).getTopicsController().findTopic(j11, j10);
                 StringBuilder s6 = android.support.v4.media.a.s(j11, "LaunchActivity openForum after load ", " ");
@@ -126,8 +126,8 @@ public final /* synthetic */ class x implements Runnable {
                 s6.append(findTopic);
                 FileLog.d(s6.toString());
                 if (launchActivity.n0 != null) {
-                    bg.e.a(xnVar, MessagesStorage.TopicKey.of(-j11, j10));
-                    ((ActionBarLayout) launchActivity.O()).P(xnVar);
+                    ag.f.a(znVar, MessagesStorage.TopicKey.of(-j11, j10));
+                    ((ActionBarLayout) launchActivity.O()).P(znVar);
                     break;
                 }
                 break;

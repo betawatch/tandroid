@@ -22,7 +22,7 @@ import sa.x;
 import sa.x0;
 import sa.y0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class g {
     public static final c h = c.d;
@@ -186,7 +186,7 @@ public final class g {
                 if (aVar2 != null) {
                     Class value = aVar2.value();
                     if (v.class.isAssignableFrom(value)) {
-                        v vVar3 = (v) jVar.a.z(new wa.a(value)).y2();
+                        v vVar3 = (v) jVar.a.E(new wa.a(value)).u2();
                         v vVar4 = (v) concurrentHashMap.putIfAbsent(cls, vVar3);
                         if (vVar4 != null) {
                             vVar3 = vVar4;
@@ -233,8 +233,8 @@ public final class g {
             try {
                 g(d(stringWriter));
                 return stringWriter.toString();
-            } catch (IOException e6) {
-                throw new j(e6);
+            } catch (IOException e) {
+                throw new j(e);
             }
         }
         Class cls = tLObject.getClass();
@@ -242,8 +242,8 @@ public final class g {
         try {
             f(tLObject, cls, d(stringWriter2));
             return stringWriter2.toString();
-        } catch (IOException e10) {
-            throw new j(e10);
+        } catch (IOException e6) {
+            throw new j(e6);
         }
     }
 
@@ -260,10 +260,10 @@ public final class g {
         try {
             try {
                 b10.write(bVar, obj);
-            } catch (IOException e6) {
-                throw new j(e6);
-            } catch (AssertionError e10) {
-                throw new AssertionError("AssertionError (GSON 2.11.0): " + e10.getMessage(), e10);
+            } catch (IOException e) {
+                throw new j(e);
+            } catch (AssertionError e6) {
+                throw new AssertionError("AssertionError (GSON 2.11.0): " + e6.getMessage(), e6);
             }
         } finally {
             bVar.l(i10);
@@ -286,11 +286,11 @@ public final class g {
             try {
                 try {
                     ra.d.l(kVar, bVar);
-                } catch (IOException e6) {
-                    throw new j(e6);
+                } catch (IOException e) {
+                    throw new j(e);
                 }
-            } catch (AssertionError e10) {
-                throw new AssertionError("AssertionError (GSON 2.11.0): " + e10.getMessage(), e10);
+            } catch (AssertionError e6) {
+                throw new AssertionError("AssertionError (GSON 2.11.0): " + e6.getMessage(), e6);
             }
         } finally {
             bVar.l(i10);

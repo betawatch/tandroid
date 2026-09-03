@@ -1,40 +1,31 @@
 package org.telegram.ui;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class e30 extends f2.v0 {
-    public final /* synthetic */ d60 a;
+public final class e30 extends f2.v {
+    public final /* synthetic */ e60 c;
 
-    public e30(d60 d60Var) {
-        this.a = d60Var;
+    public e30(e60 e60Var) {
+        this.c = e60Var;
     }
 
-    @Override // f2.v0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, f2.j1 j1Var) {
-        recyclerView.getClass();
-        int R = RecyclerView.R(view);
-        if (R >= 0) {
-            rect.setEmpty();
-            x50 x50Var = this.a.M;
-            int i10 = x50Var.D;
-            if (R < i10 || R >= x50Var.E) {
-                return;
-            }
-            int i11 = R - i10;
-            int i12 = d60.C3 ? 6 : 2;
-            int i13 = i11 % i12;
-            if (i13 == 0) {
-                rect.right = AndroidUtilities.dp(2.0f);
-            } else if (i13 == i12 - 1) {
-                rect.left = AndroidUtilities.dp(2.0f);
-            } else {
-                rect.left = AndroidUtilities.dp(1.0f);
-            }
+    @Override // f2.v
+    public final int i(int i10) {
+        y50 y50Var;
+        int i11;
+        int i12;
+        int i13 = e60.C3 ? 6 : 2;
+        if (e60.D3 || i10 < (i11 = (y50Var = this.c.M).D) || i10 >= (i12 = y50Var.E)) {
+            return i13;
         }
+        int i14 = i12 - i11;
+        int i15 = (i10 != i12 - 1 || (!e60.C3 && i14 % 2 == 0)) ? 1 : 2;
+        if (!e60.C3) {
+            return i15;
+        }
+        if (i14 == 1) {
+            return 6;
+        }
+        return i14 == 2 ? 3 : 2;
     }
 }

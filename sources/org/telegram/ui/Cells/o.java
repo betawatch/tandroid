@@ -15,7 +15,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class o extends View {
     public final int a;
@@ -35,7 +35,7 @@ public final class o extends View {
         this.c = 60;
     }
 
-    public final void a(ng.q0 q0Var) {
+    public final void a(mg.q0 q0Var) {
         TLRPC.TL_availableReaction tL_availableReaction;
         TLRPC.Document document;
         String findAnimatedEmojiEmoticon;
@@ -56,7 +56,7 @@ public final class o extends View {
             if (this.n != null) {
                 n10.setColorFilter(new PorterDuffColorFilter(this.n.intValue(), PorterDuff.Mode.MULTIPLY));
             }
-            ng.d a2 = ng.d.a(n10, false, !n10.c());
+            mg.d a2 = mg.d.a(n10, false, !n10.c());
             a2.f(this);
             arrayList.add(a2);
             invalidate();
@@ -104,8 +104,8 @@ public final class o extends View {
                 float f10 = dp2;
                 imageReceiver.setImageCoords((getMeasuredWidth() - dp2) / 2.0f, (getMeasuredHeight() - dp2) / 2.0f, f10, f10);
                 imageReceiver.draw(canvas);
-            } else if (obj instanceof ng.d) {
-                ng.d dVar = (ng.d) obj;
+            } else if (obj instanceof mg.d) {
+                mg.d dVar = (mg.d) obj;
                 dVar.e((int) ((getMeasuredWidth() - dp) / 2.0f), (int) ((getMeasuredHeight() - dp) / 2.0f), (int) ((getMeasuredWidth() + dp) / 2.0f), (int) ((getMeasuredHeight() + dp) / 2.0f));
                 dVar.b(canvas);
                 if (dVar.c()) {
@@ -129,8 +129,8 @@ public final class o extends View {
                 i10++;
                 if (obj instanceof ImageReceiver) {
                     ((ImageReceiver) obj).onDetachedFromWindow();
-                } else if (obj instanceof ng.d) {
-                    ((ng.d) obj).d(this);
+                } else if (obj instanceof mg.d) {
+                    ((mg.d) obj).d(this);
                 }
             }
         }
@@ -157,8 +157,8 @@ public final class o extends View {
             Object obj = arrayList.get(i11);
             if (obj instanceof ImageReceiver) {
                 ((ImageReceiver) obj).setColorFilter(porterDuffColorFilter);
-            } else if (obj instanceof ng.d) {
-                ((ng.d) obj).a.setColorFilter(porterDuffColorFilter2);
+            } else if (obj instanceof mg.d) {
+                ((mg.d) obj).a.setColorFilter(porterDuffColorFilter2);
             }
             i11++;
         }

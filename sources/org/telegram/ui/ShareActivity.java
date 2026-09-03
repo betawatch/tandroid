@@ -18,7 +18,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public class ShareActivity extends Activity {
     public static final /* synthetic */ int b = 0;
@@ -67,10 +67,10 @@ public class ShareActivity extends Activity {
             org.telegram.ui.Components.lq0 N0 = org.telegram.ui.Components.lq0.N0(this, messageObject, null, false, string2);
             this.a = N0;
             N0.setCanceledOnTouchOutside(true);
-            this.a.setOnDismissListener(new v5(this, 16));
+            this.a.setOnDismissListener(new x5(this, 16));
             this.a.show();
-        } catch (Exception e6) {
-            FileLog.e(e6);
+        } catch (Exception e) {
+            FileLog.e(e);
             finish();
         }
     }
@@ -85,8 +85,8 @@ public class ShareActivity extends Activity {
             }
             this.a.dismiss();
             this.a = null;
-        } catch (Exception e6) {
-            FileLog.e(e6);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 }

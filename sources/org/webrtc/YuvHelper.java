@@ -1,8 +1,10 @@
 package org.webrtc;
 
 import java.nio.ByteBuffer;
+import kf.k0;
+import vh.w2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
 public class YuvHelper {
     public static void ABGRToI420(ByteBuffer byteBuffer, int i10, ByteBuffer byteBuffer2, int i11, ByteBuffer byteBuffer3, int i12, ByteBuffer byteBuffer4, int i13, int i14, int i15) {
@@ -17,7 +19,7 @@ public class YuvHelper {
         int i23 = (i17 * i18) + i21;
         int i24 = ((i19 - 1) * i17) + i23 + ((i13 + 1) / 2);
         if (byteBuffer4.capacity() < i24) {
-            StringBuilder m9 = l.d.m(i24, "Expected destination buffer capacity to be at least ", " was ");
+            StringBuilder m9 = k0.m(i24, "Expected destination buffer capacity to be at least ", " was ");
             m9.append(byteBuffer4.capacity());
             throw new IllegalArgumentException(m9.toString());
         }
@@ -46,7 +48,7 @@ public class YuvHelper {
         int i22 = i19 * i20;
         int i23 = (i22 * 2) + i21;
         if (byteBuffer4.capacity() < i23) {
-            StringBuilder m9 = l.d.m(i23, "Expected destination buffer capacity to be at least ", " was ");
+            StringBuilder m9 = k0.m(i23, "Expected destination buffer capacity to be at least ", " was ");
             m9.append(byteBuffer4.capacity());
             throw new IllegalArgumentException(m9.toString());
         }
@@ -64,7 +66,7 @@ public class YuvHelper {
         int i19 = i15 * i16;
         int i20 = (((i14 + 1) / 2) * i17 * 2) + i19;
         if (byteBuffer4.capacity() < i20) {
-            StringBuilder m9 = l.d.m(i20, "Expected destination buffer capacity to be at least ", " was ");
+            StringBuilder m9 = k0.m(i20, "Expected destination buffer capacity to be at least ", " was ");
             m9.append(byteBuffer4.capacity());
             throw new IllegalArgumentException(m9.toString());
         }
@@ -80,7 +82,7 @@ public class YuvHelper {
         if (t6 != null) {
             return t6;
         }
-        throw new NullPointerException(w.c.e(str, " should not be null"));
+        throw new NullPointerException(w2.k(str, " should not be null"));
     }
 
     public static void copyPlane(ByteBuffer byteBuffer, int i10, ByteBuffer byteBuffer2, int i11, int i12, int i13) {

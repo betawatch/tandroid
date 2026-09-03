@@ -1,15 +1,15 @@
 package org.telegram.messenger.voip;
 
-import dg.a1;
+import cg.b1;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.rs;
-import org.telegram.ui.Components.ts;
+import org.telegram.ui.Components.os;
+import org.telegram.ui.Components.qs;
 import org.telegram.ui.Components.w51;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -33,10 +33,10 @@ public final /* synthetic */ class k0 implements RequestDelegate {
                 ((VoIPService) this.d).lambda$startConferenceGroupCall$54(this.b, this.c, (String) this.e, tLObject, tL_error);
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new a1((rs) this.d, this.b, (TLRPC.TL_messages_searchGlobal) this.e, this.c, tLObject, 3));
+                AndroidUtilities.runOnUIThread(new b1((os) this.d, this.b, (TLRPC.TL_messages_searchGlobal) this.e, this.c, tLObject, 3));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new a1((ts) this.d, this.b, (TLRPC.TL_messages_searchGlobal) this.e, this.c, tLObject, 4));
+                AndroidUtilities.runOnUIThread(new b1((qs) this.d, this.b, (TLRPC.TL_messages_searchGlobal) this.e, this.c, tLObject, 4));
                 break;
         }
     }

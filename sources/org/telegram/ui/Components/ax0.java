@@ -9,7 +9,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class ax0 extends p9 implements NotificationCenter.NotificationCenterDelegate {
     public final int D;
@@ -76,7 +76,7 @@ public final class ax0 extends p9 implements NotificationCenter.NotificationCent
             int i11 = this.E;
             if (size > i11) {
                 document = tL_messages_stickerSet.documents.get(i11);
-                svgThumb = document != null ? DocumentObject.getSvgThumb(document.thumbs, org.telegram.ui.ActionBar.k6.c7, 0.2f) : null;
+                svgThumb = document != null ? DocumentObject.getSvgThumb(document.thumbs, org.telegram.ui.ActionBar.j6.c7, 0.2f) : null;
                 if (svgThumb != null) {
                     svgThumb.overrideWidthAndHeight(512, 512);
                 }
@@ -91,7 +91,7 @@ public final class ax0 extends p9 implements NotificationCenter.NotificationCent
             }
         }
         document = null;
-        svgThumb = document != null ? DocumentObject.getSvgThumb(document.thumbs, org.telegram.ui.ActionBar.k6.c7, 0.2f) : null;
+        svgThumb = document != null ? DocumentObject.getSvgThumb(document.thumbs, org.telegram.ui.ActionBar.j6.c7, 0.2f) : null;
         if (svgThumb != null) {
         }
         if (document == null) {

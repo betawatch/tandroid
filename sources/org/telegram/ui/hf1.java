@@ -10,18 +10,18 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class hf1 extends cg.c {
+public final class hf1 extends bg.c {
     public final /* synthetic */ sf1 d;
 
     public hf1(sf1 sf1Var) {
         this.d = sf1Var;
     }
 
-    @Override // org.telegram.ui.Components.rl0
-    public final boolean D(f2.m1 m1Var) {
-        int i10 = m1Var.f;
+    @Override // org.telegram.ui.Components.ql0
+    public final boolean D(f2.l1 l1Var) {
+        int i10 = l1Var.f;
         return i10 == 0 || i10 == 3;
     }
 
@@ -31,12 +31,12 @@ public final class hf1 extends cg.c {
         return sf1Var.b;
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final int h() {
         return F().size() + 1;
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final int j(int i10) {
         if (i10 == h() - 1) {
             return 2;
@@ -44,7 +44,7 @@ public final class hf1 extends cg.c {
         return ((jf1) this.d.b.get(i10)).a;
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final void l() {
         this.d.c = h();
         super.l();
@@ -53,11 +53,11 @@ public final class hf1 extends cg.c {
     /* JADX WARN: Removed duplicated region for block: B:26:0x00f9  */
     /* JADX WARN: Removed duplicated region for block: B:29:0x0110  */
     /* JADX WARN: Removed duplicated region for block: B:33:0x0112  */
-    @Override // f2.p0
+    @Override // f2.o0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void v(f2.m1 m1Var, int i10) {
+    public final void v(f2.l1 l1Var, int i10) {
         pf1 pf1Var;
         int i11;
         boolean z4;
@@ -65,8 +65,8 @@ public final class hf1 extends cg.c {
         sf1 sf1Var = this.d;
         ArrayList arrayList = sf1Var.b;
         long j10 = sf1Var.a;
-        int i13 = m1Var.f;
-        View view = m1Var.a;
+        int i13 = l1Var.f;
+        View view = l1Var.a;
         if (i13 != 0) {
             boolean z10 = true;
             if (i13 == 3) {
@@ -138,8 +138,8 @@ public final class hf1 extends cg.c {
         pf1Var.T(sf1Var.Y, true);
     }
 
-    @Override // f2.p0
-    public final f2.m1 x(ViewGroup viewGroup, int i10) {
+    @Override // f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
         boolean z4;
         int i11;
         sf1 sf1Var = this.d;
@@ -147,25 +147,25 @@ public final class hf1 extends cg.c {
             if (i10 == 2) {
                 gf1 gf1Var = new gf1(this, sf1Var.getParentActivity());
                 sf1Var.B0 = gf1Var;
-                return new org.telegram.ui.Components.el0(gf1Var);
+                return new org.telegram.ui.Components.dl0(gf1Var);
             }
             org.telegram.ui.Components.u00 u00Var = new org.telegram.ui.Components.u00(viewGroup.getContext(), null);
             u00Var.setViewType(24);
             u00Var.setIsSingleCell(true);
             u00Var.w = true;
-            return new org.telegram.ui.Components.el0(u00Var);
+            return new org.telegram.ui.Components.dl0(u00Var);
         }
         pf1 pf1Var = new pf1(sf1Var, viewGroup.getContext(), false);
         if (i10 == 3) {
             i11 = ((org.telegram.ui.ActionBar.p2) sf1Var).currentAccount;
             boolean isBotForumWithEditableTopics = UserObject.isBotForumWithEditableTopics(i11, -sf1Var.a);
-            pf1Var.setForumIcon(bg.e.d(bg.b.k[0], ""));
+            pf1Var.setForumIcon(ag.f.d(ag.b.k[0], ""));
             pf1Var.setTitleOverride(LocaleController.getString(!isBotForumWithEditableTopics ? R.string.BotForumAskForStartOffNewChatTitle : R.string.BotForumAskForStartNewChatTitle));
             pf1Var.setCustomMessage(LocaleController.getString(!isBotForumWithEditableTopics ? R.string.BotForumAskForStartOffNewChatForward : R.string.BotForumAskForStartNewChatForward));
         }
         z4 = ((org.telegram.ui.ActionBar.p2) sf1Var).inPreviewMode;
         pf1Var.h0 = z4;
         pf1Var.setArchivedPullAnimation(sf1Var.w);
-        return new org.telegram.ui.Components.el0(pf1Var);
+        return new org.telegram.ui.Components.dl0(pf1Var);
     }
 }

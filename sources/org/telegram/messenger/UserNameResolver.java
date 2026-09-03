@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class UserNameResolver {
     private static final long CACHE_TIME = 3600000;
@@ -16,7 +16,7 @@ public class UserNameResolver {
     android.util.LruCache<String, CachedPeer> resolvedCache = new android.util.LruCache<>(100);
     HashMap<String, ArrayList<h5.d>> resolvingConsumers = new HashMap<>();
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     public class CachedPeer {
         final long peerId;
         final long time = System.currentTimeMillis();
@@ -111,7 +111,7 @@ public class UserNameResolver {
                 StringBuilder sb = new StringBuilder("resolve username from cache ");
                 sb.append(str);
                 sb.append(" ");
-                l.d.x(sb, cachedPeer.peerId);
+                kf.k0.x(sb, cachedPeer.peerId);
                 return null;
             }
             this.resolvedCache.remove(str);

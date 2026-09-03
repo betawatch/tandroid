@@ -1,90 +1,133 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
-import androidx.recyclerview.widget.RecyclerView;
+import android.graphics.Point;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class zi extends f2.w {
-    public final /* synthetic */ int Q;
-    public final /* synthetic */ KeyEvent.Callback R;
+public final class zi extends di {
+    public lh.e1 n;
+    public int r;
+    public oh.k s;
+    public ra v;
+    public int w;
+    public q0.a x;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ zi(ei eiVar, int i10, int i11) {
-        super(i10);
-        this.Q = i11;
-        this.R = eiVar;
-    }
-
-    @Override // f2.j0
-    public boolean Y0() {
-        switch (this.Q) {
-            case 2:
-                return ((xx0) this.R).T != null && LocaleController.isRTL;
-            default:
-                return super.Y0();
+    @Override // org.telegram.ui.Components.di
+    public final void D(di diVar) {
+        li liVar = this.b;
+        try {
+            liVar.U0.getTitleTextView().setBuildFullLayout(true);
+        } catch (Exception unused) {
         }
+        liVar.U0.setTitle(LocaleController.getString(R.string.SelectColor));
+        this.s.h1(0, 0);
     }
 
-    @Override // f2.w, f2.j0, f2.w0
-    public int o0(int i10, bf.f fVar, f2.j1 j1Var) {
-        switch (this.Q) {
-            case 3:
-                if (((ph.l) this.R).b) {
-                    i10 = 0;
+    @Override // org.telegram.ui.Components.di
+    public final void F() {
+        this.n.x0(0);
+    }
+
+    @Override // org.telegram.ui.Components.di
+    public int getCurrentItemTop() {
+        lh.e1 e1Var = this.n;
+        if (e1Var.getChildCount() <= 0) {
+            e1Var.setTopGlowOffset(e1Var.getPaddingTop());
+            return ConnectionsManager.DEFAULT_DATACENTER_ID;
+        }
+        View childAt = e1Var.getChildAt(0);
+        dl0 dl0Var = (dl0) e1Var.G(childAt);
+        int top = childAt.getTop();
+        int dp = AndroidUtilities.dp(7.0f);
+        if (top < AndroidUtilities.dp(7.0f) || dl0Var == null || dl0Var.b() != 0) {
+            top = dp;
+        }
+        e1Var.setTopGlowOffset(top);
+        return top;
+    }
+
+    @Override // org.telegram.ui.Components.di
+    public int getFirstOffset() {
+        return AndroidUtilities.dp(56.0f) + getListTopPadding();
+    }
+
+    @Override // org.telegram.ui.Components.di
+    public int getListTopPadding() {
+        return this.n.getPaddingTop();
+    }
+
+    @Override // org.telegram.ui.Components.di
+    public final int h() {
+        return 1;
+    }
+
+    public void setDelegate(q0.a aVar) {
+        this.x = aVar;
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f10) {
+        super.setTranslationY(f10);
+        this.b.getSheetContainer().invalidate();
+        invalidate();
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:14:0x00ae  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x00b5  */
+    /* JADX WARN: Removed duplicated region for block: B:20:? A[RETURN, SYNTHETIC] */
+    @Override // org.telegram.ui.Components.di
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void y(int i10, int i11) {
+        int i12;
+        int i13;
+        lh.e1 e1Var = this.n;
+        ra raVar = this.v;
+        if (AndroidUtilities.isTablet()) {
+            this.w = 4;
+        } else {
+            Point point = AndroidUtilities.displaySize;
+            if (point.x > point.y) {
+                this.w = 4;
+            } else {
+                this.w = 3;
+            }
+        }
+        ((FrameLayout.LayoutParams) getLayoutParams()).topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+        int dp = ((i10 - AndroidUtilities.dp(12.0f)) - AndroidUtilities.dp(10.0f)) / this.w;
+        if (this.r != dp) {
+            this.r = dp;
+            raVar.l();
+        }
+        this.s.y1(Math.max(1, ((this.w - 1) * AndroidUtilities.dp(5.0f)) + (this.w * dp)));
+        int ceil = (int) Math.ceil((((ArrayList) raVar.e).size() - 1) / this.w);
+        Math.max(0, ((i11 - ((AndroidUtilities.dp(5.0f) * (ceil - 1)) + (dp * ceil))) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.dp(60.0f));
+        if (!AndroidUtilities.isTablet()) {
+            Point point2 = AndroidUtilities.displaySize;
+            if (point2.x > point2.y) {
+                i12 = (int) (i11 / 3.5f);
+                int dp2 = i12 - AndroidUtilities.dp(52.0f);
+                i13 = dp2 >= 0 ? dp2 : 0;
+                if (e1Var.getPaddingTop() == i13) {
+                    e1Var.setPadding(AndroidUtilities.dp(6.0f), i13, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(48.0f));
+                    return;
                 }
-                return super.o0(i10, fVar, j1Var);
-            default:
-                return super.o0(i10, fVar, j1Var);
+                return;
+            }
         }
-    }
-
-    @Override // f2.j0, f2.w0
-    public void v0(RecyclerView recyclerView, f2.j1 j1Var, int i10) {
-        switch (this.Q) {
-            case 0:
-                yi yiVar = new yi(this, recyclerView.getContext());
-                yiVar.a = i10;
-                w0(yiVar);
-                break;
-            case 1:
-                xl xlVar = new xl(this, recyclerView.getContext());
-                xlVar.a = i10;
-                w0(xlVar);
-                break;
-            default:
-                super.v0(recyclerView, j1Var, i10);
-                break;
+        i12 = (i11 / 5) * 2;
+        int dp22 = i12 - AndroidUtilities.dp(52.0f);
+        if (dp22 >= 0) {
         }
-    }
-
-    @Override // f2.w, f2.j0, f2.w0
-    public boolean y0() {
-        switch (this.Q) {
-            case 0:
-                return false;
-            case 1:
-                return false;
-            case 2:
-            default:
-                return super.y0();
-            case 3:
-                return false;
+        if (e1Var.getPaddingTop() == i13) {
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zi(xx0 xx0Var) {
-        super(5);
-        this.Q = 2;
-        this.R = xx0Var;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zi(ph.l lVar) {
-        super(3);
-        this.Q = 3;
-        this.R = lVar;
     }
 }

@@ -7,16 +7,16 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class jh implements org.telegram.ui.lq0 {
     public boolean a;
     public final /* synthetic */ HashMap b;
     public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ mi d;
+    public final /* synthetic */ li d;
 
-    public jh(mi miVar, HashMap hashMap, ArrayList arrayList) {
-        this.d = miVar;
+    public jh(li liVar, HashMap hashMap, ArrayList arrayList) {
+        this.d = liVar;
         this.b = hashMap;
         this.c = arrayList;
     }
@@ -41,7 +41,7 @@ public final class jh implements org.telegram.ui.lq0 {
         while (true) {
             ArrayList arrayList2 = this.c;
             if (i11 >= arrayList2.size()) {
-                ((org.telegram.ui.xn) this.d.c0).d8(i10, arrayList, z10);
+                ((org.telegram.ui.zn) this.d.c0).d8(i10, arrayList, z10);
                 return;
             }
             Object obj = hashMap.get(arrayList2.get(i11));

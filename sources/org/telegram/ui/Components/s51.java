@@ -3,12 +3,12 @@ package org.telegram.ui.Components;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.la1;
-import org.telegram.ui.na1;
-import org.telegram.ui.y91;
+import org.telegram.ui.aa1;
+import org.telegram.ui.ma1;
+import org.telegram.ui.oa1;
 import org.telegram.ui.z91;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s51 implements Utilities.Callback0Return {
     public final /* synthetic */ int a;
@@ -32,12 +32,12 @@ public final /* synthetic */ class s51 implements Utilities.Callback0Return {
         switch (this.a) {
             case 0:
                 w51 w51Var = (w51) this.b;
-                Object obj = ((h51) this.c).G;
-                sl0 sl0Var = w51Var.d;
+                Object obj = ((i51) this.c).G;
+                rl0 rl0Var = w51Var.d;
                 int i10 = 0;
                 while (true) {
                     if (i10 < w51Var.x.size()) {
-                        h51 G = w51Var.G(i10);
+                        i51 G = w51Var.G(i10);
                         if (G == null || G.G != obj) {
                             i10++;
                         }
@@ -46,36 +46,36 @@ public final /* synthetic */ class s51 implements Utilities.Callback0Return {
                     }
                 }
                 if (i10 != -1) {
-                    for (int i11 = 0; i11 < sl0Var.getChildCount(); i11++) {
-                        childAt = sl0Var.getChildAt(i11);
+                    for (int i11 = 0; i11 < rl0Var.getChildCount(); i11++) {
+                        childAt = rl0Var.getChildAt(i11);
                         int R = RecyclerView.R(childAt);
                         if (R != -1 && R == i10) {
-                            if (childAt instanceof la1) {
+                            if (childAt instanceof ma1) {
                                 return null;
                             }
-                            return (la1) childAt;
+                            return (ma1) childAt;
                         }
                     }
                 }
                 childAt = null;
-                if (childAt instanceof la1) {
+                if (childAt instanceof ma1) {
                 }
                 break;
             default:
-                na1 na1Var = (na1) this.b;
-                z91 z91Var = (z91) this.c;
-                int childCount = na1Var.P.getChildCount();
+                oa1 oa1Var = (oa1) this.b;
+                aa1 aa1Var = (aa1) this.c;
+                int childCount = oa1Var.P.getChildCount();
                 for (int i12 = 0; i12 < childCount; i12++) {
-                    View childAt2 = na1Var.P.getChildAt(i12);
-                    if (childAt2 instanceof y91) {
-                        y91 y91Var = (y91) childAt2;
-                        if (y91Var.r == z91Var) {
-                            return y91Var;
+                    View childAt2 = oa1Var.P.getChildAt(i12);
+                    if (childAt2 instanceof z91) {
+                        z91 z91Var = (z91) childAt2;
+                        if (z91Var.r == aa1Var) {
+                            return z91Var;
                         }
                     }
                 }
-                na1Var.P.setItemAnimator(null);
-                na1Var.v0.f();
+                oa1Var.P.setItemAnimator(null);
+                oa1Var.v0.f();
                 return null;
         }
     }

@@ -24,14 +24,15 @@ import org.telegram.messenger.Timer;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Components.vk;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
 public final class h2 {
     public static final HashMap e = new HashMap();
     public static HashMap f;
     public String a;
-    public com.google.firebase.messaging.s b;
+    public com.google.firebase.messaging.r b;
     public TLRPC.TL_webPage c;
     public final HashMap d = new HashMap();
 
@@ -47,7 +48,7 @@ public final class h2 {
             return;
         }
         if (!richText.texts.isEmpty()) {
-            a((TL_iv.RichText) l.d.i(1, richText.texts));
+            a((TL_iv.RichText) kf.k0.i(1, richText.texts));
             return;
         }
         if (!(richText instanceof TL_iv.textPlain) || (str = (textplain = (TL_iv.textPlain) richText).text) == null || str.endsWith(" ")) {
@@ -66,7 +67,7 @@ public final class h2 {
             return;
         }
         if (!richText.texts.isEmpty()) {
-            b((TL_iv.RichText) l.d.i(1, richText.texts));
+            b((TL_iv.RichText) kf.k0.i(1, richText.texts));
             return;
         }
         if (richText instanceof TL_iv.textPlain) {
@@ -117,19 +118,19 @@ public final class h2 {
         return null;
     }
 
-    public static s0 e(x0 x0Var, Utilities.Callback callback) {
-        if (x0Var == null) {
+    public static q0 e(y0 y0Var, Utilities.Callback callback) {
+        if (y0Var == null) {
             callback.run(null);
             return null;
         }
         boolean[] zArr = {false};
         h2 h2Var = new h2();
-        h2Var.a = x0Var.getUrl();
+        h2Var.a = y0Var.getUrl();
         Timer create = Timer.create("WebInstantView");
-        y1 y1Var = new y1(Timer.start(create, "getHTML"), zArr, create, h2Var, callback, 0);
+        z1 z1Var = new z1(Timer.start(create, "getHTML"), zArr, create, h2Var, callback, 0);
         System.currentTimeMillis();
-        x0Var.evaluateJavascript(AndroidUtilities.readRes(R.raw.open_collapsed).replace("$OPEN$", "true"), new z1(h2Var, x0Var, new File(AndroidUtilities.getCacheDir(), "archive.mht"), y1Var, 0));
-        return new s0(zArr, 5);
+        y0Var.evaluateJavascript(AndroidUtilities.readRes(R.raw.open_collapsed).replace("$OPEN$", "true"), new a2(h2Var, y0Var, new File(AndroidUtilities.getCacheDir(), "archive.mht"), z1Var, 0));
+        return new q0(zArr, 6);
     }
 
     public static boolean f(JSONArray jSONArray) {
@@ -154,7 +155,7 @@ public final class h2 {
 
     public static void g(g2 g2Var, ImageReceiver imageReceiver, Runnable runnable) {
         h2 h2Var;
-        j1 j1Var;
+        k1 k1Var;
         Bitmap decodeStream;
         if (g2Var == null || (h2Var = g2Var.a) == null) {
             return;
@@ -163,17 +164,17 @@ public final class h2 {
         try {
             if (h2Var.b != null) {
                 Iterator it = g2Var.c.iterator();
-                j1Var = null;
+                k1Var = null;
                 while (it.hasNext()) {
-                    j1Var = (j1) ((HashMap) h2Var.b.c).get((String) it.next());
-                    if (j1Var != null) {
+                    k1Var = (k1) ((HashMap) h2Var.b.c).get((String) it.next());
+                    if (k1Var != null) {
                         break;
                     }
                 }
             } else {
-                j1Var = null;
+                k1Var = null;
             }
-            if (j1Var == null) {
+            if (k1Var == null) {
                 if (hashMap.containsKey(g2Var.b)) {
                     imageReceiver.setImageBitmap((Bitmap) hashMap.get(g2Var.b));
                     return;
@@ -184,7 +185,7 @@ public final class h2 {
                 ArrayList arrayList = (ArrayList) f.get(g2Var.b);
                 if (arrayList == null) {
                     f.put(g2Var.b, new ArrayList());
-                    new g1(new a2(0, h2Var, g2Var)).execute(g2Var.b);
+                    new h1(new vk(29, h2Var, g2Var)).execute(g2Var.b);
                     return;
                 }
                 for (int i10 = 0; i10 < arrayList.size(); i10++) {
@@ -195,17 +196,17 @@ public final class h2 {
                 arrayList.add(new Pair(imageReceiver, runnable));
                 return;
             }
-            k1 k1Var = (k1) j1Var.a.get("content-type");
-            if ((k1Var == null ? null : k1Var.a).contains("svg")) {
+            l1 l1Var = (l1) k1Var.a.get("content-type");
+            if ((l1Var == null ? null : l1Var.a).contains("svg")) {
                 if (g2Var.d > 0 && g2Var.e > 0) {
-                    decodeStream = SvgHelper.getBitmap((InputStream) j1Var.a(), AndroidUtilities.dp(g2Var.d), AndroidUtilities.dp(g2Var.e), false);
+                    decodeStream = SvgHelper.getBitmap((InputStream) k1Var.a(), AndroidUtilities.dp(g2Var.d), AndroidUtilities.dp(g2Var.e), false);
                 }
                 return;
             }
             if (g2Var.d <= 0 || g2Var.e <= 0) {
                 BitmapFactory.Options options = new BitmapFactory.Options();
                 options.inJustDecodeBounds = true;
-                BitmapFactory.decodeStream(j1Var.a(), null, options);
+                BitmapFactory.decodeStream(k1Var.a(), null, options);
                 int i11 = g2Var.d;
                 if (i11 == 0 && g2Var.e == 0) {
                     g2Var.d = options.outWidth;
@@ -217,7 +218,7 @@ public final class h2 {
                 }
                 runnable.run();
             }
-            decodeStream = BitmapFactory.decodeStream(j1Var.a());
+            decodeStream = BitmapFactory.decodeStream(k1Var.a());
             imageReceiver.setImageBitmap(decodeStream);
         } catch (Exception e6) {
             FileLog.e(e6);
@@ -281,7 +282,7 @@ public final class h2 {
         }
         if (!richText.texts.isEmpty()) {
             r(richText.texts.get(0));
-            q((TL_iv.RichText) l.d.i(1, richText.texts));
+            q((TL_iv.RichText) kf.k0.i(1, richText.texts));
             return richText;
         }
         if ((richText instanceof TL_iv.textPlain) && (str = (textplain = (TL_iv.textPlain) richText).text) != null) {
@@ -302,7 +303,7 @@ public final class h2 {
             return;
         }
         if (!richText.texts.isEmpty()) {
-            q((TL_iv.RichText) l.d.i(1, richText.texts));
+            q((TL_iv.RichText) kf.k0.i(1, richText.texts));
         } else {
             if (!(richText instanceof TL_iv.textPlain) || (str = (textplain = (TL_iv.textPlain) richText).text) == null) {
                 return;
@@ -990,7 +991,7 @@ public final class h2 {
                         break;
                     case 4:
                         if (!arrayList.isEmpty()) {
-                            b((TL_iv.RichText) l.d.i(1, arrayList));
+                            b((TL_iv.RichText) kf.k0.i(1, arrayList));
                         }
                         richText = l(jSONObject, tL_page);
                         break;
@@ -1001,13 +1002,13 @@ public final class h2 {
                         break;
                     case 6:
                         if (!arrayList.isEmpty()) {
-                            b((TL_iv.RichText) l.d.i(1, arrayList));
+                            b((TL_iv.RichText) kf.k0.i(1, arrayList));
                             break;
                         }
                         break;
                     case 7:
                         if (!arrayList.isEmpty()) {
-                            a((TL_iv.RichText) l.d.i(1, arrayList));
+                            a((TL_iv.RichText) kf.k0.i(1, arrayList));
                         }
                         TL_iv.textImage textimage = new TL_iv.textImage();
                         String optString3 = jSONObject.optString("src");

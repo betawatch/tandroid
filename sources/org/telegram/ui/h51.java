@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class h51 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -22,8 +22,8 @@ public final class h51 extends FrameLayout {
     public void dispatchDraw(Canvas canvas) {
         switch (this.a) {
             case 6:
-                org.telegram.ui.ActionBar.k6.i3.setBounds(0, 0, getMeasuredWidth(), org.telegram.ui.ActionBar.k6.i3.getIntrinsicHeight());
-                org.telegram.ui.ActionBar.k6.i3.draw(canvas);
+                org.telegram.ui.ActionBar.j6.i3.setBounds(0, 0, getMeasuredWidth(), org.telegram.ui.ActionBar.j6.i3.getIntrinsicHeight());
+                org.telegram.ui.ActionBar.j6.i3.draw(canvas);
                 super.dispatchDraw(canvas);
                 break;
             default:
@@ -37,7 +37,7 @@ public final class h51 extends FrameLayout {
         switch (this.a) {
             case 5:
                 super.onDraw(canvas);
-                canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), 1.0f, org.telegram.ui.ActionBar.k6.k0);
+                canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), 1.0f, org.telegram.ui.ActionBar.j6.k0);
                 break;
             default:
                 super.onDraw(canvas);

@@ -14,25 +14,25 @@ import android.widget.Button;
 import f.a;
 import l.b;
 import l.c;
+import l.j;
 import l.k;
-import l.l;
-import l.n;
-import l.z;
+import l.m;
+import l.y;
+import m.a1;
 import m.i;
-import m.z0;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public class ActionMenuItemView extends z0 implements z, View.OnClickListener, i {
+public class ActionMenuItemView extends a1 implements y, View.OnClickListener, i {
     public boolean B;
     public final int C;
     public int D;
     public final int E;
-    public n n;
+    public m n;
     public CharSequence r;
     public Drawable s;
-    public k v;
+    public j v;
     public b w;
     public c x;
     public boolean y;
@@ -46,15 +46,15 @@ public class ActionMenuItemView extends z0 implements z, View.OnClickListener, i
         return !TextUtils.isEmpty(getText());
     }
 
-    @Override // l.z
-    public final void b(n nVar) {
-        this.n = nVar;
-        setIcon(nVar.getIcon());
-        setTitle(nVar.getTitleCondensed());
-        setId(nVar.a);
-        setVisibility(nVar.isVisible() ? 0 : 8);
-        setEnabled(nVar.isEnabled());
-        if (nVar.hasSubMenu() && this.w == null) {
+    @Override // l.y
+    public final void b(m mVar) {
+        this.n = mVar;
+        setIcon(mVar.getIcon());
+        setTitle(mVar.getTitleCondensed());
+        setId(mVar.a);
+        setVisibility(mVar.isVisible() ? 0 : 8);
+        setEnabled(mVar.isEnabled());
+        if (mVar.hasSubMenu() && this.w == null) {
             this.w = new b(this);
         }
     }
@@ -90,9 +90,9 @@ public class ActionMenuItemView extends z0 implements z, View.OnClickListener, i
         }
         CharSequence charSequence2 = this.n.r;
         if (TextUtils.isEmpty(charSequence2)) {
-            k7.n.a(this, z11 ? null : this.n.e);
+            k7.m.a(this, z11 ? null : this.n.e);
         } else {
-            k7.n.a(this, charSequence2);
+            k7.m.a(this, charSequence2);
         }
     }
 
@@ -101,16 +101,16 @@ public class ActionMenuItemView extends z0 implements z, View.OnClickListener, i
         return Button.class.getName();
     }
 
-    @Override // l.z
-    public n getItemData() {
+    @Override // l.y
+    public m getItemData() {
         return this.n;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        k kVar = this.v;
-        if (kVar != null) {
-            kVar.a(this.n);
+        j jVar = this.v;
+        if (jVar != null) {
+            jVar.a(this.n);
         }
     }
 
@@ -121,7 +121,7 @@ public class ActionMenuItemView extends z0 implements z, View.OnClickListener, i
         g();
     }
 
-    @Override // m.z0, android.widget.TextView, android.view.View
+    @Override // m.a1, android.widget.TextView, android.view.View
     public final void onMeasure(int i10, int i11) {
         int i12;
         boolean isEmpty = TextUtils.isEmpty(getText());
@@ -160,11 +160,11 @@ public class ActionMenuItemView extends z0 implements z, View.OnClickListener, i
     public void setExpandedFormat(boolean z4) {
         if (this.B != z4) {
             this.B = z4;
-            n nVar = this.n;
-            if (nVar != null) {
-                l lVar = nVar.n;
-                lVar.k = true;
-                lVar.p(true);
+            m mVar = this.n;
+            if (mVar != null) {
+                k kVar = mVar.n;
+                kVar.k = true;
+                kVar.p(true);
             }
         }
     }
@@ -190,8 +190,8 @@ public class ActionMenuItemView extends z0 implements z, View.OnClickListener, i
         g();
     }
 
-    public void setItemInvoker(k kVar) {
-        this.v = kVar;
+    public void setItemInvoker(j jVar) {
+        this.v = jVar;
     }
 
     @Override // android.widget.TextView, android.view.View

@@ -8,9 +8,10 @@ import h5.w;
 import j3.d1;
 import j3.n0;
 import java.util.Arrays;
+import kf.k0;
 import r8.d;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class a implements e4.b {
     public static final Parcelable.Creator<a> CREATOR = new o(4);
@@ -82,7 +83,7 @@ public final class a implements e4.b {
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(this.n) + ((((((((l.d.e(l.d.e((527 + this.a) * 31, 31, this.b), 31, this.c) + this.d) * 31) + this.e) * 31) + this.f) * 31) + this.h) * 31);
+        return Arrays.hashCode(this.n) + ((((((((k0.e(k0.e((527 + this.a) * 31, 31, this.b), 31, this.c) + this.d) * 31) + this.e) * 31) + this.f) * 31) + this.h) * 31);
     }
 
     public final String toString() {

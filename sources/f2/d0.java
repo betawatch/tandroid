@@ -1,133 +1,15 @@
 package f2;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.widget.TextView;
-import oh.k4;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Cells.r7;
-import org.telegram.ui.Components.b81;
-import org.telegram.ui.Components.d70;
-import org.telegram.ui.Components.l81;
-import org.telegram.ui.Components.p9;
-import org.telegram.ui.Components.voip.s1;
-import org.telegram.ui.Components.voip.t1;
-import org.telegram.ui.qh1;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.ui.Components.px0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class d0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public abstract class d0 extends b0 {
+    public int d;
 
-    public /* synthetic */ d0(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
-    }
-
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        View view;
-        switch (this.a) {
-            case 0:
-                ((z) this.b).x = valueAnimator.getAnimatedFraction();
-                break;
-            case 1:
-                fg.b1 b1Var = (fg.b1) this.b;
-                b1Var.n = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                b1Var.e();
-                break;
-            case 2:
-                ((fg.z0) this.b).setOffset(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 3:
-                k4 k4Var = (k4) this.b;
-                k4Var.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                k4Var.invalidate();
-                break;
-            case 4:
-                r7 r7Var = (r7) this.b;
-                r7Var.y0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                r7Var.invalidate();
-                break;
-            case 5:
-                ((p9) this.b).setRoundRadius(((Integer) valueAnimator.getAnimatedValue()).intValue());
-                break;
-            case 6:
-                mh.d1 d1Var = ((d70) this.b).e.d;
-                int i10 = d1Var.B1;
-                if (i10 != -1 && (view = d1Var.C1) != null) {
-                    d1Var.h1(i10, view);
-                    d1Var.invalidate();
-                    break;
-                }
-                break;
-            case 7:
-                l81 l81Var = (l81) this.b;
-                View[] viewArr = l81Var.e;
-                if (l81Var.x) {
-                    float abs = 1.0f - (Math.abs(viewArr[0].getTranslationX()) / viewArr[0].getMeasuredWidth());
-                    l81Var.c = abs;
-                    b81 b81Var = l81Var.J;
-                    if (b81Var != null) {
-                        b81Var.e(abs, l81Var.d, l81Var.b);
-                    }
-                }
-                l81Var.w(false);
-                break;
-            case 8:
-                t1 t1Var = (t1) this.b;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                t1Var.G = floatValue;
-                s1 s1Var = t1Var.f0;
-                if (s1Var != null) {
-                    ((qh1) s1Var).b.a0.d(floatValue, t1Var.M);
-                }
-                t1Var.invalidate();
-                break;
-            case 9:
-                ph.l lVar = (ph.l) this.b;
-                lVar.c = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                lVar.f.invalidate();
-                break;
-            case 10:
-                qh.x xVar = (qh.x) this.b;
-                xVar.l = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                xVar.p.invalidate();
-                break;
-            case 11:
-                uf.x0 x0Var = (uf.x0) this.b;
-                x0Var.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                x0Var.invalidate();
-                int i11 = 0;
-                while (i11 < 2) {
-                    x0Var.c[i11].setTranslationX(AndroidUtilities.lerp(0, -AndroidUtilities.dp(62.0f), x0Var.e));
-                    x0Var.c[i11].setVisibility(0);
-                    float f10 = 0.0f;
-                    x0Var.c[i11].setAlpha(AndroidUtilities.lerp(i11 == 0 ? 1.0f : 0.0f, i11 == 1 ? 1.0f : 0.0f, x0Var.e));
-                    x0Var.d[i11].setTranslationX(AndroidUtilities.lerp(0, -AndroidUtilities.dp(62.0f), x0Var.e));
-                    x0Var.d[i11].setVisibility(0);
-                    TextView textView = x0Var.d[i11];
-                    float f11 = i11 == 0 ? 1.0f : 0.0f;
-                    if (i11 == 1) {
-                        f10 = 1.0f;
-                    }
-                    textView.setAlpha(AndroidUtilities.lerp(f11, f10, x0Var.e));
-                    i11++;
-                }
-                break;
-            case 12:
-                wf.k kVar = (wf.k) this.b;
-                kVar.g0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                kVar.E = true;
-                kVar.invalidate();
-                break;
-            default:
-                wf.p pVar = (wf.p) this.b;
-                pVar.g0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                pVar.E = true;
-                pVar.invalidate();
-                break;
-        }
+    @Override // f2.b0
+    public final int e(RecyclerView recyclerView, l1 l1Var) {
+        return b0.l(l1Var.f == 3 ? 0 : ((px0) this).d, 0);
     }
 }

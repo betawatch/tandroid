@@ -12,10 +12,9 @@ import android.os.CancellationSignal;
 import android.text.TextUtils;
 import java.util.concurrent.Executor;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.web.e0;
 import q5.c0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class l implements j {
     public final CredentialManager a;
@@ -33,13 +32,13 @@ public final class l implements j {
     @Override // v0.j
     public final void onCreateCredential(Context context, b bVar, CancellationSignal cancellationSignal, Executor executor, i iVar) {
         kotlin.jvm.internal.j.e(context, "context");
-        e0 e0Var = (e0) iVar;
+        o3.c cVar = (o3.c) iVar;
         CredentialManager credentialManager = this.a;
         if (credentialManager == null) {
-            e0Var.onError(new w0.c("Your device doesn't support credential manager", 3));
+            cVar.onError(new w0.c("Your device doesn't support credential manager", 3));
             return;
         }
-        k kVar = new k(e0Var, (e) bVar, this);
+        k kVar = new k(cVar, (e) bVar, this);
         kotlin.jvm.internal.j.b(credentialManager);
         Bundle bundle = bVar.a;
         c0 c0Var = bVar.c;

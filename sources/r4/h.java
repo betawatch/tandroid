@@ -1,25 +1,25 @@
 package r4;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public interface h {
-    boolean A();
+    long G(long j10, long j11);
 
-    long C();
+    long K(long j10, long j11);
 
-    long F(long j10);
+    long N1(long j10);
 
-    long I(long j10, long j11);
+    long P1(long j10, long j11);
+
+    s4.j V(long j10);
 
     long a(long j10);
 
-    long h(long j10, long j11);
+    long p(long j10, long j11);
 
-    long m(long j10, long j11);
+    boolean q1();
 
-    long n(long j10, long j11);
+    long u0(long j10, long j11);
 
-    s4.j p(long j10);
-
-    long t(long j10, long j11);
+    long x1();
 }

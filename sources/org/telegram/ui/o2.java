@@ -1,93 +1,32 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Intro;
+import android.content.Context;
+import android.graphics.drawable.ColorDrawable;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class o2 implements m2.f {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class o2 extends View {
+    public final p70 a;
+    public final org.telegram.ui.Components.mq b;
 
-    public /* synthetic */ o2(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public o2(Context context, p70 p70Var) {
+        super(context);
+        this.a = p70Var;
+        org.telegram.ui.Components.mq mqVar = new org.telegram.ui.Components.mq(new ColorDrawable(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Qk, false)), org.telegram.ui.ActionBar.j6.U0(context, R.drawable.greydivider_bottom, -16777216));
+        this.b = mqVar;
+        mqVar.w = true;
+        setBackgroundDrawable(mqVar);
+        setImportantForAccessibility(2);
     }
 
-    @Override // m2.f
-    public final void a(int i10) {
-        switch (this.a) {
-            case 0:
-                s2 s2Var = (s2) this.b;
-                s2Var.v = i10;
-                s2Var.c.invalidate();
-                break;
-            case 1:
-                ((v70) this.b).E = i10;
-                break;
-            default:
-                ((jd1) this.b).X.invalidate();
-                break;
-        }
-    }
-
-    @Override // m2.f
-    public final void b(float f10, int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                s2 s2Var = (s2) this.b;
-                float measuredWidth = s2Var.a.getMeasuredWidth();
-                if (measuredWidth != 0.0f) {
-                    s2Var.s = e2.c.d(s2Var.v, measuredWidth, (i10 * measuredWidth) + i11, measuredWidth);
-                    s2Var.c.invalidate();
-                    break;
-                }
-                break;
-            case 1:
-                v70 v70Var = (v70) this.b;
-                org.telegram.ui.Components.ka kaVar = v70Var.e;
-                kaVar.b = f10;
-                kaVar.c = i10;
-                kaVar.invalidate();
-                float measuredWidth2 = v70Var.d.getMeasuredWidth();
-                if (measuredWidth2 != 0.0f) {
-                    Intro.setScrollOffset((((i10 * measuredWidth2) + i11) - (v70Var.E * measuredWidth2)) / measuredWidth2);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // m2.f
-    public final void c(int i10) {
-        switch (this.a) {
-            case 1:
-                v70 v70Var = (v70) this.b;
-                if (i10 != 1) {
-                    if (i10 == 0 || i10 == 2) {
-                        if (v70Var.H) {
-                            v70Var.H = false;
-                        }
-                        if (v70Var.w != v70Var.d.getCurrentItem()) {
-                            v70Var.w = v70Var.d.getCurrentItem();
-                            break;
-                        }
-                    }
-                } else {
-                    v70Var.H = true;
-                    v70Var.d.getCurrentItem();
-                    v70Var.d.getMeasuredWidth();
-                    break;
-                }
-                break;
-        }
-    }
-
-    private final void d(int i10) {
-    }
-
-    private final void e(int i10) {
-    }
-
-    private final void f(float f10, int i10, int i11) {
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(12.0f));
+        int i12 = org.telegram.ui.ActionBar.j6.Qk;
+        ((n4) this.a).getClass();
+        org.telegram.ui.ActionBar.j6.v1(this.b, org.telegram.ui.ActionBar.j6.w0(null, i12, false), false);
     }
 }

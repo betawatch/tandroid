@@ -8,11 +8,11 @@ import android.os.Build;
 import android.os.PersistableBundle;
 import android.text.TextUtils;
 import e0.o0;
-import f0.h;
+import f0.i;
 import java.util.Arrays;
-import k7.k6;
+import k7.j6;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class b {
     public final c a;
@@ -38,7 +38,7 @@ public final class b {
         }
         cVar.j = shortcutInfo.getCategories();
         PersistableBundle extras = shortcutInfo.getExtras();
-        h hVar = null;
+        i iVar = null;
         if (extras == null || !extras.containsKey("extraPersonCount")) {
             o0VarArr = null;
         } else {
@@ -83,18 +83,18 @@ public final class b {
         if (i13 < 29) {
             PersistableBundle extras2 = shortcutInfo.getExtras();
             if (extras2 != null && (string = extras2.getString("extraLocusId")) != null) {
-                hVar = new h(string);
+                iVar = new i(string);
             }
         } else if (shortcutInfo.getLocusId() != null) {
             LocusId locusId = shortcutInfo.getLocusId();
-            k6.a(locusId, "locusId cannot be null");
+            j6.a(locusId, "locusId cannot be null");
             String id2 = locusId.getId();
             if (TextUtils.isEmpty(id2)) {
                 throw new IllegalArgumentException("id cannot be empty");
             }
-            hVar = new h(id2);
+            iVar = new i(id2);
         }
-        cVar2.k = hVar;
+        cVar2.k = iVar;
         this.a.m = shortcutInfo.getRank();
         this.a.n = shortcutInfo.getExtras();
     }

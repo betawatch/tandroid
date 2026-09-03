@@ -4,9 +4,9 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
-import m.s1;
+import m.t1;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class FitWindowsLinearLayout extends LinearLayout {
     public FitWindowsLinearLayout(Context context) {
@@ -22,6 +22,6 @@ public class FitWindowsLinearLayout extends LinearLayout {
         super(context, attributeSet);
     }
 
-    public void setOnFitSystemWindowsListener(s1 s1Var) {
+    public void setOnFitSystemWindowsListener(t1 t1Var) {
     }
 }

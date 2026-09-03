@@ -13,11 +13,11 @@ import com.google.android.gms.internal.vision.r0;
 import com.google.android.gms.internal.vision.u0;
 import com.google.android.gms.internal.vision.y1;
 import com.google.android.gms.internal.vision.z0;
-import j7.e7;
+import j7.d7;
 import java.io.IOException;
 import w5.a;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class VisionClearcutLogger {
     private final a zza;
@@ -84,20 +84,20 @@ public class VisionClearcutLogger {
                     if (Log.isLoggable("Vision", 6)) {
                         Log.e("Vision", "Would have logged:\n" + obj);
                     }
-                } catch (Exception e6) {
-                    e7.a(e6, "Parsing error", new Object[0]);
+                } catch (Exception e) {
+                    d7.a(e, "Parsing error", new Object[0]);
                 }
-            } catch (Exception e10) {
-                c.a.q(e10);
-                e7.a(e10, "Failed to log", new Object[0]);
+            } catch (Exception e6) {
+                c.a.q(e6);
+                d7.a(e6, "Failed to log", new Object[0]);
             }
-        } catch (IOException e11) {
+        } catch (IOException e10) {
             String name = f0.class.getName();
             StringBuilder sb = new StringBuilder(name.length() + 72);
             sb.append("Serializing ");
             sb.append(name);
             sb.append(" to a byte array threw an IOException (should never happen).");
-            throw new RuntimeException(sb.toString(), e11);
+            throw new RuntimeException(sb.toString(), e10);
         }
     }
 }

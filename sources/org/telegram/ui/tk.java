@@ -1,25 +1,24 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.NotificationCenter;
-
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class tk implements NotificationCenter.PostponeNotificationCallback {
-    public final /* synthetic */ xn a;
+public final class tk extends c2.z {
+    public final /* synthetic */ zn l;
 
-    public tk(xn xnVar) {
-        this.a = xnVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public tk(zn znVar, sj sjVar, vj vjVar) {
+        super(sjVar, vjVar);
+        this.l = znVar;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.PostponeNotificationCallback
-    public final boolean needPostpone(int i10, int i11, Object[] objArr) {
-        if (i10 == NotificationCenter.didReceiveNewMessages) {
-            long longValue = ((Long) objArr[0]).longValue();
-            xn xnVar = this.a;
-            if (xnVar.E6 && longValue == xnVar.Q5) {
-                return true;
+    public final void d(int i10) {
+        if (this.l.Ma) {
+            if (i10 == 0) {
+                i10 = 1;
+            } else if (i10 == 1) {
+                i10 = 0;
             }
         }
-        return false;
+        this.b = i10;
     }
 }

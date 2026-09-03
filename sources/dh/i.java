@@ -1,205 +1,205 @@
 package dh;
 
-import android.view.View;
-import dg.h0;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.ui.ActionBar.r1;
-import r0.m1;
-import xd.k;
-import xd.l;
+import android.net.Uri;
+import android.util.Base64;
+import android.util.SparseArray;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class i implements g, f, d {
-    public View B;
-    public int C;
-    public int D;
-    public final xd.c a;
-    public final Runnable h;
-    public boolean n;
-    public m1 r;
-    public int v;
-    public int w;
-    public e y;
-    public final k b = new k(0.0f);
-    public final l c = new l();
-    public final l d = new l();
-    public final AnimationNotificationsLocker e = new AnimationNotificationsLocker();
-    public final c f = new c(new h0(this, 1));
-    public int s = 1;
-    public final h x = new h(this, 0);
+public final class i {
+    public final SparseArray a = new SparseArray();
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public i(Runnable runnable) {
-        this.h = runnable;
-        this.a = new xd.c(0, new bf.b(this, runnable, 0 == true ? 1 : 0, 26), r1.w, 250L);
+    public static int a(TLRPC.TL_inputMediaPoll tL_inputMediaPoll, TLRPC.InputMedia inputMedia) {
+        if (tL_inputMediaPoll.attached_media == inputMedia) {
+            return -2;
+        }
+        if (tL_inputMediaPoll.solution_media == inputMedia) {
+            return -3;
+        }
+        int size = tL_inputMediaPoll.poll.answers.size();
+        for (int i10 = 0; i10 < size; i10++) {
+            if (tL_inputMediaPoll.poll.answers.get(i10).input_media == inputMedia) {
+                return i10;
+            }
+        }
+        return -1;
     }
 
-    @Override // dh.d
-    public final void I() {
-        View view = this.B;
-        if (view != null) {
-            view.postOnAnimation(new h(this, 1));
+    public static String c(TLRPC.Message message, int i10) {
+        SparseArray<String> sparseArray;
+        if (message == null || (sparseArray = message.pollMediaAttachPaths) == null) {
+            return null;
+        }
+        return sparseArray.get(i10);
+    }
+
+    public static TLRPC.InputMedia d(TLRPC.TL_inputMediaPoll tL_inputMediaPoll) {
+        TLRPC.InputMedia inputMedia = tL_inputMediaPoll.attached_media;
+        if (inputMedia != null) {
+            return inputMedia;
+        }
+        TLRPC.InputMedia inputMedia2 = tL_inputMediaPoll.solution_media;
+        if (inputMedia2 != null) {
+            return inputMedia2;
+        }
+        int size = tL_inputMediaPoll.poll.answers.size();
+        for (int i10 = 0; i10 < size; i10++) {
+            TLRPC.InputMedia inputMedia3 = tL_inputMediaPoll.poll.answers.get(i10).input_media;
+            if (inputMedia3 != null) {
+                return inputMedia3;
+            }
+        }
+        return null;
+    }
+
+    public static TLRPC.InputMedia e(TLRPC.TL_inputMediaPoll tL_inputMediaPoll, int i10) {
+        TLRPC.PollAnswer pollAnswer;
+        if (i10 == -2) {
+            return tL_inputMediaPoll.attached_media;
+        }
+        if (i10 == -3) {
+            return tL_inputMediaPoll.solution_media;
+        }
+        if (i10 < 0 || i10 >= tL_inputMediaPoll.poll.answers.size() || (pollAnswer = tL_inputMediaPoll.poll.answers.get(i10)) == null) {
+            return null;
+        }
+        return pollAnswer.input_media;
+    }
+
+    public static TLRPC.MessageMedia f(TLRPC.TL_messageMediaPoll tL_messageMediaPoll, int i10) {
+        TLRPC.PollAnswer pollAnswer;
+        if (i10 == -2) {
+            return tL_messageMediaPoll.attached_media;
+        }
+        if (i10 == -3) {
+            return tL_messageMediaPoll.results.solution_media;
+        }
+        if (i10 < 0 || i10 >= tL_messageMediaPoll.poll.answers.size() || (pollAnswer = tL_messageMediaPoll.poll.answers.get(i10)) == null) {
+            return null;
+        }
+        return pollAnswer.media;
+    }
+
+    public static byte[] g(Uri uri) {
+        try {
+            String queryParameter = uri.getQueryParameter("option");
+            if (queryParameter != null) {
+                return Base64.decode(queryParameter, 9);
+            }
+            return null;
+        } catch (Throwable unused) {
+            return null;
         }
     }
 
-    @Override // dh.d
-    public final View N() {
-        return this.B;
-    }
-
-    public final void a() {
-        boolean z4 = this.a.g;
-        boolean z10 = this.n;
-        AnimationNotificationsLocker animationNotificationsLocker = this.e;
-        if (!z10 && z4) {
-            this.n = true;
-            animationNotificationsLocker.lock();
-        }
-        if (!this.n || z4) {
+    public static void i(TLRPC.TL_inputMediaPoll tL_inputMediaPoll, int i10) {
+        TLRPC.PollAnswer pollAnswer;
+        if (i10 == -2) {
+            tL_inputMediaPoll.attached_media = null;
             return;
         }
-        this.n = false;
-        animationNotificationsLocker.unlock();
-    }
-
-    public final float b() {
-        e eVar = this.y;
-        l lVar = this.d;
-        return (eVar == null || this.D <= 0) ? lVar.d.a : Math.max(this.C, lVar.d.a);
-    }
-
-    public final float c() {
-        e eVar = this.y;
-        l lVar = this.c;
-        return (eVar == null || this.D <= 0) ? lVar.d.a : Math.max(this.C, lVar.d.a);
-    }
-
-    public final int d() {
-        return (this.y == null || this.D <= 0) ? Math.max(e(527).d, this.v) : Math.max(this.C, Math.max(e(527).d, this.v));
-    }
-
-    public final i0.b e(int i10) {
-        m1 m1Var = this.r;
-        return m1Var != null ? m1Var.a.f(i10) : i0.b.e;
-    }
-
-    public final void f(int i10) {
-        if (this.v == i10 && this.s == 0) {
-            return;
-        }
-        AndroidUtilities.cancelRunOnUIThread(this.x);
-        this.w = Math.max(this.v, i10);
-        this.v = i10;
-        this.s = 0;
-        i(this.r);
-    }
-
-    public final void g(int i10) {
-        if (i10 > 0) {
-            f(i10 + AndroidUtilities.navigationBarHeight);
+        if (i10 == -3) {
+            tL_inputMediaPoll.solution_media = null;
         } else {
-            h(true);
+            if (i10 < 0 || i10 >= tL_inputMediaPoll.poll.answers.size() || (pollAnswer = tL_inputMediaPoll.poll.answers.get(i10)) == null) {
+                return;
+            }
+            pollAnswer.input_media = null;
         }
     }
 
-    public final void h(boolean z4) {
-        if (this.v == 0) {
+    public static void j(TLRPC.Message message, String str, int i10) {
+        if (message == null) {
             return;
         }
-        h hVar = this.x;
-        AndroidUtilities.cancelRunOnUIThread(hVar);
-        this.s = z4 ? 3 : 2;
-        i(this.r);
-        if (z4) {
-            AndroidUtilities.runOnUIThread(hVar, 1000L);
+        if (message.pollMediaAttachPaths == null) {
+            message.pollMediaAttachPaths = new SparseArray<>();
         }
+        message.pollMediaAttachPaths.put(i10, str);
     }
 
-    public final void i(m1 m1Var) {
-        j(m1Var, this.r != null);
+    public static void k(TLRPC.TL_inputMediaPoll tL_inputMediaPoll, int i10, TLRPC.InputMedia inputMedia) {
+        if (i10 == -2) {
+            tL_inputMediaPoll.attached_media = inputMedia;
+            return;
+        }
+        if (i10 == -3) {
+            tL_inputMediaPoll.solution_media = inputMedia;
+            return;
+        }
+        if (i10 < 0 || i10 >= tL_inputMediaPoll.poll.answers.size()) {
+            return;
+        }
+        TLRPC.PollAnswer pollAnswer = tL_inputMediaPoll.poll.answers.get(i10);
+        if (pollAnswer instanceof TLRPC.TL_inputPollAnswer) {
+            pollAnswer.input_media = inputMedia;
+            return;
+        }
+        TLRPC.TL_inputPollAnswer tL_inputPollAnswer = new TLRPC.TL_inputPollAnswer();
+        tL_inputPollAnswer.input_media = inputMedia;
+        tL_inputPollAnswer.text = pollAnswer.text;
+        tL_inputPollAnswer.media = pollAnswer.media;
+        tL_inputPollAnswer.option = pollAnswer.option;
+        tL_inputMediaPoll.poll.answers.set(i10, tL_inputPollAnswer);
     }
 
-    public final void j(m1 m1Var, boolean z4) {
-        int i10;
-        xd.c cVar;
-        this.r = m1Var;
-        i0.b bVar = i0.b.e;
-        i0.b g10 = m1Var != null ? m1Var.a.g(647) : bVar;
-        if (m1Var != null) {
-            bVar = m1Var.a.f(8);
+    public static void l(TLRPC.TL_messageMediaPoll tL_messageMediaPoll, int i10, TLRPC.MessageMedia messageMedia) {
+        if (i10 == -2) {
+            tL_messageMediaPoll.attached_media = messageMedia;
+            return;
         }
-        c cVar2 = this.f;
-        b bVar2 = cVar2.c;
-        boolean z10 = bVar.d > 0;
-        b bVar3 = !z4 ? z10 ? b.d : b.a : z10 ? b.c : b.b;
-        if (bVar2 != bVar3) {
-            cVar2.a(bVar3, false);
+        if (i10 == -3) {
+            tL_messageMediaPoll.results.solution_media = messageMedia;
+            return;
         }
-        int i11 = this.s;
-        if (i11 == 2) {
-            this.v = 0;
+        if (i10 < 0 || i10 >= tL_messageMediaPoll.poll.answers.size()) {
+            return;
         }
-        if (i11 == 3 && bVar.d > 0) {
-            this.v = 0;
+        TLRPC.PollAnswer pollAnswer = tL_messageMediaPoll.poll.answers.get(i10);
+        if (pollAnswer instanceof TLRPC.TL_inputPollAnswer) {
+            TLRPC.TL_pollAnswer tL_pollAnswer = new TLRPC.TL_pollAnswer();
+            tL_pollAnswer.text = pollAnswer.text;
+            tL_pollAnswer.option = new byte[]{(byte) (i10 + 48)};
+            tL_pollAnswer.media = messageMedia;
+            tL_messageMediaPoll.poll.answers.set(i10, tL_pollAnswer);
+            return;
         }
-        i0.b a2 = i0.b.a(bVar, i0.b.b(0, 0, 0, this.v));
-        int i12 = a2.c;
-        int i13 = a2.b;
-        int i14 = a2.a;
-        int i15 = a2.d;
-        i0.b a10 = i0.b.a(g10, a2);
-        int i16 = a10.d;
-        int i17 = a10.c;
-        int i18 = a10.b;
-        int i19 = a10.a;
-        Runnable runnable = this.h;
-        xd.c cVar3 = this.a;
-        l lVar = this.d;
-        l lVar2 = this.c;
-        k kVar = this.b;
-        if (z4) {
-            if (kVar.b(i15 > 0 ? 1.0f : 0.0f)) {
-                i10 = i17;
-                cVar = cVar3;
-            } else {
-                cVar = cVar3;
-                i10 = i17;
-                if (!lVar2.b(i19, i18, i17, i16) && !lVar.b(i14, i13, i12, i15)) {
-                    if (bVar2 != bVar3) {
-                        runnable.run();
+        pollAnswer.media = messageMedia;
+        TLRPC.TL_inputPollAnswer tL_inputPollAnswer = new TLRPC.TL_inputPollAnswer();
+        tL_inputPollAnswer.text = pollAnswer.text;
+        tL_inputPollAnswer.media = pollAnswer.media;
+        tL_inputPollAnswer.option = pollAnswer.option;
+    }
+
+    public final h b(int i10) {
+        return (h) this.a.get(i10);
+    }
+
+    public final void h(int i10) {
+        SparseArray sparseArray = this.a;
+        int size = sparseArray.size();
+        for (int i11 = 0; i11 < size; i11++) {
+            if (sparseArray.keyAt(i11) > i10) {
+                if (i10 < 0) {
+                    return;
+                }
+                SparseArray clone = sparseArray.clone();
+                sparseArray.clear();
+                int size2 = clone.size();
+                for (int i12 = 0; i12 < size2; i12++) {
+                    int keyAt = clone.keyAt(i12);
+                    h hVar = (h) clone.valueAt(i12);
+                    if (keyAt < i10) {
+                        sparseArray.put(keyAt, hVar);
+                    }
+                    if (keyAt > i10) {
+                        sparseArray.put(keyAt - 1, hVar);
                     }
                 }
+                return;
             }
-            cVar.b();
-            kVar.c(false);
-            lVar2.c(false);
-            lVar.c(false);
-            kVar.c = i15 > 0 ? 1.0f : 0.0f;
-            lVar2.e(i19, i18, i10, i16);
-            lVar.e(i14, i13, i12, i15);
-            xd.c cVar4 = cVar;
-            cVar4.c(0.0f);
-            cVar4.a(1.0f);
-        } else {
-            cVar3.b();
-            kVar.d(i15 > 0 ? 1.0f : 0.0f);
-            lVar2.d(i19, i18, i17, i16);
-            lVar.d(i14, i13, i12, i15);
-            runnable.run();
         }
-        a();
-    }
-
-    @Override // dh.d
-    public final void k(m1 m1Var) {
-        this.C = m1Var.a.f(8).d;
-        this.h.run();
-    }
-
-    @Override // dh.d
-    public final void t() {
-        this.D++;
+        sparseArray.remove(i10);
     }
 }

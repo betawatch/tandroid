@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class nr0 extends ph.p {
+public final class nr0 extends oh.v {
     public final /* synthetic */ yu0 D;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -21,13 +21,13 @@ public final class nr0 extends ph.p {
         this.D = yu0Var;
     }
 
-    @Override // ph.p
+    @Override // oh.v
     public final boolean c(MessageObject messageObject) {
         yu0 yu0Var = this.D;
         return yu0Var.W0[(messageObject.getDialogId() > yu0Var.g1 ? 1 : (messageObject.getDialogId() == yu0Var.g1 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(messageObject.getId()) >= 0;
     }
 
-    @Override // ph.p
+    @Override // oh.v
     public final boolean e(MessageObject messageObject) {
         yu0 yu0Var = this.D;
         ArrayList arrayList = yu0Var.K0;
@@ -88,7 +88,7 @@ public final class nr0 extends ph.p {
         return false;
     }
 
-    @Override // ph.p
+    @Override // oh.v
     public final boolean g(MessageObject messageObject) {
         yu0 yu0Var = this.D;
         ArrayList arrayList = yu0Var.K0;
@@ -148,7 +148,7 @@ public final class nr0 extends ph.p {
         return false;
     }
 
-    @Override // ph.p
+    @Override // oh.v
     public final int getStartedTrackingX() {
         return this.D.w1;
     }

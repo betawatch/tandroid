@@ -5,9 +5,9 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class tw0 extends fg.j2 {
+public final class tw0 extends eg.k2 {
     public final /* synthetic */ uw0 K;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -16,7 +16,7 @@ public final class tw0 extends fg.j2 {
         this.K = uw0Var;
     }
 
-    @Override // fg.j2, android.view.ViewGroup, android.view.View
+    @Override // eg.k2, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         if (this.r.getVisibility() == 0) {
             RectF rectF = AndroidUtilities.rectTmp;

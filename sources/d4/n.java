@@ -6,9 +6,9 @@ import android.util.Pair;
 import h5.d0;
 import j3.n0;
 import org.telegram.messenger.MediaController;
-import org.telegram.ui.yh;
+import org.telegram.ui.ai;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class n {
     public final String a;
@@ -301,17 +301,17 @@ public final class n {
                 if ((!"OMX.MTK.VIDEO.DECODER.HEVC".equals(str) || !"mcv5a".equals(d0.b)) && a(videoCapabilities, i11, i10, d)) {
                     StringBuilder m10 = e2.c.m("sizeAndRate.rotated, ", i10, "x", i11, "@");
                     m10.append(d);
-                    StringBuilder m11 = yh.m("AssumedSupport [", m10.toString(), "] [", str, ", ");
-                    m11.append(this.b);
-                    m11.append("] [");
-                    m11.append(d0.e);
-                    m11.append("]");
-                    h5.a.n("MediaCodecInfo", m11.toString());
+                    StringBuilder l10 = ai.l("AssumedSupport [", m10.toString(), "] [", str, ", ");
+                    l10.append(this.b);
+                    l10.append("] [");
+                    l10.append(d0.e);
+                    l10.append("]");
+                    h5.a.n("MediaCodecInfo", l10.toString());
                 }
             }
-            StringBuilder m12 = e2.c.m("sizeAndRate.support, ", i10, "x", i11, "@");
-            m12.append(d);
-            g(m12.toString());
+            StringBuilder m11 = e2.c.m("sizeAndRate.support, ", i10, "x", i11, "@");
+            m11.append(d);
+            g(m11.toString());
             return false;
         }
         return true;

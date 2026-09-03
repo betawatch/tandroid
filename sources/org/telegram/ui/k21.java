@@ -5,9 +5,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MrzRecognizer;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class k21 implements u9 {
+public final class k21 implements w9 {
     public final /* synthetic */ int a;
     public final /* synthetic */ org.telegram.ui.ActionBar.p2 b;
 
@@ -16,31 +16,31 @@ public final class k21 implements u9 {
         this.b = p2Var;
     }
 
-    @Override // org.telegram.ui.u9
-    public final /* synthetic */ String E0() {
+    @Override // org.telegram.ui.w9
+    public final /* synthetic */ String C0() {
         return null;
     }
 
-    @Override // org.telegram.ui.u9
-    public final void J(String str) {
-        String b10 = af.g.b(str);
+    @Override // org.telegram.ui.w9
+    public final void K(String str) {
+        String b10 = ze.d.b(str);
         if (TextUtils.isEmpty(b10)) {
-            AndroidUtilities.runOnUIThread(new sj0(2));
+            AndroidUtilities.runOnUIThread(new j21(0));
             return;
         }
-        MessagesController.getInstance(this.a).getUserNameResolver().resolve(b10, new vb(this.b, 4));
+        MessagesController.getInstance(this.a).getUserNameResolver().resolve(b10, new xb(this.b, 4));
     }
 
-    @Override // org.telegram.ui.u9
-    public final /* synthetic */ boolean e1(String str, m9 m9Var) {
+    @Override // org.telegram.ui.w9
+    public final /* synthetic */ boolean a1(String str, o9 o9Var) {
         return false;
     }
 
-    @Override // org.telegram.ui.u9
+    @Override // org.telegram.ui.w9
     public final /* synthetic */ void P0(MrzRecognizer.Result result) {
     }
 
-    @Override // org.telegram.ui.u9
+    @Override // org.telegram.ui.w9
     public final /* synthetic */ void onDismiss() {
     }
 }

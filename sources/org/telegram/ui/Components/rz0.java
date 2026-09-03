@@ -6,7 +6,7 @@ import android.graphics.RectF;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class rz0 extends TextView {
     public final sz0 a;
@@ -16,9 +16,9 @@ public final class rz0 extends TextView {
     public rz0(sz0 sz0Var, CharSequence charSequence) {
         super(sz0Var.getContext());
         this.a = sz0Var;
-        org.telegram.ui.ActionBar.g6 g6Var = sz0Var.a;
+        org.telegram.ui.ActionBar.f6 f6Var = sz0Var.a;
         setPadding(AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f), AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f));
-        setTextColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.G6, g6Var));
+        setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, f6Var));
         setTypeface(AndroidUtilities.bold());
         setTextSize(1, 14.0f);
         setText(charSequence);

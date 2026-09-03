@@ -11,6 +11,8 @@ import k7.v6;
 import k7.w6;
 import k7.x6;
 import org.telegram.ui.Components.jb;
+import ph.z8;
+import r3.h;
 import r3.k;
 import r3.l;
 import r3.m;
@@ -18,9 +20,8 @@ import r3.n;
 import r3.o;
 import r3.s;
 import r3.v;
-import sf.h;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class a implements k {
     public m e;
@@ -56,12 +57,12 @@ public final class a implements k {
     @Override // r3.k
     public final void e(m mVar) {
         this.e = mVar;
-        this.f = mVar.i2(0, 1);
-        mVar.i1();
+        this.f = mVar.d2(0, 1);
+        mVar.j1();
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r2v27 */
+    /* JADX WARN: Type inference failed for: r2v28 */
     /* JADX WARN: Type inference failed for: r2v6 */
     /* JADX WARN: Type inference failed for: r2v7, types: [boolean, int] */
     @Override // r3.k
@@ -70,33 +71,33 @@ public final class a implements k {
         c cVar;
         int i10;
         s nVar;
-        h hVar;
+        z8 z8Var;
         long j10;
         long j11;
         boolean z4;
         int i11 = this.g;
         if (i11 == 0) {
             boolean z10 = !this.c;
-            ((r3.h) lVar).f = 0;
-            r3.h hVar2 = (r3.h) lVar;
-            long g10 = hVar2.g();
+            ((h) lVar).f = 0;
+            h hVar = (h) lVar;
+            long g10 = hVar.g();
             c a2 = w6.a(lVar, z10);
-            hVar2.s((int) (hVar2.g() - g10));
+            hVar.n((int) (hVar.g() - g10));
             this.h = a2;
             this.g = 1;
             return 0;
         }
         byte[] bArr = this.a;
         if (i11 == 1) {
-            ((r3.h) lVar).f(bArr, 0, bArr.length, false);
-            ((r3.h) lVar).f = 0;
+            ((h) lVar).f(bArr, 0, bArr.length, false);
+            ((h) lVar).f = 0;
             this.g = 2;
             return 0;
         }
         int i12 = 3;
         if (i11 == 2) {
             w wVar = new w(4);
-            ((r3.h) lVar).c(wVar.a, 0, 4, false);
+            ((h) lVar).c(wVar.a, 0, 4, false);
             if (wVar.v() != 1716281667) {
                 throw r1.a("Failed to read FLAC stream marker.", null);
             }
@@ -108,17 +109,17 @@ public final class a implements k {
             o oVar2 = this.i;
             boolean z11 = false;
             while (!z11) {
-                ((r3.h) lVar).f = r22;
+                ((h) lVar).f = r22;
                 byte[] bArr2 = new byte[4];
                 h5.v vVar = new h5.v(bArr2, 4);
-                r3.h hVar3 = (r3.h) lVar;
-                hVar3.f(bArr2, r22, 4, r22);
+                h hVar2 = (h) lVar;
+                hVar2.f(bArr2, r22, 4, r22);
                 boolean h = vVar.h();
                 int i13 = vVar.i(r10);
                 int i14 = vVar.i(24) + 4;
                 if (i13 == 0) {
                     byte[] bArr3 = new byte[38];
-                    hVar3.c(bArr3, r22, 38, r22);
+                    hVar2.c(bArr3, r22, 38, r22);
                     oVar2 = new o(bArr3, 4);
                 } else {
                     if (oVar2 == null) {
@@ -127,13 +128,13 @@ public final class a implements k {
                     c cVar2 = oVar2.l;
                     if (i13 == i12) {
                         w wVar2 = new w(i14);
-                        hVar3.c(wVar2.a, r22, i14, r22);
+                        hVar2.c(wVar2.a, r22, i14, r22);
                         oVar = new o(oVar2.a, oVar2.b, oVar2.c, oVar2.d, oVar2.e, oVar2.g, oVar2.h, oVar2.j, w6.b(wVar2), oVar2.l);
                     } else if (i13 == 4) {
                         w wVar3 = new w(i14);
-                        hVar3.c(wVar3.a, 0, i14, false);
+                        hVar2.c(wVar3.a, 0, i14, false);
                         wVar3.G(4);
-                        c a10 = x6.a(Arrays.asList(x6.b(wVar3, false, false).a));
+                        c a10 = x6.a(Arrays.asList((String[]) x6.b(wVar3, false, false).b));
                         if (cVar2 == null) {
                             cVar = a10;
                         } else {
@@ -145,7 +146,7 @@ public final class a implements k {
                         oVar = new o(oVar2.a, oVar2.b, oVar2.c, oVar2.d, oVar2.e, oVar2.g, oVar2.h, oVar2.j, oVar2.k, cVar);
                     } else if (i13 == 6) {
                         w wVar4 = new w(i14);
-                        hVar3.c(wVar4.a, 0, i14, false);
+                        hVar2.c(wVar4.a, 0, i14, false);
                         wVar4.G(4);
                         c cVar3 = new c(s8.v.x(h4.a.a(wVar4)));
                         if (cVar2 != null) {
@@ -153,7 +154,7 @@ public final class a implements k {
                         }
                         oVar = new o(oVar2.a, oVar2.b, oVar2.c, oVar2.d, oVar2.e, oVar2.g, oVar2.h, oVar2.j, oVar2.k, cVar3);
                     } else {
-                        hVar3.s(i14);
+                        hVar2.n(i14);
                     }
                     oVar2 = oVar;
                 }
@@ -174,21 +175,21 @@ public final class a implements k {
         }
         long j12 = 0;
         if (i11 == 4) {
-            ((r3.h) lVar).f = 0;
+            ((h) lVar).f = 0;
             w wVar5 = new w(2);
-            r3.h hVar4 = (r3.h) lVar;
-            hVar4.f(wVar5.a, 0, 2, false);
+            h hVar3 = (h) lVar;
+            hVar3.f(wVar5.a, 0, 2, false);
             int z12 = wVar5.z();
             if ((z12 >> 2) != 16382) {
-                hVar4.f = 0;
+                hVar3.f = 0;
                 throw r1.a("First frame does not start with sync code.", null);
             }
-            hVar4.f = 0;
+            hVar3.f = 0;
             this.k = z12;
             m mVar = this.e;
             int i17 = d0.a;
-            long j13 = hVar4.d;
-            long j14 = hVar4.c;
+            long j13 = hVar3.d;
+            long j14 = hVar3.c;
             this.i.getClass();
             o oVar3 = this.i;
             if (oVar3.k != null) {
@@ -200,26 +201,26 @@ public final class a implements k {
             } else {
                 int i18 = this.k;
                 int i19 = oVar3.c;
-                h hVar5 = new h(oVar3, 5);
+                z8 z8Var2 = new z8(oVar3, 6);
                 e0 e0Var = new e0(oVar3, i18);
                 long b10 = oVar3.b();
                 long j15 = oVar3.j;
                 int i20 = oVar3.d;
                 if (i20 > 0) {
                     i10 = 0;
-                    hVar = hVar5;
+                    z8Var = z8Var2;
                     j10 = ((i20 + i19) / 2) + 1;
                 } else {
-                    hVar = hVar5;
+                    z8Var = z8Var2;
                     i10 = 0;
                     int i21 = oVar3.a;
                     j10 = (((((i21 != oVar3.b || i21 <= 0) ? 4096L : i21) * oVar3.g) * oVar3.h) / 8) + 64;
                 }
-                x xVar = new x(hVar, e0Var, b10, j15, j13, j14, j10, Math.max(6, i19));
+                x xVar = new x(z8Var, e0Var, b10, j15, j13, j14, j10, Math.max(6, i19));
                 this.l = xVar;
                 nVar = xVar.a;
             }
-            mVar.m2(nVar);
+            mVar.h2(nVar);
             this.g = 5;
             return i10;
         }
@@ -234,26 +235,26 @@ public final class a implements k {
         }
         if (this.n == -1) {
             o oVar4 = this.i;
-            ((r3.h) lVar).f = 0;
-            r3.h hVar6 = (r3.h) lVar;
-            hVar6.a(1, false);
+            ((h) lVar).f = 0;
+            h hVar4 = (h) lVar;
+            hVar4.a(1, false);
             byte[] bArr4 = new byte[1];
-            hVar6.f(bArr4, 0, 1, false);
+            hVar4.f(bArr4, 0, 1, false);
             boolean z13 = (bArr4[0] & 1) == 1;
-            hVar6.a(2, false);
+            hVar4.a(2, false);
             r10 = z13 ? 7 : 6;
             w wVar6 = new w(r10);
             byte[] bArr5 = wVar6.a;
             int i22 = 0;
             while (i22 < r10) {
-                int e6 = hVar6.e(i22, r10 - i22, bArr5);
-                if (e6 == -1) {
+                int d = hVar4.d(i22, r10 - i22, bArr5);
+                if (d == -1) {
                     break;
                 }
-                i22 += e6;
+                i22 += d;
             }
             wVar6.E(i22);
-            hVar6.f = 0;
+            hVar4.f = 0;
             try {
                 long A = wVar6.A();
                 if (!z13) {
@@ -271,7 +272,7 @@ public final class a implements k {
             w wVar7 = this.b;
             int i23 = wVar7.c;
             if (i23 < 32768) {
-                int read = ((r3.h) lVar).read(wVar7.a, i23, 32768 - i23);
+                int read = ((h) lVar).read(wVar7.a, i23, 32768 - i23);
                 r3 = read == -1;
                 if (!r3) {
                     wVar7.E(i23 + read);
@@ -362,7 +363,7 @@ public final class a implements k {
     public final boolean i(l lVar) {
         w6.a(lVar, false);
         w wVar = new w(4);
-        ((r3.h) lVar).f(wVar.a, 0, 4, false);
+        ((h) lVar).f(wVar.a, 0, 4, false);
         return wVar.v() == 1716281667;
     }
 

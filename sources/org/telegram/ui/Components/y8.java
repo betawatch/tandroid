@@ -14,7 +14,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public abstract class y8 extends FrameLayout {
     public l5 a;
@@ -39,13 +39,13 @@ public abstract class y8 extends FrameLayout {
         this.s = 0;
         this.v = 0;
         this.w = 1.0f;
-        this.y = new x8((em) this);
+        this.y = new x8((cm) this);
         TLRPC.TL_emojiList a2 = a(i10);
         this.n = a2;
         this.c = new p9(context);
         this.d = new p9(context);
-        addView(this.c, k7.c6.e(50, 50, 1));
-        addView(this.d, k7.c6.e(50, 50, 1));
+        addView(this.c, k7.b6.e(50, 50, 1));
+        addView(this.d, k7.b6.e(50, 50, 1));
         if (!a2.document_id.isEmpty()) {
             l5 l5Var = new l5(4, i10, a2.document_id.get(0).longValue());
             this.a = l5Var;
@@ -63,11 +63,11 @@ public abstract class y8 extends FrameLayout {
         TextView textView = new TextView(context);
         this.h = textView;
         textView.setTextSize(1, 12.0f);
-        textView.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.J7, false));
+        textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.J7, false));
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(17);
         textView.setText(LocaleController.getString(R.string.UseEmoji));
-        addView(textView, k7.c6.d(-1, 28.0f, 80, 10.0f, 10.0f, 10.0f, 10.0f));
+        addView(textView, k7.b6.d(-1, 28.0f, 80, 10.0f, 10.0f, 10.0f, 10.0f));
     }
 
     public static TLRPC.TL_emojiList a(int i10) {
@@ -137,7 +137,7 @@ public abstract class y8 extends FrameLayout {
             this.c.setScaleY(1.0f);
             this.d.setAlpha(0.0f);
         } else {
-            float interpolation = pr.f.getInterpolation(f10);
+            float interpolation = mr.f.getInterpolation(f10);
             this.e.c.setAlpha(255);
             canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.e.c);
             this.f.c.setAlpha((int) (255.0f * interpolation));

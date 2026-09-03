@@ -8,18 +8,18 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class z51 extends pv0 {
+public final class z51 extends qv0 {
     public final /* synthetic */ int t0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ z51(Context context, org.telegram.ui.ActionBar.f5 f5Var, int i10) {
-        super(context, f5Var);
+    public /* synthetic */ z51(Context context, org.telegram.ui.ActionBar.e5 e5Var, int i10) {
+        super(context, e5Var);
         this.t0 = i10;
     }
 
-    @Override // org.telegram.ui.Components.pv0
+    @Override // org.telegram.ui.Components.qv0
     public boolean P() {
         switch (this.t0) {
             case 1:
@@ -38,8 +38,8 @@ public final class z51 extends pv0 {
     public void addView(View view) {
         switch (this.t0) {
             case 3:
-                if (view instanceof mz) {
-                    ViewGroup.LayoutParams layoutParams = ((mz) view).getLayoutParams();
+                if (view instanceof kz) {
+                    ViewGroup.LayoutParams layoutParams = ((kz) view).getLayoutParams();
                     if (layoutParams == null) {
                         layoutParams = new FrameLayout.LayoutParams(-1, -2);
                     }
@@ -59,7 +59,7 @@ public final class z51 extends pv0 {
     /* JADX WARN: Removed duplicated region for block: B:20:0x007a  */
     /* JADX WARN: Removed duplicated region for block: B:28:0x00a0  */
     /* JADX WARN: Removed duplicated region for block: B:38:0x0090  */
-    @Override // org.telegram.ui.Components.pv0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.qv0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -108,7 +108,7 @@ public final class z51 extends pv0 {
                                     i18 = layoutParams.bottomMargin;
                                 }
                                 i19 = i20 + paddingTop;
-                                if (childAt instanceof mz) {
+                                if (childAt instanceof kz) {
                                     i19 = AndroidUtilities.isTablet() ? i21 - measuredHeight : (i21 + R) - measuredHeight;
                                 }
                                 childAt.layout(i16, i19, measuredWidth + i16, measuredHeight + i19);
@@ -117,7 +117,7 @@ public final class z51 extends pv0 {
                                 i18 = layoutParams.bottomMargin;
                             }
                             i19 = i17 - i18;
-                            if (childAt instanceof mz) {
+                            if (childAt instanceof kz) {
                             }
                             childAt.layout(i16, i19, measuredWidth + i16, measuredHeight + i19);
                         } else {
@@ -128,7 +128,7 @@ public final class z51 extends pv0 {
                         if (i24 == 16) {
                         }
                         i19 = i17 - i18;
-                        if (childAt instanceof mz) {
+                        if (childAt instanceof kz) {
                         }
                         childAt.layout(i16, i19, measuredWidth + i16, measuredHeight + i19);
                     }

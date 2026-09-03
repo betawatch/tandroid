@@ -16,10 +16,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public abstract class ja extends View {
-    public final org.telegram.ui.ActionBar.g6 a;
+    public final org.telegram.ui.ActionBar.f6 a;
     public final ia[] b;
     public final Paint c;
     public float d;
@@ -29,13 +29,13 @@ public abstract class ja extends View {
     public Utilities.Callback n;
     public boolean r;
 
-    public ja(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+    public ja(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.c = new Paint(1);
-        this.h = new z5(this, 0L, 210L, pr.h);
-        this.a = g6Var;
-        ea0 ea0Var = (ea0) this;
-        this.b = new ia[]{new ia(ea0Var, 0, R.raw.msg_stories_saved, 20, 40, LocaleController.getString(R.string.ProfileMyStoriesTab)), new ia(ea0Var, 1, R.raw.msg_stories_archive, 0, 0, LocaleController.getString(R.string.ProfileStoriesArchiveTab))};
+        this.h = new z5(this, 0L, 210L, mr.h);
+        this.a = f6Var;
+        da0 da0Var = (da0) this;
+        this.b = new ia[]{new ia(da0Var, 0, R.raw.msg_stories_saved, 20, 40, LocaleController.getString(R.string.ProfileMyStoriesTab)), new ia(da0Var, 1, R.raw.msg_stories_archive, 0, 0, LocaleController.getString(R.string.ProfileStoriesArchiveTab))};
         setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
         a(0.0f, false);
     }
@@ -50,30 +50,30 @@ public abstract class ja extends View {
             boolean z10 = ((float) Math.abs(this.e - i10)) < (iaVarArr[i10].l ? 0.25f : 0.35f);
             int i11 = iaVar.k;
             int i12 = iaVar.j;
-            hj0 hj0Var = iaVar.b;
+            gj0 gj0Var = iaVar.b;
             if (iaVar.l != z10) {
                 if (iaVar.n.b[iaVar.a].j != 0) {
                     if (z10) {
-                        hj0Var.N(i12);
-                        if (hj0Var.Y >= i11 - 2) {
-                            hj0Var.L(0, false, false);
+                        gj0Var.N(i12);
+                        if (gj0Var.Y >= i11 - 2) {
+                            gj0Var.L(0, false, false);
                         }
-                        if (hj0Var.Y <= i12) {
-                            hj0Var.start();
+                        if (gj0Var.Y <= i12) {
+                            gj0Var.start();
                         } else {
-                            hj0Var.K(i12);
+                            gj0Var.K(i12);
                         }
-                    } else if (hj0Var.Y >= i12 - 1) {
-                        hj0Var.N(i11 - 1);
-                        hj0Var.start();
+                    } else if (gj0Var.Y >= i12 - 1) {
+                        gj0Var.N(i11 - 1);
+                        gj0Var.start();
                     } else {
-                        hj0Var.N(0);
-                        hj0Var.K(0);
+                        gj0Var.N(0);
+                        gj0Var.K(0);
                     }
                 } else if (z10) {
-                    hj0Var.K(0);
+                    gj0Var.K(0);
                     if (z4) {
-                        hj0Var.start();
+                        gj0Var.start();
                     }
                 }
                 iaVar.l = z10;
@@ -84,30 +84,30 @@ public abstract class ja extends View {
 
     @Override // android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        org.telegram.ui.ActionBar.g6 g6Var;
+        org.telegram.ui.ActionBar.f6 f6Var;
         float f10;
         float f11;
         float f12;
         float f13;
         ja jaVar = this;
-        int i10 = org.telegram.ui.ActionBar.k6.d6;
-        org.telegram.ui.ActionBar.g6 g6Var2 = jaVar.a;
-        canvas.drawColor(org.telegram.ui.ActionBar.k6.v0(i10, g6Var2));
-        canvas.drawRect(0.0f, 0.0f, jaVar.getWidth(), AndroidUtilities.getShadowHeight(), org.telegram.ui.ActionBar.k6.k0);
+        int i10 = org.telegram.ui.ActionBar.j6.d6;
+        org.telegram.ui.ActionBar.f6 f6Var2 = jaVar.a;
+        canvas.drawColor(org.telegram.ui.ActionBar.j6.v0(i10, f6Var2));
+        canvas.drawRect(0.0f, 0.0f, jaVar.getWidth(), AndroidUtilities.getShadowHeight(), org.telegram.ui.ActionBar.j6.k0);
         int width = (jaVar.getWidth() - jaVar.getPaddingLeft()) - jaVar.getPaddingRight();
         ia[] iaVarArr = jaVar.b;
         int length = width / iaVarArr.length;
         int min = Math.min(AndroidUtilities.dp(64.0f), length);
-        float e6 = jaVar.h.e(jaVar.f);
+        float e = jaVar.h.e(jaVar.f);
         Paint paint = jaVar.c;
         float f14 = 0.0f;
-        if (e6 > 0.0f) {
+        if (e > 0.0f) {
             f10 = 9.0f;
             f11 = 16.0f;
-            paint.setColor(i0.a.k(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.G6, g6Var2), (int) (((Math.abs((Math.floor(jaVar.d) + 0.5d) - jaVar.d) * 1.2000000476837158d) + 0.4000000059604645d) * 18.0d * e6)));
+            paint.setColor(i0.a.k(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, f6Var2), (int) (((Math.abs((Math.floor(jaVar.d) + 0.5d) - jaVar.d) * 1.2000000476837158d) + 0.4000000059604645d) * 18.0d * e)));
             float f15 = length;
             float f16 = f15 / 2.0f;
-            g6Var = g6Var2;
+            f6Var = f6Var2;
             f12 = 41.0f;
             float lerp = AndroidUtilities.lerp((((float) Math.floor(jaVar.d)) * f15) + f16, (f15 * ((float) Math.ceil(jaVar.d))) + f16, jaVar.d - ((int) r6)) + jaVar.getPaddingLeft();
             RectF rectF = AndroidUtilities.rectTmp;
@@ -115,7 +115,7 @@ public abstract class ja extends View {
             rectF.set(lerp - f17, AndroidUtilities.dp(9.0f), lerp + f17, AndroidUtilities.dp(41.0f));
             canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), paint);
         } else {
-            g6Var = g6Var2;
+            f6Var = f6Var2;
             f10 = 9.0f;
             f11 = 16.0f;
             f12 = 41.0f;
@@ -127,19 +127,19 @@ public abstract class ja extends View {
             RectF rectF2 = iaVar.h;
             StaticLayout staticLayout = iaVar.e;
             org.telegram.ui.Cells.z zVar = iaVar.c;
-            hj0 hj0Var = iaVar.b;
+            gj0 gj0Var = iaVar.b;
             int i12 = length;
             rectF2.set(paddingLeft, f14, paddingLeft + length, jaVar.getHeight());
             float min2 = 1.0f - Math.min(1.0f, Math.abs(jaVar.d - i11));
-            org.telegram.ui.ActionBar.g6 g6Var3 = g6Var;
-            int v02 = org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.D6, g6Var3);
-            int i13 = org.telegram.ui.ActionBar.k6.G6;
-            int d = i0.a.d(min2, v02, org.telegram.ui.ActionBar.k6.v0(i13, g6Var3));
+            org.telegram.ui.ActionBar.f6 f6Var3 = f6Var;
+            int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.D6, f6Var3);
+            int i13 = org.telegram.ui.ActionBar.j6.G6;
+            int d = i0.a.d(min2, v02, org.telegram.ui.ActionBar.j6.v0(i13, f6Var3));
             iaVar.d.setColor(d);
             if (iaVar.m != d) {
                 iaVar.m = d;
                 f13 = min2;
-                hj0Var.setColorFilter(new PorterDuffColorFilter(d, PorterDuff.Mode.SRC_IN));
+                gj0Var.setColorFilter(new PorterDuffColorFilter(d, PorterDuff.Mode.SRC_IN));
             } else {
                 f13 = min2;
             }
@@ -148,9 +148,9 @@ public abstract class ja extends View {
             ia[] iaVarArr2 = iaVarArr;
             int i14 = min;
             rect.set((int) (rectF2.centerX() - f18), AndroidUtilities.dp(f10), (int) (rectF2.centerX() + f18), AndroidUtilities.dp(f12));
-            float e10 = iaVar.i.e(f13 > 0.6f);
-            if (e6 < 1.0f) {
-                paint.setColor(i0.a.k(org.telegram.ui.ActionBar.k6.v0(i13, g6Var3), (int) ((1.0f - e6) * e10 * 18.0f)));
+            float e6 = iaVar.i.e(f13 > 0.6f);
+            if (e < 1.0f) {
+                paint.setColor(i0.a.k(org.telegram.ui.ActionBar.j6.v0(i13, f6Var3), (int) ((1.0f - e) * e6 * 18.0f)));
                 RectF rectF3 = AndroidUtilities.rectTmp;
                 rectF3.set(rect);
                 canvas.drawRoundRect(rectF3, AndroidUtilities.dp(f11), AndroidUtilities.dp(f11), paint);
@@ -159,15 +159,15 @@ public abstract class ja extends View {
             zVar.draw(canvas);
             float dp = AndroidUtilities.dp(29.0f) / 2.0f;
             rect.set((int) (rectF2.centerX() - dp), (int) (AndroidUtilities.dpf2(24.66f) - dp), (int) (rectF2.centerX() + dp), (int) (AndroidUtilities.dpf2(24.66f) + dp));
-            hj0Var.setBounds(rect);
-            hj0Var.draw(canvas);
+            gj0Var.setBounds(rect);
+            gj0Var.draw(canvas);
             canvas.save();
             canvas.translate((rectF2.centerX() - (iaVar.f / 2.0f)) - iaVar.g, AndroidUtilities.dp(50.0f) - (staticLayout.getHeight() / 2.0f));
             staticLayout.draw(canvas);
             canvas.restore();
             i11++;
             jaVar = this;
-            g6Var = g6Var3;
+            f6Var = f6Var3;
             length = i12;
             iaVarArr = iaVarArr2;
             min = i14;

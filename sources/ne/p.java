@@ -3,9 +3,9 @@ package ne;
 import java.io.DataInputStream;
 import java.io.EOFException;
 import java.io.IOException;
-import k7.h0;
+import k7.g0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class p {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public abstract class p {
         this.f = null;
     }
 
-    public abstract void a(h0 h0Var);
+    public abstract void a(g0 g0Var);
 
     public void b(p pVar) {
         pVar.g();
@@ -40,13 +40,13 @@ public abstract class p {
         }
     }
 
-    public xe.b c() {
+    public we.b c() {
         com.google.firebase.messaging.d dVar = (com.google.firebase.messaging.d) this.b;
         DataInputStream dataInputStream = (DataInputStream) this.e;
-        xe.b bVar = (xe.b) this.f;
+        we.b bVar = (we.b) this.f;
         if (bVar != null) {
             while (bVar.i() > 0) {
-                if (((ze.a) ((com.google.firebase.messaging.d) bVar.b)).skip(bVar.i()) == 0) {
+                if (((ye.a) ((com.google.firebase.messaging.d) bVar.b)).skip(bVar.i()) == 0) {
                     throw new EOFException("Cannot skip atom");
                 }
             }
@@ -54,13 +54,13 @@ public abstract class p {
         int readInt = dataInputStream.readInt();
         byte[] bArr = new byte[4];
         dataInputStream.readFully(bArr);
-        xe.b bVar2 = new xe.b(readInt == 1 ? new ze.a(dVar, 16L, dataInputStream.readLong() - 16) : new ze.a(dVar, 8L, readInt - 8), this, new String(bArr, "ISO8859_1"), 0);
+        we.b bVar2 = new we.b(readInt == 1 ? new ye.a(dVar, 16L, dataInputStream.readLong() - 16) : new ye.a(dVar, 8L, readInt - 8), this, new String(bArr, "ISO8859_1"), 0);
         this.f = bVar2;
         return bVar2;
     }
 
-    public xe.b d(String str) {
-        xe.b c3 = c();
+    public we.b d(String str) {
+        we.b c3 = c();
         String str2 = (String) c3.d;
         if (str2.matches(str)) {
             return c3;

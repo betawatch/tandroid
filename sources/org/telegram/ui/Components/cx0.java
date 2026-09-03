@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class cx0 extends Drawable {
     public final int a;
@@ -37,9 +37,9 @@ public final class cx0 extends Drawable {
         }
     }
 
-    public final void a(org.telegram.ui.Cells.t1 t1Var) {
+    public final void a(org.telegram.ui.Cells.s1 s1Var) {
         for (int i10 = 0; i10 < this.b; i10++) {
-            this.c[i10].o(t1Var);
+            this.c[i10].o(s1Var);
         }
     }
 
@@ -89,7 +89,7 @@ public final class cx0 extends Drawable {
                     if (i13 < l5VarArr.length && (l5Var = l5VarArr[i13]) != null) {
                         l5Var.setBounds((int) ((i12 * f10) + centerX), (int) ((i11 * dp2) + centerY), (int) (((i12 + 1) * f10) + centerX), (int) (((i11 + 1) * dp2) + centerY));
                         l5VarArr[i13].setAlpha(this.d);
-                        l5VarArr[i13].setColorFilter(this.e ? org.telegram.ui.ActionBar.k6.w3 : org.telegram.ui.ActionBar.k6.v3);
+                        l5VarArr[i13].setColorFilter(this.e ? org.telegram.ui.ActionBar.j6.w3 : org.telegram.ui.ActionBar.j6.v3);
                         l5VarArr[i13].draw(canvas);
                     }
                 }

@@ -21,22 +21,22 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class yv0 extends Dialog {
     public float B;
-    public final tg.b C;
-    public final og.a D;
+    public final sg.b C;
+    public final ng.a D;
     public MessageObject E;
     public boolean F;
     public wv0 G;
     public xv0 H;
-    public org.telegram.ui.Cells.t1 I;
+    public org.telegram.ui.Cells.s1 I;
     public float J;
     public float K;
     public boolean L;
     public byte[] M;
-    public org.telegram.ui.Components.qk0 N;
+    public org.telegram.ui.Components.pk0 N;
     public ViewGroup O;
     public float P;
     public ViewGroup Q;
@@ -51,16 +51,16 @@ public final class yv0 extends Dialog {
     public boolean Z;
     public final Context a;
     public boolean a0;
-    public final org.telegram.ui.ActionBar.g6 b;
-    public um b0;
+    public final org.telegram.ui.ActionBar.f6 b;
+    public wm b0;
     public final uv0 c;
     public ValueAnimator c0;
     public final uv0 d;
     public ValueAnimator d0;
     public final uv0 e;
-    public final ek f;
+    public final gk f;
     public final TextView h;
-    public final org.telegram.ui.Components.wb0 n;
+    public final org.telegram.ui.Components.vb0 n;
     public i0.b r;
     public Bitmap s;
     public BitmapShader v;
@@ -68,7 +68,7 @@ public final class yv0 extends Dialog {
     public Matrix x;
     public float y;
 
-    public yv0(Activity activity, org.telegram.ui.ActionBar.g6 g6Var) {
+    public yv0(Activity activity, org.telegram.ui.ActionBar.f6 f6Var) {
         super(activity, R.style.TransparentDialog);
         this.r = i0.b.e;
         this.J = 0.0f;
@@ -78,46 +78,46 @@ public final class yv0 extends Dialog {
         int i10 = 0;
         this.Z = false;
         this.a = activity;
-        this.b = g6Var;
+        this.b = f6Var;
         uv0 uv0Var = new uv0(this, activity, i10);
         this.c = uv0Var;
-        uv0Var.setOnClickListener(new f60(this, 22));
-        tg.b bVar = new tg.b();
+        uv0Var.setOnClickListener(new g60(this, 22));
+        sg.b bVar = new sg.b();
         this.C = bVar;
-        og.a aVar = new og.a(bVar);
+        ng.a aVar = new ng.a(bVar);
         this.D = aVar;
-        aVar.d = new vg.i(uv0Var);
+        aVar.d = new ug.i(uv0Var);
         aVar.e = uv0Var;
         uv0 uv0Var2 = new uv0(this, activity, 1);
         this.d = uv0Var2;
         uv0Var2.setClipToPadding(false);
-        uv0Var.addView(uv0Var2, k7.c6.e(-1, -1, 119));
+        uv0Var.addView(uv0Var2, k7.b6.e(-1, -1, 119));
         int i11 = 2;
-        ek ekVar = new ek(this, activity, 2);
-        this.f = ekVar;
-        ekVar.setAdapter(new hg.u(this, activity, i11));
-        uv0Var2.addView(ekVar, k7.c6.e(-1, -1, 119));
+        gk gkVar = new gk(this, activity, 2);
+        this.f = gkVar;
+        gkVar.setAdapter(new gg.u(this, activity, i11));
+        uv0Var2.addView(gkVar, k7.b6.e(-1, -1, 119));
         uv0 uv0Var3 = new uv0(this, activity, i11);
         this.e = uv0Var3;
-        uv0Var2.addView(uv0Var3, k7.c6.e(-1, -1, 119));
-        org.telegram.ui.Components.wb0 wb0Var = new org.telegram.ui.Components.wb0(activity, g6Var);
-        this.n = wb0Var;
-        wb0Var.a(0, LocaleController.getString(R.string.PollMenuTabOption));
-        wb0Var.a(1, LocaleController.getString(R.string.PollMenuTabPoll));
-        uv0Var2.addView(wb0Var, k7.c6.e(-1, 66, 80));
-        wb0Var.setOnTabClick(new w3(ekVar, 14));
-        qg.b c3 = aVar.c(wb0Var, null, false);
-        c3.n(sg.b.k(g6Var));
+        uv0Var2.addView(uv0Var3, k7.b6.e(-1, -1, 119));
+        org.telegram.ui.Components.vb0 vb0Var = new org.telegram.ui.Components.vb0(activity, f6Var);
+        this.n = vb0Var;
+        vb0Var.a(0, LocaleController.getString(R.string.PollMenuTabOption));
+        vb0Var.a(1, LocaleController.getString(R.string.PollMenuTabPoll));
+        uv0Var2.addView(vb0Var, k7.b6.e(-1, 66, 80));
+        vb0Var.setOnTabClick(new y3(gkVar, 14));
+        pg.b c3 = aVar.c(vb0Var, null, false);
+        c3.n(rg.b.k(f6Var));
         c3.h.e = true;
         c3.o(AndroidUtilities.dp(8.0f));
         c3.p(AndroidUtilities.dp(16.0f));
-        wb0Var.setBackground(c3);
+        vb0Var.setBackground(c3);
         TextView textView = new TextView(activity);
         this.h = textView;
         textView.setTextSize(1, 13.0f);
-        textView.setTextColor(wb0Var.getColor());
+        textView.setTextColor(vb0Var.getColor());
         org.telegram.messenger.y3.r(R.string.PollMenuHint, textView, 17);
-        uv0Var2.addView(textView, k7.c6.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 66.0f));
+        uv0Var2.addView(textView, k7.b6.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 66.0f));
         vv0 vv0Var = new vv0(this, i10);
         WeakHashMap weakHashMap = r0.j0.a;
         r0.b0.j(uv0Var, vv0Var);
@@ -170,8 +170,8 @@ public final class yv0 extends Dialog {
         this.c0.addListener(new androidx.fragment.app.g(this, z4, nv0Var, 10));
         long j10 = !z4 ? 330L : 520L;
         ValueAnimator valueAnimator3 = this.c0;
-        org.telegram.ui.Components.pr prVar = org.telegram.ui.Components.pr.h;
-        valueAnimator3.setInterpolator(prVar);
+        org.telegram.ui.Components.mr mrVar = org.telegram.ui.Components.mr.h;
+        valueAnimator3.setInterpolator(mrVar);
         this.c0.setDuration(j10);
         this.c0.start();
         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.B, z4 ? 1.0f : 0.0f);
@@ -206,16 +206,16 @@ public final class yv0 extends Dialog {
                 }
             }
         });
-        this.d0.addListener(new org.telegram.ui.Components.x20(24, this, z4));
+        this.d0.addListener(new org.telegram.ui.Components.m00(26, this, z4));
         this.d0.setDuration((long) (j10 * 1.5f));
-        this.d0.setInterpolator(prVar);
+        this.d0.setInterpolator(mrVar);
         this.d0.start();
     }
 
     public final void c(boolean z4) {
-        org.telegram.ui.Cells.t1 t1Var;
-        org.telegram.ui.Components.qk0 qk0Var;
-        if (z4 && (qk0Var = this.N) != null && qk0Var.getReactionsWindow() != null && !this.N.getReactionsWindow().q) {
+        org.telegram.ui.Cells.s1 s1Var;
+        org.telegram.ui.Components.pk0 pk0Var;
+        if (z4 && (pk0Var = this.N) != null && pk0Var.getReactionsWindow() != null && !this.N.getReactionsWindow().q) {
             this.N.e();
             return;
         }
@@ -224,20 +224,20 @@ public final class yv0 extends Dialog {
         }
         this.Z = true;
         this.V = false;
-        ek ekVar = this.f;
-        ekVar.l();
-        boolean z10 = ekVar.getCurrentPosition() == 1;
+        gk gkVar = this.f;
+        gkVar.l();
+        boolean z10 = gkVar.getCurrentPosition() == 1;
         if (z4 && z10) {
-            org.telegram.ui.Cells.t1 t1Var2 = this.I;
-            if (t1Var2 != null) {
-                t1Var2.setVisibility(4);
+            org.telegram.ui.Cells.s1 s1Var2 = this.I;
+            if (s1Var2 != null) {
+                s1Var2.setVisibility(4);
                 this.I.invalidate();
             }
-        } else if (!z4 && (t1Var = this.I) != null) {
-            t1Var.setVisibility(0);
-            org.telegram.ui.Cells.t1 t1Var3 = this.I;
-            t1Var3.I7 = null;
-            t1Var3.invalidate();
+        } else if (!z4 && (s1Var = this.I) != null) {
+            s1Var.setVisibility(0);
+            org.telegram.ui.Cells.s1 s1Var3 = this.I;
+            s1Var3.I7 = null;
+            s1Var3.invalidate();
         }
         this.a0 = !z4;
         d();
@@ -253,10 +253,10 @@ public final class yv0 extends Dialog {
         if (uv0Var.getWidth() <= 0) {
             return;
         }
-        org.telegram.ui.Cells.t1 t1Var = this.I;
-        if (t1Var != null) {
+        org.telegram.ui.Cells.s1 s1Var = this.I;
+        if (s1Var != null) {
             int[] iArr = new int[2];
-            t1Var.getLocationOnScreen(iArr);
+            s1Var.getLocationOnScreen(iArr);
             int i10 = iArr[0];
             i0.b bVar = this.r;
             this.T = i10 - bVar.a;
@@ -316,10 +316,10 @@ public final class yv0 extends Dialog {
     }
 
     public final void e() {
-        ek ekVar = this.f;
-        float positionAnimated = ekVar.getPositionAnimated();
-        float lerp = AndroidUtilities.lerp(0, -ekVar.getWidth(), positionAnimated);
-        float lerp2 = AndroidUtilities.lerp(ekVar.getWidth(), 0, positionAnimated);
+        gk gkVar = this.f;
+        float positionAnimated = gkVar.getPositionAnimated();
+        float lerp = AndroidUtilities.lerp(0, -gkVar.getWidth(), positionAnimated);
+        float lerp2 = AndroidUtilities.lerp(gkVar.getWidth(), 0, positionAnimated);
         if (this.V) {
             ViewGroup viewGroup = this.Q;
             if (viewGroup instanceof ActionBarPopupWindow$ActionBarPopupWindowLayout) {
@@ -390,9 +390,9 @@ public final class yv0 extends Dialog {
         TextView textView = this.h;
         textView.setTranslationX(lerp);
         textView.setAlpha(this.y);
-        org.telegram.ui.Components.wb0 wb0Var = this.n;
-        wb0Var.setSelectedTab(positionAnimated);
-        wb0Var.setAlpha(this.y);
+        org.telegram.ui.Components.vb0 vb0Var = this.n;
+        vb0Var.setSelectedTab(positionAnimated);
+        vb0Var.setAlpha(this.y);
     }
 
     @Override // android.app.Dialog
@@ -414,14 +414,14 @@ public final class yv0 extends Dialog {
         AndroidUtilities.applyEdgeToEdgeLayoutParams(attributes);
         window.setAttributes(attributes);
         uv0Var.setSystemUiVisibility(1284);
-        AndroidUtilities.setLightNavigationBar(uv0Var, !org.telegram.ui.ActionBar.k6.I.q());
+        AndroidUtilities.setLightNavigationBar(uv0Var, !org.telegram.ui.ActionBar.j6.I.q());
     }
 
     @Override // android.app.Dialog
     public final void show() {
         if (AndroidUtilities.isSafeToShow(getContext())) {
             super.show();
-            org.telegram.ui.Components.im0.d(new d5(this, 15));
+            org.telegram.ui.Components.hm0.d(new f5(this, 15));
             this.L = true;
             b(true, null);
         }

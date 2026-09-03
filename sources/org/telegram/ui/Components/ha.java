@@ -10,7 +10,7 @@ import java.nio.FloatBuffer;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class ha {
     public FloatBuffer e;
@@ -67,8 +67,8 @@ public final class ha {
             GLES20.glUniformMatrix4fv(caVar.l, 1, false, fArr, 0);
         }
         GLES20.glUniform1f(caVar.m, c3 == 0 ? 0.0f : 1.0f);
-        dg.p1.a(caVar.h, this.l);
-        dg.p1.a(caVar.i, this.m);
+        cg.q1.a(caVar.h, this.l);
+        cg.q1.a(caVar.i, this.m);
         synchronized (this.k) {
             GLES20.glUniformMatrix4fv(caVar.d, 1, false, this.j, 0);
         }
@@ -86,8 +86,8 @@ public final class ha {
             GLES20.glUniform2f(caVar.f, this.a, this.b);
             GLES20.glUniform2f(caVar.g, f10, f11);
             GLES20.glUniform1i(caVar.j, 0);
-            dg.p1.a(caVar.h, this.l);
-            dg.p1.a(caVar.i, this.m);
+            cg.q1.a(caVar.h, this.l);
+            cg.q1.a(caVar.i, this.m);
             GLES20.glUniform1f(caVar.k, 0.0f);
             synchronized (this.k) {
                 GLES20.glUniformMatrix4fv(caVar.d, 1, false, this.j, 0);
@@ -215,8 +215,8 @@ public final class ha {
                 if (i14 == 1) {
                     readRes2 = "#extension GL_OES_EGL_image_external : require\n" + readRes2.replace("sampler2D tex", "samplerExternalOES tex");
                 }
-                int h = b00.h(35633, readRes);
-                int h9 = b00.h(35632, readRes2);
+                int h = a00.h(35633, readRes);
+                int h9 = a00.h(35632, readRes2);
                 if (h == 0 || h9 == 0) {
                     break;
                 }

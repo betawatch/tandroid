@@ -1,7 +1,7 @@
 package c4;
 
 import android.net.Uri;
-import c2.a1;
+import c2.b1;
 import g5.p;
 import h5.d0;
 import j3.m0;
@@ -12,7 +12,7 @@ import r3.l;
 import r3.m;
 import r3.v;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class c implements b {
     public int a;
@@ -24,14 +24,14 @@ public final class c implements b {
     public Object g;
     public Object h;
 
-    public c(m mVar, v vVar, a1 a1Var, String str, int i10) {
+    public c(m mVar, v vVar, b1 b1Var, String str, int i10) {
         this.e = mVar;
         this.f = vVar;
-        this.g = a1Var;
-        int i11 = a1Var.a;
-        int i12 = a1Var.b;
-        int i13 = (a1Var.d * i11) / 8;
-        int i14 = a1Var.c;
+        this.g = b1Var;
+        int i11 = b1Var.a;
+        int i12 = b1Var.b;
+        int i13 = (b1Var.d * i11) / 8;
+        int i14 = b1Var.c;
         if (i14 != i13) {
             throw r1.a("Expected block size: " + i13 + "; got: " + i14, null);
         }
@@ -63,15 +63,15 @@ public final class c implements b {
         int i11;
         long j11 = j10;
         while (j11 > 0 && (i10 = this.d) < (i11 = this.a)) {
-            int e6 = ((v) this.f).e(lVar, (int) Math.min(i11 - i10, j11), true);
-            if (e6 == -1) {
+            int e = ((v) this.f).e(lVar, (int) Math.min(i11 - i10, j11), true);
+            if (e == -1) {
                 j11 = 0;
             } else {
-                this.d += e6;
-                j11 -= e6;
+                this.d += e;
+                j11 -= e;
             }
         }
-        int i12 = ((a1) this.g).c;
+        int i12 = ((b1) this.g).c;
         int i13 = this.d / i12;
         if (i13 > 0) {
             long N = this.b + d0.N(this.c, 1000000L, r1.b);
@@ -86,7 +86,7 @@ public final class c implements b {
 
     @Override // c4.b
     public void c(int i10, long j10) {
-        ((m) this.e).m2(new f((a1) this.g, 1, i10, j10));
+        ((m) this.e).h2(new f((b1) this.g, 1, i10, j10));
         ((v) this.f).b((n0) this.h);
     }
 

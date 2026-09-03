@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class q1 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ r1 a;
@@ -70,7 +70,7 @@ public final class q1 implements ViewTreeObserver.OnPreDrawListener {
             }
             LaunchActivity launchActivity = LaunchActivity.D1;
             int expandedHeight = (launchActivity == null || launchActivity.P() == null) ? 0 : LaunchActivity.D1.P().getExpandedHeight();
-            boolean z10 = r1Var instanceof ng.o;
+            boolean z10 = r1Var instanceof mg.o;
             if (!z10) {
                 r1Var.h(Math.max(i12, height + expandedHeight));
             }

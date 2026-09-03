@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class ig extends FrameLayout {
     public final Drawable B;
@@ -39,15 +39,15 @@ public final class ig extends FrameLayout {
     public final float[] J;
     public final float[] K;
     public final z5 L;
-    public rg.b M;
+    public qg.b M;
     public boolean N;
-    public qg.b O;
-    public qg.b P;
+    public pg.b O;
+    public pg.b P;
     public boolean Q;
     public boolean R;
     public final /* synthetic */ ChatActivityEnterView S;
-    public qh.e3 a;
-    public qh.e3 b;
+    public ph.f3 a;
+    public ph.f3 b;
     public ShapeDrawable c;
     public final Drawable d;
     public final String e;
@@ -59,7 +59,7 @@ public final class ig extends FrameLayout {
     public final Paint v;
     public final Path w;
     public final Paint x;
-    public final qh.j y;
+    public final ph.j y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ig(ChatActivityEnterView chatActivityEnterView, Context context) {
@@ -78,11 +78,11 @@ public final class ig extends FrameLayout {
         this.I = new Path();
         this.J = new float[]{r14, r14, 0.0f, 0.0f, 0.0f, 0.0f, r14, r14};
         this.K = new float[]{0.0f, 0.0f, r13, r13, r13, r13, 0.0f, 0.0f};
-        this.L = new z5(this, 0L, 350L, pr.h);
+        this.L = new z5(this, 0L, 350L, mr.h);
         hg hgVar = new hg(this, this);
         this.D = hgVar;
         r0.j0.k(this, hgVar);
-        qh.j jVar = new qh.j(5);
+        ph.j jVar = new ph.j(5);
         this.y = jVar;
         jVar.setCallback(this);
         jVar.d(1, chatActivityEnterView.L, false);
@@ -91,8 +91,8 @@ public final class ig extends FrameLayout {
         paint.setStrokeWidth(AndroidUtilities.dpf2(1.7f));
         Drawable drawable = getResources().getDrawable(R.drawable.lock_round_shadow);
         chatActivityEnterView.R3 = drawable;
-        drawable.setColorFilter(new PorterDuffColorFilter(chatActivityEnterView.i0(org.telegram.ui.ActionBar.k6.be), PorterDuff.Mode.MULTIPLY));
-        this.c = org.telegram.ui.ActionBar.k6.b0(AndroidUtilities.dp(5.0f), chatActivityEnterView.i0(org.telegram.ui.ActionBar.k6.qf));
+        drawable.setColorFilter(new PorterDuffColorFilter(chatActivityEnterView.i0(org.telegram.ui.ActionBar.j6.be), PorterDuff.Mode.MULTIPLY));
+        this.c = org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(5.0f), chatActivityEnterView.i0(org.telegram.ui.ActionBar.j6.qf));
         textPaint.setTextSize(AndroidUtilities.dp(14.0f));
         this.d = context.getDrawable(R.drawable.tooltip_arrow);
         this.e = LocaleController.getString("SlideUpToLock", R.string.SlideUpToLock);
@@ -105,74 +105,74 @@ public final class ig extends FrameLayout {
     }
 
     public final void a() {
-        qh.e3 e3Var = this.a;
-        if (e3Var != null) {
-            e3Var.i0 = new gg(this, e3Var, 1);
-            e3Var.e(true);
+        ph.f3 f3Var = this.a;
+        if (f3Var != null) {
+            f3Var.i0 = new gg(this, f3Var, 1);
+            f3Var.e(true);
             this.a = null;
         }
-        qh.e3 e3Var2 = this.b;
-        if (e3Var2 != null) {
-            e3Var2.i0 = new gg(this, e3Var2, 2);
-            e3Var2.e(true);
+        ph.f3 f3Var2 = this.b;
+        if (f3Var2 != null) {
+            f3Var2.i0 = new gg(this, f3Var2, 2);
+            f3Var2.e(true);
             this.b = null;
         }
     }
 
     public final void b() {
         a();
-        qh.e3 e3Var = new qh.e3(getContext(), 2);
-        this.b = e3Var;
-        e3Var.l(1.0f, 0.0f);
+        ph.f3 f3Var = new ph.f3(getContext(), 2);
+        this.b = f3Var;
+        f3Var.l(1.0f, 0.0f);
         this.b.p(true);
         ChatActivityEnterView chatActivityEnterView = this.S;
         this.b.s(AndroidUtilities.replaceTags(LocaleController.getString(chatActivityEnterView.Z0 ? chatActivityEnterView.L ? R.string.VideoSetOnceHintEnabled : R.string.VideoSetOnceHint : chatActivityEnterView.L ? R.string.VoiceSetOnceHintEnabled : R.string.VoiceSetOnceHint)));
-        qh.e3 e3Var2 = this.b;
-        e3Var2.h = qh.e3.a(e3Var2.getText(), this.b.getTextPaint());
+        ph.f3 f3Var2 = this.b;
+        f3Var2.h = ph.f3.a(f3Var2.getText(), this.b.getTextPaint());
         if (chatActivityEnterView.L) {
-            qh.e3 e3Var3 = this.b;
+            ph.f3 f3Var3 = this.b;
             int i10 = R.raw.fire_on;
-            e3Var3.getClass();
-            hj0 hj0Var = new hj0(i10, AndroidUtilities.dp(34.0f), AndroidUtilities.dp(34.0f));
-            hj0Var.start();
-            e3Var3.j(hj0Var);
+            f3Var3.getClass();
+            gj0 gj0Var = new gj0(i10, AndroidUtilities.dp(34.0f), AndroidUtilities.dp(34.0f));
+            gj0Var.start();
+            f3Var3.j(gj0Var);
         } else {
             MessagesController.getGlobalMainSettings().edit().putInt("voiceoncehint", MessagesController.getGlobalMainSettings().getInt("voiceoncehint", 0) + 1).apply();
         }
-        addView(this.b, k7.c6.d(-1, -1.0f, 119, 0.0f, 0.0f, 54.0f, 58.0f));
-        qh.e3 e3Var4 = this.b;
-        e3Var4.i0 = new gg(this, e3Var4, 0);
-        e3Var4.u();
+        addView(this.b, k7.b6.d(-1, -1.0f, 119, 0.0f, 0.0f, 54.0f, 58.0f));
+        ph.f3 f3Var4 = this.b;
+        f3Var4.i0 = new gg(this, f3Var4, 0);
+        f3Var4.u();
     }
 
     public final void c() {
-        rg.b bVar = this.M;
+        qg.b bVar = this.M;
         if (bVar != null) {
             bVar.b();
         }
-        qg.b bVar2 = this.O;
+        pg.b bVar2 = this.O;
         if (bVar2 != null) {
             bVar2.u();
         }
-        qg.b bVar3 = this.P;
+        pg.b bVar3 = this.P;
         if (bVar3 != null) {
             bVar3.u();
         }
-        int i10 = this.N ? org.telegram.ui.ActionBar.k6.Wk : org.telegram.ui.ActionBar.k6.Zd;
+        int i10 = this.N ? org.telegram.ui.ActionBar.j6.Wk : org.telegram.ui.ActionBar.j6.Zd;
         ChatActivityEnterView chatActivityEnterView = this.S;
-        this.y.e(chatActivityEnterView.i0(i10), chatActivityEnterView.i0(org.telegram.ui.ActionBar.k6.cf), -1);
-        this.n.setColor(chatActivityEnterView.i0(org.telegram.ui.ActionBar.k6.pf));
+        this.y.e(chatActivityEnterView.i0(i10), chatActivityEnterView.i0(org.telegram.ui.ActionBar.j6.cf), -1);
+        this.n.setColor(chatActivityEnterView.i0(org.telegram.ui.ActionBar.j6.pf));
         int dp = AndroidUtilities.dp(5.0f);
-        int i11 = org.telegram.ui.ActionBar.k6.qf;
-        this.c = org.telegram.ui.ActionBar.k6.b0(dp, chatActivityEnterView.i0(i11));
+        int i11 = org.telegram.ui.ActionBar.j6.qf;
+        this.c = org.telegram.ui.ActionBar.j6.b0(dp, chatActivityEnterView.i0(i11));
         int i02 = chatActivityEnterView.i0(i11);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         this.d.setColorFilter(new PorterDuffColorFilter(i02, mode));
-        this.r.setColor(chatActivityEnterView.i0(org.telegram.ui.ActionBar.k6.ae));
-        this.s.setColor(chatActivityEnterView.i0(this.N ? org.telegram.ui.ActionBar.k6.Wk : org.telegram.ui.ActionBar.k6.Zd));
-        this.v.setColor(chatActivityEnterView.i0(this.N ? org.telegram.ui.ActionBar.k6.Wk : org.telegram.ui.ActionBar.k6.Zd));
-        this.B.setColorFilter(new PorterDuffColorFilter(chatActivityEnterView.i0(this.N ? org.telegram.ui.ActionBar.k6.Wk : org.telegram.ui.ActionBar.k6.Zd), mode));
-        this.C.setColorFilter(new PorterDuffColorFilter(chatActivityEnterView.i0(this.N ? org.telegram.ui.ActionBar.k6.Wk : org.telegram.ui.ActionBar.k6.Zd), mode));
+        this.r.setColor(chatActivityEnterView.i0(org.telegram.ui.ActionBar.j6.ae));
+        this.s.setColor(chatActivityEnterView.i0(this.N ? org.telegram.ui.ActionBar.j6.Wk : org.telegram.ui.ActionBar.j6.Zd));
+        this.v.setColor(chatActivityEnterView.i0(this.N ? org.telegram.ui.ActionBar.j6.Wk : org.telegram.ui.ActionBar.j6.Zd));
+        this.B.setColorFilter(new PorterDuffColorFilter(chatActivityEnterView.i0(this.N ? org.telegram.ui.ActionBar.j6.Wk : org.telegram.ui.ActionBar.j6.Zd), mode));
+        this.C.setColorFilter(new PorterDuffColorFilter(chatActivityEnterView.i0(this.N ? org.telegram.ui.ActionBar.j6.Wk : org.telegram.ui.ActionBar.j6.Zd), mode));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -202,7 +202,7 @@ public final class ig extends FrameLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:105:0x07d3, code lost:
     
-        if (r2.u1() == false) goto L152;
+        if (r2.t1() == false) goto L152;
      */
     /* JADX WARN: Code restructure failed: missing block: B:106:0x07d5, code lost:
     
@@ -356,7 +356,7 @@ public final class ig extends FrameLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:143:0x0351, code lost:
     
-        r3 = org.telegram.ui.Components.pr.j;
+        r3 = org.telegram.ui.Components.mr.j;
         r4 = r3.getInterpolation(r4);
         r2 = r3.getInterpolation(r2);
         r14 = r4;
@@ -533,7 +533,7 @@ public final class ig extends FrameLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:53:0x0324, code lost:
     
-        r5 = org.telegram.ui.Components.pr.j;
+        r5 = org.telegram.ui.Components.mr.j;
         r18 = r5.getInterpolation(r4);
         r5.getInterpolation(r2);
         r14 = r18;
@@ -821,7 +821,7 @@ public final class ig extends FrameLayout {
             float f20 = dp3 > 0.4f ? 1.0f : dp3 / 0.4f;
             f12 = 26.0f;
             float f21 = chatActivityEnterView.j4;
-            f13 = org.telegram.ui.yh.c(1.0f, f20, f21 * 15.0f, (1.0f - f21) * (1.0f - dp3) * 9.0f);
+            f13 = org.telegram.ui.ai.c(1.0f, f20, f21 * 15.0f, (1.0f - f21) * (1.0f - dp3) * 9.0f);
             f14 = dp3;
         } else {
             f11 = 0.25f;
@@ -895,29 +895,29 @@ public final class ig extends FrameLayout {
                     if (slideTextView != null) {
                         slideTextView.setEnabled(false);
                     }
-                    chatActivityEnterView.V2.t1();
+                    chatActivityEnterView.V2.s1();
                 } else {
                     fg fgVar = new fg(this, 0);
-                    qh.e3 e3Var = this.a;
-                    if (e3Var != null && e3Var.S) {
+                    ph.f3 f3Var = this.a;
+                    if (f3Var != null && f3Var.S) {
                         a();
                     }
-                    rk0 rk0Var = chatActivityEnterView.e1;
-                    if (rk0Var != null) {
-                        rk0Var.setPlaying(false);
+                    qk0 qk0Var = chatActivityEnterView.e1;
+                    if (qk0Var != null) {
+                        qk0Var.setPlaying(false);
                     }
                     if (!MediaController.getInstance().isRecordingPaused() || (chatActivityEnterView.e1.getAudioLeft() <= 0.01f && chatActivityEnterView.e1.getAudioRight() >= 0.99f)) {
                         fgVar.run();
                     } else {
-                        org.telegram.ui.mp mpVar = new org.telegram.ui.mp(15, this, fgVar);
+                        org.telegram.ui.np npVar = new org.telegram.ui.np(16, this, fgVar);
                         if (MessagesController.getGlobalMainSettings().getBoolean("trimvoicehint", true)) {
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext(), 0, chatActivityEnterView.S3);
                             alertDialog$Builder.a.O = LocaleController.getString(R.string.RecordingTrimTitle);
                             alertDialog$Builder.a.Q = LocaleController.getString(R.string.RecordingTrimText);
-                            alertDialog$Builder.k(LocaleController.getString(R.string.OK), new t(mpVar, 19));
-                            l.d.u(R.string.Cancel, alertDialog$Builder, null);
+                            alertDialog$Builder.k(LocaleController.getString(R.string.OK), new t(npVar, 19));
+                            kf.k0.u(R.string.Cancel, alertDialog$Builder, null);
                         } else {
-                            mpVar.run();
+                            npVar.run();
                         }
                     }
                 }
@@ -931,8 +931,8 @@ public final class ig extends FrameLayout {
                 this.y.d(1, z4, true);
                 MediaDataController mediaDataController = MediaDataController.getInstance(chatActivityEnterView.N);
                 long j10 = chatActivityEnterView.M2;
-                org.telegram.ui.xn xnVar = chatActivityEnterView.L2;
-                mediaDataController.toggleDraftVoiceOnce(j10, (xnVar == null || !xnVar.e4) ? 0L : xnVar.b(), chatActivityEnterView.L);
+                org.telegram.ui.zn znVar = chatActivityEnterView.L2;
+                mediaDataController.toggleDraftVoiceOnce(j10, (znVar == null || !znVar.e4) ? 0L : znVar.d(), chatActivityEnterView.L);
                 if (chatActivityEnterView.L) {
                     b();
                 } else {
@@ -957,16 +957,16 @@ public final class ig extends FrameLayout {
         super.setAlpha(f10);
     }
 
-    public void setBlurredBackgroundFactory(og.a aVar) {
+    public void setBlurredBackgroundFactory(ng.a aVar) {
         this.N = true;
         if (this.M == null) {
-            this.M = new rg.b(org.telegram.ui.ActionBar.k6.ae, this.S.S3);
+            this.M = new qg.b(org.telegram.ui.ActionBar.j6.ae, this.S.S3);
         }
-        qg.b c3 = aVar.c(this, this.M, false);
+        pg.b c3 = aVar.c(this, this.M, false);
         this.O = c3;
         c3.p(AndroidUtilities.dp(18.0f));
         this.O.o(AndroidUtilities.dp(3.0f));
-        qg.b c10 = aVar.c(this, this.M, false);
+        pg.b c10 = aVar.c(this, this.M, false);
         this.P = c10;
         c10.p(AndroidUtilities.dp(18.0f));
         this.P.o(AndroidUtilities.dp(3.0f));

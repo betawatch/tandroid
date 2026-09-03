@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.lang.reflect.Proxy;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class zzjp implements zzjt {
     public static final zzjp zza = new zzjp();
@@ -58,8 +58,8 @@ public final class zzjp implements zzjt {
             Class zza9 = zziy.zza(zza5);
             zzizVar.zzc().zze(intValue, Proxy.newProxyInstance(zza9.getClassLoader(), new Class[]{zza9}, new zziw(zzivVar, zza7, zza8)));
             zzizVar.zzc().zze(i10, zzivVar);
-        } catch (Exception e6) {
-            throw new zzdm(6, 20, e6);
+        } catch (Exception e) {
+            throw new zzdm(6, 20, e);
         }
     }
 }

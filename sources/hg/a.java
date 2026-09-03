@@ -1,95 +1,110 @@
 package hg;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.text.SpannableString;
-import android.text.TextPaint;
-import android.text.style.ReplacementSpan;
-import android.util.Pair;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.j6;
-import org.telegram.ui.Components.pr;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class a extends ReplacementSpan {
-    public final Drawable a;
-    public final Drawable b;
-    public boolean c;
-    public boolean d;
-    public final j6 e;
-    public final TextPaint f;
-    public final int h;
+public final class a extends bg.b {
+    public CharSequence c;
+    public TLRPC.InputPeer d;
+    public TLRPC.Chat e;
+    public Object f;
+    public boolean g;
+    public long h;
+    public int i;
+    public int j;
+    public List k;
+    public int l;
+    public TLObject m;
 
-    public a(org.telegram.ui.Cells.t1 t1Var, TextPaint textPaint, int i10) {
-        this.f = textPaint;
-        j6 j6Var = new j6(false, false, true, false);
-        this.e = j6Var;
-        j6Var.k(0.3f, 250L, pr.h);
-        j6Var.setCallback(t1Var);
-        j6Var.t(AndroidUtilities.dp(11.5f));
-        j6Var.u(AndroidUtilities.bold());
-        j6Var.q("", true, true);
-        j6Var.b = 17;
-        Drawable mutate = t1Var.getContext().getDrawable(R.drawable.mini_boost_profile_badge).mutate();
-        this.a = mutate;
-        Drawable mutate2 = t1Var.getContext().getDrawable(R.drawable.mini_boost_profile_badge2).mutate();
-        this.b = mutate2;
-        mutate.setBounds(0, 0, mutate.getIntrinsicWidth(), mutate.getIntrinsicHeight());
-        mutate2.setBounds(0, 0, mutate2.getIntrinsicWidth(), mutate2.getIntrinsicHeight());
-        this.h = i10;
-        j6Var.q(i10 > 1 ? String.valueOf(i10) : "", false, true);
+    public static a b(TLRPC.Chat chat, int i10, boolean z4) {
+        a aVar = new a(9, false);
+        aVar.e = chat;
+        aVar.d = null;
+        aVar.g = z4;
+        aVar.i = i10;
+        return aVar;
     }
 
-    public static Pair a(org.telegram.ui.Cells.t1 t1Var, TextPaint textPaint, int i10) {
-        SpannableString spannableString = new SpannableString("d");
-        a aVar = new a(t1Var, textPaint, i10);
-        spannableString.setSpan(aVar, 0, 1, 33);
-        return new Pair(spannableString, aVar);
+    public static a c(CharSequence charSequence, boolean z4) {
+        a aVar = new a(7, false);
+        aVar.c = charSequence;
+        aVar.g = z4;
+        return aVar;
     }
 
-    public final int b() {
-        return (int) (this.e.e() + AndroidUtilities.dp((this.d ? 8 : 0) + 16));
+    public static a d(TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption, int i10, long j10, boolean z4, boolean z10) {
+        a aVar = new a(17, z4);
+        aVar.i = i10;
+        aVar.h = j10;
+        aVar.m = tL_starsGiveawayOption;
+        aVar.g = z10;
+        return aVar;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f10, int i12, int i13, int i14, Paint paint) {
-        TextPaint textPaint = this.f;
-        int color = textPaint.getColor();
-        j6 j6Var = this.e;
-        int color2 = j6Var.a.getColor();
-        Drawable drawable = this.b;
-        Drawable drawable2 = this.a;
-        if (color != color2) {
-            j6Var.r(textPaint.getColor());
-            int color3 = j6Var.a.getColor();
-            PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-            drawable2.setColorFilter(new PorterDuffColorFilter(color3, mode));
-            drawable.setColorFilter(new PorterDuffColorFilter(j6Var.a.getColor(), mode));
+    public static a e(int i10, int i11, boolean z4, ArrayList arrayList) {
+        a aVar = new a(11, i11 == i10);
+        aVar.l = i10;
+        aVar.g = z4;
+        aVar.f = arrayList;
+        return aVar;
+    }
+
+    public static a f(String str) {
+        a aVar = new a(6, false);
+        aVar.c = str;
+        return aVar;
+    }
+
+    public static boolean g(List list, List list2) {
+        if (list == null && list2 == null) {
+            return true;
         }
-        canvas.save();
-        canvas.translate(f10 + ((!this.d || this.c) ? 0 : AndroidUtilities.dp(8.0f)), -AndroidUtilities.dp(0.2f));
-        if (this.h == 1) {
-            canvas.translate(AndroidUtilities.dp(1.5f), 0.0f);
-            drawable2.draw(canvas);
-        } else {
-            drawable.draw(canvas);
+        if (list == null || list2 == null || list.size() != list2.size()) {
+            return false;
         }
-        canvas.translate(AndroidUtilities.dp(16.0f), 0.0f);
-        Rect rect = AndroidUtilities.rectTmp2;
-        rect.set(0, 0, (int) j6Var.d(), (int) j6Var.e);
-        j6Var.setBounds(rect);
-        j6Var.draw(canvas);
-        canvas.restore();
+        for (int i10 = 0; i10 < list.size(); i10++) {
+            if (((Integer) list.get(i10)).intValue() != ((Integer) list2.get(i10)).intValue()) {
+                return false;
+            }
+        }
+        return true;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        return b();
+    @Override // bg.b
+    public final boolean a(bg.b bVar) {
+        a aVar;
+        int i10;
+        int i11;
+        if (this == bVar) {
+            return true;
+        }
+        if (a.class == bVar.getClass() && (i10 = (aVar = (a) bVar).a) == (i11 = this.a)) {
+            return i11 == 0 ? this.g == aVar.g : i10 == 17 ? this.i == aVar.i && this.h == aVar.h && this.m == aVar.m && this.g == aVar.g && this.b == aVar.b : i11 == 5 ? this.i == aVar.i && g(this.k, aVar.k) : i11 == 13 && this.i == aVar.i && TextUtils.equals(this.c, aVar.c);
+        }
+        return false;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || a.class != obj.getClass()) {
+            return false;
+        }
+        a aVar = (a) obj;
+        int i10 = this.a;
+        if (i10 != aVar.a) {
+            return false;
+        }
+        if (i10 == 0) {
+            return true;
+        }
+        return i10 == 17 ? this.i == aVar.i && this.m == aVar.m : i10 == 5 ? g(this.k, aVar.k) : i10 == 13 ? TextUtils.equals(this.c, aVar.c) : this.e == aVar.e && this.f == aVar.f && this.d == aVar.d && this.m == aVar.m && this.g == aVar.g && this.i == aVar.i && this.j == aVar.j && this.h == aVar.h && this.l == aVar.l && TextUtils.equals(this.c, aVar.c);
     }
 }

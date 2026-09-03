@@ -17,7 +17,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class eq0 implements Runnable {
     public final /* synthetic */ int a;
@@ -65,7 +65,7 @@ public final /* synthetic */ class eq0 implements Runnable {
             case 0:
                 hq0 hq0Var3 = this.b;
                 hq0Var3.f = null;
-                i10 = ((org.telegram.ui.ActionBar.h3) hq0Var3.H).currentAccount;
+                i10 = ((org.telegram.ui.ActionBar.g3) hq0Var3.H).currentAccount;
                 DispatchQueue storageQueue = MessagesStorage.getInstance(i10).getStorageQueue();
                 String str = this.d;
                 int i18 = this.c;
@@ -93,7 +93,7 @@ public final /* synthetic */ class eq0 implements Runnable {
                     String lowerCase = str2.trim().toLowerCase();
                     if (lowerCase.length() == 0) {
                         hq0Var5.r = -1;
-                        AndroidUtilities.runOnUIThread(new gy(hq0Var5, hq0Var5.r, new ArrayList(), 7));
+                        AndroidUtilities.runOnUIThread(new ey(hq0Var5, hq0Var5.r, new ArrayList(), 7));
                         break;
                     } else {
                         String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
@@ -109,7 +109,7 @@ public final /* synthetic */ class eq0 implements Runnable {
                         ArrayList arrayList = new ArrayList();
                         ArrayList arrayList2 = new ArrayList();
                         a0.h hVar = new a0.h();
-                        i11 = ((org.telegram.ui.ActionBar.h3) lq0Var2).currentAccount;
+                        i11 = ((org.telegram.ui.ActionBar.g3) lq0Var2).currentAccount;
                         SQLiteCursor queryFinalized = MessagesStorage.getInstance(i11).getDatabase().queryFinalized("SELECT did, date FROM dialogs ORDER BY date DESC LIMIT 400", new Object[0]);
                         while (queryFinalized.next()) {
                             long longValue = queryFinalized.longValue(0);
@@ -135,7 +135,7 @@ public final /* synthetic */ class eq0 implements Runnable {
                             strArr = strArr2;
                             i13 = 0;
                         } else {
-                            i16 = ((org.telegram.ui.ActionBar.h3) lq0Var2).currentAccount;
+                            i16 = ((org.telegram.ui.ActionBar.g3) lq0Var2).currentAccount;
                             SQLiteDatabase database = MessagesStorage.getInstance(i16).getDatabase();
                             Locale locale = Locale.US;
                             String join = TextUtils.join(",", arrayList);
@@ -222,7 +222,7 @@ public final /* synthetic */ class eq0 implements Runnable {
                             queryFinalized2.dispose();
                         }
                         if (!arrayList2.isEmpty()) {
-                            i15 = ((org.telegram.ui.ActionBar.h3) lq0Var).currentAccount;
+                            i15 = ((org.telegram.ui.ActionBar.g3) lq0Var).currentAccount;
                             SQLiteDatabase database2 = MessagesStorage.getInstance(i15).getDatabase();
                             Locale locale2 = Locale.US;
                             SQLiteCursor queryFinalized3 = database2.queryFinalized("SELECT data, name FROM chats WHERE uid IN(" + TextUtils.join(",", arrayList2) + ")", new Object[0]);
@@ -267,7 +267,7 @@ public final /* synthetic */ class eq0 implements Runnable {
                                 arrayList3.add(zp0Var4);
                             }
                         }
-                        i14 = ((org.telegram.ui.ActionBar.h3) lq0Var).currentAccount;
+                        i14 = ((org.telegram.ui.ActionBar.g3) lq0Var).currentAccount;
                         SQLiteCursor queryFinalized4 = MessagesStorage.getInstance(i14).getDatabase().queryFinalized("SELECT u.data, u.status, u.name, u.uid FROM users as u INNER JOIN contacts as c ON u.uid = c.uid", new Object[0]);
                         while (queryFinalized4.next()) {
                             if (hVar.h(queryFinalized4.longValue(3)) < 0) {
@@ -326,12 +326,12 @@ public final /* synthetic */ class eq0 implements Runnable {
                             }
                         }
                         queryFinalized4.dispose();
-                        Collections.sort(arrayList3, new oh.k0(27));
-                        AndroidUtilities.runOnUIThread(new gy(hq0Var, i12, arrayList3, 7));
+                        Collections.sort(arrayList3, new nh.e4(27));
+                        AndroidUtilities.runOnUIThread(new ey(hq0Var, i12, arrayList3, 7));
                         break;
                     }
-                } catch (Exception e6) {
-                    FileLog.e(e6);
+                } catch (Exception e) {
+                    FileLog.e(e);
                 }
         }
     }

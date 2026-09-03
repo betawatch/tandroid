@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hn0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -80,7 +80,7 @@ public final /* synthetic */ class hn0 implements View.OnClickListener {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(lo0Var.getParentActivity());
                 String string = LocaleController.getString(R.string.TurnPasswordOffQuestion);
                 if (lo0Var.X.has_secure_values) {
-                    string = org.telegram.messenger.y3.h(R.string.TurnPasswordOffPassport, w.c.f(string, "\n\n"));
+                    string = org.telegram.messenger.y3.h(R.string.TurnPasswordOffPassport, vh.w2.f(string, "\n\n"));
                 }
                 org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
                 d2Var.Q = string;
@@ -90,7 +90,7 @@ public final /* synthetic */ class hn0 implements View.OnClickListener {
                 lo0Var.showDialog(d2Var);
                 TextView textView = (TextView) d2Var.d(-1);
                 if (textView != null) {
-                    textView.setTextColor(lo0Var.getThemedColor(org.telegram.ui.ActionBar.k6.q7));
+                    textView.setTextColor(lo0Var.getThemedColor(org.telegram.ui.ActionBar.j6.q7));
                     break;
                 }
                 break;
@@ -114,11 +114,11 @@ public final /* synthetic */ class hn0 implements View.OnClickListener {
                 int intValue = ((Integer) view.getTag()).intValue();
                 int i11 = 0;
                 while (true) {
-                    org.telegram.ui.Cells.j6[] j6VarArr = lo0Var.h;
-                    if (i11 >= j6VarArr.length) {
+                    org.telegram.ui.Cells.i6[] i6VarArr = lo0Var.h;
+                    if (i11 >= i6VarArr.length) {
                         break;
                     } else {
-                        j6VarArr[i11].a(intValue == i11, true);
+                        i6VarArr[i11].a(intValue == i11, true);
                         i11++;
                     }
                 }
@@ -159,15 +159,15 @@ public final /* synthetic */ class hn0 implements View.OnClickListener {
                     jVar.s = jSONObject2;
                     a8.e eVar = lo0Var.e;
                     eVar.getClass();
-                    com.google.android.gms.common.api.internal.v e6 = com.google.android.gms.common.api.internal.w.e();
-                    e6.c = new y5.h(jVar, 21);
-                    e6.d = new y5.c[]{j8.p.b};
-                    e6.b = true;
-                    e6.a = 23707;
-                    j8.a.a(eVar.e(1, e6.e()), lo0Var.getParentActivity());
+                    com.google.android.gms.common.api.internal.v e = com.google.android.gms.common.api.internal.w.e();
+                    e.c = new o5.i(jVar, 22);
+                    e.d = new y5.c[]{j8.p.b};
+                    e.b = true;
+                    e.a = 23707;
+                    j8.a.a(eVar.e(1, e.e()), lo0Var.getParentActivity());
                     break;
-                } catch (JSONException e10) {
-                    FileLog.e(e10);
+                } catch (JSONException e6) {
+                    FileLog.e(e6);
                     return;
                 }
                 break;

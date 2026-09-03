@@ -10,7 +10,7 @@ import com.google.android.gms.common.api.internal.t0;
 import com.google.android.gms.common.api.internal.u;
 import com.google.android.gms.tasks.Task;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class e extends com.google.android.gms.common.api.j {
     public static int k = 1;
@@ -57,7 +57,7 @@ public final class e extends com.google.android.gms.common.api.j {
             t0Var.b.d(1, gVar);
             basePendingResult = gVar;
         }
-        return m.n(basePendingResult, new db.a(3));
+        return m.n(basePendingResult, new cb.b(3));
     }
 
     public synchronized int h() {

@@ -4,7 +4,7 @@ import j3.m0;
 import j3.n0;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class b implements i {
     public final /* synthetic */ int a;
@@ -479,14 +479,14 @@ public final class b implements i {
                 h0Var.b();
                 this.e = h0Var.e;
                 h0Var.b();
-                this.f = mVar.i2(h0Var.d, 1);
+                this.f = mVar.d2(h0Var.d, 1);
                 break;
             default:
                 h0Var.a();
                 h0Var.b();
                 this.e = h0Var.e;
                 h0Var.b();
-                this.f = mVar.i2(h0Var.d, 1);
+                this.f = mVar.d2(h0Var.d, 1);
                 break;
         }
     }

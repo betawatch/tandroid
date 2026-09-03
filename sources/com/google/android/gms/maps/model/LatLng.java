@@ -4,10 +4,10 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import c6.a;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import j7.g5;
+import j7.f5;
 import u6.p;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class LatLng extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<LatLng> CREATOR = new p(16);
@@ -46,11 +46,11 @@ public final class LatLng extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = g5.q(parcel, 20293);
-        g5.s(parcel, 2, 8);
+        int q10 = f5.q(parcel, 20293);
+        f5.s(parcel, 2, 8);
         parcel.writeDouble(this.a);
-        g5.s(parcel, 3, 8);
+        f5.s(parcel, 3, 8);
         parcel.writeDouble(this.b);
-        g5.r(parcel, q10);
+        f5.r(parcel, q10);
     }
 }

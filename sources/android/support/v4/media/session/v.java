@@ -7,7 +7,7 @@ import android.os.RemoteCallbackList;
 import android.support.v4.media.MediaMetadataCompat;
 import java.util.List;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class v implements t {
     public final MediaSession a;
@@ -24,10 +24,10 @@ public class v implements t {
     public y1.a l;
 
     public v(Context context, String str) {
-        MediaSession e6 = e(context, str);
-        this.a = e6;
-        this.b = new MediaSessionCompat$Token(e6.getSessionToken(), new u(this));
-        e6.setFlags(3);
+        MediaSession e = e(context, str);
+        this.a = e;
+        this.b = new MediaSessionCompat$Token(e.getSessionToken(), new u(this));
+        e.setFlags(3);
     }
 
     @Override // android.support.v4.media.session.t
@@ -40,17 +40,17 @@ public class v implements t {
     }
 
     @Override // android.support.v4.media.session.t
-    public final PlaybackStateCompat b() {
-        return this.f;
-    }
-
-    @Override // android.support.v4.media.session.t
-    public y1.a c() {
+    public y1.a b() {
         y1.a aVar;
         synchronized (this.c) {
             aVar = this.l;
         }
         return aVar;
+    }
+
+    @Override // android.support.v4.media.session.t
+    public final PlaybackStateCompat c() {
+        return this.f;
     }
 
     @Override // android.support.v4.media.session.t

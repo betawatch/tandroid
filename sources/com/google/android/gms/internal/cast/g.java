@@ -13,7 +13,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class g extends a7.c {
     public final /* synthetic */ int b;
@@ -43,17 +43,17 @@ public abstract class g extends a7.c {
                 Bundle bundle = null;
                 switch (i10) {
                     case 1:
-                        Bundle bundle2 = (Bundle) s.a(parcel, Bundle.CREATOR);
+                        Bundle bundle2 = (Bundle) t.a(parcel, Bundle.CREATOR);
                         IBinder readStrongBinder = parcel.readStrongBinder();
                         if (readStrongBinder != null) {
                             IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.cast.framework.internal.IMediaRouterCallback");
                             hVar = queryLocalInterface instanceof h ? (h) queryLocalInterface : new h(readStrongBinder, "com.google.android.gms.cast.framework.internal.IMediaRouterCallback", 1);
                         }
-                        s.b(parcel);
-                        o oVar = (o) this;
-                        c2.v b10 = c2.v.b(bundle2);
+                        t.b(parcel);
+                        p pVar = (p) this;
+                        c2.w b10 = c2.w.b(bundle2);
                         if (b10 != null) {
-                            HashMap hashMap = oVar.e;
+                            HashMap hashMap = pVar.e;
                             if (!hashMap.containsKey(b10)) {
                                 hashMap.put(b10, new HashSet());
                             }
@@ -62,53 +62,53 @@ public abstract class g extends a7.c {
                         parcel2.writeNoException();
                         return true;
                     case 2:
-                        Bundle bundle3 = (Bundle) s.a(parcel, Bundle.CREATOR);
+                        Bundle bundle3 = (Bundle) t.a(parcel, Bundle.CREATOR);
                         int readInt = parcel.readInt();
-                        s.b(parcel);
-                        o oVar2 = (o) this;
-                        c2.v b11 = c2.v.b(bundle3);
+                        t.b(parcel);
+                        p pVar2 = (p) this;
+                        c2.w b11 = c2.w.b(bundle3);
                         if (b11 != null) {
                             if (Looper.myLooper() == Looper.getMainLooper()) {
-                                oVar2.K0(b11, readInt);
+                                pVar2.K0(b11, readInt);
                             } else {
-                                new a7.e(Looper.getMainLooper(), 2).post(new androidx.activity.g(oVar2, b11, readInt, i13));
+                                new a7.e(Looper.getMainLooper(), 2).post(new androidx.activity.g(pVar2, b11, readInt, i13));
                             }
                         }
                         parcel2.writeNoException();
                         return true;
                     case 3:
-                        Bundle bundle4 = (Bundle) s.a(parcel, Bundle.CREATOR);
-                        s.b(parcel);
-                        o oVar3 = (o) this;
-                        c2.v b12 = c2.v.b(bundle4);
+                        Bundle bundle4 = (Bundle) t.a(parcel, Bundle.CREATOR);
+                        t.b(parcel);
+                        p pVar3 = (p) this;
+                        c2.w b12 = c2.w.b(bundle4);
                         if (b12 != null) {
                             if (Looper.myLooper() == Looper.getMainLooper()) {
-                                oVar3.L0(b12);
+                                pVar3.L0(b12);
                             } else {
-                                new a7.e(Looper.getMainLooper(), 2).post(new androidx.biometric.k(oVar3, b12, i11, 5));
+                                new a7.e(Looper.getMainLooper(), 2).post(new androidx.biometric.j(pVar3, b12, i11, 5));
                             }
                         }
                         parcel2.writeNoException();
                         return true;
                     case 4:
-                        Bundle bundle5 = (Bundle) s.a(parcel, Bundle.CREATOR);
+                        Bundle bundle5 = (Bundle) t.a(parcel, Bundle.CREATOR);
                         int readInt2 = parcel.readInt();
-                        s.b(parcel);
-                        o oVar4 = (o) this;
-                        c2.v b13 = c2.v.b(bundle5);
+                        t.b(parcel);
+                        p pVar4 = (p) this;
+                        c2.w b13 = c2.w.b(bundle5);
                         if (b13 != null) {
-                            oVar4.c.getClass();
-                            c2.c0.b();
-                            c2.e c3 = c2.c0.c();
+                            pVar4.c.getClass();
+                            c2.d0.b();
+                            c2.e c3 = c2.d0.c();
                             ArrayList arrayList = c3.j;
                             if (!b13.d()) {
                                 if ((readInt2 & 2) != 0 || !c3.p) {
-                                    c2.f0 f0Var = c3.u;
-                                    boolean z4 = f0Var != null && f0Var.c && c3.f();
+                                    c2.g0 g0Var = c3.u;
+                                    boolean z4 = g0Var != null && g0Var.c && c3.f();
                                     int size = arrayList.size();
                                     for (int i14 = 0; i14 < size; i14++) {
-                                        c2.a0 a0Var = (c2.a0) arrayList.get(i14);
-                                        if (((readInt2 & 1) != 0 && a0Var.d()) || ((z4 && !a0Var.d() && a0Var.c() != c3.r) || !a0Var.h(b13))) {
+                                        c2.b0 b0Var = (c2.b0) arrayList.get(i14);
+                                        if (((readInt2 & 1) != 0 && b0Var.d()) || ((z4 && !b0Var.d() && b0Var.c() != c3.r) || !b0Var.h(b13))) {
                                         }
                                     }
                                 }
@@ -120,66 +120,66 @@ public abstract class g extends a7.c {
                         return true;
                     case 5:
                         String readString = parcel.readString();
-                        s.b(parcel);
-                        u5.b bVar = o.j;
+                        t.b(parcel);
+                        u5.b bVar = p.j;
                         bVar.b("select route with routeId = %s", readString);
-                        ((o) this).c.getClass();
-                        c2.c0.b();
-                        ArrayList arrayList2 = c2.c0.c().j;
+                        ((p) this).c.getClass();
+                        c2.d0.b();
+                        ArrayList arrayList2 = c2.d0.c().j;
                         int size2 = arrayList2.size();
                         int i15 = 0;
                         while (true) {
                             if (i15 < size2) {
                                 Object obj = arrayList2.get(i15);
                                 i15++;
-                                c2.a0 a0Var2 = (c2.a0) obj;
-                                if (a0Var2.c.equals(readString)) {
+                                c2.b0 b0Var2 = (c2.b0) obj;
+                                if (b0Var2.c.equals(readString)) {
                                     bVar.b("media route is found and selected", new Object[0]);
-                                    c2.c0.b();
-                                    c2.c0.c().i(a0Var2, 3);
+                                    c2.d0.b();
+                                    c2.d0.c().i(b0Var2, 3);
                                 }
                             }
                         }
                         parcel2.writeNoException();
                         return true;
                     case 6:
-                        ((o) this).c.getClass();
-                        c2.c0.b();
-                        c2.a0 a0Var3 = c2.c0.c().v;
-                        if (a0Var3 == null) {
+                        ((p) this).c.getClass();
+                        c2.d0.b();
+                        c2.b0 b0Var3 = c2.d0.c().v;
+                        if (b0Var3 == null) {
                             throw new IllegalStateException("There is no default route.  The media router has not yet been fully initialized.");
                         }
-                        c2.c0.b();
-                        c2.c0.c().i(a0Var3, 3);
+                        c2.d0.b();
+                        c2.d0.c().i(b0Var3, 3);
                         parcel2.writeNoException();
                         return true;
                     case 7:
-                        ((o) this).c.getClass();
-                        c2.c0.b();
-                        c2.a0 a0Var4 = c2.c0.c().v;
-                        if (a0Var4 == null) {
+                        ((p) this).c.getClass();
+                        c2.d0.b();
+                        c2.b0 b0Var4 = c2.d0.c().v;
+                        if (b0Var4 == null) {
                             throw new IllegalStateException("There is no default route.  The media router has not yet been fully initialized.");
                         }
-                        boolean equals = c2.c0.f().c.equals(a0Var4.c);
+                        boolean equals = c2.d0.f().c.equals(b0Var4.c);
                         parcel2.writeNoException();
-                        int i16 = s.a;
+                        int i16 = t.a;
                         parcel2.writeInt(equals ? 1 : 0);
                         return true;
                     case 8:
                         String readString2 = parcel.readString();
-                        s.b(parcel);
-                        ((o) this).c.getClass();
-                        c2.c0.b();
-                        ArrayList arrayList3 = c2.c0.c().j;
+                        t.b(parcel);
+                        ((p) this).c.getClass();
+                        c2.d0.b();
+                        ArrayList arrayList3 = c2.d0.c().j;
                         int size3 = arrayList3.size();
                         int i17 = 0;
                         while (true) {
                             if (i17 < size3) {
                                 Object obj2 = arrayList3.get(i17);
                                 i17++;
-                                c2.a0 a0Var5 = (c2.a0) obj2;
-                                if (a0Var5.c.equals(readString2)) {
-                                    bundle = a0Var5.s;
+                                c2.b0 b0Var5 = (c2.b0) obj2;
+                                if (b0Var5.c.equals(readString2)) {
+                                    bundle = b0Var5.s;
                                 }
                             }
                         }
@@ -192,8 +192,8 @@ public abstract class g extends a7.c {
                         bundle.writeToParcel(parcel2, 1);
                         return true;
                     case 9:
-                        ((o) this).c.getClass();
-                        String str = c2.c0.f().c;
+                        ((p) this).c.getClass();
+                        String str = c2.d0.f().c;
                         parcel2.writeNoException();
                         parcel2.writeString(str);
                         return true;
@@ -202,34 +202,34 @@ public abstract class g extends a7.c {
                         parcel2.writeInt(12451000);
                         return true;
                     case 11:
-                        o oVar5 = (o) this;
-                        HashMap hashMap2 = oVar5.e;
+                        p pVar5 = (p) this;
+                        HashMap hashMap2 = pVar5.e;
                         Iterator it = hashMap2.values().iterator();
                         while (it.hasNext()) {
                             Iterator it2 = ((Set) it.next()).iterator();
                             while (it2.hasNext()) {
-                                oVar5.c.h((c2.w) it2.next());
+                                pVar5.c.h((c2.x) it2.next());
                             }
                         }
                         hashMap2.clear();
                         parcel2.writeNoException();
                         return true;
                     case 12:
-                        ((o) this).c.getClass();
-                        c2.c0.b();
-                        c2.a0 a0Var6 = c2.c0.c().w;
-                        if (a0Var6 != null && c2.c0.f().c.equals(a0Var6.c)) {
+                        ((p) this).c.getClass();
+                        c2.d0.b();
+                        c2.b0 b0Var6 = c2.d0.c().w;
+                        if (b0Var6 != null && c2.d0.f().c.equals(b0Var6.c)) {
                             i12 = 1;
                         }
                         parcel2.writeNoException();
-                        int i18 = s.a;
+                        int i18 = t.a;
                         parcel2.writeInt(i12);
                         return true;
                     case 13:
                         int readInt3 = parcel.readInt();
-                        s.b(parcel);
-                        ((o) this).c.getClass();
-                        c2.c0.j(readInt3);
+                        t.b(parcel);
+                        ((p) this).c.getClass();
+                        c2.d0.j(readInt3);
                         parcel2.writeNoException();
                         return true;
                     default:
@@ -239,7 +239,7 @@ public abstract class g extends a7.c {
                 if (i10 == 1) {
                     l6.b bVar2 = new l6.b((c) this);
                     parcel2.writeNoException();
-                    s.d(parcel2, bVar2);
+                    t.d(parcel2, bVar2);
                     return true;
                 }
                 if (i10 == 2) {
@@ -272,13 +272,13 @@ public abstract class g extends a7.c {
                     m.f.b("Stopping RouteDiscovery.", new Object[0]);
                     mVar.c.clear();
                     if (Looper.myLooper() == Looper.getMainLooper()) {
-                        bf.b bVar5 = mVar.e;
-                        if (((c2.c0) bVar5.c) == null) {
-                            bVar5.c = c2.c0.d((Context) bVar5.b);
+                        af.c cVar3 = mVar.e;
+                        if (((c2.d0) cVar3.c) == null) {
+                            cVar3.c = c2.d0.d((Context) cVar3.b);
                         }
-                        c2.c0 c0Var = (c2.c0) bVar5.c;
-                        if (c0Var != null) {
-                            c0Var.h(mVar);
+                        c2.d0 d0Var = (c2.d0) cVar3.c;
+                        if (d0Var != null) {
+                            d0Var.h(mVar);
                         }
                     } else {
                         new a7.e(Looper.getMainLooper(), 2).post(new j(mVar, i11 == true ? 1 : 0));

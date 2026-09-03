@@ -9,18 +9,18 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public abstract class c21 extends View {
     public final d21 a;
     public Utilities.Callback b;
-    public final org.telegram.ui.ActionBar.g6 c;
+    public final org.telegram.ui.ActionBar.f6 c;
     public int d;
 
-    public c21(Context context, int i10, org.telegram.ui.ActionBar.g6 g6Var) {
+    public c21(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
-        this.c = g6Var;
-        d21 d21Var = new d21(i10, this, g6Var, false);
+        this.c = f6Var;
+        d21 d21Var = new d21(i10, this, f6Var, false);
         this.a = d21Var;
         d21Var.r = new nq0(this, 18);
     }
@@ -28,11 +28,11 @@ public abstract class c21 extends View {
     @Override // android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        org.telegram.ui.ActionBar.g6 g6Var = this.c;
-        if (g6Var != null) {
-            g6Var.l(0.0f, 0.0f, getMeasuredWidth(), this.d);
+        org.telegram.ui.ActionBar.f6 f6Var = this.c;
+        if (f6Var != null) {
+            f6Var.l(0.0f, 0.0f, getMeasuredWidth(), this.d);
         } else {
-            org.telegram.ui.ActionBar.k6.q(0.0f, 0.0f, getMeasuredWidth(), this.d);
+            org.telegram.ui.ActionBar.j6.q(0.0f, 0.0f, getMeasuredWidth(), this.d);
         }
         this.a.c(canvas, getWidth(), 0.0f, 0.0f, 0.75f, 1.0f, true);
     }

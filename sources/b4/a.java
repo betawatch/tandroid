@@ -2,7 +2,7 @@ package b4;
 
 import org.telegram.ui.Components.jb;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class a implements r3.k {
     public final b a = new b(null, 0);
@@ -18,8 +18,8 @@ public final class a implements r3.k {
     @Override // r3.k
     public final void e(r3.m mVar) {
         this.a.c(mVar, new h0(0, 1));
-        mVar.i1();
-        mVar.m2(new r3.n(-9223372036854775807L));
+        mVar.j1();
+        mVar.h2(new r3.n(-9223372036854775807L));
     }
 
     @Override // r3.k

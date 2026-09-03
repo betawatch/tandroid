@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
 import dd.l;
-import k7.q7;
+import k7.p7;
 import kotlin.jvm.internal.q;
 import uc.c;
 import vc.a;
 import wc.i;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 final class zzev extends i implements l {
     Object zza;
@@ -50,7 +50,7 @@ final class zzev extends i implements l {
         int i10 = this.zzb;
         try {
             if (i10 == 0) {
-                q7.b(obj);
+                p7.b(obj);
                 zzgrVar = this.zzc;
                 zzfp zzfpVar = this.zzd;
                 zzye zzyeVar = this.zze;
@@ -59,11 +59,11 @@ final class zzev extends i implements l {
                 obj = new zzhf(48, new zzes(zzfpVar, zzyeVar, null), null);
             } else {
                 if (i10 != 1) {
-                    q7.b(obj);
+                    p7.b(obj);
                     return (zzyg) obj;
                 }
                 zzgrVar = (zzgr) this.zza;
-                q7.b(obj);
+                p7.b(obj);
             }
             this.zza = null;
             this.zzb = 2;
@@ -72,9 +72,9 @@ final class zzev extends i implements l {
                 return aVar;
             }
             return (zzyg) obj;
-        } catch (zzcg e6) {
-            this.zzf.a = e6;
-            throw e6;
+        } catch (zzcg e) {
+            this.zzf.a = e;
+            throw e;
         }
     }
 }

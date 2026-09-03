@@ -1,70 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ac0 implements View.OnClickListener {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class ac0 extends org.telegram.ui.ActionBar.k5 {
+    public final Paint J0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 K0;
 
-    public /* synthetic */ ac0(org.telegram.ui.mt mtVar, ArrayList arrayList, boolean z4) {
-        this.c = mtVar;
-        this.d = arrayList;
-        this.b = z4;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ac0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        this.K0 = f6Var;
+        this.J0 = new Paint(1);
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.h3 h3Var = (org.telegram.ui.ActionBar.h3) this.c;
-                Runnable runnable = (Runnable) this.d;
-                org.telegram.ui.ActionBar.p2 R = LaunchActivity.R();
-                if (R != null) {
-                    R.presentFragment(new PremiumPreviewFragment(0, this.b ? "lastseen" : "readtime"));
-                    h3Var.dismiss();
-                    if (runnable != null) {
-                        runnable.run();
-                        break;
-                    }
-                }
-                break;
-            default:
-                org.telegram.ui.mt mtVar = (org.telegram.ui.mt) this.c;
-                ArrayList arrayList = (ArrayList) this.d;
-                org.telegram.ui.qt qtVar = mtVar.a;
-                if (qtVar.w != null && qtVar.l != null) {
-                    int intValue = ((Integer) arrayList.get(((Integer) view.getTag()).intValue())).intValue();
-                    if (intValue == 0) {
-                        qtVar.l.B(qtVar.W);
-                    } else if (intValue == 1) {
-                        qtVar.l.t(qtVar.W);
-                    } else if (intValue == 2) {
-                        qtVar.l.t(null);
-                    } else if (intValue == 3) {
-                        qtVar.l.G(qtVar.W);
-                    } else if (intValue == 4) {
-                        qtVar.l.p(qtVar.W);
-                    } else if (intValue == 5) {
-                        MediaDataController.getInstance(qtVar.r).addRecentSticker(2, qtVar.b0, qtVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
-                    }
-                    qtVar.p();
-                    break;
-                }
-                break;
-        }
-    }
-
-    public /* synthetic */ ac0(boolean z4, org.telegram.ui.ActionBar.h3 h3Var, Runnable runnable) {
-        this.b = z4;
-        this.c = h3Var;
-        this.d = runnable;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.K5, this.K0);
+        Paint paint = this.J0;
+        paint.setColor(v02);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(1.0f);
+        float height = getHeight() / 2.0f;
+        canvas.drawLine(0.0f, height, ((getWidth() / 2.0f) - (getTextWidth() / 2.0f)) - AndroidUtilities.dp(8.0f), height, paint);
+        canvas.drawLine((getTextWidth() / 2.0f) + (getWidth() / 2.0f) + AndroidUtilities.dp(8.0f), height, getWidth(), height, paint);
+        super.dispatchDraw(canvas);
     }
 }

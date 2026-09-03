@@ -1,33 +1,28 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rk implements y4 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ cl b;
-    public final /* synthetic */ TLRPC.TL_messageMediaVenue c;
+public final class rk extends f2.j0 {
+    public final /* synthetic */ ej r;
 
-    public /* synthetic */ rk(cl clVar, TLRPC.TL_messageMediaVenue tL_messageMediaVenue, int i10) {
-        this.a = i10;
-        this.b = clVar;
-        this.c = tL_messageMediaVenue;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rk(ej ejVar, Context context) {
+        super(context);
+        this.r = ejVar;
     }
 
-    @Override // org.telegram.ui.Components.y4
-    public final void I(int i10, int i11, boolean z4) {
-        switch (this.a) {
-            case 0:
-                cl clVar = this.b;
-                clVar.u0.d(this.c, clVar.v0, z4, i10, 0L);
-                clVar.b.dismiss(true);
-                break;
-            default:
-                cl clVar2 = this.b;
-                clVar2.u0.d(this.c, clVar2.v0, z4, i10, 0L);
-                clVar2.b.dismiss(true);
-                break;
-        }
+    @Override // f2.j0
+    public final int k(int i10, View view) {
+        int k10 = super.k(i10, view);
+        al alVar = (al) this.r.V;
+        return k10 - (alVar.M.getPaddingTop() - (alVar.x0 - alVar.w0));
+    }
+
+    @Override // f2.j0
+    public final int m(int i10) {
+        return super.m(i10) * 4;
     }
 }

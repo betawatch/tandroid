@@ -2,15 +2,15 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class i51 extends y51 {
-    public final /* synthetic */ w61 c3;
+    public final /* synthetic */ x61 c3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i51(w61 w61Var, Context context) {
-        super(w61Var, context);
-        this.c3 = w61Var;
+    public i51(x61 x61Var, Context context) {
+        super(x61Var, context);
+        this.c3 = x61Var;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView

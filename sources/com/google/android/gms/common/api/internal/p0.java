@@ -17,9 +17,9 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Set;
-import m.r3;
+import m.s3;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class p0 implements com.google.android.gms.common.api.k, com.google.android.gms.common.api.l {
     public final com.google.android.gms.common.api.c b;
@@ -39,15 +39,15 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
     public p0(h hVar, com.google.android.gms.common.api.j jVar) {
         this.o = hVar;
         Looper looper = hVar.x.getLooper();
-        androidx.biometric.e a2 = jVar.a();
+        af.d a2 = jVar.a();
         a0.g gVar = (a0.g) a2.b;
         String str = (String) a2.c;
         String str2 = (String) a2.d;
         b8.a aVar = b8.a.a;
-        r3 r3Var = new r3(gVar, null, str, str2, aVar);
+        s3 s3Var = new s3(gVar, null, str, str2, aVar);
         a8.j jVar2 = jVar.c.a;
         b6.m.h(jVar2);
-        com.google.android.gms.common.api.c a10 = jVar2.a(jVar.a, looper, r3Var, jVar.d, this, this);
+        com.google.android.gms.common.api.c a10 = jVar2.a(jVar.a, looper, s3Var, jVar.d, this, this);
         String str3 = jVar.b;
         if (str3 != null && (a10 instanceof b6.g)) {
             ((b6.g) a10).K = str3;
@@ -66,8 +66,8 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
         }
         Context context = hVar.e;
         a7.e eVar = hVar.x;
-        androidx.biometric.e a11 = jVar.a();
-        this.j = new e1(context, eVar, new r3((a0.g) a11.b, null, (String) a11.c, (String) a11.d, aVar));
+        af.d a11 = jVar.a();
+        this.j = new e1(context, eVar, new s3((a0.g) a11.b, null, (String) a11.c, (String) a11.d, aVar));
     }
 
     public final y5.c a(y5.c[] cVarArr) {
@@ -288,9 +288,9 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
             return;
         }
         try {
-            int f02 = hVar.h.f0(hVar.e, cVar);
-            if (f02 != 0) {
-                y5.a aVar = new y5.a(f02, null);
+            int g02 = hVar.h.g0(hVar.e, cVar);
+            if (g02 != 0) {
+                y5.a aVar = new y5.a(g02, null);
                 Log.w("GoogleApiManager", "The service for " + cVar.getClass().getName() + " is not available: " + aVar.toString());
                 m(aVar, null);
                 return;
@@ -300,28 +300,28 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
                 e1 e1Var = this.j;
                 b6.m.h(e1Var);
                 Handler handler = e1Var.c;
-                r3 r3Var = e1Var.f;
+                s3 s3Var = e1Var.f;
                 c8.a aVar2 = e1Var.i;
                 if (aVar2 != null) {
                     aVar2.disconnect();
                 }
-                r3Var.h = Integer.valueOf(System.identityHashCode(e1Var));
-                e1Var.i = (c8.a) e1Var.d.a(e1Var.b, handler.getLooper(), r3Var, (b8.a) r3Var.f, e1Var, e1Var);
+                s3Var.h = Integer.valueOf(System.identityHashCode(e1Var));
+                e1Var.i = (c8.a) e1Var.d.a(e1Var.b, handler.getLooper(), s3Var, (b8.a) s3Var.f, e1Var, e1Var);
                 e1Var.j = s0Var;
                 Set set = e1Var.e;
                 if (set == null || set.isEmpty()) {
-                    handler.post(new androidx.activity.i(e1Var, 12));
+                    handler.post(new androidx.activity.i(e1Var, 13));
                 } else {
                     e1Var.i.G();
                 }
             }
             try {
                 cVar.n(s0Var);
-            } catch (SecurityException e6) {
-                m(new y5.a(10), e6);
+            } catch (SecurityException e) {
+                m(new y5.a(10), e);
             }
-        } catch (IllegalStateException e10) {
-            m(new y5.a(10), e10);
+        } catch (IllegalStateException e6) {
+            m(new y5.a(10), e6);
         }
     }
 
@@ -416,7 +416,7 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
         b(new y5.a(4));
         com.google.android.gms.common.api.c cVar = this.b;
         if (cVar.h()) {
-            cVar.d(new o5.i(this, 6));
+            cVar.d(new o5.i(this, 9));
         }
     }
 
@@ -427,7 +427,7 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
         if (myLooper == eVar.getLooper()) {
             f();
         } else {
-            eVar.post(new androidx.activity.i(this, 10));
+            eVar.post(new androidx.activity.i(this, 11));
         }
     }
 

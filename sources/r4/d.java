@@ -8,13 +8,27 @@ import g5.m0;
 import g5.p0;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class d implements h0 {
     public final /* synthetic */ g a;
 
     public /* synthetic */ d(g gVar) {
         this.a = gVar;
+    }
+
+    @Override // g5.h0
+    public c4.e X(j0 j0Var, IOException iOException, int i10) {
+        p0 p0Var = (p0) j0Var;
+        g gVar = this.a;
+        e0 e0Var = gVar.r;
+        long j10 = p0Var.a;
+        Uri uri = p0Var.d.c;
+        e0Var.s(new o4.j(), p0Var.c, iOException, true);
+        gVar.n.getClass();
+        h5.a.p("DashMediaSource", "Failed to resolve time offset.", iOException);
+        gVar.u(true);
+        return m0.e;
     }
 
     public void a() {
@@ -32,32 +46,7 @@ public final class d implements h0 {
     }
 
     @Override // g5.h0
-    public c4.e q(j0 j0Var, IOException iOException, int i10) {
-        p0 p0Var = (p0) j0Var;
-        g gVar = this.a;
-        e0 e0Var = gVar.r;
-        long j10 = p0Var.a;
-        Uri uri = p0Var.d.c;
-        e0Var.s(new o4.j(), p0Var.c, iOException, true);
-        gVar.n.getClass();
-        h5.a.p("DashMediaSource", "Failed to resolve time offset.", iOException);
-        gVar.u(true);
-        return m0.e;
-    }
-
-    @Override // g5.h0
-    public void u(j0 j0Var, long j10, long j11, boolean z4) {
-        p0 p0Var = (p0) j0Var;
-        long j12 = p0Var.a;
-        Uri uri = p0Var.d.c;
-        o4.j jVar = new o4.j();
-        g gVar = this.a;
-        gVar.n.getClass();
-        gVar.r.m(jVar, p0Var.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
-    }
-
-    @Override // g5.h0
-    public void x(j0 j0Var, long j10, long j11) {
+    public void k1(j0 j0Var, long j10, long j11) {
         p0 p0Var = (p0) j0Var;
         g gVar = this.a;
         long j12 = p0Var.a;
@@ -67,5 +56,16 @@ public final class d implements h0 {
         gVar.r.p(jVar, p0Var.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
         gVar.M = ((Long) p0Var.f).longValue() - j10;
         gVar.u(true);
+    }
+
+    @Override // g5.h0
+    public void x0(j0 j0Var, long j10, long j11, boolean z4) {
+        p0 p0Var = (p0) j0Var;
+        long j12 = p0Var.a;
+        Uri uri = p0Var.d.c;
+        o4.j jVar = new o4.j();
+        g gVar = this.a;
+        gVar.n.getClass();
+        gVar.r.m(jVar, p0Var.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 }

@@ -6,7 +6,7 @@ import org.telegram.messenger.BillingController;
 import org.telegram.messenger.BuildVars;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class xw0 {
     public final TLRPC.TL_premiumSubscriptionOption a;
@@ -14,8 +14,8 @@ public final class xw0 {
     public long c;
     public long d;
     public long e;
-    public p2.m f;
-    public p2.l g;
+    public p2.n f;
+    public p2.m g;
     public int h;
 
     public xw0(TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption) {
@@ -23,25 +23,25 @@ public final class xw0 {
     }
 
     public final void a() {
-        p2.m mVar = this.f;
-        if (mVar != null && this.g == null) {
-            ArrayList arrayList = mVar.h;
+        p2.n nVar = this.f;
+        if (nVar != null && this.g == null) {
+            ArrayList arrayList = nVar.h;
             int size = arrayList.size();
             int i10 = 0;
             while (i10 < size) {
                 Object obj = arrayList.get(i10);
                 i10++;
-                p2.l lVar = (p2.l) obj;
-                String str = ((p2.k) lVar.b.a.get(0)).d;
+                p2.m mVar = (p2.m) obj;
+                String str = ((p2.k) mVar.b.a.get(0)).d;
                 int i11 = this.a.months;
                 if (i11 != 12) {
                     Locale locale = Locale.ROOT;
                     if (str.equals("P" + i11 + "M")) {
-                        this.g = lVar;
+                        this.g = mVar;
                         return;
                     }
                 } else if (str.equals("P1Y")) {
-                    this.g = lVar;
+                    this.g = mVar;
                     return;
                 }
             }
@@ -58,8 +58,8 @@ public final class xw0 {
             return "";
         }
         a();
-        p2.l lVar = this.g;
-        return lVar == null ? "" : ((p2.k) lVar.b.a.get(0)).c;
+        p2.m mVar = this.g;
+        return mVar == null ? "" : ((p2.k) mVar.b.a.get(0)).c;
     }
 
     public final int c() {
@@ -100,11 +100,11 @@ public final class xw0 {
             return 0L;
         }
         a();
-        p2.l lVar = this.g;
-        if (lVar == null) {
+        p2.m mVar = this.g;
+        if (mVar == null) {
             return 0L;
         }
-        return ((p2.k) lVar.b.a.get(0)).b;
+        return ((p2.k) mVar.b.a.get(0)).b;
     }
 
     public final long h() {

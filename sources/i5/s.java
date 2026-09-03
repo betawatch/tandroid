@@ -6,7 +6,7 @@ import android.view.Surface;
 import android.view.WindowManager;
 import h5.d0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class s {
     public final e a;
@@ -27,7 +27,7 @@ public final class s {
     public long p;
     public long q;
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0055  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0057  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -45,7 +45,7 @@ public final class s {
             if (pVar == null) {
                 WindowManager windowManager = (WindowManager) applicationContext.getSystemService("window");
                 if (windowManager != null) {
-                    pVar = new ja.c(windowManager);
+                    pVar = new bb.b(windowManager, 18);
                 }
             }
             this.b = pVar;

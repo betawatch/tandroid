@@ -1,13 +1,13 @@
 package f7;
 
-import com.google.android.gms.internal.cast.t0;
-import j7.m7;
+import com.google.android.gms.internal.cast.u0;
+import j7.l7;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class s extends t0 implements ListIterator {
+public final class s extends u0 implements ListIterator {
     public final int b;
     public int c;
     public final u d;
@@ -17,7 +17,7 @@ public final class s extends t0 implements ListIterator {
         super(2);
         int size = uVar.size();
         if (i10 < 0 || i10 > size) {
-            throw new IndexOutOfBoundsException(m7.c(i10, size, "index"));
+            throw new IndexOutOfBoundsException(l7.c(i10, size, "index"));
         }
         this.b = size;
         this.c = i10;

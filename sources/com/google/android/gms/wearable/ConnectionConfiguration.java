@@ -5,13 +5,13 @@ import android.os.Parcelable;
 import b6.m;
 import c6.a;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import j7.g5;
+import j7.f5;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import l4.j;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class ConnectionConfiguration extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<ConnectionConfiguration> CREATOR = new j(8);
@@ -61,31 +61,31 @@ public class ConnectionConfiguration extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = g5.q(parcel, 20293);
-        g5.l(parcel, 2, this.a);
-        g5.l(parcel, 3, this.b);
+        int q10 = f5.q(parcel, 20293);
+        f5.l(parcel, 2, this.a);
+        f5.l(parcel, 3, this.b);
         int i11 = this.c;
-        g5.s(parcel, 4, 4);
+        f5.s(parcel, 4, 4);
         parcel.writeInt(i11);
         int i12 = this.d;
-        g5.s(parcel, 5, 4);
+        f5.s(parcel, 5, 4);
         parcel.writeInt(i12);
         boolean z4 = this.e;
-        g5.s(parcel, 6, 4);
+        f5.s(parcel, 6, 4);
         parcel.writeInt(z4 ? 1 : 0);
         boolean z10 = this.f;
-        g5.s(parcel, 7, 4);
+        f5.s(parcel, 7, 4);
         parcel.writeInt(z10 ? 1 : 0);
-        g5.l(parcel, 8, this.h);
+        f5.l(parcel, 8, this.h);
         boolean z11 = this.n;
-        g5.s(parcel, 9, 4);
+        f5.s(parcel, 9, 4);
         parcel.writeInt(z11 ? 1 : 0);
-        g5.l(parcel, 10, this.r);
-        g5.l(parcel, 11, this.s);
+        f5.l(parcel, 10, this.r);
+        f5.l(parcel, 11, this.s);
         int i13 = this.v;
-        g5.s(parcel, 12, 4);
+        f5.s(parcel, 12, 4);
         parcel.writeInt(i13);
-        g5.n(parcel, 13, this.w);
-        g5.r(parcel, q10);
+        f5.n(parcel, 13, this.w);
+        f5.r(parcel, q10);
     }
 }

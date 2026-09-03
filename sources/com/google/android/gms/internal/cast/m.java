@@ -12,41 +12,41 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class m extends c2.w {
+public final class m extends c2.x {
     public static final u5.b f = new u5.b("MRDiscoveryCallback", null);
-    public final bf.b e;
+    public final af.c e;
     public final Map c = DesugarCollections.synchronizedMap(new HashMap());
     public final LinkedHashSet d = new LinkedHashSet();
     public final Set b = DesugarCollections.synchronizedSet(new LinkedHashSet());
     public final l a = new l(this);
 
     public m(Context context) {
-        this.e = new bf.b(context, 19);
+        this.e = new af.c(context, 22);
     }
 
-    @Override // c2.w
-    public final void d(c2.a0 a0Var) {
+    @Override // c2.x
+    public final void d(c2.b0 b0Var) {
         f.b("MediaRouterDiscoveryCallback.onRouteAdded.", new Object[0]);
-        o(a0Var, true);
+        o(b0Var, true);
     }
 
-    @Override // c2.w
-    public final void e(c2.a0 a0Var) {
+    @Override // c2.x
+    public final void e(c2.b0 b0Var) {
         f.b("MediaRouterDiscoveryCallback.onRouteChanged.", new Object[0]);
-        o(a0Var, true);
+        o(b0Var, true);
     }
 
-    @Override // c2.w
-    public final void f(c2.a0 a0Var) {
+    @Override // c2.x
+    public final void f(c2.b0 b0Var) {
         f.b("MediaRouterDiscoveryCallback.onRouteRemoved.", new Object[0]);
-        o(a0Var, false);
+        o(b0Var, false);
     }
 
     public final void m() {
         u5.b bVar = f;
-        bVar.b(l.d.k(this.d.size(), "Starting RouteDiscovery with ", " IDs"), new Object[0]);
+        bVar.b(kf.k0.k(this.d.size(), "Starting RouteDiscovery with ", " IDs"), new Object[0]);
         bVar.b("appIdToRouteInfo has these appId route keys: ".concat(String.valueOf(this.c.keySet())), new Object[0]);
         if (Looper.myLooper() == Looper.getMainLooper()) {
             n();
@@ -56,13 +56,13 @@ public final class m extends c2.w {
     }
 
     public final void n() {
-        bf.b bVar = this.e;
-        if (((c2.c0) bVar.c) == null) {
-            bVar.c = c2.c0.d((Context) bVar.b);
+        af.c cVar = this.e;
+        if (((c2.d0) cVar.c) == null) {
+            cVar.c = c2.d0.d((Context) cVar.b);
         }
-        c2.c0 c0Var = (c2.c0) bVar.c;
-        if (c0Var != null) {
-            c0Var.h(this);
+        c2.d0 d0Var = (c2.d0) cVar.c;
+        if (d0Var != null) {
+            d0Var.h(this);
         }
         synchronized (this.d) {
             try {
@@ -79,16 +79,16 @@ public final class m extends c2.w {
                     }
                     Bundle bundle = new Bundle();
                     bundle.putStringArrayList("controlCategories", arrayList);
-                    c2.v vVar = new c2.v(bundle, arrayList);
+                    c2.w wVar = new c2.w(bundle, arrayList);
                     if (((k) this.c.get(str)) == null) {
-                        this.c.put(str, new k(vVar));
+                        this.c.put(str, new k(wVar));
                     }
                     f.b("Adding mediaRouter callback for control category " + q5.y.a(str), new Object[0]);
-                    bf.b bVar2 = this.e;
-                    if (((c2.c0) bVar2.c) == null) {
-                        bVar2.c = c2.c0.d((Context) bVar2.b);
+                    af.c cVar2 = this.e;
+                    if (((c2.d0) cVar2.c) == null) {
+                        cVar2.c = c2.d0.d((Context) cVar2.b);
                     }
-                    ((c2.c0) bVar2.c).a(vVar, this, 4);
+                    ((c2.d0) cVar2.c).a(wVar, this, 4);
                 }
             } catch (Throwable th2) {
                 throw th2;
@@ -108,12 +108,12 @@ public final class m extends c2.w {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void o(c2.a0 a0Var, boolean z4) {
+    public final void o(c2.b0 b0Var, boolean z4) {
         boolean z10;
         Set r10;
         boolean remove;
         u5.b bVar = f;
-        bVar.b("MediaRouterDiscoveryCallback.updateRouteToAppIds (add=%b) route %s", Boolean.valueOf(z4), a0Var);
+        bVar.b("MediaRouterDiscoveryCallback.updateRouteToAppIds (add=%b) route %s", Boolean.valueOf(z4), b0Var);
         synchronized (this.c) {
             try {
                 bVar.b("appIdToRouteInfo has these appId route keys: ".concat(String.valueOf(this.c.keySet())), new Object[0]);
@@ -121,20 +121,20 @@ public final class m extends c2.w {
                 for (Map.Entry entry : this.c.entrySet()) {
                     String str = (String) entry.getKey();
                     k kVar = (k) entry.getValue();
-                    if (a0Var.h(kVar.b)) {
+                    if (b0Var.h(kVar.b)) {
                         if (z4) {
                             u5.b bVar2 = f;
                             bVar2.b("Adding/updating route for appId " + str, new Object[0]);
-                            remove = kVar.a.add(a0Var);
+                            remove = kVar.a.add(b0Var);
                             if (!remove) {
-                                Log.w(bVar2.a, bVar2.d("Route " + String.valueOf(a0Var) + " already exists for appId " + str, new Object[0]));
+                                Log.w(bVar2.a, bVar2.d("Route " + String.valueOf(b0Var) + " already exists for appId " + str, new Object[0]));
                             }
                         } else {
                             u5.b bVar3 = f;
                             bVar3.b("Removing route for appId " + str, new Object[0]);
-                            remove = kVar.a.remove(a0Var);
+                            remove = kVar.a.remove(b0Var);
                             if (!remove) {
-                                Log.w(bVar3.a, bVar3.d("Route " + String.valueOf(a0Var) + " already removed from appId " + str, new Object[0]));
+                                Log.w(bVar3.a, bVar3.d("Route " + String.valueOf(b0Var) + " already removed from appId " + str, new Object[0]));
                             }
                         }
                         z10 = remove;
@@ -150,22 +150,22 @@ public final class m extends c2.w {
                     HashMap hashMap = new HashMap();
                     synchronized (this.c) {
                         for (String str2 : this.c.keySet()) {
-                            k kVar2 = (k) this.c.get(j7.s5.a(str2));
+                            k kVar2 = (k) this.c.get(j7.u5.a(str2));
                             if (kVar2 == null) {
-                                int i10 = i0.c;
-                                r10 = r0.s;
+                                int i10 = j0.c;
+                                r10 = s0.s;
                             } else {
                                 LinkedHashSet linkedHashSet = kVar2.a;
-                                int i11 = i0.c;
+                                int i11 = j0.c;
                                 Object[] array = linkedHashSet.toArray();
-                                r10 = i0.r(array.length, array);
+                                r10 = j0.r(array.length, array);
                             }
                             if (!r10.isEmpty()) {
                                 hashMap.put(str2, r10);
                             }
                         }
                     }
-                    h0.a(hashMap.entrySet());
+                    i0.a(hashMap.entrySet());
                     Iterator it = this.b.iterator();
                     if (it.hasNext()) {
                         if (it.next() != null) {

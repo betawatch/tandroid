@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class o2 {
     public static final Class a;
@@ -312,29 +312,29 @@ public abstract class o2 {
                         r0Var.H(a3.a(str));
                         r0Var.e = a3.a.h(str, bArr, r0Var.e, r0Var.F());
                     }
-                } catch (b3 e6) {
+                } catch (b3 e) {
                     r0Var.e = i12;
-                    r0.f.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e6);
+                    r0.f.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e);
                     byte[] bytes = str.getBytes(j1.a);
                     try {
                         r0Var.H(bytes.length);
                         r0Var.L(bytes, 0, bytes.length);
-                    } catch (s0 e10) {
-                        throw e10;
-                    } catch (IndexOutOfBoundsException e11) {
-                        throw new s0(e11);
+                    } catch (s0 e6) {
+                        throw e6;
+                    } catch (IndexOutOfBoundsException e10) {
+                        throw new s0(e10);
                     }
-                } catch (IndexOutOfBoundsException e12) {
-                    throw new s0(e12);
+                } catch (IndexOutOfBoundsException e11) {
+                    throw new s0(e11);
                 }
             }
             return;
         }
         t1 t1Var = (t1) list;
         for (int i14 = 0; i14 < list.size(); i14++) {
-            Object a2 = t1Var.a(i14);
-            if (a2 instanceof String) {
-                String str2 = (String) a2;
+            Object b10 = t1Var.b(i14);
+            if (b10 instanceof String) {
+                String str2 = (String) b10;
                 r0Var.D(i10, 2);
                 byte[] bArr2 = r0Var.c;
                 int i15 = r0Var.e;
@@ -352,23 +352,23 @@ public abstract class o2 {
                         r0Var.H(a3.a(str2));
                         r0Var.e = a3.a.h(str2, bArr2, r0Var.e, r0Var.F());
                     }
-                } catch (b3 e13) {
+                } catch (b3 e12) {
                     r0Var.e = i15;
-                    r0.f.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e13);
+                    r0.f.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e12);
                     byte[] bytes2 = str2.getBytes(j1.a);
                     try {
                         r0Var.H(bytes2.length);
                         r0Var.L(bytes2, 0, bytes2.length);
-                    } catch (s0 e14) {
-                        throw e14;
-                    } catch (IndexOutOfBoundsException e15) {
-                        throw new s0(e15);
+                    } catch (s0 e13) {
+                        throw e13;
+                    } catch (IndexOutOfBoundsException e14) {
+                        throw new s0(e14);
                     }
-                } catch (IndexOutOfBoundsException e16) {
-                    throw new s0(e16);
+                } catch (IndexOutOfBoundsException e15) {
+                    throw new s0(e15);
                 }
             } else {
-                q0 q0Var = (q0) a2;
+                q0 q0Var = (q0) b10;
                 r0Var.D(i10, 2);
                 r0Var.H(q0Var.n());
                 r0Var.L(q0Var.b, q0Var.r(), q0Var.n());
@@ -462,12 +462,12 @@ public abstract class o2 {
         }
         t1 t1Var = (t1) list;
         while (i11 < size) {
-            Object a2 = t1Var.a(i11);
-            if (a2 instanceof q0) {
-                int n11 = ((q0) a2).n();
+            Object b10 = t1Var.b(i11);
+            if (b10 instanceof q0) {
+                int n11 = ((q0) b10).n();
                 y10 = android.support.v4.media.a.A(n11, n11, y10);
             } else {
-                y10 = r0.G((String) a2) + y10;
+                y10 = r0.G((String) b10) + y10;
             }
             i11++;
         }

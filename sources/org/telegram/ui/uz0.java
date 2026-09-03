@@ -3,18 +3,18 @@ package org.telegram.ui;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class uz0 implements hq {
-    public final /* synthetic */ py a;
+public final class uz0 implements iq {
+    public final /* synthetic */ qy a;
     public final /* synthetic */ vz0 b;
 
-    public uz0(vz0 vz0Var, py pyVar) {
+    public uz0(vz0 vz0Var, qy qyVar) {
         this.b = vz0Var;
-        this.a = pyVar;
+        this.a = qyVar;
     }
 
-    @Override // org.telegram.ui.hq
+    @Override // org.telegram.ui.iq
     public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
         vz0 vz0Var = this.b;
         vz0Var.b.K1 = true;
@@ -26,7 +26,7 @@ public final class uz0 implements hq {
         vz0Var.b.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(i11, new Object[0]);
     }
 
-    @Override // org.telegram.ui.hq
+    @Override // org.telegram.ui.iq
     public final void a(TLRPC.User user) {
     }
 }

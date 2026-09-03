@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class z31 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -25,9 +25,9 @@ public final class z31 extends AnimatorListenerAdapter {
                     a41Var.e = 0.0f;
                     a41Var.g();
                     a41Var.n.unlock();
-                    rx rxVar = a41Var.a;
-                    if (rxVar != null) {
-                        rxVar.onPause();
+                    sx sxVar = a41Var.a;
+                    if (sxVar != null) {
+                        sxVar.onPause();
                         a41Var.a.onFragmentDestroy();
                         a41Var.removeAllViews();
                         a41Var.a = null;

@@ -1,17 +1,22 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.FrameLayout;
+import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class r00 extends FrameLayout {
-    public org.telegram.ui.Components.kj0 a;
+public final class r00 extends org.telegram.ui.Cells.l4 {
+    public final org.telegram.ui.Cells.s3 r;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(156.0f), TLObject.FLAG_30));
+    public r00(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        org.telegram.ui.Cells.s3 s3Var = new org.telegram.ui.Cells.s3(context, true, true, true, 3);
+        this.r = s3Var;
+        s3Var.setGravity(LocaleController.isRTL ? 3 : 5);
+        s3Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.L6, f6Var));
+        s3Var.setTextSize(AndroidUtilities.dpf2(15.0f));
+        addView(s3Var, k7.b6.d(-1, 18.0f, (LocaleController.isRTL ? 3 : 5) | 48, 22.0f, 17.0f, 22.0f, 0.0f));
+        k7.d6.b(s3Var, 0.04f, 1.2f);
     }
 }

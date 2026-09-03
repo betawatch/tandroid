@@ -24,7 +24,7 @@ import org.telegram.ui.Components.xv0;
 import org.telegram.ui.Components.yv0;
 import org.telegram.ui.mq0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s1 implements Runnable {
     public final /* synthetic */ int a = 3;
@@ -99,7 +99,7 @@ public final /* synthetic */ class s1 implements Runnable {
                 yv0 yv0Var = (yv0) this.e;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) this.c;
                 MessageObject messageObject = (MessageObject) this.f;
-                org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) this.h;
+                org.telegram.ui.Cells.s1 s1Var = (org.telegram.ui.Cells.s1) this.h;
                 RLottieNative[] rLottieNativeArr = yv0Var.c1;
                 RLottieNative[] rLottieNativeArr2 = yv0Var.f1;
                 int[] iArr = yv0Var.e;
@@ -117,7 +117,7 @@ public final /* synthetic */ class s1 implements Runnable {
                             AndroidUtilities.runOnUIThread(new wv0(yv0Var, 1));
                             return;
                         } else {
-                            AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.l0(yv0Var, this.d, i23, t1Var));
+                            AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.l0(yv0Var, this.d, i23, s1Var));
                             return;
                         }
                     }
@@ -145,7 +145,7 @@ public final /* synthetic */ class s1 implements Runnable {
                                     yv0Var.d1[i22 == 3 ? (char) 0 : (char) 4] = iArr[0];
                                 }
                             } else {
-                                AndroidUtilities.runOnUIThread(new xv0(document, i23, messageObject, t1Var, tL_messages_stickerSet, 0));
+                                AndroidUtilities.runOnUIThread(new xv0(document, i23, messageObject, s1Var, tL_messages_stickerSet, 0));
                                 z10 = true;
                             }
                         }
@@ -163,8 +163,8 @@ public final /* synthetic */ class s1 implements Runnable {
                 TLRPC.InputGroupCall inputGroupCall = (TLRPC.InputGroupCall) this.c;
                 TLRPC.GroupCall groupCall = (TLRPC.GroupCall) this.f;
                 HashSet hashSet = (HashSet) this.h;
-                org.telegram.ui.Components.voip.g2.a = 0L;
-                org.telegram.ui.Components.voip.g2.g(activity, this.b, inputGroupCall, this.d, groupCall, hashSet);
+                org.telegram.ui.Components.voip.f2.a = 0L;
+                org.telegram.ui.Components.voip.f2.g(activity, this.b, inputGroupCall, this.d, groupCall, hashSet);
                 return;
             case 4:
                 mq0 mq0Var = (mq0) this.e;
@@ -294,29 +294,29 @@ public final /* synthetic */ class s1 implements Runnable {
                 }
                 break;
             default:
-                final wh.r3 r3Var = (wh.r3) this.e;
+                final vh.s3 s3Var = (vh.s3) this.e;
                 Uri uri = (Uri) this.c;
                 String str4 = (String) this.f;
-                final wh.a aVar = (wh.a) this.h;
+                final vh.a aVar = (vh.a) this.h;
                 InputStream inputStream2 = null;
                 r5 = null;
                 MediaMetadataRetriever mediaMetadataRetriever2 = null;
                 try {
                     str = AndroidUtilities.getPath(uri);
-                } catch (Exception e6) {
-                    FileLog.e(e6);
+                } catch (Exception e) {
+                    FileLog.e(e);
                     str = null;
                 }
                 final boolean z12 = this.d;
                 int i31 = this.b;
                 if (str == null || !e2.c.t(str)) {
-                    Context context = r3Var.getContext();
+                    Context context = s3Var.getContext();
                     try {
                         if (context != null) {
                             try {
                                 inputStream = context.getContentResolver().openInputStream(uri);
-                            } catch (Exception e10) {
-                                e = e10;
+                            } catch (Exception e6) {
+                                e = e6;
                                 inputStream = null;
                                 fileOutputStream = null;
                             } catch (Throwable th2) {
@@ -331,8 +331,8 @@ public final /* synthetic */ class s1 implements Runnable {
                                 if (str4 != null) {
                                     try {
                                         extensionFromMimeType = MimeTypeMap.getSingleton().getExtensionFromMimeType(str4);
-                                    } catch (Exception e11) {
-                                        e = e11;
+                                    } catch (Exception e10) {
+                                        e = e10;
                                         fileOutputStream = null;
                                         FileLog.e(e);
                                         if (inputStream != null) {
@@ -372,8 +372,8 @@ public final /* synthetic */ class s1 implements Runnable {
                                             fileOutputStream.close();
                                         } catch (Exception unused2) {
                                         }
-                                    } catch (Exception e12) {
-                                        e = e12;
+                                    } catch (Exception e11) {
+                                        e = e11;
                                         FileLog.e(e);
                                         if (inputStream != null) {
                                             try {
@@ -430,8 +430,8 @@ public final /* synthetic */ class s1 implements Runnable {
                         } catch (Throwable th5) {
                             th = th5;
                         }
-                    } catch (Exception e13) {
-                        e = e13;
+                    } catch (Exception e12) {
+                        e = e12;
                     }
                     try {
                         try {
@@ -443,8 +443,8 @@ public final /* synthetic */ class s1 implements Runnable {
                             if (extractMetadata2 != null) {
                                 try {
                                     i15 = Integer.parseInt(extractMetadata2);
-                                } catch (Exception e14) {
-                                    e = e14;
+                                } catch (Exception e13) {
+                                    e = e13;
                                     mediaMetadataRetriever2 = mediaMetadataRetriever;
                                     i12 = 0;
                                     FileLog.e(e);
@@ -455,19 +455,19 @@ public final /* synthetic */ class s1 implements Runnable {
                                     i16 = 0;
                                     if (z12) {
                                     }
-                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: wh.q2
+                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: vh.q2
                                         @Override // java.lang.Runnable
                                         public final void run() {
-                                            r3 r3Var2 = r3.this;
-                                            r3Var2.getClass();
+                                            s3 s3Var2 = s3.this;
+                                            s3Var2.getClass();
                                             boolean z13 = z12;
                                             MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i14, 0L, str2, z13 ? i16 : 0, z13, i18, i21, 0L);
                                             photoEntry.setOrientation(i20, i19);
                                             a aVar2 = aVar;
-                                            if (aVar2 == null || !r3.C3(aVar2.b)) {
-                                                r3Var2.e2(photoEntry);
+                                            if (aVar2 == null || !s3.C3(aVar2.b)) {
+                                                s3Var2.e2(photoEntry);
                                             } else {
-                                                r3Var2.S1(aVar2, photoEntry);
+                                                s3Var2.S1(aVar2, photoEntry);
                                             }
                                         }
                                     });
@@ -479,8 +479,8 @@ public final /* synthetic */ class s1 implements Runnable {
                             if (extractMetadata3 != null) {
                                 try {
                                     ceil = (int) Math.ceil(Long.parseLong(extractMetadata3) / 1000.0d);
-                                } catch (Exception e15) {
-                                    e = e15;
+                                } catch (Exception e14) {
+                                    e = e14;
                                     i12 = i15;
                                     mediaMetadataRetriever2 = mediaMetadataRetriever;
                                     FileLog.e(e);
@@ -495,19 +495,19 @@ public final /* synthetic */ class s1 implements Runnable {
                                     i16 = 0;
                                     if (z12) {
                                     }
-                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: wh.q2
+                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: vh.q2
                                         @Override // java.lang.Runnable
                                         public final void run() {
-                                            r3 r3Var2 = r3.this;
-                                            r3Var2.getClass();
+                                            s3 s3Var2 = s3.this;
+                                            s3Var2.getClass();
                                             boolean z13 = z12;
                                             MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i14, 0L, str2, z13 ? i16 : 0, z13, i18, i21, 0L);
                                             photoEntry.setOrientation(i20, i19);
                                             a aVar2 = aVar;
-                                            if (aVar2 == null || !r3.C3(aVar2.b)) {
-                                                r3Var2.e2(photoEntry);
+                                            if (aVar2 == null || !s3.C3(aVar2.b)) {
+                                                s3Var2.e2(photoEntry);
                                             } else {
-                                                r3Var2.S1(aVar2, photoEntry);
+                                                s3Var2.S1(aVar2, photoEntry);
                                             }
                                         }
                                     });
@@ -533,8 +533,8 @@ public final /* synthetic */ class s1 implements Runnable {
                             }
                             throw th;
                         }
-                    } catch (Exception e16) {
-                        e = e16;
+                    } catch (Exception e15) {
+                        e = e15;
                         mediaMetadataRetriever2 = mediaMetadataRetriever;
                         i12 = 0;
                         i13 = 0;
@@ -546,19 +546,19 @@ public final /* synthetic */ class s1 implements Runnable {
                         i16 = 0;
                         if (z12) {
                         }
-                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: wh.q2
+                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: vh.q2
                             @Override // java.lang.Runnable
                             public final void run() {
-                                r3 r3Var2 = r3.this;
-                                r3Var2.getClass();
+                                s3 s3Var2 = s3.this;
+                                s3Var2.getClass();
                                 boolean z13 = z12;
                                 MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i14, 0L, str2, z13 ? i16 : 0, z13, i18, i21, 0L);
                                 photoEntry.setOrientation(i20, i19);
                                 a aVar2 = aVar;
-                                if (aVar2 == null || !r3.C3(aVar2.b)) {
-                                    r3Var2.e2(photoEntry);
+                                if (aVar2 == null || !s3.C3(aVar2.b)) {
+                                    s3Var2.e2(photoEntry);
                                 } else {
-                                    r3Var2.S1(aVar2, photoEntry);
+                                    s3Var2.S1(aVar2, photoEntry);
                                 }
                             }
                         });
@@ -577,39 +577,39 @@ public final /* synthetic */ class s1 implements Runnable {
                         BitmapFactory.decodeFile(str2, options);
                         i13 = options.outWidth;
                         i15 = options.outHeight;
-                    } catch (Exception e17) {
-                        FileLog.e(e17);
+                    } catch (Exception e16) {
+                        FileLog.e(e16);
                     }
                     try {
                         imageOrientation = AndroidUtilities.getImageOrientation(str2);
                         i17 = ((Integer) imageOrientation.first).intValue();
-                    } catch (Exception e18) {
-                        e = e18;
+                    } catch (Exception e17) {
+                        e = e17;
                         i17 = 0;
                     }
                     try {
                         i19 = ((Integer) imageOrientation.second).intValue();
                         i18 = i13;
-                    } catch (Exception e19) {
-                        e = e19;
+                    } catch (Exception e18) {
+                        e = e18;
                         FileLog.e(e);
                         i18 = i13;
                         i19 = 0;
                         i20 = i17;
                         i21 = i15;
-                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: wh.q2
+                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: vh.q2
                             @Override // java.lang.Runnable
                             public final void run() {
-                                r3 r3Var2 = r3.this;
-                                r3Var2.getClass();
+                                s3 s3Var2 = s3.this;
+                                s3Var2.getClass();
                                 boolean z13 = z12;
                                 MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i14, 0L, str2, z13 ? i16 : 0, z13, i18, i21, 0L);
                                 photoEntry.setOrientation(i20, i19);
                                 a aVar2 = aVar;
-                                if (aVar2 == null || !r3.C3(aVar2.b)) {
-                                    r3Var2.e2(photoEntry);
+                                if (aVar2 == null || !s3.C3(aVar2.b)) {
+                                    s3Var2.e2(photoEntry);
                                 } else {
-                                    r3Var2.S1(aVar2, photoEntry);
+                                    s3Var2.S1(aVar2, photoEntry);
                                 }
                             }
                         });
@@ -623,19 +623,19 @@ public final /* synthetic */ class s1 implements Runnable {
                     i20 = 0;
                     i19 = 0;
                 }
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: wh.q2
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: vh.q2
                     @Override // java.lang.Runnable
                     public final void run() {
-                        r3 r3Var2 = r3.this;
-                        r3Var2.getClass();
+                        s3 s3Var2 = s3.this;
+                        s3Var2.getClass();
                         boolean z13 = z12;
                         MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i14, 0L, str2, z13 ? i16 : 0, z13, i18, i21, 0L);
                         photoEntry.setOrientation(i20, i19);
                         a aVar2 = aVar;
-                        if (aVar2 == null || !r3.C3(aVar2.b)) {
-                            r3Var2.e2(photoEntry);
+                        if (aVar2 == null || !s3.C3(aVar2.b)) {
+                            s3Var2.e2(photoEntry);
                         } else {
-                            r3Var2.S1(aVar2, photoEntry);
+                            s3Var2.S1(aVar2, photoEntry);
                         }
                     }
                 });
@@ -661,12 +661,12 @@ public final /* synthetic */ class s1 implements Runnable {
         this.d = z4;
     }
 
-    public /* synthetic */ s1(yv0 yv0Var, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i10, MessageObject messageObject, org.telegram.ui.Cells.t1 t1Var, boolean z4) {
+    public /* synthetic */ s1(yv0 yv0Var, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i10, MessageObject messageObject, org.telegram.ui.Cells.s1 s1Var, boolean z4) {
         this.e = yv0Var;
         this.c = tL_messages_stickerSet;
         this.b = i10;
         this.f = messageObject;
-        this.h = t1Var;
+        this.h = s1Var;
         this.d = z4;
     }
 
@@ -679,8 +679,8 @@ public final /* synthetic */ class s1 implements Runnable {
         this.h = user;
     }
 
-    public /* synthetic */ s1(wh.r3 r3Var, Uri uri, boolean z4, String str, int i10, wh.a aVar) {
-        this.e = r3Var;
+    public /* synthetic */ s1(vh.s3 s3Var, Uri uri, boolean z4, String str, int i10, vh.a aVar) {
+        this.e = s3Var;
         this.c = uri;
         this.d = z4;
         this.f = str;

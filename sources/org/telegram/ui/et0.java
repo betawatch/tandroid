@@ -8,9 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class et0 extends o4 {
+public final class et0 extends q4 {
     public final /* synthetic */ PhotoViewer h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -36,7 +36,7 @@ public final class et0 extends o4 {
         return super.drawChild(canvas, view, j10);
     }
 
-    @Override // org.telegram.ui.o4, android.widget.FrameLayout, android.view.View
+    @Override // org.telegram.ui.q4, android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, i11);
         PhotoViewer photoViewer = this.h;
@@ -47,7 +47,7 @@ public final class et0 extends o4 {
             layoutParams.height = getMeasuredHeight();
         }
         TextureView textureView = photoViewer.y2;
-        if (textureView instanceof org.telegram.ui.Components.x61) {
+        if (textureView instanceof org.telegram.ui.Components.w61) {
             textureView.setPivotX(textureView.getMeasuredWidth() / 2);
             photoViewer.B2.setPivotX(photoViewer.y2.getMeasuredWidth() / 2);
         } else {

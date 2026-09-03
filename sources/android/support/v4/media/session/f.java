@@ -14,7 +14,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class f extends Handler {
     public final /* synthetic */ int a = 0;
@@ -31,7 +31,7 @@ public final class f extends Handler {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public boolean a(Message message, o3.b0 b0Var) {
+    public boolean a(Message message, o3.c0 c0Var) {
         long j10;
         o3.a aVar = (o3.a) message.obj;
         if (aVar.b) {
@@ -41,10 +41,10 @@ public final class f extends Handler {
             if (i10 <= 3) {
                 SystemClock.elapsedRealtime();
                 SystemClock.elapsedRealtime();
-                Throwable y0Var = b0Var.getCause() instanceof IOException ? (IOException) b0Var.getCause() : new y0(b0Var.getCause());
-                ab.a aVar2 = ((o3.b) this.c).i;
+                Throwable y0Var = c0Var.getCause() instanceof IOException ? (IOException) c0Var.getCause() : new y0(c0Var.getCause());
+                z9.d dVar = ((o3.b) this.c).i;
                 int i11 = aVar.d;
-                aVar2.getClass();
+                dVar.getClass();
                 if (!(y0Var instanceof r1) && !(y0Var instanceof FileNotFoundException) && !(y0Var instanceof g5.b0) && !(y0Var instanceof l0)) {
                     int i12 = g5.n.b;
                     while (y0Var != null) {
@@ -78,7 +78,7 @@ public final class f extends Handler {
     /* JADX WARN: Multi-variable type inference failed */
     @Override // android.os.Handler
     public final void handleMessage(Message message) {
-        o3.b0 b0Var;
+        o3.c0 c0Var;
         switch (this.a) {
             case 0:
                 androidx.mediarouter.app.s sVar = (androidx.mediarouter.app.s) this.c;
@@ -125,31 +125,31 @@ public final class f extends Handler {
                 try {
                     int i10 = message.what;
                     if (i10 == 0) {
-                        b0Var = ((o3.b) this.c).k.k((o3.u) aVar.c);
+                        c0Var = ((o3.b) this.c).k.k((o3.v) aVar.c);
                     } else {
                         if (i10 != 1) {
                             throw new RuntimeException();
                         }
                         o3.b bVar = (o3.b) this.c;
-                        b0Var = bVar.k.i(bVar.l, (o3.t) aVar.c);
+                        c0Var = bVar.k.i(bVar.l, (o3.u) aVar.c);
                     }
-                } catch (o3.b0 e6) {
-                    boolean a2 = a(message, e6);
-                    b0Var = e6;
+                } catch (o3.c0 e) {
+                    boolean a2 = a(message, e);
+                    c0Var = e;
                     if (a2) {
                         return;
                     }
-                } catch (Exception e10) {
-                    h5.a.L("DefaultDrmSession", "Key/provisioning request produced an unexpected exception. Not retrying.", e10);
-                    b0Var = e10;
+                } catch (Exception e6) {
+                    h5.a.L("DefaultDrmSession", "Key/provisioning request produced an unexpected exception. Not retrying.", e6);
+                    c0Var = e6;
                 }
-                ab.a aVar2 = ((o3.b) this.c).i;
+                z9.d dVar = ((o3.b) this.c).i;
                 long j10 = aVar.a;
-                aVar2.getClass();
+                dVar.getClass();
                 synchronized (this) {
                     try {
                         if (!this.b) {
-                            ((o3.b) this.c).n.obtainMessage(message.what, Pair.create(aVar.c, b0Var)).sendToTarget();
+                            ((o3.b) this.c).n.obtainMessage(message.what, Pair.create(aVar.c, c0Var)).sendToTarget();
                         }
                     } finally {
                     }

@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DialogObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class lw0 {
     public final j5 a;
@@ -22,7 +22,7 @@ public final class lw0 {
         if (chat != null && chat.verified) {
             Drawable drawable = this.b;
             if (drawable == null) {
-                drawable = new pq(org.telegram.ui.ActionBar.k6.f1, org.telegram.ui.ActionBar.k6.i1);
+                drawable = new mq(org.telegram.ui.ActionBar.j6.f1, org.telegram.ui.ActionBar.j6.i1);
             }
             this.b = drawable;
             j5Var.g(drawable, z4);
@@ -37,7 +37,7 @@ public final class lw0 {
         if (user != null && user.verified) {
             Drawable drawable2 = this.b;
             if (drawable2 == null) {
-                drawable2 = new pq(org.telegram.ui.ActionBar.k6.f1, org.telegram.ui.ActionBar.k6.i1);
+                drawable2 = new mq(org.telegram.ui.ActionBar.j6.f1, org.telegram.ui.ActionBar.j6.i1);
             }
             this.b = drawable2;
             j5Var.g(drawable2, z4);
@@ -54,7 +54,7 @@ public final class lw0 {
             j5Var.k(null);
             return j5Var;
         }
-        j5Var.g(fg.q1.d().e, z4);
+        j5Var.g(eg.r1.d().e, z4);
         j5Var.k(Integer.valueOf(i10));
         return j5Var;
     }

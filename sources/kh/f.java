@@ -1,306 +1,112 @@
 package kh;
 
 import android.content.Context;
-import android.media.AudioManager;
-import android.text.TextUtils;
-import h5.d0;
-import j3.c0;
-import j3.f0;
-import j3.x;
+import android.util.LongSparseArray;
+import android.widget.LinearLayout;
 import java.util.ArrayList;
-import mh.g5;
-import mh.i1;
-import mh.o3;
+import java.util.Iterator;
+import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileUploadOperation;
+import org.telegram.messenger.GiftAuctionController;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.LocationController;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.RichMessageLayout;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.voip.VideoCapturerDevice;
-import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.f4;
-import org.telegram.ui.Components.d10;
-import org.telegram.ui.Components.dn0;
-import org.telegram.ui.Components.f40;
-import org.telegram.ui.Components.fa0;
-import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.kp;
-import org.telegram.ui.Components.lp;
-import org.telegram.ui.Components.mp;
-import org.telegram.ui.Components.or0;
-import org.telegram.ui.Components.ov0;
-import org.telegram.ui.Components.pv0;
-import org.telegram.ui.Components.qy0;
-import org.telegram.ui.Components.sr0;
-import org.telegram.ui.Components.y50;
-import org.telegram.ui.Components.yu0;
-import org.telegram.ui.Components.z50;
-import org.telegram.ui.Components.zv;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.nm;
-import org.telegram.ui.po;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.i51;
+import org.telegram.ui.Components.ql0;
+import org.telegram.ui.Components.rl0;
+import org.telegram.ui.Components.sa;
+import org.telegram.ui.Components.w51;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
+public final class f extends sa implements GiftAuctionController.OnActiveAuctionsUpdateListeners {
+    public final i51 U;
+    public final LongSparseArray V;
+    public ArrayList W;
+    public boolean X;
+    public w51 Y;
 
-    public /* synthetic */ f(int i10, Object obj, boolean z4) {
-        this.a = i10;
-        this.c = obj;
-        this.b = z4;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f(Context context) {
+        super(context, null, false, false, false, false, false, 2, null);
+        int i10 = 0;
+        this.V = new LongSparseArray();
+        this.W = new ArrayList();
+        setBackgroundColor(j6.w0(null, j6.a7, false));
+        GiftAuctionController.getInstance(this.currentAccount).subscribeToActiveAuctionsUpdates(this);
+        this.I = false;
+        this.H = AndroidUtilities.dp(12.0f);
+        fixNavigationBar();
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        linearLayout.setClipChildren(false);
+        linearLayout.setClipToPadding(false);
+        linearLayout.setClickable(true);
+        this.U = i51.j(-1, linearLayout);
+        this.d.setPadding(this.backgroundPaddingLeft, AndroidUtilities.dp(9.0f), this.backgroundPaddingLeft, AndroidUtilities.dp(9.0f));
+        this.d.setOverScrollMode(2);
+        this.Y.N(false);
+        ArrayList<GiftAuctionController.Auction> activeAuctions = GiftAuctionController.getInstance(this.currentAccount).getActiveAuctions();
+        int size = activeAuctions.size();
+        while (i10 < size) {
+            GiftAuctionController.Auction auction = activeAuctions.get(i10);
+            i10++;
+            GiftAuctionController.Auction auction2 = auction;
+            e eVar = new e(context, auction2);
+            eVar.a.setOnClickListener(new dg.p(this, context, auction2, 2));
+            linearLayout.addView(eVar, k7.b6.n(-1, -2));
+            this.V.put(auction2.giftId, eVar);
+        }
+        onActiveAuctionsUpdate(activeAuctions);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        i iVar = null;
-        iVar = null;
-        iVar = null;
-        int i11 = 1;
-        int i12 = 0;
-        boolean z4 = this.b;
-        Object obj = this.c;
-        switch (i10) {
-            case 0:
-                v vVar = (v) obj;
-                ArrayList arrayList = vVar.c;
-                boolean isEmpty = TextUtils.isEmpty(vVar.t);
-                String str = vVar.t;
-                vVar.w = true;
-                vVar.A = false;
-                TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (!isEmpty || arrayList.isEmpty()) ? null : (TLRPC.TL_chatInviteImporter) l.d.i(1, arrayList);
-                boolean z10 = tL_chatInviteImporter == null;
-                if (isEmpty && z10 && z4) {
-                    iVar = new i(vVar, 1);
-                }
-                i iVar2 = iVar;
-                if (isEmpty) {
-                    AndroidUtilities.runOnUIThread(iVar2, 300L);
-                }
-                vVar.v = vVar.i.getImporters(vVar.j, str, tL_chatInviteImporter, vVar.d, new j(vVar, isEmpty, iVar2, str, z10));
-                break;
-            case 1:
-                l3.q qVar = (l3.q) ((f7.b) obj).c;
-                int i13 = d0.a;
-                f0 f0Var = ((c0) qVar).a;
-                if (f0Var.Z != z4) {
-                    f0Var.Z = z4;
-                    f0Var.l.e(23, new x(i11, z4));
-                    break;
-                }
-                break;
-            case 2:
-                i1 i1Var = (i1) obj;
-                if (!z4) {
-                    i1Var.n0.setVisibility(8);
-                    break;
-                } else {
-                    i1Var.getClass();
-                    break;
-                }
-            case 3:
-                g5 g5Var = (g5) obj;
-                g5Var.getClass();
-                g5Var.o2(g5Var.Z0, AndroidUtilities.replaceTags(LocaleController.formatString(z4 ? R.string.Gift2ActionWearDone : R.string.Gift2ActionWearOffDone, g5Var.C1())), true);
-                break;
-            case 4:
-                g5 g5Var2 = ((o3) obj).Q;
-                TL_stars.SavedStarGift H1 = g5Var2.H1(z4);
-                if (H1 != null) {
-                    g5Var2.Y0 = true;
-                    g5Var2.j2(H1, g5Var2.A0);
-                } else {
-                    TL_stars.TL_starGiftUnique I1 = g5Var2.I1(z4);
-                    if (I1 != null) {
-                        g5Var2.Y0 = true;
-                        g5Var2.h2(I1.slug, I1, g5Var2.A0);
-                    }
-                }
-                g5Var2.O0 = -1;
-                ic icVar = ic.w;
-                if (icVar != null) {
-                    icVar.c(0L, false);
-                    break;
-                }
-                break;
-            case 5:
-                ng.o oVar = (ng.o) obj;
-                if (!z4) {
-                    oVar.getClass();
-                    break;
-                } else {
-                    ((ng.s) oVar.x.c).w.setVisibility(4);
-                    break;
-                }
-            case 6:
-                ((FileLoader) obj).lambda$onNetworkChanged$4(z4);
-                break;
-            case 7:
-                ((FileUploadOperation) obj).lambda$onNetworkChanged$1(z4);
-                break;
-            case 8:
-                ((LocationController) obj).lambda$startFusedLocationRequest$5(z4);
-                break;
-            case 9:
-                ((RichMessageLayout.RichBlock) obj).lambda$toggleCheckbox$1(z4);
-                break;
-            case 10:
-                ((UserConfig) obj).lambda$saveConfig$0(z4);
-                break;
-            case 11:
-                ((CameraController) obj).lambda$recordVideo$11(z4);
-                break;
-            case 12:
-                ((VideoCapturerDevice) obj).lambda$new$0(z4);
-                break;
-            case 13:
-                ((VoIPService) obj).lambda$startGroupCall$27(z4);
-                break;
-            case 14:
-                ((AudioManager) obj).setSpeakerphoneOn(z4);
-                break;
-            case 15:
-                ((ConnectionsManager) obj).lambda$setIsUpdating$22(z4);
-                break;
-            case 16:
-                af.g.s((Context) obj, LocaleController.getString(z4 ? R.string.BotMonetizationInfoTONLink : R.string.MonetizationInfoTONLink));
-                break;
-            case 17:
-                qy0 qy0Var = ((nm) obj).c.a1;
-                if (qy0Var != null && z4) {
-                    qy0Var.setVisibility(8);
-                    break;
-                }
-                break;
-            case 18:
-                po poVar = (po) obj;
-                poVar.u0.autotranslation = z4;
-                poVar.getMessagesController().putChat(poVar.u0, false);
-                break;
-            case 19:
-                mp mpVar = (mp) obj;
-                kp kpVar = mpVar.h;
-                if (kpVar != null && kpVar.d != null && !mpVar.isDismissed()) {
-                    mpVar.B(z4, true);
-                    if (mpVar.J != null) {
-                        mpVar.M = true;
-                        TLRPC.WallPaper wallPaper = mpVar.v() ? null : mpVar.n.h;
-                        f4 f4Var = mpVar.J.a;
-                        if (f4Var.a) {
-                            mpVar.n.i(null, wallPaper, false, Boolean.valueOf(z4), false);
-                        } else {
-                            mpVar.n.i(f4Var, wallPaper, false, Boolean.valueOf(z4), false);
-                        }
-                    }
-                    if (kpVar.d != null) {
-                        while (i12 < kpVar.d.size()) {
-                            ((lp) kpVar.d.get(i12)).c = z4 ? 1 : 0;
-                            i12++;
-                        }
-                        kpVar.l();
-                        break;
-                    }
-                }
-                break;
-            case 20:
-                zv zvVar = (zv) obj;
-                if (!z4) {
-                    zvVar.B.setVisibility(8);
-                    break;
-                }
-                break;
-            case 21:
-                d10 d10Var = (d10) obj;
-                d10Var.R(d10Var.v0, z4);
-                break;
-            case 22:
-                f40 f40Var = (f40) obj;
-                if (!z4) {
-                    f40Var.r.setVisibility(8);
-                    break;
-                } else {
-                    f40Var.getClass();
-                    break;
-                }
-            case 23:
-                z50 z50Var = ((y50) obj).E0;
-                if (!z50Var.d0) {
-                    try {
-                        z50Var.performHapticFeedback(3, 2);
-                    } catch (Exception unused) {
-                    }
-                    AndroidUtilities.lockOrientation(z50Var.c.getParentActivity());
-                    z50Var.a0 = z4 ? z50Var.c0 : 0L;
-                    z50Var.W = System.currentTimeMillis();
-                    z50Var.b0 = true;
-                    z50Var.r();
-                    z50Var.invalidate();
-                    NotificationCenter.getInstance(z50Var.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.recordStarted, Integer.valueOf(z50Var.N), Boolean.FALSE);
-                    break;
-                }
-                break;
-            case 24:
-                fa0 fa0Var = (fa0) obj;
-                if (!z4) {
-                    fa0Var.getClass();
-                    break;
-                } else {
-                    fa0Var.D.setVisibility(8);
-                    break;
-                }
-            case 25:
-                ((dn0) obj).D.presentFragment(new PremiumPreviewFragment(0, z4 ? "upload_speed" : "download_speed"));
-                break;
-            case 26:
-                yu0 yu0Var = (yu0) obj;
-                if (!z4) {
-                    yu0Var.j0.setVisibility(8);
-                    break;
-                } else {
-                    yu0Var.getClass();
-                    break;
-                }
-            case 27:
-                or0 or0Var = (or0) obj;
-                if (!z4) {
-                    or0Var.R.n0.setVisibility(0);
-                    break;
-                } else {
-                    or0Var.getClass();
-                    break;
-                }
-            case 28:
-                sr0 sr0Var = (sr0) obj;
-                if (!z4) {
-                    sr0Var.E.n0.setVisibility(0);
-                    break;
-                } else {
-                    sr0Var.getClass();
-                    break;
-                }
-            default:
-                pv0 pv0Var = (pv0) obj;
-                ArrayList arrayList2 = pv0Var.r;
-                ov0 ov0Var = pv0Var.n;
-                if (ov0Var != null) {
-                    ov0Var.G(pv0Var.f, z4);
-                }
-                while (i12 < arrayList2.size()) {
-                    ((ov0) arrayList2.get(i12)).G(pv0Var.f, z4);
-                    i12++;
-                }
-                break;
+    @Override // org.telegram.ui.ActionBar.g3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.l2
+    public final void dismiss() {
+        GiftAuctionController.getInstance(this.currentAccount).unsubscribeFromActiveAuctionsUpdates(this);
+        super.dismiss();
+    }
+
+    @Override // org.telegram.messenger.GiftAuctionController.OnActiveAuctionsUpdateListeners
+    public final void onActiveAuctionsUpdate(List list) {
+        this.W = new ArrayList(list);
+        this.e.setTitle(y());
+        Iterator it = list.iterator();
+        while (it.hasNext()) {
+            GiftAuctionController.Auction auction = (GiftAuctionController.Auction) it.next();
+            TL_stars.TL_starGiftAuctionState tL_starGiftAuctionState = auction.auctionStateActive;
+            int i10 = tL_starGiftAuctionState != null ? tL_starGiftAuctionState.next_round_at : 0;
+            e eVar = (e) this.V.get(auction.giftId);
+            if (eVar != null) {
+                eVar.b(this.X);
+                long max = Math.max(0, i10 - ConnectionsManager.getInstance(this.currentAccount).getCurrentTime());
+                eVar.a(max, this.X);
+                eVar.f.a(max);
+            }
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.g3
+    public final void onOpenAnimationEnd() {
+        super.onOpenAnimationEnd();
+        this.X = true;
+    }
+
+    @Override // org.telegram.ui.Components.sa
+    public final ql0 v(rl0 rl0Var) {
+        w51 w51Var = new w51(this.d, getContext(), this.currentAccount, 0, true, new dg.r1(this, 5), this.resourcesProvider);
+        this.Y = w51Var;
+        w51Var.r = false;
+        return w51Var;
+    }
+
+    @Override // org.telegram.ui.Components.sa
+    public final CharSequence y() {
+        ArrayList arrayList = this.W;
+        if (arrayList == null) {
+            return null;
+        }
+        return LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveAuctionsTitle, Integer.valueOf(arrayList.size()));
     }
 }

@@ -1,9 +1,7 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public abstract class ql0 {
-    public static final ArrayList a = new ArrayList();
+public abstract class ql0 extends f2.o0 {
+    public abstract boolean D(f2.l1 l1Var);
 }

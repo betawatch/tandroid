@@ -1,15 +1,15 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fh implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ mi b;
+    public final /* synthetic */ li b;
     public final /* synthetic */ boolean c;
 
-    public /* synthetic */ fh(mi miVar, boolean z4, int i10) {
+    public /* synthetic */ fh(li liVar, boolean z4, int i10) {
         this.a = i10;
-        this.b = miVar;
+        this.b = liVar;
         this.c = z4;
     }
 
@@ -18,42 +18,42 @@ public final /* synthetic */ class fh implements Runnable {
         switch (this.a) {
             case 0:
                 boolean z4 = this.c;
-                mi miVar = this.b;
+                li liVar = this.b;
                 if (!z4) {
-                    miVar.Z0.setVisibility(8);
+                    liVar.Z0.setVisibility(8);
                     break;
                 } else {
-                    miVar.getClass();
+                    liVar.getClass();
                     break;
                 }
             case 1:
                 boolean z10 = this.c;
-                mi miVar2 = this.b;
+                li liVar2 = this.b;
                 if (!z10) {
-                    miVar2.w.setVisibility(8);
+                    liVar2.w.setVisibility(8);
                     break;
                 } else {
-                    miVar2.getClass();
+                    liVar2.getClass();
                     break;
                 }
             case 2:
                 boolean z11 = this.c;
-                mi miVar3 = this.b;
+                li liVar3 = this.b;
                 if (!z11) {
-                    miVar3.y.setVisibility(8);
+                    liVar3.y.setVisibility(8);
                     break;
                 } else {
-                    miVar3.getClass();
+                    liVar3.getClass();
                     break;
                 }
             default:
                 boolean z12 = this.c;
-                mi miVar4 = this.b;
+                li liVar4 = this.b;
                 if (!z12) {
-                    miVar4.getClass();
+                    liVar4.getClass();
                     break;
                 } else {
-                    miVar4.u1.setVisibility(4);
+                    liVar4.u1.setVisibility(4);
                     break;
                 }
         }

@@ -5,7 +5,7 @@ import android.text.style.ClickableSpan;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class um0 extends ClickableSpan {
     public final /* synthetic */ fn0 a;
@@ -17,7 +17,7 @@ public final class um0 extends ClickableSpan {
     @Override // android.text.style.ClickableSpan
     public final void onClick(View view) {
         fn0 fn0Var = this.a;
-        af.g.s(fn0Var.getParentActivity(), fn0Var.y.privacy_policy_url);
+        ze.d.s(fn0Var.getParentActivity(), fn0Var.y.privacy_policy_url);
     }
 
     @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle

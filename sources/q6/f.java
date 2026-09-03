@@ -2,11 +2,11 @@ package q6;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import j7.g5;
+import j7.f5;
 import java.util.Arrays;
-import org.telegram.ui.yh;
+import org.telegram.ui.ai;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class f extends c6.a {
     public static final Parcelable.Creator<f> CREATOR = new r0(14);
@@ -62,29 +62,29 @@ public final class f extends c6.a {
         String valueOf9 = String.valueOf(this.r);
         String valueOf10 = String.valueOf(this.s);
         String valueOf11 = String.valueOf(this.v);
-        StringBuilder m9 = yh.m("AuthenticationExtensions{\n fidoAppIdExtension=", valueOf, ", \n cableAuthenticationExtension=", valueOf2, ", \n userVerificationMethodExtension=");
-        yh.w(m9, valueOf3, ", \n googleMultiAssertionExtension=", valueOf4, ", \n googleSessionIdExtension=");
-        yh.w(m9, valueOf5, ", \n googleSilentVerificationExtension=", valueOf6, ", \n devicePublicKeyExtension=");
-        yh.w(m9, valueOf7, ", \n googleTunnelServerIdExtension=", valueOf8, ", \n googleThirdPartyPaymentExtension=");
-        yh.w(m9, valueOf9, ", \n prfExtension=", valueOf10, ", \n simpleTransactionAuthorizationExtension=");
-        return android.support.v4.media.a.r(m9, valueOf11, "}");
+        StringBuilder l10 = ai.l("AuthenticationExtensions{\n fidoAppIdExtension=", valueOf, ", \n cableAuthenticationExtension=", valueOf2, ", \n userVerificationMethodExtension=");
+        ai.w(l10, valueOf3, ", \n googleMultiAssertionExtension=", valueOf4, ", \n googleSessionIdExtension=");
+        ai.w(l10, valueOf5, ", \n googleSilentVerificationExtension=", valueOf6, ", \n devicePublicKeyExtension=");
+        ai.w(l10, valueOf7, ", \n googleTunnelServerIdExtension=", valueOf8, ", \n googleThirdPartyPaymentExtension=");
+        ai.w(l10, valueOf9, ", \n prfExtension=", valueOf10, ", \n simpleTransactionAuthorizationExtension=");
+        return android.support.v4.media.a.r(l10, valueOf11, "}");
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = g5.q(parcel, 20293);
-        g5.k(parcel, 2, this.a, i10);
-        g5.k(parcel, 3, this.b, i10);
-        g5.k(parcel, 4, this.c, i10);
-        g5.k(parcel, 5, this.d, i10);
-        g5.k(parcel, 6, this.e, i10);
-        g5.k(parcel, 7, this.f, i10);
-        g5.k(parcel, 8, this.h, i10);
-        g5.k(parcel, 9, this.n, i10);
-        g5.k(parcel, 10, this.r, i10);
-        g5.k(parcel, 11, this.s, i10);
-        g5.k(parcel, 12, this.v, i10);
-        g5.k(parcel, 13, this.w, i10);
-        g5.r(parcel, q10);
+        int q10 = f5.q(parcel, 20293);
+        f5.k(parcel, 2, this.a, i10);
+        f5.k(parcel, 3, this.b, i10);
+        f5.k(parcel, 4, this.c, i10);
+        f5.k(parcel, 5, this.d, i10);
+        f5.k(parcel, 6, this.e, i10);
+        f5.k(parcel, 7, this.f, i10);
+        f5.k(parcel, 8, this.h, i10);
+        f5.k(parcel, 9, this.n, i10);
+        f5.k(parcel, 10, this.r, i10);
+        f5.k(parcel, 11, this.s, i10);
+        f5.k(parcel, 12, this.v, i10);
+        f5.k(parcel, 13, this.w, i10);
+        f5.r(parcel, q10);
     }
 }

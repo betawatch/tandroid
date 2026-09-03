@@ -21,8 +21,9 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
+import vh.w2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuListener, androidx.lifecycle.t, androidx.lifecycle.u0, androidx.lifecycle.i, g2.f {
     public static final Object g0 = new Object();
@@ -237,7 +238,7 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
         return (g2.e) this.d0.c;
     }
 
-    public j7.x h() {
+    public j7.w h() {
         return new o(this);
     }
 
@@ -365,11 +366,11 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
             printWriter.println(this.S);
         }
         if (n() != null) {
-            new q5.c0(this, f()).g(str, printWriter);
+            new q5.c0(this, f()).q(str, printWriter);
         }
         printWriter.print(str);
         printWriter.println("Child " + this.I + ":");
-        this.I.w(w.c.e(str, "  "), fileDescriptor, printWriter, strArr);
+        this.I.w(w2.k(str, "  "), fileDescriptor, printWriter, strArr);
     }
 
     public final r j() {

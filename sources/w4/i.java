@@ -3,12 +3,12 @@ package w4;
 import h5.d0;
 import java.util.ArrayDeque;
 import java.util.PriorityQueue;
-import oh.h4;
 import org.telegram.tgnet.TLObject;
+import ph.z8;
 import v4.j;
 import v4.k;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class i implements v4.g {
     public final ArrayDeque a = new ArrayDeque();
@@ -25,10 +25,10 @@ public abstract class i implements v4.g {
         this.b = new ArrayDeque();
         for (int i11 = 0; i11 < 2; i11++) {
             ArrayDeque arrayDeque = this.b;
-            sf.h hVar = new sf.h(this, 11);
-            h hVar2 = new h();
-            hVar2.h = hVar;
-            arrayDeque.add(hVar2);
+            z8 z8Var = new z8(this, 21);
+            h hVar = new h();
+            hVar.h = z8Var;
+            arrayDeque.add(hVar);
         }
         this.c = new PriorityQueue();
     }
@@ -55,7 +55,7 @@ public abstract class i implements v4.g {
         j jVar = (j) obj;
         h5.a.f(jVar == this.d);
         g gVar = (g) jVar;
-        if (gVar.e(TLObject.FLAG_31)) {
+        if (gVar.d(TLObject.FLAG_31)) {
             gVar.b();
             this.a.add(gVar);
         } else {
@@ -67,7 +67,7 @@ public abstract class i implements v4.g {
         this.d = null;
     }
 
-    public abstract h4 e();
+    public abstract o3.c e();
 
     public abstract void f(g gVar);
 
@@ -114,9 +114,9 @@ public abstract class i implements v4.g {
                 return null;
             }
             g gVar2 = (g) priorityQueue.poll();
-            boolean e6 = gVar2.e(4);
+            boolean d = gVar2.d(4);
             ArrayDeque arrayDeque2 = this.a;
-            if (e6) {
+            if (d) {
                 k kVar = (k) arrayDeque.pollFirst();
                 kVar.a(4);
                 gVar2.b();
@@ -125,9 +125,9 @@ public abstract class i implements v4.g {
             }
             f(gVar2);
             if (h()) {
-                h4 e10 = e();
+                o3.c e = e();
                 k kVar2 = (k) arrayDeque.pollFirst();
-                kVar2.j(gVar2.f, e10, Long.MAX_VALUE);
+                kVar2.k(gVar2.f, e, Long.MAX_VALUE);
                 gVar2.b();
                 arrayDeque2.add(gVar2);
                 return kVar2;

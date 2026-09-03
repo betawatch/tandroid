@@ -4,7 +4,7 @@ import dd.p;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import k7.q7;
+import k7.p7;
 import ld.c0;
 import ld.e0;
 import ld.f1;
@@ -13,7 +13,7 @@ import uc.c;
 import vc.a;
 import wc.i;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 final class zzaf extends i implements p {
     int zza;
@@ -48,7 +48,7 @@ final class zzaf extends i implements p {
         List list;
         a aVar = a.a;
         int i10 = this.zza;
-        q7.b(obj);
+        p7.b(obj);
         if (i10 == 0) {
             c0 c0Var = (c0) this.zze;
             ArrayList arrayList = new ArrayList();

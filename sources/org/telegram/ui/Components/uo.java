@@ -1,32 +1,26 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.ChannelBoostsController;
-import org.telegram.tgnet.tl.TL_stories;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uo implements h5.d {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ mp b;
+public final class uo implements ValueAnimator.AnimatorUpdateListener {
+    public boolean a = false;
+    public final /* synthetic */ jp b;
 
-    public /* synthetic */ uo(mp mpVar, int i10) {
-        this.a = i10;
-        this.b = mpVar;
+    public uo(jp jpVar) {
+        this.b = jpVar;
     }
 
-    @Override // h5.d
-    public final void accept(Object obj) {
-        switch (this.a) {
-            case 0:
-                mp mpVar = this.b;
-                mpVar.c0 = (TL_stories.TL_premium_boostsStatus) obj;
-                mpVar.b0 = true;
-                mpVar.E(true);
-                mpVar.a0 = false;
-                break;
-            default:
-                mp.m(this.b, (ChannelBoostsController.CanApplyBoost) obj);
-                break;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        jp jpVar = this.b;
+        jpVar.P = floatValue;
+        jpVar.O.invalidate();
+        if (this.a || jpVar.P <= 0.5f) {
+            return;
         }
+        this.a = true;
     }
 }

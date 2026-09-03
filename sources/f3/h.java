@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class h implements d, g3.c, c {
     public static final v2.c f = new v2.c("proto");
@@ -71,13 +71,13 @@ public final class h implements d, g3.c, c {
         j jVar = this.a;
         Objects.requireNonNull(jVar);
         h3.a aVar = this.c;
-        long W = aVar.W();
+        long l10 = aVar.l();
         while (true) {
             try {
                 return jVar.getWritableDatabase();
-            } catch (SQLiteDatabaseLockedException e6) {
-                if (aVar.W() >= this.d.c + W) {
-                    throw new g3.a("Timed out while trying to open db.", e6);
+            } catch (SQLiteDatabaseLockedException e) {
+                if (aVar.l() >= this.d.c + l10) {
+                    throw new g3.a("Timed out while trying to open db.", e);
                 }
                 SystemClock.sleep(50L);
             }
@@ -107,7 +107,7 @@ public final class h implements d, g3.c, c {
         if (b10 == null) {
             return arrayList;
         }
-        h(sQLiteDatabase.query("events", new String[]{"_id", "transport_name", "timestamp_ms", "uptime_ms", "payload_encoding", "payload", "code", "inline"}, "context_id = ?", new String[]{b10.toString()}, null, null, null, String.valueOf(i10)), new androidx.car.app.utils.a(this, arrayList, iVar, 5));
+        h(sQLiteDatabase.query("events", new String[]{"_id", "transport_name", "timestamp_ms", "uptime_ms", "payload_encoding", "payload", "code", "inline"}, "context_id = ?", new String[]{b10.toString()}, null, null, null, String.valueOf(i10)), new androidx.car.app.utils.a(this, arrayList, iVar, 6));
         return arrayList;
     }
 
@@ -118,20 +118,20 @@ public final class h implements d, g3.c, c {
     public final Object f(g3.b bVar) {
         SQLiteDatabase a2 = a();
         h3.a aVar = this.c;
-        long W = aVar.W();
+        long l10 = aVar.l();
         while (true) {
             try {
                 a2.beginTransaction();
                 try {
-                    Object g10 = bVar.g();
+                    Object h = bVar.h();
                     a2.setTransactionSuccessful();
-                    return g10;
+                    return h;
                 } finally {
                     a2.endTransaction();
                 }
-            } catch (SQLiteDatabaseLockedException e6) {
-                if (aVar.W() >= this.d.c + W) {
-                    throw new g3.a("Timed out while trying to acquire the lock.", e6);
+            } catch (SQLiteDatabaseLockedException e) {
+                if (aVar.l() >= this.d.c + l10) {
+                    throw new g3.a("Timed out while trying to acquire the lock.", e);
                 }
                 SystemClock.sleep(50L);
             }

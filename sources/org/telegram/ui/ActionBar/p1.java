@@ -19,7 +19,7 @@ import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public class p1 extends PopupWindow {
     public static Method k;
@@ -232,8 +232,8 @@ public class p1 extends PopupWindow {
                 declaredMethod.setAccessible(true);
             }
             k.invoke(this, Boolean.TRUE);
-        } catch (Exception e6) {
-            FileLog.e(e6);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 
@@ -306,8 +306,8 @@ public class p1 extends PopupWindow {
         try {
             super.showAsDropDown(view, i10, i11);
             f(view);
-        } catch (Exception e6) {
-            FileLog.e(e6);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 

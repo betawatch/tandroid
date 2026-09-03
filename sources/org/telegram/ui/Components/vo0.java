@@ -1,27 +1,43 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.view.MotionEvent;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class vo0 extends f2.a1 {
+public final class vo0 extends FrameLayout {
     public final /* synthetic */ ve a;
 
-    public vo0(ve veVar) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vo0(ve veVar, Context context) {
+        super(context);
         this.a = veVar;
     }
 
-    @Override // f2.a1
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
         ve veVar = this.a;
-        View view = veVar.u;
-        boolean z4 = veVar.w.I0() != 0;
-        Boolean bool = veVar.x;
-        if (bool == null || z4 != bool.booleanValue()) {
-            view.animate().cancel();
-            view.animate().alpha(z4 ? 1.0f : 0.0f).setDuration(150L).start();
-            veVar.x = Boolean.valueOf(z4);
+        View contentView = veVar.getContentView();
+        int[] iArr = new int[2];
+        contentView.getLocationInWindow(iArr);
+        iArr[0] = iArr[0] + veVar.E;
+        iArr[1] = iArr[1] + veVar.F;
+        getLocationInWindow(new int[2]);
+        if (motionEvent.getAction() != 0 || motionEvent.getX() > iArr[0]) {
+            if (motionEvent.getX() < contentView.getWidth() + iArr[0] && motionEvent.getY() > iArr[1]) {
+                if (motionEvent.getY() < contentView.getHeight() + iArr[1]) {
+                    motionEvent.offsetLocation(r2[0] - iArr[0], (AndroidUtilities.statusBarHeight + r2[1]) - iArr[1]);
+                    return contentView.dispatchTouchEvent(motionEvent);
+                }
+            }
         }
+        if (!veVar.A && !veVar.D) {
+            veVar.D = true;
+            veVar.l(new o1.j[0]);
+        }
+        return true;
     }
 }

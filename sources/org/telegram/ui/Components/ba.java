@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import javax.microedition.khronos.egl.EGLContext;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class ba {
     public int a;
@@ -23,7 +23,7 @@ public final class ba {
     public EGLContext g;
     public final Object h;
     public int i;
-    public qh.m9 j;
+    public ph.p9 j;
     public Object k;
     public Object l;
     public ha m;
@@ -50,7 +50,7 @@ public final class ba {
                 }
             }
         }
-        view.addOnAttachStateChangeListener(new ff.b(this, 9));
+        view.addOnAttachStateChangeListener(new ef.b(this, 9));
     }
 
     public final void a(EGLContext eGLContext) {
@@ -120,8 +120,8 @@ public final class ba {
         this.o = this.n.b(bitmap, sb.toString(), 0, 0, z4);
     }
 
-    public final void g(qh.m9 m9Var, Object obj) {
-        this.j = m9Var;
+    public final void g(ph.p9 p9Var, Object obj) {
+        this.j = p9Var;
         this.k = obj;
         this.i = -14737633;
         if (obj == null || Build.VERSION.SDK_INT < 31) {

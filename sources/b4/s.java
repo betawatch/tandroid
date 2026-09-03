@@ -5,7 +5,7 @@ import j3.n0;
 import java.util.Collections;
 import k7.t6;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class s implements i {
     public final d0 a;
@@ -44,7 +44,7 @@ public final class s implements i {
         int i12;
         long j10;
         int i13;
-        boolean e6;
+        boolean e;
         v vVar;
         int i14;
         v vVar2;
@@ -130,9 +130,9 @@ public final class s implements i {
                         vVar6.b(new n0(m0Var));
                         this.e = true;
                         v vVar7 = this.j;
-                        e6 = vVar7.e(i22);
+                        e = vVar7.e(i22);
                         h5.w wVar3 = this.n;
-                        if (e6) {
+                        if (e) {
                             wVar3.D(h5.a.J(vVar7.c, (byte[]) vVar7.f), (byte[]) vVar7.f);
                             wVar3.G(5);
                             t6.a(j12, wVar3, vVarArr);
@@ -218,9 +218,9 @@ public final class s implements i {
                 j10 = j11;
                 i13 = i21;
                 v vVar72 = this.j;
-                e6 = vVar72.e(i22);
+                e = vVar72.e(i22);
                 h5.w wVar32 = this.n;
-                if (e6) {
+                if (e) {
                 }
                 vVar = this.k;
                 if (vVar.e(i22)) {
@@ -284,9 +284,9 @@ public final class s implements i {
         h0Var.b();
         this.b = h0Var.e;
         h0Var.b();
-        r3.v i22 = mVar.i2(h0Var.d, 2);
-        this.c = i22;
-        this.d = new r(i22);
+        r3.v d22 = mVar.d2(h0Var.d, 2);
+        this.c = d22;
+        this.d = new r(d22);
         this.a.b(mVar, h0Var);
     }
 

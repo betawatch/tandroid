@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.p2 implements NotificationCenter.NotificationCenterDelegate {
     public int B;
@@ -57,7 +57,7 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.p2 implem
     public SpannableString Z;
     public px0 a;
     private int autoDeleteMesages;
-    public org.telegram.ui.Components.sl0 b;
+    public org.telegram.ui.Components.rl0 b;
     private int bioRow;
     private int birthdayRow;
     private int blockedRow;
@@ -117,7 +117,7 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.p2 implem
         if (view.isEnabled()) {
             if (i10 == privacySettingsActivity.autoDeleteMesages) {
                 if (privacySettingsActivity.getUserConfig().getGlobalTTl() >= 0) {
-                    privacySettingsActivity.presentFragment(new s4());
+                    privacySettingsActivity.presentFragment(new u4());
                     return;
                 }
                 return;
@@ -159,13 +159,13 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.p2 implem
                 alertDialog$Builder.n(linearLayout);
                 int i12 = 0;
                 while (i12 < 6) {
-                    org.telegram.ui.Cells.k6 k6Var = new org.telegram.ui.Cells.k6(privacySettingsActivity.getParentActivity(), null);
-                    k6Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-                    k6Var.setTag(Integer.valueOf(i12));
-                    k6Var.a(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.g7, false), org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.E5, false));
-                    k6Var.b(strArr[i12], i11 == i12);
-                    linearLayout.addView(k6Var);
-                    k6Var.setOnClickListener(new hb0(13, privacySettingsActivity, alertDialog$Builder));
+                    org.telegram.ui.Cells.j6 j6Var = new org.telegram.ui.Cells.j6(privacySettingsActivity.getParentActivity(), null);
+                    j6Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+                    j6Var.setTag(Integer.valueOf(i12));
+                    j6Var.a(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.g7, false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.E5, false));
+                    j6Var.b(strArr[i12], i11 == i12);
+                    linearLayout.addView(j6Var);
+                    j6Var.setOnClickListener(new ib0(13, privacySettingsActivity, alertDialog$Builder));
                     i12++;
                 }
                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
@@ -240,7 +240,7 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.p2 implem
                 alertDialog$Builder2.a.O = valueOf;
                 alertDialog$Builder2.a.Q = LocaleController.getString(R.string.EmailLoginChangeMessage);
                 alertDialog$Builder2.k(LocaleController.getString(R.string.ChangeEmail), new ox0(privacySettingsActivity, 4));
-                l.d.u(R.string.Cancel, alertDialog$Builder2, null);
+                kf.k0.u(R.string.Cancel, alertDialog$Builder2, null);
                 return;
             }
             if (i10 == privacySettingsActivity.passwordRow) {
@@ -253,7 +253,7 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.p2 implem
                 }
                 TL_account.Password password3 = privacySettingsActivity.d;
                 if (!password3.has_password) {
-                    privacySettingsActivity.presentFragment(new vg1(TextUtils.isEmpty(password3.email_unconfirmed_pattern) ? 6 : 5, privacySettingsActivity.d));
+                    privacySettingsActivity.presentFragment(new wg1(TextUtils.isEmpty(password3.email_unconfirmed_pattern) ? 6 : 5, privacySettingsActivity.d));
                     return;
                 }
                 TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
@@ -286,8 +286,8 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.p2 implem
                     privacySettingsActivity.getMessagesController().secretWebpagePreview = 1;
                 }
                 MessagesController.getGlobalMainSettings().edit().putInt("secretWebpage2", privacySettingsActivity.getMessagesController().secretWebpagePreview).commit();
-                if (view instanceof org.telegram.ui.Cells.s8) {
-                    ((org.telegram.ui.Cells.s8) view).setChecked(privacySettingsActivity.getMessagesController().secretWebpagePreview == 1);
+                if (view instanceof org.telegram.ui.Cells.r8) {
+                    ((org.telegram.ui.Cells.r8) view).setChecked(privacySettingsActivity.getMessagesController().secretWebpagePreview == 1);
                     return;
                 }
                 return;
@@ -305,28 +305,28 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.p2 implem
                 privacySettingsActivity.showDialog(d2Var);
                 TextView textView = (TextView) d2Var.d(-1);
                 if (textView != null) {
-                    textView.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.q7, false));
+                    textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, false));
                     return;
                 }
                 return;
             }
             if (i10 == privacySettingsActivity.contactsSuggestRow) {
-                org.telegram.ui.Cells.s8 s8Var = (org.telegram.ui.Cells.s8) view;
+                org.telegram.ui.Cells.r8 r8Var = (org.telegram.ui.Cells.r8) view;
                 if (!privacySettingsActivity.S) {
                     privacySettingsActivity.S = true;
-                    s8Var.setChecked(true);
+                    r8Var.setChecked(true);
                     return;
                 }
                 AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(privacySettingsActivity.getParentActivity());
                 alertDialog$Builder4.a.O = LocaleController.getString("SuggestContactsTitle", R.string.SuggestContactsTitle);
                 alertDialog$Builder4.a.Q = LocaleController.getString("SuggestContactsAlert", R.string.SuggestContactsAlert);
-                alertDialog$Builder4.k(LocaleController.getString("MuteDisable", R.string.MuteDisable), new vl0(12, privacySettingsActivity, s8Var));
+                alertDialog$Builder4.k(LocaleController.getString("MuteDisable", R.string.MuteDisable), new vl0(12, privacySettingsActivity, r8Var));
                 alertDialog$Builder4.h(LocaleController.getString("Cancel", R.string.Cancel), null);
                 org.telegram.ui.ActionBar.d2 d2Var2 = alertDialog$Builder4.a;
                 privacySettingsActivity.showDialog(d2Var2);
                 TextView textView2 = (TextView) d2Var2.d(-1);
                 if (textView2 != null) {
-                    textView2.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.q7, false));
+                    textView2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, false));
                     return;
                 }
                 return;
@@ -334,14 +334,14 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.p2 implem
             if (i10 == privacySettingsActivity.newChatsRow) {
                 boolean z4 = !privacySettingsActivity.T;
                 privacySettingsActivity.T = z4;
-                ((org.telegram.ui.Cells.s8) view).setChecked(z4);
+                ((org.telegram.ui.Cells.r8) view).setChecked(z4);
                 return;
             }
             if (i10 == privacySettingsActivity.contactsSyncRow) {
                 boolean z10 = !privacySettingsActivity.Q;
                 privacySettingsActivity.Q = z10;
-                if (view instanceof org.telegram.ui.Cells.s8) {
-                    ((org.telegram.ui.Cells.s8) view).setChecked(z10);
+                if (view instanceof org.telegram.ui.Cells.r8) {
+                    ((org.telegram.ui.Cells.r8) view).setChecked(z10);
                     return;
                 }
                 return;
@@ -356,7 +356,7 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.p2 implem
                     return;
                 } else {
                     if (i10 == privacySettingsActivity.E) {
-                        privacySettingsActivity.presentFragment(new sh.r());
+                        privacySettingsActivity.presentFragment(new rh.r());
                         return;
                     }
                     return;
@@ -372,14 +372,14 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.p2 implem
             while (i14 < 2) {
                 String string = i14 == 0 ? LocaleController.getString("PrivacyClearShipping", R.string.PrivacyClearShipping) : LocaleController.getString("PrivacyClearPayment", R.string.PrivacyClearPayment);
                 privacySettingsActivity.W[i14] = true;
-                org.telegram.ui.Cells.z1 z1Var = new org.telegram.ui.Cells.z1(1, 21, privacySettingsActivity.getParentActivity(), null, false);
-                z1Var.setTag(Integer.valueOf(i14));
-                z1Var.setBackgroundDrawable(org.telegram.ui.ActionBar.k6.K0(false));
-                z1Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-                linearLayout2.addView(z1Var, k7.c6.n(-1, 50));
-                z1Var.e(string, null, true, false, false);
-                z1Var.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.j5, false));
-                z1Var.setOnClickListener(new f60(privacySettingsActivity, 25));
+                org.telegram.ui.Cells.y1 y1Var = new org.telegram.ui.Cells.y1(1, 21, privacySettingsActivity.getParentActivity(), null, false);
+                y1Var.setTag(Integer.valueOf(i14));
+                y1Var.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.K0(false));
+                y1Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+                linearLayout2.addView(y1Var, k7.b6.n(-1, 50));
+                y1Var.e(string, null, true, false, false);
+                y1Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.j5, false));
+                y1Var.setOnClickListener(new g60(privacySettingsActivity, 25));
                 i14++;
             }
             alertDialog$Builder5.k(LocaleController.getString("ClearButton", R.string.ClearButton), new ox0(privacySettingsActivity, 0));
@@ -389,7 +389,7 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.p2 implem
             privacySettingsActivity.showDialog(d2Var3);
             TextView textView3 = (TextView) d2Var3.d(-1);
             if (textView3 != null) {
-                textView3.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.q7, false));
+                textView3.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, false));
             }
         }
     }
@@ -397,7 +397,7 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.p2 implem
     public static SpannableStringBuilder u0(PrivacySettingsActivity privacySettingsActivity, String str) {
         if (privacySettingsActivity.Z == null) {
             privacySettingsActivity.Z = new SpannableString("★");
-            org.telegram.ui.Components.k5 k5Var = new org.telegram.ui.Components.k5(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f), fg.q1.d().f);
+            org.telegram.ui.Components.k5 k5Var = new org.telegram.ui.Components.k5(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f), eg.r1.d().f);
             k5Var.setBounds(0, 0, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f));
             privacySettingsActivity.Z.setSpan(new ImageSpan(k5Var, 2), 0, privacySettingsActivity.Z.length(), 17);
         }
@@ -630,26 +630,26 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.p2 implem
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(LocaleController.getString(R.string.PrivacySettings));
         this.actionBar.setActionBarMenuOnItemClick(new ll0(this, 8));
-        org.telegram.ui.ActionBar.f5 f5Var = this.parentLayout;
-        if (f5Var != null && ((ActionBarLayout) f5Var).K0) {
+        org.telegram.ui.ActionBar.e5 e5Var = this.parentLayout;
+        if (e5Var != null && ((ActionBarLayout) e5Var).K0) {
             this.actionBar.setBackButtonImage(R.drawable.ic_ab_close);
         }
         this.a = new px0(this, context);
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.a7, false));
-        org.telegram.ui.Components.sl0 sl0Var = new org.telegram.ui.Components.sl0(context, null);
-        this.b = sl0Var;
-        sl0Var.o1();
+        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
+        org.telegram.ui.Components.rl0 rl0Var = new org.telegram.ui.Components.rl0(context, null);
+        this.b = rl0Var;
+        rl0Var.o1();
         this.actionBar.setAdaptiveBackground(this.b);
         this.b.setLayoutManager(new k(i10, false, 14));
         this.b.setVerticalScrollBarEnabled(false);
         this.b.setLayoutAnimation(null);
         this.b.setItemAnimator(null);
-        frameLayout.addView(this.b, k7.c6.c(-1.0f, -1));
+        frameLayout.addView(this.b, k7.b6.c(-1.0f, -1));
         this.b.setAdapter(this.a);
-        this.b.setOnItemClickListener(new hg.v0(21, this, context));
-        sh.p.d(getParentActivity(), this.currentAccount, new w3(this, 16));
+        this.b.setOnItemClickListener(new gg.v0(22, this, context));
+        rh.p.d(getParentActivity(), this.currentAccount, new y3(this, 16));
         return this.fragmentView;
     }
 
@@ -691,24 +691,24 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.p2 implem
     @Override // org.telegram.ui.ActionBar.p2
     public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
-        arrayList.add(new org.telegram.ui.ActionBar.m6(this.b, 16, new Class[]{org.telegram.ui.Cells.aa.class, org.telegram.ui.Cells.m4.class, org.telegram.ui.Cells.s8.class}, null, null, null, org.telegram.ui.ActionBar.k6.d6));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(this.fragmentView, 1, null, null, null, null, org.telegram.ui.ActionBar.k6.a7));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(this.b, 32768, null, null, null, null, org.telegram.ui.ActionBar.k6.s8));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(this.actionBar, 64, null, null, null, null, org.telegram.ui.ActionBar.k6.v8));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(this.actionBar, 128, null, null, null, null, org.telegram.ui.ActionBar.k6.A8));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(this.actionBar, 256, null, null, null, null, org.telegram.ui.ActionBar.k6.t8));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(this.b, 4096, null, null, null, null, org.telegram.ui.ActionBar.k6.i6));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(this.b, 0, new Class[]{View.class}, org.telegram.ui.ActionBar.k6.k0, null, null, org.telegram.ui.ActionBar.k6.d7));
-        int i10 = org.telegram.ui.ActionBar.k6.G6;
-        arrayList.add(new org.telegram.ui.ActionBar.m6(this.b, 0, new Class[]{org.telegram.ui.Cells.aa.class}, new String[]{"textView"}, null, null, -1, null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(this.b, 0, new Class[]{org.telegram.ui.Cells.aa.class}, new String[]{"valueTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.k6.I6));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(this.b, 0, new Class[]{org.telegram.ui.Cells.m4.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.k6.L6));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(this.b, 32, new Class[]{org.telegram.ui.Cells.a9.class}, null, null, null, org.telegram.ui.ActionBar.k6.b7));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(this.b, 0, new Class[]{org.telegram.ui.Cells.a9.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.k6.B6));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(this.b, 0, new Class[]{org.telegram.ui.Cells.s8.class}, new String[]{"textView"}, null, null, -1, null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(this.b, 0, new Class[]{org.telegram.ui.Cells.s8.class}, new String[]{"valueTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.k6.z6));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(this.b, 0, new Class[]{org.telegram.ui.Cells.s8.class}, new String[]{"checkBox"}, null, null, -1, null, org.telegram.ui.ActionBar.k6.M6));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(this.b, 0, new Class[]{org.telegram.ui.Cells.s8.class}, new String[]{"checkBox"}, null, null, -1, null, org.telegram.ui.ActionBar.k6.N6));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 16, new Class[]{org.telegram.ui.Cells.z9.class, org.telegram.ui.Cells.l4.class, org.telegram.ui.Cells.r8.class}, null, null, null, org.telegram.ui.ActionBar.j6.d6));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.fragmentView, 1, null, null, null, null, org.telegram.ui.ActionBar.j6.a7));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 32768, null, null, null, null, org.telegram.ui.ActionBar.j6.s8));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.actionBar, 64, null, null, null, null, org.telegram.ui.ActionBar.j6.v8));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.actionBar, 128, null, null, null, null, org.telegram.ui.ActionBar.j6.A8));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.actionBar, 256, null, null, null, null, org.telegram.ui.ActionBar.j6.t8));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 4096, null, null, null, null, org.telegram.ui.ActionBar.j6.i6));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 0, new Class[]{View.class}, org.telegram.ui.ActionBar.j6.k0, null, null, org.telegram.ui.ActionBar.j6.d7));
+        int i10 = org.telegram.ui.ActionBar.j6.G6;
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 0, new Class[]{org.telegram.ui.Cells.z9.class}, new String[]{"textView"}, null, null, -1, null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 0, new Class[]{org.telegram.ui.Cells.z9.class}, new String[]{"valueTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.I6));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 0, new Class[]{org.telegram.ui.Cells.l4.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.L6));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 32, new Class[]{org.telegram.ui.Cells.z8.class}, null, null, null, org.telegram.ui.ActionBar.j6.b7));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 0, new Class[]{org.telegram.ui.Cells.z8.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.B6));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 0, new Class[]{org.telegram.ui.Cells.r8.class}, new String[]{"textView"}, null, null, -1, null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 0, new Class[]{org.telegram.ui.Cells.r8.class}, new String[]{"valueTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.z6));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 0, new Class[]{org.telegram.ui.Cells.r8.class}, new String[]{"checkBox"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.M6));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 0, new Class[]{org.telegram.ui.Cells.r8.class}, new String[]{"checkBox"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.N6));
         return arrayList;
     }
 
@@ -736,7 +736,7 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.p2 implem
         }
         A0(true);
         z0();
-        getConnectionsManager().sendRequestTyped(new TL_account.getPasskeys(), new org.telegram.messenger.a(), new d5(this, 17));
+        getConnectionsManager().sendRequestTyped(new TL_account.getPasskeys(), new org.telegram.messenger.a(), new f5(this, 17));
         getNotificationCenter().addObserver(this, NotificationCenter.privacyRulesUpdated);
         getNotificationCenter().addObserver(this, NotificationCenter.blockedUsersDidLoad);
         getNotificationCenter().addObserver(this, NotificationCenter.didSetOrRemoveTwoStepPassword);
@@ -789,7 +789,7 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.p2 implem
             getUserConfig().suggestContacts = this.S;
             TLRPC.TL_contacts_toggleTopPeers tL_contacts_toggleTopPeers = new TLRPC.TL_contacts_toggleTopPeers();
             tL_contacts_toggleTopPeers.enabled = this.S;
-            getConnectionsManager().sendRequest(tL_contacts_toggleTopPeers, new oh.p5(4));
+            getConnectionsManager().sendRequest(tL_contacts_toggleTopPeers, new nh.p5(4));
             z4 = true;
         }
         TLRPC.GlobalPrivacySettings globalPrivacySettings = getContactsController().getGlobalPrivacySettings();
@@ -805,7 +805,7 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.p2 implem
                     setglobalprivacysettings.settings = new TLRPC.TL_globalPrivacySettings();
                 }
                 setglobalprivacysettings.settings.archive_and_mute_new_noncontact_peers = this.T;
-                getConnectionsManager().sendRequest(setglobalprivacysettings, new oh.p5(4));
+                getConnectionsManager().sendRequest(setglobalprivacysettings, new nh.p5(4));
                 if (z10) {
                     return;
                 }

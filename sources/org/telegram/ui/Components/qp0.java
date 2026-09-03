@@ -1,112 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.PhotoViewer;
+import java.util.ArrayList;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class qp0 extends lg {
-    public final /* synthetic */ int i0;
-    public final /* synthetic */ Object j0;
+public final class qp0 implements tf.x {
+    public final /* synthetic */ lq0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ qp0(Object obj, Context context, int i10, org.telegram.ui.ActionBar.g6 g6Var, int i11) {
-        super(i10, context, g6Var, true);
-        this.i0 = i11;
-        this.j0 = obj;
+    public qp0(lq0 lq0Var) {
+        this.a = lq0Var;
     }
 
-    @Override // org.telegram.ui.Components.lg
-    public boolean d() {
-        switch (this.i0) {
-            case 1:
-                return false;
-            case 2:
-                return false;
-            case 3:
-                return ((wh.z1) this.j0).l0();
-            default:
-                return super.d();
+    @Override // tf.x
+    public final void a(a0.h hVar, ArrayList arrayList) {
+        int i10;
+        int i11;
+        int i12;
+        int i13 = 0;
+        while (i13 < arrayList.size()) {
+            TLObject tLObject = ((tf.y) arrayList.get(i13)).a;
+            if ((tLObject instanceof TLRPC.Chat) && !ChatObject.canWriteToChat((TLRPC.Chat) tLObject)) {
+                arrayList.remove(i13);
+                i13--;
+            }
+            i13++;
         }
-    }
-
-    @Override // org.telegram.ui.Components.lg
-    public final boolean f() {
-        switch (this.i0) {
-            case 0:
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                if (((wh.z1) this.j0).I0 || this.r > 0) {
-                }
-                break;
-            default:
-                if (((wh.v3) this.j0).T || this.r > 0) {
-                }
-                break;
+        lq0 lq0Var = this.a;
+        lq0Var.B0 = arrayList;
+        for (int i14 = 0; i14 < lq0Var.B0.size(); i14++) {
+            tf.y yVar = (tf.y) lq0Var.B0.get(i14);
+            TLObject tLObject2 = yVar.a;
+            if (tLObject2 instanceof TLRPC.User) {
+                i12 = ((org.telegram.ui.ActionBar.g3) lq0Var).currentAccount;
+                MessagesController.getInstance(i12).putUser((TLRPC.User) yVar.a, true);
+            } else if (tLObject2 instanceof TLRPC.Chat) {
+                i11 = ((org.telegram.ui.ActionBar.g3) lq0Var).currentAccount;
+                MessagesController.getInstance(i11).putChat((TLRPC.Chat) yVar.a, true);
+            } else if (tLObject2 instanceof TLRPC.EncryptedChat) {
+                i10 = ((org.telegram.ui.ActionBar.g3) lq0Var).currentAccount;
+                MessagesController.getInstance(i10).putEncryptedChat((TLRPC.EncryptedChat) yVar.a, true);
+            }
         }
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.lg
-    public int getFillColor() {
-        int i10 = this.i0;
-        Object obj = this.j0;
-        switch (i10) {
-            case 0:
-                return ((lq0) obj).getThemedColor(org.telegram.ui.ActionBar.k6.S5);
-            case 1:
-            default:
-                return super.getFillColor();
-            case 2:
-                int i11 = org.telegram.ui.ActionBar.k6.zf;
-                Drawable[] drawableArr = PhotoViewer.Q8;
-                return ((PhotoViewer) obj).z1(i11);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.lg
-    public boolean j() {
-        switch (this.i0) {
-            case 0:
-                return true;
-            case 1:
-                return true;
-            case 2:
-                return true;
-            default:
-                return super.j();
-        }
-    }
-
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.i0) {
-            case 1:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrShareInChats", ((org.telegram.ui.py) this.j0).F2.size(), new Object[0]));
-                accessibilityNodeInfo.setClassName(Button.class.getName());
-                accessibilityNodeInfo.setLongClickable(true);
-                accessibilityNodeInfo.setClickable(true);
-                break;
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ qp0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, int i10, org.telegram.ui.ActionBar.g6 g6Var, int i11) {
-        super(i10, context, g6Var, false);
-        this.i0 = i11;
-        this.j0 = notificationCenterDelegate;
+        lq0Var.J.l();
     }
 }

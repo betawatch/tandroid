@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class qf extends AnimatorListenerAdapter {
     public final /* synthetic */ boolean a;
@@ -31,9 +31,9 @@ public final class qf extends AnimatorListenerAdapter {
             int i10 = ChatActivityEnterView.j5;
             chatActivityEnterView.b0();
         }
-        ap0 ap0Var = chatActivityEnterView.m0;
-        if (ap0Var != null) {
-            ap0Var.setVisibility(z4 ? 0 : 8);
+        zo0 zo0Var = chatActivityEnterView.m0;
+        if (zo0Var != null) {
+            zo0Var.setVisibility(z4 ? 0 : 8);
             chatActivityEnterView.m0.setAlpha(this.d);
             chatActivityEnterView.m0.setTranslationX(this.e);
             f10 = chatActivityEnterView.m0.getTranslationX();
@@ -52,9 +52,9 @@ public final class qf extends AnimatorListenerAdapter {
             return;
         }
         ChatActivityEnterView chatActivityEnterView = this.f;
-        ap0 ap0Var = chatActivityEnterView.m0;
-        if (ap0Var != null) {
-            ap0Var.setVisibility(8);
+        zo0 zo0Var = chatActivityEnterView.m0;
+        if (zo0Var != null) {
+            zo0Var.setVisibility(8);
         }
         chatActivityEnterView.N0.setTranslationX(0.0f);
         chatActivityEnterView.D = 0.0f;
@@ -71,9 +71,9 @@ public final class qf extends AnimatorListenerAdapter {
             chatActivityEnterView.b0();
             chatActivityEnterView.m0.setVisibility(0);
         }
-        ap0 ap0Var = chatActivityEnterView.m0;
-        if (ap0Var != null) {
-            ap0Var.setAlpha(this.b);
+        zo0 zo0Var = chatActivityEnterView.m0;
+        if (zo0Var != null) {
+            zo0Var.setAlpha(this.b);
             chatActivityEnterView.m0.setTranslationX(this.c);
             f10 = chatActivityEnterView.m0.getTranslationX();
         } else {
@@ -82,7 +82,7 @@ public final class qf extends AnimatorListenerAdapter {
         chatActivityEnterView.N0.setTranslationX(f10);
         chatActivityEnterView.D = f10;
         chatActivityEnterView.J1();
-        sh.z zVar = chatActivityEnterView.i0;
+        rh.z zVar = chatActivityEnterView.i0;
         if (zVar == null || zVar.getTag() != null) {
             return;
         }

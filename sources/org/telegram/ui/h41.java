@@ -6,11 +6,11 @@ import android.graphics.Path;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class h41 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
+public final class h41 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final Path a;
-    public qg.b b;
+    public pg.b b;
 
     public h41(Activity activity) {
         super(activity);
@@ -25,9 +25,9 @@ public final class h41 extends FrameLayout implements org.telegram.ui.ActionBar.
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.a6
     public final void e() {
-        qg.b bVar = this.b;
+        pg.b bVar = this.b;
         if (bVar != null) {
             bVar.u();
         }
@@ -45,7 +45,7 @@ public final class h41 extends FrameLayout implements org.telegram.ui.ActionBar.
         path.addRoundRect(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), i10 - AndroidUtilities.dp(9.0f), i11 - AndroidUtilities.dp(9.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), Path.Direction.CW);
     }
 
-    public void setBlurredBackground(qg.b bVar) {
+    public void setBlurredBackground(pg.b bVar) {
         this.b = bVar;
         setBackground(bVar);
     }

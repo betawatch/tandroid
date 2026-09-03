@@ -12,11 +12,11 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ob1;
+import org.telegram.ui.pb1;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class o8 extends pv0 {
+public final class o8 extends qv0 {
     public final c5.e t0;
     public final /* synthetic */ w8 u0;
     public boolean v0;
@@ -33,7 +33,7 @@ public final class o8 extends pv0 {
         this.t0 = new c5.e();
     }
 
-    @Override // org.telegram.ui.Components.pv0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.qv0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
         int save = canvas.save();
@@ -99,7 +99,7 @@ public final class o8 extends pv0 {
         if (view != kVar || w8Var.K <= 0.0f) {
             canvas2 = canvas;
         } else {
-            paint.setColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.d6, false));
+            paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
             paint.setAlpha((int) (w8Var.K * 255.0f));
             canvas2 = canvas;
             canvas2.drawRect(0.0f, 0.0f, view.getMeasuredWidth(), view.getMeasuredHeight(), paint);
@@ -137,9 +137,9 @@ public final class o8 extends pv0 {
             if (w8Var.R) {
                 w8Var.i0(0.0f, false);
                 w8Var.a.setExpanded(false);
-                addView(w8Var.a, 0, k7.c6.c(-1.0f, -1));
+                addView(w8Var.a, 0, k7.b6.c(-1.0f, -1));
             } else {
-                w8Var.r.addView(w8Var.a, 0, k7.c6.c(-2.0f, -1));
+                w8Var.r.addView(w8Var.a, 0, k7.b6.c(-2.0f, -1));
             }
             AndroidUtilities.requestAdjustResize(w8Var.getParentActivity(), w8Var.getClassGuid());
         }
@@ -171,8 +171,8 @@ public final class o8 extends pv0 {
             } else {
                 i12 = 0;
             }
-            ob1 ob1Var = w8Var.r;
-            ob1Var.setTranslationY((ob1Var.getTranslationY() + ((ViewGroup.MarginLayoutParams) w8Var.r.getLayoutParams()).topMargin) - i12);
+            pb1 pb1Var = w8Var.r;
+            pb1Var.setTranslationY((pb1Var.getTranslationY() + ((ViewGroup.MarginLayoutParams) w8Var.r.getLayoutParams()).topMargin) - i12);
             ((ViewGroup.MarginLayoutParams) w8Var.r.getLayoutParams()).topMargin = i12;
             boolean z12 = w8Var.I;
             if (!w8Var.R) {

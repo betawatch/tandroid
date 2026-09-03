@@ -1,33 +1,28 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class s0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+public final class s0 extends k7.x5 {
+    public final /* synthetic */ n4 a;
 
-    public /* synthetic */ s0(int i10, Runnable runnable) {
-        this.a = i10;
-        this.b = runnable;
+    public s0(n4 n4Var) {
+        this.a = n4Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                super.onAnimationEnd(animator);
-                Runnable runnable = this.b;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            default:
-                this.b.run();
-                break;
+    @Override // k7.x5
+    public final void a(boolean z4) {
+        if (z4) {
+            this.a.e0.h(false);
+        }
+    }
+
+    @Override // k7.x5
+    public final void b() {
+        if (AndroidUtilities.shouldShowClipboardToast()) {
+            b.m(R.string.TextCopied, new org.telegram.ui.Components.qc(this.a.d0, null));
         }
     }
 }

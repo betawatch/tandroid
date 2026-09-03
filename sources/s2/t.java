@@ -1,14 +1,13 @@
 package s2;
 
-import androidx.biometric.f0;
-import j7.l5;
+import j7.k5;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class t extends c {
-    public static final /* synthetic */ f0 h;
-    public static final /* synthetic */ f0 n;
+    public static final /* synthetic */ bb.b h;
+    public static final /* synthetic */ bb.b n;
     public long[] f;
 
     static {
@@ -20,7 +19,7 @@ public final class t extends c {
     @Override // com.googlecode.mp4parser.c, com.googlecode.mp4parser.a
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
-        int a2 = l5.a(r2.b.i(byteBuffer));
+        int a2 = k5.a(r2.b.i(byteBuffer));
         this.f = new long[a2];
         for (int i10 = 0; i10 < a2; i10++) {
             this.f[i10] = r2.b.i(byteBuffer);

@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class nf1 extends org.telegram.ui.Components.d81 {
+public final class nf1 extends org.telegram.ui.Components.c81 {
     public final ArrayList a;
     public final /* synthetic */ of1 b;
 
@@ -33,13 +33,13 @@ public final class nf1 extends org.telegram.ui.Components.d81 {
         arrayList.add(kf1Var5);
     }
 
-    @Override // org.telegram.ui.Components.d81
+    @Override // org.telegram.ui.Components.c81
     public final void b(View view, int i10, int i11) {
         of1 of1Var = this.b;
         of1Var.K(view, i10, of1Var.V, true);
     }
 
-    @Override // org.telegram.ui.Components.d81
+    @Override // org.telegram.ui.Components.c81
     public final View d(int i10) {
         int i11;
         of1 of1Var = this.b;
@@ -49,24 +49,24 @@ public final class nf1 extends org.telegram.ui.Components.d81 {
         }
         if (i10 == 2) {
             i11 = ((org.telegram.ui.ActionBar.p2) sf1Var).currentAccount;
-            org.telegram.ui.Components.dn0 dn0Var = new org.telegram.ui.Components.dn0(i11, sf1Var);
-            dn0Var.b.j(new mf1(0));
-            dn0Var.setUiCallback(of1Var);
-            return dn0Var;
+            org.telegram.ui.Components.cn0 cn0Var = new org.telegram.ui.Components.cn0(i11, sf1Var);
+            cn0Var.b.j(new mf1(0));
+            cn0Var.setUiCallback(of1Var);
+            return cn0Var;
         }
-        t10 t10Var = new t10(sf1Var);
-        t10Var.setChatPreviewDelegate(of1Var.o0);
-        t10Var.setUiCallback(of1Var);
-        t10Var.b.j(new mf1(1));
-        return t10Var;
+        u10 u10Var = new u10(sf1Var);
+        u10Var.setChatPreviewDelegate(of1Var.o0);
+        u10Var.setUiCallback(of1Var);
+        u10Var.b.j(new mf1(1));
+        return u10Var;
     }
 
-    @Override // org.telegram.ui.Components.d81
+    @Override // org.telegram.ui.Components.c81
     public final int e() {
         return this.a.size();
     }
 
-    @Override // org.telegram.ui.Components.d81
+    @Override // org.telegram.ui.Components.c81
     public final CharSequence g(int i10) {
         ArrayList arrayList = this.a;
         if (((kf1) arrayList.get(i10)).a == 0) {
@@ -75,12 +75,12 @@ public final class nf1 extends org.telegram.ui.Components.d81 {
         if (((kf1) arrayList.get(i10)).a == 1) {
             return LocaleController.getString(R.string.DownloadsTabs);
         }
-        uf.e0 e0Var = uf.g0.Z2[((kf1) arrayList.get(i10)).b];
+        tf.e0 e0Var = tf.g0.Z2[((kf1) arrayList.get(i10)).b];
         String str = e0Var.c;
         return str != null ? str : LocaleController.getString(e0Var.b);
     }
 
-    @Override // org.telegram.ui.Components.d81
+    @Override // org.telegram.ui.Components.c81
     public final int h(int i10) {
         ArrayList arrayList = this.a;
         if (((kf1) arrayList.get(i10)).a == 0) {

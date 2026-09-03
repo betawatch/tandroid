@@ -7,7 +7,7 @@ import java.util.ArrayDeque;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class m {
     public final y a;
@@ -69,7 +69,7 @@ public final class m {
 
     public final void c(int i10, j jVar) {
         f();
-        this.f.add(new bh.a(new CopyOnWriteArraySet(this.d), i10, jVar, 4));
+        this.f.add(new ah.a(new CopyOnWriteArraySet(this.d), i10, jVar, 4));
     }
 
     public final void d() {

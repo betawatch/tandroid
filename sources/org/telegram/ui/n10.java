@@ -1,42 +1,67 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.MediaController;
+import android.view.ViewGroup;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class n10 extends org.telegram.ui.Cells.h7 {
-    public final /* synthetic */ o10 i0;
+public final class n10 extends org.telegram.ui.Components.ql0 {
+    public final /* synthetic */ u10 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n10(o10 o10Var, Context context) {
-        super(context, 1, null);
-        this.i0 = o10Var;
+    public n10(u10 u10Var) {
+        this.c = u10Var;
     }
 
-    @Override // org.telegram.ui.Cells.h7
-    public final boolean d(MessageObject messageObject) {
-        boolean isVoice = messageObject.isVoice();
-        o10 o10Var = this.i0;
-        if (isVoice || messageObject.isRoundVideo()) {
-            boolean playMessage = MediaController.getInstance().playMessage(messageObject);
-            MediaController.getInstance().setVoiceMessagesPlaylist(playMessage ? o10Var.v.f : null, false);
-            return playMessage;
+    @Override // org.telegram.ui.Components.ql0
+    public final boolean D(f2.l1 l1Var) {
+        return true;
+    }
+
+    @Override // f2.o0
+    public final int h() {
+        u10 u10Var = this.c;
+        if (u10Var.f.isEmpty()) {
+            return 0;
         }
-        if (!messageObject.isMusic()) {
-            return false;
+        return u10Var.f.size() + (!u10Var.K ? 1 : 0);
+    }
+
+    @Override // f2.o0
+    public final int j(int i10) {
+        return i10 >= this.c.f.size() ? 3 : 0;
+    }
+
+    @Override // f2.o0
+    public final void v(f2.l1 l1Var, int i10) {
+        if (l1Var.f == 0) {
+            org.telegram.ui.Cells.q2 q2Var = (org.telegram.ui.Cells.q2) l1Var.a;
+            u10 u10Var = this.c;
+            MessageObject messageObject = (MessageObject) u10Var.f.get(i10);
+            q2Var.L = u10Var.m0;
+            q2Var.W(messageObject.getDialogId(), messageObject, messageObject.messageOwner.date, false, false);
+            q2Var.p2 = i10 != h() - 1;
+            q2Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Components.fk(this, q2Var, messageObject, q2Var.getMessage() != null && q2Var.getMessage().getId() == messageObject.getId(), 1));
         }
-        t10 t10Var = o10Var.v;
-        String str = t10Var.N;
-        long j10 = t10Var.B;
-        long j11 = t10Var.E;
-        MediaController.PlaylistGlobalSearchParams playlistGlobalSearchParams = new MediaController.PlaylistGlobalSearchParams(str, j10, j11, j11, t10Var.y);
-        t10 t10Var2 = o10Var.v;
-        playlistGlobalSearchParams.endReached = t10Var2.K;
-        playlistGlobalSearchParams.nextSearchRate = t10Var2.v;
-        playlistGlobalSearchParams.totalCount = t10Var2.L;
-        playlistGlobalSearchParams.folderId = t10Var2.G ? 1 : 0;
-        return MediaController.getInstance().setPlaylist(o10Var.v.f, messageObject, 0L, playlistGlobalSearchParams);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+        org.telegram.ui.Components.iu0 iu0Var;
+        if (i10 == 0) {
+            iu0Var = new org.telegram.ui.Components.iu0(1, viewGroup.getContext(), true);
+        } else if (i10 != 3) {
+            org.telegram.ui.Cells.t3 t3Var = new org.telegram.ui.Cells.t3(viewGroup.getContext(), null);
+            t3Var.setText(LocaleController.getString(R.string.SearchMessages));
+            iu0Var = t3Var;
+        } else {
+            org.telegram.ui.Components.u00 u00Var = new org.telegram.ui.Components.u00(viewGroup.getContext(), null);
+            u00Var.setIsSingleCell(true);
+            u00Var.setViewType(1);
+            iu0Var = u00Var;
+        }
+        return ai.n(iu0Var, iu0Var, -1, -2);
     }
 }

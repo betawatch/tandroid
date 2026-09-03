@@ -3,7 +3,7 @@ package org.telegram.ui.ActionBar;
 import android.view.KeyEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -38,9 +38,9 @@ public final /* synthetic */ class x implements View.OnClickListener {
                 ((h2) this.b).dismiss();
                 break;
             default:
-                h3 h3Var = (h3) this.b;
-                h3Var.getClass();
-                h3Var.dismissWithButtonClick(((Integer) view.getTag()).intValue());
+                g3 g3Var = (g3) this.b;
+                g3Var.getClass();
+                g3Var.dismissWithButtonClick(((Integer) view.getTag()).intValue());
                 break;
         }
     }

@@ -11,12 +11,12 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.mr;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public abstract class r1 {
-    public static final pr w = xh.n.V;
+    public static final mr w = wh.n.V;
     public final FrameLayout a;
     public FrameLayout b;
     public ViewGroup c;
@@ -31,7 +31,7 @@ public abstract class r1 {
     public boolean s;
     public boolean v;
     public boolean e = false;
-    public final x2 h = new x2(this, 2);
+    public final w2 h = new w2(this, 2);
     public int i = -1;
     public int j = -1;
     public int k = -1;
@@ -69,7 +69,7 @@ public abstract class r1 {
             while (true) {
                 view2 = null;
                 if (view != null) {
-                    if (!(view.getParent() instanceof z3)) {
+                    if (!(view.getParent() instanceof y3)) {
                         if (!(view.getParent() instanceof View)) {
                             break;
                         } else {
@@ -140,7 +140,7 @@ public abstract class r1 {
         this.d.requestLayout();
         boolean z4 = this.s;
         e(0.0f, z4 ? 1.0f : 0.0f, z4);
-        if (!(this instanceof ng.o)) {
+        if (!(this instanceof mg.o)) {
             this.a.setTranslationY(0.0f);
         }
         f();

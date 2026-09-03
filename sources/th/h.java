@@ -1,32 +1,31 @@
 package th;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.ui.xn;
+import android.content.Context;
+import android.view.View;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.i51;
+import org.telegram.ui.Components.rl0;
+import org.telegram.ui.Components.w51;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n b;
-    public final /* synthetic */ long c;
+public final class h extends h51 {
+    public static final /* synthetic */ int a = 0;
 
-    public /* synthetic */ h(n nVar, long j10, int i10) {
-        this.a = i10;
-        this.b = nVar;
-        this.c = j10;
+    static {
+        h51.setup(new h());
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                MessagesController.getInstance(r0.currentAccount).unlinkCommunity(this.c, r0.b, new j(this.b, 0));
-                break;
-            default:
-                n nVar = this.b;
-                nVar.getClass();
-                nVar.presentFragment(xn.R9(this.c));
-                break;
-        }
+    @Override // org.telegram.ui.Components.h51
+    public final void bindView(View view, i51 i51Var, boolean z4, w51 w51Var, g61 g61Var) {
+        long j10 = i51Var.B;
+        ((i) view).a((int) j10, (int) (j10 >>> 32), i51Var.k, i51Var.l, i51Var.n, i51Var.q);
+    }
+
+    @Override // org.telegram.ui.Components.h51
+    public final View createView(Context context, rl0 rl0Var, int i10, int i11, f6 f6Var) {
+        return new i(context, f6Var, false);
     }
 }

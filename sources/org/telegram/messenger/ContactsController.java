@@ -35,7 +35,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class ContactsController extends BaseController {
     public static final int PRIVACY_RULES_TYPE_ADDED_BY_PHONE = 7;
@@ -109,7 +109,7 @@ public class ContactsController extends BaseController {
     private static final String[] projectionNames = {"lookup", "data2", "data3", "data5"};
     private static volatile ContactsController[] Instance = new ContactsController[4];
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     public static class Contact {
         public int contact_id;
         public String first_name;
@@ -134,7 +134,7 @@ public class ContactsController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     public class MyContentObserver extends ContentObserver {
         private Runnable checkRunnable;
 
@@ -175,7 +175,7 @@ public class ContactsController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     public class PhoneBookContact {
         String id;
         String lookup_key;
@@ -407,8 +407,8 @@ public class ContactsController extends BaseController {
         boolean z4;
         boolean z10 = false;
         try {
-        } catch (Exception e6) {
-            FileLog.e(e6);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
         if (!hasContactsPermission()) {
             return false;
@@ -436,8 +436,8 @@ public class ContactsController extends BaseController {
                             try {
                                 query.close();
                                 throw th2;
-                            } catch (Exception e10) {
-                                e = e10;
+                            } catch (Exception e6) {
+                                e = e6;
                                 z10 = z4;
                                 FileLog.e(e);
                                 return z10;
@@ -455,8 +455,8 @@ public class ContactsController extends BaseController {
             if (query != null) {
                 query.close();
             }
-        } catch (Exception e11) {
-            e = e11;
+        } catch (Exception e10) {
+            e = e10;
         }
         return z10;
     }
@@ -468,8 +468,8 @@ public class ContactsController extends BaseController {
             }
             try {
                 ApplicationLoader.applicationContext.getContentResolver().delete(ContactsContract.RawContacts.CONTENT_URI.buildUpon().appendQueryParameter("caller_is_syncadapter", "true").appendQueryParameter("account_name", this.systemAccount.name).appendQueryParameter("account_type", this.systemAccount.type).build(), "sync2 = " + j10, null);
-            } catch (Exception e6) {
-                FileLog.e((Throwable) e6, false);
+            } catch (Exception e) {
+                FileLog.e((Throwable) e, false);
             }
             synchronized (this.observerLock) {
                 this.ignoreChanges = false;
@@ -541,8 +541,8 @@ public class ContactsController extends BaseController {
                 Collator collator = Collator.getInstance(locale);
                 cachedCollator = collator;
                 collator.setStrength(1);
-            } catch (Exception e6) {
-                FileLog.e((Throwable) e6, true);
+            } catch (Exception e) {
+                FileLog.e((Throwable) e, true);
             }
         }
         if (cachedCollator == null) {
@@ -550,8 +550,8 @@ public class ContactsController extends BaseController {
                 Collator collator2 = Collator.getInstance();
                 cachedCollator = collator2;
                 collator2.setStrength(1);
-            } catch (Exception e10) {
-                FileLog.e((Throwable) e10, true);
+            } catch (Exception e6) {
+                FileLog.e((Throwable) e6, true);
             }
         }
         if (cachedCollator == null) {
@@ -614,8 +614,8 @@ public class ContactsController extends BaseController {
                 try {
                     cursor.close();
                     return false;
-                } catch (Exception e6) {
-                    FileLog.e(e6);
+                } catch (Exception e) {
+                    FileLog.e(e);
                 }
             }
             return false;
@@ -1340,8 +1340,8 @@ public class ContactsController extends BaseController {
                         contact.shortPhones.size();
                     }
                 }
-            } catch (Exception e6) {
-                FileLog.e(e6);
+            } catch (Exception e) {
+                FileLog.e(e);
             }
         }
         if (arrayList.isEmpty()) {
@@ -1451,7 +1451,7 @@ public class ContactsController extends BaseController {
             }
             zArr[0] = true;
             if (BuildVars.LOGS_ENABLED) {
-                org.telegram.ui.yh.v(tL_error.text, new StringBuilder("import contacts error "));
+                org.telegram.ui.ai.v(tL_error.text, new StringBuilder("import contacts error "));
             }
         }
         if (this.completedRequestsCount == i10) {
@@ -2434,8 +2434,8 @@ public class ContactsController extends BaseController {
                         } else {
                             cursor = query;
                         }
-                    } catch (Exception e6) {
-                        e = e6;
+                    } catch (Exception e) {
+                        e = e;
                         cursor = query;
                         FileLog.e(e);
                     } catch (Throwable th2) {
@@ -2447,8 +2447,8 @@ public class ContactsController extends BaseController {
                         throw th;
                     }
                 }
-            } catch (Exception e10) {
-                e = e10;
+            } catch (Exception e6) {
+                e = e6;
             }
         } catch (Throwable th3) {
             th = th3;
@@ -2466,8 +2466,8 @@ public class ContactsController extends BaseController {
     private void saveContactsLoadTime() {
         try {
             MessagesController.getMainSettings(this.currentAccount).edit().putLong("lastReloadStatusTime", System.currentTimeMillis()).commit();
-        } catch (Exception e6) {
-            FileLog.e(e6);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 
@@ -2526,8 +2526,8 @@ public class ContactsController extends BaseController {
             if (applyBatch != null && applyBatch.length > 0 && (uri = applyBatch[0].uri) != null) {
                 j10 = Long.parseLong(uri.getLastPathSegment());
             }
-        } catch (Exception e6) {
-            FileLog.e(e6);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
         synchronized (this.observerLock) {
             this.ignoreChanges = false;
@@ -2642,8 +2642,8 @@ public class ContactsController extends BaseController {
             query = contentResolver.query(uri, new String[]{"raw_contact_id"}, "mimetype=? AND data1=?", new String[]{"vnd.android.cursor.item/group_membership", parseInt + ""}, null);
             size = arrayList.size();
             i10 = parseInt;
-        } catch (Exception e6) {
-            e = e6;
+        } catch (Exception e) {
+            e = e;
         }
         try {
             if (query != null) {
@@ -2663,8 +2663,8 @@ public class ContactsController extends BaseController {
                         contentResolver.applyBatch("com.android.contacts", arrayList);
                         return;
                     }
-                } catch (Exception e10) {
-                    e = e10;
+                } catch (Exception e6) {
+                    e = e6;
                     FileLog.e(e);
                     return;
                 }
@@ -2677,8 +2677,8 @@ public class ContactsController extends BaseController {
             }
             contentResolver.applyBatch("com.android.contacts", arrayList);
             return;
-        } catch (Exception e11) {
-            e = e11;
+        } catch (Exception e10) {
+            e = e10;
             FileLog.e(e);
             return;
         }
@@ -2721,8 +2721,8 @@ public class ContactsController extends BaseController {
                 int i11 = query2.getInt(0);
                 query2.close();
                 contentResolver.delete(ContactsContract.RawContacts.CONTENT_URI, "_id=?", new String[]{i11 + ""});
-            } catch (Exception e6) {
-                FileLog.e(e6);
+            } catch (Exception e) {
+                FileLog.e(e);
             }
         }
     }
@@ -2736,7 +2736,7 @@ public class ContactsController extends BaseController {
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
             TLRPC.User user = arrayList.get(i10);
-            oh.t6 storiesController = getMessagesController().getStoriesController();
+            nh.t6 storiesController = getMessagesController().getStoriesController();
             long j10 = user.id;
             int i11 = storiesController.a;
             ArrayList arrayList3 = storiesController.h;
@@ -2763,8 +2763,8 @@ public class ContactsController extends BaseController {
                 }
                 i13++;
             }
-            oh.g7 g7Var = storiesController.k;
-            g7Var.b.getStorageQueue().postRunnable(new hg.y1(g7Var, j10, 8));
+            nh.g7 g7Var = storiesController.k;
+            g7Var.b.getStorageQueue().postRunnable(new gg.y1(g7Var, j10, 8));
             MessagesController.getInstance(i11).checkArchiveFolder();
             NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
             TLRPC.InputUser inputUser = getMessagesController().getInputUser(user);
@@ -2774,7 +2774,7 @@ public class ContactsController extends BaseController {
                 tL_contacts_deleteContacts.id.add(inputUser);
             }
         }
-        getConnectionsManager().sendRequest(tL_contacts_deleteContacts, new kh.g(this, arrayList2, arrayList, z4, arrayList.get(0).first_name));
+        getConnectionsManager().sendRequest(tL_contacts_deleteContacts, new jh.g(this, arrayList2, arrayList, z4, arrayList.get(0).first_name));
     }
 
     public void deleteContactsUndoable(Context context, org.telegram.ui.ActionBar.p2 p2Var, ArrayList<TLRPC.User> arrayList) {
@@ -2830,8 +2830,8 @@ public class ContactsController extends BaseController {
                     }
                 }
             }
-        } catch (Exception e6) {
-            e6.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -2956,7 +2956,7 @@ public class ContactsController extends BaseController {
             }
             TLRPC.TL_contacts_getContacts tL_contacts_getContacts = new TLRPC.TL_contacts_getContacts();
             tL_contacts_getContacts.hash = j10;
-            getConnectionsManager().sendRequest(tL_contacts_getContacts, new oh.t5(this, j10, 1));
+            getConnectionsManager().sendRequest(tL_contacts_getContacts, new nh.t5(this, j10, 1));
         }
     }
 
@@ -3377,8 +3377,8 @@ public class ContactsController extends BaseController {
                                     if (cursor != null) {
                                         try {
                                             cursor.close();
-                                        } catch (Exception e6) {
-                                            FileLog.e(e6);
+                                        } catch (Exception e) {
+                                            FileLog.e(e);
                                         }
                                     }
                                     hashMap2 = hashMap;
@@ -3493,8 +3493,8 @@ public class ContactsController extends BaseController {
                         if (cursor2 != null) {
                             try {
                                 cursor2.close();
-                            } catch (Exception e10) {
-                                FileLog.e(e10);
+                            } catch (Exception e6) {
+                                FileLog.e(e6);
                             }
                         }
                     } catch (Throwable th7) {
@@ -3522,8 +3522,8 @@ public class ContactsController extends BaseController {
                 return;
             }
             reloadContactsStatuses();
-        } catch (Exception e6) {
-            FileLog.e(e6);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 

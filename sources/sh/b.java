@@ -1,62 +1,80 @@
 package sh;
 
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_communities;
+import org.telegram.ui.Components.i51;
+import org.telegram.ui.Components.qc;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b implements RequestDelegate {
+public final /* synthetic */ class b implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ j b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d2 c;
+    public final /* synthetic */ g b;
 
-    public /* synthetic */ b(j jVar, org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    public /* synthetic */ b(g gVar, int i10) {
         this.a = i10;
-        this.b = jVar;
-        this.c = d2Var;
+        this.b = gVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        String string;
         switch (this.a) {
             case 0:
-                final int i10 = 1;
-                final j jVar = this.b;
-                final org.telegram.ui.ActionBar.d2 d2Var = this.c;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: sh.c
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                j.y0(jVar, d2Var, tLObject, tL_error);
-                                break;
-                            default:
-                                j.z0(jVar, d2Var, tLObject, tL_error);
-                                break;
+                ArrayList arrayList = (ArrayList) obj;
+                g gVar = this.b;
+                f fVar = gVar.f;
+                i51 i51Var = new i51(-4);
+                i51Var.d = 0;
+                i51Var.c = fVar;
+                i51Var.z = -1;
+                arrayList.add(i51Var);
+                i51 c3 = i51.c(1, R.drawable.msg_groups_create, LocaleController.getString(R.string.CommunityCreateCommunity));
+                c3.q = true;
+                arrayList.add(c3);
+                arrayList.add(i51.D(2, AndroidUtilities.dp(14.0f)));
+                ArrayList arrayList2 = gVar.h;
+                if (arrayList2 != null && !arrayList2.isEmpty()) {
+                    arrayList.add(i51.s(3, LocaleController.getString(R.string.CommunityAddToExistingCommunity)));
+                    ArrayList arrayList3 = gVar.h;
+                    int size = arrayList3.size();
+                    int i10 = 0;
+                    while (i10 < size) {
+                        Object obj3 = arrayList3.get(i10);
+                        i10++;
+                        TLRPC.Chat chat = (TLRPC.Chat) obj3;
+                        TLRPC.ChatFull chatFull = gVar.getMessagesController().getChatFull(chat.id);
+                        i51 v = i51.v(chat);
+                        long j10 = chat.id;
+                        v.d = (int) (j10 ^ (j10 >>> 32));
+                        if (chatFull != null) {
+                            ArrayList<TL_communities.CommunityPeer> arrayList4 = chatFull.linked_peers;
+                            string = LocaleController.formatPluralString("Chats", arrayList4 != null ? arrayList4.size() : 0, new Object[0]);
+                        } else {
+                            string = LocaleController.getString(R.string.Loading);
                         }
+                        v.m = string;
+                        arrayList.add(v);
                     }
-                });
+                    break;
+                }
                 break;
             default:
-                final int i11 = 0;
-                final j jVar2 = this.b;
-                final org.telegram.ui.ActionBar.d2 d2Var2 = this.c;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: sh.c
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                j.y0(jVar2, d2Var2, tLObject, tL_error);
-                                break;
-                            default:
-                                j.z0(jVar2, d2Var2, tLObject, tL_error);
-                                break;
-                        }
-                    }
-                });
-                break;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                g gVar2 = this.b;
+                if (tL_error == null) {
+                    o0.d(gVar2, gVar2.a, 0);
+                    break;
+                } else {
+                    gVar2.getClass();
+                    qc.a0(gVar2).d0(tL_error, false);
+                    break;
+                }
         }
     }
 }

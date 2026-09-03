@@ -6,14 +6,14 @@ import com.google.android.gms.tasks.Task;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.regex.Pattern;
-import k7.i8;
-import k7.q7;
+import k7.h8;
+import k7.p7;
 import l7.w0;
 import ld.e0;
 import org.telegram.tgnet.TLObject;
 import tc.r;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class d {
     public final ca.d a;
@@ -72,7 +72,7 @@ public final class d {
                     r42 = aVar.e;
                     sc.i iVar = sc.i.a;
                     if (r42 != 0) {
-                        q7.b(obj);
+                        p7.b(obj);
                         ud.d dVar2 = this.d;
                         if (!dVar2.c() && !this.c.b()) {
                             return iVar;
@@ -93,7 +93,7 @@ public final class d {
                             }
                             aVar2 = (ud.a) aVar.a;
                             try {
-                                q7.b(obj);
+                                p7.b(obj);
                                 ((ud.d) aVar2).e(null);
                                 return iVar;
                             } catch (Throwable th2) {
@@ -104,7 +104,7 @@ public final class d {
                         }
                         aVar3 = aVar.b;
                         dVar = (d) aVar.a;
-                        q7.b(obj);
+                        p7.b(obj);
                         str = (String) obj;
                         if (str != null) {
                             Log.w("SessionConfigFetcher", "Error getting Firebase Installation ID. Skipping this Session Event.");
@@ -141,7 +141,7 @@ public final class d {
                     }
                     aVar3 = aVar.b;
                     dVar = (d) aVar.a;
-                    q7.b(obj);
+                    p7.b(obj);
                     if (dVar.c.b()) {
                         Log.d("SessionConfigFetcher", "Remote settings cache not expired. Using cached values.");
                         ((ud.d) aVar3).e(null);
@@ -152,7 +152,7 @@ public final class d {
                     aVar.a = dVar;
                     aVar.b = aVar3;
                     aVar.e = 2;
-                    obj = i8.a(d, aVar);
+                    obj = h8.a(d, aVar);
                     if (obj == aVar4) {
                         return aVar4;
                     }

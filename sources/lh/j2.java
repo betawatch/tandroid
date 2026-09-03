@@ -1,39 +1,40 @@
 package lh;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.k81;
-import org.telegram.ui.ProfileActivity;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class j2 implements Utilities.Callback {
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class j2 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ x3 b;
+    public final /* synthetic */ g5 b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ Runnable d;
 
-    public /* synthetic */ j2(x3 x3Var, int i10) {
+    public /* synthetic */ j2(g5 g5Var, TLRPC.TL_error tL_error, Runnable runnable, int i10) {
         this.a = i10;
-        this.b = x3Var;
+        this.b = g5Var;
+        this.c = tL_error;
+        this.d = runnable;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                x3 x3Var = this.b;
-                x3Var.e.b((String) obj, new j2(x3Var, 1));
+                this.b.getBulletinFactory().d0(this.c, false);
+                Runnable runnable = this.d;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
                 break;
             default:
-                x3 x3Var2 = this.b;
-                x3Var2.f(true);
-                k81 k81Var = x3Var2.n;
-                int i10 = ((TL_stars.TL_starGiftCollection) obj).collection_id;
-                k81Var.d(i10, x3Var2.e.f(i10) + 1);
-                org.telegram.ui.ActionBar.p2 p2Var = x3Var2.a;
-                if (p2Var instanceof ProfileActivity) {
-                    ((ProfileActivity) p2Var).G4(true);
+                this.b.getBulletinFactory().d0(this.c, false);
+                Runnable runnable2 = this.d;
+                if (runnable2 != null) {
+                    runnable2.run();
+                    break;
                 }
-                x3Var2.n();
                 break;
         }
     }

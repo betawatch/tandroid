@@ -7,15 +7,16 @@ import android.os.Bundle;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import org.telegram.messenger.GenericProvider;
+import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cl0 implements org.telegram.ui.Components.uc0, org.telegram.ui.ActionBar.c2, Utilities.Callback2Return, org.telegram.ui.Components.tv0, j3.f, GenericProvider, androidx.car.app.utils.e {
+public final /* synthetic */ class cl0 implements org.telegram.ui.Components.tc0, org.telegram.ui.ActionBar.c2, Utilities.Callback2Return, org.telegram.ui.Components.tv0, j3.f, GenericProvider, androidx.car.app.utils.e, qg.c {
     public final /* synthetic */ int a;
 
     public /* synthetic */ cl0(int i10) {
@@ -80,19 +81,36 @@ public final /* synthetic */ class cl0 implements org.telegram.ui.Components.uc0
         throw null;
     }
 
-    @Override // org.telegram.ui.Components.uc0
+    @Override // org.telegram.ui.Components.tc0
     public String e(int i10) {
         return i10 == 0 ? LocaleController.getString(R.string.AutoLockDisabled) : i10 == 1 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Minutes", 1, new Object[0])) : i10 == 2 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Minutes", 5, new Object[0])) : i10 == 3 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Hours", 1, new Object[0])) : i10 == 4 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Hours", 5, new Object[0])) : "";
     }
 
+    @Override // qg.c
+    public int f(org.telegram.ui.ActionBar.f6 f6Var, boolean z4) {
+        switch (this.a) {
+            case 26:
+                return rg.b.m(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, f6Var), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Sd, f6Var));
+            case 27:
+                if (!LiteMode.isEnabled(256)) {
+                    return org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G8, false);
+                }
+                return org.telegram.ui.ActionBar.j6.l1(z4 ? 0.85f : 0.825f, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G8, false));
+            case 28:
+                return rg.b.m(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, f6Var), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Zk, f6Var));
+            default:
+                return org.telegram.ui.ActionBar.j6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Fi, f6Var));
+        }
+    }
+
     @Override // org.telegram.ui.Components.tv0
-    public void i(int i10) {
+    public void g(int i10) {
         SharedConfig.proxyRotationTimeout = i10;
         SharedConfig.saveConfig();
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    public void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         switch (this.a) {
             case 1:
                 Drawable[] drawableArr = PhotoViewer.Q8;
@@ -128,7 +146,7 @@ public final /* synthetic */ class cl0 implements org.telegram.ui.Components.uc0
 
     @Override // org.telegram.messenger.GenericProvider
     public Object provide(Object obj) {
-        MediaController.AlbumEntry albumEntry = qh.z2.g0;
+        MediaController.AlbumEntry albumEntry = ph.a3.g0;
         return 0;
     }
 
@@ -138,7 +156,7 @@ public final /* synthetic */ class cl0 implements org.telegram.ui.Components.uc0
         Integer num2 = (Integer) obj2;
         switch (this.a) {
             case 4:
-                return num.intValue() == 0 ? mh.ja.X0(false, LocaleController.formatPluralStringComma("Stars", num2.intValue()), 0.66f, null) : LocaleController.formatNumber(num2.intValue(), ',');
+                return num.intValue() == 0 ? lh.ja.X0(false, LocaleController.formatPluralStringComma("Stars", num2.intValue()), 0.66f, null) : LocaleController.formatNumber(num2.intValue(), ',');
             default:
                 if (num.intValue() == 0) {
                     return num2.intValue() == 0 ? LocaleController.getString(R.string.LiveStoryPricePerCommentFree) : LocaleController.formatPluralStringComma("Stars", num2.intValue());
@@ -147,7 +165,11 @@ public final /* synthetic */ class cl0 implements org.telegram.ui.Components.uc0
         }
     }
 
+    public /* synthetic */ cl0(r.a aVar, int i10, w.b bVar) {
+        this.a = 19;
+    }
+
     @Override // org.telegram.ui.Components.tv0
-    public /* synthetic */ void m() {
+    public /* synthetic */ void j() {
     }
 }

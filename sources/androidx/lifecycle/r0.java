@@ -4,7 +4,7 @@ import android.app.Application;
 import java.lang.reflect.InvocationTargetException;
 import java.util.LinkedHashMap;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class r0 extends q0 {
     public static r0 e;
@@ -14,24 +14,9 @@ public final class r0 extends q0 {
         this.d = application;
     }
 
-    @Override // androidx.lifecycle.q0, androidx.lifecycle.s0
-    public final p0 C(Class cls, v1.b bVar) {
-        if (this.d != null) {
-            return h(cls);
-        }
-        Application application = (Application) ((LinkedHashMap) bVar.a).get(q0.a);
-        if (application != null) {
-            return a(cls, application);
-        }
-        if (a.class.isAssignableFrom(cls)) {
-            throw new IllegalArgumentException("CreationExtras must have an application by `APPLICATION_KEY`");
-        }
-        return super.h(cls);
-    }
-
     public final p0 a(Class cls, Application application) {
         if (!a.class.isAssignableFrom(cls)) {
-            return super.h(cls);
+            return super.b(cls);
         }
         try {
             p0 p0Var = (p0) cls.getConstructor(Application.class).newInstance(application);
@@ -49,11 +34,26 @@ public final class r0 extends q0 {
     }
 
     @Override // androidx.lifecycle.q0, androidx.lifecycle.s0
-    public final p0 h(Class cls) {
+    public final p0 b(Class cls) {
         Application application = this.d;
         if (application != null) {
             return a(cls, application);
         }
         throw new UnsupportedOperationException("AndroidViewModelFactory constructed with empty constructor works only with create(modelClass: Class<T>, extras: CreationExtras).");
+    }
+
+    @Override // androidx.lifecycle.q0, androidx.lifecycle.s0
+    public final p0 p(Class cls, v1.b bVar) {
+        if (this.d != null) {
+            return b(cls);
+        }
+        Application application = (Application) ((LinkedHashMap) bVar.a).get(q0.a);
+        if (application != null) {
+            return a(cls, application);
+        }
+        if (a.class.isAssignableFrom(cls)) {
+            throw new IllegalArgumentException("CreationExtras must have an application by `APPLICATION_KEY`");
+        }
+        return super.b(cls);
     }
 }

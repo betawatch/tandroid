@@ -1,38 +1,70 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class yi implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.p2 b;
+public final class yi extends ze.c {
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ org.telegram.ui.Cells.s1 f;
+    public final /* synthetic */ zn g;
 
-    public /* synthetic */ yi(int i10, org.telegram.ui.ActionBar.p2 p2Var) {
-        this.a = i10;
-        this.b = p2Var;
+    public /* synthetic */ yi(zn znVar, int i10, org.telegram.ui.Cells.s1 s1Var, int i11) {
+        this.d = i11;
+        this.g = znVar;
+        this.e = i10;
+        this.f = s1Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
+    @Override // ze.c
+    public final void c(boolean z4) {
+        switch (this.d) {
             case 0:
-                xn xnVar = (xn) this.b;
-                xnVar.ia = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                xnVar.U0.invalidate();
+                if (!z4) {
+                    AndroidUtilities.runOnUIThread(new ah.b(this, this.e, 18), 240L);
+                    break;
+                }
                 break;
             case 1:
-                py pyVar = (py) this.b;
-                pyVar.E0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                View view = pyVar.fragmentView;
-                if (view != null) {
-                    view.invalidate();
+                if (!z4) {
+                    AndroidUtilities.runOnUIThread(new ah.b(this, this.e, 20), 240L);
                     break;
                 }
                 break;
             default:
-                ((jd1) this.b).u0.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                if (!z4) {
+                    AndroidUtilities.runOnUIThread(new ah.b(this, this.e, 21), 240L);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // ze.c
+    public final void d() {
+        switch (this.d) {
+            case 0:
+                int i10 = this.e;
+                zn znVar = this.g;
+                znVar.tb = i10;
+                znVar.ub = 6;
+                this.f.invalidate();
+                break;
+            case 1:
+                int i11 = this.e;
+                zn znVar2 = this.g;
+                znVar2.tb = i11;
+                znVar2.ub = 5;
+                znVar2.wb = null;
+                this.f.invalidate();
+                break;
+            default:
+                int i12 = this.e;
+                zn znVar3 = this.g;
+                znVar3.tb = i12;
+                znVar3.ub = 7;
+                this.f.invalidate();
                 break;
         }
     }

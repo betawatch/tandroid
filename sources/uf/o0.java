@@ -1,47 +1,64 @@
 package uf;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import org.telegram.tgnet.TLObject;
+import android.location.Address;
+import android.location.Geocoder;
+import java.util.List;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.d2;
+import org.telegram.ui.cd0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class o0 implements Comparator {
-    public final /* synthetic */ a0.h a;
-    public final /* synthetic */ ArrayList b;
+public final /* synthetic */ class o0 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ v0 b;
+    public final /* synthetic */ cd0 c;
+    public final /* synthetic */ d2 d;
 
-    public o0(a0.h hVar, ArrayList arrayList) {
-        this.a = hVar;
-        this.b = arrayList;
+    public /* synthetic */ o0(v0 v0Var, d2 d2Var, cd0 cd0Var) {
+        this.b = v0Var;
+        this.d = d2Var;
+        this.c = cd0Var;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        TLObject tLObject = (TLObject) obj;
-        TLObject tLObject2 = (TLObject) obj2;
-        long j10 = tLObject instanceof TLRPC.User ? ((TLRPC.User) tLObject).id : -((TLRPC.Chat) tLObject).id;
-        long j11 = tLObject2 instanceof TLRPC.User ? ((TLRPC.User) tLObject2).id : -((TLRPC.Chat) tLObject2).id;
-        a0.h hVar = this.a;
-        if (hVar.h(j10) >= 0 && hVar.h(j11) >= 0) {
-            return 0;
-        }
-        if (hVar.h(j10) < 0) {
-            if (hVar.h(j11) >= 0) {
-                return 1;
-            }
-            Long valueOf = Long.valueOf(j10);
-            ArrayList arrayList = this.b;
-            int indexOf = arrayList.indexOf(valueOf);
-            int indexOf2 = arrayList.indexOf(Long.valueOf(j11));
-            if (indexOf == -1 || indexOf2 == -1) {
-                if (indexOf == -1 || indexOf2 != -1) {
-                    return (indexOf != -1 || indexOf2 == -1) ? 0 : 1;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                v0 v0Var = this.b;
+                v0Var.getClass();
+                this.d.dismiss();
+                v0Var.presentFragment(this.c);
+                break;
+            default:
+                v0 v0Var2 = this.b;
+                cd0 cd0Var = this.c;
+                try {
+                    List<Address> fromLocationName = new Geocoder(v0Var2.getParentActivity(), LocaleController.getInstance().getCurrentLocale()).getFromLocationName(v0Var2.y, 1);
+                    if (!fromLocationName.isEmpty()) {
+                        Address address = fromLocationName.get(0);
+                        TLRPC.TL_channelLocation tL_channelLocation = new TLRPC.TL_channelLocation();
+                        tL_channelLocation.address = v0Var2.y;
+                        TLRPC.TL_geoPoint tL_geoPoint = new TLRPC.TL_geoPoint();
+                        tL_channelLocation.geo_point = tL_geoPoint;
+                        tL_geoPoint.lat = address.getLatitude();
+                        tL_channelLocation.geo_point._long = address.getLongitude();
+                        cd0Var.x0 = tL_channelLocation;
+                    }
+                } catch (Exception e) {
+                    FileLog.e(e);
                 }
-            } else if (indexOf >= indexOf2) {
-                return indexOf == indexOf2 ? 0 : 1;
-            }
+                AndroidUtilities.runOnUIThread(new o0(v0Var2, this.d, cd0Var));
+                break;
         }
-        return -1;
+    }
+
+    public /* synthetic */ o0(v0 v0Var, cd0 cd0Var, d2 d2Var) {
+        this.b = v0Var;
+        this.c = cd0Var;
+        this.d = d2Var;
     }
 }

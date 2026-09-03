@@ -15,7 +15,7 @@ import r3.v;
 import s8.i0;
 import z3.j;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class a implements k {
     public m b;
@@ -33,19 +33,19 @@ public final class a implements k {
         b(new e4.b[0]);
         m mVar = this.b;
         mVar.getClass();
-        mVar.i1();
-        this.b.m2(new n(-9223372036854775807L));
+        mVar.j1();
+        this.b.h2(new n(-9223372036854775807L));
         this.c = 6;
     }
 
     public final void b(e4.b... bVarArr) {
         m mVar = this.b;
         mVar.getClass();
-        v i22 = mVar.i2(1024, 4);
+        v d22 = mVar.d2(1024, 4);
         m0 m0Var = new m0();
         m0Var.n = "image/jpeg";
         m0Var.i = new e4.c(bVarArr);
-        i22.b(new n0(m0Var));
+        d22.b(new n0(m0Var));
     }
 
     @Override // r3.k
@@ -165,8 +165,8 @@ public final class a implements k {
                 if (j14 != -1) {
                     try {
                         cVar = d.a(p10);
-                    } catch (r1 | NumberFormatException | XmlPullParserException e6) {
-                        h5.a.L("MotionPhotoXmpParser", "Ignoring unexpected XMP metadata", e6);
+                    } catch (r1 | NumberFormatException | XmlPullParserException e) {
+                        h5.a.L("MotionPhotoXmpParser", "Ignoring unexpected XMP metadata", e);
                         cVar = null;
                     }
                     if (cVar != null && (i10 = (i0Var = (i0) cVar.c).d) >= 2) {
@@ -215,7 +215,7 @@ public final class a implements k {
                 }
             }
         } else {
-            ((h) lVar).s(this.e);
+            ((h) lVar).n(this.e);
         }
         this.c = 0;
         return 0;

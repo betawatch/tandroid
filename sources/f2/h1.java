@@ -1,54 +1,114 @@
 package f2;
 
+import android.graphics.PointF;
 import android.util.Log;
-import android.view.animation.Interpolator;
+import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class h1 {
-    public int a;
-    public int b;
-    public int c;
-    public int d;
-    public Interpolator e;
-    public boolean f;
-    public int g;
+public abstract class h1 {
+    public int a = -1;
+    public RecyclerView b;
+    public v0 c;
+    public boolean d;
+    public boolean e;
+    public View f;
+    public final g1 g;
+    public boolean h;
 
-    public final void a(RecyclerView recyclerView) {
-        int i10 = this.d;
-        if (i10 >= 0) {
-            this.d = -1;
-            recyclerView.c0(i10);
-            this.f = false;
-            return;
-        }
-        if (!this.f) {
-            this.g = 0;
-            return;
-        }
-        Interpolator interpolator = this.e;
-        if (interpolator != null && this.c < 1) {
-            throw new IllegalStateException("If you provide an interpolator, you must set a positive duration");
-        }
-        int i11 = this.c;
-        if (i11 < 1) {
-            throw new IllegalStateException("Scroll duration must be a positive number");
-        }
-        recyclerView.n0.b(this.a, this.b, i11, interpolator);
-        int i12 = this.g + 1;
-        this.g = i12;
-        if (i12 > 10) {
-            Log.e("RecyclerView", "Smooth Scroll action is being updated too frequently. Make sure you are not changing it unless necessary");
-        }
-        this.f = false;
+    public h1() {
+        g1 g1Var = new g1();
+        g1Var.d = -1;
+        g1Var.f = false;
+        g1Var.g = 0;
+        g1Var.a = 0;
+        g1Var.b = 0;
+        g1Var.c = TLObject.FLAG_31;
+        g1Var.e = null;
+        this.g = g1Var;
     }
 
-    public final void b(int i10, int i11, int i12, Interpolator interpolator) {
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
-        this.e = interpolator;
-        this.f = true;
+    public static void b(PointF pointF) {
+        float f10 = pointF.x;
+        float f11 = pointF.y;
+        float sqrt = (float) Math.sqrt((f11 * f11) + (f10 * f10));
+        pointF.x /= sqrt;
+        pointF.y /= sqrt;
+    }
+
+    public PointF a(int i10) {
+        v0 v0Var = this.c;
+        if (v0Var instanceof i0) {
+            return ((i0) v0Var).E0(i10);
+        }
+        Log.w("RecyclerView", "You should override computeScrollVectorForPosition when the LayoutManager does not implement " + i0.class.getCanonicalName());
+        return null;
+    }
+
+    public final void c(int i10, int i11) {
+        PointF a2;
+        RecyclerView recyclerView = this.b;
+        if (this.a == -1 || recyclerView == null) {
+            h();
+        }
+        if (this.d && this.f == null && this.c != null && (a2 = a(this.a)) != null) {
+            float f10 = a2.x;
+            if (f10 != 0.0f || a2.y != 0.0f) {
+                recyclerView.t0((int) Math.signum(f10), (int) Math.signum(a2.y), null);
+            }
+        }
+        this.d = false;
+        View view = this.f;
+        g1 g1Var = this.g;
+        if (view != null) {
+            this.b.getClass();
+            if (RecyclerView.S(view) == this.a) {
+                View view2 = this.f;
+                i1 i1Var = recyclerView.q0;
+                g(view2, g1Var);
+                g1Var.a(recyclerView);
+                h();
+            } else {
+                Log.e("RecyclerView", "Passed over target position while smooth scrolling.");
+                this.f = null;
+            }
+        }
+        if (this.e) {
+            i1 i1Var2 = recyclerView.q0;
+            d(i10, i11, g1Var);
+            boolean z4 = g1Var.d >= 0;
+            g1Var.a(recyclerView);
+            if (z4 && this.e) {
+                this.d = true;
+                recyclerView.n0.a();
+            }
+        }
+    }
+
+    public abstract void d(int i10, int i11, g1 g1Var);
+
+    public abstract void e();
+
+    public abstract void f();
+
+    public abstract void g(View view, g1 g1Var);
+
+    public final void h() {
+        if (this.e) {
+            this.e = false;
+            f();
+            this.b.q0.a = -1;
+            this.f = null;
+            this.a = -1;
+            this.d = false;
+            v0 v0Var = this.c;
+            if (v0Var.e == this) {
+                v0Var.e = null;
+            }
+            this.c = null;
+            this.b = null;
+        }
     }
 }

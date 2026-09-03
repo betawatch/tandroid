@@ -5,7 +5,7 @@ import s8.i0;
 import s8.t;
 import s8.v;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class f extends g {
     public final String w;
@@ -17,8 +17,8 @@ public final class f extends g {
         t tVar = v.b;
     }
 
-    public f(String str, f fVar, String str2, long j10, int i10, long j11, o3.g gVar, String str3, String str4, long j12, long j13, boolean z4, List list) {
-        super(str, fVar, j10, i10, j11, gVar, str3, str4, j12, j13, z4);
+    public f(String str, f fVar, String str2, long j10, int i10, long j11, o3.h hVar, String str3, String str4, long j12, long j13, boolean z4, List list) {
+        super(str, fVar, j10, i10, j11, hVar, str3, str4, j12, j13, z4);
         this.w = str2;
         this.x = v.t(list);
     }

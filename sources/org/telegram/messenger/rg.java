@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.view.KeyEvent;
 import android.view.TextureView;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class rg implements Runnable {
     public final /* synthetic */ int a;
@@ -27,17 +27,17 @@ public final /* synthetic */ class rg implements Runnable {
                 ((MessagesStorage) this.e).lambda$setMessageSeq$211(this.b, this.c, this.d);
                 break;
             case 1:
-                qh.x xVar = (qh.x) ((fg.s2) this.e).b;
-                qh.r6 r6Var = xVar.n;
-                if (r6Var != null) {
-                    int i10 = r6Var.k0;
+                ph.x xVar = (ph.x) ((eg.t2) this.e).b;
+                ph.t6 t6Var = xVar.n;
+                if (t6Var != null) {
+                    int i10 = t6Var.k0;
                     int i11 = this.b;
                     int i12 = this.c;
                     int i13 = this.d;
-                    if (i10 != i11 || r6Var.l0 != i12 || r6Var.Q != i13) {
-                        r6Var.k0 = i11;
-                        r6Var.l0 = i12;
-                        r6Var.Q = i13;
+                    if (i10 != i11 || t6Var.l0 != i12 || t6Var.Q != i13) {
+                        t6Var.k0 = i11;
+                        t6Var.l0 = i12;
+                        t6Var.Q = i13;
                         TextureView textureView = xVar.e;
                         if (textureView != null) {
                             textureView.requestLayout();
@@ -47,16 +47,16 @@ public final /* synthetic */ class rg implements Runnable {
                 }
                 break;
             case 2:
-                wh.r3 r3Var = (wh.r3) this.e;
-                KeyEvent.Callback z4 = r3Var.z4(this.b);
-                if (z4 instanceof org.telegram.ui.Cells.l9) {
-                    r3Var.k3.c0(this.c, this.d, (org.telegram.ui.Cells.l9) z4);
+                vh.s3 s3Var = (vh.s3) this.e;
+                KeyEvent.Callback z4 = s3Var.z4(this.b);
+                if (z4 instanceof org.telegram.ui.Cells.k9) {
+                    s3Var.k3.c0(this.c, this.d, (org.telegram.ui.Cells.k9) z4);
                     break;
                 }
                 break;
             default:
-                wh.h3 h3Var = (wh.h3) this.e;
-                wh.r3.J1(h3Var.b, this.b, this.c, this.d);
+                vh.i3 i3Var = (vh.i3) this.e;
+                vh.s3.J1(i3Var.b, this.b, this.c, this.d);
                 break;
         }
     }

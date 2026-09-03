@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class f {
     public final int a;
@@ -17,8 +17,8 @@ public final class f {
         this.b = list;
     }
 
-    public i0 a(int i10, androidx.biometric.e eVar) {
-        String str = (String) eVar.b;
+    public i0 a(int i10, af.d dVar) {
+        String str = (String) dVar.b;
         if (i10 != 2) {
             if (i10 == 3 || i10 == 4) {
                 return new w(new u(str));
@@ -30,26 +30,26 @@ public final class f {
                 if (c(4)) {
                     return null;
                 }
-                return new w(new q(new d0(0, b(eVar)), c(1), c(8)));
+                return new w(new q(new d0(0, b(dVar)), c(1), c(8)));
             }
             if (i10 == 36) {
-                return new w(new s(new d0(0, b(eVar))));
+                return new w(new s(new d0(0, b(dVar))));
             }
             if (i10 == 89) {
-                return new w(new h((List) eVar.c));
+                return new w(new h((List) dVar.c));
             }
             if (i10 != 138) {
                 if (i10 == 172) {
                     return new w(new b(str, 1));
                 }
                 if (i10 == 257) {
-                    return new c0(new androidx.biometric.e("application/vnd.dvb.ait", 3));
+                    return new c0(new af.d("application/vnd.dvb.ait", 4));
                 }
                 if (i10 == 134) {
                     if (c(16)) {
                         return null;
                     }
-                    return new c0(new androidx.biometric.e("application/x-scte35", 3));
+                    return new c0(new af.d("application/x-scte35", 4));
                 }
                 if (i10 != 135) {
                     switch (i10) {
@@ -59,7 +59,7 @@ public final class f {
                             }
                             return new w(new e(str, false));
                         case 16:
-                            return new w(new n(new d0(1, b(eVar))));
+                            return new w(new n(new d0(1, b(dVar))));
                         case 17:
                             if (c(2)) {
                                 return null;
@@ -85,10 +85,10 @@ public final class f {
             }
             return new w(new g(str));
         }
-        return new w(new k(new d0(1, b(eVar))));
+        return new w(new k(new d0(1, b(dVar))));
     }
 
-    public List b(androidx.biometric.e eVar) {
+    public List b(af.d dVar) {
         String str;
         int i10;
         boolean c3 = c(32);
@@ -96,7 +96,7 @@ public final class f {
         if (c3) {
             return list;
         }
-        h5.w wVar = new h5.w((byte[]) eVar.d);
+        h5.w wVar = new h5.w((byte[]) dVar.d);
         while (wVar.a() > 0) {
             int u10 = wVar.u();
             int u11 = wVar.b + wVar.u();

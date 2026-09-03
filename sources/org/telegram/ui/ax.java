@@ -1,73 +1,40 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.text.TextUtils;
-import android.view.MotionEvent;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.content.Context;
+import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class ax extends ChatActivityEnterView {
-    public final /* synthetic */ py k5;
+public final class ax extends FragmentContextView {
+    public final /* synthetic */ int K0;
+    public final /* synthetic */ qy L0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ax(py pyVar, Activity activity, iy iyVar) {
-        super(activity, iyVar, null, false, null);
-        this.k5 = pyVar;
-    }
-
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void A0(float f10) {
-        py pyVar = this.k5;
-        pyVar.v1.setInputBubbleHeight(f10);
-        pyVar.s3();
-        pyVar.m3();
-        pyVar.t3();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        int i10;
-        if (motionEvent.getAction() == 0) {
-            py pyVar = this.k5;
-            Activity parentActivity = pyVar.getParentActivity();
-            i10 = ((org.telegram.ui.ActionBar.p2) pyVar).classGuid;
-            AndroidUtilities.requestAdjustResize(parentActivity, i10);
+    public ax(qy qyVar, Context context, qy qyVar2, int i10) {
+        super(context, qyVar2, true);
+        this.K0 = i10;
+        switch (i10) {
+            case 1:
+                this.L0 = qyVar;
+                super(context, qyVar2, false);
+                break;
+            default:
+                this.L0 = qyVar;
+                break;
         }
-        return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final int getMessagesCount() {
-        py pyVar = this.k5;
-        int i10 = pyVar.P0;
-        ax axVar = pyVar.y1;
-        return Math.max(1, i10 + (!TextUtils.isEmpty(axVar == null ? "" : axVar.getFieldText()) ? 1 : 0));
-    }
-
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final long getStarsPrice() {
-        py pyVar = this.k5;
-        ArrayList arrayList = pyVar.F2;
-        if (arrayList == null) {
-            return 0L;
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i10) {
+        switch (this.K0) {
+            case 0:
+                qy qyVar = this.L0;
+                qyVar.G1.i(qyVar.D1, i10 == 0, true);
+                break;
+            default:
+                qy qyVar2 = this.L0;
+                qyVar2.G1.i(qyVar2.F1, i10 == 0, true);
+                break;
         }
-        int size = arrayList.size();
-        int i10 = 0;
-        long j10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            long longValue = ((Long) obj).longValue();
-            long sendPaidMessagesStars = pyVar.getMessagesController().getSendPaidMessagesStars(longValue);
-            if (sendPaidMessagesStars <= 0 && longValue > 0) {
-                sendPaidMessagesStars = DialogObject.getMessagesStarsPrice(pyVar.getMessagesController().isUserContactBlocked(longValue));
-            }
-            j10 += sendPaidMessagesStars;
-        }
-        return j10;
     }
 }

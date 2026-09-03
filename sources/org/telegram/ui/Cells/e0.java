@@ -10,10 +10,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotInlineKeyboard;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.Components.j90;
 import org.telegram.ui.Components.k01;
-import org.telegram.ui.Components.k90;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class e0 {
     public final Runnable a;
@@ -33,7 +33,7 @@ public final class e0 {
     public final Paint o = new Paint(1);
     public final RectF p = new RectF();
     public final float[] q = new float[8];
-    public k90 r;
+    public j90 r;
     public z s;
     public Drawable t;
     public org.telegram.ui.Components.l5 u;
@@ -75,7 +75,7 @@ public final class e0 {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, 0.0f);
                 this.x = ofFloat;
                 ofFloat.addUpdateListener(new r(this, 1));
-                this.x.addListener(new org.telegram.ui.s5(this, 5));
+                this.x.addListener(new org.telegram.ui.u5(this, 5));
                 this.x.setInterpolator(new OvershootInterpolator(2.0f));
                 this.x.setDuration(350L);
                 this.x.start();

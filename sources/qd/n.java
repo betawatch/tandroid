@@ -4,12 +4,12 @@ import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class n {
     public static final /* synthetic */ AtomicReferenceFieldUpdater e = AtomicReferenceFieldUpdater.newUpdater(n.class, Object.class, "_next$volatile");
     public static final /* synthetic */ AtomicLongFieldUpdater f = AtomicLongFieldUpdater.newUpdater(n.class, "_state$volatile");
-    public static final com.google.android.gms.internal.clearcut.e g = new com.google.android.gms.internal.clearcut.e("REMOVE_FROZEN", 2);
+    public static final o3.c g = new o3.c("REMOVE_FROZEN", 14);
     private volatile /* synthetic */ Object _next$volatile;
     private volatile /* synthetic */ long _state$volatile;
     public final int a;

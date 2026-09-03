@@ -1,90 +1,49 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_stats;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class yi0 extends x91 {
-    public final /* synthetic */ zi0 v;
+public final class yi0 extends org.telegram.ui.Components.yn {
+    public final /* synthetic */ cj0 s0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yi0(zi0 zi0Var, Context context, int i10, wf.f fVar, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, i10, fVar, g6Var);
-        this.v = zi0Var;
+    public yi0(cj0 cj0Var, Context context) {
+        super(context, null, false, null);
+        this.s0 = cj0Var;
     }
 
-    @Override // org.telegram.ui.x91
-    public final void c() {
-        int i10;
-        int i11;
-        int i12;
-        bj0 bj0Var = this.v.d;
-        if (this.r.c > 0) {
-            return;
+    @Override // org.telegram.ui.Components.yn, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        cj0 cj0Var = this.s0;
+        cj0Var.T.setImageCoords(cj0Var.Y.getAvatarImageView().getX(), cj0Var.Y.getAvatarImageView().getY(), cj0Var.Y.getAvatarImageView().getWidth(), cj0Var.Y.getAvatarImageView().getHeight());
+        if (cj0Var.V) {
+            canvas.save();
+            canvas.scale(0.9f, 0.9f, cj0Var.T.getCenterX(), cj0Var.T.getCenterY());
+            cj0Var.T.draw(canvas);
+            canvas.restore();
         }
-        performClick();
-        wf.g gVar = this.b;
-        if (gVar.q0.D) {
-            long selectedDate = gVar.getSelectedDate();
-            if (this.s == 4) {
-                z91 z91Var = this.r;
-                z91Var.e = new xf.e(z91Var.d, selectedDate);
-                g(false);
-                return;
-            }
-            if (this.r.g == null) {
-                return;
-            }
-            f();
-            String str = this.r.g + "_" + selectedDate;
-            xf.b bVar = (xf.b) bj0Var.v.get(str);
-            if (bVar != null) {
-                this.r.e = bVar;
-                g(false);
-                return;
-            }
-            TL_stats.TL_loadAsyncGraph tL_loadAsyncGraph = new TL_stats.TL_loadAsyncGraph();
-            tL_loadAsyncGraph.token = this.r.g;
-            if (selectedDate != 0) {
-                tL_loadAsyncGraph.x = selectedDate;
-                tL_loadAsyncGraph.flags |= 1;
-            }
-            ma1 ma1Var = new ma1();
-            bj0Var.w = ma1Var;
-            bj0Var.f.getClass();
-            ma1Var.a = RecyclerView.R(this);
-            gVar.q0.d(true, false);
-            i10 = ((org.telegram.ui.ActionBar.p2) bj0Var).currentAccount;
-            int sendRequest = ConnectionsManager.getInstance(i10).sendRequest(tL_loadAsyncGraph, new ba(this, str, ma1Var, 25), null, null, 0, bj0Var.a.stats_dc, 1, true);
-            i11 = ((org.telegram.ui.ActionBar.p2) bj0Var).currentAccount;
-            ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i11);
-            i12 = ((org.telegram.ui.ActionBar.p2) bj0Var).classGuid;
-            connectionsManager.bindRequestToGuid(sendRequest, i12);
+        if (cj0Var.U) {
+            int centerX = (int) (cj0Var.T.getCenterX() - (org.telegram.ui.ActionBar.j6.U0.getIntrinsicWidth() / 2));
+            int centerY = (int) (cj0Var.T.getCenterY() - (org.telegram.ui.ActionBar.j6.U0.getIntrinsicHeight() / 2));
+            Drawable drawable = org.telegram.ui.ActionBar.j6.U0;
+            drawable.setBounds(centerX, centerY, drawable.getIntrinsicWidth() + centerX, org.telegram.ui.ActionBar.j6.U0.getIntrinsicHeight() + centerY);
+            org.telegram.ui.ActionBar.j6.U0.draw(canvas);
         }
     }
 
-    @Override // org.telegram.ui.x91
-    public final void f() {
-        zi0 zi0Var = this.v;
-        bj0 bj0Var = zi0Var.d;
-        ma1 ma1Var = bj0Var.w;
-        if (ma1Var != null) {
-            ma1Var.b = true;
-        }
-        int childCount = bj0Var.f.getChildCount();
-        for (int i10 = 0; i10 < childCount; i10++) {
-            View childAt = zi0Var.d.f.getChildAt(i10);
-            if (childAt instanceof x91) {
-                ((x91) childAt).b.q0.d(false, true);
-            }
-        }
+    @Override // org.telegram.ui.Components.yn, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.s0.T.onAttachedToWindow();
     }
 
-    @Override // org.telegram.ui.x91
-    public final void b(z91 z91Var) {
+    @Override // org.telegram.ui.Components.yn, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.s0.T.onDetachedFromWindow();
     }
 }

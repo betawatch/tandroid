@@ -5,7 +5,7 @@ import android.net.Uri;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d implements org.telegram.ui.ActionBar.c2 {
     public final /* synthetic */ int a;
@@ -17,7 +17,7 @@ public final /* synthetic */ class d implements org.telegram.ui.ActionBar.c2 {
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public final void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    public final void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         switch (this.a) {
             case 0:
                 i iVar = this.b;
@@ -27,16 +27,16 @@ public final /* synthetic */ class d implements org.telegram.ui.ActionBar.c2 {
                     intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
                     iVar.getParentActivity().startActivity(intent);
                     break;
-                } catch (Exception e6) {
-                    FileLog.e(e6);
+                } catch (Exception e) {
+                    FileLog.e(e);
                     return;
                 }
             default:
                 i iVar2 = this.b;
                 iVar2.getClass();
-                og0 og0Var = new og0();
-                og0Var.C = 2;
-                iVar2.presentFragment(og0Var, true);
+                pg0 pg0Var = new pg0();
+                pg0Var.C = 2;
+                iVar2.presentFragment(pg0Var, true);
                 break;
         }
     }

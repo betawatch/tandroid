@@ -3,7 +3,7 @@ package u5;
 import android.util.Log;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class k implements o {
     public final /* synthetic */ int a;
@@ -17,19 +17,19 @@ public final class k implements o {
     }
 
     @Override // u5.o
-    public final void m(String str, long j10, long j11, long j12) {
+    public final void e(String str, long j10, long j11, long j12) {
         switch (this.a) {
             case 0:
                 o oVar = this.b;
                 if (oVar != null) {
-                    oVar.m(str, j10, j11, j12);
+                    oVar.e(str, j10, j11, j12);
                     break;
                 }
                 break;
             default:
                 o oVar2 = this.b;
                 if (oVar2 != null) {
-                    oVar2.m(str, j10, j11, j12);
+                    oVar2.e(str, j10, j11, j12);
                     break;
                 }
                 break;
@@ -37,7 +37,7 @@ public final class k implements o {
     }
 
     @Override // u5.o
-    public final void n(String str, long j10, int i10, Object obj, long j11, long j12) {
+    public final void g(String str, long j10, int i10, Object obj, long j11, long j12) {
         int i11;
         int i12 = this.a;
         n nVar = this.c;
@@ -46,7 +46,7 @@ public final class k implements o {
                 nVar.g = null;
                 o oVar = this.b;
                 if (oVar != null) {
-                    oVar.n(str, j10, i10, obj, j11, j12);
+                    oVar.g(str, j10, i10, obj, j11, j12);
                     break;
                 }
                 break;
@@ -64,7 +64,7 @@ public final class k implements o {
                     } else {
                         i11 = i10;
                     }
-                    this.b.n(str, j10, i11, obj, j11, j12);
+                    this.b.g(str, j10, i11, obj, j11, j12);
                     break;
                 }
                 break;

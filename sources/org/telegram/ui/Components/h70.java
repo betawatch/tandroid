@@ -1,33 +1,82 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BotWebViewVibrationEffect;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h70 implements View.OnLayoutChangeListener {
+public final /* synthetic */ class h70 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ p70 b;
+    public final /* synthetic */ Runnable c;
 
-    public /* synthetic */ h70(Object obj, int i10) {
+    public /* synthetic */ h70(p70 p70Var, Runnable runnable, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = p70Var;
+        this.c = runnable;
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                q70 q70Var = (q70) this.b;
-                if (q70Var.D()) {
-                    q70Var.O();
+                this.b.u();
+                Runnable runnable = this.c;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
+            case 1:
+                this.c.run();
+                p70 p70Var = this.b;
+                if (p70Var.J) {
+                    p70Var.u();
+                    break;
+                }
+                break;
+            case 2:
+                p70 p70Var2 = this.b;
+                Runnable runnable2 = this.c;
+                if (runnable2 == null) {
+                    p70Var2.getClass();
+                    break;
+                } else {
+                    int i10 = -p70Var2.K;
+                    p70Var2.K = i10;
+                    AndroidUtilities.shakeViewSpring(view, i10);
+                    BotWebViewVibrationEffect.APP_ERROR.vibrate();
+                    runnable2.run();
+                    break;
+                }
+            case 3:
+                Runnable runnable3 = this.c;
+                if (runnable3 != null) {
+                    runnable3.run();
+                }
+                p70 p70Var3 = this.b;
+                if (p70Var3.J) {
+                    p70Var3.u();
+                    break;
+                }
+                break;
+            case 4:
+                this.c.run();
+                p70 p70Var4 = this.b;
+                if (p70Var4.J) {
+                    p70Var4.u();
                     break;
                 }
                 break;
             default:
-                fx0 fx0Var = (fx0) this.b;
-                hg.q qVar = fx0Var.h;
-                if (qVar != null && qVar.getLayout() != null) {
-                    fx0Var.C = qVar.getLayout().getLineWidth(0);
+                Runnable runnable4 = this.c;
+                if (runnable4 != null) {
+                    runnable4.run();
+                }
+                p70 p70Var5 = this.b;
+                if (p70Var5.J) {
+                    p70Var5.u();
                     break;
                 }
                 break;

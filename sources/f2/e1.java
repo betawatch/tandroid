@@ -1,193 +1,70 @@
 package f2;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import java.util.WeakHashMap;
-import org.telegram.messenger.BuildVars;
-import org.telegram.ui.Components.sl0;
+import android.os.Parcel;
+import android.os.Parcelable;
+import m.m3;
+import m.z2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class e1 extends r0 {
+public final class e1 implements Parcelable.ClassLoaderCreator {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
 
-    public /* synthetic */ e1(Object obj, int i10) {
+    public /* synthetic */ e1(int i10) {
         this.a = i10;
-        this.b = obj;
     }
 
-    @Override // f2.r0
-    public final void a() {
+    @Override // android.os.Parcelable.ClassLoaderCreator
+    public final Object createFromParcel(Parcel parcel, ClassLoader classLoader) {
         switch (this.a) {
             case 0:
-                RecyclerView recyclerView = (RecyclerView) this.b;
-                recyclerView.l(null);
-                recyclerView.q0.f = true;
-                if (BuildVars.DEBUG_VERSION) {
-                    recyclerView.d.i("notifyDataSetChanged()");
-                }
-                recyclerView.m0(true);
-                if (!recyclerView.d.h()) {
-                    recyclerView.requestLayout();
-                    break;
-                }
-                break;
+                return new f1(parcel, classLoader);
             case 1:
-                sl0 sl0Var = (sl0) this.b;
-                sl0Var.J0(true);
-                if (sl0Var.p2) {
-                    sl0Var.p1 = -1;
-                    if (sl0Var.S1 == null) {
-                        sl0Var.D1.setEmpty();
-                    }
+                if (parcel.readParcelable(classLoader) == null) {
+                    return i1.b.b;
                 }
-                sl0Var.invalidate();
-                break;
-            default:
-                ((uf.z0) this.b).l();
-                break;
-        }
-    }
-
-    @Override // f2.r0
-    public void b(int i10, int i11) {
-        switch (this.a) {
+                throw new IllegalStateException("superState must be null");
             case 2:
-                ((uf.z0) this.b).q(i10 + 1, i11);
-                break;
-        }
-    }
-
-    @Override // f2.r0
-    public void c(int i10, int i11, Object obj) {
-        switch (this.a) {
-            case 0:
-                RecyclerView recyclerView = (RecyclerView) this.b;
-                recyclerView.l(null);
-                da.a aVar = recyclerView.d;
-                ArrayList arrayList = (ArrayList) aVar.d;
-                if (i11 >= 1) {
-                    if (BuildVars.DEBUG_VERSION) {
-                        StringBuilder m9 = e2.c.m("onItemRangeChanged(", i10, ", ", i11, ", ");
-                        m9.append(obj);
-                        m9.append(")");
-                        aVar.i(m9.toString());
-                    }
-                    arrayList.add(aVar.j(4, i10, obj, i11));
-                    aVar.b |= 4;
-                    if (arrayList.size() == 1) {
-                        g();
-                        break;
-                    }
-                }
-                break;
+                return new z2(parcel, classLoader);
+            case 3:
+                return new m3(parcel, classLoader);
             default:
-                super.c(i10, i11, obj);
-                break;
+                return new m2.g(parcel, classLoader);
         }
     }
 
-    @Override // f2.r0
-    public final void d(int i10, int i11) {
+    @Override // android.os.Parcelable.Creator
+    public final Object[] newArray(int i10) {
         switch (this.a) {
             case 0:
-                RecyclerView recyclerView = (RecyclerView) this.b;
-                recyclerView.l(null);
-                da.a aVar = recyclerView.d;
-                ArrayList arrayList = (ArrayList) aVar.d;
-                if (i11 >= 1) {
-                    if (BuildVars.DEBUG_VERSION) {
-                        aVar.i("onItemRangeInserted(" + i10 + ", " + i11 + ")");
-                    }
-                    arrayList.add(aVar.j(1, i10, null, i11));
-                    aVar.b |= 1;
-                    if (arrayList.size() == 1) {
-                        g();
-                        break;
-                    }
-                }
-                break;
+                return new f1[i10];
             case 1:
-                sl0 sl0Var = (sl0) this.b;
-                sl0Var.J0(true);
-                View view = sl0Var.o1;
-                if (view != null && view.getAlpha() == 0.0f) {
-                    sl0Var.p1 = -1;
-                    sl0Var.e1();
-                    break;
-                }
-                break;
-            default:
-                ((uf.z0) this.b).s(i10 + 1, i11);
-                break;
-        }
-    }
-
-    @Override // f2.r0
-    public void e(int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                RecyclerView recyclerView = (RecyclerView) this.b;
-                recyclerView.l(null);
-                da.a aVar = recyclerView.d;
-                ArrayList arrayList = (ArrayList) aVar.d;
-                if (i10 != i11) {
-                    if (BuildVars.DEBUG_VERSION) {
-                        aVar.i("onItemRangeMoved(" + i10 + ", " + i11 + ", 1)");
-                    }
-                    arrayList.add(aVar.j(8, i10, null, i11));
-                    aVar.b |= 8;
-                    if (arrayList.size() == 1) {
-                        g();
-                        break;
-                    }
-                }
-                break;
+                return new i1.b[i10];
             case 2:
-                ((uf.z0) this.b).q(i10 + 1, i11 + 2);
-                break;
+                return new z2[i10];
+            case 3:
+                return new m3[i10];
+            default:
+                return new m2.g[i10];
         }
     }
 
-    @Override // f2.r0
-    public final void f(int i10, int i11) {
+    @Override // android.os.Parcelable.Creator
+    public final Object createFromParcel(Parcel parcel) {
         switch (this.a) {
             case 0:
-                RecyclerView recyclerView = (RecyclerView) this.b;
-                recyclerView.l(null);
-                da.a aVar = recyclerView.d;
-                ArrayList arrayList = (ArrayList) aVar.d;
-                if (i11 >= 1) {
-                    if (BuildVars.DEBUG_VERSION) {
-                        aVar.i("onItemRangeRemoved(" + i10 + ", " + i11 + ")");
-                    }
-                    arrayList.add(aVar.j(2, i10, null, i11));
-                    aVar.b |= 2;
-                    if (arrayList.size() == 1) {
-                        g();
-                        break;
-                    }
-                }
-                break;
+                return new f1(parcel, null);
             case 1:
-                ((sl0) this.b).J0(true);
-                break;
+                if (parcel.readParcelable(null) == null) {
+                    return i1.b.b;
+                }
+                throw new IllegalStateException("superState must be null");
+            case 2:
+                return new z2(parcel, null);
+            case 3:
+                return new m3(parcel, null);
             default:
-                ((uf.z0) this.b).t(i10 + 1, i11);
-                break;
+                return new m2.g(parcel, null);
         }
-    }
-
-    public void g() {
-        RecyclerView recyclerView = (RecyclerView) this.b;
-        if (!RecyclerView.O0 || !recyclerView.E || !recyclerView.D) {
-            recyclerView.requestLayout();
-            return;
-        }
-        n0 n0Var = recyclerView.n;
-        WeakHashMap weakHashMap = r0.j0.a;
-        recyclerView.postOnAnimation(n0Var);
     }
 }

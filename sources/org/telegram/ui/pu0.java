@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class pu0 extends FrameLayout {
     public final /* synthetic */ PhotoViewer a;
@@ -28,10 +28,10 @@ public final class pu0 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        xn xnVar = this.a.i4;
-        if (xnVar != null) {
-            xnVar.Q7();
-            UndoView undoView = xnVar.v3;
+        zn znVar = this.a.i4;
+        if (znVar != null) {
+            znVar.Q7();
+            UndoView undoView = znVar.v3;
             if (undoView == null || undoView.getVisibility() != 0) {
                 return;
             }
@@ -68,8 +68,8 @@ public final class pu0 extends FrameLayout {
             photoViewer.E0(true);
             return false;
         }
-        if (qt.q().E) {
-            qt.q().o();
+        if (rt.q().E) {
+            rt.q().o();
             return false;
         }
         PhotoViewer.t1().G0(true, false);
@@ -151,8 +151,8 @@ public final class pu0 extends FrameLayout {
         Canvas canvas2;
         PhotoViewer photoViewer = this.a;
         Paint paint = photoViewer.J0;
-        oh.b3 b3Var = photoViewer.p5;
-        if (b3Var != null && b3Var.getVisibility() == 0) {
+        nh.a3 a3Var = photoViewer.p5;
+        if (a3Var != null && a3Var.getVisibility() == 0) {
             View view = (View) photoViewer.p5.getParent();
             float min = Math.min(photoViewer.p5.getAlpha(), view != null ? view.getAlpha() : 1.0f);
             if (min > 0.0f) {

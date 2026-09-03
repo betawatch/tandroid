@@ -1,26 +1,26 @@
 package r8;
 
+import b4.e0;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import k7.c7;
 import m1.j;
-import org.telegram.ui.web.e0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class h implements Iterator {
     public String b;
     public final CharSequence c;
     public final a d;
     public int f;
-    public final /* synthetic */ e0 h;
+    public final /* synthetic */ o3.c h;
     public int a = 2;
     public int e = 0;
 
-    public h(e0 e0Var, b4.e0 e0Var2, CharSequence charSequence) {
-        this.h = e0Var;
-        this.d = (a) e0Var2.c;
-        this.f = e0Var2.b;
+    public h(o3.c cVar, e0 e0Var, CharSequence charSequence) {
+        this.h = cVar;
+        this.d = (a) e0Var.c;
+        this.f = e0Var.b;
         this.c = charSequence;
     }
 

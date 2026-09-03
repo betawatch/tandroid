@@ -1,14 +1,14 @@
 package com.google.android.recaptcha.internal;
 
 import dd.p;
-import k7.q7;
+import k7.p7;
 import kotlin.jvm.internal.q;
 import ld.c0;
 import uc.c;
 import vc.a;
 import wc.i;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 final class zzew extends i implements p {
     Object zza;
@@ -54,10 +54,10 @@ final class zzew extends i implements p {
         if (this.zzb != 0) {
             qVar2 = (q) this.zza;
             try {
-                q7.b(obj);
+                p7.b(obj);
                 zzc = obj;
-            } catch (Exception e6) {
-                e = e6;
+            } catch (Exception e) {
+                e = e;
                 zzcgVar = (zzcg) qVar2.a;
                 if (zzcgVar != null) {
                     throw zzfp.zzd(this.zzd, e);
@@ -65,14 +65,14 @@ final class zzew extends i implements p {
                 throw zzcgVar;
             }
         } else {
-            q7.b(obj);
+            p7.b(obj);
             q qVar3 = new q();
             try {
                 j10 = this.zzc;
                 zzevVar = new zzev(this.zze, this.zzd, this.zzf, qVar3, null);
                 qVar = qVar3;
-            } catch (Exception e10) {
-                e = e10;
+            } catch (Exception e6) {
+                e = e6;
                 qVar = qVar3;
             }
             try {
@@ -83,8 +83,8 @@ final class zzew extends i implements p {
                     return aVar;
                 }
                 qVar2 = qVar;
-            } catch (Exception e11) {
-                e = e11;
+            } catch (Exception e10) {
+                e = e10;
                 qVar2 = qVar;
                 zzcgVar = (zzcg) qVar2.a;
                 if (zzcgVar != null) {

@@ -5,26 +5,26 @@ import j3.n0;
 import java.util.Map;
 import o4.k0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class q extends k0 {
     public final Map H;
-    public o3.g I;
+    public o3.h I;
 
-    public q(g5.q qVar, o3.o oVar, o3.l lVar, Map map) {
-        super(qVar, oVar, lVar);
+    public q(g5.q qVar, o3.p pVar, o3.m mVar, Map map) {
+        super(qVar, pVar, mVar);
         this.H = map;
     }
 
     @Override // o4.k0
     public final n0 m(n0 n0Var) {
-        o3.g gVar;
-        o3.g gVar2 = this.I;
-        if (gVar2 == null) {
-            gVar2 = n0Var.F;
+        o3.h hVar;
+        o3.h hVar2 = this.I;
+        if (hVar2 == null) {
+            hVar2 = n0Var.F;
         }
-        if (gVar2 != null && (gVar = (o3.g) this.H.get(gVar2.c)) != null) {
-            gVar2 = gVar;
+        if (hVar2 != null && (hVar = (o3.h) this.H.get(hVar2.c)) != null) {
+            hVar2 = hVar;
         }
         e4.c cVar = n0Var.s;
         e4.c cVar2 = null;
@@ -56,19 +56,19 @@ public final class q extends k0 {
                     cVar2 = new e4.c(bVarArr2);
                 }
             }
-            if (gVar2 == n0Var.F || cVar != n0Var.s) {
+            if (hVar2 == n0Var.F || cVar != n0Var.s) {
                 m0 a2 = n0Var.a();
-                a2.r = gVar2;
+                a2.r = hVar2;
                 a2.i = cVar;
                 n0Var = new n0(a2);
             }
             return super.m(n0Var);
         }
         cVar = cVar2;
-        if (gVar2 == n0Var.F) {
+        if (hVar2 == n0Var.F) {
         }
         m0 a22 = n0Var.a();
-        a22.r = gVar2;
+        a22.r = hVar2;
         a22.i = cVar;
         n0Var = new n0(a22);
         return super.m(n0Var);

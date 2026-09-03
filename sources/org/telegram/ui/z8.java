@@ -1,45 +1,32 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.FragmentContextView;
+import android.graphics.Canvas;
+import android.view.View;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class z8 extends FragmentContextView {
-    public final /* synthetic */ int K0;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate L0;
+public final /* synthetic */ class z8 implements ng.j {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ z8(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, org.telegram.ui.ActionBar.p2 p2Var, FrameLayout frameLayout, org.telegram.ui.ActionBar.g6 g6Var, int i10) {
-        super(context, p2Var, frameLayout, false, g6Var);
-        this.K0 = i10;
-        this.L0 = notificationCenterDelegate;
+    public /* synthetic */ z8(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-    public final void setVisibility(int i10) {
-        switch (this.K0) {
+    @Override // ng.j
+    public final boolean a(Canvas canvas, View view, long j10) {
+        switch (this.a) {
             case 0:
-                l9 l9Var = (l9) this.L0;
-                l9Var.J.i(l9Var.K, i10 == 0, true);
-                break;
+                return ((org.telegram.ui.Components.g61) this.b).drawChild(canvas, view, j10);
             case 1:
-                org.telegram.ui.Components.xi xiVar = (org.telegram.ui.Components.xi) this.L0;
-                xiVar.x.i(xiVar.y, i10 == 0, true);
-                break;
+                ProfileActivity profileActivity = (ProfileActivity) this.b;
+                if (view == profileActivity.L) {
+                    return true;
+                }
+                return profileActivity.a.drawChild(canvas, view, j10);
             default:
-                sf1 sf1Var = (sf1) this.L0;
-                sf1Var.R0.i(sf1Var.C0, i10 == 0, true);
-                break;
+                return ((qf1) this.b).drawChild(canvas, view, j10);
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z8(sf1 sf1Var, Context context, sf1 sf1Var2) {
-        super(context, sf1Var2, null, false, null);
-        this.K0 = 2;
-        this.L0 = sf1Var;
     }
 }

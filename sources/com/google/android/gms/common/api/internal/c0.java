@@ -4,7 +4,7 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.util.Log;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class c0 extends l0 {
     public final /* synthetic */ int b = 0;
@@ -26,20 +26,20 @@ public final class c0 extends l0 {
         Object obj2 = this.c;
         switch (i10) {
             case 0:
-                ((d0) obj).c.g((y5.a) obj2);
+                ((d0) obj).c.e((y5.a) obj2);
                 break;
             default:
                 g0 g0Var = (g0) obj2;
                 c8.h hVar = (c8.h) obj;
-                if (g0Var.j(0)) {
+                if (g0Var.i(0)) {
                     y5.a aVar = hVar.b;
                     if (!aVar.f()) {
                         if (g0Var.w && !aVar.e()) {
                             g0Var.a();
-                            g0Var.i();
+                            g0Var.g();
                             break;
                         } else {
-                            g0Var.g(aVar);
+                            g0Var.e(aVar);
                             break;
                         }
                     } else {
@@ -48,7 +48,7 @@ public final class c0 extends l0 {
                         y5.a aVar2 = wVar.c;
                         if (!aVar2.f()) {
                             Log.wtf("GACConnecting", "Sign-in succeeded with resolve account failure: ".concat(String.valueOf(aVar2)), new Exception());
-                            g0Var.g(aVar2);
+                            g0Var.e(aVar2);
                             break;
                         } else {
                             g0Var.y = true;
@@ -64,7 +64,7 @@ public final class c0 extends l0 {
                             g0Var.B = m0Var;
                             g0Var.C = wVar.d;
                             g0Var.D = wVar.e;
-                            g0Var.i();
+                            g0Var.g();
                             break;
                         }
                     }

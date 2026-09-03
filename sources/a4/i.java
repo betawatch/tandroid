@@ -8,7 +8,7 @@ import java.util.Arrays;
 import k7.x6;
 import s8.v;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class i extends j {
     public static final byte[] o = {79, 112, 117, 115, 72, 101, 97, 100};
@@ -33,38 +33,38 @@ public final class i extends j {
     }
 
     @Override // a4.j
-    public final boolean c(w wVar, long j10, bf.b bVar) {
+    public final boolean c(w wVar, long j10, af.c cVar) {
         if (e(wVar, o)) {
             byte[] copyOf = Arrays.copyOf(wVar.a, wVar.c);
             int i10 = copyOf[9] & 255;
             ArrayList a2 = l3.a.a(copyOf);
-            if (((n0) bVar.b) == null) {
+            if (((n0) cVar.b) == null) {
                 m0 m0Var = new m0();
                 m0Var.o = "audio/opus";
                 m0Var.B = i10;
                 m0Var.C = 48000;
                 m0Var.q = a2;
-                bVar.b = new n0(m0Var);
+                cVar.b = new n0(m0Var);
                 return true;
             }
         } else {
             if (!e(wVar, p)) {
-                h5.a.j((n0) bVar.b);
+                h5.a.j((n0) cVar.b);
                 return false;
             }
-            h5.a.j((n0) bVar.b);
+            h5.a.j((n0) cVar.b);
             if (!this.n) {
                 this.n = true;
                 wVar.G(8);
-                e4.c a10 = x6.a(v.u(x6.b(wVar, false, false).a));
+                e4.c a10 = x6.a(v.u((String[]) x6.b(wVar, false, false).b));
                 if (a10 != null) {
-                    m0 a11 = ((n0) bVar.b).a();
-                    e4.c cVar = ((n0) bVar.b).s;
-                    if (cVar != null) {
-                        a10 = a10.a(cVar.a);
+                    m0 a11 = ((n0) cVar.b).a();
+                    e4.c cVar2 = ((n0) cVar.b).s;
+                    if (cVar2 != null) {
+                        a10 = a10.a(cVar2.a);
                     }
                     a11.i = a10;
-                    bVar.b = new n0(a11);
+                    cVar.b = new n0(a11);
                     return true;
                 }
             }

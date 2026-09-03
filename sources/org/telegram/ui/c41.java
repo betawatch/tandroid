@@ -5,25 +5,25 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SaveToGallerySettingsHelper;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class c41 implements org.telegram.ui.Components.jo0 {
-    public final /* synthetic */ org.telegram.ui.Components.ko0 a;
+public final class c41 implements org.telegram.ui.Components.io0 {
+    public final /* synthetic */ org.telegram.ui.Components.jo0 a;
     public final /* synthetic */ f41 b;
     public final /* synthetic */ f41 c;
     public final /* synthetic */ f41 d;
     public final /* synthetic */ d41 e;
 
-    public c41(d41 d41Var, org.telegram.ui.Components.ko0 ko0Var, f41 f41Var, f41 f41Var2, f41 f41Var3) {
+    public c41(d41 d41Var, org.telegram.ui.Components.jo0 jo0Var, f41 f41Var, f41 f41Var2, f41 f41Var3) {
         this.e = d41Var;
-        this.a = ko0Var;
+        this.a = jo0Var;
         this.b = f41Var;
         this.c = f41Var2;
         this.d = f41Var3;
     }
 
-    @Override // org.telegram.ui.Components.jo0
-    public final void X(float f10, boolean z4) {
+    @Override // org.telegram.ui.Components.io0
+    public final void Y(float f10, boolean z4) {
         SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.e.d;
         boolean isAttachedToWindow = this.a.isAttachedToWindow();
         long j10 = f10 > 0.7f ? (long) ((4089446400L * ((f10 - 0.7f) / 0.3f)) + SaveToGallerySettingsHelper.DEFAULT_VIDEO_LIMIT) : (long) ((104333312 * (f10 / 0.7f)) + 524288.0f);
@@ -53,17 +53,17 @@ public final class c41 implements org.telegram.ui.Components.jo0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.jo0
+    @Override // org.telegram.ui.Components.io0
     public final /* synthetic */ CharSequence getContentDescription() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.jo0
-    public final /* synthetic */ int m0() {
+    @Override // org.telegram.ui.Components.io0
+    public final /* synthetic */ int j0() {
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.jo0
-    public final void A() {
+    @Override // org.telegram.ui.Components.io0
+    public final void B() {
     }
 }

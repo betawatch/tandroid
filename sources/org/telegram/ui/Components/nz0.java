@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class nz0 extends View {
     public static final zy0 O = new zy0(0);
@@ -34,7 +34,7 @@ public final class nz0 extends View {
     public final mz0 L;
     public final ArrayList M;
     public final lz0 N;
-    public final org.telegram.ui.Cells.m9 a;
+    public final org.telegram.ui.Cells.l9 a;
     public int b;
     public final dz0 c;
     public final dz0 d;
@@ -49,7 +49,7 @@ public final class nz0 extends View {
     public boolean x;
     public int y;
 
-    public nz0(Context context, mz0 mz0Var, org.telegram.ui.Cells.m9 m9Var) {
+    public nz0(Context context, mz0 mz0Var, org.telegram.ui.Cells.l9 l9Var) {
         super(context);
         this.c = new dz0(this, true);
         this.d = new dz0(this, false);
@@ -69,7 +69,7 @@ public final class nz0 extends View {
         this.J = new RectF();
         this.K = new float[8];
         this.M = new ArrayList();
-        this.a = m9Var;
+        this.a = l9Var;
         setRowCount(TLObject.FLAG_31);
         setColumnCount(TLObject.FLAG_31);
         setOrientation(0);
@@ -351,18 +351,18 @@ public final class nz0 extends View {
                 if (kz0.a(kz0Var, z10) == R) {
                     hz0 hz0Var = kz0Var.b;
                     int[] g10 = (z10 ? this.c : this.d).g();
-                    int e6 = (g10[hz0Var.b] - g10[hz0Var.a]) - (e(d, z10, false) + e(d, z10, true));
+                    int e = (g10[hz0Var.b] - g10[hz0Var.a]) - (e(d, z10, false) + e(d, z10, true));
                     if (z10) {
                         fz0 fz0Var = d.b;
                         int emojiOnlyCount2 = fz0Var != null ? fz0Var.getEmojiOnlyCount() : 0;
                         if (emojiOnlyCount2 > 0) {
-                            int max = Math.max(1, Math.round(e6 / emojiOnlyCount2));
+                            int max = Math.max(1, Math.round(e / emojiOnlyCount2));
                             ((ViewGroup.MarginLayoutParams) iz0Var).height = max;
                             d.m = max;
                         }
-                        d.d(e(d, true, false) + e(d, true, true) + e6, e(d, false, false) + e(d, false, true) + ((ViewGroup.MarginLayoutParams) iz0Var).height, false);
+                        d.d(e(d, true, false) + e(d, true, true) + e, e(d, false, false) + e(d, false, true) + ((ViewGroup.MarginLayoutParams) iz0Var).height, false);
                     } else {
-                        d.d(e(d, true, false) + e(d, true, true) + ((ViewGroup.MarginLayoutParams) iz0Var).width, e(d, false, false) + e(d, false, true) + e6, false);
+                        d.d(e(d, true, false) + e(d, true, true) + ((ViewGroup.MarginLayoutParams) iz0Var).width, e(d, false, false) + e(d, false, true) + e, false);
                     }
                 }
             }
@@ -465,19 +465,19 @@ public final class nz0 extends View {
             ez0 ez0Var2 = (ez0) ((Object[]) f11.d)[((int[]) f11.b)[i20]];
             int b10 = a2.b(d, i26 - ez0Var.d(true));
             int b11 = a10.b(d, i27 - ez0Var2.d(true));
-            int e6 = nz0Var.e(d, true, true);
-            int e10 = nz0Var.e(d, false, true);
-            int e11 = nz0Var.e(d, true, false);
-            int i30 = e6 + e11;
-            int e12 = e10 + nz0Var.e(d, false, false);
+            int e = nz0Var.e(d, true, true);
+            int e6 = nz0Var.e(d, false, true);
+            int e10 = nz0Var.e(d, true, false);
+            int i30 = e + e10;
+            int e11 = e6 + nz0Var.e(d, false, false);
             int a11 = ez0Var.a(nz0Var, d, a2, i28 + i30, true);
             nz0Var = this;
-            int a12 = ez0Var2.a(nz0Var, d, a10, i29 + e12, false);
+            int a12 = ez0Var2.a(nz0Var, d, a10, i29 + e11, false);
             int c3 = a2.c(i28, i26 - i30);
-            int c10 = a10.c(i29, i27 - e12);
+            int c10 = a10.c(i29, i27 - e11);
             int i31 = i22 + b10 + a11;
-            int i32 = !nz0Var.F ? e6 + i31 : ((i18 - c3) - e11) - i31;
-            int i33 = i23 + b11 + a12 + e10;
+            int i32 = !nz0Var.F ? e + i31 : ((i18 - c3) - e10) - i31;
+            int i33 = i23 + b11 + a12 + e6;
             if (d.c != null) {
                 if (c3 != d.k || c10 != d.l) {
                     d.d(c3, c10, false);

@@ -1,74 +1,38 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Bitmap;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ct implements r0.o, org.telegram.ui.Components.pk0 {
-    public final /* synthetic */ qt a;
+public final /* synthetic */ class ct implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ rt b;
 
-    public /* synthetic */ ct(qt qtVar) {
-        this.a = qtVar;
+    public /* synthetic */ ct(rt rtVar, int i10) {
+        this.a = i10;
+        this.b = rtVar;
     }
 
-    @Override // r0.o
-    public r0.m1 M0(View view, r0.m1 m1Var) {
-        this.a.q = AndroidUtilities.getDefaultWindowInsets(m1Var, false);
-        return m1Var;
-    }
-
-    @Override // org.telegram.ui.Components.pk0
-    public /* synthetic */ boolean g() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.pk0
-    public /* synthetic */ boolean h() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.pk0
-    public void o(View view, ng.q0 q0Var, boolean z4, boolean z10) {
-        if (q0Var == null) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.c0 = null;
+                break;
+            case 1:
+                rt rtVar = this.b;
+                rtVar.A.setImageBitmap((Bitmap) null);
+                org.telegram.ui.Components.id0 id0Var = rtVar.C;
+                if (id0Var != null) {
+                    id0Var.a();
+                    rtVar.z.removeView(rtVar.C);
+                    rtVar.C = null;
+                    break;
+                }
+                break;
+            default:
+                this.b.Q.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(420L).setInterpolator(org.telegram.ui.Components.mr.h).start();
+                break;
         }
-        qt qtVar = this.a;
-        ng.d0 reactionsWindow = qtVar.P.getReactionsWindow();
-        if (!qtVar.o.contains(q0Var.f)) {
-            qtVar.o.add(q0Var.f);
-            if (qtVar.o.size() > 7) {
-                qtVar.o.remove(0);
-            }
-        } else if (qtVar.o.size() <= 1) {
-            return;
-        } else {
-            qtVar.o.remove(q0Var.f);
-        }
-        qtVar.P.setSelectedEmojis(qtVar.o);
-        if (reactionsWindow != null) {
-            ng.z zVar = reactionsWindow.m;
-            qtVar.P.p(null, null, false);
-            if (zVar != null) {
-                zVar.setSelectedReactions(qtVar.o);
-                zVar.setRecentReactions(qtVar.P.S);
-            }
-            reactionsWindow.d();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.pk0
-    public /* synthetic */ boolean t() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.pk0
-    public /* synthetic */ void m() {
-    }
-
-    @Override // org.telegram.ui.Components.pk0
-    public /* synthetic */ void j(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i10, boolean z4) {
     }
 }

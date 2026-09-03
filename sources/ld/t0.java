@@ -1,6 +1,6 @@
 package ld;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class t0 implements Runnable, Comparable, o0 {
     private volatile Object _heap;
@@ -70,15 +70,15 @@ public abstract class t0 implements Runnable, Comparable, o0 {
         synchronized (this) {
             try {
                 Object obj = this._heap;
-                com.google.android.gms.internal.clearcut.e eVar = e0.b;
-                if (obj == eVar) {
+                o3.c cVar = e0.b;
+                if (obj == cVar) {
                     return;
                 }
                 u0 u0Var = obj instanceof u0 ? (u0) obj : null;
                 if (u0Var != null) {
                     u0Var.c(this);
                 }
-                this._heap = eVar;
+                this._heap = cVar;
             } catch (Throwable th2) {
                 throw th2;
             }

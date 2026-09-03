@@ -2,9 +2,9 @@ package m8;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import j7.g5;
+import j7.f5;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class c1 extends c6.a implements l8.n {
     public static final Parcelable.Creator<c1> CREATOR = new o0(9);
@@ -66,11 +66,11 @@ public final class c1 extends c6.a implements l8.n {
     }
 
     public final int hashCode() {
-        int e6 = l.d.e((this.a + 31) * 31, 31, this.b);
+        int e = kf.k0.e((this.a + 31) * 31, 31, this.b);
         String str = this.c;
-        int e10 = l.d.e(l.d.e(l.d.e((e6 + (str != null ? str.hashCode() : 0)) * 31, 31, this.d), 31, this.e), 31, this.f);
+        int e6 = kf.k0.e(kf.k0.e(kf.k0.e((e + (str != null ? str.hashCode() : 0)) * 31, 31, this.d), 31, this.e), 31, this.f);
         String str2 = this.h;
-        int hashCode = (((((((((e10 + (str2 != null ? str2.hashCode() : 0)) * 31) + this.n) * 31) + this.r) * 31) + this.s) * 31) + this.v) * 31;
+        int hashCode = (((((((((e6 + (str2 != null ? str2.hashCode() : 0)) * 31) + this.n) * 31) + this.r) * 31) + this.s) * 31) + this.v) * 31;
         String str3 = this.w;
         return hashCode + (str3 != null ? str3.hashCode() : 0);
     }
@@ -85,7 +85,7 @@ public final class c1 extends c6.a implements l8.n {
         sb.append("', eventId=");
         sb.append((int) this.n);
         sb.append(", eventFlags=");
-        l.d.w(sb, this.r, ", categoryId=", this.s, ", categoryCount=");
+        kf.k0.w(sb, this.r, ", categoryId=", this.s, ", categoryCount=");
         sb.append((int) this.v);
         sb.append(", packageName='");
         sb.append(this.w);
@@ -95,29 +95,29 @@ public final class c1 extends c6.a implements l8.n {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = g5.q(parcel, 20293);
-        g5.s(parcel, 2, 4);
+        int q10 = f5.q(parcel, 20293);
+        f5.s(parcel, 2, 4);
         parcel.writeInt(this.a);
         String str = this.b;
-        g5.l(parcel, 3, str);
-        g5.l(parcel, 4, this.c);
-        g5.l(parcel, 5, this.d);
-        g5.l(parcel, 6, this.e);
-        g5.l(parcel, 7, this.f);
+        f5.l(parcel, 3, str);
+        f5.l(parcel, 4, this.c);
+        f5.l(parcel, 5, this.d);
+        f5.l(parcel, 6, this.e);
+        f5.l(parcel, 7, this.f);
         String str2 = this.h;
         if (str2 != null) {
             str = str2;
         }
-        g5.l(parcel, 8, str);
-        g5.s(parcel, 9, 4);
+        f5.l(parcel, 8, str);
+        f5.s(parcel, 9, 4);
         parcel.writeInt(this.n);
-        g5.s(parcel, 10, 4);
+        f5.s(parcel, 10, 4);
         parcel.writeInt(this.r);
-        g5.s(parcel, 11, 4);
+        f5.s(parcel, 11, 4);
         parcel.writeInt(this.s);
-        g5.s(parcel, 12, 4);
+        f5.s(parcel, 12, 4);
         parcel.writeInt(this.v);
-        g5.l(parcel, 13, this.w);
-        g5.r(parcel, q10);
+        f5.l(parcel, 13, this.w);
+        f5.r(parcel, q10);
     }
 }

@@ -28,9 +28,9 @@ import k7.ra;
 import k7.ta;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.dg;
-import org.telegram.ui.yh;
+import vh.w2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class s1 implements Runnable {
     public final /* synthetic */ int a;
@@ -56,9 +56,9 @@ public final class s1 implements Runnable {
         f7.b bVar = (f7.b) this.d;
         j7 j7Var = j7.b;
         String str2 = (String) this.c;
-        androidx.biometric.e eVar = (androidx.biometric.e) bVar.b;
-        eVar.c = j7Var;
-        k9 k9Var = (k9) eVar.b;
+        af.d dVar = (af.d) bVar.b;
+        dVar.c = j7Var;
+        k9 k9Var = (k9) dVar.b;
         if (k9Var != null) {
             str = k9Var.d;
             int i10 = r2.a;
@@ -72,7 +72,7 @@ public final class s1 implements Runnable {
         synchronized (ka.class) {
             taVar = ka.j;
             if (taVar == null) {
-                n0.c a2 = k7.x.a(Resources.getSystem().getConfiguration());
+                n0.c a2 = k7.w.a(Resources.getSystem().getConfiguration());
                 Object[] objArr = new Object[4];
                 int i11 = 0;
                 int i12 = 0;
@@ -132,6 +132,7 @@ public final class s1 implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         q5.f fVar;
+        int i10 = 24;
         Object obj = null;
         boolean z4 = false;
         switch (this.a) {
@@ -169,8 +170,8 @@ public final class s1 implements Runnable {
                 try {
                     lVar2.get();
                     return;
-                } catch (Exception e6) {
-                    eVar.c.l(e6);
+                } catch (Exception e) {
+                    eVar.c.l(e);
                     return;
                 }
             case 3:
@@ -201,9 +202,9 @@ public final class s1 implements Runnable {
                         }
                         throw th2;
                     }
-                } catch (IOException | OutOfMemoryError | RuntimeException e10) {
-                    Log.wtf("ShortcutInfoCompatSaver", "Unable to write bitmap to file", e10);
-                    throw new RuntimeException(yh.k("Unable to write bitmap to file ", str), e10);
+                } catch (IOException | OutOfMemoryError | RuntimeException e6) {
+                    Log.wtf("ShortcutInfoCompatSaver", "Unable to write bitmap to file", e6);
+                    throw new RuntimeException(w2.e("Unable to write bitmap to file ", str), e6);
                 }
             case 4:
                 a();
@@ -217,7 +218,7 @@ public final class s1 implements Runnable {
                     l8.m.K0(e0Var2, false, null);
                     return;
                 } else {
-                    onRequest.addOnCompleteListener(new ja.c(e0Var2));
+                    onRequest.addOnCompleteListener(new bb.b(e0Var2, i10));
                     return;
                 }
             case 6:
@@ -225,7 +226,7 @@ public final class s1 implements Runnable {
                     obj = ((o0.e) this.b).call();
                 } catch (Exception unused) {
                 }
-                ((Handler) this.d).post(new androidx.biometric.k((o0.f) this.c, obj, z4, 27));
+                ((Handler) this.d).post(new androidx.biometric.j((o0.f) this.c, obj, z4, 27));
                 return;
             case 7:
                 o9.c cVar = (o9.c) this.d;
@@ -250,12 +251,12 @@ public final class s1 implements Runnable {
                 p2.b bVar2 = (p2.b) this.b;
                 p2.i iVar = (p2.i) this.c;
                 com.google.android.gms.internal.clearcut.e eVar2 = (com.google.android.gms.internal.clearcut.e) this.d;
-                p2.h hVar = p2.a0.i;
+                p2.h hVar = p2.b0.i;
                 bVar2.y(24, 4, hVar);
-                iVar.a(hVar, eVar2.b);
+                iVar.a(hVar, eVar2.a);
                 return;
             case 10:
-                super/*p2.b*/.c((org.telegram.ui.web.e0) this.c, (org.telegram.messenger.d0) this.d);
+                super/*p2.b*/.c((o3.c) this.c, (org.telegram.messenger.d0) this.d);
                 return;
             case 11:
                 super/*p2.b*/.a((com.google.android.gms.internal.clearcut.e) this.c, (p2.i) this.d);

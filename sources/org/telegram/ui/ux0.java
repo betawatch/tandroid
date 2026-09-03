@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ux0 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,14 +32,14 @@ public final /* synthetic */ class ux0 implements Runnable {
                 ProfileActivity profileActivity = this.b;
                 TLRPC.User user = this.c;
                 profileActivity.getClass();
-                profileActivity.presentFragment(xn.R9(user.id));
+                profileActivity.presentFragment(zn.R9(user.id));
                 break;
             case 1:
                 ProfileActivity profileActivity2 = this.b;
                 TLRPC.User user2 = this.c;
                 if (profileActivity2.getParentActivity() != null) {
                     TLRPC.UserFull userFull = profileActivity2.s2;
-                    org.telegram.ui.Components.voip.g2.m(user2, false, userFull != null && userFull.video_calls_available, profileActivity2.getParentActivity(), profileActivity2.s2, profileActivity2.getAccountInstance());
+                    org.telegram.ui.Components.voip.f2.m(user2, false, userFull != null && userFull.video_calls_available, profileActivity2.getParentActivity(), profileActivity2.s2, profileActivity2.getAccountInstance());
                     break;
                 }
                 break;
@@ -48,7 +48,7 @@ public final /* synthetic */ class ux0 implements Runnable {
                 TLRPC.User user3 = this.c;
                 if (profileActivity3.getParentActivity() != null) {
                     TLRPC.UserFull userFull2 = profileActivity3.s2;
-                    org.telegram.ui.Components.voip.g2.m(user3, true, userFull2 != null && userFull2.video_calls_available, profileActivity3.getParentActivity(), profileActivity3.s2, profileActivity3.getAccountInstance());
+                    org.telegram.ui.Components.voip.f2.m(user3, true, userFull2 != null && userFull2.video_calls_available, profileActivity3.getParentActivity(), profileActivity3.s2, profileActivity3.getAccountInstance());
                     break;
                 }
                 break;
@@ -61,8 +61,8 @@ public final /* synthetic */ class ux0 implements Runnable {
                     intent.addFlags(TLObject.FLAG_28);
                     profileActivity4.getParentActivity().startActivityForResult(intent, 500);
                     break;
-                } catch (Exception e6) {
-                    FileLog.e(e6);
+                } catch (Exception e) {
+                    FileLog.e(e);
                     return;
                 }
             default:
@@ -74,8 +74,8 @@ public final /* synthetic */ class ux0 implements Runnable {
                         org.telegram.ui.Components.qc.a0(profileActivity5).i(LocaleController.getString(R.string.PhoneCopied)).j();
                         break;
                     }
-                } catch (Exception e10) {
-                    FileLog.e(e10);
+                } catch (Exception e6) {
+                    FileLog.e(e6);
                 }
                 break;
         }

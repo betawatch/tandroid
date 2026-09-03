@@ -15,10 +15,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import org.telegram.tgnet.ConnectionsManager;
-import qh.l6;
+import p2.w;
+import ph.e6;
 import s8.v;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class b implements h0 {
     public final Uri a;
@@ -62,12 +63,55 @@ public final class b implements h0 {
         return true;
     }
 
+    @Override // g5.h0
+    public final c4.e X(j0 j0Var, IOException iOException, int i10) {
+        p0 p0Var = (p0) j0Var;
+        long j10 = p0Var.a;
+        int i11 = p0Var.c;
+        Uri uri = p0Var.d.c;
+        o4.j jVar = new o4.j();
+        boolean z4 = uri.getQueryParameter("_HLS_msn") != null;
+        boolean z10 = iOException instanceof n;
+        c4.e eVar = m0.e;
+        Uri uri2 = this.a;
+        c cVar = this.v;
+        if (z4 || z10) {
+            int i12 = iOException instanceof e0 ? ((e0) iOException).d : ConnectionsManager.DEFAULT_DATACENTER_ID;
+            if (z10 || i12 == 400 || i12 == 503) {
+                this.h = SystemClock.elapsedRealtime();
+                c(uri2);
+                b4.e0 e0Var = cVar.f;
+                int i13 = d0.a;
+                e0Var.s(jVar, i11, iOException, true);
+                return eVar;
+            }
+        }
+        w wVar = new w(iOException, i10, 4);
+        Iterator it = cVar.e.iterator();
+        boolean z11 = false;
+        while (it.hasNext()) {
+            z11 |= !((q) it.next()).c(uri2, wVar, false);
+        }
+        z9.d dVar = cVar.c;
+        if (z11) {
+            dVar.getClass();
+            long v = z9.d.v(wVar);
+            eVar = v != -9223372036854775807L ? new c4.e(0, v, false) : m0.f;
+        }
+        boolean a2 = eVar.a();
+        cVar.f.s(jVar, i11, iOException, !a2);
+        if (!a2) {
+            dVar.getClass();
+        }
+        return eVar;
+    }
+
     public final void b(Uri uri) {
         c cVar = this.v;
-        p0 p0Var = new p0(this.c, uri, 4, cVar.b.B(cVar.s, this.d));
-        ab.a aVar = cVar.c;
+        p0 p0Var = new p0(this.c, uri, 4, cVar.b.k(cVar.s, this.d));
+        z9.d dVar = cVar.c;
         int i10 = p0Var.c;
-        this.b.f(p0Var, this, aVar.n3(i10));
+        this.b.f(p0Var, this, dVar.p(i10));
         cVar.f.u(new o4.j(p0Var.b), i10, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 
@@ -86,7 +130,7 @@ public final class b implements h0 {
             b(uri);
         } else {
             this.r = true;
-            this.v.n.postDelayed(new l6(21, this, uri), j10 - elapsedRealtime);
+            this.v.n.postDelayed(new e6(28, this, uri), j10 - elapsedRealtime);
         }
     }
 
@@ -232,10 +276,10 @@ public final class b implements h0 {
                     }
                     if (y0Var2 != null) {
                         this.s = y0Var2;
-                        p2.v vVar5 = new p2.v(y0Var2, 1, 4);
+                        w wVar = new w(y0Var2, 1, 4);
                         Iterator it2 = copyOnWriteArrayList.iterator();
                         while (it2.hasNext()) {
-                            ((q) it2.next()).c(uri, vVar5, z10);
+                            ((q) it2.next()).c(uri, wVar, z10);
                         }
                     }
                 }
@@ -260,9 +304,9 @@ public final class b implements h0 {
                                 buildUpon.appendQueryParameter("_HLS_msn", String.valueOf(iVar9.k + iVar9.r.size()));
                                 i iVar10 = this.d;
                                 if (iVar10.n != -9223372036854775807L) {
-                                    v vVar6 = iVar10.s;
-                                    int size6 = vVar6.size();
-                                    if (!vVar6.isEmpty() && ((d) s8.l.h(vVar6)).x) {
+                                    v vVar5 = iVar10.s;
+                                    int size6 = vVar5.size();
+                                    if (!vVar5.isEmpty() && ((d) s8.l.h(vVar5)).x) {
                                         size6--;
                                     }
                                     buildUpon.appendQueryParameter("_HLS_part", String.valueOf(size6));
@@ -308,61 +352,7 @@ public final class b implements h0 {
     }
 
     @Override // g5.h0
-    public final c4.e q(j0 j0Var, IOException iOException, int i10) {
-        p0 p0Var = (p0) j0Var;
-        long j10 = p0Var.a;
-        int i11 = p0Var.c;
-        Uri uri = p0Var.d.c;
-        o4.j jVar = new o4.j();
-        boolean z4 = uri.getQueryParameter("_HLS_msn") != null;
-        boolean z10 = iOException instanceof n;
-        c4.e eVar = m0.e;
-        Uri uri2 = this.a;
-        c cVar = this.v;
-        if (z4 || z10) {
-            int i12 = iOException instanceof e0 ? ((e0) iOException).d : ConnectionsManager.DEFAULT_DATACENTER_ID;
-            if (z10 || i12 == 400 || i12 == 503) {
-                this.h = SystemClock.elapsedRealtime();
-                c(uri2);
-                b4.e0 e0Var = cVar.f;
-                int i13 = d0.a;
-                e0Var.s(jVar, i11, iOException, true);
-                return eVar;
-            }
-        }
-        p2.v vVar = new p2.v(iOException, i10, 4);
-        Iterator it = cVar.e.iterator();
-        boolean z11 = false;
-        while (it.hasNext()) {
-            z11 |= !((q) it.next()).c(uri2, vVar, false);
-        }
-        ab.a aVar = cVar.c;
-        if (z11) {
-            aVar.getClass();
-            long o32 = ab.a.o3(vVar);
-            eVar = o32 != -9223372036854775807L ? new c4.e(0, o32, false) : m0.f;
-        }
-        boolean a2 = eVar.a();
-        cVar.f.s(jVar, i11, iOException, !a2);
-        if (!a2) {
-            aVar.getClass();
-        }
-        return eVar;
-    }
-
-    @Override // g5.h0
-    public final void u(j0 j0Var, long j10, long j11, boolean z4) {
-        p0 p0Var = (p0) j0Var;
-        long j12 = p0Var.a;
-        Uri uri = p0Var.d.c;
-        o4.j jVar = new o4.j();
-        c cVar = this.v;
-        cVar.c.getClass();
-        cVar.f.m(jVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
-    }
-
-    @Override // g5.h0
-    public final void x(j0 j0Var, long j10, long j11) {
+    public final void k1(j0 j0Var, long j10, long j11) {
         p0 p0Var = (p0) j0Var;
         m mVar = (m) p0Var.f;
         Uri uri = p0Var.d.c;
@@ -376,5 +366,16 @@ public final class b implements h0 {
             this.v.f.s(jVar, 4, b10, true);
         }
         this.v.c.getClass();
+    }
+
+    @Override // g5.h0
+    public final void x0(j0 j0Var, long j10, long j11, boolean z4) {
+        p0 p0Var = (p0) j0Var;
+        long j12 = p0Var.a;
+        Uri uri = p0Var.d.c;
+        o4.j jVar = new o4.j();
+        c cVar = this.v;
+        cVar.c.getClass();
+        cVar.f.m(jVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 }

@@ -16,7 +16,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class x11 extends Drawable {
     public final TextPaint a;
@@ -28,13 +28,13 @@ public final class x11 extends Drawable {
     public Drawable g;
     public int h;
     public final Context i;
-    public final org.telegram.ui.ActionBar.g6 j;
+    public final org.telegram.ui.ActionBar.f6 j;
     public boolean k;
     public boolean l;
     public boolean m;
     public ColorFilter n;
 
-    public x11(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+    public x11(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         TextPaint textPaint = new TextPaint(1);
         this.a = textPaint;
         this.b = new Paint(1);
@@ -43,7 +43,7 @@ public final class x11 extends Drawable {
         this.e = 0;
         this.f = -1;
         this.i = context;
-        this.j = g6Var;
+        this.j = f6Var;
         textPaint.setTypeface(AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf"));
         paint.setStrokeWidth(AndroidUtilities.dp(1.0f));
         paint.setStyle(Paint.Style.STROKE);
@@ -72,7 +72,7 @@ public final class x11 extends Drawable {
             invalidateSelf();
             int i11 = this.f;
             if (i11 >= 1 && i11 < 60) {
-                str = l.d.j(i10, "");
+                str = kf.k0.j(i10, "");
                 if (str.length() < 2) {
                     str = org.telegram.messenger.y3.h(R.string.SecretChatTimerSeconds, e2.c.l(str));
                 }
@@ -127,9 +127,9 @@ public final class x11 extends Drawable {
                 StaticLayout staticLayout = new StaticLayout(str2, textPaint, (int) Math.ceil(this.d), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                 this.c = staticLayout;
                 this.e = staticLayout.getHeight();
-            } catch (Exception e6) {
+            } catch (Exception e) {
                 this.c = null;
-                FileLog.e(e6);
+                FileLog.e(e);
             }
             invalidateSelf();
         }
@@ -142,21 +142,21 @@ public final class x11 extends Drawable {
         boolean z4 = this.m;
         Paint paint = this.b;
         TextPaint textPaint = this.a;
-        org.telegram.ui.ActionBar.g6 g6Var = this.j;
+        org.telegram.ui.ActionBar.f6 f6Var = this.j;
         if (z4) {
             textPaint.setColor(-1);
         } else if (this.l) {
-            textPaint.setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.F8, g6Var));
+            textPaint.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.F8, f6Var));
         } else {
             if (!this.k) {
-                paint.setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.s8, g6Var));
+                paint.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.s8, f6Var));
             }
-            textPaint.setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.A8, g6Var));
+            textPaint.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.A8, f6Var));
         }
         if (this.g != null) {
             if (!this.l && !this.m) {
                 canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), getBounds().width() / 2.0f, paint);
-                int v02 = org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.A8, g6Var);
+                int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.A8, f6Var);
                 if (this.h != v02) {
                     this.h = v02;
                     this.g.setColorFilter(new PorterDuffColorFilter(v02, PorterDuff.Mode.MULTIPLY));

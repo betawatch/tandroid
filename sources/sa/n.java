@@ -4,7 +4,7 @@ import j$.util.Objects;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class n extends xa.b {
     public static final m E = new m();
@@ -145,7 +145,7 @@ public final class n extends xa.b {
     }
 
     public final pa.i v() {
-        return (pa.i) l.d.i(1, this.B);
+        return (pa.i) kf.k0.i(1, this.B);
     }
 
     public final void w(pa.i iVar) {

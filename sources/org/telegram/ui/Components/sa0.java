@@ -1,147 +1,161 @@
 package org.telegram.ui.Components;
 
-import android.content.ComponentName;
-import android.content.Intent;
-import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.SubMenu;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class sa0 implements Menu {
-    public final q70 a;
-    public final v2 b;
-    public final Runnable c;
+public final class sa0 extends Drawable {
+    public Paint a;
+    public Paint b;
+    public long c;
+    public float d;
+    public boolean e;
+    public boolean f;
+    public float g;
+    public float h;
+    public float i;
+    public float j;
+    public float k;
+    public long l;
+    public org.telegram.ui.Cells.s1 m;
 
-    public sa0(q70 q70Var, v2 v2Var, Runnable runnable) {
-        this.a = q70Var;
-        this.b = v2Var;
-        this.c = runnable;
+    public final void a() {
+        Rect bounds = getBounds();
+        float centerX = bounds.centerX();
+        float centerY = bounds.centerY();
+        int i10 = bounds.left;
+        float f10 = (i10 - centerX) * (i10 - centerX);
+        int i11 = bounds.top;
+        this.g = (float) Math.ceil(Math.sqrt(e2.c.w(i11, centerY, i11 - centerY, f10)));
     }
 
-    @Override // android.view.Menu
-    public final MenuItem add(int i10) {
-        return null;
-    }
-
-    @Override // android.view.Menu
-    public final int addIntentOptions(int i10, int i11, int i12, ComponentName componentName, Intent[] intentArr, Intent intent, int i13, MenuItem[] menuItemArr) {
-        return 0;
-    }
-
-    @Override // android.view.Menu
-    public final SubMenu addSubMenu(int i10) {
-        return null;
-    }
-
-    @Override // android.view.Menu
-    public final MenuItem findItem(int i10) {
-        return null;
-    }
-
-    @Override // android.view.Menu
-    public final MenuItem getItem(int i10) {
-        return null;
-    }
-
-    @Override // android.view.Menu
-    public final boolean hasVisibleItems() {
-        return false;
-    }
-
-    @Override // android.view.Menu
-    public final boolean isShortcutKey(int i10, KeyEvent keyEvent) {
-        return false;
-    }
-
-    @Override // android.view.Menu
-    public final boolean performIdentifierAction(int i10, int i11) {
-        return false;
-    }
-
-    @Override // android.view.Menu
-    public final boolean performShortcut(int i10, KeyEvent keyEvent, int i11) {
-        return false;
-    }
-
-    @Override // android.view.Menu
-    public final int size() {
-        return 0;
-    }
-
-    @Override // android.view.Menu
-    public final MenuItem add(CharSequence charSequence) {
-        return null;
-    }
-
-    @Override // android.view.Menu
-    public final SubMenu addSubMenu(int i10, int i11, int i12, int i13) {
-        return null;
-    }
-
-    @Override // android.view.Menu
-    public final MenuItem add(int i10, int i11, int i12, CharSequence charSequence) {
-        Runnable runnable = this.c;
-        if (runnable == null || !org.telegram.ui.ActionBar.z4.r.contains(Integer.valueOf(i11)) || !MessagesController.getInstance(UserConfig.selectedAccount).premiumFeaturesBlocked()) {
-            im imVar = new im(this, i11, 2);
-            q70 q70Var = this.a;
-            q70Var.c(0, charSequence, imVar, false);
-            if (runnable != null && org.telegram.ui.ActionBar.z4.r.contains(Integer.valueOf(i11))) {
-                q70Var.M(runnable);
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x0049, code lost:
+    
+        if (r7 >= 0.0f) goto L25;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x0056, code lost:
+    
+        if (r7 >= 0.0f) goto L25;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x00b9  */
+    /* JADX WARN: Removed duplicated region for block: B:26:? A[RETURN, SYNTHETIC] */
+    @Override // android.graphics.drawable.Drawable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void draw(Canvas canvas) {
+        float f10;
+        org.telegram.ui.Cells.s1 s1Var;
+        Paint paint = this.a;
+        float f11 = this.d;
+        if (f11 == 1.0f) {
+            Rect bounds = getBounds();
+            Paint paint2 = this.b;
+            if (paint2 != null) {
+                paint = paint2;
             }
+            canvas.drawRect(bounds, paint);
+        } else if (f11 != 0.0f) {
+            float interpolation = this.e ? mr.h.getInterpolation(f11) : 1.0f - mr.h.getInterpolation(1.0f - f11);
+            Rect bounds2 = getBounds();
+            float centerX = bounds2.centerX();
+            float centerY = bounds2.centerY();
+            float f12 = this.j;
+            if (f12 >= 0.0f) {
+                f10 = this.k;
+            }
+            f12 = this.h;
+            if (f12 >= 0.0f) {
+                f10 = this.i;
+            }
+            f10 = centerY;
+            f12 = centerX;
+            float f13 = 1.0f - interpolation;
+            float w10 = e2.c.w(f12, centerX, f13, centerX);
+            float w11 = e2.c.w(f10, centerY, f13, centerY);
+            float f14 = this.g * interpolation;
+            Paint paint3 = this.b;
+            if (paint3 != null) {
+                paint = paint3;
+            }
+            canvas.drawCircle(w10, w11, f14, paint);
         }
-        return null;
+        if (!this.f) {
+            return;
+        }
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j10 = elapsedRealtime - this.c;
+        if (j10 > 20) {
+            j10 = 17;
+        }
+        this.c = elapsedRealtime;
+        if (this.e) {
+            float f15 = (j10 / 240.0f) + this.d;
+            this.d = f15;
+            if (f15 >= 1.0f) {
+                this.d = 1.0f;
+                this.h = -1.0f;
+                this.i = -1.0f;
+                this.j = -1.0f;
+                this.k = -1.0f;
+                this.f = false;
+            }
+            s1Var = this.m;
+            if (s1Var == null) {
+                s1Var.invalidate();
+                if (s1Var.getParent() != null) {
+                    ((ViewGroup) s1Var.getParent()).invalidate();
+                    return;
+                }
+                return;
+            }
+            return;
+        }
+        float f16 = this.d - (j10 / 240.0f);
+        this.d = f16;
+        if (f16 <= 0.0f) {
+            this.d = 0.0f;
+            this.h = -1.0f;
+            this.i = -1.0f;
+            this.j = -1.0f;
+            this.k = -1.0f;
+            this.f = false;
+        }
+        s1Var = this.m;
+        if (s1Var == null) {
+        }
     }
 
-    @Override // android.view.Menu
-    public final SubMenu addSubMenu(int i10, int i11, int i12, CharSequence charSequence) {
-        return null;
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
     }
 
-    @Override // android.view.Menu
-    public final SubMenu addSubMenu(CharSequence charSequence) {
-        return null;
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.a.setAlpha(i10);
     }
 
-    @Override // android.view.Menu
-    public final MenuItem add(int i10, int i11, int i12, int i13) {
-        add(i10, i11, i12, LocaleController.getString(i13));
-        return null;
+    @Override // android.graphics.drawable.Drawable
+    public final void setBounds(int i10, int i11, int i12, int i13) {
+        super.setBounds(i10, i11, i12, i13);
+        a();
     }
 
-    @Override // android.view.Menu
-    public final void clear() {
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
     }
 
-    @Override // android.view.Menu
-    public final void close() {
-    }
-
-    @Override // android.view.Menu
-    public final void removeGroup(int i10) {
-    }
-
-    @Override // android.view.Menu
-    public final void removeItem(int i10) {
-    }
-
-    @Override // android.view.Menu
-    public final void setQwertyMode(boolean z4) {
-    }
-
-    @Override // android.view.Menu
-    public final void setGroupEnabled(int i10, boolean z4) {
-    }
-
-    @Override // android.view.Menu
-    public final void setGroupVisible(int i10, boolean z4) {
-    }
-
-    @Override // android.view.Menu
-    public final void setGroupCheckable(int i10, boolean z4, boolean z10) {
+    @Override // android.graphics.drawable.Drawable
+    public final void setBounds(Rect rect) {
+        super.setBounds(rect);
+        a();
     }
 }

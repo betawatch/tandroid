@@ -17,9 +17,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public abstract class y51 extends org.telegram.ui.Components.sl0 {
+public abstract class y51 extends org.telegram.ui.Components.rl0 {
     public final SparseArray U2;
     public final ArrayList V2;
     public final ArrayList W2;
@@ -27,12 +27,12 @@ public abstract class y51 extends org.telegram.ui.Components.sl0 {
     public final ArrayList Y2;
     public boolean Z2;
     public final LongSparseArray a3;
-    public final /* synthetic */ w61 b3;
+    public final /* synthetic */ x61 b3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y51(w61 w61Var, Context context) {
+    public y51(x61 x61Var, Context context) {
         super(context, null);
-        this.b3 = w61Var;
+        this.b3 = x61Var;
         this.U2 = new SparseArray();
         this.V2 = new ArrayList();
         this.W2 = new ArrayList();
@@ -42,7 +42,7 @@ public abstract class y51 extends org.telegram.ui.Components.sl0 {
         setDrawSelectorBehind(true);
         setClipToPadding(false);
         setSelectorRadius(AndroidUtilities.dp(4.0f));
-        setSelectorDrawableColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.i6, this.m2));
+        setSelectorDrawableColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.i6, this.m2));
     }
 
     public static void v1(ArrayList arrayList) {
@@ -56,7 +56,7 @@ public abstract class y51 extends org.telegram.ui.Components.sl0 {
     
         if (((org.telegram.ui.Components.l5) r1).c() != false) goto L10;
      */
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -71,11 +71,11 @@ public abstract class y51 extends org.telegram.ui.Components.sl0 {
             setSelectorDrawableColor(i0.a.k(this.b3.c1, 30));
             return true;
         }
-        setSelectorDrawableColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.i6, this.m2));
+        setSelectorDrawableColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.i6, this.m2));
         return true;
     }
 
-    @Override // org.telegram.ui.Components.sl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.rl0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         SparseArray sparseArray;
         ArrayList arrayList;
@@ -93,8 +93,8 @@ public abstract class y51 extends org.telegram.ui.Components.sl0 {
         }
         this.Z2 = false;
         int saveCount = canvas2.getSaveCount();
-        w61 w61Var = this.b3;
-        int i11 = w61Var.T;
+        x61 x61Var = this.b3;
+        int i11 = x61Var.T;
         int i12 = 14;
         if (i11 != 6 && i11 != 14 && i11 != 13) {
             Rect rect = this.D1;
@@ -123,7 +123,7 @@ public abstract class y51 extends org.telegram.ui.Components.sl0 {
             i13++;
         }
         sparseArray.clear();
-        boolean z10 = w61Var.M1 > 0 && SystemClock.elapsedRealtime() - w61Var.M1 < w61Var.g() && w61Var.J1 != null && w61Var.K1 >= 0;
+        boolean z10 = x61Var.M1 > 0 && SystemClock.elapsedRealtime() - x61Var.M1 < x61Var.g() && x61Var.J1 != null && x61Var.K1 >= 0;
         if (this.a3 != null) {
             int i14 = 0;
             boolean z11 = false;
@@ -131,8 +131,8 @@ public abstract class y51 extends org.telegram.ui.Components.sl0 {
                 View childAt = getChildAt(i14);
                 if (childAt instanceof f61) {
                     f61 f61Var = (f61) childAt;
-                    w61 w61Var2 = f61Var.S;
-                    int i15 = w61Var2.T;
+                    x61 x61Var2 = f61Var.S;
+                    int i15 = x61Var2.T;
                     if (f61Var.isPressed()) {
                         float f10 = f61Var.K;
                         if (f10 != 1.0f && i15 != i12) {
@@ -141,12 +141,12 @@ public abstract class y51 extends org.telegram.ui.Components.sl0 {
                         }
                     }
                     int i16 = f61Var.c;
-                    int y10 = w61Var.t1 ? (int) childAt.getY() : childAt.getTop();
+                    int y10 = x61Var.t1 ? (int) childAt.getY() : childAt.getTop();
                     ArrayList arrayList5 = (ArrayList) sparseArray.get(y10);
                     canvas2.save();
                     canvas2.translate(f61Var.getX(), f61Var.getY());
                     if (f61Var.w != null) {
-                        mh.wa collectionParticles = w61Var.getCollectionParticles();
+                        lh.wa collectionParticles = x61Var.getCollectionParticles();
                         i10 = i14;
                         boolean z12 = z11;
                         collectionParticles.f(0, 0, f61Var.getWidth(), f61Var.getHeight());
@@ -185,7 +185,7 @@ public abstract class y51 extends org.telegram.ui.Components.sl0 {
                                 invalidate();
                             }
                         }
-                        f61Var.P = Utilities.clamp(f61Var.I ? org.telegram.ui.Components.pr.h.getInterpolation(f61Var.O) : 1.0f - org.telegram.ui.Components.pr.h.getInterpolation(1.0f - f61Var.O), 1.0f, 0.0f);
+                        f61Var.P = Utilities.clamp(f61Var.I ? org.telegram.ui.Components.mr.h.getInterpolation(f61Var.O) : 1.0f - org.telegram.ui.Components.mr.h.getInterpolation(1.0f - f61Var.O), 1.0f, 0.0f);
                         int dp = AndroidUtilities.dp(i15 == 6 ? 1.5f : 1.0f);
                         int dp2 = AndroidUtilities.dp(i15 == 6 ? 6.0f : 4.0f);
                         RectF rectF = AndroidUtilities.rectTmp;
@@ -195,7 +195,7 @@ public abstract class y51 extends org.telegram.ui.Components.sl0 {
                         if (!f61Var.a) {
                             Drawable drawable = f61Var.B;
                             if (!(drawable instanceof org.telegram.ui.Components.l5) || !((org.telegram.ui.Components.l5) drawable).c()) {
-                                paint = w61Var2.I;
+                                paint = x61Var2.I;
                                 int alpha = paint.getAlpha();
                                 paint.setAlpha((int) (f61Var.getAlpha() * alpha * f61Var.P));
                                 float f14 = dp2;
@@ -203,7 +203,7 @@ public abstract class y51 extends org.telegram.ui.Components.sl0 {
                                 paint.setAlpha(alpha);
                             }
                         }
-                        paint = w61Var2.J;
+                        paint = x61Var2.J;
                         int alpha2 = paint.getAlpha();
                         paint.setAlpha((int) (f61Var.getAlpha() * alpha2 * f61Var.P));
                         float f142 = dp2;
@@ -235,17 +235,17 @@ public abstract class y51 extends org.telegram.ui.Components.sl0 {
                 boolean z15 = z11;
                 if (z10 && view != null) {
                     int R = RecyclerView.R(view);
-                    int i18 = w61Var.K1;
-                    List list = w61.W1;
+                    int i18 = x61Var.K1;
+                    List list = x61.W1;
                     if (R == i18 - 1) {
-                        float interpolation = org.telegram.ui.Components.pr.g.getInterpolation(k7.o.a((SystemClock.elapsedRealtime() - w61Var.M1) / 200.0f, 0.0f, 1.0f));
+                        float interpolation = org.telegram.ui.Components.mr.g.getInterpolation(k7.n.a((SystemClock.elapsedRealtime() - x61Var.M1) / 200.0f, 0.0f, 1.0f));
                         if (interpolation < 1.0f) {
                             float f15 = 1.0f - interpolation;
                             canvas2.saveLayerAlpha(view.getLeft(), view.getTop(), view.getRight(), view.getBottom(), (int) (255.0f * f15), 31);
                             canvas2.translate(view.getLeft(), view.getTop() + 0.0f);
                             float f16 = (f15 * 0.5f) + 0.5f;
                             canvas2.scale(f16, f16, view.getWidth() / 2.0f, view.getHeight() / 2.0f);
-                            w61Var.J1.draw(canvas2);
+                            x61Var.J1.draw(canvas2);
                             canvas2.restore();
                             i14 = i10 + 1;
                             z11 = z15;
@@ -349,7 +349,7 @@ public abstract class y51 extends org.telegram.ui.Components.sl0 {
                     f61Var3.H.draw(canvas2);
                     canvas2.restore();
                 }
-            } else if (childAt2 != null && childAt2 != w61Var.J1) {
+            } else if (childAt2 != null && childAt2 != x61Var.J1) {
                 canvas2.save();
                 canvas2.translate((int) childAt2.getX(), (int) childAt2.getY());
                 childAt2.draw(canvas2);
@@ -357,16 +357,16 @@ public abstract class y51 extends org.telegram.ui.Components.sl0 {
             }
         }
         canvas2.restoreToCount(saveCount);
-        Runnable runnable = ng.g0.c;
+        Runnable runnable = mg.g0.c;
         if (runnable != null) {
             runnable.run();
-            ng.g0.c = null;
+            mg.g0.c = null;
         }
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final void e1() {
-        if (ng.g0.b(this)) {
+        if (mg.g0.b(this)) {
             return;
         }
         super.e1();
@@ -374,28 +374,28 @@ public abstract class y51 extends org.telegram.ui.Components.sl0 {
 
     @Override // android.view.View
     public final void invalidate() {
-        if (ng.g0.b(this) || this.Z2) {
+        if (mg.g0.b(this) || this.Z2) {
             return;
         }
         this.Z2 = true;
         super.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.rl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        w61 w61Var = this.b3;
-        if (this == w61Var.e0) {
-            w61Var.S0.onAttachedToWindow();
+        x61 x61Var = this.b3;
+        if (this == x61Var.e0) {
+            x61Var.S0.onAttachedToWindow();
         }
     }
 
-    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.rl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        w61 w61Var = this.b3;
-        if (this == w61Var.e0) {
-            w61Var.S0.onDetachedFromWindow();
+        x61 x61Var = this.b3;
+        if (this == x61Var.e0) {
+            x61Var.S0.onDetachedFromWindow();
         }
         v1(this.W2);
         v1(this.X2);
@@ -410,7 +410,7 @@ public abstract class y51 extends org.telegram.ui.Components.sl0 {
 
     @Override // android.view.View
     public final void invalidate(int i10, int i11, int i12, int i13) {
-        if (ng.g0.b(this)) {
+        if (mg.g0.b(this)) {
             return;
         }
         super.invalidate(i10, i11, i12, i13);

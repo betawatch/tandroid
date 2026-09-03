@@ -1,27 +1,31 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.View;
-import android.view.WindowInsets;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i3 implements View.OnApplyWindowInsetsListener {
-    public final /* synthetic */ int a;
+public final class i3 extends FrameLayout implements u3 {
+    public final u3 a;
 
-    public /* synthetic */ i3(int i10) {
-        this.a = i10;
+    public i3(u3 u3Var) {
+        super(u3Var.getContext());
+        this.a = u3Var;
     }
 
-    @Override // android.view.View.OnApplyWindowInsetsListener
-    public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-        switch (this.a) {
-            case 0:
-                return k3.a(view, windowInsets);
-            case 1:
-                return org.telegram.ui.l4.e(windowInsets);
-            default:
-                view.setPadding(0, 0, 0, windowInsets.getSystemWindowInsetBottom());
-                return windowInsets;
-        }
+    @Override // org.telegram.ui.ActionBar.u3
+    public RectF getRect() {
+        return this.a.getRect();
+    }
+
+    @Override // org.telegram.ui.ActionBar.u3
+    public void setDrawingFromOverlay(boolean z4) {
+        this.a.setDrawingFromOverlay(z4);
+    }
+
+    @Override // org.telegram.ui.ActionBar.u3
+    public final float z(Canvas canvas, RectF rectF, float f10, RectF rectF2, float f11) {
+        return this.a.z(canvas, rectF, f10, rectF2, f11);
     }
 }

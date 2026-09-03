@@ -6,9 +6,9 @@ import f8.o;
 import h5.d0;
 import j3.d1;
 import j3.n0;
-import l.d;
+import kf.k0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class b implements e4.b {
     public static final Parcelable.Creator<b> CREATOR = new o(5);
@@ -107,7 +107,7 @@ public class b implements e4.b {
     }
 
     public final int hashCode() {
-        return this.b.hashCode() + d.e(527, 31, this.a);
+        return this.b.hashCode() + k0.e(527, 31, this.a);
     }
 
     public final String toString() {

@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class j extends a8 {
     public static Font g(FontFamily fontFamily, int i10) {
@@ -41,8 +41,8 @@ public final class j extends a8 {
             o0.i iVar = iVarArr[i10];
             try {
                 openFileDescriptor = contentResolver.openFileDescriptor(iVar.a, "r", null);
-            } catch (IOException e6) {
-                Log.w("TypefaceCompatApi29Impl", "Font load failed", e6);
+            } catch (IOException e) {
+                Log.w("TypefaceCompatApi29Impl", "Font load failed", e);
             }
             if (openFileDescriptor == null) {
                 i10 = openFileDescriptor == null ? i10 + 1 : 0;
@@ -95,8 +95,8 @@ public final class j extends a8 {
             }
             FontFamily build2 = builder.build();
             return new Typeface.CustomFallbackBuilder(build2).setStyle(g(build2, i10).getStyle()).build();
-        } catch (Exception e6) {
-            Log.w("TypefaceCompatApi29Impl", "Font load failed", e6);
+        } catch (Exception e) {
+            Log.w("TypefaceCompatApi29Impl", "Font load failed", e);
             return null;
         }
     }
@@ -109,8 +109,8 @@ public final class j extends a8 {
                 return null;
             }
             return new Typeface.CustomFallbackBuilder(h).setStyle(g(h, i10).getStyle()).build();
-        } catch (Exception e6) {
-            Log.w("TypefaceCompatApi29Impl", "Font load failed", e6);
+        } catch (Exception e) {
+            Log.w("TypefaceCompatApi29Impl", "Font load failed", e);
             return null;
         }
     }
@@ -131,8 +131,8 @@ public final class j extends a8 {
                 }
             }
             return customFallbackBuilder.setStyle(g(h, i10).getStyle()).build();
-        } catch (Exception e6) {
-            Log.w("TypefaceCompatApi29Impl", "Font load failed", e6);
+        } catch (Exception e) {
+            Log.w("TypefaceCompatApi29Impl", "Font load failed", e);
             return null;
         }
     }
@@ -147,8 +147,8 @@ public final class j extends a8 {
         try {
             Font build = new Font.Builder(resources, i10).build();
             return new Typeface.CustomFallbackBuilder(new FontFamily.Builder(build).build()).setStyle(build.getStyle()).build();
-        } catch (Exception e6) {
-            Log.w("TypefaceCompatApi29Impl", "Font load failed", e6);
+        } catch (Exception e) {
+            Log.w("TypefaceCompatApi29Impl", "Font load failed", e);
             return null;
         }
     }

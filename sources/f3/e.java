@@ -6,14 +6,15 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.Pair;
+import cg.n0;
 import g5.l;
 import g5.m;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.regex.Pattern;
-import ng.w;
-import oh.e1;
-import oh.z0;
+import mg.w;
+import nh.e1;
+import nh.z0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.ImageReceiver;
@@ -34,29 +35,29 @@ import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.FragmentContextView;
 import org.telegram.ui.Components.cf;
-import org.telegram.ui.Components.e71;
-import org.telegram.ui.Components.ei;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.mi;
+import org.telegram.ui.Components.d71;
+import org.telegram.ui.Components.di;
+import org.telegram.ui.Components.i71;
+import org.telegram.ui.Components.li;
+import org.telegram.ui.Components.vn0;
 import org.telegram.ui.Components.w21;
-import org.telegram.ui.Components.wn0;
 import org.telegram.ui.Components.y4;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ay;
 import org.telegram.ui.cf1;
-import org.telegram.ui.py;
-import org.telegram.ui.u60;
-import org.telegram.ui.wc0;
-import org.telegram.ui.xn;
+import org.telegram.ui.cy;
+import org.telegram.ui.qy;
+import org.telegram.ui.v60;
+import org.telegram.ui.xc0;
 import org.telegram.ui.ze1;
-import qh.p7;
-import qh.w7;
-import uf.n;
-import uf.y;
+import org.telegram.ui.zn;
+import ph.r7;
+import ph.y7;
+import tf.n;
+import tf.y;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements f, RequestDelegateTimestamp, ImageReceiver.ImageReceiverDelegate, y4, wc0, MessagesStorage.BooleanCallback, l, c2, u60, MessagesStorage.StringCallback {
+public final /* synthetic */ class e implements f, RequestDelegateTimestamp, ImageReceiver.ImageReceiverDelegate, y4, xc0, MessagesStorage.BooleanCallback, l, c2, v60, MessagesStorage.StringCallback {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
@@ -68,25 +69,25 @@ public final /* synthetic */ class e implements f, RequestDelegateTimestamp, Ima
     }
 
     @Override // org.telegram.ui.Components.y4
-    public void I(int i10, int i11, boolean z4) {
+    public void J(int i10, int i11, boolean z4) {
         boolean G1;
-        mi miVar = (mi) this.c;
-        ei eiVar = miVar.v0;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = miVar.g0;
+        li liVar = (li) this.c;
+        di diVar = liVar.v0;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = liVar.g0;
         long j10 = this.b;
-        if (eiVar == chatAttachAlertPhotoLayout || eiVar == miVar.n0) {
-            G1 = miVar.G1(i10, z4, i11, miVar.s1(), j10);
+        if (diVar == chatAttachAlertPhotoLayout || diVar == liVar.n0) {
+            G1 = liVar.G1(i10, z4, i11, liVar.s1(), j10);
         } else {
-            if (!eiVar.H(i10, z4, i11, miVar.s1(), j10)) {
-                miVar.x2 = true;
-                miVar.dismiss();
+            if (!diVar.H(i10, z4, i11, liVar.s1(), j10)) {
+                liVar.x2 = true;
+                liVar.dismiss();
             }
             G1 = false;
         }
-        cf cfVar = miVar.e0;
+        cf cfVar = liVar.e0;
         if (cfVar != null) {
             cfVar.h(!G1);
-            miVar.e0 = null;
+            liVar.e0 = null;
         }
     }
 
@@ -106,13 +107,8 @@ public final /* synthetic */ class e implements f, RequestDelegateTimestamp, Ima
         return null;
     }
 
-    @Override // g5.l
-    public m createDataSource() {
-        return new e71(((j71) this.c).h.createDataSource(), this.b);
-    }
-
-    @Override // org.telegram.ui.wc0
-    public void d(TLRPC.MessageMedia messageMedia, int i10, boolean z4, int i11, long j10) {
+    @Override // org.telegram.ui.xc0
+    public void b(TLRPC.MessageMedia messageMedia, int i10, boolean z4, int i11, long j10) {
         int i12 = this.a;
         Object obj = this.c;
         switch (i12) {
@@ -125,6 +121,11 @@ public final /* synthetic */ class e implements f, RequestDelegateTimestamp, Ima
                 SendMessagesHelper.getInstance(((int[]) obj)[0]).sendMessage(SendMessagesHelper.SendMessageParams.of(messageMedia, this.b, (MessageObject) null, (MessageObject) null, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, true, 0, 0));
                 break;
         }
+    }
+
+    @Override // g5.l
+    public m createDataSource() {
+        return new d71(((i71) this.c).h.createDataSource(), this.b);
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
@@ -149,7 +150,7 @@ public final /* synthetic */ class e implements f, RequestDelegateTimestamp, Ima
         j5.a(this, i10, str, drawable);
     }
 
-    @Override // org.telegram.ui.u60
+    @Override // org.telegram.ui.v60
     public void i(int i10, ArrayList arrayList) {
         cf1 cf1Var = (cf1) this.c;
         p2 p2Var = cf1Var.b;
@@ -161,9 +162,9 @@ public final /* synthetic */ class e implements f, RequestDelegateTimestamp, Ima
         while (i11 < size) {
             TLRPC.User user = (TLRPC.User) arrayList.get(i11);
             MessagesController messagesController = p2Var.getMessagesController();
-            ag.f fVar = new ag.f(23);
+            n0 n0Var = new n0(21);
             long j10 = this.b;
-            messagesController.addUserToChat(j10, user, i10, null, p2Var, false, fVar, null, new ze1(cf1Var, tL_messages_invitedUsers, iArr, size, arrayList, j10));
+            messagesController.addUserToChat(j10, user, i10, null, p2Var, false, n0Var, null, new ze1(cf1Var, tL_messages_invitedUsers, iArr, size, arrayList, j10));
             i11++;
             size = size;
             iArr = iArr;
@@ -172,25 +173,25 @@ public final /* synthetic */ class e implements f, RequestDelegateTimestamp, Ima
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public void j(d2 d2Var, int i10) {
+    public void l(d2 d2Var, int i10) {
         switch (this.a) {
             case 7:
-                wn0 wn0Var = ((py) this.c).z0.V;
-                a0.h hVar = wn0Var.u0;
+                vn0 vn0Var = ((qy) this.c).z0.V;
+                a0.h hVar = vn0Var.u0;
                 long j10 = this.b;
                 y yVar = (y) hVar.f(j10);
                 if (yVar != null) {
-                    wn0Var.u0.l(j10);
-                    wn0Var.q0.remove(yVar);
-                    wn0Var.s0.remove(yVar);
-                    wn0Var.r0.remove(yVar);
-                    wn0Var.l();
-                    MessagesStorage.getInstance(wn0Var.p0).getStorageQueue().postRunnable(new n(wn0Var, j10, 0));
+                    vn0Var.u0.l(j10);
+                    vn0Var.q0.remove(yVar);
+                    vn0Var.s0.remove(yVar);
+                    vn0Var.r0.remove(yVar);
+                    vn0Var.l();
+                    MessagesStorage.getInstance(vn0Var.p0).getStorageQueue().postRunnable(new n(vn0Var, j10, 0));
                     break;
                 }
                 break;
             default:
-                ((ay) this.c).a.getMediaDataController().removePeer(this.b);
+                ((cy) this.c).a.getMediaDataController().removePeer(this.b);
                 break;
         }
     }
@@ -252,19 +253,19 @@ public final /* synthetic */ class e implements f, RequestDelegateTimestamp, Ima
 
     @Override // org.telegram.messenger.MessagesStorage.StringCallback
     public void run(String str) {
-        w7 w7Var = (w7) this.c;
-        w7Var.T.i1().r(this.b, str, new p7(w7Var, 2));
+        y7 y7Var = (y7) this.c;
+        y7Var.T.i1().r(this.b, str, new r7(y7Var, 2));
     }
 
     @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
     public void run(boolean z4) {
-        xn xnVar = ((w21) this.c).h;
-        if (e2.c.s(xnVar)) {
-            xnVar.qa(this.b, false);
+        zn znVar = ((w21) this.c).h;
+        if (e2.c.s(znVar)) {
+            znVar.qa(this.b, false);
         }
     }
 
-    @Override // org.telegram.ui.u60
+    @Override // org.telegram.ui.v60
     public /* synthetic */ void h(TLRPC.User user) {
     }
 }

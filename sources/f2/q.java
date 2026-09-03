@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class q {
     public static final b7.r a = new b7.r(2);
@@ -149,18 +149,18 @@ public abstract class q {
         int i14;
         int i15;
         int i16;
-        int e6 = qVar.e();
+        int e = qVar.e();
         int d = qVar.d();
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         o oVar = new o();
         int i17 = 0;
         oVar.a = 0;
-        oVar.b = e6;
+        oVar.b = e;
         oVar.c = 0;
         oVar.d = d;
         arrayList2.add(oVar);
-        int abs = Math.abs(e6 - d) + e6 + d;
+        int abs = Math.abs(e - d) + e + d;
         int i18 = abs * 2;
         int[] iArr3 = new int[i18];
         int[] iArr4 = new int[i18];

@@ -1,8 +1,9 @@
 package com.google.android.recaptcha.internal;
 
 import android.app.Application;
+import f0.f;
+import k7.o7;
 import k7.p7;
-import k7.q7;
 import kotlin.jvm.internal.j;
 import org.telegram.tgnet.TLObject;
 import sc.c;
@@ -11,7 +12,7 @@ import ud.a;
 import ud.d;
 import ud.e;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class zzeh {
     private final Application zza;
@@ -22,7 +23,7 @@ public final class zzeh {
     public zzeh(Application application) {
         this.zza = application;
         int i10 = zzby.zza;
-        this.zzd = p7.a(zzef.zza);
+        this.zzd = o7.a(zzef.zza);
         zzdp.zza(application);
     }
 
@@ -41,7 +42,7 @@ public final class zzeh {
         if (j10 < 5000) {
             throw new zzcg(zzce.zzj, zzcd.zzI, null, null, 12, null);
         }
-        if (f0.e.b(zzehVar.zza, "android.permission.INTERNET") != 0) {
+        if (f.b(zzehVar.zza, "android.permission.INTERNET") != 0) {
             throw new zzcg(zzce.zzc, zzcd.zzao, null, null, 12, null);
         }
     }
@@ -79,7 +80,7 @@ public final class zzeh {
                     aVar = vc.a.a;
                     i10 = zzeaVar2.zzg;
                     if (i10 != 0) {
-                        q7.b(obj);
+                        p7.b(obj);
                         a aVar2 = this.zzb;
                         str2 = str;
                         zzeaVar2.zza = str2;
@@ -102,7 +103,7 @@ public final class zzeh {
                         }
                         obj3 = (a) zzeaVar2.zza;
                         try {
-                            q7.b(obj);
+                            p7.b(obj);
                             zzeq zzeqVar = (zzeq) obj;
                             ((d) obj3).e(null);
                             return zzeqVar;
@@ -116,7 +117,7 @@ public final class zzeh {
                     Object obj4 = (a) zzeaVar2.zzc;
                     zzdq zzdqVar3 = zzeaVar2.zzh;
                     String str3 = (String) zzeaVar2.zza;
-                    q7.b(obj);
+                    p7.b(obj);
                     obj2 = obj4;
                     zzdqVar2 = zzdqVar3;
                     str2 = str3;

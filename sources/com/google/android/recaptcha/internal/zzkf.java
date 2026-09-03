@@ -4,7 +4,7 @@ import java.lang.reflect.Constructor;
 import java.util.Arrays;
 import tc.f;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class zzkf implements zzjt {
     public static final zzkf zza = new zzkf();
@@ -29,8 +29,8 @@ public final class zzkf implements zzjt {
         Object[] zzg = zzizVar.zzc().zzg(f.h(zzztVarArr).subList(1, length));
         try {
             zzizVar.zzc().zze(i10, constructor.newInstance(Arrays.copyOf(zzg, zzg.length)));
-        } catch (Exception e6) {
-            throw new zzdm(6, 14, e6);
+        } catch (Exception e) {
+            throw new zzdm(6, 14, e);
         }
     }
 }

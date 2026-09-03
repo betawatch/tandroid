@@ -11,7 +11,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.util.Pair;
-import c2.z0;
+import c2.a1;
 import j$.util.Objects;
 import j3.v1;
 import java.math.RoundingMode;
@@ -23,7 +23,7 @@ import java.util.concurrent.Executors;
 import k7.y7;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class k0 implements v {
     public static final Object g0 = new Object();
@@ -57,7 +57,7 @@ public final class k0 implements v {
     public f0 Z;
     public final Context a;
     public boolean a0;
-    public final androidx.biometric.e b;
+    public final af.d b;
     public long b0;
     public final boolean c;
     public long c0;
@@ -84,24 +84,24 @@ public final class k0 implements v {
     public k u;
     public AudioTrack v;
     public g w;
-    public z0 x;
+    public a1 x;
     public d y;
     public h0 z;
 
-    public k0(com.google.firebase.messaging.s sVar) {
-        Context context = (Context) sVar.a;
+    public k0(com.google.firebase.messaging.r rVar) {
+        Context context = (Context) rVar.a;
         this.a = context;
-        this.w = context != null ? g.a(context) : (g) sVar.b;
-        this.b = (androidx.biometric.e) sVar.c;
+        this.w = context != null ? g.a(context) : (g) rVar.b;
+        this.b = (af.d) rVar.c;
         int i10 = h5.d0.a;
         this.c = false;
         this.k = false;
         this.l = 0;
-        this.p = (l0) sVar.d;
+        this.p = (l0) rVar.d;
         h5.c cVar = new h5.c();
         this.h = cVar;
         cVar.c();
-        this.i = new y(new androidx.biometric.f0(this, 17));
+        this.i = new y(new androidx.biometric.e0(this, 16));
         b0 b0Var = new b0();
         this.d = b0Var;
         w0 w0Var = new w0();
@@ -252,13 +252,13 @@ public final class k0 implements v {
                 u uVar = new u(write, this.t.a, ((i10 >= 24 && write == -6) || write == -32) && this.I > 0);
                 t tVar2 = this.r;
                 if (tVar2 != null) {
-                    tVar2.l(uVar);
+                    tVar2.u(uVar);
                 }
                 if (uVar.b) {
                     this.w = g.c;
                     throw uVar;
                 }
-                cVar.K(uVar);
+                cVar.C(uVar);
                 return;
             }
             cVar.c = null;
@@ -267,7 +267,7 @@ public final class k0 implements v {
                     this.e0 = false;
                 }
                 if (this.V && (tVar = this.r) != null && write < remaining2 && !this.e0) {
-                    tVar.b();
+                    tVar.e();
                 }
             }
             int i11 = this.t.c;
@@ -303,7 +303,7 @@ public final class k0 implements v {
         t tVar;
         boolean z10 = z();
         boolean z11 = this.c;
-        androidx.biometric.e eVar = this.b;
+        af.d dVar = this.b;
         if (z10) {
             v1Var = v1.d;
         } else {
@@ -319,7 +319,7 @@ public final class k0 implements v {
                         }
                     }
                     v1Var = this.B;
-                    s0 s0Var = (s0) eVar.d;
+                    s0 s0Var = (s0) dVar.d;
                     float f10 = v1Var.a;
                     if (s0Var.c != f10) {
                         s0Var.c = f10;
@@ -349,7 +349,7 @@ public final class k0 implements v {
                     }
                 }
                 z4 = this.C;
-                ((q0) eVar.c).m = z4;
+                ((q0) dVar.c).m = z4;
                 this.C = z4;
                 long max = Math.max(0L, j10);
                 g0 g0Var3 = this.t;
@@ -455,10 +455,10 @@ public final class k0 implements v {
                 }
                 for (int i23 = 0; i23 < vVar.size(); i23++) {
                     n nVar = (n) vVar.get(i23);
-                    l e6 = nVar.e(lVar);
+                    l e = nVar.e(lVar);
                     if (nVar.isActive()) {
-                        h5.a.i(!e6.equals(l.e));
-                        lVar = e6;
+                        h5.a.i(!e.equals(l.e));
+                        lVar = e;
                     }
                 }
                 int i24 = lVar.b;
@@ -475,8 +475,8 @@ public final class k0 implements v {
                 z4 = z10;
                 i14 = i26;
                 i13 = 0;
-            } catch (m e10) {
-                throw new r(e10, n0Var);
+            } catch (m e6) {
+                throw new r(e6, n0Var);
             }
         } else {
             s8.t tVar = s8.v.b;
@@ -682,7 +682,7 @@ public final class k0 implements v {
                         h0 = Executors.newSingleThreadExecutor(new androidx.emoji2.text.a("ExoPlayer:AudioTrackReleaseThread", 1));
                     }
                     i0++;
-                    h0.execute(new gf.c(21, audioTrack2, cVar));
+                    h0.execute(new ff.c(26, audioTrack2, cVar));
                 } catch (Throwable th2) {
                     throw th2;
                 }
@@ -699,25 +699,25 @@ public final class k0 implements v {
         i iVar;
         if (this.x == null && (context = this.a) != null) {
             this.f0 = Looper.myLooper();
-            z0 z0Var = new z0(context, new hg.f(this, 19));
-            this.x = z0Var;
-            androidx.mediarouter.app.h hVar = (androidx.mediarouter.app.h) z0Var.f;
-            Handler handler = (Handler) z0Var.d;
-            Context context2 = (Context) z0Var.b;
-            if (z0Var.a) {
-                b10 = (g) z0Var.h;
+            a1 a1Var = new a1(context, new gg.f(this, 24));
+            this.x = a1Var;
+            androidx.mediarouter.app.h hVar = (androidx.mediarouter.app.h) a1Var.f;
+            Handler handler = (Handler) a1Var.d;
+            Context context2 = (Context) a1Var.b;
+            if (a1Var.a) {
+                b10 = (g) a1Var.h;
                 b10.getClass();
             } else {
-                z0Var.a = true;
-                j jVar = (j) z0Var.g;
+                a1Var.a = true;
+                j jVar = (j) a1Var.g;
                 if (jVar != null) {
                     jVar.a.registerContentObserver(jVar.b, false, jVar);
                 }
-                if (h5.d0.a >= 23 && (iVar = (i) z0Var.e) != null) {
+                if (h5.d0.a >= 23 && (iVar = (i) a1Var.e) != null) {
                     h.a(context2, iVar, handler);
                 }
                 b10 = g.b(context2, hVar != null ? context2.registerReceiver(hVar, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG"), null, handler) : null);
-                z0Var.h = b10;
+                a1Var.h = b10;
             }
             this.w = b10;
         }
@@ -742,11 +742,11 @@ public final class k0 implements v {
         h0 h0Var = this.A;
         long j11 = min - h0Var.c;
         boolean equals = h0Var.a.equals(v1.d);
-        androidx.biometric.e eVar = this.b;
+        af.d dVar = this.b;
         if (equals) {
             t6 = this.A.b + j11;
         } else if (arrayDeque.isEmpty()) {
-            s0 s0Var = (s0) eVar.d;
+            s0 s0Var = (s0) dVar.d;
             if (s0Var.o >= 1024) {
                 long j12 = s0Var.n;
                 s0Var.j.getClass();
@@ -762,7 +762,7 @@ public final class k0 implements v {
             h0 h0Var2 = (h0) arrayDeque.getFirst();
             t6 = h0Var2.b - h5.d0.t(h0Var2.c - min, this.A.a.a);
         }
-        return h5.d0.M(this.t.e, ((q0) eVar.c).t) + t6;
+        return h5.d0.M(this.t.e, ((q0) dVar.c).t) + t6;
     }
 
     public final int i(j3.n0 n0Var) {
@@ -850,11 +850,11 @@ public final class k0 implements v {
         f2.c cVar = this.n;
         if (!o10) {
             try {
-            } catch (s e6) {
-                if (e6.b) {
-                    throw e6;
+            } catch (s e) {
+                if (e.b) {
+                    throw e;
                 }
-                cVar.K(e6);
+                cVar.C(e);
                 return false;
             }
         }
@@ -888,12 +888,12 @@ public final class k0 implements v {
         boolean c3 = yVar.c(k10);
         yVar.p = c3;
         if (z4 && !c3 && playState != 1) {
-            androidx.biometric.f0 f0Var = yVar.a;
+            androidx.biometric.e0 e0Var = yVar.a;
             int i16 = yVar.e;
             long S = h5.d0.S(yVar.i);
-            k0 k0Var = (k0) f0Var.b;
+            k0 k0Var = (k0) e0Var.b;
             if (k0Var.r != null) {
-                k0Var.r.e(i16, S, SystemClock.elapsedRealtime() - k0Var.c0);
+                k0Var.r.n(i16, S, SystemClock.elapsedRealtime() - k0Var.c0);
                 if (this.O == null) {
                     h5.a.f(byteBuffer.order() == ByteOrder.LITTLE_ENDIAN);
                     if (byteBuffer.hasRemaining()) {
@@ -966,7 +966,7 @@ public final class k0 implements v {
                                 case 13:
                                 case 19:
                                 default:
-                                    throw new IllegalStateException(l.d.j(i17, "Unexpected audio encoding: "));
+                                    throw new IllegalStateException(kf.k0.j(i17, "Unexpected audio encoding: "));
                                 case 14:
                                     int position2 = byteBuffer.position();
                                     int limit = byteBuffer.limit() - 10;
@@ -1040,7 +1040,7 @@ public final class k0 implements v {
                             if (tVar != null) {
                                 StringBuilder s6 = android.support.v4.media.a.s(M, "Unexpected audio track timestamp discontinuity: expected ", ", got ");
                                 s6.append(j10);
-                                tVar.l(new b7.a(s6.toString()));
+                                tVar.u(new b7.a(s6.toString()));
                             }
                             this.K = true;
                         }
@@ -1052,7 +1052,7 @@ public final class k0 implements v {
                                 a(j10);
                                 t tVar2 = this.r;
                                 if (tVar2 != null && j11 != 0) {
-                                    tVar2.p();
+                                    tVar2.y();
                                 }
                             }
                             return false;
@@ -1114,14 +1114,14 @@ public final class k0 implements v {
             g0Var.getClass();
             try {
                 a2 = g0Var.a(this.a0, this.y, this.X);
-            } catch (s e6) {
+            } catch (s e) {
                 t tVar = this.r;
                 if (tVar != null) {
-                    tVar.l(e6);
+                    tVar.u(e);
                 }
-                throw e6;
+                throw e;
             }
-        } catch (s e10) {
+        } catch (s e6) {
             g0 g0Var2 = this.t;
             if (g0Var2.h > 1000000) {
                 g0 g0Var3 = new g0(g0Var2.a, g0Var2.b, g0Var2.c, g0Var2.d, g0Var2.e, g0Var2.f, g0Var2.g, MediaController.VIDEO_BITRATE_480, g0Var2.i, g0Var2.j);
@@ -1129,24 +1129,24 @@ public final class k0 implements v {
                     try {
                         a2 = g0Var3.a(this.a0, this.y, this.X);
                         this.t = g0Var3;
-                    } catch (s e11) {
+                    } catch (s e10) {
                         t tVar2 = this.r;
                         if (tVar2 != null) {
-                            tVar2.l(e11);
+                            tVar2.u(e10);
                         }
-                        throw e11;
+                        throw e10;
                     }
-                } catch (s e12) {
-                    e10.addSuppressed(e12);
+                } catch (s e11) {
+                    e6.addSuppressed(e11);
                     if (this.t.c == 1) {
                     }
                 }
             }
             if (this.t.c == 1) {
-                throw e10;
+                throw e6;
             }
             this.d0 = true;
-            throw e10;
+            throw e6;
         }
         this.v = a2;
         if (p(a2)) {
@@ -1331,8 +1331,8 @@ public final class k0 implements v {
         if (o()) {
             try {
                 this.v.setPlaybackParams(new PlaybackParams().allowDefaults().setSpeed(this.B.a).setPitch(this.B.b).setAudioFallbackMode(2));
-            } catch (IllegalArgumentException e6) {
-                h5.a.L("DefaultAudioSink", "Failed to set playback params", e6);
+            } catch (IllegalArgumentException e) {
+                h5.a.L("DefaultAudioSink", "Failed to set playback params", e);
             }
             v1 v1Var = new v1(this.v.getPlaybackParams().getSpeed(), this.v.getPlaybackParams().getPitch());
             this.B = v1Var;

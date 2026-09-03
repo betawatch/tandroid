@@ -6,7 +6,7 @@ import org.telegram.messenger.video.VideoPlayerHolderBase;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w8 implements Runnable {
     public final /* synthetic */ int a;
@@ -45,13 +45,13 @@ public final /* synthetic */ class w8 implements Runnable {
                 ((MessagesStorage) this.b).lambda$createTaskForMid$115(this.d, this.c, (ArrayList) this.e);
                 break;
             case 6:
-                ((MessagesStorage) this.b).lambda$loadPendingTasks$24((org.telegram.ui.ActionBar.d6) this.e, this.d, this.c);
+                ((MessagesStorage) this.b).lambda$loadPendingTasks$24((org.telegram.ui.ActionBar.c6) this.e, this.d, this.c);
                 break;
             case 7:
                 ((VideoPlayerHolderBase) this.b).lambda$seekTo$12(this.c, this.d, (Runnable) this.e);
                 break;
             case 8:
-                org.telegram.ui.b7.U((org.telegram.ui.b7) this.b, this.d, this.c, (org.telegram.ui.q6) this.e);
+                org.telegram.ui.d7.U((org.telegram.ui.d7) this.b, this.d, this.c, (org.telegram.ui.s6) this.e);
                 break;
             default:
                 ProfileActivity profileActivity = (ProfileActivity) this.b;

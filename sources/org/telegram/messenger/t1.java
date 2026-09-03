@@ -10,12 +10,12 @@ import org.telegram.messenger.camera.CameraSession;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Components.ma0;
-import org.telegram.ui.Components.n71;
+import org.telegram.ui.Components.la0;
+import org.telegram.ui.Components.m71;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.xn;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t1 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -50,27 +50,27 @@ public final /* synthetic */ class t1 implements Runnable {
                 ((MediaDataController) this.d).lambda$broadcastPinnedMessage$169((ArrayList) this.b, this.c, (ArrayList) this.e, (ArrayList) this.f, (ArrayList) this.h, (a0.h) this.n, (a0.h) this.r);
                 break;
             case 2:
-                ((SendMessagesHelper) this.d).lambda$sendCallback$43((TLRPC.TL_error) this.e, (TLObject) this.f, (TwoStepVerificationActivity) this.h, this.c, (MessageObject) this.n, (TL_keyboard.KeyboardButtonProto) this.b, (xn) this.r);
+                ((SendMessagesHelper) this.d).lambda$sendCallback$43((TLRPC.TL_error) this.e, (TLObject) this.f, (TwoStepVerificationActivity) this.h, this.c, (MessageObject) this.n, (TL_keyboard.KeyboardButtonProto) this.b, (zn) this.r);
                 break;
             case 3:
                 ((CameraController) this.d).lambda$recordVideo$14((Camera) this.e, (CameraSession) this.f, this.c, (File) this.h, (CameraInfo) this.n, (CameraController.VideoTakeCallback) this.b, (Runnable) this.r);
                 break;
             default:
-                uf.u0 u0Var = (uf.u0) this.d;
+                tf.u0 u0Var = (tf.u0) this.d;
                 String str = (String) this.e;
                 TLObject tLObject = (TLObject) this.f;
                 TLRPC.User user = (TLRPC.User) this.h;
                 String str2 = (String) this.n;
                 MessagesStorage messagesStorage = (MessagesStorage) this.b;
                 String str3 = (String) this.r;
-                ma0 ma0Var = u0Var.S;
+                la0 la0Var = u0Var.S;
                 if (str.equals(u0Var.o0)) {
                     u0Var.r0 = 0;
                     boolean z10 = this.c;
                     if (z10 && tLObject == null) {
                         u0Var.T(false, user, str, str2);
-                    } else if (ma0Var != null) {
-                        ma0Var.b(false);
+                    } else if (la0Var != null) {
+                        la0Var.b(false);
                     }
                     if (tLObject instanceof TLRPC.TL_messages_botResults) {
                         TLRPC.TL_messages_botResults tL_messages_botResults = (TLRPC.TL_messages_botResults) tLObject;
@@ -103,9 +103,9 @@ public final /* synthetic */ class t1 implements Runnable {
                             }
                             z4 = true;
                         }
-                        n71 n71Var = u0Var.m0;
-                        if (n71Var != null) {
-                            AndroidUtilities.cancelRunOnUIThread(n71Var);
+                        m71 m71Var = u0Var.m0;
+                        if (m71Var != null) {
+                            AndroidUtilities.cancelRunOnUIThread(m71Var);
                             u0Var.m0 = null;
                         }
                         u0Var.F = null;
@@ -119,7 +119,7 @@ public final /* synthetic */ class t1 implements Runnable {
                         u0Var.H = null;
                         u0Var.M = null;
                         u0Var.l0 = false;
-                        ma0Var.a((u0Var.O.isEmpty() && u0Var.Q == null && u0Var.R == null) ? false : true);
+                        la0Var.a((u0Var.O.isEmpty() && u0Var.Q == null && u0Var.R == null) ? false : true);
                         if (!z4) {
                             u0Var.l();
                             break;
@@ -146,7 +146,7 @@ public final /* synthetic */ class t1 implements Runnable {
         this.r = hVar2;
     }
 
-    public /* synthetic */ t1(MessageObject messageObject, SendMessagesHelper sendMessagesHelper, TLObject tLObject, TLRPC.TL_error tL_error, TL_keyboard.KeyboardButtonProto keyboardButtonProto, xn xnVar, TwoStepVerificationActivity twoStepVerificationActivity, boolean z4) {
+    public /* synthetic */ t1(MessageObject messageObject, SendMessagesHelper sendMessagesHelper, TLObject tLObject, TLRPC.TL_error tL_error, TL_keyboard.KeyboardButtonProto keyboardButtonProto, zn znVar, TwoStepVerificationActivity twoStepVerificationActivity, boolean z4) {
         this.d = sendMessagesHelper;
         this.e = tL_error;
         this.f = tLObject;
@@ -154,7 +154,7 @@ public final /* synthetic */ class t1 implements Runnable {
         this.c = z4;
         this.n = messageObject;
         this.b = keyboardButtonProto;
-        this.r = xnVar;
+        this.r = znVar;
     }
 
     public /* synthetic */ t1(CameraController cameraController, Camera camera, CameraSession cameraSession, boolean z4, File file, CameraInfo cameraInfo, CameraController.VideoTakeCallback videoTakeCallback, Runnable runnable) {
@@ -168,7 +168,7 @@ public final /* synthetic */ class t1 implements Runnable {
         this.r = runnable;
     }
 
-    public /* synthetic */ t1(uf.u0 u0Var, String str, boolean z4, TLObject tLObject, TLRPC.User user, String str2, MessagesStorage messagesStorage, String str3) {
+    public /* synthetic */ t1(tf.u0 u0Var, String str, boolean z4, TLObject tLObject, TLRPC.User user, String str2, MessagesStorage messagesStorage, String str3) {
         this.d = u0Var;
         this.e = str;
         this.c = z4;

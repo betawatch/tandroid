@@ -1,44 +1,27 @@
 package org.telegram.ui;
 
+import android.graphics.Paint;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import org.telegram.messenger.ChatObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class u40 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ ChatObject.VideoParticipant a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ d60 c;
+public final class u40 extends Paint {
+    public final /* synthetic */ e60 a;
 
-    public u40(d60 d60Var, ChatObject.VideoParticipant videoParticipant, boolean z4) {
-        this.c = d60Var;
-        this.a = videoParticipant;
-        this.b = z4;
+    public u40(e60 e60Var) {
+        this.a = e60Var;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
+    @Override // android.graphics.Paint
+    public final void setAlpha(int i10) {
         ViewGroup viewGroup;
-        d60 d60Var = this.c;
-        k50 k50Var = d60Var.N;
-        k50Var.getViewTreeObserver().removeOnPreDrawListener(this);
-        d60Var.n2 = null;
-        w30 w30Var = d60Var.X1;
-        ChatObject.VideoParticipant videoParticipant = this.a;
-        w30Var.j(videoParticipant);
-        if (d60Var.p0) {
-            d60Var.p0 = false;
-            d60Var.O0(true);
-            if (this.b && videoParticipant != null) {
-                k50Var.u0(0);
-            }
-            d60Var.p0 = true;
-        } else {
-            d60Var.O0(true);
+        ViewGroup viewGroup2;
+        super.setAlpha(i10);
+        e60 e60Var = this.a;
+        viewGroup = ((org.telegram.ui.ActionBar.g3) e60Var).containerView;
+        if (viewGroup != null) {
+            viewGroup2 = ((org.telegram.ui.ActionBar.g3) e60Var).containerView;
+            viewGroup2.invalidate();
         }
-        viewGroup = ((org.telegram.ui.ActionBar.h3) d60Var).containerView;
-        viewGroup.requestLayout();
-        return false;
     }
 }

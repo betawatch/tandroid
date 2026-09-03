@@ -21,7 +21,7 @@ import java.util.Collections;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class i extends g.s {
     public LinearLayout B;
@@ -33,9 +33,9 @@ public final class i extends g.s {
     public boolean H;
     public long I;
     public final d J;
-    public final c2.c0 f;
+    public final c2.d0 f;
     public final e h;
-    public c2.v n;
+    public c2.w n;
     public ArrayList r;
     public TextView s;
     public TextView v;
@@ -48,13 +48,13 @@ public final class i extends g.s {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public i(Context context) {
-        super(r3, r1 == 0 ? j7.a0.e(r3) : r1);
+        super(r3, r1 == 0 ? j7.z.e(r3) : r1);
         int i10 = 0;
-        ContextThemeWrapper a2 = j7.a0.a(context, false);
-        int g10 = j7.a0.g(a2, R.attr.mediaRouteTheme);
-        this.n = c2.v.c;
+        ContextThemeWrapper a2 = j7.z.a(context, false);
+        int g10 = j7.z.g(a2, R.attr.mediaRouteTheme);
+        this.n = c2.w.c;
         this.J = new d(this, i10);
-        this.f = c2.c0.d(getContext());
+        this.f = c2.d0.d(getContext());
         this.h = new e(this, i10);
         this.G = new h(this, i10);
     }
@@ -87,16 +87,16 @@ public final class i extends g.s {
     public final void f() {
         if (this.H) {
             this.f.getClass();
-            c2.c0.b();
-            ArrayList arrayList = new ArrayList(c2.c0.c().j);
+            c2.d0.b();
+            ArrayList arrayList = new ArrayList(c2.d0.c().j);
             int size = arrayList.size();
             while (true) {
                 int i10 = size - 1;
                 if (size <= 0) {
                     break;
                 }
-                c2.a0 a0Var = (c2.a0) arrayList.get(i10);
-                if (a0Var.d() || !a0Var.g || !a0Var.h(this.n)) {
+                c2.b0 b0Var = (c2.b0) arrayList.get(i10);
+                if (b0Var.d() || !b0Var.g || !b0Var.h(this.n)) {
                     arrayList.remove(i10);
                 }
                 size = i10;
@@ -112,19 +112,19 @@ public final class i extends g.s {
         }
     }
 
-    public final void h(c2.v vVar) {
-        if (vVar == null) {
+    public final void h(c2.w wVar) {
+        if (wVar == null) {
             throw new IllegalArgumentException("selector must not be null");
         }
-        if (this.n.equals(vVar)) {
+        if (this.n.equals(wVar)) {
             return;
         }
-        this.n = vVar;
+        this.n = wVar;
         if (this.H) {
-            c2.c0 c0Var = this.f;
+            c2.d0 d0Var = this.f;
             e eVar = this.h;
-            c0Var.h(eVar);
-            c0Var.a(vVar, eVar, 1);
+            d0Var.h(eVar);
+            d0Var.a(wVar, eVar, 1);
         }
         f();
     }
@@ -207,36 +207,36 @@ public final class i extends g.s {
         this.D = (ProgressBar) findViewById(R.id.mr_chooser_search_progress_bar);
         Context context = getContext();
         int i10 = 0;
-        if (j7.y.a == null) {
-            if (!j7.y.c(context)) {
+        if (j7.x.a == null) {
+            if (!j7.x.c(context)) {
                 PackageManager packageManager = context.getPackageManager();
-                if (j7.y.e == null) {
-                    j7.y.e = Boolean.valueOf(packageManager.hasSystemFeature("android.hardware.type.watch"));
+                if (j7.x.e == null) {
+                    j7.x.e = Boolean.valueOf(packageManager.hasSystemFeature("android.hardware.type.watch"));
                 }
-                if (!j7.y.e.booleanValue() && !j7.y.a(context) && !j7.y.d(context)) {
+                if (!j7.x.e.booleanValue() && !j7.x.a(context) && !j7.x.d(context)) {
                     z4 = true;
-                    j7.y.a = Boolean.valueOf(z4);
+                    j7.x.a = Boolean.valueOf(z4);
                 }
             }
             z4 = false;
-            j7.y.a = Boolean.valueOf(z4);
+            j7.x.a = Boolean.valueOf(z4);
         }
-        if (!j7.y.a.booleanValue()) {
-            if (j7.y.c == null) {
+        if (!j7.x.a.booleanValue()) {
+            if (j7.x.c == null) {
                 SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");
-                j7.y.c = Boolean.valueOf((Build.VERSION.SDK_INT < 30 || sensorManager == null || sensorManager.getDefaultSensor(36) == null) ? false : true);
+                j7.x.c = Boolean.valueOf((Build.VERSION.SDK_INT < 30 || sensorManager == null || sensorManager.getDefaultSensor(36) == null) ? false : true);
             }
-            if (!j7.y.c.booleanValue()) {
-                if (j7.y.c(context) || j7.y.b(context.getResources())) {
+            if (!j7.x.c.booleanValue()) {
+                if (j7.x.c(context) || j7.x.b(context.getResources())) {
                     string = context.getString(R.string.mr_chooser_wifi_warning_description_tablet);
-                } else if (j7.y.d(context)) {
+                } else if (j7.x.d(context)) {
                     string = context.getString(R.string.mr_chooser_wifi_warning_description_tv);
                 } else {
                     PackageManager packageManager2 = context.getPackageManager();
-                    if (j7.y.e == null) {
-                        j7.y.e = Boolean.valueOf(packageManager2.hasSystemFeature("android.hardware.type.watch"));
+                    if (j7.x.e == null) {
+                        j7.x.e = Boolean.valueOf(packageManager2.hasSystemFeature("android.hardware.type.watch"));
                     }
-                    string = j7.y.e.booleanValue() ? context.getString(R.string.mr_chooser_wifi_warning_description_watch) : j7.y.a(context) ? context.getString(R.string.mr_chooser_wifi_warning_description_car) : context.getString(R.string.mr_chooser_wifi_warning_description_unknown);
+                    string = j7.x.e.booleanValue() ? context.getString(R.string.mr_chooser_wifi_warning_description_watch) : j7.x.a(context) ? context.getString(R.string.mr_chooser_wifi_warning_description_car) : context.getString(R.string.mr_chooser_wifi_warning_description_unknown);
                 }
                 this.x.setText(string);
                 this.y.setMovementMethod(LinkMovementMethod.getInstance());
@@ -246,7 +246,7 @@ public final class i extends g.s {
                 listView.setAdapter((ListAdapter) this.F);
                 this.E.setOnItemClickListener(this.F);
                 this.E.setEmptyView(findViewById(android.R.id.empty));
-                getWindow().setLayout(j7.z.a(getContext()), -2);
+                getWindow().setLayout(j7.y.a(getContext()), -2);
                 getContext().registerReceiver(this.G, new IntentFilter("android.intent.action.SCREEN_OFF"));
             }
         }
@@ -259,7 +259,7 @@ public final class i extends g.s {
         listView2.setAdapter((ListAdapter) this.F);
         this.E.setOnItemClickListener(this.F);
         this.E.setEmptyView(findViewById(android.R.id.empty));
-        getWindow().setLayout(j7.z.a(getContext()), -2);
+        getWindow().setLayout(j7.y.a(getContext()), -2);
         getContext().registerReceiver(this.G, new IntentFilter("android.intent.action.SCREEN_OFF"));
     }
 

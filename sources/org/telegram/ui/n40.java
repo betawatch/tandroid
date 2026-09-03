@@ -1,46 +1,19 @@
 package org.telegram.ui;
 
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class n40 extends LinearLayout {
-    public boolean a;
-    public final /* synthetic */ org.telegram.ui.Components.yc0 b;
-    public final /* synthetic */ j40 c;
-    public final /* synthetic */ k40 d;
+public final class n40 extends AnimatorListenerAdapter {
+    public final /* synthetic */ e60 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n40(LaunchActivity launchActivity, org.telegram.ui.Components.yc0 yc0Var, j40 j40Var, k40 k40Var) {
-        super(launchActivity);
-        this.b = yc0Var;
-        this.c = j40Var;
-        this.d = k40Var;
-        this.a = false;
+    public n40(e60 e60Var) {
+        this.a = e60Var;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        this.a = true;
-        org.telegram.ui.Components.yc0 yc0Var = this.b;
-        yc0Var.setItemCount(5);
-        j40 j40Var = this.c;
-        j40Var.setItemCount(5);
-        k40 k40Var = this.d;
-        k40Var.setItemCount(5);
-        yc0Var.getLayoutParams().height = AndroidUtilities.dp(54.0f) * 5;
-        j40Var.getLayoutParams().height = AndroidUtilities.dp(54.0f) * 5;
-        k40Var.getLayoutParams().height = AndroidUtilities.dp(54.0f) * 5;
-        this.a = false;
-        super.onMeasure(i10, i11);
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.a) {
-            return;
-        }
-        super.requestLayout();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        this.a.U0 = null;
     }
 }

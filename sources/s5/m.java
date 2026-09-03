@@ -7,7 +7,6 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.messaging.s;
 import h7.u;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -21,10 +20,9 @@ import java.util.NoSuchElementException;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.zip.InflaterInputStream;
-import m.r3;
-import org.telegram.ui.Components.ai;
+import m.s3;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class m implements t0.h, OnCompleteListener, a3.b {
     public final /* synthetic */ int a;
@@ -33,7 +31,7 @@ public final class m implements t0.h, OnCompleteListener, a3.b {
     public Object d;
 
     public /* synthetic */ m() {
-        this.a = 10;
+        this.a = 11;
     }
 
     @Override // t0.h
@@ -79,7 +77,7 @@ public final class m implements t0.h, OnCompleteListener, a3.b {
     @Override // rc.a
     public Object get() {
         int i10 = 7;
-        return new y2.q(new z9.d(i10), new u(i10), (d3.b) ((c5.j) this.b).get(), (e3.g) ((r3) this.c).get(), (s) ((sf.f) this.d).get());
+        return new y2.q(new u(i10), new db.a(i10), (d3.b) ((c5.j) this.b).get(), (e3.g) ((s3) this.c).get(), (com.google.firebase.messaging.r) ((rf.f) this.d).get());
     }
 
     @Override // t0.h
@@ -87,17 +85,17 @@ public final class m implements t0.h, OnCompleteListener, a3.b {
         return (ClipDescription) this.c;
     }
 
-    public ye.e h(ye.f fVar) {
+    public xe.f h(xe.g gVar) {
         InputStream inputStream;
-        int i10 = fVar.e;
-        InputStream inputStream2 = (ze.a) this.b;
-        if (fVar.b) {
-            ai aiVar = (ai) this.d;
-            aiVar.getClass();
+        int i10 = gVar.e;
+        InputStream inputStream2 = (ye.a) this.b;
+        if (gVar.b) {
+            xe.b bVar = (xe.b) this.d;
+            bVar.getClass();
             byte[] bArr = new byte[i10];
             int i11 = 0;
             while (i11 < i10) {
-                int read = ((com.google.firebase.messaging.d) aiVar.b).read(bArr, i11, i10 - i11);
+                int read = ((com.google.firebase.messaging.d) bVar.a).read(bArr, i11, i10 - i11);
                 if (read <= 0) {
                     throw new EOFException();
                 }
@@ -116,22 +114,22 @@ public final class m implements t0.h, OnCompleteListener, a3.b {
             inputStream2 = new ByteArrayInputStream(bArr, 0, i12);
             i10 = i12;
         }
-        if (fVar.f) {
-            throw new ye.c("Frame encryption is not supported");
+        if (gVar.f) {
+            throw new xe.d("Frame encryption is not supported");
         }
-        if (fVar.d) {
-            i10 = fVar.g;
+        if (gVar.d) {
+            i10 = gVar.g;
             inputStream = new InflaterInputStream(inputStream2);
         } else {
             inputStream = inputStream2;
         }
-        return new ye.e(inputStream, fVar.c, i10, (ye.h) this.c, fVar);
+        return new xe.f(inputStream, gVar.c, i10, (xe.i) this.c, gVar);
     }
 
     public Object i(Bitmap bitmap) {
-        ug.a aVar = (ug.a) this.b;
+        tg.a aVar = (tg.a) this.b;
         if (aVar.a(bitmap)) {
-            this.d = ((ug.b) this.c).a(bitmap);
+            this.d = ((tg.b) this.c).a(bitmap);
             aVar.b(bitmap);
         }
         return this.d;
@@ -144,8 +142,8 @@ public final class m implements t0.h, OnCompleteListener, a3.b {
             Parcel M0 = gVar.M0();
             g7.b.c(M0, iVar);
             gVar.Q0(M0, 9);
-        } catch (RemoteException e6) {
-            throw new a7.b(e6);
+        } catch (RemoteException e) {
+            throw new a7.b(e);
         }
     }
 
@@ -252,9 +250,9 @@ public final class m implements t0.h, OnCompleteListener, a3.b {
                     fVar = fVar2;
                 }
                 return sb.toString();
-            case 12:
+            case 10:
                 StringBuilder sb2 = new StringBuilder("id3v2tag[pos=");
-                ze.a aVar = (ze.a) this.b;
+                ye.a aVar = (ye.a) this.b;
                 sb2.append(aVar.b);
                 sb2.append(", ");
                 sb2.append(aVar.e());
@@ -285,18 +283,18 @@ public final class m implements t0.h, OnCompleteListener, a3.b {
         this.b = dVar;
     }
 
-    public m(ug.b bVar) {
-        this.a = 3;
-        this.b = new ug.a();
+    public m(tg.b bVar) {
+        this.a = 2;
+        this.b = new tg.a();
         this.c = bVar;
     }
 
-    public m(InputStream inputStream, long j10, int i10, ye.h hVar) {
-        this.a = 12;
-        ze.a aVar = new ze.a(inputStream, j10, i10);
+    public m(InputStream inputStream, long j10, int i10, xe.i iVar) {
+        this.a = 10;
+        ye.a aVar = new ye.a(inputStream, j10, i10);
         this.b = aVar;
-        this.d = new ai(aVar, 24);
-        this.c = hVar;
+        this.d = new xe.b(aVar);
+        this.c = iVar;
     }
 
     public m(cb.m mVar, tb.e eVar, vb.e eVar2) {
@@ -374,7 +372,7 @@ public final class m implements t0.h, OnCompleteListener, a3.b {
     }
 
     public m(ArrayDeque arrayDeque, BufferedReader bufferedReader) {
-        this.a = 2;
+        this.a = 3;
         this.c = arrayDeque;
         this.b = bufferedReader;
     }

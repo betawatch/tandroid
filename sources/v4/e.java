@@ -3,7 +3,7 @@ package v4;
 import java.nio.ByteBuffer;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class e extends n3.l implements g {
     public e(String str) {
@@ -12,7 +12,7 @@ public abstract class e extends n3.l implements g {
         n3.i[] iVarArr = this.e;
         h5.a.i(i10 == iVarArr.length);
         for (n3.i iVar : iVarArr) {
-            iVar.j(1024);
+            iVar.k(1024);
         }
     }
 
@@ -38,11 +38,11 @@ public abstract class e extends n3.l implements g {
         try {
             ByteBuffer byteBuffer = jVar2.d;
             byteBuffer.getClass();
-            kVar.j(jVar2.f, k(byteBuffer.limit(), z4, byteBuffer.array()), jVar2.s);
+            kVar.k(jVar2.f, k(byteBuffer.limit(), z4, byteBuffer.array()), jVar2.s);
             kVar.b &= ConnectionsManager.DEFAULT_DATACENTER_ID;
             return null;
-        } catch (h e6) {
-            return e6;
+        } catch (h e) {
+            return e;
         }
     }
 

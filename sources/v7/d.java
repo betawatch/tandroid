@@ -8,7 +8,7 @@ import android.os.StrictMode;
 import android.widget.FrameLayout;
 import b6.m;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class d extends FrameLayout {
     private final j zza;
@@ -56,8 +56,8 @@ public abstract class d extends FrameLayout {
         try {
             w7.g gVar = (w7.g) mVar.c;
             gVar.Q0(gVar.M0(), 5);
-        } catch (RemoteException e6) {
-            throw new a7.b(e6);
+        } catch (RemoteException e) {
+            throw new a7.b(e);
         }
     }
 
@@ -74,8 +74,8 @@ public abstract class d extends FrameLayout {
                 g7.b.b(M0, bundle2);
                 gVar.Q0(M0, 10);
                 w7.d.b(bundle2, bundle);
-            } catch (RemoteException e6) {
-                throw new a7.b(e6);
+            } catch (RemoteException e) {
+                throw new a7.b(e);
             }
         }
     }
@@ -88,8 +88,8 @@ public abstract class d extends FrameLayout {
             try {
                 w7.g gVar = (w7.g) mVar.c;
                 gVar.Q0(gVar.M0(), 11);
-            } catch (RemoteException e6) {
-                throw new a7.b(e6);
+            } catch (RemoteException e) {
+                throw new a7.b(e);
             }
         }
     }
@@ -100,8 +100,8 @@ public abstract class d extends FrameLayout {
             try {
                 w7.g gVar = (w7.g) mVar.c;
                 gVar.Q0(gVar.M0(), 6);
-            } catch (RemoteException e6) {
-                throw new a7.b(e6);
+            } catch (RemoteException e) {
+                throw new a7.b(e);
             }
         }
     }
@@ -116,8 +116,8 @@ public abstract class d extends FrameLayout {
         try {
             w7.g gVar = (w7.g) mVar.c;
             gVar.Q0(gVar.M0(), 4);
-        } catch (RemoteException e6) {
-            throw new a7.b(e6);
+        } catch (RemoteException e) {
+            throw new a7.b(e);
         }
     }
 
@@ -150,8 +150,8 @@ public abstract class d extends FrameLayout {
             }
             L0.recycle();
             w7.d.b(bundle3, bundle);
-        } catch (RemoteException e6) {
-            throw new a7.b(e6);
+        } catch (RemoteException e) {
+            throw new a7.b(e);
         }
     }
 
@@ -171,8 +171,8 @@ public abstract class d extends FrameLayout {
         try {
             w7.g gVar = (w7.g) mVar.c;
             gVar.Q0(gVar.M0(), 13);
-        } catch (RemoteException e6) {
-            throw new a7.b(e6);
+        } catch (RemoteException e) {
+            throw new a7.b(e);
         }
     }
 }

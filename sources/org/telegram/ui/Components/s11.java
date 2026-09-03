@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class s11 extends FrameLayout {
     public final ImageView a;
@@ -23,14 +23,14 @@ public final class s11 extends FrameLayout {
         super(context);
         this.c = editorAlert;
         View view = new View(context);
-        view.setBackgroundDrawable(org.telegram.ui.ActionBar.k6.b0(AndroidUtilities.dp(18.0f), -854795));
-        addView(view, k7.c6.d(-1, 36.0f, 51, 14.0f, 11.0f, 14.0f, 0.0f));
+        view.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(18.0f), -854795));
+        addView(view, k7.b6.d(-1, 36.0f, 51, 14.0f, 11.0f, 14.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         imageView.setImageResource(R.drawable.smiles_inputsearch);
         imageView.setColorFilter(new PorterDuffColorFilter(-6182737, PorterDuff.Mode.MULTIPLY));
-        addView(imageView, k7.c6.d(36, 36.0f, 51, 16.0f, 11.0f, 0.0f, 0.0f));
+        addView(imageView, k7.b6.d(36, 36.0f, 51, 16.0f, 11.0f, 0.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         this.a = imageView2;
         imageView2.setScaleType(scaleType);
@@ -40,8 +40,8 @@ public final class s11 extends FrameLayout {
         imageView2.setScaleX(0.1f);
         imageView2.setScaleY(0.1f);
         imageView2.setAlpha(0.0f);
-        addView(imageView2, k7.c6.d(36, 36.0f, 53, 14.0f, 11.0f, 14.0f, 0.0f));
-        imageView2.setOnClickListener(new b80(this, 21));
+        addView(imageView2, k7.b6.d(36, 36.0f, 53, 14.0f, 11.0f, 14.0f, 0.0f));
+        imageView2.setOnClickListener(new a80(this, 21));
         q11 q11Var = new q11(this, context);
         this.b = q11Var;
         q11Var.setTextSize(1, 16.0f);
@@ -57,7 +57,7 @@ public final class s11 extends FrameLayout {
         q11Var.setCursorColor(-11491093);
         q11Var.setCursorSize(AndroidUtilities.dp(20.0f));
         q11Var.setCursorWidth(1.5f);
-        addView(q11Var, k7.c6.d(-1, 40.0f, 51, 54.0f, 9.0f, 46.0f, 0.0f));
+        addView(q11Var, k7.b6.d(-1, 40.0f, 51, 54.0f, 9.0f, 46.0f, 0.0f));
         q11Var.addTextChangedListener(new r11(this));
         q11Var.setOnEditorActionListener(new d1(this, 9));
     }

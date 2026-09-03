@@ -1,14 +1,13 @@
 package xb;
 
-import androidx.biometric.f0;
 import java.nio.ByteBuffer;
-import org.telegram.ui.yh;
+import org.telegram.ui.ai;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class b extends a {
-    public static final /* synthetic */ f0 n;
-    public static final /* synthetic */ f0 r;
+    public static final /* synthetic */ bb.b n;
+    public static final /* synthetic */ bb.b r;
 
     static {
         de.a aVar = new de.a(b.class, "ESDescriptorBox.java");
@@ -19,7 +18,7 @@ public final class b extends a {
     }
 
     public final boolean equals(Object obj) {
-        yh.x(de.a.c(n, this, this, obj));
+        ai.x(de.a.c(n, this, this, obj));
         if (this == obj) {
             return true;
         }
@@ -32,7 +31,7 @@ public final class b extends a {
     }
 
     public final int hashCode() {
-        yh.x(de.a.b(r, this, this));
+        ai.x(de.a.b(r, this, this));
         ByteBuffer byteBuffer = this.e;
         if (byteBuffer != null) {
             return byteBuffer.hashCode();

@@ -2,9 +2,9 @@ package org.telegram.ui.Components;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class cs0 extends f2.a1 {
+public final class cs0 extends f2.z0 {
     public final /* synthetic */ tr0 a;
     public final /* synthetic */ ur0 b;
     public final /* synthetic */ yu0 c;
@@ -15,12 +15,12 @@ public final class cs0 extends f2.a1 {
         this.b = ur0Var;
     }
 
-    @Override // f2.a1
+    @Override // f2.z0
     public final void a(RecyclerView recyclerView, int i10) {
         this.c.Y0 = i10 != 0;
     }
 
-    @Override // f2.a1
+    @Override // f2.z0
     public final void b(RecyclerView recyclerView, int i10, int i11) {
         int i12;
         int i13;
@@ -28,7 +28,7 @@ public final class cs0 extends f2.a1 {
         nu0[] nu0VarArr = yu0Var.q1;
         ur0 ur0Var = this.b;
         tr0 tr0Var = this.a;
-        yu0Var.G(tr0Var, (sl0) recyclerView, ur0Var);
+        yu0Var.G(tr0Var, (rl0) recyclerView, ur0Var);
         if (i11 != 0 && ((i13 = yu0Var.h0[0].C) == 0 || i13 == 5)) {
             nu0VarArr[0].a.isEmpty();
         }

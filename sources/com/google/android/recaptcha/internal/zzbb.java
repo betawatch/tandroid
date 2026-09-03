@@ -1,12 +1,12 @@
 package com.google.android.recaptcha.internal;
 
 import dd.p;
-import k7.q7;
+import k7.p7;
 import uc.c;
 import vc.a;
 import wc.i;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 final class zzbb extends i implements p {
     int zza;
@@ -90,7 +90,7 @@ final class zzbb extends i implements p {
             zzhkVar = obj2;
         }
         if (obj2 == 0) {
-            q7.b(obj);
+            p7.b(obj);
             zzhk zzhkVar2 = (zzhk) this.zzd;
             zzbo zzboVar2 = this.zzb;
             String str = this.zzc;
@@ -100,13 +100,13 @@ final class zzbb extends i implements p {
             obj2 = zzhkVar2;
         } else if (obj2 == 1) {
             zzhk zzhkVar3 = (zzhk) this.zzd;
-            q7.b(obj);
+            p7.b(obj);
             obj2 = zzhkVar3;
         } else if (obj2 != 2) {
-            q7.b(obj);
+            p7.b(obj);
         } else {
             zzhk zzhkVar4 = (zzhk) this.zzd;
-            q7.b(obj);
+            p7.b(obj);
             zzhkVar = zzhkVar4;
             this.zzd = null;
             this.zza = 3;

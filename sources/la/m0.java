@@ -7,10 +7,10 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.Messenger;
 import android.util.Log;
-import j7.w8;
+import j7.v8;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class m0 extends Handler {
     public boolean a;
@@ -98,8 +98,8 @@ public final class m0 extends Handler {
         } catch (DeadObjectException unused) {
             Log.d("SessionLifecycleService", "Removing dead client from list: " + messenger);
             this.c.remove(messenger);
-        } catch (Exception e6) {
-            Log.w("SessionLifecycleService", "Unable to push new session to " + messenger + '.', e6);
+        } catch (Exception e) {
+            Log.w("SessionLifecycleService", "Unable to push new session to " + messenger + '.', e);
         }
     }
 
@@ -152,7 +152,7 @@ public final class m0 extends Handler {
             na.h hVar = (na.h) b10;
             Bundle bundle = hVar.a.a;
             kd.a aVar = null;
-            kd.a aVar2 = bundle.containsKey("firebase_sessions_sessions_restart_timeout") ? new kd.a(w8.a(bundle.getInt("firebase_sessions_sessions_restart_timeout"), kd.c.d)) : null;
+            kd.a aVar2 = bundle.containsKey("firebase_sessions_sessions_restart_timeout") ? new kd.a(v8.a(bundle.getInt("firebase_sessions_sessions_restart_timeout"), kd.c.d)) : null;
             if (aVar2 != null) {
                 a2 = aVar2.a;
                 int i11 = kd.a.d;
@@ -167,7 +167,7 @@ public final class m0 extends Handler {
             Integer num = eVar.c;
             if (num != null) {
                 int i12 = kd.a.d;
-                aVar = new kd.a(w8.a(num.intValue(), kd.c.d));
+                aVar = new kd.a(v8.a(num.intValue(), kd.c.d));
             }
             if (aVar != null) {
                 a2 = aVar.a;
@@ -176,7 +176,7 @@ public final class m0 extends Handler {
                 }
             }
             int i14 = kd.a.d;
-            a2 = w8.a(30, kd.c.e);
+            a2 = v8.a(30, kd.c.e);
             if (when > (((((int) a2) & 1) != 1 || kd.a.b(a2)) ? kd.a.c(a2, kd.c.c) : a2 >> 1)) {
                 Log.d("SessionLifecycleService", "Session too long in background. Creating new session.");
                 b();

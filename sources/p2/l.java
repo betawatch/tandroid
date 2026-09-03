@@ -4,45 +4,27 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class l {
-    public final String a;
-    public final kc.d b;
+    public final ArrayList a;
 
-    public l(JSONObject jSONObject) {
-        jSONObject.optString("basePlanId");
-        jSONObject.optString("offerId").getClass();
-        this.a = jSONObject.getString("offerIdToken");
-        this.b = new kc.d(jSONObject.getJSONArray("pricingPhases"));
-        JSONObject optJSONObject = jSONObject.optJSONObject("installmentPlanDetails");
-        if (optJSONObject != null) {
-            optJSONObject.getInt("commitmentPaymentsCount");
-            optJSONObject.optInt("subsequentCommitmentPaymentsCount");
-        }
-        JSONObject optJSONObject2 = jSONObject.optJSONObject("transitionPlanDetails");
-        if (optJSONObject2 != null) {
-            optJSONObject2.getString("productId");
-            optJSONObject2.optString("title");
-            optJSONObject2.optString("name");
-            optJSONObject2.optString("description");
-            optJSONObject2.optString("basePlanId");
-            JSONObject optJSONObject3 = optJSONObject2.optJSONObject("pricingPhase");
-            if (optJSONObject3 != null) {
-                optJSONObject3.optString("billingPeriod");
-                optJSONObject3.optString("priceCurrencyCode");
-                optJSONObject3.optString("formattedPrice");
-                optJSONObject3.optLong("priceAmountMicros");
-                optJSONObject3.optInt("recurrenceMode");
-                optJSONObject3.optInt("billingCycleCount");
-            }
-        }
+    public l() {
+        this.a = new ArrayList();
+        new ArrayList();
+        new ArrayList();
+    }
+
+    public l(JSONArray jSONArray) {
         ArrayList arrayList = new ArrayList();
-        JSONArray optJSONArray = jSONObject.optJSONArray("offerTags");
-        if (optJSONArray != null) {
-            for (int i10 = 0; i10 < optJSONArray.length(); i10++) {
-                arrayList.add(optJSONArray.getString(i10));
+        if (jSONArray != null) {
+            for (int i10 = 0; i10 < jSONArray.length(); i10++) {
+                JSONObject optJSONObject = jSONArray.optJSONObject(i10);
+                if (optJSONObject != null) {
+                    arrayList.add(new k(optJSONObject));
+                }
             }
         }
+        this.a = arrayList;
     }
 }

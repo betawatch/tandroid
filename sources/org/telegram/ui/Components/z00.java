@@ -12,11 +12,11 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class z00 extends FrameLayout {
     public ValueAnimator B;
-    public tp C;
+    public qp C;
     public Paint a;
     public j6 b;
     public j6 c;
@@ -44,9 +44,9 @@ public final class z00 extends FrameLayout {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, z4 ? 1.0f : 0.0f);
             this.r = ofFloat;
             ofFloat.addUpdateListener(new y00(this, 2));
-            this.r.addListener(new eg.u2(29, this, z4));
+            this.r.addListener(new m00(1, this, z4));
             this.r.setDuration(320L);
-            this.r.setInterpolator(pr.h);
+            this.r.setInterpolator(mr.h);
             this.r.start();
         }
     }
@@ -74,7 +74,7 @@ public final class z00 extends FrameLayout {
         this.f.draw(canvas);
         if (this.h > 0.0f) {
             if (this.C == null) {
-                this.C = new tp(j6Var2.a.getColor());
+                this.C = new qp(j6Var2.a.getColor());
             }
             int dp = (int) ((1.0f - this.h) * AndroidUtilities.dp(24.0f));
             this.C.setBounds(0, dp, getWidth(), getHeight() + dp);
@@ -96,7 +96,7 @@ public final class z00 extends FrameLayout {
             float d10 = this.e.d(this.d, false);
             float d11 = ((j6Var.d() + AndroidUtilities.dp(15.66f)) * d10) + d;
             Rect rect = AndroidUtilities.rectTmp2;
-            rect.set((int) (((getMeasuredWidth() - d11) - getWidth()) / 2.0f), (int) (((getMeasuredHeight() - j6Var2.e) / 2.0f) - AndroidUtilities.dp(1.0f)), (int) l.d.b(getMeasuredWidth() - d11, getWidth(), 2.0f, d), (int) (((getMeasuredHeight() + j6Var2.e) / 2.0f) - AndroidUtilities.dp(1.0f)));
+            rect.set((int) (((getMeasuredWidth() - d11) - getWidth()) / 2.0f), (int) (((getMeasuredHeight() - j6Var2.e) / 2.0f) - AndroidUtilities.dp(1.0f)), (int) kf.k0.b(getMeasuredWidth() - d11, getWidth(), 2.0f, d), (int) (((getMeasuredHeight() + j6Var2.e) / 2.0f) - AndroidUtilities.dp(1.0f)));
             j6Var2.w = (int) (AndroidUtilities.lerp(0.5f, 1.0f, this.x) * (1.0f - this.h) * 255.0f);
             j6Var2.setBounds(rect);
             j6Var2.draw(canvas);
@@ -152,7 +152,7 @@ public final class z00 extends FrameLayout {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, z4 ? 1.0f : 0.0f);
             this.B = ofFloat;
             ofFloat.addUpdateListener(new y00(this, 0));
-            this.B.addListener(new ng.r(2));
+            this.B.addListener(new mg.r(2));
             this.B.start();
         }
     }

@@ -9,12 +9,12 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public abstract class kq0 extends FrameLayout {
-    public org.telegram.ui.ActionBar.l5 a;
-    public org.telegram.ui.ActionBar.l5 b;
-    public fg.h0 c;
+    public org.telegram.ui.ActionBar.k5 a;
+    public org.telegram.ui.ActionBar.k5 b;
+    public eg.h0 c;
     public int d;
     public AnimatorSet e;
     public Paint f;
@@ -31,10 +31,10 @@ public abstract class kq0 extends FrameLayout {
         }
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.e = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.c, (Property<fg.h0, Float>) View.TRANSLATION_X, this.d == 0 ? 0.0f : r0.getMeasuredWidth()));
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.c, (Property<eg.h0, Float>) View.TRANSLATION_X, this.d == 0 ? 0.0f : r0.getMeasuredWidth()));
         this.e.setDuration(180L);
-        this.e.setInterpolator(pr.g);
-        this.e.addListener(new pd0(this, 11));
+        this.e.setInterpolator(mr.g);
+        this.e.addListener(new od0(this, 11));
         this.e.start();
         ((xp0) this).n.Z0();
     }
@@ -46,7 +46,7 @@ public abstract class kq0 extends FrameLayout {
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.a.getLayoutParams();
         layoutParams.width = size;
         layoutParams.leftMargin = AndroidUtilities.dp(14.0f) + size;
-        fg.h0 h0Var = this.c;
+        eg.h0 h0Var = this.c;
         ((FrameLayout.LayoutParams) h0Var.getLayoutParams()).width = size;
         AnimatorSet animatorSet = this.e;
         if (animatorSet != null) {

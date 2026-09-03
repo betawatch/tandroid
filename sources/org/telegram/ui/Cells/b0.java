@@ -13,20 +13,20 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.d21;
 import org.telegram.ui.Components.k01;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public abstract class b0 extends View {
-    public final org.telegram.ui.ActionBar.g6 a;
+    public final org.telegram.ui.ActionBar.f6 a;
     public final c0 b;
     public final d21 c;
     public int d;
     public float e;
 
-    public b0(Context context, int i10, org.telegram.ui.ActionBar.g6 g6Var) {
+    public b0(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
-        this.a = g6Var;
-        this.b = new c0(context, i10, g6Var);
-        d21 d21Var = new d21(i10, this, g6Var, true);
+        this.a = f6Var;
+        this.b = new c0(context, i10, f6Var);
+        d21 d21Var = new d21(i10, this, f6Var, true);
         this.c = d21Var;
         d21Var.e = new k01("", 14.0f, AndroidUtilities.bold());
     }
@@ -51,11 +51,11 @@ public abstract class b0 extends View {
         int measuredWidth2 = getMeasuredWidth();
         float f10 = sideMenuWidth;
         float f11 = f10 / 2.0f;
-        org.telegram.ui.ActionBar.g6 g6Var = this.a;
-        if (g6Var != null) {
-            g6Var.l(f11, this.e, measuredWidth2, this.d);
+        org.telegram.ui.ActionBar.f6 f6Var = this.a;
+        if (f6Var != null) {
+            f6Var.l(f11, this.e, measuredWidth2, this.d);
         } else {
-            org.telegram.ui.ActionBar.k6.q(f11, this.e, measuredWidth2, this.d);
+            org.telegram.ui.ActionBar.j6.q(f11, this.e, measuredWidth2, this.d);
         }
         this.c.c(canvas, getWidth(), f10, 0.0f, 1.0f, 1.0f, false);
         c0Var.setBounds(i10, dp, c0Var.h + i10, c0Var.i + dp);

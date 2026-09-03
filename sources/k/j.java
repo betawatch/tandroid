@@ -4,13 +4,13 @@ import android.graphics.Bitmap;
 import android.view.View;
 import android.view.animation.Interpolator;
 import b4.e0;
-import com.google.firebase.messaging.s;
+import com.google.firebase.messaging.r;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import k7.c0;
+import k7.b0;
 import l7.w0;
-import m.r3;
+import m.s3;
 import n7.fe;
 import n7.gb;
 import n7.hb;
@@ -26,7 +26,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import r0.m0;
 import r0.n0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class j implements wf {
     public long a;
@@ -135,19 +135,19 @@ public final class j implements wf {
             n7.g gVar = n7.i.b;
             Object[] array = list.toArray();
             int length = array.length;
-            c0.a(length, array);
+            b0.a(length, array);
             jVar.e = n7.i.r(length, array);
             List<ig> list2 = jgVar.a;
             if (!list2.isEmpty()) {
                 Object[] objArr2 = new Object[4];
                 int i13 = 0;
                 for (ig igVar : list2) {
-                    s sVar = new s();
-                    sVar.a = Integer.valueOf(igVar.c & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                    sVar.b = Integer.valueOf(igVar.d & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                    sVar.c = Integer.valueOf(igVar.e & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                    sVar.d = Integer.valueOf(igVar.f & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                    ue ueVar = new ue(sVar);
+                    r rVar = new r();
+                    rVar.a = Integer.valueOf(igVar.c & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                    rVar.b = Integer.valueOf(igVar.d & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                    rVar.c = Integer.valueOf(igVar.e & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                    rVar.d = Integer.valueOf(igVar.f & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                    ue ueVar = new ue(rVar);
                     int i14 = i13 + 1;
                     int length2 = objArr2.length;
                     if (length2 < i14) {
@@ -167,10 +167,10 @@ public final class j implements wf {
                 jVar.d = n7.i.r(i13, objArr2);
             }
         }
-        r3 r3Var = new r3();
-        r3Var.c = gb.b;
-        r3Var.f = new fe(jVar);
-        return new e0(r3Var, 0);
+        s3 s3Var = new s3();
+        s3Var.c = gb.b;
+        s3Var.f = new fe(jVar);
+        return new e0(s3Var, 0);
     }
 
     public j() {

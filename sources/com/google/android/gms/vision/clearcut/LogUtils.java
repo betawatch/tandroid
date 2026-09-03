@@ -14,12 +14,12 @@ import com.google.android.gms.internal.vision.v;
 import com.google.android.gms.internal.vision.w;
 import com.google.android.gms.internal.vision.y;
 import com.google.android.gms.internal.vision.z;
-import j7.e7;
+import j7.d7;
 import java.util.ArrayList;
 import java.util.List;
-import k6.c;
+import k6.b;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class LogUtils {
     public static f0 zza(long j10, int i10, String str, String str2, List<d0> list, f3 f3Var) {
@@ -96,9 +96,9 @@ public class LogUtils {
 
     private static String zzb(Context context) {
         try {
-            return c.a(context).b(0, context.getPackageName()).versionName;
-        } catch (PackageManager.NameNotFoundException e6) {
-            e7.a(e6, "Unable to find calling package info for %s", context.getPackageName());
+            return b.a(context).L(0, context.getPackageName()).versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            d7.a(e, "Unable to find calling package info for %s", context.getPackageName());
             return null;
         }
     }

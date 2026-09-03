@@ -2,65 +2,28 @@ package c2;
 
 import android.os.Bundle;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class v {
-    public static final v c = new v(new Bundle(), null);
-    public final Bundle a;
-    public List b;
+    public ArrayList a = new ArrayList();
 
-    public v(Bundle bundle, ArrayList arrayList) {
-        this.a = bundle;
-        this.b = arrayList;
-    }
-
-    public static v b(Bundle bundle) {
-        if (bundle != null) {
-            return new v(bundle, null);
+    public w a() {
+        if (this.a == null) {
+            return w.c;
         }
-        return null;
+        Bundle bundle = new Bundle();
+        bundle.putStringArrayList("controlCategories", this.a);
+        return new w(bundle, this.a);
     }
 
-    public final void a() {
-        if (this.b == null) {
-            ArrayList<String> stringArrayList = this.a.getStringArrayList("controlCategories");
-            this.b = stringArrayList;
-            if (stringArrayList == null || stringArrayList.isEmpty()) {
-                this.b = Collections.EMPTY_LIST;
-            }
+    public void b(StringBuilder sb) {
+        sb.append(((Boolean) e2.c.g(1, this.a)).booleanValue() ? "</ol>" : "</ul>");
+    }
+
+    public void c(StringBuilder sb) {
+        while (!this.a.isEmpty()) {
+            b(sb);
         }
-    }
-
-    public final ArrayList c() {
-        a();
-        return new ArrayList(this.b);
-    }
-
-    public final boolean d() {
-        a();
-        return this.b.isEmpty();
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof v)) {
-            return false;
-        }
-        v vVar = (v) obj;
-        a();
-        vVar.a();
-        return this.b.equals(vVar.b);
-    }
-
-    public final int hashCode() {
-        a();
-        return this.b.hashCode();
-    }
-
-    public final String toString() {
-        return "MediaRouteSelector{ controlCategories=" + Arrays.toString(c().toArray()) + " }";
     }
 }

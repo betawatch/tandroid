@@ -4,7 +4,7 @@ import android.app.Application;
 import android.webkit.WebView;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import k7.p7;
+import k7.o7;
 import kotlin.jvm.internal.j;
 import ld.d2;
 import ld.e0;
@@ -15,7 +15,7 @@ import sc.g;
 import sc.i;
 import vc.a;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class zzly extends zzg {
     public s zza;
@@ -36,13 +36,13 @@ public final class zzly extends zzg {
 
     public zzly() {
         int i10 = zzby.zza;
-        this.zzi = p7.a(zzlm.zza);
-        this.zzj = p7.a(zzln.zza);
-        this.zzk = p7.a(zzlo.zza);
-        this.zzl = p7.a(zzlp.zza);
-        this.zzm = p7.a(zzlq.zza);
-        this.zzn = p7.a(zzlr.zza);
-        this.zzo = p7.a(zzls.zza);
+        this.zzi = o7.a(zzlm.zza);
+        this.zzj = o7.a(zzln.zza);
+        this.zzk = o7.a(zzlo.zza);
+        this.zzl = o7.a(zzlp.zza);
+        this.zzm = o7.a(zzlq.zza);
+        this.zzn = o7.a(zzlr.zza);
+        this.zzo = o7.a(zzls.zza);
     }
 
     private final Application zzC() {

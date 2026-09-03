@@ -7,7 +7,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ph1;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class ab implements View.OnLayoutChangeListener {
     public final /* synthetic */ boolean a;
@@ -43,7 +43,7 @@ public final class ab implements View.OnLayoutChangeListener {
             }
             icVar.p = fbVar;
             if (fbVar == null && p2Var != null) {
-                icVar.p = new lh.t0(p2Var, 6);
+                icVar.p = new kh.t0(p2Var, 6);
             }
             o1.j jVar = icVar.d;
             if (jVar == null || !jVar.f) {
@@ -63,7 +63,7 @@ public final class ab implements View.OnLayoutChangeListener {
                 nbVar.invalidate();
                 mb mbVar = icVar.q;
                 Objects.requireNonNull(nbVar);
-                mbVar.A(nbVar, new wa(nbVar, 1), new fg(this, 15), new il(2, this, z4));
+                mbVar.J(nbVar, new wa(nbVar, 1), new fg(this, 15), new gl(2, this, z4));
                 return;
             }
             fb fbVar4 = icVar.p;

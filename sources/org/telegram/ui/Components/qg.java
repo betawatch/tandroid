@@ -5,13 +5,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public class qg extends kj0 {
+public class qg extends jj0 {
     public og r;
     public pg s;
     public final int v;
-    public final kc.f w;
+    public final kc.e w;
 
     public qg(Context context) {
         this(context, 32);
@@ -35,7 +35,7 @@ public class qg extends kj0 {
         og ogVar2 = this.r;
         this.r = ogVar;
         pg pgVar2 = null;
-        kc.f fVar = this.w;
+        kc.e eVar = this.w;
         if (z4 && ogVar2 != null) {
             pg[] values = pg.values();
             int length = values.length;
@@ -72,21 +72,21 @@ public class qg extends kj0 {
                     return;
                 }
                 this.s = pgVar2;
-                hj0 hj0Var = (hj0) fVar.get(pgVar2);
-                hj0Var.stop();
+                gj0 gj0Var = (gj0) eVar.get(pgVar2);
+                gj0Var.stop();
                 if (pgVar2 == pg.e) {
-                    hj0Var.N(30);
-                    hj0Var.Q(0.0f, false);
+                    gj0Var.N(30);
+                    gj0Var.Q(0.0f, false);
                 } else if (pgVar2 == pg.d) {
-                    hj0Var.N(60);
-                    hj0Var.Q(0.5f, false);
+                    gj0Var.N(60);
+                    gj0Var.Q(0.5f, false);
                 } else {
-                    hj0Var.Q(0.0f, false);
+                    gj0Var.Q(0.0f, false);
                 }
-                hj0Var.I(0);
-                hj0Var.r0 = new fg(this, 20);
-                setAnimation(hj0Var);
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Cells.q0(hj0Var, 1));
+                gj0Var.I(0);
+                gj0Var.r0 = new fg(this, 20);
+                setAnimation(gj0Var);
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Cells.q0(gj0Var, 1));
                 ordinal = ogVar.ordinal();
                 if (ordinal != 0) {
                     setContentDescription(LocaleController.getString(R.string.AccDescrVoiceMessage));
@@ -115,10 +115,10 @@ public class qg extends kj0 {
             }
             i12++;
         }
-        hj0 hj0Var2 = (hj0) fVar.get(pgVar2);
-        hj0Var2.stop();
-        hj0Var2.Q(ogVar != og.a ? 0.0f : 0.5f, false);
-        setAnimation(hj0Var2);
+        gj0 gj0Var2 = (gj0) eVar.get(pgVar2);
+        gj0Var2.stop();
+        gj0Var2.Q(ogVar != og.a ? 0.0f : 0.5f, false);
+        setAnimation(gj0Var2);
         ordinal = ogVar.ordinal();
         if (ordinal != 0) {
         }
@@ -126,7 +126,7 @@ public class qg extends kj0 {
 
     public qg(Context context, int i10) {
         super(context);
-        this.w = new kc.f(this, 1);
+        this.w = new kc.e(this, 1);
         this.v = i10;
     }
 }

@@ -1,34 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
+import android.content.Context;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class j60 extends ClickableSpan {
-    public final /* synthetic */ org.telegram.ui.ActionBar.h3[] a;
-    public final /* synthetic */ TLRPC.TL_chatInviteImporter b;
+public final /* synthetic */ class j60 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TLRPC.User b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ ql0 h;
 
-    public j60(org.telegram.ui.ActionBar.h3[] h3VarArr, TLRPC.TL_chatInviteImporter tL_chatInviteImporter) {
-        this.a = h3VarArr;
-        this.b = tL_chatInviteImporter;
+    public /* synthetic */ j60(ql0 ql0Var, TLRPC.User user, String str, boolean z4, boolean z10, boolean z11, int i10) {
+        this.a = i10;
+        this.h = ql0Var;
+        this.b = user;
+        this.c = str;
+        this.d = z4;
+        this.e = z10;
+        this.f = z11;
     }
 
-    @Override // android.text.style.ClickableSpan
+    @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        this.a[0].dismiss();
-        org.telegram.ui.ActionBar.p2 U = LaunchActivity.U();
-        if (U != null) {
-            U.presentFragment(ProfileActivity.m4(this.b.user_id));
+        int i10;
+        org.telegram.ui.ActionBar.f6 f6Var;
+        switch (this.a) {
+            case 0:
+                t60 t60Var = ((o60) this.h).c;
+                Context context = t60Var.getContext();
+                i10 = ((org.telegram.ui.ActionBar.g3) t60Var).currentAccount;
+                long j10 = -t60Var.d0;
+                f6Var = ((org.telegram.ui.ActionBar.g3) t60Var).resourcesProvider;
+                f01.b(context, i10, j10, this.b, this.c, this.d, this.e, this.f, f6Var);
+                break;
+            default:
+                yu0 yu0Var = ((ht0) this.h).f;
+                f01.b(yu0Var.getContext(), yu0Var.s1.getCurrentAccount(), yu0Var.g1, this.b, this.c, this.d, this.e, this.f, yu0Var.C1);
+                break;
         }
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setUnderlineText(false);
     }
 }

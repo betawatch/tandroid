@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class x4 {
     public final int a;
@@ -16,29 +16,29 @@ public final class x4 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public x4(org.telegram.ui.ActionBar.g6 g6Var) {
-        this(r4, r5, r6, r7, r8, r9, r10, g6Var != null ? g6Var.e0(r2) : org.telegram.ui.ActionBar.k6.w0(null, r2, false), g6Var != null ? g6Var.e0(org.telegram.ui.ActionBar.k6.Qh) : org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.Qh, false));
-        int i10 = org.telegram.ui.ActionBar.k6.j5;
-        int e02 = g6Var != null ? g6Var.e0(i10) : org.telegram.ui.ActionBar.k6.w0(null, i10, false);
-        int i11 = org.telegram.ui.ActionBar.k6.h5;
-        int e03 = g6Var != null ? g6Var.e0(i11) : org.telegram.ui.ActionBar.k6.w0(null, i11, false);
-        int i12 = org.telegram.ui.ActionBar.k6.Ji;
-        if (g6Var != null) {
-            g6Var.e0(i12);
+    public x4(org.telegram.ui.ActionBar.f6 f6Var) {
+        this(r4, r5, r6, r7, r8, r9, r10, f6Var != null ? f6Var.d0(r2) : org.telegram.ui.ActionBar.j6.w0(null, r2, false), f6Var != null ? f6Var.d0(org.telegram.ui.ActionBar.j6.Qh) : org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Qh, false));
+        int i10 = org.telegram.ui.ActionBar.j6.j5;
+        int d02 = f6Var != null ? f6Var.d0(i10) : org.telegram.ui.ActionBar.j6.w0(null, i10, false);
+        int i11 = org.telegram.ui.ActionBar.j6.h5;
+        int d03 = f6Var != null ? f6Var.d0(i11) : org.telegram.ui.ActionBar.j6.w0(null, i11, false);
+        int i12 = org.telegram.ui.ActionBar.j6.Ji;
+        if (f6Var != null) {
+            f6Var.d0(i12);
         } else {
-            org.telegram.ui.ActionBar.k6.w0(null, i12, false);
+            org.telegram.ui.ActionBar.j6.w0(null, i12, false);
         }
-        int i13 = org.telegram.ui.ActionBar.k6.Ni;
-        int e04 = g6Var != null ? g6Var.e0(i13) : org.telegram.ui.ActionBar.k6.w0(null, i13, false);
-        int i14 = org.telegram.ui.ActionBar.k6.E8;
-        int e05 = g6Var != null ? g6Var.e0(i14) : org.telegram.ui.ActionBar.k6.w0(null, i14, false);
-        int i15 = org.telegram.ui.ActionBar.k6.G8;
-        int e06 = g6Var != null ? g6Var.e0(i15) : org.telegram.ui.ActionBar.k6.w0(null, i15, false);
-        int i16 = org.telegram.ui.ActionBar.k6.i6;
-        int e07 = g6Var != null ? g6Var.e0(i16) : org.telegram.ui.ActionBar.k6.w0(null, i16, false);
-        int i17 = org.telegram.ui.ActionBar.k6.Sh;
-        int e08 = g6Var != null ? g6Var.e0(i17) : org.telegram.ui.ActionBar.k6.w0(null, i17, false);
-        int i18 = org.telegram.ui.ActionBar.k6.Oh;
+        int i13 = org.telegram.ui.ActionBar.j6.Ni;
+        int d04 = f6Var != null ? f6Var.d0(i13) : org.telegram.ui.ActionBar.j6.w0(null, i13, false);
+        int i14 = org.telegram.ui.ActionBar.j6.E8;
+        int d05 = f6Var != null ? f6Var.d0(i14) : org.telegram.ui.ActionBar.j6.w0(null, i14, false);
+        int i15 = org.telegram.ui.ActionBar.j6.G8;
+        int d06 = f6Var != null ? f6Var.d0(i15) : org.telegram.ui.ActionBar.j6.w0(null, i15, false);
+        int i16 = org.telegram.ui.ActionBar.j6.i6;
+        int d07 = f6Var != null ? f6Var.d0(i16) : org.telegram.ui.ActionBar.j6.w0(null, i16, false);
+        int i17 = org.telegram.ui.ActionBar.j6.Sh;
+        int d08 = f6Var != null ? f6Var.d0(i17) : org.telegram.ui.ActionBar.j6.w0(null, i17, false);
+        int i18 = org.telegram.ui.ActionBar.j6.Oh;
     }
 
     public x4(int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18) {

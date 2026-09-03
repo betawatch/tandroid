@@ -1,9 +1,10 @@
 package org.webrtc;
 
 import java.nio.ByteBuffer;
+import kf.k0;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
 public class JavaI420Buffer implements VideoFrame.I420Buffer {
     private final ByteBuffer dataU;
@@ -47,11 +48,11 @@ public class JavaI420Buffer implements VideoFrame.I420Buffer {
     }
 
     private static void checkCapacity(ByteBuffer byteBuffer, int i10, int i11, int i12) {
-        int e6 = e2.c.e(i11, 1, i12, i10);
-        if (byteBuffer.capacity() >= e6) {
+        int e = e2.c.e(i11, 1, i12, i10);
+        if (byteBuffer.capacity() >= e) {
             return;
         }
-        StringBuilder m9 = l.d.m(e6, "Buffer must be at least ", " bytes, but was ");
+        StringBuilder m9 = k0.m(e, "Buffer must be at least ", " bytes, but was ");
         m9.append(byteBuffer.capacity());
         throw new IllegalArgumentException(m9.toString());
     }

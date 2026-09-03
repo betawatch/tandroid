@@ -9,7 +9,7 @@ import androidx.car.app.hardware.common.CarZone;
 import androidx.car.app.navigation.model.Maneuver;
 import androidx.datastore.preferences.protobuf.k;
 import androidx.fragment.app.j0;
-import com.google.android.gms.internal.cast.x4;
+import com.google.android.gms.internal.cast.y4;
 import com.google.android.gms.internal.vision.r0;
 import com.google.android.recaptcha.internal.zzqv;
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ import kotlin.jvm.internal.j;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class a {
     public static int A(int i10, int i11, int i12) {
@@ -758,7 +758,7 @@ public abstract /* synthetic */ class a {
     }
 
     public static int x(int i10, int i11, int i12) {
-        return x4.o(i10) + i11 + i12;
+        return y4.o(i10) + i11 + i12;
     }
 
     public static int y(int i10, int i11, int i12, int i13) {

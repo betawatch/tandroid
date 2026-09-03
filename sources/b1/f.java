@@ -11,7 +11,7 @@ import java.util.concurrent.Executor;
 import kotlin.jvm.internal.j;
 import v0.i;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements l {
     public final /* synthetic */ int a;
@@ -30,9 +30,9 @@ public final /* synthetic */ class f implements l {
             case 0:
                 Executor executor = (Executor) this.b;
                 i iVar = (i) this.c;
-                w0.i e6 = (w0.i) obj;
-                j.e(e6, "e");
-                executor.execute(new h(iVar, e6, 1));
+                w0.i e = (w0.i) obj;
+                j.e(e, "e");
+                executor.execute(new h(iVar, e, 1));
                 return sc.i.a;
             case 1:
                 CancellationSignal cancellationSignal = (CancellationSignal) this.b;
@@ -49,7 +49,7 @@ public final /* synthetic */ class f implements l {
                     } catch (Exception unused) {
                         CredentialProviderPlayServicesImpl.Companion.getClass();
                         if (!a1.g.a(cancellationSignal)) {
-                            fVar.f().execute(new ag.e(fVar, 9));
+                            fVar.f().execute(new ag.d(fVar, 8));
                         }
                     }
                 }

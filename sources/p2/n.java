@@ -1,9 +1,111 @@
 package p2;
 
-import java.util.List;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import org.telegram.ui.ai;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public interface n {
-    void b(h hVar, List list);
+public final class n {
+    public final String a;
+    public final JSONObject b;
+    public final String c;
+    public final String d;
+    public final String e;
+    public final String f;
+    public final String g;
+    public final ArrayList h;
+    public final ArrayList i;
+
+    public n(String str) {
+        this.a = str;
+        JSONObject jSONObject = new JSONObject(str);
+        this.b = jSONObject;
+        String optString = jSONObject.optString("productId");
+        this.c = optString;
+        String optString2 = jSONObject.optString(TeXSymbolParser.TYPE_ATTR);
+        this.d = optString2;
+        if (TextUtils.isEmpty(optString)) {
+            throw new IllegalArgumentException("Product id cannot be empty.");
+        }
+        if (TextUtils.isEmpty(optString2)) {
+            throw new IllegalArgumentException("Product type cannot be empty.");
+        }
+        this.e = jSONObject.optString("title");
+        jSONObject.optString("name");
+        jSONObject.optString("description");
+        jSONObject.optString("packageDisplayName");
+        jSONObject.optString("iconUrl");
+        this.f = jSONObject.optString("skuDetailsToken");
+        this.g = jSONObject.optString("serializedDocid");
+        JSONArray optJSONArray = jSONObject.optJSONArray("subscriptionOfferDetails");
+        if (optJSONArray != null) {
+            ArrayList arrayList = new ArrayList();
+            for (int i10 = 0; i10 < optJSONArray.length(); i10++) {
+                arrayList.add(new m(optJSONArray.getJSONObject(i10)));
+            }
+            this.h = arrayList;
+        } else {
+            this.h = (optString2.equals("subs") || optString2.equals("play_pass_subs")) ? new ArrayList() : null;
+        }
+        JSONObject optJSONObject = this.b.optJSONObject("oneTimePurchaseOfferDetails");
+        JSONArray optJSONArray2 = this.b.optJSONArray("oneTimePurchaseOfferDetailsList");
+        ArrayList arrayList2 = new ArrayList();
+        if (optJSONArray2 != null) {
+            for (int i11 = 0; i11 < optJSONArray2.length(); i11++) {
+                arrayList2.add(new j(optJSONArray2.getJSONObject(i11)));
+            }
+            this.i = arrayList2;
+            return;
+        }
+        if (optJSONObject == null) {
+            this.i = null;
+        } else {
+            arrayList2.add(new j(optJSONObject));
+            this.i = arrayList2;
+        }
+    }
+
+    public final j a() {
+        ArrayList arrayList = this.i;
+        if (arrayList == null || arrayList.isEmpty()) {
+            return null;
+        }
+        return (j) arrayList.get(0);
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof n) {
+            return TextUtils.equals(this.a, ((n) obj).a);
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode();
+    }
+
+    public final String toString() {
+        String obj = this.b.toString();
+        String valueOf = String.valueOf(this.h);
+        StringBuilder sb = new StringBuilder("ProductDetails{jsonString='");
+        ai.w(sb, this.a, "', parsedJson=", obj, ", productId='");
+        sb.append(this.c);
+        sb.append("', productType='");
+        sb.append(this.d);
+        sb.append("', title='");
+        sb.append(this.e);
+        sb.append("', productDetailsToken='");
+        sb.append(this.f);
+        sb.append("', subscriptionOfferDetails=");
+        sb.append(valueOf);
+        sb.append("}");
+        return sb.toString();
+    }
 }

@@ -34,15 +34,15 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class ds0 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ org.telegram.ui.ActionBar.g6 a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 a;
     public final /* synthetic */ PhotoViewer b;
 
-    public ds0(PhotoViewer photoViewer, org.telegram.ui.ActionBar.g6 g6Var) {
+    public ds0(PhotoViewer photoViewer, org.telegram.ui.ActionBar.f6 f6Var) {
         this.b = photoViewer;
-        this.a = g6Var;
+        this.a = f6Var;
     }
 
     @Override // org.telegram.ui.ActionBar.j
@@ -132,8 +132,8 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
         r10 = r7.y;
         r14 = new android.widget.FrameLayout(r10);
         r10 = r7.y;
-        r8 = new org.telegram.ui.Cells.z1(r10, 1, r2);
-        r8.setBackgroundDrawable(org.telegram.ui.ActionBar.k6.K0(false));
+        r8 = new org.telegram.ui.Cells.y1(r10, 1, r2);
+        r8.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.K0(false));
      */
     /* JADX WARN: Code restructure failed: missing block: B:344:0x0856, code lost:
     
@@ -163,8 +163,8 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
     /* JADX WARN: Code restructure failed: missing block: B:352:0x08a3, code lost:
     
         r8.setPadding(r5, 0, r6, 0);
-        r14.addView(r8, k7.c6.d(-1, 48.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
-        r8.setOnClickListener(new org.telegram.ui.o8(5, r0));
+        r14.addView(r8, k7.b6.d(-1, 48.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
+        r8.setOnClickListener(new org.telegram.ui.q8(5, r0));
         r3.n(r14);
         r3.a.D = 9;
      */
@@ -312,18 +312,18 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
         int i37;
         ku0 ku0Var5;
         MessageObject messageObject20;
-        xn xnVar;
+        zn znVar;
         int i38;
         int i39;
         MessageObject messageObject21;
-        xn xnVar2;
-        xn xnVar3;
+        zn znVar2;
+        zn znVar3;
         MessageObject messageObject22;
         int i40;
         MessageObject messageObject23;
         org.telegram.ui.ActionBar.w0 w0Var;
         View findViewWithTag;
-        org.telegram.ui.Components.xf0 xf0Var;
+        org.telegram.ui.Components.wf0 wf0Var;
         PhotoViewer photoViewer;
         Activity activity9;
         ou0 ou0Var2;
@@ -366,12 +366,12 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
         Activity activity13;
         MessageObject messageObject36;
         ArrayList arrayList;
-        xn xnVar4;
+        zn znVar4;
         String str2;
         MessageObject.GroupedMessages groupedMessages;
         MessageObject messageObject37;
         MessageObject messageObject38;
-        xn xnVar5;
+        zn znVar5;
         Activity activity14;
         boolean z11;
         Activity activity15;
@@ -379,7 +379,7 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
         int z14;
         int z15;
         int z16;
-        xn xnVar6;
+        zn znVar6;
         MessageObject messageObject39;
         MessageObject messageObject40;
         int i49;
@@ -388,17 +388,17 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
         MessageObject messageObject42;
         MessageObject messageObject43;
         String str3;
-        xn xnVar7;
+        zn znVar7;
         int i50;
         MessageObject messageObject44;
         MessageObject messageObject45;
-        xn xnVar8;
+        zn znVar8;
         Activity activity16;
         Activity activity17;
-        xn xnVar9;
-        bf.h m12;
+        zn znVar9;
+        af.j m12;
         org.telegram.ui.Components.n7 n7Var;
-        xn xnVar10;
+        zn znVar10;
         MessageObject.GroupedMessages groupedMessages2;
         MessageObject messageObject46;
         Activity activity18;
@@ -450,12 +450,12 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
         int i58;
         TLObject p12;
         int i59;
-        xn xnVar11;
+        zn znVar11;
         MessageObject messageObject60;
         Activity activity21;
         Activity activity22;
         boolean H1;
-        org.telegram.ui.ActionBar.g6 g6Var = this.a;
+        org.telegram.ui.ActionBar.f6 f6Var = this.a;
         boolean z23 = true;
         z23 = true;
         z23 = true;
@@ -485,11 +485,11 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
                 }
             }
             final ArrayList arrayList2 = new ArrayList(1);
-            xnVar10 = photoViewer2.i4;
-            if (xnVar10 != null) {
-                xnVar11 = photoViewer2.i4;
+            znVar10 = photoViewer2.i4;
+            if (znVar10 != null) {
+                znVar11 = photoViewer2.i4;
                 messageObject60 = photoViewer2.Q4;
-                groupedMessages2 = xnVar11.y8(messageObject60.getGroupId());
+                groupedMessages2 = znVar11.y8(messageObject60.getGroupId());
             } else {
                 groupedMessages2 = null;
             }
@@ -514,10 +514,10 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
                     }
                 }
                 activity18 = photoViewer2.y;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity18, g6Var);
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity18, f6Var);
                 alertDialog$Builder.l(LocaleController.getString("SaveGroupMedia", R.string.SaveGroupMedia));
                 alertDialog$Builder.g(LocaleController.getString("SaveGroupMediaMessage", R.string.SaveGroupMediaMessage));
-                alertDialog$Builder.a.F = org.telegram.ui.ActionBar.k6.pg;
+                alertDialog$Builder.a.F = org.telegram.ui.ActionBar.j6.pg;
                 messageObject47 = photoViewer2.Q4;
                 if (messageObject47 != null) {
                     messageObject48 = photoViewer2.Q4;
@@ -534,7 +534,7 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
                                 }
 
                                 @Override // org.telegram.ui.ActionBar.c2
-                                public final void j(org.telegram.ui.ActionBar.d2 d2Var, int i63) {
+                                public final void l(org.telegram.ui.ActionBar.d2 d2Var, int i63) {
                                     switch (i62) {
                                         case 0:
                                             ds0 ds0Var = this.b;
@@ -583,7 +583,7 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
                             final boolean z28 = z26;
                             alertDialog$Builder.k((!z24 || z26) ? LocaleController.formatPluralString("AllNMedia", arrayList2.size(), new Object[0]) : LocaleController.formatPluralString("AllNPhotos", arrayList2.size(), new Object[0]), new org.telegram.ui.ActionBar.c2() { // from class: org.telegram.ui.as0
                                 @Override // org.telegram.ui.ActionBar.c2
-                                public final void j(org.telegram.ui.ActionBar.d2 d2Var, int i63) {
+                                public final void l(org.telegram.ui.ActionBar.d2 d2Var, int i63) {
                                     ds0 ds0Var = ds0.this;
                                     PhotoViewer photoViewer3 = ds0Var.b;
                                     int[] iArr = new int[1];
@@ -672,22 +672,22 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
                             });
                             alertDialog$Builder.i(LocaleController.getString("Cancel", R.string.Cancel), new cl0(2));
                             org.telegram.ui.ActionBar.d2 a10 = alertDialog$Builder.a();
-                            z17 = photoViewer2.z1(org.telegram.ui.ActionBar.k6.ug);
+                            z17 = photoViewer2.z1(org.telegram.ui.ActionBar.j6.ug);
                             a10.i(z17);
                             a10.show();
                             d = a10.d(-3);
                             if (d instanceof TextView) {
-                                int i63 = org.telegram.ui.ActionBar.k6.q7;
+                                int i63 = org.telegram.ui.ActionBar.j6.q7;
                                 z19 = photoViewer2.z1(i63);
                                 ((TextView) d).setTextColor(z19);
                                 z110 = photoViewer2.z1(i63);
-                                d.setBackground(org.telegram.ui.ActionBar.k6.G0(AndroidUtilities.dp(3.0f), z110));
+                                d.setBackground(org.telegram.ui.ActionBar.j6.G0(AndroidUtilities.dp(3.0f), z110));
                                 ViewGroup viewGroup = a10.q0;
                                 if ((viewGroup instanceof LinearLayout) && ((LinearLayout) viewGroup).getOrientation() == 1) {
                                     d.bringToFront();
                                 }
                             }
-                            z18 = photoViewer2.z1(org.telegram.ui.ActionBar.k6.hg);
+                            z18 = photoViewer2.z1(org.telegram.ui.ActionBar.j6.hg);
                             a10.o(z18);
                             return;
                         }
@@ -703,7 +703,7 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
                     }
 
                     @Override // org.telegram.ui.ActionBar.c2
-                    public final void j(org.telegram.ui.ActionBar.d2 d2Var, int i632) {
+                    public final void l(org.telegram.ui.ActionBar.d2 d2Var, int i632) {
                         switch (i622) {
                             case 0:
                                 ds0 ds0Var = this.b;
@@ -752,7 +752,7 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
                 final boolean z282 = z26;
                 alertDialog$Builder.k((!z24 || z26) ? LocaleController.formatPluralString("AllNMedia", arrayList2.size(), new Object[0]) : LocaleController.formatPluralString("AllNPhotos", arrayList2.size(), new Object[0]), new org.telegram.ui.ActionBar.c2() { // from class: org.telegram.ui.as0
                     @Override // org.telegram.ui.ActionBar.c2
-                    public final void j(org.telegram.ui.ActionBar.d2 d2Var, int i632) {
+                    public final void l(org.telegram.ui.ActionBar.d2 d2Var, int i632) {
                         ds0 ds0Var = ds0.this;
                         PhotoViewer photoViewer3 = ds0Var.b;
                         int[] iArr = new int[1];
@@ -841,13 +841,13 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
                 });
                 alertDialog$Builder.i(LocaleController.getString("Cancel", R.string.Cancel), new cl0(2));
                 org.telegram.ui.ActionBar.d2 a102 = alertDialog$Builder.a();
-                z17 = photoViewer2.z1(org.telegram.ui.ActionBar.k6.ug);
+                z17 = photoViewer2.z1(org.telegram.ui.ActionBar.j6.ug);
                 a102.i(z17);
                 a102.show();
                 d = a102.d(-3);
                 if (d instanceof TextView) {
                 }
-                z18 = photoViewer2.z1(org.telegram.ui.ActionBar.k6.hg);
+                z18 = photoViewer2.z1(org.telegram.ui.ActionBar.j6.hg);
                 a102.o(z18);
                 return;
             }
@@ -1002,9 +1002,9 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
             }
         } else {
             if (i10 == 24) {
-                bf.b O = bf.b.O();
+                af.c O = af.c.O();
                 m12 = photoViewer2.m1();
-                O.c0(m12);
+                O.d0(m12);
                 n7Var = photoViewer2.D0;
                 n7Var.performClick();
                 return;
@@ -1014,17 +1014,17 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
                     photoViewer2.p4 = true;
                     Bundle bundle = new Bundle();
                     bundle.putLong("dialog_id", photoViewer2.B5);
-                    org.telegram.ui.Components.fa0 fa0Var = new org.telegram.ui.Components.fa0(bundle, null);
-                    xnVar8 = photoViewer2.i4;
-                    if (xnVar8 != null) {
-                        xnVar9 = photoViewer2.i4;
-                        fa0Var.X(xnVar9.v8());
+                    org.telegram.ui.Components.ea0 ea0Var = new org.telegram.ui.Components.ea0(bundle, null);
+                    znVar8 = photoViewer2.i4;
+                    if (znVar8 != null) {
+                        znVar9 = photoViewer2.i4;
+                        ea0Var.X(znVar9.v8());
                     }
                     photoViewer2.G0(false, false);
                     activity16 = photoViewer2.y;
                     if (activity16 instanceof LaunchActivity) {
                         activity17 = photoViewer2.y;
-                        ((LaunchActivity) activity17).q0(fa0Var, false, true);
+                        ((LaunchActivity) activity17).q0(ea0Var, false, true);
                         return;
                     }
                     return;
@@ -1068,7 +1068,7 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
                 if (activity instanceof LaunchActivity) {
                     activity2 = photoViewer2.y;
                     LaunchActivity launchActivity = (LaunchActivity) activity2;
-                    launchActivity.q0(new xn(bundle2), launchActivity.S() > 1 || AndroidUtilities.isTablet(), true);
+                    launchActivity.q0(new zn(bundle2), launchActivity.S() > 1 || AndroidUtilities.isTablet(), true);
                 }
                 photoViewer2.G0(false, false);
                 photoViewer2.Q4 = null;
@@ -1113,13 +1113,13 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
                         if (TextUtils.isEmpty(str4)) {
                             return;
                         }
-                        xnVar7 = photoViewer2.i4;
+                        znVar7 = photoViewer2.i4;
                         ArrayList arrayList3 = new ArrayList();
                         arrayList3.add(new MediaController.PhotoEntry(0, 0, 0L, str4, 0, false, 0, 0, 0L));
-                        this.b.f2(arrayList3, 0, 11, false, new bs0(), xnVar7);
+                        this.b.f2(arrayList3, 0, 11, false, new bs0(), znVar7);
                         photoViewer2.Y0(null, null, false, null);
                         photoViewer2.l2();
-                        qt.q().x();
+                        rt.q().x();
                         return;
                     }
                     return;
@@ -1146,12 +1146,12 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
                         messageObject36 = photoViewer2.Q4;
                         ((LaunchActivity) activity13).K0(messageObject36.currentAccount);
                         arrayList = new ArrayList(1);
-                        xnVar4 = photoViewer2.i4;
-                        if (xnVar4 == null) {
-                            xnVar6 = photoViewer2.i4;
+                        znVar4 = photoViewer2.i4;
+                        if (znVar4 == null) {
+                            znVar6 = photoViewer2.i4;
                             messageObject39 = photoViewer2.Q4;
                             str2 = "Cancel";
-                            groupedMessages = xnVar6.y8(messageObject39.getGroupId());
+                            groupedMessages = znVar6.y8(messageObject39.getGroupId());
                         } else {
                             str2 = "Cancel";
                             groupedMessages = null;
@@ -1171,14 +1171,14 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
                             bundle3.putBoolean("onlySelect", true);
                             bundle3.putBoolean("canSelectTopics", true);
                             bundle3.putInt("dialogsType", 3);
-                            py pyVar = new py(bundle3);
+                            qy qyVar = new qy(bundle3);
                             ArrayList arrayList4 = new ArrayList();
                             messageObject38 = photoViewer2.Q4;
                             arrayList4.add(messageObject38);
-                            xnVar5 = photoViewer2.i4;
-                            pyVar.z2 = new d7(this, arrayList4, xnVar5, 18);
+                            znVar5 = photoViewer2.i4;
+                            qyVar.z2 = new f7(this, arrayList4, znVar5, 18);
                             activity14 = photoViewer2.y;
-                            ((LaunchActivity) activity14).q0(pyVar, false, true);
+                            ((LaunchActivity) activity14).q0(qyVar, false, true);
                             photoViewer2.G0(false, false);
                             return;
                         }
@@ -1190,10 +1190,10 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
                         }
                         z11 = true;
                         activity15 = photoViewer2.y;
-                        AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(activity15, g6Var);
+                        AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(activity15, f6Var);
                         alertDialog$Builder2.l(LocaleController.getString("ForwardGroupMedia", R.string.ForwardGroupMedia));
                         alertDialog$Builder2.g(LocaleController.getString("ForwardGroupMediaMessage", R.string.ForwardGroupMediaMessage));
-                        alertDialog$Builder2.a.F = org.telegram.ui.ActionBar.k6.pg;
+                        alertDialog$Builder2.a.F = org.telegram.ui.ActionBar.j6.pg;
                         final int i65 = 0;
                         alertDialog$Builder2.h(z11 ? LocaleController.getString("ThisPhoto", R.string.ThisPhoto) : LocaleController.getString("ThisMedia", R.string.ThisMedia), new org.telegram.ui.ActionBar.c2(this) { // from class: org.telegram.ui.vr0
                             public final /* synthetic */ ds0 b;
@@ -1203,7 +1203,7 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
                             }
 
                             @Override // org.telegram.ui.ActionBar.c2
-                            public final void j(org.telegram.ui.ActionBar.d2 d2Var, int i632) {
+                            public final void l(org.telegram.ui.ActionBar.d2 d2Var, int i632) {
                                 switch (i65) {
                                     case 0:
                                         ds0 ds0Var = this.b;
@@ -1251,22 +1251,22 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
                         alertDialog$Builder2.k(z11 ? LocaleController.formatPluralString("AllNPhotos", arrayList.size(), new Object[0]) : LocaleController.formatPluralString("AllNMedia", arrayList.size(), new Object[0]), new vl0(6, this, arrayList));
                         alertDialog$Builder2.i(LocaleController.getString(str2, R.string.Cancel), new cl0(3));
                         org.telegram.ui.ActionBar.d2 a11 = alertDialog$Builder2.a();
-                        z13 = photoViewer2.z1(org.telegram.ui.ActionBar.k6.ug);
+                        z13 = photoViewer2.z1(org.telegram.ui.ActionBar.j6.ug);
                         a11.i(z13);
                         a11.show();
                         View d10 = a11.d(-3);
                         if (d10 instanceof TextView) {
-                            int i66 = org.telegram.ui.ActionBar.k6.q7;
+                            int i66 = org.telegram.ui.ActionBar.j6.q7;
                             z15 = photoViewer2.z1(i66);
                             ((TextView) d10).setTextColor(z15);
                             z16 = photoViewer2.z1(i66);
-                            d10.setBackground(org.telegram.ui.ActionBar.k6.G0(AndroidUtilities.dp(3.0f), z16));
+                            d10.setBackground(org.telegram.ui.ActionBar.j6.G0(AndroidUtilities.dp(3.0f), z16));
                             ViewGroup viewGroup2 = a11.q0;
                             if ((viewGroup2 instanceof LinearLayout) && ((LinearLayout) viewGroup2).getOrientation() == 1) {
                                 d10.bringToFront();
                             }
                         }
-                        z14 = photoViewer2.z1(org.telegram.ui.ActionBar.k6.hg);
+                        z14 = photoViewer2.z1(org.telegram.ui.ActionBar.j6.hg);
                         a11.o(z14);
                         return;
                     }
@@ -1276,8 +1276,8 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
                 messageObject36 = photoViewer2.Q4;
                 ((LaunchActivity) activity13).K0(messageObject36.currentAccount);
                 arrayList = new ArrayList(1);
-                xnVar4 = photoViewer2.i4;
-                if (xnVar4 == null) {
+                znVar4 = photoViewer2.i4;
+                if (znVar4 == null) {
                 }
                 if (groupedMessages == null) {
                 }
@@ -1408,7 +1408,7 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
                                 photoViewer2.S2(alertDialog$Builder3);
                                 textView = (TextView) a12.d(-1);
                                 if (textView == null) {
-                                    z12 = photoViewer2.z1(org.telegram.ui.ActionBar.k6.q7);
+                                    z12 = photoViewer2.z1(org.telegram.ui.ActionBar.j6.q7);
                                     textView.setTextColor(z12);
                                     return;
                                 }
@@ -1445,7 +1445,7 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
                             if (photoViewer2.q4) {
                                 activity5 = photoViewer2.y;
                                 messageObject11 = photoViewer2.Q4;
-                                af.g.s(activity5, MessageObject.getMedia(messageObject11.messageOwner).webpage.url);
+                                ze.d.s(activity5, MessageObject.getMedia(messageObject11.messageOwner).webpage.url);
                                 photoViewer2.G0(false, false);
                                 return;
                             }
@@ -1479,15 +1479,15 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
                                     }
                                 }
                             }
-                            if (AndroidUtilities.openForView(messageObject7, activity4, g6Var, z23)) {
+                            if (AndroidUtilities.openForView(messageObject7, activity4, f6Var, z23)) {
                                 photoViewer2.G0(false, false);
                                 return;
                             } else {
                                 photoViewer2.U2();
                                 return;
                             }
-                        } catch (Exception e6) {
-                            FileLog.e(e6);
+                        } catch (Exception e) {
+                            FileLog.e(e);
                             return;
                         }
                     }
@@ -1530,8 +1530,8 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
                             photoViewer2.h3();
                             return;
                         }
-                        xf0Var = photoViewer2.c0;
-                        if (xf0Var.e()) {
+                        wf0Var = photoViewer2.c0;
+                        if (wf0Var.e()) {
                             if (PhotoViewer.X8 != null) {
                                 PhotoViewer.X8.P0();
                             }
@@ -1571,12 +1571,12 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
                         if (messageObject19 != null) {
                             messageObject20 = photoViewer2.Q4;
                             TLRPC.Document document2 = messageObject20.getDocument();
-                            xnVar = photoViewer2.i4;
-                            if (xnVar != null) {
-                                xnVar2 = photoViewer2.i4;
-                                if (xnVar2.V != null) {
-                                    xnVar3 = photoViewer2.i4;
-                                    xnVar3.V.n(document2);
+                            znVar = photoViewer2.i4;
+                            if (znVar != null) {
+                                znVar2 = photoViewer2.i4;
+                                if (znVar2.V != null) {
+                                    znVar3 = photoViewer2.i4;
+                                    znVar3.V.n(document2);
                                     i39 = photoViewer2.Q;
                                     MessagesController messagesController = MessagesController.getInstance(i39);
                                     messageObject21 = photoViewer2.Q4;
@@ -1609,7 +1609,7 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
                         }
                         iu0 iu0Var = photoViewer2.b0;
                         if (iu0Var != null) {
-                            org.telegram.ui.Components.qc.Z(iu0Var, g6Var).o(org.telegram.ui.Components.pc.y, g6Var).j();
+                            org.telegram.ui.Components.qc.Z(iu0Var, f6Var).o(org.telegram.ui.Components.pc.y, f6Var).j();
                             return;
                         }
                         return;
@@ -1708,10 +1708,10 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
                         photoViewer2.a7.add(0, message);
                         photoViewer2.M4 = -1;
                         photoViewer2.B2(0);
-                        org.telegram.ui.Components.z30 z30Var = photoViewer2.i1;
-                        z30Var.d.clear();
-                        z30Var.e.clear();
-                        z30Var.c.clear();
+                        org.telegram.ui.Components.y30 y30Var = photoViewer2.i1;
+                        y30Var.d.clear();
+                        y30Var.e.clear();
+                        y30Var.c.clear();
                         photoViewer2.i1.b();
                         undoView = photoViewer2.k1;
                         j14 = photoViewer2.w5;
@@ -1814,7 +1814,7 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
                         }, 32L);
                         PhotoViewer.S(photoViewer2);
                         i15 = photoViewer2.Q;
-                        MessagesController.getInstance(i15).getTranslateController().translatePhoto(messageObject62, new mr0(photoViewer2, 3));
+                        MessagesController.getInstance(i15).getTranslateController().translatePhoto(messageObject62, new nr0(photoViewer2, 3));
                         return;
                     }
                     if (i10 == 20) {
@@ -1857,10 +1857,10 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
                         photoViewer2.W2 = !photoViewer2.W2;
                         boolean z30 = photoViewer2.W2;
                         messageObject18 = photoViewer2.Q4;
-                        org.telegram.ui.Components.j71.I(messageObject18, z30);
-                        org.telegram.ui.Components.j71 j71Var = photoViewer2.C2;
-                        if (j71Var != null) {
-                            j71Var.N(photoViewer2.W2);
+                        org.telegram.ui.Components.i71.I(messageObject18, z30);
+                        org.telegram.ui.Components.i71 i71Var = photoViewer2.C2;
+                        if (i71Var != null) {
+                            i71Var.N(photoViewer2.W2);
                         }
                         photoViewer2.p0.d(photoViewer2.W2);
                         photoViewer2.p0.setSelectorColor(photoViewer2.W2 ? 259241196 : 268435455);
@@ -1882,7 +1882,7 @@ public final class ds0 extends org.telegram.ui.ActionBar.j {
                             i14 = photoViewer2.Q;
                             activity8 = photoViewer2.y;
                             j10 = photoViewer2.w5;
-                            org.telegram.ui.Components.z4.J(i14, activity8, j10, photo, new oh.b());
+                            org.telegram.ui.Components.z4.J(i14, activity8, j10, photo, new nh.b());
                             return;
                         }
                     }

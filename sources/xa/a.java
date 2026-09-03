@@ -5,10 +5,11 @@ import java.io.Closeable;
 import java.io.EOFException;
 import java.io.Reader;
 import java.util.Arrays;
-import l.d;
+import kf.k0;
 import org.telegram.messenger.BuildConfig;
+import vh.w2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class a implements Closeable {
     public final Reader a;
@@ -27,7 +28,7 @@ public class a implements Closeable {
     public int w = 1;
 
     static {
-        cb.b.b = new cb.b(25);
+        ab.a.b = new ab.a(25);
     }
 
     public a(Reader reader) {
@@ -217,7 +218,7 @@ public class a implements Closeable {
     public final IllegalStateException E(String str) {
         String str2 = x() == 9 ? "adapter-not-null-safe" : "unexpected-json-structure";
         StringBuilder t6 = android.support.v4.media.a.t("Expected ", str, " but was ");
-        t6.append(w.c.m(x()));
+        t6.append(w2.m(x()));
         t6.append(m());
         t6.append("\nSee ");
         t6.append("https://github.com/google/gson/blob/main/Troubleshooting.md#".concat(str2));
@@ -680,7 +681,7 @@ public class a implements Closeable {
                 case 8:
                     break;
                 default:
-                    throw new AssertionError(d.j(i12, "Unknown scope value: "));
+                    throw new AssertionError(k0.j(i12, "Unknown scope value: "));
             }
             i10++;
         }

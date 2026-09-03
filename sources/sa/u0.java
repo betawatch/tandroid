@@ -4,8 +4,9 @@ import java.io.Serializable;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Iterator;
+import vh.w2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class u0 extends pa.u {
     public static pa.i a(xa.a aVar, int i10) {
@@ -20,7 +21,7 @@ public class u0 extends pa.u {
             return new pa.m(Boolean.valueOf(aVar.n()));
         }
         if (c3 != 8) {
-            throw new IllegalStateException("Unexpected token: ".concat(w.c.m(i10)));
+            throw new IllegalStateException("Unexpected token: ".concat(w2.m(i10)));
         }
         aVar.t();
         return pa.k.a;
@@ -91,7 +92,7 @@ public class u0 extends pa.u {
                 lVar.C();
                 return iVar;
             }
-            throw new IllegalStateException("Unexpected " + w.c.m(x10) + " when reading a JsonElement.");
+            throw new IllegalStateException("Unexpected " + w2.m(x10) + " when reading a JsonElement.");
         }
         int x11 = aVar.x();
         int c3 = m1.j.c(x11);

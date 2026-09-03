@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class qu0 implements NotificationCenter.NotificationCenterDelegate {
     public final NotificationCenter.ObserversGroup B;
@@ -42,7 +42,7 @@ public final class qu0 implements NotificationCenter.NotificationCenterDelegate 
             long a2 = rgVar.a();
             this.r = a2;
             this.v = rgVar.H();
-            this.s = rgVar.b();
+            this.s = rgVar.d();
             if (a2 != p2Var.getUserConfig().getClientUserId()) {
                 p2Var.getMessagesController().getSavedMessagesController().hasSavedMessages(a2, new Utilities.Callback(this) { // from class: org.telegram.ui.Components.pu0
                     public final /* synthetic */ qu0 b;
@@ -145,9 +145,9 @@ public final class qu0 implements NotificationCenter.NotificationCenterDelegate 
                     });
                 }
             }
-        } else if (p2Var instanceof fa0) {
-            this.r = ((fa0) p2Var).e;
-        } else if (p2Var instanceof org.telegram.ui.py) {
+        } else if (p2Var instanceof ea0) {
+            this.r = ((ea0) p2Var).e;
+        } else if (p2Var instanceof org.telegram.ui.qy) {
             this.r = p2Var.getUserConfig().getClientUserId();
         }
         if (this.v == 0 && DialogObject.isChatDialog(this.r) && (chatFull = p2Var.getMessagesController().getChatFull(-this.r)) != null) {

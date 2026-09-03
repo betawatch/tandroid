@@ -6,27 +6,27 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class dp0 extends w61 {
+public final class dp0 extends x61 {
     public final /* synthetic */ gp0 a2;
     public final /* synthetic */ n61[] b2;
     public final /* synthetic */ hp0 c2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dp0(hp0 hp0Var, org.telegram.ui.ActionBar.p2 p2Var, Context context, Integer num, int i10, org.telegram.ui.ActionBar.g6 g6Var, int i11, int i12, gp0 gp0Var, n61[] n61VarArr) {
-        super(p2Var, context, true, num, i10, true, g6Var, i11, i12);
+    public dp0(hp0 hp0Var, org.telegram.ui.ActionBar.p2 p2Var, Context context, Integer num, int i10, org.telegram.ui.ActionBar.f6 f6Var, int i11, int i12, gp0 gp0Var, n61[] n61VarArr) {
+        super(p2Var, context, true, num, i10, true, f6Var, i11, i12);
         this.c2 = hp0Var;
         this.a2 = gp0Var;
         this.b2 = n61VarArr;
     }
 
-    @Override // org.telegram.ui.w61
+    @Override // org.telegram.ui.x61
     public final float getScrimDrawableTranslationY() {
         return 0.0f;
     }
 
-    @Override // org.telegram.ui.w61
+    @Override // org.telegram.ui.x61
     public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
         hp0 hp0Var = this.c2;
         if (tL_starGiftUnique != null) {

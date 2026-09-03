@@ -1,180 +1,207 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
+import android.content.Context;
+import android.media.MediaMetadataRetriever;
 import android.view.View;
-import android.view.ViewTreeObserver;
-import android.view.WindowManager;
-import android.widget.ImageView;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.concurrent.ExecutorService;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class ai implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-
-    public /* synthetic */ ai(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+public abstract /* synthetic */ class ai {
+    public static void A(int i10, ArrayList arrayList) {
+        arrayList.add(org.telegram.ui.Components.i51.B(LocaleController.getString(i10)));
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        final int i10 = 0;
-        final int i11 = 1;
-        switch (this.a) {
-            case 0:
-                xn xnVar = (xn) this.b;
-                lj ljVar = xnVar.X0;
-                if (ljVar != null) {
-                    ljVar.getViewTreeObserver().removeOnPreDrawListener(this);
+    public static /* synthetic */ String B(int i10) {
+        if (i10 == 1) {
+            return "PAID";
+        }
+        if (i10 == 2) {
+            return "CANCELLED";
+        }
+        if (i10 == 3) {
+            return "PENDING";
+        }
+        if (i10 == 4) {
+            return "FAILED";
+        }
+        throw null;
+    }
+
+    public static void a(r3.v vVar, h5.w wVar, int i10) {
+        vVar.a(i10, wVar);
+    }
+
+    public static boolean b(int i10, int i11, int i12) {
+        switch (i10) {
+            case 1:
+                if (((i11 + i12) & 1) == 0) {
                 }
                 break;
-            case 1:
-                ((fg.i0) this.b).invalidate();
-                break;
             case 2:
-                View view = ((p70) this.b).fragmentView;
-                if (view != null) {
-                    view.getViewTreeObserver().removeOnPreDrawListener(this);
-                    int rotation = ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getRotation();
-                    if (rotation == 3 || rotation == 1) {
-                        ((p70) this.b).f.setOrientation(0);
-                    } else {
-                        ((p70) this.b).f.setOrientation(1);
-                    }
-                    View view2 = ((p70) this.b).fragmentView;
-                    view2.setPadding(view2.getPaddingLeft(), 0, ((p70) this.b).fragmentView.getPaddingRight(), ((p70) this.b).fragmentView.getPaddingBottom());
-                    break;
+                if ((i11 & 1) == 0) {
                 }
                 break;
             case 3:
-                wp0 wp0Var = (wp0) this.b;
-                if (wp0Var.getParentActivity() != null) {
-                    int rotation2 = ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getRotation();
-                    wp0Var.f = 2;
-                    if (!AndroidUtilities.isTablet() && (rotation2 == 3 || rotation2 == 1)) {
-                        wp0Var.f = 4;
-                    }
-                    wp0Var.n.l();
-                }
-                org.telegram.ui.Components.sl0 sl0Var = ((wp0) this.b).h;
-                if (sl0Var != null) {
-                    sl0Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                    break;
+                if (i12 % 3 == 0) {
                 }
                 break;
             case 4:
-                PhotoViewer photoViewer = (PhotoViewer) this.b;
-                photoViewer.t3.getViewTreeObserver().removeOnPreDrawListener(this);
-                ImageView imageView = photoViewer.u3;
-                if (imageView != null) {
-                    if (photoViewer.G3) {
-                        AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.ui.wt0
-                            public final /* synthetic */ ai b;
-
-                            {
-                                this.b = this;
-                            }
-
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                switch (i10) {
-                                    case 0:
-                                        PhotoViewer photoViewer2 = (PhotoViewer) this.b.b;
-                                        photoViewer2.u3.setVisibility(4);
-                                        photoViewer2.u3.setImageDrawable(null);
-                                        Bitmap bitmap = photoViewer2.z3;
-                                        if (bitmap != null) {
-                                            bitmap.recycle();
-                                            photoViewer2.z3 = null;
-                                            break;
-                                        }
-                                        break;
-                                    default:
-                                        PhotoViewer photoViewer3 = (PhotoViewer) this.b.b;
-                                        if (photoViewer3.G3) {
-                                            photoViewer3.S0();
-                                            break;
-                                        }
-                                        break;
-                                }
-                            }
-                        }, 300L);
-                    } else {
-                        imageView.setVisibility(4);
-                        photoViewer.u3.setImageDrawable(null);
-                        Bitmap bitmap = photoViewer.z3;
-                        if (bitmap != null) {
-                            bitmap.recycle();
-                            photoViewer.z3 = null;
-                        }
-                    }
+                if ((i11 + i12) % 3 == 0) {
                 }
-                AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.ui.wt0
-                    public final /* synthetic */ ai b;
-
-                    {
-                        this.b = this;
-                    }
-
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                PhotoViewer photoViewer2 = (PhotoViewer) this.b.b;
-                                photoViewer2.u3.setVisibility(4);
-                                photoViewer2.u3.setImageDrawable(null);
-                                Bitmap bitmap2 = photoViewer2.z3;
-                                if (bitmap2 != null) {
-                                    bitmap2.recycle();
-                                    photoViewer2.z3 = null;
-                                    break;
-                                }
-                                break;
-                            default:
-                                PhotoViewer photoViewer3 = (PhotoViewer) this.b.b;
-                                if (photoViewer3.G3) {
-                                    photoViewer3.S0();
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
-                photoViewer.D3 = 0;
                 break;
             case 5:
-                ProfileActivity profileActivity = (ProfileActivity) this.b;
-                if (profileActivity.fragmentView != null) {
-                    profileActivity.A3();
-                    profileActivity.k4(true);
-                    profileActivity.fragmentView.getViewTreeObserver().removeOnPreDrawListener(this);
-                    break;
+                if ((((i12 / 3) + (i11 / 2)) & 1) == 0) {
+                }
+                break;
+            case 6:
+                if ((i11 * i12) % 6 == 0) {
+                }
+                break;
+            case 7:
+                if ((i11 * i12) % 6 < 3) {
                 }
                 break;
             default:
-                WallpapersListActivity wallpapersListActivity = (WallpapersListActivity) this.b;
-                int[][] iArr = WallpapersListActivity.h0;
-                if (wallpapersListActivity.getParentActivity() != null) {
-                    int rotation3 = ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getRotation();
-                    if (AndroidUtilities.isTablet()) {
-                        wallpapersListActivity.O = 3;
-                    } else if (rotation3 == 3 || rotation3 == 1) {
-                        wallpapersListActivity.O = 5;
-                    } else {
-                        wallpapersListActivity.O = 3;
-                    }
-                    wallpapersListActivity.C0();
-                }
-                org.telegram.ui.Components.sl0 sl0Var2 = ((WallpapersListActivity) this.b).E;
-                if (sl0Var2 != null) {
-                    sl0Var2.getViewTreeObserver().removeOnPreDrawListener(this);
-                    break;
+                if (((((i11 * i12) % 3) + i11 + i12) & 1) == 0) {
                 }
                 break;
         }
         return true;
+    }
+
+    public static float c(float f10, float f11, float f12, float f13) {
+        return f13 - ((f10 - f11) * f12);
+    }
+
+    public static int d(int i10, int i11, int i12, ArrayList arrayList) {
+        arrayList.add(Integer.valueOf(i10));
+        return i11 + i12;
+    }
+
+    public static int e(int i10, int i11, ArrayList arrayList) {
+        return i11 - (arrayList.size() + i10);
+    }
+
+    public static int f(Random random, int i10) {
+        return Math.abs(random.nextInt() % i10);
+    }
+
+    public static int g(org.telegram.ui.Components.u00 u00Var, int i10) {
+        return u00Var.c(u00Var.getMeasuredWidth()) + i10;
+    }
+
+    public static TextView h(FrameLayout frameLayout, TextView textView, FrameLayout.LayoutParams layoutParams, Context context) {
+        frameLayout.addView(textView, layoutParams);
+        return new TextView(context);
+    }
+
+    public static TextView i(LinearLayout linearLayout, TextView textView, LinearLayout.LayoutParams layoutParams, Context context) {
+        linearLayout.addView(textView, layoutParams);
+        return new TextView(context);
+    }
+
+    public static Object j(int i10, List list) {
+        return list.get(list.size() - i10);
+    }
+
+    public static String k(String str, String str2, String str3, String str4, String str5) {
+        return str + str2 + str3 + str4 + str5;
+    }
+
+    public static StringBuilder l(String str, String str2, String str3, String str4, String str5) {
+        StringBuilder sb = new StringBuilder(str);
+        sb.append(str2);
+        sb.append(str3);
+        sb.append(str4);
+        sb.append(str5);
+        return sb;
+    }
+
+    public static o1.k m(float f10, float f11, float f12) {
+        o1.k kVar = new o1.k(f10);
+        kVar.b(f11);
+        kVar.a(f12);
+        return kVar;
+    }
+
+    public static org.telegram.ui.Components.dl0 n(View view, View view2, int i10, int i11) {
+        view.setLayoutParams(new f2.w0(i10, i11));
+        return new org.telegram.ui.Components.dl0(view2);
+    }
+
+    public static void o(float f10, int i10, TextView textView) {
+        textView.setTextSize(i10, f10);
+        textView.setTypeface(AndroidUtilities.bold());
+    }
+
+    public static void p(int i10, int i11, ArrayList arrayList, ArrayList arrayList2) {
+        arrayList.add(LocaleController.getString(i10));
+        arrayList2.add(Integer.valueOf(i11));
+    }
+
+    public static void q(int i10, ArrayList arrayList) {
+        arrayList.add(org.telegram.ui.Components.i51.t(LocaleController.getString(i10)));
+    }
+
+    public static void r(int i10, Object[] objArr, org.telegram.ui.Components.qc qcVar, int i11, int i12) {
+        qcVar.Q(i11, i12, LocaleController.formatString(i10, objArr)).j();
+    }
+
+    public static void s(int i10, boolean[] zArr, boolean z4, TextView textView, int i11) {
+        textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(zArr, i10, z4));
+        textView.setGravity(i11);
+    }
+
+    public static /* synthetic */ void t(MediaMetadataRetriever mediaMetadataRetriever) {
+        if (mediaMetadataRetriever instanceof AutoCloseable) {
+            mediaMetadataRetriever.close();
+        } else if (mediaMetadataRetriever instanceof ExecutorService) {
+            com.google.android.gms.internal.cast.i4.b();
+        } else {
+            if (!e2.c.s(mediaMetadataRetriever)) {
+                throw new IllegalArgumentException();
+            }
+            mediaMetadataRetriever.release();
+        }
+    }
+
+    public static void u(FrameLayout frameLayout, org.telegram.ui.ActionBar.f6 f6Var, TLRPC.TL_error tL_error, boolean z4) {
+        new org.telegram.ui.Components.qc(frameLayout, f6Var).d0(tL_error, z4);
+    }
+
+    public static void v(String str, StringBuilder sb) {
+        sb.append(str);
+        FileLog.d(sb.toString());
+    }
+
+    public static void w(StringBuilder sb, String str, String str2, String str3, String str4) {
+        sb.append(str);
+        sb.append(str2);
+        sb.append(str3);
+        sb.append(str4);
+    }
+
+    public static void x(rf.f fVar) {
+        com.googlecode.mp4parser.g.a().getClass();
+        com.googlecode.mp4parser.g.b(fVar);
+    }
+
+    public static void y(tf.k kVar, int i10, ArrayList arrayList) {
+        arrayList.add(new tf.i(kVar, i10));
+    }
+
+    public static void z(boolean z4, org.telegram.ui.ActionBar.k kVar) {
+        kVar.setBackButtonDrawable(new org.telegram.ui.ActionBar.i2(z4));
     }
 }

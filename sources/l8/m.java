@@ -16,7 +16,7 @@ import m8.l0;
 import m8.m0;
 import m8.w0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class m extends a7.c {
     public volatile int b;
@@ -42,8 +42,8 @@ public final class m extends a7.c {
             } finally {
                 obtain.recycle();
             }
-        } catch (RemoteException e6) {
-            Log.e("WearableLS", "Failed to send a response back", e6);
+        } catch (RemoteException e) {
+            Log.e("WearableLS", "Failed to send a response back", e);
         }
     }
 
@@ -77,7 +77,7 @@ public final class m extends a7.c {
                     DataHolder dataHolder = (DataHolder) t7.a.a(parcel, DataHolder.CREATOR);
                     t7.a.b(parcel);
                     try {
-                        if (!J0(new androidx.biometric.k(17, this, dataHolder), "onDataItemChanged", String.valueOf(dataHolder) + ", rows=" + dataHolder.n)) {
+                        if (!J0(new androidx.biometric.j(17, this, dataHolder), "onDataItemChanged", String.valueOf(dataHolder) + ", rows=" + dataHolder.n)) {
                             break;
                         }
                     } finally {
@@ -87,7 +87,7 @@ public final class m extends a7.c {
                 case 2:
                     Object obj2 = (l0) t7.a.a(parcel, l0.CREATOR);
                     t7.a.b(parcel);
-                    J0(new androidx.biometric.k(18, this, obj2), "onMessageReceived", obj2);
+                    J0(new androidx.biometric.j(18, this, obj2), "onMessageReceived", obj2);
                     break;
                 case 3:
                     m0 m0Var = (m0) t7.a.a(parcel, m0.CREATOR);
@@ -102,27 +102,27 @@ public final class m extends a7.c {
                 case 5:
                     Object createTypedArrayList = parcel.createTypedArrayList(m0.CREATOR);
                     t7.a.b(parcel);
-                    J0(new androidx.biometric.k(19, this, createTypedArrayList), "onConnectedNodes", createTypedArrayList);
+                    J0(new androidx.biometric.j(19, this, createTypedArrayList), "onConnectedNodes", createTypedArrayList);
                     break;
                 case 6:
                     Object obj3 = (c1) t7.a.a(parcel, c1.CREATOR);
                     t7.a.b(parcel);
-                    J0(new androidx.biometric.k(21, this, obj3), "onNotificationReceived", obj3);
+                    J0(new androidx.biometric.j(21, this, obj3), "onNotificationReceived", obj3);
                     break;
                 case 7:
                     Object obj4 = (m8.e) t7.a.a(parcel, m8.e.CREATOR);
                     t7.a.b(parcel);
-                    J0(new androidx.biometric.k(23, this, obj4), "onChannelEvent", obj4);
+                    J0(new androidx.biometric.j(23, this, obj4), "onChannelEvent", obj4);
                     break;
                 case 8:
                     Object obj5 = (m8.b) t7.a.a(parcel, m8.b.CREATOR);
                     t7.a.b(parcel);
-                    J0(new androidx.biometric.k(20, this, obj5), "onConnectedCapabilityChanged", obj5);
+                    J0(new androidx.biometric.j(20, this, obj5), "onConnectedCapabilityChanged", obj5);
                     break;
                 case 9:
                     Object obj6 = (w0) t7.a.a(parcel, w0.CREATOR);
                     t7.a.b(parcel);
-                    J0(new androidx.biometric.k(22, this, obj6), "onEntityUpdate", obj6);
+                    J0(new androidx.biometric.j(22, this, obj6), "onEntityUpdate", obj6);
                     break;
                 default:
                     return false;

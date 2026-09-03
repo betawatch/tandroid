@@ -1,23 +1,51 @@
 package oh;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import cg.h0;
+import dg.r1;
+import gg.v0;
+import org.telegram.ui.ActionBar.p2;
+import org.telegram.ui.Components.ql0;
+import org.telegram.ui.Components.rl0;
+import org.telegram.ui.Components.sa;
+import org.telegram.ui.Components.w51;
+
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
-public abstract class u extends r7 {
-    @Override // android.view.View
-    public final void invalidate() {
-        if (t.c) {
-            t.b.add(this);
-        } else {
-            super.invalidate();
-        }
+public final class u extends sa {
+    public final int U;
+    public final CharSequence V;
+    public w51 W;
+
+    public u(p2 p2Var, String str, h0 h0Var) {
+        super(p2Var.getParentActivity(), p2Var, true, false, false, 1, p2Var.getResourceProvider());
+        new FrameLayout(getContext());
+        new ImageView(getContext());
+        this.U = p2Var.getCurrentAccount();
+        this.V = str;
+        N();
+        this.v = 0.6f;
+        this.y = true;
+        this.B = true;
+        fixNavigationBar();
+        J();
+        rl0 rl0Var = this.d;
+        int i10 = this.backgroundPaddingLeft;
+        rl0Var.setPadding(i10, 0, i10, 0);
+        this.d.setOnItemClickListener(new v0(3, this, h0Var));
     }
 
-    @Override // android.view.View
-    public final void invalidate(int i10, int i11, int i12, int i13) {
-        if (t.c) {
-            t.b.add(this);
-        } else {
-            super.invalidate(i10, i11, i12, i13);
-        }
+    @Override // org.telegram.ui.Components.sa
+    public final ql0 v(rl0 rl0Var) {
+        w51 w51Var = new w51(rl0Var, getContext(), this.U, 0, false, new r1(this, 24), this.resourcesProvider);
+        this.W = w51Var;
+        w51Var.r = false;
+        return w51Var;
+    }
+
+    @Override // org.telegram.ui.Components.sa
+    public final CharSequence y() {
+        return this.V;
     }
 }

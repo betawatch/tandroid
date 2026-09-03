@@ -1,26 +1,55 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.widget.TextView;
+import android.view.ViewGroup;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class sc extends lp0 {
-    public final /* synthetic */ tc C;
+public final class sc extends org.telegram.ui.Components.ql0 {
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ uc f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sc(tc tcVar, Context context, int i10, long j10, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(i10, j10, context, g6Var);
-        this.C = tcVar;
+    public sc(uc ucVar, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
+        this.f = ucVar;
+        this.c = context;
+        this.d = f6Var;
+        this.e = i10;
     }
 
-    @Override // org.telegram.ui.lp0
-    public final void b(int i10, boolean z4) {
-        super.b(i10, z4);
-        tc tcVar = this.C;
-        TextView textView = tcVar.d;
-        if (textView != null) {
-            textView.setTextColor(tcVar.b.h.getTextColor());
+    @Override // org.telegram.ui.Components.ql0
+    public final boolean D(f2.l1 l1Var) {
+        return true;
+    }
+
+    @Override // f2.o0
+    public final int h() {
+        MessagesController.PeerColors peerColors = MessagesController.getInstance(this.e).peerColors;
+        if (peerColors == null) {
+            return 0;
         }
+        return peerColors.colors.size();
+    }
+
+    @Override // f2.o0
+    public final void v(f2.l1 l1Var, int i10) {
+        tc tcVar = (tc) l1Var.a;
+        tcVar.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, this.d));
+        boolean z4 = i10 == this.f.e;
+        tcVar.s = z4;
+        tcVar.v.f(z4, true);
+        tcVar.invalidate();
+        MessagesController.PeerColors peerColors = MessagesController.getInstance(this.e).peerColors;
+        if (peerColors == null || i10 < 0 || i10 >= peerColors.colors.size()) {
+            return;
+        }
+        tcVar.a(peerColors.colors.get(i10));
+    }
+
+    @Override // f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+        return new org.telegram.ui.Components.dl0(new tc(this.f, this.c));
     }
 }

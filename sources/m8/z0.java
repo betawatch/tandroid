@@ -14,39 +14,39 @@ import java.io.File;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
-import m.r3;
+import m.s3;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class z0 extends b6.g {
     public final ExecutorService R;
-    public final bb.c S;
-    public final bb.c T;
-    public final bb.c U;
-    public final bb.c V;
-    public final bb.c W;
-    public final bb.c X;
-    public final bb.c Y;
-    public final bb.c Z;
-    public final bb.c a0;
-    public final bb.c b0;
+    public final ja.c S;
+    public final ja.c T;
+    public final ja.c U;
+    public final ja.c V;
+    public final ja.c W;
+    public final ja.c X;
+    public final ja.c Y;
+    public final ja.c Z;
+    public final ja.c a0;
+    public final ja.c b0;
     public final a1 c0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z0(Context context, Looper looper, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar, r3 r3Var) {
-        super(context, looper, 14, r3Var, kVar, lVar, 0);
+    public z0(Context context, Looper looper, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar, s3 s3Var) {
+        super(context, looper, 14, s3Var, kVar, lVar, 0);
         ExecutorService unconfigurableExecutorService = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool());
         a1 a2 = a1.a(context);
-        this.S = new bb.c();
-        this.T = new bb.c();
-        this.U = new bb.c();
-        this.V = new bb.c();
-        this.W = new bb.c();
-        this.X = new bb.c();
-        this.Y = new bb.c();
-        this.Z = new bb.c();
-        this.a0 = new bb.c();
-        this.b0 = new bb.c();
+        this.S = new ja.c(21);
+        this.T = new ja.c(21);
+        this.U = new ja.c(21);
+        this.V = new ja.c(21);
+        this.W = new ja.c(21);
+        this.X = new ja.c(21);
+        this.Y = new ja.c(21);
+        this.Z = new ja.c(21);
+        this.a0 = new ja.c(21);
+        this.b0 = new ja.c(21);
         b6.m.h(unconfigurableExecutorService);
         this.R = unconfigurableExecutorService;
         this.c0 = a2;
@@ -66,16 +66,16 @@ public final class z0 extends b6.g {
             Log.v("WearableClient", "onPostInitHandler: statusCode " + i10);
         }
         if (i10 == 0) {
-            this.S.a(iBinder);
-            this.T.a(iBinder);
-            this.U.a(iBinder);
-            this.W.a(iBinder);
-            this.X.a(iBinder);
-            this.Y.a(iBinder);
-            this.Z.a(iBinder);
-            this.a0.a(iBinder);
-            this.b0.a(iBinder);
-            this.V.a(iBinder);
+            this.S.t(iBinder);
+            this.T.t(iBinder);
+            this.U.t(iBinder);
+            this.W.t(iBinder);
+            this.X.t(iBinder);
+            this.Y.t(iBinder);
+            this.Z.t(iBinder);
+            this.a0.t(iBinder);
+            this.b0.t(iBinder);
+            this.V.t(iBinder);
             i10 = 0;
         }
         super.B(i10, iBinder, bundle, i11);

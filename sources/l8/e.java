@@ -5,8 +5,9 @@ import com.google.android.gms.common.data.DataHolder;
 import java.io.Closeable;
 import java.util.ArrayList;
 import java.util.Iterator;
+import kf.k0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class e implements com.google.android.gms.common.api.q, Iterable, Closeable {
     public final DataHolder a;
@@ -39,7 +40,7 @@ public final class e implements com.google.android.gms.common.api.q, Iterable, C
 
     public final int n(int i10) {
         if (i10 < 0 || i10 >= this.c.size()) {
-            throw new IllegalArgumentException(l.d.k(i10, "Position ", " is out of bounds for this buffer"));
+            throw new IllegalArgumentException(k0.k(i10, "Position ", " is out of bounds for this buffer"));
         }
         return ((Integer) this.c.get(i10)).intValue();
     }
@@ -55,17 +56,17 @@ public final class e implements com.google.android.gms.common.api.q, Iterable, C
                     this.c = arrayList;
                     if (i10 > 0) {
                         arrayList.add(0);
-                        int e6 = this.a.e(0);
+                        int e = this.a.e(0);
                         DataHolder dataHolder2 = this.a;
                         dataHolder2.f(0, "path");
-                        String string = dataHolder2.d[e6].getString(0, dataHolder2.c.getInt("path"));
+                        String string = dataHolder2.d[e].getString(0, dataHolder2.c.getInt("path"));
                         for (int i11 = 1; i11 < i10; i11++) {
-                            int e10 = this.a.e(i11);
+                            int e6 = this.a.e(i11);
                             DataHolder dataHolder3 = this.a;
                             dataHolder3.f(i11, "path");
-                            String string2 = dataHolder3.d[e10].getString(i11, dataHolder3.c.getInt("path"));
+                            String string2 = dataHolder3.d[e6].getString(i11, dataHolder3.c.getInt("path"));
                             if (string2 == null) {
-                                throw new NullPointerException("Missing value for markerColumn: path, at row: " + i11 + ", for window: " + e10);
+                                throw new NullPointerException("Missing value for markerColumn: path, at row: " + i11 + ", for window: " + e6);
                             }
                             if (!string2.equals(string)) {
                                 this.c.add(Integer.valueOf(i11));

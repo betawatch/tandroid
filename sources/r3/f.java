@@ -3,7 +3,7 @@ package r3;
 import h5.d0;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class f implements s {
     public final int a;
@@ -35,14 +35,14 @@ public final class f implements s {
     @Override // r3.s
     public final r f(long j10) {
         long[] jArr = this.e;
-        int e6 = d0.e(jArr, j10, true);
-        long j11 = jArr[e6];
+        int e = d0.e(jArr, j10, true);
+        long j11 = jArr[e];
         long[] jArr2 = this.c;
-        t tVar = new t(j11, jArr2[e6]);
-        if (j11 >= j10 || e6 == this.a - 1) {
+        t tVar = new t(j11, jArr2[e]);
+        if (j11 >= j10 || e == this.a - 1) {
             return new r(tVar, tVar);
         }
-        int i10 = e6 + 1;
+        int i10 = e + 1;
         return new r(tVar, new t(jArr[i10], jArr2[i10]));
     }
 

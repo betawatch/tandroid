@@ -3,7 +3,7 @@ package q4;
 import g5.p;
 import j3.n0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class k extends e {
     public final long s;
@@ -14,7 +14,7 @@ public abstract class k extends e {
         this.s = j12;
     }
 
-    public long b() {
+    public long c() {
         long j10 = this.s;
         if (j10 != -1) {
             return j10 + 1;
@@ -22,5 +22,5 @@ public abstract class k extends e {
         return -1L;
     }
 
-    public abstract boolean c();
+    public abstract boolean d();
 }

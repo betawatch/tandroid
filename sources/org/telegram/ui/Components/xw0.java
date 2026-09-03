@@ -22,9 +22,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public abstract class xw0 extends sl0 {
+public abstract class xw0 extends rl0 {
     public static final vw0 u3 = new vw0();
     public static final ww0 v3 = new ww0();
     public float U2;
@@ -41,7 +41,7 @@ public abstract class xw0 extends sl0 {
     public Utilities.Callback f3;
     public boolean g3;
     public boolean h3;
-    public fg.h0 i3;
+    public eg.h0 i3;
     public int j3;
     public Utilities.Callback k3;
     public float l3;
@@ -58,19 +58,19 @@ public abstract class xw0 extends sl0 {
         new HashSet();
     }
 
-    public xw0(Context context, int i10, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, g6Var);
+    public xw0(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var);
         this.U2 = 6.5f;
         this.V2 = null;
-        pr prVar = pr.h;
-        this.X2 = new z5(this, 360L, prVar);
+        mr mrVar = mr.h;
+        this.X2 = new z5(this, 360L, mrVar);
         Paint paint = new Paint(1);
         this.b3 = paint;
         this.j3 = -1;
         this.l3 = 0.0f;
         this.n3 = true;
-        this.o3 = new z5(this, 350L, prVar);
-        this.p3 = new z5(this, 350L, prVar);
+        this.o3 = new z5(this, 350L, mrVar);
+        this.p3 = new z5(this, 350L, mrVar);
         this.q3 = new RectF();
         this.r3 = new RectF();
         this.s3 = new RectF();
@@ -78,18 +78,18 @@ public abstract class xw0 extends sl0 {
         ow0 ow0Var = new ow0(this);
         this.W2 = ow0Var;
         setAdapter(ow0Var);
-        f2.j0 j0Var = new f2.j0();
-        setLayoutManager(j0Var);
-        j0Var.j1(0);
+        f2.i0 i0Var = new f2.i0();
+        setLayoutManager(i0Var);
+        i0Var.j1(0);
         setSelectorRadius(AndroidUtilities.dp(15.0f));
         setSelectorType(1);
-        int i11 = org.telegram.ui.ActionBar.k6.i6;
-        setSelectorDrawableColor(org.telegram.ui.ActionBar.k6.v0(i11, this.m2));
-        paint.setColor(org.telegram.ui.ActionBar.k6.v0(i11, this.m2));
+        int i11 = org.telegram.ui.ActionBar.j6.i6;
+        setSelectorDrawableColor(org.telegram.ui.ActionBar.j6.v0(i11, this.m2));
+        paint.setColor(org.telegram.ui.ActionBar.j6.v0(i11, this.m2));
         setWillNotDraw(false);
         setOnItemClickListener(new k(this, 15));
         long currentTimeMillis = System.currentTimeMillis();
-        u3.fetch(UserConfig.selectedAccount, Integer.valueOf(i10), new org.telegram.ui.ActionBar.b4(this, currentTimeMillis, 1));
+        u3.fetch(UserConfig.selectedAccount, Integer.valueOf(i10), new org.telegram.ui.ActionBar.a4(this, currentTimeMillis, 1));
     }
 
     private int getScrollToStartWidth() {
@@ -159,11 +159,11 @@ public abstract class xw0 extends sl0 {
     public final void B1() {
         int dp = (AndroidUtilities.dp(34.0f) * this.j3) + ((-getScrollToStartWidth()) - Math.max(0, this.d3));
         scrollBy(dp, 0);
-        post(new im((qh.q1) this, dp, 8));
+        post(new dw((ph.q1) this, dp, 7));
     }
 
     public final void C1() {
-        v0(-getScrollToStartWidth(), 0, pr.h);
+        v0(-getScrollToStartWidth(), 0, mr.h);
     }
 
     public void D1(int i10) {
@@ -224,14 +224,14 @@ public abstract class xw0 extends sl0 {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.l3, r52 != 0 ? 1.0f : 0.0f);
         this.m3 = ofFloat;
-        ofFloat.addUpdateListener(new k70(this, 23));
-        this.m3.addListener(new pd0(this, 15));
-        this.m3.setInterpolator(pr.h);
+        ofFloat.addUpdateListener(new j70(this, 23));
+        this.m3.addListener(new od0(this, 15));
+        this.m3.setInterpolator(mr.h);
         this.m3.setDuration((this.V2 == null ? 5 : r6.length) * 120);
         this.m3.start();
     }
 
-    @Override // org.telegram.ui.Components.sl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.rl0, android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         if (motionEvent.getAction() == 0) {
             View E = E(motionEvent.getX(), motionEvent.getY());
@@ -398,7 +398,7 @@ public abstract class xw0 extends sl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.rl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         F1(this.n3, false);
@@ -407,7 +407,7 @@ public abstract class xw0 extends sl0 {
     @Override // android.view.View
     public final void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
-        fg.h0 h0Var = this.i3;
+        eg.h0 h0Var = this.i3;
         if (h0Var != null) {
             h0Var.requestLayout();
         }

@@ -9,6 +9,7 @@ import java.nio.ByteBuffer;
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.TimeUnit;
+import kf.k0;
 import org.telegram.messenger.FileLog;
 import org.webrtc.EglBase;
 import org.webrtc.EncodedImage;
@@ -17,7 +18,7 @@ import org.webrtc.VideoDecoder;
 import org.webrtc.VideoFrame;
 import ru.noties.jlatexmath.android.BuildConfig;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
 class AndroidVideoDecoder implements VideoDecoder, VideoSink {
     private static final int DEQUEUE_INPUT_TIMEOUT_US = 500000;
@@ -49,7 +50,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
     private final Object dimensionLock = new Object();
     private final Object renderedTextureMetadataLock = new Object();
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     public static class DecodedTextureMetadata {
         final Integer decodeTimeMs;
         final long presentationTimestampUs;
@@ -60,7 +61,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
         }
     }
 
-    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
     public static class FrameInfo {
         final long decodeStartTimeMs;
         final int rotation;
@@ -73,7 +74,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
 
     public AndroidVideoDecoder(MediaCodecWrapperFactory mediaCodecWrapperFactory, String str, VideoCodecMimeType videoCodecMimeType, int i10, EglBase.Context context) {
         if (!isSupportedColorFormat(i10)) {
-            throw new IllegalArgumentException(l.d.j(i10, "Unsupported color format: "));
+            throw new IllegalArgumentException(k0.j(i10, "Unsupported color format: "));
         }
         Logging.d(TAG, "ctor name: " + str + " type: " + videoCodecMimeType + " color format: " + i10 + " context: " + context);
         this.mediaCodecWrapperFactory = mediaCodecWrapperFactory;
@@ -86,7 +87,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
 
     private VideoFrame.Buffer copyI420Buffer(ByteBuffer byteBuffer, int i10, int i11, int i12, int i13) {
         if (i10 % 2 != 0) {
-            throw new AssertionError(l.d.j(i10, "Stride is not divisible by two: "));
+            throw new AssertionError(k0.j(i10, "Stride is not divisible by two: "));
         }
         int i14 = (i12 + 1) / 2;
         int i15 = i11 % 2 == 0 ? (i13 + 1) / 2 : i13 / 2;
@@ -245,13 +246,13 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
                 createOutputThread.start();
                 Logging.d(TAG, "initDecodeInternal done");
                 return VideoCodecStatus.OK;
-            } catch (IllegalArgumentException e6) {
-                e = e6;
+            } catch (IllegalArgumentException e) {
+                e = e;
                 Logging.e(TAG, "initDecode failed", e);
                 release();
                 return VideoCodecStatus.FALLBACK_SOFTWARE;
-            } catch (IllegalStateException e10) {
-                e = e10;
+            } catch (IllegalStateException e6) {
+                e = e6;
                 Logging.e(TAG, "initDecode failed", e);
                 release();
                 return VideoCodecStatus.FALLBACK_SOFTWARE;
@@ -351,14 +352,14 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
         Logging.d(TAG, "Releasing MediaCodec on output thread");
         try {
             this.codec.stop();
-        } catch (Exception e6) {
-            Logging.e(TAG, "Media decoder stop failed", e6);
+        } catch (Exception e) {
+            Logging.e(TAG, "Media decoder stop failed", e);
         }
         try {
             this.codec.release();
-        } catch (Exception e10) {
-            Logging.e(TAG, "Media decoder release failed", e10);
-            this.shutdownException = e10;
+        } catch (Exception e6) {
+            Logging.e(TAG, "Media decoder release failed", e6);
+            this.shutdownException = e6;
         }
         Logging.d(TAG, "Release on output thread done");
     }
@@ -469,17 +470,17 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
                         this.keyFrameRequired = false;
                     }
                     return VideoCodecStatus.OK;
-                } catch (IllegalStateException e6) {
-                    Logging.e(TAG, "queueInputBuffer failed", e6);
+                } catch (IllegalStateException e) {
+                    Logging.e(TAG, "queueInputBuffer failed", e);
                     this.frameInfos.pollLast();
                     return VideoCodecStatus.ERROR;
                 }
-            } catch (IllegalStateException e10) {
-                Logging.e(TAG, "getInputBuffer with index=" + dequeueInputBuffer + " failed", e10);
+            } catch (IllegalStateException e6) {
+                Logging.e(TAG, "getInputBuffer with index=" + dequeueInputBuffer + " failed", e6);
                 return VideoCodecStatus.ERROR;
             }
-        } catch (IllegalStateException e11) {
-            Logging.e(TAG, "dequeueInputBuffer failed", e11);
+        } catch (IllegalStateException e10) {
+            Logging.e(TAG, "dequeueInputBuffer failed", e10);
             return VideoCodecStatus.ERROR;
         }
     }
@@ -513,8 +514,8 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
             } else {
                 deliverByteFrame(dequeueOutputBuffer, bufferInfo, i10, num);
             }
-        } catch (IllegalStateException e6) {
-            Logging.e(TAG, "deliverDecodedFrame failed", e6);
+        } catch (IllegalStateException e) {
+            Logging.e(TAG, "deliverDecodedFrame failed", e);
         }
     }
 

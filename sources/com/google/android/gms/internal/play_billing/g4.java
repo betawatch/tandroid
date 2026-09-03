@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-import j7.q6;
+import j7.s6;
 import java.util.Locale;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
@@ -13,19 +13,19 @@ import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class g4 implements t0 {
     public static final boolean d = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
     public static final Logger e = Logger.getLogger(g4.class.getName());
-    public static final q6 f;
+    public static final s6 f;
     public static final Object h;
     public volatile Object a;
     public volatile v2 b;
     public volatile f4 c;
 
     static {
-        q6 e4Var;
+        s6 e4Var;
         try {
             e4Var = new s3(AtomicReferenceFieldUpdater.newUpdater(f4.class, Thread.class, "a"), AtomicReferenceFieldUpdater.newUpdater(f4.class, f4.class, "b"), AtomicReferenceFieldUpdater.newUpdater(g4.class, f4.class, "c"), AtomicReferenceFieldUpdater.newUpdater(g4.class, v2.class, "b"), AtomicReferenceFieldUpdater.newUpdater(g4.class, Object.class, "a"));
             th = null;
@@ -43,14 +43,14 @@ public class g4 implements t0 {
 
     public static void c(g4 g4Var) {
         f4 f4Var;
-        q6 q6Var;
+        s6 s6Var;
         v2 v2Var;
         v2 v2Var2;
         v2 v2Var3;
         do {
             f4Var = g4Var.c;
-            q6Var = f;
-        } while (!q6Var.e(g4Var, f4Var, f4.c));
+            s6Var = f;
+        } while (!s6Var.e(g4Var, f4Var, f4.c));
         while (true) {
             v2Var = null;
             if (f4Var == null) {
@@ -65,7 +65,7 @@ public class g4 implements t0 {
         }
         do {
             v2Var2 = g4Var.b;
-        } while (!q6Var.c(g4Var, v2Var2, v2.d));
+        } while (!s6Var.c(g4Var, v2Var2, v2.d));
         while (true) {
             v2Var3 = v2Var;
             v2Var = v2Var2;
@@ -227,9 +227,9 @@ public class g4 implements t0 {
         if (f4Var != f4Var2) {
             f4 f4Var3 = new f4();
             do {
-                q6 q6Var = f;
-                q6Var.a(f4Var3, f4Var);
-                if (q6Var.e(this, f4Var, f4Var3)) {
+                s6 s6Var = f;
+                s6Var.a(f4Var3, f4Var);
+                if (s6Var.e(this, f4Var, f4Var3)) {
                     do {
                         LockSupport.park(this);
                         if (Thread.interrupted()) {
@@ -300,9 +300,9 @@ public class g4 implements t0 {
                 if (f4Var != f4Var2) {
                     f4 f4Var3 = new f4();
                     do {
-                        q6 q6Var = f;
-                        q6Var.a(f4Var3, f4Var);
-                        if (q6Var.e(this, f4Var, f4Var3)) {
+                        s6 s6Var = f;
+                        s6Var.a(f4Var3, f4Var);
+                        if (s6Var.e(this, f4Var, f4Var3)) {
                             do {
                                 LockSupport.parkNanos(this, nanos);
                                 if (!Thread.interrupted()) {

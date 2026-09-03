@@ -16,9 +16,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import qh.r6;
+import ph.t6;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
 public class HttpGetFileTask extends AsyncTask<String, Void, File> {
     private Utilities.Callback<File> doneCallback;
@@ -104,8 +104,8 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                         }
                         j12 = j11;
                         z4 = false;
-                    } catch (Exception e6) {
-                        e = e6;
+                    } catch (Exception e) {
+                        e = e;
                         j12 = j11;
                         j10 = j12;
                         if (e instanceof ProtocolException) {
@@ -144,7 +144,7 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                                         j10 = j11;
                                         if (read == -1) {
                                             if (this.progressCallback != null) {
-                                                AndroidUtilities.runOnUIThread(new s0(this, 2));
+                                                AndroidUtilities.runOnUIThread(new q0(this, 3));
                                             }
                                             if (channel != null) {
                                                 channel.close();
@@ -162,14 +162,14 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                                             if (isCancelled()) {
                                                 try {
                                                     break;
-                                                } catch (Exception e10) {
-                                                    FileLog.e(e10);
+                                                } catch (Exception e6) {
+                                                    FileLog.e(e6);
                                                 }
                                             } else {
                                                 if (contentLengthLong > j10) {
                                                     float clamp01 = Utilities.clamp01(j12 / contentLengthLong);
                                                     if (this.progressCallback != null) {
-                                                        AndroidUtilities.runOnUIThread(new org.telegram.ui.d0(this, clamp01, 5));
+                                                        AndroidUtilities.runOnUIThread(new org.telegram.ui.e0(this, clamp01, 5));
                                                     }
                                                 }
                                                 j11 = j10;
@@ -225,8 +225,8 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                                 th2.addSuppressed(th12);
                                 throw th2;
                             }
-                        } catch (Exception e11) {
-                            e = e11;
+                        } catch (Exception e10) {
+                            e = e10;
                             if (e instanceof ProtocolException) {
                             }
                         }
@@ -242,11 +242,11 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                     if (str2 == null) {
                         str2 = MimeTypeMap.getSingleton().getExtensionFromMimeType(httpURLConnection.getContentType());
                     }
-                    this.file = r6.w(UserConfig.selectedAccount, str2);
+                    this.file = t6.w(UserConfig.selectedAccount, str2);
                 }
                 bufferedInputStream = new BufferedInputStream(errorStream, 16384);
-            } catch (Exception e12) {
-                e = e12;
+            } catch (Exception e11) {
+                e = e11;
                 j10 = j11;
             }
         }

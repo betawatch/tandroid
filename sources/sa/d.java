@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class d implements pa.v {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final class d implements pa.v {
                 ra.d.b(Collection.class.isAssignableFrom(cls2));
                 Type j10 = ra.d.j(type, cls2, ra.d.g(type, cls2, Collection.class), new HashMap());
                 cls = j10 instanceof ParameterizedType ? ((ParameterizedType) j10).getActualTypeArguments()[0] : Object.class;
-                return new c(gVar, cls, gVar.b(new wa.a(cls)), c0Var.z(aVar));
+                return new c(gVar, cls, gVar.b(new wa.a(cls)), c0Var.E(aVar));
             default:
                 Type type2 = aVar.b;
                 Class cls3 = aVar.a;
@@ -59,9 +59,9 @@ public final class d implements pa.v {
                 Type type3 = actualTypeArguments[0];
                 pa.u b10 = (type3 == Boolean.TYPE || type3 == Boolean.class) ? h1.c : gVar.b(new wa.a(type3));
                 pa.u b11 = gVar.b(new wa.a(actualTypeArguments[1]));
-                ra.m z4 = c0Var.z(aVar);
+                ra.m E = c0Var.E(aVar);
                 Type[] typeArr = actualTypeArguments;
-                return new o(this, gVar, typeArr[0], b10, typeArr[1], b11, z4);
+                return new o(this, gVar, typeArr[0], b10, typeArr[1], b11, E);
         }
     }
 }

@@ -5,7 +5,7 @@ import java.io.EOFException;
 import java.io.IOException;
 import r3.s;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class b implements h {
     public final g a;
@@ -65,7 +65,7 @@ public final class b implements h {
                     long position2 = lVar.getPosition();
                     if (gVar.b(lVar, this.s)) {
                         gVar.a(lVar, false);
-                        lVar.r();
+                        lVar.m();
                         long j14 = this.n;
                         long j15 = gVar.b;
                         long j16 = j14 - j15;
@@ -120,11 +120,11 @@ public final class b implements h {
                 gVar.b(lVar, -1L);
                 gVar.a(lVar, false);
                 if (gVar.b > this.n) {
-                    lVar.r();
+                    lVar.m();
                     this.e = 4;
                     return -(this.v + j11);
                 }
-                lVar.s(gVar.d + gVar.e);
+                lVar.n(gVar.d + gVar.e);
                 this.r = lVar.getPosition();
                 this.v = gVar.b;
             }
@@ -140,11 +140,11 @@ public final class b implements h {
             throw new EOFException();
         }
         gVar.a(lVar, false);
-        lVar.s(gVar.d + gVar.e);
+        lVar.n(gVar.d + gVar.e);
         long j21 = gVar.b;
         while ((gVar.a & 4) != 4 && gVar.b(lVar, -1L) && lVar.getPosition() < j12 && gVar.a(lVar, true)) {
             try {
-                lVar.s(gVar.d + gVar.e);
+                lVar.n(gVar.d + gVar.e);
                 j21 = gVar.b;
             } catch (EOFException unused) {
             }
@@ -155,7 +155,7 @@ public final class b implements h {
     }
 
     @Override // a4.h
-    public final s h() {
+    public final s l() {
         if (this.f != 0) {
             return new a(this);
         }
@@ -163,7 +163,7 @@ public final class b implements h {
     }
 
     @Override // a4.h
-    public final void u(long j10) {
+    public final void p(long j10) {
         this.n = d0.i(j10, 0L, this.f - 1);
         this.e = 2;
         this.r = this.b;

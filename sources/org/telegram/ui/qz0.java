@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class qz0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final class qz0 extends AnimatorListenerAdapter {
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         int i10;
-        org.telegram.ui.Cells.y3 y3Var;
+        org.telegram.ui.Cells.x3 x3Var;
         switch (this.a) {
             case 0:
                 ProfileActivity profileActivity = this.c;
@@ -62,9 +62,9 @@ public final class qz0 extends AnimatorListenerAdapter {
                 break;
             default:
                 ProfileActivity profileActivity2 = this.c;
-                if (profileActivity2.c0 != null && (y3Var = profileActivity2.d0) != null) {
+                if (profileActivity2.c0 != null && (x3Var = profileActivity2.d0) != null) {
                     if (!this.b) {
-                        y3Var.setVisibility(4);
+                        x3Var.setVisibility(4);
                     }
                     profileActivity2.c0 = null;
                     break;

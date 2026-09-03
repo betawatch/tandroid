@@ -1,40 +1,77 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.app.Activity;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class la implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ma b;
+public final class la extends FrameLayout {
+    public final EditTextBoldCursor a;
+    public final TextView b;
+    public final /* synthetic */ ra c;
 
-    public /* synthetic */ la(ma maVar, int i10) {
-        this.a = i10;
-        this.b = maVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public la(ra raVar, Activity activity) {
+        super(activity);
+        this.c = raVar;
+        LinearLayout linearLayout = new LinearLayout(getContext());
+        linearLayout.setOrientation(0);
+        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(getContext());
+        this.a = editTextBoldCursor;
+        editTextBoldCursor.setTextSize(1, 17.0f);
+        editTextBoldCursor.setHintTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.H6, false));
+        int i10 = org.telegram.ui.ActionBar.j6.G6;
+        editTextBoldCursor.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
+        editTextBoldCursor.setBackgroundDrawable(null);
+        editTextBoldCursor.setMaxLines(1);
+        editTextBoldCursor.setLines(1);
+        editTextBoldCursor.setPadding(0, 0, 0, 0);
+        editTextBoldCursor.setSingleLine(true);
+        editTextBoldCursor.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
+        editTextBoldCursor.setInputType(180224);
+        editTextBoldCursor.setImeOptions(6);
+        editTextBoldCursor.setHint(LocaleController.getString(R.string.UsernameLinkPlaceholder));
+        editTextBoldCursor.setCursorColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
+        editTextBoldCursor.setCursorSize(AndroidUtilities.dp(19.0f));
+        editTextBoldCursor.setCursorWidth(1.5f);
+        editTextBoldCursor.setOnEditorActionListener(new ja(this, 0));
+        String str = raVar.r;
+        long j10 = raVar.x;
+        editTextBoldCursor.setText(str);
+        editTextBoldCursor.addTextChangedListener(new ka(this));
+        if (j10 != 0) {
+            editTextBoldCursor.setEnabled(false);
+        }
+        TextView textView = new TextView(getContext());
+        this.b = textView;
+        textView.setMaxLines(1);
+        textView.setLines(1);
+        textView.setPadding(0, 0, 0, 0);
+        textView.setSingleLine(true);
+        textView.setText(raVar.getMessagesController().linkPrefix + "/");
+        textView.setTextSize(1, 17.0f);
+        textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
+        textView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
+        textView.setTranslationY(-AndroidUtilities.dp(3.0f));
+        linearLayout.addView(textView, k7.b6.p(-2, -2, 0.0f, 16, 21, 15, 0, 15));
+        linearLayout.addView(editTextBoldCursor, k7.b6.p(-2, -2, 1.0f, 16, 0, 15, 21, 15));
+        addView(linearLayout, k7.b6.e(-1, -1, 48));
+        if (j10 != 0) {
+            editTextBoldCursor.setAlpha(0.6f);
+            textView.setAlpha(0.6f);
+        }
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                ma maVar = this.b;
-                maVar.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                maVar.n = floatValue;
-                maVar.f.setTranslationX(floatValue * AndroidUtilities.dp(16.0f));
-                maVar.d.setAlpha(maVar.n);
-                break;
-            default:
-                ma maVar2 = this.b;
-                maVar2.getClass();
-                maVar2.B = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                int i10 = org.telegram.ui.ActionBar.k6.z6;
-                org.telegram.ui.ActionBar.g6 g6Var = maVar2.b;
-                int d = i0.a.d(maVar2.B, org.telegram.ui.ActionBar.k6.v0(i10, g6Var), org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.n6, g6Var));
-                maVar2.e.b(d);
-                maVar2.f.setTextColor(d);
-                break;
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
     }
 }

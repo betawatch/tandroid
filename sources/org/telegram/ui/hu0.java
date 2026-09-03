@@ -4,15 +4,15 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class hu0 extends ImageView {
     public int a;
     public boolean b;
     public boolean c;
     public boolean d;
-    public org.telegram.ui.Components.j71 e;
-    public final org.telegram.ui.Components.pr f;
+    public org.telegram.ui.Components.i71 e;
+    public final org.telegram.ui.Components.mr f;
     public ValueAnimator h;
     public final /* synthetic */ PhotoViewer n;
 
@@ -24,14 +24,14 @@ public final class hu0 extends ImageView {
         this.b = false;
         this.c = false;
         this.d = false;
-        this.f = org.telegram.ui.Components.pr.i;
+        this.f = org.telegram.ui.Components.mr.i;
         setAlpha(0.0f);
     }
 
     public static void a(hu0 hu0Var) {
         PhotoViewer photoViewer = hu0Var.n;
-        org.telegram.ui.Components.j71 j71Var = photoViewer.C2;
-        if (j71Var == null || j71Var.p() == -9223372036854775807L) {
+        org.telegram.ui.Components.i71 i71Var = photoViewer.C2;
+        if (i71Var == null || i71Var.p() == -9223372036854775807L) {
             ValueAnimator valueAnimator = hu0Var.h;
             if (valueAnimator != null) {
                 valueAnimator.cancel();
@@ -63,7 +63,7 @@ public final class hu0 extends ImageView {
         if (hu0Var.h == null) {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(max2, 1.0f);
             hu0Var.h = ofFloat;
-            ofFloat.addUpdateListener(new e3(hu0Var, 24));
+            ofFloat.addUpdateListener(new g3(hu0Var, 24));
             hu0Var.h.setDuration(max);
             hu0Var.h.setInterpolator(hu0Var.f);
             hu0Var.h.start();

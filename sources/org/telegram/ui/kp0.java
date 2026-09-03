@@ -15,10 +15,10 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class kp0 extends View {
-    public final org.telegram.ui.ActionBar.g6 a;
+    public final org.telegram.ui.ActionBar.f6 a;
     public final Paint b;
     public final int c;
     public final int d;
@@ -31,7 +31,7 @@ public final class kp0 extends View {
     public Utilities.Callback v;
     public jp0 w;
 
-    public kp0(int i10, int i11, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+    public kp0(int i10, int i11, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         Paint paint = new Paint(1);
         this.b = paint;
@@ -42,7 +42,7 @@ public final class kp0 extends View {
         this.s = 0;
         this.c = i10;
         this.d = i11;
-        this.a = g6Var;
+        this.a = f6Var;
     }
 
     public final void a(int i10, boolean z4) {
@@ -82,7 +82,7 @@ public final class kp0 extends View {
                 invalidate();
                 return;
             }
-            org.telegram.ui.ActionBar.g6 g6Var = this.a;
+            org.telegram.ui.ActionBar.f6 f6Var = this.a;
             int[] iArr = this.h;
             if (i11 == 2) {
                 jp0 jp0Var = jp0VarArr[i12];
@@ -90,12 +90,12 @@ public final class kp0 extends View {
                 jp0Var.o = i13;
                 jp0Var.h = i13 < 0;
                 if (i13 < 0) {
-                    i10 = org.telegram.ui.ActionBar.k6.c8;
+                    i10 = org.telegram.ui.ActionBar.j6.c8;
                 } else {
-                    int[] iArr2 = org.telegram.ui.ActionBar.k6.r8;
+                    int[] iArr2 = org.telegram.ui.ActionBar.j6.r8;
                     i10 = iArr2[i13 % iArr2.length];
                 }
-                int v02 = org.telegram.ui.ActionBar.k6.v0(i10, g6Var);
+                int v02 = org.telegram.ui.ActionBar.j6.v0(i10, f6Var);
                 jp0Var.g = false;
                 jp0Var.f = false;
                 jp0Var.a.setColor(v02);
@@ -103,7 +103,7 @@ public final class kp0 extends View {
                 jp0 jp0Var2 = jp0VarArr[i12];
                 int i14 = iArr[i12];
                 jp0Var2.o = i14;
-                int v03 = org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.r8[i14], g6Var);
+                int v03 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.r8[i14], f6Var);
                 jp0Var2.g = false;
                 jp0Var2.f = false;
                 jp0Var2.a.setColor(v03);
@@ -156,13 +156,13 @@ public final class kp0 extends View {
                     canvas.drawRoundRect(rectF2, AndroidUtilities.dp(2.33f), AndroidUtilities.dp(2.33f), jp0Var.c);
                     canvas.restore();
                 }
-                float e6 = jp0Var.n.e(jp0Var.m);
-                if (e6 > 0.0f) {
+                float e = jp0Var.n.e(jp0Var.m);
+                if (e > 0.0f) {
                     Paint paint = kp0Var.b;
                     Paint paint2 = kp0Var.b;
                     paint.setStrokeWidth(AndroidUtilities.dpf2(2.0f));
-                    paint2.setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.d6, kp0Var.a));
-                    canvas.drawCircle(rectF.centerX(), rectF.centerY(), (AndroidUtilities.lerp(0.5f, -2.0f, e6) * paint2.getStrokeWidth()) + Math.min(rectF.height() / 2.0f, rectF.width() / 2.0f), paint2);
+                    paint2.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, kp0Var.a));
+                    canvas.drawCircle(rectF.centerX(), rectF.centerY(), (AndroidUtilities.lerp(0.5f, -2.0f, e) * paint2.getStrokeWidth()) + Math.min(rectF.height() / 2.0f, rectF.width() / 2.0f), paint2);
                 }
                 if (jp0Var.h) {
                     if (kp0Var.e) {
@@ -171,7 +171,7 @@ public final class kp0 extends View {
                             jp0Var.k = drawable;
                             drawable.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
                         }
-                        jp0Var.k.setBounds((int) org.telegram.messenger.y3.A(jp0Var.k.getIntrinsicWidth(), 2.0f, 1.2f, rectF.centerX()), (int) org.telegram.messenger.y3.A(jp0Var.k.getIntrinsicHeight(), 2.0f, 1.2f, rectF.centerY()), (int) w.c.c(jp0Var.k.getIntrinsicWidth(), 2.0f, 1.2f, rectF.centerX()), (int) w.c.c(jp0Var.k.getIntrinsicHeight(), 2.0f, 1.2f, rectF.centerY()));
+                        jp0Var.k.setBounds((int) org.telegram.messenger.y3.A(jp0Var.k.getIntrinsicWidth(), 2.0f, 1.2f, rectF.centerX()), (int) org.telegram.messenger.y3.A(jp0Var.k.getIntrinsicHeight(), 2.0f, 1.2f, rectF.centerY()), (int) vh.w2.c(jp0Var.k.getIntrinsicWidth(), 2.0f, 1.2f, rectF.centerX()), (int) vh.w2.c(jp0Var.k.getIntrinsicHeight(), 2.0f, 1.2f, rectF.centerY()));
                         jp0Var.k.draw(canvas);
                     } else {
                         if (jp0Var.i == null) {
@@ -186,7 +186,7 @@ public final class kp0 extends View {
                         }
                         jp0Var.j.setStrokeWidth(AndroidUtilities.dp(2.0f));
                         jp0Var.i.rewind();
-                        float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(4.0f), e6);
+                        float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(4.0f), e);
                         jp0Var.i.moveTo(rectF.centerX() - lerp, rectF.centerY() - lerp);
                         jp0Var.i.lineTo(rectF.centerX() + lerp, rectF.centerY() + lerp);
                         jp0Var.i.moveTo(rectF.centerX() + lerp, rectF.centerY() - lerp);
@@ -199,7 +199,7 @@ public final class kp0 extends View {
             }
         }
         if (this.r) {
-            int v02 = org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.d7, this.a);
+            int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d7, this.a);
             Paint paint4 = this.n;
             paint4.setColor(v02);
             canvas.drawRect(AndroidUtilities.dp(21.0f), getMeasuredHeight() - 1, getMeasuredWidth() - AndroidUtilities.dp(21.0f), getMeasuredHeight(), paint4);
@@ -319,12 +319,12 @@ public final class kp0 extends View {
                     jp0Var.o = i17;
                     jp0Var.h = i17 < 0;
                     if (i17 < 0) {
-                        i12 = org.telegram.ui.ActionBar.k6.c8;
+                        i12 = org.telegram.ui.ActionBar.j6.c8;
                     } else {
-                        int[] iArr = org.telegram.ui.ActionBar.k6.r8;
+                        int[] iArr = org.telegram.ui.ActionBar.j6.r8;
                         i12 = iArr[i17 % iArr.length];
                     }
-                    int v02 = org.telegram.ui.ActionBar.k6.v0(i12, this.a);
+                    int v02 = org.telegram.ui.ActionBar.j6.v0(i12, this.a);
                     jp0Var.g = false;
                     jp0Var.f = false;
                     jp0Var.a.setColor(v02);

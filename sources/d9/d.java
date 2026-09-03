@@ -1,9 +1,10 @@
 package d9;
 
+import androidx.biometric.e0;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements h {
     public final /* synthetic */ int a;
@@ -23,14 +24,14 @@ public final /* synthetic */ class d implements h {
     }
 
     @Override // d9.h
-    public final ScheduledFuture a(y5.h hVar) {
+    public final ScheduledFuture a(e0 e0Var) {
         switch (this.a) {
             case 0:
                 g gVar = this.b;
-                return gVar.b.scheduleAtFixedRate(new e(gVar, this.c, hVar, 0), this.d, this.e, this.f);
+                return gVar.b.scheduleAtFixedRate(new e(gVar, this.c, e0Var, 0), this.d, this.e, this.f);
             default:
                 g gVar2 = this.b;
-                return gVar2.b.scheduleWithFixedDelay(new e(gVar2, this.c, hVar, 2), this.d, this.e, this.f);
+                return gVar2.b.scheduleWithFixedDelay(new e(gVar2, this.c, e0Var, 2), this.d, this.e, this.f);
         }
     }
 }

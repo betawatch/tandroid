@@ -4,7 +4,7 @@ import android.util.SparseArray;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.ui.Components.jb;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class a0 implements r3.k {
     public boolean e;
@@ -163,12 +163,12 @@ public final class a0 implements r3.k {
             long j17 = yVar.i;
             if (j17 != -9223372036854775807L) {
                 r32 = 0;
-                x xVar = new x(new cb.b(21), new bf.b(yVar.b), j17, j17 + 1, 0L, j12, 188L, MediaDataController.MAX_STYLE_RUNS_COUNT);
+                x xVar = new x(new ab.a(21), new af.c(yVar.b), j17, j17 + 1, 0L, j12, 188L, MediaDataController.MAX_STYLE_RUNS_COUNT);
                 this.i = xVar;
-                this.j.m2(xVar.a);
+                this.j.h2(xVar.a);
             } else {
                 r32 = 0;
-                this.j.m2(new r3.n(j17));
+                this.j.h2(new r3.n(j17));
             }
         }
         x xVar2 = this.i;
@@ -193,17 +193,17 @@ public final class a0 implements r3.k {
         if (g11 == 442) {
             hVar3.f(wVar2.a, r32, 10, r32);
             wVar2.F(9);
-            hVar3.s((wVar2.u() & 7) + 14);
+            hVar3.n((wVar2.u() & 7) + 14);
             return r32;
         }
         if (g11 == 443) {
             hVar3.f(wVar2.a, r32, 2, r32);
             wVar2.F(r32);
-            hVar3.s(wVar2.z() + 6);
+            hVar3.n(wVar2.z() + 6);
             return r32;
         }
         if (((g11 & (-256)) >> 8) != 1) {
-            hVar3.s(1);
+            hVar3.n(1);
             return r32;
         }
         int i14 = g11 & 255;
@@ -238,14 +238,14 @@ public final class a0 implements r3.k {
             }
             if (hVar3.d > ((this.f && this.g) ? this.h + 8192 : 1048576L)) {
                 this.e = true;
-                this.j.i1();
+                this.j.j1();
             }
         }
         hVar3.f(wVar2.a, r32, 2, r32);
         wVar2.F(r32);
         int z4 = wVar2.z() + 6;
         if (zVar == null) {
-            hVar3.s(z4);
+            hVar3.n(z4);
             return r32;
         }
         wVar2.C(z4);

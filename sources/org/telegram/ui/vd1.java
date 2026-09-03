@@ -1,240 +1,153 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.RadialProgressView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class vd1 extends AnimatorListenerAdapter {
+public final class vd1 extends FrameLayout {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ yd1 b;
 
-    public /* synthetic */ vd1(int i10, Object obj, boolean z4) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ vd1(yd1 yd1Var, Context context, int i10) {
+        super(context);
         this.a = i10;
-        this.c = obj;
-        this.b = z4;
+        this.b = yd1Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
+    @Override // android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        Canvas canvas2;
+        org.telegram.ui.Cells.s1 s1Var;
         switch (this.a) {
-            case 1:
-                vg1 vg1Var = (vg1) this.c;
-                AnimatorSet animatorSet = vg1Var.F;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    vg1Var.F = null;
-                    break;
+            case 0:
+                yd1 yd1Var = this.b;
+                if (yd1Var.x <= 0.0f || yd1Var.v == null) {
+                    canvas2 = canvas;
+                } else {
+                    yd1Var.w.reset();
+                    float width = getWidth() / yd1Var.r.getWidth();
+                    yd1Var.w.postScale(width, width);
+                    yd1Var.s.setLocalMatrix(yd1Var.w);
+                    yd1Var.v.setAlpha((int) (yd1Var.x * 255.0f));
+                    canvas2 = canvas;
+                    canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), yd1Var.v);
                 }
-                break;
-            case 15:
-                ((th.n) this.c).w = null;
+                if (yd1Var.K && (s1Var = yd1Var.H) != null) {
+                    s1Var.H7 = yd1Var.L;
+                    s1Var.invalidate();
+                    yd1Var.K = false;
+                }
+                super.dispatchDraw(canvas2);
                 break;
             default:
-                super.onAnimationCancel(animator);
+                super.dispatchDraw(canvas);
                 break;
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        View m9;
-        RadialProgressView radialProgressView;
+    @Override // android.view.ViewGroup, android.view.View
+    public boolean dispatchKeyEventPreIme(KeyEvent keyEvent) {
         switch (this.a) {
             case 0:
-                ((zd1) this.c).y = this.b ? 1.0f : 0.0f;
-                break;
+                if (keyEvent == null || keyEvent.getKeyCode() != 4 || keyEvent.getAction() != 1) {
+                    return super.dispatchKeyEventPreIme(keyEvent);
+                }
+                this.b.c(true);
+                return true;
+            default:
+                return super.dispatchKeyEventPreIme(keyEvent);
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public boolean drawChild(Canvas canvas, View view, long j10) {
+        switch (this.a) {
             case 1:
-                vg1 vg1Var = (vg1) this.c;
-                AnimatorSet animatorSet = vg1Var.F;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    if (!this.b) {
-                        vg1Var.b.setVisibility(4);
-                        break;
-                    } else {
-                        vg1Var.e.setVisibility(4);
-                        break;
-                    }
+                yd1 yd1Var = this.b;
+                if (view != yd1Var.G && view != yd1Var.F) {
+                    return super.drawChild(canvas, view, j10);
                 }
-                break;
-            case 2:
-                org.telegram.ui.web.t1 t1Var = (org.telegram.ui.web.t1) this.c;
-                mh.m mVar = t1Var.S;
-                if (!t1Var.Q) {
-                    mVar.setVisibility(8);
-                    mVar.setText("");
-                }
-                float f10 = this.b ? 1.0f : 0.0f;
-                t1Var.R = f10;
-                mVar.setAlpha(f10);
-                t1Var.invalidate();
-                if (!t1Var.Q) {
-                    mVar.clearFocus();
-                    AndroidUtilities.hideKeyboard(mVar);
-                    break;
-                } else {
-                    mVar.requestFocus();
-                    AndroidUtilities.showKeyboard(mVar);
-                    break;
-                }
-            case 3:
-                m0 m0Var = (m0) this.c;
-                mh.m mVar2 = m0Var.V;
-                if (!m0Var.T) {
-                    mVar2.setVisibility(8);
-                }
-                float f11 = this.b ? 1.0f : 0.0f;
-                m0Var.U = f11;
-                mVar2.setAlpha(f11);
-                m0Var.j(m0Var.U);
-                m0Var.O.setTranslationX(AndroidUtilities.dp(56.0f) * m0Var.U);
-                m0Var.L.setTranslationX(AndroidUtilities.dp(112.0f) * m0Var.U);
-                m0Var.invalidate();
-                break;
-            case 4:
-                ph.p pVar = (ph.p) this.c;
-                boolean z4 = this.b;
-                pVar.w = z4 ? 1.0f : 0.0f;
-                pVar.r.setTranslationY(AndroidUtilities.dp(z4 ? 0.0f : -42.0f));
-                pVar.n.setTranslationY(AndroidUtilities.dp(z4 ? 42.0f : 0.0f));
-                break;
-            case 5:
-                ph.l lVar = (ph.l) this.c;
-                org.telegram.ui.Components.g61 g61Var = lVar.h;
-                ph.e eVar = lVar.f;
-                ph.g gVar = lVar.v;
-                lVar.b = false;
-                boolean z10 = this.b;
-                if (z10) {
-                    int i10 = lVar.e;
-                    lVar.d = i10;
-                    lVar.T.y = i10;
-                    SharedConfig.setStoriesColumnsCount(i10);
-                }
-                int h = gVar.h();
-                if (z10) {
-                    g61Var.y1(lVar.d);
-                    eVar.a0();
-                    if (gVar.h() == h) {
-                        AndroidUtilities.updateVisibleRows(eVar);
-                    } else {
-                        gVar.l();
-                    }
-                }
-                lVar.r.setVisibility(8);
-                int i11 = lVar.P;
-                if (i11 >= 0) {
-                    if (z10 && (m9 = lVar.s.m(i11)) != null) {
-                        lVar.Q = m9.getTop();
-                    }
-                    g61Var.h1(lVar.P, (-eVar.getPaddingTop()) + lVar.Q);
-                }
-                super.onAnimationEnd(animator);
-                break;
-            case 6:
-                qh.d dVar = (qh.d) this.c;
-                dVar.J = this.b ? 1.0f : 0.0f;
-                dVar.invalidate();
-                break;
-            case 7:
-                qh.k kVar = (qh.k) this.c;
-                boolean z11 = this.b;
-                if (!z11) {
-                    kVar.r.setVisibility(8);
-                    org.telegram.ui.Components.zh zhVar = kVar.J;
-                    if (zhVar != null) {
-                        zhVar.setVisibility(8);
-                    }
-                }
-                if (z11) {
-                    kVar.f.getEditText().setAllowDrawCursor(true);
-                }
-                kVar.c(z11);
-                break;
-            case 8:
-                qh.u uVar = (qh.u) this.c;
-                k3 k3Var = uVar.a;
-                boolean z12 = this.b;
-                uVar.d = z12 ? 1.0f : 0.0f;
-                k3Var.invalidate();
-                k3Var.setVisibility(z12 ? 0 : 8);
-                break;
-            case 9:
-                if (!this.b) {
-                    ((qh.z2) this.c).F.setVisibility(8);
-                    break;
-                }
-                break;
-            case 10:
-                if (!this.b) {
-                    ((qh.q3) this.c).b.setVisibility(8);
-                    break;
-                }
-                break;
-            case 11:
-                qh.a5 a5Var = (qh.a5) this.c;
-                if (!this.b) {
-                    a5Var.W1.setVisibility(8);
-                    a5Var.W1.n();
-                    break;
-                }
-                break;
-            case 12:
-                qh.u7 u7Var = (qh.u7) this.c;
-                if (this.b) {
-                    u7Var.setVisibility(8);
-                }
-                u7Var.c = null;
-                break;
-            case 13:
-                qh.ba baVar = (qh.ba) this.c;
-                if (!this.b) {
-                    baVar.S0.setVisibility(8);
-                }
-                baVar.c2 = null;
-                break;
-            case 14:
-                sh.p2 p2Var = (sh.p2) this.c;
-                p2Var.K0 = this.b ? 1.0f : 0.0f;
-                p2Var.h();
-                break;
-            case 15:
-                th.n nVar = (th.n) this.c;
-                if (nVar.w != null && (radialProgressView = nVar.x) != null) {
-                    if (!this.b) {
-                        radialProgressView.setVisibility(4);
-                        nVar.s.setVisibility(4);
-                    }
-                    nVar.w = null;
-                    break;
-                }
-                break;
-            case 16:
-                uf.x0 x0Var = (uf.x0) this.c;
-                boolean z13 = this.b;
-                x0Var.e = z13 ? 1.0f : 0.0f;
-                x0Var.invalidate();
-                int i12 = 0;
-                while (i12 < 2) {
-                    x0Var.c[i12].setTranslationX(AndroidUtilities.lerp(0, -AndroidUtilities.dp(62.0f), x0Var.e));
-                    x0Var.c[i12].setVisibility((i12 == 1) == z13 ? 0 : 8);
-                    x0Var.c[i12].setAlpha(AndroidUtilities.lerp(i12 == 0 ? 1.0f : 0.0f, i12 == 1 ? 1.0f : 0.0f, x0Var.e));
-                    x0Var.d[i12].setTranslationX(AndroidUtilities.lerp(0, -AndroidUtilities.dp(62.0f), x0Var.e));
-                    x0Var.d[i12].setVisibility((i12 == 1) == z13 ? 0 : 8);
-                    x0Var.d[i12].setAlpha(AndroidUtilities.lerp(i12 == 0 ? 1.0f : 0.0f, i12 == 1 ? 1.0f : 0.0f, x0Var.e));
-                    i12++;
-                }
+                canvas.save();
+                canvas.clipRect(0.0f, AndroidUtilities.lerp(yd1Var.I, 0.0f, yd1Var.x), getWidth(), AndroidUtilities.lerp(yd1Var.J, getHeight(), yd1Var.x));
+                boolean drawChild = super.drawChild(canvas, view, j10);
+                canvas.restore();
+                return drawChild;
+            default:
+                return super.drawChild(canvas, view, j10);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+        switch (this.a) {
+            case 0:
+                super.onLayout(z4, i10, i11, i12, i13);
+                this.b.d();
                 break;
             default:
-                if (this.b) {
-                    ((zf.n) this.c).e(false, false, true, false);
-                    break;
+                super.onLayout(z4, i10, i11, i12, i13);
+                break;
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 2:
+                int size = View.MeasureSpec.getSize(i10);
+                int size2 = View.MeasureSpec.getSize(i11);
+                yd1 yd1Var = this.b;
+                yd1Var.e();
+                for (int i12 = 0; i12 < getChildCount(); i12++) {
+                    View childAt = getChildAt(i12);
+                    ViewGroup viewGroup = yd1Var.P;
+                    if (childAt == viewGroup) {
+                        float f10 = yd1Var.Q;
+                        if (f10 > 0.0f) {
+                            viewGroup.measure(View.MeasureSpec.makeMeasureSpec(Math.min(size, (int) f10), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
+                        }
+                    }
+                    ViewGroup viewGroup2 = yd1Var.N;
+                    if (childAt == viewGroup2) {
+                        float f11 = yd1Var.O;
+                        if (f11 > 0.0f) {
+                            viewGroup2.measure(View.MeasureSpec.makeMeasureSpec(Math.min(size, (int) f11), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
+                        }
+                    }
+                    org.telegram.ui.Components.pk0 pk0Var = yd1Var.M;
+                    if (childAt == pk0Var) {
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec(pk0Var.getTotalWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
+                    } else {
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
+                    }
                 }
+                setMeasuredDimension(size, size2);
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void onSizeChanged(int i10, int i11, int i12, int i13) {
+        switch (this.a) {
+            case 0:
+                super.onSizeChanged(i10, i11, i12, i13);
+                yd1 yd1Var = this.b;
+                tg.c.c(yd1Var.B, yd1Var.b);
+                yd1Var.C.d();
+                break;
+            default:
+                super.onSizeChanged(i10, i11, i12, i13);
                 break;
         }
     }

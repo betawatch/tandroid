@@ -9,7 +9,7 @@ import android.os.SystemClock;
 import android.util.Log;
 import android.util.Pair;
 import android.util.SparseArray;
-import c2.v0;
+import c2.w0;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -25,7 +25,7 @@ import org.telegram.ui.Components.m20;
 import org.telegram.ui.Components.n20;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class d extends Handler {
     public final /* synthetic */ int a;
@@ -49,11 +49,11 @@ public final class d extends Handler {
                 if (bVar.o == 2 || bVar.j()) {
                     bVar.x = null;
                     if (obj2 instanceof Exception) {
-                        qaVar.V0((Exception) obj2, false);
+                        qaVar.n0((Exception) obj2, false);
                         return;
                     }
                     try {
-                        bVar.b.V1((byte[]) obj2);
+                        bVar.b.Y((byte[]) obj2);
                         qaVar.c = null;
                         HashSet hashSet = (HashSet) qaVar.b;
                         s8.v t6 = s8.v.t(hashSet);
@@ -66,8 +66,8 @@ public final class d extends Handler {
                             }
                         }
                         return;
-                    } catch (Exception e6) {
-                        qaVar.V0(e6, true);
+                    } catch (Exception e) {
+                        qaVar.n0(e, true);
                         return;
                     }
                 }
@@ -86,22 +86,22 @@ public final class d extends Handler {
                 return;
             }
             try {
-                byte[] K1 = bVar3.b.K1(bVar3.u, (byte[]) obj2);
-                if (bVar3.v != null && K1 != null && K1.length != 0) {
-                    bVar3.v = K1;
+                byte[] X = bVar3.b.X(bVar3.u, (byte[]) obj2);
+                if (bVar3.v != null && X != null && X.length != 0) {
+                    bVar3.v = X;
                 }
                 bVar3.o = 4;
-                new ag.d(1);
+                new nh.e(3);
                 h5.e eVar = bVar3.h;
                 synchronized (eVar.a) {
                     set = eVar.c;
                 }
                 Iterator it = set.iterator();
                 while (it.hasNext()) {
-                    ((o3.l) it.next()).a();
+                    ((o3.m) it.next()).a();
                 }
-            } catch (Exception e10) {
-                bVar3.l(e10, true);
+            } catch (Exception e6) {
+                bVar3.l(e6, true);
             }
         }
     }
@@ -175,20 +175,20 @@ public final class d extends Handler {
                 Object obj = msg.obj;
                 Bundle peekData = msg.peekData();
                 SparseArray sparseArray = ((c2.h) this.b).j;
-                v0 v0Var = (v0) sparseArray.get(i14);
-                if (v0Var == null) {
+                w0 w0Var = (w0) sparseArray.get(i14);
+                if (w0Var == null) {
                     Log.w("MR2Provider", "Pending callback not found for control request.");
                     return;
                 }
                 sparseArray.remove(i14);
                 if (i13 == 3) {
-                    v0Var.b((Bundle) obj);
+                    w0Var.b((Bundle) obj);
                     return;
                 } else {
                     if (i13 != 4) {
                         return;
                     }
-                    v0.a(peekData != null ? peekData.getString("error") : 0, (Bundle) obj);
+                    w0.a(peekData != null ? peekData.getString("error") : 0, (Bundle) obj);
                     return;
                 }
             case 4:
@@ -203,11 +203,11 @@ public final class d extends Handler {
                     return;
                 }
                 tVar.c = false;
-                o5.i iVar2 = (o5.i) tVar.f;
-                if (iVar2 != null) {
+                ja.c cVar = (ja.c) tVar.f;
+                if (cVar != null) {
                     c2.u uVar = (c2.u) tVar.n;
-                    c2.e eVar = (c2.e) iVar2.b;
-                    c2.z d = eVar.d(tVar);
+                    c2.e eVar = (c2.e) cVar.b;
+                    c2.a0 d = eVar.d(tVar);
                     if (d != null) {
                         eVar.m(d, uVar);
                         return;
@@ -223,9 +223,9 @@ public final class d extends Handler {
                     d4.d dVar3 = (d4.d) msg.obj;
                     try {
                         eVar2.a.queueInputBuffer(dVar3.a, 0, dVar3.b, dVar3.d, dVar3.e);
-                    } catch (RuntimeException e6) {
+                    } catch (RuntimeException e) {
                         AtomicReference atomicReference = eVar2.d;
-                        while (!atomicReference.compareAndSet(null, e6) && atomicReference.get() == null) {
+                        while (!atomicReference.compareAndSet(null, e) && atomicReference.get() == null) {
                         }
                     }
                     dVar = dVar3;
@@ -239,9 +239,9 @@ public final class d extends Handler {
                         synchronized (d4.e.h) {
                             eVar2.a.queueSecureInputBuffer(i17, 0, cryptoInfo, j10, i18);
                         }
-                    } catch (RuntimeException e10) {
+                    } catch (RuntimeException e6) {
                         AtomicReference atomicReference2 = eVar2.d;
-                        while (!atomicReference2.compareAndSet(null, e10) && atomicReference2.get() == null) {
+                        while (!atomicReference2.compareAndSet(null, e6) && atomicReference2.get() == null) {
                         }
                     }
                     dVar = dVar4;
@@ -280,7 +280,7 @@ public final class d extends Handler {
                 if (bArr == null) {
                     return;
                 }
-                ArrayList arrayList = ((o3.e) this.b).w;
+                ArrayList arrayList = ((o3.f) this.b).w;
                 int size = arrayList.size();
                 int i19 = 0;
                 while (i19 < size) {

@@ -8,8 +8,9 @@ import android.text.style.StyleSpan;
 import android.text.style.UnderlineSpan;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
+import vh.w2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class b {
     public final ArrayList a;
@@ -84,7 +85,7 @@ public final class b {
         int i13 = i12 - length;
         int i14 = i10 != Integer.MIN_VALUE ? i10 : (this.g != 2 || (Math.abs(i13) >= 3 && length >= 0)) ? (this.g != 2 || i13 <= 0) ? 0 : 2 : 1;
         if (i14 != 1) {
-            f10 = i14 != 2 ? w.c.c(i12, 32.0f, 0.8f, 0.1f) : w.c.c(32 - length, 32.0f, 0.8f, 0.1f);
+            f10 = i14 != 2 ? w2.c(i12, 32.0f, 0.8f, 0.1f) : w2.c(32 - length, 32.0f, 0.8f, 0.1f);
         } else {
             f10 = 0.5f;
         }

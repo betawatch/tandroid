@@ -1,61 +1,498 @@
 package we;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import com.google.firebase.messaging.d;
 import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.RandomAccessFile;
-import ye.l;
+import java.io.DataInputStream;
+import java.io.FilterInputStream;
+import java.math.BigDecimal;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import ne.p;
+import vh.w2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public abstract class a {
-    public String a;
-    public long b;
-    public String c;
-    public String d;
-    public String e;
-    public String f;
-    public short g;
-    public String h;
-    public String i;
-    public short j;
-    public short k;
-    public String l;
-    public String m;
-    public String n;
-    public Bitmap o;
-    public Bitmap p;
-    public File q;
+public final class a extends ve.a {
+    public static final Logger s = Logger.getLogger(a.class.getName());
+    public final Level r;
 
-    public static a a(File file) {
-        byte b10;
-        try {
-            byte[] bArr = new byte[12];
-            RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r");
-            randomAccessFile.readFully(bArr, 0, 8);
-            randomAccessFile.close();
-            BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(file));
-            if (bArr[4] == 102 && bArr[5] == 116 && bArr[6] == 121 && bArr[7] == 112) {
-                return new xe.a(bufferedInputStream);
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x0435 A[Catch: Exception -> 0x0418, TryCatch #0 {Exception -> 0x0418, blocks: (B:109:0x03f7, B:111:0x0413, B:114:0x042b, B:116:0x0435, B:118:0x044c, B:119:0x0469, B:121:0x046d, B:122:0x0465, B:126:0x041a, B:128:0x0422), top: B:108:0x03f7 }] */
+    /* JADX WARN: Type inference failed for: r6v0 */
+    /* JADX WARN: Type inference failed for: r6v1, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r6v8 */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public a(BufferedInputStream bufferedInputStream) {
+        b c3;
+        char c10;
+        DataInputStream dataInputStream;
+        char c11;
+        Bitmap decodeByteArray;
+        Level level = Level.FINEST;
+        this.r = level;
+        ?? r62 = 1;
+        b bVar = new b(new d((FilterInputStream) bufferedInputStream), null, "", 1 == true ? 1 : 0);
+        Logger logger = s;
+        if (logger.isLoggable(level)) {
+            logger.log(level, bVar.toString());
+        }
+        b d = bVar.d("ftyp");
+        DataInputStream dataInputStream2 = (DataInputStream) d.e;
+        if (logger.isLoggable(level)) {
+            logger.log(level, d.toString());
+        }
+        int i10 = 4;
+        byte[] bArr = new byte[4];
+        dataInputStream2.readFully(bArr);
+        String str = new String(bArr, "ISO8859_1");
+        int indexOf = str.indexOf(0);
+        String trim = (indexOf >= 0 ? str.substring(0, indexOf) : str).trim();
+        this.a = trim;
+        if (trim.matches("M4V|MP4|mp42|isom")) {
+            StringBuilder sb = new StringBuilder();
+            StringBuffer stringBuffer = new StringBuffer();
+            b.h(stringBuffer, d);
+            sb.append(stringBuffer.toString());
+            sb.append(": brand=");
+            sb.append(this.a);
+            sb.append(" (experimental)");
+            logger.warning(sb.toString());
+        } else if (!this.a.matches("M4A|M4P")) {
+            StringBuilder sb2 = new StringBuilder();
+            StringBuffer stringBuffer2 = new StringBuffer();
+            b.h(stringBuffer2, d);
+            sb2.append(stringBuffer2.toString());
+            sb2.append(": brand=");
+            sb2.append(this.a);
+            sb2.append(" (expected M4A or M4P)");
+            logger.warning(sb2.toString());
+        }
+        String.valueOf(dataInputStream2.readInt());
+        do {
+            c3 = bVar.c();
+        } while (!((String) c3.d).matches("moov"));
+        Level level2 = this.r;
+        if (logger.isLoggable(level2)) {
+            logger.log(level2, c3.toString());
+        }
+        while (c3.j()) {
+            b c12 = c3.c();
+            DataInputStream dataInputStream3 = (DataInputStream) c12.e;
+            String str2 = (String) c12.d;
+            int i11 = 2;
+            switch (str2.hashCode()) {
+                case 3363941:
+                    if (str2.equals("mvhd")) {
+                        c10 = 0;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 3568424:
+                    if (str2.equals("trak")) {
+                        c10 = 1;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 3585340:
+                    if (str2.equals("udta")) {
+                        c10 = 2;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                default:
+                    c10 = 65535;
+                    break;
             }
-            if (bArr[0] == 102 && bArr[1] == 76 && bArr[2] == 97 && bArr[3] == 99) {
-                b bVar = new b(file);
-                if (bVar.s) {
-                    return null;
-                }
-                return bVar;
+            switch (c10) {
+                case 0:
+                    if (logger.isLoggable(level2)) {
+                        logger.log(level2, c12.toString());
+                    }
+                    byte readByte = dataInputStream3.readByte();
+                    c12.n(3);
+                    c12.n(readByte == r62 ? 16 : 8);
+                    int readInt = dataInputStream3.readInt();
+                    long readLong = readByte == r62 ? dataInputStream3.readLong() : dataInputStream3.readInt();
+                    if (this.b == 0) {
+                        this.b = (readLong * 1000) / readInt;
+                    } else if (logger.isLoggable(level2)) {
+                        dataInputStream = dataInputStream3;
+                        long j10 = (readLong * 1000) / readInt;
+                        if (Math.abs(this.b - j10) > 2) {
+                            logger.log(level2, "mvhd: duration " + this.b + " -> " + j10);
+                        }
+                        new BigDecimal(String.valueOf((int) dataInputStream.readShort()) + "" + String.valueOf(dataInputStream.readUnsignedShort()));
+                        new BigDecimal(String.valueOf((int) dataInputStream.readByte()) + "" + String.valueOf(dataInputStream.readUnsignedByte()));
+                        break;
+                    }
+                    dataInputStream = dataInputStream3;
+                    new BigDecimal(String.valueOf((int) dataInputStream.readShort()) + "" + String.valueOf(dataInputStream.readUnsignedShort()));
+                    new BigDecimal(String.valueOf((int) dataInputStream.readByte()) + "" + String.valueOf(dataInputStream.readUnsignedByte()));
+                case 1:
+                    if (logger.isLoggable(level2)) {
+                        logger.log(level2, c12.toString());
+                    }
+                    b k10 = c12.k("mdia");
+                    if (logger.isLoggable(level2)) {
+                        logger.log(level2, k10.toString());
+                    }
+                    b d10 = k10.d("mdhd");
+                    DataInputStream dataInputStream4 = (DataInputStream) d10.e;
+                    if (logger.isLoggable(level2)) {
+                        logger.log(level2, d10.toString());
+                    }
+                    byte readByte2 = dataInputStream4.readByte();
+                    d10.n(3);
+                    d10.n(readByte2 == r62 ? 16 : 8);
+                    int readInt2 = dataInputStream4.readInt();
+                    long readLong2 = readByte2 == r62 ? dataInputStream4.readLong() : dataInputStream4.readInt();
+                    if (this.b == 0) {
+                        this.b = (readLong2 * 1000) / readInt2;
+                        break;
+                    } else if (logger.isLoggable(level2)) {
+                        long j11 = (readLong2 * 1000) / readInt2;
+                        if (Math.abs(this.b - j11) > 2) {
+                            logger.log(level2, "mdhd: duration " + this.b + " -> " + j11);
+                            break;
+                        } else {
+                            break;
+                        }
+                    } else {
+                        break;
+                    }
+                case 2:
+                    if (logger.isLoggable(level2)) {
+                        logger.log(level2, c12.toString());
+                    }
+                    while (true) {
+                        if (c12.j()) {
+                            b c13 = c12.c();
+                            if ("meta".equals((String) c13.d)) {
+                                if (logger.isLoggable(level2)) {
+                                    logger.log(level2, c13.toString());
+                                }
+                                c13.n(i10);
+                                while (true) {
+                                    if (c13.j()) {
+                                        b c14 = c13.c();
+                                        if ("ilst".equals((String) c14.d)) {
+                                            if (logger.isLoggable(level2)) {
+                                                logger.log(level2, c14.toString());
+                                            }
+                                            while (c14.j()) {
+                                                b c15 = c14.c();
+                                                if (logger.isLoggable(level2)) {
+                                                    logger.log(level2, c15.toString());
+                                                }
+                                                if (c15.i() != 0) {
+                                                    b k11 = c15.k("data");
+                                                    DataInputStream dataInputStream5 = (DataInputStream) k11.e;
+                                                    if (logger.isLoggable(level2)) {
+                                                        logger.log(level2, k11.toString());
+                                                    }
+                                                    k11.n(i10);
+                                                    k11.n(i10);
+                                                    String str3 = (String) ((p) k11.c).d;
+                                                    switch (str3.hashCode()) {
+                                                        case 2954818:
+                                                            if (str3.equals("aART")) {
+                                                                c11 = 0;
+                                                                break;
+                                                            }
+                                                            c11 = 65535;
+                                                            break;
+                                                        case 3059752:
+                                                            if (str3.equals("covr")) {
+                                                                c11 = 1;
+                                                                break;
+                                                            }
+                                                            c11 = 65535;
+                                                            break;
+                                                        case 3060304:
+                                                            if (str3.equals("cpil")) {
+                                                                c11 = 2;
+                                                                break;
+                                                            }
+                                                            c11 = 65535;
+                                                            break;
+                                                        case 3060591:
+                                                            if (str3.equals("cprt")) {
+                                                                c11 = 3;
+                                                                break;
+                                                            }
+                                                            c11 = 65535;
+                                                            break;
+                                                        case 3083677:
+                                                            if (str3.equals("disk")) {
+                                                                c11 = 4;
+                                                                break;
+                                                            }
+                                                            c11 = 65535;
+                                                            break;
+                                                        case 3177818:
+                                                            if (str3.equals("gnre")) {
+                                                                c11 = 5;
+                                                                break;
+                                                            }
+                                                            c11 = 65535;
+                                                            break;
+                                                        case 3511163:
+                                                            if (str3.equals("rtng")) {
+                                                                c11 = 6;
+                                                                break;
+                                                            }
+                                                            c11 = 65535;
+                                                            break;
+                                                        case 3564088:
+                                                            if (str3.equals("tmpo")) {
+                                                                c11 = 7;
+                                                                break;
+                                                            }
+                                                            c11 = 65535;
+                                                            break;
+                                                        case 3568737:
+                                                            if (str3.equals("trkn")) {
+                                                                c11 = '\b';
+                                                                break;
+                                                            }
+                                                            c11 = 65535;
+                                                            break;
+                                                        case 5099770:
+                                                            if (str3.equals("©ART")) {
+                                                                c11 = '\t';
+                                                                break;
+                                                            }
+                                                            c11 = 65535;
+                                                            break;
+                                                        case 5131342:
+                                                            if (str3.equals("©alb")) {
+                                                                c11 = '\n';
+                                                                break;
+                                                            }
+                                                            c11 = 65535;
+                                                            break;
+                                                        case 5133313:
+                                                            if (str3.equals("©cmt")) {
+                                                                c11 = 11;
+                                                                break;
+                                                            }
+                                                            c11 = 65535;
+                                                            break;
+                                                        case 5133368:
+                                                            if (str3.equals("©com")) {
+                                                                c11 = '\f';
+                                                                break;
+                                                            }
+                                                            c11 = 65535;
+                                                            break;
+                                                        case 5133411:
+                                                            if (str3.equals("©cpy")) {
+                                                                c11 = '\r';
+                                                                break;
+                                                            }
+                                                            c11 = 65535;
+                                                            break;
+                                                        case 5133907:
+                                                            if (str3.equals("©day")) {
+                                                                c11 = 14;
+                                                                break;
+                                                            }
+                                                            c11 = 65535;
+                                                            break;
+                                                        case 5136903:
+                                                            if (str3.equals("©gen")) {
+                                                                c11 = 15;
+                                                                break;
+                                                            }
+                                                            c11 = 65535;
+                                                            break;
+                                                        case 5137308:
+                                                            if (str3.equals("©grp")) {
+                                                                c11 = 16;
+                                                                break;
+                                                            }
+                                                            c11 = 65535;
+                                                            break;
+                                                        case 5142332:
+                                                            if (str3.equals("©lyr")) {
+                                                                c11 = 17;
+                                                                break;
+                                                            }
+                                                            c11 = 65535;
+                                                            break;
+                                                        case 5143505:
+                                                            if (str3.equals("©nam")) {
+                                                                c11 = 18;
+                                                                break;
+                                                            }
+                                                            c11 = 65535;
+                                                            break;
+                                                        case 5152688:
+                                                            if (str3.equals("©wrt")) {
+                                                                c11 = 19;
+                                                                break;
+                                                            }
+                                                            c11 = 65535;
+                                                            break;
+                                                        default:
+                                                            c11 = 65535;
+                                                            break;
+                                                    }
+                                                    switch (c11) {
+                                                        case 0:
+                                                            this.e = k11.m();
+                                                            break;
+                                                        case 1:
+                                                            try {
+                                                                int i12 = (int) k11.i();
+                                                                byte[] bArr2 = new byte[i12];
+                                                                dataInputStream5.readFully(bArr2);
+                                                                BitmapFactory.Options options = new BitmapFactory.Options();
+                                                                options.inJustDecodeBounds = r62;
+                                                                options.inSampleSize = r62;
+                                                                BitmapFactory.decodeByteArray(bArr2, 0, i12, options);
+                                                                int i13 = options.outWidth;
+                                                                if (i13 <= 800) {
+                                                                    if (options.outHeight > 800) {
+                                                                    }
+                                                                    options.inJustDecodeBounds = false;
+                                                                    decodeByteArray = BitmapFactory.decodeByteArray(bArr2, 0, i12, options);
+                                                                    this.o = decodeByteArray;
+                                                                    if (decodeByteArray != null) {
+                                                                        float max = Math.max(decodeByteArray.getWidth(), this.o.getHeight()) / 120.0f;
+                                                                        if (max > 0.0f) {
+                                                                            this.p = Bitmap.createScaledBitmap(this.o, (int) (r7.getWidth() / max), (int) (this.o.getHeight() / max), r62);
+                                                                        } else {
+                                                                            this.p = this.o;
+                                                                        }
+                                                                        if (this.p == null) {
+                                                                            this.p = this.o;
+                                                                            break;
+                                                                        }
+                                                                    }
+                                                                }
+                                                                for (int max2 = Math.max(i13, options.outHeight); max2 > 800; max2 /= 2) {
+                                                                    options.inSampleSize *= 2;
+                                                                }
+                                                                options.inJustDecodeBounds = false;
+                                                                decodeByteArray = BitmapFactory.decodeByteArray(bArr2, 0, i12, options);
+                                                                this.o = decodeByteArray;
+                                                                if (decodeByteArray != null) {
+                                                                }
+                                                            } catch (Exception e) {
+                                                                e.printStackTrace();
+                                                                break;
+                                                            }
+                                                            break;
+                                                        case 2:
+                                                            dataInputStream5.readBoolean();
+                                                            break;
+                                                        case 3:
+                                                        case '\r':
+                                                            String str4 = this.l;
+                                                            if (str4 == null || str4.trim().length() == 0) {
+                                                                this.l = k11.m();
+                                                            }
+                                                            break;
+                                                        case 4:
+                                                            k11.n(i11);
+                                                            this.k = dataInputStream5.readShort();
+                                                            k11.l();
+                                                            break;
+                                                        case 5:
+                                                            String str5 = this.h;
+                                                            if (str5 == null || str5.trim().length() == 0) {
+                                                                if (k11.i() == 2) {
+                                                                    int a2 = w2.a(dataInputStream5.readShort() - r62);
+                                                                    if (a2 != 0) {
+                                                                        this.h = w2.b(a2);
+                                                                    }
+                                                                } else {
+                                                                    this.h = k11.m();
+                                                                }
+                                                            }
+                                                            break;
+                                                        case 6:
+                                                            dataInputStream5.readByte();
+                                                            break;
+                                                        case 7:
+                                                            k11.l();
+                                                            break;
+                                                        case '\b':
+                                                            k11.n(i11);
+                                                            this.j = dataInputStream5.readShort();
+                                                            k11.l();
+                                                            break;
+                                                        case '\t':
+                                                            this.d = k11.m();
+                                                            break;
+                                                        case '\n':
+                                                            this.f = k11.m();
+                                                            break;
+                                                        case 11:
+                                                            this.i = k11.m();
+                                                            break;
+                                                        case '\f':
+                                                        case 19:
+                                                            String str6 = this.m;
+                                                            if (str6 == null || str6.trim().length() == 0) {
+                                                                this.m = k11.m();
+                                                            }
+                                                            break;
+                                                        case 14:
+                                                            String trim2 = k11.m().trim();
+                                                            if (trim2.length() >= i10) {
+                                                                try {
+                                                                    this.g = Short.valueOf(trim2.substring(0, i10)).shortValue();
+                                                                } catch (NumberFormatException unused) {
+                                                                }
+                                                            }
+                                                            break;
+                                                        case 15:
+                                                            String str7 = this.h;
+                                                            if (str7 == null || str7.trim().length() == 0) {
+                                                                this.h = k11.m();
+                                                            }
+                                                            break;
+                                                        case 16:
+                                                            k11.m();
+                                                            break;
+                                                        case 17:
+                                                            this.n = k11.m();
+                                                            break;
+                                                        case 18:
+                                                            this.c = k11.m();
+                                                            break;
+                                                    }
+                                                    i10 = 4;
+                                                    i11 = 2;
+                                                } else if (logger.isLoggable(level2)) {
+                                                    StringBuilder sb3 = new StringBuilder();
+                                                    StringBuffer stringBuffer3 = new StringBuffer();
+                                                    b.h(stringBuffer3, c15);
+                                                    sb3.append(stringBuffer3.toString());
+                                                    sb3.append(": contains no value");
+                                                    logger.log(level2, sb3.toString());
+                                                }
+                                            }
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    break;
             }
-            if (!file.getAbsolutePath().endsWith("mp3") && (((b10 = bArr[0]) != 73 || bArr[1] != 68 || bArr[2] != 51) && (b10 != 84 || bArr[1] != 65 || bArr[2] != 71))) {
-                b bVar2 = new b(file);
-                if (bVar2.s) {
-                    return null;
-                }
-                return bVar2;
-            }
-            return new l(bufferedInputStream, file.length());
-        } catch (Exception unused) {
-            return null;
+            r62 = 1;
+            i10 = 4;
         }
     }
 }

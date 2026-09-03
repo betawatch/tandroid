@@ -12,23 +12,23 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class ml0 extends org.telegram.ui.Components.g51 {
+public final class ml0 extends org.telegram.ui.Components.h51 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        org.telegram.ui.Components.g51.setup(new ml0());
+        org.telegram.ui.Components.h51.setup(new ml0());
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final void bindView(View view, org.telegram.ui.Components.h51 h51Var, boolean z4, org.telegram.ui.Components.w51 w51Var, org.telegram.ui.Components.h61 h61Var) {
+    @Override // org.telegram.ui.Components.h51
+    public final void bindView(View view, org.telegram.ui.Components.i51 i51Var, boolean z4, org.telegram.ui.Components.w51 w51Var, org.telegram.ui.Components.g61 g61Var) {
         nl0 nl0Var = (nl0) view;
-        TL_account.Passkey passkey = (TL_account.Passkey) h51Var.G;
-        View.OnClickListener onClickListener = h51Var.D;
+        TL_account.Passkey passkey = (TL_account.Passkey) i51Var.G;
+        View.OnClickListener onClickListener = i51Var.D;
         TextView textView = nl0Var.f;
         TextView textView2 = nl0Var.e;
-        org.telegram.ui.ActionBar.g6 g6Var = nl0Var.b;
+        org.telegram.ui.ActionBar.f6 f6Var = nl0Var.b;
         FrameLayout frameLayout = nl0Var.c;
         org.telegram.ui.Components.p9 p9Var = nl0Var.d;
         nl0Var.r = passkey.id;
@@ -41,9 +41,9 @@ public final class ml0 extends org.telegram.ui.Components.g51 {
             p9Var.setScaleY(1.0f);
         } else {
             int dp = AndroidUtilities.dp(4.0f);
-            int i10 = org.telegram.ui.ActionBar.k6.G6;
-            frameLayout.setBackground(org.telegram.ui.ActionBar.k6.b0(dp, org.telegram.ui.ActionBar.k6.l1(0.04f, org.telegram.ui.ActionBar.k6.v0(i10, g6Var))));
-            p9Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.l1(0.3f, org.telegram.ui.ActionBar.k6.v0(i10, g6Var)), PorterDuff.Mode.SRC_IN));
+            int i10 = org.telegram.ui.ActionBar.j6.G6;
+            frameLayout.setBackground(org.telegram.ui.ActionBar.j6.b0(dp, org.telegram.ui.ActionBar.j6.l1(0.04f, org.telegram.ui.ActionBar.j6.v0(i10, f6Var))));
+            p9Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.l1(0.3f, org.telegram.ui.ActionBar.j6.v0(i10, f6Var)), PorterDuff.Mode.SRC_IN));
             p9Var.setImageResource(R.drawable.msg2_permissions);
             p9Var.setScaleX(0.666f);
             p9Var.setScaleY(0.666f);
@@ -65,8 +65,8 @@ public final class ml0 extends org.telegram.ui.Components.g51 {
         nl0Var.setWillNotDraw(!z4);
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final View createView(Context context, org.telegram.ui.Components.sl0 sl0Var, int i10, int i11, org.telegram.ui.ActionBar.g6 g6Var) {
-        return new nl0(context, i10, g6Var);
+    @Override // org.telegram.ui.Components.h51
+    public final View createView(Context context, org.telegram.ui.Components.rl0 rl0Var, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
+        return new nl0(context, i10, f6Var);
     }
 }

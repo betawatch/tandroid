@@ -1,48 +1,20 @@
 package org.telegram.ui;
 
+import j$.util.function.Consumer$-CC;
+import java.util.function.Consumer;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class va0 implements df.c {
-    public final lf.s0 a;
-    public final /* synthetic */ LaunchActivity b;
-
-    public va0(LaunchActivity launchActivity) {
-        this.b = launchActivity;
+public final class va0 implements Consumer {
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final void x(Object obj) {
+        ((Boolean) obj).getClass();
         Pattern pattern = LaunchActivity.y1;
-        this.a = new lf.s0(launchActivity, false);
     }
 
-    @Override // df.c
-    public final void b() {
-        Pattern pattern = LaunchActivity.y1;
-        this.b.getWindow();
-    }
-
-    @Override // df.c
-    public final void d() {
-        this.a.a(false);
-    }
-
-    @Override // df.c
-    public final void f() {
-        Pattern pattern = LaunchActivity.y1;
-        LaunchActivity launchActivity = this.b;
-        launchActivity.getClass();
-        this.a.a(true);
-        launchActivity.getWindow();
-    }
-
-    @Override // df.c
-    public final /* synthetic */ void a() {
-    }
-
-    @Override // df.c
-    public final /* synthetic */ void c() {
-    }
-
-    @Override // df.c
-    public final /* synthetic */ void e() {
+    public /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer$-CC.$default$andThen(this, consumer);
     }
 }

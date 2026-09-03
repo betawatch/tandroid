@@ -8,7 +8,7 @@ import android.widget.PopupWindow;
 import java.lang.reflect.Field;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public abstract class n61 extends PopupWindow {
     public static final Field c;
@@ -26,8 +26,8 @@ public abstract class n61 extends PopupWindow {
         c = field;
     }
 
-    public n61(w61 w61Var) {
-        super(w61Var, -2, -2);
+    public n61(x61 x61Var) {
+        super(x61Var, -2, -2);
         setFocusable(true);
         setAnimationStyle(0);
         setOutsideTouchable(true);
@@ -55,8 +55,8 @@ public abstract class n61 extends PopupWindow {
     }
 
     public final void c(View view) {
-        if (getContentView() instanceof w61) {
-            ((w61) getContentView()).s(new m61(this, 1));
+        if (getContentView() instanceof x61) {
+            ((x61) getContentView()).s(new m61(this, 1));
         }
         if (this.a != null) {
             ViewTreeObserver viewTreeObserver = view.getWindowToken() != null ? view.getViewTreeObserver() : null;
@@ -75,29 +75,29 @@ public abstract class n61 extends PopupWindow {
 
     @Override // android.widget.PopupWindow
     public void dismiss() {
-        if (!(getContentView() instanceof w61)) {
+        if (!(getContentView() instanceof x61)) {
             super.dismiss();
             return;
         }
-        w61 w61Var = (w61) getContentView();
+        x61 x61Var = (x61) getContentView();
         m61 m61Var = new m61(this, 0);
-        Integer num = w61Var.V1;
+        Integer num = x61Var.V1;
         if (num != null) {
-            w61.Z1.put(num, w61Var.o0.e0());
+            x61.Z1.put(num, x61Var.o0.e0());
         }
-        ValueAnimator valueAnimator = w61Var.S1;
+        ValueAnimator valueAnimator = x61Var.S1;
         if (valueAnimator != null) {
             valueAnimator.cancel();
-            w61Var.S1 = null;
+            x61Var.S1 = null;
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        w61Var.S1 = ofFloat;
-        ofFloat.addUpdateListener(new x41(w61Var, 3));
-        w61Var.S1.addListener(new org.telegram.ui.Components.ex0(12, w61Var, m61Var));
-        w61Var.S1.setDuration(200L);
-        w61Var.S1.setInterpolator(org.telegram.ui.Components.pr.h);
-        w61Var.S1.start();
-        n51 n51Var = w61Var.c0;
+        x61Var.S1 = ofFloat;
+        ofFloat.addUpdateListener(new x41(x61Var, 3));
+        x61Var.S1.addListener(new org.telegram.ui.Components.ex0(12, x61Var, m61Var));
+        x61Var.S1.setDuration(200L);
+        x61Var.S1.setInterpolator(org.telegram.ui.Components.mr.h);
+        x61Var.S1.start();
+        n51 n51Var = x61Var.c0;
         if (n51Var != null) {
             AndroidUtilities.hideKeyboard(n51Var.h);
         }

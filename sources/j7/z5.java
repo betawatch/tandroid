@@ -1,16 +1,19 @@
 package j7;
 
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class z5 {
-    public static /* synthetic */ boolean a(AtomicReferenceFieldUpdater atomicReferenceFieldUpdater, com.google.android.gms.internal.cast.e4 e4Var, Object obj, Object obj2) {
-        while (!atomicReferenceFieldUpdater.compareAndSet(e4Var, obj, obj2)) {
-            if (atomicReferenceFieldUpdater.get(e4Var) != obj && atomicReferenceFieldUpdater.get(e4Var) != obj) {
-                return false;
-            }
+    public static int a(int i10, int i11) {
+        if (i11 < 0) {
+            throw new AssertionError("cannot store more than MAX_VALUE elements");
         }
-        return true;
+        int i12 = i10 + (i10 >> 1) + 1;
+        if (i12 < i11) {
+            int highestOneBit = Integer.highestOneBit(i11 - 1);
+            i12 = highestOneBit + highestOneBit;
+        }
+        return i12 < 0 ? ConnectionsManager.DEFAULT_DATACENTER_ID : i12;
     }
 }

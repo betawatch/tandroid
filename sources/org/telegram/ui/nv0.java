@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nv0 implements Runnable {
     public final /* synthetic */ int a;
@@ -19,16 +19,16 @@ public final /* synthetic */ class nv0 implements Runnable {
             case 0:
                 yv0 yv0Var = this.b;
                 AndroidUtilities.runOnUIThread(new nv0(yv0Var, 3));
-                org.telegram.ui.Cells.t1 t1Var = yv0Var.I;
-                if (t1Var != null) {
-                    t1Var.setVisibility(0);
-                    org.telegram.ui.Cells.t1 t1Var2 = yv0Var.I;
-                    t1Var2.I7 = null;
-                    t1Var2.invalidate();
+                org.telegram.ui.Cells.s1 s1Var = yv0Var.I;
+                if (s1Var != null) {
+                    s1Var.setVisibility(0);
+                    org.telegram.ui.Cells.s1 s1Var2 = yv0Var.I;
+                    s1Var2.I7 = null;
+                    s1Var2.invalidate();
                 }
-                um umVar = yv0Var.b0;
-                if (umVar != null) {
-                    AndroidUtilities.runOnUIThread(umVar);
+                wm wmVar = yv0Var.b0;
+                if (wmVar != null) {
+                    AndroidUtilities.runOnUIThread(wmVar);
                     yv0Var.b0 = null;
                     break;
                 }

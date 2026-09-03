@@ -8,7 +8,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class xr0 extends org.telegram.ui.fu0 {
     public final /* synthetic */ yu0 a;
@@ -26,7 +26,7 @@ public final class xr0 extends org.telegram.ui.fu0 {
         ImageReceiver imageReceiver;
         char c3;
         char c10;
-        org.telegram.ui.Cells.l7 l7Var;
+        org.telegram.ui.Cells.k7 k7Var;
         MessageObject message;
         ImageReceiver linkImageView;
         ImageReceiver photoImage;
@@ -67,16 +67,16 @@ public final class xr0 extends org.telegram.ui.fu0 {
                             i15 = R;
                         }
                         int[] iArr = new int[2];
-                        if (childAt instanceof org.telegram.ui.Cells.r7) {
-                            org.telegram.ui.Cells.r7 r7Var = (org.telegram.ui.Cells.r7) childAt;
-                            linkImageView = r7Var.c;
-                            MessageObject messageObject2 = r7Var.getMessageObject();
+                        if (childAt instanceof org.telegram.ui.Cells.q7) {
+                            org.telegram.ui.Cells.q7 q7Var = (org.telegram.ui.Cells.q7) childAt;
+                            linkImageView = q7Var.c;
+                            MessageObject messageObject2 = q7Var.getMessageObject();
                             if (messageObject2 != null) {
                                 c3 = 0;
                                 int id2 = messageObject2.getId();
                                 c10 = 1;
                                 if (id2 == messageObject.getId()) {
-                                    r7Var.getLocationInWindow(iArr);
+                                    q7Var.getLocationInWindow(iArr);
                                     iArr[0] = Math.round(linkImageView.getImageX()) + iArr[0];
                                     iArr[1] = Math.round(linkImageView.getImageY()) + iArr[1];
                                     if (linkImageView != null) {
@@ -100,7 +100,7 @@ public final class xr0 extends org.telegram.ui.fu0 {
                                         }
                                         if (PhotoViewer.M1(messageObject) && (pinnedHeader = wr0Var.getPinnedHeader()) != null) {
                                             int height = (js0Var == null || js0Var.getVisibility() != 0) ? 0 : js0Var.getHeight() - AndroidUtilities.dp(2.5f);
-                                            boolean z11 = childAt instanceof org.telegram.ui.Cells.i7;
+                                            boolean z11 = childAt instanceof org.telegram.ui.Cells.h7;
                                             if (z11) {
                                                 height += AndroidUtilities.dp(8.0f);
                                             }
@@ -127,27 +127,27 @@ public final class xr0 extends org.telegram.ui.fu0 {
                         } else {
                             c3 = 0;
                             c10 = 1;
-                            if (childAt instanceof org.telegram.ui.Cells.i7) {
-                                org.telegram.ui.Cells.i7 i7Var = (org.telegram.ui.Cells.i7) childAt;
-                                if (i7Var.getMessage().getId() == messageObject.getId()) {
-                                    p9 imageView = i7Var.getImageView();
+                            if (childAt instanceof org.telegram.ui.Cells.h7) {
+                                org.telegram.ui.Cells.h7 h7Var = (org.telegram.ui.Cells.h7) childAt;
+                                if (h7Var.getMessage().getId() == messageObject.getId()) {
+                                    p9 imageView = h7Var.getImageView();
                                     photoImage = imageView.getImageReceiver();
                                     imageView.getLocationInWindow(iArr);
                                     linkImageView = photoImage;
                                 }
                                 linkImageView = imageReceiver;
                             } else {
-                                if (childAt instanceof org.telegram.ui.Cells.e2) {
-                                    org.telegram.ui.Cells.e2 e2Var = (org.telegram.ui.Cells.e2) childAt;
-                                    MessageObject messageObject3 = (MessageObject) e2Var.getParentObject();
+                                if (childAt instanceof org.telegram.ui.Cells.d2) {
+                                    org.telegram.ui.Cells.d2 d2Var = (org.telegram.ui.Cells.d2) childAt;
+                                    MessageObject messageObject3 = (MessageObject) d2Var.getParentObject();
                                     if (messageObject3 != null && messageObject3.getId() == messageObject.getId()) {
-                                        photoImage = e2Var.getPhotoImage();
-                                        e2Var.getLocationInWindow(iArr);
+                                        photoImage = d2Var.getPhotoImage();
+                                        d2Var.getLocationInWindow(iArr);
                                         linkImageView = photoImage;
                                     }
-                                } else if ((childAt instanceof org.telegram.ui.Cells.l7) && (message = (l7Var = (org.telegram.ui.Cells.l7) childAt).getMessage()) != null && message.getId() == messageObject.getId()) {
-                                    linkImageView = l7Var.getLinkImageView();
-                                    l7Var.getLocationInWindow(iArr);
+                                } else if ((childAt instanceof org.telegram.ui.Cells.k7) && (message = (k7Var = (org.telegram.ui.Cells.k7) childAt).getMessage()) != null && message.getId() == messageObject.getId()) {
+                                    linkImageView = k7Var.getLinkImageView();
+                                    k7Var.getLocationInWindow(iArr);
                                 }
                                 linkImageView = imageReceiver;
                             }

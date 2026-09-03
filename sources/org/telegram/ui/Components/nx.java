@@ -1,25 +1,10 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class nx extends k7.d6 {
-    public final /* synthetic */ mz a;
-
-    public nx(mz mzVar) {
-        this.a = mzVar;
-    }
-
-    @Override // k7.d6
-    public final void a() {
-        mz mzVar = this.a;
-        mzVar.c0 = false;
-        mzVar.M.w1();
-    }
-
-    @Override // k7.d6
-    public final void b() {
-        mz mzVar = this.a;
-        mzVar.M.w1();
-        mzVar.c0 = true;
-    }
+public final class nx {
+    public TLRPC.TL_messages_stickerSet a;
+    public long b;
 }

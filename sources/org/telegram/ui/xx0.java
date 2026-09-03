@@ -6,9 +6,9 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xx0 implements MessagesStorage.BooleanCallback, ns {
+public final /* synthetic */ class xx0 implements MessagesStorage.BooleanCallback, os {
     public final /* synthetic */ ProfileActivity a;
     public final /* synthetic */ TLRPC.User b;
 
@@ -17,7 +17,7 @@ public final /* synthetic */ class xx0 implements MessagesStorage.BooleanCallbac
         this.b = user;
     }
 
-    @Override // org.telegram.ui.ns
+    @Override // org.telegram.ui.os
     public void a() {
         ProfileActivity.j0(this.a, this.b);
     }
@@ -27,7 +27,7 @@ public final /* synthetic */ class xx0 implements MessagesStorage.BooleanCallbac
         ProfileActivity profileActivity = this.a;
         if (profileActivity.getParentLayout() != null) {
             List fragmentStack = profileActivity.getParentLayout().getFragmentStack();
-            if (((fragmentStack == null || fragmentStack.size() < 2) ? null : (org.telegram.ui.ActionBar.p2) yh.j(2, fragmentStack)) instanceof xn) {
+            if (((fragmentStack == null || fragmentStack.size() < 2) ? null : (org.telegram.ui.ActionBar.p2) ai.j(2, fragmentStack)) instanceof zn) {
                 ((ActionBarLayout) profileActivity.getParentLayout()).Y(fragmentStack.size() - 2);
             }
         }

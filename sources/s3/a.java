@@ -19,7 +19,7 @@ import r3.s;
 import r3.v;
 import r8.d;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class a implements k {
     public static final int[] p = {13, 14, 16, 18, 20, 21, 27, 32, 6, 7, 6, 6, 1, 1, 1, 1};
@@ -59,7 +59,7 @@ public final class a implements k {
 
     public final int a(l lVar) {
         boolean z4;
-        lVar.r();
+        lVar.m();
         byte[] bArr = this.a;
         lVar.b(0, 1, bArr);
         byte b10 = bArr[0];
@@ -78,16 +78,16 @@ public final class a implements k {
     }
 
     public final boolean b(l lVar) {
-        lVar.r();
+        lVar.m();
         byte[] bArr = r;
         byte[] bArr2 = new byte[bArr.length];
         lVar.b(0, bArr.length, bArr2);
         if (Arrays.equals(bArr2, bArr)) {
             this.c = false;
-            lVar.s(bArr.length);
+            lVar.n(bArr.length);
             return true;
         }
-        lVar.r();
+        lVar.m();
         byte[] bArr3 = s;
         byte[] bArr4 = new byte[bArr3.length];
         lVar.b(0, bArr3.length, bArr4);
@@ -95,7 +95,7 @@ public final class a implements k {
             return false;
         }
         this.c = true;
-        lVar.s(bArr3.length);
+        lVar.n(bArr3.length);
         return true;
     }
 
@@ -117,8 +117,8 @@ public final class a implements k {
     @Override // r3.k
     public final void e(m mVar) {
         this.l = mVar;
-        this.m = mVar.i2(0, 1);
-        mVar.i1();
+        this.m = mVar.d2(0, 1);
+        mVar.j1();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:27:0x00ab  */
@@ -162,9 +162,9 @@ public final class a implements k {
             } catch (EOFException unused) {
             }
         }
-        int e6 = this.m.e(lVar, this.f, true);
-        if (e6 != -1) {
-            int i14 = this.f - e6;
+        int e = this.m.e(lVar, this.f, true);
+        if (e != -1) {
+            int i14 = this.f - e;
             this.f = i14;
             i10 = 0;
             if (i14 <= 0) {
@@ -176,12 +176,12 @@ public final class a implements k {
                 if ((this.b & 1) == 0 || j10 == -1 || !((i11 = this.i) == -1 || i11 == this.e)) {
                     n nVar = new n(-9223372036854775807L);
                     this.n = nVar;
-                    this.l.m2(nVar);
+                    this.l.h2(nVar);
                     this.g = true;
                 } else if (this.j >= 20 || i10 == -1) {
                     g gVar = new g(j10, (int) ((i11 * 8000000) / 20000), i11, false, this.h);
                     this.n = gVar;
-                    this.l.m2(gVar);
+                    this.l.h2(gVar);
                     this.g = true;
                 }
             }

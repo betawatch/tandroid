@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class ph extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -21,25 +21,25 @@ public final class ph extends FrameLayout {
     public final /* synthetic */ NotificationCenter.NotificationCenterDelegate e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ph(vf.k kVar, Context context) {
+    public ph(uf.k kVar, Context context) {
         super(context);
         this.e = kVar;
         this.b = -1;
         this.c = new Rect();
-        this.d = new z5(this, 220L, pr.h);
+        this.d = new z5(this, 220L, mr.h);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.h20 h20Var = (org.telegram.ui.h20) this.d;
+                org.telegram.ui.i20 i20Var = (org.telegram.ui.i20) this.d;
                 Path path = (Path) this.c;
-                mi miVar = (mi) this.e;
-                qg.b bVar = miVar.y0;
+                li liVar = (li) this.e;
+                pg.b bVar = liVar.y0;
                 if (bVar != null) {
-                    bVar.setBounds(0, (int) miVar.S1, getMeasuredWidth(), getMeasuredHeight());
-                    miVar.y0.draw(canvas);
+                    bVar.setBounds(0, (int) liVar.S1, getMeasuredWidth(), getMeasuredHeight());
+                    liVar.y0.draw(canvas);
                 }
                 float dp = AndroidUtilities.dp(20.0f);
                 int dp2 = AndroidUtilities.dp(7.0f);
@@ -54,9 +54,9 @@ public final class ph extends FrameLayout {
                 canvas.saveLayerAlpha(rectF, 255, 31);
                 super.dispatchDraw(canvas);
                 rectF.set(getPaddingLeft(), f10, getWidth() - getPaddingRight(), AndroidUtilities.dp(6.0f) + dp2);
-                h20Var.b(canvas, rectF, 1, 1.0f);
+                i20Var.b(canvas, rectF, 1, 1.0f);
                 rectF.set(getPaddingLeft(), (getHeight() - dp3) - AndroidUtilities.dp(6.0f), getWidth() - getPaddingRight(), getHeight() - dp3);
-                h20Var.b(canvas, rectF, 3, 1.0f);
+                i20Var.b(canvas, rectF, 3, 1.0f);
                 canvas.restore();
                 canvas.restore();
                 break;
@@ -72,7 +72,7 @@ public final class ph extends FrameLayout {
             case 1:
                 float width = getWidth() / 2.0f;
                 z5 z5Var = (z5) this.d;
-                vf.k kVar = (vf.k) this.e;
+                uf.k kVar = (uf.k) this.e;
                 float d = z5Var.d(kVar.n.getWidth(), false);
                 Rect rect = (Rect) this.c;
                 float f10 = d / 2.0f;
@@ -90,13 +90,13 @@ public final class ph extends FrameLayout {
         switch (this.a) {
             case 0:
                 int i14 = this.b;
-                mi miVar = (mi) this.e;
-                int top = i14 - miVar.w.getTop();
+                li liVar = (li) this.e;
+                int top = i14 - liVar.w.getTop();
                 super.onLayout(z4, i10, i11, i12, i13);
                 this.b = getHeight();
-                if (miVar.w.getVisibility() == 0 && getHeight() - miVar.w.getTop() != top) {
-                    miVar.w.setTranslationY(miVar.w.getTranslationY() + ((getHeight() - miVar.w.getTop()) - top));
-                    miVar.w.animate().translationY(0.0f).setDuration(320L).setInterpolator(pr.h).start();
+                if (liVar.w.getVisibility() == 0 && getHeight() - liVar.w.getTop() != top) {
+                    liVar.w.setTranslationY(liVar.w.getTranslationY() + ((getHeight() - liVar.w.getTop()) - top));
+                    liVar.w.animate().translationY(0.0f).setDuration(320L).setInterpolator(mr.h).start();
                     break;
                 }
                 break;
@@ -110,7 +110,7 @@ public final class ph extends FrameLayout {
     public void onMeasure(int i10, int i11) {
         switch (this.a) {
             case 1:
-                vf.k kVar = (vf.k) this.e;
+                uf.k kVar = (uf.k) this.e;
                 kVar.n.measure(i10, i11);
                 invalidate();
                 super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.max(this.b, AndroidUtilities.dp(36.0f) + kVar.n.getMeasuredHeight()), TLObject.FLAG_30));
@@ -126,10 +126,10 @@ public final class ph extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ph(mi miVar, Context context) {
+    public ph(li liVar, Context context) {
         super(context);
-        this.e = miVar;
+        this.e = liVar;
         this.c = new Path();
-        this.d = new org.telegram.ui.h20();
+        this.d = new org.telegram.ui.i20();
     }
 }

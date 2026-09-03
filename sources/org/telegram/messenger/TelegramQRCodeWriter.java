@@ -15,7 +15,7 @@ import java.util.Arrays;
 import java.util.Map;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class TelegramQRCodeWriter {
     private static final int QUIET_ZONE_SIZE = 4;
@@ -214,7 +214,7 @@ public final class TelegramQRCodeWriter {
         tb.e eVar;
         int i16;
         int i17;
-        int e6;
+        int e;
         int i18;
         tb.e eVar2;
         pb.a aVar;
@@ -328,17 +328,17 @@ public final class TelegramQRCodeWriter {
                                                 for (i17 = 0; i17 < i16; i17++) {
                                                     aVar4.a(aVar2.d(i17));
                                                 }
-                                                e6 = dVar != dVar2 ? aVar3.e() : str.length();
+                                                e = dVar != dVar2 ? aVar3.e() : str.length();
                                                 int a2 = dVar.a(eVar);
                                                 i18 = 1 << a2;
-                                                if (e6 < i18) {
+                                                if (e < i18) {
                                                     StringBuilder sb = new StringBuilder();
-                                                    sb.append(e6);
+                                                    sb.append(e);
                                                     sb.append(" is bigger than ");
                                                     sb.append(i18 - 1);
                                                     throw new b7.a(sb.toString());
                                                 }
-                                                aVar4.b(e6, a2);
+                                                aVar4.b(e, a2);
                                                 int i27 = aVar3.b;
                                                 aVar4.c(aVar4.b + i27);
                                                 for (int i28 = 0; i28 < i27; i28++) {
@@ -368,7 +368,7 @@ public final class TelegramQRCodeWriter {
                                                         }
                                                         int a22 = dVar.a(eVar);
                                                         i18 = 1 << a22;
-                                                        if (e6 < i18) {
+                                                        if (e < i18) {
                                                         }
                                                     } else {
                                                         i30++;
@@ -441,10 +441,10 @@ public final class TelegramQRCodeWriter {
                                         i35 = i36;
                                     }
                                     eVar2 = (tb.e) mVar3.c;
-                                    p2.v vVar = eVar2.c[bVar.ordinal()];
+                                    p2.w wVar = eVar2.c[bVar.ordinal()];
                                     int i41 = eVar2.d;
-                                    int i42 = vVar.b;
-                                    c5.e[] eVarArr2 = (c5.e[]) vVar.c;
+                                    int i42 = wVar.b;
+                                    c5.e[] eVarArr2 = (c5.e[]) wVar.c;
                                     int i43 = 0;
                                     for (c5.e eVar3 : eVarArr2) {
                                         i43 += eVar3.a;
@@ -466,13 +466,13 @@ public final class TelegramQRCodeWriter {
                                             z20 = false;
                                         }
                                     }
-                                    int e10 = i44 - aVar.e();
+                                    int e6 = i44 - aVar.e();
                                     int i47 = 0;
-                                    while (i47 < e10) {
-                                        int i48 = e10;
+                                    while (i47 < e6) {
+                                        int i48 = e6;
                                         aVar.b((i47 & 1) == 0 ? 236 : 17, 8);
                                         i47++;
-                                        e10 = i48;
+                                        e6 = i48;
                                     }
                                     if (aVar.b != i19) {
                                         throw new b7.a("Bits size does not equal capacity");
@@ -567,7 +567,7 @@ public final class TelegramQRCodeWriter {
                                             throw new IllegalArgumentException("No data bytes provided");
                                         }
                                         if (i72 >= arrayList4.size()) {
-                                            rb.b bVar10 = (rb.b) l.d.i(1, arrayList4);
+                                            rb.b bVar10 = (rb.b) kf.k0.i(1, arrayList4);
                                             int size2 = arrayList4.size();
                                             rb.b bVar11 = bVar10;
                                             while (size2 <= i72) {
@@ -687,7 +687,7 @@ public final class TelegramQRCodeWriter {
                                         }
                                     }
                                     if (i85 != aVar7.e()) {
-                                        StringBuilder m9 = l.d.m(i85, "Interleaving error: ", " and ");
+                                        StringBuilder m9 = kf.k0.m(i85, "Interleaving error: ", " and ");
                                         m9.append(aVar7.e());
                                         m9.append(" differ.");
                                         throw new b7.a(m9.toString());
@@ -1016,10 +1016,10 @@ public final class TelegramQRCodeWriter {
                                 int i252 = i14;
                                 if (!z10) {
                                 }
-                                p2.v vVar2 = eVar2.c[bVar.ordinal()];
+                                p2.w wVar2 = eVar2.c[bVar.ordinal()];
                                 int i412 = eVar2.d;
-                                int i422 = vVar2.b;
-                                c5.e[] eVarArr22 = (c5.e[]) vVar2.c;
+                                int i422 = wVar2.b;
+                                c5.e[] eVarArr22 = (c5.e[]) wVar2.c;
                                 int i432 = 0;
                                 while (r13 < r12) {
                                 }
@@ -1039,10 +1039,10 @@ public final class TelegramQRCodeWriter {
                         int i2522 = i14;
                         if (!z10) {
                         }
-                        p2.v vVar22 = eVar2.c[bVar.ordinal()];
+                        p2.w wVar22 = eVar2.c[bVar.ordinal()];
                         int i4122 = eVar2.d;
-                        int i4222 = vVar22.b;
-                        c5.e[] eVarArr222 = (c5.e[]) vVar22.c;
+                        int i4222 = wVar22.b;
+                        c5.e[] eVarArr222 = (c5.e[]) wVar22.c;
                         int i4322 = 0;
                         while (r13 < r12) {
                         }
@@ -1065,10 +1065,10 @@ public final class TelegramQRCodeWriter {
                 int i25222 = i14;
                 if (!z10) {
                 }
-                p2.v vVar222 = eVar2.c[bVar.ordinal()];
+                p2.w wVar222 = eVar2.c[bVar.ordinal()];
                 int i41222 = eVar2.d;
-                int i42222 = vVar222.b;
-                c5.e[] eVarArr2222 = (c5.e[]) vVar222.c;
+                int i42222 = wVar222.b;
+                c5.e[] eVarArr2222 = (c5.e[]) wVar222.c;
                 int i43222 = 0;
                 while (r13 < r12) {
                 }
@@ -1095,10 +1095,10 @@ public final class TelegramQRCodeWriter {
         int i252222 = i14;
         if (!z10) {
         }
-        p2.v vVar2222 = eVar2.c[bVar.ordinal()];
+        p2.w wVar2222 = eVar2.c[bVar.ordinal()];
         int i412222 = eVar2.d;
-        int i422222 = vVar2222.b;
-        c5.e[] eVarArr22222 = (c5.e[]) vVar2222.c;
+        int i422222 = wVar2222.b;
+        c5.e[] eVarArr22222 = (c5.e[]) wVar2222.c;
         int i432222 = 0;
         while (r13 < r12) {
         }

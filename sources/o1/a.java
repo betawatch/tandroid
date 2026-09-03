@@ -3,12 +3,13 @@ package o1;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.view.Choreographer;
+import androidx.biometric.e0;
 import java.util.ArrayList;
 import l7.w0;
 import org.telegram.ui.Components.a11;
 import org.telegram.ui.Components.y01;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class a implements Choreographer.FrameCallback {
     public final /* synthetic */ int a;
@@ -26,7 +27,7 @@ public final class a implements Choreographer.FrameCallback {
         boolean z4;
         switch (this.a) {
             case 0:
-                b bVar = (b) ((ja.c) ((w0) this.b).b).a;
+                b bVar = (b) ((e0) ((w0) this.b).b).b;
                 long uptimeMillis = SystemClock.uptimeMillis();
                 ArrayList arrayList = bVar.b;
                 long uptimeMillis2 = SystemClock.uptimeMillis();

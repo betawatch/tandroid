@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class c9 {
     public float A;
@@ -44,7 +44,7 @@ public final class c9 {
     public int s;
     public boolean w;
     public boolean x;
-    public oh.u6 y;
+    public nh.u6 y;
     public final Random z;
     public final b9[] b = new b9[3];
     public final b9[] c = new b9[3];
@@ -57,7 +57,7 @@ public final class c9 {
     public long v = 220;
 
     public c9(View view, boolean z4) {
-        pr prVar = pr.f;
+        mr mrVar = mr.f;
         this.z = new Random();
         this.r = view;
         for (int i10 = 0; i10 < 3; i10++) {
@@ -67,7 +67,7 @@ public final class c9 {
             b9Var.e = new ImageReceiver(view);
             this.b[i10].e.setInvalidateAll(true);
             this.b[i10].e.setRoundRadius(AndroidUtilities.dp(12.0f));
-            this.b[i10].a = new z8((org.telegram.ui.ActionBar.g6) null);
+            this.b[i10].a = new z8((org.telegram.ui.ActionBar.f6) null);
             this.b[i10].a.u(AndroidUtilities.dp(12.0f));
             b9[] b9VarArr2 = this.c;
             b9 b9Var2 = new b9();
@@ -75,7 +75,7 @@ public final class c9 {
             b9Var2.e = new ImageReceiver(view);
             this.c[i10].e.setInvalidateAll(true);
             this.c[i10].e.setRoundRadius(AndroidUtilities.dp(12.0f));
-            this.c[i10].a = new z8((org.telegram.ui.ActionBar.g6) null);
+            this.c[i10].a = new z8((org.telegram.ui.ActionBar.f6) null);
             this.c[i10].a.u(AndroidUtilities.dp(12.0f));
         }
         this.m = z4;
@@ -132,10 +132,10 @@ public final class c9 {
                     if (i12 == i13) {
                         b9 b9Var3 = b9VarArr2[i12];
                         b9Var3.i = -1;
-                        org.telegram.ui.Cells.c4 c4Var = b9Var3.b;
+                        org.telegram.ui.Cells.b4 b4Var = b9Var3.b;
                         b9 b9Var4 = b9VarArr[i12];
                         b9Var3.b = b9Var4.b;
-                        b9Var4.b = c4Var;
+                        b9Var4.b = b4Var;
                     } else {
                         b9 b9Var5 = b9VarArr2[i12];
                         b9Var5.i = 2;
@@ -168,7 +168,7 @@ public final class c9 {
             ofFloat.addUpdateListener(new f6(this, 4));
             this.f.addListener(new a9(this, i10));
             this.f.setDuration(this.v);
-            this.f.setInterpolator(pr.f);
+            this.f.setInterpolator(mr.f);
             this.f.start();
         } else {
             this.w = true;
@@ -235,7 +235,7 @@ public final class c9 {
                 this.c[i10].e.onDetachedFromWindow();
             }
             if (this.k == 3) {
-                org.telegram.ui.ActionBar.k6.D0().a(0.0f);
+                org.telegram.ui.ActionBar.j6.D0().a(0.0f);
             }
         }
     }
@@ -317,14 +317,14 @@ public final class c9 {
         }
         int i23 = this.k;
         int dp2 = (i23 == 0 || i23 == 10 || i23 == 11) ? 0 : AndroidUtilities.dp(10.0f);
-        int e6 = this.l ? (this.p - ((int) e())) / 2 : dp2;
+        int e = this.l ? (this.p - ((int) e())) / 2 : dp2;
         boolean z15 = VoIPService.getSharedInstance() != null && VoIPService.getSharedInstance().isMicMute();
         int i24 = this.k;
         Paint paint2 = this.h;
         if (i24 == 4) {
-            paint2.setColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.v7, false));
+            paint2.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.v7, false));
         } else if (i24 != 3) {
-            paint2.setColor(org.telegram.ui.ActionBar.k6.w0(null, z15 ? org.telegram.ui.ActionBar.k6.z7 : org.telegram.ui.ActionBar.k6.y7, false));
+            paint2.setColor(org.telegram.ui.ActionBar.j6.w0(null, z15 ? org.telegram.ui.ActionBar.j6.z7 : org.telegram.ui.ActionBar.j6.y7, false));
         }
         int i25 = 0;
         int i26 = 0;
@@ -387,7 +387,7 @@ public final class c9 {
                                     imageReceiver.setImageX((i21 * i28) + i17);
                                 } else {
                                     f16 = 1.0f;
-                                    imageReceiver.setImageX((i21 * i28) + e6);
+                                    imageReceiver.setImageX((i21 * i28) + e);
                                 }
                                 int i30 = this.k;
                                 if (i30 == 0 || i30 == i19 || i30 == 11) {
@@ -414,28 +414,28 @@ public final class c9 {
                                             i16 = dp2;
                                         }
                                         int i32 = (i21 * i28) + i16;
-                                        int i33 = (b9VarArr6[i28].j * i21) + e6;
+                                        int i33 = (b9VarArr6[i28].j * i21) + e;
                                         float f25 = this.e;
                                         imageReceiver.setImageX((int) e2.c.w(1.0f, f25, i33, i32 * f25));
                                     } else if (i31 == -1 && this.l) {
                                         int x10 = org.telegram.ui.b.x(z14 ? 8.0f : 4.0f, this.p - (i26 * i21), i10) + (i21 * i28);
                                         float f26 = this.e;
-                                        imageReceiver.setImageX((int) e2.c.w(1.0f, f26, e6 + r5, x10 * f26));
+                                        imageReceiver.setImageX((int) e2.c.w(1.0f, f26, e + r5, x10 * f26));
                                     }
                                     f17 = f18;
                                     z11 = true;
                                     float f27 = f17 * this.u;
                                     float d10 = (d() / 2.0f) + AndroidUtilities.dp(4.0f);
                                     if (this.y != null) {
-                                        oh.u6 u6Var = new oh.u6();
-                                        int i34 = org.telegram.ui.ActionBar.k6.Tg;
+                                        nh.u6 u6Var = new nh.u6();
+                                        int i34 = org.telegram.ui.ActionBar.j6.Tg;
                                         u6Var.n = i34;
                                         i15 = i28;
-                                        int i35 = org.telegram.ui.ActionBar.k6.Vg;
+                                        int i35 = org.telegram.ui.ActionBar.j6.Vg;
                                         u6Var.o = i35;
                                         u6Var.a = z13;
                                         z12 = z11;
-                                        u6Var.d(org.telegram.ui.ActionBar.k6.w0(null, i34, false), org.telegram.ui.ActionBar.k6.w0(null, i35, false), 0, 0);
+                                        u6Var.d(org.telegram.ui.ActionBar.j6.w0(null, i34, false), org.telegram.ui.ActionBar.j6.w0(null, i35, false), 0, 0);
                                         this.y = u6Var;
                                     } else {
                                         i15 = i28;
@@ -513,7 +513,7 @@ public final class c9 {
                             }
                             imageReceiver2.setImageX((i21 * i36) + i14);
                         } else {
-                            imageReceiver2.setImageX((i21 * i36) + e6);
+                            imageReceiver2.setImageX((i21 * i36) + e);
                         }
                         int i38 = this.k;
                         if (i38 != 0 && i38 != 10) {
@@ -538,13 +538,13 @@ public final class c9 {
                                             i13 = dp2;
                                         }
                                         int i40 = (i21 * i36) + i13;
-                                        int i41 = (b9VarArr7[i36].j * i21) + e6;
+                                        int i41 = (b9VarArr7[i36].j * i21) + e;
                                         float f30 = this.e;
                                         imageReceiver2.setImageX((int) e2.c.w(1.0f, f30, i41, i40 * f30));
                                     } else if (i39 == -1 && this.l) {
                                         int x11 = org.telegram.ui.b.x(z14 ? 8.0f : 4.0f, this.p - (i26 * i21), 2) + (i21 * i36);
                                         float f31 = this.e;
-                                        imageReceiver2.setImageX((int) e2.c.w(1.0f, f31, e6 + r10, x11 * f31));
+                                        imageReceiver2.setImageX((int) e2.c.w(1.0f, f31, e + r10, x11 * f31));
                                     }
                                     f12 = f15;
                                     z4 = true;
@@ -560,13 +560,13 @@ public final class c9 {
                                             b9Var = b9VarArr7[i36];
                                             if (b9Var.b == null) {
                                                 if (this.k == 5) {
-                                                    b9Var.b = new org.telegram.ui.Cells.c4(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(16.0f));
+                                                    b9Var.b = new org.telegram.ui.Cells.b4(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(16.0f));
                                                 } else {
-                                                    b9Var.b = new org.telegram.ui.Cells.c4(AndroidUtilities.dp(17.0f), AndroidUtilities.dp(21.0f));
+                                                    b9Var.b = new org.telegram.ui.Cells.b4(AndroidUtilities.dp(17.0f), AndroidUtilities.dp(21.0f));
                                                 }
                                             }
                                             if (this.k == 5) {
-                                                b9VarArr7[i36].b.d(i0.a.k(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.qg, false), (int) (f14 * 76.5f)));
+                                                b9VarArr7[i36].b.d(i0.a.k(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.qg, false), (int) (f14 * 76.5f)));
                                             }
                                             b9Var2 = b9VarArr7[i36];
                                             groupCallParticipant = b9Var2.f;
@@ -617,12 +617,12 @@ public final class c9 {
                                             canvas2.drawCircle(imageReceiver2.getCenterX(), imageReceiver2.getCenterY(), AndroidUtilities.dp(17.0f), paint);
                                             b9 b9Var3 = b9VarArr7[i36];
                                             if (b9Var3.b == null) {
-                                                b9Var3.b = new org.telegram.ui.Cells.c4(AndroidUtilities.dp(17.0f), AndroidUtilities.dp(21.0f));
+                                                b9Var3.b = new org.telegram.ui.Cells.b4(AndroidUtilities.dp(17.0f), AndroidUtilities.dp(21.0f));
                                             }
                                             if (this.k == 10) {
-                                                b9VarArr7[i36].b.d(i0.a.k(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.qg, false), (int) (f13 * 76.5f)));
+                                                b9VarArr7[i36].b.d(i0.a.k(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.qg, false), (int) (f13 * 76.5f)));
                                             } else {
-                                                b9VarArr7[i36].b.d(i0.a.k(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.pg, false), (int) (f13 * 76.5f)));
+                                                b9VarArr7[i36].b.d(i0.a.k(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.pg, false), (int) (f13 * 76.5f)));
                                             }
                                             long currentTimeMillis = System.currentTimeMillis();
                                             b9 b9Var4 = b9VarArr7[i36];

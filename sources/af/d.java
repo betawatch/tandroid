@@ -1,169 +1,1110 @@
 package af;
 
-import a0.h;
+import android.app.ActivityManager;
+import android.app.KeyguardManager;
+import android.app.NotificationManager;
+import android.app.job.JobInfo;
+import android.app.job.JobScheduler;
+import android.content.ComponentName;
 import android.content.Context;
-import android.net.Uri;
-import f2.m1;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.d2;
-import org.telegram.ui.j4;
-import org.telegram.ui.l4;
-import org.telegram.ui.p3;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.hardware.biometrics.BiometricManager;
+import android.hardware.biometrics.BiometricPrompt;
+import android.hardware.fingerprint.FingerprintManager;
+import android.location.LocationManager;
+import android.media.AudioAttributes;
+import android.os.Build;
+import android.os.PersistableBundle;
+import android.os.Process;
+import android.text.TextUtils;
+import android.util.Base64;
+import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
+import androidx.biometric.k0;
+import androidx.biometric.r;
+import androidx.biometric.s;
+import androidx.biometric.t;
+import androidx.core.graphics.drawable.IconCompat;
+import androidx.lifecycle.o;
+import androidx.lifecycle.p0;
+import androidx.lifecycle.q0;
+import androidx.lifecycle.s0;
+import androidx.lifecycle.t0;
+import androidx.recyclerview.widget.RecyclerView;
+import b4.b0;
+import b4.h0;
+import b6.m;
+import com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService;
+import com.google.android.gms.internal.cast.n;
+import com.google.android.gms.internal.play_billing.k;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import com.google.android.gms.tasks.Tasks;
+import com.google.firebase.messaging.FirebaseMessagingService;
+import f2.e0;
+import f2.l1;
+import f2.o0;
+import g.x;
+import h5.c0;
+import h5.d0;
+import h5.w;
+import j$.util.DesugarCollections;
+import j3.m0;
+import j3.n0;
+import j7.i0;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.nio.ByteBuffer;
+import java.nio.charset.Charset;
+import java.security.Signature;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Set;
+import java.util.WeakHashMap;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+import java.util.zip.Adler32;
+import javax.crypto.Cipher;
+import javax.crypto.Mac;
+import l3.l;
+import org.telegram.messenger.beta.R;
+import r0.j0;
+import r3.v;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ TLObject b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
+public class d implements b0, a3.b, v4.f, v9.a {
+    public static d e;
+    public final /* synthetic */ int a;
+    public Object b;
+    public Object c;
+    public Object d;
 
-    public /* synthetic */ d(f fVar, d2[] d2VarArr, TLObject tLObject, int i10, Uri uri, Context context, boolean z4) {
-        this.e = fVar;
-        this.f = d2VarArr;
-        this.b = tLObject;
-        this.c = i10;
-        this.h = uri;
-        this.n = context;
-        this.d = z4;
+    public /* synthetic */ d(int i10, boolean z4) {
+        this.a = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        m1 K;
-        int i10 = 0;
-        switch (this.a) {
-            case 0:
-                f fVar = (f) this.e;
-                d2[] d2VarArr = (d2[]) this.f;
-                TLObject tLObject = this.b;
-                int i11 = this.c;
-                Uri uri = (Uri) this.h;
-                Context context = (Context) this.n;
-                boolean z4 = this.d;
-                if (fVar != null) {
-                    fVar.b();
+    public void A(y2.i iVar, int i10, boolean z4) {
+        char c3;
+        e3.a aVar = (e3.a) this.d;
+        Context context = (Context) this.b;
+        ComponentName componentName = new ComponentName(context, (Class<?>) JobInfoSchedulerService.class);
+        JobScheduler jobScheduler = (JobScheduler) context.getSystemService("jobscheduler");
+        Adler32 adler32 = new Adler32();
+        adler32.update(context.getPackageName().getBytes(Charset.forName("UTF-8")));
+        String str = iVar.a;
+        String str2 = iVar.a;
+        adler32.update(str.getBytes(Charset.forName("UTF-8")));
+        ByteBuffer allocate = ByteBuffer.allocate(4);
+        v2.d dVar = iVar.c;
+        adler32.update(allocate.putInt(i3.a.a(dVar)).array());
+        byte[] bArr = iVar.b;
+        if (bArr != null) {
+            adler32.update(bArr);
+        }
+        int value = (int) adler32.getValue();
+        if (!z4) {
+            Iterator<JobInfo> it = jobScheduler.getAllPendingJobs().iterator();
+            while (true) {
+                if (!it.hasNext()) {
+                    break;
+                }
+                JobInfo next = it.next();
+                int i11 = next.getExtras().getInt("attemptNumber");
+                if (next.getId() == value) {
+                    if (i11 >= i10) {
+                        i0.a(iVar, "JobInfoScheduler", "Upload for context %s is already scheduled. Returning...");
+                        return;
+                    }
+                }
+            }
+        }
+        Cursor rawQuery = ((f3.h) ((f3.d) this.c)).a().rawQuery("SELECT next_request_ms FROM transport_contexts WHERE backend_name = ? and priority = ?", new String[]{str2, String.valueOf(i3.a.a(dVar))});
+        try {
+            Long valueOf = rawQuery.moveToNext() ? Long.valueOf(rawQuery.getLong(0)) : 0L;
+            rawQuery.close();
+            long longValue = valueOf.longValue();
+            JobInfo.Builder builder = new JobInfo.Builder(value, componentName);
+            builder.setMinimumLatency(aVar.a(dVar, longValue, i10));
+            Set set = ((e3.b) aVar.b.get(dVar)).c;
+            if (set.contains(e3.c.a)) {
+                builder.setRequiredNetworkType(2);
+            } else {
+                builder.setRequiredNetworkType(1);
+            }
+            if (set.contains(e3.c.c)) {
+                builder.setRequiresCharging(true);
+            }
+            if (set.contains(e3.c.b)) {
+                builder.setRequiresDeviceIdle(true);
+            }
+            PersistableBundle persistableBundle = new PersistableBundle();
+            persistableBundle.putInt("attemptNumber", i10);
+            persistableBundle.putString("backendName", str2);
+            persistableBundle.putInt("priority", i3.a.a(dVar));
+            if (bArr != null) {
+                c3 = 0;
+                persistableBundle.putString("extras", Base64.encodeToString(bArr, 0));
+            } else {
+                c3 = 0;
+            }
+            builder.setExtras(persistableBundle);
+            Integer valueOf2 = Integer.valueOf(value);
+            Long valueOf3 = Long.valueOf(aVar.a(dVar, longValue, i10));
+            Integer valueOf4 = Integer.valueOf(i10);
+            Object[] objArr = new Object[5];
+            objArr[c3] = iVar;
+            objArr[1] = valueOf2;
+            objArr[2] = valueOf3;
+            objArr[3] = valueOf;
+            objArr[4] = valueOf4;
+            String c10 = i0.c("JobInfoScheduler");
+            if (Log.isLoggable(c10, 3)) {
+                Log.d(c10, String.format("Scheduling upload for context %s with jobId=%d in %dms(Backend next call timestamp %d). Attempt %d", objArr));
+            }
+            jobScheduler.schedule(builder.build());
+        } catch (Throwable th2) {
+            rawQuery.close();
+            throw th2;
+        }
+    }
+
+    public void B(b bVar) {
+        j jVar;
+        j jVar2 = (j) this.c;
+        if (jVar2 != null && ((b) this.d) == null && bVar != null) {
+            d(jVar2);
+        }
+        if (((b) this.d) != null && (jVar = (j) this.c) != null && bVar == null) {
+            z(jVar);
+        }
+        b bVar2 = (b) this.d;
+        if (bVar2 != null) {
+            s5.h hVar = bVar2.a;
+            m.e("Must be called from the main thread.");
+            hVar.i.remove(bVar2);
+        }
+        if (bVar != null) {
+            bVar.a.p(bVar);
+            j jVar3 = (j) this.c;
+            if (jVar3 != null) {
+                bVar.d = jVar3;
+                bVar.g = 0;
+                bVar.h = 0;
+                bVar.p();
+            }
+        }
+        this.d = bVar;
+    }
+
+    public void C(View view) {
+        if (((ArrayList) this.d).remove(view)) {
+            bb.b bVar = (bb.b) this.b;
+            l1 U = RecyclerView.U(view);
+            if (U != null) {
+                RecyclerView recyclerView = (RecyclerView) bVar.b;
+                int i10 = U.r;
+                if (recyclerView.b0()) {
+                    U.s = i10;
+                    recyclerView.G0.add(U);
                 } else {
-                    try {
-                        d2VarArr[0].dismiss();
-                    } catch (Throwable unused) {
-                    }
-                    d2VarArr[0] = null;
+                    View view2 = U.a;
+                    WeakHashMap weakHashMap = j0.a;
+                    view2.setImportantForAccessibility(i10);
                 }
-                if (tLObject instanceof TL_account.webPagePreview) {
-                    TL_account.webPagePreview webpagepreview = (TL_account.webPagePreview) tLObject;
-                    MessagesController.getInstance(i11).putUsers(webpagepreview.users, false);
-                    MessagesController.getInstance(i11).putChats(webpagepreview.chats, false);
-                    TLRPC.MessageMedia messageMedia = webpagepreview.media;
-                    if (messageMedia instanceof TLRPC.TL_messageMediaWebPage) {
-                        TLRPC.TL_messageMediaWebPage tL_messageMediaWebPage = (TLRPC.TL_messageMediaWebPage) messageMedia;
-                        TLRPC.WebPage webPage = tL_messageMediaWebPage.webpage;
-                        if ((webPage instanceof TLRPC.TL_webPage) && webPage.cached_page != null) {
-                            NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.openArticle, tL_messageMediaWebPage.webpage, uri.toString());
-                            break;
-                        }
-                    }
-                }
-                g.p(context, uri, z4, false);
+                U.r = 0;
+            }
+        }
+    }
+
+    public void D(Object obj, String str) {
+        d dVar = new d(7, false);
+        ((d) this.d).d = dVar;
+        this.d = dVar;
+        dVar.c = obj;
+        dVar.b = str;
+    }
+
+    @Override // b4.b0
+    public void a(w wVar) {
+        long c3;
+        h5.a.j((c0) this.c);
+        int i10 = d0.a;
+        c0 c0Var = (c0) this.c;
+        synchronized (c0Var) {
+            try {
+                long j10 = c0Var.c;
+                c3 = j10 != -9223372036854775807L ? j10 + c0Var.b : c0Var.c();
+            } finally {
+            }
+        }
+        long d = ((c0) this.c).d();
+        if (c3 == -9223372036854775807L || d == -9223372036854775807L) {
+            return;
+        }
+        n0 n0Var = (n0) this.b;
+        if (d != n0Var.G) {
+            m0 a2 = n0Var.a();
+            a2.s = d;
+            n0 n0Var2 = new n0(a2);
+            this.b = n0Var2;
+            ((v) this.d).b(n0Var2);
+        }
+        int a10 = wVar.a();
+        ((v) this.d).d(a10, wVar);
+        ((v) this.d).c(c3, 1, a10, 0, null);
+    }
+
+    @Override // v9.a
+    public /* bridge */ /* synthetic */ v9.a b(Class cls, u9.d dVar) {
+        switch (this.a) {
+            case 20:
+                ((HashMap) this.b).put(cls, dVar);
+                ((HashMap) this.c).remove(cls);
+                break;
+            case 26:
+                ((HashMap) this.b).put(cls, dVar);
+                ((HashMap) this.c).remove(cls);
                 break;
             default:
-                l4 l4Var = (l4) this.e;
-                TLObject tLObject2 = this.b;
-                int i12 = this.c;
-                TLRPC.WebPage webPage2 = (TLRPC.WebPage) this.f;
-                MessageObject messageObject = (MessageObject) this.h;
-                boolean z10 = this.d;
-                String str = (String) this.n;
-                boolean z11 = tLObject2 instanceof TLRPC.TL_messages_webPage;
-                TLObject tLObject3 = tLObject2;
-                if (z11) {
-                    TLRPC.TL_messages_webPage tL_messages_webPage = (TLRPC.TL_messages_webPage) tLObject2;
-                    MessagesController.getInstance(i12).putUsers(tL_messages_webPage.users, false);
-                    MessagesController.getInstance(i12).putChats(tL_messages_webPage.chats, false);
-                    tLObject3 = tL_messages_webPage.webpage;
+                ((HashMap) this.b).put(cls, dVar);
+                ((HashMap) this.c).remove(cls);
+                break;
+        }
+        return this;
+    }
+
+    @Override // b4.b0
+    public void c(c0 c0Var, r3.m mVar, h0 h0Var) {
+        this.c = c0Var;
+        h0Var.a();
+        h0Var.b();
+        v d22 = mVar.d2(h0Var.d, 5);
+        this.d = d22;
+        d22.b((n0) this.b);
+    }
+
+    public void d(j jVar) {
+        if (((g) this.b) == null) {
+            this.b = new g();
+        }
+        for (int i10 = 0; i10 < jVar.a.size(); i10++) {
+            g gVar = (g) this.b;
+            i a2 = jVar.a(i10);
+            gVar.h.put(a2.d, a2);
+            gVar.h();
+        }
+    }
+
+    @Override // v4.f
+    public int e(long j10) {
+        long[] jArr = (long[]) this.d;
+        int b10 = d0.b(jArr, j10, false);
+        if (b10 < jArr.length) {
+            return b10;
+        }
+        return -1;
+    }
+
+    public void f(View view, int i10, boolean z4) {
+        RecyclerView recyclerView = (RecyclerView) ((bb.b) this.b).b;
+        int childCount = i10 < 0 ? recyclerView.getChildCount() : t(i10);
+        ((f2.c) this.c).y(childCount, z4);
+        if (z4) {
+            x(view);
+        }
+        recyclerView.addView(view, childCount);
+        l1 U = RecyclerView.U(view);
+        recyclerView.f0(view);
+        o0 o0Var = recyclerView.w;
+        if (o0Var != null && U != null) {
+            o0Var.y(U);
+        }
+        ArrayList arrayList = recyclerView.M;
+        if (arrayList != null) {
+            for (int size = arrayList.size() - 1; size >= 0; size--) {
+                ((e0) recyclerView.M.get(size)).getClass();
+            }
+        }
+    }
+
+    public void g(View view, int i10, ViewGroup.LayoutParams layoutParams, boolean z4) {
+        RecyclerView recyclerView = (RecyclerView) ((bb.b) this.b).b;
+        int childCount = i10 < 0 ? recyclerView.getChildCount() : t(i10);
+        ((f2.c) this.c).y(childCount, z4);
+        if (z4) {
+            x(view);
+        }
+        l1 U = RecyclerView.U(view);
+        if (U != null) {
+            if (!U.l() && !U.r()) {
+                throw new IllegalArgumentException("Called attach on a child which is not detached: " + U + recyclerView.C());
+            }
+            U.l &= -257;
+        }
+        recyclerView.attachViewToParent(view, childCount, layoutParams);
+    }
+
+    @Override // rc.a
+    public Object get() {
+        return new d((Context) ((rc.a) this.b).get(), (f3.d) ((rc.a) this.c).get(), (e3.a) ((cb.b) this.d).get(), 13);
+    }
+
+    @Override // v4.f
+    public long h(int i10) {
+        long[] jArr = (long[]) this.d;
+        h5.a.f(i10 >= 0);
+        h5.a.f(i10 < jArr.length);
+        return jArr[i10];
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:52:0x009c  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x00ab A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x00bd  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x00cc  */
+    /* JADX WARN: Removed duplicated region for block: B:73:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x00a0  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public int i(int i10) {
+        BiometricManager biometricManager;
+        BiometricPrompt.CryptoObject c3;
+        t tVar = (t) this.b;
+        int i11 = Build.VERSION.SDK_INT;
+        int i12 = 1;
+        if (i11 >= 30) {
+            BiometricManager biometricManager2 = (BiometricManager) this.c;
+            if (biometricManager2 != null) {
+                return s.a(biometricManager2, i10);
+            }
+            Log.e("BiometricManager", "Failure in canAuthenticate(). BiometricManager was null.");
+            return 1;
+        }
+        if (!n.b(i10)) {
+            return -2;
+        }
+        if (i10 != 0) {
+            Context context = tVar.a;
+            if (j7.m.a(context) != null) {
+                int i13 = 0;
+                if (n.a(i10)) {
+                    return j7.m.b(context) ? 0 : 11;
                 }
-                if (!(tLObject3 instanceof TLRPC.TL_webPage)) {
-                    if (tLObject3 instanceof TLRPC.TL_webPageNotModified) {
-                        TLRPC.TL_webPageNotModified tL_webPageNotModified = (TLRPC.TL_webPageNotModified) tLObject3;
-                        TL_iv.Page page = webPage2.cached_page;
-                        if (page != null) {
-                            int i13 = page.views;
-                            int i14 = tL_webPageNotModified.cached_page_views;
-                            if (i13 != i14) {
-                                page.views = i14;
-                                page.flags |= 8;
-                                while (true) {
-                                    p3[] p3VarArr = l4Var.r0;
-                                    if (i10 >= p3VarArr.length) {
-                                        if (messageObject != null) {
-                                            TLRPC.TL_messages_messages tL_messages_messages = new TLRPC.TL_messages_messages();
-                                            tL_messages_messages.messages.add(messageObject.messageOwner);
-                                            MessagesStorage.getInstance(i12).putMessages((TLRPC.messages_Messages) tL_messages_messages, messageObject.getDialogId(), -2, 0, false, messageObject.scheduled ? 1 : 0, 0L);
-                                            break;
-                                        }
-                                    } else {
-                                        j4 j4Var = p3VarArr[i10].c;
-                                        if (j4Var.B == webPage2 && (K = l4Var.r0[i10].b.K(j4Var.h() - 1)) != null) {
-                                            l4Var.r0[i10].c.y(K);
-                                        }
-                                        i10++;
-                                    }
-                                }
+                if (i11 != 29) {
+                    if (i11 != 28) {
+                        return j();
+                    }
+                    if (i11 < 23 || context == null || context.getPackageManager() == null || !k0.a(context.getPackageManager())) {
+                        return 12;
+                    }
+                    return !j7.m.b(tVar.a) ? j() : j() == 0 ? 0 : -1;
+                }
+                if ((i10 & 255) == 255) {
+                    BiometricManager biometricManager3 = (BiometricManager) this.c;
+                    if (biometricManager3 != null) {
+                        return r.a(biometricManager3);
+                    }
+                    Log.e("BiometricManager", "Failure in canAuthenticate(). BiometricManager was null.");
+                    return 1;
+                }
+                Method c10 = r.c();
+                if (c10 != null && (c3 = ee.b.c(ee.b.b())) != null) {
+                    try {
+                        Object invoke = c10.invoke((BiometricManager) this.c, c3);
+                        if (invoke instanceof Integer) {
+                            return ((Integer) invoke).intValue();
+                        }
+                        Log.w("BiometricManager", "Invalid return type for canAuthenticate(CryptoObject).");
+                    } catch (IllegalAccessException e6) {
+                        e = e6;
+                        Log.w("BiometricManager", "Failed to invoke canAuthenticate(CryptoObject).", e);
+                        biometricManager = (BiometricManager) this.c;
+                        if (biometricManager != null) {
+                        }
+                        String str = Build.MODEL;
+                        if (Build.VERSION.SDK_INT < 30) {
+                            while (r4 < r2) {
                             }
+                        }
+                        if (i12 == 0) {
+                        }
+                    } catch (IllegalArgumentException e10) {
+                        e = e10;
+                        Log.w("BiometricManager", "Failed to invoke canAuthenticate(CryptoObject).", e);
+                        biometricManager = (BiometricManager) this.c;
+                        if (biometricManager != null) {
+                        }
+                        String str2 = Build.MODEL;
+                        if (Build.VERSION.SDK_INT < 30) {
+                        }
+                        if (i12 == 0) {
+                        }
+                    } catch (InvocationTargetException e11) {
+                        e = e11;
+                        Log.w("BiometricManager", "Failed to invoke canAuthenticate(CryptoObject).", e);
+                        biometricManager = (BiometricManager) this.c;
+                        if (biometricManager != null) {
+                        }
+                        String str22 = Build.MODEL;
+                        if (Build.VERSION.SDK_INT < 30) {
+                        }
+                        if (i12 == 0) {
                         }
                     }
+                }
+                biometricManager = (BiometricManager) this.c;
+                if (biometricManager != null) {
+                    Log.e("BiometricManager", "Failure in canAuthenticate(). BiometricManager was null.");
                 } else {
-                    TLRPC.TL_webPage tL_webPage = (TLRPC.TL_webPage) tLObject3;
-                    if (tL_webPage.cached_page != null) {
-                        if (!l4Var.a0.isEmpty() && l4Var.a0.get(0) == webPage2) {
-                            if (messageObject != null) {
-                                messageObject.messageOwner.media.webpage = tL_webPage;
-                                TLRPC.TL_messages_messages tL_messages_messages2 = new TLRPC.TL_messages_messages();
-                                tL_messages_messages2.messages.add(messageObject.messageOwner);
-                                MessagesStorage.getInstance(i12).putMessages((TLRPC.messages_Messages) tL_messages_messages2, messageObject.getDialogId(), -2, 0, false, messageObject.scheduled ? 1 : 0, 0L);
-                            }
-                            if (z10) {
-                                l4Var.a0.add(tL_webPage);
-                            } else {
-                                l4Var.a0.set(0, tL_webPage);
-                            }
-                            if (l4Var.a0.size() == 1) {
-                                ApplicationLoader.applicationContext.getSharedPreferences("articles", 0).edit().remove("article" + tL_webPage.id).commit();
-                                l4Var.e0(z10 ? 1 : 0, tL_webPage, false);
-                                if (str != null) {
-                                    l4Var.V(str, false);
-                                }
-                            }
+                    i12 = r.a(biometricManager);
+                }
+                String str222 = Build.MODEL;
+                if (Build.VERSION.SDK_INT < 30 && str222 != null) {
+                    for (String str3 : context.getResources().getStringArray(R.array.assume_strong_biometrics_models)) {
+                        if (str222.equals(str3)) {
+                            return i12;
                         }
-                        h hVar = new h(1);
-                        hVar.k(tL_webPage, tL_webPage.id);
-                        MessagesStorage.getInstance(i12).putWebPages(hVar);
+                    }
+                }
+                if (i12 == 0) {
+                    return i12;
+                }
+                if (!j7.m.b(tVar.a)) {
+                    i13 = j();
+                } else if (j() != 0) {
+                    i13 = -1;
+                }
+                return i13;
+            }
+        }
+        return 12;
+    }
+
+    public int j() {
+        FingerprintManager f10;
+        FingerprintManager f11;
+        y5.h hVar = (y5.h) this.d;
+        if (hVar == null) {
+            Log.e("BiometricManager", "Failure in canAuthenticate(). FingerprintManager was null.");
+            return 1;
+        }
+        Context context = hVar.a;
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 < 23 || (f10 = e0.b.f(context)) == null || !e0.b.n(f10)) {
+            return 12;
+        }
+        return (i10 < 23 || (f11 = e0.b.f(context)) == null || !e0.b.k(f11)) ? 11 : 0;
+    }
+
+    public void k() {
+        android.support.v4.media.session.c0 c0Var = (android.support.v4.media.session.c0) this.b;
+        if (c0Var != null) {
+            int i10 = ((c2.e) this.d).n.d;
+            android.support.v4.media.session.v vVar = c0Var.a;
+            vVar.getClass();
+            AudioAttributes.Builder builder = new AudioAttributes.Builder();
+            builder.setLegacyStreamType(i10);
+            vVar.a.setPlaybackToLocal(builder.build());
+            this.c = null;
+        }
+    }
+
+    public void l(int i10) {
+        l1 U;
+        int t6 = t(i10);
+        ((f2.c) this.c).z(t6);
+        RecyclerView recyclerView = (RecyclerView) ((bb.b) this.b).b;
+        View childAt = recyclerView.getChildAt(t6);
+        if (childAt != null && (U = RecyclerView.U(childAt)) != null) {
+            if (U.l() && !U.r()) {
+                throw new IllegalArgumentException("called detach on an already detached child " + U + recyclerView.C());
+            }
+            U.a(256);
+        }
+        recyclerView.detachViewFromParent(t6);
+    }
+
+    public p0 m(Class cls) {
+        String canonicalName = cls.getCanonicalName();
+        if (canonicalName != null) {
+            return n(cls, "androidx.lifecycle.ViewModelProvider.DefaultKey:".concat(canonicalName));
+        }
+        throw new IllegalArgumentException("Local and anonymous classes can not be ViewModels");
+    }
+
+    public p0 n(Class cls, String key) {
+        p0 viewModel;
+        s0 s0Var = (s0) this.c;
+        kotlin.jvm.internal.j.e(key, "key");
+        t0 t0Var = (t0) this.b;
+        t0Var.getClass();
+        LinkedHashMap linkedHashMap = t0Var.a;
+        p0 p0Var = (p0) linkedHashMap.get(key);
+        if (!cls.isInstance(p0Var)) {
+            v1.b bVar = new v1.b((cb.e) this.d);
+            ((LinkedHashMap) bVar.a).put(q0.b, key);
+            try {
+                viewModel = s0Var.p(cls, bVar);
+            } catch (AbstractMethodError unused) {
+                viewModel = s0Var.b(cls);
+            }
+            kotlin.jvm.internal.j.e(viewModel, "viewModel");
+            p0 p0Var2 = (p0) linkedHashMap.put(key, viewModel);
+            if (p0Var2 != null) {
+                p0Var2.b();
+            }
+            return viewModel;
+        }
+        androidx.lifecycle.n0 n0Var = s0Var instanceof androidx.lifecycle.n0 ? (androidx.lifecycle.n0) s0Var : null;
+        if (n0Var != null) {
+            kotlin.jvm.internal.j.b(p0Var);
+            o oVar = n0Var.d;
+            if (oVar != null) {
+                g2.e eVar = n0Var.e;
+                kotlin.jvm.internal.j.b(eVar);
+                androidx.lifecycle.j0.a(p0Var, eVar, oVar);
+            }
+        }
+        kotlin.jvm.internal.j.c(p0Var, "null cannot be cast to non-null type T of androidx.lifecycle.ViewModelProvider.get");
+        return p0Var;
+    }
+
+    public View o(int i10) {
+        return ((RecyclerView) ((bb.b) this.b).b).getChildAt(t(i10));
+    }
+
+    public int p() {
+        return ((RecyclerView) ((bb.b) this.b).b).getChildCount() - ((ArrayList) this.d).size();
+    }
+
+    @Override // v4.f
+    public List q(long j10) {
+        List list = (List) this.b;
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = new ArrayList();
+        for (int i10 = 0; i10 < list.size(); i10++) {
+            long[] jArr = (long[]) this.c;
+            int i11 = i10 * 2;
+            if (jArr[i11] <= j10 && j10 < jArr[i11 + 1]) {
+                e5.d dVar = (e5.d) list.get(i10);
+                v4.b bVar = dVar.a;
+                if (bVar.e == -3.4028235E38f) {
+                    arrayList2.add(dVar);
+                } else {
+                    arrayList.add(bVar);
+                }
+            }
+        }
+        Collections.sort(arrayList2, new e5.e(1));
+        for (int i12 = 0; i12 < arrayList2.size(); i12++) {
+            v4.b bVar2 = ((e5.d) arrayList2.get(i12)).a;
+            arrayList.add(new v4.b(bVar2.a, bVar2.b, bVar2.c, bVar2.d, (-1) - i12, 1, bVar2.h, bVar2.n, bVar2.r, bVar2.y, bVar2.B, bVar2.s, bVar2.v, bVar2.w, bVar2.x, bVar2.C, bVar2.D));
+        }
+        return arrayList;
+    }
+
+    @Override // v4.f
+    public int r() {
+        return ((long[]) this.d).length;
+    }
+
+    public ByteBuffer s() {
+        Bitmap bitmap = (Bitmap) this.d;
+        if (bitmap == null) {
+            return (ByteBuffer) this.c;
+        }
+        if (bitmap == null) {
+            return null;
+        }
+        int width = bitmap.getWidth();
+        int height = ((Bitmap) this.d).getHeight();
+        int i10 = width * height;
+        ((Bitmap) this.d).getPixels(new int[i10], 0, width, 0, 0, width, height);
+        byte[] bArr = new byte[i10];
+        for (int i11 = 0; i11 < i10; i11++) {
+            bArr[i11] = (byte) ((Color.blue(r2[i11]) * 0.114f) + (Color.green(r2[i11]) * 0.587f) + (Color.red(r2[i11]) * 0.299f));
+        }
+        return ByteBuffer.wrap(bArr);
+    }
+
+    public int t(int i10) {
+        f2.c cVar = (f2.c) this.c;
+        if (i10 < 0) {
+            return -1;
+        }
+        int childCount = ((RecyclerView) ((bb.b) this.b).b).getChildCount();
+        int i11 = i10;
+        while (i11 < childCount) {
+            int u10 = i10 - (i11 - cVar.u(i11));
+            if (u10 == 0) {
+                while (cVar.x(i11)) {
+                    i11++;
+                }
+                return i11;
+            }
+            i11 += u10;
+        }
+        return -1;
+    }
+
+    public String toString() {
+        String str = "";
+        switch (this.a) {
+            case 8:
+                StringBuilder sb = new StringBuilder(32);
+                sb.append((String) this.b);
+                sb.append('{');
+                d dVar = (d) ((d) this.c).d;
+                while (dVar != null) {
+                    Object obj = dVar.c;
+                    sb.append(str);
+                    String str2 = (String) dVar.b;
+                    if (str2 != null) {
+                        sb.append(str2);
+                        sb.append('=');
+                    }
+                    if (obj == null || !obj.getClass().isArray()) {
+                        sb.append(obj);
+                    } else {
+                        sb.append((CharSequence) Arrays.deepToString(new Object[]{obj}), 1, r5.length() - 1);
+                    }
+                    dVar = (d) dVar.d;
+                    str = ", ";
+                }
+                sb.append('}');
+                return sb.toString();
+            case 10:
+                StringBuilder sb2 = new StringBuilder(32);
+                sb2.append((String) this.b);
+                sb2.append('{');
+                k kVar = ((k) this.c).b;
+                while (kVar != null) {
+                    Object obj2 = kVar.a;
+                    sb2.append(str);
+                    if (obj2 == null || !obj2.getClass().isArray()) {
+                        sb2.append(obj2);
+                    } else {
+                        sb2.append((CharSequence) Arrays.deepToString(new Object[]{obj2}), 1, r5.length() - 1);
+                    }
+                    kVar = kVar.b;
+                    str = ", ";
+                }
+                sb2.append('}');
+                return sb2.toString();
+            case 16:
+                return ((f2.c) this.c).toString() + ", hidden list:" + ((ArrayList) this.d).size();
+            case 22:
+                StringBuilder sb3 = new StringBuilder(32);
+                sb3.append((String) this.b);
+                sb3.append('{');
+                d dVar2 = (d) ((d) this.c).d;
+                while (dVar2 != null) {
+                    Object obj3 = dVar2.c;
+                    sb3.append(str);
+                    String str3 = (String) dVar2.b;
+                    if (str3 != null) {
+                        sb3.append(str3);
+                        sb3.append('=');
+                    }
+                    if (obj3 == null || !obj3.getClass().isArray()) {
+                        sb3.append(obj3);
+                    } else {
+                        sb3.append((CharSequence) Arrays.deepToString(new Object[]{obj3}), 1, r5.length() - 1);
+                    }
+                    dVar2 = (d) dVar2.d;
+                    str = ", ";
+                }
+                sb3.append('}');
+                return sb3.toString();
+            default:
+                return super.toString();
+        }
+    }
+
+    public View u(int i10) {
+        return ((RecyclerView) ((bb.b) this.b).b).getChildAt(i10);
+    }
+
+    public int v() {
+        return ((RecyclerView) ((bb.b) this.b).b).getChildCount();
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0083  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0112  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00b2 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public boolean w() {
+        com.google.firebase.messaging.m mVar;
+        if (((bb.b) this.d).I("gcm.n.noui")) {
+            return true;
+        }
+        FirebaseMessagingService firebaseMessagingService = (FirebaseMessagingService) this.c;
+        if (!((KeyguardManager) firebaseMessagingService.getSystemService("keyguard")).inKeyguardRestrictedInputMode()) {
+            int myPid = Process.myPid();
+            List<ActivityManager.RunningAppProcessInfo> runningAppProcesses = ((ActivityManager) firebaseMessagingService.getSystemService("activity")).getRunningAppProcesses();
+            if (runningAppProcesses != null) {
+                Iterator<ActivityManager.RunningAppProcessInfo> it = runningAppProcesses.iterator();
+                while (true) {
+                    if (!it.hasNext()) {
                         break;
                     }
+                    ActivityManager.RunningAppProcessInfo next = it.next();
+                    if (next.pid == myPid) {
+                        if (next.importance == 100) {
+                            return false;
+                        }
+                    }
                 }
+            }
+        }
+        String N = ((bb.b) this.d).N("gcm.n.image");
+        if (!TextUtils.isEmpty(N)) {
+            try {
+                mVar = new com.google.firebase.messaging.m(new URL(N));
+            } catch (MalformedURLException unused) {
+                Log.w("FirebaseMessaging", "Not downloading image, bad URL: " + N);
+            }
+            if (mVar != null) {
+                ExecutorService executorService = (ExecutorService) this.b;
+                TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
+                mVar.b = executorService.submit(new a1.e(13, mVar, taskCompletionSource));
+                mVar.c = taskCompletionSource.getTask();
+            }
+            com.google.firebase.messaging.j a2 = com.google.firebase.messaging.e.a((FirebaseMessagingService) this.c, (bb.b) this.d);
+            e0.t tVar = (e0.t) a2.a;
+            if (mVar != null) {
+                try {
+                    Task task = mVar.c;
+                    m.h(task);
+                    Bitmap bitmap = (Bitmap) Tasks.await(task, 5L, TimeUnit.SECONDS);
+                    tVar.j(bitmap);
+                    e0.n nVar = new e0.n();
+                    nVar.e = bitmap == null ? null : IconCompat.c(bitmap);
+                    nVar.f = null;
+                    nVar.g = true;
+                    tVar.n(nVar);
+                } catch (InterruptedException unused2) {
+                    Log.w("FirebaseMessaging", "Interrupted while downloading image, showing notification without it");
+                    mVar.close();
+                    Thread.currentThread().interrupt();
+                } catch (ExecutionException e6) {
+                    Log.w("FirebaseMessaging", "Failed to download image: " + e6.getCause());
+                } catch (TimeoutException unused3) {
+                    Log.w("FirebaseMessaging", "Failed to download image in time, showing notification without it");
+                    mVar.close();
+                }
+            }
+            if (Log.isLoggable("FirebaseMessaging", 3)) {
+                Log.d("FirebaseMessaging", "Showing notification");
+            }
+            ((NotificationManager) ((FirebaseMessagingService) this.c).getSystemService("notification")).notify((String) a2.b, 0, ((e0.t) a2.a).b());
+            return true;
+        }
+        mVar = null;
+        if (mVar != null) {
+        }
+        com.google.firebase.messaging.j a22 = com.google.firebase.messaging.e.a((FirebaseMessagingService) this.c, (bb.b) this.d);
+        e0.t tVar2 = (e0.t) a22.a;
+        if (mVar != null) {
+        }
+        if (Log.isLoggable("FirebaseMessaging", 3)) {
+        }
+        ((NotificationManager) ((FirebaseMessagingService) this.c).getSystemService("notification")).notify((String) a22.b, 0, ((e0.t) a22.a).b());
+        return true;
+    }
+
+    public void x(View view) {
+        ((ArrayList) this.d).add(view);
+        bb.b bVar = (bb.b) this.b;
+        l1 U = RecyclerView.U(view);
+        if (U != null) {
+            View view2 = U.a;
+            RecyclerView recyclerView = (RecyclerView) bVar.b;
+            int i10 = U.s;
+            if (i10 != -1) {
+                U.r = i10;
+            } else {
+                WeakHashMap weakHashMap = j0.a;
+                U.r = view2.getImportantForAccessibility();
+            }
+            if (recyclerView.b0()) {
+                U.s = 4;
+                recyclerView.G0.add(U);
+            } else {
+                WeakHashMap weakHashMap2 = j0.a;
+                view2.setImportantForAccessibility(4);
+            }
+        }
+    }
+
+    public void y() {
+        int i10;
+        RecyclerView recyclerView = (RecyclerView) ((bb.b) this.b).b;
+        ((f2.c) this.c).A();
+        ArrayList arrayList = (ArrayList) this.d;
+        int size = arrayList.size();
+        while (true) {
+            size--;
+            if (size < 0) {
+                break;
+            }
+            l1 U = RecyclerView.U((View) arrayList.get(size));
+            if (U != null) {
+                int i11 = U.r;
+                if (recyclerView.b0()) {
+                    U.s = i11;
+                    recyclerView.G0.add(U);
+                } else {
+                    View view = U.a;
+                    WeakHashMap weakHashMap = j0.a;
+                    view.setImportantForAccessibility(i11);
+                }
+                U.r = 0;
+            }
+            arrayList.remove(size);
+        }
+        int childCount = recyclerView.getChildCount();
+        for (i10 = 0; i10 < childCount; i10++) {
+            View childAt = recyclerView.getChildAt(i10);
+            recyclerView.r(childAt);
+            childAt.clearAnimation();
+        }
+        recyclerView.removeAllViews();
+    }
+
+    public void z(j jVar) {
+        if (((g) this.b) == null) {
+            return;
+        }
+        for (int i10 = 0; i10 < jVar.a.size(); i10++) {
+            g gVar = (g) this.b;
+            gVar.h.remove(jVar.a(i10).d);
+            gVar.h();
+        }
+    }
+
+    public /* synthetic */ d(Object obj, Object obj2, Object obj3, int i10) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
+    }
+
+    public d(int i10) {
+        this.a = i10;
+        switch (i10) {
+            case 20:
+                this.b = new HashMap();
+                this.c = new HashMap();
+                this.d = j7.j.c;
+                break;
+            case 26:
+                this.b = new HashMap();
+                this.c = new HashMap();
+                this.d = k7.e.c;
+                break;
+            case 29:
+                this.b = new HashMap();
+                this.c = new HashMap();
+                this.d = l7.i0.c;
+                break;
+            default:
+                this.b = new e8.a();
+                this.c = null;
+                this.d = null;
                 break;
         }
     }
 
-    public /* synthetic */ d(l4 l4Var, TLObject tLObject, int i10, TLRPC.WebPage webPage, MessageObject messageObject, boolean z4, String str) {
-        this.e = l4Var;
-        this.b = tLObject;
-        this.c = i10;
-        this.f = webPage;
-        this.h = messageObject;
-        this.d = z4;
-        this.n = str;
+    public d(String str, Boolean bool, gc.a aVar, String str2) {
+        this.a = 18;
+        this.b = str;
+        this.c = str2;
+        this.d = aVar;
+    }
+
+    public d(t0 store, s0 factory, cb.e defaultCreationExtras) {
+        this.a = 3;
+        kotlin.jvm.internal.j.e(store, "store");
+        kotlin.jvm.internal.j.e(factory, "factory");
+        kotlin.jvm.internal.j.e(defaultCreationExtras, "defaultCreationExtras");
+        this.b = store;
+        this.c = factory;
+        this.d = defaultCreationExtras;
+    }
+
+    public d(ArrayList arrayList) {
+        this.a = 14;
+        this.b = DesugarCollections.unmodifiableList(new ArrayList(arrayList));
+        this.c = new long[arrayList.size() * 2];
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            e5.d dVar = (e5.d) arrayList.get(i10);
+            int i11 = i10 * 2;
+            long[] jArr = (long[]) this.c;
+            jArr[i11] = dVar.b;
+            jArr[i11 + 1] = dVar.c;
+        }
+        long[] jArr2 = (long[]) this.c;
+        long[] copyOf = Arrays.copyOf(jArr2, jArr2.length);
+        this.d = copyOf;
+        Arrays.sort(copyOf);
+    }
+
+    public d(bb.b bVar) {
+        this.a = 16;
+        this.b = bVar;
+        this.c = new f2.c(0);
+        this.d = new ArrayList();
+    }
+
+    public d(String str, int i10) {
+        this.a = i10;
+        switch (i10) {
+            case 8:
+                d dVar = new d(7, false);
+                this.c = dVar;
+                this.d = dVar;
+                this.b = str;
+                break;
+            case 10:
+                k kVar = new k();
+                this.c = kVar;
+                this.d = kVar;
+                this.b = str;
+                break;
+            case 22:
+                d dVar2 = new d(21, false);
+                this.c = dVar2;
+                this.d = dVar2;
+                this.b = str;
+                break;
+            default:
+                m0 m0Var = new m0();
+                m0Var.o = str;
+                this.b = new n0(m0Var);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public d(t0 store, s0 s0Var) {
+        this(store, s0Var, v1.a.b);
+        this.a = 3;
+        kotlin.jvm.internal.j.e(store, "store");
+    }
+
+    public d(FirebaseMessagingService firebaseMessagingService, bb.b bVar, ExecutorService executorService) {
+        this.a = 11;
+        this.b = executorService;
+        this.c = firebaseMessagingService;
+        this.d = bVar;
+    }
+
+    public d(Context context, LocationManager locationManager) {
+        this.a = 17;
+        this.d = new x();
+        this.b = context;
+        this.c = locationManager;
+    }
+
+    public d(int i10, String str, ArrayList arrayList, byte[] bArr) {
+        List unmodifiableList;
+        this.a = 5;
+        this.b = str;
+        if (arrayList == null) {
+            unmodifiableList = Collections.EMPTY_LIST;
+        } else {
+            unmodifiableList = DesugarCollections.unmodifiableList(arrayList);
+        }
+        this.c = unmodifiableList;
+        this.d = bArr;
+    }
+
+    public d(androidx.biometric.x xVar) {
+        this.a = 1;
+        this.d = xVar;
+    }
+
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public d(androidx.fragment.app.v owner) {
+        this(owner.f(), owner.c(), owner.d());
+        this.a = 3;
+        kotlin.jvm.internal.j.e(owner, "owner");
+    }
+
+    public d(l3.n[] nVarArr) {
+        this.a = 28;
+        l3.q0 q0Var = new l3.q0();
+        l3.s0 s0Var = new l3.s0();
+        s0Var.c = 1.0f;
+        s0Var.d = 1.0f;
+        l lVar = l.e;
+        s0Var.e = lVar;
+        s0Var.f = lVar;
+        s0Var.g = lVar;
+        s0Var.h = lVar;
+        ByteBuffer byteBuffer = l3.n.a;
+        s0Var.k = byteBuffer;
+        s0Var.l = byteBuffer.asShortBuffer();
+        s0Var.m = byteBuffer;
+        s0Var.b = -1;
+        l3.n[] nVarArr2 = new l3.n[nVarArr.length + 2];
+        this.b = nVarArr2;
+        System.arraycopy(nVarArr, 0, nVarArr2, 0, nVarArr.length);
+        this.c = q0Var;
+        this.d = s0Var;
+        nVarArr2[nVarArr.length] = q0Var;
+        nVarArr2[nVarArr.length + 1] = s0Var;
+    }
+
+    public d(Signature signature) {
+        this.a = 25;
+        this.b = signature;
+        this.c = null;
+        this.d = null;
+    }
+
+    public d(Cipher cipher) {
+        this.a = 25;
+        this.c = cipher;
+        this.b = null;
+        this.d = null;
+    }
+
+    public d(Mac mac) {
+        this.a = 25;
+        this.d = mac;
+        this.c = null;
+        this.b = null;
+    }
+
+    public d(t tVar) {
+        this.a = 2;
+        Context context = tVar.a;
+        this.b = tVar;
+        int i10 = Build.VERSION.SDK_INT;
+        this.c = i10 >= 29 ? r.b(context) : null;
+        this.d = i10 <= 29 ? new y5.h(context, 1) : null;
+    }
+
+    public d(c2.e eVar, android.support.v4.media.session.c0 c0Var) {
+        this.a = 9;
+        this.d = eVar;
+        this.b = c0Var;
     }
 }

@@ -9,15 +9,15 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class t0 extends WindowInsetsAnimation.Callback {
-    public final dh.e a;
+    public final ch.e a;
     public List b;
     public ArrayList c;
     public final HashMap d;
 
-    public t0(dh.e eVar) {
+    public t0(ch.e eVar) {
         super(0);
         this.d = new HashMap();
         this.a = eVar;
@@ -37,7 +37,7 @@ public final class t0 extends WindowInsetsAnimation.Callback {
 
     @Override // android.view.WindowInsetsAnimation.Callback
     public final void onEnd(WindowInsetsAnimation windowInsetsAnimation) {
-        dh.e eVar = this.a;
+        ch.e eVar = this.a;
         a(windowInsetsAnimation);
         eVar.H();
         this.d.remove(windowInsetsAnimation);
@@ -45,7 +45,7 @@ public final class t0 extends WindowInsetsAnimation.Callback {
 
     @Override // android.view.WindowInsetsAnimation.Callback
     public final void onPrepare(WindowInsetsAnimation windowInsetsAnimation) {
-        dh.e eVar = this.a;
+        ch.e eVar = this.a;
         a(windowInsetsAnimation);
         eVar.getClass();
     }
@@ -66,7 +66,7 @@ public final class t0 extends WindowInsetsAnimation.Callback {
             a2.a.d(windowInsetsAnimation.getFraction());
             this.c.add(a2);
         }
-        dh.e eVar = this.a;
+        ch.e eVar = this.a;
         m1 h = m1.h(null, windowInsets);
         eVar.I(h, this.b);
         return h.g();
@@ -74,18 +74,18 @@ public final class t0 extends WindowInsetsAnimation.Callback {
 
     @Override // android.view.WindowInsetsAnimation.Callback
     public final WindowInsetsAnimation.Bounds onStart(WindowInsetsAnimation windowInsetsAnimation, WindowInsetsAnimation.Bounds bounds) {
-        dh.e eVar = this.a;
+        ch.e eVar = this.a;
         a(windowInsetsAnimation);
         i0.b f10 = u0.f(bounds);
-        i0.b e6 = u0.e(bounds);
+        i0.b e = u0.e(bounds);
         if (eVar.c == 0) {
             Iterator it = eVar.d.iterator();
             while (it.hasNext()) {
-                ((dh.d) it.next()).t();
+                ((ch.d) it.next()).t();
             }
         }
         eVar.c++;
         s0.c();
-        return s0.a(f10.d(), e6.d());
+        return s0.a(f10.d(), e.d());
     }
 }

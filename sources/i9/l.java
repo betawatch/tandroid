@@ -9,7 +9,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class l implements Callable {
     public final /* synthetic */ long a;
@@ -33,25 +33,25 @@ public final class l implements Callable {
         long j10 = this.a;
         long j11 = j10 / 1000;
         n nVar = this.e;
-        String e6 = nVar.e();
-        if (e6 == null) {
+        String e = nVar.e();
+        if (e == null) {
             Log.e("FirebaseCrashlytics", "Tried to write a fatal exception while no session was open.", null);
             return Tasks.forResult(null);
         }
-        nVar.c.n();
+        nVar.c.o();
         a9.a aVar = nVar.m;
         aVar.getClass();
-        String concat = "Persisting fatal event for session ".concat(e6);
+        String concat = "Persisting fatal event for session ".concat(e);
         if (Log.isLoggable("FirebaseCrashlytics", 2)) {
             Log.v("FirebaseCrashlytics", concat, null);
         }
-        aVar.t(this.b, this.c, e6, "crash", j11, true);
+        aVar.t(this.b, this.c, e, "crash", j11, true);
         try {
             bVar = nVar.g;
             str = ".ae" + j10;
             bVar.getClass();
-        } catch (IOException e10) {
-            Log.w("FirebaseCrashlytics", "Could not create app exception marker file.", e10);
+        } catch (IOException e6) {
+            Log.w("FirebaseCrashlytics", "Could not create app exception marker file.", e6);
         }
         if (!new File(bVar.b, str).createNewFile()) {
             throw new IOException("Create new file failed.");
@@ -64,6 +64,6 @@ public final class l implements Callable {
             return Tasks.forResult(null);
         }
         Executor executor = (Executor) nVar.e.b;
-        return ((TaskCompletionSource) ((AtomicReference) gVar.i).get()).getTask().onSuccessTask(executor, new f7.b(this, executor, e6));
+        return ((TaskCompletionSource) ((AtomicReference) gVar.i).get()).getTask().onSuccessTask(executor, new f7.b(this, executor, e));
     }
 }

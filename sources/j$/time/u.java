@@ -26,9 +26,9 @@ public final class u extends ZoneId {
             }
             try {
                 zoneRules = j$.time.zone.h.a(str);
-            } catch (j$.time.zone.f e6) {
+            } catch (j$.time.zone.f e) {
                 if (z4) {
-                    throw e6;
+                    throw e;
                 }
                 zoneRules = null;
             }

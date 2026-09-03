@@ -1,625 +1,566 @@
 package gg;
 
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Shader;
-import android.opengl.GLES20;
-import android.opengl.GLUtils;
-import java.io.BufferedReader;
-import java.io.DataInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.ByteBuffer;
-import java.nio.FloatBuffer;
-import java.nio.charset.StandardCharsets;
+import android.text.TextUtils;
+import android.widget.TextView;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
-import java.util.Locale;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import java.util.HashMap;
+import lh.k7;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.FactCheckController;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.messenger.y3;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.UnconfirmedAuthController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.messenger.camera.CameraController;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g3;
+import org.telegram.ui.Components.RLottieNative;
+import org.telegram.ui.Components.db;
+import org.telegram.ui.Components.ga;
+import org.telegram.ui.Components.ic;
+import org.telegram.ui.Components.kz;
+import org.telegram.ui.Components.m71;
+import org.telegram.ui.Components.mr;
+import org.telegram.ui.Components.nx0;
+import org.telegram.ui.Components.oy;
+import org.telegram.ui.Components.ry;
+import org.telegram.ui.Components.ut;
+import org.telegram.ui.Components.zb;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.TwoStepVerificationActivity;
+import org.telegram.ui.ey;
+import org.telegram.ui.hg;
+import org.telegram.ui.lo0;
+import org.telegram.ui.me;
+import org.telegram.ui.qy;
+import org.telegram.ui.rt;
+import org.telegram.ui.wg1;
+import org.telegram.ui.zn;
+import ph.da;
+import ph.t6;
+import vh.e4;
+import vh.p3;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class j {
-    public static final String[] a0 = {"models/star.binobj"};
-    public static final String[] b0 = {"models/diamond_outer_2.binobj", "models/diamond_outer.binobj", "models/diamond.binobj"};
-    public static final String[] c0 = {"models/coin_outer.binobj", "models/coin_inner.binobj", "models/coin_logo.binobj", "models/coin_stars.binobj"};
-    public static final String[] d0 = {"models/coin_outer.binobj", "models/coin_inner.binobj", "models/deal_logo.binobj", "models/coin_stars.binobj"};
-    public boolean D;
-    public final int E;
-    public final int F;
-    public final int G;
-    public final int H;
-    public final int I;
-    public final int J;
-    public final int K;
-    public final int L;
-    public final int M;
-    public final int N;
-    public final int O;
-    public final int P;
-    public final int Q;
-    public final int R;
-    public final int S;
-    public final int T;
-    public final Bitmap U;
-    public Bitmap V;
-    public final int W;
-    public final int X;
-    public final int[] Y;
-    public final int a;
-    public final int b;
-    public final int c;
-    public final FloatBuffer[] d;
-    public final FloatBuffer[] e;
-    public final FloatBuffer[] f;
-    public final int g;
-    public final int h;
-    public final int i;
-    public final int j;
-    public final int k;
-    public final int l;
-    public final int m;
-    public final int n;
-    public final int o;
-    public final int p;
-    public final int q;
-    public final int r;
-    public float s;
-    public final int[] t;
-    public int y;
-    public int z;
-    public float u = 0.0f;
-    public float v = 2.0f;
-    public float w = 0.13f;
-    public float x = 1.0f;
-    public float A = 0.2f;
-    public int B = -1;
-    public int C = -1;
-    public float Z = 0.0f;
+public final /* synthetic */ class j implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    /* JADX WARN: Can't wrap try/catch for region: R(22:0|1|(1:3)(1:(1:123)(1:(1:129)(1:(17:127|5|(2:6|(26:8|9|10|11|12|13|14|(3:16|17|18)|25|26|27|(2:29|30)|31|32|33|(2:35|36)|37|38|39|40|41|43|44|(8:46|(2:48|(1:50)(6:61|52|(3:57|58|59)|60|58|59))(1:62)|51|52|(4:54|57|58|59)|60|58|59)|63|24)(1:75))|76|(1:121)(2:80|(1:82)(1:120))|83|(2:86|84)|87|88|89|90|91|92|(1:117)(3:96|(2:98|99)(3:111|(2:113|114)|115)|100)|(1:102)(1:109)|103|(2:105|106)(1:108))(1:128))))|4|5|(3:6|(0)(0)|24)|76|(1:78)|121|83|(1:84)|87|88|89|90|91|92|(1:94)|117|(0)(0)|103|(0)(0)) */
-    /* JADX WARN: Code restructure failed: missing block: B:119:0x0490, code lost:
-    
-        r5 = null;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x04f9  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x0548  */
-    /* JADX WARN: Removed duplicated region for block: B:108:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x0533  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0218 A[EDGE_INSN: B:75:0x0218->B:76:0x0218 BREAK  A[LOOP:0: B:6:0x0062->B:24:0x01b7], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x03e0 A[LOOP:5: B:84:0x03db->B:86:0x03e0, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0067  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public j(Context context, int i10) {
-        String[] strArr;
-        String[] strArr2;
-        float f10;
+    public /* synthetic */ j(Object obj, Object obj2, Object obj3, Object obj4, boolean z4, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.d = obj2;
+        this.e = obj3;
+        this.f = obj4;
+        this.b = z4;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        Object obj;
+        double d;
+        boolean z4;
+        int i10;
         int i11;
-        float[] fArr;
         int i12;
         int i13;
         int i14;
-        Bitmap bitmap;
-        char c3;
-        float[] fArr2;
-        float[] fArr3;
-        DataInputStream dataInputStream;
-        int readInt;
         int i15;
-        ArrayList arrayList;
-        float f11;
         int i16;
-        float f12;
-        this.X = i10;
-        if (i10 == 1) {
-            strArr = c0;
-        } else if (i10 == 3) {
-            strArr = d0;
-        } else if (i10 == 0 || i10 == 2) {
-            strArr = a0;
-        } else {
-            if (i10 == 4) {
-                strArr2 = b0;
-                f10 = 8.0f;
-                int length = strArr2.length;
-                this.W = length;
-                this.d = new FloatBuffer[length];
-                this.e = new FloatBuffer[length];
-                this.f = new FloatBuffer[length];
-                this.t = new int[length];
-                i11 = 0;
-                while (true) {
-                    fArr = null;
-                    if (i11 < this.W) {
+        int i17;
+        int i18 = this.a;
+        int i19 = 0;
+        boolean z10 = this.b;
+        Object obj2 = this.e;
+        Object obj3 = this.d;
+        Object obj4 = this.c;
+        Object obj5 = this.f;
+        switch (i18) {
+            case 0:
+                TLRPC.payments_GiveawayInfo payments_giveawayinfo = (TLRPC.payments_GiveawayInfo) obj4;
+                String str = (String) obj3;
+                TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway = (TLRPC.TL_messageMediaGiveaway) obj2;
+                org.telegram.ui.ActionBar.p2 p2Var = (org.telegram.ui.ActionBar.p2) obj5;
+                boolean z11 = payments_giveawayinfo instanceof TLRPC.TL_payments_giveawayInfo;
+                boolean z12 = this.b;
+                if (!z11) {
+                    if (payments_giveawayinfo instanceof TLRPC.TL_payments_giveawayInfoResults) {
+                        r.e(z12, str, (TLRPC.TL_payments_giveawayInfoResults) payments_giveawayinfo, tL_messageMediaGiveaway, p2Var.getParentActivity(), p2Var.getResourceProvider());
                         break;
                     }
-                    String str = strArr2[i11];
-                    ArrayList arrayList2 = new ArrayList();
-                    ArrayList arrayList3 = new ArrayList();
-                    ArrayList arrayList4 = new ArrayList();
-                    try {
-                        try {
-                            dataInputStream = new DataInputStream(context.getAssets().open(str));
-                            int readInt2 = dataInputStream.readInt();
-                            for (int i17 = 0; i17 < readInt2; i17++) {
-                                try {
-                                    arrayList2.add(Float.valueOf(dataInputStream.readFloat()));
-                                } catch (IOException e6) {
-                                    e = e6;
-                                    fArr2 = null;
-                                    fArr3 = null;
-                                    e.printStackTrace();
-                                    this.d[i11] = y3.k(ByteBuffer.allocateDirect(fArr.length * 4));
-                                    this.d[i11].put(fArr).position(0);
-                                    this.e[i11] = y3.k(ByteBuffer.allocateDirect(fArr2.length * 4));
-                                    this.e[i11].put(fArr2).position(0);
-                                    this.f[i11] = y3.k(ByteBuffer.allocateDirect(fArr3.length * 4));
-                                    this.f[i11].put(fArr3).position(0);
-                                    this.t[i11] = fArr.length;
-                                    i11++;
-                                }
-                            }
-                            int readInt3 = dataInputStream.readInt();
-                            for (int i18 = 0; i18 < readInt3; i18++) {
-                                arrayList4.add(Float.valueOf(dataInputStream.readFloat()));
-                            }
-                            int readInt4 = dataInputStream.readInt();
-                            for (int i19 = 0; i19 < readInt4; i19++) {
-                                arrayList3.add(Float.valueOf(dataInputStream.readFloat()));
-                            }
-                            readInt = dataInputStream.readInt();
-                            i15 = readInt * 3;
-                            fArr3 = new float[i15];
-                            try {
-                                fArr2 = new float[readInt * 2];
-                            } catch (IOException e10) {
-                                e = e10;
-                                fArr2 = null;
-                            }
-                        } catch (IOException e11) {
-                            e = e11;
-                            fArr2 = null;
-                            fArr3 = null;
-                            e.printStackTrace();
-                            this.d[i11] = y3.k(ByteBuffer.allocateDirect(fArr.length * 4));
-                            this.d[i11].put(fArr).position(0);
-                            this.e[i11] = y3.k(ByteBuffer.allocateDirect(fArr2.length * 4));
-                            this.e[i11].put(fArr2).position(0);
-                            this.f[i11] = y3.k(ByteBuffer.allocateDirect(fArr3.length * 4));
-                            this.f[i11].put(fArr3).position(0);
-                            this.t[i11] = fArr.length;
-                            i11++;
-                        }
-                        try {
-                            fArr = new float[i15];
-                            int i20 = 0;
-                            int i21 = 0;
-                            int i22 = 0;
-                            int i23 = 0;
-                            while (i20 < readInt) {
-                                int readInt5 = dataInputStream.readInt() * 3;
-                                int i24 = readInt;
-                                fArr[i21] = ((Float) arrayList2.get(readInt5)).floatValue() * f10;
-                                int i25 = i21 + 2;
-                                fArr[i21 + 1] = ((Float) arrayList2.get(readInt5 + 1)).floatValue() * f10;
-                                i21 += 3;
-                                fArr[i25] = ((Float) arrayList2.get(readInt5 + 2)).floatValue() * f10;
-                                int readInt6 = dataInputStream.readInt() * 2;
-                                int i26 = i22 + 1;
-                                if (readInt6 >= 0) {
-                                    arrayList = arrayList2;
-                                    if (readInt6 < arrayList4.size()) {
-                                        f11 = ((Float) arrayList4.get(readInt6)).floatValue();
-                                        fArr2[i22] = f11;
-                                        i16 = readInt6 + 1;
-                                        i22 += 2;
-                                        if (i16 >= 0 && i16 < arrayList4.size()) {
-                                            f12 = 1.0f - ((Float) arrayList4.get(i16)).floatValue();
-                                            fArr2[i26] = f12;
-                                            int readInt7 = dataInputStream.readInt() * 3;
-                                            fArr3[i23] = ((Float) arrayList3.get(readInt7)).floatValue();
-                                            int i27 = i23 + 2;
-                                            fArr3[i23 + 1] = ((Float) arrayList3.get(readInt7 + 1)).floatValue();
-                                            i23 += 3;
-                                            fArr3[i27] = ((Float) arrayList3.get(readInt7 + 2)).floatValue();
-                                            i20++;
-                                            arrayList2 = arrayList;
-                                            readInt = i24;
-                                        }
-                                        f12 = 0.0f;
-                                        fArr2[i26] = f12;
-                                        int readInt72 = dataInputStream.readInt() * 3;
-                                        fArr3[i23] = ((Float) arrayList3.get(readInt72)).floatValue();
-                                        int i272 = i23 + 2;
-                                        fArr3[i23 + 1] = ((Float) arrayList3.get(readInt72 + 1)).floatValue();
-                                        i23 += 3;
-                                        fArr3[i272] = ((Float) arrayList3.get(readInt72 + 2)).floatValue();
-                                        i20++;
-                                        arrayList2 = arrayList;
-                                        readInt = i24;
-                                    }
-                                } else {
-                                    arrayList = arrayList2;
-                                }
-                                f11 = 0.0f;
-                                fArr2[i22] = f11;
-                                i16 = readInt6 + 1;
-                                i22 += 2;
-                                if (i16 >= 0) {
-                                    f12 = 1.0f - ((Float) arrayList4.get(i16)).floatValue();
-                                    fArr2[i26] = f12;
-                                    int readInt722 = dataInputStream.readInt() * 3;
-                                    fArr3[i23] = ((Float) arrayList3.get(readInt722)).floatValue();
-                                    int i2722 = i23 + 2;
-                                    fArr3[i23 + 1] = ((Float) arrayList3.get(readInt722 + 1)).floatValue();
-                                    i23 += 3;
-                                    fArr3[i2722] = ((Float) arrayList3.get(readInt722 + 2)).floatValue();
-                                    i20++;
-                                    arrayList2 = arrayList;
-                                    readInt = i24;
-                                }
-                                f12 = 0.0f;
-                                fArr2[i26] = f12;
-                                int readInt7222 = dataInputStream.readInt() * 3;
-                                fArr3[i23] = ((Float) arrayList3.get(readInt7222)).floatValue();
-                                int i27222 = i23 + 2;
-                                fArr3[i23 + 1] = ((Float) arrayList3.get(readInt7222 + 1)).floatValue();
-                                i23 += 3;
-                                fArr3[i27222] = ((Float) arrayList3.get(readInt7222 + 2)).floatValue();
-                                i20++;
-                                arrayList2 = arrayList;
-                                readInt = i24;
-                            }
-                        } catch (IOException e12) {
-                            e = e12;
-                            e.printStackTrace();
-                            this.d[i11] = y3.k(ByteBuffer.allocateDirect(fArr.length * 4));
-                            this.d[i11].put(fArr).position(0);
-                            this.e[i11] = y3.k(ByteBuffer.allocateDirect(fArr2.length * 4));
-                            this.e[i11].put(fArr2).position(0);
-                            this.f[i11] = y3.k(ByteBuffer.allocateDirect(fArr3.length * 4));
-                            this.f[i11].put(fArr3).position(0);
-                            this.t[i11] = fArr.length;
-                            i11++;
-                        }
-                    } catch (IOException e13) {
-                        e = e13;
-                    }
-                    this.d[i11] = y3.k(ByteBuffer.allocateDirect(fArr.length * 4));
-                    this.d[i11].put(fArr).position(0);
-                    this.e[i11] = y3.k(ByteBuffer.allocateDirect(fArr2.length * 4));
-                    this.e[i11].put(fArr2).position(0);
-                    this.f[i11] = y3.k(ByteBuffer.allocateDirect(fArr3.length * 4));
-                    this.f[i11].put(fArr3).position(0);
-                    this.t[i11] = fArr.length;
-                    i11++;
-                }
-                this.U = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
-                Canvas canvas = new Canvas(this.U);
-                Paint paint = new Paint();
-                paint.setShader(new LinearGradient(0.0f, 100.0f, 150.0f, 0.0f, new int[]{k6.w0(null, k6.Lj, false), k6.w0(null, k6.Mj, false), k6.w0(null, k6.Nj, false), k6.w0(null, k6.Oj, false)}, new float[]{0.0f, 0.5f, 0.78f, 1.0f}, Shader.TileMode.CLAMP));
-                canvas.drawRect(0.0f, 0.0f, 100.0f, 100.0f, paint);
-                int[] iArr = new int[1];
-                GLES20.glGenTextures(1, iArr, 0);
-                GLES20.glBindTexture(3553, iArr[0]);
-                GLES20.glTexParameteri(3553, 10241, 9728);
-                GLES20.glTexParameteri(3553, 10240, 9728);
-                GLUtils.texImage2D(3553, 0, this.U, 0);
-                this.p = iArr[0];
-                int[] iArr2 = new int[1];
-                String str2 = (i10 != 0 || i10 == 2) ? "shaders/fragment4.glsl" : i10 == 4 ? "shaders/fragment5.glsl" : "shaders/fragment3.glsl";
-                int a2 = a.a(35633, c(b(context, "shaders/vertex2.glsl")));
-                int a10 = a.a(35632, c(b(context, str2)));
-                int glCreateProgram = GLES20.glCreateProgram();
-                GLES20.glAttachShader(glCreateProgram, a2);
-                GLES20.glAttachShader(glCreateProgram, a10);
-                GLES20.glLinkProgram(glCreateProgram);
-                GLES20.glGetProgramiv(glCreateProgram, 35714, iArr2, 0);
-                this.a = glCreateProgram;
-                i12 = this.X;
-                FloatBuffer[] floatBufferArr = this.d;
-                FloatBuffer[] floatBufferArr2 = this.f;
-                FloatBuffer[] floatBufferArr3 = this.e;
-                GLES20.glUseProgram(glCreateProgram);
-                this.k = GLES20.glGetAttribLocation(glCreateProgram, "vPosition");
-                this.l = GLES20.glGetAttribLocation(glCreateProgram, "a_TexCoordinate");
-                this.m = GLES20.glGetAttribLocation(glCreateProgram, "a_Normal");
-                this.g = GLES20.glGetUniformLocation(glCreateProgram, "u_Texture");
-                this.h = GLES20.glGetUniformLocation(glCreateProgram, "u_NormalMap");
-                this.i = GLES20.glGetUniformLocation(glCreateProgram, "u_BackgroundTexture");
-                this.n = GLES20.glGetUniformLocation(glCreateProgram, "f_xOffset");
-                this.o = GLES20.glGetUniformLocation(glCreateProgram, "f_alpha");
-                this.b = GLES20.glGetUniformLocation(glCreateProgram, "uMVPMatrix");
-                this.c = GLES20.glGetUniformLocation(glCreateProgram, "world");
-                this.q = GLES20.glGetUniformLocation(glCreateProgram, "white");
-                this.r = GLES20.glGetUniformLocation(glCreateProgram, "golden");
-                this.E = GLES20.glGetUniformLocation(glCreateProgram, "spec1");
-                this.F = GLES20.glGetUniformLocation(glCreateProgram, "spec2");
-                this.G = GLES20.glGetUniformLocation(glCreateProgram, "u_diffuse");
-                this.H = GLES20.glGetUniformLocation(glCreateProgram, "gradientColor1");
-                this.I = GLES20.glGetUniformLocation(glCreateProgram, "gradientColor2");
-                this.K = GLES20.glGetUniformLocation(glCreateProgram, "normalSpecColor");
-                this.J = GLES20.glGetUniformLocation(glCreateProgram, "normalSpec");
-                this.L = GLES20.glGetUniformLocation(glCreateProgram, "specColor");
-                this.M = GLES20.glGetUniformLocation(glCreateProgram, "resolution");
-                this.N = GLES20.glGetUniformLocation(glCreateProgram, "gradientPosition");
-                this.O = GLES20.glGetUniformLocation(glCreateProgram, "modelIndex");
-                this.P = GLES20.glGetUniformLocation(glCreateProgram, "modelIndex2");
-                this.Q = GLES20.glGetUniformLocation(glCreateProgram, "behind");
-                this.R = GLES20.glGetUniformLocation(glCreateProgram, TeXSymbolParser.TYPE_ATTR);
-                this.S = GLES20.glGetUniformLocation(glCreateProgram, "night");
-                this.T = GLES20.glGetUniformLocation(glCreateProgram, "time");
-                i13 = this.W;
-                int i28 = i13 * 3;
-                int[] iArr3 = new int[i28];
-                this.Y = iArr3;
-                int i29 = 0;
-                GLES20.glGenBuffers(i28, iArr3, 0);
-                i14 = 0;
-                while (i14 < i13) {
-                    int i30 = i14 * 3;
-                    GLES20.glBindBuffer(34962, this.Y[i30]);
-                    floatBufferArr3[i14].position(i29);
-                    GLES20.glBufferData(34962, floatBufferArr3[i14].capacity() * 4, floatBufferArr3[i14], 35044);
-                    GLES20.glEnableVertexAttribArray(this.l);
-                    floatBufferArr3[i14].clear();
-                    GLES20.glBindBuffer(34962, this.Y[i30 + 1]);
-                    floatBufferArr2[i14].position(0);
-                    GLES20.glBufferData(34962, floatBufferArr2[i14].capacity() * 4, floatBufferArr2[i14], 35044);
-                    GLES20.glEnableVertexAttribArray(this.m);
-                    floatBufferArr2[i14].clear();
-                    GLES20.glBindBuffer(34962, this.Y[i30 + 2]);
-                    floatBufferArr[i14].position(0);
-                    GLES20.glBufferData(34962, floatBufferArr[i14].capacity() * 4, floatBufferArr[i14], 35044);
-                    GLES20.glEnableVertexAttribArray(this.k);
-                    floatBufferArr[i14].clear();
-                    i14++;
-                    i29 = 0;
-                }
-                GLES20.glBindBuffer(34962, 0);
-                int[] iArr4 = new int[1];
-                GLES20.glGenTextures(1, iArr4, 0);
-                int i31 = iArr4[0];
-                this.p = i31;
-                GLES20.glBindTexture(3553, i31);
-                GLES20.glTexParameteri(3553, 10241, 9729);
-                GLES20.glTexParameteri(3553, 10240, 9729);
-                GLES20.glBindTexture(3553, this.p);
-                Bitmap bitmap2 = BitmapFactory.decodeStream(context.getAssets().open("flecks.png"));
-                int[] iArr5 = new int[1];
-                GLES20.glGenTextures(1, iArr5, 0);
-                GLES20.glBindTexture(3553, iArr5[0]);
-                GLES20.glTexParameteri(3553, 10241, 9729);
-                GLES20.glTexParameteri(3553, 10240, 9729);
-                GLUtils.texImage2D(3553, 0, bitmap2, 0);
-                bitmap2.recycle();
-                int[] iArr6 = new int[1];
-                GLES20.glGenTextures(1, iArr6, 0);
-                int i32 = iArr6[0];
-                this.j = i32;
-                GLES20.glBindTexture(3553, i32);
-                GLES20.glTexParameteri(3553, 10241, 9729);
-                GLES20.glTexParameteri(3553, 10240, 9729);
-                GLES20.glBindTexture(3553, this.j);
-                if (i12 != 0 || i12 == 2) {
-                    bitmap = SvgHelper.getBitmap(R.raw.start_texture, 240, 240, -1);
-                } else if (i12 == 1) {
-                    bitmap = BitmapFactory.decodeStream(context.getAssets().open("models/coin_border.png"));
                 } else {
-                    bitmap = i12 == 3 ? BitmapFactory.decodeStream(context.getAssets().open("models/deal_border.png")) : bitmap;
-                    bitmap = null;
-                }
-                if (bitmap == null) {
-                    int[] iArr7 = new int[1];
-                    c3 = 0;
-                    GLES20.glGenTextures(1, iArr7, 0);
-                    GLES20.glBindTexture(3553, iArr7[0]);
-                    GLES20.glTexParameteri(3553, 10241, 9729);
-                    GLES20.glTexParameteri(3553, 10240, 9729);
-                    GLUtils.texImage2D(3553, 0, bitmap, 0);
-                    bitmap.recycle();
-                    GLES20.glActiveTexture(33984);
-                    GLES20.glBindTexture(3553, iArr7[0]);
-                    GLES20.glUniform1i(this.g, 0);
-                    GLES20.glActiveTexture(33985);
-                    GLES20.glBindTexture(3553, iArr5[0]);
-                    GLES20.glUniform1i(this.h, 1);
-                } else {
-                    c3 = 0;
-                }
-                GLES20.glActiveTexture(33986);
-                GLES20.glBindTexture(3553, iArr6[c3]);
-                GLES20.glUniform1i(this.i, 2);
-                if (i12 != 4) {
-                    GLES20.glEnable(2884);
-                    GLES20.glEnable(3042);
-                    GLES20.glBlendFunc(770, 771);
-                    return;
-                }
-                return;
-            }
-            strArr = new String[0];
-        }
-        strArr2 = strArr;
-        f10 = 1.0f;
-        int length2 = strArr2.length;
-        this.W = length2;
-        this.d = new FloatBuffer[length2];
-        this.e = new FloatBuffer[length2];
-        this.f = new FloatBuffer[length2];
-        this.t = new int[length2];
-        i11 = 0;
-        while (true) {
-            fArr = null;
-            if (i11 < this.W) {
-            }
-            this.d[i11] = y3.k(ByteBuffer.allocateDirect(fArr.length * 4));
-            this.d[i11].put(fArr).position(0);
-            this.e[i11] = y3.k(ByteBuffer.allocateDirect(fArr2.length * 4));
-            this.e[i11].put(fArr2).position(0);
-            this.f[i11] = y3.k(ByteBuffer.allocateDirect(fArr3.length * 4));
-            this.f[i11].put(fArr3).position(0);
-            this.t[i11] = fArr.length;
-            i11++;
-        }
-        this.U = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
-        Canvas canvas2 = new Canvas(this.U);
-        Paint paint2 = new Paint();
-        paint2.setShader(new LinearGradient(0.0f, 100.0f, 150.0f, 0.0f, new int[]{k6.w0(null, k6.Lj, false), k6.w0(null, k6.Mj, false), k6.w0(null, k6.Nj, false), k6.w0(null, k6.Oj, false)}, new float[]{0.0f, 0.5f, 0.78f, 1.0f}, Shader.TileMode.CLAMP));
-        canvas2.drawRect(0.0f, 0.0f, 100.0f, 100.0f, paint2);
-        int[] iArr8 = new int[1];
-        GLES20.glGenTextures(1, iArr8, 0);
-        GLES20.glBindTexture(3553, iArr8[0]);
-        GLES20.glTexParameteri(3553, 10241, 9728);
-        GLES20.glTexParameteri(3553, 10240, 9728);
-        GLUtils.texImage2D(3553, 0, this.U, 0);
-        this.p = iArr8[0];
-        int[] iArr22 = new int[1];
-        if (i10 != 0) {
-        }
-        int a22 = a.a(35633, c(b(context, "shaders/vertex2.glsl")));
-        int a102 = a.a(35632, c(b(context, str2)));
-        int glCreateProgram2 = GLES20.glCreateProgram();
-        GLES20.glAttachShader(glCreateProgram2, a22);
-        GLES20.glAttachShader(glCreateProgram2, a102);
-        GLES20.glLinkProgram(glCreateProgram2);
-        GLES20.glGetProgramiv(glCreateProgram2, 35714, iArr22, 0);
-        this.a = glCreateProgram2;
-        i12 = this.X;
-        FloatBuffer[] floatBufferArr4 = this.d;
-        FloatBuffer[] floatBufferArr22 = this.f;
-        FloatBuffer[] floatBufferArr32 = this.e;
-        GLES20.glUseProgram(glCreateProgram2);
-        this.k = GLES20.glGetAttribLocation(glCreateProgram2, "vPosition");
-        this.l = GLES20.glGetAttribLocation(glCreateProgram2, "a_TexCoordinate");
-        this.m = GLES20.glGetAttribLocation(glCreateProgram2, "a_Normal");
-        this.g = GLES20.glGetUniformLocation(glCreateProgram2, "u_Texture");
-        this.h = GLES20.glGetUniformLocation(glCreateProgram2, "u_NormalMap");
-        this.i = GLES20.glGetUniformLocation(glCreateProgram2, "u_BackgroundTexture");
-        this.n = GLES20.glGetUniformLocation(glCreateProgram2, "f_xOffset");
-        this.o = GLES20.glGetUniformLocation(glCreateProgram2, "f_alpha");
-        this.b = GLES20.glGetUniformLocation(glCreateProgram2, "uMVPMatrix");
-        this.c = GLES20.glGetUniformLocation(glCreateProgram2, "world");
-        this.q = GLES20.glGetUniformLocation(glCreateProgram2, "white");
-        this.r = GLES20.glGetUniformLocation(glCreateProgram2, "golden");
-        this.E = GLES20.glGetUniformLocation(glCreateProgram2, "spec1");
-        this.F = GLES20.glGetUniformLocation(glCreateProgram2, "spec2");
-        this.G = GLES20.glGetUniformLocation(glCreateProgram2, "u_diffuse");
-        this.H = GLES20.glGetUniformLocation(glCreateProgram2, "gradientColor1");
-        this.I = GLES20.glGetUniformLocation(glCreateProgram2, "gradientColor2");
-        this.K = GLES20.glGetUniformLocation(glCreateProgram2, "normalSpecColor");
-        this.J = GLES20.glGetUniformLocation(glCreateProgram2, "normalSpec");
-        this.L = GLES20.glGetUniformLocation(glCreateProgram2, "specColor");
-        this.M = GLES20.glGetUniformLocation(glCreateProgram2, "resolution");
-        this.N = GLES20.glGetUniformLocation(glCreateProgram2, "gradientPosition");
-        this.O = GLES20.glGetUniformLocation(glCreateProgram2, "modelIndex");
-        this.P = GLES20.glGetUniformLocation(glCreateProgram2, "modelIndex2");
-        this.Q = GLES20.glGetUniformLocation(glCreateProgram2, "behind");
-        this.R = GLES20.glGetUniformLocation(glCreateProgram2, TeXSymbolParser.TYPE_ATTR);
-        this.S = GLES20.glGetUniformLocation(glCreateProgram2, "night");
-        this.T = GLES20.glGetUniformLocation(glCreateProgram2, "time");
-        i13 = this.W;
-        int i282 = i13 * 3;
-        int[] iArr32 = new int[i282];
-        this.Y = iArr32;
-        int i292 = 0;
-        GLES20.glGenBuffers(i282, iArr32, 0);
-        i14 = 0;
-        while (i14 < i13) {
-        }
-        GLES20.glBindBuffer(34962, 0);
-        int[] iArr42 = new int[1];
-        GLES20.glGenTextures(1, iArr42, 0);
-        int i312 = iArr42[0];
-        this.p = i312;
-        GLES20.glBindTexture(3553, i312);
-        GLES20.glTexParameteri(3553, 10241, 9729);
-        GLES20.glTexParameteri(3553, 10240, 9729);
-        GLES20.glBindTexture(3553, this.p);
-        Bitmap bitmap22 = BitmapFactory.decodeStream(context.getAssets().open("flecks.png"));
-        int[] iArr52 = new int[1];
-        GLES20.glGenTextures(1, iArr52, 0);
-        GLES20.glBindTexture(3553, iArr52[0]);
-        GLES20.glTexParameteri(3553, 10241, 9729);
-        GLES20.glTexParameteri(3553, 10240, 9729);
-        GLUtils.texImage2D(3553, 0, bitmap22, 0);
-        bitmap22.recycle();
-        int[] iArr62 = new int[1];
-        GLES20.glGenTextures(1, iArr62, 0);
-        int i322 = iArr62[0];
-        this.j = i322;
-        GLES20.glBindTexture(3553, i322);
-        GLES20.glTexParameteri(3553, 10241, 9729);
-        GLES20.glTexParameteri(3553, 10240, 9729);
-        GLES20.glBindTexture(3553, this.j);
-        if (i12 != 0) {
-        }
-        bitmap = SvgHelper.getBitmap(R.raw.start_texture, 240, 240, -1);
-        if (bitmap == null) {
-        }
-        GLES20.glActiveTexture(33986);
-        GLES20.glBindTexture(3553, iArr62[c3]);
-        GLES20.glUniform1i(this.i, 2);
-        if (i12 != 4) {
-        }
-    }
-
-    public static String b(Context context, String str) {
-        StringBuilder sb = new StringBuilder();
-        try {
-            InputStream open = context.getAssets().open(str);
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(open, StandardCharsets.UTF_8));
-            while (true) {
-                String readLine = bufferedReader.readLine();
-                if (readLine == null) {
+                    r.d(z12, str, (TLRPC.TL_payments_giveawayInfo) payments_giveawayinfo, tL_messageMediaGiveaway, p2Var.getParentActivity(), p2Var.getResourceProvider());
                     break;
                 }
-                sb.append(readLine);
-                sb.append("\n");
-            }
-            bufferedReader.close();
-            open.close();
-        } catch (IOException e6) {
-            e6.printStackTrace();
+                break;
+            case 1:
+                ((FactCheckController) obj4).lambda$applyFactCheck$15((TLObject) obj3, (TLRPC.TL_textWithEntities) obj2, z10, (org.telegram.ui.ActionBar.d2) obj5);
+                break;
+            case 2:
+                ((MediaDataController) obj4).lambda$loadStickersByEmojiOrName$84((TLRPC.TL_error) obj2, (TLObject) obj5, (String) obj3, z10);
+                break;
+            case 3:
+                ((MessagesController) obj4).lambda$setParticipantBannedRole$91((TLRPC.TL_error) obj3, (org.telegram.ui.ActionBar.p2) obj5, (TLRPC.TL_channels_editBanned) obj2, z10);
+                break;
+            case 4:
+                ((MessagesStorage) obj4).lambda$putChannelViews$191((a0.h) obj3, (a0.h) obj2, (a0.h) obj5, z10);
+                break;
+            case 5:
+                ((MessagesStorage) obj4).lambda$replaceMessageIfExists$234((TLRPC.Message) obj3, z10, (ArrayList) obj2, (ArrayList) obj5);
+                break;
+            case 6:
+                ((SendMessagesHelper) obj4).lambda$sendEditRichMessageRequest$23((TLRPC.TL_messages_editMessage) obj3, (MessageObject) obj2, (org.telegram.ui.ActionBar.p2) obj5, z10);
+                break;
+            case 7:
+                ((SendMessagesHelper) obj4).lambda$performSendMessageRequest$80((TLRPC.Message) obj3, z10, (TLObject) obj2, (SendMessagesHelper.DelayedMessage) obj5);
+                break;
+            case 8:
+                ((UnconfirmedAuthController) obj4).lambda$updateList$7((boolean[]) obj3, (ArrayList) obj2, z10, (Utilities.Callback) obj5);
+                break;
+            case 9:
+                ((CameraController) obj4).lambda$recordVideo$12((CameraController.ICameraView) obj3, (File) obj2, z10, (Runnable) obj5);
+                break;
+            case 10:
+                me meVar = (me) obj4;
+                TLObject tLObject = (TLObject) obj2;
+                TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) obj5;
+                if (((TLRPC.TL_error) obj3) == null) {
+                    TL_account.Password password = (TL_account.Password) tLObject;
+                    twoStepVerificationActivity.F = password;
+                    TwoStepVerificationActivity.m0(password);
+                    meVar.b0(z10, twoStepVerificationActivity.l0(), twoStepVerificationActivity);
+                    break;
+                }
+                break;
+            case 11:
+                zn znVar = (zn) obj4;
+                TLObject tLObject2 = (TLObject) obj2;
+                hg hgVar = (hg) obj5;
+                ((ze.c) obj3).b();
+                if (tLObject2 instanceof TLRPC.TL_contacts_resolvedPeer) {
+                    TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject2;
+                    znVar.getMessagesController().putUsers(tL_contacts_resolvedPeer.users, false);
+                    znVar.getMessagesController().putChats(tL_contacts_resolvedPeer.chats, false);
+                    long peerDialogId = DialogObject.getPeerDialogId(tL_contacts_resolvedPeer.peer);
+                    if (peerDialogId >= 0) {
+                        obj = znVar.getMessagesController().getUser(Long.valueOf(peerDialogId));
+                    } else if (peerDialogId < 0) {
+                        obj = znVar.getMessagesController().getChat(Long.valueOf(-peerDialogId));
+                    }
+                    hgVar.run(obj, Boolean.valueOf(z10));
+                    break;
+                }
+                obj = null;
+                hgVar.run(obj, Boolean.valueOf(z10));
+            case 12:
+                ga gaVar = (ga) obj4;
+                Bitmap bitmap = (Bitmap) obj2;
+                Bitmap bitmap2 = (Bitmap) obj5;
+                if (TextUtils.equals(gaVar.a, (String) obj3)) {
+                    gaVar.f = null;
+                    Bitmap bitmap3 = gaVar.b;
+                    if (bitmap3 != null) {
+                        bitmap3.recycle();
+                    }
+                    gaVar.b = bitmap;
+                    Runnable runnable = gaVar.e;
+                    if (runnable != null) {
+                        runnable.run();
+                    }
+                } else {
+                    bitmap.recycle();
+                }
+                if (z10) {
+                    bitmap2.recycle();
+                    break;
+                }
+                break;
+            case 13:
+                lh.n nVar = (lh.n) obj2;
+                String str2 = (String) obj3;
+                TextView textView = (TextView) obj5;
+                ClipboardManager clipboardManager = (ClipboardManager) ((ut) obj4).getContext().getSystemService("clipboard");
+                boolean z13 = z10 && (TextUtils.isEmpty(nVar.getText()) || TextUtils.equals(nVar.getText().toString(), str2)) && clipboardManager != null && clipboardManager.hasPrimaryClip();
+                org.telegram.ui.b.p(textView.animate().alpha(z13 ? 1.0f : 0.0f).scaleX(z13 ? 1.0f : 0.7f).scaleY(z13 ? 1.0f : 0.7f), mr.h, 300L);
+                break;
+            case 14:
+                ry ryVar = (ry) obj4;
+                String str3 = (String) obj3;
+                String str4 = (String) obj2;
+                TLObject tLObject3 = (TLObject) obj5;
+                ryVar.a.remove(str4);
+                kz kzVar = ryVar.b;
+                oy oyVar = kzVar.g0;
+                HashMap hashMap = kzVar.i0;
+                boolean z14 = oyVar.v;
+                boolean z15 = this.b;
+                if (!z14 || !oyVar.w.equals(str3)) {
+                    if (z15 && (!(tLObject3 instanceof TLRPC.messages_BotResults) || ((TLRPC.messages_BotResults) tLObject3).results.isEmpty())) {
+                        ryVar.a(str3, false);
+                        break;
+                    } else if ((tLObject3 instanceof TLRPC.messages_BotResults) && !hashMap.containsKey(str4)) {
+                        hashMap.put(str4, (TLRPC.messages_BotResults) tLObject3);
+                        break;
+                    }
+                } else {
+                    kzVar.g0.E(str3, "", false, true, z15, str4, tLObject3);
+                    break;
+                }
+                break;
+            case 15:
+                org.telegram.ui.ActionBar.p2 p2Var2 = (org.telegram.ui.ActionBar.p2) obj5;
+                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj4;
+                TLRPC.Document document = (TLRPC.Document) obj3;
+                zn znVar2 = (zn) obj2;
+                File w10 = t6.w(p2Var2.getCurrentAccount(), "webp");
+                int devicePerformanceClass = SharedConfig.getDevicePerformanceClass();
+                float f10 = 512;
+                float f11 = devicePerformanceClass != 0 ? devicePerformanceClass != 2 ? 2560 : 3840 : 1280;
+                double d10 = (f11 * f10) / f10;
+                if (((float) Math.floor(d10)) > f11) {
+                    f11 = (float) Math.floor(d10);
+                }
+                float f12 = f11;
+                Bitmap createBitmap = Bitmap.createBitmap(512, 512, Bitmap.Config.ARGB_8888);
+                try {
+                    createBitmap.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(w10));
+                } catch (Throwable th2) {
+                    FileLog.e(th2);
+                }
+                createBitmap.recycle();
+                ArrayList arrayList = new ArrayList();
+                MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, 0, 0L, w10.getAbsolutePath(), 0, false, 0, 0, 0L);
+                arrayList.add(photoEntry);
+                VideoEditedInfo.MediaEntity mediaEntity = new VideoEditedInfo.MediaEntity();
+                mediaEntity.type = (byte) 0;
+                mediaEntity.parentObject = tL_messages_stickerSet;
+                mediaEntity.text = FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(document, true).getAbsolutePath();
+                mediaEntity.x = 0.5f - ((Math.min(512, 512) / f10) / 2.0f);
+                mediaEntity.y = 0.5f - ((Math.min(512, 512) / f10) / 2.0f);
+                mediaEntity.width = Math.min(512, 512) / f10;
+                mediaEntity.height = Math.min(512, 512) / f10;
+                int floor = (int) Math.floor(f12 * 0.5d);
+                mediaEntity.viewWidth = floor;
+                mediaEntity.viewHeight = floor;
+                mediaEntity.scale = 2.0f;
+                mediaEntity.document = document;
+                if (MessageObject.isAnimatedStickerDocument(document, true) || MessageObject.isVideoStickerDocument(document)) {
+                    mediaEntity.subType = (byte) ((MessageObject.isAnimatedStickerDocument(document, true) ? (byte) 1 : (byte) 4) | mediaEntity.subType);
+                }
+                ArrayList<VideoEditedInfo.MediaEntity> arrayList2 = new ArrayList<>();
+                photoEntry.mediaEntities = arrayList2;
+                arrayList2.add(mediaEntity);
+                photoEntry.averageDuration = 3000L;
+                if (MessageObject.isAnimatedStickerDocument(document, true)) {
+                    File pathToAttach = FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(document, true);
+                    if (pathToAttach != null) {
+                        try {
+                            RLottieNative a2 = RLottieNative.a(pathToAttach.getAbsolutePath(), null, 0, 0, null, false, null, false, 0, null);
+                            if (a2 != null) {
+                                int[] iArr = a2.a;
+                                int i20 = iArr[0];
+                                int i21 = iArr[1];
+                                a2.d();
+                                d = i20 / i21;
+                            } else {
+                                d = 0.0d;
+                            }
+                            photoEntry.averageDuration = (long) (d * 1000.0d);
+                        } catch (Exception e) {
+                            FileLog.e(e);
+                        }
+                    }
+                } else if (MessageObject.isVideoStickerDocument(document)) {
+                    photoEntry.averageDuration = (long) (MessageObject.getDocumentDuration(document) * 1000.0d);
+                }
+                PhotoViewer.t1().K2(p2Var2.getParentActivity(), null, p2Var2.getResourceProvider());
+                PhotoViewer.t1().f2(arrayList, 0, 11, false, new nx0(), znVar2);
+                PhotoViewer.t1().Y0(document, z10 ? document : null, true, null);
+                rt.q().T = z10 ? tL_messages_stickerSet : null;
+                break;
+            case 16:
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                TLObject tLObject4 = (TLObject) obj5;
+                String str5 = (String) obj3;
+                qy qyVar = ((ey) obj4).a;
+                if (tL_error == null) {
+                    TLRPC.User user = qyVar.getMessagesController().getUser(Long.valueOf(qyVar.getUserConfig().getClientUserId()));
+                    if (user == null) {
+                        user = qyVar.getUserConfig().getCurrentUser();
+                        if (user != null) {
+                            qyVar.getMessagesController().putUser(user, false);
+                        }
+                    } else {
+                        qyVar.getUserConfig().setCurrentUser(user);
+                    }
+                    TLRPC.TL_photos_photo tL_photos_photo = (TLRPC.TL_photos_photo) tLObject4;
+                    ArrayList<TLRPC.PhotoSize> arrayList3 = tL_photos_photo.photo.sizes;
+                    TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(arrayList3, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+                    TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(arrayList3, 800);
+                    TLRPC.VideoSize closestVideoSizeWithSize = tL_photos_photo.photo.video_sizes.isEmpty() ? null : FileLoader.getClosestVideoSizeWithSize(tL_photos_photo.photo.video_sizes, MediaDataController.MAX_STYLE_RUNS_COUNT);
+                    TLRPC.TL_userProfilePhoto tL_userProfilePhoto = new TLRPC.TL_userProfilePhoto();
+                    user.photo = tL_userProfilePhoto;
+                    tL_userProfilePhoto.photo_id = tL_photos_photo.photo.id;
+                    if (closestPhotoSizeWithSize != null) {
+                        tL_userProfilePhoto.photo_small = closestPhotoSizeWithSize.location;
+                    }
+                    if (closestPhotoSizeWithSize2 != null) {
+                        tL_userProfilePhoto.photo_big = closestPhotoSizeWithSize2.location;
+                    }
+                    if (closestPhotoSizeWithSize == null || qyVar.Z3 == null) {
+                        z4 = z10;
+                    } else {
+                        i14 = ((org.telegram.ui.ActionBar.p2) qyVar).currentAccount;
+                        File pathToAttach2 = FileLoader.getInstance(i14).getPathToAttach(closestPhotoSizeWithSize, true);
+                        i15 = ((org.telegram.ui.ActionBar.p2) qyVar).currentAccount;
+                        FileLoader.getInstance(i15).getPathToAttach(qyVar.Z3, true).renameTo(pathToAttach2);
+                        StringBuilder sb = new StringBuilder();
+                        sb.append(qyVar.Z3.volume_id);
+                        sb.append("_");
+                        String m9 = android.support.v4.media.a.m(qyVar.Z3.local_id, "@50_50", sb);
+                        StringBuilder sb2 = new StringBuilder();
+                        z4 = z10;
+                        sb2.append(closestPhotoSizeWithSize.location.volume_id);
+                        sb2.append("_");
+                        String m10 = android.support.v4.media.a.m(closestPhotoSizeWithSize.location.local_id, "@50_50", sb2);
+                        ImageLoader imageLoader = ImageLoader.getInstance();
+                        i16 = ((org.telegram.ui.ActionBar.p2) qyVar).currentAccount;
+                        imageLoader.replaceImageInCache(m9, m10, ImageLocation.getForUserOrChat(i16, user, 1), false);
+                    }
+                    if (closestVideoSizeWithSize != null && str5 != null) {
+                        i13 = ((org.telegram.ui.ActionBar.p2) qyVar).currentAccount;
+                        new File(str5).renameTo(FileLoader.getInstance(i13).getPathToAttach(closestVideoSizeWithSize, "mp4", true));
+                    } else if (closestPhotoSizeWithSize2 != null && qyVar.a4 != null) {
+                        i11 = ((org.telegram.ui.ActionBar.p2) qyVar).currentAccount;
+                        File pathToAttach3 = FileLoader.getInstance(i11).getPathToAttach(closestPhotoSizeWithSize2, true);
+                        i12 = ((org.telegram.ui.ActionBar.p2) qyVar).currentAccount;
+                        FileLoader.getInstance(i12).getPathToAttach(qyVar.a4, true).renameTo(pathToAttach3);
+                    }
+                    qyVar.getMessagesController().getDialogPhotos(user.id).addPhotoAtStart(tL_photos_photo.photo);
+                    ArrayList arrayList4 = new ArrayList();
+                    arrayList4.add(user);
+                    i19 = 0;
+                    qyVar.getMessagesStorage().putUsersAndChats(arrayList4, null, false, true);
+                    TLRPC.UserFull userFull = qyVar.getMessagesController().getUserFull(qyVar.getUserConfig().getClientUserId());
+                    if (userFull != null) {
+                        userFull.profile_photo = tL_photos_photo.photo;
+                        qyVar.getMessagesStorage().updateUserInfo(userFull, false);
+                    }
+                } else {
+                    z4 = z10;
+                }
+                qyVar.Z3 = null;
+                qyVar.a4 = null;
+                NotificationCenter notificationCenter = qyVar.getNotificationCenter();
+                int i22 = NotificationCenter.updateInterfaces;
+                Object[] objArr = new Object[1];
+                objArr[i19] = Integer.valueOf(MessagesController.UPDATE_MASK_ALL);
+                notificationCenter.lambda$postNotificationNameOnUIThread$1(i22, objArr);
+                qyVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.mainUserInfoChanged, new Object[i19]);
+                qyVar.getUserConfig().saveConfig(true);
+                i10 = ((org.telegram.ui.ActionBar.p2) qyVar).currentAccount;
+                MessagesController.getInstance(i10).removeSuggestion(0L, "USERPIC_SETUP");
+                qyVar.U4();
+                ic icVar = qyVar.b4;
+                if (icVar != null) {
+                    zb zbVar = (zb) icVar.e;
+                    zbVar.d.c(LocaleController.getString(z4 ? R.string.YourProfileVideoDone : R.string.YourProfilePhotoDone), true, true);
+                    zbVar.setProgress(1.0f);
+                    db button = zbVar.getButton();
+                    button.setScaleX(0.6f);
+                    button.setScaleY(0.6f);
+                    button.setAlpha(0.0f);
+                    button.setVisibility(0);
+                    org.telegram.ui.b.p(button.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f), mr.h, 360L);
+                    ic icVar2 = qyVar.b4;
+                    icVar2.j = 5000;
+                    icVar2.i(false);
+                    qyVar.b4.i(true);
+                    break;
+                }
+                break;
+            case 17:
+                lo0.a0((lo0) obj4, z10, (String) obj3, (String) obj2, (TL_account.updatePasswordSettings) obj5);
+                break;
+            case 18:
+                lo0.i0((lo0) obj4, (TLRPC.TL_error) obj2, z10, (TLObject) obj5, (String) obj3);
+                break;
+            case 19:
+                wg1.U((wg1) obj4, (TLObject) obj2, z10, (String) obj3, (TL_account.passwordInputSettings) obj5);
+                break;
+            case 20:
+                ph.f1 f1Var = (ph.f1) obj4;
+                TLObject tLObject5 = (TLObject) obj2;
+                TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = (TLRPC.TL_messages_getInlineBotResults) obj5;
+                String str6 = (String) obj3;
+                ph.h1 h1Var = f1Var.s;
+                ArrayList arrayList5 = h1Var.n;
+                if (f1Var.r) {
+                    if (!(tLObject5 instanceof TLRPC.messages_BotResults)) {
+                        i17 = ((g3) h1Var.r).currentAccount;
+                        f1Var.d = ConnectionsManager.getInstance(i17).sendRequest(tL_messages_getInlineBotResults, new k7(f1Var, str6, z10, 7));
+                        break;
+                    } else {
+                        TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject5;
+                        f1Var.h = messages_botresults.next_offset;
+                        if (z10) {
+                            arrayList5.clear();
+                        }
+                        arrayList5.size();
+                        arrayList5.addAll(messages_botresults.results);
+                        f1Var.l();
+                        h1Var.d.c(false);
+                        f1Var.r = false;
+                        break;
+                    }
+                }
+                break;
+            case 21:
+                da daVar = (da) obj4;
+                File file = (File) obj2;
+                t6 t6Var = (t6) obj5;
+                try {
+                    ((Bitmap) obj3).compress(Bitmap.CompressFormat.JPEG, z10 ? 95 : 99, new FileOutputStream(file));
+                } catch (Exception e6) {
+                    FileLog.e(e6);
+                }
+                AndroidUtilities.runOnUIThread(new m71(daVar, t6Var, file, 18));
+                break;
+            case 22:
+                uf.t tVar = (uf.t) obj4;
+                ArrayList arrayList6 = tVar.b;
+                arrayList6.clear();
+                arrayList6.addAll((ArrayList) obj3);
+                int i23 = tVar.a;
+                MessagesController.getInstance(i23).putUsers((ArrayList) obj2, true);
+                MessagesController.getInstance(i23).putChats((ArrayList) obj5, true);
+                NotificationCenter.getInstance(i23).lambda$postNotificationNameOnUIThread$1(NotificationCenter.quickRepliesUpdated, new Object[0]);
+                tVar.c = false;
+                tVar.e(false, z10);
+                break;
+            default:
+                e4.f((org.telegram.ui.ActionBar.p2) obj5, (Context) obj4, (f6) obj3, (p3) obj2, z10);
+                break;
         }
-        return sb.toString();
     }
 
-    public static String c(String str) {
-        Matcher matcher = Pattern.compile("RGB#([0-9a-fA-F]{6})").matcher(str);
-        StringBuffer stringBuffer = new StringBuffer();
-        while (matcher.find()) {
-            String group = matcher.group(1);
-            matcher.appendReplacement(stringBuffer, String.format(Locale.US, "vec3(%.3f, %.3f, %.3f)", Double.valueOf(Integer.parseInt(group.substring(0, 2), 16) / 255.0d), Double.valueOf(Integer.parseInt(group.substring(2, 4), 16) / 255.0d), Double.valueOf(Integer.parseInt(group.substring(4, 6), 16) / 255.0d)));
-        }
-        matcher.appendTail(stringBuffer);
-        return stringBuffer.toString();
+    public /* synthetic */ j(Object obj, Object obj2, Object obj3, boolean z4, Object obj4, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.d = obj2;
+        this.e = obj3;
+        this.b = z4;
+        this.f = obj4;
     }
 
-    public final void a(int i10, boolean z4) {
-        int i11 = i10 * 3;
-        GLES20.glBindBuffer(34962, this.Y[i11]);
-        GLES20.glVertexAttribPointer(this.l, 2, 5126, false, 0, 0);
-        GLES20.glBindBuffer(34962, this.Y[i11 + 1]);
-        GLES20.glVertexAttribPointer(this.m, 3, 5126, false, 0, 0);
-        GLES20.glBindBuffer(34962, this.Y[i11 + 2]);
-        GLES20.glVertexAttribPointer(this.k, 3, 5126, false, 0, 0);
-        GLES20.glUniform1i(this.O, i10);
-        GLES20.glUniform1i(this.P, i10);
-        GLES20.glUniform1i(this.Q, z4 ? 1 : 0);
-        GLES20.glUniform1i(this.R, this.X);
-        GLES20.glDrawArrays(4, 0, this.t[i10] / 3);
+    public /* synthetic */ j(Object obj, Object obj2, boolean z4, Object obj3, Object obj4, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.d = obj2;
+        this.b = z4;
+        this.e = obj3;
+        this.f = obj4;
+    }
+
+    public /* synthetic */ j(Object obj, TLObject tLObject, boolean z4, TLObject tLObject2, String str, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.e = tLObject;
+        this.b = z4;
+        this.f = tLObject2;
+        this.d = str;
+    }
+
+    public /* synthetic */ j(Object obj, TLRPC.TL_error tL_error, TLObject tLObject, String str, boolean z4, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.e = tL_error;
+        this.f = tLObject;
+        this.d = str;
+        this.b = z4;
+    }
+
+    public /* synthetic */ j(MessagesController messagesController, TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.p2 p2Var, TLRPC.TL_channels_editBanned tL_channels_editBanned, boolean z4) {
+        this.a = 3;
+        this.c = messagesController;
+        this.d = tL_error;
+        this.f = p2Var;
+        this.e = tL_channels_editBanned;
+        this.b = z4;
+    }
+
+    public /* synthetic */ j(TLRPC.payments_GiveawayInfo payments_giveawayinfo, boolean z4, String str, long j10, TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway, org.telegram.ui.ActionBar.p2 p2Var) {
+        this.a = 0;
+        this.c = payments_giveawayinfo;
+        this.b = z4;
+        this.d = str;
+        this.e = tL_messageMediaGiveaway;
+        this.f = p2Var;
+    }
+
+    public /* synthetic */ j(org.telegram.ui.ActionBar.p2 p2Var, Object obj, Object obj2, Object obj3, boolean z4, int i10) {
+        this.a = i10;
+        this.f = p2Var;
+        this.c = obj;
+        this.d = obj2;
+        this.e = obj3;
+        this.b = z4;
+    }
+
+    public /* synthetic */ j(ut utVar, boolean z4, lh.n nVar, String str, TextView textView) {
+        this.a = 13;
+        this.c = utVar;
+        this.b = z4;
+        this.e = nVar;
+        this.d = str;
+        this.f = textView;
+    }
+
+    public /* synthetic */ j(lo0 lo0Var, boolean z4, String str, String str2, TL_account.updatePasswordSettings updatepasswordsettings) {
+        this.a = 17;
+        this.c = lo0Var;
+        this.b = z4;
+        this.d = str;
+        this.e = str2;
+        this.f = updatepasswordsettings;
+    }
+
+    public /* synthetic */ j(wg1 wg1Var, TLObject tLObject, boolean z4, String str, TL_account.passwordInputSettings passwordinputsettings) {
+        this.a = 19;
+        this.c = wg1Var;
+        this.e = tLObject;
+        this.b = z4;
+        this.d = str;
+        this.f = passwordinputsettings;
     }
 }

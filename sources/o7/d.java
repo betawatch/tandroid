@@ -7,10 +7,11 @@ import android.os.IInterface;
 import android.os.Parcel;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import j7.p5;
+import j7.r5;
+import kf.k0;
 import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class d extends Binder implements b, IInterface {
     public final /* synthetic */ int a;
@@ -29,7 +30,7 @@ public final class d extends Binder implements b, IInterface {
                 break;
             default:
                 j.e(status, "status");
-                p5.a(status, dVar, this.b);
+                r5.a(status, dVar, this.b);
                 break;
         }
     }
@@ -46,7 +47,7 @@ public final class d extends Binder implements b, IInterface {
             z7.d dVar = (z7.d) a.a(parcel, z7.d.CREATOR);
             int dataAvail = parcel.dataAvail();
             if (dataAvail > 0) {
-                throw new BadParcelableException(l.d.j(dataAvail, "Parcel data not fully consumed, unread size: "));
+                throw new BadParcelableException(k0.j(dataAvail, "Parcel data not fully consumed, unread size: "));
             }
             k(status, dVar);
             return true;
@@ -58,7 +59,7 @@ public final class d extends Binder implements b, IInterface {
         z7.b bVar = (z7.b) a.a(parcel, z7.b.CREATOR);
         int dataAvail2 = parcel.dataAvail();
         if (dataAvail2 > 0) {
-            throw new BadParcelableException(l.d.j(dataAvail2, "Parcel data not fully consumed, unread size: "));
+            throw new BadParcelableException(k0.j(dataAvail2, "Parcel data not fully consumed, unread size: "));
         }
         w0(status2, bVar);
         return true;
@@ -69,7 +70,7 @@ public final class d extends Binder implements b, IInterface {
         switch (this.a) {
             case 0:
                 j.e(status, "status");
-                p5.a(status, bVar, this.b);
+                r5.a(status, bVar, this.b);
                 break;
         }
     }

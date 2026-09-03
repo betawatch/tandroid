@@ -7,23 +7,23 @@ import android.graphics.RectF;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import gg.y1;
 import h5.d0;
-import hg.y1;
 import j3.c0;
 import j3.f0;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.regex.Pattern;
-import lh.g2;
-import mh.b9;
-import mh.g5;
-import oh.c7;
-import oh.d7;
-import oh.g7;
-import oh.i9;
-import oh.l7;
-import oh.s6;
-import oh.t6;
+import kh.g2;
+import lh.b9;
+import lh.g5;
+import nh.c7;
+import nh.d7;
+import nh.g7;
+import nh.i9;
+import nh.l7;
+import nh.s6;
+import nh.t6;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
@@ -44,16 +44,16 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.h3;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g3;
 import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.jm;
-import org.telegram.ui.Components.mi;
+import org.telegram.ui.Components.h80;
+import org.telegram.ui.Components.hm;
+import org.telegram.ui.Components.km;
+import org.telegram.ui.Components.li;
 import org.telegram.ui.Components.mm;
-import org.telegram.ui.Components.om;
-import org.telegram.ui.Components.pm;
+import org.telegram.ui.Components.nm;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.sf;
 import org.telegram.ui.Components.tg;
@@ -62,21 +62,20 @@ import org.telegram.ui.Components.yu0;
 import org.telegram.ui.Components.z4;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.bd0;
-import org.telegram.ui.d60;
-import org.telegram.ui.gu;
-import org.telegram.ui.jn;
-import org.telegram.ui.kc0;
-import org.telegram.ui.py;
-import org.telegram.ui.qr;
-import org.telegram.ui.sq;
-import org.telegram.ui.x90;
-import org.telegram.ui.xn;
-import qh.r6;
-import qh.s0;
-import qh.t0;
+import org.telegram.ui.cd0;
+import org.telegram.ui.e60;
+import org.telegram.ui.hu;
+import org.telegram.ui.lc0;
+import org.telegram.ui.ln;
+import org.telegram.ui.qy;
+import org.telegram.ui.rr;
+import org.telegram.ui.tq;
+import org.telegram.ui.y90;
+import org.telegram.ui.zn;
+import ph.s0;
+import ph.t0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -106,7 +105,7 @@ public final /* synthetic */ class v implements Runnable {
         boolean z11;
         boolean z12;
         int i11;
-        mm mmVar;
+        km kmVar;
         int i12 = this.a;
         int i13 = 4;
         int i14 = 2;
@@ -125,7 +124,7 @@ public final /* synthetic */ class v implements Runnable {
                 int i18 = 26;
                 fVar.q(p10, 26, new c1.b(p10, obj, j10));
                 if (f0Var.P == obj) {
-                    f0Var.l.e(26, new f5.u(i18));
+                    f0Var.l.e(26, new f0.d(i18));
                     break;
                 }
                 break;
@@ -158,36 +157,36 @@ public final /* synthetic */ class v implements Runnable {
             case 3:
                 g5 g5Var2 = (g5) obj2;
                 g5Var2.getClass();
-                ((af.f) obj).b();
+                ((ze.c) obj).b();
                 g5Var2.p2((int) j10, g5Var2.getContext(), true);
                 break;
             case 4:
                 TL_stories.Boost boost = (TL_stories.Boost) obj;
-                h3 h3Var = ((h3[]) obj2)[0];
-                if (h3Var != null) {
-                    h3Var.dismiss();
+                g3 g3Var = ((g3[]) obj2)[0];
+                if (g3Var != null) {
+                    g3Var.dismiss();
                 }
                 p2 U2 = LaunchActivity.U();
                 if (U2 != null) {
-                    U2.presentFragment(xn.Q9(boost.giveaway_msg_id, j10));
+                    U2.presentFragment(zn.Q9(boost.giveaway_msg_id, j10));
                     break;
                 }
                 break;
             case 5:
-                oh.p pVar = (oh.p) obj2;
-                oh.o oVar = (oh.o) obj;
-                t6 t6Var = pVar.s;
-                ArrayList arrayList2 = pVar.x;
-                py pyVar = pVar.b0;
-                if (pyVar != null && pyVar.getParentActivity() != null) {
-                    int i19 = oVar.b;
+                nh.q qVar = (nh.q) obj2;
+                nh.p pVar = (nh.p) obj;
+                t6 t6Var = qVar.s;
+                ArrayList arrayList2 = qVar.x;
+                qy qyVar = qVar.b0;
+                if (qyVar != null && qyVar.getParentActivity() != null) {
+                    int i19 = pVar.b;
                     ArrayList arrayList3 = new ArrayList();
                     int i20 = 0;
                     while (true) {
                         if (i20 < arrayList2.size()) {
-                            long j11 = ((oh.m) arrayList2.get(i20)).c;
+                            long j11 = ((nh.n) arrayList2.get(i20)).c;
                             arrayList = arrayList2;
-                            if (j11 == UserConfig.getInstance(pVar.f).clientUserId || !t6Var.J(j11)) {
+                            if (j11 == UserConfig.getInstance(qVar.f).clientUserId || !t6Var.J(j11)) {
                                 i20++;
                                 arrayList2 = arrayList;
                             } else {
@@ -198,19 +197,19 @@ public final /* synthetic */ class v implements Runnable {
                             z4 = true;
                         }
                     }
-                    if (oVar.C && (!z4 || arrayList.size() == 1)) {
-                        arrayList3.add(Long.valueOf(oVar.B));
+                    if (pVar.C && (!z4 || arrayList.size() == 1)) {
+                        arrayList3.add(Long.valueOf(pVar.B));
                         i10 = i19;
                         z10 = true;
-                    } else if (!oVar.C && t6Var.J(oVar.B)) {
+                    } else if (!pVar.C && t6Var.J(pVar.B)) {
                         int i21 = 0;
                         while (i21 < arrayList.size()) {
                             ArrayList arrayList4 = arrayList;
-                            long j12 = ((oh.m) arrayList4.get(i21)).c;
-                            if (!oVar.C && t6Var.J(j12)) {
+                            long j12 = ((nh.n) arrayList4.get(i21)).c;
+                            if (!pVar.C && t6Var.J(j12)) {
                                 arrayList3.add(Long.valueOf(j12));
                             }
-                            if (j12 == oVar.B) {
+                            if (j12 == pVar.B) {
                                 i19 = arrayList3.size() - 1;
                             }
                             i21++;
@@ -219,12 +218,12 @@ public final /* synthetic */ class v implements Runnable {
                         i10 = i19;
                         z10 = false;
                         z11 = true;
-                        i9 orCreateStoryViewer = pyVar.getOrCreateStoryViewer();
-                        orCreateStoryViewer.s(new y1(pVar, j10, 4));
-                        Context context = pVar.getContext();
-                        c7 a2 = c7.a(pVar.h);
-                        a2.e = new jh.q(i15, pVar, z10);
-                        a2.f = pVar.b != 1;
+                        i9 orCreateStoryViewer = qyVar.getOrCreateStoryViewer();
+                        orCreateStoryViewer.s(new y1(qVar, j10, 4));
+                        Context context = qVar.getContext();
+                        c7 a2 = c7.a(qVar.h);
+                        a2.e = new ih.q(i15, qVar, z10);
+                        a2.f = qVar.b != 1;
                         a2.h = z11;
                         a2.n = z10;
                         a2.r = true;
@@ -233,8 +232,8 @@ public final /* synthetic */ class v implements Runnable {
                     } else {
                         ArrayList arrayList5 = arrayList;
                         for (int i22 = 0; i22 < arrayList5.size(); i22++) {
-                            if (t6Var.I(((oh.m) arrayList5.get(i22)).c)) {
-                                arrayList3.add(Long.valueOf(((oh.m) arrayList5.get(i22)).c));
+                            if (t6Var.I(((nh.n) arrayList5.get(i22)).c)) {
+                                arrayList3.add(Long.valueOf(((nh.n) arrayList5.get(i22)).c));
                             } else if (i22 <= i19) {
                                 i19--;
                             }
@@ -243,12 +242,12 @@ public final /* synthetic */ class v implements Runnable {
                         z10 = false;
                     }
                     z11 = false;
-                    i9 orCreateStoryViewer2 = pyVar.getOrCreateStoryViewer();
-                    orCreateStoryViewer2.s(new y1(pVar, j10, 4));
-                    Context context2 = pVar.getContext();
-                    c7 a22 = c7.a(pVar.h);
-                    a22.e = new jh.q(i15, pVar, z10);
-                    a22.f = pVar.b != 1;
+                    i9 orCreateStoryViewer2 = qyVar.getOrCreateStoryViewer();
+                    orCreateStoryViewer2.s(new y1(qVar, j10, 4));
+                    Context context2 = qVar.getContext();
+                    c7 a22 = c7.a(qVar.h);
+                    a22.e = new ih.q(i15, qVar, z10);
+                    a22.f = qVar.b != 1;
                     a22.h = z11;
                     a22.n = z10;
                     a22.r = true;
@@ -284,57 +283,57 @@ public final /* synthetic */ class v implements Runnable {
                 t6 t6Var3 = s6Var.J;
                 t0 t0Var = t6Var3.w;
                 s6Var.d = true;
-                r6 r6Var = s6Var.c;
-                if (r6Var.w) {
-                    t0Var.c(r6Var);
+                ph.t6 t6Var4 = s6Var.c;
+                if (t6Var4.w) {
+                    t0Var.c(t6Var4);
                 }
-                r6Var.w = false;
-                r6Var.x = null;
-                if (!r6Var.b0) {
+                t6Var4.w = false;
+                t6Var4.x = null;
+                if (!t6Var4.b0) {
                     ArrayList arrayList6 = t0Var.b;
-                    if (!r6Var.u && storyItem.media != null) {
+                    if (!t6Var4.u && storyItem.media != null) {
                         ArrayList arrayList7 = new ArrayList();
                         int size = arrayList6.size();
                         int i24 = 0;
                         while (i24 < size) {
                             Object obj3 = arrayList6.get(i24);
                             i24++;
-                            r6 r6Var2 = (r6) obj3;
-                            if (r6Var2.g && r6Var2.f == storyItem.id) {
-                                arrayList7.add(r6Var2);
+                            ph.t6 t6Var5 = (ph.t6) obj3;
+                            if (t6Var5.g && t6Var5.f == storyItem.id) {
+                                arrayList7.add(t6Var5);
                             }
                         }
                         t0Var.b(arrayList7);
-                        t0Var.e(r6Var);
-                        r6Var.b = Utilities.random.nextLong();
-                        s0 s0Var = new s0(r6Var);
-                        r6Var.g = true;
+                        t0Var.e(t6Var4);
+                        t6Var4.b = Utilities.random.nextLong();
+                        s0 s0Var = new s0(t6Var4);
+                        t6Var4.g = true;
                         s0Var.G = true;
-                        r6Var.e = j10;
+                        t6Var4.e = j10;
                         s0Var.I = j10;
                         int i25 = storyItem.id;
-                        r6Var.f = i25;
+                        t6Var4.f = i25;
                         s0Var.H = i25;
                         long j13 = storyItem.expire_date * 1000;
-                        r6Var.J = j13;
+                        t6Var4.J = j13;
                         s0Var.L = j13;
                         TLRPC.MessageMedia messageMedia = storyItem.media;
                         TLRPC.Document document = messageMedia.document;
                         if (document != null) {
                             long j14 = document.id;
-                            r6Var.H = j14;
+                            t6Var4.H = j14;
                             s0Var.J = j14;
                         } else {
                             TLRPC.Photo photo = messageMedia.photo;
                             if (photo != null) {
                                 long j15 = photo.id;
-                                r6Var.I = j15;
+                                t6Var4.I = j15;
                                 s0Var.K = j15;
                             }
                         }
-                        arrayList6.remove(r6Var);
+                        arrayList6.remove(t6Var4);
                         z12 = false;
-                        arrayList6.add(0, r6Var);
+                        arrayList6.add(0, t6Var4);
                         t0Var.a(s0Var);
                         if (s6Var.b) {
                             t6Var3.R = z12;
@@ -382,21 +381,21 @@ public final /* synthetic */ class v implements Runnable {
                 ((VideoCapturerDevice) obj2).lambda$init$2(j10, (Point) obj);
                 break;
             case 15:
-                xn xnVar = (xn) obj2;
-                xnVar.getMessagesController().lambda$checkDeletingTask$84(this.b, xnVar.Q5, ((MessageObject) obj).getId());
+                zn znVar = (zn) obj2;
+                znVar.getMessagesController().lambda$checkDeletingTask$84(this.b, znVar.Q5, ((MessageObject) obj).getId());
                 break;
             case 16:
-                xn xnVar2 = ((jn) obj2).a;
-                i11 = ((p2) xnVar2).currentAccount;
-                z4.t0(SendMessagesHelper.getInstance(i11).sendMessage((ArrayList) obj, this.b, false, false, true, 0, 0, null, -1, 0L, xnVar2.N8(), xnVar2.d5), xnVar2, null);
+                zn znVar2 = ((ln) obj2).a;
+                i11 = ((p2) znVar2).currentAccount;
+                z4.t0(SendMessagesHelper.getInstance(i11).sendMessage((ArrayList) obj, this.b, false, false, true, 0, 0, null, -1, 0L, znVar2.N8(), znVar2.d5), znVar2, null);
                 break;
             case 17:
-                qr qrVar = (qr) obj2;
+                rr rrVar = (rr) obj2;
                 TLRPC.User user2 = (TLRPC.User) obj;
-                qrVar.getMessagesController().deleteParticipantFromChat(qrVar.K, user2);
-                qrVar.v0(j10);
-                if (qrVar.r != null && user2 != null && qc.a(qrVar)) {
-                    qc.D(qrVar, user2, qrVar.r.title).j();
+                rrVar.getMessagesController().deleteParticipantFromChat(rrVar.K, user2);
+                rrVar.v0(j10);
+                if (rrVar.r != null && user2 != null && qc.a(rrVar)) {
+                    qc.D(rrVar, user2, rrVar.r.title).j();
                     break;
                 }
                 break;
@@ -407,7 +406,7 @@ public final /* synthetic */ class v implements Runnable {
                     runnable2.run();
                 }
                 if (p2Var != null) {
-                    p2Var.presentFragment(xn.R9(j10));
+                    p2Var.presentFragment(zn.R9(j10));
                     break;
                 }
                 break;
@@ -417,37 +416,37 @@ public final /* synthetic */ class v implements Runnable {
                 SharedPrefsHelper.setWebViewConfirmShown(((ChatActivityEnterView) obj2).N, j10, true);
                 break;
             case 20:
-                mi miVar = (mi) obj2;
-                z4.M(miVar.getContext(), j10, new tg(miVar, 14), (g6) obj);
+                li liVar = (li) obj2;
+                z4.M(liVar.getContext(), j10, new tg(liVar, 14), (f6) obj);
                 break;
             case 21:
-                om omVar = (om) obj2;
-                mm mmVar2 = (mm) obj;
-                pm pmVar = omVar.M;
-                if (!pmVar.r.H1 && omVar.y == j10 && (mmVar = omVar.C) == mmVar2) {
-                    pmVar.G = mmVar;
-                    pmVar.J = mmVar.a.a;
-                    pmVar.H = false;
-                    omVar.D = 0.0f;
-                    omVar.invalidate();
-                    ValueAnimator valueAnimator = pmVar.I;
+                mm mmVar = (mm) obj2;
+                km kmVar2 = (km) obj;
+                nm nmVar = mmVar.M;
+                if (!nmVar.r.H1 && mmVar.y == j10 && (kmVar = mmVar.C) == kmVar2) {
+                    nmVar.G = kmVar;
+                    nmVar.J = kmVar.a.a;
+                    nmVar.H = false;
+                    mmVar.D = 0.0f;
+                    mmVar.invalidate();
+                    ValueAnimator valueAnimator = nmVar.I;
                     if (valueAnimator != null) {
                         valueAnimator.cancel();
                     }
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                    pmVar.I = ofFloat;
-                    ofFloat.addUpdateListener(new jm(omVar, 0));
-                    pmVar.I.setDuration(200L);
-                    pmVar.I.start();
-                    mm mmVar3 = pmVar.G;
-                    RectF f10 = mmVar3.f(mmVar3.e());
-                    RectF d = pmVar.G.d();
-                    pmVar.D = (((pmVar.y - f10.left) / f10.width()) + 0.5f) / 2.0f;
-                    pmVar.C = (pmVar.B - f10.top) / f10.height();
-                    pmVar.E = d.width();
-                    pmVar.F = d.height();
+                    nmVar.I = ofFloat;
+                    ofFloat.addUpdateListener(new hm(mmVar, 0));
+                    nmVar.I.setDuration(200L);
+                    nmVar.I.start();
+                    km kmVar3 = nmVar.G;
+                    RectF f10 = kmVar3.f(kmVar3.e());
+                    RectF d = nmVar.G.d();
+                    nmVar.D = (((nmVar.y - f10.left) / f10.width()) + 0.5f) / 2.0f;
+                    nmVar.C = (nmVar.B - f10.top) / f10.height();
+                    nmVar.E = d.width();
+                    nmVar.F = d.height();
                     try {
-                        pmVar.performHapticFeedback(0, 2);
+                        nmVar.performHapticFeedback(0, 2);
                         break;
                     } catch (Exception unused) {
                         return;
@@ -455,28 +454,28 @@ public final /* synthetic */ class v implements Runnable {
                 }
                 break;
             case 22:
-                i80.Xc((i80) obj2, j10, (TLRPC.Chat) obj);
+                h80.Xc((h80) obj2, j10, (TLRPC.Chat) obj);
                 break;
             case 23:
-                ((yu0) obj2).s1.presentFragment(xn.Q9(((MessageObject) obj).getId(), j10));
+                ((yu0) obj2).s1.presentFragment(zn.Q9(((MessageObject) obj).getId(), j10));
                 break;
             case 24:
                 xw0.w1((xw0) obj2, (TLRPC.TL_messages_emojiGroups) obj, j10);
                 break;
             case 25:
-                py pyVar2 = (py) obj2;
+                qy qyVar2 = (qy) obj2;
                 x xVar = (x) obj;
-                if (pyVar2.D.bot_admin_rights != null) {
-                    pyVar2.getMessagesController().setUserAdminRole(-j10, pyVar2.getMessagesController().getUser(Long.valueOf(pyVar2.E)), pyVar2.D.bot_admin_rights, null, false, pyVar2, true, true, null, xVar, new gu(xVar, i14));
+                if (qyVar2.D.bot_admin_rights != null) {
+                    qyVar2.getMessagesController().setUserAdminRole(-j10, qyVar2.getMessagesController().getUser(Long.valueOf(qyVar2.E)), qyVar2.D.bot_admin_rights, null, false, qyVar2, true, true, null, xVar, new hu(xVar, i14));
                     break;
                 } else {
                     xVar.run();
                     break;
                 }
             case 26:
-                d60 d60Var = (d60) obj2;
+                e60 e60Var = (e60) obj2;
                 TLRPC.Updates updates = (TLRPC.Updates) obj;
-                d60Var.getClass();
+                e60Var.getClass();
                 TLRPC.Update update = updates.update;
                 if (update instanceof TL_update.TL_updateNewMessage) {
                     TLRPC.Message message = ((TL_update.TL_updateNewMessage) update).message;
@@ -504,10 +503,10 @@ public final /* synthetic */ class v implements Runnable {
                         }
                     }
                 }
-                ChatObject.Call call = d60Var.X0;
+                ChatObject.Call call = e60Var.X0;
                 if (call != null && i16 != 0) {
                     call.invitedUsersMessageIds.put(Long.valueOf(j10), ChatObject.Call.InvitedUser.make(i16));
-                    d60Var.O0(true);
+                    e60Var.O0(true);
                     break;
                 }
                 break;
@@ -516,7 +515,7 @@ public final /* synthetic */ class v implements Runnable {
                 Long l10 = (Long) obj;
                 p2 U3 = LaunchActivity.U();
                 if (U3 != null) {
-                    xn R9 = xn.R9(l10.longValue());
+                    zn R9 = zn.R9(l10.longValue());
                     U3.presentFragment(R9);
                     TLRPC.Chat chat = MessagesController.getInstance(launchActivity.L).getChat(Long.valueOf(-l10.longValue()));
                     if (chat != null) {
@@ -528,12 +527,12 @@ public final /* synthetic */ class v implements Runnable {
             case 28:
                 LaunchActivity launchActivity2 = (LaunchActivity) obj2;
                 Pattern pattern = LaunchActivity.y1;
-                AndroidUtilities.runOnUIThread(new sq(launchActivity2, MessagesStorage.getInstance(launchActivity2.L).getUser(j10), (x90) obj, 13));
+                AndroidUtilities.runOnUIThread(new tq(launchActivity2, MessagesStorage.getInstance(launchActivity2.L).getUser(j10), (y90) obj, 13));
                 break;
             default:
-                bd0 bd0Var = (bd0) obj2;
+                cd0 cd0Var = (cd0) obj2;
                 TLObject tLObject2 = (TLObject) obj;
-                if (bd0Var.F != null) {
+                if (cd0Var.F != null) {
                     TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject2;
                     int i28 = 0;
                     while (i28 < messages_messages.messages.size()) {
@@ -543,17 +542,17 @@ public final /* synthetic */ class v implements Runnable {
                         }
                         i28++;
                     }
-                    bd0Var.getMessagesStorage().putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
-                    bd0Var.getMessagesController().putUsers(messages_messages.users, false);
-                    bd0Var.getMessagesController().putChats(messages_messages.chats, false);
-                    bd0Var.getLocationController().locationsCache.k(messages_messages.messages, j10);
-                    bd0Var.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveLocationsCacheChanged, Long.valueOf(j10));
-                    bd0Var.i0(messages_messages.messages);
-                    bd0Var.getLocationController().markLiveLoactionsAsRead(bd0Var.b0);
-                    if (bd0Var.G0 == null) {
-                        kc0 kc0Var = new kc0(bd0Var, i13);
-                        bd0Var.G0 = kc0Var;
-                        AndroidUtilities.runOnUIThread(kc0Var, 5000L);
+                    cd0Var.getMessagesStorage().putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
+                    cd0Var.getMessagesController().putUsers(messages_messages.users, false);
+                    cd0Var.getMessagesController().putChats(messages_messages.chats, false);
+                    cd0Var.getLocationController().locationsCache.k(messages_messages.messages, j10);
+                    cd0Var.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveLocationsCacheChanged, Long.valueOf(j10));
+                    cd0Var.i0(messages_messages.messages);
+                    cd0Var.getLocationController().markLiveLoactionsAsRead(cd0Var.b0);
+                    if (cd0Var.G0 == null) {
+                        lc0 lc0Var = new lc0(cd0Var, i13);
+                        cd0Var.G0 = lc0Var;
+                        AndroidUtilities.runOnUIThread(lc0Var, 5000L);
                         break;
                     }
                 }

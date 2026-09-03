@@ -1,53 +1,21 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
+import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class zb0 extends cg.b {
-    public final CharSequence c;
-    public final int d;
-    public final int e;
-    public final int f;
-
-    public zb0(int i10, int i11, CharSequence charSequence, int i12, int i13) {
-        super(i10, false);
-        this.c = charSequence;
-        this.d = i11;
-        this.e = i12;
-        this.f = i13;
+public final class zb0 extends org.telegram.ui.Cells.z8 {
+    @Override // org.telegram.ui.Cells.z8, android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setEnabled(true);
     }
 
-    public static zb0 b(int i10, String str) {
-        return new zb0(4, 0, str, i10, 0);
-    }
-
-    public static zb0 c(int i10, int i11, String str) {
-        return new zb0(3, i10, str, i11, 0);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof zb0)) {
-            return false;
-        }
-        zb0 zb0Var = (zb0) obj;
-        int i10 = zb0Var.a;
-        int i11 = this.a;
-        if (i10 != i11) {
-            return false;
-        }
-        if (i11 == 3 && zb0Var.d != this.d) {
-            return false;
-        }
-        if (i11 == 5 && zb0Var.f != this.f) {
-            return false;
-        }
-        if ((i11 == 3 || i11 == 4) && zb0Var.e != this.e) {
-            return false;
-        }
-        return !(i11 == 0 || i11 == 2 || i11 == 3 || i11 == 4 || i11 == 5) || TextUtils.equals(zb0Var.c, this.c);
+    @Override // android.view.View
+    public final void onPopulateAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
+        super.onPopulateAccessibilityEvent(accessibilityEvent);
+        accessibilityEvent.setContentDescription(getTextView().getText());
+        setContentDescription(getTextView().getText());
     }
 }

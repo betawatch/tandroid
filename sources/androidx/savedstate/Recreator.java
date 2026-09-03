@@ -18,9 +18,9 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import kotlin.jvm.internal.j;
-import org.telegram.ui.yh;
+import vh.w2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class Recreator implements r {
     public final f a;
@@ -77,14 +77,14 @@ public final class Recreator implements r {
                         if (!new HashSet(linkedHashMap.keySet()).isEmpty()) {
                             g10.g();
                         }
-                    } catch (Exception e6) {
-                        throw new RuntimeException(yh.k("Failed to instantiate ", str2), e6);
+                    } catch (Exception e) {
+                        throw new RuntimeException(w2.e("Failed to instantiate ", str2), e);
                     }
-                } catch (NoSuchMethodException e10) {
-                    throw new IllegalStateException("Class " + asSubclass.getSimpleName() + " must have default constructor in order to be automatically recreated", e10);
+                } catch (NoSuchMethodException e6) {
+                    throw new IllegalStateException("Class " + asSubclass.getSimpleName() + " must have default constructor in order to be automatically recreated", e6);
                 }
-            } catch (ClassNotFoundException e11) {
-                throw new RuntimeException(a.o("Class ", str2, " wasn't found"), e11);
+            } catch (ClassNotFoundException e10) {
+                throw new RuntimeException(a.o("Class ", str2, " wasn't found"), e10);
             }
         }
     }

@@ -5,7 +5,7 @@ import android.view.View;
 import java.util.HashSet;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vx0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -63,17 +63,17 @@ public final /* synthetic */ class vx0 implements View.OnClickListener {
                     int i11 = 0;
                     while (i11 < profileActivity.getParentLayout().getFragmentStack().size()) {
                         org.telegram.ui.ActionBar.p2 p2Var = (org.telegram.ui.ActionBar.p2) profileActivity.getParentLayout().getFragmentStack().get(i11);
-                        if (p2Var instanceof py) {
-                            py pyVar = (py) p2Var;
-                            kx kxVar = pyVar.C3;
-                            if (kxVar != null) {
-                                org.telegram.ui.ActionBar.p2 fragment = kxVar.getFragment();
+                        if (p2Var instanceof qy) {
+                            qy qyVar = (qy) p2Var;
+                            lx lxVar = qyVar.C3;
+                            if (lxVar != null) {
+                                org.telegram.ui.ActionBar.p2 fragment = lxVar.getFragment();
                                 if ((fragment instanceof sf1) && (-((sf1) fragment).a) == profileActivity.a()) {
-                                    pyVar.C3.a();
+                                    qyVar.C3.a();
                                 }
                             }
-                        } else if (p2Var instanceof xn) {
-                            if (((xn) p2Var).a() == profileActivity.a()) {
+                        } else if (p2Var instanceof zn) {
+                            if (((zn) p2Var).a() == profileActivity.a()) {
                                 ((ActionBarLayout) profileActivity.getParentLayout()).a0(p2Var, false);
                                 i11--;
                             }

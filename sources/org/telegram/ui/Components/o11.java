@@ -10,14 +10,14 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class o11 extends rl0 {
+public final class o11 extends ql0 {
     public final Context c;
     public int d;
     public ArrayList e = new ArrayList();
     public ArrayList f = new ArrayList();
-    public gy h;
+    public ey h;
     public String n;
     public final /* synthetic */ ThemeEditorView.EditorAlert r;
 
@@ -61,12 +61,12 @@ public final class o11 extends rl0 {
         return spannableStringBuilder;
     }
 
-    @Override // org.telegram.ui.Components.rl0
-    public final boolean D(f2.m1 m1Var) {
+    @Override // org.telegram.ui.Components.ql0
+    public final boolean D(f2.l1 l1Var) {
         return true;
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final int h() {
         if (this.e.isEmpty()) {
             return 0;
@@ -74,36 +74,36 @@ public final class o11 extends rl0 {
         return this.e.size() + 1;
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final int j(int i10) {
         return i10 == 0 ? 1 : 0;
     }
 
-    @Override // f2.p0
-    public final void v(f2.m1 m1Var, int i10) {
-        if (m1Var.f == 0) {
+    @Override // f2.o0
+    public final void v(f2.l1 l1Var, int i10) {
+        if (l1Var.f == 0) {
             int i11 = i10 - 1;
-            org.telegram.ui.ActionBar.m6 m6Var = (org.telegram.ui.ActionBar.m6) ((ArrayList) this.e.get(i11)).get(0);
-            int b10 = m6Var.f == org.telegram.ui.ActionBar.k6.Nd ? 0 : m6Var.b();
-            org.telegram.ui.Cells.v8 v8Var = (org.telegram.ui.Cells.v8) m1Var.a;
-            v8Var.a.setText((CharSequence) this.f.get(i11));
-            v8Var.b = b10;
-            v8Var.setWillNotDraw(b10 == 0);
-            v8Var.invalidate();
+            org.telegram.ui.ActionBar.l6 l6Var = (org.telegram.ui.ActionBar.l6) ((ArrayList) this.e.get(i11)).get(0);
+            int b10 = l6Var.f == org.telegram.ui.ActionBar.j6.Nd ? 0 : l6Var.b();
+            org.telegram.ui.Cells.u8 u8Var = (org.telegram.ui.Cells.u8) l1Var.a;
+            u8Var.a.setText((CharSequence) this.f.get(i11));
+            u8Var.b = b10;
+            u8Var.setWillNotDraw(b10 == 0);
+            u8Var.invalidate();
         }
     }
 
-    @Override // f2.p0
-    public final f2.m1 x(ViewGroup viewGroup, int i10) {
-        View v8Var;
+    @Override // f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+        View u8Var;
         Context context = this.c;
         if (i10 != 0) {
-            v8Var = new View(context);
-            v8Var.setLayoutParams(new f2.x0(-1, AndroidUtilities.dp(56.0f)));
+            u8Var = new View(context);
+            u8Var.setLayoutParams(new f2.w0(-1, AndroidUtilities.dp(56.0f)));
         } else {
-            v8Var = new org.telegram.ui.Cells.v8(context);
-            v8Var.setLayoutParams(new f2.x0(-1, -2));
+            u8Var = new org.telegram.ui.Cells.u8(context);
+            u8Var.setLayoutParams(new f2.w0(-1, -2));
         }
-        return new el0(v8Var);
+        return new dl0(u8Var);
     }
 }

@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class u extends ArrayAdapter {
     public final float a;
@@ -24,7 +24,7 @@ public final class u extends ArrayAdapter {
     public u(v vVar, Context context, ArrayList arrayList) {
         super(context, 0, arrayList);
         this.b = vVar;
-        this.a = j7.a0.c(context);
+        this.a = j7.z.c(context);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:21:0x00ac  */
@@ -47,35 +47,35 @@ public final class u extends ArrayAdapter {
             layoutParams.height = i11;
             findViewById.setLayoutParams(layoutParams);
         }
-        c2.a0 a0Var = (c2.a0) getItem(i10);
-        if (a0Var != null) {
-            boolean z10 = a0Var.g;
+        c2.b0 b0Var = (c2.b0) getItem(i10);
+        if (b0Var != null) {
+            boolean z10 = b0Var.g;
             TextView textView = (TextView) view.findViewById(R.id.mr_name);
             textView.setEnabled(z10);
-            textView.setText(a0Var.d);
+            textView.setText(b0Var.d);
             MediaRouteVolumeSlider mediaRouteVolumeSlider = (MediaRouteVolumeSlider) view.findViewById(R.id.mr_volume_slider);
             Context context = viewGroup.getContext();
             OverlayListView overlayListView = vVar.R;
-            int b10 = j7.a0.b(context, 0);
+            int b10 = j7.z.b(context, 0);
             if (Color.alpha(b10) != 255) {
                 b10 = i0.a.h(b10, ((Integer) overlayListView.getTag()).intValue());
             }
             mediaRouteVolumeSlider.a(b10, b10);
-            mediaRouteVolumeSlider.setTag(a0Var);
-            vVar.e0.put(a0Var, mediaRouteVolumeSlider);
+            mediaRouteVolumeSlider.setTag(b0Var);
+            vVar.e0.put(b0Var, mediaRouteVolumeSlider);
             mediaRouteVolumeSlider.b(!z10);
             mediaRouteVolumeSlider.setEnabled(z10);
             if (z10) {
                 if (vVar.L) {
-                    if (((!a0Var.e() || c2.c0.g()) ? a0Var.o : 0) == 1) {
+                    if (((!b0Var.e() || c2.d0.g()) ? b0Var.o : 0) == 1) {
                         z4 = true;
                         if (z4) {
                             mediaRouteVolumeSlider.setMax(100);
                             mediaRouteVolumeSlider.setProgress(100);
                             mediaRouteVolumeSlider.setEnabled(false);
                         } else {
-                            mediaRouteVolumeSlider.setMax(a0Var.q);
-                            mediaRouteVolumeSlider.setProgress(a0Var.p);
+                            mediaRouteVolumeSlider.setMax(b0Var.q);
+                            mediaRouteVolumeSlider.setProgress(b0Var.p);
                             mediaRouteVolumeSlider.setOnSeekBarChangeListener(vVar.Y);
                         }
                     }
@@ -85,9 +85,9 @@ public final class u extends ArrayAdapter {
                 }
             }
             ((ImageView) view.findViewById(R.id.mr_volume_item_icon)).setAlpha(z10 ? 255 : (int) (this.a * 255.0f));
-            ((LinearLayout) view.findViewById(R.id.volume_item_container)).setVisibility(vVar.W.contains(a0Var) ? 4 : 0);
+            ((LinearLayout) view.findViewById(R.id.volume_item_container)).setVisibility(vVar.W.contains(b0Var) ? 4 : 0);
             HashSet hashSet = vVar.U;
-            if (hashSet != null && hashSet.contains(a0Var)) {
+            if (hashSet != null && hashSet.contains(b0Var)) {
                 AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 0.0f);
                 alphaAnimation.setDuration(0L);
                 alphaAnimation.setFillEnabled(true);

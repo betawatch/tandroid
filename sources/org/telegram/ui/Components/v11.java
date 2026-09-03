@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class v11 {
     public final Paint a;
@@ -43,16 +43,16 @@ public final class v11 {
         w11 w11Var = this.f;
         ImageReceiver imageReceiver = w11Var.M;
         float f17 = w11Var.e;
-        org.telegram.ui.ActionBar.h5 h5Var = w11Var.P;
-        org.telegram.ui.ActionBar.h5 h5Var2 = w11Var.O;
+        org.telegram.ui.ActionBar.g5 g5Var = w11Var.P;
+        org.telegram.ui.ActionBar.g5 g5Var2 = w11Var.O;
         float f18 = w11Var.d;
         float f19 = w11Var.c;
         int i11 = w11Var.H;
         RectF rectF = w11Var.v;
         if (w11Var.T || w11Var.y != null) {
-            lp lpVar = w11Var.D;
+            ip ipVar = w11Var.D;
             f11 = 255.0f;
-            int v02 = w11Var.D.a.m() ? org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Oh, w11Var.x) : ((org.telegram.ui.ActionBar.e4) lpVar.a.f.get(lpVar.c)).j;
+            int v02 = w11Var.D.a.m() ? org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Oh, w11Var.x) : ((org.telegram.ui.ActionBar.d4) ipVar.a.f.get(ipVar.c)).j;
             Paint paint = this.a;
             paint.setColor(v02);
             paint.setAlpha((int) (w11Var.J * f10 * 255.0f));
@@ -73,9 +73,9 @@ public final class v11 {
         Paint paint3 = this.c;
         paint3.setAlpha(i12);
         rectF.set(f19, f19, w11Var.getWidth() - f19, w11Var.getHeight() - f19);
-        org.telegram.ui.ActionBar.f4 f4Var = w11Var.D.a;
-        if (f4Var != null) {
-            if (!f4Var.m()) {
+        org.telegram.ui.ActionBar.e4 e4Var = w11Var.D.a;
+        if (e4Var != null) {
+            if (!e4Var.m()) {
                 if (i11 != 4) {
                     if (i11 == 2) {
                         if (w11Var.D.e != null) {
@@ -104,9 +104,9 @@ public final class v11 {
                     } else {
                         f16 = 2.0f;
                         f15 = f18;
-                        h5Var2.setBounds((int) rectF.left, ((int) rectF.top) - AndroidUtilities.dp(2.0f), AndroidUtilities.dp(f12) + ((int) rectF.right), AndroidUtilities.dp(2.0f) + ((int) rectF.bottom));
-                        h5Var2.O = (int) (rectF.height() * f13);
-                        h5Var2.c(canvas, paint2);
+                        g5Var2.setBounds((int) rectF.left, ((int) rectF.top) - AndroidUtilities.dp(2.0f), AndroidUtilities.dp(f12) + ((int) rectF.right), AndroidUtilities.dp(2.0f) + ((int) rectF.bottom));
+                        g5Var2.O = (int) (rectF.height() * f13);
+                        g5Var2.c(canvas, paint2);
                     }
                     if (i11 == 0 || i11 == 3) {
                         float dp3 = f19 + AndroidUtilities.dp(5.0f);
@@ -118,9 +118,9 @@ public final class v11 {
                         i10 = 3;
                     }
                     if (i11 != 0 && i11 != i10) {
-                        h5Var.setBounds(((int) rectF.left) - AndroidUtilities.dp(f12), ((int) rectF.top) - AndroidUtilities.dp(f16), (int) rectF.right, AndroidUtilities.dp(f16) + ((int) rectF.bottom));
-                        h5Var.O = (int) (rectF.height() * f13);
-                        h5Var.c(canvas, paint3);
+                        g5Var.setBounds(((int) rectF.left) - AndroidUtilities.dp(f12), ((int) rectF.top) - AndroidUtilities.dp(f16), (int) rectF.right, AndroidUtilities.dp(f16) + ((int) rectF.bottom));
+                        g5Var.O = (int) (rectF.height() * f13);
+                        g5Var.c(canvas, paint3);
                         return;
                     }
                     canvas.drawRoundRect(rectF, rectF.height() * f13, rectF.height() * f13, paint3);
@@ -158,14 +158,14 @@ public final class v11 {
     }
 
     public final void b(Canvas canvas, float f10) {
-        org.telegram.ui.ActionBar.f4 f4Var;
+        org.telegram.ui.ActionBar.e4 e4Var;
         int[] iArr;
         int i10;
         Drawable drawable = this.d;
         w11 w11Var = this.f;
         if (drawable == null) {
-            lp lpVar = w11Var.D;
-            if (lpVar == null || (f4Var = lpVar.a) == null || !f4Var.m() || w11Var.K == null) {
+            ip ipVar = w11Var.D;
+            if (ipVar == null || (e4Var = ipVar.a) == null || !e4Var.m() || w11Var.K == null) {
                 RectF rectF = w11Var.v;
                 float f11 = w11Var.b;
                 canvas.drawRoundRect(rectF, f11, f11, w11Var.s);
@@ -194,7 +194,7 @@ public final class v11 {
         this.d.setAlpha((int) (255.0f * f10));
         this.d.draw(canvas);
         Drawable drawable3 = this.d;
-        if ((drawable3 instanceof ColorDrawable) || ((drawable3 instanceof fc0) && (i10 = (iArr = ((fc0) drawable3).a)[0]) == iArr[1] && i10 == iArr[2] && i10 == iArr[3])) {
+        if ((drawable3 instanceof ColorDrawable) || ((drawable3 instanceof ec0) && (i10 = (iArr = ((ec0) drawable3).a)[0]) == iArr[1] && i10 == iArr[2] && i10 == iArr[3])) {
             int alpha = w11Var.r.getAlpha();
             w11Var.r.setAlpha((int) (alpha * f10));
             float f12 = w11Var.c;

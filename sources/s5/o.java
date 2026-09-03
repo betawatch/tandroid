@@ -3,12 +3,12 @@ package s5;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.internal.BasePendingResult;
 import java.util.Iterator;
-import oh.h4;
+import org.telegram.ui.Components.tp0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class o extends BasePendingResult {
-    public h4 o;
+    public tp0 o;
     public final boolean p;
     public final /* synthetic */ h q;
 
@@ -28,7 +28,7 @@ public abstract class o extends BasePendingResult {
 
     public final u5.o o() {
         if (this.o == null) {
-            this.o = new h4(this, 18);
+            this.o = new tp0(this, 13);
         }
         return this.o;
     }

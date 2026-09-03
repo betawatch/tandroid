@@ -1,91 +1,76 @@
 package lh;
 
-import android.content.Context;
-import android.os.Bundle;
-import android.widget.FrameLayout;
-import java.util.List;
+import android.text.SpannableStringBuilder;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.GiftAuctionController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.rl0;
-import org.telegram.ui.Components.sa;
-import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.w51;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.Components.ic;
+import org.telegram.ui.Components.lq;
+import org.telegram.ui.Components.nb;
+import org.telegram.ui.Components.qb;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
-/* loaded from: classes.dex */
-public final class d extends sa {
-    public static final /* synthetic */ int X = 0;
-    public final List U;
-    public final GiftAuctionController.Auction V;
-    public w51 W;
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class d implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ q b;
 
-    public d(Context context, g6 g6Var, GiftAuctionController.Auction auction, List list) {
-        super(context, null, false, false, false, false, false, 2, g6Var);
-        this.V = auction;
-        this.U = list;
-        this.v = 0.2f;
-        this.I = false;
-        this.H = AndroidUtilities.dp(12.0f);
-        this.e.setTitle(y());
-        fixNavigationBar();
-        this.d.setPadding(this.backgroundPaddingLeft, AndroidUtilities.dp(9.0f), this.backgroundPaddingLeft, AndroidUtilities.dp(64.0f));
-        this.d.setOnItemClickListener(new a(0));
-        this.d.setOverScrollMode(2);
-        qh.d dVar = new qh.d(context, g6Var, true);
-        dVar.setOnClickListener(new androidx.mediarouter.app.c(this, 11));
-        dVar.g(LocaleController.getString(R.string.OK), false, true);
-        FrameLayout.LayoutParams d = k7.c6.d(-1, 48.0f, 80, 16.0f, 16.0f, 16.0f, 16.0f);
-        int i10 = d.leftMargin;
-        int i11 = this.backgroundPaddingLeft;
-        d.leftMargin = i10 + i11;
-        d.rightMargin += i11;
-        this.containerView.addView(dVar, d);
-        this.W.N(false);
+    public /* synthetic */ d(q qVar, int i10) {
+        this.a = i10;
+        this.b = qVar;
     }
 
-    public static void P(d dVar, TL_stars.TL_StarGiftAuctionAcquiredGift tL_StarGiftAuctionAcquiredGift) {
-        long peerDialogId = DialogObject.getPeerDialogId(tL_StarGiftAuctionAcquiredGift.peer);
-        dVar.dismiss();
-        org.telegram.ui.ActionBar.p2 U = LaunchActivity.U();
-        if (U == null || UserObject.isService(peerDialogId)) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        q qVar = this.b;
+        switch (i10) {
+            case 0:
+                d dVar = qVar.k0;
+                int currentTime = qVar.getConnectionsManager().getCurrentTime();
+                qVar.O.setEnabled(qVar.M > 0 || qVar.D > currentTime);
+                if (currentTime >= qVar.D) {
+                    qVar.O.f(null, true);
+                    qVar.O.g(ja.V0(false, qVar.L ? LocaleController.getString(R.string.BotStarsButtonWithdrawShortAll) : LocaleController.formatPluralStringSpaced("BotStarsButtonWithdrawShort", (int) qVar.M), qVar.Q), true, true);
+                    break;
+                } else {
+                    qVar.O.g(LocaleController.getString(R.string.BotStarsButtonWithdrawShortUntil), true, true);
+                    if (qVar.j0 == null) {
+                        qVar.j0 = new SpannableStringBuilder("l");
+                        lq lqVar = new lq(R.drawable.mini_switch_lock, 0);
+                        lqVar.setTopOffset(1);
+                        qVar.j0.setSpan(lqVar, 0, 1, 33);
+                    }
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+                    spannableStringBuilder.append((CharSequence) qVar.j0).append((CharSequence) q.j0(qVar.D - currentTime));
+                    qVar.O.f(spannableStringBuilder, true);
+                    ic icVar = qVar.X;
+                    if (icVar != null) {
+                        nb nbVar = icVar.e;
+                        if ((nbVar instanceof qb) && nbVar.isAttachedToWindow()) {
+                            org.telegram.ui.b.o(R.string.BotStarsWithdrawalToast, new Object[]{q.j0(qVar.D - currentTime)}, ((qb) qVar.X.e).b);
+                        }
+                    }
+                    AndroidUtilities.cancelRunOnUIThread(dVar);
+                    AndroidUtilities.runOnUIThread(dVar, 1000L);
+                    break;
+                }
+                break;
+            case 1:
+                q.U(qVar);
+                break;
+            case 2:
+                q.V(qVar);
+                break;
+            case 3:
+                ze.d.s(qVar.getParentActivity(), LocaleController.getString(R.string.BotMonetizationBalanceInfoLink));
+                break;
+            case 4:
+                ze.d.s(qVar.getParentActivity(), LocaleController.getString(R.string.BotStarsWithdrawInfoLink));
+                break;
+            default:
+                qVar.P.setLoading(false);
+                break;
         }
-        Bundle bundle = new Bundle();
-        if (peerDialogId > 0) {
-            bundle.putLong("user_id", peerDialogId);
-            if (peerDialogId == UserConfig.getInstance(dVar.currentAccount).getClientUserId()) {
-                bundle.putBoolean("my_profile", true);
-            }
-        } else {
-            bundle.putLong("chat_id", -peerDialogId);
-        }
-        bundle.putBoolean("open_gifts", true);
-        U.presentFragment(new ProfileActivity(bundle, null));
-    }
-
-    @Override // org.telegram.ui.Components.sa
-    public final rl0 v(sl0 sl0Var) {
-        w51 w51Var = new w51(this.d, getContext(), this.currentAccount, 0, true, new eg.p1(this, 4), this.resourcesProvider);
-        this.W = w51Var;
-        w51Var.r = false;
-        return w51Var;
-    }
-
-    @Override // org.telegram.ui.Components.sa
-    public final CharSequence y() {
-        List list = this.U;
-        if (list == null) {
-            return null;
-        }
-        return LocaleController.formatPluralString("Gift2AuctionsAcquiredGifts", list.size(), new Object[0]);
     }
 }

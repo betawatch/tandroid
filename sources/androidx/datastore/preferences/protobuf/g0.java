@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class g0 extends i0 {
     public static final Class c = DesugarCollections.unmodifiableList(Collections.EMPTY_LIST).getClass();
@@ -32,9 +32,9 @@ public final class g0 extends i0 {
         if ((list instanceof y0) && (list instanceof z)) {
             z zVar = (z) list;
             if (!((b) zVar).a) {
-                z e6 = zVar.e(list.size() + i10);
-                s1.o(obj, j10, e6);
-                return e6;
+                z e = zVar.e(list.size() + i10);
+                s1.o(obj, j10, e);
+                return e;
             }
         }
         return list;

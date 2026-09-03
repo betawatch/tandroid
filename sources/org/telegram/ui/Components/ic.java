@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public class ic {
     public static ic w;
@@ -89,9 +89,9 @@ public class ic {
         if (p2Var == null) {
             return new gb();
         }
-        if (p2Var instanceof org.telegram.ui.xn) {
+        if (p2Var instanceof org.telegram.ui.zn) {
             nb.access$000(ebVar, -2, 1);
-        } else if (p2Var instanceof org.telegram.ui.py) {
+        } else if (p2Var instanceof org.telegram.ui.qy) {
             nb.access$000(ebVar, -1, 0);
         }
         return new ic(p2Var, p2Var.getBulletinLayoutContainer(), ebVar, i10);
@@ -132,7 +132,7 @@ public class ic {
                     }
                     mb mbVar = this.q;
                     Objects.requireNonNull(nbVar);
-                    mbVar.c(nbVar, new wa(nbVar, i10), new ua(this, i11), new xa(this, i10));
+                    mbVar.b(nbVar, new wa(nbVar, i10), new ua(this, i11), new xa(this, i10));
                     return;
                 }
             }
@@ -236,7 +236,7 @@ public class ic {
         frameLayout.addOnLayoutChangeListener(r22);
         nbVar.addOnLayoutChangeListener(new ab(this, z4));
         if (!this.t) {
-            nbVar.addOnAttachStateChangeListener(new ff.b(this, 10));
+            nbVar.addOnAttachStateChangeListener(new ef.b(this, 10));
         }
         frameLayout.addView(zaVar);
     }

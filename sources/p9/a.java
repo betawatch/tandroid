@@ -1,23 +1,92 @@
 package p9;
 
-import mb.d;
+import android.text.TextUtils;
+import android.util.Log;
+import com.google.android.gms.internal.clearcut.z0;
+import java.util.HashMap;
+import l7.w0;
+import org.json.JSONObject;
+import pa.j;
+import ra.m;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class a {
-    public final c5.c a;
-    public final d b;
-    public final long c;
-    public final double d;
-    public final double e;
-    public final int f;
+public final class a implements m {
+    public final String a;
 
-    public a(long j10, c5.c cVar, d dVar, double d, double d10, int i10) {
-        this.c = j10;
-        this.a = cVar;
-        this.b = dVar;
-        this.d = d;
-        this.e = d10;
-        this.f = i10;
+    public a(String str, cb.b bVar) {
+        if (str == null) {
+            throw new IllegalArgumentException("url must not be null.");
+        }
+        this.a = str;
+    }
+
+    public static void a(w0 w0Var, d dVar) {
+        String str = dVar.a;
+        if (str != null) {
+            w0Var.w("X-CRASHLYTICS-GOOGLE-APP-ID", str);
+        }
+        w0Var.w("X-CRASHLYTICS-API-CLIENT-TYPE", "android");
+        w0Var.w("X-CRASHLYTICS-API-CLIENT-VERSION", "18.6.0");
+        w0Var.w("Accept", "application/json");
+        String str2 = dVar.b;
+        if (str2 != null) {
+            w0Var.w("X-CRASHLYTICS-DEVICE-MODEL", str2);
+        }
+        String str3 = dVar.c;
+        if (str3 != null) {
+            w0Var.w("X-CRASHLYTICS-OS-BUILD-VERSION", str3);
+        }
+        String str4 = dVar.d;
+        if (str4 != null) {
+            w0Var.w("X-CRASHLYTICS-OS-DISPLAY-VERSION", str4);
+        }
+        String str5 = dVar.e.b().a;
+        if (str5 != null) {
+            w0Var.w("X-CRASHLYTICS-INSTALLATION-ID", str5);
+        }
+    }
+
+    public static HashMap b(d dVar) {
+        HashMap hashMap = new HashMap();
+        hashMap.put("build_version", dVar.h);
+        hashMap.put("display_version", dVar.g);
+        hashMap.put("source", Integer.toString(dVar.i));
+        String str = dVar.f;
+        if (!TextUtils.isEmpty(str)) {
+            hashMap.put("instance", str);
+        }
+        return hashMap;
+    }
+
+    public JSONObject c(z0 z0Var) {
+        int i10 = z0Var.b;
+        f9.b bVar = f9.b.a;
+        bVar.c("Settings response code was: " + i10);
+        String str = this.a;
+        if (i10 != 200 && i10 != 201 && i10 != 202 && i10 != 203) {
+            String str2 = "Settings request failed; (status: " + i10 + ") from " + str;
+            if (bVar.a(6)) {
+                Log.e("FirebaseCrashlytics", str2, null);
+            }
+            return null;
+        }
+        String str3 = z0Var.c;
+        try {
+            return new JSONObject(str3);
+        } catch (Exception e) {
+            bVar.d("Failed to parse settings JSON from " + str, e);
+            bVar.d("Settings response " + str3, null);
+            return null;
+        }
+    }
+
+    @Override // ra.m
+    public Object u2() {
+        throw new j(this.a);
+    }
+
+    public a(String str) {
+        this.a = str;
     }
 }

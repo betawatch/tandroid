@@ -12,7 +12,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class im0 implements vm0 {
     public final /* synthetic */ TLRPC.SecureValueType a;
@@ -98,7 +98,7 @@ public final class im0 implements vm0 {
         boolean z4 = this.b;
         if (!z4 && tL_inputSecureValue == null) {
             if (qaVar != null) {
-                qaVar.C(null, null);
+                qaVar.D(null, null);
                 return;
             }
             return;

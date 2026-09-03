@@ -17,10 +17,10 @@ import java.util.ArrayDeque;
 import java.util.Iterator;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-import org.telegram.ui.zy;
+import org.telegram.ui.az;
 import q5.c0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class i implements ServiceConnection {
     public int a = 0;
@@ -172,8 +172,8 @@ public final class i implements ServiceConnection {
                 try {
                     a2 = h6.a.a();
                     context = (Context) this.f.b;
-                } catch (SecurityException e6) {
-                    e = e6;
+                } catch (SecurityException e) {
+                    e = e;
                 }
                 try {
                     if (a2.c(context, context.getClass().getName(), intent, this, 1, null)) {
@@ -181,8 +181,8 @@ public final class i implements ServiceConnection {
                     } else {
                         a("Unable to bind to service");
                     }
-                } catch (SecurityException e10) {
-                    e = e10;
+                } catch (SecurityException e6) {
+                    e = e6;
                     b("Unable to bind to service", e);
                     return true;
                 }
@@ -201,7 +201,7 @@ public final class i implements ServiceConnection {
         if (Log.isLoggable("MessengerIpcClient", 2)) {
             Log.v("MessengerIpcClient", "Service connected");
         }
-        ((ScheduledExecutorService) this.f.c).execute(new zy(this, iBinder, false, 11));
+        ((ScheduledExecutorService) this.f.c).execute(new az(this, iBinder, false, 12));
     }
 
     @Override // android.content.ServiceConnection

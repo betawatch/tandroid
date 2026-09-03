@@ -11,19 +11,19 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class wo0 extends Drawable {
     public final org.telegram.ui.Components.k01 a;
     public final Drawable b;
-    public final fg.p1 c;
+    public final eg.q1 c;
 
-    public wo0(int i10, Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z4) {
+    public wo0(int i10, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z4) {
         this.a = new org.telegram.ui.Components.k01(LocaleController.formatPluralString(z4 ? "BoostLevelPlus" : "BoostLevel", i10, new Object[0]), 12.0f, AndroidUtilities.bold());
         Drawable mutate = context.getResources().getDrawable(R.drawable.mini_switch_lock).mutate();
         this.b = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        this.c = new fg.p1(org.telegram.ui.ActionBar.k6.Lj, org.telegram.ui.ActionBar.k6.Mj, -1, -1, g6Var);
+        this.c = new eg.q1(org.telegram.ui.ActionBar.j6.Lj, org.telegram.ui.ActionBar.j6.Mj, -1, -1, f6Var);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -33,9 +33,9 @@ public final class wo0 extends Drawable {
         RectF rectF = AndroidUtilities.rectTmp;
         float f10 = centerY;
         rectF.set(i10, f10 - (AndroidUtilities.dp(18.33f) / 2.0f), getIntrinsicWidth() + i10, (AndroidUtilities.dp(18.33f) / 2.0f) + f10);
-        fg.p1 p1Var = this.c;
-        p1Var.e(rectF);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), p1Var.f);
+        eg.q1 q1Var = this.c;
+        q1Var.e(rectF);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), q1Var.f);
         int dp = AndroidUtilities.dp(3.33f) + i10;
         Drawable drawable = this.b;
         drawable.setBounds(dp, (int) (f10 - ((drawable.getIntrinsicHeight() * 0.875f) / 2.0f)), (int) ((drawable.getIntrinsicWidth() * 0.875f) + AndroidUtilities.dp(3.33f) + i10), (int) android.support.v4.media.a.d(drawable.getIntrinsicHeight(), 0.875f, 2.0f, f10));

@@ -1,46 +1,27 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
+import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class c1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ h1 b;
+public final class c1 implements RendererCommon.RendererEvents {
+    public final /* synthetic */ g1 a;
 
-    public /* synthetic */ c1(h1 h1Var, int i10) {
-        this.a = i10;
-        this.b = h1Var;
+    public c1(g1 g1Var) {
+        this.a = g1Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 1:
-                this.b.I = null;
-                break;
-            default:
-                super.onAnimationEnd(animator);
-                break;
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFirstFrameRendered() {
+        g1 g1Var = this.a;
+        c2.p pVar = g1Var.V;
+        if (pVar != null) {
+            pVar.run();
+            g1Var.V = null;
         }
     }
 
-    @Override // android.animation.Animator.AnimatorListener
-    public void onAnimationEnd(Animator animator, boolean z4) {
-        View view;
-        switch (this.a) {
-            case 0:
-                cf.f fVar = this.b.L;
-                if (fVar != null && (view = fVar.j) != null) {
-                    fVar.e(view);
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationEnd(animator, z4);
-                break;
-        }
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
     }
 }

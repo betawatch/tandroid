@@ -1,234 +1,53 @@
 package org.telegram.ui;
 
-import android.view.WindowManager;
-import javax.microedition.khronos.egl.EGL10;
-import javax.microedition.khronos.egl.EGLDisplay;
-import javax.microedition.khronos.egl.EGLSurface;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Intro;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationsController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.camera.CameraView;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import j$.util.Objects;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class z5 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class z5 extends bg.b {
+    public final String c;
+    public final TL_stories.Boost d;
+    public TL_stories.PrepaidGiveaway e;
+    public boolean f;
+    public final int g;
 
-    public /* synthetic */ z5(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public z5(int i10, String str) {
+        super(i10, false);
+        this.c = str;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:80:0x0147, code lost:
-    
-        if (r2.f.equals(r2.b.eglGetCurrentSurface(12377)) == false) goto L69;
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        org.telegram.ui.Components.voip.l I0;
-        org.telegram.ui.Components.voip.u renderer;
-        org.telegram.ui.Components.voip.p pVar;
-        int i10;
-        switch (this.a) {
-            case 0:
-                BubbleActivity bubbleActivity = (BubbleActivity) this.b;
-                if (bubbleActivity.V == this) {
-                    if (AndroidUtilities.needShowPasscode(true)) {
-                        if (BuildVars.LOGS_ENABLED) {
-                            FileLog.d("lock app");
-                        }
-                        bubbleActivity.z();
-                    } else if (BuildVars.LOGS_ENABLED) {
-                        FileLog.d("didn't pass lock check");
-                    }
-                    bubbleActivity.V = null;
-                    break;
-                }
-                break;
-            case 1:
-                v9 v9Var = (v9) this.b;
-                CameraView cameraView = v9Var.c;
-                if (cameraView != null && !v9Var.J && cameraView.getCameraSession() != null) {
-                    v9Var.e.post(new yt0(this, 17));
-                    break;
-                }
-                break;
-            case 2:
-                ContactsActivity contactsActivity = (ContactsActivity) this.b;
-                contactsActivity.d.Z();
-                contactsActivity.i0 = false;
-                break;
-            case 3:
-                ExternalActionActivity externalActionActivity = (ExternalActionActivity) this.b;
-                if (externalActionActivity.w == this) {
-                    if (AndroidUtilities.needShowPasscode(true)) {
-                        if (BuildVars.LOGS_ENABLED) {
-                            FileLog.d("lock app");
-                        }
-                        externalActionActivity.i();
-                    } else if (BuildVars.LOGS_ENABLED) {
-                        FileLog.d("didn't pass lock check");
-                    }
-                    externalActionActivity.w = null;
-                    break;
-                }
-                break;
-            case 4:
-                t10 t10Var = (t10) this.b;
-                if (t10Var.J) {
-                    t10Var.f.clear();
-                    t10Var.n.clear();
-                    t10Var.r.clear();
-                    org.telegram.ui.Components.rl0 rl0Var = t10Var.d;
-                    if (rl0Var != null) {
-                        rl0Var.l();
-                        break;
-                    }
-                }
-                break;
-            case 5:
-                d60 d60Var = ((m30) this.b).b;
-                d60Var.x.setAnimation(d60Var.G0);
-                d60Var.I0 = false;
-                break;
-            case 6:
-                try {
-                    d60 d60Var2 = (d60) this.b;
-                    w30 w30Var = d60Var2.X1;
-                    if (w30Var != null && !w30Var.b && (I0 = d60.I0(d60Var2)) != null && I0.isAttachedToWindow() && (renderer = I0.getRenderer()) != null && (pVar = renderer.a) != null) {
-                        d60.E3.postRunnable(new z10(3, this, pVar));
-                        break;
-                    }
-                } catch (Exception e6) {
-                    FileLog.e(e6);
-                    return;
-                }
-                break;
-            case 7:
-                if (((u70) this.b).h) {
-                    long currentTimeMillis = System.currentTimeMillis();
-                    u70 u70Var = (u70) this.b;
-                    if (u70Var.e.equals(u70Var.b.eglGetCurrentContext())) {
-                        u70 u70Var2 = (u70) this.b;
-                        break;
-                    }
-                    u70 u70Var3 = (u70) this.b;
-                    EGL10 egl10 = u70Var3.b;
-                    EGLDisplay eGLDisplay = u70Var3.c;
-                    EGLSurface eGLSurface = u70Var3.f;
-                    if (!egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, u70Var3.e)) {
-                        if (BuildVars.LOGS_ENABLED) {
-                            org.telegram.messenger.y3.u(((u70) this.b).b, new StringBuilder("eglMakeCurrent failed "));
-                            break;
-                        }
-                    }
-                    int min = (int) Math.min(currentTimeMillis - ((u70) this.b).s, 16L);
-                    Intro.setPage(((u70) this.b).x.E);
-                    Intro.setDate((currentTimeMillis - r2.G) / 1000.0f);
-                    Intro.onDrawFrame(min);
-                    u70 u70Var4 = (u70) this.b;
-                    u70Var4.b.eglSwapBuffers(u70Var4.c, u70Var4.f);
-                    u70 u70Var5 = (u70) this.b;
-                    u70Var5.s = currentTimeMillis;
-                    float f10 = 0.0f;
-                    if (u70Var5.r == 0.0f) {
-                        for (float f11 : ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getSupportedRefreshRates()) {
-                            if (f11 > f10) {
-                                f10 = f11;
-                            }
-                        }
-                        ((u70) this.b).r = f10;
-                    }
-                    long currentTimeMillis2 = System.currentTimeMillis() - currentTimeMillis;
-                    u70 u70Var6 = (u70) this.b;
-                    u70Var6.postRunnable(u70Var6.w, Math.max(((long) (1000.0f / u70Var6.r)) - currentTimeMillis2, 0L));
-                    break;
-                }
-                break;
-            case 8:
-                LaunchActivity launchActivity = (LaunchActivity) this.b;
-                if (launchActivity.W0 == this) {
-                    if (AndroidUtilities.needShowPasscode(true)) {
-                        if (BuildVars.LOGS_ENABLED) {
-                            FileLog.d("lock app");
-                        }
-                        launchActivity.G0(true, false, -1, -1, null);
-                        try {
-                            NotificationsController.getInstance(UserConfig.selectedAccount).showNotifications();
-                        } catch (Exception e10) {
-                            FileLog.e(e10);
-                        }
-                    } else if (BuildVars.LOGS_ENABLED) {
-                        FileLog.d("didn't pass lock check");
-                    }
-                    launchActivity.W0 = null;
-                    break;
-                }
-                break;
-            case 9:
-                bf0 bf0Var = (bf0) this.b;
-                if (bf0Var.h == this) {
-                    bf0Var.o();
-                    AndroidUtilities.runOnUIThread(bf0Var.h, 1000L);
-                    break;
-                }
-                break;
-            case 10:
-                ((bj0) this.b).Q.animate().alpha(1.0f).setDuration(230L);
-                break;
-            case 11:
-                ij0 ij0Var = (ij0) this.b;
-                String str = ij0Var.g0;
-                if (str != null) {
-                    ij0.Q(ij0Var, str);
-                    break;
-                }
-                break;
-            case 12:
-                mv0 mv0Var = (mv0) this.b;
-                z5 z5Var = mv0Var.v0;
-                org.telegram.ui.Cells.c6 c6Var = mv0Var.Y;
-                if (c6Var != null) {
-                    EditTextBoldCursor editField = c6Var.getEditField();
-                    if (!mv0Var.R && editField != null && mv0Var.Q && !mv0Var.V && !AndroidUtilities.usingHardwareInput && !AndroidUtilities.isInMultiwindow && AndroidUtilities.isTablet()) {
-                        editField.requestFocus();
-                        AndroidUtilities.showKeyboard(editField);
-                        AndroidUtilities.cancelRunOnUIThread(z5Var);
-                        AndroidUtilities.runOnUIThread(z5Var, 100L);
-                        break;
-                    }
-                }
-                break;
-            case 13:
-                ((na1) this.b).Y.animate().alpha(1.0f).setDuration(230L);
-                break;
-            case 14:
-                he1 he1Var = (he1) this.b;
-                he1Var.C.setVisibility(0);
-                he1Var.C.setAlpha(0.0f);
-                he1Var.C.animate().alpha(1.0f).start();
-                break;
-            default:
-                ej1 ej1Var = (ej1) this.b;
-                MessageObject messageObject = ej1Var.n;
-                if (messageObject != null && ej1Var.getParentActivity() != null && ej1Var.s != null) {
-                    i10 = ((org.telegram.ui.ActionBar.p2) ej1Var).currentAccount;
-                    MessagesController.getInstance(i10).sendTyping(messageObject.getDialogId(), 0L, 6, 0);
-                    AndroidUtilities.runOnUIThread(ej1Var.s, 25000L);
-                    break;
-                }
-                break;
+    public final boolean equals(Object obj) {
+        TL_stories.PrepaidGiveaway prepaidGiveaway;
+        boolean z4 = this.f;
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || z5.class != obj.getClass()) {
+            return false;
+        }
+        z5 z5Var = (z5) obj;
+        TL_stories.Boost boost = z5Var.d;
+        boolean z10 = z5Var.f;
+        TL_stories.PrepaidGiveaway prepaidGiveaway2 = this.e;
+        if (prepaidGiveaway2 != null && (prepaidGiveaway = z5Var.e) != null) {
+            return prepaidGiveaway2.id == prepaidGiveaway.id && z4 == z10;
+        }
+        TL_stories.Boost boost2 = this.d;
+        if (boost2 == null || boost == null) {
+            return true;
+        }
+        return boost2.id.hashCode() == boost.id.hashCode() && z4 == z10 && this.g == z5Var.g;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(this.c, this.d, this.e, Boolean.valueOf(this.f), Integer.valueOf(this.g));
+    }
+
+    public z5(TL_stories.Boost boost, boolean z4, int i10) {
+        super(5, true);
+        this.d = boost;
+        this.f = z4;
+        this.g = i10;
     }
 }

@@ -1,82 +1,39 @@
 package lh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
-/* loaded from: classes.dex */
-public final class j0 extends x1 {
-    public final RectF j0;
-    public final RectF k0;
-    public final Path l0;
-    public final /* synthetic */ m0 m0;
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class j0 implements MessagesStorage.IntCallback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j0(m0 m0Var, Context context, int i10, g6 g6Var) {
-        super(context, i10, g6Var);
-        this.m0 = m0Var;
-        this.j0 = new RectF();
-        this.k0 = new RectF();
-        this.l0 = new Path();
+    public /* synthetic */ j0(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        m0 m0Var = this.m0;
-        h0 h0Var = m0Var.X;
-        boolean drawChild = super.drawChild(canvas, view, j10);
-        FrameLayout frameLayout = this.d;
-        if (view == frameLayout) {
-            FrameLayout frameLayout2 = h0Var.b;
-            g0 g0Var = m0Var.V;
-            RectF rectF = this.j0;
-            if (!vg.i.c(frameLayout2, g0Var, rectF)) {
-                return true;
-            }
-            RectF rectF2 = this.k0;
-            if (!vg.i.c(frameLayout, this, rectF2)) {
-                return true;
-            }
-            float centerX = rectF2.centerX() - AndroidUtilities.dp(40.0f);
-            float centerY = rectF2.centerY() - AndroidUtilities.dp(40.0f);
-            if (!rectF.isEmpty()) {
-                canvas.save();
-                canvas.clipPath(this.l0);
-                canvas.scale(0.6f, 0.6f, rectF2.centerX(), rectF2.centerY());
-                canvas.translate(rectF2.centerX() - (h0Var.getWidth() / 2.0f), rectF2.centerY() - (h0Var.getHeight() / 2.0f));
-                h0Var.b(canvas, h0Var.getWidth() / 2.0f, AndroidUtilities.dp(104.0f), h0Var.getWidth(), h0Var.getHeight());
-                h0Var.c(canvas, h0Var.getWidth() / 2.0f, AndroidUtilities.dp(104.0f), h0Var.getWidth(), h0Var.getHeight());
-                canvas.restore();
-                canvas.save();
-                canvas.translate(centerX, centerY);
-                canvas.scale(AndroidUtilities.dp(80.0f) / rectF.width(), AndroidUtilities.dp(80.0f) / rectF.height());
-                h0Var.b.draw(canvas);
-                canvas.restore();
-            }
+    @Override // org.telegram.messenger.MessagesStorage.IntCallback
+    public final void run(int i10) {
+        switch (this.a) {
+            case 0:
+                n0 n0Var = (n0) this.b;
+                n0Var.getClass();
+                n0Var.U(lf.a.i(0L, i10 == 0 ? lf.b.a : lf.b.b), true, false, true);
+                n0Var.a0.setText("");
+                break;
+            case 1:
+                s0 s0Var = (s0) this.b;
+                s0Var.getClass();
+                s0Var.q(lf.a.i(0L, i10 == 0 ? lf.b.a : lf.b.b), true, false, true);
+                s0Var.h.setText("");
+                break;
+            default:
+                k4 k4Var = (k4) this.b;
+                k4Var.getClass();
+                k4Var.q = i10 == 0 ? lf.b.a : lf.b.b;
+                k4Var.a(true);
+                break;
         }
-        return drawChild;
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        Path path = this.l0;
-        path.rewind();
-        RectF rectF = this.j0;
-        rectF.set(0.0f, 0.0f, i10, i11);
-        rectF.inset(AndroidUtilities.dp(3.33f), AndroidUtilities.dp(4.0f));
-        path.addRoundRect(rectF, AndroidUtilities.dp(11.0f), AndroidUtilities.dp(11.0f), Path.Direction.CW);
     }
 }

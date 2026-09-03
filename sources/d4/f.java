@@ -4,10 +4,10 @@ import android.media.MediaCodec;
 import android.media.MediaFormat;
 import android.os.Handler;
 import android.os.HandlerThread;
-import c2.a1;
+import c2.b1;
 import java.util.ArrayDeque;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class f extends MediaCodec.Callback {
     public final HandlerThread b;
@@ -19,8 +19,8 @@ public final class f extends MediaCodec.Callback {
     public boolean l;
     public IllegalStateException m;
     public final Object a = new Object();
-    public final a1 d = new a1();
-    public final a1 e = new a1();
+    public final b1 d = new b1();
+    public final b1 e = new b1();
     public final ArrayDeque f = new ArrayDeque();
     public final ArrayDeque g = new ArrayDeque();
 
@@ -33,14 +33,14 @@ public final class f extends MediaCodec.Callback {
         if (!arrayDeque.isEmpty()) {
             this.i = (MediaFormat) arrayDeque.getLast();
         }
-        a1 a1Var = this.d;
-        a1Var.a = 0;
-        a1Var.b = -1;
-        a1Var.c = 0;
-        a1 a1Var2 = this.e;
-        a1Var2.a = 0;
-        a1Var2.b = -1;
-        a1Var2.c = 0;
+        b1 b1Var = this.d;
+        b1Var.a = 0;
+        b1Var.b = -1;
+        b1Var.c = 0;
+        b1 b1Var2 = this.e;
+        b1Var2.a = 0;
+        b1Var2.b = -1;
+        b1Var2.c = 0;
         this.f.clear();
         arrayDeque.clear();
     }

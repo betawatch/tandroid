@@ -1,155 +1,20 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.EditText;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class gy extends org.telegram.ui.ActionBar.i5 {
-    public final /* synthetic */ py f;
-
-    public gy(py pyVar) {
-        this.f = pyVar;
+public final class gy extends org.telegram.ui.Components.d20 {
+    public gy(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var);
     }
 
-    @Override // org.telegram.ui.ActionBar.i5
-    public final boolean b() {
-        py pyVar = this.f;
-        org.telegram.ui.ActionBar.w0 w0Var = pyVar.A1;
-        if (w0Var != null) {
-            w0Var.setVisibility(0);
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() != 0 || getAlpha() >= 0.25f) {
+            return super.dispatchTouchEvent(motionEvent);
         }
-        if (pyVar.k2 == null) {
-            return true;
-        }
-        pyVar.finishFragment();
         return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.i5
-    public final boolean c() {
-        org.telegram.ui.ActionBar.k kVar;
-        py pyVar = this.f;
-        kVar = ((org.telegram.ui.ActionBar.p2) pyVar).actionBar;
-        return !kVar.s() && pyVar.O3 == null;
-    }
-
-    @Override // org.telegram.ui.ActionBar.i5
-    public final void m() {
-        py pyVar = this.f;
-        fy fyVar = pyVar.U;
-        if (fyVar != null) {
-            ArrayList arrayList = fyVar.C;
-            if (!arrayList.isEmpty() && fyVar.E != null) {
-                for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    if (((uf.e0) arrayList.get(i10)).h) {
-                        ((ux) fyVar.E).d((uf.e0) arrayList.get(i10));
-                    }
-                }
-            }
-        }
-        pyVar.g2 = false;
-        pyVar.h2 = false;
-        oy oyVar = pyVar.b0[0];
-        if (oyVar != null) {
-            oyVar.a.setEmptyView(pyVar.S2 == 0 ? oyVar.w : null);
-            pyVar.O4(false, false, true, false);
-        }
-        pyVar.Z4(false, false);
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, Boolean.TRUE);
-        pyVar.U.setCloseButtonVisible(false);
-        pyVar.Y4(true);
-        pyVar.B3();
-        pyVar.m3();
-    }
-
-    @Override // org.telegram.ui.ActionBar.i5
-    public final void n() {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.Components.wn0 wn0Var;
-        org.telegram.ui.Components.wn0 wn0Var2;
-        py pyVar = this.f;
-        pyVar.g2 = true;
-        org.telegram.ui.ActionBar.w0 w0Var = pyVar.A1;
-        if (w0Var != null) {
-            w0Var.setVisibility(8);
-        }
-        pyVar.M3();
-        oy oyVar = pyVar.b0[0];
-        if (oyVar != null) {
-            if (pyVar.k2 != null) {
-                oyVar.a.b1();
-                yx yxVar = pyVar.z0;
-                if (yxVar != null) {
-                    mh.d1 d1Var = yxVar.S;
-                    if (d1Var.f1) {
-                        d1Var.f1 = false;
-                        d1Var.J0(false);
-                    }
-                }
-            }
-            if (!pyVar.i2) {
-                qh.e3 e3Var = pyVar.m0;
-                if (e3Var != null) {
-                    e3Var.e(true);
-                }
-                qh.e3 e3Var2 = pyVar.n0;
-                if (e3Var2 != null) {
-                    e3Var2.e(true);
-                }
-            }
-        }
-        hx hxVar = pyVar.B0;
-        if (hxVar != null && hxVar.getPremiumHint() != null) {
-            pyVar.B0.getPremiumHint().e(true);
-        }
-        if (!pyVar.H) {
-            pyVar.C4(0.0f);
-        }
-        pyVar.Z4(false, false);
-        kVar = ((org.telegram.ui.ActionBar.p2) pyVar).actionBar;
-        kVar.setBackButtonContentDescription(LocaleController.getString(R.string.AccDescrGoBack));
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, new Object[0]);
-        pyVar.m3();
-        yx yxVar2 = pyVar.z0;
-        if (yxVar2 != null && (wn0Var2 = yxVar2.V) != null) {
-            wn0Var2.c = uf.w.d;
-        }
-        if ((yxVar2 != null && (wn0Var = yxVar2.V) != null && wn0Var.N()) || pyVar.getMessagesController().getTotalDialogsCount() > 10 || pyVar.p3 || pyVar.H) {
-            pyVar.h2 = true;
-            if (!pyVar.m3) {
-                pyVar.O4(true, false, true, false);
-            }
-        }
-        pyVar.U.setCloseButtonVisible(true);
-        pyVar.Y4(true);
-        pyVar.B3();
-    }
-
-    @Override // org.telegram.ui.ActionBar.i5
-    public final void q(EditText editText) {
-        yx yxVar;
-        org.telegram.ui.Components.wn0 wn0Var;
-        String obj = editText.getText().toString();
-        boolean isEmpty = obj.isEmpty();
-        py pyVar = this.f;
-        if (!isEmpty || (((yxVar = pyVar.z0) != null && (wn0Var = yxVar.V) != null && wn0Var.N()) || pyVar.p3 || pyVar.H)) {
-            pyVar.h2 = true;
-            if (!pyVar.m3) {
-                pyVar.O4(true, false, true, false);
-            }
-        }
-        yx yxVar2 = pyVar.z0;
-        if (yxVar2 != null) {
-            View currentView = yxVar2.getCurrentView();
-            boolean z4 = TextUtils.isEmpty(yxVar2.H0) ? true : !yxVar2.b0;
-            yxVar2.H0 = obj;
-            yxVar2.O(currentView, yxVar2.getCurrentPosition(), obj, z4);
-        }
     }
 }

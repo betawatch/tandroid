@@ -2,7 +2,7 @@ package com.google.android.play.core.integrity;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 final class w implements aw {
     private final o8.p a;
@@ -19,16 +19,16 @@ final class w implements aw {
         if (context == null) {
             throw new NullPointerException("instance cannot be null");
         }
-        e.a aVar = new e.a(context);
-        this.a = aVar;
+        o2.i iVar = new o2.i(context, 2);
+        this.a = iVar;
         bcVar = bb.a;
         o8.m b10 = o8.m.b(bcVar);
         this.b = b10;
         oVar = n.a;
-        au auVar = new au(aVar, oVar);
+        au auVar = new au(iVar, oVar);
         this.c = auVar;
         oVar2 = n.a;
-        o8.m b11 = o8.m.b(new bp(aVar, b10, auVar, oVar2));
+        o8.m b11 = o8.m.b(new bp(iVar, b10, auVar, oVar2));
         this.d = b11;
         o8.m b12 = o8.m.b(new bu(b11));
         this.e = b12;

@@ -1,31 +1,9 @@
 package m;
 
-import androidx.appcompat.widget.SearchView;
+import android.widget.AdapterView;
+import android.widget.HorizontalScrollView;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final class q2 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ SearchView b;
-
-    public /* synthetic */ q2(SearchView searchView, int i10) {
-        this.a = i10;
-        this.b = searchView;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.r();
-                break;
-            default:
-                h1.b bVar = this.b.e0;
-                if (bVar instanceof b3) {
-                    bVar.b(null);
-                    break;
-                }
-                break;
-        }
-    }
+public abstract class q2 extends HorizontalScrollView implements AdapterView.OnItemSelectedListener {
 }

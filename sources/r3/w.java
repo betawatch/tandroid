@@ -1,6 +1,6 @@
 package r3;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class w {
     public final byte[] a = new byte[10];
@@ -45,7 +45,7 @@ public final class w {
         }
         byte[] bArr = this.a;
         lVar.b(0, 10, bArr);
-        lVar.r();
+        lVar.m();
         if (bArr[4] == -8 && bArr[5] == 114 && bArr[6] == 111) {
             byte b10 = bArr[7];
             if ((b10 & 254) == 186) {

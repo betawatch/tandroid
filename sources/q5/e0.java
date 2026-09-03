@@ -3,9 +3,9 @@ package q5;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.internal.s1;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import org.telegram.ui.zy;
+import org.telegram.ui.az;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class e0 extends u5.g {
     public final /* synthetic */ f0 b;
@@ -21,7 +21,7 @@ public final class e0 extends u5.g {
 
     @Override // u5.h
     public final void L(u5.d dVar) {
-        f0.k(this.b).post(new zy(this, dVar, false, 5));
+        f0.k(this.b).post(new az(this, dVar, false, 5));
     }
 
     @Override // u5.h
@@ -41,7 +41,7 @@ public final class e0 extends u5.g {
     }
 
     @Override // u5.h
-    public final void c(int i10) {
+    public final void a(int i10) {
         f0.g(this.b, i10);
     }
 
@@ -52,7 +52,7 @@ public final class e0 extends u5.g {
 
     @Override // u5.h
     public final void n0(u5.c cVar) {
-        f0.k(this.b).post(new zy(this, cVar, false, 6));
+        f0.k(this.b).post(new az(this, cVar, false, 6));
     }
 
     @Override // u5.h

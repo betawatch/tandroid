@@ -1,10 +1,16 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class y3 {
-    public static final y3 d = new y3();
-    public final ag.e a = null;
-    public final c2.f b = null;
-    public y3 c;
+    public final Throwable a;
+
+    static {
+        new y3(new c0.b("Failure occurred while trying to finish a future.", 2));
+    }
+
+    public y3(Throwable th2) {
+        th2.getClass();
+        this.a = th2;
+    }
 }

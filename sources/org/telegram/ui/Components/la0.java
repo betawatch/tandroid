@@ -1,36 +1,45 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class la0 extends f2.v {
-    public final /* synthetic */ ra0 c;
+public final class la0 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.p2 a;
+    public final /* synthetic */ qa0 b;
 
-    public la0(ra0 ra0Var) {
-        this.c = ra0Var;
+    public la0(qa0 qa0Var, org.telegram.ui.ActionBar.p2 p2Var) {
+        this.b = qa0Var;
+        this.a = p2Var;
     }
 
-    @Override // f2.v
-    public final int i(int i10) {
-        ra0 ra0Var = this.c;
-        uf.u0 u0Var = ra0Var.f;
-        if (i10 == 0) {
-            return 100;
+    public final void a(boolean z4) {
+        qa0 qa0Var = this.b;
+        if (qa0Var.getNeededLayoutManager() != qa0Var.getCurrentLayoutManager() && qa0Var.a()) {
+            if (qa0Var.f.I0 > 0) {
+                qa0Var.K = true;
+                qa0Var.o(false);
+                return;
+            }
+            qa0Var.b.setLayoutManager(qa0Var.getNeededLayoutManager());
         }
-        int i11 = i10 - 1;
-        Object J = u0Var.J(i11);
-        if (J instanceof TLRPC.TL_inlineBotSwitchPM) {
-            return 100;
+        if (z4 && !qa0Var.a()) {
+            z4 = false;
         }
-        if (J instanceof TLRPC.Document) {
-            return 20;
+        qa0Var.o((!z4 || qa0Var.f.K() > 0) ? z4 : false);
+    }
+
+    public final void b(boolean z4) {
+        this.b.l(z4);
+    }
+
+    public final void c() {
+        qa0 qa0Var = this.b;
+        up upVar = qa0Var.G;
+        if (qa0Var.b.getLayoutManager() == qa0Var.d || !qa0Var.F) {
+            return;
         }
-        if (u0Var.I() != null || u0Var.R != null) {
-            i10 = i11;
-        }
-        ka0 ka0Var = ra0Var.d;
-        ka0Var.B1();
-        return ka0Var.R.get(i10);
+        AndroidUtilities.cancelRunOnUIThread(upVar);
+        AndroidUtilities.runOnUIThread(upVar, this.a.getFragmentBeginToShow() ? 0L : 100L);
     }
 }

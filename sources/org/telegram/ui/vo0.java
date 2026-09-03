@@ -9,37 +9,37 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class vo0 extends FrameLayout {
     public long a;
     public TL_stars.starGiftAttributeBackdrop b;
     public TL_stars.starGiftAttributePattern c;
     public final FrameLayout d;
-    public final lh.u1 e;
+    public final kh.u1 e;
     public final org.telegram.ui.Components.p9 f;
-    public final lh.y1 h;
+    public final kh.y1 h;
     public TLRPC.Document n;
 
-    public vo0(Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z4) {
+    public vo0(Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z4) {
         super(context);
         FrameLayout frameLayout = new FrameLayout(context);
         this.d = frameLayout;
-        lh.u1 u1Var = new lh.u1(frameLayout, g6Var, false);
+        kh.u1 u1Var = new kh.u1(frameLayout, f6Var, false);
         this.e = u1Var;
         frameLayout.setBackground(u1Var);
-        addView(frameLayout, k7.c6.e(-1, -1, 119));
-        k7.e6.b(frameLayout, 0.025f, 1.25f);
+        addView(frameLayout, k7.b6.e(-1, -1, 119));
+        k7.d6.b(frameLayout, 0.025f, 1.25f);
         org.telegram.ui.Components.p9 p9Var = new org.telegram.ui.Components.p9(context);
         this.f = p9Var;
-        frameLayout.addView(p9Var, k7.c6.d(80, 80.0f, 17, 0.0f, 12.0f, 0.0f, 12.0f));
+        frameLayout.addView(p9Var, k7.b6.d(80, 80.0f, 17, 0.0f, 12.0f, 0.0f, 12.0f));
         if (!z4) {
             this.h = null;
             return;
         }
-        lh.y1 y1Var = new lh.y1(context);
+        kh.y1 y1Var = new kh.y1(context);
         this.h = y1Var;
-        addView(y1Var, k7.c6.d(-2, -2.0f, 53, 0.0f, 2.0f, 1.0f, 0.0f));
+        addView(y1Var, k7.b6.d(-2, -2.0f, 53, 0.0f, 2.0f, 1.0f, 0.0f));
     }
 
     public final void a(int i10, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
@@ -47,10 +47,10 @@ public final class vo0 extends FrameLayout {
         boolean z4 = i10 % 3 == 1;
         setPadding(z4 ? AndroidUtilities.dp(4.0f) : 0, 0, z4 ? AndroidUtilities.dp(4.0f) : 0, 0);
         c(tL_starGiftUnique.getDocument(), tL_starGiftUnique);
-        this.b = (TL_stars.starGiftAttributeBackdrop) mh.t7.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
-        this.c = (TL_stars.starGiftAttributePattern) mh.t7.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
+        this.b = (TL_stars.starGiftAttributeBackdrop) lh.t7.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
+        this.c = (TL_stars.starGiftAttributePattern) lh.t7.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
         TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = this.b;
-        lh.u1 u1Var = this.e;
+        kh.u1 u1Var = this.e;
         u1Var.d(stargiftattributebackdrop);
         u1Var.e(this.c);
     }
@@ -79,7 +79,7 @@ public final class vo0 extends FrameLayout {
             }
             this.n = document;
             TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, AndroidUtilities.dp(100.0f));
-            p9Var.l(ImageLocation.getForDocument(document), "100_100", ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "100_100", DocumentObject.getSvgThumb(document, org.telegram.ui.ActionBar.k6.a7, 0.3f), starGift);
+            p9Var.l(ImageLocation.getForDocument(document), "100_100", ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "100_100", DocumentObject.getSvgThumb(document, org.telegram.ui.ActionBar.j6.a7, 0.3f), starGift);
         }
     }
 

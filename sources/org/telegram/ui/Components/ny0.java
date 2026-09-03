@@ -7,9 +7,9 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class ny0 extends rl0 {
+public final class ny0 extends ql0 {
     public final qy0 c;
     public final /* synthetic */ qy0 d;
 
@@ -18,12 +18,12 @@ public final class ny0 extends rl0 {
         this.c = qy0Var2;
     }
 
-    @Override // org.telegram.ui.Components.rl0
-    public final boolean D(f2.m1 m1Var) {
+    @Override // org.telegram.ui.Components.ql0
+    public final boolean D(f2.l1 l1Var) {
         return true;
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final int h() {
         ArrayList arrayList = this.c.w;
         if (arrayList == null) {
@@ -32,7 +32,7 @@ public final class ny0 extends rl0 {
         return arrayList.size();
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final long i(int i10) {
         if (this.c.w == null) {
             return 0L;
@@ -40,9 +40,9 @@ public final class ny0 extends rl0 {
         return ((MediaDataController.KeywordResult) r0.get(i10)).emoji.hashCode();
     }
 
-    @Override // f2.p0
-    public final void v(f2.m1 m1Var, int i10) {
-        py0 py0Var = (py0) m1Var.a;
+    @Override // f2.o0
+    public final void v(f2.l1 l1Var, int i10) {
+        py0 py0Var = (py0) l1Var.a;
         qy0 qy0Var = this.c;
         ArrayList arrayList = qy0Var.w;
         String str = arrayList == null ? null : ((MediaDataController.KeywordResult) arrayList.get(i10)).emoji;
@@ -67,8 +67,8 @@ public final class ny0 extends rl0 {
         }
     }
 
-    @Override // f2.p0
-    public final f2.m1 x(ViewGroup viewGroup, int i10) {
-        return new el0(new py0(this.d, this.c.getContext()));
+    @Override // f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+        return new dl0(new py0(this.d, this.c.getContext()));
     }
 }

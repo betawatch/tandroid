@@ -14,7 +14,7 @@ import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class s81 {
     public String a;
@@ -60,8 +60,8 @@ public final class s81 {
                     loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(this.e));
                     r81Var.b(this.e, loadBitmap, false);
                     return;
-                } catch (Exception e6) {
-                    FileLog.e(e6);
+                } catch (Exception e) {
+                    FileLog.e(e);
                     return;
                 }
             }
@@ -76,8 +76,8 @@ public final class s81 {
                         loadBitmap2.compress(Bitmap.CompressFormat.JPEG, 87, fileOutputStream);
                         r81Var.b(this.e, loadBitmap2, false);
                         r10 = fileOutputStream;
-                    } catch (Exception e10) {
-                        e = e10;
+                    } catch (Exception e6) {
+                        e = e6;
                         FileLog.e(e);
                         r10 = fileOutputStream;
                     }
@@ -87,14 +87,14 @@ public final class s81 {
                     if (fileOutputStream2 != null) {
                         try {
                             fileOutputStream2.close();
-                        } catch (Exception e11) {
-                            FileLog.e(e11);
+                        } catch (Exception e10) {
+                            FileLog.e(e10);
                         }
                     }
                     throw th;
                 }
-            } catch (Exception e12) {
-                e = e12;
+            } catch (Exception e11) {
+                e = e11;
                 fileOutputStream = null;
             } catch (Throwable th3) {
                 th = th3;
@@ -104,8 +104,8 @@ public final class s81 {
             }
             try {
                 r10.close();
-            } catch (Exception e13) {
-                FileLog.e(e13);
+            } catch (Exception e12) {
+                FileLog.e(e12);
             }
             this.a = null;
         }

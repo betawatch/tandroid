@@ -7,7 +7,7 @@ import android.view.View;
 import java.util.Random;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class rq0 extends View {
     public Random a;
@@ -29,9 +29,9 @@ public final class rq0 extends View {
         int measuredWidth = (getMeasuredWidth() / 2) - AndroidUtilities.dp(3.0f);
         int i10 = 7;
         int dp = AndroidUtilities.dp(1.0f) + ((AndroidUtilities.dp(1.0f) + measuredWidth) * 7);
-        pr prVar = pr.g;
+        mr mrVar = mr.g;
         float f11 = this.f;
-        float interpolation = prVar.getInterpolation(f11 > 0.4f ? (f11 - 0.4f) / 0.6f : 0.0f);
+        float interpolation = mrVar.getInterpolation(f11 > 0.4f ? (f11 - 0.4f) / 0.6f : 0.0f);
         float f12 = (this.n * interpolation) + ((1.0f - interpolation) * this.h);
         canvas.save();
         canvas.translate(0.0f, (-org.telegram.messenger.y3.z(4.0f, getMeasuredHeight(), dp)) * f12);
@@ -66,7 +66,7 @@ public final class rq0 extends View {
         this.f = f15;
         if (f15 > 1.0f) {
             this.h = this.n;
-            float f16 = org.telegram.ui.yh.f(this.a, 1001) / 1000.0f;
+            float f16 = org.telegram.ui.ai.f(this.a, 1001) / 1000.0f;
             this.n = f16;
             if (f16 > this.h) {
                 this.n = f16 + 0.3f;

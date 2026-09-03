@@ -1,36 +1,42 @@
 package org.telegram.ui.web;
 
-import android.os.Bundle;
+import android.app.Activity;
+import nh.j7;
 import org.json.JSONObject;
-import org.telegram.ui.py;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.x9;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
-public final class d0 extends py {
-    public final /* synthetic */ boolean[] y4;
-    public final /* synthetic */ a1 z4;
+public final class d0 implements NotificationCenter.NotificationCenterDelegate {
+    public final /* synthetic */ j7 a;
+    public final /* synthetic */ c1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d0(a1 a1Var, Bundle bundle, boolean[] zArr) {
-        super(bundle);
-        this.z4 = a1Var;
-        this.y4 = zArr;
+    public d0(c1 c1Var, j7 j7Var) {
+        this.b = c1Var;
+        this.a = j7Var;
     }
 
-    @Override // org.telegram.ui.py, org.telegram.ui.ActionBar.p2
-    public final void onFragmentDestroy() {
-        JSONObject jSONObject;
-        super.onFragmentDestroy();
-        boolean[] zArr = this.y4;
-        if (zArr[0]) {
-            return;
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        int i12 = NotificationCenter.onRequestPermissionResultReceived;
+        if (i10 == i12) {
+            int intValue = ((Integer) objArr[0]).intValue();
+            int[] iArr = (int[]) objArr[2];
+            if (intValue == 5000) {
+                NotificationCenter.getGlobalInstance().removeObserver(this, i12);
+                int i13 = iArr[0];
+                c1 c1Var = this.b;
+                if (i13 != 0) {
+                    c1Var.z(this.a, "scan_qr_popup_closed", new JSONObject());
+                } else {
+                    Activity activity = c1Var.T;
+                    if (activity == null) {
+                        return;
+                    }
+                    c1Var.d0 = x9.e0(activity, 3, new o3.c(c1Var, 8));
+                }
+            }
         }
-        zArr[0] = true;
-        try {
-            jSONObject = new JSONObject();
-        } catch (Exception unused) {
-            jSONObject = null;
-        }
-        this.z4.v("requested_chat_failed", jSONObject);
     }
 }

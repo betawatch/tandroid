@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class p implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ Map a;
@@ -29,7 +29,7 @@ public final class p implements ViewTreeObserver.OnGlobalLayoutListener {
         Map map;
         Map map2;
         q0 q0Var;
-        c2.a0 a0Var;
+        c2.b0 b0Var;
         v vVar = this.c;
         vVar.R.getViewTreeObserver().removeGlobalOnLayoutListener(this);
         HashSet hashSet = vVar.U;
@@ -49,17 +49,17 @@ public final class p implements ViewTreeObserver.OnGlobalLayoutListener {
                 break;
             }
             View childAt = vVar.R.getChildAt(i10);
-            c2.a0 a0Var2 = (c2.a0) vVar.S.getItem(firstVisiblePosition + i10);
-            Rect rect = (Rect) map.get(a0Var2);
+            c2.b0 b0Var2 = (c2.b0) vVar.S.getItem(firstVisiblePosition + i10);
+            Rect rect = (Rect) map.get(b0Var2);
             int top = childAt.getTop();
             int i11 = rect != null ? rect.top : (vVar.b0 * size) + top;
             AnimationSet animationSet = new AnimationSet(true);
             HashSet hashSet2 = vVar.U;
-            if (hashSet2 == null || !hashSet2.contains(a0Var2)) {
-                a0Var = a0Var2;
+            if (hashSet2 == null || !hashSet2.contains(b0Var2)) {
+                b0Var = b0Var2;
             } else {
                 AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 0.0f);
-                a0Var = a0Var2;
+                b0Var = b0Var2;
                 alphaAnimation.setDuration(vVar.v0);
                 animationSet.addAnimation(alphaAnimation);
                 i11 = top;
@@ -76,16 +76,16 @@ public final class p implements ViewTreeObserver.OnGlobalLayoutListener {
             }
             childAt.clearAnimation();
             childAt.startAnimation(animationSet);
-            c2.a0 a0Var3 = a0Var;
-            map.remove(a0Var3);
-            map2.remove(a0Var3);
+            c2.b0 b0Var3 = b0Var;
+            map.remove(b0Var3);
+            map2.remove(b0Var3);
             i10++;
         }
         for (Map.Entry entry : map2.entrySet()) {
-            c2.a0 a0Var4 = (c2.a0) entry.getKey();
+            c2.b0 b0Var4 = (c2.b0) entry.getKey();
             BitmapDrawable bitmapDrawable = (BitmapDrawable) entry.getValue();
-            Rect rect2 = (Rect) map.get(a0Var4);
-            if (vVar.V.contains(a0Var4)) {
+            Rect rect2 = (Rect) map.get(b0Var4);
+            if (vVar.V.contains(b0Var4)) {
                 q0Var = new q0(bitmapDrawable, rect2);
                 q0Var.h = 0.0f;
                 q0Var.e = vVar.w0;
@@ -96,8 +96,8 @@ public final class p implements ViewTreeObserver.OnGlobalLayoutListener {
                 q0Var2.g = i12;
                 q0Var2.e = vVar.u0;
                 q0Var2.d = vVar.x0;
-                q0Var2.l = new bf.b(vVar, a0Var4, false, 8);
-                vVar.W.add(a0Var4);
+                q0Var2.l = new af.c(vVar, b0Var4, false, 8);
+                vVar.W.add(b0Var4);
                 q0Var = q0Var2;
             }
             vVar.R.a.add(q0Var);

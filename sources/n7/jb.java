@@ -1,6 +1,6 @@
 package n7;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class jb {
     public final xe a;
@@ -11,13 +11,13 @@ public final class jb {
     public final fe f;
     public final j1 g;
 
-    public /* synthetic */ jb(m.r3 r3Var) {
-        this.a = (xe) r3Var.a;
-        this.b = (ib) r3Var.b;
-        this.c = (gb) r3Var.c;
-        this.d = (de) r3Var.d;
-        this.e = (ge) r3Var.e;
-        this.f = (fe) r3Var.f;
-        this.g = (j1) r3Var.h;
+    public /* synthetic */ jb(m.s3 s3Var) {
+        this.a = (xe) s3Var.a;
+        this.b = (ib) s3Var.b;
+        this.c = (gb) s3Var.c;
+        this.d = (de) s3Var.d;
+        this.e = (ge) s3Var.e;
+        this.f = (fe) s3Var.f;
+        this.g = (j1) s3Var.h;
     }
 }

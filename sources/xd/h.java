@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import oh.h4;
+import org.telegram.ui.Components.tp0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class h implements Iterable {
     public final d a;
@@ -23,13 +23,13 @@ public final class h implements Iterable {
         if (interpolator == null || j10 <= 0) {
             this.c = null;
         } else {
-            this.c = new c(0, new h4(this, 29), interpolator, j10);
+            this.c = new c(0, new tp0(this, 24), interpolator, j10);
         }
     }
 
     public final void i(float f10) {
         g gVar = this.d;
-        boolean z4 = gVar.a.l(f10) || (gVar.c.a(f10) || (gVar.g.a(f10) || (gVar.f.a(f10) || (gVar.e.a(f10) || (gVar.d.a(f10) || gVar.b.a(f10))))));
+        boolean z4 = gVar.a.i(f10) || (gVar.c.a(f10) || (gVar.g.a(f10) || (gVar.f.a(f10) || (gVar.e.a(f10) || (gVar.d.a(f10) || gVar.b.a(f10))))));
         ArrayList arrayList = this.b;
         int size = arrayList.size();
         int i10 = 0;
@@ -45,7 +45,7 @@ public final class h implements Iterable {
             z4 = z10 || z4;
         }
         if (z4) {
-            this.a.E();
+            this.a.x();
             if (f10 == 1.0f) {
                 q(true);
             }
@@ -166,9 +166,9 @@ public final class h implements Iterable {
             p();
             kVar3.c = f18;
         }
-        if (dVar.k()) {
+        if (dVar.g()) {
             p();
-            dVar.m();
+            dVar.j();
         }
     }
 
@@ -212,7 +212,7 @@ public final class h implements Iterable {
         gVar.f.c(z4);
         gVar.g.c(z4);
         gVar.c.c(z4);
-        gVar.a.i(z4);
+        gVar.a.f(z4);
     }
 
     public final void r(List list, boolean z4) {
@@ -256,7 +256,7 @@ public final class h implements Iterable {
             }
             g.a(gVar, size2, false);
             o(false);
-            this.a.E();
+            this.a.x();
             return;
         }
         if (list != null && !list.isEmpty()) {

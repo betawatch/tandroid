@@ -1,111 +1,68 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pi0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ri0 b;
+public final class pi0 extends Drawable {
+    public Path a;
+    public Paint b;
+    public float c;
 
-    public /* synthetic */ pi0(ri0 ri0Var, int i10) {
-        this.a = i10;
-        this.b = ri0Var;
+    public final void a() {
+        int dp = AndroidUtilities.dp(18.0f);
+        Path path = this.a;
+        path.reset();
+        float f10 = dp >> 1;
+        path.moveTo(f10, AndroidUtilities.dpf2(4.98f));
+        path.lineTo(AndroidUtilities.dpf2(4.95f), AndroidUtilities.dpf2(9.0f));
+        path.lineTo(dp - AndroidUtilities.dpf2(4.95f), AndroidUtilities.dpf2(9.0f));
+        path.lineTo(f10, AndroidUtilities.dpf2(4.98f));
+        Paint paint = this.b;
+        paint.setStyle(Paint.Style.FILL_AND_STROKE);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setStrokeWidth(AndroidUtilities.dpf2(1.0f));
+        this.c = AndroidUtilities.density;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ri0 ri0Var = this.b;
-                ri0Var.v = floatValue;
-                org.telegram.ui.Cells.r2 r2Var = ri0Var.H;
-                if (r2Var != null) {
-                    r2Var.invalidate();
-                }
-                sl0 sl0Var = ri0Var.I;
-                if (sl0Var != null) {
-                    sl0Var.invalidate();
-                    break;
-                }
-                break;
-            case 1:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ri0 ri0Var2 = this.b;
-                ri0Var2.w = floatValue2;
-                org.telegram.ui.Cells.r2 r2Var2 = ri0Var2.H;
-                if (r2Var2 != null) {
-                    r2Var2.invalidate();
-                }
-                sl0 sl0Var2 = ri0Var2.I;
-                if (sl0Var2 != null) {
-                    sl0Var2.invalidate();
-                    break;
-                }
-                break;
-            case 2:
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ri0 ri0Var3 = this.b;
-                ri0Var3.p = floatValue3;
-                org.telegram.ui.Cells.r2 r2Var3 = ri0Var3.H;
-                if (r2Var3 != null) {
-                    r2Var3.invalidate();
-                    break;
-                }
-                break;
-            case 3:
-                float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ri0 ri0Var4 = this.b;
-                ri0Var4.o = floatValue4;
-                org.telegram.ui.Cells.r2 r2Var4 = ri0Var4.H;
-                if (r2Var4 != null) {
-                    r2Var4.invalidate();
-                    break;
-                }
-                break;
-            case 4:
-                float floatValue5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ri0 ri0Var5 = this.b;
-                ri0Var5.x = floatValue5;
-                org.telegram.ui.Cells.r2 r2Var5 = ri0Var5.H;
-                if (r2Var5 != null) {
-                    r2Var5.invalidate();
-                    break;
-                }
-                break;
-            case 5:
-                ri0 ri0Var6 = this.b;
-                ri0Var6.getClass();
-                ri0Var6.e(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                org.telegram.ui.Cells.r2 r2Var6 = ri0Var6.H;
-                if (r2Var6 != null) {
-                    r2Var6.invalidate();
-                    break;
-                }
-                break;
-            case 6:
-                ri0 ri0Var7 = this.b;
-                ri0Var7.getClass();
-                ri0Var7.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ri0Var7.F = true;
-                org.telegram.ui.Cells.r2 r2Var7 = ri0Var7.H;
-                if (r2Var7 != null) {
-                    r2Var7.invalidate();
-                    break;
-                }
-                break;
-            default:
-                ri0 ri0Var8 = this.b;
-                ri0Var8.getClass();
-                ri0Var8.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ri0Var8.F = false;
-                org.telegram.ui.Cells.r2 r2Var8 = ri0Var8.H;
-                if (r2Var8 != null) {
-                    r2Var8.invalidate();
-                    break;
-                }
-                break;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Paint paint = this.b;
+        if (this.c != AndroidUtilities.density) {
+            a();
         }
+        canvas.save();
+        canvas.translate(getBounds().left, getBounds().top);
+        canvas.drawPath(this.a, paint);
+        canvas.drawRect(AndroidUtilities.dpf2(7.56f), AndroidUtilities.dpf2(8.0f), AndroidUtilities.dp(18.0f) - AndroidUtilities.dpf2(7.56f), AndroidUtilities.dpf2(11.1f), paint);
+        canvas.restore();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(18.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(18.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

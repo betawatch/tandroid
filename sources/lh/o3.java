@@ -1,136 +1,91 @@
 package lh;
 
-import java.util.HashMap;
-import mh.l7;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.TLMethod;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.l81;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class o3 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ Object r;
-    public final /* synthetic */ Object s;
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* loaded from: classes4.dex */
+public final class o3 extends l81 {
+    public final /* synthetic */ g5 Q;
 
-    public /* synthetic */ o3(p3 p3Var, org.telegram.ui.ActionBar.g1 g1Var, org.telegram.ui.ActionBar.g1 g1Var2, org.telegram.ui.ActionBar.g1 g1Var3, org.telegram.ui.ActionBar.g1 g1Var4, org.telegram.ui.ActionBar.g1 g1Var5, boolean z4, org.telegram.ui.ActionBar.g1 g1Var6, org.telegram.ui.ActionBar.g1 g1Var7) {
-        this.a = 0;
-        this.c = p3Var;
-        this.d = g1Var;
-        this.e = g1Var2;
-        this.f = g1Var3;
-        this.h = g1Var4;
-        this.n = g1Var5;
-        this.b = z4;
-        this.r = g1Var6;
-        this.s = g1Var7;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o3(g5 g5Var, Context context) {
+        super(context, null);
+        this.Q = g5Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                p3 p3Var = (p3) this.c;
-                org.telegram.ui.ActionBar.g1 g1Var = (org.telegram.ui.ActionBar.g1) this.d;
-                org.telegram.ui.ActionBar.g1 g1Var2 = (org.telegram.ui.ActionBar.g1) this.e;
-                org.telegram.ui.ActionBar.g1 g1Var3 = (org.telegram.ui.ActionBar.g1) this.f;
-                org.telegram.ui.ActionBar.g1 g1Var4 = (org.telegram.ui.ActionBar.g1) this.h;
-                org.telegram.ui.ActionBar.g1 g1Var5 = (org.telegram.ui.ActionBar.g1) this.n;
-                org.telegram.ui.ActionBar.g1 g1Var6 = (org.telegram.ui.ActionBar.g1) this.r;
-                org.telegram.ui.ActionBar.g1 g1Var7 = (org.telegram.ui.ActionBar.g1) this.s;
-                l7 l7Var = p3Var.c.V;
-                g1Var.g(LocaleController.getString(l7Var.e ? R.string.Gift2FilterSortByValue : R.string.Gift2FilterSortByDate), l7Var.e ? R.drawable.menu_sort_value : R.drawable.menu_sort_date, null);
-                g1Var2.setChecked(TLObject.hasFlag(l7Var.g, 1));
-                g1Var3.setChecked(TLObject.hasFlag(l7Var.g, 2));
-                g1Var4.setChecked(TLObject.hasFlag(l7Var.g, 4));
-                g1Var5.setChecked(TLObject.hasFlag(l7Var.g, 8));
-                if (this.b) {
-                    g1Var6.setChecked(TLObject.hasFlag(l7Var.g, 256));
-                    g1Var7.setChecked(TLObject.hasFlag(l7Var.g, 512));
-                    break;
+    @Override // org.telegram.ui.Components.l81
+    public final void E(View view, float f10) {
+        int i10;
+        View view2;
+        kh.l3 l3Var;
+        kh.l3 l3Var2;
+        q3 q3Var;
+        q3 q3Var2;
+        q3 q3Var3;
+        if (getMeasuredWidth() <= 0) {
+            view.setTranslationX(f10);
+            return;
+        }
+        float clamp = Utilities.clamp(f10 / getMeasuredWidth(), 1.0f, -1.0f);
+        g5 g5Var = this.Q;
+        i10 = ((org.telegram.ui.ActionBar.g3) g5Var).backgroundPaddingLeft;
+        view.setTranslationX(((-clamp) * 2.0f * i10) + f10);
+        view.setPivotX(clamp <= 0.0f ? view.getMeasuredWidth() : 0.0f);
+        view.setCameraDistance(view.getMeasuredHeight() * 3.4f);
+        view.setScaleX(1.0f - Math.abs(0.25f * clamp));
+        view.setRotationY(clamp * 10.0f);
+        if (view instanceof FrameLayout) {
+            FrameLayout frameLayout = (FrameLayout) view;
+            if (frameLayout.getChildCount() > 0) {
+                view2 = frameLayout.getChildAt(0);
+                l3Var = g5Var.Y;
+                if (l3Var != null && view2 == l3Var.V && (q3Var3 = l3Var.a0) != null) {
+                    q3Var3.invalidate();
                 }
-                break;
-            case 1:
-                ((SendMessagesHelper) this.c).lambda$performSendMessageRequest$86((TLRPC.TL_error) this.d, (TLRPC.Message) this.e, (TLObject) this.f, (MessageObject) this.h, (String) this.n, (HashMap) this.r, this.b, (TLRPC.TL_messages_addPollAnswer) this.s);
-                break;
-            case 2:
-                ((SendMessagesHelper) this.c).lambda$performSendMessageRequest$89((TLRPC.TL_error) this.d, (TLRPC.Message) this.e, (TLObject) this.f, (MessageObject) this.h, (String) this.n, (HashMap) this.r, this.b, (TLRPC.TL_messages_editMessage) this.s);
-                break;
-            case 3:
-                ((SendMessagesHelper) this.c).lambda$performSendMessageRequest$100(this.b, (TLRPC.TL_error) this.d, (TLRPC.Message) this.e, (TLObject) this.f, (MessageObject) this.h, (HashMap) this.n, (String) this.r, (TLObject) this.s);
-                break;
-            default:
-                org.telegram.ui.ActionBar.g1 g1Var8 = (org.telegram.ui.ActionBar.g1) this.d;
-                l7 l7Var2 = (l7) this.c;
-                org.telegram.ui.ActionBar.g1 g1Var9 = (org.telegram.ui.ActionBar.g1) this.e;
-                org.telegram.ui.ActionBar.g1 g1Var10 = (org.telegram.ui.ActionBar.g1) this.f;
-                org.telegram.ui.ActionBar.g1 g1Var11 = (org.telegram.ui.ActionBar.g1) this.h;
-                org.telegram.ui.ActionBar.g1 g1Var12 = (org.telegram.ui.ActionBar.g1) this.n;
-                org.telegram.ui.ActionBar.g1 g1Var13 = (org.telegram.ui.ActionBar.g1) this.r;
-                org.telegram.ui.ActionBar.g1 g1Var14 = (org.telegram.ui.ActionBar.g1) this.s;
-                if (g1Var8 != null) {
-                    g1Var8.g(LocaleController.getString(l7Var2.e ? R.string.Gift2FilterSortByValue : R.string.Gift2FilterSortByDate), l7Var2.e ? R.drawable.menu_sort_value : R.drawable.menu_sort_date, null);
+                if (view2 == g5Var.V && (q3Var2 = g5Var.a0) != null) {
+                    q3Var2.invalidate();
                 }
-                g1Var9.setChecked(TLObject.hasFlag(l7Var2.g, 1));
-                g1Var10.setChecked(TLObject.hasFlag(l7Var2.g, 2));
-                g1Var11.setChecked(TLObject.hasFlag(l7Var2.g, 4));
-                g1Var12.setChecked(TLObject.hasFlag(l7Var2.g, 8));
-                if (this.b) {
-                    g1Var13.setChecked(TLObject.hasFlag(l7Var2.g, 256));
-                    g1Var14.setChecked(TLObject.hasFlag(l7Var2.g, 512));
-                    break;
+                l3Var2 = g5Var.Z;
+                if (l3Var2 == null && view2 == l3Var2.V && (q3Var = l3Var2.a0) != null) {
+                    q3Var.invalidate();
+                    return;
                 }
-                break;
+                return;
+            }
+        }
+        view2 = null;
+        l3Var = g5Var.Y;
+        if (l3Var != null) {
+            q3Var3.invalidate();
+        }
+        if (view2 == g5Var.V) {
+            q3Var2.invalidate();
+        }
+        l3Var2 = g5Var.Z;
+        if (l3Var2 == null) {
         }
     }
 
-    public /* synthetic */ o3(SendMessagesHelper sendMessagesHelper, TLRPC.TL_error tL_error, TLRPC.Message message, TLObject tLObject, MessageObject messageObject, String str, HashMap hashMap, boolean z4, TLMethod tLMethod, int i10) {
-        this.a = i10;
-        this.c = sendMessagesHelper;
-        this.d = tL_error;
-        this.e = message;
-        this.f = tLObject;
-        this.h = messageObject;
-        this.n = str;
-        this.r = hashMap;
-        this.b = z4;
-        this.s = tLMethod;
+    /* JADX WARN: Type inference failed for: r1v1, types: [boolean] */
+    @Override // org.telegram.ui.Components.l81
+    public final void F() {
+        super.F();
+        int i10 = this.b;
+        g5 g5Var = this.Q;
+        if (i10 != g5Var.L1(false)) {
+            AndroidUtilities.runOnUIThread(new jh.f(4, this, this.b > g5Var.L1(false)));
+        }
     }
 
-    public /* synthetic */ o3(SendMessagesHelper sendMessagesHelper, boolean z4, TLRPC.TL_error tL_error, TLRPC.Message message, TLObject tLObject, MessageObject messageObject, HashMap hashMap, String str, TLObject tLObject2) {
-        this.a = 3;
-        this.c = sendMessagesHelper;
-        this.b = z4;
-        this.d = tL_error;
-        this.e = message;
-        this.f = tLObject;
-        this.h = messageObject;
-        this.n = hashMap;
-        this.r = str;
-        this.s = tLObject2;
-    }
-
-    public /* synthetic */ o3(org.telegram.ui.ActionBar.g1 g1Var, l7 l7Var, org.telegram.ui.ActionBar.g1 g1Var2, org.telegram.ui.ActionBar.g1 g1Var3, org.telegram.ui.ActionBar.g1 g1Var4, org.telegram.ui.ActionBar.g1 g1Var5, boolean z4, org.telegram.ui.ActionBar.g1 g1Var6, org.telegram.ui.ActionBar.g1 g1Var7) {
-        this.a = 4;
-        this.d = g1Var;
-        this.c = l7Var;
-        this.e = g1Var2;
-        this.f = g1Var3;
-        this.h = g1Var4;
-        this.n = g1Var5;
-        this.b = z4;
-        this.r = g1Var6;
-        this.s = g1Var7;
+    @Override // org.telegram.ui.Components.l81
+    public final boolean i(MotionEvent motionEvent) {
+        c5.d dVar = this.Q.V0;
+        return dVar == null || dVar.c(0);
     }
 }

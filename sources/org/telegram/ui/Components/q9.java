@@ -9,7 +9,7 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final class q9 extends Drawable implements Drawable.Callback {
     public static int[] s;
@@ -28,7 +28,7 @@ public final class q9 extends Drawable implements Drawable.Callback {
         j6 j6Var = new j6(false, false, false, false);
         this.b = j6Var;
         j6Var.u(AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf"));
-        j6Var.k(0.2f, 160L, pr.h);
+        j6Var.k(0.2f, 160L, mr.h);
         j6Var.t(AndroidUtilities.dp(10.0f));
         j6Var.b = 17;
         j6Var.setCallback(this);

@@ -26,14 +26,14 @@ import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeoutException;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.yh;
+import org.telegram.ui.ai;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class f0 extends cb.e implements q {
-    public final z9.d A;
-    public final ab.a B;
+    public final h7.u A;
+    public final z9.d B;
     public final long C;
     public int D;
     public boolean E;
@@ -59,7 +59,7 @@ public final class f0 extends cb.e implements q {
     public float Y;
     public boolean Z;
     public final boolean a0;
-    public final f5.y b;
+    public final f5.x b;
     public boolean b0;
     public final w1 c;
     public boolean c0;
@@ -135,7 +135,7 @@ public final class f0 extends cb.e implements q {
             this.m = new CopyOnWriteArraySet();
             this.o = new ArrayList();
             this.K = new o4.o0();
-            this.b = new f5.y(new g2[b10.length], new f5.c[b10.length], q2.b, null);
+            this.b = new f5.x(new g2[b10.length], new f5.c[b10.length], q2.b, null);
             this.n = new m2();
             SparseBooleanArray sparseBooleanArray = new SparseBooleanArray();
             int[] iArr = {1, 2, 3, 13, 14, 15, 16, 17, 18, 19, 31, 20, 30, 21, 22, 24, 27, 28, 32};
@@ -202,9 +202,9 @@ public final class f0 extends cb.e implements q {
             g5.s sVar = (g5.s) fVar;
             sVar.getClass();
             fVar2.getClass();
-            o5.i iVar = sVar.b;
-            iVar.getClass();
-            CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) iVar.b;
+            ja.c cVar = sVar.b;
+            cVar.getClass();
+            CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) cVar.b;
             Iterator it = copyOnWriteArrayList.iterator();
             while (it.hasNext()) {
                 g5.e eVar = (g5.e) it.next();
@@ -224,14 +224,15 @@ public final class f0 extends cb.e implements q {
             d dVar = new d(context, handler, this.w);
             this.z = dVar;
             dVar.b(null);
-            z9.d dVar2 = new z9.d(9);
-            this.A = dVar2;
-            ab.a aVar = new ab.a(10);
-            this.B = aVar;
-            e8.a aVar2 = new e8.a(0);
-            aVar2.b = 0;
-            aVar2.c = 0;
-            aVar2.a();
+            int i16 = 9;
+            h7.u uVar2 = new h7.u(i16);
+            this.A = uVar2;
+            z9.d dVar2 = new z9.d(i16);
+            this.B = dVar2;
+            e8.a aVar = new e8.a(0);
+            aVar.b = 0;
+            aVar.c = 0;
+            aVar.a();
             this.d0 = i5.y.e;
             this.V = h5.x.c;
             this.h.b(this.X);
@@ -308,8 +309,8 @@ public final class f0 extends cb.e implements q {
         d dVar = this.z;
         dVar.c = null;
         dVar.a();
-        if (!this.k.y()) {
-            this.l.e(10, new f5.u(23));
+        if (!this.k.w()) {
+            this.l.e(10, new f0.d(23));
         }
         this.l.d();
         this.i.a.removeCallbacksAndMessages(null);
@@ -337,7 +338,7 @@ public final class f0 extends cb.e implements q {
         k3.f fVar3 = this.q;
         h5.a0 a0Var = fVar3.n;
         h5.a.j(a0Var);
-        a0Var.c(new eh.m(fVar3, 20));
+        a0Var.c(new e3.h(fVar3, 20));
         this.h.a();
         U();
         Surface surface = this.Q;
@@ -355,19 +356,19 @@ public final class f0 extends cb.e implements q {
         h5.a.f(i10 >= 0);
         k3.f fVar = this.q;
         if (!fVar.r) {
-            k3.a l10 = fVar.l();
+            k3.a k10 = fVar.k();
             fVar.r = true;
-            fVar.q(l10, -1, new hg.f(l10, 15));
+            fVar.q(k10, -1, new gg.f(k10, 15));
         }
         o2 o2Var = this.f0.a;
         if (o2Var.p() || i10 < o2Var.o()) {
             this.F++;
             if (f()) {
                 h5.a.K("ExoPlayerImpl", "seekTo ignored because an ad is playing");
-                ye.f fVar2 = new ye.f(this.f0);
-                fVar2.a(1);
+                xe.g gVar = new xe.g(this.f0);
+                gVar.a(1);
                 f0 f0Var = this.j.a;
-                f0Var.i.c(new gf.c(16, f0Var, fVar2));
+                f0Var.i.c(new ff.c(17, f0Var, gVar));
                 return;
             }
             u1 u1Var = this.f0;
@@ -599,14 +600,14 @@ public final class f0 extends cb.e implements q {
             o4.v vVar3 = vVar2;
             h5.a.i(!vVar3.a());
             o4.t0 t0Var = !equals ? o4.t0.d : h.h;
-            f5.y yVar = !equals ? this.b : h.i;
+            f5.x xVar = !equals ? this.b : h.i;
             if (equals) {
                 list = h.j;
             } else {
                 s8.t tVar = s8.v.b;
                 list = s8.i0.e;
             }
-            u1 b11 = h.c(vVar3, longValue, longValue, longValue, 0L, t0Var, yVar, list).b(vVar3);
+            u1 b11 = h.c(vVar3, longValue, longValue, longValue, 0L, t0Var, xVar, list).b(vVar3);
             b11.p = longValue;
             return b11;
         }
@@ -707,14 +708,14 @@ public final class f0 extends cb.e implements q {
         if (!a2) {
             this.X = dVar;
             V(1, 3, dVar);
-            mVar.c(20, new hg.f(dVar, 10));
+            mVar.c(20, new gg.f(dVar, 10));
         }
         l3.d dVar2 = z4 ? dVar : null;
         d dVar3 = this.z;
         dVar3.b(dVar2);
         this.h.b(dVar);
         boolean j10 = j();
-        int d = dVar3.d(b(), j10);
+        int d = dVar3.d(c(), j10);
         if (j10 && d != 1) {
             i10 = 2;
         }
@@ -823,24 +824,15 @@ public final class f0 extends cb.e implements q {
     }
 
     @Override // j3.a2
-    public final void a() {
+    public final void a(v1 v1Var) {
         j0();
-        boolean j10 = j();
-        int d = this.z.d(2, j10);
-        g0(d, (!j10 || d == 1) ? 1 : 2, j10);
-        u1 u1Var = this.f0;
-        if (u1Var.e != 1) {
+        if (this.f0.n.equals(v1Var)) {
             return;
         }
-        u1 e6 = u1Var.e(null);
-        u1 g10 = e6.g(e6.a.p() ? 4 : 2);
+        u1 f10 = this.f0.f(v1Var);
         this.F++;
-        h5.a0 a0Var = this.k.n;
-        a0Var.getClass();
-        h5.z b10 = h5.a0.b();
-        b10.a = a0Var.a.obtainMessage(0);
-        b10.b();
-        h0(g10, 1, 1, false, 5, -9223372036854775807L, -1);
+        this.k.n.a(4, v1Var).b();
+        h0(f10, 0, 1, false, 5, -9223372036854775807L, -1);
     }
 
     public final void a0(Surface surface) {
@@ -852,9 +844,24 @@ public final class f0 extends cb.e implements q {
     }
 
     @Override // j3.a2
-    public final int b() {
+    public final void b() {
         j0();
-        return this.f0.e;
+        boolean j10 = j();
+        int d = this.z.d(2, j10);
+        g0(d, (!j10 || d == 1) ? 1 : 2, j10);
+        u1 u1Var = this.f0;
+        if (u1Var.e != 1) {
+            return;
+        }
+        u1 e = u1Var.e(null);
+        u1 g10 = e.g(e.a.p() ? 4 : 2);
+        this.F++;
+        h5.a0 a0Var = this.k.n;
+        a0Var.getClass();
+        h5.z b10 = h5.a0.b();
+        b10.a = a0Var.a.obtainMessage(0);
+        b10.b();
+        h0(g10, 1, 1, false, 5, -9223372036854775807L, -1);
     }
 
     public final void b0(SurfaceView surfaceView) {
@@ -884,15 +891,9 @@ public final class f0 extends cb.e implements q {
     }
 
     @Override // j3.a2
-    public final void c(v1 v1Var) {
+    public final int c() {
         j0();
-        if (this.f0.n.equals(v1Var)) {
-            return;
-        }
-        u1 f10 = this.f0.f(v1Var);
-        this.F++;
-        this.k.n.a(4, v1Var).b();
-        h0(f10, 0, 1, false, 5, -9223372036854775807L, -1);
+        return this.f0.e;
     }
 
     public final void c0(TextureView textureView) {
@@ -989,7 +990,7 @@ public final class f0 extends cb.e implements q {
 
     public final void f0() {
         int k10;
-        int e6;
+        int e;
         w1 w1Var = this.L;
         int i10 = h5.d0.a;
         a2 a2Var = this.f;
@@ -1012,38 +1013,38 @@ public final class f0 extends cb.e implements q {
         boolean z12 = k10 != -1;
         o2 z13 = eVar.z();
         if (z13.p()) {
-            e6 = -1;
+            e = -1;
         } else {
             int x11 = eVar.x();
             int g11 = eVar.g();
             if (g11 == 1) {
                 g11 = 0;
             }
-            e6 = z13.e(x11, g11, eVar.B());
+            e = z13.e(x11, g11, eVar.B());
         }
-        boolean z14 = e6 != -1;
+        boolean z14 = e != -1;
         o2 z15 = eVar.z();
         boolean z16 = !z15.p() && z15.m(eVar.x(), n2Var, 0L).a();
         o2 z17 = eVar.z();
         boolean z18 = !z17.p() && z17.m(eVar.x(), n2Var, 0L).r;
         boolean p10 = a2Var.z().p();
-        o5.i iVar = new o5.i(17);
-        c2.u uVar = (c2.u) iVar.b;
+        ja.c cVar = new ja.c(14);
+        c2.u uVar = (c2.u) cVar.b;
         h5.g gVar = this.c.a;
         uVar.getClass();
         for (int i11 = 0; i11 < gVar.a.size(); i11++) {
             uVar.b(gVar.a(i11));
         }
         boolean z19 = !f10;
-        iVar.a(4, z19);
-        iVar.a(5, z10 && !f10);
-        iVar.a(6, z12 && !f10);
-        iVar.a(7, !p10 && (z12 || !z16 || z10) && !f10);
-        iVar.a(8, z14 && !f10);
-        iVar.a(9, !p10 && (z14 || (z16 && z18)) && !f10);
-        iVar.a(10, z19);
-        iVar.a(11, z10 && !f10);
-        iVar.a(12, z10 && !f10);
+        cVar.c(4, z19);
+        cVar.c(5, z10 && !f10);
+        cVar.c(6, z12 && !f10);
+        cVar.c(7, !p10 && (z12 || !z16 || z10) && !f10);
+        cVar.c(8, z14 && !f10);
+        cVar.c(9, !p10 && (z14 || (z16 && z18)) && !f10);
+        cVar.c(10, z19);
+        cVar.c(11, z10 && !f10);
+        cVar.c(12, z10 && !f10);
         w1 w1Var2 = new w1(uVar.c());
         this.L = w1Var2;
         if (w1Var2.equals(w1Var)) {
@@ -1291,7 +1292,7 @@ public final class f0 extends cb.e implements q {
             z12 = equals2;
         }
         if (z10) {
-            this.l.c(1, new hg.m2(c1Var, intValue, 1));
+            this.l.c(1, new gg.m2(c1Var, intValue, 1));
         }
         if (u1Var2.f != u1Var.f) {
             final int i22 = 6;
@@ -1375,11 +1376,11 @@ public final class f0 extends cb.e implements q {
                 });
             }
         }
-        f5.y yVar = u1Var2.i;
-        f5.y yVar2 = u1Var.i;
-        if (yVar != yVar2) {
+        f5.x xVar = u1Var2.i;
+        f5.x xVar2 = u1Var.i;
+        if (xVar != xVar2) {
             f5.t tVar = this.h;
-            Object obj8 = yVar2.e;
+            Object obj8 = xVar2.e;
             tVar.getClass();
             tVar.c = (f5.s) obj8;
             final int i24 = 8;
@@ -1423,7 +1424,7 @@ public final class f0 extends cb.e implements q {
             });
         }
         if (!z12) {
-            this.l.c(14, new hg.f(this.M, 9));
+            this.l.c(14, new gg.f(this.M, 9));
         }
         if (z15) {
             final int i25 = 0;
@@ -1705,25 +1706,25 @@ public final class f0 extends cb.e implements q {
     }
 
     public final void i0() {
-        int b10 = b();
-        ab.a aVar = this.B;
-        z9.d dVar = this.A;
-        if (b10 != 1) {
-            if (b10 == 2 || b10 == 3) {
+        int c3 = c();
+        z9.d dVar = this.B;
+        h7.u uVar = this.A;
+        if (c3 != 1) {
+            if (c3 == 2 || c3 == 3) {
                 j0();
                 boolean z4 = this.f0.o;
                 j();
-                dVar.getClass();
+                uVar.getClass();
                 j();
-                aVar.getClass();
+                dVar.getClass();
                 return;
             }
-            if (b10 != 4) {
+            if (c3 != 4) {
                 throw new IllegalStateException();
             }
         }
+        uVar.getClass();
         dVar.getClass();
-        aVar.getClass();
     }
 
     @Override // j3.a2
@@ -1741,11 +1742,11 @@ public final class f0 extends cb.e implements q {
             String name2 = looper.getThread().getName();
             int i10 = h5.d0.a;
             Locale locale = Locale.US;
-            String l10 = yh.l("Player is accessed on the wrong thread.\nCurrent thread: '", name, "'\nExpected thread: '", name2, "'\nSee https://developer.android.com/guide/topics/media/issues/player-accessed-on-wrong-thread");
+            String k10 = ai.k("Player is accessed on the wrong thread.\nCurrent thread: '", name, "'\nExpected thread: '", name2, "'\nSee https://developer.android.com/guide/topics/media/issues/player-accessed-on-wrong-thread");
             if (this.a0) {
-                throw new IllegalStateException(l10);
+                throw new IllegalStateException(k10);
             }
-            h5.a.L("ExoPlayerImpl", l10, this.b0 ? null : new IllegalStateException());
+            h5.a.L("ExoPlayerImpl", k10, this.b0 ? null : new IllegalStateException());
             this.b0 = true;
         }
     }
@@ -1808,10 +1809,10 @@ public final class f0 extends cb.e implements q {
                 i10 = 1;
             } else {
                 i10 = 1;
-                Object I = k0.I((n2) this.a, this.n, this.D, this.E, obj, o2Var, e2Var);
-                if (I != null) {
+                Object G = k0.G((n2) this.a, this.n, this.D, this.E, obj, o2Var, e2Var);
+                if (G != null) {
                     m2 m2Var = this.n;
-                    e2Var.g(I, m2Var);
+                    e2Var.g(G, m2Var);
                     int i15 = m2Var.c;
                     n2 n2Var = (n2) this.a;
                     e2Var.m(i15, n2Var, 0L);
@@ -1864,7 +1865,7 @@ public final class f0 extends cb.e implements q {
     @Override // j3.a2
     public final void p(boolean z4) {
         j0();
-        int d = this.z.d(b(), z4);
+        int d = this.z.d(c(), z4);
         int i10 = 1;
         if (z4 && d != 1) {
             i10 = 2;

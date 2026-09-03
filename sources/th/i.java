@@ -1,30 +1,125 @@
 package th;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
+import android.content.Context;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import k7.b6;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.y3;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.a6;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.sb0;
+import org.telegram.ui.ai;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class i implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n b;
+public final class i extends LinearLayout implements a6 {
+    public final f6 a;
+    public final sb0 b;
+    public final FrameLayout c;
+    public final ImageView d;
+    public final TextView e;
+    public final TextView f;
+    public final boolean h;
+    public boolean n;
 
-    public /* synthetic */ i(n nVar, int i10) {
-        this.a = i10;
-        this.b = nVar;
+    public i(Context context, f6 f6Var, boolean z4) {
+        super(context);
+        this.a = f6Var;
+        this.h = z4;
+        setOrientation(0);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.c = frameLayout;
+        sb0 sb0Var = new sb0(1);
+        this.b = sb0Var;
+        frameLayout.setBackground(sb0Var);
+        ImageView imageView = new ImageView(context);
+        this.d = imageView;
+        imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        frameLayout.addView(imageView, b6.e(24, 24, 17));
+        LinearLayout f10 = y3.f(context, 1);
+        TextView textView = new TextView(context);
+        this.e = textView;
+        textView.setTextSize(1, 16.0f);
+        TextView i10 = ai.i(f10, textView, b6.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2), context);
+        this.f = i10;
+        i10.setGravity(17);
+        i10.setMinWidth(AndroidUtilities.dp(20.66f));
+        i10.setPadding(AndroidUtilities.dp(6.33f), 0, AndroidUtilities.dp(6.33f), 0);
+        i10.setTextSize(1, 16.0f);
+        if (LocaleController.isRTL) {
+            addView(i10, b6.j(13.33f, 0.0f));
+            addView(f10, b6.p(0, -2, 1.0f, 23, 20, 0, z4 ? 12 : 16, 0));
+            addView(frameLayout, b6.t(28, 28, 21, 0, 0, z4 ? 9 : 14, 0));
+        } else {
+            addView(frameLayout, b6.t(28, 28, 19, z4 ? 9 : 14, 0, 0, 0));
+            addView(f10, b6.p(0, -2, 1.0f, 23, z4 ? 12 : 16, 0, 20, 0));
+            addView(i10, b6.j(0.0f, 13.33f));
+        }
+        e();
+        setUnreadMode(true);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        n nVar = this.b;
-        switch (i10) {
-            case 0:
-                n.W(nVar);
-                break;
-            default:
-                nVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, Integer.valueOf(MessagesController.UPDATE_MASK_CHAT));
-                break;
+    public final void a(int i10, int i11, int i12, CharSequence charSequence, CharSequence charSequence2, boolean z4) {
+        this.c.setVisibility(i12 != 0 ? 0 : 8);
+        this.e.setTranslationX(i12 == 0 ? AndroidUtilities.dp(2.0f) : 0.0f);
+        this.b.b(i10, i11);
+        this.d.setImageResource(i12);
+        setTitle(charSequence);
+        setValue(charSequence2);
+        setUnreadMode(z4);
+    }
+
+    @Override // org.telegram.ui.ActionBar.a6
+    public final void e() {
+        int i10 = j6.G6;
+        f6 f6Var = this.a;
+        this.e.setTextColor(j6.v0(i10, f6Var));
+        int v02 = j6.v0(this.n ? j6.W8 : j6.n6, f6Var);
+        TextView textView = this.f;
+        textView.setTextColor(v02);
+        textView.setBackground(this.n ? j6.b0(AndroidUtilities.dp(10.33f), j6.v0(j6.U8, f6Var)) : null);
+        this.b.b = f6Var != null ? f6Var.a() : j6.I.q();
+    }
+
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.h ? 44.0f : 50.0f), TLObject.FLAG_30));
+    }
+
+    public void setTitle(CharSequence charSequence) {
+        this.e.setText(charSequence);
+    }
+
+    public void setUnreadMode(boolean z4) {
+        if (this.n != z4) {
+            this.n = z4;
+            float f10 = z4 ? 13.0f : 16.0f;
+            TextView textView = this.f;
+            textView.setTextSize(1, f10);
+            textView.setTypeface(z4 ? AndroidUtilities.bold() : null);
+            int i10 = z4 ? j6.W8 : j6.n6;
+            f6 f6Var = this.a;
+            textView.setTextColor(j6.v0(i10, f6Var));
+            textView.setBackground(z4 ? j6.b0(AndroidUtilities.dp(10.33f), j6.v0(j6.U8, f6Var)) : null);
         }
+    }
+
+    public void setValue(CharSequence charSequence) {
+        int i10 = !TextUtils.isEmpty(charSequence) ? 0 : 8;
+        TextView textView = this.f;
+        textView.setVisibility(i10);
+        textView.setText(charSequence);
     }
 }

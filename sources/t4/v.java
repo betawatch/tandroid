@@ -11,7 +11,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.ui.Components.jb;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class v implements r3.k {
     public static final Pattern g = Pattern.compile("LOCAL:([^,]+)");
@@ -29,14 +29,14 @@ public final class v implements r3.k {
     }
 
     public final r3.v a(long j10) {
-        r3.v i22 = this.d.i2(0, 3);
+        r3.v d22 = this.d.d2(0, 3);
         m0 m0Var = new m0();
         m0Var.o = "text/vtt";
         m0Var.c = this.a;
         m0Var.s = j10;
-        i22.b(new n0(m0Var));
-        this.d.i1();
-        return i22;
+        d22.b(new n0(m0Var));
+        this.d.j1();
+        return d22;
     }
 
     @Override // r3.k
@@ -47,7 +47,7 @@ public final class v implements r3.k {
     @Override // r3.k
     public final void e(r3.m mVar) {
         this.d = mVar;
-        mVar.m2(new r3.n(-9223372036854775807L));
+        mVar.h2(new r3.n(-9223372036854775807L));
     }
 
     @Override // r3.k
@@ -71,7 +71,7 @@ public final class v implements r3.k {
             }
         }
         w wVar = new w(this.e);
-        e5.m.d(wVar);
+        e5.l.d(wVar);
         String h10 = wVar.h(r8.d.c);
         long j10 = 0;
         long j11 = 0;
@@ -83,14 +83,14 @@ public final class v implements r3.k {
                     if (h11 == null) {
                         break;
                     }
-                    if (e5.m.a.matcher(h11).matches()) {
+                    if (e5.l.a.matcher(h11).matches()) {
                         do {
                             h9 = wVar.h(r8.d.c);
                             if (h9 != null) {
                             }
                         } while (!h9.isEmpty());
                     } else {
-                        Matcher matcher2 = e5.k.a.matcher(h11);
+                        Matcher matcher2 = e5.j.a.matcher(h11);
                         if (matcher2.matches()) {
                             matcher = matcher2;
                             break;
@@ -103,7 +103,7 @@ public final class v implements r3.k {
                 }
                 String group = matcher.group(1);
                 group.getClass();
-                long c3 = e5.m.c(group);
+                long c3 = e5.l.c(group);
                 long b10 = this.b.b(((((j10 + c3) - j11) * 90000) / 1000000) % 8589934592L);
                 r3.v a2 = a(b10 - c3);
                 byte[] bArr3 = this.e;
@@ -125,7 +125,7 @@ public final class v implements r3.k {
                 }
                 String group2 = matcher3.group(1);
                 group2.getClass();
-                j11 = e5.m.c(group2);
+                j11 = e5.l.c(group2);
                 String group3 = matcher4.group(1);
                 group3.getClass();
                 j10 = (Long.parseLong(group3) * 1000000) / 90000;
@@ -141,12 +141,12 @@ public final class v implements r3.k {
         byte[] bArr = this.e;
         w wVar = this.c;
         wVar.D(6, bArr);
-        if (e5.m.a(wVar)) {
+        if (e5.l.a(wVar)) {
             return true;
         }
         hVar.f(this.e, 6, 3, false);
         wVar.D(9, this.e);
-        return e5.m.a(wVar);
+        return e5.l.a(wVar);
     }
 
     @Override // r3.k

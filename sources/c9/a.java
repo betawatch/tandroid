@@ -1,9 +1,9 @@
 package c9;
 
-import j7.k5;
+import j7.j5;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class a {
     public Object a = null;
@@ -21,23 +21,23 @@ public final class a {
         this.b = 0;
         this.c = 0;
         this.f = new HashSet();
-        hashSet.add(t.a(cls));
+        hashSet.add(u.a(cls));
         for (Class cls2 : clsArr) {
-            k5.a(cls2, "Null interface");
-            ((HashSet) this.d).add(t.a(cls2));
+            j5.a(cls2, "Null interface");
+            ((HashSet) this.d).add(u.a(cls2));
         }
     }
 
-    public void a(l lVar) {
-        if (((HashSet) this.d).contains(lVar.a)) {
+    public void a(m mVar) {
+        if (((HashSet) this.d).contains(mVar.a)) {
             throw new IllegalArgumentException("Components are not allowed to depend on interfaces they themselves provide.");
         }
-        ((HashSet) this.e).add(lVar);
+        ((HashSet) this.e).add(mVar);
     }
 
     public b b() {
-        if (((e) this.g) != null) {
-            return new b((String) this.a, new HashSet((HashSet) this.d), new HashSet((HashSet) this.e), this.b, this.c, (e) this.g, (HashSet) this.f);
+        if (((f) this.g) != null) {
+            return new b((String) this.a, new HashSet((HashSet) this.d), new HashSet((HashSet) this.e), this.b, this.c, (f) this.g, (HashSet) this.f);
         }
         throw new IllegalStateException("Missing required property: factory.");
     }

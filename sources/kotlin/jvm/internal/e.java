@@ -3,7 +3,7 @@ package kotlin.jvm.internal;
 import dd.u;
 import dd.v;
 import dd.w;
-import j7.n5;
+import j7.m5;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -11,7 +11,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class e implements hd.c, d {
     public static final Map b;
@@ -106,11 +106,11 @@ public final class e implements hd.c, d {
     }
 
     public final boolean equals(Object obj) {
-        return (obj instanceof e) && n5.a(this).equals(n5.a((hd.c) obj));
+        return (obj instanceof e) && m5.a(this).equals(m5.a((hd.c) obj));
     }
 
     public final int hashCode() {
-        return n5.a(this).hashCode();
+        return m5.a(this).hashCode();
     }
 
     public final String toString() {

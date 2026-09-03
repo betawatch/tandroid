@@ -1,169 +1,424 @@
 package th;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RecordingCanvas;
+import android.os.Build;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
-import java.util.ArrayList;
-import k7.c6;
-import org.telegram.messenger.ChatObject;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import k7.b6;
+import kf.n0;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.ui.ActionBar.d2;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.p2;
-import org.telegram.ui.Cells.h6;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.z4;
-import org.telegram.ui.Components.z8;
-import org.telegram.ui.web.a2;
-import org.telegram.ui.web.d1;
-import org.telegram.ui.yh;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.a6;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.lq;
+import org.telegram.ui.Components.p9;
+import org.telegram.ui.ai;
+import sh.m0;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes4.dex */
-public final class g extends p2 implements NotificationCenter.NotificationCenterDelegate {
-    public long a;
-    public TLRPC.Chat b;
-    public TLRPC.User c;
-    public FrameLayout d;
-    public h61 e;
-    public f f;
-    public ArrayList h;
-    public NotificationCenter.ObserversGroup n;
+public final class g extends FrameLayout implements a6 {
+    public static final /* synthetic */ int C = 0;
+    public long B;
+    public final f6 a;
+    public final int b;
+    public final p9 c;
+    public final TextView d;
+    public final p9 e;
+    public final TextView f;
+    public final TextView h;
+    public final TextView n;
+    public final lq r;
+    public final sg.d s;
+    public final pg.b v;
+    public boolean w;
+    public d x;
+    public long y;
 
-    public static void U(g gVar, h51 h51Var) {
-        g gVar2;
-        if (h51Var.d == 1) {
-            gVar2 = gVar;
-            z4.R(gVar.getParentActivity(), gVar2, LocaleController.getString(R.string.CommunityNewCommunityTitle), null, LocaleController.getString(R.string.CommunityNewCommunityNameHint), null, ConnectionsManager.DEFAULT_DATACENTER_ID, LocaleController.getString(R.string.Create), gVar.resourceProvider, new c(gVar));
+    public g(Context context, int i10, f6 f6Var) {
+        super(context);
+        ng.a aVar;
+        this.a = f6Var;
+        this.b = i10;
+        if (Build.VERSION.SDK_INT >= 31) {
+            sg.d dVar = new sg.d(null);
+            this.s = dVar;
+            dVar.h(AndroidUtilities.dp(7.0f), n0.a());
+            dVar.h = true;
+            aVar = new ng.a(dVar);
         } else {
-            gVar2 = gVar;
+            this.s = null;
+            sg.c cVar = new sg.c();
+            cVar.a(-16777216);
+            aVar = new ng.a(cVar);
         }
-        Object obj = h51Var.G;
-        if (obj instanceof TLRPC.Chat) {
-            TLRPC.Chat chat = (TLRPC.Chat) obj;
-            gVar2.getMessagesController().getChat(Long.valueOf(-gVar2.a));
-            gVar2.showDialog(new vh.a(gVar2.getParentActivity(), chat, gVar2.a, new a2(13, gVar2, chat)));
-        }
-    }
-
-    public final void V(String str, boolean z4) {
-        if (ChatObject.isChannel(this.b) || this.c != null) {
-            getMessagesController().createCommunity(str, this.a, z4, new b(this, 1));
-            return;
-        }
-        d2 d2Var = new d2(getParentActivity(), 3, null);
-        d2Var.q(250L);
-        getMessagesController().convertToMegaGroup(getParentActivity(), -this.a, this, new o9.b(this, d2Var, str, z4, 5));
-    }
-
-    public final void W(long j10, boolean z4) {
-        if (ChatObject.isChannel(this.b) || this.c != null) {
-            int i10 = this.currentAccount;
-            long j11 = -this.a;
-            MessagesController.getInstance(i10).linkCommunity(-j11, j10, z4, new lh.l(this, j11, 3));
-        } else {
-            d2 d2Var = new d2(getParentActivity(), 3, null);
-            d2Var.q(250L);
-            getMessagesController().convertToMegaGroup(getParentActivity(), -this.a, this, new d(this, d2Var, j10, z4, 0));
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.p2
-    public final View createView(Context context) {
-        setHasOwnBackground(true);
-        this.actionBar.setAddToContainer(false);
-        this.actionBar.setAllowOverlayTitle(false);
-        yh.z(false, this.actionBar);
-        this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new e(this, 0));
-        tg.c cVar = new tg.c();
-        cVar.a(getThemedColor(k6.d6));
-        og.a aVar = new og.a(cVar);
-        this.actionBar.setBackground(null);
-        this.actionBar.M(aVar, sg.b.o(this.resourceProvider), false);
-        this.actionBar.M0 = true;
         FrameLayout frameLayout = new FrameLayout(context);
-        this.d = frameLayout;
-        frameLayout.setBackgroundColor(k6.w0(null, k6.a7, false));
-        f fVar = new f(context, this.resourceProvider);
-        this.f = fVar;
-        fVar.setTitle(LocaleController.getString(R.string.CommunityTitle));
-        this.f.setSubtitle(LocaleController.getString(this.c != null ? R.string.CommunityDescriptionBot : ChatObject.isChannelAndNotMegaGroup(this.b) ? R.string.CommunityDescriptionChannel : R.string.CommunityDescriptionGroup));
-        this.f.setTag(-33024);
-        TLRPC.User user = this.c;
-        if (user != null) {
-            this.f.a.e(user, new z8(0, this.c));
+        p9 p9Var = new p9(context);
+        this.c = p9Var;
+        p9Var.setRoundRadius(AndroidUtilities.dp(52.0f) / 2);
+        addView(p9Var, b6.d(52, 52.0f, 51, 11.0f, 9.0f, 0.0f, 0.0f));
+        lq lqVar = new lq(R.drawable.mini_user_channels_10, 0);
+        this.r = lqVar;
+        lqVar.setTranslateX(AndroidUtilities.dp(2.0f));
+        TextView textView = new TextView(context);
+        this.d = textView;
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setVisibility(8);
+        textView.setTextSize(1, 9.33f);
+        textView.setTextColor(-1);
+        textView.setGravity(17);
+        textView.setPadding(AndroidUtilities.dp(1.0f), 0, AndroidUtilities.dp(5.0f), 0);
+        frameLayout.addView(textView, b6.e(-2, -1, 81));
+        addView(frameLayout, b6.s(52, 48, 11, 48, 0, 14.33f, 0));
+        pg.b c3 = aVar.c(textView, null, false);
+        qg.d dVar2 = new qg.d(f6Var);
+        dVar2.e = new rg.a(2);
+        dVar2.d(1627389951, 1358954495);
+        dVar2.c(603979776, 603979776);
+        dVar2.b(0, 0);
+        dVar2.n = 0.0f;
+        dVar2.r = 0.0f;
+        float dpf2 = AndroidUtilities.dpf2(0.43f);
+        float dpf22 = AndroidUtilities.dpf2(0.43f);
+        dVar2.f = dpf2;
+        dVar2.h = dpf22;
+        c3.n(dVar2);
+        c3.p(AndroidUtilities.dp(7.0f));
+        this.v = c3;
+        textView.setBackground(c3);
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        linearLayout.setClipChildren(false);
+        TextView textView2 = new TextView(context);
+        this.f = textView2;
+        textView2.setTypeface(AndroidUtilities.bold());
+        textView2.setTextSize(1, 16.0f);
+        textView2.setSingleLine(true);
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        textView2.setEllipsize(truncateAt);
+        linearLayout.addView(textView2, b6.k(0.0f, 10.0f, 0.0f, 1.33f, -1, -2));
+        p9 p9Var2 = new p9(context);
+        this.e = p9Var2;
+        p9Var2.setRoundRadius(AndroidUtilities.dp(8.0f));
+        final int i11 = 0;
+        p9Var2.setOnClickListener(new View.OnClickListener(this) { // from class: th.c
+            public final /* synthetic */ g b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i11) {
+                    case 0:
+                        g gVar = this.b;
+                        d dVar3 = gVar.x;
+                        if (dVar3 != null) {
+                            long j10 = gVar.B;
+                            m0 m0Var = ((sh.n0) dVar3).h;
+                            if (m0Var != null) {
+                                m0Var.d(j10);
+                                break;
+                            }
+                        }
+                        break;
+                    case 1:
+                        g gVar2 = this.b;
+                        d dVar4 = gVar2.x;
+                        if (dVar4 != null) {
+                            long j11 = gVar2.B;
+                            m0 m0Var2 = ((sh.n0) dVar4).h;
+                            if (m0Var2 != null) {
+                                m0Var2.d(j11);
+                                break;
+                            }
+                        }
+                        break;
+                    case 2:
+                        g gVar3 = this.b;
+                        d dVar5 = gVar3.x;
+                        if (dVar5 != null) {
+                            ((sh.n0) dVar5).g(gVar3.y, false);
+                            break;
+                        }
+                        break;
+                    default:
+                        g gVar4 = this.b;
+                        d dVar6 = gVar4.x;
+                        if (dVar6 != null) {
+                            ((sh.n0) dVar6).g(gVar4.y, true);
+                            break;
+                        }
+                        break;
+                }
+            }
+        });
+        addView(p9Var2, b6.d(16, 16.0f, 51, 75.0f, 35.0f, 0.0f, 0.0f));
+        TextView textView3 = new TextView(context);
+        this.h = textView3;
+        textView3.setTextSize(1, 13.0f);
+        textView3.setSingleLine(true);
+        textView3.setEllipsize(truncateAt);
+        final int i12 = 1;
+        textView3.setOnClickListener(new View.OnClickListener(this) { // from class: th.c
+            public final /* synthetic */ g b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i12) {
+                    case 0:
+                        g gVar = this.b;
+                        d dVar3 = gVar.x;
+                        if (dVar3 != null) {
+                            long j10 = gVar.B;
+                            m0 m0Var = ((sh.n0) dVar3).h;
+                            if (m0Var != null) {
+                                m0Var.d(j10);
+                                break;
+                            }
+                        }
+                        break;
+                    case 1:
+                        g gVar2 = this.b;
+                        d dVar4 = gVar2.x;
+                        if (dVar4 != null) {
+                            long j11 = gVar2.B;
+                            m0 m0Var2 = ((sh.n0) dVar4).h;
+                            if (m0Var2 != null) {
+                                m0Var2.d(j11);
+                                break;
+                            }
+                        }
+                        break;
+                    case 2:
+                        g gVar3 = this.b;
+                        d dVar5 = gVar3.x;
+                        if (dVar5 != null) {
+                            ((sh.n0) dVar5).g(gVar3.y, false);
+                            break;
+                        }
+                        break;
+                    default:
+                        g gVar4 = this.b;
+                        d dVar6 = gVar4.x;
+                        if (dVar6 != null) {
+                            ((sh.n0) dVar6).g(gVar4.y, true);
+                            break;
+                        }
+                        break;
+                }
+            }
+        });
+        TextView i13 = ai.i(linearLayout, textView3, b6.k(20.0f, 0.0f, 0.0f, 1.33f, -1, -2), context);
+        this.n = i13;
+        i13.setTextSize(1, 13.0f);
+        i13.setBackground(j6.b0(AndroidUtilities.dp(12.0f), j6.l1(0.14f, j6.v0(j6.D6, f6Var))));
+        i13.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(1.66f));
+        i13.setSingleLine(true);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        spannableStringBuilder.append((CharSequence) "* ");
+        spannableStringBuilder.setSpan(new lq(R.drawable.mini_ephemeral_hidden_14, 0), 0, 1, 33);
+        spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.CommunityPendingRequestOnlyVisibleToMembers));
+        i13.setText(spannableStringBuilder);
+        i13.setVisibility(8);
+        linearLayout.addView(i13, b6.k(0.0f, 7.0f, 0.0f, 1.33f, -2, -2));
+        LinearLayout linearLayout2 = new LinearLayout(context);
+        linearLayout2.setOrientation(0);
+        linearLayout2.setClipChildren(false);
+        ph.d dVar3 = new ph.d(context, f6Var, true);
+        dVar3.setUseWrapContent(true);
+        dVar3.setPadding(AndroidUtilities.dp(15.0f), 0, AndroidUtilities.dp(15.0f), 0);
+        dVar3.e();
+        dVar3.d();
+        dVar3.setColor(j6.l1(0.14f, j6.v0(j6.z6, f6Var)));
+        dVar3.setTextColor(j6.w0(null, j6.G6, false));
+        dVar3.g(LocaleController.getString(R.string.Decline), false, true);
+        final int i14 = 2;
+        dVar3.setOnClickListener(new View.OnClickListener(this) { // from class: th.c
+            public final /* synthetic */ g b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i14) {
+                    case 0:
+                        g gVar = this.b;
+                        d dVar32 = gVar.x;
+                        if (dVar32 != null) {
+                            long j10 = gVar.B;
+                            m0 m0Var = ((sh.n0) dVar32).h;
+                            if (m0Var != null) {
+                                m0Var.d(j10);
+                                break;
+                            }
+                        }
+                        break;
+                    case 1:
+                        g gVar2 = this.b;
+                        d dVar4 = gVar2.x;
+                        if (dVar4 != null) {
+                            long j11 = gVar2.B;
+                            m0 m0Var2 = ((sh.n0) dVar4).h;
+                            if (m0Var2 != null) {
+                                m0Var2.d(j11);
+                                break;
+                            }
+                        }
+                        break;
+                    case 2:
+                        g gVar3 = this.b;
+                        d dVar5 = gVar3.x;
+                        if (dVar5 != null) {
+                            ((sh.n0) dVar5).g(gVar3.y, false);
+                            break;
+                        }
+                        break;
+                    default:
+                        g gVar4 = this.b;
+                        d dVar6 = gVar4.x;
+                        if (dVar6 != null) {
+                            ((sh.n0) dVar6).g(gVar4.y, true);
+                            break;
+                        }
+                        break;
+                }
+            }
+        });
+        linearLayout2.addView(dVar3, b6.p(-2, 30, 0.0f, 16, 0, 0, 4, 0));
+        ph.d dVar4 = new ph.d(context, f6Var, true);
+        dVar4.setUseWrapContent(true);
+        dVar4.setPadding(AndroidUtilities.dp(15.0f), 0, AndroidUtilities.dp(15.0f), 0);
+        dVar4.e();
+        dVar4.g(LocaleController.getString(R.string.Add), false, true);
+        final int i15 = 3;
+        dVar4.setOnClickListener(new View.OnClickListener(this) { // from class: th.c
+            public final /* synthetic */ g b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i15) {
+                    case 0:
+                        g gVar = this.b;
+                        d dVar32 = gVar.x;
+                        if (dVar32 != null) {
+                            long j10 = gVar.B;
+                            m0 m0Var = ((sh.n0) dVar32).h;
+                            if (m0Var != null) {
+                                m0Var.d(j10);
+                                break;
+                            }
+                        }
+                        break;
+                    case 1:
+                        g gVar2 = this.b;
+                        d dVar42 = gVar2.x;
+                        if (dVar42 != null) {
+                            long j11 = gVar2.B;
+                            m0 m0Var2 = ((sh.n0) dVar42).h;
+                            if (m0Var2 != null) {
+                                m0Var2.d(j11);
+                                break;
+                            }
+                        }
+                        break;
+                    case 2:
+                        g gVar3 = this.b;
+                        d dVar5 = gVar3.x;
+                        if (dVar5 != null) {
+                            ((sh.n0) dVar5).g(gVar3.y, false);
+                            break;
+                        }
+                        break;
+                    default:
+                        g gVar4 = this.b;
+                        d dVar6 = gVar4.x;
+                        if (dVar6 != null) {
+                            ((sh.n0) dVar6).g(gVar4.y, true);
+                            break;
+                        }
+                        break;
+                }
+            }
+        });
+        linearLayout2.addView(dVar4, b6.p(-2, 30, 0.0f, 16, 4, 0, 0, 0));
+        linearLayout.addView(linearLayout2, b6.t(-1, -2, 0, 0, 10, 0, 0));
+        addView(linearLayout, b6.d(-1, -2.0f, 48, 75.0f, 0.0f, 0.0f, 13.0f));
+        e();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Canvas canvas2;
+        if (this.w) {
+            canvas2 = canvas;
+            canvas2.drawLine(AndroidUtilities.dp(76.0f), getHeight() - 1, getMeasuredWidth(), getHeight() - 1, j6.k0);
         } else {
-            TLRPC.Chat chat = this.b;
-            if (chat != null) {
-                this.f.a.e(chat, new z8(this.b));
-            }
+            canvas2 = canvas;
         }
-        h61 h61Var = new h61(this, new b(this, 0), new c(this), new c(this));
-        this.e = h61Var;
-        h61Var.setClipToPadding(false);
-        h61 h61Var2 = this.e;
-        h61Var2.V2.r = false;
-        h61Var2.o1();
-        this.d.addView(this.e, c6.c(-1.0f, -1));
-        this.d.addView(this.actionBar, c6.e(-1, -2, 48));
-        FrameLayout frameLayout2 = this.d;
-        this.fragmentView = frameLayout2;
-        return frameLayout2;
+        super.dispatchDraw(canvas2);
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.chatInfoDidLoad) {
-            TLRPC.ChatFull chatFull = (TLRPC.ChatFull) objArr[0];
-            long j10 = chatFull.id;
-            View x12 = this.e.x1((int) (j10 ^ (j10 >>> 32)));
-            if (!(x12 instanceof h6)) {
-                this.e.V2.N(false);
-                return;
-            }
-            h6 h6Var = (h6) x12;
-            ArrayList<TL_communities.CommunityPeer> arrayList = chatFull.linked_peers;
-            h6Var.setSubLabel(LocaleController.formatPluralString("Chats", arrayList != null ? arrayList.size() : 0, new Object[0]));
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        sg.d dVar;
+        p9 p9Var;
+        if (Build.VERSION.SDK_INT >= 31 && (dVar = this.s) != null && view == (p9Var = this.c)) {
+            int dp = AndroidUtilities.dp(9.0f);
+            int left = p9Var.getLeft() - dp;
+            int top = p9Var.getTop() - dp;
+            int dp2 = (dp * 2) + AndroidUtilities.dp(52.0f);
+            RecordingCanvas a2 = dVar.a(dp2, dp2);
+            a2.translate(-left, -top);
+            a2.drawColor(j6.v0(j6.d6, this.a));
+            a2.save();
+            float f10 = dp2 / 2.0f;
+            a2.scale(1.125f, 1.125f, f10, f10);
+            super.drawChild(a2, view, j10);
+            a2.restore();
+            a2.drawColor(TLObject.FLAG_29);
+            dVar.c();
         }
+        return super.drawChild(canvas, view, j10);
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
-    public final boolean isSupportEdgeToEdge() {
-        return true;
+    @Override // org.telegram.ui.ActionBar.a6
+    public final void e() {
+        int i10 = j6.G6;
+        f6 f6Var = this.a;
+        this.f.setTextColor(j6.v0(i10, f6Var));
+        int i11 = j6.z6;
+        this.h.setTextColor(j6.v0(i11, f6Var));
+        this.n.setTextColor(j6.v0(i11, f6Var));
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
-    public final boolean onFragmentCreate() {
-        this.a = this.arguments.getLong("dialog_id", 0L);
-        this.b = getMessagesController().getChat(Long.valueOf(-this.a));
-        this.c = getMessagesController().getUser(Long.valueOf(this.a));
-        this.h = getMessagesController().getJoinedCommunities();
-        getMessagesController().fetchJoinedCommunities(new d1(this, 14), this.classGuid);
-        this.n = getNotificationCenter().createObserversGroup(this).add(NotificationCenter.chatInfoDidLoad);
-        return super.onFragmentCreate();
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
-    public final void onFragmentDestroy() {
-        NotificationCenter.ObserversGroup observersGroup = this.n;
-        if (observersGroup != null) {
-            observersGroup.removeAllObservers();
-            this.n = null;
-        }
-        super.onFragmentDestroy();
-    }
-
-    @Override // org.telegram.ui.ActionBar.p2
-    public final void onInsets(int i10, int i11, int i12, int i13) {
-        super.onInsets(i10, i11, i12, i13);
-        this.e.setPadding(0, i11, 0, i13);
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+        super.onLayout(z4, i10, i11, i12, i13);
+        this.v.s(AndroidUtilities.dp(9.0f) + this.d.getLeft(), AndroidUtilities.dp(48.0f));
     }
 }

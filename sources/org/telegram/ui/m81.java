@@ -1,41 +1,33 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m81 implements Utilities.Callback5, Utilities.Callback5Return, r0.o {
-    public final /* synthetic */ v81 a;
+public final /* synthetic */ class m81 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ w81 b;
 
-    public /* synthetic */ m81(v81 v81Var) {
-        this.a = v81Var;
+    public /* synthetic */ m81(w81 w81Var, int i10) {
+        this.a = i10;
+        this.b = w81Var;
     }
 
-    @Override // r0.o
-    public r0.m1 M0(View view, r0.m1 m1Var) {
-        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(m1Var, false);
-        int i10 = defaultWindowInsets.d;
-        v81 v81Var = this.a;
-        v81Var.P = i10;
-        v81Var.c.setPadding(0, AndroidUtilities.dp(12.0f) + defaultWindowInsets.b, 0, v81Var.P + v81Var.Q);
-        return r0.m1.b;
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        return Boolean.valueOf(v81.U(this.a, (org.telegram.ui.Components.h51) obj, (View) obj2));
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        v81.e0(this.a, (org.telegram.ui.Components.h51) obj);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
+                tL_help_dismissSuggestion.suggestion = "VALIDATE_PASSWORD";
+                tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
+                w81 w81Var = this.b;
+                w81Var.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new m81(w81Var, 1));
+                break;
+            default:
+                this.b.getMessagesController().loadAppConfig();
+                break;
+        }
     }
 }

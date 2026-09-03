@@ -1,18 +1,18 @@
 package h7;
 
-import com.google.android.gms.internal.cast.h0;
+import com.google.android.gms.internal.cast.i0;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class i extends f {
-    public final transient h0 c;
+    public final transient i0 c;
     public final transient Object[] d;
     public final transient int e;
 
-    public i(h0 h0Var, Object[] objArr, int i10) {
-        this.c = h0Var;
+    public i(i0 i0Var, Object[] objArr, int i10) {
+        this.c = i0Var;
         this.d = objArr;
         this.e = i10;
     }

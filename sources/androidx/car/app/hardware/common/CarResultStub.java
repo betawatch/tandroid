@@ -10,12 +10,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Executor;
 import org.telegram.ui.cl0;
-import qh.l6;
+import ph.e6;
 import r.a;
 import r.c;
 import w.b;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class CarResultStub<T> extends ICarHardwareResult.Stub {
     private final b mBundle;
@@ -54,7 +54,7 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
     private void notifyResults(boolean z4, b bVar) {
         T convertAndRecast = z4 ? convertAndRecast(bVar) : this.mUnsupportedValue;
         for (Map.Entry<c, Executor> entry : this.mListeners.entrySet()) {
-            entry.getValue().execute(new l6(8, entry, convertAndRecast));
+            entry.getValue().execute(new e6(9, entry, convertAndRecast));
         }
         if (this.mIsSingleShot) {
             this.mListeners.clear();

@@ -1,0 +1,106 @@
+package dg;
+
+import java.util.ArrayList;
+import java.util.List;
+import lh.e8;
+import lh.g5;
+import lh.j7;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.d10;
+import org.telegram.ui.Components.ic;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.et;
+import org.telegram.ui.r6;
+import org.telegram.ui.zq0;
+
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class j3 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+
+    public /* synthetic */ j3(Object obj, int i10, Object obj2, int i11) {
+        this.a = i11;
+        this.c = obj;
+        this.b = i10;
+        this.d = obj2;
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                Utilities.themeQueue.postRunnable(new f3((q3) this.c, this.b, (List) obj, new ArrayList(), (zq0) this.d, 0));
+                break;
+            case 1:
+                kh.w3 w3Var = (kh.w3) this.c;
+                int i10 = this.b;
+                kh.m3 m3Var = (kh.m3) this.d;
+                ArrayList arrayList = (ArrayList) obj;
+                org.telegram.ui.ActionBar.p2 p2Var = w3Var.a;
+                j7 j7Var = w3Var.e;
+                j7Var.a(i10, arrayList);
+                m3Var.f(true);
+                w3Var.f(true);
+                w3Var.n();
+                TL_stars.TL_starGiftCollection c3 = j7Var.c(i10);
+                if (c3 != null) {
+                    if (arrayList.size() <= 1) {
+                        if (arrayList.size() == 1) {
+                            TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) arrayList.get(0);
+                            ic R = qc.a0(p2Var).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, g5.D1(savedStarGift.gift), c3.title)));
+                            R.r = false;
+                            R.j();
+                            break;
+                        }
+                    } else {
+                        ic R2 = qc.a0(p2Var).R(((TL_stars.SavedStarGift) arrayList.get(0)).gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("Gift2AddedToCollectionMany", arrayList.size(), c3.title)));
+                        R2.r = false;
+                        R2.j();
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                r6 r6Var = (r6) this.c;
+                int[] iArr = (int[]) this.d;
+                int i11 = this.b;
+                float f10 = iArr[0];
+                float f11 = i11;
+                r6Var.run(Float.valueOf((k7.n.a(((Float) obj).floatValue(), 0.0f, 1.0f) * (1.0f / f11)) + (f10 / f11)), Boolean.FALSE);
+                break;
+            case 3:
+                d10 d10Var = (d10) this.c;
+                Utilities.Callback callback = (Utilities.Callback) this.d;
+                int i12 = this.b;
+                d10Var.getClass();
+                d10Var.x0 = ((Boolean) obj).booleanValue();
+                d10Var.dismiss();
+                callback.run(Integer.valueOf(i12));
+                break;
+            case 4:
+                AndroidUtilities.runOnUIThread(new et((TLRPC.UserFull) obj, (org.telegram.ui.web.r) this.c, this.b, (TLRPC.User) this.d, 14));
+                break;
+            default:
+                org.telegram.ui.ActionBar.p2 p2Var2 = (org.telegram.ui.ActionBar.p2) this.c;
+                TLRPC.Chat chat = (TLRPC.Chat) this.d;
+                TLRPC.Chat chat2 = (TLRPC.Chat) obj;
+                p2Var2.showDialog(new uh.a(p2Var2.getContext(), chat, -chat2.id, new e8(p2Var2, this.b, chat2, chat, 3)));
+                break;
+        }
+    }
+
+    public /* synthetic */ j3(Object obj, Object obj2, int i10, int i11) {
+        this.a = i11;
+        this.c = obj;
+        this.d = obj2;
+        this.b = i10;
+    }
+}

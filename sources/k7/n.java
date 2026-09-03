@@ -1,31 +1,13 @@
 package k7;
 
-import android.os.Build;
-import android.text.TextUtils;
-import android.view.View;
-
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract class n {
-    public static void a(View view, CharSequence charSequence) {
-        if (Build.VERSION.SDK_INT >= 26) {
-            m.o3.a(view, charSequence);
-            return;
-        }
-        m.q3 q3Var = m.q3.v;
-        if (q3Var != null && q3Var.a == view) {
-            m.q3.b(null);
-        }
-        if (!TextUtils.isEmpty(charSequence)) {
-            new m.q3(view, charSequence);
-            return;
-        }
-        m.q3 q3Var2 = m.q3.w;
-        if (q3Var2 != null && q3Var2.a == view) {
-            q3Var2.a();
-        }
-        view.setOnLongClickListener(null);
-        view.setLongClickable(false);
-        view.setOnHoverListener(null);
+    public static float a(float f10, float f11, float f12) {
+        return f10 < f11 ? f11 : f10 > f12 ? f12 : f10;
+    }
+
+    public static int b(int i10, int i11, int i12) {
+        return i10 < i11 ? i11 : i10 > i12 ? i12 : i10;
     }
 }

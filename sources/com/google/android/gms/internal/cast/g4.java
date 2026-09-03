@@ -2,12 +2,12 @@ package com.google.android.gms.internal.cast;
 
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class g4 {
-    public static /* synthetic */ boolean a(Unsafe unsafe, e4 e4Var, long j10, Object obj, Object obj2) {
-        while (!f4.a(unsafe, e4Var, j10, obj, obj2)) {
-            if (unsafe.getObject(e4Var, j10) != obj) {
+    public static /* synthetic */ boolean a(Unsafe unsafe, f4 f4Var, long j10, Object obj, Object obj2) {
+        while (!unsafe.compareAndSwapObject(f4Var, j10, obj, obj2)) {
+            if (unsafe.getObject(f4Var, j10) != obj) {
                 return false;
             }
         }

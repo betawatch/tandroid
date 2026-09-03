@@ -1,65 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
 import android.view.View;
-import android.view.animation.OvershootInterpolator;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class fv extends View {
-    public ImageReceiver.BackgroundThreadDrawHolder[] a;
-    public oh.z2 b;
-    public u5 c;
-    public ValueAnimator d;
-    public float e;
+public final class fv extends m51 {
+    public final /* synthetic */ gv e;
 
-    public TLRPC.Document getDocument() {
-        u5 u5Var = this.c;
-        if (u5Var == null) {
-            return null;
-        }
-        TLRPC.Document document = u5Var.document;
-        if (document != null) {
-            return document;
-        }
-        return l5.f(UserConfig.selectedAccount, u5Var.getDocumentId());
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fv(gv gvVar, String str) {
+        super(str, (s01) null);
+        this.e = gvVar;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30));
-    }
-
-    @Override // android.view.View
-    public void setPressed(boolean z4) {
-        ValueAnimator valueAnimator;
-        if (isPressed() != z4) {
-            super.setPressed(z4);
-            invalidate();
-            if (z4 && (valueAnimator = this.d) != null) {
-                valueAnimator.removeAllListeners();
-                this.d.cancel();
-            }
-            if (z4) {
-                return;
-            }
-            float f10 = this.e;
-            if (f10 != 0.0f) {
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, 0.0f);
-                this.d = ofFloat;
-                int i10 = 17;
-                ofFloat.addUpdateListener(new f6(this, i10));
-                this.d.addListener(new a9(this, i10));
-                this.d.setInterpolator(new OvershootInterpolator(5.0f));
-                this.d.setDuration(350L);
-                this.d.start();
-            }
-        }
+    @Override // org.telegram.ui.Components.m51, android.text.style.URLSpan, android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        int i10;
+        gv gvVar = this.e;
+        i10 = ((org.telegram.ui.ActionBar.g3) gvVar.x).currentAccount;
+        MessagesController messagesController = MessagesController.getInstance(i10);
+        String url = getURL();
+        lv lvVar = gvVar.x;
+        messagesController.openByUserName(url, lvVar.c, 1);
+        lvVar.Y();
+        lvVar.dismiss();
     }
 }

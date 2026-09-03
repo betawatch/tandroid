@@ -3,7 +3,7 @@ package androidx.lifecycle;
 import android.os.Looper;
 import java.util.Map;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public class z {
     public static final Object k = new Object();
@@ -45,7 +45,7 @@ public class z {
                 return;
             }
             yVar.c = i11;
-            yVar.a.W(this.e);
+            yVar.a.G(this.e);
         }
     }
 
@@ -111,16 +111,16 @@ public class z {
         tVar.m().a(liveData$LifecycleBoundObserver);
     }
 
-    public final void e(y5.h hVar) {
+    public final void e(o5.i iVar) {
         Object obj;
         a("observeForever");
-        x xVar = new x(this, hVar);
+        x xVar = new x(this, iVar);
         o.f fVar = this.b;
-        o.c i10 = fVar.i(hVar);
+        o.c i10 = fVar.i(iVar);
         if (i10 != null) {
             obj = i10.b;
         } else {
-            o.c cVar = new o.c(hVar, xVar);
+            o.c cVar = new o.c(iVar, xVar);
             fVar.d++;
             o.c cVar2 = fVar.b;
             if (cVar2 == null) {

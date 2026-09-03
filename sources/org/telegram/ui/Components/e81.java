@@ -1,51 +1,43 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e81 implements jl0, kl0 {
-    public final /* synthetic */ k81 a;
+public final class e81 extends f2.j0 {
+    public final /* synthetic */ org.telegram.ui.dr r;
 
-    public /* synthetic */ e81(k81 k81Var) {
-        this.a = k81Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e81(org.telegram.ui.dr drVar, Context context) {
+        super(context);
+        this.r = drVar;
     }
 
-    @Override // org.telegram.ui.Components.jl0
-    public /* synthetic */ boolean Y0(View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.jl0
-    public void c(float f10, float f11, int i10, View view) {
-        k81 k81Var = this.a;
-        j81 j81Var = k81Var.y;
-        if (j81Var != null) {
-            l81 l81Var = (l81) ((oh.h4) j81Var).b;
-            if (l81Var.x || l81Var.E) {
-                return;
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0033, code lost:
+    
+        if ((org.telegram.messenger.AndroidUtilities.dp(21.0f) + r6.getRight()) > ((org.telegram.ui.Components.k81) r5.r.J).getMeasuredWidth()) goto L13;
+     */
+    @Override // f2.j0, f2.h1
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void g(View view, f2.g1 g1Var) {
+        int j10 = j(o(), view);
+        if (j10 > 0 || (j10 == 0 && view.getLeft() - AndroidUtilities.dp(21.0f) < 0)) {
+            j10 += AndroidUtilities.dp(60.0f);
+        } else {
+            if (j10 >= 0) {
+                if (j10 == 0) {
+                }
             }
+            j10 -= AndroidUtilities.dp(60.0f);
         }
-        i81 i81Var = (i81) view;
-        if (i10 != k81Var.C || j81Var == null) {
-            Utilities.Callback2Return callback2Return = k81Var.i0;
-            if (callback2Return == null || !((Boolean) callback2Return.run(Integer.valueOf(i81Var.a.a), Integer.valueOf(i10))).booleanValue()) {
-                k81Var.d(i81Var.a.a, i10);
-            }
+        int k10 = k(p(), view);
+        int max = Math.max(180, m((int) Math.sqrt((k10 * k10) + (j10 * j10))));
+        if (max > 0) {
+            g1Var.b(-j10, -k10, max, this.j);
         }
-    }
-
-    @Override // org.telegram.ui.Components.kl0
-    public boolean f(int i10, View view) {
-        Utilities.Callback2Return callback2Return = this.a.b;
-        if (callback2Return == null) {
-            return false;
-        }
-        return ((Boolean) callback2Return.run(Integer.valueOf(((i81) view).a.a), view)).booleanValue();
-    }
-
-    @Override // org.telegram.ui.Components.jl0
-    public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

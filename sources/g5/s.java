@@ -10,7 +10,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class s implements f, v0 {
     public static final s8.i0 n = s8.v.w(4400000L, 3200000L, 2300000L, 1600000L, 810000L);
@@ -21,7 +21,7 @@ public final class s implements f, v0 {
     public static final s8.i0 s = s8.v.w(2800000L, 1800000L, 1400000L, 1100000L, 870000L);
     public static s t;
     public final s8.x a;
-    public final o5.i b = new o5.i(15);
+    public final ja.c b = new ja.c(12);
     public final t0 c;
     public final h5.y d;
     public final boolean e;
@@ -58,7 +58,7 @@ public final class s implements f, v0 {
             }
         }
         copyOnWriteArrayList.add(new WeakReference(rVar));
-        ((Handler) d.b).post(new gf.c(4, d, rVar));
+        ((Handler) d.b).post(new ff.c(11, d, rVar));
     }
 
     public static synchronized s b(Context context) {

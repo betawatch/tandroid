@@ -10,13 +10,14 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import vh.w2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class e implements u9.e {
     public static final Charset f = Charset.forName("UTF-8");
-    public static final u9.c g = new u9.c("key", w.c.h(w.c.g(d.class, new a(1))));
-    public static final u9.c h = new u9.c("value", w.c.h(w.c.g(d.class, new a(2))));
+    public static final u9.c g = new u9.c("key", w2.h(w2.g(d.class, new a(1))));
+    public static final u9.c h = new u9.c("value", w2.h(w2.g(d.class, new a(2))));
     public static final w9.a i = new w9.a(1);
     public OutputStream a;
     public final HashMap b;

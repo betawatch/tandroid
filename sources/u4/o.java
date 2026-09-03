@@ -27,7 +27,7 @@ import s8.v;
 import t4.t;
 import t4.u;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class o implements o0 {
     public final l a;
@@ -99,27 +99,27 @@ public final class o implements o0 {
         return Pattern.compile(str.concat("=(NO|YES)"));
     }
 
-    public static o3.g b(String str, o3.f[] fVarArr) {
-        o3.f[] fVarArr2 = new o3.f[fVarArr.length];
-        for (int i10 = 0; i10 < fVarArr.length; i10++) {
-            o3.f fVar = fVarArr[i10];
-            fVarArr2[i10] = new o3.f(fVar.b, fVar.c, fVar.d, null);
+    public static o3.h b(String str, o3.g[] gVarArr) {
+        o3.g[] gVarArr2 = new o3.g[gVarArr.length];
+        for (int i10 = 0; i10 < gVarArr.length; i10++) {
+            o3.g gVar = gVarArr[i10];
+            gVarArr2[i10] = new o3.g(gVar.b, gVar.c, gVar.d, null);
         }
-        return new o3.g(str, true, fVarArr2);
+        return new o3.h(str, true, gVarArr2);
     }
 
-    public static o3.f c(String str, String str2, HashMap hashMap) {
+    public static o3.g c(String str, String str2, HashMap hashMap) {
         String i10 = i(str, b0, "1", hashMap);
         boolean equals = "urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed".equals(str2);
         Pattern pattern = c0;
         if (equals) {
             String j10 = j(str, pattern, hashMap);
-            return new o3.f(j3.h.d, null, "video/mp4", Base64.decode(j10.substring(j10.indexOf(44)), 0));
+            return new o3.g(j3.h.d, null, "video/mp4", Base64.decode(j10.substring(j10.indexOf(44)), 0));
         }
         if ("com.widevine".equals(str2)) {
             UUID uuid = j3.h.d;
             int i11 = d0.a;
-            return new o3.f(uuid, null, "hls", str.getBytes(r8.d.c));
+            return new o3.g(uuid, null, "hls", str.getBytes(r8.d.c));
         }
         if (!"com.microsoft.playready".equals(str2) || !"1".equals(i10)) {
             return null;
@@ -127,7 +127,7 @@ public final class o implements o0 {
         String j11 = j(str, pattern, hashMap);
         byte[] decode = Base64.decode(j11.substring(j11.indexOf(44)), 0);
         UUID uuid2 = j3.h.e;
-        return new o3.f(uuid2, null, "video/mp4", z3.j.a(uuid2, null, decode));
+        return new o3.g(uuid2, null, "video/mp4", z3.j.a(uuid2, null, decode));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:134:0x078b  */
@@ -150,13 +150,13 @@ public final class o implements o0 {
         ArrayList arrayList2;
         ArrayList arrayList3;
         int i10;
-        o3.g gVar;
+        o3.h hVar2;
         long j12;
-        o3.g gVar2;
+        o3.h hVar3;
         f fVar2;
-        o3.g gVar3;
+        o3.h hVar4;
         String str5;
-        o3.g gVar4;
+        o3.h hVar5;
         int i11;
         l lVar2 = lVar;
         i iVar2 = iVar;
@@ -167,7 +167,7 @@ public final class o implements o0 {
         ArrayList arrayList5 = new ArrayList();
         ArrayList arrayList6 = new ArrayList();
         ArrayList arrayList7 = new ArrayList();
-        h hVar2 = new h(-9223372036854775807L, false, -9223372036854775807L, -9223372036854775807L, false);
+        h hVar6 = new h(-9223372036854775807L, false, -9223372036854775807L, -9223372036854775807L, false);
         TreeMap treeMap = new TreeMap();
         boolean z11 = z10;
         String str6 = "";
@@ -183,9 +183,9 @@ public final class o implements o0 {
         boolean z12 = false;
         d dVar = null;
         int i12 = 0;
-        o3.g gVar5 = null;
+        o3.h hVar7 = null;
         f fVar3 = null;
-        o3.g gVar6 = null;
+        o3.h hVar8 = null;
         int i13 = 0;
         String str7 = null;
         String str8 = null;
@@ -218,12 +218,12 @@ public final class o implements o0 {
                 if (m9.startsWith("#EXT-X-START")) {
                     double parseDouble = Double.parseDouble(j(m9, U, Collections.EMPTY_MAP));
                     arrayList = arrayList7;
-                    hVar = hVar2;
+                    hVar = hVar6;
                     z12 = f(m9, q0);
                     j13 = (long) (parseDouble * 1000000.0d);
                 } else {
                     arrayList = arrayList7;
-                    hVar = hVar2;
+                    hVar = hVar6;
                     if (m9.startsWith("#EXT-X-SERVER-CONTROL")) {
                         double g10 = g(m9, J);
                         long j26 = g10 == -9.223372036854776E18d ? -9223372036854775807L : (long) (g10 * 1000000.0d);
@@ -267,7 +267,7 @@ public final class o implements o0 {
                             arrayList7 = arrayList;
                             fVar3 = fVar4;
                             j21 = -1;
-                            hVar2 = hVar;
+                            hVar6 = hVar;
                             z12 = z17;
                             str8 = str11;
                         } else {
@@ -343,7 +343,7 @@ public final class o implements o0 {
                                         }
                                         int i24 = fVar5.d;
                                         f fVar6 = fVar5.b;
-                                        o3.g gVar7 = fVar5.f;
+                                        o3.h hVar9 = fVar5.f;
                                         String str15 = fVar5.h;
                                         if (str14 == null || !str14.equals(Long.toHexString(j16))) {
                                             str8 = str14;
@@ -353,14 +353,14 @@ public final class o implements o0 {
                                         i13 = i24;
                                         fVar3 = fVar6;
                                         str7 = str15;
-                                        gVar5 = gVar7;
+                                        hVar7 = hVar9;
                                         i21 = i11;
                                         j14 = j31;
                                         iVar2 = iVar;
                                     }
                                     lVar2 = lVar;
                                     iVar2 = iVar;
-                                    hVar2 = hVar;
+                                    hVar6 = hVar;
                                     z12 = z17;
                                     arrayList7 = arrayList;
                                     arrayList6 = arrayList9;
@@ -371,7 +371,7 @@ public final class o implements o0 {
                                     String i25 = i(m9, a0, "identity", hashMap);
                                     if ("NONE".equals(j35)) {
                                         treeMap.clear();
-                                        gVar5 = null;
+                                        hVar7 = null;
                                         str7 = null;
                                         str8 = null;
                                     } else {
@@ -379,11 +379,11 @@ public final class o implements o0 {
                                         if (!"identity".equals(i25)) {
                                             String str16 = str9;
                                             str9 = str16 == null ? ("SAMPLE-AES-CENC".equals(j35) || "SAMPLE-AES-CTR".equals(j35)) ? "cenc" : "cbcs" : str16;
-                                            o3.f c10 = c(m9, i25, hashMap);
+                                            o3.g c10 = c(m9, i25, hashMap);
                                             if (c10 != null) {
                                                 treeMap.put(i25, c10);
                                                 str8 = i26;
-                                                gVar5 = null;
+                                                hVar7 = null;
                                                 str7 = null;
                                             }
                                         } else if ("AES-128".equals(j35)) {
@@ -395,7 +395,7 @@ public final class o implements o0 {
                                     }
                                     lVar2 = lVar;
                                     iVar2 = iVar;
-                                    hVar2 = hVar;
+                                    hVar6 = hVar;
                                     z12 = z17;
                                     arrayList7 = arrayList;
                                     arrayList6 = arrayList9;
@@ -415,7 +415,7 @@ public final class o implements o0 {
                                         lVar2 = lVar;
                                         iVar2 = iVar;
                                         str9 = str3;
-                                        hVar2 = hVar;
+                                        hVar6 = hVar;
                                         z12 = z17;
                                         str8 = str12;
                                         arrayList7 = arrayList;
@@ -437,7 +437,7 @@ public final class o implements o0 {
                                         lVar2 = lVar;
                                         iVar2 = iVar;
                                         str9 = str3;
-                                        hVar2 = hVar;
+                                        hVar6 = hVar;
                                         z12 = z17;
                                         str8 = str12;
                                         arrayList7 = arrayList;
@@ -448,7 +448,7 @@ public final class o implements o0 {
                                         lVar2 = lVar;
                                         iVar2 = iVar;
                                         str9 = str3;
-                                        hVar2 = hVar;
+                                        hVar6 = hVar;
                                         z12 = z17;
                                         str8 = str12;
                                         arrayList7 = arrayList;
@@ -459,7 +459,7 @@ public final class o implements o0 {
                                         lVar2 = lVar;
                                         iVar2 = iVar;
                                         str9 = str3;
-                                        hVar2 = hVar;
+                                        hVar6 = hVar;
                                         z12 = z17;
                                         str8 = str12;
                                         arrayList7 = arrayList;
@@ -483,7 +483,7 @@ public final class o implements o0 {
                                         } else {
                                             arrayList2 = arrayList9;
                                             if (!m9.startsWith("#EXT-X-PRELOAD-HINT")) {
-                                                o3.g gVar8 = gVar6;
+                                                o3.h hVar10 = hVar8;
                                                 f fVar7 = fVar3;
                                                 if (m9.startsWith("#EXT-X-PART")) {
                                                     String hexString = str7 == null ? null : str12 != null ? str12 : Long.toHexString(j16);
@@ -504,29 +504,29 @@ public final class o implements o0 {
                                                         j12 = -1;
                                                     }
                                                     long j38 = j12 == -1 ? 0L : j20;
-                                                    if (gVar5 != null || treeMap.isEmpty()) {
-                                                        gVar2 = gVar5;
+                                                    if (hVar7 != null || treeMap.isEmpty()) {
+                                                        hVar3 = hVar7;
                                                     } else {
-                                                        o3.f[] fVarArr = (o3.f[]) treeMap.values().toArray(new o3.f[0]);
-                                                        o3.g gVar9 = new o3.g(str3, true, fVarArr);
-                                                        if (gVar8 == null) {
-                                                            gVar8 = b(str3, fVarArr);
+                                                        o3.g[] gVarArr = (o3.g[]) treeMap.values().toArray(new o3.g[0]);
+                                                        o3.h hVar11 = new o3.h(str3, true, gVarArr);
+                                                        if (hVar10 == null) {
+                                                            hVar10 = b(str3, gVarArr);
                                                         }
-                                                        gVar2 = gVar9;
+                                                        hVar3 = hVar11;
                                                     }
                                                     long j39 = j14;
-                                                    arrayList8.add(new d(j37, fVar7, parseDouble2, i13, j39, gVar2, str7, hexString, j38, j12, f12, f11, false));
+                                                    arrayList8.add(new d(j37, fVar7, parseDouble2, i13, j39, hVar3, str7, hexString, j38, j12, f12, f11, false));
                                                     j14 = j39 + parseDouble2;
                                                     if (j12 != -1) {
                                                         j38 += j12;
                                                     }
                                                     j20 = j38;
-                                                    gVar6 = gVar8;
+                                                    hVar8 = hVar10;
                                                     fVar3 = fVar7;
                                                     arrayList5 = arrayList8;
                                                     str9 = str3;
-                                                    gVar5 = gVar2;
-                                                    hVar2 = hVar;
+                                                    hVar7 = hVar3;
+                                                    hVar6 = hVar;
                                                     z12 = z17;
                                                     str8 = str12;
                                                     arrayList7 = arrayList;
@@ -539,7 +539,7 @@ public final class o implements o0 {
                                                     j10 = j14;
                                                     arrayList3 = arrayList8;
                                                     if (m9.startsWith("#")) {
-                                                        gVar6 = gVar8;
+                                                        hVar8 = hVar10;
                                                         str2 = str7;
                                                         j11 = j21;
                                                         z4 = z16;
@@ -553,7 +553,7 @@ public final class o implements o0 {
                                                         str7 = str2;
                                                         j21 = j11;
                                                         z16 = z4;
-                                                        hVar2 = hVar;
+                                                        hVar6 = hVar;
                                                         z12 = z17;
                                                         str8 = str12;
                                                         arrayList7 = arrayList;
@@ -563,53 +563,53 @@ public final class o implements o0 {
                                                     } else {
                                                         String hexString2 = str7 == null ? null : str12 != null ? str12 : Long.toHexString(j16);
                                                         long j40 = j16 + 1;
-                                                        String k10 = k(m9, hashMap);
-                                                        f fVar8 = (f) hashMap2.get(k10);
+                                                        String l10 = l(m9, hashMap);
+                                                        f fVar8 = (f) hashMap2.get(l10);
                                                         if (j21 == -1) {
                                                             fVar2 = fVar8;
                                                             j17 = 0;
                                                         } else {
                                                             if (z15 && fVar == null && fVar8 == null) {
-                                                                fVar8 = new f(k10, 0L, j17, null, null);
-                                                                hashMap2.put(k10, fVar8);
+                                                                fVar8 = new f(l10, 0L, j17, null, null);
+                                                                hashMap2.put(l10, fVar8);
                                                             }
                                                             fVar2 = fVar8;
                                                         }
-                                                        if (gVar5 != null || treeMap.isEmpty()) {
-                                                            gVar3 = gVar8;
-                                                            str5 = k10;
+                                                        if (hVar7 != null || treeMap.isEmpty()) {
+                                                            hVar4 = hVar10;
+                                                            str5 = l10;
                                                         } else {
-                                                            gVar3 = gVar8;
-                                                            str5 = k10;
-                                                            o3.f[] fVarArr2 = (o3.f[]) treeMap.values().toArray(new o3.f[0]);
-                                                            o3.g gVar10 = new o3.g(str3, true, fVarArr2);
-                                                            if (gVar3 == null) {
-                                                                gVar4 = b(str3, fVarArr2);
-                                                                gVar5 = gVar10;
+                                                            hVar4 = hVar10;
+                                                            str5 = l10;
+                                                            o3.g[] gVarArr2 = (o3.g[]) treeMap.values().toArray(new o3.g[0]);
+                                                            o3.h hVar12 = new o3.h(str3, true, gVarArr2);
+                                                            if (hVar4 == null) {
+                                                                hVar5 = b(str3, gVarArr2);
+                                                                hVar7 = hVar12;
                                                                 int i30 = i13;
                                                                 String str17 = str7;
                                                                 long j41 = j21;
                                                                 long j42 = j17;
                                                                 long j43 = j18;
                                                                 long j44 = j19;
-                                                                o3.g gVar11 = gVar5;
+                                                                o3.h hVar13 = hVar7;
                                                                 i13 = i30;
-                                                                arrayList4.add(new f(str5, fVar == null ? fVar : fVar2, str6, j44, i30, j43, gVar11, str17, hexString2, j42, j41, z16, arrayList3));
+                                                                arrayList4.add(new f(str5, fVar == null ? fVar : fVar2, str6, j44, i30, j43, hVar13, str17, hexString2, j42, j41, z16, arrayList3));
                                                                 j14 = j43 + j44;
                                                                 ArrayList arrayList11 = new ArrayList();
                                                                 j17 = j21 == -1 ? j42 + j41 : j42;
                                                                 arrayList6 = arrayList2;
-                                                                gVar6 = gVar4;
+                                                                hVar8 = hVar5;
                                                                 fVar3 = fVar;
                                                                 j16 = j40;
                                                                 str9 = str3;
                                                                 str6 = "";
                                                                 j18 = j14;
-                                                                gVar5 = gVar11;
+                                                                hVar7 = hVar13;
                                                                 str7 = str17;
                                                                 j19 = 0;
                                                                 j21 = -1;
-                                                                hVar2 = hVar;
+                                                                hVar6 = hVar;
                                                                 str8 = str12;
                                                                 arrayList7 = arrayList;
                                                                 c3 = 0;
@@ -619,35 +619,35 @@ public final class o implements o0 {
                                                                 arrayList5 = arrayList11;
                                                                 z12 = z17;
                                                             } else {
-                                                                gVar5 = gVar10;
+                                                                hVar7 = hVar12;
                                                             }
                                                         }
-                                                        gVar4 = gVar3;
+                                                        hVar5 = hVar4;
                                                         int i302 = i13;
                                                         String str172 = str7;
                                                         long j412 = j21;
                                                         long j422 = j17;
                                                         long j432 = j18;
                                                         long j442 = j19;
-                                                        o3.g gVar112 = gVar5;
+                                                        o3.h hVar132 = hVar7;
                                                         i13 = i302;
-                                                        arrayList4.add(new f(str5, fVar == null ? fVar : fVar2, str6, j442, i302, j432, gVar112, str172, hexString2, j422, j412, z16, arrayList3));
+                                                        arrayList4.add(new f(str5, fVar == null ? fVar : fVar2, str6, j442, i302, j432, hVar132, str172, hexString2, j422, j412, z16, arrayList3));
                                                         j14 = j432 + j442;
                                                         ArrayList arrayList112 = new ArrayList();
                                                         if (j21 == -1) {
                                                         }
                                                         arrayList6 = arrayList2;
-                                                        gVar6 = gVar4;
+                                                        hVar8 = hVar5;
                                                         fVar3 = fVar;
                                                         j16 = j40;
                                                         str9 = str3;
                                                         str6 = "";
                                                         j18 = j14;
-                                                        gVar5 = gVar112;
+                                                        hVar7 = hVar132;
                                                         str7 = str172;
                                                         j19 = 0;
                                                         j21 = -1;
-                                                        hVar2 = hVar;
+                                                        hVar6 = hVar;
                                                         str8 = str12;
                                                         arrayList7 = arrayList;
                                                         c3 = 0;
@@ -659,39 +659,39 @@ public final class o implements o0 {
                                                     }
                                                 }
                                             } else if (dVar == null && "PART".equals(j(m9, f0, hashMap))) {
-                                                o3.g gVar12 = gVar6;
+                                                o3.h hVar14 = hVar8;
                                                 f fVar9 = fVar3;
                                                 String j45 = j(m9, pattern2, hashMap);
                                                 long h10 = h(m9, X);
                                                 long h11 = h(m9, Y);
                                                 String hexString3 = str7 == null ? null : str12 != null ? str12 : Long.toHexString(j16);
-                                                if (gVar5 != null || treeMap.isEmpty()) {
-                                                    gVar = gVar5;
+                                                if (hVar7 != null || treeMap.isEmpty()) {
+                                                    hVar2 = hVar7;
                                                 } else {
-                                                    o3.f[] fVarArr3 = (o3.f[]) treeMap.values().toArray(new o3.f[0]);
-                                                    o3.g gVar13 = new o3.g(str3, true, fVarArr3);
-                                                    if (gVar12 == null) {
-                                                        gVar12 = b(str3, fVarArr3);
+                                                    o3.g[] gVarArr3 = (o3.g[]) treeMap.values().toArray(new o3.g[0]);
+                                                    o3.h hVar15 = new o3.h(str3, true, gVarArr3);
+                                                    if (hVar14 == null) {
+                                                        hVar14 = b(str3, gVarArr3);
                                                     }
-                                                    gVar = gVar13;
+                                                    hVar2 = hVar15;
                                                 }
                                                 if (h10 == -1 || h11 != -1) {
                                                     long j46 = j14;
                                                     j14 = j46;
-                                                    dVar = new d(j45, fVar9, 0L, i13, j46, gVar, str7, hexString3, h10 != -1 ? h10 : 0L, h11, false, false, true);
+                                                    dVar = new d(j45, fVar9, 0L, i13, j46, hVar2, str7, hexString3, h10 != -1 ? h10 : 0L, h11, false, false, true);
                                                 }
                                                 arrayList6 = arrayList2;
                                                 str9 = str3;
                                                 fVar3 = fVar9;
-                                                gVar5 = gVar;
-                                                hVar2 = hVar;
+                                                hVar7 = hVar2;
+                                                hVar6 = hVar;
                                                 z12 = z17;
                                                 str8 = str12;
                                                 arrayList7 = arrayList;
                                                 arrayList5 = arrayList8;
                                                 c3 = 0;
                                                 lVar2 = lVar;
-                                                gVar6 = gVar12;
+                                                hVar8 = hVar14;
                                                 iVar2 = iVar;
                                             }
                                         }
@@ -711,7 +711,7 @@ public final class o implements o0 {
                                         str7 = str2;
                                         j21 = j11;
                                         z16 = z4;
-                                        hVar2 = hVar;
+                                        hVar6 = hVar;
                                         z12 = z17;
                                         str8 = str12;
                                         arrayList7 = arrayList;
@@ -736,7 +736,7 @@ public final class o implements o0 {
                                 str7 = str2;
                                 j21 = j11;
                                 z16 = z4;
-                                hVar2 = hVar;
+                                hVar6 = hVar;
                                 z12 = z17;
                                 str8 = str12;
                                 arrayList7 = arrayList;
@@ -744,7 +744,7 @@ public final class o implements o0 {
                                 arrayList6 = arrayList2;
                                 lVar2 = lVar;
                             }
-                            hVar2 = hVar;
+                            hVar6 = hVar;
                             z12 = z17;
                             str8 = str12;
                             arrayList7 = arrayList;
@@ -754,13 +754,13 @@ public final class o implements o0 {
                     }
                 }
                 arrayList7 = arrayList;
-                hVar2 = hVar;
+                hVar6 = hVar;
             }
         }
         boolean z18 = z12;
         ArrayList arrayList12 = arrayList6;
         ArrayList arrayList13 = arrayList7;
-        h hVar3 = hVar2;
+        h hVar16 = hVar6;
         ArrayList arrayList14 = arrayList5;
         HashMap hashMap3 = new HashMap();
         for (int i31 = 0; i31 < arrayList12.size(); i31++) {
@@ -779,7 +779,7 @@ public final class o implements o0 {
         if (dVar != null) {
             arrayList14.add(dVar);
         }
-        return new i(i12, str, arrayList13, j13, z18, j15, z14, i14, j24, i15, j22, j23, z11, z13, j15 != 0, gVar6, arrayList4, arrayList14, hVar3, hashMap3);
+        return new i(i12, str, arrayList13, j13, z18, j15, z14, i14, j24, i15, j22, j23, z11, z13, j15 != 0, hVar8, arrayList4, arrayList14, hVar16, hashMap3);
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -1114,10 +1114,10 @@ public final class o implements o0 {
             } else if (m9.startsWith("#EXT-X-MEDIA")) {
                 arrayList14.add(m9);
             } else if (m9.startsWith("#EXT-X-SESSION-KEY")) {
-                o3.f c10 = c(m9, i(m9, a0, "identity", hashMap4), hashMap4);
+                o3.g c10 = c(m9, i(m9, a0, "identity", hashMap4), hashMap4);
                 if (c10 != null) {
                     String j14 = j(m9, Z, hashMap4);
-                    arrayList15.add(new o3.g(("SAMPLE-AES-CENC".equals(j14) || "SAMPLE-AES-CTR".equals(j14)) ? "cenc" : "cbcs", true, c10));
+                    arrayList15.add(new o3.h(("SAMPLE-AES-CENC".equals(j14) || "SAMPLE-AES-CTR".equals(j14)) ? "cenc" : "cbcs", true, c10));
                 }
             } else if (m9.startsWith("#EXT-X-STREAM-INF") || startsWith) {
                 boolean contains = z11 | m9.contains("CLOSED-CAPTIONS=NONE");
@@ -1171,7 +1171,7 @@ public final class o implements o0 {
                     if (!mVar.l()) {
                         throw r1.b("#EXT-X-STREAM-INF must be followed by another line", null);
                     }
-                    H2 = h5.a.H(str5, k(mVar.m(), hashMap4));
+                    H2 = h5.a.H(str5, l(mVar.m(), hashMap4));
                 }
                 Uri uri2 = H2;
                 m0 m0Var2 = new m0();
@@ -1270,7 +1270,7 @@ public final class o implements o0 {
             str2 = matcher.group(1);
             str2.getClass();
         }
-        return (map.isEmpty() || str2 == null) ? str2 : k(str2, map);
+        return (map.isEmpty() || str2 == null) ? str2 : l(str2, map);
     }
 
     public static String j(String str, Pattern pattern, Map map) {
@@ -1281,7 +1281,7 @@ public final class o implements o0 {
         throw r1.b("Couldn't match " + pattern.pattern() + " in " + str, null);
     }
 
-    public static String k(String str, Map map) {
+    public static String l(String str, Map map) {
         Matcher matcher = t0.matcher(str);
         StringBuffer stringBuffer = new StringBuffer();
         while (matcher.find()) {
@@ -1300,7 +1300,7 @@ public final class o implements o0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object w(Uri uri, g5.o oVar) {
+    public final Object k(Uri uri, g5.o oVar) {
         String trim;
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(oVar));
         ArrayDeque arrayDeque = new ArrayDeque();

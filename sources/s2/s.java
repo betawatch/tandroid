@@ -1,14 +1,13 @@
 package s2;
 
-import androidx.biometric.f0;
 import java.nio.ByteBuffer;
-import org.telegram.ui.yh;
+import org.telegram.ui.ai;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class s extends a {
-    public static final /* synthetic */ f0 f;
-    public static final /* synthetic */ f0 h;
+    public static final /* synthetic */ bb.b f;
+    public static final /* synthetic */ bb.b h;
     public float e;
 
     static {
@@ -37,11 +36,11 @@ public final class s extends a {
     }
 
     public final String toString() {
-        sf.f b10 = de.a.b(h, this, this);
+        rf.f b10 = de.a.b(h, this, this);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb = new StringBuilder("SoundMediaHeaderBox[balance=");
-        yh.x(de.a.b(f, this, this));
+        ai.x(de.a.b(f, this, this));
         sb.append(this.e);
         sb.append("]");
         return sb.toString();

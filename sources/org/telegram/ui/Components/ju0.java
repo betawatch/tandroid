@@ -20,16 +20,16 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class ju0 extends rl0 {
+public final class ju0 extends ql0 {
     public int B;
     public final /* synthetic */ yu0 D;
     public final Context c;
     public final int d;
     public boolean r;
     public String w;
-    public ng.q0 x;
+    public mg.q0 x;
     public final ArrayList e = new ArrayList();
     public final ArrayList f = new ArrayList();
     public final ArrayList h = new ArrayList();
@@ -46,14 +46,14 @@ public final class ju0 extends rl0 {
         C(true);
     }
 
-    @Override // org.telegram.ui.Components.rl0
-    public final boolean D(f2.m1 m1Var) {
+    @Override // org.telegram.ui.Components.ql0
+    public final boolean D(f2.l1 l1Var) {
         return true;
     }
 
-    public final void E(ng.q0 q0Var, String str) {
+    public final void E(mg.q0 q0Var, String str) {
         if (TextUtils.equals(str, this.w)) {
-            ng.q0 q0Var2 = this.x;
+            mg.q0 q0Var2 = this.x;
             if (q0Var2 == null && q0Var == null) {
                 return;
             }
@@ -110,24 +110,24 @@ public final class ju0 extends rl0 {
         tL_messages_search.peer = MessagesController.getInstance(i10).getInputPeer(UserConfig.getInstance(i10).getClientUserId());
         tL_messages_search.filter = new TLRPC.TL_inputMessagesFilterEmpty();
         tL_messages_search.q = this.w;
-        ng.q0 q0Var = this.x;
+        mg.q0 q0Var = this.x;
         if (q0Var != null) {
             tL_messages_search.flags |= 8;
             tL_messages_search.saved_reaction.add(q0Var.g());
         }
         ArrayList arrayList = this.h;
         if (arrayList.size() > 0) {
-            tL_messages_search.offset_id = ((MessageObject) l.d.i(1, arrayList)).getId();
+            tL_messages_search.offset_id = ((MessageObject) kf.k0.i(1, arrayList)).getId();
         }
         tL_messages_search.limit = 10;
         this.s = false;
         int i11 = this.B + 1;
         this.B = i11;
-        gy gyVar = new gy(this, i11, tL_messages_search, 13);
+        ey eyVar = new ey(this, i11, tL_messages_search, 13);
         if (this.x != null) {
-            MessagesStorage.getInstance(i10).searchSavedByTag(this.x.g(), 0L, this.w, 100, this.n.size(), new oh.c2(1, this, gyVar), false);
+            MessagesStorage.getInstance(i10).searchSavedByTag(this.x.g(), 0L, this.w, 100, this.n.size(), new nh.b2(1, this, eyVar), false);
         } else {
-            gyVar.run();
+            eyVar.run();
         }
     }
 
@@ -168,12 +168,12 @@ public final class ju0 extends rl0 {
         if (!z4 || !arrayList.isEmpty()) {
             for (int i12 = 0; i12 < qt0VarArr.length; i12++) {
                 if (qt0VarArr[i12].C == 11 && arrayList2.isEmpty() && this.e.isEmpty()) {
-                    jh.s sVar = qt0VarArr[i12].w.d;
+                    ih.s sVar = qt0VarArr[i12].w.d;
                     if (this.x == null || !TextUtils.isEmpty(this.w)) {
                         formatString = LocaleController.formatString(R.string.NoResultFoundFor, this.w);
                     } else {
                         String string = LocaleController.getString(R.string.NoResultFoundForTag);
-                        ng.q0 q0Var = this.x;
+                        mg.q0 q0Var = this.x;
                         Paint.FontMetricsInt fontMetricsInt = qt0VarArr[i12].w.d.getPaint().getFontMetricsInt();
                         if (TextUtils.isEmpty(q0Var.f)) {
                             SpannableString spannableString = new SpannableString("😀");
@@ -193,12 +193,12 @@ public final class ju0 extends rl0 {
         l();
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final int h() {
         return this.f.size() + this.e.size();
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final long i(int i10) {
         int hash;
         if (i10 < 0) {
@@ -218,42 +218,42 @@ public final class ju0 extends rl0 {
         return hash;
     }
 
-    @Override // f2.p0
+    @Override // f2.o0
     public final int j(int i10) {
         return 23;
     }
 
-    @Override // f2.p0
-    public final void v(f2.m1 m1Var, int i10) {
+    @Override // f2.o0
+    public final void v(f2.l1 l1Var, int i10) {
         if (i10 < 0) {
             return;
         }
-        View view = m1Var.a;
-        if (view instanceof org.telegram.ui.Cells.r2) {
-            org.telegram.ui.Cells.r2 r2Var = (org.telegram.ui.Cells.r2) view;
-            r2Var.p2 = i10 + 1 < h();
+        View view = l1Var.a;
+        if (view instanceof org.telegram.ui.Cells.q2) {
+            org.telegram.ui.Cells.q2 q2Var = (org.telegram.ui.Cells.q2) view;
+            q2Var.p2 = i10 + 1 < h();
             ArrayList arrayList = this.e;
             if (i10 < arrayList.size()) {
                 SavedMessagesController.SavedDialog savedDialog = (SavedMessagesController.SavedDialog) arrayList.get(i10);
-                r2Var.W(savedDialog.dialogId, savedDialog.message, savedDialog.getDate(), false, false);
+                q2Var.W(savedDialog.dialogId, savedDialog.message, savedDialog.getDate(), false, false);
                 return;
             }
             int size = i10 - arrayList.size();
             ArrayList arrayList2 = this.f;
             if (size < arrayList2.size()) {
                 MessageObject messageObject = (MessageObject) arrayList2.get(size);
-                r2Var.W(messageObject.getSavedDialogId(), messageObject, messageObject.messageOwner.date, false, false);
+                q2Var.W(messageObject.getSavedDialogId(), messageObject, messageObject.messageOwner.date, false, false);
             }
         }
     }
 
-    @Override // f2.p0
-    public final f2.m1 x(ViewGroup viewGroup, int i10) {
+    @Override // f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
         iu0 iu0Var = new iu0(0, this.c, true);
         yu0 yu0Var = this.D;
         iu0Var.setDialogCellDelegate(yu0Var);
         iu0Var.o0 = true;
-        iu0Var.setBackgroundColor(yu0Var.h0(org.telegram.ui.ActionBar.k6.d6));
-        return new el0(iu0Var);
+        iu0Var.setBackgroundColor(yu0Var.h0(org.telegram.ui.ActionBar.j6.d6));
+        return new dl0(iu0Var);
     }
 }

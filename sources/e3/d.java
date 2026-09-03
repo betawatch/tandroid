@@ -2,14 +2,15 @@ package e3;
 
 import android.content.Context;
 import android.text.TextUtils;
+import gg.m2;
 import h5.j;
-import hg.m2;
 import j3.y1;
 import j3.z1;
 import java.util.ArrayList;
 import java.util.HashMap;
-import lf.i0;
-import ng.q0;
+import kf.i0;
+import kf.k0;
+import mg.q0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.MediaDataController;
@@ -28,27 +29,27 @@ import org.telegram.ui.ActionBar.c2;
 import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.hn0;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.in0;
 import org.telegram.ui.Components.nb;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.yc0;
+import org.telegram.ui.Components.xc0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PasscodeActivity;
 import org.telegram.ui.SessionsActivity;
 import org.telegram.ui.StickersActivity;
-import org.telegram.ui.bd0;
-import org.telegram.ui.bh;
-import org.telegram.ui.d50;
-import org.telegram.ui.h50;
-import org.telegram.ui.xn;
-import uf.l1;
-import uf.m1;
-import vf.n;
-import vf.t;
+import org.telegram.ui.cd0;
+import org.telegram.ui.dh;
+import org.telegram.ui.e50;
+import org.telegram.ui.i50;
+import org.telegram.ui.zn;
+import tf.l1;
+import tf.m1;
+import uf.n;
+import uf.t;
 import y2.i;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements g3.b, j, NativeInstance.PayloadCallback, c2, Utilities.Callback3Return, MediaDataController.KeywordResultCallback {
     public final /* synthetic */ int a;
@@ -64,9 +65,9 @@ public final /* synthetic */ class d implements g3.b, j, NativeInstance.PayloadC
     }
 
     @Override // g3.b
-    public Object g() {
+    public Object h() {
         g gVar = (g) this.c;
-        ((androidx.biometric.e) gVar.d).A((i) this.d, this.b + 1, false);
+        ((af.d) gVar.d).A((i) this.d, this.b + 1, false);
         return null;
     }
 
@@ -81,18 +82,18 @@ public final /* synthetic */ class d implements g3.b, j, NativeInstance.PayloadC
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public void j(d2 d2Var, int i10) {
+    public void l(d2 d2Var, int i10) {
         switch (this.a) {
             case 3:
-                xn xnVar = (xn) this.c;
-                xnVar.getMessagesController().pinMessage(xnVar.e, xnVar.f, this.b, false, !r10[1], ((boolean[]) this.d)[0]);
-                ic B = qc.B(xnVar, true, null, null, xnVar.ba);
+                zn znVar = (zn) this.c;
+                znVar.getMessagesController().pinMessage(znVar.e, znVar.f, this.b, false, !r10[1], ((boolean[]) this.d)[0]);
+                ic B = qc.B(znVar, true, null, null, znVar.ba);
                 B.j();
                 nb nbVar = B.e;
-                nbVar.postDelayed(new bh(0, nbVar), 550L);
+                nbVar.postDelayed(new dh(0, nbVar), 550L);
                 break;
             case 4:
-                xn.Q0((xn) this.c, this.b, (MessageObject) this.d);
+                zn.Q0((zn) this.c, this.b, (MessageObject) this.d);
                 break;
             case 5:
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.c;
@@ -108,15 +109,15 @@ public final /* synthetic */ class d implements g3.b, j, NativeInstance.PayloadC
                 }
                 break;
             case 6:
-                in0 in0Var = (in0) this.c;
+                hn0 hn0Var = (hn0) this.c;
                 TLRPC.Reaction reaction = (TLRPC.Reaction) this.d;
-                String obj = in0Var.getText().toString();
+                String obj = hn0Var.getText().toString();
                 if (obj.length() <= 12) {
                     MessagesController.getInstance(this.b).renameSavedReactionTag(q0.d(reaction), obj);
                     d2Var.dismiss();
                     break;
                 } else {
-                    AndroidUtilities.shakeView(in0Var);
+                    AndroidUtilities.shakeView(hn0Var);
                     break;
                 }
             case 7:
@@ -142,15 +143,15 @@ public final /* synthetic */ class d implements g3.b, j, NativeInstance.PayloadC
                     break;
                 }
             case 8:
-                d50 d50Var = (d50) this.c;
+                e50 e50Var = (e50) this.c;
                 EditTextBoldCursor editTextBoldCursor2 = (EditTextBoldCursor) this.d;
-                h50 h50Var = d50Var.n;
-                ChatObject.Call call = h50Var.b.X0;
+                i50 i50Var = e50Var.n;
+                ChatObject.Call call = i50Var.b.X0;
                 String obj3 = editTextBoldCursor2.getText().toString();
                 int i11 = this.b;
                 call.toggleRecord(obj3, i11);
                 AndroidUtilities.hideKeyboard(editTextBoldCursor2);
-                h50Var.b.k1().j(i11 == 0 ? 39 : 100, 0L, null);
+                i50Var.b.k1().j(i11 == 0 ? 39 : 100, 0L, null);
                 if (VoIPService.getSharedInstance() != null) {
                     VoIPService.getSharedInstance().playStartRecordSound();
                     break;
@@ -160,18 +161,18 @@ public final /* synthetic */ class d implements g3.b, j, NativeInstance.PayloadC
                 LaunchActivity launchActivity = (LaunchActivity) this.c;
                 HashMap hashMap = (HashMap) this.d;
                 ArrayList arrayList = launchActivity.a0;
-                if (!arrayList.isEmpty() && AndroidUtilities.isMapsInstalled((p2) l.d.i(1, arrayList))) {
-                    bd0 bd0Var = new bd0(0);
-                    bd0Var.C0 = new m2(hashMap, this.b, 11);
-                    launchActivity.p0(bd0Var);
+                if (!arrayList.isEmpty() && AndroidUtilities.isMapsInstalled((p2) k0.i(1, arrayList))) {
+                    cd0 cd0Var = new cd0(0);
+                    cd0Var.C0 = new m2(hashMap, this.b, 11);
+                    launchActivity.p0(cd0Var);
                     break;
                 }
                 break;
             case 10:
-                ((bd0) this.c).w0(RichMessageLayout.PART_MAX_HEIGHT_DP, (TLRPC.User) this.d, this.b);
+                ((cd0) this.c).w0(RichMessageLayout.PART_MAX_HEIGHT_DP, (TLRPC.User) this.d, this.b);
                 break;
             case 11:
-                PasscodeActivity.U((PasscodeActivity) this.c, (yc0) this.d, this.b);
+                PasscodeActivity.U((PasscodeActivity) this.c, (xc0) this.d, this.b);
                 break;
             case 13:
                 SessionsActivity.X((SessionsActivity) this.c, this.b, (boolean[]) this.d);

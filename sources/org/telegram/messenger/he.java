@@ -4,7 +4,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class he implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -29,14 +29,14 @@ public final /* synthetic */ class he implements RequestDelegate {
                 ((TopicsController) this.d).lambda$loadTopics$7(this.b, this.c, tLObject, tL_error);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new mh.y8((org.telegram.ui.l4) this.d, tLObject, this.c, this.b, 12));
+                AndroidUtilities.runOnUIThread(new lh.y8((org.telegram.ui.n4) this.d, tLObject, this.c, this.b, 12));
                 break;
         }
     }
 
-    public /* synthetic */ he(org.telegram.ui.l4 l4Var, int i10, long j10) {
+    public /* synthetic */ he(org.telegram.ui.n4 n4Var, int i10, long j10) {
         this.a = 2;
-        this.d = l4Var;
+        this.d = n4Var;
         this.c = i10;
         this.b = j10;
     }

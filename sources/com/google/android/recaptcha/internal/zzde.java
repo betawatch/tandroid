@@ -19,13 +19,14 @@ import ld.s1;
 import ld.t;
 import ld.t1;
 import ld.u1;
+import org.telegram.ui.Components.tp0;
 import uc.c;
 import uc.f;
 import uc.g;
 import uc.h;
 import vc.a;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class zzde implements h0 {
     private final /* synthetic */ s zza;
@@ -97,14 +98,14 @@ public final class zzde implements h0 {
         tVar.getClass();
         kotlin.jvm.internal.t.a(3, r1.a);
         kotlin.jvm.internal.t.a(3, s1.a);
-        return new e.a(tVar);
+        return new a3.c(tVar);
     }
 
     public final td.a getOnJoin() {
         u1 u1Var = (u1) this.zza;
         u1Var.getClass();
         kotlin.jvm.internal.t.a(3, t1.a);
-        return new b7.c(u1Var);
+        return new tp0(u1Var, 16);
     }
 
     @Override // ld.f1

@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class l0 implements Handler.Callback, ServiceConnection {
     public final Context a;
@@ -82,8 +82,8 @@ public final class l0 implements Handler.Callback, ServiceConnection {
                 if (Log.isLoggable("NotifManCompat", 3)) {
                     Log.d("NotifManCompat", "Remote service has died: " + componentName);
                 }
-            } catch (RemoteException e6) {
-                Log.w("NotifManCompat", "RemoteException communicating with " + componentName, e6);
+            } catch (RemoteException e) {
+                Log.w("NotifManCompat", "RemoteException communicating with " + componentName, e);
             }
         }
         if (arrayDeque.isEmpty()) {

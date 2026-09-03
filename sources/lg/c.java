@@ -1,97 +1,69 @@
 package lg;
 
 import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.text.TextPaint;
-import android.text.TextUtils;
-import k7.c6;
+import android.graphics.Canvas;
+import gg.p0;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.np;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Cells.ua;
+import org.telegram.ui.Components.z8;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class c extends jg.d {
-    public final np r;
-    public TLRPC.TL_help_country s;
-    public final TextPaint v;
-    public final eh.m w;
+public final class c extends ua {
+    public final a U;
+    public TL_stories.PrepaidGiveaway V;
 
-    public c(Context context, g6 g6Var) {
-        super(context, g6Var);
-        TextPaint textPaint = new TextPaint();
-        this.v = textPaint;
-        this.w = new eh.m(this, 24);
-        textPaint.setTextSize(AndroidUtilities.dp(20.0f));
-        this.f.setVisibility(8);
-        this.c.setVisibility(8);
-        np npVar = new np(context, 21, g6Var);
-        this.r = npVar;
-        npVar.b(k6.B5, k6.j7, k6.C5);
-        npVar.setDrawUnchecked(true);
-        npVar.setDrawBackgroundAsArc(10);
-        addView(npVar);
-        npVar.a(false, false);
-        npVar.setLayoutParams(c6.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
+    public c(Context context) {
+        super(context, 0, 0, false);
+        this.U = new a(context);
     }
 
-    @Override // jg.d
-    public final int a() {
-        return 22;
+    @Override // org.telegram.ui.Cells.ua
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
     }
 
-    @Override // jg.d
-    public final boolean b() {
-        return true;
+    public TL_stories.PrepaidGiveaway getPrepaidGiveaway() {
+        return this.V;
     }
 
-    @Override // jg.d
-    public final void c(boolean z4, boolean z10) {
-        np npVar = this.r;
-        if (npVar.getVisibility() == 0) {
-            npVar.a(z4, z10);
+    @Override // org.telegram.ui.Cells.ua, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.P) {
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(70.0f) : 0), getMeasuredHeight() - 1, j6.k0);
         }
     }
 
-    @Override // jg.d
-    public final void d() {
-        boolean z4 = LocaleController.isRTL;
-        this.d.setLayoutParams(c6.d(-1, -2.0f, (z4 ? 5 : 3) | 16, z4 ? 20.0f : 52.0f, 0.0f, z4 ? 52.0f : 20.0f, 0.0f));
-        boolean z10 = LocaleController.isRTL;
-        this.e.setLayoutParams(c6.d(-1, -2.0f, (z10 ? 5 : 3) | 16, z10 ? 20.0f : 52.0f, 0.0f, z10 ? 52.0f : 20.0f, 0.0f));
-        boolean z11 = LocaleController.isRTL;
-        this.f.setLayoutParams(c6.d(22, 22.0f, (z11 ? 5 : 3) | 16, z11 ? 15.0f : 20.0f, 0.0f, z11 ? 20.0f : 15.0f, 0.0f));
-    }
-
-    public final void f() {
-        TLRPC.TL_help_country tL_help_country = this.s;
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        CharSequence replaceWithRestrictedEmoji = Emoji.replaceWithRestrictedEmoji(LocaleController.getLanguageFlag(tL_help_country.iso2), this.v.getFontMetricsInt(), 0, this.w);
-        if (replaceWithRestrictedEmoji != null) {
-            spannableStringBuilder.append(replaceWithRestrictedEmoji).append((CharSequence) " ");
-            spannableStringBuilder.setSpan(new b(16), replaceWithRestrictedEmoji.length(), replaceWithRestrictedEmoji.length() + 1, 0);
-        } else {
-            spannableStringBuilder.append((CharSequence) " ");
-            spannableStringBuilder.setSpan(new b(34), 0, 1, 0);
+    public void setImage(TL_stories.PrepaidGiveaway prepaidGiveaway) {
+        this.V = prepaidGiveaway;
+        boolean z4 = prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway;
+        z8 z8Var = this.B;
+        if (z4) {
+            z8Var.g(26);
+            String valueOf = String.valueOf(((TL_stories.TL_prepaidStarsGiveaway) prepaidGiveaway).stars / 500);
+            a aVar = this.U;
+            aVar.f = valueOf;
+            aVar.e = aVar.a.measureText(valueOf);
+            aVar.invalidateSelf();
+        } else if (prepaidGiveaway instanceof TL_stories.TL_prepaidGiveaway) {
+            z8Var.g(16);
+            int i10 = ((TL_stories.TL_prepaidGiveaway) prepaidGiveaway).months;
+            if (i10 == 12) {
+                z8Var.i(-31392, -2796986);
+            } else if (i10 == 6) {
+                z8Var.i(-10703110, -12481584);
+            } else {
+                z8Var.i(-6631068, -11945404);
+            }
+            String valueOf2 = String.valueOf(p0.g() * prepaidGiveaway.quantity);
+            a aVar2 = this.U;
+            aVar2.f = valueOf2;
+            aVar2.e = aVar2.a.measureText(valueOf2);
+            aVar2.invalidateSelf();
         }
-        String countryName = LocaleController.getCountryName(tL_help_country.iso2);
-        if (TextUtils.isEmpty(countryName)) {
-            countryName = tL_help_country.default_name;
-        }
-        spannableStringBuilder.append((CharSequence) countryName);
-        this.d.k(spannableStringBuilder);
-    }
-
-    public TLRPC.TL_help_country getCountry() {
-        return this.s;
-    }
-
-    @Override // jg.d
-    public int getFullHeight() {
-        return 44;
+        this.b.i(this.U);
     }
 }

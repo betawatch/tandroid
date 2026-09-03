@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class oy0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final /* synthetic */ class oy0 implements Utilities.Callback {
                 profileActivity.getClass();
                 ArrayList arrayList = new ArrayList(1);
                 arrayList.add((TLRPC.InputStickerSet) obj);
-                profileActivity.showDialog(new org.telegram.ui.Components.ov(profileActivity, profileActivity.getParentActivity(), profileActivity.w0, arrayList));
+                profileActivity.showDialog(new org.telegram.ui.Components.lv(profileActivity, profileActivity.getParentActivity(), profileActivity.w0, arrayList));
                 break;
             default:
                 ProfileActivity.e0(this.b, (Boolean) obj);

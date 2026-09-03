@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.graphics.Paint;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class df extends sh.v {
+public final class df extends rh.v {
     public boolean s;
     public final /* synthetic */ ChatActivityEnterView v;
 
@@ -18,15 +18,15 @@ public final class df extends sh.v {
         this.d = paint;
         this.f = true;
         this.b = new c5.e();
-        org.telegram.ui.c81 c81Var = new org.telegram.ui.c81(this, context, 2);
-        this.c = c81Var;
-        c81Var.setOverScrollMode(2);
-        c81Var.setClipToPadding(false);
-        c81Var.setClipToOutline(true);
-        c81Var.j(new nb0(this, 14));
-        addView(c81Var);
-        paint.setColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.Ii, false));
-        qg.b bVar = this.r;
+        org.telegram.ui.d81 d81Var = new org.telegram.ui.d81(this, context, 2);
+        this.c = d81Var;
+        d81Var.setOverScrollMode(2);
+        d81Var.setClipToPadding(false);
+        d81Var.setClipToOutline(true);
+        d81Var.j(new mb0(this, 14));
+        addView(d81Var);
+        paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Ii, false));
+        pg.b bVar = this.r;
         if (bVar != null) {
             bVar.u();
         }

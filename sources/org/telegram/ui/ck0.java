@@ -6,9 +6,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.NotificationsSettingsFacade;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class ck0 implements org.telegram.ui.Components.mo {
+public final class ck0 implements org.telegram.ui.Components.jo {
     public final /* synthetic */ long a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ lk0 c;
@@ -84,7 +84,7 @@ public final class ck0 implements org.telegram.ui.Components.mo {
         kVar.h(true);
     }
 
-    @Override // org.telegram.ui.Components.mo
+    @Override // org.telegram.ui.Components.jo
     public final void k() {
         NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.h;
         MessagesController messagesController = notificationsCustomSettingsActivity.getMessagesController();
@@ -95,18 +95,18 @@ public final class ck0 implements org.telegram.ui.Components.mo {
         b();
     }
 
-    @Override // org.telegram.ui.Components.mo
-    public final void o() {
+    @Override // org.telegram.ui.Components.jo
+    public final void l() {
         long j10 = this.a;
         if (j10 != 0) {
-            k11 k11Var = new k11(l.d.g(j10, "dialog_id"), null);
-            k11Var.r = new h(this, 28);
-            this.h.presentFragment(k11Var);
+            l11 l11Var = new l11(kf.k0.g(j10, "dialog_id"), null);
+            l11Var.r = new h(this, 28);
+            this.h.presentFragment(l11Var);
         }
     }
 
-    @Override // org.telegram.ui.Components.mo
-    public final void u() {
+    @Override // org.telegram.ui.Components.jo
+    public final void o() {
         int i10;
         String sharedPrefKey = NotificationsController.getSharedPrefKey(this.a, 0);
         NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.h;
@@ -120,8 +120,8 @@ public final class ck0 implements org.telegram.ui.Components.mo {
         }
     }
 
-    @Override // org.telegram.ui.Components.mo
-    public final void v(int i10) {
+    @Override // org.telegram.ui.Components.jo
+    public final void s(int i10) {
         NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.h;
         if (i10 == 0) {
             if (notificationsCustomSettingsActivity.getMessagesController().isDialogMuted(this.a, 0)) {
@@ -139,11 +139,11 @@ public final class ck0 implements org.telegram.ui.Components.mo {
         b();
     }
 
-    @Override // org.telegram.ui.Components.mo
+    @Override // org.telegram.ui.Components.jo
     public final /* synthetic */ void dismiss() {
     }
 
-    @Override // org.telegram.ui.Components.mo
+    @Override // org.telegram.ui.Components.jo
     public final /* synthetic */ void j() {
     }
 }

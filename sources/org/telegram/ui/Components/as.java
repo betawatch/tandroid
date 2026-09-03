@@ -1,37 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.graphics.RectF;
-import java.util.HashSet;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.voip.VoIPService;
+import j$.util.function.Predicate$-CC;
+import java.util.function.Predicate;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class as implements Utilities.Callback2 {
+public final /* synthetic */ class as implements Predicate {
     public final /* synthetic */ int a;
+    public final /* synthetic */ TLObject b;
 
-    public /* synthetic */ as(int i10) {
+    public /* synthetic */ as(int i10, TLObject tLObject) {
         this.a = i10;
+        this.b = tLObject;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    public /* synthetic */ Predicate and(Predicate predicate) {
+        int i10 = this.a;
+        return Predicate$-CC.$default$and(this, predicate);
+    }
+
+    public /* synthetic */ Predicate negate() {
+        switch (this.a) {
+        }
+        return Predicate$-CC.$default$negate(this);
+    }
+
+    public /* synthetic */ Predicate or(Predicate predicate) {
+        int i10 = this.a;
+        return Predicate$-CC.$default$or(this, predicate);
+    }
+
+    @Override // java.util.function.Predicate
+    public final boolean test(Object obj) {
         switch (this.a) {
             case 0:
-                int i10 = gs.D0;
-                break;
-            case 1:
-                Boolean bool = (Boolean) obj;
-                HashSet<Long> hashSet = (HashSet) obj2;
-                VoIPService sharedInstance = VoIPService.getSharedInstance();
-                if (sharedInstance != null) {
-                    sharedInstance.convertToConferenceCall(bool.booleanValue(), hashSet);
-                    break;
-                }
-                break;
+                return MessageObject.peersEqual((TLRPC.InputPeer) this.b, ((MessageObject) obj).messageOwner.from_id);
             default:
-                RectF rectF = vg.d.E;
-                break;
+                MessageObject messageObject = (MessageObject) obj;
+                TLObject tLObject = this.b;
+                return !(tLObject instanceof TLRPC.User) ? !((tLObject instanceof TLRPC.Chat) && messageObject.messageOwner.from_id.user_id == ((TLRPC.Chat) tLObject).id) : messageObject.messageOwner.from_id.user_id != ((TLRPC.User) tLObject).id;
         }
     }
 }

@@ -1,6 +1,6 @@
 package com.google.android.gms.tasks;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 final class zzc implements Runnable {
     final /* synthetic */ Task zza;
@@ -29,17 +29,17 @@ final class zzc implements Runnable {
             Object then = continuation.then(this.zza);
             zzwVar4 = this.zzb.zzc;
             zzwVar4.zzb(then);
-        } catch (RuntimeExecutionException e6) {
-            if (e6.getCause() instanceof Exception) {
+        } catch (RuntimeExecutionException e) {
+            if (e.getCause() instanceof Exception) {
                 zzwVar3 = this.zzb.zzc;
-                zzwVar3.zza((Exception) e6.getCause());
+                zzwVar3.zza((Exception) e.getCause());
             } else {
                 zzwVar2 = this.zzb.zzc;
-                zzwVar2.zza(e6);
+                zzwVar2.zza(e);
             }
-        } catch (Exception e10) {
+        } catch (Exception e6) {
             zzwVar = this.zzb.zzc;
-            zzwVar.zza(e10);
+            zzwVar.zza(e6);
         }
     }
 }

@@ -49,7 +49,7 @@ import o4.r;
 import o4.v;
 import s8.t;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class i implements b {
     public e0 B;
@@ -131,7 +131,7 @@ public final class i implements b {
         int i13;
         int i14;
         n0 n0Var;
-        o3.g gVar;
+        o3.h hVar;
         int i15;
         if (((h5.g) bVar.b).a.size() == 0) {
             return;
@@ -141,26 +141,26 @@ public final class i implements b {
             a aVar = (a) ((SparseArray) bVar.c).get(a2);
             aVar.getClass();
             if (a2 == 0) {
-                h hVar = this.b;
-                synchronized (hVar) {
+                h hVar2 = this.b;
+                synchronized (hVar2) {
                     try {
-                        hVar.d.getClass();
-                        o2 o2Var = hVar.e;
-                        hVar.e = aVar.b;
-                        Iterator it = hVar.c.values().iterator();
+                        hVar2.d.getClass();
+                        o2 o2Var = hVar2.e;
+                        hVar2.e = aVar.b;
+                        Iterator it = hVar2.c.values().iterator();
                         while (it.hasNext()) {
-                            g gVar2 = (g) it.next();
-                            if (gVar2.b(o2Var, hVar.e) && !gVar2.a(aVar)) {
+                            g gVar = (g) it.next();
+                            if (gVar.b(o2Var, hVar2.e) && !gVar.a(aVar)) {
                             }
                             it.remove();
-                            if (gVar2.e) {
-                                if (gVar2.a.equals(hVar.f)) {
-                                    hVar.a(gVar2);
+                            if (gVar.e) {
+                                if (gVar.a.equals(hVar2.f)) {
+                                    hVar2.a(gVar);
                                 }
-                                hVar.d.m(aVar, gVar2.a);
+                                hVar2.d.m(aVar, gVar.a);
                             }
                         }
-                        hVar.e(aVar);
+                        hVar2.e(aVar);
                     } catch (Throwable th2) {
                         throw th2;
                     }
@@ -172,37 +172,37 @@ public final class i implements b {
             }
         }
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (bVar.m(0)) {
+        if (bVar.n(0)) {
             a aVar2 = (a) ((SparseArray) bVar.c).get(0);
             aVar2.getClass();
             if (this.s != null) {
                 k(aVar2.b, aVar2.d);
             }
         }
-        if (bVar.m(2) && this.s != null) {
+        if (bVar.n(2) && this.s != null) {
             t listIterator = a2Var.t().a.listIterator(0);
             loop2: while (true) {
                 if (!listIterator.hasNext()) {
-                    gVar = null;
+                    hVar = null;
                     break;
                 }
                 p2 p2Var = (p2) listIterator.next();
                 for (int i17 = 0; i17 < p2Var.a; i17++) {
-                    if (p2Var.e[i17] && (gVar = p2Var.b.d[i17].F) != null) {
+                    if (p2Var.e[i17] && (hVar = p2Var.b.d[i17].F) != null) {
                         break loop2;
                     }
                 }
             }
-            if (gVar != null) {
+            if (hVar != null) {
                 PlaybackMetrics.Builder builder = this.s;
                 int i18 = d0.a;
                 int i19 = 0;
                 while (true) {
-                    if (i19 >= gVar.d) {
+                    if (i19 >= hVar.d) {
                         i15 = 1;
                         break;
                     }
-                    UUID uuid = gVar.a[i19].b;
+                    UUID uuid = hVar.a[i19].b;
                     if (uuid.equals(j3.h.d)) {
                         i15 = 3;
                         break;
@@ -220,7 +220,7 @@ public final class i implements b {
                 builder.setDrmType(i15);
             }
         }
-        if (bVar.m(1011)) {
+        if (bVar.n(1011)) {
             this.M++;
         }
         t1 t1Var = this.y;
@@ -261,12 +261,12 @@ public final class i implements b {
                                 }
                             } else if (i20 == 1002) {
                                 eVar = new c5.e(21, 0);
-                            } else if (cause instanceof o3.h) {
+                            } else if (cause instanceof o3.i) {
                                 Throwable cause3 = cause.getCause();
                                 cause3.getClass();
                                 int i22 = d0.a;
                                 if (i22 < 21 || !(cause3 instanceof MediaDrm.MediaDrmStateException)) {
-                                    eVar = (i22 < 23 || !e.c(cause3)) ? (i22 < 18 || !(cause3 instanceof NotProvisionedException)) ? (i22 < 18 || !(cause3 instanceof DeniedByServerException)) ? cause3 instanceof o3.c0 ? new c5.e(23, 0) : cause3 instanceof o3.c ? new c5.e(28, 0) : new c5.e(30, 0) : new c5.e(29, 0) : new c5.e(24, 0) : new c5.e(27, 0);
+                                    eVar = (i22 < 23 || !e.b(cause3)) ? (i22 < 18 || !(cause3 instanceof NotProvisionedException)) ? (i22 < 18 || !(cause3 instanceof DeniedByServerException)) ? cause3 instanceof o3.d0 ? new c5.e(23, 0) : cause3 instanceof o3.d ? new c5.e(28, 0) : new c5.e(30, 0) : new c5.e(29, 0) : new c5.e(24, 0) : new c5.e(27, 0);
                                 } else {
                                     int s6 = d0.s(((MediaDrm.MediaDrmStateException) cause3).getDiagnosticInfo());
                                     switch (d0.r(s6)) {
@@ -361,7 +361,7 @@ public final class i implements b {
             this.N = true;
             this.y = null;
         }
-        if (bVar.m(2)) {
+        if (bVar.n(2)) {
             q2 t6 = a2Var.t();
             boolean a10 = t6.a(2);
             boolean a11 = t6.a(i11);
@@ -460,37 +460,37 @@ public final class i implements b {
                             this.x = i13;
                             this.c.reportNetworkEvent(new NetworkEvent.Builder().setNetworkType(i13).setTimeSinceCreatedMillis(elapsedRealtime - this.d).build());
                         }
-                        if (a2Var.b() != 2) {
+                        if (a2Var.c() != 2) {
                             this.H = false;
                         }
                         if (a2Var.v() == null) {
                             this.J = false;
-                        } else if (bVar.m(10)) {
+                        } else if (bVar.n(10)) {
                             this.J = true;
                         }
-                        int b10 = a2Var.b();
+                        int c3 = a2Var.c();
                         if (this.H) {
                             i14 = 5;
                         } else if (this.J) {
                             i14 = 13;
-                        } else if (b10 == i12) {
+                        } else if (c3 == i12) {
                             i14 = 11;
-                        } else if (b10 == 2) {
+                        } else if (c3 == 2) {
                             int i32 = this.w;
                             i14 = (i32 == 0 || i32 == 2) ? 2 : !a2Var.j() ? 7 : a2Var.y() != 0 ? 10 : 6;
                         } else {
-                            i14 = b10 == 3 ? !a2Var.j() ? 4 : a2Var.y() != 0 ? 9 : 3 : (b10 != 1 || this.w == 0) ? this.w : 12;
+                            i14 = c3 == 3 ? !a2Var.j() ? 4 : a2Var.y() != 0 ? 9 : 3 : (c3 != 1 || this.w == 0) ? this.w : 12;
                         }
                         if (this.w != i14) {
                             this.w = i14;
                             this.N = true;
                             this.c.reportPlaybackStateEvent(new PlaybackStateEvent.Builder().setState(this.w).setTimeSinceCreatedMillis(elapsedRealtime - this.d).build());
                         }
-                        if (bVar.m(1028)) {
-                            h hVar2 = this.b;
+                        if (bVar.n(1028)) {
+                            h hVar3 = this.b;
                             a aVar3 = (a) ((SparseArray) bVar.c).get(1028);
                             aVar3.getClass();
-                            hVar2.b(aVar3);
+                            hVar3.b(aVar3);
                             return;
                         }
                         return;
@@ -520,16 +520,16 @@ public final class i implements b {
                 }
                 if (i13 != this.x) {
                 }
-                if (a2Var.b() != 2) {
+                if (a2Var.c() != 2) {
                 }
                 if (a2Var.v() == null) {
                 }
-                int b102 = a2Var.b();
+                int c32 = a2Var.c();
                 if (this.H) {
                 }
                 if (this.w != i14) {
                 }
-                if (bVar.m(1028)) {
+                if (bVar.n(1028)) {
                 }
             }
         }
@@ -545,16 +545,16 @@ public final class i implements b {
         }
         if (i13 != this.x) {
         }
-        if (a2Var.b() != 2) {
+        if (a2Var.c() != 2) {
         }
         if (a2Var.v() == null) {
         }
-        int b1022 = a2Var.b();
+        int c322 = a2Var.c();
         if (this.H) {
         }
         if (this.w != i14) {
         }
-        if (bVar.m(1028)) {
+        if (bVar.n(1028)) {
         }
     }
 

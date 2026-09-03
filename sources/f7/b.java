@@ -43,15 +43,14 @@ import java.util.WeakHashMap;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicInteger;
 import k7.oa;
-import l.b0;
 import n7.qa;
 import r0.j0;
 import r0.m0;
 import r0.m1;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements com.google.android.gms.common.api.internal.s, g5.l, SuccessContinuation, o4.z, o3.m, od.b, r0.o, o0 {
+public final /* synthetic */ class b implements com.google.android.gms.common.api.internal.s, g5.l, SuccessContinuation, o4.z, o3.n, od.b, r0.o, o0 {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -60,7 +59,7 @@ public final /* synthetic */ class b implements com.google.android.gms.common.ap
         this.a = i10;
     }
 
-    private final void p(n3.f fVar) {
+    private final void q(n3.f fVar) {
         synchronized (fVar) {
         }
         Handler handler = (Handler) this.b;
@@ -94,9 +93,9 @@ public final /* synthetic */ class b implements com.google.android.gms.common.ap
 
     @Override // o4.z
     public void a(int i10, o4.v vVar, o4.j jVar, o4.r rVar) {
-        Pair r10 = r(i10, vVar);
-        if (r10 != null) {
-            ((q1) this.c).i.c(new k1(this, r10, jVar, rVar, 0));
+        Pair s6 = s(i10, vVar);
+        if (s6 != null) {
+            ((q1) this.c).i.c(new k1(this, s6, jVar, rVar, 0));
         }
     }
 
@@ -116,8 +115,8 @@ public final /* synthetic */ class b implements com.google.android.gms.common.ap
         l lVar = (l) obj;
         TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
         lVar.getClass();
-        com.google.android.gms.common.api.internal.p e6 = oVar.e();
-        com.google.android.gms.common.api.internal.n nVar = e6.c;
+        com.google.android.gms.common.api.internal.p e = oVar.e();
+        com.google.android.gms.common.api.internal.n nVar = e.c;
         nVar.getClass();
         y5.c[] l10 = lVar.l();
         boolean z4 = false;
@@ -144,7 +143,7 @@ public final /* synthetic */ class b implements com.google.android.gms.common.ap
             try {
                 j jVar2 = (j) lVar.S.get(nVar);
                 if (jVar2 != null && !z4) {
-                    jVar2.K0(e6);
+                    jVar2.K0(e);
                     jVar = jVar2;
                     jVar2 = null;
                     String str = nVar.b + "@" + System.identityHashCode(nVar.a);
@@ -203,19 +202,19 @@ public final /* synthetic */ class b implements com.google.android.gms.common.ap
         }
     }
 
-    @Override // o3.m
+    @Override // o3.n
     public void b(int i10, o4.v vVar) {
-        Pair r10 = r(i10, vVar);
-        if (r10 != null) {
-            ((q1) this.c).i.c(new l1(this, r10, 0));
+        Pair s6 = s(i10, vVar);
+        if (s6 != null) {
+            ((q1) this.c).i.c(new l1(this, s6, 0));
         }
     }
 
-    @Override // o3.m
+    @Override // o3.n
     public void c(int i10, o4.v vVar, int i11) {
-        Pair r10 = r(i10, vVar);
-        if (r10 != null) {
-            ((q1) this.c).i.c(new bh.a(this, r10, i11, 5));
+        Pair s6 = s(i10, vVar);
+        if (s6 != null) {
+            ((q1) this.c).i.c(new ah.a(this, s6, i11, 5));
         }
     }
 
@@ -226,92 +225,99 @@ public final /* synthetic */ class b implements com.google.android.gms.common.ap
 
     @Override // o4.z
     public void d(int i10, o4.v vVar, o4.j jVar, o4.r rVar) {
-        Pair r10 = r(i10, vVar);
-        if (r10 != null) {
-            ((q1) this.c).i.c(new k1(this, r10, jVar, rVar, 2));
+        Pair s6 = s(i10, vVar);
+        if (s6 != null) {
+            ((q1) this.c).i.c(new k1(this, s6, jVar, rVar, 2));
         }
     }
 
-    @Override // o3.m
+    @Override // o3.n
     public void e(int i10, o4.v vVar, Exception exc) {
-        Pair r10 = r(i10, vVar);
-        if (r10 != null) {
-            ((q1) this.c).i.c(new androidx.car.app.utils.b(this, r10, exc, 12));
+        Pair s6 = s(i10, vVar);
+        if (s6 != null) {
+            ((q1) this.c).i.c(new androidx.car.app.utils.b(this, s6, exc, 13));
         }
     }
 
     @Override // o4.z
     public void f(int i10, o4.v vVar, o4.r rVar) {
-        Pair r10 = r(i10, vVar);
-        if (r10 != null) {
-            ((q1) this.c).i.c(new j3.m1(this, r10, rVar, 0));
+        Pair s6 = s(i10, vVar);
+        if (s6 != null) {
+            ((q1) this.c).i.c(new j3.m1(this, s6, rVar, 0));
         }
     }
 
     @Override // o4.z
     public void g(int i10, o4.v vVar, o4.j jVar, o4.r rVar, IOException iOException, boolean z4) {
-        Pair r10 = r(i10, vVar);
-        if (r10 != null) {
-            ((q1) this.c).i.c(new n1(this, r10, jVar, rVar, iOException, z4, 0));
+        Pair s6 = s(i10, vVar);
+        if (s6 != null) {
+            ((q1) this.c).i.c(new n1(this, s6, jVar, rVar, iOException, z4, 0));
         }
     }
 
     @Override // o4.z
     public void h(int i10, o4.v vVar, o4.j jVar, o4.r rVar) {
-        Pair r10 = r(i10, vVar);
-        if (r10 != null) {
-            ((q1) this.c).i.c(new k1(this, r10, jVar, rVar, 1));
+        Pair s6 = s(i10, vVar);
+        if (s6 != null) {
+            ((q1) this.c).i.c(new k1(this, s6, jVar, rVar, 1));
         }
     }
 
     @Override // o4.z
     public void i(int i10, o4.v vVar, o4.r rVar) {
-        Pair r10 = r(i10, vVar);
-        if (r10 != null) {
-            ((q1) this.c).i.c(new j3.m1(this, r10, rVar, 1));
+        Pair s6 = s(i10, vVar);
+        if (s6 != null) {
+            ((q1) this.c).i.c(new j3.m1(this, s6, rVar, 1));
         }
     }
 
-    @Override // o3.m
+    @Override // o3.n
     public void j(int i10, o4.v vVar) {
-        Pair r10 = r(i10, vVar);
-        if (r10 != null) {
-            ((q1) this.c).i.c(new l1(this, r10, 2));
+        Pair s6 = s(i10, vVar);
+        if (s6 != null) {
+            ((q1) this.c).i.c(new l1(this, s6, 2));
         }
     }
 
-    @Override // o3.m
-    public void k(int i10, o4.v vVar) {
-        Pair r10 = r(i10, vVar);
-        if (r10 != null) {
-            ((q1) this.c).i.c(new l1(this, r10, 1));
+    @Override // g5.o0
+    public Object k(Uri uri, g5.o oVar) {
+        n4.a aVar = (n4.a) ((o0) this.b).k(uri, oVar);
+        List list = (List) this.c;
+        return (list == null || list.isEmpty()) ? aVar : (n4.a) aVar.a(list);
+    }
+
+    @Override // o3.n
+    public void l(int i10, o4.v vVar) {
+        Pair s6 = s(i10, vVar);
+        if (s6 != null) {
+            ((q1) this.c).i.c(new l1(this, s6, 1));
         }
     }
 
-    public void l() {
+    public void m() {
         this.b = null;
         this.c = null;
     }
 
-    public boolean m(int i10) {
+    public boolean n(int i10) {
         return ((h5.g) this.b).a.get(i10);
     }
 
-    public void n() {
+    public void o() {
         String str = (String) this.b;
         try {
             n9.b bVar = (n9.b) this.c;
             bVar.getClass();
             new File(bVar.b, str).createNewFile();
-        } catch (IOException e6) {
-            Log.e("FirebaseCrashlytics", "Error creating marker: ".concat(str), e6);
+        } catch (IOException e) {
+            Log.e("FirebaseCrashlytics", "Error creating marker: ".concat(str), e);
         }
     }
 
-    public void o(n3.f fVar) {
+    public void p(n3.f fVar) {
         switch (this.a) {
             case 10:
-                p(fVar);
+                q(fVar);
                 break;
             default:
                 synchronized (fVar) {
@@ -325,7 +331,7 @@ public final /* synthetic */ class b implements com.google.android.gms.common.ap
         }
     }
 
-    public byte[] q(g4.a aVar) {
+    public byte[] r(g4.a aVar) {
         DataOutputStream dataOutputStream = (DataOutputStream) this.c;
         ByteArrayOutputStream byteArrayOutputStream = (ByteArrayOutputStream) this.b;
         byteArrayOutputStream.reset();
@@ -343,12 +349,12 @@ public final /* synthetic */ class b implements com.google.android.gms.common.ap
             dataOutputStream.write(aVar.e);
             dataOutputStream.flush();
             return byteArrayOutputStream.toByteArray();
-        } catch (IOException e6) {
-            throw new RuntimeException(e6);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
-    public Pair r(int i10, o4.v vVar) {
+    public Pair s(int i10, o4.v vVar) {
         o4.v vVar2;
         p1 p1Var = (p1) this.b;
         o4.v vVar3 = null;
@@ -376,7 +382,7 @@ public final /* synthetic */ class b implements com.google.android.gms.common.ap
         return Pair.create(Integer.valueOf(i10 + p1Var.d), vVar3);
     }
 
-    public synchronized Map s() {
+    public synchronized Map t() {
         try {
             if (((Map) this.c) == null) {
                 this.c = DesugarCollections.unmodifiableMap(new HashMap((HashMap) this.b));
@@ -387,8 +393,38 @@ public final /* synthetic */ class b implements com.google.android.gms.common.ap
         return (Map) this.c;
     }
 
-    public void t(k.a aVar) {
-        sf.f fVar = (sf.f) this.b;
+    @Override // com.google.android.gms.tasks.SuccessContinuation
+    public Task then(Object obj) {
+        int i10 = 1;
+        switch (this.a) {
+            case 11:
+                p9.b bVar = (p9.b) obj;
+                i9.n nVar = ((i9.l) this.c).e;
+                if (bVar != null) {
+                    return Tasks.whenAll((Task<?>[]) new Task[]{i9.n.b(nVar), nVar.m.v((Executor) this.b, null)});
+                }
+                Log.w("FirebaseCrashlytics", "Received null app settings, cannot send reports at crash time.", null);
+                return Tasks.forResult(null);
+            case 12:
+                p9.b bVar2 = (p9.b) obj;
+                h2.g gVar = (h2.g) this.c;
+                if (bVar2 == null) {
+                    Log.w("FirebaseCrashlytics", "Received null app settings at app startup. Cannot send cached reports", null);
+                    return Tasks.forResult(null);
+                }
+                b bVar3 = (b) gVar.c;
+                b bVar4 = (b) gVar.c;
+                i9.n.b((i9.n) bVar3.c);
+                ((i9.n) bVar4.c).m.v((Executor) this.b, null);
+                ((i9.n) bVar4.c).q.trySetResult(null);
+                return Tasks.forResult(null);
+            default:
+                return ((i9.n) this.c).e.I(new h2.g(i10, this, (Boolean) obj));
+        }
+    }
+
+    public void u(k.a aVar) {
+        rf.f fVar = (rf.f) this.b;
         ((ActionMode.Callback) fVar.b).onDestroyActionMode(fVar.s(aVar));
         g.q qVar = (g.q) this.c;
         if (qVar.B != null) {
@@ -411,70 +447,33 @@ public final /* synthetic */ class b implements com.google.android.gms.common.ap
         qVar.y();
     }
 
-    @Override // com.google.android.gms.tasks.SuccessContinuation
-    public Task then(Object obj) {
-        int i10 = 1;
-        switch (this.a) {
-            case 11:
-                p9.a aVar = (p9.a) obj;
-                i9.n nVar = ((i9.l) this.c).e;
-                if (aVar != null) {
-                    return Tasks.whenAll((Task<?>[]) new Task[]{i9.n.b(nVar), nVar.m.v((Executor) this.b, null)});
-                }
-                Log.w("FirebaseCrashlytics", "Received null app settings, cannot send reports at crash time.", null);
-                return Tasks.forResult(null);
-            case 12:
-                p9.a aVar2 = (p9.a) obj;
-                h2.g gVar = (h2.g) this.c;
-                if (aVar2 == null) {
-                    Log.w("FirebaseCrashlytics", "Received null app settings at app startup. Cannot send cached reports", null);
-                    return Tasks.forResult(null);
-                }
-                b bVar = (b) gVar.c;
-                b bVar2 = (b) gVar.c;
-                i9.n.b((i9.n) bVar.c);
-                ((i9.n) bVar2.c).m.v((Executor) this.b, null);
-                ((i9.n) bVar2.c).q.trySetResult(null);
-                return Tasks.forResult(null);
-            default:
-                return ((i9.n) this.c).e.I(new h2.g(i10, this, (Boolean) obj));
-        }
-    }
-
-    public boolean u(k.a aVar, Menu menu) {
+    public boolean v(k.a aVar, Menu menu) {
         ViewGroup viewGroup = ((g.q) this.c).G;
         WeakHashMap weakHashMap = j0.a;
         r0.z.c(viewGroup);
-        sf.f fVar = (sf.f) this.b;
+        rf.f fVar = (rf.f) this.b;
         ActionMode.Callback callback = (ActionMode.Callback) fVar.b;
         k.e s6 = fVar.s(aVar);
         a0.k kVar = (a0.k) fVar.e;
         Menu menu2 = (Menu) kVar.get(menu);
         if (menu2 == null) {
-            menu2 = new b0((Context) fVar.c, (l.l) menu);
+            menu2 = new l.a0((Context) fVar.c, (l.k) menu);
             kVar.put(menu, menu2);
         }
         return callback.onPrepareActionMode(s6, menu2);
     }
 
-    public void v(i5.y yVar) {
+    public void w(i5.y yVar) {
         Handler handler = (Handler) this.b;
         if (handler != null) {
-            handler.post(new gf.c(12, this, yVar));
+            handler.post(new ff.c(13, this, yVar));
         }
     }
 
-    @Override // g5.o0
-    public Object w(Uri uri, g5.o oVar) {
-        n4.a aVar = (n4.a) ((o0) this.b).w(uri, oVar);
-        List list = (List) this.c;
-        return (list == null || list.isEmpty()) ? aVar : (n4.a) aVar.a(list);
-    }
-
     @Override // od.b
-    public Object x(od.c cVar, wc.c cVar2) {
-        Object x10 = ((qa) this.b).x(new k1.s(cVar, (la.z) this.c), cVar2);
-        return x10 == vc.a.a ? x10 : sc.i.a;
+    public Object z(od.c cVar, wc.c cVar2) {
+        Object z4 = ((qa) this.b).z(new k1.s(cVar, (la.z) this.c), cVar2);
+        return z4 == vc.a.a ? z4 : sc.i.a;
     }
 
     public /* synthetic */ b(int i10, Object obj, Object obj2) {
@@ -489,10 +488,10 @@ public final /* synthetic */ class b implements com.google.android.gms.common.ap
         this.b = obj2;
     }
 
-    public b(androidx.biometric.e eVar) {
+    public b(af.d dVar) {
         this.a = 21;
         this.c = new g8();
-        this.b = eVar;
+        this.b = dVar;
         oa.b();
     }
 
@@ -555,7 +554,7 @@ public final /* synthetic */ class b implements com.google.android.gms.common.ap
     }
 
     public b(int i10) {
-        this.a = 18;
+        this.a = 16;
         Bitmap createBitmap = Bitmap.createBitmap(i10, i10, Bitmap.Config.ALPHA_8);
         this.b = createBitmap;
         Shader.TileMode tileMode = Shader.TileMode.REPEAT;
@@ -563,7 +562,7 @@ public final /* synthetic */ class b implements com.google.android.gms.common.ap
     }
 
     public b(ArrayList arrayList, ArrayList arrayList2) {
-        this.a = 6;
+        this.a = 9;
         int size = arrayList.size();
         this.b = new int[size];
         this.c = new float[size];
@@ -574,13 +573,13 @@ public final /* synthetic */ class b implements com.google.android.gms.common.ap
     }
 
     public b(int i10, int i11) {
-        this.a = 6;
+        this.a = 9;
         this.b = new int[]{i10, i11};
         this.c = new float[]{0.0f, 1.0f};
     }
 
     public b(int i10, int i11, int i12) {
-        this.a = 6;
+        this.a = 9;
         this.b = new int[]{i10, i11, i12};
         this.c = new float[]{0.0f, 0.5f, 1.0f};
     }
@@ -592,7 +591,7 @@ public final /* synthetic */ class b implements com.google.android.gms.common.ap
     }
 
     public b(m2.h hVar) {
-        this.a = 27;
+        this.a = 28;
         this.c = hVar;
         this.b = new Rect();
     }

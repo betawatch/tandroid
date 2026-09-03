@@ -6,9 +6,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class yv0 extends ej0 {
+public final class yv0 extends dj0 {
     public int Y0;
     public int Z0;
     public int a1;
@@ -41,7 +41,7 @@ public final class yv0 extends ej0 {
         return 2;
     }
 
-    @Override // org.telegram.ui.Components.ej0, org.telegram.ui.Components.hj0
+    @Override // org.telegram.ui.Components.dj0, org.telegram.ui.Components.gj0
     public final void A(boolean z4) {
         this.i0 = false;
         this.j0 = true;
@@ -92,7 +92,7 @@ public final class yv0 extends ej0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ej0, org.telegram.ui.Components.hj0
+    @Override // org.telegram.ui.Components.dj0, org.telegram.ui.Components.gj0
     public final void n() {
         if (this.T) {
             l();
@@ -111,7 +111,7 @@ public final class yv0 extends ej0 {
         G();
     }
 
-    @Override // org.telegram.ui.Components.ej0, org.telegram.ui.Components.hj0
+    @Override // org.telegram.ui.Components.dj0, org.telegram.ui.Components.gj0
     public final int z() {
         if (this.j0) {
             return 3;
@@ -233,8 +233,8 @@ public final class yv0 extends ej0 {
                         Utilities.copyBitmaps(this.b1, this.Q);
                         this.P = this.Q;
                     }
-                } catch (Exception e6) {
-                    FileLog.e(e6);
+                } catch (Exception e) {
+                    FileLog.e(e);
                 }
             }
             return 1;

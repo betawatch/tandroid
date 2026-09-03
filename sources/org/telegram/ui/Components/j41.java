@@ -9,7 +9,7 @@ import org.telegram.messenger.TranslateController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j41 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -23,8 +23,8 @@ public final /* synthetic */ class j41 implements Runnable {
     public final /* synthetic */ Object r;
     public final /* synthetic */ Object s;
 
-    public /* synthetic */ j41(org.telegram.ui.wk wkVar, boolean[] zArr, String str, LinearLayout linearLayout, ArrayList arrayList, String str2, TranslateController translateController, org.telegram.ui.ActionBar.p1 p1Var, ArrayList arrayList2) {
-        this.d = wkVar;
+    public /* synthetic */ j41(org.telegram.ui.yk ykVar, boolean[] zArr, String str, LinearLayout linearLayout, ArrayList arrayList, String str2, TranslateController translateController, org.telegram.ui.ActionBar.p1 p1Var, ArrayList arrayList2) {
+        this.d = ykVar;
         this.e = zArr;
         this.f = str;
         this.n = linearLayout;
@@ -41,7 +41,7 @@ public final /* synthetic */ class j41 implements Runnable {
         String y10;
         switch (this.a) {
             case 0:
-                final org.telegram.ui.wk wkVar = (org.telegram.ui.wk) this.d;
+                final org.telegram.ui.yk ykVar = (org.telegram.ui.yk) this.d;
                 boolean[] zArr = (boolean[]) this.e;
                 String str = (String) this.f;
                 LinearLayout linearLayout = (LinearLayout) this.n;
@@ -51,7 +51,7 @@ public final /* synthetic */ class j41 implements Runnable {
                 boolean z4 = false;
                 if (!zArr[0]) {
                     if (str != null && (y10 = v31.y(v31.D(str, null, null))) != null) {
-                        org.telegram.ui.ActionBar.g1 g1Var2 = new org.telegram.ui.ActionBar.g1(2, wkVar.getContext(), wkVar.d, false, false);
+                        org.telegram.ui.ActionBar.g1 g1Var2 = new org.telegram.ui.ActionBar.g1(2, ykVar.getContext(), ykVar.d, false, false);
                         g1Var2.setChecked(true);
                         g1Var2.setText(y10);
                         linearLayout.addView(g1Var2);
@@ -66,7 +66,7 @@ public final /* synthetic */ class j41 implements Runnable {
                         if (TextUtils.equals(str3, str2)) {
                             i10 = i11;
                         } else {
-                            org.telegram.ui.ActionBar.g1 g1Var3 = new org.telegram.ui.ActionBar.g1(2, wkVar.getContext(), wkVar.d, false, false);
+                            org.telegram.ui.ActionBar.g1 g1Var3 = new org.telegram.ui.ActionBar.g1(2, ykVar.getContext(), ykVar.d, false, false);
                             if (str != null && str.equals(str3)) {
                                 z4 = true;
                             }
@@ -82,16 +82,16 @@ public final /* synthetic */ class j41 implements Runnable {
                                     public final void onClick(View view) {
                                         switch (i12) {
                                             case 0:
-                                                org.telegram.ui.wk wkVar2 = wkVar;
-                                                translateController.setDialogTranslateTo(wkVar2.b, str3);
+                                                org.telegram.ui.yk ykVar2 = ykVar;
+                                                translateController.setDialogTranslateTo(ykVar2.b, str3);
                                                 p1Var.d(true);
-                                                wkVar2.b();
+                                                ykVar2.b();
                                                 break;
                                             default:
-                                                org.telegram.ui.wk wkVar3 = wkVar;
-                                                translateController.setDialogTranslateTo(wkVar3.b, str3);
+                                                org.telegram.ui.yk ykVar3 = ykVar;
+                                                translateController.setDialogTranslateTo(ykVar3.b, str3);
                                                 p1Var.d(true);
-                                                wkVar3.b();
+                                                ykVar3.b();
                                                 break;
                                         }
                                     }
@@ -102,7 +102,7 @@ public final /* synthetic */ class j41 implements Runnable {
                             z4 = false;
                         }
                     }
-                    linearLayout.addView(new org.telegram.ui.ActionBar.m1(wkVar.getContext(), wkVar.d), k7.c6.n(-1, 8));
+                    linearLayout.addView(new org.telegram.ui.ActionBar.m1(ykVar.getContext(), ykVar.d), k7.b6.n(-1, 8));
                     ArrayList arrayList2 = this.c;
                     int size2 = arrayList2.size();
                     int i13 = 0;
@@ -112,7 +112,7 @@ public final /* synthetic */ class j41 implements Runnable {
                         final String str4 = language2.code;
                         if (!TextUtils.equals(str4, str2)) {
                             boolean z10 = str != null && str.equals(str4);
-                            org.telegram.ui.ActionBar.g1 g1Var4 = new org.telegram.ui.ActionBar.g1(2, wkVar.getContext(), wkVar.d, false, false);
+                            org.telegram.ui.ActionBar.g1 g1Var4 = new org.telegram.ui.ActionBar.g1(2, ykVar.getContext(), ykVar.d, false, false);
                             g1Var4.setChecked(z10);
                             g1Var4.setText(language2.displayName);
                             if (!z10) {
@@ -122,16 +122,16 @@ public final /* synthetic */ class j41 implements Runnable {
                                     public final void onClick(View view) {
                                         switch (i15) {
                                             case 0:
-                                                org.telegram.ui.wk wkVar2 = wkVar;
-                                                translateController.setDialogTranslateTo(wkVar2.b, str4);
+                                                org.telegram.ui.yk ykVar2 = ykVar;
+                                                translateController.setDialogTranslateTo(ykVar2.b, str4);
                                                 p1Var.d(true);
-                                                wkVar2.b();
+                                                ykVar2.b();
                                                 break;
                                             default:
-                                                org.telegram.ui.wk wkVar3 = wkVar;
-                                                translateController.setDialogTranslateTo(wkVar3.b, str4);
+                                                org.telegram.ui.yk ykVar3 = ykVar;
+                                                translateController.setDialogTranslateTo(ykVar3.b, str4);
                                                 p1Var.d(true);
-                                                wkVar3.b();
+                                                ykVar3.b();
                                                 break;
                                         }
                                     }

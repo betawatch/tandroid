@@ -1,28 +1,38 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes3.dex */
-public final class ak implements Runnable {
-    public final /* synthetic */ xn a;
+public final class ak extends org.telegram.ui.Components.c21 {
+    public final /* synthetic */ zn e;
 
-    public ak(xn xnVar) {
-        this.a = xnVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ak(zn znVar, Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, i10, f6Var);
+        this.e = znVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        xn xnVar = this.a;
-        MessageObject messageObject = xnVar.a5;
-        if (messageObject == null || xnVar.Q8 == null) {
-            return;
+    @Override // org.telegram.ui.Components.c21, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        org.telegram.ui.ActionBar.k kVar;
+        if (getAlpha() == 0.0f) {
+            return false;
         }
-        int max = Math.max(0, messageObject.messageOwner.ttl_period - (xnVar.getConnectionsManager().getCurrentTime() - xnVar.a5.messageOwner.date));
-        xnVar.Q8.setSubtext(LocaleController.formatString(R.string.AutoDeleteIn, max < 86400 ? AndroidUtilities.formatDuration(max, false, true) : LocaleController.formatPluralString("Days", Math.round(max / 86400.0f), new Object[0])));
-        AndroidUtilities.runOnUIThread(xnVar.R8, 1000L);
+        zn znVar = this.e;
+        kVar = ((org.telegram.ui.ActionBar.p2) znVar).actionBar;
+        if (kVar.s() || znVar.A9()) {
+            return false;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f10) {
+        if (getTranslationY() != f10) {
+            invalidate();
+        }
+        super.setTranslationY(f10);
     }
 }

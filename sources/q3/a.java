@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 import l3.d;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class a extends s implements y1 {
     public int a;
@@ -149,9 +149,9 @@ public final class a extends s implements y1 {
     public final void onPlay() {
         c cVar = this.c;
         if (c.a(cVar, 4L)) {
-            if (cVar.i.b() == 1) {
-                cVar.i.a();
-            } else if (cVar.i.b() == 4) {
+            if (cVar.i.c() == 1) {
+                cVar.i.b();
+            } else if (cVar.i.c() == 4) {
                 a2 a2Var = cVar.i;
                 ((e) a2Var).K(a2Var.x(), 10, -9223372036854775807L);
             }
@@ -240,7 +240,7 @@ public final class a extends s implements y1 {
             return;
         }
         a2 a2Var = cVar.i;
-        a2Var.c(new v1(f10, a2Var.d().b));
+        a2Var.a(new v1(f10, a2Var.d().b));
     }
 
     @Override // android.support.v4.media.session.s

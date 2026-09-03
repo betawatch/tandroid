@@ -6,17 +6,17 @@ import j3.c1;
 import j3.o2;
 import j3.y0;
 import l7.w0;
-import mh.m5;
+import lh.m5;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class f0 extends a {
     public final c1 h;
     public final y0 i;
     public final g5.l j;
     public final m5 k;
-    public final o3.o l;
-    public final ab.a m;
+    public final o3.p l;
+    public final z9.d m;
     public final int n;
     public boolean o;
     public long p;
@@ -24,15 +24,15 @@ public final class f0 extends a {
     public boolean r;
     public g5.v0 s;
 
-    public f0(c1 c1Var, g5.l lVar, m5 m5Var, o3.o oVar, ab.a aVar, int i10) {
+    public f0(c1 c1Var, g5.l lVar, m5 m5Var, o3.p pVar, z9.d dVar, int i10) {
         y0 y0Var = c1Var.b;
         y0Var.getClass();
         this.i = y0Var;
         this.h = c1Var;
         this.j = lVar;
         this.k = m5Var;
-        this.l = oVar;
-        this.m = aVar;
+        this.l = pVar;
+        this.m = dVar;
         this.n = i10;
         this.o = true;
         this.p = -9223372036854775807L;
@@ -48,7 +48,7 @@ public final class f0 extends a {
         y0 y0Var = this.i;
         Uri uri = y0Var.a;
         h5.a.j(this.g);
-        return new e0(uri, createDataSource, new w0((r3.i) this.k.b, 15), this.l, new o3.l(this.d.c, 0, vVar), this.m, a(vVar), this, qVar, y0Var.f, this.n);
+        return new e0(uri, createDataSource, new w0((r3.i) this.k.b, 15), this.l, new o3.m(this.d.c, 0, vVar), this.m, a(vVar), this, qVar, y0Var.f, this.n);
     }
 
     @Override // o4.a
@@ -63,9 +63,9 @@ public final class f0 extends a {
         myLooper.getClass();
         k3.k kVar = this.g;
         h5.a.j(kVar);
-        o3.o oVar = this.l;
-        oVar.h(myLooper, kVar);
-        oVar.a();
+        o3.p pVar = this.l;
+        pVar.e0(myLooper, kVar);
+        pVar.b();
         s();
     }
 
@@ -75,9 +75,9 @@ public final class f0 extends a {
         if (e0Var.I) {
             for (k0 k0Var : e0Var.F) {
                 k0Var.i();
-                o3.i iVar = k0Var.h;
-                if (iVar != null) {
-                    iVar.c(k0Var.e);
+                o3.j jVar = k0Var.h;
+                if (jVar != null) {
+                    jVar.c(k0Var.e);
                     k0Var.h = null;
                     k0Var.g = null;
                 }

@@ -2,9 +2,8 @@ package md;
 
 import android.os.Handler;
 import android.os.Looper;
-import androidx.biometric.k;
+import androidx.biometric.j;
 import java.util.concurrent.CancellationException;
-import k1.j;
 import ld.a0;
 import ld.e0;
 import ld.e2;
@@ -15,8 +14,9 @@ import ld.o0;
 import ld.w1;
 import qd.o;
 import uc.h;
+import vh.w2;
 
-/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
 /* loaded from: classes.dex */
 public final class d extends a0 implements j0 {
     public final Handler c;
@@ -48,14 +48,14 @@ public final class d extends a0 implements j0 {
 
     @Override // ld.j0
     public final void b(long j10, m mVar) {
-        k kVar = new k(mVar, this, false, 25);
+        j jVar = new j(mVar, this, false, 25);
         if (j10 > 4611686018427387903L) {
             j10 = 4611686018427387903L;
         }
-        if (this.c.postDelayed(kVar, j10)) {
-            mVar.u(new j(1, this, kVar));
+        if (this.c.postDelayed(jVar, j10)) {
+            mVar.u(new k1.j(1, this, jVar));
         } else {
-            f(mVar.e, kVar);
+            f(mVar.e, jVar);
         }
     }
 
@@ -109,6 +109,6 @@ public final class d extends a0 implements j0 {
             return str;
         }
         String handler = this.c.toString();
-        return this.d ? w.c.e(handler, ".immediate") : handler;
+        return this.d ? w2.k(handler, ".immediate") : handler;
     }
 }
